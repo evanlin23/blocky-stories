@@ -506,6 +506,66 @@ def build_extras(kit, ctx, M):
         ob.hide_render = True
 
 
+def build_props(kit, ctx, M):
+    """CC0 props (no lettering) in the bare corners of every place. Opt-in: skipped if the library is missing."""
+    if not kit.props():
+        return
+    P = kit.prop
+    # the orchard: stones, stumps, bushes, wild grass and flowers at the edges of the path, clear of the prints
+    for nm, x, y, rot, h in [("rock_moss_1", -2.5, 9.0, 40, 0.6), ("rock_3", 2.7, 9.6, 200, 0.5), ("bush_1", -4.6, 7.0, 0, 1.0),
+                             ("bush_2", 4.6, 6.4, 90, 1.0), ("treestump", 3.4, 12.0, 20, 0.6), ("nat_log_stack", -5.4, 17.5, 80, 0.8),
+                             ("nat_pot_large", -2.3, 5.4, 0, 0.5), ("flowers", 2.2, 6.0, 0, 0.7), ("flowers", -2.1, 12.5, 90, 0.6),
+                             ("grass", 2.5, 17.0, 0, 0.7), ("grass", -2.6, 21.0, 40, 0.7), ("grass_short", 1.9, 25.0, 0, 0.5),
+                             ("grass_short", -2.0, 33.0, 80, 0.5), ("grass", 2.6, 41.0, 0, 0.7), ("rock_5", -2.9, 47.0, 120, 0.5),
+                             ("nat_stump_old", 2.9, 55.0, 30, 0.5), ("flowers", -2.4, 60.0, 0, 0.6), ("bush_1", 6.0, 38.0, 0, 0.9),
+                             ("bush_2", -6.0, 50.0, 40, 0.9), ("woodlog_moss", 5.5, 25.0, 100, 0.6)]:
+        P(nm, (x, OY + y, 0), rot=rot, height=h)
+    for sx in (-1, 1):   # a low fence either side of the open gate
+        for k in range(2):
+            P("nat_fence_simple", (sx * (3.3 + 3.0 * k), OY + 9.8, 0), rot=0, scale=1.0)
+    P("sub_tree_small", (-7.5, OY + 3.0, 0), height=3.0)
+    P("sub_tree_large", (8.0, OY + 4.0, 0), height=4.0)
+    P("bush_1", (-6.8, OY + 1.2, 0), height=1.0)
+    P("bush_2", (6.6, OY + 1.0, 0), height=1.0)
+    P("sub_planter", (-1.9, OY + 0.7, F - 0.08), height=0.55, rot=0)
+    P("woodlog", (4.2, OY + 3.5, 0), rot=90, height=0.5)
+    # indoors, along the walls and in the corners
+    P("bookshelf", (-5.75, OY - 6.4, F), rot=90, height=1.9)
+    P("nightstand_1", (-5.6, OY - 4.35, F), rot=90, height=0.45)
+    P("houseplant_1", (-4.1, OY - 7.1, F), height=0.5)
+    P("chair_1", (0.4, OY - 4.6, F), rot=270, height=0.85)
+    P("chair_2", (2.2, OY - 4.6, F), rot=90, height=0.85)
+    P("light_floor1", (2.0, OY - 7.1, F), height=1.5)
+    P("drawer_1", (4.5, OY - 1.0, F), rot=180, height=0.7)
+    P("nightstand_1", (3.1, OY - 6.9, F), rot=0, height=0.45)
+    P("houseplant_1", (4.7, OY - 7.1, F), height=0.5)
+    P("curtains_double", (-2.6, OY - 0.25, F + 1.0), rot=180, height=1.5)
+    # the town street: planters, bins, small trees and a fence by the houses
+    for i, y in enumerate(range(-24, 40, 8)):
+        for sx in (-1, 1):
+            if i % 2 == 0:
+                P("sub_planter", (sx * 4.2, y + 1.6, 0), height=0.6, rot=90)
+            else:
+                P("trashcan_cylindric", (sx * 4.3, y + 2.2, 0), height=0.7)
+    for y in (-18, -2, 14, 30):
+        P("sub_tree_small", (-3.3, y, 0), height=3.0)
+        P("sub_tree_small", (3.3, y + 4, 0), height=3.0)
+    # the townsman's kitchen
+    kx, ky = 30.0, 0.0
+    P("kitchen_oven", (kx - 2.7, ky + 4.55, 0), rot=270, height=0.9)
+    P("houseplant_1", (kx + 2.6, ky + 0.6, 0), height=0.5)
+    P("chair_1", (kx + 2.2, ky + 2.4, 0), rot=90, height=0.85)
+    P("table_roundsmall", (kx + 1.9, ky + 1.2, 0), height=0.7)
+    P("kitchen_cabinet1", (kx - 2.7, ky + 4.0, 0), rot=270, height=0.9)
+    # the garden path
+    gx = 60.0
+    for sx in (-1, 1):
+        P("sub_planter", (gx + sx * 3.0, 7.0, 0), height=0.6)
+        P("bush_1", (gx + sx * 3.6, 1.0, 0), height=1.1)
+        P("flowers", (gx + sx * 2.6, 5.5, 0), height=0.7)
+        P("sub_tree_small", (gx + sx * 6.0, 4.0, 0), height=3.0)
+
+
 # ------------------------------------------------------------------------------------------------ prints
 class Group:
     pass
@@ -667,6 +727,7 @@ def build(kit, story, tl):
     build_lights(kit, ctx)
     link_rough_lights(kit, ctx)
     build_extras(kit, ctx, M)
+    build_props(kit, ctx, M)
     build_trails(kit, ctx, tl)
     ctx["inited"] = False
     return ctx

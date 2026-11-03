@@ -189,34 +189,26 @@ def look(x, y):
 
 
 # ============================================================================== TOWN (dusk, then night)
-# S01 the hook: lit golden street, my face in frame, pink soles, three townsfolk with trails of their own.
-CY = -7.0
-shot("S01", 0, cam(([0.2, -10.2, 1.2], [0.2, -1.0, 1.15], 34), ([0.2, -10.0, 1.2], [0.2, -1.0, 1.15], 34), hand=0.006),
-     {"me": {"pos": [0.1, -3.2], "end": [0.1, -4.6], "expr": "worried"},
-      "woman": {"pos": [-2.7, 1.4], "end": [-2.7, -0.4]},
-      "pass1": {"pos": [2.6, 3.0], "end": [2.6, 1.0]},
-      "pass2": {"pos": [-1.0, 7.0], "end": [-1.0, 4.9]}}, tod="dusk")
-trail(0, "t_me", PINK, pre=[[[0.1, -3.2], [0.1, 18]]], strength=3.0)
-trail(0, "t_me_w", PINK, walker="me", strength=3.0)
-trail(0, "t_wo", YEL, pre=[[[-2.7, 1.4], [-2.2, 17]]], strength=3.0)
-trail(0, "t_wo_w", YEL, walker="woman", strength=3.0)
-trail(0, "t_p1", CORAL, pre=[[[2.6, 3.0], [3.0, 16]]], strength=3.0)
-trail(0, "t_p1_w", CORAL, walker="pass1", strength=3.0)
-trail(0, "t_p2", LIME, pre=[[[-1.0, 7.0], [-1.0, 18]]], strength=3.0)
-trail(0, "t_p2_w", LIME, walker="pass2", strength=3.0)
-
-# S02 low across the cobbles: four trails crossing
-shot("S02", "L02", cam(([-2.9, -2.6, 0.22], [0.9, 6.0, 0.0], 30), ([-2.7, -2.4, 0.24], [0.9, 6.0, 0.0], 30)), {}, tod="dusk")
-trail("L02", "c_y", YEL, [[[-3.2, 14], [-1.2, 6], [1.4, -3.8]]], strength=3.2)
-trail("L02", "c_o", ORG, [[[3.2, 12], [1.6, 5], [-1.4, -3.2]]], strength=3.2)
-trail("L02", "c_t", TEAL, [[[0.2, 16], [-0.6, 6], [2.9, -3.0]]], strength=3.2)
-trail("L02", "c_p", PINK, [[[-2.2, 10], [0.3, 3], [1.0, -3.8]]], strength=3.2)
+# S01 the hook (L01, L02): golden dusk in the orchard rows, my glowing pink trail and the dark square prints one stride
+# beside it, my face in frame. Close, lit to read, no fog. Characters face -y at yaw 0, so I walk toward the camera.
+HY = OY + 17.0
+shot("S01", 0, cam(([0.62, HY - 3.6, 1.0], [0.0, HY + 0.2, 0.95], 30), ([0.34, HY - 2.3, 1.02], [0.0, HY + 0.1, 0.98], 30), hand=0.004),
+     {"me": {"pos": O(0.0, 17.0), "end": O(0.0, 16.0), "yaw": 0, "expr": "worried"}}, tod="dusk")
+trail(0, "hk_p", PINK, [[O(0, 2.6), O(0, 66.0)]], strength=3.4)
+trail(0, "hk_pw", PINK, walker="me", strength=3.4)
+trail(0, "hk_s", "#1d2a16", [[O(geo.LEFT, 40.0), O(geo.LEFT, 3.0)]], kind="dark", gap=1.3, lat=0.32)
+# S79 low on my boots: pink prints under them, the dark squares one stride over (1.2 s into L01, "Don't walk beside")
+shot("S79", "L01.2", cam(([0.55, HY - 3.2, 0.34], [-0.2, HY - 0.9, 0.2], 24), ([0.4, HY - 2.3, 0.4], [-0.3, HY - 0.9, 0.2], 24), hand=0.004),
+     {"me": {"pos": O(0.0, 16.0), "end": O(0.0, 15.0), "yaw": 0, "expr": "worried"}})
+# S02 (L02, "Especially if it's SQUARE"): high and close on one dark square beside a glowing pink print
+shot("S02", "L02", cam(([-0.5, HY - 3.2, 2.9], [-0.55, HY - 3.2, 0.0], 30), ([-0.5, HY - 3.2, 2.2], [-0.55, HY - 3.2, 0.0], 30), hand=0.003),
+     {}, tod="dusk")
 
 # S03 night: the woman in the green coat, looking about, worried
 shot("S03", "L03", cam(([0.4, -1.3, 1.45], [0.3, 4.0, 1.05], 40), ([0.7, -1.2, 1.5], [0.3, 4.0, 1.05], 40)),
      {"woman": {"pos": [0.9, 4.6], "end": [-0.2, 3.3], "yaw": 180, "expr": "worried", "head": [30, 0]}}, tod="night")
-for t_ in ("t_me", "t_me_w", "t_wo", "t_wo_w", "t_p1", "t_p1_w", "t_p2", "t_p2_w", "c_y", "c_o", "c_t", "c_p"):
-    off("L03", t_, 0.05)
+for t_ in ("hk_p", "hk_pw", "hk_s"):
+    off("L03", t_, 0.3)
 trail("L03", "y_wander", YEL, [[[2.6, 9], [0.9, 6.0], [-0.6, 4.4], [0.9, 3.3], [-0.5, 2.6]]], strength=3.6)
 # S04 her yellow trail runs back to a wooden bench, plain keys on it
 shot("S04", "L03.2", cam(([0.9, 0.8, 0.95], [-3.4, 8.8, 0.45], 34), ([0.9, 1.0, 0.95], [-3.4, 8.8, 0.45], 34)), {})
@@ -469,13 +461,29 @@ music = {"root": 43, "mode": "dorian", "bpm": 76, "seed": 41, "sections": [
     {"at": "L52", "voices": ["pad", "piano"], "energy": 0.3},
     {"at": "L57", "voices": ["pad", "piano", "pulse"], "energy": 0.45, "mode": "major", "root": 43},
     {"at": "L65", "voices": ["pad", "piano"], "energy": 0.35}]}
-sound = {"floor": "grass", "steps_db": -20,
+# soft hits and whooshes on the key cuts (recorded CC0 whoosh and thud, all kept low and under 4 kHz)
+WHOOSH = [(w, -27) for w in ("L03", "L05", "L07", "L09", "L14", "L18", "L24", "L27", "L29", "L39", "L43", "L49", "L57", "L61")]
+fx.extend({"at": a, "kind": "punch", "dur": 0.5, "zoom": z} for a, z in
+          [("L01.3", 1.07), ("L02.1", 1.08), ("L14", 1.05), ("L18", 1.06), ("L29", 1.08), ("L37", 1.07), ("L39", 1.05),
+           ("L43", 1.05), ("L49", 1.05)])
+sound = {"floor": "grass", "steps_db": -20, "rev": 2,
          "ambience": [{"kind": "wind", "from": 0, "to": "L08", "lufs": -40},
+                      {"kind": "crickets", "from": 0, "to": "L03", "lufs": -42},
+                      {"kind": "room", "from": "L04", "to": "L05", "lufs": -44},
                       {"kind": "crickets", "from": "L03", "to": "L07", "lufs": -38},
                       {"kind": "wind", "from": "L14", "to": "end", "lufs": -36},
                       {"kind": "hum", "from": "L30", "to": "L36", "lufs": -40},
                       {"kind": "hum", "from": "L36", "to": "L42", "lufs": -46}],
-         "sfx": [{"at": "L04", "kind": "click", "db": -16},
+         "sfx": [{"at": "L01.3+0.1", "kind": "thud", "db": -18},
+                 {"at": "L02.1", "kind": "thud", "db": -16},
+                 {"at": "L01.2", "kind": "whoosh", "db": -28},
+                 {"at": "L02", "kind": "whoosh", "db": -28},
+                 {"at": "L04", "kind": "click", "db": -16},
+                 {"at": "L14", "kind": "thud", "db": -26},
+                 {"at": "L18.3", "kind": "thud", "db": -26},
+                 {"at": "L29.3", "kind": "thud", "db": -24},
+                 {"at": "L39", "kind": "riser", "db": -28, "dur": 0.9},
+                 *[{"at": a_, "kind": "whoosh", "db": d_} for a_, d_ in WHOOSH],
                  {"at": "L22.3", "kind": "thud", "db": -24},
                  {"at": "L27", "kind": "creak", "db": -22, "dur": 1.2},
                  {"at": "L34", "kind": "door", "db": -16},
@@ -484,12 +492,12 @@ sound = {"floor": "grass", "steps_db": -20,
                  {"at": "L44.3", "kind": "riser", "db": -22, "dur": 1.0},
                  {"at": "P64", "kind": "bell", "db": -24},
                  {"at": "L66.3", "kind": "glide", "db": -18, "dur": 1.0}],
-         "music_drops": [{"from": "L36-0.6", "to": "L36.1", "keep": ["sting"]},
+         "music_drops": [{"from": "L01.3-0.05", "to": "L01.3+0.55"}, {"from": "L36-0.6", "to": "L36.1", "keep": ["sting"]},
                          {"from": "L44-0.6", "to": "L44.1"}]}
 
 story = {
     "slug": "ep41-orchard-rows",
-    "title": "In this town, every footprint glows until sunrise",
+    "title": "The Trail Beside Mine Doesn't GLOW 👣",
     "made_for_kids": False,
     "premise": "In this town every footprint glows in its owner's colour until the next sunrise. Back in my grandmother's "
                "orchard for harvest week, my old pink paths still glow in every row, though everyone else's prints fade at "

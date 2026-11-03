@@ -6,50 +6,50 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this town, every footprint you leave glows until the next sunrise.",
+   "text": "Every footprint here glows. Don't walk beside one that doesn't.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.069,
+   "dur": 2.966,
    "onset": 0.172,
-   "end": 2.879,
+   "end": 2.776,
    "chunks": [
     [
      0.172,
-     0.655
+     0.647
     ],
     [
-     0.707,
-     1.276
+     0.647,
+     1.259
     ],
     [
-     1.276,
-     1.939
+     1.345,
+     1.966
     ],
     [
-     1.939,
-     2.879
+     1.966,
+     2.776
     ]
    ]
   },
   "L02": {
-   "text": "We each glow our own colour.",
+   "text": "Especially if it's square.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.586,
+   "dur": 1.483,
    "onset": 0.172,
-   "end": 1.379,
+   "end": 1.276,
    "chunks": [
     [
      0.172,
-     0.629
+     0.612
     ],
     [
-     0.629,
-     1.379
+     0.612,
+     1.276
     ]
    ]
   },
