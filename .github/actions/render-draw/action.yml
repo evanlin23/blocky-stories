@@ -1,5 +1,5 @@
 name: render-draw
-description: Draw one shard of one story's final frames and keep them as the artifact frames-<story>-<shard> (used by render.yml's draw-a and draw-b)
+description: Draw one shard of one story's final frames and keep them as the artifact frames-<story>-<shard>of<shards> (used by render.yml's draw-a and draw-b)
 inputs:
   story: {description: story folder, required: true}
   shard: {description: shard number, required: true}
@@ -23,7 +23,7 @@ runs:
     shell: bash
   - uses: actions/upload-artifact@v4
     with:
-      name: frames-${{ inputs.story }}-${{ inputs.shard }}
+      name: frames-${{ inputs.story }}-${{ inputs.shard }}of${{ inputs.shards }}
       path: out/work/${{ inputs.story }}/frames/*.png
       retention-days: 5
       compression-level: 0
