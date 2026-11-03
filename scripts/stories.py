@@ -63,6 +63,23 @@ def film(story: str) -> dict | None:
             "created_at": x["created_at"]}
 
 
+QA = ROOT / "qa"   # qa/<story>.json: the final-film check (owner, 2026-11-03: "We should ensure everything is good before we publish.")
+
+
+def qa_passed(story: str, f: dict | None) -> bool:
+    """True when qa/<story>.json passed this exact film (its artifact id, or "legacy"). A re-render needs a new check.
+    QA_REQUIRED=false turns the check off (emergencies only)."""
+    if os.environ.get("QA_REQUIRED", "true").strip().lower() == "false":
+        return True
+    if not f:
+        return False
+    p = QA / f"{story}.json"
+    if not p.exists():
+        return False
+    q = json.loads(p.read_text())
+    return q.get("verdict") == "pass" and str(q.get("film")) == str(f.get("id") or "legacy")
+
+
 # what changes the film: everything in the story folder but the words around it (package, reviews, notes)
 NOT_FILM = ("package.json", "reviews", "notes", "*.md")
 

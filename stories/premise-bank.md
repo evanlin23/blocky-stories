@@ -63,6 +63,25 @@ What the panels taught us (also in `playbook.md`):
 | 29 | P06 | Dad Jokes Make It Rain 🌧️ | In this town, every bad joke your dad tells makes it rain a little harder. | Being embarrassed by Dad, until the drought. | Quote-back comments 25% (the jokes are the quote); 'dad' 23 comment mentions | story | 31 | 30 |
 | 30 | P24 | The Thermostat War 🌡️ | In this house, whoever touches the thermostat swaps the weather outside. | Mum and Dad's temperature fight. | Gag shape; family-conflict gags lead the short end (deep #7, 2.03M/day) | gag | 39 | 27 |
 
+## Lane additions (2026-11-03, for slots 5 to 7 and the core lane; not yet panel-ranked)
+From `docs/research/port-study.md` and the owner's niche map. Rank them with the next blind panel.
+
+| ID | Lane | Title | First line | Want or fight | Evidence | Shape |
+|---|---|---|---|---|---|---|
+| W1 | what-if | What If Every Step Got Louder? 👣 | Every step you take is louder than the last one. | Sneaking home late without waking the house | 5 new what-if channels at 100K+/day; 3 use a doubling meter (port study) | story |
+| W2 | what-if | What If Saying Yes Made You Quieter? 🤐 | Every time you agree to something, your voice gets a little quieter. | A people-pleaser at work learns to say no | Same, plus self-insert comments on 19 of 40 fast blocky Shorts | story |
+| W3 | what-if | What if your fridge got one degree colder every hour | Don't open the fridge after midnight. It's been getting colder all week. | Roommates fighting over the fridge | Same; warning opening (recipe) | story |
+| K1 | rulebook host | Rule One: Never Read Ahead 📕 | I keep this town's rulebook, and rule one is you never read ahead. | A night clerk who's lonely in the town hall | Sequel and host requests, almost none supplied (niche map); a 9-day-old small-town rules channel at 497K/day | story (pilot) |
+| K2 | rulebook host | Rule Two: Don't Feed the Streetlights 💡 | In this town, you don't feed the streetlights. They lean toward anything you're eating. | The Keeper wants one friend in town | Same | story |
+| K3 | rulebook host | Rule three was torn out | Rule three is missing, and everyone in town still obeys it. | The Keeper wants to know who tore it | Same; spot-the-detail comments (14 of 40) | story |
+| Z1 | horror puzzle | One Of These Neighbors Isn't Home 🏠 | Don't wave back at the one who isn't real. | Being polite to the wrong neighbor | "Which one is not human?" at 1M (niche map); comment a letter (playbook item 9) | gag |
+| Z2 | horror puzzle | Which barista came back wrong ☕ | After the power cut, one of the baristas came back different. | Your morning coffee, ruined | Riddle has the most new channels in the wide scan (16) | gag |
+| Z3 | horror puzzle | One guest wasn't invited 🎂 | Never count the guests at this party. | A birthday you didn't want | Same | gag |
+| C1 | creepy town rule | The Tuesday Door 🚪 | In this town, you never open the extra door that shows up on Tuesdays. | A sibling who always opens what they shouldn't | The owner's niche-map sketch (an extra door that knocks from inside); quiet dread is the lane | story |
+| C2 | creepy town rule | Don't Read Next Week's Mail ✉️ | In this town, the mail brings the letters you'll write next week, and you don't read them. | Making up with someone before you hurt them | The owner's niche-map sketch (next week's letters) | story |
+| C3 | creepy town rule | When The Siren Sounds, Nobody Laughs 📢 | When the town siren sounds, you stand still, and you never laugh. | A best friend who can't keep a straight face | Warning titles: 7 of the 17 fastest blocky stories; quotable rule | story |
+| C4 | creepy town rule | the house with no number | Never ring the doorbell of the house with no number. | A new delivery driver who needs the job | Warning opening; night-job lane (back-row) | story |
+
 ## US English fixes (use these when the premise is made)
 
 - P04: Mom Can Hear Through Walls 👂 (and "every mom")

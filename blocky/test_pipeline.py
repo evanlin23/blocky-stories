@@ -80,6 +80,7 @@ def test_upload_description_adds_flash_line():
 
 
 def test_upload_spaces_out_twist_shapes(monkeypatch):
+    monkeypatch.setenv("QA_REQUIRED", "false")   # the final-film check has its own test
     sys.path.insert(0, str(ROOT / "scripts"))
     import upload
 
@@ -98,6 +99,7 @@ def test_upload_spaces_out_twist_shapes(monkeypatch):
 
 
 def test_upload_queue_goes_first(monkeypatch):
+    monkeypatch.setenv("QA_REQUIRED", "false")   # the final-film check has its own test
     sys.path.insert(0, str(ROOT / "scripts"))
     import upload
 
@@ -214,6 +216,7 @@ def test_check_blocks_a_narrator_who_says_my_husband():
 
 
 def test_ready_count_skips_held_done_and_unfilmed(monkeypatch):
+    monkeypatch.setenv("QA_REQUIRED", "false")   # the final-film check has its own test
     sys.path.insert(0, str(ROOT / "scripts"))
     import upload
 
@@ -475,3 +478,24 @@ def test_upload_day_is_central_and_never_late_at_night():
     assert not upload.in_auto_hours(nine_pm)
     assert upload.in_auto_hours(dt.datetime(2026, 11, 3, 12, 47, tzinfo=dt.timezone.utc))   # 6:47 AM Central
     assert not upload.in_auto_hours(dt.datetime(2026, 11, 3, 10, 0, tzinfo=dt.timezone.utc))   # 4 AM Central
+
+
+def test_upload_needs_a_final_film_check(tmp_path, monkeypatch):
+    import json
+
+    import stories
+
+    monkeypatch.setattr(stories, "QA", tmp_path)
+    monkeypatch.delenv("QA_REQUIRED", raising=False)
+    f = {"id": 42}
+    assert not stories.qa_passed("x", f)
+    (tmp_path / "x.json").write_text(json.dumps({"film": 41, "verdict": "pass"}))
+    assert not stories.qa_passed("x", f)   # an older film's check doesn't count
+    (tmp_path / "x.json").write_text(json.dumps({"film": 42, "verdict": "fail"}))
+    assert not stories.qa_passed("x", f)
+    (tmp_path / "x.json").write_text(json.dumps({"film": 42, "verdict": "pass"}))
+    assert stories.qa_passed("x", f)
+    (tmp_path / "y.json").write_text(json.dumps({"film": "legacy", "verdict": "pass"}))
+    assert stories.qa_passed("y", {"id": None, "legacy": "y.mp4"})
+    monkeypatch.setenv("QA_REQUIRED", "false")
+    assert stories.qa_passed("z", None)
