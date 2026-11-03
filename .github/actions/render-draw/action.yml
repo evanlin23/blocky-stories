@@ -1,0 +1,29 @@
+name: render-draw
+description: Draw one shard of one story's final frames and keep them as the artifact frames-<story>-<shard> (used by render.yml's draw-a and draw-b)
+inputs:
+  story: {description: story folder, required: true}
+  shard: {description: shard number, required: true}
+  shards: {description: total shards (render.yml's SHARDS), required: true}
+runs:
+  using: composite
+  steps:
+  - uses: actions/setup-python@v5
+    with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+  - run: sudo apt-get update -q && sudo apt-get install -yq libegl1 libgl1 libxi6 libxxf86vm1 libxfixes3 libxrender1 libxkbcommon0 libsm6
+    shell: bash
+  - run: pip install -r requirements.txt -r requirements-bpy.txt
+    shell: bash
+  - uses: actions/download-artifact@v4
+    with: {name: "voice-${{ inputs.story }}", path: .}
+  - name: draw shard ${{ inputs.shard }}
+    run: |
+      export BLOCKY_BPY=$(which python)
+      python -m blocky timeline ${{ inputs.story }}
+      python -m blocky render ${{ inputs.story }} --shard ${{ inputs.shard }}/${{ inputs.shards }}
+    shell: bash
+  - uses: actions/upload-artifact@v4
+    with:
+      name: frames-${{ inputs.story }}-${{ inputs.shard }}
+      path: out/work/${{ inputs.story }}/frames/*.png
+      retention-days: 5
+      compression-level: 0
