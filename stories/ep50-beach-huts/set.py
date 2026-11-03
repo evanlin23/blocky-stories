@@ -401,7 +401,7 @@ def build(kit, story, tl):
     # lantern
     lant = kit.empty("lantern", (LANT[0], LANT[1], DECK_Z))
     B(kit, "lant.base", (0.2, 0.2, 0.04), (0, 0, 0.02), kit.plastic("#2c2a28", 0.5, name="lantbase"), parent=lant)
-    kit.cyl("lant.glass", 0.085, 0.22, (0, 0, 0.15), kit.emit("#f6c27a", 2.2, name="lantglow"), lant, n=14)
+    kit.cyl("lant.glass", 0.085, 0.22, (0, 0, 0.15), kit.emit("#f6c27a", 1.1, name="lantglow"), lant, n=14)
     kit.cyl("lant.top", 0.1, 0.03, (0, 0, 0.275), kit.plastic("#2c2a28", 0.5, name="lantbase"), lant, n=14)
     ctx["lantern"] = lant
     # the puddle on the deck boards (L08): sky, a gull, the eave
@@ -448,7 +448,7 @@ def build(kit, story, tl):
     # --- lights
     sun = kit.light("sun", "SUN", (0, -20, 30), 4.0, "#fff1dc", size=0.01)
     ctx["sun"] = sun
-    kit.light("lantern", "POINT", (LANT[0], LANT[1], DECK_Z + 0.16), 900, "#f0b46a", size=0.08)
+    kit.light("lantern", "POINT", (LANT[0], LANT[1], DECK_Z + 0.16), 380, "#f0b46a", size=0.08)
     kit.light("laptop", "POINT", (0.0, -1.05, 1.0), 12, "#cfe0ff", size=0.1)
     kit.light("hutin", "POINT", (-0.4, 1.0, 2.1), 220, "#ffcf94", size=0.15)
     kit.light("headkey", "POINT", (2.3, -2.2, 1.0), 420, "#ffc27a", size=0.3)
@@ -457,7 +457,7 @@ def build(kit, story, tl):
     kit.light("benchlift", "AREA", (42.0, -13.0, 3.0), 900, "#c3d3f2", size=6.0)
     kit.aim(LIGHT("benchlift", kit), (46.8, -6.4, 0.3))
     kit.light("stagelit", "POINT", (hx(OURS) + WIN_X, 0.4, WIN_Z0 + 0.4), 10, "#d8e4f4", size=0.04)   # inside the glass box
-    kit.light("faceup", "POINT", (0.7, -2.3, 0.55), 450, "#ffb878", size=0.25)   # the Small Head, lit from below
+    kit.light("faceup", "POINT", (0.2, -1.3, 0.9), 260, "#ffb878", size=0.25)   # the Small Head, lit from below
     kit.light("shadowkey", "POINT", (3.3, -4.0, 1.5), 1400, "#f4b66e", size=0.04)
     kit.light("rim", "AREA", (3.0, -12.0, 1.4), 400, "#7aa2e0", size=5.0)
     kit.aim(LIGHT("rim", kit), (0.6, -0.9, 1.1))
@@ -617,6 +617,17 @@ def init(kit, story, tl, ctx):
         hs = story["cast"]["smallhead"].get("head_scale", 0.34)
         head = bpy.data.objects.get("smallhead.head")
         head.scale = (hs / wd * 0.9, hs, hs * 1.3)   # a long narrow head
+        for sx in (-1, 1):   # no legs: the canvas drapes over the chair
+            bpy.data.objects[f"smallhead.leg{sx}"].scale = (0.001, 0.001, 0.001)
+        # lifted clear of the stripes on a neck
+        nl = story["cast"]["smallhead"].get("neck", 0.0)
+        if nl:
+            nk = bpy.data.objects["smallhead.neck"]
+            nk.location = (0, 0, 2.0 + nl)
+            skin = bpy.data.objects["smallhead.headm"].data.materials[0] if False else None
+            skm = kit.plastic(story["cast"]["smallhead"]["skin"], 0.5)
+            kit.box("smallhead.neckm", (0.62 / wd * 0.9, 0.62, nl + 0.3), (0, 0, 2.0 + nl / 2 - 0.05), skm,
+                    bpy.data.objects["smallhead.torso"], bevel=0.06)
     ctx["base"] = {}
     for who in story["cast"]:
         o = bpy.data.objects.get(who)

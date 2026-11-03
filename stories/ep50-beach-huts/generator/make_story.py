@@ -46,6 +46,7 @@ def R(ref):
     return f"{m.group(1)}.{NEWIDX[m.group(1)][int(m.group(2))]}{m.group(3)}"
 
 # ------------------------------------------------------------------------------------------------- cast
+SH_H = 1.6
 FACE = {"eyes": "round", "brows": True}
 cast = {
     "me": {"age": "adult", "skin": "#e6bf98", "shirt": "#b8327a", "pattern": "solid", "collar": "#8c8c92",
@@ -70,8 +71,8 @@ cast = {
                "shoes": "#2a2522", "sleeves": "long", "hair": "cap", "hair_c": "#1c1410",
                "face": {"eyes": "round", "brows": True}},
     "smallhead": {"age": "adult", "skin": "#a9a595", "shirt": "#b5655a", "pattern": "solid", "pants": "#6a7480",
-                  "shoes": "#4a4f58", "sleeves": "short", "hair": "none", "height": 1.5, "width": 1.2, "head_scale": 0.5,
-                  "face": {"eyes": "hollow", "glow": "#fff6dc", "mouth": "crescent", "brows": False, "eye_scale": 1.3}},
+                  "shoes": "#4a4f58", "sleeves": "short", "hair": "none", "height": SH_H, "width": 0.9, "head_scale": 0.5, "neck": 0.9,
+                  "face": {"eyes": "round", "mouth": "none", "brows": False, "eye_scale": 1.25}},
 }
 reflections = {
     "r_neighbour": {"of": "neighbour"},
@@ -182,14 +183,14 @@ S("L43", "the tiny head on the wall", still((1.2, -4.0, 2.0), (0.6, 0, 2.5), 34)
 S("P02", "hold on my face", still((0.5, -1.9, 1.45), (-0.35, -0.6, 1.45), 50), 1)
 # 05 the Small Head
 S("L44", "I turn my head", still((-1.1, -1.8, 1.5), (-0.35, -0.6, 1.45), 45), 1, gloom=0.45)
-S("L45", "the reveal", still((0.6, -4.2, 1.15), (1.3, -1.5, 1.6), 24), 1, gloom=0.55)
+S("L45", "the reveal: taller than the chair, the head on its neck", still((-0.4, -5.6, 0.8), (1.0, -1.5, 1.75), 20), 1, gloom=0.55)
 S("L46", "the stripes", still((-0.5, -2.7, 1.2), (1.2, -1.5, 1.2), 34), 1, gloom=0.3)
-S("L47", "spilling over the chair", still((-0.9, -3.6, 0.8), (1.3, -1.5, 0.9), 26), 1, gloom=0.3)
-S("L48", "tilt up to the head", move(((0.4, -3.4, 0.5), (1.3, -1.5, 0.9)), ((0.4, -3.4, 0.6), (1.3, -1.5, 2.1)), 30), 1, gloom=0.45)
-S("L49", "its head bends down", still((-2.4, -3.0, 1.6), (0.4, -0.9, 1.75), 26), 1, gloom=0.45)
-S("L50", "closer", still((-2.4, -3.0, 1.6), (0.3, -0.9, 1.7), 26), 1, gloom=0.45)
-S("L51", "closer still", still((-1.5, -2.5, 1.55), (0.0, -0.8, 1.55), 34), 1, gloom=0.45)
-S("L52", "its dot eyes", still((-1.4, -2.4, 1.75), (0.27, -0.87, 1.65), 34), 1, gloom=0.45)
+S("L47", "spilling over the chair", still((-1.2, -3.8, 1.3), (1.3, -1.5, 1.75), 28), 1, gloom=0.3)
+S("L48", "tilt up to the head", move(((-0.3, -3.6, 1.2), (1.2, -1.5, 1.5)), ((-0.3, -3.6, 1.3), (1.0, -1.3, 2.7)), 30), 1, gloom=0.45)
+S("L49", "its head bends down", still((-2.6, -2.4, 1.1), (0.9, -1.3, 2.3), 24), 1, gloom=0.45)
+S("L50", "closer", still((-2.0, -1.6, 1.3), (0.4, -1.0, 2.3), 26), 1, gloom=0.45)
+S("L51", "closer still", still((-1.3, -0.5, 1.5), (0.1, -0.8, 2.2), 32), 1, gloom=0.45)
+S("L52", "its eyes", still((-1.0, -0.35, 1.6), (-0.1, -0.7, 2.2), 45), 1, gloom=0.45)
 S("L52.2", "its view: me and the laptop", still((0.05, -1.25, 1.95), (-0.35, -0.7, 1.0), 35), 1, gloom=0.45)
 S("L53", "the glass: the chair empty in it", still((0.1, -2.7, 1.5), (1.0, 0, 1.4), 28), 2, **NSTAGE(5), schair=True, hidecr=True)
 S("L54", "no reflection either", still((0.9, -1.2, 1.45), (1.0, 0, 1.4), 30), 2, **NSTAGE(5), schair=True, hidecr=True)
@@ -229,7 +230,7 @@ S("L73", "golden evening on the sand", still((5.5, -14.5, 1.3), (5.5, -6.8, 0.9)
 S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4), 26), 2,
   refl={"r_me": "sand", "r_remi": "sand"})
 S("L74", "both reflections in our window", still((0.35, -2.7, 1.45), (0.35, 0, 1.4), 24), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
-S("L75", "mine, smiling", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage"))
+S("L75", "ours, walking together", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L76", "this morning: our window, the empty chair", still((0.5, -3.3, 1.4), (0.5, -0.3, 1.0), 24), 1, **NSTAGE(5, r_me="stage"))
 S("L76.2", "far down the sand, the magenta figure alone", still((7.0, -5.5, 1.6), (13.0, -8.8, -0.2), 24), 1, refl={"r_me": {"kind": "sand", "scale": 1.6}})
 
@@ -414,7 +415,7 @@ put("remi", "L71.1", [CHAIR_A[0], CHAIR_A[1], DECK + 0.4 - SEAT], yaw=0, sit=Tru
 hide("remi", "L72")
 put("remi", "L73", [4.3, -6.4], yaw=90, expr=GRIN)
 walk("remi", "L73+2.6", [9.3, -6.4])
-put("remi", "L74", [0.4, -1.25], yaw=0, expr=GRIN)
+put("remi", "L74", [0.4, -1.25], yaw=0, expr="smile")
 hide("remi", "L75")
 
 # --- the reflections of me and Remi (stage: pos [lateral, depth])
@@ -451,8 +452,9 @@ put("r_remi", "L69", [BENCH[0] - 0.4, BENCH[1], -SEAT + 0.45], yaw=0, sit=True, 
 hide("r_remi", "L69.2")
 put("r_remi", "L73", [4.3, -6.4], yaw=90, expr=GRIN)
 walk("r_remi", "L73+2.6", [9.3, -6.4])
-put("r_remi", "L74", [-1.2, 0.1], yaw=0, expr=GRIN, big=1.5)
-hide("r_remi", "L75")
+put("r_remi", "L74", [-0.2, 0.2], yaw=WY, expr="smile", stroll=True, big=1.5)
+walk("r_remi", "L76", [0.1, 0.45], yaw=WY)
+hide("r_remi", "L76")
 
 put("r_me", "L17", [-6.5, 0.94], yaw=180, stroll=False, big=1.0)
 hide("r_me", "L18")
@@ -473,8 +475,8 @@ put("r_me", "L69", [BENCH[0] + 0.5, BENCH[1], -SEAT + 0.45], yaw=0, sit=True, ex
 hide("r_me", "L69.2")
 put("r_me", "L73", [3.0, -6.8], yaw=90, expr=GRIN)
 walk("r_me", "L73+2.6", [8.0, -6.8])
-put("r_me", "L74", [0.3, 0.1], yaw=0, expr=GRIN, big=1.5)
-put("r_me", "L75", [0.3, 0.1], yaw=0, expr=GRIN, big=1.5)
+put("r_me", "L74", [0.35, 0.2], yaw=WY, expr=GRIN, stroll=True, big=1.5)
+walk("r_me", "L76", [0.65, 0.45], yaw=WY)
 hide("r_me", "L76")
 put("r_me", "L76", [0.3, 0.12], yaw=WY, stroll=True, big=1.6)
 walk("r_me", "L76.2", [0.9, 0.5], yaw=WY)
@@ -483,14 +485,14 @@ walk("r_me", "end", [16.0, -8.5])
 
 # --- the Small Head. Three held poses, each closer; never moving inside a shot.
 SH = CHAIR_B
-SH_Z = DECK + 0.4 - SEAT * 1.4 - 0.04
+SH_Z = DECK + 0.4 - 2.0 * 0.34 * SH_H + 0.06     # legs hidden under the draped canvas
 to_me = yaw_to(SH, ME_SIT)
 put("smallhead", "L41", [SH[0], SH[1], SH_Z], yaw=-25, sit=True, bow=0, expr="neutral", head=[0, 14])
-put("smallhead", "L49", [SH[0], SH[1], SH_Z], yaw=to_me, sit=True, bow=14, head=[0, 0], expr="neutral")
-put("smallhead", "L50", [SH[0] - 0.18, SH[1] + 0.12, SH_Z], yaw=to_me, sit=True, bow=28, head=[0, 0], expr="neutral")
-put("smallhead", "L51", [SH[0] - 0.42, SH[1] + 0.30, SH_Z], yaw=to_me, sit=True, bow=46, head=[0, 0], expr="neutral")
-key("smallhead", "L52.2", bow=46)
-key("smallhead", "L53", bow=46)
+put("smallhead", "L49", [SH[0], SH[1], SH_Z], yaw=to_me, sit=True, bow=12, head=[0, 0], expr="neutral")
+put("smallhead", "L50", [SH[0] - 0.18, SH[1] + 0.12, SH_Z], yaw=to_me, sit=True, bow=24, head=[0, 0], expr="neutral")
+put("smallhead", "L51", [SH[0] - 0.42, SH[1] + 0.30, SH_Z], yaw=to_me, sit=True, bow=36, head=[0, 10], expr="neutral")
+key("smallhead", "L52.2", bow=36)
+key("smallhead", "L53", bow=36)
 put("smallhead", "L61.2", [SH[0] - 0.1, SH[1] + 0.08, SH_Z], yaw=yaw_to(SH, (-0.1, -0.4)), sit=True, bow=40, head=[0, 30])
 hide("smallhead", "L62")
 
