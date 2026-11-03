@@ -8,20 +8,12 @@
     "On this hill,"
    ],
    [
-    "whatever you FORGET",
-    "whatever you forget"
+    "you grow ROOTS",
+    "you grow roots"
    ],
    [
-    "comes back UP",
-    "comes back up"
-   ],
-   [
-    "out of",
-    "out of"
-   ],
-   [
-    "the GROUND.",
-    "the ground."
+    "where you BELONG.",
+    "where you belong."
    ]
   ]
  },
@@ -30,24 +22,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Forget your KEYS",
-    "Forget your keys"
+    "Old Mr PELL'S",
+    "Old Mr Pell's"
    ],
    [
-    "in the LETTUCE,",
-    "in the lettuce,"
+    "run under",
+    "run under"
    ],
    [
-    "and by THURSDAY",
-    "and by Thursday"
+    "the PATH,",
+    "the path,"
    ],
    [
-    "there's a",
-    "there's a"
+    "all the way",
+    "all the way"
    ],
    [
-    "KEY PLANT.",
-    "key plant."
+    "to the GATE.",
+    "to the gate."
    ]
   ]
  },
@@ -56,16 +48,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Nobody up here",
-    "Nobody up here"
+    "When he visits",
+    "When he visits"
    ],
    [
-    "owns a SECOND",
-    "owns a second"
+    "his BROTHER,",
+    "his brother,"
    ],
    [
-    "UMBRELLA.",
-    "umbrella."
+    "they REPOT him.",
+    "they repot him."
    ]
   ]
  },
@@ -74,12 +66,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Plot TWO",
-    "Plot two"
+    "Leave an UMBRELLA",
+    "Leave an umbrella"
    ],
    [
-    "grows FLASKS.",
-    "grows flasks."
+    "by the gate",
+    "by the gate"
+   ],
+   [
+    "a WEEK,",
+    "a week,"
+   ],
+   [
+    "and it STAYS.",
+    "and it stays."
    ]
   ]
  },
@@ -88,20 +88,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Go and",
-    "Go and"
+    "My boots",
+    "My boots"
    ],
    [
-    "FIND it,",
-    "find it,"
+    "come up",
+    "come up"
    ],
    [
-    "and it's",
-    "and it's"
-   ],
-   [
-    "YOURS again.",
-    "yours again."
+    "CLEAN.",
+    "clean."
    ]
   ]
  },
@@ -110,16 +106,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Nothing EVER",
-    "Nothing ever"
+    "I've never grown",
+    "I've never grown"
    ],
    [
-    "comes up",
-    "comes up"
+    "a ROOT.",
+    "a root."
    ],
    [
-    "in MY plot.",
-    "in my plot."
+    "ANYWHERE.",
+    "anywhere."
    ]
   ]
  },
@@ -128,26 +124,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I don't FORGET",
-    "I don't forget"
+    "My MUM",
+    "My Mum"
    ],
    [
-    "things.",
-    "things."
-   ]
-  ]
- },
- {
-  "id": "L08",
-  "who": "narrator",
-  "chunks": [
-   [
-    "GRANDAD has",
-    "Grandad has"
-   ],
-   [
-    "plot NINE,",
-    "plot nine,"
+    "has plot NINE,",
+    "has plot nine,"
    ],
    [
     "across the PATH.",
@@ -156,36 +138,38 @@
   ]
  },
  {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Her roots",
+    "Her roots"
+   ],
+   [
+    "are the LONGEST",
+    "are the longest"
+   ],
+   [
+    "on the HILL.",
+    "on the hill."
+   ]
+  ]
+ },
+ {
   "id": "L09",
   "who": "narrator",
   "chunks": [
    [
-    "Every MORNING,",
-    "Every morning,"
+    "They run under",
+    "They run under"
    ],
    [
-    "he says HELLO",
-    "he says hello"
+    "every plot",
+    "every plot"
    ],
    [
-    "to three",
-    "to three"
-   ],
-   [
-    "old STAKES.",
-    "old stakes."
-   ],
-   [
-    "ONE,",
-    "one,"
-   ],
-   [
-    "FOUR,",
-    "four,"
-   ],
-   [
-    "SEVEN.",
-    "seven."
+    "she's EVER had.",
+    "she's ever had."
    ]
   ]
  },
@@ -194,16 +178,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Gran's green SCARF",
-    "Gran's green scarf"
+    "I don't belong",
+    "I don't belong"
    ],
    [
-    "still hangs",
-    "still hangs"
+    "ANYWHERE,",
+    "anywhere,"
    ],
    [
-    "in his SHED.",
-    "in his shed."
+    "except across",
+    "except across"
+   ],
+   [
+    "the path",
+    "the path"
+   ],
+   [
+    "from HER.",
+    "from her."
    ]
   ]
  },
@@ -216,16 +208,16 @@
     "This week,"
    ],
    [
-    "his GLASSES",
-    "his glasses"
+    "she gives me",
+    "she gives me"
    ],
    [
-    "come up",
-    "come up"
+    "her BUCKET.",
+    "her bucket."
    ],
    [
-    "in his BEANS.",
-    "in his beans."
+    "Then her FLASK.",
+    "Then her flask."
    ]
   ]
  },
@@ -234,16 +226,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then his CAP.",
-    "Then his cap."
+    "She says",
+    "She says"
    ],
    [
-    "He LAUGHS",
-    "He laughs"
-   ],
-   [
-    "it off.",
-    "it off."
+    "she's TIDYING UP.",
+    "she's tidying up."
    ]
   ]
  },
@@ -256,12 +244,8 @@
     "On Monday,"
    ],
    [
-    "something BIGGER",
-    "something bigger"
-   ],
-   [
-    "comes up",
-    "comes up"
+    "something comes UP",
+    "something comes up"
    ],
    [
     "in plot ONE.",
@@ -314,8 +298,22 @@
   "who": "narrator",
   "chunks": [
    [
-    "Grandad",
-    "Grandad"
+    "It's FACING",
+    "It's facing"
+   ],
+   [
+    "the GATE.",
+    "the gate."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mum",
+    "Mum"
    ],
    [
     "just goes QUIET.",
@@ -324,7 +322,7 @@
   ]
  },
  {
-  "id": "L17",
+  "id": "L18",
   "who": "narrator",
   "chunks": [
    [
@@ -342,7 +340,7 @@
   ]
  },
  {
-  "id": "L18",
+  "id": "L19",
   "who": "narrator",
   "chunks": [
    [
@@ -360,7 +358,7 @@
   ]
  },
  {
-  "id": "L19",
+  "id": "L20",
   "who": "narrator",
   "chunks": [
    [
@@ -370,20 +368,16 @@
   ]
  },
  {
-  "id": "L20",
+  "id": "L21",
   "who": "narrator",
   "chunks": [
    [
-    "The head",
-    "The head"
+    "The head is",
+    "The head is"
    ],
    [
-    "is in",
-    "is in"
-   ],
-   [
-    "plot FOUR,",
-    "plot four,"
+    "in plot FOUR,",
+    "in plot four,"
    ],
    [
     "out to",
@@ -396,7 +390,21 @@
   ]
  },
  {
-  "id": "L21",
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And Mum's ROOTS",
+    "And Mum's roots"
+   ],
+   [
+    "are SHORTER.",
+    "are shorter."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
   "who": "narrator",
   "chunks": [
    [
@@ -418,52 +426,24 @@
   ]
  },
  {
-  "id": "L22",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Grandad talks",
-    "Grandad talks"
-   ],
-   [
-    "to his BEANS",
-    "to his beans"
-   ],
-   [
-    "like Gran's",
-    "like Gran's"
-   ],
-   [
-    "still THERE.",
-    "still there."
-   ]
-  ]
- },
- {
-  "id": "L23",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Today,",
-    "Today,"
-   ],
-   [
-    "he STOPS.",
-    "he stops."
-   ]
-  ]
- },
- {
   "id": "L24",
   "who": "narrator",
   "chunks": [
    [
-    "He can't find",
-    "He can't find"
+    "Mum stands",
+    "Mum stands"
    ],
    [
-    "her NAME.",
-    "her name."
+    "at the GATE",
+    "at the gate"
+   ],
+   [
+    "a long TIME,",
+    "a long time,"
+   ],
+   [
+    "looking OUT.",
+    "looking out."
    ]
   ]
  },
@@ -490,8 +470,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Between his BEANS,",
-    "Between his beans,"
+    "Between her BEANS,",
+    "Between her beans,"
    ],
    [
     "something STANDS,",
@@ -524,8 +504,8 @@
     "too far round,"
    ],
    [
-    "looking at GRANDAD.",
-    "looking at Grandad."
+    "looking at MUM.",
+    "looking at Mum."
    ]
   ]
  },
@@ -534,8 +514,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "And Grandad",
-    "And Grandad"
+    "And Mum",
+    "And Mum"
    ],
    [
     "looks right BACK.",
@@ -552,20 +532,12 @@
     "Then I see"
    ],
    [
-    "the ROOTS",
-    "the roots"
+    "where its",
+    "where its"
    ],
    [
-    "round its HEAD,",
-    "round its head,"
-   ],
-   [
-    "KNOTTED",
-    "knotted"
-   ],
-   [
-    "like Gran's SCARF.",
-    "like Gran's scarf."
+    "ROOTS GO.",
+    "roots go."
    ]
   ]
  },
@@ -574,8 +546,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "It's GRAN.",
-    "It's Gran."
+    "Across the SOIL,",
+    "Across the soil,"
+   ],
+   [
+    "and into",
+    "and into"
+   ],
+   [
+    "her BOOTS.",
+    "her boots."
    ]
   ]
  },
@@ -584,24 +564,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "ONE, FOUR,",
-    "one, four,"
-   ],
-   [
-    "SEVEN, NINE.",
-    "seven, nine."
-   ],
-   [
-    "Every plot",
-    "Every plot"
-   ],
-   [
-    "they've HAD",
-    "they've had"
-   ],
-   [
-    "in FIFTY YEARS.",
-    "in fifty years."
+    "It's HER.",
+    "It's her."
    ]
   ]
  },
@@ -610,28 +574,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "He's forgetting her",
-    "He's forgetting her"
+    "Every root",
+    "Every root"
    ],
    [
-    "a year",
-    "a year"
+    "she ever",
+    "she ever"
    ],
    [
-    "at a TIME,",
-    "at a time,"
+    "put DOWN here,",
+    "put down here,"
    ],
    [
-    "and the hill",
-    "and the hill"
+    "coming UP",
+    "coming up"
    ],
    [
-    "gives every",
-    "gives every"
-   ],
-   [
-    "year BACK.",
-    "year back."
+    "in her SHAPE.",
+    "in her shape."
    ]
   ]
  },
@@ -640,24 +600,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "When she's all",
-    "When she's all"
+    "That's why",
+    "That's why"
    ],
    [
-    "the way OUT,",
-    "the way out,"
+    "the pebble",
+    "the pebble"
    ],
    [
-    "he won't",
-    "he won't"
-   ],
-   [
-    "remember her",
-    "remember her"
-   ],
-   [
-    "at ALL.",
-    "at all."
+    "never LANDS.",
+    "never lands."
    ]
   ]
  },
@@ -666,24 +618,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "But what",
-    "But what"
+    "Mum is LEAVING",
+    "Mum is leaving"
    ],
    [
-    "comes BACK",
-    "comes back"
-   ],
-   [
-    "is yours AGAIN",
-    "is yours again"
-   ],
-   [
-    "if you",
-    "if you"
-   ],
-   [
-    "FIND it.",
-    "find it."
+    "the HILL.",
+    "the hill."
    ]
   ]
  },
@@ -692,20 +632,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "So I",
-    "So I"
+    "She couldn't",
+    "She couldn't"
    ],
    [
-    "walk him",
-    "walk him"
-   ],
-   [
-    "back up",
-    "back up"
-   ],
-   [
-    "the PATH.",
-    "the path."
+    "TELL me.",
+    "tell me."
    ]
   ]
  },
@@ -714,20 +646,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "At every HOLE,",
-    "At every hole,"
+    "And I'll be",
+    "And I'll be"
    ],
    [
-    "I tell him",
-    "I tell him"
+    "across the path",
+    "across the path"
    ],
    [
-    "what he",
-    "what he"
-   ],
-   [
-    "told ME.",
-    "told me."
+    "from NOTHING.",
+    "from nothing."
    ]
   ]
  },
@@ -736,20 +664,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Their first PEAS.",
-    "Their first peas."
+    "But nobody",
+    "But nobody"
    ],
    [
-    "The SHED",
-    "The shed"
+    "up here",
+    "up here"
    ],
    [
-    "they built",
-    "they built"
+    "MOVES house.",
+    "moves house."
    ],
    [
-    "in the RAIN.",
-    "in the rain."
+    "They get REPOTTED.",
+    "They get repotted."
    ]
   ]
  },
@@ -758,24 +686,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "At plot NINE,",
-    "At plot nine,"
+    "So I fill",
+    "So I fill"
    ],
    [
-    "he looks her",
-    "he looks her"
+    "her BUCKET",
+    "her bucket"
    ],
    [
-    "in the EYES",
-    "in the eyes"
-   ],
-   [
-    "and says",
-    "and says"
-   ],
-   [
-    "her NAME.",
-    "her name."
+    "with plot NINE.",
+    "with plot nine."
    ]
   ]
  },
@@ -784,8 +704,48 @@
   "who": "narrator",
   "chunks": [
    [
-    "The soil",
-    "The soil"
+    "One BEAN,",
+    "One bean,"
+   ],
+   [
+    "and all",
+    "and all"
+   ],
+   [
+    "the soil",
+    "the soil"
+   ],
+   [
+    "round its ROOTS.",
+    "round its roots."
+   ]
+  ]
+ },
+ {
+  "id": "L40",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Her roots",
+    "Her roots"
+   ],
+   [
+    "climb IN.",
+    "climb in."
+   ]
+  ]
+ },
+ {
+  "id": "L41",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The thing",
+    "The thing"
+   ],
+   [
+    "in the beans",
+    "in the beans"
    ],
    [
     "SETTLES",
@@ -798,60 +758,32 @@
   ]
  },
  {
-  "id": "L40",
-  "who": "narrator",
-  "chunks": [
-   [
-    "That night,",
-    "That night,"
-   ],
-   [
-    "he hangs",
-    "he hangs"
-   ],
-   [
-    "his CAP",
-    "his cap"
-   ],
-   [
-    "by her SCARF.",
-    "by her scarf."
-   ]
-  ]
- },
- {
-  "id": "L41",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On this HILL,",
-    "On this hill,"
-   ],
-   [
-    "whatever you FORGET",
-    "whatever you forget"
-   ],
-   [
-    "comes back UP.",
-    "comes back up."
-   ]
-  ]
- },
- {
   "id": "L42",
   "who": "narrator",
   "chunks": [
    [
-    "This MORNING,",
-    "This morning,"
+    "On SATURDAY,",
+    "On Saturday,"
    ],
    [
-    "something came up",
-    "something came up"
+    "she wheels",
+    "she wheels"
    ],
    [
-    "in MY plot.",
-    "in my plot."
+    "her bike",
+    "her bike"
+   ],
+   [
+    "up the PATH,",
+    "up the path,"
+   ],
+   [
+    "the bucket",
+    "the bucket"
+   ],
+   [
+    "on the HANDLEBARS.",
+    "on the handlebars."
    ]
   ]
  },
@@ -860,12 +792,70 @@
   "who": "narrator",
   "chunks": [
    [
-    "I can't remember",
-    "I can't remember"
+    "At the GATE,",
+    "At the gate,"
    ],
    [
-    "WHO it is.",
-    "who it is."
+    "she turns ROUND,",
+    "she turns round,"
+   ],
+   [
+    "and looks",
+    "and looks"
+   ],
+   [
+    "right BACK.",
+    "right back."
+   ]
+  ]
+ },
+ {
+  "id": "L44",
+  "who": "narrator",
+  "chunks": [
+   [
+    "On this HILL,",
+    "On this hill,"
+   ],
+   [
+    "you grow ROOTS",
+    "you grow roots"
+   ],
+   [
+    "where you BELONG.",
+    "where you belong."
+   ]
+  ]
+ },
+ {
+  "id": "L45",
+  "who": "narrator",
+  "chunks": [
+   [
+    "This MORNING,",
+    "This morning,"
+   ],
+   [
+    "I drop",
+    "I drop"
+   ],
+   [
+    "a PEBBLE",
+    "a pebble"
+   ],
+   [
+    "down plot ONE.",
+    "down plot one."
+   ]
+  ]
+ },
+ {
+  "id": "L46",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It LANDS.",
+    "It lands."
    ]
   ]
  }

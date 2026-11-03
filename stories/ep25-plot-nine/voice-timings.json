@@ -6,71 +6,163 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "On this hill, whatever you forget comes back up out of the ground.",
+   "text": "On this hill, you grow roots where you belong.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     1.112
+    ],
+    [
+     1.112,
+     1.862
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Old Mr Pell's run under the path, all the way to the gate.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 2.776,
    "onset": 0.172,
-   "end": 2.569,
+   "end": 2.586,
    "chunks": [
     [
      0.172,
-     0.672
+     0.81
     ],
     [
-     0.698,
-     1.31
+     0.81,
+     1.077
     ],
     [
-     1.31,
-     1.767
+     1.077,
+     1.552
     ],
     [
-     1.767,
-     1.906
+     1.638,
+     1.983
     ],
     [
-     1.906,
-     2.569
-    ]
-   ]
-  },
-  "L02": {
-   "text": "Forget your keys in the lettuce, and by Thursday there's a key plant.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.0,
-   "onset": 0.172,
-   "end": 2.81,
-   "chunks": [
-    [
-     0.172,
-     0.698
-    ],
-    [
-     0.698,
-     1.224
-    ],
-    [
-     1.293,
-     1.879
-    ],
-    [
-     1.879,
-     2.095
-    ],
-    [
-     2.095,
-     2.81
+     1.983,
+     2.586
     ]
    ]
   },
   "L03": {
-   "text": "Nobody up here owns a second umbrella.",
+   "text": "When he visits his brother, they repot him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.948
+    ],
+    [
+     1.0,
+     1.862
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Leave an umbrella by the gate a week, and it stays.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.19,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.724,
+     1.043
+    ],
+    [
+     1.043,
+     1.362
+    ],
+    [
+     1.414,
+     2.155
+    ]
+   ]
+  },
+  "L05": {
+   "text": "My boots come up clean.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.707
+    ],
+    [
+     0.707,
+     1.259
+    ]
+   ]
+  },
+  "L06": {
+   "text": "I've never grown a root. anywhere.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     0.914
+    ],
+    [
+     0.992,
+     1.621
+    ]
+   ]
+  },
+  "L07": {
+   "text": "My Mum has plot nine, across the path.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -81,112 +173,44 @@
    "chunks": [
     [
      0.172,
-     0.655
-    ],
-    [
-     0.655,
-     1.181
-    ],
-    [
-     1.181,
-     1.793
-    ]
-   ]
-  },
-  "L04": {
-   "text": "Plot two grows flasks.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.5,
-   "onset": 0.155,
-   "end": 1.31,
-   "chunks": [
-    [
-     0.155,
-     0.466
-    ],
-    [
-     0.466,
-     1.31
-    ]
-   ]
-  },
-  "L05": {
-   "text": "Go and find it, and it's yours again.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.931,
-   "onset": 0.172,
-   "end": 1.741,
-   "chunks": [
-    [
-     0.172,
      0.388
     ],
     [
      0.388,
-     0.724
+     0.931
     ],
     [
-     0.776,
-     0.983
-    ],
-    [
-     0.983,
-     1.741
-    ]
-   ]
-  },
-  "L06": {
-   "text": "Nothing ever comes up in my plot.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.828,
-   "onset": 0.19,
-   "end": 1.638,
-   "chunks": [
-    [
-     0.19,
-     0.638
-    ],
-    [
-     0.638,
-     0.922
-    ],
-    [
-     0.922,
-     1.638
-    ]
-   ]
-  },
-  "L07": {
-   "text": "I don't forget things.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.328,
-   "onset": 0.172,
-   "end": 1.121,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.603,
-     1.121
+     0.966,
+     1.793
     ]
    ]
   },
   "L08": {
-   "text": "Grandad has plot nine, across the path.",
+   "text": "Her roots are the longest on the hill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.94
+    ],
+    [
+     0.94,
+     1.569
+    ]
+   ]
+  },
+  "L09": {
+   "text": "They run under every plot she's ever had.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -197,143 +221,107 @@
    "chunks": [
     [
      0.172,
-     0.569
+     0.612
     ],
     [
-     0.569,
-     1.0
+     0.612,
+     1.086
     ],
     [
-     1.034,
+     1.086,
      1.862
     ]
    ]
   },
-  "L09": {
-   "text": "Every morning, he says hello to three old stakes. one, four, seven.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.259,
-   "onset": 0.172,
-   "end": 3.052,
-   "chunks": [
-    [
-     0.172,
-     0.552
-    ],
-    [
-     0.578,
-     1.0
-    ],
-    [
-     1.0,
-     1.276
-    ],
-    [
-     1.276,
-     1.948
-    ],
-    [
-     2.043,
-     2.224
-    ],
-    [
-     2.268,
-     2.466
-    ],
-    [
-     2.509,
-     3.052
-    ]
-   ]
-  },
   "L10": {
-   "text": "Gran's green scarf still hangs in his shed.",
+   "text": "I don't belong anywhere, except across the path from her.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.138,
+   "dur": 2.603,
    "onset": 0.172,
-   "end": 1.931,
+   "end": 2.397,
    "chunks": [
     [
      0.172,
-     0.862
+     0.655
     ],
     [
-     0.862,
-     1.285
+     0.655,
+     1.069
     ],
     [
-     1.285,
-     1.931
+     1.138,
+     1.603
+    ],
+    [
+     1.603,
+     1.879
+    ],
+    [
+     1.879,
+     2.397
     ]
    ]
   },
   "L11": {
-   "text": "This week, his glasses come up in his beans.",
+   "text": "This week, she gives me her bucket. Then her flask.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.19,
+   "dur": 2.259,
    "onset": 0.172,
-   "end": 1.983,
+   "end": 2.034,
    "chunks": [
     [
      0.172,
-     0.5
+     0.431
     ],
     [
-     0.526,
-     1.0
+     0.466,
+     0.768
     ],
     [
-     1.0,
-     1.215
+     0.768,
+     1.19
     ],
     [
-     1.215,
-     1.983
+     1.259,
+     2.034
     ]
    ]
   },
   "L12": {
-   "text": "Then his cap. He laughs it off.",
+   "text": "She says she's tidying up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.586,
+   "dur": 1.483,
    "onset": 0.172,
-   "end": 1.397,
+   "end": 1.276,
    "chunks": [
     [
      0.172,
-     0.586
+     0.414
     ],
     [
-     0.612,
-     0.905
-    ],
-    [
-     0.905,
-     1.397
+     0.414,
+     1.276
     ]
    ]
   },
   "L13": {
-   "text": "On Monday, something bigger comes up in plot one.",
+   "text": "On Monday, something comes up in plot one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.414,
+   "dur": 2.155,
    "onset": 0.172,
-   "end": 2.224,
+   "end": 1.966,
    "chunks": [
     [
      0.172,
@@ -341,15 +329,11 @@
     ],
     [
      0.69,
-     1.155
+     1.181
     ],
     [
-     1.155,
-     1.439
-    ],
-    [
-     1.439,
-     2.224
+     1.181,
+     1.966
     ]
    ]
   },
@@ -406,50 +390,70 @@
    ]
   },
   "L16": {
-   "text": "Grandad just goes quiet.",
+   "text": "It's facing the gate.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.517,
-   "onset": 0.172,
-   "end": 1.328,
+   "dur": 1.293,
+   "onset": 0.155,
+   "end": 1.103,
    "chunks": [
     [
-     0.172,
-     0.483
+     0.155,
+     0.578
     ],
     [
-     0.483,
-     1.328
+     0.578,
+     1.103
     ]
    ]
   },
   "L17": {
-   "text": "Tuesday, plot one is a hole.",
+   "text": "Mum just goes quiet.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9579000000000001,
-   "dur": 1.776,
-   "onset": 0.19,
-   "end": 1.569,
+   "dur": 1.448,
+   "onset": 0.207,
+   "end": 1.241,
    "chunks": [
     [
-     0.19,
-     0.534
+     0.207,
+     0.362
     ],
     [
-     0.569,
-     0.897
-    ],
-    [
-     0.897,
-     1.569
+     0.362,
+     1.241
     ]
    ]
   },
   "L18": {
+   "text": "Tuesday, plot one is a hole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     0.854
+    ],
+    [
+     0.854,
+     1.483
+    ]
+   ]
+  },
+  "L19": {
    "text": "I drop a pebble in.",
    "who": "narrator",
    "voice": "am_adam",
@@ -473,7 +477,7 @@
     ]
    ]
   },
-  "L19": {
+  "L20": {
    "text": "It never lands.",
    "who": "narrator",
    "voice": "am_adam",
@@ -489,7 +493,7 @@
     ]
    ]
   },
-  "L20": {
+  "L21": {
    "text": "The head is in plot four, out to the arms.",
    "who": "narrator",
    "voice": "am_adam",
@@ -501,14 +505,10 @@
    "chunks": [
     [
      0.172,
-     0.336
+     0.406
     ],
     [
-     0.336,
-     0.5
-    ],
-    [
-     0.5,
+     0.406,
      0.931
     ],
     [
@@ -521,7 +521,27 @@
     ]
    ]
   },
-  "L21": {
+  "L22": {
+   "text": "And Mum's roots are shorter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.732
+    ],
+    [
+     0.732,
+     1.362
+    ]
+   ]
+  },
+  "L23": {
    "text": "Wednesday, plot seven, out to the chest.",
    "who": "narrator",
    "voice": "am_adam",
@@ -549,71 +569,31 @@
     ]
    ]
   },
-  "L22": {
-   "text": "Grandad talks to his beans like Gran's still there.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.31,
-   "onset": 0.172,
-   "end": 2.121,
-   "chunks": [
-    [
-     0.172,
-     0.672
-    ],
-    [
-     0.672,
-     1.077
-    ],
-    [
-     1.077,
-     1.448
-    ],
-    [
-     1.448,
-     2.121
-    ]
-   ]
-  },
-  "L23": {
-   "text": "Today, he stops.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.224,
-   "onset": 0.172,
-   "end": 1.034,
-   "chunks": [
-    [
-     0.172,
-     0.379
-    ],
-    [
-     0.406,
-     1.034
-    ]
-   ]
-  },
   "L24": {
-   "text": "He can't find her name.",
+   "text": "Mum stands at the gate a long time, looking out.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.414,
-   "onset": 0.172,
-   "end": 1.224,
+   "dur": 2.224,
+   "onset": 0.19,
+   "end": 2.034,
    "chunks": [
     [
-     0.172,
-     0.647
+     0.19,
+     0.56
     ],
     [
-     0.647,
-     1.224
+     0.56,
+     0.836
+    ],
+    [
+     0.836,
+     1.362
+    ],
+    [
+     1.397,
+     2.034
     ]
    ]
   },
@@ -642,386 +622,274 @@
    ]
   },
   "L26": {
-   "text": "Between his beans, something stands, out to the waist.",
+   "text": "Between her beans, something stands, out to the waist.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.379,
+   "dur": 2.345,
    "onset": 0.155,
-   "end": 2.172,
-   "chunks": [
-    [
-     0.155,
-     0.828
-    ],
-    [
-     0.879,
-     1.379
-    ],
-    [
-     1.406,
-     1.594
-    ],
-    [
-     1.594,
-     2.172
-    ]
-   ]
-  },
-  "L27": {
-   "text": "Its head is turned too far round, looking at Grandad.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.569,
-   "onset": 0.155,
-   "end": 2.362,
-   "chunks": [
-    [
-     0.155,
-     0.37
-    ],
-    [
-     0.37,
-     0.698
-    ],
-    [
-     0.698,
-     1.397
-    ],
-    [
-     1.466,
-     2.362
-    ]
-   ]
-  },
-  "L28": {
-   "text": "And Grandad looks right back.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.621,
-   "onset": 0.155,
-   "end": 1.414,
-   "chunks": [
-    [
-     0.155,
-     0.621
-    ],
-    [
-     0.621,
-     1.414
-    ]
-   ]
-  },
-  "L29": {
-   "text": "Then I see the roots round its head, knotted like Gran's scarf.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.741,
-   "onset": 0.172,
-   "end": 2.552,
-   "chunks": [
-    [
-     0.172,
-     0.474
-    ],
-    [
-     0.474,
-     0.724
-    ],
-    [
-     0.724,
-     1.293
-    ],
-    [
-     1.362,
-     1.594
-    ],
-    [
-     1.594,
-     2.552
-    ]
-   ]
-  },
-  "L30": {
-   "text": "It's Gran.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.017,
-   "onset": 0.155,
-   "end": 0.81,
-   "chunks": [
-    [
-     0.155,
-     0.81
-    ]
-   ]
-  },
-  "L31": {
-   "text": "one, four, seven, nine. Every plot they've had in fifty years.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.931,
-   "onset": 0.172,
-   "end": 2.741,
-   "chunks": [
-    [
-     0.172,
-     0.534
-    ],
-    [
-     0.569,
-     1.19
-    ],
-    [
-     1.276,
-     1.655
-    ],
-    [
-     1.655,
-     1.906
-    ],
-    [
-     1.906,
-     2.741
-    ]
-   ]
-  },
-  "L32": {
-   "text": "He's forgetting her a year at a time, and the hill gives every year back.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.138,
-   "onset": 0.172,
-   "end": 2.931,
-   "chunks": [
-    [
-     0.172,
-     0.69
-    ],
-    [
-     0.69,
-     0.922
-    ],
-    [
-     0.922,
-     1.448
-    ],
-    [
-     1.517,
-     1.845
-    ],
-    [
-     1.845,
-     2.276
-    ],
-    [
-     2.276,
-     2.931
-    ]
-   ]
-  },
-  "L33": {
-   "text": "When she's all the way out, he won't remember her at all.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.362,
-   "onset": 0.155,
-   "end": 2.172,
-   "chunks": [
-    [
-     0.155,
-     0.474
-    ],
-    [
-     0.474,
-     0.931
-    ],
-    [
-     0.983,
-     1.207
-    ],
-    [
-     1.207,
-     1.603
-    ],
-    [
-     1.603,
-     2.172
-    ]
-   ]
-  },
-  "L34": {
-   "text": "But what comes back is yours again if you find it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.224,
-   "onset": 0.155,
-   "end": 2.034,
-   "chunks": [
-    [
-     0.155,
-     0.328
-    ],
-    [
-     0.328,
-     0.724
-    ],
-    [
-     0.724,
-     1.285
-    ],
-    [
-     1.285,
-     1.439
-    ],
-    [
-     1.439,
-     2.034
-    ]
-   ]
-  },
-  "L35": {
-   "text": "So I walk him back up the path.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.172,
-   "end": 1.397,
-   "chunks": [
-    [
-     0.172,
-     0.345
-    ],
-    [
-     0.345,
-     0.603
-    ],
-    [
-     0.603,
-     0.836
-    ],
-    [
-     0.836,
-     1.397
-    ]
-   ]
-  },
-  "L36": {
-   "text": "At every hole, I tell him what he told me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9579000000000001,
-   "dur": 2.155,
-   "onset": 0.172,
-   "end": 1.948,
-   "chunks": [
-    [
-     0.172,
-     0.759
-    ],
-    [
-     0.793,
-     1.129
-    ],
-    [
-     1.129,
-     1.301
-    ],
-    [
-     1.301,
-     1.948
-    ]
-   ]
-  },
-  "L37": {
-   "text": "Their first peas. The shed they built in the rain.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.293,
-   "onset": 0.155,
-   "end": 2.103,
+   "end": 2.138,
    "chunks": [
     [
      0.155,
      0.793
     ],
     [
-     0.862,
-     1.155
+     0.845,
+     1.345
     ],
     [
-     1.155,
-     1.439
+     1.371,
+     1.561
     ],
     [
-     1.439,
-     2.103
+     1.561,
+     2.138
     ]
    ]
   },
-  "L38": {
-   "text": "At plot nine, he looks her in the eyes and says her name.",
+  "L27": {
+   "text": "Its head is turned too far round, looking at Mum.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.552,
+   "dur": 2.345,
    "onset": 0.155,
-   "end": 2.362,
+   "end": 2.155,
    "chunks": [
     [
      0.155,
-     0.724
+     0.353
     ],
     [
-     0.776,
+     0.353,
+     0.655
+    ],
+    [
+     0.655,
+     1.328
+    ],
+    [
+     1.397,
+     2.155
+    ]
+   ]
+  },
+  "L28": {
+   "text": "And Mum looks right back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     1.224
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Then I see where its roots go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.707
+    ],
+    [
+     0.707,
+     1.345
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Across the soil, and into her boots.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.845,
      1.077
     ],
     [
      1.077,
-     1.517
-    ],
-    [
-     1.517,
-     1.75
-    ],
-    [
-     1.75,
-     2.362
+     1.707
     ]
    ]
   },
-  "L39": {
-   "text": "The soil settles back down.",
+  "L31": {
+   "text": "It's her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 1.0,
+   "onset": 0.172,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Every root she ever put down here, coming up in her shape.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.655,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.776
+    ],
+    [
+     0.776,
+     1.328
+    ],
+    [
+     1.397,
+     1.664
+    ],
+    [
+     1.664,
+     2.328
+    ]
+   ]
+  },
+  "L33": {
+   "text": "That's why the pebble never lands.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.793
+    ],
+    [
+     0.793,
+     1.552
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Mum is leaving the hill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.19,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.19,
+     0.698
+    ],
+    [
+     0.698,
+     1.241
+    ]
+   ]
+  },
+  "L35": {
+   "text": "She couldn't tell me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.19,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     1.034
+    ]
+   ]
+  },
+  "L36": {
+   "text": "And I'll be across the path from nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.034
+    ],
+    [
+     1.034,
+     1.707
+    ]
+   ]
+  },
+  "L37": {
+   "text": "But nobody up here moves house. They get repotted.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
    "onset": 0.155,
-   "end": 1.448,
+   "end": 2.241,
    "chunks": [
     [
      0.155,
@@ -1029,68 +897,184 @@
     ],
     [
      0.474,
-     0.759
+     0.724
     ],
     [
-     0.759,
-     1.448
+     0.724,
+     1.31
+    ],
+    [
+     1.379,
+     2.241
+    ]
+   ]
+  },
+  "L38": {
+   "text": "So I fill her bucket with plot nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.819
+    ],
+    [
+     0.819,
+     1.655
+    ]
+   ]
+  },
+  "L39": {
+   "text": "One bean, and all the soil round its roots.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     0.768
+    ],
+    [
+     0.768,
+     1.086
+    ],
+    [
+     1.086,
+     1.897
     ]
    ]
   },
   "L40": {
-   "text": "That night, he hangs his cap by her scarf.",
+   "text": "Her roots climb in.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.914,
+   "dur": 1.293,
    "onset": 0.155,
-   "end": 1.724,
+   "end": 1.086,
    "chunks": [
     [
      0.155,
-     0.414
+     0.448
     ],
     [
-     0.439,
-     0.716
-    ],
-    [
-     0.716,
-     1.017
-    ],
-    [
-     1.017,
-     1.724
+     0.448,
+     1.086
     ]
    ]
   },
   "L41": {
-   "text": "On this hill, whatever you forget comes back up.",
+   "text": "The thing in the beans settles back down.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.819
+    ],
+    [
+     0.819,
+     1.103
+    ],
+    [
+     1.103,
+     1.828
+    ]
+   ]
+  },
+  "L42": {
+   "text": "On Saturday, she wheels her bike up the path, the bucket on the handlebars.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.31,
    "onset": 0.172,
-   "end": 2.034,
+   "end": 3.121,
    "chunks": [
     [
      0.172,
      0.655
     ],
     [
-     0.681,
-     1.259
+     0.69,
+     0.974
     ],
     [
-     1.259,
-     2.034
+     0.974,
+     1.25
+    ],
+    [
+     1.25,
+     1.81
+    ],
+    [
+     1.879,
+     2.199
+    ],
+    [
+     2.199,
+     3.121
     ]
    ]
   },
-  "L42": {
-   "text": "This morning, something came up in my plot.",
+  "L43": {
+   "text": "At the gate, she turns round, and looks right back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.552,
+     1.155
+    ],
+    [
+     1.181,
+     1.431
+    ],
+    [
+     1.431,
+     2.069
+    ]
+   ]
+  },
+  "L44": {
+   "text": "On this hill, you grow roots where you belong.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1104,32 +1088,56 @@
      0.603
     ],
     [
-     0.655,
-     1.147
+     0.638,
+     1.112
     ],
     [
-     1.147,
+     1.112,
      1.862
     ]
    ]
   },
-  "L43": {
-   "text": "I can't remember who it is.",
+  "L45": {
+   "text": "This morning, I drop a pebble down plot one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.621,
+   "dur": 2.276,
    "onset": 0.172,
-   "end": 1.431,
+   "end": 2.086,
    "chunks": [
     [
      0.172,
-     0.793
+     0.603
     ],
     [
-     0.793,
-     1.431
+     0.638,
+     0.905
+    ],
+    [
+     0.905,
+     1.19
+    ],
+    [
+     1.19,
+     2.086
+    ]
+   ]
+  },
+  "L46": {
+   "text": "It lands.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.034,
+   "onset": 0.172,
+   "end": 0.828,
+   "chunks": [
+    [
+     0.172,
+     0.828
     ]
    ]
   }

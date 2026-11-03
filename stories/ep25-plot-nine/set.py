@@ -1,21 +1,24 @@
-"""Plot nine (ep25, redo): allotment gardens on a hillside at dawn. Built from kit.py's parts; nothing here is
-shared with another story's set. There is no text anywhere in the set: stakes, sheds and seed packets are plain.
+"""Plot nine (ep25, redo round 2): allotment gardens on a hillside at dawn, and the roots that grow where you belong.
+Built from kit.py's parts; nothing here is shared with another story's set. There is no text anywhere in the set.
 
 Coordinates (metres): the gate is at y = 0, the path runs down the hill along -y (x -0.75 .. 0.75), odd plots on the
 left (x > 0), even on the right (x < 0), five rows of 5 m: row r spans y = -1.5 - 6r .. -6.5 - 6r. Plot nine is
-x 1..6, y -25.5 .. -30.5, Grandad's shed at its path corner (x 1.0 .. 2.4, y -27.6 .. -25.8), the door on its +x
+x 1..6, y -25.5 .. -30.5, Mum's shed at its path corner (x 1.0 .. 2.4, y -27.6 .. -25.8), the door on its +x
 face. Plot ten (mine) is across the path: x -6..-1, same rows. The ground is flat; the hill falls away past the
-bottom fence (y = -32). Grandad's shed interior sits off to the side at x = 60.
+bottom fence (y = -32). Mum's shed interior sits off to the side at x = 60.
+
+ROOTS. Everyone who belongs here has dark, tapering roots fanned over the ground from their boots (tube(), root_fan()):
+Mr Pell's bed and his run to the gate, Mum's run up the path (pieces, so a cue can shorten it to the plot the Digger is
+in), her fan at her boots, the umbrellas' fans, the Digger's run to her boots. Never pale, never jointed.
 
 THE DIGGER (the creature). One model, built once, posed by the "digger" cues: which plot, how far its shoulders stand
-above the soil ("up"), the body's yaw and the head's own yaw. It's a blocky person built from our blocks but too
-long: the torso and both arms are 4 m boxes that go on down into the ground. Packed soil and pale tan roots wound
-round the head and shoulders, gathered into a knot under the chin like a headscarf (Gran's sage scarf on the shed
-hook is tied the same way). No mouth, no nose; two small seed-green points close together set in two dark pits.
+above the soil ("up"), the body's yaw (always 180, facing the gate) and the head's own turn. It's a blocky person built
+from our blocks but too long: narrow shoulders, a long neck, and a torso and both arms that are 4 m boxes going on down
+into the ground, wound with dark root cable. No mouth, no nose; two small seed-green points set in two dark pits.
 It is never seen moving: every change of place or height is across a cut.
 
-Cues read here: tod (time of day / light, with an optional ramp), digger, holes, dent, pebble, bucket, bike, and the
-on/off props keystalk, glasses, capstalk, grandcap (his worn cap), intcap (the cap on the shed hook).
+Cues read here: tod (time of day / light, with an optional ramp), digger, holes, dent, pebble, bucket, flask, bike, pot,
+gate, mumrun, mumfan, digrun.
 """
 
 from __future__ import annotations
@@ -30,9 +33,13 @@ from mathutils import Vector as V
 from blocky import faces, rig
 
 RIG_S = 0.34
-DIG_S = 1.3
+DIG_S = 1.25
 HOLE_R = 0.68
-DIG = {1: (3.4, -3.6), 4: (-3.6, -10.0), 7: (3.4, -22.0), 9: (3.85, -28.8), 10: (-3.5, -28.0)}
+DIG = {1: (3.4, -3.6), 4: (-3.6, -10.0), 7: (3.4, -22.0), 9: (4.3, -26.0)}
+PELL = (3.4, -9.8)
+PELL_AZ = math.degrees(math.atan2(1.6 - PELL[0], -(-8.0 - PELL[1])))    # the way old Mr Pell faces
+POT = (0.0, -1.9)
+MUMP = (3.8, -27.7)
 FOGC = "#b3aaa9"
 WORLD_UP = V((0, 0, 1))
 
@@ -251,7 +258,12 @@ def materials(kit):
     M["black"] = pbr(kit, "plug black", "#030303", 1.0, spec=0.0)
     M["soil"] = pbr(kit, "packed soil", "#4a3526", 0.62, spec=0.35, noise=(9.0, 0.55, 0.18), bump=0.8)
     M["soil2"] = pbr(kit, "packed soil b", "#5b4531", 0.8, noise=(13.0, 0.55, 0.0), bump=0.6)
-    M["root"] = pbr(kit, "root", "#a88a62", 0.72, noise=(18.0, 0.62, 0.0), bump=0.5)
+    M["root"] = pbr(kit, "root", "#33251a", 0.8, spec=0.22, noise=(16.0, 0.7, 0.1), bump=0.6)
+    M["terra"] = pbr(kit, "terracotta", "#b5643c", 0.7, noise=(6.0, 0.8, 0.0), bump=0.2)
+    M["bsoil"] = pbr(kit, "bucket soil", "#2c2018", 0.9, noise=(14.0, 0.6, 0.0), bump=0.6)
+    M["umbnavy"] = pbr(kit, "umbrella navy", "#27324a", 0.6)
+    M["umbred"] = pbr(kit, "umbrella maroon", "#6a2430", 0.6)
+    M["umbgreen"] = pbr(kit, "umbrella green", "#2f5a3e", 0.6)
     M["pit"] = pbr(kit, "eye pit", "#050403", 1.0, spec=0.0)
     M["eye"] = kit.emit("#7fd02a", 3.2, name="eye seed")
     M["mound"] = pbr(kit, "mound", "#3d2c1f", 0.8, noise=(5.0, 0.6, 0.0), bump=0.5)
@@ -433,7 +445,7 @@ def build_plots(kit, M, ctx):
         kit.box(f"row{rx}", (0.9, 4.6, 0.12), (rx, (y0 + y1) / 2, 0.06), M["wet"], bevel=0.05)
         for k in range(4):
             wy = y1 - 0.9 - k * 1.2
-            if k == 3 or (rx == 2.9 and k in (0, 2)):
+            if (rx, k) not in ((2.9, 0), (2.9, 3)):
                 continue
             wig = kit.empty(f"wig{rx}_{k}", (rx, wy, 0))
             for j, (ax, ay) in enumerate(((0.32, 0.32), (-0.32, 0.32), (0.32, -0.32), (-0.32, -0.32))):
@@ -444,7 +456,7 @@ def build_plots(kit, M, ctx):
                 lx, ly = rng.choice((-1, 1)) * 0.32 * u, rng.choice((-1, 1)) * 0.32 * u
                 kit.box(f"lf{rx}_{k}_{j}", (0.14, 0.09, 0.015), (lx, ly, z), M["leaf" if j % 2 else "leaf2"], wig,
                         rot=(rng.uniform(-0.8, 0.8), rng.uniform(-0.8, 0.8), rng.uniform(0, 3)), bevel=0.005)
-    # Grandad's shed at the path corner, a door in its +x face
+    # Mum's shed at the path corner, a door in its +x face
     sx0, sx1, sy0, sy1 = 1.0, 2.4, -27.6, -25.8
     h = 2.0
     t = 0.06
@@ -463,93 +475,149 @@ def build_plots(kit, M, ctx):
     ctx["door"] = door
 
 
-def band(kit, name, pts, r, mat, parent):
-    for j in range(len(pts) - 1):
-        rod(kit, f"{name}_{j}", pts[j], pts[j + 1], r, mat, parent, n=6)
+def catmull(pts, k=4):
+    """Points along a smooth curve through pts (Catmull-Rom), k steps per span."""
+    P = [V(p) for p in pts]
+    ext = [P[0] * 2 - P[1]] + P + [P[-1] * 2 - P[-2]]
+    out = []
+    for i in range(1, len(ext) - 2):
+        p0, p1, p2, p3 = ext[i - 1], ext[i], ext[i + 1], ext[i + 2]
+        for j in range(k):
+            t = j / k
+            out.append(0.5 * ((2 * p1) + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t * t
+                              + (-p0 + 3 * p1 - 3 * p2 + p3) * t ** 3))
+    out.append(P[-1])
+    return out
+
+
+def tube(kit, name, pts, r0, r1, mat, parent=None, m=6, k=4):
+    """One smooth root: a tapering tube along pts, thick at the first point and fine at the last. No joints."""
+    path = catmull(pts, k) if len(pts) > 2 else [V(p) for p in pts]
+    n = len(path)
+    verts = []
+    for i, p in enumerate(path):
+        t = (path[min(i + 1, n - 1)] - path[max(i - 1, 0)]).normalized()
+        a = t.cross(WORLD_UP)
+        if a.length < 1e-4:
+            a = t.cross(V((1, 0, 0)))
+        a.normalize()
+        b = t.cross(a)
+        r = r0 + (r1 - r0) * ((i / (n - 1)) ** 0.8)
+        for j in range(m):
+            th = 2 * math.pi * j / m
+            verts.append(tuple(p + r * (math.cos(th) * a + math.sin(th) * b)))
+    fcs = [(i * m + j, i * m + (j + 1) % m, (i + 1) * m + (j + 1) % m, (i + 1) * m + j) for i in range(n - 1) for j in range(m)]
+    fcs.append(tuple(reversed(range(m))))
+    fcs.append(tuple((n - 1) * m + j for j in range(m)))
+    return kit.mesh_obj(name, verts, fcs, mat, parent, smooth=True)
+
+
+def ribbon(kit, name, pts, w, z, mat):
+    """A flat strip along pts (the groove a root leaves in the dust)."""
+    path = catmull(pts, 3) if len(pts) > 2 else [V(p) for p in pts]
+    verts = []
+    for i, p in enumerate(path):
+        t = (path[min(i + 1, len(path) - 1)] - path[max(i - 1, 0)])
+        t.z = 0
+        t.normalize()
+        s = V((-t.y, t.x, 0)) * (w / 2)
+        verts += [(p.x - s.x, p.y - s.y, z), (p.x + s.x, p.y + s.y, z)]
+    fcs = [(2 * i, 2 * i + 1, 2 * i + 3, 2 * i + 2) for i in range(len(path) - 1)]
+    return kit.mesh_obj(name, verts, fcs, mat, None, smooth=False)
+
+
+def root_fan(kit, M, name, n, L, spread, seed, r0=0.04, parent=None, loc=(0, 0, 0), yaw=0.0, boots=0.12):
+    """Dark tapering roots fanned over the ground from a pair of boots (or an object's base). The fan opens
+    towards `yaw` (the way a character facing yaw looks); L is the longest root, scaled per pose by the cue."""
+    g = kit.empty(name, loc, parent, rot=(0, 0, math.radians(yaw + 180)))
+    rng = random.Random(seed)
+    for i in range(n):
+        a = math.radians(-spread + 2 * spread * (i + rng.uniform(-0.3, 0.3)) / max(1, n - 1))
+        ln = L * rng.uniform(0.55, 1.0) * (1.0 - 0.3 * abs(math.sin(a)))
+        side = rng.choice((-1, 1)) * boots
+        dx, dy = math.sin(a), math.cos(a)
+        ph = rng.uniform(0, 6)
+        pts = []
+        for s in (0.0, 0.12, 0.3, 0.55, 0.8, 1.0):
+            wob = 0.12 * ln * math.sin(s * 4.0 + ph) * s
+            x = side * (1 - min(1.0, s * 3)) + dx * ln * s - dy * wob
+            y = dy * ln * s + dx * wob
+            pts.append((x, y, 0.035 + 0.12 * max(0.0, 1 - s * 4)))
+        tube(kit, f"{name}.r{i}", pts, r0 * rng.uniform(0.8, 1.15), 0.008, M["root"], g, m=6, k=3)
+    return g
 
 
 def build_digger(kit, M, ctx):
     root = kit.empty("digger", (0, 0, -50))
     root.scale = (DIG_S, DIG_S, DIG_S)    # taller than the cast
     body = kit.empty("digger.body", (0, 0, 0), root)
-    kit.box("digger.torso", (0.68, 0.34, 4.2), (0, 0, -2.1), M["soil"], body, bevel=0.035)
+    kit.box("digger.torso", (0.58, 0.34, 4.2), (0, 0, -2.1), M["soil"], body, bevel=0.035)
     for sx in (-1, 1):
-        kit.box(f"digger.arm{sx}", (0.34, 0.34, 4.2), (sx * 0.51, 0, -2.1 + 0.0), M["soil"], body, bevel=0.03)
-    # roots: a few thick strands wound down the shoulders and chest, never a neat pattern
+        kit.box(f"digger.arm{sx}", (0.3, 0.34, 4.2), (sx * 0.44, 0, -2.1), M["soil"], body, bevel=0.03)
+    # the long neck: a column of packed soil, one block taller than before, under the head
+    kit.box("digger.neckcol", (0.26, 0.24, 0.5), (0, 0, 0.18), M["soil"], body, bevel=0.04)
+    for sx in (-1, 1):    # the shoulders slope up to the neck
+        kit.box(f"digger.slope{sx}", (0.42, 0.34, 0.16), (sx * 0.3, 0, 0.0), M["soil"], body, rot=(0, sx * 0.42, 0), bevel=0.04)
+    # roots: dark cable, thick at the shoulders and tapering to a fine point, wound down the chest and arms and on
+    # into the soil at the waist. Never pale, never jointed.
     rng = random.Random(33)
-    strands = [((-0.30, -0.18, -0.02), (-0.12, -0.19, -0.2), (0.12, -0.19, -0.42), (0.3, -0.18, -0.7)),
-               ((0.34, -0.18, -0.02), (0.2, -0.19, -0.25), (0.0, -0.19, -0.5), (-0.2, -0.18, -0.85)),
-               ((-0.62, -0.13, -0.02), (-0.5, -0.19, -0.2), (-0.6, -0.19, -0.5), (-0.45, -0.19, -0.95)),
-               ((0.6, -0.13, -0.02), (0.52, -0.19, -0.3), (0.62, -0.19, -0.55), (0.5, -0.19, -1.0)),
-               ((-0.3, 0.18, -0.02), (-0.1, 0.19, -0.25), (0.15, 0.19, -0.45), (0.3, 0.19, -0.8)),
-               ((0.3, 0.18, -0.02), (0.1, 0.19, -0.3), (-0.15, 0.19, -0.55), (-0.3, 0.19, -0.9)),
-               ((-0.6, 0.13, -0.02), (-0.5, 0.19, -0.35), (-0.6, 0.19, -0.7), (-0.5, 0.19, -1.1))]
+    strands = [((-0.26, -0.18, -0.02), (-0.1, -0.19, -0.3), (0.12, -0.19, -0.6), (0.26, -0.18, -1.0), (0.1, -0.18, -1.7), (-0.1, -0.18, -2.5)),
+               ((0.28, -0.18, -0.02), (0.16, -0.19, -0.3), (0.0, -0.19, -0.7), (-0.2, -0.18, -1.2), (-0.1, -0.18, -2.0), (0.1, -0.18, -2.6)),
+               ((-0.58, -0.14, -0.04), (-0.46, -0.19, -0.3), (-0.58, -0.19, -0.8), (-0.42, -0.19, -1.4), (-0.5, -0.19, -2.4)),
+               ((0.58, -0.14, -0.04), (0.5, -0.19, -0.35), (0.6, -0.19, -0.9), (0.44, -0.19, -1.5), (0.5, -0.19, -2.5)),
+               ((-0.26, 0.18, -0.02), (-0.1, 0.19, -0.3), (0.14, 0.19, -0.55), (0.26, 0.19, -1.0), (0.1, 0.19, -1.9), (0.0, 0.19, -2.6)),
+               ((0.26, 0.18, -0.02), (0.1, 0.19, -0.35), (-0.14, 0.19, -0.65), (-0.26, 0.19, -1.1), (-0.1, 0.19, -2.0)),
+               ((-0.56, 0.14, -0.04), (-0.46, 0.19, -0.4), (-0.58, 0.19, -0.9), (-0.44, 0.19, -1.8)),
+               ((0.1, -0.18, -0.02), (0.22, -0.19, -0.2), (0.4, -0.19, -0.5), (0.5, -0.19, -1.3), (0.44, -0.19, -2.3))]
     for k, st in enumerate(strands):
-        for j in range(len(st) - 1):
-            rod(kit, f"digger.root{k}_{j}", st[j], st[j + 1], 0.026 - 0.004 * j, M["root"], body, n=6)
-    for sx in (-1, 1):
-        kit.box(f"digger.shband{sx}", (0.37, 0.37, 0.045), (sx * 0.51, 0, -0.12), M["root"], body, rot=(0.0, sx * 0.08, 0), bevel=0.012)
-    for k in range(46):    # clods
-        x = rng.uniform(-0.78, 0.78)
+        tube(kit, f"digger.root{k}", st, 0.042, 0.01, M["root"], body, m=6, k=3)
+    for sx in (-1, 1):     # a cable round each shoulder
+        tube(kit, f"digger.shcable{sx}", [(sx * 0.58, -0.19, -0.12), (sx * 0.44, -0.2, -0.16), (sx * 0.3, -0.19, -0.1),
+                                          (sx * 0.38, 0.0, -0.1), (sx * 0.5, 0.19, -0.14), (sx * 0.58, 0.14, -0.2)],
+             0.04, 0.016, M["root"], body, m=6, k=3)
+    for k in range(40):    # clods
+        x = rng.uniform(-0.62, 0.62)
         z = rng.uniform(-0.9, 0.03)
         yy = rng.choice((-1, 1)) * 0.175
         sz = rng.uniform(0.04, 0.12)
         kit.box(f"digger.clod{k}", (sz, sz * 0.7, sz * 0.8), (x, yy, z), M["soil2"], body,
                 rot=(rng.uniform(0, 1), rng.uniform(0, 1), rng.uniform(0, 3)), bevel=0.014)
-    neck = kit.empty("digger.neck", (0, 0, 0.0), body)
+    neck = kit.empty("digger.neck", (0, 0, 0.4), body)
     hs = kit.empty("digger.hs", (0, 0, 0.0), neck)
-    hs.scale = (RIG_S, RIG_S, RIG_S * 1.22)
-    hs.rotation_euler = (math.radians(11), 0, 0)
+    hs.scale = (RIG_S * 0.86, RIG_S * 0.9, RIG_S * 1.3)    # a long oval head on the long neck
+    hs.rotation_euler = (math.radians(13), 0, 0)    # stooping towards whoever looks
     headg = kit.empty("digger.headg", (0, 0, faces.HEAD_H / 2 + 0.02), hs)
     rig.head_mesh("digger.headm", M["soil"], headg)
     R = faces.HEAD_R
-    for k, (z, tx, ty) in enumerate(((0.38, 0.1, 0.05), (0.12, -0.12, 0.08))):
-        torus(kit, f"digger.hring{k}", R + 0.01, 0.034, (0, 0, z), M["root"], headg, rot=(tx, ty, 0), n=36, m=6)
-    for k in range(16):    # clods on the head
+    for k in range(14):    # clods on the head, clear of the face
         a = rng.uniform(0, 2 * math.pi)
-        if -1.9 < a - math.pi * 1.5 < 1.9 and abs(a - math.pi * 1.5) < 0.9:
-            a += 1.8    # keep the cheeks and chin clear for the knot
+        if abs(a - math.pi * 1.5) < 0.9:
+            a += 1.8
         sz = rng.uniform(0.07, 0.17)
         kit.box(f"digger.hclod{k}", (sz, sz * 0.8, sz * 0.7), (R * 0.97 * math.cos(a), R * 0.97 * math.sin(a),
                                                              rng.uniform(-0.2, 0.55)), M["soil2"], headg,
                 rot=(rng.uniform(0, 1), rng.uniform(0, 1), rng.uniform(0, 3)), bevel=0.02)
-    # THE KNOT: roots over the crown, down both cheeks, gathered under the chin in a knot with two tails
-    for sx in (-1, 1):
-        for off, rr in ((0.0, 0.045), (0.14, 0.034)):
-            pts = []
-            for a_deg, z in ((86, 0.56), (80, 0.3), (68, 0.0), (52, -0.28), (30, -0.5), (9, -0.58)):
-                a = math.radians(a_deg)
-                rad = 0.655 + off * 0.1
-                pts.append((sx * rad * math.sin(a), -rad * math.cos(a), z - off * 0.12))
-            band(kit, f"digger.cheek{sx}_{off}", pts, rr, M["root"], headg)
-    kn = (0.0, -0.66, -0.66)
-    k0 = kit.sphere("digger.knot", 0.115, kn, M["root"], headg, seg=10)
-    k0.scale = (1.25, 0.85, 0.9)
-    for sx in (-1, 1):
-        k1 = kit.sphere(f"digger.knot{sx}", 0.075, (sx * 0.1, -0.68, -0.7), M["root"], headg, seg=8)
-        k1.scale = (1.0, 0.8, 0.9)
-        for j, dx in enumerate((0.0, 0.05, -0.05)):
-            band(kit, f"digger.tail{sx}_{j}", [(sx * 0.07, -0.69, -0.72), (sx * (0.16 + dx), -0.68, -0.98),
-                                               (sx * (0.2 + dx * 1.5), -0.62, -1.28)], 0.03 - 0.005 * j, M["root"], headg)
+    # two dark roots cross the crown from the back, clear of the face (no knot, no tails)
+    for k, pts in enumerate((((-0.58, 0.2, 0.18), (-0.4, 0.12, 0.5), (-0.05, 0.1, 0.64), (0.35, 0.02, 0.58), (0.58, 0.25, 0.3)),
+                             ((0.5, 0.3, 0.22), (0.3, 0.3, 0.56), (-0.1, 0.25, 0.64), (-0.4, 0.3, 0.52), (-0.6, 0.0, 0.15)))):
+        tube(kit, f"digger.crown{k}", pts, 0.07, 0.025, M["root"], headg, m=6, k=3)
     # the face: two dark pits and two small seed-green points close together
     for sx in (-1, 1):
         pit = kit.sphere(f"digger.pit{sx}", 0.1, (sx * 0.15, -R + 0.03, 0.08), M["pit"], headg, seg=10)
         pit.scale = (0.8, 0.5, 1.5)
         eye = kit.sphere(f"digger.eye{sx}", 0.03, (sx * 0.15, -R - 0.012, 0.08), M["eye"], headg, seg=10)
         eye.scale = (0.7, 0.6, 1.8)
-    nr = kit.empty("digger.neckroots", (0, 0, 0.02), body)
-    for k in range(6):
-        a = 2 * math.pi * k / 6
-        rod(kit, f"digger.nroot{k}", (0.19 * math.cos(a), 0.12 * math.sin(a), -0.02),
-            (0.15 * math.cos(a + 0.9), 0.1 * math.sin(a + 0.9), 0.16), 0.022, M["root"], nr, n=6)
-    for sx in (-1, 1):   # a seam between torso and arm
-        for yy in (-0.171, 0.171):
-            kit.box(f"digger.seam{sx}{yy}", (0.012, 0.012, 1.3), (sx * 0.34, yy, -0.65), M["pit"], body)
+    # dark roots twisted up the long neck (they turn with the head, half as far, so the neck reads as wrung)
+    nr = kit.empty("digger.neckroots", (0, 0, 0.0), body)
+    for k in range(5):
+        a0 = 2 * math.pi * k / 5
+        pts = [(0.15 * math.cos(a0 + 1.4 * u), 0.14 * math.sin(a0 + 1.4 * u), 0.0 + 0.42 * u) for u in (0, 0.25, 0.5, 0.75, 1.0)]
+        tube(kit, f"digger.nroot{k}", pts, 0.04, 0.014, M["root"], nr, m=6, k=3)
     ctx["neckroots"] = nr
     ctx["digger"] = {"root": root, "body": body, "neck": neck}
     # the site: a ring of loosened soil and cracks round the base (travels with the root, flat on the ground)
     site = kit.empty("digger.site", (0, 0, 0), root)
-    ring = kit.cyl("digger.ring", 0.92, 0.05, (0, 0, 0.0), M["mound"], site, n=24)
+    kit.cyl("digger.ring", 0.92, 0.05, (0, 0, 0.0), M["mound"], site, n=24)
     for k in range(16):
         a = 2 * math.pi * k / 16 + rng.uniform(-0.1, 0.1)
         r = rng.uniform(0.7, 0.95)
@@ -561,10 +629,56 @@ def build_digger(kit, M, ctx):
         kit.box(f"digger.crack{k}", (0.03, 0.9, 0.006), (1.35 * math.cos(a), 1.35 * math.sin(a), 0.006), M["hole"], site,
                 rot=(0, 0, a + math.pi / 2), bevel=0.0)
     ctx["site"] = site
-    # a green glint of light from the eyes on the soil around them
+    # a green glint of light from the eyes, and a warm rim from behind and the side so the dark roots separate from the soil
     kit.light("digger eyes", "POINT", (0, -R - 0.18, 0.06), 1.0, "#9be04a", size=0.01, parent=headg)
-    kit.light("digger knot", "POINT", (0, -1.5, -0.2), 1.0, "#d8d0b8", size=0.15, parent=headg)
+    kit.light("digger rim", "POINT", (1.3, 1.1, 0.5), 1.0, "#ffb878", size=0.3, parent=body)
+    kit.light("digger rim2", "POINT", (-1.2, -1.2, 0.6), 1.0, "#9fb6e8", size=0.3, parent=body)
     ctx["digger_parts"] = [root]
+
+
+def build_roots(kit, M, ctx):
+    """Every root in the story. Mr Pell's bed and run to the gate, Mum's run up the path in pieces (so a cue can
+    shorten it), her fan, the Digger's run to her boots, and small ambient fans round the hill."""
+    # --- Mr Pell: a tree's fan round his wellies in plot three, and his longest root out and along the path to the gate
+    root_fan(kit, M, "pellfan", 12, 1.5, 175, 5, r0=0.05, loc=(PELL[0], PELL[1], 0), yaw=PELL_AZ)
+    run = [(PELL[0] - 0.3, PELL[1], 0.04), (2.6, -9.7, 0.04), (1.7, -9.5, 0.04), (1.0, -9.2, 0.1), (0.55, -8.7, 0.045),
+           (0.4, -6.5, 0.04), (0.35, -3.5, 0.04), (0.5, -1.0, 0.04), (0.9, -0.3, 0.04)]
+    curl = [(0.9, -0.3, 0.04)] + [(1.05 + 0.15 * math.cos(a), 0.15 * math.sin(a), 0.04 + 0.01 * k)
+                                  for k, a in enumerate((-2.6, -3.5, -4.5, -5.5, -6.5, -7.4))]
+    tube(kit, "pellrun", run, 0.05, 0.03, M["root"], m=6, k=4)
+    tube(kit, "pellcurl", curl, 0.03, 0.012, M["root"], m=6, k=3)
+    # --- Mum's run: pieces from plot nine up the path, the branches into plots seven, four and one
+    pieces = [  # (name, points, r0, r1, ymax)
+        ("m0", [(MUMP[0] - 0.2, MUMP[1] - 0.2, 0.04), (3.2, -28.3, 0.04), (2.4, -28.6, 0.15), (1.6, -28.4, 0.04), (1.0, -28.0, 0.1),
+                (0.45, -27.4, 0.04), (0.2, -26.0, 0.04)], 0.075, 0.06, -26.0),
+        ("m1", [(0.2, -26.0, 0.04), (-0.15, -24.0, 0.04), (-0.3, -21.0, 0.04)], 0.06, 0.055, -21.0),
+        ("m2", [(-0.3, -21.0, 0.04), (-0.1, -18.0, 0.04), (-0.1, -15.0, 0.04)], 0.055, 0.05, -15.0),
+        ("m3", [(-0.1, -15.0, 0.04), (-0.4, -12.0, 0.04), (-0.35, -9.5, 0.04)], 0.05, 0.045, -9.5),
+        ("m4", [(-0.35, -9.5, 0.04), (-0.1, -6.0, 0.04), (-0.25, -3.0, 0.04), (-0.1, -1.4, 0.04)], 0.045, 0.02, -1.4),
+        ("b7", [(-0.3, -22.0, 0.04), (0.3, -22.0, 0.04), (1.0, -22.0, 0.1), (1.7, -21.9, 0.04), (2.3, -22.0, 0.04)], 0.045, 0.02, -21.5),
+        ("b4", [(-0.35, -10.3, 0.04), (-1.0, -10.2, 0.1), (-1.7, -10.1, 0.04), (-2.4, -10.0, 0.04)], 0.04, 0.02, -9.8),
+        ("b1", [(-0.25, -3.7, 0.04), (0.4, -3.6, 0.04), (1.0, -3.6, 0.1), (1.7, -3.6, 0.04), (2.25, -3.6, 0.04)], 0.04, 0.02, -3.4),
+    ]
+    groove = pbr(kit, "groove", "#8b7852", 0.97)
+    ctx["mumpieces"] = []
+    for nm, pts, r0, r1, ymax in pieces:
+        ob = tube(kit, f"mumrun.{nm}", pts, r0, r1, M["root"], m=6, k=4)
+        gr = ribbon(kit, f"mumgroove.{nm}", pts, 0.15, 0.004 if nm.startswith("m") else 0.0035, groove)
+        ctx["mumpieces"].append((ob, gr, ymax))
+    # --- Mum's fan at her boots, pose-scaled by a cue, and the curl of her roots over the bucket rim
+    mf = kit.empty("mumfan", (MUMP[0], MUMP[1], 0))
+    sc = kit.empty("mumfan.scale", (0, 0, 0), mf)
+    root_fan(kit, M, "mumfan.fan", 11, 1.35, 150, 11, r0=0.05, parent=sc, yaw=0.0)
+    cu = kit.empty("mumfan.curl", (0, 0, 0), mf, rot=(0, 0, math.pi))
+    curlp = [(0.0, 0.1, 0.035), (0.0, 0.6, 0.04), (0.0, 1.0, 0.05), (0.0, 1.18, 0.2), (0.0, 1.24, 0.34), (0.0, 1.4, 0.33), (0.0, 1.6, 0.29)]
+    tube(kit, "mumfan.curltube", curlp, 0.042, 0.012, M["root"], cu, m=6, k=4)
+    ctx["mumfan"] = (mf, sc, cu)
+    # --- the Digger's own root: from its waist across the bed into the fan at her boots
+    dr = [(DIG[9][0] - 0.05, DIG[9][1] - 0.25, 0.12), (4.05, -26.7, 0.06), (3.95, -27.15, 0.06), (MUMP[0] + 0.05, MUMP[1] + 0.25, 0.05)]
+    ctx["digrun"] = tube(kit, "digrun", dr, 0.07, 0.03, M["root"], m=7, k=5)
+    # --- small ambient fans, so the other beds show roots too
+    for k, (x, y, yw) in enumerate(((-3.4, -22.0, 70), (-3.3, -16.0, 250), (3.4, -16.0, 120), (-3.4, -4.4, 200), (-3.5, -9.5, 20))):
+        root_fan(kit, M, f"amb{k}", 8, 1.0, 170, 40 + k, r0=0.035, loc=(x, y, 0), yaw=yw)
 
 
 def build_holes(kit, M, ctx):
@@ -584,126 +698,78 @@ def build_holes(kit, M, ctx):
     ctx["pebble"] = kit.sphere("pebble", 0.025, (0, 0, -9), pbr(kit, "pebble", "#77726a", 0.8), seg=8)
 
 
-def make_stalk(kit, M, name, loc, h, thick=0.012, leaves=2, rot=0.0, seed=1):
-    g = kit.empty(name, (loc[0], loc[1], 0), rot=(0, 0, rot))
-    rod(kit, f"{name}.stem", (0, 0, 0), (0, 0, h), thick, M["stalk"], g, n=7)
-    rng = random.Random(seed)
-    for k in range(leaves):
-        a = rng.uniform(0, 6.28)
-        z = h * (0.28 + 0.22 * k)
-        ll = 0.05 + thick * 2.6
-        kit.box(f"{name}.leaf{k}", (ll * 2.2, ll, 0.012), (0.5 * ll * 2.2 * math.cos(a), 0.5 * ll * 2.2 * math.sin(a), z),
-                M["leaf" if k % 2 else "leaf2"], g, rot=(0.25 * math.sin(a), 0.35, a), bevel=0.004)
-    top = kit.empty(f"{name}.top", (0, 0, h), g)
-    return g, top
-
-
-def key_shape(kit, M, name, parent, loc, rot, mat, s=1.0):
-    k = kit.empty(name, loc, parent, rot=rot)
-    torus(kit, f"{name}.bow", 0.016 * s, 0.005 * s, (0, 0, -0.016 * s), mat, k, rot=(math.radians(90), 0, 0), n=14, m=5)
-    kit.box(f"{name}.shaft", (0.008 * s, 0.008 * s, 0.07 * s), (0, 0, -0.07 * s), mat, k)
-    kit.box(f"{name}.teeth", (0.02 * s, 0.008 * s, 0.012 * s), (0.01 * s, 0, -0.1 * s), mat, k)
-    return k
-
-
-def keys_bunch(kit, M, name, parent, loc, s=1.0, rot=(0, 0, 0)):
-    g = kit.empty(name, loc, parent, rot=rot)
-    torus(kit, f"{name}.ring", 0.026 * s, 0.0045 * s, (0, 0, 0), M["iron2"], g, rot=(math.radians(90), 0, 0), n=16, m=5)
-    mats = [M["iron2"], M["brass"], M["iron2"], M["brass"], M["iron2"]]
-    for j, ang in enumerate((-48, -24, 0, 24, 48)):
-        key_shape(kit, M, f"{name}.k{j}", g, (0, 0, -0.02 * s), (0, math.radians(ang), 0), mats[j], s)
-    return g
-
-
-def glove_shape(kit, M, name, parent, s=1.0):
-    g = kit.empty(name, (0, 0, 0.05 * s), parent)
-    kit.box(f"{name}.palm", (0.09 * s, 0.035 * s, 0.09 * s), (0, 0, 0), M["glove"], g, bevel=0.012)
-    for j, (fx, fl, tilt) in enumerate(((-0.033, 0.065, 0.12), (-0.011, 0.078, 0.04), (0.011, 0.074, -0.04), (0.033, 0.058, -0.14))):
-        kit.box(f"{name}.f{j}", (0.02 * s, 0.03 * s, fl * s), (fx * s, 0, (0.045 + fl / 2) * s), M["glove"], g,
-                rot=(0, tilt, 0), bevel=0.008)
-    kit.box(f"{name}.thumb", (0.024 * s, 0.03 * s, 0.06 * s), (0.065 * s, 0, 0.0), M["glove"], g, rot=(0, -0.9, 0), bevel=0.008)
-    kit.box(f"{name}.cuff", (0.1 * s, 0.045 * s, 0.035 * s), (0, 0, -0.06 * s), M["glove"], g, bevel=0.01)
-    return g
-
-
-def mug_shape(kit, M, name, parent, s=1.0):
-    g = kit.empty(name, (0, 0, 0.05 * s), parent)
-    kit.cyl(f"{name}.body", 0.045 * s, 0.09 * s, (0, 0, 0), M["mugred"], g, n=18)
-    torus(kit, f"{name}.handle", 0.028 * s, 0.008 * s, (0.05 * s, 0, 0), M["mugred"], g, rot=(math.radians(90), 0, 0), n=16, m=5)
-    kit.cyl(f"{name}.rim", 0.038 * s, 0.004 * s, (0, 0, 0.044 * s), M["black"], g, n=16)
-    return g
-
-
-def glasses_shape(kit, M, name, parent, s=1.0):
-    g = kit.empty(name, (0, 0, 0.04 * s), parent)
-    for sx in (-1, 1):
-        torus(kit, f"{name}.ring{sx}", 0.032 * s, 0.0048 * s, (sx * 0.042 * s, 0, 0), M["frame"], g, rot=(math.radians(90), 0, 0), n=20, m=5)
-        rod(kit, f"{name}.arm{sx}", (sx * 0.074 * s, 0, 0.0), (sx * 0.078 * s, 0.1 * s, 0.002), 0.0035 * s, M["frame"], g, n=5)
-    kit.box(f"{name}.bridge", (0.02 * s, 0.006 * s, 0.006 * s), (0, 0, 0.008 * s), M["frame"], g)
-    return g
-
-
-def cap_shape(kit, M, name, parent, s=1.0, hang=False):
-    g = kit.empty(name, (0, 0, 0.03 * s), parent)
-    kit.box(f"{name}.crown", (0.2 * s, 0.22 * s, 0.07 * s), (0, 0.01 * s, 0), M["capwool"], g, bevel=0.03)
-    kit.box(f"{name}.brim", (0.17 * s, 0.09 * s, 0.014 * s), (0, -0.13 * s, -0.025 * s), M["capwool"], g, bevel=0.005)
-    return g
-
-
 def hook_arc(kit, M, name, parent, r, z0):
     """A crook: a half circle on top of the shaft."""
     band(kit, name, [(r - r * math.cos(math.pi * i / 12), 0, z0 + r * math.sin(math.pi * i / 12)) for i in range(13)],
          0.011, M["umb"], parent)
 
 
+def band(kit, name, pts, r, mat, parent):
+    for j in range(len(pts) - 1):
+        rod(kit, f"{name}_{j}", pts[j], pts[j + 1], r, mat, parent, n=6)
+
+
+def umbrella(kit, M, name, loc, canopy, yaw, lean, seed):
+    g = kit.empty(name, (loc[0], loc[1], 0), rot=(math.radians(lean[0]), math.radians(lean[1]), math.radians(yaw)))
+    kit.cyl(f"{name}.ferrule", 0.009, 0.1, (0, 0, 0.03), M["iron2"], g, n=8)
+    kit.cyl(f"{name}.canopy", 0.014, 0.58, (0, 0, 0.38), canopy, g, n=10, r2=0.05)
+    kit.cyl(f"{name}.tie", 0.054, 0.04, (0, 0, 0.62), M["iron"], g, n=10, r2=0.052)
+    rod(kit, f"{name}.shaft", (0, 0, 0.64), (0, 0, 0.88), 0.011, M["umb"], g, n=7)
+    hook_arc(kit, M, f"{name}.hook", g, 0.055, 0.88)
+    root_fan(kit, M, f"{name}.fan", 6, 0.4, 175, seed, r0=0.016, parent=g, boots=0.0, yaw=yaw * 0)
+    return g
+
+
+def make_bucket(kit, M, name, loc, parent=None, full=False, bean=False):
+    """A steel pail, upright: wider at the top, a bail handle folded down on one side. Optionally full of dark soil,
+    optionally with one young bean plant. Returns the group and the toggles."""
+    bk = kit.empty(name, loc, parent)
+    kit.cyl(f"{name}.body", 0.15, 0.3, (0, 0, 0.15), M["steel"], bk, n=20, r2=0.19)
+    torus(kit, f"{name}.rim", 0.19, 0.009, (0, 0, 0.3), M["steel"], bk, n=24, m=5)
+    inner = kit.cyl(f"{name}.in", 0.185, 0.004, (0, 0, 0.285), M["black"], bk, n=20)
+    soil = kit.cyl(f"{name}.soil", 0.185, 0.04, (0, 0, 0.285), M["bsoil"], bk, n=20)
+    tube(kit, f"{name}.bail", [(0.19, 0, 0.29), (0.26, 0, 0.27), (0.3, 0, 0.2), (0.29, 0, 0.12)], 0.008, 0.006, M["steel"], bk, m=5, k=3)
+    plant = kit.empty(f"{name}.bean", (0, 0, 0.3), bk)
+    tube(kit, f"{name}.stem", [(0, 0, 0), (0.015, 0, 0.18), (0.0, 0.01, 0.34), (0.02, 0, 0.5)], 0.011, 0.005, M["leaf"], plant, m=5, k=3)
+    rng = random.Random(7)
+    for k in range(7):
+        z = 0.1 + 0.07 * k
+        a = rng.uniform(0, 6.28)
+        kit.box(f"{name}.lf{k}", (0.1, 0.07, 0.008), (0.05 * math.cos(a), 0.05 * math.sin(a), z), M["leaf" if k % 2 else "leaf2"],
+                plant, rot=(rng.uniform(-0.5, 0.5), rng.uniform(-0.5, 0.5), a), bevel=0.003)
+    rod(kit, f"{name}.cane", (-0.04, 0, 0), (-0.04, 0, 0.62), 0.006, M["cane"], plant, n=5)
+    return bk, inner, soil, plant
+
+
 def build_props(kit, M, ctx):
     tog = {}
-    # --- plot six: keys on a thick stalk in the lettuce, a glove and a mug on smaller stalks behind
-    g, top = make_stalk(kit, M, "keystalk", (-2.75, -15.6), 0.62, thick=0.03, leaves=3, seed=3)
-    keys_bunch(kit, M, "keybunch", top, (0, 0, 0.06), s=2.6)
-    tog["keystalk"] = ([g], True)
-    g2, top2 = make_stalk(kit, M, "glovestalk", (-3.55, -16.55), 0.34, thick=0.014, leaves=2, seed=4)
-    glove_shape(kit, M, "glove", top2, 1.5)
-    g3, top3 = make_stalk(kit, M, "mugstalk", (-2.2, -16.85), 0.28, thick=0.014, leaves=2, seed=5)
-    mug_shape(kit, M, "mug", top3, 1.5)
-    # --- the gate: three umbrella handles sprouting like rhubarb
-    for k, (x, y, h) in enumerate(((1.5, -0.7, 0.34), (1.9, -0.55, 0.42), (2.32, -0.72, 0.3))):
-        gg, tt = make_stalk(kit, M, f"umbstalk{k}", (x, y), h, thick=0.016, leaves=3, seed=10 + k, rot=0.7 * k)
-        rod(kit, f"umb{k}.shaft", (0, 0, 0), (0, 0, 0.3), 0.011, M["umb"], tt, n=7)
-        hook_arc(kit, M, f"umb{k}.hook", tt, 0.055, 0.3)
-        kit.cyl(f"umb{k}.cap", 0.016, 0.03, (0, 0, 0.015), M["iron2"], tt, n=8)
-    # --- plot two: a waist-high shrub hung with plain steel flasks
-    sh = kit.empty("shrub", (-3.0, -4.1, 0))
-    rng = random.Random(8)
-    for k in range(22):
-        a = rng.uniform(0, 6.28)
-        r = rng.uniform(0.0, 0.5)
-        z = rng.uniform(0.3, 0.95)
-        kit.box(f"shrub.lf{k}", (0.34, 0.26, 0.2), (r * math.cos(a), r * math.sin(a), z), M["leaf" if k % 2 else "leaf2"], sh,
-                rot=(rng.uniform(-.4, .4), rng.uniform(-.4, .4), rng.uniform(0, 3)), bevel=0.07)
-    for sx, sy in ((0.1, 0.1), (-0.12, 0.02), (0.05, -0.12)):
-        rod(kit, "shrub.twig", (0, 0, 0), (sx, sy, 0.8), 0.03, M["stalk"], sh, n=6)
-    for k in range(9):
-        a = 2 * math.pi * k / 9 + rng.uniform(-0.2, 0.2)
-        r = rng.uniform(0.3, 0.55)
-        z = rng.uniform(0.4, 0.95)
-        fl = kit.empty(f"flask{k}", (r * math.cos(a), r * math.sin(a), z), sh, rot=(rng.uniform(-.25, .25), rng.uniform(-.25, .25), 0))
-        kit.cyl(f"flask{k}.body", 0.05, 0.19, (0, 0, -0.1), M["steel"], fl, n=14)
-        kit.cyl(f"flask{k}.neck", 0.026, 0.04, (0, 0, 0.025), M["steel"], fl, n=10)
-        kit.cyl(f"flask{k}.cap", 0.03, 0.03, (0, 0, 0.06), M["flaskcap"], fl, n=10)
-        rod(kit, f"flask{k}.tie", (0, 0, 0.07), (-r * math.cos(a) * 0.5, -r * math.sin(a) * 0.5, 0.14), 0.006, M["stalk"], fl, n=4)
-    # --- plot nine: glasses and the cap on stalks between the bean rows
-    g4, t4 = make_stalk(kit, M, "glassstalk", (3.8, -26.85), 0.55, thick=0.02, leaves=3, seed=6)
-    glasses_shape(kit, M, "glasses", t4, 2.6)
-    tog["glasses"] = ([g4], False)
-    g5, t5 = make_stalk(kit, M, "capstalk", (3.85, -27.45), 0.5, thick=0.02, leaves=3, seed=7)
-    cap_shape(kit, M, "capp", t5, 1.6)
-    tog["capstalk"] = ([g5], False)
-    # the bucket, upturned
-    bk = kit.empty("bucket", (3.2, -25.3, 0))
-    kit.cyl("bucket.body", 0.19, 0.3, (0, 0, 0.15), M["steel"], bk, n=20, r2=0.15)
-    ctx["bucket"] = bk
-    # the bike, with the keys hung on its handlebar
+    # --- the gate: three closed umbrellas stood tip-down in the verge, each with a small fan of dark roots at its tip
+    for k, (x, y, col, lean) in enumerate(((1.5, -0.7, M["umbnavy"], (4, 3)), (1.95, -0.52, M["umbred"], (-3, 5)),
+                                           (2.4, -0.74, M["umbgreen"], (2, -4)))):
+        umbrella(kit, M, f"umb{k}", (x, y), col, 40 * k, lean, 70 + k)
+    # --- Mr Pell's giant pot on its barrow (shown by a cue)
+    pg = kit.empty("potbarrow", (POT[0], POT[1], 0))
+    kit.box("barrow.tray", (1.0, 1.5, 0.1), (0, 0, 0.38), M["post"], pg, bevel=0.015)
+    for sx in (-1, 1):
+        kit.box(f"barrow.side{sx}", (0.05, 1.5, 0.22), (sx * 0.5, 0, 0.5), M["post"], pg, bevel=0.01)
+        rod(kit, f"barrow.handle{sx}", (sx * 0.4, -0.55, 0.42), (sx * 0.46, -1.55, 0.78), 0.03, M["post"], pg, n=8)
+        kit.box(f"barrow.leg{sx}", (0.06, 0.06, 0.34), (sx * 0.42, -0.55, 0.17), M["post"], pg, bevel=0.01)
+    torus(kit, "barrow.wheel", 0.27, 0.05, (0, 0.95, 0.3), M["tyre"], pg, rot=(0, math.radians(90), 0), n=22, m=6)
+    kit.cyl("barrow.hub", 0.05, 0.12, (0, 0.95, 0.3), M["iron2"], pg, rot=(0, math.radians(90), 0), n=10)
+    kit.box("barrow.fork", (0.6, 0.05, 0.06), (0, 0.95, 0.3), M["post"], pg)
+    kit.cyl("pot.body", 0.5, 0.66, (0, 0, 0.75), M["terra"], pg, n=28, r2=0.62)
+    torus(kit, "pot.rim", 0.62, 0.05, (0, 0, 1.08), M["terra"], pg, n=28, m=6)
+    kit.cyl("pot.soil", 0.6, 0.02, (0, 0, 1.03), M["bsoil"], pg, n=28)
+    tog["pot"] = ([pg], False)
+    # --- the bucket, the flask
+    bk, binner, bsoil, bplant = make_bucket(kit, M, "bucket", (-20, -20, 0))
+    ctx["bucket"] = (bk, binner, bsoil, bplant)
+    fk = kit.empty("flask", (-20, -20, 0))
+    kit.cyl("flask.body", 0.05, 0.19, (0, 0, 0.095), M["steel"], fk, n=14)
+    kit.cyl("flask.neck", 0.026, 0.04, (0, 0, 0.21), M["steel"], fk, n=10)
+    kit.cyl("flask.cap", 0.03, 0.03, (0, 0, 0.245), M["flaskcap"], fk, n=10)
+    ctx["flask"] = fk
+    # --- the bike, with the bucket hung on its handlebars and her roots trailing from it
     bike = kit.empty("bike", (0, 0, -9))
     for y in (-0.55, 0.55):
         torus(kit, f"bike.tyre{y}", 0.31, 0.025, (0, y, 0.34), M["tyre"], bike, rot=(0, math.radians(90), 0), n=28, m=6)
@@ -715,24 +781,20 @@ def build_props(kit, M, ctx):
     rod(kit, "bike.rear", (0, 0.05, 0.38), (0, 0.55, 0.34), 0.012, M["bikered"], bike)
     kit.box("bike.bars", (0.5, 0.03, 0.03), (0, -0.5, 0.97), M["iron"], bike, bevel=0.008)
     kit.box("bike.saddle", (0.12, 0.26, 0.05), (0, 0.32, 0.8), M["tyre"], bike, bevel=0.015)
-    keys_bunch(kit, M, "bikekeys", bike, (0.12, -0.52, 0.93), s=2.0)
+    make_bucket(kit, M, "bikebucket", (0, -0.8, 0.66), bike, full=True, bean=True)
+    ctx["bikebucket_on"] = True
+    for nm in ("bikebucket.in",):
+        bpy.data.objects[nm].hide_render = True
+    rod(kit, "bike.bucketstrap", (0, -0.62, 0.95), (0.0, -0.8, 0.96), 0.008, M["iron"], bike, n=5)
+    tube(kit, "bike.trail", [(0.12, -0.8, 0.66), (0.22, -0.75, 0.4), (0.3, -0.35, 0.08), (0.3, 0.5, 0.035), (0.2, 1.4, 0.03), (0.0, 2.1, 0.03)],
+         0.026, 0.008, M["root"], bike, m=6, k=4)
     ctx["bike"] = bike
     ctx["tog"] = tog
 
 
-def scarf_knot(kit, M, name, parent, kn, tail_len=0.34, w=0.07, mat=None):
-    """The green scarf, tied: two bands meeting in a knot with two tails. The Digger's roots tie the same knot."""
-    mat = mat or M["sage"]
-    k0 = kit.sphere(f"{name}.knot", 0.05, kn, mat, parent, seg=10)
-    k0.scale = (1.25, 0.85, 0.9)
-    for sx in (-1, 1):
-        kit.box(f"{name}.tail{sx}", (w, 0.016, tail_len), (kn[0] + sx * 0.03, kn[1], kn[2] - tail_len / 2 - 0.02), mat, parent,
-                rot=(0, sx * 0.14, 0), bevel=0.006)
-
-
 def build_interior(kit, M, x0, ctx):
-    """Grandad's shed from inside: the camera looks +y at the back wall (y = 1.9). The tool wall on the left, a shelf on
-    the right. On one hook hangs Gran's sage headscarf, tied; the hook beside it is bare until his cap goes on (L40)."""
+    """Mum's shed from inside: the camera looks +y at the back wall (y = 1.9). The tool wall on the left is bare,
+    every hook empty, and a shelf on the right is half cleared."""
     wood = M["inwood"]
     kit.box(f"in{x0}.floor", (2.8, 3.0, 0.05), (x0, 0.6, -0.025), M["post"])
     kit.box(f"in{x0}.back", (2.8, 0.06, 2.4), (x0, 1.9, 1.2), wood)
@@ -740,44 +802,14 @@ def build_interior(kit, M, x0, ctx):
     for s in (-1, 1):
         kit.box(f"in{x0}.side{s}", (0.06, 2.8, 2.4), (x0 + s * 1.4, 0.5, 1.2), wood)
     kit.box(f"in{x0}.ceil", (2.8, 2.9, 0.06), (x0, 0.5, 2.4), M["roof"])
-    tools = [(-0.8, "spade"), (-0.45, "fork"), (-0.1, "hoe")]
-    for dx, kind in tools:
-        x = x0 + dx - 0.1
-        kit.box(f"in{x0}.hook{dx}", (0.03, 0.06, 0.03), (x, 1.84, 1.72), M["iron"])
-        kit.cyl(f"in{x0}.shaft{dx}", 0.017, 1.15, (x, 1.8, 1.15), M["post"], n=8)
-        if kind == "spade":
-            kit.box(f"in{x0}.blade{dx}", (0.2, 0.015, 0.28), (x, 1.8, 0.45), M["iron2"], bevel=0.004)
-        elif kind == "fork":
-            for t in (-0.07, 0, 0.07):
-                kit.box(f"in{x0}.tine{dx}{t}", (0.02, 0.015, 0.26), (x + t, 1.8, 0.45), M["iron2"])
-            kit.box(f"in{x0}.tbar{dx}", (0.17, 0.015, 0.03), (x, 1.8, 0.6), M["iron2"])
-        else:
-            kit.box(f"in{x0}.hoe{dx}", (0.22, 0.015, 0.05), (x, 1.78, 0.57), M["iron2"], rot=(0, 0.2, 0))
-    # the scarf hook, and its neighbour for the cap
-    hx = x0 + 0.28
-    kit.box(f"in{x0}.hookscarf", (0.045, 0.09, 0.045), (hx, 1.82, 1.62), M["iron2"], bevel=0.008)
-    kit.box(f"in{x0}.hookcap", (0.045, 0.09, 0.045), (hx + 0.34, 1.82, 1.62), M["iron2"], bevel=0.008)
-    # scarf: a folded triangle hung from the hook, knotted at the fold with two short tails
-    sg = kit.empty(f"in{x0}.scarf", (hx, 1.795, 0))
-    hw, t_ = 0.13, 0.011
-    tri = [(-hw, -t_, 1.63), (hw, -t_, 1.63), (0, -t_, 1.2), (-hw, t_, 1.63), (hw, t_, 1.63), (0, t_, 1.2)]
-    kit.mesh_obj(f"in{x0}.tri", tri, [(0, 2, 1), (3, 4, 5), (0, 1, 4, 3), (1, 2, 5, 4), (2, 0, 3, 5)], M["sage"], sg)
-    scarf_knot(kit, M, f"in{x0}.sk", sg, (0.0, -0.02, 1.5), tail_len=0.13, w=0.045)
-    # the cap, hung on the second hook (shown by a cue)
-    cg = kit.empty(f"in{x0}.cap", (hx + 0.34, 1.78, 1.5), rot=(math.radians(-80), 0, 0))
-    cap_shape(kit, M, f"in{x0}.capp", cg, 1.7)
-    ctx["tog"]["intcap"] = ([cg], False)
+    for dx in (-1.0, -0.7, -0.4, -0.1, 0.2, 0.5):     # bare hooks
+        kit.box(f"in{x0}.hook{dx}", (0.04, 0.08, 0.04), (x0 + dx, 1.84, 1.65), M["iron2"], bevel=0.008)
+        kit.box(f"in{x0}.hookb{dx}", (0.04, 0.08, 0.04), (x0 + dx, 1.84, 1.2), M["iron2"], bevel=0.008)
     sx_ = x0 + 0.95
     kit.box(f"in{x0}.shelf", (0.9, 0.35, 0.04), (sx_, 1.72, 1.0), M["post"], bevel=0.005)
     kit.box(f"in{x0}.shelf2", (0.9, 0.35, 0.04), (sx_, 1.72, 1.5), M["post"], bevel=0.005)
     kit.sphere(f"in{x0}.twine", 0.08, (sx_ - 0.25, 1.7, 1.1), M["twine"], seg=12)
-    kit.cyl(f"in{x0}.oil", 0.05, 0.16, (sx_ + 0.05, 1.7, 1.1), M["oil"], n=12)
-    rod(kit, f"in{x0}.oilspout", (sx_ + 0.05, 1.7, 1.18), (sx_ + 0.17, 1.7, 1.26), 0.009, M["oil"])
-    for k in range(4):
-        kit.box(f"in{x0}.pack{k}", (0.1, 0.012, 0.14), (sx_ - 0.3 + 0.12 * k, 1.78, 1.58), M["paper"],
-                rot=(0, 0.1 * (k - 1.5), 0), bevel=0.003)
-        kit.box(f"in{x0}.pod{k}", (0.05, 0.004, 0.07), (sx_ - 0.3 + 0.12 * k, 1.769, 1.58), M["leaf2"],
-                rot=(0, 0.1 * (k - 1.5), 0))
+    kit.box(f"in{x0}.pack0", (0.1, 0.012, 0.14), (sx_ - 0.1, 1.78, 1.58), M["paper"], bevel=0.003)
     kit.light(f"lamp{x0}", "POINT", (x0 + 0.1, 0.3, 2.0), 12.0, "#ffeedd", size=0.12)
     kit.light(f"lamp{x0}b", "POINT", (x0 + 0.8, 1.2, 1.6), 4.0, "#ffeedd", size=0.1)
     kit.light(f"lamp{x0}c", "POINT", (x0 + 0.3, 1.1, 1.5), 8.0, "#ffeedd", size=0.1)
@@ -806,6 +838,7 @@ def build(kit, story, tl):
     build_gate(kit, M, ctx)
     build_plots(kit, M, ctx)
     build_digger(kit, M, ctx)
+    build_roots(kit, M, ctx)
     build_holes(kit, M, ctx)
     build_props(kit, M, ctx)
     build_interior(kit, M, 60.0, ctx)
@@ -845,7 +878,7 @@ def no_light(kit, coll, light_name, objs):
 def decorate(kit, story, ctx):
     """After the cast exists: wellies, wet trousers, a moustache, the fog nodes to animate, the fill's link."""
     M = ctx["M"]
-    for who, mat, lo in (("me", M["wellig"], 1.0), ("carter", M["wellid"], 0.62)):
+    for who, mat, lo in (("me", M["wellig"], 1.0), ("carter", M["wellid"], 0.62), ("newcomer", M["wellid"], 0.8)):
         for sx in (-1, 1):
             leg = bpy.data.objects.get(f"{who}.leg{sx}")
             if leg is None:
@@ -948,8 +981,8 @@ def animate(kit, story, tl, t, ctx):
     hidden = bool(c.get("hidden"))
     _show([dg["root"]], not hidden)
     over["digger eyes"] = 0.0 if hidden else 0.35
-    kl = _last(_cues(tl, "knotlight"), t) or {}
-    over["digger knot"] = 14.0 if (kl.get("on") and not hidden) else 0.0
+    over["digger rim"] = 0.0 if hidden else 55.0
+    over["digger rim2"] = 0.0 if hidden else 22.0
     if not hidden:
         px, py = DIG[c["plot"]]
         dg["root"].location = (px, py, 0)
@@ -974,10 +1007,33 @@ def animate(kit, story, tl, t, ctx):
     for nm, (objs, default) in ctx["tog"].items():
         on = (_last(_cues(tl, nm), t) or {"on": default}).get("on", default)
         _show(objs, bool(on))
-    gc = ctx.get("grandcap")
-    if gc is not None:
-        gc.hide_render = not bool((_last(_cues(tl, "grandcap"), t) or {"on": True}).get("on", True))
-    _show([ctx["bucket"]], bool((_last(_cues(tl, "bucket"), t) or {}).get("on")))
+    # the bucket (upright, empty or full of soil, with or without its bean) and the flask
+    bc_ = _last(_cues(tl, "bucket"), t) or {"pos": [-20, -20]}
+    bk, binner, bsoil, bplant = ctx["bucket"]
+    bk.location = (bc_["pos"][0], bc_["pos"][1], 0)
+    _show([bk], True)
+    _show([binner], not bc_.get("full"))
+    _show([bsoil], bool(bc_.get("full")))
+    _show([bplant], bool(bc_.get("bean")))
+    fc_ = _last(_cues(tl, "flask"), t) or {"pos": [-20, -20]}
+    ctx["flask"].location = (fc_["pos"][0], fc_["pos"][1], 0)
+    # ---------------------------------------------------------------- roots
+    mr = _last(_cues(tl, "mumrun"), t) or {"to": 0.0, "groove": False}
+    for ob, gr, ymax in ctx["mumpieces"]:
+        shown = ymax <= mr["to"] + 0.4
+        _show([ob], shown)
+        _show([gr], (not shown) and bool(mr.get("groove")))
+    mf, sc, cu = ctx["mumfan"]
+    fcue = _last(_cues(tl, "mumfan"), t) or {"off": True}
+    if fcue.get("off"):
+        _show([mf], False)
+    else:
+        _show([mf], True)
+        mf.location = (fcue["pos"][0], fcue["pos"][1], 0)
+        mf.rotation_euler = (0, 0, math.radians(fcue["yaw"]))
+        sc.scale = (fcue["scale"], fcue["scale"], 1.0)
+        _show([cu], bool(fcue.get("bucket")))
+    _show([ctx["digrun"]], bool((_last(_cues(tl, "digrun"), t) or {}).get("on")))
     # the bike: beside the newcomer while she wheels it
     bc = _last(_cues(tl, "bike"), t) or {"on": False}
     bike = ctx["bike"]
@@ -997,7 +1053,8 @@ def animate(kit, story, tl, t, ctx):
     if pc:
         u = t - pc["t"]
         z = 1.35 - 4.9 * u * u
-        pb.location = (3.2 + (3.4 - 3.2) * min(1, u / 0.5), -3.85 + (-3.6 + 3.85) * min(1, u / 0.5), z) if z > -0.2 else (0, 0, -9)
+        f0, f1 = pc["from"], pc["to"]
+        pb.location = (f0[0] + (f1[0] - f0[0]) * min(1, u / 0.5), f0[1] + (f1[1] - f0[1]) * min(1, u / 0.5), z) if z > -0.2 else (0, 0, -9)
     else:
         pb.location = (0, 0, -9)
     return over

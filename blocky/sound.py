@@ -769,6 +769,20 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         t = np.arange(n) / SR
         y = y + 0.25 * np.sin(2 * np.pi * np.cumsum(900 * (120 / 900) ** (t / dur)) / SR) * (1 - t / dur)
         return synth.fade(y, 0.05, 0.05) * 0.8
+    if kind == "rootcreak":   # ep25, opt-in: a slow wooden groan, stick and slip, all under 1 kHz
+        t = np.arange(synth.n_samples(dur)) / SR
+        f = 78 * (1 + 0.16 * np.sin(2 * np.pi * 0.55 * t) + 0.05 * np.sin(2 * np.pi * 1.7 * t + 1.0))
+        src = synth.saw(f, dur) * 0.5 + synth.sine(f * 2.0, dur) * 0.25
+        stick = 0.55 + 0.45 * synth.one_pole_smooth(np.abs(synth.noise(dur, seed + 5)), 0.05)
+        y = fft_filter(src, "band", 60, 800) * stick * np.sin(np.pi * np.clip(t / dur, 0, 1)) ** 1.3
+        return fft_filter(y, "low", 900) * 0.9
+    if kind == "tock":        # ep25, opt-in: a soft stone tock, a short low tone that falls in pitch
+        d = max(dur, 0.45)
+        t = np.arange(synth.n_samples(d)) / SR
+        f = 150 + 330 * np.exp(-t / 0.035)
+        y = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.075)
+        y += 0.35 * fft_filter(synth.noise(d, seed), "band", 200, 1400) * np.exp(-t / 0.012)
+        return fft_filter(y, "low", 1800) * 0.9
     if kind == "silence":
         return np.zeros(1)
     raise ValueError(f"no sfx {kind!r}")
@@ -898,6 +912,8 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
         if a1 <= a0:
             continue
         y = amb(a["kind"], a1 - a0, k + 3)
+        if a.get("lowpass"):   # opt-in (ep25): roll the bed off above this many Hz
+            y = fft_filter(y, "low", float(a["lowpass"]))
         y *= np.minimum(1, np.arange(len(y)) / (0.3 * SR)) * np.minimum(1, (len(y) - np.arange(len(y))) / (0.3 * SR))
         m.add("amb", a0, to_lufs(y, a.get("lufs", -32.0)), pan=a.get("pan", 0.0))
     for k, h in enumerate(snd.get("hums", [])):   # opt-in (ep42): people's steady hums, on the ambience bus
@@ -916,6 +932,8 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
     drops = [drop_spec(d) for d in snd.get("music_drops", [])]
     for k, e in enumerate(snd.get("sfx", [])):
         y = sfx(e["kind"], k, e.get("dur", 1.0), e)
+        if e.get("lowpass"):   # opt-in (ep25): roll this effect off above this many Hz
+            y = fft_filter(y, "low", float(e["lowpass"]))
         te = at(e["at"])
         keep = e.get("keep", False) or any(e["kind"] in d["keep"] and at(d["from"]) - 0.05 <= te < at(d["to"]) + 0.4
                                            for d in drops)
