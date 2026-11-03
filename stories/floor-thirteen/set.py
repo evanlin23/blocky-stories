@@ -67,6 +67,9 @@ DOOR_W, DOOR_H = 1.1, 2.1      # the opening
 WALL_T = 0.08
 DOOR_Y = CAR_Y0 - WALL_T - 0.03   # the car doors' track, just outside the front wall
 SILL_Y = CAR_Y0 - 0.32         # where 13's floor starts (past the car's sill and the hall's)
+BX = 30.0                      # the balconies' x (metres east of the lift)
+STX = -40.0                    # the stairwell's x (west of the lift)
+HALL_LEN = 12.0                # 13's hall, straight out from the lift
 PANEL_X = -0.75                # the floor-button panel's centre on the front wall, beside the doors
 PANEL_Z = 1.12
 RAIL_Z = 0.92                  # the handrail
@@ -85,12 +88,23 @@ DEFAULT_GRID = (3, 3)
 # poses that have passed the contact probe against the doors, the header, the transom and the sill (cue "pose")
 POSES = {
     "bump": {"pos": [0.0, -2.04], "yaw": 180, "lean": 0, "bend": 40, "head": [-2, 0, 0], "fold": 1.6},
+    # standing on 13's floor a step from the sill, upright, facing the car (the arrivals; never seen to move)
+    "left": {"pos": [0.36, -1.68], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
+    "right": {"pos": [-0.36, -1.68], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
+    "centre": {"pos": [0.0, -1.68], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
+    # down the dark hall (the redo): the far end beside the cold lamp, halfway up between the shelves, beside a shelf as
+    # I walk past (its panel faces the aisle, +x), and facing the open lift for the last shot
+    "far": {"pos": [0.3, -12.3], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
+    "half": {"pos": [0.25, -7.2], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
+    "shelf": {"pos": [-0.62, -5.4], "yaw": 90, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
+    "last": {"pos": [0.0, -2.75], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
 }
 LEG_H, LEG_W = 2.6, 0.84       # rig units (a person's legs are 2.0 x 1.0)
 TORSO_W, TORSO_H, TORSO_D = 1.6, 2.05, 0.9    # narrow shoulders: the doors close on them
 ARM_W, ARM_L = 0.72, 3.6       # a person's arm is 1.0 x 2.0; folded, the gloves hang below its knees
 ARM_IN = 19.5                  # how far each arm swings in so the gloves meet and cross (degrees)
-GLOVE_L = 0.62
+GLOVE_L = 0.95                 # a glove longer than it is wide reads as a hand hanging from the cuff, not a cube
+GLOVE_W = 0.5
 COLLAR_H = 0.25
 NECK_H = 0.2                   # a wool neck block between the collar and the head (7 cm)
 # the head: a deep black lacquer block, its face a lift panel set back in a socket behind a lacquer lip
@@ -245,11 +259,11 @@ def button_mat(kit, name, radius, glow=GLOW, style="ring"):
     m = kit._new(name)
     N, L = m.node_tree.nodes, m.node_tree.links
     b = N["Principled BSDF"]
-    b.inputs["Base Color"].default_value = kit.col("#0b0e12")
-    b.inputs["Roughness"].default_value = 0.32   # frosted: the side lights don't glint in it like a second eye
+    b.inputs["Base Color"].default_value = kit.col("#040508")
+    b.inputs["Roughness"].default_value = 0.7   # frosted: the side lights don't glint in it like a second eye or a lit button
     for k in ("Specular IOR Level", "Specular"):
         if k in b.inputs:
-            b.inputs[k].default_value = 0.6
+            b.inputs[k].default_value = 0.0
             break
     b.inputs["Emission Color"].default_value = kit.col(glow)
     tc = N.new("ShaderNodeTexCoord")
@@ -356,7 +370,7 @@ def build_attendant(kit, M, name="attendant", cap=True, grid=DEFAULT_GRID, style
         kit.box(f"{name}.sleeve{sx}", (ARM_W, ARM_W, sl), (0, 0, 0.3 - sl / 2), M["wool"], a, bevel=bev)
         kit.box(f"{name}.cuff{sx}", (ARM_W + 0.04, ARM_W + 0.04, 0.1), (0, 0, 0.3 - sl + 0.06), M["brass"], a,
                 bevel=0.02)
-        kit.box(f"{name}.glove{sx}", (ARM_W - 0.04, ARM_W - 0.02, GLOVE_L), (0, 0, 0.3 - sl - GLOVE_L / 2), M["glove"],
+        kit.box(f"{name}.glove{sx}", (GLOVE_W, GLOVE_W + 0.04, GLOVE_L), (0, 0, 0.3 - sl - GLOVE_L / 2), M["glove"],
                 a, bevel=0.1)
         kit.box(f"{name}.board{sx}", (ARM_W + 0.06, ARM_W * 0.7, 0.07), (0, 0, 0.32), M["wool"], a, bevel=0.02)
         kit.box(f"{name}.boardedge{sx}", (0.05, ARM_W * 0.72, 0.08), (sx * (ARM_W / 2 + 0.02), 0, 0.32), M["brass"], a)
@@ -418,8 +432,17 @@ def build_attendant(kit, M, name="attendant", cap=True, grid=DEFAULT_GRID, style
         kit.box(f"{name}.peak", (HEAD_S * 0.92, vis, 0.05),
                 (0, front - vis / 2 * math.cos(a), top + 0.02 - vis / 2 * math.sin(a)), M["visor"], hc,
                 rot=(a, 0, 0), bevel=0.02)
+    # the brass luggage tag on a short loop, hanging from the folded gloves (placed in the world by place_tag: it
+    # hangs straight whatever the arms do). "12" stamped in the brass and one cold upright stroke under it.
+    tg = kit.empty(f"{name}.tag", (0, 0, 0), R)
+    kit.box(f"{name}.tagloop", (0.05, 0.05, 0.26), (0, 0, -0.1), M["brass_dark"], tg, bevel=0.015)
+    kit.box(f"{name}.tagplate", (0.36, 0.05, 0.5), (0, 0, -0.45), M["brass_frame"], tg, bevel=0.02)
+    kit.box(f"{name}.tagrim", (0.4, 0.04, 0.54), (0, 0.012, -0.45), M["brass_dark"], tg, bevel=0.02)
+    seg_digits(kit, f"{name}.tagnum", "12", (0.0, -0.38, -0.045), 0.045, 0.085, 0.03, M["brass_dark"], parent=tg,
+               depth=0.04, axis="y")
+    stroke = kit.box(f"{name}.tagstroke", (0.035, 0.04, 0.16), (0.0, -0.05, -0.6), glow_mat(kit, "tag stroke", GLOW, 3.0), tg)
     return {"root": R, "waist": W, "neck": neck, "head": hc, "arms": arms, "buttons": buttons, "name": name,
-            "grid": grid, "height": (LEG_H + TORSO_H + COLLAR_H + NECK_H + HEAD_S + (CAP_H if cap else 0)) * U}
+            "grid": grid, "tag": tg, "height": (LEG_H + TORSO_H + COLLAR_H + NECK_H + HEAD_S + (CAP_H if cap else 0)) * U}
 
 
 def lit_gains(grid, lit, glow=1.0, eye=1.0):
@@ -543,7 +566,7 @@ def build_car(kit, ctx, M):
 
 def build_panel(kit, ctx, M):
     """The floor-button panel beside the doors: 20 plain round buttons in two columns of ten (the Attendant's own
-    model, smaller), the lobby's at the bottom with a raised brass star, then door-open and door-close with raised
+    model, smaller), floors 12 and 13 with raised brass numerals, then door-open and door-close with raised
     brass arrows. No numbers, letters, bell or braille."""
     yf = CAR_Y0
     pw, ph = 0.2, 0.9
@@ -554,7 +577,7 @@ def build_panel(kit, ctx, M):
     pr = 0.022           # a glass face's radius in metres; the bezel is 1.39 times it, as on the Attendant
     dz = 0.066
     rows = [(PANEL_X + (c - 0.5) * 0.085, PANEL_Z + ph / 2 - 0.08 - r * dz) for r in range(10) for c in range(2)]
-    slots = rows[::-1]   # 0 is the bottom one on the door side: the lobby
+    slots = rows[::-1]   # 0 is the bottom one on the door side; 11 is floor 12 and 12 is floor 13
     z_low = PANEL_Z + ph / 2 - 0.08 - 10 * dz - 0.02
     slots += [(PANEL_X + 0.0425, z_low), (PANEL_X - 0.0425, z_low)]   # 20 door-open, 21 door-close
     pbtn = []
@@ -564,10 +587,13 @@ def build_panel(kit, ctx, M):
         kit.cyl(f"pbutton{i}", pr, 0.012, (x, py + 0.008, z), bm, rot=(math.pi / 2, 0, 0), n=28)
         pbtn.append(bm)
     gy = py + 0.0145
-    x, z = slots[0]      # the lobby's raised star
-    star = [((0.016 if k % 2 == 0 else 0.0065) * math.sin(-2 * math.pi * k / 10),
-             (0.016 if k % 2 == 0 else 0.0065) * math.cos(2 * math.pi * k / 10)) for k in range(10)][::-1]
-    _prism(kit, "glyph.star", star, 0.003, (x, gy, z), M["brass"])
+    # raised brass numerals beside the 12 and 13 buttons (slots 11 and 12), and nothing else on the panel
+    for i, label in ((11, "12"), (12, "13")):
+        x, z = slots[i]
+        side = -1 if x < PANEL_X else 1          # the left or right column; the digits go outboard of the bezel
+        cx = x + side * (pr * 1.39 + 0.0105)
+        seg_digits(kit, f"num{label}_", label, (cx, z, gy + 0.0015), 0.0035, 0.0085, 0.0016, M["brass"], mirror=True,
+                   depth=0.003, axis="y")
     for i, outward in ((20, True), (21, False)):   # open: <|>  close: >|<
         x, z = slots[i]
         for s in (-1, 1):
@@ -592,7 +618,8 @@ def build_indicator(kit, ctx, M):
     blocks (no font), and an up and a down triangle, all in the creature's cold colour."""
     z = DOOR_H + 0.2
     y = CAR_Y0 + 0.012
-    _wbox(kit, "indicator", (-0.2, CAR_Y0, z - 0.075), (0.2, y, z + 0.075), M["glass_black"])
+    _wbox(kit, "indicator", (-0.2, CAR_Y0, z - 0.075), (0.2, y, z + 0.075),
+          pbr(kit, "indicator glass", "#050506", 0.7, spec=0.03))   # matte: the ceiling must not mirror in it as a white bar
     _wbox(kit, "indicator_rim", (-0.212, CAR_Y0, z - 0.087), (0.212, y - 0.004, z + 0.087), M["brass_dark"])
     sw, sh, th = 0.028, 0.05, 0.008   # a digit's half-width and half-height, a segment's thickness
     segs = {}
@@ -607,35 +634,225 @@ def build_indicator(kit, ctx, M):
     ctx["segs"], ctx["arrows"] = segs, arrows
 
 
+def build_indicator_out(kit, ctx, M):
+    """The same floor indicator on the 12 landing's wall over the lift doors, facing the landing (-y)."""
+    z = DOOR_H + 0.2
+    y0 = SILL_Y - 0.06             # the landing wall's face over the doors
+    y = y0 - 0.012
+    _wbox(kit, "indicator_out", (-0.2, y, z - 0.075), (0.2, y0, z + 0.075),
+          pbr(kit, "indicator glass", "#050506", 0.7, spec=0.03))
+    _wbox(kit, "indicator_out_rim", (-0.212, y + 0.004, z - 0.087), (0.212, y0, z + 0.087), M["brass_dark"])
+    sw, sh, th = 0.028, 0.05, 0.008
+    segs = {}
+    for d, cx in enumerate((-0.042, 0.042)):
+        for k, (sx, sz, across) in SEGS.items():
+            size = (2 * sw * 0.86, 0.004, th) if across else (th, 0.004, sh * 0.86)
+            segs[(d, k)] = kit.box(f"segO{d}{k}", size, (cx + sx * 2 * sw, y - 0.002, z + sz * sh), M["segment"])
+    arrows = {}
+    for name, sgn, cx in (("up", 1, -0.15), ("down", -1, 0.15)):
+        tri = [(0.0, sgn * 0.022), (0.02 * sgn, -sgn * 0.014), (-0.02 * sgn, -sgn * 0.014)]
+        arrows[name] = _prism(kit, f"arrowO.{name}", tri, 0.003, (cx, y - 0.001, z), M["segment"], rot=(math.pi / 2, 0, 0))
+    ctx["segs_out"], ctx["arrows_out"] = segs, arrows
+
+
 def set_indicator(ctx, floor="12", arrow=None):
     on = {(d, k) for d, ch in enumerate(f"{floor:>2}"[-2:]) for k in DIGITS.get(ch, "")}
-    for key, ob in ctx["segs"].items():
-        ob.hide_render = key not in on
-    for name, ob in ctx["arrows"].items():
-        ob.hide_render = name != arrow
+    for sk, ak in (("segs", "arrows"), ("segs_out", "arrows_out")):
+        for key, ob in ctx[sk].items():
+            ob.hide_render = key not in on
+        for name, ob in ctx[ak].items():
+            ob.hide_render = name != arrow
+
+
+def seg_digits(kit, name, text, c, sw, sh, th, mat, mirror=False, parent=None, depth=0.004, axis="y"):
+    """A string of segment digits built from blocks, centred on c = (a, z) where a is x for a wall facing +-y
+    (axis "y") or y for a wall facing +-x (axis "x"), at depth coordinate c[2]. sw and sh are a digit's half-width and
+    half-height. mirror reverses left and right (a viewer facing -y or +x sees +x or -y on the left)."""
+    segs = {}
+    n = len(text)
+    for d, ch in enumerate(text):
+        off = (d - (n - 1) / 2) * (sw * 2 + sw * 0.9)
+        for k in DIGITS.get(ch, ""):
+            sx, sz, across = SEGS[k]
+            w, h = (2 * sw * 0.86, th) if across else (th, sh * 0.86)
+            a = c[0] + (-1 if mirror else 1) * (off + sx * 2 * sw)
+            z = c[1] + sz * sh
+            if axis == "y":
+                segs[(d, k)] = kit.box(f"{name}{d}{k}", (w, depth, h), (a, c[2], z), mat, parent)
+            else:
+                segs[(d, k)] = kit.box(f"{name}{d}{k}", (depth, w, h), (c[2], a, z), mat, parent)
+    return segs
+
+
+def _stock(kit, M, name, hexc, rough=0.7, **kw):
+    return pbr(kit, name, hexc, rough, **kw)
 
 
 def build_hall(kit, ctx, M):
-    """13's hall beyond the doors: umber carpet, dark olive-brown walls, unlit brass sconces, shut doors with blank
-    brass plates, running far back into the fog. The camera only ever sees it through the gap."""
+    """13's hall: a long umber corridor straight out from the lift, both sides lined with open shelves of forgotten
+    things (kettles, hats, books, parcels, jars, clocks, lamps), each with a brass tag; a board of keys, an armchair,
+    one shelf with a brass 12 tag and a folded red scarf. Warm lamps and sconces for the bright state (gains in the
+    lights cue), the cold far lamp for the dark one."""
+    import random
+    rnd = random.Random(13)
     y0 = SILL_Y
     hh = HALL_H
-    _wbox(kit, "hall_floor", (-1.6, y0 - 12.0, -0.1), (1.6, y0, 0.0), M["carpet"])
-    _wbox(kit, "hall_ceiling", (-1.6, y0 - 12.0, hh), (1.6, y0, hh + 0.1), M["hall_wall"])
+    yL = y0 - HALL_LEN
+    _wbox(kit, "hall_floor", (-1.6, yL, -0.1), (1.6, y0, 0.0), M["carpet"])
+    _wbox(kit, "hall_ceiling", (-1.6, yL, hh), (1.6, y0, hh + 0.1), M["hall_wall"])
     for k, (lo, hi) in enumerate((((-1.6, y0 - 0.06, 0.0), (-DOOR_W / 2 - 0.06, y0, hh)),
                                    ((DOOR_W / 2 + 0.06, y0 - 0.06, 0.0), (1.6, y0, hh)),
                                    ((-DOOR_W / 2 - 0.06, y0 - 0.06, HALL_DOOR_H), (DOOR_W / 2 + 0.06, y0, hh)))):
         _wbox(kit, f"hall_front{k}", lo, hi, M["hall_wall"])
-    # the hall runs across in front of the lift, and on away to the left, far longer than the tower is wide
-    _wbox(kit, "hall_wall_far", (-1.6, y0 - 1.7, 0.0), (0.9, y0 - 1.6, hh), M["hall_wall"])
-    _wbox(kit, "hall_wall_right", (1.5, y0 - 12.0, 0.0), (1.6, y0, hh), M["hall_wall"])
-    _wbox(kit, "hall_wall_left", (-1.6, y0 - 12.0, 0.0), (-1.5, y0 - 1.7, hh), M["hall_wall"])
-    for k, yy in enumerate((-3.2, -5.4, -7.6)):
-        _wbox(kit, f"hall_door{k}", (1.46, y0 + yy - 0.45, 0.0), (1.5, y0 + yy + 0.45, 2.05), M["hall_door"])
-        _wbox(kit, f"hall_plate{k}", (1.455, y0 + yy - 0.06, 1.55), (1.46, y0 + yy + 0.06, 1.63), M["brass_dark"])
-    for k, x in enumerate((-1.0, 1.0)):   # unlit sconces either side of the lift
-        kit.box(f"sconce{k}", (0.12, 0.08, 0.18), (x, y0 - 0.1, 1.7), M["shade"], bevel=0.02)
-        kit.box(f"sconce{k}.plate", (0.08, 0.02, 0.12), (x, y0 - 0.07, 1.62), M["brass_dark"])
+    _wbox(kit, "hall_wall_right", (1.5, yL, 0.0), (1.6, y0, hh), M["hall_wall"])
+    _wbox(kit, "hall_wall_left", (-1.6, yL, 0.0), (-1.5, y0, hh), M["hall_wall"])
+    _wbox(kit, "hall_end", (-1.6, yL - 0.1, 0.0), (1.6, yL, hh), M["hall_wall"])
+    _wbox(kit, "hall_runner", (-0.55, yL, 0.0), (0.55, y0 - 0.3, 0.012), pbr(kit, "13 runner", "#5a3a22", 0.95, noise=(7.0, 0.6)))
+    # the far lamp, one small cold light on the end wall's left, beside where the Attendant waits
+    kit.box("far_lamp", (0.1, 0.1, 0.34), (0.55, yL + 0.5, 1.95), kit.emit("#a9c4e6", 2.6), bevel=0.02)
+    # sconces beside the lift and lanterns down the middle (warm only in the bright state)
+    sconce_glow = glow_mat(kit, "sconce glow", "#ffcf8a", 0.0)
+    ctx["sconce_mat"] = sconce_glow
+    for k, x in enumerate((-1.0, 1.0)):
+        kit.box(f"sconce{k}", (0.12, 0.08, 0.18), (x, y0 - 0.1, 1.9), M["shade"], bevel=0.02)
+        kit.box(f"sconce{k}.plate", (0.08, 0.02, 0.12), (x, y0 - 0.07, 1.82), M["brass_dark"])
+        kit.box(f"sconce{k}.glow", (0.09, 0.05, 0.14), (x, y0 - 0.15, 1.95), sconce_glow)
+    for k in range(5):
+        yy = y0 - 1.5 - k * 2.4
+        kit.cyl(f"lantern{k}.rod", 0.012, 0.3, (0, yy, hh - 0.15), M["brass_dark"], n=8)
+        kit.box(f"lantern{k}", (0.3, 0.3, 0.2), (0, yy, hh - 0.4), M["shade"], bevel=0.03)
+        kit.box(f"lantern{k}.glow", (0.24, 0.24, 0.05), (0, yy, hh - 0.52), sconce_glow)
+    # ---- shelves
+    wood = pbr(kit, "shelf wood", "#4a3220", 0.6, noise=(10.0, 0.7))
+    tagm = pbr(kit, "luggage tag", "#c8a050", 0.35, metal=1.0)
+    strm = pbr(kit, "tag string", "#2a2218", 0.8)
+    paper = pbr(kit, "brown paper", "#8a6a45", 0.9, noise=(8.0, 0.8))
+    steel = pbr(kit, "kettle steel", "#9a9da1", 0.35, metal=0.9)
+    enamel = [pbr(kit, f"enamel{i}", c, 0.4) for i, c in enumerate(("#d9d2bd", "#5d7f88", "#8a9a6b", "#c9b27a"))]
+    hatc = [pbr(kit, f"hat{i}", c, 0.85) for i, c in enumerate(("#2c2a28", "#6a6258", "#8d7a5a", "#3b4452"))]
+    bookc = [pbr(kit, f"book{i}", c, 0.8) for i, c in enumerate(("#3d5a6b", "#8a7a52", "#4f6a4a", "#6b5a7a", "#a89a7c", "#2f3a4a"))]
+    glassm = kit.glass("#b9d4cf")
+    clockface = pbr(kit, "clock face", "#d8d2c0", 0.6)
+    shade_m = pbr(kit, "lamp shade", "#cbbf9f", 0.9)
+    tiers = (0.04, 0.58, 1.12, 1.66, 2.2)
+    bays = 11
+    bay_y = lambda k: y0 - 0.45 - k * 1.0 - 0.5
+
+    def tag_on(name, x, y, z, side):
+        # a luggage tag hanging on a string off the item's front, 3 cm proud of the item
+        kit.box(f"{name}.str", (0.006, 0.006, 0.07), (x - side * 0.01, y, z + 0.035), strm)
+        kit.box(f"{name}.tag", (0.03, 0.06, 0.045), (x - side * 0.013, y, z - 0.012), tagm, bevel=0.003)
+
+    def item(kind, name, x, y, z, side):
+        """One forgotten thing standing on a plank at (x, y), z its top. x is the aisle-ward direction (-side)."""
+        if kind == "kettle":
+            m = rnd.choice(enamel + [steel])
+            kit.cyl(f"{name}.body", 0.1, 0.15, (x, y, z + 0.075), m, n=14, r2=0.085)
+            kit.cyl(f"{name}.lid", 0.06, 0.03, (x, y, z + 0.165), m, n=12)
+            kit.box(f"{name}.spout", (0.1, 0.03, 0.04), (x - side * 0.12, y, z + 0.11), m, rot=(0, 0.5 * side, 0))
+            kit.box(f"{name}.handle", (0.025, 0.14, 0.1), (x + side * 0.0, y, z + 0.2), pbr(kit, "kettle handle", "#2a2724", 0.6), bevel=0.01)
+            tag_on(name, x - side * 0.1, y + 0.05, z + 0.07, side)
+        elif kind == "hat":
+            m = rnd.choice(hatc)
+            kit.cyl(f"{name}.brim", 0.17, 0.02, (x, y, z + 0.01), m, n=18)
+            kit.cyl(f"{name}.crown", 0.095, 0.13, (x, y, z + 0.085), m, n=16, r2=0.085)
+            tag_on(name, x - side * 0.12, y + 0.08, z + 0.1, side)
+        elif kind == "books":
+            n = rnd.randint(4, 7)
+            yy = y - 0.12
+            for i in range(n):
+                w = rnd.uniform(0.025, 0.045)
+                h = rnd.uniform(0.2, 0.3)
+                kit.box(f"{name}.b{i}", (0.19, w, h), (x, yy + w / 2, z + h / 2), rnd.choice(bookc), bevel=0.004)
+                yy += w + 0.003
+            tag_on(name, x - side * 0.1, y + 0.02, z + 0.2, side)
+        elif kind == "parcel":
+            w, d, h = rnd.uniform(0.25, 0.38), rnd.uniform(0.2, 0.28), rnd.uniform(0.14, 0.26)
+            kit.box(f"{name}.box", (d, w, h), (x, y, z + h / 2), paper, bevel=0.006)
+            kit.box(f"{name}.strap", (d + 0.01, 0.014, h + 0.01), (x, y, z + h / 2), strm)
+            tag_on(name, x - side * (d / 2 + 0.01), y + 0.03, z + h * 0.7, side)
+        elif kind == "jar":
+            kit.cyl(f"{name}.glass", 0.075, 0.24, (x, y, z + 0.12), glassm, n=14)
+            kit.cyl(f"{name}.cap", 0.06, 0.03, (x, y, z + 0.255), M["brass_dark"], n=12)
+            tag_on(name, x - side * 0.08, y + 0.04, z + 0.14, side)
+        elif kind == "clock":
+            kit.cyl(f"{name}.face", 0.13, 0.05, (x, y, z + 0.14), clockface, rot=(0, math.pi / 2, 0), n=22)
+            kit.cyl(f"{name}.rim", 0.145, 0.04, (x + side * 0.01, y, z + 0.14), M["brass_dark"], rot=(0, math.pi / 2, 0), n=22)
+            kit.box(f"{name}.hand", (0.006, 0.012, 0.09), (x - side * 0.03, y, z + 0.17), strm)
+            kit.box(f"{name}.hand2", (0.006, 0.07, 0.012), (x - side * 0.03, y + 0.03, z + 0.14), strm)
+            tag_on(name, x - side * 0.04, y + 0.12, z + 0.05, side)
+        elif kind == "lamp":
+            kit.cyl(f"{name}.base", 0.07, 0.04, (x, y, z + 0.02), M["brass"], n=12)
+            kit.cyl(f"{name}.stem", 0.012, 0.22, (x, y, z + 0.15), M["brass"], n=8)
+            kit.cyl(f"{name}.shade", 0.1, 0.14, (x, y, z + 0.3), shade_m, n=14, r2=0.06)
+            tag_on(name, x - side * 0.07, y + 0.05, z + 0.08, side)
+        else:   # radio
+            kit.box(f"{name}.box", (0.16, 0.3, 0.2), (x, y, z + 0.1), pbr(kit, "radio wood", "#5b4026", 0.55), bevel=0.012)
+            kit.box(f"{name}.grille", (0.01, 0.16, 0.12), (x - side * 0.085, y - 0.04, z + 0.1), pbr(kit, "grille", "#1a1713", 0.8))
+            tag_on(name, x - side * 0.09, y + 0.12, z + 0.05, side)
+
+    kinds = ["kettle", "hat", "books", "parcel", "jar", "clock", "lamp", "radio"]
+    for side in (-1, 1):
+        xc = side * 1.27          # a plank's centre
+        xi = side * 1.18          # where items stand (the aisle half of the plank)
+        for k in range(bays):
+            yc = bay_y(k)
+            hooks = (side == 1 and k == 2)
+            for t, zt in enumerate(tiers):
+                if hooks and 0 < t < 4:
+                    continue
+                _wbox(kit, f"plank{side}.{k}.{t}", (xc - 0.225, yc - 0.5, zt), (xc + 0.225, yc + 0.5 - 0.02, zt + 0.03), wood)
+            _wbox(kit, f"upright{side}.{k}", (xc - 0.225, yc + 0.5 - 0.04, 0.0), (xc + 0.225, yc + 0.5, 2.23), wood)
+            if k == 0:
+                _wbox(kit, f"upright{side}.first", (xc - 0.225, yc - 0.5, 0.0), (xc + 0.225, yc - 0.46, 2.23), wood)
+            if hooks:
+                continue
+            for t, zt in enumerate(tiers[:4]):
+                cnt = rnd.choice((2, 2, 3))
+                ys = [yc - 0.33 + i * (0.66 / max(1, cnt - 1)) + rnd.uniform(-0.04, 0.04) for i in range(cnt)] if cnt > 1 else [yc]
+                for i, yy in enumerate(ys):
+                    kind = kinds[(k * 3 + t * 2 + i + (0 if side > 0 else 4)) % len(kinds)] if rnd.random() < 0.8 else rnd.choice(kinds)
+                    if side == -1 and abs(yc + 8.27) < 0.6 and t == 2:   # my shelf's plank holds the scarf
+                        continue
+                    item(kind, f"it{side}.{k}.{t}.{i}", xi + rnd.uniform(-0.04, 0.04), yy, zt + 0.03, side)
+    # the board of keys (right side, third bay): a walnut board, two rows of hooks, a ring and a tag on each
+    hy = bay_y(2)
+    _wbox(kit, "keyboard", (1.42, hy - 0.46, 0.7), (1.47, hy + 0.46, 1.95), pbr(kit, "key board", "#3a2618", 0.55))
+    ring = pbr(kit, "key ring", "#9aa0a6", 0.35, metal=1.0)
+    for r_, zz in enumerate((1.7, 1.38, 1.06)):
+        for i in range(6):
+            yy = hy - 0.38 + i * 0.152
+            kit.box(f"hook{r_}.{i}", (0.03, 0.012, 0.012), (1.405, yy, zz + 0.02), M["brass"])
+            kit.box(f"ring{r_}.{i}", (0.014, 0.034, 0.034), (1.4, yy, zz - 0.02), ring)
+            for j, kc in enumerate((ring, M["brass"])):
+                kit.box(f"key{r_}.{i}.{j}", (0.008, 0.02, 0.08), (1.4 - 0.002 * j, yy + (j - 0.5) * 0.03, zz - 0.085), kc, bevel=0.002)
+            kit.box(f"ktag{r_}.{i}", (0.012, 0.05, 0.07), (1.396, yy + 0.012, zz - 0.095), tagm, bevel=0.004)
+    # the armchair, facing the lift: dusty teal fabric, a brass tag on its arm
+    ax, ay = -0.35, y0 - 5.0
+    fab = pbr(kit, "armchair", "#4d6660", 0.9, noise=(30.0, 0.8))
+    _wbox(kit, "chair_seat", (ax - 0.42, ay - 0.4, 0.0), (ax + 0.42, ay + 0.4, 0.46), fab, bevel=0.03)
+    _wbox(kit, "chair_back", (ax - 0.42, ay - 0.5, 0.0), (ax + 0.42, ay - 0.34, 0.95), fab, bevel=0.04)
+    for sx in (-1, 1):
+        _wbox(kit, f"chair_arm{sx}", (ax + sx * 0.42 - (0.0 if sx > 0 else 0.12), ay - 0.4, 0.0), (ax + sx * 0.42 + (0.12 if sx > 0 else 0.0), ay + 0.4, 0.66), fab, bevel=0.04)
+    kit.box("chair_tag", (0.05, 0.06, 0.045), (ax + 0.4 + 0.12 + 0.008, ay + 0.2, 0.62), tagm, bevel=0.004)
+    # my shelf (left wall, 7 m down): a brass tag with 12 and a folded red scarf, with its tag
+    sy = -8.27
+    st = tiers[2] + 0.03
+    scarf = pbr(kit, "scarf red", "#8a0000", 0.9, spec=0.1, noise=(60.0, 0.8))
+    rib = pbr(kit, "scarf rib", "#c80000", 0.9, spec=0.1)
+    for i in range(3):
+        kit.box(f"scarf{i}", (0.34, 0.5, 0.045), (-1.2, sy, st + 0.0225 + 0.045 * i), scarf, bevel=0.01)
+    kit.box("scarf_stripe", (0.345, 0.06, 0.14), (-1.2, sy, st + 0.07), pbr(kit, "scarf stripe", "#e8d9b0", 0.9))
+    # knitted ribs: thin raised ridges along the top fold, 1 cm proud
+    for j in range(9):
+        kit.box(f"scarf_rib{j}", (0.018, 0.5, 0.012), (-1.2 - 0.15 + j * 0.0375, sy, st + 0.135 + 0.006), rib, bevel=0.004)
+    ctx["scarf_shelf"] = ([bpy.data.objects[f"scarf{i}"] for i in range(3)] + [bpy.data.objects["scarf_stripe"]]
+                          + [bpy.data.objects[f"scarf_rib{j}"] for j in range(9)])
+    kit.box("t12.str", (0.008, 0.008, 0.08), (-1.0, sy + 0.3, st + 0.09), strm)
+    kit.box("t12.tag", (0.016, 0.09, 0.12), (-1.0, sy + 0.3, st + 0.0), tagm, bevel=0.006)
+    dm = pbr(kit, "tag stamp", "#5a4420", 0.5, metal=0.8)
+    # the tag's face is toward the aisle (+x); a viewer there faces -x, so +y is on their right: no mirror
+    seg_digits(kit, "t12d", "12", (sy + 0.3, st + 0.01, -0.99), 0.014, 0.026, 0.008, dm, axis="x", depth=0.006)
 
 
 def set_doors(ctx, gap=DOOR_W, hall=1.0):
@@ -650,17 +867,40 @@ def set_doors(ctx, gap=DOOR_W, hall=1.0):
 # ------------------------------------------------------------------------------------------------ lights
 
 LIGHT_STATES = {   # gains on each light's base energy; the ceiling never flickers
-    "on": {"ceiling": 1.0, "panel_key": 0.15, "hall": 0.0, "hall_rim": 0.0, "backwash": 0.0, "hall_far": 0.0,
-           "hall_low": 0.0,
-           "sleeve_rim-1": 0.0, "sleeve_rim1": 0.0, "brass_ping": 0.0, "face": 0.0, "face_under": 0.0,
-           "face_peak": 0.0, "diffuser": 1.0},
-    # 13: the car's panel down to 5%, the monster lit and not us (no light on its chest, none on the cast but its
-    # own cold glow)
+    "on": {"ceiling": 1.0, "panel_key": 0.15, "diffuser": 1.0},
+    # 13 with people fetching: the car's light stays, the hall's warm lamps and sconces are on
+    "bright": {"ceiling": 1.0, "panel_key": 0.15, "diffuser": 1.0, "hall_warm0": 1.0, "hall_warm1": 1.0,
+               "hall_warm2": 1.0, "hall_warm3": 1.0, "sconce": 1.0},
+    # 13 when the lift brings me: the car's panel down to 5%, the monster lit and not us (no light on its chest, none
+    # on the cast but its own cold glow)
     "thirteen": {"ceiling": 0.05, "panel_key": 1.0, "hall": 1.0, "hall_rim": 1.0, "backwash": 1.0, "hall_far": 1.0,
-                 "hall_low": 1.0,
-                 "sleeve_rim-1": 1.0, "sleeve_rim1": 1.0, "brass_ping": 1.0, "face": 1.0, "face_under": 0.0,
-                 "face_peak": 1.0, "diffuser": 0.05},
+                 "hall_low": 1.0, "sleeve_rim-1": 1.0, "sleeve_rim1": 1.0, "brass_ping": 1.0, "face": 1.0,
+                 "face_peak": 1.0, "diffuser": 0.05, "floor13": 1.0, "cast_rim": 1.0, "att_side": 1.0,
+                 "att_rim": 1.0},
+    "land": {"ceiling": 1.0, "panel_key": 0.15, "diffuser": 1.0, "land_lamp": 1.0},
+    "stairs": {"stair_lamp": 1.0},
+    "balc_blue": {"balc_cool": 1.0, "balc_win": 1.0},
+    "balc_gold": {"balc_sun": 1.0, "balc_fill": 1.0},
 }
+BEYOND = {"thirteen": "hall13", "bright": "hall13", "land": "land"}   # which space shows past the doors
+EXTRA_LIGHTS = ("fill", "land_lamp", "balc_cool", "balc_win", "balc_sun", "balc_fill", "hall_warm0", "hall_warm1",
+                "hall_warm2", "hall_warm3", "sconce", "stair_lamp", "att_side", "att_rim", "shelf_lamp", "tag_lamp")
+ALL_LIGHTS = ("ceiling", "panel_key", "hall", "hall_rim", "backwash", "hall_far", "hall_low", "sleeve_rim-1",
+              "sleeve_rim1", "brass_ping", "face", "face_under", "face_peak", "floor13", "cast_rim", "face_key") + EXTRA_LIGHTS
+
+
+def light_gains(c):
+    """Every light's gain for a lights cue: the state's, with cast_rim and fill scaled by the cue's own numbers."""
+    g = {k: 0.0 for k in ALL_LIGHTS}
+    g["diffuser"] = 0.0
+    g.update(LIGHT_STATES[c.get("state", "on")])
+    g["cast_rim"] *= float(c.get("cast_rim", 0.0))
+    g["fill"] = float(c.get("fill", 0.0))
+    g["shelf_lamp"] = float(c.get("shelf", 0.0))
+    if "ceiling" in c:
+        g["ceiling"] = float(c["ceiling"])
+        g["diffuser"] = float(c["ceiling"])
+    return g
 
 
 def build_lights(kit, ctx):
@@ -677,7 +917,27 @@ def build_lights(kit, ctx):
     kit.light("backwash", "AREA", (0.0, SILL_Y - 0.9, HALL_H - 0.08), 120.0, "#a9c4e6", size=0.9)
     for sx in (-1, 1):
         kit.light(f"sleeve_rim{sx}", "AREA", (sx * 0.75, SILL_Y - 0.6, 1.5), 80.0, "#a9c4e6", size=0.2)
-    kit.light("hall_far", "POINT", (-0.9, SILL_Y - 7.5, 2.2), 30.0, "#a9c4e6", size=0.2)
+    # lit carpet behind and beside the gloves, so they hang in front of something rather than on a black floor
+    kit.light("floor13", "AREA", (0.0, SILL_Y - 1.3, 2.3), 140.0, "#a9c4e6", size=0.8)
+    # a cold rim on the cast only (cue "cast_rim": a gain, 0 when absent), from the hall behind it, for shots where
+    # one of us is in the foreground: it draws the hood's outline and nothing else
+    kit.light("cast_rim", "AREA", (0.0, CAR_Y0 + 0.3, 2.2), 60.0, "#a9c4e6", size=0.4)
+    # a soft key for the faces on the cast only, placed per shot by the shot's "key" ({"at", "aim", "w", "c"}): where
+    # the camera is, a little above it, so the faces we are shown are lit and the creature is not
+    kit.light("face_key", "AREA", (0.0, 0.0, 1.8), 60.0, "#e8e4dc", size=0.7)
+    # a per-shot lamp on a prop (the shot's "tl": {"at", "aim", "w", "c", "size"}), lighting everything
+    kit.light("tag_lamp", "AREA", (0.0, 0.0, 1.0), 60.0, "#bcd0ff", size=0.3)
+    kit.light("hall_far", "POINT", (0.0, SILL_Y - 9.5, 2.3), 60.0, "#a9c4e6", size=0.2)
+    # bright 13: warm lamps down the ceiling's middle; the dark hall's cold lamps off
+    for k in range(4):
+        kit.aim(kit.light(f"hall_warm{k}", "AREA", (0.0, SILL_Y - 1.5 - k * 2.9, HALL_H - 0.12), 420.0, "#ffd49c",
+                          size=1.4), (0.0, SILL_Y - 1.5 - k * 2.9, 0.0))
+    # the cold key on the Attendant wherever it stands in the hall (placed by aim_lights): a side key and a rim
+    kit.light("att_side", "AREA", (0.0, 0.0, 2.5), 240.0, "#a9c4e6", size=0.8)
+    kit.light("att_rim", "AREA", (0.0, 0.0, 2.5), 240.0, "#a9c4e6", size=0.6)
+    # the cold lamp over my shelf (cue "shelf": a gain)
+    kit.aim(kit.light("shelf_lamp", "AREA", (-0.6, SILL_Y - 7.0, 2.2), 160.0, "#a9c4e6", size=0.5), (-1.3, SILL_Y - 7.0, 1.2))
+    kit.aim(kit.light("stair_lamp", "AREA", (STX, -2.0, 3.0), 420.0, "#e8e2cc", size=1.2), (STX, -2.0, 0.3))
     kit.light("hall_low", "SPOT", (0.25, SILL_Y - 3.0, 0.7), 140.0, "#a9c4e6", spot=35, blend=0.5, size=0.25)
     # 13's light off the sill, seen only in reflections: the brass buttons and piping down its jacket catch it
     ping = kit.light("brass_ping", "AREA", (0.0, CAR_Y0 + 0.25, 0.06), 36.0, "#b9cde6", size=0.5)
@@ -688,6 +948,15 @@ def build_lights(kit, ctx):
     # (the chest light never shows in reflections, so no glass carries a glint that reads as a second eye)
     kit.light("face_under", "POINT", (0, 0, 2.0), 16.0, GLOW, size=0.12).visible_glossy = False
     kit.light("face_peak", "POINT", (0, 0, 2.0), 6.0, GLOW, size=0.05)   # seen in the visor: a cold line on it
+    # a soft cold fill on the cast only (cue "fill"): so a face in the talk reads, lit from the doors' side
+    kit.aim(kit.light("fill", "AREA", (0.0, CAR_Y0 + 0.2, 0.8), 22.0, "#9db6d6", size=0.5), (0.0, 0.4, 1.5))
+    # the 12 landing's lamp
+    kit.light("land_lamp", "AREA", (0.0, SILL_Y - 2.0, 2.4), 240.0, "#f1e2c6", size=0.7)
+    # the balconies (30 m east): blue hour, then low golden sun
+    kit.aim(kit.light("balc_cool", "AREA", (BX, -3.0, 4.0), 420.0, "#8fa8d0", size=3.0), (BX, 0.9, 0.8))
+    kit.aim(kit.light("balc_win", "AREA", (BX, 1.5, 1.6), 35.0, "#ffcf8a", size=1.0), (BX, 0.0, 1.0))
+    kit.aim(kit.light("balc_sun", "AREA", (BX - 2.4, -4.5, 1.5), 650.0, "#ffb460", size=1.2), (BX, 0.9, 1.1))
+    kit.aim(kit.light("balc_fill", "AREA", (BX + 0.3, -1.6, 2.4), 80.0, "#ffd9a8", size=2.5), (BX, 0.9, 1.0))
 
 
 def link_light(name, objs, state="INCLUDE"):
@@ -719,6 +988,34 @@ def glove_point(att, sx=-1):
     return att["arms"][sx].matrix_world @ V((0, 0, 0.3 - (ARM_L - GLOVE_L) - GLOVE_L / 2))
 
 
+def place_tag(att):
+    """Hang the tag straight from the middle of the folded gloves, a hand's width in front of them, whatever the
+    arms and the body do (only the body's yaw turns it, so its face looks the way the Attendant does)."""
+    gl = (glove_point(att, -1) + glove_point(att, 1)) / 2
+    yaw = att["root"].rotation_euler.z
+    fwd = V((math.sin(yaw), -math.cos(yaw), 0.0))
+    p = gl + fwd * 0.07 - V((0, 0, GLOVE_L / 2 * U + 0.01))
+    att["tag"].matrix_world = (Matrix.Translation(p) @ Matrix.Rotation(yaw, 4, "Z")
+                               @ Matrix.Diagonal((U, U, U, 1.0)))
+
+
+def aim_att_lights(att):
+    """A cold side key and a rim that follow the Attendant to wherever it stands in the hall: the key from the
+    camera's side and a little above, the rim from behind and over its shoulder."""
+    root = att["root"]
+    yaw = root.rotation_euler.z
+    fwd = V((math.sin(yaw), -math.cos(yaw), 0.0))
+    side = V((-fwd.y, fwd.x, 0.0))
+    head = att["head"].matrix_world.translation
+    chest = att["waist"].matrix_world @ V((0, 0, TORSO_H * 0.6))
+    key = bpy.data.objects["att_side"]
+    key.location = chest + fwd * 1.5 + side * 1.2 + V((0, 0, 0.5))
+    key.rotation_euler = (V(chest) - key.location).to_track_quat("-Z", "Y").to_euler()
+    rim = bpy.data.objects["att_rim"]
+    rim.location = head - fwd * 1.3 - side * 0.4 + V((0, 0, 0.6))
+    rim.rotation_euler = (V(head) - rim.location).to_track_quat("-Z", "Y").to_euler()
+
+
 def aim_lights(ctx, att):
     """The face light sits in front of the panel, facing the way it faces; the peak light under its visor; the panel
     key on its folded gloves; the sleeve rims down each arm; the ping light up at its jacket; 13's low light skims
@@ -738,17 +1035,259 @@ def aim_lights(ctx, att):
         ob = bpy.data.objects[f"sleeve_rim{sx}"]
         tgt = att["arms"][sx].matrix_world @ V((0, 0, -1.2))
         ob.rotation_euler = (V(tgt) - ob.location).to_track_quat("-Z", "Y").to_euler()
+        ob.data.spread = math.radians(35)   # tight: it draws the sleeve and the door edge, no halo on the leaf
     ob = bpy.data.objects["brass_ping"]
     chest = att["waist"].matrix_world @ V((0, 0, TORSO_H * 0.6))
     ob.rotation_euler = (V(chest) - ob.location).to_track_quat("-Z", "Y").to_euler()
     ob = bpy.data.objects["hall_low"]
     ob.rotation_euler = (V((head.x, CAR_Y0 + 1.2, 0.0)) - ob.location).to_track_quat("-Z", "Y").to_euler()
+    ob = bpy.data.objects["floor13"]
+    ob.rotation_euler = (V((0.0, SILL_Y - 2.7, 0.0)) - ob.location).to_track_quat("-Z", "Y").to_euler()
     ob = bpy.data.objects["hall"]   # the carpet and wall behind it, so its outline shows against them
     ob.rotation_euler = (V((head.x, SILL_Y - 1.3, 0.3)) - ob.location).to_track_quat("-Z", "Y").to_euler()
     ob = bpy.data.objects["backwash"]
     ob.rotation_euler = (V((0.0, SILL_Y - 1.7, 2.35)) - ob.location).to_track_quat("-Z", "Y").to_euler()
     ob = bpy.data.objects["hall_rim"]   # right behind its head: the rim on its cap, panel and shoulders
     ob.rotation_euler = (V((head.x, head.y, head.z + 0.15)) - ob.location).to_track_quat("-Z", "Y").to_euler()
+
+
+# ------------------------------------------------------------------------------------- the other places
+# The 12 landing, the lobby and the balconies. The landing and the lobby sit past the lift's doors where 13's hall
+# does (only one of the three shows at a time: the lights cue's state picks it), and the balconies are 30 m east.
+
+
+def emit_plain(kit, name, hexc, strength):
+    """An emission that ignores the fog (sky cards and the far city: they are the far light itself)."""
+    if name in kit.MATS:
+        return kit.MATS[name]
+    m = kit._new(name)
+    nt = m.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    e = nt.nodes.new("ShaderNodeEmission")
+    e.inputs["Color"].default_value = kit.col(hexc)
+    e.inputs["Strength"].default_value = strength
+    nt.links.new(e.outputs[0], next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL").inputs["Surface"])
+    try:
+        m.emission_sampling = "NONE"
+    except Exception:
+        pass
+    return m
+
+
+def sky_mat(kit, name, stops):
+    """A vertical gradient card, unfogged: stops = [(position 0..1 bottom to top, hex, strength), ...]."""
+    if name in kit.MATS:
+        return kit.MATS[name]
+    m = kit._new(name)
+    nt = m.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(tc.outputs["Generated"], sep.inputs[0])
+    ramp = nt.nodes.new("ShaderNodeValToRGB")
+    els = ramp.color_ramp.elements
+    c0 = kit.col(stops[0][1])
+    s0 = stops[0][2]
+    els[0].position, els[0].color = stops[0][0], (c0[0] * s0, c0[1] * s0, c0[2] * s0, 1)
+    c1 = kit.col(stops[-1][1])
+    s1 = stops[-1][2]
+    els[1].position, els[1].color = stops[-1][0], (c1[0] * s1, c1[1] * s1, c1[2] * s1, 1)
+    for pos, h, st in stops[1:-1]:
+        e = els.new(pos)
+        c = kit.col(h)
+        e.color = (c[0] * st, c[1] * st, c[2] * st, 1)
+    nt.links.new(sep.outputs["Y"], ramp.inputs["Fac"])
+    e = nt.nodes.new("ShaderNodeEmission")
+    e.inputs["Strength"].default_value = 1.0
+    nt.links.new(ramp.outputs["Color"], e.inputs["Color"])
+    nt.links.new(e.outputs[0], next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL").inputs["Surface"])
+    try:
+        m.emission_sampling = "NONE"
+    except Exception:
+        pass
+    return m
+
+
+def materials2(kit):
+    return {
+        "land_wall": pbr(kit, "landing wall", "#b3a58a", 0.9, noise=(3.0, 0.8)),
+        "land_carpet": pbr(kit, "landing carpet", "#3b4860", 0.95, noise=(6.0, 0.6)),
+        "land_ceil": pbr(kit, "landing ceiling", "#cdc4b2", 0.9),
+        "land_door": pbr(kit, "landing door", "#5b4129", 0.55),
+        "room_dark": pbr(kit, "room dark", "#2b2118", 0.9),
+        "steel_black": pbr(kit, "steel black", "#15161a", 0.4, metal=0.8),
+        "concrete": pbr(kit, "balcony concrete", "#77756f", 0.9, noise=(5.0, 0.7)),
+        "stucco": pbr(kit, "stucco", "#8b867a", 0.9, noise=(3.0, 0.85)),
+        "terracotta": pbr(kit, "terracotta", "#a5573a", 0.8, noise=(12.0, 0.75)),
+        "terra_old": pbr(kit, "terracotta old", "#865039", 0.85, noise=(9.0, 0.6)),
+        "leaf": pbr(kit, "leaf", "#3f6d34", 0.7, noise=(14.0, 0.6)),
+        "stake": pbr(kit, "stake", "#6a5638", 0.8),
+        "tomato": pbr(kit, "tomato", "#b72c24", 0.32, spec=0.6),
+        "soil": pbr(kit, "soil", "#2a1f16", 0.95),
+        "slider": pbr(kit, "slider glass", "#0a1017", 0.06, spec=0.7),
+        "skin_me": kit.plastic("#d7a17a", 0.5),
+        "sleeve_me": kit.plastic("#6a5c94", 0.6),
+        "phone": pbr(kit, "phone", "#0b0b0e", 0.2, spec=0.6),
+        "scratch": pbr(kit, "scratch", "#b7babf", 0.5, metal=0.8),
+        "sky_blue": sky_mat(kit, "sky blue", [(0.0, "#46627f", 0.9), (0.25, "#2a4261", 0.8), (1.0, "#0c1424", 0.7)]),
+        "sky_gold": sky_mat(kit, "sky gold", [(0.0, "#f3a04c", 1.0), (0.22, "#e08a52", 0.9), (0.55, "#7a8cae", 0.7),
+                                              (1.0, "#4a638f", 0.7)]),
+        "city_blue": emit_plain(kit, "city blue", "#1b2535", 0.9),
+        "city_gold": emit_plain(kit, "city gold", "#6e4a40", 0.9),
+        "window": emit_plain(kit, "window", "#ffcf80", 1.3),
+    }
+
+
+def grouped(ctx, name, fn):
+    before = set(bpy.data.objects)
+    fn()
+    ctx.setdefault("grp", {})[name] = [o for o in bpy.data.objects if o not in before]
+
+
+def build_land(kit, ctx, M):
+    """The 12 landing: pale beige walls, slate-blue carpet, two front doors side by side on the end wall with blank
+    plates (they swing in), the lift behind us. Short and ordinary, so 13's long hall reads as wrong later."""
+    y0, yE, hh = SILL_Y, SILL_Y - 3.9, 2.5
+    _wbox(kit, "land_floor", (-1.6, yE, -0.1), (1.6, y0, 0.0), M["land_carpet"])
+    _wbox(kit, "land_ceiling", (-1.6, yE, hh), (1.6, y0, hh + 0.1), M["land_ceil"])
+    _wbox(kit, "land_wall_l", (-1.6, yE, 0.0), (-1.5, y0, hh), M["land_wall"])
+    _wbox(kit, "land_wall_r", (1.5, yE, 0.0), (1.6, y0, hh), M["land_wall"])
+    for k, (lo, hi) in enumerate((((-1.6, y0 - 0.06, 0.0), (-DOOR_W / 2 - 0.06, y0, hh)),
+                                   ((DOOR_W / 2 + 0.06, y0 - 0.06, 0.0), (1.6, y0, hh)),
+                                   ((-DOOR_W / 2 - 0.06, y0 - 0.06, 2.1), (DOOR_W / 2 + 0.06, y0, hh)))):
+        _wbox(kit, f"land_front{k}", lo, hi, M["land_wall"])
+    # the end wall with two door openings, a dark room behind each
+    for k, (xa, xb) in enumerate(((-1.6, -1.0), (-0.1, 0.1), (1.0, 1.6))):
+        _wbox(kit, f"land_end{k}", (xa, yE - 0.15, 0.0), (xb, yE, hh), M["land_wall"])
+    for k, (xa, xb) in enumerate(((-1.0, -0.1), (0.1, 1.0))):
+        _wbox(kit, f"land_end_top{k}", (xa, yE - 0.15, 2.05), (xb, yE, hh), M["land_wall"])
+        _wbox(kit, f"room_back{k}", (xa - 0.05, yE - 1.6, 0.0), (xb + 0.05, yE - 1.5, hh), M["room_dark"])
+        _wbox(kit, f"room_floor{k}", (xa - 0.05, yE - 1.6, -0.1), (xb + 0.05, yE, 0.0), M["room_dark"])
+        _wbox(kit, f"room_side{k}", (xa - 0.05, yE - 1.6, 0.0), (xa - 0.04, yE, hh), M["room_dark"])
+        _wbox(kit, f"room_side2{k}", (xb + 0.04, yE - 1.6, 0.0), (xb + 0.05, yE, hh), M["room_dark"])
+    doors = []
+    for side, hx in ((1, 1.0), (-1, -1.0)):   # side +1: the door on the right of the end wall, hinged at x = 1.0
+        hinge = kit.empty(f"land_hinge{side}", (hx, yE - 0.03, 0.0))
+        lf = kit.box(f"land_leaf{side}", (0.9, 0.05, 2.04), (-side * 0.45, 0, 1.02), M["land_door"], hinge, bevel=0.005)
+        kit.box(f"land_plate{side}", (0.1, 0.012, 0.06), (-side * 0.75, 0.03, 1.45), M["brass_dark"], hinge)
+        kit.box(f"land_handle{side}", (0.12, 0.04, 0.025), (-side * 0.8, 0.04, 1.05), M["brass"], hinge)
+        doors.append((hinge, side))
+        for (lo, hi) in ((((-0.05 + hx), yE - 0.02, 0.0), (hx + 0.05 if side > 0 else hx - 0.05, yE + 0.0, 2.1)),):
+            pass
+    ctx["land_doors"] = doors
+    _wbox(kit, "land_skirt", (-1.5, yE, 0.0), (1.5, y0, 0.09), M["brass_dark"])   # a dark skirting round the landing
+    build_indicator_out(kit, ctx, M)   # the floor indicator over the lift doors, facing the landing
+    # a lamp (the lights cue) and the lift
+
+
+def set_land_doors(ctx, me, him):
+    """me: 0..1 how far my door (on the right of the end wall, x +0.55) is open; him: Grandad's (x -0.55)."""
+    for hinge, side in ctx["land_doors"]:
+        v = me if side > 0 else him
+        hinge.rotation_euler = (0, 0, math.radians(side * 98.0 * v))
+
+
+def build_stairs(kit, ctx, M):
+    """A concrete stairwell 40 m west of the lift: shallow steps going down toward -y between two bare walls, lit by
+    one lamp. Only ever seen close on my shoes."""
+    n, rise, run = 22, 0.13, 0.2
+    top = 2.0
+    for i in range(n):
+        zt = top - rise * i
+        y1 = -run * i
+        _wbox(kit, f"step{i}", (STX - 0.8, y1 - run, zt - 3.0), (STX + 0.8, y1, zt), M["concrete"])
+    _wbox(kit, "stair_wall_l", (STX - 0.9, -run * n - 0.2, -0.5), (STX - 0.8, 1.0, 3.4), M["stucco"])
+    _wbox(kit, "stair_wall_r", (STX + 0.8, -run * n - 0.2, -0.5), (STX + 0.9, 1.0, 3.4), M["stucco"])
+    _wbox(kit, "stair_ceiling", (STX - 0.9, -run * n - 0.2, 3.4), (STX + 0.9, 1.0, 3.5), M["land_ceil"])
+    _wbox(kit, "stair_back", (STX - 0.9, 1.0, -0.5), (STX + 0.9, 1.1, 3.5), M["stucco"])
+
+
+def build_balcony(kit, ctx, M):
+    """The two balconies, 12A (mine, bare) on the left and 12B (his, crowded with pots) on the right, a low concrete
+    wall between. The building's face behind, the open city before, a gradient sky card for each hour."""
+    b = BX
+    # the building's face and the slab above
+    _wbox(kit, "facade", (b - 6.0, 1.7, -3.0), (b + 6.0, 1.85, 6.0), M["stucco"])
+    _wbox(kit, "slab_above", (b - 4.4, -0.1, 2.6), (b + 4.4, 1.85, 2.8), M["concrete"])
+    _wbox(kit, "slab_floor", (b - 4.4, -0.1, -0.2), (b + 4.4, 1.7, 0.0), M["concrete"])
+    for side, cx in ((-1, b - 1.1), (1, b + 1.1)):
+        _wbox(kit, f"slider{side}", (cx - 0.7, 1.68, 0.0), (cx + 0.7, 1.7, 2.2), M["slider"])
+        _wbox(kit, f"slider_frame{side}", (cx - 0.72, 1.66, 2.2), (cx + 0.72, 1.7, 2.26), M["steel_black"])
+        _wbox(kit, f"slider_mid{side}", (cx - 0.02, 1.66, 0.0), (cx + 0.02, 1.7, 2.2), M["steel_black"])
+        _wbox(kit, f"slider_l{side}", (cx - 0.74, 1.66, 0.0), (cx - 0.7, 1.7, 2.2), M["steel_black"])
+        _wbox(kit, f"slider_r{side}", (cx + 0.7, 1.66, 0.0), (cx + 0.74, 1.7, 2.2), M["steel_black"])
+    # the low wall between, and the rail along the outer edge
+    _wbox(kit, "divider", (b - 0.07, 0.0, 0.0), (b + 0.07, 1.7, 1.05), M["concrete"], bevel=0.01)
+    _wbox(kit, "divider_cap", (b - 0.1, 0.0, 1.05), (b + 0.1, 1.7, 1.09), M["concrete"], bevel=0.008)
+    for z0, z1 in ((1.04, 1.1), (0.5, 0.54)):
+        _wbox(kit, f"rail_{z0}", (b - 4.4, 0.0, z0), (b + 4.4, 0.05, z1), M["steel_black"])
+    for k in range(17):
+        x = b - 4.4 + k * 0.55
+        _wbox(kit, f"rail_post{k}", (x, 0.0, 0.0), (x + 0.04, 0.05, 1.1), M["steel_black"])
+    _wbox(kit, "side_l", (b - 4.45, -0.1, 0.0), (b - 4.4, 1.7, 1.05), M["concrete"])
+    _wbox(kit, "side_r", (b + 4.4, -0.1, 0.0), (b + 4.45, 1.7, 1.05), M["concrete"])
+    # his pots and vines
+    spots = [(1.15, 0.26), (1.8, 0.3), (2.45, 0.25), (3.1, 0.3), (1.4, 1.35), (2.2, 1.4), (3.0, 1.35),
+             (3.7, 1.2)]
+    plants = []
+    for k, (px, py) in enumerate(spots):
+        r = 0.16 + 0.02 * (k % 3)
+        h = 0.3 + 0.03 * (k % 2)
+        kit.cyl(f"pot{k}", r, h, (b + px, py, h / 2), M["terracotta"], r2=r * 0.78)
+        kit.cyl(f"soil{k}", r * 0.92, 0.02, (b + px, py, h + 0.005), M["soil"])
+        hgt = 0.9 + 0.12 * (k % 4)
+        kit.cyl(f"stake{k}", 0.012, hgt, (b + px, py, h + hgt / 2), M["stake"], n=8)
+        for j in range(4):
+            lz = h + 0.25 + j * hgt * 0.2
+            kit.box(f"leaf{k}.{j}", (0.26, 0.2, 0.05), (b + px + 0.04 * ((j % 2) * 2 - 1), py + 0.02, lz), M["leaf"],
+                    rot=(0.2 * j, 0.0, 0.7 * j + k), bevel=0.01)
+        if k % 2 == 0:
+            ob = kit.sphere(f"tom_plant{k}", 0.034, (b + px + 0.1, py - 0.03, h + 0.42 + 0.05 * (k % 3)), M["tomato"], seg=10)
+            plants.append(ob)
+    # the big old pot, on a plinth by the divider: the one that was hers (no line says so)
+    kit.box("plinth", (0.5, 0.5, 0.4), (b + 0.95, 1.32, 0.2), M["concrete"], bevel=0.01)
+    kit.cyl("bigpot", 0.27, 0.46, (b + 0.95, 1.32, 0.63), M["terra_old"], r2=0.21)
+    kit.cyl("bigsoil", 0.25, 0.02, (b + 0.95, 1.32, 0.865), M["soil"])
+    kit.cyl("bigstake", 0.014, 1.3, (b + 0.95, 1.32, 1.52), M["stake"], n=8)
+    for j in range(6):
+        kit.box(f"bigleaf{j}", (0.3, 0.24, 0.05), (b + 0.95 + 0.05 * ((j % 2) * 2 - 1), 1.32, 1.0 + j * 0.18), M["leaf"],
+                rot=(0.2 * j, 0.0, 0.7 * j), bevel=0.01)
+    # tomatoes that arrive on the divider's cap (cue "tomatoes": how many)
+    ctx["wall_toms"] = [kit.sphere(f"wall_tom{k}", 0.05, (b + 0.0 + (k - 1.5) * 0.0, 0.35 + k * 0.28, 1.09 + 0.05), M["tomato"], seg=12)
+                        for k in range(5)]
+    for ob in ctx["wall_toms"]:
+        ob.hide_render = True
+    # the sky cards, the far city and its windows
+    ctx["sky"] = {}
+    for nm in ("blue", "gold"):
+        card = kit.plane(f"sky_{nm}", (700, 260), (b, -210.0, 100.0), M[f"sky_{nm}"], rot=(math.pi / 2, 0, 0))
+        ctx["sky"][nm] = [card]
+    import random
+    rnd = random.Random(14)
+    city, wins = [], []
+    for k in range(34):
+        w = rnd.uniform(6, 16)
+        d = rnd.uniform(6, 14)
+        h = rnd.uniform(8, 38)
+        x = b - 120 + k * 7.2 + rnd.uniform(-2, 2)
+        y = -rnd.uniform(70, 140)
+        for nm in ("blue", "gold"):
+            ob = kit.box(f"city_{nm}{k}", (w, d, h), (x, y, h / 2 - 2), M[f"city_{nm}"])
+            ctx["sky"][nm].append(ob)
+        for j in range(rnd.randint(3, 8)):
+            wz = rnd.uniform(1.0, h - 3)
+            wx = x + rnd.uniform(-w / 2 + 1, w / 2 - 1)
+            ob = kit.box(f"cwin{k}.{j}", (0.9, 0.1, 1.1), (wx, y + d / 2 + 0.06, wz - 2), M["window"])
+            ctx["sky"]["blue"].append(ob)
+    # tally: five scratches on the lift's button panel, below the buttons (a small mark for anyone who looks)
+    for k in range(4):
+        _wbox(kit, f"tally{k}", (PANEL_X - 0.065 + k * 0.03, CAR_Y0 + 0.0075, 0.715),
+              (PANEL_X - 0.0635 + k * 0.03, CAR_Y0 + 0.0095, 0.76), M["scratch"])
+    ob = _wbox(kit, "tally4", (PANEL_X - 0.075, CAR_Y0 + 0.0095, 0.7375), (PANEL_X + 0.03, CAR_Y0 + 0.0115, 0.7395),
+               M["scratch"])
+    ob.rotation_euler = (0, math.radians(-38), 0)
+    # the fog is the car's: nothing here uses it for the far light
+    ctx["plants"] = plants
 
 
 # -------------------------------------------------------------------------------------------- the story
@@ -766,57 +1305,339 @@ def _last(cs, t):
     return cur or (cs[0] if cs else None)
 
 
+def _prev(cs, c):
+    i = cs.index(c) if c in cs else 0
+    return cs[i - 1] if i > 0 else None
+
+
+def _lerp_dict(a, b, u):
+    return {k: a.get(k, 0.0) + (b.get(k, 0.0) - a.get(k, 0.0)) * u for k in set(a) | set(b)}
+
+
+def _ramp_u(c, t, default=0.0):
+    d = float(c.get("dur", default))
+    return 1.0 if d <= 1e-6 else kit_ss((t - c["t"]) / d)
+
+
+def kit_ss(x):
+    x = min(1.0, max(0.0, x))
+    return x * x * (3 - 2 * x)
+
+
 def build(kit, story, tl):
     ctx = {}
     M = materials(kit)
+    M.update(materials2(kit))
     ctx["M"] = M
     opts = story.get("set_options", {})
     ctx["style"] = opts.get("glow_style", "ring")
     build_car(kit, ctx, M)
-    build_hall(kit, ctx, M)
+    grouped(ctx, "hall13", lambda: build_hall(kit, ctx, M))
+    grouped(ctx, "land", lambda: build_land(kit, ctx, M))
     ctx["att"] = build_attendant(kit, M, cap=opts.get("cap", True), grid=opts.get("grid", DEFAULT_GRID),
                                  style=ctx["style"], head_style=opts.get("head", "socket"))
     build_lights(kit, ctx)
+    build_balcony(kit, ctx, M)
+    build_stairs(kit, ctx, M)
+    ctx["cake"] = build_cake(kit, M)
+    att_all = [o for o in ctx["att"]["root"].children_recursive if o.type == "MESH" and not o.name.endswith(".socketcut")]
+    for ln in ("att_side", "att_rim"):
+        link_light(ln, att_all)
     link_light("brass_ping", brass_parts(ctx["att"]))
     # the sleeve rims draw its arms and the car doors' leading edges, and nothing else (not us, not its face)
     arm_parts = [o for o in ctx["att"]["root"].children_recursive if o.type == "MESH"
                  and any(k in o.name for k in (".sleeve", ".glove", ".board")) and ".boardedge" not in o.name]
-    leaves = [o for lf, _ in ctx["leaves"]["car"] for o in [lf] + list(lf.children)]
+    leaves = [o for lf, _ in ctx["leaves"]["car"] for o in lf.children if o.name.endswith(".edge")]   # the thin lines only
     for sx in (-1, 1):
         link_light(f"sleeve_rim{sx}", arm_parts + leaves)
+    # the finger that presses a button (inserts), and its sleeve
+    ctx["finger"] = [kit.box("finger", (0.024, 0.07, 0.024), (0, 0, 0), M["skin_me"], bevel=0.008),
+                     kit.box("finger_sleeve", (0.07, 0.4, 0.07), (0, 0, 0), M["sleeve_me"], bevel=0.02)]
+    ctx["tom_ins"] = kit.sphere("tom_ins", 0.05, (0, 0, 0), M["tomato"], seg=12)
+    ctx["finger"].append(ctx["tom_ins"])
+    for ob in ctx["finger"]:
+        ob.hide_render = True
     animate(kit, story, tl, 0.0, ctx)
     return ctx
 
 
+def build_cake(kit, M):
+    """A big iced cake on a footed stand with a brass tag on a string: two cream tiers, a pale icing frill, five
+    candles. Origin at the stand's foot; moved by the cake cue."""
+    cream = pbr(kit, "cake cream", "#efe3cc", 0.7)
+    blue = pbr(kit, "cake blue", "#9fb8c8", 0.7)
+    wax = pbr(kit, "candle wax", "#e9d9a0", 0.8)
+    plate = pbr(kit, "cake plate", "#d9d4c6", 0.35, metal=0.2)
+    root = kit.empty("cake", (0, 0, 0))
+    parts = [kit.cyl("cake.foot", 0.05, 0.1, (0, 0, 0.05), plate, root, n=16),
+             kit.cyl("cake.plate", 0.22, 0.02, (0, 0, 0.11), plate, root, n=28),
+             kit.cyl("cake.low", 0.17, 0.11, (0, 0, 0.175), cream, root, n=28),
+             kit.cyl("cake.frill", 0.178, 0.025, (0, 0, 0.14), blue, root, n=28),
+             kit.cyl("cake.up", 0.105, 0.09, (0, 0, 0.285), cream, root, n=24),
+             kit.cyl("cake.frill2", 0.113, 0.02, (0, 0, 0.255), blue, root, n=24)]
+    for k in range(5):
+        a = 2 * math.pi * k / 5
+        parts.append(kit.box(f"cake.candle{k}", (0.012, 0.012, 0.06), (0.06 * math.cos(a), 0.06 * math.sin(a), 0.36), wax, root))
+    tg = pbr(kit, "luggage tag", "#c8a050", 0.35, metal=1.0)
+    parts.append(kit.box("cake.str", (0.006, 0.006, 0.07), (0.0, 0.215, 0.13), pbr(kit, "tag string", "#2a2218", 0.8), root))
+    parts.append(kit.box("cake.tag", (0.07, 0.014, 0.1), (0.0, 0.225, 0.07), tg, root, bevel=0.004))
+    return {"root": root, "parts": parts}
+
+
+def panel_slot_xz(i):
+    """World (x, z) of a floor-panel button (the layout build_panel uses)."""
+    pw, ph, dz = 0.2, 0.9, 0.066
+    rows = [(PANEL_X + (c - 0.5) * 0.085, PANEL_Z + ph / 2 - 0.08 - r * dz) for r in range(10) for c in range(2)]
+    slots = rows[::-1]
+    z_low = PANEL_Z + ph / 2 - 0.08 - 10 * dz - 0.02
+    slots += [(PANEL_X + 0.0425, z_low), (PANEL_X - 0.0425, z_low)]
+    return slots[i]
+
+
+def _late(kit, story, ctx):
+    """Things parented to a character: they exist only once the cast is built (after build())."""
+    if ctx.get("late") or not bpy.data.objects.get("me.arm1"):
+        return
+    M = ctx["M"]
+    scarf = pbr(kit, "scarf red", "#8f1a1f", 0.95, noise=(60.0, 0.8))
+    cream = pbr(kit, "scarf stripe", "#e8d9b0", 0.9)
+    late = ctx.setdefault("late_objs", {})
+    tom = bpy.data.objects.get("okafor.arm1")
+    if tom:
+        late["hand_tomato"] = [kit.sphere("hand_tomato", 0.16, (0, -0.66, -1.72), M["tomato"], tom, seg=12)]
+    # Grandad's glasses, pushed up on his forehead
+    hg = bpy.data.objects.get("okafor.headg")
+    if hg:
+        fr = pbr(kit, "glasses frame", "#2a2420", 0.4)
+        gl = pbr(kit, "glasses lens", "#cfd9de", 0.25, spec=0.6)
+        parts = []
+        for sx in (-1, 1):
+            parts.append(kit.box(f"okafor.gup{sx}", (0.4, 0.05, 0.24), (sx * 0.24, -0.69, 0.35), gl, hg, bevel=0.03))
+            parts.append(kit.box(f"okafor.gupf{sx}", (0.46, 0.04, 0.045), (sx * 0.24, -0.72, 0.47), fr, hg))
+            parts.append(kit.box(f"okafor.gupg{sx}", (0.46, 0.04, 0.045), (sx * 0.24, -0.72, 0.23), fr, hg))
+            parts.append(kit.box(f"okafor.gups{sx}", (0.045, 0.04, 0.26), (sx * 0.47, -0.72, 0.35), fr, hg))
+        parts.append(kit.box("okafor.gupb", (0.1, 0.04, 0.05), (0, -0.72, 0.4), fr, hg))
+        late["glasses_up"] = parts
+    # the scarf across his open palms (his torso), and across mine; and round my neck
+    for who in ("okafor", "me"):
+        tr = bpy.data.objects.get(f"{who}.torso")
+        if tr:
+            late[f"scarf_{who}"] = [kit.box(f"{who}.scarf_carry", (3.1, 0.75, 0.24), (0, -1.95, 1.68), scarf, tr, bevel=0.05),
+                                    kit.box(f"{who}.scarf_carry.s", (0.3, 0.8, 0.26), (-1.3, -1.95, 1.68), cream, tr, bevel=0.04)]
+    tr = bpy.data.objects.get("me.torso")
+    if tr:
+        late["scarf_neck"] = [kit.box("me.scarf_neck", (2.15, 1.16, 0.4), (0, 0, 1.88), scarf, tr, bevel=0.1),
+                              kit.box("me.scarf_tail", (0.5, 0.12, 1.2), (0.55, -0.62, 1.2), scarf, tr, bevel=0.05),
+                              kit.box("me.scarf_tail.s", (0.52, 0.13, 0.12), (0.55, -0.62, 0.8), cream, tr, bevel=0.03)]
+    # keys in Mr. Abel's raised hand
+    ab = bpy.data.objects.get("abel.arm1")
+    if ab:
+        ring = pbr(kit, "key ring", "#9aa0a6", 0.35, metal=1.0)
+        tgm = pbr(kit, "luggage tag", "#c8a050", 0.35, metal=1.0)
+        late["keys"] = [kit.box("abel.ring", (0.34, 0.06, 0.34), (0, -0.1, -2.15), ring, ab, bevel=0.03),
+                        kit.box("abel.key1", (0.1, 0.06, 0.55), (-0.1, -0.1, -2.5), M["brass"], ab, bevel=0.02),
+                        kit.box("abel.key2", (0.1, 0.06, 0.5), (0.12, -0.1, -2.45), ring, ab, bevel=0.02),
+                        kit.box("abel.ktag", (0.3, 0.05, 0.4), (0.0, -0.1, -2.6), tgm, ab, bevel=0.02)]
+    # the crossword man's folded paper (blank grid) and pen
+    cw = bpy.data.objects.get("crossword.torso")
+    if cw:
+        pm = pbr(kit, "newsprint", "#dcd7c8", 0.9)
+        ink = pbr(kit, "grid ink", "#2a2a2c", 0.8)
+        parts = [kit.box("crossword.paper", (1.3, 0.05, 1.0), (0, -1.0, 0.9), pm, cw, rot=(0.45, 0, 0), bevel=0.02)]
+        for k in range(6):
+            parts.append(kit.box(f"crossword.gv{k}", (0.025, 0.03, 0.6), (-0.4 + k * 0.16, -1.05, 0.98), ink, cw, rot=(0.45, 0, 0)))
+            parts.append(kit.box(f"crossword.gh{k}", (0.8, 0.03, 0.025), (0.0, -1.06 + 0.0, 0.7 + k * 0.1), ink, cw, rot=(0.45, 0, 0)))
+        parts.append(kit.box("crossword.pen", (0.06, 0.5, 0.06), (0.55, -1.25, 0.9), ink, cw, rot=(0.3, 0, 0.3)))
+        late["paper"] = parts
+    ctx["late"] = True
+
+
+def _show(ctx, key, on):
+    for ob in ctx.get("late_objs", {}).get(key, []):
+        ob.hide_render = not on
+
+
 def animate(kit, story, tl, t, ctx):
     att = ctx["att"]
-    a = _last(_cues(tl, "attendant"), t) or {}
-    a = {**POSES.get(a.get("pose"), {}), **a}
-    gains = lit_gains(att["grid"], a.get("lit", [GRIDS[att["grid"]]["eye"]]), a.get("glow", 1.0), a.get("eye", 1.0))
+    _late(kit, story, ctx)
+    # --- the Attendant: pose, and each button's glow (a change eases over the cue's "dur", default 0.12 s)
+    acs = _cues(tl, "attendant")
+    a_c = _last(acs, t) or {}
+    a = {**POSES.get(a_c.get("pose"), {}), **a_c}
+    grid = att["grid"]
+
+    def gains_of(c):
+        cc = {**POSES.get(c.get("pose"), {}), **c}
+        return lit_gains(grid, cc.get("lit", [GRIDS[grid]["eye"]]), cc.get("glow", 1.0), cc.get("eye", 1.0))
+
+    gains = gains_of(a_c) if a_c else [0.0] * len(att["buttons"])
+    pc = _prev(acs, a_c) if a_c else None
+    if pc is not None:
+        u = _ramp_u(a_c, t, 0.3)
+        if u < 1.0:
+            gains = [x + (y - x) * u for x, y in zip(gains_of(pc), gains)]
     pose_attendant(att, a.get("pos", (0.0, SILL_Y - 0.4)), a.get("yaw", 180.0), a.get("lean", 0.0), a.get("bend", 0.0),
-                   a.get("head", (0.0, 0.0, 0.0)), gains, a.get("hidden", False), a.get("fold", 1.0))
+                   a.get("head", (0.0, 0.0, 0.0)), gains, a.get("hidden", not a_c), a.get("fold", 1.0))
     bpy.context.view_layer.update()
     aim_lights(ctx, att)
-    d = _last(_cues(tl, "doors"), t) or {}
-    set_doors(ctx, d.get("gap", 0.0), d.get("hall", 0.0))
+    place_tag(att)
+    aim_att_lights(att)
+    # --- the doors (eased over the cue's "dur") and the landing's
+    dcs = _cues(tl, "doors")
+    d = _last(dcs, t) or {}
+    gap, hall = d.get("gap", 0.0), d.get("hall", 0.0)
+    pd = _prev(dcs, d) if d else None
+    if pd is not None:
+        u = _ramp_u(d, t, 0.0)
+        gap = pd.get("gap", 0.0) + (gap - pd.get("gap", 0.0)) * u
+        hall = pd.get("hall", 0.0) + (hall - pd.get("hall", 0.0)) * u
+    if d.get("recoil"):   # a stop dead with a 2 cm recoil and a short shudder (the bump)
+        gap += kit.spring(t, d["t"], d["recoil"], 14.0, 9.0)
+    set_doors(ctx, gap, hall)
+    lds = _cues(tl, "land_doors")
+    ldc = _last(lds, t) or {}
+
+    def _door_v(c, key):
+        return float(c.get(key, c.get("open", 0.0)))
+
+    me_v = him_v = 0.0
+    if ldc:
+        pdc = _prev(lds, ldc)
+        u = kit_ss((t - ldc["t"]) / ldc.get("dur", 0.6))
+        for key in ("me", "him"):
+            v1 = _door_v(ldc, key)
+            v0 = _door_v(pdc, key) if pdc is not None and pdc is not ldc else 0.0
+            val = v0 + (v1 - v0) * u
+            if key == "me":
+                me_v = val
+            else:
+                him_v = val
+    set_land_doors(ctx, me_v, him_v)
+    # --- the lights (a change eases over the cue's "dur": the car's panel dims, never cuts)
+    lcs = _cues(tl, "lights")
+    lc = _last(lcs, t) or {}
+    g = light_gains(lc)
+    pl_ = _prev(lcs, lc) if lc else None
+    if pl_ is not None:
+        u = _ramp_u(lc, t, 0.3)
+        if u < 1.0:
+            g = _lerp_dict(light_gains(pl_), g, u)
+    state = lc.get("state", "on")
+    beyond = BEYOND.get(state)
+    if pl_ is not None and _ramp_u(lc, t, 0.3) < 1.0 and BEYOND.get(pl_.get("state")):
+        beyond = beyond or BEYOND.get(pl_.get("state"))
+    for name, objs in ctx["grp"].items():
+        for o in objs:
+            o.hide_render = name != beyond
     ind = _last(_cues(tl, "indicator"), t) or {}
     set_indicator(ctx, str(ind.get("floor", "12")), ind.get("arrow"))
-    lc = _last(_cues(tl, "lights"), t) or {}
-    s = lc.get("state", "on")
     dark = bool(lc.get("cast_dark")) and bool(story.get("cast"))
-    if ctx.get("cast_dark") != dark:   # the car's own light kept off the cast (the cast exist only after build)
-        cast = [o for o in bpy.data.objects if o.type == "MESH"
-                and any(o.name == n or o.name.startswith(n + ".") for n in story.get("cast", {}))]
-        if cast or not dark:
-            link_light("ceiling", cast if dark else [], "EXCLUDE")
-            ctx["cast_dark"] = dark
-    g = dict(LIGHT_STATES[s])
+    cast = [o for o in bpy.data.objects if o.type == "MESH"
+            and any(o.name == n or o.name.startswith(n + ".") for n in story.get("cast", {}))]
+    if ctx.get("cast_dark") != dark and (cast or not dark):
+        link_light("ceiling", cast if dark else [], "EXCLUDE")
+        ctx["cast_dark"] = dark
+    if (g["cast_rim"] or g["fill"]) and cast:
+        if not ctx.get("cast_rim"):
+            link_light("cast_rim", cast)
+            link_light("fill", cast)
+            ctx["cast_rim"] = True
+    # --- the shot's own face key (cast only)
+    shots_by_id = ctx.setdefault("shot_spec", {x["id"]: x for x in story["shots"]})
+    sh = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1])
+    kspec = shots_by_id.get(sh["id"], {}).get("key")
+    if cast and not ctx.get("key_linked"):
+        link_light("face_key", cast)
+        ctx["key_linked"] = True
+    g["face_key"] = 0.0
+    tspec = shots_by_id.get(sh["id"], {}).get("tl")
+    g["tag_lamp"] = 0.0
+    if tspec:
+        to = bpy.data.objects["tag_lamp"]
+        to.location = tuple(tspec["at"])
+        to.rotation_euler = (V(tspec["aim"]) - V(tspec["at"])).to_track_quat("-Z", "Y").to_euler()
+        to.data.color = kit.col(tspec.get("c", "#bcd0ff"))[:3]
+        to.data.size = tspec.get("size", 0.3)
+        g["tag_lamp"] = float(tspec.get("w", 1.0))
+    if kspec and cast:
+        ko = bpy.data.objects["face_key"]
+        ko.location = tuple(kspec["at"])
+        ko.rotation_euler = (V(kspec["aim"]) - V(kspec["at"])).to_track_quat("-Z", "Y").to_euler()
+        ko.data.color = kit.col(kspec.get("c", "#e8e4dc"))[:3]
+        ko.data.size = kspec.get("size", 0.7)
+        g["face_key"] = float(kspec.get("w", 1.0))
     lit = sum(1 for x in gains if x > 0)
     for k in ("face", "face_under", "face_peak"):
-        g[k] = g[k] * lit / len(gains) * a.get("glow", 1.0) if lit and not a.get("hidden") else 0.0
-    ctx["M"]["diffuser"].node_tree.nodes["glow"].inputs["Strength"].default_value = 3.0 * g.pop("diffuser")
-    ctx["M"]["segment"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.5   # under the buttons
-    pl = (_last(_cues(tl, "panel"), t) or {}).get("lit", [])
+        g[k] = g[k] * lit / len(gains) * a.get("glow", 1.0) if lit and not a.get("hidden", not a_c) else 0.0
+    g["face_peak"] *= a.get("peak", 1.0)
+    for k in ("backwash", "hall", "hall_rim"):
+        g[k] *= a.get("wash", 1.0)
+    g["panel_key"] *= a.get("key", 1.0)
+    ctx["M"]["diffuser"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.6 * g.pop("diffuser")
+    ctx["M"]["segment"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.4
+    pcs = _cues(tl, "panel")
+    pcur = _last(pcs, t) or {}
+    pl = pcur.get("lit", [])
+    ppl = (_prev(pcs, pcur) or {}).get("lit", []) if pcur else []
+    pu = max(0.0, min(1.0, (t - pcur["t"]) / 0.3)) if pcur else 1.0
+    pu = pu * pu * (3 - 2 * pu)
     for i, m in enumerate(ctx["panel_buttons"]):
-        set_button(m, 2.4 if i in pl else 0.0)
+        a0 = 2.4 if i in ppl else 0.0
+        a1 = 2.4 if i in pl else 0.0
+        set_button(m, a0 + (a1 - a0) * pu)
+    # --- the finger: on a floor-panel button, pressed in by "press" (0..1), coming in from the car
+    fc = _last(_cues(tl, "finger"), t) or {}
+    if fc.get("on"):
+        x, z = panel_slot_xz(fc["button"])
+        press = fc.get("press", 0.0)
+        if fc.get("dur"):
+            press *= kit_ss((t - fc["t"]) / fc["dur"])
+        y0 = CAR_Y0 + 0.02 + 0.035 - 0.012 * press
+        if fc.get("tomato"):
+            ctx["tom_ins"].location = (x, y0 + 0.045 - 0.04 * (1 - press), z - 0.078)   # on the lower edge: the lit ring shows above it
+        else:
+            ctx["finger"][0].location = (x, y0, z)
+            ctx["finger"][1].location = (x + 0.02, y0 + 0.035 + 0.2, z - 0.03)
+            ctx["finger"][1].rotation_euler = (math.radians(-6), 0, 0)
+    for k, ob in enumerate(ctx["finger"]):
+        ob.hide_render = not fc.get("on") or (k == 2) != bool(fc.get("tomato"))
+    # --- the balconies: which hour, the tomatoes on the wall
+    sky = (_last(_cues(tl, "sky"), t) or {}).get("hour")
+    for nm, objs in ctx["sky"].items():
+        for o in objs:
+            o.hide_render = nm != sky
+    n_t = (_last(_cues(tl, "tomatoes"), t) or {}).get("n", 0)
+    for k, ob in enumerate(ctx["wall_toms"]):
+        ob.hide_render = k >= n_t
+    for ob in ctx["plants"]:
+        ob.hide_render = False
+    # --- props: the cake in Mr. Abel's hands, keys, tomato, scarf (shelf, my palms, his palms, my neck), the paper
+    pr = _last(_cues(tl, "props"), t) or {}
+    from blocky import acting
+
+    def hidden_of(who):
+        return acting.state(tl, who, t)["hidden"] if tl.get("acting", {}).get(who) else True
+
+    _show(ctx, "hand_tomato", bool(pr.get("tomato")) and not hidden_of("okafor"))
+    _show(ctx, "glasses_up", not hidden_of("okafor"))
+    _show(ctx, "scarf_okafor", bool(pr.get("scarf_him")) and not hidden_of("okafor"))
+    _show(ctx, "scarf_me", bool(pr.get("scarf_me")) and not hidden_of("me"))
+    _show(ctx, "scarf_neck", bool(pr.get("scarf_neck")) and not hidden_of("me"))
+    _show(ctx, "keys", bool(pr.get("keys")) and not hidden_of("abel"))
+    _show(ctx, "paper", not hidden_of("crossword"))
+    if ctx.get("scarf_shelf"):
+        for ob in ctx["scarf_shelf"]:
+            ob.hide_render = ob.hide_render or not pr.get("shelf_scarf", True)
+    ck = _last(_cues(tl, "cake"), t) or {}
+    ctx["cake"]["root"].location = tuple(ck.get("pos", (0, 0, -5)))
+    ctx["cake"]["root"].rotation_euler = (0, 0, math.radians(ck.get("yaw", 0)))
+    for ob in ctx["cake"]["parts"]:
+        ob.hide_render = not ck.get("on", False)
+    sco = ctx.get("sconce_mat")
+    if sco:
+        sco.node_tree.nodes["glow"].inputs["Strength"].default_value = 5.0 * g.pop("sconce", 0.0)
+    for sx in (-1, 1):
+        g[f"sleeve_rim{sx}"] *= a.get("sleeve", 1.0)
+    g["att_side"] *= a.get("side", 0.0)
+    g["att_rim"] *= a.get("rim", 0.0)
     return g
