@@ -52,14 +52,19 @@ def seg(kit, name, a, b, t, mat, up_t=None, parent=None, bevel=0.03):
 # ------------------------------------------------------------------------------------------------ the Reach
 
 
-def long_arm(kit, name, pts, t=0.26, fold=1.4, hand=True, grp=None):
+def long_arm(kit, name, pts, t=0.26, fold=1.4, hand=True, grp=None, skin_c=None, coat_c=None, em=None):
     """One continuous sleeve through pts (shoulder first, hand end last): blocks <= fold long laid end to end, a fold
     of cloth at each join, a thin cool rim along the top, and at the end a plain skin hand lying flat: a palm block
     and four blocky fingers together, palms down."""
-    sl = kit.plastic(COAT, 0.85)
-    cuffm = kit.plastic(COAT, 0.85)
+    sl = kit.plastic(coat_c or COAT, 0.85)
+    cuffm = kit.plastic(coat_c or COAT, 0.85)
     rim = kit.emit(RIM, 1.3)
-    skin = kit.plastic(HAND_SKIN, 0.55)
+    skin = kit.plastic(skin_c or HAND_SKIN, 0.9 if skin_c else 0.55)
+    if em:
+        for m_ in (skin, sl, cuffm):
+            b_ = m_.node_tree.nodes["Principled BSDF"]
+            b_.inputs["Emission Color"].default_value = kit.col(em[0])
+            b_.inputs["Emission Strength"].default_value = em[1]
     P = [V(p) for p in pts]
     joints = [P[0]]
     for i in range(len(P) - 1):
@@ -568,14 +573,17 @@ def build(kit, story, tl):
     R["lean"] = make_reach(kit, wd, "reach_lean", (20.2, 1.2, 0.0), yaw=math.radians(180), lean=0.74, head_pitch=-0.62,
                            paths=lambda sl, sr: [lean_path(sl, -1 if sl.x < sr.x else 1), lean_path(sr, 1 if sl.x < sr.x else -1)])
     # S11c: only two dull flat hands at the far end of the rail, the sleeves running off into the fog, no body
-    def two_sleeves(name, mk):
+    def two_sleeves(name, mk, **kw):
         n0 = set(bpy.data.objects.keys())
         for sd in (-1, 1):
-            long_arm(kit, f"{name}.{sd}", mk(sd))
+            long_arm(kit, f"{name}.{sd}", mk(sd), **kw)
         return [bpy.data.objects[k] for k in bpy.data.objects.keys() if k not in n0]
     R["far"] = two_sleeves("reach_far", lambda sd: [V((-16.0, RAIL_Y + sd * 0.12, 1.13)), V((1.4, RAIL_Y + sd * 0.12, 1.13))])
     # S91 and S92: the same two hands flat on our bedroom's outside sill, the sleeves running away over the garden into fog
-    R["bed"] = two_sleeves("reach_bed", lambda sd: [V((350.0 + sd * 0.17, 45.0, 1.235)), V((350.0 + sd * 0.17, 5.95, 1.235))])
+    R["bed"] = two_sleeves("reach_bed", lambda sd: [V((350.0 + sd * 0.17, 45.0, 1.235)), V((350.0 + sd * 0.17, 5.95, 1.235))],
+                          skin_c="#d6cfd2", coat_c="#6f7896", em=("#a9b6dc", 0.55))
+    R["far2"] = two_sleeves("reach_far2", lambda sd: [V((-16.0, RAIL_Y + sd * 0.12, 1.13)), V((1.4, RAIL_Y + sd * 0.12, 1.13))],
+                            skin_c="#dcd2cc", em=("#b8c4e0", 0.5))
     ctx["reach"] = R
     # lights (all off by default, switched by the look)
     L = kit.light
@@ -915,6 +923,9 @@ def animate(kit, story, tl, t, ctx):
         kit.LIGHTS["handlamp"]["obj"].location = (xe - 0.15, RAIL_Y - 0.4, 0.4)
         over["farlamp"] = spec.get("farlamp", 1.0)
         over["handlamp"] = spec.get("handlamp", 1.0)
+    elif rv == "far2":
+        kit.LIGHTS["handlamp"]["obj"].location = tuple(spec.get("hl_pos", (1.0, 0.3, 0.5)))
+        over["handlamp"] = spec.get("handlamp", 1.0)
     elif rv in ("stand", "lean"):
         kit.LIGHTS["farlamp"]["obj"].location = tuple(spec.get("fl_pos", (20.0, 1.0, 0.35)))
         kit.LIGHTS["handlamp"]["obj"].location = (0.35, RAIL_Y - 0.4, 0.4)
@@ -968,11 +979,12 @@ def animate(kit, story, tl, t, ctx):
                 continue
             sk, bsdf = h
             hidden = st["hidden"]
-            bsdf.inputs["Emission Strength"].default_value = 0.0 if hidden else GLOW_EM * g
+            bsdf.inputs["Emission Strength"].default_value = 0.0 if hidden else GLOW_EM * g * spec.get("em_k", 1.0)
             bsdf.inputs["Emission Color"].default_value = kit.col("#ffcf80")
             for mx, al, ob_ in ctx.get("halos", {}).get((who, sx), []):
                 mx.inputs[0].default_value = 0.0 if hidden else al * min(1.0, g * 1.3)
                 ob_.hide_render = hidden or g < 0.02
+                ob_.data.materials[0].node_tree.nodes["Emission"].inputs["Strength"].default_value = 1.6 * spec.get("halo_k", 1.0)
             sk0 = story["cast"][who]["skin"]
             a_ = kit.col(sk0)
             b_ = kit.col("#f2b858")
