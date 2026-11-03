@@ -167,6 +167,11 @@ def CU(name, ref=None, **kw):
 
 ANNOYED, SMUG, SHEEP = "angry", "smirk", "polite"
 HOLE_JADE = [-0.5, 0.5, 4.3, 6.4, 0.2, 2.3]
+def MEHOLE(x, y):
+    """A clearing in the pile around a standing character (the pile keeps off their head)."""
+    return [x - 0.9, x + 0.9, y - 0.9, y + 0.9, 0.0, 2.4]
+
+
 HOLE_HINGE = [-0.85, -0.2, 5.0, 7.0, 0.0, 2.3]
 FRONT = (0.0, 5.0, 1.25)
 
@@ -229,7 +234,7 @@ S("L13", cam((K - 1.6, 2.7, 1.8), (K - 2.0, 4.1, 1.9), 26), note="the kitchen cl
 S("L13.1", cam((-0.85, 4.0, 1.55), (0.0, 5.5, 1.5), 22),
   {"me": P(-0.3, 5.4, 160, ANNOYED), "jade": P(0.3, 5.4, 160, ANNOYED)}, note="the two of us facing the bathroom door")
 S("L14", cam((0.0, 6.3, 1.4), (0.0, 1.5, 1.2), 20),
-  {"me": P(-0.3, 1.0, 180, ANNOYED, to=[(-0.3, 5.0)], run=True), "jade": P(0.3, 1.1, 180, ANNOYED, to=[(0.3, 5.2)], run=True)},
+  {"me": P(-0.4, 1.0, 180, ANNOYED, to=[(-0.4, 5.0)], run=True), "jade": P(0.4, 1.1, 180, ANNOYED, to=[(0.4, 5.2)], run=True)},
   note="shoulder to shoulder, racing down the hall")
 S("L15", cam((0.5, 5.1, 1.5), (0.0, 7.0, 1.3), 22), {"jade": P(0.0, 7.7, 0, SMUG)}, note="Jade inside the doorway, the door swinging",
   cues=[DR(swing=80.0)])
@@ -323,7 +328,7 @@ S("L46", cam((DK + 2.0, 0.3, 1.4), (DK, 2.0, 1.6), 22), {"downstairs": FP(DK - 0
 S("L46.2", cam((DK + 0.5, 1.2, 0.6), (DK, 2.0, 2.2), 20), {"downstairs": FP(DK - 0.8, 1.8, (DK + 0.5, 1.2), "worried", head=[0, -22])},
   note="low, up at the light")
 S("L47", cam((0.0, 0.8, 1.5), (0.0, 6.0, 1.3), 19), note="by three it fills the hall", cues=[MT(16384)])
-S("L47.2", cam((-0.3, 3.6, 1.4), (-0.8, 4.6, 1.4), 24), {"me": FP(-0.4, 3.9, (-0.3, 3.6), "worried")}, note="up to my door",
+S("L47.2", cam((-0.3, 3.6, 1.4), (-0.8, 4.6, 1.4), 24), {"me": FP(-0.5, 4.2, (-0.3, 3.6), "worried")}, note="up to my door",
   cues=[MT(32768, ref="L47.2")])
 S("L48", cam((0.2, 3.7, 1.4), (-0.7, 5.3, 1.2), 26), {"me": FP(-0.45, 3.8, (0.2, 3.7), "worried")}, note="it's pushing my door shut",
   cues=[CU("mydoor", a=170.0), CU("mydoor", ref="L48", a=140.0, dur=1.2)])
@@ -333,8 +338,9 @@ S("L50", cam((0.3, 4.2, 0.35), (-0.4, 5.2, 0.15), 30), {"me": P(-0.3, 4.85, 0, "
 S("L51", cam((0.0, 3.6, 1.6), (0.0, 5.9, 1.55), 26), {"jadeb": P(0.0, 5.9, 0, "worried")},
   note="Jade in a gap of the pile, in her blanket", cues=[CU("hole", holes=[HOLE_JADE]), MT(65536)])
 S("L51.1", cam((0.2, 3.4, 1.5), (-0.5, 4.3, 1.5), 30), {"me": FP(-0.55, 4.3, (0.2, 3.4), "worried"), "jadeb": P(0.0, 5.9, 0, "worried")},
-  note="me looking back")
-S("L52", cam((0.0, 4.3, 1.6), (0.0, 5.9, 1.55), 34), {"jadeb": P(0.0, 5.9, 0, SHEEP, mouth=True)}, note="through the gaps she says she's sorry")
+  note="me looking back", cues=[CU("hole", holes=[HOLE_JADE, MEHOLE(-0.55, 4.3)])])
+S("L52", cam((0.0, 4.3, 1.6), (0.0, 5.9, 1.55), 34), {"jadeb": P(0.0, 5.9, 0, SHEEP, mouth=True)}, note="through the gaps she says she's sorry",
+  cues=[CU("hole", holes=[HOLE_JADE])])
 S("L53", cam((-0.85, -6.3, 1.5), (0.0, -7.8, 1.4), 24), {"me": P(0.05, -7.4, 0, ANNOYED, arms=[95, 95])},
   note="an earlier morning in day colours: me pounding on the yellow door, it flies shut",
   cues=[CU("doorat", loc=(0.0, -8.4, 0.0), rot=180.0), DR(n=8, L=0.0, lean=0.0, swing=45.0), CU("hole", holes=[]),
@@ -342,12 +348,12 @@ S("L53", cam((-0.85, -6.3, 1.5), (0.0, -7.8, 1.4), 24), {"me": P(0.05, -7.4, 0, 
 S("L53.2", cam((0.0, 4.3, 1.6), (0.0, 5.9, 1.55), 34), {"jadeb": P(0.0, 5.9, 0, SHEEP, mouth=True)}, note="back to Jade in the gap",
   cues=[CU("doorat", loc=(0.0, 7.0, 0.0), rot=0.0), DR(n=65536, L=2.4, lean=4.0, swing=0.0), CU("hole", holes=[HOLE_JADE])])
 S("L54", cam((0.0, 3.8, 1.4), (-0.4, 5.1, 0.9), 26), {"me": P(-0.35, 4.85, 0, SHEEP)}, note="I'm sorry too, foot still on the door",
-  cues=[CU("night", ref="L54>-0.5", v=0.0, dur=0.5)])
+  cues=[CU("hole", holes=[HOLE_JADE, MEHOLE(-0.35, 4.85)]), CU("night", ref="L54>-0.5", v=0.0, dur=0.5)])
 # 05 the loophole (L55 to L64)
 S("L55", cam((-0.3, 5.2, 1.1), (-0.45, 6.9, 1.1), 30), note="the hall light is on; the hinges, the only bare metal",
   cues=[CU("hole", holes=[HOLE_HINGE, HOLE_JADE])])
-S("L56", cam((0.2, 3.6, 1.55), (-0.5, 4.9, 1.5), 28), {"me": FP(-0.5, 4.5, (0.2, 3.6), "smile")}, note="the idea")
-S("L56.2", cam((0.0, 3.7, 1.6), (0.0, 5.9, 1.55), 26), {"jadeb": P(0.0, 5.9, 0, "smile")}, note="Jade smiles back from the gap")
+S("L56", cam((0.2, 3.6, 1.55), (-0.5, 4.9, 1.5), 28), {"me": FP(-0.5, 4.5, (0.2, 3.6), "smile")}, note="the idea", cues=[CU("hole", holes=[HOLE_HINGE, HOLE_JADE, MEHOLE(-0.5, 4.5)])])
+S("L56.2", cam((0.0, 3.7, 1.6), (0.0, 5.9, 1.55), 26), {"jadeb": P(0.0, 5.9, 0, "smile")}, note="Jade smiles back from the gap", cues=[CU("hole", holes=[HOLE_HINGE, HOLE_JADE])])
 S("L57", cam((0.2, 5.0, 0.7), (-0.5, 6.7, 0.5), 26), {"me": P(-0.55, 6.2, 0, "neutral", lean=50, z=-0.1)},
   note="the bottom pin, up and out", cues=[CU("pin", ref="L57+0.5", i=0)])
 S("L57.1", cam((-0.2, 5.9, 0.9), (-0.45, 6.9, 0.9), 34), {"me": P(-0.55, 6.2, 0, "neutral", lean=50, z=-0.1)},
@@ -388,7 +394,7 @@ S("L65b", cam((0.6, 4.9, 1.5), (0.0, 6.6, 1.4), 24), {"jade": FP(-0.1, 6.3, (0.6
 S("L65b.1", cam((0.0, 5.6, 1.3), (0.0, 6.9, 1.3), 32), note="no lock pops on; the meter holds")
 S("L66", cam((-0.2, 5.7, 1.3), (-0.55, 6.9, 1.2), 34), {"me": P(-0.6, 6.1, 180, "neutral", arms=[95, 0])}, note="we knock on the bare frame")
 S("L67", cam((K - 1.6, 2.7, 1.8), (K - 2.0, 4.1, 1.9), 26), note="7:15 again", cues=[CU("clock", h=7.25)])
-S("L67.1", cam((-0.5, 2.8, 1.5), (0.3, 4.8, 1.5), 24), {"jade": FP(0.4, 4.8, (-0.5, 2.8), "smile", arms=[0, 100]), "me": P(-0.3, 3.2, 180, "neutral", to=[(-0.3, 5.6)])},
+S("L67.1", cam((-0.5, 2.8, 1.5), (0.3, 4.8, 1.5), 24), {"jade": FP(0.67, 4.8, (-0.5, 2.8), "smile", arms=[0, 100]), "me": P(0.03, 3.2, 180, "neutral", to=[(0.03, 5.6)])},
   note="Jade waves me past")
 S("L68", cam((SR, 4.6, 6.0), (SR + 0.5, 1.0, 0.2), 22), note="the curb is empty")
 S("L69", cam((0.0, 0.35, 1.5), (0.0, -7.0, 1.2), 20), note="across the hall, a new bathroom door at the end of Mr. Dale's hall",

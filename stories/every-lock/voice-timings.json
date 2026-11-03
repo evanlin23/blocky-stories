@@ -1514,26 +1514,22 @@
    ]
   },
   "L57": {
-   "text": "three hinge pins. i pull the bottom two.",
+   "text": "three hinge pins. i pull the bottom two out.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.276,
+   "dur": 2.379,
    "onset": 0.172,
-   "end": 2.069,
+   "end": 2.172,
    "chunks": [
     [
      0.172,
-     0.914
+     0.931
     ],
     [
-     1.008,
-     1.345
-    ],
-    [
-     1.345,
-     2.069
+     1.026,
+     2.172
     ]
    ]
   },
