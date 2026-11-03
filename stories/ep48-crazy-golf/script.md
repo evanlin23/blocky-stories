@@ -349,3 +349,5 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Light:** three changes to pre-check (L24, L33, L51). No step changes.
 - **The hair reveal (L58):** I sit beside the shadow with knees up, never cross-legged and never reaching the floor.
 - **story.json** is the builder's to write. Set `look.flash_safe: true` there.
+
+- **Opening revision, 2026-11-03 (queue audit):** confess: line 1 is now 'My shadow has never left my feet.' with the rule in L01b (new, 'Everyone else's goes where they're happiest.'), and frame 1 is a low close-up of my feet and shadow instead of the 5 m mid shot. Tagged `"opening"` in package.json. Not yet drawn or listened to; the hold stays until the proof render and critic pass.
