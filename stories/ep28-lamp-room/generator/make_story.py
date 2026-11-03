@@ -181,7 +181,7 @@ shot("L05", "on the stairs in low orange sun, an awkward high five",
      still([0.0, 0.0, 43.5 * STEP + 1.75], pol(1.7, 30 * 43.5, 43.5 * STEP + 1.4), 14), hand=0.003)
 shot("L06", "Ines in bed, phone glow on her face", still([0.0, 0.1, Z4 + 1.0], [1.8, 0.0, Z4 + 1.0], 36))
 shot("L06.2", "S06b: over my shoulder at the top rail in storm blue, flashlight in hand, only the well and rail",
-     c([0, [2.35, 0.55, 17.5], [-0.95, -0.15, 14.7], 26], [1, [2.3, 0.5, 17.45], [-0.95, -0.15, 14.4], 24]), hand=0.004)
+     c([0, [2.2, -0.3, 17.4], [-0.4, -0.3, 15.0], 22], [1, [2.15, -0.3, 17.35], [-0.4, -0.3, 14.6], 21]), hand=0.004)
 shot("L07", "close on me in the glow, a wince", still([-1.3, -1.25, LF + 1.5], [-1.3, 0.4, LF + 1.38], 44))
 shot("L08", "close on me, the glow, worried", still([-1.3, -1.3, LF + 1.6], [-1.3, 0.4, LF + 1.42], 38))
 shot("L09", "the glow brightens, a soft smile", still([-1.3, -1.25, LF + 1.5], [-1.3, 0.4, LF + 1.38], 44))
@@ -220,7 +220,7 @@ shot("L30", "the two of us, silence", still([KX + 2.15, -1.5, 1.9], [KX, 0.1, 1.
 # 05 night two
 shot("L31", "the tower in heavier rain", move(([-3, -27, 6], [0, 0, 10]), ([-2.2, -24, 8], [0, 0, 10]), 18), rain=True)
 shot("L31b", "S31b: the lamp-room glass trembling under the rain, the dead lens catching a slow glint",
-     still([0.6, 1.9, LF + 1.5], [0.0, -2.5, LF + 1.6], 24), rain=True, hand=0.012)
+     still([1.7, -1.9, LF + 1.3], [-0.4, 0.4, LF + 1.7], 22), rain=True, hand=0.012)
 shot("L32", "black, buzz, glow ramps on my face", COT_FACE)
 shot("L33", "the glow on my face, eyes wide", still([-1.3, -1.3, LF + 1.6], [-1.3, 0.4, LF + 1.42], 38))
 shot("L34", "at the rail again, the round window behind", RF(6, d=2.2, lens=28))
@@ -241,7 +241,7 @@ shot("L45", "held, a slow push", POV(5, [1.6, 0.0, 2 * RISE + 1.78], 56, push=8)
 shot("L46", "straight up the well", still([0.3, 0.0, 9.4], [0.0, 0.0, 19.0], 17))
 # 08 night four (the scare)
 shot("L46b", "S46b: the foot of my cot by day, sand in the blanket, my sandy socks beside it",
-     still([0.6, -2.1, LF + 0.9], [-1.0, -0.85, LF + 0.35], 26), hand=0.003)
+     still([-1.35, -2.1, LF + 1.5], [-1.1, -0.6, LF + 0.7], 30), hand=0.003)
 shot("L47", "black, a blue chill on my face, eyes opening", COT_FACE)
 shot("L48", "over my shoulder at the rail: Ines's door ajar", RF(4, d=2.1, lens=26))
 shot("L49", "the flashlight cone tilting down the well",
@@ -282,7 +282,7 @@ shot("L62", "below her door, open, the room empty", still([-1.5, -0.2, 8.4], [2.
 shot("L63", "Ines asleep two steps down in the blanket",
      still(local(SEAT_IN, YAW_IN, 2.0, -0.35, 1.4), local(SEAT_IN, YAW_IN, 0, 0, 0.85), 30))
 shot("L64", "S65: pulled back: my legs and socks on the step under her camel coat, her hand on it",
-     still(local(SEAT_ME, YAW_ME, 2.0, 0.6, 1.5), local(SEAT_ME, YAW_ME, 0.4, 0.0, 0.5), 28), hand=0.004)
+     still(local(SEAT_ME, YAW_ME, 3.0, 0.5, 2.6), local(SEAT_ME, YAW_ME, 0.35, 0.0, 0.5), 24), hand=0.004)
 shot("L65", "high: me, Ines, the stair winding down", still([-0.2, -0.4, 10.4], [-1.9, 1.2, 6.8], 22))
 shot("L66", "POV down the sunlit well: empty", still([-0.8, -0.9, 8.7], [0.0, 1.8, 0.2], 24), hand=0.004)
 shot("L67", "close on me, understanding", still(local(SEAT_ME, YAW_ME, 1.7, -0.3, 1.3), local(SEAT_ME, YAW_ME, 0, 0, 0.9), 32))
@@ -367,7 +367,7 @@ put("me", "L04", SEAT_K(-0.75), yaw=180, sit=True, expr="smirk", head=[0, 8])
 hide("me", "L05-0.01")
 put("me", "L05", tread(44, 1.7), yaw=yaw_to(tread(44), (0, 0)), arms=[0, 150], expr="smirk", head=[0, 0])
 hide("me", "L06")
-at_rail(7, "L06.2", head=[0, 30], lean=10, arms=[0, 20], expr="worried", blink=False)   # S06b: over my shoulder, flashlight in hand
+put("me", "L06.2", [0.0, -1.45, 15.0], yaw=yaw_to([0.0, -1.45], [0, 0]), head=[0, 30], lean=10, arms=[0, 20], expr="worried", blink=False)   # S06b: over my shoulder, flashlight in hand
 put("me", "L07", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-6, arms=[60, 60], head=[0, 22], expr="worried")
 key("me", "L09", expr="warm", blend=0.4)
 hide("me", "L10")
@@ -399,7 +399,7 @@ put("me", "L41", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-4, head=[0, 10]
 key("me", "L41.2", expr="shut", head=[0, 30], blend=0.5)
 at_rail(5, "L42", head=[0, 26])
 hide("me", "L43")
-put("me", "L46b", [-0.4, -1.1, LF], yaw=0, expr="worried", head=[0, 6])
+put("me", "L46b", [-0.4, -1.05, LF], yaw=0, expr="worried", head=[0, 6])
 put("me", "L47", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-6, head=[0, 10], expr="asleep", blink=False)
 key("me", "L47.1", expr="wide", blend=0.1)
 at_rail(4, "L48", head=[0, 30], lean=18, expr="wide", blink=False)
@@ -538,8 +538,8 @@ cues = [
     {"at": "L76", "name": "phone", "on": 0.0, "dur": 0.0},
     # the torch (gain = (distance / 2) squared so the far figure is lit as the near one)
     {"at": 0, "name": "torch", "on": 0.0, "from": [0, 0, 20], "aim": [0, 0, 0]},
-    {"at": "L06.2", "name": "torch", "on": 1.0, "dur": 0.4, "from": [1.45, 0.0, Z7 + 1.05], "aim": [0.8, 0.0, Z7 - 6.0], "gain": 0.4, "spill": 1.0},
-    {"at": "L07", "name": "torch", "on": 0.0, "dur": 0.0, "from": [1.45, 0.0, Z7 + 1.05], "aim": [0.8, 0.0, Z7 - 6.0], "gain": 0.4, "spill": 1.0},
+    {"at": "L06.2", "name": "torch", "on": 1.0, "dur": 0.4, "from": [0.0, -1.2, 16.1], "aim": [0.0, 0.2, 9.0], "gain": 0.4, "spill": 1.0},
+    {"at": "L07", "name": "torch", "on": 0.0, "dur": 0.0, "from": [0.0, -1.2, 16.1], "aim": [0.0, 0.2, 9.0], "gain": 0.4, "spill": 1.0},
     {"at": "L14", "name": "torch", "on": 1.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "gain": 0.45, "spill": 0.0},
     {"at": "L14.3+0.35", "name": "torch", "on": 0.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "dur": 0.0, "gain": 0.45, "spill": 0.0},
     {"at": "L16", "name": "torch", "on": 1.0, "dur": 0.5, "from": [1.45, 0.0, Z7 + 1.05], "aim": [0.8, 0.0, Z7 - 6.0],
@@ -589,6 +589,8 @@ cues = [
     {"at": "L21", "name": "clear", "az": None},
     {"at": "L21.1", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
     {"at": "L22", "name": "clear", "az": None},
+    {"at": "L25b-0.01", "name": "clear", "az": 90, "span": 25, "z0": 0.0, "z1": 1.2},
+    {"at": "L26", "name": "clear", "az": None},
     {"at": "L35", "name": "clear", "az": 0, "span": 55, "z0": RISE + 0.8, "z1": Z6 + 0.4, "rails": [Z6 - 0.2, Z6 + 1.7], "rail_span": 70},
     {"at": "L37", "name": "clear", "az": None},
     {"at": "L37.1", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
@@ -603,6 +605,8 @@ cues = [
     {"at": "L55", "name": "clear", "az": None},
     {"at": "L57", "name": "clear", "az": 0, "span": 45, "z0": Z4 + 1.5, "z1": Z4 + 3.4, "rails": [Z4 - 0.5, Z4 + 1.8], "rail_span": 75},
     {"at": "L58", "name": "clear", "az": None},
+    {"at": "L64", "name": "clear", "az": 180, "span": 0, "z0": 99, "z1": 99, "rails": [7.0, 9.2], "rail_az": 180, "rail_span": 75},
+    {"at": "L65", "name": "clear", "az": None},
     {"at": "L66", "name": "clear", "az": 90, "span": 40, "z0": 0.8, "z1": 7.0},
     {"at": "L67", "name": "clear", "az": None},
     {"at": "L69", "name": "clear", "az": 125, "span": 80, "z0": 8.6, "z1": 17.5, "rails": [6.6, 16.5], "rail_az": 135, "rail_span": 90},
@@ -645,7 +649,7 @@ cues = [
     {"at": 0, "name": "coat", "where": "off"},
     {"at": "L57", "name": "coat", "where": "worn"},
     {"at": "L58", "name": "coat", "where": "off"},
-    {"at": "L64-0.2", "name": "coat", "where": "feet", "pos": local(SEAT_ME, YAW_ME, 0.4, 0.0, 0.36), "yaw": YAW_ME},
+    {"at": "L64-0.2", "name": "coat", "where": "feet", "pos": local(SEAT_ME, YAW_ME, 0.4, 0.0, 0.38), "yaw": YAW_ME},
     {"at": 0, "name": "blanket", "state": "none"},
     {"at": "L57", "name": "blanket", "state": "arm"},
     {"at": "L58", "name": "blanket", "state": "none"},
