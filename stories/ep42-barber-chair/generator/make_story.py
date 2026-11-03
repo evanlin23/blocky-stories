@@ -457,7 +457,7 @@ story = {
     "key_color": "#c08cff",
     "gap": 0.12,
     "tail": 0.3,
-    "look": {"fog": "#2b3550", "fog_density": 0.012, "fog_start": 12.0, "sky": "#10141c", "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True},
+    "look": {"fog": "#2b3550", "fog_density": 0.012, "fog_start": 12.0, "sky": "#10141c", "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True, "polish": True},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.04, 0.012, -0.03], "saturation": 1.05, "contrast": 1.06, "vignette": 0.36,
               "bloom": 0.4, "grain": 0.012, "red_line": 0.74, "red_lift_blue": 0.5},
     "shot_grades": {**{SID[r]: {"shadows": [0.06, 0.02, -0.04], "highlights": [0.08, 0.04, -0.06], "saturation": 1.18, "exposure": 1.0,
