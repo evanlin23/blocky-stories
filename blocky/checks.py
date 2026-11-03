@@ -82,6 +82,136 @@ def originality(name: str, st: dict) -> list[tuple[str, str]]:
 
 
 CUT_MAX_S = 2.3
+STILL_MAX_S = 1.0    # measure.py's block: no picture still for more than 1.0 s (the browser study of 17 hits)
+CUTS_MIN_PER_10S = 5.5
+
+
+def _cam_at(spec: dict, shot: dict, t: float, tl: dict):
+    """The camera's (loc, target, lens) at t from its keys, as bl_story places it (no handheld drift)."""
+    from blocky import acting
+
+    keys = spec["cam"]
+    u = (t - shot["start"]) / max(1e-6, shot["end"] - shot["start"])
+    ease = lambda v: (lambda x: x * x * (3 - 2 * x))(min(1.0, max(0.0, v)))
+    k = keys[-1]
+    loc, tgt, lens = k[1], k[2], k[3]
+    if u <= keys[0][0] or len(keys) == 1:
+        loc, tgt, lens = keys[0][1], keys[0][2], keys[0][3]
+    else:
+        for a, b in zip(keys, keys[1:]):
+            if u <= b[0]:
+                v = ease((u - a[0]) / max(1e-6, b[0] - a[0]))
+                loc = [x + (y - x) * v for x, y in zip(a[1], b[1])]
+                tgt = [x + (y - x) * v for x, y in zip(a[2], b[2])]
+                lens = a[3] + (b[3] - a[3]) * v
+                break
+    if spec.get("follow") and spec["follow"] in tl.get("acting", {}):
+        s = acting.state(tl, spec["follow"], t)
+        loc = [loc[0] + s["x"], loc[1] + s["y"], loc[2] + s["z"]]
+        tgt = [tgt[0] + s["x"], tgt[1] + s["y"], tgt[2] + s["z"]]
+    return list(loc), list(tgt), float(lens)
+
+
+def still_spans(st: dict, tl: dict, dt: float = 0.1) -> list[tuple[str, float, float]]:
+    """Stretches inside one shot where, by the edit alone, nothing moves: the camera (its keys, follow and the
+    polish pack's moves), the crop (punch-ins, drift, sway) and every character's pose all hold. (shot id, start,
+    end) for each one over STILL_MAX_S. Something set.py's animate() moves can't be seen here: list such shots
+    in story.json's `"set_moves": [shot ids]`. A lower bound on what the final shows, so a hit here always fails."""
+    from blocky import acting, polish, post
+
+    if not tl.get("shots"):
+        return []
+    pol = polish.spec(st)
+    specs = polish.cam_specs(st, tl, pol)
+    emph = polish.emph_times(tl, pol) if pol else []
+    skip = set(st.get("set_moves", []))
+    cast = [k for k, v in st.get("cast", {}).items() if not v.get("offscreen")]
+
+    def frame(t):
+        z = post.fx_at(tl, t)["punch"]
+        zz, dx, dy = polish.motion(tl, st, pol, t, emph) if pol else (1.0, 0.0, 0.0)
+        poses = []
+        for w in cast:
+            s = acting.state(tl, w, t)
+            poses.append(None if s["hidden"] else [s["x"], s["y"], s["z"], s["yaw"], s["legs"], *s["arms"],
+                                                    *s["arms_side"], s["head_yaw"], s["head_pitch"], s["lean"],
+                                                    s["bob"], s["mouth"]])
+        return z * zz, dx, dy, poses
+
+    out = []
+    for sh in tl["shots"]:
+        if sh["id"] in skip or sh["id"] not in specs or "cam" not in specs[sh["id"]]:
+            continue
+        n = int((sh["end"] - sh["start"]) / dt)
+        prev, run0 = None, None
+        for i in range(n + 1):
+            t = min(sh["start"] + i * dt, sh["end"] - 1e-3)
+            cam = _cam_at(specs[sh["id"]], sh, t, tl)
+            fr = frame(t)
+            moved = True
+            if prev is not None:
+                pc, pf = prev
+                moved = (max(abs(a - b) for a, b in zip(cam[0] + cam[1], pc[0] + pc[1])) > 0.003
+                         or abs(cam[2] - pc[2]) > 0.03 or abs(fr[0] - pf[0]) > 0.002
+                         or abs(fr[1] - pf[1]) > 0.002 or abs(fr[2] - pf[2]) > 0.002
+                         or any((a is None) != (b is None) or (a is not None and max(abs(x - y) for x, y in zip(a, b)) > 0.01)
+                                for a, b in zip(fr[3], pf[3])))
+            if moved:
+                if run0 is not None and t - dt - run0 > STILL_MAX_S + 1e-6:
+                    out.append((sh["id"], round(run0, 2), round(t - dt, 2)))
+                run0 = t
+            prev = (cam, fr)
+        end = min(sh["start"] + n * dt, sh["end"])
+        if run0 is not None and end - run0 > STILL_MAX_S + 1e-6:
+            out.append((sh["id"], round(run0, 2), round(end, 2)))
+    return out
+
+
+def still_risks(st: dict, tl: dict) -> list[str]:
+    """still_spans as messages: what the proof and the final would fail on (measure.py longest_still_q_s)."""
+    return [f"{sid} {a:.1f}-{b:.1f} s: nothing moves for {b - a:.1f} s (camera, crop and cast all hold); the film's "
+            f"longest still must be at most {STILL_MAX_S:g} s. Key a move, a pose or a punch-in there (or list the "
+            f"shot in story.json `set_moves` if set.py animates something big in it)" for sid, a, b in still_spans(st, tl)]
+
+
+def clip_times(tl: dict, st: dict | None = None, every: float = 0.25) -> list[float]:
+    """When `clipcheck` poses the film: every `every` seconds plus every acting key (where a pose lands), each on
+    a frame, in order."""
+    fps, dur = tl["fps"], tl["duration"]
+    ts = [i * every for i in range(int(dur / every) + 1)]
+    ts += [k["t"] for keys in tl.get("acting", {}).values() for k in keys if "t" in k]
+    frames = sorted({min(tl["frames"] - 1, max(0, int(round(t * fps)))) for t in ts if 0 <= t < dur})
+    return [round(f / fps, 4) for f in frames]
+
+
+def _allowed(h: dict, allow) -> bool:
+    """story.json `clip_ok`: entries are `<object>` (its name up to the first dot: "flap"), `<shot>` ("S36") or
+    `<shot>/<object>`. An overlap the story means to have (a cat through its own flap, a face against the glass)."""
+    what = h["what"].split(".")[0]
+    for a in allow or []:
+        sh, _, ob = a.partition("/")
+        if (sh == h["shot"] and (not ob or ob == what)) or (not ob and sh == what):
+            return True
+    return False
+
+
+def clip_problems(hits: list[dict], allow: list[str] | None = None, gap: float = 0.3) -> list[str]:
+    """clipcheck's overlaps, one line per stretch: the shot, the seconds, whose head and what it passes through.
+    Overlaps listed in `allow` (story.json `clip_ok`) are left out."""
+    spans = {}
+    for h in sorted((h for h in hits if not _allowed(h, allow)), key=lambda h: (h["who"], h["what"], h["t"])):
+        k = (h["who"], h["what"])
+        cur = spans.setdefault(k, [])
+        if cur and h["t"] - cur[-1][2] <= gap and cur[-1][0] == h["shot"]:
+            cur[-1][2] = h["t"]
+        else:
+            cur.append([h["shot"], h["t"], h["t"]])
+    out = []
+    for (who, what), ss in spans.items():
+        for shot, a, b in ss:
+            when = f"{a:.2f}-{b:.2f} s" if b > a else f"{a:.2f} s"
+            out.append((a, f"{shot} {when}: {who}'s head passes through {what}"))
+    return [m for _, m in sorted(out)]
 
 
 # effects that are mostly bright noise (over a quarter of their energy above 4 kHz, measured 2026-11-02): fine as a
@@ -233,4 +363,12 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
             if per > CUT_MAX_S:
                 out.append(("warn", f"a shot every {per:.1f} s on average; the hits cut every 1.2 to 2.3 s "
                                     f"(about {int(tl['duration'] / CUT_MAX_S) + 1} shots for this length)"))
+            cuts = (len(tl["shots"]) - 1) / tl["duration"] * 10
+            if cuts < CUTS_MIN_PER_10S:
+                out.append(("warn", f"{cuts:.1f} cuts per 10 s; measure.py wants {CUTS_MIN_PER_10S:g} or more"))
+            # pre-render craft: a still the final's measure would block on (preflight blocks on these)
+            risks = still_risks(st, tl)
+            if risks:
+                out.append(("warn", f"{len(risks)} still(s) over {STILL_MAX_S:g} s by the edit alone (preflight blocks "
+                                    f"on them), first: {risks[0]}"))
     return out
