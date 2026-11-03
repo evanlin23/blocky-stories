@@ -71,13 +71,31 @@ The queue, scored against this, is in `docs/research/queue-audit.md`.
 | Lean on "one word in CAPS" | The top 10% uses caps less (19%) than the median band (26%). | low |
 | Copy a hit's premise, even as an example | The reset's example rule "lying makes you shorter" is a live PurpleHat title (#31 in the 2026-11-03 deep list). | high |
 
+## The 2026-11-09 batch (7 stories): the mix
+From the opening recipe, the market analysis, the port study (`port-study.md`) and the owner's niche map
+(`2026-11-02-niche-map.md`: quiet-dread town rules are where weeks-old channels hit 0.35M to 1.9M, and cheerful copies
+get under 15K).
+
+| Slot | Lane | Length (H1 arm) | Why |
+|---|---|---|---|
+| 1, 2 | Creepy town rule, warning opening | 110 to 150 s (long) | Our lane, and back-row's shape. The recipe's main test. |
+| 3, 4 | Creepy town rule, warning opening | 60 to 90 s (mid) | The same lane in the other length arm. |
+| 5 | What-if escalation (a meter that climbs) | 110 to 150 s (long) | The wide scan's one open door: 5 channels under 90 days old at 100K+/day. The niche map's best median (377K). |
+| 6 | Rulebook Keeper pilot (recurring host) | 60 to 90 s (mid) | Viewers ask for sequels and a host, and almost nobody gives them one (niche map). Our own recurring cast. |
+| 7 | Horror puzzle ("which one is wrong?"), comment a letter | 20 to 45 s | A gap in the niche map, the most new channels in the wide scan (riddle, 16), and a comment engine. |
+
+That's 4 of 7 (57%) in the core lane and 3 experiments, close to the 70/30 rule. Each arm of H1 gets 3 stories.
+At most one sad family reveal in the batch (the reset), and none in slots 5 to 7. Picks come from
+`stories/premise-bank.md` (the ranked bank for slots 1 to 4, the lane additions for 5 to 7). **Vary the title shapes**:
+no two in the batch start with the same word (the panel lesson, and hard rule 5).
+
 ## Hypotheses for the 2026-11-09 batch (7 stories)
 Each is one change, built in enough stories to compare. Judge on day-7 numbers in `metrics/summary.md`, plus
 Studio's viewed vs swiped away (paste it into the summary by hand). Seven stories can't prove anything alone: add
 them to the next batches' tallies until each arm has at least 6.
 
-**H1. Length: long stories beat 60 to 90 s.** Build 3 stories at 110 to 150 s and 2 at 60 to 90 s, all built from
-the same rules (rule first, example by line 3), plus 2 gags at 20 to 45 s.
+**H1. Length: long stories beat 60 to 90 s.** Slots 1, 2 and 5 at 110 to 150 s against slots 3, 4 and 6 at 60 to 90
+s, all built from the opening recipe. Slot 7 is the 20 to 45 s arm.
 - Measure: day-7 views and average view duration (seconds) per arm; average % viewed and stayed vs swiped as guards.
 - Win: the long arm's median day-7 views are at least 1.5x the 60 to 90 s arm's, without its stayed-to-watch dropping
   more than 5 points. If the 60 to 90 s arm wins, the reset's length rule stands and item 2 drops to low.
