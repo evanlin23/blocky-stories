@@ -18,6 +18,9 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
 LOOP = 0.25
+for _l in lines:
+    if _l["id"] == "L03":
+        _l["tempo"] = 0.9
 lines = lines + [{"id": "P04", "pause": LOOP, "chunks": []}]
 
 # ---------------------------------------------------------------------------------------------------- cast
@@ -80,7 +83,9 @@ def c(*keys):
 
 
 def still(loc, tgt, lens):
-    return c([0, loc, tgt, lens])
+    """A slow drift (3% toward the target, lens +1.5) so no shot sits dead still (quality lift, 2026-11-03)."""
+    loc2 = [round(a + (b - a) * 0.03, 3) for a, b in zip(loc, tgt)]
+    return c([0, loc, tgt, lens], [1, loc2, tgt, lens + 1.5])
 
 
 def move(a, b, lens_a, lens_b=None):
@@ -111,10 +116,10 @@ def P(x, y, yaw=0, expr="neutral", **kw):
 # ---- 01 the bells
 # opening recipe v1 (2026-11-03): frame 1 looks straight at a bell mid-ring with a face, pushing in, no wide before L03
 shot(0, "day", {"pie_man": P(5.1, -12.4, 165, "worried")},
-     c([0, [5.62, -10.47, 1.5], [5.1, -12.4, 1.45], 38], [1.0, [5.46, -11.05, 1.48], [5.1, -12.4, 1.45], 40]),
+     c([0, [5.85, -10.4, 1.5], [5.25, -12.4, 1.42], 32], [1.0, [5.72, -10.7, 1.5], [5.2, -12.4, 1.42], 33]),
      "close on the pie man's face and collar bell mid-ring, pushing in")
 shot("L01.3", "day", {"pie_man": P(5.1, -12.4, 165, "terrified")},
-     c([0, [5.3, -11.72, 1.42], [5.1, -12.4, 1.38], 45], [1, [5.25, -11.9, 1.41], [5.1, -12.4, 1.38], 48]),
+     c([0, [5.7, -11.3, 1.45], [5.28, -12.4, 1.34], 36], [1, [5.62, -11.6, 1.42], [5.27, -12.4, 1.32], 38]),
      "punch in on the bell under his chin, the ding on UP")
 shot("L02", "day", {"pie_man": P(5.1, -12.4, 165, "worried")},
      still([4.3, -9.8, 1.55], [5.5, -12.4, 1.3], 30), "kiosk hatch")
@@ -430,7 +435,7 @@ cue("L22", "lever", v=0.0, dur=1.0)
 # bells: rings and the wind
 cue(0, "sway", who=["drv1", "drv2", "drv3", "ruben", "pie_man"], dur=0.01)
 ring("pie_man", 0, dur=2.4, rate=2.6, amp=0.7)
-ring("pie_man", "L01.5+0.18", amp=1.4)
+ring("pie_man", "L01.5+0.3", amp=1.4)
 ring("pie_man", "L02.2")
 ring("date_a", "L03", dur=2.0, rate=3.2)
 ring("date_b", "L03+0.1", dur=2.0, rate=3.6)
@@ -457,7 +462,7 @@ def ding(at, db=-16, pitch=2200, lp=None, **kw):
 sfx = [
     ding(0.15, -24, 2050),
     ding(0.75, -24, 2050),
-    ding("L01.5+0.18", -12, 2050),
+    ding("L01.5+0.3", -12, 2050),
     ding("L02.2", -15, 2050),
     *[ding(f"L03+{0.3 * k:.1f}", -19, 2100 + 130 * (k % 3)) for k in range(6)],
     *[ding(f"L05+{0.24 * k:.2f}", -17, 2400 - 80 * (k % 4)) for k in range(8)],
@@ -485,6 +490,20 @@ sfx = [
     {"at": "L53+0.35", "kind": "click", "db": -10},
     {"at": "L60", "kind": "ding", "db": -20, "pitch": 1950, "dur": 0.9},
     ding("L72>", -18, 1900, fall=0.35),
+    # recorded impacts where beats land (quality lift, 2026-11-03)
+    {"at": "L01.3-0.12", "kind": "whoosh", "db": -16},
+    {"at": "L19+0.2", "kind": "thud", "db": -18},
+    {"at": "L27", "kind": "door", "db": -18},
+    {"at": "L29+0.3", "kind": "thud", "db": -14},
+    {"at": "L34", "kind": "thud", "db": -20},
+    {"at": "L38", "kind": "door", "db": -20},
+    {"at": "L47", "kind": "door", "db": -16},
+    {"at": "L49+0.9", "kind": "thud", "db": -18},
+    {"at": "L51", "kind": "whoosh", "db": -18},
+    {"at": "L53", "kind": "latch", "db": -16},
+    {"at": "L62+0.3", "kind": "door", "db": -18},
+    {"at": "L66+0.4", "kind": "whoosh", "db": -20},
+    {"at": "L68", "kind": "whoosh", "db": -22},
 ]
 
 story = {
@@ -528,7 +547,7 @@ story = {
                   {"at": "L59", "voices": ["drone", "pad", "piano"], "energy": 0.5, "mode": "major"},
                   {"at": "L69", "voices": ["drone"], "energy": 0.4, "mode": "dorian"},
               ]},
-    "sound": {"rev": 2, "floor": "metal", "steps_db": -22,
+    "sound": {"rev": 3, "floor": "metal", "steps_db": -22,
               "ambience": [
                   {"kind": "wind", "from": 0, "to": "L14", "lufs": -38},
                   {"kind": "room", "from": "L14", "to": "L15", "lufs": -38},

@@ -6,62 +6,62 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this town, the bell on your collar rings before every mistake.",
+   "text": "When your collar bell rings, stop. You're about to mess up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.81,
-   "onset": 0.172,
-   "end": 2.603,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.293,
    "chunks": [
     [
-     0.172,
-     0.638
+     0.155,
+     0.31
     ],
     [
-     0.664,
-     0.94
+     0.31,
+     0.724
     ],
     [
-     0.94,
-     1.276
+     0.724,
+     0.948
     ],
     [
-     1.276,
-     1.784
+     0.983,
+     1.328
     ],
     [
-     1.784,
-     2.603
+     1.414,
+     1.741
+    ],
+    [
+     1.741,
+     2.293
     ]
    ]
   },
   "L02": {
-   "text": "A man reaches for a third pie. Ding.",
+   "text": "Even reaching for a third pie.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
+   "dur": 1.707,
    "onset": 0.172,
-   "end": 1.897,
+   "end": 1.5,
    "chunks": [
     [
      0.172,
-     0.69
+     0.621
     ],
     [
-     0.69,
-     0.819
+     0.621,
+     0.768
     ],
     [
-     0.819,
-     1.293
-    ],
-    [
-     1.388,
-     1.897
+     0.768,
+     1.5
     ]
    ]
   },
@@ -70,22 +70,22 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.845,
-   "onset": 0.172,
-   "end": 1.655,
+   "tempo": 0.927,
+   "dur": 1.966,
+   "onset": 0.207,
+   "end": 1.759,
    "chunks": [
     [
-     0.172,
-     0.534
+     0.207,
+     0.586
     ],
     [
-     0.534,
-     0.87
+     0.586,
+     0.922
     ],
     [
-     0.87,
-     1.655
+     0.922,
+     1.759
     ]
    ]
   },
@@ -1078,7 +1078,7 @@
    ]
   },
   "L40": {
-   "text": "He had left his keys, and phone, on the booth sill for me.",
+   "text": "He had left his keys, and phone, on the booth ledge for me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1093,18 +1093,18 @@
     ],
     [
      0.457,
-     0.914
+     0.897
     ],
     [
-     0.94,
-     1.293
+     0.922,
+     1.276
     ],
     [
-     1.319,
-     1.448
+     1.301,
+     1.431
     ],
     [
-     1.448,
+     1.431,
      1.845
     ],
     [
@@ -1446,14 +1446,14 @@
    ]
   },
   "L53": {
-   "text": "He tips it out onto the sill.",
+   "text": "He tips it out onto the ledge.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.569,
+   "dur": 1.603,
    "onset": 0.155,
-   "end": 1.379,
+   "end": 1.397,
    "chunks": [
     [
      0.155,
@@ -1465,7 +1465,7 @@
     ],
     [
      0.638,
-     1.379
+     1.397
     ]
    ]
   },
