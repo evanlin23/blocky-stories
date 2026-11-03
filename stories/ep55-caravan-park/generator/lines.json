@@ -4,24 +4,34 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this town,",
-    "In this town,"
+    "NEVER wait",
+    "Never wait"
    ],
    [
+    "for someone",
+    "for someone"
+   ],
+   [
+    "at the front GATE.",
+    "at the front gate."
+   ]
+  ]
+ },
+ {
+  "id": "L01b",
+  "who": "narrator",
+  "chunks": [
+   [
     "MOSS grows",
-    "moss grows"
+    "Moss grows"
    ],
    [
     "on you",
     "on you"
    ],
    [
-    "while you WAIT",
-    "while you wait"
-   ],
-   [
-    "for SOMEONE.",
-    "for someone."
+    "while you WAIT.",
+    "while you wait."
    ]
   ]
  },
@@ -1513,6 +1523,14 @@
    [
     "starts to SINK.",
     "starts to sink."
+   ],
+   [
+    "So whatever",
+    "So whatever"
+   ],
+   [
+    "you DO,",
+    "you do,"
    ]
   ]
  }
