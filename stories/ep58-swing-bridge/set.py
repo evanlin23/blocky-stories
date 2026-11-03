@@ -549,8 +549,9 @@ def build(kit, story, tl):
     # the Reach: five models (a body and two sleeves each), one shown at a time
     workdir = bpy.path.abspath("//") if False else None
     from pathlib import Path
-    wd = Path(story.get("_faces", "/tmp"))
-    wd = Path(__import__("os").environ.get("BLOCKY_FACES", "/home/user/blocky-stories/out/ep58-swing-bridge/faces"))
+    import os, tempfile
+    # never a machine-specific path: Actions has no /home/user, so every draw shard died at once (2026-11-03)
+    wd = Path(os.environ.get("BLOCKY_FACES") or os.path.join(tempfile.gettempdir(), "ep58-swing-bridge-faces"))
     wd.mkdir(parents=True, exist_ok=True)
     R = {}
     far = (-0.9, RAIL_Y, 0.0)
