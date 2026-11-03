@@ -234,34 +234,26 @@
    ]
   },
   "L09": {
-   "text": "Tam stopped saying my name years ago. So the one was me.",
+   "text": "I figured the one was just me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.793,
+   "dur": 1.69,
    "onset": 0.172,
-   "end": 2.586,
+   "end": 1.483,
    "chunks": [
     [
      0.172,
-     0.819
+     0.578
     ],
     [
-     0.819,
-     1.103
+     0.578,
+     0.828
     ],
     [
-     1.103,
-     1.569
-    ],
-    [
-     1.664,
-     1.983
-    ],
-    [
-     1.983,
-     2.586
+     0.828,
+     1.483
     ]
    ]
   },
@@ -554,22 +546,26 @@
    ]
   },
   "L21": {
-   "text": "A person, printed backwards.",
+   "text": "A person, like a photo negative.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.655,
+   "dur": 1.879,
    "onset": 0.172,
-   "end": 1.466,
+   "end": 1.672,
    "chunks": [
     [
      0.172,
      0.552
     ],
     [
-     0.586,
-     1.466
+     0.578,
+     1.086
+    ],
+    [
+     1.086,
+     1.672
     ]
    ]
   },
@@ -622,7 +618,7 @@
    ]
   },
   "L24": {
-   "text": "A green jumper, the exact opposite of my pink one.",
+   "text": "A green jumper, the exact opposite of my red one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -637,14 +633,14 @@
     ],
     [
      0.931,
-     1.664
+     1.681
     ],
     [
-     1.664,
-     1.828
+     1.681,
+     1.862
     ],
     [
-     1.828,
+     1.862,
      2.517
     ]
    ]
@@ -1158,42 +1154,50 @@
    ]
   },
   "L44": {
-   "text": "Just himself.",
+   "text": "I thought that one was just himself.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.172,
-   "onset": 0.172,
-   "end": 0.983,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
    "chunks": [
     [
-     0.172,
-     0.983
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.81
+    ],
+    [
+     0.81,
+     1.672
     ]
    ]
   },
   "L45": {
-   "text": "Like even I didn't count anymore.",
+   "text": "Like I didn't count to him anymore.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
+   "dur": 1.672,
    "onset": 0.172,
-   "end": 1.534,
+   "end": 1.483,
    "chunks": [
     [
      0.172,
-     0.517
+     0.534
     ],
     [
-     0.517,
-     0.957
+     0.534,
+     0.888
     ],
     [
-     0.957,
-     1.534
+     0.888,
+     1.483
     ]
    ]
   },
@@ -1218,34 +1222,34 @@
    ]
   },
   "L47": {
-   "text": "Then I looked up at my own number, for the first time in years.",
+   "text": "But I was wrong. I looked up at my own number, for the first time in years.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.741,
-   "onset": 0.172,
-   "end": 2.552,
+   "dur": 3.259,
+   "onset": 0.155,
+   "end": 3.069,
    "chunks": [
     [
-     0.172,
-     0.492
+     0.155,
+     0.862
     ],
     [
-     0.492,
-     0.759
+     0.948,
+     1.285
     ],
     [
-     0.759,
-     1.276
+     1.285,
+     1.845
     ],
     [
-     1.345,
-     1.69
+     1.879,
+     2.224
     ],
     [
-     1.69,
-     2.552
+     2.224,
+     3.069
     ]
    ]
   },
@@ -1318,26 +1322,22 @@
    ]
   },
   "L51": {
-   "text": "You don't count yourself. Nobody does.",
+   "text": "You don't count yourself.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.914,
+   "dur": 1.328,
    "onset": 0.172,
-   "end": 1.707,
+   "end": 1.138,
    "chunks": [
     [
      0.172,
-     0.362
+     0.379
     ],
     [
-     0.362,
-     0.879
-    ],
-    [
-     0.94,
-     1.707
+     0.379,
+     1.138
     ]
    ]
   },
@@ -1526,7 +1526,7 @@
    ]
   },
   "L59": {
-   "text": "\"This is Tam. And I'm Nell.\"",
+   "text": "\"This is Tam. And I'm Luke.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1602,14 +1602,14 @@
    ]
   },
   "L62": {
-   "text": "Over mine, one rolled to twenty also.",
+   "text": "Over mine, one rolled to twenty too.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.034,
+   "dur": 1.983,
    "onset": 0.172,
-   "end": 1.828,
+   "end": 1.776,
    "chunks": [
     [
      0.172,
@@ -1617,11 +1617,11 @@
     ],
     [
      0.638,
-     1.069
+     1.017
     ],
     [
-     1.069,
-     1.828
+     1.017,
+     1.776
     ]
    ]
   },
@@ -1798,50 +1798,54 @@
    ]
   },
   "L70": {
-   "text": "For years, the number over my head said one.",
+   "text": "You don't count yourself. My one was always Tam.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.155,
+   "dur": 2.362,
    "onset": 0.172,
-   "end": 1.966,
+   "end": 2.155,
    "chunks": [
     [
      0.172,
-     0.534
+     0.362
     ],
     [
-     0.56,
+     0.362,
      0.966
     ],
     [
-     0.966,
-     1.301
+     1.034,
+     1.31
     ],
     [
-     1.301,
-     1.966
+     1.31,
+     2.155
     ]
    ]
   },
   "L71": {
-   "text": "It was always Tam.",
+   "text": "And his last one was always me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.379,
+   "dur": 1.741,
    "onset": 0.155,
-   "end": 1.172,
+   "end": 1.534,
    "chunks": [
     [
      0.155,
-     0.328
+     0.578
     ],
     [
-     0.328,
-     1.172
+     0.578,
+     0.784
+    ],
+    [
+     0.784,
+     1.534
     ]
    ]
   }
