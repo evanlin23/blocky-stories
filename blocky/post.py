@@ -279,6 +279,8 @@ def fx_at(tl: dict, t: float) -> dict:
             out["punch"] = max(out["punch"], 1 + (e.get("zoom", 1.15) - 1) * u)
         elif k == "flash":
             out["flash"] = max(out["flash"], a * math.exp(-x * 10.0))
+        elif k == "dissolve":   # handled in finish()
+            continue
         else:
             out[k] = max(out[k], a)
     return out
@@ -297,7 +299,16 @@ def finish(tl: dict, st: dict, f: int, raw: Path, rain: Rain | None = None, grai
     if fx["shake"]:
         r = np.random.default_rng(f)
         dx, dy = r.uniform(-1, 1, 2) * 0.012 * fx["shake"]
-    img = to_output(_read(raw), fx["punch"], dx, dy)
+    src = _read(raw)
+    for e in tl["fx"]:   # opt-in "dissolve": the cut's first dur seconds blend from the last drawing of the shot before it
+        if e["kind"] == "dissolve" and 0 <= t - e["t"] < e.get("dur", 0.3):
+            cf = int(round(e["t"] * tl["fps"]))
+            if f >= cf > 0:
+                prev = _read(drawing_for(tl, cf - 1, raw.parent))
+                if prev.shape == src.shape:
+                    a = (t - e["t"]) / e.get("dur", 0.3)
+                    src = prev * (1 - a) + src * a
+    img = to_output(src, fx["punch"], dx, dy)
     g = st.get("grade", {})
     sid = next((s["id"] for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1]["id"])
     if st.get("shot_grades", {}).get(sid):      # opt-in (ep42): a shot's own grade over the story's (a flashback is warmer)

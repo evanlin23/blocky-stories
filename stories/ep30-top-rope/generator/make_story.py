@@ -74,7 +74,7 @@ shot("S07b", "L07.1", still((3.4, -5.8, 1.7), (2.5, -2.0, 1.8), 28))
 shot("S08", "L08", still((4.8, -6.0, 1.7), (3.0, -2.2, 1.9), 28))
 shot("S09", "L09", still((0.8, -3.2, 1.6), (0.0, -0.3, 1.6), 30))
 shot("S10", "L10", still((1.5, -3.3, 1.6), (0.0, -0.3, 1.8), 30))
-shot("S10b", "L10+1.4", still((1.2, -3.0, 1.5), (0.0, -0.3, 1.5), 40))
+#shot("S10b", "L10+1.4", still((1.2, -3.0, 1.5), (0.0, -0.3, 1.5), 40))
 #shot("S11", "L11", still((3.3, -7.0, 1.4), (4.1, -4.6, 1.2), 38))
 shot("S12", "L12", still((-1.9, -1.9, 3.4), (0.0, -0.3, 3.3), 34))
 shot("S13", "L13", still((0.9, -1.6, 7.2), (-0.2, -0.2, 8.7), 26))
@@ -116,7 +116,7 @@ shot("S45", "L45", still((0.2, -3.4, 1.4), (0.05, -0.6, 1.3), 26))
 shot("S46", "L46", still((0.6, -3.6, 4.4), (0.5, -0.9, 9.8), 30))
 shot("S47", "L47", still((0.5, -2.6, 1.8), (0.55, -0.55, 1.7), 44))
 shot("S48", "L48", c([0, [-0.3, -0.6, 8.2], [0.55, -0.55, 8.5], 22, 180]))
-shot("S48b", "L48.1+0.4", still((0.5, -2.6, 1.8), (0.55, -0.55, 1.7), 44))
+#shot("S48b", "L48.1+0.4", still((0.5, -2.6, 1.8), (0.55, -0.55, 1.7), 44))
 shot("S49", "L49", still((0.9, -3.6, 1.7), (-0.05, -0.6, 1.35), 34))
 shot("S50", "L50", still((2.4, -1.6, 7.6), (-0.4, -0.5, 7.5), 30))
 shot("S51", "L51", still((-0.5, -7.8, 3.8), (-0.45, -0.5, 4.8), 16))
@@ -303,7 +303,7 @@ cues = [
     {"at": "L37", "name": "head", "pose": "lip", "yaw_head": 0.0, "expr": "angry"},
     {"at": "L39", "name": "head", "hidden": True},
     {"at": "L48", "name": "head", "pose": "lip"},
-    {"at": "L48.1+0.4", "name": "head", "hidden": True},
+    {"at": "L49", "name": "head", "hidden": True},
     {"at": "L22", "name": "mum_dust", "hair": True, "soles": False},
     {"at": "L42", "name": "mum_dust", "hair": True, "soles": True},
     {"at": "L49", "name": "harness", "on": True},
@@ -388,7 +388,9 @@ story = {
     "shots": SH,
     "acting": acting,
     "cues": cues,
-    "fx": [{"at": "L37", "kind": "punch", "dur": 0.35, "zoom": 1.1, "fade": 0.2}],
+    "fx": [{"at": "L37", "kind": "punch", "dur": 0.35, "zoom": 1.1, "fade": 0.2},
+           {"at": "L13", "kind": "dissolve", "dur": 0.3}, {"at": "L14", "kind": "dissolve", "dur": 0.3},
+           {"at": "L50", "kind": "dissolve", "dur": 0.3}],
     "music": {"root": 40, "mode": "phrygian", "bpm": 74, "seed": 30,
               "sections": [
                   {"at": 0, "voices": ["pulse", "pad"], "energy": 0.3},
