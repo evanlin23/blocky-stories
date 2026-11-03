@@ -12,3 +12,11 @@ Done: main merged. r6 must-fixes applied in story.json/set.py/script.md: my shad
 Not done yet: preview + flash, r7 critic, standards, proof, qa, merge. Content note: the story ends on a sad family (dad) reveal; the queue should space those out.
 r7 critic: approve. r6 standards: approve. Hold removed. check clean, gate OPEN, pytest 171 passed, flash PASS (3-flash reading at 36.17 s is at the limit, S025-S027; the proof decides). Next: proof on PR #173, qa stage proof, merge.
 Proof run 29 (sha 49c75ad) failed on 3 craft blocks only (flash, clip, loudness all passed): picture_changes_per_10s 12.0 (12.5), _q 13.7 (14.0), motion_energy_q 5.78 (6.0). One fix: look.polish {"punch":0.07,"punch_rate":1.3,"fill":1.2} (punch_per_10s 0.7 to 2.39). Re-proof is the one allowed re-run; a second fail means drop.
+
+## STATUS dropped (2026-11-03, second proof fail)
+Reviews: critic r7 approve (hook 8/10, no must-fixes), standards r6 approve. check clean, gate OPEN, pytest 171 passed, flash PASS, clipcheck 0, loudness -14.1 LUFS / -1.7 dBTP.
+Proof run 29 (sha 49c75ad) and proof run 32 (sha 98adf33, after one fix) both failed on the same 3 craft blocks, and nothing else:
+- run 29: picture_changes_per_10s 12.0 (min 12.5), _q 13.7 (min 14.0), motion_energy_q 5.78 (min 6.0)
+- run 32: picture_changes_per_10s 12.0, _q 13.8, motion_energy_q 5.8
+The one fix (look.polish punch 0.07, punch_rate 1.3, fill 1.2; punch-ins 0.7 to 2.39 per 10 s) moved the numbers by 0.1 at most: punch-ins don't count as picture changes. The film is already at 7.25 cuts per 10 s, near the 8.0 cap, so the shortfall is in how much each shot changes, not in how many cuts. A real fix is a rework across the film (more camera moves and acting in the 104 one-camera-key shots), not one shot or one cue.
+Dropped per the brief (second fail). Not merged, no qa file written, hold was removed from package.json on this branch (re-add it if the branch is ever reused). Note for the queue: this story ends on a sad family (dad) reveal.
