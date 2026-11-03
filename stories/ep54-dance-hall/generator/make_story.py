@@ -296,7 +296,7 @@ S("L67", cm((0.0, 3.4, 1.9), (0, -1.2, 1.3), 21),
   walk={"ros": [("L67.4", (-0.6, 0.0), 90, dict(arms=[70, 70], head=[50, 0]))],
         "me": [("L67.4", (0.6, 0.0), -90, dict(arms=[70, 0], head=[-50, 0]))]})
 # the comic feet: the frame is on the shoes alone; my shoe lands on her toe
-S("L68", cm((1.9, -0.1, 0.85), (0, -0.1, 0.2), 20, (1.7, -0.1, 0.75), (0, -0.1, 0.2), 22),
+S("L67.5", cm((1.9, -0.1, 0.85), (0, -0.1, 0.2), 20, (1.7, -0.1, 0.75), (0, -0.1, 0.2), 22),
   {"ros": D((0.0, -0.2), 180, "worried", arms=(0, 0)), "me": D((0.0, 0.02), 0, SM, arms=(0, 0), z=0.09)})
 # the same at arm's length: Ros winces and hops, I wince back, the class behind
 S("L68.2", cm((0.0, -3.4, 1.6), (0, 0.0, 1.35), 24),
