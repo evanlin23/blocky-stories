@@ -13,6 +13,7 @@ You're asked for N stories. Plan them together, so they differ from each other a
    - `script.md`:
      - the slug (`ep<NN>-<name>`, numbering on from the highest existing slug, in the order they should upload)
      - **the big idea first** (RULES → The lore is the point): one sentence that makes someone say "wait, what", a reveal that reframes the rule and every strange detail. Pitch ten ideas for every one you keep, and keep only the ones that would hold up as a film. Never reuse the owner's example ideas (a one-way door to the past, waking from a coma)
+     - the narrator is male (the one narrator voice is a man's): never "my husband" or "my boyfriend", and the "I" character is a man or teen boy on screen
      - build on back-row's shape (RULES → "Back-row is the template"), and keep it for everyone: no politics, religion, sexuality or misreadable romance; prefer family, friends and home
      - name every relationship plainly the first time the person appears ("my wife, Ana", "my little brother Theo"), and never build the twist on a silhouette, haircut or outfit (RULES: ep38 was misread)
      - premise, rule, twist (and where it's planted), world, cast (adults, or teens at the youngest, never in peril)

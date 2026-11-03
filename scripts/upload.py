@@ -78,6 +78,8 @@ def cover(d: Path, s: str) -> tuple[str, str] | None:
 
 def fetch(story: str, d: Path) -> tuple[Path, dict]:
     f = film(story)
+    if f and f.get("legacy"):   # an approved final from the content repo: its description already has the flash line
+        return Path(f["legacy"]), {"house_bar": {"pass": True}, "description_line": None}
     subprocess.run(["gh", "run", "download", str(f["run_id"]), "--repo", REPO, "-n", f"film-{story}", "-D", str(d)],
                    check=True)
     s = slug(story)

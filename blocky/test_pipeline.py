@@ -205,6 +205,13 @@ def test_check_warns_on_loud_or_repeated_harsh_effects():
     assert checks.harsh_sound({"sound": {"sfx": [{"kind": "whoosh", "db": -12}, {"kind": "tape", "db": -30}, {"kind": "click", "db": -12}]}}) == []
 
 
+def test_check_blocks_a_narrator_who_says_my_husband():
+    from blocky import checks
+
+    assert checks.NARRATOR_MISFIT.search("My husband was three rows ahead")
+    assert not checks.NARRATOR_MISFIT.search("her husband was three rows ahead")
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics
