@@ -158,9 +158,9 @@ def lid_image():
 
     p = TMP / "lid.png"
     if not p.exists():
-        im = Image.new("RGB", (256, 256), hexrgb("#c99a5b"))
+        im = Image.new("RGB", (256, 256), hexrgb("#fff3dc"))
         d = ImageDraw.Draw(im)
-        glyph_slice(d, 128, 128, 62, hexrgb("#ff4d2e"), hexrgb("#c99a5b"))
+        glyph_slice(d, 128, 128, 70, hexrgb("#ff4d2e"), hexrgb("#fff3dc"))
         im.save(p)
     return str(p)
 
@@ -240,7 +240,7 @@ def window(kit, parent, x, zc, w, h, white, mat_pane, y=0.0, muntin=False):
 
 
 def build_creature(kit, ctx):
-    brick = kit.bricks("#ffd21f", "#f2c00e", "#f3d466", 0.8, rough=0.7, grime_amt=0.12)
+    brick = kit.bricks("#ffe440", "#f5d02a", "#f8e48a", 0.8, rough=0.7, grime_amt=0.12)
     white, plum, red = P("#fffaf0", 0.5), P("#6a3a86", 0.5), P("#c8463a", 0.6)
     brass = P("#c9a24c", 0.35, 0.7)
     dark = P("#241418", 0.9, 0.05)
@@ -402,7 +402,7 @@ def picket_fence(kit, x0, x1, y, white):
 def build_shop(kit, ctx):
     """The pizza place at the corner (x -40): open window onto a counter, a red door with a warm light, a red awning."""
     X0, W = -40.0, 7.0
-    cream, red, redd = P("#fff3dc"), P("#ff4d2e", 0.5), P("#d93a22", 0.5)
+    cream, red, redd = P("#f0d8bc"), P("#ff4d2e", 0.5), P("#d93a22", 0.5)
     g = E(None, (X0, 0, 0), "shop")
     # front wall in pieces around the window opening (x -2.4..1.4 from the shop centre, z 0.9..2.5)
     B(g, (1.2, 0.3, 3.6), (-2.9, 0.15, 1.8), cream, "pierL", 0.02)
@@ -419,9 +419,9 @@ def build_shop(kit, ctx):
     for i in range(8):
         B(g, (0.9, 1.2, 0.1), (-3.2 + i * 0.9 + 0.45 - 0.3, -0.5, 3.15), red if i % 2 == 0 else cream, "awn", 0.01, rot=(0.25, 0, 0))
     # warm bulb over the door
-    m, node = emat(kit, "#ffc66e", 7.0, "shopbulb")
+    m, node = emat(kit, "#ffc66e", 4.0, "shopbulb")
     kit.sphere(nm("sb"), 0.14, (2.45, -0.3, 2.55), m, g, seg=10)
-    kit.light("shopdoor", "POINT", (X0 + 2.45, -0.5, 2.4), 90, "#ffb866", size=0.2, shadow=False)
+    kit.light("shopdoor", "POINT", (X0 + 2.45, -0.5, 2.4), 35, "#ffb866", size=0.2, shadow=False)
     # interior
     B(g, (W, 6.0, 0.1), (0, 3.0, -0.05), kit.checker("#ff4d2e", "#fff3dc", 2.0), "floor", 0.0)
     B(g, (W, 0.3, 3.6), (0, 6.15, 1.8), cream, "back", 0.0)
@@ -442,8 +442,6 @@ def build_car(kit):
     B(g, (1.9, 4.2, 0.55), (0, 0, 0.62), red, "body", 0.12)
     B(g, (1.9, 1.5, 0.35), (0, -1.3, 0.97), red, "hood", 0.1)
     B(g, (1.9, 0.9, 0.45), (0, 1.5, 1.0), red, "trunk", 0.1)
-    B(g, (0.55, 0.5, 0.4), (-0.45, 0.3, 1.05), dk, "seatL", 0.06)
-    B(g, (0.55, 0.5, 0.4), (0.45, 0.3, 1.05), dk, "seatR", 0.06)
     B(g, (1.7, 0.1, 0.1), (0, -0.45, 1.25), wh, "wind", 0.03)
     ctx_w = []
     for sx in (-1, 1):
@@ -471,7 +469,7 @@ def build_dog(kit):
 
 def build_props(kit):
     pr = {}
-    kraft = P("#c99a5b", 0.7, 0.1)
+    kraft = P("#fff3dc", 0.7, 0.1)
     # the pizza box: kraft, with the slice glyph on the lid
     g = E(None, (0, 0, -50), "box")
     B(g, (0.5, 0.5, 0.06), (0, 0, 0), kraft, "boxbase", 0.01)
@@ -555,8 +553,8 @@ def build(kit, story, tl):
         return o
 
     sun("sunset", 180, 9, 6.5, "#ff8a5a")
-    sun("key", -28, 38, 1.7, "#ffe6c8")
-    ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 40, "#ffe9cf", size=0.6, shadow=False)
+    sun("key", -28, 38, 1.7, "#fff4e4")
+    ctx["fill"] = kit.light("camfill", "SUN", (0, 0, 2), 1.3, "#ffe9cf", size=0.1, shadow=False)
     kit.light("slotglow", "POINT", (-1.5, -0.3, 0.45), 14, "#ffb866", size=0.1, shadow=False)
     # the low red sun itself, a disc behind the house
     sm, _ = emat(kit, "#ffd89a", 5.0, "sundisc")
@@ -565,11 +563,11 @@ def build(kit, story, tl):
 
     # ---- ground
     kit.box("lawn", (400, 200, 0.4), (0, 90, -0.2), P("#5fd35a", 0.85, 0.1), None, (0, 0, 0), 0.0)
-    B(None, (400, 7.6, 0.1), (0, -10.2, 0.0), kit.texture("asphalt", 0.4, tint="#b4b0c8"), "road", 0.0)
+    B(None, (400, 7.6, 0.1), (0, -10.2, 0.0), kit.texture("asphalt", 0.4, tint="#8f8aa8"), "road", 0.0)
     kit.box("lawn2", (400, 60, 0.4), (0, -47, -0.2), P("#5fd35a", 0.85, 0.1), None, (0, 0, 0), 0.0)
-    B(None, (400, 2.4, 0.16), (0, -5.0, 0.04), P("#e4dfd8", 0.7), "walk", 0.0)
-    B(None, (400, 0.3, 0.3), (0, -6.28, 0.15), P("#c9c4bd", 0.7), "curb", 0.0)
-    B(None, (400, 3.0, 0.16), (0, -15.5, 0.04), P("#e4dfd8", 0.7), "walk2", 0.0)
+    B(None, (400, 2.4, 0.16), (0, -5.0, 0.04), P("#b4ada3", 0.8), "walk", 0.0)
+    B(None, (400, 0.3, 0.3), (0, -6.28, 0.15), P("#9a948b", 0.8), "curb", 0.0)
+    B(None, (400, 3.0, 0.16), (0, -15.5, 0.04), P("#b4ada3", 0.8), "walk2", 0.0)
     for x in range(-60, 60, 6):                                   # lane dashes
         B(None, (2.2, 0.16, 0.02), (x, -10.2, 0.06), P("#fff3dc", 0.8), "dash", 0.0)
 
@@ -589,7 +587,7 @@ def build(kit, story, tl):
     painted_house(kit, ctx, 40, 0, "#8ec9ff", "#ffd21f", "#6a3a86", 1, None)
     painted_house(kit, ctx, -50, 0, "#c9a8ff", "#ffd21f", "#4a6fd0", 1, None)
     build_shop(kit, ctx)
-    B(None, (3.4, 0.7, 0.45), (0.5, -5.75, 0.225), P("#cfc9c0", 0.7), "ledge", 0.02)
+    B(None, (3.4, 0.7, 0.45), (0.5, -5.75, 0.225), P("#a8a29a", 0.8), "ledge", 0.02)
     # hydrant, trees
     B(None, (0.34, 0.34, 0.6), (6.5, -4.4, 0.4), P("#ff4d2e", 0.4), "hydrant", 0.06)
     B(None, (0.46, 0.46, 0.1), (6.5, -4.4, 0.75), P("#d93a22", 0.4), "hydrantcap", 0.04)
@@ -646,9 +644,8 @@ def animate(kit, story, tl, t, ctx):
     cur = next((s for s in shots if s["start"] <= t < s["end"]), shots[-1])
     sd = ctx["shots"][cur["id"]]
     cl, ctg, lens, _ = bl_story.cam_at(sd, cur, t, {}, tl)
-    ctx["fill"].location = (cl[0], cl[1], cl[2])
-    dist = math.dist(cl, ctg)
-    ov = {"slotglow": chan(tl, "glow", t, 0.15), "camfill": max(0.25, min(300.0, (dist / 1.6) ** 2)) * sd.get("fill", 1.0)}
+    ctx["fill"].rotation_euler = (V(ctg) - V(cl)).to_track_quat("-Z", "Y").to_euler()
+    ov = {"slotglow": chan(tl, "glow", t, 0.15), "camfill": sd.get("fill", 1.0)}
     sc.view_settings.exposure = sd.get("exp", 0.0)
     # ---- channels
     rise, crack = chan(tl, "rise", t), chan(tl, "crack", t)
@@ -673,7 +670,7 @@ def animate(kit, story, tl, t, ctx):
         piv.rotation_euler = (0, -sx * ((1 - au) * 0.9 + 0.05) + swing * sx, 0)
     for c in ctx["cracks"]:
         hide(c, crack < 0.02)
-        c.scale = (max(crack, 0.02), 1.0, 1.0)
+        c.scale = (max(crack * 1.6, 0.02), 1.0, 1.0)
     low_vis = 1.0 - ss(rise / 0.15)
     mouth_vis = ss((rise - 0.3) / 0.25)
     for root, v in ((ctx["slot_low"], low_vis), (ctx["slot_mouth"], mouth_vis)):
