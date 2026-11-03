@@ -1014,30 +1014,30 @@
    ]
   },
   "L42": {
-   "text": "She was at her desk, with the lilac diary,",
+   "text": "She was at her desk, with her lilac diary,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.069,
+   "dur": 2.086,
    "onset": 0.19,
-   "end": 1.879,
+   "end": 1.897,
    "chunks": [
     [
      0.19,
-     0.406
+     0.388
     ],
     [
-     0.406,
-     0.793
+     0.388,
+     0.759
     ],
     [
-     0.819,
-     0.966
+     0.81,
+     0.983
     ],
     [
-     0.966,
-     1.879
+     0.983,
+     1.897
     ]
    ]
   },
@@ -1637,6 +1637,10 @@
     ],
     [
      0.397,
+     0.836
+    ],
+    [
+     0.836,
      1.199
     ],
     [

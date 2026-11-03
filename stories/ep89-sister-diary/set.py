@@ -458,7 +458,7 @@ def build_rooms(kit, ctx, M):
         bx("bedframe", 0.1, 2.2, 3.35, 4.35, 0.12, 0.34, M["wood2"], 0.01)
         bx("mattress", 0.12, 2.18, 3.37, 4.33, 0.34, 0.50, M["sheet"], 0.02)
         bx("duvet", 1.1, 2.18, 3.36, 4.34, 0.50, 0.55, M[duvet], 0.02)
-        bx("pillow", 0.14, 0.52, 3.55, 4.15, 0.50, 0.59, M["white"], 0.03)
+        bx("pillow", 0.14, 0.52, 3.55, 4.15, 0.50, 0.54, M["white"], 0.02)
         # rug
         kit.cyl(f"rug{s}", 1.0, 0.012, (s * 2.5, 2.0, 0.006), M[rug], None, n=32)
         # desk lamp (spot aimed at the diary) at the door-side corner of the desk

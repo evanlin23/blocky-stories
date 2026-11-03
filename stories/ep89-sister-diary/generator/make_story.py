@@ -367,7 +367,7 @@ S("L24", MV((-0.705, 1.83, 1.15), (-0.365, 1.43, 0.79), (-0.705, 1.63, 1.0), (-0
   who={"me": sit_me("scared", arms=[80, 80])},
   note="I shut it: snapping it shut")
 S("L24.1", MV((-2.5, 2.2, 1.7), (-1.2, 3.8, 0.85), (-2.2, 2.4, 1.6), (-1.2, 3.8, 0.85), 30),
-  who={"me": (X(-2.05, 3.8, 0.7), -90, "wide", {"lean": -90, "blink": False})},
+  who={"me": (X(-2.05, 3.8, 0.83), -90, "wide", {"lean": -90, "blink": False})},
   note="I didn't SLEEP: lying awake")
 
 # ===================================================================================================== 06 every night, L25 to L31
@@ -399,7 +399,7 @@ S("L27.1", MV((-0.685, 1.48, 0.95), (-0.365, 1.43, 0.79), (-0.525, 1.45, 0.88), 
 cue("L28", "mydoor", to=70, dur=0.5)
 place("blue", "L28", "nightstand")
 S("L28", MV((-3.4, 2.4, 1.4), (-1.3, 3.8, 0.8), (-3.0, 2.5, 1.35), (-1.3, 3.8, 0.8), 30),
-  who={"me": (X(-2.05, 3.8, 0.7), -90, "squeeze", {"lean": -90, "blink": False}),
+  who={"me": (X(-2.05, 3.8, 0.83), -90, "squeeze", {"lean": -90, "blink": False}),
        "mom": (X(-1.5, -0.55), 180, "soft", {})},
   look={"cutwall": False},
   note="me in bed, eyes shut tight, Mom's face lit in the doorway, then she leaves")
@@ -463,8 +463,8 @@ S("L38", MV((-1.75, 0.55, 1.3), (1.6, -1.4, 1.0), (-1.7, 0.4, 1.28), (1.6, -1.4,
 # ===================================================================================================== 08 Nina's room, L39 to L48
 place("blue", "L39", "held")
 openb("blue", "L39", 0.0, 0.05)
-S("L39", MV((-0.8, 0.9, 1.5), (-1.6, 0.0, 1.3), (-1.0, 0.8, 1.45), (-1.6, 0.0, 1.3), 30),
-  who={"me": (X(-1.6, 0.1), 180, "scared", {"arms": [70, 70]})},
+S("L39", MV((-1.0, -1.0, 1.5), (-1.4, 0.9, 1.3), (-1.1, -0.7, 1.45), (-1.4, 0.9, 1.3), 28),
+  who={"me": (X(-1.4, 0.9), 0, "scared", {"arms": [70, 70]})},
   note="me holding the blue diary to my chest, scared")
 cue("L40", "mydoor", to=80, dur=0.4)
 S("L40", MV((-2.9, -1.7, 1.2), (0.0, -0.5, 1.0), (-2.2, -1.7, 1.2), (0.6, -0.5, 1.0), 32),
@@ -712,7 +712,7 @@ story = {
     "cues": cues,
     "shotlook": SHOTLOOK,
     "fx": [],
-    "rev": 3,
+    "rev": 5,
     "music": {"root": 51, "mode": "major", "bpm": 100, "seed": 89, "sections": [
         {"at": 0, "voices": ["musicbox", "pulse"], "energy": 0.35},
         {"at": "L21", "voices": ["piano", "drone"], "energy": 0.4, "mode": "minor"},
@@ -722,7 +722,7 @@ story = {
         {"at": "L49", "voices": ["pad", "piano", "musicbox"], "energy": 0.55, "mode": "major"},
         {"at": "L69", "voices": ["drone"], "energy": 0.4, "mode": "minor"}]},
     "sound": {
-        "floor": "wood", "steps_db": -26, "rev": 3,
+        "floor": "wood", "steps_db": -26, "rev": 5,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -40},
                      {"kind": "crickets", "from": "L21", "to": "L48", "lufs": -46}],
         "sfx": [{"at": "L01.3+0.05", "kind": "hit", "db": -7},
