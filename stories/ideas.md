@@ -20,6 +20,7 @@ Killed: ep21 `snow-plough` (2026-11-02), not approved by the critic after three 
 
 The premise and twist of each are in its `story.json`; `check` compares every new story against them.
 
+- dropped: ep23 `only-line` redo ("In This Town The Quiet Ones FADE"), 2026-11-03. Big idea scored 8 by the critic, but it's a sad family reveal at heart (Grandad fades because I stopped listening), and the 2026-11-03 reset allows at most one in three, with 12 of 15 queued already that shape. Round 4 said revise (critic: fading not shown clearly enough; standards: the first twist copied ep43, since rewritten). Its opening also predates the warning-first recipe. The round 4 build is on branch `claude/ep23-redo`, held, so it can be revived later.
 - killed: ep27 `towpath` (#11), 2026-11-02. Not approved by the critic after four rounds (last 6.5/10; standards approved). Not a hard-rule kill: the first twist copied ep23-only-line's (a voice saying my words, a roll call) and was rewritten as the Long Man lying in old dog Moss's empty spot in the grass. Shots stayed weak: the creature's full length in fog, its eyes at the glass, Moss in the last shot. The full build is in git history on branch `claude/ep27-towpath` (commit 53d15b3), with four small fixes left in `reviews/r4-critic.md`, so it can be revived rather than retried from scratch.
 
 ## Next (batch 2 pitches, 2026-10-31): in production elsewhere (ep14 to ep17)
