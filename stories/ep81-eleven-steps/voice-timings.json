@@ -1,0 +1,1521 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "our stairs have ten steps. at night, you'll count eleven.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.155,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.155,
+     1.207
+    ],
+    [
+     1.285,
+     1.552
+    ],
+    [
+     1.578,
+     2.379
+    ]
+   ]
+  },
+  "L02": {
+   "text": "and at two a m, they creak. ten times.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.681,
+     1.069
+    ],
+    [
+     1.147,
+     1.914
+    ]
+   ]
+  },
+  "L03": {
+   "text": "by day, it's ten. i've counted them a thousand times.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.474,
+     0.931
+    ],
+    [
+     1.017,
+     1.439
+    ],
+    [
+     1.439,
+     2.397
+    ]
+   ]
+  },
+  "L04": {
+   "text": "after dark, it's eleven, and i can never tell which one is new.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.034,
+   "onset": 0.172,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.207
+    ],
+    [
+     1.276,
+     2.017
+    ],
+    [
+     2.017,
+     2.828
+    ]
+   ]
+  },
+  "L05": {
+   "text": "my friend luis counted them once, after a movie night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.31
+    ],
+    [
+     1.362,
+     2.241
+    ]
+   ]
+  },
+  "L06": {
+   "text": "he drove home at midnight. he's never stayed over since.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.138
+    ],
+    [
+     1.207,
+     2.466
+    ]
+   ]
+  },
+  "L07": {
+   "text": "and the creaks? nobody's ever on the stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.698,
+     1.25
+    ],
+    [
+     1.25,
+     1.983
+    ]
+   ]
+  },
+  "L08": {
+   "text": "and every morning, the step just below the landing is ice cold.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.768,
+     1.759
+    ],
+    [
+     1.759,
+     2.655
+    ]
+   ]
+  },
+  "L09": {
+   "text": "i'm a grown man. i live with my dad, and he has one house rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.983,
+   "onset": 0.155,
+   "end": 2.793,
+   "chunks": [
+    [
+     0.155,
+     0.862
+    ],
+    [
+     0.957,
+     1.621
+    ],
+    [
+     1.647,
+     2.793
+    ]
+   ]
+  },
+  "L10": {
+   "text": "upstairs by ten. and nobody on the stairs after.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.155,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.155,
+     0.966
+    ],
+    [
+     1.043,
+     1.422
+    ],
+    [
+     1.422,
+     1.854
+    ],
+    [
+     1.854,
+     2.379
+    ]
+   ]
+  },
+  "L11": {
+   "text": "not for water. not for anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.724,
+     1.534
+    ]
+   ]
+  },
+  "L12": {
+   "text": "he always goes up last.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     1.345
+    ]
+   ]
+  },
+  "L13": {
+   "text": "and every morning, there's carpet fluff on his knees.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.759,
+     1.388
+    ],
+    [
+     1.388,
+     2.138
+    ]
+   ]
+  },
+  "L14": {
+   "text": "i figured it was a dad thing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.569
+    ]
+   ]
+  },
+  "L15": {
+   "text": "so last friday, i sat at the top with a flashlight,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.931,
+     1.526
+    ],
+    [
+     1.526,
+     2.31
+    ]
+   ]
+  },
+  "L16": {
+   "text": "to catch the new step showing up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.854
+    ],
+    [
+     0.854,
+     1.466
+    ]
+   ]
+  },
+  "L17": {
+   "text": "at midnight, dad's door opened.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.19,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.603,
+     1.552
+    ]
+   ]
+  },
+  "L18": {
+   "text": "he came out carrying a box,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.345
+    ]
+   ]
+  },
+  "L19": {
+   "text": "covered in our stair carpet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.328
+    ]
+   ]
+  },
+  "L20": {
+   "text": "he set it at the bottom, right up against the first step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     1.026,
+     1.474
+    ],
+    [
+     1.474,
+     2.207
+    ]
+   ]
+  },
+  "L21": {
+   "text": "then he went back to bed, without one look up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     1.017,
+     1.931
+    ]
+   ]
+  },
+  "L22": {
+   "text": "the eleventh step was a box.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.768
+    ],
+    [
+     0.768,
+     1.431
+    ]
+   ]
+  },
+  "L23": {
+   "text": "dad was making it. every night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.836,
+     1.517
+    ]
+   ]
+  },
+  "L24": {
+   "text": "i figured it was a trap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     1.362
+    ]
+   ]
+  },
+  "L25": {
+   "text": "one more step to creak, in case i ever snuck down late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ],
+    [
+     1.069,
+     1.698
+    ],
+    [
+     1.698,
+     2.603
+    ]
+   ]
+  },
+  "L26": {
+   "text": "i asked him at breakfast. he said i dreamed it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.19,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.19,
+     1.138
+    ],
+    [
+     1.207,
+     1.492
+    ],
+    [
+     1.492,
+     2.293
+    ]
+   ]
+  },
+  "L27": {
+   "text": "we had our biggest fight in years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.87
+    ],
+    [
+     0.87,
+     1.5
+    ]
+   ]
+  },
+  "L28": {
+   "text": "so saturday night, i carried it up and hid it in my room.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ],
+    [
+     0.966,
+     1.474
+    ],
+    [
+     1.474,
+     1.715
+    ],
+    [
+     1.715,
+     2.397
+    ]
+   ]
+  },
+  "L29": {
+   "text": "at two a m, the stairs creaked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.466
+    ]
+   ]
+  },
+  "L30": {
+   "text": "one. two. three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.618,
+   "dur": 2.069,
+   "onset": 0.328,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.328,
+     0.552
+    ],
+    [
+     0.621,
+     0.862
+    ],
+    [
+     0.94,
+     1.759
+    ]
+   ]
+  },
+  "L31": {
+   "text": "i counted every one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.19,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.19,
+     1.345
+    ]
+   ]
+  },
+  "L32": {
+   "text": "seven. eight. nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.618,
+   "dur": 2.19,
+   "onset": 0.362,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.362,
+     0.69
+    ],
+    [
+     0.75,
+     0.983
+    ],
+    [
+     1.052,
+     1.879
+    ]
+   ]
+  },
+  "L33": {
+   "text": "ten.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.618,
+   "dur": 1.328,
+   "onset": 0.328,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.328,
+     0.983
+    ]
+   ]
+  },
+  "L34": {
+   "text": "ten is the landing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     1.172
+    ]
+   ]
+  },
+  "L35": {
+   "text": "ten is my door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     1.121
+    ]
+   ]
+  },
+  "L36": {
+   "text": "something leaned on it. the whole door bowed in its frame.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.931,
+     1.388
+    ],
+    [
+     1.388,
+     2.328
+    ]
+   ]
+  },
+  "L37": {
+   "text": "i looked through the gap under the door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.19,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.19,
+     0.888
+    ],
+    [
+     0.888,
+     1.569
+    ]
+   ]
+  },
+  "L38": {
+   "text": "a face looked back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.103
+    ]
+   ]
+  },
+  "L39": {
+   "text": "sideways. way too big.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.552
+    ],
+    [
+     0.586,
+     1.362
+    ]
+   ]
+  },
+  "L40": {
+   "text": "its eye was at the gap. an inch from mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     1.017,
+     1.983
+    ]
+   ]
+  },
+  "L41": {
+   "text": "something so tall it had to fold under our ceiling,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.25
+    ],
+    [
+     1.25,
+     2.052
+    ]
+   ]
+  },
+  "L42": {
+   "text": "its head bent flat against its shoulder.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.879,
+     1.741
+    ]
+   ]
+  },
+  "L43": {
+   "text": "it climbs exactly ten steps, every night, whatever the stairs are.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     1.293
+    ],
+    [
+     1.345,
+     1.759
+    ],
+    [
+     1.784,
+     2.759
+    ]
+   ]
+  },
+  "L44": {
+   "text": "it has never once climbed eleven.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.603
+    ]
+   ]
+  },
+  "L45": {
+   "text": "that's what dad's box is for.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.466
+    ]
+   ]
+  },
+  "L46": {
+   "text": "with eleven steps, ten leaves it one short.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.793
+    ],
+    [
+     0.845,
+     1.276
+    ],
+    [
+     1.276,
+     1.931
+    ]
+   ]
+  },
+  "L47": {
+   "text": "one step below the landing. one step from me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     1.19
+    ],
+    [
+     1.267,
+     2.155
+    ]
+   ]
+  },
+  "L48": {
+   "text": "and he takes the box up at dawn, so i'd never know.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.854
+    ],
+    [
+     0.854,
+     1.241
+    ],
+    [
+     1.31,
+     2.259
+    ]
+   ]
+  },
+  "L49": {
+   "text": "the box was by my bed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.241
+    ]
+   ]
+  },
+  "L50": {
+   "text": "dad always puts it at the bottom.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.854
+    ],
+    [
+     0.854,
+     1.517
+    ]
+   ]
+  },
+  "L51": {
+   "text": "but any extra step below my door keeps it one step away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.155,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.155,
+     0.845
+    ],
+    [
+     0.845,
+     1.517
+    ],
+    [
+     1.517,
+     2.655
+    ]
+   ]
+  },
+  "L52": {
+   "text": "i cracked the door and shoved the box out onto the landing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ],
+    [
+     0.914,
+     1.647
+    ],
+    [
+     1.647,
+     2.448
+    ]
+   ]
+  },
+  "L53": {
+   "text": "it had used up its ten. to reach my door now, it would need an eleventh.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.138,
+   "onset": 0.172,
+   "end": 2.931,
+   "chunks": [
+    [
+     0.172,
+     1.086
+    ],
+    [
+     1.181,
+     1.948
+    ],
+    [
+     1.974,
+     2.931
+    ]
+   ]
+  },
+  "L54": {
+   "text": "it looked at the box for a long time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.638
+    ]
+   ]
+  },
+  "L55": {
+   "text": "it didn't climb it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ]
+   ]
+  },
+  "L56": {
+   "text": "it just stood there, one step short, till the sun came up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     1.362
+    ],
+    [
+     1.431,
+     2.362
+    ]
+   ]
+  },
+  "L57": {
+   "text": "i sat with my back to the door all night, listening.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.845,
+     1.138
+    ],
+    [
+     1.138,
+     2.138
+    ]
+   ]
+  },
+  "L58": {
+   "text": "dad found me in the morning, asleep against my door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     1.034
+    ],
+    [
+     1.086,
+     2.19
+    ]
+   ]
+  },
+  "L59": {
+   "text": "he didn't ask.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.086,
+   "onset": 0.172,
+   "end": 0.879,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ]
+   ]
+  },
+  "L60": {
+   "text": "he just sat down beside me, on the landing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.069
+    ],
+    [
+     1.112,
+     1.862
+    ]
+   ]
+  },
+  "L61": {
+   "text": "he's set that box every night since we moved in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.155
+    ],
+    [
+     1.155,
+     2.103
+    ]
+   ]
+  },
+  "L62": {
+   "text": "eleven years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.19,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.19,
+     1.034
+    ]
+   ]
+  },
+  "L63": {
+   "text": "not one night off.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     1.052
+    ]
+   ]
+  },
+  "L64": {
+   "text": "now we take turns.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.19,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.19,
+     1.121
+    ]
+   ]
+  },
+  "L65": {
+   "text": "i set the box at midnight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.379
+    ]
+   ]
+  },
+  "L66": {
+   "text": "dad takes it up at dawn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     1.259
+    ]
+   ]
+  },
+  "L67": {
+   "text": "it still comes up every night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.431
+    ]
+   ]
+  },
+  "L68": {
+   "text": "it still stops one step short.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.534
+    ]
+   ]
+  },
+  "L69": {
+   "text": "but last night, for the first time,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.698,
+     1.534
+    ]
+   ]
+  },
+  "L70": {
+   "text": "it sat down to wait.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.155
+    ]
+   ]
+  },
+  "L71": {
+   "text": "so if you ever stay over,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.362
+    ]
+   ]
+  }
+ }
+}
