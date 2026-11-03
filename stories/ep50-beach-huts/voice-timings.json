@@ -818,34 +818,34 @@
    ]
   },
   "L34": {
-   "text": "at the last hut, she's a dot, and the light is going.",
+   "text": "by the last hut, she's a dot, and the light is going.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.414,
+   "dur": 2.431,
    "onset": 0.172,
-   "end": 2.224,
+   "end": 2.241,
    "chunks": [
     [
      0.172,
-     0.293
+     0.328
     ],
     [
-     0.293,
-     0.655
+     0.328,
+     0.69
     ],
     [
-     0.69,
-     1.207
+     0.724,
+     1.224
     ],
     [
-     1.276,
-     1.578
+     1.293,
+     1.594
     ],
     [
-     1.578,
-     2.224
+     1.594,
+     2.241
     ]
    ]
   },
@@ -1010,38 +1010,38 @@
    ]
   },
   "L42": {
-   "text": "its shadow spreads up the hut wall.",
+   "text": "its shadow climbs the hut wall.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
+   "dur": 1.724,
    "onset": 0.172,
-   "end": 1.586,
+   "end": 1.534,
    "chunks": [
     [
      0.172,
-     0.569
+     0.543
     ],
     [
-     0.569,
-     0.87
+     0.543,
+     0.819
     ],
     [
-     0.87,
-     1.586
+     0.819,
+     1.534
     ]
    ]
   },
   "L43": {
-   "text": "shoulders wider than the door. and a head the size of my fist.",
+   "text": "shoulders wider than the door. with a head the size of my fist.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.741,
+   "dur": 2.862,
    "onset": 0.19,
-   "end": 2.534,
+   "end": 2.655,
    "chunks": [
     [
      0.19,
@@ -1053,19 +1053,19 @@
     ],
     [
      0.784,
-     1.207
+     1.19
     ],
     [
      1.276,
-     1.526
+     1.655
     ],
     [
-     1.526,
-     1.914
+     1.655,
+     2.043
     ],
     [
-     1.914,
-     2.534
+     2.043,
+     2.655
     ]
    ]
   },

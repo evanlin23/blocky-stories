@@ -811,7 +811,7 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = not show
     op = _ramp(tl, "laptop", "open", t, 1.0)
     ctx["lap_hinge"].rotation_euler = (math.radians(-100 * op), 0, 0)
-    ctx["lap_screen"].inputs["Strength"].default_value = 1.2 * ss(op * 1.5)
+    ctx["lap_screen"].inputs["Strength"].default_value = (4.5 if lc.get("bright") else 1.2) * ss(op * 1.5)
     if show:
         lap.location = tuple(lc.get("pos", (0, -0.9, 0.62)))
         lap.rotation_euler = (0, 0, math.radians(lc.get("yaw", 0)))

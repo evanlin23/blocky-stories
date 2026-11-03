@@ -232,8 +232,9 @@ S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4)
 S("L74", "both reflections in our window", still((0.35, -2.7, 1.45), (0.35, 0, 1.4), 24), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L75", "ours, walking together", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L76", "this morning: our window, the empty chair", still((0.35, -3.6, 1.3), (0.35, -0.3, 0.95), 26), 1, **NSTAGE(5, r_me="stage"))
-S("L76.2", "the laptop open on the step, my reflection walking away in the window glass", move(((0.3, -2.4, 0.9), (0.8, -0.3, 0.9)), ((0.35, -2.15, 0.9), (0.8, -0.3, 0.9)), 24, 26), 1, **NSTAGE(5, r_me="stage"))
+S("L76.2", "the laptop open on the step, my reflection walking away in the window glass", move(((0.2, -2.1, 0.62), (0.75, -0.3, 1.0)), ((0.3, -1.85, 0.62), (0.75, -0.3, 1.0)), 24, 26), 1, **NSTAGE(5, r_me="stage"))
 
+PUSH = 0.2
 shots = []
 shotx = {}
 SHOTS = [(R(a), w, c_, st, kw) for a, w, c_, st, kw in SHOTS]
@@ -250,7 +251,7 @@ for i, (at, what, cam, step, kw) in enumerate(SHOTS):
         # quality pass 2026-11-03: no still picture holds; every single-key shot gets a slow 5% push toward its target
         k0 = cam[0]
         lo, tg = k0[1], k0[2]
-        s["cam"] = [list(k0), [1, [round(lo[j] + 0.05 * (tg[j] - lo[j]), 3) for j in range(3)], list(tg), k0[3] + 1]]
+        s["cam"] = [list(k0), [1, [round(lo[j] + PUSH * (tg[j] - lo[j]), 3) for j in range(3)], list(tg), k0[3] + 4]]
     shots.append(s)
     x = {k: v for k, v in kw.items() if k in ("stage", "refl", "puddle", "dof", "ghost", "gloom", "schair", "hidecr")}
     if x:
@@ -539,12 +540,12 @@ cues = [
     {"at": "L09", "name": "laptop", "mode": "show", "pos": [ME_SIT[0], ME_SIT[1] - 0.36, 0.71], "open": 1.0},
     {"at": "L25", "name": "laptop", "mode": "hide"},
     {"at": "L36", "name": "laptop", "mode": "show", "pos": [ME_SIT[0], ME_SIT[1] - 0.36, 0.71], "open": 1.0},
-    {"at": "L60", "name": "laptop", "mode": "show", "pos": [ME_SIT[0], ME_SIT[1] - 0.36, 0.71], "open": 0.0, "dur": 0.6},
+    {"at": "L60", "name": "laptop", "mode": "show", "pos": [ME_SIT[0], ME_SIT[1] - 0.36, 0.71], "open": 0.0, "dur": 0.9},
     {"at": "L61", "name": "laptop", "mode": "show", "pos": [-0.15, -0.2, 0.38], "open": 0.0, "dur": 0.4},
     {"at": "L62", "name": "laptop", "mode": "hide"},
     {"at": "L72", "name": "laptop", "mode": "show", "pos": [-1.3, 1.1, 1.82], "open": 0.0, "yaw": 90},
     {"at": "L73", "name": "laptop", "mode": "hide"},
-    {"at": "L76", "name": "laptop", "mode": "show", "pos": [0.45, -1.1, 0.36], "open": 1.0, "yaw": 0},
+    {"at": "L76", "name": "laptop", "mode": "show", "pos": [0.45, -1.1, 0.4], "open": 1.0, "yaw": 0, "bright": True},
     {"at": "L28", "name": "door", "open": 0.4, "dur": 1.6},
     {"at": "L29", "name": "door", "open": 0.0, "dur": 0.4},
     {"at": "L40", "name": "lantern", "on": 1.0, "dur": 1.2},
