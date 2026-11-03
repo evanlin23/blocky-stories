@@ -716,7 +716,7 @@ story = {
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.025, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012, "red_line": 0.79},
     "rain_shots": rain_shots,
-    "shot_grades": {sid: {"highlights": [-0.22, -0.2, -0.2]} for sid in ("S32", "S33")},   # r5: the close-up foreheads clip, so roll their highlights off
+    "shot_grades": {sid: {"highlights": [-0.22, -0.2, -0.2]} for sid in ("S32", "S33", "S76", "S77")},   # r5: the close-up foreheads clip, so roll their highlights off
     "phonemes": {"Ines": "inˈɛs"},
     "homophones": {"too": "two", "okay": "ok"},
     "cast": cast,
