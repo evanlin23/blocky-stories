@@ -245,7 +245,6 @@ SHOTS = [
     # 06 one chair, L69 to L75 -----------------------------------------------------------------------------------
     ("L69", "the stall in flat light: me in blue, Pip's chair empty", 2, still([0.2, -2.4, 1.5], [0.1, 1.0, 1.1], 28)),
     ("L70", "the chair folded in the boot", 2, still([0.5, 1.7, 1.5], [-0.3, 3.2, 1.1], 32)),
-    ("L70.1", "the tailgate coming down", 2, still([1.9, 1.3, 1.5], [0.0, 2.6, 1.3], 28)),
     ("L70.2", "the latch: two short upright strokes", 2, still([0.0, 1.55, 1.1], [0.0, 2.31, 1.09], 46)),
     ("L71", "wide: one chair, one table, me alone, cars along the row", 2, still([-0.4, -3.9, 1.5], [0.5, 1.0, 1.1], 22)),
     ("L72", "me looking at the shut tailgate", 2, still([2.3, 1.7, 1.5], [0.3, 1.7, 1.4], 34)),
@@ -530,7 +529,7 @@ cues = [
     {"at": "L68.1", "name": "veh", "id": "coach", "p0": [-16.0, -62.0], "p1": [-16.0, -112.0], "yaw": 180, "dur": 3.4},
     # our tailgate comes down at L70.1 (0.9 s), the chair lies folded in the boot, the latch strokes show once
     {"at": "L70.1", "name": "hatch", "to": 0.0, "dur": 0.9},
-    {"at": "L70-0.4", "name": "bootb", "to": 1.0, "dur": 0.4},
+    {"at": "L70", "name": "bootb", "to": 1.0, "dur": 0.3},
     {"at": "L70.1", "name": "bootb", "to": 0.0, "dur": 0.3},
     {"at": 0, "name": "fold", "on": False},
     {"at": "L70", "name": "fold", "on": True},
