@@ -244,7 +244,7 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   characters' idle motion at a fifth (`tl["motion"]["calm_shots"]`). The 2D drift then only covers shots it doesn't.
 - **Pace** (v2.3, the craft-metric blocks from 2026-11-03): a steady crop push through every shot (`push`, 12%
   across it, in on one shot and out on the next, at a constant rate), and inside any shot over 1.6 s an angle cut
-  about every second (`reframe_every`): every other part is a 1.12× tighter framing, like a second camera. Reveal shots and shots touching a quiet span get no angle cut and half the push. The push scales
+  about every second (`reframe_every`): every other part is a 1.14× tighter framing, centred, like a second camera. Reveal shots and shots touching a quiet span get no angle cut and half the push. The push scales
   with shot length (full at 2 s, so a short shot doesn't rush), angle cuts are centred and land on a caption change,
   and `"hold": ["S29"]` keeps a frame-exact shot (a comparison, a doorway) at crop 1.0. The pack's crop never
   goes past 1.18× (`max_zoom`: the drawings are 540 wide, and past that it goes soft). The bright grade keeps every pixel under WCAG's saturated
