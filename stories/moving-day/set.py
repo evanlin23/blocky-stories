@@ -1336,7 +1336,7 @@ def build_house(kit, ctx, M):
             kit.box(f"jamb {nm}{k}", (0.04, _T + 0.03, DOOR_H), (x + (0.02 if k == 0 else -0.02), y, DOOR_H / 2), M["trim"])
         kit.box(f"head {nm}", (b - a, _T + 0.03, 0.05), ((a + b) / 2, y, DOOR_H - 0.025), M["trim"])
     # the pencil mark at my height on my doorframe's hall side (S09, S19): a short line, a little proud of the jamb
-    kit.box("pencil mark", (0.04, 0.004, 0.012), (MY_DOOR[1] - 0.02, -_T / 2 - (_T + 0.03) / 2 - 0.003, 1.72),
+    kit.box("pencil mark", (0.09, 0.004, 0.016), (MY_DOOR[1] - 0.02, -_T / 2 - (_T + 0.03) / 2 - 0.003, 1.72),
             kit.plastic("#35353a", 0.8, name="pencil"))
     kit.box("pencil tick", (0.012, 0.004, 0.06), (MY_DOOR[1] - 0.02, -_T / 2 - (_T + 0.03) / 2 - 0.003, 1.70),
             kit.plastic("#35353a", 0.8, name="pencil"))

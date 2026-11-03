@@ -16,7 +16,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 
 LOOP = 0.12          # the last word ends 0.25 s before the hard cut (the voice's own tail is 0.13 s of it), into L01
 # the word check: these lines a touch slower so a swallowed "it", "and" or "me" comes through
-TEMPO = {"L21": 0.94, "L11": 1.1, "L16": 0.95, "L17": 0.96}
+TEMPO = {"L03": 1.0, "L13": 1.12, "L21": 0.94, "L11": 1.1, "L16": 0.95, "L17": 0.96}
 GAPS = {"L28": 0.72, "L13": 0.05}   # a 0.6 s music drop between L28 and L29
 for ln in lines:
     if ln["id"] in TEMPO:
@@ -100,8 +100,8 @@ HIGH_QUILT = still([0.75, 0.45, 1.95], [-0.5, 1.95, 0.45], 20)
 # (at, what, step, camera). step: 1 on ones (the scare), 4 on fours (locked wides), 2 on twos.
 SHOTS = [
     # 1 the rule, L01 to L04 (0 to 10 s): a lit hall opening, then the street of mixed-height houses
-    (0, "S01 my doorway close: the pencil mark at my height on the frame, a hand of empty air above my hair, my face looking up; push in", 2,
-     c([0, [-2.4, -1.5, 1.42], [-2.38, 0.0, 1.5], 24], [1, [-2.4, -0.95, 1.44], [-2.38, 0.0, 1.62], 28])),
+    (0, "S01 me in the hall facing the camera, close: my hair on a line, a hand of empty air above my hair to the ceiling, my face looking up; push in", 2,
+     c([0, [-1.75, -0.77, 1.55], [-3.0, -0.77, 1.7], 26], [1, [-2.05, -0.77, 1.57], [-3.0, -0.77, 1.74], 28])),
     ("L02", "S02 the stack by the door, close and low: the face-out box with the marker frown, the ceiling right over it", 2,
      move(([-1.6, -3.0, 0.95], [-1.62, -4.75, 1.2]), ([-1.6, -3.4, 1.0], [-1.62, -4.75, 1.3]), 24)),
     ("L03+0.17", "S04 a lodger walks out of a front door with a suitcase", 2,
@@ -254,7 +254,7 @@ hide("host", "L05")
 hide("guest", "L05")
 
 # ---- me
-put("me", 0, [-2.38, 0.2], yaw=0, head=[0, -22], expr="worried")                     # S01: my doorway, looking up at the gap
+put("me", 0, [-3.0, -0.8], yaw=90, head=[0, -26], expr="worried")                     # S01: my doorway, looking up at the gap
 hide("me", "L02")
 put("me", "L06.2", [-2.38, 0.2], yaw=0, expr="worried")                              # S09: in my doorway
 hide("me", "L07")

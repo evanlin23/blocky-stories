@@ -58,42 +58,42 @@
    ]
   },
   "L03": {
-   "text": "When a tall lodger moves out, the ceiling comes down a hand a night.",
+   "text": "When a tall lodger moves out, the ceiling comes down a hand, a night.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.914,
+   "dur": 2.931,
    "onset": 0.155,
-   "end": 2.724,
+   "end": 2.741,
    "chunks": [
     [
      0.155,
-     0.483
+     0.466
     ],
     [
-     0.483,
-     0.707
+     0.466,
+     0.672
     ],
     [
-     0.707,
-     1.138
+     0.672,
+     1.103
     ],
     [
-     1.207,
-     1.552
+     1.172,
+     1.517
     ],
     [
-     1.552,
-     1.923
+     1.517,
+     1.87
     ],
     [
-     1.923,
-     2.199
+     1.87,
+     2.19
     ],
     [
-     2.199,
-     2.724
+     2.215,
+     2.741
     ]
    ]
   },
@@ -326,22 +326,22 @@
    ]
   },
   "L13": {
-   "text": "Its marker frown. faced Mum's door.",
+   "text": "Its marker frown, faced Mum's door.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.121,
-   "onset": 0.155,
-   "end": 1.914,
+   "tempo": 1.1536000000000002,
+   "dur": 1.81,
+   "onset": 0.138,
+   "end": 1.621,
    "chunks": [
     [
-     0.155,
-     0.862
+     0.138,
+     0.707
     ],
     [
-     0.94,
-     1.914
+     0.741,
+     1.621
     ]
    ]
   },

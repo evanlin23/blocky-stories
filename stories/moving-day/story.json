@@ -319,13 +319,14 @@
     ],
     [
      "a HAND",
-     "a hand"
+     "a hand,"
     ],
     [
      "a NIGHT.",
      "a night."
     ]
-   ]
+   ],
+   "tempo": 1.0
   },
   {
    "id": "L04",
@@ -510,13 +511,14 @@
    "chunks": [
     [
      "Its marker FROWN",
-     "Its marker frown."
+     "Its marker frown,"
     ],
     [
      "faced Mum's DOOR.",
      "faced Mum's door."
     ]
    ],
+   "tempo": 1.12,
    "gap": 0.05
   },
   {
@@ -1216,35 +1218,35 @@
     [
      0,
      [
-      -2.4,
-      -1.5,
-      1.42
+      -1.75,
+      -0.77,
+      1.55
      ],
      [
-      -2.38,
-      0.0,
-      1.5
+      -3.0,
+      -0.77,
+      1.7
      ],
-     24
+     26
     ],
     [
      1,
      [
-      -2.4,
-      -0.95,
-      1.44
+      -2.05,
+      -0.77,
+      1.57
      ],
      [
-      -2.38,
-      0.0,
-      1.62
+      -3.0,
+      -0.77,
+      1.74
      ],
      28
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S01 my doorway close: the pencil mark at my height on the frame, a hand of empty air above my hair, my face looking up; push in"
+   "what": "S01 me in the hall facing the camera, close: my hair on a line, a hand of empty air above my hair to the ceiling, my face looking up; push in"
   },
   {
    "id": "S02",
@@ -2638,8 +2640,8 @@
    {
     "at": 0,
     "pos": [
-     -2.38,
-     0.2
+     -3.0,
+     -0.8
     ],
     "blend": 0,
     "hidden": false,
@@ -2653,7 +2655,7 @@
     ],
     "head": [
      0,
-     -22
+     -26
     ],
     "lean": 0,
     "tremble": 0,
@@ -2664,7 +2666,7 @@
     "blink": true,
     "width": 0.88,
     "expr": "worried",
-    "yaw": 0
+    "yaw": 90
    },
    {
     "at": "L02",
@@ -2674,8 +2676,8 @@
    {
     "at": "L06.2",
     "pos": [
-     -2.38,
-     0.2
+     -3.0,
+     -0.8
     ]
    },
    {
