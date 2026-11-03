@@ -3,6 +3,7 @@
   "description": "If your hands stop glowing, stay off the old bridge. Dark hands mean nobody needs you. Mine have never glowed, not that I've seen, and that suits me fine.\n\nMy wife's dad, Emrys, is going dark. Nothing has needed him since they bolted his old swing bridge shut, and my wife is scared he'll never leave the bridge cabin. Then something on the far bank, with hands that never glow, starts reaching across the bridge in the fog.\n\nIt's made up, a creepy blocky story built with code and Blender.",
   "pin": "Comment GLOW if someone needs you more than they'd ever say.",
   "made_for_kids": false,
+  "opening": "if",
   "cover_s": 103.4,
   "shape": "about-me",
   "lane": "core",

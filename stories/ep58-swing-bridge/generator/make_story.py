@@ -22,6 +22,8 @@ sys.path.insert(0, str(ROOT))
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 for _l in lines:
+    if _l["id"] == "L01":
+        _l["tempo"] = 1.12      # line 1 must end by 2.2 s (qa FIX 2)
     if _l["id"] in ("L11", "L20", "L23", "L53", "L61"):
         _l["tempo"] = 0.8 if _l["id"] == "L20" else 0.9
     for _c in _l["chunks"]:      # spoken in full so Whisper hears them (captions keep the contraction)
@@ -150,8 +152,9 @@ def ins(after):
 
 # ============================================================================================ the shots
 # ---- the hook and the montage (S01 to S09)
-sh("S01", 1, 0, mv([5.4, -1.5, 1.55], [2.0, 0.8, 0.98], 34, [3.4, -0.7, 1.4], [2.0, 0.8, 0.98], 34), {}, look="day", reach="far",
-   fd=0.02, fs=8, fogc="#e4eaee", sun=(14, 20, 3.4, "#ffd9a0"), fill_k=1.6, hand=0.003)
+sh("S01", 1, 0, fc(hd(3.4, -0.1), 90, -32, 3.0, 32, rise=0.1, push=0.5),
+   {"mec": P(3.4, -0.1, 90, expr="neutral", arms=[70, 70], side=[-6, -6], head=[0, 0])}, look="day", reach="far",
+   fd=0.02, fs=8, fogc="#e4eaee", sun=(24, 160, 3.6, "#ffd9a0"), fill_k=2.0, hand=0.003)
 sh("S02", 1, "L01.3+0.55", mv([21.0, -2.6, 1.15], [21.0, 0.5, 1.12], 24, [20.95, -2.3, 1.15], [21.0, 0.5, 1.12], 24),
    {"t1": P(21.0, 0.5, 0, expr="neutral", arms=[78, 78], side=[-12, -12])}, glow={"t1": B}, hand=0.004, sun=(10, 25, 0.5, "#ffd9a0"), sky_k=0.55, fill_k=0.5, glow_k=0.6, em_k=0.5, halo_k=0.55)
 sh("S03", 2, "L02", fc(hd(100.0, 3.0, -0.06), 0, 12, 3.1, 40), {"doc": P(100.0, 3.0, 0, z=-0.06, sit=True, expr="worried", arms=[70, 70], side=[0, 0], head=[0, 8])},
@@ -213,8 +216,8 @@ sh("S20", 14, "L14", mv([22.7, -4.0, 1.6], [21.9, 1.5, 1.5], 32, [22.5, -3.7, 1.
 sh("S21", 15, "L15", mv([19.7, 4.9, 1.5], [21.6, 3.3, 1.4], 30, [19.8, 4.8, 1.5], [21.6, 3.3, 1.4], 30), {"emrys": emr(-25)}, look="cab_eve",
    glow={"emrys": M}, hand=0.003, sash=False)
 sh("S22", 15, "L15.3", mv([20.7, 3.7, 1.32], [22.3, 3.7, 1.3], 30), {}, look="cab_eve", hand=0.002)
-sh("S23", 16, "L16", mv([21.35, 2.95, 0.95], [21.75, 3.5, 0.8], 38), {"emrys": emr(-25)}, look="cab_eve", glow={"emrys": 0.45}, hand=0.002)
-sh("S24", 16, "L16.2", mv([21.35, 2.95, 0.95], [21.75, 3.5, 0.8], 38), {"emrys": emr(-25)}, look="cab_eve", glow={"emrys": 0.3}, hand=0.002)
+sh("S23", 16, "L16", mv([21.35, 2.85, 1.1], [21.75, 3.5, 1.1], 38), {"emrys": emr(-25)}, look="cab_eve", glow={"emrys": 0.45}, hand=0.002)
+sh("S24", 16, "L16.2", mv([21.35, 2.85, 1.1], [21.75, 3.5, 1.1], 38), {"emrys": emr(-25)}, look="cab_eve", glow={"emrys": 0.3}, hand=0.002)
 sh("S25", 17, "L17", mv([20.5, 2.7, 1.4], [21.75, 3.6, 1.1], 34), {"emrys": emr(-25)}, look="cab_dark", glow={"emrys": 0.2}, hand=0.002)
 sh("S28", 19, "L19", mv([21.3, 3.3, 0.95], [20.2, 2.4, 0.6], 40), {}, look="cab_eve", hand=0.002, steam=True)
 sh("S29", 19, "L19.2", fc(hd(21.75, 3.6, CAB_SEAT), -25, 30, 1.9, 40, rise=0.1), {"emrys": emr(0, head=[-50, 0])}, look="cab_eve", glow={"emrys": 0.45}, hand=0.003)
@@ -235,7 +238,7 @@ sh("S37", 24, "L24", mv([21.6, -5.5, 1.6], [20.9, 2.0, 1.4], 30, [21.5, -5.2, 1.
 sh("S38", 24, "L24.2", mv([22.8, -2.8, 1.35], [21.85, 2.0, 1.25], 34), {}, look="dusk", door=-85, hand=0.004)
 sh("S39", 25, "L25", mv([21.9, 2.7, 1.3], [21.3, 3.6, 0.6], 34), {}, look="cab_dark", hand=0.003, door=-85, steam=False)
 sh("S40", 26, "L26", mv([21.1, 3.2, 1.75], [22.1, 3.7, 2.05], 40), {}, look="cab_dark", hand=0.002, hangcap=True, steam=False)
-sh("S41", 26, "L26.2", mv([20.5, 3.0, 0.95], [20.4, 2.3, 0.62], 40), {}, look="cab_dark", hand=0.002, steam=True)
+sh("S41", 26, "L26.2", mv([20.5, 3.0, 0.95], [20.4, 2.3, 0.62], 40), {}, look="cab_dark", hand=0.002, steam=False)
 sh("S42", 27, "L27", mv([22.0, 1.6, 1.35], [3.0, 0.85, 1.0], 55, [21.6, 1.5, 1.35], [3.0, 0.85, 1.0], 55), {}, look="fogpale", fd=0.03, lprints=True,
    nobar=True, hand=0.003)
 sh("S43", 27, "L27.2", mv([21.1, 4.4, 1.45], [21.85, 2.1, 1.4], 32), {"mec": P(21.85, 2.2, 180, arms=[0, 0], side=[0, 0], expr="scared")},
@@ -497,7 +500,7 @@ story = {
     "fade_in": False,
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "look": {"flash_safe": True, "fog": "#c4dcee", "fog_density": 0.004, "fog_start": 14.0, "sky": "#9cc8ec", "sky_strength": 1.0,
-             "exposure": 0.0},
+             "exposure": 0.0, "polish": True},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.012, -0.02], "saturation": 1.04, "contrast": 1.04,
               "vignette": 0.25, "bloom": 0.2, "grain": 0.008},
     "cast": cast,
@@ -570,7 +573,7 @@ def fx_(at_, kind, db, **kw):
     sfx.append({"at": at_, "kind": kind, "db": db, **kw})
 
 
-fx_("L01.3+0.3", "hit", -14, dur=1.2)
+fx_("L01>-0.1", "hit", -12, dur=1.2)
 fx_("L22+0.5", "click", -26)
 fx_("L23+0.3", "creak", -12, dur=3.0)
 fx_("L24+0.1", "door", -20)
@@ -599,7 +602,7 @@ story["music"] = {
         {"at": "L65", "voices": ["drone", "pluck"], "energy": 0.3},
     ]}
 story["sound"] = {
-    "floor": "wood", "steps_db": -26,
+    "floor": "wood", "steps_db": -26, "rev": 3,
     "ambience": [
         {"kind": "water", "from": 0, "to": "end", "lufs": -42},
         {"kind": "hum", "from": 0, "to": "L22", "lufs": -46},

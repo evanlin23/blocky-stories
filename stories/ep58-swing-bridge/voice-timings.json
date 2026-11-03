@@ -10,26 +10,46 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.517,
-   "onset": 0.155,
-   "end": 2.31,
+   "tempo": 1.1536000000000002,
+   "dur": 2.259,
+   "onset": 0.138,
+   "end": 2.069,
    "chunks": [
     [
-     0.155,
-     0.526
+     0.138,
+     0.457
     ],
     [
-     0.526,
-     1.103
+     0.457,
+     0.983
     ],
     [
-     1.172,
-     1.594
+     1.034,
+     1.422
     ],
     [
-     1.594,
-     2.31
+     1.422,
+     2.069
+    ]
+   ]
+  },
+  "L01b": {
+   "text": "Dark hands mean nobody needs you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.552
     ]
    ]
   },
@@ -206,6 +226,38 @@
     [
      1.439,
      2.086
+    ]
+   ]
+  },
+  "L08b": {
+   "text": "And something on the old bridge has hands that never glow at all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.155,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     1.121
+    ],
+    [
+     1.121,
+     1.698
+    ],
+    [
+     1.698,
+     2.121
+    ],
+    [
+     2.121,
+     2.69
     ]
    ]
   },
@@ -454,38 +506,6 @@
     [
      1.353,
      1.914
-    ]
-   ]
-  },
-  "L18": {
-   "text": "I sat by the stove, and my hands went orange. That was the stove.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.052,
-   "onset": 0.155,
-   "end": 2.845,
-   "chunks": [
-    [
-     0.155,
-     0.509
-    ],
-    [
-     0.509,
-     0.94
-    ],
-    [
-     0.94,
-     1.379
-    ],
-    [
-     1.379,
-     2.19
-    ],
-    [
-     2.19,
-     2.845
     ]
    ]
   },
@@ -910,14 +930,14 @@
    ]
   },
   "L35": {
-   "text": "Just a shape in the fog, leaning on the rail.",
+   "text": "Just a shape in a fog, leaning on the rail.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
+   "dur": 2.034,
    "onset": 0.172,
-   "end": 1.862,
+   "end": 1.845,
    "chunks": [
     [
      0.172,
@@ -925,15 +945,15 @@
     ],
     [
      0.543,
-     0.948
+     0.931
     ],
     [
-     1.0,
-     1.328
+     0.983,
+     1.31
     ],
     [
-     1.328,
-     1.862
+     1.31,
+     1.845
     ]
    ]
   },
@@ -1218,6 +1238,30 @@
     [
      1.199,
      1.793
+    ]
+   ]
+  },
+  "L46b": {
+   "text": "It comes for the ones nobody needs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.802
+    ],
+    [
+     0.802,
+     1.655
     ]
    ]
   },
@@ -1629,34 +1673,6 @@
     ]
    ]
   },
-  "L63": {
-   "text": "In this town, your hands glow when somebody needs you.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.414,
-   "onset": 0.172,
-   "end": 2.207,
-   "chunks": [
-    [
-     0.172,
-     0.655
-    ],
-    [
-     0.69,
-     1.285
-    ],
-    [
-     1.285,
-     1.621
-    ],
-    [
-     1.621,
-     2.207
-    ]
-   ]
-  },
   "L64": {
    "text": "At three this morning, my hands woke me, glowing.",
    "who": "narrator",
@@ -1713,62 +1729,6 @@
     ]
    ]
   },
-  "L08b": {
-   "text": "And something on the old bridge has hands that never glow at all.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.879,
-   "onset": 0.155,
-   "end": 2.69,
-   "chunks": [
-    [
-     0.155,
-     0.543
-    ],
-    [
-     0.543,
-     1.121
-    ],
-    [
-     1.121,
-     1.698
-    ],
-    [
-     1.698,
-     2.121
-    ],
-    [
-     2.121,
-     2.69
-    ]
-   ]
-  },
-  "L46b": {
-   "text": "It comes for the ones nobody needs.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.845,
-   "onset": 0.155,
-   "end": 1.655,
-   "chunks": [
-    [
-     0.155,
-     0.448
-    ],
-    [
-     0.448,
-     0.802
-    ],
-    [
-     0.802,
-     1.655
-    ]
-   ]
-  },
   "L66": {
    "text": "Nobody has ever needed it. Tonight, it needs me.",
    "who": "narrator",
@@ -1794,26 +1754,6 @@
     [
      1.534,
      2.138
-    ]
-   ]
-  },
-  "L01b": {
-   "text": "Dark hands mean nobody needs you.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.759,
-   "onset": 0.172,
-   "end": 1.552,
-   "chunks": [
-    [
-     0.172,
-     0.741
-    ],
-    [
-     0.741,
-     1.552
     ]
    ]
   }

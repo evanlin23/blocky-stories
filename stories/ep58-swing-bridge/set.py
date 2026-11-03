@@ -23,7 +23,7 @@ from blocky import acting, rig
 
 OCHRE, PEAT, TAN, CLAY = "#8a6424", "#2b2420", "#b39a78", "#c49a74"
 HAND_SKIN = "#e0b894"
-COAT, RIM = "#8a6b44", "#9cc0e4"
+COAT, RIM = "#3a2c22", "#9cc0e4"
 GOLD = "#ffc76a"
 SPAN_X = 18.3          # the pivot
 RAIL_Y = 0.8
@@ -635,25 +635,25 @@ LOOKS = {
                 lights={"lamppost": 0.0}),
     "summer": dict(sky="#ffc890", ss=1.0, fog="#f3d2a8", fd=0.006, fs=12, sun=(12, 30, 3.4, "#ffc07a"), moon=0, fill=1.0,
                    lights={}),
-    "dusk": dict(sky="#4a5a82", ss=0.9, fog="#6b7898", fd=0.014, fs=6, sun=(0, 0, 0.0, "#ffd9a0"), moon=0.5, fill=1.1,
+    "dusk": dict(sky="#4a5a82", ss=1.2, fog="#6b7898", fd=0.014, fs=6, sun=(0, 0, 0.0, "#ffd9a0"), moon=0.5, fill=1.5,
                  lights={"lamppost": 1.0}),
-    "nightfog": dict(sky="#1d2a46", ss=1.0, fog="#25375a", fd=0.03, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=1.2, fill=0.0,
+    "nightfog": dict(sky="#34486e", ss=1.5, fog="#44598a", fd=0.03, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=1.2, fill=0.6,
                      lights={"lamppost": 0.6}),
-    "fogpale": dict(sky="#38486a", ss=1.3, fog="#3c4e72", fd=0.028, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=1.4, fill=0.0,
+    "fogpale": dict(sky="#5a6e98", ss=1.8, fog="#6a80aa", fd=0.028, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=1.4, fill=0.6,
                     lights={"lamppost": 0.5}),
-    "fogreach": dict(sky="#5b72a0", ss=2.0, fog="#6479a4", fd=0.012, fs=4, sun=(0, 0, 0.0, "#ffffff"), moon=2.2, fill=0.5,
+    "fogreach": dict(sky="#5b72a0", ss=2.0, fog="#6479a4", fd=0.012, fs=4, sun=(0, 0, 0.0, "#ffffff"), moon=2.2, fill=0.9,
                      lights={"lamppost": 0.0}),
-    "cab_eve": dict(sky="#2a3652", ss=0.5, fog="#2a3652", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=1.3,
+    "cab_eve": dict(sky="#2a3652", ss=0.7, fog="#2a3652", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=1.8,
                     lights={"cab_lamp": 1.0, "cab_stove": 1.0, "cab_amb": 0.5}),
-    "cab_dark": dict(sky="#1b2640", ss=0.4, fog="#1b2640", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=1.4,
+    "cab_dark": dict(sky="#1b2640", ss=0.6, fog="#1b2640", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=1.9,
                      lights={"cab_lamp": 0.0, "cab_stove": 0.0, "cab_amb": 1.6}),
-    "cab_night": dict(sky="#1b2640", ss=0.5, fog="#1b2640", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=1.1,
+    "cab_night": dict(sky="#1b2640", ss=0.7, fog="#1b2640", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=1.6,
                       lights={"cab_lamp": 1.0, "cab_stove": 1.0, "cab_amb": 0.5}),
-    "cab_low": dict(sky="#1b2640", ss=0.5, fog="#1b2640", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=0.9,
+    "cab_low": dict(sky="#1b2640", ss=0.7, fog="#1b2640", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=1.4,
                     lights={"cab_lamp": 1.0, "cab_stove": 1.0, "cab_amb": 0.5}),
-    "lean_ext": dict(sky="#38486a", ss=1.1, fog="#3c4e72", fd=0.03, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=1.0, fill=0.3,
+    "lean_ext": dict(sky="#5a6e98", ss=1.6, fog="#6a80aa", fd=0.03, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=1.0, fill=0.9,
                      lights={"cab_lamp": 0.7, "cab_stove": 0.9, "cab_amb": 0.25, "lamppost": 0.0}),
-    "bedout": dict(sky="#3c4e74", ss=0.55, fog="#445a84", fd=0.05, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=0.0,
+    "bedout": dict(sky="#3c4e74", ss=0.9, fog="#445a84", fd=0.05, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=0.4,
                    lights={"bd_amb": 1.0, "bd_moon": 1.0}),
     "cinema": dict(sky="#201820", ss=0.1, fog="#201820", fd=0.0, fs=30, sun=(0, 0, 0.0, "#ffffff"), moon=0, fill=1.0,
                    lights={"cin_screen": 1.0, "cin_amb": 1.0}),
