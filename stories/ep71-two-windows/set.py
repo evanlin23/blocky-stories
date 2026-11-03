@@ -1,4 +1,4 @@
-"""ep58 "Two windows": a bright roadside drive-thru on a golden Friday evening. No text anywhere: the only characters
+"""ep71 "Two windows": a bright roadside drive-thru on a golden Friday evening. No text anywhere: the only characters
 are numerals (menu board 1 to 9, the speaker screen and the tickets, 41 then 42), drawn here with PIL.
 
 Metres. Zone A (the drive-thru) is at the origin:
