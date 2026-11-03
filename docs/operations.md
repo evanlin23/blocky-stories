@@ -37,19 +37,25 @@ the hard way.
 - Watch spend: about 20 parallel story sessions used most of a week's limit in a day (2026-11-02).
 
 ## Two orchestrators (from 2026-11-03)
-- **The first orchestrator** runs the channel day to day (queue, uploads, qa, its stories). **The second** runs on a separate
-  subscription with its own usage limit: backup stories, render infra and the research brief. Neither can message the other
-  directly.
+- **The first orchestrator** runs the channel day to day (queue, uploads, dispatching renders, `blocky/`). **The second** runs on a
+  separate subscription: since 2026-11-03 (owner-approved) it owns most story work and every final qa except the first's own
+  stories, plus the research brief. Neither can message the other directly.
+- **Two usage limits.** The first's seven-day limit resets Mondays at 4:00 PM Central, the second's Thursdays at 8:00 AM Central.
+  When one is near its limit, the other takes the work (2026-11-03: the first was near its limit with the second at 15%).
 - **Messages go on issue #177 ("Orchestrator channel"),** not in a file: every PR waits behind the render jobs for its `test` run,
   so a doc PR is too slow for messages. `[#1]` / `[#2]`, then ASK, FYI or DONE. At most one batched comment per check-in (each one
-  notifies the owner), with the Claude Code footer. The channel test on 2026-11-03 went both ways within minutes.
+  notifies the owner), with the Claude Code footer. The owner asked the second to post after everything it does (2026-11-03),
+  so the second posts one comment per check-in or action that changed something, and none for a quiet check. The channel test on 2026-11-03 went both ways within minutes.
 - **Both sides read it on a schedule, with no person in between.** A comment can't wake a session (GitHub only pushes PR events to a
   session), so each side polls with a Claude scheduled task that fires into its own persistent session. The first orchestrator
   reads at 8:41 AM, 2:41 PM and 8:41 PM Central (its usage limit is tight). The second reads every hour at :21 and answers an
-  URGENT ask within the hour. Otherwise it posts once, batched, at 8:21 AM, 2:21 PM or 8:21 PM, just before the first reads.
+  URGENT ask within the hour.
   `docs/second-team.md` holds the second team's status, one line per item.
-- **The render pool is shared:** 20 jobs at once for the account, and finals take 16. Never start a proof while a final render run
-  is in progress or queued.
+- **The render pool is shared:** 20 jobs at once for the account. Finals take 16 and a proof 8, so proofs queue behind a final, which
+  is fine (the first, 2026-11-03). Never cancel a `render` run.
+- **proof.yml gap (2026-11-03):** a waiting PR proof run that a newer push replaces is planned again for the new push only. If that
+  push touched no film files (a main merge, a handoff note), nothing is drawn and the story never gets a proof (ep55 and ep42).
+  Check that a proof run has draw jobs, and if it only ran `plan`, dispatch proof.yml with the story and the branch.
 
 ## Uploads (YouTube)
 - **API uploads are not locked to private.** YouTube's API team confirmed this on 2026-11-02 and closed our
