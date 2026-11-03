@@ -110,16 +110,16 @@ def P(pos, **kw):
 # since 2026-11-03: frame 1 is the green glove mid-hop, her face looking back at it; every opening shot is a close
 LOOK = {"head": [150, -4], "expr": "neutral"}
 shot(0, "close: the green glove mid-hop on the bright slipway, the glove woman's face above it looking back at it, pushing in",
-     c([0, [-0.95, 0.35, 0.34], [-0.45, -1.1, 0.62], 24], [1, [-0.8, 0.0, 0.34], [-0.45, -1.35, 0.7], 31]),
+     c([0, [-0.75, 1.0, 0.4], [-0.62, -1.1, 0.7], 26], [1, [-0.7, 0.65, 0.4], [-0.62, -1.3, 0.8], 33]),
      {"glove_woman": P([-0.4, -1.9], walk=[("L01.2", [-0.4, -2.3])], **LOOK)})
 shot("L01.2", "closer: her face, the glove bobbing in the foreground",
-     c([0, [0.35, -0.55, 0.62], [-0.4, -2.3, 1.15], 28], [1, [0.2, -0.85, 0.7], [-0.4, -2.4, 1.2], 38]),
+     c([0, [0.45, -0.1, 0.4], [-0.5, -2.0, 0.95], 26], [1, [0.3, -0.45, 0.45], [-0.45, -2.1, 1.0], 33]),
      {"glove_woman": P([-0.4, -2.35], walk=[("L02", [-0.4, -2.8])], **LOOK)})
 shot("L02", "low: the glove hopping up the concrete after the raincoat hem",
      c([0, [0.9, -1.4, 0.3], [-0.4, -3.2, 0.14], 24], [1, [0.7, -1.9, 0.25], [-0.4, -3.4, 0.14], 24]),
      {"glove_woman": P([-0.4, -2.85], walk=[("L02.1", [-0.4, -3.6])], **LOOK)})
 shot("L02.1", "glove's-eye: the raincoat walking away, the glove at the bottom of frame",
-     c([0, [-0.2, -2.9, 0.3], [-0.4, -5.4, 0.9], 24], [1, [-0.25, -3.4, 0.3], [-0.4, -6.0, 0.95], 28]),
+     c([0, [-0.2, -2.9, 0.3], [-0.4, -5.4, 0.7], 22], [1, [-0.25, -3.4, 0.3], [-0.4, -6.0, 0.75], 26]),
      {"glove_woman": P([-0.4, -3.75], walk=[("L03", [-0.4, -5.2])], **LOOK)})
 shot("L03", "side tracking: umbrella man",
      c([0, [-2.9, 0.2, 1.1], [0.4, 0.2, 1.0], 22], [1, [-2.9, 0.2, 1.1], [0.4, 0.2, 1.0], 22]),
