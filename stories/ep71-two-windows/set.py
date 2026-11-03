@@ -254,14 +254,17 @@ def build_car(kit, M, name, color, kind="open", cracked=False, tix=False, bag=Fa
                     rot=(math.pi / 2, 0, 0), n=12)
     hx = 2.03 if kind == "van" else 1.93
     lens_r = kit.emit("#fff4d0", 6.0 * glow, "headlight r")
-    lens_l = kit.emit("#a88a4a", 1.3 * glow, "headlight cracked") if cracked else lens_r
+    lens_l = kit.emit("#a39a84", 1.5 * glow, "headlight cracked") if cracked else lens_r
     B("hlr", (0.06, 0.34, 0.2), (hx, -0.62, 0.8), lens_r, 0.02)
     B("hll", (0.06, 0.34, 0.2), (hx, 0.62, 0.8), lens_l, 0.02)
     if cracked:
-        crack = kit.plastic("#050302", 0.9, "crack")
-        zz = ((0.62 - 0.14, 0.9, 0.55), (0.62 - 0.02, 0.74, -0.7), (0.62 + 0.08, 0.84, 0.6), (0.62 + 0.15, 0.72, -0.5))
-        for i, (cy, cz, rx) in enumerate(zz):
-            B(f"crack{i}", (0.01, 0.1, 0.028), (hx + 0.045, cy, cz), crack, 0.0, (rx, 0, 0))
+        # a jagged dark line down the dim lens: five short segments joined point to point (a crack, not an X)
+        crack = kit.plastic("#030201", 0.9, "crack")
+        pts = ((0.62 - 0.06, 0.89), (0.62 + 0.05, 0.85), (0.62 - 0.05, 0.81), (0.62 + 0.06, 0.77), (0.62 - 0.02, 0.72))
+        for i, ((y0, z0), (y1, z1)) in enumerate(zip(pts, pts[1:])):
+            ln_ = math.hypot(y1 - y0, z1 - z0)
+            ang = math.atan2(y1 - y0, z1 - z0)        # tilt of a z-long bar about x: z axis -> (0, -sin, cos)
+            B(f"crack{i}", (0.01, 0.016, ln_ + 0.012), (hx + 0.045, (y0 + y1) / 2, (z0 + z1) / 2), crack, 0.0, (-ang, 0, 0))
     plate = kit.plastic("#ffb38a", 0.5, "plate")
     B("plateb", (0.04, 0.5, 0.16), (-hx + 0.0, 0, 0.62), plate, 0.01)
     B("platef", (0.04, 0.5, 0.16), (hx + 0.0, 0, 0.5), plate, 0.01)
@@ -269,15 +272,19 @@ def build_car(kit, M, name, color, kind="open", cracked=False, tix=False, bag=Fa
     B("tail2", (0.05, 0.3, 0.12), (-hx - 0.0, -0.62, 0.8), kit.emit("#ff5a4a", 1.5, "tail"), 0.01)
     parts["tix"] = []
     if tix:
-        for i in range(5):
-            m = M["tix42"] if i == 4 else M["tix41"]
-            q = quad(kit, f"{name}.tix{i}", 0.13, 0.19, (0.68, -0.14 + 0.1 * i, 1.4 - 0.01 * i), FACE_NEG_X, m, root)
-            q2 = quad(kit, f"{name}.tixf{i}", 0.13, 0.19, (0.68 + 0.012, -0.14 + 0.1 * i, 1.4 - 0.01 * i), (math.pi / 2, 0, math.pi / 2), m, root)
-            parts["tix"].append(q)
-            parts.setdefault("tixf", []).append(q2)
-        B("mirror", (0.05, 0.3, 0.1), (0.68, 0.0, 1.5), dark, 0.02)
+        # three ticket rows stand on the dash (right corner, middle, left corner), big, so every in-car close-up has
+        # the count in frame whichever side the camera is on
+        for r, yc in enumerate((-0.58, 0.0, 0.58)):
+            B(f"tixrail{r}", (0.06, 0.34, 0.05), (0.86, yc, 1.04), dark, 0.01)
+            for i in range(5):
+                m = M["tix42"] if i == 4 else M["tix41"]
+                yy = yc - 0.14 + 0.07 * i
+                q = quad(kit, f"{name}.tix{r}_{i}", 0.12, 0.17, (0.86 - 0.012, yy, 1.16), FACE_NEG_X, m, root)
+                q2 = quad(kit, f"{name}.tixf{r}_{i}", 0.12, 0.17, (0.86 + 0.012, yy, 1.16), (math.pi / 2, 0, math.pi / 2), m, root)
+                parts["tix"].append(q)
+                parts.setdefault("tixf", []).append(q2)
     if tix:
-        parts["cup"] = kit.cyl(f"{name}.cup", 0.06, 0.13, (0.82, -0.2, 1.08), kit.plastic("#9be15d", 0.5, "cup"), root, n=14)
+        parts["cup"] = kit.cyl(f"{name}.cup", 0.06, 0.13, (0.78, 0.38, 1.08), kit.plastic("#6fd13a", 0.5, "cup"), root, n=14)
     if bag:
         bg = kit.empty(f"{name}.bag", (0, 0, 0), root)
         kit.box(f"{name}.bagm", (0.4, 0.26, 0.36), (-0.05, -0.43, 0.72), kit.plastic("#c9955a", 0.9, "bag"), bg, bevel=0.02)
@@ -287,44 +294,45 @@ def build_car(kit, M, name, color, kind="open", cracked=False, tix=False, bag=Fa
 
 
 def build_server(kit, M, ctx):
-    """The Server: the window lady's own body and uniform (mint shirt, peach cap), but wrong: a head far too tall,
-    a blank pale slab whose face is upside down (the mouth-opening up under the cap, the eyes down by the chin),
-    and arms too long. It is seated in the hatch, its waist pinned to the sill, and leans out of it. Levels:
-    0 only the arm with the bag, 1 leaning out, 2 further, 3 face to face with Cal."""
+    """The Server: the window lady's mint uniform on a body too big for the hatch. Its shoulders fill the opening
+    jamb to jamb, its head is a tall pale slab with a black hollow for a face: two narrow bright eyes and a wide
+    row of small teeth. Levels: 0 only the arm with the bag, 1 face in the hatch, 2 shoulders and face out over the
+    sill, 3 leaning out, face to face with Cal. Arms are thick, with long fingers."""
     mint = kit.plastic("#7fe0c4", 0.45, "srv mint")
     peach = kit.plastic("#ffb38a", 0.45, "srv peach")
-    skin = kit.plastic("#a99d97", 0.85, "srv skin")
+    skin = kit.plastic("#a39aa0", 0.85, "srv skin")
     skin2 = kit.plastic("#e6d2bd", 0.5, "srv hand")
-    black = kit.plastic("#050304", 0.9, "srv black")
-    root = kit.empty("server", (H2X, 4.7, SILL_Z + 0.24))
-    g = kit.empty("server.g", (0, 0, 0), root)
-    kit.box("srv.pelvis", (0.72, 0.4, 0.5), (0, 0.1, -0.2), kit.plastic("#2c3550", 0.7, "srv pants"), g, bevel=0.05)
-    kit.box("srv.torso", (0.74, 0.38, 0.8), (0, 0, 0.4), mint, g, bevel=0.06)
-    kit.box("srv.stripe", (0.76, 0.4, 0.1), (0, 0, 0.55), peach, g, bevel=0.02)
-    kit.box("srv.neck", (0.18, 0.18, 0.5), (0, 0, 1.0), skin, g, bevel=0.03)
-    hd = kit.empty("server.head", (0, 0, 1.15), g)
-    # head: 0.62 wide, 1.3 tall; all features on its -y face, z measured from the neck
-    kit.box("srv.head", (0.62, 0.36, 1.3), (0, 0, 0.65), skin, hd, bevel=0.08)
-    kit.box("srv.cap", (0.66, 0.4, 0.14), (0, 0, 1.35), peach, hd, bevel=0.04)
-    kit.box("srv.visor", (0.6, 0.3, 0.05), (0, -0.28, 1.28), peach, hd, bevel=0.02)
-    # upside-down face: the mouth-opening high under the cap, a dark slot with a dark hollow, the eyes low by the chin
-    kit.box("srv.mouth", (0.5, 0.03, 0.62), (0, -0.185, 0.93), black, hd, bevel=0.03)
-    kit.box("srv.mouth2", (0.38, 0.03, 0.78), (0, -0.19, 0.9), black, hd, bevel=0.03)
-    glint = kit.emit("#ffffff", 16.0, "srv glint")
+    black = kit.plastic("#030203", 0.9, "srv black")
+    teeth = kit.plastic("#f3ead8", 0.6, "srv teeth")
+    root = kit.empty("server", (H2X, 4.85, 0.0))
+    g = kit.empty("server.g", (0, 0, 1.75), root)       # the shoulder line; moves out and pitches with the level
+    kit.box("srv.chest", (1.46, 0.5, 0.62), (0, 0, 0.0), mint, g, bevel=0.07)
+    kit.box("srv.stripe", (1.48, 0.52, 0.1), (0, 0, -0.1), peach, g, bevel=0.02)
+    kit.box("srv.torso", (1.1, 0.45, 1.6), (0, 0.05, -1.0), mint, g, bevel=0.06)
+    ctx["neck"] = kit.box("srv.neck", (0.3, 0.3, 1.0), (0, 0, -60), skin, root, bevel=0.04)
+    hd = kit.empty("server.head", (0, -0.3, 1.7), root)
+    # head 0.74 wide, 1.1 tall, 0.46 deep; centre z measured from hd
+    kit.box("srv.head", (0.74, 0.46, 1.1), (0, 0, 0.0), skin, hd, bevel=0.1)
+    kit.box("srv.cap", (0.78, 0.5, 0.14), (0, 0.0, 0.58), peach, hd, bevel=0.04)
+    kit.box("srv.visor", (0.7, 0.34, 0.05), (0, -0.3, 0.52), peach, hd, bevel=0.02)
+    # the hollow face
+    kit.box("srv.void", (0.6, 0.03, 0.78), (0, -0.235, -0.05), black, hd, bevel=0.04)
+    glint = kit.emit("#fff6e0", 9.0, "srv glint")
     for sx in (-1, 1):
-        kit.box(f"srv.sock{sx}", (0.1, 0.03, 0.2), (sx * 0.17, -0.19, 0.3), black, hd, bevel=0.01, rot=(0, sx * 0.25, 0))
-        kit.cyl(f"srv.glint{sx}", 0.022, 0.03, (sx * 0.17, -0.215, 0.33), glint, hd, rot=(math.pi / 2, 0, 0), n=10)
-    # arms: too long (sleeve, forearm, hand with long fingers), pointing along local +z, swung by the animation
+        kit.box(f"srv.eye{sx}", (0.15, 0.02, 0.032), (sx * 0.16, -0.262, 0.17), glint, hd, bevel=0.008, rot=(0, sx * 0.3, 0))
+    for k in range(-6, 7):
+        h = 0.12 if k % 2 == 0 else 0.075
+        kit.box(f"srv.tooth{k}", (0.036, 0.02, h), (k * 0.043, -0.262, -0.16 + 0.1 * (k * k) / 36.0 - h / 2 + 0.06), teeth, hd, bevel=0.004)
     arms = []
     for sx in (-1, 1):
-        ar = kit.empty(f"server.arm{sx}", (sx * 0.47, 0, 0.7), g)
-        kit.box(f"srv.sleeve{sx}", (0.17, 0.17, 0.8), (0, 0, 0.4), mint, ar, bevel=0.04)
-        kit.box(f"srv.fore{sx}", (0.1, 0.1, 0.75), (0, 0, 1.15), skin2, ar, bevel=0.03)
-        kit.box(f"srv.palm{sx}", (0.14, 0.05, 0.14), (0, 0, 1.58), skin2, ar, bevel=0.02)
+        ar = kit.empty(f"server.arm{sx}", (sx * 0.82, 0, 0.0), g)
+        kit.box(f"srv.sleeve{sx}", (0.26, 0.26, 0.75), (0, 0, -0.375), mint, ar, bevel=0.05)
+        kit.box(f"srv.fore{sx}", (0.17, 0.17, 0.8), (0, 0, -1.15), skin2, ar, bevel=0.04)
+        kit.box(f"srv.palm{sx}", (0.22, 0.07, 0.22), (0, 0, -1.65), skin2, ar, bevel=0.02)
         for k in range(4):
-            kit.box(f"srv.fing{sx}{k}", (0.025, 0.03, 0.3), ((k - 1.5) * 0.034, 0, 1.78), skin2, ar, bevel=0.01)
+            kit.box(f"srv.fing{sx}{k}", (0.04, 0.05, 0.46), ((k - 1.5) * 0.055, 0, -2.0), skin2, ar, bevel=0.01)
         arms.append(ar)
-    bag = kit.empty("server.bagL", (0, -0.1, 1.62), arms[1])
+    bag = kit.empty("server.bagL", (0, 0.0, -2.1), arms[1])
     kit.box("srv.bagLm", (0.5, 0.3, 0.46), (0, 0, 0.0), kit.plastic("#c9955a", 0.9, "bag"), bag, bevel=0.02)
     kit.box("srv.bagLf", (0.5, 0.32, 0.05), (0, 0, 0.25), kit.plastic("#b98448", 0.9, "bag fold"), bag)
     quad(kit, "srv.ticketL", 0.26, 0.34, (0, -0.156, 0.0), FACE_NEG_Y, M["tix41"], bag)
@@ -337,7 +345,7 @@ def build_server(kit, M, ctx):
     kit.box("srv.bagm0", (0.5, 0.3, 0.46), (0, 0, 0.26), kit.plastic("#c9955a", 0.9, "bag"), bag0, bevel=0.02)
     kit.box("srv.bagfold0", (0.5, 0.32, 0.05), (0, 0, 0.5), kit.plastic("#b98448", 0.9, "bag fold"), bag0)
     quad(kit, "srv.ticket0", 0.26, 0.34, (0, -0.156, 0.26), FACE_NEG_Y, M["tix41"], bag0)
-    ctx["server"] = {"root": root, "g": g, "head": hd, "arms": arms, "r0": root0}
+    ctx["server"] = {"root": root, "g": g, "head": hd, "arms": arms, "r0": root0, "neck": ctx["neck"]}
 
 
 # ------------------------------------------------------------------------------------------------ materials
@@ -418,7 +426,7 @@ def build_world(kit, M, ctx):
     hatch(kit, M, "h2", H2X, WALL_Y, H, 6.8, 13.6)
     kit.box("wb sideL", (0.2, 1.6, H), (6.9, 5.5, H / 2), M["mint"], bevel=0.03)
     kit.box("wb sideR", (0.2, 1.6, H), (13.5, 5.5, H / 2), M["mint"], bevel=0.03)
-    kit.box("wb back", (6.8, 0.2, H), (10.2, 6.3, H / 2), kit.plastic("#7fa59d", 0.8, "wb inner"), bevel=0.03)
+    kit.box("wb back", (6.8, 0.2, H), (10.2, 6.3, H / 2), kit.plastic("#1d3a36", 0.8, "wb inner"), bevel=0.03)
     kit.box("wb roof", (6.9, 1.9, 0.2), (10.2, 5.5, H + 0.1), M["mint"], bevel=0.03)
     kit.box("wb band", (7.0, 0.15, 0.55), (10.2, 4.5, H - 0.25), M["peach"], bevel=0.03)
     kit.box("wb floor", (6.8, 1.7, 0.1), (10.2, 5.5, 0.05), kit.plastic("#6b8d86", 0.8, "wb floor"))
@@ -579,11 +587,12 @@ def animate(kit, story, tl, t, ctx):
     for c in [c for c in vc if c["id"] == "tix"]:
         if c["t"] <= t + 1e-9:
             n_tix = c["n"]
-    for i, q in enumerate(o_["tix"]):
+    for j, q in enumerate(o_["tix"]):
+        i = j % 5
         q.hide_render = not ((i < n_tix and i < 4) or (i == 4 and n_tix == 42))
         if n_tix == 42 and i < 4:
             q.hide_render = True
-        o_["tixf"][i].hide_render = q.hide_render
+        o_["tixf"][j].hide_render = q.hide_render
     _show([ctx["sillticket"]], vis("sillticket", False))
     cup = o_.get("cup")
     if cup is not None:
@@ -607,13 +616,21 @@ def animate(kit, story, tl, t, ctx):
         _show([r_], on and want)
     if lv >= 0.5:
         u1, u2 = min(1.0, max(0.0, lv - 1.0)), min(1.0, max(0.0, lv - 2.0))
-        a = 44 + 8 * u1 + 8 * u2                  # pitch out of the hatch, about the waist on the sill
-        srv["root"].location = (H2X, 4.7 + 0.5 * max(0.0, 1.0 - lv) * 2, SILL_Z + 0.24)
-        srv["g"].rotation_euler = (math.radians(a), 0, 0)
-        srv["head"].rotation_euler = (math.radians(-a + 14 + 6 * u2), 0, 0)
-        T = (150 - 35 * u1 - 20 * u2)             # world angle of the arms (180 = straight down, 90 = reaching out)
+        out = 0.55 * u1 + 0.75 * u2                   # metres out over the sill (toward -y)
+        srv["g"].location = (0, -0.35 * out + 0.05 * (1 - min(1.0, lv)), 1.85 - 0.1 * u1 - 0.1 * u2)
+        srv["g"].rotation_euler = (math.radians(4 + 10 * u1 + 8 * u2), 0, 0)
+        srv["head"].location = (0, -0.3 - 1.0 * out - 0.1 * u2, 1.52 + 0.1 * u1 + 0.1 * u2)
+        srv["head"].rotation_euler = (math.radians(6 + 6 * u1 + 6 * u2), 0, math.radians(-34 * u1))
+        # the neck runs from the shoulders to the chin
+        gy, gz = srv["g"].location[1], srv["g"].location[2] + 0.15
+        hy, hz = srv["head"].location[1], srv["head"].location[2] - 0.45
+        ln = max(0.1, math.hypot(hy - gy, hz - gz))
+        srv["neck"].location = (0, (hy + gy) / 2, (hz + gz) / 2)
+        srv["neck"].scale = (1, 1, ln)
+        srv["neck"].rotation_euler = (math.atan2(-(hy - gy), hz - gz), 0, 0)
+        T = 150 - 45 * u1 - 15 * u2               # the arms' angle from straight down (180) toward out (90)
         for sx, ar in zip((-1, 1), srv["arms"]):
-            ar.rotation_euler = (math.radians(T - a), 0, sx * math.radians(8 + 4 * u2))
+            ar.rotation_euler = (math.radians(T - 180), 0, sx * math.radians(6 + 4 * u2))
     # lights: every change is a slow ramp
     h2 = float(_eased(_cues(tl, "h2"), "v", t, 0.0))
     dim = float(_eased(_cues(tl, "dim"), "v", t, 0.0))

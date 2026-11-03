@@ -348,12 +348,12 @@ CAL_FRAME = still([2.8, 1.0, 1.75], [-0.25, -0.5, 1.5], 30)
 ME_CLOSE = still([2.6, -1.0, 1.75], [0, 0, 1.5], 36)
 TWO = still([3.0, -0.45, 1.75], [0, -0.45, 1.5], 24)
 WIND = move([-0.5, -0.45, 1.75], [8, -0.45, 1.45], [-0.5, -0.45, 1.75], [8, -0.45, 1.45], 30)
-MIRROR = still([-0.3, -0.45, 1.75], [0.98, -0.35, 1.58], 45)
-MIRROR_CLOSE = still([-0.2, -0.35, 1.7], [0.98, -0.3, 1.58], 70)
+MIRROR = still([-0.3, -0.45, 1.7], [0.98, -0.02, 1.2], 40)
+MIRROR_CLOSE = still([-0.2, -0.3, 1.6], [0.98, 0.0, 1.2], 60)
 BACK_WALL_VIEW = lambda x0: still([x0, 9.6, 0.9], [-12, 12.9, 1.0], 26)
 
 # ---- 01 the rule
-shot(0, "S01 both windows: the real one with the lady near, the lit second hatch beyond with the sleeve and bag on its sill, pushing in", move([5.05, -6.5, 2.8], [5.05, 5.0, 1.2], [5.05, -4.5, 2.6], [5.05, 5.0, 1.3], 12.5, 15), hand=0)
+shot(0, "S01 close on both windows: hatch one with the lady, the lit second hatch beyond, pushing along the wall", move([-5.5, 3.1, 1.6], [8.0, 4.6, 1.6], [-3.6, 3.1, 1.6], [8.0, 4.6, 1.6], 30, 32), hand=0)
 shot("L02", "S02 pushing toward the second hatch", move([6.2, 0.0, 1.65], [10.1, 5.0, 1.6], [8.6, 1.4, 1.65], [10.1, 5.0, 1.6], 28, 36), hand=0)
 shot("L03", "S03 a car rolls past the second window", still([8.5, -0.6, 0.7], [10.5, 3.0, 1.1], 28))
 shot("L04", "S04 a van with a taped window", still([9.0, -0.4, 0.8], [11.0, 3.0, 1.2], 26))
@@ -426,19 +426,19 @@ shot("L46", "S68 two of us by the back wall", still([-34, 10.0, 0.9], [-20, 12.9
 shot("L46.2", "S69 two cracked headlights", still([-30, 10.6, 0.8], [-22.5, 12.3, 0.85], 40))
 # ---- 06 lap four
 shot("L47", "S70 four tickets", MIRROR, "cal")
-shot("L48", "S71 I turn in my seat", still([0.1, 0.1, 1.9], [0, 0, 1.5], 36), "me")
+shot("L48", "S71 I turn in my seat", still([1.2, -1.5, 1.9], [-0.2, 0.0, 1.55], 40), "me")
 shot("L49", "S72 over my shoulder, the back wall", still([0.5, 0.0, 1.75], [10, 1.8, 1.0], 30), "me")
 shot("L49.2", "S73 the three, tighter", still([0.5, 0.0, 1.75], [8, 1.8, 1.0], 50), "me")
 shot("L50", "S74 through the nearest copy", still([-21.0, 11.3, 3.2], [-17.6, 12.9, 1.4], 38))
 shot("L50.1", "S75 me scared", still([2.0, -1.2, 1.75], [0, 0, 1.5], 36), "me")
-shot("P02", "S76a dim, the hatch", still([6.0, 0.2, 2.3], [10.0, 4.0, 1.9], 24))
-shot("L51", "S76 out to its waist", still([6.0, 0.2, 2.3], [10.0, 4.0, 1.9], 24))
-shot("L52", "S77 its face a hand from Cal's", still([12.5, 2.0, 1.9], [10.3, 3.4, 1.9], 40))
-BOTH = lambda z0, z1: move([5.05, -6.5, 2.8], [5.05, 5.0, 1.2], [5.05, -6.5 + z1 * 2, 2.7], [5.05, 5.0, 1.2], 12.5, 14)
+shot("P02", "S76a dim, the hatch", still([8.6, -0.4, 1.9], [10.1, 4.8, 1.9], 26))
+shot("L51", "S76 out to its waist", move([6.3, -0.4, 2.15], [10.2, 4.0, 1.95], [7.6, 0.1, 2.1], [10.2, 3.7, 1.95], 30, 34), hand=0.004)
+shot("L52", "S77 its face a hand from Cal's", move([6.6, 0.4, 2.2], [10.2, 3.4, 1.9], [7.4, 0.9, 2.1], [10.2, 3.3, 1.9], 30, 34))
+BOTH = lambda z0, z1: move([5.05, -3.4, 1.9], [5.05, 5.0, 1.7], [5.05, -3.0 + z1 * 0.8, 1.9], [5.05, 5.0, 1.7], 12.3, 12.8)
 shot("L53", "S78 both hatches, same framing, one window (the lit one empty)", BOTH(16, 0.0), hand=0)
 shot("L54", "S79 the two windows, push", BOTH(16, 0.6), hand=0)
-shot("L54.2", "S80 the second window is the first one again", still([5.05, -6.5, 2.8], [5.05, 5.0, 1.2], 12.5), hand=0)
-shot("L55", "S81 down the back wall", move([22, 9.4, 1.1], [-5, 12.9, 1.0], [10, 9.4, 1.1], [-30, 12.9, 1.0], 22, 22), hand=0)
+shot("L54.2", "S80 the second window is the first one again", move([5.05, -3.4, 2.0], [5.05, 5.0, 1.7], [5.05, -2.9, 2.0], [5.05, 5.0, 1.7], 13.5, 14), hand=0)
+shot("L55", "S81 down the back wall, four copies in line", move([-2, 9.8, 1.1], [-24, 12.9, 1.0], [-8, 9.8, 1.1], [-30, 12.9, 1.0], 24, 24), hand=0)
 # ---- 07 the order
 for k in range(3):
     shot(f"L56+{round(0.5 * k, 2)}", f"S82 Cal's grin {k}", CAL_FRAME, "cal", hand=0)
@@ -462,7 +462,7 @@ shot("L67.1", "S98 me smiles", still([2.2, -1.2, 1.75], [0, 0, 1.5], 36), "me")
 shot("L68", "S99 the empty cup and ticket 42", still([-0.2, -0.9, 1.9], [1.12, -0.65, 1.24], 36), "cal")
 shot("L69", "S100 a new Friday, Cal waits", TWO, "cal")
 shot("L69.2", "S101 me at the grille", still([2.4, -1.2, 1.75], [0, 0, 1.5], 36), "me")
-shot("L70", "S102 the back wall, our three laps", still([0.5, 0.0, 1.75], [10, 1.8, 1.0], 30), "me")
+shot("L70", "S102 the back wall, our four old laps in line", move([-7.5, 9.8, 1.1], [-26, 12.9, 1.0], [-10.5, 9.8, 1.1], [-28, 12.9, 1.0], 24, 24), hand=0)
 shot("L71", "S103 the front one rolls up to the hatch", move([10.1, 0.2, 1.7], [10.1, 5.0, 1.62], [10.1, 0.2, 1.7], [10.1, 5.0, 1.62], 24, 32), hand=0)
 # keep captions legible: no shot is longer than a line's worth
 
@@ -514,10 +514,11 @@ def _at(at, dt):
     if at == 0:
         return round(dt, 2)
     m = re.match(r"^(L\d+)(?:([+-][\d.]+))?$", str(at))
-    return f"{m.group(1)}+{round(float(m.group(2) or 0) + dt, 2)}"
+    off = round(float(m.group(2) or 0) + dt, 2)
+    return f"{m.group(1)}{'+' if off >= 0 else '-'}{abs(off)}"       # "L35-0.2" plus 1.2 s is "L35+1.0"; never "L35+-0.1"
 
 
-SPLITS = {"S01 both": [(1.3, 1.2)], "S34 ": [(1.4, 1.2)], "S13 ": [(1.0, 1.3)], "S16 ": [(1.0, 1.3)], "S23 ": [(1.1, 1.3)], "S53 ": [(1.2, 1.25)],
+SPLITS = {"S01 close": [(1.3, 1.2)], "S34 ": [(1.4, 1.2)], "S13 ": [(1.0, 1.3)], "S16 ": [(1.0, 1.3)], "S23 ": [(1.1, 1.3)], "S53 ": [(1.2, 1.25)],
           "S54 ": [(1.0, 1.25)], "S67 ": [(1.0, 1.1)], "S81 ": [(1.0, 1.25)], "S88 ": [(1.0, 1.3)], "S102 ": [(1.1, 1.3)],
           "S103 ": [(1.3, 1.3), (2.5, 1.5)]}
 out = []
@@ -565,7 +566,7 @@ story = {
     "cues": cues,
     "fx": [],
     "music": {"root": 50, "mode": "mixolydian", "bpm": 100, "seed": 71, "sections": secs},
-    "sound": {"floor": "concrete", "steps_db": -24, "rev": 2,
+    "sound": {"floor": "concrete", "steps_db": -24, "rev": 3,
               "ambience": [{"kind": "hum", "from": 0, "to": "end", "lufs": -40},
                            {"kind": "traffic", "from": 0, "to": "end", "lufs": -38}],
               "sfx": sfx,
