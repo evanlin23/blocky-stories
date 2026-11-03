@@ -30,22 +30,22 @@
    ]
   },
   "L02": {
-   "text": "Not in Buh-town. Not once.",
+   "text": "Not in this town. Not once.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.621,
+   "dur": 1.672,
    "onset": 0.172,
-   "end": 1.414,
+   "end": 1.466,
    "chunks": [
     [
      0.172,
-     0.707
+     0.759
     ],
     [
-     0.759,
-     1.414
+     0.81,
+     1.466
     ]
    ]
   },
