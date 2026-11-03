@@ -120,6 +120,9 @@ def blender(job: dict, tag: str, workers: int = 1) -> float:
                                        stderr=subprocess.STDOUT, env=env), k))
     bad = [k for p, k in procs if p.wait() != 0]
     if bad:
+        log = Path(f"{w}/blender-{tag}-{bad[0]}.log")
+        if log.exists():   # print the tail, so a failure on Actions shows its cause in the job log (ep58, 2026-11-03)
+            print("".join(log.read_text(errors="replace").splitlines(keepends=True)[-40:]), file=sys.stderr)
         sys.exit(f"Blender failed, see {w}/blender-{tag}-{bad[0]}.log")
     return time.time() - t0
 
