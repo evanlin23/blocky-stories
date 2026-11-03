@@ -6,299 +6,131 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Only one person in this whole town knows my name.",
+   "text": "Everyone here shows a number. My brother Tam's says forty.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.483,
+   "dur": 2.69,
    "onset": 0.172,
-   "end": 2.293,
+   "end": 2.483,
    "chunks": [
     [
      0.172,
-     0.784
+     0.655
     ],
     [
-     0.784,
-     0.931
+     0.655,
+     1.207
     ],
     [
-     0.931,
-     1.439
+     1.276,
+     1.793
     ],
     [
-     1.439,
-     2.293
+     1.793,
+     2.483
     ]
    ]
   },
   "L02": {
-   "text": "The number over my head says one.",
+   "text": "Days since you last laughed.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
+   "dur": 1.534,
    "onset": 0.172,
-   "end": 1.552,
+   "end": 1.328,
    "chunks": [
     [
      0.172,
-     0.552
+     0.586
     ],
     [
-     0.552,
-     0.905
-    ],
-    [
-     0.905,
-     1.552
+     0.586,
+     1.328
     ]
    ]
   },
   "L03": {
-   "text": "At parties, every number in the room ticks up.",
+   "text": "Laugh once, and it rolls back to zero.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.155,
-   "onset": 0.155,
-   "end": 1.948,
+   "dur": 1.983,
+   "onset": 0.19,
+   "end": 1.776,
    "chunks": [
     [
-     0.155,
+     0.19,
      0.586
     ],
     [
-     0.638,
-     1.094
+     0.612,
+     0.966
     ],
     [
-     1.094,
-     1.362
-    ],
-    [
-     1.362,
-     1.948
+     0.966,
+     1.776
     ]
    ]
   },
   "L04": {
-   "text": "A woman steps off the morning train with a zero.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.241,
-   "onset": 0.172,
-   "end": 2.034,
-   "chunks": [
-    [
-     0.172,
-     0.638
-    ],
-    [
-     0.638,
-     1.069
-    ],
-    [
-     1.069,
-     1.406
-    ],
-    [
-     1.406,
-     2.034
-    ]
-   ]
-  },
-  "L05": {
-   "text": "A man says hello. She tells him her name, and it jumps to one.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.948,
-   "onset": 0.172,
-   "end": 2.759,
-   "chunks": [
-    [
-     0.172,
-     0.431
-    ],
-    [
-     0.431,
-     1.0
-    ],
-    [
-     1.112,
-     1.474
-    ],
-    [
-     1.474,
-     1.776
-    ],
-    [
-     1.801,
-     2.19
-    ],
-    [
-     2.19,
-     2.759
-    ]
-   ]
-  },
-  "L06": {
-   "text": "The mailman's number runs past both his ears.",
+   "text": "Even our grumpy mailman never gets past two.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 2.259,
-   "onset": 0.155,
-   "end": 2.069,
-   "chunks": [
-    [
-     0.155,
-     0.741
-    ],
-    [
-     0.741,
-     1.422
-    ],
-    [
-     1.422,
-     2.069
-    ]
-   ]
-  },
-  "L07": {
-   "text": "My neighbor Ossie hit five, and bought himself a whole cake.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.724,
    "onset": 0.172,
-   "end": 2.517,
+   "end": 2.052,
    "chunks": [
     [
      0.172,
-     0.69
+     0.414
     ],
     [
-     0.69,
-     1.224
+     0.414,
+     1.017
     ],
     [
-     1.293,
-     1.784
+     1.017,
+     1.328
     ],
     [
-     1.784,
-     2.517
+     1.328,
+     2.052
     ]
    ]
   },
-  "L08": {
-   "text": "Mine has said one for years.",
+  "L05": {
+   "text": "Tam used to be a zero. Then came finals.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.638,
-   "onset": 0.19,
-   "end": 1.448,
-   "chunks": [
-    [
-     0.19,
-     0.638
-    ],
-    [
-     0.638,
-     1.448
-    ]
-   ]
-  },
-  "L09": {
-   "text": "I figured the one was just me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.69,
+   "dur": 2.276,
    "onset": 0.172,
-   "end": 1.483,
+   "end": 2.086,
    "chunks": [
     [
      0.172,
-     0.578
+     0.492
     ],
     [
-     0.578,
-     0.828
+     0.492,
+     1.034
     ],
     [
-     0.828,
-     1.483
+     1.121,
+     2.086
     ]
    ]
   },
-  "L10": {
-   "text": "So I stopped looking up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.379,
-   "onset": 0.172,
-   "end": 1.172,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.603,
-     1.172
-    ]
-   ]
-  },
-  "L11": {
-   "text": "My little brother Tam lives with me. This year he went quiet.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.759,
-   "onset": 0.172,
-   "end": 2.569,
-   "chunks": [
-    [
-     0.172,
-     0.647
-    ],
-    [
-     0.647,
-     1.061
-    ],
-    [
-     1.061,
-     1.431
-    ],
-    [
-     1.517,
-     1.879
-    ],
-    [
-     1.879,
-     2.569
-    ]
-   ]
-  },
-  "L12": {
-   "text": "Over his head, twelve rolls down to nine.",
+  "L06": {
+   "text": "Six weeks of cramming in the old reading room.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -309,52 +141,52 @@
    "chunks": [
     [
      0.172,
-     0.638
+     0.509
     ],
     [
-     0.672,
-     1.31
+     0.509,
+     0.931
     ],
     [
-     1.31,
+     0.931,
+     1.224
+    ],
+    [
+     1.224,
      1.897
     ]
    ]
   },
-  "L13": {
-   "text": "Every afternoon he studies at the window table in the old reading room.",
+  "L07": {
+   "text": "Under that glass dome, nobody makes a sound.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.138,
+   "dur": 2.224,
    "onset": 0.172,
-   "end": 2.948,
+   "end": 2.017,
    "chunks": [
     [
      0.172,
-     0.888
+     0.431
     ],
     [
-     0.888,
-     1.371
+     0.431,
+     0.966
     ],
     [
-     1.371,
-     1.992
+     1.017,
+     1.406
     ],
     [
-     1.992,
-     2.241
-    ],
-    [
-     2.241,
-     2.948
+     1.406,
+     2.017
     ]
    ]
   },
-  "L14": {
-   "text": "A table for two, where we used to sit together.",
+  "L08": {
+   "text": "I laugh at everything. In here, I keep quiet.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -365,176 +197,48 @@
    "chunks": [
     [
      0.172,
-     0.483
+     0.5
     ],
     [
-     0.483,
-     0.897
+     0.5,
+     0.948
     ],
     [
-     0.966,
-     1.285
+     1.026,
+     1.241
     ],
     [
-     1.285,
+     1.267,
      2.069
     ]
    ]
   },
-  "L15": {
-   "text": "Now I sit at the far end, headphones on.",
+  "L09": {
+   "text": "Forty days. Not even at the cat video.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.017,
-   "onset": 0.172,
-   "end": 1.828,
-   "chunks": [
-    [
-     0.172,
-     0.474
-    ],
-    [
-     0.474,
-     0.586
-    ],
-    [
-     0.586,
-     0.966
-    ],
-    [
-     1.0,
-     1.828
-    ]
-   ]
-  },
-  "L16": {
-   "text": "Rain ticks on the glass dome.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.655,
+   "dur": 2.069,
    "onset": 0.19,
-   "end": 1.466,
+   "end": 1.862,
    "chunks": [
     [
      0.19,
-     0.647
+     0.724
     ],
     [
-     0.647,
-     1.466
+     0.776,
+     1.112
+    ],
+    [
+     1.112,
+     1.862
     ]
    ]
   },
-  "L17": {
-   "text": "Nine rolls to six. Nobody looks up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.121,
-   "onset": 0.19,
-   "end": 1.914,
-   "chunks": [
-    [
-     0.19,
-     0.586
-    ],
-    [
-     0.586,
-     1.017
-    ],
-    [
-     1.094,
-     1.914
-    ]
-   ]
-  },
-  "L18": {
-   "text": "A page turns. Nobody looks up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.793,
-   "onset": 0.172,
-   "end": 1.586,
-   "chunks": [
-    [
-     0.172,
-     0.741
-    ],
-    [
-     0.793,
-     1.586
-    ]
-   ]
-  },
-  "L19": {
-   "text": "His old friends are forgetting him, one name at a time.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.569,
-   "onset": 0.155,
-   "end": 2.379,
-   "chunks": [
-    [
-     0.155,
-     0.664
-    ],
-    [
-     0.664,
-     1.259
-    ],
-    [
-     1.337,
-     1.75
-    ],
-    [
-     1.75,
-     2.379
-    ]
-   ]
-  },
-  "L20": {
-   "text": "That's when I saw it, at the far table by the stacks.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.362,
-   "onset": 0.172,
-   "end": 2.172,
-   "chunks": [
-    [
-     0.172,
-     0.543
-    ],
-    [
-     0.543,
-     0.828
-    ],
-    [
-     0.854,
-     1.172
-    ],
-    [
-     1.172,
-     1.526
-    ],
-    [
-     1.526,
-     2.172
-    ]
-   ]
-  },
-  "L21": {
-   "text": "A person, like a photo negative.",
+  "L10": {
+   "text": "Then I saw a reader with no number.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -548,93 +252,237 @@
      0.552
     ],
     [
-     0.578,
-     1.086
+     0.552,
+     0.897
     ],
     [
-     1.086,
+     0.897,
      1.672
     ]
    ]
   },
-  "L22": {
-   "text": "A black face, drawn in thick white lines.",
+  "L11": {
+   "text": "Like a photo negative. Black face, white lines.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
+   "dur": 2.569,
    "onset": 0.172,
-   "end": 1.897,
+   "end": 2.362,
    "chunks": [
     [
      0.172,
      0.638
     ],
     [
-     0.672,
-     1.138
+     0.638,
+     1.052
     ],
     [
-     1.138,
-     1.897
+     1.121,
+     1.552
+    ],
+    [
+     1.586,
+     2.362
     ]
    ]
   },
-  "L23": {
-   "text": "White hair. Black eyes with little white pupils.",
+  "L12": {
+   "text": "And its mouth was a big grin, drawn upside down.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.155,
-   "onset": 0.172,
-   "end": 1.966,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.241,
    "chunks": [
     [
-     0.172,
-     0.534
+     0.155,
+     0.526
     ],
     [
-     0.586,
-     1.094
+     0.526,
+     0.638
     ],
     [
-     1.094,
-     1.966
+     0.638,
+     1.103
+    ],
+    [
+     1.172,
+     2.241
     ]
    ]
   },
-  "L24": {
-   "text": "A green sweater, the exact opposite of my red one.",
+  "L13": {
+   "text": "It sat at the far table, looking at Tam.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.707,
-   "onset": 0.172,
-   "end": 2.517,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.793,
    "chunks": [
     [
-     0.172,
-     0.862
+     0.155,
+     0.439
     ],
     [
-     0.931,
-     1.681
+     0.439,
+     0.948
     ],
     [
-     1.681,
-     1.862
-    ],
-    [
-     1.862,
-     2.517
+     0.983,
+     1.793
     ]
    ]
   },
-  "L25": {
-   "text": "And over its head, no number at all.",
+  "L14": {
+   "text": "Then a man two rows over snorted at his book.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.147
+    ],
+    [
+     1.147,
+     1.457
+    ],
+    [
+     1.457,
+     2.121
+    ]
+   ]
+  },
+  "L15": {
+   "text": "He swallowed it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.172,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ]
+   ]
+  },
+  "L16": {
+   "text": "I didn't blink. It was a table nearer, and bigger.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.741,
+     0.957
+    ],
+    [
+     0.957,
+     1.5
+    ],
+    [
+     1.526,
+     2.138
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Tam's pencil bounced off his nose. He didn't even blink.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.026
+    ],
+    [
+     1.026,
+     1.534
+    ],
+    [
+     1.603,
+     1.983
+    ],
+    [
+     1.983,
+     2.483
+    ]
+   ]
+  },
+  "L18": {
+   "text": "I nearly lost it. I bit my lip and held it in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.931
+    ],
+    [
+     1.0,
+     1.199
+    ],
+    [
+     1.199,
+     1.457
+    ],
+    [
+     1.457,
+     1.698
+    ],
+    [
+     1.698,
+     2.172
+    ]
+   ]
+  },
+  "L19": {
+   "text": "It jumped again. Right beside him.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -645,51 +493,163 @@
    "chunks": [
     [
      0.155,
-     0.406
+     0.707
     ],
     [
-     0.406,
-     0.776
-    ],
-    [
-     0.828,
-     1.129
-    ],
-    [
-     1.129,
+     0.776,
      1.655
     ]
    ]
   },
-  "L26": {
-   "text": "Its face was turned toward Tam.",
+  "L20": {
+   "text": "At five, the lamps dim on their timer.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.759,
+   "dur": 1.983,
    "onset": 0.155,
-   "end": 1.552,
+   "end": 1.776,
    "chunks": [
     [
      0.155,
-     0.603
+     0.534
     ],
     [
-     0.603,
-     1.552
+     0.56,
+     1.043
+    ],
+    [
+     1.043,
+     1.776
     ]
    ]
   },
-  "L27": {
-   "text": "That night Tam dozed off on the sofa.",
+  "L21": {
+   "text": "In the dark, only the numbers stayed lit.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.914,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     1.103
+    ],
+    [
+     1.103,
+     1.776
+    ]
+   ]
+  },
+  "L22": {
+   "text": "When the lamps came back up,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
    "onset": 0.155,
-   "end": 1.707,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.276
+    ]
+   ]
+  },
+  "L23": {
+   "text": "it was sitting across from Tam.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.5
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Leaning in. That upside-down grin a hand from his face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.19,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.707,
+     1.439
+    ],
+    [
+     1.439,
+     1.681
+    ],
+    [
+     1.681,
+     2.397
+    ]
+   ]
+  },
+  "L25": {
+   "text": "From inside it came muffled laughing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.172
+    ],
+    [
+     1.172,
+     1.776
+    ]
+   ]
+  },
+  "L26": {
+   "text": "It's every laugh swallowed in here, turned upside down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.155,
+   "end": 2.379,
    "chunks": [
     [
      0.155,
@@ -697,1115 +657,151 @@
     ],
     [
      0.638,
-     1.077
-    ],
-    [
-     1.077,
-     1.707
-    ]
-   ]
-  },
-  "L28": {
-   "text": "He mumbled something while I made tea. I didn't hear it over the kettle.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.034,
-   "onset": 0.155,
-   "end": 2.845,
-   "chunks": [
-    [
-     0.155,
-     0.862
-    ],
-    [
-     0.862,
-     1.086
-    ],
-    [
-     1.086,
-     1.621
-    ],
-    [
-     1.724,
-     2.078
-    ],
-    [
-     2.078,
-     2.268
-    ],
-    [
-     2.268,
-     2.845
-    ]
-   ]
-  },
-  "L29": {
-   "text": "Next afternoon, it was one table nearer.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.138,
-   "onset": 0.172,
-   "end": 1.948,
-   "chunks": [
-    [
-     0.172,
-     0.759
-    ],
-    [
-     0.81,
-     1.181
-    ],
-    [
-     1.181,
-     1.948
-    ]
-   ]
-  },
-  "L30": {
-   "text": "I never saw it walk. I never saw it sit.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.069,
-   "onset": 0.172,
-   "end": 1.879,
-   "chunks": [
-    [
-     0.172,
-     0.543
-    ],
-    [
-     0.543,
-     0.862
-    ],
-    [
-     0.931,
-     1.328
-    ],
-    [
-     1.328,
-     1.879
-    ]
-   ]
-  },
-  "L31": {
-   "text": "Tam's number rolled to four.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.172,
-   "end": 1.414,
-   "chunks": [
-    [
-     0.172,
-     0.828
-    ],
-    [
-     0.828,
-     1.414
-    ]
-   ]
-  },
-  "L32": {
-   "text": "I took one earbud out. It was so quiet I could hear the lamps hum.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.138,
-   "onset": 0.155,
-   "end": 2.948,
-   "chunks": [
-    [
-     0.155,
-     0.569
-    ],
-    [
-     0.569,
-     1.103
-    ],
-    [
-     1.172,
-     1.492
-    ],
-    [
-     1.492,
-     1.948
-    ],
-    [
-     1.948,
-     2.172
-    ],
-    [
-     2.172,
-     2.948
-    ]
-   ]
-  },
-  "L33": {
-   "text": "Third afternoon, it was at the table right beside his.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.586,
-   "onset": 0.172,
-   "end": 2.397,
-   "chunks": [
-    [
-     0.172,
-     0.81
-    ],
-    [
-     0.862,
-     1.077
-    ],
-    [
-     1.077,
-     1.621
-    ],
-    [
-     1.621,
-     2.397
-    ]
-   ]
-  },
-  "L34": {
-   "text": "Close enough to read his page.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.672,
-   "onset": 0.172,
-   "end": 1.466,
-   "chunks": [
-    [
-     0.172,
-     0.655
-    ],
-    [
-     0.655,
-     1.466
-    ]
-   ]
-  },
-  "L35": {
-   "text": "Its little white pupils never left his face.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.138,
-   "onset": 0.155,
-   "end": 1.948,
-   "chunks": [
-    [
-     0.155,
-     0.621
-    ],
-    [
-     0.621,
-     1.319
-    ],
-    [
-     1.319,
-     1.948
-    ]
-   ]
-  },
-  "L36": {
-   "text": "Tam kept writing. He was down to two.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.0,
-   "onset": 0.172,
-   "end": 1.776,
-   "chunks": [
-    [
-     0.172,
-     0.828
-    ],
-    [
-     0.879,
-     1.241
-    ],
-    [
-     1.241,
-     1.776
-    ]
-   ]
-  },
-  "L37": {
-   "text": "At five, the reading room lamps dim on their timer.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.379,
-   "onset": 0.155,
-   "end": 2.172,
-   "chunks": [
-    [
-     0.155,
-     0.534
-    ],
-    [
-     0.56,
-     0.983
-    ],
-    [
-     0.983,
-     1.492
-    ],
-    [
-     1.492,
-     2.172
-    ]
-   ]
-  },
-  "L38": {
-   "text": "Slowly, every lamp together, down to a faint brown glow.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.81,
-   "onset": 0.19,
-   "end": 2.621,
-   "chunks": [
-    [
-     0.19,
-     0.483
-    ],
-    [
-     0.517,
      1.224
     ],
     [
      1.293,
-     1.594
-    ],
-    [
-     1.594,
-     2.621
+     2.379
     ]
    ]
   },
-  "L39": {
-   "text": "In the dark, only the numbers were still lit.",
+  "L27": {
+   "text": "And it goes to whoever's holding in the most.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
-   "onset": 0.172,
-   "end": 1.914,
-   "chunks": [
-    [
-     0.172,
-     0.569
-    ],
-    [
-     0.603,
-     1.155
-    ],
-    [
-     1.155,
-     1.914
-    ]
-   ]
-  },
-  "L40": {
-   "text": "And across from Tam, in my old seat, sat a shape with none.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.724,
+   "dur": 2.017,
    "onset": 0.155,
-   "end": 2.534,
+   "end": 1.81,
    "chunks": [
     [
      0.155,
-     0.483
+     0.534
     ],
     [
-     0.483,
-     0.862
-    ],
-    [
-     0.888,
-     1.026
-    ],
-    [
-     1.026,
-     1.483
-    ],
-    [
-     1.552,
-     1.939
-    ],
-    [
-     1.939,
-     2.534
-    ]
-   ]
-  },
-  "L41": {
-   "text": "The lamps came back up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.448,
-   "onset": 0.172,
-   "end": 1.241,
-   "chunks": [
-    [
-     0.172,
-     0.69
-    ],
-    [
-     0.69,
-     1.241
-    ]
-   ]
-  },
-  "L42": {
-   "text": "It was sitting across from him, its black face a hand away from his.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.983,
-   "onset": 0.155,
-   "end": 2.793,
-   "chunks": [
-    [
-     0.155,
-     0.483
-    ],
-    [
-     0.483,
-     1.121
-    ],
-    [
-     1.19,
-     1.733
-    ],
-    [
-     1.733,
-     2.155
-    ],
-    [
-     2.155,
-     2.793
-    ]
-   ]
-  },
-  "L43": {
-   "text": "And over Tam's head, the number said one.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.103,
-   "onset": 0.155,
-   "end": 1.914,
-   "chunks": [
-    [
-     0.155,
-     0.448
-    ],
-    [
-     0.448,
+     0.534,
      0.948
     ],
     [
-     0.974,
-     1.276
+     0.948,
+     1.233
     ],
     [
-     1.276,
-     1.914
+     1.233,
+     1.81
     ]
    ]
   },
-  "L44": {
-   "text": "I thought that one was just himself.",
+  "L28": {
+   "text": "If it reaches you, you never laugh again.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.862,
+   "dur": 2.034,
    "onset": 0.155,
-   "end": 1.672,
+   "end": 1.845,
    "chunks": [
     [
      0.155,
-     0.431
+     0.31
     ],
     [
-     0.431,
-     0.81
+     0.31,
+     0.759
     ],
     [
      0.81,
-     1.672
-    ]
-   ]
-  },
-  "L45": {
-   "text": "Like I didn't count to him anymore.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.672,
-   "onset": 0.172,
-   "end": 1.483,
-   "chunks": [
-    [
-     0.172,
-     0.534
+     1.121
     ],
     [
-     0.534,
-     0.888
-    ],
-    [
-     0.888,
-     1.483
-    ]
-   ]
-  },
-  "L46": {
-   "text": "That thing had taken my place.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.172,
-   "end": 1.414,
-   "chunks": [
-    [
-     0.172,
-     0.534
-    ],
-    [
-     0.534,
-     1.414
-    ]
-   ]
-  },
-  "L47": {
-   "text": "But I was wrong. I looked up at my own number, for the first time in years.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.259,
-   "onset": 0.155,
-   "end": 3.069,
-   "chunks": [
-    [
-     0.155,
-     0.457
-    ],
-    [
-     0.457,
-     0.862
-    ],
-    [
-     0.948,
-     1.285
-    ],
-    [
-     1.285,
-     1.621
-    ],
-    [
-     1.621,
+     1.121,
      1.845
-    ],
-    [
-     1.879,
-     2.224
-    ],
-    [
-     2.224,
-     3.069
     ]
    ]
   },
-  "L48": {
-   "text": "one.",
+  "L29": {
+   "text": "Tam was holding in forty days.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 0.759,
+   "dur": 1.741,
    "onset": 0.172,
-   "end": 0.534,
-   "chunks": [
-    [
-     0.172,
-     0.534
-    ]
-   ]
-  },
-  "L49": {
-   "text": "And I thought about the woman off the train.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.966,
-   "onset": 0.155,
-   "end": 1.776,
-   "chunks": [
-    [
-     0.155,
-     0.509
-    ],
-    [
-     0.509,
-     0.966
-    ],
-    [
-     0.966,
-     1.776
-    ]
-   ]
-  },
-  "L50": {
-   "text": "She knew her own name, and she still had a zero.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.293,
-   "onset": 0.19,
-   "end": 2.086,
-   "chunks": [
-    [
-     0.19,
-     0.448
-    ],
-    [
-     0.448,
-     0.879
-    ],
-    [
-     0.931,
-     1.31
-    ],
-    [
-     1.31,
-     2.086
-    ]
-   ]
-  },
-  "L51": {
-   "text": "You don't count yourself.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.328,
-   "onset": 0.172,
-   "end": 1.138,
-   "chunks": [
-    [
-     0.172,
-     0.379
-    ],
-    [
-     0.379,
-     1.138
-    ]
-   ]
-  },
-  "L52": {
-   "text": "So who was my one?",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.362,
-   "onset": 0.172,
-   "end": 1.155,
-   "chunks": [
-    [
-     0.172,
-     0.552
-    ],
-    [
-     0.552,
-     1.155
-    ]
-   ]
-  },
-  "L53": {
-   "text": "Tam. He still said my name, in his sleep.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.172,
-   "end": 1.776,
+   "end": 1.552,
    "chunks": [
     [
      0.172,
      0.414
     ],
     [
-     0.439,
-     0.836
+     0.414,
+     0.768
     ],
     [
-     0.836,
-     1.121
-    ],
-    [
-     1.147,
-     1.776
+     0.768,
+     1.552
     ]
    ]
   },
-  "L54": {
-   "text": "And the one over his head was me.",
+  "L30": {
+   "text": "Its hand was halfway across the table.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.724,
+   "dur": 2.034,
    "onset": 0.155,
-   "end": 1.534,
+   "end": 1.845,
    "chunks": [
     [
      0.155,
-     0.448
-    ],
-    [
-     0.448,
-     0.931
-    ],
-    [
-     0.931,
-     1.534
-    ]
-   ]
-  },
-  "L55": {
-   "text": "I'd never left his number. So that chair was still mine.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.638,
-   "onset": 0.155,
-   "end": 2.448,
-   "chunks": [
-    [
-     0.155,
-     0.612
-    ],
-    [
-     0.612,
-     1.069
-    ],
-    [
-     1.164,
-     1.603
-    ],
-    [
-     1.603,
-     2.448
-    ]
-   ]
-  },
-  "L56": {
-   "text": "And you only have to hear a name once to know it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.069,
-   "onset": 0.155,
-   "end": 1.879,
-   "chunks": [
-    [
-     0.155,
-     0.5
-    ],
-    [
-     0.5,
-     0.819
-    ],
-    [
-     0.819,
-     1.276
-    ],
-    [
-     1.276,
-     1.879
-    ]
-   ]
-  },
-  "L57": {
-   "text": "So in a room where nobody speaks, I stood up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.103,
-   "onset": 0.172,
-   "end": 1.897,
-   "chunks": [
-    [
-     0.172,
-     0.379
-    ],
-    [
-     0.379,
      0.621
     ],
     [
      0.621,
-     1.19
+     1.224
     ],
     [
      1.224,
-     1.897
+     1.845
     ]
    ]
   },
-  "L58": {
-   "text": "I pulled my headphones off and said it, loud.",
+  "L31": {
+   "text": "But one laugh takes you back to zero.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
+   "dur": 1.879,
    "onset": 0.155,
-   "end": 1.879,
+   "end": 1.672,
    "chunks": [
     [
      0.155,
-     0.483
+     0.621
     ],
     [
-     0.483,
-     1.094
+     0.621,
+     1.052
     ],
     [
-     1.094,
-     1.328
-    ],
-    [
-     1.362,
-     1.879
+     1.052,
+     1.672
     ]
    ]
   },
-  "L59": {
-   "text": "\"This is Tam. And I'm Luke.\"",
+  "L32": {
+   "text": "So in the quietest room in town, I stood up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.19,
-   "end": 1.379,
-   "chunks": [
-    [
-     0.19,
-     0.69
-    ],
-    [
-     0.716,
-     1.379
-    ]
-   ]
-  },
-  "L60": {
-   "text": "Every reader in the room looked up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.672,
+   "dur": 2.155,
    "onset": 0.172,
-   "end": 1.466,
-   "chunks": [
-    [
-     0.172,
-     0.664
-    ],
-    [
-     0.664,
-     0.931
-    ],
-    [
-     0.931,
-     1.466
-    ]
-   ]
-  },
-  "L61": {
-   "text": "Over Tam's head, one rolled to two, then ten, then twenty.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.707,
-   "onset": 0.155,
-   "end": 2.517,
-   "chunks": [
-    [
-     0.155,
-     0.828
-    ],
-    [
-     0.897,
-     1.215
-    ],
-    [
-     1.215,
-     1.431
-    ],
-    [
-     1.457,
-     1.81
-    ],
-    [
-     1.837,
-     2.517
-    ]
-   ]
-  },
-  "L62": {
-   "text": "Over mine, one rolled to twenty as well.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.103,
-   "onset": 0.172,
-   "end": 1.914,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.638,
-     0.983
-    ],
-    [
-     0.983,
-     1.345
-    ],
-    [
-     1.345,
-     1.914
-    ]
-   ]
-  },
-  "L63": {
-   "text": "I walked to the window table.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.534,
-   "onset": 0.172,
-   "end": 1.345,
-   "chunks": [
-    [
-     0.172,
-     0.526
-    ],
-    [
-     0.526,
-     1.345
-    ]
-   ]
-  },
-  "L64": {
-   "text": "The chair across from Tam was empty.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.914,
-   "onset": 0.155,
-   "end": 1.724,
-   "chunks": [
-    [
-     0.155,
-     0.603
-    ],
-    [
-     0.603,
-     1.0
-    ],
-    [
-     1.0,
-     1.724
-    ]
-   ]
-  },
-  "L65": {
-   "text": "The seat was still warm from the lamp.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.724,
-   "onset": 0.155,
-   "end": 1.517,
-   "chunks": [
-    [
-     0.155,
-     0.483
-    ],
-    [
-     0.483,
-     0.897
-    ],
-    [
-     0.897,
-     1.517
-    ]
-   ]
-  },
-  "L66": {
-   "text": "I sat down in it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.259,
-   "onset": 0.172,
-   "end": 1.069,
-   "chunks": [
-    [
-     0.172,
-     0.655
-    ],
-    [
-     0.655,
-     1.069
-    ]
-   ]
-  },
-  "L67": {
-   "text": "A woman at the next table waved, and Tam waved back.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.655,
-   "onset": 0.172,
-   "end": 2.448,
-   "chunks": [
-    [
-     0.172,
-     0.457
-    ],
-    [
-     0.457,
-     0.707
-    ],
-    [
-     0.707,
-     1.345
-    ],
-    [
-     1.414,
-     1.707
-    ],
-    [
-     1.707,
-     2.448
-    ]
-   ]
-  },
-  "L68": {
-   "text": "A man dragged his chair over. Then two more.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.328,
-   "onset": 0.172,
-   "end": 2.121,
-   "chunks": [
-    [
-     0.172,
-     0.664
-    ],
-    [
-     0.664,
-     1.241
-    ],
-    [
-     1.31,
-     2.121
-    ]
-   ]
-  },
-  "L69": {
-   "text": "Tam looked at me like I'd lost my mind. Then he grinned.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.655,
-   "onset": 0.172,
-   "end": 2.448,
-   "chunks": [
-    [
-     0.172,
-     0.56
-    ],
-    [
-     0.56,
-     0.862
-    ],
-    [
-     0.862,
-     1.603
-    ],
-    [
-     1.69,
-     2.448
-    ]
-   ]
-  },
-  "L70": {
-   "text": "You don't count yourself. My one was always Tam.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.362,
-   "onset": 0.172,
-   "end": 2.155,
+   "end": 1.948,
    "chunks": [
     [
      0.172,
@@ -1813,39 +809,307 @@
     ],
     [
      0.362,
-     0.966
+     0.854
     ],
     [
-     1.034,
-     1.31
+     0.854,
+     1.224
     ],
     [
-     1.31,
-     2.155
+     1.259,
+     1.948
     ]
    ]
   },
-  "L71": {
-   "text": "And his last one was always me.",
+  "L33": {
+   "text": "And I said our dumbest old joke, out loud.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
+   "dur": 2.19,
    "onset": 0.155,
-   "end": 1.534,
+   "end": 1.983,
    "chunks": [
     [
      0.155,
-     0.578
+     0.457
     ],
     [
-     0.578,
-     0.784
+     0.457,
+     0.81
     ],
     [
-     0.784,
-     1.534
+     0.81,
+     1.259
+    ],
+    [
+     1.31,
+     1.983
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Why is the dome so quiet?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.69
+    ],
+    [
+     0.69,
+     1.345
+    ]
+   ]
+  },
+  "L35": {
+   "text": "Because if it laughed, it'd crack up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.759
+    ],
+    [
+     0.793,
+     1.569
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Tam snorted. Then he cracked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.707,
+     1.414
+    ]
+   ]
+  },
+  "L37": {
+   "text": "forty rolled to zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.19,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.19,
+     0.414
+    ],
+    [
+     0.414,
+     1.259
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Then the whole room lost it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.31,
+     0.707
+    ],
+    [
+     0.707,
+     1.328
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Every number rolled to zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.466
+    ]
+   ]
+  },
+  "L40": {
+   "text": "And the thing came apart.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.155,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     1.19
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Every swallowed laugh, let out at once, up the dome.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ],
+    [
+     0.966,
+     1.164
+    ],
+    [
+     1.164,
+     1.448
+    ],
+    [
+     1.474,
+     2.172
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Tam said it's still the worst joke in the world.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.716
+    ],
+    [
+     0.716,
+     1.215
+    ],
+    [
+     1.215,
+     1.845
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Next day, the dome was silent again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.905
+    ],
+    [
+     0.905,
+     1.672
+    ]
+   ]
+  },
+  "L44": {
+   "text": "And at the far table, something sat down with nothing over its head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.155,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.155,
+     0.284
+    ],
+    [
+     0.284,
+     0.914
+    ],
+    [
+     0.992,
+     1.647
+    ],
+    [
+     1.647,
+     2.0
+    ],
+    [
+     2.0,
+     2.741
     ]
    ]
   }

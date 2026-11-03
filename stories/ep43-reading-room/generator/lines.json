@@ -4,20 +4,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Only ONE person",
-    "Only one person"
+    "Everyone here",
+    "Everyone here"
    ],
    [
-    "in this",
-    "in this"
+    "shows a NUMBER.",
+    "shows a number."
    ],
    [
-    "whole town",
-    "whole town"
+    "My brother Tam's",
+    "My brother Tam's"
    ],
    [
-    "knows my NAME.",
-    "knows my name."
+    "says FORTY.",
+    "says forty."
    ]
   ]
  },
@@ -26,16 +26,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "The number over",
-    "The number over"
+    "Days since you",
+    "Days since you"
    ],
    [
-    "my head",
-    "my head"
-   ],
-   [
-    "says ONE.",
-    "says one."
+    "last LAUGHED.",
+    "last laughed."
    ]
   ]
  },
@@ -44,20 +40,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "At parties,",
-    "At parties,"
+    "Laugh ONCE,",
+    "Laugh once,"
    ],
    [
-    "every number in",
-    "every number in"
+    "and it rolls",
+    "and it rolls"
    ],
    [
-    "the room",
-    "the room"
-   ],
-   [
-    "ticks UP.",
-    "ticks up."
+    "back to ZERO.",
+    "back to zero."
    ]
   ]
  },
@@ -66,20 +58,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "A woman steps",
-    "A woman steps"
+    "Even our",
+    "Even our"
    ],
    [
-    "off the morning",
-    "off the morning"
+    "grumpy mailman",
+    "grumpy mailman"
    ],
    [
-    "train with",
-    "train with"
+    "never gets",
+    "never gets"
    ],
    [
-    "a ZERO.",
-    "a zero."
+    "past TWO.",
+    "past two."
    ]
   ]
  },
@@ -88,28 +80,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "A man",
-    "A man"
+    "Tam used to",
+    "Tam used to"
    ],
    [
-    "says hello.",
-    "says hello."
+    "be a zero.",
+    "be a zero."
    ],
    [
-    "She tells him",
-    "She tells him"
-   ],
-   [
-    "her name,",
-    "her name,"
-   ],
-   [
-    "and it jumps",
-    "and it jumps"
-   ],
-   [
-    "to ONE.",
-    "to one."
+    "Then came FINALS.",
+    "Then came finals."
    ]
   ]
  },
@@ -118,150 +98,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "The mailman's number",
-    "The mailman's number"
+    "Six weeks",
+    "Six weeks"
    ],
    [
-    "runs past both",
-    "runs past both"
+    "of cramming",
+    "of cramming"
    ],
    [
-    "his EARS.",
-    "his ears."
-   ]
-  ]
- },
- {
-  "id": "L07",
-  "who": "narrator",
-  "chunks": [
-   [
-    "My neighbor Ossie",
-    "My neighbor Ossie"
-   ],
-   [
-    "hit FIVE,",
-    "hit five,"
-   ],
-   [
-    "and bought himself",
-    "and bought himself"
-   ],
-   [
-    "a whole CAKE.",
-    "a whole cake."
-   ]
-  ]
- },
- {
-  "id": "L08",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mine has said",
-    "Mine has said"
-   ],
-   [
-    "ONE for YEARS.",
-    "one for years."
-   ]
-  ]
- },
- {
-  "id": "L09",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I figured",
-    "I figured"
-   ],
-   [
-    "the one was",
-    "the one was"
-   ],
-   [
-    "just ME.",
-    "just me."
-   ]
-  ]
- },
- {
-  "id": "L10",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So I stopped",
-    "So I stopped"
-   ],
-   [
-    "looking UP.",
-    "looking up."
-   ]
-  ]
- },
- {
-  "id": "L11",
-  "who": "narrator",
-  "chunks": [
-   [
-    "My little brother",
-    "My little brother"
-   ],
-   [
-    "Tam lives",
-    "Tam lives"
-   ],
-   [
-    "with me.",
-    "with me."
-   ],
-   [
-    "This year he",
-    "This year he"
-   ],
-   [
-    "went QUIET.",
-    "went quiet."
-   ]
-  ]
- },
- {
-  "id": "L12",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Over his head,",
-    "Over his head,"
-   ],
-   [
-    "twelve rolls down",
-    "twelve rolls down"
-   ],
-   [
-    "to NINE.",
-    "to nine."
-   ]
-  ]
- },
- {
-  "id": "L13",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every afternoon he",
-    "Every afternoon he"
-   ],
-   [
-    "studies at the",
-    "studies at the"
-   ],
-   [
-    "window table in",
-    "window table in"
-   ],
-   [
-    "the old",
-    "the old"
+    "in the old",
+    "in the old"
    ],
    [
     "reading ROOM.",
@@ -270,24 +116,166 @@
   ]
  },
  {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Under that",
+    "Under that"
+   ],
+   [
+    "glass DOME,",
+    "glass dome,"
+   ],
+   [
+    "nobody makes",
+    "nobody makes"
+   ],
+   [
+    "a SOUND.",
+    "a sound."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I laugh at",
+    "I laugh at"
+   ],
+   [
+    "EVERYTHING.",
+    "everything."
+   ],
+   [
+    "In here,",
+    "In here,"
+   ],
+   [
+    "I keep QUIET.",
+    "I keep quiet."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Forty DAYS.",
+    "Forty days."
+   ],
+   [
+    "Not even at",
+    "Not even at"
+   ],
+   [
+    "the CAT video.",
+    "the cat video."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then I saw",
+    "Then I saw"
+   ],
+   [
+    "a reader",
+    "a reader"
+   ],
+   [
+    "with no NUMBER.",
+    "with no number."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Like a photo",
+    "Like a photo"
+   ],
+   [
+    "NEGATIVE.",
+    "negative."
+   ],
+   [
+    "Black face,",
+    "Black face,"
+   ],
+   [
+    "white LINES.",
+    "white lines."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And its mouth",
+    "And its mouth"
+   ],
+   [
+    "was a",
+    "was a"
+   ],
+   [
+    "big GRIN,",
+    "big grin,"
+   ],
+   [
+    "drawn upside DOWN.",
+    "drawn upside down."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It sat at",
+    "It sat at"
+   ],
+   [
+    "the far table,",
+    "the far table,"
+   ],
+   [
+    "looking at TAM.",
+    "looking at Tam."
+   ]
+  ]
+ },
+ {
   "id": "L14",
   "who": "narrator",
   "chunks": [
    [
-    "A table",
-    "A table"
+    "Then a man",
+    "Then a man"
    ],
    [
-    "for TWO,",
-    "for two,"
+    "two rows over",
+    "two rows over"
    ],
    [
-    "where we used",
-    "where we used"
+    "SNORTED",
+    "snorted"
    ],
    [
-    "to sit together.",
-    "to sit together."
+    "at his book.",
+    "at his book."
    ]
   ]
  },
@@ -296,20 +284,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Now I sit",
-    "Now I sit"
-   ],
-   [
-    "at the",
-    "at the"
-   ],
-   [
-    "far end,",
-    "far end,"
-   ],
-   [
-    "headphones ON.",
-    "headphones on."
+    "He SWALLOWED it.",
+    "He swallowed it."
    ]
   ]
  },
@@ -318,12 +294,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Rain ticks on",
-    "Rain ticks on"
+    "I didn't blink.",
+    "I didn't blink."
    ],
    [
-    "the glass DOME.",
-    "the glass dome."
+    "It was a",
+    "It was a"
+   ],
+   [
+    "table NEARER,",
+    "table nearer,"
+   ],
+   [
+    "and BIGGER.",
+    "and bigger."
    ]
   ]
  },
@@ -332,16 +316,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Nine rolls",
-    "Nine rolls"
+    "Tam's pencil",
+    "Tam's pencil"
    ],
    [
-    "to SIX.",
-    "to six."
+    "bounced off",
+    "bounced off"
    ],
    [
-    "Nobody looks UP.",
-    "Nobody looks up."
+    "his NOSE.",
+    "his nose."
+   ],
+   [
+    "He didn't even",
+    "He didn't even"
+   ],
+   [
+    "BLINK.",
+    "blink."
    ]
   ]
  },
@@ -350,12 +342,28 @@
   "who": "narrator",
   "chunks": [
    [
-    "A page turns.",
-    "A page turns."
+    "I nearly",
+    "I nearly"
    ],
    [
-    "Nobody looks UP.",
-    "Nobody looks up."
+    "lost it.",
+    "lost it."
+   ],
+   [
+    "I bit",
+    "I bit"
+   ],
+   [
+    "my lip",
+    "my lip"
+   ],
+   [
+    "and held",
+    "and held"
+   ],
+   [
+    "it IN.",
+    "it in."
    ]
   ]
  },
@@ -364,20 +372,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "His old friends",
-    "His old friends"
+    "It jumped AGAIN.",
+    "It jumped again."
    ],
    [
-    "are forgetting him,",
-    "are forgetting him,"
-   ],
-   [
-    "one name at",
-    "one name at"
-   ],
-   [
-    "a TIME.",
-    "a time."
+    "Right BESIDE him.",
+    "Right beside him."
    ]
   ]
  },
@@ -386,389 +386,21 @@
   "who": "narrator",
   "chunks": [
    [
-    "That's when I",
-    "That's when I"
+    "At five,",
+    "At five,"
    ],
    [
-    "saw it,",
-    "saw it,"
+    "the lamps dim",
+    "the lamps dim"
    ],
    [
-    "at the far",
-    "at the far"
-   ],
-   [
-    "table by",
-    "table by"
-   ],
-   [
-    "the STACKS.",
-    "the stacks."
+    "on their TIMER.",
+    "on their timer."
    ]
   ]
  },
  {
   "id": "L21",
-  "who": "narrator",
-  "chunks": [
-   [
-    "A person,",
-    "A person,"
-   ],
-   [
-    "like a photo",
-    "like a photo"
-   ],
-   [
-    "NEGATIVE.",
-    "negative."
-   ]
-  ]
- },
- {
-  "id": "L22",
-  "who": "narrator",
-  "chunks": [
-   [
-    "A black face,",
-    "A black face,"
-   ],
-   [
-    "drawn in thick",
-    "drawn in thick"
-   ],
-   [
-    "WHITE lines.",
-    "white lines."
-   ]
-  ]
- },
- {
-  "id": "L23",
-  "who": "narrator",
-  "chunks": [
-   [
-    "White hair.",
-    "White hair."
-   ],
-   [
-    "Black eyes with",
-    "Black eyes with"
-   ],
-   [
-    "little white PUPILS.",
-    "little white pupils."
-   ]
-  ]
- },
- {
-  "id": "L24",
-  "who": "narrator",
-  "chunks": [
-   [
-    "A green sweater,",
-    "A green sweater,"
-   ],
-   [
-    "the exact OPPOSITE",
-    "the exact opposite"
-   ],
-   [
-    "of my",
-    "of my"
-   ],
-   [
-    "red one.",
-    "red one."
-   ]
-  ]
- },
- {
-  "id": "L25",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And over",
-    "And over"
-   ],
-   [
-    "its head,",
-    "its head,"
-   ],
-   [
-    "no number",
-    "no number"
-   ],
-   [
-    "at ALL.",
-    "at all."
-   ]
-  ]
- },
- {
-  "id": "L26",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Its face was",
-    "Its face was"
-   ],
-   [
-    "turned toward TAM.",
-    "turned toward Tam."
-   ]
-  ]
- },
- {
-  "id": "L27",
-  "who": "narrator",
-  "chunks": [
-   [
-    "That night Tam",
-    "That night Tam"
-   ],
-   [
-    "dozed off on",
-    "dozed off on"
-   ],
-   [
-    "the SOFA.",
-    "the sofa."
-   ]
-  ]
- },
- {
-  "id": "L28",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He mumbled something",
-    "He mumbled something"
-   ],
-   [
-    "while I",
-    "while I"
-   ],
-   [
-    "made tea.",
-    "made tea."
-   ],
-   [
-    "I didn't hear",
-    "I didn't hear"
-   ],
-   [
-    "it over",
-    "it over"
-   ],
-   [
-    "the KETTLE.",
-    "the kettle."
-   ]
-  ]
- },
- {
-  "id": "L29",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Next afternoon,",
-    "Next afternoon,"
-   ],
-   [
-    "it was one",
-    "it was one"
-   ],
-   [
-    "table NEARER.",
-    "table nearer."
-   ]
-  ]
- },
- {
-  "id": "L30",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I never saw",
-    "I never saw"
-   ],
-   [
-    "it walk.",
-    "it walk."
-   ],
-   [
-    "I never saw",
-    "I never saw"
-   ],
-   [
-    "it SIT.",
-    "it sit."
-   ]
-  ]
- },
- {
-  "id": "L31",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Tam's number rolled",
-    "Tam's number rolled"
-   ],
-   [
-    "to FOUR.",
-    "to four."
-   ]
-  ]
- },
- {
-  "id": "L32",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I took one",
-    "I took one"
-   ],
-   [
-    "earbud out.",
-    "earbud out."
-   ],
-   [
-    "It was so",
-    "It was so"
-   ],
-   [
-    "quiet I could",
-    "quiet I could"
-   ],
-   [
-    "hear the",
-    "hear the"
-   ],
-   [
-    "LAMPS hum.",
-    "lamps hum."
-   ]
-  ]
- },
- {
-  "id": "L33",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Third afternoon,",
-    "Third afternoon,"
-   ],
-   [
-    "it was at",
-    "it was at"
-   ],
-   [
-    "the table right",
-    "the table right"
-   ],
-   [
-    "BESIDE his.",
-    "beside his."
-   ]
-  ]
- },
- {
-  "id": "L34",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Close enough to",
-    "Close enough to"
-   ],
-   [
-    "read his PAGE.",
-    "read his page."
-   ]
-  ]
- },
- {
-  "id": "L35",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Its little white",
-    "Its little white"
-   ],
-   [
-    "pupils never left",
-    "pupils never left"
-   ],
-   [
-    "his FACE.",
-    "his face."
-   ]
-  ]
- },
- {
-  "id": "L36",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Tam kept writing.",
-    "Tam kept writing."
-   ],
-   [
-    "He was down",
-    "He was down"
-   ],
-   [
-    "to TWO.",
-    "to two."
-   ]
-  ]
- },
- {
-  "id": "L37",
-  "who": "narrator",
-  "chunks": [
-   [
-    "At five,",
-    "At five,"
-   ],
-   [
-    "the reading room",
-    "the reading room"
-   ],
-   [
-    "lamps dim on",
-    "lamps dim on"
-   ],
-   [
-    "their TIMER.",
-    "their timer."
-   ]
-  ]
- },
- {
-  "id": "L38",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Slowly,",
-    "Slowly,"
-   ],
-   [
-    "every lamp together,",
-    "every lamp together,"
-   ],
-   [
-    "down to a",
-    "down to a"
-   ],
-   [
-    "faint brown GLOW.",
-    "faint brown glow."
-   ]
-  ]
- },
- {
-  "id": "L39",
   "who": "narrator",
   "chunks": [
    [
@@ -780,364 +412,210 @@
     "only the numbers"
    ],
    [
-    "were still LIT.",
-    "were still lit."
+    "stayed LIT.",
+    "stayed lit."
    ]
   ]
  },
  {
-  "id": "L40",
+  "id": "L22",
   "who": "narrator",
   "chunks": [
    [
-    "And across",
-    "And across"
+    "When the lamps",
+    "When the lamps"
    ],
    [
-    "from Tam,",
-    "from Tam,"
-   ],
-   [
-    "in my",
-    "in my"
-   ],
-   [
-    "old seat,",
-    "old seat,"
-   ],
-   [
-    "sat a shape",
-    "sat a shape"
-   ],
-   [
-    "with NONE.",
-    "with none."
+    "came back UP,",
+    "came back up,"
    ]
   ]
  },
  {
-  "id": "L41",
+  "id": "L23",
   "who": "narrator",
   "chunks": [
    [
-    "The lamps came",
-    "The lamps came"
+    "it was sitting",
+    "it was sitting"
    ],
    [
-    "back UP.",
-    "back up."
+    "ACROSS from Tam.",
+    "across from Tam."
    ]
   ]
  },
  {
-  "id": "L42",
+  "id": "L24",
   "who": "narrator",
   "chunks": [
    [
-    "It was sitting",
-    "It was sitting"
+    "Leaning IN.",
+    "Leaning in."
    ],
    [
-    "across from him,",
-    "across from him,"
+    "That upside-down grin",
+    "That upside-down grin"
    ],
    [
-    "its black face",
-    "its black face"
+    "a hand",
+    "a hand"
    ],
    [
-    "a hand away",
-    "a hand away"
-   ],
-   [
-    "from HIS.",
-    "from his."
+    "from his FACE.",
+    "from his face."
    ]
   ]
  },
  {
-  "id": "L43",
+  "id": "L25",
   "who": "narrator",
   "chunks": [
    [
-    "And over",
-    "And over"
+    "From inside it",
+    "From inside it"
    ],
    [
-    "Tam's head,",
-    "Tam's head,"
+    "came muffled",
+    "came muffled"
    ],
    [
-    "the number",
-    "the number"
-   ],
-   [
-    "said ONE.",
-    "said one."
+    "LAUGHING.",
+    "laughing."
    ]
   ]
  },
  {
-  "id": "L44",
+  "id": "L26",
   "who": "narrator",
   "chunks": [
    [
-    "I thought",
-    "I thought"
+    "It's every laugh",
+    "It's every laugh"
    ],
    [
-    "that one was",
-    "that one was"
+    "swallowed in here,",
+    "swallowed in here,"
    ],
    [
-    "just HIMSELF.",
-    "just himself."
+    "turned upside DOWN.",
+    "turned upside down."
    ]
   ]
  },
  {
-  "id": "L45",
+  "id": "L27",
   "who": "narrator",
   "chunks": [
    [
-    "Like I didn't",
-    "Like I didn't"
+    "And it goes",
+    "And it goes"
    ],
    [
-    "count to him",
-    "count to him"
+    "to whoever's",
+    "to whoever's"
    ],
    [
-    "ANYMORE.",
-    "anymore."
+    "holding in",
+    "holding in"
+   ],
+   [
+    "the MOST.",
+    "the most."
    ]
   ]
  },
  {
-  "id": "L46",
+  "id": "L28",
   "who": "narrator",
   "chunks": [
    [
-    "That thing had",
-    "That thing had"
+    "If it",
+    "If it"
    ],
    [
-    "taken my PLACE.",
-    "taken my place."
+    "reaches you,",
+    "reaches you,"
+   ],
+   [
+    "you never",
+    "you never"
+   ],
+   [
+    "laugh AGAIN.",
+    "laugh again."
    ]
   ]
  },
  {
-  "id": "L47",
+  "id": "L29",
   "who": "narrator",
   "chunks": [
    [
-    "But I was",
-    "But I was"
+    "Tam was",
+    "Tam was"
    ],
    [
-    "WRONG.",
-    "wrong."
+    "holding in",
+    "holding in"
    ],
    [
-    "I looked up",
-    "I looked up"
-   ],
-   [
-    "at my own",
-    "at my own"
-   ],
-   [
-    "number,",
-    "number,"
-   ],
-   [
-    "for the first",
-    "for the first"
-   ],
-   [
-    "time in YEARS.",
-    "time in years."
+    "forty DAYS.",
+    "forty days."
    ]
   ]
  },
  {
-  "id": "L48",
+  "id": "L30",
   "who": "narrator",
   "chunks": [
    [
-    "ONE.",
-    "one."
+    "Its hand was",
+    "Its hand was"
+   ],
+   [
+    "halfway across",
+    "halfway across"
+   ],
+   [
+    "the TABLE.",
+    "the table."
    ]
   ]
  },
  {
-  "id": "L49",
+  "id": "L31",
   "who": "narrator",
   "chunks": [
    [
-    "And I thought",
-    "And I thought"
+    "But one laugh",
+    "But one laugh"
    ],
    [
-    "about the woman",
-    "about the woman"
+    "takes you back",
+    "takes you back"
    ],
    [
-    "off the TRAIN.",
-    "off the train."
+    "to ZERO.",
+    "to zero."
    ]
   ]
  },
  {
-  "id": "L50",
+  "id": "L32",
   "who": "narrator",
   "chunks": [
    [
-    "She knew her",
-    "She knew her"
+    "So in the",
+    "So in the"
    ],
    [
-    "own name,",
-    "own name,"
+    "quietest room",
+    "quietest room"
    ],
    [
-    "and she still",
-    "and she still"
-   ],
-   [
-    "had a ZERO.",
-    "had a zero."
-   ]
-  ]
- },
- {
-  "id": "L51",
-  "who": "narrator",
-  "chunks": [
-   [
-    "You don't",
-    "You don't"
-   ],
-   [
-    "count YOURSELF.",
-    "count yourself."
-   ]
-  ]
- },
- {
-  "id": "L52",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So who was",
-    "So who was"
-   ],
-   [
-    "my ONE?",
-    "my one?"
-   ]
-  ]
- },
- {
-  "id": "L53",
-  "who": "narrator",
-  "chunks": [
-   [
-    "TAM.",
-    "Tam."
-   ],
-   [
-    "He still said",
-    "He still said"
-   ],
-   [
-    "my name,",
-    "my name,"
-   ],
-   [
-    "in his SLEEP.",
-    "in his sleep."
-   ]
-  ]
- },
- {
-  "id": "L54",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And the one",
-    "And the one"
-   ],
-   [
-    "over his head",
-    "over his head"
-   ],
-   [
-    "was ME.",
-    "was me."
-   ]
-  ]
- },
- {
-  "id": "L55",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I'd never left",
-    "I'd never left"
-   ],
-   [
-    "his number.",
-    "his number."
-   ],
-   [
-    "So that chair",
-    "So that chair"
-   ],
-   [
-    "was still MINE.",
-    "was still mine."
-   ]
-  ]
- },
- {
-  "id": "L56",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And you only",
-    "And you only"
-   ],
-   [
-    "have to hear",
-    "have to hear"
-   ],
-   [
-    "a name ONCE",
-    "a name once"
-   ],
-   [
-    "to know it.",
-    "to know it."
-   ]
-  ]
- },
- {
-  "id": "L57",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So in a",
-    "So in a"
-   ],
-   [
-    "room where",
-    "room where"
-   ],
-   [
-    "nobody speaks,",
-    "nobody speaks,"
+    "in town,",
+    "in town,"
    ],
    [
     "I stood UP.",
@@ -1146,274 +624,222 @@
   ]
  },
  {
-  "id": "L58",
+  "id": "L33",
   "who": "narrator",
   "chunks": [
    [
-    "I pulled my",
-    "I pulled my"
+    "And I said",
+    "And I said"
    ],
    [
-    "headphones off and",
-    "headphones off and"
+    "our dumbest",
+    "our dumbest"
    ],
    [
-    "said it,",
-    "said it,"
+    "old joke,",
+    "old joke,"
    ],
    [
-    "LOUD.",
-    "loud."
+    "out LOUD.",
+    "out loud."
    ]
   ]
  },
  {
-  "id": "L59",
+  "id": "L34",
   "who": "narrator",
   "chunks": [
    [
-    "\"This is TAM.",
-    "\"This is Tam."
+    "\"Why is",
+    "Why is"
    ],
    [
-    "And I'm LUKE.\"",
-    "And I'm Luke.\""
+    "the dome",
+    "the dome"
+   ],
+   [
+    "so QUIET?",
+    "so quiet?"
    ]
   ]
  },
  {
-  "id": "L60",
+  "id": "L35",
   "who": "narrator",
   "chunks": [
    [
-    "Every reader in",
-    "Every reader in"
+    "Because if",
+    "Because if"
    ],
    [
-    "the room",
-    "the room"
+    "it laughed,",
+    "it laughed,"
    ],
    [
-    "looked UP.",
-    "looked up."
+    "it'd CRACK up.\"",
+    "it'd crack up."
    ]
   ]
  },
  {
-  "id": "L61",
+  "id": "L36",
   "who": "narrator",
   "chunks": [
    [
-    "Over Tam's head,",
-    "Over Tam's head,"
+    "Tam SNORTED.",
+    "Tam snorted."
    ],
    [
-    "one rolled",
-    "one rolled"
-   ],
-   [
-    "to TWO,",
-    "to two,"
-   ],
-   [
-    "then TEN,",
-    "then ten,"
-   ],
-   [
-    "then TWENTY.",
-    "then twenty."
+    "Then he CRACKED.",
+    "Then he cracked."
    ]
   ]
  },
  {
-  "id": "L62",
+  "id": "L37",
   "who": "narrator",
   "chunks": [
    [
-    "Over mine,",
-    "Over mine,"
+    "FORTY",
+    "forty"
    ],
    [
-    "ONE rolled",
-    "one rolled"
-   ],
-   [
-    "to TWENTY",
-    "to twenty"
-   ],
-   [
-    "as well.",
-    "as well."
+    "rolled to ZERO.",
+    "rolled to zero."
    ]
   ]
  },
  {
-  "id": "L63",
+  "id": "L38",
   "who": "narrator",
   "chunks": [
    [
-    "I walked to",
-    "I walked to"
+    "Then the",
+    "Then the"
    ],
    [
-    "the window table.",
-    "the window table."
+    "whole room",
+    "whole room"
+   ],
+   [
+    "LOST it.",
+    "lost it."
    ]
   ]
  },
  {
-  "id": "L64",
+  "id": "L39",
   "who": "narrator",
   "chunks": [
    [
-    "The chair across",
-    "The chair across"
+    "Every number",
+    "Every number"
    ],
    [
-    "from Tam",
-    "from Tam"
-   ],
-   [
-    "was EMPTY.",
-    "was empty."
+    "rolled to ZERO.",
+    "rolled to zero."
    ]
   ]
  },
  {
-  "id": "L65",
+  "id": "L40",
   "who": "narrator",
   "chunks": [
    [
-    "The seat was",
-    "The seat was"
+    "And the thing",
+    "And the thing"
    ],
    [
-    "still warm",
-    "still warm"
-   ],
-   [
-    "from the LAMP.",
-    "from the lamp."
+    "came APART.",
+    "came apart."
    ]
   ]
  },
  {
-  "id": "L66",
+  "id": "L41",
   "who": "narrator",
   "chunks": [
    [
-    "I sat down",
-    "I sat down"
+    "Every swallowed laugh,",
+    "Every swallowed laugh,"
    ],
    [
-    "in it.",
-    "in it."
+    "let out",
+    "let out"
+   ],
+   [
+    "at ONCE,",
+    "at once,"
+   ],
+   [
+    "up the DOME.",
+    "up the dome."
    ]
   ]
  },
  {
-  "id": "L67",
+  "id": "L42",
   "who": "narrator",
   "chunks": [
    [
-    "A woman at",
-    "A woman at"
+    "Tam said",
+    "Tam said"
    ],
    [
-    "the next",
-    "the next"
+    "it's still",
+    "it's still"
    ],
    [
-    "table WAVED,",
-    "table waved,"
+    "the worst joke",
+    "the worst joke"
    ],
    [
-    "and Tam",
-    "and Tam"
-   ],
-   [
-    "waved BACK.",
-    "waved back."
+    "in the WORLD.",
+    "in the world."
    ]
   ]
  },
  {
-  "id": "L68",
+  "id": "L43",
   "who": "narrator",
   "chunks": [
    [
-    "A man dragged",
-    "A man dragged"
+    "Next day,",
+    "Next day,"
    ],
    [
-    "his chair over.",
-    "his chair over."
+    "the dome was",
+    "the dome was"
    ],
    [
-    "Then two MORE.",
-    "Then two more."
+    "silent AGAIN.",
+    "silent again."
    ]
   ]
  },
  {
-  "id": "L69",
+  "id": "L44",
   "who": "narrator",
   "chunks": [
    [
-    "Tam looked at",
-    "Tam looked at"
+    "And at",
+    "And at"
    ],
    [
-    "me like I'd",
-    "me like I'd"
+    "the far table,",
+    "the far table,"
    ],
    [
-    "lost my MIND.",
-    "lost my mind."
+    "something sat down",
+    "something sat down"
    ],
    [
-    "Then he GRINNED.",
-    "Then he grinned."
-   ]
-  ]
- },
- {
-  "id": "L70",
-  "who": "narrator",
-  "chunks": [
-   [
-    "You don't",
-    "You don't"
+    "with nothing",
+    "with nothing"
    ],
    [
-    "count yourself.",
-    "count yourself."
-   ],
-   [
-    "My ONE was",
-    "My one was"
-   ],
-   [
-    "always TAM.",
-    "always Tam."
-   ]
-  ]
- },
- {
-  "id": "L71",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And his last",
-    "And his last"
-   ],
-   [
-    "ONE was",
-    "one was"
-   ],
-   [
-    "always ME.",
-    "always me."
+    "over its HEAD.",
+    "over its head."
    ]
   ]
  }

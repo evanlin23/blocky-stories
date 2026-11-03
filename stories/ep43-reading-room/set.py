@@ -1,19 +1,16 @@
-"""The Reading Room (ep43): a town where the glowing number over your head is how many people know your name, a round
-domed reading room, and the Negative (a person printed in reverse, with no number) that sits one table nearer to Tam.
+"""Days Since You Last LAUGHED (ep43, the reading room): a town where the glowing number over your head is the days since
+you last laughed, a round domed reading room, and the Negative (a person printed in reverse, no number, an upside-down grin).
 
-Built from kit.py's parts. Every scene has its own patch of the Blender world (story["scenes"] holds each origin), and
-animate() shows only the current shot's scene, with only the characters standing in it:
-  room (0,0)     the round reading room, radius 8.6: the arched window in the west wall (x = -8.5), the stacks along the
-                 east wall, glass dome of plain square panes, tables W (the window table for two), B, C, D, N, P
-  steps (200,0)  sunny library steps          party (300,0)  a living room        station (400,0)  a platform
-  door (500,0)   the postman's doorstep       kitchen (600,0) Ossie's table        street (700,0)   a wet street
-  flat (800,0)   our small flat
+Three scenes, each in its own patch of the Blender world (story["scenes"]); animate() shows only the current shot's scene:
+  room (0,0)    the round reading room, radius 8.6: the arched window in the west wall (x = -8.5), the stacks along the
+                east wall, a glass dome of plain square panes, tables W (the window table, Tam and me), M, B, C, D, N, P
+  door (500,0)  the mailman's doorstep     street (700,0)  a sunny street
 THE CREATURE is the Negative ("neg" in the cast): a normal R6 person printed in reverse (black skin, white face strokes,
-white hair, library-green jumper, no number). It is one model, posed by the acting keys.
+white hair, library-green jumper, no number). Its mouth is a story-local decal (grin_image, curved_decal) bent onto the
+head, because its face spec says "mouth": "none". Its size is the negscale cue (1.00, 1.10, 1.20), changed only on a cut.
 
-Cues read here: num {who, v, snap?} (the number over a head; a change rolls in 0.4 s), warm {who}, phones {mode},
-lamps {to, dur} (the closing timer), dome {to, dur}, dead {tables}, oldchair {d}, page {dur}, steam {on},
-extra_chairs {on}. Story keys: scene_of, scenes, numbers, room, night_shots, steam_shots.
+Cues read here: num {who, v, snap?} (the number over a head; a change rolls in 0.4 s), lamps {to, dur} (the closing
+timer), dome {to, dur}, dead {tables}, page {dur}, negscale {v}, phone {pos, yaw}, pencil {} (Tam's pencil falls).
 Acting keys read here (acting.py ignores them): "sit": true bends both legs forward; "bend": torso degrees forward.
 Nothing in the film carries a letter or a word: the only symbols are the glowing numbers.
 """
@@ -38,9 +35,7 @@ NUM_O = 0.08 * NUM_H          # the dark outline: 8% of the glyph's height
 NUM_LIFT = 2.2                # centre of the number above the feet
 NUM_GLOW = 3.4
 ROOM_BOOST = 1.0
-STREET_LATER = -0.7   # the street after the opening is dimmer, so the cut from the kitchen to it isn't a flash
 ROOM_EV = 0.9      # extra exposure in the reading room by day (dome level 1); the dark scene's dome level is 0.12
-SOFT_CUT = {"L17.2": -0.55}   # the bright dome cut: pull its exposure down so the jump is softer
 LAMP_BOOST = 0.5
 
 
@@ -402,119 +397,36 @@ def build_room(kit, ctx, M, story):
             banker_lamp(kit, ctx, M, f"{tb['id']}#{k}" if tb["id"] != "W" else "W", lx, ly, with_tally=(tb["id"] == "W"))
     for k, (x, y, yaw) in enumerate(story["room"]["chairs"]):
         chair(kit, M, f"chair{k}", x, y, yaw)
-    ox, oy, oyaw = story["room"]["old_chair"]
-    ctx["old_chair"] = chair(kit, M, "old chair", ox, oy, oyaw)
-    ctx["old_base"] = (ox, oy, oyaw)
-    ctx["extra_chair"] = chair(kit, M, "extra chair", -6.0, 0.0, -90)
-    # papers: Tam's page (ruled, with scribble strokes), my blank forms, a reader's page that turns
+    # papers: Tam's page (ruled, with scribble strokes), my blank page, a reader's page that turns
     pm = img_mat(kit, "tam page", page_image(True))
-    quad_uv(kit, "tam page", (0.3, 0.4), (-7.0, -0.28, 0.784), pm)
+    quad_uv(kit, "tam page", (0.3, 0.4), (-7.5, -0.2, 0.784), pm)
     fm = img_mat(kit, "blank form", page_image(False))
-    quad_uv(kit, "form a", (0.3, 0.4), (3.3, -4.55, 0.784), fm, rot=(0, 0, 0.1))
-    quad_uv(kit, "form b", (0.3, 0.4), (2.85, -4.75, 0.784), fm, rot=(0, 0, -0.15))
-    quad_uv(kit, "reader page", (0.3, 0.4), (1.5, -0.9, 0.784), fm, rot=(0, 0, math.pi / 2))
-    piv = kit.empty("page pivot", (1.62, -0.9, 0.79))
+    quad_uv(kit, "my page", (0.3, 0.4), (-6.4, -0.2, 0.784), fm, rot=(0, 0, 0.1))
+    quad_uv(kit, "reader page", (0.3, 0.4), (-1.5, -4.3, 0.784), fm, rot=(0, 0, math.pi / 2))
+    piv = kit.empty("page pivot", (-1.38, -4.3, 0.79))
     leaf = quad_uv(kit, "page leaf", (0.3, 0.4), (0.2, 0.0, 0.002), fm, piv, rot=(0, 0, math.pi / 2))
-    leaf.scale = (1, 1, 1)
     ctx["page"] = piv
+    # Tam's reason in one picture: a stack of plain book blocks taller than his head, on the table in front of him
+    ctx["stack"] = []
+    grp = kit.empty("book stack", (-7.0, -0.38, 0.78))
+    zz = 0.0
+    for k, (w, d, hh) in enumerate(((0.5, 0.36, 0.13), (0.46, 0.34, 0.1), (0.52, 0.36, 0.14), (0.44, 0.33, 0.11),
+                                    (0.5, 0.35, 0.13), (0.45, 0.34, 0.12), (0.5, 0.36, 0.1), (0.42, 0.32, 0.13),
+                                    (0.48, 0.34, 0.12), (0.44, 0.33, 0.1), (0.47, 0.34, 0.13))):
+        ctx["stack"].append(kit.box(f"stack book {k}", (w, d, hh), (0.015 * ((-1) ** k), 0.01 * (k % 3 - 1), zz + hh / 2), M["book"][k % 6], grp, bevel=0.01, rot=(0, 0, 0.05 * (k % 4 - 1.5))))
+        zz += hh
     # the Negative's key (cold, from the side) and rim (cool, behind it); its table lamp is dead
-    kit.light("seatglow", "POINT", (-7.0, 0.55, 1.5), 110.0, "#ffc77a", size=0.2, shadow=False)
     kit.light("neg_key", "SPOT", (0, 0, 3), 0.0, "#a9c4e8", size=0.12, spot=34, blend=0.6)
     kit.light("neg_rim", "SPOT", (0, 0, 3), 0.0, "#8fb0e0", size=0.1, spot=40, blend=0.5)
 
     # CC0 props (2026-11-03 quality pass): a rug under the window table, plants, a floor lamp
-    kit.prop("carpet_1", (-7.0, 0.0, 0.0), rot=90, fit=3.2, tint="#7a5a4a")
+    kit.prop("carpet_1", (-7.0, 0.0, 0.0), rot=90, fit=3.4, tint="#7a5a4a")
     for k, (px, py) in enumerate(((-7.9, 3.0), (-7.9, -3.0), (6.5, -5.4), (6.5, 5.4))):
         kit.prop("houseplant_1", (px, py, 0.0), rot=40 * k, height=0.9)
     kit.prop("light_floor1", (-6.3, 3.2, 0.0), height=1.5, tint="#d9b070")
 
 
 # ------------------------------------------------------------------------------------------------ the other scenes
-
-
-def scene_steps(kit, ctx, M, O):
-    ox, oy = O
-    kit.box("steps ground", (60, 30, 0.2), (ox, oy - 8, -0.1), M["plat"])
-    for i in range(6):
-        fy = 1.0 - 0.55 * (i + 1)
-        wbox(kit, f"step{i}", (ox - 5.0, oy + fy, 0.0), (ox + 5.0, oy + 5.0, 0.16 * (6 - i)), M["stone"])
-    wbox(kit, "library wall", (ox - 9, oy + 5.0, 0.0), (ox + 9, oy + 5.6, 8.0), M["stone"])
-    for sx in (-3.2, 3.2):
-        kit.cyl(f"column{sx}", 0.42, 6.6, (ox + sx, oy + 4.2, 3.9), M["stone"], n=24)
-    wbox(kit, "lintel", (ox - 4.4, oy + 3.7, 7.1), (ox + 4.4, oy + 5.0, 7.8), M["stone"])
-    wbox(kit, "library door", (ox - 1.1, oy + 4.95, 0.96), (ox + 1.1, oy + 5.02, 4.2), M["oakd"])
-    # a bread stand (a tray of plain loaves) at the foot of the steps
-    kit.box("bread table", (1.1, 0.6, 0.06), (ox - 0.9, oy - 3.3, 0.9), M["oak"])
-    for sx in (-1, 1):
-        for sy in (-1, 1):
-            kit.box(f"bread leg{sx}{sy}", (0.05, 0.05, 0.9), (ox - 0.9 + sx * 0.5, oy - 3.3 + sy * 0.25, 0.45), M["oakd"])
-    for k in range(5):
-        kit.box(f"loaf{k}", (0.2, 0.34, 0.12), (ox - 1.25 + k * 0.17, oy - 3.3, 0.99), M["loaf"], bevel=0.05, rot=(0, 0, 0.2 * (k % 2 - 0.5)))
-    kit.light("sun", "SUN", (ox + 8, oy - 12, 14), 2.8, "#fff0d4")
-    kit.aim(kit.LIGHTS["sun"]["obj"], (ox, oy, 1.0))
-    kit.light("sunfill", "AREA", (ox - 6, oy - 12, 6), 260.0, "#cfe0ff", size=8.0)
-    kit.aim(kit.LIGHTS["sunfill"]["obj"], (ox, oy, 1.5))
-
-
-def room_box(kit, M, O, x0, x1, y0, y1, h, wall, floor, ceil=None):
-    ox, oy = O
-    kit.box("floor", (x1 - x0, y1 - y0, 0.1), (ox + (x0 + x1) / 2, oy + (y0 + y1) / 2, -0.05), floor)
-    kit.box("ceiling", (x1 - x0 + 0.4, y1 - y0 + 0.4, 0.1), (ox + (x0 + x1) / 2, oy + (y0 + y1) / 2, h + 0.05), ceil or wall)
-    kit.box("wall n", (x1 - x0 + 0.4, 0.2, h), (ox + (x0 + x1) / 2, oy + y1 + 0.1, h / 2), wall)
-    kit.box("wall s", (x1 - x0 + 0.4, 0.2, h), (ox + (x0 + x1) / 2, oy + y0 - 0.1, h / 2), wall)
-    kit.box("wall e", (0.2, y1 - y0, h), (ox + x1 + 0.1, oy + (y0 + y1) / 2, h / 2), wall)
-    kit.box("wall w", (0.2, y1 - y0, h), (ox + x0 - 0.1, oy + (y0 + y1) / 2, h / 2), wall)
-
-
-def scene_party(kit, ctx, M, O):
-    ox, oy = O
-    room_box(kit, M, O, -3.6, 3.6, -4.8, 2.6, 2.7, M["cream"], M["floorlight"])
-    kit.box("sofa", (2.2, 0.9, 0.45), (ox - 2.2, oy + 1.9, 0.225), M["sofa"], bevel=0.05)
-    kit.box("sofa back", (2.2, 0.22, 0.6), (ox - 2.2, oy + 2.35, 0.75), M["sofa"], bevel=0.05)
-    kit.box("side table", (0.7, 0.7, 0.6), (ox + 2.6, oy + 1.8, 0.3), M["oak"])
-    # steady string lights: a swag of small warm bulbs along the back wall and one across the ceiling
-    for s_i, (z0, dz) in enumerate(((2.55, 0.35), (2.35, 0.3))):
-        n = 15
-        for k in range(n + 1):
-            u = k / n
-            x = -3.3 + 6.6 * u
-            z = z0 - dz * math.sin(math.pi * u)
-            kit.sphere(f"bulb{s_i}.{k}", 0.05, (ox + x, oy + 2.45 - 0.5 * s_i, z), M["warm"], seg=8)
-            if k:
-                u0 = (k - 1) / n
-                x0 = -3.3 + 6.6 * u0
-                z0_ = z0 - dz * math.sin(math.pi * u0)
-                kit.box(f"wire{s_i}.{k}", (0.012, 0.012, 0.012), (ox + (x + x0) / 2, oy + 2.45 - 0.5 * s_i, (z + z0_) / 2), M["wire"])
-    kit.light("warm1", "POINT", (ox - 1.6, oy - 0.5, 2.3), 150.0, "#ffc88a", size=0.3)
-    kit.light("warm2", "POINT", (ox + 1.6, oy - 0.5, 2.3), 150.0, "#ffc88a", size=0.3)
-    kit.light("front", "AREA", (ox, oy - 4.4, 2.3), 150.0, "#ffe0b8", size=3.0)
-    kit.aim(kit.LIGHTS["front"]["obj"], (ox, oy, 1.6))
-
-
-def scene_station(kit, ctx, M, O):
-    ox, oy = O
-    wbox(kit, "platform", (ox - 14, oy - 7, -0.6), (ox + 14, oy + 1.4, 0.0), M["plat"])
-    wbox(kit, "line", (ox - 14, oy + 0.7, 0.0), (ox + 14, oy + 0.85, 0.012), M["yellow"])
-    wbox(kit, "track bed", (ox - 14, oy + 1.4, -1.2), (ox + 14, oy + 6, -0.5), M["dark"])
-    # a plain carriage with an open door: no signs, no route boards
-    cy0, cy1 = oy + 1.8, oy + 4.2
-    dx0, dx1 = ox - 0.4, ox + 1.0
-    wbox(kit, "carriage l", (ox - 9, cy0, 0.45), (dx0, cy1, 3.5), M["train"])
-    wbox(kit, "carriage r", (dx1, cy0, 0.45), (ox + 9, cy1, 3.5), M["train"])
-    wbox(kit, "carriage top", (dx0, cy0, 2.7), (dx1, cy1, 3.5), M["train"])
-    wbox(kit, "carriage floor", (dx0, cy0, 0.45), (dx1, cy1, 0.6), M["train"])
-    wbox(kit, "carriage back", (dx0, cy1 - 0.2, 0.6), (dx1, cy1, 2.7), M["train_in"])
-    wbox(kit, "carriage step", (dx0 + 0.1, oy + 1.4, 0.2), (dx1 - 0.1, cy0, 0.3), M["plat"])
-    wbox(kit, "carriage roof", (ox - 9, cy0, 3.5), (ox + 9, cy1, 3.7), M["slated"])
-    kit.cyl("post", 0.07, 3.6, (ox - 3.4, oy + 0.4, 1.8), M["iron"], n=12)
-    kit.box("post cap", (0.4, 0.4, 0.08), (ox - 3.4, oy + 0.4, 3.6), M["iron"])
-    # the suitcase that stands beside her (not held)
-    kit.box("suitcase", (0.5, 0.22, 0.7), (ox + 1.0, oy - 0.15, 0.35), M["suit"], bevel=0.03)
-    kit.box("suitcase handle", (0.2, 0.04, 0.05), (ox + 1.0, oy - 0.15, 0.74), M["dark"])
-    kit.light("sky", "AREA", (ox, oy - 2, 7), 900.0, "#dde7ee", size=10.0)
-    kit.aim(kit.LIGHTS["sky"]["obj"], (ox, oy, 0))
-    kit.light("sunf", "SPOT", (ox + 3, oy - 7, 3.5), 350.0, "#fff0dc", size=0.5, spot=70, blend=0.6)
-    kit.aim(kit.LIGHTS["sunf"]["obj"], (ox, oy, 1.6))
 
 
 def scene_door(kit, ctx, M, O):
@@ -533,26 +445,6 @@ def scene_door(kit, ctx, M, O):
     kit.aim(kit.LIGHTS["sun"]["obj"], (ox, oy, 1.0))
     kit.light("fill", "AREA", (ox - 5, oy - 10, 5), 260.0, "#cfe0ff", size=8.0)
     kit.aim(kit.LIGHTS["fill"]["obj"], (ox, oy, 1.5))
-
-
-def scene_kitchen(kit, ctx, M, O):
-    ox, oy = O
-    room_box(kit, M, O, -2.4, 2.4, -3.6, 2.2, 2.6, M["cream"], M["tile"])
-    kit.box("kitchen table", (1.1, 0.8, 0.05), (ox, oy + 0.2, 0.745), M["oak"], bevel=0.01)
-    for sx in (-1, 1):
-        for sy in (-1, 1):
-            kit.box(f"kt leg{sx}{sy}", (0.06, 0.06, 0.72), (ox + sx * 0.5, oy + 0.2 + sy * 0.34, 0.36), M["oakd"])
-    kit.cyl("cake", 0.15, 0.1, (ox, oy + 0.05, 0.82), M["cake"], n=24)
-    kit.cyl("cake top", 0.155, 0.02, (ox, oy + 0.05, 0.87), M["white"], n=24)
-    kit.cyl("candle", 0.011, 0.09, (ox, oy + 0.05, 0.93), M["white"], n=8)
-    kit.sphere("flame", 0.017, (ox, oy + 0.05, 0.99), M["flame"], seg=8)
-    kit.box("kitchen window", (1.2, 0.06, 1.0), (ox + 1.0, oy + 2.08, 1.6), M["bright"])
-    kit.box("kitchen window frame", (1.34, 0.05, 1.14), (ox + 1.0, oy + 2.12, 1.6), M["oakd"])
-    kit.light("kwarm", "POINT", (ox, oy - 0.2, 2.1), 55.0, "#ffcf90", size=0.2)
-    kit.light("kfill", "AREA", (ox, oy - 3.4, 2.2), 80.0, "#ffe6c8", size=2.5)
-    kit.aim(kit.LIGHTS["kfill"]["obj"], (ox, oy + 0.5, 1.4))
-    kit.light("kwin", "AREA", (ox + 1.0, oy + 1.6, 1.7), 90.0, "#cfe0ff", size=1.2)
-    kit.aim(kit.LIGHTS["kwin"]["obj"], (ox, oy - 1.0, 1.0))
 
 
 def scene_street(kit, ctx, M, O):
@@ -586,40 +478,6 @@ def scene_street(kit, ctx, M, O):
     kit.prop("sub_planter", (ox + 2.6, oy + 3.5, 0.0), height=0.8)
     kit.prop("sub_planter", (ox + 4.4, oy + 3.5, 0.0), height=0.8)
 
-
-def scene_flat(kit, ctx, M, O):
-    ox, oy = O
-    room_box(kit, M, O, -3.0, 3.0, -3.0, 3.0, 2.6, M["cream"], M["floorlight"])
-    kit.box("sofa seat", (2.0, 0.9, 0.45), (ox + 1.2, oy - 2.2, 0.225), M["sofa"], bevel=0.05)
-    kit.box("sofa back", (2.0, 0.22, 0.62), (ox + 1.2, oy - 2.62, 0.78), M["sofa"], bevel=0.05)
-    for sx in (-1, 1):
-        kit.box(f"sofa arm{sx}", (0.22, 0.9, 0.62), (ox + 1.2 + sx * 1.1, oy - 2.2, 0.31), M["sofa"], bevel=0.05)
-    kit.box("counter", (0.7, 2.4, 0.9), (ox + 2.65, oy + 1.0, 0.45), M["oak"])
-    kit.box("counter top", (0.76, 2.46, 0.05), (ox + 2.65, oy + 1.0, 0.925), M["oakd"])
-    kit.cyl("kettle", 0.1, 0.17, (ox + 2.65, oy + 1.0, 1.05), M["steel"], n=18)
-    kit.cyl("kettle lid", 0.07, 0.04, (ox + 2.65, oy + 1.0, 1.15), M["steel"], n=18)
-    kit.box("kettle spout", (0.12, 0.04, 0.05), (ox + 2.53, oy + 1.0, 1.08), M["steel"], rot=(0, 0, 0))
-    kit.box("kettle handle", (0.03, 0.04, 0.14), (ox + 2.76, oy + 1.0, 1.1), M["dark"])
-    ctx["steam"] = [kit.sphere(f"steam{k}", 0.035, (ox + 2.53, oy + 1.0, 1.2), M["steam"], seg=12) for k in range(6)]
-    # the standing lamp and the rainy window
-    kit.cyl("floor lamp pole", 0.025, 1.5, (ox - 2.4, oy - 1.4, 0.75), M["iron"], n=8)
-    kit.cyl("floor lamp shade", 0.2, 0.32, (ox - 2.4, oy - 1.4, 1.62), M["fshade"], n=16, r2=0.15)
-    ctx["flat_shade"] = M["fshade_em"]
-    kit.box("flat window", (0.06, 2.0, 1.4), (ox - 2.95, oy + 0.4, 1.5), M["wwin"])
-    for k in (-1, 0, 1):
-        kit.box(f"flat muntin{k}", (0.05, 0.04, 1.4), (ox - 2.92, oy + 0.4 + k * 0.5, 1.5), M["oakd"])
-    kit.box("flat muntin h", (0.05, 2.0, 0.04), (ox - 2.92, oy + 0.4, 1.5), M["oakd"])
-    ctx["flat_win"] = M["wwin_em"]
-    kit.light("flamp", "POINT", (ox - 2.2, oy - 1.3, 1.6), 90.0, "#ffbf78", size=0.2)
-    kit.light("fwin", "AREA", (ox - 2.8, oy + 0.4, 1.6), 140.0, "#9bb4dc", size=1.6)
-    kit.aim(kit.LIGHTS["fwin"]["obj"], (ox, oy + 0.4, 1.0))
-    kit.light("ffill", "AREA", (ox + 1.5, oy + 2.5, 2.4), 120.0, "#ffe2c0", size=3.0)
-    kit.aim(kit.LIGHTS["ffill"]["obj"], (ox + 1.2, oy - 1.5, 1.0))
-    kit.light("ffront", "AREA", (ox + 0.5, oy - 0.5, 2.5), 90.0, "#ffe2c0", size=3.0)
-    kit.aim(kit.LIGHTS["ffront"]["obj"], (ox + 1.2, oy - 2.2, 1.2))
-
-    kit.prop("houseplant_1", (ox - 2.4, oy + 2.3, 0.0), height=0.9)
-    kit.prop("carpet_1", (ox + 1.2, oy - 0.9, 0.0), rot=90, fit=3.0, tint="#8a6a58")
 
 # ------------------------------------------------------------------------------------------------ the numbers
 
@@ -741,6 +599,100 @@ def update_numbers(ctx, tl, t, states, vis, scene_on):
                     o.hide_render = sn not in lit
 
 
+# ------------------------------------------------------------------------------------------------ the upside-down grin
+
+GRIN_W, GRIN_H = 0.96, 0.62   # world size of the decal on the Negative's face
+
+
+def grin_image(w=1100, h=700):
+    """A big open laughing grin turned upside down: an arch with a flat floor, blocky teeth standing up from the
+    floor, a dim tongue hanging from the roof, the corners hooked down. White strokes on black, alpha outside."""
+    S = 2
+    im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    cx, by = w * S / 2, h * S * 0.74          # floor line
+    rx, ry = w * S * 0.40, h * S * 0.62       # arch half-width, height
+    sw = int(h * S * 0.09)
+    pts = [(cx + rx * math.cos(math.pi * k / 48), by - ry * math.sin(math.pi * k / 48) ** 0.85) for k in range(49)]
+    d.polygon(pts, fill=(2, 2, 3, 255))
+    # the tongue, hanging from the roof
+    d.ellipse([cx - rx * 0.42, by - ry * 0.98, cx + rx * 0.42, by - ry * 0.44], fill=(78, 78, 86, 255))
+    d.line([(cx, by - ry * 0.95), (cx, by - ry * 0.62)], fill=(20, 20, 24, 255), width=int(sw * 0.35))
+    # teeth standing up off the floor
+    n = 6
+    tw = rx * 2 * 0.80 / n
+    for k in range(n):
+        x0 = cx - rx * 0.80 + k * tw
+        th = ry * (0.34 + 0.07 * math.sin(math.pi * (k + 0.5) / n))
+        d.rounded_rectangle([x0 + tw * 0.08, by - th, x0 + tw * 0.92, by + sw * 0.4], radius=int(tw * 0.12), fill=(242, 242, 242, 255))
+    # the outline: arch, floor, and the corners hooked down
+    d.line(pts, fill=(242, 242, 242, 255), width=sw, joint="curve")
+    d.line([(cx - rx - sw * 0.3, by), (cx + rx + sw * 0.3, by)], fill=(242, 242, 242, 255), width=int(sw * 0.8))
+    for sd in (-1, 1):
+        hook = [(cx + sd * (rx + sw * 0.2 + 40 * S * (k / 10) ** 0.8), by + 230 * S * (k / 10) ** 1.4) for k in range(11)]
+        d.line(hook, fill=(242, 242, 242, 255), width=int(sw * 0.9), joint="curve")
+    return im.resize((w, h), Image.LANCZOS)
+
+
+def alpha_mat(kit, name, pil):
+    img = bpy.data.images.new(name, pil.width, pil.height, alpha=True)
+    a = np.asarray(pil.convert("RGBA")).astype(np.float32)[::-1] / 255
+    img.pixels.foreach_set(a.ravel())
+    img.pack()
+    m = kit._new(name)
+    nt = m.node_tree
+    b = nt.nodes["Principled BSDF"]
+    b.inputs["Roughness"].default_value = 0.6
+    tx = nt.nodes.new("ShaderNodeTexImage")
+    tx.image = img
+    tx.interpolation = "Linear"
+    nt.links.new(tx.outputs["Color"], b.inputs["Base Color"])
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    mix = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(tx.outputs["Alpha"], mix.inputs[0])
+    nt.links.new(tr.outputs[0], mix.inputs[1])
+    nt.links.new(b.outputs[0], mix.inputs[2])
+    kit._fogged(m, mix.outputs[0])
+    return m
+
+
+def curved_decal(kit, name, size, zc, r, mat, parent):
+    """A strip bent onto the front (-y) of a cylinder of radius r around the head, centred at height zc."""
+    w, h = size
+    cols = 20
+    verts, uvs = [], []
+    for j in range(cols + 1):
+        u = j / cols
+        th = (u - 0.5) * w / r
+        for v in (0.0, 1.0):
+            verts.append((r * math.sin(th), -r * math.cos(th), zc + (v - 0.5) * h))
+            uvs.append((u, v))
+    fcs = [(j * 2, (j + 1) * 2, (j + 1) * 2 + 1, j * 2 + 1) for j in range(cols)]
+    ob = kit.mesh_obj(name, verts, fcs, mat, parent, smooth=True)
+    uv = ob.data.uv_layers.new(name="UVMap")
+    for p in ob.data.polygons:
+        for li in p.loop_indices:
+            uv.data[li].uv = uvs[ob.data.loops[li].vertex_index]
+    return ob
+
+
+def cat_image():
+    """Our own picture for the phone: a blocky cat sliding off a shelf into a box. No text."""
+    im = Image.new("RGB", (240, 420), (255, 214, 140))
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 150, 150, 176], fill=(138, 94, 54))
+    d.rectangle([110, 260, 230, 400], fill=(170, 120, 70))
+    d.rectangle([118, 268, 222, 400], fill=(60, 40, 24))
+    d.polygon([(70, 70), (190, 150), (176, 200), (56, 120)], fill=(70, 70, 78))      # the sliding cat
+    d.rectangle([40, 60, 82, 100], fill=(70, 70, 78))
+    d.polygon([(40, 60), (48, 42), (58, 60)], fill=(70, 70, 78))
+    d.polygon([(66, 60), (74, 42), (82, 60)], fill=(70, 70, 78))
+    d.ellipse([46, 74, 56, 84], fill=(255, 230, 90))
+    d.ellipse([66, 74, 76, 84], fill=(255, 230, 90))
+    d.line([(190, 150), (226, 176)], fill=(70, 70, 78), width=10)
+    return im
+
+
 # ------------------------------------------------------------------------------------------------ build
 
 
@@ -749,10 +701,8 @@ def build(kit, story, tl):
     M = materials(kit)
     ctx["M"] = M
     O = {k: tuple(v) for k, v in story["scenes"].items()}
-    builders = {"room": lambda: build_room(kit, ctx, M, story), "steps": lambda: scene_steps(kit, ctx, M, O["steps"]),
-                "party": lambda: scene_party(kit, ctx, M, O["party"]), "station": lambda: scene_station(kit, ctx, M, O["station"]),
-                "door": lambda: scene_door(kit, ctx, M, O["door"]), "kitchen": lambda: scene_kitchen(kit, ctx, M, O["kitchen"]),
-                "street": lambda: scene_street(kit, ctx, M, O["street"]), "flat": lambda: scene_flat(kit, ctx, M, O["flat"])}
+    builders = {"room": lambda: build_room(kit, ctx, M, story), "door": lambda: scene_door(kit, ctx, M, O["door"]),
+                "street": lambda: scene_street(kit, ctx, M, O["street"])}
     for name, fn in builders.items():
         before = set(bpy.data.objects.keys())
         fn()
@@ -766,37 +716,29 @@ def build(kit, story, tl):
 
 # ------------------------------------------------------------------------------------------------ the pieces that move
 
-SKY = {"steps": ("#8ec5f0", 0.9), "door": ("#9ccdf0", 0.8), "station": ("#b4c2cc", 1.0), "street": ("#6f7d8a", 0.9)}
+SKY = {"door": ("#9ccdf0", 0.8), "street": ("#a9c4d8", 1.0)}
 
 
 def _extras(kit, ctx):
-    """Parts the rig doesn't have: Luke's headphones, Tam's pencil, Ossie's moustache."""
+    """Parts the rig doesn't have: Tam's pencil, the Negative's upside-down grin, the phone."""
     ctx["extras_done"] = True
     M = ctx["M"]
     R, H = faces.HEAD_R, faces.HEAD_H
-    top = H / 2
     hg = bpy.data.objects.get("tam.headg")
+    ctx["pencil"] = None
     if hg is not None:
-        kit.box("tam.pencil", (0.07, 0.07, 0.55), (R - 0.1, 0.12, 0.28), M["pencil"], hg, rot=(0.5, 0.0, 0.0), bevel=0.01)
-    hg = bpy.data.objects.get("ossie.headg")
+        ctx["pencil"] = kit.box("tam.pencil", (0.07, 0.07, 0.55), (R - 0.1, 0.12, 0.28), M["pencil"], hg, rot=(0.5, 0.0, 0.0), bevel=0.01)
+    hg = bpy.data.objects.get("neg.headg")
+    ctx["grin"] = None
     if hg is not None:
-        kit.box("ossie.mous", (0.5, 0.1, 0.12), (0, -R - 0.005, -0.16), M["grey"], hg, bevel=0.04)
-        for sx in (-1, 1):
-            kit.box(f"ossie.mous{sx}", (0.16, 0.1, 0.1), (sx * 0.28, -R + 0.06, -0.24), M["grey"], hg, rot=(0, 0, sx * 0.4), bevel=0.03)
-    # headphones (slate, over the ear, no logo): on the head, or hung round the neck
-    ctx["ph_head"], ctx["ph_neck"] = [], []
-    hg = bpy.data.objects.get("me.headg")
-    tor = bpy.data.objects.get("me.torso")
-    if hg is not None:
-        for sx in (-1, 1):
-            ctx["ph_head"].append(kit.box(f"me.phbar{sx}", (0.1, 0.16, top + 0.17 - 0.05), (sx * (R + 0.14), 0.0, (top + 0.17 + 0.05) / 2), M["slate"], hg, bevel=0.03))
-            ctx["ph_head"].append(kit.box(f"me.phcup{sx}", (0.3, 0.56, 0.62), (sx * (R + 0.2), 0.05, -0.05), M["slated"], hg, bevel=0.1))
-        ctx["ph_head"].append(kit.box("me.phtop", (2 * R + 0.38, 0.16, 0.1), (0, 0.0, top + 0.17), M["slate"], hg, bevel=0.03))
-    if tor is not None:
-        ctx["ph_neck"].append(kit.box("me.nkback", (1.6, 0.14, 0.14), (0, 0.45, 2.02), M["slate"], tor, bevel=0.04))
-        for sx in (-1, 1):
-            ctx["ph_neck"].append(kit.box(f"me.nkside{sx}", (0.14, 0.95, 0.14), (sx * 0.78, -0.02, 2.0), M["slate"], tor, bevel=0.04))
-            ctx["ph_neck"].append(kit.box(f"me.nkcup{sx}", (0.32, 0.42, 0.55), (sx * 0.78, -0.55, 1.7), M["slated"], tor, bevel=0.1))
+        gm = alpha_mat(kit, "neg grin", grin_image())
+        ctx["grin"] = curved_decal(kit, "neg.grin", (GRIN_W, GRIN_H), -0.10, R + 0.012, gm, hg)
+    pm = img_mat(kit, "cat picture", cat_image(), rough=0.4)
+    sm = kit.plastic("#16181c", 0.4, "phone body", 0.3)
+    ph = kit.empty("phone", (3000, 3000, 0))
+    kit.box("phone.body", (0.09, 0.012, 0.17), (0, 0, 0), sm, ph, bevel=0.008)
+    quad_uv(kit, "phone.screen", (0.078, 0.15), (0, -0.0075, 0), pm, ph, rot=(math.pi / 2, 0, 0))
+    ctx["phone"] = ph
 
 
 def _chars_inscene(story, tl, t, scene):
@@ -820,9 +762,6 @@ def animate(kit, story, tl, t, ctx):
         for c in tl["cues"]:
             if c["name"] == "num":
                 by.setdefault(c["who"], []).append(c)
-        for c in tl["cues"]:
-            if c["name"] == "numz":
-                by.setdefault("_numz_" + c["who"], []).append(c)
         for v in by.values():
             v.sort(key=lambda c: c["t"])
         ctx["numcues"] = by
@@ -840,7 +779,7 @@ def animate(kit, story, tl, t, ctx):
         w.inputs["Color"].default_value = K.col(c)
         w.inputs["Strength"].default_value = s
     inscene, states = _chars_inscene(story, tl, t, scene)
-    # ---- people: sitting, leaning, the rig's black lenses, the extras
+    # ---- people: sitting, leaning
     for who, keys in tl["acting"].items():
         root = bpy.data.objects.get(who)
         if root is not None and not inscene[who]:
@@ -863,38 +802,83 @@ def animate(kit, story, tl, t, ctx):
         ob = bpy.data.objects.get(nm)
         if ob is not None:
             ob.hide_render = True
-    # ---- headphones
-    ph = _last(_cues(tl, "phones"), t)
-    mode = ph["mode"] if ph else "head"
-    for ob in ctx["ph_head"]:
-        ob.hide_render = not (mode in ("head", "half") and inscene.get("me", False))
-    for ob in ctx["ph_neck"]:
-        ob.hide_render = not (mode == "neck" and inscene.get("me", False))
+    # ---- the Negative grows with each swallowed laugh; it changes size only across a cut
+    nr = bpy.data.objects.get("neg")
+    sc_c = _last(_cues(tl, "negscale"), t)
+    if nr is not None:
+        if "neg_base" not in ctx:
+            ctx["neg_base"] = nr.scale.copy()     # the rig's own root scale; ours multiplies it
+        k = sc_c["v"] if sc_c else 1.0
+        nr.scale = tuple(v * k for v in ctx["neg_base"])
+    # ---- the stack of books appears with its cue
+    stc = _last(_cues(tl, "stack"), t)
+    for ob in ctx["stack"]:
+        ob.hide_render = not (stc and stc.get("on", True) and scene == "room")
+    # ---- coming apart: the blocks separate a little, then drift up the dome, turning, and shrink away
+    ap = _last(_cues(tl, "apart"), t)
+    if ap and ap.get("off"):
+        ap = None
+    if not ctx.get("apart_base"):
+        ctx["apart_base"] = {}
+        for nm in ("torso", "leg-1", "leg1", "neck"):
+            ob = bpy.data.objects.get(f"neg.{nm}")
+            if ob is not None:
+                ctx["apart_base"][nm] = (ob, ob.location.copy())
+        for nm in ("arm-1", "arm1"):
+            ob = bpy.data.objects.get(f"neg.{nm}")
+            if ob is not None:
+                ctx["apart_base"][nm] = (ob, ob.location.copy())
+    x = (t - ap["t"]) if ap else -1.0
+    sep = _ss(x / 1.6) if x > 0 else 0.0
+    rise = _ss((x - 1.2) / 3.2) if x > 0 else 0.0
+    off = {"neck": (0, 0, 0.75), "torso": (0, 0, 0.0), "arm-1": (-0.7, 0, 0.1), "arm1": (0.7, 0, 0.1),
+           "leg-1": (-0.15, 0, -0.55), "leg1": (0.15, 0, -0.55)}
+    for nm, (ob, b0) in ctx["apart_base"].items():
+        o = off[nm]
+        spread = 1.0 if nm != "torso" else 0.0
+        ob.location = (b0.x + o[0] * sep, b0.y + o[1] * sep, b0.z + o[2] * sep + rise * (5.0 + 1.4 * (len(nm) % 3)))
+        ob.rotation_euler[2] = rise * (0.7 if nm in ("neck", "arm1") else -0.5)
+    if nr is not None and ap and x > 0:
+        nr.scale = tuple(v * (1.0 - _ss((x - 3.6) / 1.0)) + 1e-5 for v in nr.scale)
+    # ---- the phone (a cat picture), held where the cue says
+    pc = _last(_cues(tl, "phone"), t)
+    ph = ctx["phone"]
+    if pc and pc.get("pos"):
+        ph.location = tuple(pc["pos"])
+        ph.rotation_euler = (0, 0, math.radians(pc.get("yaw", 0)))
+    else:
+        ph.location = (3000, 3000, 0)
+    # ---- Tam's pencil drops from behind his ear, bounces off his nose (a 0.7 s fall) and lies on the page
+    if ctx.get("pencil") is not None:
+        pb = _last(_cues(tl, "pencil"), t)
+        pen = ctx["pencil"]
+        if pb:
+            x = min(1.0, max(0.0, (t - pb["t"]) / 0.7))
+            if x <= 0:
+                pen.location, pen.rotation_euler = (faces.HEAD_R - 0.1, 0.12, 0.28), (0.5, 0.0, 0.0)
+            else:
+                fall = x * x
+                pen.location = (faces.HEAD_R - 0.1 - 0.35 * x, 0.12 - 0.75 * x, 0.28 - 1.5 * fall + 0.25 * math.sin(math.pi * min(1, x * 1.6)) * (1 - x))
+                pen.rotation_euler = (0.5 + 2.2 * x, 0.0, 1.2 * x)
+        else:
+            pen.location, pen.rotation_euler = (faces.HEAD_R - 0.1, 0.12, 0.28), (0.5, 0.0, 0.0)
     # ---- the closing timer: every table lamp together; the dome's dusk
     lamps = _level(tl, "lamps", t, 1.0)
     dome = _level(tl, "dome", t, 1.0)
-    soft = sum(v for r, v in SOFT_CUT.items() if any(sh["id"] == shot and sh.get("at") == r for sh in story["shots"]))
-    bpy.context.scene.view_settings.exposure = story["look"].get("exposure", 0.0) + (ROOM_EV * _ss((dome - 0.12) / 0.38) + soft if scene == "room" else (STREET_LATER if scene == "street" and t > 4.5 else 0.0))
+    bpy.context.scene.view_settings.exposure = story["look"].get("exposure", 0.0) + (ROOM_EV * _ss((dome - 0.12) / 0.38) if scene == "room" else 0.0)
     dead_c = _last(_cues(tl, "dead"), t)
     dead = set(dead_c["tables"]) if dead_c else set()
     for lp in ctx["lamps"]:
         g = 0.0 if lp["table"] in dead else lamps
         over[lp["light"]] = g * (1.0 + LAMP_BOOST * lamps)
         lp["em"].inputs["Strength"].default_value = lp["base_em"] * (0.04 if lp["table"] in dead else lamps) + 0.05
-    boost = 1.0 + ROOM_BOOST * dome   # the room is brighter by day (r6: luma 60 -> about 100); the closing dusk stays dark
+    boost = 1.0 + ROOM_BOOST * dome
     over["dome"] = dome * (0.4 + 0.6 * lamps) * boost
     over["fill"] = dome * (0.25 + 0.75 * lamps) * boost
     over["window"] = dome * boost
-    over["seatglow"] = _level(tl, "seat", t, 0.0)
     ctx["pane_em"].inputs["Strength"].default_value = 1.2 * (0.25 + 0.75 * dome)
     ctx["M"]["win_em"].inputs["Strength"].default_value = 1.2 * (0.12 + 0.88 * dome ** 1.5)
-    # ---- the old chair is pushed back, the extra chair slides in, the page turns
-    oc = _last(_cues(tl, "oldchair"), t)
-    d = oc["d"] if oc else 0.0
-    ox, oy, oyaw = ctx["old_base"]
-    ctx["old_chair"].location = (ox, oy + d, 0.0)
-    ec = _last(_cues(tl, "extra_chairs"), t)
-    ctx["extra_chair"].hide_render = not (ec and ec["on"] and scene == "room")
+    # ---- the page turns
     pg = _last(_cues(tl, "page"), t)
     u = 0.0
     if pg:
@@ -909,8 +893,8 @@ def animate(kit, story, tl, t, ctx):
         sd = V((math.cos(yaw), math.sin(yaw), 0.0))
         if sd.x > 0:
             sd = -sd
-        head = V((s["x"], s["y"], s["z"] + 1.35)) + f * 0.25 * (1 + math.sin(math.radians(ac._held(tl["acting"]["neg"], "bend", t, 0.0))))
         bend = ac._held(tl["acting"]["neg"], "bend", t, 0.0)
+        head = V((s["x"], s["y"], s["z"] + 1.35)) + f * 0.25 * (1 + math.sin(math.radians(bend)))
         head += f * 0.55 * math.sin(math.radians(bend))
         for nm, pos, w in (("neg_key", head + sd * 1.7 + f * 0.8 + V((0, 0, 1.1)), 150.0),
                            ("neg_rim", head - f * 1.5 - sd * 0.5 + V((0, 0, 1.4)), 260.0)):
@@ -919,29 +903,7 @@ def animate(kit, story, tl, t, ctx):
             ob.rotation_euler = (head - pos).to_track_quat("-Z", "Y").to_euler()
             K.LIGHTS[nm]["base"] = w
             over[nm] = 1.0
-    # ---- the flat at night, the kettle's steam
-    night = shot in story.get("night_shots", [])
-    if ctx.get("flat_win") is not None:
-        ctx["flat_win"].inputs["Strength"].default_value = 0.35 if night else 1.4
-        ctx["flat_shade"].inputs["Strength"].default_value = 2.2 if night else 3.0
-    over["fwin"] = 0.25 if night else 1.0
-    over["flamp"] = 0.8 if night else 1.0
-    stc = shot in story.get("steam_shots", [])
-    ox2, oy2 = story["scenes"]["flat"]
-    for k, sp in enumerate(ctx["steam"]):
-        ph_ = (t * 0.55 + k / len(ctx["steam"])) % 1.0
-        sp.location = (ox2 + 2.53 + 0.02 * math.sin(6 * ph_ + k), oy2 + 1.0 + 0.02 * math.cos(5 * ph_ + k), 1.2 + 0.55 * ph_)
-        sc = 0.6 + 2.2 * ph_
-        sp.scale = (sc, sc, sc)
-        sp.hide_render = not (stc and scene == "flat") or ph_ > 0.97
-    # ---- plant 2: my 1 warms a little (a 0.5 s ramp up to 120% and back)
-    wc = _last(_cues(tl, "warm"), t)
     for who, dd in ctx["num"].items():
-        f = 1.0
-        if who == "me" and wc is not None:
-            x = t - wc["t"]
-            if 0 <= x <= 1.0:
-                f = 1.0 + 0.2 * math.sin(math.pi * x)
-        dd["em"].inputs["Strength"].default_value = NUM_GLOW * f
+        dd["em"].inputs["Strength"].default_value = NUM_GLOW
     update_numbers(ctx, tl, t, states, inscene, True)
     return over
