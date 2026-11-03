@@ -112,14 +112,14 @@ def shot(ref, scene, cam, who=None, look=None, **opt):
 
 
 # ---- the hook and the rule at work, in sun (S01 to S10)
-shot(0, "day", C([0.0, -2.4, 1.45], [0.0, 0.95, 1.5], 26),
+shot(0, "day", C([0.0, -1.0, 1.72], [0.0, 0.95, 1.74], 30),
      {"c10": at(-0.66, 0.5, 0, expr="neutral", head=[8, 0]), "me": at(0.0, 0.95, 0, expr="worried", head=[0, 0]),
       "c3": at(0.66, 1.4, 0, expr="neutral", head=[-8, 0])}, {"crowd": 40, "crowd_box": [-9, 9, -3.4, 1.7]}, hand=0.004, step=1)
-shot("L01.4", "day", M([0, -7.0, 10.0], [0, -0.5, 1.0], [1.5, -6.0, 9.0], [0, -0.5, 1.0], 30), {}, {"crowd": 64}, hand=0.0)
+shot("L01.2", "day", M([0, -3.4, 2.4], [0, 0.4, 1.5], [1.0, -3.0, 2.2], [0, 0.4, 1.5], 34), {}, {"crowd": 64}, hand=0.0)
 shot("L02", "day", C([3.0, -0.3, 1.5], [3.0, 0.7, 1.82], 40),
      {"c2": at(3.0, 0.7, 0, expr="neutral", head=[0, 0])}, {"crowd": 30, "crowd_box": [-9, 9, -3.4, 0.0]})
 shot("L02.3", "day", C([-4.6, -1.7, 0.4], [-6.6, 0.6, 1.8], 26),
-     {"c4": at(-8.0, 0.6, 200, expr="neutral"), "c5": at(-7.0, 0.6, 165, expr="soft"), "c6": at(-6.0, 0.6, 150, expr="neutral"),
+     {"c4": at(-8.6, 0.6, 200, expr="neutral"), "c5": at(-7.6, 0.6, 165, expr="soft"), "c6": at(-6.0, 0.6, 150, expr="neutral"),
       "c7": at(-5.0, 0.6, 140, expr="soft")}, {"crowd": 20, "crowd_box": [-12, -2, -3.4, 0.0]})
 shot("L03", "day", C([1.0, -2.0, 1.5], [3.2, 0.85, 1.6], 30),
      {"c8": at(2.3, 0.8, 0, expr="soft", head=[-40, 0]), "c9": at(4.2, 0.9, 0, expr="soft", head=[40, 0])},
@@ -319,6 +319,9 @@ def build_acting():
             first = moves[0]
             pos = list(first["pos"])
             pose = {**DEFAULT, **{k: v for k, v in first.items() if k != "pos"}}
+            if i == 0:   # on screen from frame 0: no parked-offstage key at t=0 (it put everyone at (0,40) on the first frame)
+                del ks[:]
+                last[who] = {"pos": pos, "hidden": False}
             ks.append({"at": ref, "pos": last[who]["pos"], "hidden": False, **{k: pose[k] for k in ("yaw",)}})
             ks.append({"at": ref, "pos": pos, "hidden": False, "blend": 0.0,
                        **{k: pose[k] for k in ("yaw", "expr", "head", "look", "arms", "side", "sit", "bend", "tremble")}})
@@ -457,7 +460,7 @@ story = {
     "key_color": "#c08cff",
     "gap": 0.12,
     "tail": 0.3,
-    "look": {"fog": "#2b3550", "fog_density": 0.012, "fog_start": 12.0, "sky": "#10141c", "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True},
+    "look": {"fog": "#2b3550", "fog_density": 0.012, "fog_start": 12.0, "sky": "#10141c", "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True, "polish": True},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.04, 0.012, -0.03], "saturation": 1.05, "contrast": 1.06, "vignette": 0.36,
               "bloom": 0.4, "grain": 0.012, "red_line": 0.74, "red_lift_blue": 0.5},
     "shot_grades": {**{SID[r]: {"shadows": [0.06, 0.02, -0.04], "highlights": [0.08, 0.04, -0.06], "saturation": 1.18, "exposure": 1.0,
