@@ -9,6 +9,10 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
+ids = [l["id"] for l in lines]
+lines.insert(ids.index("L38"), {"id": "P01", "pause": 0.6, "chunks": []})     # the drop before the shed door
+ids = [l["id"] for l in lines]
+lines.insert(ids.index("L64a"), {"id": "P02", "pause": 0.5, "chunks": []})    # the held beat: two alarms
 
 me = {"age": "teen", "skin": "#f1c9a0", "shirt": "#1f2f6a", "pattern": "solid", "pants": "#6a6fa8", "shoes": "#f4f4f2",
       "sleeves": "long", "hair": "spiky", "hair_c": "#5a3a22", "extras": ["hooddown"], "extra_c": "#1f2f6a",

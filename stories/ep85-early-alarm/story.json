@@ -63,6 +63,707 @@
  },
  "lines": [
   {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "If your alarm rings",
+     "If your alarm rings"
+    ],
+    [
+     "an HOUR early,",
+     "an hour early,"
+    ],
+    [
+     "do NOT get up.",
+     "do not get up."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Lie STILL.",
+     "Lie still."
+    ],
+    [
+     "Eyes on the CEILING.",
+     "Eyes on the ceiling."
+    ],
+    [
+     "Until it's LIGHT.",
+     "Until it's light."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Everybody here",
+     "Everybody here"
+    ],
+    [
+     "knows the RULE.",
+     "knows the rule."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mr. Pruitt next door",
+     "Mr. Pruitt next door"
+    ],
+    [
+     "keeps his alarm clock",
+     "keeps his alarm clock"
+    ],
+    [
+     "in the FRIDGE.",
+     "in the fridge."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Just in CASE.",
+     "Just in case."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Even his DOG",
+     "Even his dog"
+    ],
+    [
+     "stays in bed.",
+     "stays in bed."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody's lights",
+     "Nobody's lights"
+    ],
+    [
+     "come on",
+     "come on"
+    ],
+    [
+     "before SIX.",
+     "before six."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Except OURS.",
+     "Except ours."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My dad, FRANK,",
+     "My dad, Frank,"
+    ],
+    [
+     "is up",
+     "is up"
+    ],
+    [
+     "before EVERYONE.",
+     "before everyone."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I come down at SEVEN,",
+     "I come down at seven,"
+    ],
+    [
+     "and he's already",
+     "and he's already"
+    ],
+    [
+     "at the TABLE,",
+     "at the table,"
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "SUNBURNED.",
+     "Sunburned."
+    ],
+    [
+     "In NOVEMBER.",
+     "In November."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "His work gloves",
+     "His work gloves"
+    ],
+    [
+     "on the counter,",
+     "on the counter,"
+    ],
+    [
+     "still WARM.",
+     "still warm."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Our backyard",
+     "Our backyard"
+    ],
+    [
+     "is the only one on the street",
+     "is the only one on the street"
+    ],
+    [
+     "that never gets FROST.",
+     "that never gets frost."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the sun",
+     "And the sun"
+    ],
+    [
+     "comes up",
+     "comes up"
+    ],
+    [
+     "right over our SHED.",
+     "right over our shed."
+    ],
+    [
+     "Every DAY.",
+     "Every day."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad watches it",
+     "Dad watches it"
+    ],
+    [
+     "like he's checking",
+     "like he's checking"
+    ],
+    [
+     "it's STRAIGHT.",
+     "it's straight."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I hate MORNINGS.",
+     "I hate mornings."
+    ],
+    [
+     "Dad LOVES them.",
+     "Dad loves them."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's most",
+     "That's most"
+    ],
+    [
+     "of our FIGHTS.",
+     "of our fights."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then on MONDAY,",
+     "Then on Monday,"
+    ],
+    [
+     "Dad's back",
+     "Dad's back"
+    ],
+    [
+     "went OUT.",
+     "went out."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He couldn't get",
+     "He couldn't get"
+    ],
+    [
+     "off the COUCH.",
+     "off the couch."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And at five o'clock",
+     "And at five o'clock"
+    ],
+    [
+     "on TUESDAY,",
+     "on Tuesday,"
+    ],
+    [
+     "MY alarm rang.",
+     "my alarm rang."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "An hour EARLY.",
+     "An hour early."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I did",
+     "So I did"
+    ],
+    [
+     "what you DO.",
+     "what you do."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I lay STILL.",
+     "I lay still."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Six o'CLOCK.",
+     "Six o'clock."
+    ],
+    [
+     "Still DARK.",
+     "Still dark."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "SEVEN.",
+     "Seven."
+    ],
+    [
+     "Still DARK.",
+     "Still dark."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The whole street",
+     "The whole street"
+    ],
+    [
+     "stood on their porches",
+     "stood on their porches"
+    ],
+    [
+     "in their ROBES,",
+     "in their robes,"
+    ],
+    [
+     "looking UP.",
+     "looking up."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The sun came up",
+     "The sun came up"
+    ],
+    [
+     "at NINE.",
+     "at nine."
+    ],
+    [
+     "Slow,",
+     "Slow,"
+    ],
+    [
+     "and CROOKED.",
+     "and crooked."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "People drove to work",
+     "People drove to work"
+    ],
+    [
+     "with their HEADLIGHTS on.",
+     "with their headlights on."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mr. Pruitt's ROOSTER",
+     "Mr. Pruitt's rooster"
+    ],
+    [
+     "just gave UP.",
+     "just gave up."
+    ]
+   ]
+  },
+  {
+   "id": "L29a",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And every AFTERNOON,",
+     "And every afternoon,"
+    ],
+    [
+     "Dad looked WORSE.",
+     "Dad looked worse."
+    ],
+    [
+     "Fresh SUNBURN.",
+     "Fresh sunburn."
+    ],
+    [
+     "Wrecked on the COUCH.",
+     "Wrecked on the couch."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Wednesday,",
+     "Wednesday,"
+    ],
+    [
+     "five A.M.,",
+     "five a.m.,"
+    ],
+    [
+     "it rang AGAIN.",
+     "it rang again."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The sun came up",
+     "The sun came up"
+    ],
+    [
+     "at ELEVEN.",
+     "at eleven."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mr. Pruitt",
+     "Mr. Pruitt"
+    ],
+    [
+     "mowed his lawn",
+     "mowed his lawn"
+    ],
+    [
+     "with a FLASHLIGHT.",
+     "with a flashlight."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad heard my alarm",
+     "Dad heard my alarm"
+    ],
+    [
+     "through the WALL.",
+     "through the wall."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He said,",
+     "He said,"
+    ],
+    [
+     "whatever I hear,",
+     "whatever I hear,"
+    ],
+    [
+     "I stay in BED.",
+     "I stay in bed."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We had",
+     "We had"
+    ],
+    [
+     "our worst FIGHT",
+     "our worst fight"
+    ],
+    [
+     "in years.",
+     "in years."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "THURSDAY.",
+     "Thursday."
+    ],
+    [
+     "Five A.M.",
+     "Five a.m."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I got UP.",
+     "I got up."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.6,
+   "chunks": []
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Our shed door",
+     "Our shed door"
+    ],
+    [
+     "was OPEN.",
+     "was open."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A rope ran out of it,",
+     "A rope ran out of it,"
+    ],
+    [
+     "across the GRASS,",
+     "across the grass,"
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "to something",
+     "to something"
+    ],
+    [
+     "as big",
+     "as big"
+    ],
+    [
+     "as our GARAGE,",
+     "as our garage,"
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "curled up",
+     "curled up"
+    ],
+    [
+     "on our LAWN.",
+     "on our lawn."
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Round,",
+     "Round,"
+    ],
+    [
+     "and WARM,",
+     "and warm,"
+    ],
+    [
+     "glowing softly",
+     "glowing softly"
+    ],
+    [
+     "the way coals DO.",
+     "the way coals do."
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was BREATHING.",
+     "It was breathing."
+    ]
+   ]
+  },
+  {
    "id": "L44",
    "who": "narrator",
    "chunks": [
@@ -91,6 +792,549 @@
     [
      "from my FACE.",
      "from my face."
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was the SUN.",
+     "It was the sun."
+    ]
+   ]
+  },
+  {
+   "id": "L47",
+   "who": "narrator",
+   "chunks": [
+    [
+     "OUR sun.",
+     "Our sun."
+    ],
+    [
+     "The one",
+     "The one"
+    ],
+    [
+     "from the SKY.",
+     "from the sky."
+    ]
+   ]
+  },
+  {
+   "id": "L48",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Behind me,",
+     "Behind me,"
+    ],
+    [
+     "Dad was on the back step",
+     "Dad was on the back step"
+    ],
+    [
+     "in his ROBE.",
+     "in his robe."
+    ]
+   ]
+  },
+  {
+   "id": "L49",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He said,",
+     "He said,"
+    ],
+    [
+     "now you've SEEN it.",
+     "now you've seen it."
+    ]
+   ]
+  },
+  {
+   "id": "L50",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The sun doesn't RISE.",
+     "The sun doesn't rise."
+    ]
+   ]
+  },
+  {
+   "id": "L51",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every night",
+     "Every night"
+    ],
+    [
+     "it comes down",
+     "it comes down"
+    ],
+    [
+     "to sleep",
+     "to sleep"
+    ],
+    [
+     "in our YARD.",
+     "in our yard."
+    ]
+   ]
+  },
+  {
+   "id": "L52",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And every morning,",
+     "And every morning,"
+    ],
+    [
+     "somebody has to WAKE it,",
+     "somebody has to wake it,"
+    ],
+    [
+     "and winch it back UP.",
+     "and winch it back up."
+    ]
+   ]
+  },
+  {
+   "id": "L53",
+   "who": "narrator",
+   "chunks": [
+    [
+     "For thirty YEARS,",
+     "For thirty years,"
+    ],
+    [
+     "that was Dad.",
+     "that was Dad."
+    ]
+   ]
+  },
+  {
+   "id": "L53a",
+   "who": "narrator",
+   "chunks": [
+    [
+     "This week,",
+     "This week,"
+    ],
+    [
+     "he'd been crawling out there ALONE,",
+     "he'd been crawling out there alone,"
+    ],
+    [
+     "bad back and ALL.",
+     "bad back and all."
+    ]
+   ]
+  },
+  {
+   "id": "L53b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "SLOWER every day.",
+     "Slower every day."
+    ],
+    [
+     "That's why the sun",
+     "That's why the sun"
+    ],
+    [
+     "came up LATE,",
+     "came up late,"
+    ],
+    [
+     "and CROOKED.",
+     "and crooked."
+    ]
+   ]
+  },
+  {
+   "id": "L54",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's why",
+     "That's why"
+    ],
+    [
+     "the rule says",
+     "the rule says"
+    ],
+    [
+     "stay in BED.",
+     "stay in bed."
+    ]
+   ]
+  },
+  {
+   "id": "L55",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Whoever SEES it",
+     "Whoever sees it"
+    ],
+    [
+     "on the grass",
+     "on the grass"
+    ],
+    [
+     "gets the early alarm.",
+     "gets the early alarm."
+    ],
+    [
+     "For GOOD.",
+     "For good."
+    ]
+   ]
+  },
+  {
+   "id": "L55a",
+   "who": "narrator",
+   "chunks": [
+    [
+     "ANYBODY.",
+     "Anybody."
+    ],
+    [
+     "Mr. PRUITT.",
+     "Mr. Pruitt."
+    ],
+    [
+     "The MAILMAN.",
+     "The mailman."
+    ],
+    [
+     "YOU.",
+     "You."
+    ]
+   ]
+  },
+  {
+   "id": "L56",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And when the one who's seen it CAN'T,",
+     "And when the one who's seen it can't,"
+    ],
+    [
+     "it rings",
+     "it rings"
+    ],
+    [
+     "for the next one",
+     "for the next one"
+    ],
+    [
+     "in their HOUSE.",
+     "in their house."
+    ]
+   ]
+  },
+  {
+   "id": "L57",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad never wanted",
+     "Dad never wanted"
+    ],
+    [
+     "that for ME.",
+     "that for me."
+    ]
+   ]
+  },
+  {
+   "id": "L58",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He says",
+     "He says"
+    ],
+    [
+     "it's heavier",
+     "it's heavier"
+    ],
+    [
+     "in WINTER.",
+     "in winter."
+    ]
+   ]
+  },
+  {
+   "id": "L59",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He leaned on the WINCH.",
+     "He leaned on the winch."
+    ],
+    [
+     "His back",
+     "His back"
+    ],
+    [
+     "wouldn't LET him.",
+     "wouldn't let him."
+    ]
+   ]
+  },
+  {
+   "id": "L60",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I tried.",
+     "I tried."
+    ],
+    [
+     "It didn't BUDGE.",
+     "It didn't budge."
+    ]
+   ]
+  },
+  {
+   "id": "L61",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then I thought",
+     "Then I thought"
+    ],
+    [
+     "about the RULE.",
+     "about the rule."
+    ]
+   ]
+  },
+  {
+   "id": "L62",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Whoever SEES it",
+     "Whoever sees it"
+    ],
+    [
+     "gets the alarm.",
+     "gets the alarm."
+    ]
+   ]
+  },
+  {
+   "id": "L63",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad SAW it.",
+     "Dad saw it."
+    ],
+    [
+     "I SAW it.",
+     "I saw it."
+    ]
+   ]
+  },
+  {
+   "id": "L64",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It never said",
+     "It never said"
+    ],
+    [
+     "ONE person.",
+     "one person."
+    ]
+   ]
+  },
+  {
+   "id": "P02",
+   "pause": 0.5,
+   "chunks": []
+  },
+  {
+   "id": "L64a",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There were TWO of us",
+     "There were two of us"
+    ],
+    [
+     "on the alarm now.",
+     "on the alarm now."
+    ]
+   ]
+  },
+  {
+   "id": "L64b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So it would take",
+     "So it would take"
+    ],
+    [
+     "TWO of us",
+     "two of us"
+    ],
+    [
+     "to lift it.",
+     "to lift it."
+    ]
+   ]
+  },
+  {
+   "id": "L65",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So Dad",
+     "So Dad"
+    ],
+    [
+     "held the BRAKE,",
+     "held the brake,"
+    ],
+    [
+     "and I CRANKED.",
+     "and I cranked."
+    ]
+   ]
+  },
+  {
+   "id": "L66",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Two of us.",
+     "Two of us."
+    ],
+    [
+     "Half the WEIGHT",
+     "Half the weight"
+    ],
+    [
+     "each.",
+     "each."
+    ]
+   ]
+  },
+  {
+   "id": "L67",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And at five fifty-EIGHT,",
+     "And at five fifty-eight,"
+    ],
+    [
+     "the sun went up",
+     "the sun went up"
+    ],
+    [
+     "over our shed,",
+     "over our shed,"
+    ],
+    [
+     "STRAIGHT.",
+     "straight."
+    ]
+   ]
+  },
+  {
+   "id": "L68",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad watched it",
+     "Dad watched it"
+    ],
+    [
+     "with somebody",
+     "with somebody"
+    ],
+    [
+     "next to him",
+     "next to him"
+    ],
+    [
+     "for the first time",
+     "for the first time"
+    ],
+    [
+     "in thirty YEARS.",
+     "in thirty years."
+    ]
+   ]
+  },
+  {
+   "id": "L69",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He didn't say ANYTHING.",
+     "He didn't say anything."
+    ],
+    [
+     "He just kept",
+     "He just kept"
+    ],
+    [
+     "his hand",
+     "his hand"
+    ],
+    [
+     "on my SHOULDER.",
+     "on my shoulder."
+    ]
+   ]
+  },
+  {
+   "id": "L70",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Now",
+     "Now"
+    ],
+    [
+     "we take TURNS.",
+     "we take turns."
+    ]
+   ]
+  },
+  {
+   "id": "L71",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And on his nights,",
+     "And on his nights,"
+    ],
+    [
+     "Dad still tells me",
+     "Dad still tells me"
+    ],
+    [
+     "the same THING.",
+     "the same thing."
     ]
    ]
   }
