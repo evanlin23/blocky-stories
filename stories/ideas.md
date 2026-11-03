@@ -300,7 +300,7 @@ Same in every pitch:
 - **Sound:** no silent gaps. A thin, light bed for the first third, then a sustained low drone that enters at the first real scare and holds to the end. Keep `music_drops` short (0.5 to 0.8 s) with the voice and the hit kept.
 - **Lights** go down and come back as slow fades (1 s or more), never flicker or strobe. Any marker that changes (a glow, a colour, a bead) changes as a slow fade too.
 - **Markers** are our own design. Nothing in the set carries real words or places.
-- **Packaging:** the title states the rule ("In this town, ..."), never as an imperative and never spoiling the twist. The pin is a question the viewer answers about themselves.
+- **Packaging:** the title states the rule ("In this town, ..."), as a statement or a warning (RULES, 2026-11-03) and never spoiling the twist. The pin is a question the viewer answers about themselves.
 - **The lore plant** is one plain tally (lore.md → Open threads → Fifth parallel batch), shown once, held, never narrated.
 
 | # | Slug (ep) | Rule type | Setting | Creature | Loved one | Kind of warmth | Rule opener line | Marker |
