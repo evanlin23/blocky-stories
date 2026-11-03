@@ -6,30 +6,54 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Never wait for someone at the front gate.",
+   "text": "You can't wait for someone at the front gate.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
+   "dur": 1.931,
    "onset": 0.172,
-   "end": 1.707,
+   "end": 1.741,
    "chunks": [
     [
      0.172,
-     0.5
+     0.552
     ],
     [
-     0.5,
-     0.845
+     0.552,
+     0.879
     ],
     [
-     0.845,
-     1.215
+     0.879,
+     1.25
     ],
     [
-     1.215,
-     1.707
+     1.25,
+     1.741
+    ]
+   ]
+  },
+  "L01b": {
+   "text": "Moss grows on you while you wait.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.776
+    ],
+    [
+     0.776,
+     1.5
     ]
    ]
   },
@@ -1946,30 +1970,6 @@
     [
      3.466,
      3.983
-    ]
-   ]
-  },
-  "L01b": {
-   "text": "Moss grows on you while you wait.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.69,
-   "onset": 0.172,
-   "end": 1.5,
-   "chunks": [
-    [
-     0.172,
-     0.578
-    ],
-    [
-     0.578,
-     0.776
-    ],
-    [
-     0.776,
-     1.5
     ]
    ]
   }

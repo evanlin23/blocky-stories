@@ -20,3 +20,17 @@ Round 3 checks only the r2 must-fixes, the new opening and whether the big idea 
 **Panel:** The fan stays to the end and comments "Biscuit was walking Dad home the whole time". Top comment: "MEOW, Biscuit is the real dad".
 
 **Advice (not blocking):** S91, 103.3-103.7 s: hide Biscuit's face behind the boot wall, or start him above the boot's mouth, so it doesn't clip through the rubber.
+
+## Round 4 (changed shots only), 2026-11-03
+
+Verdict: approve
+
+Checked at 300 px wide from the preview, plus `preflight` (0 blocks, no clip or pace rows).
+- S91/S92 (103.3-104.8 s): clean. The boot stays empty until Biscuit's ears clear the rim (104.5 s), then his face sits on top. No head through leather.
+- S58 (69.7-70.7 s): clean. The strider's head stays inside the pane, and the bend to the glass still reads.
+- S67 (79.8-80.7 s): clean. Dad's head is clear of the carrier handle and the roof edge.
+- S09 (11.7-13.1 s): the head sinking into the pillow can't be seen at phone size and reads as a sleeping head on a soft pillow. `clip_ok "S09/bed_single"` accepted.
+- S79 (~91.5 s): the 135-185 mm zoom reads as "way back". The figure is small but clear.
+- Cover (9.9 s): Biscuit's flat-eyed face in the carrier reads at 300 px. Works.
+
+No must-fixes.
