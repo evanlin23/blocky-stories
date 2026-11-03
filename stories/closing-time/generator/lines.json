@@ -4,16 +4,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "You NEVER skip",
-    "You never skip"
+    "You HAVE to",
+    "You have to"
    ],
    [
-    "WAVING GOODBYE to",
-    "waving goodbye to"
+    "WAVE GOODBYE",
+    "wave goodbye"
    ],
    [
-    "the BIG TANK.",
-    "the big tank."
+    "to the",
+    "to the"
+   ],
+   [
+    "BIG TANK.",
+    "big tank."
    ]
   ]
  },
@@ -893,8 +897,8 @@
     "frozen,"
    ],
    [
-    "gripping a MOP.",
-    "gripping a mop."
+    "MOP in hand.",
+    "mop in hand."
    ]
   ],
   "tempo": 0.84

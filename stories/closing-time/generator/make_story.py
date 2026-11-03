@@ -140,7 +140,7 @@ SH = [
     # the reverse, through the glass: my face, lit by the caustics
     ("L02", front(hd(LINE["me"]), 0, 8, 1.6, 0.0, 26, push=0.12), {"tank_fog": 0.05}),
     # round 5 (critic 3): a close on the three of us waving at the glass, from the water side, lit, faces big
-    ("L03", front([-0.35, 1.05, 1.62], 0, -58, 2.7, 0.0, 34, push=0.15, aim_dz=0.0), {"tank_fog": 0.05}),
+    ("L03", front([0.0, 1.05, 1.62], 0, 36, 3.2, 0.0, 44, push=0.2, aim_dz=0.0), {"tank_fog": 0.05}),
     # low along the glass, then into the blue
     ("L04", mv([5.6, 0.95, 0.45], [-3.0, -0.6, 2.3], 17, [4.7, 0.95, 0.45], [-3.8, -0.6, 2.3], 17), {}),
     ("L04.2", mv([0.6, 1.3, 1.65], [0.2, -20.0, 2.2], 24, [0.6, 0.85, 1.65], [0.2, -20.0, 2.2], 26), {}),
@@ -148,8 +148,8 @@ SH = [
     ("L08", front(hd(LINE["dev"], H_DEV), 0, 10, 1.7, 0.0, 24, aim_dz=0.1), {"tank_fog": 0.05}),
     # the fish don't swim: the crowd hanging still, all pointed at us
     # round 5 (critic 4): L09 one fish hanging face-on, close; L10 the school, all pointed at us
-    ("L09", mv([1.2, -1.0, 2.0], [0.9, -5.0, 2.2], 55, [1.1, -1.1, 2.0], [0.9, -5.0, 2.2], 60),
-     {"tank_fog": 0.08, "dof": [4.0, 2.0]}),
+    ("L09", mv([1.2, -1.0, 2.0], [0.9, -5.0, 2.2], 38, [1.1, -1.1, 2.0], [0.9, -5.0, 2.2], 42),
+     {"tank_fog": 0.06}),
     ("L10", mv([2.4, -1.2, 1.3], [-1.0, -8.0, 2.6], 22, [1.0, -1.4, 1.35], [-1.6, -8.0, 2.6], 22), {"tank_fog": 0.1}),
     # way out in the blue: a slow push past the crowd into the fog, to the rows hanging in the dark (P1 wide)
     ("L12", mv([0.3, -1.0, 2.0], [0.6, -22.0, 2.5], 30, [0.4, -4.5, 2.2], [0.6, -22.0, 2.5], 34),
@@ -317,7 +317,7 @@ MOPPING = dict(arms=[38, 42], side=[0, 0], mop=True)
 me = [
     {"at": 0, "pos": LINE["me"], "yaw": 0, "expr": "neutral", "head": [0, 6], "bow": 0, "wipe": 0.0, **WAVE_ME},
     {"at": "L02", "pos": LINE["me"], "expr": "neutral"},
-    {"at": "L03", "pos": LINE["me"], **DOWN, "blend": 0.5},
+    {"at": "L04", "pos": LINE["me"], **DOWN, "blend": 0.5},
     {"at": "L04.2", "head": [0, 4]},
     {"at": "L10", "expr": "worried", "head": [0, 6]},
     # 02: my first week, at the rail looking down into the tank
@@ -587,7 +587,7 @@ COOL = "#e8f2f6"
 WARM = "#ffd8b4"
 ROSA_KEY = "#f6dcc6"                            # a touch warmer on Rosa's skin (standards A)
 FACE = {"caustic": 0.35}
-REV = {"disp": 4.5, "hallfill": 4.0}          # the reveal: the hall a lit box seen from out in the water
+REV = {"disp": 3.4, "hallfill": 3.0}          # the reveal: the hall a lit box seen from out in the water
 ROWS_KEY = [[-0.4, 0.6, 1.0], [-1.6, -0.6, 2.8], 160.0, 55, COOL]   # low from the right: sockets fall into shadow
 LOOKS = {
     # the hook: its shut rows lit a touch out there (a narrow spot from below, in the water)
@@ -670,7 +670,7 @@ fx = [
 # ---------------------------------------------------------------------------------------------------- sound
 EYE_OPEN = [f"L50.1+{0.17 * j:.2f}" for j in range(10)]
 sfx = [
-    {"at": "L01.2", "kind": "sting_mid", "db": -6, "dur": 1.6},
+    {"at": "L01.3", "kind": "sting_mid", "db": -6, "dur": 1.6},
     {"at": "L12.3", "kind": "glide", "db": -24, "dur": 2.6},
     {"at": "L27", "kind": "glide", "db": -20, "dur": 2.4},
     {"at": "L36.1", "kind": "door", "db": -18},
@@ -723,6 +723,7 @@ story = {
     # mirror of the hall; the steepest looks through it go lower per shot (glass_ior)
     "glass_ior_default": 1.25,
     "tail": 0.25,
+    "fade_in": False,
     "look": {"fog": "#0a2a3a", "fog_density": 0.0, "fog_start": 3.0, "sky": "#0f4254", "sky_strength": 1.0,
              "exposure": 0.35, "flash_safe": True,
              "polish": {"emph": ["L22.2"], "quiet": [["L68", "P04"], ["L79", "L83c"]]}},

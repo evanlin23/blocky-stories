@@ -16,6 +16,7 @@
  "min_read": 0.3,
  "glass_ior_default": 1.25,
  "tail": 0.25,
+ "fade_in": false,
  "look": {
   "fog": "#0a2a3a",
   "fog_density": 0.0,
@@ -74,7 +75,7 @@
   "S03": 0.05,
   "S06": 0.05,
   "S07": 0.05,
-  "S08": 0.08,
+  "S08": 0.06,
   "S09": 0.1,
   "S10": 0.11,
   "S11": 0.11,
@@ -163,10 +164,6 @@
   "S57": 3.0
  },
  "dof": {
-  "S08": [
-   4.0,
-   2.0
-  ],
   "S61": [
    4.9,
    2.8
@@ -270,16 +267,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "You NEVER skip",
-     "You never skip"
+     "You HAVE to",
+     "You have to"
     ],
     [
-     "WAVING GOODBYE to",
-     "waving goodbye to"
+     "WAVE GOODBYE",
+     "wave goodbye"
     ],
     [
-     "the BIG TANK.",
-     "the big tank."
+     "to the",
+     "to the"
+    ],
+    [
+     "BIG TANK.",
+     "big tank."
     ]
    ]
   },
@@ -1159,8 +1160,8 @@
      "frozen,"
     ],
     [
-     "gripping a MOP.",
-     "gripping a mop."
+     "MOP in hand.",
+     "mop in hand."
     ]
    ],
    "tempo": 0.84
@@ -1817,30 +1818,30 @@
     [
      0,
      [
-      -2.64,
-      -0.381,
+      1.881,
+      -1.539,
       1.62
      ],
      [
-      -0.35,
+      0.0,
       1.05,
       1.62
      ],
-     34
+     44
     ],
     [
      1,
      [
-      -2.513,
-      -0.301,
+      1.763,
+      -1.377,
       1.62
      ],
      [
-      -0.35,
+      0.0,
       1.05,
       1.62
      ],
-     34
+     44
     ]
    ],
    "step": 2,
@@ -1987,7 +1988,7 @@
       -5.0,
       2.2
      ],
-     55
+     38
     ],
     [
      1,
@@ -2001,7 +2002,7 @@
       -5.0,
       2.2
      ],
-     60
+     42
     ]
    ],
    "step": 2,
@@ -3887,7 +3888,7 @@
     "expr": "neutral"
    },
    {
-    "at": "L03",
+    "at": "L04",
     "pos": [
      0.0,
      1.05
@@ -6871,8 +6872,8 @@
    "at": "L60.3-0.017",
    "name": "shot",
    "look": {
-    "disp": 4.5,
-    "hallfill": 4.0
+    "disp": 3.4,
+    "hallfill": 3.0
    }
   },
   {
@@ -6884,8 +6885,8 @@
    "at": "L62-0.017",
    "name": "shot",
    "look": {
-    "disp": 4.5,
-    "hallfill": 4.0
+    "disp": 3.4,
+    "hallfill": 3.0
    }
   },
   {
@@ -6897,8 +6898,8 @@
    "at": "L63-0.017",
    "name": "shot",
    "look": {
-    "disp": 4.5,
-    "hallfill": 4.0,
+    "disp": 3.4,
+    "hallfill": 3.0,
     "key": [
      [
       -2.6,
@@ -6940,8 +6941,8 @@
    "at": "L64-0.017",
    "name": "shot",
    "look": {
-    "disp": 4.5,
-    "hallfill": 4.0
+    "disp": 3.4,
+    "hallfill": 3.0
    }
   },
   {
@@ -6953,8 +6954,8 @@
    "at": "P03-0.017",
    "name": "shot",
    "look": {
-    "disp": 4.5,
-    "hallfill": 4.0
+    "disp": 3.4,
+    "hallfill": 3.0
    }
   },
   {
@@ -6966,8 +6967,8 @@
    "at": "L65-0.017",
    "name": "shot",
    "look": {
-    "disp": 4.5,
-    "hallfill": 4.0
+    "disp": 3.4,
+    "hallfill": 3.0
    }
   },
   {
@@ -6979,8 +6980,8 @@
    "at": "L66-0.017",
    "name": "shot",
    "look": {
-    "disp": 4.5,
-    "hallfill": 4.0
+    "disp": 3.4,
+    "hallfill": 3.0
    }
   },
   {
@@ -7438,7 +7439,7 @@
   ],
   "sfx": [
    {
-    "at": "L01.2",
+    "at": "L01.3",
     "kind": "sting_mid",
     "db": -6,
     "dur": 1.6

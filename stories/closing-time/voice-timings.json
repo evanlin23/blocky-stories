@@ -6,26 +6,30 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "You never skip waving goodbye to the big tank.",
+   "text": "You have to wave goodbye to the big tank.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.224,
+   "dur": 1.931,
    "onset": 0.172,
-   "end": 2.034,
+   "end": 1.741,
    "chunks": [
     [
      0.172,
-     0.672
+     0.431
     ],
     [
-     0.672,
-     1.224
+     0.431,
+     0.983
     ],
     [
-     1.224,
-     2.034
+     0.983,
+     1.103
+    ],
+    [
+     1.103,
+     1.741
     ]
    ]
   },
@@ -1146,26 +1150,26 @@
    ]
   },
   "L56": {
-   "text": "Dev was back, frozen, gripping a mop.",
+   "text": "Dev was back, frozen, mop in hand.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.8652,
-   "dur": 2.207,
+   "dur": 2.241,
    "onset": 0.207,
-   "end": 1.966,
+   "end": 2.017,
    "chunks": [
     [
      0.207,
-     0.707
+     0.69
     ],
     [
-     0.75,
-     1.121
+     0.724,
+     1.069
     ],
     [
-     1.155,
-     1.966
+     1.103,
+     2.017
     ]
    ]
   },

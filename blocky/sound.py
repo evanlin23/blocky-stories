@@ -691,6 +691,10 @@ def sfx_synth(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = No
     if kind == "sting":  # a sharp dissonant cluster: the reveal
         y = sum(_pad(synth.midi_hz(m), dur, 0.8, k) for k, m in enumerate((62, 63, 69)))
         return y * synth.decay(dur, dur * 0.4)[: len(y)]
+    if kind == "sting_mid":  # opt-in: the sting with its body at 200 Hz to 2 kHz, so a phone plays it
+        y = sum(_pad(synth.midi_hz(m), dur, 0.8, k) for k, m in enumerate((74, 75, 81, 86)))
+        y = fft_filter(y, "band", 200, 2000)
+        return y * synth.decay(dur, dur * 0.4)[: len(y)]
     if kind == "click":
         return synth.click(0.01, 2500.0, seed)
     if kind == "chime":   # ep45, opt-in: a warm swell of two bell tones, rising, for each dial's zero
