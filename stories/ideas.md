@@ -356,3 +356,9 @@ Replacement for killed ep44 `sleeper-car` (added 2026-11-02, slug ep57 by the ba
 Fresh idea (added with ep57, so the backlog doesn't run dry): `tide-clock`, a harbour wall's old tide gauge on spring evenings, where the rule is that everyone's hair grows one shade lighter for every person who has forgiven them. The creature is to be designed silhouette first. Loved one: an adult best friend. Warmth: keeping a tradition alive.
 
 killed: `ep57-arch-seat` (#28b, replacement for ep44 `sleeper-car`, 2026-11-03), for hard rule 5 (originality), so don't retry this twist. Standards said kill in round 2: the twist is ep47-fitting-room's with the noun swapped (I have no blocks, my cousin carries every thanks he said for me, it ends when I say it aloud), ep49-car-wash has the same turn, and ep37-comet-night shares the opener. The critic also said revise in round 2: the Span (a person as wide as a two-seat arch) read as a sofa at phone size, creature 4. The setting, the favours rule and the Span are free to reuse with a different twist. The full build is in git at commit 405d598 on branch claude/ep57-arch-seat.
+
+## Claimed big ideas
+(One line per story: the reveal in a few words. Writers check this before keeping an idea, because parallel sessions converge. ep33 and the lookout redo both picked altitude time.)
+- ep33-chairlift: a day at the top costs a year below (altitude time)
+- ep31-dawn-flight: you fall apart if your family forgets you; they relive one dawn to keep you whole
+- floor-thirteen: forgotten things go to floor 13, and the narrator is what Grandad forgot
