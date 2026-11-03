@@ -27,6 +27,18 @@
      "L70",
      "L75"
     ]
+   ],
+   "auto": false,
+   "emph": [
+    "L04.3",
+    "L10",
+    "L25",
+    "L45",
+    "L48",
+    "L52",
+    "L56",
+    "L65",
+    "L74"
    ]
   }
  },
@@ -94,9 +106,9 @@
   "neighbour": {
    "age": "adult",
    "skin": "#d9a98a",
-   "shirt": "#e8e8ee",
+   "shirt": "#dfe3ec",
    "pattern": "stripes",
-   "pattern_c": "#243a5e",
+   "pattern_c": "#5f7ca8",
    "pants": "#2d3a4f",
    "shoes": "#222222",
    "sleeves": "long",
