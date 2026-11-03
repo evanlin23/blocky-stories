@@ -595,7 +595,7 @@ story = {
                   {"at": "L32", "voices": ["pad", "piano"], "energy": 0.4, "mode": "major", "root": 45, "bpm": 76},
                   {"at": "L38", "voices": ["drone"], "energy": 0.3, "mode": "minor", "bpm": 68},
               ]},
-    "sound": {"rev": 3, "floor": "wood", "steps_db": -22,
+    "sound": {"rev": 4, "floor": "wood", "steps_db": -22,
               "ambience": [
                   {"kind": "room", "from": 0, "to": "end", "lufs": -34},
                   {"kind": "rain", "from": "L09", "to": "L32", "lufs": -30, "lp": 3500},
