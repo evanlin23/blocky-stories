@@ -44,7 +44,9 @@
   "bloom": 0.25,
   "grain": 0.008
  },
- "phonemes": {},
+ "phonemes": {
+  "tape": "tˈAp"
+ },
  "cast": {
   "me": {
    "age": "adult",
@@ -190,7 +192,7 @@
    "chunks": [
     [
      "At this DRIVE-THRU,",
-     "at this drive thru,"
+     "at this drive through,"
     ],
     [
      "never pull up",
@@ -244,8 +246,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Delivery vans TAPE",
-     "delivery vans tape"
+     "Delivery vans COVER",
+     "delivery vans cover"
     ],
     [
      "their side WINDOWS.",
@@ -386,8 +388,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "TWO NUMBER FOURS.",
-     "two number fours."
+     "TWO NUMBER",
+     "two number"
+    ],
+    [
+     "Fare US.",
+     "fare us."
     ],
     [
      "NO PICKLES.",
@@ -664,8 +670,12 @@
      "is hot."
     ],
     [
-     "Two number FOURS.",
-     "two number fours."
+     "Two number",
+     "two number"
+    ],
+    [
+     "Fare US.",
+     "fare us."
     ],
     [
      "No PICKLES.",
@@ -736,8 +746,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "past Mr. Dale's",
-     "past mister Dale's"
+     "by Mr. Dale's",
+     "by mister Dale's"
     ],
     [
      "eight TRUCKS,",
@@ -750,8 +760,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "and comes out",
-     "and comes out"
+     "and ends up",
+     "and ends up"
     ],
     [
      "at the SPEAKER.",
@@ -1155,8 +1165,8 @@
      "all of them"
     ],
     [
-     "OURS.",
-     "ours."
+     "are US.",
+     "are us."
     ]
    ]
   },
@@ -1268,8 +1278,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "And every lap",
-     "and every lap"
+     "Every lap",
+     "every lap"
     ],
     [
      "you go ROUND",
@@ -1380,12 +1390,8 @@
      "over Cal"
     ],
     [
-     "before it",
-     "before it"
-    ],
-    [
-     "can ASK.",
-     "can ask."
+     "before it ASKS.",
+     "before it asks."
     ]
    ]
   },

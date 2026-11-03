@@ -13,6 +13,15 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
+for _l in lines:
+    for _c in _l["chunks"]:
+        _c[1] = _c[1].replace("drive thru", "drive through")
+        _c[0] = _c[0].replace("Delivery vans TAPE", "Delivery vans COVER").replace("And every lap", "Every lap")
+        _c[0] = _c[0].replace("and comes out", "and ends up").replace("before it can ASK", "before it ASKS")
+        _c[1] = _c[1].replace("and comes out", "and ends up").replace("before it can ask", "before it asks")
+        _c[0] = _c[0].replace("past Mr. Dale's", "by Mr. Dale's").replace("OURS.", "are US.")
+        _c[1] = _c[1].replace("past mister Dale's", "by mister Dale's").replace("ours.", "are us.")
+        _c[1] = _c[1].replace("delivery vans tape", "delivery vans cover").replace("and every lap", "every lap")
 TIM = HERE.parent / "voice-timings.json"
 timings = json.loads(TIM.read_text())["lines"] if TIM.exists() else {}
 
@@ -500,7 +509,7 @@ story = {
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.04, 0.01, -0.03], "saturation": 1.12, "contrast": 1.05,
               "vignette": 0.22, "bloom": 0.25, "grain": 0.008},
-    "phonemes": {},
+    "phonemes": {"tape": "tˈAp"},
     "cast": cast,
     "lines": lines,
     "shots": shots,

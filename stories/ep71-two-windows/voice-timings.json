@@ -6,7 +6,7 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "at this drive thru, never pull up to the second window.",
+   "text": "at this drive through, never pull up to the second window.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -78,22 +78,22 @@
    ]
   },
   "L04": {
-   "text": "delivery vans tape their side windows.",
+   "text": "delivery vans cover their side windows.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.0,
+   "dur": 2.069,
    "onset": 0.172,
-   "end": 1.81,
+   "end": 1.879,
    "chunks": [
     [
      0.172,
-     0.854
+     0.922
     ],
     [
-     0.854,
-     1.81
+     0.922,
+     1.879
     ]
    ]
   },
@@ -714,42 +714,42 @@
    ]
   },
   "L28": {
-   "text": "past mister Dale's eight trucks,",
+   "text": "by mister Dale's eight trucks,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.672,
+   "dur": 1.621,
    "onset": 0.172,
-   "end": 1.483,
+   "end": 1.431,
    "chunks": [
     [
      0.172,
-     0.81
+     0.759
     ],
     [
-     0.81,
-     1.483
+     0.759,
+     1.431
     ]
    ]
   },
   "L29": {
-   "text": "and comes out at the speaker.",
+   "text": "and ends up at the speaker.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.483,
+   "dur": 1.431,
    "onset": 0.172,
-   "end": 1.293,
+   "end": 1.241,
    "chunks": [
     [
      0.172,
-     0.595
+     0.543
     ],
     [
-     0.595,
-     1.293
+     0.543,
+     1.241
     ]
    ]
   },
@@ -1238,14 +1238,14 @@
    ]
   },
   "L49": {
-   "text": "behind mister Dale's trucks, three cars wait. all of them ours.",
+   "text": "behind mister Dale's trucks, three cars wait. all of them are us.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.931,
+   "dur": 2.914,
    "onset": 0.155,
-   "end": 2.741,
+   "end": 2.707,
    "chunks": [
     [
      0.155,
@@ -1253,19 +1253,19 @@
     ],
     [
      0.569,
-     1.052
+     1.034
     ],
     [
-     1.086,
-     1.81
+     1.069,
+     1.776
     ],
     [
-     1.888,
+     1.87,
      2.172
     ],
     [
      2.172,
-     2.741
+     2.707
     ]
    ]
   },
@@ -1398,30 +1398,30 @@
    ]
   },
   "L55": {
-   "text": "and every lap you go round waits by the back wall.",
+   "text": "every lap you go round waits by the back wall.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.345,
+   "dur": 2.259,
    "onset": 0.172,
-   "end": 2.155,
+   "end": 2.069,
    "chunks": [
     [
      0.172,
-     0.638
+     0.56
     ],
     [
-     0.638,
-     1.069
+     0.56,
+     0.983
     ],
     [
-     1.069,
-     1.466
+     0.983,
+     1.379
     ],
     [
-     1.466,
-     2.155
+     1.379,
+     2.069
     ]
    ]
   },
@@ -1518,38 +1518,34 @@
    ]
   },
   "L59": {
-   "text": "so at the speaker, I lean over Cal before it can ask.",
+   "text": "so at the speaker, I lean over Cal before it asks.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.5,
+   "dur": 2.397,
    "onset": 0.172,
-   "end": 2.276,
+   "end": 2.207,
    "chunks": [
     [
      0.172,
-     0.319
+     0.302
     ],
     [
-     0.319,
-     0.741
+     0.302,
+     0.707
     ],
     [
-     0.776,
-     1.008
+     0.741,
+     0.974
     ],
     [
-     1.008,
-     1.414
+     0.974,
+     1.345
     ],
     [
-     1.414,
-     1.698
-    ],
-    [
-     1.698,
-     2.276
+     1.345,
+     2.207
     ]
    ]
   },
