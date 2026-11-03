@@ -26,7 +26,7 @@ Recipe points: 1 warning line · 2 frame 1 on the warned-of thing, no wide in 0 
 | floor-thirteen | 92 | "In this building, everything you forget turns up on floor thirteen." (2.5 s) | ✗ | ✗ (14 to 20 mm) | ✓ | ✗ | yes (Grandad) | **fix** |
 | ep49-car-wash | 141 | "In this town, the bell on your collar rings before every mistake." (2.4 s) | ✗ | ✓ | ✓ | ✗ | yes (brother) | **fix** |
 | ep47-fitting-room | 132 | "In this town, every lie you tell pins a white tag to your clothes." (2.5 s) | ✗ | ✗ (28 m at 1.3 s) | ✓ | ~ | yes (uncle) | **fix** |
-| ep43-reading-room | 136 | "In this town, the number over your head is how many people know your name." (2.8 s, 15 words) | ✗ | ✗ (9.8 m) | ✓ | ✗ | yes (brother) | **fix** |
+| ep43-reading-room | 136 | "In this town, the number over your head is how many people know your name." (2.8 s, 15 words) | ✗ | ✗ (9.8 m) | ✓ | ✗ | yes (brother) | **fix** → dropped 2026-11-03 (critic r7: nine must-fixes after two rounds; PR #157) |
 | ep45-bee-yard | 138 | "In this world, a clock over your head counts down to your next hug." (2.5 s) | ✗ | ✓ | ✓ | ✗ | no (partner, warm) | **fix** |
 | ep42-barber-chair | 137 | "In this town, everyone hums one note of their own, all day long." (2.7 s) | ✗ | ✗ (11 m) | ✓ | ✗ | yes (stepdad) | hold |
 | ep48-crazy-golf | 141 | "in this town, your shadow stays where you're happiest." (1.9 s) | ✗ | ✗ (12 to 22 m) | ✓ | ✗ | yes (dad) | hold |
