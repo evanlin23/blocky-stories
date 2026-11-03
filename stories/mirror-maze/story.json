@@ -2855,15 +2855,6 @@
     "yaw": 0
    },
    {
-    "from": "L01",
-    "to": "L01>",
-    "mouth": [
-     0.1,
-     0.8
-    ],
-    "flap": true
-   },
-   {
     "at": "L02",
     "hidden": true,
     "blend": 0
@@ -2956,15 +2947,6 @@
    {
     "at": "L13",
     "expr": "smirk"
-   },
-   {
-    "from": "L13",
-    "to": "L13.1>",
-    "mouth": [
-     0.2,
-     0.9
-    ],
-    "flap": true
    },
    {
     "at": "L14",

@@ -201,7 +201,6 @@ stage(0, *[E(w, p, 0, expr=e, rim=True) for w, p, e in (
 LOOK_HOOK = {"exposure": 1.1, "camfill": 1.5, "gal": 1.0, "inside": 1.6, "wash": 1.0}
 S(0, mv(((3.2, 3.9, 1.45), (3.0, 11.5, 2.2)), ((3.15, 4.3, 1.5), (3.0, 11.5, 2.2)), 34), 2, look=LOOK_HOOK,
   note="the hook: Tasha lit at the maze front, the panes behind her hold a lilac-rimmed crowd on no steps")
-mouth("tasha", "L01", "L01>", 0.1, 0.8)
 
 # =========================================================================================== 02 the van and the puddle, L02 to L05
 hide("tasha", "L02")
@@ -265,7 +264,6 @@ mouth("tasha", "L12.2", "L12>", 0.1, 0.8)
 S("L12", one((IX - 0.5, 15.3, 1.5), (TP[0], TP[1], 1.3), 38), 2, look=LOOK_IN, rain2d=False,
   note="Tasha with a tray in each hand: whoever says pickle buys the fries")
 raw("tasha", "L13", expr="smirk")
-mouth("tasha", "L13", "L13.1>", 0.2, 0.9)
 raw("me", "L13.2", expr="neutral", arms=[0, 40], blend=0.4)
 S("L13", one((IX + 0.55, 9.3, 1.5), (IX + 0.0, 13.0, 1.5), 32), 2, look=LOOK_IN, rain2d=False,
   note="she pays, eating from both trays; I never have")
