@@ -18,6 +18,14 @@ You're the orchestrator. Keep your own context small: you read reports and verdi
 - If `BLOCKY_BPY` or `BLOCKY_TTS` is unset: `bash blocky/setup.sh` and export what it prints.
 - A container can be reclaimed at any time, so commit and push `WIP` checkpoints to the branch after each story's build.
 
+## 0.5 Research before any writing (owner, 2026-11-03: "I'm worried we aren't spending enough time doing research and then just jumping into creating new shorts.")
+No writer call until `docs/research/<date>-week.md` is committed. It holds:
+1. **Our numbers:** every upload's views, viewed vs swiped away, average % viewed, the biggest retention drop and its second, from `metrics/` (plus anything the owner pasted from Studio). Say what held people and where we lost them, with the numbers.
+2. **The market now:** the newest `docs/trends/` scan and `docs/trends/deep/` (the top Shorts' titles, lengths, descriptions and top comments). The 10 fastest Shorts in formats we could make, with one line each on why it works (premise, hook, length, title shape, what commenters react to).
+3. **Three hypotheses** for this batch, each one change we can measure ("60 to 90 s beats 130 s on average % viewed"), and which stories test which.
+4. **Pitches:** at least 3 times as many pitches as stories, each citing its evidence (a trend row, a comment theme or our own number). A fresh agent that has read nothing ranks them blind by title and first line, mixed with 5 of this week's fastest real titles. Keep the top N. Any of ours below the real titles' median doesn't get written.
+Spend real effort here: about a fifth of the batch's time goes to research, before any building.
+
 ## 1. Write (1 writer call)
 "Write a batch of N stories" (plus the owner's idea, if any). Check its variety table yourself, and check the batch for **superficial sameness** (YouTube demonetizes "narrated stories with only superficial differences"): at most a third of titles start "In This Town", and no two stories share a setting type, a rule type, a creature type, a twist shape, a palette or a music mood. Then: no shared setting, creature, first line, ending or warmth. If two rows clash, send the writer back once.
 

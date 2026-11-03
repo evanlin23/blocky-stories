@@ -27,6 +27,7 @@ The owner, 2026-11-03: "you can do whatever you want, this is your channel to ex
 - **Titles:** 3 to 7 words: the rule or the hook, one word in caps, one emoji at the end. "In This Town" only rarely. Never a spoiler.
 - **Series experiment:** a recurring "me" and family across several Shorts that can mention each other. Each one still stands alone (a third of the experiment slots until we know).
 - **Never copy:** the game's name or currency, "subscribe to get" promises, or any channel's premise, characters or titles. Hard rule 5 still applies, so vary the skeleton story to story.
+- **Research first** (owner, 2026-11-03: "I'm worried we aren't spending enough time doing research and then just jumping into creating new shorts."): every batch starts with a committed research brief (`/week` step 0.5): our numbers, the market now, three hypotheses and at least 3 times as many evidence-backed pitches as stories, ranked blind against real hits. No new batch is written before the previous one's brief exists.
 - **Judge it:** compare viewed vs swiped away and average % viewed for the first 10 reset stories against the 10 before them.
 
 ## Trends: don't bet the channel on one format (owner, 2026-11-02)
