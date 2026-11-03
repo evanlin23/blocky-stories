@@ -74,7 +74,7 @@ def person(skin, shirt, pants, shoes, hair, hair_c, **kw):
 cast = {
     "me": person("#f0c7a6", "#2c3f66", "#4a3d30", "#5a3a22", "buzz", "#a9a9ab", extras=["coat", "backpack"],
                  zip_c="#f2f0e8", extra_c="#6b4a2a"),
-    "jory": person("#e6b894", "#5a7494", "#6e4f6e", "#2b221b", "long", "#f2f2ee", pattern="knit", pattern_c="#e8dfc6",
+    "jory": person("#e6b894", "#5a7494", "#6e4f6e", "#2b221b", "long", "#a7a29a", pattern="knit", pattern_c="#e8dfc6",
                    hat="beanie", hat_c="#c2602a", face={"eyes": "lashes", "brows": True}, height=0.97),
     "neighbour": person("#f0c9a6", "#d1a031", "#3b3f4d", "#3a2a20", "bun", "#3a2a20", hat="bucket", hat_c="#c9b98a"),
     "busman": person("#d9a67e", "#7b7f86", "#3b3b40", "#2a2a2e", "cap", "#c8c8c8", extras=["coat"], zip_c="#505560"),
@@ -85,7 +85,7 @@ cast = {
     "meeter3": person("#e0b08a", "#5b6a86", "#2c2c34", "#22201e", "cap", "#2a1d15", hat="ballcap", hat_c="#364055"),
     "trainwoman": person("#efc4a2", "#b04a5a", "#3a3a44", "#2a2a2e", "long", "#5a3a28", extras=["coat"], zip_c="#7a2a3a"),
     "benchman": person("#e0b28c", "#c2a074", "#4b4a52", "#3a2f26", "cap", "#d8d8d8"),
-    "benchwife": person("#efc4a2", "#7a3b5e", "#33343c", "#2a2a2e", "bun", "#b8b8b8", extras=["coat"], zip_c="#4e2440",
+    "benchwife": person("#efc4a2", "#7a3b5e", "#33343c", "#2a2a2e", "bun", "#5f5f66", extras=["coat"], zip_c="#4e2440",
                         face={"eyes": "lashes", "brows": True}),
 }
 
@@ -136,8 +136,9 @@ hide("trainwoman", "L05.2")
 hide("meeter2", "L05.2")
 hide("meeter3", "L05.2")
 hide("meeter1", "L06")
-put("benchman", "L06", [119.1, -0.3, -0.23], 180, expr="neutral", sit=True)
-put("benchwife", "L06", [119.95, -0.3, -0.23], 180, expr="neutral", sit=True, arms=[0, 100])
+put("benchman", "L06", [118.95, -0.3, -0.23], 180, expr="neutral", sit=True)
+put("benchwife", "L06", [120.15, -0.3, -0.23], 180, expr="neutral", sit=True, arms=[0, 0])
+set_("benchwife", "L07", arms=[0, 100], blend=0.6)
 hide("benchman", "L08")
 hide("benchwife", "L08")
 
@@ -268,9 +269,9 @@ S("L05.2", mv([160.9, 0.2, 2.15], list(TM_F), 36, [160.8, 0.3, 2.15], list(TM_F)
 S("L06", mv([125.0, 9.0, 2.5], [119.8, -1.0, 1.5], 28, [124.0, 8.6, 2.4], [119.8, -1.0, 1.5], 28))
 BM_F = face_of(119.1, -0.3, -0.23 + 0.0, sit=False)
 BM_F = [119.1, -0.3, 1.33]
-S("L06.1", front(BM_F, 180, 18, 2.3, 0.0, 34, push=0.15))
 BW_F = [119.95, -0.3, 1.33]
-S("L07", front(BW_F, 180, -22, 2.2, 0.0, 34, push=0.15))
+# one medium two-shot of the shop bench for L06.1 and L07 (the old S10 is gone; later ids keep their numbers)
+S("L06.1", front([119.55, -0.3, 1.0], 180, 4, 6.4, 0.3, 34, push=0.3))
 
 # ---- 02 me and Jory
 ME_G = face_of(0.0, -0.9)
@@ -381,7 +382,7 @@ S("L55", mv([0.6, 9.0, 1.5], [-1.0, -2.0, 1.2], 40, [0.6, 9.0, 1.5], [-1.0, -2.0
   look=kn_look([-0.5, 0.0, 1.5], [-1.7, -1.7, 1.45]))
 S("L56", mv([3.6, 14.5, 1.3], [3.6, 20.5, 0.8], 30, [3.6, 15.5, 1.3], [3.6, 20.5, 0.8], 30))
 JB_F = [BX - 0.45, BY, 1.33]
-S("L56.3", front(JB_F, 0, 12, 2.0, 0.0, 34, push=0.15), look=key(JB_F, [3.8, 18.4, 1.6], 120, side=-0.8))
+S("L56.3", front(JB_F, 0, 12, 2.0, 0.0, 34, push=0.15), look=key(JB_F, [3.8, 18.4, 1.6], 50, side=-0.8))
 S("L57", mv([6.4, 19.0, 1.2], [BX - 0.45, 20.4, 1.3], 34, [6.2, 19.2, 1.2], [BX - 0.45, 20.4, 1.3], 34))
 S("L58", mv([1.8, 14.5, 1.5], [3.6, 20.4, 1.15], 30, [2.0, 15.0, 1.5], [3.6, 20.4, 1.15], 30))
 S("L59", mv([3.6, 24.0, 1.55], [3.6, 12.0, 0.9], 26, [3.6, 23.6, 1.55], [3.6, 12.0, 0.9], 26))
@@ -409,7 +410,7 @@ S("L72.4", mv([-0.1, 0.3, 0.4], [-1.4, -2.0, 0.2], 28, [-0.1, 0.2, 0.38], [-1.4,
 
 shots, SID = [], {}
 for i, (at, cam, opt) in enumerate(SH):
-    sid = opt.get("id") or f"S{i + 1:02d}"
+    sid = opt.get("id") or f"S{i + 1 + (1 if i >= 9 else 0):02d}"
     s = {"id": sid, "cam": cam, "step": opt.get("step", 2), "hand": opt.get("hand", 0.004)}
     if i:
         s["at"] = at

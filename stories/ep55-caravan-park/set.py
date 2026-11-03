@@ -653,8 +653,8 @@ def build_moss(kit, ctx, M, cast):
         "meeter2": shoulder(-1, 3, 0, 0.1, 1.2) + shoulder(1, 3, 0, 0.1, 1.2) + [hat_pad(0, 0.1, 3), ("torso", (0.0, 0.55, 1.0), (0.8, 0.0, 0.7), 5, 0, 0.1, (0.5, 0.3, 0.4), 1)],
         "meeter3": shoulder(-1, 3, 0, 0.1, 1.1) + shoulder(1, 3, 0, 0.1, 1.2) + [hat_pad(0, 0.1, 3), ("arm-1", (0, 0, -0.7), (0.1, 0, 0.5), 3, 0, 0.1, (0.5, 0.5, 0.35), 1)],
         "benchman": (shoulder(-1, 3, 0, 0.1, 1.1) + shoulder(1, 3, 0, 0.1, 1.1)
-                     + [("arm-1", (0.0, 0.0, -0.45), (0.1, 0.0, 0.5), 5, 0, 0.1, (0.55, 0.55, 0.4), 1),
-                        ("arm1", (0.0, 0.0, -0.45), (0.1, 0.0, 0.5), 5, 0, 0.1, (0.55, 0.55, 0.4), 1)]),
+                     + [("arm-1", (0.0, -0.22, -0.5), (0.1, 0.0, 0.45), 6, 0, 0.1, (0.6, 0.5, 0.42), 1),
+                        ("arm1", (0.0, -0.22, -0.5), (0.1, 0.0, 0.45), 6, 0, 0.1, (0.6, 0.5, 0.42), 1)]),
         # Jory: his left shoulder is local +x. Thickest there, first. Then right, head, brows. Above 1.0: head to foot.
         "jory": (shoulder(1, 5, 0.05, 0.62, 1.05, 2)
                  + shoulder(-1, 4, 0.34, 0.88, 0.8, 1)
@@ -678,14 +678,17 @@ def build_moss(kit, ctx, M, cast):
     top = H / 2
     if "jory" in cast:
         hg = bpy.data.objects["jory.headg"]
-        white = kit.plastic("#f2f2ee", 0.8, name="white hair")
+        white = kit.plastic("#a7a29a", 0.8, name="white hair")
         for sx in (-1, 1):   # long white locks fall in front of her shoulders so she reads as a woman from the front
-            kit.box(f"jory.lock{sx}", (0.34, 0.5, H * 0.95), (sx * (R - 0.02), -0.1, top - H * 0.5), white, hg, bevel=0.1)
+            kit.box(f"jory.lock{sx}", (0.2, 0.5, H * 0.95), (sx * (R - 0.08), -0.1, top - H * 0.5), white, hg, bevel=0.07)
+            # moss clumps in the hair, growing in with the rest of her (lock front is y = -0.35)
+            for q, (mz, ms, mt) in enumerate([(0.5, 0.1, 0.55), (-0.1, 0.1, 0.7), (-0.3, 0.1, 0.88)]):
+                moss_pad(kit, ctx, M, "jory", hg, f"jory.hairm{sx}{q}", (sx * (R - 0.07), -0.35, mz), (ms, ms * 0.8, ms), mt)
         plum = kit.plastic("#6e4f6e", 0.8, name="heather plum")
         kit.box("jory.skirt", (2.12, 1.5, 1.7), (0, 0, 1.2), plum, bpy.data.objects["jory"], bevel=0.1)
         kit.box("jory.skirt2", (2.3, 1.6, 0.2), (0, 0, 0.45), plum, bpy.data.objects["jory"], bevel=0.05)
-        for k, (fx, fy, fz) in enumerate([(-0.6, -0.29, 0.13), (-0.52, -0.31, 0.27), (-0.68, -0.22, 0.3),
-                                           (0.6, -0.29, 0.13), (0.52, -0.31, 0.27), (0.68, -0.22, 0.3)]):
+        for k, (fx, fy, fz) in enumerate([(-0.6, -0.40, 0.13), (-0.52, -0.40, 0.27), (-0.68, -0.40, 0.3),
+                                           (0.6, -0.40, 0.13), (0.52, -0.40, 0.27), (0.68, -0.40, 0.3)]):
             f = kit.cyl(f"jory.hairf{k}", 0.12, 0.05, (fx, fy, fz), M["flower"], hg, rot=(math.pi / 2, 0, 0), n=7)
             f.hide_render = True
             ctx["moss"]["jory"].append((f, 0.7 + 0.03 * (k % 3), (1, 1, 1), tuple(f.location)))
