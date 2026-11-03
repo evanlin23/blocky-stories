@@ -1,4 +1,4 @@
-"""Daily upload: the next ready story goes to PandaNanoAdventures as a PRIVATE video, and an issue tells the owner.
+"""Daily upload: the next ready story goes to Buhtown as a PRIVATE video, and an issue tells the owner.
 
     python scripts/upload.py [--story NAME] [--dry-run]
 
@@ -299,7 +299,7 @@ def main() -> None:
                      f"2. Set visibility to Public (or schedule it).\n"
                      f"3. Pin this comment:\n\n> {pin}\n\n")
             issue(f"{'Going public' if when else 'Ready to publish'}: {title}",
-                  f"**{s}** is uploaded to PandaNanoAdventures.\n\n" + steps +
+                  f"**{s}** is uploaded to Buhtown.\n\n" + steps +
                   f"If Studio shows it as *locked* private, API uploads aren't allowed after all: download the film "
                   f"from {rel}, upload it by hand with the text below, and tell Claude.\n\n"
                   f"<details><summary>Title and description</summary>\n\n```\n{title}\n\n{desc}```\n</details>\n\n"
@@ -309,7 +309,7 @@ def main() -> None:
             record(story, {"manual": True, "issued": today, "title": title})
             shot = (f"**Cover** (pick the {cv[1]} moment as the Short's thumbnail):\n\n![cover]({cv[0]})\n\n" if cv else "")
             issue(f"Upload by hand: {title}",
-                  f"**{s}** is ready for PandaNanoAdventures.\n\n"
+                  f"**{s}** is ready for Buhtown.\n\n"
                   f"**Video:** open {film(story)['url']} and tap **film-{story}** under Artifacts "
                   f"(a zip with `{s}.mp4`).\n\n"
                   f"**Title**\n```\n{title}\n```\n**Description**\n```\n{desc}```\n"

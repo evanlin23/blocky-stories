@@ -373,3 +373,12 @@ Fresh idea (added with `rule-three`, so the backlog doesn't run dry): `no-three`
 - ep48-crazy-golf: your shadow sits where you were happiest; the one on Dad's green is mine, and the one at my feet is Dad's
 - mirror-maze (ep15): your reflection stays behind when you walk away; the narrator is the reflection the real me left in a maze pane, and Tasha visits it
 - rule-three: the man warning you never to ask is the one who tore out rule three (it hands the town's rulebook to his little brother for good if he misses a night), and he stamped the never-ask rule himself
+
+## Batch 6 (2026-11-03, `docs/research/2026-11-03-week.md`): claimed, in production in separate sessions
+- P1 cat-shoes: "Never keep the shoes our cat brings home." (creepy town rule, long)
+- P2 drive-thru: "At this drive-thru, never pull up to the second window." (creepy town rule, long)
+- P3 night-mower: "Never look at the neighbor's lawn while his mower is running." (creepy town rule, mid)
+- P4 dryer-nine: "At the all-night laundromat, you never use dryer nine." (creepy town rule, mid)
+- P5 door-locks: "Every door you close gets one more lock." (what-if escalation, long)
+- P6 rule-three (rulebook keeper pilot): rule three was torn out (recurring host, mid)
+- P7 mirror-lift: five riders, six in the elevator mirror (horror puzzle, 20 to 45 s)
