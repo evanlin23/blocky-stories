@@ -219,13 +219,16 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
     fx = [{**f, "t": snap(at(f["at"]))} for f in st.get("fx", [])]
     acting = {who: [{**k2, "t": snap(k2["t"])} for k2 in (_key(k, at) for k in keys)]
               for who, keys in st.get("acting", {}).items()}
-    return {"name": st["name"], "fps": fps, "duration": duration, "frames": int(round(duration * fps)),
-            "tail": st.get("tail", TAIL),
-            "fade_out": st.get("fade_out", True),
-            "fade_in": st.get("fade_in", True),
-            "voice": {k: voice.get(k) for k in ("voice", "rate", "tempo", "model")},
-            "lines": placed, "order": order, "captions": caps, "talk": talk, "shots": shots,
-            "cues": cues, "fx": fx, "acting": acting}
+    out = {"name": st["name"], "fps": fps, "duration": duration, "frames": int(round(duration * fps)),
+           "tail": st.get("tail", TAIL),
+           "fade_out": st.get("fade_out", True),
+           "fade_in": st.get("fade_in", True),
+           "voice": {k: voice.get(k) for k in ("voice", "rate", "tempo", "model")},
+           "lines": placed, "order": order, "captions": caps, "talk": talk, "shots": shots,
+           "cues": cues, "fx": fx, "acting": acting}
+    if st.get("meter"):   # opt-in (night-mower): the rule meter, [[seconds, value 0..1], ...] drawn by post.finish
+        out["meter"] = [[round(at(r), 3), v] for r, v in st["meter"]]
+    return out
 
 
 def _key(k: dict, at) -> dict:

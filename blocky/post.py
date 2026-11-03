@@ -112,6 +112,45 @@ def layout_problems(caps: list[dict]) -> list[str]:
     return out
 
 
+# ------------------------------------------------------------------------------- the rule meter (opt-in)
+
+
+def meter_value(tl: dict, t: float) -> float:
+    """A story's rule meter (`meter` in story.json, [[time, value], ...]): eased between keys, held outside them."""
+    ks = tl["meter"]
+    if t <= ks[0][0]:
+        return ks[0][1]
+    for (t0, v0), (t1, v1) in zip(ks, ks[1:]):
+        if t < t1:
+            u = (t - t0) / max(1e-6, t1 - t0)
+            u = u * u * (3 - 2 * u)
+            return v0 + (v1 - v0) * u
+    return ks[-1][1]
+
+
+@lru_cache(maxsize=512)
+def meter_badge(v: float) -> Image.Image:
+    """A spirit-level badge, top left, no text: a rounded lime glass vial, three black ticks, one white bubble that
+    sits at the middle at v = 0 and slides to the right end at v = 1. Drawn 2x and scaled down."""
+    k, w, h = 2, 300, 86
+    im = Image.new("RGBA", (w * k, h * k), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    r = h * k // 2
+    d.rounded_rectangle((4 * k, 6 * k, (w - 4) * k, (h - 2) * k), r, fill=(14, 12, 18, 120))        # soft shadow
+    d.rounded_rectangle((2 * k, 2 * k, (w - 6) * k, (h - 8) * k), r, fill=(182, 255, 59, 255), outline=(14, 12, 18, 255),
+                        width=7 * k)
+    x0, x1 = 28 * k, (w - 32) * k
+    for f in (0.30, 0.50, 0.70):
+        x = x0 + (x1 - x0) * f
+        d.line((x, 20 * k, x, 34 * k), fill=(14, 12, 18, 255), width=5 * k)
+        d.line((x, 52 * k, x, 66 * k), fill=(14, 12, 18, 255), width=5 * k)
+    bx = x0 + (x1 - x0) * (0.5 + 0.42 * v)
+    d.ellipse((bx - 24 * k, 20 * k, bx + 24 * k, 62 * k), fill=(255, 255, 255, 255), outline=(14, 12, 18, 255), width=4 * k)
+    d.ellipse((bx - 12 * k, 25 * k, bx + 2 * k, 35 * k), fill=(190, 255, 120, 255))
+    d.rounded_rectangle((22 * k, 12 * k, (w - 44) * k, 20 * k), 4 * k, fill=(255, 255, 255, 110))   # the glass sheen
+    return im.resize((w, h), Image.LANCZOS)
+
+
 def pop(u: float) -> float:
     """Scale for a caption's entrance: 0.84 -> 1.06 -> 1.0 over 0.16 s."""
     if u >= 1:
@@ -330,6 +369,8 @@ def finish(tl: dict, st: dict, f: int, raw: Path, rain: Rain | None = None, grai
     if g.get("red_line"):   # a warm story's picture stays under WCAG's saturated red (the captions are drawn after)
         img = red_clamp(img, g["red_line"], g.get("red_lift_blue", 0.25))
     out = Image.fromarray(np.clip(img * 255 + 0.5, 0, 255).astype(np.uint8)).convert("RGBA")
+    if tl.get("meter"):   # opt-in (night-mower): the rule meter stays on screen the whole film
+        out.alpha_composite(meter_badge(round(meter_value(tl, t), 3)), (64, 150))
     draw_captions(out, t, tl["captions"], fx["shake"] * 0.6)
     return np.asarray(out.convert("RGB"))
 
