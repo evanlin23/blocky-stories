@@ -9,3 +9,6 @@
 4. L02–L04: swap the wind bed for the room bed.
 
 **Next:** finish/verify 1–4 on stills 0–5 s, full `render --preview --force` (jacket changed), finish, mix, flash, preflight, then critic r6 (rescue) on that one fix. If it still fails: drop with a hold line. If it passes: gate, PR, merge, qa on the final.
+
+## Update 2026-11-03 (handed to the second orchestrator)
+Stopped before verifying the rescue fix. This container has no Blender, so the 1-4 edits (committed in the WIP) are still unrendered and unchecked. PR #171 (proof.yml) was still open on main at 16:19 UTC. Next: merge main, render stills 0-5 s and a full preview (jacket colour changed), mix, flash, preflight, then critic r6 (one round only; if it fails, drop with a hold line), then the proof and qa on the proof, merge only when qa passes and `test` is green. Don't dispatch render.yml or upload.yml; don't edit queue.txt.
