@@ -78,8 +78,10 @@ Central date, and an automatic upload only starts between 5 AM and 7 PM Central.
 works any time.
 
 ## YouTube API units (free quota: 10,000 a day, all workflows share it)
-- Daily upload: about 1,600 (an insert is 1,600). Monday metrics: `trends.py` about 1,005 (ten searches at 100 each),
+- Daily upload: about 1,600 (an insert is 1,600). Monday metrics: `trends.py` about 2,230 (22 searches at 100 each: ten blocky, twelve wide for the port study,
+  plus about 17 videos.list and channels.list),
   `trends_deep.py` about 45 (one videos.list, one channels.list, 40 commentThreads.list at 1 each), capped at 300 in
-  the script. A metrics run and an upload on the same day total under 3,000.
+  the script. A metrics run and an upload on the same day total about 3,900. A by-hand metrics dispatch on an upload day
+  adds another 2,270: three runs in one day is the most that fits.
 - `trends_deep.py` writes `docs/trends/deep/<date>.json` and `.md`. Descriptions and comments are trimmed and
   @handles masked, because the repo is public.

@@ -35,7 +35,7 @@ from blocky import synth
 from blocky.mixer import Mix, loudness, master
 from blocky.synth import SR, fft_filter
 
-from blocky import acting
+from blocky import acting, polish
 from blocky.timeline import resolver
 
 SPEECH = -16.0
@@ -994,6 +994,46 @@ def fit_file_peak(audio: np.ndarray, measure, target: float = FILE_TP, tries: in
     return audio, log
 
 
+def polish_sound(e: dict, seed: int) -> np.ndarray:
+    """One polish-pack sound (polish.sound_events), low-passed under its `lp` so it stays soft."""
+    k = e["kind"]
+    if k == "lowhit":   # a soft sub thump under a key word: felt more than heard
+        y = synth.thump(0.45, 95, 38, seed)
+        top = synth.thump(0.2, 180, 90, seed + 1)
+        y[:len(top)] += 0.25 * top
+    elif k == "riser":   # a soft swell that builds over its whole length (rises in pitch), cut clean at its top
+        d = e["dur"]
+        t = np.arange(synth.n_samples(d)) / SR
+        env = (t / d) ** 1.3
+        y = fft_filter(synth.noise(d, seed), "band", 250, 2800) * env
+        y = y + synth.sine(110 * 2 ** (1.5 * t / d), d)[:len(t)] * 0.35 * env
+        y = y / max(1e-9, np.abs(y).max())
+        f = min(len(y) // 4, int(0.04 * SR))
+        y[len(y) - f:] *= np.linspace(1, 0, f)
+    else:
+        y = sfx(k, seed, e.get("dur", 1.0))
+    if e.get("lp"):
+        y = fft_filter(y, "low", float(e["lp"]), order=4)
+    return y
+
+
+def polish_sounds(m: Mix, tl: dict, st: dict, pol: dict, at, drops: list, dur: float, n: int) -> None:
+    """The polish pack's sounds (blocky/polish.py): whooshes, hits and risers on the "polish" bus (a hit in a
+    drop's landing plays through it, like a kept sting), the builder's marked doors and steps on "sfx", and the
+    room bed on "bed"."""
+    for k, e in enumerate(polish.sound_events(tl, st, pol, at)):
+        y = polish_sound(e, 500 + k)
+        bus = "sfx" if e["kind"] in polish.MARK_SFX else "riser" if e["kind"] == "riser" else "polish"
+        if e["kind"] in ("hit", "lowhit") and any(at(d["from"]) - 0.05 <= e["t"] < at(d["to"]) + 0.4 for d in drops):
+            bus = "sfx_keep"
+        m.add(bus, e["t"], y, gain_db=e["db"], pan=e.get("pan", 0.0))
+    if pol["bed"]:
+        y = amb(polish.bed_kind(st, pol), dur, 97)
+        y = fft_filter(y, "low", 3800.0, order=4)
+        y *= np.minimum(1, np.arange(len(y)) / (0.3 * SR)) * np.minimum(1, (len(y) - np.arange(len(y))) / (0.3 * SR))
+        m.add("bed", 0.0, to_lufs(y, pol["bed_lufs"])[:n])
+
+
 def drop_spec(d) -> dict:
     """A `music_drops` entry: [from, to] or {"from": ref, "to": ref, "keep": [sfx kinds that play through]}.
     Anchor both ends to line ids, so a retime can't move the hole off its words."""
@@ -1055,6 +1095,9 @@ def _mix(tl, st, vo_dir, m, voice, spans, snd, at, dur, n):
         keep = e.get("keep", False) or any(e["kind"] in d["keep"] and at(d["from"]) - 0.05 <= te < at(d["to"]) + 0.4
                                            for d in drops)
         m.add("sfx_keep" if keep else "sfx", te, y, gain_db=e.get("db", -8.0), pan=e.get("pan", 0.0))
+    pol = polish.spec(st)
+    if pol:
+        polish_sounds(m, tl, st, pol, at, drops, dur, n)
     # the holes: everything but the voice and the kept sounds (a sting, a named hit) drops to near silence
     if drops:
         hole = np.ones(n)
@@ -1062,9 +1105,15 @@ def _mix(tl, st, vo_dir, m, voice, spans, snd, at, dur, n):
             hole = np.minimum(hole, envelope(n, [(at(d["from"]), at(d["to"])) for d in drops if d["db"] == db], db,
                                              0.03, 0.4))
         hole = hole[:, None]
-        for bus in ("music", "amb", "steps", "sfx"):
+        for bus in ("music", "amb", "steps", "sfx", "polish", "riser"):
             if bus in m.buses:
                 m.buses[bus] *= hole
+        if "bed" in m.buses:   # the polish bed only dips, so a drop is quiet, never digital silence
+            m.buses["bed"] *= envelope(n, [(at(d["from"]), at(d["to"])) for d in drops], pol["bed_drop_db"],
+                                       0.03, 0.4)[:, None]
+    if pol and pol["duck"]:   # the voice on top: the bed, the polish effects and the ambience duck under it
+        for bus in ("bed", "polish", "amb"):
+            m.duck(bus, ["voice"], depth_db=pol["duck_db"], attack=0.02, release=0.3)
     pre = m.sum()
     out, stats = master(pre, ceiling_db=TP_CEILING)
     k = min(len(out), int(0.012 * SR))   # no click where the film (or its loop) cuts off
