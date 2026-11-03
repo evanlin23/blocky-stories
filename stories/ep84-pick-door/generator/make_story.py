@@ -86,18 +86,19 @@ K("you", "L05", [0, 1.7], 0, "worried", arms=[0, 0], hidden=False, blend=0.0)
 for i, a in enumerate((0, 40, 8, 40, 8)):
     K("you", f"L05+{0.2 + 0.22 * i:.2f}", [0, 1.7], 0, "worried", arms=[0, a], blend=0.1)
 K("you", "L06", [0, 1.7], 180, "worried", arms=[0, 0], hidden=True, blend=0.0)
-K("you", "L10", [0, 1.7], 180, "worried", hidden=False, blend=0.0)
+K("you", "L10", [0, 1.7], 135, "worried", hidden=False, blend=0.0)
+K("you", "L11", [0, 1.7], 180, "worried", blend=0.25)
 K("you", "L13", [0, 1.7], 180, "scared", blend=0.0)
 K("you", "L14", [0, 1.7], 0, "scared", blend=0.0)
 K("you", "L15", [0, 1.7], 0, "scared", hidden=True, blend=0.0)
-K("you", "L19.3", [0, 1.7], 0, "soft", hidden=False, blend=0.0)
+K("you", "L19.3", [0, 1.7], 45, "soft", hidden=False, blend=0.0)
 K("you", "L20", [0, 1.7], 180, "worried", blend=0.0)
 K("you2", 0, [0, 8.9], 180, "neutral")
 K("you2", "L13", [0, 8.9], 180, "scared", blend=0.3)
 K("you3", 0, [0, 16.1], 180, "neutral")
 
 # ------------------------------------------------------------------------------------------------ shots
-S(0, cam((0, -1.7, 1.75), (0, 3, 1.95), 17, (0, -0.4, 1.8)), id="S01", note="three doors close, push in, warm wedge on the floor")
+S(0, cam((0, -1.7, 1.6), (0, 3, 1.6), 17, (0, -0.4, 1.65), (0, 3, 1.7)), id="S01", note="three doors close, push in, warm wedge on the floor")
 S("L02", cam((-1.2, 0.6, 1.8), (-1.25, 3, 2.1), 24, (1.2, 0.6, 1.8), (1.25, 3, 2.1), 24), id="S02a", note="slide across the numerals")
 S("L02.2", cam((0.9, -0.5, 1.15), (0, 2.4, 1.7), 24, (0.6, -0.2, 1.25), (0, 2.4, 1.7), 24), id="S02b", note="you from behind on the mat")
 S("L03", cam((-1.25, 0.8, 1.9), (-1.25, 3, 1.9), 26, (-1.25, 1.5, 1.7), (-1.25, 3, 1.5), 26), id="S03", note="door one, warm glow under it")
@@ -110,7 +111,7 @@ S("L09", cam((1.25, 0.2, 1.95), (1.25, 3, 2.0), 30, (1.25, 1.0, 1.95), (1.25, 3,
 S("L09b", cam((0, 0.2, 1.95), (0, 3, 2.0), 30, (0, 1.0, 1.95), (0, 3, 2.0), 30), id="S09b", note="TWO")
 S("L09c", cam((-1.25, 0.2, 1.95), (-1.25, 3, 2.0), 30, (-1.25, 1.0, 1.95), (-1.25, 3, 2.0), 30), id="S09c", note="ONE")
 S("P10", cam((0, -0.8, 1.85), (0, 3, 2.0), 21, (0, 0.0, 1.9), (0, 3, 2.0), 21), id="S09d", note="the drop: three doors still")
-S("L10", cam((3.0, 1.7, 1.6), (0, 1.7, 1.5), 30, (2.6, 1.7, 1.6), (0, 1.7, 1.5), 30), id="S10", note="you in profile, worried", hand=0.004)
+S("L10", cam((1.6, 2.9, 1.7), (0, 1.7, 1.6), 30, (1.25, 2.55, 1.7), (0, 1.7, 1.6), 30), id="S10", note="you in profile, worried", hand=0.004)
 S("L11", cam((-1.0, 0.0, 1.7), (-1.1, 6, 1.6), 22, (-1.0, 0.9, 1.7), (-1.1, 6, 1.6), 22), id="S11", note="door one swings open on the same room")
 S("L12", cam((-1.2, 1.2, 1.7), (-1.25, 10, 1.5), 22, (-1.2, 6.2, 1.7), (-1.25, 10.4, 1.5), 22), id="S12", note="push through door one, the copy's door one opens")
 S("L13", cam((0.35, 0.6, 1.7), (0, 8.6, 1.6), 22, (0.2, 1.0, 1.7), (0, 8.6, 1.6), 22), id="S13", note="door two opens, you from behind in the copy")
@@ -118,10 +119,11 @@ S("L14", cam((0, -0.5, 1.5), (0, 1.7, 1.55), 30, (0, 0.0, 1.5), (0, 1.7, 1.55), 
 S("L15", cam((0.3, 0.3, 0.25), (0, -2.8, 0.05), 24, (0.15, -0.5, 0.2), (0, -3.0, 0.05), 24), id="S15", note="low on the floor: the warm light")
 S("L16", cam((0, 0.2, 1.7), (0, 3, 1.9), 20, (0, 0.7, 1.7), (0, 3, 1.9), 20), id="S16", note="the ring, a four fades in")
 S("L17", [[0, [0, 0.4, 1.6], [0, 3.4, 1.55], 22], [0.5, [0, 0.4, 1.6], [-3.0, 0.4, 1.55], 22],
-          [1, [0, 0.4, 1.6], [0, -2.6, 1.5], 22]], id="S17", note="turn 180: door four behind you, open", hand=0.002)
-S("L18", cam((-0.25, -2.9, 1.4), (0.2, -7.2, 1.2), 22, (-0.2, -3.7, 1.35), (0.2, -7.2, 1.2), 22), id="S18", note="through door four: the hall; the lime tally on the jamb")
-S("L19", cam((-0.5, -4.4, 1.4), (1.35, -6.0, 1.1), 22, (0.0, -4.9, 1.35), (1.35, -6.0, 1.1), 22), id="S19a", note="the lamp, shade on")
-S("L19.3", cam((3.0, 1.7, 1.6), (0, 1.7, 1.5), 30, (2.6, 1.7, 1.6), (0, 1.7, 1.5), 30), id="S19b", note="you in profile, soft")
+          [1, [0, 0.4, 1.6], [0, -2.6, 2.0], 22]], id="S17", note="turn 180: door four behind you, open", hand=0.002)
+S("L18", [[0, [-0.2, -3.0, 1.3], [0.5, -4.1, 1.3], 22], [0.55, [-0.2, -3.3, 1.3], [0.5, -4.1, 1.3], 22],
+          [1, [-0.15, -3.7, 1.35], [0.2, -7.2, 1.2], 22]], id="S18", note="through door four: the hall; the lime tally on the jamb")
+S("L19", cam((-0.5, -4.4, 1.4), (0.3, -6.2, 1.1), 22, (0.0, -4.9, 1.35), (0.3, -6.2, 1.1), 22), id="S19a", note="the lamp, shade on")
+S("L19.3", cam((1.7, 0.1, 1.7), (0, 1.7, 1.6), 30, (1.3, 0.45, 1.7), (0, 1.7, 1.6), 30), id="S19b", note="you in profile, soft")
 S("L20", cam((0, -0.6, 1.6), (0, 3, 1.8), 22, (0, 0.0, 1.65), (0, 3, 1.8), 22), id="S20", note="back to the three, warm light behind you")
 S("L21", cam((0, -2.6, 1.7), (0, 3, 1.95), 17, (0, -1.7, 1.75), (0, 3, 1.95), 17), id="S21", note="push in to S01's framing")
 
@@ -137,7 +139,7 @@ look = {"fog": "#f4f6f8", "fog_density": 0.002, "fog_start": 40.0, "sky": "#eef2
 
 story = {
     "slug": "ep84-pick-door",
-    "rev": 1,
+    "rev": 2,
     "title": "Pick A Door, Comment The NUMBER \U0001F6AA",
     "made_for_kids": False,
     "premise": "In one bright white room there are three painted exits, each with a number and one clue, and whoever "

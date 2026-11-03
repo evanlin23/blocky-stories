@@ -7,5 +7,5 @@
   "shape": "behind-you",
   "opening": "if",
   "lane": "experiment",
-  "hold": "batch 7: scripts only, not built yet"
+  "hold": "awaiting proof qa"
 }

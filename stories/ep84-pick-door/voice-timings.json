@@ -446,30 +446,30 @@
    ]
   },
   "L19": {
-   "text": "somebody left the hall light on for you.",
+   "text": "mom left, the hall, light on for you.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.793,
+   "dur": 1.741,
    "onset": 0.172,
-   "end": 1.586,
+   "end": 1.534,
    "chunks": [
     [
      0.172,
-     0.526
+     0.483
     ],
     [
-     0.526,
-     0.776
+     0.509,
+     0.759
     ],
     [
-     0.776,
-     1.103
+     0.793,
+     1.069
     ],
     [
-     1.103,
-     1.586
+     1.069,
+     1.534
     ]
    ]
   },
