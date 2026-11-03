@@ -1,8 +1,19 @@
-# Final-film checks
+# Film checks
 
-Owner, 2026-11-03: "We should ensure everything is good before we publish."
+Owner, 2026-11-03: "We should ensure everything is good before we publish." And: "why are stuff still failing?
+don't we do the rendering? or we should know before we do rendering right?"
 
-The daily upload only takes a story whose `qa/<story>.json` passed **that exact film**. A re-render makes a new
+Two stages, one file per story (the newest check wins; git history keeps the older ones):
+
+- **proof**, before merge: the qa agent checks the `proof-<story>` artifact that `.github/workflows/proof.yml`
+  drew on the PR (the whole film, every drawing the final makes, at half size, with the real voice and mix).
+  `{"stage": "proof", "film": "proof-<run id>", "run": <run id>, "sha": "<the commit it drew>", ...}`. `test`
+  (`python -m blocky gate <story> --merge`) blocks the merge without a passed one covering the story's current
+  film files. RULES.md, 2026-11-03: no story merges without a passed proof qa.
+- **final**, before the upload: a short confirm on the `film-<story>` artifact (what the proof couldn't show:
+  fine detail, a texture, a sharpening halo, and the craft numbers again).
+
+The daily upload only takes a story whose `qa/<story>.json` passed **that exact film** at stage final. A re-render makes a new
 artifact id, so a re-rendered story needs a new check. This folder sits outside `stories/` on purpose, so writing
 a check never triggers a re-render.
 

@@ -20,10 +20,30 @@ ROOT = HERE.parent
 OUT = ROOT / "out"
 QUALITY = {
     # the preview draws every 4th frame small; the final draws each shot on its own step (most on twos, the
-    # chases and hits on ones) at 540 x 960, and post scales it to 1080 x 1920
+    # chases and hits on ones) at 540 x 960, and post scales it to 1080 x 1920. The proof (proof.yml, before
+    # merge) draws exactly the final's drawings, every one, at half size with fewer samples: the motion, the
+    # stills, the flashing and the pace are the final's, only the detail is softer
     "preview": {"res": [270, 480], "samples": 4, "step": 4},
+    "proof": {"res": [270, 480], "samples": 4, "step": None},
     "final": {"res": [540, 960], "samples": 10, "step": None},
 }
+
+
+def quality(a) -> str:
+    return "preview" if getattr(a, "preview", False) else "proof" if getattr(a, "proof", False) else "final"
+
+
+def frames_dir(story: str, q: str) -> Path:
+    return work(story) / {"preview": "frames-preview", "proof": "frames-proof", "final": "frames"}[q]
+
+
+def picture_path(story: str, q: str) -> Path:
+    return work(story) / {"preview": "picture-preview.mp4", "proof": "picture-proof.mp4", "final": "picture.mp4"}[q]
+
+
+def film_path(story: str, slug: str, q: str) -> Path:
+    """The mixed film: out/<slug>.mp4 for the final, out/work/<story>/<slug>-<q>.mp4 otherwise."""
+    return OUT / f"{slug}.mp4" if q == "final" else work(story) / f"{slug}-{q}.mp4"
 WORKERS = int(os.environ.get("BLOCKY_WORKERS", 2))   # Blender processes
 THREADS = int(os.environ.get("BLOCKY_THREADS", 2))   # render threads each (4 cores)
 
@@ -138,7 +158,8 @@ def base_job(a, q) -> dict:
 def cmd_render(a):
     from blocky import timeline
 
-    q = QUALITY["preview" if a.preview else "final"]
+    qn = quality(a)
+    q = QUALITY[qn]
     w = work(a.story)
     tl = json.loads((w / "timeline.json").read_text())
     frames = timeline.frame_list(tl, q["step"])
@@ -150,9 +171,9 @@ def cmd_render(a):
     if a.shard:   # "k/n": this machine draws every n-th frame from k (GitHub Actions splits a film this way)
         k, n = (int(x) for x in a.shard.split("/"))
         frames = frames[k::n]
-    d = w / ("frames-preview" if a.preview else "frames")
+    d = frames_dir(a.story, qn)
     job = {**base_job(a, q), "out": str(d), "frames": frames, "skip_existing": not a.force}
-    dt = blender(job, "preview" if a.preview else "final", WORKERS)
+    dt = blender(job, qn, WORKERS)
     print(f"rendered {len(frames)} frames in {dt / 60:.1f} min -> {d}")
     log = d / "render-time.json"
     prev = json.loads(log.read_text()) if log.exists() else {"runs": []}
@@ -191,8 +212,8 @@ def cmd_finish(a):
 
     w = work(a.story)
     tl = json.loads((w / "timeline.json").read_text())
-    d = w / ("frames-preview" if a.preview else "frames")
-    out = w / ("picture-preview.mp4" if a.preview else "picture.mp4")
+    q = quality(a)
+    d, out = frames_dir(a.story, q), picture_path(a.story, q)
     t0 = time.time()
     post.encode(tl, story_json(a.story), d, out)
     print(f"picture {out} in {time.time() - t0:.0f} s")
@@ -246,12 +267,13 @@ def cmd_mix(a):
     w = work(a.story)
     st = story_json(a.story)
     tl = json.loads((w / "timeline.json").read_text())
-    picture = w / ("picture-preview.mp4" if a.preview else "picture.mp4")
+    q = quality(a)
+    picture = picture_path(a.story, q)
     t0 = time.time()
     audio, stats = sound.mix(tl, st, w / "vo")
     wav = w / "mix.wav"
     slug = st.get("slug", a.story)
-    mp4 = w / f"{slug}-preview.mp4" if a.preview else OUT / f"{slug}.mp4"
+    mp4 = film_path(a.story, slug, q)
 
     def measure(x):   # the true peak of the finished file, after the AAC encode
         penc.write_wav(wav, x)
@@ -263,7 +285,7 @@ def cmd_mix(a):
     stats["mix_s"] = round(time.time() - t0, 1)
     contact(mp4, tl, audio, mp4.with_suffix(".contact.png"),
             f"{slug}  {tl['duration']:.1f}s  {stats['file']['lufs']} LUFS  {stats['file']['true_peak_dbtp']} dBTP")
-    (w / f"mix{'-preview' if a.preview else ''}.json").write_text(json.dumps(stats, indent=1))
+    (w / f"mix{'' if q == 'final' else '-' + q}.json").write_text(json.dumps(stats, indent=1))
     print(mp4, stats)
 
 
@@ -314,6 +336,28 @@ def cmd_check(a):
     sys.exit(1 if any(p[0] == "block" for p in problems) else 0)
 
 
+def cmd_clipcheck(a):
+    """Heads through props, walls or other characters, found in Blender without drawing a frame: the scene is
+    posed every 0.25 s and at every acting key, and each visible head is tested with a BVH overlap. Exits 1 on
+    any overlap. Writes out/work/<story>/clip.json."""
+    from blocky import checks
+
+    tl = cmd_timeline(a)
+    w = work(a.story)
+    times = checks.clip_times(tl, story_json(a.story), a.every)
+    if a.span:   # a quick look at a few seconds: "103,106"
+        lo, hi = (float(x) for x in a.span.split(","))
+        times = [t for t in times if lo <= t <= hi]
+    out = w / "clip.json"
+    job = {**base_job(a, {"res": [64, 112], "samples": 1}), "out": str(w / "clip"), "clip": times, "clip_out": str(out)}
+    blender(job, "clip")
+    probs = checks.clip_problems(json.loads(out.read_text())["hits"], story_json(a.story).get("clip_ok"))
+    for p in probs:
+        print("BLOCK", p)
+    print(f"clipcheck {a.story}: {len(times)} times, {len(probs)} clip(s)")
+    sys.exit(1 if probs else 0)
+
+
 def cmd_flash(a):
     from blocky import flash
 
@@ -328,7 +372,7 @@ def cmd_gate(a):
     from blocky import gate
 
     cmd_timeline(a)
-    ok, problems = gate.run(a.story, work(a.story) / "timeline.json")
+    ok, problems = gate.run(a.story, work(a.story) / "timeline.json", a.merge, a.base)
     for p in problems:
         print("BLOCK" if p[0] == "block" else "warn ", p[1])
     print(f"gate {a.story}: {'OPEN' if ok else 'CLOSED'}")
@@ -344,6 +388,16 @@ def cmd_preflight(a):
     cmd_timeline(a)
     w = work(a.story)
     rows = [("check", p) for p in checks.run(a.story, w / "timeline.json")]
+    tl = json.loads((w / "timeline.json").read_text())
+    # the pace and the stills the final will have, from the edit alone: blocks here, so a builder fixes them
+    # before any render (they're warnings in `check`, which also runs on every old story)
+    rows += [("pace", ("block", m)) for m in checks.still_risks(story_json(a.story), tl)]
+    if os.environ.get("BLOCKY_BPY") or os.environ.get("CLAY_BPY"):
+        r = subprocess.run([sys.executable, "-m", "blocky", "clipcheck", a.story], capture_output=True, text=True)
+        lines = [ln[6:] for ln in r.stdout.splitlines() if ln.startswith("BLOCK ")]
+        rows += [("clip", ("block", m)) for m in lines]
+        if r.returncode and not lines:
+            rows.append(("clip", ("block", "clipcheck failed: " + (r.stderr.strip().splitlines() or ["?"])[-1])))
     pkg = gate.load_package(a.story)
     rows += [("package", p) for p in gate.lint_package(pkg)] if pkg else [("package", ("warn", "no package.json yet"))]
     if os.environ.get("BLOCKY_TTS") and (w / "vo").exists():
@@ -394,23 +448,32 @@ def main():
     r.add_argument("--samples", type=int)
     r.add_argument("--force", action="store_true")
     r.add_argument("--shard", help="k/n: draw only every n-th frame starting at k")
+    r.add_argument("--proof", action="store_true", help="the proof: the final's drawings at half size (proof.yml)")
     f = add("finish")
     f.add_argument("--preview", action="store_true")
+    f.add_argument("--proof", action="store_true")
     m = add("mix")
     m.add_argument("--preview", action="store_true")
+    m.add_argument("--proof", action="store_true")
     t = add("soundtest")
     t.add_argument("--seconds", type=float, default=10.0)
     t.add_argument("--out")
     add("asr")
     add("check")
+    cc = add("clipcheck")
+    cc.add_argument("--every", type=float, default=0.25, help="seconds between samples")
+    cc.add_argument("--span", help="only these seconds, 'from,to'")
     fl = add("flash")
     fl.add_argument("--file")
-    add("gate")
+    g = add("gate")
+    g.add_argument("--merge", action="store_true", help="also need a passed proof check (test.yml on a story PR)")
+    g.add_argument("--base", help="the PR's base commit: no film file changed against it means nothing to prove")
     pf = add("preflight")
     pf.add_argument("--verbose", action="store_true")
     a = ap.parse_args()
     {"voice": cmd_voice, "timeline": cmd_timeline, "stills": cmd_stills, "render": cmd_render, "finish": cmd_finish,
      "mix": cmd_mix, "soundtest": cmd_soundtest, "asr": cmd_asr, "check": cmd_check, "flash": cmd_flash,
+     "clipcheck": cmd_clipcheck,
      "gate": cmd_gate, "preflight": cmd_preflight}[a.cmd](a)
 
 
