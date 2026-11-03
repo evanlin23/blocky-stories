@@ -181,7 +181,7 @@ The hall's record room at night, warm lamps, bright.
 
 ## 05 The town turns (L22 to L29, about 36 to 49 s)
 
-- `L22` narrator: SATURDAY. / Eight THIRTY. / Just me / and the BOOK.
+- `L22` narrator: SATURDAY. / Half past EIGHT. / Just me / and the BOOK.
   - [two shots: the brass clock at eight thirty. Then me at the lectern, the book open, warm and quiet]
 - `L23` narrator: Then the whole STREET / goes QUIET.
   - [me looking up, `worried`. The ambience drops to near silence over 0.4 s. The drone enters]
