@@ -1,0 +1,937 @@
+{
+ "slug": "ep95-corn-maze",
+ "title": "Nobody Gets Lost In Our CORN Maze",
+ "made_for_kids": false,
+ "premise": "At our corn maze, if the lanterns go out while you're still inside, you stay the night, and nobody has, because a voice in the corn tells lost people where to turn.",
+ "twist": "The voice is the maze itself; its paths are a huge face, and the farmer June stayed on her last night to say goodbye.",
+ "world": "a farm's corn maze on its last night: gold corn, iron lanterns, silver-blue moonlight",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#ff7a1f",
+ "gap": 0.15,
+ "tail": 0.25,
+ "fade_in": false,
+ "fade_out": false,
+ "look": {
+  "style": "closer",
+  "polish": true,
+  "flash_safe": true,
+  "fog": "#4d6aa8",
+  "fog_density": 0.0,
+  "fog_start": 500.0,
+  "sky": "#4d6aa8",
+  "exposure": 0.3
+ },
+ "grade": {
+  "shadows": [
+   0.0,
+   0.0,
+   0.03
+  ],
+  "highlights": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "saturation": 1.05,
+  "contrast": 1.05,
+  "vignette": 0.25,
+  "bloom": 0.3,
+  "grain": 0.009
+ },
+ "layouts": [
+  "face",
+  "entrance"
+ ],
+ "shot_layout": {
+  "S01": "entrance",
+  "S34": "face",
+  "S35": "face"
+ },
+ "shot_look": {
+  "S01": "dusk",
+  "S34": "moon",
+  "S35": "moon"
+ },
+ "cast": {
+  "june": {
+   "age": "adult",
+   "skin": "#e0b48c",
+   "shirt": "#d8443a",
+   "pattern": "plaid",
+   "pants": "#3d5a80",
+   "shoes": "#3a2a20",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#a8a8a8",
+   "hat": "bucket",
+   "hat_c": "#d8c070",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "If the lanterns go out",
+     "If the lanterns go out"
+    ],
+    [
+     "while you're in our MAZE,",
+     "while you're in our maze,"
+    ],
+    [
+     "you STAY.",
+     "you stay."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "All NIGHT.",
+     "All night."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody's ever STAYED.",
+     "Nobody's ever stayed."
+    ],
+    [
+     "Not in twenty YEARS.",
+     "Not in twenty years."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Because if you get LOST in here,",
+     "Because if you get lost in here,"
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "a voice in the corn",
+     "a voice in the corn"
+    ],
+    [
+     "tells you",
+     "tells you"
+    ],
+    [
+     "where to TURN.",
+     "where to turn."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Left at the SCARECROW.",
+     "Left at the scarecrow."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Right at the big PUMPKIN.",
+     "Right at the big pumpkin."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A guy and his DAD",
+     "A guy and his dad"
+    ],
+    [
+     "walked in ARGUING",
+     "walked in arguing"
+    ],
+    [
+     "and walked out LAUGHING.",
+     "and walked out laughing."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A woman dropped her PHONE in here.",
+     "A woman dropped her phone in here."
+    ],
+    [
+     "It was waiting for her",
+     "It was waiting for her"
+    ],
+    [
+     "on a hay bale",
+     "on a hay bale"
+    ],
+    [
+     "at the EXIT.",
+     "at the exit."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "One guy got lost",
+     "One guy got lost"
+    ],
+    [
+     "on PURPOSE,",
+     "on purpose,"
+    ],
+    [
+     "just to HEAR it.",
+     "just to hear it."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I know every TURN in here.",
+     "I know every turn in here."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I always know",
+     "I always know"
+    ],
+    [
+     "where EVERYONE is.",
+     "where everyone is."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "June owns this FARM.",
+     "June owns this farm."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every summer,",
+     "Every summer,"
+    ],
+    [
+     "she cuts the paths",
+     "she cuts the paths"
+    ],
+    [
+     "in a new SHAPE,",
+     "in a new shape,"
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "and she talks",
+     "and she talks"
+    ],
+    [
+     "the whole TIME.",
+     "the whole time."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She's my best FRIEND.",
+     "She's my best friend."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "This year",
+     "This year"
+    ],
+    [
+     "she cut a FACE.",
+     "she cut a face."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She said,",
+     "She said,"
+    ],
+    [
+     "so you can wave GOODBYE.",
+     "so you can wave goodbye."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She sold the FARM.",
+     "She sold the farm."
+    ],
+    [
+     "Tonight's the last NIGHT.",
+     "Tonight's the last night."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "At nine fifty-EIGHT,",
+     "At nine fifty-eight,"
+    ],
+    [
+     "June walked in ALONE,",
+     "June walked in alone,"
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "with a BLANKET",
+     "with a blanket"
+    ],
+    [
+     "and a THERMOS.",
+     "and a thermos."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The lanterns",
+     "The lanterns"
+    ],
+    [
+     "started going OUT.",
+     "started going out."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Turn RIGHT,",
+     "Turn right,"
+    ],
+    [
+     "I said.",
+     "I said."
+    ],
+    [
+     "The exit's right THERE.",
+     "The exit's right there."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She turned LEFT.",
+     "She turned left."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "RIGHT, June.",
+     "right, June."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She turned LEFT.",
+     "She turned left."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "At ten,",
+     "At ten,"
+    ],
+    [
+     "the last lantern",
+     "the last lantern"
+    ],
+    [
+     "went OUT.",
+     "went out."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The corn LEANED in",
+     "The corn leaned in"
+    ],
+    [
+     "behind her,",
+     "behind her,"
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "and the path",
+     "and the path"
+    ],
+    [
+     "she came in by",
+     "she came in by"
+    ],
+    [
+     "was GONE.",
+     "was gone."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She sat down",
+     "She sat down"
+    ],
+    [
+     "in the dark,",
+     "in the dark,"
+    ],
+    [
+     "poured two cups of COCOA,",
+     "poured two cups of cocoa,"
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "and said,",
+     "and said,"
+    ],
+    [
+     "I know it's YOU.",
+     "I know it's you."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She's RIGHT.",
+     "She's right."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I'm not a PERSON.",
+     "I'm not a person."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I'm the MAZE.",
+     "I'm the maze."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Twenty summers,",
+     "Twenty summers,"
+    ],
+    [
+     "she's cut my PATHS",
+     "she's cut my paths"
+    ],
+    [
+     "and talked to me.",
+     "and talked to me."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody else",
+     "Nobody else"
+    ],
+    [
+     "ever TALKED to me.",
+     "ever talked to me."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I learned",
+     "So I learned"
+    ],
+    [
+     "to talk BACK.",
+     "to talk back."
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That voice",
+     "That voice"
+    ],
+    [
+     "that gets you OUT?",
+     "that gets you out?"
+    ],
+    [
+     "That's ME.",
+     "That's me."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She didn't walk in",
+     "She didn't walk in"
+    ],
+    [
+     "to get LOST.",
+     "to get lost."
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She walked in",
+     "She walked in"
+    ],
+    [
+     "to STAY.",
+     "to stay."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So all night,",
+     "So all night,"
+    ],
+    [
+     "I gave her",
+     "I gave her"
+    ],
+    [
+     "the long way ROUND.",
+     "the long way round."
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The STAR",
+     "The star"
+    ],
+    [
+     "she cut",
+     "she cut"
+    ],
+    [
+     "her first summer.",
+     "her first summer."
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her dad's TRACTOR.",
+     "Her dad's tractor."
+    ]
+   ]
+  },
+  {
+   "id": "L44",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The year",
+     "The year"
+    ],
+    [
+     "of the giant PIG.",
+     "of the giant pig."
+    ]
+   ]
+  },
+  {
+   "id": "L45",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every path",
+     "Every path"
+    ],
+    [
+     "she ever CUT,",
+     "she ever cut,"
+    ],
+    [
+     "one more time.",
+     "one more time."
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "At dawn,",
+     "At dawn,"
+    ],
+    [
+     "I opened one path",
+     "I opened one path"
+    ],
+    [
+     "straight to her TRUCK.",
+     "straight to her truck."
+    ]
+   ]
+  },
+  {
+   "id": "L47",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She filled her pockets",
+     "She filled her pockets"
+    ],
+    [
+     "with SEED corn,",
+     "with seed corn,"
+    ]
+   ]
+  },
+  {
+   "id": "L48",
+   "who": "narrator",
+   "chunks": [
+    [
+     "for her new YARD.",
+     "for her new yard."
+    ]
+   ]
+  },
+  {
+   "id": "L49",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So next fall,",
+     "So next fall,"
+    ],
+    [
+     "in some other TOWN,",
+     "in some other town,"
+    ]
+   ]
+  },
+  {
+   "id": "L50",
+   "who": "narrator",
+   "chunks": [
+    [
+     "when the lanterns go OUT,",
+     "when the lanterns go out,"
+    ]
+   ]
+  },
+  {
+   "id": "L51",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I'll be the voice",
+     "I'll be the voice"
+    ],
+    [
+     "you HEAR.",
+     "you hear."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      200.3,
+      -2.6,
+      2.7
+     ],
+     [
+      200.3,
+      0,
+      2.85
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      200.3,
+      -2.0,
+      2.75
+     ],
+     [
+      200.3,
+      0,
+      2.85
+     ],
+     34
+    ]
+   ],
+   "step": 2
+  },
+  {
+   "id": "S34",
+   "at": "L34",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -10,
+      120
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      0,
+      -9,
+      119
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     34
+    ]
+   ],
+   "step": 2
+  },
+  {
+   "id": "S35",
+   "at": "L35",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -9,
+      119
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     34
+    ]
+   ],
+   "step": 2
+  }
+ ],
+ "acting": {
+  "june": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "lanterns",
+   "n": 12
+  }
+ ],
+ "music": {
+  "root": 43,
+  "mode": "mixolydian",
+  "bpm": 70,
+  "seed": 95,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "drone",
+     "pad"
+    ],
+    "energy": 0.3
+   }
+  ]
+ },
+ "sound": {
+  "floor": "grass",
+  "steps_db": -20,
+  "rev": 1,
+  "ambience": [
+   {
+    "kind": "crickets",
+    "from": 0,
+    "to": "end",
+    "lufs": -38
+   }
+  ]
+ },
+ "rev": 1
+}
