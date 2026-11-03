@@ -190,7 +190,7 @@ S("L03.1", cam((DK + 1.5, 0.9, 1.5), (DK - 0.1, 2.5, 1.45), 30), {"downstairs": 
 S("L04", cam((DK + 1.6, 0.2, 1.4), (DK - 0.1, 3.2, 1.1), 20), {"downstairs": FP(DK + 0.6, 2.4, (DK + 1.6, 0.2), SHEEP)},
   note="the 64-lock fridge, the man sheepish", cues=[CU("frtiny", on=True)])
 S("L04+0.7", cam((DK - 0.1, 2.7, 1.68), (DK - 0.1, 3.25, 1.62), 70), note="plant 1: the little keyhole flaps, a tiny lock growing")
-S("L04+1.5", dolly((DK + 0.9, 2.2, 1.3), (DK + 1.0, 0.4, 0.8), (DK - 0.1, 3.2, 1.5), (DK + 1.2, 1.2, 0.4), 30, 34), note="tilt down to the cooler and the milk")
+S("L04+1.5", cam((DK + 0.9, -0.06, 1.03), (DK + 1.2, 1.2, 0.4), 34), note="the cooler and the milk (held: no swoop, the 8.3 s flash fix)")
 S("L05", dolly((-11.8, -1.2, 1.4), (-8.0, -1.2, 1.4), (-9.0, 0.0, 1.2), (-6.0, 0.0, 1.2), 17), note="open front doors on our floor, one propped with a boot")
 S("L05+0.9", dolly((1.0, -0.6, 1.4), (5.0, -0.6, 1.4), (3.0, -2.4, 1.2), (7.0, -2.4, 1.2), 17), note="across the hall, more open doors")
 S("L06", cam((-6.0, -0.6, 1.45), (-6.0, -5.0, 1.0), 19),
