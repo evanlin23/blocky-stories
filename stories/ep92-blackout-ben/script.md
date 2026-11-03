@@ -3,9 +3,9 @@
 - **Slug:** `ep92-blackout-ben` (batch 9a, upload order 1 of 5)
 - **Pitch:** E16 in `docs/research/premise-engines.md` section 3 (rank 1, panels 9 and 8), engine 18, parallel versions. Opening shape `if` (the pitch's `must` line recast). Lane: core. Length arm: long (110 to 150 s).
 - **Title:** After The Blackout, Ben Was NICE 🔦
-- **Changed from the pitch:** the pitch's crossing (every lit window opens onto another version of the street, and people walk home to the wrong one) is too close to one well-known film's lit-house-down-the-road mechanic, and so is its "I walked into the wrong house" ending. Here nobody walks anywhere: in a blackout, anyone **alone in the dark** can swap with another version of themselves, right where they sit. The pitch's reveal (Ben is kind because he isn't mine) is kept as the first reading, then turned: Ben never swapped. I did. The two tells (the watch on the other wrist, the dog's almost-name) are kept.
-- **Word count:** 502 spoken words in 67 lines, all `narrator`, plus one 0.6 s music drop before L36.
-- **Estimated length:** about 115 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L29 and L30 first. If it lands under 110 s, nothing is added (the long arm's floor is a guide, not a pad).
+- **Changed from the pitch:** the pitch's crossing (every lit window opens onto another version of the street, and people walk home to the wrong one) is too close to one well-known film's lit-house-down-the-road mechanic, and so is its "I walked into the wrong house" ending. Here nobody walks anywhere: in a blackout, anyone **alone in the dark** can swap with another version of themselves, right where they sit. The pitch's reveal (Ben is kind because he isn't mine) is kept as the first reading, then turned: Ben never swapped. I did. The two tells (the watch, canoe red on the other wrist, and the dog's almost-name) are kept.
+- **Word count:** 572 spoken words in 74 lines, all `narrator`, plus one 0.6 s music drop before L36.
+- **Estimated length:** about 124 to 127 s (the r1 build ran 109.0 s for 501 words; r1 word fixes add 71 words in 7 new lines, L11b, L14b, L27b, L30b, L30c, L38b, L40b). The long arm is 120 to 150 s. If it runs over 140 s, cut L29 and L30 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Daytime is bright and saturated: a sunny suburban living room, mustard couch in my version, teal couch in this one. The blackout scenes are deep cobalt blue lit by warm flashlight beams and moonlight through the window, always bright enough to read both faces. Every power cut and return is a 0.4 s ramp, never a snap.
 - **Hold:** scripts only (batch 9a). Not built, not voiced.
 
@@ -29,11 +29,11 @@
 **After a blackout, my big brother Ben is suddenly kind to me, so I'm sure he swapped. He didn't. I did: I'm the one who sat alone in the dark, and this is the house where Ben and I never stopped being friends.**
 
 - **Engine:** parallel versions, one swap and one tell (premise-engines engine 18), our own trigger: being alone in the dark during a blackout. No film's crossing, house, party or ending.
-- **Why it clicks ("oh, THAT's why"):** the rule says to check whoever comes out of a blackout different, and everybody checks other people. Nobody checks themselves. The kind brother, the watch on the "wrong" wrist and the dog answering to the name we almost gave her all prove the house changed, and a house changing around one person means that person moved. Ben standing in my doorway at 2 a.m. with a flashlight wasn't a threat: this Ben never leaves his brother alone in a blackout, and he's checking whether his own brother came back. His question ("what's our dog's name?") was the same check I'd been doing on him.
+- **Why it clicks ("oh, THAT's why"):** the rule says to check whoever comes out of a blackout different, and everybody checks other people. Nobody checks themselves. The kind brother, the canoe-red watch on the "wrong" wrist and the dog answering to the name we almost gave her all prove the house changed, and a house changing around one person means that person moved. Ben standing in my doorway at 2 a.m. with a flashlight wasn't a threat: this Ben never leaves his brother alone in a blackout, and he's checking whether his own brother came back. His question ("what's our dog's name?") was the same check I'd been doing on him.
 - **The second turn (the last 15 s):** when I swap back, my real Ben says the other me was nice to him all week, and he liked it. So I'm nice to him too, and now he's sure I'm not his. Line 1 is true of me now.
 - Ten pitched, this one kept. Dropped: Ben came home from another street's lit window (too close to a known film, and the pitch's own mechanic), Ben is a copy that's practicing (ep62), the nice Ben is a creature wearing him (a stand-in), the blackout swaps houses not people (no person to love), every family member swapped but me (too many versions, the panel's warning), Ben swapped on purpose to get away from me (sad, no warmth), the dog is the one who swapped (a gag), Mom swapped and only I noticed (crowded "nobody believes me"), the blackout is a test I'm failing (engine 15, weak), the nice Ben is me from later (time, banned lane).
 - Checked against "Claimed big ideas" and every twist: not forgotten or unseen (nobody fades; the trigger is being alone in the dark, not unlooked-at), not a stand-in, not a reflection, not a copy, not time. Shape `i-swapped`: the one checking was the one who changed.
-- **The rule is the clue:** "he isn't yours" first reads as a threat about Ben. After L44 it's simply true, because I'm in his house. After L67 it's what my own brother now thinks about me.
+- **The rule is the clue:** "he isn't yours" first reads as a threat about Ben. After L44 ("I'm the one / who SWAPPED.") it's simply true, because I'm in his house. After L67 it's what my own brother now thinks about me.
 
 ## The story
 - **Premise:** In this town a blackout can swap anyone sitting alone in the dark with another version of themselves, so families sit together with flashlights and check each other afterward. My big brother Ben and I haven't been nice to each other in three years. After Tuesday's blackout, he makes me a sandwich with the crusts cut off.
@@ -41,19 +41,22 @@
 - **The relatable want or fight:** a big brother I don't get along with, and nobody remembers why.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** "the check", an inset in the top-left corner of our own design: four round face icons in a row (Mom, Ben, me, Pickle the dog), each with a green tick. Ben's tick blinks at L02 and turns into a yellow question mark at L20. At L42 the question mark slides from Ben's icon onto mine. At L61 every icon has a tick. At L67 a question mark pops back onto my icon.
 - **The 3 to 5 example montage (L03 to L10, 4 to 18 s):** the street going dark (L03), a neighbor swapping shirts (L04, L05), families in rings of flashlight (L06), Mr. Varga's ponytail (L07), the Dales' grumpy grandpa coming out smiling and kept (L08, L09), Mr. Varga swapping back (L10). Played for laughs.
-- **A concrete mystery on screen by 15 s:** frame 1 and L02: a brother who never does anything nice has made me a sandwich (2 to 4 s). The watch follows at L20 (about 36 s).
+- **A concrete mystery on screen by 15 s:** frame 1 and L02: a brother who never does anything nice has made me a sandwich (2 to 4 s). The watch is planted at L14b (my Ben's black watch on his LEFT wrist, in the first blackout, about 27 s) and pays off at L20 to L22 (a red watch on his RIGHT, about 41 s).
 - **How the narrator is the exception:** everyone sits together in a blackout. I sat alone in my room with the door shut (L15, L16).
 - **The loved one at stake:** my big brother, Ben, named in L11 in the same shot as him.
 - **The rule broken:** L15 (I sit alone in the dark), seen as sulking.
-- **First real scare:** L31 to L38 (about 52 to 67 s): Ben in my doorway at 2 a.m., his flashlight in my face, not moving, then asking me the dog's name and switching the light off when I answer.
+- **Dread before it:** L30b, L30c (about 56 to 60 s): Thursday night a flashlight beam sits under my door for an hour, and when I open it the hall is empty.
+- **First real scare:** L31 to L38b (about 61 to 77 s): Ben in my doorway at 2 a.m., his flashlight in my face, not moving, then asking me the dog's name and switching the light off when I answer.
 - **The climax turns the rule's own logic:** the rule cuts both ways. If sitting alone in the dark swapped me, sitting alone in the next one swaps me back, and this Ben, who wants his own brother home, walks me to my room and shuts the door himself (L52 to L56). No new magic.
-- **Twist and reveal (L39 to L47, 66 to 83 s):** said plainly over one picture (the split living room at L44): "Ben wasn't the one / alone in the DARK / on Tuesday." "I WAS." "Ben didn't SWAP. / I did." "This is the house / where my brother and I / never STOPPED being friends."
-- **How the last 15 seconds turn over the first line:** my real Ben, watch on his left, says the other me was nice to him all week and he liked it (L62, L63). I make him the sandwich with the crusts off, and "Now he's SURE / I'm not his." (L67) runs straight into L01.
+- **Twist and reveal (L39 to L47, about 77 to 96 s):** said plainly over one picture (the split living room at L44), with no reversal cadence (standards r1): "On Tuesday, / I was the one / alone in the DARK." "With the door SHUT." "I'm the one / who SWAPPED." "This is the house / where my brother and I / never STOPPED being friends."
+- **How the last 15 seconds turn over the first line:** my real Ben, black watch on his left, says the other me was nice to him all week and he liked it (L62, L63). I make him the sandwich with the crusts off, and "Now he's SURE / I'm not his." (L67) runs straight into L01.
 - **The plants a rewatch catches:**
   1. L15, L16: on Tuesday I sat alone in my room with the door shut and didn't answer Ben's knock. First read as the fight, it's the swap.
   2. From S17b on, the living room has a teal couch and a canoe photo on the mantel. In S11 (before Tuesday) the couch is mustard and the mantel is bare. Never narrated until L44.
   3. L23, S23: Mom laughs it off and the canoe photo is in focus behind her. L30: Mom acts like this is all normal, because here it is.
   4. L36: Ben asks me the dog's name. He's checking me.
+  5. L30b, L30c: the beam under my door for an hour is this Ben sitting outside, making sure I don't vanish too.
+  6. L40b: the canoe in the photo is the same red as this Ben's watch. Both belong to this house.
 - **Ending shape:** home again, then a funny sting that loops.
 - **Warmth:** brothers. Both versions of me fixed the fight from opposite sides, and the way home was to be the nice one first.
 - **Sad family reveal?** No.
@@ -84,7 +87,7 @@ One town on a summer week. Most of it happens in one house.
 
 ## Cast
 - `me` (an adult man, about 21, the narrator): short dark block hair, a grey T-shirt with a red stripe, shorts, white socks. Faces: `annoyed`, `sulky`, `stunned`, `uneasy`, `suspicious`, `scared`, `thinking`, `relief`, `soft`.
-- `ben` (my big brother, adult, about 24; two Bens, one rig): a sandy block haircut, a navy hoodie, jeans, a black watch. **The one rule for both:** my Ben wears the watch on his LEFT wrist, this Ben on his RIGHT. Same face, same clothes otherwise. Faces: `annoyed`, `smug`, `soft`, `blank`, `sad`, `unsure`, `sheepish`, `suspicious`, `laugh`. Named "my big brother, Ben" at L11 in the same shot.
+- `ben` (my big brother, adult, about 24; two Bens, one rig): a sandy block haircut, a navy hoodie, jeans, a watch. **The one rule for both:** my Ben wears a BLACK watch on his LEFT wrist, this Ben a canoe-red `#ff5a4e` watch on his RIGHT (standards r1: a colour tell of its own, tied to the canoe photo, not a bare mirror tell). Same face, same clothes otherwise. Faces: `annoyed`, `smug`, `soft`, `blank`, `sad`, `unsure`, `sheepish`, `suspicious`, `laugh`. Named "my big brother, Ben" at L11 in the same shot.
 - `mom` (our mom, adult, about 52): a silver-streaked bob, a lilac sweater. Faces: `amused`, `content`. The same in both versions.
 - `pickle` (our dog): a brown blocky mutt with one white ear, a round tag with a bone shape (no text).
 - `varga` (a neighbor, adult): bald, then a long gray ponytail. `confused`, `relieved`.
@@ -96,14 +99,17 @@ There isn't one. The eerie is a kind brother who stands in my doorway at night w
 - **Continuity (which Ben is where):**
   | Lines | Ben on screen | Watch | Couch |
   |---|---|---|---|
-  | L01, L02 | this Ben | right | teal |
-  | L11 to L16 | my Ben | left | mustard |
-  | L17 to L56 | this Ben | right | teal |
-  | L59 to L67 | my Ben | left | mustard |
+  | L01, L02 | this Ben | canoe red `#ff5a4e`, right | teal |
+  | L11 to L16 | my Ben | black, left (close at L14b) | mustard |
+  | L17 to L56 | this Ben | canoe red `#ff5a4e`, right | teal |
+  | L21 callbacks (S21a, S21b) | my Ben | black, left | mustard |
+  | L40b insert | this Ben's wrist only | canoe red, right | teal |
+  | L59 to L67 | my Ben | black, left (close at L60) | mustard |
+  The watch face is a plain disc with no numerals or lettering. The red must read as the same red as the canoe in the photo.
 
 ## Palette
 - Night: cobalt blue `#2d5be3`, flashlight cream `#fff4d0`, moonlight `#bcd4ff`.
-- Day: warm white walls `#fbf6ec`, honey floor `#d9a86c`, couch teal `#2fbfb0` (this version) or mustard `#e0b030` (mine), canoe red `#ff5a4e`, Ben's navy `#26355e`.
+- Day: warm white walls `#fbf6ec`, honey floor `#d9a86c`, couch teal `#2fbfb0` (this version) or mustard `#e0b030` (mine), canoe red `#ff5a4e`, Ben's navy `#26355e`, my Ben's watch black `#1a1a1a`, this Ben's watch canoe red `#ff5a4e`.
 - **Caption key colour:** canoe red `#ff5a4e`.
 
 ## Music
