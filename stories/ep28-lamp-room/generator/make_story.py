@@ -381,8 +381,6 @@ put("me", "L22", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-6, arms=[60, 60
 put("me", "L24", [-0.3, -1.15, LF], yaw=0, expr="worried")
 hide("me", "L25")
 put("me", "L26", SEAT_K(-0.75), yaw=180, sit=True, expr="worried", head=[0, 8])
-key("me", "L29", head=[-55, 6], blend=1.2)
-key("me", "L30", head=[0, 12], blend=1.0)
 put("me", "L32", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-6, arms=[60, 60], head=[0, 22], expr="worried")
 key("me", "L33", expr="wide", blend=0.1)
 at_rail(6, "L34", head=[0, 26])
