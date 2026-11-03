@@ -1698,14 +1698,14 @@
    ]
   },
   "L66": {
-   "text": "Lena laughed so much her veil steamed up.",
+   "text": "Lena laughed so much her veil fogged up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.966,
+   "dur": 2.0,
    "onset": 0.172,
-   "end": 1.759,
+   "end": 1.793,
    "chunks": [
     [
      0.172,
@@ -1713,11 +1713,11 @@
     ],
     [
      0.724,
-     1.138
+     1.164
     ],
     [
-     1.138,
-     1.759
+     1.164,
+     1.793
     ]
    ]
   },

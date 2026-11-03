@@ -553,7 +553,7 @@ story["music"] = {
         {"at": "L66", "voices": ["drone", "pluck_hi", "pad"], "energy": 0.6},
     ]}
 story["sound"] = {
-    "floor": "grass", "steps_db": -26, "rev": 6,
+    "floor": "grass", "steps_db": -26, "rev": 7,
     "ambience": [
         {"kind": "beehum", "from": 0, "to": "L02", "lufs": -42},
         {"kind": "gulls", "from": "L02", "to": "L15", "lufs": -41},

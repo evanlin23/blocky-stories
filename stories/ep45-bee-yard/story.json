@@ -1657,8 +1657,8 @@
      "much her veil"
     ],
     [
-     "steamed UP.",
-     "steamed up."
+     "fogged UP.",
+     "fogged up."
     ]
    ]
   },
@@ -10416,7 +10416,7 @@
  "sound": {
   "floor": "grass",
   "steps_db": -26,
-  "rev": 6,
+  "rev": 7,
   "ambience": [
    {
     "kind": "beehum",

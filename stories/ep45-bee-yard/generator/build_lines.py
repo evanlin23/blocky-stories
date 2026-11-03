@@ -70,7 +70,7 @@ T = {
 "L63": ["All this time,", "it had been", "counting", "down to ME."],
 "L64": ["To every time", "I nearly", "did IT."],
 "L65": ["And mine was", "blank because it", "was waiting for", "me to DECIDE."],
-"L66": ["Lena laughed so", "much her veil", "steamed UP."],
+"L66": ["Lena laughed so", "much her veil", "fogged UP."],
 "L67": ["Now both veils", "come off their", "hooks every MORNING."],
 "L68": ["At the gate", "now, I", "hug FIRST."],
 "L69": ["In this world,", "the CLOCK over", "my head counts", "down to my", "next HUG."],
