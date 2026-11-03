@@ -1,0 +1,18 @@
+{
+ "film": 13241496447,
+ "verdict": "fail",
+ "date": "2026-11-03",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "opening recipe",
+  "audio",
+  "polish",
+  "craft",
+  "flash",
+  "package",
+  "opening variety"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 9.1 | 11–16 | **warn** |\n| spec.cuts_per_10s | 6.38 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.175 | –0.25 | ok |\n| spec.shot_p90_s | 2.33 | –2.5 | ok |\n| macro.longest_still_s | 0.67 | –1.5 | ok |\n| macro.motion_energy_mean | 1.95 | 1.5– | ok |\n| spec.camera_move_share | 0.915 | 0.65– | ok |\n| spec.punch_per_10s | 0.68 | 0.4– | ok |\n| macro.brightness_mean | 0.472 | 0.25– | ok |\n| macro.brightness_first_3s | 0.409 | 0.3– | ok |\n| macro.dark_frame_share | 0.008 | –0.15 | ok |\n| macro.saturation_mean | 0.311 | 0.35– | **warn** |\n| macro.contrast_mean | 0.189 | 0.15– | ok |\n| spec.face_big_share | 0.347 | 0.4– | **warn** |\n| spec.caption_share | 0.95 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.145 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.456 | 0.5– | **warn** |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.02 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 98.0 | –120 | ok |\n| spec.sound_events_per_10s | 7.4 | 4.0– | ok |\n| sound.silence_share | 0.0011 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.2 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0419 | –0.08 | ok |\n| sound.hf_jump_max | 0.0109 | –0.04 | ok |",
+ "notes": "Film 87.8 s, timeline matches (57 shots). -14.1 LUFS / -1.8 dBTP, no clipping, 4 kHz windows clean (max 0.042, jump 0.011), voice 12 dB over the bed, L48 'UP' ends 87.57 s and loops to L01; flash house bar passes (1/s, 3f 3/s, red 0); blacks stay neutral on a TV (no red cast); gate OPEN; package clean, opening 'ban' matches L01, neighbours closing-time and knock-back are 'must'.\nSecond one: a big blocky face low in a dim grey hall, eyes rolled up, worried squiggle mouth, a black scuff line over his hair and a pale band of wall up to a dark ceiling, pushing in; then 'In this TOWN,' lands right across his eyes. L01 is a concrete threat to the viewer ('don't look up'), 'UP' by 2.2 s, L02 over the frowning box at 2.4 s.\nFIX 1, S01 0.25-2.4 s: the caption band (about 62-67% of frame height) sits exactly on the narrator's eyes for all of L01, so the rolled-up eyes, the hook's whole read, are hidden from 0.25 s on; by 2.0 s 'don't LOOK UP.' covers both eyes. Re-aim S01 lower (both keys' targets about 0.3 m lower) so the eyes sit near 40-45% height, with the scuff line and the gap still above them.\nFIX 2, S16 19.93-20.3 s: on 'It was taped SHUT' the shot opens on a blank grey wall with only the box's top edge at the bottom, then the box sweeps up into frame in about 0.3 s; the planned tape shining through the corner gap never shows (it lands on the frown). Start the camera at its end key and aim it at the crushed corner seam so the box fills the frame from the first frame.\nMinor: cover 48.6 s (S34) reads (the Boxes over Mom asleep) but the face box is cut at the right edge; centre it a touch. Mom's closed eyes read as two tally marks in S34-S40. S33 (46.2-48 s) is about 73% black but the lit doorway reads.\ncraft: 4 of 28 warn: macro.picture_changes_per_10s 9.1 (11-16), macro.saturation_mean 0.311 (0.35-), spec.face_big_share 0.347 (0.4-), micro.character_motion_shot_share 0.456 (0.5-). None blocks; the low change rate and still characters are the slow dark 3 a.m. stretch, which plays as intended."
+}
