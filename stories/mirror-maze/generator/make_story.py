@@ -290,8 +290,8 @@ stage("L16", *MINIS())
 LOOK_CARRY = {**LOOK_IN, "camfill": 0.9}
 S("L16", one((0.5, 3.6, 1.55), (0.0, 0.85, 1.3), 30), 2, follow="guy", look=LOOK_CARRY, rain2d=False,
   note="every pane he carried was packed with faces")
-S("L17", mv(((0.5, 3.6, 1.55), (0.0, 0.85, 1.4)), ((0.3, 2.7, 1.6), (0.0, 0.85, 1.6)), 34, 46), 2, follow="guy",
-  look=LOOK_CARRY, rain2d=False, note="they all turned to watch me")
+S("L17", mv(((0.5, 3.6, 1.55), (0.0, 0.85, 1.4)), ((0.5, 3.9, 1.6), (0.0, 0.85, 1.5)), 34, 40), 2, follow="guy",
+  look={**LOOK_CARRY, "camfill": 0.6}, rain2d=False, note="they all turned to watch me")
 stage("L17.1",
       *[E(w, (0, 0, 0), 0, att={"side": sx, "ahead": -0.12, "up": uz, "yaw": 0}, scale=0.5, expr="neutral", rim=True,
           head=[-35 if sx < 0 else 35, 0]) for w, sx, uz in (("x0", -0.4, 0.08), ("x1", 0.4, 0.08), ("x2", -0.4, 1.18), ("x3", 0.4, 1.18))])
