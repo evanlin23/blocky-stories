@@ -1,5 +1,5 @@
 {
- "rev": 6,
+ "rev": 7,
  "slug": "ep62-six-riders",
  "title": "The Elevator Mirror Shows FIVE",
  "made_for_kids": false,
@@ -1691,7 +1691,8 @@
     "look": [
      0,
      0
-    ]
+    ],
+    "blink": false
    },
    {
     "at": "L14+0.4",
@@ -1954,7 +1955,8 @@
     "to": "P01>",
     "keep": [
      "thud"
-    ]
+    ],
+    "db": -20
    },
    {
     "from": "P02",

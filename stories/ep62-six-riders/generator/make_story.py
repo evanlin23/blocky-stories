@@ -52,7 +52,7 @@ for k, (x, y) in ROWS.items():
     acting[k].append({"at": "L02+0.45", "pos": [x, y], "yaw": 0, "hidden": False, "blend": 0})
     # D's reflection stands a little right of his true x (-1.0) so his face is not behind the two blue jackets
     acting["r" + k].append({"at": 0, "pos": [0.2 if k == "d" else x, -y], "yaw": 180, "expr": "neutral"})
-acting["x"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "neutral", "look": [0, 0]})
+acting["x"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "neutral", "look": [0, 0], "blink": False})
 acting["bro"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "worried", "hidden": True})
 acting["c"].append({"at": "L09+0.2", "yaw": 40, "blend": 0})     # S13: he turns his face toward the lens
 acting["c"].append({"at": "L10", "yaw": 0, "blend": 0})
@@ -188,7 +188,7 @@ sfx = [
     {"at": "L15", "kind": "whoosh", "db": -22, "dur": 0.9},
 ]
 story = {
-    "rev": 6,
+    "rev": 7,
     "slug": "ep62-six-riders",
     "title": "The Elevator Mirror Shows FIVE",
     "made_for_kids": False,
@@ -228,7 +228,7 @@ story = {
               "ambience": [{"kind": "hum", "from": 0, "to": "end", "lufs": -36},
                            {"kind": "room", "from": 0, "to": "end", "lufs": -38}],
               "sfx": sfx,
-              "music_drops": [{"from": "P01", "to": "P01>", "keep": ["thud"]},
+              "music_drops": [{"from": "P01", "to": "P01>", "keep": ["thud"], "db": -20},
                               {"from": "P02", "to": "P02>", "keep": ["bell"]}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
