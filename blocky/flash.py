@@ -38,7 +38,12 @@ def measure(mp4: Path, cuts: list[int] | None) -> dict:
     rep = safety.house_report(lum, red, cuts)
     rep["wrap"] = safety.wrap_report(lum, red)
     span = rep.get("general_span_s")
-    rep["description_line"] = f"Flashing lights and fast cuts from {mmss(span[0])} to {mmss(span[1])}." if span else None
+    # the viewer warning only when the film comes near the standards (fails, or trips an old house-bar warning);
+    # ordinary cuts between bright and dark shots no longer put "Flashing lights" on top of every description
+    # (owner, 2026-11-03: "i watched them and i didnt see the flashes...")
+    near = rep.get("house_warnings") or not rep["house_bar"]["pass"]
+    rep["description_line"] = (f"Flashing lights and fast cuts from {mmss(span[0])} to {mmss(span[1])}."
+                               if span and near else None)
     rep["file"] = mp4.name
     rep["frames"] = len(lum)
     return _plain(rep)
@@ -68,6 +73,8 @@ def run(mp4: Path, timeline: Path | None) -> dict:
     for k, ok in bar.items():
         if not ok:
             print(f"  failed: {k}")
+    for w in rep.get("house_warnings", []):
+        print(f"  warning: {w}")
     if rep["description_line"]:
         print(f"  description line: {rep['description_line']}")
     return rep
