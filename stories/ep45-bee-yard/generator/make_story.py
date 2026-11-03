@@ -181,11 +181,11 @@ S00L = (0.52, 3.6)
 # S00a (L01 to "Only"): a chest-up two-shot, centred for TV: Lena with her dial (24) and the Hover with empty air at the
 # same height, both faces over 1/5 of the frame, pushing in. Bees hidden (set.py).
 _cz = _gy + 1.45
-sh("S00a", 33, 0, mv([0.0, S00H[1] - 3.3, _cz], [0.0, S00H[1], _gy + 1.5], 24, [0.0, S00H[1] - 2.7, _cz], [0.0, S00H[1], _gy + 1.5], 24),
+sh("S00a", 33, 0, mv([0.0, S00H[1] - 3.3, _cz], [0.0, S00H[1], _gy + 1.5], 24, [0.0, S00H[1] - 3.05, _cz], [0.0, S00H[1], _gy + 1.5], 24),
    {"hover": hv(S00H[0], S00H[1], 0), "lena": P(S00L[0], S00L[1], 0, expr="soft", arms=[0, 0], side=[0, 0])}, hand=0.003)
 # S00b ("Only ONE CLOCK"): a low insert at grass height on his floating boots, the sunlit strip under the soles, the shadow apart.
-sh("S00b", 33, "L01.3", mv([S00H[0] + 0.7, S00H[1] - 2.4, _gy + 0.14], [S00H[0], S00H[1], _gy + 0.3], 26,
-                          [S00H[0] + 0.55, S00H[1] - 1.9, _gy + 0.14], [S00H[0], S00H[1], _gy + 0.3], 26),
+sh("S00b", 33, "L01.3", mv([S00H[0] + 0.7, S00H[1] - 2.4, _gy + 0.26], [S00H[0], S00H[1], _gy + 0.3], 26,
+                          [S00H[0] + 0.55, S00H[1] - 1.9, _gy + 0.26], [S00H[0], S00H[1], _gy + 0.3], 26),
    {"hover": hv(S00H[0], S00H[1], 0), "lena": P(S00L[0], 9.0, 0, expr="soft", arms=[0, 0], side=[0, 0])}, hand=0.003)
 sh("S01", 2, "L02", mv([X - 0.3, 4.9, 1.85], [X, 9.0, 2.0], 44, [X - 0.2, 5.4, 1.85], [X, 9.0, 2.0], 44),
    {"a1": P(cx0, 9.0, 90, z=PZ, head=[-72, 0], **hug, **H1), "a2": P(cx1, 9.0, 270, z=PZ, head=[72, 0], **hug, **H2),
@@ -444,7 +444,7 @@ story = {
     "fade_in": False,       # frame 1 is already the picture (opening recipe v1)
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "phonemes": {"Thursday": "θˈɜɹzdA"},
-    "look": {"flash_safe": True, "polish": {"quiet": [["L55", "L58"], ["L66", "L68"]]}, "fog": "#bcd6ea", "fog_density": 0.0035, "fog_start": 8.0, "sky": "#9cc8ea", "sky_strength": 1.0,
+    "look": {"flash_safe": True, "polish": {"hold": ["S00a"], "quiet": [["L55", "L58"], ["L66", "L68"]]}, "fog": "#bcd6ea", "fog_density": 0.0035, "fog_start": 8.0, "sky": "#9cc8ea", "sky_strength": 1.0,
              "exposure": 0.0},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.015, -0.02], "saturation": 1.05, "contrast": 1.03,
               "vignette": 0.22, "bloom": 0.25, "grain": 0.008},
@@ -553,7 +553,7 @@ story["music"] = {
         {"at": "L66", "voices": ["drone", "pluck_hi", "pad"], "energy": 0.6},
     ]}
 story["sound"] = {
-    "floor": "grass", "steps_db": -26, "rev": 5,
+    "floor": "grass", "steps_db": -26, "rev": 6,
     "ambience": [
         {"kind": "beehum", "from": 0, "to": "L02", "lufs": -42},
         {"kind": "gulls", "from": "L02", "to": "L15", "lufs": -41},
