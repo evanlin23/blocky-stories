@@ -109,11 +109,13 @@ def P(x, y, yaw=0, expr="neutral", **kw):
 
 
 # ---- 01 the bells
-shot(0, "day", {"drv1": P(0, -6, -90, "smirk", pos3=True)},
-     still([-3.0, -5.3, 1.2], [-0.5, -6.0, 0.9], 36),
-     "driver close, the bell tinks at 1.2")
-shot("L01.2", "day", {"drv1": P(0, -6, -90, "smirk"), "drv2": P(0, -10.8, -90, "grin"), "drv3": P(0, -15.6, -90, "smirk")},
-     still([-3.6, -3.0, 1.35], [0.2, -10.2, 0.95], 24), "wide queue")
+# opening recipe v1 (2026-11-03): frame 1 looks straight at a bell mid-ring with a face, pushing in, no wide before L03
+shot(0, "day", {"pie_man": P(5.1, -12.4, 165, "worried")},
+     c([0, [5.62, -10.47, 1.5], [5.1, -12.4, 1.45], 38], [1.0, [5.46, -11.05, 1.48], [5.1, -12.4, 1.45], 40]),
+     "close on the pie man's face and collar bell mid-ring, pushing in")
+shot("L01.3", "day", {"pie_man": P(5.1, -12.4, 165, "terrified")},
+     c([0, [5.3, -11.72, 1.42], [5.1, -12.4, 1.38], 45], [1, [5.25, -11.9, 1.41], [5.1, -12.4, 1.38], 48]),
+     "punch in on the bell under his chin, the ding on UP")
 shot("L02", "day", {"pie_man": P(5.1, -12.4, 165, "worried")},
      still([4.3, -9.8, 1.55], [5.5, -12.4, 1.3], 30), "kiosk hatch")
 shot("L03", "day", {"date_a": dict(pos=[CAFE[0] - 0.85, CAFE[1] + 0.1], yaw=55, expr="worried", lean=6),
@@ -427,7 +429,8 @@ cue("L19", "lever", v=1.0, dur=0.1)
 cue("L22", "lever", v=0.0, dur=1.0)
 # bells: rings and the wind
 cue(0, "sway", who=["drv1", "drv2", "drv3", "ruben", "pie_man"], dur=0.01)
-ring("drv1", 1.2)
+ring("pie_man", 0, dur=2.4, rate=2.6, amp=0.7)
+ring("pie_man", "L01.5+0.18", amp=1.4)
 ring("pie_man", "L02.2")
 ring("date_a", "L03", dur=2.0, rate=3.2)
 ring("date_b", "L03+0.1", dur=2.0, rate=3.6)
@@ -452,7 +455,9 @@ def ding(at, db=-16, pitch=2200, lp=None, **kw):
 
 
 sfx = [
-    ding(1.2, -15, 2300),
+    ding(0.15, -24, 2050),
+    ding(0.75, -24, 2050),
+    ding("L01.5+0.18", -12, 2050),
     ding("L02.2", -15, 2050),
     *[ding(f"L03+{0.3 * k:.1f}", -19, 2100 + 130 * (k % 3)) for k in range(6)],
     *[ding(f"L05+{0.24 * k:.2f}", -17, 2400 - 80 * (k % 4)) for k in range(8)],
@@ -523,7 +528,7 @@ story = {
                   {"at": "L59", "voices": ["drone", "pad", "piano"], "energy": 0.5, "mode": "major"},
                   {"at": "L69", "voices": ["drone"], "energy": 0.4, "mode": "dorian"},
               ]},
-    "sound": {"floor": "metal", "steps_db": -22,
+    "sound": {"rev": 2, "floor": "metal", "steps_db": -22,
               "ambience": [
                   {"kind": "wind", "from": 0, "to": "L14", "lufs": -38},
                   {"kind": "room", "from": "L14", "to": "L15", "lufs": -38},

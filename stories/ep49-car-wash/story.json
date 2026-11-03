@@ -510,24 +510,28 @@
    "who": "narrator",
    "chunks": [
     [
-     "In this TOWN,",
-     "In this town,"
+     "When your",
+     "When your"
     ],
     [
-     "the BELL on",
-     "the bell on"
+     "COLLAR BELL",
+     "collar bell"
     ],
     [
-     "your collar",
-     "your collar"
+     "RINGS,",
+     "rings,"
     ],
     [
-     "rings before",
-     "rings before"
+     "STOP.",
+     "stop."
     ],
     [
-     "every MISTAKE.",
-     "every mistake."
+     "You're about to",
+     "You're about to"
+    ],
+    [
+     "MESS UP.",
+     "mess up."
     ]
    ]
   },
@@ -536,8 +540,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "A man reaches",
-     "A man reaches"
+     "EVEN reaching",
+     "Even reaching"
     ],
     [
      "for a",
@@ -546,10 +550,6 @@
     [
      "THIRD PIE.",
      "third pie."
-    ],
-    [
-     "DING.",
-     "Ding."
     ]
    ]
   },
@@ -2077,21 +2077,35 @@
     [
      0,
      [
-      -3.0,
-      -5.3,
-      1.2
+      5.62,
+      -10.47,
+      1.5
      ],
      [
-      -0.5,
-      -6.0,
-      0.9
+      5.1,
+      -12.4,
+      1.45
      ],
-     36
+     38
+    ],
+    [
+     1.0,
+     [
+      5.46,
+      -11.05,
+      1.48
+     ],
+     [
+      5.1,
+      -12.4,
+      1.45
+     ],
+     40
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "driver close, the bell tinks at 1.2"
+   "what": "close on the pie man's face and collar bell mid-ring, pushing in"
   },
   {
    "id": "S02",
@@ -2099,22 +2113,36 @@
     [
      0,
      [
-      -3.6,
-      -3.0,
-      1.35
+      5.3,
+      -11.72,
+      1.42
      ],
      [
-      0.2,
-      -10.2,
-      0.95
+      5.1,
+      -12.4,
+      1.38
      ],
-     24
+     45
+    ],
+    [
+     1,
+     [
+      5.25,
+      -11.9,
+      1.41
+     ],
+     [
+      5.1,
+      -12.4,
+      1.38
+     ],
+     48
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "wide queue",
-   "at": "L01.2"
+   "what": "punch in on the bell under his chin, the ding on UP",
+   "at": "L01.3"
   },
   {
    "id": "S03",
@@ -9148,8 +9176,69 @@
   "pie_man": [
    {
     "at": 0,
-    "hidden": true,
-    "blend": 0
+    "pos": [
+     5.1,
+     -12.4
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 165,
+    "expr": "worried"
+   },
+   {
+    "at": "L01.3",
+    "pos": [
+     5.1,
+     -12.4
+    ]
+   },
+   {
+    "at": "L01.3",
+    "pos": [
+     5.1,
+     -12.4
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 165,
+    "expr": "terrified"
+   },
+   {
+    "at": "L02",
+    "pos": [
+     5.1,
+     -12.4
+    ]
    },
    {
     "at": "L02",
@@ -9561,74 +9650,8 @@
   "drv1": [
    {
     "at": 0,
-    "pos": [
-     0,
-     -6
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "yaw": -90,
-    "expr": "smirk"
-   },
-   {
-    "at": "L01.2",
-    "pos": [
-     0,
-     -6
-    ]
-   },
-   {
-    "at": "L01.2",
-    "pos": [
-     0,
-     -6
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "yaw": -90,
-    "expr": "smirk"
-   },
-   {
-    "at": "L02",
     "hidden": true,
     "blend": 0
-   },
-   {
-    "at": "L06",
-    "pos": [
-     0,
-     -6
-    ]
    },
    {
     "at": "L06",
@@ -9667,44 +9690,6 @@
     "at": 0,
     "hidden": true,
     "blend": 0
-   },
-   {
-    "at": "L01.2",
-    "pos": [
-     0,
-     -10.8
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "yaw": -90,
-    "expr": "grin"
-   },
-   {
-    "at": "L02",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L06",
-    "pos": [
-     0,
-     -10.8
-    ]
    },
    {
     "at": "L06",
@@ -9776,44 +9761,6 @@
     "at": 0,
     "hidden": true,
     "blend": 0
-   },
-   {
-    "at": "L01.2",
-    "pos": [
-     0,
-     -15.6
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "yaw": -90,
-    "expr": "smirk"
-   },
-   {
-    "at": "L02",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L06",
-    "pos": [
-     0,
-     -15.6
-    ]
    },
    {
     "at": "L06",
@@ -10714,12 +10661,20 @@
    "dur": 0.01
   },
   {
-   "at": 1.2,
+   "at": 0,
    "name": "ring",
-   "who": "drv1",
+   "who": "pie_man",
+   "dur": 2.4,
+   "rate": 2.6,
+   "amp": 0.7
+  },
+  {
+   "at": "L01.5+0.18",
+   "name": "ring",
+   "who": "pie_man",
    "dur": 0.0,
    "rate": 3.0,
-   "amp": 1.0
+   "amp": 1.4
   },
   {
    "at": "L02.2",
@@ -10934,7 +10889,8 @@
    }
   ]
  },
- "sound": {"rev": 2, 
+ "sound": {
+  "rev": 2,
   "floor": "metal",
   "steps_db": -22,
   "ambience": [
@@ -10983,10 +10939,24 @@
   ],
   "sfx": [
    {
-    "at": 1.2,
+    "at": 0.15,
     "kind": "ding",
-    "db": -15,
-    "pitch": 2300,
+    "db": -24,
+    "pitch": 2050,
+    "dur": 0.9
+   },
+   {
+    "at": 0.75,
+    "kind": "ding",
+    "db": -24,
+    "pitch": 2050,
+    "dur": 0.9
+   },
+   {
+    "at": "L01.5+0.18",
+    "kind": "ding",
+    "db": -12,
+    "pitch": 2050,
     "dur": 0.9
    },
    {

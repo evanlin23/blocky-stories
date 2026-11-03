@@ -7,8 +7,10 @@
   - The midnight texter wakes the whole street instead of turning the streetlights on, so the montage has no light switch at all.
   - The wax order is placed from my bed that night, so the ring through the wall pays off as mine too.
   - Clarity revision (2026-11-03, cold-viewer check): L57 now says the twist in one plain line, and the ending (L71, L72) is the clapper back on my collar and a cold ding that stops my hand, with no new mystery. "Last NIGHT," stays out (batch 1's banned opener).
+  - Opening fix (2026-11-03, opening recipe v1 in `docs/research/playbook.md`): L01 is now a warning to "you" (11 words) and L02 tightens it with the third pie (6 words), so the pie gag stays as the first example and the montage still has five (pie, dates, wedding, texter, ring and do it anyway) by 15 s. Only L01 and L02 are re-voiced. S01 and S02 are new (close on the pie man's ringing bell, no queue wide), S03 is the old kiosk shot. The source is `generator/make_story.py` + `generator/lines.json`. L69 still states the old rule line, so the loop now runs L72 "And I hear EVERY one." into L01 "When your collar bell rings, stop."
+  - **Quotable line:** L03, "First dates sound like sleigh rides."
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 628 spoken words in 72 lines, all `narrator`, plus 3 pause beats (2.9 s in all).
+- **Word count:** 626 spoken words in 72 lines, all `narrator`, plus 3 pause beats (2.9 s in all).
 - **Estimated length:** about 2:19 to 2:25. At 290 wpm the speech is 2:07, at 278 wpm (the short-line rate) 2:13. The 0.12 s gaps add about 8.6 s, the pauses 2.9 s and the loop tail 0.25 s. If it lands under 2:15, add "The FOAM / comes out / GREY." after L33. If it lands over 2:30, cut L37 first, then L17.
 
 ## The story
@@ -26,8 +28,8 @@
 
 ## What the hits do (the checklist)
 
-1. **Rule opener:** L01, "In this TOWN, / the BELL on your collar / rings before / every MISTAKE." (12 words).
-2. **Marker by 2 s:** a small brass bell on every collar, our own design (a round domed bell, 6 cm, with a slot mouth and a little loop, no text). In L01's first frame: a driver's face and bell in close-up, the queue behind, all bells in frame. One rings with a bright tink at 1.2 s.
+1. **Warning opener (recipe v1):** L01, "When your / COLLAR BELL / RINGS, / STOP. / You're about to / MESS UP." (11 words, about 2.1 s), then L02, "EVEN reaching / for a / THIRD PIE." (6 words, about 1.3 s). True in this world: the bell rings before a mistake, so stopping is the advice. People who ring and go anyway (L06) ignore it and wince, and the climax (quiet means go) is the same warning turned round. No name, place or backstory before L08.
+2. **Marker by 2 s:** a small brass bell on every collar, our own design (a round domed bell, 6 cm, with a slot mouth and a little loop, no text). In L01's first frame: the pie man's face and his bell in close-up, the bell already swinging on its own with its clapper visible (a quiet contrast with my empty bell at L07). The ding lands on "UP".
 3. **Montage (L02 to L06, 3 to 15 s), five examples, played for laughs:** the third pie, first dates jingling like sleigh rides, the wedding lean-in, the midnight texter who wakes the street, people ringing and doing it anyway while the whole queue winces.
 4. **Narrator is the exception:** L07, "Mine has never RUNG. Not ONCE."
 5. **Loved one at stake:** Ruben, my older brother, an adult who runs the wash alone.
@@ -134,12 +136,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the car wash forecourt and the town around it, a bright autumn morning.
 - **Shots:** 9.
 
-- `L01` narrator: In this TOWN, / the BELL on your collar / rings before / every MISTAKE.
-  - [S01, 0 to 1.4 s: close on a queue driver leaning out of a car window, `smile`, the brass bell big on his collar. It tinks at 1.2 s]
-  - [S02: wide on the forecourt queue, three cars, drivers leaning out, a bell on every collar, gold leaves blowing. Faces readable]
-- `L02` narrator: A man reaches / for a THIRD PIE. / DING.
-  - [S03: the kiosk hatch, `pie_man` eyeing a tray of three pies, two already gone from the tray. His bell rings on "DING", he freezes. Cut away from any hand]
-- `L03` narrator: First DATES / sound like / SLEIGH RIDES.
+- `L01` narrator: When your / COLLAR BELL / RINGS, / STOP. / You're about to / MESS UP.
+  - [S01, 0 s to "STOP" (about 1 s), the first frame: looking straight at the warned-of thing. Close on `pie_man` at the kiosk, `worried`, face and collar bell both big in frame, bright morning sun on him (lit to read on a phone, centred). The bell is already swinging hard on its own, its clapper visible inside, while nothing else in frame moves and no wind blows. Soft tinks at 0.15 and 0.75 s. Push in from 2.0 m to 1.4 m, lens 38 to 40 mm. No wide anywhere before L03]
+  - [S02, from "STOP" to the end of the line: punch in on the bell under his chin, `terrified`, 0.7 m, lens 45 to 48 mm, still pushing. **The sound hit:** one loud, bright ding on "UP" (the warning's last word), the bell kicking up on it]
+- `L02` narrator: EVEN reaching / for a / THIRD PIE.
+  - [S03: the kiosk hatch, `pie_man` frozen beside a tray of three pies, two already gone from the tray. His bell rings again on "THIRD PIE" and he stays frozen. Cut away from any hand]
+- `L03` narrator: First DATES / sound like / SLEIGH RIDES. **(The quotable line.)**
   - [S04: a café table, `date_a` and `date_b` leaning in, both bells jingling non-stop, both mortified]
 - `L04` narrator: At WEDDINGS, / the whole room / LEANS IN / after "I DO."
   - [S05: the groom and bride at the front, mid shot. Behind them every guest tilted forward, listening, totally still]
@@ -357,9 +359,10 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## Risks
 
+- **The new opening (L01, L02):** "MESS UP." may come back as "messed up". Re-voice L01 only if it does. If L01 runs over 2.2 s, drop the voice gap after it rather than cut a word.
 - **"RUBEN" (L08, L38, L52, L61, L68):** Whisper may write "Reuben". If it does, change the five captions' spelling to match rather than re-voice.
 - **"SLEIGH RIDES" (L03):** could come back "slay rides". If it does, swap L03 to "First DATES / jingle like / CHRISTMAS." and re-voice that line only.
-- **"DING" (L02, L12, L13):** may come back as "ding." or "dang". Re-voice only if it does.
+- **"DING" (L12, L13):** may come back as "ding." or "dang". Re-voice only if it does.
 - **"Wash-blue" (L46):** may come back "wash blue". Spacing and hyphens count as spelling. Caption can drop the hyphen.
 - **Harm words:** none of `checks.HARM`, `GRAPHIC` or `CHILD` appears in any line (no "missing", "taken", "lost", "pulled", "fell", "vanished", "son"). Ruben's absence is "isn't there". "Teenagers" (L55) is only in the narration, never in the package.
 - **The scare's timing:** P01 lands about 53 s at 290 wpm and about 55 s at 278 wpm. If it runs late, cut L17 to bring it forward.

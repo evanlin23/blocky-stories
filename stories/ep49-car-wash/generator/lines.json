@@ -4,24 +4,28 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this TOWN,",
-    "In this town,"
+    "When your",
+    "When your"
    ],
    [
-    "the BELL on",
-    "the bell on"
+    "COLLAR BELL",
+    "collar bell"
    ],
    [
-    "your collar",
-    "your collar"
+    "RINGS,",
+    "rings,"
    ],
    [
-    "rings before",
-    "rings before"
+    "STOP.",
+    "stop."
    ],
    [
-    "every MISTAKE.",
-    "every mistake."
+    "You're about to",
+    "You're about to"
+   ],
+   [
+    "MESS UP.",
+    "mess up."
    ]
   ]
  },
@@ -30,8 +34,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "A man reaches",
-    "A man reaches"
+    "EVEN reaching",
+    "Even reaching"
    ],
    [
     "for a",
@@ -40,10 +44,6 @@
    [
     "THIRD PIE.",
     "third pie."
-   ],
-   [
-    "DING.",
-    "Ding."
    ]
   ]
  },
