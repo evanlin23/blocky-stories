@@ -81,7 +81,7 @@ SHOTS = [
     (0, "L74 the rule: my worried face under unit seven's lit lamp, the door rising by itself behind me, pushing in 2.5 m to 1.9 m",
      move(([-1.05, 1.05, 1.62], [0.45, 3.0, 2.0]), ([-1.0, 1.75, 1.62], [0.5, 3.0, 2.0]), 30, 33)),
     ("L82", "punch in on seven's lamp in its ring, tilting down to the door finishing its rise, the boxes inside",
-     move(([-0.85, 2.35, 1.85], [0.8, 3.0, 2.55]), ([-0.6, 2.6, 1.7], [1.0, 3.0, 1.35]), 40, 36)),
+     move(([-0.85, 2.35, 1.9], [0.8, 3.0, 2.45]), ([-0.75, 2.45, 1.85], [0.9, 3.0, 2.2]), 40, 38)),
     ("L75", "a narrow hallway through an open front door, lamp lit: one striped sock on a shoe rack",
      move(([HX + 0.7, -4.5, 1.2], [HX + 0.7, 1.95, 1.3]), ([HX + 0.7, -4.2, 1.2], [HX + 0.7, 1.95, 1.3]), 40)),
     ("L76", "inside a high kitchen cupboard, door open: bare shelves, one spoon at the back",
@@ -264,7 +264,7 @@ key("me", "L19.1+0.35", head=[0, -2], blend=0.2)
 put("me", "L19.2", [-0.1, 3.5], yaw=180)
 put("me", "L20", [0.45, 3.05], yaw=90, expr="neutral")
 walk("me", "L20.2+0.2", [0.0, 2.2], yaw=0, keep_yaw=False)
-walk("me", "L20.3+0.3", [-0.1, 0.2])
+walk("me", "L20.3+0.3", [-0.1, 0.2], sfx="door", sfx_db=-18)
 hide("me", "L21")
 put("me", "L23", [-0.1, 2.0], yaw=180)
 walk("me", "L23+1.9", [-0.3, 6.4])
@@ -292,7 +292,7 @@ put("me", "L56", [KX + 1.0, 2.0], yaw=0, expr="neutral", arms=[165, 0], side=[0,
 put("me", "L57", [KX + 1.0, 2.0], yaw=0, expr="worried", arms=[165, 0], head=[0, 4])
 key("me", "L57.4", expr="soft", blend=0.3)
 hide("me", "L58")
-put("me", "L59", [0.3, 3.45], yaw=50, expr="soft")
+put("me", "L59", [0.3, 3.45], yaw=50, expr="soft", sfx="door", sfx_db=-18)
 hide("me", "L60")
 put("me", "L61", [0.5, 4.0], yaw=0, expr="soft", **CARRY)
 walk("me", "L61+0.6", [0.1, 1.8], **CARRY)
@@ -305,7 +305,7 @@ put("me", "L66", [-0.1, 0.2], yaw=0, expr="soft", **CARRY)
 walk("me", "L66+1.9", [-0.1, -4.2], **CARRY)
 hide("me", "L67")
 put("me", "L70", [1.25, 3.0], yaw=-90, expr="soft", **CARRY)
-put("me", "L71", [0.3, 3.75], yaw=90, expr="soft", **CARRY)
+put("me", "L71", [0.3, 3.75], yaw=90, expr="soft", sfx="door", sfx_db=-16, **CARRY)
 put("me", "L81", [0.25, 3.4], yaw=180, expr="soft", **CARRY)
 walk("me", "L81>", [0.05, 1.55], yaw=0)
 
@@ -483,7 +483,6 @@ sfx = [
     {"at": "L34.1", "kind": "creak", "db": -12, "dur": 2.2},
     {"at": "L43", "kind": "hit", "db": -7},
     # the opening: the door rises by itself on "DOOR" (recorded rattle, a thud and a low hit), a creak on OPENING
-    {"at": 0.12, "kind": "door", "db": -17, "dur": 1.5},
     {"at": "L74.2", "kind": "thud", "db": -8},
     {"at": "L74.2", "kind": "hit", "db": -13},
     {"at": "L82", "kind": "whoosh", "db": -20},
@@ -497,13 +496,10 @@ sfx = [
     {"at": "L29", "kind": "hit", "db": -13},
     {"at": "L29.2", "kind": "thud", "db": -12},
     {"at": "L30", "kind": "latch", "db": -12},
-    {"at": "L20.2", "kind": "door", "db": -17, "dur": 1.4},
-    {"at": "L37", "kind": "door", "db": -17},
     {"at": "L39", "kind": "creak", "db": -18, "dur": 1.2},
     {"at": "L44", "kind": "thud", "db": -12},
     {"at": "L48", "kind": "hit", "db": -14},
     {"at": "L80", "kind": "hit", "db": -12},
-    {"at": "L55", "kind": "door", "db": -16},
     {"at": "L59.3", "kind": "creak", "db": -16, "dur": 1.4},
     {"at": "L10", "kind": "latch", "db": -17},
     {"at": "L64", "kind": "latch", "db": -18},
@@ -530,7 +526,8 @@ story = {
     "fade_out": False,
     "fade_in": False,
     "look": {"fog": "#2a3140", "fog_density": 0.012, "fog_start": 6.0, "sky": "#161d2e", "sky_strength": 0.5,
-             "exposure": 0.0, "flash_safe": True},
+             "exposure": 0.0, "flash_safe": True,
+             "polish": {"quiet": [["L59", "L65"]]}},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.32, "bloom": 0.2, "grain": 0.012},
     "phonemes": {"Jo": "ʤˈO", "Jo's": "ʤˈOz"},
@@ -540,9 +537,6 @@ story = {
     "acting": acting,
     "cues": cues,
     "fx": [
-        {"at": "L74.2", "kind": "punch", "dur": 0.4, "zoom": 1.1},
-        {"at": "L74.2", "kind": "shake", "dur": 0.2, "amp": 0.8},
-        {"at": "L82.1", "kind": "punch", "dur": 0.5, "zoom": 1.09},
         {"at": "L16", "kind": "punch", "dur": 0.45, "zoom": 1.1},
         {"at": "L17", "kind": "shake", "dur": 0.2, "amp": 0.6},
         {"at": "L29.2", "kind": "punch", "dur": 0.5, "zoom": 1.12},
@@ -554,8 +548,6 @@ story = {
         {"at": "L53.1", "kind": "punch", "dur": 0.6, "zoom": 1.07},
         {"at": "P01+0.2", "kind": "punch", "dur": 0.4, "zoom": 1.1},
         {"at": "L81.2", "kind": "punch", "dur": 0.5, "zoom": 1.07},
-        {"at": "L75.1", "kind": "punch", "dur": 0.45, "zoom": 1.08},
-        {"at": "L76.1", "kind": "punch", "dur": 0.45, "zoom": 1.08},
     ],
     "music": {"root": 41, "mode": "locrian", "bpm": 62, "seed": 34,
               "sections": [
