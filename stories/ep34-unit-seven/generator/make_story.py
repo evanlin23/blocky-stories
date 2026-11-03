@@ -337,7 +337,7 @@ cues = [
     {"at": "L39", "name": "dlamp", "unit": 7, "on": 1.0, "dur": 0.6},
     {"at": "L55", "name": "dlamp", "unit": 7, "on": 0.0, "dur": 1.0},
     {"at": "L59", "name": "dlamp", "unit": 7, "on": 1.0, "dur": 0.6},
-    {"at": "L81.1", "name": "dlamp", "unit": 7, "on": 0.0, "dur": 1.6},
+    {"at": "L81.1-0.05", "name": "dlamp", "unit": 7, "on": 0.0, "dur": 1.0},
     {"at": "L16", "name": "dlamp", "unit": 11, "on": 1.0, "dur": 0.6},
     {"at": "L21", "name": "dlamp", "unit": 11, "on": 0.0, "dur": 0.5},
     {"at": "L21", "name": "dlamp", "unit": 10, "on": 1.0, "dur": 0.6},
