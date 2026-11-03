@@ -208,7 +208,7 @@ S("L06", ((0.0, -36.0, 0.9), (0.0, -14.0, 1.7), 24, (0.4, -33.0, 1.0), (0.0, -14
   note="low wide up the bright high street: the whole town turns to face the hall")
 for i in range(8):
     raw(f"t{i}", "L06.1+0.2", yaw=180, blend=0.5)
-S("L06.2+0.25", ((0.0, -26.0, 0.5), (1.6, 0.0, 3.2), 30, (0.3, -20.0, 0.7), (1.6, 0.0, 3.6), 30), tod="dusk",
+S("L06.2+0.217", ((0.0, -26.0, 0.5), (1.6, 0.0, 3.2), 30, (0.3, -20.0, 0.7), (1.6, 0.0, 3.6), 30), tod="dusk",   # cut moved -1 f (flash margin)
   note="the white hall and its arched window from below, push in")
 
 # =========================================================================================== 03 me and the book, L07 to L13
@@ -234,7 +234,7 @@ cue("L09+0.2", "slip", mode="path", v=[-2.6, -0.5, 1.1, 0, 0])
 cue("L09+0.7", "slip", mode="path", v=[-2.6, 0.12, 1.1, 0, 0])
 cue("L09+1.1", "slip", mode="path", v=[-2.6, 0.38, 0.36, 0, 0])
 cue("L09.1", "slip", mode="path", v=[-2.6, 0.4, 0.3, 0, 0])
-S("L09.2", ((0.9, 3.3, 1.9), (-0.45, 5.7, 1.45), 36), who={"me": (OT, 0, "smirk", {"arms": [78, 0]})},
+S("L09.2-0.067", ((0.9, 3.3, 1.9), (-0.45, 5.7, 1.45), 36), who={"me": (OT, 0, "smirk", {"arms": [78, 0]})},   # cut moved -2 f (flash margin)
   note="my hand lifting one slip out")
 cue("L09.2-0.1", "slip", mode="hand")
 cue("L10-0.1", "slip", mode="hide")
@@ -242,35 +242,35 @@ S("L10", ((1.35, 3.0, 0.3), (0.6, 4.6, 0.38), 28, (1.2, 3.1, 0.3), (0.75, 4.6, 0
   note="the lore shot: low on the lectern's seamless stone base against the brick, not narrated")
 S("L11", ((0.2, 3.9, 1.75), (0.35, 5.1, 1.0), 42), note="last night's page: a little drawn bridge")
 cue("L11-0.05", "spread", n="last")
-S("L12", ((BRIDGE - 1.0, -6.0, 2.1), (BRIDGE + 0.2, 0.0, 1.3), 30), tod="day",
+S("L12-0.267", ((BRIDGE - 1.0, -6.0, 2.1), (BRIDGE + 0.2, 0.0, 1.3), 30), tod="day",   # cut moved -8 f (flash margin)
   who={"jogger": (X(BRIDGE - 3.8, 0.0, 0.86), 90, "fish", {})}, note="a bright morning, the stone bridge: the jogger mid-stride, lips pursed")
 walk("jogger", "L12+0.05", X(BRIDGE - 3.8, 0.0, 0.86), run=True)
 walk("jogger", "L12.1+0.1", X(BRIDGE + 0.5, 0.0, 0.86), run=True)
 raw("jogger", "L12.1+0.1", yaw=0, expr="fish")
-S("L12.2", ((BRIDGE + 2.0, -4.2, 1.6), (BRIDGE + 0.5, 0.0, 1.5), 40),
+S("L12.2-0.267", ((BRIDGE + 2.0, -4.2, 1.6), (BRIDGE + 0.5, 0.0, 1.5), 40),   # cut moved -8 f (flash margin)
   who={"jogger": (X(BRIDGE + 0.5, 0.0, 0.86), 0, "fish", {"side": [10, 10]})},
   note="she freezes mid-whistle, then sheepish")
 raw("jogger", "L12.2+0.35", expr="sad-smile", blend=0.1)
 S("L13", ((-3.4, 1.5, 2.0), (-0.3, 5.3, 1.1), 24), tod="night", who={"me": ((-1.5, 5.15), 40, "smirk", {})},
   note="wide on the open book, its fat block of stamped pages, me small beside it")
-S("L13.2-0.15", ((0.3, 3.3, 1.5), (0.0, 6.0, 1.42), 46), who={"me": (OT, 0, "smirk", {"arms": [40, 0]})},
+S("L13.2-0.25", ((0.3, 3.3, 1.5), (0.0, 6.0, 1.42), 46), who={"me": (OT, 0, "smirk", {"arms": [40, 0]})},   # cut moved -3 f (flash margin)
   note="close on me closing the clasp")
 
 # =========================================================================================== 04 the fight, L14 to L21
-S("L14", ((-0.4, -6.2, 1.45), (-2.6, -1.4, 1.4), 32), tod="dusk",
+S("L14+0.133", ((-0.4, -6.2, 1.45), (-2.6, -1.4, 1.4), 32), tod="dusk",   # cut moved +4 f (flash margin)
   who={"milo": (X(-3.2, -1.7), 25, "angry", {"head": [10, 0]}), "me": (X(-1.9, -1.7), -20, "smirk", {})},
   note="the hall door at dusk: Milo and me side by side, clearly brothers")
-S("L14.1", ((-3.1, -4.6, 1.55), (-3.15, -1.6, 1.5), 44),
+S("L14.1+0.233", ((-3.1, -4.6, 1.55), (-3.15, -1.6, 1.5), 44),   # cut moved +7 f (flash margin)
   who={"milo": (X(-3.2, -1.7), 20, "angry", {"arms": [0, 100], "head": [-20, 0]}), "me": (X(-1.9, -1.7), -20, "smirk", {})},
   note="Milo jabbing a thumb at the hall")
-S("L15", ((0.6, 3.35, 1.55), (0.78, 4.72, 1.62), 46, (0.78, 3.3, 1.55), (0.78, 4.72, 1.62), 46), tod="night", note="a framed photo of Mom on the lectern")
+S("L15-0.133", ((0.6, 3.35, 1.55), (0.78, 4.72, 1.62), 46, (0.78, 3.3, 1.55), (0.78, 4.72, 1.62), 46), tod="night", note="a framed photo of Mom on the lectern")   # cut moved -4 f (flash margin)
 S("L15.1", ((2.4, 3.2, 1.85), (5.0, 3.5, 1.85), 34), note="a calendar with one date circled in red")
 S("L16", ((-1.6, 3.4, 1.55), (-1.6, 1.2, 1.5), 40), who={"milo": ((-1.6, 1.2), 180, "angry", {"arms": [0, 88]})},
   note="Milo close, pointing at me: come for once")
-S("L17", ((-1.6, 3.4, 1.55), (-1.6, 1.2, 1.55), 40), who={"milo": ((-1.6, 1.2), 180, "grin", {"arms": [0, 150]})},
+S("L17-0.233", ((-1.6, 3.4, 1.55), (-1.6, 1.2, 1.55), 40), who={"milo": ((-1.6, 1.2), 180, "grin", {"arms": [0, 150]})},   # cut moved -7 f (flash margin)
   note="Milo grinning, one hand up like a toast")
 S("L17.2-0.1", ((0.4, 3.3, 1.5), (0.0, 6.0, 1.45), 46), who={"me": (OT, 0, "worried", {})}, note="me, worried")
-S("L18", ((2.8, 1.2, 1.5), (-0.2, 3.5, 1.35), 30),
+S("L18+0.267", ((2.8, 1.2, 1.5), (-0.2, 3.5, 1.35), 30),   # cut moved +8 f (flash margin)
   who={"me": ((0.3, 3.6), 130, "smirk", {"head": [-60, 0]}), "milo": ((-1.5, 1.7), 150, "angry", {})},
   note="I turn back to the lectern, Milo behind me in the doorway")
 walk("me", "L18+0.2", (0.3, 3.6))
@@ -293,12 +293,12 @@ cue("L21-0.05", "slip", mode="hand")
 cue("L21-0.05", "slipface", n="three")
 
 # =========================================================================================== 05 the town turns, L22 to L29
-S("L22", ((-2.4, 4.0, 3.15), (-5.0, 4.0, 3.15), 34), who={"me": (OT, 0, "smirk", {})}, note="the brass clock at eight thirty")
+S("L22-0.1", ((-2.4, 4.0, 3.15), (-5.0, 4.0, 3.15), 34), who={"me": (OT, 0, "smirk", {})}, note="the brass clock at eight thirty")   # cut moved -3 f (flash margin)
 cue("L22", "clock", v=[8, 30])
 cue("L22", "slip", mode="hide")
 S("L22.2", ((0.5, 3.2, 1.55), (0.0, 6.0, 1.45), 40), who={"me": (OT, 0, "smirk", {"arms": [40, 0]})},
   note="just me and the book, warm and quiet")
-S("L23", ((0.3, 3.5, 1.55), (0.0, 6.0, 1.5), 46), who={"me": (OT, 0, "worried", {"head": [25, -4]})},
+S("L23+0.033", ((0.3, 3.5, 1.55), (0.0, 6.0, 1.5), 46), who={"me": (OT, 0, "worried", {"head": [25, -4]})},   # cut moved +1 f (flash margin)
   note="I look up. The street goes quiet.")
 TOWN_STOP = {f"t{i}": (X(x, y), 180, "neutral", {"head": [0, -14]}) for i, (x, y) in enumerate(CROWD)}
 TOWN_STOP["t4"] = (X(0.4, -9.5), 180, "neutral", {"head": [0, -14]})
@@ -306,16 +306,17 @@ S("L24", ((2.5, 3.9, 1.7), (2.0, -12.0, 1.1), 28, (2.4, 3.6, 1.7), (2.0, -12.0, 
   who={"me": (X(1.25, 1.1), 0, "scared", {}), **TOWN_STOP}, tod="night", note="over my shoulder through the arched window: everyone has stopped")
 NEAR = {f"t{i}": (X(x, y), 180, "neutral", {"head": [0, -24]})
         for i, (x, y) in enumerate([(0.2, -3.6), (1.6, -3.4), (3.0, -3.7), (4.3, -3.5), (-0.4, -5.6), (1.0, -5.9), (2.4, -5.7), (3.8, -6.0)])}
-S("L25", ((2.0, 1.5, 2.5), (2.0, -7.0, 1.2), 20, (2.0, 0.6, 2.1), (2.0, -7.0, 1.2), 20), who=NEAR,
+S("L25-0.233", ((2.0, 1.5, 2.5), (2.0, -7.0, 1.2), 20, (2.0, 0.6, 2.1), (2.0, -7.0, 1.2), 20), who=NEAR,   # cut moved -7 f (flash margin)
   note="a slow push down onto the street: eight townsfolk, every face tipped up")
 S("L25.1+0.17", ((2.0, -4.2, 1.5), (2.0, 0.6, 1.75), 40), who={"me": (X(2.0, 0.85), 0, "scared", {})},
   note="the reverse: me in the window, small and lit")
 GUESTS_STILL = {"g0": (X(MOM - 1.8, 2.0), 0, "neutral", {"head": [0, -14]}), "g1": (X(MOM - 0.7, 2.4), 0, "neutral", {"head": [0, -14]}),
                 "g2": (X(MOM + 0.9, 2.1), 0, "neutral", {"head": [0, -14]}), "g3": (X(MOM + 1.9, 2.5), 0, "neutral", {"head": [0, -14]}),
                 "mom": (X(MOM + 0.1, 1.6), 0, "neutral", {"head": [0, -30]})}
-S("L26", ((MOM + 0.2, -2.6, 2.15), (MOM, 2.4, 1.3), 28, (MOM + 0.1, -2.2, 2.1), (MOM, 2.4, 1.3), 28), who=GUESTS_STILL,
-  note="through Mom's lit front window: the party guests standing still, all turned uphill")
-S("L26.1+0.22", ((MOM + 0.1, -1.9, 1.7), (MOM + 0.1, 1.6, 1.65), 46),
+# S36 dropped (flash margin: every pair of cuts at least 31 frames apart, 2026-11-03):
+# S("L26", ((MOM + 0.2, -2.6, 2.15), (MOM, 2.4, 1.3), 28, (MOM + 0.1, -2.2, 2.1), (MOM, 2.4, 1.3), 28), who=GUESTS_STILL,
+#   note="through Mom's lit front window: the party guests standing still, all turned uphill")
+S("L26.1-0.08", ((MOM + 0.1, -1.9, 1.7), (MOM + 0.1, 1.6, 1.65), 46),   # cut moved -9 f (flash margin)
   who={"mom": (X(MOM + 0.1, 1.6), 0, "neutral", {"head": [0, -16], "arms": [0, 70]})}, note="Mom in her paper crown, face tipped up, a slice on her plate")
 cue("L26.1+0.22", "plate", v=[MOM - 0.15, 1.2, 0.98])
 cue("L27", "plate", v=None)
@@ -326,10 +327,10 @@ S("L28", ((-1.0, 4.5, 1.5), (-2.8, 0.0, 1.5), 28), who={"me": (OT, 0, "scared", 
 cue("L28", "door", v=[0])
 cue("L28+0.3", "door", v=[0])
 cue("L28+0.55", "door", v=[100])
-S("L28.1+0.1", ((-1.0, 4.5, 1.5), (-2.7, 0.0, 1.45), 32),
+S("L28.1+0.333", ((-1.0, 4.5, 1.5), (-2.7, 0.0, 1.45), 32),   # cut moved +7 f (flash margin)
   who={"me": (OT, 0, "scared", {}), "milo": (X(-2.5, -0.15), 180, "worried", {"head": [0, 4]})},
   note="Milo in the doorway, chest heaving, hood down")
-S("L29", ((-2.0, 3.5, 1.6), (-2.55, 0.0, 1.5), 46), who={"milo": (X(-2.55, 0.2), 180, "worried", {})},
+S("L29+0.433", ((-2.0, 3.5, 1.6), (-2.55, 0.0, 1.5), 46), who={"milo": (X(-2.55, 0.2), 180, "worried", {})},   # cut moved +13 f (flash margin)
   note="Milo close, mid-question")
 
 # =========================================================================================== 06 it was me, L30 to L36
@@ -360,15 +361,15 @@ cue("L35-0.05", "ppage", mode="pocket")
 cue("L35", "spread", n="old")
 S("L35.2", ((0.5, 3.1, 1.5), (0.0, 6.0, 1.45), 46), who={"me": (OT, 0, "sheepish", {"side": [0, 8]}), "milo": (MILO_AT, 20, "worried", {})},
   note="me, sheepish, a small shrug")
-S("L36", ((2.4, 6.6, 1.6), (-1.2, 4.2, 1.55), 40), who={"me": (OT, 0, "sheepish", {}), "milo": (MILO_AT, 125, "worried", {})},
+S("L36-0.067", ((2.4, 6.6, 1.6), (-1.2, 4.2, 1.55), 40), who={"me": (OT, 0, "sheepish", {}), "milo": (MILO_AT, 125, "worried", {})},   # cut moved -2 f (flash margin)
   note="Milo close, worried softening")
 raw("milo", "L36", expr="worried", yaw=125)
 raw("milo", "L36+0.5", expr="neutral", blend=0.2)
-S("L36.1", ((-2.4, 4.0, 3.15), (-5.0, 4.0, 3.15), 34), note="the brass clock at eight fifty")
+S("L36.1+0.233", ((-2.4, 4.0, 3.15), (-5.0, 4.0, 3.15), 34), note="the brass clock at eight fifty")   # cut moved +7 f (flash margin)
 cue("L36.1", "clock", v=[8, 50])
 
 # =========================================================================================== 07 the loophole, L37 to L41
-S("L37", ((0.8, 1.6, 1.7), (-1.1, 4.4, 1.6), 32), who={"me": (OT, 0, "smile", {}), "milo": ((-1.15, 4.4), 0, "grin", {"arms": [0, 100]})},
+S("L37+0.367", ((0.8, 1.6, 1.7), (-1.1, 4.4, 1.6), 32), who={"me": (OT, 0, "smile", {}), "milo": ((-1.15, 4.4), 0, "grin", {"arms": [0, 100]})},   # cut moved +11 f (flash margin)
   note="Milo, grinning, slapping the side of the book")
 raw("milo", "L37+0.3", arms=[0, 100], blend=0.1)
 cue("L37", "book", mode="open")
@@ -389,7 +390,7 @@ walk("me", "L38>", X(-0.8, -5.4))
 cue("L38+0.1", "bookpath", v=[-2.3, -3.0, 1.05])
 cue("L38>", "bookpath", v=[-0.8, -6.0, 1.05])
 TABLE_Y = 3.6
-S("L39", ((MOM - 0.9, 0.5, 1.5), (MOM - 0.1, 4.5, 1.15), 26, (MOM - 0.7, 1.0, 1.5), (MOM - 0.1, 4.5, 1.15), 26),
+S("L39-0.4", ((MOM - 0.9, 0.5, 1.5), (MOM - 0.1, 4.5, 1.15), 26, (MOM - 0.7, 1.0, 1.5), (MOM - 0.1, 4.5, 1.15), 26),   # cut moved -12 f (flash margin)
   who={"mom": (X(MOM, 4.9), 0, "smile", {}), "me": (X(MOM + 1.35, 3.5), -90, "smile", {"arms": [72, 0]})},
   note="Mom's bright dining room: Mom in her paper crown, the giant book across the table among cake plates; my stamp coming down")
 # (L39 needs no night cue now: it never left night)
@@ -407,19 +408,19 @@ cue("L39.1+0.5", "stamppos", v=[BK[0], BK[1], 1.3])
 cue("L39.1+0.85", "stamppos", v=[BK[0], BK[1], 1.075])
 cue("L39.1+1.15", "stamppos", v=[BK[0], BK[1], 1.075])
 cue("L39.2+0.5", "stamppos", v=[BK[0], BK[1], 1.3])
-S("L40", ((MOM - 0.7, 2.0, 1.55), (MOM - 1.4, 4.4, 1.1), 20),
+S("L40+0.033", ((MOM - 0.7, 2.0, 1.55), (MOM - 1.4, 4.4, 1.1), 20),   # cut moved +1 f (flash margin)
   who={"milo": (X(MOM - 1.4, 4.4, -0.3), 10, "smile", {"arms": [70, 20]})},
   note="Milo seated behind the table with a pencil and a slip, smiling")
 cue("L40-0.05", "stamp", mode="rest")
 cue("L40-0.05", "slip", mode="path", v=[MOM - 1.5, 4.0, 0.83, 0, 0])
 cue("L40-0.05", "pencil", on=True)
 cue("L40.2+0.9", "pencil", on=False)
-S("L40.2", ((MOM - 0.6, 2.3, 1.5), (MOM - 1.2, 3.6, 0.85), 20),
+S("L40.2-0.067", ((MOM - 0.6, 2.3, 1.5), (MOM - 1.2, 3.6, 0.85), 20),   # cut moved -2 f (flash margin)
   who={"milo": (X(MOM - 1.4, 4.4, -0.3), 10, "smile", {"arms": [70, 20]})},
   note="the slip sliding across the table between the plates")
 cue("L40.2", "slip", mode="path", v=[MOM - 1.5, 4.0, 0.83, 0, 0])
 cue("L40.2+0.7", "slip", mode="path", v=[MOM - 1.05, 3.15, 0.83, 0, 0])
-S("L41", ((MOM - 1.1, 1.6, 1.5), (MOM - 0.3, 4.9, 1.1), 34), who={"mom": (X(MOM, 4.9), 0, "smile", {"arms": [0, 60]}), "me": (X(MOM + 1.5, 3.5), -90, "smile", {})},
+S("L41+0.233", ((MOM - 1.1, 1.6, 1.5), (MOM - 0.3, 4.9, 1.1), 34), who={"mom": (X(MOM, 4.9), 0, "smile", {"arms": [0, 60]}), "me": (X(MOM + 1.5, 3.5), -90, "smile", {})},   # cut moved +7 f (flash margin)
   note="the last slice of cake on a plate in front, Mom smiling behind it")
 cue("L41", "slip", mode="hide")
 cue("L41", "spread", n="cake")
@@ -442,8 +443,9 @@ S("L44", ((KIT, -1.0, 1.5), (KIT, 1.3, 1.2), 30), who={"me": (X(KIT, 1.7), 0, "s
   note="my hand folding it shut fast, the 4 gone under the fold")
 cue("L44", "ppage_unfold", u=1.0)
 cue("L44+0.25", "ppage_unfold", u=0.0)
-S("L44.2", ((KIT + 0.2, -0.2, 1.5), (KIT, 1.7, 1.28), 52), who={"me": (X(KIT, 1.7), 0, "scared", {"arms": [30, 0]})},
-  note="the folded page going back into my waistcoat pocket")
+# S63 dropped (flash margin: every pair of cuts at least 31 frames apart, 2026-11-03):
+# S("L44.2", ((KIT + 0.2, -0.2, 1.5), (KIT, 1.7, 1.28), 52), who={"me": (X(KIT, 1.7), 0, "scared", {"arms": [30, 0]})},
+#   note="the folded page going back into my waistcoat pocket")
 cue("L44.2", "ppage", mode="pocket")
 S("L45", ((KIT, -0.35, 1.52), (KIT, 1.7, 1.5), 38), who={"me": (X(KIT, 1.7), 0, "smirk", {})},
   note="me close to camera, lamp-lit, looking straight at us. Cut to frame 1.")
