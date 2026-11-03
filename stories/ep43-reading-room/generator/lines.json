@@ -4,24 +4,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this town,",
-    "In this town,"
+    "Don't let",
+    "Don't let"
    ],
    [
-    "the NUMBER over",
+    "the number over",
     "the number over"
    ],
    [
-    "your head is",
-    "your head is"
+    "your head",
+    "your head"
    ],
    [
-    "how many people",
-    "how many people"
-   ],
-   [
-    "know your NAME.",
-    "know your name."
+    "drop to ONE.",
+    "drop to one."
    ]
   ]
  },
@@ -30,20 +26,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "The baker on",
-    "The baker on"
+    "It counts who",
+    "It counts who"
    ],
    [
-    "the library steps",
-    "the library steps"
+    "knows your NAME.",
+    "knows your name."
    ],
    [
-    "is at",
-    "is at"
-   ],
-   [
-    "NINE HUNDRED.",
-    "nine hundred."
+    "Mine says ONE.",
+    "Mine says one."
    ]
   ]
  },
@@ -126,8 +118,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "The postman's number",
-    "The postman's number"
+    "The mailman's number",
+    "The mailman's number"
    ],
    [
     "runs past both",
@@ -144,8 +136,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "My neighbour Ossie",
-    "My neighbour Ossie"
+    "My neighbor Ossie",
+    "My neighbor Ossie"
    ],
    [
     "hit FIVE,",
@@ -166,16 +158,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mine says ONE.",
-    "Mine says one."
+    "Mine has said",
+    "Mine has said"
    ],
    [
-    "It has",
-    "It has"
-   ],
-   [
-    "for YEARS.",
-    "for years."
+    "ONE for YEARS.",
+    "one for years."
    ]
   ]
  },
@@ -478,8 +466,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "A green jumper,",
-    "A green jumper,"
+    "A green sweater,",
+    "A green sweater,"
    ],
    [
     "the exact OPPOSITE",
@@ -1422,6 +1410,14 @@
    [
     "always ME.",
     "always me."
+   ],
+   [
+    "So whatever",
+    "So whatever"
+   ],
+   [
+    "you DO,",
+    "you do,"
    ]
   ]
  }

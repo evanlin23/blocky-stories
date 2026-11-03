@@ -1,6 +1,6 @@
 {
  "slug": "ep43-reading-room",
- "title": "In this town, the number over your head is how many people know your name",
+ "title": "Only ONE Person Knows My Name",
  "made_for_kids": false,
  "premise": "In a town where a glowing number over every head counts the people who know your name, my number has said 1 for years, and my brother's has been falling since he began studying alone in the domed reading room where we used to sit together, while a person printed in reverse, with no number at all, takes a table nearer to him every afternoon.",
  "twist": "You don't count yourself. My 1 was never me, it was my brother, the only person in town who knew my name, and his last 1 was me, so I was never out of his count: I say both our names once, aloud, in the silent room.",
@@ -413,24 +413,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "In this town,",
-     "In this town,"
+     "Don't let",
+     "Don't let"
     ],
     [
-     "the NUMBER over",
+     "the number over",
      "the number over"
     ],
     [
-     "your head is",
-     "your head is"
+     "your head",
+     "your head"
     ],
     [
-     "how many people",
-     "how many people"
-    ],
-    [
-     "know your NAME.",
-     "know your name."
+     "drop to ONE.",
+     "drop to one."
     ]
    ]
   },
@@ -439,20 +435,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "The baker on",
-     "The baker on"
+     "It counts who",
+     "It counts who"
     ],
     [
-     "the library steps",
-     "the library steps"
+     "knows your NAME.",
+     "knows your name."
     ],
     [
-     "is at",
-     "is at"
-    ],
-    [
-     "NINE HUNDRED.",
-     "nine hundred."
+     "Mine says ONE.",
+     "Mine says one."
     ]
    ]
   },
@@ -535,8 +527,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "The postman's number",
-     "The postman's number"
+     "The mailman's number",
+     "The mailman's number"
     ],
     [
      "runs past both",
@@ -553,8 +545,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "My neighbour Ossie",
-     "My neighbour Ossie"
+     "My neighbor Ossie",
+     "My neighbor Ossie"
     ],
     [
      "hit FIVE,",
@@ -575,16 +567,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mine says ONE.",
-     "Mine says one."
+     "Mine has said",
+     "Mine has said"
     ],
     [
-     "It has",
-     "It has"
-    ],
-    [
-     "for YEARS.",
-     "for years."
+     "ONE for YEARS.",
+     "one for years."
     ]
    ]
   },
@@ -892,8 +880,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "A green jumper,",
-     "A green jumper,"
+     "A green sweater,",
+     "A green sweater,"
     ],
     [
      "the exact OPPOSITE",
@@ -1846,6 +1834,14 @@
     [
      "always ME.",
      "always me."
+    ],
+    [
+     "So whatever",
+     "So whatever"
+    ],
+    [
+     "you DO,",
+     "you do,"
     ]
    ]
   }
@@ -15043,7 +15039,7 @@
    }
   ]
  },
- "sound": {"rev": 2, 
+ "sound": {
   "floor": "wood",
   "steps_db": -22,
   "ambience": [

@@ -544,7 +544,7 @@ sfx += [{"at": f"L16+{0.0 + 0.55 * k:.2f}", "kind": "click", "db": -30} for k in
 
 story = {
     "slug": "ep43-reading-room",
-    "title": "In this town, the number over your head is how many people know your name",
+    "title": "Only ONE Person Knows My Name",
     "made_for_kids": False,
     "premise": "In a town where a glowing number over every head counts the people who know your name, my number has said "
                "1 for years, and my brother's has been falling since he began studying alone in the domed reading room "
