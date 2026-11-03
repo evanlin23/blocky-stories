@@ -8,20 +8,16 @@
     "In this town,"
    ],
    [
-    "a house GROWS",
-    "a house grows"
+    "when your CEILING",
+    "when your ceiling"
    ],
    [
-    "to fit",
-    "to fit"
+    "RISES,",
+    "rises,"
    ],
    [
-    "the TALLEST one",
-    "the tallest one"
-   ],
-   [
-    "LIVING in it.",
-    "living in it."
+    "don't LOOK UP.",
+    "don't look up."
    ]
   ]
  },
@@ -30,12 +26,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Tall FAMILIES",
-    "Tall families"
+    "Something TALLER",
+    "Something taller"
    ],
    [
-    "live in TOWERS.",
-    "live in towers."
+    "than you",
+    "than you"
+   ],
+   [
+    "MOVED IN.",
+    "moved in."
    ]
   ]
  },

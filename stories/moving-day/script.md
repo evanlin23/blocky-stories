@@ -2,9 +2,11 @@
 
 - **Slug:** `ep17-moving-day` (kept, with the folder).
 - **Why it's redone:** it was held because L01 wasn't the world's rule (owner, 2026-11-02, "rule first is necessary"). This is a full rewrite: a new rule, a new big idea and new line ids. The set, the cast, the Boxes model and the best old scenes are reused. The ten pitches are in `notes/pitches.md` → "Redo pitches".
-- **Word count:** 369 spoken words in 49 lines, plus 2 pause beats.
+- **Word count:** 366 spoken words in 49 lines, plus 2 pause beats.
+- **New opening (2026-11-03, the opening recipe v1 in `docs/research/playbook.md`):** L01 and L02 are new, a warning to you in place of the wonder rule. Everything from L03 on is word for word as before. Re-voice L01 and L02 only.
+- **Quotable line:** L04, "And nobody wears a tall hat to dinner."
 - **Estimated length:** about 85 s at 290 wpm with line gaps and the two pauses, so about 88 s with the holds below. That's in the 60 to 90 s test group.
-- **Shots:** 57 (S01 to S57), an average of about 1.55 s. A new shot on almost every line, two on the longer ones.
+- **Shots:** 56 (S01, S02 and S04 to S57, with S03 cut along with the old L02), an average of about 1.57 s. A new shot on almost every line, two on the longer ones.
 - **The machine-readable lines** are in `generator/lines.json`, rewritten to match this file.
 
 ## The big idea
@@ -16,10 +18,10 @@ In a town where every house grows to fit the tallest one living in it, the old h
 ## Premise, rule, twist, world
 
 - **Premise:** in this town a house grows, or sinks, to fit the tallest one living in it, a hand a night until it fits. Our old house was always a ladder taller than either of us, and Mum said old houses are just like that. It sold in the spring. The new one is small and fits me exactly, my hair on the ceiling. Mum hasn't laughed since. Then each morning there's more room over my head, the walls have stretched with Mum's photos on them, and the stack of moving boxes by the door is shorter.
-- **The rule:** "In this town, a house grows to fit the tallest one living in it." Everyone knows it. Nobody explains it, and nobody is new to town.
+- **The rule:** a house grows to fit the tallest one living in it. Everyone knows it. Nobody explains it, and nobody is new to town. The town's warning, and the first line: "In this town, when your ceiling rises, don't look up." Then: "Something taller than you moved in."
 - **The twist (the big idea):** the old house never broke the rule. Something tall lived in it with us the whole time, folded under its high ceilings. Mum knew, and never looked up at it. Her grief since the sale was missing it. When we moved, it taped itself into one of our boxes from the inside and came along. The new house is growing to fit it. By the end the ceilings are back to the old height, Mum laughs for the first time since the sale because it's home again (L45b says so plainly), and its box sits on the hall cupboard shelf.
 - **Where it's planted:**
-  1. L01 says "the tallest **one**", not "person".
+  1. L01 is the town's warning, "don't look up", and L02 says "something", not "someone". L10 (Mum never looks up, "Old habit") is that warning kept for years, and L36 ("for once, Mum looked up") breaks it.
   2. L05: the old house was a ladder taller than any of us. That's the exception, and it's the whole twist in plain sight.
   3. L08 (S11): the old house photo Mum hangs. In its top window, small and dim, something pale is bent under the ceiling. A rewatch catches it. The reveal at L41 is the same photo, close.
   4. L10: Mum never looks up. "Old habit." From a house where something lived up there.
@@ -28,15 +30,15 @@ In a town where every house grows to fit the tallest one living in it, the old h
 
 ## What the hits do, ticked
 
-1. **Line 1 is the rule,** 14 words: "In this town, a house grows to fit the tallest one living in it."
-2. **The marker by 2 s:** the ceiling sitting right on the tallest one's head. S01 shows it on me in our hall, lit to read: my block hair flat against the ceiling, a face in frame. The montage shows it on every house in town.
-3. **The montage,** 3 examples in L02 to L04 (about 2 to 9 s), played for a smile: a tower house for a tall family, a ceiling coming down a hand a night after a tall lodger leaves, a dinner guest's tall hat raising the dining-room ceiling while the host glares.
+1. **Line 1 is the rule as a warning to you,** 10 words, about 2.0 s: "In this town, when your ceiling rises, don't look up." L02 tightens it (6 words, about 1.2 s): "Something taller than you moved in." No name or backstory before 4 s.
+2. **The marker by 2 s:** the ceiling's height against the tallest one's head. S01 looks straight at the warned-of thing, already wrong: my pencil height mark on the doorframe with a hand of empty air above it to the ceiling, pushing up. The montage shows the rule on other houses.
+3. **The montage,** 2 examples in L03 and L04 (about 3 to 8 s), played for a smile: a ceiling coming down a hand a night after a tall lodger leaves, a dinner guest's tall hat raising the dining-room ceiling while the host glares. (The tower-house example went with the old L02.)
 4. **The narrator is the exception:** our old house never fit any of us. It was a ladder taller (L05).
 5. **The loved one:** Mum, shown by 0:20 (L07 to L10): flat-faced in the small kitchen, hanging the old house photo without a smile, crossing the hall head down past the stack, with the box's marker frown facing her door.
 6. **The climax turns the rule:** the second reading. The rule always held. The old house was as tall as the tallest one living in it, and that was never us (L42 to L44). No new magic.
-7. **The twist is planted early and the last line loops:** "She CLOSED it / without / LOOKING UP." cuts straight to L01, so across the seam it reads "She closed it without looking up. In this town, a house grows to fit the tallest one living in it."
-8. **The first 2 s read on a phone:** S01 is lit warm and even, my face and the ceiling contact in the upper half, the frown box beside me. Darkness comes at L14.
-9. **Cut often:** 57 shots in about 88 s.
+7. **The twist is planted early and the last line loops:** "She CLOSED it / without / LOOKING UP." cuts straight to L01, so across the seam it reads "She closed it without looking up. In this town, when your ceiling rises, don't look up." Mum is keeping the town's warning with the thing on the shelf.
+8. **The first 2 s read on a phone:** S01 is lit warm and even, centred, the pencil mark and the gap above it filling the frame. A sound hit on "UP". Darkness comes at L14.
+9. **Cut often:** 56 shots in about 88 s.
 
 **Not used:** no mayor, no midnight square, no newcomer opener (we moved within our own town and know the rule), no backstory or flashback before 0:20 (L05 is a line over the photo in Mum's hands, in the present), one forward timeline of four mornings.
 
@@ -86,15 +88,14 @@ Each line: id, then the caption chunks split with ` / `. CAPS are the key words.
 
 ### 1. The rule (0 to 10 s)
 
-- `L01` In this TOWN, / a house GROWS / to fit the TALLEST one / LIVING in it.
-  - S01 (0 to 1.6 s): our hall, warm even light. Me standing, my block hair flat against the low ceiling, face in frame, upper half. Beside me the stack by the door, its one face-out box showing a black marker frown. This is the 2 s marker and the eerie thing at once.
-  - S02: outside, a bright street. Houses of very different heights side by side, each with its tallest person in the doorway, head exactly at the top of the frame.
-- `L02` Tall FAMILIES / live in TOWERS.
-  - S03: a tower house, narrow and very tall, a tall man at its door waving. Same daylight as S02.
+- `L01` In this TOWN, / when your CEILING / RISES, / don't LOOK UP.
+  - S01 (0 to about 2 s): close on my doorframe in warm even light (S19's frame, closer): the pencil height mark at my height, and above it a hand of empty air before the ceiling. Push up slowly toward the gap during the line. Centred, no wide. A soft low hit on "UP".
+- `L02` Something TALLER / than you / MOVED IN.
+  - S02: the stack by the door, close: its one face-out box with the black marker frown, aimed down the hall. Still. (The old street S02 and tower-house S03 are cut.)
 - `L03` When a TALL lodger / moves OUT, / the ceiling comes DOWN / a HAND a NIGHT.
   - S04: a lodger walks out of a front door with a suitcase.
   - S05: inside, a couple on a sofa looking up as their ceiling sits a little lower, a pale line on the wall where it used to be. Same exposure as S04.
-- `L04` And NOBODY / wears a TALL HAT / to DINNER.
+- `L04` And NOBODY / wears a TALL HAT / to DINNER.  **[quotable line]**
   - S06: a dinner table, a guest in a tall hat, the ceiling bulged up in a dome right over the hat, the host glaring. The one laugh in the montage.
 
 ### 2. Our house (10 to 24 s)
@@ -218,8 +219,9 @@ None, on purpose. The canon's Keepers are each tied to one place, and this thing
 
 ## Say-it-out-loud notes
 
-- **L01:** bright and quick, wonder first. "TALLEST one" lands by 2 s.
-- **L02 to L04:** light, nearly a joke. L04 is the punchline.
+- **L01:** plain and close, a warning to the listener. "LOOK UP" lands by 2 s.
+- **L02:** quieter, flat.
+- **L03 and L04:** light, nearly a joke. L04 is the punchline.
 - **L05:** plain. It's the twist in plain sight, so don't lean on it.
 - **L10 "Old HABIT."** Throwaway.
 - **L12 "from the INSIDE."** Slow a touch.
@@ -238,7 +240,7 @@ None, on purpose. The canon's Keepers are each tied to one place, and this thing
 
 - **Reused as is:** the house set (hall, kitchen, front room, Mum's room, the stack by the door, the hall cupboard), the Boxes model and its `pose_boxes` poses for Mum's bed (S34 to S39), the marker faces `frown`, `stare` and `wide`, the quilt, the dim light at her door, the nightlight, the photos high on the wall (now riding up rather than re-hung), the inside-tape box close (S16, reused at S56), the stack's locked-off wide, Mum's laugh (S46), Mum sitting on a box (S47), the cupboard shot.
 - **Changed:** the ceiling height is now a per-scene value: right on my hair (opening), plus a hand (morning 1), about a third of the way to ladder height (morning 2), rising during S32, ladder height (morning 3 on). The walls and the photos on them scale up with it, so the frames ride up. The kitchen pose is new: the Boxes' top run folded flat along the kitchen ceiling with the face box hanging at the end and the body out of frame through the doorway (S26 to S28). The face box is now one box in the stack (S01, S13 to S17) and the shelf box at the end, frown out.
-- **New:** the three montage exteriors and interiors (S02 to S06: a street of mixed-height houses, a tower house, a lodger and a lowered ceiling, a dinner with a tall hat and a domed ceiling), each with new extras. The old house photo prop, in two uses: dim at eye height (S07, S11) and close at the reveal (S50), showing a tall narrow house and, in its top window, a pale tall shape bent under the ceiling with the frown. A pencil height mark on my doorframe (S09, S19).
+- **New:** the montage exteriors and interiors (S04 to S06: a lodger and a lowered ceiling, a dinner with a tall hat and a domed ceiling), each with new extras. The street (old S02) and the tower house (old S03) are cut with the old L02. The new S01 (the doorframe gap, close) and S02 (the frown box in the stack, close) open the film. The old house photo prop, in two uses: dim at eye height (S07, S11) and close at the reveal (S50), showing a tall narrow house and, in its top window, a pale tall shape bent under the ceiling with the frown. A pencil height mark on my doorframe (S09, S19).
 - **Cut:** the shelf box as the Boxes' "bottom box", the stack shrinking to nothing, my room at dawn (the many-eyes face), the sideways-eyes front room, the tape cores, the pull-apart, the unpacking montage.
 - **Cover:** `cover_s` 49.2 (S34, the Boxes bent over Mum's bed). Not S50: the photo's top window is the reveal.
 - **Standards words:** no death, weapon or gore words, no child words, nothing claimed true, no real place or brand. No words on any box, sign or photo.
