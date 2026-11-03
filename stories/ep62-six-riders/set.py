@@ -41,7 +41,7 @@ HW = 1.95          # the car's half width
 CD = 4.4           # the car's depth (the back wall)
 CH = 4.0           # the ceiling
 DH = 2.5           # the doors' height
-TINT = 0.30         # how much steel the closed glass carries over the mirror world
+TINT = 0.10         # how much steel the closed glass carries over the mirror world
 LEN = 9.0          # how far the corridor runs beyond the doors
 TEAL = "#20e3d2"
 ORANGE = "#ff8a1f"
@@ -116,9 +116,18 @@ def sheen_png(path):
     for y in range(H):                        # gloss: brighter high on the door, fading down
         a = int(46 * max(0.0, 1.0 - y / (H * 0.9)) ** 1.4)
         dr.line([(0, y), (W, y)], fill=(235, 245, 250, a))
+    st = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(st)
     for x0, wd, a in ((20, 26, 120), (96, 10, 90), (150, 38, 105), (222, 14, 80)):   # slanted streaks
-        dr.polygon([(x0, 0), (x0 + wd, 0), (x0 + wd - 150, H), (x0 - 150, H)], fill=(245, 252, 255, a))
-    im = im.filter(ImageFilter.GaussianBlur(5))
+        sd.polygon([(x0, 0), (x0 + wd, 0), (x0 + wd - 150, H), (x0 - 150, H)], fill=(245, 252, 255, a))
+    mask = Image.new("L", (W, H), 255)           # streaks only above and below the band where faces and bags sit
+    ImageDraw.Draw(mask).rectangle([0, 50, W, 350], fill=0)
+    mask = mask.filter(ImageFilter.GaussianBlur(10))
+    al = st.getchannel("A")
+    from PIL import ImageChops
+    st.putalpha(ImageChops.multiply(al, mask))
+    im = Image.alpha_composite(im, st)
+    im = im.filter(ImageFilter.GaussianBlur(2))
     dr = ImageDraw.Draw(im)
     top = Image.new("RGBA", (W, H), (0, 0, 0, 0))   # the LED panel in the glass: a bright soft oblong near the top
     td = ImageDraw.Draw(top)

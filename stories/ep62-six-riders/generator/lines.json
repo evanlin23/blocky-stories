@@ -64,15 +64,48 @@
    [
     "A.",
     "ay,"
-   ],
+   ]
+  ]
+ },
+ {
+  "id": "P04a",
+  "pause": 0.18,
+  "chunks": []
+ },
+ {
+  "id": "L04b",
+  "who": "narrator",
+  "chunks": [
    [
     "B.",
     "bee,"
-   ],
+   ]
+  ]
+ },
+ {
+  "id": "P04b",
+  "pause": 0.18,
+  "chunks": []
+ },
+ {
+  "id": "L04c",
+  "who": "narrator",
+  "chunks": [
    [
     "C.",
     "see,"
-   ],
+   ]
+  ]
+ },
+ {
+  "id": "P04c",
+  "pause": 0.18,
+  "chunks": []
+ },
+ {
+  "id": "L04d",
+  "who": "narrator",
+  "chunks": [
    [
     "D.",
     "dee,"
@@ -244,7 +277,7 @@
  },
  {
   "id": "P02",
-  "pause": 0.6,
+  "pause": 1.1,
   "chunks": []
  },
  {

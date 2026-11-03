@@ -11,8 +11,8 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.12
 for ln in lines:
-    if ln["id"] == "L04":
-        ln["tempo"] = 0.33      # each letter needs >= 0.25 s, landing on its tag pop
+    if ln["id"].startswith("L04"):
+        ln["tempo"] = 0.9       # each letter on its own clip, 0.3 s apart, landing on its tag pop
 lines = lines + [{"id": "P03", "pause": LOOP, "chunks": []}]
 
 # ------------------------------------------------------------------------------------------------ cast
@@ -53,10 +53,12 @@ acting["x"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "neut
 acting["bro"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "worried", "hidden": True})
 acting["c"].append({"at": "L09", "yaw": 40, "blend": 0})     # S13: he turns his face toward the lens
 acting["c"].append({"at": "L10", "yaw": 0, "blend": 0})
+acting["d"].append({"at": "L09", "pos": [-0.8, 1.05], "blend": 0})     # S13: half a step behind his shoulder
+acting["d"].append({"at": "L10", "pos": [ROWS["d"][0], ROWS["d"][1]], "blend": 0})
 # S15: the glass shot is clear of the two riders in front of it, they stand aside for one shot
-for k in "cd":
+for k in "abcd":
     acting[k].append({"at": "L11", "hidden": True, "blend": 0})
-    acting[k].append({"at": "L11.3", "hidden": False, "blend": 0})
+    acting[k].append({"at": "L12", "hidden": False, "blend": 0})
 acting["d"].append({"at": "L16.3", "expr": "wide", "blend": 0})
 acting["d"].append({"at": "L17", "expr": "neutral", "blend": 0})
 acting["x"].append({"at": "L14+0.4", "hidden": True, "blend": 0})
@@ -85,6 +87,7 @@ SHOTS = [
     ("L02", "S03", "the master", MASTER),
     ("L03", "S04", "side view along the car", move(([1.6, 3.9, 1.7], [0.0, 0.3, 1.2]), ([1.55, 3.8, 1.7], [-0.1, 0.3, 1.2]), 18)),
     ("L04", "S05", "the master, tags pop", MASTER),
+    ("L04c", "S05b", "punch in on C and D", still(MAS, MT, ML * 1.1)),
     ("L05", "S06", "over my shoulder", S06),
     ("L06", "S07", "the master, slow push", move((MAS, MT), ([0.0, 3.75, 2.3], [0, 0, 0.85]), ML, 12.0)),
     ("L07", "S08", "the display, wide enough that the dark plate is a small part of the frame", still([0, 2.0, 2.95], [0, 0.15, 2.85], 26)),
@@ -92,10 +95,10 @@ SHOTS = [
     ("P01+1", "S10", "punch in 6 percent", still(MAS, MT, ML * 1.06)),
     ("P01+2", "S11", "punch in another 6 percent", still(MAS, MT, ML * 1.12)),
     ("L08", "S12", "push in on the two blue jackets in the glass", move(([BLUE, 4.0, 3.7], [BLUE, -0.6, 1.4]), ([BLUE, 3.7, 3.6], [BLUE, -0.6, 1.4]), 20, 24)),
-    ("L09", "S13", "two-shot: my brother three-quarter front, me behind his shoulder", still([1.2, 0.15, 1.7], [-1.1, 1.2, 1.6], 13)),
+    ("L09", "S13", "two-shot: my brother three-quarter front, me behind his shoulder", still([0.9, 0.2, 1.8], [-1.0, 0.9, 1.35], 20)),
     ("L10", "S14", "his right shoulder, the bag", S14),
-    ("L11", "S15", "his reflection, bag on screen right", still([1.8, 3.9, 3.9], [-1.4, -0.6, 1.5], 31)),
-    ("L11.3", "S15b", "the copy beside it, bag on screen left", still([1.8, 3.9, 3.9], [GX, -0.6, 1.5], 28)),
+    ("L11", "S15", "his reflection, bag on screen right", still([1.4, 3.9, 3.9], [-1.4, -0.6, 1.5], 31)),
+    ("L11.3", "S15b", "the copy beside it, bag on screen left", still([1.4, 3.9, 3.9], [GX, -0.6, 1.5], 28)),
     ("L12", "S16", "the copy, mid close", still([GX, 3.9, 3.8], [GX, -0.6, 1.45], 36)),
     ("L12.2", "S17", "punch in on its face", still([GX - 0.05, 3.9, 3.8], [GX - 0.05, -0.6, 1.58], 60)),
     ("L13", "S18", "slow push on the copy and C's reflection", move(([BLUE + 0.25, 3.9, 3.8], [BLUE, -0.6, 1.4]), ([BLUE + 0.25, 3.5, 3.8], [BLUE, -0.6, 1.4]), 22, 27)),
@@ -158,8 +161,8 @@ cues = [
     {"at": "L08", "name": "ring", "on": True},
     {"at": "L09", "name": "ring", "on": False},
 ]
-for i, L_ in enumerate("ABCD"):
-    cues.append({"at": f"L04.{i}", "name": "tag", "who": L_})
+for L_, lid in zip("ABCD", ["L04", "L04b", "L04c", "L04d"]):
+    cues.append({"at": lid, "name": "tag", "who": L_})
 cues.append({"at": "L16", "name": "tagflip", "who": "C"})
 
 # ------------------------------------------------------------------------------------------------ sound
