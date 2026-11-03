@@ -165,7 +165,7 @@ def asr(wav: Path, timeline: Path) -> int:
     return bad
 
 
-SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite", "zeros": "zeroes", "arrivals": "arrivals"}   # British and American spellings
+SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite", "zeros": "zeroes", "arrivals": "arrivals", "buh": "butt", "buttown": "butttown"}   # British and American spellings
 # homophones: the same sound, and Whisper picks the spelling from the words around it ("under the bulb threw"), so
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped

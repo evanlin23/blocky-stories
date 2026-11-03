@@ -371,7 +371,7 @@ S("L37", ((0.8, 1.6, 1.7), (-1.1, 4.4, 1.6), 32), who={"me": (OT, 0, "smile", {}
   note="Milo, grinning, slapping the side of the book")
 raw("milo", "L37+0.3", arms=[0, 100], blend=0.1)
 cue("L37", "book", mode="open")
-S("L38", ((7.5, -2.0, 1.4), (-2.3, -2.0, 1.2), 22, (7.5, -4.4, 1.4), (-2.3, -4.4, 1.2), 22), tod="night",
+S("L38", ((7.5, -2.0, 1.4), (-2.3, -2.0, 1.2), 22, (7.5, -4.4, 1.4), (-2.3, -4.4, 1.2), 22), tod="dusk",
   who={"milo": (X(-2.6, -1.8), 180, "grin", {"arms": [70, 70]}), "me": (X(-2.6, -0.65), 0, "smile", {"arms": [70, 70]})},
   note="the two of us hauling the red book out of the hall door, Milo walking backward at the front")
 cue("L38", "book", mode="carry")
@@ -383,7 +383,7 @@ cue("L38", "bookpath", v=[-2.6, -1.2, 1.05])
 cue("L38.2", "bookpath", v=[-2.3, -3.0, 1.05])
 LINE = {f"t{i}": (X(x, y), 90 if x < 0 else -90, "smile", {}) for i, (x, y) in enumerate(
     [(-3.4, -7), (3.4, -9), (-3.5, -12), (3.4, -14), (-3.4, -17), (3.5, -19), (-3.4, -23), (3.4, -25)])}
-S("L38.2", ((0.3, -0.8, 2.4), (-1.8, -5.5, 1.0), 24, (0.0, -1.8, 2.4), (-1.2, -7.0, 1.0), 24), tod="night",
+S("L38.2", ((0.3, -0.8, 2.4), (-1.8, -5.5, 1.0), 24, (0.0, -1.8, 2.4), (-1.2, -7.0, 1.0), 24), tod="dusk",
   who={"milo": (X(-2.3, -3.6), 180, "grin", {"arms": [70, 70]}), "me": (X(-2.3, -2.4), 0, "smile", {"arms": [70, 70]}), **LINE},
   note="a high wide down the lamplit high street, the townsfolk stepping aside and smiling")
 walk("milo", "L38.2+0.1", X(-2.3, -3.6), keep_yaw=True)
@@ -427,7 +427,7 @@ cue("L42", "ppage", mode="world", v=[KIT, 0.95, 0.805, 0, -90])
 cue("L42", "ppage_unfold", u=0.0)
 cue("L42+0.9", "ppage_unfold", u=1.0)
 cue("L42.2+0.1", "ppage_face", n="back")
-S("L43", ((KIT, 0.2, 1.76), (KIT, 0.95, 0.8), 40, (KIT, 0.15, 1.72), (KIT, 1.0, 0.85), 38), who={"me": (X(KIT, 1.7), 0, "scared", {"arms": [70, 70]})},
+S("L43", ((KIT, 0.2, 1.76), (KIT, 1.0, 0.8), 62, (KIT, 0.15, 1.72), (KIT, 1.03, 0.8), 56), who={"me": (X(KIT, 1.7), 0, "scared", {"arms": [70, 70]})},
   note="the back of the page: a big ink-blue 4, me scared beyond it. The corner tag flips to 4.")
 cue("L43", "tag", v=1, dur=0.04)
 S("L44", ((KIT, -1.0, 1.5), (KIT, 1.3, 1.2), 30), who={"me": (X(KIT, 1.7), 0, "scared", {"arms": [70, 70]})},
@@ -478,7 +478,8 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"style": "closer", "fog": "#cfe6f5", "fog_density": 0.006, "fog_start": 14.0, "sky": "#7cc6ff", "sky_strength": 1.0,
-             "exposure": 0.2, "hdri": "kloppenheim_06_puresky", "hdri_strength": 0.45, "hdri_rotation": 40, "flash_safe": True, "polish": True},
+             "exposure": 0.2, "hdri": "kloppenheim_06_puresky", "hdri_strength": 0.45, "hdri_rotation": 40, "flash_safe": True, "polish": {"emph": ["L01", "L05", "L30", "L43"], "reveal": ["L30", "L31"], "quiet": [["L38", "L41"]],
+                                                                     "sway": ["S32", "S33", "S34", "S35", "S36", "S37", "S38"]}},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.01, -0.02], "saturation": 1.08, "contrast": 1.05,
               "vignette": 0.25, "bloom": 0.22, "grain": 0.008},
     "phonemes": {"Milo": "mˈIlO"},
