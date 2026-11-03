@@ -133,7 +133,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Shots:** 11.
 - **Frame 1 brief (the opening recipe):** a close-up straight at the warned-of thing: a folding canvas chair just inside a white picket gate, one granite gatepost edge in frame. It's already slightly wrong: nobody's in it, but a lumpy pad of moss with tiny white flowers covers the seat and the back, shaped like someone who sat there waiting a very long time. Bright, warm late-afternoon sun from the front-side, the moss and flowers lit to read on a phone against the cream canvas. Centred (the chair in the middle third, safe for TV). A slow push in across all of L01, landing on the moss at GATE. No wide or establishing shot anywhere in the first 3 s (L01 close, L01b mid close). It's the neighbour's chair at the next caravan, not ours, so it plants nothing new, and our own gate is first seen in L08.
 
-- `L01` narrator: NEVER wait / for someone / at the front GATE.
+- `L01` narrator: NEVER wait / for someone / at the front / GATE.
   - [the frame-1 brief above: close on the empty mossy chair at a gate, centred, bright, slow push in. The sound hit on GATE]
 - `L01b` narrator: MOSS grows / on you / while you WAIT.
   - [mid close, bright sun: the neighbour at her caravan door beside that chair, `neutral`, face filling a third of the frame, soft moss pads on both shoulders and white flowers on her bucket hat. Quick punch in]

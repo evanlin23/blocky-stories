@@ -261,8 +261,12 @@
      "for someone"
     ],
     [
-     "at the front GATE.",
-     "at the front gate."
+     "at the front",
+     "at the front"
+    ],
+    [
+     "GATE.",
+     "gate."
     ]
    ]
   },
@@ -8010,12 +8014,12 @@
   ],
   "sfx": [
    {
-    "at": "L01.3+0.42",
+    "at": "L01.3+0.05",
     "kind": "thud",
     "db": -19
    },
    {
-    "at": "L01.3+0.44",
+    "at": "L01.3+0.07",
     "kind": "click",
     "db": -14
    },

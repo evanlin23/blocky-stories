@@ -534,8 +534,8 @@ for i, (at, look, s) in enumerate(LOOK_AT):
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
     # the sound hit on GATE (L01's last word): a soft low thud and the gate latch
-    {"at": "L01.3+0.42", "kind": "thud", "db": -19},
-    {"at": "L01.3+0.44", "kind": "click", "db": -14},
+    {"at": "L01.3+0.05", "kind": "thud", "db": -19},
+    {"at": "L01.3+0.07", "kind": "click", "db": -14},
     {"at": "L09", "kind": "click", "db": -26},
     {"at": "L18", "kind": "click", "db": -20},
     {"at": "L21", "kind": "riser", "db": -28, "dur": 1.8},
