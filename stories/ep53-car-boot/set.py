@@ -42,7 +42,7 @@ COAT_COLS = ["#46a7d6", "#f2c230", "#8456c8", "#e86aa0", "#2fb3a3", "#f0902a"]
 TOD = {
     "day":    dict(sun=7.0, sunc="#fff0d8", az=-50, el=48, fill=1.2, fillc="#b4c6ea", sky=1.3, hor="#cfd6e0", zen="#7fa6dc", fogd=0.004, fogb=1.0),
     "open":   dict(sun=8.0, sunc="#ffe0ac", az=78, el=44, fill=0.9, fillc="#ffe8cc", sky=1.3, hor="#d4d6dc", zen="#7fa6dc", fogd=0.004, fogb=1.0),
-    "flat":   dict(sun=2.0, sunc="#dfe6f0", az=-60, el=40, fill=2.2, fillc="#c8d4e8", sky=1.5, hor="#cdd3da", zen="#9fb3cf", fogd=0.006, fogb=1.0),
+    "flat":   dict(sun=2.6, sunc="#dfe6f0", az=-60, el=40, fill=5.5, fillc="#c8d4e8", sky=1.0, hor="#cdd3da", zen="#9fb3cf", fogd=0.006, fogb=1.0),
     "dawn":   dict(sun=3.0, sunc="#b8c8ff", az=-70, el=10, fill=2.4, fillc="#a0b4e8", sky=1.4, hor="#aeb6d8", zen="#5f78b0", fogd=0.012, fogb=0.8),
     "fog":    dict(sun=3.0, sunc="#e8ecfa", az=80, el=9, fill=2.6, fillc="#c0cae8", sky=1.7, hor="#b8bece", zen="#98a6c0", fogd=0.055, fogb=1.0),
     "sil":    dict(sun=4.0, sunc="#e8ecfa", az=80, el=9, fill=0.3, fillc="#c0cae8", sky=1.8, hor="#c4c9d6", zen="#98a6c0", fogd=0.055, fogb=1.0),
@@ -1008,8 +1008,8 @@ def animate(kit, story, tl, t, ctx):
             kit.aim(beam, (x + fwd.x * (L + 8.0), y + fwd.y * (L + 8.0), z + 0.1))
     bl = ramp_level(_cues(tl, "beam"), t)
     over["bus beam"] = 1500.0 * bl
-    over["boot lamp"] = 1.0 + 5.0 * ramp_level(_cues(tl, "bootb"), t)
-    over["boot front"] = 520.0 * ramp_level(_cues(tl, "bootb"), t)
+    over["boot lamp"] = 1.0 + 1.0 * ramp_level(_cues(tl, "bootb"), t)
+    over["boot front"] = 130.0 * ramp_level(_cues(tl, "bootb"), t)
     over["tilt up"] = 160.0 * ramp_level(_cues(tl, "tup"), t)
     over["coach beam"] = 0.0
     over["strip fill"] = 2600.0 * ramp_level(_cues(tl, "tfill"), t)
