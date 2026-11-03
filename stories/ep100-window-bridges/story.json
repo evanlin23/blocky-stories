@@ -1,0 +1,9887 @@
+{
+ "slug": "ep100-window-bridges",
+ "title": "Three Burnt Bridges To A STRANGER 🌉",
+ "made_for_kids": false,
+ "premise": "In our seaside town every friendship builds a little plank bridge between two windows, and burning one makes both friends forget the other ever lived. Three burnt bridges lie in the alley under my window, all running to the window of a man I have never met, and when the nights get cold they start to rise toward us.",
+ "twist": "The stranger is Eli, my best friend. Every year the night before his boat ships out we stand in the middle of our bridge and burn it together so neither of us has to miss the other, and every spring we meet for the first time. This year we keep the bridge, it grows past his window out over the sea, and I tell him how it started.",
+ "world": "a bright cobbled alley between tall terracotta and ochre houses with teal shutters, dozens of plank bridges strung between facing windows, and the sea glittering at the end of the lane",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#ff6f61",
+ "gap": 0.12,
+ "tail": 0.25,
+ "min_read": 0.15,
+ "fade_in": false,
+ "fade_out": false,
+ "look": {
+  "fog": "#ffe6cf",
+  "fog_density": 0.0015,
+  "fog_start": 40.0,
+  "sky": "#9edcff",
+  "exposure": 0.0,
+  "flash_safe": true,
+  "style": "closer",
+  "polish": {
+   "emph": [
+    "L01",
+    "L26",
+    "L33",
+    "L36",
+    "L44",
+    "L48",
+    "L52",
+    "L53"
+   ],
+   "reveal": [
+    "L36",
+    "L44",
+    "L48"
+   ],
+   "twist": "L44",
+   "sway": [
+    "S49",
+    "S50",
+    "S51",
+    "S52",
+    "S53",
+    "S54",
+    "S55",
+    "S56",
+    "S57",
+    "S58",
+    "S59",
+    "S60",
+    "S61",
+    "S62",
+    "S63",
+    "S64",
+    "S65",
+    "S66",
+    "S67",
+    "S68",
+    "S69",
+    "S70",
+    "S71",
+    "S72",
+    "S73",
+    "S74",
+    "S75",
+    "S76",
+    "S77",
+    "S78",
+    "S79",
+    "S80",
+    "S81",
+    "S82",
+    "S83",
+    "S84",
+    "S85",
+    "S86",
+    "S87",
+    "S93",
+    "S94",
+    "S95",
+    "S96",
+    "S97",
+    "S98",
+    "S102",
+    "S103",
+    "S104",
+    "S105",
+    "S106",
+    "S107",
+    "S127",
+    "S128"
+   ],
+   "hold": [
+    "S74",
+    "S75",
+    "S78",
+    "S79",
+    "S80",
+    "S91",
+    "S92",
+    "S104",
+    "S105"
+   ],
+   "camera": true,
+   "idle": true,
+   "ease": true
+  }
+ },
+ "grade": {
+  "shadows": [
+   -0.01,
+   0.0,
+   0.04
+  ],
+  "highlights": [
+   0.03,
+   0.01,
+   -0.02
+  ],
+  "saturation": 1.14,
+  "contrast": 1.06,
+  "vignette": 0.18,
+  "bloom": 0.22,
+  "grain": 0.008,
+  "red_line": 0.7
+ },
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#ff6f61",
+   "pattern": "solid",
+   "pants": "#7a8a4a",
+   "shoes": "#f4f4f2",
+   "sleeves": "long",
+   "hair": "mop",
+   "hair_c": "#3a2418",
+   "extras": [
+    "hooddown"
+   ],
+   "extra_c": "#ff6f61",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "eli": {
+   "age": "adult",
+   "skin": "#eaa98a",
+   "shirt": "#1f3a68",
+   "pattern": "knit",
+   "pattern_c": "#2f5596",
+   "pants": "#2b2f3a",
+   "shoes": "#3a2a1c",
+   "sleeves": "short",
+   "hair": "cap",
+   "hair_c": "#e8c66a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "mom": {
+   "age": "adult",
+   "skin": "#d9a27a",
+   "shirt": "#7b3f8c",
+   "pattern": "solid",
+   "pants": "#7b3f8c",
+   "shoes": "#3a2a2a",
+   "sleeves": "short",
+   "hair": "bun",
+   "hair_c": "#4a4448",
+   "extras": [
+    "apron"
+   ],
+   "extra_c": "#1fa39a",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "vega": {
+   "age": "adult",
+   "skin": "#e8c4a0",
+   "shirt": "#d7263d",
+   "pattern": "solid",
+   "pants": "#5a3a3a",
+   "shoes": "#3a2a2a",
+   "sleeves": "long",
+   "hair": "mop",
+   "hair_c": "#f4f1ec",
+   "extras": [
+    "scarf"
+   ],
+   "extra_c": "#d7263d",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "nb1": {
+   "age": "adult",
+   "skin": "#c98e68",
+   "shirt": "#3a7ca5",
+   "pattern": "solid",
+   "pants": "#3a3a4a",
+   "shoes": "#2a2a2a",
+   "sleeves": "long",
+   "hair": "spiky",
+   "hair_c": "#2a1d15",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "nb2": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#e0a030",
+   "pattern": "stripes",
+   "pattern_c": "#ffffff",
+   "pants": "#3a3a4a",
+   "shoes": "#2a2a2a",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#7a4a22",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "stone_a": {
+   "age": "adult",
+   "skin": "#e0b898",
+   "shirt": "#8a8f98",
+   "pattern": "knit",
+   "pattern_c": "#a4a9b2",
+   "pants": "#4a4a52",
+   "shoes": "#2a2a2a",
+   "sleeves": "long",
+   "hair": "none",
+   "hat": "ballcap",
+   "hat_c": "#5a5f68",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "stone_b": {
+   "age": "adult",
+   "skin": "#d9a27a",
+   "shirt": "#7a5230",
+   "pattern": "knit",
+   "pattern_c": "#946a40",
+   "pants": "#4a4a52",
+   "shoes": "#2a2a2a",
+   "sleeves": "long",
+   "hair": "none",
+   "hat": "ballcap",
+   "hat_c": "#5a3d22",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "eli_sea": {
+   "age": "adult",
+   "skin": "#eaa98a",
+   "shirt": "#1f3a68",
+   "pattern": "knit",
+   "pattern_c": "#2f5596",
+   "pants": "#2b2f3a",
+   "shoes": "#3a2a1c",
+   "sleeves": "short",
+   "hair": "cap",
+   "hair_c": "#e8c66a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   },
+   "extras": [
+    "backpack"
+   ],
+   "extra_c": "#e0573f"
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Three burnt BRIDGES",
+     "three burnt bridges"
+    ],
+    [
+     "run from my window",
+     "run from my window"
+    ],
+    [
+     "to a STRANGER'S.",
+     "to a stranger's."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I've never burned",
+     "I've never burned"
+    ],
+    [
+     "a bridge",
+     "a bridge"
+    ],
+    [
+     "in my LIFE.",
+     "in my life."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Here, every friend you make",
+     "here, every friend you make"
+    ],
+    [
+     "builds a little BRIDGE",
+     "builds a little bridge"
+    ],
+    [
+     "between your windows.",
+     "between your windows."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "One PLANK",
+     "one plank"
+    ],
+    [
+     "at a time.",
+     "at a time."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mrs. Vega upstairs",
+     "Missus Vega upstairs"
+    ],
+    [
+     "has SIXTY.",
+     "has sixty."
+    ],
+    [
+     "Her window looks like a WEB.",
+     "her window looks like a web."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The two old guys",
+     "the two old guys"
+    ],
+    [
+     "at the end of the street",
+     "at the end of the street"
+    ],
+    [
+     "have one so old",
+     "have one so old"
+    ],
+    [
+     "it turned to STONE.",
+     "it turned to stone."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But if you BURN one,",
+     "but if you burn one,"
+    ],
+    [
+     "you both forget",
+     "you both forget"
+    ],
+    [
+     "the other one ever LIVED.",
+     "the other one ever lived."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And nobody tells you",
+     "and nobody tells you"
+    ],
+    [
+     "who you BURNED.",
+     "who you burned."
+    ],
+    [
+     "Ever.",
+     "ever."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In April,",
+     "in April,"
+    ],
+    [
+     "I finally met the guy",
+     "I finally met the guy"
+    ],
+    [
+     "across the alley.",
+     "across the alley."
+    ],
+    [
+     "ELI.",
+     "Eli."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "By the end of the WEEK,",
+     "by the end of the week,"
+    ],
+    [
+     "he was my best FRIEND.",
+     "he was my best friend."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Like the brother",
+     "like the brother"
+    ],
+    [
+     "I never HAD.",
+     "I never had."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Our bridge grew",
+     "our bridge grew"
+    ],
+    [
+     "thirty planks",
+     "thirty planks"
+    ],
+    [
+     "in a WEEK.",
+     "in a week."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Bridges take YEARS.",
+     "bridges take years."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We passed coffee",
+     "we passed coffee"
+    ],
+    [
+     "across it",
+     "across it"
+    ],
+    [
+     "every MORNING.",
+     "every morning."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He's terrible at CARDS.",
+     "he's terrible at cards."
+    ],
+    [
+     "He cheats ANYWAY.",
+     "he cheats anyway."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Eli already knew",
+     "Eli already knew"
+    ],
+    [
+     "how I take my COFFEE.",
+     "how I take my coffee."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My dog jumped all over him",
+     "my dog jumped all over him"
+    ],
+    [
+     "like she'd MISSED him.",
+     "like she'd missed him."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My mom called him ELI",
+     "my Mom called him Eli"
+    ],
+    [
+     "before I'd said his NAME.",
+     "before I'd said his name."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She set him a plate",
+     "she set him a plate"
+    ],
+    [
+     "at DINNER,",
+     "at dinner,"
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "like she ALWAYS had.",
+     "like she always had."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then she went very QUIET.",
+     "then she went very quiet."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He keeps a box of MATCHES",
+     "he keeps a box of matches"
+    ],
+    [
+     "on his windowsill.",
+     "on his windowsill."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He doesn't even light CANDLES.",
+     "he doesn't even light candles."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the stranger's window",
+     "and the stranger's window"
+    ],
+    [
+     "at the other end",
+     "at the other end"
+    ],
+    [
+     "was ELI'S.",
+     "was Eli's."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then the nights",
+     "then the nights"
+    ],
+    [
+     "got COLD.",
+     "got cold."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the burnt bridges",
+     "and the burnt bridges"
+    ],
+    [
+     "started to MOVE.",
+     "started to move."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "They lifted",
+     "they lifted"
+    ],
+    [
+     "off the COBBLES.",
+     "off the cobbles."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Black and CRACKED,",
+     "black and cracked,"
+    ],
+    [
+     "swaying UP",
+     "swaying up"
+    ],
+    [
+     "toward our WINDOWS.",
+     "toward our windows."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A little higher",
+     "a little higher"
+    ],
+    [
+     "every NIGHT.",
+     "every night."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody else's burnt bridges",
+     "nobody else's burnt bridges"
+    ],
+    [
+     "ever MOVED.",
+     "ever moved."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mrs. Vega crossed the street",
+     "Missus Vega crossed the street"
+    ],
+    [
+     "so she wouldn't walk UNDER them.",
+     "so she wouldn't walk under them."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "On Thursday",
+     "on Thursday"
+    ],
+    [
+     "I woke up",
+     "I woke up"
+    ],
+    [
+     "at three.",
+     "at three."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.6,
+   "chunks": []
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The oldest one",
+     "the oldest one"
+    ],
+    [
+     "was resting",
+     "was resting"
+    ],
+    [
+     "on my SILL.",
+     "on my sill."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I climbed down",
+     "I climbed down"
+    ],
+    [
+     "into the ALLEY.",
+     "into the alley."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In the middle",
+     "in the middle"
+    ],
+    [
+     "of every burnt bridge",
+     "of every burnt bridge"
+    ],
+    [
+     "was one plank",
+     "was one plank"
+    ],
+    [
+     "that didn't BURN.",
+     "that didn't burn."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And on each one,",
+     "and on each one,"
+    ],
+    [
+     "two HANDPRINTS",
+     "two handprints"
+    ],
+    [
+     "in soot.",
+     "in soot."
+    ],
+    [
+     "Side by SIDE.",
+     "side by side."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mine.",
+     "mine."
+    ],
+    [
+     "And ELI'S.",
+     "and Eli's."
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every plank",
+     "every plank"
+    ],
+    [
+     "had the same date",
+     "had the same date"
+    ],
+    [
+     "cut in it.",
+     "cut in it."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The night of November NINTH.",
+     "the night of November Ninth."
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I looked up",
+     "I looked up"
+    ],
+    [
+     "at Eli's WINDOW.",
+     "at Eli's window."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There was a sea BAG",
+     "there was a sea bag"
+    ],
+    [
+     "packed by his BED.",
+     "packed by his bed."
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Eli works the BOATS.",
+     "Eli works the boats."
+    ],
+    [
+     "He ships out",
+     "he ships out"
+    ],
+    [
+     "every November TENTH.",
+     "every November Tenth."
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mom finally told me",
+     "Mom finally told me"
+    ],
+    [
+     "we'd made her PROMISE",
+     "we'd made her promise"
+    ],
+    [
+     "never to SAY.",
+     "never to say."
+    ]
+   ]
+  },
+  {
+   "id": "L44",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We never FOUGHT.",
+     "we never fought."
+    ]
+   ]
+  },
+  {
+   "id": "L45",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every year,",
+     "every year,"
+    ],
+    [
+     "the night before",
+     "the night before"
+    ],
+    [
+     "Eli's boat goes OUT,",
+     "Eli's boat goes out,"
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "we stand in the MIDDLE",
+     "we stand in the middle"
+    ],
+    [
+     "and burn it TOGETHER,",
+     "and burn it together,"
+    ]
+   ]
+  },
+  {
+   "id": "L47",
+   "who": "narrator",
+   "chunks": [
+    [
+     "so neither of us",
+     "so neither of us"
+    ],
+    [
+     "has to MISS the other.",
+     "has to miss the other."
+    ]
+   ]
+  },
+  {
+   "id": "L48",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And every SPRING,",
+     "and every spring,"
+    ],
+    [
+     "when he comes HOME,",
+     "when he comes home,"
+    ],
+    [
+     "we meet",
+     "we meet"
+    ],
+    [
+     "for the first TIME.",
+     "for the first time."
+    ]
+   ]
+  },
+  {
+   "id": "L49",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's why they rise",
+     "that's why they rise"
+    ],
+    [
+     "when it gets COLD.",
+     "when it gets cold."
+    ],
+    [
+     "A burnt bridge remembers",
+     "a burnt bridge remembers"
+    ],
+    [
+     "what the two of you FORGOT,",
+     "what the two of you forgot,"
+    ],
+    [
+     "and reaches back",
+     "and reaches back"
+    ],
+    [
+     "on the night it BURNED.",
+     "on the night it burned."
+    ]
+   ]
+  },
+  {
+   "id": "L50",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I showed Eli",
+     "I showed Eli"
+    ],
+    [
+     "the HANDPRINTS.",
+     "the handprints."
+    ],
+    [
+     "He'd forgotten me TOO.",
+     "he'd forgotten me too."
+    ],
+    [
+     "He stared at the matches",
+     "he stared at the matches"
+    ],
+    [
+     "on his SILL",
+     "on his sill"
+    ],
+    [
+     "like he'd never seen them BEFORE.",
+     "like he'd never seen them before."
+    ]
+   ]
+  },
+  {
+   "id": "L51",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then he put them",
+     "then he put them"
+    ],
+    [
+     "in his POCKET.",
+     "in his pocket."
+    ]
+   ]
+  },
+  {
+   "id": "L52",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He said,",
+     "he said,"
+    ],
+    [
+     "\"So I'd have to MISS you?\"",
+     "\"so I'd have to miss you?\""
+    ]
+   ]
+  },
+  {
+   "id": "L53",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I said,",
+     "I said,"
+    ],
+    [
+     "\"GOOD.\"",
+     "\"good.\""
+    ]
+   ]
+  },
+  {
+   "id": "L54",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The rule says",
+     "the rule says"
+    ],
+    [
+     "burn it",
+     "burn it"
+    ],
+    [
+     "and you FORGET.",
+     "and you forget."
+    ]
+   ]
+  },
+  {
+   "id": "L55",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It never says",
+     "it never says"
+    ],
+    [
+     "a bridge has to stop",
+     "a bridge has to stop"
+    ],
+    [
+     "at a WINDOW.",
+     "at a window."
+    ]
+   ]
+  },
+  {
+   "id": "L56",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He left on the TENTH.",
+     "he left on the Tenth."
+    ]
+   ]
+  },
+  {
+   "id": "L57",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And I missed him",
+     "and I missed him"
+    ],
+    [
+     "all WINTER.",
+     "all winter."
+    ]
+   ]
+  },
+  {
+   "id": "L58",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But every night,",
+     "but every night,"
+    ],
+    [
+     "our bridge",
+     "our bridge"
+    ],
+    [
+     "grew one more PLANK.",
+     "grew one more plank."
+    ]
+   ]
+  },
+  {
+   "id": "L59",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Out past his window.",
+     "out past his window."
+    ],
+    [
+     "Over the ROOFS.",
+     "over the roofs."
+    ]
+   ]
+  },
+  {
+   "id": "L60",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Out over the SEA.",
+     "out over the sea."
+    ]
+   ]
+  },
+  {
+   "id": "L61",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Toward wherever",
+     "toward wherever"
+    ],
+    [
+     "his boat WAS.",
+     "his boat was."
+    ]
+   ]
+  },
+  {
+   "id": "L62",
+   "who": "narrator",
+   "chunks": [
+    [
+     "When he comes home",
+     "when he comes home"
+    ],
+    [
+     "in APRIL,",
+     "in April,"
+    ],
+    [
+     "for the first TIME,",
+     "for the first time,"
+    ],
+    [
+     "he'll REMEMBER me.",
+     "he'll remember me."
+    ]
+   ]
+  },
+  {
+   "id": "L63",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I'll walk him",
+     "I'll walk him"
+    ],
+    [
+     "down to the ALLEY,",
+     "down to the alley,"
+    ]
+   ]
+  },
+  {
+   "id": "L64",
+   "who": "narrator",
+   "chunks": [
+    [
+     "and tell him",
+     "and tell him"
+    ],
+    [
+     "how it STARTED.",
+     "how it started."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      -1.25,
+      -0.2,
+      7.95
+     ],
+     [
+      1.1,
+      -0.15,
+      0.4
+     ],
+     27
+    ],
+    [
+     1,
+     [
+      -0.95,
+      -0.2,
+      7.6
+     ],
+     [
+      1.2,
+      -0.15,
+      0.3
+     ],
+     31
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "day",
+   "note": "frame 1: our newest planks at my sill, the three burnt bridges below, shutters opposite"
+  },
+  {
+   "id": "S02",
+   "cam": [
+    [
+     0,
+     [
+      0.04999999999999982,
+      -0.2,
+      8.0
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.3500000000000001,
+      -0.2,
+      8.15
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     33
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L02",
+   "note": "me at my window, worried, looking down"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      -2.6,
+      0.9
+     ],
+     [
+      1.0,
+      -1.6,
+      0.25
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      -0.7,
+      -2.5,
+      0.7
+     ],
+     [
+      1.2,
+      -1.6,
+      0.2
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "day",
+   "at": "L02.1",
+   "note": "low on the cobbles along a burnt bridge to the opposite wall"
+  },
+  {
+   "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      0.995,
+      1.125,
+      1.264
+     ],
+     [
+      0.0,
+      0.55,
+      0.3
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      0.73,
+      0.971,
+      1.007
+     ],
+     [
+      0.0,
+      0.55,
+      0.3
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "day",
+   "at": "L02.2",
+   "note": "close on charred planks and a rust crack"
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -8.0,
+      3.0
+     ],
+     [
+      0.0,
+      6.0,
+      7.0
+     ],
+     17
+    ],
+    [
+     1,
+     [
+      0.0,
+      -7.2,
+      3.6
+     ],
+     [
+      0.0,
+      7.0,
+      7.2
+     ],
+     19
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L03",
+   "fill": 0.8,
+   "note": "up the alley: dozens of little bridges between windows, sun through them"
+  },
+  {
+   "id": "S06",
+   "cam": [
+    [
+     0,
+     [
+      1.2,
+      -2.0,
+      5.4
+     ],
+     [
+      -1.5,
+      6.0,
+      7.2
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      1.0,
+      -1.6,
+      5.6
+     ],
+     [
+      -1.5,
+      6.0,
+      7.2
+     ],
+     22
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L03.1",
+   "fill": 0.8,
+   "note": "bridges at every height, from below"
+  },
+  {
+   "id": "S07",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      2.6,
+      6.2
+     ],
+     [
+      0.0,
+      3.0,
+      7.0
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -0.2,
+      2.8,
+      6.4
+     ],
+     [
+      0.0,
+      3.0,
+      7.0
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "day",
+   "at": "L04",
+   "fill": 0.8,
+   "note": "tight: a new pale plank settling on someone's bridge"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      0.336,
+      3.0,
+      7.672
+     ],
+     [
+      -2.25,
+      3.0,
+      7.4
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.261,
+      3.0,
+      7.609
+     ],
+     [
+      -2.25,
+      3.0,
+      7.4
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L05",
+   "note": "Mrs. Vega at her window, smiling"
+  },
+  {
+   "id": "S09",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -4.0,
+      4.0
+     ],
+     [
+      -1.0,
+      3.2,
+      7.5
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.2,
+      -3.6,
+      4.4
+     ],
+     [
+      -1.0,
+      3.4,
+      7.5
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L05.1",
+   "fill": 0.9,
+   "note": "sixty bridges fan out from her window like a web"
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      17.8,
+      7.9
+     ],
+     [
+      0.0,
+      21.5,
+      7.3
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.0,
+      18.2,
+      7.9
+     ],
+     [
+      0.0,
+      22.0,
+      7.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L06",
+   "note": "two old guys in flat caps at facing windows"
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      2.541,
+      19.533,
+      7.524
+     ],
+     [
+      0.0,
+      21.0,
+      6.9
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      1.383,
+      19.352,
+      7.357
+     ],
+     [
+      0.0,
+      21.0,
+      6.9
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L06.1",
+   "note": "their bridge between them, smooth grey stone"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      -1.821,
+      19.472,
+      7.234
+     ],
+     [
+      0.0,
+      21.0,
+      6.9
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      -1.365,
+      19.854,
+      7.151
+     ],
+     [
+      0.0,
+      21.0,
+      6.9
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L06.2",
+   "note": "the stone, closer"
+  },
+  {
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -9.8,
+      8.4
+     ],
+     [
+      0.0,
+      -6.0,
+      7.4
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.0,
+      -9.2,
+      8.4
+     ],
+     [
+      0.0,
+      -6.0,
+      7.4
+     ],
+     27
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L07",
+   "note": "two neighbors glaring across a bridge"
+  },
+  {
+   "id": "S14",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -9.0,
+      1.6
+     ],
+     [
+      0.0,
+      -1.0,
+      1.0
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.0,
+      -8.4,
+      1.6
+     ],
+     [
+      0.0,
+      -1.0,
+      1.0
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L07.1",
+   "note": "the same two pass each other on the cobbles, strangers, a charred bridge behind"
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      1.088,
+      -8.391,
+      1.434
+     ],
+     [
+      0.0,
+      -5.4,
+      1.1
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.884,
+      -7.83,
+      1.372
+     ],
+     [
+      0.0,
+      -5.4,
+      1.1
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L07.2",
+   "note": "they don't look at each other"
+  },
+  {
+   "id": "S16",
+   "cam": [
+    [
+     0,
+     [
+      0.535,
+      -3.0,
+      7.693
+     ],
+     [
+      -2.25,
+      -3.0,
+      7.4
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.162,
+      -3.0,
+      7.62
+     ],
+     [
+      -2.25,
+      -3.0,
+      7.4
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L08",
+   "note": "an old woman at a window, lips pressed shut"
+  },
+  {
+   "id": "S17",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -2.5,
+      5.6
+     ],
+     [
+      -1.6,
+      -3.0,
+      7.4
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.0,
+      -2.6,
+      5.4
+     ],
+     [
+      -1.6,
+      -3.0,
+      7.4
+     ],
+     46
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L08.1",
+   "note": "looking down at the empty cobbles"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      -0.3500000000000001,
+      -0.8,
+      7.95
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.25,
+      -0.8,
+      8.05
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     33
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L09",
+   "note": "April sun: Eli at his window, sunburned forearms, waving"
+  },
+  {
+   "id": "S19",
+   "cam": [
+    [
+     0,
+     [
+      -1.3,
+      -1.4,
+      7.9
+     ],
+     [
+      2.0,
+      -0.3,
+      7.2
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      -1.0,
+      -1.2,
+      7.8
+     ],
+     [
+      2.1,
+      -0.3,
+      7.3
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L09.2",
+   "note": "the guy across the alley, ELI"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.4,
+      8.3
+     ],
+     [
+      0.0,
+      -0.5,
+      7.2
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      0.0,
+      -1.0,
+      8.1
+     ],
+     [
+      0.0,
+      -0.5,
+      7.2
+     ],
+     22
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L10",
+   "note": "Eli and me laughing at our two windows, the bridge three planks long"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      0.1499999999999999,
+      -0.3,
+      7.95
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.3500000000000001,
+      -0.3,
+      8.05
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L10.1",
+   "note": "me, laughing"
+  },
+  {
+   "id": "S22",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -7.692,
+      1.573
+     ],
+     [
+      0.0,
+      -4.5,
+      1.35
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.0,
+      -6.994,
+      1.524
+     ],
+     [
+      0.0,
+      -4.5,
+      1.35
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L11",
+   "note": "Eli claps me on the shoulder, both laughing (cut before it lands)"
+  },
+  {
+   "id": "S23",
+   "cam": [
+    [
+     0,
+     [
+      0.618,
+      -6.747,
+      1.609
+     ],
+     [
+      -0.2,
+      -4.5,
+      1.4
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      0.447,
+      -6.279,
+      1.566
+     ],
+     [
+      -0.2,
+      -4.5,
+      1.4
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L11.1",
+   "note": "closer, both laughing"
+  },
+  {
+   "id": "S24",
+   "cam": [
+    [
+     0,
+     [
+      -1.45,
+      -0.95,
+      7.55
+     ],
+     [
+      -1.3,
+      -0.5,
+      6.95
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      -1.3,
+      -0.9,
+      7.4
+     ],
+     [
+      -1.2,
+      -0.5,
+      6.95
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "april",
+   "at": "L12",
+   "dof": [
+    0.7,
+    2.8
+   ],
+   "note": "LORE: the first plank at my sill, two teal strokes, the counter ticking"
+  },
+  {
+   "id": "S25",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      -1.4,
+      7.9
+     ],
+     [
+      0.9,
+      -0.5,
+      6.95
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.1,
+      -1.3,
+      7.8
+     ],
+     [
+      1.0,
+      -0.5,
+      6.95
+     ],
+     33
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L12.1",
+   "note": "planks growing across"
+  },
+  {
+   "id": "S26",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -4.0,
+      5.2
+     ],
+     [
+      0.0,
+      -0.5,
+      7.0
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      -3.3,
+      5.6
+     ],
+     [
+      0.0,
+      -0.5,
+      7.0
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L12.2",
+   "note": "the whole bridge, thirty planks, from below"
+  },
+  {
+   "id": "S27",
+   "cam": [
+    [
+     0,
+     [
+      1.683,
+      18.084,
+      7.373
+     ],
+     [
+      0.0,
+      21.0,
+      6.9
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      2.316,
+      19.663,
+      7.276
+     ],
+     [
+      0.0,
+      21.0,
+      6.9
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L13",
+   "note": "bridges take years: the old stone bridge for scale"
+  },
+  {
+   "id": "S28",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.7,
+      7.9
+     ],
+     [
+      0.0,
+      -0.5,
+      7.1
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      -1.4,
+      7.7
+     ],
+     [
+      0.0,
+      -0.5,
+      7.1
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "april",
+   "at": "L14",
+   "note": "two mugs, one sliding across the bridge on a little tray"
+  },
+  {
+   "id": "S29",
+   "cam": [
+    [
+     0,
+     [
+      -0.7,
+      -1.2,
+      7.5
+     ],
+     [
+      0.2,
+      -0.5,
+      7.1
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      0.5,
+      -1.0,
+      7.4
+     ],
+     [
+      0.6,
+      -0.5,
+      7.1
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "april",
+   "at": "L14.1",
+   "note": "the tray slides"
+  },
+  {
+   "id": "S30",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.4,
+      8.1
+     ],
+     [
+      0.0,
+      -0.5,
+      7.0
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.0,
+      -1.1,
+      7.9
+     ],
+     [
+      0.0,
+      -0.5,
+      7.0
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "april",
+   "at": "L15",
+   "note": "cards on the bridge between our windows, Eli sly, a card up his sleeve"
+  },
+  {
+   "id": "S31",
+   "cam": [
+    [
+     0,
+     [
+      -0.04999999999999982,
+      -0.8,
+      7.95
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.44999999999999996,
+      -0.8,
+      8.05
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L15.1",
+   "note": "Eli, sly"
+  },
+  {
+   "id": "S32",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.3,
+      8.0
+     ],
+     [
+      0.0,
+      -0.5,
+      7.2
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.0,
+      -1.0,
+      7.8
+     ],
+     [
+      0.0,
+      -0.5,
+      7.2
+     ],
+     27
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L16",
+   "note": "Eli hands me a mug made exactly how I like it (cut before hands meet)"
+  },
+  {
+   "id": "S33",
+   "cam": [
+    [
+     0,
+     [
+      -0.04999999999999982,
+      -0.3,
+      7.95
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.44999999999999996,
+      -0.3,
+      8.05
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L16.1",
+   "note": "me, worried"
+  },
+  {
+   "id": "S34",
+   "cam": [
+    [
+     0,
+     [
+      42.118,
+      -3.486,
+      1.414
+     ],
+     [
+      40.2,
+      -1.2,
+      1.1
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      41.606,
+      -2.876,
+      1.33
+     ],
+     [
+      40.2,
+      -1.2,
+      1.1
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L17",
+   "note": "Pip the terrier leaps at Eli in our hall, tail going"
+  },
+  {
+   "id": "S35",
+   "cam": [
+    [
+     0,
+     [
+      41.039,
+      0.681,
+      0.878
+     ],
+     [
+      40.5,
+      -0.8,
+      0.6
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      40.904,
+      0.31,
+      0.808
+     ],
+     [
+      40.5,
+      -0.8,
+      0.6
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L17.1",
+   "note": "Pip jumping up, close"
+  },
+  {
+   "id": "S36",
+   "cam": [
+    [
+     0,
+     [
+      39.911,
+      -3.581,
+      1.653
+     ],
+     [
+      38.5,
+      -1.9,
+      1.5
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      39.59,
+      -3.199,
+      1.619
+     ],
+     [
+      38.5,
+      -1.9,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L18",
+   "note": "Mom at our door, smiling, saying his name"
+  },
+  {
+   "id": "S37",
+   "cam": [
+    [
+     0,
+     [
+      38.718,
+      -2.428,
+      1.64
+     ],
+     [
+      40.0,
+      -0.9,
+      1.5
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      38.974,
+      -2.123,
+      1.612
+     ],
+     [
+      40.0,
+      -0.9,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L18.1",
+   "note": "me turning, puzzled"
+  },
+  {
+   "id": "S38",
+   "cam": [
+    [
+     0,
+     [
+      39.0,
+      -1.8,
+      2.0
+     ],
+     [
+      40.8,
+      0.6,
+      0.9
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      39.4,
+      -1.5,
+      1.9
+     ],
+     [
+      40.8,
+      0.6,
+      0.9
+     ],
+     31
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L19",
+   "fill": 0.9,
+   "note": "our dinner table, a third plate already set"
+  },
+  {
+   "id": "S39",
+   "cam": [
+    [
+     0,
+     [
+      43.753,
+      0.743,
+      1.661
+     ],
+     [
+      41.6,
+      -0.5,
+      1.4
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      43.236,
+      0.445,
+      1.599
+     ],
+     [
+      41.6,
+      -0.5,
+      1.4
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L19.1",
+   "note": "Eli sitting down at it"
+  },
+  {
+   "id": "S40",
+   "cam": [
+    [
+     0,
+     [
+      40.169,
+      2.932,
+      1.36
+     ],
+     [
+      40.8,
+      1.2,
+      0.9
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      40.335,
+      2.476,
+      1.239
+     ],
+     [
+      40.8,
+      1.2,
+      0.9
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L20",
+   "note": "close on Mom setting it down, at ease"
+  },
+  {
+   "id": "S41",
+   "cam": [
+    [
+     0,
+     [
+      41.129,
+      -0.067,
+      1.583
+     ],
+     [
+      40.8,
+      1.8,
+      1.45
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      41.051,
+      0.376,
+      1.551
+     ],
+     [
+      40.8,
+      1.8,
+      1.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L21",
+   "note": "Mom, very quiet, looking down at the table"
+  },
+  {
+   "id": "S42",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      -0.2,
+      7.5
+     ],
+     [
+      1.42,
+      0.45,
+      6.98
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      0.7,
+      0.0,
+      7.4
+     ],
+     [
+      1.42,
+      0.45,
+      6.98
+     ],
+     42
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "day",
+   "at": "L22",
+   "dof": [
+    1.2,
+    2.8
+   ],
+   "note": "Eli's windowsill: a small box of matches by a potted plant"
+  },
+  {
+   "id": "S43",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      0.0,
+      7.7
+     ],
+     [
+      1.55,
+      0.35,
+      7.0
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.6,
+      0.2,
+      7.5
+     ],
+     [
+      1.5,
+      0.35,
+      7.0
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "day",
+   "at": "L22.1",
+   "note": "the box and loose matches"
+  },
+  {
+   "id": "S44",
+   "cam": [
+    [
+     0,
+     [
+      -0.5,
+      -0.6,
+      7.7
+     ],
+     [
+      3.0,
+      -0.5,
+      7.3
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      0.1,
+      -0.6,
+      7.6
+     ],
+     [
+      3.2,
+      -0.5,
+      7.3
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "day",
+   "at": "L23",
+   "note": "Eli's room through the window: no candles anywhere"
+  },
+  {
+   "id": "S45",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      0.9,
+      7.8
+     ],
+     [
+      3.5,
+      -0.8,
+      6.8
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      0.8,
+      0.8,
+      7.7
+     ],
+     [
+      3.6,
+      -0.8,
+      6.8
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "day",
+   "at": "L23.1",
+   "note": "the room, a bed, a sea bag"
+  },
+  {
+   "id": "S46",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      0.0,
+      9.5
+     ],
+     [
+      0.0,
+      -0.2,
+      0.0
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.0,
+      0.0,
+      8.0
+     ],
+     [
+      0.0,
+      -0.2,
+      0.0
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "day",
+   "at": "L24",
+   "note": "top-down over the lane: the three burnt bridges lie exactly under ours"
+  },
+  {
+   "id": "S47",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -2.0,
+      0.9
+     ],
+     [
+      1.55,
+      -0.5,
+      6.0
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.0,
+      -1.4,
+      1.5
+     ],
+     [
+      1.55,
+      -0.5,
+      6.4
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L24.1",
+   "note": "their far ends, right under Eli's window, Eli leaning out above"
+  },
+  {
+   "id": "S48",
+   "cam": [
+    [
+     0,
+     [
+      -0.1499999999999999,
+      -0.9,
+      8.35
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.44999999999999996,
+      -0.9,
+      7.8500000000000005
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L24.2",
+   "note": "Eli leaning out at his sill"
+  },
+  {
+   "id": "S49",
+   "cam": [
+    [
+     0,
+     [
+      -0.04999999999999982,
+      -0.2,
+      7.8500000000000005
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.44999999999999996,
+      -0.2,
+      8.05
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     33
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "autumn",
+   "at": "L25",
+   "note": "autumn night, string lights on, my breath at the window"
+  },
+  {
+   "id": "S50",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.2,
+      9.2
+     ],
+     [
+      -0.8,
+      0.3,
+      9.4
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.3,
+      -1.0,
+      9.2
+     ],
+     [
+      -0.8,
+      0.3,
+      9.4
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "autumn",
+   "at": "L25.1",
+   "note": "string lights across the bridges"
+  },
+  {
+   "id": "S51",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      -3.6,
+      0.35
+     ],
+     [
+      0.0,
+      -0.4,
+      0.3
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.2,
+      -3.2,
+      0.3
+     ],
+     [
+      0.0,
+      -0.4,
+      0.3
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "night",
+   "at": "L26",
+   "fill": 1.2,
+   "note": "low on the cobbles: the burnt bridges a hand's width up off the ground"
+  },
+  {
+   "id": "S52",
+   "cam": [
+    [
+     0,
+     [
+      1.0,
+      -3.0,
+      0.22
+     ],
+     [
+      -0.5,
+      0.5,
+      0.25
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.7,
+      -2.7,
+      0.2
+     ],
+     [
+      -0.5,
+      0.5,
+      0.25
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "night",
+   "at": "L26.1",
+   "fill": 1.3,
+   "note": "light under the planks"
+  },
+  {
+   "id": "S53",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -6.5,
+      1.6
+     ],
+     [
+      0.0,
+      0.4,
+      1.3
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.0,
+      -6.0,
+      1.7
+     ],
+     [
+      0.0,
+      0.4,
+      1.3
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L27",
+   "fill": 1.2,
+   "note": "wider: lifted to waist height, swaying"
+  },
+  {
+   "id": "S54",
+   "cam": [
+    [
+     0,
+     [
+      1.1,
+      -2.8,
+      1.3
+     ],
+     [
+      -0.8,
+      0.5,
+      1.1
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.9,
+      -2.4,
+      1.4
+     ],
+     [
+      -0.8,
+      0.5,
+      1.1
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L27.1",
+   "fill": 1.2,
+   "note": "swaying planks, close"
+  },
+  {
+   "id": "S55",
+   "cam": [
+    [
+     0,
+     [
+      -1.4,
+      -1.0,
+      7.6
+     ],
+     [
+      0.6,
+      0.5,
+      4.0
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -1.2,
+      -1.0,
+      7.5
+     ],
+     [
+      0.6,
+      0.5,
+      3.7
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L28",
+   "note": "from my window: the burnt bridges a floor below, black and cracked"
+  },
+  {
+   "id": "S56",
+   "cam": [
+    [
+     0,
+     [
+      -1.3,
+      1.6,
+      6.9
+     ],
+     [
+      0.8,
+      0.3,
+      4.8
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      -1.1,
+      1.3,
+      6.9
+     ],
+     [
+      0.8,
+      0.3,
+      4.4
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L28.1",
+   "note": "rising toward us"
+  },
+  {
+   "id": "S57",
+   "cam": [
+    [
+     0,
+     [
+      0.8,
+      -2.0,
+      3.2
+     ],
+     [
+      -0.8,
+      0.5,
+      4.4
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.6,
+      -1.5,
+      3.6
+     ],
+     [
+      -0.6,
+      0.5,
+      4.5
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L28.2",
+   "fill": 1.1,
+   "note": "black cracked planks, swaying UP"
+  },
+  {
+   "id": "S58",
+   "cam": [
+    [
+     0,
+     [
+      -1.4,
+      -1.0,
+      7.6
+     ],
+     [
+      0.4,
+      0.5,
+      5.6
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -1.2,
+      -1.0,
+      7.5
+     ],
+     [
+      0.4,
+      0.5,
+      5.8
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L29",
+   "note": "the next night: higher"
+  },
+  {
+   "id": "S59",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -3.0,
+      4.0
+     ],
+     [
+      0.0,
+      0.5,
+      6.0
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.0,
+      -2.6,
+      4.6
+     ],
+     [
+      0.0,
+      0.5,
+      6.0
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L29.1",
+   "fill": 1.1,
+   "note": "the bridges, from below, higher"
+  },
+  {
+   "id": "S60",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      9.5,
+      2.0
+     ],
+     [
+      0.0,
+      16.0,
+      0.6
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.0,
+      9.0,
+      2.0
+     ],
+     [
+      0.0,
+      16.0,
+      0.6
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L30",
+   "fill": 1.3,
+   "note": "down the lane: someone else's old burnt bridge, flat on the cobbles"
+  },
+  {
+   "id": "S61",
+   "cam": [
+    [
+     0,
+     [
+      2.206,
+      12.197,
+      0.749
+     ],
+     [
+      0.0,
+      13.0,
+      0.25
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      1.654,
+      12.398,
+      0.624
+     ],
+     [
+      0.0,
+      13.0,
+      0.25
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "night",
+   "at": "L30.1",
+   "fill": 1.4,
+   "note": "the other burnt bridge, flat, still"
+  },
+  {
+   "id": "S62",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -9.0,
+      1.6
+     ],
+     [
+      0.0,
+      -1.0,
+      1.4
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.0,
+      -8.6,
+      1.6
+     ],
+     [
+      0.0,
+      0.0,
+      1.4
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L31",
+   "fill": 1.2,
+   "note": "Mrs. Vega crosses the lane so she won't walk under them"
+  },
+  {
+   "id": "S63",
+   "cam": [
+    [
+     0,
+     [
+      3.951,
+      -1.0,
+      1.856
+     ],
+     [
+      0.8,
+      -1.0,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      3.361,
+      -1.0,
+      1.751
+     ],
+     [
+      0.8,
+      -1.0,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L31.1",
+   "fill": 1.3,
+   "note": "her scarlet shawl, hurrying along the wall"
+  },
+  {
+   "id": "S64",
+   "cam": [
+    [
+     0,
+     [
+      -2.4,
+      -1.5,
+      8.3
+     ],
+     [
+      -4.4,
+      1.0,
+      6.6
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      -2.9,
+      -1.3,
+      8.0
+     ],
+     [
+      -4.4,
+      1.0,
+      6.6
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L32",
+   "fill": 0.7,
+   "exp": -0.05,
+   "note": "me waking in bed, the clock glyph at three"
+  },
+  {
+   "id": "S65",
+   "cam": [
+    [
+     0,
+     [
+      -3.0,
+      2.4,
+      7.5
+     ],
+     [
+      -3.5,
+      2.9,
+      6.8
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      -3.1,
+      2.1,
+      7.4
+     ],
+     [
+      -3.5,
+      2.9,
+      6.8
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L32.1",
+   "fill": 0.9,
+   "note": "the clock glyph at three"
+  },
+  {
+   "id": "S66",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      -0.6,
+      7.9
+     ],
+     [
+      -2.5,
+      -0.5,
+      7.4
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      -1.3,
+      -0.6,
+      7.8
+     ],
+     [
+      -2.5,
+      -0.5,
+      7.4
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "P01",
+   "fill": 0.5,
+   "exp": -0.15,
+   "note": "drop: my dark window, still"
+  },
+  {
+   "id": "S67",
+   "cam": [
+    [
+     0,
+     [
+      -0.5,
+      0.2,
+      8.4
+     ],
+     [
+      -1.5,
+      0.55,
+      7.1
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.8,
+      0.3,
+      8.2
+     ],
+     [
+      -1.5,
+      0.55,
+      7.0
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L33",
+   "note": "the oldest burnt bridge's end resting on my windowsill"
+  },
+  {
+   "id": "S68",
+   "cam": [
+    [
+     0,
+     [
+      -3.0,
+      -0.5,
+      7.7
+     ],
+     [
+      -1.3,
+      0.55,
+      7.0
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -2.7,
+      -0.2,
+      7.6
+     ],
+     [
+      -1.3,
+      0.55,
+      7.0
+     ],
+     33
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L33.1",
+   "fill": 0.9,
+   "note": "charred wood on my sill, from inside"
+  },
+  {
+   "id": "S69",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      0.6,
+      5.8
+     ],
+     [
+      -1.2,
+      0.55,
+      6.9
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.2,
+      0.6,
+      6.0
+     ],
+     [
+      -1.2,
+      0.55,
+      6.9
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L33.2",
+   "fill": 1.1,
+   "note": "the other two just below"
+  },
+  {
+   "id": "S70",
+   "cam": [
+    [
+     0,
+     [
+      -1.4,
+      -5.0,
+      1.7
+     ],
+     [
+      -0.7,
+      -1.3,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -1.3,
+      -4.2,
+      1.6
+     ],
+     [
+      -0.6,
+      -0.8,
+      1.3
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L34",
+   "fill": 1.1,
+   "torch": [
+    0.0,
+    0.55,
+    1.3,
+    0.0,
+    0.4
+   ],
+   "note": "me on the cobbles in my hoodie, phone torch on"
+  },
+  {
+   "id": "S71",
+   "cam": [
+    [
+     0,
+     [
+      -1.598,
+      -2.755,
+      1.526
+     ],
+     [
+      -0.7,
+      -1.2,
+      1.4
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -1.398,
+      -2.409,
+      1.498
+     ],
+     [
+      -0.7,
+      -1.2,
+      1.4
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L34.1",
+   "fill": 1.2,
+   "torch": [
+    0.0,
+    0.55,
+    1.3,
+    0.0,
+    0.4
+   ],
+   "note": "my face in the torch light"
+  },
+  {
+   "id": "S72",
+   "cam": [
+    [
+     0,
+     [
+      -1.45,
+      0.55,
+      1.6
+     ],
+     [
+      0.6,
+      0.55,
+      1.2
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -1.0,
+      0.55,
+      1.5
+     ],
+     [
+      0.7,
+      0.55,
+      1.2
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "night",
+   "at": "L35",
+   "fill": 1.2,
+   "torch": [
+    0.0,
+    0.55,
+    1.3,
+    0.0,
+    0.4
+   ],
+   "note": "along the lowest burnt bridge to its middle"
+  },
+  {
+   "id": "S73",
+   "cam": [
+    [
+     0,
+     [
+      -0.55,
+      0.55,
+      2.4
+     ],
+     [
+      0.0,
+      0.55,
+      1.28
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.3,
+      0.55,
+      2.0
+     ],
+     [
+      0.0,
+      0.55,
+      1.28
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L35.2",
+   "fill": 1.2,
+   "torch": [
+    0.0,
+    0.55,
+    1.3,
+    0.0,
+    0.4
+   ],
+   "note": "the one unburnt plank, pale in the soot"
+  },
+  {
+   "id": "S74",
+   "cam": [
+    [
+     0,
+     [
+      -0.55,
+      0.55,
+      2.55
+     ],
+     [
+      0.0,
+      0.55,
+      1.3
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      -0.35,
+      0.55,
+      2.0
+     ],
+     [
+      0.0,
+      0.55,
+      1.3
+     ],
+     38
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0015,
+   "look": "night",
+   "at": "L36",
+   "fill": 1.3,
+   "torch": [
+    0.0,
+    0.55,
+    1.3,
+    0.0,
+    0.4
+   ],
+   "note": "two soot handprints, side by side, on the plank"
+  },
+  {
+   "id": "S75",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      0.55,
+      2.0
+     ],
+     [
+      0.0,
+      0.55,
+      1.3
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      -0.2,
+      0.55,
+      1.75
+     ],
+     [
+      0.0,
+      0.55,
+      1.3
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0015,
+   "look": "night",
+   "at": "L36.2",
+   "fill": 1.3,
+   "torch": [
+    0.0,
+    0.55,
+    1.3,
+    0.0,
+    0.4
+   ],
+   "note": "close: side by side"
+  },
+  {
+   "id": "S76",
+   "cam": [
+    [
+     0,
+     [
+      -0.9,
+      -0.9,
+      1.9
+     ],
+     [
+      0.1,
+      0.3,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.7,
+      -0.6,
+      1.8
+     ],
+     [
+      0.1,
+      0.4,
+      1.3
+     ],
+     31
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L37",
+   "fill": 1.3,
+   "torch": [
+    0.0,
+    0.55,
+    1.3,
+    0.0,
+    -0.3
+   ],
+   "note": "my hand held over one print, matching it"
+  },
+  {
+   "id": "S77",
+   "cam": [
+    [
+     0,
+     [
+      -0.9,
+      -1.2,
+      5.4
+     ],
+     [
+      1.7,
+      -0.5,
+      7.4
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -0.6,
+      -1.1,
+      5.7
+     ],
+     [
+      1.7,
+      -0.5,
+      7.4
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L37.1",
+   "note": "across the alley, Eli's window dark"
+  },
+  {
+   "id": "S78",
+   "cam": [
+    [
+     0,
+     [
+      -0.55,
+      -1.6,
+      2.45
+     ],
+     [
+      0.0,
+      -1.6,
+      0.9
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      -0.35,
+      -1.6,
+      2.0
+     ],
+     [
+      0.0,
+      -1.6,
+      0.9
+     ],
+     38
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L38",
+   "fill": 1.3,
+   "torch": [
+    0.0,
+    -1.6,
+    0.9,
+    0.0,
+    -0.6
+   ],
+   "note": "the second burnt bridge's middle plank, the same notches"
+  },
+  {
+   "id": "S79",
+   "cam": [
+    [
+     0,
+     [
+      -0.55,
+      1.75,
+      2.45
+     ],
+     [
+      0.0,
+      1.75,
+      0.7
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      -0.35,
+      1.75,
+      2.0
+     ],
+     [
+      0.0,
+      1.75,
+      0.7
+     ],
+     38
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L38.1",
+   "fill": 1.3,
+   "torch": [
+    0.0,
+    1.75,
+    0.7,
+    0.0,
+    0.8
+   ],
+   "note": "the third, the same prints"
+  },
+  {
+   "id": "S80",
+   "cam": [
+    [
+     0,
+     [
+      0.55,
+      0.55,
+      1.9
+     ],
+     [
+      0.22,
+      0.55,
+      1.28
+     ],
+     38
+    ],
+    [
+     1,
+     [
+      0.38,
+      0.55,
+      1.6
+     ],
+     [
+      0.2,
+      0.55,
+      1.28
+     ],
+     44
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0015,
+   "look": "night",
+   "at": "L39",
+   "fill": 1.3,
+   "torch": [
+    0.0,
+    0.55,
+    1.3,
+    0.0,
+    0.4
+   ],
+   "note": "tight: the date notches, a nine, the month glyph"
+  },
+  {
+   "id": "S81",
+   "cam": [
+    [
+     0,
+     [
+      -1.398,
+      -2.728,
+      1.69
+     ],
+     [
+      -0.4,
+      -1.0,
+      1.55
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -1.198,
+      -2.382,
+      1.662
+     ],
+     [
+      -0.4,
+      -1.0,
+      1.55
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L40",
+   "fill": 1.2,
+   "note": "I look up at Eli's window, scared"
+  },
+  {
+   "id": "S82",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      -1.2,
+      1.0
+     ],
+     [
+      1.55,
+      -0.5,
+      7.2
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      -0.2,
+      -1.0,
+      1.4
+     ],
+     [
+      1.55,
+      -0.5,
+      7.6
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L40.1",
+   "note": "up the wall to the dark window"
+  },
+  {
+   "id": "S83",
+   "cam": [
+    [
+     0,
+     [
+      -1.1,
+      -0.7,
+      8.8
+     ],
+     [
+      3.3,
+      -1.1,
+      6.3
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      -0.7,
+      -0.7,
+      8.6
+     ],
+     [
+      3.3,
+      -1.1,
+      6.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "night",
+   "at": "L41",
+   "fill": 1.1,
+   "note": "through his window: a packed sea bag by his bed"
+  },
+  {
+   "id": "S84",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      0.5,
+      8.8
+     ],
+     [
+      5.3,
+      0.7,
+      7.55
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      -0.3,
+      0.5,
+      8.6
+     ],
+     [
+      5.3,
+      0.7,
+      7.55
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "night",
+   "at": "L41.1",
+   "fill": 1.1,
+   "note": "a coil of rope on a hook"
+  },
+  {
+   "id": "S85",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      -0.2,
+      7.5
+     ],
+     [
+      1.3,
+      0.85,
+      6.93
+     ],
+     38
+    ],
+    [
+     1,
+     [
+      0.8,
+      0.1,
+      7.4
+     ],
+     [
+      1.3,
+      0.85,
+      6.93
+     ],
+     44
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L42",
+   "fill": 1.1,
+   "dof": [
+    1.4,
+    2.8
+   ],
+   "note": "a plain card on his sill with a boat glyph and a ten"
+  },
+  {
+   "id": "S86",
+   "cam": [
+    [
+     0,
+     [
+      0.7,
+      0.5,
+      7.3
+     ],
+     [
+      1.3,
+      0.85,
+      6.93
+     ],
+     44
+    ],
+    [
+     1,
+     [
+      0.95,
+      0.65,
+      7.2
+     ],
+     [
+      1.3,
+      0.85,
+      6.93
+     ],
+     52
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L42.1",
+   "fill": 1.1,
+   "note": "the ten"
+  },
+  {
+   "id": "S87",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      1.1,
+      7.9
+     ],
+     [
+      2.0,
+      0.4,
+      7.0
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.1,
+      1.0,
+      7.7
+     ],
+     [
+      2.0,
+      0.4,
+      7.0
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L42.2",
+   "fill": 1.1,
+   "note": "the sill: card, matches, plant"
+  },
+  {
+   "id": "S88",
+   "cam": [
+    [
+     0,
+     [
+      41.316,
+      -0.127,
+      1.59
+     ],
+     [
+      40.8,
+      1.8,
+      1.45
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      41.2,
+      0.306,
+      1.558
+     ],
+     [
+      40.8,
+      1.8,
+      1.45
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L43",
+   "note": "morning: Mom at our table, quiet"
+  },
+  {
+   "id": "S89",
+   "cam": [
+    [
+     0,
+     [
+      40.22,
+      0.206,
+      1.569
+     ],
+     [
+      40.8,
+      1.8,
+      1.45
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      40.339,
+      0.535,
+      1.544
+     ],
+     [
+      40.8,
+      1.8,
+      1.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L43.1",
+   "note": "then nodding"
+  },
+  {
+   "id": "S90",
+   "cam": [
+    [
+     0,
+     [
+      39.2,
+      -1.6,
+      2.0
+     ],
+     [
+      40.8,
+      1.0,
+      1.1
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      39.6,
+      -1.3,
+      1.9
+     ],
+     [
+      40.8,
+      1.0,
+      1.1
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "home",
+   "at": "L43.2",
+   "fill": 0.9,
+   "note": "the table, the three of us"
+  },
+  {
+   "id": "S91",
+   "cam": [
+    [
+     0,
+     [
+      -0.5,
+      0.55,
+      2.1
+     ],
+     [
+      0.0,
+      0.55,
+      0.1
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.3,
+      0.55,
+      1.5
+     ],
+     [
+      0.0,
+      0.55,
+      0.1
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "day",
+   "at": "L44",
+   "note": "the handprints again, close, daylight: we never fought"
+  },
+  {
+   "id": "S92",
+   "cam": [
+    [
+     0,
+     [
+      -0.45,
+      0.55,
+      1.7
+     ],
+     [
+      0.0,
+      0.55,
+      0.08
+     ],
+     38
+    ],
+    [
+     1,
+     [
+      -0.3,
+      0.55,
+      1.3
+     ],
+     [
+      0.0,
+      0.55,
+      0.08
+     ],
+     48
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0015,
+   "look": "day",
+   "at": "L44.1",
+   "note": "the two hands, close"
+  },
+  {
+   "id": "S93",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -3.4,
+      7.8
+     ],
+     [
+      0.0,
+      -0.5,
+      7.7
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.0,
+      -3.0,
+      7.9
+     ],
+     [
+      0.0,
+      -0.5,
+      7.7
+     ],
+     27
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "autumn",
+   "at": "L45",
+   "fill": 1.1,
+   "exp": 0.1,
+   "note": "a memory, last November: Eli and me in the middle of our bridge at night, string lights on, soft"
+  },
+  {
+   "id": "S94",
+   "cam": [
+    [
+     0,
+     [
+      0.05,
+      -2.2,
+      8.2
+     ],
+     [
+      0.0,
+      -0.5,
+      7.8
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.05,
+      -1.9,
+      8.1
+     ],
+     [
+      0.0,
+      -0.5,
+      7.8
+     ],
+     33
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "autumn",
+   "at": "L45.1",
+   "fill": 1.1,
+   "exp": 0.1,
+   "note": "closer, both soft"
+  },
+  {
+   "id": "S95",
+   "cam": [
+    [
+     0,
+     [
+      -1.9,
+      -1.4,
+      8.8
+     ],
+     [
+      0.0,
+      -0.5,
+      7.5
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -1.7,
+      -1.3,
+      8.6
+     ],
+     [
+      0.0,
+      -0.5,
+      7.5
+     ],
+     25
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "autumn",
+   "at": "L46",
+   "exp": 0.1,
+   "note": "wide: both of us in the middle, two matches held out in the dark (never lit)"
+  },
+  {
+   "id": "S96",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.5,
+      7.9
+     ],
+     [
+      0.0,
+      -0.5,
+      7.8
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.0,
+      -1.2,
+      7.9
+     ],
+     [
+      0.0,
+      -0.5,
+      7.8
+     ],
+     46
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "autumn",
+   "at": "L46.1",
+   "fill": 1.1,
+   "exp": 0.1,
+   "note": "two matches held out"
+  },
+  {
+   "id": "S97",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -2.0,
+      8.0
+     ],
+     [
+      0.0,
+      -0.5,
+      7.9
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.0,
+      -1.7,
+      8.0
+     ],
+     [
+      0.0,
+      -0.5,
+      7.9
+     ],
+     46
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "autumn",
+   "at": "L47",
+   "fill": 1.1,
+   "exp": 0.1,
+   "note": "my face and Eli's, side by side, eyes shut"
+  },
+  {
+   "id": "S98",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      -1.5,
+      7.7
+     ],
+     [
+      0.0,
+      -0.5,
+      7.9
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      0.1,
+      -1.4,
+      7.8
+     ],
+     [
+      0.0,
+      -0.5,
+      7.9
+     ],
+     38
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "autumn",
+   "at": "L47.1",
+   "fill": 1.1,
+   "exp": 0.1,
+   "note": "eyes shut"
+  },
+  {
+   "id": "S99",
+   "cam": [
+    [
+     0,
+     [
+      -0.3500000000000001,
+      -0.8,
+      7.95
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.25,
+      -0.8,
+      8.05
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     33
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L48",
+   "note": "spring: Eli at his window waving for the first time"
+  },
+  {
+   "id": "S100",
+   "cam": [
+    [
+     0,
+     [
+      0.1499999999999999,
+      -0.25,
+      7.95
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.3500000000000001,
+      -0.25,
+      8.05
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L48.2",
+   "note": "me watching him, a stranger again"
+  },
+  {
+   "id": "S101",
+   "cam": [
+    [
+     0,
+     [
+      -1.3,
+      -1.4,
+      7.9
+     ],
+     [
+      2.0,
+      -0.3,
+      7.2
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      -1.0,
+      -1.2,
+      7.8
+     ],
+     [
+      2.1,
+      -0.3,
+      7.3
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L48.3",
+   "note": "the first time"
+  },
+  {
+   "id": "S102",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -4.0,
+      2.6
+     ],
+     [
+      0.0,
+      0.5,
+      6.2
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      0.0,
+      -3.4,
+      3.2
+     ],
+     [
+      0.0,
+      0.5,
+      6.4
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L49",
+   "fill": 1.2,
+   "note": "the three burnt bridges at night from below, raised toward our windows, string lights over them"
+  },
+  {
+   "id": "S103",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.0,
+      7.0
+     ],
+     [
+      0.0,
+      0.5,
+      5.0
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.0,
+      -0.8,
+      7.4
+     ],
+     [
+      0.0,
+      0.5,
+      4.6
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L49.1",
+   "fill": 1.1,
+   "note": "rising when it gets cold"
+  },
+  {
+   "id": "S104",
+   "cam": [
+    [
+     0,
+     [
+      -0.55,
+      0.55,
+      5.6
+     ],
+     [
+      0.0,
+      0.55,
+      4.0
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      -0.35,
+      0.55,
+      5.1
+     ],
+     [
+      0.0,
+      0.55,
+      4.0
+     ],
+     38
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L49.2",
+   "fill": 1.3,
+   "torch": [
+    0.0,
+    0.55,
+    4.0,
+    0.0,
+    -0.4
+   ],
+   "note": "a burnt bridge remembers: the handprint plank"
+  },
+  {
+   "id": "S105",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      0.55,
+      4.9
+     ],
+     [
+      0.0,
+      0.55,
+      3.95
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -0.3,
+      0.55,
+      4.5
+     ],
+     [
+      0.0,
+      0.55,
+      3.95
+     ],
+     46
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L49.3",
+   "fill": 1.3,
+   "note": "what the two of you forgot"
+  },
+  {
+   "id": "S106",
+   "cam": [
+    [
+     0,
+     [
+      -1.2,
+      -1.0,
+      7.7
+     ],
+     [
+      0.5,
+      0.5,
+      6.4
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -1.0,
+      -0.9,
+      7.6
+     ],
+     [
+      0.5,
+      0.5,
+      6.7
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L49.4",
+   "note": "and reaches back"
+  },
+  {
+   "id": "S107",
+   "cam": [
+    [
+     0,
+     [
+      -1.974,
+      -1.301,
+      7.147
+     ],
+     [
+      -1.3,
+      0.55,
+      6.8
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -1.805,
+      -0.838,
+      7.06
+     ],
+     [
+      -1.3,
+      0.55,
+      6.8
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "night",
+   "at": "L49.5",
+   "fill": 1.1,
+   "note": "on the night it burned"
+  },
+  {
+   "id": "S108",
+   "cam": [
+    [
+     0,
+     [
+      0.1499999999999999,
+      -0.3,
+      7.95
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.3500000000000001,
+      -0.3,
+      8.15
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L50",
+   "note": "me at my window pointing down at the handprints"
+  },
+  {
+   "id": "S109",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.0,
+      9.0
+     ],
+     [
+      0.0,
+      0.55,
+      0.0
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.0,
+      -0.7,
+      8.4
+     ],
+     [
+      0.0,
+      0.55,
+      0.0
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L50.1",
+   "note": "down at the handprints"
+  },
+  {
+   "id": "S110",
+   "cam": [
+    [
+     0,
+     [
+      -0.1499999999999999,
+      -0.8,
+      7.95
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.3500000000000001,
+      -0.8,
+      8.05
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L50.2",
+   "note": "Eli staring at the matches, blank, like a stranger"
+  },
+  {
+   "id": "S111",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.0,
+      7.7
+     ],
+     [
+      1.42,
+      0.5,
+      6.98
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      0.8,
+      0.2,
+      7.5
+     ],
+     [
+      1.42,
+      0.5,
+      6.98
+     ],
+     44
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "winter",
+   "at": "L50.3",
+   "dof": [
+    1.1,
+    2.8
+   ],
+   "note": "the matches on his sill"
+  },
+  {
+   "id": "S112",
+   "cam": [
+    [
+     0,
+     [
+      0.3500000000000001,
+      -0.7,
+      7.75
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      0.6499999999999999,
+      -0.7,
+      7.8500000000000005
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L50.4",
+   "note": "like he'd never seen them before"
+  },
+  {
+   "id": "S113",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      -1.0,
+      7.4
+     ],
+     [
+      2.0,
+      -0.7,
+      7.0
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.8,
+      -0.9,
+      7.3
+     ],
+     [
+      1.9,
+      -0.7,
+      7.0
+     ],
+     46
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "winter",
+   "at": "L51",
+   "note": "his hand at the end of his sleeve sweeps the box into his pocket"
+  },
+  {
+   "id": "S114",
+   "cam": [
+    [
+     0,
+     [
+      0.25,
+      -0.8,
+      7.95
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      0.6499999999999999,
+      -0.8,
+      7.8500000000000005
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L51.1",
+   "note": "the matches in his pocket"
+  },
+  {
+   "id": "S115",
+   "cam": [
+    [
+     0,
+     [
+      -0.04999999999999982,
+      -0.7,
+      7.95
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.44999999999999996,
+      -0.7,
+      8.0
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L52",
+   "note": "Eli grins across the bridge: so I'd have to miss you?"
+  },
+  {
+   "id": "S116",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.2,
+      8.0
+     ],
+     [
+      1.3,
+      -0.5,
+      7.5
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.3,
+      -1.0,
+      7.9
+     ],
+     [
+      1.5,
+      -0.5,
+      7.5
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L52.1",
+   "note": "across the bridge, toward him"
+  },
+  {
+   "id": "S117",
+   "cam": [
+    [
+     0,
+     [
+      -0.04999999999999982,
+      -0.3,
+      7.95
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.55,
+      -0.3,
+      8.05
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L53",
+   "note": "me, laughing: good"
+  },
+  {
+   "id": "S118",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.6,
+      8.2
+     ],
+     [
+      0.0,
+      -0.5,
+      7.2
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.0,
+      -1.2,
+      8.0
+     ],
+     [
+      0.0,
+      -0.5,
+      7.2
+     ],
+     29
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L53.1",
+   "note": "both of us, laughing across the bridge"
+  },
+  {
+   "id": "S119",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -6.0,
+      13.5
+     ],
+     [
+      0.0,
+      -0.3,
+      3.0
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      0.0,
+      -5.2,
+      12.5
+     ],
+     [
+      0.0,
+      -0.3,
+      3.5
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "winter",
+   "at": "L54",
+   "note": "the alley from above: our bridge whole, the burnt three flat and still"
+  },
+  {
+   "id": "S120",
+   "cam": [
+    [
+     0,
+     [
+      -0.6,
+      -2.4,
+      9.6
+     ],
+     [
+      0.2,
+      0.2,
+      2.0
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      -0.4,
+      -1.8,
+      9.2
+     ],
+     [
+      0.2,
+      0.2,
+      2.0
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L54.1",
+   "note": "the burnt three, still"
+  },
+  {
+   "id": "S121",
+   "cam": [
+    [
+     0,
+     [
+      -1.3,
+      -0.5,
+      7.5
+     ],
+     [
+      3.2,
+      -0.5,
+      7.6
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      1.4,
+      -0.5,
+      7.5
+     ],
+     [
+      6.5,
+      -0.5,
+      8.4
+     ],
+     22
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "winter",
+   "at": "L55",
+   "note": "along our bridge to Eli's window, and past it, to the open sky"
+  },
+  {
+   "id": "S122",
+   "cam": [
+    [
+     0,
+     [
+      1.0,
+      -1.1,
+      7.7
+     ],
+     [
+      7.0,
+      -0.5,
+      9.5
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      3.5,
+      -1.0,
+      7.8
+     ],
+     [
+      9.0,
+      -0.3,
+      11.0
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "winter",
+   "at": "L55.1",
+   "note": "past the window, to the sky"
+  },
+  {
+   "id": "S123",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      14.0,
+      1.4
+     ],
+     [
+      0.2,
+      28.0,
+      1.5
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -0.3,
+      17.0,
+      1.5
+     ],
+     [
+      0.2,
+      32.0,
+      1.5
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "dawn",
+   "at": "L56",
+   "fill": 1.1,
+   "note": "the end of the lane at dawn: Eli with his sea bag, walking toward the sea"
+  },
+  {
+   "id": "S124",
+   "cam": [
+    [
+     0,
+     [
+      1.192,
+      28.0,
+      1.723
+     ],
+     [
+      0.1,
+      31.0,
+      1.5
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.987,
+      28.563,
+      1.681
+     ],
+     [
+      0.1,
+      31.0,
+      1.5
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "dawn",
+   "at": "L56.1",
+   "fill": 1.1,
+   "note": "Eli turns and waves back"
+  },
+  {
+   "id": "S125",
+   "cam": [
+    [
+     0,
+     [
+      0.04999999999999982,
+      -0.25,
+      7.95
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.44999999999999996,
+      -0.25,
+      8.05
+     ],
+     [
+      -2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L57",
+   "note": "winter: me at my window, frost on the glass, soft"
+  },
+  {
+   "id": "S126",
+   "cam": [
+    [
+     0,
+     [
+      -0.7,
+      -1.0,
+      8.1
+     ],
+     [
+      -2.3,
+      -0.5,
+      7.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -1.0,
+      -0.9,
+      7.9
+     ],
+     [
+      -2.3,
+      -0.5,
+      7.3
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "winter",
+   "at": "L57.1",
+   "note": "frost on my window"
+  },
+  {
+   "id": "S127",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      -1.9,
+      7.4
+     ],
+     [
+      2.6,
+      -0.5,
+      7.0
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.9,
+      -1.7,
+      7.5
+     ],
+     [
+      2.9,
+      -0.5,
+      7.0
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "look": "night",
+   "at": "L58",
+   "fill": 1.2,
+   "note": "night: a new plank appears past Eli's window, the counter ticks"
+  },
+  {
+   "id": "S128",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      -1.2,
+      7.7
+     ],
+     [
+      1.9,
+      -0.5,
+      6.95
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.5,
+      -1.0,
+      7.6
+     ],
+     [
+      2.2,
+      -0.5,
+      6.95
+     ],
+     44
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L58.1",
+   "fill": 1.2,
+   "note": "the new plank"
+  },
+  {
+   "id": "S129",
+   "cam": [
+    [
+     0,
+     [
+      -8.0,
+      -9.0,
+      15.0
+     ],
+     [
+      7.0,
+      4.0,
+      12.0
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      -6.0,
+      -7.0,
+      14.5
+     ],
+     [
+      8.0,
+      8.0,
+      13.0
+     ],
+     22
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "dusk",
+   "at": "L59",
+   "fill": 0.8,
+   "note": "wide: the bridge stretches up from Eli's window over the terracotta roofs"
+  },
+  {
+   "id": "S130",
+   "cam": [
+    [
+     0,
+     [
+      3.0,
+      -8.0,
+      12.0
+     ],
+     [
+      10.0,
+      4.0,
+      11.5
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      4.0,
+      -6.0,
+      13.0
+     ],
+     [
+      11.0,
+      8.0,
+      13.0
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "dusk",
+   "at": "L59.1",
+   "fill": 0.8,
+   "note": "over the roofs"
+  },
+  {
+   "id": "S131",
+   "cam": [
+    [
+     0,
+     [
+      22.0,
+      10.0,
+      30.0
+     ],
+     [
+      4.0,
+      70.0,
+      6.0
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      20.0,
+      20.0,
+      30.0
+     ],
+     [
+      3.0,
+      90.0,
+      6.0
+     ],
+     22
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "look": "dusk",
+   "at": "L60",
+   "fill": 0.7,
+   "note": "from high above the town: the bridge going out over the sea, a thin line of planks in the coral dusk"
+  },
+  {
+   "id": "S132",
+   "cam": [
+    [
+     0,
+     [
+      14.0,
+      96.0,
+      10.0
+     ],
+     [
+      -4.0,
+      144.0,
+      3.6
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      10.0,
+      106.0,
+      9.0
+     ],
+     [
+      -4.0,
+      148.0,
+      3.8
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "dusk",
+   "at": "L61",
+   "fill": 0.8,
+   "note": "far out on the water: the bridge's end, and beyond it a small boat's light"
+  },
+  {
+   "id": "S133",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      132.0,
+      6.0
+     ],
+     [
+      -5.0,
+      152.0,
+      4.0
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -1.0,
+      138.0,
+      5.0
+     ],
+     [
+      -5.5,
+      152.0,
+      4.0
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "dusk",
+   "at": "L61.1",
+   "fill": 0.8,
+   "note": "the boat's light"
+  },
+  {
+   "id": "S134",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -8.2,
+      2.2
+     ],
+     [
+      0.0,
+      5.0,
+      6.4
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      0.0,
+      -7.4,
+      2.8
+     ],
+     [
+      0.0,
+      5.0,
+      6.6
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L62",
+   "fill": 0.9,
+   "note": "spring: the alley, window boxes in bloom, Eli's shutters open"
+  },
+  {
+   "id": "S135",
+   "cam": [
+    [
+     0,
+     [
+      -0.5499999999999998,
+      -0.9,
+      8.15
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.04999999999999982,
+      -0.9,
+      7.8500000000000005
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L62.1",
+   "note": "Eli's open window, nobody yet"
+  },
+  {
+   "id": "S136",
+   "cam": [
+    [
+     0,
+     [
+      1.0,
+      -4.6,
+      3.0
+     ],
+     [
+      1.2,
+      0.0,
+      7.0
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      1.0,
+      -3.8,
+      3.4
+     ],
+     [
+      1.2,
+      0.0,
+      7.0
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L62.2",
+   "note": "April light on the shutters"
+  },
+  {
+   "id": "S137",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -11.5,
+      1.7
+     ],
+     [
+      0.0,
+      -3.0,
+      1.2
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.0,
+      -10.8,
+      1.7
+     ],
+     [
+      0.0,
+      -3.0,
+      1.2
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L63",
+   "note": "me and Eli walking down the cobbles toward the three burnt bridges"
+  },
+  {
+   "id": "S138",
+   "cam": [
+    [
+     0,
+     [
+      -0.9,
+      -6.0,
+      1.3
+     ],
+     [
+      0.0,
+      -3.0,
+      1.0
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.6,
+      -5.4,
+      1.3
+     ],
+     [
+      0.0,
+      -3.0,
+      1.0
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L63.1",
+   "note": "side by side"
+  },
+  {
+   "id": "S139",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -7.384,
+      1.814
+     ],
+     [
+      0.0,
+      -4.4,
+      1.5
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      -6.787,
+      1.751
+     ],
+     [
+      0.0,
+      -4.4,
+      1.5
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L64",
+   "note": "me turning to Eli, both smiling"
+  },
+  {
+   "id": "S140",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -5.0,
+      1.9
+     ],
+     [
+      0.0,
+      -2.5,
+      1.0
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      -1.0,
+      -1.6,
+      7.8
+     ],
+     [
+      1.0,
+      -0.15,
+      0.3
+     ],
+     27
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "april",
+   "at": "L64.1",
+   "note": "then tilt down to the three burnt bridges (the loop)"
+  }
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L02",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L02",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L03",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L10+0.5",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.2,
+    "head": [
+     0,
+     8
+    ],
+    "side": [
+     0,
+     20
+    ]
+   },
+   {
+    "at": "L11",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L11",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L11",
+    "pos": [
+     -0.55,
+     -4.5,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L11+0.4",
+    "pos": [
+     -0.55,
+     -4.5,
+     0.0
+    ],
+    "blend": 0.25,
+    "head": [
+     -10,
+     4
+    ],
+    "lean": -6
+   },
+   {
+    "at": "L12",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L14",
+    "pos": [
+     -0.55,
+     -4.5,
+     0.0
+    ]
+   },
+   {
+    "at": "L14",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L15",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.2,
+    "expr": "smirk",
+    "head": [
+     0,
+     18
+    ]
+   },
+   {
+    "at": "L16",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.3,
+    "expr": "worried",
+    "head": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L17",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L18",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L18",
+    "pos": [
+     40.0,
+     -0.9,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 160,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L18+0.7",
+    "pos": [
+     40.0,
+     -0.9,
+     0.0
+    ],
+    "blend": 0.3,
+    "head": [
+     -30,
+     0
+    ],
+    "expr": "worried"
+   },
+   {
+    "at": "L19",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L25",
+    "pos": [
+     40.0,
+     -0.9,
+     0.0
+    ]
+   },
+   {
+    "at": "L25",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 6,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L26",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L30",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L32",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L32",
+    "pos": [
+     -4.3,
+     0.4,
+     6.55
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L32+0.8",
+    "pos": [
+     -4.3,
+     0.4,
+     6.55
+    ],
+    "blend": 0.4,
+    "head": [
+     0,
+     0
+    ],
+    "expr": "scared"
+   },
+   {
+    "at": "L33",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -4.3,
+     0.4,
+     6.55
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -0.9,
+     -2.3,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     12
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L34>",
+    "pos": [
+     -0.7,
+     -1.2,
+     0.0
+    ]
+   },
+   {
+    "at": "L37",
+    "pos": [
+     -0.7,
+     -1.2,
+     0.0
+    ],
+    "blend": 0.4,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     22
+    ]
+   },
+   {
+    "at": "L37",
+    "pos": [
+     -0.7,
+     -1.2,
+     0.0
+    ]
+   },
+   {
+    "at": "L37",
+    "pos": [
+     0.55,
+     -0.1,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "soft",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     24
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L37+0.4",
+    "pos": [
+     0.55,
+     -0.1,
+     0.0
+    ],
+    "blend": 0.35,
+    "arms": [
+     0,
+     70
+    ]
+   },
+   {
+    "at": "L37.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L40",
+    "pos": [
+     0.55,
+     -0.1,
+     0.0
+    ]
+   },
+   {
+    "at": "L40",
+    "pos": [
+     -0.4,
+     -1.0,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "scared",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -26
+    ],
+    "lean": -6,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L41",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L45",
+    "pos": [
+     -0.4,
+     -1.0,
+     0.0
+    ]
+   },
+   {
+    "at": "L45",
+    "pos": [
+     -0.37,
+     -0.5,
+     6.96
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "soft",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L45+0.8",
+    "pos": [
+     -0.37,
+     -0.5,
+     6.96
+    ],
+    "blend": 0.5,
+    "head": [
+     0,
+     5
+    ]
+   },
+   {
+    "at": "L46",
+    "pos": [
+     -0.37,
+     -0.5,
+     6.96
+    ],
+    "blend": 0.4,
+    "arms": [
+     0,
+     80
+    ],
+    "expr": "soft"
+   },
+   {
+    "at": "L47",
+    "pos": [
+     -0.37,
+     -0.5,
+     6.96
+    ],
+    "blend": 0.3,
+    "expr": "shut",
+    "arms": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L48",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L48.2",
+    "pos": [
+     -0.37,
+     -0.5,
+     6.96
+    ]
+   },
+   {
+    "at": "L48.2",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L49",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L50",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L50",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     60
+    ],
+    "head": [
+     0,
+     14
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L53",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.25,
+    "expr": "laugh",
+    "head": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L55",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L57",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L57",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "soft",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L58",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L63",
+    "pos": [
+     -2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L63",
+    "pos": [
+     -0.45,
+     -9.0,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L63>",
+    "pos": [
+     -0.45,
+     -4.4,
+     0.0
+    ]
+   },
+   {
+    "at": "L64",
+    "pos": [
+     -0.45,
+     -4.4,
+     0.0
+    ],
+    "blend": 0.5,
+    "yaw": 150,
+    "expr": "smile",
+    "head": [
+     20,
+     0
+    ]
+   }
+  ],
+  "eli": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L09",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L09",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     100
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L09+0.6",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.25,
+    "arms": [
+     0,
+     80
+    ],
+    "head": [
+     10,
+     0
+    ]
+   },
+   {
+    "at": "L09+1.2",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.25,
+    "arms": [
+     0,
+     110
+    ],
+    "head": [
+     -8,
+     0
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L10+0.5",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.2,
+    "head": [
+     0,
+     -6
+    ]
+   },
+   {
+    "at": "L11",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L11",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L11",
+    "pos": [
+     0.55,
+     -4.5,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L11+0.2",
+    "pos": [
+     0.55,
+     -4.5,
+     0.0
+    ],
+    "blend": 0.3,
+    "side": [
+     0,
+     85
+    ],
+    "head": [
+     10,
+     0
+    ]
+   },
+   {
+    "at": "L12",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L14",
+    "pos": [
+     0.55,
+     -4.5,
+     0.0
+    ]
+   },
+   {
+    "at": "L14",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L15",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.2,
+    "expr": "sly",
+    "head": [
+     0,
+     -8
+    ],
+    "side": [
+     0,
+     40
+    ]
+   },
+   {
+    "at": "L16",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.3,
+    "expr": "grin",
+    "arms": [
+     0,
+     80
+    ],
+    "side": [
+     0,
+     20
+    ]
+   },
+   {
+    "at": "L17",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L17",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L17",
+    "pos": [
+     40.2,
+     -1.2,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 160,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L17+0.5",
+    "pos": [
+     40.2,
+     -1.2,
+     0.0
+    ],
+    "blend": 0.25,
+    "lean": 10,
+    "side": [
+     0,
+     30
+    ],
+    "arms": [
+     40,
+     40
+    ]
+   },
+   {
+    "at": "L18",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L19",
+    "pos": [
+     40.2,
+     -1.2,
+     0.0
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     41.6,
+     -1.0,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L21",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L24.1",
+    "pos": [
+     41.6,
+     -1.0,
+     0.0
+    ]
+   },
+   {
+    "at": "L24.1",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 14,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L24.1+0.3",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.4,
+    "lean": 26,
+    "head": [
+     0,
+     10
+    ]
+   },
+   {
+    "at": "L25",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L45",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L45",
+    "pos": [
+     0.37,
+     -0.5,
+     6.96
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "soft",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L45+0.8",
+    "pos": [
+     0.37,
+     -0.5,
+     6.96
+    ],
+    "blend": 0.5,
+    "head": [
+     0,
+     4
+    ]
+   },
+   {
+    "at": "L46",
+    "pos": [
+     0.37,
+     -0.5,
+     6.96
+    ],
+    "blend": 0.4,
+    "arms": [
+     0,
+     80
+    ],
+    "expr": "soft"
+   },
+   {
+    "at": "L47",
+    "pos": [
+     0.37,
+     -0.5,
+     6.96
+    ],
+    "blend": 0.3,
+    "expr": "shut",
+    "arms": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L48",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L48",
+    "pos": [
+     0.37,
+     -0.5,
+     6.96
+    ]
+   },
+   {
+    "at": "L48",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     100
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L48+0.7",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.25,
+    "arms": [
+     0,
+     80
+    ],
+    "head": [
+     10,
+     0
+    ]
+   },
+   {
+    "at": "L48+1.3",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.25,
+    "arms": [
+     0,
+     110
+    ],
+    "head": [
+     -8,
+     0
+    ]
+   },
+   {
+    "at": "L49",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L50.2",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L50.2",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L51",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.3,
+    "arms": [
+     0,
+     60
+    ],
+    "side": [
+     0,
+     10
+    ],
+    "expr": "neutral",
+    "head": [
+     0,
+     20
+    ]
+   },
+   {
+    "at": "L51+0.6",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.25,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "expr": "soft",
+    "head": [
+     0,
+     8
+    ]
+   },
+   {
+    "at": "L52",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.3,
+    "expr": "grin",
+    "head": [
+     0,
+     0
+    ],
+    "arms": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L54",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ],
+    "blend": 0.3,
+    "expr": "laugh"
+   },
+   {
+    "at": "L56",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L62",
+    "pos": [
+     2.25,
+     -0.5,
+     6.0
+    ]
+   },
+   {
+    "at": "L62",
+    "pos": [
+     0.4,
+     12.0,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L62",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L63",
+    "pos": [
+     0.4,
+     12.0,
+     0.0
+    ]
+   },
+   {
+    "at": "L63",
+    "pos": [
+     0.45,
+     -9.0,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L63>",
+    "pos": [
+     0.45,
+     -4.4,
+     0.0
+    ]
+   },
+   {
+    "at": "L64",
+    "pos": [
+     0.45,
+     -4.4,
+     0.0
+    ],
+    "blend": 0.5,
+    "yaw": 210,
+    "expr": "smile",
+    "head": [
+     -20,
+     0
+    ]
+   }
+  ],
+  "mom": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L18",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L18",
+    "pos": [
+     38.5,
+     -1.9,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L18+0.4",
+    "pos": [
+     38.5,
+     -1.9,
+     0.0
+    ],
+    "blend": 0.2,
+    "side": [
+     0,
+     25
+    ]
+   },
+   {
+    "at": "L19",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L19",
+    "pos": [
+     38.5,
+     -1.9,
+     0.0
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     40.8,
+     1.8,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     40,
+     40
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L21",
+    "pos": [
+     40.8,
+     1.8,
+     0.0
+    ],
+    "blend": 0.3,
+    "expr": "sad-smile",
+    "head": [
+     0,
+     22
+    ],
+    "arms": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L22",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L43",
+    "pos": [
+     40.8,
+     1.8,
+     0.0
+    ]
+   },
+   {
+    "at": "L43",
+    "pos": [
+     40.8,
+     1.8,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "sad-smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     18
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L43+1.2",
+    "pos": [
+     40.8,
+     1.8,
+     0.0
+    ],
+    "blend": 0.5,
+    "expr": "smile",
+    "head": [
+     0,
+     -6
+    ]
+   },
+   {
+    "at": "L44",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "vega": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L05",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L05",
+    "pos": [
+     -2.25,
+     3.0,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     30
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L06",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L08",
+    "pos": [
+     -2.25,
+     3.0,
+     6.0
+    ]
+   },
+   {
+    "at": "L08",
+    "pos": [
+     -2.25,
+     -3.0,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L09",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L31",
+    "pos": [
+     -2.25,
+     -3.0,
+     6.0
+    ]
+   },
+   {
+    "at": "L31",
+    "pos": [
+     1.1,
+     -5.5,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L31>",
+    "pos": [
+     1.1,
+     4.5,
+     0.0
+    ]
+   },
+   {
+    "at": "L31",
+    "yaw": 180
+   },
+   {
+    "at": "L32",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "nb1": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -2.25,
+     -6.0,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "angry",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L07.1",
+    "pos": [
+     -2.25,
+     -6.0,
+     6.0
+    ]
+   },
+   {
+    "at": "L07.1",
+    "pos": [
+     -0.9,
+     -6.0,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07.2",
+    "pos": [
+     0.8,
+     -6.0,
+     0.0
+    ]
+   },
+   {
+    "at": "L08",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "nb2": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
+     2.25,
+     -6.0,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "angry",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L07.1",
+    "pos": [
+     2.25,
+     -6.0,
+     6.0
+    ]
+   },
+   {
+    "at": "L07.1",
+    "pos": [
+     0.9,
+     -4.8,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07.2",
+    "pos": [
+     -0.8,
+     -4.8,
+     0.0
+    ]
+   },
+   {
+    "at": "L08",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "stone_a": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L06",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L06",
+    "pos": [
+     -2.25,
+     21.0,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "stone_b": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L06",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L06",
+    "pos": [
+     2.25,
+     21.0,
+     6.0
+    ],
+    "blend": 0,
+    "yaw": -90,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "eli_sea": [
+   {
+    "at": "L56",
+    "pos": [
+     0.3,
+     24.0,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L56>",
+    "pos": [
+     0.1,
+     33.0,
+     0.0
+    ]
+   },
+   {
+    "at": "L56+1.1",
+    "pos": [
+     0.1,
+     33.0,
+     0.0
+    ],
+    "blend": 0.4,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     100
+    ]
+   },
+   {
+    "at": "L57",
+    "hidden": true,
+    "blend": 0
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "count",
+   "n": 208
+  },
+  {
+   "at": 0,
+   "name": "bridge",
+   "vis": 22
+  },
+  {
+   "at": 0,
+   "name": "burnt",
+   "h": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "sway": 0.0,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": 0,
+   "name": "show",
+   "on": [
+    "matches"
+   ]
+  },
+  {
+   "at": "L07.1",
+   "name": "burnt",
+   "h": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "sway": 0.0,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": "L09",
+   "name": "count",
+   "n": 3
+  },
+  {
+   "at": "L09",
+   "name": "bridge",
+   "vis": 3
+  },
+  {
+   "at": "L12",
+   "name": "count",
+   "n": 4,
+   "n_to": 30,
+   "dur": 2.4
+  },
+  {
+   "at": "L12",
+   "name": "bridge",
+   "vis": 4,
+   "vis_to": 22,
+   "dur": 2.4
+  },
+  {
+   "at": "L13",
+   "name": "count",
+   "n": 30
+  },
+  {
+   "at": "L13",
+   "name": "bridge",
+   "vis": 22
+  },
+  {
+   "at": "L14",
+   "name": "tray",
+   "x": -1.4,
+   "x_to": 1.4,
+   "dur": 1.3
+  },
+  {
+   "at": "L15",
+   "name": "tray",
+   "off": true
+  },
+  {
+   "at": "L15",
+   "name": "show",
+   "on": [
+    "matches",
+    "cards"
+   ]
+  },
+  {
+   "at": "L16",
+   "name": "show",
+   "on": [
+    "matches"
+   ]
+  },
+  {
+   "at": "L17",
+   "name": "pip",
+   "pos": [
+    41.6,
+    0.8,
+    0.0
+   ],
+   "yaw": -30,
+   "pos_to": [
+    40.4,
+    -0.9,
+    0.0
+   ],
+   "dur": 0.9,
+   "hop": 0.8
+  },
+  {
+   "at": "L18",
+   "name": "pip",
+   "hidden": true
+  },
+  {
+   "at": "L19",
+   "name": "show",
+   "on": [
+    "matches",
+    "plate3"
+   ]
+  },
+  {
+   "at": "L24",
+   "name": "burnt",
+   "h": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "sway": 0.0,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": "L24",
+   "name": "count",
+   "n": 64
+  },
+  {
+   "at": "L26",
+   "name": "burnt",
+   "h": [
+    0.18,
+    0.12,
+    0.1
+   ],
+   "sway": 0.3,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": "L27",
+   "name": "burnt",
+   "h": [
+    1.0,
+    0.8,
+    0.7
+   ],
+   "sway": 0.5,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": "L28",
+   "name": "burnt",
+   "h": [
+    3.7,
+    3.2,
+    2.9
+   ],
+   "sway": 0.8,
+   "tilt": [
+    0.1,
+    0.05,
+    0.05
+   ]
+  },
+  {
+   "at": "L29",
+   "name": "burnt",
+   "h": [
+    5.6,
+    4.6,
+    4.2
+   ],
+   "sway": 0.8,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": "L30",
+   "name": "burnt",
+   "h": [
+    5.6,
+    4.6,
+    4.2
+   ],
+   "sway": 0.8,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": "L33",
+   "name": "burnt",
+   "h": [
+    6.1,
+    5.3,
+    5.0
+   ],
+   "sway": 0.2,
+   "tilt": [
+    0.5,
+    0.3,
+    0.25
+   ]
+  },
+  {
+   "at": "L34",
+   "name": "burnt",
+   "h": [
+    1.2,
+    0.8,
+    0.6
+   ],
+   "sway": 0.15,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": "L38",
+   "name": "burnt",
+   "h": [
+    1.2,
+    0.8,
+    0.6
+   ],
+   "sway": 0.15,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": "L42",
+   "name": "show",
+   "on": [
+    "ticket",
+    "matches",
+    "plate3"
+   ]
+  },
+  {
+   "at": "L43",
+   "name": "show",
+   "on": [
+    "matches",
+    "plate3"
+   ]
+  },
+  {
+   "at": "L44",
+   "name": "burnt",
+   "h": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "sway": 0.0,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": "L44",
+   "name": "count",
+   "n": 64
+  },
+  {
+   "at": "L46",
+   "name": "show",
+   "on": [
+    "matchpair",
+    "plate3",
+    "ticket"
+   ]
+  },
+  {
+   "at": "L48",
+   "name": "show",
+   "on": [
+    "matches",
+    "plate3",
+    "ticket"
+   ]
+  },
+  {
+   "at": "L48",
+   "name": "count",
+   "n": 3
+  },
+  {
+   "at": "L48",
+   "name": "bridge",
+   "vis": 3
+  },
+  {
+   "at": "L49",
+   "name": "burnt",
+   "h": [
+    4.2,
+    3.5,
+    3.2
+   ],
+   "sway": 0.6,
+   "tilt": [
+    0.12,
+    0.06,
+    0.06
+   ]
+  },
+  {
+   "at": "L49",
+   "name": "count",
+   "n": 64
+  },
+  {
+   "at": "L49",
+   "name": "bridge",
+   "vis": 22
+  },
+  {
+   "at": "L49.4",
+   "name": "burnt",
+   "h": [
+    5.6,
+    4.6,
+    4.2
+   ],
+   "sway": 0.7,
+   "tilt": [
+    0.3,
+    0.2,
+    0.2
+   ]
+  },
+  {
+   "at": "L50",
+   "name": "burnt",
+   "h": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "sway": 0.0,
+   "tilt": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "at": "L51+0.35",
+   "name": "show",
+   "on": [
+    "plate3",
+    "ticket"
+   ]
+  },
+  {
+   "at": "L57",
+   "name": "count",
+   "n": 65
+  },
+  {
+   "at": "L57",
+   "name": "frost",
+   "on": true
+  },
+  {
+   "at": "L58",
+   "name": "frost",
+   "on": false
+  },
+  {
+   "at": "L58",
+   "name": "count",
+   "n": 66,
+   "n_to": 100,
+   "dur": 2.0
+  },
+  {
+   "at": "L58",
+   "name": "sea",
+   "n": 0,
+   "n_to": 8,
+   "dur": 2.0
+  },
+  {
+   "at": "L59",
+   "name": "count",
+   "n": 100,
+   "n_to": 150,
+   "dur": 2.4
+  },
+  {
+   "at": "L59",
+   "name": "sea",
+   "n": 8,
+   "n_to": 150,
+   "dur": 2.6
+  },
+  {
+   "at": "L60",
+   "name": "count",
+   "n": 150,
+   "n_to": 190,
+   "dur": 1.8
+  },
+  {
+   "at": "L60",
+   "name": "sea",
+   "n": 150,
+   "n_to": 380,
+   "dur": 2.0
+  },
+  {
+   "at": "L61",
+   "name": "count",
+   "n": 190,
+   "n_to": 208,
+   "dur": 1.6
+  },
+  {
+   "at": "L61",
+   "name": "sea",
+   "n": 380,
+   "n_to": 520,
+   "dur": 1.8
+  },
+  {
+   "at": "L62",
+   "name": "count",
+   "n": 208
+  },
+  {
+   "at": "L62",
+   "name": "sea",
+   "n": 520
+  }
+ ],
+ "set_moves": [],
+ "clip_ok": [],
+ "music": {
+  "root": 45,
+  "mode": "major",
+  "bpm": 104,
+  "seed": 100,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "pluck",
+     "pulse",
+     "pad"
+    ],
+    "energy": 0.5
+   },
+   {
+    "at": "L25",
+    "voices": [
+     "pluck",
+     "pad"
+    ],
+    "energy": 0.4,
+    "mode": "minor"
+   },
+   {
+    "at": "L26",
+    "voices": [
+     "drone",
+     "pad",
+     "pluck"
+    ],
+    "energy": 0.5,
+    "mode": "minor"
+   },
+   {
+    "at": "L44",
+    "voices": [
+     "drone",
+     "pluck"
+    ],
+    "energy": 0.32,
+    "mode": "minor"
+   },
+   {
+    "at": "L49",
+    "voices": [
+     "pad",
+     "pluck"
+    ],
+    "energy": 0.4,
+    "mode": "major"
+   },
+   {
+    "at": "L54",
+    "voices": [
+     "pad",
+     "pluck",
+     "pulse",
+     "pluck_hi"
+    ],
+    "energy": 0.6,
+    "mode": "major"
+   },
+   {
+    "at": "L62",
+    "voices": [
+     "pad",
+     "pluck"
+    ],
+    "energy": 0.3,
+    "mode": "major"
+   }
+  ]
+ },
+ "sound": {
+  "rev": 1,
+  "floor": "stone",
+  "steps_db": -22,
+  "ambience": [
+   {
+    "kind": "gulls",
+    "from": 0,
+    "to": "L25",
+    "lufs": -46
+   },
+   {
+    "kind": "water",
+    "from": 0,
+    "to": "L25",
+    "lufs": -44
+   },
+   {
+    "kind": "crickets",
+    "from": "L25",
+    "to": "L43",
+    "lufs": -42
+   },
+   {
+    "kind": "water",
+    "from": "L54",
+    "to": "end",
+    "lufs": -44
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L01.2+0.05",
+    "kind": "hit",
+    "db": -12
+   },
+   {
+    "at": "L01.2+0.05",
+    "kind": "creak",
+    "db": -16,
+    "dur": 1.0
+   },
+   {
+    "at": "L04",
+    "kind": "knock",
+    "db": -22,
+    "pattern": [
+     0
+    ],
+    "tone": "soft"
+   },
+   {
+    "at": "L12.1",
+    "kind": "knock",
+    "db": -22,
+    "pattern": [
+     0
+    ],
+    "tone": "soft"
+   },
+   {
+    "at": "L26.1",
+    "kind": "creak",
+    "db": -22,
+    "dur": 1.4
+   },
+   {
+    "at": "L29",
+    "kind": "creak",
+    "db": -22,
+    "dur": 1.4
+   },
+   {
+    "at": "L33+0.9",
+    "kind": "knock",
+    "db": -16,
+    "pattern": [
+     0
+    ],
+    "tone": "soft"
+   },
+   {
+    "at": "L58",
+    "kind": "knock",
+    "db": -22,
+    "pattern": [
+     0
+    ],
+    "tone": "soft"
+   }
+  ],
+  "music_drops": [
+   {
+    "from": "P01",
+    "to": "P01>"
+   }
+  ]
+ }
+}
