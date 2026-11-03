@@ -344,7 +344,7 @@ def rel(xyz):
 
 
 # camera frames, relative to a rider when "follow" is set (cal feet = car centre + (-0.3, +0.45) heading +x)
-CAL_FRAME = still([2.8, 1.0, 1.75], [0.42, -0.2, 1.5], 32)
+CAL_FRAME = still([2.8, 1.0, 1.75], [-0.25, -0.5, 1.5], 30)
 ME_CLOSE = still([2.6, -1.0, 1.75], [0, 0, 1.5], 36)
 TWO = still([3.0, -0.45, 1.75], [0, -0.45, 1.5], 24)
 WIND = move([-0.5, -0.45, 1.75], [8, -0.45, 1.45], [-0.5, -0.45, 1.75], [8, -0.45, 1.45], 30)
@@ -353,7 +353,7 @@ MIRROR_CLOSE = still([-0.2, -0.35, 1.7], [0.98, -0.3, 1.58], 70)
 BACK_WALL_VIEW = lambda x0: still([x0, 9.6, 0.9], [-12, 12.9, 1.0], 26)
 
 # ---- 01 the rule
-shot(0, "S01 both windows: the real one with the lady near, the lit second hatch beyond with the sleeve and bag on its sill, pushing in", move([5.0, -1.2, 1.6], [5.0, 5.0, 1.6], [5.0, -0.2, 1.6], [5.0, 5.0, 1.6], 17, 21), hand=0)
+shot(0, "S01 both windows: the real one with the lady near, the lit second hatch beyond with the sleeve and bag on its sill, pushing in", move([5.05, -6.5, 2.8], [5.05, 5.0, 1.2], [5.05, -4.5, 2.6], [5.05, 5.0, 1.3], 12.5, 15), hand=0)
 shot("L02", "S02 pushing toward the second hatch", move([6.2, 0.0, 1.65], [10.1, 5.0, 1.6], [8.6, 1.4, 1.65], [10.1, 5.0, 1.6], 28, 36), hand=0)
 shot("L03", "S03 a car rolls past the second window", still([8.5, -0.6, 0.7], [10.5, 3.0, 1.1], 28))
 shot("L04", "S04 a van with a taped window", still([9.0, -0.4, 0.8], [11.0, 3.0, 1.2], 26))
@@ -436,11 +436,11 @@ shot("L50.1", "S75 me scared", still([2.0, -1.2, 1.75], [0, 0, 1.5], 36), "me")
 shot("P02", "S76a dim, the hatch", still([6.0, 0.2, 2.3], [10.0, 4.0, 1.9], 24))
 shot("L51", "S76 out to its waist", still([6.0, 0.2, 2.3], [10.0, 4.0, 1.9], 24))
 shot("L52", "S77 its face a hand from Cal's", still([12.5, 2.0, 1.9], [10.3, 3.4, 1.9], 40))
-BOTH = lambda z0, z1: move([5.0, -3.0, 1.9], [5.0, 5.0, 1.6], [5.0, -3.0 + z1, 1.9], [5.0, 5.0, 1.6], z0, z0 + 2)
+BOTH = lambda z0, z1: move([5.05, -6.5, 2.8], [5.05, 5.0, 1.2], [5.05, -6.5 + z1 * 2, 2.7], [5.05, 5.0, 1.2], 12.5, 14)
 shot("L53", "S78 both hatches, same framing, one window (the lit one empty)", BOTH(16, 0.0), hand=0)
 shot("L54", "S79 the two windows, push", BOTH(16, 0.6), hand=0)
-shot("L54.2", "S80 the second window is the first one again", still([5.0, -2.4, 1.9], [5.0, 5.0, 1.6], 20), hand=0)
-shot("L55", "S81 down the back wall", move([22, 9.4, 1.1], [-5, 12.9, 1.0], [10, 9.4, 1.1], [-26, 12.9, 1.0], 22, 22), hand=0)
+shot("L54.2", "S80 the second window is the first one again", still([5.05, -6.5, 2.8], [5.05, 5.0, 1.2], 12.5), hand=0)
+shot("L55", "S81 down the back wall", move([22, 9.4, 1.1], [-5, 12.9, 1.0], [10, 9.4, 1.1], [-30, 12.9, 1.0], 22, 22), hand=0)
 # ---- 07 the order
 for k in range(3):
     shot(f"L56+{round(0.5 * k, 2)}", f"S82 Cal's grin {k}", CAL_FRAME, "cal", hand=0)
@@ -499,6 +499,46 @@ secs = [
     {"at": "L70", "voices": ["drone"], "energy": 0.5, "mode": "minor"},
 ]
 
+# ---- keep every shot under 2.0 s: split the long ones with a punch-in on the same subject
+import copy
+
+
+def _punch(cam, k):
+    cam = copy.deepcopy(cam)
+    for key in cam:
+        key[3] = round(key[3] * k, 1)
+        if len(key) > 4 and key is not cam[0] and False:
+            pass
+    return cam
+
+
+def _at(at, dt):
+    if at == 0:
+        return round(dt, 2)
+    m = re.match(r"^(L\d+)(?:\+(-?[\d.]+))?$", str(at))
+    return f"{m.group(1)}+{round(float(m.group(2) or 0) + dt, 2)}"
+
+
+SPLITS = {"S01 both": [(1.3, 1.2)], "S13 ": [(1.0, 1.3)], "S16 ": [(1.0, 1.3)], "S23 ": [(1.1, 1.3)], "S53 ": [(1.0, 1.25)],
+          "S54 ": [(1.0, 1.25)], "S67 ": [(1.0, 1.3)], "S81 ": [(1.0, 1.25)], "S88 ": [(1.0, 1.3)], "S102 ": [(1.1, 1.3)],
+          "S103 ": [(1.3, 1.3), (2.5, 1.5)]}
+out = []
+for s_ in SHOTS:
+    out.append(s_)
+    for pre, lst in SPLITS.items():
+        if s_["what"].startswith(pre):
+            for dt, k in lst:
+                n = dict(s_)
+                n["at"] = _at(s_["at"], dt)
+                n["cam"] = _punch(s_["cam"], k)
+                n["what"] = s_["what"] + " (punch-in)"
+                n["hand"] = 0
+                out.append(n)
+SHOTS[:] = out
+for i, s_ in enumerate(SHOTS):
+    s_["id"] = f"S{i + 1:03d}"
+_sw = ("S41 ", "S58 ", "S76 ", "S77 ", "S78 ")
+SWAY = [s_["id"] for s_ in SHOTS if s_["what"].startswith(_sw) and "punch" not in s_["what"]]
 shots = SHOTS
 story = {
     "slug": "ep71-two-windows",
@@ -515,7 +555,7 @@ story = {
     "look": {"fog": "#ffe2bd", "fog_density": 0.006, "fog_start": 25.0, "sky": "#f7c690", "sky_strength": 1.1,
              "hdri": "industrial_sunset_puresky", "hdri_strength": 0.7, "hdri_rotation": 0, "hdri_visible": False,
              "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01", "L07"], "reveal": ["L50", "L51"], "quiet": [["L67", "L69"]],
-                                                         "sway": ["S041", "S058", "S076", "S077", "S078"]}},
+                                                         "sway": SWAY}},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.04, 0.01, -0.03], "saturation": 1.12, "contrast": 1.05,
               "vignette": 0.22, "bloom": 0.25, "grain": 0.008},
     "phonemes": {"tape": "tˈAp"},
@@ -526,7 +566,7 @@ story = {
     "cues": cues,
     "fx": [],
     "music": {"root": 50, "mode": "mixolydian", "bpm": 100, "seed": 71, "sections": secs},
-    "sound": {"floor": "concrete", "steps_db": -24, "rev": 1,
+    "sound": {"floor": "concrete", "steps_db": -24, "rev": 2,
               "ambience": [{"kind": "hum", "from": 0, "to": "end", "lufs": -40},
                            {"kind": "traffic", "from": 0, "to": "end", "lufs": -38}],
               "sfx": sfx,

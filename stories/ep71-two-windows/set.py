@@ -272,7 +272,9 @@ def build_car(kit, M, name, color, kind="open", cracked=False, tix=False, bag=Fa
         for i in range(5):
             m = M["tix42"] if i == 4 else M["tix41"]
             q = quad(kit, f"{name}.tix{i}", 0.13, 0.19, (0.68, -0.14 + 0.1 * i, 1.4 - 0.01 * i), FACE_NEG_X, m, root)
+            q2 = quad(kit, f"{name}.tixf{i}", 0.13, 0.19, (0.68 + 0.012, -0.14 + 0.1 * i, 1.4 - 0.01 * i), (math.pi / 2, 0, math.pi / 2), m, root)
             parts["tix"].append(q)
+            parts.setdefault("tixf", []).append(q2)
         B("mirror", (0.05, 0.3, 0.1), (0.68, 0.0, 1.5), dark, 0.02)
     if tix:
         parts["cup"] = kit.cyl(f"{name}.cup", 0.06, 0.13, (0.82, -0.2, 1.08), kit.plastic("#9be15d", 0.5, "cup"), root, n=14)
@@ -581,6 +583,7 @@ def animate(kit, story, tl, t, ctx):
         q.hide_render = not ((i < n_tix and i < 4) or (i == 4 and n_tix == 42))
         if n_tix == 42 and i < 4:
             q.hide_render = True
+        o_["tixf"][i].hide_render = q.hide_render
     _show([ctx["sillticket"]], vis("sillticket", False))
     cup = o_.get("cup")
     if cup is not None:

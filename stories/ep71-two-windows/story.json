@@ -42,11 +42,11 @@
     ]
    ],
    "sway": [
-    "S041",
-    "S058",
-    "S076",
-    "S077",
-    "S078"
+    "S045",
+    "S064",
+    "S084",
+    "S085",
+    "S086"
    ]
   }
  },
@@ -1759,30 +1759,30 @@
     [
      0,
      [
-      5.0,
-      -1.2,
-      1.6
+      5.05,
+      -6.5,
+      1.7
      ],
      [
-      5.0,
+      5.05,
       5.0,
       1.6
      ],
-     17
+     14
     ],
     [
      1,
      [
-      5.0,
-      -0.2,
-      1.6
+      5.05,
+      -4.5,
+      1.7
      ],
      [
-      5.0,
+      5.05,
       5.0,
       1.6
      ],
-     21
+     16
     ]
    ],
    "hand": 0,
@@ -1790,6 +1790,43 @@
   },
   {
    "id": "S002",
+   "at": 1.3,
+   "what": "S01 both windows: the real one with the lady near, the lit second hatch beyond with the sleeve and bag on its sill, pushing in (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      5.05,
+      -6.5,
+      1.7
+     ],
+     [
+      5.05,
+      5.0,
+      1.6
+     ],
+     16.8
+    ],
+    [
+     1,
+     [
+      5.05,
+      -4.5,
+      1.7
+     ],
+     [
+      5.05,
+      5.0,
+      1.6
+     ],
+     19.2
+    ]
+   ],
+   "hand": 0,
+   "step": 2
+  },
+  {
+   "id": "S003",
    "at": "L02",
    "what": "S02 pushing toward the second hatch",
    "cam": [
@@ -1826,7 +1863,7 @@
    "step": 2
   },
   {
-   "id": "S003",
+   "id": "S004",
    "at": "L03",
    "what": "S03 a car rolls past the second window",
    "cam": [
@@ -1850,7 +1887,7 @@
    "step": 2
   },
   {
-   "id": "S004",
+   "id": "S005",
    "at": "L04",
    "what": "S04 a van with a taped window",
    "cam": [
@@ -1874,7 +1911,7 @@
    "step": 2
   },
   {
-   "id": "S005",
+   "id": "S006",
    "at": "L05",
    "what": "S05 Mr. Dale at his door",
    "cam": [
@@ -1898,7 +1935,7 @@
    "step": 2
   },
   {
-   "id": "S006",
+   "id": "S007",
    "at": "L06",
    "what": "S06 first red truck, big",
    "cam": [
@@ -1922,7 +1959,7 @@
    "step": 2
   },
   {
-   "id": "S007",
+   "id": "S008",
    "at": "L06+0.93",
    "what": "S07 tracking along all eight",
    "cam": [
@@ -1959,7 +1996,7 @@
    "step": 2
   },
   {
-   "id": "S008",
+   "id": "S009",
    "at": "L07",
    "what": "S08 Dale raises the mug",
    "cam": [
@@ -1983,7 +2020,7 @@
    "step": 2
   },
   {
-   "id": "S009",
+   "id": "S010",
    "at": "L07+1.03",
    "what": "S09 the soup, number nine",
    "cam": [
@@ -2007,7 +2044,7 @@
    "step": 2
   },
   {
-   "id": "S010",
+   "id": "S011",
    "at": "L08",
    "what": "S10 me with the bun sign",
    "cam": [
@@ -2032,7 +2069,7 @@
    "follow": "me"
   },
   {
-   "id": "S011",
+   "id": "S012",
    "at": "L08+0.99",
    "what": "S11 the lane through the windshield",
    "cam": [
@@ -2070,7 +2107,7 @@
    "follow": "cal"
   },
   {
-   "id": "S012",
+   "id": "S013",
    "at": "L09",
    "what": "S12 me, a mock sulk",
    "cam": [
@@ -2095,7 +2132,7 @@
    "follow": "me"
   },
   {
-   "id": "S013",
+   "id": "S014",
    "at": "L10",
    "what": "S13 the two brothers",
    "cam": [
@@ -2120,7 +2157,32 @@
    "follow": "cal"
   },
   {
-   "id": "S014",
+   "id": "S015",
+   "at": "L10+1.0",
+   "what": "S13 the two brothers (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      3.0,
+      -0.45,
+      1.75
+     ],
+     [
+      0,
+      -0.45,
+      1.5
+     ],
+     31.2,
+     0
+    ]
+   ],
+   "hand": 0,
+   "step": 2,
+   "follow": "cal"
+  },
+  {
+   "id": "S016",
    "at": "L11",
    "what": "S14 the number four",
    "cam": [
@@ -2144,7 +2206,7 @@
    "step": 2
   },
   {
-   "id": "S015",
+   "id": "S017",
    "at": "L11+0.7",
    "what": "S15 the pickle slice",
    "cam": [
@@ -2168,7 +2230,7 @@
    "step": 2
   },
   {
-   "id": "S016",
+   "id": "S018",
    "at": "L12",
    "what": "S16 me deadpan",
    "cam": [
@@ -2193,7 +2255,32 @@
    "follow": "me"
   },
   {
-   "id": "S017",
+   "id": "S019",
+   "at": "L12+1.0",
+   "what": "S16 me deadpan (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      2.4,
+      -0.7,
+      1.75
+     ],
+     [
+      0,
+      0,
+      1.5
+     ],
+     46.8,
+     0
+    ]
+   ],
+   "hand": 0,
+   "step": 2,
+   "follow": "me"
+  },
+  {
+   "id": "S020",
    "at": "L13",
    "what": "S17 me turned to Cal",
    "cam": [
@@ -2218,7 +2305,7 @@
    "follow": "me"
   },
   {
-   "id": "S018",
+   "id": "S021",
    "at": "L13+1.16",
    "what": "S18 Cal smiles",
    "cam": [
@@ -2243,7 +2330,7 @@
    "follow": "cal"
   },
   {
-   "id": "S019",
+   "id": "S022",
    "at": "L14",
    "what": "S19 Cal laughing",
    "cam": [
@@ -2268,7 +2355,7 @@
    "follow": "cal"
   },
   {
-   "id": "S020",
+   "id": "S023",
    "at": "L14+0.62",
    "what": "S20 the cracked headlight",
    "cam": [
@@ -2293,7 +2380,7 @@
    "follow": "cal"
   },
   {
-   "id": "S021",
+   "id": "S024",
    "at": "L14+1.87",
    "what": "S21 pulling up beside the speaker",
    "cam": [
@@ -2317,7 +2404,7 @@
    "step": 2
   },
   {
-   "id": "S022",
+   "id": "S025",
    "at": "L15",
    "what": "S22 the grille",
    "cam": [
@@ -2341,7 +2428,7 @@
    "step": 2
   },
   {
-   "id": "S023",
+   "id": "S026",
    "at": "L15+0.71",
    "what": "S23 Cal's mouth opens",
    "cam": [
@@ -2366,7 +2453,32 @@
    "follow": "cal"
   },
   {
-   "id": "S024",
+   "id": "S027",
+   "at": "L15+1.81",
+   "what": "S23 Cal's mouth opens (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      2.4,
+      0.9,
+      1.75
+     ],
+     [
+      0,
+      0,
+      1.5
+     ],
+     46.8,
+     0
+    ]
+   ],
+   "hand": 0,
+   "step": 2,
+   "follow": "cal"
+  },
+  {
+   "id": "S028",
    "at": "L16",
    "what": "S24 Cal grins",
    "cam": [
@@ -2391,7 +2503,7 @@
    "follow": "cal"
   },
   {
-   "id": "S025",
+   "id": "S029",
    "at": "L17",
    "what": "S25 the lady at the window",
    "cam": [
@@ -2415,7 +2527,7 @@
    "step": 2
   },
   {
-   "id": "S026",
+   "id": "S030",
    "at": "L17+0.64",
    "what": "S26 the ticket",
    "cam": [
@@ -2439,7 +2551,7 @@
    "step": 2
   },
   {
-   "id": "S027",
+   "id": "S031",
    "at": "L17+1.28",
    "what": "S27 the sill and its one stroke",
    "cam": [
@@ -2463,7 +2575,7 @@
    "step": 2
   },
   {
-   "id": "S028",
+   "id": "S032",
    "at": "L18",
    "what": "S28 the mirror, first ticket",
    "cam": [
@@ -2488,7 +2600,7 @@
    "follow": "cal"
   },
   {
-   "id": "S029",
+   "id": "S033",
    "at": "L19",
    "what": "S29 the wall running on",
    "cam": [
@@ -2526,7 +2638,7 @@
    "follow": "cal"
   },
   {
-   "id": "S030",
+   "id": "S034",
    "at": "L19+0.8",
    "what": "S30 the end of the wall",
    "cam": [
@@ -2550,7 +2662,7 @@
    "step": 2
   },
   {
-   "id": "S031",
+   "id": "S035",
    "at": "L20",
    "what": "S31 the second hatch is lit",
    "cam": [
@@ -2574,7 +2686,7 @@
    "step": 2
   },
   {
-   "id": "S032",
+   "id": "S036",
    "at": "L21",
    "what": "S32 hand, bag, ticket 41",
    "cam": [
@@ -2598,7 +2710,7 @@
    "step": 2
   },
   {
-   "id": "S033",
+   "id": "S037",
    "at": "L22",
    "what": "S33 Cal says the fries are better",
    "cam": [
@@ -2623,7 +2735,7 @@
    "follow": "cal"
   },
   {
-   "id": "S034",
+   "id": "S038",
    "at": "L22+1.32",
    "what": "S34 me scared",
    "cam": [
@@ -2648,7 +2760,7 @@
    "follow": "me"
   },
   {
-   "id": "S035",
+   "id": "S039",
    "at": "L23+0.35",
    "what": "S35 me says no",
    "cam": [
@@ -2673,7 +2785,7 @@
    "follow": "me"
   },
   {
-   "id": "S036",
+   "id": "S040",
    "at": "L23+0.71",
    "what": "S36 rolling up to the second window",
    "cam": [
@@ -2697,7 +2809,7 @@
    "step": 2
   },
   {
-   "id": "S037",
+   "id": "S041",
    "at": "L24",
    "what": "S37 the bag in my lap",
    "cam": [
@@ -2722,7 +2834,7 @@
    "follow": "me"
   },
   {
-   "id": "S038",
+   "id": "S042",
    "at": "L24+0.99",
    "what": "S38 two buns, no pickles",
    "cam": [
@@ -2747,7 +2859,7 @@
    "follow": "me"
   },
   {
-   "id": "S039",
+   "id": "S043",
    "at": "L25",
    "what": "S39 me looking back at the hatch",
    "cam": [
@@ -2772,7 +2884,7 @@
    "follow": "me"
   },
   {
-   "id": "S040",
+   "id": "S044",
    "at": "L26",
    "what": "S40 Cal eats a fry",
    "cam": [
@@ -2797,7 +2909,7 @@
    "follow": "cal"
   },
   {
-   "id": "S041",
+   "id": "S045",
    "at": "L26+0.85",
    "what": "S41 the exit arrow",
    "cam": [
@@ -2821,7 +2933,7 @@
    "step": 2
   },
   {
-   "id": "S042",
+   "id": "S046",
    "at": "L27",
    "what": "S42 turning along the back wall from behind",
    "cam": [
@@ -2845,7 +2957,7 @@
    "step": 2
   },
   {
-   "id": "S043",
+   "id": "S047",
    "at": "L28",
    "what": "S43 the trucks slide past my window",
    "cam": [
@@ -2870,7 +2982,7 @@
    "follow": "me"
   },
   {
-   "id": "S044",
+   "id": "S048",
    "at": "L29",
    "what": "S44 the menu board and speaker again",
    "cam": [
@@ -2908,7 +3020,7 @@
    "follow": "cal"
   },
   {
-   "id": "S045",
+   "id": "S049",
    "at": "P01",
    "what": "S45 tight on the grille",
    "cam": [
@@ -2932,7 +3044,7 @@
    "step": 2
   },
   {
-   "id": "S046",
+   "id": "S050",
    "at": "L30",
    "what": "S46 me wide",
    "cam": [
@@ -2957,7 +3069,7 @@
    "follow": "me"
   },
   {
-   "id": "S047",
+   "id": "S051",
    "at": "L31",
    "what": "S47 Cal grins, same frame",
    "cam": [
@@ -2982,7 +3094,7 @@
    "follow": "cal"
   },
   {
-   "id": "S048",
+   "id": "S052",
    "at": "L32",
    "what": "S48a same grin",
    "cam": [
@@ -3007,7 +3119,7 @@
    "follow": "cal"
   },
   {
-   "id": "S049",
+   "id": "S053",
    "at": "L32+0.62",
    "what": "S48b same words",
    "cam": [
@@ -3032,7 +3144,7 @@
    "follow": "cal"
   },
   {
-   "id": "S050",
+   "id": "S054",
    "at": "L33",
    "what": "S49 two tickets",
    "cam": [
@@ -3057,7 +3169,7 @@
    "follow": "cal"
   },
   {
-   "id": "S051",
+   "id": "S055",
    "at": "L33+1.01",
    "what": "S50 close on the two",
    "cam": [
@@ -3082,7 +3194,7 @@
    "follow": "cal"
   },
   {
-   "id": "S052",
+   "id": "S056",
    "at": "L34",
    "what": "S51 me leaning",
    "cam": [
@@ -3107,7 +3219,7 @@
    "follow": "me"
   },
   {
-   "id": "S053",
+   "id": "S057",
    "at": "L34+1.09",
    "what": "S52 Cal shrugs",
    "cam": [
@@ -3132,7 +3244,7 @@
    "follow": "cal"
   },
   {
-   "id": "S054",
+   "id": "S058",
    "at": "L35",
    "what": "S53 the hatch coming up",
    "cam": [
@@ -3156,7 +3268,31 @@
    "step": 2
   },
   {
-   "id": "S055",
+   "id": "S059",
+   "at": "L35+1.0",
+   "what": "S53 the hatch coming up (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      6.5,
+      0.0,
+      2.8
+     ],
+     [
+      10.1,
+      5.0,
+      1.65
+     ],
+     37.5,
+     0
+    ]
+   ],
+   "hand": 0,
+   "step": 2
+  },
+  {
+   "id": "S060",
    "at": "L36",
    "what": "S54 the Server's face fills the hatch",
    "cam": [
@@ -3193,7 +3329,44 @@
    "step": 2
   },
   {
-   "id": "S056",
+   "id": "S061",
+   "at": "L36+1.0",
+   "what": "S54 the Server's face fills the hatch (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      10.1,
+      -0.2,
+      2.7
+     ],
+     [
+      10.1,
+      4.9,
+      1.75
+     ],
+     45.0
+    ],
+    [
+     1,
+     [
+      10.1,
+      0.4,
+      2.7
+     ],
+     [
+      10.1,
+      4.9,
+      1.75
+     ],
+     50.0
+    ]
+   ],
+   "hand": 0,
+   "step": 2
+  },
+  {
+   "id": "S062",
    "at": "L37",
    "what": "S56 Cal pulls up",
    "cam": [
@@ -3218,7 +3391,7 @@
    "follow": "cal"
   },
   {
-   "id": "S057",
+   "id": "S063",
    "at": "L38",
    "what": "S57 the back wall, one more car",
    "cam": [
@@ -3242,7 +3415,7 @@
    "step": 2
   },
   {
-   "id": "S058",
+   "id": "S064",
    "at": "L38+0.78",
    "what": "S58 closer",
    "cam": [
@@ -3266,7 +3439,7 @@
    "step": 2
   },
   {
-   "id": "S059",
+   "id": "S065",
    "at": "L39",
    "what": "S59 the cracked headlight",
    "cam": [
@@ -3290,7 +3463,7 @@
    "step": 2
   },
   {
-   "id": "S060",
+   "id": "S066",
    "at": "L40",
    "what": "S60 three tickets",
    "cam": [
@@ -3315,7 +3488,7 @@
    "follow": "cal"
   },
   {
-   "id": "S061",
+   "id": "S067",
    "at": "L41",
    "what": "S61 I shout at Cal",
    "cam": [
@@ -3340,7 +3513,7 @@
    "follow": "me"
   },
   {
-   "id": "S062",
+   "id": "S068",
    "at": "L41+0.69",
    "what": "S62 Cal drives past the trucks",
    "cam": [
@@ -3365,7 +3538,7 @@
    "follow": "cal"
   },
   {
-   "id": "S063",
+   "id": "S069",
    "at": "L42",
    "what": "S63 the speaker screen",
    "cam": [
@@ -3389,7 +3562,7 @@
    "step": 2
   },
   {
-   "id": "S064",
+   "id": "S070",
    "at": "L42+0.49",
    "what": "S64 Cal, same grin",
    "cam": [
@@ -3414,7 +3587,7 @@
    "follow": "cal"
   },
   {
-   "id": "S065",
+   "id": "S071",
    "at": "L43",
    "what": "S65 out to its shoulders",
    "cam": [
@@ -3438,7 +3611,7 @@
    "step": 2
   },
   {
-   "id": "S066",
+   "id": "S072",
    "at": "L44",
    "what": "S66 the bag at Cal's door",
    "cam": [
@@ -3462,7 +3635,7 @@
    "step": 2
   },
   {
-   "id": "S067",
+   "id": "S073",
    "at": "L45",
    "what": "S67 along the smile",
    "cam": [
@@ -3499,7 +3672,44 @@
    "step": 2
   },
   {
-   "id": "S068",
+   "id": "S074",
+   "at": "L45+1.0",
+   "what": "S67 along the smile (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      9.45,
+      0.4,
+      2.7
+     ],
+     [
+      9.45,
+      4.07,
+      1.62
+     ],
+     71.5
+    ],
+    [
+     1,
+     [
+      10.75,
+      0.4,
+      2.7
+     ],
+     [
+      10.75,
+      4.07,
+      1.62
+     ],
+     71.5
+    ]
+   ],
+   "hand": 0,
+   "step": 2
+  },
+  {
+   "id": "S075",
    "at": "L46",
    "what": "S68 two of us by the back wall",
    "cam": [
@@ -3523,7 +3733,7 @@
    "step": 2
   },
   {
-   "id": "S069",
+   "id": "S076",
    "at": "L46+1.16",
    "what": "S69 two cracked headlights",
    "cam": [
@@ -3547,7 +3757,7 @@
    "step": 2
   },
   {
-   "id": "S070",
+   "id": "S077",
    "at": "L47",
    "what": "S70 four tickets",
    "cam": [
@@ -3572,7 +3782,7 @@
    "follow": "cal"
   },
   {
-   "id": "S071",
+   "id": "S078",
    "at": "L48",
    "what": "S71 I turn in my seat",
    "cam": [
@@ -3597,7 +3807,7 @@
    "follow": "me"
   },
   {
-   "id": "S072",
+   "id": "S079",
    "at": "L49",
    "what": "S72 over my shoulder, the back wall",
    "cam": [
@@ -3622,7 +3832,7 @@
    "follow": "me"
   },
   {
-   "id": "S073",
+   "id": "S080",
    "at": "L49+1.28",
    "what": "S73 the three, tighter",
    "cam": [
@@ -3647,7 +3857,7 @@
    "follow": "me"
   },
   {
-   "id": "S074",
+   "id": "S081",
    "at": "L50",
    "what": "S74 through the nearest copy",
    "cam": [
@@ -3671,7 +3881,7 @@
    "step": 2
   },
   {
-   "id": "S075",
+   "id": "S082",
    "at": "L50+0.41",
    "what": "S75 me scared",
    "cam": [
@@ -3696,7 +3906,7 @@
    "follow": "me"
   },
   {
-   "id": "S076",
+   "id": "S083",
    "at": "P02",
    "what": "S76a dim, the hatch",
    "cam": [
@@ -3720,7 +3930,7 @@
    "step": 2
   },
   {
-   "id": "S077",
+   "id": "S084",
    "at": "L51",
    "what": "S76 out to its waist",
    "cam": [
@@ -3744,7 +3954,7 @@
    "step": 2
   },
   {
-   "id": "S078",
+   "id": "S085",
    "at": "L52",
    "what": "S77 its face a hand from Cal's",
    "cam": [
@@ -3768,97 +3978,97 @@
    "step": 2
   },
   {
-   "id": "S079",
+   "id": "S086",
    "at": "L53",
    "what": "S78 both hatches, same framing, one window (the lit one empty)",
    "cam": [
     [
      0,
      [
-      5.0,
-      -3.0,
-      1.9
+      5.05,
+      -6.5,
+      2.0
      ],
      [
-      5.0,
+      5.05,
       5.0,
       1.6
      ],
-     16
+     14
     ],
     [
      1,
      [
-      5.0,
-      -3.0,
-      1.9
+      5.05,
+      -6.5,
+      2.0
      ],
      [
-      5.0,
+      5.05,
       5.0,
       1.6
      ],
-     18
+     15.5
     ]
    ],
    "hand": 0,
    "step": 2
   },
   {
-   "id": "S080",
+   "id": "S087",
    "at": "L54",
    "what": "S79 the two windows, push",
    "cam": [
     [
      0,
      [
-      5.0,
-      -3.0,
-      1.9
+      5.05,
+      -6.5,
+      2.0
      ],
      [
-      5.0,
+      5.05,
       5.0,
       1.6
      ],
-     16
+     14
     ],
     [
      1,
      [
-      5.0,
-      -2.4,
-      1.9
+      5.05,
+      -5.3,
+      2.0
      ],
      [
-      5.0,
+      5.05,
       5.0,
       1.6
      ],
-     18
+     15.5
     ]
    ],
    "hand": 0,
    "step": 2
   },
   {
-   "id": "S081",
+   "id": "S088",
    "at": "L54+1.17",
    "what": "S80 the second window is the first one again",
    "cam": [
     [
      0,
      [
-      5.0,
-      -2.4,
-      1.9
+      5.05,
+      -6.5,
+      2.0
      ],
      [
-      5.0,
+      5.05,
       5.0,
       1.6
      ],
-     20,
+     14,
      0
     ]
    ],
@@ -3866,7 +4076,7 @@
    "step": 2
   },
   {
-   "id": "S082",
+   "id": "S089",
    "at": "L55",
    "what": "S81 down the back wall",
    "cam": [
@@ -3892,7 +4102,7 @@
       1.1
      ],
      [
-      -26,
+      -30,
       12.9,
       1.0
      ],
@@ -3903,7 +4113,44 @@
    "step": 2
   },
   {
-   "id": "S083",
+   "id": "S090",
+   "at": "L55+1.0",
+   "what": "S81 down the back wall (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      22,
+      9.4,
+      1.1
+     ],
+     [
+      -5,
+      12.9,
+      1.0
+     ],
+     27.5
+    ],
+    [
+     1,
+     [
+      10,
+      9.4,
+      1.1
+     ],
+     [
+      -30,
+      12.9,
+      1.0
+     ],
+     27.5
+    ]
+   ],
+   "hand": 0,
+   "step": 2
+  },
+  {
+   "id": "S091",
    "at": "L56+0.0",
    "what": "S82 Cal's grin 0",
    "cam": [
@@ -3928,7 +4175,7 @@
    "follow": "cal"
   },
   {
-   "id": "S084",
+   "id": "S092",
    "at": "L56+0.5",
    "what": "S82 Cal's grin 1",
    "cam": [
@@ -3953,7 +4200,7 @@
    "follow": "cal"
   },
   {
-   "id": "S085",
+   "id": "S093",
    "at": "L56+1.0",
    "what": "S82 Cal's grin 2",
    "cam": [
@@ -3978,7 +4225,7 @@
    "follow": "cal"
   },
   {
-   "id": "S086",
+   "id": "S094",
    "at": "L57+0.0",
    "what": "S83 me, pose 0",
    "cam": [
@@ -4003,7 +4250,7 @@
    "follow": "me"
   },
   {
-   "id": "S087",
+   "id": "S095",
    "at": "L57+0.6",
    "what": "S83 me, pose 1",
    "cam": [
@@ -4028,7 +4275,7 @@
    "follow": "me"
   },
   {
-   "id": "S088",
+   "id": "S096",
    "at": "L57+1.2",
    "what": "S83 me, pose 2",
    "cam": [
@@ -4053,7 +4300,7 @@
    "follow": "me"
   },
   {
-   "id": "S089",
+   "id": "S097",
    "at": "L58",
    "what": "S84 the bag on the sill",
    "cam": [
@@ -4077,7 +4324,7 @@
    "step": 2
   },
   {
-   "id": "S090",
+   "id": "S098",
    "at": "L58+1.64",
    "what": "S85 four tickets",
    "cam": [
@@ -4102,7 +4349,7 @@
    "follow": "cal"
   },
   {
-   "id": "S091",
+   "id": "S099",
    "at": "L59",
    "what": "S86 the speaker post coming up",
    "cam": [
@@ -4126,7 +4373,7 @@
    "step": 2
   },
   {
-   "id": "S092",
+   "id": "S100",
    "at": "L59+0.68",
    "what": "S87 I lean across Cal",
    "cam": [
@@ -4151,7 +4398,7 @@
    "follow": "cal"
   },
   {
-   "id": "S093",
+   "id": "S101",
    "at": "L60",
    "what": "S88 me at the grille",
    "cam": [
@@ -4175,7 +4422,31 @@
    "step": 2
   },
   {
-   "id": "S094",
+   "id": "S102",
+   "at": "L60+1.0",
+   "what": "S88 me at the grille (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      -10.2,
+      0.4,
+      1.6
+     ],
+     [
+      -12.6,
+      2.9,
+      1.5
+     ],
+     71.5,
+     0
+    ]
+   ],
+   "hand": 0,
+   "step": 2
+  },
+  {
+   "id": "S103",
    "at": "L61",
    "what": "S89 number seven",
    "cam": [
@@ -4199,7 +4470,7 @@
    "step": 2
   },
   {
-   "id": "S095",
+   "id": "S104",
    "at": "L61+0.64",
    "what": "S90 Cal wide",
    "cam": [
@@ -4224,7 +4495,7 @@
    "follow": "cal"
   },
   {
-   "id": "S096",
+   "id": "S105",
    "at": "L61+1.28",
    "what": "S91 the pickle slice",
    "cam": [
@@ -4248,7 +4519,7 @@
    "step": 2
   },
   {
-   "id": "S097",
+   "id": "S106",
    "at": "L62",
    "what": "S92 the grille, no crackle",
    "cam": [
@@ -4272,7 +4543,7 @@
    "step": 2
   },
   {
-   "id": "S098",
+   "id": "S107",
    "at": "L63",
    "what": "S93 forty-two",
    "cam": [
@@ -4296,7 +4567,7 @@
    "step": 2
   },
   {
-   "id": "S099",
+   "id": "S108",
    "at": "L64",
    "what": "S94 Cal stares",
    "cam": [
@@ -4321,7 +4592,7 @@
    "follow": "cal"
   },
   {
-   "id": "S100",
+   "id": "S109",
    "at": "L65",
    "what": "S95 the wall just ends",
    "cam": [
@@ -4359,7 +4630,7 @@
    "follow": "cal"
   },
   {
-   "id": "S101",
+   "id": "S110",
    "at": "L66",
    "what": "S96 out onto the open road",
    "cam": [
@@ -4383,7 +4654,7 @@
    "step": 2
   },
   {
-   "id": "S102",
+   "id": "S111",
    "at": "L67",
    "what": "S97 Cal eats a pickle",
    "cam": [
@@ -4408,7 +4679,7 @@
    "follow": "cal"
   },
   {
-   "id": "S103",
+   "id": "S112",
    "at": "L67+0.72",
    "what": "S98 me smiles",
    "cam": [
@@ -4433,7 +4704,7 @@
    "follow": "me"
   },
   {
-   "id": "S104",
+   "id": "S113",
    "at": "L68",
    "what": "S99 the empty cup and ticket 42",
    "cam": [
@@ -4458,7 +4729,7 @@
    "follow": "cal"
   },
   {
-   "id": "S105",
+   "id": "S114",
    "at": "L69",
    "what": "S100 a new Friday, Cal waits",
    "cam": [
@@ -4483,7 +4754,7 @@
    "follow": "cal"
   },
   {
-   "id": "S106",
+   "id": "S115",
    "at": "L69+1.16",
    "what": "S101 me at the grille",
    "cam": [
@@ -4508,7 +4779,7 @@
    "follow": "me"
   },
   {
-   "id": "S107",
+   "id": "S116",
    "at": "L70",
    "what": "S102 the back wall, our three laps",
    "cam": [
@@ -4533,7 +4804,32 @@
    "follow": "me"
   },
   {
-   "id": "S108",
+   "id": "S117",
+   "at": "L70+1.1",
+   "what": "S102 the back wall, our three laps (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.0,
+      1.75
+     ],
+     [
+      10,
+      1.8,
+      1.0
+     ],
+     39.0,
+     0
+    ]
+   ],
+   "hand": 0,
+   "step": 2,
+   "follow": "me"
+  },
+  {
+   "id": "S118",
    "at": "L71",
    "what": "S103 the front one rolls up to the hatch",
    "cam": [
@@ -4564,6 +4860,80 @@
       1.62
      ],
      32
+    ]
+   ],
+   "hand": 0,
+   "step": 2
+  },
+  {
+   "id": "S119",
+   "at": "L71+1.3",
+   "what": "S103 the front one rolls up to the hatch (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      10.1,
+      0.2,
+      1.7
+     ],
+     [
+      10.1,
+      5.0,
+      1.62
+     ],
+     31.2
+    ],
+    [
+     1,
+     [
+      10.1,
+      0.2,
+      1.7
+     ],
+     [
+      10.1,
+      5.0,
+      1.62
+     ],
+     41.6
+    ]
+   ],
+   "hand": 0,
+   "step": 2
+  },
+  {
+   "id": "S120",
+   "at": "L71+2.5",
+   "what": "S103 the front one rolls up to the hatch (punch-in)",
+   "cam": [
+    [
+     0,
+     [
+      10.1,
+      0.2,
+      1.7
+     ],
+     [
+      10.1,
+      5.0,
+      1.62
+     ],
+     36.0
+    ],
+    [
+     1,
+     [
+      10.1,
+      0.2,
+      1.7
+     ],
+     [
+      10.1,
+      5.0,
+      1.62
+     ],
+     48.0
     ]
    ],
    "hand": 0,
@@ -7414,7 +7784,7 @@
  "sound": {
   "floor": "concrete",
   "steps_db": -24,
-  "rev": 1,
+  "rev": 2,
   "ambience": [
    {
     "kind": "hum",
