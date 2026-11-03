@@ -257,34 +257,6 @@
     ]
    ]
   },
-  "L10": {
-   "text": "it's sold. on sunday, it becomes a car park.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.276,
-   "onset": 0.172,
-   "end": 2.069,
-   "chunks": [
-    [
-     0.172,
-     0.586
-    ],
-    [
-     0.621,
-     1.052
-    ],
-    [
-     1.077,
-     1.397
-    ],
-    [
-     1.397,
-     2.069
-    ]
-   ]
-  },
   "L11": {
    "text": "i'm his son, home from the city for the last week.",
    "who": "narrator",
