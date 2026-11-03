@@ -5,7 +5,8 @@ import re
 from pathlib import Path
 
 T = {
-"L01": ["In this town,", "your HANDS glow", "whenever somebody", "NEEDS you."],
+"L01": ["If your hands", "stop GLOWING,", "stay off the", "old BRIDGE."],
+"L01b": ["Dark hands mean", "nobody NEEDS you."],
 "L02": ["The doctor hid", "at the back", "of the CINEMA."],
 "L03": ["Her hands lit", "up the whole", "ROW."],
 "L04": ["His dog's waiting", "at HOME,", "so he glows", "all through WORK."],

@@ -6,30 +6,30 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this town, your hands glow whenever somebody needs you.",
+   "text": "If your hands stop glowing, stay off the old bridge.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.552,
-   "onset": 0.172,
-   "end": 2.345,
+   "dur": 2.517,
+   "onset": 0.155,
+   "end": 2.31,
    "chunks": [
     [
-     0.172,
-     0.655
+     0.155,
+     0.526
     ],
     [
-     0.69,
-     1.31
+     0.526,
+     1.103
     ],
     [
-     1.31,
-     1.776
+     1.172,
+     1.594
     ],
     [
-     1.776,
-     2.345
+     1.594,
+     2.31
     ]
    ]
   },
@@ -1794,6 +1794,26 @@
     [
      1.534,
      2.138
+    ]
+   ]
+  },
+  "L01b": {
+   "text": "Dark hands mean nobody needs you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.552
     ]
    ]
   }

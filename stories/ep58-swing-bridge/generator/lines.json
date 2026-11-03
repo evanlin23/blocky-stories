@@ -4,20 +4,34 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this town,",
-    "In this town,"
+    "If your hands",
+    "If your hands"
    ],
    [
-    "your HANDS glow",
-    "your hands glow"
+    "stop GLOWING,",
+    "stop glowing,"
    ],
    [
-    "whenever somebody",
-    "whenever somebody"
+    "stay off the",
+    "stay off the"
    ],
    [
-    "NEEDS you.",
-    "needs you."
+    "old BRIDGE.",
+    "old bridge."
+   ]
+  ]
+ },
+ {
+  "id": "L01b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Dark hands mean",
+    "Dark hands mean"
+   ],
+   [
+    "nobody NEEDS you.",
+    "nobody needs you."
    ]
   ]
  },

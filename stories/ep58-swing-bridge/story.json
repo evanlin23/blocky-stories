@@ -280,20 +280,34 @@
    "who": "narrator",
    "chunks": [
     [
-     "In this town,",
-     "In this town,"
+     "If your hands",
+     "If your hands"
     ],
     [
-     "your HANDS glow",
-     "your hands glow"
+     "stop GLOWING,",
+     "stop glowing,"
     ],
     [
-     "whenever somebody",
-     "whenever somebody"
+     "stay off the",
+     "stay off the"
     ],
     [
-     "NEEDS you.",
-     "needs you."
+     "old BRIDGE.",
+     "old bridge."
+    ]
+   ]
+  },
+  {
+   "id": "L01b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dark hands mean",
+     "Dark hands mean"
+    ],
+    [
+     "nobody NEEDS you.",
+     "nobody needs you."
     ]
    ]
   },
@@ -1625,46 +1639,46 @@
     [
      0,
      [
-      21.6,
-      -5.2,
-      1.2
+      5.4,
+      -1.5,
+      1.55
      ],
      [
-      21.6,
-      0.3,
-      1.0
+      2.0,
+      0.8,
+      0.98
      ],
-     36
+     34
     ],
     [
      1,
      [
-      21.6,
-      -4.8,
-      1.2
+      3.4,
+      -0.7,
+      1.4
      ],
      [
-      21.6,
-      0.3,
-      1.0
+      2.0,
+      0.8,
+      0.98
      ],
-     36
+     34
     ]
    ],
    "step": 2,
+   "reach": "far",
+   "fd": 0.02,
+   "fs": 8,
+   "fogc": "#e4eaee",
    "sun": [
-    10,
-    25,
-    0.5,
+    14,
+    20,
+    3.4,
     "#ffd9a0"
    ],
-   "fill_k": 0.35,
+   "fill_k": 1.6,
    "look": "day",
-   "hand": 0.003,
-   "glow_k": 0.6,
-   "sky_k": 0.55,
-   "em_k": 0.5,
-   "halo_k": 0.55
+   "hand": 0.003
   },
   {
    "id": "S02",
@@ -1674,33 +1688,33 @@
      0,
      [
       21.0,
-      -1.7,
-      1.1
+      -2.6,
+      1.15
      ],
      [
       21.0,
       0.5,
       1.12
      ],
-     27
+     24
     ],
     [
      1,
      [
       20.95,
-      -1.5,
-      1.1
+      -2.3,
+      1.15
      ],
      [
       21.0,
       0.5,
       1.12
      ],
-     27
+     24
     ]
    ],
    "step": 2,
-   "at": "L01.2",
+   "at": "L01.3+0.55",
    "sun": [
     10,
     25,
@@ -1709,6 +1723,9 @@
    ],
    "sky_k": 0.55,
    "fill_k": 0.5,
+   "glow_k": 0.6,
+   "em_k": 0.5,
+   "halo_k": 0.55,
    "look": "day",
    "hand": 0.004
   },
@@ -7195,59 +7212,11 @@
     "hidden": true
    },
    {
-    "at": 0,
+    "at": "L02",
     "pos": [
      0.0,
      0.0,
      -50.0
-    ]
-   },
-   {
-    "at": 0,
-    "arms": [
-     60,
-     60
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "neutral",
-    "sit": false,
-    "yaw": 0,
-    "pos": [
-     21.6,
-     -0.3,
-     0.0
-    ],
-    "blend": 0.0,
-    "hidden": false
-   },
-   {
-    "at": "L01.2",
-    "pos": [
-     21.6,
-     -0.3,
-     0.0
-    ],
-    "hidden": true,
-    "blend": 0.0
-   },
-   {
-    "at": "L02",
-    "pos": [
-     21.6,
-     -0.3,
-     0.0
     ]
    },
    {
@@ -7340,7 +7309,7 @@
     "hidden": true
    },
    {
-    "at": 0,
+    "at": "L01.3+0.55",
     "pos": [
      0.0,
      0.0,
@@ -7348,45 +7317,7 @@
     ]
    },
    {
-    "at": 0,
-    "arms": [
-     55,
-     55
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "neutral",
-    "sit": false,
-    "yaw": 0,
-    "pos": [
-     20.4,
-     0.7,
-     0.0
-    ],
-    "blend": 0.0,
-    "hidden": false
-   },
-   {
-    "at": "L01.2",
-    "pos": [
-     20.4,
-     0.7,
-     0.0
-    ]
-   },
-   {
-    "at": "L01.2",
+    "at": "L01.3+0.55",
     "arms": [
      78,
      78
@@ -7485,59 +7416,11 @@
     "hidden": true
    },
    {
-    "at": 0,
+    "at": "L03",
     "pos": [
      0.0,
      0.0,
      -50.0
-    ]
-   },
-   {
-    "at": 0,
-    "arms": [
-     55,
-     55
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "neutral",
-    "sit": false,
-    "yaw": 0,
-    "pos": [
-     22.8,
-     0.8,
-     0.0
-    ],
-    "blend": 0.0,
-    "hidden": false
-   },
-   {
-    "at": "L01.2",
-    "pos": [
-     22.8,
-     0.8,
-     0.0
-    ],
-    "hidden": true,
-    "blend": 0.0
-   },
-   {
-    "at": "L03",
-    "pos": [
-     22.8,
-     0.8,
-     0.0
     ]
    },
    {
@@ -8147,21 +8030,21 @@
    "at": 0,
    "name": "lvl",
    "key": "glow.doc",
-   "level": 1.0,
+   "level": 0.0,
    "ramp": 0
   },
   {
    "at": 0,
    "name": "lvl",
    "key": "glow.t1",
-   "level": 1.0,
+   "level": 0.0,
    "ramp": 0
   },
   {
    "at": 0,
    "name": "lvl",
    "key": "glow.t2",
-   "level": 1.0,
+   "level": 0.0,
    "ramp": 0
   },
   {
@@ -8200,17 +8083,10 @@
    "ramp": 0
   },
   {
-   "at": "L01.2",
+   "at": "L01.3+0.55",
    "name": "lvl",
-   "key": "glow.doc",
-   "level": 0.0,
-   "ramp": 0
-  },
-  {
-   "at": "L01.2",
-   "name": "lvl",
-   "key": "glow.t2",
-   "level": 0.0,
+   "key": "glow.t1",
+   "level": 1.0,
    "ramp": 0
   },
   {
@@ -8862,6 +8738,12 @@
    }
   ],
   "sfx": [
+   {
+    "at": "L01.3+0.3",
+    "kind": "hit",
+    "db": -14,
+    "dur": 1.2
+   },
    {
     "at": "L22+0.5",
     "kind": "click",
