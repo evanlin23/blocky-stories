@@ -364,3 +364,4 @@ killed: the `lookout` redo (2026-11-03), same big idea as ep33 (altitude time), 
 - moving-day (ep17): a house grows to fit the tallest one living in it, and it never fit us; something tall came with us in a box
 - ep32-sitter: if nobody looks at you, your face fades; the faceless sitter creeping nearer is Mum, faded because I stopped looking at her
 - ep43-reading-room: the number over your head is how many people know your name; you don't count yourself, so my 1 was my brother all along
+- ep47-fitting-room: every lie pins a tag to your clothes, but a lie you believe never gets one; my clean coat was the lie that I was happy in the city
