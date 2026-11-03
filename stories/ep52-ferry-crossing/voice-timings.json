@@ -653,31 +653,63 @@
     ]
    ]
   },
-  "L25": {
-   "text": "thursday, I come to at Gran's door, in the dark.",
+  "L24a": {
+   "text": "then I turn back, before she sees me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.31,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.759
+    ],
+    [
+     0.784,
+     1.094
+    ],
+    [
+     1.094,
+     1.707
+    ]
+   ]
+  },
+  "L25": {
+   "text": "thursday, the dots lead me all the way to Gran's door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
    "onset": 0.172,
-   "end": 2.103,
+   "end": 2.293,
    "chunks": [
     [
      0.172,
-     0.517
+     0.552
     ],
     [
-     0.543,
+     0.578,
      0.879
     ],
     [
      0.879,
-     1.466
+     1.215
     ],
     [
-     1.492,
-     2.103
+     1.215,
+     1.414
+    ],
+    [
+     1.414,
+     2.293
     ]
    ]
   },
@@ -1886,34 +1918,6 @@
     [
      2.301,
      2.931
-    ]
-   ]
-  },
-  "L24a": {
-   "text": "then I turn back, before she sees me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.914,
-   "onset": 0.155,
-   "end": 1.707,
-   "chunks": [
-    [
-     0.155,
-     0.328
-    ],
-    [
-     0.328,
-     0.759
-    ],
-    [
-     0.784,
-     1.094
-    ],
-    [
-     1.094,
-     1.707
     ]
    ]
   }
