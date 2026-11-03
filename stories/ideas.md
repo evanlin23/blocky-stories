@@ -369,3 +369,4 @@ killed: the `lookout` redo (2026-11-03), same big idea as ep33 (altitude time), 
 - ep47-fitting-room: every lie pins a tag to your clothes, but a lie you believe never gets one; my clean coat was the lie that I was happy in the city
 - ep48-crazy-golf: your shadow sits where you were happiest; the one on Dad's green is mine, and the one at my feet is Dad's
 - mirror-maze (ep15): your reflection stays behind when you walk away; the narrator is the reflection the real me left in a maze pane, and Tasha visits it
+- night-mower: our street is built on a giant sleeping head; the neighbor's perfect lawn is its eyebrow, Dad's bald spot is its receding hairline, and when it's trimmed it turns toward whoever watches
