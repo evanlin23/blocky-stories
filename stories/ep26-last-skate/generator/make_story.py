@@ -125,7 +125,7 @@ MESEAT = [ME_X, SEAT_Y, 1.25]
 SHOTS = [
     # 01 the rule (warm, readable from frame 1): couples joined by a cherry ribbon at the wrist, singles at the rail
     (0, "shot 1, warm: Nan's face at the rail, bare wrist, ribbon-joined couples gliding behind her", 2,
-     C([3.1, -6.3, 2.8], [3.4, -2.8, 1.0], 4.0)),
+     C([3.1, -6.9, 2.8], [3.2, -2.2, 1.0], 6.2)),
     ("L01.3", "a slow track along the line of singles at the rail", 2,
      C([5.4, -6.5, 1.45], [5.4, -3.75, 1.3], 4.4)),
     ("L02", "the rink from outside at dusk", 2, move(([-15.0, -5.6, 1.2], [-8.0, -7.0, 0.7]), ([-13.4, -6.2, 1.2], [-8.0, -7.0, 0.7]), 25)),
@@ -133,9 +133,9 @@ SHOTS = [
     ("L04", "in the car at dusk, windows down: me driving, Nan's arm through Pop's in the back", 2,
      C([-10.0, -8.2, 2.2], [-13.2, -4.4, 1.25], 3.2)),
     ("L04.4", "Nan holds Pop's arm at the doors", 2, C([-3.4, -5.0, 1.4], [-6.2, -6.9, 1.3], 2.6)),
-    ("L08", "ribbon couples gliding under the slow fans", 2, still([0.5, -7.0, 1.3], [1.0, 0.5, 2.2], 30)),
-    ("L08.2", "low on the shining floor: the couples' skates gliding", 2, still([-3.0, -4.8, 0.3], [0.5, -1.8, 0.15], 28)),
-    ("L09", "couples gliding past the painted stripes", 2, C([-1.5, -4.6, 1.3], [4.2, -0.4, 1.3], 3.6)),
+    ("L08", "ribbon couples gliding under the slow fans", 2, still([0.5, -7.2, 1.3], [0.8, 0.5, 2.2], 23)),
+    ("L08.2", "couples gliding under the turning fans, from the west", 2, still([-6.6, -3.0, 1.2], [1.0, 0.0, 2.6], 26)),
+    ("L09", "couples gliding past the painted stripes", 2, C([2.8, -4.8, 1.35], [3.2, -1.0, 1.3], 2.8)),
     ("L10", "Nan at the hire counter, the cubby wall behind", 2, C([3.6, -4.9, 1.7], [4.5, -8.4, 1.8], 3.6)),
     ("L10.2", "the lore shot: the bottom-row end cubby, the far-too-long cherry skates, the tally on the near heel", 2,
      C([6.5, -6.0, 1.15], [6.5, -8.05, 1.12], 0.9)),
@@ -149,7 +149,7 @@ SHOTS = [
     ("L17", "couples gliding past, seen at the elbows", 2, still([-6.4, -3.6, 1.3], [-1.0, 0.0, 1.0], 24)),
     ("L18", "high wide: the pool travelling round the floor", 2, HIGH),
     ("L19", "Nan alone at the rail, the couples beyond", 2, C([3.8, -6.6, 1.4], [3.0, -3.5, 1.2], 2.8)),
-    ("L19b", "Nan at the rail, bare wrist, soft, looking toward the snack bar (from the concourse side)", 2, C([0.6, -5.7, 1.35], [3.0, -3.75, 1.3], 1.9)),
+    ("L19b", "Nan at the rail, bare wrist, soft, looking toward the snack bar (from the concourse side)", 2, C([0.8, -5.5, 1.0], [2.8, -3.9, 1.15], 1.8)),
     ("L20", "me and Pop at the snack bar, the tub between us", 2, C([-1.7, -4.8, 1.55], [-4.4, -6.4, 1.2], 3.0)),
     ("L21", "the pool sliding along the far rail, then onto a tall striped shape", 2, FARCAM),
     ("L22", "medium on the Skater at the far rail, face toward the floor", 2,
@@ -361,8 +361,8 @@ walk("nan", "L15", [-2.7, -6.2])
 walk("nan", "L15+0.4", [-0.3, -4.6], skate=True)
 walk("nan", "L15>", [NAN[0], NAN[1]], skate=True)
 put("nan", "L16", list(NAN), yaw=180, expr="soft", skate=False)
-key("nan", "L19b", yaw=-70, head=[0, 0], blend=0)
-key("nan", "L20", yaw=180, head=[0, 0], blend=0)
+key("nan", "L19b", yaw=-70, head=[0, 0], arms=[70, 70], look=[-1, 0], blend=0)
+key("nan", "L20", yaw=180, head=[0, 0], arms=[0, 0], look=[0, 0], blend=0)
 put("nan", "L34", list(NAN), yaw=0, head=[-30, 0], expr="soft")
 key("nan", "L39", head=[-45, 0], blend=0.3)
 put("nan", "L48", list(NAN), yaw=0, head=[-30, 0], expr="soft")
@@ -387,7 +387,7 @@ for i in range(len(LAP)):
 # ---- Lenny at the booth
 put("lenny", 0, [0.0, 5.5, 1.74], yaw=0, expr="neutral")
 key("lenny", "L25.3", arms=[0, 100], expr="grin", blend=0.9)
-key("lenny", "L25>", arms=[0, 0], blend=0.5)
+key("lenny", "L26", arms=[0, 0], blend=0.5)
 key("lenny", "L54", expr="grin", head=[10, 0])
 key("lenny", "L61", expr="grin", lean=14, arms=[0, 165], head=[0, 0], blend=0.4)
 key("lenny", "L61>", lean=0, arms=[0, 0], blend=0.5)
@@ -418,22 +418,23 @@ for w in ("c1a", "c1b", "c2a", "c2b", "c3a", "c3b"):
 for w, x in (("s1", 4.2), ("s2", 5.4), ("s3", 6.6)):
     put(w, 0, [x, -3.75], yaw=0, expr="neutral")
     hide(w, "L02")
-# shot 1: three ribbon-joined couples glide south toward the rail behind Nan, side by side across the frame
-def glide(anchor, secs, cx, y0, speed, a, b, off=0.45):
+# couples glide sideways across the floor facing the camera, side by side, near wrists joined by the ribbon hoop
+def glide(anchor, secs, lane_y, x0, speed, a, b, off=0.55):
     for who, dx in ((a, -off), (b, off)):
-        put(who, anchor, [cx + dx, y0], yaw=0, skate=True, expr="grin", arms=[18, 18], side=[8, 8])
+        put(who, anchor, [x0 + dx, lane_y], yaw=0, keep_yaw=True, skate=True, expr="soft", arms=[25, 25], side=[0, 0])
         for k in range(1, int(secs / 0.5) + 1):
-            walk(who, f"{anchor}+{k * 0.5:.1f}", [cx + dx, round(y0 - speed * k * 0.5, 3)], skate=True, arms=[18, 18], side=[8, 8])
+            walk(who, f"{anchor}+{k * 0.5:.1f}", [round(x0 + dx + speed * k * 0.5, 3), lane_y], yaw=0, keep_yaw=True,
+                 skate=True, arms=[25, 25], side=[0, 0])
         hide(who, f"{anchor}+{secs + 0.1:.1f}")
 
 
-glide("L01", 2.9, 2.9, -0.7, 0.4, "c1a", "c1b")
-glide("L01", 2.9, 4.05, -0.2, 0.4, "c2a", "c2b")
-glide("L01", 2.9, 3.45, 0.9, 0.4, "c3a", "c3b")
+glide("L01", 2.9, -2.4, 0.77, 1.1, "c1a", "c1b")
+glide("L01", 2.9, -1.5, 2.37, 1.1, "c2a", "c2b")
+glide("L01", 2.9, -0.6, 3.97, 1.1, "c3a", "c3b")
 # L08 to L09: three couples glide round under the fans, then past the stripes
-orbit("L08", 3.8, 4.8, "c1a", "c1b")
-orbit("L08", 3.8, 5.5, "c2a", "c2b")
-orbit("L08", 3.8, 4.2, "c3a", "c3b")
+glide("L08", 3.8, -1.2, 0.4, 1.0, "c1a", "c1b")
+glide("L08", 3.8, -0.2, -0.9, 1.0, "c2a", "c2b")
+glide("L08", 3.8, 0.8, -2.2, 1.0, "c3a", "c3b")
 orbit("L16", 23.0, 0.98, "c1a", "c1b")
 orbit("L16", 23.0, 6.06, "c2a", "c2b")
 orbit("L28", 11.4, 3.4, "c1a", "c1b")

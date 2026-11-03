@@ -463,14 +463,20 @@ def build_car(kit, ctx):
 
 
 def build_ribbons(kit, ctx):
-    """The rule marker: one short cherry ribbon loop tied between the near wrists of each couple (and, from L67, of
-    Pop and Nan). Our own prop, no text. The Skater and the singles never wear one."""
-    rb = kit.emit("#ff2e5a", 3.0)
+    """The rule marker: one cherry ribbon hoop (a hand-span ring) hanging between the near wrists of each couple (and,
+    from L67, of Pop and Nan). Our own prop, no text. The Skater and the singles never wear one."""
+    rb = kit.emit("#ff2e5a", 3.5)
     ctx["ribbons"] = []
     for key in (("c1a", "c1b"), ("c2a", "c2b"), ("c3a", "c3b"), ("pop", "nan")):
-        strip = kit.box(f"ribbon {key[0]}", (1.0, 0.16, 0.16), (0, 0, -9), rb)
-        knots = [kit.box(f"ribbon knot {key[0]}{k}", (0.3, 0.3, 0.5), (0, 0, -9), rb, bevel=0.02) for k in (0, 1)]
-        ctx["ribbons"].append((key, strip, knots))
+        bpy.ops.mesh.primitive_torus_add(location=(0, 0, -9), major_radius=0.24, minor_radius=0.05, major_segments=28,
+                                         minor_segments=8)
+        ring = bpy.context.active_object
+        ring.name = f"ribbon {key[0]}"
+        ring.scale = (1.35, 1.35, 1.35)
+        ring.data.materials.append(rb)
+        for p_ in ring.data.polygons:
+            p_.use_smooth = True
+        ctx["ribbons"].append((key, ring, []))
 
 
 def build_skater(kit, ctx):
@@ -808,9 +814,9 @@ def animate(kit, story, tl, t, ctx):
         if ok:
             d, pa, pb = best
             mid = (pa + pb) / 2
-            lift = Vector((0, 0, 0.26))        # the loop stands up above the joined wrists so it shows
-            strip.location = mid + lift
-            strip.scale = (max(d, 0.05), 1, 1)
-            strip.rotation_euler = (pb - pa).to_track_quat("X", "Z").to_euler()
-            knots[0].location, knots[1].location = pa + lift * 0.5, pb + lift * 0.5
+            axis = (pb - pa).cross(Vector((0, 0, 1)))        # the hoop stands in the vertical plane through both wrists
+            if axis.length < 1e-3:
+                axis = Vector((0, 1, 0))
+            strip.location = mid + Vector((0, 0, -0.06))
+            strip.rotation_euler = axis.normalized().to_track_quat("Z", "Y").to_euler()
     return over
