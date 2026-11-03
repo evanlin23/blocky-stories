@@ -38,7 +38,7 @@ for ln in orig_lines:
 def remap(ref):
     if not isinstance(ref, str):
         return ref
-    mm = re.match(r"^(L\d+)\.(\d+)(.*)$", ref)
+    mm = re.match(r"^(L\d+[a-z]?)\.(\d+)(.*)$", ref)
     if mm and mm.group(1) in CHUNKMAP:
         return f"{mm.group(1)}.{CHUNKMAP[mm.group(1)][int(mm.group(2))]}{mm.group(3)}"
     return ref
@@ -776,7 +776,7 @@ story = {
     "fx": [],
     "music": music,
     "sound": sound,
-    "rev": 1,
+    "rev": 3,
 }
 remap_all(sfx)
 remap_all(music["sections"])

@@ -518,54 +518,62 @@
    ]
   },
   "L21": {
-   "text": "Ben has worn it on his left wrist, his whole life.",
+   "text": "Ben has worn a black one on his left wrist his whole life.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.448,
+   "dur": 2.569,
    "onset": 0.172,
-   "end": 2.259,
+   "end": 2.379,
    "chunks": [
     [
      0.172,
-     0.466
+     0.612
     ],
     [
-     0.466,
-     0.664
+     0.612,
+     0.957
     ],
     [
-     0.664,
-     0.845
+     0.957,
+     1.138
     ],
     [
-     0.845,
-     1.362
+     1.138,
+     1.578
     ],
     [
-     1.431,
-     2.259
+     1.578,
+     2.379
     ]
    ]
   },
   "L22": {
-   "text": "It was on his right.",
+   "text": "This one was red. On his right wrist.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.293,
-   "onset": 0.155,
-   "end": 1.103,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
    "chunks": [
     [
-     0.155,
-     0.5
+     0.172,
+     0.37
     ],
     [
-     0.5,
-     1.103
+     0.37,
+     0.741
+    ],
+    [
+     0.793,
+     1.0
+    ],
+    [
+     1.0,
+     1.655
     ]
    ]
   },
@@ -1034,70 +1042,74 @@
    ]
   },
   "L42": {
-   "text": "Ben wasn't the one alone in the dark on Tuesday.",
+   "text": "On Tuesday, I was the one alone in the dark.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.31,
+   "dur": 2.224,
    "onset": 0.172,
-   "end": 2.121,
+   "end": 2.034,
    "chunks": [
     [
      0.172,
-     0.543
-    ],
-    [
-     0.543,
      0.741
     ],
     [
-     0.741,
-     1.043
+     0.793,
+     0.974
     ],
     [
-     1.043,
-     1.328
+     0.974,
+     1.172
     ],
     [
-     1.328,
-     2.121
+     1.172,
+     1.474
+    ],
+    [
+     1.474,
+     2.034
     ]
    ]
   },
   "L43": {
-   "text": "I was.",
+   "text": "With the door shut.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 0.983,
-   "onset": 0.172,
-   "end": 0.776,
+   "dur": 1.207,
+   "onset": 0.155,
+   "end": 1.017,
    "chunks": [
     [
-     0.172,
-     0.776
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     1.017
     ]
    ]
   },
   "L44": {
-   "text": "Ben didn't swap. I did.",
+   "text": "I'm the one who swapped.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.534,
+   "dur": 1.276,
    "onset": 0.172,
-   "end": 1.328,
+   "end": 1.086,
    "chunks": [
     [
      0.172,
-     0.724
+     0.439
     ],
     [
-     0.759,
-     1.328
+     0.439,
+     1.086
     ]
    ]
   },
@@ -1482,22 +1494,22 @@
    ]
   },
   "L60": {
-   "text": "Watch on his left wrist.",
+   "text": "Black watch. Left wrist.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.414,
+   "dur": 1.5,
    "onset": 0.172,
-   "end": 1.207,
+   "end": 1.293,
    "chunks": [
     [
      0.172,
-     0.552
+     0.586
     ],
     [
-     0.552,
-     1.207
+     0.621,
+     1.293
     ]
    ]
   },
@@ -1658,6 +1670,206 @@
     [
      0.612,
      1.293
+    ]
+   ]
+  },
+  "L11b": {
+   "text": "He eats my cereal. I hide the remote.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.914
+    ],
+    [
+     0.966,
+     1.215
+    ],
+    [
+     1.215,
+     1.845
+    ]
+   ]
+  },
+  "L14b": {
+   "text": "Ben's flashlight lit up his black watch, on his left wrist.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     1.086
+    ],
+    [
+     1.086,
+     1.569
+    ],
+    [
+     1.603,
+     1.81
+    ],
+    [
+     1.81,
+     2.483
+    ]
+   ]
+  },
+  "L27b": {
+   "text": "Then he gave me the last slice of pizza.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.509
+    ],
+    [
+     0.509,
+     1.061
+    ],
+    [
+     1.061,
+     1.672
+    ]
+   ]
+  },
+  "L30b": {
+   "text": "Thursday night, a flashlight beam sat under my door for an hour.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.793,
+     1.526
+    ],
+    [
+     1.526,
+     1.801
+    ],
+    [
+     1.801,
+     2.103
+    ],
+    [
+     2.103,
+     2.776
+    ]
+   ]
+  },
+  "L30c": {
+   "text": "When I opened it, the hall was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.655
+    ],
+    [
+     0.681,
+     0.94
+    ],
+    [
+     0.94,
+     1.638
+    ]
+   ]
+  },
+  "L38b": {
+   "text": "I lay awake till the sun came up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.017
+    ],
+    [
+     1.017,
+     1.569
+    ]
+   ]
+  },
+  "L40b": {
+   "text": "The canoe was red. Same red as his watch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.81
+    ],
+    [
+     0.888,
+     1.267
+    ],
+    [
+     1.267,
+     1.983
     ]
    ]
   }

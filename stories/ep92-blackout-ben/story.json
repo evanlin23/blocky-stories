@@ -508,6 +508,28 @@
    ]
   },
   {
+   "id": "L11b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He eats",
+     "He eats"
+    ],
+    [
+     "my CEREAL.",
+     "my cereal."
+    ],
+    [
+     "I hide",
+     "I hide"
+    ],
+    [
+     "the REMOTE.",
+     "the remote."
+    ]
+   ]
+  },
+  {
    "id": "L12",
    "who": "narrator",
    "chunks": [
@@ -566,6 +588,32 @@
     [
      "with the FLASHLIGHTS.",
      "with the flashlights."
+    ]
+   ]
+  },
+  {
+   "id": "L14b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Ben's flashlight",
+     "Ben's flashlight"
+    ],
+    [
+     "lit up his",
+     "lit up his"
+    ],
+    [
+     "black WATCH,",
+     "black watch,"
+    ],
+    [
+     "on his",
+     "on his"
+    ],
+    [
+     "LEFT wrist.",
+     "left wrist."
     ]
    ]
   },
@@ -682,20 +730,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Ben has",
-     "Ben has"
+     "Ben has worn",
+     "Ben has worn"
     ],
     [
-     "worn it",
-     "worn it"
+     "a BLACK one",
+     "a black one"
     ],
     [
      "on his",
      "on his"
     ],
     [
-     "LEFT wrist,",
-     "left wrist,"
+     "LEFT wrist",
+     "left wrist"
     ],
     [
      "his whole LIFE.",
@@ -708,12 +756,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "It was on",
-     "It was on"
+     "This one",
+     "This one"
     ],
     [
-     "his RIGHT.",
-     "his right."
+     "was RED.",
+     "was red."
+    ],
+    [
+     "On his",
+     "On his"
+    ],
+    [
+     "RIGHT wrist.",
+     "right wrist."
     ]
    ]
   },
@@ -808,6 +864,28 @@
    ]
   },
   {
+   "id": "L27b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then he",
+     "Then he"
+    ],
+    [
+     "gave me",
+     "gave me"
+    ],
+    [
+     "the last slice",
+     "the last slice"
+    ],
+    [
+     "of PIZZA.",
+     "of pizza."
+    ]
+   ]
+  },
+  {
    "id": "L28",
    "who": "narrator",
    "chunks": [
@@ -854,6 +932,54 @@
     [
      "totally NORMAL.",
      "totally normal."
+    ]
+   ]
+  },
+  {
+   "id": "L30b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Thursday night,",
+     "Thursday night,"
+    ],
+    [
+     "a flashlight beam",
+     "a flashlight beam"
+    ],
+    [
+     "sat under",
+     "sat under"
+    ],
+    [
+     "my DOOR",
+     "my door"
+    ],
+    [
+     "for an HOUR.",
+     "for an hour."
+    ]
+   ]
+  },
+  {
+   "id": "L30c",
+   "who": "narrator",
+   "chunks": [
+    [
+     "When I",
+     "When I"
+    ],
+    [
+     "opened it,",
+     "opened it,"
+    ],
+    [
+     "the hall",
+     "the hall"
+    ],
+    [
+     "was EMPTY.",
+     "was empty."
     ]
    ]
   },
@@ -1019,6 +1145,24 @@
    ]
   },
   {
+   "id": "L38b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I lay awake",
+     "I lay awake"
+    ],
+    [
+     "till the sun",
+     "till the sun"
+    ],
+    [
+     "came UP.",
+     "came up."
+    ]
+   ]
+  },
+  {
    "id": "L39",
    "who": "narrator",
    "chunks": [
@@ -1035,7 +1179,7 @@
      "at the photo"
     ],
     [
-     "on the MANTLE.",
+     "on the MANTEL.",
      "on the mantle."
     ]
    ]
@@ -1059,6 +1203,28 @@
    ]
   },
   {
+   "id": "L40b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The canoe",
+     "The canoe"
+    ],
+    [
+     "was RED.",
+     "was red."
+    ],
+    [
+     "Same red",
+     "Same red"
+    ],
+    [
+     "as his WATCH.",
+     "as his watch."
+    ]
+   ]
+  },
+  {
    "id": "L41",
    "who": "narrator",
    "chunks": [
@@ -1077,8 +1243,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Ben wasn't",
-     "Ben wasn't"
+     "On Tuesday,",
+     "On Tuesday,"
+    ],
+    [
+     "I was",
+     "I was"
     ],
     [
      "the one",
@@ -1089,12 +1259,8 @@
      "alone in"
     ],
     [
-     "the DARK",
-     "the dark"
-    ],
-    [
-     "on Tuesday.",
-     "on Tuesday."
+     "the DARK.",
+     "the dark."
     ]
    ]
   },
@@ -1103,8 +1269,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I WAS.",
-     "I was."
+     "With the",
+     "With the"
+    ],
+    [
+     "door SHUT.",
+     "door shut."
     ]
    ]
   },
@@ -1113,12 +1283,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Ben didn't SWAP.",
-     "Ben didn't swap."
+     "I'm the one",
+     "I'm the one"
     ],
     [
-     "I did.",
-     "I did."
+     "who SWAPPED.",
+     "who swapped."
     ]
    ]
   },
@@ -1417,12 +1587,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Watch on his",
-     "Watch on his"
+     "BLACK watch.",
+     "Black watch."
     ],
     [
      "LEFT wrist.",
-     "left wrist."
+     "Left wrist."
     ]
    ]
   },
@@ -3509,7 +3679,7 @@
     ]
    ],
    "step": 2,
-   "at": "L42.2"
+   "at": "L42.1"
   },
   {
    "id": "S43",
@@ -5015,18 +5185,18 @@
     "expr": "worried"
    },
    {
-    "at": "L42.2",
+    "at": "L42.1",
     "hidden": true
    },
    {
-    "at": "L42.2",
+    "at": "L42.1",
     "pos": [
      16.05,
      1.15
     ]
    },
    {
-    "at": "L42.2",
+    "at": "L42.1",
     "pos": [
      0.3,
      -0.2
@@ -7682,7 +7852,7 @@
    "z": 0.66
   },
   {
-   "at": "L42.2+0.00",
+   "at": "L42.1+0.00",
    "name": "check",
    "state": [
     "q",
@@ -7692,7 +7862,7 @@
    "big": true
   },
   {
-   "at": "L42.2+0.14",
+   "at": "L42.1+0.14",
    "name": "check",
    "state": [
     "q",
@@ -7702,7 +7872,7 @@
    "big": true
   },
   {
-   "at": "L42.2+0.28",
+   "at": "L42.1+0.28",
    "name": "check",
    "state": [
     "q",
@@ -7712,7 +7882,7 @@
    "big": true
   },
   {
-   "at": "L42.2+0.42",
+   "at": "L42.1+0.42",
    "name": "check",
    "state": [
     "q",
@@ -7722,7 +7892,7 @@
    "big": true
   },
   {
-   "at": "L42.2+0.56",
+   "at": "L42.1+0.56",
    "name": "check",
    "state": [
     "q",
@@ -7732,19 +7902,19 @@
    "big": true
   },
   {
-   "at": "L42.2+0.70",
+   "at": "L42.1+0.70",
    "name": "check",
    "state": "C",
    "big": true
   },
   {
-   "at": "L42.2+1.5",
+   "at": "L42.1+1.5",
    "name": "check",
    "state": "C",
    "big": false
   },
   {
-   "at": "L42.2",
+   "at": "L42.1",
    "name": "sit",
    "who": "me",
    "on": false
@@ -8382,5 +8552,5 @@
    }
   ]
  },
- "rev": 1
+ "rev": 3
 }
