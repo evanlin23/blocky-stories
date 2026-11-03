@@ -110,7 +110,7 @@
    "wave",
    false
   ],
-  "bun": [
+  "mop": [
    "hug",
    true
   ],
@@ -148,14 +148,15 @@
    "pants": "#262c42",
    "shoes": "#f0f0ee",
    "sleeves": "long",
-   "hair": "bun",
+   "hair": "mop",
    "hair_c": "#3a2618",
    "hat": "none",
    "hat_c": "#333333",
    "face": {
     "eyes": "round",
     "brows": true,
-    "ink": "#16100c"
+    "ink": "#16100c",
+    "brow_w": 1.9
    },
    "collar": "#efe2c4",
    "extras": [
@@ -609,8 +610,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "DAD'S crazy golf",
-     "dad's crazy golf"
+     "My DAD'S",
+     "my dad's"
+    ],
+    [
+     "crazy golf",
+     "crazy golf"
     ],
     [
      "becomes a",
@@ -631,8 +636,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'm HOME",
-     "i'm home"
+     "I'm his SON,",
+     "i'm his son,"
+    ],
+    [
+     "home from",
+     "home from"
+    ],
+    [
+     "the CITY",
+     "the city"
     ],
     [
      "for the",
@@ -803,8 +816,8 @@
      "it has"
     ],
     [
-     "a BUN.",
-     "a bun."
+     "THICK HAIR.",
+     "thick hair."
     ],
     [
      "Dad must",
@@ -819,8 +832,8 @@
      "a mop"
     ],
     [
-     "of HAIR",
-     "of hair"
+     "like MINE",
+     "like mine"
     ],
     [
      "back THEN.",
@@ -1579,8 +1592,8 @@
      "it fits me."
     ],
     [
-     "BUN and ALL.",
-     "bun and all."
+     "HAIR and ALL.",
+     "hair and all."
     ]
    ]
   },
@@ -1655,16 +1668,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "The one",
-     "the one"
+     "The one at",
+     "the one at"
     ],
     [
-     "under me",
-     "under me"
+     "my FEET",
+     "my feet"
     ],
     [
-     "belongs to DAD.",
-     "belongs to dad."
+     "is DAD'S.",
+     "is dad's."
     ]
    ]
   },
@@ -2308,7 +2321,7 @@
     ]
    ],
    "step": 2,
-   "at": "L09.1"
+   "at": "L09.2"
   },
   {
    "id": "S015",
@@ -5664,14 +5677,14 @@
     ]
    },
    {
-    "at": "L09.1",
+    "at": "L09.2",
     "pos": [
      0,
      0
     ]
    },
    {
-    "at": "L09.1",
+    "at": "L09.2",
     "pos": [
      -7.6,
      1.9
@@ -6828,7 +6841,7 @@
    "dur": 0
   },
   {
-   "at": "L09.1",
+   "at": "L09.2",
    "name": "obj",
    "id": "survey",
    "pos": [
@@ -7116,7 +7129,7 @@
   {
    "at": "L15",
    "name": "obj",
-   "id": "fig_bun",
+   "id": "fig_mop",
    "pos": [
     2.6,
     24.3,
@@ -8715,7 +8728,6 @@
      "creak"
     ]
    }
-  ],
-  "rev": 2
+  ]
  }
 }

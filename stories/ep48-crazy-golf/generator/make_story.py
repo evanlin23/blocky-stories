@@ -74,10 +74,12 @@ def mv(p0, t0, l0, p1=None, t1=None, l1=None, roll=0.0):
 
 # ---------------------------------------------------------------------------------------------- the cast
 def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="solid", pattern_c=None, collar=None,
-           hat="none", hat_c="#333333", extras=(), eyes="round", ink="#16100c", sleeves="long", zip_c=None, **kw):
+           hat="none", hat_c="#333333", extras=(), eyes="round", ink="#16100c", sleeves="long", zip_c=None, brow_w=1.0, **kw):
     d = {"age": "adult", "skin": skin, "shirt": shirt, "pattern": pattern, "pants": pants, "shoes": shoes,
          "sleeves": sleeves, "hair": hair, "hair_c": hair_c, "hat": hat, "hat_c": hat_c,
          "face": {"eyes": eyes, "brows": True, "ink": ink}}
+    if brow_w != 1.0:
+        d["face"]["brow_w"] = brow_w
     if pattern_c:
         d["pattern_c"] = pattern_c
     if collar:
@@ -91,7 +93,7 @@ def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="sol
 
 
 cast = {
-    "me": person("#d9a577", "#b5532f", "#262c42", "#f0f0ee", hair="bun", hair_c="#3a2618", collar="#efe2c4",
+    "me": person("#d9a577", "#b5532f", "#262c42", "#f0f0ee", hair="mop", hair_c="#3a2618", collar="#efe2c4", brow_w=1.9,
                  extras=["coat"], zip_c="#efe2c4"),
     "dad": person("#e8b890", "#243a5e", "#b99a6a", "#5a3b22", hair="none", collar="#f0dc6a", eyes="tired",
                   ink="#55555c"),
@@ -194,13 +196,13 @@ def wring(at, w, pos=G.TEE_R, yaw=180.0, lean=(0.0, 0.0), head_extra=0.0, dur=0.
     cues.append(c)
 
 
-# figures: id -> [pose, bun]
+# figures: id -> [pose, mop]
 figs = {}
 for i, pose in enumerate(["sit", "lie", "stand", "lie", "sit", "stand", "wave", "lie", "sit", "stand", "lie", "sit"]):
     figs[f"l{i + 1}"] = [pose, False]
 figs.update({"str": ["lie", False], "gd": ["sit", False], "ft": ["stand", False], "ft1": ["wave1", False],
              "ft2": ["wave", False],
-             "bun": ["hug", True]})
+             "mop": ["hug", True]})
 for i in range(1, 7):
     figs[f"v{i}"] = ["sit" if i % 2 else "lie", False]
 GZ = 0.0
@@ -211,7 +213,7 @@ for k, (x, y, yw) in LAWN_FIGS.items():
     obj(f"fig_{k}", 0, [x, y, GZ], yw)
     obj(f"fig_{k}", "L09", hide=True)
 
-BUN_AT = [G.SHADOW_SIT[0], G.SHADOW_SIT[1], 0.085]
+MOP_AT = [G.SHADOW_SIT[0], G.SHADOW_SIT[1], 0.085]
 TEE_FACING = -17.0
 
 # ---------------------------------------------------------------------------------------------- the story, scene by scene
@@ -339,7 +341,7 @@ shot("L14", mv([-7.5, -4.6, 1.1], [0.0, -0.7, 0.1], 26, [-6.5, -4.4, 1.0], [0.0,
 # L15: seventeen fenced, one shadow left on the last green
 cue("L15", "fenced", n=17)
 look("L15", "eve", 0)
-obj("fig_bun", "L15", BUN_AT, TEE_FACING)
+obj("fig_mop", "L15", MOP_AT, TEE_FACING)
 shot("L15", mv([0.0, -4.0, 15.0], [0.0, 22.0, 0.0], 28))
 shot("L15.2", mv([2.6, 29.0, 1.5], [2.6, 25.0, 0.1], 32))
 # L16: Dad putts
@@ -632,7 +634,7 @@ put("dad", "L73", [0.9, 25.6], -90, expr="soft")
 put("me", "L73", [-1.0, 26.0], 90, expr="soft")
 shot("L73", mv([-0.1, 21.0, 3.3], [-0.05, 25.8, 0.0], 26))
 shot("L73.2", mv([0.0, 22.0, 4.6], [0.0, 26.0, 0.0], 26))
-# L74 to L76: late gold, the bun shadow alone, then the cold line
+# L74 to L76: late gold, the mop shadow alone, then the cold line
 hide("dad", "L74")
 hide("me", "L74")
 shot("L74", mv([2.0, 22.0, 3.9], [2.7, 25.1, 0.0], 24, [2.3, 22.8, 3.5], [2.7, 25.1, 0.0], 24))

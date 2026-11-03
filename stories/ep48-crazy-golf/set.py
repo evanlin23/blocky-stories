@@ -296,9 +296,9 @@ def _parts(pose):
     return P, head
 
 
-def _shadow_image(pose, bun):
+def _shadow_image(pose, mop):
     """One flat silhouette drawn with PIL, blurred, as an in-memory RGBA image (alpha = the shadow)."""
-    key = (pose, bun)
+    key = (pose, mop)
     if key in _SH_IMG:
         return _SH_IMG[key]
     import numpy as np
@@ -323,16 +323,18 @@ def _shadow_image(pose, bun):
     hx, hy = px(*head)
     r = HEAD_R * SH_PPM
     dr.ellipse((hx - r, hy - r, hx + r, hy + r), fill=255)
-    if bun:
-        bx_, by_ = px(0.0, head[1] + 0.32)
-        rb = 0.15 * SH_PPM
-        dr.ellipse((bx_ - rb, by_ - rb, bx_ + rb, by_ + rb), fill=255)
+    if mop:   # the squared, tufted mop outline over the head (no knob on top)
+        mx, my = px(*head)
+        hw, top_, ear = (HEAD_R + 0.05) * SH_PPM, 0.30 * SH_PPM, (HEAD_R + 0.17) * SH_PPM
+        dr.rectangle((mx - hw, my - HEAD_R * SH_PPM - top_, mx + hw, my + HEAD_R * SH_PPM * 0.1), fill=255)
+        for sx in (-1, 1):
+            dr.rectangle((mx + sx * ear - 0.09 * SH_PPM, my - 0.1 * SH_PPM, mx + sx * ear + 0.09 * SH_PPM, my + 0.2 * SH_PPM), fill=255)
     im = im.filter(ImageFilter.GaussianBlur(SH_BLUR * SH_PPM * 0.5))
     import os
     import tempfile
-    d = Path(tempfile.gettempdir()) / "ep48-shadows"
+    d = Path(tempfile.gettempdir()) / "ep48-shadows-mop"
     d.mkdir(exist_ok=True)
-    path = d / f"{pose}-{int(bun)}-{SH_PPM}-{int(SH_BLUR * 1000)}.png"
+    path = d / f"{pose}-{int(mop)}-{SH_PPM}-{int(SH_BLUR * 1000)}.png"
     if not path.exists():
         tmp = d / f"{os.getpid()}-{path.name}"
         im.convert("RGB").save(tmp)
@@ -343,15 +345,15 @@ def _shadow_image(pose, bun):
     return img
 
 
-def shadow_mat(kit, pose, bun):
-    name = f"shadowtex {pose} {int(bun)}"
+def shadow_mat(kit, pose, mop):
+    name = f"shadowtex {pose} {int(mop)}"
     if name in kit.MATS:
         return kit.MATS[name]
     m = kit._new(name)
     nt = m.node_tree
     nt.nodes.remove(nt.nodes["Principled BSDF"])
     tex = nt.nodes.new("ShaderNodeTexImage")
-    tex.image = _shadow_image(pose, bun)
+    tex.image = _shadow_image(pose, mop)
     tex.extension = "CLIP"
     tc = nt.nodes.new("ShaderNodeTexCoord")
     nt.links.new(tc.outputs["Generated"], tex.inputs["Vector"])
@@ -361,7 +363,7 @@ def shadow_mat(kit, pose, bun):
     nt.links.new(tex.outputs["Color"], sc.inputs[0])      # a grey ramp; the mask is the red channel
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     em = nt.nodes.new("ShaderNodeEmission")
-    em.inputs["Color"].default_value = kit.col("#3b2a3a" if bun else SH_COL)
+    em.inputs["Color"].default_value = kit.col("#3b2a3a" if mop else SH_COL)
     em.inputs["Strength"].default_value = 1.0
     mix = nt.nodes.new("ShaderNodeMixShader")
     nt.links.new(sc.outputs[0], mix.inputs[0])
@@ -371,10 +373,10 @@ def shadow_mat(kit, pose, bun):
     return m
 
 
-def flat_fig(kit, name, pose="stand", bun=False, scale=1.0):
+def flat_fig(kit, name, pose="stand", mop=False, scale=1.0):
     """A flat soft-edged silhouette on one textured plane (colour #2f3a4a, 55%, 6 cm blur). Returns its empty."""
     e = kit.empty(name, (0, 0, -50))
-    m = shadow_mat(kit, pose, bun)
+    m = shadow_mat(kit, pose, mop)
     pl = kit.plane(f"{name}.p", (SH_X[1] - SH_X[0], SH_Y[1] - SH_Y[0]),
                    ((SH_X[0] + SH_X[1]) / 2, (SH_Y[0] + SH_Y[1]) / 2, 0.012), m, e)
     for c in [e] + list(e.children_recursive):
@@ -854,8 +856,8 @@ def build(kit, story, tl):
 
     # ------------------------------------------------------------------------------------ shadows (flat)
     W["figs"] = {}
-    for fid, (pose, bun) in story.get("figs", {}).items():
-        W["figs"][fid] = flat_fig(kit, f"fig_{fid}", pose, bun)
+    for fid, (pose, mop) in story.get("figs", {}).items():
+        W["figs"][fid] = flat_fig(kit, f"fig_{fid}", pose, mop)
     W["myshadow"] = flat_fig(kit, "fig_mine", "stand", False)
     W["wrung"] = Wrung(kit)
     W["inited"] = False
