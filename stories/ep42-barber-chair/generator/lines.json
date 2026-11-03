@@ -4,6 +4,28 @@
   "who": "narrator",
   "chunks": [
    [
+    "SIXTY-FOUR people",
+    "Sixty-four people"
+   ],
+   [
+    "on this street.",
+    "on this street."
+   ],
+   [
+    "SIXTY-THREE",
+    "Sixty-three"
+   ],
+   [
+    "are humming.",
+    "are humming."
+   ]
+  ]
+ },
+ {
+  "id": "L01b",
+  "who": "narrator",
+  "chunks": [
+   [
     "In this TOWN,",
     "In this town,"
    ],
@@ -16,12 +38,8 @@
     "one note"
    ],
    [
-    "of their own,",
-    "of their own,"
-   ],
-   [
-    "all day LONG.",
-    "all day long."
+    "of their own.",
+    "of their own."
    ]
   ]
  },
