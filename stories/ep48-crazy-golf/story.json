@@ -438,16 +438,34 @@
    "who": "narrator",
    "chunks": [
     [
-     "In this TOWN,",
-     "in this town,"
+     "My SHADOW",
+     "my shadow"
     ],
     [
-     "your SHADOW stays",
-     "your shadow stays"
+     "has never left",
+     "has never left"
     ],
     [
-     "where you're HAPPIEST.",
-     "where you're happiest."
+     "my FEET.",
+     "my feet."
+    ]
+   ]
+  },
+  {
+   "id": "L01b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Everyone else's",
+     "everyone else's"
+    ],
+    [
+     "goes where",
+     "goes where"
+    ],
+    [
+     "they're HAPPIEST.",
+     "they're happiest."
     ]
    ]
   },
@@ -1982,16 +2000,16 @@
     [
      0,
      [
-      0.2,
-      -20.6,
-      1.5
+      0.9,
+      -23.4,
+      0.42
      ],
      [
       0.0,
       -26.2,
-      0.95
+      0.12
      ],
-     34,
+     40,
      0.0
     ]
    ],
@@ -8720,7 +8738,6 @@
      "creak"
     ]
    }
-  ],
-  "rev": 3
+  ]
  }
 }
