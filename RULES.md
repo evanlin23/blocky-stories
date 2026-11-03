@@ -14,6 +14,21 @@ The owner, 2026-11-02: "I kinda want to just let you go by yourself and upload f
   5. $200 earned back. Shorts pay roughly a few cents per 1,000 views, so this needs millions of monetized views.
 - **How to iterate:** change one thing at a time where you can (length, look, rule type, title style), and judge on day-7 numbers across several uploads, never on one (the scope research: about 20 Shorts before judging).
 
+## The 2026-11-03 reset: shorter, faster, lighter (outranks the story and packaging rules below)
+The owner, 2026-11-03: "you can do whatever you want, this is your channel to experiment with." Why: the uploads after back-row flopped. Today's trend scan has "sad / emotional" as the weakest format, falling 14% in a week, while rule premises and horror lead. A blocky channel 24 days old reached 178K subscribers with seven 50 to 57 s Shorts (`docs/research/2026-11-03-skylox-study.md`). Our stories ran 130 to 145 s, mostly sad family reveals.
+- **Length:** 60 to 90 s is the core. Over 110 s needs a reason in the script. The 20 to 45 s experiments continue.
+- **Premise:** a relatable want or fight (a parent, sibling, best friend or partner, a wish anyone has had), plus a creepy or fun rule on top. Fun rules count, like a power or a price ("lying makes you shorter"). **At most one story in three ends on a sad family reveal.** The feeling stays, as a sting in the last seconds, not the whole story. The big idea still has to make someone say "wait, what".
+- **First second:** the rule spoken plainly, over a close-up of what it's about (the marker, the object, the face). No establishing wide first.
+- **The rule meter:** the story's own number, timer, mark or glow stays visible the whole time, so the rule never leaves the screen.
+- **Pace:** a cut or punch-in every 1 to 2 s, and no still picture over 2 s.
+- **Look:** bright and saturated by default, on the closer-to-Roblox look for every story. Dark and fog are for one scene, not the whole Short. Use the `assets/` props to fill sets.
+- **Ending:** the last line leads straight back into the first, so a loop plays as one sentence.
+- **Comments:** the pin asks for one easy word tied to the story ("Comment BELL if yours would have rung this week."). The comment job posts it.
+- **Titles:** 3 to 7 words: the rule or the hook, one word in caps, one emoji at the end. "In This Town" only rarely. Never a spoiler.
+- **Series experiment:** a recurring "me" and family across several Shorts that can mention each other. Each one still stands alone (a third of the experiment slots until we know).
+- **Never copy:** the game's name or currency, "subscribe to get" promises, or any channel's premise, characters or titles. Hard rule 5 still applies, so vary the skeleton story to story.
+- **Judge it:** compare viewed vs swiped away and average % viewed for the first 10 reset stories against the 10 before them.
+
 ## Trends: don't bet the channel on one format (owner, 2026-11-02)
 The owner: "this niche might be oversaturated, but I think I'd like to keep this Roblox-y blocky style... if we have these same stories going out. They're not necessarily evergreen content. So if it just falls out of fashion. Then none of the videos really have any chance to go viral."
 - **Keep the look, vary what we make in it.** The blocky style, cast, narrator and captions are the brand. The format inside them can change.
@@ -55,7 +70,7 @@ A crazy, strange, made-up story, as long as its big idea needs and no longer (sh
   6. **The climax turns the rule's own logic against itself:** a loophole or a second reading, never new magic.
   7. **The twist is planted early and the last line echoes the first** (as above).
   8. **The first 2 s read clearly on a phone:** lit to read, the rule and a face in frame. Darkness and fog come after the hook.
-  9. **Cut often:** a new shot every 1.2 to 2.3 s on average (`check` warns over 2.3 s).
+  9. **Cut often:** a new shot every 1 to 2 s on average (`check` warns over 2.3 s; the reset's target is 2.0).
 - **The creepy lane** (`docs/research/2026-11-02-creepy-lane-notes.md`: the 10 most-viewed creepy rule Shorts, 5.7M to 16.4M views, against 2 flops):
   - **Wonder first, then the turn.** The rule's opening image is odd or funny, not scary. The first real scare lands about a quarter to two-fifths in (about 35 to 55 s for us), usually the first person taken. Before that, the montage can be played for laughs.
   - **Show the creature little and late:** shadows, sounds and **what it leaves behind** ("Only the cone was left") until about 55 to 70% through, then clearly. It's tall and slow, leans in face to face, and never chases. That's our "never seen moving, only closer", now with a timing. Taken means gone, never shown hurt (hard rule 2).
@@ -134,7 +149,7 @@ A crazy, strange, made-up story, as long as its big idea needs and no longer (sh
 - **Title:** under 100 characters, by the rules above.
 - **Description:** two or three short paragraphs. It sets up the story without spoiling it, says "It's made up.", and can say it's "built with code and Blender". The upload adds the measured flashing line on top by itself. Never: game or toy names, true, real, based on, kid, teen, child, baby, school, AI voice, no AI, made by hand, Kokoro, another franchise's monster.
 - **Title:** state the world's rule, the way the hits do ("In this town, everyone has a price"). It's a statement, never an imperative, and it never spoils the twist.
-- **Pin:** a question the viewer answers about themselves under the rule ("How many lies would your number show?"), or one about a detail planted early ("would you have sat back there?"). The owner posts it as their own first comment and pins it: on YouTube, the creator's own question sits in the top comments of 8 of the 15 Shorts studied.
+- **Pin (since the 2026-11-03 reset):** "Comment WORD if..." with one easy word tied to the story. Before that it was a question the viewer answers about themselves under the rule ("How many lies would your number show?"), or one about a detail planted early ("would you have sat back there?"). The owner posts it as their own first comment and pins it: on YouTube, the creator's own question sits in the top comments of 8 of the 15 Shorts studied.
 - **Cover (`cover_s`):** the second of the frame that becomes the thumbnail. Pick the creature or the rule marker clearly lit, with a face if possible and the caption tying back to the title (ep20: 1:47, "stood in the MIDDLE."). Without it, the render picks 78% of the way in. The upload issue shows the cover, and the owner picks that moment in the YouTube app.
 - **Hold (`hold`):** `"hold": "why"` keeps a story out of the daily upload until it's redone. Remove it when the redo passes review.
 - **Shape (`shape`):** a short tag for the twist's shape, such as `stand-in` (a Keeper keeps a missing person's place until they come back), `never-left`, `trick`, `about-me`, `double`, `misread` or `rule-logic`. Reuse a tag when the shape matches, or coin a new one. The daily upload never puts two stories with the same shape back to back while another one is ready (2026-11-02: ten stories in the parallel batches share `stand-in`).

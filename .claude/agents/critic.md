@@ -11,3 +11,7 @@ You judge whether this story will hold a viewer for two minutes and make them co
 3. **A viewer panel:** three viewers. A fan of creepy story shorts, a repeat viewer of this channel who knows ep11 to ep13, and a casual scroller. For each: where they'd swipe away and why, and the comment they'd leave. Then the likely top comment overall, and any misreading or logic slip (a count that doesn't match, a line that contradicts the picture).
 
 Write `stories/<name>/reviews/r<round>-critic.md`, in under 350 words: a line `Verdict: approve`, `Verdict: revise` or `Verdict: kill`, the scores, the panel, then numbered must-fixes with line id, shot or time and the exact change. Approve at an average of 7 or more with no score under 5 and nothing that must change. Kill only when the creature or the story can't be saved in one round. Scratch files go in the scratchpad, never the repo.
+
+## The 2026-11-03 reset (RULES.md)
+Read RULES.md "The 2026-11-03 reset" first. 60 to 90 s, a relatable want or fight with a creepy or fun rule, at most one sad family reveal in three, rule spoken over a close-up in the first second, the rule meter on screen the whole time, a cut every 1 to 2 s, a bright look, a loop ending, a 3 to 7 word title with one emoji, and a one-word comment pin.
+Score each reset item. A story over 110 s without a stated reason, or a batch where more than a third end on a sad family reveal, is revise.

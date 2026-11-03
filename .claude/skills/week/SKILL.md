@@ -48,3 +48,6 @@ Start a **fresh builder agent for each phase** (the build, then each fix round).
 - Reports are capped (agents say how long). Never paste a whole review back into a prompt: pass the must-fix list.
 - No look tests or check-ins with the owner mid-batch (owner: "you can do all of like the design like stuff. Just let me know when the full video is done"). The owner's job is the final watch and the publish click.
 - Owner feedback on any story becomes a dated rule in `RULES.md`, in the same PR.
+
+## The 2026-11-03 reset
+Every batch from now on follows RULES.md "The 2026-11-03 reset": 60 to 90 s core, at most a third of the batch ending on a sad family reveal, and a third of the experiment slots for the recurring-cast series. Check the whole batch against it before the PR.
