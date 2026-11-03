@@ -421,7 +421,7 @@ shot("L42", "S63 the speaker screen", still([-12.0, 2.1, 1.62], [-12.0, 3.75, 1.
 shot("L42.1", "S64 Cal, same grin", CAL_FRAME, "cal")
 shot("L43", "S65 out to its shoulders", still([14.5, 3.6, 1.7], [10.1, 4.0, 1.5], 35))
 shot("L44", "S66 the bag at Cal's door", still([11.6, 2.4, 1.6], [10.1, 3.7, 1.3], 45))
-shot("L45", "S67 along the smile", move([9.45, 0.4, 2.7], [9.45, 4.07, 1.62], [10.75, 0.4, 2.7], [10.75, 4.07, 1.62], 55, 55), hand=0.006)
+shot("L45", "S67 along the smile", move([9.85, 0.4, 2.7], [9.85, 4.07, 1.62], [10.35, 0.4, 2.7], [10.35, 4.07, 1.62], 55, 55), hand=0.006)
 shot("L46", "S68 two of us by the back wall", still([-34, 10.0, 0.9], [-20, 12.9, 1.0], 28))
 shot("L46.2", "S69 two cracked headlights", still([-30, 10.6, 0.8], [-22.5, 12.3, 0.85], 40))
 # ---- 06 lap four

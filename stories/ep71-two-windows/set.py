@@ -300,8 +300,8 @@ def build_server(kit, M, ctx):
     sill, 3 leaning out, face to face with Cal. Arms are thick, with long fingers."""
     mint = kit.plastic("#7fe0c4", 0.45, "srv mint")
     peach = kit.plastic("#ffb38a", 0.45, "srv peach")
-    skin = kit.plastic("#a39aa0", 0.85, "srv skin")
-    skin2 = kit.plastic("#e6d2bd", 0.5, "srv hand")
+    skin = kit.plastic("#8d858b", 0.9, "srv skin")
+    skin2 = kit.plastic("#c9b4a0", 0.7, "srv hand")
     black = kit.plastic("#030203", 0.9, "srv black")
     teeth = kit.plastic("#f3ead8", 0.6, "srv teeth")
     root = kit.empty("server", (H2X, 4.85, 0.0))
@@ -638,7 +638,7 @@ def animate(kit, story, tl, t, ctx):
     slc = [{"t": c["t"], "v": 1.0 if (c.get("lv", 0) >= 1 and c.get("on", True)) else 0.0, "dur": 1.2}
            for c in sv if "lv" in c]
     sl = float(_eased(slc, "v", t, 0.0))
-    return {"h2 warm": 1.0 - h2, "h2 cool": h2, "h2 face": (0.5 + 0.9 * h2) * min(1.0, max(0.0, lv)),
+    return {"h2 warm": 1.0 - h2, "h2 cool": h2, "h2 face": (0.4 + 0.5 * h2) * min(1.0, max(0.0, lv)),
             "sun": (1.0 - 0.55 * dim) * (1.0 - 0.4 * sl), "fill": (1.0 - 0.5 * dim) * (1.0 - 0.3 * sl),
             "lane key": 1.0 - 0.5 * dim, "lane key2": 1.0 - 0.5 * dim,
             "lane key3": (1.0 - 0.5 * dim) * (1.0 - 0.5 * sl), "back key": 1.0 - 0.5 * dim,
