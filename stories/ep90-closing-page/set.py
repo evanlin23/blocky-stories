@@ -142,7 +142,7 @@ def build(kit, story, tl):
     room(kit)
     tallyman(kit, (0.0, 5.0), 0.0, 1.3)
     # key from below-front (warm), blue freezer rim from behind-left, a little fill
-    kit.light("under", "AREA", (0.0, 1.5, 0.2), 160, "#ffb860", size=2.5)
+    kit.light("under", "AREA", (0.0, 1.5, 0.2), 260, "#ffb860", size=2.5)
     kit.light("underL", "AREA", (-1.8, 3.0, 0.2), 90, "#ffb860", size=1.5)
     kit.aim(kit.LIGHTS["underL"]["obj"], (0, 5, 2.0))
     kit.aim(kit.LIGHTS["under"]["obj"], (0, 5, 2.4))
