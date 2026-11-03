@@ -46,7 +46,7 @@ opening (the same as the twist `shape`).
 **Titles:**
 - Use the same family of shapes ("The [thing]…" is the second most common among hits).
 - At most one "Never" title per 7 (RULES already).
-- **At most half of a week's titles use the one-CAPS-word-plus-emoji form.** Every queued title uses it now, which is
+Every title keeps one word in caps (owner, 2026-11-02; only the owner changes that).** Every queued title uses it now, which is
   a template of its own. The data says caps are neutral (19% of the top 10% against 26% of the median).
 
 ## Every queued and in-flight story, assigned
@@ -116,7 +116,7 @@ Before this, about 20 of 29 opened on "Never/Don't".
 - **ep54:** "Never Cover the Back of Your HAND" would be the third "Never" title in flight. Make it "Someone Has the
   Other Half of My Mark 🤚".
 - **moving-day:** "When Your Ceiling Rises, Don't Look UP" can stay (an `if` title).
-- **Each fix session:** drop the CAPS word from about half of its titles.
+- **Each fix session:** keep one word in caps in every title (the owner's rule, 2026-11-02). The data below on CAPS is a question for the owner, not a change.
 
 Every new line is a draft. The owning session checks it against its own plot, keeps it under 12 words and 2.2 s, and
 re-voices lines 1 and 2 only. Qa checks the new first 3 s.
