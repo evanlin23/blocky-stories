@@ -101,7 +101,7 @@ def tkey(ref):
         return float(ref)
     m = _REF.match(ref)
     base = LINE_NO[m.group("id")]
-    return base * 100 + int(m.group("c") or 0) * 12 + (9 if m.group("tail") else 0) + float(m.group("o") or 0)
+    return base * 100 + int(m.group("c") or 0) * 12 + (99 if m.group("tail") else 0) + float(m.group("o") or 0)
 
 
 def fmt(a):
@@ -215,7 +215,7 @@ S("L06.2+0.25", ((0.0, -26.0, 0.5), (1.6, 0.0, 3.2), 30, (0.3, -20.0, 0.7), (1.6
 OTIS_STAMP = {"arms": [60, 0]}
 S("L07", ((0.55, 3.2, 1.55), (0.0, 6.0, 1.4), 40, (0.35, 3.5, 1.55), (0.0, 6.0, 1.4), 40),
   who={"me": (OT, 0, "smirk", {"arms": [50, 0]})}, tod="night", note="Otis at the lectern, the pocket page's corner showing")
-S("L08", ((-2.4, 4.0, 3.15), (-5.0, 4.0, 3.15), 34), who={"me": (OT, 0, "smirk", {"arms": [50, 0]})},
+S("L08+0.15", ((-2.4, 4.0, 3.15), (-5.0, 4.0, 3.15), 34), who={"me": (OT, 0, "smirk", {"arms": [50, 0]})},
   note="the brass clock at nine")
 cue("L08", "clock", v=[9, 0])
 S("L08.2", ((0.5, 3.4, 2.3), (-0.2, 5.6, 1.2), 34), who={"me": (OT, 0, "smirk", {"arms": [50, 0]})},
@@ -262,7 +262,7 @@ S("L14", ((-0.4, -6.2, 1.45), (-2.6, -1.4, 1.4), 32), tod="dusk",
 S("L14.1", ((-3.1, -4.6, 1.55), (-3.15, -1.6, 1.5), 44),
   who={"milo": (X(-3.2, -1.7), 20, "angry", {"arms": [0, 100], "head": [-20, 0]}), "me": (X(-1.9, -1.7), -20, "smirk", {})},
   note="Milo jabbing a thumb at the hall")
-S("L15", ((0.6, 3.35, 1.1), (0.78, 4.72, 1.04), 46, (0.78, 3.3, 1.1), (0.78, 4.72, 1.04), 46), tod="night", note="a framed photo of Mom on the lectern")
+S("L15", ((0.6, 3.35, 1.55), (0.78, 4.72, 1.62), 46, (0.78, 3.3, 1.55), (0.78, 4.72, 1.62), 46), tod="night", note="a framed photo of Mom on the lectern")
 S("L15.1", ((2.4, 3.2, 1.85), (5.0, 3.5, 1.85), 34), note="a calendar with one date circled in red")
 S("L16", ((-1.6, 3.4, 1.55), (-1.6, 1.2, 1.5), 40), who={"milo": ((-1.6, 1.2), 180, "angry", {"arms": [0, 88]})},
   note="Milo close, pointing at me: come for once")
@@ -375,19 +375,19 @@ S("L38", ((7.5, -2.0, 1.4), (-2.3, -2.0, 1.2), 22, (7.5, -4.4, 1.4), (-2.3, -4.4
   who={"milo": (X(-2.6, -1.8), 180, "grin", {"arms": [70, 70]}), "me": (X(-2.6, -0.65), 0, "smile", {"arms": [70, 70]})},
   note="the two of us hauling the red book out of the hall door, Milo walking backward at the front")
 cue("L38", "book", mode="carry")
-walk("milo", "L38+0.1", X(-2.6, -1.8), keep_yaw=True)
-walk("milo", "L38.2", X(-2.3, -3.6), keep_yaw=True)
+walk("milo", "L38+0.1", X(-2.6, -1.8), keep_yaw=True, yaw=180)
+walk("milo", "L38.2", X(-2.3, -3.6), keep_yaw=True, yaw=180)
 walk("me", "L38+0.1", X(-2.6, -0.65))
 walk("me", "L38.2", X(-2.3, -2.4))
 cue("L38", "bookpath", v=[-2.6, -1.2, 1.05])
 cue("L38.2", "bookpath", v=[-2.3, -3.0, 1.05])
 LINE = {f"t{i}": (X(x, y), 90 if x < 0 else -90, "smile", {}) for i, (x, y) in enumerate(
     [(-3.4, -7), (3.4, -9), (-3.5, -12), (3.4, -14), (-3.4, -17), (3.5, -19), (-3.4, -23), (3.4, -25)])}
-S("L38.2", ((0.3, -0.8, 2.4), (-1.8, -5.5, 1.0), 24, (0.0, -1.8, 2.4), (-1.2, -7.0, 1.0), 24), tod="dusk",
-  who={"milo": (X(-2.3, -3.6), 180, "grin", {"arms": [70, 70]}), "me": (X(-2.3, -2.4), 0, "smile", {"arms": [70, 70]}), **LINE},
-  note="a high wide down the lamplit high street, the townsfolk stepping aside and smiling")
-walk("milo", "L38.2+0.1", X(-2.3, -3.6), keep_yaw=True)
-walk("milo", "L38>", X(-0.8, -6.6), keep_yaw=True)
+S("L38.2", ((3.6, -2.4, 1.9), (-1.8, -4.4, 1.25), 26, (3.4, -3.8, 1.9), (-1.0, -6.2, 1.25), 26), tod="dusk",
+  who={"milo": (X(-2.3, -3.6), 140, "grin", {"arms": [70, 70]}), "me": (X(-2.3, -2.4), 0, "smile", {"arms": [70, 70]}), **LINE},
+  note="Milo walking backward at the front, face and the red book in frame, the townsfolk stepping aside and smiling")
+walk("milo", "L38.2+0.1", X(-2.3, -3.6), keep_yaw=True, yaw=140)
+walk("milo", "L38>", X(-0.8, -6.6), keep_yaw=True, yaw=140)
 walk("me", "L38.2+0.1", X(-2.3, -2.4))
 walk("me", "L38>", X(-0.8, -5.4))
 cue("L38.2+0.1", "bookpath", v=[-2.3, -3.0, 1.05])
@@ -398,27 +398,38 @@ S("L39", ((MOM - 0.9, 0.5, 1.5), (MOM - 0.1, 4.5, 1.15), 26, (MOM - 0.7, 1.0, 1.
   note="Mom's bright dining room: Mom in her paper crown, the giant book across the table among cake plates; my stamp coming down")
 cue("L39-0.3", "stamp", mode="hand")
 raw("me", "L39", arms=[112, 0], blend=0.2)
-raw("me", "L39.1", arms=[92, 0], blend=0.1)
 cue("L39", "book", mode="table")
 cue("L39", "spread", n="fresh")
-S("L40", ((MOM + 0.9, 0.7, 1.55), (MOM - 1.0, 3.0, 1.05), 27),
-  who={"milo": (X(MOM - 1.0, 2.9), 40, "grin", {"arms": [20, 70]})},
-  note="Milo scribbling on a fresh slip at the table")
-cue("L39.2", "stamp", mode="rest")
-cue("L40-0.05", "slip", mode="path", v=[MOM - 0.7, 3.12, 0.83, 0, 0])
+BK = (MOM + 0.3, 3.55)
+S("L39.1+0.3", ((MOM + 0.9, 1.7, 2.0), (BK[0], BK[1], 1.2), 30, (MOM + 0.8, 1.9, 1.9), (BK[0], BK[1], 1.15), 30), tod="night",
+  who={"mom": (X(MOM, 4.9), 0, "smile", {}), "me": (X(MOM + 1.35, 3.5), -90, "smile", {"arms": [92, 0]})},
+  note="close: the red-knobbed stamp comes down on the page, ink-blue, a soft thunk")
+cue("L39.1+0.3", "stamp", mode="path")
+cue("L39.1+0.3", "stamppos", v=[BK[0], BK[1], 1.5])
+cue("L39.1+0.35", "stamppos", v=[BK[0], BK[1], 1.5])
+cue("L39.1+0.6", "stamppos", v=[BK[0], BK[1], 1.075])
+cue("L39.1+0.9", "stamppos", v=[BK[0], BK[1], 1.075])
+cue("L39.2+0.2", "stamppos", v=[BK[0], BK[1], 1.5])
+S("L40", ((MOM - 0.7, 2.0, 1.55), (MOM - 1.4, 4.4, 1.1), 20),
+  who={"milo": (X(MOM - 1.4, 4.4, -0.3), 10, "smile", {"arms": [70, 20]})},
+  note="Milo seated behind the table with a pencil and a slip, smiling")
+cue("L40-0.05", "stamp", mode="rest")
+cue("L40-0.05", "slip", mode="path", v=[MOM - 1.5, 4.0, 0.83, 0, 0])
 cue("L40-0.05", "pencil", on=True)
 cue("L40.2+0.9", "pencil", on=False)
-S("L40.2", ((MOM + 1.3, 0.8, 1.7), (MOM - 0.4, 3.3, 0.9), 29),
-  who={"milo": (X(MOM - 1.0, 2.9), 40, "grin", {"arms": [20, 70]})},
-  note="him sliding it across the cake plates to me")
-cue("L40.2", "slip", mode="path", v=[MOM - 0.7, 3.12, 0.83, 0, 0])
-cue("L40.2+0.6", "slip", mode="path", v=[MOM - 0.1, 3.3, 0.83, 0, 0])
-S("L41", ((MOM - 0.8, 0.8, 1.45), (MOM - 0.45, 4.4, 1.15), 31), who={"mom": (X(MOM, 4.9), 0, "smile", {"arms": [0, 60]}), "me": (X(MOM + 1.5, 3.5), -90, "smile", {})},
-  note="Mom, smiling, pulling the cake plate toward her; the new cake-slice page in the book")
+S("L40.2", ((MOM - 0.6, 2.3, 1.5), (MOM - 1.2, 3.6, 0.85), 20),
+  who={"milo": (X(MOM - 1.4, 4.4, -0.3), 10, "smile", {"arms": [70, 20]})},
+  note="the slip sliding across the table between the plates")
+cue("L40.2", "slip", mode="path", v=[MOM - 1.5, 4.0, 0.83, 0, 0])
+cue("L40.2+0.7", "slip", mode="path", v=[MOM - 1.05, 3.15, 0.83, 0, 0])
+S("L41", ((MOM - 1.1, 1.6, 1.5), (MOM - 0.3, 4.9, 1.1), 34), who={"mom": (X(MOM, 4.9), 0, "smile", {"arms": [0, 60]}), "me": (X(MOM + 1.5, 3.5), -90, "smile", {})},
+  note="the last slice of cake on a plate in front, Mom smiling behind it")
 cue("L41", "slip", mode="hide")
 cue("L41", "spread", n="cake")
-cue("L41+0.1", "plate", v=[MOM + 1.3, 3.5, 0.84])
-cue("L41.1+0.4", "plate", v=[MOM + 0.45, 4.6, 0.97])
+cue("L41", "cakegone")
+cue("L41", "plate", v=[MOM - 1.15, 3.55, 0.84])
+cue("L41.1+0.1", "plate", v=[MOM - 1.15, 3.55, 0.84])
+cue("L41.1+0.9", "plate", v=[MOM - 0.2, 4.4, 0.97])
 
 # =========================================================================================== 08 the sting, L42 to L45
 S("L42", ((KIT, -1.0, 1.5), (KIT, 1.3, 1.2), 30), tod="night", who={"me": (X(KIT, 1.7), 0, "smirk", {"arms": [70, 70]})},
@@ -503,7 +514,7 @@ story = {
         "sfx": [{"at": "L01.2+0.2", "kind": "thud", "db": -3},
                 {"at": "L08.2", "kind": "thud", "db": -12},
                 {"at": "L28+0.9", "kind": "door", "db": -14},
-                {"at": "L39.1", "kind": "thud", "db": -14},
+                {"at": "L39.1+0.6", "kind": "thud", "db": -14},
                 {"at": "L42+0.3", "kind": "whoosh", "db": -30, "dur": 0.4},
                 {"at": "L43", "kind": "whoosh", "db": -28, "dur": 0.4},
                 {"at": "L44", "kind": "whoosh", "db": -26, "dur": 0.3}],

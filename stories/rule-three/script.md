@@ -125,7 +125,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - `L01` narrator: Never ASK / who tore out / RULE THREE.
   - [top-down close on the open red book: the ragged stub where a page was torn out, the ink-blue thumbprint on its edge, the next page's big numeral "5". Warm lamplight. Push in over the line. Stamp thunk on "THREE". Plant 1]
-- `L02` narrator: Not in BUHTOWN. / Not ONCE.
+- `L02` narrator: Not in THIS town. / Not ONCE. (caption reads BUHTOWN; never spoken)
   - [punch in to the torn edge itself, the thumbprint filling a third of the frame]
 
 ## 02 The rule at work (L03 to L06, about 3 to 11 s)
@@ -248,4 +248,4 @@ My kitchen table at home, late. One warm lamp, the rest blue night. The lead dro
 - **Cold viewer check targets:** who is Milo (my little brother), who is Mom (our mom), what happened (I tore out a rule that would give the book to Milo forever if I ever skipped a night, and I stamped the rule that stops people asking), and what the ending does (we carried the book to Mom's party, then the back of the torn page has rule four).
 - **Hard rule 1:** every page is numerals and our own glyphs only. The calendar has no month names. No signs with letters.
 - **Hard rule 2:** nobody is in danger. The town's stillness is eerie, not threatening, and nobody touches anyone.
-- **The word "keeper"** is never said on screen in this episode, so the host is never mixed up with the canon's Keepers. If he's ever named, it's only "the Buhkeeper". "Buhtown" is said once, in L02, and nowhere else (voice it "BUH-town", rhymes with "duh").
+- **The word "keeper"** is never said on screen in this episode, so the host is never mixed up with the canon's Keepers. If he's ever named, it's only "the Buhkeeper". "Buhtown" is never spoken aloud; it appears once, as the L02 caption (the line is voiced "Not in this town").

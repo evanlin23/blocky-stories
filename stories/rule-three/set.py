@@ -247,7 +247,7 @@ def leaf_shape(W, H, seed_right=3, top_ragged=True):
 def page_image(face):
     W, H = 680, 920
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    base = Image.new("RGB", (W, H), "#f2e8cc")
+    base = Image.new("RGB", (W, H), "#f2e8cc" if face == "front" else "#6f6648")   # the back sits under the lamp: darker paper so it doesn't clip
     d = ImageDraw.Draw(base)
     if face == "front":
         number(d, "3", 150, 6, 260)          # the torn top cuts through the numeral: half a 3
@@ -623,8 +623,9 @@ def build_props_small(kit, M, ctx):
     # mom's photo on the lectern
     pm = img_material(kit, "photo", photo_image(), 0.4)
     wood = kit.plastic("#8a5a30", 0.5, "frame wood")
-    kit.box("photo.frame", (0.3, 0.04, 0.36), (0.78, LECT[1] - 0.4, 1.19), wood, bevel=0.01)
-    img_plane(kit, "photo", 0.24, 0.3, pm, (0.78, LECT[1] - 0.425, 1.19), None, right=(1, 0, 0), up=(0, 0, 1))
+    kit.box("photo.frame", (0.3, 0.04, 0.36), (0.78, LECT[1] - 0.4, 1.62), wood, bevel=0.01)
+    kit.box("photo.post", (0.05, 0.04, 0.5), (0.78, LECT[1] - 0.4, 1.2), wood, bevel=0.005)
+    img_plane(kit, "photo", 0.24, 0.3, pm, (0.78, LECT[1] - 0.425, 1.62), None, right=(1, 0, 0), up=(0, 0, 1))
     # the party plate with a slice
     pl = kit.empty("plate", (0, 0, -40))
     kit.cyl("plate.disc", 0.14, 0.015, (0, 0, 0), kit.plastic("#fafafa", 0.5, "plate"), pl, n=24)
@@ -821,11 +822,12 @@ def party_room(kit, M, ctx):
     cloth = kit.plastic("#eac3d3", 0.9, "cloth")
     kit.box("mom.table.top", (3.2, 1.1, 0.06), (cx, 3.6, 0.78), cloth, bevel=0.01)
     kit.box("mom.table.skirt", (3.26, 1.16, 0.62), (cx, 3.6, 0.45), cloth, bevel=0.02)
-    cake = kit.empty("cake", (cx - 1.3, 3.75, 0.81))
+    cake = kit.empty("cake", (cx + 1.2, 3.8, 0.81))
     kit.cyl("cake.a", 0.24, 0.12, (0, 0, 0.06), kit.plastic("#f6a8c0", 0.6, "cake pink"), cake, n=24)
     kit.cyl("cake.b", 0.18, 0.1, (0, 0, 0.17), kit.plastic("#fff6e0", 0.6, "icing"), cake, n=24)
     kit.sphere("cake.cherry", 0.03, (0, 0, 0.24), kit.plastic("#d6283b", 0.3, "cherry"), cake, seg=8)
-    for i, (dx, dy) in enumerate(((-1.35, 3.3), (-1.0, 3.95), (1.3, 3.9), (1.0, 3.35))):
+    ctx["cake"] = cake
+    for i, (dx, dy) in enumerate(((-1.35, 3.3), (-1.0, 3.95), (1.6, 4.0), (1.55, 3.3))):
         kit.cyl(f"mom.plate{i}", 0.13, 0.015, (cx + dx, dy, 0.82), kit.plastic("#ffffff", 0.5, "plate"), n=20)
     for i, c in enumerate(("#ff6a6a", "#ffd95a", "#58c2c2", "#9ad06a", "#b69be0", "#ff9ec8", "#7cc6ff", "#ff8a1f", "#ffd95a")):
         kit.box(f"bunt{i}", (0.28, 0.02, 0.28), (cx - 3.2 + i * 0.8, 5.92, 2.55 + 0.1 * math.sin(i * 0.8)), kit.plastic(c, 0.6, f"bunt{i}"), rot=(0, math.pi / 4, 0))
@@ -1100,6 +1102,11 @@ def animate(kit, story, tl, t, ctx):
         st.location = (hp.x, hp.y, hp.z - 0.1)
         st.rotation_euler = (0, 0, 0)
         hide_tree(st, False)
+    elif c and c["mode"] == "path" and track(tl, "stamppos", t):
+        sp = track(tl, "stamppos", t)
+        st.location = (sp[0], sp[1], sp[2])
+        st.rotation_euler = (0, 0, 0)
+        hide_tree(st, False)
     else:
         st.location = (0.82, LECT[1] + 0.15, 1.19)
         hide_tree(st, False)
@@ -1174,11 +1181,15 @@ def animate(kit, story, tl, t, ctx):
         root.scale = (0.28 + 0.72 * uf, 1.0, 1.0)
     if mode_p == "pocket":
         root.scale = (1, 1, 1)
+    # ---- the whole cake is gone once the last slice is on its plate
+    if "cake" in ctx:
+        ctx["cake"].location = (500.0 + 1.2, 3.8, -40 if latest(tl, "cakegone", t) else 0.81)
     # ---- the plate
     c = latest(tl, "plate", t)
     pl = ctx["plate"]
     pv = track(tl, "plate", t)
     pl.location = tuple(pv) if (c and c.get("v") is not None and pv) else (0, 0, -40)
+    pl.scale = (2.0, 2.0, 2.0)
     # ---- the sleeve pushing a slip through the slot
     c = latest(tl, "sleeve", t)
     sl = ctx["sleeve"]
