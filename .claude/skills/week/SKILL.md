@@ -14,11 +14,14 @@ You're the orchestrator. Keep your own context small: you read reports and verdi
 - `git config user.name evanlin23 && git config user.email 113861384+evanlin23@users.noreply.github.com`, then work on a branch, never `main`.
 - **Health check:** list recent `render` workflow runs (GitHub MCP `actions_list`) and open issues. A failed `flash result` step means a final failed the flash bar (its film is kept as an artifact but never uploaded). Fix it first, with the builder redrawing the named shots and a `workflow_dispatch` of `render` for that story. Count the stories that are ready but not uploaded (gate open, not in `uploads.json`). **Keep a week ahead:** make N = 14 minus that count (this week's uploads plus next week's), at most 10, unless the request names a number.
 - **Numbers:** read `metrics/summary.md` (the weekly `metrics` workflow writes it). If its date is more than 3 days old, the schedule didn't fire: start the `metrics` workflow yourself (GitHub MCP `actions_run_trigger`, `metrics.yml` on `main`), wait for it, and pull. Pick out at most 5 lessons (what held viewers, where they dropped, what got shares and comments) and hand them to the writer in step 1.
+- **Trends:** read the newest `docs/trends/*.md` (RULES → Trends). Pass the writer the 3 fastest-rising formats, any format cooling two scans in a row, and the 70/30 mix: which stories are core and which are experiments.
 - If `BLOCKY_BPY` or `BLOCKY_TTS` is unset: `bash blocky/setup.sh` and export what it prints.
 - A container can be reclaimed at any time, so commit and push `WIP` checkpoints to the branch after each story's build.
 
 ## 1. Write (1 writer call)
-"Write a batch of N stories" (plus the owner's idea, if any). Check its variety table yourself: no shared setting, creature, first line, ending or warmth. If two rows clash, send the writer back once.
+"Write a batch of N stories" (plus the owner's idea, if any). Check its variety table yourself, and check the batch for **superficial sameness** (YouTube demonetizes "narrated stories with only superficial differences"): at most a third of titles start "In This Town", and no two stories share a setting type, a rule type, a creature type, a twist shape, a palette or a music mood. Then: no shared setting, creature, first line, ending or warmth. If two rows clash, send the writer back once.
+
+**Cold-viewer test** (RULES → "Relationships read at a glance"): for each script, a fresh general-purpose agent gets only `script.md` and answers in two sentences what happened, what the twist means, and who each person is to the narrator. Any wrong or unsure answer sends the script back to the writer once, before building.
 
 **Blind premise check** (the scope research's H2 test): before any building, a fresh general-purpose agent that has read nothing in the repo gets only the batch's titles and first lines, mixed with 5 known hits' first lines (from `docs/research/2026-11-02-reel-watch-notes-2.md`) and with no labels. It scores each 1 to 10 for "would I stop scrolling for this?". Any of ours that scores below the hits' median goes back to the writer once.
 

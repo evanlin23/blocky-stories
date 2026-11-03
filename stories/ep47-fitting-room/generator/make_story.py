@@ -37,7 +37,7 @@ for ln in lines:
 print("split lines:", ",".join(sorted(set(SPLIT))))
 
 # a swallowed name or title is helped: slower, or a spelling the voice says plainly
-TEMPO = {"L12": 0.95, "L07": 0.95, "L64": 0.95, "L63": 0.9}
+TEMPO = {"L12": 0.95, "L07": 0.95}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -57,17 +57,13 @@ def mk(skin, shirt, pants="#33363e", shoes="#3a2a20", hair="cap", hair_c="#2a1d1
 
 cast = {
     "me": mk("#e0b08a", "#4a6078", "#3b3e46", "#6a4a30", "cap", "#241a16", collar="#efe6d2", extras=["coat"],
-             zip_c="#3b4a5c", face={"eyes": "lashes", "brows": True}),
-    "me2": mk("#e0b08a", "#efe6d2", "#3b3e46", "#6a4a30", "cap", "#241a16", face={"eyes": "lashes", "brows": True}),
+             zip_c="#3b4a5c", face={"eyes": "round", "brows": True}),
+    "me2": mk("#e0b08a", "#b9b2a0", "#3b3e46", "#6a4a30", "cap", "#241a16", face={"eyes": "round", "brows": True}),
     "uncle": mk("#d9a98a", "#e9e5da", "#3c4a3e", "#3a2a20", "cap", "#9a9a98", tags="uncle", extras=["apron"],
                 extra_c="#c9b996", face={"eyes": "tired", "brows": True, "bags": True}),
-    "uncle2": mk("#d9a98a", "#e9e5da", "#3c4a3e", "#3a2a20", "cap", "#9a9a98", extras=[], extra_c="#4a4a4a",
+    "uncle2": mk("#d9a98a", "#b4ae9f", "#3c4a3e", "#3a2a20", "cap", "#9a9a98", extras=[], extra_c="#4a4a4a",
                  face={"eyes": "tired", "brows": True, "bags": True}),
     "salesman": mk("#cf9c76", "#7a5a8a", hair="buzz", hair_c="#3a2a1e", tags="lump"),
-    "salon_a": mk("#e6bd98", "#a65a4a", hair="cap", hair_c="#3a2a1e", tags="speckle", face={"eyes": "lashes", "brows": True}),
-    "salon_b": mk("#d8a47c", "#b49ad8", hair="bun", hair_c="#6a4a34", tags="speckle", face={"eyes": "lashes", "brows": True}),
-    "date_m": mk("#c98f6a", "#2f4a6a", hair="spiky", hair_c="#2a1d15", tags="lump"),
-    "date_f": mk("#e8c2a0", "#a84a5a", hair="long", hair_c="#4a2a1a", tags="lump", face={"eyes": "lashes", "brows": True}),
     "cafe_man": mk("#b88460", "#556b4a", hat="beanie", hat_c="#b8302e", tags="speckle"),
     "cafe_f": mk("#f0ceac", "#d8a040", hair="swoop", hair_c="#7a4a2a", tags="speckle", face={"eyes": "lashes", "brows": True}),
     "mrs_kettle": mk("#e8c8a8", "#6a2f55", "#2a2830", hair="bun", hair_c="#b8b8b8", height=0.94,
@@ -116,20 +112,16 @@ SHOTS = [
     (0, "two walkers toward camera", 2, still((0.1, 3.9, 1.5), (0, -2, 1.45), 42)),
     ("L01.2", "wide down the arcade", 2, move(((0.5, 8.0, 1.6), (0, -20, 1.9)), ((0.3, 7.0, 1.6), (0, -20, 1.9)), 26)),
     ("L02", "the shoe man", 2, still((1.0, -4.6, 1.5), (-3.45, -7.1, 1.45), 40)),
-    ("L03", "salon pair", 2, still((-2.0, -14.4, 1.5), (-2.0, -11.0, 1.45), 42)),
-    ("L03.2", "lilac lapel, tag, door shuts", 2, still((-2.0, -13.4, 1.6), (-2.0, -11.0, 1.4), 60)),
-    ("L04", "the date table", 2, still((0.4, -3.0, 1.45), (3.2, -3.0, 1.35), 42)),
     ("L05", "cafe man, sheepish", 2, still((0.4, -5.2, 1.45), (3.2, -5.2, 1.4), 42)),
     ("L05.2", "his chest, the tag drifts", 2, still((1.5, -5.2, 1.4), (3.3, -5.2, 1.2), 60)),
-    ("L06", "the cafe claps", 2, still((-0.5, -2.0, 1.6), (3.2, -5.4, 1.4), 30)),
     ("L07", "Mrs. Kettle", 2, still((0.0, -9.0, 1.45), (-0.45, -6, 1.45), 45)),
     ("L08", "her clean lapel", 2, still((0.1, -8.0, 1.3), (0, -6, 1.2), 70)),
+    ("L08.2", "she believes it, hand on heart", 2, still((-0.2, -8.3, 1.36), (-0.45, -6, 1.33), 44)),
     ("L09", "Mr. Kettle, white", 2, move(((0.0, -8.4, 1.4), (0, -6, 1.3)), ((0.0, -10.4, 1.6), (0, -6, 1.3)), 45)),
     ("L10", "me up the arcade", 2, still((0.2, -2.0, 1.5), (0, 5, 1.45), 40)),
-    ("L11", "the cafe counter", 2, still((5.2, -3.0, 1.55), (7.3, -4.4, 1.5), 40)),
     # 02 the shop
-    ("L12", "the shopfront", 2, still((1.8, 1.5, 1.6), (-4, 0.3, 1.8), 28)),
-    ("L12.2", "Uncle at his bench", 2, still((-12.0, 0.2, 1.55), (UB[0], UB[1], 1.35), 40)),
+    ("L12", "the shopfront, Uncle at his counter", 2, move(((-0.6, 0.2, 1.9), (-4, -0.5, 2.0)), ((-3.2, -0.6, 1.62), (-6.1, -0.8, 1.55)), 30, 62)),
+    ("L12.3", "Uncle at his bench", 2, still((-12.0, 0.2, 1.55), (UB[0], UB[1], 1.35), 40)),
     ("L13", "the train", 2, still((82.2, -2.0, 1.55), (82.0, 0.6, 1.5), 36)),
     ("L14", "boxes, Uncle folding", 2, still((-8.6, 0.3, 1.7), (-6.9, -1.2, 1.4), 32)),
     ("L14.2", "me at the hook", 2, still((-12.2, 0.4, 1.5), (-15.2, -0.3, 1.3), 34)),
@@ -199,21 +191,19 @@ SHOTS = [
     ("L61", "the tags fall like snow", 2, still((-5.9, -0.6, 1.55), (UN[0], UN[1], 1.5), 40)),
     ("L62", "I step up to my bench", 2, still((-9.2, 0.6, 1.6), (-11.5, 1.2, 1.45), 36)),
     ("L62.2", "the heap", 2, still((-10.0, 1.1, 0.45), (HEAP[0], HEAP[1], 0.2), 28)),
-    ("L63", "I look at my sleeves", 2, still((-12.6, 0.2, 1.6), (ST[0], ST[1], 1.35), 44)),
-    ("L64", "Mrs. Kettle again", 2, still((-8.4, 1.0, 1.55), (-5.5, 1.2, 1.45), 36)),
-    ("L65", "my sleeve", 2, still((-12.0, 0.2, 1.45), (-12.5, ST[1], 1.25), 40)),
+    ("L63", "Uncle laughs, tags round his shoes", 2, still((-10.2, -0.7, 1.4), (-7.75, -1.0, 1.0), 40)),
     # 07 the window
     ("L66", "the window seat, gold", 2, still((-1.8, -2.4, 1.3), (-5.2, -0.8, 1.15), 32)),
     ("L67", "clean shirtsleeves", 2, still((-2.6, -1.6, 1.2), (-5.2, -0.8, 1.0), 50)),
-    ("L68", "chalk on canvas", 2, still((-12.0, 0.3, 1.6), (-12.6, 1.0, 0.95), 40)),
-    ("L68.1", "the tally on the foot", 2, move(((-10.95, 0.3, 0.28), (FOOT[0] + 0.1, FOOT[1], 0.12)), ((-10.9, 0.4, 0.26), (FOOT[0] + 0.1, FOOT[1], 0.12)), 42)),
+    ("L68", "Uncle chalks my apron", 2, still((-12.0, 2.3, 1.75), (-12.05, 0.0, 1.3), 30)),
+    ("L68+0.9", "the tally on the foot", 2, move(((-10.95, 0.3, 0.28), (FOOT[0] + 0.1, FOOT[1], 0.12)), ((-10.9, 0.4, 0.26), (FOOT[0] + 0.1, FOOT[1], 0.12)), 42)),
     ("L69", "two aprons", 2, still((-13.0, -0.3, 1.5), (-15.9, -0.3, 1.3), 34)),
     ("L69.3", "turn the sign", 2, still((-6.0, 1.9, 1.6), (-4.3, 1.9, 1.7), 40)),
     ("L70", "Saturday, the arcade", 2, still((0.4, 7.0, 1.6), (0, -20, 1.9), 26)),
-    ("L70.2", "our shop window", 2, still((-1.5, -0.2, 1.45), (-4.9, -0.4, 1.45), 34)),
-    ("L71", "me at my bench", 2, still((-12.6, 0.2, 1.6), (ST[0], ST[1], 1.45), 44)),
-    ("L72", "the fitting room, empty", 2, still((-11.0, -0.9, 1.55), (-15.4, -1.75, 1.3), 30)),
-    ("L73", "my sleeve", 4, still((-12.0, 0.2, 1.45), (-12.5, ST[1], 1.25), 40)),
+    ("L70.2", "our shop window, a close two-shot", 2, still((-2.6, -0.77, 1.3), (-5.55, -0.77, 1.25), 40)),
+    ("L71", "Mrs. Kettle front-on, Mr. beside her", 2, still((-6.0, -0.6, 1.5), (-3.0, -0.6, 1.45), 42)),
+    ("L72", "my clean sleeve, thumb on it", 2, still((-11.9, 0.45, 1.95), (-12.5, 1.85, 1.15), 36)),
+    ("L73", "the bare hanger swings", 2, move(((-12.8, -1.4, 1.6), (-15.5, -1.75, 1.6)), ((-13.3, -1.5, 1.6), (-15.5, -1.75, 1.55)), 35)),
 ]
 def widen(cam):
     return [[k[0], k[1], k[2], (max(20, round(k[3] * 0.68)) if k[3] >= 28 else k[3])] + k[4:] for k in cam]
@@ -289,53 +279,29 @@ for n, (p0, p1) in {"x3": ([-1.5, -6], [-1.0, -2]), "x4": ([1.8, -9], [1.3, -4])
     walk(n, "L02", p1)
     hide(n, "L02+0.01")
 put("salesman", "L02", [-3.3, -7.1], yaw=90, expr="smirk", arms=[20, 20], side=[-15, -15])
-hide("salesman", "L03")
-put("salon_a", "L03", [-2.5, -11.0], yaw=20, expr="smirk")
-put("salon_b", "L03", [-1.5, -11.0], yaw=-20, expr="grin")
-talk("salon_b", "L03", "L03.2")
-put("salon_a", "L03.2", [-2.5, -11.0], yaw=20, expr="smirk")
-put("salon_b", "L03.2", [-2.0, -11.0], yaw=-15, expr="grin")
-hide("salon_a", "L04")
-hide("salon_b", "L04")
-put("date_m", "L04", [3.4, -2.5], yaw=-70, expr="grin")
-put("date_f", "L04", [3.4, -3.5], yaw=-110, expr="grin")
-hide("date_m", "L05")
-hide("date_f", "L05")
+hide("salesman", "L05")
 put("cafe_man", "L05", [3.4, -5.0], yaw=-75, expr="worried", head=[0, 10])
 put("cafe_f", "L05", [3.4, -5.9], yaw=-100, expr="neutral")
 talk("cafe_man", "L05", "L05.2")
 put("cafe_man", "L05.2", [3.4, -5.0], yaw=-75, expr="smirk")
-put("cafe_f", "L06", [3.3, -6.4], yaw=-110, expr="grin")
-put("cafe_man", "L06", [3.3, -4.9], yaw=-80, expr="grin")
-put("x1", "L06", [2.7, -2.4], yaw=-90, expr="grin")
-put("x2", "L06", [1.9, -3.6], yaw=-60, expr="grin")
-put("x3", "L06", [3.4, -3.0], yaw=-110, expr="grin")
-for n in ("cafe_man", "cafe_f", "x1", "x2", "x3"):
-    clap(n, "L06", 0.2, 6)
 hide("cafe_man", "L07")
 hide("cafe_f", "L07")
-for n in ("x1", "x2", "x3"):
-    hide(n, "L07")
 put("mrs_kettle", "L07", [-0.45, -6.0], yaw=0, expr="smirk", head=[0, -8], arms=[10, 10])
 put("mr_kettle", "L09", [0.45, -6.0], yaw=0, expr="neutral")
+put("mrs_kettle", "L08.2", [-0.45, -6.0], yaw=0, expr="smile", head=[0, -8], arms=[10, 80], side=[0, -42])
 put("mrs_kettle", "L09", [-0.45, -6.0], yaw=0, expr="smirk", head=[0, -8], arms=[10, 10])
 hide("mrs_kettle", "L10")
 hide("mr_kettle", "L10")
 put("me", "L10", [0.0, 5.5], yaw=0, expr="neutral")
-walk("me", "L11", [0.0, -1.0])
+walk("me", "L12", [0.0, -1.0])
 for n, p0, p1 in (("x1", [-1.8, 7], [-1.5, 1]), ("x2", [1.9, 8], [1.6, 2]), ("x3", [1.0, -4], [1.0, 4])):
     put(n, "L10", p0, yaw=0)
-    walk(n, "L11", p1)
-    hide(n, "L11+0.01")
-put("me", "L11", [5.6, -4.2], yaw=90, expr="neutral")
-put("x4", "L11", [7.9, -4.3], yaw=-125, expr="smirk", head=[0, 5])
-key("x4", "L11.1", head=[0, 14], blend=0.3)
-key("x4", "L11.2", head=[0, 4], blend=0.3)
+    walk(n, "L12", p1)
+    hide(n, "L12+0.01")
 hide("me", "L12")
-hide("x4", "L12")
 # 02 the shop
-put("uncle", "L12", [-3.0, 1.0], yaw=180)           # in the arcade at the shop front, S15 (through the window)
-put("uncle", "L12.2", [UB[0], UB[1]], yaw=180, expr="soft", arms=[40, 40])
+put("uncle", "L12", [-6.1, -0.8], yaw=90, expr="smile", arms=[30, 30])   # at his counter, seen through the window (S15)
+put("uncle", "L12.3", [UB[0], UB[1]], yaw=180, expr="soft", arms=[40, 40])
 put("me", "L13", [82.0, 0.5], yaw=0, expr="neutral", head=[0, 6])
 rub("me", "L13", 0.3, 7, 55)
 hide("uncle", "L13")
@@ -425,7 +391,6 @@ put("me", "L62", [-11.0, 1.0], yaw=90, expr="worried")
 walk("me", "L62+0.9", [ST[0], ST[1]])
 put("me", "L62.2", [ST[0], ST[1]], yaw=0, expr="worried")
 put("me", "L63", [ST[0], ST[1]], yaw=0, expr="worried", head=[0, 30], arms=[40, 40], side=[0, 0])
-put("me", "L65", [ST[0], ST[1]], yaw=0, expr="worried", head=[0, 24])
 put("uncle", "L56", [UN[0], UN[1]], yaw=90, expr="tired")
 put("uncle", "L57", [UN[0], UN[1]], yaw=-90, expr="worried", head=[0, 0])
 key("uncle", "L57", look=[0, 0])
@@ -433,17 +398,13 @@ put("uncle", "L58", [UN[0], UN[1]], yaw=90, expr="tired")
 key("uncle", "L61+0.6", expr="soft")
 put("uncle", "L61", [UN[0], UN[1]], yaw=90, expr="tired")
 key("uncle", "L61+0.8", expr="soft", blend=0.5)
-put("mrs_kettle", "L64", [-5.5, 1.5], yaw=-90, expr="smirk", head=[0, -8])
-put("mr_kettle", "L64", [-5.5, 0.6], yaw=-90, expr="neutral", head=[20, 0])
-put("uncle", "L64", [UN[0], UN[1]], yaw=90, expr="soft")
-for n in ("x1", "teal", "cam"):
-    hide(n, "L64")
 put("x1", "L60", [-5.0, 1.0], yaw=-90, expr="wide")
 put("x3", "L60", [-5.2, -2.0], yaw=-90, expr="wide")
 put("teal", "L60", [-4.7, 0.4], yaw=-90, expr="wide")
 put("cam", "L60", [-5.6, 0.7], yaw=-90, expr="wide")
-for n in ("stick", "x2", "x3", "x1", "teal", "cam", "mr_kettle", "mrs_kettle"):
-    hide(n, "L65+0.5") if n not in ("mr_kettle", "mrs_kettle") else None
+put("uncle", "L63", [UN[0], UN[1]], yaw=-90, expr="laugh", head=[0, 12])
+for n in ("stick", "x2", "x3", "x1", "teal", "cam"):
+    hide(n, "L66")
 # 07 the window
 hide("me", "L66")
 hide("uncle", "L66")
@@ -452,23 +413,26 @@ hide("mr_kettle", "L66")
 SEAT = {"yaw": 90}
 put("uncle2", "L66", [-5.55, -1.3, -0.17], expr="soft", **SEAT)
 put("me2", "L66", [-5.55, -0.3, -0.17], expr="soft", **SEAT)
-put("uncle2", "L68", [-12.6, -1.8], yaw=180, expr="soft", arms=[45, 45])
-put("me2", "L68", [ST[0] + 0.0, 0.2], yaw=180, expr="soft")
-hide("uncle2", "L68.1")
-hide("me2", "L68.1")
+put("uncle2", "L68", [-12.55, 0.0], yaw=90, expr="soft", arms=[80, 80])
+put("me2", "L68", [-11.55, 0.0], yaw=-90, expr="soft", arms=[10, 10])
+hide("uncle2", "L68+0.9")
+hide("me2", "L68+0.9")
 hide("uncle2", "L69.3")
-put("uncle2", "L70", [-5.5, -1.2], yaw=90, expr="soft")
-put("me2", "L70", [-5.5, 0.1], yaw=90, expr="soft")
+put("uncle2", "L70", [-5.55, -1.08, -0.17], expr="soft", **SEAT)
+put("me2", "L70", [-5.55, -0.46, -0.17], expr="soft", **SEAT)
 for n, p0, p1 in (("x1", [-1.2, 1], [-1.0, -8]), ("x2", [1.2, 2], [1.4, -9]), ("x3", [-2.5, -3], [-2.0, -12]),
                   ("x4", [0.5, -5], [0.2, -14])):
     put(n, "L70", p0, yaw=180)
     walk(n, "L71", p1)
     hide(n, "L71")
-put("me2", "L71", [ST[0], ST[1]], yaw=0, expr="soft", arms=[45, 45], head=[0, 14])
+put("mrs_kettle", "L71", [-3.0, -0.95], yaw=-90, expr="grin", head=[0, -6])
+put("mr_kettle", "L71", [-3.0, -0.2], yaw=-90, expr="neutral")
+hide("mrs_kettle", "L72")
+hide("mr_kettle", "L72")
+hide("me2", "L71")
 hide("uncle2", "L71")
-put("me2", "L72", [-12.9, -0.2], yaw=90, expr="neutral")
-put("me2", "L73", [-12.6, 1.8], yaw=0, expr="neutral", arms=[20, 50], side=[0, -28])
-rub("me2", "L73", 0.1, 6, 50)
+put("me2", "L72", [-12.6, 1.8], yaw=0, expr="sad", arms=[20, 50], side=[0, -28], head=[0, 30])
+hide("me2", "L73")
 
 # ---------------------------------------------------------------------------------------------------- cues
 cues = []
@@ -517,6 +481,7 @@ cue(0, "hanger", on=False)
 cue("L31", "hanger", on=True)
 cue("L43", "hanger", on=True, swing=1)
 cue("L62.2", "hanger", on=False)
+cue("L73", "hanger", on=True, swing=1)
 # props
 for at, n in ((0, 2), ("L14", 3), ("L19", 4), ("L21", 5), ("L24", 6), ("L44", 8)):
     cue(at, "boxes", n=n)
@@ -537,14 +502,12 @@ cue("L69", "aprons", n=2)
 cue("L69.3", "sign", turn=1.0, dur=0.8)
 cue("L22+0.5", "bell")
 cue("L44", "bell")
-cue("L68.1", "dust")
+cue("L68+0.9", "dust")
 # tags: kinds start full; the story's own counts follow
-for n, kind in (("salesman", 74), ("date_m", 40), ("date_f", 40), ("mr_kettle", 74)):
+for n, kind in (("salesman", 74), ("mr_kettle", 74)):
     cue(0, "tags", who=n, n=kind, pop=False)
-for n in ("salon_a", "cafe_f", "cam", "teal", "stick", "x1", "x2", "x3", "x4", "x5", "x6"):
+for n in ("cafe_f", "cam", "teal", "stick", "x1", "x2", "x3", "x4", "x5", "x6"):
     cue(0, "tags", who=n, n=7, pop=False)
-cue(0, "tags", who="salon_b", n=2, pop=False)
-cue("L03.2+0.5", "tags", who="salon_b", n=3)
 cue(0, "tags", who="cafe_man", n=4, pop=False)
 cue("L05.2+0.1", "tags", who="cafe_man", n=3, fall=True)
 cue("L58+0.2", "tags", who="cafe_man", n=4, pop=False)
@@ -555,16 +518,12 @@ for at, n, pop in (("L12", 3, False), ("L19.3+0.25", 4, True), ("L21", 12, False
                    ("L40+0.35", 41, True), ("L44", 44, False), ("L45+0.4", 47, True), ("L45.2+0.4", 50, True),
                    ("L46", 55, False), ("L55+0.3", 57, True)):
     cue(at, "tags", who="uncle", n=n, pop=pop)
-cue("L61", "tags", who="uncle", n=0, fall=True)
+cue("L61", "tags", who="uncle", n=0, fall=True, rest=True)
 
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
     {"at": "L01+1.0", "kind": "click", "db": -26},
-    {"at": "L03.2+0.5", "kind": "click", "db": -26},
     {"at": "L05.2+0.1", "kind": "whoosh", "db": -30, "dur": 1.0},
-    {"at": "L06+0.2", "kind": "clap", "db": -22},
-    {"at": "L06+0.55", "kind": "clap", "db": -22},
-    {"at": "L06+0.9", "kind": "clap", "db": -22},
     {"at": "L19.3+0.25", "kind": "click", "db": -26},
     {"at": "L22+0.5", "kind": "bell", "db": -22},
     {"at": "L28", "kind": "click", "db": -16},
@@ -592,12 +551,14 @@ story = {
     "title": "In this town, every lie you tell pins a tag to your clothes",
     "made_for_kids": False,
     "premise": "In a town where every lie you tell pins a small white tag to your clothes, I've never had one. I'm back for a week to help Uncle Aurel shut the alterations shop where he taught me to cut. He has never told a lie in his life, but every time a customer asks after me, a tag pins onto him. By night the fitting-room curtain draws itself, my old bench gets chalked up for a suit, and a tape measure lies on the floor in the shape of a person where I used to stand.",
-    "twist": "A lie you believe doesn't count. I never had a tag because I believed my own: I love it there. Uncle knew all along, and every tag on him is the same lie, she's happy in the city, told to every customer so I could stay away without guilt. A suit with nobody in it stands in my place until I say the truth out loud and step back up to my bench.",
+    "twist": "A lie you believe never gets a tag. I never had one because for two years I told myself I was happy in the city, and believed it. Uncle knew all along, and every tag on him is the same lie, my nephew's happy in the city, told to every customer so I could stay away without guilt. A suit with nobody in it stands in my place until I say the truth out loud and step back up to my bench.",
     "world": "an old covered shopping arcade of bottle-green shopfronts, and a narrow alterations shop with two cutting benches, a fitting-room curtain and a stair",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#7cc4f0",
     "gap": 0.12,
-    "tail": 0,
+    "tail": 0.25,
+    "fade_in": False,
+    "fade_out": False,
     "look": {"fog": "#1c2230", "fog_density": 0.012, "fog_start": 8.0, "sky": "#cfe0ee", "sky_strength": 0.9,
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.06,

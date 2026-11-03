@@ -38,7 +38,7 @@ HARM = re.compile(r"\b(hurt\w*|grab\w*|took|taken|drag\w*|vanish\w*|disappear\w*
                   r"fell|fall\w*|drown\w*|lost|scream\w*|cry\w*|pulled|eaten|ate|swallow\w*|chas\w*|trapped|locked)\b", re.I)
 BRAND = re.compile(r"r\W*o\W*b\W*l\W*o\W*x", re.I)
 AGES = ("teen", "adult")
-MIN_S, MAX_S = 30.0, 180.0  # the owner: longer is better, up to the 3 min Shorts limit (note 18)
+MIN_S, MAX_S = 15.0, 180.0  # 15 s allows the ultra-short tests (the trend scan's fastest POV clips run 13 to 44 s); 3 min is the Shorts limit
 
 
 def texts(st: dict) -> tuple[list[str], list[str]]:
@@ -84,6 +84,46 @@ def originality(name: str, st: dict) -> list[tuple[str, str]]:
 CUT_MAX_S = 2.3
 
 
+# effects that are mostly bright noise (over a quarter of their energy above 4 kHz, measured 2026-11-02): fine as a
+# rare, quiet accent, scratchy when loud or repeated (the owner pulled ep36 over its hissy grass steps)
+HARSH_SFX = {"glitch", "tape", "rasp", "radio"}   # click is a tiny transient tick, not a hiss: back-row held 84% with 15
+
+
+def harsh_sound(st: dict) -> list[tuple[str, str]]:
+    sfx = [s for s in (st.get("sound") or {}).get("sfx", []) if s.get("kind") in HARSH_SFX]
+    loud = [f"{s['kind']}@{s.get('at')}" for s in sfx if float(s.get("db", -30)) > -24]
+    out = []
+    if loud:
+        out.append(("warn", f"bright, noisy effects above -24 dB can sound scratchy: {loud[:5]} (keep them quiet)"))
+    for a in (st.get("sound") or {}).get("ambience", []):
+        if a.get("kind") == "static" and float(a.get("lufs", -40)) > -40:   # radio hiss: 90% of it above 4 kHz
+            out.append(("warn", f"static ambience at {a.get('lufs')} LUFS will sound like hiss; keep it under -40"))
+    if len(sfx) > 6:
+        out.append(("warn", f"{len(sfx)} bright, noisy effects; repeated, they read as scratching (ep36's grass steps)"))
+    return out
+
+
+ASSETS = Path(__file__).resolve().parent.parent / "assets"
+TEXTURE_NAMES = ("brick", "wood", "concrete", "grass", "asphalt")   # kit.TEXTURES (kit needs bpy, so not imported)
+
+
+def library(st: dict, set_text: str = "") -> list[tuple[str, str]]:
+    """The CC0 library (assets/): a `look.hdri` must name a file in assets/hdri/, and a set's kit.texture("x")
+    one of the textures, so a typo shows up here and not as a plain world on the render."""
+    out = []
+    h = (st.get("look") or {}).get("hdri")
+    if h and not (ASSETS / "hdri" / f"{h}.hdr").exists():
+        have = sorted(p.stem for p in (ASSETS / "hdri").glob("*.hdr"))
+        out.append(("block", f"look.hdri {h!r} isn't in assets/hdri/ (there are {have})"))
+    for t in re.findall(r"kit\.texture\(\s*[\"']([^\"']+)", set_text):
+        if t not in TEXTURE_NAMES:
+            out.append(("block", f"set.py uses kit.texture({t!r}); the textures are {TEXTURE_NAMES}"))
+    return out
+
+
+NARRATOR_MISFIT = re.compile(r"\bmy (husband|boyfriend|hubby)\b", re.I)   # the one narrator voice is a man's (ep38)
+
+
 def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list[tuple[str, str]]:
     from blocky import voicecheck as sc
 
@@ -95,6 +135,12 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
     if set_py.exists() and "flicker" in set_py.read_text() and not (st.get("look") or {}).get("flash_safe"):
         out.append(("warn", "the set has flickering lights but look.flash_safe isn't set; strobing flicker failed the "
                             "flash bar on most stories (RULES.md hard rule 7)"))
+    out += harsh_sound(st)
+    out += library(st, set_py.read_text() if set_py.exists() else "")
+    said_all = " ".join(" ".join(c[1] for c in ln.get("chunks", [])) for ln in st.get("lines", []))
+    if NARRATOR_MISFIT.search(said_all):
+        out.append(("warn", "the narrator says 'my husband/boyfriend', but the narrator voice is a man's (ep38): "
+                             "make the narrator's family fit a man"))
     screen, said = texts(st)
     viewer = screen + said + [st.get("title", "")]
     for i, ln in enumerate(st["lines"]):
