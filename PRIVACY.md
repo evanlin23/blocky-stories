@@ -2,7 +2,7 @@
 
 Last updated: November 2, 2026
 
-This covers "blocky-stories uploader", a small tool I wrote to upload my own animated shorts to my YouTube channel, Buhtown (formerly Panda Nano Adventures). It runs as a GitHub Actions workflow in this repo (`.github/workflows/upload.yml` and `scripts/upload.py`).
+This covers "blocky-stories uploader", a small tool I wrote to upload my own animated shorts to my YouTube channel, Buhtown (@Buhtown, formerly Panda Nano Adventures). It runs as a GitHub Actions workflow in this repo (`.github/workflows/upload.yml` and `scripts/upload.py`).
 
 ## Who uses it
 Just me. Nobody else can sign in to it or connect an account to it. There's no website or app for anyone else to use.
