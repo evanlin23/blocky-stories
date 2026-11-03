@@ -326,22 +326,22 @@
    ]
   },
   "L13": {
-   "text": "Its marker frown, faced Mum's door.",
+   "text": "Its marker frown. faced Mum's door.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
+   "dur": 2.121,
    "onset": 0.155,
-   "end": 1.845,
+   "end": 1.914,
    "chunks": [
     [
      0.155,
-     0.828
+     0.862
     ],
     [
-     0.888,
-     1.845
+     0.94,
+     1.914
     ]
    ]
   },

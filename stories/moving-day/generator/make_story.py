@@ -17,7 +17,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.12          # the last word ends 0.25 s before the hard cut (the voice's own tail is 0.13 s of it), into L01
 # the word check: these lines a touch slower so a swallowed "it", "and" or "me" comes through
 TEMPO = {"L21": 0.94, "L11": 1.1, "L16": 0.95, "L17": 0.96}
-GAPS = {"L28": 0.72}   # a 0.6 s music drop between L28 and L29
+GAPS = {"L28": 0.72, "L13": 0.05}   # a 0.6 s music drop between L28 and L29
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]

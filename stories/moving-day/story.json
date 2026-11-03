@@ -510,13 +510,14 @@
    "chunks": [
     [
      "Its marker FROWN",
-     "Its marker frown,"
+     "Its marker frown."
     ],
     [
      "faced Mum's DOOR.",
      "faced Mum's door."
     ]
-   ]
+   ],
+   "gap": 0.05
   },
   {
    "id": "L14",
