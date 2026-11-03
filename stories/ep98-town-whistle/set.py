@@ -118,7 +118,7 @@ def eased(tl, name, t, key="pos"):
 LOOKS = {
     "day": {"sun": (35, 52, 5.2, "#fff4de"), "sky": ("#bfe4ff", "#8fd0ff", "#4aa8ff"), "world": 1.15, "exp": 0.15},
     "gold": {"sun": (80, 10, 4.6, "#ffb860"), "sky": ("#ffd9a0", "#ffc27a", "#8fb4ff"), "world": 0.95, "exp": 0.2},
-    "morning": {"sun": (-60, 24, 4.6, "#ffe6bd"), "sky": ("#d7ecff", "#a8d8ff", "#62b2ff"), "world": 1.1, "exp": 0.15},
+    "morning": {"sun": (-60, 24, 3.4, "#ffe6bd"), "sky": ("#d7ecff", "#a8d8ff", "#62b2ff"), "world": 0.95, "exp": 0.0},
     "night": {"sun": (0, 5, 0.0, "#6a78c8"), "sky": ("#2b3a78", "#1b2656", "#0d1436"), "world": 0.6, "exp": 0.3},
     "in": {"sun": (35, 52, 0.0, "#fff4de"), "sky": ("#bfe4ff", "#8fd0ff", "#4aa8ff"), "world": 0.5, "exp": 0.15},
     "dawn": {"sun": (-70, 12, 4.2, "#ffd6a8"), "sky": ("#ffe4c4", "#ffd0a0", "#9cc8ff"), "world": 1.0, "exp": 0.2},
@@ -594,8 +594,15 @@ def build_house_set(kit, ctx):
     B(land, (3.0, 1.5, 0.4), (3.5, 0, -0.2), stone, "landB", 0.01)
     # cavern ceiling beyond the stairwell walls
     for sy in (-1, 1):
-        B(land, (5.0, 4.0, 0.4), (2.5, sy * 2.75, -0.2), stone, "landC", 0.01)
+        B(land, (5.9, 4.25, 0.4), (2.65, sy * 2.875, -0.2), stone, "landC", 0.01)
     B(land, (1.2, 10.0, 0.4), (-0.6, 0, -0.2), stone, "landD", 0.01) if False else None
+    # the landing is a small room: a flat ceiling and plain walls round it
+    lw = P("#d8c6a6", 0.85, 0.03)
+    B(land, (5.9, 10.0, 0.2), (2.65, 0, 2.3), P("#cdb894", 0.85, 0.03), "landceil", 0.0)
+    for sy in (-1, 1):
+        B(land, (5.9, 0.2, 2.4), (2.65, sy * 5.0, 1.1), lw, "landwall", 0.0)
+        B(land, (0.2, 4.15, 2.4), (-0.3, sy * 2.925, 1.1), lw, "landwall", 0.0)
+    B(land, (0.2, 10.0, 2.4), (5.6, 0, 1.1), lw, "landwall", 0.0)
     # cavern walls and floor (dark clay)
     CD, CW = 6.4, 10.0
     B(land, (CD, CW, 0.4), (2.4, 0, -6.9), dark, "cfloor", 0.0)
@@ -615,6 +622,7 @@ def build_house_set(kit, ctx):
     CY(ctx["lamp_ob"], 0.03, 0.02, (0, 0, 0.11), P("#6a4a2a", 0.5, 0.3), "lcap")
     ctx["lamp_light"] = kit.light("lamp", "POINT", (SX + 1.0, 0, 0.8), 150, "#ffb347", size=0.15)
     ctx["lamp_light2"] = kit.light("stairl", "POINT", (SX + 0.3, 0, 1.6), 90, "#ffd9a8", size=0.3)
+    ctx["landl"] = kit.light("landl", "POINT", (SX, 0, 0), 160, "#ffcf90", size=0.3)
     ctx["ukey"] = kit.light("ukey", "SPOT", (SX, 0, 0), 520, "#ffb860", size=0.5, spot=70, blend=0.6)
     ctx["urim"] = kit.light("urim", "SPOT", (SX, 0, 0), 500, "#7ab0ff", size=0.5, spot=90, blend=0.7)
     ctx["ufill"] = kit.light("ufill", "POINT", (SX, 0, 0), 60, "#ffcf9a", size=1.0, shadow=False)
@@ -766,7 +774,7 @@ def build(kit, story, tl):
     pool("whistle", 12, 0.13)
     pool("collar", 8, 0.07)
     for i in range(len(ctx["wells"])):
-        pool(f"well{i}", 5, 0.12)
+        pool(f"well{i}", 6, 0.2)
     pool("shoulder", 10, 0.03)
     ctx["steam"] = [kit.sphere(nm("steam"), 0.06, (0, 0, -50), pm, None, seg=10) for _ in range(8)]
     for o in ctx["steam"]:
@@ -842,17 +850,18 @@ def animate(kit, story, tl, t, ctx):
             s.data.materials[0] = m
     Lx, Lz = RUN * n, -RISE * n
     ctx["land"].location = (SX + Lx, 0, Lz)
-    # stair walls / ceiling follow the count: hide the part beyond the stairs by scaling their length
+    # stair walls / ceiling follow the count: they end 0.3 m past the last step, where the landing room begins
     ang = math.atan2(RISE, RUN)
-    length = (RUN * n + 2.0) / math.cos(ang)
+    base_x = RUN * MAXSTEPS + 2.0
+    lenx = RUN * n + 1.3
+    mid = lenx / 2 - 1.0
     for slab in ctx["stairwalls"]:
-        slab.scale = (length / ((RUN * MAXSTEPS + 2.0) / math.cos(ang)), 1, 1)
-        mid = (RUN * n + 2.0) / 2 - 1.0
+        slab.scale = (lenx / base_x, 1, 1)
         slab.location = (SX + mid, slab.location[1], -RISE * mid / RUN + 1.0)
     c = ctx["stairceil"]
-    c.scale = (length / ((RUN * MAXSTEPS + 2.0) / math.cos(ang)), 1, 1)
-    mid = (RUN * n + 2.0) / 2 - 1.0
+    c.scale = (lenx / base_x, 1, 1)
     c.location = (SX + mid, 0, -RISE * mid / RUN + 2.1)
+    ctx["landl"].location = (SX + Lx + 2.0, 0.0, Lz + 1.7)
     # ---- the lamp
     lp = eased(tl, "lamp", t) or [SX + 1.0, 0.0, 0.8]
     ctx["lamp_ob"].location = tuple(lp)
@@ -955,6 +964,6 @@ def animate(kit, story, tl, t, ctx):
     inh = sd.get("inside", 1.0)
     return {"sun": en * sd.get("sun", 1.0) / 5.0, "camfill": sd.get("fill", 1.0),
             "gceil": inh, "gwin": inh, "kceil": inh, "kwinl": inh, "bceil": inh, "ovenglow": inh,
-            "lamp": sd.get("lamp", 1.0), "stairl": sd.get("stairl", 1.0),
+            "lamp": sd.get("lamp", 1.0), "stairl": sd.get("stairl", 1.0), "landl": sd.get("stairl", 1.0),
             "ukey": lit * gk, "urim": lit * sd.get("rim", 1.0), "ufill": lit * sd.get("ufill", 1.0),
             "cutl": 1.0, "cutlow": 1.0}
