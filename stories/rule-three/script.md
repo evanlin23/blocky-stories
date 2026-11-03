@@ -222,7 +222,7 @@ The warm lift: E major over the drone.
 - `L37` narrator: Rule three / never said / WHERE I stamp.
   - [Milo, `grin`, slapping the side of the book]
 - `L38` narrator: So we CARRY it. / Both of us. / Down the HILL.
-  - [two shots: the two of us hauling the door-sized red book out of the hall door, Milo walking backward at the front. Then a high wide down the lamplit high street, the book between us, the townsfolk stepping aside and smiling]
+  - [one shot (rescue r3, for flash margin): down the lamplit night street, Milo walking backward at the front, his face and the door-sized red book in frame, the townsfolk stepping aside and smiling]
 - `L39` narrator: At NINE, / I stamp / at MOM'S TABLE.
   - [two shots: Mom's bright dining room, camera on Mom's side of the table, Mom in her paper crown, `smile`, in the foreground, the giant book across the table among cake plates. Then my stamp coming down. Soft thunk]
 - `L40` narrator: Tonight's rule? / Milo writes it / right THERE.
