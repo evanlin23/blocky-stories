@@ -540,10 +540,10 @@ def build_bakery(kit, M, ctx):
     # the rain on the window: streaks hung in the opening (centre plane y = -0.1)
     rng = random.Random(11)
     ctx["streaks"] = []
-    for i in range(30):
-        x = 0.62 + (i + rng.random() * 0.6) * (2.76 / 30)
+    for i in range(40):
+        x = 0.62 + (i + rng.random() * 0.6) * (2.76 / 40)
         ln = rng.uniform(0.3, 0.75)
-        o = B(f"streak{i}", (0.03, 0.012, ln), (x, -0.1, 2.0), M["water"], bevel=0.004)
+        o = B(f"streak{i}", (0.055, 0.014, ln), (x, -0.1, 2.0), M["water"], bevel=0.004)
         ctx["streaks"].append((o, rng.uniform(0.35, 0.8), rng.random() * 2.2, ln))
         no_shadow(o)
 
@@ -651,15 +651,16 @@ def build_yard(kit, M, ctx):
     # balloons on strings, bobbing
     ctx["balloons"] = []
     bcols = ["#ff6fa8", "#ffd23f", "#4db8ff", "#58d86a", "#b06af0", "#ff8a3d", "#ff6fa8", "#4db8ff"]
-    anchors = [(tx - 0.9, ty - 0.4), (tx + 0.9, ty - 0.4), (tx - 0.9, ty + 0.4), (tx + 0.9, ty + 0.4), (tx - 2.6, ty - 2.6),
-               (tx + 2.6, ty - 2.6), (tx - 2.6, ty + 2.6), (tx + 2.6, ty + 2.6)]
+    anchors = [(tx - 0.9, ty - 0.4), (tx + 0.9, ty - 0.4), (tx - 0.9, ty + 0.4), (tx + 0.9, ty + 0.4), (tx - 5.2, ty - 1.0),
+               (tx + 5.2, ty + 1.0), (tx - 1.0, ty + 5.6), (tx + 1.0, ty - 5.2)]
     for i, (x, y) in enumerate(anchors):
         z = 2.3 + (i % 3) * 0.35
-        root = kit.empty(f"bal{i}", (x, y, 0.8))
-        s = kit.sphere(f"bal{i}.b", 0.28, (0, 0, z - 0.8), kit.plastic(bcols[i], 0.25, f"balloon{i}"), root, seg=14)
+        z0 = 0.8 if i < 4 else 0.0
+        root = kit.empty(f"bal{i}", (x, y, z0))
+        s = kit.sphere(f"bal{i}.b", 0.28, (0, 0, z - z0), kit.plastic(bcols[i], 0.25, f"balloon{i}"), root, seg=14)
         s.scale = (1, 1, 1.25)
-        kit.cyl(f"bal{i}.s", 0.004, z - 0.8 - 0.3, (0, 0, (z - 0.8 - 0.3) / 2), M["dark"], root, n=4)
-        ctx["balloons"].append((root, i))
+        kit.cyl(f"bal{i}.s", 0.004, z - z0 - 0.3, (0, 0, (z - z0 - 0.3) / 2), M["dark"], root, n=4)
+        ctx["balloons"].append((root, i, z0))
     # bunting on the hedge: little coloured flags
     for i in range(12):
         B(f"flag{i}", (0.18, 0.02, 0.24), (6.3, 1.0 + i * 0.95, 1.55), kit.plastic(bcols[i % 8], 0.6, f"flagc{i % 8}"), rot=(0, 0, 0.0))
@@ -1078,8 +1079,8 @@ def animate(kit, story, tl, t, ctx):
         r = 0.5 + 1.8 * s
         o.scale = (r, r, r)
     # ---- balloons bob; the glitter jar
-    for root, i in ctx["balloons"]:
-        root.location = (root.location.x, root.location.y, 0.8 + 0.05 * math.sin(t * 1.6 + i * 1.3))
+    for root, i, z0 in ctx["balloons"]:
+        root.location = (root.location.x, root.location.y, z0 + 0.05 * math.sin(t * 1.6 + i * 1.3))
     jon = on_at(tl, "jar", t, False) and "pearl" in rig.CHARS
     if jon:
         hp = hand_pos("pearl", 0, (0, -0.1, -1.8))
