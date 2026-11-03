@@ -1705,50 +1705,6 @@
     ]
    ]
   },
-  "L64": {
-   "text": "Just like Mrs. Kettle.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9784999999999999,
-   "dur": 1.448,
-   "onset": 0.19,
-   "end": 1.241,
-   "chunks": [
-    [
-     0.19,
-     0.5
-    ],
-    [
-     0.5,
-     1.241
-    ]
-   ]
-  },
-  "L65": {
-   "text": "For two years, I'd been rubbing my sleeve.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.017,
-   "onset": 0.155,
-   "end": 1.81,
-   "chunks": [
-    [
-     0.155,
-     0.621
-    ],
-    [
-     0.655,
-     1.103
-    ],
-    [
-     1.103,
-     1.81
-    ]
-   ]
-  },
   "L66": {
    "text": "That evening, we sit in the shop window in our shirtsleeves.",
    "who": "narrator",
@@ -1930,30 +1886,30 @@
    ]
   },
   "L72": {
-   "text": "for two years, i'd told myself i was happy in the city.",
+   "text": "for two years, i told myself i was happy in the city.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.552,
+   "dur": 2.603,
    "onset": 0.172,
-   "end": 2.362,
+   "end": 2.414,
    "chunks": [
     [
      0.172,
-     0.638
+     0.655
     ],
     [
-     0.664,
-     1.241
+     0.69,
+     1.293
     ],
     [
-     1.241,
-     1.715
+     1.293,
+     1.767
     ],
     [
-     1.715,
-     2.362
+     1.767,
+     2.414
     ]
    ]
   },

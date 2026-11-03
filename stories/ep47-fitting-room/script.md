@@ -21,7 +21,7 @@
   - Plant 1, Mrs. Kettle (L07 to L09): she swears her husband has never told a lie, no tag lands on her, and the narration says "She BELIEVES it." He stands beside her white as a wedding cake. Paid off in words at L71 ("a lie you BELIEVE / never gets a TAG"), with Mrs. Kettle seen once more under it (S91), not named.
   - Plant 2, my sleeve (shots only, never narrated): under L16 and L17 I'm rubbing my left sleeve with my other hand, where a tag would pin. Also seen on the train under L13. Paid off in a shot under L72 (my thumb still on the clean sleeve). A rewatch reward a cold listener doesn't need.
   - Rewatch reward, not narrated: under L19 and L20, Uncle answers the customer with his back to camera and his head toward the window, where my old bench is. A tag pins on each time.
-- **How the last 15 seconds turn over the first line:** first time, "every lie you tell pins a white tag" is the town's funny, eerie rule and I'm the honest exception. L70 repeats the rule over the two of us in shirtsleeves. L71 to L73 say the twist plainly ("But a lie you BELIEVE / never gets a TAG. / For two YEARS, / I'd told MYSELF / I was HAPPY / in the CITY. / And I BELIEVED / every WORD."), over the empty hanger swinging on its hook, and loop straight into "In this town, every lie you tell pins a white tag to your clothes." Now the first line has a hole in it, and my clean coat in L10 was the worst sign, not the best.
+- **How the last 15 seconds turn over the first line:** first time, "every lie you tell pins a white tag" is the town's funny, eerie rule and I'm the honest exception. L70 repeats the rule over the two of us in shirtsleeves. L71 to L73 say the twist plainly ("But a lie you BELIEVE / never gets a TAG. / For two YEARS, / I told MYSELF / I was HAPPY / in the CITY. / And I BELIEVED / every WORD."), over the empty hanger swinging on its hook, and loop straight into "In this town, every lie you tell pins a white tag to your clothes." Now the first line has a hole in it, and my clean coat in L10 was the worst sign, not the best.
 - **What the hits do, line by line:**
   1. Rule opener (L01, 14 words): "In this town, every lie you tell pins a white tag to your clothes."
   2. Marker by 2 s: the white hook-glyph tags on every shopper in S01, one popping on in frame.
@@ -306,7 +306,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S90: the same framing as S02, the arcade on Saturday, shoppers speckled. Push in slowly to our shop window: Uncle and me at our two benches facing each other, both bare]
 - `L71` narrator: But a lie you BELIEVE / never gets a TAG.
   - [S91: through our window, Mrs. Kettle passing in the arcade, proud and clean, Mr. Kettle beside her white with tags (plant 1, not named)]
-- `L72` narrator: For two YEARS, / I'd told MYSELF / I was HAPPY / in the CITY.
+- `L72` narrator: For two YEARS, / I told MYSELF / I was HAPPY / in the CITY.
   - [S92: me at my bench, `sad`, a small smile, looking down at my clean left sleeve, my thumb resting on it, still (plant 2)]
 - `L73` narrator: And I BELIEVED / every WORD.
   - [S93: the fitting room behind me, curtain hanging open, the bare wooden hanger on the brass hook swinging very slightly, cool side-window light. Hold 0.25 s after "WORD", then loop to S01]
