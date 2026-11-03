@@ -557,11 +557,19 @@ def build_shop(kit, M, ctx):
     for k in range(5):
         kit.cyl(f"coil{k}", 0.1 - k * 0.012, 0.025, (0, 0, k * 0.026), M["yellow"], coil, n=18)
     ctx["coil"] = coil
-    pc = kit.empty("pincushion", (-12.25, 0.95, 0.92))
+    pc = kit.empty("pincushion", (-12.66, 0.88, 0.92))
     B(kit, "cush", (0.14, 0.1, 0.06), (0, 0, 0.03), M["red"], pc, bevel=0.02)
     for k in range(5):
         kit.cyl(f"pinhead{k}", 0.008, 0.012, (-0.04 + k * 0.02, 0.0, 0.07), M["brass"], pc, n=6)
     ctx["pincushion"] = pc
+    # the lace-ups on the floor behind the curtain (shown for L32 only), lit by a low warm glow
+    sh = kit.empty("lace-ups", (-14.7, -1.75, 0.0))
+    ctx["shoes"] = sh
+    for sy in (-0.12, 0.12):
+        B(kit, f"lace.sole{sy}", (0.4, 0.17, 0.03), (0, sy, 0.025), M["black"] if "black" in M else M["shoe"], sh, bevel=0.01)
+        B(kit, f"lace.body{sy}", (0.3, 0.16, 0.1), (-0.04, sy, 0.09), M["shoe"], sh, bevel=0.035)
+        B(kit, f"lace.toe{sy}", (0.14, 0.16, 0.07), (0.13, sy, 0.065), M["shoe"], sh, bevel=0.03)
+    kit.light("shoe glow", "POINT", (-14.55, -1.75, 0.12), 4.0, "#ffc890", size=0.1)
     ou = kit.empty("tape outline", (ME_ST[0], ME_ST[1], 0.015))
     segs = [((0, 0.1), (0, 1.55)), ((-0.25, 1.0), (-0.25, 0.0)), ((0.25, 1.0), (0.25, 0.0)), ((-0.25, 1.0), (0.25, 1.0)),
             ((-0.25, 1.0), (-0.52, 0.55)), ((0.25, 1.0), (0.52, 0.55)), ((-0.25, 0.0), (0.25, 0.0)), ((-0.25, 1.4), (0.25, 1.4))]
@@ -1180,6 +1188,9 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = st != "coil"
     for ob in ctx["extras"].get("tape", []):
         ob.hide_render = st != "neck"
+    c = _last(_cues(tl, "shoes"), t) or {"on": False}
+    for ob in [ctx["shoes"]] + list(ctx["shoes"].children):
+        ob.hide_render = not c.get("on", False)
     c = _last(_cues(tl, "pincushion"), t) or {"on": False}
     for ob in [ctx["pincushion"]] + list(ctx["pincushion"].children):
         ob.hide_render = not c.get("on", False)

@@ -156,9 +156,9 @@ SHOTS = [
     ("L28.1", "the empty stair", 1, still((-14.6, -0.1, 1.2), (-15.4, 2.2, 2.2), 24)),
     ("L29", "his room", 2, still((60.5, -1.5, 1.6), (62.9, 0, 0.6), 28)),
     ("L29.1", "the phone", 2, still((-6.2, -0.1, 1.35), (-6.75, -0.6, 1.07), 40)),
-    ("L30", "tape and pincushion", 2, still((-12.2, 0.2, 1.5), (-12.6, 0.95, 0.95), 36)),
+    ("L30", "tape and pincushion", 2, move(((-12.8, -0.1, 1.65), (-12.8, 0.9, 0.95)), ((-12.8, 0.0, 1.62), (-12.8, 0.9, 0.95)), 36)),
     ("L31", "the curtain, shut", 2, still((-12.8, -1.6, 1.4), (-14.3, -1.7, 1.3), 30)),
-    ("L32", "shoes under the hem", 2, still((-13.2, -1.7, 0.09), (-14.5, -1.75, 0.2), 28)),
+    ("L32", "shoes under the hem", 2, move(((-13.5, -1.75, 0.075), (-14.7, -1.75, 0.07)), ((-13.62, -1.75, 0.075), (-14.7, -1.75, 0.07)), 28)),
     ("L33", "me looks at my shoes", 2, still((-11.5, -1.4, 1.35), (-13.8, -1.7, 1.25), 34)),
     ("L34", "the rings slide", 2, still((-14.3, -0.95, 2.3), (-14.3, -2.6, 2.5), 35)),
     ("L35", "the suit hangs", 2, still((-11.6, -2.3, 1.3), (-15.5, -1.75, 1.05), 36)),
@@ -427,7 +427,7 @@ for n, p0, p1 in (("x1", [-1.2, 1], [-1.0, -8]), ("x2", [1.2, 2], [1.4, -9]), ("
     put(n, "L70", p0, yaw=180)
     walk(n, "L71", p1)
     hide(n, "L71")
-put("mrs_kettle", "L71", [-3.0, -0.95], yaw=-90, expr="grin", head=[0, -6])
+put("mrs_kettle", "L71", [-3.0, -0.95], yaw=-90, expr="smile", head=[0, -8])
 put("mr_kettle", "L71", [-3.0, -0.2], yaw=-90, expr="neutral")
 hide("mrs_kettle", "L72")
 hide("mr_kettle", "L72")
@@ -466,6 +466,8 @@ cue("L34", "curtain", open=1.0, dur=1.0)
 # the Empty: only shadows and traces until L47
 cue(0, "empty", hidden=True)
 cue("L31", "empty", pose="hang", pos=[-15.45, -1.75], yaw=-60)
+cue("L32", "empty", pose="hang", pos=[-15.45, 3.5], yaw=-60)   # parked out of sight for this shot (hidden:True left its shoes in the gap)
+cue("L33", "empty", pose="hang", pos=[-15.45, -1.75], yaw=-60)
 cue("L43", "empty", hidden=True)
 cue("L47", "empty", pose="stand", pos=list(EM), yaw=90)
 cue("L50", "empty", pose="stand", pos=list(EM), yaw=22, glints=True)
@@ -490,6 +492,11 @@ for at, n in ((0, 2), ("L14", 3), ("L19", 4), ("L21", 5), ("L24", 6), ("L44", 8)
 for at, s in ((0, "neck"), ("L26", "outline"), ("L28", "none"), ("L30", "coil"), ("L62.2", "none")):
     cue(at, "tape", state=s)
 cue("L30", "pincushion", on=True)
+cue("L32", "shoes", on=True)
+cue("L33", "shoes", on=False)
+cue(0, "lamp", light="shoe glow", on=0.0)
+cue("L31", "lamp", light="shoe glow", on=1.0, dur=0.4)
+cue("L33", "lamp", light="shoe glow", on=0.0, dur=0.4)
 cue("L31", "pincushion", on=False)
 cue("L25", "cloth", on=True)
 cue("L28", "cloth", on=False)
@@ -572,7 +579,7 @@ sfx = [
 ]
 story = {
     "slug": "ep47-fitting-room",
-    "title": "In this town, every lie you tell pins a tag to your clothes",
+    "title": "My Uncle NEVER Lies. He's Covered 🏷️",
     "made_for_kids": False,
     "premise": "In a town where every lie you tell pins a small white tag to your clothes, I've never had one. I'm back for a week to help Uncle Aurel shut the alterations shop where he taught me to cut. He has never told a lie in his life, but every time a customer asks after me, a tag pins onto him. By night the fitting-room curtain draws itself, my old bench gets chalked up for a suit, and a tape measure lies on the floor in the shape of a person where I used to stand.",
     "twist": "A lie you believe never gets a tag. I never had one because for two years I told myself I was happy in the city, and believed it. Uncle knew all along, and every tag on him is the same lie, my nephew's happy in the city, told to every customer so I could stay away without guilt. A suit with nobody in it stands in my place until I say the truth out loud and step back up to my bench.",
