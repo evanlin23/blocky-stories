@@ -10,14 +10,14 @@ cast = {
            "sleeves": "short", "hair": "buzz", "hair_c": "#c8a24a", "face": {"eyes": "round", "brows": True, "ink": "#24131f"}},
     "hal": {"age": "adult", "skin": "#e8b98f", "shirt": "#e0b23a", "pattern": "solid", "pants": "#6b5a3a",
             "shoes": "#3a2a20", "sleeves": "long", "collar": "#ffffff", "hair": "swoop", "hair_c": "#4a3a2a",
-            "extras": ["tie"], "extra_c": "#2cc7c9", "height": 1.5, "width": 0.8,
-            "face": {"eyes": "round", "brows": False, "ink": "#eabf96", "mouth": "flat", "eye_scale": 1.3}},
+            "extras": ["tie"], "extra_c": "#2cc7c9", "height": 1.6, "width": 0.8,
+            "face": {"eyes": "round", "brows": False, "ink": "#d7a07a", "mouth": "flat", "eye_scale": 0.72}},
 }
 acting = {"me": [{"at": 0, "pos": [-1.7, -0.9, 0], "yaw": 160, "expr": "scared", "blend": 0, "hidden": False}],
-          "hal": [{"at": 0, "pos": [0.2, 1.8, 0], "yaw": 0, "expr": "terrified", "blink": False, "blend": 0,
-                   "lean": 26, "head": [14, 0], "arms": [62, 75], "side": [0, 0], "hidden": False}]}
-shots = [{"id": "S37", "cam": [[0, [0.0, -1.3, 0.62], [0.1, 1.8, 2.15], 20],
-                               [1, [0.0, -1.3, 0.62], [0.1, 1.8, 2.15], 20]],
+          "hal": [{"at": 0, "pos": [0.2, 1.8, 0], "yaw": 0, "expr": "angry", "blink": False, "blend": 0,
+                   "lean": 34, "head": [18, 0], "arms": [88, 88], "side": [0, 0], "hidden": False}]}
+shots = [{"id": "S37", "cam": [[0, [0.0, -2.2, 0.85], [0.1, 1.8, 1.4], 26],
+                               [1, [0.0, -2.2, 0.85], [0.1, 1.8, 1.4], 26]],
           "step": 2, "hand": 0.0, "look": "night"}]
 story = {"slug": "ep87-motel-rooms", "title": "Ranking This Motel's Worst ROOMS", "made_for_kids": False,
          "premise": "creature test", "twist": "creature test", "world": "a motel office", "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},

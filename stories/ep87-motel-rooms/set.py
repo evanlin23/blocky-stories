@@ -22,7 +22,7 @@ def build(kit, story, tl):
     B((6.2, 0.2, 2.5), (0, 3.5, 1.25), P("#d9c7a8", 0.8, 0.05), "back", 0.0)
     B((0.2, 6, 2.5), (-3.1, 1.0, 1.25), cream, "left", 0.0)
     B((0.2, 6, 2.5), (3.1, 1.0, 1.25), cream, "right", 0.0)
-    B((6.4, 6.4, 0.1), (0, 0.9, 2.3), P("#b9a58c", 0.8, 0.05), "ceiling", 0.0)
+    B((6.4, 6.4, 0.1), (0, 0.9, 2.3), P("#f3e3c8", 0.8, 0.05), "ceiling", 0.0)
     B((6.4, 6, 0.1), (0, 1.0, -0.05), P("#c9b8a0", 0.7, 0.1), "floor", 0.0)
     B((6.2, 0.04, 0.12), (0, 3.38, 0.9), coral, "stripe", 0.01)          # coral trim stripe
     B((6.2, 0.04, 0.10), (0, 3.38, 0.05), turq, "skirt", 0.01)
@@ -45,6 +45,16 @@ def build(kit, story, tl):
     B((0.34, 0.26, 0.2), (0.9, 0.9, 1.5), P("#ff7f66", 0.4), "lampshade", 0.03)
     # glass door side window with neon-pink glow strip (stars as plain pink blocks, no letters)
     B((0.06, 1.8, 2.1), (-3.0, 0.3, 1.05), P("#ff4fb8", 0.3, 0.2), "neonpane", 0.01)
+    # scale props: a big key rack with hanging keys and a tall bell, at normal-height scale
+    B((0.5, 0.04, 0.7), (-1.5, 3.33, 1.1), P("#7a4a2a", 0.6), "keyrack", 0.01)
+    for i in range(4):
+        B((0.06, 0.03, 0.14), (-1.65 + i * 0.1, 3.3, 0.95), P("#d4a017", 0.3, 0.8), "key", 0.004)
+    B((0.3, 0.3, 0.12), (0.35, 0.1, 1.12), P("#d4a017", 0.3, 0.8), "bell2", 0.03)
+    B((0.06, 0.06, 0.08), (0.35, 0.1, 1.22), P("#c0c0c8", 0.3, 0.8), "bellbtn", 0.01)
+    # Hal's long fingers stretched along the desktop toward the camera
+    for sx in (-0.75, 0.55):
+        for f in range(5):
+            B((0.05, 0.7, 0.04), (sx + f * 0.075, 0.5, 1.09), P("#e8b98f", 0.5), "finger", 0.012)
     # lights
     kit.light("lampkey", "POINT", (0.3, 1.0, 1.15), 70, "#ffd89a", size=0.2)
     neon = kit.light("neon", "SPOT", (-2.9, 0.9, 1.9), 900, "#ff4fb8", size=0.4, spot=80, blend=0.6)
