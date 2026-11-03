@@ -298,10 +298,10 @@ SEAT = 0.51       # a sitter's root sits this far under the seat top
 put("neighbour", 0, [-3.55, -0.85], yaw=0)
 hide("neighbour", "L04")
 put("r_neighbour", 0, [0.3, 0.07, 0.5], yaw=0, roll=150, side=[85, 85], expr="grin", stroll=False, big=2.5)
-key("r_neighbour", "L01.1", roll=-150, blend=0.5)
-key("r_neighbour", "L01.3", roll=110, blend=0.4)
-key("r_neighbour", "L02.2", roll=8, blend=0.35, pos=[0.3, 0.07, 0.0])
-key("r_neighbour", "L02.2+0.5", roll=150, blend=0.4)
+key("r_neighbour", "L01.1", roll=-60, blend=1.6)
+key("r_neighbour", "L01.3", roll=60, blend=1.2)
+key("r_neighbour", "L02.2", roll=8, blend=0.8, pos=[0.3, 0.07, 0.0])
+key("r_neighbour", "L02.2+0.9", roll=120, blend=1.0)
 hide("r_neighbour", "L04")
 
 # --- the sand figures (L01) and their reflections
@@ -620,8 +620,7 @@ story = {
     "shotx": shotx,
     "acting": acting,
     "cues": cues,
-    "fx": [{"at": "L01.3", "kind": "punch", "dur": 0.35, "zoom": 1.1},
-           {"at": "L02.2+0.3", "kind": "punch", "dur": 0.35, "zoom": 1.08},
+    "fx": [{"at": "L02.2+0.3", "kind": "punch", "dur": 0.35, "zoom": 1.08},
            {"at": "L45", "kind": "punch", "dur": 0.4, "zoom": 1.12}],
     "music": {"root": 43, "mode": "dorian", "bpm": 76, "seed": 50,
               "sections": [
