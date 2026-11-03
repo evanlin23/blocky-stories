@@ -1,10 +1,11 @@
 {
-  "title": "Don't Leave ANYTHING Behind a Door 🚪",
-  "old_title": "In This Town Your Stuff Decides What OPENS For You",
-  "description": "In this town, a door only opens if something of yours is inside, and the little lamp above it lights up for you. People leave a sock at a friend's place so they get invited back. Breakups take forever.\n\nMy ex, Jo, and I rented a storage unit together, and I still go every Tuesday at seven to sit with the boxes. The hallway lights run on a one-minute timer. One week, somebody was standing in the open doorway of unit eleven. Every Tuesday after that, they were one door closer to mine.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
-  "pin": "Comment SOCK if you've ever left something at a friend's place on purpose.",
-  "made_for_kids": false,
-  "shape": "about-me",
-  "lane": "core",
-  "cover_s": 0.6
+ "title": "Don't Leave ANYTHING Behind a Door 🚪",
+ "old_title": "In This Town Your Stuff Decides What OPENS For You",
+ "description": "In this town, a door only opens if something of yours is inside, and the little lamp above it lights up for you. People leave a sock at a friend's place so they get invited back. Breakups take forever.\n\nMy ex, Jo, and I rented a storage unit together, and I still go every Tuesday at seven to sit with the boxes. The hallway lights run on a one-minute timer. One week, somebody was standing in the open doorway of unit eleven. Every Tuesday after that, they were one door closer to mine.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+ "pin": "Comment SOCK if you've ever left something at a friend's place on purpose.",
+ "made_for_kids": false,
+ "shape": "about-me",
+ "lane": "core",
+ "cover_s": 0.6,
+ "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
 }
