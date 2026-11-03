@@ -39,6 +39,8 @@ HUT_COLORS = ["#9a9288", "#a9cfb4", "#e09a84", "#b7a6c9", "#e8d48a", "#8fb3c9", 
 OURS = 5
 WIN_X = 1.0                    # window centre, hut-local
 WIN_W, WIN_Z0, WIN_Z1 = 0.7, 1.1, 1.8
+_WX, _WW, _WZ0, _WZ1 = WIN_X, WIN_W, WIN_Z0, WIN_Z1
+BIGWIN = (1.05, 1.0, 0.9, 2.1)    # hut 4 (the neighbour's) has a big window for the opening
 TOWN = {"office": 200.0, "bakery": 300.0, "shop": 400.0, "cafe": 500.0}
 
 # time of day: sun energy, sun colour, sun elevation (deg), azimuth (deg), sky colour, sky strength, fog colour
@@ -187,6 +189,7 @@ def B(kit, name, size, loc, mat, rot=(0, 0, 0), bevel=0.0, parent=None):
 
 
 def make_hut(kit, M, i, ctx):
+    WIN_X, WIN_W, WIN_Z0, WIN_Z1 = BIGWIN if i == 4 else (_WX, _WW, _WZ0, _WZ1)
     X = hx(i)
     col = HUT_COLORS[i]
     paint = kit.plastic(col, 0.85, name=f"paint {col}")
@@ -237,6 +240,10 @@ def make_hut(kit, M, i, ctx):
     dm = kit.plastic(dcol, 0.8, name=f"door {dcol}")
     B(kit, f"hut{i}.door", (1.0, 0.06, 1.9), (-0.5, 0.05, 1.25), dm, parent=hinge)
     ctx["huts"].append({"root": root, "hinge": hinge, "x": X})
+    if i == 4:   # the opening's window: a cool-tinted pane just inside the opening, so it reads as glass
+        gl = glasstop(kit, "openpane", "#6aa4d0", 0.16)
+        ctx["openpane"] = B(kit, "openpane", (WIN_W, 0.012, WIN_Z1 - WIN_Z0), (WIN_X, 0.045, (WIN_Z0 + WIN_Z1) / 2), gl, parent=root)
+        ctx["openpane"].visible_shadow = False
     if i == OURS:
         brass = M["brass"]
         B(kit, "hasp", (0.09, 0.025, 0.3), (-0.93, -0.0, 1.22), brass, parent=hinge)
@@ -760,7 +767,12 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = st is None
     if st is not None:
         h = st["hut"]
-        ctx["stage"].location = (hx(h) + WIN_X, 0.12, WIN_Z0)
+        if h == 4:
+            ctx["stage"].location = (hx(h) + BIGWIN[0], 0.12, BIGWIN[2])
+            ctx["stage"].scale = (1.5, 1.5, 1.5)
+        else:
+            ctx["stage"].location = (hx(h) + WIN_X, 0.12, WIN_Z0)
+            ctx["stage"].scale = (1.0, 1.0, 1.0)
         # the stage sits behind the glass: its x is centred on the window
     sc_on = bool(sx_.get("schair")) and st is not None
     ctx["schair"].hide_render = not sc_on

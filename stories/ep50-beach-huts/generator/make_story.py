@@ -121,11 +121,11 @@ def S(at, what, cam, step=2, **kw):
 NSTAGE = lambda h, **r: dict(stage={"hut": h}, refl=r)
 
 # 01 the rule
-S(0, "warning: his face and the glass, the reflection already mid-cartwheel", move(((-3.2, -2.9, 1.55), (-3.1, 0, 1.4)), ((-3.15, -2.2, 1.55), (-3.1, 0, 1.4)), 30, 34), 1,
+S(0, "warning: his whole face beside his window, the reflection upside down in the glass", move(((-3.2, -4.4, 1.55), (-3.2, 0, 1.5)), ((-3.2, -3.8, 1.55), (-3.2, 0, 1.5)), 30, 30), 1,
   **NSTAGE(4, r_neighbour="stage"))
-S("L01.3", "punch: his face, the glass behind", move(((-3.3, -2.3, 1.6), (-3.15, -0.8, 1.6)), ((-3.3, -1.9, 1.6), (-3.15, -0.8, 1.6)), 34, 38), 1,
+S("L01.3", "punch: closer, the same two things", move(((-3.2, -3.8, 1.55), (-3.2, 0, 1.5)), ((-3.2, -3.3, 1.55), (-3.2, 0, 1.5)), 30, 30), 1,
   **NSTAGE(4, r_neighbour="stage"))
-S("L02", "the glass alone, landing", move(((-3.0, -1.7, 1.45), (-3.0, 0, 1.45)), ((-3.0, -1.3, 1.45), (-3.0, 0, 1.45)), 30, 36), 1,
+S("L02", "the glass: he has gone, the reflection stays", move(((-3.0, -1.9, 1.5), (-3.0, 0, 1.5)), ((-3.0, -1.5, 1.5), (-3.0, 0, 1.5)), 30, 34), 1,
   **NSTAGE(4, r_neighbour="stage"))
 S("L02.2+0.3", "high wide of the sand, figures and reflections, the magenta figure", move(((12, -25, 3.4), (12.2, -9, 0.4)), ((12, -22, 3.2), (12.2, -9, 0.4)), 22, 24), 2,
   refl={"r_dieter": "sand", "r_shopper": "sand", "r_date_f": "sand", "r_me": {"kind": "sand", "scale": 1.6}})
@@ -296,11 +296,11 @@ SEAT = 0.51       # a sitter's root sits this far under the seat top
 
 # --- the neighbour and his cartwheeling reflection
 acting["neighbour"].clear()   # no hide-at-0 key: he is in the very first frame
-put("neighbour", 0, [-3.55, -0.85], yaw=0)
+put("neighbour", 0, [-3.8, -0.85], yaw=0)
 hide("neighbour", "L04")
-put("r_neighbour", 0, [0.3, 0.07, 0.5], yaw=0, roll=150, side=[85, 85], expr="grin", stroll=False, big=2.5)
-key("r_neighbour", "L01.1", roll=-60, blend=1.6)
-key("r_neighbour", "L01.3", roll=60, blend=1.2)
+put("r_neighbour", 0, [0.0, 0.07, 0.3], yaw=0, roll=180, side=[85, 85], expr="grin", stroll=False, big=3.3)
+key("r_neighbour", "L01.1", roll=168, blend=1.6)
+key("r_neighbour", "L01.3", roll=190, blend=1.2)
 key("r_neighbour", "L02.2", roll=8, blend=0.8, pos=[0.3, 0.07, 0.0])
 key("r_neighbour", "L02.2+0.9", roll=120, blend=1.0)
 hide("r_neighbour", "L04")
