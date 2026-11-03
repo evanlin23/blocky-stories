@@ -709,8 +709,12 @@
      "fast,"
     ],
     [
-     "locking every house",
-     "locking every house"
+     "locking every",
+     "locking every"
+    ],
+    [
+     "OTHER house",
+     "other house"
     ],
     [
      "with its",
@@ -1047,6 +1051,32 @@
     [
      "is hers.",
      "is hers."
+    ]
+   ]
+  },
+  {
+   "id": "L49a",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She can't lock me IN.",
+     "she can't lock me in."
+    ],
+    [
+     "My bolt turns",
+     "my bolt turns"
+    ],
+    [
+     "from inside,",
+     "from inside,"
+    ],
+    [
+     "and asleep,",
+     "and asleep,"
+    ],
+    [
+     "I just TURN it.",
+     "i just turn it."
     ]
    ]
   },
@@ -10534,7 +10564,7 @@
    "tilt": 0
   }
  ],
- "rev": 1,
+ "rev": 2,
  "music": {
   "root": 48,
   "mode": "minor",

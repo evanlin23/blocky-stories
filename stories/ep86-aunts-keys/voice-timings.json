@@ -686,14 +686,14 @@
    ]
   },
   "L29": {
-   "text": "going door to door, fast, locking every house with its own key.",
+   "text": "going door to door, fast, locking every other house with its own key.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.966,
+   "dur": 3.103,
    "onset": 0.172,
-   "end": 2.776,
+   "end": 2.914,
    "chunks": [
     [
      0.172,
@@ -705,19 +705,23 @@
     ],
     [
      0.793,
-     1.172
+     1.19
     ],
     [
-     1.241,
-     1.939
+     1.259,
+     1.715
     ],
     [
-     1.939,
-     2.103
+     1.715,
+     2.06
     ],
     [
-     2.103,
-     2.776
+     2.06,
+     2.224
+    ],
+    [
+     2.224,
+     2.914
     ]
    ]
   },
@@ -1750,6 +1754,38 @@
     [
      1.241,
      1.966
+    ]
+   ]
+  },
+  "L49a": {
+   "text": "she can't lock me in. my bolt turns from inside, and asleep, i just turn it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.5,
+   "onset": 0.172,
+   "end": 3.31,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ],
+    [
+     1.103,
+     1.594
+    ],
+    [
+     1.594,
+     2.069
+    ],
+    [
+     2.095,
+     2.466
+    ],
+    [
+     2.5,
+     3.31
     ]
    ]
   }

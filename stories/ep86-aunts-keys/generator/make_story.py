@@ -704,7 +704,7 @@ story = {
     "shots": shots,
     "acting": acting,
     "cues": cues,
-    "rev": 1,
+    "rev": 2,
     "music": {"root": 48, "mode": "minor", "bpm": 104, "seed": 86,
               "sections": [
                   {"at": 0, "voices": ["pluck", "pulse", "pad"], "energy": 0.5},
