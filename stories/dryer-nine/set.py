@@ -46,8 +46,8 @@ TAU = math.pi * 2
 
 NAVY = "#1b2570"
 NAVY_D = "#131a4a"
-MOON = (242, 227, 160)
-CRATER = (201, 182, 118)
+MOON = (242, 208, 104)
+CRATER = (176, 132, 52)
 
 
 def _ss(x):
@@ -114,19 +114,29 @@ def img_timer(s):
 
 
 def img_moon(highlights=False, size=512, alpha=True):
-    """The moon: a cream disc, three soft grey-gold craters (two eyes, one shallow mouth). Same as the Night's face."""
+    """The moon: a warm yellow disc with the three craters of the Night's face (two tall eyes, one tall mouth)."""
     ss = 2
     n = size * ss
     im = Image.new("RGBA", (n, n), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     d.ellipse([0, 0, n - 1, n - 1], fill=MOON + (255,))
     R = n / 2
+
+    def oval(cx, cy, rx, ry, rot, fill):
+        pts = []
+        for i in range(40):
+            a = TAU * i / 40
+            x, y = rx * math.cos(a), ry * math.sin(a)
+            pts.append((cx + x * math.cos(rot) - y * math.sin(rot), cy + x * math.sin(rot) + y * math.cos(rot)))
+        d.polygon(pts, fill=fill)
     for sx in (-1, 1):
-        cx, cy, rx, ry = R + sx * 0.3 * R, R - 0.12 * R, 0.17 * R, 0.21 * R
-        d.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], fill=CRATER + (255,))
+        cx, cy = R + sx * 0.3 * R, R - 0.18 * R
+        oval(cx, cy, 0.1 * R, 0.24 * R, -sx * 0.5, CRATER + (255,))
+        oval(cx, cy + 0.01 * R, 0.075 * R, 0.19 * R, -sx * 0.5, (110, 78, 28, 255))
         if highlights:
             d.ellipse([cx + 0.02 * R, cy - 0.12 * R, cx + 0.09 * R, cy - 0.05 * R], fill=(255, 255, 255, 255))
-    d.arc([R - 0.34 * R, R + 0.18 * R, R + 0.34 * R, R + 0.62 * R], 20, 160, fill=CRATER + (255,), width=int(0.08 * R))
+    oval(R, R + 0.38 * R, 0.1 * R, 0.2 * R, 0.05, CRATER + (255,))
+    oval(R, R + 0.38 * R, 0.07 * R, 0.16 * R, 0.05, (110, 78, 28, 255))
     im = im.resize((size, size), Image.LANCZOS)
     if not alpha:
         bg = Image.new("RGB", (size, size), (20, 28, 80))
@@ -158,14 +168,14 @@ def img_clock():
 
 
 def img_sky(kind):
-    w, h = 1024, 256
+    w, h = 2048, 512
     im = Image.new("RGB", (w, h))
     px = im.load()
     rng = np.random.default_rng(5)
     for y in range(h):
         u = y / (h - 1)          # 0 top
         if kind == "night":
-            c = (int(14 + 34 * u), int(20 + 40 * u), int(70 + 60 * u))
+            c = (int(10 + 30 * u), int(16 + 36 * u), int(62 + 62 * u))
         else:
             c = (int(255 - 20 * (1 - u) + 0), int(150 + 80 * u), int(120 + 40 * u))
             if u < 0.5:
@@ -175,10 +185,12 @@ def img_sky(kind):
             px[x, y] = c
     d = ImageDraw.Draw(im)
     if kind == "night":
-        for _ in range(260):
-            x, y = int(rng.integers(0, w)), int(rng.integers(0, int(h * 0.75)))
-            r = int(rng.integers(2, 5))
-            d.ellipse([x - r, y - r, x + r, y + r], fill=(255, 244, 204))
+        for i in range(520):
+            x, y = int(rng.integers(0, w)), int(rng.integers(0, int(h * 0.8)))
+            r = int(rng.integers(4, 10)) if i % 4 == 0 else int(rng.integers(3, 6))
+            d.ellipse([x - r * 2, y - r * 2, x + r * 2, y + r * 2], fill=(34, 46, 110))
+            d.ellipse([x - r, y - r, x + r, y + r], fill=(255, 246, 214))
+        im = im.filter(ImageFilter.GaussianBlur(0.8))
     return im
 
 
@@ -368,7 +380,7 @@ def build_room(kit, ctx, M):
     kit.prop("trashcan_cylindric", (-2.3, 3.75, 0.0), height=0.7, tint="#7fd0ff")
     # snack machine (coral, rows of coloured snack shapes, no lettering) and a change machine (coin glyph) on the right
     kit.box("snack body", (0.7, 1.0, 1.9), (5.1, -2.2, 0.95), M["coral"], bevel=0.05)
-    kit.box("snack glass", (0.03, 0.78, 1.25), (4.74, -2.2, 1.1), M["dark"])
+    kit.box("snack glass", (0.03, 0.78, 1.25), (4.78, -2.2, 1.1), kit.emit("#fff0cc", 1.1, "snack lit"))
     cols = ["#ffd23c", "#4cc9ff", "#ff6bd6", "#7dff7a", "#ffffff"]
     for r in range(5):
         for c in range(4):
@@ -454,13 +466,14 @@ def build_dryers(kit, ctx, M):
     base = kit.empty("drumbase", (X9, 3.30, DRUM_Z), rot=(math.pi / 2, 0, 0))
     spin = kit.empty("drumspin", (0, 0, 0), base)
     ctx["drum_base"], ctx["spin"] = base, spin
-    cloth = night_cloth(kit, "drum cloth", base="#121a50", fold="#1f2b80", scale=11.0, star_e=6.0)
-    cloth2 = night_cloth(kit, "drum cloth b", base="#1a2470", fold="#2a3a98", scale=8.0, star_e=6.0, thr=0.35)
+    cloth = night_cloth(kit, "drum cloth", base="#04050f", fold="#0a0f2e", scale=34.0, star_e=7.0, thr=0.15, rough=1.0, dotr=(0.1, 0.17))
+    cloth2 = night_cloth(kit, "drum cloth b", base="#05071a", fold="#0c1236", scale=28.0, star_e=7.0, thr=0.15, rough=1.0, dotr=(0.1, 0.17))
     ctx["drum_disc"] = [kit.cyl("drum disc", 0.2, 0.02, (0, 0, 0.0), cloth, spin, n=40)]
     for k in range(3):
         a = TAU * k / 3 + 0.4
         f_ = kit.box(f"drum fin{k}", (0.05, 0.19, 0.07), (0.1 * math.cos(a), 0.1 * math.sin(a), 0.045), cloth2, spin, bevel=0.015)
         f_.rotation_euler = (0, 0, a - math.pi / 2)
+        ctx.setdefault("fins", []).append(f_)
     ctx["drum_cloth"] = kit.MATS["drum cloth"]
     steel = kit.cyl("drum steel9", 0.2, 0.02, (0, 0, 0.001), M["steel"], spin, n=40)
     steel.hide_render = True
@@ -487,22 +500,29 @@ def build_dryers(kit, ctx, M):
     face_mat = img_mat(kit, "dc face", pil_image("dc face img", img_moon(True)), emit=0.8, rough=0.6, alpha=True)
     fp = uvplane("dc face", (0.17, 0.17), (0.07, 0.0, 0.12), face_mat, spin, rot=(-math.pi / 2, 0, 0))
     dc["face"] = [fp]
-    dc["folded"] = [kit.box("dc fold", (0.4, 0.15, 0.14), (-0.02, -0.03, 0.12), cloth, spin, bevel=0.07, rot=(0, 0, 0.9)),
+    fcl = night_cloth(kit, "fold cloth", base="#151e5c", fold="#26349a", scale=30.0, star_e=8.0, thr=0.1, rough=1.0, dotr=(0.1, 0.17))
+    dc["folded"] = [kit.box("dc fold", (0.4, 0.15, 0.14), (-0.02, -0.03, 0.12), fcl, spin, bevel=0.07, rot=(0, 0, 0.9)),
                     kit.box("dc fold2", (0.3, 0.2, 0.1), (0.1, 0.07, 0.13), cloth2, spin, bevel=0.06, rot=(0, 0, 0.1))]
-    # the hand that holds a quarter up to the glass (fixed, on the drum base, not turning)
+    # the hand that holds a quarter up to the glass: a long starry sleeve with a cuff, thin jointed fingers (fixed, on the
+    # drum base, not turning). The base's local y is world up and local +z is toward the camera.
+    hc = night_cloth(kit, "hand cloth", base="#050818", fold="#10184a", scale=26.0, star_e=9.0, thr=0.1, rough=1.0, dotr=(0.1, 0.18))
+    hc2 = night_cloth(kit, "hand cloth2", base="#141c58", fold="#222e7a", scale=30.0, star_e=10.0, thr=0.1, rough=1.0, dotr=(0.1, 0.18))
     hand = []
-    hz = 0.15
-    hand.append(kit.box("hd palm", (0.12, 0.13, 0.03), (0.0, -0.08, hz), cloth, base, bevel=0.012))
-    for k in range(4):
-        hand.append(kit.box(f"hd finger{k}", (0.028, 0.2, 0.026), (-0.045 + 0.03 * k, 0.05 + (0.012 if k in (1, 2) else 0), hz),
-                            cloth, base, bevel=0.01))
-    hand.append(kit.box("hd thumb", (0.03, 0.12, 0.026), (0.085, -0.02, hz), cloth, base, bevel=0.01, rot=(0, 0, -0.5)))
-    hand.append(kit.box("hd arm", (0.1, 0.4, 0.07), (0.0, -0.38, 0.14), cloth, base, bevel=0.03))
-    hand.append(kit.cyl("hd quarter", 0.035, 0.008, (0.0, 0.14, 0.168), M["silver"], base, n=24))
+    hz = 0.14
+    hand.append(kit.box("hd sleeve", (0.17, 0.55, 0.15), (0.0, -0.4, hz - 0.01), hc, base, bevel=0.03, rot=(0, 0, 0.12)))
+    hand.append(kit.box("hd sleeve2", (0.12, 0.3, 0.12), (-0.03, -0.14, hz), hc, base, bevel=0.025, rot=(0, 0, 0.12)))
+    hand.append(kit.box("hd cuff", (0.15, 0.05, 0.14), (-0.015, -0.01, hz), hc2, base, bevel=0.015, rot=(0, 0, 0.12)))
+    hand.append(kit.box("hd palm", (0.1, 0.1, 0.03), (0.0, 0.05, hz), hc, base, bevel=0.012))
+    for k, (fx, ln, rt) in enumerate(((-0.036, 0.15, 0.1), (-0.012, 0.18, 0.03), (0.012, 0.17, -0.04), (0.036, 0.13, -0.12))):
+        hand.append(kit.box(f"hd f{k}a", (0.02, ln, 0.02), (fx, 0.1 + ln / 2, hz), hc, base, bevel=0.008, rot=(0, 0, rt)))
+        hand.append(kit.box(f"hd f{k}b", (0.017, ln * 0.7, 0.017), (fx + rt * ln * 0.9, 0.1 + ln + ln * 0.33, hz + 0.01), hc, base,
+                            bevel=0.006, rot=(0, 0, rt * 2.2)))
+    hand.append(kit.box("hd thumb", (0.024, 0.13, 0.02), (-0.075, 0.12, hz + 0.005), hc, base, bevel=0.008, rot=(0, 0, 0.7)))
+    hand.append(kit.cyl("hd quarter", 0.04, 0.008, (-0.045, 0.235, hz + 0.02), M["silver"], base, n=24))
     dc["hand"] = hand
     ctx["dc"] = dc
     # the dryer's light: inside the drum
-    kit.light("drumlight", "POINT", (X9, 3.26, DRUM_Z), 1.5, "#cfe6ff", size=0.12)
+    kit.light("drumlight", "POINT", (X9, 3.26, DRUM_Z), 0.7, "#c4d6ff", size=0.12)
     kit.light("amber", "POINT", (X9 - 0.12, FACE_Y - 0.25, 1.2), 3.0, "#ffb02e", size=0.1)
     # the paper roll of quarters on top of nine, and a quarter that goes into the slot
     roll = [kit.cyl("roll paper", 0.05, 0.22, (X9 - 0.2, 3.5, 1.38 + 0.05), M["paper"], rot=(0, math.pi / 2, 0), n=16),
@@ -518,12 +538,12 @@ def build_dryers(kit, ctx, M):
     # Jonah's armful of snacks (coloured shapes, no lettering), at the snack machine
     sn = []
     for i, cc in enumerate(["#ffd23c", "#4cc9ff", "#ff6bd6", "#7dff7a", "#ffffff", "#ff7a6b"]):
-        sn.append(kit.box(f"armful{i}", (0.1, 0.16, 0.12), (4.52 + 0.01 * (i % 2), -2.38 + 0.09 * i, 1.0 + 0.04 * (i % 3)),
+        sn.append(kit.box(f"armful{i}", (0.1, 0.16, 0.12), (3.94 + 0.77 * (i - 2.5) * 0.08, -2.51 - 0.64 * (i - 2.5) * 0.08, 1.02 + 0.05 * (i % 3)),
                           kit.plastic(cc, 0.4), bevel=0.02))
         sn[-1].hide_render = True
     ctx["snacks"] = sn
     # the dark pool that spills out
-    pm = night_cloth(kit, "pool cloth", scale=7.0, star_e=5.0, thr=0.3)
+    pm = night_cloth(kit, "pool cloth", base="#060a24", fold="#0e1540", scale=7.0, star_e=5.0, thr=0.3)
     pool = kit.cyl("pool", 1.0, 0.01, (X9, FACE_Y - 0.1, 0.012), pm, n=48)
     pool.scale = (0.01, 0.01, 1.0)
     pool.hide_render = True
@@ -556,23 +576,22 @@ def build_outside(kit, ctx, M):
     ctx["lot_light"] = kit.LIGHTS["lot"]["obj"]
     ctx["lot_light"].rotation_euler = (V((-0.5, -9.0, 0.0)) - V((2.0, -16.0, 9.0))).to_track_quat("-Z", "Y").to_euler()
     # sky: night and dawn planes
-    sky_n = kit.emit("#ffffff", 1.0, "sky night")
-    nt = sky_n.node_tree
-    tx_ = nt.nodes.new("ShaderNodeTexImage")
-    tx_.image = pil_image("sky n", img_sky("night"))
+    sky = kit.emit("#ffffff", 1.0, "sky")
+    nt = sky.node_tree
+    tn = nt.nodes.new("ShaderNodeTexImage")
+    tn.image = pil_image("sky n", img_sky("night"))
+    td = nt.nodes.new("ShaderNodeTexImage")
+    td.image = pil_image("sky d", img_sky("dawn"))
     uvn = nt.nodes.new("ShaderNodeUVMap")
-    nt.links.new(uvn.outputs["UV"], tx_.inputs["Vector"])
-    em = nt.nodes["Emission"]
-    nt.links.new(tx_.outputs["Color"], em.inputs["Color"])
-    sky_d = kit.emit("#ffffff", 0.0, "sky dawn")
-    nt2 = sky_d.node_tree
-    tx2 = nt2.nodes.new("ShaderNodeTexImage")
-    tx2.image = pil_image("sky d", img_sky("dawn"))
-    uv2 = nt2.nodes.new("ShaderNodeUVMap")
-    nt2.links.new(uv2.outputs["UV"], tx2.inputs["Vector"])
-    nt2.links.new(tx2.outputs["Color"], nt2.nodes["Emission"].inputs["Color"])
-    uvplane("sky night", (240, 60), (0, -45, 18), sky_n, rot=(0, 0, math.pi))
-    uvplane("sky dawn", (240, 60), (0, -44.5, 18), sky_d, rot=(0, 0, math.pi))
+    nt.links.new(uvn.outputs["UV"], tn.inputs["Vector"])
+    nt.links.new(uvn.outputs["UV"], td.inputs["Vector"])
+    mx = nt.nodes.new("ShaderNodeMixRGB")
+    mx.blend_type = "MIX"
+    nt.links.new(tn.outputs["Color"], mx.inputs["Color1"])
+    nt.links.new(td.outputs["Color"], mx.inputs["Color2"])
+    nt.links.new(mx.outputs["Color"], nt.nodes["Emission"].inputs["Color"])
+    uvplane("sky", (240, 60), (0, -45, 18), sky, rot=(0, 0, math.pi))
+    sky_n, sky_d = mx, sky
     ctx["sky_n"], ctx["sky_d"] = sky_n, sky_d
     # the moon: a disc with the same three craters as the Night's face, turning with the drum
     mm = img_mat(kit, "moon", pil_image("moon img", img_moon(False)), emit=1.0, rough=0.9, alpha=True)
@@ -673,7 +692,7 @@ def build_night(kit, ctx, M):
         parts[nm] = (ob, ln)
         return ob
     mk("torso", 0.36, 0.3, 1.0)
-    mk("shoulders", 0.98, 0.26, 0.2, cloth2, 0.05)
+    mk("shoulders", 0.74, 0.24, 0.2, cloth2, 0.05)
     for sx in (-1, 1):
         mk(f"upper{sx}", 0.14, 0.14, 1.0, cloth, 0.03)
         mk(f"fore{sx}", 0.13, 0.12, 1.1, cloth, 0.03)
@@ -714,9 +733,9 @@ def build_night(kit, ctx, M):
     rig.head_mesh("night.headm", hm, hs)
     P.append(head)
     # a tall starry cowl standing up behind the moon (a high collar, so the face rises out of the night)
-    kit.box("night.cowl", (0.78, 0.1, 1.05), (0, 0.27, -0.12), cloth2, head, bevel=0.05)
+    kit.box("night.cowl", (0.62, 0.1, 1.0), (0, 0.27, -0.1), cloth2, head, bevel=0.05)
     for sx in (-1, 1):
-        kit.box(f"night.cowl{sx}", (0.1, 0.34, 0.95), (sx * 0.36, 0.17, -0.2), cloth, head, bevel=0.04, rot=(0, 0, sx * -0.35))
+        kit.box(f"night.cowl{sx}", (0.08, 0.3, 0.8), (sx * 0.3, 0.2, -0.18), cloth, head, bevel=0.03, rot=(0, 0, sx * -0.3))
     ctx["night"] = {"root": root, "parts": parts, "head": head, "all": [root] + list(root.children_recursive)}
 
 
@@ -736,9 +755,9 @@ def night_pose(ctx, u):
     N["head"].location = hd
     N["head"].rotation_euler = (math.radians(-8 - 14 * u), 0, math.radians(3 - 2 * u))
     for sx in (-1, 1):
-        S = (sho[0] + sx * 0.42, sho[1] - 0.02, sho[2] - 0.04)
+        S = (sho[0] + sx * 0.34, sho[1] - 0.02, sho[2] - 0.04)
         W = lerp((X9 + sx * 0.75, 1.0, 0.07), (X9 + sx * 0.8, 1.45, 0.07))
-        E = ik(S, W, 1.0, 1.1, (sx * 0.7, 0.2, 0.4))
+        E = ik(S, W, 1.2, 1.3, (sx * 0.8, 0.1, 0.9))
         _aim(pr[f"upper{sx}"][0], S, E, 1.0)
         _aim(pr[f"fore{sx}"][0], E, W, 1.1)
         fd = (V(W) - V(E)).normalized()
@@ -780,6 +799,7 @@ def build(kit, story, tl):
     ctx["timer_imgs"][""] = pil_image("timer off", img_timer(""))
     # phone
     ph = kit.empty("phone", (0, 0, -9))
+    ph.scale = (1.8, 1.8, 1.8)
     kit.box("phone body", (0.075, 0.012, 0.155), (0, 0, 0), M["dark"], ph, bevel=0.008)
     pm = img_mat(kit, "phone screen", pil_image("phone img", img_phone("0:41")), emit=1.2, rough=0.2)
     uvplane("phone screen", (0.066, 0.14), (0, -0.0075, 0), pm, ph)
@@ -845,9 +865,9 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = not msh
     # ---- dawn: the sky, the lot and the light through the windows
     dv = _ramped(_cues(tl, "dawn"), t, "v", 0.0)
-    ctx["sky_n"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 1.8 * (1.0 - dv)
-    ctx["sky_d"].node_tree.nodes["Emission"].inputs["Strength"].default_value = dv * 1.1
-    K.LIGHTS["dawn"]["base"] = 2600.0 * dv
+    ctx["sky_n"].inputs["Fac"].default_value = dv
+    ctx["sky_d"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 1.3 + 1.4 * dv
+    K.LIGHTS["dawn"]["base"] = 2400.0 * dv
     lb = ctx["lot_mat"].node_tree.nodes["Principled BSDF"].inputs["Base Color"]
     c0, c1 = (0.02, 0.04, 0.2), (0.75, 0.55, 0.4)
     lb.default_value = tuple(c0[k] + (c1[k] - c0[k]) * dv for k in range(3)) + (1,)
@@ -893,7 +913,7 @@ def animate(kit, story, tl, t, ctx):
         for what, obs in ctx["dc"].items():
             for ob in obs:
                 ob.hide_render = True
-    for ob in ctx["drum_disc"]:
+    for ob in ctx["drum_disc"] + ctx["fins"]:
         ob.hide_render = bool(emp)
     ctx["truck"].location = (_ramped(_cues(tl, "truck"), t, "x", -0.8), 0.0, 0.0)
     sv = _latest(_cues(tl, "snacks"), t, "v", 0)
