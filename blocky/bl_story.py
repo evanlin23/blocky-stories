@@ -27,7 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from blocky import acting, kit, rig  # noqa: E402
+from blocky import acting, kit, polish, rig  # noqa: E402
 
 
 def load_set(story_dir: Path):
@@ -104,7 +104,8 @@ def main():
         if spec.get("offscreen"):
             continue
         chars[name] = (rig.Character(name, spec, faces_dir), i)
-    shots = {s["id"]: s for s in story["shots"]}
+    pol = polish.spec(story)   # the polish pack's camera moves on shots whose own camera holds still
+    shots = {s["id"]: polish.cam_spec(s, i, pol) for i, s in enumerate(story["shots"])}
 
     if job.get("stills"):
         frames = [int(round(t * tl["fps"])) for t in job["stills"]]

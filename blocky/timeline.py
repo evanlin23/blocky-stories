@@ -225,7 +225,16 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
             "fade_in": st.get("fade_in", True),
             "voice": {k: voice.get(k) for k in ("voice", "rate", "tempo", "model")},
             "lines": placed, "order": order, "captions": caps, "talk": talk, "shots": shots,
-            "cues": cues, "fx": fx, "acting": acting}
+            "cues": cues, "fx": fx, "acting": acting, "motion": _motion(st)}
+
+
+def _motion(st: dict) -> dict:
+    """The polish pack's acting options for acting.py (eased walks, idle life); {} without the pack."""
+    from blocky import polish
+    p = polish.spec(st)
+    if not p:
+        return {}
+    return {"ease": bool(p["ease"]), "idle": bool(p["idle"]), "idle_scale": float(p["idle_scale"])}
 
 
 def _key(k: dict, at) -> dict:

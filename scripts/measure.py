@@ -449,7 +449,9 @@ def edit(st: dict, tl: dict) -> dict:
     fps, dur = tl["fps"], tl["duration"]
     shots = tl["shots"]
     lens_ = np.array([s["end"] - s["start"] for s in shots])
-    specs = {s["id"]: s for s in st["shots"]}
+    from blocky import polish as _pol
+    _p = _pol.spec(st)   # the polish pack's camera moves, read the same way bl_story renders them
+    specs = {s["id"]: _pol.cam_spec(s, i, _p) for i, s in enumerate(st["shots"])}
     out = {"duration_s": round(dur, 2), "shots": len(shots), "cuts_per_10s": round((len(shots) - 1) / dur * 10, 2),
            "shot_median_s": round(float(np.median(lens_)), 2), "shot_p90_s": round(float(np.percentile(lens_, 90)), 2),
            "shot_max_s": round(float(lens_.max()), 2),
@@ -586,24 +588,37 @@ def edit(st: dict, tl: dict) -> dict:
 
     # easing: acting.position moves at a constant speed between two pos keys, so a walk that doesn't continue
     # from a key moving the same way starts or stops dead in one frame (an acceleration spike). Count those.
+    # The speed is read from acting.position itself, one frame either side of each end, so the polish pack's
+    # eased walks (tl["motion"]["ease"]) count as eased.
     jerks, walk_s, walks = 0, 0.0, 0
+    ease = bool((tl.get("motion") or {}).get("ease"))
+    fdt = 1.0 / fps
     for name in cast:
-        keys = [k for k in tl["acting"].get(name, []) if "pos" in k]
-        vel = []
-        for a, b in zip(keys, keys[1:]):
-            d = np.subtract(b["pos"][:2], a["pos"][:2])
-            dur_ = b["t"] - a["t"]
-            vel.append((a["t"], b["t"], d / dur_ if dur_ > 1e-6 else None))
-        for i, (t0, t1, v) in enumerate(vel):
+        allk = tl["acting"].get(name, [])
+        keys = [k for k in allk if "pos" in k]
+        pos = lambda t: np.array(acting.position(allk, t, ease)[:2])
+        for i, (a, b) in enumerate(zip(keys, keys[1:])):
+            t0, t1 = a["t"], b["t"]
+            v = np.subtract(b["pos"][:2], a["pos"][:2]) / (t1 - t0) if t1 - t0 > 1e-6 else None
             if v is None or np.linalg.norm(v) < 0.3 or np.linalg.norm(v) * (t1 - t0) < 0.05 or t1 - t0 > 600:
+                continue
+            if np.linalg.norm(v) > 6.0:   # faster than any run: a move to a new place behind a cut, not a walk
                 continue
             walk_s += t1 - t0
             walks += 1
-            for j in (i - 1, i + 1):
-                w = vel[j][2] if 0 <= j < len(vel) else np.zeros(2)
-                if w is None:
-                    w = np.zeros(2)
-                if np.linalg.norm(v - w) > 0.5:      # a change over 0.5 m/s in one frame: about 15 m/s2
+            # a key at the same instant next door is a jump to a new place (behind a cut): the walk's other side
+            # of that end counts as standing, not as the jump
+            jump0 = i > 0 and t0 - keys[i - 1]["t"] < 1e-3
+            jump1 = i + 2 < len(keys) and keys[i + 2]["t"] - t1 < 1e-3
+            for te, jumped in ((t0, jump0), (t1, jump1)):
+                v_in = (pos(te + fdt) - pos(te)) / fdt
+                v_out = (pos(te) - pos(te - fdt)) / fdt
+                if jumped and te == t0:   # read the walk from just after the jump (a jump at 0 shows from frame 1)
+                    base = te + (fdt if te <= keys[0]["t"] + 1e-9 else 0.0)
+                    v_in, v_out = (pos(base + fdt) - pos(base)) / fdt, np.zeros(2)
+                elif jumped:
+                    v_in, v_out = np.zeros(2), (pos(te - fdt) - pos(te - 2 * fdt)) / fdt
+                if np.linalg.norm(v_in - v_out) > 0.5:      # a change over 0.5 m/s in one frame: about 15 m/s2
                     jerks += 1
     out["walk_s"] = round(walk_s, 1)
     out["walks"] = walks

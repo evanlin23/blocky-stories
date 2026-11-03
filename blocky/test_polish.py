@@ -123,10 +123,16 @@ def test_motion_never_still_and_never_jumps():
     for f in range(1, len(zs)):
         if f not in cuts:   # inside a shot: at most a 3.5% zoom step per frame (the punch eases over 0.12 s)
             assert abs(zs[f][0] - zs[f - 1][0]) < 0.035, f
-    # a static shot over 1.5 s drifts: its first and last frames differ
+    # a static shot gets a real camera move (two different keys); with the camera off, a shot over 1.5 s drifts
+    for i, (s, spec) in enumerate(zip(tl["shots"], st["shots"])):
+        if len(spec["cam"]) == 1:
+            moved = polish.cam_spec(spec, i, p)["cam"]
+            assert len(moved) == 2 and moved[0][1] != moved[1][1], s["id"]
+    p_off = {**p, "camera": False}
+    zo = [polish.motion(tl, st, p_off, f / fps, emph) for f in range(tl["frames"])]
     for s, spec in zip(tl["shots"], st["shots"]):
         if s["end"] - s["start"] >= 1.5 and len(spec["cam"]) == 1:
-            assert abs(zs[s["f0"]][0] - zs[s["f1"] - 1][0]) > 0.01, s["id"]
+            assert abs(zo[s["f0"]][0] - zo[s["f1"] - 1][0]) > 0.01, s["id"]
 
 
 def test_sway_is_slow_and_only_where_asked():
@@ -183,7 +189,7 @@ def test_hits_land_on_the_key_word_and_long_shots_get_a_fill_punch():
     a, b, text = tl["lines"]["L02"]["chunks"][1]          # "it MOVED.": the hit lands on MOVED, not "it"
     t = polish.on_key(tl, a)
     assert a < t < b and t == pytest.approx(a + (b - a) * 3 / len(text))
-    emph = polish.emph_times(tl, {**p, "emph": [], "auto": False})
+    emph = polish.emph_times(tl, {**p, "emph": [], "auto": False, "fill": 2.2, "punch_rate": None})
     long = [s for s in tl["shots"] if s["end"] - s["start"] >= p["fill"]]
     assert long and all(any(s["start"] <= e < s["end"] for e in emph) for s in long
                         if any(s["start"] + 0.8 <= c["start"] <= s["end"] - 0.6 for c in tl["captions"]))
@@ -216,3 +222,70 @@ def test_a_quiet_span_keeps_whooshes_hits_and_added_punches_out():
     assert not any(a <= e["t"] + (0.12 if e["kind"] == "whoosh" else 0) <= b
                    for e in ev if e["kind"] in ("whoosh", "lowhit"))
     assert not any(a <= t <= b for t in polish.emph_times(tl, p, at))
+
+
+def test_eased_walks_start_and_stop_gently_and_feet_follow():
+    """Craft metrics, 2026-11-03: every walk started and stopped dead (constant speed between keys)."""
+    from blocky import acting
+
+    keys = [{"t": 0.0, "pos": [0, 0]}, {"t": 1.0, "pos": [0, 0]}, {"t": 3.0, "pos": [2.4, 0]}, {"t": 4.0, "pos": [2.4, 0]}]
+    fdt = 1 / 30
+    for ease in (False, True):
+        x = lambda t: acting.position(keys, t, ease)[0]
+        jump = max(abs((x(te + fdt) - x(te)) - (x(te) - x(te - fdt))) / fdt for te in (1.0, 3.0))
+        assert (jump < 0.5) if ease else (jump > 0.5), (ease, jump)
+        assert x(3.0) == pytest.approx(2.4) and x(1.0) == pytest.approx(0.0)        # same keys, same timing
+    # a path through several keys stays one walk: no slow-down at the middle key
+    path = [{"t": 0.0, "pos": [0, 0]}, {"t": 1.0, "pos": [1.2, 0]}, {"t": 2.0, "pos": [2.4, 0]}]
+    ea, eb = acting._ends(path, 0)
+    assert ea >= acting.EASE_S and eb == 0.0
+    # footsteps land where the eased walk has covered each stride
+    tl = {"acting": {"me": keys}, "motion": {"ease": True}}
+    for f in acting.footsteps(tl, "me"):
+        assert acting.position(keys, f["t"], True)[0] == pytest.approx(f["x"], abs=1e-3)
+    assert len(acting.footsteps(tl, "me")) == len(acting.footsteps({"acting": {"me": keys}}, "me"))
+
+
+def test_idle_life_is_subtle_slow_and_only_with_the_pack():
+    from blocky import acting
+
+    keys = [{"t": 0.0, "pos": [0, 0], "yaw": 10}]
+    base = {"acting": {"me": keys}, "talk": {}}
+    still = [acting.state(base, "me", t / 10) for t in range(50)]
+    assert len({(s["head_yaw"], s["lean"]) for s in still}) == 1                    # without the pack: a statue
+    live = {**base, "motion": {"idle": True}}
+    ss = [acting.state(live, "me", t / 30) for t in range(300)]
+    hy = np.array([s["head_yaw"] for s in ss])
+    assert np.degrees(np.abs(hy).max()) < 9 and np.degrees(np.abs(np.diff(hy)).max()) < 0.6   # small and slow
+    still_windows = sum(np.abs(np.diff(hy[i:i + 30])).max() < np.radians(0.06) for i in range(0, 270, 30))
+    assert still_windows == 0
+    assert all(abs(s["bob"]) < 0.01 for s in ss)
+
+
+def test_camera_moves_are_slow_and_keep_the_framing():
+    st, tl = story()
+    p = polish.spec(st)
+    import math
+    for i, spec in enumerate(st["shots"]):
+        m = polish.cam_spec(spec, i, p)
+        if len(spec["cam"]) > 1:
+            assert m is spec                                                            # its own move is kept
+            continue
+        (_, a, ta, la), (_, b, tb, lb) = m["cam"][0][:4], m["cam"][1][:4]
+        tgt = spec["cam"][0][2]
+        assert la == lb == spec["cam"][0][3]
+        assert math.dist(a, b) <= 0.6 + 1e-6 and math.dist(a, b) > 0.05
+        d0, d1 = math.dist(a, tgt), math.dist(b, tgt)
+        assert d1 < d0                                                                   # it pushes in
+    assert polish.cam_spec(st["shots"][0], 0, {**p, "camera": False}) is st["shots"][0]
+
+
+def test_punch_ins_are_capped_on_key_words():
+    st, tl = story()
+    p = polish.spec(st)
+    at = timeline.resolver(tl["lines"], tl["duration"])
+    emph = polish.emph_times(tl, p, at)
+    assert len(emph) <= max(1, int(p["punch_rate"] * tl["duration"] / 10 + 0.5))
+    keys = [t for _k, t in polish.key_times(tl, p, at)]
+    assert all(any(abs(t - k) < 1e-9 for k in keys) for t in emph)                 # key words only
+    assert all(b - a >= 5.0 / p["punch_rate"] - 1e-6 for a, b in zip(emph, emph[1:]))
