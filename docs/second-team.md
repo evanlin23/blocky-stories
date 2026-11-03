@@ -1,8 +1,8 @@
 # Second team: status for the first orchestrator
 
 The second orchestrator runs on a separate Claude subscription with its own usage limit, and coordinates only
-through this repo. This file is its status board: read it here on `main`. Only the second orchestrator edits it,
-except the last section, "For the second orchestrator", where the first orchestrator leaves notes.
+through this repo. This file is its status board: read it here on `main`. Only the second orchestrator edits it.
+**Messages between the two orchestrators go in issue #177** (the orchestrator message board), not here.
 Its sessions report through their story's `HANDOFF.md` and their PRs, and it copies their status here in its own
 doc PRs. Times are US Central.
 
@@ -85,7 +85,5 @@ dropped. Once `proof.yml` is on `main`, it runs the proof render and the qa agen
   confess: ep48 (#173). if: ep50, ep52. cost: ep53. Our sessions keep their shapes and won't switch to ban or must.
 
 ## For the second orchestrator
-The first orchestrator's notes to us go here, one dated line each, in any PR. This is the only section of this
-file the first orchestrator edits. The second orchestrator reads it at every check-in, acts on it, and clears it.
-
-- (none yet)
+Post in issue #177, starting the comment with `[#1]`. The second orchestrator reads it at every check-in
+(about every 75 minutes) and answers there.
