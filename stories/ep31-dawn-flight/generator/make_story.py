@@ -193,7 +193,7 @@ SHOTS = [
      c([0, [-7.5, -10.0, 2.0], [0.0, 0.0, 3.0], 20], [1, [-7.5, -10.0, 2.0], [0.0, 0.0, 4.2], 20]), 2, {"frame": "world"}),
     # 03 loose
     ("L18", "the fields sinking under the mist",
-     c([0, [0.5, -1.5, 2.0], [30, -14, 0.0], 24], [1, [0.5, -1.5, 2.0], [30, -14, -3.5], 24]), 2, {"key": 0}),
+     c([0, [0.5, -1.5, 2.0], [24, -8, 1.0], 24], [1, [0.5, -1.5, 2.0], [24, -8, -1.2], 24]), 2, {"key": 25, "dsun": 6.0}),
     ("L19", "the burner roars", FLAME, 2, {"key": 0}),
     ("L19.1", "my sleeve: the hand block slides a finger's width off",
      view([1.12, 0.02, 1.62], [ME[0] + 0.2, 1.08, 1.4], 0.7), 2, {"key": 12}),
@@ -242,7 +242,7 @@ SHOTS = [
     ("L38.3", "the landing in the stubble field",
      view([-9.0, -8.0, 1.2], [0.0, 0.0, 1.9], 6.0), 2, {"frame": "world"}),
     ("L39", "Rosa's sleeve pinning today's badge on the wall inside the trailer",
-     view([TRAILER[0] + 0.55, -0.2, K0 + 1.3], [TRAILER[0] + 0.9, 1.3, K0 + 1.22], 0.6), 2,
+     view([TRAILER[0] + 1.0, -0.2, K0 + 1.3], [TRAILER[0] + 0.85, 1.3, K0 + 1.22], 0.7), 2,
      {"room": "trailer", "frame": "world", "key": 8}),
     ("L40", "pull back: the whole wall covered in identical balloon badges",
      push([TRAILER[0] + 0.55, -0.2, K0 + 1.3], [TRAILER[0], -2.1, K0 + 1.28], [TRAILER[0] + 0.9, 1.3, K0 + 1.22], [TRAILER[0], 1.3, K0 + 1.25], 0.6, 2.1), 2,
@@ -316,7 +316,9 @@ put("me", "L09", [-0.95, 0.0, K0], yaw=90, expr="worried")
 hide("me", "L10")
 put("me", "L11.2", [-0.2, -3.0, FG], yaw=180, expr="worried")
 put("me", "L14", p3(ME), yaw=0, expr="worried", arms=[0, 0])
-key("me", "L16.2", yaw=180, arms=[ARM_ME, ARM_ME], blend=0.5)
+hide("me", "L15.1")                      # S20 opens on the empty rim: both patches and the tally in plain view
+put("me", "L16.2", p3(ME), yaw=180, expr="worried")
+key("me", "L16.2+0.55", arms=[ARM_ME, ARM_ME], blend=0.5)
 key("me", "L19.1", expr="worried")
 key("me", "L23", expr="worried")
 key("me", "L25.1", expr="scared", blend=0.3)
@@ -348,7 +350,9 @@ key("dad", "L14.1", arms=[0, 0], blend=0.1)
 key("dad", "L14.3", expr="delighted", yaw=14)
 talk("dad", "L14.4", "L14>")
 key("dad", "L15.1", yaw=180, arms=[0, 0], expr="smile", blend=0.0)
-key("dad", "L16.2", arms=[ARM_DAD, ARM_DAD], blend=0.5)
+hide("dad", "L15.1")
+put("dad", "L16.2", p3(DAD), yaw=180, expr="smile")
+key("dad", "L16.2+0.55", arms=[ARM_DAD, ARM_DAD], blend=0.5)
 key("dad", "L20", yaw=150, expr="delighted", arms=[ARM_DAD - 8, 80], blend=0.0)
 talk("dad", "L20.4", "L20>")
 key("dad", "L21", yaw=180, arms=[ARM_DAD, ARM_DAD], expr="delighted", blend=0.0)
@@ -379,7 +383,7 @@ key("rosa", "L22", yaw=180, expr="neutral", blend=0.3)
 key("rosa", "L24", head=[0, 24], blend=0.3)
 key("rosa", "L31", head=[0, 0], blend=0.3)
 key("rosa", "L38", yaw=170, expr="sad-smile", blend=0.0)
-put("rosa", "L39", [TRAILER[0] + 0.62, 0.58, TRAILER[2]], yaw=180, expr="sad-smile", arms=[0, 96])
+put("rosa", "L39", [TRAILER[0] + 0.3, 0.62, TRAILER[2]], yaw=180, expr="sad-smile", arms=[0, 96])
 hide("rosa", "L40")
 put("rosa", "L41", [-0.2, -2.1, FG], yaw=90, expr="neutral")
 walk("rosa", "L41>", [1.8, -2.1, FG])
@@ -443,8 +447,8 @@ cue("L41", "env", up=1.0, dur=0)
 cue("L12", "roar", peak=0.8, up=1.0, hold=1.2, down=0.9)
 cue("L19", "roar", peak=1.0, up=0.6, hold=1.2, down=0.9)
 cue("L22", "roar", peak=0.9, up=0.6, hold=1.2, down=0.9)
-cue("L25", "roar", peak=1.0, up=0.8, hold=6.6, down=1.2)
-cue("end-0.85", "roar", peak=0.45, up=0.25, hold=0.05, down=0.5)
+cue("L25-0.9", "roar", peak=0.6, up=1.0, hold=6.6, down=1.2)
+cue("end-0.85", "roar", peak=0.25, up=0.25, hold=0.05, down=0.5)
 # the seams (cm). Everyone else stays at their hairline.
 seam("me", 0, 2.5)
 seam("me", "L19", 2.5, hand=5.0, dur=0.8)
@@ -472,7 +476,7 @@ sfx = [
     {"at": "L12", "kind": "burner", "db": -15, "dur": 3.6},
     {"at": "L19", "kind": "burner", "db": -14, "dur": 3.6, "seed": 2},
     {"at": "L22", "kind": "burner", "db": -14, "dur": 3.4, "seed": 3},
-    {"at": "L25", "kind": "burner", "db": -9, "dur": 9.4, "keep": True},
+    {"at": "L25-0.9", "kind": "burner", "db": -9, "dur": 9.4, "keep": True},
     {"at": "end-0.85", "kind": "burner", "db": -18, "dur": 0.85, "fall": 7.0},
     {"at": "L02.1", "kind": "click", "db": -10},
     {"at": "L02.2", "kind": "latch", "db": -16},

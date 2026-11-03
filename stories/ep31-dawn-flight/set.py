@@ -351,7 +351,7 @@ def new_materials(kit, ctx):
     M["wicker"] = kit.bricks("#b48a55", "#9a7243", "#3f2f1a", scale=7.0, name="wicker", rough=0.9, row=0.25, width=0.5,
                              grime_amt=0.25)
     M["leather"] = kit.plastic("#4a2e1e", 0.5, name="leather rim", spec=0.35)
-    M["worn"] = kit.plastic("#7a5a42", 0.55, name="worn leather", spec=0.3)
+    M["worn"] = kit.plastic("#b99877", 0.55, name="worn leather", spec=0.3)
     M["floor"] = kit.planks("#a07a48", "#80602f", scale=3.5, axis="Y", name="basket floor")
     M["steel"] = kit.metal("#6c7075", 0.4, name="steel")
     M["steel_dark"] = kit.plastic("#2a2d31", 0.5, name="steel dark")
@@ -412,6 +412,16 @@ def disc_mesh(kit, name, centres, r, y, mat, parent, n=14):
     return kit.mesh_obj(name, verts, fcs, mat, parent)
 
 
+def trap_mesh(kit, name, centres, hw_top, hw_bot, h, y, mat, parent):
+    """Many small flat trapezoids (the basket of the balloon glyph) facing -y in one object."""
+    verts, fcs = [], []
+    for (cx, cz) in centres:
+        b = len(verts)
+        verts += [(cx - hw_top, y, cz + h / 2), (cx + hw_top, y, cz + h / 2), (cx + hw_bot, y, cz - h / 2), (cx - hw_bot, y, cz - h / 2)]
+        fcs.append((b + 3, b + 2, b + 1, b))
+    return kit.mesh_obj(name, verts, fcs, mat, parent)
+
+
 def build_basket(kit, ctx, M):
     Vg = ctx["V"]
     kit.box("floor", (2 * HX + 0.02, 2 * HX + 0.02, 0.08), (0, 0, -0.04), M["floor"], Vg)
@@ -448,7 +458,7 @@ def build_basket(kit, ctx, M):
     # the two worn patches on the north rim, exactly under two hands, and the lore tally between them
     top = RIM_TOP + 0.0
     for i, px in enumerate(PATCH_X):
-        kit.box(f"worn{i}", (0.3, 0.17, 0.006), (px, RIM_Y, top + 0.004), M["worn"], Vg)
+        kit.box(f"worn{i}", (0.34, 0.17, 0.006), (px, RIM_Y, top + 0.004), M["worn"], Vg)
     for k, px in enumerate((-0.07, 0.07)):
         kit.box(f"tally{k}", (0.04, 0.17, 0.008), (px, RIM_Y, top + 0.005), M["tally"], Vg)
 
@@ -487,6 +497,19 @@ def build_landscape(kit, ctx, M):
         r = 330 + 40 * kit.hash01(k, 3)
         h = kit.sphere(f"hill{k}", 1.0, (r * math.cos(a), r * math.sin(a), 0), M["hill"], L, seg=14)
         h.scale = (95 + 30 * kit.hash01(k, 4), 70 + 30 * kit.hash01(k, 5), 42 + 12 * kit.hash01(k, 6))
+    # the near fields S23 sinks past: two barns and hedge lines that poke out of the mist (shown in that one shot only)
+    sk = kit.empty("sinkprops", (0, 0, 0), L)
+    ctx["sink"] = sk
+    for i, (p, rot) in enumerate([((27, -10), 25), ((44, 10), -20), ((20, 14), 70)]):
+        b = kit.empty(f"sbarn{i}", (p[0], p[1], 0), sk)
+        b.rotation_euler = (0, 0, math.radians(rot))
+        kit.box(f"sbarnw{i}", (10, 6.5, 4.2), (0, 0, 2.1), M["barn"], b, bevel=0.08)
+        for sy in (-1, 1):
+            kit.box(f"sbarnr{i}{sy}", (10.6, 4.1, 0.3), (0, sy * 1.55, 4.9), M["barn_roof"], b,
+                    rot=(sy * math.radians(-32), 0, 0), bevel=0.05)
+    for i, (p, rot, ln, h) in enumerate([((14, -22), 0, 30, 2.2), ((14, -2), 0, 24, 2.0), ((12, 8), 90, 24, 2.4),
+                                         ((38, -8), 90, 30, 2.1), ((26, -30), 0, 36, 2.3)]):
+        kit.box(f"shedge{i}", (ln, 1.3, h), (p[0], p[1], h / 2), M["hedge"], sk, rot=(0, 0, math.radians(rot)), bevel=0.2)
     # the launch field: a lamp on a pole, a trailer whose back doors stand open, a cold-air fan
     kit.cyl("lamppole", 0.07, 3.4, (-4.6, -3.6, 1.7), M["steel"], L, n=10)
     kit.box("lamphead", (0.5, 0.3, 0.14), (-4.6, -3.6, 3.45), M["steel_dark"], L, bevel=0.03)
@@ -567,28 +590,31 @@ def build_montage(kit, ctx, M):
     # --- the inside of Rosa's trailer: the back wall (y = 1.35) covered in identical balloon badges
     Z = kit.empty("Ztrailer", tuple(ZONES["trailer"]))
     ctx["T"] = Z
-    kit.box("t_floor", (2.3, 3.8, 0.1), (0, -0.55, -0.05), M["t_floor"], Z)
-    kit.box("t_ceil", (2.3, 3.8, 0.1), (0, -0.55, 2.55), M["t_wall"], Z)
-    kit.box("t_wallB", (2.3, 0.1, 2.6), (0, 1.4, 1.25), M["t_wall"], Z)
+    kit.box("t_floor", (4.3, 3.8, 0.1), (0, -0.55, -0.05), M["t_floor"], Z)
+    kit.box("t_ceil", (4.3, 3.8, 0.1), (0, -0.55, 2.55), M["t_wall"], Z)
+    kit.box("t_wallB", (4.3, 0.1, 2.6), (0, 1.4, 1.25), M["t_wall"], Z)
     for sx in (-1, 1):
-        kit.box(f"t_wallS{sx}", (0.1, 3.8, 2.6), (sx * 1.2, -0.55, 1.25), M["t_wall"], Z)
-    kit.box("t_wallF", (2.3, 0.1, 2.6), (0, -2.5, 1.25), M["t_wall"], Z)
+        kit.box(f"t_wallS{sx}", (0.1, 3.8, 2.6), (sx * 2.2, -0.55, 1.25), M["t_wall"], Z)
+    kit.box("t_wallF", (4.3, 0.1, 2.6), (0, -2.5, 1.25), M["t_wall"], Z)
     kit.cyl("t_cord", 0.008, 0.5, (0, 0.0, 2.3), M["steel_dark"], Z, n=6)
     kit.sphere("t_bulb", 0.07, (0, 0.0, 2.02), M["t_lamp"], Z, seg=10)
     cs = []
-    for j in range(1, 8):
-        for i in range(7):
-            if (i, j) == (6, 4):          # the empty cell where today's badge goes
+    for j in range(1, 13):
+        for i in range(21):
+            if (i, j) == (14, 6):         # the empty cell where today's badge goes (x 0.9, z 1.22)
                 continue
-            cs.append((-0.9 + i * 0.3, 0.02 + j * 0.3))
+            cs.append((-1.9 + i * 0.2, 0.02 + j * 0.2))
     yb = 1.35 - 0.012                      # each layer 1 cm proud of the one below, so nothing shares a plane
-    disc_mesh(kit, "badges_g", cs, 0.124, yb, M["b_green"], Z)
-    disc_mesh(kit, "badges_c", cs, 0.092, yb - 0.012, M["b_cream"], Z)
-    disc_mesh(kit, "badges_b", [(x, z + 0.02) for x, z in cs], 0.04, yb - 0.024, M["b_green"], Z, n=10)
-    new = [(0.9, 0.02 + 4 * 0.3)]
-    ctx["badge_new"] = [disc_mesh(kit, "badge_ng", new, 0.124, yb, M["b_green"], Z),
-                        disc_mesh(kit, "badge_nc", new, 0.092, yb - 0.012, M["b_cream"], Z),
-                        disc_mesh(kit, "badge_nb", [(0.9, new[0][1] + 0.02)], 0.04, yb - 0.024, M["b_green"], Z, n=10)]
+
+    def glyph(tag, cl):
+        # the same glyph as Dad's badge: green rim, cream face, a green balloon over a small basket
+        return [disc_mesh(kit, f"{tag}_g", cl, 0.088, yb, M["b_green"], Z),
+                disc_mesh(kit, f"{tag}_c", cl, 0.066, yb - 0.012, M["b_cream"], Z),
+                disc_mesh(kit, f"{tag}_b", [(x, z + 0.014) for x, z in cl], 0.04, yb - 0.024, M["b_green"], Z, n=12),
+                trap_mesh(kit, f"{tag}_k", [(x, z - 0.045) for x, z in cl], 0.012, 0.016, 0.02, yb - 0.03, M["b_green"], Z)]
+
+    glyph("badges", cs)
+    ctx["badge_new"] = glyph("badge_n", [(0.9, 1.22)])
 
 
 def build(kit, story, tl):
@@ -689,6 +715,7 @@ def animate(kit, story, tl, t, ctx):
     ang = math.radians(-88.0 * (1 - up))
     ctx["E"].matrix_basis = Matrix.Translation(PIVOT) @ Matrix.Rotation(ang, 4, "X")
     ctx["flames"].rotation_euler = (ang, 0, 0)
+    ctx["sink"].hide_render = spec["id"] != "S23"
     alt = _ease_value(_cues(tl, "alt"), "alt", t, 0.0)
     fld = _switch(_cues(tl, "field"), "f", t, 0)
     shift = -LAND_SHIFT if fld else V((0, 0, 0))
