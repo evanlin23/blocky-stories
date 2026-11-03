@@ -2,8 +2,8 @@
  "slug": "ep17-moving-day",
  "title": "In This Town Every House Grows To Fit The TALLEST",
  "made_for_kids": false,
- "premise": "In this town a house grows or sinks to fit the tallest one living in it, a hand a night. Our old house was always a ladder taller than Mum or me. It sold, Mum hasn't laughed since, and the small new house fits me exactly, until each morning there's more room over my head, the walls have stretched with Mum's photos on them, and the stack of moving boxes by the door is shorter.",
- "twist": "The old house never broke the rule: something tall always lived in it with us, folded under its high ceilings while Mum never looked up. When we moved it taped itself into one of our boxes from the inside and came along, and the new house grew to fit it, back to ladder height.",
+ "premise": "In this town a house grows or sinks to fit the tallest one living in it, a hand a night. Our old house was always a ladder taller than Mom or me. It sold, Mom hasn't laughed since, and the small new house fits me exactly, until each morning there's more room over my head, the walls have stretched with Mom's photos on them, and the stack of moving boxes by the door is shorter.",
+ "twist": "The old house never broke the rule: something tall always lived in it with us, folded under its high ceilings while Mom never looked up. When we moved it taped itself into one of our boxes from the inside and came along, and the new house grew to fit it, back to ladder height.",
  "world": "a small single-storey house half moved into: off-white walls, honey boards, a stack of taped moving boxes by the front door, a hall cupboard, ceilings that start right on my hair and rise to ladder height over four mornings, and a bright street of houses of very different heights for the opening montage",
  "voice": {
   "voice": "am_adam",
@@ -26,7 +26,19 @@
   "sky": "#0b0d11",
   "sky_strength": 1.0,
   "exposure": 1.0,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": {
+   "quiet": [
+    [
+     "P02",
+     "L39"
+    ]
+   ],
+   "marks": false,
+   "emph": [
+    "L01.3"
+   ]
+  }
  },
  "grade": {
   "shadows": [
@@ -262,20 +274,16 @@
      "In this town,"
     ],
     [
-     "a house GROWS",
-     "a house grows"
+     "when your CEILING",
+     "when your ceiling"
     ],
     [
-     "to fit",
-     "to fit"
+     "RISES,",
+     "rises,"
     ],
     [
-     "the TALLEST one",
-     "the tallest one"
-    ],
-    [
-     "LIVING in it.",
-     "living in it."
+     "don't LOOK UP.",
+     "don't look up."
     ]
    ]
   },
@@ -284,12 +292,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Tall FAMILIES",
-     "Tall families"
+     "Something TALLER",
+     "Something taller"
     ],
     [
-     "live in TOWERS.",
-     "live in towers."
+     "than you",
+     "than you"
+    ],
+    [
+     "MOVED IN.",
+     "moved in."
     ]
    ]
   },
@@ -302,8 +314,8 @@
      "When a tall"
     ],
     [
-     "lodger",
-     "lodger"
+     "roommate",
+     "roommate"
     ],
     [
      "moves OUT,",
@@ -319,13 +331,14 @@
     ],
     [
      "a HAND",
-     "a hand"
+     "a hand,"
     ],
     [
      "a NIGHT.",
      "a night."
     ]
-   ]
+   ],
+   "tempo": 1.0
   },
   {
    "id": "L04",
@@ -403,8 +416,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mum hasn't",
-     "Mum hasn't"
+     "Mom hasn't",
+     "Mom hasn't"
     ],
     [
      "LAUGHED since.",
@@ -510,13 +523,14 @@
    "chunks": [
     [
      "Its marker FROWN",
-     "Its marker frown."
+     "Its marker frown,"
     ],
     [
-     "faced Mum's DOOR.",
-     "faced Mum's door."
+     "faced Mom's DOOR.",
+     "faced Mom's door."
     ]
    ],
+   "tempo": 1.12,
    "gap": 0.05
   },
   {
@@ -632,8 +646,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mum's PHOTOS",
-     "Mum's photos"
+     "Mom's PHOTOS",
+     "Mom's photos"
     ],
     [
      "rode UP",
@@ -699,8 +713,8 @@
      "at the back"
     ],
     [
-     "of Mum's HEAD.",
-     "of Mum's head."
+     "of Mom's HEAD.",
+     "of Mom's head."
     ]
    ]
   },
@@ -709,8 +723,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mum made",
-     "Mum made"
+     "Mom made",
+     "Mom made"
     ],
     [
      "her TEA",
@@ -783,8 +797,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mum's door",
-     "Mum's door"
+     "Mom's door",
+     "Mom's door"
     ],
     [
      "stood OPEN.",
@@ -906,8 +920,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mum SLEPT",
-     "Mum slept"
+     "Mom SLEPT",
+     "Mom slept"
     ],
     [
      "right THROUGH it.",
@@ -952,8 +966,8 @@
      "And for once,"
     ],
     [
-     "Mum LOOKED UP.",
-     "Mum looked up."
+     "Mom LOOKED UP.",
+     "Mom looked up."
     ]
    ]
   },
@@ -1137,8 +1151,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mum KNEW.",
-     "Mum knew."
+     "Mom KNEW.",
+     "Mom knew."
     ],
     [
      "She'd MISSED it.",
@@ -1152,8 +1166,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mum opened",
-     "Mum opened"
+     "Mom opened",
+     "Mom opened"
     ],
     [
      "the hall CUPBOARD.",
@@ -1216,21 +1230,35 @@
     [
      0,
      [
-      -1.0,
-      -2.2,
-      1.5
+      -1.2,
+      -0.8,
+      1.45
      ],
      [
-      -2.3,
-      -4.5,
-      1.55
+      -4.6,
+      -0.8,
+      1.6
      ],
-     17
+     40
+    ],
+    [
+     2.2,
+     [
+      -1.6,
+      -0.8,
+      1.49
+     ],
+     [
+      -4.6,
+      -0.8,
+      1.8
+     ],
+     44
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S01 the front room, warm and even: me under the low ceiling, the face box in the stack beside me, frowning"
+   "what": "S01 eye-level looking slightly up at me in the hall: the dark old ceiling line on the wall at my hair, clean wall above it to the raised ceiling, my eyes rolled up; push up toward the gap"
   },
   {
    "id": "S02",
@@ -1238,59 +1266,36 @@
     [
      0,
      [
-      55.8,
-      -2.5,
-      1.3
+      -1.6,
+      -3.0,
+      0.95
      ],
      [
-      55.8,
-      6.0,
-      2.2
+      -1.62,
+      -4.75,
+      1.2
      ],
-     13
+     24
     ],
     [
      1,
      [
-      59.4,
-      -2.5,
-      1.3
-     ],
-     [
-      59.4,
-      6.0,
-      2.2
-     ],
-     13
-    ]
-   ],
-   "hand": 0.004,
-   "step": 2,
-   "what": "S02 the street: four houses of different heights, the tallest one at each door, head at the lintel",
-   "at": "L01.4"
-  },
-  {
-   "id": "S03",
-   "cam": [
-    [
-     0,
-     [
-      64.9,
-      1.2,
+      -1.6,
+      -3.4,
       1.0
      ],
      [
-      63.2,
-      6.0,
-      3.0
+      -1.62,
+      -4.75,
+      1.3
      ],
-     17
+     24
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S03 the tower house: a tall man at its door, waving",
-   "at": "L02+0.44"
+   "what": "S02 the stack by the door, close and low: the face-out box with the marker frown, the ceiling right over it",
+   "at": "L02"
   },
   {
    "id": "S04",
@@ -1381,7 +1386,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S07 close in the kitchen: the old house photo in Mum's hands",
+   "what": "S07 close in the kitchen: the old house photo in Mom's hands",
    "at": "L05"
   },
   {
@@ -1450,7 +1455,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S10 Mum in the kitchen doorway, flat-faced and tired",
+   "what": "S10 Mom in the kitchen doorway, flat-faced and tired",
    "at": "L07"
   },
   {
@@ -1473,7 +1478,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S11 Mum hangs the old house frame at her eye height; its top window is dim",
+   "what": "S11 Mom hangs the old house frame at her eye height; its top window is dim",
    "at": "L08"
   },
   {
@@ -1496,7 +1501,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S12 Mum steps back, no smile, mouth moving under the quote",
+   "what": "S12 Mom steps back, no smile, mouth moving under the quote",
    "at": "L09"
   },
   {
@@ -1533,7 +1538,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S13 Mum crosses the room head down with her mug, past the stack and the frown",
+   "what": "S13 Mom crosses the room head down with her mug, past the stack and the frown",
    "at": "L10"
   },
   {
@@ -1588,20 +1593,6 @@
     [
      0,
      [
-      -1.35,
-      -3.9,
-      1.75
-     ],
-     [
-      -1.62,
-      -4.75,
-      1.4
-     ],
-     40
-    ],
-    [
-     1,
-     [
       -1.45,
       -4.1,
       1.62
@@ -1639,7 +1630,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S17 low beside the face box: its frown toward the hall and Mum's door",
+   "what": "S17 low beside the face box: its frown toward the hall and Mom's door",
    "at": "L13"
   },
   {
@@ -1892,7 +1883,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S28 Mum's back, small; the face above her at the top of the frame",
+   "what": "S28 Mom's back, small; the face above her at the top of the frame",
    "at": "L23.3"
   },
   {
@@ -1915,7 +1906,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S29 Mum pouring tea, head down, profile",
+   "what": "S29 Mom pouring tea, head down, profile",
    "at": "L24"
   },
   {
@@ -1938,7 +1929,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S30 close on Mum's lowered face, calm",
+   "what": "S30 close on Mom's lowered face, calm",
    "at": "L25"
   },
   {
@@ -2007,7 +1998,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S33 Mum's door, open, darker inside",
+   "what": "S33 Mom's door, open, darker inside",
    "at": "L28"
   },
   {
@@ -2159,7 +2150,7 @@
    ],
    "hand": 0.006,
    "step": 1,
-   "what": "S39 high and wide: the quilt laid square and flat, Mum's face calm",
+   "what": "S39 high and wide: the quilt laid square and flat, Mom's face calm",
    "at": "L33.3"
   },
   {
@@ -2182,7 +2173,7 @@
    ],
    "hand": 0.006,
    "step": 1,
-   "what": "S40 Mum asleep in the warm light",
+   "what": "S40 Mom asleep in the warm light",
    "at": "L34"
   },
   {
@@ -2205,7 +2196,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S41 Mum's room in morning light, the corner empty, the ceiling high",
+   "what": "S41 Mom's room in morning light, the corner empty, the ceiling high",
    "at": "L35"
   },
   {
@@ -2251,7 +2242,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S43 Mum in the front room with her mug, her head tilting up",
+   "what": "S43 Mom in the front room with her mug, her head tilting up",
    "at": "L36"
   },
   {
@@ -2311,7 +2302,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S45 Mum still looking up, mouthing the words",
+   "what": "S45 Mom still looking up, mouthing the words",
    "at": "L37"
   },
   {
@@ -2357,7 +2348,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S47 Mum sits on a box, still laughing",
+   "what": "S47 Mom sits on a box, still laughing",
    "at": "L38"
   },
   {
@@ -2463,7 +2454,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S51 Mum below, laughing quietly, the old photo above her",
+   "what": "S51 Mom below, laughing quietly, the old photo above her",
    "at": "L42"
   },
   {
@@ -2486,7 +2477,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S52 low and wide: Mum and me small at the foot of a tall wall",
+   "what": "S52 low and wide: Mom and me small at the foot of a tall wall",
    "at": "L43"
   },
   {
@@ -2536,7 +2527,7 @@
    "at": "L45"
   },
   {
-   "id": "S55",
+   "id": "S54b",
    "cam": [
     [
      0,
@@ -2555,11 +2546,11 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S54b Mum below the old photo, head tipped back to it, eyes wet",
+   "what": "S54b Mom below the old photo, head tipped back to it, eyes wet",
    "at": "L45b"
   },
   {
-   "id": "S56",
+   "id": "S55",
    "cam": [
     [
      0,
@@ -2578,11 +2569,11 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S55 the hall: Mum opens the cupboard, head down",
+   "what": "S55 the hall: Mom opens the cupboard, head down",
    "at": "L46"
   },
   {
-   "id": "S57",
+   "id": "S56",
    "cam": [
     [
      0,
@@ -2619,7 +2610,7 @@
    "at": "L47"
   },
   {
-   "id": "S58",
+   "id": "S57",
    "cam": [
     [
      0,
@@ -2638,7 +2629,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S57 Mum swings the door shut, head still down",
+   "what": "S57 Mom swings the door shut, head still down",
    "at": "L48"
   }
  ],
@@ -2647,8 +2638,8 @@
    {
     "at": 0,
     "pos": [
-     -2.45,
-     -4.0
+     -4.2,
+     -0.8
     ],
     "blend": 0,
     "hidden": false,
@@ -2662,7 +2653,7 @@
     ],
     "head": [
      0,
-     0
+     -12
     ],
     "lean": 0,
     "tremble": 0,
@@ -2670,21 +2661,25 @@
     "sit": false,
     "hide_parts": [],
     "part_offset": {},
-    "blink": true,
+    "blink": false,
     "width": 0.88,
     "expr": "worried",
-    "yaw": 180
+    "yaw": 90,
+    "look": [
+     0,
+     -1
+    ]
    },
    {
-    "at": "L01.4",
+    "at": "L02",
     "hidden": true,
     "blend": 0
    },
    {
     "at": "L06.2",
     "pos": [
-     -2.45,
-     -4.0
+     -4.2,
+     -0.8
     ]
    },
    {
@@ -3902,95 +3897,11 @@
     "at": 0,
     "hidden": true,
     "blend": 0
-   },
-   {
-    "at": "L01.4",
-    "pos": [
-     53.2,
-     5.68,
-     0.08
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "lie": null,
-    "sit": false,
-    "hide_parts": [],
-    "part_offset": {},
-    "blink": true,
-    "width": 0.88,
-    "expr": "grin",
-    "yaw": 0
-   },
-   {
-    "at": "L03+0.17",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L02+0.44",
-    "hidden": true,
-    "blend": 0
    }
   ],
   "b": [
    {
     "at": 0,
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L01.4",
-    "pos": [
-     56.7,
-     5.68,
-     0.08
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "lie": null,
-    "sit": false,
-    "hide_parts": [],
-    "part_offset": {},
-    "blink": true,
-    "width": 0.88,
-    "expr": "grin",
-    "yaw": 0
-   },
-   {
-    "at": "L03+0.17",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L02+0.44",
     "hidden": true,
     "blend": 0
    }
@@ -4000,48 +3911,6 @@
     "at": 0,
     "hidden": true,
     "blend": 0
-   },
-   {
-    "at": "L01.4",
-    "pos": [
-     60.0,
-     5.68,
-     0.08
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "lie": null,
-    "sit": false,
-    "hide_parts": [],
-    "part_offset": {},
-    "blink": true,
-    "width": 0.88,
-    "expr": "grin",
-    "yaw": 0
-   },
-   {
-    "at": "L03+0.17",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L02+0.44",
-    "hidden": true,
-    "blend": 0
    }
   ],
   "c": [
@@ -4049,115 +3918,6 @@
     "at": 0,
     "hidden": true,
     "blend": 0
-   },
-   {
-    "at": "L01.4",
-    "pos": [
-     63.2,
-     5.68,
-     0.08
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "lie": null,
-    "sit": false,
-    "hide_parts": [],
-    "part_offset": {},
-    "blink": true,
-    "width": 0.88,
-    "expr": "smirk",
-    "yaw": 0
-   },
-   {
-    "at": "L03+0.17",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L02+0.80",
-    "side": [
-     0,
-     28
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L02+1.20",
-    "side": [
-     0,
-     8
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L02+1.60",
-    "side": [
-     0,
-     28
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L02+2.00",
-    "side": [
-     0,
-     8
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L02+2.40",
-    "side": [
-     0,
-     28
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L02+2.80",
-    "side": [
-     0,
-     8
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
    }
   ],
   "lod": [
@@ -4414,10 +4174,15 @@
   {
    "at": 0,
    "name": "ceil",
+   "h": 2.2
+  },
+  {
+   "at": "L02",
+   "name": "ceil",
    "h": 1.72
   },
   {
-   "at": "L01.4",
+   "at": "L03",
    "name": "time",
    "set": "street"
   },
@@ -4790,19 +4555,35 @@
    "at": 0,
    "name": "xfill",
    "pos": [
+    -2.3,
+    -0.8,
+    1.0
+   ],
+   "aim": [
+    -4.6,
+    -0.8,
+    1.7
+   ],
+   "gain": 0.6,
+   "size": 1.4
+  },
+  {
+   "at": "L02",
+   "name": "xfill",
+   "pos": [
     -1.6,
     -3.0,
     1.7
    ],
    "aim": [
-    -2.2,
-    -4.3,
-    1.3
+    -1.7,
+    -4.5,
+    1.2
    ],
    "gain": 1.2
   },
   {
-   "at": "L01.4",
+   "at": "L03",
    "name": "xfill",
    "gain": 0
   },
@@ -5076,7 +4857,7 @@
    }
   ]
  },
- "sound": {"rev": 2, 
+ "sound": {
   "floor": "wood",
   "steps_db": -22,
   "ambience": [
@@ -5106,6 +4887,12 @@
    }
   ],
   "sfx": [
+   {
+    "at": "L01>-0.3",
+    "kind": "hit",
+    "db": -9,
+    "dur": 0.8
+   },
    {
     "at": "L14.1",
     "kind": "scrape",

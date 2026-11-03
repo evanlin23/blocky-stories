@@ -428,8 +428,8 @@ def build_stair(kit, M, ctx):
     B(kit, "street door", (1.2, 0.1, 2.3), (X, -1.0, 1.15), M["dark"])
     B(kit, "door slice", (0.14, 0.04, 2.1), (X - 0.4, -1.06, 1.15), M["streetlight"])
     B(kit, "stair frame", (1.5, 0.12, 0.2), (X, 9.4, 6.1), M["cream"])
-    kit.light("stairlamp", "POINT", (X + 0.6, 2.5, 3.6), 90.0, "#ffd9a0", size=0.2)
-    kit.light("landlamp", "POINT", (X + 0.4, 7.4, 5.2), 130.0, "#ffd9a0", size=0.2)
+    kit.light("stairlamp", "POINT", (X + 0.6, 2.5, 3.6), 50.0, "#ffd9a0", size=0.2)
+    kit.light("landlamp", "POINT", (X + 0.4, 7.4, 5.2), 60.0, "#ffd9a0", size=0.2)
     kit.light("stairfront", "POINT", (X, 10.2, 5.6), 160.0, "#ffe2b8", size=0.3)
     kit.light("stairlow", "POINT", (X, 0.6, 1.6), 40.0, "#ffe6c0", size=0.2)
     B(kit, "lamp sc", (0.1, 0.2, 0.3), (X + 0.72, 2.5, 3.5), M["brass"], bevel=0.03)
@@ -480,6 +480,8 @@ def build_street(kit, M, ctx):
     sun = kit.light("sun", "SUN", (-6, -14, 13), 9.0, "#fff4dc", size=0.02)
     kit.aim(sun, (X0, 0, 0))
     ctx["sun"] = sun
+    # an even fill on the two brothers at the gate so neither face sits in shadow
+    kit.light("gatefill", "POINT", (X0 + 26.8, 1.0, 1.9), 600.0, "#fff4e4", size=0.8)
 
 
 def build_bus(kit, M, ctx):
@@ -610,7 +612,8 @@ def build(kit, story, tl):
         pl = make_plane(f"whole {pid}", 0.24, 0.24, m)
         ctx["wholes"][pid] = (pl, em, a, b)
     kit.light("glyphglow", "POINT", (0, 0, -20), 0.0, GOLD, size=0.15)
-    kit.light("footlight", "POINT", (1.1, -0.5, 0.8), 70.0, "#ffe6c0", size=0.3)
+    kit.light("facefill", "POINT", (-1.1, -1.1, 1.9), 55.0, "#ffe6c8", size=0.4)
+    kit.light("footlight", "POINT", (0.9, -0.55, 0.45), 14.0, "#fff0d8", size=0.4)
     return ctx
 
 
@@ -658,10 +661,6 @@ def decorate(kit, story, ctx):
     if hg:
         sil = kit.plastic("#c6c9cf", 0.5)
         B(kit, "ros.wave", (1.0, 0.5, 0.34), (-0.3, -faces.HEAD_R + 0.22, faces.HEAD_H / 2 - 0.1), sil, hg, rot=(0, 0.3, 0), bevel=0.1)
-    # the postman's parcel
-    tor = ob("pm.torso")
-    if tor:
-        B(kit, "pm.parcel", (0.9, 0.6, 0.7), (-0.95, -0.7, 0.8), kit.plastic("#b88a5a", 0.8), tor, bevel=0.03)
     for who in ("me", "ros", "pm"):       # extras made after the cast was hidden must start hidden too
         root = ob(who)
         if root is not None and root.hide_render:
@@ -806,7 +805,11 @@ def animate(kit, story, tl, t, ctx):
             import sys
             print(f"DBG t={t:.2f} {who} hand={tuple(round(x, 2) for x in p)} cam={tuple(round(x, 2) for x in cam)}", file=sys.stderr)
     l68 = tl.get("lines", {}).get("L68")
-    over["footlight"] = 1.0 if l68 and l68["onset"] - 0.05 <= t <= l68["end"] else 0.0
+    l67 = tl.get("lines", {}).get("L67")
+    f0 = l67["chunks"][4][0] if l67 else (l68["onset"] if l68 else 0.0)      # the feet shot (L67.5) to the end of L68
+    over["footlight"] = 1.0 if l68 and f0 <= t <= l68["end"] else 0.0
+    l62 = tl.get("lines", {}).get("L62")
+    over["facefill"] = 1.0 if l62 and l62["onset"] - 0.05 <= t <= l62["end"] + 0.05 else 0.0
     over["glyphglow"] = 1.0
     gl = kit.LIGHTS["glyphglow"]
     gl["obj"].location = glow_p + (cam - glow_p).normalized() * 0.25 if glow_p is not None else V((0, 0, -20))

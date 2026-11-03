@@ -500,6 +500,11 @@ def build_shop(kit, M, ctx):
         B(kit, f"cover{k}", (0.34, 0.12, 1.35), (-8.4 - k * 0.38, SHOP_Y0 + 0.3, 1.2), M["paper"], bevel=0.03)
     B(kit, "rail along x", (2.4, 0.04, 0.04), (-9.4, SHOP_Y0 + 0.3, 1.95), M["brass"])
     # packing boxes stacked on the counter, more each day (ctx["boxes"] is shown by count)
+    # opening Uncle shot only (cue uncle_shot): a dark green wall behind him and a warm side key
+    ctx["backdrop"] = B(kit, "uncle backdrop", (0.06, 3.2, 3.0), (-8.55, -0.6, 1.5), pbr(kit, "backdrop", "#26402f", 0.9))
+    ctx["backdrop"].hide_render = True
+    ctx["ukey"] = kit.light("uncle key", "SPOT", (-6.3, -2.3, 2.2), 110.0, "#ffd9a8", spot=55, blend=0.6, size=0.3)
+    kit.aim(ctx["ukey"], (-7.75, -1.0, 1.45))
     ctx["boxes"] = []
     spots = [(-6.7, -2.2, 0), (-6.7, -1.75, 0), (-6.7, -2.2, 1), (-6.7, -1.75, 1), (-6.7, 0.05, 0), (-6.7, -2.2, 2),
              (-6.7, 0.05, 1), (-6.7, -1.75, 2)]
@@ -552,11 +557,19 @@ def build_shop(kit, M, ctx):
     for k in range(5):
         kit.cyl(f"coil{k}", 0.1 - k * 0.012, 0.025, (0, 0, k * 0.026), M["yellow"], coil, n=18)
     ctx["coil"] = coil
-    pc = kit.empty("pincushion", (-12.25, 0.95, 0.92))
+    pc = kit.empty("pincushion", (-12.66, 0.88, 0.92))
     B(kit, "cush", (0.14, 0.1, 0.06), (0, 0, 0.03), M["red"], pc, bevel=0.02)
     for k in range(5):
         kit.cyl(f"pinhead{k}", 0.008, 0.012, (-0.04 + k * 0.02, 0.0, 0.07), M["brass"], pc, n=6)
     ctx["pincushion"] = pc
+    # the lace-ups on the floor behind the curtain (shown for L32 only), lit by a low warm glow
+    sh = kit.empty("lace-ups", (-14.7, -1.75, 0.0))
+    ctx["shoes"] = sh
+    for sy in (-0.12, 0.12):
+        B(kit, f"lace.sole{sy}", (0.4, 0.17, 0.03), (0, sy, 0.025), M["black"] if "black" in M else M["shoe"], sh, bevel=0.01)
+        B(kit, f"lace.body{sy}", (0.3, 0.16, 0.1), (-0.04, sy, 0.09), M["shoe"], sh, bevel=0.035)
+        B(kit, f"lace.toe{sy}", (0.14, 0.16, 0.07), (0.13, sy, 0.065), M["shoe"], sh, bevel=0.03)
+    kit.light("shoe glow", "POINT", (-14.55, -1.75, 0.12), 4.0, "#ffc890", size=0.1)
     ou = kit.empty("tape outline", (ME_ST[0], ME_ST[1], 0.015))
     segs = [((0, 0.1), (0, 1.55)), ((-0.25, 1.0), (-0.25, 0.0)), ((0.25, 1.0), (0.25, 0.0)), ((-0.25, 1.0), (0.25, 1.0)),
             ((-0.25, 1.0), (-0.52, 0.55)), ((0.25, 1.0), (0.52, 0.55)), ((-0.25, 0.0), (0.25, 0.0)), ((-0.25, 1.4), (0.25, 1.4))]
@@ -604,6 +617,10 @@ def build_shop(kit, M, ctx):
     ctx["tally_dust"] = [kit.sphere(f"dust{k}", 0.006, (0, 0, 0), M["dust"], seg=6) for k in range(7)]
     for d in ctx["tally_dust"]:
         d.hide_render = True
+    # a few CC0 pieces to fill the bare corners (kit.prop): a plant at the door, a stool by the bench, a bookshelf
+    kit.prop("houseplant_1", (-4.75, 2.7, 0), height=0.8, rot=20)
+    kit.prop("stool", (-10.7, -2.2, 0), rot=15, tint="#c9b08a")
+    kit.prop("bookshelf", (-8.2, SHOP_Y1 - 0.25, 0), height=1.9, rot=180, tint="#b89a74")
     # lights
     ctx["lights"] = {}
     L = kit.light("sun", "SUN", (14, 8, 16), 3.2, "#ffe2a8", size=0.08)
@@ -906,14 +923,14 @@ def tag_slots(who, n_front, kind):
     rng = np.random.default_rng(sum(map(ord, who)) * 7 + 3)
     out = []
 
-    def torso(n, zlo, zhi, xr=0.82):
+    def torso(n, zlo, zhi, xr=0.82, y=-0.53):
         for _ in range(n):
-            out.append(("torso", rng.uniform(-xr, xr), -0.53, rng.uniform(zlo, zhi), rng.uniform(-0.45, 0.45), 0.0))
+            out.append(("torso", rng.uniform(-xr, xr), y, rng.uniform(zlo, zhi), rng.uniform(-0.45, 0.45), 0.0))
 
     if kind == "uncle":
         # an apron first (low front), the speckle, both shoulders, his heart (slot 30), the chest rows up to the collar
-        torso(3, 0.15, 0.9, 0.45)
-        torso(9, 0.1, 1.5, 0.8)
+        torso(3, 0.15, 0.9, 0.45, -0.6)      # 0.07 proud of the apron (no shared plane)
+        torso(9, 0.1, 1.5, 0.8, -0.6)
         for _ in range(8):
             out.append(("torso", rng.uniform(-1.0, 1.0), rng.uniform(-0.3, 0.3), 2.04, rng.uniform(-0.5, 0.5), 0.0))
         for sx in (-1, 1):
@@ -921,9 +938,16 @@ def tag_slots(who, n_front, kind):
                 out.append(("torso", sx * rng.uniform(1.0, 1.3), rng.uniform(-0.3, 0.3), 1.98 - rng.uniform(0, 0.2),
                             rng.uniform(-0.5, 0.5), 0.0))
         out.append(("torso", 0.55, -0.53, 1.45, 0.1, 0.0))
-        torso(14, 1.5, 1.95, 0.9)
-        torso(6, 1.7, 1.95, 0.9)
-        torso(8, 0.3, 1.9, 0.9)
+        torso(14, 1.5, 1.95, 0.9, -0.6)
+        torso(6, 1.7, 1.95, 0.9, -0.6)
+        torso(8, 0.3, 1.9, 0.9, -0.6)
+    elif kind == "chest":
+        # the opening man: every tag on his chest, in view. 0..4 are on him already, 5 pops on LIE, 6 on the next beat
+        for zl, xx, rl in ((0.55, -0.5, 0.2), (0.8, 0.45, -0.25), (1.05, -0.15, 0.3), (0.35, 0.3, 0.1), (1.25, -0.6, -0.15)):
+            out.append(("torso", xx, -0.53, zl, rl, 0.0))
+        out.append(("torso", 0.2, -0.56, 1.3, 0.12, 0.0))
+        out.append(("torso", -0.35, -0.56, 1.05, -0.1, 0.0))
+        torso(3, 0.3, 1.2, 0.7)
     elif kind == "lump":
         torso(22, 0.05, 1.95, 0.9)
         for part in ("arm-1", "arm1"):
@@ -1115,6 +1139,8 @@ def animate(kit, story, tl, t, ctx):
         attach_extras(kit, M, ctx, tl)
         ctx["inited"] = True
     over = {}
+    us = bool((_last(_cues(tl, "uncle_shot"), t) or {"on": False}).get("on", False))
+    ctx["backdrop"].hide_render = not us
     # --- the time of day: world and light gains, crossfaded
     cs = _cues(tl, "mode")
     cur = _last(cs, t)
@@ -1133,9 +1159,13 @@ def animate(kit, story, tl, t, ctx):
         if key == "world":
             continue
         over[key] = A.get(key, 0.0) + (Bm.get(key, 0.0) - A.get(key, 0.0)) * u
+    if us:     # about a stop less light on the opening Uncle shot (the cue ends on a cut, so there is no visible ramp)
+        for key in list(over):
+            over[key] = over[key] * 0.3
+    over["uncle key"] = 1.0 if us else 0.0
     sa, ca = A["world"]
     sb, cb = Bm["world"]
-    strength = sa + (sb - sa) * u
+    strength = (sa + (sb - sa) * u) * (0.3 if us else 1.0)
     colA, colB = kit.col(ca)[:3], kit.col(cb)[:3]
     bg = ctx["world"].node_tree.nodes["Background"]
     bg.inputs["Strength"].default_value = strength
@@ -1158,6 +1188,9 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = st != "coil"
     for ob in ctx["extras"].get("tape", []):
         ob.hide_render = st != "neck"
+    c = _last(_cues(tl, "shoes"), t) or {"on": False}
+    for ob in [ctx["shoes"]] + list(ctx["shoes"].children):
+        ob.hide_render = not c.get("on", False)
     c = _last(_cues(tl, "pincushion"), t) or {"on": False}
     for ob in [ctx["pincushion"]] + list(ctx["pincushion"].children):
         ob.hide_render = not c.get("on", False)

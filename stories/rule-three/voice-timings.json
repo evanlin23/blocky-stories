@@ -1,0 +1,1157 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Rule three is missing, and everyone in town still obeys it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.19,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.569,
+     1.086
+    ],
+    [
+     1.155,
+     1.526
+    ],
+    [
+     1.526,
+     1.862
+    ],
+    [
+     1.862,
+     2.655
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Don't ask who tore it. Not in this town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.914
+    ],
+    [
+     0.983,
+     1.879
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Ask the cook, he turns the radio up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.19,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.19,
+     0.586
+    ],
+    [
+     0.612,
+     0.905
+    ],
+    [
+     0.905,
+     1.638
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Ask the mailman, he crosses the street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.19,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.19,
+     0.741
+    ],
+    [
+     0.768,
+     1.164
+    ],
+    [
+     1.164,
+     1.724
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Even the parrot just says, four.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     0.931
+    ],
+    [
+     0.974,
+     1.483
+    ]
+   ]
+  },
+  "L06": {
+   "text": "If anyone does ask, the whole town turns to face the hall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.828,
+   "onset": 0.155,
+   "end": 2.638,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.966
+    ],
+    [
+     1.034,
+     1.517
+    ],
+    [
+     1.517,
+     2.052
+    ],
+    [
+     2.052,
+     2.638
+    ]
+   ]
+  },
+  "L07": {
+   "text": "I keep this town's rulebook.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.802
+    ],
+    [
+     0.802,
+     1.379
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Every night at nine, I stamp one new rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.897
+    ],
+    [
+     0.966,
+     1.328
+    ],
+    [
+     1.328,
+     2.121
+    ]
+   ]
+  },
+  "L09": {
+   "text": "People drop their rules through the door, and I pick one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.155,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     0.948
+    ],
+    [
+     0.948,
+     1.414
+    ],
+    [
+     1.466,
+     1.638
+    ],
+    [
+     1.638,
+     2.293
+    ]
+   ]
+  },
+  "L10": {
+   "text": "By morning, everyone follows it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.603,
+     1.603
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Last night, it was no whistling on the bridge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     0.741
+    ],
+    [
+     0.741,
+     1.215
+    ],
+    [
+     1.215,
+     1.897
+    ]
+   ]
+  },
+  "L12": {
+   "text": "This morning, a jogger stops mid-whistle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     1.199
+    ],
+    [
+     1.199,
+     1.862
+    ]
+   ]
+  },
+  "L13": {
+   "text": "In fourteen years, I've never missed a night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.914,
+     1.439
+    ],
+    [
+     1.439,
+     1.966
+    ]
+   ]
+  },
+  "L14": {
+   "text": "My little brother, Milo, says that's why I miss everything else.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     1.017
+    ],
+    [
+     1.103,
+     1.612
+    ],
+    [
+     1.612,
+     1.845
+    ],
+    [
+     1.845,
+     2.603
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Like Mom's birthday. Fourteen in a row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ],
+    [
+     1.077,
+     1.474
+    ],
+    [
+     1.474,
+     2.0
+    ]
+   ]
+  },
+  "L16": {
+   "text": "This year, Milo says come for once,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.483,
+     0.966
+    ],
+    [
+     0.966,
+     1.707
+    ]
+   ]
+  },
+  "L17": {
+   "text": "or he'll stand up at the party and ask.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.681
+    ],
+    [
+     0.681,
+     1.043
+    ],
+    [
+     1.043,
+     1.603
+    ]
+   ]
+  },
+  "L18": {
+   "text": "I tell him I've got a rule to stamp.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.698
+    ],
+    [
+     0.698,
+     0.983
+    ],
+    [
+     0.983,
+     1.603
+    ]
+   ]
+  },
+  "L19": {
+   "text": "He doesn't talk to me all week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.759
+    ],
+    [
+     0.759,
+     1.345
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Friday, a slip comes through the slot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.483,
+     0.983
+    ],
+    [
+     0.983,
+     1.69
+    ]
+   ]
+  },
+  "L21": {
+   "text": "From Milo. Just a big three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     0.94
+    ],
+    [
+     0.94,
+     1.431
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Saturday. Half past eight. Just me and the book.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.19,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.466,
+     1.069
+    ],
+    [
+     1.121,
+     1.406
+    ],
+    [
+     1.406,
+     2.017
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Then the whole street goes quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.31,
+     0.672
+    ],
+    [
+     0.672,
+     1.397
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Out the window, everyone in town has stopped,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     1.267
+    ],
+    [
+     1.267,
+     1.879
+    ]
+   ]
+  },
+  "L25": {
+   "text": "facing the hall. Looking up at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.784,
+     1.121
+    ],
+    [
+     1.121,
+     1.586
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Even Mom, at her own party.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     0.81
+    ],
+    [
+     0.81,
+     1.5
+    ]
+   ]
+  },
+  "L27": {
+   "text": "So Milo asked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.19,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.19,
+     1.121
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Ten minutes later, he's in the doorway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.845,
+     1.043
+    ],
+    [
+     1.043,
+     1.672
+    ]
+   ]
+  },
+  "L29": {
+   "text": "He asks me to my face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.293
+    ]
+   ]
+  },
+  "L30": {
+   "text": "So I tell him. It was me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.621
+    ],
+    [
+     0.647,
+     1.276
+    ]
+   ]
+  },
+  "L31": {
+   "text": "I tore out rule three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.224
+    ]
+   ]
+  },
+  "L32": {
+   "text": "It said, if I ever miss a night,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.517,
+     0.698
+    ],
+    [
+     0.698,
+     0.992
+    ],
+    [
+     0.992,
+     1.517
+    ]
+   ]
+  },
+  "L33": {
+   "text": "the book goes to Milo, and he never gets a night off again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     1.103
+    ],
+    [
+     1.19,
+     1.345
+    ],
+    [
+     1.345,
+     1.664
+    ],
+    [
+     1.664,
+     2.052
+    ],
+    [
+     2.052,
+     2.586
+    ]
+   ]
+  },
+  "L34": {
+   "text": "A torn page still counts. I tore it so Milo would never know.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.052,
+   "onset": 0.172,
+   "end": 2.845,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.293
+    ],
+    [
+     1.362,
+     1.672
+    ],
+    [
+     1.672,
+     2.052
+    ],
+    [
+     2.052,
+     2.845
+    ]
+   ]
+  },
+  "L35": {
+   "text": "The rule about not asking? I wrote that one too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     1.103
+    ],
+    [
+     1.172,
+     1.534
+    ],
+    [
+     1.534,
+     2.155
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Milo looks at me. Then at the clock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.19,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     0.845
+    ],
+    [
+     0.914,
+     1.112
+    ],
+    [
+     1.112,
+     1.69
+    ]
+   ]
+  },
+  "L37": {
+   "text": "Rule three never said where I stamp.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.19,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.19,
+     0.586
+    ],
+    [
+     0.586,
+     0.905
+    ],
+    [
+     0.905,
+     1.638
+    ]
+   ]
+  },
+  "L38": {
+   "text": "So we carry it. Both of us. Down the hill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.638
+    ],
+    [
+     0.672,
+     1.069
+    ],
+    [
+     1.121,
+     1.845
+    ]
+   ]
+  },
+  "L39": {
+   "text": "At nine, I stamp at Mom's table.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.492,
+     0.819
+    ],
+    [
+     0.819,
+     1.655
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Tonight's rule? Milo writes it right there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.802,
+     1.293
+    ],
+    [
+     1.293,
+     1.931
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Mom gets the last slice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.19,
+     0.362
+    ],
+    [
+     0.362,
+     0.603
+    ],
+    [
+     0.603,
+     1.345
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Back home, I finally turn the page over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     0.948
+    ],
+    [
+     0.948,
+     1.138
+    ],
+    [
+     1.138,
+     1.862
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Rule four is on the back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.19,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     0.768
+    ],
+    [
+     0.768,
+     1.276
+    ]
+   ]
+  },
+  "L44": {
+   "text": "I shut it before I read a word.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.94
+    ],
+    [
+     0.94,
+     1.5
+    ]
+   ]
+  },
+  "L45": {
+   "text": "So do me a favor.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.086
+    ]
+   ]
+  }
+ }
+}

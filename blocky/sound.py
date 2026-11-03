@@ -691,6 +691,10 @@ def sfx_synth(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = No
     if kind == "sting":  # a sharp dissonant cluster: the reveal
         y = sum(_pad(synth.midi_hz(m), dur, 0.8, k) for k, m in enumerate((62, 63, 69)))
         return y * synth.decay(dur, dur * 0.4)[: len(y)]
+    if kind == "sting_mid":  # opt-in: the sting with its body at 200 Hz to 2 kHz, so a phone plays it
+        y = sum(_pad(synth.midi_hz(m), dur, 0.8, k) for k, m in enumerate((74, 75, 81, 86)))
+        y = fft_filter(y, "band", 200, 2000)
+        return y * synth.decay(dur, dur * 0.4)[: len(y)]
     if kind == "click":
         return synth.click(0.01, 2500.0, seed)
     if kind == "chime":   # ep45, opt-in: a warm swell of two bell tones, rising, for each dial's zero
@@ -1031,7 +1035,13 @@ def polish_sounds(m: Mix, tl: dict, st: dict, pol: dict, at, drops: list, dur: f
         y = amb(polish.bed_kind(st, pol), dur, 97)
         y = fft_filter(y, "low", 3800.0, order=4)
         y *= np.minimum(1, np.arange(len(y)) / (0.3 * SR)) * np.minimum(1, (len(y) - np.arange(len(y))) / (0.3 * SR))
-        m.add("bed", 0.0, to_lufs(y, pol["bed_lufs"])[:n])
+        y = to_lufs(y, pol["bed_lufs"])[:n]
+        # the bed fills the gaps in the story's own ambience; where the story has its own it sits 12 dB under
+        # (v2.1: a bed under everything crowded the voice, ep62)
+        covered = [(at(a.get("from", 0)), at(a.get("to", "end"))) for a in st.get("sound", {}).get("ambience", [])]
+        if covered:
+            y = y * envelope(len(y), covered, -12.0, 0.3, 0.3)
+        m.add("bed", 0.0, y)
 
 
 def drop_spec(d) -> dict:
@@ -1111,9 +1121,25 @@ def _mix(tl, st, vo_dir, m, voice, spans, snd, at, dur, n):
         if "bed" in m.buses:   # the polish bed only dips, so a drop is quiet, never digital silence
             m.buses["bed"] *= envelope(n, [(at(d["from"]), at(d["to"])) for d in drops], pol["bed_drop_db"],
                                        0.03, 0.4)[:, None]
-    if pol and pol["duck"]:   # the voice on top: the bed, the polish effects and the ambience duck under it
+    if pol and pol["duck"]:   # the voice on top: the bed, the polish effects, the ambience and the music duck under it
         for bus in ("bed", "polish", "amb"):
             m.duck(bus, ["voice"], depth_db=pol["duck_db"], attack=0.02, release=0.3)
+        md = pol.get("music_duck_db")
+        if md == "auto" and "music" in m.buses:   # the least extra dip under the lines (0, 2, 4 or 6 dB) that puts
+            # the voice voice_gap_db over the music and ambience together (craft metrics: 8 to 14 dB; ep62 was 6.1)
+            st_ = m.stems()
+            v = loudness(st_["voice"])
+            keep = m.buses["music"].copy()
+            for d in (0.0, 2.0, 4.0, 6.0):
+                m.buses["music"] = keep.copy()
+                if d:
+                    m.duck("music", ["voice"], depth_db=d, attack=0.03, release=0.4)
+                st_ = m.stems()
+                bed = sum((st_[k] for k in ("music", "amb") if k in st_), np.zeros_like(st_["voice"]))
+                if v - loudness(bed) >= pol.get("voice_gap_db", 10.5):
+                    break
+        elif md:   # a fixed extra dip under the lines
+            m.duck("music", ["voice"], depth_db=float(md), attack=0.03, release=0.4)
     pre = m.sum()
     out, stats = master(pre, ceiling_db=TP_CEILING)
     k = min(len(out), int(0.012 * SR))   # no click where the film (or its loop) cuts off
