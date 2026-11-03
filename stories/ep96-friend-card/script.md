@@ -3,10 +3,10 @@
 - **Slug:** `ep96-friend-card` (batch 9a, upload order 5 of 5)
 - **Pitch:** E18 in `docs/research/premise-engines.md` section 3 (rank 4, panels 8 and 6), engine 10, the double reading. Opening shape `confess` (the pitch's `count` line recast, since ep94 is this batch's count). Lane: core. Length arm: mid (60 to 90 s).
 - **Title:** My Card Says We Stop Being FRIENDS ✉️
-- **Changed from the pitch:** the emoji is an envelope instead of a heart letter, so the title can't read as a romance between me and my best friend. The pitch's rule, reveal and both plants are kept (my brother at her side for years, "it won't hurt" on the back). Added a second turn for the last 15 s: her card says the same, she worked out what it meant at eighteen, and she's known for ten years who she'd marry. Added a self-fulfilling layer: dodging her by bringing my brother everywhere is how they met.
+- **Changed from the pitch:** the emoji is an envelope instead of a heart letter, so the title can't read as a romance between me and my best friend. The pitch's rule, reveal and both plants are kept (my brother at her side for years, "it won't hurt" on the back). Added a second turn for the last 15 s: her card says the same, she worked out what it meant at eighteen and never told me. Added a self-fulfilling layer: dodging her by bringing my brother everywhere is how they met.
 - **Everyone is an adult.** The card comes at eighteen. Tonight is ten years later: I'm 28, Maya is 28, my big brother Nate is 31. No one young is on screen.
-- **Word count:** 321 spoken words in 49 lines, all `narrator`, plus one 0.6 s music drop before L34.
-- **Estimated length:** about 75 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L13 and L48 first.
+- **Word count:** 319 spoken words in 49 lines, all `narrator`, plus one 0.6 s music drop before L34.
+- **Estimated length:** about 74 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L13 and L48 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright and warm: a rooftop at golden hour and sunset, white chairs, a flower arch, string lights, a peach sky. The ten-year montage is sunny day scenes. One rainy window at L22 is still bright. No dark scene.
 - **Hold:** scripts only (batch 9a). Not built, not voiced.
 
@@ -23,7 +23,7 @@ Kept clear of ep20 (a hotel hall wedding, a photo booth, two estranged sisters, 
 **My card says my best friend and I stop being friends at 9:14 tonight, and we do: at 9:14 she marries my big brother and becomes my sister. Her card says the same, and she worked out what it meant at eighteen.**
 
 - **Engine:** the double reading (premise-engines engine 10), with a self-fulfilling side layer (engine 9). The first reading is the obvious one (we fall out), and the second is fair (the card never said we'd fight). No film's prophecy, wedding or line.
-- **Why it clicks ("oh, THAT's why"):** "it won't hurt" on the back. "We fight like siblings" (L10). Nate standing next to her at every party I dragged him to (L17 to L19). Maya avoiding my calls (she was planning a wedding). Maya trying not to laugh at me up the aisle (she knows exactly what I'm scared of). And the cards are never wrong, because the thing they predict is just a sentence that can mean two things.
+- **Why it clicks ("oh, THAT's why"):** "it won't hurt" on the back. "We fight like siblings" (L10). Nate standing next to her at every party I dragged him to (L17 to L19). Maya getting really busy (she was planning a wedding: flowers and swatches in S21). Maya trying not to laugh at me up the aisle (she knows exactly what I'm scared of). And the cards are never wrong, because the thing they predict is just a sentence that can mean two things.
 - Ten pitched, this one kept. Dropped: the card ends the friendship because she moves away (no reframe), the card means the friendship card itself burns at 9:14 (a gag), my card was swapped with my brother's (a muddle), she's been dodging me for the same card (soft, kept only as the last turn), the card means one of us forgets (crowded memory theme), the card's "friend" is my dog (a gag), we stop being friends because she becomes my boss (low stakes), we stop being friends because I marry her (romance for the narrator, the owner's "misreadable romance"), the card ends a friendship that was fake all along (sad), every card in town says "it won't hurt" (no picture).
 - Checked against "Claimed big ideas" and every twist: not forgotten, not a stand-in, not a misread marker on a body (ep38, ep58), not time. Shape `double-reading`.
 - **The rule is the clue:** "stop being friends" first reads as a breakup. After L41 it's a promotion: friend to sister. After L49 it's something Maya makes me say out loud every year, laughing.
@@ -55,7 +55,7 @@ Kept clear of ep20 (a hotel hall wedding, a photo booth, two estranged sisters, 
 **L41: "Now she's my SISTER."** With L40 before it. The card was right, and it's the best news.
 
 ## Clarity test (section 5, cold, two sentences)
-A man's card, given to everyone at eighteen, says he and his best friend Maya stop being friends at 9:14 tonight, and at 9:14 she marries his big brother, so she's his sister now. Her card said the same, and she worked it out at eighteen and has known for ten years she'd marry his brother.
+A man's card, given to everyone at eighteen, says he and his best friend Maya stop being friends at 9:14 tonight, and at 9:14 she marries his big brother, so she's his sister now. Her card said the same, she worked out what it meant at eighteen, and she never told him.
 
 ## The opening recipe (playbook v1), point by point
 1. Line 1 is a confession of a threat to me, tonight: 12 words, about 2.6 s.
@@ -107,51 +107,51 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S03a, S03b | L03 | 4.2 | (a) A mail slot dropping a small sealed card onto a hall floor. (b) Hands at the end of sleeves opening one. |
 | S04 | L04 | 5.8 | The card's face, close: a time and a line of glyphs. |
 | S05 | L05 | 7.6 | Dad and Mr. Reyes glaring at each other across one empty parking space between their two cars. |
-| S06 | L06 | 9.2 | The two of them watering their lawns on either side of a fence, backs to each other. |
-| S07 | L07 | 11.2 | An airport gate with a big 9 over it, Mrs. Abbott waving her best friend through. |
-| S08 | L08 | 12.6 | My card again, close on its glyph name. |
-| S09 | L09 | 13.4 | Maya (28, a denim jacket, dark curls in a scrunchie) on a curb next to me, both grown, eating fries, `laugh`. |
-| S10 | L10 | 15.0 | Maya and me tugging at the last fry, `annoyed`, then both laughing. |
-| S11 | L11 | 16.4 | The card inset close: 9:14 and 6/12. |
-| S12a, S12b | L12 | 17.6 | (a) The card flipping over in my fingers. (b) Close on a line of tiny glyphs on the back. |
-| S13 | L13 | 20.0 | Me `scared`, the card held up. |
-| S14 | L14 | 21.0 | A wall calendar flipping its pages, every June 12 crossed out with a big X (no words). |
-| S15 | L15 | 22.6 | Maya picking a terrible movie, me nodding with a `forced smile`. |
-| S16a, S16b | L16 | 24.2 | (a) Me texting under a table at a diner, `sneaky`. (b) The diner door opening. |
-| S17 | L17 | 26.4 | My big brother Nate (31, taller, a short beard, a green cardigan) at the door, me shoving him through it. |
-| S18a, S18b | L18 | 28.2 | (a) A birthday party, Nate beside Maya. (b) Maya drumming in a garage, Nate front row, clapping. |
-| S19 | L19 | 29.4 | Three quick inserts: Nate next to Maya at a bowling lane, a beach, a moving van, `smile`. |
-| S20 | L20 | 31.2 | Maya and Nate on a park bench under one umbrella, me in the background holding my own, `stunned`. |
-| S21 | L21 | 32.6 | My phone ringing out, a call glyph on the screen. |
-| S22 | L22 | 34.2 | Me `worried`, the card in my hand, rain on a window behind me. Cover frame. |
-| S23 | L23 | 35.4 | The card inset close; my watch at 9:00. Sunset. |
-| S24a, S24b | L24 | 36.3 | (a) The rooftop: rows of white chairs, a flower arch, string lights, water towers on the skyline. (b) Nate and me at the arch in suits, Nate `nervous`. |
-| S25 | L25 | 38.6 | Guests standing as the music starts. |
-| S26 | L26 | 39.3 | Me straightening my tie, `queasy`. |
-| S27 | L27 | 40.3 | Maya in a wedding dress walking up the aisle on her dad's arm. |
-| S28 | L28 | 42.3 | Maya biting her lip, `grin`, eyes on me. |
-| S29 | L29 | 43.9 | My watch: 9:12. The inset ring nearly full. |
-| S30 | L30 | 44.3 | Maya at the arch, close. |
-| S31a, S31b | L31 | 46.3 | (a) Me, close, `sweating`. (b) The guests' faces, blurred, all looking at the arch. |
-| S32 | L32 | 48.5 | My watch: 9:13. |
-| S33 | L33 | 48.9 | My hand at the end of my sleeve holding the ring box, trembling. |
-| (drop) | | 49.8 | 0.6 s: My watch face close, the second hand sweeping toward 9:14, string lights soft behind. |
-| S34 | L34 | 50.4 | My watch: 9:14. The inset ring closes. |
-| S35 | L35 | 50.8 | The officiant, arms wide, Maya and Nate facing each other. |
-| S36 | L36 | 52.0 | Guests cheering, petals in the air. |
-| S37 | L37 | 52.6 | The three of us in a hug under the arch. |
-| S38 | L38 | 54.4 | Maya, close, `grin`. |
-| S39 | L39 | 55.3 | The card in my hand under the string lights. |
-| S40 | L40 | 56.3 | The one reveal picture, held 1.6 s with drift: the three of us under the arch like a family photo, Nate's arm around Maya, Maya's arm around me, my watch at 9:14. |
-| S41 | L41 | 57.7 | Me, a soft laugh, `soft`. |
-| S42 | L42 | 58.7 | Maya pulling a cream card out of her bouquet. |
-| S43a, S43b | L43 | 60.1 | (a) Her card's face: 9:14. (b) Her card's back: the same tiny glyphs. |
-| S44a, S44b | L44 | 62.9 | (a) Maya `smug`, tapping her card. (b) Nate laughing behind her. |
-| S45 | L45 | 65.8 | Maya, close, eyebrows up. |
-| S46 | L46 | 67.1 | Me `stunned`, close. |
-| S47 | L47 | 68.9 | A callback to S17: me shoving Nate through the door, and Maya behind it, grinning. |
-| S48 | L48 | 70.8 | My face, `stunned`, punch in. |
-| S49a, S49b | L49 | 72.1 | (a) A year later: a backyard dinner, Maya and Nate at the table, me standing, holding up my card. (b) Push in on the card in my hand (S01's framing). Loop. |
+| S06 | L06 | 9.4 | The two of them watering their lawns on either side of a fence, backs to each other. |
+| S07 | L07 | 11.5 | An airport gate with a big 9 over it, Mrs. Abbott waving her best friend through. |
+| S08 | L08 | 13.5 | My card again, close on its glyph name. |
+| S09 | L09 | 14.2 | Maya (28, a denim jacket, dark curls in a scrunchie) on a curb next to me, both grown, eating fries, `laugh`. |
+| S10 | L10 | 15.8 | Maya and me tugging at the last fry, `annoyed`, then both laughing. |
+| S11 | L11 | 17.2 | The card inset close: 9:14 and 6/12. |
+| S12a, S12b | L12 | 18.4 | (a) The card flipping over in my fingers. (b) Close on a line of tiny glyphs on the back. |
+| S13 | L13 | 20.8 | Me `scared`, the card held up. |
+| S14 | L14 | 21.8 | A wall calendar flipping its pages, every June 12 crossed out with a big X (no words). |
+| S15 | L15 | 23.4 | Maya picking a terrible movie, me nodding with a `forced smile`. |
+| S16a, S16b | L16 | 25.0 | (a) Me texting under a table at a diner, `sneaky`. (b) The diner door opening. |
+| S17 | L17 | 27.2 | My big brother Nate (31, taller, a short beard, a green cardigan) at the door, me shoving him through it. |
+| S18a, S18b | L18 | 29.0 | (a) A birthday party, Nate beside Maya. (b) Maya drumming in a garage, Nate front row, clapping. |
+| S19 | L19 | 30.2 | Three quick inserts: Nate next to Maya at a bowling lane, a beach, a moving van, `smile`. |
+| S20 | L20 | 32.0 | Maya and Nate on a park bench under one umbrella, me in the background holding my own, `stunned`. |
+| S21 | L21 | 33.4 | Maya rushing past with an armful of flowers and fabric swatches, waving at me without stopping. |
+| S22 | L22 | 34.6 | Me `worried`, the card in my hand, rain on a window behind me. Cover frame. |
+| S23 | L23 | 35.8 | The card inset close; my watch at 9:00. Sunset. |
+| S24a, S24b | L24 | 36.8 | (a) The rooftop: rows of white chairs, a flower arch, string lights, water towers on the skyline. (b) Nate and me at the arch in suits, Nate `nervous`. |
+| S25 | L25 | 39.0 | Guests standing as the music starts. |
+| S26 | L26 | 39.7 | Me straightening my tie, `queasy`. |
+| S27 | L27 | 40.7 | Maya in a wedding dress walking up the aisle on her dad's arm. |
+| S28 | L28 | 42.7 | Maya biting her lip, `grin`, eyes on me. |
+| S29 | L29 | 44.3 | My watch: 9:12. The inset ring nearly full. |
+| S30 | L30 | 44.7 | Maya at the arch, close. |
+| S31a, S31b | L31 | 46.7 | (a) Me, close, `sweating`. (b) The guests' faces, blurred, all looking at the arch. |
+| S32 | L32 | 48.9 | My watch: 9:13. |
+| S33 | L33 | 49.3 | My hand at the end of my sleeve holding the ring box, trembling. |
+| (drop) | | 50.3 | 0.6 s: My watch face close, the second hand sweeping toward 9:14, string lights soft behind. |
+| S34 | L34 | 50.9 | My watch: 9:14. The inset ring closes. |
+| S35 | L35 | 51.2 | The officiant, arms wide, Maya and Nate facing each other. |
+| S36 | L36 | 52.4 | Guests cheering, petals in the air. |
+| S37 | L37 | 53.0 | The three of us in a hug under the arch. |
+| S38 | L38 | 54.8 | Maya, close, `grin`. |
+| S39 | L39 | 55.7 | The card in my hand under the string lights. |
+| S40 | L40 | 56.7 | The one reveal picture, held 1.6 s with drift: the three of us under the arch like a family photo, Nate's arm around Maya, Maya's arm around me, my watch at 9:14. |
+| S41 | L41 | 58.1 | Me, a soft laugh, `soft`. |
+| S42 | L42 | 59.1 | Maya pulling a cream card out of her bouquet. |
+| S43a, S43b | L43 | 60.5 | (a) Her card's face: 9:14. (b) Her card's back: the same tiny glyphs. |
+| S44a, S44b | L44 | 63.3 | (a) Maya `smug`, tapping her card. (b) Nate laughing behind her. |
+| S45 | L45 | 66.2 | Maya, close, eyebrows up. |
+| S46 | L46 | 67.6 | Me `stunned`, close. |
+| S47 | L47 | 68.7 | A callback to S17: me shoving Nate through the door, and Maya behind it, grinning. |
+| S48 | L48 | 70.3 | My face, `stunned`, punch in. |
+| S49a, S49b | L49 | 71.7 | (a) A year later: a backyard dinner, Maya and Nate at the table, me standing, holding up my card. (b) Push in on the card in my hand (S01's framing). Loop. |
 
 ## Lore connection (`stories/lore.md`)
 One plant, a plain tally: two string-light-gold strokes scratched into the brass base of the flower arch, two for an arch built for two to stand under. No extra stroke, no Keeper, no thread touched. Seen in S24a under L24 ("I'm on a ROOFTOP / in a suit, / next to Nate."), low at the arch's foot, held 1.2 s, never narrated.
@@ -163,9 +163,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L02: At nine-FOURTEEN. / The cards are never WRONG.
 - L03: Everybody here / gets one card / at EIGHTEEN.
 - L04: It tells you / how your closest friendship ENDS.
-- L05: My dad's said, / over a parking SPOT.
+- L05: My dad's card said, / over a parking SPOT.
 - L06: He and Mr. REYES / haven't spoken / in thirty years.
-- L07: Mrs. ABBOTT'S said, / at gate NINE.
+- L07: Our neighbor Mrs. ABBOTT'S / card said, / at gate NINE.
 - L08: Mine says / MAYA.
 - L09: My best friend / since we were SIX.
 - L10: Everybody says / we fight like SIBLINGS.
@@ -179,7 +179,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L18: Her birthdays. / Her terrible BAND.
 - L19: Nate stood next to her / at every ONE.
 - L20: Two years ago, / they started DATING.
-- L21: And Maya / stopped picking up / my CALLS.
+- L21: And Maya / got really BUSY.
 - L22: I thought, / here it COMES.
 - L23: Tonight / is June TWELFTH.
 - L24: I'm on a ROOFTOP / in a suit, / next to Nate.
@@ -205,8 +205,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L43: It said the same TIME, / and the same tiny words / on the BACK.
 - L44: She said / there's only one way / to stop being friends / that doesn't HURT.
 - L45: She figured it out / at EIGHTEEN.
-- L46: She's known / for TEN years / who she'd marry.
-- L47: She just let me / bring Nate to EVERYTHING.
+- L46: She just never TOLD me.
+- L47: She let me / bring Nate to EVERYTHING.
 - L48: She wanted / to see my FACE.
 - L49: Every June twelfth, / she makes me / read mine out LOUD.
 

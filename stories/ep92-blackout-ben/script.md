@@ -4,8 +4,8 @@
 - **Pitch:** E16 in `docs/research/premise-engines.md` section 3 (rank 1, panels 9 and 8), engine 18, parallel versions. Opening shape `if` (the pitch's `must` line recast). Lane: core. Length arm: long (110 to 150 s).
 - **Title:** After The Blackout, Ben Was NICE 🔦
 - **Changed from the pitch:** the pitch's crossing (every lit window opens onto another version of the street, and people walk home to the wrong one) is too close to one well-known film's lit-house-down-the-road mechanic, and so is its "I walked into the wrong house" ending. Here nobody walks anywhere: in a blackout, anyone **alone in the dark** can swap with another version of themselves, right where they sit. The pitch's reveal (Ben is kind because he isn't mine) is kept as the first reading, then turned: Ben never swapped. I did. The two tells (the watch on the other wrist, the dog's almost-name) are kept.
-- **Word count:** 496 spoken words in 67 lines, all `narrator`, plus one 0.6 s music drop before L36.
-- **Estimated length:** about 114 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L29 and L30 first. If it lands under 110 s, nothing is added (the long arm's floor is a guide, not a pad).
+- **Word count:** 502 spoken words in 67 lines, all `narrator`, plus one 0.6 s music drop before L36.
+- **Estimated length:** about 115 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L29 and L30 first. If it lands under 110 s, nothing is added (the long arm's floor is a guide, not a pad).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Daytime is bright and saturated: a sunny suburban living room, mustard couch in my version, teal couch in this one. The blackout scenes are deep cobalt blue lit by warm flashlight beams and moonlight through the window, always bright enough to read both faces. Every power cut and return is a 0.4 s ramp, never a snap.
 - **Hold:** scripts only (batch 9a). Not built, not voiced.
 
@@ -160,36 +160,36 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | (drop) | | 60.3 | 0.6 s: Ben in my doorway, the beam steady on my face, nothing moving but the dust in the light. |
 | S36 | L36 | 60.9 | Ben, close, `blank`, the beam not moving. |
 | S37 | L37 | 62.9 | Me, close, `scared`. |
-| S38a, S38b | L38 | 63.7 | (a) The flashlight clicks off (0.4 s ramp). (b) The empty doorway, his footsteps going down the hall. |
-| S39a, S39b | L39 | 65.9 | (a) Me in the dark living room with my own flashlight. (b) My beam landing on the mantel photo. |
-| S40 | L40 | 68.3 | The photo, close: Ben and me in a red canoe on a lake, arms over each other's shoulders, both laughing. |
-| S41 | L41 | 69.9 | Me `stunned`, the beam trembling a little. |
-| S42a, S42b | L42 | 71.3 | (a) A callback to S15: me alone on my bed in the dark, door shut. (b) The check inset, close: the yellow question mark slides from Ben's icon onto mine. |
-| S43 | L43 | 73.5 | Me, close, `stunned`. |
-| S44 | L44 | 74.1 | The one reveal picture, a split held 1.6 s with drift: the living room I grew up in (mustard couch, bare mantel) on the left, and this one (teal couch, canoe photo) on the right. |
-| S45a, S45b | L45 | 75.3 | (a) The hall wall, lit by my beam: photo after photo of Ben and me as grown-ups, a fishing trip, a road trip, a ballgame, always together. (b) Push along the photos to one of us both laughing at a campfire. |
-| S46a, S46b | L46 | 78.1 | (a) Three quick callbacks: the sandwich, "how was your day", the doorway beam. (b) Ben's face in the doorway beam (callback to S33). |
-| S47a, S47b | L47 | 80.3 | (a) Ben alone on the teal couch at night, staring at my bedroom door, `sad`. (b) Me at my window, the dark street outside, every house the same. |
-| S48a, S48b | L48 | 82.5 | (a) Daylight: Ben and me on the porch steps, Ben `sad`, looking at his shoes. (b) His hand at the end of his sleeve turning a flashlight over on his knee. |
-| S49 | L49 | 85.0 | An open kitchen drawer full of batteries. |
-| S50 | L50 | 86.2 | Me on the porch, `thinking`, Pickle's head on my knee. |
-| S51 | L51 | 87.1 | The pile of crusts on a plate, close. |
-| S52 | L52 | 88.9 | Big blue-grey clouds rolling over the street, rain starting, still bright enough to read. |
-| S53 | L53 | 90.3 | The living room lamp ramps off. Cobalt. |
-| S54a, S54b | L54 | 91.5 | (a) The hall, Ben's beam ahead of us. (b) The two of us at my door. |
-| S55 | L55 | 93.5 | Ben, close, `soft`, in his own beam. |
-| S56a, S56b | L56 | 95.3 | (a) My door closing, the strip of light under it, then the strip going away. (b) Me on my bed in the dark, flashlight off, eyes shut. |
-| S57 | L57 | 98.0 | My bedside clock: 9:41 turning to 9:42. A slow punch-in. |
-| S58 | L58 | 99.4 | My lamp ramps on. |
-| S59 | L59 | 100.5 | Ben in my doorway in daylight-warm lamp light, `unsure`. Behind him, down the hall, the mustard couch. |
-| S60 | L60 | 101.9 | Close on his left wrist and the watch. |
-| S61 | L61 | 103.1 | Me, `relief`. The check inset: every icon has a green tick. |
-| S62 | L62 | 103.5 | Ben, close, `unsure`. |
-| S63a, S63b | L63 | 105.3 | (a) Ben with an awkward smile, rubbing the back of his neck. (b) Me, `stunned`. |
-| S64 | L64 | 107.7 | Ben `sheepish`, not looking at me. |
-| S65 | L65 | 109.3 | Me holding a plate out to him. |
-| S66 | L66 | 110.7 | Top-down on the plate, the crusts in a pile (S02's framing). |
-| S67a, S67b | L67 | 111.9 | (a) Ben looking from the sandwich to me, `suspicious`. The check inset: a yellow question mark pops onto my icon. (b) Push in on Ben's face to S01's framing. Loop. |
+| S38a, S38b | L38 | 64.7 | (a) The flashlight clicks off (0.4 s ramp). (b) The empty doorway, his footsteps going down the hall. |
+| S39a, S39b | L39 | 66.9 | (a) Me in the dark living room with my own flashlight. (b) My beam landing on the mantel photo. |
+| S40 | L40 | 69.3 | The photo, close: Ben and me in a red canoe on a lake, arms over each other's shoulders, both laughing. |
+| S41 | L41 | 70.9 | Me `stunned`, the beam trembling a little. |
+| S42a, S42b | L42 | 72.3 | (a) A callback to S15: me alone on my bed in the dark, door shut. (b) The check inset, close: the yellow question mark slides from Ben's icon onto mine. |
+| S43 | L43 | 74.6 | Me, close, `stunned`. |
+| S44 | L44 | 75.1 | The one reveal picture, a split held 1.6 s with drift: the living room I grew up in (mustard couch, bare mantel) on the left, and this one (teal couch, canoe photo) on the right. |
+| S45a, S45b | L45 | 76.3 | (a) The hall wall, lit by my beam: photo after photo of Ben and me as grown-ups, a fishing trip, a road trip, a ballgame, always together. (b) Push along the photos to one of us both laughing at a campfire. |
+| S46a, S46b | L46 | 79.1 | (a) Three quick callbacks: the sandwich, "how was your day", the doorway beam. (b) Ben's face in the doorway beam (callback to S33). |
+| S47a, S47b | L47 | 81.4 | (a) Ben alone on the teal couch at night, staring at my bedroom door, `sad`. (b) Me at my window, the dark street outside, every house the same. |
+| S48a, S48b | L48 | 83.6 | (a) Daylight: Ben and me on the porch steps, Ben `sad`, looking at his shoes. (b) His hand at the end of his sleeve turning a flashlight over on his knee. |
+| S49 | L49 | 86.0 | An open kitchen drawer full of batteries. |
+| S50 | L50 | 87.2 | Me on the porch, `thinking`, Pickle's head on my knee. |
+| S51 | L51 | 88.2 | The pile of crusts on a plate, close. |
+| S52 | L52 | 90.0 | Big blue-grey clouds rolling over the street, rain starting, still bright enough to read. |
+| S53 | L53 | 91.4 | The living room lamp ramps off. Cobalt. |
+| S54a, S54b | L54 | 92.6 | (a) The hall, Ben's beam ahead of us. (b) The two of us at my door. |
+| S55 | L55 | 94.6 | Ben, close, `soft`, in his own beam. |
+| S56a, S56b | L56 | 96.4 | (a) My door closing, the strip of light under it, then the strip going away. (b) Me on my bed in the dark, flashlight off, eyes shut. |
+| S57 | L57 | 99.0 | My bedside clock: 9:41 turning to 9:42. A slow punch-in. |
+| S58 | L58 | 100.4 | My lamp ramps on. |
+| S59 | L59 | 101.6 | Ben in my doorway in daylight-warm lamp light, `unsure`. Behind him, down the hall, the mustard couch. |
+| S60 | L60 | 103.0 | Close on his left wrist and the watch. |
+| S61 | L61 | 104.2 | Me, `relief`. The check inset: every icon has a green tick. |
+| S62 | L62 | 104.7 | Ben, close, `unsure`. |
+| S63a, S63b | L63 | 106.5 | (a) Ben with an awkward smile, rubbing the back of his neck. (b) Me, `stunned`. |
+| S64 | L64 | 108.9 | Ben `sheepish`, not looking at me. |
+| S65 | L65 | 110.5 | Me holding a plate out to him. |
+| S66 | L66 | 111.9 | Top-down on the plate, the crusts in a pile (S02's framing). |
+| S67a, S67b | L67 | 113.1 | (a) Ben looking from the sandwich to me, `suspicious`. The check inset: a yellow question mark pops onto my icon. (b) Push in on Ben's face to S01's framing. Loop. |
 
 ## Lore connection (`stories/lore.md`)
 One plant, using the canon's "pets count": a plain tally of four flashlight-cream strokes scratched into my bedroom door frame at knee height, four for a house built for four (Mom, Ben, me and Pickle; a pet counts in a home's count). The same four strokes are in both versions of the house. No extra stroke, no Keeper. Seen in S54b under L54 ("Ben walked me / to my ROOM / with his flashlight."), lit by Ben's beam, held 1.2 s, never narrated.
@@ -234,7 +234,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L35: He said / he was making sure / I was still HERE.
 - (music drop, 0.6 s)
 - L36: Then he asked me / what our dog's NAME was.
-- L37: I said, / PICKLE.
+- L37: I said, / PICKLE. / In his house, / she's NOODLE.
 - L38: He switched off / the flashlight / and went back to BED.
 - L39: That's when / I really looked / at the photo / on the MANTEL.
 - L40: Ben and me / in a CANOE, / LAUGHING.
@@ -258,7 +258,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L58: When the lights / came BACK,
 - L59: my brother / was in my DOORWAY.
 - L60: Watch on his LEFT wrist.
-- L61: MINE.
+- L61: My BEN.
 - L62: He looked at me / for a long TIME.
 - L63: Then he said / that all week / I'd been NICE to him.
 - L64: He said / he kind of LIKED it.

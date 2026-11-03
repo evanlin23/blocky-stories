@@ -6,8 +6,8 @@
 - **Panel note applied:** the reveal is said plainly in one line each ("I'm not a PERSON." "I'm the MAZE.") over one overhead picture: the whole maze in moonlight, its paths a huge face, the farmer's small light in one eye. Panel B called the pitch "cool but confusing", so everything else is kept simple: one farmer, one night, one goodbye.
 - **Changed from the pitch:** the pitch's maze kept its best friend in because "it doesn't want her to leave", which reads as possessive. Here she walks in two minutes before lights out with a quilt and two cups, on purpose, to spend her last night with it, and at dawn it opens a path straight to her truck. The pitch's two plants are kept (the narrator never says "I walked", and always knows where everyone is).
 - **Its own picture and mechanism (the third "narrator is the X", after floor-thirteen and mirror-maze):** floor-thirteen's narrator is a forgotten person on a shelf, mirror-maze's is a reflection left in glass. This narrator is a place: a cornfield that talks people out of itself, and the proof is a face you can only see from the sky. No glass, no lift, no reflection, no being forgotten.
-- **Word count:** 343 spoken words in 51 lines, all `narrator`, plus one 0.6 s music drop before L28.
-- **Estimated length:** about 80 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L10 and L44 first.
+- **Word count:** 342 spoken words in 51 lines, all `narrator`, plus one 0.6 s music drop before L28.
+- **Estimated length:** about 79 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L10 and L44 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright gold corn under a blue sky and an orange sunset for the first half, a green summer field for the June beats. The one night stretch (L20 to L45) is lit by twelve warm lanterns, then by a big bright moon in silver-blue, never too dark to read June's face. Gold dawn at the end. Lanterns fade over 0.4 s or more, never snap.
 - **Hold:** scripts only (batch 9a). Not built, not voiced.
 
@@ -24,7 +24,7 @@ Kept clear of mirror-maze (a fairground mirror maze, a reflection narrator, a fr
 **The voice telling you this story, the one that tells lost people where to turn, is the corn maze itself, and on the farmer's last night before she moves away, she walks in at lights out on purpose to stay the night with her best friend.**
 
 - **Engine:** the unreliable narrator, "who is speaking" (premise-engines engine 16), our own speaker: a field. No film's or book's narrator, place or line.
-- **Why it clicks ("oh, THAT's why"):** "our maze" was the maze talking about itself and June. "I know every turn" and "I always know where everyone is" (L11, L12) are true of a maze. The voice in the corn that gets you out (L05) was the narrator the whole time. "She talks the whole time" (L15) is June talking to it, and "so you can see me off" (L18) is why she cut a face this year. She turns left when the voice says right because she isn't lost. She came to stay.
+- **Why it clicks ("oh, THAT's why"):** "our maze" was the maze talking about itself and June. "I know every turn" and "I always know where everyone is" (L11, L12) are true of a maze. The voice in the corn that gets you out (L05) was the narrator the whole time. "She talks the whole time" (L15) is June talking to it, and "so you can wave goodbye" (L18) is why she cut a face this year. She turns left when the voice says right because she isn't lost. She came to stay.
 - Ten pitched, this one kept. Dropped: the maze keeps her because it won't let her go (possessive, the pitch's own), the narrator is the scarecrow (a "narrator is the X" with a body, too close to the old reveals), the maze is a Keeper standing in a gap (a stand-in), the voice is June's late dad (a sad family reveal), the maze moves its walls to trap visitors (a chase, a live genre beat), the paths spell her name (letters on screen), June is the one who's lost every night (soft), the maze is a giant lying in the field (ep82's disguise lane), the voice is the viewer's own (a gimmick), the maze is a model of the town (a live hit's premise).
 - Checked against "Claimed big ideas" and every twist: not forgotten, not a reflection left behind, not a stand-in, not a disguise, not time. Shape `maze-narrator`: the place is telling the story.
 - **The rule is the clue:** "you stay all night" first reads as a threat. After L40, staying is what June came for, and after L51 it's a promise.
@@ -47,7 +47,7 @@ Kept clear of mirror-maze (a fairground mirror maze, a reflection narrator, a fr
   1. L11, L12: "I know every TURN in here." "I always know / where EVERYONE is."
   2. The narrator never says "I walked" or "I went". It only says, knows, learned, gave and opened.
   3. L15, L16: she talks the whole time she cuts, with nobody else there, and leaves a second cup in the straw (S16).
-  4. L17, S17: this year she cut a face, "so you can see me off", and we only see part of it until L34.
+  4. L17, S17: this year she cut a face, "so you can wave goodbye", and we only see part of it until L34.
   5. L21: she walks in with a blanket and a thermos, two minutes before lights out.
 - **Ending shape:** a goodbye that's also a seed, and a loop.
 - **Warmth:** a best friend's goodbye. Twenty summers of one-way talking, one night of talking back, and she takes the maze with her.
@@ -136,40 +136,40 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S16 | L16 | 27.1 | June resting against the corn with a thermos, `content`, a second cup set in the straw beside her. |
 | S17 | L17 | 28.1 | From the farmhouse porch roof, far off: one long curved path in the corn, like the edge of a smile (only a part of it). |
 | S18 | L18 | 29.4 | June patting a stalk, `soft`. |
-| S19a, S19b | L19 | 31.3 | (a) The farmhouse window: moving boxes stacked inside. (b) June's pickup by the barn, loaded with boxes. |
-| S20 | L20 | 33.1 | Night: the maze entrance, all twelve lanterns lit, June walking in. The entrance lantern pole in the foreground. |
-| S21 | L21 | 34.7 | Close on June's arms: a folded patchwork quilt and a thermos. |
-| S22 | L22 | 36.0 | Lanterns down a long path going out one by one, each a 0.4 s fade. The inset drops toward six. |
-| S23a, S23b | L23 | 37.2 | (a) June at a fork, the stalks on the right bowing apart to open the way. (b) Down the right path, the exit's hay bales in the last lantern light. |
-| S24 | L24 | 39.0 | June turning left, `calm`. |
-| S25 | L25 | 39.8 | The corn on the right rustling hard, stalks bending. |
-| S26 | L26 | 40.4 | June turning left again, flashlight on. The inset: two lit. |
-| S27 | L27 | 41.1 | The last lantern fading over 0.6 s. The inset: none lit. Bright silver-blue moonlight takes over. |
-| (drop) | | 42.7 | 0.6 s: The dark maze path in bright moonlight, June's flashlight the only warm point, every stalk still. |
-| S28 | L28 | 43.3 | Behind June, the stalks bowing in over the path. |
-| S29 | L29 | 44.7 | The path behind her now a solid wall of corn. |
-| S30a, S30b | L30 | 46.7 | (a) June sitting on her quilt in the moonlight, pouring. (b) Two cups in the straw, steam rising. |
-| S31 | L31 | 49.2 | June, close, `smile`, looking straight into the corn, toward camera. |
-| S32 | L32 | 50.6 | The stalks in front of her, very still. |
-| S33 | L33 | 51.1 | The camera rising straight up out of the corn. |
-| S34 | L34 | 52.1 | The one reveal picture, overhead, held 1.8 s with drift: the whole maze in bright moonlight, its paths a huge face, two round eyes and a wide smile, June's quilt and flashlight a small warm dot in the middle of one eye. Cover frame. |
-| S35a, S35b | L35 | 52.9 | (a) A callback to S14a: June mowing, chattering. (b) June's hand at the end of her sleeve on a stalk, mid-story. |
-| S36 | L36 | 55.1 | The corn rustling alone at dusk, no one in it. |
-| S37 | L37 | 56.5 | The stalks by June's ear leaning in. |
-| S38 | L38 | 57.9 | A callback to S05b: the man listening, then the corn beside him. |
-| S39 | L39 | 59.7 | June on the quilt, `content`. |
-| S40 | L40 | 61.3 | Close on the two cups. |
-| S41a, S41b | L41 | 62.5 | (a) The stalks parting into a new path, June standing up with her flashlight. (b) June following the new path, `curious`. |
-| S42 | L42 | 64.7 | Overhead: the paths shifting into a star, June's light walking its points. |
-| S43 | L43 | 66.3 | Overhead: a tractor shape, her light in its seat. |
-| S44 | L44 | 67.0 | Overhead: a big pig. Low: June `laugh`. |
-| S45 | L45 | 68.4 | Low: June walking, her hand at the end of her sleeve brushing the stalks. |
-| S46a, S46b | L46 | 70.2 | (a) Gold dawn: a straight path opening through the corn. (b) June stepping out beside her pickup. |
-| S47 | L47 | 72.5 | June twisting kernels off a cob into her overall pockets. |
-| S48 | L48 | 74.1 | The pickup driving off down the lane, the maze behind it. |
-| S49 | L49 | 75.0 | A small new field beside a different house, a curving line of green shoots. |
-| S50 | L50 | 76.6 | Lanterns on poles at a new little maze at dusk, fading. |
-| S51 | L51 | 77.8 | Push in on the new maze's entrance lantern (S01's framing). Loop. |
+| S19a, S19b | L19 | 31.0 | (a) The farmhouse window: moving boxes stacked inside. (b) June's pickup by the barn, loaded with boxes. |
+| S20 | L20 | 32.9 | Night: the maze entrance, all twelve lanterns lit, June walking in. The entrance lantern pole in the foreground. |
+| S21 | L21 | 34.4 | Close on June's arms: a folded patchwork quilt and a thermos. |
+| S22 | L22 | 35.8 | Lanterns down a long path going out one by one, each a 0.4 s fade. The inset drops toward six. |
+| S23a, S23b | L23 | 37.0 | (a) June at a fork, the stalks on the right bowing apart to open the way. (b) Down the right path, the exit's hay bales in the last lantern light. |
+| S24 | L24 | 38.8 | June turning left, `calm`. |
+| S25 | L25 | 39.6 | The corn on the right rustling hard, stalks bending. |
+| S26 | L26 | 40.2 | June turning left again, flashlight on. The inset: two lit. |
+| S27 | L27 | 40.9 | The last lantern fading over 0.6 s. The inset: none lit. Bright silver-blue moonlight takes over. |
+| (drop) | | 42.5 | 0.6 s: The dark maze path in bright moonlight, June's flashlight the only warm point, every stalk still. |
+| S28 | L28 | 43.1 | Behind June, the stalks bowing in over the path. |
+| S29 | L29 | 44.5 | The path behind her now a solid wall of corn. |
+| S30a, S30b | L30 | 46.5 | (a) June sitting on her quilt in the moonlight, pouring. (b) Two cups in the straw, steam rising. |
+| S31 | L31 | 49.0 | June, close, `smile`, looking straight into the corn, toward camera. |
+| S32 | L32 | 50.4 | The stalks in front of her, very still. |
+| S33 | L33 | 50.9 | The camera rising straight up out of the corn. |
+| S34 | L34 | 51.9 | The one reveal picture, overhead, held 1.8 s with drift: the whole maze in bright moonlight, its paths a huge face, two round eyes and a wide smile, June's quilt and flashlight a small warm dot in the middle of one eye. Cover frame. |
+| S35a, S35b | L35 | 52.7 | (a) A callback to S14a: June mowing, chattering. (b) June's hand at the end of her sleeve on a stalk, mid-story. |
+| S36 | L36 | 54.9 | The corn rustling alone at dusk, no one in it. |
+| S37 | L37 | 56.3 | The stalks by June's ear leaning in. |
+| S38 | L38 | 57.7 | A callback to S05b: the man listening, then the corn beside him. |
+| S39 | L39 | 59.5 | June on the quilt, `content`. |
+| S40 | L40 | 61.1 | Close on the two cups. |
+| S41a, S41b | L41 | 62.3 | (a) The stalks parting into a new path, June standing up with her flashlight. (b) June following the new path, `curious`. |
+| S42 | L42 | 64.5 | Overhead: the paths shifting into a star, June's light walking its points. |
+| S43 | L43 | 66.1 | Overhead: a tractor shape, her light in its seat. |
+| S44 | L44 | 66.8 | Overhead: a big pig. Low: June `laugh`. |
+| S45 | L45 | 68.2 | Low: June walking, her hand at the end of her sleeve brushing the stalks. |
+| S46a, S46b | L46 | 70.0 | (a) Gold dawn: a straight path opening through the corn. (b) June stepping out beside her pickup. |
+| S47 | L47 | 72.3 | June twisting kernels off a cob into her overall pockets. |
+| S48 | L48 | 73.9 | The pickup driving off down the lane, the maze behind it. |
+| S49 | L49 | 74.8 | A small new field beside a different house, a curving line of green shoots. |
+| S50 | L50 | 76.4 | Lanterns on poles at a new little maze at dusk, fading. |
+| S51 | L51 | 77.6 | Push in on the new maze's entrance lantern (S01's framing). Loop. |
 
 ## Lore connection (`stories/lore.md`)
 One plant, a plain tally: two corn-gold strokes scratched into the wooden lantern pole at the maze entrance, two for a maze built for two (one to walk it and one to tell you the way). No extra stroke, no Keeper, no thread touched. Seen in S20 under L20 ("At nine fifty-EIGHT, / June walked in ALONE,"), the pole in the foreground, held 1.2 s, never narrated.
@@ -179,7 +179,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 
 - L01: If the lanterns go out / while you're in our MAZE, / you STAY.
 - L02: All NIGHT.
-- L03: Nobody ever HAS. / Not in twenty YEARS.
+- L03: Nobody's ever STAYED. / Not in twenty YEARS.
 - L04: Because if you get LOST in here,
 - L05: a voice in the corn / tells you / where to TURN.
 - L06: Left at the SCARECROW.
@@ -194,7 +194,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L15: and she talks / the whole TIME.
 - L16: She's my best FRIEND.
 - L17: This year / she cut a FACE.
-- L18: She said, / so you can see me OFF.
+- L18: She said, / so you can wave GOODBYE.
 - L19: She sold the FARM. / Tonight's the last NIGHT.
 - L20: At nine fifty-EIGHT, / June walked in ALONE,
 - L21: with a BLANKET / and a THERMOS.

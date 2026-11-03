@@ -6,8 +6,8 @@
 - **Kept from the pitch:** line 1 word for word, the rule (cook it right and the card goes to whoever needs it most), the reveal (the card lands sixty years back in young Grandma's hands, so nobody ever invented the recipe), and both plants (the old stain is the drip I spill tonight, and "you taught me this" every Sunday).
 - **Added:** the only card that flies is the one in your hand, which is why Grandma cooks from memory and keeps hers in a tin. The step under the stain is my own habit (lemon on everything), so the soup has always tasted a little like me.
 - **Kept clear of ep89-sister-diary (batch 8):** that story is two diaries that write to each other across a hall, live, in a sister's and brother's hands. Here nothing writes by itself and nobody writes back. It's one object, a recipe card, in one kitchen, going round once through sixty years. The handwriting is only ever mine, written once, by me, on screen (L48). There's no diary, no bedroom, no ink crawling, and no second person writing.
-- **Word count:** 495 spoken words in 72 lines, all `narrator`, plus one 0.6 s music drop before L37.
-- **Estimated length:** about 114 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L26 and L35 first. If it lands under 110 s, nothing is added.
+- **Word count:** 500 spoken words in 72 lines, all `narrator`, plus one 0.6 s music drop before L37.
+- **Estimated length:** about 115 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L26 and L35 first. If it lands under 110 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright and warm all the way: Grandma's butter-yellow kitchen, robin's-egg blue cabinets, a copper pot, a bowl of lemons, low gold evening sun through the window over the sink. The town montage is a pink-gold dusk. No dark scene: the one eerie stretch (L32 to L40) keeps the kitchen lit, with the window going deep blue behind.
 - **Hold:** scripts only (batch 9a). Not built, not voiced.
 
@@ -155,40 +155,40 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | (drop) | | 60.4 | 0.6 s: Grandma's blue tin on the shelf, the steam from the pot drifting past it. |
 | S37 | L37 | 61.0 | The tin lid lifting. |
 | S38a, S38b | L38 | 62.0 | (a) Close on the old card: the boot stain glistening, fresh. (b) A bead of soup running from it. |
-| S39 | L39 | 63.8 | Grandma's hand resting on mine on the counter. |
-| S40 | L40 | 64.8 | Grandma, close, `soft`. |
-| S41 | L41 | 66.2 | Inset: 41. Me at the pot. |
-| S42 | L42 | 66.8 | Me with the spoon, steam. |
-| S43 | L43 | 68.1 | Me `thinking`, spoon in my mouth. |
-| S44 | L44 | 69.5 | The bowl of lemons on the counter, punch in. |
-| S45 | L45 | 71.3 | A lemon squeezed over the pot, one bright drop. |
-| S46 | L46 | 72.3 | Me tasting, eyes wide, `amazed`. |
-| S47 | L47 | 73.1 | Grandma tasting from my spoon, `soft`. |
-| S48a, S48b | L48 | 74.1 | (a) My card pulled out from under the magnet. (b) My hand writing a new line at the bottom. |
-| S49 | L49 | 77.1 | The fresh line of loops, close. |
-| S50a, S50b | L50 | 78.5 | (a) The spoon over the card, a drop falling. (b) The drop landing on the last line. |
-| S51 | L51 | 81.1 | The fresh stain: a little boot. The inset card gets the same stain. |
-| S52 | L52 | 82.3 | The card lifting off my palm into the air. |
-| S53a, S53b | L53 | 83.7 | (a) The card through the open window over the sink. (b) The card getting small in the dusk over the rooftops. The inset card flies off its corner, and the old yellow card slides in. |
-| S54 | L54 | 85.1 | Grandma at the window, `soft`. |
-| S55a, S55b | L55 | 86.1 | (a) The framed old photo on the wall: young Grandma at her first stove. (b) Push in: a small card in her hand and a splash in her pot. |
-| S56 | L56 | 89.5 | Push in on young Grandma's surprised face in the photo. |
-| S57 | L57 | 91.6 | The photo, close on young Grandma's pot, steam painted in. |
-| S58 | L58 | 93.6 | The old card from the tin, close, my loops. |
-| S59 | L59 | 94.7 | The old stain, dry again. |
-| S60 | L60 | 96.6 | Grandma `smirk`, holding up a lemon. |
-| S61 | L61 | 98.4 | Me, a soft laugh. |
-| S62 | L62 | 99.1 | The one reveal picture, held 1.6 s with drift: Grandma holding the old card up beside the framed photo, the same card sixty years apart, the same little boot on both. |
-| S63 | L63 | 100.3 | Push in on the card in the photo. |
-| S64 | L64 | 101.7 | Push in on the card in her hand. |
-| S65 | L65 | 102.9 | Both boot stains side by side, close. |
-| S66 | L66 | 103.9 | The camera circling the card in Grandma's hand. |
-| S67 | L67 | 105.3 | Sunday table, Grandma's spoon at her bowl. |
-| S68a, S68b | L68 | 106.2 | (a) Grandma, close, `soft`. (b) Me, `soft`. |
-| S69a, S69b | L69 | 108.2 | (a) Me at the stove, Grandma, Mom and Dad laughing at the table. (b) The tin shut on the shelf. |
-| S70 | L70 | 110.1 | The dusk sky out the window, one small card far off. |
-| S71a, S71b | L71 | 111.0 | (a) The framed photo, close. (b) The card in the photo, match-cut toward S01's framing. |
-| S72 | L72 | 113.0 | Close on the old card's loops (S01's framing). Loop. |
+| S39 | L39 | 64.9 | Grandma's hand resting on mine on the counter. |
+| S40 | L40 | 65.8 | Grandma, close, `soft`. |
+| S41 | L41 | 67.2 | Inset: 41. Me at the pot. |
+| S42 | L42 | 67.8 | Me with the spoon, steam. |
+| S43 | L43 | 69.2 | Me `thinking`, spoon in my mouth. |
+| S44 | L44 | 70.6 | The bowl of lemons on the counter, punch in. |
+| S45 | L45 | 72.4 | A lemon squeezed over the pot, one bright drop. |
+| S46 | L46 | 73.4 | Me tasting, eyes wide, `amazed`. |
+| S47 | L47 | 74.1 | Grandma tasting from my spoon, `soft`. |
+| S48a, S48b | L48 | 75.1 | (a) My card pulled out from under the magnet. (b) My hand writing a new line at the bottom. |
+| S49 | L49 | 78.1 | The fresh line of loops, close. |
+| S50a, S50b | L50 | 79.5 | (a) The spoon over the card, a drop falling. (b) The drop landing on the last line. |
+| S51 | L51 | 82.2 | The fresh stain: a little boot. The inset card gets the same stain. |
+| S52 | L52 | 83.4 | The card lifting off my palm into the air. |
+| S53a, S53b | L53 | 84.7 | (a) The card through the open window over the sink. (b) The card getting small in the dusk over the rooftops. The inset card flies off its corner, and the old yellow card slides in. |
+| S54 | L54 | 86.1 | Grandma at the window, `soft`. |
+| S55a, S55b | L55 | 87.1 | (a) The framed old photo on the wall: young Grandma at her first stove. (b) Push in: a small card in her hand and a splash in her pot. |
+| S56 | L56 | 90.6 | Push in on young Grandma's surprised face in the photo. |
+| S57 | L57 | 92.6 | The photo, close on young Grandma's pot, steam painted in. |
+| S58 | L58 | 94.6 | The old card from the tin, close, my loops. |
+| S59 | L59 | 95.8 | The old stain, dry again. |
+| S60 | L60 | 97.6 | Grandma `smirk`, holding up a lemon. |
+| S61 | L61 | 99.4 | Me, a soft laugh. |
+| S62 | L62 | 100.2 | The one reveal picture, held 1.6 s with drift: Grandma holding the old card up beside the framed photo, the same card sixty years apart, the same little boot on both. |
+| S63 | L63 | 101.3 | Push in on the card in the photo. |
+| S64 | L64 | 102.7 | Push in on the card in her hand. |
+| S65 | L65 | 103.9 | Both boot stains side by side, close. |
+| S66 | L66 | 104.9 | The camera circling the card in Grandma's hand. |
+| S67 | L67 | 106.3 | Sunday table, Grandma's spoon at her bowl. |
+| S68a, S68b | L68 | 107.3 | (a) Grandma, close, `soft`. (b) Me, `soft`. |
+| S69a, S69b | L69 | 109.3 | (a) Me at the stove, Grandma, Mom and Dad laughing at the table. (b) The tin shut on the shelf. |
+| S70 | L70 | 111.1 | The dusk sky out the window, one small card far off. |
+| S71a, S71b | L71 | 112.1 | (a) The framed photo, close. (b) The card in the photo, match-cut toward S01's framing. |
+| S72 | L72 | 114.1 | Close on the old card's loops (S01's framing). Loop. |
 
 ## Lore connection (`stories/lore.md`)
 One plant, a plain tally: two copper strokes scratched into the inside of the tin's lid, two for a recipe kept by two (Grandma and me). No extra stroke, no Keeper, no thread touched. Seen in S37 under L37 ("I opened Grandma's TIN."), as the lid lifts, held 1.2 s, never narrated.
@@ -234,7 +234,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L36: Try FORTY.
 - (music drop, 0.6 s)
 - L37: I opened Grandma's TIN.
-- L38: The sixty-year-old STAIN / on her card / was WET.
+- L38: The sixty-year-old STAIN / on her card / was WET, / like it was just SPILLED.
 - L39: Grandma took my HAND.
 - L40: She said, / it's TONIGHT, / isn't it.
 - L41: Try FORTY-one.
