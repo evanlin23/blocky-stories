@@ -185,7 +185,7 @@ def MV(p0, t0, p1, t1, lens=32, lens1=None):
 
 
 # ---- ink helpers: the pages' rows. Each cue: {d: page, row, c: ink colour, to, dur, size, shake, hard}
-ROWS = 7
+ROWS = 6
 _next_row = {"blue": 0, "lilac": 0}
 _row_of = {"blue": {}, "lilac": {}}   # tag -> row
 
@@ -611,8 +611,8 @@ S("L65", C3((-0.1, 1.9, 1.5), (-1.0, 0.8, 1.3), 28),
   note="me nodding, laugh")
 cue("L66", "clock", h=3, m=0)
 S("L66", MV((3.2, 0.5, 1.5), (1.4, 2.1, 0.8), (3.0, 0.7, 1.4), (1.4, 2.1, 0.8), 28),
-  who={"me": (X(1.4, 2.4, -0.0), 90, "laugh", {"sit": True, "arms": [20, 20]}),
-       "nina": (X(1.4, 1.8, -0.0), -90, "laugh", {"sit": True, "arms": [20, 20]})},
+  who={"me": (X(1.4, 2.4, -0.5), 90, "laugh", {"sit": True, "arms": [20, 20]}),
+       "nina": (X(1.4, 1.8, -0.5), -90, "laugh", {"sit": True, "arms": [20, 20]})},
   note="both of us on her floor, lamps on, talking, the clock glyph at 3:00")
 S("L67", C3((2.4, -0.1, 0.9), (1.3, 1.2, 0.5), 30),
   who={"me": (X(1.4, 2.4), 90, "grin", {"sit": True, "arms": [20, 20]}),
