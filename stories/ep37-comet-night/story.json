@@ -26,7 +26,15 @@
   "sky": "#8ec9f0",
   "sky_strength": 1.2,
   "exposure": 0.0,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": {
+   "quiet": [
+    [
+     "L64",
+     "L66"
+    ]
+   ]
+  }
  },
  "grade": {
   "shadows": [
