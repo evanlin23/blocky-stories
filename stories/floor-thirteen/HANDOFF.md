@@ -30,3 +30,8 @@ Branch `claude/opening-floor-thirteen`. No PR yet.
 - This session re-read HANDOFF and launched a builder for the L36 stairs fix and the flash margin (26.0 s cue). The builder was stopped on handoff before reporting; any uncommitted edits it made are in this push as WIP and are UNTESTED.
 - Nothing else done: no critic re-check, no gate, no PR, no proof, no qa.
 - Next: steps 1-5 above. Only ONE more critic round allowed (L36 only). If it does not approve, push and write why here. At the time of writing, no proof.yml on main; branch claude/proof-render exists. Merge only after proof qa passes and `test` is success. Don't dispatch render.yml/upload.yml; don't edit queue.txt.
+
+**On resume:** merge main first: polish v2.2 (#168) and v2.3 (#175) are in.
+- Keep this story's own `sfx` to 2 to 4 events per 10 s in all. This round added many sfx, so thin them.
+- Use `"hold": ["Sxx"]` for frame-exact shots.
+- Read builder.md and docs/engine.md, under The polish pack.
