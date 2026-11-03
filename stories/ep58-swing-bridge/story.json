@@ -9,6 +9,7 @@
  "gap": 0.22,
  "tail": 0.25,
  "fade_out": false,
+ "fade_in": false,
  "voice": {
   "voice": "am_adam",
   "tempo": 1.03,

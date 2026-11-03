@@ -494,6 +494,7 @@ story = {
     "gap": 0.22,
     "tail": 0.25,
     "fade_out": False,
+    "fade_in": False,
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "look": {"flash_safe": True, "fog": "#c4dcee", "fog_density": 0.004, "fog_start": 14.0, "sky": "#9cc8ec", "sky_strength": 1.0,
              "exposure": 0.0},
