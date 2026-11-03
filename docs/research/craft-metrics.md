@@ -191,6 +191,32 @@ in 33 to 51% of the film, and cuts on the edit's words (the pixel cuts match the
 against 27 to 59%), more camera movement (71% against 32 to 66%), more punch-ins (0.44 against 0.15 to 0.29 per 10 s)
 and more sound events (3.4 against 1.2 to 3.3). No difference in faces, captions or character motion.
 
+## The first polished final: ep62-six-riders (polish pack v2, film-ep62-six-riders 13217180476)
+A 33.6 s horror puzzle, so it isn't like for like with the 135 to 147 s films above. It's the first final drawn with
+the pack (v2 adds eased walks, idle life and motivated camera moves). **5 of 28 metrics warn, against 7 to 14 of
+28 for the eight finals before the pack.**
+
+| Metric | ep62 | before the pack (the nine above) |
+|---|---|---|
+| Picture changes / 10 s (0.5 s) | **11.3** | 6.7 to 10.4 |
+| Cuts / 10 s, shots over 2 s | 8.04 (warns, just over 8), 0% | 4.7 to 7.0, 10 to 59% |
+| Camera moving (edit) | **96%** | 4 to 80% |
+| Punch-ins / 10 s | 0.6 | 0 to 0.44 |
+| Shots where a character moves | **96%** | 25 to 55% |
+| Walk ends that stop dead | **0%** (1 walk) | 80 to 100% |
+| Idle 1 s windows | **3%** | 19 to 48% |
+| Sound events / 10 s | **10.1** | 1.2 to 5.0 |
+| Brightness, first 3 s | 0.74 | 0.10 to 0.68 |
+| Saturation | 0.19 (warns) | 0.35 to 0.70 |
+| Caption on screen | 87% (warns) | 94 to 98% |
+| Repeated frames (on twos) | 68% (warns) | 34 to 56% |
+| Voice over bed (stems) | 6.3 dB (warns) | 8.2 to 10.7 dB |
+
+What's left: a bright but washed-out grade (saturation under half of the older films'), the voice only 6.3 dB over
+the bed (the pack's whooshes and room bed sit closer to it), and more repeated frames than ever. The motion is in the
+crop, not the drawings: 53% of frames are in `step: 2` shots and the rest still repeat while the camera holds.
+Re-measure once a 120 s+ polished story renders.
+
 ## Using it
 - **qa** runs `scripts/measure.py` on every final and pastes the table into its notes (`.claude/agents/qa.md`).
 - **Builders** can run it with no film (`--story`) before a render to check the edit metrics.
