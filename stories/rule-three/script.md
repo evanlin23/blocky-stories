@@ -31,7 +31,7 @@ Nothing on the list is about a rulebook, a hidden rule or a narrator who is the 
 ## The story
 
 - **Premise:** I keep this town's rulebook. Every night at nine I stamp one new rule into a huge red book at the town hall, picked from slips people drop through the door, and by morning everyone follows it. Rule three is the only page torn out, and nobody in town ever asks who tore it. My little brother, Milo, is sick of me missing everything for the book, and he says that if I skip Mom's birthday again he'll stand up at the party and ask.
-- **Rule (line 1):** "Never ask who tore out rule three." A warning to you.
+- **Rule (line 1):** "Rule three is missing, and everyone in town still obeys it." (opening type `cost`, per docs/research/opening-variety.md, 2026-11-03). Line 2 carries the warning: "Don't ask who tore it. Not in this town."
 - **Twist:** I tore it out, fourteen years ago, on my first night. It said that if I ever miss a night, the book goes to Milo, and he never gets a night off again. A torn page still counts. It just can't be read to him. The town's habit of never asking is a rule I stamped too. Milo asks anyway, I tell him, and the loophole is in rule three's own words: it never said where I stamp. So we carry the book to Mom's together, and I stamp at her table at nine.
 - **Where it's planted:**
   - Plant 1, frame 1 (L01): an ink-blue thumbprint on the torn edge of the stub. L08 shows my right thumb, ink-blue from the stamp, in close-up.
@@ -91,11 +91,11 @@ The design is recurring, so these hold in every episode (copy from `stories/lore
 - **Palette:** sky `#7cc6ff`, grass `#58c24a`, book red `#c8202f`, ink blue `#2b4bd8`, page cream `#f4ecd8`, hall mint `#bfe8d6`, brass `#d9a441`, house coral `#ff8a6b`, butter `#ffd95a`, Milo orange `#ff8a1f`. Night: deep blue `#1d2a5a` sky with warm lamp amber `#ffc46b`.
 - **Caption key colour:** stamp blue, brightened to read on any ground: `#5b8cff`.
 - **Music:** E dorian, 100 bpm. Thin and plucky at the start (a dry pizzicato-like pluck and a soft woodblock on the off-beat), playful through the montage. At L23 a low drone on E and B enters and holds. P01 drops everything but the voice for 0.5 s before L30. From L37 to L41 the harmony lifts to E major, a warm lead over the drone. At L42 the lead stops, and only the drone is under the sting.
-- **Sound:** **a stamp thunk on "THREE" in L01** (the series' signature hit: a heavy, soft-edged wood-and-brass thud, low, under 4 kHz). The same thunk, quieter, at L08 ("STAMP") and L39. A radio's swell at L03 (soft), the parrot's squawk at L05 (soft, low-passed), the whole street's ambience cutting to near silence over 0.4 s at L23. Paper rustle at L42 and L43. The loop: 0.25 s after "FAVOR", cut to frame 1.
+- **Sound:** **a stamp thunk on "OBEYS it" in L01** (the line's last word) (the series' signature hit: a heavy, soft-edged wood-and-brass thud, low, under 4 kHz). The same thunk, quieter, at L08 ("STAMP") and L39. A radio's swell at L03 (soft), the parrot's squawk at L05 (soft, low-passed), the whole street's ambience cutting to near silence over 0.4 s at L23. Paper rustle at L42 and L43. The loop: 0.25 s after "FAVOR", cut to frame 1.
 
 ## The opening recipe, point by point
 
-1. **Line 1** is a warning to you about one concrete thing: "Never ASK / who tore out / RULE THREE." 7 words, about 1.5 s.
+1. **Line 1** is a concrete mystery: "Rule THREE / is MISSING, / and everyone in town / still OBEYS it." 11 words, about 2.2 s (the `cost` opening; was "Never ask who tore out rule three." before 2026-11-03's opening-variety rule).
 2. **Frame 1** looks straight at it: a tight top-down close on the book open at the stub, the ragged torn edge where rule three was, the page after it marked "5", and the ink-blue thumbprint on the stub. Already slightly wrong (where's 4? whose thumb?). Lit warm and bright, centred, pushing in over the line. No wide in the first 3 s.
 3. **A sound hit** on "THREE": the stamp thunk.
 4. **Line 2** tightens it and says the town's name, the only "Buhtown" in the episode (RULES: the Buhkeeper's Shorts say it once, in line 2): "Not in BUHTOWN. / Not ONCE." 5 words, about 1.1 s. No other names or backstory before 4 s (Milo first at L14, about 22 s).
@@ -123,9 +123,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 01 The warning (L01 to L02, about 0 to 3 s)
 
-- `L01` narrator: Never ASK / who tore out / RULE THREE.
+- `L01` narrator: Rule THREE / is MISSING, / and everyone in town / still OBEYS it.
   - [top-down close on the open red book: the ragged stub where a page was torn out, the ink-blue thumbprint on its edge, the next page's big numeral "5". Warm lamplight. Push in over the line. Stamp thunk on "THREE". Plant 1]
-- `L02` narrator: Not in THIS town. / Not ONCE. (caption reads BUHTOWN; never spoken)
+- `L02` narrator: Don't ASK / who tore it. / Not in THIS town. (caption may read BUHTOWN; never spoken)
   - [punch in to the torn edge itself, the thumbprint filling a third of the frame]
 
 ## 02 The rule at work (L03 to L06, about 3 to 11 s)
