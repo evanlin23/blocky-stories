@@ -17,13 +17,13 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.25
 GX = (-1.2, 0.0, 1.2)
-TOPZ, BOTZ = 4.15, 1.4
+TOPZ, BOTZ = 4.15, 0.85
 
 cast = {
     "watcher": {"age": "adult", "skin": "#e2b48c", "shirt": "#15131a", "pattern": "solid", "pants": "#15131a",
                 "shoes": "#101010", "sleeves": "long", "hair": "swoop", "hair_c": "#0c0a0b", "extras": ["coat", "tie"],
                 "extra_c": "#e9e6e0", "zip_c": "#15131a", "height": 1.16, "width": 0.9, "body_width": 0.55,
-                "face": {"eyes": "dot", "brows": True, "brow_w": 3.4, "ink": "#120c0e", "pupil": "#0b0709", "mouth": "line"}},
+                "face": {"eyes": "dot", "brows": True, "brow_w": 3.4, "ink": "#120c0e", "pupil": "#0b0709", "mouth": "line", "glow": "#eef4ff"}},
 }
 MAN = [1.2, 3.95, 2.9]
 acting = {"watcher": [
@@ -40,10 +40,10 @@ def C(loc, tgt, lens, loc2=None, tgt2=None, lens2=None):
 
 
 shots = [
-    {"id": "S01", "cam": C((0, -7.4, 3.65), (0, 3, 3.65), 36, (0, -7.0, 3.65), (0, 3, 3.65), 36), "step": 1, "hand": 0.0},
+    {"id": "S01", "cam": C((0, -10.76, 3.69), (0, 3, 3.69), 36, (0, -10.55, 3.69), (0, 3, 3.69), 36), "step": 1, "hand": 0.0},
     {"id": "S05", "at": "L05", "cam": C((0.95, -1.6, 4.3), (1.05, 3, 4.3), 36), "step": 1, "hand": 0.0},
     {"id": "S12", "at": "L12", "cam": C((1.2, -0.6, 4.55), (1.2, 3, 4.45), 40), "step": 1, "hand": 0.0},
-    {"id": "S18", "at": "L18", "cam": C((1.2, 1.85, 4.55), (1.2, 3.95, 4.55), 34), "step": 1, "hand": 0.0},
+    {"id": "S18", "at": "L18", "cam": C((1.2, 1.85, 4.3), (1.2, 3.95, 4.6), 34), "step": 1, "hand": 0.0},
     {"id": "S19", "at": "L19", "cam": C((0, -7.2, 3.0), (0, 3, 3.0), 33), "step": 1, "hand": 0.0},
 ]
 

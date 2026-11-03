@@ -16,7 +16,7 @@ from mathutils import Vector as V
 from blocky import kit as _kit  # noqa: F401
 
 GX = (-1.2, 0.0, 1.2)
-TOPZ, BOTZ = 4.15, 1.4
+TOPZ, BOTZ = 4.15, 0.85
 WALL_Y = 2.9
 GLYPH = {  # 3 x 5 block letters, row 0 on top
     "A": ["010", "101", "111", "101", "101"],
@@ -104,43 +104,44 @@ def subject_A(cx, cz):
 
 
 def subject_B(cx, cz):
-    canvas(cx, cz, "#f3e4c4")
-    paint(cx, cz, -0.1, -0.35, 0.62, 0.9, "#2f6fd3", 2)       # blue dress
-    paint(cx, cz, -0.1, 0.14, 0.34, 0.4, "#f0c29c", 3)         # face
-    paint(cx, cz, -0.1, 0.4, 0.44, 0.24, "#7a4421", 4)         # hair
-    paint(cx, cz, -0.1, 0.0, 0.2, 0.05, "#c4584a", 4)          # mouth
-    paint(cx, cz, -0.18, 0.18, 0.05, 0.05, "#1a1a22", 4)
-    paint(cx, cz, -0.02, 0.18, 0.05, 0.05, "#1a1a22", 4)
-    # the greyhound in side view, lower right, facing right: deep chest, tucked belly, long legs, a long snout
+    canvas(cx, cz, "#cfe3ef")
+    paint(cx, cz, 0, -0.62, 0.9, 0.52, "#7fa86a", 1)           # grass
     gr, dk = "#aeb5c0", "#7b8390"
-    paint(cx, cz, 0.04, -0.58, 0.46, 0.15, gr, 5)              # back and flank
-    paint(cx, cz, 0.18, -0.64, 0.2, 0.24, gr, 5)               # deep chest
-    paint(cx, cz, -0.08, -0.65, 0.14, 0.08, dk, 6)             # tucked belly shade
-    for dx in (0.2, 0.28):
-        paint(cx, cz, dx, -0.84, 0.05, 0.24, gr, 5)            # front legs
-    for dx in (-0.1, -0.02):
-        paint(cx, cz, dx, -0.84, 0.05, 0.24, dk, 5)            # rear legs
-    paint(cx, cz, -0.24, -0.62, 0.2, 0.04, gr, 5, rot=0.5)     # tail
-    paint(cx, cz, 0.26, -0.42, 0.09, 0.26, gr, 5, rot=-0.25)   # long neck
-    paint(cx, cz, 0.3, -0.27, 0.12, 0.1, gr, 6)                # skull
-    paint(cx, cz, 0.39, -0.3, 0.17, 0.05, gr, 6)               # long snout
-    paint(cx, cz, 0.465, -0.3, 0.03, 0.03, "#15151c", 7)       # nose
-    paint(cx, cz, 0.26, -0.22, 0.05, 0.1, dk, 7, rot=0.4)      # ear
-    paint(cx, cz, 0.33, -0.26, 0.03, 0.03, "#101018", 7)       # eye
+    k, ox, oz = 0.85, -0.03, -0.02
+
+    def d(dx, dz, w, h, c, layer, rot=0.0):
+        paint(cx, cz, dx * k + ox, dz * k + oz, w * k, h * k, c, layer, rot=rot)
+    # the greyhound ALONE, side view facing right: deep chest, tucked belly, long legs, a long snout
+    d(0.0, 0.12, 0.52, 0.15, gr, 5)                            # back and flank
+    d(-0.2, 0.08, 0.2, 0.26, gr, 5)                            # haunch
+    d(0.2, 0.02, 0.22, 0.32, gr, 5)                            # deep chest
+    d(-0.02, -0.04, 0.24, 0.08, dk, 6)                         # tucked belly shade
+    for x in (0.22, 0.3):
+        d(x, -0.3, 0.055, 0.42, gr, 5)                         # front legs
+    for x in (-0.24, -0.14):
+        d(x, -0.3, 0.055, 0.42, dk, 5)                         # rear legs
+    d(-0.38, 0.06, 0.24, 0.045, gr, 5, rot=0.6)                # tail
+    d(0.3, 0.3, 0.12, 0.3, gr, 5, rot=-0.3)                    # long neck
+    d(0.37, 0.48, 0.15, 0.12, gr, 6)                           # skull
+    d(0.5, 0.45, 0.22, 0.06, gr, 6)                            # long snout
+    d(0.62, 0.455, 0.04, 0.045, "#15151c", 7)                  # nose
+    d(0.31, 0.5, 0.06, 0.11, dk, 7, rot=0.4)                   # ear
+    d(0.4, 0.5, 0.035, 0.035, "#101018", 7)                    # eye
 
 
 def subject_D(cx, cz):
     canvas(cx, cz, "#27463f")
-    paint(cx, cz, 0, -0.75, 0.9, 0.3, "#7a4a2a", 1)            # table
-    for dx, up, c in ((-0.25, -0.06, "#d7e04a"), (0.0, 0.08, "#c8d83a"), (0.25, -0.06, "#e8ec6a")):
-        paint(cx, cz, dx, -0.2 + up, 0.3, 0.3, c, 2)            # pear belly
-        paint(cx, cz, dx, 0.02 + up, 0.2, 0.2, c, 2)            # pear shoulder
-        paint(cx, cz, dx, 0.2 + up, 0.12, 0.2, c, 2)            # pear neck, narrow
-        paint(cx, cz, dx + 0.01, 0.34 + up, 0.03, 0.08, "#4a2c14", 3)  # stalk
-    paint(cx, cz, 0, -0.42, 0.78, 0.1, "#d4502a", 5)            # bowl rim
-    paint(cx, cz, 0, -0.55, 0.58, 0.18, "#b23c20", 5)           # bowl belly
-    paint(cx, cz, 0, -0.66, 0.3, 0.06, "#8a2c16", 5)            # foot
-    paint(cx, cz, 0.3, 0.55, 0.2, 0.12, "#4a7a5c", 3)          # leaf
+    paint(cx, cz, 0, -0.78, 0.9, 0.26, "#7a4a2a", 1)           # table
+    for dx, up, c, sh in ((-0.2, 0.0, "#d7e04a", "#a9b52c"), (0.22, 0.08, "#e8ec6a", "#b8be3e")):
+        paint(cx, cz, dx, -0.3 + up, 0.36, 0.3, c, 2)           # pear belly, fat bottom
+        paint(cx, cz, dx + 0.12, -0.3 + up, 0.1, 0.28, sh, 3)   # shaded side
+        paint(cx, cz, dx, -0.08 + up, 0.26, 0.2, c, 2)          # shoulder
+        paint(cx, cz, dx, 0.13 + up, 0.14, 0.24, c, 2)          # narrow neck
+        paint(cx, cz, dx + 0.01, 0.34 + up, 0.035, 0.1, "#4a2c14", 3)   # stem
+    paint(cx, cz, 0.0, -0.5, 0.8, 0.1, "#d4502a", 5)            # bowl rim
+    paint(cx, cz, 0, -0.62, 0.6, 0.16, "#b23c20", 5)            # bowl belly
+    paint(cx, cz, 0, -0.72, 0.3, 0.05, "#8a2c16", 5)            # foot
+    paint(cx, cz, 0.3, 0.6, 0.2, 0.12, "#4a7a5c", 3)            # leaf
 
 
 def subject_E(cx, cz):
@@ -220,7 +221,7 @@ def pane_material(kit):
 
 
 def build_clock(kit):
-    cx, cz, y = -1.35, 6.2, WALL_Y - 0.1
+    cx, cz, y = -1.35, 6.0, WALL_Y - 0.1
     rot = (math.pi / 2, 0, 0)
     kit.cyl(nm("clockrim"), 0.55, 0.1, (cx, y, cz), P("#d9a441", 0.25, 0.9), None, rot, 32)
     kit.cyl(nm("clockface"), 0.46, 0.05, (cx, y - 0.04, cz), P("#fff6dc", 0.5, 0.1), None, rot, 32)
@@ -249,7 +250,7 @@ def build(kit, story, tl):
     ctx = {}
     oxb = P("#6c1a26", 0.7, 0.1)
     # ---- floor, wall (with the window opening), skirting
-    B((16, 14, 0.2), (0, -2.0, -0.1), P("#9a6439", 0.25, 0.5), "floor", 0.0)
+    B((16, 14, 0.2), (0, -2.0, -0.72), P("#9a6439", 0.25, 0.5), "floor", 0.0)
     wy, wd = WALL_Y + 0.2, 0.4
     wx0, wx1, wz0, wz1 = 0.65, 1.75, 3.15, 5.15      # window opening in C's frame cell
     H = 8.0
@@ -259,8 +260,7 @@ def build(kit, story, tl):
     seg(wx1, 8, 0, H)
     seg(wx0, wx1, 0, wz0)
     seg(wx0, wx1, wz1, H)
-    B((16, 0.02, 0.3), (0, WALL_Y - 0.01, 0.15), P("#d9c9a8", 0.5, 0.2), "skirt", 0.004)
-    B((16, 0.04, 0.12), (0, WALL_Y - 0.03, 2.55), P("#5d1520", 0.6, 0.1), "rail", 0.004)
+    B((16, 0.02, 0.08), (0, WALL_Y - 0.01, -0.58), P("#d9c9a8", 0.5, 0.2), "skirt", 0.004)
     # ---- the five gilt frames
     subs = {(0, 0): subject_A, (1, 0): subject_B, (0, 1): subject_D, (1, 1): subject_E, (2, 1): subject_F}
     for (ci, ri), fn in subs.items():
@@ -276,13 +276,13 @@ def build(kit, story, tl):
     cx, cz = 1.2, TOPZ
     yf = WALL_Y - 0.05
     for (w, h, dx, dz) in ((1.1, 0.1, 0, 0.95), (1.1, 0.1, 0, -0.95), (0.1, 1.8, -0.5, 0), (0.1, 1.8, 0.5, 0)):
-        B((w, 0.2, h), (cx + dx, yf, cz + dz), wf, "wframe", 0.015)
-    B((1.3, 0.16, 0.07), (cx, WALL_Y - 0.16, cz - 1.0), wf, "wsill", 0.01)
-    B((0.07, 0.04, 0.12), (cx + 0.38, WALL_Y - 0.17, cz - 0.4), P("#d9a441", 0.25, 0.9), "wlatch", 0.005)
+        B((w, 0.12, h), (cx + dx, WALL_Y - 0.06, cz + dz), wf, "wframe", 0.02)
+    B((1.3, 0.12, 0.06), (cx, WALL_Y - 0.1, cz - 1.0), wf, "wsill", 0.01)
+    B((0.07, 0.04, 0.12), (cx + 0.38, WALL_Y - 0.13, cz - 0.4), P("#d9a441", 0.25, 0.9), "wlatch", 0.005)
     ctx["pane"] = kit.plane(nm("pane"), (0.9, 1.8), (cx, WALL_Y + 0.05, cz), pane_material(kit), None,
                             rot=(math.pi / 2, 0, 0))
     ctx["pane"].visible_shadow = False
-    ctx["fog"] = kit.plane(nm("fogdisc"), (0.4, 0.4), (cx + 0.0, WALL_Y + 0.2, cz + 0.42), fog_material(kit), None,
+    ctx["fog"] = kit.plane(nm("fogdisc"), (0.36, 0.36), (cx + 0.0, WALL_Y + 0.4, cz + 0.52), fog_material(kit), None,
                            rot=(math.pi / 2, 0, 0))
     ctx["fog"].visible_shadow = False
     # ---- the garden behind: terrace, hedge, trees, flowers, sky wall
@@ -307,10 +307,21 @@ def build(kit, story, tl):
     # a camera-invisible shield just behind the glass keeps the hall's wash off the man; only the garden sun and sky reach him
     sh = B((1.6, 0.05, 3.2), (1.2, WALL_Y + 0.08, TOPZ), P("#000000"), "shield", 0.0)
     sh.visible_camera = False
-    ctx["sun"] = kit.light("manlight", "SUN", (8.0, 5.2, 5.4), 9.0, "#fff2d6", shadow=True)
-    kit.aim(ctx["sun"], (1.2, 3.95, 4.7))
+    # steep key from above and a little in front: the brow (a hidden shelf above the eyes) throws a hard band across them
+    ctx["sun"] = kit.light("manlight", "SUN", (2.2, -2.0, 7.9), 11.0, "#fff2d6", shadow=True)
+    kit.aim(ctx["sun"], (1.2, 3.65, 4.9))
+    brow = B((0.8, 0.3, 0.06), (1.2, 3.5, 5.03), P("#000000"), "browshelf", 0.0)
+    brow.visible_camera = False
     ctx["rim"] = kit.light("rim", "AREA", (2.5, 7.0, 6.5), 30, "#fff3d0", size=2.0, shadow=False)
     kit.aim(ctx["rim"], (1.2, 3.95, 4.3))
+    ctx["rim"].visible_camera = False
+    ctx["camfill"].visible_camera = False
+    ctx["wash"].visible_camera = False
+    # a low hedge of flowers hides his hands and hips: only head and shoulders show, like a portrait
+    hb = P("#9cc488", 0.9)
+    B((1.1, 0.5, 0.15), (1.2, 3.35, 3.88), hb, "bed", 0.05)
+    for i in range(7):
+        B((0.1, 0.1, 0.1), (0.78 + i * 0.07, 3.2, 3.99 + 0.02 * (i % 2)), P(("#ff6f91", "#ffd23c", "#ffffff")[i % 3], 0.6), "bedflower", 0.03)
     return ctx
 
 
@@ -319,4 +330,5 @@ def animate(kit, story, tl, t, ctx):
     u = 0.5 - 0.5 * math.cos(math.pi * (t % 2.0))
     s = 0.35 + 0.45 * u
     ctx["fog"].scale = (s, s, s)
+    ctx["pane"].hide_render = 36.2 <= t < 37.9
     return {}
