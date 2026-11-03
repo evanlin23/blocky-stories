@@ -231,8 +231,7 @@ SHOTS = [
     # 05 go, L58 to L68 -----------------------------------------------------------------------------------------
     ("L58-0.35", "wide up the lane: a bus pulling in, headlamps coming up, Pip standing with her bag", 2,
      still([-18.4, -19.5, 1.7], [-14.2, -32.0, 1.3], 26)),
-    ("L60-0.45", "me to Pip: Go, I'll be fine", 2, still([-16.7, -26.8, 1.55], [-14.6, -28.3, 1.45], 30)),
-    ("L60.2", "Pip's face easing", 2, still([-15.7, -27.6, 1.55], [-14.0, -28.3, 1.5], 38)),
+    ("L60-0.45", "over my shoulder to Pip: Go, I'll be fine, her face easing", 2, still([-15.7, -27.6, 1.55], [-14.0, -28.3, 1.5], 38)),
     ("L61", "my anorak fills with colour for the first time", 2,
      move(([-15.9, -25.6, 1.5], [-15.0, -28.3, 1.45]), ([-15.4, -25.9, 1.5], [-15.0, -28.3, 1.45]), 34)),
     ("L62", "Pip in her duffle: grey melts into marigold", 2, still([-17.4, -23.8, 1.6], [-14.5, -28.2, 1.2], 26)),
@@ -532,7 +531,7 @@ cues = [
     # our tailgate comes down at L70.1 (0.9 s), the chair lies folded in the boot, the latch strokes show once
     {"at": "L70.1", "name": "hatch", "to": 0.0, "dur": 0.9},
     {"at": "L70-0.4", "name": "bootb", "to": 1.0, "dur": 0.4},
-    {"at": "L71", "name": "bootb", "to": 0.0, "dur": 0.5},
+    {"at": "L70.1", "name": "bootb", "to": 0.0, "dur": 0.3},
     {"at": 0, "name": "fold", "on": False},
     {"at": "L70", "name": "fold", "on": True},
     {"at": "L70.1", "name": "fold", "on": False},
