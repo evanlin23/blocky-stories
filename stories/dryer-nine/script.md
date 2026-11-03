@@ -6,6 +6,7 @@
 - **Word count:** 357 spoken words by a plain split (20 more than the round 1 text by the same count) in 54 lines (L20 and L46 cut, L53b added; ids kept), all `narrator`, plus one 0.6 s music drop before L27.
 - **Estimated length:** the round 1 build ran 79.8 s. The 20 added words (about 4.1 s) and one more gap put it near 84 s, under the 90 s cap. The 0.12 to 0.3 s gaps add about 7.5 s, the drop 0.6 s and the loop tail 0.25 s, so about 85 s. If it runs over 88 s, cut L19 first, then L45's second half. If it lands under 70 s, nothing is added.
 - **Revision (2026-11-03, cold-viewer notes):** changed L05, L10, L24, L29, L50, L53, L54; cut L20 and L46 (the earlier 353 count was wrong, the true count was 385). Re-voice the seven changed lines.
+- **Revision 3 (2026-11-03, opening shape `cost`):** L01 now "NOBODY at this / laundromat uses / dryer NINE." and L02 "It RUNS / every night / ANYWAY." Re-voice L01, L02.
 - **Revision 2 (2026-11-03, round 1 review):** L01 shortened to 8 words (cap 2.2 s). Climax now turns the rule (a dryer won't run with its door open): changed L39, L40, L41, L42, L43. Twist sharpened (the Night starts itself and leaves the quarters): changed L16, L53, added L53b. L15 text unchanged, its "(quotable)" marker moved out of the line. Re-voice L01, L16, L39, L40, L41, L42, L43, L53, L53b.
 - **Look:** `"look": {"style": "closer", "flash_safe": true}` and `look.polish: true` once the polish pack is on main. Bright and saturated everywhere except the one dark scene (L27 to L41). Every light change ramps over 0.3 s or more.
 
@@ -21,11 +22,11 @@ Against the other six: no warm object (P1's shoes, and nothing here is warm), no
 
 - Ten pitched, this one kept. Dropped: the laundromat is inside a giant's dryer (too close to `closing-time`'s "the hall is the exhibit"), lost socks as the dryers' fee (no turn), clothes that repeat what you said in them (no reveal), a load that holds you in the building until it's done (ghost, sad), dryers that show tomorrow's laundry (mild), a dryer that tumbles its load's owner (gag only), a dryer that dries the sleep out of the town (abstract), a voodoo-shrink dryer (gag only), a dryer drying a soaked man's clothes for forty years (no "wait, what").
 - Checked against "Claimed big ideas" and every twist: not being forgotten or unseen, not a stand-in, not a count of people, not altitude time. It's the night as a load of laundry. Closest neighbours are ep33 (a day at the top costs a year below) and ep31 (one dawn relived): both are about time for a loved one, but neither treats the night as a thing you can buy more of, see, or overfill. Flagged for the blind premise check.
-- **The rule is the clue:** "you never use dryer nine" first reads as a dangerous machine. After the reveal it reads as the one thing everyone in town is tempted by: one more hour of tonight. **L02 turns over too:** "Even if it's already RUNNING" first reads as "even if someone else started it". On a rewatch, nobody did: the Night starts itself (L52) and leaves the quarters out (L16, L53) as bait, so a running nine is the trap already set. The loop line says so: "So no matter how much you want one more HOUR, / at the all-night laundromat, you never use dryer nine."
+- **The rule is the clue:** "Nobody at this laundromat uses dryer nine" first reads as a dangerous machine. After the reveal it reads as the one thing everyone in town is tempted by: one more hour of tonight. **L02 turns over too:** "It RUNS every night ANYWAY" first reads as a machine nobody dares touch that runs on regardless. On a rewatch, nobody did: the Night starts itself (L52) and leaves the quarters out (L16, L53) as bait, so a running nine is the trap already set. The loop line says so: "So no matter how much you want one more HOUR, / nobody at this laundromat uses dryer nine."
 
 ## The story
 - **Premise:** At a bright all-night laundromat, dryer nine runs every night with no load in it, its window is never empty, and its timer counts down to sunrise. It's my big brother Jonah's last night before he moves out at sunrise, and nine says forty-one minutes. I'm not ready, so I feed it a quarter.
-- **Rule / hook (L01, about 1.7 s):** "At the LAUNDROMAT, / you never use / dryer NINE."
+- **Rule / hook (L01, about 1.7 s):** "NOBODY at this / laundromat uses / dryer NINE."
 - **The relatable want:** one more hour with someone before they leave. Everyone has had a night they didn't want to end.
 - **The marker (the rule meter), on screen by frame 1 and every shot after:** dryer nine itself: a big painted **9** on its door, its round window full of tumbling starry navy, and its timer, a glowing amber `H:MM` readout over the door. Every shot has the timer, the window or the 9 in frame (the reaction shots keep nine's amber glow in the background, soft but readable).
 - **The 3 to 5 example montage (L03 to L07, first 11 s):** a woman swerves her basket wide around nine (L03). A man folds towels on top of dryer eight and leaves nine's top bare (L04). Nine's window is never empty, starry navy always tumbling behind the glass (L05, paid off at L50 when the drum is empty for the first time at dawn). Nine's timer doesn't count down to dry (L06). It counts down to sunrise (L07: the timer's 0:41 beside the sunrise glyph on my phone, also 41 minutes away).
@@ -48,10 +49,10 @@ Against the other six: no warm object (P1's shoes, and nothing here is warm), no
 **L15: "A QUARTER / buys ten more MINUTES / of NIGHT."** Odd, flat, short enough to type. It's the line the pin builds on.
 
 ## The opening recipe (playbook v1), point by point
-1. **Line 1 is a warning to "you"** about one everyday thing: "At the LAUNDROMAT, / you never use / dryer NINE." 8 words, about 1.7 s (cap 2.2 s). "All-night" moved out of L01 into the picture (the dark lot outside, the wall clock).
+1. **Line 1 is a warning to "you"** about one everyday thing: "NOBODY at this / laundromat uses / dryer NINE." 8 words (opening shape `cost`: the price of the place), about 1.7 s (cap 2.2 s). "All-night" moved out of L01 into the picture (the dark lot outside, the wall clock).
 2. **Frame 1 looks straight at dryer nine, already wrong:** a centred close-up of its round window, the drum turning with no load, nothing in it but starry navy, its timer glowing 0:41 above, nobody near it. Bright fluorescent laundromat around it (mint machines, white tile), lit to read on a phone. Push in through L01. No wide or establishing shot in the first 3 s.
 3. **A sound hit on "NINE":** a soft low dryer-drum thump plus a short sub swell, under 4 kHz (`fx` at the word's onset, about 1.5 s).
-4. **Line 2 tightens it** in 1.0 s: "Even if / it's already RUNNING." No names, places or backstory before 4 s (the first name, Jonah, is at about 11 s).
+4. **Line 2 tightens it** in 1.0 s: "It RUNS / every night / ANYWAY." No names, places or backstory before 4 s (the first name, Jonah, is at about 11 s).
 5. **Lines 3 to 5 show the rule at work, one shot each, each under 2 s:** the swerving basket (1.2 s), the bare top of nine (1.2 s), nine's full window (1.2 s).
 6. **The title is the warning:** "Nobody Uses Dryer NINE 🧺", 4 words and an emoji, not the premise phrase, no question, not the reveal.
 7. **Seconds 15 to 30 escalate or show, nobody explains:** the quarter, the jump to 0:51, the moon sliding up, the roll of quarters, the stolen hour, the drum getting fuller. No one explains the rule anywhere in the film.
@@ -204,8 +205,8 @@ One plant, picking up the open thread "the booth is older than the hotel": dryer
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: At the LAUNDROMAT, / you never use / dryer NINE.
-- L02: Even if / it's already RUNNING.
+- L01: NOBODY at this / laundromat uses / dryer NINE.
+- L02: It RUNS / every night / ANYWAY.
 - L03: Nobody sets a BASKET / on it.
 - L04: Nobody FOLDS / on top of it.
 - L05: Its WINDOW / is never EMPTY.
@@ -260,7 +261,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L54: Now it wants YOU / to buy more NIGHT.
 - L55: So no matter how much / you want one more HOUR,
 
-(Loop: L55 runs straight into L01: "So no matter how much you want one more hour, at the laundromat, you never use dryer nine.")
+(Loop: L55 runs straight into L01: "So no matter how much you want one more hour, nobody at this laundromat uses dryer nine.")
 
 Note: L15 is the quotable line (see "The quotable line" above). The marker lives only here and in that section, never in the line text, so nothing extra is voiced or captioned.
 
