@@ -225,7 +225,7 @@ SH = [
     ("L58", mv([2.35, 0.15, 1.65], [0.55, 1.2, 1.55], 28), {}),
     ("L59", mv([1.6, 2.6, 1.75], [-0.4, -0.4, 2.3], 22, [1.5, 2.4, 1.75], [-0.4, -0.4, 2.3], 22), {}),
     # ---- 05 curtain call. Push into the glass and through it, right of where it presses, and turn round
-    ("L60", c([0, [3.9, 3.0, 1.9], [3.9, -6.0, 2.0], 22], [0.6, [3.9, -1.0, 2.2], [3.0, -9.0, 2.4], 22],
+    ("L60", c([0, [3.9, -1.0, 2.2], [3.0, -9.0, 2.4], 22],
                [1, [3.6, -4.6, 2.6], [10.0, -5.0, 2.6], 22]), {"tank_fog": 0.06, "hall_fog": 0.0}),
     # the reveal (P3): from out in the blue, the box about 70% of the frame, the three lit in the middle of it and
     # the Regular's dark back at the left third; fewer, softer fish and none near the lens
@@ -597,9 +597,9 @@ LOOKS = {
     "L12.4": {"caustic": 0.2, "regularkey": 0.25, "key2": [[0.6, -15.0, 0.2], [0.6, -21.8, 2.6], 1400.0, 30, "#bfe0ee"]},
     "L14": {"caustic": 0.2},
     "L17": {"caustic": 0.25},
-    "L19.1": {"caustic": 0.25},
+    "L19.1": {"caustic": 0.12},
     "L18": {"caustic": 0.25, "key2": [[-1.4, -3.4, 1.4], [-1.95, -5.6, -0.75], 260.0, 35, "#cfe9f0"]},
-    "L19.2": {"caustic": 0.25, "key2": [[-0.6, -7.2, 1.6], [-1.6, -5.6, -0.7], 260.0, 40, "#cfe9f0"]},
+    "L19.2": {"caustic": 0.12, "key2": [[-0.6, -7.2, 1.6], [-1.6, -5.6, -0.7], 260.0, 40, "#cfe9f0"]},
     "L20": {**FACE, "key": [[0.9, 2.2, 2.0], [0.3, 0.8, 1.5], 30.0, 45, COOL]},
     "L21": {"key": [[-1.6, 2.4, 1.2], [-2.2, 1.2, 5.0], 110.0, 40, COOL]},
     "L24": {**FACE, "key": [[-1.1, 2.1, 2.1], [-1.5, 0.8, 1.55], 30.0, 45, ROSA_KEY]},
