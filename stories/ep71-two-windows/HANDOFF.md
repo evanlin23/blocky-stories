@@ -39,3 +39,12 @@ New opening (opening-variety rule, PR #142): L01 "This DRIVE-THRU / has ONE boot
 
 ## Round-2 results (preview, 131.9 s)
 Flash PASS on the new bar (3-frame: 3 flashes, 7 changes at 3.7 s, a warning only). Clip check 0. Preflight 0 blocks. Measure: 0 blocks, 1 warn (cuts 8.9 per 10 s). Preview: `out/work/ep71-two-windows/ep71-two-windows-preview.mp4`. Next: round 2 reviews, then proof.
+
+## STATUS dropped (2026-11-03, round 2)
+Round 2: standards **approve** (no must-fixes), critic **revise** (`reviews/r2-critic.md`). No rescue round is allowed, so the story is dropped. No PR was opened. The second orchestrator records the drop on main.
+Critic scores: hook 6, scare 6, creature 5 (was 4), big idea 7, narrator 9, appeal 9, sound 7, captions 8.
+Open must-fixes:
+1. 94 to 98 s reveal (S085 to S087): both hatches sit in a ~10% strip, hatch two is cut off and blown white, 60% of the frame is sky and grass. Frame both hatches whole at ~35% width each and dim hatch two's glow.
+2. Creature (92 to 95 s): at 300 px it reads as a smiling TV or toaster, a grey box with a comb grin. Cal's head hides its lower face. Raise the camera, tilt the head, uneven jaw and teeth, eyes that aren't flat dashes.
+3. S001: frame 1 is an empty oblique wall with no face. Put the lady's face in hatch one and push in so hatch two and the 41 bag read.
+Batch note from standards: batch 6 has 3 `count` openings (ep71, ep62, every-lock), over the 1-in-3 limit.
