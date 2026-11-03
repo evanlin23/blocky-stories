@@ -15,8 +15,9 @@ You check the exact film that will go to YouTube. Owner, 2026-11-03: "We should 
    - the cover frame (`cover_s`) is strong.
 3. **First 3 seconds** (the swipe decides everything: `metrics/studio/`). Check that frame 1 is lit, shows a face and the rule or the mystery, and moves. Check that the first spoken line poses a concrete mystery or threat to the narrator. Write down what a stranger sees in second one.
 4. **Audio.** Measure loudness (ffmpeg ebur128: about -14 LUFS, true peak ≤ -1 dBTP). Measure the share of energy above 4 kHz in 5 s windows, and flag any window that jumps (scratch, hiss, clicks: ep36). Check that the voice is never buried and that nothing clips or cuts off at the end.
-5. **Flash.** The artifact's flash report passes the house bar.
-6. **Package.** Title, description, pin and cover match the film. Nothing spoils the twist, and nothing breaks RULES hard rules 1 to 4. The narrator is male: no "husband". Run `python -m blocky gate <story>`.
-7. **Verdict.** Pass only if nothing would embarrass the channel or lose viewers for a fixable reason. Write `qa/<story>.json` with film (the artifact id or "legacy"), verdict, date, checked and notes (at most 8 lines: what you saw, any fix with second and shot). On fail, list each fix with its second and shot. Commit it on a branch, open a PR, and merge once `test` passes.
+5. **Polish** (`look.polish`, on for every new story since 2026-11-03; `docs/engine.md` → The polish pack). If story.json has it: punch-ins land on key words and never jar, no picture sits still over 1.5 s, the caption pop is clean, the picture keeps its shadows on a TV, the whooshes and hits are soft (under 4 kHz) and never mask a word, a riser leads into each silence before a scare, and no stretch is dead silent. If a new story doesn't have it, list it as a fix.
+6. **Flash.** The artifact's flash report passes the house bar.
+7. **Package.** Title, description, pin and cover match the film. Nothing spoils the twist, and nothing breaks RULES hard rules 1 to 4. The narrator is male: no "husband". Run `python -m blocky gate <story>`.
+8. **Verdict.** Pass only if nothing would embarrass the channel or lose viewers for a fixable reason. Write `qa/<story>.json` with film (the artifact id or "legacy"), verdict, date, checked and notes (at most 8 lines: what you saw, any fix with second and shot). On fail, list each fix with its second and shot. Commit it on a branch, open a PR, and merge once `test` passes.
 
 Report in at most 5 lines: story, artifact id, verdict, the first-second description, any fixes.
