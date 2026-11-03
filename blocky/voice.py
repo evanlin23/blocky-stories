@@ -167,7 +167,8 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite", "zeros"
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
 # (ep17), Wren said "ren" (ep20)
-HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
+HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo",   # ep34: Jo
+              "threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
               "wren": "ren", "wrens": "rens", "too": "to",   # "too" (ep15: "back TOO,") is heard as "to"
               "60th": "sixtieth",   # ep31
               # ep33 (opt-in: only a story with these words is affected): made-up names Whisper spells its own way
@@ -177,7 +178,8 @@ HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "h
               "okofor": "okafor", "okofors": "okafors",   # ep14: Okafor
               "ossie": "ozzy",   # ossie/ozzy (ep43)
               "oral": "aurel",   # ep47: Uncle Aurel
-              "mr": "mister", "mrs": "missus"}   # ep14 redo: Whisper writes the titles short
+              "mr": "mister", "mrs": "missus",   # ep14 redo: Whisper writes the titles short
+              "grand": "gran", "girl": "gull"}   # ep33: Gran (heard as grand) and the gull
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 
