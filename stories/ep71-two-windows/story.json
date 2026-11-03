@@ -25,7 +25,8 @@
   "hdri_rotation": 0,
   "hdri_visible": false,
   "exposure": 0.0,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": true
  },
  "grade": {
   "shadows": [
