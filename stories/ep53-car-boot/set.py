@@ -41,6 +41,7 @@ COAT_COLS = ["#46a7d6", "#f2c230", "#8456c8", "#e86aa0", "#2fb3a3", "#f0902a"]
 # time of day: sun strength and colour, direction (azimuth from +x toward +y, elevation), character fill, sky, fog
 TOD = {
     "day":    dict(sun=7.0, sunc="#fff0d8", az=-50, el=48, fill=1.2, fillc="#b4c6ea", sky=1.3, hor="#cfd6e0", zen="#7fa6dc", fogd=0.004, fogb=1.0),
+    "open":   dict(sun=8.0, sunc="#ffe0ac", az=78, el=44, fill=0.9, fillc="#ffe8cc", sky=1.3, hor="#d4d6dc", zen="#7fa6dc", fogd=0.004, fogb=1.0),
     "flat":   dict(sun=2.0, sunc="#dfe6f0", az=-60, el=40, fill=2.2, fillc="#c8d4e8", sky=1.5, hor="#cdd3da", zen="#9fb3cf", fogd=0.006, fogb=1.0),
     "dawn":   dict(sun=3.0, sunc="#b8c8ff", az=-70, el=10, fill=2.4, fillc="#a0b4e8", sky=1.4, hor="#aeb6d8", zen="#5f78b0", fogd=0.012, fogb=0.8),
     "fog":    dict(sun=3.0, sunc="#e8ecfa", az=80, el=9, fill=2.6, fillc="#c0cae8", sky=1.7, hor="#b8bece", zen="#98a6c0", fogd=0.055, fogb=1.0),
@@ -596,7 +597,7 @@ def build_tilted_clothes(kit, M):
     kit.box("tilted.cord", (1.7 * K, 0.07, 0.07), (0, -0.56, 1.66), cord, tor)
     kit.box("tilted.knot", (0.24, 0.1, 0.24), (0.1, -0.6, 1.62), cord, tor, bevel=0.03)
     # a neck block between the shoulders and the hanging head, placed every frame in animate()
-    kit.box("tilted.nk", (0.55, 0.55, 1.0), (0, 0, 2.0), kit.plastic("#8a7556", 0.5), tor, bevel=0.1)
+    kit.box("tilted.nk", (0.7, 0.62, 1.0), (0, 0, 2.0), kit.plastic("#85704f", 0.5), tor, bevel=0.1)
 
 
 # ------------------------------------------------------------------------------------------------ build
@@ -687,6 +688,8 @@ def build(kit, story, tl):
     rim = kit.light("rim", "SUN", (-10, 25, 12), 1.0, "#ffc88a", size=0.02)
     kit.aim(rim, (0, 0, 0))
     ctx["rim"] = rim
+    # a low warm lamp (the radio's glow) that lights the Tilted's face from below while it is in the chair
+    kit.light("tilt up", "POINT", (-1.0, -0.9, 1.15), 1.0, "#ffd9a8", size=0.35)
     for nm in ("bus", "coach"):
         b = kit.light(f"{nm} beam", "SPOT", (0, 0, -60), 1.0, "#ffd9a0", size=0.3, spot=50, blend=0.6)
         ctx[f"{nm}_beam"] = b
@@ -1004,6 +1007,8 @@ def animate(kit, story, tl, t, ctx):
             kit.aim(beam, (x + fwd.x * (L + 8.0), y + fwd.y * (L + 8.0), z + 0.1))
     bl = ramp_level(_cues(tl, "beam"), t)
     over["bus beam"] = 1500.0 * bl
+    over["boot lamp"] = 1.0 + 5.0 * ramp_level(_cues(tl, "bootb"), t)
+    over["tilt up"] = 160.0 * ramp_level(_cues(tl, "tup"), t)
     over["coach beam"] = 0.0
     over["strip fill"] = 2600.0 * ramp_level(_cues(tl, "tfill"), t)
     over["shelter fill"] = 250.0 * ramp_level(_cues(tl, "sfill"), t)

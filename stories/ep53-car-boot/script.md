@@ -14,7 +14,7 @@
 ## The opening (writer, 2026-11-03): a warning first
 **What changed:** L01 and L02 are new, built to the opening recipe (`docs/research/playbook.md`, v1). L03 now carries the rule, word for word what L01 used to say, so the rule is still said plainly by about 5 s and L74 still echoes it. The old L02 ("Watch the HAGGLER...") and old L03 ("Every coat in the FIELD is one clear COLOUR.") are gone. Nothing after L03 changes. Captions now use US spelling (color, gray) in L03, L04, L19, L28, L61, L62 and L74. The spoken words there don't change, so they keep their voice.
 
-- `L01`: "NEVER trust a coat / that never changes COLOR." (8 words, about 1.6 s.) A warning to you, about a thing that's visibly wrong: one coat standing still in a field where every coat moves.
+- `L01` (since round 4: "The SCARIEST coat / never changes COLOR.", 6 words, 1.95 s; the NEVER opener was too close to ep34): the older line was "NEVER trust a coat / that never changes COLOR." (8 words, about 1.6 s.) A warning to you, about a thing that's visibly wrong: one coat standing still in a field where every coat moves.
 - `L02`: "ESPECIALLY / your OWN." (about 0.6 s.) Tightens the same warning onto the viewer, with no name, place or backstory.
 - `L03`: "In this TOWN, / your COAT changes color / when you change / your MIND." Same spoken words as the old L01, so the builder can reuse that clip if the voice step allows it.
 - **Why this angle:** it plants the twist in the first second. White isn't safe, it's the coat of someone who never decided, and "especially your own" points it at me before L09 says mine has been white my whole life. It also makes the loop land, because after L75 my blue coat is the one that never changes again. The empty-second-chair warning was scarier, but it's back-row's forbidden-seat skeleton again (hard rule 5) and sets up the creature, not the twist.
@@ -54,7 +54,7 @@
 
 | Hit | Here |
 |---|---|
-| 1. Rule as the first line | Since 2026-11-03: a warning first, L01 "NEVER trust a coat that never changes COLOR." and L02 "ESPECIALLY your OWN." The rule itself is L03: "In this town, your coat changes color when you change your mind." |
+| 1. Rule as the first line | Since 2026-11-03: a warning first, L01 "The SCARIEST coat never changes COLOR." and L02 "ESPECIALLY your OWN." The rule itself is L03: "In this town, your coat changes color when you change your mind." |
 | 2. Rule visible by 2 s | In the first shot two coats fade behind me while my white one stays still. The haggler's fade follows at L03. Faces in frame, bright sun. |
 | 3. Montage in the first 15 s | Four examples, L04 to L08: the sofa couple, Walter in brown, haggling by watching coats, the white stallholder who goes yellow. |
 | 4. The narrator is the exception | L09 to L10: my coat has been white my whole life. |
@@ -156,7 +156,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the car-boot field on a bright, sunny Sunday morning.
 - **Shots:** 11.
 
-- `L01` narrator: NEVER trust a coat / that never changes COLOR.
+- `L01` narrator: The SCARIEST coat / never changes COLOR.
   - [FIRST SHOT, see "First shot" above: close on me behind our stall, cream-white anorak dead still while two coats fade behind me, pushing in. Sound hit on "COLOR"]
 - `L02` narrator: ESPECIALLY / your OWN.
   - [close on my cream-white sleeve on the table, a passing seller's sleeve fading violet to pink right behind it. Mine doesn't move]
@@ -341,7 +341,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [mid close on me, the same framing as the haggler in L01, my blue coat flat and still]
 - `L75` narrator: So I NEVER / change MINE.
   - [close on my face, `neutral`, then hold on the shut tailgate. 0.25 s after the last word, cut to L01]
-  - Since 2026-11-03 the loop reads "So I never change mine. Never trust a coat that never changes color. Especially your own." My blue coat is now a coat that never changes, so the warning lands on me again.
+  - Since 2026-11-03 the loop reads "So I never change mine. The scariest coat never changes color. Especially your own." My blue coat is now a coat that never changes, so the warning lands on me again.
 
 ## Risks
 
@@ -355,3 +355,11 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ### US words (builder, 2026-11-03, coordinator's note)
 Spoken UK words changed for US viewers: L37 JUMPER to SWEATER, L67 "to the COACH" to "to the BUS", L68 "till the coach" to "till the BUS", L70 BOOT to TRUNK. The long-distance bus in the next town is the same kind of vehicle as the shelter's bus, which reads fine (she takes a bus, then another). The shot names and set still say coach/boot.
+
+## Round 4 fix (builder, 2026-11-03): polish, props, sfx and what changed
+- **Polish pack:** on (`look.polish`, with `quiet` over L60 to L68). Punch-ins on the all-caps words, whooshes on cuts between lines, a room bed, drift on held shots. Props are all plain shapes with no lettering. Sfx unchanged: the hollow knock under COLOR, the creak and thud on the Tilted, the bell on my coat's fade, the latch strokes.
+- **L01 re-voiced** as "The SCARIEST coat / never changes COLOR." (ep34 opens "NEVER leave..."). L02 stays; the loop runs "...change MINE. The scariest coat never changes color. Especially your own." and still flows. L37's caption now says SWEATER.
+- **Frame 1:** a new `open` light (warm sun from behind the camera, so my anorak is front-lit cream, not blue shade) for 0 to L03, then the usual day light. The haggler stands beside me and fades blue to green (0.3 to 1.8 s) while I stay still; the buyer (violet to pink to yellow) is next to me for the sleeve shot at L02. A bug had hidden the buyer for the whole montage (acting keys out of order): fixed, so L06 now shows his fade. The old sleeve-on-his-shoulder shot (S04) is cut.
+- **The Tilted rebuilt:** the head now lies on the shoulder (roll -92 to -104) on a short neck block, with long dark hair, a bright eye glow, and a low warm lamp that lights its face from below (`tup`). All its shots show the face. Me upright at L50 (no sideways lean); L47.2 puts my sleeve in frame with the tarp behind.
+- **Pace and flash:** S10 (teapot), S31 (third mug), S56 (face from the side) and S90 (my face at an angle) are split. The L59 shot is gone and the lane wide starts 0.35 s earlier, so the running shot ends before my coat crosses the lens; it is lit with the morning light. The trunk gets a lamp boost (`bootb`). The final hold on the tailgate is dropped: the film ends on my face in the blue coat, 0.25 s before the loop.
+- `cover_s` moved to the lit face of the Tilted (see package.json).

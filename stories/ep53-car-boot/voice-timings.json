@@ -6,30 +6,22 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "never trust a coat that never changes color.",
+   "text": "the scariest coat never changes color.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.172,
-   "onset": 0.172,
-   "end": 1.983,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.741,
    "chunks": [
     [
-     0.172,
-     0.543
+     0.155,
+     0.776
     ],
     [
-     0.543,
-     0.828
-    ],
-    [
-     0.828,
-     1.147
-    ],
-    [
-     1.147,
-     1.983
+     0.776,
+     1.741
     ]
    ]
   },
