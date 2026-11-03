@@ -8,6 +8,45 @@ small or biased sample. **Low** is a lead to test, not to rely on.
 
 Last updated 2026-11-03 (first edition).
 
+## The opening recipe (v1, 2026-11-03): the critical path
+**The question:** why did 82.6% choose to view back-row, but only 61 to 65% our next three (ep20 64.7%, ep38 61.3%,
+knock-back 63.1%; `metrics/studio/2026-11-02.md`)? The feed tests each Short for one to four hours and drops it at
+that swipe rate, so this one number decides everything after it.
+
+**What back-row's first 3 s did that the other three didn't** (from each story's `timeline.json` and `story.json`):
+
+| | back-row (82.6%) | ep38 (61.3%) | knock-back (63.1%) | ep20 (64.7%) |
+|---|---|---|---|---|
+| Line 1 | "On the night bus, you never sit in the back row." **A warning to you**, 11 words, 1.8 s | "In this town, a little silhouette over your head shows who you miss most." A wonder rule, 14 words, 2.5 s | "At my uncle's farmhouse, when the floor knocks, you knock back." An instruction, 11 words, 2.3 s | "It's getting closer." A threat with no subject, 1.0 s |
+| Line 2 | "Even if it's the only seat left." Tightens the same warning | Describes the marker | Pause, then "Same rhythm. Every time." | Names a sister and a place |
+| Frame 1 | Looks down the aisle **at the forbidden row**, with the figure already sitting in it under a flickering light, pushing in | A mid shot. At 1.3 s it cuts to a wide from 40 m away | A 17 mm low close-up of the floor | A close-up of the photo strip |
+| Sound | A drop on "back row" (1.7 s) | none in the first 3 s | knocks from below (1.5 s) | none |
+| A name or backstory before 4 s | no | "Dev's stag night" (4.6 s) | uncle | "my sister Wren", "our cousin's wedding" |
+| Title | "The driver on my night bus counted 6. I counted 5." A count that doesn't add up | the premise | the premise | a family setup |
+
+**The market agrees:** among story-length Shorts (90 s and up) in the 2026-11-03 scan, **7 of the fastest 17 (41%)
+have a warning or danger title** ("Never Be Caught Awake At Night", "Never Ask The Visitor For His Name", "...is
+dangerous", "you can't move"), against **3 of the other 71 (4%)**. Confidence in the recipe: **medium-low.** It rests
+on four of our Shorts and one scan, and back-row also differs in ways we can't separate (the night-bus setting, the
+creature). It's the best-supported bet we have, and the next three films test it.
+
+**The recipe** (every new story, and every queued story before it uploads):
+1. **Line 1 is a warning to "you"** about one concrete, everyday thing: "you never...", "never...", "don't...",
+   "...is dangerous". At most 12 words and 2.2 s. It isn't a description of how the world works ("In this town,
+   X happens"), a feeling, or a whisper with no subject.
+2. **Frame 1 looks straight at the thing the warning names, and it's already slightly wrong** (the figure already in
+   the back row). Lit to read on a phone and centred for TV (58.5% of back-row's watch time). Push in during line 1.
+   No wide or establishing shot in the first 3 s.
+3. **A sound hit on the warning's last word.**
+4. **Line 2 tightens the same warning** in at most 1.5 s ("Even if it's the only seat left."). No names, places or
+   backstory before 4 s.
+5. **Lines 3 to 5 show the rule at work,** one shot each, none over 2 s (item 1 below).
+6. **The title is the warning or a concrete thing that doesn't add up,** at most 8 words, never the premise phrase.
+7. **Measure:** chose to view (Studio) on the next 3 films. **Pass at 75% or more** each. If 2 of 3 land under 70%,
+   the recipe is wrong: go back to the table above and test the setting or the creature instead.
+
+The queue, scored against this, is in `docs/research/queue-audit.md`.
+
 ## Do (ranked)
 | # | Do this | Evidence | Confidence |
 |---|---|---|---|
