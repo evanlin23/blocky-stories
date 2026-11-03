@@ -1,6 +1,8 @@
 {
- "title": "Our building doesn't have a thirteenth floor",
- "description": "I live on twelve. The lift goes up anyway.\n\nA small building, a brass-and-black attendant, and a rule nobody gave me. It's made up. Built with code and Blender.\n\nMr. Okafor next door has never said hello.",
- "pin": "Would you have stepped out on thirteen?",
- "made_for_kids": false
+  "title": "In This Building Everything You FORGET Goes To Floor 13",
+  "description": "In my building, everything you forget turns up on the thirteenth floor. Keys, birthdays, the odd first boyfriend. You just ride up and fetch it.\n\nI've never forgotten a thing, so I've never been up there. Then the lift started going past my floor on its own, to a thirteen with the lights off.\n\nIt's made up, a creepy blocky story built with code and Blender.",
+  "pin": "What's the first thing of yours that would turn up on floor 13?",
+  "made_for_kids": false,
+  "cover_s": 59.4,
+  "shape": "lost-property"
 }

@@ -1,275 +1,154 @@
-# ep14-mirror-maze: the story script (scriptwriter, 2026-10-31)
+# ep15-mirror-maze: the story script (redo, writer, 2026-11-02)
 
-- **Working title:** Only one of us walked out of the mirror maze. It's a statement, not an imperative rule. The upload title is the packager's, and it stays off the film *Us* and off "doppelgänger".
-- **Takeaway:** none on purpose. It's a made-up creepy blocky story for PandaNanoAdventures (notes 16 and 21).
-- **Target length:** 2:15 to 2:30 on screen, never over 3:00.
-- **Word count:** 605 spoken words in 88 lines, all in voice A, plus 3 pause beats that add 4.1 s.
-- **Estimated length:** about 2:23 on screen. The speech is 2:05 at 290 wpm. Then add the gaps, which come to 13.7 s: 88 lines at the default 0.12 s, plus the longer holds asked for in brackets. Add the pause beats, which are 4.1 s. P01 is 1.8 s, P02 is 0.5 s and P03 is 1.8 s. Then 0.25 s of lead and a 0.25 s tail. ep13's measured pace on lines this short was 279 wpm, and at that pace it lands about 2:28. If the retime runs over 2:30, first cut L26, which is 7 words and about 1.5 s. Then take the 0.3 s holds back to 0.12 s. Don't speed the voice.
-- **Shots:** about 72 in all. Each section gives its own count.
-- **Changed on 2026-10-31, after the creature test:** L52 and P01. The motion-designer's replay test found that the two-second catch-up at 4x reads silly in this rig, with both the brief's keys and the designer's. So P01 now uses the brief's fallback from ruling 2. Her hand comes down at a person's pace, she takes one short step, and her head comes round onto the lens. L52 used to say she did everything in two seconds, which isn't true any more, so now it says what's on screen. P01 goes from 2.3 s to 1.8 s. L53 is unchanged. The truck's fast duck at L40 to L42 stays too, because the test didn't try it. If the designer slows that beat as well, L40, L41 and L52's "this time" change together.
+**The big idea:** the narrator isn't a person at all. They're the reflection someone left in a mirror maze pane when they moved away last year, and their best friend Tasha has come to the travelling fair every night this week to visit a reflection.
 
-## Format
+- **Why it's redone:** held on 2026-11-02 because the old first line ("TASHA points at anything GREEN...") wasn't the world's rule (RULES → Our own numbers so far, ep20). This is a new premise and twist on the same set and cast.
+- **Slug:** `ep15-mirror-maze` (unchanged, as in story.json).
+- **Length:** 338 spoken words in 43 lines, plus 2 pause beats (1.4 s). About 1:22 on screen at the measured 280 wpm with gaps and holds (1:18 at 290 wpm). That's in the 60 to 90 s test band. If it runs over 1:30, first take the extra holds back to 0.12 s, then cut L07.
+- **Shots:** about 46, a new shot every 1.8 s on average.
+- **Shape tag:** `echo` (new): the narrator turns out to be what someone left behind, a copy that thinks it's the person.
+- **The test:** "Wait, the narrator was the reflection the whole time, and Tasha's been visiting a reflection every night because the real one moved away?" Then "oh no", because the truck is taking the pane to a town where nobody knows them.
 
-Each line gives the id and who says it, then the caption chunks split with ` / `. The spoken text is the chunks in lowercase, without the quote marks, the way `story.json` stores them. CAPS are the key words, in raincoat yellow `#ffd23a` (the fallback is fry-van amber `#ffa040`). No chunk has more than three words, and no caption has a digit.
+## Premise, rule, twist
 
-- **Who:** every line is `narrator`, read in voice A. That's me, cast key `me`. Tasha (cast key `tasha`) has no voice of her own. Her words are reported inside my lines, which is note 18, "one voice", and her mouth flaps under the words I quote. The maze guy and the copy never speak.
-- **She, then it:** the copy is "she" and "Tasha" up to L55, because I don't know yet. From L58, "It came out of the GLASS", the copy is only ever "it". After that, "she" is always the real Tasha: in the glass from L68 and out from L78. L63's panes show her image, which is why they "showed TASHA".
-- **Pause beats** (`P01` and on) are beats with no words. Each gives a length and its one big on-screen word, or none.
-- **Where** heads each section. A line that moves somewhere else says so in brackets under it.
-- **Gaps** are the default 0.12 s unless a line asks for more in its bracket.
+- **Premise (for story.json):** In a town where your reflection stays behind in the glass when you walk away, I meet my best friend Tasha at the travelling fair's mirror maze every night, and on the last night the maze guy starts loading the panes onto the truck.
+- **Twist (for story.json):** I'm not the person, I'm the reflection the real me left in a maze pane last year before moving away. I've never left a reflection because I am one. Tasha has come every night to see me, and when my pane goes on the truck she looks at herself in it on purpose, so her reflection stays behind with mine.
+- **World (for story.json):** a travelling fair packing up in the rain at night, in a town where every reflection stays where it was made: duckboards over mud, a puddle that still holds a man tying his boot, a flatbed truck of glass panes full of waving strangers, a fry van whose steel side holds a long queue, and a lilac-bulbed mirror maze with its roof off.
+- **The rule:** your reflection stays in the glass when you walk away. It stays where you stood, rimmed in a thin lilac glow, and lives on in that glass. Leftovers nobody comes to see lose the shine in their eyes over the years.
+- **The marker (by 2 s):** a **thin lilac glow outline** on every leftover reflection (our own design, not a game effect), plus the leftover standing where nobody is. In the first frame, Tasha stands lit at the maze front and the panes behind her hold a crowd of lilac-rimmed strangers who aren't on the steps.
+- **The narrator is the exception:** "I've NEVER left ONE ANYWHERE." Everyone in town leaves reflections everywhere. I never have, because I am one.
+- **The loved one:** Tasha (adult), shown by 0:20 pointing at my green hat through the glass and grinning, two trays of fries in her hands.
+- **The loophole (the rule's own logic):** the rule that made me is the one that saves me from being alone. All week Tasha only ever looked at me, never at herself, so she left nothing in my pane. On the last night she looks at herself in it on purpose and walks away, and her reflection stays with me.
+- **How the last 15 s turn the first line:** L01 sounds like a fun town quirk. By L42 it's what I am, and L43 ("And NOBODY comes BACK for it.") makes it about the real me who never came back, the dark ones, and now Tasha's reflection on the truck.
+- **Plants a rewatch catches:**
+  1. L08 (about 15 s): "I've NEVER left ONE ANYWHERE." It sounds like a quirk. It's the twist said out loud.
+  2. L13 (about 24 s): "But TASHA always PAYS. I never HAVE." I can't. I'm in the glass.
+  3. L18 and L19 (about 33 s): her side of the glass fogs when she laughs, and mine never does.
+  4. In pictures only, never said: I'm on the far side of a pane in every shot of me. Rain falls on Tasha and never on me. I carry the same thin lilac rim as the leftovers in the montage, which reads as the maze's lilac bulbs behind me. In L17 the leftovers in the carried panes turn to watch me, one of their own.
+- **Lore connection:** none. It's optional now (RULES → The shared world is optional), and the old five-stroke gate tally on the maze facade is removed because it doesn't match the canon's plain strokes.
 
-## 01 The joke
+## Cast
 
-- **Where:** the fairground in the rain, at the mirror maze's front under its lilac bulbs. L01 to L05 are the side-on two-shot and close faces. L06 to L11 go wide on the fair packing up, the maze guy and the fry van's warm square far off.
-- **Shots:** about 10.
-- **Plants:** her FRIES yell and her streak (L04 and L05), for the proof and the last line. My green hat, the only green thing in the film. The fry van, far off and warm in every wide. The maze guy with his back to us.
+- **Me** (`me`, adult): unchanged look (rose rain jacket, pickle-green bucket hat, the only green in the film). Always behind a pane. Dry in every shot. A thin lilac rim, the leftover marker, kept subtle and always backed by the maze bulbs. Normal round eyes with the glint, because Tasha visits ("That's why I still have my SHINE").
+- **Tasha** (`tasha`, adult): unchanged look (sulphur-yellow mac, plum swoop fringed to her right). Always on the near, real side of the glass, in the rain, getting soaked. Her breath fogs the pane.
+- **Tasha's reflection** (from L39): the old copy model (Tasha mirrored left to right), with **normal eyes and glint** this time, and the lilac rim. It stands beside me in my pane. It's warm, never eerie.
+- **The maze guy** (`guy`, adult): unchanged, back to us, hood up. He takes the panes down and carries mine to the truck. Never speaks, never in danger.
+- **The leftovers** (extras in glass): about six to eight strangers, small in the montage surfaces and the carried panes, each with the lilac rim. New simple specs (varied coats, hats, hair), all adults.
+- **The dark one** (the creature): one old leftover from the back panes. A stranger in faded grey-violet clothes, **a head too tall** for the pane it stands in, the copy's mirror-black eyes with no shine, a flat line of a mouth, its lilac rim gone dull grey. It's never seen moving, only a pane nearer each time I look.
+  - **Where it is, beat by beat:** L01 to L19 nowhere. L20 to L22 one of several still figures deep in the dark back panes, small. L23 a pane nearer each cut (three positions). L24 to L25 right behind me in my own pane, face at least 1/3 of the frame width, lit from below. L26 stopped, Tasha looking at it. L27 to L41 not shown. L43 deep in our pane on the truck, behind me and Tasha's reflection, small but clearly lit, a pane nearer than it should be.
 
-- `L01` narrator: TASHA points / at anything GREEN / and goes, / what's THAT?
-  - [the open: a side-on two-shot under the maze glow in the rain, Tasha pointing at my green bucket hat. Her face is close enough to read the grin, the shine and the fringe swept to her right. This framing comes back at L22]
-- `L02` narrator: And I say / PICKLE. / Every TIME.
-  - [my face, resigned]
-- `L03` narrator: Whoever / says PICKLE / buys the FRIES.
-- `L04` narrator: So she yells / FRIES, / and I PAY.
-  - [her FRIES yell, a mouth flap, both arms up]
-- `L05` narrator: I have NEVER / won. / Not ONCE.
-  - [her `grin`, the shine bright in her eyes]
-- `L06` narrator: We've been / best FRIENDS / since FOREVER.
-  - [a wide from behind, the two of us walking up to the maze, her yellow coat and my green hat the only colour in the frame]
-- `L07` narrator: It was the / LAST WEEKEND / of the FAIR.
-  - [the fair packing up: rides lumped under dark tarps, the flatbed truck, the dark big wheel far back in the fog]
-- `L08` narrator: And it was / POURING. / HALF the rides / were under TARPS.
-- `L09` narrator: The only ride / still LIT / was the / MIRROR MAZE.
-  - [the maze front, its bulbs burning steady. The fry van's warm square far across the field]
-- `L10` narrator: The MAZE GUY / was already / rolling up / its ROOF TARP.
-  - [the maze guy up at the roofline in his black poncho, hood up, his back to us]
-- `L11` narrator: He kept / his BACK / to us.
+## Look and sound
+
+- **Palette:** unchanged violet-grey rain night, lilac-white maze bulbs, yellow coat, green hat. The leftover rim is a cooler lilac (about `#c9a6ff`) than the bulbs, so it reads as a glow on the figure, not light from behind. The dark one's rim is dull grey (about `#7a7484`).
+- **Caption key colour:** raincoat yellow `#ffd23a` (unchanged).
+- **Music:** `dorian` on E2, 76 bpm (unchanged), keeping the piano's late echo (a reflection of each note). Thin drone and pad to L13. Piano with echo from L14. A heavy low drone enters at L20 and holds. Drop before P01 (hit and sting on the dark one's face) and before P02 (the tilt, silence but the rain). The major, every note landing together, at L39 to L41. Back to the drone alone for L42 and L43, cold.
+
+## Shot plan, beat by beat (about 46 shots)
+
+| Lines | Shots | What we see | New or reused |
+|---|---|---|---|
+| L01 (0 to 2.5 s) | 1 | The hook: Tasha at the maze front, lit bright with a soft front fill, face at least 1/4 frame width. The panes behind her hold a lilac-rimmed crowd of strangers who aren't on the steps. Fog light, rain fine. Readable at phone size by 2 s | maze front reused, leftover crowd and rim new |
+| L02 to L03 | 2 | The fry van's steel side holds a long queue of lilac-rimmed people. Then the real hatch: two customers | van reused, leftover queue new |
+| L04 to L05 | 2 | A puddle on the duckboards holds a man tying his boot. Nobody stands over it | duckboards and puddle reused, puddle figure new |
+| L06 | 1 | The truck's glass panels full of lilac-rimmed people waving | truck reused, figures new |
+| L07 | 1 | A brand-new pane on the truck, empty. A little funny | truck reused |
+| L08 | 1 | Me at a pane, side-on, nothing of me in the glass in front of me. The lilac rim is on me, the bulbs behind me | reused framing |
+| L09 to L13 | 6 | Tasha and me either side of a pane inside the maze. Her grin, pointing at my hat. My face. Her two fries trays, eating from both. Rain on her side only | inside maze reused, the find-through-the-glass framing from old L68 to L74 reused with roles swapped |
+| L14 to L17 | 5 | Roof off, rain. The maze guy carrying panes past (old L81 shot). Each carried pane packed with lilac-rimmed faces that turn to watch me | reused carry shot, faces new |
+| L18 to L19 | 2 | Her breath fogs her side of the pane (an animated fog patch on her side). My side stays clear | fog patch new |
+| L20 to L23 | 5 | The dark back panes, still figures with no shine. The dark one a pane nearer on each cut. Drone enters | back panes reused, dark one new |
+| L24, P01, L25 | 3 | Over my shoulder: the dark one right behind me in my pane. Drop, then hit on its face, at least 1/3 frame width, key from below, grey rim | new |
+| L26 | 1 | Tasha's face, staring at it. It has stopped | reused |
+| L27 to L28, P02 | 3 | The maze guy lifts my pane. From inside, my whole maze tips about 25 degrees over 0.6 s, floor and frames and me together. Cut to her side: Tasha level in the rain, me tilted inside the carried pane, my lilac rim plain | tilt new (parent my side of the pane to its frame) |
+| L29 to L33 | 5 | The reveal said plainly. Me in the pane, front at last, lilac rim and the shine in my eyes. Tasha soaked outside, still smiling at me | reused cast, new framing |
+| L34 to L35 | 2 | The truck at the field's edge, tailgate down. My pane set on it | truck reused |
+| L36 to L39 | 4 | Tasha turns and looks at herself in my pane. Her reflection appears beside me, rimmed. She walks back into the rain. Her reflection stays | Tasha's reflection reuses the copy model with normal eyes |
+| L40 to L41 | 2 | On the truck, in the pane: her reflection points at my hat. My grin. The major | reused |
+| L42 to L43 | 2 | The pane on the truck from outside, two of us in it, the real Tasha small on the duckboards waving. Then a push into the pane: deep behind us, the dark one, a pane nearer. Cut 0.25 s after "it" back to L01 | new composition, reused pieces |
+
+## Narration
+
+Every line is `narrator`, voice A. CAPS are key words in `#ffd23a`. No chunk has more than three words, and no caption has a digit.
+
+- `L01` narrator: In this TOWN, / your REFLECTION / STAYS behind / when you / walk AWAY.
+  - [the hook shot. "In this town" lands by about 1 s, the crowd in the panes is the rule]
+- `L02` narrator: The fry van's / SHINY SIDE / has a QUEUE / a hundred LONG.
+- `L03` narrator: The REAL queue / is TWO.
+- `L04` narrator: A PUDDLE / on the BOARDS / still has / a MAN / tying his BOOT.
+- `L05` narrator: He tied it / in MARCH.
   - [gap 0.3 s]
-
-## 02 The maze
-
-- **Where:** up the steps under the arch of bulbs, then inside on the first trip. The tarp roof is still on and the light comes from the bulbs along the top rails. Mirrored stand-ins for both of us make it read as a normal mirror maze. L20 to L23 are outside at the exit, in the rain.
-- **Shots:** about 12.
-- **Plants:** the one Tasha standing still at L18, about 27 s in, in the spot where she's found at L68. "For once, I came out FIRST." at L20, about 31 s in. Her hair swept the other way at L22, framed like L01 so the viewer can compare the two.
-
-- `L12` narrator: So we / went IN / before it / came DOWN.
-  - [up the steps under the bulbs]
-- `L13` narrator: Inside / was all GLASS, / and a HUNDRED / of US.
-  - [the glass grid with both of us repeated down every pane. At most 6 to 8 readable figures in a frame]
-- `L14` narrator: TASHA said, / "FIRST one OUT / WINS."
-  - [her smirk side-on, already turning away down a corridor]
-- `L15` narrator: And we / SPLIT UP.
-- `L16` narrator: There were / TASHAS / all down / the GLASS.
-  - [a slow track past the panes. My own reflection in the near ones, and far down the glass, Tasha after Tasha, all moving. It still reads as a normal mirror maze]
-- `L17` narrator: Every one / of them / MOVING.
-- `L18` narrator: Except ONE, / way at / the BACK, / standing STILL.
-  - [far down the glass, one Tasha stands still while the rest move. Hold it long enough to read, gap 0.3 s]
-- `L19` narrator: I figured / it was / the ANGLES.
-- `L20` narrator: For once, / I came out / FIRST.
-  - [me out of the exit into the rain, alone for a beat]
-- `L21` narrator: Then TASHA / came OUT.
-  - [the copy steps out of the exit. From here until L78, every Tasha outside the glass is the copy]
-- `L22` narrator: Her hair / was swept / the OTHER way.
-  - [the exit framing: the same angle as L01, her face at least a quarter of the frame width, the fringe rimmed by the maze light and swept to her left. Side-on, so her eyes don't read yet]
-- `L23` narrator: I figured / it was / the WIND.
+- `L06` narrator: The GLASS / on the TRUCK / is full / of PEOPLE, / still WAVING.
+- `L07` narrator: So NOBODY / here buys / a NEW mirror. / Too LONELY.
+- `L08` narrator: Me? / I've NEVER / left ONE / ANYWHERE.
+  - [plant 1. Light, a little proud]
+- `L09` narrator: But TASHA / meets me / at the / MIRROR MAZE / every NIGHT.
+- `L10` narrator: She POINTS / at my / green HAT / and goes, / what's THAT?
+  - [the loved-one picture: her grin through the pane, pointing]
+- `L11` narrator: I say / PICKLE. / Every TIME.
+- `L12` narrator: Whoever / says PICKLE / buys the FRIES.
+- `L13` narrator: But TASHA / always PAYS. / I never / HAVE.
+  - [plant 2: she eats from both trays]
+- `L14` narrator: It was / the LAST NIGHT / of the FAIR.
+- `L15` narrator: The MAZE GUY / was taking / the PANES / DOWN.
+- `L16` narrator: Every pane / he CARRIED / was PACKED / with FACES.
+- `L17` narrator: And they / all TURNED / to WATCH me.
+- `L18` narrator: Tasha LAUGHED. / Her side / of the GLASS / FOGGED up.
+- `L19` narrator: MINE / never DOES.
+  - [plant 3, gap 0.3 s]
+- `L20` narrator: At the BACK, / the OLDEST panes / had gone DARK.
+  - [the drone enters]
+- `L21` narrator: The people / in THOSE / had no SHINE / in their EYES.
+- `L22` narrator: NOBODY / had come / to SEE them / in YEARS.
   - [gap 0.3 s]
-
-## 03 Walking out
-
-- **Where:** the plywood duckboards across the dark field, heading for the fry van's warm square far off. Side-on walks, and low shots along the big still puddles that mirror the maze.
-- **Shots:** about 10.
-- **Plants:** her silent boots at L27, about 41 s in. Her own trick tried on her and mouthed with no sound at L30 to L33, about 47 s in. Her black eyes, caught in two mid shots at L29 and L32 and never mentioned.
-
-- `L24` narrator: We headed / for the / fry VAN.
-  - [side-on walk across the duckboards, the van's square far off]
-- `L25` narrator: Every STEP, / she was / HALF a beat / LATE.
-  - [a side-on two-shot wide, both figures at least a third of the frame height. Our legs out of step]
-- `L26` narrator: Always on / the side / with the PUDDLES.
-- `L27` narrator: Her boots / didn't SPLASH.
-  - [low along a puddle: my boot splashes and we hear it. Hers comes down with no splash and no sound]
-- `L28` narrator: I STOPPED / and turned / to HER.
-- `L29` narrator: She STOPPED / and turned / to ME. / A little LATE.
-  - [mid shot, side-lit by the maze glow. The first of the two shots where a sharp viewer can catch her black eyes. Never a lit front close-up]
-- `L30` narrator: So I tried / her own TRICK / on her.
-- `L31` narrator: I pointed / at my HAT / and went, / what's THAT?
-  - [me pointing at my hat with my right hand]
-- `L32` narrator: She pointed / at her / OWN HEAD. / Nothing GREEN / up there.
-  - [she points at her own head with her left hand, mirror-handed, half a beat late. The second mid shot where her eyes can be caught]
-- `L33` narrator: Her mouth / made the WORDS. / No SOUND.
-  - [her mouth moves with my words, late, and makes no sound]
-- `L34` narrator: Normally / she'd LAUGH / at me.
-- `L35` narrator: I kept / WALKING.
+- `L23` narrator: Every time / I LOOKED, / one was / a pane NEARER.
+- `L24` narrator: Then it / was right / BEHIND me, / in MY glass.
+  - [everything drops out about 0.6 s before P01 but the voice]
+- `P01` pause 0.6 s: none
+  - Cut to its face behind my shoulder, lit from below. The `hit` and `sting` land on the cut.
+- `L25` narrator: Its EYES / were BLACK, / like a WINDOW / at NIGHT.
+- `L26` narrator: Tasha / looked RIGHT / at it, / and it STOPPED.
+- `L27` narrator: Then the / MAZE GUY / LIFTED / MY pane.
+- `L28` narrator: And my / WHOLE MAZE / TIPPED / with it.
+- `P02` pause 0.8 s: none
+  - The tilt held from her side: Tasha level in the rain, me tipped inside the pane. Music out, rain only.
+- `L29` narrator: I've never / LEFT / a reflection, / because / I AM one.
+  - [the reveal line, said plainly. Gap 0.3 s]
+- `L30` narrator: The REAL me / looked in / this pane / LAST YEAR.
+- `L31` narrator: Then / MOVED AWAY, / and never / came BACK.
   - [gap 0.3 s]
-
-## 04 The truck
-
-- **Where:** the flatbed truck by the walkway, stacked with steel frames and glass panels under straps. The wind picks up on the tarps.
-- **Shots:** about 7.
-- **Plants:** the rule, shown small for the first time. The freeze and the quick catch-up. Nothing says why yet.
-
-- `L36` narrator: Then the WIND / came HARD, / so I DUCKED / behind a TRUCK.
-  - [a gust flaps the tarps. I crouch behind the truck's tailboard, out of her sight]
-- `L37` narrator: When I / stood UP, / she was FROZEN.
-  - [her out on the walkway, stopped, gap 0.3 s]
-- `L38` narrator: Mid-STEP, / one foot / in the AIR.
-- `L39` narrator: Rain running / off her COAT.
-  - [close on her shoulder, rain running off the coat. Nothing else on her moves]
-- `L40` narrator: Then she / did my DUCK, / way too FAST.
-  - [she finishes the step, ducks and comes up, snapping pose to pose. Small, about four times speed]
-- `L41` narrator: Like she / was catching UP.
-- `L42` narrator: And she was / back to / being LATE.
-  - [side-on walk again, the lag back]
-- `L43` narrator: I didn't / say a WORD.
-  - [gap 0.4 s]
-
-## 05 The bumper cars
-
-- **Where:** the bumper cars, under their sagging tarp, with the steel floor and the caged worklight on its tripod. L47 cuts out to her on the open ground in the rain, the worklight below her. From P02 to L59 we're on her face and mine.
-- **Shots:** about 12.
-- **Plants:** nothing new. This pays off the freeze. Her black eyes are said for the first time at L54.
-
-- `L44` narrator: So at the / BUMPER CARS, / I HID / behind the TARP.
-  - [I push the tarp's edge up with the back of one hand and slip behind it. That's the hand she's frozen copying at L50]
-- `L45` narrator: I stood / back there, / SHAKING.
-  - [close, side-on]
-- `L46` narrator: I put / my HANDS / over my FACE. / Three deep BREATHS.
-- `L47` narrator: I couldn't / hear her / at ALL.
-  - [cut out to her on the open ground in the rain, frozen with one hand half up, lit from below by the worklight. Gap 0.4 s]
-- `L48` narrator: Then I / stepped OUT.
-- `L49` narrator: She was / right where / I'd LEFT her.
-- `L50` narrator: In the RAIN, / one hand / half UP.
-- `L51` narrator: Then she / SAW me.
-  - [the music, the rain and everything else drop out about 0.7 s before P01, so only the voice is left]
-- `P01` pause 1.8 s: none
-  - The replay, done the brief's fallback way (ruling 2). It's one held side-on mid shot at `step: 1`, with no cuts and no sound at all. She's frozen for about 0.4 s. Then her far hand, half up by her chin, comes down at a person's pace over about 0.65 s. She takes one short step, about 0.3 s, and her head comes round onto the lens over about 0.45 s. Nothing snaps. It should read calm and wrong. Her coat stays under a quarter of the frame. Those are the replay test's timings, and they add up to the 1.8 s. The hold on her face is P02.
-- `P02` pause 0.5 s: none
-  - The stop. Cut to her face, lit from below, about 1.5 m from me, in my pose and facing me the way a reflection would. The `hit` and the `sting` land on the cut, then nothing. The rain comes back first, at the end of the beat.
-- `L52` narrator: She didn't / HURRY / this time. / Hand DOWN, / like I DID. / ONE STEP.
-  - [her face, still. Then my `wide` face]
-- `L53` narrator: And she STOPPED, / FACING me, / in my POSE.
-- `L54` narrator: Her EYES / were BLACK, / like a WINDOW / at NIGHT.
-  - [her face at least a third of the frame width, key from below, lilac rim behind. The eyes are the darkest thing near her face]
-- `L55` narrator: No SHINE / at ALL.
-  - [gap 0.4 s]
-- `L56` narrator: That's what / a REFLECTION does.
-  - [slow push-ins from here, the drone back under the twist, gap 0.3 s]
-- `L57` narrator: It can't MOVE / if it can't / SEE you.
-  - [gap 0.3 s]
-- `L58` narrator: It came out / of the GLASS.
-  - [gap 0.3 s]
-- `L59` narrator: Tasha was / still IN there.
-  - [a low `riser` under it, gap 0.6 s]
-
-## 06 Back in
-
-- **Where:** L60 and L61 running back across the field. L62 to L80 the maze with its roof off in the rain, half the panes out and the bare steel grid showing. L81 and L82 the panel carried out to the truck. P03 holds on the maze front.
-- **Shots:** about 16.
-- **Plants:** the payoffs. The still Tasha's spot from L18 comes back at L68 and L69. Her joke from L01 at L70 to L74. "FIRST" from L14 and L20 at L71.
-
-- `L60` narrator: The whole fair / was coming DOWN. / I RAN back / in ANYWAY.
-  - [running back across the dark field, the maze still lit ahead]
-- `L61` narrator: It ran / WITH me, / half a beat / BEHIND.
-  - [side-on, it runs at my glass side, out of step with me]
-- `L62` narrator: Half the PANELS / were OUT. / The ROOF / was OFF.
-  - [inside: rain coming straight in through the open grid]
-- `L63` narrator: And every PANE / showed TASHA, / COPYING me.
-  - [a wide of panes, every one her, each copying me half a beat late]
-- `L64` narrator: None of them / showed ME.
-- `L65` narrator: I HID again, / where NOTHING / could SEE me.
-  - [me stepping behind a stacked steel frame. Out in the glass, every Tasha stops]
-- `L66` narrator: Then I / popped back OUT.
-  - [the frozen gallery]
-- `L67` narrator: For HALF / a beat, / NOTHING moved.
-- `L68` narrator: Except ONE, / way down / the GLASS, / waving both ARMS.
-  - [the real Tasha far down the glass in her `worried` face, at least an eighth of the frame height, waving while everything else is still. Hold about 0.6 s, then cut away before the glass catches up. Gap 0.6 s]
-- `L69` narrator: In the / SAME SPOT / as BEFORE.
-- `L70` narrator: She pointed / at my HAT / and went, / what's THAT?
-  - [I've run down the glass to her pane. Her face goes `wide`, then she points at my hat through the glass. It stands at my glass side, between me and her pane]
-- `L71` narrator: A reflection / can't go FIRST.
-- `L72` narrator: So I said / PICKLE. / On PURPOSE.
-- `L73` narrator: She yelled / FRIES.
-  - [her FRIES yell through the glass, a mouth flap, her `grin`]
-- `L74` narrator: She's still TASHA. / And she's still / WINNING.
-- `L75` narrator: But IT stood / between us, / FACING me.
-  - [a wide where the plane between us is easy to read: me, then it facing me, then her pane right behind it]
-- `L76` narrator: So I / stepped BACK.
-- `L77` narrator: It stepped / back TOO, / HALF a beat / LATE.
-  - [it steps back toward her pane, and we cut on the action under a soft `whoosh`. Nobody is seen crossing]
-- `L78` narrator: And there / was TASHA, / SOAKED / and GRINNING.
-  - [Tasha stepping out of that same pane, soaked, hair and coat dark with rain. One piano note with no echo]
-- `L79` narrator: The SHINE / was back / in her EYES.
-  - [the eye close-up. Her glint is the brightest point on her face]
-- `L80` narrator: She bumped / my SHOULDER.
-  - [side-on, the one touch in the film. In the pane behind her, the copy stands in my pose, half a beat behind us]
-- `L81` narrator: The maze guy / carried that PANE / to the TRUCK.
-  - [his back to us the whole way]
-- `L82` narrator: In the GLASS, / it watched / us GO. / LATE, / like ALWAYS.
-  - [the copy in the carried pane, turning to watch us go, late]
-- `P03` pause 1.8 s: none
-  - The maze's bulbs go off in one slow fade, and that pane goes dark with them. The generator winds down with a falling pitch at -18 dB or louder, so it's heard. No cut to black.
-
-## 07 The fry van
-
-- **Where:** the fry van's lit hatch across the field, under its amber strip light, with the steel counter and the polished steel side panel. The vendor is never in frame, and the inside of the hatch stays out of shot.
-- **Shots:** about 5.
-- **Plants:** the joke and the lag both pay off, and the last line loops into L01.
-
-- `L83` narrator: My coins were / already on / the COUNTER.
-  - [the warm turn, shown. A side-by-side two-shot under the amber strip, the first warm light to fill the frame. Plain disc coins already on the counter, her hand still down. The score turns to the major and every note lands together]
-- `L84` narrator: Before she / even POINTED.
-- `L85` narrator: We both / looked UP / at the RAIN.
-  - [the van's polished steel side: our two reflections look up at the rain at the same moment we do]
-- `L86` narrator: So did / our REFLECTIONS, / in the van's / SHINY SIDE.
-- `L87` narrator: And NOBODY / was LATE.
-  - [back on us under the warm light. Her `grin`, the shine in her eyes]
-- `L88` narrator: At the / fry VAN, / she pointed / at my HAT.
-  - [her finger rising toward my hat. Cut on the picture 0.2 to 0.3 s after "HAT", straight into the first shot, so the joke starts again. That needs `tail` at about 0.25 s, since `tail` 0 cuts on the last word]
-
-## Where the copy is, line by line
-
-One model, Tasha's spec mirrored left to right, as the brief's continuity list sets it. It never touches anyone and is never closer than about 1.5 m.
-
-| Lines | Where | What it's doing |
-|---|---|---|
-| L01 to L15 | nowhere | this is the real Tasha, with her shine and her fringe to her right |
-| L16 to L19 | in the glass | the moving Tashas far down the glass. The one standing still at L18 is the real Tasha |
-| L21 to L35 | beside me on my puddle side, about 0.8 m across the plane | walking half a beat late, silent, face side-on or back-lit. Her eyes can be caught only in the mid shots at L29 and L32 |
-| L36 to L43 | on the walkway by the truck | frozen mid-step while I'm behind the truck, then the small catch-up at L40 |
-| L44 to L51 | out on the open ground | frozen with one hand half up, lit from below by the worklight |
-| P01 to L55 | about 1.5 m from me, side-on to the camera | the replay, the stop in my pose and the black eyes. It doesn't come closer |
-| L60 to L77 | at my glass side | running with me, frozen while I hide at L65 to L67, between me and her pane at L75, stepping back at L77 |
-| L78 to L82 | in the pane behind Tasha, then in that pane on the truck | standing in my pose, then watching us go, late |
-| P03 | in that pane | it goes dark with the bulbs |
-| L83 to L88 | nowhere | only our two on-time reflections in the van's steel side |
-
-## Notes for the designer, sound and standards
-
-- **Cast used:** `me` and `tasha`, both adults, plus the maze guy, whose cast key is the designer's call. Every word is voice A, and nobody has a `voice` of their own. The maze guy never speaks and never faces us.
-- **Words kept out.** I ran every spoken line and caption through the `GRAPHIC`, `HARM`, `CHILD`, `TRUE_CLAIM` and `BRAND` patterns in `reels/blocky/checks.py`, with 0 hits. None of ruling 5's words is in a line, and none of the brief's whole-script list either. I also kept out "home", "guide", "lead", "follow", "closer", "pale", "skin", "knock", "tap", "bell" and "cap".
-- **Batch skeleton.** There's no closing-section "Last NIGHT," and no age anywhere. Nothing says "it didn't touch me" and no line has the "not X, it was Y" shape. Nothing says what I always do now. The last line is about Tasha, never the copy. The gap at the stop is shown and never said.
-- **Three-word overlap** with `check`'s own count, spoken words only: 0.3% with ep11 `back-row`, 0.3% with ep12 `knock-back` and 0.7% with ep13 `closing-time`. The bar is 12%. Rows 1, 3 and 4 aren't on disk yet, so run `check` again after merging main.
-- **Sound cues the lines carry:** the music drop starts about 0.7 s before P01, under L51, and runs to the end of P02, keeping the `hit` and `sting` at P02's start. There's a `riser` under L59, the one piano note with no echo at L78, the generator winding down under P03 and the turn to the major from L83. There's no knock or tap anywhere.
-- **The loop:** the brief says `tail` 0, but `timeline.py` ends the film on the last word's end plus `tail`, so 0 would cut on "HAT" the way ep13 cut on "me". About 0.25 s gives the 0.2 to 0.3 s the README asks for.
-- **Captions:** 274 chunks, none over three words, and `post.layout_problems` finds nothing wrong with any of them. The brief's example `For HALF a beat,` is four words, so it's split as `For HALF / a beat,`. The same goes for `And she's still WINNING.`, which is now `And she's still / WINNING.`
+- `L32` narrator: Tasha / comes to / SEE me / ANYWAY.
+- `L33` narrator: That's why / I still / have my SHINE.
+  - [the eye close: my glint the brightest point. Gap 0.4 s]
+- `L34` narrator: The TRUCK / leaves at DAWN / for a / NEW TOWN.
+- `L35` narrator: NOBODY there / will come / to SEE me.
+- `L36` narrator: All week, / she'd only / looked at ME.
+- `L37` narrator: So she / looked at HERSELF. / On PURPOSE.
+- `L38` narrator: Then she / walked BACK / into the RAIN.
+- `L39` narrator: And her REFLECTION / STAYED / with ME.
+  - [the major. Gap 0.4 s]
+- `L40` narrator: On the TRUCK, / she pointed / at my HAT / and went, / what's THAT?
+- `L41` narrator: I said / PICKLE. / Every TIME.
+- `L42` narrator: In this TOWN, / your reflection / STAYS behind.
+  - [drone alone, cold. Gap 0.3 s]
+- `L43` narrator: And NOBODY / comes BACK / for it.
+  - [the dark one deep in our pane. Cut 0.25 s after "it" into L01]
 
 ## Say-it-out-loud notes
 
-- **Tasha:** Kokoro reads it TASH-uh (`tˈæʃə`) on its own, with the stress on the first syllable, and the same way in all seven lines that say it. "Tashas" at L16 comes out `tˈæʃəz`. If `asr` hears it as anything else, pin `"Tasha": "tˈæʃə"` and `"Tashas": "tˈæʃəz"` in `phonemes`.
-- **Every other word** went through Kokoro's own G2P with nothing unknown. "Copying" at L63 reads `kˈɑpiɪŋ`, so ep13's fix for "copied" isn't needed. "Wind" at L23 and L36 reads as the weather, and "does" at L56 reads `dʌz`.
-- **L01:** keep it moving so "what's THAT?" lands by about 2 s, with a real question lift on THAT.
-- **L05 "Not ONCE."** Dry, like it still stings a bit.
-- **L14:** it's my voice telling it, not Tasha's. A tiny lift on the quote and no character voice. The same goes for L31 and L70.
-- **L18 "standing STILL."** Even and quiet. It's the plant, so don't push it.
-- **L20 "For once, I came out FIRST."** A little pleased with myself. It has to sound like a win.
-- **L22 and L23:** a shrug. Both "I figured" lines should sound like the same shrug.
-- **L33 "No SOUND."** A small catch before it. The full stop gives it, so don't add a gap.
-- **L37 "she was FROZEN."** Let the 0.3 s after it sit. It's the first real chill.
-- **L47 to L51:** quieter and slower. "Then she SAW me." is the last thing heard before the hole. If it comes out too quick to land, write its spoken text as "then she... saw me." and keep the caption as it is. That's the README's trick, and it's better than a longer gap.
-- **L52 and L53:** after the hole, plain and a little out of breath. Lean a touch on "HURRY", because it answers the truck's "way too FAST". "Hand DOWN, like I DID. ONE STEP." is short and flat, with each bit on its own full stop. Don't add a gap.
-- **L54 and L55:** slow down through "like a WINDOW at NIGHT", then hold "No SHINE at ALL."
-- **L56 to L59:** a short beat after each, because they're the twist. Lean a touch on "It" at L58. That's where she turns into it.
-- **L60 "ANYWAY."** Firm. It's the loyalty.
-- **L67 "NOTHING moved."** Quiet, then lift on "Except ONE" at L68.
-- **L72 "On PURPOSE."** A smile in the voice.
-- **L74:** the first warm line. Warmer, not louder.
-- **L82 "LATE, like ALWAYS."** Flat and a little cold. It closes the creature.
-- **L88:** light and easy, the joke starting again. Don't trail off, because the cut lands 0.2 to 0.3 s after "HAT".
+- **L01:** brisk and bright, a fun fact. It's wonder first.
+- **L03 "is TWO."** dry, a small joke.
+- **L08 "Me?"** a little lift, then pleased with myself.
+- **L19 "MINE never DOES."** flat, a shrug. Don't push it.
+- **L24 to L25:** quieter, then let the hole sit.
+- **L29:** plain and slow. It's the reveal, so no drama in the voice.
+- **L31 "and never came BACK."** a small catch, no extra gap needed.
+- **L37 "On PURPOSE."** warm, proud of her.
+- **L41:** a smile in the voice, the joke going on.
+- **L42 and L43:** flat and cold. Land "it" and stop.
+
+## Checks done
+
+- 0 hits on the `GRAPHIC`, `HARM`, `CHILD`, `TRUE_CLAIM` and `BRAND` patterns. No dashes, semicolons or digits. Every chunk is three words or fewer.
+- Three-word overlap with every other story's spoken lines: 1.2% at most (ep30 `top-rope`, ep41 `orchard-rows`). The bar is 12%. `checks.originality` and `checks.run` on an in-memory copy of these lines found nothing.
+- No batch-1 echoes: no knowing elder, no night-shift narrator, no pale grey creature, no "pressed flat", no closing-section opener, no age on screen. No newcomer opener, mayor or midnight square.
+- **Overlap to watch:** `ep50-beach-huts` (#34 in ideas.md, not on disk) is also a reflection rule, and its narrator has no reflection at all. Ours differs: our rule is reflections staying behind, and our exception is "never left one", which is true because I am one. Keep them apart in the upload order.
