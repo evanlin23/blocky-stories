@@ -3,8 +3,8 @@
 - **Slug:** `ep82-no-door` (batch 7, upload order 3 of 5)
 - **Pitch:** N14 in `docs/research/2026-11-09-week.md` (panel score 7, premise bank C4, reworked). Opening shape `confess`. Lane: core. Length arm: mid (60 to 90 s).
 - **Title:** Pizza For The House With No DOOR 🍕
-- **Word count:** 317 spoken words in 44 lines, all `narrator`, plus one 0.6 s music drop before L21.
-- **Estimated length:** about 73 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L10 first. If it lands under 62 s, nothing is added.
+- **Word count:** 308 spoken words in 43 lines (L12 cut in r1; ids kept stable, no L12), all `narrator`, plus one 0.6 s music drop before L21.
+- **Estimated length:** about 71 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L10 first. If it lands under 62 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright saturated sundown: pink and orange sky, lemon house, every porch light warm. It's six o'clock, the dinner rush, never a night shift. The one dim beat is L16 to L22, when the street's porch lights ramp out (each over 0.6 s, staggered) and the sky stays bright pink. Every light change ramps over 0.3 s or more.
 - **Hold:** scripts only (batch 7). Not built, not voiced.
 
@@ -37,7 +37,7 @@ Against this week's other stories: no drive-thru or second window (ep71-two-wind
 - **First real scare:** L19 to L23 (30 to 35 s): the top windows blink, the lawn splits, the house stands up.
 - **The climax turns the rule's own logic:** the order always says the same thing, "the house with no door", an address and never a person. So I deliver it there: to the bare dirt where the house used to sit. It comes home and sits down on top of it (L30 to L38). No new magic.
 - **Twist and reveal (L23 to L27, 34 to 41 s):** said plainly. "The whole house / was SOMEBODY. / Sitting very STILL, / with a ROOF on." Then one picture each for the knees and the slot that is its mouth.
-- **How the last 15 seconds turn over the first line:** warm on the curb with Marisol, then the sting: last night a second order came in, from another house with no door (L43). There's another one sitting somewhere on my route. The last line ("So rain or SHINE,") runs into L01.
+- **How the last 15 seconds turn over the first line:** warm on the curb with Marisol, then the sting: then a second order came in, from another house with no door (L43). There's another one sitting somewhere on my route. The last line ("So rain or SHINE,") runs into L01.
 - **The plants a rewatch catches:**
   1. L04: the slot is "down at knee HEIGHT".
   2. L05: the slot is warm, "like BREATH".
@@ -66,7 +66,7 @@ One place: a short dead-end street at sundown, seen from the curb in front of th
 - **What's true underneath (never said beyond the reveal):** it has sat in that lot since before the street. Fed at six, it stays sitting. Late, it stands and turns toward the nearest lit door. The pizza goes in its lot, never into any person's hands. It never touches or takes anyone.
 
 ## Cast
-- `me` (an adult man, the delivery driver, the narrator): short black block curls, a red cap worn backward with no logo, a tomato-red work polo with a cream collar, khaki shorts, white sneakers, a red insulated pizza bag. Faces: `neutral`, `smile`, `worried`, `scared`, `laugh`.
+- `me` (an adult man, the delivery driver, the narrator): short black block curls, a red cap worn forward, brim to the front, with no logo, a tomato-red work polo with a cream collar, khaki shorts, white sneakers, a red insulated pizza bag. Faces: `neutral`, `smile`, `worried`, `scared`, `laugh`.
 - `marisol` (my big sister, adult, owns the pizza place): long dark block hair in a high ponytail, a white apron over a mustard shirt, flour on one cheek, the same dark brows as me. Faces: `smile`, `laugh`, `worried`, `soft`. Named at L11 in the same shot.
 - `neighbors` (three adults on their porches): a man in a lilac cardigan, a woman with a watering can, an older man in a mint shirt. L09, L17.
 Every word is the narrator's. L42 is reported ("She says / the route is MINE.").
@@ -122,8 +122,7 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S09 | L09 | 14.5 | Three porches in a row, three lights on, three neighbors watching from behind their screens. |
 | S10 | L10 | 16.9 | A woman walking a dog crosses to the far sidewalk. |
 | S11 | L11 | 18.3 | The pizza place on the corner: Marisol in her apron at the counter, me beside her, both `smile`. |
-| S12 | L12 | 20.7 | Marisol handing me the red pizza bag. |
-| S13 | L13 | 22.3 | The red car pulling out of the lot, me driving (no hands on the wheel shown). |
+| S13 | L13 | 20.7 | Marisol handing me the red pizza bag, then the red car pulling out of the lot, me driving (no hands on the wheel shown). |
 | S14 | L14 | 23.9 | Tonight: the car stopped two blocks off, a flat tire, the badge at 5:58. |
 | S15 | L15 | 25.7 | Me running up the sidewalk with the bag, low and fast. |
 | S16 | L16 | 26.7 | The badge flips to red: +0:01. |
@@ -171,8 +170,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L09: The whole street / keeps their porch lights ON / till it's DELIVERED.
 - L10: Nobody walks a DOG / past it.
 - L11: My big sister, MARISOL, / runs the pizza place / on the CORNER.
-- L12: She did this route / for TEN years.
-- L13: This month, / she gave it to ME.
+- L13: This month, / she gave me her ROUTE.
 - L14: Tonight, / my tire went FLAT, / two blocks AWAY.
 - L15: So I RAN it.
 - L16: Six-oh-ONE.
@@ -203,7 +201,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L40: Marisol came RUNNING / with a second pizza.
 - L41: We split it / on the CURB, / laughing so hard / we SHOOK.
 - L42: She says / the route is MINE.
-- L43: But last night, / a second order came in, / from ANOTHER house / with no DOOR.
+- L43: Then a second order came in, / from ANOTHER house / with no DOOR.
 - L44: So rain or SHINE,
 
 (Loop: L44 runs straight into L01: "So rain or shine, I bring pizza every night to a house with no door.")
