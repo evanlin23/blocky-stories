@@ -1,9 +1,9 @@
 {
  "slug": "ep47-fitting-room",
- "title": "In this town, every lie you tell pins a tag to your clothes",
+ "title": "In This Town Every LIE Pins a Tag to Your Clothes",
  "made_for_kids": false,
  "premise": "In a town where every lie you tell pins a small white tag to your clothes, I've never had one. I'm back for a week to help Uncle Aurel shut the alterations shop where he taught me to cut. He has never told a lie in his life, but every time a customer asks after me, a tag pins onto him. By night the fitting-room curtain draws itself, my old bench gets chalked up for a suit, and a tape measure lies on the floor in the shape of a person where I used to stand.",
- "twist": "A lie you believe doesn't count. I never had a tag because I believed my own: I love it there. Uncle knew all along, and every tag on him is the same lie, she's happy in the city, told to every customer so I could stay away without guilt. A suit with nobody in it stands in my place until I say the truth out loud and step back up to my bench.",
+ "twist": "A lie you believe never gets a tag. I never had one because for two years I told myself I was happy in the city, and believed it. Uncle knew all along, and every tag on him is the same lie, my nephew's happy in the city, told to every customer so I could stay away without guilt. A suit with nobody in it stands in my place until I say the truth out loud and step back up to my bench.",
  "world": "an old covered shopping arcade of bottle-green shopfronts, and a narrow alterations shop with two cutting benches, a fitting-room curtain and a stair",
  "voice": {
   "voice": "am_adam",
@@ -12,7 +12,9 @@
  },
  "key_color": "#7cc4f0",
  "gap": 0.12,
- "tail": 0,
+ "tail": 0.25,
+ "fade_in": false,
+ "fade_out": false,
  "look": {
   "fog": "#1c2230",
   "fog_density": 0.012,
@@ -55,7 +57,7 @@
    "hair_c": "#241a16",
    "hat": "none",
    "face": {
-    "eyes": "lashes",
+    "eyes": "round",
     "brows": true
    },
    "collar": "#efe6d2",
@@ -67,7 +69,7 @@
   "me2": {
    "age": "adult",
    "skin": "#e0b08a",
-   "shirt": "#efe6d2",
+   "shirt": "#b9b2a0",
    "pattern": "solid",
    "pants": "#3b3e46",
    "shoes": "#6a4a30",
@@ -76,7 +78,7 @@
    "hair_c": "#241a16",
    "hat": "none",
    "face": {
-    "eyes": "lashes",
+    "eyes": "round",
     "brows": true
    }
   },
@@ -105,7 +107,7 @@
   "uncle2": {
    "age": "adult",
    "skin": "#d9a98a",
-   "shirt": "#e9e5da",
+   "shirt": "#b4ae9f",
    "pattern": "solid",
    "pants": "#3c4a3e",
    "shoes": "#3a2a20",
@@ -134,74 +136,6 @@
    "hat": "none",
    "face": {
     "eyes": "round",
-    "brows": true
-   },
-   "tags": "lump"
-  },
-  "salon_a": {
-   "age": "adult",
-   "skin": "#e6bd98",
-   "shirt": "#a65a4a",
-   "pattern": "solid",
-   "pants": "#33363e",
-   "shoes": "#3a2a20",
-   "sleeves": "long",
-   "hair": "cap",
-   "hair_c": "#3a2a1e",
-   "hat": "none",
-   "face": {
-    "eyes": "lashes",
-    "brows": true
-   },
-   "tags": "speckle"
-  },
-  "salon_b": {
-   "age": "adult",
-   "skin": "#d8a47c",
-   "shirt": "#b49ad8",
-   "pattern": "solid",
-   "pants": "#33363e",
-   "shoes": "#3a2a20",
-   "sleeves": "long",
-   "hair": "bun",
-   "hair_c": "#6a4a34",
-   "hat": "none",
-   "face": {
-    "eyes": "lashes",
-    "brows": true
-   },
-   "tags": "speckle"
-  },
-  "date_m": {
-   "age": "adult",
-   "skin": "#c98f6a",
-   "shirt": "#2f4a6a",
-   "pattern": "solid",
-   "pants": "#33363e",
-   "shoes": "#3a2a20",
-   "sleeves": "long",
-   "hair": "spiky",
-   "hair_c": "#2a1d15",
-   "hat": "none",
-   "face": {
-    "eyes": "round",
-    "brows": true
-   },
-   "tags": "lump"
-  },
-  "date_f": {
-   "age": "adult",
-   "skin": "#e8c2a0",
-   "shirt": "#a84a5a",
-   "pattern": "solid",
-   "pants": "#33363e",
-   "shoes": "#3a2a20",
-   "sleeves": "long",
-   "hair": "long",
-   "hair_c": "#4a2a1a",
-   "hat": "none",
-   "face": {
-    "eyes": "lashes",
     "brows": true
    },
    "tags": "lump"
@@ -493,54 +427,6 @@
    ]
   },
   {
-   "id": "L03",
-   "who": "narrator",
-   "chunks": [
-    [
-     "\"Love the HAIRCUT,\"",
-     "Love the haircut,"
-    ],
-    [
-     "she says.",
-     "she says."
-    ],
-    [
-     "One TAG,",
-     "One tag,"
-    ],
-    [
-     "before the",
-     "before the"
-    ],
-    [
-     "salon door",
-     "salon door"
-    ],
-    [
-     "even SHUTS.",
-     "even shuts."
-    ]
-   ]
-  },
-  {
-   "id": "L04",
-   "who": "narrator",
-   "chunks": [
-    [
-     "By DESSERT,",
-     "By dessert,"
-    ],
-    [
-     "first DATES",
-     "first dates"
-    ],
-    [
-     "look like PINCUSHIONS.",
-     "look like pincushions."
-    ]
-   ]
-  },
-  {
    "id": "L05",
    "who": "narrator",
    "chunks": [
@@ -567,20 +453,6 @@
     [
      "like a LEAF.",
      "like a leaf."
-    ]
-   ]
-  },
-  {
-   "id": "L06",
-   "who": "narrator",
-   "chunks": [
-    [
-     "The whole cafe",
-     "The whole cafe"
-    ],
-    [
-     "CLAPS.",
-     "claps."
     ]
    ]
   },
@@ -613,11 +485,15 @@
    "chunks": [
     [
      "No tag lands",
-     "No tag lands"
+     "no tag lands"
     ],
     [
      "on HER.",
      "on her."
+    ],
+    [
+     "She BELIEVES it.",
+     "she believes it."
     ]
    ]
   },
@@ -658,30 +534,16 @@
    ]
   },
   {
-   "id": "L11",
-   "who": "narrator",
-   "chunks": [
-    [
-     "People believe",
-     "People believe"
-    ],
-    [
-     "EVERYTHING",
-     "everything"
-    ],
-    [
-     "I say.",
-     "I say."
-    ]
-   ]
-  },
-  {
    "id": "L12",
    "who": "narrator",
    "chunks": [
     [
-     "My Uncle AUREL",
-     "My Uncle Aurel"
+     "My UNCLE,",
+     "my Uncle,"
+    ],
+    [
+     "AUREL,",
+     "Aurel,"
     ],
     [
      "taught me",
@@ -1237,19 +1099,19 @@
    "chunks": [
     [
      "He tells me,",
-     "He tells me,"
+     "he tells me,"
     ],
     [
      "\"It's a",
-     "It's a"
+     "it's a"
     ],
     [
      "lovely place,",
      "lovely place,"
     ],
     [
-     "LOVE.\"",
-     "love."
+     "LAD.\"",
+     "lad."
     ]
    ]
   },
@@ -1585,8 +1447,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "\"She's HAPPY",
-     "She's happy"
+     "\"My NEPHEW'S",
+     "my nephew's"
+    ],
+    [
+     "HAPPY",
+     "happy"
     ],
     [
      "in the city.\"",
@@ -1745,54 +1611,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'd never had",
-     "I'd never had"
+     "Uncle LAUGHS",
+     "uncle laughs"
     ],
     [
-     "a TAG,",
-     "a tag,"
+     "for the",
+     "for the"
     ],
     [
-     "because I BELIEVED",
-     "because I believed"
+     "first time",
+     "first time"
     ],
     [
-     "my own LIE.",
-     "my own lie."
-    ]
-   ],
-   "tempo": 0.9
-  },
-  {
-   "id": "L64",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Just like",
-     "Just like"
-    ],
-    [
-     "Mrs. KETTLE.",
-     "Mrs. Kettle."
-    ]
-   ],
-   "tempo": 0.95
-  },
-  {
-   "id": "L65",
-   "who": "narrator",
-   "chunks": [
-    [
-     "For two YEARS,",
-     "For two years,"
-    ],
-    [
-     "I'd been rubbing",
-     "I'd been rubbing"
-    ],
-    [
-     "my SLEEVE.",
-     "my sleeve."
+     "all WEEK.",
+     "all week."
     ]
    ]
   },
@@ -1928,12 +1760,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I never",
-     "I never"
+     "But a lie",
+     "but a lie"
     ],
     [
-     "had ONE.",
-     "had one."
+     "you BELIEVE",
+     "you believe"
+    ],
+    [
+     "never gets",
+     "never gets"
+    ],
+    [
+     "a TAG.",
+     "a tag."
     ]
    ]
   },
@@ -1942,8 +1782,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I BELIEVED mine.",
-     "I believed mine."
+     "For two YEARS,",
+     "for two years,"
+    ],
+    [
+     "I told MYSELF",
+     "i told myself"
+    ],
+    [
+     "I was HAPPY",
+     "i was happy"
+    ],
+    [
+     "in the CITY.",
+     "in the city."
     ]
    ]
   },
@@ -1952,12 +1804,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I still",
-     "I still"
+     "And I BELIEVED",
+     "and i believed"
     ],
     [
-     "don't have ONE.",
-     "don't have one."
+     "every WORD.",
+     "every word."
     ]
    ]
   }
@@ -2051,75 +1903,6 @@
     [
      0,
      [
-      -2.0,
-      -14.4,
-      1.5
-     ],
-     [
-      -2.0,
-      -11.0,
-      1.45
-     ],
-     29
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "salon pair",
-   "at": "L03"
-  },
-  {
-   "id": "S05",
-   "cam": [
-    [
-     0,
-     [
-      -2.0,
-      -13.4,
-      1.6
-     ],
-     [
-      -2.0,
-      -11.0,
-      1.4
-     ],
-     41
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "lilac lapel, tag, door shuts",
-   "at": "L03.2"
-  },
-  {
-   "id": "S06",
-   "cam": [
-    [
-     0,
-     [
-      0.4,
-      -3.0,
-      1.45
-     ],
-     [
-      3.2,
-      -3.0,
-      1.35
-     ],
-     29
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "the date table",
-   "at": "L04"
-  },
-  {
-   "id": "S07",
-   "cam": [
-    [
-     0,
-     [
       0.4,
       -5.2,
       1.45
@@ -2138,7 +1921,7 @@
    "at": "L05"
   },
   {
-   "id": "S08",
+   "id": "S05",
    "cam": [
     [
      0,
@@ -2161,30 +1944,7 @@
    "at": "L05.3"
   },
   {
-   "id": "S09",
-   "cam": [
-    [
-     0,
-     [
-      -0.5,
-      -2.0,
-      1.6
-     ],
-     [
-      3.2,
-      -5.4,
-      1.4
-     ],
-     20
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "the cafe claps",
-   "at": "L06"
-  },
-  {
-   "id": "S10",
+   "id": "S06",
    "cam": [
     [
      0,
@@ -2207,7 +1967,7 @@
    "at": "L07"
   },
   {
-   "id": "S11",
+   "id": "S07",
    "cam": [
     [
      0,
@@ -2230,7 +1990,30 @@
    "at": "L08"
   },
   {
-   "id": "S12",
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      -0.2,
+      -8.3,
+      1.36
+     ],
+     [
+      -0.45,
+      -6,
+      1.33
+     ],
+     30
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "she believes it, hand on heart",
+   "at": "L08.2"
+  },
+  {
+   "id": "S09",
    "cam": [
     [
      0,
@@ -2267,7 +2050,7 @@
    "at": "L09"
   },
   {
-   "id": "S13",
+   "id": "S10",
    "cam": [
     [
      0,
@@ -2290,53 +2073,44 @@
    "at": "L10"
   },
   {
-   "id": "S14",
+   "id": "S11",
    "cam": [
     [
      0,
      [
-      5.2,
-      -3.0,
-      1.55
-     ],
-     [
-      7.3,
-      -4.4,
-      1.5
-     ],
-     27
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "the cafe counter",
-   "at": "L11"
-  },
-  {
-   "id": "S15",
-   "cam": [
-    [
-     0,
-     [
-      1.8,
-      1.5,
-      1.6
+      -0.6,
+      0.2,
+      1.9
      ],
      [
       -4,
-      0.3,
-      1.8
+      -0.5,
+      2.0
      ],
      20
+    ],
+    [
+     1,
+     [
+      -3.2,
+      -0.6,
+      1.62
+     ],
+     [
+      -6.1,
+      -0.8,
+      1.55
+     ],
+     42
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "the shopfront",
+   "what": "the shopfront, Uncle at his counter",
    "at": "L12"
   },
   {
-   "id": "S16",
+   "id": "S12",
    "cam": [
     [
      0,
@@ -2356,10 +2130,10 @@
    "hand": 0.006,
    "step": 2,
    "what": "Uncle at his bench",
-   "at": "L12.3"
+   "at": "L12.4"
   },
   {
-   "id": "S17",
+   "id": "S13",
    "cam": [
     [
      0,
@@ -2382,7 +2156,7 @@
    "at": "L13"
   },
   {
-   "id": "S18",
+   "id": "S14",
    "cam": [
     [
      0,
@@ -2405,7 +2179,7 @@
    "at": "L14"
   },
   {
-   "id": "S19",
+   "id": "S15",
    "cam": [
     [
      0,
@@ -2428,7 +2202,7 @@
    "at": "L14.2"
   },
   {
-   "id": "S20",
+   "id": "S16",
    "cam": [
     [
      0,
@@ -2451,7 +2225,7 @@
    "at": "L15"
   },
   {
-   "id": "S21",
+   "id": "S17",
    "cam": [
     [
      0,
@@ -2474,7 +2248,7 @@
    "at": "L16"
   },
   {
-   "id": "S22",
+   "id": "S18",
    "cam": [
     [
      0,
@@ -2497,7 +2271,7 @@
    "at": "L17"
   },
   {
-   "id": "S23",
+   "id": "S19",
    "cam": [
     [
      0,
@@ -2520,7 +2294,7 @@
    "at": "L18"
   },
   {
-   "id": "S24",
+   "id": "S20",
    "cam": [
     [
      0,
@@ -2543,7 +2317,7 @@
    "at": "L19"
   },
   {
-   "id": "S25",
+   "id": "S21",
    "cam": [
     [
      0,
@@ -2566,7 +2340,7 @@
    "at": "L19.3"
   },
   {
-   "id": "S26",
+   "id": "S22",
    "cam": [
     [
      0,
@@ -2589,7 +2363,7 @@
    "at": "L20"
   },
   {
-   "id": "S27",
+   "id": "S23",
    "cam": [
     [
      0,
@@ -2612,7 +2386,7 @@
    "at": "L21"
   },
   {
-   "id": "S28",
+   "id": "S24",
    "cam": [
     [
      0,
@@ -2635,7 +2409,7 @@
    "at": "L22"
   },
   {
-   "id": "S29",
+   "id": "S25",
    "cam": [
     [
      0,
@@ -2658,7 +2432,7 @@
    "at": "L23"
   },
   {
-   "id": "S30",
+   "id": "S26",
    "cam": [
     [
      0,
@@ -2681,7 +2455,7 @@
    "at": "L24"
   },
   {
-   "id": "S31",
+   "id": "S27",
    "cam": [
     [
      0,
@@ -2704,7 +2478,7 @@
    "at": "L24.2"
   },
   {
-   "id": "S32",
+   "id": "S28",
    "cam": [
     [
      0,
@@ -2727,7 +2501,7 @@
    "at": "L25"
   },
   {
-   "id": "S33",
+   "id": "S29",
    "cam": [
     [
      0,
@@ -2750,7 +2524,7 @@
    "at": "L26"
   },
   {
-   "id": "S34",
+   "id": "S30",
    "cam": [
     [
      0,
@@ -2773,7 +2547,7 @@
    "at": "L27"
   },
   {
-   "id": "S35",
+   "id": "S31",
    "cam": [
     [
      0,
@@ -2796,7 +2570,7 @@
    "at": "L28"
   },
   {
-   "id": "S36",
+   "id": "S32",
    "cam": [
     [
      0,
@@ -2819,7 +2593,7 @@
    "at": "L28.1"
   },
   {
-   "id": "S37",
+   "id": "S33",
    "cam": [
     [
      0,
@@ -2842,7 +2616,7 @@
    "at": "L29"
   },
   {
-   "id": "S38",
+   "id": "S34",
    "cam": [
     [
      0,
@@ -2865,7 +2639,7 @@
    "at": "L29.2"
   },
   {
-   "id": "S39",
+   "id": "S35",
    "cam": [
     [
      0,
@@ -2888,7 +2662,7 @@
    "at": "L30"
   },
   {
-   "id": "S40",
+   "id": "S36",
    "cam": [
     [
      0,
@@ -2911,7 +2685,7 @@
    "at": "L31"
   },
   {
-   "id": "S41",
+   "id": "S37",
    "cam": [
     [
      0,
@@ -2934,7 +2708,7 @@
    "at": "L32"
   },
   {
-   "id": "S42",
+   "id": "S38",
    "cam": [
     [
      0,
@@ -2957,7 +2731,7 @@
    "at": "L33"
   },
   {
-   "id": "S43",
+   "id": "S39",
    "cam": [
     [
      0,
@@ -2980,7 +2754,7 @@
    "at": "L34"
   },
   {
-   "id": "S44",
+   "id": "S40",
    "cam": [
     [
      0,
@@ -3003,7 +2777,7 @@
    "at": "L35"
   },
   {
-   "id": "S45",
+   "id": "S41",
    "cam": [
     [
      0,
@@ -3026,7 +2800,7 @@
    "at": "L35.3"
   },
   {
-   "id": "S46",
+   "id": "S42",
    "cam": [
     [
      0,
@@ -3049,7 +2823,7 @@
    "at": "L36"
   },
   {
-   "id": "S47",
+   "id": "S43",
    "cam": [
     [
      0,
@@ -3072,7 +2846,7 @@
    "at": "L37"
   },
   {
-   "id": "S48",
+   "id": "S44",
    "cam": [
     [
      0,
@@ -3095,7 +2869,7 @@
    "at": "L38"
   },
   {
-   "id": "S49",
+   "id": "S45",
    "cam": [
     [
      0,
@@ -3118,7 +2892,7 @@
    "at": "L39"
   },
   {
-   "id": "S50",
+   "id": "S46",
    "cam": [
     [
      0,
@@ -3141,7 +2915,7 @@
    "at": "L40"
   },
   {
-   "id": "S51",
+   "id": "S47",
    "cam": [
     [
      0,
@@ -3164,7 +2938,7 @@
    "at": "L41"
   },
   {
-   "id": "S52",
+   "id": "S48",
    "cam": [
     [
      0,
@@ -3187,7 +2961,7 @@
    "at": "L42"
   },
   {
-   "id": "S53",
+   "id": "S49",
    "cam": [
     [
      0,
@@ -3210,7 +2984,7 @@
    "at": "L42.2"
   },
   {
-   "id": "S54",
+   "id": "S50",
    "cam": [
     [
      0,
@@ -3233,7 +3007,7 @@
    "at": "L43"
   },
   {
-   "id": "S55",
+   "id": "S51",
    "cam": [
     [
      0,
@@ -3256,7 +3030,7 @@
    "at": "L44"
   },
   {
-   "id": "S56",
+   "id": "S52",
    "cam": [
     [
      0,
@@ -3279,7 +3053,7 @@
    "at": "L44.4"
   },
   {
-   "id": "S57",
+   "id": "S53",
    "cam": [
     [
      0,
@@ -3302,7 +3076,7 @@
    "at": "L45"
   },
   {
-   "id": "S58",
+   "id": "S54",
    "cam": [
     [
      0,
@@ -3325,7 +3099,7 @@
    "at": "L45.2"
   },
   {
-   "id": "S59",
+   "id": "S55",
    "cam": [
     [
      0,
@@ -3348,7 +3122,7 @@
    "at": "L46"
   },
   {
-   "id": "S60",
+   "id": "S56",
    "cam": [
     [
      0,
@@ -3385,7 +3159,7 @@
    "at": "L47"
   },
   {
-   "id": "S61",
+   "id": "S57",
    "cam": [
     [
      0,
@@ -3408,7 +3182,7 @@
    "at": "L48"
   },
   {
-   "id": "S62",
+   "id": "S58",
    "cam": [
     [
      0,
@@ -3431,7 +3205,7 @@
    "at": "L49"
   },
   {
-   "id": "S63",
+   "id": "S59",
    "cam": [
     [
      0,
@@ -3454,7 +3228,7 @@
    "at": "L50"
   },
   {
-   "id": "S64",
+   "id": "S60",
    "cam": [
     [
      0,
@@ -3477,7 +3251,7 @@
    "at": "L51"
   },
   {
-   "id": "S65",
+   "id": "S61",
    "cam": [
     [
      0,
@@ -3500,7 +3274,7 @@
    "at": "L52"
   },
   {
-   "id": "S66",
+   "id": "S62",
    "cam": [
     [
      0,
@@ -3523,7 +3297,7 @@
    "at": "L52.3"
   },
   {
-   "id": "S67",
+   "id": "S63",
    "cam": [
     [
      0,
@@ -3546,7 +3320,7 @@
    "at": "L53"
   },
   {
-   "id": "S68",
+   "id": "S64",
    "cam": [
     [
      0,
@@ -3569,7 +3343,7 @@
    "at": "L53.2"
   },
   {
-   "id": "S69",
+   "id": "S65",
    "cam": [
     [
      0,
@@ -3592,7 +3366,7 @@
    "at": "L53.3"
   },
   {
-   "id": "S70",
+   "id": "S66",
    "cam": [
     [
      0,
@@ -3615,7 +3389,7 @@
    "at": "L54"
   },
   {
-   "id": "S71",
+   "id": "S67",
    "cam": [
     [
      0,
@@ -3638,7 +3412,7 @@
    "at": "L55"
   },
   {
-   "id": "S72",
+   "id": "S68",
    "cam": [
     [
      0,
@@ -3675,7 +3449,7 @@
    "at": "L56"
   },
   {
-   "id": "S73",
+   "id": "S69",
    "cam": [
     [
      0,
@@ -3698,7 +3472,7 @@
    "at": "L57"
   },
   {
-   "id": "S74",
+   "id": "S70",
    "cam": [
     [
      0,
@@ -3721,7 +3495,7 @@
    "at": "L58"
   },
   {
-   "id": "S75",
+   "id": "S71",
    "cam": [
     [
      0,
@@ -3744,7 +3518,7 @@
    "at": "L58.3"
   },
   {
-   "id": "S76",
+   "id": "S72",
    "cam": [
     [
      0,
@@ -3767,7 +3541,7 @@
    "at": "L59"
   },
   {
-   "id": "S77",
+   "id": "S73",
    "cam": [
     [
      0,
@@ -3790,7 +3564,7 @@
    "at": "L60"
   },
   {
-   "id": "S78",
+   "id": "S74",
    "cam": [
     [
      0,
@@ -3813,7 +3587,7 @@
    "at": "L60.2"
   },
   {
-   "id": "S79",
+   "id": "S75",
    "cam": [
     [
      0,
@@ -3836,7 +3610,7 @@
    "at": "L61"
   },
   {
-   "id": "S80",
+   "id": "S76",
    "cam": [
     [
      0,
@@ -3859,7 +3633,7 @@
    "at": "L62"
   },
   {
-   "id": "S81",
+   "id": "S77",
    "cam": [
     [
      0,
@@ -3882,76 +3656,30 @@
    "at": "L62.3"
   },
   {
-   "id": "S82",
+   "id": "S78",
    "cam": [
     [
      0,
      [
-      -12.6,
-      0.2,
-      1.6
+      -10.2,
+      -0.7,
+      1.4
      ],
      [
-      -12.6,
-      1.8,
-      1.35
-     ],
-     30
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "I look at my sleeves",
-   "at": "L63"
-  },
-  {
-   "id": "S83",
-   "cam": [
-    [
-     0,
-     [
-      -8.4,
-      1.0,
-      1.55
-     ],
-     [
-      -5.5,
-      1.2,
-      1.45
-     ],
-     24
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "Mrs. Kettle again",
-   "at": "L64"
-  },
-  {
-   "id": "S84",
-   "cam": [
-    [
-     0,
-     [
-      -12.0,
-      0.2,
-      1.45
-     ],
-     [
-      -12.5,
-      1.8,
-      1.25
+      -7.75,
+      -1.0,
+      1.0
      ],
      27
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "my sleeve",
-   "at": "L65"
+   "what": "Uncle laughs, tags round his shoes",
+   "at": "L63"
   },
   {
-   "id": "S85",
+   "id": "S79",
    "cam": [
     [
      0,
@@ -3974,7 +3702,7 @@
    "at": "L66"
   },
   {
-   "id": "S86",
+   "id": "S80",
    "cam": [
     [
      0,
@@ -3997,30 +3725,30 @@
    "at": "L67"
   },
   {
-   "id": "S87",
+   "id": "S81",
    "cam": [
     [
      0,
      [
       -12.0,
-      0.3,
-      1.6
+      2.3,
+      1.75
      ],
      [
-      -12.6,
-      1.0,
-      0.95
+      -12.05,
+      0.0,
+      1.3
      ],
-     27
+     20
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "chalk on canvas",
+   "what": "Uncle chalks my apron",
    "at": "L68"
   },
   {
-   "id": "S88",
+   "id": "S82",
    "cam": [
     [
      0,
@@ -4054,10 +3782,10 @@
    "hand": 0.006,
    "step": 2,
    "what": "the tally on the foot",
-   "at": "L68.1"
+   "at": "L68+0.9"
   },
   {
-   "id": "S89",
+   "id": "S83",
    "cam": [
     [
      0,
@@ -4080,7 +3808,7 @@
    "at": "L69"
   },
   {
-   "id": "S90",
+   "id": "S84",
    "cam": [
     [
      0,
@@ -4103,7 +3831,7 @@
    "at": "L69.4"
   },
   {
-   "id": "S91",
+   "id": "S85",
    "cam": [
     [
      0,
@@ -4126,95 +3854,109 @@
    "at": "L70"
   },
   {
-   "id": "S92",
+   "id": "S86",
    "cam": [
     [
      0,
      [
-      -1.5,
-      -0.2,
-      1.45
-     ],
-     [
-      -4.9,
-      -0.4,
-      1.45
-     ],
-     23
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "our shop window",
-   "at": "L70.3"
-  },
-  {
-   "id": "S93",
-   "cam": [
-    [
-     0,
-     [
-      -12.6,
-      0.2,
-      1.6
-     ],
-     [
-      -12.6,
-      1.8,
-      1.45
-     ],
-     30
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "me at my bench",
-   "at": "L71"
-  },
-  {
-   "id": "S94",
-   "cam": [
-    [
-     0,
-     [
-      -11.0,
-      -0.9,
-      1.55
-     ],
-     [
-      -15.4,
-      -1.75,
+      -2.6,
+      -0.77,
       1.3
      ],
-     20
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "the fitting room, empty",
-   "at": "L72"
-  },
-  {
-   "id": "S95",
-   "cam": [
-    [
-     0,
      [
-      -12.0,
-      0.2,
-      1.45
-     ],
-     [
-      -12.5,
-      1.8,
+      -5.55,
+      -0.77,
       1.25
      ],
      27
     ]
    ],
-   "hand": 0.0,
-   "step": 4,
-   "what": "my sleeve",
+   "hand": 0.006,
+   "step": 2,
+   "what": "our shop window, a close two-shot",
+   "at": "L70.3"
+  },
+  {
+   "id": "S87",
+   "cam": [
+    [
+     0,
+     [
+      -6.0,
+      -0.6,
+      1.5
+     ],
+     [
+      -3.0,
+      -0.6,
+      1.45
+     ],
+     29
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "Mrs. Kettle front-on, Mr. beside her",
+   "at": "L71"
+  },
+  {
+   "id": "S88",
+   "cam": [
+    [
+     0,
+     [
+      -11.9,
+      0.45,
+      1.95
+     ],
+     [
+      -12.5,
+      1.85,
+      1.15
+     ],
+     24
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "my clean sleeve, thumb on it",
+   "at": "L72"
+  },
+  {
+   "id": "S89",
+   "cam": [
+    [
+     0,
+     [
+      -12.8,
+      -1.4,
+      1.6
+     ],
+     [
+      -15.5,
+      -1.75,
+      1.6
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      -13.3,
+      -1.5,
+      1.6
+     ],
+     [
+      -15.5,
+      -1.75,
+      1.55
+     ],
+     24
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "the bare hanger swings",
    "at": "L73"
   }
  ],
@@ -4264,45 +4006,11 @@
     "yaw": 0
    },
    {
-    "at": "L11",
+    "at": "L12",
     "pos": [
      0.0,
      -1.0
     ]
-   },
-   {
-    "at": "L11",
-    "pos": [
-     0.0,
-     -1.0
-    ]
-   },
-   {
-    "at": "L11",
-    "pos": [
-     5.6,
-     -4.2
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 90
    },
    {
     "at": "L12",
@@ -4312,8 +4020,8 @@
    {
     "at": "L13",
     "pos": [
-     5.6,
-     -4.2
+     0.0,
+     -1.0
     ]
    },
    {
@@ -5262,40 +4970,6 @@
     "yaw": 0
    },
    {
-    "at": "L65",
-    "pos": [
-     -12.6,
-     1.8
-    ]
-   },
-   {
-    "at": "L65",
-    "pos": [
-     -12.6,
-     1.8
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     24
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "worried",
-    "yaw": 0
-   },
-   {
     "at": "L66",
     "hidden": true,
     "blend": 0
@@ -5357,14 +5031,14 @@
    {
     "at": "L68",
     "pos": [
-     -12.6,
-     0.2
+     -11.55,
+     0.0
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     0,
-     0
+     10,
+     10
     ],
     "side": [
      0,
@@ -5379,25 +5053,26 @@
     "blink": true,
     "sit": false,
     "expr": "soft",
-    "yaw": 180
+    "yaw": -90
    },
    {
-    "at": "L68.1",
+    "at": "L68+0.9",
     "hidden": true,
     "blend": 0
    },
    {
     "at": "L70",
     "pos": [
-     -12.6,
-     0.2
+     -11.55,
+     0.0
     ]
    },
    {
     "at": "L70",
     "pos": [
-     -5.5,
-     0.1
+     -5.55,
+     -0.46,
+     -0.17
     ],
     "blend": 0,
     "hidden": false,
@@ -5422,81 +5097,19 @@
    },
    {
     "at": "L71",
-    "pos": [
-     -5.5,
-     0.1
-    ]
-   },
-   {
-    "at": "L71",
-    "pos": [
-     -12.6,
-     1.8
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     45,
-     45
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     14
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "soft",
-    "yaw": 0
+    "hidden": true,
+    "blend": 0
    },
    {
     "at": "L72",
     "pos": [
-     -12.6,
-     1.8
+     -5.55,
+     -0.46,
+     -0.17
     ]
    },
    {
     "at": "L72",
-    "pos": [
-     -12.9,
-     -0.2
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 90
-   },
-   {
-    "at": "L73",
-    "pos": [
-     -12.9,
-     -0.2
-    ]
-   },
-   {
-    "at": "L73",
     "pos": [
      -12.6,
      1.8
@@ -5513,86 +5126,19 @@
     ],
     "head": [
      0,
-     0
+     30
     ],
     "lean": 0,
     "tremble": 0,
     "blink": true,
     "sit": false,
-    "expr": "neutral",
+    "expr": "sad",
     "yaw": 0
    },
    {
-    "at": "L73+0.10",
-    "arms": [
-     30,
-     42
-    ],
-    "side": [
-     0,
-     -28
-    ],
-    "blend": 0.25
-   },
-   {
-    "at": "L73+0.40",
-    "arms": [
-     30,
-     58
-    ],
-    "side": [
-     0,
-     -28
-    ],
-    "blend": 0.25
-   },
-   {
-    "at": "L73+0.70",
-    "arms": [
-     30,
-     42
-    ],
-    "side": [
-     0,
-     -28
-    ],
-    "blend": 0.25
-   },
-   {
-    "at": "L73+1.00",
-    "arms": [
-     30,
-     58
-    ],
-    "side": [
-     0,
-     -28
-    ],
-    "blend": 0.25
-   },
-   {
-    "at": "L73+1.30",
-    "arms": [
-     30,
-     42
-    ],
-    "side": [
-     0,
-     -28
-    ],
-    "blend": 0.25
-   },
-   {
-    "at": "L73+1.60",
-    "arms": [
-     30,
-     58
-    ],
-    "side": [
-     0,
-     -28
-    ],
-    "blend": 0.25
+    "at": "L73",
+    "hidden": true,
+    "blend": 0
    }
   ],
   "uncle": [
@@ -5615,14 +5161,14 @@
    {
     "at": "L12",
     "pos": [
-     -3.0,
-     1.0
+     -6.1,
+     -0.8
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     0,
-     0
+     30,
+     30
     ],
     "side": [
      0,
@@ -5636,18 +5182,18 @@
     "tremble": 0,
     "blink": true,
     "sit": false,
-    "expr": "neutral",
-    "yaw": 180
+    "expr": "smile",
+    "yaw": 90
    },
    {
-    "at": "L12.3",
+    "at": "L12.4",
     "pos": [
-     -3.0,
-     1.0
+     -6.1,
+     -0.8
     ]
    },
    {
-    "at": "L12.3",
+    "at": "L12.4",
     "pos": [
      -12.6,
      -1.8
@@ -6327,14 +5873,14 @@
     "blend": 0.5
    },
    {
-    "at": "L64",
+    "at": "L63",
     "pos": [
      -7.75,
      -1.0
     ]
    },
    {
-    "at": "L64",
+    "at": "L63",
     "pos": [
      -7.75,
      -1.0
@@ -6351,14 +5897,14 @@
     ],
     "head": [
      0,
-     0
+     12
     ],
     "lean": 0,
     "tremble": 0,
     "blink": true,
     "sit": false,
-    "expr": "soft",
-    "yaw": 90
+    "expr": "laugh",
+    "yaw": -90
    },
    {
     "at": "L66",
@@ -6422,14 +5968,14 @@
    {
     "at": "L68",
     "pos": [
-     -12.6,
-     -1.8
+     -12.55,
+     0.0
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     45,
-     45
+     80,
+     80
     ],
     "side": [
      0,
@@ -6444,10 +5990,10 @@
     "blink": true,
     "sit": false,
     "expr": "soft",
-    "yaw": 180
+    "yaw": 90
    },
    {
-    "at": "L68.1",
+    "at": "L68+0.9",
     "hidden": true,
     "blend": 0
    },
@@ -6459,15 +6005,16 @@
    {
     "at": "L70",
     "pos": [
-     -12.6,
-     -1.8
+     -12.55,
+     0.0
     ]
    },
    {
     "at": "L70",
     "pos": [
-     -5.5,
-     -1.2
+     -5.55,
+     -1.08,
+     -0.17
     ],
     "blend": 0,
     "hidden": false,
@@ -6539,283 +6086,6 @@
     "sit": false,
     "expr": "smirk",
     "yaw": 90
-   },
-   {
-    "at": "L03",
-    "hidden": true,
-    "blend": 0
-   }
-  ],
-  "salon_a": [
-   {
-    "at": 0,
-    "pos": [
-     0,
-     40
-    ],
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L03",
-    "pos": [
-     0,
-     40
-    ]
-   },
-   {
-    "at": "L03",
-    "pos": [
-     -2.5,
-     -11.0
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "smirk",
-    "yaw": 20
-   },
-   {
-    "at": "L03.2",
-    "pos": [
-     -2.5,
-     -11.0
-    ]
-   },
-   {
-    "at": "L03.2",
-    "pos": [
-     -2.5,
-     -11.0
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "smirk",
-    "yaw": 20
-   },
-   {
-    "at": "L04",
-    "hidden": true,
-    "blend": 0
-   }
-  ],
-  "salon_b": [
-   {
-    "at": 0,
-    "pos": [
-     0,
-     40
-    ],
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L03",
-    "pos": [
-     0,
-     40
-    ]
-   },
-   {
-    "at": "L03",
-    "pos": [
-     -1.5,
-     -11.0
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "grin",
-    "yaw": -20
-   },
-   {
-    "from": "L03",
-    "to": "L03.2",
-    "mouth": [
-     0.55,
-     0.55
-    ],
-    "flap": true
-   },
-   {
-    "at": "L03.2",
-    "pos": [
-     -1.5,
-     -11.0
-    ]
-   },
-   {
-    "at": "L03.2",
-    "pos": [
-     -2.0,
-     -11.0
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "grin",
-    "yaw": -15
-   },
-   {
-    "at": "L04",
-    "hidden": true,
-    "blend": 0
-   }
-  ],
-  "date_m": [
-   {
-    "at": 0,
-    "pos": [
-     0,
-     40
-    ],
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L04",
-    "pos": [
-     0,
-     40
-    ]
-   },
-   {
-    "at": "L04",
-    "pos": [
-     3.4,
-     -2.5
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "grin",
-    "yaw": -70
-   },
-   {
-    "at": "L05",
-    "hidden": true,
-    "blend": 0
-   }
-  ],
-  "date_f": [
-   {
-    "at": 0,
-    "pos": [
-     0,
-     40
-    ],
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L04",
-    "pos": [
-     0,
-     40
-    ]
-   },
-   {
-    "at": "L04",
-    "pos": [
-     3.4,
-     -3.5
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "grin",
-    "yaw": -110
    },
    {
     "at": "L05",
@@ -6911,88 +6181,6 @@
     "yaw": -75
    },
    {
-    "at": "L06",
-    "pos": [
-     3.4,
-     -5.0
-    ]
-   },
-   {
-    "at": "L06",
-    "pos": [
-     3.3,
-     -4.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "grin",
-    "yaw": -80
-   },
-   {
-    "at": "L06+0.20",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.42",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.64",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.86",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+1.08",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+1.30",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
     "at": "L07",
     "hidden": true,
     "blend": 0
@@ -7000,8 +6188,8 @@
    {
     "at": "L58",
     "pos": [
-     3.3,
-     -4.9
+     3.4,
+     -5.0
     ]
    },
    {
@@ -7082,88 +6270,6 @@
     "yaw": -100
    },
    {
-    "at": "L06",
-    "pos": [
-     3.4,
-     -5.9
-    ]
-   },
-   {
-    "at": "L06",
-    "pos": [
-     3.3,
-     -6.4
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "grin",
-    "yaw": -110
-   },
-   {
-    "at": "L06+0.20",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.42",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.64",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.86",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+1.08",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+1.30",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
     "at": "L07",
     "hidden": true,
     "blend": 0
@@ -7171,8 +6277,8 @@
    {
     "at": "L58",
     "pos": [
-     3.3,
-     -6.4
+     3.4,
+     -5.9
     ]
    },
    {
@@ -7253,6 +6359,40 @@
     "yaw": 0
    },
    {
+    "at": "L08.2",
+    "pos": [
+     -0.45,
+     -6.0
+    ]
+   },
+   {
+    "at": "L08.2",
+    "pos": [
+     -0.45,
+     -6.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     10,
+     80
+    ],
+    "side": [
+     0,
+     -42
+    ],
+    "head": [
+     0,
+     -8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "smile",
+    "yaw": 0
+   },
+   {
     "at": "L09",
     "pos": [
      -0.45,
@@ -7326,17 +6466,22 @@
     "yaw": -90
    },
    {
-    "at": "L64",
+    "at": "L66",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L71",
     "pos": [
      -5.3,
      0.4
     ]
    },
    {
-    "at": "L64",
+    "at": "L71",
     "pos": [
-     -5.5,
-     1.5
+     -3.0,
+     -0.95
     ],
     "blend": 0,
     "hidden": false,
@@ -7350,17 +6495,17 @@
     ],
     "head": [
      0,
-     -8
+     -6
     ],
     "lean": 0,
     "tremble": 0,
     "blink": true,
     "sit": false,
-    "expr": "smirk",
+    "expr": "grin",
     "yaw": -90
    },
    {
-    "at": "L66",
+    "at": "L72",
     "hidden": true,
     "blend": 0
    }
@@ -7449,17 +6594,22 @@
     "yaw": -90
    },
    {
-    "at": "L64",
+    "at": "L66",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L71",
     "pos": [
      -4.7,
      0.5
     ]
    },
    {
-    "at": "L64",
+    "at": "L71",
     "pos": [
-     -5.5,
-     0.6
+     -3.0,
+     -0.2
     ],
     "blend": 0,
     "hidden": false,
@@ -7472,7 +6622,7 @@
      0
     ],
     "head": [
-     20,
+     0,
      0
     ],
     "lean": 0,
@@ -7483,7 +6633,7 @@
     "yaw": -90
    },
    {
-    "at": "L66",
+    "at": "L72",
     "hidden": true,
     "blend": 0
    }
@@ -7649,11 +6799,6 @@
     "yaw": -90
    },
    {
-    "at": "L64",
-    "hidden": true,
-    "blend": 0
-   },
-   {
     "at": "L60",
     "pos": [
      -5.4,
@@ -7688,7 +6833,7 @@
     "yaw": -90
    },
    {
-    "at": "L65+0.5",
+    "at": "L66",
     "hidden": true,
     "blend": 0
    }
@@ -7785,11 +6930,6 @@
     "yaw": -90
    },
    {
-    "at": "L64",
-    "hidden": true,
-    "blend": 0
-   },
-   {
     "at": "L60",
     "pos": [
      -5.3,
@@ -7824,7 +6964,7 @@
     "yaw": -90
    },
    {
-    "at": "L65+0.5",
+    "at": "L66",
     "hidden": true,
     "blend": 0
    }
@@ -7942,7 +7082,7 @@
     "yaw": -90
    },
    {
-    "at": "L65+0.5",
+    "at": "L66",
     "hidden": true,
     "blend": 0
    }
@@ -8038,97 +7178,10 @@
     ]
    },
    {
-    "at": "L06",
+    "at": "L10",
     "pos": [
      0.8,
      -9.0
-    ]
-   },
-   {
-    "at": "L06",
-    "pos": [
-     2.7,
-     -2.4
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "grin",
-    "yaw": -90
-   },
-   {
-    "at": "L06+0.20",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.42",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.64",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.86",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+1.08",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+1.30",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L07",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L10",
-    "pos": [
-     2.7,
-     -2.4
     ]
    },
    {
@@ -8159,14 +7212,14 @@
     "yaw": 0
    },
    {
-    "at": "L11",
+    "at": "L12",
     "pos": [
      -1.5,
      1
     ]
    },
    {
-    "at": "L11+0.01",
+    "at": "L12+0.01",
     "hidden": true,
     "blend": 0
    },
@@ -8203,11 +7256,6 @@
     "sit": false,
     "expr": "neutral",
     "yaw": -90
-   },
-   {
-    "at": "L64",
-    "hidden": true,
-    "blend": 0
    },
    {
     "at": "L60",
@@ -8244,7 +7292,7 @@
     "yaw": -90
    },
    {
-    "at": "L65+0.5",
+    "at": "L66",
     "hidden": true,
     "blend": 0
    },
@@ -8336,97 +7384,10 @@
     "blend": 0
    },
    {
-    "at": "L06",
+    "at": "L10",
     "pos": [
      0.5,
      1.8
-    ]
-   },
-   {
-    "at": "L06",
-    "pos": [
-     1.9,
-     -3.6
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "grin",
-    "yaw": -60
-   },
-   {
-    "at": "L06+0.20",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.42",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.64",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.86",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+1.08",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+1.30",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L07",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L10",
-    "pos": [
-     1.9,
-     -3.6
     ]
    },
    {
@@ -8457,14 +7418,14 @@
     "yaw": 0
    },
    {
-    "at": "L11",
+    "at": "L12",
     "pos": [
      1.6,
      2
     ]
    },
    {
-    "at": "L11+0.01",
+    "at": "L12+0.01",
     "hidden": true,
     "blend": 0
    },
@@ -8503,7 +7464,7 @@
     "yaw": -90
    },
    {
-    "at": "L65+0.5",
+    "at": "L66",
     "hidden": true,
     "blend": 0
    },
@@ -8611,97 +7572,10 @@
     "blend": 0
    },
    {
-    "at": "L06",
+    "at": "L10",
     "pos": [
      -1.0,
      -2
-    ]
-   },
-   {
-    "at": "L06",
-    "pos": [
-     3.4,
-     -3.0
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "grin",
-    "yaw": -110
-   },
-   {
-    "at": "L06+0.20",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.42",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.64",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+0.86",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+1.08",
-    "arms": [
-     82,
-     82
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L06+1.30",
-    "arms": [
-     58,
-     58
-    ],
-    "blend": 0.1
-   },
-   {
-    "at": "L07",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L10",
-    "pos": [
-     3.4,
-     -3.0
     ]
    },
    {
@@ -8732,14 +7606,14 @@
     "yaw": 0
    },
    {
-    "at": "L11",
+    "at": "L12",
     "pos": [
      1.0,
      4
     ]
    },
    {
-    "at": "L11+0.01",
+    "at": "L12+0.01",
     "hidden": true,
     "blend": 0
    },
@@ -8812,7 +7686,7 @@
     "yaw": -90
    },
    {
-    "at": "L65+0.5",
+    "at": "L66",
     "hidden": true,
     "blend": 0
    },
@@ -8920,65 +7794,10 @@
     "blend": 0
    },
    {
-    "at": "L11",
+    "at": "L70",
     "pos": [
      1.3,
      -4
-    ]
-   },
-   {
-    "at": "L11",
-    "pos": [
-     7.9,
-     -4.3
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     5
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "smirk",
-    "yaw": -125
-   },
-   {
-    "at": "L11.1",
-    "head": [
-     0,
-     14
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L11.2",
-    "head": [
-     0,
-     4
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L12",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L70",
-    "pos": [
-     7.9,
-     -4.3
     ]
    },
    {
@@ -9441,6 +8260,12 @@
    "on": false
   },
   {
+   "at": "L73",
+   "name": "hanger",
+   "on": true,
+   "swing": 1
+  },
+  {
    "at": 0,
    "name": "boxes",
    "n": 2
@@ -9570,7 +8395,7 @@
    "name": "bell"
   },
   {
-   "at": "L68.1",
+   "at": "L68+0.9",
    "name": "dust"
   },
   {
@@ -9583,29 +8408,8 @@
   {
    "at": 0,
    "name": "tags",
-   "who": "date_m",
-   "n": 40,
-   "pop": false
-  },
-  {
-   "at": 0,
-   "name": "tags",
-   "who": "date_f",
-   "n": 40,
-   "pop": false
-  },
-  {
-   "at": 0,
-   "name": "tags",
    "who": "mr_kettle",
    "n": 74,
-   "pop": false
-  },
-  {
-   "at": 0,
-   "name": "tags",
-   "who": "salon_a",
-   "n": 7,
    "pop": false
   },
   {
@@ -9677,19 +8481,6 @@
    "who": "x6",
    "n": 7,
    "pop": false
-  },
-  {
-   "at": 0,
-   "name": "tags",
-   "who": "salon_b",
-   "n": 2,
-   "pop": false
-  },
-  {
-   "at": "L03.2+0.5",
-   "name": "tags",
-   "who": "salon_b",
-   "n": 3
   },
   {
    "at": 0,
@@ -9814,7 +8605,8 @@
    "name": "tags",
    "who": "uncle",
    "n": 0,
-   "fall": true
+   "fall": true,
+   "rest": true
   }
  ],
  "fx": [],
@@ -9905,30 +8697,10 @@
     "db": -26
    },
    {
-    "at": "L03.2+0.5",
-    "kind": "click",
-    "db": -26
-   },
-   {
     "at": "L05.3+0.1",
     "kind": "whoosh",
     "db": -30,
     "dur": 1.0
-   },
-   {
-    "at": "L06+0.2",
-    "kind": "clap",
-    "db": -22
-   },
-   {
-    "at": "L06+0.55",
-    "kind": "clap",
-    "db": -22
-   },
-   {
-    "at": "L06+0.9",
-    "kind": "clap",
-    "db": -22
    },
    {
     "at": "L19.3+0.25",

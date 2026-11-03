@@ -21,7 +21,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from stories import ROOT, UPLOADS, all_stories, changed_since, film, gate_open, slug, uploads
+from stories import ROOT, UPLOADS, all_stories, changed_since, film, gate_open, qa_passed, slug, uploads
 
 from blocky.gate import load_package
 
@@ -45,7 +45,7 @@ def ready_count(done: dict) -> int:
         if s in done or (load_package(s) or {}).get("hold"):
             continue
         f = film(s)
-        if f and not (f.get("created_at") and changed_since(s, f["created_at"])) and gate_open(s):
+        if f and not (f.get("created_at") and changed_since(s, f["created_at"])) and qa_passed(s, f) and gate_open(s):
             n += 1
     return n
 
@@ -69,6 +69,9 @@ def next_story(done: dict, skip: frozenset = frozenset()) -> str | None:
             continue
         f = film(s)
         if f and f.get("created_at") and changed_since(s, f["created_at"]):   # its film predates a fix: wait for the re-render
+            continue
+        if f and not qa_passed(s, f):   # no final-film check for this exact film yet (qa/<story>.json)
+            print(f"{s}: waiting for its final-film check (qa/{s}.json)")
             continue
         if f and gate_open(s):
             if not last or shape(s) != last:
@@ -125,6 +128,17 @@ PUBLISH_AT_CENTRAL = 16   # 4:00 PM Central: after school for the Shorts audienc
 
 
 SLOTS_CENTRAL = [(16, 0), (19, 30)]   # first and second upload of a day go public at 4:00 PM and 7:30 PM Central
+AUTO_HOURS_CENTRAL = (5, 19)   # an automatic upload only starts between 5 AM and 7 PM Central, never late at night
+
+
+def central_now(now: dt.datetime | None = None) -> dt.datetime:
+    from zoneinfo import ZoneInfo
+
+    return (now or dt.datetime.now(dt.timezone.utc)).astimezone(ZoneInfo("America/Chicago"))
+
+
+def in_auto_hours(now: dt.datetime | None = None) -> bool:
+    return AUTO_HOURS_CENTRAL[0] <= central_now(now).hour < AUTO_HOURS_CENTRAL[1]
 
 
 def publish_at(now: dt.datetime | None = None, slot: int = 0, jitter: int | None = None) -> str | None:
@@ -220,7 +234,11 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     done = uploads()
-    today = dt.date.today().isoformat()
+    # the day is the owner's day (Central), not UTC: at 9 PM Central it's already tomorrow in UTC (knock-back, 2026-11-02)
+    today = central_now().date().isoformat()
+    if not a.story and not in_auto_hours():
+        print(f"outside {AUTO_HOURS_CENTRAL[0]}:00 to {AUTO_HOURS_CENTRAL[1]}:00 Central: no automatic upload now")
+        return
     posted = sum(1 for e in done.values() if today in (e.get("uploaded"), e.get("issued")))
     per_day = int(os.environ.get("UPLOADS_PER_DAY", "2") or 2)
     if not a.story and posted >= per_day:

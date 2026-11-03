@@ -53,7 +53,7 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
   "fx": [{"at": "L06", "kind": "shake|flash|black|static|red|punch", "dur": 0.4, "amp": 1, "fade": 0.2, "zoom": 1.15}],
   "music": {"root": 50, "mode": "minor|phrygian|dorian|harmonic|locrian|major|whole", "bpm": 72, "seed": 3,
             "sections": [{"at": 0, "voices": ["drone", "pad", "musicbox", "piano", "pulse", "choir"], "energy": 0.4}]},
-  "sound": {"floor": "stone|concrete|wood|metal|grass|gravel|snow", "steps_db": -20,
+  "sound": {"floor": "stone|concrete|wood|metal|grass|gravel|snow|carpet", "steps_db": -20,
             "rev": 2,                   // optional, ignored by the mix: bump it to have a story with a film drawn again
             "samples": true,            // optional; false: every step, ambience and effect synthesized, as before 2026-11-03
             "ambience": [{"kind": "wind|hum|rain|room|drips|crickets|traffic|water|drone|static", "from": 0, "to": "end", "lufs": -32}],
@@ -95,21 +95,23 @@ open and shut about every 0.11 s, for a character whose words the narrator repor
 
 ## The CC0 library (`assets/`)
 
-Owner, 2026-11-02: "yes go ahead with sfx and visuals". Every file is CC0 and listed, one row each, with its source,
-author and date in `assets/LICENSES.md` (a test fails on any file without a row). About 29.5 MB in all. The score stays
+Owner, 2026-11-02: "yes go ahead with sfx and visuals". Every file is CC0 (each pack's own licence file is in
+`assets/licenses/`) and listed, one row each, with its source,
+author and date in `assets/LICENSES.md` (a test fails on any file without a row). About 35 MB in all. The score stays
 synthesized; characters, faces and their materials stay ours (RULES.md hard rules 4 and 6).
 
 **Sound** (`sound.py`, automatic whenever the files exist; the synth is the fallback):
-- **Footsteps** (`assets/audio/steps/<surface>/`): grass (8), wood (7), stone (9, also used for `concrete`), metal
-  (10), gravel (6), snow (8). Each step picks a seeded file, changes its speed by up to 3% and its level by up to
-  1.5 dB, and is matched to the loudest 50 ms of the synthesized step it replaces, so `steps_db` still means what it
-  did. Running steps are 2 dB up.
+- **Footsteps** (`assets/audio/steps/<surface>/`): grass (13), wood (12), stone (14, also used for `concrete`), metal
+  (10), gravel (11), snow (13) and carpet (5, new: a muffled synthesized step is its fallback). Each step picks a seeded
+  file, changes its speed by up to 3% and its level by up to 1.5 dB, and is matched to the loudest 50 ms of the
+  synthesized step it replaces, so `steps_db` still means what it
+did. Running steps are 2 dB up.
 - **Ambience loops** (`assets/audio/amb/`): `wind`, `rain`, `room` (a low fridge-and-room drone), `crickets` (far
   off), `traffic` (distant, low-passed; new, with a synthesized rumble as its fallback) and `water` (a river). Seamless
   loops, started at a seeded point and tiled to length; the ambience `lufs` sets the level as before. The other kinds
   (hum, drips, drone, static, beehum, gulls, fire) are still synthesized.
-- **Effects** (`assets/audio/sfx/<kind>/`): `door` (4 closes), `creak` (3, cut to the entry's `dur`), `latch` (3),
-  `whoosh` (4) and `thud` (3), each at the synthesized sound's level. `"synth": true` on an entry keeps the old sound,
+- **Effects** (`assets/audio/sfx/<kind>/`): `door` (8 closes), `creak` (6, cut to the entry's `dur`), `latch` (5),
+  `whoosh` (4) and `thud` (10), each at the synthesized sound's level. `"synth": true` on an entry keeps the old sound,
   and so does a creak with a `tone` (cardboard). Every other kind is synthesized.
 - Steps and ambience keep under 5% of their energy above 4 kHz (the files were low-passed until they did, and a test
   checks every file and every sampled step and loop). `"samples": false` in `sound` turns the library off for a story,
@@ -137,5 +139,24 @@ def build(kit, story, tl):
     kit.box("wall", (6, 0.3, 3), (0, 3, 1.5), kit.texture("brick", 1.0, tint="#d8c8c0"))
 ```
 
-**Props:** none yet. Quaternius (CC0) serves its packs only through a Google Drive folder that needs a browser, so
-nothing was taken from it.
+**Props** (`kit.prop(name, loc=(0, 0, 0), rot=0, scale=1.0, height=None, fit=None, tint=None, parent=None)` in
+`set.py`, opt-in): 86 CC0 models in `assets/props/`, from the owner's download of Quaternius and Kenney packs
+(2026-11-03, PR #102). Each is one self-contained .glb in metres beside our 1.75 m characters, origin at the bottom
+centre, so `loc` is where it stands; `rot` turns it about the vertical in degrees. `height` (m) or `fit` (its largest
+side, m) sizes it, otherwise `scale`. `tint` multiplies every colour, to fit the set's palette or the "closer" style.
+Its materials go through the distance fog like ours, and repeats share one mesh. `kit.props()` gives the list with
+each prop's size (`assets/props/props.json`), and `check` blocks a name that isn't there. No characters, creatures,
+weapons, lettering or signs: the cast is always built in `rig.py`. Props dress a set; the set's own look (blocks,
+plastic, fog) still leads, so a few well-placed pieces beat a catalogue.
+
+- Quaternius Ultimate House Interior (furniture, kitchen, bathroom, doors, windows, lamps): `bathroom_bathtub`, `bathroom_sink`, `bathroom_toilet`, `bed_king`, `bed_single`, `bookshelf`, `carpet_1`, `chair_1`, `chair_2`, `couch_l`, `couch_medium1`, `curtains_double`, `door_1`, `door_double`, `drawer_1`, `fireplace`, `houseplant_1`, `kitchen_cabinet1`, `kitchen_fridge`, `kitchen_oven`, `kitchen_sink`, `light_ceiling1`, `light_desk`, `light_floor1`, `nightstand_1`, `shelf_1`, `stool`, `table_roundlarge`, `table_roundsmall`, `trashcan_cylindric`, `window_large1`, `window_small1`
+- Quaternius Ultimate Nature (trees, bushes, rocks, stumps, logs, grass): `birchtree_1`, `birchtree_dead_1`, `bush_1`, `bush_2`, `bush_snow_1`, `commontree_1`, `commontree_2`, `commontree_dead_1`, `commontree_snow_1`, `flowers`, `grass`, `grass_short`, `pinetree_1`, `pinetree_2`, `pinetree_snow_1`, `plant_1`, `rock_1`, `rock_3`, `rock_5`, `rock_moss_1`, `rock_snow_1`, `treestump`, `willow_1`, `woodlog`, `woodlog_moss`
+- Quaternius Ultimate Buildings (1 to 4 storey town houses; the signed ones left out): `bldg_1story`, `bldg_1story_gableroof`, `bldg_2story`, `bldg_2story_balcony`, `bldg_2story_slim`, `bldg_3story_small`, `bldg_4story`
+- Kenney Nature Kit (fences, gate, log stack, stump, campfire stones, bridge, tent, pot): `nat_bridge_wood`, `nat_campfire_stones`, `nat_fence_gate`, `nat_fence_planks`, `nat_fence_simple`, `nat_log_stack`, `nat_pot_large`, `nat_stump_old`, `nat_tent_detailedclosed`
+- Kenney City Kit Suburban (houses, fences, driveway, paths, planter, trees): `sub_building_type_a`, `sub_building_type_c`, `sub_building_type_f`, `sub_building_type_k`, `sub_building_type_p`, `sub_driveway_long`, `sub_fence`, `sub_fence_1x3`, `sub_fence_low`, `sub_path_stones_long`, `sub_planter`, `sub_tree_large`, `sub_tree_small`
+
+```python
+    kit.prop("pinetree_1", (-4, 9, 0), rot=30)
+    kit.prop("sub_fence", (0, 3, 0), height=1.1, tint="#d0c8c0")
+    kit.prop("bed_single", (1.2, 2.0, 0), rot=90)
+```

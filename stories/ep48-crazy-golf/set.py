@@ -34,16 +34,16 @@ def noshadow(ob):
 def _L(**kw):
     base = dict(sun=0.0, sun_col="#ffe2b0", el=20.0, az=-70.0, fill=0.0, sky="#9bb6d8", sky_str=0.5, moon=0.0,
                 lamp=0.0, strings=0.0, rim=0.0, bed=0.0, hall=0.0, dadroom=0.0, kitchen=0.0, win=0.0, myshadow=1.0,
-                tee=0.0, bfill=0.0, dfill=0.0)
+                tee=0.0, bfill=0.0, dfill=0.0, kiosk=0.0)
     base.update(kw)
     return base
 
 
 LOOKS = {
     # late afternoon, warm, long object shadows
-    "day": _L(sun=4.2, sun_col="#ffd9a0", el=30, az=-60, fill=0.9, sky="#a8c0e0", sky_str=0.9),
-    "eve": _L(sun=4.2, sun_col="#ffcf8a", el=22, az=-62, fill=0.8, sky="#b6b0d0", sky_str=0.8),
-    "front": _L(sun=4.2, sun_col="#ffd9a0", el=22, az=0, fill=0.5, sky="#a8c0e0", sky_str=0.8),
+    "day": _L(sun=4.2, sun_col="#ffd9a0", el=30, az=-60, fill=0.9, sky="#a8c0e0", sky_str=0.9, kiosk=1.0),
+    "eve": _L(sun=4.2, sun_col="#ffcf8a", el=22, az=-62, fill=0.8, sky="#b6b0d0", sky_str=0.8, kiosk=1.0),
+    "front": _L(sun=4.2, sun_col="#ffd9a0", el=22, az=0, fill=0.5, sky="#a8c0e0", sky_str=0.8, kiosk=1.0),
     # my bedroom, evening
     "bedroom": _L(sun=0.0, sky="#554c70", sky_str=0.3, bed=1.0, myshadow=0.0),
     # Dad's empty room, moonlight in the window
@@ -63,7 +63,7 @@ LOOKS = {
                    strings=1.0, tee=1.0, rim=1.0),
     "dusk_str2": _L(sun=2.2, sun_col="#ff9450", el=9, az=-78, fill=0.14, sky="#4e426f", sky_str=0.32, lamp=1.0,
                     strings=1.0, tee=1.0, rim=1.0),
-    "sunday": _L(sun=4.6, sun_col="#fff0d0", el=58, az=-40, fill=1.0, sky="#a0c4ee", sky_str=1.1),
+    "sunday": _L(sun=4.6, sun_col="#fff0d0", el=58, az=-40, fill=1.0, sky="#a0c4ee", sky_str=1.1, kiosk=1.0),
     "gold": _L(sun=3.6, sun_col="#ffc070", el=13, az=-78, fill=0.4, sky="#9a88b0", sky_str=0.55, lamp=0.6),
     "gold2": _L(sun=2.8, sun_col="#ffa468", el=10, az=-78, fill=0.3, sky="#7c6c9c", sky_str=0.45, lamp=0.8),
     "blank": _L(),
@@ -296,9 +296,9 @@ def _parts(pose):
     return P, head
 
 
-def _shadow_image(pose, bun):
+def _shadow_image(pose, mop):
     """One flat silhouette drawn with PIL, blurred, as an in-memory RGBA image (alpha = the shadow)."""
-    key = (pose, bun)
+    key = (pose, mop)
     if key in _SH_IMG:
         return _SH_IMG[key]
     import numpy as np
@@ -323,16 +323,18 @@ def _shadow_image(pose, bun):
     hx, hy = px(*head)
     r = HEAD_R * SH_PPM
     dr.ellipse((hx - r, hy - r, hx + r, hy + r), fill=255)
-    if bun:
-        bx_, by_ = px(0.0, head[1] + 0.32)
-        rb = 0.15 * SH_PPM
-        dr.ellipse((bx_ - rb, by_ - rb, bx_ + rb, by_ + rb), fill=255)
+    if mop:   # the squared, tufted mop outline over the head (no knob on top)
+        mx, my = px(*head)
+        hw, top_, ear = (HEAD_R + 0.05) * SH_PPM, 0.30 * SH_PPM, (HEAD_R + 0.17) * SH_PPM
+        dr.rectangle((mx - hw, my - HEAD_R * SH_PPM - top_, mx + hw, my + HEAD_R * SH_PPM * 0.1), fill=255)
+        for sx in (-1, 1):
+            dr.rectangle((mx + sx * ear - 0.09 * SH_PPM, my - 0.1 * SH_PPM, mx + sx * ear + 0.09 * SH_PPM, my + 0.2 * SH_PPM), fill=255)
     im = im.filter(ImageFilter.GaussianBlur(SH_BLUR * SH_PPM * 0.5))
     import os
     import tempfile
-    d = Path(tempfile.gettempdir()) / "ep48-shadows"
+    d = Path(tempfile.gettempdir()) / "ep48-shadows-mop"
     d.mkdir(exist_ok=True)
-    path = d / f"{pose}-{int(bun)}-{SH_PPM}-{int(SH_BLUR * 1000)}.png"
+    path = d / f"{pose}-{int(mop)}-{SH_PPM}-{int(SH_BLUR * 1000)}.png"
     if not path.exists():
         tmp = d / f"{os.getpid()}-{path.name}"
         im.convert("RGB").save(tmp)
@@ -343,15 +345,15 @@ def _shadow_image(pose, bun):
     return img
 
 
-def shadow_mat(kit, pose, bun):
-    name = f"shadowtex {pose} {int(bun)}"
+def shadow_mat(kit, pose, mop):
+    name = f"shadowtex {pose} {int(mop)}"
     if name in kit.MATS:
         return kit.MATS[name]
     m = kit._new(name)
     nt = m.node_tree
     nt.nodes.remove(nt.nodes["Principled BSDF"])
     tex = nt.nodes.new("ShaderNodeTexImage")
-    tex.image = _shadow_image(pose, bun)
+    tex.image = _shadow_image(pose, mop)
     tex.extension = "CLIP"
     tc = nt.nodes.new("ShaderNodeTexCoord")
     nt.links.new(tc.outputs["Generated"], tex.inputs["Vector"])
@@ -361,7 +363,7 @@ def shadow_mat(kit, pose, bun):
     nt.links.new(tex.outputs["Color"], sc.inputs[0])      # a grey ramp; the mask is the red channel
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     em = nt.nodes.new("ShaderNodeEmission")
-    em.inputs["Color"].default_value = kit.col("#3b2a3a" if bun else SH_COL)
+    em.inputs["Color"].default_value = kit.col("#3b2a3a" if mop else SH_COL)
     em.inputs["Strength"].default_value = 1.0
     mix = nt.nodes.new("ShaderNodeMixShader")
     nt.links.new(sc.outputs[0], mix.inputs[0])
@@ -371,10 +373,10 @@ def shadow_mat(kit, pose, bun):
     return m
 
 
-def flat_fig(kit, name, pose="stand", bun=False, scale=1.0):
+def flat_fig(kit, name, pose="stand", mop=False, scale=1.0):
     """A flat soft-edged silhouette on one textured plane (colour #2f3a4a, 55%, 6 cm blur). Returns its empty."""
     e = kit.empty(name, (0, 0, -50))
-    m = shadow_mat(kit, pose, bun)
+    m = shadow_mat(kit, pose, mop)
     pl = kit.plane(f"{name}.p", (SH_X[1] - SH_X[0], SH_Y[1] - SH_Y[0]),
                    ((SH_X[0] + SH_X[1]) / 2, (SH_Y[0] + SH_Y[1]) / 2, 0.012), m, e)
     for c in [e] + list(e.children_recursive):
@@ -498,6 +500,7 @@ def build(kit, story, tl):
     kit.light("bfill", "POINT", (G.BENCH_HOUSE[0] + 1.2, G.BENCH_HOUSE[1] - 2.2, 1.9), 1.0, "#ffd0a0", size=0.4,
               shadow=False)
     kit.light("dfill", "POINT", (bx - 1.1, by + 0.1, 1.7), 1.0, "#ffc890", size=0.4, shadow=False)
+    kit.light("kiosk", "POINT", (G.KIOSK[0] - 2.2, G.KIOSK[1] - 0.5, 1.9), 1.0, "#ffe0b0", size=0.5, shadow=False)
     kit.light("kitchen", "POINT", (cx, cy, 2.2), 1.0, "#ffbf80", size=0.2)
 
     # ------------------------------------------------------------------------------------ ground
@@ -854,8 +857,8 @@ def build(kit, story, tl):
 
     # ------------------------------------------------------------------------------------ shadows (flat)
     W["figs"] = {}
-    for fid, (pose, bun) in story.get("figs", {}).items():
-        W["figs"][fid] = flat_fig(kit, f"fig_{fid}", pose, bun)
+    for fid, (pose, mop) in story.get("figs", {}).items():
+        W["figs"][fid] = flat_fig(kit, f"fig_{fid}", pose, mop)
     W["myshadow"] = flat_fig(kit, "fig_mine", "stand", False)
     W["wrung"] = Wrung(kit)
     W["inited"] = False
@@ -909,6 +912,7 @@ def animate(kit, story, tl, t, ctx):
     gains["hall"] = look["hall"] * 110.0
     gains["dadroom"] = look["dadroom"] * 520.0
     gains["hallB"] = look["dadroom"] * 200.0
+    gains["kiosk"] = look["kiosk"] * 150.0
     gains["kitchen"] = look["kitchen"] * 220.0
     gains["bfill"] = look["bfill"] * 60.0
     gains["dfill"] = look["dfill"] * 70.0

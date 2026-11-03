@@ -69,66 +69,6 @@
     ]
    ]
   },
-  "L03": {
-   "text": "Love the haircut, she says. One tag, before the salon door even shuts.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.293,
-   "onset": 0.19,
-   "end": 3.103,
-   "chunks": [
-    [
-     0.19,
-     0.672
-    ],
-    [
-     0.707,
-     1.172
-    ],
-    [
-     1.267,
-     1.707
-    ],
-    [
-     1.733,
-     1.983
-    ],
-    [
-     1.983,
-     2.388
-    ],
-    [
-     2.388,
-     3.103
-    ]
-   ]
-  },
-  "L04": {
-   "text": "By dessert, first dates look like pincushions.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.224,
-   "onset": 0.172,
-   "end": 2.017,
-   "chunks": [
-    [
-     0.172,
-     0.552
-    ],
-    [
-     0.603,
-     1.017
-    ],
-    [
-     1.017,
-     2.017
-    ]
-   ]
-  },
   "L05": {
    "text": "A man owns up in the cafe, and his tag drops off like a leaf.",
    "who": "narrator",
@@ -165,26 +105,6 @@
     ]
    ]
   },
-  "L06": {
-   "text": "The whole cafe claps.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.397,
-   "onset": 0.155,
-   "end": 1.207,
-   "chunks": [
-    [
-     0.155,
-     0.69
-    ],
-    [
-     0.69,
-     1.207
-    ]
-   ]
-  },
   "L07": {
    "text": "Mrs. Kettle swears her husband has never told a lie.",
    "who": "narrator",
@@ -214,22 +134,26 @@
    ]
   },
   "L08": {
-   "text": "No tag lands on her.",
+   "text": "no tag lands on her. she believes it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.517,
-   "onset": 0.19,
-   "end": 1.31,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
    "chunks": [
     [
-     0.19,
-     0.802
+     0.172,
+     0.716
     ],
     [
-     0.802,
-     1.31
+     0.716,
+     1.017
+    ],
+    [
+     1.094,
+     1.845
     ]
    ]
   },
@@ -281,63 +205,43 @@
     ]
    ]
   },
-  "L11": {
-   "text": "People believe everything I say.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.155,
-   "end": 1.569,
-   "chunks": [
-    [
-     0.155,
-     0.664
-    ],
-    [
-     0.664,
-     1.0
-    ],
-    [
-     1.0,
-     1.569
-    ]
-   ]
-  },
   "L12": {
-   "text": "My Uncle Aurel taught me to cut at the second bench in his shop.",
+   "text": "my Uncle, Aurel, taught me to cut at the second bench in his shop.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9784999999999999,
-   "dur": 2.69,
+   "dur": 2.879,
    "onset": 0.19,
-   "end": 2.483,
+   "end": 2.672,
    "chunks": [
     [
      0.19,
-     0.784
+     0.517
     ],
     [
-     0.784,
-     1.026
+     0.552,
+     0.897
     ],
     [
-     1.026,
-     1.233
+     0.966,
+     1.199
     ],
     [
-     1.233,
-     1.353
+     1.199,
+     1.406
     ],
     [
-     1.353,
-     1.801
+     1.406,
+     1.526
     ],
     [
-     1.801,
-     2.483
+     1.526,
+     1.992
+    ],
+    [
+     1.992,
+     2.672
     ]
    ]
   },
@@ -1018,30 +922,30 @@
    ]
   },
   "L39": {
-   "text": "He tells me, It's a lovely place, love.",
+   "text": "he tells me, it's a lovely place, lad.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.069,
-   "onset": 0.155,
-   "end": 1.862,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
    "chunks": [
     [
-     0.155,
-     0.552
+     0.172,
+     0.586
     ],
     [
-     0.578,
-     0.741
+     0.612,
+     0.768
     ],
     [
-     0.741,
-     1.293
+     0.768,
+     1.259
     ],
     [
-     1.353,
-     1.862
+     1.293,
+     1.776
     ]
    ]
   },
@@ -1458,22 +1362,26 @@
    ]
   },
   "L55": {
-   "text": "She's happy in the city.",
+   "text": "my nephew's happy in the city.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.397,
+   "dur": 1.638,
    "onset": 0.172,
-   "end": 1.207,
+   "end": 1.448,
    "chunks": [
     [
      0.172,
-     0.578
+     0.586
     ],
     [
-     0.578,
-     1.207
+     0.586,
+     0.819
+    ],
+    [
+     0.819,
+     1.448
     ]
    ]
   },
@@ -1666,74 +1574,30 @@
    ]
   },
   "L63": {
-   "text": "I'd never had a tag, because I believed my own lie.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 2.603,
-   "onset": 0.19,
-   "end": 2.397,
-   "chunks": [
-    [
-     0.19,
-     0.56
-    ],
-    [
-     0.56,
-     0.948
-    ],
-    [
-     0.974,
-     1.569
-    ],
-    [
-     1.569,
-     2.397
-    ]
-   ]
-  },
-  "L64": {
-   "text": "Just like Mrs. Kettle.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9784999999999999,
-   "dur": 1.448,
-   "onset": 0.19,
-   "end": 1.241,
-   "chunks": [
-    [
-     0.19,
-     0.5
-    ],
-    [
-     0.5,
-     1.241
-    ]
-   ]
-  },
-  "L65": {
-   "text": "For two years, I'd been rubbing my sleeve.",
+   "text": "uncle laughs for the first time all week.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.017,
-   "onset": 0.155,
-   "end": 1.81,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
    "chunks": [
     [
-     0.155,
-     0.621
+     0.172,
+     0.638
     ],
     [
-     0.655,
-     1.103
+     0.638,
+     0.776
     ],
     [
-     1.103,
-     1.81
+     0.776,
+     1.172
+    ],
+    [
+     1.172,
+     1.776
     ]
    ]
   },
@@ -1890,58 +1754,78 @@
    ]
   },
   "L71": {
-   "text": "I never had one.",
+   "text": "but a lie you believe never gets a tag.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.328,
-   "onset": 0.172,
-   "end": 1.138,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.845,
    "chunks": [
     [
-     0.172,
-     0.534
+     0.155,
+     0.517
     ],
     [
-     0.534,
-     1.138
+     0.517,
+     0.922
+    ],
+    [
+     0.922,
+     1.25
+    ],
+    [
+     1.25,
+     1.845
     ]
    ]
   },
   "L72": {
-   "text": "I believed mine.",
+   "text": "for two years, i told myself i was happy in the city.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.31,
+   "dur": 2.603,
    "onset": 0.172,
-   "end": 1.103,
+   "end": 2.414,
    "chunks": [
     [
      0.172,
-     1.103
+     0.655
+    ],
+    [
+     0.69,
+     1.293
+    ],
+    [
+     1.293,
+     1.767
+    ],
+    [
+     1.767,
+     2.414
     ]
    ]
   },
   "L73": {
-   "text": "I still don't have one.",
+   "text": "and i believed every word.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.448,
+   "dur": 1.69,
    "onset": 0.172,
-   "end": 1.259,
+   "end": 1.483,
    "chunks": [
     [
      0.172,
-     0.5
+     0.732
     ],
     [
-     0.5,
-     1.259
+     0.732,
+     1.483
     ]
    ]
   }

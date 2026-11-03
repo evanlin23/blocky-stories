@@ -50,13 +50,13 @@
  "phonemes": {
   "Ossie": "ˈɔzi",
   "Tam": "tˈæm",
-  "Nell": "nˈɛl"
+  "Luke": "lˈuːk"
  },
  "cast": {
   "me": {
    "age": "adult",
    "skin": "#e6b18c",
-   "shirt": "#c98aa0",
+   "shirt": "#7a1f2e",
    "pattern": "knit",
    "pants": "#2b3550",
    "shoes": "#1c1c24",
@@ -68,7 +68,7 @@
     "brows": true,
     "ink": "#1c1416"
    },
-   "pattern_c": "#a8667f"
+   "pattern_c": "#661825"
   },
   "tam": {
    "age": "adult",
@@ -593,24 +593,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Tam stopped saying",
-     "Tam stopped saying"
+     "I figured",
+     "I figured"
     ],
     [
-     "my name",
-     "my name"
+     "the one was",
+     "the one was"
     ],
     [
-     "years ago.",
-     "years ago."
-    ],
-    [
-     "So the one",
-     "So the one"
-    ],
-    [
-     "was ME.",
-     "was me."
+     "just ME.",
+     "just me."
     ]
    ]
   },
@@ -850,8 +842,12 @@
      "A person,"
     ],
     [
-     "printed BACKWARDS.",
-     "printed backwards."
+     "like a photo",
+     "like a photo"
+    ],
+    [
+     "NEGATIVE.",
+     "negative."
     ]
    ]
   },
@@ -908,8 +904,8 @@
      "of my"
     ],
     [
-     "pink one.",
-     "pink one."
+     "red one.",
+     "red one."
     ]
    ]
   },
@@ -1317,8 +1313,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Just HIMSELF.",
-     "Just himself."
+     "I thought",
+     "I thought"
+    ],
+    [
+     "that one was",
+     "that one was"
+    ],
+    [
+     "just HIMSELF.",
+     "just himself."
     ]
    ]
   },
@@ -1327,12 +1331,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Like even",
-     "Like even"
+     "Like I didn't",
+     "Like I didn't"
     ],
     [
-     "I didn't count",
-     "I didn't count"
+     "count to him",
+     "count to him"
     ],
     [
      "ANYMORE.",
@@ -1359,16 +1363,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then I looked",
-     "Then I looked"
+     "But I was",
+     "But I was"
     ],
     [
-     "up at my",
-     "up at my"
+     "WRONG.",
+     "wrong."
     ],
     [
-     "own number,",
-     "own number,"
+     "I looked up",
+     "I looked up"
+    ],
+    [
+     "at my own",
+     "at my own"
+    ],
+    [
+     "number,",
+     "number,"
     ],
     [
      "for the first",
@@ -1446,10 +1458,6 @@
     [
      "count YOURSELF.",
      "count yourself."
-    ],
-    [
-     "Nobody does.",
-     "Nobody does."
     ]
    ]
   },
@@ -1604,8 +1612,8 @@
      "\"This is Tam."
     ],
     [
-     "And I'm NELL.\"",
-     "And I'm Nell.\""
+     "And I'm LUKE.\"",
+     "And I'm Luke.\""
     ]
    ]
   },
@@ -1662,12 +1670,12 @@
      "Over mine,"
     ],
     [
-     "ONE rolled to",
-     "one rolled to"
+     "ONE rolled",
+     "one rolled"
     ],
     [
-     "TWENTY also.",
-     "twenty also."
+     "to TWENTY too.",
+     "to twenty too."
     ]
    ]
   },
@@ -1806,20 +1814,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "For years,",
-     "For years,"
+     "You don't",
+     "You don't"
     ],
     [
-     "the number over",
-     "the number over"
+     "count yourself.",
+     "count yourself."
     ],
     [
-     "my head",
-     "my head"
+     "My ONE was",
+     "My one was"
     ],
     [
-     "said ONE.",
-     "said one."
+     "always TAM.",
+     "always Tam."
     ]
    ]
   },
@@ -1828,12 +1836,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "It was",
-     "It was"
+     "And his last",
+     "And his last"
     ],
     [
-     "always TAM.",
-     "always Tam."
+     "ONE was",
+     "one was"
+    ],
+    [
+     "always ME.",
+     "always me."
     ]
    ]
   }
@@ -14669,7 +14681,7 @@
    "v": 0.0
   },
   {
-   "at": "P02>+0.35",
+   "at": "L43",
    "name": "num",
    "who": "tam",
    "v": 1
@@ -15101,7 +15113,7 @@
     "db": -27
    },
    {
-    "at": "P02>+0.35",
+    "at": "L43",
     "kind": "click",
     "db": -27
    },

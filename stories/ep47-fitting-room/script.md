@@ -1,38 +1,40 @@
-# ep47-fitting-room: the script (writer, 2026-11-02)
+# ep47-fitting-room: the script (writer, 2026-11-02, revised 2026-11-03 for the cold-viewer test)
 
 - **Slug:** `ep47-fitting-room`
 - **From:** pitch #31 `fitting-room` in `stories/ideas.md` (Batch 5 pitches), its row and its notes. Rule type (lies), setting, creature (the Empty), loved one (Uncle Aurel), kind of warmth (relief: we stop pretending to each other), marker form and lore plant kept.
 - **Changes from the pitch:**
   - Uncle's ordinary reason for being away on Thursday: he took the first train to the city to see the shop where I work. He comes back and tells me "It's a lovely place, love", and a fresh tag pins on over his heart. (The pitch had him find "my flat dark", but I'm staying with him that week, so a dark flat proves nothing.)
   - No scissors or shears anywhere, even in cutaways. Pins appear only as each tag's own tiny pin and as Uncle's pincushion, never near a face or the creature.
-  - The sting adds one line after the pitch's "I BELIEVED mine": "I still / don't have ONE.", over a close shot of me rubbing my sleeve again. It lands cold: am I believing something now?
-- **Target length:** 2:15 to 2:30.
-- **Word count:** 625 spoken words in 73 lines, all `narrator`, plus 2 pause beats (1.3 s in all).
-- **Estimated length:** about 2:19 (625 words at 290 wpm is 2:09, plus 0.12 s gaps for 8.8 s, the pauses 1.3 s and the loop tail 0.25 s). If it lands under 2:15, add "The ice-cream man / is ALL tag." after L02. If it lands over 2:30, cut L41 first, then L06.
-- **Key timings (estimated):** rule and marker on screen at 0 s, montage 0 to 19 s, Uncle's tags at work from 21 s (seen in the backgrounds) and narrated from 35 s, traces 44 to 53 s, the first taking at about 53 s (L28 to L30, 38% in), the hanging suit at 65 s, the Empty shown clearly at about 88 s (64%), the loophole at 108 to 116 s, the warm turn from 124 s, the loop line at about 133 s.
+  - Revision, 2026-11-03 (cold-viewer test): the Mrs. Kettle callback (old L64) and the narrated sleeve (old L65) are cut, because both leaned on beats a first listen misses. The twist is said in plain words in the last three lines (L71 to L73): a lie you believe never gets a tag, and for two years I'd told myself I was happy in the city. "I still don't have ONE" is gone. Mrs. Kettle's montage beat now says "She BELIEVES it." out loud (L08), so the end is earned. The sleeve stays as shots only, a rewatch reward. Old L63's twist line moved to the end, and L63 is now a warm beat (Uncle laughs).
+  - Revision, 2026-11-03, round 4 (back-row test: a concrete mystery by 15 s, Uncle on screen by 0:20): the montage is cut to three examples (shoes L02, owning up L05, Mrs. Kettle L07 to L09). L03 (haircut), L04 (first dates) and L06 (the cafe claps) are cut with their shots S04, S05, S06 and S09. L11 ("People believe EVERYTHING I say") was never paid off, so it's cut with S14. S15 now shows Uncle through the shop window so he's on screen as L12 starts. Other ids are left as they were.
+  - Narrator is a man (RULES, owner 2026-11-02): "me" is Uncle's nephew. "She's happy in the city" is now "My NEPHEW'S / HAPPY / in the city." (L55), so a cold listener knows who he means, and Uncle calls me "lad" (L39). L12 says plainly that Aurel is my uncle.
+- **Target length:** 2:05 to 2:20 (round 4 cut it down; shorter is better).
+- **Word count:** 596 spoken words in 67 lines, all `narrator`, plus 2 pause beats in the script (1.3 s) and the builder's P03 hold (0.85 s). Ids L03, L04, L06, L11, L64 and L65 are cut, and the other ids are left as they were.
+- **Estimated length:** about 2:11 (the round-3 timeline was 139.0 s, less 7.7 s of cut lines and their gaps).
+- **Key timings (from the round-3 voice timings):** rule and marker on screen at 0 s, montage 0 to 14 s, L10 (my clean coat) at about 13.5 s, Uncle on screen at about 15 s (S15, through the shop window), his tags at work in the backgrounds from there and narrated from about 26 s, then everything after about 8 s earlier than round 3: traces about 36 to 45 s, the first taking at about 45 s (L28 to L30, 34% in), the hanging suit at about 57 s, the Empty shown clearly at about 80 s (61%), the loophole at about 100 to 108 s, the warm turn from about 113 s, the plain twist from about 123 s (L71 to L73).
 
 ## The story
 
 - **Premise:** In a town where every lie you tell pins a small white tag to your clothes, I've never had one. I'm back for a week to help Uncle Aurel shut the alterations shop where he taught me to cut. He has never told a lie in his life, but every time a customer asks after me, a tag pins onto him. By night the fitting-room curtain draws itself, my old bench gets chalked up for a suit, and a tape measure lies on the floor in the shape of a person where I used to stand.
 - **Rule:** every lie you tell pins a white tag to your clothes. A tag only comes off when somebody says the truth out loud (shown in the montage: a man owns up in the cafe and his tag drops off like a leaf).
-- **Twist:** a lie you believe doesn't count. I never had a tag because I'd believed my own: "I love it there." Uncle knew all along. All his tags are the same one lie, "She's happy in the city", told to every customer so I could stay away without guilt. "People believe everything I say" turns over too: they believe me because I believe myself.
+- **Twist:** a lie you believe never gets a tag. I never had one because for two years I'd told myself I was happy in the city, and believed it. Uncle knew all along. All his tags are the same one lie, "My nephew's happy in the city", told to every customer so I could stay away without guilt.
 - **Where the twist is planted:**
-  - Plant 1, Mrs. Kettle (L07 to L09): she swears her husband has never told a lie, no tag lands on her, and he stands beside her white as a wedding cake. She believes it, so it doesn't count. Paid off at L64.
-  - Plant 2, my sleeve (L16 to L17, shot only): I tell Uncle "I love it", no tag comes, and under L16 and L17 I'm rubbing my left sleeve with my other hand, where a tag would pin. Also seen in the background of L13 (on the train, rubbing the same sleeve). Paid off at L65, and again in the sting at L73.
+  - Plant 1, Mrs. Kettle (L07 to L09): she swears her husband has never told a lie, no tag lands on her, and the narration says "She BELIEVES it." He stands beside her white as a wedding cake. Paid off in words at L71 ("a lie you BELIEVE / never gets a TAG"), with Mrs. Kettle seen once more under it (S91), not named.
+  - Plant 2, my sleeve (shots only, never narrated): under L16 and L17 I'm rubbing my left sleeve with my other hand, where a tag would pin. Also seen on the train under L13. Paid off in a shot under L72 (my thumb still on the clean sleeve). A rewatch reward a cold listener doesn't need.
   - Rewatch reward, not narrated: under L19 and L20, Uncle answers the customer with his back to camera and his head toward the window, where my old bench is. A tag pins on each time.
-- **How the last 15 seconds turn over the first line:** first time, "every lie you tell pins a white tag" is the town's funny, eerie rule and I'm the honest exception. By L63 we know I had no tag because I believed my lie, and L70 repeats the rule over the two of us in shirtsleeves. L71 to L73 ("I never had ONE. / I BELIEVED mine. / I still / don't have ONE.") make the first line a question about anyone with clean clothes, me included, right now.
+- **How the last 15 seconds turn over the first line:** first time, "every lie you tell pins a white tag" is the town's funny, eerie rule and I'm the honest exception. L70 repeats the rule over the two of us in shirtsleeves. L71 to L73 say the twist plainly ("But a lie you BELIEVE / never gets a TAG. / For two YEARS, / I told MYSELF / I was HAPPY / in the CITY. / And I BELIEVED / every WORD."), over the empty hanger swinging on its hook, and loop straight into "In this town, every lie you tell pins a white tag to your clothes." Now the first line has a hole in it, and my clean coat in L10 was the worst sign, not the best.
 - **What the hits do, line by line:**
   1. Rule opener (L01, 14 words): "In this town, every lie you tell pins a white tag to your clothes."
   2. Marker by 2 s: the white hook-glyph tags on every shopper in S01, one popping on in frame.
-  3. Montage, 5 examples in the first 19 s: the snowman salesman, the haircut compliment, first dates as pincushions, the man who owns up and the clapping cafe, Mrs. Kettle.
-  4. The exception: I've never had a tag, and people believe everything I say (L10 to L11).
+  3. Montage, 3 examples in the first 15 s: the snowman salesman, the man who owns up in the cafe, Mrs. Kettle.
+  4. The exception: I've never had a tag (L10).
   5. The loved one at stake: Uncle Aurel, buried in tags for me, gone on Thursday.
   6. The loophole: a tag comes off when somebody says the truth out loud, and all his tags are one lie, about me. So one true sentence from me clears every one (L56 to L61). No new magic.
-  7. Twist planted twice (Mrs. Kettle, my sleeve), and the last lines echo the first.
+  7. Twist planted twice (Mrs. Kettle in words, my sleeve in shots), said plainly in the last three lines, which loop into the first.
   8. First 2 s: bright arcade, two faces large, tags in frame.
-  9. Cuts: 93 shots over about 139 s.
-  - Seconds 15 to 30 (L08 to L15): Mrs. Kettle and her husband, my clean coat among speckled passers-by, Uncle's apron already tagged, the boxes. Nobody explains the rule.
-- **Ending shape:** the shop window in the evening, two people in shirtsleeves with no tags, then Saturday morning with two aprons on two hooks and the sign card turned, then a cold close on my clean sleeve and my thumb rubbing it.
+  9. Cuts: 86 shots over about 131 s.
+  - Seconds 10 to 30 (L08 to L19): Mrs. Kettle and her husband, my clean coat among speckled passers-by, Uncle in the shop window and his apron already tagged, the boxes, the first night's question. Nobody explains the rule.
+- **Ending shape:** the shop window in the evening, two people in shirtsleeves with no tags, then Saturday morning with two aprons on two hooks and the sign card turned, then a cold close on the fitting room's empty hanger, swinging very slightly on its hook.
 - **Warmth:** relief. We stop pretending to each other. Shown in shirtsleeves in the window, not told.
 
 ## World
@@ -49,16 +51,14 @@ Uncle's alterations shop is narrow and deep. The front: a wooden counter with a 
 
 All adults. Nobody young is in the story, and nobody is in peril or hurt. Uncle is tired, never unwell.
 
-- `me` (adult woman, no age on screen): Uncle's old apprentice, two years in the city. Dark block hair in a short bob with a fringe, a slate-blue city coat over a cream roll-neck, charcoal trousers, brown lace-ups. Never a single tag. Faces: `neutral`, `worried`, `scared`, `sad`, `smile`.
+- `me` (young adult man, no age on screen): Uncle Aurel's nephew and old apprentice, two years in the city. Short dark block hair, a slate-blue city coat over a cream roll-neck, charcoal trousers, brown lace-ups. Never a single tag. Faces: `neutral`, `worried`, `scared`, `sad`, `smile`.
 - `uncle` (older adult): Uncle Aurel. Grey block hair combed back, a drawn short grey beard, round drawn glasses, an oatmeal canvas apron over a moss-green waistcoat, white shirtsleeves rolled. A yellow tape measure round his neck (prop, until L30). Gentle, quiet, explains nothing. His tags build up: a few on his apron at L12, speckled at L21, white across both shoulders at L23, a new one over his heart at L40, up to his chin at L46, all gone at L61. Faces: `neutral`, `smile`, `sad`, `tired`, `relieved`.
 - `salesman` (adult man): the shoe-shop man, so covered in tags he's a white lump with a face, a little shoe in each hand's sleeve end. L02 only.
-- `salon_pair` (two adult women): one with a new short haircut, one in a lilac coat who compliments it. L03 only.
-- `date_pair` (adult man and woman at a cafe table): both covered in tags by dessert. L04 only.
-- `cafe_man` (adult man, red knit hat) and three cafe extras. L05 to L06.
-- `mrs_kettle` (older adult woman): plum coat, grey block curls, a handbag, not one tag. `mr_kettle` (older adult man): flat cap, white as a wedding cake with tags. L07 to L09, and Mrs. Kettle once more at L64.
+- `cafe_man` (adult man, red knit hat) and the woman across from him. L05 only (and the reused angle at L58).
+- `mrs_kettle` (older adult woman): plum coat, grey block curls, a handbag, not one tag. `mr_kettle` (older adult man): flat cap, white as a wedding cake with tags. L07 to L09, and Mrs. Kettle once more at L71 (S91, not named).
 - `customers` (three adults, mixed): a man in a camel coat, a woman in a teal scarf, an older man with a stick. They ask after me at the counter (L19, L22, L44).
 
-Every word is the narrator's. Quotes (L03, L16, L39, L55, L60) are reported inside my lines.
+Every word is the narrator's. Quotes (L16, L39, L55, L60) are reported inside my lines.
 
 ## The creature: the Empty
 
@@ -105,10 +105,10 @@ Every word is the narrator's. Quotes (L03, L16, L39, L55, L60) are reported insi
   - L01 to L27, thin and light: a soft wooden tick on every beat like a shop clock, a dry felt-plucked synth playing a small four-note figure, a thin high pad. A little bouncy for the montage.
   - From L28 (Uncle not coming down, the first taking) a heavy low drone enters, a sustained low B with a slow-beating detuned fifth and a sub layer, and it **holds to the end**. The tick slows to every other beat.
   - L60 to L69: over the drone, the harmony lifts to D major and a plain warm melody on a soft square lead comes in.
-  - L70 to L73: the lead drops out. Drone only, and one high, slightly flat sustained note under "I still / don't have ONE."
+  - L70 to L73: the lead drops out. Drone only, and one high, slightly flat sustained note under "And I BELIEVED / every WORD."
 - **Drops (`music_drops`):** before L33 (0.7 s, everything out but the voice and a single soft brass-ring scrape of the curtain), before L48 (0.6 s, everything but the voice drops, then one low felt thud as the hit). No silent gaps anywhere else.
 - **Ambience, all synthesized:** arcade footsteps and murmur, the counter bell, a cafe cup clink, a soft paper "tick" each time a tag pins on, a leaf-like paper flutter as tags drop, curtain rings sliding on brass, a dry chalk scrape (L42), a soft cloth slump for the heap (L62, -18 dB with a pitch fall), evening arcade hush.
-- **The loop:** 0.25 s after "ONE" in L73, cut to L01's wide and its first word.
+- **The loop:** 0.25 s after "WORD" in L73, cut to L01's wide and its first word.
 
 ## The lore connection (one only)
 
@@ -118,42 +118,34 @@ A plain tally: two charcoal strokes pressed into the brass foot of the second cu
 
 Each line gives the id and who says it, then the caption chunks split with ` / `. The spoken text is the chunks in lowercase without quote marks. CAPS are the key words, in chalk blue. Present tense throughout, with Thursday's city trip reported in the past (L38).
 
-## 01 The arcade (L01 to L11)
+## 01 The arcade (L01 to L10)
 
 - **Where:** the covered arcade, a bright weekday.
-- **Shots:** 13.
-- **Montage (5 examples):** the snowman salesman, the haircut, the first date, the man who owns up, Mrs. Kettle.
+- **Shots:** 10.
+- **Montage (3 examples):** the snowman salesman, the man who owns up, Mrs. Kettle.
 
 - `L01` narrator: In this town, / every LIE you tell / pins a white TAG / to your CLOTHES.
   - [S01, 0 to 1.6 s: bright mid shot under the glass roof, two shoppers walking toward camera, faces big in frame (each over 1/5 of the frame width), a few white hook-glyph tags pinned on their coats. One tag pops onto the man's lapel as he says something to her. S02, from 1.6 s: wide down the arcade in long sun bars, every passer-by with a few tags]
 - `L02` narrator: The man who sells SHOES / looks like a SNOWMAN.
   - [S03: the shoe-shop man in his doorway, smiling, so covered in tags he's a white lump with a face]
-- `L03` narrator: "Love the HAIRCUT," / she says. / One TAG, / before the salon door / even SHUTS.
-  - [S04: outside the salon, the lilac-coat woman smiling at her friend's new bob. S05: close on the lilac lapel, a tag popping on as the salon door swings shut behind them]
-- `L04` narrator: By DESSERT, / first DATES / look like PINCUSHIONS.
-  - [S06: a cafe table, two plates of cake, the man and woman both smiling and stuck all over with tags]
 - `L05` narrator: A man OWNS UP / in the CAFE, / and his tag drops off / like a LEAF.
   - [S07: the cafe man in the red hat, `sheepish`, talking to the woman across from him. S08: close on his chest, one tag tipping off and drifting down]
-- `L06` narrator: The whole cafe / CLAPS.
-  - [S09: wide on the cafe tables, everyone clapping (arms up, no hands meeting in close)]
 - `L07` narrator: Mrs. KETTLE swears / her husband / has never told / a LIE.
   - [S10: Mrs. Kettle in her plum coat, chin up, proud. Not a tag on her]
-- `L08` narrator: No tag lands / on HER.
-  - [S11: close on her clean plum lapel. Nothing]
+- `L08` narrator: No tag lands / on HER. / She BELIEVES it.
+  - [S11: close on her clean plum lapel. Nothing. S11a, on "She BELIEVES it": her face, chin up, beaming, one hand flat on her heart]
 - `L09` narrator: He's beside her, / white as a / WEDDING CAKE.
   - [S12: pull back: Mr. Kettle beside her, smiling politely, white with tags from cap to shoes]
 - `L10` narrator: Me? / I've never had / a single TAG.
   - [S13: me walking up the arcade with a wheeled case, `neutral`, my slate-blue coat clean. Passers-by around me speckled]
-- `L11` narrator: People believe / EVERYTHING / I say.
-  - [S14: me at the cafe counter, the woman behind it nodding at whatever I've said, believing me]
 
 ## 02 The shop (L12 to L23)
 
 - **Where:** Uncle's shop, Monday to Wednesday. The rule at work in every background: customers pinned with tags, a box being packed.
 - **Shots:** 15.
 
-- `L12` narrator: My Uncle AUREL / taught me to CUT / at the second BENCH / in his SHOP.
-  - [S15: the shopfront with its spool-and-needle picture sign. S16: inside the workroom, the two benches facing each other, Uncle at his, `smile`, three or four tags already on his apron. My bench bare]
+- `L12` narrator: My UNCLE, / AUREL, / taught me to CUT / at the second BENCH / in his SHOP.
+  - [S15: the shopfront with its spool-and-needle picture sign, Uncle clearly visible through the big window at his counter, `smile`, face large enough to read. S16: inside the workroom, the two benches facing each other, Uncle at his, `smile`, three or four tags already on his apron. My bench bare]
 - `L13` narrator: Two years AGO, / I left / for a job / in the CITY.
   - [S17: a train window, grey city blocks sliding past, me, `neutral`, rubbing my left sleeve with my other hand (plant 2, background)]
 - `L14` narrator: This week / his shop SHUTS, / and I'm back / to help him PACK.
@@ -221,7 +213,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S47: the shop door from inside at night, Uncle stepping in from the dark arcade, `tired`, his coat damp, tags to his collar]
 - `L38` narrator: He went to the CITY, / to see the shop / where I WORK.
   - [S48: upstairs at the small table again, Uncle taking off his scarf, a train ticket stub (blank card) on the table]
-- `L39` narrator: He tells me, / "It's a lovely place, / LOVE."
+- `L39` narrator: He tells me, / "It's a lovely place, / LAD."
   - [S49: Uncle, `smile`, not quite meeting my eyes]
 - `L40` narrator: A new TAG / pins on / over his HEART.
   - [S50: close on his waistcoat's left breast, one tag popping on among the others]
@@ -262,13 +254,13 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S66: I've stepped in front of my bench (across a cut), `scared`. The Empty at `lean` 12. S67: `lean` 24, nearer. S68 (the test still): over my shoulder, `lean` 35, the open collar about 30 cm from my face, the two glints level with my eyes]
 - `L54` narrator: And behind me, / I finally HEAR / what Uncle tells / every customer.
   - [S69: reverse, past the Empty's shoulder onto my `scared` face, and far behind me through the doorway, Uncle at the counter talking to Mrs. Kettle]
-- `L55` narrator: "She's HAPPY / in the city."
+- `L55` narrator: "My NEPHEW'S / HAPPY / in the city."
   - [S70: Uncle, `smile`, saying it, and a tag popping onto his chin-high collar]
 
-## 06 The truth (L56 to L65)
+## 06 The truth (L56 to L63)
 
 - **Where:** the same, the shop full.
-- **Shots:** 12.
+- **Shots:** 10.
 
 - `L56` narrator: Every tag on him / is the SAME lie.
   - [S71: slow push across Uncle's chest and shoulders, hundreds of identical tags]
@@ -284,12 +276,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S78: Uncle in slow motion as every tag tips and drifts down off him in the sunlight, soft-edged and matte, his face opening into `relieved`]
 - `L62` narrator: I step up / to my old BENCH, / and the suit / drops into a HEAP.
   - [S79: me stepping in behind my bench, into my old place. S80 (after a cut): low on the floor, the Empty in `heap` by the bench's brass foot, the shoes tipped over, the collar's dark gone flat and ordinary]
-- `L63` narrator: I'd never had a TAG, / because I BELIEVED / my own LIE.
-  - [S81: me, `sad`, looking down at my clean sleeves]
-- `L64` narrator: Just like / Mrs. KETTLE.
-  - [S82: Mrs. Kettle at the counter, proud and clean, Mr. Kettle beside her white with tags, nodding along]
-- `L65` narrator: For two YEARS, / I'd been rubbing / my SLEEVE.
-  - [S83: close on my left sleeve, my other sleeve end resting on it, still]
+- `L63` narrator: Uncle LAUGHS / for the first time / all WEEK.
+  - [S81: Uncle at the counter, `relieved` into `smile`, drifts of tags round his shoes, the crowd smiling behind him. S82 and S83 are cut, and the numbers after them stay as they were]
 
 ## 07 The window (L66 to L73)
 
@@ -307,12 +295,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S88: the back wall, two oatmeal aprons on the two hooks. S89: the door's sign card turning over from plain to the spool picture (cut away from hands), the bright arcade beyond]
 - `L70` narrator: In this town, / every LIE you tell / pins a TAG / to your CLOTHES.
   - [S90: the same framing as S02, the arcade on Saturday, shoppers speckled. Push in slowly to our shop window: Uncle and me at our two benches facing each other, both bare]
-- `L71` narrator: I never had ONE.
-  - [S91: me at my bench, `smile`, working]
-- `L72` narrator: I BELIEVED mine.
-  - [S92: the fitting room behind me, curtain hanging open, the brass hook bare]
-- `L73` narrator: I still / don't have ONE.
-  - [S93: close on my clean left sleeve. My other sleeve end comes up and starts rubbing it, slowly. Hold 0.25 s after the word, then loop to S01]
+- `L71` narrator: But a lie you BELIEVE / never gets a TAG.
+  - [S91: through our window, Mrs. Kettle passing in the arcade, proud and clean, Mr. Kettle beside her white with tags (plant 1, not named)]
+- `L72` narrator: For two YEARS, / I told MYSELF / I was HAPPY / in the CITY.
+  - [S92: me at my bench, `sad`, a small smile, looking down at my clean left sleeve, my thumb resting on it, still (plant 2)]
+- `L73` narrator: And I BELIEVED / every WORD.
+  - [S93: the fitting room behind me, curtain hanging open, the bare wooden hanger on the brass hook swinging very slightly, cool side-window light. Hold 0.25 s after "WORD", then loop to S01]
 
 ## Checks for the builder
 
@@ -322,10 +310,11 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - Faces at phone size are at least 1/5 of the frame width in S01, and the tags are on screen from frame one.
 - Uncle's tags must never cover his face, even at L46 and L55.
 - The Empty's lean is three held poses (L53), never an animated lunge. It never touches me.
-- Shots: 93 over about 139 s, about 1.5 s a shot on average.
+- Shots: 86 over about 131 s (S04, S05, S06, S09 and S14 are cut, the other numbers stay), about 1.5 s a shot on average.
 
 ## Risks
 
 - **"Aurel" in Whisper.** It could come back as "Oral", "Aural" or "Auriel". It's said once (L12). If the check fails it, re-voice L12 with a spelling the voice says as "OR-el" or ask the orchestrator to approve a plain name. Everywhere else he's "Uncle".
-- **"Mrs."** may come back as "Missus". Said twice (L07, L64).
+- **"Mrs."** may come back as "Missus". Said once (L07).
+- **The narrator is a man now.** `story.json`'s `me` (eyes `lashes`, the bob) and its `twist` text ("she's happy in the city") need the builder to match: a young man's face (no lashes) and short hair, and "my nephew's happy".
 - **"cafe"** is written without an accent so the transcript matches.

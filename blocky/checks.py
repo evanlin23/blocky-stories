@@ -108,13 +108,17 @@ TEXTURE_NAMES = ("brick", "wood", "concrete", "grass", "asphalt")   # kit.TEXTUR
 
 
 def library(st: dict, set_text: str = "") -> list[tuple[str, str]]:
-    """The CC0 library (assets/): a `look.hdri` must name a file in assets/hdri/, and a set's kit.texture("x")
-    one of the textures, so a typo shows up here and not as a plain world on the render."""
+    """The CC0 library (assets/): a `look.hdri` must name a file in assets/hdri/, a set's kit.texture("x")
+    one of the textures and its kit.prop("x") one of the props, so a typo shows up here and not as a plain world on the render."""
     out = []
     h = (st.get("look") or {}).get("hdri")
     if h and not (ASSETS / "hdri" / f"{h}.hdr").exists():
         have = sorted(p.stem for p in (ASSETS / "hdri").glob("*.hdr"))
         out.append(("block", f"look.hdri {h!r} isn't in assets/hdri/ (there are {have})"))
+    names = json.loads((ASSETS / "props" / "props.json").read_text()) if (ASSETS / "props" / "props.json").exists() else {}
+    for t in re.findall(r"kit\.prop\(\s*[\"']([^\"']+)", set_text):
+        if t not in names:
+            out.append(("block", f"set.py uses kit.prop({t!r}), which isn't in assets/props/props.json"))
     for t in re.findall(r"kit\.texture\(\s*[\"']([^\"']+)", set_text):
         if t not in TEXTURE_NAMES:
             out.append(("block", f"set.py uses kit.texture({t!r}); the textures are {TEXTURE_NAMES}"))

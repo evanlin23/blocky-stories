@@ -80,6 +80,7 @@ def test_upload_description_adds_flash_line():
 
 
 def test_upload_spaces_out_twist_shapes(monkeypatch):
+    monkeypatch.setenv("QA_REQUIRED", "false")   # the final-film check has its own test
     sys.path.insert(0, str(ROOT / "scripts"))
     import upload
 
@@ -98,6 +99,7 @@ def test_upload_spaces_out_twist_shapes(monkeypatch):
 
 
 def test_upload_queue_goes_first(monkeypatch):
+    monkeypatch.setenv("QA_REQUIRED", "false")   # the final-film check has its own test
     sys.path.insert(0, str(ROOT / "scripts"))
     import upload
 
@@ -214,6 +216,7 @@ def test_check_blocks_a_narrator_who_says_my_husband():
 
 
 def test_ready_count_skips_held_done_and_unfilmed(monkeypatch):
+    monkeypatch.setenv("QA_REQUIRED", "false")   # the final-film check has its own test
     sys.path.insert(0, str(ROOT / "scripts"))
     import upload
 
@@ -362,7 +365,7 @@ def test_sample_files_are_mono_48k_and_soft():
             assert (w.getnchannels(), w.getframerate(), w.getsampwidth()) == (1, 48000, 2), p
         if p.parent.parent.name == "steps" or p.parent.name == "amb":
             assert _hf(sound.load_wav(p)) < 0.05, f"{p}: too bright for a step or ambience"
-    for surface in ("grass", "wood", "stone", "metal", "gravel", "snow"):
+    for surface in ("grass", "wood", "stone", "metal", "gravel", "snow", "carpet"):
         assert len(list((ROOT / "assets/audio/steps" / surface).glob("*.wav"))) >= 4, surface
     for kind in sound.AMB_SAMPLES:
         assert (ROOT / "assets/audio/amb" / f"{kind}.wav").exists(), kind
@@ -375,7 +378,7 @@ def test_steps_use_samples_with_variation_and_matched_level():
 
     from blocky import sound
 
-    for surface in ("grass", "wood", "stone", "concrete", "metal", "gravel", "snow"):
+    for surface in ("grass", "wood", "stone", "concrete", "metal", "gravel", "snow", "carpet"):
         a, b = sound.step_sound(surface, False, 1), sound.step_sound(surface, False, 1)
         assert np.array_equal(a, b)                                      # a seed always gives the same step
         outs = {sound.step_sound(surface, False, s).tobytes() for s in range(8)}
@@ -425,6 +428,8 @@ def test_sampled_sfx_and_the_synth_fallback(tmp_path, monkeypatch):
 def test_every_asset_is_licensed_cc0_or_royalty_free():
     text = (ROOT / "assets" / "LICENSES.md").read_text()
     files = [p for p in (ROOT / "assets").rglob("*") if p.is_file() and p.name != "LICENSES.md"]
+    for lic in (ROOT / "assets" / "licenses").glob("*.txt"):                 # each pack's own licence file
+        assert "CC0" in lic.read_text() or "Creative Commons Zero" in lic.read_text(), lic
     assert files
     for p in files:
         rel = p.relative_to(ROOT).as_posix()
@@ -443,5 +448,54 @@ def test_check_blocks_an_unknown_hdri_or_texture():
     assert checks.library({"look": {"hdri": "moonless_gulf"}})[0][0] == "block"
     assert checks.library({}, "m = kit.texture('marble')")[0][0] == "block"
     assert checks.library({}) == []
+    assert checks.library({}, 'kit.prop("pinetree_1", (0, 3, 0))') == []
+    assert checks.library({}, 'kit.prop("bldg_2story_sign")')[0][0] == "block"
     names = {p.stem for p in (ROOT / "assets" / "textures").iterdir() if p.is_dir()}
     assert names == set(checks.TEXTURE_NAMES)
+
+
+def test_props_are_listed_small_and_free_of_characters_and_lettering():
+    import json
+
+    rec = json.loads((ROOT / "assets" / "props" / "props.json").read_text())
+    glbs = {p.stem for p in (ROOT / "assets" / "props").glob("*.glb")}
+    assert rec and set(rec) == glbs                                          # one record per file, no strays
+    banned = ("sign", "character", "creature", "zombie", "skeleton", "man", "woman", "knife", "sword", "gun")
+    for name, v in rec.items():
+        assert (ROOT / v["file"]).exists() and len(v["size_m"]) == 3, name
+        assert not any(b in name.split("_") or b in v["from"].lower() for b in banned), name
+        assert 0.01 <= max(v["size_m"]) <= 25, (name, v["size_m"])           # metres, not centimetres
+    assert sum((ROOT / v["file"]).stat().st_size for v in rec.values()) < 8e6
+
+
+def test_upload_day_is_central_and_never_late_at_night():
+    import datetime as dt
+
+    import upload
+
+    nine_pm = dt.datetime(2026, 11, 3, 3, 4, tzinfo=dt.timezone.utc)   # 9:04 PM Central on Nov 2
+    assert upload.central_now(nine_pm).date().isoformat() == "2026-11-02"
+    assert not upload.in_auto_hours(nine_pm)
+    assert upload.in_auto_hours(dt.datetime(2026, 11, 3, 12, 47, tzinfo=dt.timezone.utc))   # 6:47 AM Central
+    assert not upload.in_auto_hours(dt.datetime(2026, 11, 3, 10, 0, tzinfo=dt.timezone.utc))   # 4 AM Central
+
+
+def test_upload_needs_a_final_film_check(tmp_path, monkeypatch):
+    import json
+
+    import stories
+
+    monkeypatch.setattr(stories, "QA", tmp_path)
+    monkeypatch.delenv("QA_REQUIRED", raising=False)
+    f = {"id": 42}
+    assert not stories.qa_passed("x", f)
+    (tmp_path / "x.json").write_text(json.dumps({"film": 41, "verdict": "pass"}))
+    assert not stories.qa_passed("x", f)   # an older film's check doesn't count
+    (tmp_path / "x.json").write_text(json.dumps({"film": 42, "verdict": "fail"}))
+    assert not stories.qa_passed("x", f)
+    (tmp_path / "x.json").write_text(json.dumps({"film": 42, "verdict": "pass"}))
+    assert stories.qa_passed("x", f)
+    (tmp_path / "y.json").write_text(json.dumps({"film": "legacy", "verdict": "pass"}))
+    assert stories.qa_passed("y", {"id": None, "legacy": "y.mp4"})
+    monkeypatch.setenv("QA_REQUIRED", "false")
+    assert stories.qa_passed("z", None)
