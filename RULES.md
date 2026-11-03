@@ -1,4 +1,4 @@
-# House rules: creepy blocky stories for PandaNanoAdventures
+# House rules: creepy blocky stories for Buhtown
 
 Every agent reads this file, and only this file, for the rules. The owner's words outrank everything here. Note numbers (9, 18, 21) are the showrunner notes these came from in `evanlin23/content`. When the owner gives new feedback, add it here as a dated quote and change the rule it touches.
 
@@ -13,6 +13,9 @@ The owner, 2026-11-02: "I kinda want to just let you go by yourself and upload f
   4. 1,000 subscribers and 10M Shorts views in 90 days (ad revenue share).
   5. $200 earned back. Shorts pay roughly a few cents per 1,000 views, so this needs millions of monetized views.
 - **How to iterate:** change one thing at a time where you can (length, look, rule type, title style), and judge on day-7 numbers across several uploads, never on one (the scope research: about 20 Shorts before judging).
+
+## The channel is Buhtown (owner, 2026-11-03)
+The owner: "I kinda want something with Buh in the name", then "Buhtown or The Buhkeeper i think is funny". The channel was renamed from PandaNanoAdventures to **Buhtown**, and its host and avatar is **the Buhkeeper**, who keeps Buhtown's rulebook (`docs/research/branding.md`, art in `brand/`). Stories don't have to say "Buhtown": "In this town" still works. The Buhkeeper's own Shorts say it once, in line 2, never line 1. The 94 old POV Shorts stay private on the channel (owner: "We can keep all of the old videos just privated").
 
 ## The 2026-11-03 reset: shorter, faster, lighter (outranks the story and packaging rules below)
 The owner, 2026-11-03: "you can do whatever you want, this is your channel to experiment with." Why: the uploads after back-row flopped. Today's trend scan has "sad / emotional" as the weakest format, falling 14% in a week, while rule premises and horror lead. A blocky channel 24 days old reached 178K subscribers with seven 50 to 57 s Shorts (`docs/research/2026-11-03-skylox-study.md`). Our stories ran 130 to 145 s, mostly sad family reveals.
@@ -49,7 +52,7 @@ The owner: "this niche might be oversaturated, but I think I'd like to keep this
   - **Examples in these rules never use a live hit's premise** (a check of the 2026-11-03 deep scan found one).
 
 ## What we make
-A crazy, strange, made-up story, as long as its big idea needs and no longer (shorter is better, 3:00 at most), told in first person by a fast, sped-up synthetic narrator over blocky characters we build in Blender, with big punchy captions. One story a day goes to **PandaNanoAdventures** and no other channel (note 21).
+A crazy, strange, made-up story, as long as its big idea needs and no longer (shorter is better, 3:00 at most), told in first person by a fast, sped-up synthetic narrator over blocky characters we build in Blender, with big punchy captions. One story a day goes to **Buhtown** and no other channel (note 21).
 - Owner: "it should be like creepy roblox shorts and the characters should look more like roblox. also the voice should be like the sped up roblox voice... it should not be educational, it should be like crazy stories" (note 18).
 - Owner: "the entire thing should be consistent blocky characters" (note 21). The characters, narrator, captions and game-world feel are the brand. They stay the same in every story. **Only the story changes.**
 - The owner's reference is "In this town touching the ground is forbidden" (`docs/reference.md`).

@@ -2,7 +2,7 @@
 
 [Privacy Policy](PRIVACY.md) · [Terms of Service](TERMS.md)
 
-Made-up creepy stories told by a fast narrator over blocky characters built in Blender, for PandaNanoAdventures.
+Made-up creepy stories told by a fast narrator over blocky characters built in Blender, for Buhtown.
 
 ```
 stories/<name>/        script.md, story.json, set.py, voice-timings.json, package.json, reviews/
