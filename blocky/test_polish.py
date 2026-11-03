@@ -455,4 +455,4 @@ def test_held_shots_keep_their_frame_and_short_shots_push_gently():
     short = {"id": "X", "start": 0.0, "end": 0.4, "f0": 0, "f1": 12, "step": 1}
     tl2 = {**tl, "shots": [short]}
     zs = [polish.motion(tl2, st, {**p, "punch": 0}, k / 30, [])[0] for k in range(12)]
-    assert max(zs) - min(zs) < 0.03
+    assert max(zs) - min(zs) <= 0.045                       # about 4% at most on a 0.4 s shot (critic)
