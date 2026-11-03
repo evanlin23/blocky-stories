@@ -1,6 +1,6 @@
 {
  "slug": "ep33-chairlift",
- "title": "Don't Sit On The Bench Up TOP 🚡",
+ "title": "An Hour Up Here Costs Two WEEKS 🚡",
  "made_for_kids": false,
  "premise": "In a lake town, one day at the top of the chairlift costs a year down at the lake, so people ride up to skip the things they don't want to sit through, and from the deck you can see them on the ridge, still as posts. I have never been up, because I don't want to miss a day. Gran goes up every morning with a blanket big enough for two, comes down for Sunday dinner, and every Sunday says I look older. Through the deck's old viewer she's the one person on the ridge facing away from the sunrise, and one Sunday she doesn't come down.",
  "twist": "Gran isn't riding up the ridge to skip my life: she's the oldest in the valley, and a day at the top costs a year below, so she lives up there to stretch her last few years across the whole of mine, and every Sunday she said I looked older she meant it. I turn the rule once more and spend my own weeks beside her.",
@@ -224,34 +224,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Don't SIT",
-     "Don't sit"
+     "An HOUR",
+     "An hour"
     ],
     [
-     "on the BENCH",
-     "on the bench"
+     "on the top",
+     "on the top"
     ],
     [
-     "at the TOP",
-     "at the top"
-    ],
-    [
-     "of this CHAIRLIFT.",
-     "of this chairlift."
-    ]
-   ]
-  },
-  {
-   "id": "L02",
-   "who": "narrator",
-   "chunks": [
-    [
-     "One HOUR",
-     "One hour"
-    ],
-    [
-     "up THERE,",
-     "up there,"
+     "BENCH costs",
+     "bench costs"
     ],
     [
      "two WEEKS",
@@ -260,6 +242,24 @@
     [
      "down HERE.",
      "down here."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She's been",
+     "She's been"
+    ],
+    [
+     "up THERE",
+     "up there"
+    ],
+    [
+     "since TUESDAY.",
+     "since Tuesday."
     ]
    ]
   },
@@ -877,8 +877,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "So now I STAY",
-     "So now I stay"
+     "So NOW",
+     "So now"
+    ],
+    [
+     "I STAY",
+     "I stay"
     ],
     [
      "up THERE,",
@@ -1093,7 +1097,7 @@
     ]
    ],
    "step": 2,
-   "at": "L02.3-0.2",
+   "at": "L02.2-0.05",
    "hand": 0.002
   },
   {
@@ -3755,7 +3759,7 @@
     "db": -20
    },
    {
-    "at": "L01.3+0.4",
+    "at": "L01.3+0.15",
     "kind": "thud",
     "db": -6,
     "keep": true

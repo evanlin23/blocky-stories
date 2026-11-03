@@ -4,34 +4,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Don't SIT",
-    "Don't sit"
+    "An HOUR",
+    "An hour"
    ],
    [
-    "on the BENCH",
-    "on the bench"
+    "on the top",
+    "on the top"
    ],
    [
-    "at the TOP",
-    "at the top"
-   ],
-   [
-    "of this CHAIRLIFT.",
-    "of this chairlift."
-   ]
-  ]
- },
- {
-  "id": "L02",
-  "who": "narrator",
-  "chunks": [
-   [
-    "One HOUR",
-    "One hour"
-   ],
-   [
-    "up THERE,",
-    "up there,"
+    "BENCH costs",
+    "bench costs"
    ],
    [
     "two WEEKS",
@@ -40,6 +22,24 @@
    [
     "down HERE.",
     "down here."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She's been",
+    "She's been"
+   ],
+   [
+    "up THERE",
+    "up there"
+   ],
+   [
+    "since TUESDAY.",
+    "since Tuesday."
    ]
   ]
  },
@@ -653,8 +653,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "So now I STAY",
-    "So now I stay"
+    "So NOW",
+    "So now"
+   ],
+   [
+    "I STAY",
+    "I stay"
    ],
    [
     "up THERE,",

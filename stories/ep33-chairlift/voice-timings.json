@@ -6,58 +6,58 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Don't sit on the bench at the top of this chairlift.",
+   "text": "An hour on the top bench costs two weeks down here.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.069,
+   "dur": 2.379,
    "onset": 0.172,
-   "end": 1.879,
+   "end": 2.172,
    "chunks": [
     [
      0.172,
-     0.423
+     0.388
     ],
     [
-     0.423,
-     0.784
+     0.388,
+     0.707
     ],
     [
-     0.784,
-     1.077
+     0.707,
+     1.215
     ],
     [
-     1.077,
-     1.879
+     1.215,
+     1.552
+    ],
+    [
+     1.552,
+     2.172
     ]
    ]
   },
   "L02": {
-   "text": "One hour up there, two weeks down here.",
+   "text": "She's been up there since Tuesday.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.879,
+   "dur": 1.655,
    "onset": 0.172,
-   "end": 1.672,
+   "end": 1.448,
    "chunks": [
     [
      0.172,
-     0.474
+     0.37
     ],
     [
-     0.474,
-     0.724
+     0.37,
+     0.655
     ],
     [
-     0.759,
-     1.086
-    ],
-    [
-     1.086,
-     1.672
+     0.655,
+     1.448
     ]
    ]
   },
@@ -853,6 +853,10 @@
    "chunks": [
     [
      0.172,
+     0.37
+    ],
+    [
+     0.37,
      0.629
     ],
     [

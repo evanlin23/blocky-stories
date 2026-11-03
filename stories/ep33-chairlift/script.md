@@ -2,14 +2,14 @@
 
 ## Opening redo 2026-11-03
 Per the opening recipe (`docs/research/playbook.md`, v1). Re-voice L01, L02 and L04 only. Every other line is unchanged.
-- **New L01 (11 words, warning to you):** "Don't SIT / on the BENCH / at the TOP / of this CHAIRLIFT."
-- **New L02 (7 words):** "One HOUR / up THERE, / two WEEKS / down HERE."
+- **New L01 (10 words, the rule as a price, opening "cost"):** "An HOUR / on the top / BENCH costs / two WEEKS / down HERE."
+- **New L02 (6 words, over the frozen laugher with the gull on her hat):** "She's been / up THERE / since TUESDAY."
 - **True to the plot:** the bench is where Gran sits for days and where I end up beside her (L33, L37). The rate matches the story: half an hour up is a week down (L12), an afternoon is a winter (L03), a day is a year (L36). It never hints at why Gran stays.
-- **Rule still clear:** L01 and L02 say it outright, L03 shows it (an afternoon, a whole winter), and L36 still says the full rule near the end.
+- **Rule still clear:** L01 says it outright and L02 shows the proof, L03 shows it (an afternoon, a whole winter), and L36 still says the full rule near the end.
 - **L04:** "MUM" is now "MOM" (US English).
-- **Loop:** unchanged. L37, "From the LAKE, we haven't MOVED since SPRING." runs into "Don't sit on the bench at the top of this chairlift." The warning lands on us.
+- **Loop:** unchanged. L37, "From the LAKE, we haven't MOVED since SPRING." runs into "An hour on the top bench costs two weeks down here." The price lands on us.
 - **Quotable line:** L04, "Bo, who runs the LIFT, goes up whenever his MOM VISITS."
-- **First shot (new S01, under L01):** the old S01 made close. The ridge bench in gold dawn light, camera about 3 m, 35 mm, pushing in on the laugher frozen mid-laugh, the clouds racing behind her. The sound hit (the bull wheel's deep clack) on "CHAIRLIFT." S02 under L02: a close two-shot of the laugher's still face as the sun shadow sweeps once across the bench (slow, flash-safe). The long-lens shot of the ridge from the deck (old S03, about 34 m) moves after 3 s or goes. The mustard cardigan and cream beanie stay small and soft at the far end of the bench in S01.
+- **First shot (new S01, under L01):** the old S01 made close. The ridge bench in gold dawn light, camera about 3 m, 35 mm, pushing in on the laugher frozen mid-laugh, the clouds racing behind her. The sound hit (the bull wheel's deep clack) on "WEEKS." S02 under L02: a close two-shot of the laugher's still face as the sun shadow sweeps once across the bench (slow, flash-safe). The long-lens shot of the ridge from the deck (old S03, about 34 m) moves after 3 s or goes. The mustard cardigan and cream beanie stay small and soft at the far end of the bench in S01.
 - **US English:** L20 and L24 say "around" (r7 standards).
 
 **Redo, 2026-11-02** (revision 1, same day: L01, L03, L12 and L36 rewritten after the blind premise check). The first version (a dare as the first line, the Four-Face, the forty-year bet) was held for not being rule-first. This redo keeps the set (the lake chairlift, the bottom station deck, the top of the ridge), Bo, the old couple's models and the fog, and replaces the premise, the rule, the twist and the creature. There is no monster now. Every line is new, so the builder re-voices the whole story.
@@ -85,10 +85,10 @@ Two short faded-orange upright strokes pressed into the black rubber footrest of
 Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words in sunrise pink. About 41 shots, about 1.6 s each.
 
 ### Rule and montage (0 to 12 s)
-- `L01` narrator: Don't SIT / on the BENCH / at the TOP / of this CHAIRLIFT.
+- `L01` narrator: An HOUR / on the top / BENCH costs / two WEEKS / down HERE.
   - [S01: close on the laugher on the ridge bench, frozen mid-laugh, gold dawn key on her face, clouds racing behind, valley shadows sweeping far below. At the far end of the bench, small and soft: a mustard cardigan and a cream beanie. Slow push in]
   - [S02: the bull wheel deck at dawn, Bo at the gate looking up, the line climbing behind him]
-- `L02` narrator: One HOUR / up THERE, / two WEEKS / down HERE.
+- `L02` narrator: She's been / up THERE / since TUESDAY.
   - [S03: long lens from the deck up to the ridge: a row of tiny figures on the skyline, unmoving while a chair rises past]
 - `L03` narrator: Mr. PELL / went up / for an AFTERNOON / and missed / all of WINTER.
   - [S04: Mr Pell stepping off the down chair in a waxed jacket and thick winter scarf onto a sunny spring deck, everyone else in shirtsleeves]
@@ -164,7 +164,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words
   - [S39: Gran smiling up at me. The pad lifts to major]
 
 ### The turn and the sting (58 to 66 s)
-- `L33` narrator: So now I STAY / up THERE, / and SIT beside her,
+- `L33` narrator: So NOW / I STAY / up THERE, / and SIT / beside her,
   - [S40: me sitting on the bench beside her, both facing the town]
 - `L34` narrator: and she shakes OUT / the BLANKET / for TWO.
   - [S41: the blanket over both our laps, the cut before any grip: it's already laid]

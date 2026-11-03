@@ -132,7 +132,7 @@ def shot(at, cam, **opt):
 # side as the sun shadow sweeps once; S03 is the long look at the row (it moves, and it comes after 3 s)
 shot(0, mv((6.3, 140.6, 40.2), (4.7, 137.0, 41.35), 30, (5.2, 139.0, 40.3), (4.62, 137.0, 41.45), 34), hand=0.002)
 shot("L02", front(hd(LA, 41.1), 180, 52, 2.9, -0.1, 34, push=0.7), hand=0.002)
-shot("L02.3-0.2", mv((-7.5, 116.0, 42.0), (2.6, 137.0, 40.9), 40, (-5.5, 119.0, 41.6), (2.6, 137.0, 40.95), 50), hand=0.002)
+shot("L02.2-0.05", mv((-7.5, 116.0, 42.0), (2.6, 137.0, 40.9), 40, (-5.5, 119.0, 41.6), (2.6, 137.0, 40.95), 50), hand=0.002)
 shot("L03", mv((-0.8, -5.6, 1.65), (-1.8, -1.0, 1.55), 60, (-0.8, -5.6, 1.65), (-1.8, -1.6, 1.55), 60), hand=0.002)
 shot("L03.3", front(hd([-1.5, -3.5], 1.7), 0, 0, 2.4, 0.0, 34, push=0.15))
 shot("L04", ride_cam(1.4, 5.0, 0.5, 0, 0, 1.2, 30), follow="bo", hand=0.003)
@@ -383,7 +383,7 @@ sfx = []
 for ref in ("L22+0.7", "L23+0.5", "L23+1.9", "L24+0.6", "L24+1.9"):   # the chair clacks over each tower
     sfx.append({"at": ref, "kind": "click", "db": -20})
 sfx += [
-    {"at": "L01.3+0.4", "kind": "thud", "db": -6, "keep": True},   # the bull wheel's clack on "chairlift"
+    {"at": "L01.3+0.15", "kind": "thud", "db": -6, "keep": True},   # the bull wheel's clack on "WEEKS"
     {"at": "L09", "kind": "whoosh", "db": -24},
     {"at": "L21", "kind": "hit", "db": -6, "keep": True},
     {"at": "L22", "kind": "whoosh", "db": -20},
