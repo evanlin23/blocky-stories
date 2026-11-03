@@ -8,12 +8,12 @@
     "in this town,"
    ],
    [
-    "NEVER plan",
-    "never plan"
+    "never KEEP",
+    "never keep"
    ],
    [
-    "a surprise PARTY.",
-    "a surprise party."
+    "a SECRET.",
+    "a secret."
    ]
   ]
  },
@@ -22,12 +22,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Every SECRET",
-    "every secret"
-   ],
-   [
-    "you keep",
-    "you keep"
+    "Even ONE",
+    "even one"
    ],
    [
     "makes you GLOW.",
@@ -160,8 +156,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "I tell Grandad",
-    "i tell grandad"
+    "I tell Grandpa",
+    "i tell grandpa"
    ],
    [
     "EVERYTHING.",
@@ -174,8 +170,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Grandad ABE",
-    "grandad abe"
+    "Grandpa ABE",
+    "grandpa abe"
    ],
    [
     "guides at",
@@ -298,8 +294,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "and Grandad",
-    "and grandad"
+    "and Grandpa",
+    "and grandpa"
    ],
    [
     "gets BRIGHTER",
@@ -567,8 +563,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Grandad's GLOW",
-    "grandad's glow"
+    "Grandpa's GLOW",
+    "grandpa's glow"
    ],
    [
     "is GONE.",
@@ -581,8 +577,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "His TORCH",
-    "his torch"
+    "His FLASHLIGHT",
+    "his flashlight"
    ],
    [
     "lies by",
@@ -679,8 +675,8 @@
     "i don't turn"
    ],
    [
-    "ROUND.",
-    "round."
+    "AROUND.",
+    "around."
    ]
   ]
  },
@@ -835,8 +831,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Grandad's on",
-    "grandad's on"
+    "Grandpa's on",
+    "grandpa's on"
    ],
    [
     "the BENCH,",
@@ -1068,8 +1064,8 @@
     "on it"
    ],
    [
-    "is GRANDAD'S.",
-    "is grandad's."
+    "is GRANDPA'S.",
+    "is grandpa's."
    ]
   ]
  },
@@ -1108,8 +1104,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Grandad won't",
-    "grandad won't"
+    "Grandpa won't",
+    "grandpa won't"
    ],
    [
     "LOOK at me.",
@@ -1242,8 +1238,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "And Grandad",
-    "and grandad"
+    "And Grandpa",
+    "and grandpa"
    ],
    [
     "told everyone",
@@ -1304,8 +1300,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Grandad's GLOW",
-    "grandad's glow"
+    "Grandpa's GLOW",
+    "grandpa's glow"
    ],
    [
     "is ORDINARY",
@@ -1380,8 +1376,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Neighbours stop",
-    "neighbours stop"
+    "Neighbors stop",
+    "neighbors stop"
    ],
    [
     "crossing the ROAD.",
@@ -1486,8 +1482,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Grandad kept MINE.",
-    "grandad kept mine."
+    "Grandpa kept MINE.",
+    "grandpa kept mine."
    ]
   ]
  },

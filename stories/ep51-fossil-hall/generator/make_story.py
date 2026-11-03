@@ -26,7 +26,7 @@ for ln in lines:
         if (ln["id"], k) in SPOKEN:
             ch[1] = SPOKEN[(ln["id"], k)]
 
-SWAP = [("grandad", "granddad"), ("neighbours", "neighbors"), ("tail bone", "tailbone")]
+SWAP = [("tail bone", "tailbone")]
 changed = []
 for ln in lines:
     for ch in ln.get("chunks", []):
@@ -229,30 +229,35 @@ def sp(x, y, yaw=0, **kw):
 
 
 LV = 180.0
-# opening (opening recipe v1): frame 1 looks straight at the surprise party already going wrong. The planner crouches behind
-# the sofa glowing lamp-bright, face above the sofa back, guests either side. Camera under 4 m, lens 27+, pushing in.
-OPEN_WHO = {"planner": P(LV, 2.0, 0, z=-0.42, expr=SHEEPISH, arms=[30, 30]),
-            "c3": P(LV - 1.05, 2.0, 0, z=-0.62, expr=SMILE), "c5": P(LV + 1.1, 2.0, 0, z=-0.62, expr="soft")}
-shot(0, "lv", MV(([LV, -2.0, 1.4], [LV, 2.0, 1.3]), ([LV, -1.0, 1.4], [LV, 2.0, 1.34]), 27, 29), OPEN_WHO,
-     "the surprise party going wrong: the planner lamp-bright behind the sofa, face in frame, pushing in", step=1)
-glow(0, "planner", 4.0)
-glow(0, "c3", 1.5)
-glow(0, "c5", 1.5)
-shot("L01.2", "lv", MV(([LV - 0.6, -0.3, 1.38], [LV, 2.0, 1.36]), ([LV - 0.3, 0.5, 1.38], [LV, 2.0, 1.36]), 36, 40), OPEN_WHO,
-     "closer on the planner's wide eyes, the guests' glow either side", step=1)
-shot("L02", "lv", MV(([LV + 0.2, 0.55, 1.4], [LV, 2.0, 1.4]), ([LV + 0.1, 1.0, 1.4], [LV, 2.0, 1.4]), 34, 38), OPEN_WHO,
-     "tight on the planner's face as his glow brightens over 1.2 s, no flash", step=1)
-glow("L02", "planner", 5.0, 1.2)
-shot("L02.2", "st", C([SXC - 0.25, -0.1, 1.62], [SXC - 0.1, 1.9, 1.55], 30), {
+SO = 380.0      # the street at dusk (the opening, and L03)
+# opening (opening recipe v1, round 5): frame 1 is the planner on the street, glowing lamp-bright and visibly wrong, people
+# squinting or shading their eyes, gold spilling on the house fronts and the ground. Camera under 4 m, lens 27+, pushing in.
+SHADE = {"arms": [150, 0], "head": [-25, 8]}
+OPEN_WHO = {"planner": P(SO, 3.6, 0, expr=SHEEPISH, arms=[8, 8]),
+            "c3": P(SO - 0.9, 3.1, 15, expr="worried", **SHADE),
+            "c5": P(SO + 0.95, 3.2, -15, expr="worried", arms=[0, 150], head=[-25, -8]),
+            "c7": P(SO - 0.55, 4.9, 0, expr="worried", **SHADE), "c8": P(SO + 0.75, 5.0, 0, expr="worried", arms=[0, 150])}
+for _n in ("c3", "c5", "c7", "c8"):
+    glow(0, _n, 1.5)
+glow(0, "planner", 5.0)
+cue(0, "spill", pos=[SO, 5.9, 2.4], w=450.0, level=1.0)
+cue(0, "glk", level=0.4)   # his face stays the warm centre of the frame, never clipped
+shot(0, "sr", MV(([SO, 0.0, 1.5], [SO, 3.6, 1.5]), ([SO, 0.9, 1.5], [SO, 3.6, 1.5]), 30, 31), OPEN_WHO,
+     "frame 1: the planner lamp-bright on the street, face a third of the frame, people shading their eyes, gold on the wall, pushing in", step=1)
+shot("L01.2", "sr", MV(([SO - 0.6, 0.5, 1.5], [SO, 3.6, 1.5]), ([SO - 0.3, 1.2, 1.5], [SO, 3.6, 1.5]), 34, 36), OPEN_WHO,
+     "closer from a quarter angle: his wide eyes, the squinters either side, still the whole head", step=1)
+SXC = 340.0
+shot("L02", "st", C([SXC - 0.25, -1.7, 1.62], [SXC - 0.1, 1.9, 1.5], 30), {
     "visitor": P(SXC - 0.1, 1.9, 0, expr=SMILE, head=[0, 4]),
     "c1": sp(SXC + 1.5, 3.2, 0), "c2": sp(SXC - 1.7, 3.2, 0)},
-     "the yellow raincoat on the sunny steps, smug, a gold rim", step=1)
-glow("L02.2", "visitor", 3.0)
-DX = 220.0
-shot("L03", "ds", C([DX - 1.6, -2.2, 1.5], [DX + 0.1, 1.4, 1.4], 28), {
-    "planner": {"pos": (DX, 2.45, 0.18), "yaw": 0, "expr": SMILE, "arms": [40, 40]},
-    "birthday": P(DX + 0.3, -0.5, 180, expr=SHEEPISH, head=[0, -6])},
-     "dusk doorstep: the planner lamp-bright, the birthday man squinting")
+     "the yellow raincoat on the sunny steps, smug, a gold rim, the whole head in frame", step=1)
+glow("L02", "visitor", 3.0)
+shot("L03", "sr", C([SO - 1.0, -0.6, 1.45], [SO, 3.0, 1.5], 28), {
+    "planner": P(SO, 3.0, 0, expr=SMILE, arms=[40, 40]),
+    "birthday": P(SO + 0.55, 1.1, 180, expr=SHEEPISH, head=[0, -6])},
+     "the street: the planner lamp-bright up the pavement, the birthday man in front squinting into the glow")
+cue("L04", "spill", level=0.0, dur=0.3)
+cue("L04", "glk", level=1.0, dur=0.3)
 PX = 260.0
 shot("L04", "pk", C([PX, -4.6, 1.5], [PX, 0, 1.0], 30), {
     "whisperer": SIT(PX - 0.55, 0.0, 0, head=[-35, 0], expr="neutral"),
@@ -333,7 +338,7 @@ glow("L16", "abe", 4.6, 1.0)
 SRX = 380.0
 shot("L17", "sr", MV(([SRX + 6.5, -3.4, 1.5], [SRX - 1.0, 3.8, 1.3]), ([SRX + 6.2, -3.4, 1.5], [SRX - 1.4, 3.8, 1.3]), 24), {
     "abe": P(SRX - 3.5, 4.2, 90, expr=SMILE), "c1": P(SRX + 1.4, 3.6, 0), "c2": P(SRX + 2.3, 3.7, 0)},
-     "dusk street: Abe glowing on one pavement, two neighbours crossing")
+     "dusk street: Abe glowing on one pavement, two neighbors crossing")
 walk("abe", "L17>", (SRX - 1.0, 4.2))
 walk("c1", "L17>", (SRX + 1.4, -3.4))
 walk("c2", "L17>", (SRX + 2.3, -3.5))
@@ -478,9 +483,7 @@ shot("L52", "hall", C([-0.69, -6.6, 3.0], [-0.69, -2.9, 2.2], 30), {"abe": ABE_B
 stooped("L53", drop=2.16)
 shot("L53", "hall", C([-1.9, -1.8, 0.4], [-0.69, -2.9, 0.34], 36), {"abe": ABE_B}, "close, low: the head hanging upside down at knee height")
 stooped("L54", roll=140, pitch=0, drop=2.16)
-shot("L54", "hall", C([-1.6, -1.5, 0.36], [-0.69, -2.9, 0.34], 36), {"abe": ABE_B}, "the head a quarter of the way round")
-stooped("L54.2", roll=82, pitch=0, hyaw=12, drop=2.16)
-shot("L54.2", "hall", C([-1.5, -1.5, 0.36], [-0.69, -2.9, 0.34], 36), {"abe": ABE_B}, "half round")
+shot("L54", "hall", C([-1.6, -1.5, 0.36], [-0.69, -2.9, 0.34], 36), {"abe": ABE_B}, "the head a quarter of the way round, held a full 0.8 s (one take, no cut at the half turn)")
 stooped("L54.3", roll=0, pitch=0, hyaw=0, drop=1.88)
 shot("L54.3", "hall", C([-0.69, -1.45, 0.08], [-0.69, -2.9, 0.62], 34), {"abe": ABE_B}, "fully round, the right way up, eyes on camera, from below", hand=0.003)
 shot("L55", "hall", C([-0.69, -1.45, 0.08], [-0.69, -2.9, 0.62], 34), {"abe": ABE_B},
@@ -634,8 +637,8 @@ story = {
     "slug": "ep51-fossil-hall",
     "title": "In this town, you glow brighter for every secret you keep",
     "made_for_kids": False,
-    "premise": "In a town where every person glows a little brighter for each secret they keep, I am the one person with no glow at all, because I tell everything. My grandad, a museum guide, has always been the brightest man in town, and this spring the curator starts asking about a mended bone in the big skeleton's tail. Every Friday he gets brighter, until neighbours cross the road, the museum moves him to its dark galleries, and a line is wiped clean through the dust on every case at knee height.",
-    "twist": "The only secret my grandad has kept for nine years is mine: I knocked down the skeleton's tail in my first summer helping out, and he told everyone it was him. Every time somebody asked about that tail, he kept it again, so the brightest man in town was the most loyal. I never glowed because he was keeping my secret for me.",
+    "premise": "In a town where every person glows a little brighter for each secret they keep, I am the one person with no glow at all, because I tell everything. My grandpa, a museum guide, has always been the brightest man in town, and this spring the curator starts asking about a mended bone in the big skeleton's tail. Every Friday he gets brighter, until neighbors cross the road, the museum moves him to its dark galleries, and a line is wiped clean through the dust on every case at knee height.",
+    "twist": "The only secret my grandpa has kept for nine years is mine: I knocked down the skeleton's tail in my first summer helping out, and he told everyone it was him. Every time somebody asked about that tail, he kept it again, so the brightest man in town was the most loyal. I never glowed because he was keeping my secret for me.",
     "world": "a town museum's long fossil hall on a Friday late opening: a chequered marble floor, a giant blocky skeleton of ochre bone on an iron frame, one long bench built for two, glass cases, dark side galleries, and soft gold outlines of light round everyone who keeps a secret",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ffcf5c",

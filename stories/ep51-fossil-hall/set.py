@@ -705,6 +705,7 @@ def build(kit, story, tl):
     ctx["sun"] = sun
     for who in story.get("glow_lights", []):
         kit.light(f"gl {who}", "POINT", (0, 0, -50), 1.0, GOLD, size=0.3)
+    kit.light("open spill", "POINT", (0, 0, -50), 1.0, GOLD, size=0.5)
     ctx["focus"] = bpy.data.objects.new("focus", None)
     kit.link(ctx["focus"])
     return ctx
@@ -894,6 +895,16 @@ def animate(kit, story, tl, t, ctx):
         L["obj"].location = (p.x, p.y, p.z + 0.1)
         L["base"] = story.get("glow_light_w", 90.0)
         over[f"gl {who}"] = s / 3.0 * _eased(_cues(tl, "glk"), "level", t, 1.0)
+    # ---- a warm spill light for the opening man (cue "spill": at, pos, w, level, dur), always ramped
+    spc = _cues(tl, "spill")
+    sp0 = _last(spc, t)
+    if sp0 is not None and sp0.get("pos"):
+        kit.LIGHTS["open spill"]["obj"].location = tuple(sp0["pos"])
+        kit.LIGHTS["open spill"]["base"] = float(sp0.get("w", 400.0))
+        over["open spill"] = _eased(spc, "level", t, 0.0)
+    else:
+        kit.LIGHTS["open spill"]["obj"].location = (0, 0, -50)
+        over["open spill"] = 0.0
     # ---- sparks
     sk = _last(_cues(tl, "sparks"), t)
     for i, sp in enumerate(ctx["sparks"]):
