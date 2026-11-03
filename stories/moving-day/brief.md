@@ -11,31 +11,31 @@ The script is `02b-script.md` (now 593 words in 81 lines, about 2:19, after the 
 - **B is declined** because it reads as the blink-statue scene. **C is declined** because it's in mirror-maze's lane.
 - **Hypotheses from `learnings.md`:**
   - **H11 (the loop):** this is our tightest first-and-last-line seam yet.
-  - **H10 (the warm turn):** the warmth here is between two people (Mum laughs and we unpack together), not with the creature. That's a new kind of warm ending to set beside ep11 to ep13.
+  - **H10 (the warm turn):** the warmth here is between two people (Mom laughs and we unpack together), not with the creature. That's a new kind of warm ending to set beside ep11 to ep13.
 - **For the analyst to log, H13:** batch 2 gives each first-line type one story (sound, inside joke, question, mid-scare). Which type holds the first 5 s best? ep17 is the mid-scare data point.
 
 ## Script changes (decided)
 
 | Line | Problem | Change | Status |
 |---|---|---|---|
-| L13 | It follows the mug lines (L10 to L12), so "it" reads as the mug. You don't stack a mug, and "STACKED" also doubles with L14's "We'd STACKED" | `Mum thinks / I MOVED it / in my SLEEP.` "It" is the mug, and the picture (Mum carrying the mug past the Boxes) stretches it to every night move. "Moved" also rhymes with L22's "moved UP" and L61's "it MOVED". The picture now says the mug is in her hand | **done**, in both files |
+| L13 | It follows the mug lines (L10 to L12), so "it" reads as the mug. You don't stack a mug, and "STACKED" also doubles with L14's "We'd STACKED" | `Mom thinks / I MOVED it / in my SLEEP.` "It" is the mug, and the picture (Mom carrying the mug past the Boxes) stretches it to every night move. "Moved" also rhymes with L22's "moved UP" and L61's "it MOVED". The picture now says the mug is in her hand | **done**, in both files |
 | L32 | "The TAPE wouldn't LIFT" says there's tape on the outside, but L33's close shows the outside bare with the tape inside. The line contradicts the picture under the next one | `No TAPE / to PEEL.` Same length and the same beat, and it calls back L02's "PEELED". The bracket now says "a bare joint" | **done**, in both files |
-| L55 | "Mum never WOKE," said quietly and held after a creature over her bed, is how people say someone died in their sleep. That's the harm reading standards must never get | `Mum SLEPT / right THROUGH it.` She's plainly alive, and it's quiet and a little dry. +2 words (578) | **done**, in both files |
-| L78 | The old last line had the same shape as floor-thirteen's pitched last line ("...is still there. / We never ride / ALONE.") | `Mum CLOSED / the CUPBOARD / on it.` One plain action, no "still" or "never". Across the seam it reads "Mum closed the cupboard on it. The box was taped shut. From the inside." 572 words | **done**, in both files (scriptwriter) |
-| L29b, L34b, L34c (new, to clear the 2:15 floor) | Read against the brief and the pictures under them | **In, no wording change.** L29b ("And Mum / was still / ASLEEP.") makes L30 my reaction: her door is shut and she isn't up, so the inference is plain, and it doesn't read as harm the way the old L55 did. L34b and L34c (the tape rolls emptied, the cores stood up in a row) are proof you can see of "taped from the INSIDE", with no motive and no word from the avoid lists. The 3-word overlap stays at 0.9% (ep11) at most. Continuity in item 11 below | **in**, both files already in sync |
+| L55 | "Mom never WOKE," said quietly and held after a creature over her bed, is how people say someone died in their sleep. That's the harm reading standards must never get | `Mom SLEPT / right THROUGH it.` She's plainly alive, and it's quiet and a little dry. +2 words (578) | **done**, in both files |
+| L78 | The old last line had the same shape as floor-thirteen's pitched last line ("...is still there. / We never ride / ALONE.") | `Mom CLOSED / the CUPBOARD / on it.` One plain action, no "still" or "never". Across the seam it reads "Mom closed the cupboard on it. The box was taped shut. From the inside." 572 words | **done**, in both files (scriptwriter) |
+| L29b, L34b, L34c (new, to clear the 2:15 floor) | Read against the brief and the pictures under them | **In, no wording change.** L29b ("And Mom / was still / ASLEEP.") makes L30 my reaction: her door is shut and she isn't up, so the inference is plain, and it doesn't read as harm the way the old L55 did. L34b and L34c (the tape rolls emptied, the cores stood up in a row) are proof you can see of "taped from the INSIDE", with no motive and no word from the avoid lists. The 3-word overlap stays at 0.9% (ep11) at most. Continuity in item 11 below | **in**, both files already in sync |
 
 **Declined:**
 - **L42 stays.** "Every BOX we BROUGHT was IN it" is the clock's peak. It holds because "in it" can mean inside it as well as part of it, and nobody can count a figure in the dark. The picture keeps it true with one rule: from L41 to L63, no loose box appears anywhere in the house (see the continuity list).
-- **L59's "LADDER HEIGHT" stays,** even though it comes before Mum's L67. The narrator connects the dots and Mum makes the joke. The critic watches whether L67 still lands on the cold watch. If it doesn't, L59 becomes "hung up HIGH" in the one re-voice.
+- **L59's "LADDER HEIGHT" stays,** even though it comes before Mom's L67. The narrator connects the dots and Mom makes the joke. The critic watches whether L67 still lands on the cold watch. If it doesn't, L59 becomes "hung up HIGH" in the one re-voice.
 
 **Picture rulings (motion-designer).** These fix brackets that fight their own lines or the story's logic. The words don't change.
-1. **L45 to L48, the shadow.** A light in the hall can't throw the shadow of something inside Mum's room onto the hall wall. The **nightlight is in Mum's room**, plugged in low on the wall beyond the Boxes as seen from her door. Its shadow goes out through the open door, fills the hall wall opposite and bends over the hall ceiling. The hall itself is dark, lit only by the glow from her door. (It's also the right light for fear: from below and behind, front dead.)
+1. **L45 to L48, the shadow.** A light in the hall can't throw the shadow of something inside Mom's room onto the hall wall. The **nightlight is in Mom's room**, plugged in low on the wall beyond the Boxes as seen from her door. Its shadow goes out through the open door, fills the hall wall opposite and bends over the hall ceiling. The hall itself is dark, lit only by the glow from her door. (It's also the right light for fear: from below and behind, front dead.)
 2. **L50, the arms.** "Its arms come down" would be the Boxes seen moving. L48 to L61 hold one arms-down pose (continuity item 5), so L50 cuts to the arms already down and still. "REACHED" is past tense.
-3. **L22, L23, L59 and L66, the photos.** A frame can't bend. The frames run to the very top of the wall, and the top row carries on across the ceiling, hung flat on it, where the old house's taller wall would have been. One photo shows the old house from outside, plainly tall, with tall windows. The photos may show Mum laughing (a silent plant for L06).
+3. **L22, L23, L59 and L66, the photos.** A frame can't bend. The frames run to the very top of the wall, and the top row carries on across the ceiling, hung flat on it, where the old house's taller wall would have been. One photo shows the old house from outside, plainly tall, with tall windows. The photos may show Mom laughing (a silent plant for L06).
 4. **L15, the dust squares.** If six boxes came off the top, they leave no squares. At L15 the stack is a row lower. Clean squares in the dust show only at L41, when the floor is bare.
 5. **L05, "LOW CEILINGS".** An exterior doesn't show a ceiling. Show it inside with the cast for scale, for example me setting a box on a stack that already touches the ceiling. The exterior is optional and costs a façade.
-6. **L09, "left PACKED".** Mum folds the flaps shut over the quilt and pushes the box to the stack. That shows "left packed", where the quilt going into a box only shows packing.
-7. **L68, "a box from the stack".** The front door opens into the front room, and the stack stands just inside it. So Mum can sit on a stack box in the front room where she laughs.
+6. **L09, "left PACKED".** Mom folds the flaps shut over the quilt and pushes the box to the stack. That shows "left packed", where the quilt going into a box only shows packing.
+7. **L68, "a box from the stack".** The front door opens into the front room, and the stack stands just inside it. So Mom can sit on a stack box in the front room where she laughs.
 
 ## Answers to the scriptwriter's six questions
 
@@ -45,7 +45,7 @@ The script is `02b-script.md` (now 593 words in 81 lines, about 2:19, after the 
 4. **About 24 boxes, and L15 keeps "SIX": confirmed.** The counts are in the stack clock below: 24, 18, 12, 4, 0, then 24 again.
 5. **Engine changes: approved, all opt-in, defaults unchanged.**
    - `sound.py` gets three new synthesized kinds: a cardboard `scrape`, a packing-tape `tape` peel, and a cardboard creak. The creak is either a new kind or a `"tone": "cardboard"` option on `creak`. Today's `creak` sounds exactly as it does now. There's a test for each.
-   - `voice.py`: if Kokoro says "Mum" right and Whisper writes "mom", add `"mum": "mom"` to `SPELLINGS`. That table is already British and American pairs, it changes no render or mix, and it only stops a false "wrong word". Add a test. If Kokoro says it wrong, use the phoneme route (mˈʌm) instead.
+   - `voice.py`: if Kokoro says "Mom" right and Whisper writes "mom", add `"mum": "mom"` to `SPELLINGS`. That table is already British and American pairs, it changes no render or mix, and it only stops a false "wrong word". Add a test. If Kokoro says it wrong, use the phoneme route (mˈʌm) instead.
    - The same goes for L34b's "roll": if `asr` hears "role", add `"role": "roll"` to `HOMOPHONES` with a test, beside "threw"/"through". It's a scoring table, not a render or mix default.
 6. **If the voice lands short, add hold, never words, in this order:**
    1. P02 up to 2.4 s
@@ -59,24 +59,24 @@ The script is `02b-script.md` (now 593 words in 81 lines, about 2:19, after the 
 
 ## Story
 
-- **Premise:** I'm an adult and I've moved with Mum into a smaller house with low ceilings, because the old one got sold. Mum is tired and hasn't laughed since. Something built from our own moving boxes is standing in a different room each morning. It's taller every time, with a new marker face. Meanwhile the stack by the front door shrinks, and Mum's things turn up in odd places.
+- **Premise:** I'm an adult and I've moved with Mom into a smaller house with low ceilings, because the old one got sold. Mom is tired and hasn't laughed since. Something built from our own moving boxes is standing in a different room each morning. It's taller every time, with a new marker face. Meanwhile the stack by the front door shrinks, and Mom's things turn up in odd places.
 - **The rule:** it's the creature's, never spoken as a rule, and nobody has to keep or break it.
   - Each night boxes leave the stack, one more thing goes where it lived in the old house, and by morning it stands in a new room, taller, with a new face.
   - The viewer learns this from the clock wides and the mug by about 30 s.
   - There's no human rule, no warning and no rule broken. That's a deliberate break from batch 1's "rule, then rule broken" shape.
-- **The mystery:** what it is, who taped it from the inside, and what its faces are aimed at (nothing, then the back of Mum's head, then Mum's door, then me).
+- **The mystery:** what it is, who taped it from the inside, and what its faces are aimed at (nothing, then the back of Mom's head, then Mom's door, then me).
 - **Plants** (all land by about 24 s):
   1. The inside tape (L01, L02). It pays off at L33 and in the loop.
-  2. Mum's ladder line (L07). It pays off at L59 and L67.
+  2. Mom's ladder line (L07). It pays off at L59 and L67.
   3. The old-hall smell (L08). It pays off at L60.
   4. The quilt left packed (L09). It pays off at L52 to L54.
   5. The mug and "That's where I always KEPT it" (L10, L11). It pays off at L58.
-  6. Mum not looking up (L12). It pays off at L24 and L66.
-- **The scare:** at 3 a.m. it stands bent over Mum's bed, its face drawn wide open and its long arms reaching down to her.
+  6. Mom not looking up (L12). It pays off at L24 and L66.
+- **The scare:** at 3 a.m. it stands bent over Mom's bed, its face drawn wide open and its long arms reaching down to her.
 - **The twist:** I hit the light, and under its hands is the old quilt, tucked round her shoulders. In the old house her room was the cold one. Everything it moved went where it lived before.
-- **The warm turn, shown:** in the morning it's gone and the stack is back. Mum comes out in the quilt, looks up for once, sees her photos on the ceiling and says "That's LADDER HEIGHT". She laughs until she has to sit (P02, picture and score only). Then we unpack the old way together in quick two-shots.
+- **The warm turn, shown:** in the morning it's gone and the stack is back. Mom comes out in the quilt, looks up for once, sees her photos on the ceiling and says "That's LADDER HEIGHT". She laughs until she has to sit (P02, picture and score only). Then we unpack the old way together in quick two-shots.
 - **The end:** in the hall cupboard there's one box still taped shut, the face box, with a smile drawn on it. It never moves and never changes. The narrator has the last line, and 0.25 s later comes a hard cut to L01.
-- **The ending shape:** the warmth is between Mum and me (home comes back), and the creature ends as an unexplained, unopened object. Nobody befriends it, thanks it or answers it, and no line gives it a motive. That's not "kind all along", not a ritual done back, and not a later-night return.
+- **The ending shape:** the warmth is between Mom and me (home comes back), and the creature ends as an unexplained, unopened object. Nobody befriends it, thanks it or answers it, and no line gives it a motive. That's not "kind all along", not a ritual done back, and not a later-night return.
 
 ## World and set (`reels/blocky/stories/moving-day/set.py`, new, from `kit.py`)
 
@@ -86,24 +86,24 @@ The script is `02b-script.md` (now 593 words in 81 lines, about 2:19, after the 
   - The front door opens straight into it. The stack stands against the wall just inside the door. This is the clock wide.
   - The front window has a deep sill (the mug). The long wall carries the photos, and from L22 on they run up onto the ceiling. Coat hooks by the door (L73).
   - It has one armchair at most. The space is mostly floor and boxes until L41, then bare.
-- **The hall:** narrow. It runs from the front room to my room, Mum's room and the kitchen. It has the hall cupboard (a shelf at chest height, L75 to L78). The Boxes stand here on morning 1.
+- **The hall:** narrow. It runs from the front room to my room, Mom's room and the kitchen. It has the hall cupboard (a shelf at chest height, L75 to L78). The Boxes stand here on morning 1.
 - **The kitchen:** small. A fridge (no logo), a counter, a sink with the kettle to its right until L73, and a window.
 - **My room:** a bed, a window, bare walls.
-- **Mum's room:**
+- **Mom's room:**
   - A low divan, her head toward the wall. A plug-in nightlight low on the far wall.
   - A small wooden chest of drawers just inside the door with the dim lamp on it (L51). I reach it from the doorway without crossing the room.
   - **No boxes in here at 3 a.m.**
 - **Ceilings:** low, about 2.25 to 2.4 m (the designer's call), so they read low next to a 1.75 m cast member at phone size.
-- **Materials:** off-white walls a little green-grey, pale ceilings, honey floorboards, painted trim. The house is clean but bare: no curtains except in Mum's room, and no rugs.
+- **Materials:** off-white walls a little green-grey, pale ceilings, honey floorboards, painted trim. The house is clean but bare: no curtains except in Mom's room, and no rugs.
 - **Bare pendant bulbs** can hang as dressing, but they're never lit and never swing (ep12's bulb).
 - **No text anywhere.**
   - The boxes have no words, brands or moving-company names. Printed this-way-up arrows (symbols only) are allowed on stack boxes, never on the face box.
   - No house number, no street sign, no logos on the kettle, mug, fridge, nightlight or lamp, and no lit phone screen.
-  - The photos show only me, Mum and the old house from outside, with no number on its door.
+  - The photos show only me, Mom and the old house from outside, with no number on its door.
 - **Light by time of day:**
   - **Mornings (L01 to L43, L62, L63):** cold, flat dawn before the sun, blue-grey through bare windows, soft and low. No lamps on. No sun until L64.
   - **Nights (L16, L36 to L40, L44 to L61):** the house is near black.
-    - The only practical is Mum's nightlight, a dim cold white with a little blue (about `#d6e4ff`), at skirting height.
+    - The only practical is Mom's nightlight, a dim cold white with a little blue (about `#d6e4ff`), at skirting height.
     - Windows are a dim grey at most: no moon, no stars, no moonlit-indigo grade (that's ep12's).
     - In my room at L40 the window greys slowly toward dawn.
   - **The lamp (L51 on):** dim and warm (about `#ffc890`) under a shade. It's the first warm light in the film, and it comes up slowly over about 0.8 s. The nightlight stays on.
@@ -112,14 +112,14 @@ The script is `02b-script.md` (now 593 words in 81 lines, about 2:19, after the 
 
 ## Cast (R6 style, `rig.py`, faces in `faces.py`)
 
-Two adults. Neither has a voice of their own: every word is voice A, and Mum's words are reported. Ages live in this table only, never on screen or in the voice.
+Two adults. Neither has a voice of their own: every word is voice A, and Mom's words are reported. Ages live in this table only, never on screen or in the voice.
 
 | Who | Age | Build | Look (designer may change, within the bans below) | Face |
 |---|---|---|---|---|
-| **Me** (narrator, cast key `me`) | adult, 20s | 1.75 m, a little taller than Mum, so I never read as her child | a solid olive long-sleeve top, charcoal trousers, grey sneakers, black `cap` hair, no hat | wary (`worried`), `terrified` at L39, `wide` at 3 a.m., `grin` then laughing in section 07 |
-| **Mum** (cast key `mum`) | adult, late 50s | about 0.95x my height | a **solid** slate-blue top (`#6c7c97`, the stub's colour without its stripes) and dark trousers. `long` hair, dark brown going grey. Warm reddish-brown skin **`#a86a58`** (ruled 2026-10-31, see below) | flat and tired (`neutral`, head down) until L66, then `grin` to `squeeze` with a tremble at P02. Eyes shut and calm from L48 to L62 |
+| **Me** (narrator, cast key `me`) | adult, 20s | 1.75 m, a little taller than Mom, so I never read as her child | a solid olive long-sleeve top, charcoal trousers, grey sneakers, black `cap` hair, no hat | wary (`worried`), `terrified` at L39, `wide` at 3 a.m., `grin` then laughing in section 07 |
+| **Mom** (cast key `mum`) | adult, late 50s | about 0.95x my height | a **solid** slate-blue top (`#6c7c97`, the stub's colour without its stripes) and dark trousers. `long` hair, dark brown going grey. Warm reddish-brown skin **`#a86a58`** (ruled 2026-10-31, see below) | flat and tired (`neutral`, head down) until L66, then `grin` to `squeeze` with a tremble at P02. Eyes shut and calm from L48 to L62 |
 
-- **Why no stripes on Mum:** long hair and navy stripes is ep11's rider4. Slate stripes are too close.
+- **Why no stripes on Mom:** long hair and navy stripes is ep11's rider4. Slate stripes are too close.
 - **Bans, from every earlier cast:**
   - no fedora, beanie or ballcap
   - no mustard, rust or brown-tan plaid, denim-blue, scarlet or plum
@@ -127,11 +127,11 @@ Two adults. Neither has a voice of their own: every word is voice A, and Mum's w
   - no sandy swoop, grey bun, auburn cap or silver spiky
 - **Colour rules:** neither of us wears cardboard brown (we'd melt into the boxes) or the quilt's colours. Nothing copies a game avatar or catalogue item.
 - **Skin is off the cardboard ramp (ruled 2026-10-31, after the critic's creature-test fix 2).**
-  - The stub's `#c08a66` (hue 24°) sits inside the boards' band (`TONES`, hue 29 to 30°). In the v4 still Mum's face measured hue 21°, lightness 15%, the same as the face box's shadowed side, so she read as a parcel.
-  - **Mum is `#a86a58`** (hue about 13°). She's still a warm brown woman, just redder than every box. My skin, whatever the designer picks, follows the same rule: a hue under about 18° or a lightness well clear of the boards.
+  - The stub's `#c08a66` (hue 24°) sits inside the boards' band (`TONES`, hue 29 to 30°). In the v4 still Mom's face measured hue 21°, lightness 15%, the same as the face box's shadowed side, so she read as a parcel.
+  - **Mom is `#a86a58`** (hue about 13°). She's still a warm brown woman, just redder than every box. My skin, whatever the designer picks, follows the same rule: a hue under about 18° or a lightness well clear of the boards.
   - **Skin alone won't separate her in the dark, so the light does most of it.** Give her a fill linked to her head and near hand, motivated from the window side: her face at 25% lightness or more while the cardboard in shadow stays under 15%. Also the pale pillow (about `#d6d3c9`) and the hair fan from the critic's fix 2. Re-measure under the warm lamp (L51 to L61) and the gold sun (L64 to L74), where warm light pulls skin and cardboard toward one orange.
   - **Standards:** this is a legibility change made the same way for any skin tone. Nothing else about her look changes, nothing about her reads as a stereotype, and no line, caption, title or description ever mentions anyone's skin (README, "Logic slips"). Standards and the critic see her at phone size in the next still.
-- **The quilt** is the only patchwork in the house: faded plum, lilac and rose squares. It reads at once at 3 a.m. and again round Mum's shoulders at L64.
+- **The quilt** is the only patchwork in the house: faded plum, lilac and rose squares. It reads at once at 3 a.m. and again round Mom's shoulders at L64.
 
 ## The creature: the Boxes (one model, built once in `set.py`, posed per shot)
 
@@ -169,10 +169,10 @@ The narration only ever calls it "it". "The Boxes" is the team's name. It's a fi
    - **L48 to L61 share one pose.** It's bent over the bed, so its hanging arms already point down at her, and the flap hands rest on the quilt's edge at her shoulders and along the mattress edge. It's held unchanged from L48's first frame to L61's last, through the lamp.
    - L50 ("REACHED DOWN") is a side-on cut to those same still arms, never a movement. Never the full arm length toward camera.
    - **Keep the twist for the lamp:** before L51 the hands and the quilt's edge at her shoulders sit in shadow. The cold light reads shape, not the patchwork. The quilt's plum, lilac and rose first read in the lamp's warm light at L51 and L52. The critic's fix 5 can still put the quilt's top surface in the lower third of L48, cold and low in colour, toward the foot of the bed.
-6. **The over-the-bed height.** At 3 a.m. the face box hangs face-down over the **middle of the bed** (over her chest, not her face), with a clear gap of at least about 0.6 m of air between it and Mum in every side-on shot. Over my pillow at L37 the gap is the same.
+6. **The over-the-bed height.** At 3 a.m. the face box hangs face-down over the **middle of the bed** (over her chest, not her face), with a clear gap of at least about 0.6 m of air between it and Mom in every side-on shot. Over my pillow at L37 the gap is the same.
 7. **Light on it:** never a front light. It's keyed from below or the side (the nightlight, the hall glow, cold dawn from a side window) and rimmed. No clipped whites on the cardboard. The marker reads black on mid-brown.
-8. **No loose boxes from L41 to L63.** Once the stack is gone, the Boxes are the only boxes in the house, in every room and every shot, until the stack is back at L63. That keeps L42 true, and it makes the figure the only box shape in Mum's room at phone size.
-9. **Marker elsewhere:** no box carries marker except the face box, until L27. From L27 to L35 the front-room boxes, the four stack boxes included, each carry two dry marker eyes aimed at Mum's door. Nowhere else, ever. The designer's test-still marks (cross, squiggle, eye) on other boxes go.
+8. **No loose boxes from L41 to L63.** Once the stack is gone, the Boxes are the only boxes in the house, in every room and every shot, until the stack is back at L63. That keeps L42 true, and it makes the figure the only box shape in Mom's room at phone size.
+9. **Marker elsewhere:** no box carries marker except the face box, until L27. From L27 to L35 the front-room boxes, the four stack boxes included, each carry two dry marker eyes aimed at Mom's door. Nowhere else, ever. The designer's test-still marks (cross, squiggle, eye) on other boxes go.
 10. **Sound:** the cardboard scrape at night (L16, and into L44), one cardboard creak at P01, and nothing else. It makes no other sound and never speaks.
 11. **The tape rolls and cores (L34b and L34c, ruled 2026-10-31).** The scriptwriter's proposal is accepted, with one plant added.
     - **The plant, morning 2 (L19, L21):** five full rolls of packing tape lie flat in a loose heap at the far end of the kitchen counter, ordinary moving clutter, never mentioned and never in focus. That makes "every tape roll" something the viewer can check.
@@ -187,11 +187,11 @@ The narration only ever calls it "it". "The Boxes" is the team's name. It's a fi
 | Appearance | Lines | Room | Boxes shown | Height | Face | Aimed at |
 |---|---|---|---|---|---|---|
 | Morning 1 | L01 to L13 | the hall | 12 (no neck) | stooped a little, the face box's top just touching the ceiling | **frown** | down the hall, at nothing |
-| Morning 2 | L17 to L21 | the kitchen, by the fridge | 13 (N1) | the face box folds forward along the ceiling | **stare**, wet and glossy | the back of Mum's head at the counter |
-| Morning 3 | L26 to L34 | the front-room corner | 14 (N1, N2) | two boxes along the ceiling (N2 and the face box) | **sideways**: two eyes slid hard toward Mum's door, no mouth | Mum's door |
+| Morning 2 | L17 to L21 | the kitchen, by the fridge | 13 (N1) | the face box folds forward along the ceiling | **stare**, wet and glossy | the back of Mom's head at the counter |
+| Morning 3 | L26 to L34 | the front-room corner | 14 (N1, N2) | two boxes along the ceiling (N2 and the face box) | **sideways**: two eyes slid hard toward Mom's door, no mouth | Mom's door |
 | Morning 4 | L36 to L40 | the corner of my room | 15 (N1 to N3) | the chain runs along the ceiling toward my bed, and the face box hangs face-down over my pillow | **far too many eyes**, flat and dry, every pupil on me | me |
-| 3 a.m. | L48 to L61 | beside Mum's bed | 15 | the same as morning 4, over the middle of her bed | **wide open**: huge round eyes and a black open mouth filling the box. It doesn't change when the lamp comes up | Mum |
-| After | L62 to L74 | gone (Mum's room corner empty) | none | none | none | nothing |
+| 3 a.m. | L48 to L61 | beside Mom's bed | 15 | the same as morning 4, over the middle of her bed | **wide open**: huge round eyes and a black open mouth filling the box. It doesn't change when the lamp comes up | Mom |
+| After | L62 to L74 | gone (Mom's room corner empty) | none | none | none | nothing |
 | The end | L76 to L78 | the hall cupboard shelf | the face box alone, made up and taped | none | **smile** | out at the cupboard door |
 
 ### The stack by the door (the clock)
@@ -203,7 +203,7 @@ The same locked-off wide every time: the front room's door corner, the front doo
 | The night we stacked them | L14 | 24 | the full stack |
 | Morning 1 | L15 | 18 | a row lower, no dust squares |
 | Morning 2 | L25 | 12 | half the height |
-| Morning 3 | L35 | 4 | four boxes in a row, each with two marker eyes aimed at Mum's door |
+| Morning 3 | L35 | 4 | four boxes in a row, each with two marker eyes aimed at Mom's door |
 | Morning 4 | L41, L42 | 0 | a bare floor with clean squares in the dust where the bottom row stood |
 | After 3 a.m. | L63 | 24 | whole again, the L14 arrangement, outside tape, no marker |
 
@@ -274,7 +274,7 @@ The same locked-off wide every time: the front room's door corner, the front doo
     - a soft `riser` from L45 into L46
     - the lamp switch `click` at L51, audible
     - the cupboard `door` at L75, soft
-  - **Never:** `knock`, `bell`, `glitch`, `static`, `wetclick`, `bubbles`, `squeal`, `glide`, `hum_sweep`, `castors`, or any laugh sound. Mum's laugh is picture and score only.
+  - **Never:** `knock`, `bell`, `glitch`, `static`, `wetclick`, `bubbles`, `squeal`, `glide`, `hum_sweep`, `castors`, or any laugh sound. Mom's laugh is picture and score only.
 - **Voice:** Kokoro `am_adam` at 1.03 x 1.45, voice A, for every line (note 18). The per-line `tempo` and `gain_db` values in `lines.json` stand.
 - **Master:** -14 LUFS, true peak at or below -1 dBTP.
 
@@ -284,14 +284,14 @@ A new shot on nearly every line. The camera mostly moves slowly, except the cloc
 
 | # | Section | Lines | Shots | What |
 |---|---|---|---|---|
-| 01 | The box | L01 to L12 | 11 | The open, which is the scroll stopper: close on the bottom box with its peeled strip, my hand at it, tape glinting inside the corner gap. My flat hands on the flaps. A slow tilt up the Boxes to the frown at the ceiling. A face close (fours). The low ceiling with me for scale. Mum tired in the kitchen doorway. Mum hanging a frame at eye height, mouth flapping. My face to a box, eyes shut. The quilt's flaps folded shut. The mug on the sill. Mum lifting it, head down |
-| 02 | The stack | L13 to L25 | 13 | Mum carrying the mug past the Boxes. The clock wide at 24, then 18 (both fours). Me in bed in the dark. The kitchen with the Boxes by the fridge. A low angle on the face box folded along the ceiling. Over its shoulder to Mum at the counter, with the five full tape rolls in a heap at the counter's far end (dressing, item 11). The wet stare (fours, locked). Mum making tea under it, the rolls still in frame. A tilt up the photo wall onto the ceiling. The frames from below. Mum crossing under them, head down. The clock wide at 12 (fours) |
-| 03 | The seams | L26 to L35 | 13 | The Boxes in the front-room corner. A slow pan across the eyed boxes. The reverse across the hall to Mum's shut door. The sideways face (fours). L29b: Mum's shut door, quiet in grey light, with the sideways eyes at the frame's edge (fours, locked, closer than L28's angle). My hands flat on a joint, leaning back. My arms trembling. A bare joint, no tape. A slow push into the joint with tape glinting inside. Me stepping back, the Boxes unmarked. L34b: the kitchen, me at the counter looking down. L34c: close and low along the five cores standing on end in a row (fours, locked). The clock wide at 4 (fours) |
+| 01 | The box | L01 to L12 | 11 | The open, which is the scroll stopper: close on the bottom box with its peeled strip, my hand at it, tape glinting inside the corner gap. My flat hands on the flaps. A slow tilt up the Boxes to the frown at the ceiling. A face close (fours). The low ceiling with me for scale. Mom tired in the kitchen doorway. Mom hanging a frame at eye height, mouth flapping. My face to a box, eyes shut. The quilt's flaps folded shut. The mug on the sill. Mom lifting it, head down |
+| 02 | The stack | L13 to L25 | 13 | Mom carrying the mug past the Boxes. The clock wide at 24, then 18 (both fours). Me in bed in the dark. The kitchen with the Boxes by the fridge. A low angle on the face box folded along the ceiling. Over its shoulder to Mom at the counter, with the five full tape rolls in a heap at the counter's far end (dressing, item 11). The wet stare (fours, locked). Mom making tea under it, the rolls still in frame. A tilt up the photo wall onto the ceiling. The frames from below. Mom crossing under them, head down. The clock wide at 12 (fours) |
+| 03 | The seams | L26 to L35 | 13 | The Boxes in the front-room corner. A slow pan across the eyed boxes. The reverse across the hall to Mom's shut door. The sideways face (fours). L29b: Mom's shut door, quiet in grey light, with the sideways eyes at the frame's edge (fours, locked, closer than L28's angle). My hands flat on a joint, leaning back. My arms trembling. A bare joint, no tape. A slow push into the joint with tape glinting inside. Me stepping back, the Boxes unmarked. L34b: the kitchen, me at the counter looking down. L34c: close and low along the five cores standing on end in a row (fours, locked). The clock wide at 4 (fours) |
 | 04 | My room | L36 to L43 | 7 | From my pillow, the Boxes in the corner. Looking up at the face box above me. The many eyes (fours). My `terrified` face. The window greying. The empty clock wide (fours). Breakfast, me wrecked, with the row of cores in the background (item 11) |
-| 05 | Three a.m. | L44 to L55 | 13 | My eyes open in the dark. The dark hall with a cold glow at Mum's door. The square shadow up the wall and over the ceiling. Her open door. **From L48: on ones.** The side-on wide of the Boxes bent over the bed. The wide-open face from below. The arms already down, side-on. The P01 hold. My hand at the lamp, the lamp coming up. The flap hands on the quilt's edge. Mum's calm face with one arm out on top of the quilt. The quilt in lamp light. Mum sleeping |
+| 05 | Three a.m. | L44 to L55 | 13 | My eyes open in the dark. The dark hall with a cold glow at Mom's door. The square shadow up the wall and over the ceiling. Her open door. **From L48: on ones.** The side-on wide of the Boxes bent over the bed. The wide-open face from below. The arms already down, side-on. The P01 hold. My hand at the lamp, the lamp coming up. The flap hands on the quilt's edge. Mom's calm face with one arm out on top of the quilt. The quilt in lamp light. Mom sleeping |
 | 06 | Where it lived | L56 to L61 | 6 | Me in the doorway, the Boxes over the bed in lamp light. The quilt at her shoulders. The mug on the dark sill and the frames on the dark ceiling (both fours, at night, not flashbacks). The joints in lamp light. Back to the still side-on wide, the face unchanged |
-| 07 | Ladder height | L62 to L74 | 12 | Mum's room in the morning, the corner empty. The clock wide at 24 (fours). Mum in the hall in the quilt, and the first sun. To the sill. Her head tilting up, then her eyeline to the frames on the ceiling. "That's LADDER HEIGHT". The P02 two-shot in gold sun, the laugh. Mum sitting on a stack box. Both of us laughing. Three quick two-shots: she points, I place it, coats on the hooks, the kettle moved left (that end of the counter bare, no cores). The photos left up |
-| 08 | The last box | L75 to L78 | 4 | The folded boxes at Mum's feet, the cupboard opening. The box on the shelf with its dent (fours). The smile (fours). L78: Mum swings the cupboard door shut (twos). The box never moves, and its smile stays in view until the gap closes on "it". Hold on the shut door, then a hard cut 0.25 s after "it" |
+| 07 | Ladder height | L62 to L74 | 12 | Mom's room in the morning, the corner empty. The clock wide at 24 (fours). Mom in the hall in the quilt, and the first sun. To the sill. Her head tilting up, then her eyeline to the frames on the ceiling. "That's LADDER HEIGHT". The P02 two-shot in gold sun, the laugh. Mom sitting on a stack box. Both of us laughing. Three quick two-shots: she points, I place it, coats on the hooks, the kettle moved left (that end of the counter bare, no cores). The photos left up |
+| 08 | The last box | L75 to L78 | 4 | The folded boxes at Mom's feet, the cupboard opening. The box on the shelf with its dent (fours). The smile (fours). L78: Mom swings the cupboard door shut (twos). The box never moves, and its smile stays in view until the gap closes on "it". Hold on the shut door, then a hard cut 0.25 s after "it" |
 
 **Step plan and render estimate:**
 
@@ -308,7 +308,7 @@ A new shot on nearly every line. The camera mostly moves slowly, except the cloc
 
 ## Standards risks
 
-- **The bed scare must never read as harm to Mum.**
+- **The bed scare must never read as harm to Mom.**
   - Her face is fully clear of the quilt in every 3 a.m. shot. Her eyes are shut and calm, with a slow breath in `animate()` if it's cheap. Her near arm lies out on top of the quilt, relaxed, so nothing reads as pinned.
   - The quilt is loose and puffy at her shoulders, never drawn tight across her.
   - The face box hangs over the middle of the bed with clear air below it (continuity item 6). It never comes toward her face.
@@ -323,7 +323,7 @@ A new shot on nearly every line. The camera mostly moves slowly, except the cloc
   - P02 to L70 (gold sun, the mug glint)
   - every pan past a bright window (L10, L22, L27, L40)
   - the wet gloss at L20
-- **Kid appeal (not made for kids):** moving house with Mum, cardboard and doodled faces can read as family or kids' craft content.
+- **Kid appeal (not made for kids):** moving house with Mom, cardboard and doodled faces can read as family or kids' craft content.
   - Both of us are plainly adults (my height, adult clothes, adult jobs: carrying boxes, making tea).
   - There are no toys, school things, kids' drawings or stickers in any box or room.
   - The faces are drawn wrong (a frown down an empty hall, a stare at a head, far too many eyes, a mouth filling the box). The smile is the only friendly face, and it sits in a cupboard in a cold grade.
@@ -334,7 +334,7 @@ A new shot on nearly every line. The camera mostly moves slowly, except the cloc
 - **No age on screen.** The ages live in the cast table only.
 - **No words on boxes or in the set.** No brands, no moving-company names, no house number and no street sign. The photos show only us and the old house.
 - **Never claimed as true:** no "true story", "this happened" or "real" anywhere. No Roblox name or assets: our own rig, faces, patterns and creature.
-- **"Mum":** British spelling, voice A reads it. The `asr` plan is in question 5.
+- **"Mom":** British spelling, voice A reads it. The `asr` plan is in question 5.
 
 ## Must not share
 
@@ -346,7 +346,7 @@ A new shot on nearly every line. The camera mostly moves slowly, except the cloc
   - a farmhouse, a cellar, under the floor, a knock or copying a rhythm, a chatty relative who explains and then leaves
   - warm tungsten, a swinging bulb, moonlit indigo, a red key, harmonic minor, "I knock first now"
   - **A near-overlap to watch:** both are "me and a relative in a house". Ours differs:
-    - Mum knows nothing, explains nothing and never leaves.
+    - Mom knows nothing, explains nothing and never leaves.
     - There's no rule to keep.
     - Our kitchen is only ever seen in cold morning light, never at night, and never with a floor hatch or a knock.
   - The critic tests it on the cold watch.
@@ -390,10 +390,10 @@ A new shot on nearly every line. The camera mostly moves slowly, except the cloc
 
 ## For the motion-designer's test still, now
 
-The still is the L48 frame: the Boxes over Mum's bed, side-on from the doorway, at 540 x 960. These rulings change what's being built:
+The still is the L48 frame: the Boxes over Mom's bed, side-on from the doorway, at 540 x 960. These rulings change what's being built:
 1. Full size, 15 boxes, with the neck chain along the ceiling and the face box hanging face-down over the middle of the bed. The wide-open face.
-2. The key is Mum's plug-in nightlight, low on the far wall: cold, from below and behind. No moon key, no lit phone, no front light.
+2. The key is Mom's plug-in nightlight, low on the far wall: cold, from below and behind. No moon key, no lit phone, no front light.
 3. No other boxes in her room. The box nightstand becomes a small wooden chest of drawers with the lamp on it. No marker on anything but the face box.
 4. The joints are bare outside, with tape glinting inside. Each box keeps its own flap-seam tape. The tape rings go.
-5. Mum on her back, in skin `#a86a58` with her own fill light: face clear, quilt (plum, lilac, rose patchwork) loose at her shoulders, near arm on top of it. The hands rest on the quilt's edge only, in shadow until the lamp, in the one L48 to L61 pose. Clear air under the face box.
+5. Mom on her back, in skin `#a86a58` with her own fill light: face clear, quilt (plum, lilac, rose patchwork) loose at her shoulders, near arm on top of it. The hands rest on the quilt's edge only, in shadow until the lamp, in the one L48 to L61 pose. Clear air under the face box.
 6. Check the key colour `#b98aff` against this frame at phone size.

@@ -373,3 +373,21 @@ def test_ones_moving_draws_camera_moves_on_every_frame():
 def test_ones_moving_is_the_default():
     """Lead, 2026-11-03: the camera moves 96% of the time with the pack, so moves are drawn on every frame."""
     assert polish.DEFAULTS["ones"] == "moving"
+
+
+def test_bright_grade_lift_never_turns_near_black_red():
+    """ep47 r8: contrast left near-black pixels with negative channels, their luma sat at the 1e-4 floor, and the
+    lift scaled the one positive channel about 1000x into pure red. Near-blacks must lift to a dark, quiet grey."""
+    img = np.full((8, 8, 3), 0.01, np.float32)
+    img[..., 0] = 0.12                                                # contrast leaves R just above 0, G and B below
+    out = np.clip(post.grade(img, {"vignette": 0, "contrast": 1.3, "lift": 0.035}), 0, 1)
+    r, g, b = out[..., 0].mean(), out[..., 1].mean(), out[..., 2].mean()
+    assert r < 0.15 and r - min(g, b) < 0.08                          # no saturated red
+    assert out.mean() > 0.01                                          # still lifted off black
+
+
+def test_bright_grade_lift_all_negative_pixel_lands_near_the_lift():
+    """An all-negative pixel after contrast lifts to a grey near the lift value, never blown up."""
+    img = np.full((4, 4, 3), 0.02, np.float32)
+    out = post.grade(img, {"vignette": 0, "contrast": 1.3, "lift": 0.035})
+    assert np.allclose(out, 0.035, atol=0.003)
