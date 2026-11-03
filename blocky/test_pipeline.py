@@ -445,3 +445,15 @@ def test_check_blocks_an_unknown_hdri_or_texture():
     assert checks.library({}) == []
     names = {p.stem for p in (ROOT / "assets" / "textures").iterdir() if p.is_dir()}
     assert names == set(checks.TEXTURE_NAMES)
+
+
+def test_upload_day_is_central_and_never_late_at_night():
+    import datetime as dt
+
+    import upload
+
+    nine_pm = dt.datetime(2026, 11, 3, 3, 4, tzinfo=dt.timezone.utc)   # 9:04 PM Central on Nov 2
+    assert upload.central_now(nine_pm).date().isoformat() == "2026-11-02"
+    assert not upload.in_auto_hours(nine_pm)
+    assert upload.in_auto_hours(dt.datetime(2026, 11, 3, 12, 47, tzinfo=dt.timezone.utc))   # 6:47 AM Central
+    assert not upload.in_auto_hours(dt.datetime(2026, 11, 3, 10, 0, tzinfo=dt.timezone.utc))   # 4 AM Central
