@@ -192,16 +192,19 @@ def look(x, y):
 # S01 the hook (L01, L02): golden dusk in the orchard rows, my glowing pink trail and the dark square prints one stride
 # beside it, my face in frame. Close, lit to read, no fog. Characters face -y at yaw 0, so I walk toward the camera.
 HY = OY + 17.0
-shot("S01", 0, cam(([1.25, HY - 4.3, 1.0], [-0.35, HY + 0.2, 0.95], 28), ([0.95, HY - 3.1, 1.02], [-0.3, HY + 0.1, 0.98], 28), hand=0.004),
-     {"me": {"pos": O(0.0, 17.0), "end": O(0.0, 16.4), "yaw": 0, "expr": "worried"}}, tod="dusk")
-cue(0, "expo", ev=0.35)
+shot("S01", 0, cam(([0.5, HY - 4.8, 1.3], [-0.2, HY - 0.9, 0.85], 30), ([0.3, HY - 3.8, 1.2], [-0.2, HY - 1.0, 0.85], 30), hand=0.004),
+     {"me": {"pos": O(0.0, 17.0), "end": O(0.0, 16.4), "yaw": 0, "expr": "worried"}}, tod="hook")
+cue(0, "expo", ev=-0.1)
 cue("L03", "expo", ev=0.0)
+# the hook only: thin fog, warm gold on the face, back to the film's look at the cut to S02
+cue("L02", "fogk", to=1.0, dur=0.3)
+cue("L02", "hookkey", to=0.0, dur=0.3)
+# on "doesn't" my eyes slide to the dark squares on the left of the frame
+acting["me"].append({"at": "L01.3-0.15", "look": [-1.0, 0.4]})
+acting["me"].append({"at": "L02", "look": [0, 0]})
 trail(0, "hk_p", PINK, [[O(0, 2.6), O(0, 66.0)]], strength=3.4)
 trail(0, "hk_pw", PINK, walker="me", strength=3.4)
-trail(0, "hk_s", "#070b05", [[O(geo.LEFT, 40.0), O(geo.LEFT, 3.0)]], kind="dark", gap=1.3, lat=0.32)
-# S79 low on my boots: pink prints under them, the dark squares one stride over (1.2 s into L01, "Don't walk beside")
-shot("S79", "L01.2", cam(([1.15, HY - 3.4, 0.42], [-0.4, HY - 1.0, 0.2], 22), ([0.9, HY - 2.7, 0.5], [-0.45, HY - 1.0, 0.2], 22), hand=0.004),
-     {"me": {"pos": O(0.0, 16.4), "end": O(0.0, 15.7), "yaw": 0, "expr": "worried"}})
+trail(0, "hk_s", "#070b05", [[O(geo.LEFT, 40.0), O(geo.LEFT, 3.0)]], kind="dark", gap=1.7, lat=0.42, size=(1.0, 1.0))
 # S02 (L02, "Especially if it's SQUARE"): high and close on one dark square beside a glowing pink print
 shot("S02", "L02", cam(([-0.5, HY - 3.2, 2.9], [-0.55, HY - 3.2, 0.0], 30), ([-0.5, HY - 3.2, 2.2], [-0.55, HY - 3.2, 0.0], 30), hand=0.003),
      {}, tod="dusk")
@@ -478,7 +481,6 @@ sound = {"floor": "grass", "steps_db": -20, "rev": 2,
                       {"kind": "hum", "from": "L36", "to": "L42", "lufs": -46}],
          "sfx": [{"at": "L01.3+0.1", "kind": "thud", "db": -18},
                  {"at": "L02.1", "kind": "thud", "db": -16},
-                 {"at": "L01.2", "kind": "whoosh", "db": -28},
                  {"at": "L02", "kind": "whoosh", "db": -28},
                  {"at": "L04", "kind": "click", "db": -16},
                  {"at": "L14", "kind": "thud", "db": -26},

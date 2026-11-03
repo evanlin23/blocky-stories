@@ -103,6 +103,7 @@ def empty(kit, name, loc=(0, 0, 0), parent=None):
 TOD = {
     #           sun colour, sun power, sun travel direction, world colour, world power, fog colour, exposure
     "dusk":    ("#ffb472", 4.8, (0.30, 0.90, -0.30), "#d8b79c", 0.55, "#b9a291", 0.0),
+    "hook":    ("#ffc070", 5.0, (0.30, 0.90, -0.30), "#e8c698", 0.6, "#dcc096", 0.0),
     "night":   ("#8aa6e0", 0.6, (-0.45, 0.55, -0.70), "#1c2438", 0.2, "#2a3548", 0.55),
     "dawn":    ("#c4d6f2", 3.0, (-1.00, -0.12, -0.20), "#9fb0c2", 0.70, "#97a6b6", 0.15),
     "day":     ("#ffe6bc", 4.4, (0.15, -0.90, -0.35), "#d8d2c0", 0.80, "#c9c6b8", 0.0),
@@ -110,10 +111,10 @@ TOD = {
     "silver":  ("#b4c4e6", 1.6, (-0.50, 0.40, -0.70), "#4a5670", 0.40, "#56637a", 0.55),
 }
 # gains of the room and street lights per time of day: lamps (the town's), kitchen, myroom, bedroom
-ROOM = {"dusk": (0.75, 1.0, 0.3, 0.3), "night": (1.0, 0.35, 1.0, 0.8), "dawn": (0.1, 0.45, 0.3, 0.3),
+ROOM = {"hook": (0.75, 1.0, 0.3, 0.3), "dusk": (0.75, 1.0, 0.3, 0.3), "night": (1.0, 0.35, 1.0, 0.8), "dawn": (0.1, 0.45, 0.3, 0.3),
         "day": (0.0, 0.6, 0.3, 0.3), "sunrise": (0.1, 0.5, 0.3, 0.3), "silver": (0.4, 0.0, 0.0, 0.0)}
 # the Rough One's key (low, from the side) and rim, per time of day
-RLIGHT = {"dusk": 0.5, "night": 1.8, "dawn": 0.8, "day": 0.3, "sunrise": 0.3, "silver": 1.0}
+RLIGHT = {"hook": 0.5, "dusk": 0.5, "night": 1.8, "dawn": 0.8, "day": 0.3, "sunrise": 0.3, "silver": 1.0}
 
 
 def hexrgb(h):
@@ -455,6 +456,7 @@ def build_lights(kit, ctx):
     kit.light("bedroom", "POINT", (3.9, OY - 3.0, F + 2.3), 110, "#ffd29a", size=0.3)
     kit.light("daywin", "AREA", (geo.WIN_X0 / 2 + geo.WIN_X1 / 2, OY + 0.9, F + 1.6), 520, "#fff0d8", rot=(-math.pi / 2, 0, 0), size=1.4)
     kit.light("benchl", "POINT", (0.0, OY + 66.5, 3.4), 420, "#a8bce8", size=0.6)
+    kit.light("hookkey", "POINT", (0.9, OY + 13.6, 1.9), 110, "#ffc878", size=0.5)
     kit.light("pairl", "POINT", (0, 0, -60), 260, "#ffd9a8", size=0.4)
     kit.light("rkey", "POINT", (0, 0, -60), 150, "#b8c8ea", size=0.25)
     kit.light("rrim", "POINT", (0, 0, -60), 480, "#8fb4ff", size=0.3)
@@ -777,6 +779,13 @@ def init_chars(kit, story, ctx):
                 c = tuple(n.inputs["Color"].default_value[:3])
                 if all(abs(a - b) < 1e-5 for a, b in zip(c, fc)):
                     ctx["fog_nodes"].append(n)
+    ctx["fog_mul"] = []
+    for m in bpy.data.materials:
+        if m.use_nodes:
+            for n in m.node_tree.nodes:
+                if n.type == "MATH" and n.operation == "MULTIPLY" and abs(n.inputs[1].default_value + kit.FOG["density"]) < 1e-6:
+                    ctx["fog_mul"].append(n)
+    ctx["fog_d"] = kit.FOG["density"]
     ctx["world_bg"] = bpy.context.scene.world.node_tree.nodes["Background"]
 
 
@@ -802,6 +811,10 @@ def animate(kit, story, tl, t, ctx):
     fl = (*lin(hexrgb(fcol)), 1)
     for n in ctx["fog_nodes"]:
         n.inputs["Color"].default_value = fl
+    fk = ramp_val(cues_of(tl, "fogk"), "to", t, 0.25)
+    for n in ctx["fog_mul"]:
+        n.inputs[1].default_value = -ctx["fog_d"] * fk
+    over["hookkey"] = ramp_val(cues_of(tl, "hookkey"), "to", t, 1.0)
     ec = last_cue(cues_of(tl, "expo"), t)
     sc.view_settings.exposure = expo + (ec["ev"] if ec else 0.0)
     lamps, kit_g, my_g, bed_g = ROOM[tod]
