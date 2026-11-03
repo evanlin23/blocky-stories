@@ -312,20 +312,20 @@ glow("L10", "abe", 3.0)
 # us on the bench; visitors passing in front of it squint at Grandad's glow and step away (what he could lose)
 shot("L10", "hall", C([4.2, 1.2, 1.5], [1.2, -3.0, 1.05], 17), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE),
-    "c1": P(2.0, -1.9, -130, expr="neutral"), "c2": P(3.3, -2.4, -130, expr="neutral")},
+    "c1": P(2.7, -5.0, 180, expr="neutral"), "c2": P(-2.2, -4.9, 180, expr="neutral")},
      "wide three-quarter from the aisle: us on the bench, two visitors beside it turn to Grandad's glow, squint and step away")
 key("c1", "L10.2", arms=[135, 125], expr="worried", blend=0.3)
 key("c2", "L10.2+0.2", arms=[130, 120], expr="worried", blend=0.3)
-walk("c1", "L10>", (2.6, -1.6))
-walk("c2", "L10>", (4.0, -2.1))
+walk("c1", "L10>", (3.5, -5.4))
+walk("c2", "L10>", (-3.0, -5.3))
 shot("L11", "hall", C([4.4, 0.6, 1.4], [1.2, -3.0, 1.1], 17), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE),
-    "c3": P(2.2, -2.0, -125, arms=[135, 125], expr="worried"), "c4": P(3.4, -2.6, -125, arms=[130, 130], expr="worried"),
-    "c5": P(4.3, -1.9, -125, arms=[125, 20], expr="worried")},
+    "c3": P(-2.2, -4.8, 180, arms=[135, 125], expr="worried"), "c4": P(2.6, -5.0, 180, arms=[130, 130], expr="worried"),
+    "c5": P(3.9, -4.5, 180, arms=[125, 20], expr="worried")},
      "wide: his glow soft on the bench; three passers-by shield their eyes and edge away from it")
-walk("c3", "L11.2", (2.7, -1.7))
-walk("c4", "L11.2", (4.0, -2.2))
-walk("c5", "L11.2+0.2", (4.8, -1.6))
+walk("c3", "L11.2", (-3.1, -5.0))
+walk("c4", "L11.2", (3.4, -5.4))
+walk("c5", "L11.2+0.2", (4.8, -4.8))
 shot("L12", "hall", C([0.0, -8.4, 1.45], [0.0, 1.5, 2.4], 19), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE)}, "wide from behind the bench: the skeleton over us")
 shot("L12.3", "hall", C([-1.0, -4.6, 0.6], [-3.6, 1.5, 4.7], 22), {}, "tilt up the long neck to the head high over the hall")
@@ -682,7 +682,7 @@ story = {
                   {"at": "L66", "voices": ["drone", "pad", "piano"], "energy": 0.5, "mode": "major", "root": 53},
                   {"at": "L76", "voices": ["drone", "choir"], "energy": 0.45},
               ]},
-    "sound": {"floor": "stone", "steps_db": -22, "samples": True, "rev": 4,
+    "sound": {"floor": "stone", "steps_db": -22, "samples": True, "rev": 5,
               "ambience": [
                   {"kind": "room", "from": 0, "to": "L04", "lufs": -38},
                   {"kind": "room", "from": "L05", "to": "L06", "lufs": -38},
