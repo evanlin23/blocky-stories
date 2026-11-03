@@ -589,9 +589,14 @@ def build_shop(kit, M, ctx):
     ctx["phone"] = ph
     # the sign card hung on the door's inside: a spool on one side, plain on the other (turns at L69)
     sc = kit.empty("sign card", (-4.3, 1.9, 1.75))
-    B(kit, "card", (0.012, 0.3, 0.4), (0, 0, 0), M["leaf"], sc, bevel=0.004)
-    kit.cyl("card.spool", 0.05, 0.12, (-0.012, 0, 0), M["thread"], sc, n=10)
-    kit.cyl("card.fl1", 0.09, 0.012, (-0.012, 0, 0.07), M["brass"], sc, n=12, rot=(0, 0, 0))
+    # the plain face (toward the shop, x < 0) is bare; the face that turns to the camera at L69.3 (x > 0) carries a
+    # big spool-and-needle picture on a dark green panel, every part at least 1.2 cm proud (no shared planes)
+    B(kit, "card", (0.012, 0.34, 0.44), (0, 0, 0), M["leaf"], sc, bevel=0.004)
+    B(kit, "card.panel", (0.006, 0.26, 0.34), (0.012, 0, 0), M["green_d"], sc)
+    kit.cyl("card.spool", 0.055, 0.15, (0.024, 0, 0), M["thread"], sc, n=12)
+    for k, dz in enumerate((-0.085, 0.085)):
+        kit.cyl(f"card.fl{k}", 0.09, 0.02, (0.026, 0, dz), M["brass"], sc, n=14)
+    B(kit, "card.needle", (0.008, 0.012, 0.3), (0.03, 0.1, 0.0), M["brass"], sc)
     ctx["sign_card"] = sc
     # the lore tally: two short upright charcoal strokes pressed into the bench foot (one shot, not narrated)
     for k, dy in enumerate((-0.03, 0.03)):

@@ -69,66 +69,6 @@
     ]
    ]
   },
-  "L03": {
-   "text": "Love the haircut, she says. One tag, before the salon door even shuts.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.293,
-   "onset": 0.19,
-   "end": 3.103,
-   "chunks": [
-    [
-     0.19,
-     0.672
-    ],
-    [
-     0.707,
-     1.172
-    ],
-    [
-     1.267,
-     1.707
-    ],
-    [
-     1.733,
-     1.983
-    ],
-    [
-     1.983,
-     2.388
-    ],
-    [
-     2.388,
-     3.103
-    ]
-   ]
-  },
-  "L04": {
-   "text": "By dessert, first dates look like pincushions.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.224,
-   "onset": 0.172,
-   "end": 2.017,
-   "chunks": [
-    [
-     0.172,
-     0.552
-    ],
-    [
-     0.603,
-     1.017
-    ],
-    [
-     1.017,
-     2.017
-    ]
-   ]
-  },
   "L05": {
    "text": "A man owns up in the cafe, and his tag drops off like a leaf.",
    "who": "narrator",
@@ -162,26 +102,6 @@
     [
      2.232,
      2.914
-    ]
-   ]
-  },
-  "L06": {
-   "text": "The whole cafe claps.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.397,
-   "onset": 0.155,
-   "end": 1.207,
-   "chunks": [
-    [
-     0.155,
-     0.69
-    ],
-    [
-     0.69,
-     1.207
     ]
    ]
   },
@@ -282,30 +202,6 @@
     [
      0.768,
      1.586
-    ]
-   ]
-  },
-  "L11": {
-   "text": "People believe everything I say.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.155,
-   "end": 1.569,
-   "chunks": [
-    [
-     0.155,
-     0.664
-    ],
-    [
-     0.664,
-     1.0
-    ],
-    [
-     1.0,
-     1.569
     ]
    ]
   },
