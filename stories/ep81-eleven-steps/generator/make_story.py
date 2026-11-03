@@ -161,7 +161,7 @@ S(0, X((0.05, -1.15, 0.3), (0.0, 1.7, 1.05), 12.5, (0.05, -0.8, 0.32), None, 12.
 S("L02", X((0.9, 3.4, 2.5), (1.65, 4.8, 2.3), 16), "night", note="the amber nightlight on the landing")
 S("L02.2", X((0.05, 3.2, 3.9), (0.0, 0.9, 0.9), 11.5), "night", note="top-down: each tread dips in turn, nobody on them")
 for i in range(9):
-    dip(f"L02.2+{0.04 + 0.17 * i:.2f}", i + 1, 0.4)
+    dip(f"L02.2+{0.04 + 0.13 * i:.2f}", i + 1, 0.3)
 # L03: by day, me counting up the stairs, tag 10
 count("L03", 10)
 box("L03")
@@ -333,10 +333,10 @@ S("L39", X((0.0, 5.4, LZ + 0.065), (0.0, 4.7, LZ + 0.065), 12, (0.0, 5.2, LZ + 0
 S("L40", X((-0.12, 5.5, LZ + 0.06), (-0.2, 4.7, LZ + 0.075), 20, (-0.12, 5.25, LZ + 0.06), None, 20), "roomdim", fill=0.0, hand=0.002,
   note="the cover frame: one eye at the gap, an inch from mine")
 cue("L41", "mydoor", open=0, bow=0.0)
-clm("L41", [0.15, 3.0, LZ], yaw=180, fold=0.62, roll=-75, reach=8, hp=5, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.15, ax=0.1, ay=0.0, az=2.1, rx=-1.2, ry=-0.6, rz=2.3)
+clm("L41", [0.15, 2.6, LZ], yaw=180, fold=0.62, roll=-75, reach=8, hp=5, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.15, ax=0.1, ay=0.0, az=2.1, rx=-1.2, ry=-0.6, rz=2.3)
 cue("L41", "torch", on=False)
-S("L41", X((0.3, 4.75, LZ + 0.3), (0.1, 3.0, LZ + 1.9), 13, (0.28, 4.45, LZ + 0.32), None, 13), "creature", fill=0.0, door=0.3, clkey=3.0, clrim=2.0, hand=0.003, note="low from my doorway: it has to fold under our ceiling")
-S("L42", X((0.45, 4.3, LZ + 0.5), (0.1, 3.0, LZ + 2.3), 17, (0.4, 4.0, LZ + 0.55), None, 17), "creature", fill=0.0, door=0.3, clkey=3.0, clrim=2.0, hand=0.003, note="its head bent flat on its shoulder, its eye on me")
+S("L41", X((0.3, 4.85, LZ + 0.25), (0.1, 2.6, LZ + 1.9), 10, (0.28, 4.6, LZ + 0.27), None, 10), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="low from my doorway: it has to fold under our ceiling")
+S("L42", X((0.4, 4.8, LZ + 0.4), (0.1, 2.6, LZ + 2.3), 14, (0.38, 4.5, LZ + 0.42), None, 14), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="its head bent flat on its shoulder, its eye on me")
 
 # =========================================================================================== 07 L43-L51 the rule's logic
 count("L43", 10)
@@ -349,9 +349,9 @@ S("L45", X((1.5, 5.6, LZ + 1.5), (-0.55, 6.6, LZ + 0.3), 12), "roomdim", note="t
 count("L46", 11)
 box("L46", BOT)
 S("L46", X((0.0, 3.9, 4.4), (0.0, 0.2, 0.4), 10.5), "evening", note="top-down: with eleven steps (the box the bottom one)")
-clm("L46.1", [0.0, 2.38, 0.19 * 9], yaw=180, fold=0.62, roll=-75, reach=8, hp=5, hy=-80, hoff=0.42, kx=0.0, ky=-1.4, kz=0.3, az=1.2)
+clm("L46.1", [0.0, 2.38, 0.19 * 9], yaw=180, fold=0.62, roll=-75, reach=8, hp=5, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.3, ax=0.1, ay=0.0, az=2.0, rx=-1.2, ry=-0.6, rz=2.3)
 count("L46.1", 11)
-S("L46.1", X((0.0, 3.9, 4.3), (0.0, 1.9, 1.8), 12), "evening", note="ten leaves it one tread below the landing")
+S("L46.1", X((0.0, 3.9, 4.3), (0.0, 1.9, 1.8), 12), "dim", fill=0.3, clkey=1.8, clrim=5.0, note="ten leaves it one tread below the landing")
 S("L47", X((1.1, 4.1, 3.0), (0.0, 2.4, 1.9), 13), "evening", note="one step below the landing, one step from me")
 clm("L48", None)
 S("L48", X((1.3, -1.7, 0.9), (0.0, -0.4, 0.4), 13), "dawn", note="dawn: Dad lifts the box away so I'd never know")
@@ -377,13 +377,13 @@ box("L52.2", ROOMBOX, to=list(DOORBOX), dur=0.8)
 gone("me", "L52.3")
 count("L52.4", 11)
 cue("L52.3", "mydoor", open=26)
-clm("L53", [0.15, 2.7, LZ], yaw=180, fold=0.62, roll=-75, reach=8, hp=-10, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.15, ax=0.1, ay=0.0, az=2.1, rx=-1.2, ry=-0.6, rz=2.3)
+clm("L53", [0.15, 2.6, LZ], yaw=180, fold=0.62, roll=-75, reach=8, hp=-10, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.15, ax=0.1, ay=0.0, az=2.1, rx=-1.2, ry=-0.6, rz=2.3)
 box("L53", DOORBOX)
-S("L53", X((0.3, 4.8, LZ + 0.25), (0.1, 2.9, LZ + 1.0), 14, (0.28, 4.55, LZ + 0.27), None, 14), "creature", fill=0.0, door=0.3, clkey=3.0, clrim=2.0, hand=0.003, note="floor level: the box between its flat hands and my door")
+S("L53", X((0.3, 4.85, LZ + 0.3), (0.1, 2.6, LZ + 0.9), 11, (0.28, 4.8, LZ + 0.32), None, 11), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="floor level: the box between its flat hands and my door")
 cue("L53", "mydoor", open=0)
-S("L54", X((0.45, 4.2, LZ + 0.45), (0.15, 2.7, LZ + 2.0), 16, (0.4, 3.95, LZ + 0.5), None, 16), "creature", fill=0.0, door=0.3, clkey=3.0, clrim=2.0, hand=0.003,
+S("L54", X((0.45, 4.85, LZ + 0.4), (0.15, 2.6, LZ + 1.6), 12, (0.42, 4.78, LZ + 0.42), None, 12), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003,
   note="it looks down at the box, a long time")
-S("L55", X((-0.3, 4.75, LZ + 0.2), (0.15, 2.8, LZ + 1.5), 12, (-0.25, 4.5, LZ + 0.22), None, 12), "creature", fill=0.0, door=0.3, clkey=3.0, clrim=2.0, hand=0.003, note="it doesn't climb it")
+S("L55", X((-0.3, 4.85, LZ + 0.2), (0.15, 2.6, LZ + 1.5), 10, (-0.25, 4.8, LZ + 0.22), None, 10), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="it doesn't climb it")
 S("L56", X((0.9, 2.2, 2.8), (0.2, 3.8, 3.3), 11.5, (0.9, 2.3, 2.9), None, 11.5), "dawn", hand=0.003, note="dawn comes up in the round window, it stands one step short")
 S("L57", X((0.0, 6.6, LZ + 1.0), (0.0, 5.1, LZ + 0.8), 13), "dawn", fill=0.9, note="me with my back to the door, listening")
 put("me", "L57", [0.0, 5.45, LZ - 0.62], 180, "scared", arms=[40, 40])
@@ -429,9 +429,9 @@ box("L67", BOT)
 S("L67", X((0.0, -1.5, 0.35), (0.0, 1.7, 1.1), 12.5, (0.0, -1.15, 0.37), None, 12.5), "night", hand=0.003, note="the stairs at two a.m. from the bottom, one tread dips")
 dip("L67.1", 5, 0.6)
 S("L68", X((0.8, 1.6, 2.6), (0.0, 2.3, 1.75), 14), "night", hand=0.003, note="the cold step just below the landing")
-clm("L69", [0.0, 2.38, 0.19 * 9 - 0.35], yaw=180, fold=0.55, roll=-75, reach=8, hp=-5, hy=-80, hoff=0.42, kx=0.0, ky=-1.5, kz=0.4, az=1.0)
-S("L69", X((0.0, 0.2, 2.2), (0.0, 2.4, 2.3), 13), "night", hand=0.003, note="on the step just below the landing, it has sat down")
-S("L70", X((0.9, 1.0, 2.5), (0.0, 2.35, 2.2), 12, (0.8, 1.2, 2.45), None, 12), "night", hand=0.003, note="head on its shoulder, facing up, waiting")
+clm("L69", [0.0, 2.38, 0.19 * 9 - 0.35], yaw=180, fold=0.55, roll=-75, reach=8, hp=-5, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.3, ax=0.1, ay=0.0, az=2.0, rx=-1.2, ry=-0.6, rz=2.3)
+S("L69", X((0.6, 4.4, LZ + 0.7), (0.0, 2.4, 2.9), 10, (0.55, 4.1, LZ + 0.72), None, 10), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="on the step just below the landing, it has sat down")
+S("L70", X((0.3, 3.9, LZ + 0.5), (0.0, 2.4, 3.0), 13, (0.28, 3.6, LZ + 0.52), None, 13), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="head on its shoulder, facing up, waiting")
 clm("L71", None)
 count("L71", 11)
 S("L71", X((0.05, -1.5, 0.3), (0.0, 1.7, 1.05), 12.5, (0.05, -1.15, 0.31), None, 12.5), "night", hand=0.003, note="push in to the bottom step: frame 1 again")
@@ -484,10 +484,7 @@ story = {
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -44}],
         "sfx": [
             {"at": "L01.3", "kind": "creak", "db": -14, "dur": 0.9},
-            {"at": "L02.2+0.04", "kind": "creak", "db": -20, "dur": 0.35},
-            {"at": "L02.2+0.38", "kind": "creak", "db": -20, "dur": 0.35},
-            {"at": "L02.2+0.72", "kind": "creak", "db": -20, "dur": 0.35},
-            {"at": "L02.2+1.06", "kind": "creak", "db": -20, "dur": 0.35},
+            *[{"at": f"L02.2+{0.04 + 0.13 * i:.2f}", "kind": "creak", "db": -19 + 3 * (i % 2), "dur": 0.2} for i in range(10)],
             {"at": "L17.1", "kind": "latch", "db": -18},
             {"at": "L30", "kind": "creak", "db": -16, "dur": 0.5},
             {"at": "L30.1", "kind": "creak", "db": -16, "dur": 0.5},

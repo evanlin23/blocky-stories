@@ -190,7 +190,7 @@ def face_image(path):
     d = ImageDraw.Draw(im)
     for sx in (-1, 1):
         cx, cy, r = S / 2 + sx * 150, S * 0.46, 40
-        d.ellipse([cx - r * 1.55, cy - r * 1.55, cx + r * 1.55, cy + r * 1.55], fill=(238, 222, 180))   # a pale eye ring: the brightest thing
+        d.ellipse([cx - r * 1.3, cy - r * 1.3, cx + r * 1.3, cy + r * 1.3], fill=(238, 222, 180))   # a pale eye ring: the brightest thing
         d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(8, 7, 9))
         d.ellipse([cx - r * 0.42, cy - r * 0.5, cx - r * 0.2, cy - r * 0.28], fill=(255, 252, 240))   # a pinpoint glint
     im.save(path)
