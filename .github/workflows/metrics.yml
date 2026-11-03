@@ -1,8 +1,7 @@
 # Weekly channel numbers into metrics/summary.md, a little before the Monday /week run. Run it by hand any time.
 name: metrics
 on:
-  schedule:
-    - cron: "37 20 * * 1"   # Mondays 20:37 UTC = 2:37 pm Central (3:37 pm in summer)
+  # no `schedule:`: cron-job.org starts it Mondays 2:37 PM Central; GitHub's late schedule would run it twice
   workflow_dispatch:
 concurrency: {group: metrics, cancel-in-progress: false}
 permissions: {contents: write}

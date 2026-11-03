@@ -167,8 +167,9 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite", "zeros"
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
 # (ep17), Wren said "ren" (ep20)
-HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
-              "wren": "ren", "wrens": "rens", "too": "to",   # "too" (ep15: "back TOO,") is heard as "to"
+HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo",   # ep34: Jo
+              "threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
+              "wren": "ren", "wrens": "rens", "remy": "remi", "remys": "remis", "hot": "hut", "too": "to",   # "too" (ep15: "back TOO,"); remy/hot (ep50)
               "60th": "sixtieth",   # ep31
               # ep33 (opt-in: only a story with these words is affected): made-up names Whisper spells its own way
               "halvor": "halver", "halvors": "halvers", "cagoule": "kagool", "40": "forty",
@@ -176,8 +177,10 @@ HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "h
               "okoffor": "okafor", "okoffors": "okafors", "ocoffor": "okafor", "ocoffors": "okafors",
               "okofor": "okafor", "okofors": "okafors",   # ep14: Okafor
               "ossie": "ozzy",   # ossie/ozzy (ep43)
-              "oral": "aurel",   # ep47: Uncle Aurel
-              "mr": "mister", "mrs": "missus"}   # ep14 redo: Whisper writes the titles short
+              "oral": "aurel", "orel": "aurel",   # ep47: Uncle Aurel
+              "mr": "mister", "mrs": "missus",   # ep14 redo: Whisper writes the titles short
+              "grand": "gran", "girl": "gull",   # ep33: Gran (heard as grand) and the gull
+              "pane": "pain", "panes": "pains", "boards": "board"}   # ep15 redo: pane/pain (Whisper picks by context), boards/board
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 
