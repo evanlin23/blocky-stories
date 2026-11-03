@@ -21,6 +21,12 @@ The owner: "this niche might be oversaturated, but I think I'd like to keep this
 - **The 70/30 mix:** about 70% of each batch is what's working (our numbers plus rising formats), and about 30% is experiments with a format we haven't tried, in the same style: sad or emotional, riddle or puzzle, comedy, POV, mystery series. Note which is which in each story's package (`"lane": "core"` or `"lane": "experiment"`), so `metrics` can compare them.
 - **A format whose momentum falls two scans in a row loses its share** to the best experiment. A format rising fast that we haven't tried gets an experiment slot the next week.
 - **Build things that are ours,** so viewers come back for us rather than for a format: recurring characters, Part 2s of what hits, and a signature hook of our own. Never copy a specific channel's premise.
+- **Research (2026-11-03, `docs/research/playbook.md`; the owner, 2026-11-03: "I'm worried we aren't spending enough time doing research").** The playbook ranks what the numbers support, and `/week` reads it with the trend files. Lines here are only the strong ones:
+  - **"Two scans in a row" means two weekly scans, at least 6 days apart.** The 2026-11-02 and 2026-11-03 scans were one day apart, and their "vs last scan" moves (sad -14%) are noise.
+  - **Story length is under test, not settled.** In 212 rising Shorts, the top 10% run a median 140 s and none of the 28 at 46 to 75 s made it. The 60 to 90 s core comes from one channel. The 2026-11-09 batch builds both (playbook H1), and the day-7 numbers decide.
+  - **Every story carries one quotable line,** odd or funny and short enough to type, marked in `script.md`. A quarter of the top comments on the 40 fastest quote a line back. Only 1% say anything about being scared.
+  - **US English in titles, lines and pins** (Mom, neighbor, gas station). 62% of our views are US.
+  - **Examples in these rules never use a live hit's premise** (a check of the 2026-11-03 deep scan found one).
 
 ## What we make
 A crazy, strange, made-up story, as long as its big idea needs and no longer (shorter is better, 3:00 at most), told in first person by a fast, sped-up synthetic narrator over blocky characters we build in Blender, with big punchy captions. One story a day goes to **PandaNanoAdventures** and no other channel (note 21).
