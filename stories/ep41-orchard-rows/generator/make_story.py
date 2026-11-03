@@ -29,7 +29,7 @@ for ln in lines:
 out_lines.append({"id": "P03", "pause": LOOP, "chunks": []})
 lines = out_lines
 # the word check: these lines a touch slower so a swallowed word comes through
-TEMPO = {"L05": 0.9, "L06": 0.92, "L56": 0.88, "L11": 0.85, "L13": 0.85, "L18": 0.92, "L48": 0.9, "L65": 0.85, "L66": 0.84}
+TEMPO = {"L05": 0.9, "L06": 0.92, "L56": 0.8, "L59": 0.85, "L11": 0.85, "L13": 0.85, "L18": 0.92, "L48": 0.9, "L65": 0.85, "L66": 0.84}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
