@@ -6,5 +6,5 @@
  "shape": "secret-reason",
  "cover_s": 64.8,
  "old_title": "At the Top of This Chairlift Everyone Else Gets OLDER",
- "hold": "held 2026-11-03 (queue audit): fix to the opening recipe only after 3 recipe films pass"
+ "hold": "dropped 2026-11-03: the opening redo couldn't reach the bar in two rounds. Critic r8 said revise at about 6 with no single rescue fix (second one reads as fun, not danger; the rule dial reads as a UI sticker; murky fog at 40 to 44 s; Gran reads as an old man, so the sad sting is weak). Build and reviews are on branch claude/ep33-chairlift-opening."
 }

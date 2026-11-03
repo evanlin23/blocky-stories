@@ -57,13 +57,23 @@ the hard way.
 - One render run at a time. **A waiting run is replaced by each newer push**, so many "cancelled" render runs are
   normal: the next run picks up every story without a film, or with a film older than its last picture or sound
   change.
-- At most 15 stories a run (the 256-job matrix cap) and 16 draw jobs at a time (leaving 4 runners for PR
+- At most 2 stories a run (each story's assemble waits for the whole draw matrix, so big runs delayed the first film by hours on 2026-11-03; the `again` job chains the next run) and 16 draw jobs at a time (leaving 4 runners for PR
   tests). A run of 8 stories takes about 5 hours.
 - The narration is made once on Actions (the `voice` job) and the picture is drawn to it. Local and Actions
   synthesis differed by up to 0.85 s per line, which broke sync before that change.
 - A film that fails the flash bar is kept but never uploaded, and the upload skips to the next story. The usual
   causes are light flicker on bright close-ups and z-fighting (coplanar surfaces), which can pass the preview and
   fail the final.
+
+## Proofs (before merge, 2026-11-03)
+- Every story PR draws a **proof** (`proof.yml`): the whole film at half size, every drawing the final makes. It
+  starts by itself once both reviews approve, and again whenever the film files or the reviews change on the PR.
+- Its own concurrency group (`proof-<PR>`), so it never cancels or queues behind `render`. It takes 8 runners for
+  the drawing, `render` takes 16 of the 20 free ones: a proof started while a render draws simply waits.
+- A proof costs about 40 minutes of wall time a story (voice 5, draw 10 to 20 in 8 shards, assemble about 20).
+- `test` won't merge a story without `qa/<story>.json` at `"stage": "proof"`, passed, whose `sha` is a commit in
+  the branch with no film file changed after it. So the last push before a merge must be the one the proof drew.
+- A proof that fails leaves its artifact anyway (`proof-<story>`, 14 days), so the qa agent can still look.
 
 ## Merging
 - `test` gates every story a PR touches, so a story whose reviews say revise can't merge. A `WIP` title skips it.

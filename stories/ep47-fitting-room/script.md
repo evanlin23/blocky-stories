@@ -7,9 +7,12 @@
   - No scissors or shears anywhere, even in cutaways. Pins appear only as each tag's own tiny pin and as Uncle's pincushion, never near a face or the creature.
   - Revision, 2026-11-03 (cold-viewer test): the Mrs. Kettle callback (old L64) and the narrated sleeve (old L65) are cut, because both leaned on beats a first listen misses. The twist is said in plain words in the last three lines (L71 to L73): a lie you believe never gets a tag, and for two years I'd told myself I was happy in the city. "I still don't have ONE" is gone. Mrs. Kettle's montage beat now says "She BELIEVES it." out loud (L08), so the end is earned. The sleeve stays as shots only, a rewatch reward. Old L63's twist line moved to the end, and L63 is now a warm beat (Uncle laughs).
   - Revision, 2026-11-03, round 4 (back-row test: a concrete mystery by 15 s, Uncle on screen by 0:20): the montage is cut to three examples (shoes L02, owning up L05, Mrs. Kettle L07 to L09). L03 (haircut), L04 (first dates) and L06 (the cafe claps) are cut with their shots S04, S05, S06 and S09. L11 ("People believe EVERYTHING I say") was never paid off, so it's cut with S14. S15 now shows Uncle through the shop window so he's on screen as L12 starts. Other ids are left as they were.
-  - Narrator is a man (RULES, owner 2026-11-02): "me" is Uncle's nephew. "She's happy in the city" is now "My NEPHEW'S / HAPPY / in the city." (L55), so a cold listener knows who he means, and Uncle calls me "lad" (L39). L12 says plainly that Aurel is my uncle.
+  - Revision, 2026-11-03, round 9 (opening variety, hard rule 5: too many line 1s began Don't/Never): L01 is now "You can't HIDE / a LIE here. / It pins / a TAG on you." (12 words), so the loop reads "So take it from a LIAR. You can't hide a lie here." Re-voice L01.
+  - Revision, 2026-11-03, round 5 (opening recipe v1, `docs/research/playbook.md`): L01 is now a warning to you, "Don't LIE / in this TOWN. / Every lie pins / a TAG on you." (11 words), and L02 tightens it into a contradiction like back-row's count, "My UNCLE never lies. / He's COVERED in them." (8 words): L18 says he's never lied, L46 has him tagged to the chin, and the why is L54 to L56. The snowman salesman line is cut. L73 gains "So take it / from a LIAR." so the loop plays as one sentence into L01. L39's "lovely place, lad" is now "nice place, kid" (US English). Re-voice L01, L02, L39 and L73 only.
+  - Narrator is a man (RULES, owner 2026-11-02): "me" is Uncle's nephew. "She's happy in the city" is now "My NEPHEW'S / HAPPY / in the city." (L55), so a cold listener knows who he means, and Uncle calls me "kid" (L39). L12 says plainly that Aurel is my uncle.
 - **Target length:** 2:05 to 2:20 (round 4 cut it down; shorter is better).
-- **Word count:** 596 spoken words in 67 lines, all `narrator`, plus 2 pause beats in the script (1.3 s) and the builder's P03 hold (0.85 s). Ids L03, L04, L06, L11, L64 and L65 are cut, and the other ids are left as they were.
+- **Quotable line:** `L09`, "He's beside her, white as a wedding cake." (playbook item 4)
+- **Word count:** 599 spoken words in 67 lines, all `narrator`, plus 2 pause beats in the script (1.3 s) and the builder's P03 hold (0.85 s). Ids L03, L04, L06, L11, L64 and L65 are cut, and the other ids are left as they were.
 - **Estimated length:** about 2:11 (the round-3 timeline was 139.0 s, less 7.7 s of cut lines and their gaps).
 - **Key timings (from the round-3 voice timings):** rule and marker on screen at 0 s, montage 0 to 14 s, L10 (my clean coat) at about 13.5 s, Uncle on screen at about 15 s (S15, through the shop window), his tags at work in the backgrounds from there and narrated from about 26 s, then everything after about 8 s earlier than round 3: traces about 36 to 45 s, the first taking at about 45 s (L28 to L30, 34% in), the hanging suit at about 57 s, the Empty shown clearly at about 80 s (61%), the loophole at about 100 to 108 s, the warm turn from about 113 s, the plain twist from about 123 s (L71 to L73).
 
@@ -22,11 +25,11 @@
   - Plant 1, Mrs. Kettle (L07 to L09): she swears her husband has never told a lie, no tag lands on her, and the narration says "She BELIEVES it." He stands beside her white as a wedding cake. Paid off in words at L71 ("a lie you BELIEVE / never gets a TAG"), with Mrs. Kettle seen once more under it (S91), not named.
   - Plant 2, my sleeve (shots only, never narrated): under L16 and L17 I'm rubbing my left sleeve with my other hand, where a tag would pin. Also seen on the train under L13. Paid off in a shot under L72 (my thumb still on the clean sleeve). A rewatch reward a cold listener doesn't need.
   - Rewatch reward, not narrated: under L19 and L20, Uncle answers the customer with his back to camera and his head toward the window, where my old bench is. A tag pins on each time.
-- **How the last 15 seconds turn over the first line:** first time, "every lie you tell pins a white tag" is the town's funny, eerie rule and I'm the honest exception. L70 repeats the rule over the two of us in shirtsleeves. L71 to L73 say the twist plainly ("But a lie you BELIEVE / never gets a TAG. / For two YEARS, / I told MYSELF / I was HAPPY / in the CITY. / And I BELIEVED / every WORD."), over the empty hanger swinging on its hook, and loop straight into "In this town, every lie you tell pins a white tag to your clothes." Now the first line has a hole in it, and my clean coat in L10 was the worst sign, not the best.
+- **How the last 15 seconds turn over the first line:** first time, "You can't hide a lie here" is the town's funny, eerie warning and I'm the honest exception. L70 repeats the rule over the two of us in shirtsleeves. L71 to L73 say the twist plainly ("But a lie you BELIEVE / never gets a TAG. / For two YEARS, / I told MYSELF / I was HAPPY / in the CITY. / And I BELIEVED / every WORD."), over the empty hanger swinging on its hook, then "So take it / from a LIAR.", and loop straight into "You can't hide a lie here. It pins a tag on you." So the loop plays as one cold sentence from a man who lied to himself for two years, and "My uncle never lies. He's covered in them." now reads as the one lie he told for me. The first line has a hole in it, and my clean coat in L10 was the worst sign, not the best.
 - **What the hits do, line by line:**
-  1. Rule opener (L01, 14 words): "In this town, every lie you tell pins a white tag to your clothes."
+  1. Warning opener (L01, 12 words, opening recipe v1): "You can't hide a lie here. It pins a tag on you." L02 (8 words) tightens it into a contradiction you can see: "My uncle never lies. He's covered in them."
   2. Marker by 2 s: the white hook-glyph tags on every shopper in S01, one popping on in frame.
-  3. Montage, 3 examples in the first 15 s: the snowman salesman, the man who owns up in the cafe, Mrs. Kettle.
+  3. Montage in the first 15 s: Uncle covered (L02, a flash-forward), the man who owns up in the cafe, Mrs. Kettle.
   4. The exception: I've never had a tag (L10).
   5. The loved one at stake: Uncle Aurel, buried in tags for me, gone on Thursday.
   6. The loophole: a tag comes off when somebody says the truth out loud, and all his tags are one lie, about me. So one true sentence from me clears every one (L56 to L61). No new magic.
@@ -108,7 +111,7 @@ Every word is the narrator's. Quotes (L16, L39, L55, L60) are reported inside my
   - L70 to L73: the lead drops out. Drone only, and one high, slightly flat sustained note under "And I BELIEVED / every WORD."
 - **Drops (`music_drops`):** before L33 (0.7 s, everything out but the voice and a single soft brass-ring scrape of the curtain), before L48 (0.6 s, everything but the voice drops, then one low felt thud as the hit). No silent gaps anywhere else.
 - **Ambience, all synthesized:** arcade footsteps and murmur, the counter bell, a cafe cup clink, a soft paper "tick" each time a tag pins on, a leaf-like paper flutter as tags drop, curtain rings sliding on brass, a dry chalk scrape (L42), a soft cloth slump for the heap (L62, -18 dB with a pitch fall), evening arcade hush.
-- **The loop:** 0.25 s after "WORD" in L73, cut to L01's wide and its first word.
+- **The loop:** 0.25 s after "LIAR" in L73, cut to L01's first shot and its first word, so it plays as "So take it from a liar. You can't hide a lie here."
 
 ## The lore connection (one only)
 
@@ -122,19 +125,19 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - **Where:** the covered arcade, a bright weekday.
 - **Shots:** 10.
-- **Montage (3 examples):** the snowman salesman, the man who owns up, Mrs. Kettle.
+- **Montage (3 examples):** Uncle covered (flash-forward), the man who owns up, Mrs. Kettle.
 
-- `L01` narrator: In this town, / every LIE you tell / pins a white TAG / to your CLOTHES.
+- `L01` narrator: You can't HIDE / a LIE here. / It pins / a TAG on you.
   - [S01, 0 to 1.6 s: bright mid shot under the glass roof, two shoppers walking toward camera, faces big in frame (each over 1/5 of the frame width), a few white hook-glyph tags pinned on their coats. One tag pops onto the man's lapel as he says something to her. S02, from 1.6 s: wide down the arcade in long sun bars, every passer-by with a few tags]
-- `L02` narrator: The man who sells SHOES / looks like a SNOWMAN.
-  - [S03: the shoe-shop man in his doorway, smiling, so covered in tags he's a white lump with a face]
+- `L02` narrator: My UNCLE never lies. / He's COVERED in them.
+  - [S03 (revised 2026-11-03 for the opening recipe, builder to recut): Uncle at the shop counter on Friday, tags up to his chin (as at L46), face clear and `soft`, looking at camera, push in. A flash-forward with no name and no place said. The snowman salesman is no longer narrated, so if he stays he's only a background figure in S02]
 - `L05` narrator: A man OWNS UP / in the CAFE, / and his tag drops off / like a LEAF.
   - [S07: the cafe man in the red hat, `sheepish`, talking to the woman across from him. S08: close on his chest, one tag tipping off and drifting down]
 - `L07` narrator: Mrs. KETTLE swears / her husband / has never told / a LIE.
   - [S10: Mrs. Kettle in her plum coat, chin up, proud. Not a tag on her]
 - `L08` narrator: No tag lands / on HER. / She BELIEVES it.
   - [S11: close on her clean plum lapel. Nothing. S11a, on "She BELIEVES it": her face, chin up, beaming, one hand flat on her heart]
-- `L09` narrator: He's beside her, / white as a / WEDDING CAKE.
+- `L09` narrator: He's beside her, / white as a / WEDDING CAKE. **(the quotable line)**
   - [S12: pull back: Mr. Kettle beside her, smiling politely, white with tags from cap to shoes]
 - `L10` narrator: Me? / I've never had / a single TAG.
   - [S13: me walking up the arcade with a wheeled case, `neutral`, my slate-blue coat clean. Passers-by around me speckled]
@@ -213,7 +216,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S47: the shop door from inside at night, Uncle stepping in from the dark arcade, `tired`, his coat damp, tags to his collar]
 - `L38` narrator: He went to the CITY, / to see the shop / where I WORK.
   - [S48: upstairs at the small table again, Uncle taking off his scarf, a train ticket stub (blank card) on the table]
-- `L39` narrator: He tells me, / "It's a lovely place, / LAD."
+- `L39` narrator: He tells me, / "It's a nice place, / KID."
   - [S49: Uncle, `smile`, not quite meeting my eyes]
 - `L40` narrator: A new TAG / pins on / over his HEART.
   - [S50: close on his waistcoat's left breast, one tag popping on among the others]
@@ -299,7 +302,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S91: through our window, Mrs. Kettle passing in the arcade, proud and clean, Mr. Kettle beside her white with tags (plant 1, not named)]
 - `L72` narrator: For two YEARS, / I told MYSELF / I was HAPPY / in the CITY.
   - [S92: me at my bench, `sad`, a small smile, looking down at my clean left sleeve, my thumb resting on it, still (plant 2)]
-- `L73` narrator: And I BELIEVED / every WORD.
+- `L73` narrator: And I BELIEVED / every WORD. / So take it / from a LIAR.
   - [S93: the fitting room behind me, curtain hanging open, the bare wooden hanger on the brass hook swinging very slightly, cool side-window light. Hold 0.25 s after "WORD", then loop to S01]
 
 ## Checks for the builder

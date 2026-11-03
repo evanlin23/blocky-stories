@@ -373,3 +373,48 @@ def test_ones_moving_draws_camera_moves_on_every_frame():
 def test_ones_moving_is_the_default():
     """Lead, 2026-11-03: the camera moves 96% of the time with the pack, so moves are drawn on every frame."""
     assert polish.DEFAULTS["ones"] == "moving"
+
+
+def test_bright_grade_lift_never_turns_near_black_red():
+    """ep47 r8: contrast left near-black pixels with negative channels, their luma sat at the 1e-4 floor, and the
+    lift scaled the one positive channel about 1000x into pure red. Near-blacks must lift to a dark, quiet grey."""
+    img = np.full((8, 8, 3), 0.01, np.float32)
+    img[..., 0] = 0.12                                                # contrast leaves R just above 0, G and B below
+    out = np.clip(post.grade(img, {"vignette": 0, "contrast": 1.3, "lift": 0.035}), 0, 1)
+    r, g, b = out[..., 0].mean(), out[..., 1].mean(), out[..., 2].mean()
+    assert r < 0.15 and r - min(g, b) < 0.08                          # no saturated red
+    assert out.mean() > 0.01                                          # still lifted off black
+
+
+def test_bright_grade_lift_all_negative_pixel_lands_near_the_lift():
+    """An all-negative pixel after contrast lifts to a grey near the lift value, never blown up."""
+    img = np.full((4, 4, 3), 0.02, np.float32)
+    out = post.grade(img, {"vignette": 0, "contrast": 1.3, "lift": 0.035})
+    assert np.allclose(out, 0.035, atol=0.003)
+
+
+def test_music_plays_under_the_whole_film():
+    """Owner, 2026-11-03: "there is background music". A gap in the score is filled with a quiet drone and pad."""
+    spec = {"sections": [{"at": "L02", "voices": ["musicbox"], "energy": 0.6}, {"at": "L04", "voices": [], "energy": 0}]}
+    m = polish.music_spec(spec)
+    assert m["sections"][0]["at"] == 0
+    assert all(any(v in s["voices"] for v in polish.SUSTAIN) for s in m["sections"])
+    assert "musicbox" in m["sections"][0]["voices"]                                  # the story's own voices stay
+    st, tl = story(music={"root": 45, "bpm": 66, **spec})
+    mus = sound.score(tl, polish.music_spec(st["music"]))
+    w = int(0.5 * SR)
+    blocks = np.sqrt((mus.mean(axis=1)[: len(mus) // w * w].reshape(-1, w) ** 2).mean(axis=1))
+    assert blocks[:-1].min() > 1e-4                                                  # no silent half second
+
+
+def test_fewer_sound_effects_by_default():
+    """Owner, 2026-11-03: the hits use few effects. No whoosh on plain cuts, one opening key-word hit."""
+    st, tl = story()
+    p = polish.spec(st)
+    at = timeline.resolver(tl["lines"], tl["duration"])
+    ev = polish.sound_events(tl, st, p, at)
+    emph = polish.emph_times(tl, p, at)
+    assert all(any(abs(e["t"] + 0.12 - t) < 1e-6 for t in emph) for e in ev if e["kind"] == "whoosh")
+    assert sum(e["kind"] == "lowhit" for e in ev) <= 1
+    risers = sorted(e["t"] + e["dur"] for e in ev if e["kind"] == "riser")
+    assert all(b - a >= p["riser_gap"] - 1e-6 for a, b in zip(risers, risers[1:]))
