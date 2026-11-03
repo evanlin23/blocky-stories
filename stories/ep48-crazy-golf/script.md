@@ -124,11 +124,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the park lawns and the town in bright late sun.
 - **Shots:** 12. Funny and odd, not scary.
 
-- `L01` narrator: In this TOWN, / your SHADOW stays / where you're HAPPIEST.
-  - [mid shot, bright sun: me walking toward camera across a park lawn, face large in frame, framed above the knees. Behind me two strollers with nothing under their feet, and on the grass beside them three loose shadows: one sitting, one lying, one standing with nobody there]
-  - [low wide across the lawn: people crossing it with no shadows under them, lone shadows dotted over the grass]
+- `L01` narrator: My SHADOW / has never left / my FEET.
+  - [low close-up on my feet and trainers on the sunlit lawn, held for the whole line, the camera easing slowly in. My shadow is dark, hard-edged and joined to the soles, lying long to one side, at least as dark as the trousers. No wide, tree or horizon]
+- `L01b` narrator: Everyone else's / goes where / they're HAPPIEST.
+  - [cut to a stranger's shoes on the same lawn, bright sun, nothing under them; their own shadow lies on the grass about 2 m away, nobody in it. Close and low, no cropped figures at the frame edge]
 - `L02` narrator: Nobody has a shadow / UNDER them. / They're all / out on the GRASS.
-  - [close on a pair of shoes on the path, bright sun, no shadow under them, while the bench beside them throws a long one]
+  - [close on a pair of shoes on the grey path, brightly lit to match the lawn, no shadow under them, while the bench beside them throws a long one]
   - [high wide over the lawn: a dozen shadows lounging on the grass, nobody with them]
 - `L03` narrator: On hot DAYS, / you cool off / in a STRANGER'S shadow.
   - [a man sitting inside the dark shape of a lying shadow, fanning himself with his hand, `smile`]
@@ -349,3 +350,5 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Light:** three changes to pre-check (L24, L33, L51). No step changes.
 - **The hair reveal (L58):** I sit beside the shadow with knees up, never cross-legged and never reaching the floor.
 - **story.json** is the builder's to write. Set `look.flash_safe: true` there.
+
+- **Opening revision, 2026-11-03 (queue audit):** confess: line 1 is now 'My shadow has never left my feet.' with the rule in L01b (new, 'Everyone else's goes where they're happiest.'), and frame 1 is a low close-up of my feet and shadow instead of the 5 m mid shot. Tagged `"opening"` in package.json. Shots rebuilt 2026-11-03 per r6; the hold stays until the critic approves.

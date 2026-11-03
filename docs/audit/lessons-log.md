@@ -100,6 +100,18 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Most of a day's sessions.
     → Enforce the cap in code (gate refuses round 3), and score the creature test still before any other build work.
 
+19. **Pace is set in the edit but only measured on the drawn film.** The owner, 2026-11-03: "don't we control all of
+    this beforehand? like we are the ones that set hte pacing ande veyrthing so i dont understand how we are just
+    creating stuff that is bad." We set the cuts and camera keys, but "picture changes" and "motion energy" count how
+    much the whole frame changes every 0.5 s and 0.25 s, which depends on how much characters and the camera move
+    inside each shot once it's drawn. The preview (quarter size, every 4th drawing) can't measure it, so a builder first
+    sees the real number on a 30 to 40 minute proof. ep48 had 7.25 cuts per 10 s, near the 8.0 cap, and still came in at
+    12.0 against 12.5. The bar also arrived after most of the queue was built (entry 7).
+    → ep48 dropped after two proofs and 16 runners, and a near-miss band added (#201).
+    → Predict picture changes and motion energy from the edit before drawing (measure.py already reads the edit for
+    the `spec.*` metrics), build to a target with margin (15, not 12.5), and plan acting beats into every shot instead of
+    retrofitting punch-ins, which don't count as picture changes.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
