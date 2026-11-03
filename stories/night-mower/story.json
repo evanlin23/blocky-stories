@@ -23,7 +23,33 @@
   "sky": "#1b2a6b",
   "exposure": 0.0,
   "flash_safe": true,
-  "polish": true,
+  "polish": {
+   "emph": [
+    "L01",
+    "L06",
+    "L28",
+    "L35"
+   ],
+   "reveal": [
+    "L28"
+   ],
+   "twist": "L34",
+   "quiet": [
+    [
+     "L39",
+     "L45"
+    ]
+   ],
+   "sway": [
+    "S19",
+    "S21",
+    "S24",
+    "S26",
+    "S27",
+    "S28",
+    "S29"
+   ]
+  },
   "hdri": "moonless_golf",
   "hdri_strength": 0.6,
   "hdri_visible": false

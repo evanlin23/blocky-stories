@@ -376,7 +376,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"style": "closer", "fog": "#6f86c8", "fog_density": 0.012, "fog_start": 14.0, "sky": "#1b2a6b",
-             "exposure": 0.0, "flash_safe": True, "polish": True, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
+             "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01", "L06", "L28", "L35"], "reveal": ["L28"], "twist": "L34", "quiet": [["L39", "L45"]], "sway": ["S19", "S21", "S24", "S26", "S27", "S28", "S29"]}, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 1.12, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.3, "grain": 0.01, "red_line": 0.78},
     "phonemes": {"snaps": "snˈæps"},
