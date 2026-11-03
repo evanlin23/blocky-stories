@@ -10,7 +10,7 @@
   - The idiom "other half" is gone from every line (L07, L58, L66). "Partner" is now only the dance partner's place (L26 "a PARTNER", L46 "the empty SPOT").
   - Ros dances the solo with her eyes closed because she's COUNTING the steps (L13), a teacher's habit.
   - The payoff says it outright: L62 "Ros opens her EYES and sees her NEPHEW." L64 "We're a FAMILY MATCH." L65 "Nobody thinks to check a PALM." L72 "Mine is my AUNT."
-  - The last dance is a teacher's demonstration with the class watching. I lead my aunt out (L67), tread on her feet (L68), and she uses me to show the class what not to do (L69). No closed eyes, no cheek to cheek, no lingering. Staging notes are under "Builder: staging changes in r5" at the end.
+  - The last dance is a teacher's demonstration with the class watching. I walk my aunt out (L67), tread on her feet (L68), and she uses me to show the class what not to do (L69). No closed eyes, no cheek to cheek, no lingering. Staging notes are under "Builder: staging changes in r5" at the end.
   - Added two beats the pitch didn't have, both inside its shape: the shadows "like the legs of a ladder" during the first scare (sound and shadow only, no creature), and the blank backs of its hands, "Just like MINE", as a red herring at the reveal.
 - **Opening pass (2026-11-03, the opening recipe v1 in `docs/research/playbook.md`):** line 1 is now a warning to "you", and frame 1 looks straight at it.
   - L01 "NEVER cover / the BACK / of your HAND. / Your MATCH / has the REST." 12 words, about 2.2 s, a sound hit (`hit`) on "REST". Same world and rule, said as a warning. It also plants the gloves: the narrator covers his hands every Tuesday because the backs are blank (L06, L09).
@@ -309,7 +309,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the whole glyph, close]
 - `L66` narrator: Forty YEARS, / and her MATCH / was carrying / her RECORDS.
   - [the crate of plain records, my gloves on the lid. Then me, `smile`]
-- `L67` narrator: Next TUESDAY, / I lead / my AUNT / out for / the DEMO.
+- `L67` narrator: Next TUESDAY, / I walk / my AUNT / out for / the DEMO.
   - [the hall at full light, the class at the chairs watching. I lead Ros out by the hand, then we take an open, upright teaching hold at arm's length, heads well apart, both faces turned toward the class]
 - `L68` narrator: I tread on her FEET / four TIMES.
   - [low on our shoes, my brown shoe landing on her silver toe, Ros, `smile`, wincing comically]
