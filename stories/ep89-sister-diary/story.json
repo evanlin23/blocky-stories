@@ -1,0 +1,8953 @@
+{
+ "slug": "ep89-sister-diary",
+ "title": "My Sister's Diary ANSWERS Me",
+ "made_for_kids": false,
+ "premise": "Years ago Grandma gave my big sister Nina and me matching diaries, lilac and blue, and said they only work as a set. Last week my blank diary started filling with Nina's words as she wrote, crawling across the page in my own handwriting. I wrote back under her line, and it answered.",
+ "twist": "Grandma's diaries are a pair: whatever you write in one shows up in the other, in the reader's own hand. For a week I thought my sister's diary was answering me and she thought hers was answering her; each of us was the other's ghost. We talk again, and last night a third hand, in sea-green ink, wrote under both our lines.",
+ "world": "a bright upstairs of two bedrooms across a short hall: my sky-blue room and my sister's lilac room, desks back to back on one shared wall, warm desk lamps, a navy night sky in the windows",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#a678ff",
+ "gap": 0.12,
+ "tail": 0.25,
+ "fade_in": false,
+ "fade_out": false,
+ "look": {
+  "style": "closer",
+  "fog": "#2a3a6a",
+  "fog_density": 0.004,
+  "fog_start": 12.0,
+  "sky": "#1f2f5c",
+  "sky_strength": 0.6,
+  "exposure": 0.2,
+  "flash_safe": true,
+  "polish": {
+   "emph": [
+    "L01",
+    "L19",
+    "L32",
+    "L50",
+    "L55"
+   ],
+   "reveal": [
+    "L38",
+    "L44",
+    "L55"
+   ],
+   "sway": []
+  }
+ },
+ "grade": {
+  "shadows": [
+   0.0,
+   0.0,
+   0.04
+  ],
+  "highlights": [
+   0.03,
+   0.01,
+   -0.02
+  ],
+  "saturation": 1.1,
+  "contrast": 1.05,
+  "vignette": 0.22,
+  "bloom": 0.25,
+  "grain": 0.008
+ },
+ "phonemes": {
+  "Nina": "nˈinə"
+ },
+ "cast": {
+  "me": {
+   "age": "teen",
+   "skin": "#f1c9a0",
+   "shirt": "#4fa9ff",
+   "pattern": "solid",
+   "pants": "#34507f",
+   "shoes": "#f4f4f4",
+   "sleeves": "long",
+   "hair": "swoop",
+   "hair_c": "#5a3a22",
+   "hat": "none",
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "extras": [
+    "hooddown"
+   ],
+   "extra_c": "#4fa9ff"
+  },
+  "nina": {
+   "age": "adult",
+   "skin": "#e8b998",
+   "shirt": "#c7a6ff",
+   "pattern": "knit",
+   "pants": "#3a3550",
+   "shoes": "#f4f4f4",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#2a1a22",
+   "hat": "none",
+   "face": {
+    "eyes": "lashes",
+    "brows": true
+   },
+   "pattern_c": "#b48cf2",
+   "collar": "#f4ecf8"
+  },
+  "mom": {
+   "age": "adult",
+   "skin": "#f0c6a4",
+   "shirt": "#f2a98a",
+   "pattern": "solid",
+   "pants": "#4a4658",
+   "shoes": "#6a4a3a",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#8a5a3a",
+   "hat": "none",
+   "face": {
+    "eyes": "lashes",
+    "brows": true
+   },
+   "collar": "#fff1e0"
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My sister's diary",
+     "My sister's diary"
+    ],
+    [
+     "answers BACK.",
+     "answers back."
+    ],
+    [
+     "And tonight",
+     "And tonight"
+    ],
+    [
+     "it wrote",
+     "it wrote"
+    ],
+    [
+     "about YOU.",
+     "about you."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And it knows",
+     "And it knows"
+    ],
+    [
+     "you're READING.",
+     "you're reading."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Years ago,",
+     "Years ago,"
+    ],
+    [
+     "Grandma gave us",
+     "Grandma gave us"
+    ],
+    [
+     "matching DIARIES.",
+     "matching diaries."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nina's is LILAC.",
+     "Nina's is lilac."
+    ],
+    [
+     "Mine is BLUE.",
+     "Mine is blue."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She said",
+     "She said"
+    ],
+    [
+     "they only work",
+     "they only work"
+    ],
+    [
+     "as a SET.",
+     "as a set."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mine's been blank",
+     "Mine's been blank"
+    ],
+    [
+     "in my drawer",
+     "in my drawer"
+    ],
+    [
+     "for ten YEARS.",
+     "for ten years."
+    ]
+   ]
+  },
+  {
+   "id": "L06a",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Neither of us",
+     "Neither of us"
+    ],
+    [
+     "ever WROTE",
+     "ever wrote"
+    ],
+    [
+     "in them.",
+     "in them."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My big",
+     "My big"
+    ],
+    [
+     "sister, NINA,",
+     "sister, Nina,"
+    ],
+    [
+     "is nineteen.",
+     "is nineteen."
+    ],
+    [
+     "I'm her BROTHER.",
+     "I'm her brother."
+    ],
+    [
+     "Seventeen.",
+     "Seventeen."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We don't really",
+     "We don't really"
+    ],
+    [
+     "TALK anymore.",
+     "talk anymore."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Just door SLAMS,",
+     "Just door slams,"
+    ],
+    [
+     "and who gets",
+     "and who gets"
+    ],
+    [
+     "the CAR.",
+     "the car."
+    ]
+   ]
+  },
+  {
+   "id": "L09a",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Our rooms",
+     "Our rooms"
+    ],
+    [
+     "share a WALL.",
+     "share a wall."
+    ],
+    [
+     "I can",
+     "I can"
+    ],
+    [
+     "hear her",
+     "hear her"
+    ],
+    [
+     "TYPING.",
+     "typing."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then last WEEK,",
+     "Then last week,"
+    ],
+    [
+     "my blank diary",
+     "my blank diary"
+    ],
+    [
+     "started filling UP.",
+     "started filling up."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In MY handwriting.",
+     "In my handwriting."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But NINA'S words.",
+     "But Nina's words."
+    ],
+    [
+     "Her diary,",
+     "Her diary,"
+    ],
+    [
+     "right as she",
+     "right as she"
+    ],
+    [
+     "WROTE it.",
+     "wrote it."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The ink just",
+     "The ink just"
+    ],
+    [
+     "CRAWLS",
+     "crawls"
+    ],
+    [
+     "across the page.",
+     "across the page."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Tuesday.",
+     "Tuesday."
+    ],
+    [
+     "She hates",
+     "She hates"
+    ],
+    [
+     "her JOB.",
+     "her job."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Wednesday.",
+     "Wednesday."
+    ],
+    [
+     "It was HER",
+     "It was her"
+    ],
+    [
+     "who dented",
+     "who dented"
+    ],
+    [
+     "the CAR.",
+     "the car."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I know.",
+     "I know."
+    ],
+    [
+     "Reading it",
+     "Reading it"
+    ],
+    [
+     "was WRONG.",
+     "was wrong."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I couldn't STOP.",
+     "I couldn't stop."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then I did",
+     "Then I did"
+    ],
+    [
+     "something WORSE.",
+     "something worse."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Under her line,",
+     "Under her line,"
+    ],
+    [
+     "I wrote BACK.",
+     "I wrote back."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Just.",
+     "Just."
+    ],
+    [
+     "Who IS this?",
+     "Who is this?"
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.6,
+   "chunks": []
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The ink STOPPED.",
+     "The ink stopped."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then the ink",
+     "Then the ink"
+    ],
+    [
+     "wrote BACK.",
+     "wrote back."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Who are YOU?",
+     "Who are you?"
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I shut it.",
+     "I shut it."
+    ],
+    [
+     "I didn't SLEEP.",
+     "I didn't sleep."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But every night,",
+     "But every night,"
+    ],
+    [
+     "I opened it",
+     "I opened it"
+    ],
+    [
+     "AGAIN.",
+     "again."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And it kept",
+     "And it kept"
+    ],
+    [
+     "ANSWERING.",
+     "answering."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It knew things",
+     "It knew things"
+    ],
+    [
+     "only FAMILY",
+     "only family"
+    ],
+    [
+     "would know.",
+     "would know."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That I fake",
+     "That I fake"
+    ],
+    [
+     "being ASLEEP",
+     "being asleep"
+    ],
+    [
+     "when Mom checks.",
+     "when Mom checks."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That I hum",
+     "That I hum"
+    ],
+    [
+     "when I'm NERVOUS.",
+     "when I'm nervous."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Thursday,",
+     "Thursday,"
+    ],
+    [
+     "it wrote,",
+     "it wrote,"
+    ],
+    [
+     "stop READING me.",
+     "stop reading me."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I wrote,",
+     "So I wrote,"
+    ],
+    [
+     "stop WRITING",
+     "stop writing"
+    ],
+    [
+     "to me.",
+     "to me."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then it wrote,",
+     "Then it wrote,"
+    ],
+    [
+     "I can",
+     "I can"
+    ],
+    [
+     "HEAR you.",
+     "hear you."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And it",
+     "And it"
+    ],
+    [
+     "WAS right.",
+     "was right."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every time",
+     "Every time"
+    ],
+    [
+     "I said something",
+     "I said something"
+    ],
+    [
+     "out LOUD,",
+     "out loud,"
+    ],
+    [
+     "it wrote",
+     "it wrote"
+    ],
+    [
+     "it DOWN.",
+     "it down."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Friday.",
+     "Friday."
+    ],
+    [
+     "I know you're",
+     "I know you're"
+    ],
+    [
+     "in the HOUSE.",
+     "in the house."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Saturday.",
+     "Saturday."
+    ],
+    [
+     "Please",
+     "Please"
+    ],
+    [
+     "leave me ALONE.",
+     "leave me alone."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Sunday.",
+     "Sunday."
+    ],
+    [
+     "Midnight.",
+     "Midnight."
+    ],
+    [
+     "It wrote,",
+     "It wrote,"
+    ],
+    [
+     "I'm going",
+     "I'm going"
+    ],
+    [
+     "to FIND you.",
+     "to find you."
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And down",
+     "And down"
+    ],
+    [
+     "the HALL,",
+     "the hall,"
+    ],
+    [
+     "a lamp",
+     "a lamp"
+    ],
+    [
+     "clicked ON.",
+     "clicked on."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I thought",
+     "I thought"
+    ],
+    [
+     "the diary",
+     "the diary"
+    ],
+    [
+     "was HAUNTED.",
+     "was haunted."
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I went",
+     "So I went"
+    ],
+    [
+     "to Nina's room",
+     "to Nina's room"
+    ],
+    [
+     "to WARN her.",
+     "to warn her."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her door",
+     "Her door"
+    ],
+    [
+     "was open",
+     "was open"
+    ],
+    [
+     "an INCH.",
+     "an inch."
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She was at",
+     "She was at"
+    ],
+    [
+     "her DESK,",
+     "her desk,"
+    ],
+    [
+     "with the",
+     "with the"
+    ],
+    [
+     "lilac diary,",
+     "lilac diary,"
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "writing,",
+     "Writing,"
+    ],
+    [
+     "with every",
+     "with every"
+    ],
+    [
+     "lamp ON,",
+     "lamp on,"
+    ]
+   ]
+  },
+  {
+   "id": "L44",
+   "who": "narrator",
+   "chunks": [
+    [
+     "and she looked",
+     "And she looked"
+    ],
+    [
+     "TERRIFIED.",
+     "terrified."
+    ]
+   ]
+  },
+  {
+   "id": "L45",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She'd pushed",
+     "She'd pushed"
+    ],
+    [
+     "her dresser",
+     "her dresser"
+    ],
+    [
+     "against the WALL.",
+     "against the wall."
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Over her SHOULDER,",
+     "Over her shoulder,"
+    ],
+    [
+     "I read",
+     "I read"
+    ],
+    [
+     "what she",
+     "what she"
+    ],
+    [
+     "was writing.",
+     "was writing."
+    ]
+   ]
+  },
+  {
+   "id": "L47",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Who ARE you?",
+     "Who are you?"
+    ]
+   ]
+  },
+  {
+   "id": "L48",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The same words",
+     "The same words"
+    ],
+    [
+     "were crawling",
+     "were crawling"
+    ],
+    [
+     "across MINE.",
+     "across mine."
+    ]
+   ]
+  },
+  {
+   "id": "P02",
+   "pause": 0.5,
+   "chunks": []
+  },
+  {
+   "id": "L49",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Our diaries",
+     "Our diaries"
+    ],
+    [
+     "were never HAUNTED.",
+     "were never haunted."
+    ]
+   ]
+  },
+  {
+   "id": "L50",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Grandma's diaries",
+     "Grandma's diaries"
+    ],
+    [
+     "are a PAIR.",
+     "are a pair."
+    ]
+   ]
+  },
+  {
+   "id": "L51",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Whatever you write",
+     "Whatever you write"
+    ],
+    [
+     "in one,",
+     "in one,"
+    ],
+    [
+     "shows up",
+     "shows up"
+    ],
+    [
+     "in the OTHER.",
+     "in the other."
+    ]
+   ]
+  },
+  {
+   "id": "L51a",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In the READER'S",
+     "In the reader's"
+    ],
+    [
+     "own handwriting.",
+     "own handwriting."
+    ]
+   ]
+  },
+  {
+   "id": "L51b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So each",
+     "So each"
+    ],
+    [
+     "of us",
+     "of us"
+    ],
+    [
+     "saw our",
+     "saw our"
+    ],
+    [
+     "OWN handwriting",
+     "own handwriting"
+    ],
+    [
+     "answering BACK.",
+     "answering back."
+    ]
+   ]
+  },
+  {
+   "id": "L51c",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And last week,",
+     "And last week,"
+    ],
+    [
+     "Nina wrote",
+     "Nina wrote"
+    ],
+    [
+     "in hers",
+     "in hers"
+    ],
+    [
+     "for the",
+     "for the"
+    ],
+    [
+     "FIRST time.",
+     "first time."
+    ]
+   ]
+  },
+  {
+   "id": "L52",
+   "who": "narrator",
+   "chunks": [
+    [
+     "For a WEEK,",
+     "For a week,"
+    ],
+    [
+     "I thought",
+     "I thought"
+    ],
+    [
+     "her diary",
+     "her diary"
+    ],
+    [
+     "was answering ME.",
+     "was answering me."
+    ]
+   ]
+  },
+  {
+   "id": "L53",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And she thought",
+     "And she thought"
+    ],
+    [
+     "HER diary",
+     "her diary"
+    ],
+    [
+     "was answering HER.",
+     "was answering her."
+    ]
+   ]
+  },
+  {
+   "id": "L54",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was ME.",
+     "It was me."
+    ],
+    [
+     "And mine",
+     "And mine"
+    ],
+    [
+     "was HER.",
+     "was her."
+    ]
+   ]
+  },
+  {
+   "id": "L55",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We were",
+     "We were"
+    ],
+    [
+     "each other's GHOST.",
+     "each other's ghost."
+    ]
+   ]
+  },
+  {
+   "id": "L56",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I can",
+     "I can"
+    ],
+    [
+     "hear you.",
+     "hear you."
+    ],
+    [
+     "She COULD,",
+     "She could,"
+    ],
+    [
+     "through our WALL.",
+     "through our wall."
+    ]
+   ]
+  },
+  {
+   "id": "L57",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I know you're",
+     "I know you're"
+    ],
+    [
+     "in the house.",
+     "in the house."
+    ],
+    [
+     "We BOTH were.",
+     "We both were."
+    ]
+   ]
+  },
+  {
+   "id": "L58",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then she saw",
+     "Then she saw"
+    ],
+    [
+     "the blue diary",
+     "the blue diary"
+    ],
+    [
+     "in my HANDS.",
+     "in my hands."
+    ]
+   ]
+  },
+  {
+   "id": "L59",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And she read",
+     "And she read"
+    ],
+    [
+     "the last thing",
+     "the last thing"
+    ],
+    [
+     "I'd WRITTEN.",
+     "I'd written."
+    ]
+   ]
+  },
+  {
+   "id": "L60",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I miss",
+     "I miss"
+    ],
+    [
+     "my SISTER.",
+     "my sister."
+    ]
+   ]
+  },
+  {
+   "id": "L61",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She didn't",
+     "She didn't"
+    ],
+    [
+     "say ANYTHING.",
+     "say anything."
+    ],
+    [
+     "She just LAUGHED,",
+     "She just laughed,"
+    ]
+   ]
+  },
+  {
+   "id": "L62",
+   "who": "narrator",
+   "chunks": [
+    [
+     "and pushed",
+     "And pushed"
+    ],
+    [
+     "her diary",
+     "her diary"
+    ],
+    [
+     "across the DESK.",
+     "across the desk."
+    ]
+   ]
+  },
+  {
+   "id": "L63",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her last",
+     "Her last"
+    ],
+    [
+     "line said,",
+     "line said,"
+    ],
+    [
+     "I miss",
+     "I miss"
+    ],
+    [
+     "my BROTHER.",
+     "my brother."
+    ]
+   ]
+  },
+  {
+   "id": "L64",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She said",
+     "She said"
+    ],
+    [
+     "she'd almost",
+     "she'd almost"
+    ],
+    [
+     "thrown hers",
+     "thrown hers"
+    ],
+    [
+     "in the TRASH.",
+     "in the trash."
+    ]
+   ]
+  },
+  {
+   "id": "L65",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So had I.",
+     "So had I."
+    ]
+   ]
+  },
+  {
+   "id": "L66",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We talked",
+     "We talked"
+    ],
+    [
+     "till three A.M.",
+     "till three A.M."
+    ],
+    [
+     "Out LOUD.",
+     "Out loud."
+    ]
+   ]
+  },
+  {
+   "id": "L67",
+   "who": "narrator",
+   "chunks": [
+    [
+     "About the CAR.",
+     "About the car."
+    ],
+    [
+     "About EVERYTHING.",
+     "About everything."
+    ]
+   ]
+  },
+  {
+   "id": "L68",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Now we write",
+     "Now we write"
+    ],
+    [
+     "dumb notes",
+     "dumb notes"
+    ],
+    [
+     "all day.",
+     "all day."
+    ]
+   ]
+  },
+  {
+   "id": "L69",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But last NIGHT,",
+     "But last night,"
+    ],
+    [
+     "under both",
+     "under both"
+    ],
+    [
+     "our lines,",
+     "our lines,"
+    ]
+   ]
+  },
+  {
+   "id": "L70",
+   "who": "narrator",
+   "chunks": [
+    [
+     "a THIRD hand",
+     "A third hand"
+    ],
+    [
+     "wrote.",
+     "wrote."
+    ]
+   ]
+  },
+  {
+   "id": "L71",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Grandma",
+     "Grandma"
+    ],
+    [
+     "made THREE.",
+     "made three."
+    ]
+   ]
+  },
+  {
+   "id": "L72",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We still",
+     "We still"
+    ],
+    [
+     "don't know",
+     "don't know"
+    ],
+    [
+     "who has",
+     "who has"
+    ],
+    [
+     "the other ONE.",
+     "the other one."
+    ]
+   ]
+  },
+  {
+   "id": "L73",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So careful",
+     "So careful"
+    ],
+    [
+     "what you WRITE.",
+     "what you write."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      -1.05,
+      1.5,
+      1.4
+     ],
+     [
+      -0.46,
+      1.5,
+      0.78
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -0.83,
+      1.5,
+      1.12
+     ],
+     [
+      -0.46,
+      1.5,
+      0.78
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "macro push on the open blue diary, lilac ink crawling"
+  },
+  {
+   "id": "S02",
+   "cam": [
+    [
+     0,
+     [
+      -1.2,
+      1.5,
+      1.55
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.8,
+      1.5,
+      1.45
+     ],
+     [
+      -1.25,
+      1.5,
+      1.32
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me at the desk, guilty, glancing at the camera as if caught",
+   "at": "L02"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      30.05,
+      -0.95,
+      1.22
+     ],
+     [
+      30.0,
+      0.0,
+      0.84
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      30.02,
+      -0.7,
+      1.12
+     ],
+     [
+      30.0,
+      0.0,
+      0.84
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "two wrapped diaries on a bright gift table, lilac and blue, side by side",
+   "at": "L03"
+  },
+  {
+   "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      30.12,
+      -0.34,
+      0.99
+     ],
+     [
+      29.86,
+      0.0,
+      0.8
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      30.0,
+      -0.3,
+      0.97
+     ],
+     [
+      29.86,
+      0.0,
+      0.8
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Nina's is LILAC: the lilac diary, its clasp catching the light",
+   "at": "L04"
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      30.0,
+      -0.34,
+      0.99
+     ],
+     [
+      30.14,
+      0.0,
+      0.8
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      30.13,
+      -0.3,
+      0.97
+     ],
+     [
+      30.14,
+      0.0,
+      0.8
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Mine is BLUE: the blue diary",
+   "at": "L04.1"
+  },
+  {
+   "id": "S06",
+   "cam": [
+    [
+     0,
+     [
+      29.98,
+      -0.28,
+      0.94
+     ],
+     [
+      30.0,
+      0.0,
+      0.83
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      30.0,
+      -0.2,
+      0.9
+     ],
+     [
+      30.0,
+      0.0,
+      0.83
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "the two clasps touching, a tiny glint between them",
+   "at": "L05"
+  },
+  {
+   "id": "S07",
+   "cam": [
+    [
+     0,
+     [
+      -3.2,
+      3.1,
+      1.35
+     ],
+     [
+      -3.2,
+      4.1,
+      0.95
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      -3.2,
+      3.5,
+      1.2
+     ],
+     [
+      -3.2,
+      4.1,
+      0.9
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "my drawer sliding open, the blue diary inside, dust on it; a framed bookshelf photo on the wall above",
+   "at": "L06"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      3.6,
+      3.0,
+      1.1
+     ],
+     [
+      3.6,
+      4.2,
+      0.95
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Neither of us: the lilac diary on Nina's shelf, dusty",
+   "at": "L06a"
+  },
+  {
+   "id": "S09",
+   "cam": [
+    [
+     0,
+     [
+      -3.2,
+      3.2,
+      1.2
+     ],
+     [
+      -3.2,
+      4.15,
+      0.78
+     ],
+     38
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "ever WROTE in them: the blue one in my drawer, dusty",
+   "at": "L06a.1"
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      -1.5,
+      -0.7,
+      1.45
+     ],
+     [
+      1.6,
+      -0.45,
+      1.4
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      -1.2,
+      -0.7,
+      1.45
+     ],
+     [
+      1.6,
+      -0.45,
+      1.4
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "across the hall: Nina in her lilac sweater, annoyed, at her door",
+   "at": "L07"
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      1.2,
+      -0.7,
+      1.45
+     ],
+     [
+      -1.6,
+      -0.45,
+      1.4
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      1.0,
+      -0.7,
+      1.45
+     ],
+     [
+      -1.6,
+      -0.45,
+      1.4
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "I'm her BROTHER: me at my door",
+   "at": "L07.3"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      -3.9,
+      -1.7,
+      1.2
+     ],
+     [
+      0.0,
+      -0.3,
+      1.2
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -3.6,
+      -1.7,
+      1.2
+     ],
+     [
+      0.0,
+      -0.3,
+      1.2
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "the hall between us",
+   "at": "L08"
+  },
+  {
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      1.0,
+      -1.2,
+      1.5
+     ],
+     [
+      1.6,
+      0.0,
+      1.4
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      1.0,
+      -1.1,
+      1.5
+     ],
+     [
+      1.6,
+      0.0,
+      1.4
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "her door slamming",
+   "at": "L09"
+  },
+  {
+   "id": "S14",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      -1.45,
+      1.2
+     ],
+     [
+      0.0,
+      -2.0,
+      0.9
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.2,
+      -1.5,
+      1.15
+     ],
+     [
+      0.0,
+      -2.0,
+      0.9
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "car keys on the hall table",
+   "at": "L09.1"
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.0,
+      1.3
+     ],
+     [
+      0.0,
+      -2.0,
+      0.95
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      0.0,
+      -1.2,
+      1.2
+     ],
+     [
+      0.0,
+      -2.0,
+      0.95
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "two hands reaching for the keys (cut before any grip)",
+   "at": "L09.2"
+  },
+  {
+   "id": "S16",
+   "cam": [
+    [
+     0,
+     [
+      -2.4,
+      3.6,
+      1.2
+     ],
+     [
+      -0.5,
+      3.85,
+      0.8
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -2.2,
+      3.4,
+      1.25
+     ],
+     [
+      -0.5,
+      3.85,
+      0.8
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me on my bed, ear near the wall, annoyed, her keyboard tapping through it",
+   "at": "L09a"
+  },
+  {
+   "id": "S17",
+   "cam": [
+    [
+     0,
+     [
+      -1.3,
+      1.5,
+      1.35
+     ],
+     [
+      -0.46,
+      1.5,
+      0.78
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      -1.0,
+      1.5,
+      1.15
+     ],
+     [
+      -0.46,
+      1.5,
+      0.78
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "the blue diary on my desk, falling open by itself, a line of lilac ink appearing",
+   "at": "L10"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      1.5,
+      1.2
+     ],
+     [
+      -0.46,
+      1.5,
+      0.78
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -0.85,
+      1.5,
+      1.0
+     ],
+     [
+      -0.46,
+      1.5,
+      0.78
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "the line of ink appearing, close",
+   "at": "L10.2"
+  },
+  {
+   "id": "S19",
+   "cam": [
+    [
+     0,
+     [
+      -0.95,
+      1.5,
+      0.98
+     ],
+     [
+      -0.46,
+      1.52,
+      0.8
+     ],
+     55
+    ],
+    [
+     1,
+     [
+      -0.78,
+      1.5,
+      0.92
+     ],
+     [
+      -0.46,
+      1.52,
+      0.8
+     ],
+     55
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "close: lilac ink in my own blocky scribble style",
+   "at": "L11"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      1.7,
+      0.95
+     ],
+     [
+      -0.5,
+      1.7,
+      0.8
+     ],
+     55
+    ],
+    [
+     1,
+     [
+      -0.7,
+      1.64,
+      0.9
+     ],
+     [
+      -0.5,
+      1.64,
+      0.8
+     ],
+     55
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "the ink moving, letter by letter",
+   "at": "L12"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      -0.62,
+      1.45,
+      0.88
+     ],
+     [
+      -0.46,
+      1.45,
+      0.79
+     ],
+     60
+    ],
+    [
+     1,
+     [
+      -0.55,
+      1.43,
+      0.85
+     ],
+     [
+      -0.46,
+      1.43,
+      0.79
+     ],
+     60
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "extreme close on the ink crawling",
+   "at": "L13"
+  },
+  {
+   "id": "S22",
+   "cam": [
+    [
+     0,
+     [
+      88.8,
+      -1.6,
+      1.3
+     ],
+     [
+      90.0,
+      0.2,
+      1.3
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      89.1,
+      -1.5,
+      1.3
+     ],
+     [
+      90.0,
+      0.2,
+      1.3
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Tuesday. She hates her JOB: Nina at work, tired, at a counter",
+   "at": "L14"
+  },
+  {
+   "id": "S23",
+   "cam": [
+    [
+     0,
+     [
+      59.0,
+      -2.1,
+      0.75
+     ],
+     [
+      60.0,
+      0.0,
+      0.7
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      59.3,
+      -1.9,
+      0.78
+     ],
+     [
+      60.0,
+      0.0,
+      0.7
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "the family car's dented door",
+   "at": "L15"
+  },
+  {
+   "id": "S24",
+   "cam": [
+    [
+     0,
+     [
+      59.6,
+      -2.3,
+      1.45
+     ],
+     [
+      59.95,
+      -1.6,
+      1.4
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me stunned, then trying not to laugh",
+   "at": "L15.1"
+  },
+  {
+   "id": "S25",
+   "cam": [
+    [
+     0,
+     [
+      -0.2,
+      1.5,
+      1.55
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.5,
+      1.5,
+      1.5
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me, guilty, hand on the cover",
+   "at": "L16"
+  },
+  {
+   "id": "S26",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      1.1,
+      1.0
+     ],
+     [
+      -0.5,
+      1.5,
+      0.8
+     ],
+     42
+    ],
+    [
+     1,
+     [
+      -0.85,
+      1.3,
+      0.95
+     ],
+     [
+      -0.5,
+      1.5,
+      0.8
+     ],
+     42
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me turning the page anyway",
+   "at": "L17"
+  },
+  {
+   "id": "S27",
+   "cam": [
+    [
+     0,
+     [
+      -0.9,
+      1.3,
+      1.0
+     ],
+     [
+      -0.46,
+      1.5,
+      0.82
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.76,
+      1.36,
+      0.92
+     ],
+     [
+      -0.46,
+      1.5,
+      0.82
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "my blue pen over the page",
+   "at": "L18"
+  },
+  {
+   "id": "S28",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      1.5,
+      0.98
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.66,
+      1.5,
+      0.9
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "my blue line appearing under hers",
+   "at": "L19"
+  },
+  {
+   "id": "S29",
+   "cam": [
+    [
+     0,
+     [
+      -0.72,
+      1.46,
+      0.9
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     55
+    ],
+    [
+     1,
+     [
+      -0.6,
+      1.46,
+      0.86
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     55
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "close on my short blue line",
+   "at": "L20"
+  },
+  {
+   "id": "S30",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      1.5,
+      1.05
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -0.7,
+      1.5,
+      0.98
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "the drop: the page, nothing moving",
+   "at": "P01"
+  },
+  {
+   "id": "S31",
+   "cam": [
+    [
+     0,
+     [
+      -0.9,
+      1.5,
+      1.2
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      -0.72,
+      1.5,
+      1.0
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "The ink STOPPED: the page, still",
+   "at": "L21"
+  },
+  {
+   "id": "S32",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      1.4,
+      1.0
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.62,
+      1.42,
+      0.9
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "lilac ink starting again under my line, slower",
+   "at": "L22"
+  },
+  {
+   "id": "S33",
+   "cam": [
+    [
+     0,
+     [
+      -0.7,
+      1.5,
+      0.92
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     55
+    ],
+    [
+     1,
+     [
+      -0.62,
+      1.5,
+      0.88
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     55
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "close on her short line",
+   "at": "L23"
+  },
+  {
+   "id": "S34",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      1.5,
+      1.45
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.55,
+      1.5,
+      1.42
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Who are YOU? me, scared",
+   "at": "L23+0.55"
+  },
+  {
+   "id": "S35",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      1.9,
+      1.15
+     ],
+     [
+      -0.5,
+      1.5,
+      0.8
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      -0.8,
+      1.7,
+      1.0
+     ],
+     [
+      -0.5,
+      1.5,
+      0.8
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "I shut it: snapping it shut",
+   "at": "L24"
+  },
+  {
+   "id": "S36",
+   "cam": [
+    [
+     0,
+     [
+      -2.5,
+      2.2,
+      1.7
+     ],
+     [
+      -1.2,
+      3.8,
+      0.85
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -2.2,
+      2.4,
+      1.6
+     ],
+     [
+      -1.2,
+      3.8,
+      0.85
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "I didn't SLEEP: lying awake",
+   "at": "L24.1"
+  },
+  {
+   "id": "S37",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      1.9,
+      1.2
+     ],
+     [
+      -0.46,
+      1.5,
+      0.78
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      -0.9,
+      1.8,
+      1.05
+     ],
+     [
+      -0.46,
+      1.5,
+      0.78
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "night after night: the diary opening on my desk, lamp-lit insert",
+   "at": "L25"
+  },
+  {
+   "id": "S38",
+   "cam": [
+    [
+     0,
+     [
+      -0.7,
+      1.2,
+      1.0
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -0.6,
+      1.3,
+      0.92
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "insert two",
+   "at": "L25.1"
+  },
+  {
+   "id": "S39",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      1.9,
+      1.2
+     ],
+     [
+      -1.2,
+      1.5,
+      1.2
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.5,
+      1.8,
+      1.2
+     ],
+     [
+      -1.2,
+      1.5,
+      1.2
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "insert three",
+   "at": "L25.2"
+  },
+  {
+   "id": "S40",
+   "cam": [
+    [
+     0,
+     [
+      -0.75,
+      1.5,
+      0.96
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.6,
+      1.5,
+      0.9
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "it kept ANSWERING: the page, the tally ticks up",
+   "at": "L26"
+  },
+  {
+   "id": "S41",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      1.9,
+      1.45
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.55,
+      1.7,
+      1.4
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "lilac ink filling a line fast. Me curious",
+   "at": "L27"
+  },
+  {
+   "id": "S42",
+   "cam": [
+    [
+     0,
+     [
+      -0.78,
+      1.55,
+      0.95
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     50
+    ],
+    [
+     1,
+     [
+      -0.62,
+      1.52,
+      0.88
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     50
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "only FAMILY would know: the line",
+   "at": "L27.1"
+  },
+  {
+   "id": "S43",
+   "cam": [
+    [
+     0,
+     [
+      -3.4,
+      2.4,
+      1.4
+     ],
+     [
+      -1.3,
+      3.8,
+      0.8
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -3.0,
+      2.5,
+      1.35
+     ],
+     [
+      -1.3,
+      3.8,
+      0.8
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me in bed, eyes shut tight, Mom's face lit in the doorway, then she leaves",
+   "at": "L28"
+  },
+  {
+   "id": "S44",
+   "cam": [
+    [
+     0,
+     [
+      -1.6,
+      1.6,
+      1.4
+     ],
+     [
+      -1.6,
+      0.0,
+      1.35
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -1.6,
+      1.3,
+      1.4
+     ],
+     [
+      -1.6,
+      0.0,
+      1.35
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Mom checks, face lit",
+   "at": "L28.2"
+  },
+  {
+   "id": "S45",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      1.9,
+      1.5
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.6,
+      1.7,
+      1.45
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me humming at my desk, worried",
+   "at": "L29"
+  },
+  {
+   "id": "S46",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      1.5,
+      0.98
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.64,
+      1.5,
+      0.9
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "Thursday: lilac ink, bigger letters",
+   "at": "L30"
+  },
+  {
+   "id": "S47",
+   "cam": [
+    [
+     0,
+     [
+      -0.78,
+      1.3,
+      0.96
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.62,
+      1.34,
+      0.9
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "my blue line, fast",
+   "at": "L31"
+  },
+  {
+   "id": "S48",
+   "cam": [
+    [
+     0,
+     [
+      -0.35,
+      1.9,
+      1.5
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.65,
+      1.8,
+      1.45
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "lilac ink, one short line. Me scared, looking at my wall",
+   "at": "L32"
+  },
+  {
+   "id": "S49",
+   "cam": [
+    [
+     0,
+     [
+      -0.55,
+      1.5,
+      1.5
+     ],
+     [
+      -1.25,
+      1.5,
+      1.36
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      -0.8,
+      1.5,
+      1.45
+     ],
+     [
+      -1.25,
+      1.5,
+      1.38
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "my mouth shut tight",
+   "at": "L33"
+  },
+  {
+   "id": "S50",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      1.9,
+      1.45
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.7,
+      1.7,
+      1.4
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me whispering, and the lilac ink writing at the same time",
+   "at": "L34"
+  },
+  {
+   "id": "S51",
+   "cam": [
+    [
+     0,
+     [
+      -0.78,
+      1.5,
+      0.97
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     48
+    ],
+    [
+     1,
+     [
+      -0.62,
+      1.5,
+      0.9
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     48
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "out LOUD, it wrote it DOWN",
+   "at": "L34.2"
+  },
+  {
+   "id": "S52",
+   "cam": [
+    [
+     0,
+     [
+      -0.74,
+      1.5,
+      0.95
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     52
+    ],
+    [
+     1,
+     [
+      -0.6,
+      1.5,
+      0.88
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     52
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "lilac ink, pressed hard into the page",
+   "at": "L35"
+  },
+  {
+   "id": "S53",
+   "cam": [
+    [
+     0,
+     [
+      -0.74,
+      1.5,
+      0.95
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     52
+    ],
+    [
+     1,
+     [
+      -0.6,
+      1.5,
+      0.88
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     52
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "lilac ink, shaky",
+   "at": "L36"
+  },
+  {
+   "id": "S54",
+   "cam": [
+    [
+     0,
+     [
+      -0.55,
+      0.7,
+      1.0
+     ],
+     [
+      -0.45,
+      0.5,
+      0.78
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      -0.5,
+      0.78,
+      0.98
+     ],
+     [
+      -0.45,
+      0.5,
+      0.78
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "the clock glyph on my nightstand at 12:00",
+   "at": "L37"
+  },
+  {
+   "id": "S55",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      1.5,
+      1.0
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.62,
+      1.5,
+      0.9
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "lilac ink racing across the page",
+   "at": "L37.2"
+  },
+  {
+   "id": "S56",
+   "cam": [
+    [
+     0,
+     [
+      -1.75,
+      0.55,
+      1.3
+     ],
+     [
+      1.6,
+      -1.4,
+      1.0
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -1.7,
+      0.4,
+      1.28
+     ],
+     [
+      1.6,
+      -1.4,
+      1.0
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "my door ajar: down the hall, a warm lamp clicking on under Nina's door",
+   "at": "L38"
+  },
+  {
+   "id": "S57",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      0.9,
+      1.5
+     ],
+     [
+      -1.6,
+      0.0,
+      1.3
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -1.0,
+      0.8,
+      1.45
+     ],
+     [
+      -1.6,
+      0.0,
+      1.3
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me holding the blue diary to my chest, scared",
+   "at": "L39"
+  },
+  {
+   "id": "S58",
+   "cam": [
+    [
+     0,
+     [
+      -2.9,
+      -1.7,
+      1.2
+     ],
+     [
+      0.0,
+      -0.5,
+      1.0
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      -2.2,
+      -1.7,
+      1.2
+     ],
+     [
+      0.6,
+      -0.5,
+      1.0
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me crossing the hall in socks",
+   "at": "L40"
+  },
+  {
+   "id": "S59",
+   "cam": [
+    [
+     0,
+     [
+      1.5,
+      -1.0,
+      1.35
+     ],
+     [
+      1.78,
+      -0.1,
+      1.2
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      1.58,
+      -0.8,
+      1.3
+     ],
+     [
+      1.78,
+      -0.1,
+      1.2
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "her door open an inch, lamplight in the gap",
+   "at": "L41"
+  },
+  {
+   "id": "S60",
+   "cam": [
+    [
+     0,
+     [
+      1.64,
+      -0.1,
+      1.45
+     ],
+     [
+      1.2,
+      1.5,
+      1.2
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      1.62,
+      0.0,
+      1.45
+     ],
+     [
+      1.2,
+      1.5,
+      1.2
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "through the gap: Nina at her desk, the lilac diary open",
+   "at": "L42"
+  },
+  {
+   "id": "S61",
+   "cam": [
+    [
+     0,
+     [
+      3.8,
+      0.4,
+      1.8
+     ],
+     [
+      1.2,
+      1.9,
+      1.0
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      3.6,
+      0.5,
+      1.75
+     ],
+     [
+      1.2,
+      1.9,
+      1.0
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "her room: every lamp on, three of them",
+   "at": "L43"
+  },
+  {
+   "id": "S62",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      1.5,
+      1.5
+     ],
+     [
+      1.25,
+      1.5,
+      1.28
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.4,
+      1.5,
+      1.45
+     ],
+     [
+      1.25,
+      1.5,
+      1.3
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Nina close, terrified, writing. Cover frame",
+   "at": "L44"
+  },
+  {
+   "id": "S63",
+   "cam": [
+    [
+     0,
+     [
+      2.2,
+      1.0,
+      1.4
+     ],
+     [
+      0.4,
+      2.7,
+      0.8
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      2.0,
+      1.2,
+      1.35
+     ],
+     [
+      0.4,
+      2.7,
+      0.8
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "her dresser shoved against our shared wall",
+   "at": "L45"
+  },
+  {
+   "id": "S64",
+   "cam": [
+    [
+     0,
+     [
+      1.95,
+      1.75,
+      1.7
+     ],
+     [
+      0.46,
+      1.5,
+      0.78
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      1.7,
+      1.65,
+      1.45
+     ],
+     [
+      0.46,
+      1.5,
+      0.78
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "over her shoulder: her pen moving",
+   "at": "L46"
+  },
+  {
+   "id": "S65",
+   "cam": [
+    [
+     0,
+     [
+      0.78,
+      1.5,
+      0.98
+     ],
+     [
+      0.46,
+      1.5,
+      0.8
+     ],
+     50
+    ],
+    [
+     1,
+     [
+      0.62,
+      1.5,
+      0.9
+     ],
+     [
+      0.46,
+      1.5,
+      0.8
+     ],
+     50
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "her lilac line close",
+   "at": "L47"
+  },
+  {
+   "id": "S66",
+   "cam": [
+    [
+     0,
+     [
+      -1.2,
+      3.0,
+      1.4
+     ],
+     [
+      -1.6,
+      0.0,
+      1.2
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      -1.1,
+      2.2,
+      1.3
+     ],
+     [
+      -1.6,
+      0.0,
+      1.2
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "the blue diary in my hands, the same line crawling across it. Both insets now",
+   "at": "L48"
+  },
+  {
+   "id": "S67",
+   "cam": [
+    [
+     0,
+     [
+      120.0,
+      -0.5,
+      1.35
+     ],
+     [
+      120.0,
+      0.0,
+      0.8
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      120.0,
+      -0.35,
+      1.15
+     ],
+     [
+      120.0,
+      0.0,
+      0.8
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "the beat: everything stops, the two diaries side by side",
+   "at": "P02"
+  },
+  {
+   "id": "S68",
+   "cam": [
+    [
+     0,
+     [
+      120.0,
+      -0.5,
+      1.2
+     ],
+     [
+      120.0,
+      0.0,
+      0.8
+     ],
+     38
+    ],
+    [
+     1,
+     [
+      120.0,
+      -0.34,
+      1.0
+     ],
+     [
+      120.0,
+      0.0,
+      0.8
+     ],
+     38
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "Our diaries were never HAUNTED: identical lines",
+   "at": "L49"
+  },
+  {
+   "id": "S69",
+   "cam": [
+    [
+     0,
+     [
+      29.98,
+      -0.28,
+      0.94
+     ],
+     [
+      30.0,
+      0.0,
+      0.83
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      30.0,
+      -0.2,
+      0.9
+     ],
+     [
+      30.0,
+      0.0,
+      0.83
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "the two clasps glinting together (S05's framing); two lilac strokes scratched in Nina's clasp",
+   "at": "L50"
+  },
+  {
+   "id": "S70",
+   "cam": [
+    [
+     0,
+     [
+      120.0,
+      -0.45,
+      1.15
+     ],
+     [
+      120.0,
+      0.0,
+      0.8
+     ],
+     38
+    ],
+    [
+     1,
+     [
+      120.0,
+      -0.32,
+      1.0
+     ],
+     [
+      120.0,
+      0.0,
+      0.8
+     ],
+     38
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "split screen: a word in one, the same word in the other",
+   "at": "L51"
+  },
+  {
+   "id": "S71",
+   "cam": [
+    [
+     0,
+     [
+      119.86,
+      -0.25,
+      0.98
+     ],
+     [
+      119.86,
+      0.0,
+      0.8
+     ],
+     55
+    ],
+    [
+     1,
+     [
+      120.14,
+      -0.25,
+      0.98
+     ],
+     [
+      120.14,
+      0.0,
+      0.8
+     ],
+     55
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "in the READER'S own handwriting: my blocky scribble on the blue page, her loopy scribble on the lilac",
+   "at": "L51.2"
+  },
+  {
+   "id": "S72",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      1.5,
+      1.6
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me earlier, staring at my own scribble style",
+   "at": "L51b"
+  },
+  {
+   "id": "S73",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      1.5,
+      1.6
+     ],
+     [
+      1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Nina earlier, staring at hers",
+   "at": "L51b.2"
+  },
+  {
+   "id": "S74",
+   "cam": [
+    [
+     0,
+     [
+      1.9,
+      1.0,
+      1.55
+     ],
+     [
+      0.46,
+      1.5,
+      0.8
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      1.5,
+      1.2,
+      1.45
+     ],
+     [
+      0.46,
+      1.5,
+      0.8
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Nina last week, opening the lilac diary for the first time, blowing dust off it",
+   "at": "L51c"
+  },
+  {
+   "id": "S75",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      1.7,
+      1.45
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.6,
+      1.6,
+      1.4
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me, earlier, at my desk reading (S27's framing)",
+   "at": "L52"
+  },
+  {
+   "id": "S76",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      1.7,
+      1.45
+     ],
+     [
+      1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.6,
+      1.6,
+      1.4
+     ],
+     [
+      1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Nina, earlier, at her desk reading, scared",
+   "at": "L53"
+  },
+  {
+   "id": "S77",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      1.5,
+      1.4
+     ],
+     [
+      0.0,
+      1.5,
+      0.8
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.0,
+      1.5,
+      1.3
+     ],
+     [
+      0.0,
+      1.5,
+      0.8
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "split: my blue pen, her lilac pen, writing at the same moment",
+   "at": "L54"
+  },
+  {
+   "id": "S78",
+   "cam": [
+    [
+     0,
+     [
+      -0.15,
+      -1.6,
+      1.55
+     ],
+     [
+      0.0,
+      0.0,
+      1.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.1,
+      -1.4,
+      1.5
+     ],
+     [
+      0.0,
+      0.0,
+      1.45
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me and Nina face to face in her doorway, both stunned",
+   "at": "L55"
+  },
+  {
+   "id": "S79",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      1.5,
+      9.0
+     ],
+     [
+      0.0,
+      1.5,
+      0.0
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.0,
+      1.5,
+      7.6
+     ],
+     [
+      0.0,
+      1.5,
+      0.0
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "top-down floor plan: her desk and mine on either side of one wall",
+   "at": "L56"
+  },
+  {
+   "id": "S80",
+   "cam": [
+    [
+     0,
+     [
+      -0.6,
+      0.0,
+      1.5
+     ],
+     [
+      -0.1,
+      1.5,
+      1.2
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.5,
+      0.2,
+      1.45
+     ],
+     [
+      -0.1,
+      1.5,
+      1.2
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "She COULD, through our WALL",
+   "at": "L56.3"
+  },
+  {
+   "id": "S81",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.7,
+      1.4
+     ],
+     [
+      0.0,
+      0.0,
+      1.4
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      -1.5,
+      1.4
+     ],
+     [
+      0.0,
+      0.0,
+      1.4
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "both of us in the hall, the night before, either side of a shut door",
+   "at": "L57"
+  },
+  {
+   "id": "S82",
+   "cam": [
+    [
+     0,
+     [
+      -0.5,
+      3.2,
+      1.35
+     ],
+     [
+      0.0,
+      0.5,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.4,
+      2.8,
+      1.35
+     ],
+     [
+      0.0,
+      0.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "then she saw the blue diary in my hands",
+   "at": "L58"
+  },
+  {
+   "id": "S83",
+   "cam": [
+    [
+     0,
+     [
+      -0.1,
+      0.9,
+      1.4
+     ],
+     [
+      0.8,
+      0.45,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.1,
+      0.75,
+      1.35
+     ],
+     [
+      0.8,
+      0.45,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "she reads it",
+   "at": "L59"
+  },
+  {
+   "id": "S84",
+   "cam": [
+    [
+     0,
+     [
+      -0.6,
+      0.0,
+      1.1
+     ],
+     [
+      -0.5,
+      0.2,
+      1.05
+     ],
+     50
+    ],
+    [
+     1,
+     [
+      -0.5,
+      0.0,
+      1.05
+     ],
+     [
+      -0.5,
+      0.2,
+      1.05
+     ],
+     50
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "my blue line close",
+   "at": "L60"
+  },
+  {
+   "id": "S85",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      1.5,
+      1.5
+     ],
+     [
+      0.9,
+      0.45,
+      1.35
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.3,
+      1.4,
+      1.45
+     ],
+     [
+      0.9,
+      0.45,
+      1.35
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Nina laughs",
+   "at": "L61"
+  },
+  {
+   "id": "S86",
+   "cam": [
+    [
+     0,
+     [
+      1.6,
+      0.8,
+      1.3
+     ],
+     [
+      0.5,
+      1.5,
+      0.8
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      1.3,
+      0.9,
+      1.2
+     ],
+     [
+      0.5,
+      1.5,
+      0.8
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "the lilac diary sliding across her desk to me",
+   "at": "L62"
+  },
+  {
+   "id": "S87",
+   "cam": [
+    [
+     0,
+     [
+      -0.6,
+      1.2,
+      1.05
+     ],
+     [
+      -0.3,
+      1.5,
+      0.8
+     ],
+     48
+    ],
+    [
+     1,
+     [
+      -0.5,
+      1.3,
+      0.98
+     ],
+     [
+      -0.3,
+      1.5,
+      0.8
+     ],
+     48
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "her last line close",
+   "at": "L63"
+  },
+  {
+   "id": "S88",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      0.2,
+      1.5
+     ],
+     [
+      -0.6,
+      0.8,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Me soft",
+   "at": "L63.2"
+  },
+  {
+   "id": "S89",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      2.0,
+      1.45
+     ],
+     [
+      1.0,
+      0.9,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.3,
+      1.9,
+      1.4
+     ],
+     [
+      1.0,
+      0.9,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "Nina soft, shrugging at the wastebasket",
+   "at": "L64"
+  },
+  {
+   "id": "S90",
+   "cam": [
+    [
+     0,
+     [
+      -0.1,
+      1.9,
+      1.5
+     ],
+     [
+      -1.0,
+      0.8,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me nodding, laugh",
+   "at": "L65"
+  },
+  {
+   "id": "S91",
+   "cam": [
+    [
+     0,
+     [
+      3.2,
+      0.5,
+      1.5
+     ],
+     [
+      1.4,
+      2.1,
+      0.8
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      3.0,
+      0.7,
+      1.4
+     ],
+     [
+      1.4,
+      2.1,
+      0.8
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "both of us on her floor, lamps on, talking, the clock glyph at 3:00",
+   "at": "L66"
+  },
+  {
+   "id": "S92",
+   "cam": [
+    [
+     0,
+     [
+      2.4,
+      -0.1,
+      0.9
+     ],
+     [
+      1.3,
+      1.2,
+      0.5
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "both laughing, the car keys between us",
+   "at": "L67"
+  },
+  {
+   "id": "S93",
+   "cam": [
+    [
+     0,
+     [
+      0.7,
+      1.2,
+      0.9
+     ],
+     [
+      1.4,
+      2.1,
+      0.2
+     ],
+     38
+    ],
+    [
+     1,
+     [
+      0.8,
+      1.3,
+      0.8
+     ],
+     [
+      1.4,
+      2.1,
+      0.2
+     ],
+     38
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "the car keys on the floor between us",
+   "at": "L67.1"
+  },
+  {
+   "id": "S94",
+   "cam": [
+    [
+     0,
+     [
+      88.8,
+      -1.5,
+      1.3
+     ],
+     [
+      90.0,
+      0.2,
+      1.3
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      89.1,
+      -1.4,
+      1.3
+     ],
+     [
+      90.0,
+      0.2,
+      1.3
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "day: Nina at work with the lilac diary",
+   "at": "L68"
+  },
+  {
+   "id": "S95",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      1.9,
+      1.45
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.6,
+      1.7,
+      1.4
+     ],
+     [
+      -1.25,
+      1.5,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me at my desk with the blue, a doodle crawling across mine",
+   "at": "L68.1"
+  },
+  {
+   "id": "S96",
+   "cam": [
+    [
+     0,
+     [
+      -0.9,
+      1.5,
+      1.2
+     ],
+     [
+      -0.46,
+      1.5,
+      0.78
+     ],
+     38
+    ],
+    [
+     1,
+     [
+      -0.7,
+      1.5,
+      1.0
+     ],
+     [
+      -0.46,
+      1.5,
+      0.78
+     ],
+     38
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "night: the blue diary, both our lines on the page",
+   "at": "L69"
+  },
+  {
+   "id": "S97",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      1.5,
+      1.05
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     42
+    ],
+    [
+     1,
+     [
+      -0.62,
+      1.5,
+      0.92
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     42
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "under them, sea-green ink crawling. Both insets show it",
+   "at": "L70"
+  },
+  {
+   "id": "S98",
+   "cam": [
+    [
+     0,
+     [
+      -3.1,
+      3.6,
+      1.55
+     ],
+     [
+      -3.1,
+      4.38,
+      1.6
+     ],
+     42
+    ],
+    [
+     1,
+     [
+      -3.1,
+      3.9,
+      1.57
+     ],
+     [
+      -3.1,
+      4.38,
+      1.6
+     ],
+     42
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "the framed bookshelf photo on my wall, a sea-green spine among the books",
+   "at": "L71"
+  },
+  {
+   "id": "S99",
+   "cam": [
+    [
+     0,
+     [
+      -0.25,
+      0.9,
+      1.5
+     ],
+     [
+      -1.0,
+      1.5,
+      1.2
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      -0.5,
+      1.0,
+      1.45
+     ],
+     [
+      -1.0,
+      1.5,
+      1.2
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "me and Nina side by side at my desk, worried",
+   "at": "L72"
+  },
+  {
+   "id": "S100",
+   "cam": [
+    [
+     0,
+     [
+      -0.9,
+      1.5,
+      1.15
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      -0.75,
+      1.5,
+      0.97
+     ],
+     [
+      -0.46,
+      1.5,
+      0.8
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "push in on the sea-green ink, then (loop) the blue diary close, S01's framing",
+   "at": "L73"
+  }
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": "L02",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L03",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L07.3",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L07.3",
+    "pos": [
+     -1.6,
+     -0.45,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "angry"
+   },
+   {
+    "at": "L08",
+    "pos": [
+     -1.6,
+     -0.45,
+     0.0
+    ]
+   },
+   {
+    "at": "L08",
+    "pos": [
+     -1.3,
+     -0.5,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "angry"
+   },
+   {
+    "at": "L09",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L09.2",
+    "pos": [
+     -1.3,
+     -0.5,
+     0.0
+    ]
+   },
+   {
+    "at": "L09.2",
+    "pos": [
+     -0.5,
+     -1.65,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     80,
+     80
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "angry"
+   },
+   {
+    "at": "L09a",
+    "pos": [
+     -0.5,
+     -1.65,
+     0.0
+    ]
+   },
+   {
+    "at": "L09a",
+    "pos": [
+     -0.55,
+     3.8,
+     0.38
+    ],
+    "blend": 0,
+    "arms": [
+     10,
+     10
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     -60,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "angry"
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -0.55,
+     3.8,
+     0.38
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L10.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L15.1",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L15.1",
+    "pos": [
+     59.95,
+     -1.6,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "wide"
+   },
+   {
+    "at": "L15.1+0.9",
+    "expr": "grin"
+   },
+   {
+    "at": "L16",
+    "pos": [
+     59.95,
+     -1.6,
+     0.0
+    ]
+   },
+   {
+    "at": "L16",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L17",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L17",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     18
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L18",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L23+0.55",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L23+0.55",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "scared"
+   },
+   {
+    "at": "L24",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L24",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     80,
+     80
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "scared"
+   },
+   {
+    "at": "L24.1",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L24.1",
+    "pos": [
+     -1.3,
+     3.8,
+     0.69
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 0,
+    "blink": false,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "wide"
+   },
+   {
+    "at": "L25",
+    "pos": [
+     -1.3,
+     3.8,
+     0.69
+    ]
+   },
+   {
+    "at": "L25",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     14
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L25.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L25.2",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L25.2",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     10
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L26",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L27",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L27",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     12
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "neutral"
+   },
+   {
+    "at": "L27.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L28",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L28",
+    "pos": [
+     -1.3,
+     3.8,
+     0.69
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 0,
+    "blink": false,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "squeeze"
+   },
+   {
+    "at": "L28.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L29",
+    "pos": [
+     -1.3,
+     3.8,
+     0.69
+    ]
+   },
+   {
+    "at": "L29",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     12
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L30",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L32",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L32",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     40,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "scared"
+   },
+   {
+    "at": "L33",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L33",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "squeeze"
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L34.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L39",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L39",
+    "pos": [
+     -1.6,
+     0.1,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "scared"
+   },
+   {
+    "at": "L40",
+    "pos": [
+     -1.6,
+     0.1,
+     0.0
+    ]
+   },
+   {
+    "at": "L40",
+    "pos": [
+     -1.6,
+     -0.5,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "scared"
+   },
+   {
+    "at": "L40+0.3",
+    "pos": [
+     1.0,
+     -0.6
+    ],
+    "yaw": 90,
+    "arms": [
+     70,
+     70
+    ]
+   },
+   {
+    "at": "L41",
+    "pos": [
+     1.0,
+     -0.6
+    ]
+   },
+   {
+    "at": "L41",
+    "pos": [
+     1.0,
+     -0.6,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "scared"
+   },
+   {
+    "at": "L42",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L48",
+    "pos": [
+     1.0,
+     -0.6,
+     0.0
+    ]
+   },
+   {
+    "at": "L48",
+    "pos": [
+     -1.6,
+     0.1,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "wide"
+   },
+   {
+    "at": "P02",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L51b",
+    "pos": [
+     -1.6,
+     0.1,
+     0.0
+    ]
+   },
+   {
+    "at": "L51b",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "scared"
+   },
+   {
+    "at": "L51b.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L52",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L52",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     12
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "neutral"
+   },
+   {
+    "at": "L53",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L55",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L55",
+    "pos": [
+     -0.7,
+     0.35,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "wide"
+   },
+   {
+    "at": "L56",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L56.3",
+    "pos": [
+     -0.7,
+     0.35,
+     0.0
+    ]
+   },
+   {
+    "at": "L56.3",
+    "pos": [
+     -0.45,
+     1.7,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     10,
+     10
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L57",
+    "pos": [
+     -0.45,
+     1.7,
+     0.0
+    ]
+   },
+   {
+    "at": "L57",
+    "pos": [
+     -0.9,
+     -0.1,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "worried"
+   },
+   {
+    "at": "L58",
+    "pos": [
+     -0.9,
+     -0.1,
+     0.0
+    ]
+   },
+   {
+    "at": "L58",
+    "pos": [
+     -0.6,
+     0.45,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L59",
+    "pos": [
+     -0.6,
+     0.45,
+     0.0
+    ]
+   },
+   {
+    "at": "L59",
+    "pos": [
+     -0.6,
+     0.45,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L60",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L63.2",
+    "pos": [
+     -0.6,
+     0.45,
+     0.0
+    ]
+   },
+   {
+    "at": "L63.2",
+    "pos": [
+     -0.6,
+     0.8,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "soft"
+   },
+   {
+    "at": "L64",
+    "pos": [
+     -0.6,
+     0.8,
+     0.0
+    ]
+   },
+   {
+    "at": "L64",
+    "pos": [
+     -0.1,
+     0.9,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "soft"
+   },
+   {
+    "at": "L65",
+    "pos": [
+     -0.1,
+     0.9,
+     0.0
+    ]
+   },
+   {
+    "at": "L65",
+    "pos": [
+     -1.0,
+     0.8,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "laugh"
+   },
+   {
+    "at": "L66",
+    "pos": [
+     -1.0,
+     0.8,
+     0.0
+    ]
+   },
+   {
+    "at": "L66",
+    "pos": [
+     1.4,
+     2.4,
+     -0.0
+    ],
+    "blend": 0,
+    "arms": [
+     20,
+     20
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "laugh"
+   },
+   {
+    "at": "L67",
+    "pos": [
+     1.4,
+     2.4,
+     -0.0
+    ]
+   },
+   {
+    "at": "L67",
+    "pos": [
+     1.4,
+     2.4,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     20,
+     20
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "grin"
+   },
+   {
+    "at": "L67.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L68.1",
+    "pos": [
+     1.4,
+     2.4,
+     0.0
+    ]
+   },
+   {
+    "at": "L68.1",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     10
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "smile"
+   },
+   {
+    "at": "L69",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L72",
+    "pos": [
+     -1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L72",
+    "pos": [
+     -1.25,
+     1.5,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L73",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "nina": [
+   {
+    "at": "L07",
+    "pos": [
+     1.6,
+     -0.45,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     20,
+     20
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "angry"
+   },
+   {
+    "at": "L07.3",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L08",
+    "pos": [
+     1.6,
+     -0.45,
+     0.0
+    ]
+   },
+   {
+    "at": "L08",
+    "pos": [
+     1.3,
+     -0.5,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "angry"
+   },
+   {
+    "at": "L09",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L09.2",
+    "pos": [
+     1.3,
+     -0.5,
+     0.0
+    ]
+   },
+   {
+    "at": "L09.2",
+    "pos": [
+     0.5,
+     -1.65,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     80,
+     80
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "angry"
+   },
+   {
+    "at": "L09a",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L14",
+    "pos": [
+     0.5,
+     -1.65,
+     0.0
+    ]
+   },
+   {
+    "at": "L14",
+    "pos": [
+     90.0,
+     0.2,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     30,
+     30
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "neutral"
+   },
+   {
+    "at": "L15",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L42",
+    "pos": [
+     90.0,
+     0.2,
+     0.0
+    ]
+   },
+   {
+    "at": "L42",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     14
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "terrified"
+   },
+   {
+    "at": "L43",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L43",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     14
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "terrified"
+   },
+   {
+    "at": "L44",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L44",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     14
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "terrified"
+   },
+   {
+    "at": "L45",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L45",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     14
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "terrified"
+   },
+   {
+    "at": "L46",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L46",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     24
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "terrified"
+   },
+   {
+    "at": "L47",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L51b.2",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L51b.2",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "scared"
+   },
+   {
+    "at": "L51c",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L51c",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "neutral"
+   },
+   {
+    "at": "L52",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L53",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L53",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ],
+    "blend": 0,
+    "arms": [
+     66,
+     66
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     12
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "scared"
+   },
+   {
+    "at": "L54",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L55",
+    "pos": [
+     1.25,
+     1.5,
+     -0.2
+    ]
+   },
+   {
+    "at": "L55",
+    "pos": [
+     0.7,
+     0.35,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "wide"
+   },
+   {
+    "at": "L56",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L57",
+    "pos": [
+     0.7,
+     0.35,
+     0.0
+    ]
+   },
+   {
+    "at": "L57",
+    "pos": [
+     0.9,
+     -0.1,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "worried"
+   },
+   {
+    "at": "L58",
+    "pos": [
+     0.9,
+     -0.1,
+     0.0
+    ]
+   },
+   {
+    "at": "L58",
+    "pos": [
+     0.8,
+     0.45,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "wide"
+   },
+   {
+    "at": "L59",
+    "pos": [
+     0.8,
+     0.45,
+     0.0
+    ]
+   },
+   {
+    "at": "L59",
+    "pos": [
+     0.8,
+     0.45,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "soft"
+   },
+   {
+    "at": "L60",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L61",
+    "pos": [
+     0.8,
+     0.45,
+     0.0
+    ]
+   },
+   {
+    "at": "L61",
+    "pos": [
+     0.9,
+     0.45,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "laugh"
+   },
+   {
+    "at": "L62",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L64",
+    "pos": [
+     0.9,
+     0.45,
+     0.0
+    ]
+   },
+   {
+    "at": "L64",
+    "pos": [
+     1.0,
+     0.9,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "soft"
+   },
+   {
+    "at": "L65",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L66",
+    "pos": [
+     1.0,
+     0.9,
+     0.0
+    ]
+   },
+   {
+    "at": "L66",
+    "pos": [
+     1.4,
+     1.8,
+     -0.0
+    ],
+    "blend": 0,
+    "arms": [
+     20,
+     20
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "laugh"
+   },
+   {
+    "at": "L67",
+    "pos": [
+     1.4,
+     1.8,
+     -0.0
+    ]
+   },
+   {
+    "at": "L67",
+    "pos": [
+     1.4,
+     1.8,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     20,
+     20
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": true,
+    "bend": 0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "laugh"
+   },
+   {
+    "at": "L67.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L68",
+    "pos": [
+     1.4,
+     1.8,
+     0.0
+    ]
+   },
+   {
+    "at": "L68",
+    "pos": [
+     90.0,
+     0.2,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     30,
+     30
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smile"
+   },
+   {
+    "at": "L68.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L72",
+    "pos": [
+     90.0,
+     0.2,
+     0.0
+    ]
+   },
+   {
+    "at": "L72",
+    "pos": [
+     -0.75,
+     1.1,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L73",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "mom": [
+   {
+    "at": "L28",
+    "pos": [
+     -1.6,
+     0.0,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "soft"
+   },
+   {
+    "at": "L28.2",
+    "pos": [
+     -1.6,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "at": "L28.2",
+    "pos": [
+     -1.6,
+     0.0,
+     0.0
+    ],
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "sit": false,
+    "bend": 0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "soft"
+   },
+   {
+    "at": "L29",
+    "hidden": true,
+    "blend": 0
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "place",
+   "d": "blue",
+   "to": "desk",
+   "dur": 0.0
+  },
+  {
+   "at": 0,
+   "name": "place",
+   "d": "lilac",
+   "to": "nshelf",
+   "dur": 0.0
+  },
+  {
+   "at": 0,
+   "name": "open",
+   "d": "blue",
+   "to": 1.0,
+   "dur": 0.01
+  },
+  {
+   "at": 0,
+   "name": "hud2",
+   "to": 0,
+   "dur": 0.01
+  },
+  {
+   "at": 0,
+   "name": "clock",
+   "h": 11,
+   "m": 47
+  },
+  {
+   "at": 0,
+   "name": "ink",
+   "d": "blue",
+   "row": 0,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 0.05
+  },
+  {
+   "at": 0,
+   "name": "ink",
+   "d": "blue",
+   "row": 1,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 0.05
+  },
+  {
+   "at": 0.05,
+   "name": "ink",
+   "d": "blue",
+   "row": 2,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 2.0
+  },
+  {
+   "at": "L02",
+   "name": "ink",
+   "d": "blue",
+   "row": 3,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 2.2
+  },
+  {
+   "at": "L03",
+   "name": "ribbon",
+   "on": 1
+  },
+  {
+   "at": "L03",
+   "name": "place",
+   "d": "blue",
+   "to": "gift",
+   "dur": 0.0
+  },
+  {
+   "at": "L03",
+   "name": "place",
+   "d": "lilac",
+   "to": "gift",
+   "dur": 0.0
+  },
+  {
+   "at": "L03",
+   "name": "open",
+   "d": "blue",
+   "to": 0.0,
+   "dur": 0.01
+  },
+  {
+   "at": "L04",
+   "name": "ribbon",
+   "on": 0
+  },
+  {
+   "at": "L05",
+   "name": "place",
+   "d": "blue",
+   "to": "touch",
+   "dur": 0.5
+  },
+  {
+   "at": "L05",
+   "name": "place",
+   "d": "lilac",
+   "to": "touch",
+   "dur": 0.5
+  },
+  {
+   "at": "L05.1+0.2",
+   "name": "glint",
+   "dur": 0.6
+  },
+  {
+   "at": "L06",
+   "name": "place",
+   "d": "blue",
+   "to": "drawer",
+   "dur": 0.0
+  },
+  {
+   "at": "L06",
+   "name": "drawer",
+   "to": 1.0,
+   "dur": 1.0
+  },
+  {
+   "at": "L07",
+   "name": "ndoor",
+   "to": 75,
+   "dur": 0.4
+  },
+  {
+   "at": "L07",
+   "name": "mydoor",
+   "to": 75,
+   "dur": 0.4
+  },
+  {
+   "at": "L09+0.05",
+   "name": "ndoor",
+   "to": 0,
+   "dur": 0.14
+  },
+  {
+   "at": "L09a",
+   "name": "ndoor",
+   "to": 0,
+   "dur": 0.01
+  },
+  {
+   "at": "L10",
+   "name": "inkclear",
+   "d": "blue"
+  },
+  {
+   "at": "L10",
+   "name": "open",
+   "d": "blue",
+   "to": 0.0,
+   "dur": 0.01
+  },
+  {
+   "at": "L10",
+   "name": "place",
+   "d": "blue",
+   "to": "desk",
+   "dur": 0.0
+  },
+  {
+   "at": "L10+0.3",
+   "name": "open",
+   "d": "blue",
+   "to": 1.0,
+   "dur": 0.7
+  },
+  {
+   "at": "L10.2",
+   "name": "ink",
+   "d": "blue",
+   "row": 0,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.2
+  },
+  {
+   "at": "L11",
+   "name": "ink",
+   "d": "blue",
+   "row": 1,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.4
+  },
+  {
+   "at": "L12",
+   "name": "ink",
+   "d": "blue",
+   "row": 2,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.6
+  },
+  {
+   "at": "L13",
+   "name": "ink",
+   "d": "blue",
+   "row": 3,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 2.0
+  },
+  {
+   "at": "L17",
+   "name": "pageturn"
+  },
+  {
+   "at": "L18",
+   "name": "pen",
+   "d": "blue",
+   "on": 1
+  },
+  {
+   "at": "L19",
+   "name": "ink",
+   "d": "blue",
+   "row": 4,
+   "c": "blue",
+   "to": 1.0,
+   "dur": 1.5
+  },
+  {
+   "at": "L20",
+   "name": "pen",
+   "d": "blue",
+   "on": 0
+  },
+  {
+   "at": "L22",
+   "name": "answer"
+  },
+  {
+   "at": "L22.1",
+   "name": "ink",
+   "d": "blue",
+   "row": 5,
+   "c": "lilac",
+   "to": 0.55,
+   "dur": 2.2
+  },
+  {
+   "at": "L23",
+   "name": "ink",
+   "d": "blue",
+   "row": 5,
+   "c": "lilac",
+   "to": 0.62,
+   "dur": 0.5
+  },
+  {
+   "at": "L24",
+   "name": "open",
+   "d": "blue",
+   "to": 0.0,
+   "dur": 0.2
+  },
+  {
+   "at": "L25",
+   "name": "clock",
+   "h": 0,
+   "m": 20
+  },
+  {
+   "at": "L25",
+   "name": "open",
+   "d": "blue",
+   "to": 1.0,
+   "dur": 0.3
+  },
+  {
+   "at": "L25.1",
+   "name": "ink",
+   "d": "blue",
+   "row": 6,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.4
+  },
+  {
+   "at": "L25.2",
+   "name": "inkclear",
+   "d": "blue"
+  },
+  {
+   "at": "L25.2",
+   "name": "ink",
+   "d": "blue",
+   "row": 0,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.0
+  },
+  {
+   "at": "L26",
+   "name": "answer"
+  },
+  {
+   "at": "L26",
+   "name": "ink",
+   "d": "blue",
+   "row": 1,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.4
+  },
+  {
+   "at": "L27",
+   "name": "answer"
+  },
+  {
+   "at": "L27",
+   "name": "ink",
+   "d": "blue",
+   "row": 2,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 0.9
+  },
+  {
+   "at": "L28",
+   "name": "mydoor",
+   "to": 70,
+   "dur": 0.5
+  },
+  {
+   "at": "L28",
+   "name": "place",
+   "d": "blue",
+   "to": "nightstand",
+   "dur": 0.0
+  },
+  {
+   "at": "L28.2+0.2",
+   "name": "mydoor",
+   "to": 0,
+   "dur": 0.6
+  },
+  {
+   "at": "L29",
+   "name": "place",
+   "d": "blue",
+   "to": "desk",
+   "dur": 0.0
+  },
+  {
+   "at": "L30",
+   "name": "ink",
+   "d": "blue",
+   "row": 3,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.2,
+   "size": 1.5
+  },
+  {
+   "at": "L31",
+   "name": "pen",
+   "d": "blue",
+   "on": 1
+  },
+  {
+   "at": "L31.1",
+   "name": "ink",
+   "d": "blue",
+   "row": 4,
+   "c": "blue",
+   "to": 1.0,
+   "dur": 0.7,
+   "size": 1.2
+  },
+  {
+   "at": "L31>",
+   "name": "pen",
+   "d": "blue",
+   "on": 0
+  },
+  {
+   "at": "L32",
+   "name": "answer"
+  },
+  {
+   "at": "L32.1",
+   "name": "ink",
+   "d": "blue",
+   "row": 5,
+   "c": "lilac",
+   "to": 0.7,
+   "dur": 0.8
+  },
+  {
+   "at": "L34",
+   "name": "answer"
+  },
+  {
+   "at": "L34.1",
+   "name": "ink",
+   "d": "blue",
+   "row": 6,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.3
+  },
+  {
+   "at": "L34.3",
+   "name": "inkclear",
+   "d": "blue"
+  },
+  {
+   "at": "L34.3",
+   "name": "ink",
+   "d": "blue",
+   "row": 0,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.0,
+   "shake": 0.002
+  },
+  {
+   "at": "L35",
+   "name": "answer"
+  },
+  {
+   "at": "L35",
+   "name": "ink",
+   "d": "blue",
+   "row": 1,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.4,
+   "size": 1.25,
+   "hard": true
+  },
+  {
+   "at": "L36",
+   "name": "answer"
+  },
+  {
+   "at": "L36",
+   "name": "ink",
+   "d": "blue",
+   "row": 2,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.5,
+   "shake": 0.003
+  },
+  {
+   "at": "L37",
+   "name": "answer"
+  },
+  {
+   "at": "L37",
+   "name": "clock",
+   "h": 0,
+   "m": 0
+  },
+  {
+   "at": "L37.1",
+   "name": "ink",
+   "d": "blue",
+   "row": 3,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 0.8,
+   "shake": 0.003
+  },
+  {
+   "at": "L37.3",
+   "name": "ink",
+   "d": "blue",
+   "row": 4,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 0.8,
+   "shake": 0.004
+  },
+  {
+   "at": "L38",
+   "name": "mydoor",
+   "to": 18,
+   "dur": 0.5
+  },
+  {
+   "at": "L38",
+   "name": "lamp",
+   "n": "n1",
+   "to": 1.0,
+   "dur": 0.4
+  },
+  {
+   "at": "L39",
+   "name": "place",
+   "d": "blue",
+   "to": "held",
+   "dur": 0.0
+  },
+  {
+   "at": "L39",
+   "name": "open",
+   "d": "blue",
+   "to": 0.0,
+   "dur": 0.05
+  },
+  {
+   "at": "L40",
+   "name": "mydoor",
+   "to": 80,
+   "dur": 0.4
+  },
+  {
+   "at": "L41",
+   "name": "ndoor",
+   "to": 7,
+   "dur": 0.3
+  },
+  {
+   "at": "L42",
+   "name": "lamp",
+   "n": "n2",
+   "to": 1.0,
+   "dur": 0.4
+  },
+  {
+   "at": "L42",
+   "name": "place",
+   "d": "lilac",
+   "to": "ndesk",
+   "dur": 0.0
+  },
+  {
+   "at": "L42",
+   "name": "open",
+   "d": "lilac",
+   "to": 1.0,
+   "dur": 0.05
+  },
+  {
+   "at": "L42",
+   "name": "pen",
+   "d": "lilac",
+   "on": 1
+  },
+  {
+   "at": "L42",
+   "name": "ink",
+   "d": "lilac",
+   "row": 0,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 2.5
+  },
+  {
+   "at": "L43",
+   "name": "lamp",
+   "n": "n3",
+   "to": 1.0,
+   "dur": 0.4
+  },
+  {
+   "at": "L47",
+   "name": "ink",
+   "d": "lilac",
+   "row": 1,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.3
+  },
+  {
+   "at": "L48",
+   "name": "ink",
+   "d": "blue",
+   "row": 5,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.3
+  },
+  {
+   "at": "L48",
+   "name": "hud2",
+   "to": 1,
+   "dur": 0.5
+  },
+  {
+   "at": "L48+1.3",
+   "name": "pen",
+   "d": "lilac",
+   "on": 0
+  },
+  {
+   "at": "P02>",
+   "name": "place",
+   "d": "blue",
+   "to": "pair",
+   "dur": 0.0
+  },
+  {
+   "at": "P02>",
+   "name": "place",
+   "d": "lilac",
+   "to": "pair",
+   "dur": 0.0
+  },
+  {
+   "at": "P02>",
+   "name": "open",
+   "d": "blue",
+   "to": 1.0,
+   "dur": 0.05
+  },
+  {
+   "at": "P02>",
+   "name": "open",
+   "d": "lilac",
+   "to": 1.0,
+   "dur": 0.05
+  },
+  {
+   "at": "L50-0.2",
+   "name": "open",
+   "d": "blue",
+   "to": 0.0,
+   "dur": 0.3
+  },
+  {
+   "at": "L50-0.2",
+   "name": "open",
+   "d": "lilac",
+   "to": 0.0,
+   "dur": 0.3
+  },
+  {
+   "at": "L50-0.2",
+   "name": "place",
+   "d": "blue",
+   "to": "touch",
+   "dur": 0.4
+  },
+  {
+   "at": "L50-0.2",
+   "name": "place",
+   "d": "lilac",
+   "to": "touch",
+   "dur": 0.4
+  },
+  {
+   "at": "L50.1",
+   "name": "glint",
+   "dur": 0.7
+  },
+  {
+   "at": "L51",
+   "name": "place",
+   "d": "blue",
+   "to": "pair",
+   "dur": 0.0
+  },
+  {
+   "at": "L51",
+   "name": "place",
+   "d": "lilac",
+   "to": "pair",
+   "dur": 0.0
+  },
+  {
+   "at": "L51",
+   "name": "open",
+   "d": "blue",
+   "to": 1.0,
+   "dur": 0.05
+  },
+  {
+   "at": "L51",
+   "name": "open",
+   "d": "lilac",
+   "to": 1.0,
+   "dur": 0.05
+  },
+  {
+   "at": "L51",
+   "name": "inkclear",
+   "d": "blue"
+  },
+  {
+   "at": "L51",
+   "name": "inkclear",
+   "d": "lilac"
+  },
+  {
+   "at": "L51.1",
+   "name": "ink",
+   "d": "blue",
+   "row": 0,
+   "c": "blue",
+   "to": 0.5,
+   "dur": 0.8
+  },
+  {
+   "at": "L51.1",
+   "name": "ink",
+   "d": "lilac",
+   "row": 0,
+   "c": "blue",
+   "to": 0.5,
+   "dur": 0.8
+  },
+  {
+   "at": "L51.2",
+   "name": "ink",
+   "d": "blue",
+   "row": 1,
+   "c": "blue",
+   "to": 1.0,
+   "dur": 1.0
+  },
+  {
+   "at": "L51.2",
+   "name": "ink",
+   "d": "lilac",
+   "row": 1,
+   "c": "blue",
+   "to": 1.0,
+   "dur": 1.0
+  },
+  {
+   "at": "L54",
+   "name": "pen",
+   "d": "blue",
+   "on": 1
+  },
+  {
+   "at": "L54",
+   "name": "pen",
+   "d": "lilac",
+   "on": 1
+  },
+  {
+   "at": "L55-0.1",
+   "name": "pen",
+   "d": "blue",
+   "on": 0
+  },
+  {
+   "at": "L55-0.1",
+   "name": "pen",
+   "d": "lilac",
+   "on": 0
+  },
+  {
+   "at": "L58",
+   "name": "place",
+   "d": "blue",
+   "to": "held",
+   "dur": 0.0
+  },
+  {
+   "at": "L58",
+   "name": "open",
+   "d": "blue",
+   "to": 1.0,
+   "dur": 0.5
+  },
+  {
+   "at": "L60",
+   "name": "ink",
+   "d": "blue",
+   "row": 2,
+   "c": "blue",
+   "to": 1.0,
+   "dur": 1.3
+  },
+  {
+   "at": "L62",
+   "name": "place",
+   "d": "lilac",
+   "to": "ndesk",
+   "dur": 0.0
+  },
+  {
+   "at": "L62+0.3",
+   "name": "place",
+   "d": "lilac",
+   "to": "toyou",
+   "dur": 1.0
+  },
+  {
+   "at": "L63",
+   "name": "ink",
+   "d": "lilac",
+   "row": 2,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.3
+  },
+  {
+   "at": "L66",
+   "name": "clock",
+   "h": 3,
+   "m": 0
+  },
+  {
+   "at": "L68",
+   "name": "clock",
+   "h": 10,
+   "m": 10
+  },
+  {
+   "at": "L68",
+   "name": "place",
+   "d": "blue",
+   "to": "desk",
+   "dur": 0.0
+  },
+  {
+   "at": "L68",
+   "name": "place",
+   "d": "lilac",
+   "to": "desk",
+   "dur": 0.0
+  },
+  {
+   "at": "L68",
+   "name": "inkclear",
+   "d": "blue"
+  },
+  {
+   "at": "L68.1",
+   "name": "ink",
+   "d": "blue",
+   "row": 0,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 1.4
+  },
+  {
+   "at": "L69",
+   "name": "clock",
+   "h": 2,
+   "m": 40
+  },
+  {
+   "at": "L69",
+   "name": "inkclear",
+   "d": "blue"
+  },
+  {
+   "at": "L69",
+   "name": "ink",
+   "d": "blue",
+   "row": 0,
+   "c": "lilac",
+   "to": 1.0,
+   "dur": 0.6
+  },
+  {
+   "at": "L69",
+   "name": "ink",
+   "d": "blue",
+   "row": 1,
+   "c": "blue",
+   "to": 1.0,
+   "dur": 0.6
+  },
+  {
+   "at": "L70",
+   "name": "ink",
+   "d": "blue",
+   "row": 2,
+   "c": "green",
+   "to": 1.0,
+   "dur": 2.2
+  },
+  {
+   "at": "L70",
+   "name": "ink",
+   "d": "lilac",
+   "row": 3,
+   "c": "green",
+   "to": 1.0,
+   "dur": 2.2
+  },
+  {
+   "at": "L73",
+   "name": "ink",
+   "d": "blue",
+   "row": 3,
+   "c": "green",
+   "to": 1.0,
+   "dur": 1.0
+  }
+ ],
+ "shotlook": {
+  "S02": {
+   "cutwall": true
+  },
+  "S07": {
+   "cutwall": false
+  },
+  "S16": {
+   "cutwall": false
+  },
+  "S17": {
+   "cutwall": false
+  },
+  "S25": {
+   "cutwall": true
+  },
+  "S34": {
+   "cutwall": true
+  },
+  "S39": {
+   "cutwall": true
+  },
+  "S41": {
+   "cutwall": true
+  },
+  "S43": {
+   "cutwall": false
+  },
+  "S45": {
+   "cutwall": true
+  },
+  "S48": {
+   "cutwall": true
+  },
+  "S49": {
+   "cutwall": true
+  },
+  "S50": {
+   "cutwall": true
+  },
+  "S54": {
+   "cutwall": false
+  },
+  "S56": {
+   "cutwall": false
+  },
+  "S59": {
+   "cutwall": false
+  },
+  "S62": {
+   "cutwall": true
+  },
+  "S66": {
+   "cutwall": false
+  },
+  "S72": {
+   "cutwall": true
+  },
+  "S73": {
+   "cutwall": true
+  },
+  "S75": {
+   "cutwall": true
+  },
+  "S76": {
+   "cutwall": true
+  },
+  "S77": {
+   "cutwall": true,
+   "split": true
+  },
+  "S78": {
+   "cutwall": false
+  },
+  "S79": {
+   "noceil": true,
+   "plan": true
+  },
+  "S80": {
+   "cutwall": false
+  },
+  "S81": {
+   "cutwall": false
+  },
+  "S82": {
+   "cutwall": false
+  },
+  "S83": {
+   "cutwall": false
+  },
+  "S85": {
+   "cutwall": true
+  },
+  "S88": {
+   "cutwall": true
+  },
+  "S89": {
+   "cutwall": true
+  },
+  "S90": {
+   "cutwall": true
+  },
+  "S95": {
+   "cutwall": true
+  },
+  "S98": {
+   "cutwall": false
+  },
+  "S99": {
+   "cutwall": true
+  }
+ },
+ "fx": [],
+ "rev": 1,
+ "music": {
+  "root": 51,
+  "mode": "major",
+  "bpm": 100,
+  "seed": 89,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "musicbox",
+     "pulse"
+    ],
+    "energy": 0.35
+   },
+   {
+    "at": "L21",
+    "voices": [
+     "piano",
+     "drone"
+    ],
+    "energy": 0.4,
+    "mode": "minor"
+   },
+   {
+    "at": "L25",
+    "voices": [
+     "piano",
+     "drone",
+     "pulse"
+    ],
+    "energy": 0.5,
+    "mode": "minor"
+   },
+   {
+    "at": "L32",
+    "voices": [
+     "drone",
+     "pulse",
+     "choir"
+    ],
+    "energy": 0.62,
+    "mode": "minor"
+   },
+   {
+    "at": "L39",
+    "voices": [
+     "drone",
+     "pad"
+    ],
+    "energy": 0.45,
+    "mode": "minor"
+   },
+   {
+    "at": "L49",
+    "voices": [
+     "pad",
+     "piano",
+     "musicbox"
+    ],
+    "energy": 0.55,
+    "mode": "major"
+   },
+   {
+    "at": "L69",
+    "voices": [
+     "drone"
+    ],
+    "energy": 0.4,
+    "mode": "minor"
+   }
+  ]
+ },
+ "sound": {
+  "floor": "wood",
+  "steps_db": -26,
+  "rev": 1,
+  "ambience": [
+   {
+    "kind": "room",
+    "from": 0,
+    "to": "end",
+    "lufs": -40
+   },
+   {
+    "kind": "crickets",
+    "from": "L21",
+    "to": "L48",
+    "lufs": -46
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L01.3+0.05",
+    "kind": "hit",
+    "db": -7
+   },
+   {
+    "at": "L09+0.05",
+    "kind": "door",
+    "db": -13
+   },
+   {
+    "at": "L38.2",
+    "kind": "click",
+    "db": -14
+   },
+   {
+    "at": "L61+0.1",
+    "kind": "bell",
+    "db": -16
+   },
+   {
+    "at": "L70",
+    "kind": "sting",
+    "db": -12
+   }
+  ],
+  "music_drops": [
+   {
+    "from": "P01",
+    "to": "P01>"
+   },
+   {
+    "from": "P02",
+    "to": "P02>"
+   }
+  ]
+ }
+}
