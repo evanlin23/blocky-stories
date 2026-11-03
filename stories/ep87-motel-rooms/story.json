@@ -29,6 +29,22 @@
   "grain": 0.008
  },
  "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#ff7f66",
+   "pattern": "solid",
+   "pants": "#c9b48a",
+   "shoes": "#f4f4f2",
+   "sleeves": "short",
+   "hair": "buzz",
+   "hair_c": "#c8a24a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
   "hal": {
    "age": "adult",
    "skin": "#e8b98f",
@@ -48,9 +64,9 @@
    "width": 0.8,
    "face": {
     "eyes": "round",
-    "brows": true,
+    "brows": false,
     "ink": "#24131f",
-    "eye_scale": 1.25
+    "eye_scale": 1.55
    }
   }
  },
@@ -81,30 +97,30 @@
     [
      0,
      [
-      0.3,
-      -1.9,
-      0.6
+      0.0,
+      -3.0,
+      0.9
      ],
      [
       0.0,
       2.0,
       1.35
      ],
-     24
+     22
     ],
     [
      1,
      [
-      0.3,
-      -1.9,
-      0.6
+      0.0,
+      -3.0,
+      0.9
      ],
      [
       0.0,
       2.0,
       1.35
      ],
-     24
+     22
     ]
    ],
    "step": 2,
@@ -113,22 +129,36 @@
   }
  ],
  "acting": {
+  "me": [
+   {
+    "at": 0,
+    "pos": [
+     -1.7,
+     -0.9,
+     0
+    ],
+    "yaw": 160,
+    "expr": "scared",
+    "blend": 0,
+    "hidden": false
+   }
+  ],
   "hal": [
    {
     "at": 0,
     "pos": [
-     0.0,
-     2.1,
+     0.2,
+     2.3,
      0
     ],
     "yaw": 0,
     "expr": "blank",
     "blink": false,
     "blend": 0,
-    "lean": 24,
+    "lean": 12,
     "head": [
      0,
-     14
+     10
     ],
     "arms": [
      0,
