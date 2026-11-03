@@ -718,20 +718,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "And the",
-    "And the"
+    "And the REGULAR",
+    "And the Regular"
    ],
    [
-    "REGULAR",
-    "Regular"
-   ],
-   [
-    "was pressed",
-    "was pressed"
-   ],
-   [
-    "FLAT",
-    "flat"
+    "was LEANING",
+    "was leaning"
    ],
    [
     "on the GLASS.",
@@ -757,7 +749,7 @@
     "the wall."
    ]
   ],
-  "gap": 0.35
+  "gap": 0.65
  },
  {
   "id": "L50",
@@ -828,16 +820,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "They weren't",
-    "They weren't"
+    "Every SLIT",
+    "Every slit"
    ],
    [
-    "SLITS.",
-    "slits."
-   ],
-   [
-    "They were EYES.",
-    "They were eyes."
+    "was an EYE.",
+    "was an eye."
    ]
   ],
   "tempo": 0.9
@@ -1110,27 +1098,23 @@
   "who": "narrator",
   "chunks": [
    [
-    "And the WAVE",
-    "And the wave"
+    "And every",
+    "And every"
    ],
    [
-    "was never",
-    "was never"
-   ],
-   [
-    "GOODBYE.",
-    "goodbye."
+    "WAVE GOODBYE",
+    "wave goodbye"
    ]
   ],
-  "gap": 0.35
+  "gap": 0.12
  },
  {
   "id": "L67",
   "who": "narrator",
   "chunks": [
    [
-    "It was the",
-    "It was the"
+    "was a",
+    "was a"
    ],
    [
     "CURTAIN CALL.",

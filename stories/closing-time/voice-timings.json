@@ -942,34 +942,26 @@
    ]
   },
   "L48": {
-   "text": "And the Regular was pressed flat on the glass.",
+   "text": "And the Regular was leaning on the glass.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
+   "dur": 1.914,
    "onset": 0.155,
-   "end": 1.845,
+   "end": 1.707,
    "chunks": [
     [
      0.155,
-     0.293
+     0.655
     ],
     [
-     0.293,
-     0.595
+     0.655,
+     1.008
     ],
     [
-     0.595,
-     0.922
-    ],
-    [
-     0.922,
-     1.147
-    ],
-    [
-     1.147,
-     1.845
+     1.008,
+     1.707
     ]
    ]
   },
@@ -1078,26 +1070,22 @@
    ]
   },
   "L53": {
-   "text": "They weren't slits. They were eyes.",
+   "text": "Every slit was an eye.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.927,
-   "dur": 1.81,
-   "onset": 0.19,
-   "end": 1.603,
+   "dur": 1.638,
+   "onset": 0.207,
+   "end": 1.414,
    "chunks": [
     [
-     0.19,
-     0.439
+     0.207,
+     0.672
     ],
     [
-     0.439,
-     0.741
-    ],
-    [
-     0.793,
-     1.603
+     0.672,
+     1.414
     ]
    ]
   },
@@ -1406,46 +1394,42 @@
    ]
   },
   "L66": {
-   "text": "And the wave was never goodbye.",
+   "text": "And every wave goodbye",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.81,
+   "dur": 1.552,
    "onset": 0.155,
-   "end": 1.603,
+   "end": 1.293,
    "chunks": [
     [
      0.155,
-     0.603
+     0.474
     ],
     [
-     0.603,
-     0.983
-    ],
-    [
-     0.983,
-     1.603
+     0.474,
+     1.293
     ]
    ]
   },
   "L67": {
-   "text": "It was the curtain call.",
+   "text": "was a curtain call.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.414,
-   "onset": 0.155,
-   "end": 1.224,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.086,
    "chunks": [
     [
-     0.155,
-     0.466
+     0.172,
+     0.336
     ],
     [
-     0.466,
-     1.224
+     0.336,
+     1.086
     ]
    ]
   },
