@@ -9,6 +9,7 @@ ep45-bee-yard
 ep49-car-wash
 ep55-caravan-park
 ep36-ice-huts
+ep32-sitter
 floor-thirteen
 ep31-dawn-flight
 moving-day

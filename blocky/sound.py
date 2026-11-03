@@ -910,6 +910,8 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
         if a1 <= a0:
             continue
         y = amb(a["kind"], a1 - a0, k + 3)
+        if a.get("lp"):   # opt-in (ep32): low-pass this bed at `lp` Hz
+            y = fft_filter(y, "low", float(a["lp"]), order=4)
         y *= np.minimum(1, np.arange(len(y)) / (0.3 * SR)) * np.minimum(1, (len(y) - np.arange(len(y))) / (0.3 * SR))
         m.add("amb", a0, to_lufs(y, a.get("lufs", -32.0)), pan=a.get("pan", 0.0))
     for k, h in enumerate(snd.get("hums", [])):   # opt-in (ep42): people's steady hums, on the ambience bus

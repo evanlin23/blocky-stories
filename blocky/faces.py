@@ -188,7 +188,7 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
 @lru_cache(maxsize=256)
 def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | None, expr: str, open_: float,
           look: tuple[float, float], blink: float, freckles: bool, cheeks: str | None, bags: bool,
-          mouth: str = "auto", inside: str | None = None, eye_scale: float = 1.0) -> Image.Image:
+          mouth: str = "auto", inside: str | None = None, eye_scale: float = 1.0, corners: bool = False) -> Image.Image:
     im = Image.new("RGB", (TEX_W, TEX_H), hexrgb(skin))
     d = ImageDraw.Draw(im)
     s = FX1 - FX0                      # face box width in px
@@ -264,6 +264,10 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
             if eyes == "tired" or bags:
                 d.arc([cx - rx * 0.9, ey + ry * 0.6, cx + rx * 0.9, ey + ry * 1.6], 20, 160,
                       fill=tuple(int(c * 0.8) for c in hexrgb(skin)), width=th)
+            if corners:   # opt-in (ep32): three little lines fanning out from each eye's outer corner
+                for k in (-1, 0, 1):
+                    x0, y0 = cx + side * (rx + th * 0.9), ey + k * 0.012 * s
+                    d.line([(x0, y0), (x0 + side * 0.055 * s, y0 + k * 0.03 * s)], fill=inkc, width=max(6, int(th * 0.55)))
         elif eyes == "classic":
             # solid black ovals with a white glint, big and tall
             rx, ry = 0.062 * s * (1.15 if expr in ("wide", "scared", "terrified") else 1.0), 0.1 * s * (1.0 - 0.9 * blink)
@@ -336,7 +340,7 @@ def face_image(face: dict, skin: str, expr: str = "neutral", open_: float = 0.0,
     return _draw(skin, face.get("eyes", "round"), bool(face.get("brows", True)), face.get("ink", "#1a1416"),
                  face.get("pupil", "#141012"), face.get("glow"), expr, q(open_, mouth_steps(face)), (q(look[0], 2), q(look[1], 2)),
                  1.0 if blink > 0.5 else 0.0, bool(face.get("freckles")), face.get("cheeks"), bool(face.get("bags")),
-                 face.get("mouth", "auto"), face.get("mouth_inside"), float(face.get("eye_scale", 1.0)))
+                 face.get("mouth", "auto"), face.get("mouth_inside"), float(face.get("eye_scale", 1.0)), bool(face.get("corners")))
 
 
 def mouth_steps(face: dict) -> int:
@@ -351,6 +355,8 @@ def face_key(face: dict, skin: str, expr: str, open_: float, look, blink: float)
     style = "".join(f"{k}{face[k]}-" for k in ("eyes", "mouth") if k in face and face[k] in ("none", "line", "mirror", "pin", "flat", "crescent", "negative"))
     if face.get("eye_scale", 1.0) != 1.0:
         style += f"es{face['eye_scale']}-"
+    if face.get("corners"):
+        style += "co-"
     if face.get("mouth_inside"):   # an open mouth's own inside colour (the copy's opens onto black)
         style += f"in{face['mouth_inside'].lstrip('#')}-"
     return f"{style}{expr}-{q(open_, mouth_steps(face))}-{q(look[0], 2)}-{q(look[1], 2)}-{int(blink > 0.5)}"

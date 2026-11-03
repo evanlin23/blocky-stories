@@ -1,13 +1,22 @@
-# ep32-sitter, round 1, standards
+# ep32-sitter: standards, round 1 (rule-first redo, 2026-11-02)
 
 Verdict: revise
 
-Fiction, kids and mature themes, IP and package pass. Originality and flashing need the fixes below.
+Checked: script.md, story.json, package.json, `check`, `preflight`, preview contact sheet, stills sheet, preview frames at 16.9 to 85.8 s, and the premise and twist of every story.
+
+1. **Fiction:** pass. No real places or claims. The bus stop, cafe, bakery and arts centre have no text or signs.
+2. **Kids and mature themes:** pass. The cast is all adults (Mum is in her fifties). Nobody is hurt, and S24 keeps a hand's gap. The package doesn't aim at kids.
+3. **IP:** pass. The faces, hair and outfits are our own, and no game is named.
+4. **Originality:** pass. ep43 is close in theme (being known vs being looked at, a loved one going unseen, a figure one table or easel nearer). But the marker (fade to pine vs a number), setting, creature (the faded loved one herself vs the Negative), twist (`loved-one`: the thing is Mum vs `about-me`: you don't count yourself) and ending (painting her face, then a cold sting vs saying names aloud) all differ. `check` passes on the phrase overlap.
+5. **Flashing:** preview PASS (max 1 flash/s 1-frame, 2 on 3-frame). One stretch must change (must-fix 1).
+6. **Package:** title, description, pin and `made_for_kids` are clean, with no dashes or banned words. `cover_s` is wrong (must-fix 2).
 
 ## Must-fix
-1. **L56, L57 (S56, S57), originality.** "A class of NINE. / It was sitting IN / for the one / who LEFT." says the count rule out loud, which lore.md forbids. It also makes the twist the same reveal as ep11 and pitch #7 `only-line`. Cut both lines and their shots. Let L58 to L61 carry the twist. The S70 tally keeps the count for rewatchers. If the film drops under 2:15, add back the reserve line after L12.
-2. **L41, L43, L44 (S41, S43, S44), originality.** "When they STEADIED ... head ALL the way ROUND ... an inch from" nearly matches the scare in pitch #8 `wash-cycle`. It also echoes ep11's head turned too far. Change L41 to "And when I looked UP / from my PALETTE, / it was sitting / RIGHT BESIDE ME." Change L43 and L44 to "It was leaning IN / to my CANVAS, / like a MIRROR." Restage S43 with the body bent forward, the head level with the canvas, no 180-degree turn, a hand's width clear of me.
-3. **S17 to S17c (31.97 to 32.43 s), flashing.** A 0.17 s dark close-up, a 0.3 s bright daytime insert of Mum, then dark again: two big jumps in half a second. The preview reads 1 a second, but this is its worst moment and the final may break the bar. Merge S17 into S16, hold S17b for at least 0.8 s and grade it about a stop darker. Same check at S23b (45.5 s).
+1. **S35b, L35 "her BRUSH", 75.60 to 76.33 s:** the shot renders almost black (mean luma about 1 to 4 against about 97 in S35 and 86 in S36). The camera at z 0.85 looking down to z 0.05 is probably inside or under Petra's easel. The picture doesn't show the brush, and bright to black to bright in 0.73 s is a full light drop that the final may flag. Move the camera clear (for example, raise it to z 1.1 and pull back 0.4 m) so the dropped brush is lit at about S35's level.
+2. **package.json `cover_s` 56.0:** this lands on S27 (car park, "our SITTER was."), not S23. Set it to `50.0` (S23, caption "BESIDE ME.", 49.64 to 50.46 s).
 
-## Nice-to-have
-- Mum's "crying" face at S72 reads as angry brows. A softer brow would help.
+## Notes
+- `faces.py` `corners` is opt-in. It defaults to False, `face_key` only adds `co-` when it's set, and no other story uses it, so other films don't change.
+- Once both reviews approve, remove `"hold"` from package.json.
+- Nice-to-have: don't upload ep32 next to ep43. Their shape tags differ, so the uploader won't keep them apart.
+- The loop seam (dark S40 to sunny S01) and the car park cuts at 55.7 s pass now. Watch them in the final's flash reading.
