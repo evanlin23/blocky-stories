@@ -1,10 +1,22 @@
 # ep33-chairlift: the script (redo, writer, 2026-11-02)
 
+## Opening redo 2026-11-03
+Per the opening recipe (`docs/research/playbook.md`, v1). Re-voice L01, L02 and L04 only. Every other line is unchanged.
+- **New L01 (11 words, warning to you):** "Don't SIT / on the BENCH / at the TOP / of this CHAIRLIFT."
+- **New L02 (7 words):** "One HOUR / up THERE, / two WEEKS / down HERE."
+- **True to the plot:** the bench is where Gran sits for days and where I end up beside her (L33, L37). The rate matches the story: half an hour up is a week down (L12), an afternoon is a winter (L03), a day is a year (L36). It never hints at why Gran stays.
+- **Rule still clear:** L01 and L02 say it outright, L03 shows it (an afternoon, a whole winter), and L36 still says the full rule near the end.
+- **L04:** "MUM" is now "MOM" (US English).
+- **Loop:** unchanged. L37, "From the LAKE, we haven't MOVED since SPRING." runs into "Don't sit on the bench at the top of this chairlift." The warning lands on us.
+- **Quotable line:** L04, "Bo, who runs the LIFT, goes up whenever his MOM VISITS."
+- **First shot (new S01, under L01):** the old S01 made close. The ridge bench in gold dawn light, camera about 3 m, 35 mm, pushing in on the laugher frozen mid-laugh, the clouds racing behind her. The sound hit (the bull wheel's deep clack) on "CHAIRLIFT." S02 under L02: a close two-shot of the laugher's still face as the sun shadow sweeps once across the bench (slow, flash-safe). The long-lens shot of the ridge from the deck (old S03, about 34 m) moves after 3 s or goes. The mustard cardigan and cream beanie stay small and soft at the far end of the bench in S01.
+- **British words left in other lines (flagged, not changed):** "comes round" (L20), "swings round" (L24). Both read fine to a US ear.
+
 **Redo, 2026-11-02** (revision 1, same day: L01, L03, L12 and L36 rewritten after the blind premise check). The first version (a dare as the first line, the Four-Face, the forty-year bet) was held for not being rule-first. This redo keeps the set (the lake chairlift, the bottom station deck, the top of the ridge), Bo, the old couple's models and the fog, and replaces the premise, the rule, the twist and the creature. There is no monster now. Every line is new, so the builder re-voices the whole story.
 
 - **Slug:** `ep33-chairlift`. Folder `stories/ep33-chairlift/`.
 - **Length test:** this is one of the 60 to 90 s stories.
-- **Word count:** 318 spoken words in 37 lines, all `narrator` in voice A, plus one pause beat (P01, 0.7 s).
+- **Word count:** 309 spoken words in 37 lines since the 2026-11-03 opening redo (318 before), all `narrator` in voice A, plus one pause beat (P01, 0.7 s).
 - **Estimated length:** about 70 to 73 s. Speech is 64.6 s at 290 wpm and 67.3 s at 278 wpm. The 0.12 s gaps add 4.4 s, P01 0.7 s and the tail 0.3 s. If it lands over 85 s, cut L12 first, then L24.
 
 ## The big idea
@@ -18,9 +30,9 @@ Ten pitched, this one kept. The others, and why not: the sun only rises when the
 In a lake town, one day at the top of the chairlift costs a year down at the lake, so people ride up to skip the things they don't want to sit through, and from the deck you can see them on the ridge, still as posts. I have never been up, because I don't want to miss a day. Gran goes up every morning with a blanket big enough for two, comes down for Sunday dinner, and every Sunday says I look older. Through the deck's old viewer she's the one person on the ridge facing away from the sunrise, and one Sunday she doesn't come down.
 
 ## The rule
-"In this town, one day at the top of the chairlift costs a year down below." (L01, 15 words, revised 2026-11-02 after the blind check: concrete nouns, the cost inside the rule.) It touches everyone: the whole valley uses it, and everyone you leave at the bottom gets a year older for every day you spend up top.
+"In this town, one day at the top of the chairlift costs a year down below." (Said in full at L36. Since the 2026-11-03 opening redo, L01 and L02 put it as a warning: "Don't sit on the bench at the top of this chairlift. One hour up there, two weeks down here.") It touches everyone: the whole valley uses it, and everyone you leave at the bottom gets a year older for every day you spend up top.
 - **Marker by 2 s:** shot 1 is a close on a stranger on the ridge bench, frozen mid-laugh in clear dawn light, while behind her the clouds race and the valley's shadows sweep, a time-lapse sky over a still face. Stillness against racing weather is the rule, readable at phone size.
-- **Montage (L02 to L04, ends about 13 s):** people on the ridge seen from the lake, still as posts. Mr Pell went up for an afternoon and missed all of winter. Bo goes up whenever his mum visits.
+- **Montage (L02 to L04, ends about 13 s):** people on the ridge seen from the lake, still as posts. Mr Pell went up for an afternoon and missed all of winter. Bo goes up whenever his mom visits.
 - **The narrator is the exception:** I've never been up. Not once (L05 to L06).
 - **The loved one:** Gran, shown by 0:14 fixing my beanie at the gate rope (L07 to L09).
 - **The loophole the climax turns:** the rule everyone uses to skip time, Gran uses to save it. A few years spent mostly up there last a whole life down here. Then I turn it once more: an hour beside her costs me a week, and I spend them.
@@ -73,15 +85,15 @@ Two short faded-orange upright strokes pressed into the black rubber footrest of
 Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words in sunrise pink. About 41 shots, about 1.6 s each.
 
 ### Rule and montage (0 to 12 s)
-- `L01` narrator: In this TOWN, / one DAY / at the TOP / of the CHAIRLIFT / costs a YEAR / down BELOW.
+- `L01` narrator: Don't SIT / on the BENCH / at the TOP / of this CHAIRLIFT.
   - [S01: close on the laugher on the ridge bench, frozen mid-laugh, gold dawn key on her face, clouds racing behind, valley shadows sweeping far below. At the far end of the bench, small and soft: a mustard cardigan and a cream beanie. Slow push in]
   - [S02: the bull wheel deck at dawn, Bo at the gate looking up, the line climbing behind him]
-- `L02` narrator: From the LAKE, / you can SEE them / up there, / STILL as POSTS.
+- `L02` narrator: One HOUR / up THERE, / two WEEKS / down HERE.
   - [S03: long lens from the deck up to the ridge: a row of tiny figures on the skyline, unmoving while a chair rises past]
 - `L03` narrator: Mr PELL / went up / for an AFTERNOON / and missed / all of WINTER.
   - [S04: Mr Pell stepping off the down chair in a waxed jacket and thick winter scarf onto a sunny spring deck, everyone else in shirtsleeves]
   - [S05: his face, `scared`, blinking at the sun]
-- `L04` narrator: Bo, who runs the LIFT, / goes up / whenever his MUM / VISITS.
+- `L04` narrator: Bo, who runs the LIFT, / goes up / whenever his MOM / VISITS. **(quotable line)**
   - [S06: Bo in an up chair, waving cheerfully. On the deck behind, an old-fashioned suitcase by the gate rope]
 
 ### Me and Gran (12 to 24 s)
