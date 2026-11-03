@@ -46,8 +46,8 @@ for ln in out_lines:
     if ln["id"] in HOLDS:
         ln["gap"] = HOLDS[ln["id"]]
 # the word check: slower reads where Whisper hears them wrong (filled in after the first asr run)
-TEMPO = {"L12": 0.92, "L28": 0.92, "L59": 0.92, "L14": 0.95, "L16": 0.85}
-SPOKEN = {("L12", 1): "it was one,", ("L28", 0): "And through it...", ("L14", 1): "Mom, said it", ("L16", 1): "week. He'd, be", ("L59", 1): "seat is not kept"}
+TEMPO = {"L12": 0.92, "L28": 0.92, "L59": 0.92, "L14": 0.95, "L16": 0.8}
+SPOKEN = {("L12", 1): "it was one,", ("L28", 0): "And through it...", ("L14", 1): "Mom, said it", ("L16", 1): "week. He'd be", ("L59", 1): "seat is not kept"}
 for ln in out_lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]

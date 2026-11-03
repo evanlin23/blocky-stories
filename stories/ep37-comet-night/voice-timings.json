@@ -378,30 +378,30 @@
    ]
   },
   "L16": {
-   "text": "It was falling-star week. He'd, be up there all night.",
+   "text": "It was falling-star week. He'd be up there all night.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.8755,
-   "dur": 2.707,
-   "onset": 0.19,
-   "end": 2.483,
+   "tempo": 0.8240000000000001,
+   "dur": 2.793,
+   "onset": 0.207,
+   "end": 2.569,
    "chunks": [
     [
-     0.19,
-     0.862
+     0.207,
+     0.922
     ],
     [
-     0.862,
-     1.543
+     0.922,
+     1.578
     ],
     [
-     1.543,
-     1.931
+     1.578,
+     1.983
     ],
     [
-     1.931,
-     2.483
+     1.983,
+     2.569
     ]
    ]
   },
