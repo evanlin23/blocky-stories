@@ -58,7 +58,8 @@ the hard way.
   normal: the next run picks up every story without a film, or with a film older than its last picture or sound
   change.
 - At most 2 stories a run, in two slots: each story's assemble waits only for its own shards (a shared wait delayed the first film by hours on 2026-11-03). Story B's shards start when A's are done, so there are 16 draw jobs at a time (leaving 4 runners for PR
-  tests); assemble-a runs beside draw-b (17 runners for that stretch, 3 left for PR tests). The `again` job chains the next run. A run of 8 stories takes about 5 hours.
+  tests); assemble-a runs beside draw-b (17 runners for that stretch, 3 left for PR tests). The `again` job chains the next run. If a story's shard fails, its assemble is skipped (no film), story B and `again` still run, and the next plan draws it again; "Re-run failed jobs" on the run redraws just the failed shard, then assembles. A run of 8 stories takes about 5 hours.
+- A film is only assembled from a complete set of shards (closing-time, run 87, 2026-11-03).
 - The narration is made once on Actions (the `voice` job) and the picture is drawn to it. Local and Actions
   synthesis differed by up to 0.85 s per line, which broke sync before that change.
 - A film that fails the flash bar is kept but never uploaded, and the upload skips to the next story. The usual

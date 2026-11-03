@@ -84,7 +84,7 @@ jobs:
 
   assemble-a:
     needs: [plan, voice, draw-a]
-    if: ${{ !cancelled() && needs.plan.outputs.a != '' }}
+    if: ${{ !cancelled() && needs.plan.outputs.a != '' && needs.draw-a.result == 'success' }}   # a story with a missing shard gets no film (closing-time, run 87)
     runs-on: ubuntu-latest
     timeout-minutes: 300
     env: {GH_TOKEN: "${{ github.token }}"}
@@ -113,7 +113,7 @@ jobs:
 
   assemble-b:
     needs: [plan, voice, draw-b]
-    if: ${{ !cancelled() && needs.plan.outputs.b != '' }}
+    if: ${{ !cancelled() && needs.plan.outputs.b != '' && needs.draw-b.result == 'success' }}   # a story with a missing shard gets no film (closing-time, run 87)
     runs-on: ubuntu-latest
     timeout-minutes: 300
     env: {GH_TOKEN: "${{ github.token }}"}
