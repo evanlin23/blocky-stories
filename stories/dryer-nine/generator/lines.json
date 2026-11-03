@@ -4,16 +4,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "At the",
-    "At the"
+    "NOBODY at this",
+    "Nobody at this"
    ],
    [
-    "LAUNDROMAT,",
-    "laundromat,"
-   ],
-   [
-    "you NEVER use",
-    "you never use"
+    "laundromat uses",
+    "laundromat uses"
    ],
    [
     "dryer NINE.",
@@ -26,12 +22,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Even if",
-    "Even if"
+    "It RUNS",
+    "It runs"
    ],
    [
-    "it's already RUNNING.",
-    "it's already running."
+    "every night",
+    "every night"
+   ],
+   [
+    "ANYWAY.",
+    "anyway."
    ]
   ]
  },

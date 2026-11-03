@@ -1,10 +1,10 @@
 {
- "title": "Your Number Is Who KNOWS You 🔢",
- "description": "Everyone in town has a glowing number over their head. The baker on the library steps is at nine hundred. A woman fresh off the train is at zero.\n\nMine has said one for years. This spring my little brother's number started falling, and in the old reading room something with no number at all sat one table nearer to him every afternoon.\n\nIt's made up, a creepy blocky story built with code and Blender.",
- "pin": "Comment your number if you know who's counting you.",
+ "title": "Only ONE Person Knows My Name 🔢",
+ "description": "Only one person in this whole town knows my name. The number over every head counts the people who know your name, and mine has said one for years.\n\nThis spring my little brother's number started falling, and in the old reading room something with no number at all sat one table nearer to him every afternoon.\n\nIt's made up, a creepy blocky story built with code and Blender.",
+ "pin": "Comment ONE if you already know who your one would be.",
  "made_for_kids": false,
  "cover_s": 84.5,
  "shape": "about-me",
- "old_title": "In This Town Your Number Is How Many People KNOW You",
- "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
+ "hold": "dropped 2026-11-03: after two review rounds on the new opening, critic r7 still lists nine must-fixes (number clutter at 0 to 6 s, 32.9 s and 127.5 s, a hidden 1 and warped face at 92 s, a count slip, fades) and standards r7 a flashing fix at 15.5 s; more than the one rescue fix allowed, and it's another overhead-number marker story with a brother reveal",
+ "opening": "confess"
 }

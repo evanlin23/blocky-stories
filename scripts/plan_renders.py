@@ -19,7 +19,7 @@ from blocky.gate import load_package
 ap = argparse.ArgumentParser()
 ap.add_argument("--story", default="")
 ap.add_argument("--shards", type=int, default=16)
-ap.add_argument("--max", type=int, default=15)   # GitHub caps a matrix at 256 jobs: 15 stories x 16 shards = 240
+ap.add_argument("--max", type=int, default=2)   # stories per run: every assemble waits for the whole draw matrix, so a big run delays the first story by hours (moving-day, 2026-11-03); the again job starts the next run for the rest. GitHub caps a matrix at 256 jobs
 a = ap.parse_args()
 
 if a.story:
