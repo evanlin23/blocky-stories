@@ -4,16 +4,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Never ASK",
-    "Never ask"
+    "Rule THREE",
+    "Rule three"
    ],
    [
-    "who tore out",
-    "who tore out"
+    "is MISSING,",
+    "is missing,"
    ],
    [
-    "RULE THREE.",
-    "rule three."
+    "and everyone in town",
+    "and everyone in town"
+   ],
+   [
+    "still OBEYS it.",
+    "still obeys it."
    ]
   ]
  },
@@ -22,12 +26,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Not in BUHTOWN.",
-    "Not in this town."
+    "Don't ASK",
+    "Don't ask"
    ],
    [
-    "Not ONCE.",
-    "Not once."
+    "who tore it.",
+    "who tore it."
+   ],
+   [
+    "Not in BUHTOWN.",
+    "Not in this town."
    ]
   ]
  },

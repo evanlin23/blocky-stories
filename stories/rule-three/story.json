@@ -405,16 +405,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "Never ASK",
-     "Never ask"
+     "Rule THREE",
+     "Rule three"
     ],
     [
-     "who tore out",
-     "who tore out"
+     "is MISSING,",
+     "is missing,"
     ],
     [
-     "RULE THREE.",
-     "rule three."
+     "and everyone",
+     "and everyone"
+    ],
+    [
+     "in town",
+     "in town"
+    ],
+    [
+     "still OBEYS it.",
+     "still obeys it."
     ]
    ]
   },
@@ -423,12 +431,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Not in BUHTOWN.",
-     "Not in this town."
+     "Don't ASK",
+     "Don't ask"
     ],
     [
-     "Not ONCE.",
-     "Not once."
+     "who tore it.",
+     "who tore it."
+    ],
+    [
+     "Not in BUHTOWN.",
+     "Not in this town."
     ]
    ]
   },
@@ -7743,12 +7755,6 @@
   },
   {
    "at": "L39.1+0.3",
-   "name": "tod",
-   "n": "night",
-   "dur": 0.45
-  },
-  {
-   "at": "L39.1+0.3",
    "name": "stamp",
    "mode": "path"
   },
@@ -8023,7 +8029,7 @@
   ],
   "sfx": [
    {
-    "at": "L01.2+0.2",
+    "at": "L01.3+0.1",
     "kind": "thud",
     "db": -3
    },

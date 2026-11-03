@@ -190,7 +190,7 @@ S(0, ((-0.03, 4.75, 3.35), (-0.03, 5.2, 1.0), 35, (-0.03, 4.78, 2.55), (-0.03, 5
   note="top-down push on the stub: ragged torn edge, thumbprint, the next page marked 5")
 S("L02", ((-0.05, 5.1, 1.9), (-0.06, 5.2, 1.0), 35, (-0.06, 5.12, 1.55), (-0.065, 5.2, 1.0), 35), hand=0.0,
   note="punch in to the torn edge, the thumbprint filling a third of the frame")
-cue("L01.2+0.18", "sfx_hint", note="stamp thunk on THREE")
+cue("L01.3+0.1", "sfx_hint", note="stamp thunk on OBEYS")
 
 # =========================================================================================== 02 the rule at work, L03 to L06
 S("L03", ((DINER + 0.35, -0.2, 1.45), (DINER + 0.1, 2.6, 1.35), 32, (DINER + 0.3, 0.1, 1.45), (DINER + 0.1, 2.6, 1.35), 32),
@@ -401,7 +401,7 @@ raw("me", "L39", arms=[112, 0], blend=0.2)
 cue("L39", "book", mode="table")
 cue("L39", "spread", n="fresh")
 BK = (MOM + 0.3, 3.55)
-S("L39.1+0.3", ((MOM + 0.9, 1.7, 2.0), (BK[0], BK[1], 1.2), 30, (MOM + 0.8, 1.9, 1.9), (BK[0], BK[1], 1.15), 30), tod="night",
+S("L39.1+0.3", ((MOM + 0.9, 1.7, 2.0), (BK[0], BK[1], 1.2), 30, (MOM + 0.8, 1.9, 1.9), (BK[0], BK[1], 1.15), 30),
   who={"mom": (X(MOM, 4.9), 0, "smile", {}), "me": (X(MOM + 1.35, 3.5), -90, "smile", {"arms": [92, 0]})},
   note="close: the red-knobbed stamp comes down on the page, ink-blue, a soft thunk")
 cue("L39.1+0.3", "stamp", mode="path")
@@ -511,7 +511,7 @@ story = {
         "ambience": [{"kind": "room", "from": 0, "to": "L23", "lufs": -36},
                      {"kind": "traffic", "from": "L03", "to": "L07", "lufs": -40},
                      {"kind": "room", "from": "L23", "to": "end", "lufs": -40}],
-        "sfx": [{"at": "L01.2+0.2", "kind": "thud", "db": -3},
+        "sfx": [{"at": "L01.3+0.1", "kind": "thud", "db": -3},
                 {"at": "L08.2", "kind": "thud", "db": -12},
                 {"at": "L28+0.9", "kind": "door", "db": -14},
                 {"at": "L39.1+0.6", "kind": "thud", "db": -14},
