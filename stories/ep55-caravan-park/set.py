@@ -454,6 +454,52 @@ def build_park(kit, ctx, M):
     kit.cyl("butt", 0.3, 0.9, (3.9, -4.1, 0.45), M["blue"], n=14)
 
 
+OX = -40.0   # the opening set: the neighbour's gate, chair and van (frame 1 and L01b), clear of everything else
+
+
+def build_opening(kit, ctx, M):
+    """Frame 1: an empty folding chair inside a white picket gate, a lumpy moss pad with tiny white flowers on the seat
+    and the back (always there; nothing animates it). The neighbour's van stands behind, its door at OX + 1.5."""
+    caravan(kit, ctx, M, "nvanO", OX + 1.5, CARAVAN["y0"], "mustard")
+    for sx in (-1, 1):
+        px = OX + sx * GATE_X
+        wbox(kit, f"opost{sx}", (px - 0.19, -0.19, 0.0), (px + 0.19, 0.19, 1.5), M["granite"], bevel=0.03)
+        wbox(kit, f"opostcap{sx}", (px - 0.23, -0.23, 1.5), (px + 0.23, 0.23, 1.58), M["granite"], bevel=0.02)
+        for k in range(1, 9):
+            x = px + sx * 0.45 * k
+            wbox(kit, f"opk{sx}.{k}", (x - 0.04, -0.03, 0.0), (x + 0.04, 0.03, 1.0 - 0.02 * (k % 2)), M["white"])
+        x2 = px + sx * 0.45 * 8
+        wbox(kit, f"orail{sx}a", (min(px, x2), -0.04, 0.65), (max(px, x2), 0.04, 0.72), M["white"])
+        wbox(kit, f"orail{sx}b", (min(px, x2), -0.04, 0.25), (max(px, x2), 0.04, 0.32), M["white"])
+    chair(kit, ctx, M, "op", OX, CHAIR_Y, M["canvas"])
+    pads = []   # (x, y, z, rx, ry, rz): lumpy pads covering the seat, then up the back (a little proud of the canvas)
+    for i in range(6):
+        for j in range(4):
+            pads.append((-0.19 + 0.076 * i + (_hash(i, j, 11) - 0.5) * 0.04, -0.15 + 0.1 * j + (_hash(i, j, 12) - 0.5) * 0.04,
+                         0.425 + 0.02 * _hash(i, j, 13), 0.1 + 0.03 * _hash(i, j, 14), 0.09 + 0.02 * _hash(i, j, 15), 0.05 + 0.03 * _hash(i, j, 16)))
+    for i in range(5):
+        for j in range(5):
+            zz = 0.56 + 0.1 * j + (_hash(i, j, 22) - 0.5) * 0.04
+            pads.append((-0.19 + 0.095 * i + (_hash(i, j, 21) - 0.5) * 0.04, -0.2 - 0.12 * (zz - 0.74), zz, 0.11 + 0.03 * _hash(i, j, 24), 0.05 + 0.02 * _hash(i, j, 23),
+                         0.09 + 0.03 * _hash(i, j, 25)))
+    for sx in (-1, 1):   # moss spills over the arms, down the front legs and onto the grass
+        for n in range(5):
+            pads.append((sx * 0.27, -0.2 + 0.1 * n, 0.64, 0.07, 0.08, 0.05))
+        for n in range(4):
+            pads.append((sx * (0.27 + 0.02 * (n % 2)), 0.2 + 0.03 * n, 0.5 - 0.12 * n, 0.07, 0.06, 0.07))
+    for n in range(9):
+        pads.append((-0.4 + 0.1 * n + (_hash(n, 31) - 0.5) * 0.05, 0.32 + 0.12 * _hash(n, 32), 0.03, 0.1 + 0.04 * _hash(n, 33), 0.09, 0.04))
+    for k, (x, y, z, rx, ry, rz) in enumerate(pads):
+        ob = kit.sphere(f"opmoss{k}", 1.0, (OX + x, CHAIR_Y + y, z), M["moss"], seg=10)
+        ob.scale = (rx, ry, rz)
+        if k % 3 == 0:
+            on_back = k >= 24
+            fl = kit.sphere(f"opf{k}", 1.0, (OX + x, CHAIR_Y + y - (0.0 if not on_back else 0.0) , z), M["flower"], seg=8)
+            r = 0.026
+            fl.scale = (r, r, r * 0.6) if not on_back else (r, r * 0.6, r)
+            fl.location = (OX + x + (_hash(k, 3) - 0.5) * rx, CHAIR_Y + y + (ry * 0.75 if on_back else (_hash(k, 4) - 0.5) * ry), z + (rz * 0.85 if not on_back else (_hash(k, 5) - 0.5) * rz))
+
+
 def chair(kit, ctx, M, nm, cx, cy, canvas):
     """A folding canvas chair facing +y (open side toward the path)."""
     fr = M["chairframe"]
@@ -639,7 +685,7 @@ def build_moss(kit, ctx, M, cast):
     ctx["moss"] = {}
     hat_pad = lambda t0, t1, cnt, big=1.0: ("headg", (0.0, 0.0, 0.68), (0.3, 0.3, 0.02), cnt, t0, t1, (0.34 * big, 0.34 * big, 0.14 * big), 1)
     spec = {
-        "neighbour": shoulder(-1, 3, 0, 0.1) + shoulder(1, 3, 0, 0.1) + [("headg", (0.0, 0.0, 0.62), (0.4, 0.4, 0.02), 4, 0, 0.1, (0.24, 0.24, 0.12), 2)],
+        "neighbour": shoulder(-1, 3, 0, 0.1) + shoulder(1, 3, 0, 0.1) + [("headg", (0.0, 0.0, 0.62), (0.4, 0.4, 0.02), 4, 0, 0.1, (0.24, 0.24, 0.12), 4)],
         "busman": (shoulder(-1, 3, 0, 0.2, 1.1) + shoulder(1, 3, 0, 0.2, 1.1)
                    + [("torso", (0.0, -0.58, 1.0), (0.8, 0.0, 0.85), 10, 0.0, 0.3, (0.5, 0.3, 0.4), 1),
                       ("torso", (0.0, 0.55, 1.0), (0.8, 0.0, 0.8), 6, 0.0, 0.3, (0.5, 0.3, 0.4), 1),
@@ -653,8 +699,8 @@ def build_moss(kit, ctx, M, cast):
         "meeter2": shoulder(-1, 3, 0, 0.1, 1.2) + shoulder(1, 3, 0, 0.1, 1.2) + [hat_pad(0, 0.1, 3), ("torso", (0.0, 0.55, 1.0), (0.8, 0.0, 0.7), 5, 0, 0.1, (0.5, 0.3, 0.4), 1)],
         "meeter3": shoulder(-1, 3, 0, 0.1, 1.1) + shoulder(1, 3, 0, 0.1, 1.2) + [hat_pad(0, 0.1, 3), ("arm-1", (0, 0, -0.7), (0.1, 0, 0.5), 3, 0, 0.1, (0.5, 0.5, 0.35), 1)],
         "benchman": (shoulder(-1, 3, 0, 0.1, 1.1) + shoulder(1, 3, 0, 0.1, 1.1)
-                     + [("arm-1", (0.0, 0.0, -0.45), (0.1, 0.0, 0.5), 5, 0, 0.1, (0.55, 0.55, 0.4), 1),
-                        ("arm1", (0.0, 0.0, -0.45), (0.1, 0.0, 0.5), 5, 0, 0.1, (0.55, 0.55, 0.4), 1)]),
+                     + [("arm-1", (0.0, -0.22, -0.5), (0.1, 0.0, 0.45), 6, 0, 0.1, (0.6, 0.5, 0.42), 1),
+                        ("arm1", (0.0, -0.22, -0.5), (0.1, 0.0, 0.45), 6, 0, 0.1, (0.6, 0.5, 0.42), 1)]),
         # Jory: his left shoulder is local +x. Thickest there, first. Then right, head, brows. Above 1.0: head to foot.
         "jory": (shoulder(1, 5, 0.05, 0.62, 1.05, 2)
                  + shoulder(-1, 4, 0.34, 0.88, 0.8, 1)
@@ -673,15 +719,38 @@ def build_moss(kit, ctx, M, cast):
     for who, zones in spec.items():
         if who in cast:
             moss_zones(kit, ctx, M, who, zones, seed=sum(map(ord, who)))
-    # Jory's big white eyebrows (where the flowers grow), and the one flower on the parcel man's nose
+    # Maggie (cast id jory): a low white bun under the cap, a long plum skirt, and flowers in her hair
+    R, H = faces.HEAD_R, faces.HEAD_H
+    top = H / 2
     if "jory" in cast:
         hg = bpy.data.objects["jory.headg"]
+        white = kit.plastic("#a7a29a", 0.8, name="white hair")
+        for sx in (-1, 1):   # long white locks fall in front of her shoulders so she reads as a woman from the front
+            kit.box(f"jory.lock{sx}", (0.2, 0.5, H * 0.95), (sx * (R - 0.08), -0.1, top - H * 0.5), white, hg, bevel=0.07)
+            # moss clumps in the hair, growing in with the rest of her (lock front is y = -0.35)
+            for q, (mz, ms, mt) in enumerate([(0.5, 0.1, 0.55), (-0.1, 0.1, 0.7), (-0.3, 0.1, 0.88)]):
+                moss_pad(kit, ctx, M, "jory", hg, f"jory.hairm{sx}{q}", (sx * (R - 0.07), -0.35, mz), (ms, ms * 0.8, ms), mt)
+        plum = kit.plastic("#6e4f6e", 0.8, name="heather plum")
+        kit.box("jory.skirt", (2.12, 1.5, 1.7), (0, 0, 1.2), plum, bpy.data.objects["jory"], bevel=0.1)
+        kit.box("jory.skirt2", (2.3, 1.6, 0.2), (0, 0, 0.45), plum, bpy.data.objects["jory"], bevel=0.05)
+        for k, (fx, fy, fz) in enumerate([(-0.6, -0.40, 0.13), (-0.52, -0.40, 0.27), (-0.68, -0.40, 0.3),
+                                           (0.6, -0.40, 0.13), (0.52, -0.40, 0.27), (0.68, -0.40, 0.3)]):
+            f = kit.cyl(f"jory.hairf{k}", 0.12, 0.05, (fx, fy, fz), M["flower"], hg, rot=(math.pi / 2, 0, 0), n=7)
+            f.hide_render = True
+            ctx["moss"]["jory"].append((f, 0.7 + 0.03 * (k % 3), (1, 1, 1), tuple(f.location)))
+            c = kit.cyl(f"jory.hairfc{k}", 0.04, 0.03, (fx, fy - 0.03, fz), kit.plastic("#e8b830", 0.6, name="flower eye"), hg, rot=(math.pi / 2, 0, 0), n=6)
+            c.hide_render = True
+            ctx["moss"]["jory"].append((c, 0.7 + 0.03 * (k % 3), (1, 1, 1), tuple(c.location)))
+    # the narrator: short grey block hair at the back and sides, and a short grey block beard
+    if "me" in cast:
+        hg = bpy.data.objects["me.headg"]
+        grey = kit.plastic("#a9a9ab", 0.85, name="grey hair")
+        kit.box("me.hback2", (2 * R + 0.08, 0.3, H * 0.4), (0, R - 0.08, top - H * 0.28), grey, hg, bevel=0.1)
         for sx in (-1, 1):
-            kit.box(f"jory.brow{sx}", (0.4, 0.1, 0.13), (sx * 0.24, -0.63, 0.27), kit.plastic("#f4f4f0", 0.8, name="white brow"), hg, bevel=0.04)
-            for k in range(3):
-                f = kit.cyl(f"jory.browf{sx}{k}", 0.05, 0.03, (sx * 0.24 + (k - 1) * 0.1, -0.665, 0.34), M["flower"], hg, rot=(math.pi / 2, 0, 0), n=7)
-                f.hide_render = True
-                ctx["moss"]["jory"].append((f, 0.85 + 0.04 * k, (1, 1, 1), tuple(f.location)))
+            kit.box(f"me.hside2{sx}", (0.2, 0.8, 0.45), (sx * (R - 0.02), 0.2, top - 0.3), grey, hg, bevel=0.08)
+        kit.box("me.beard", (1.0, 0.3, 0.3), (0, -R + 0.02, -H / 2 + 0.2), grey, hg, bevel=0.1)
+        for sx in (-1, 1):
+            kit.box(f"me.beardS{sx}", (0.2, 0.7, 0.5), (sx * (R - 0.02), -0.1, -0.25), grey, hg, bevel=0.07)
     if "parcelman" in cast:
         hg = bpy.data.objects["parcelman.headg"]
         kit.cyl("parcel.flower", 0.1, 0.05, (0.0, -0.64, -0.05), M["flower"], hg, rot=(math.pi / 2, 0, 0), n=8)
@@ -812,6 +881,7 @@ def build(kit, story, tl):
     ctx["M"] = M
     build_ground(kit, ctx, M)
     build_park(kit, ctx, M)
+    build_opening(kit, ctx, M)
     build_town(kit, ctx, M)
     build_interior(kit, ctx, M)
     build_kneeler(kit, ctx, M)
