@@ -83,3 +83,59 @@ flash-measures them):
 
 Nothing new to render: the pack is post and sound only, on the drawings we already make. Finishing the preview
 took about 11 minutes and mixing about 6.5, the same as without it.
+
+## v2: the animation itself (2026-11-03, from the craft metrics)
+
+The craft-metrics session (`scripts/measure.py`, `docs/research/craft-metrics.md`) found the engine-level gaps behind
+the owner's "make it so the animations feel real and clean and good": every walk started and stopped dead, characters
+stood like statues, the camera held still in most shots, and v1's punch-ins ran at 2.1 per 10 s, five times
+back-row's 0.44. v2 fixes them in the engine, still only under `look.polish` (`docs/engine.md` → The polish pack).
+
+**The edit's numbers** (`measure.py --story`; ep48 and ep42 measured on copies with `look.polish: true`):
+
+| | ep32 none → v1 → v2 | ep48 none → v2 | ep42 none → v2 | target |
+|---|---|---|---|---|
+| Camera moving | 0.12 → 0.27 → 0.93 | 0.11 → 0.97 | 0.12 → 0.93 | 0.65+ |
+| Punch-ins per 10 s | 0 → 2.07 → 0.69 | 0 → 0.71 | 0 → 0.73 | 0.5 to 0.8 |
+| Shots where a character moves | 0.27 → 0.27 → 0.86 | 0.34 → 0.57 | 0.27 → 0.61 | 0.8+ |
+| Idle 1 s windows | 0.64 → 0.64 → 0.06 | 0.35 → 0.03 | 0.49 → 0.02 | under 0.10 |
+| Walk ends that stop dead | 1.0 → 1.0 → 0.0 | 0.91 → 0.0 | 0.89 → 0.33 | under 0.10 |
+
+- "Shots where a character moves" counts shots with nobody in frame (sets, props, hands) in its denominator, so
+  ep48 and ep42 can't reach 0.8. Every shot with a visible character now moves.
+- ep42's 0.33 is one acting key out of time order for "me" (`acting.position` reads keys in list order), so he jumps
+  at about 61.5 s, 87.9 s and 104 s with or without the pack. It's a story fix, not an engine one.
+- `measure.py` now reads walk ends from `acting.position` (so easing counts) and no longer counts a jump to a new
+  place behind a cut (a key at the same instant, or over 6 m/s) as a walk. The baselines barely move (ep48 0.95 →
+  0.91).
+
+**The film's numbers** (`measure.py <preview>`, ep32 previews: quarter-res, every 4th drawing):
+
+| | none | v1 | v2 |
+|---|---|---|---|
+| Picture changes per 10 s | 8.2 | 8.4 | 10.4 |
+| Longest still | 0.83 s | 0.93 s | 0.47 s |
+| Motion energy | 1.56 | 1.59 | 1.94 |
+| Brightness, dark frames | 0.31, 6.7% | 0.35, 4.7% | 0.35, 4.6% |
+| Flash, loudness, true peak | pass, -14.1, -1.8 | pass, -14.1, -1.7 | pass, -14.1, -1.8 |
+
+The preview's held frames (49%) are the preview's every-4th drawing, not the final's.
+
+**On ones** (the cost of drawing every frame, from run 41564219345's shard times): ep34's 16 shards took 17 to 37
+min (491 shard-minutes; the wall time is the slowest shard plus 24 min to finish and mix), floor-thirteen's 12 to 27
+min. Our stories draw 50 to 58% of their frames today. Every shot on ones is 1.73 to 1.98 times the drawing (ep34's
+slowest shard about 70 min). Only the shots where someone walks, which is where twos read as choppy, is 1.07 to 1.09
+times on ep32, ep34 and ep48 (0.92 on floor-thirteen, whose walks are already on ones). v2 does that (`ones: "walk"`).
+The camera moves and idle motion are slow enough to stay on twos.
+
+**The critic, round 3** (A none, B v1, C v2, fresh agent): C at least as good as B on every axis: **yes**. Better on
+pace and motion: **yes** (5 → 6 → 8). Better on animation quality: **yes** (5 → 5 → 7, "breathing and weight shifts
+read as natural"). Overall 6 → 7 → 7.5. No jitter at phone size, and no caption cropped. Its notes:
+1. The reveal ("was MUM", 66.5 to 67.5 s): her head tilted while the camera trucked, so her face drifted off centre.
+   **Fix:** a shot a reveal lands in is calm: a straight push at half speed and idle motion at a fifth.
+2. The push at 68 s was too fast on a short shot. **Fix:** the whole move (push plus arc or truck) is capped at
+   0.12 m/s.
+3. The hook close-up's push cropped the hair. **Fix:** a camera under 2 m from its target pushes proportionally less.
+4. At 26.5 s the push aims at the frame's centre, not the sitter's face. Left for now: aiming at a face needs the
+   camera to know who's in frame. Builders can key their own camera on a shot like this, and the pack leaves it alone.
+Fixes 1 to 3 are in the engine and tested, not rendered again. The Actions final measures and flash-checks them.
