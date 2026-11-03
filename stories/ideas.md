@@ -362,3 +362,4 @@ killed: `ep57-arch-seat` (#28b, replacement for ep44 `sleeper-car`, 2026-11-03),
 - ep33-chairlift: a day at the top costs a year below (altitude time)
 - ep31-dawn-flight: you fall apart if your family forgets you; they relive one dawn to keep you whole
 - floor-thirteen: forgotten things go to floor 13, and the narrator is what Grandad forgot
+- moving-day (ep17): a house grows to fit the tallest one living in it, and it never fit us; something tall came with us in a box
