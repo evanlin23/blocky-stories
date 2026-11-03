@@ -112,6 +112,25 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     the `spec.*` metrics), build to a target with margin (15, not 12.5), and plan acting beats into every shot instead of
     retrofitting punch-ins, which don't count as picture changes.
 
+20. **A change was broadcast before the owner had settled it.** About 4:15 PM, #1 reported the calm-opening fix (#209)
+    as the owner's choice, and the second orchestrator messaged about 30 sessions. Within minutes the owner reversed it
+    ("I meant that we should be doing the swoosh bc thats what ive seen online"), #209 closed unmerged, and a
+    correction went to 41 sessions. The 9 new batch 9 builds had already started with the wrong rule in their brief.
+    → About 70 messages, every session woken twice, and a rule in 9 briefs that had to be overridden.
+    → Broadcast a rule only once its PR has merged. Better: sessions read the current bar from one file on main at each
+    step, so a change needs no messages at all.
+21. **Times were guessed, not read from a clock.** The second orchestrator stamped messages "4:40 PM" and "4:45 PM", and
+    a #177 post "4:50 PM", when the clock said 4:15 to 4:26 PM. Relayed #1 posts carried times that hadn't happened yet
+    either.
+    → Times that don't line up, between two orchestrators who coordinate by them.
+    → Stamp every post and message from the clock (`TZ=America/Chicago date`), in a script, never by hand.
+22. **Long sessions drift from main.** About 10 rule and tool merges landed on main in one day: the flash bar, the near
+    band, proof fixes, render lanes. Sessions that started in the morning were judging with old `measure.py`, `qa.md` and
+    flash code until the owner asked: "Can we make sure that everything thats running has the latest on main?"
+    → A broadcast to every session, and judgments made against stale bars.
+    → Every brief has a "merge origin/main" step before each judge step (review, proof, qa, merge). Also, `proof.yml`
+    and qa should take their tools from main, not from the branch.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
