@@ -45,7 +45,7 @@ DEFAULTS = {
     # captions
     "pop": True,
     # motion
-    "push": 0.12, "reframe_every": 0.8, "reframe_min": 1.6, "reframe_zoom": 1.14, "max_zoom": 1.15,
+    "push": 0.12, "reframe_every": 0.8, "reframe_min": 1.6, "reframe_zoom": 1.14, "max_zoom": 1.18,
     "punch": 0.06, "punch_gap": 2.4, "punch_rate": 0.7, "fill": 0.0, "hit_gap": 4.0, "drift": 0.03,
     "ones": "moving", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
     # picture
