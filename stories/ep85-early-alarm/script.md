@@ -3,8 +3,8 @@
 - **Slug:** `ep85-early-alarm` (batch 8, upload order 1 of 7)
 - **Pitch:** N19 in `docs/research/2026-11-09-week.md` (panel score 7). Opening shape `if`. Lane: core. Length arm: long (110 to 150 s).
 - **Title:** Don't Get Up Before The ALARM ⏰
-- **Word count:** 512 spoken words in 71 lines, all `narrator`, plus one 0.6 s music drop before L38.
-- **Estimated length:** about 117 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L32 and L47 first. If it lands under 110 s, nothing is added (the long arm's floor is a guide, not a pad).
+- **Word count:** 577 spoken words in 77 lines, all `narrator`, plus one 0.6 s music drop before L38.
+- **Estimated length:** about 132 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L32 and L47 first. If it lands under 110 s, nothing is added (the long arm's floor is a guide, not a pad).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright and saturated: a peach-and-lavender suburban dawn, marigold sun light. The one dim stretch is L20 to L37 (the dark mornings), lit by porch lamps and a deep-blue sky that still reads on a phone. The sun's glow ramps up over 1.5 s at L44 and never flickers.
 - **Hold:** scripts only (batch 8). Not built, not voiced.
 
@@ -33,6 +33,8 @@ Openings in upload order: if, confess, cost, count, confess, if, whatif. Note fo
 - **The rule is the clue:** "do NOT get up" first reads as protection from something dangerous. After the reveal it's protection from a job: see it once and the sun's alarm is yours for life.
 
 ## The story
+- **Who raised the late suns:** Dad, alone, crawling out with his bad back, slower each day (said at L53a, L53b, planted at L29a: fresh sunburn, wrecked on the couch every afternoon).
+- **Why the whole street keeps the rule:** anyone who sees the sun on the grass gets the alarm for good (L55, L55a), so nobody gets up.
 - **Premise:** In our town, if your alarm rings an hour early, you lie still until it's light. My dad, Frank, is always up first, sunburned in November, and our yard never frosts. On Monday his back goes out. On Tuesday my alarm rings at five, and the sun doesn't come up until nine.
 - **Rule / hook (L01, about 2.3 s):** "If your alarm rings / an HOUR early, / do NOT get up." L02 tightens it: "Lie STILL. / Eyes on the CEILING. / Until it's LIGHT."
 - **The relatable want or fight:** I hate mornings and Dad loves them. That's most of our fights, and then the worst one, when he tells me to stay in bed whatever I hear.
@@ -43,7 +45,7 @@ Openings in upload order: if, confess, cost, count, confess, if, whatif. Note fo
 - **The loved one at stake:** my dad, Frank, named at L09 in the same shot as him at the kitchen table.
 - **The rule broken:** L37, about 57 s in.
 - **First real scare:** L38 to L45 (58 to 69 s): the rope across the grass, the huge warm round thing breathing on our lawn, then one gold eye opening an inch from my face.
-- **The climax turns the rule's own logic:** the rule says whoever sees it gets the alarm. Dad saw it and I saw it, and it never said one person. So two of us take the winch, half the weight each (L61 to L66). No new magic.
+- **The climax turns the rule's own logic:** the rule says whoever sees it gets the alarm. Dad saw it and I saw it, and it never said one person, so there are two of us on the alarm now, and it takes two to lift (L61 to L66, with a held 0.5 s beat before L64a). No new magic.
 - **Twist and reveal (L46 to L53, 69 to 82 s):** said plainly. "It was the SUN." "The sun doesn't RISE. / Every night it comes down / to sleep in our YARD. / And every morning, somebody has to WAKE it, / and winch it back UP. / For thirty YEARS, that was Dad."
 - **How the last 15 seconds turn over the first line:** we take turns now, and on his nights Dad still tells me the same thing (L70, L71), which runs into L01. The rule is now the family's own warning, said by the man who keeps the sky running.
 - **The plants a rewatch catches:**
@@ -144,49 +146,55 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S27 | L27 | 40.7 | The sun peeking up over our shed at a tilt, late and crooked, the inset at 9:00. |
 | S28 | L28 | 42.7 | A car rolling past with its headlights on in the morning. |
 | S29 | L29 | 44.5 | Mr. Pruitt's rooster on his roof, sitting down, `sleepy`. |
-| S30 | L30 | 45.9 | The clock at 5:00 again, ringing. |
-| S31 | L31 | 47.3 | From my window: the rope lying slack across our grass in the dark. The inset at 11:00 as the sun finally peeks. |
-| S32 | L32 | 48.7 | Mr. Pruitt pushing a mower across his lawn by flashlight. |
-| S33 | L33 | 50.5 | Dad on the couch in his robe, turning toward the wall, `stern`. |
-| S34 | L34 | 52.1 | Dad in my doorway, `stern`, leaning on the frame. |
-| S35 | L35 | 54.1 | Me `annoyed` and Dad `stern`, facing each other across the hall. Door shut. |
-| S36 | L36 | 55.7 | The clock at 5:00 ringing. |
-| S37 | L37 | 56.5 | My feet on the floor. Me standing, `worried`. |
+| S29a | L29a | 45.9 | Dad on the couch in the afternoon, `pained`, a fresh red sunburn on his face, a heat pad slipping. |
+| S30 | L30 | 48.6 | The clock at 5:00 again, ringing. |
+| S31 | L31 | 50.0 | From my window: the rope lying slack across our grass in the dark. The inset at 11:00 as the sun finally peeks. |
+| S32 | L32 | 51.4 | Mr. Pruitt pushing a mower across his lawn by flashlight. |
+| S33 | L33 | 53.2 | Dad on the couch in his robe, turning toward the wall, `stern`. |
+| S34 | L34 | 54.8 | Dad in my doorway, `stern`, leaning on the frame. |
+| S35 | L35 | 56.8 | Me `annoyed` and Dad `stern`, facing each other across the hall. Door shut. |
+| S36 | L36 | 58.4 | The clock at 5:00 ringing. |
+| S37 | L37 | 59.1 | My feet on the floor. Me standing, `worried`. |
 | (drop) | | | 0.6 s: the back door, still. |
-| S38 | L38 | 57.9 | The shed door ajar in the dark, warm light spilling out. |
-| S39 | L39 | 59.1 | Low on the grass: the rope running from the shed across the frost-free lawn. |
-| S40 | L40 | 61.1 | Follow the rope to a huge curved glowing shape, bigger than the garage beside it. |
-| S41 | L41 | 62.7 | Wider: the round thing curled on the bare patch, its seams glowing. |
-| S42 | L42 | 63.9 | Close on its surface, glowing like coals. Steam off the grass. |
-| S43 | L43 | 65.9 | It swells and settles. One slow warm breath. |
-| S44 | L44 | 66.6 | A long gold lid lifting. |
-| S45 | L45 | 68.0 | My face and one enormous gold eye filling the frame together, an inch apart. Me `scared`. Cover frame. |
-| S46 | L46 | 69.2 | The eye blinking slowly. Pull back to show the whole glowing ball. |
-| S47 | L47 | 70.2 | Me looking up at the empty dark sky, then back at the lawn, `awed`. |
-| S48 | L48 | 71.8 | Dad on the back step in his robe, a hand to his back. |
-| S49 | L49 | 74.2 | Dad close, `soft`. |
-| S50 | L50 | 75.6 | The Sun's glow on both our faces. |
-| S51 | L51 | 76.6 | Night insert: the sun sinking down over our shed into the yard at dusk, small, then settling big on the grass. |
-| S52 | L52 | 78.8 | Two quick inserts: a gloved hand at the end of a sleeve on the winch handle, the rope going taut. |
-| S53 | L53 | 81.6 | Dad, younger, in the same shed, same winch (no flashback text, just warmer light). |
-| S54 | L54 | 83.0 | Back to the clock inset ringing in my room, empty bed. |
-| S55 | L55 | 84.8 | Close on the Sun's eye watching me. |
-| S56 | L56 | 87.5 | Dad on the couch, my door beyond it, the alarm ringing through the wall. |
-| S57 | L57 | 90.3 | Dad `soft`, looking at the ground. |
-| S58 | L58 | 91.7 | Dad patting the winch's iron housing, `proud`. |
-| S59 | L59 | 93.1 | Dad leaning on the winch, `pained`. It doesn't move. |
-| S60 | L60 | 95.3 | Me on the handle, leaning back, nothing. |
-| S61 | L61 | 96.5 | Me stopping, `neutral`, looking from Dad to the Sun. |
-| S62 | L62 | 97.9 | The Sun's eye on me. |
-| S63 | L63 | 99.3 | Two quick inserts: Dad's eyes, my eyes. |
-| S64 | L64 | 100.7 | Me turning to Dad, `smile`. |
-| S65 | L65 | 101.9 | Dad's hands at the end of his sleeves on the brake lever, me on the crank. |
-| S66 | L66 | 103.7 | The rope going taut. The Sun lifting off the grass. |
-| S67 | L67 | 105.3 | From the lawn: the Sun rising straight over the shed into a peach sky, shrinking to sun size. The inset glyph rises at 5:58. |
-| S68 | L68 | 107.9 | Dad and me side by side in the shed door, gold light on both faces. |
-| S69 | L69 | 111.1 | Close: Dad's hand on my shoulder at the end of his sleeve, `soft`. |
-| S70 | L70 | 113.8 | A wall calendar of our own glyphs, alternating two colours of dot. |
-| S71 | L71 | 114.8 | Dad in my doorway at night, `soft`, then cut to the alarm clock close (S01's framing). Loop. |
+| S38 | L38 | 60.5 | The shed door ajar in the dark, warm light spilling out. |
+| S39 | L39 | 61.7 | Low on the grass: the rope running from the shed across the frost-free lawn. |
+| S40 | L40 | 63.7 | Follow the rope to a huge curved glowing shape, bigger than the garage beside it. |
+| S41 | L41 | 65.3 | Wider: the round thing curled on the bare patch, its seams glowing. |
+| S42 | L42 | 66.5 | Close on its surface, glowing like coals. Steam off the grass. |
+| S43 | L43 | 68.5 | It swells and settles. One slow warm breath. |
+| S44 | L44 | 69.3 | A long gold lid lifting. |
+| S45 | L45 | 70.7 | My face and one enormous gold eye filling the frame together, an inch apart. Me `scared`. Cover frame. |
+| S46 | L46 | 71.8 | The eye blinking slowly. Pull back to show the whole glowing ball. |
+| S47 | L47 | 72.8 | Me looking up at the empty dark sky, then back at the lawn, `awed`. |
+| S48 | L48 | 74.4 | Dad on the back step in his robe, a hand to his back. |
+| S49 | L49 | 76.8 | Dad close, `soft`. |
+| S50 | L50 | 78.2 | The Sun's glow on both our faces. |
+| S51 | L51 | 79.2 | Night insert: the sun sinking down over our shed into the yard at dusk, small, then settling big on the grass. |
+| S52 | L52 | 81.4 | Two quick inserts: a gloved hand at the end of a sleeve on the winch handle, the rope going taut. |
+| S53 | L53 | 84.3 | Dad, younger, in the same shed, same winch (no flashback text, just warmer light). |
+| S53a | L53a | 85.7 | Pre-dawn from my window earlier in the week: Dad limping across the lawn to the shed in his robe, a hand to his back. |
+| S53b | L53b | 88.3 | The winch handle turning slowly in Dad's hands at the end of his sleeves, the sun tipping up crooked over the shed (S27's framing). |
+| S54 | L54 | 90.9 | Back to the clock inset ringing in my room, empty bed. |
+| S55 | L55 | 92.7 | Close on the Sun's eye watching me. |
+| S55a | L55a | 95.4 | Four quick inserts: Mr. Pruitt at his fence, the mailman at our gate, then the camera turning to you (a straight-to-lens push on the lawn). |
+| S56 | L56 | 96.8 | Dad on the couch, my door beyond it, the alarm ringing through the wall. |
+| S57 | L57 | 100.4 | Dad `soft`, looking at the ground. |
+| S58 | L58 | 101.8 | Dad patting the winch's iron housing, `proud`. |
+| S59 | L59 | 103.2 | Dad leaning on the winch, `pained`. It doesn't move. |
+| S60 | L60 | 105.4 | Me on the handle, leaning back, nothing. |
+| S61 | L61 | 106.6 | Me stopping, `neutral`, looking from Dad to the Sun. |
+| S62 | L62 | 108.0 | The Sun's eye on me. |
+| S63 | L63 | 109.4 | Two quick inserts: Dad's eyes, my eyes. |
+| S64 | L64 | 110.8 | Me turning to Dad, `smile`. |
+| S64a | L64a | 112.5 | Held beat (0.5 s, music dips): the clock inset showing two small alarm glyphs side by side. |
+| S64b | L64b | 114.5 | Dad and me looking at each other across the winch, `smile`, `soft`. |
+| S65 | L65 | 116.7 | Dad's hands at the end of his sleeves on the brake lever, me on the crank. |
+| S66 | L66 | 118.5 | The rope going taut. The Sun lifting off the grass. |
+| S67 | L67 | 120.1 | From the lawn: the Sun rising straight over the shed into a peach sky, shrinking to sun size. The inset glyph rises at 5:58. |
+| S68 | L68 | 122.7 | Dad and me side by side in the shed door, gold light on both faces. |
+| S69 | L69 | 126.0 | Close: Dad's hand on my shoulder at the end of his sleeve, `soft`. |
+| S70 | L70 | 128.6 | A wall calendar of our own glyphs, alternating two colours of dot. |
+| S71 | L71 | 129.6 | Dad in my doorway at night, `soft`, then cut to the alarm clock close (S01's framing). Loop. |
 
 ## Lore connection (`stories/lore.md`)
 One plant, a plain tally: two marigold strokes scratched into the winch's iron housing, two for a winch built for two hands on it at once. No extra stroke, no Keeper. Seen in S58 under L58 ("He says / it's heavier / in WINTER."), as Dad pats the housing, held 1.4 s, never narrated.
@@ -223,6 +231,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L27: The sun came up / at NINE. / Slow, / and CROOKED.
 - L28: People drove to work / with their HEADLIGHTS on.
 - L29: Mr. Pruitt's ROOSTER / just gave UP.
+- L29a: And every AFTERNOON, / Dad looked WORSE. / Fresh SUNBURN. / Wrecked on the COUCH.
 - L30: Wednesday, / five A.M., / it rang AGAIN.
 - L31: The sun came up / at ELEVEN.
 - L32: Mr. Pruitt / mowed his lawn / with a FLASHLIGHT.
@@ -247,9 +256,12 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L51: Every night / it comes down / to sleep / in our YARD.
 - L52: And every morning, / somebody has to WAKE it, / and winch it back UP.
 - L53: For thirty YEARS, / that was Dad.
+- L53a: This week, / he'd been crawling out there ALONE, / bad back and ALL.
+- L53b: SLOWER every day. / That's why the sun / came up LATE, / and CROOKED.
 - L54: That's why / the rule says / stay in BED.
 - L55: Whoever SEES it / on the grass / gets the early alarm. / For GOOD.
-- L56: And if they CAN'T, / it rings / for the next one / in the HOUSE.
+- L55a: ANYBODY. / Mr. PRUITT. / The MAILMAN. / YOU.
+- L56: And when the one who's seen it CAN'T, / it rings / for the next one / in their HOUSE.
 - L57: Dad never wanted / that for ME.
 - L58: He says / it's heavier / in WINTER.
 - L59: He leaned on the WINCH. / His back / wouldn't LET him.
@@ -258,6 +270,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L62: Whoever SEES it / gets the alarm.
 - L63: Dad SAW it. / I SAW it.
 - L64: It never said / ONE person.
+- L64a: There were TWO of us / on the alarm now.
+- L64b: So it would take / TWO of us / to lift it.
 - L65: So Dad / held the BRAKE, / and I CRANKED.
 - L66: Two of us. / Half the WEIGHT / each.
 - L67: And at five fifty-EIGHT, / the sun went up / over our shed, / STRAIGHT.

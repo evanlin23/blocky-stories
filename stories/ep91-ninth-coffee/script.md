@@ -4,8 +4,8 @@
 - **Pitch:** N07 in `docs/research/2026-11-09-week.md` (panel score 6), a port of the what-if escalation niche (a doubling meter). Opening shape `whatif`. Lane: experiment. Length arm: mid (60 to 90 s).
 - **Title:** Each Coffee Makes Me TWICE As Fast ☕
 - **Kept from the pitch:** the doubling per cup, the ninth cup freezing the room and the people who were always too fast for us. Made personal: one of them is my best friend.
-- **Word count:** 312 spoken words in 45 lines, all `narrator`, plus one 0.6 s music drop before L19.
-- **Estimated length:** about 72 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L11 and L42 first.
+- **Word count:** 337 spoken words in 48 lines, all `narrator`, plus one 0.6 s music drop before L19.
+- **Estimated length:** about 78 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L11 and L42 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright open-plan office in afternoon sun: cream desks, espresso-brown chairs, big windows, plants. The frozen stretch (L19 to L36) keeps the same light, with the ten-cuppers drawn as frozen streaks of electric cyan. Nothing flashes: the streaks are still, smooth smears, not strobes.
 - **Hold:** scripts only (batch 8). Not built, not voiced.
 
@@ -38,9 +38,9 @@ Kept clear of ep62 (an office elevator): no elevator scene beyond one montage in
 - **The loved one at stake:** my best friend, Kai, named at L07 in the same shot as his neat empty desk with his jacket on the chair.
 - **The rule broken:** L15 to L18, 24 to 28 s.
 - **First real scare:** L19 to L25 (29 to 37 s): the whole office stops, and I'm not alone: between the frozen desks there are others, frozen streaks of color even faster than me, filing and typing.
-- **The climax turns the rule's own logic:** the rule says every coffee makes you twice as fast. It never says what decaf does. Kai's at ten, so ten decafs, each one halving him (L37 to L41). No new magic.
+- **The climax turns the rule's own logic:** the rule says every coffee makes you twice as fast, and it never wears off (L06a). It never says what decaf does. Kai's at ten, so ten decafs, each one undoing a cup, take him to zero cups and normal speed (L37 to L43). No new magic.
 - **Twist and reveal (L26 to L34, 38 to 54 s):** said plainly. "They're the TEN-cuppers. People who drank a tenth cup, and can't come DOWN." "KAI." "He was never too busy for me. He's been finishing MY work."
-- **How the last 15 seconds turn over the first line:** a slow two-hour lunch, Kai back down to one, but that was every decaf in the building. "And ME?" (L45) runs into L01: "Every coffee makes you twice as fast. I've had nine."
+- **How the last 15 seconds turn over the first line:** a two-hour lunch for him that lasts six weeks for me, Kai back down to zero cups, but that was every decaf in the building. I'm stuck at nine, and every day the tenth cup looks better (L44 to L45a), which runs into L01: "Every coffee makes you twice as fast. I've had nine."
 - **The plants a rewatch catches:**
   1. L02: "Nobody comes back from TEN."
   2. L10: "I never see him ARRIVE. I never see him LEAVE."
@@ -114,46 +114,49 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S04 | L04 | 5.8 | The elevator doors closing and opening in one beat. Meter x4. |
 | S05 | L05 | 7.4 | A coworker talking, mouth slow and wide. |
 | S06 | L06 | 9.2 | A row of people with two cups each, contented. |
-| S07 | L07 | 10.4 | Kai's desk next to mine, his teal jacket on the chair, a photo of us both on it. |
-| S08 | L08 | 12.2 | The photo close: Kai and me with two cups, `laugh`. |
-| S09 | L09 | 13.8 | Me looking at his empty chair, `tired`. |
-| S10 | L10 | 15.6 | Morning: his chair empty. Evening: still empty, the jacket moved an inch. |
-| S11 | L11 | 17.8 | Top-down on his desk, perfectly neat, pens in a line. |
-| S12 | L12 | 19.2 | The office at 8 a.m., every in-tray stacked and finished. |
-| S13 | L13 | 21.0 | The wall clock at 3:00, a deadline glyph on my screen. |
-| S14 | L14 | 22.6 | My blank screen. Me `panicked`. |
-| S15 | L15 | 23.8 | Three quick pours, cups lining up. |
-| S16 | L16 | 24.8 | The clock's second hand crawling. Meter x32. |
-| S17 | L17 | 26.8 | My boss frozen mid-sneeze, a little cloud hanging. |
-| S18 | L18 | 28.0 | Close on me drinking the ninth (cut before the lip). |
+| S06a | L06a | 10.4 | A coworker's old cup ticks in the inset staying lit all evening as he leaves. |
+| S07 | L07 | 11.6 | Kai's desk next to mine, his teal jacket on the chair, a photo of us both on it. |
+| S08 | L08 | 13.4 | The photo close: Kai and me with two cups, `laugh`. |
+| S09 | L09 | 15.0 | Me looking at his empty chair, `tired`. |
+| S10 | L10 | 16.8 | Morning: his chair empty. Evening: still empty, the jacket moved an inch. |
+| S11 | L11 | 19.0 | Top-down on his desk, perfectly neat, pens in a line. |
+| S12 | L12 | 20.4 | The office at 8 a.m., every in-tray stacked and finished. |
+| S13 | L13 | 22.2 | The wall clock at 3:00, a deadline glyph on my screen. |
+| S14 | L14 | 23.8 | My blank screen. Me `panicked`. |
+| S15 | L15 | 25.0 | Three quick pours, cups lining up. |
+| S16 | L16 | 26.0 | The clock's second hand crawling. Meter x32. |
+| S17 | L17 | 28.0 | My boss frozen mid-sneeze, a little cloud hanging. |
+| S18 | L18 | 29.2 | Close on me drinking the ninth (cut before the lip). |
 | (drop) | | | 0.6 s: the frozen office, silent. |
-| S19 | L19 | 29.0 | The meter at x512. |
-| S20 | L20 | 30.3 | Wide-ish: the office frozen, a paper hanging mid-air. |
-| S21 | L21 | 31.3 | Me standing up, `scared`, the only one moving. |
-| S22 | L22 | 32.3 | Between two desks: a long frozen cyan streak. |
-| S23 | L23 | 33.7 | Closer: a person at the head of the streak, mid-stride. |
-| S24 | L24 | 35.7 | Three quick inserts: a streak at a filing cabinet, a streak at a keyboard, a streak squaring a stack. |
-| S25 | L25 | 36.9 | The whole floor crossed by cyan streaks, like light trails. Cover frame. |
-| S26 | L26 | 37.7 | The finished in-trays from S12. |
-| S27 | L27 | 39.3 | The coffee machine's left spout, ten cup ticks glowing on a streak's meter. |
-| S28 | L28 | 40.0 | A ten-cupper's face, `focused`, at the head of its streak. |
-| S29 | L29 | 42.2 | A neat desk where a mess was a cut ago. |
-| S30 | L30 | 44.7 | A streak stopping at my desk. |
-| S31 | L31 | 46.5 | Kai clear at its head, round glasses, teal sweater, `pleading`. |
-| S32 | L32 | 46.8 | His desk a year ago (warmer light), ten cups lined up. |
-| S33 | L33 | 49.1 | His jacket on the chair, the photo of us. |
-| S34 | L34 | 51.5 | My in-tray, finished in his handwriting glyphs. Me `stunned`. |
-| S35 | L35 | 54.1 | A sticky note appearing on my monitor, its edge smoking. |
-| S36 | L36 | 56.3 | The note close: a glyph of a down arrow. |
-| S37 | L37 | 57.1 | The coffee machine, both spouts. |
-| S38 | L38 | 59.3 | Close on the hollow decaf glyph. Me `wired`. |
-| S39 | L39 | 60.7 | Ten decafs lined up on my desk. |
-| S40 | L40 | 62.9 | Kai's meter in the split inset dropping, his streak shorter each cut. |
-| S41 | L41 | 63.9 | Kai, ordinary, by the coffee machine, `dazed`, blinking. |
-| S42 | L42 | 66.7 | A sunny lunch spot: Kai and me with sandwiches, `laugh`, the clock glyph moving slowly. |
-| S43 | L43 | 68.6 | Kai's meter at x1. |
-| S44 | L44 | 69.7 | The decaf spout dripping empty. |
-| S45 | L45 | 71.3 | Me, my meter still at x512, the world around me frozen again, then cut to the ninth cup close (S01's framing). Loop. |
+| S19 | L19 | 30.1 | The meter at x512. |
+| S20 | L20 | 31.5 | Wide-ish: the office frozen, a paper hanging mid-air. |
+| S21 | L21 | 32.5 | Me standing up, `scared`, the only one moving. |
+| S22 | L22 | 33.5 | Between two desks: a long frozen cyan streak. |
+| S23 | L23 | 34.9 | Closer: a person at the head of the streak, mid-stride. |
+| S24 | L24 | 36.9 | Three quick inserts: a streak at a filing cabinet, a streak at a keyboard, a streak squaring a stack. |
+| S25 | L25 | 38.1 | The whole floor crossed by cyan streaks, like light trails. Cover frame. |
+| S26 | L26 | 38.8 | The finished in-trays from S12. |
+| S27 | L27 | 40.4 | The coffee machine's left spout, ten cup ticks glowing on a streak's meter. |
+| S28 | L28 | 41.2 | A ten-cupper's face, `focused`, at the head of its streak. |
+| S29 | L29 | 43.4 | A neat desk where a mess was a cut ago. |
+| S30 | L30 | 45.9 | A streak stopping at my desk. |
+| S31 | L31 | 47.7 | Kai clear at its head, round glasses, teal sweater, `pleading`. |
+| S32 | L32 | 48.0 | His desk a year ago (warmer light), ten cups lined up. |
+| S33 | L33 | 50.2 | His jacket on the chair, the photo of us. |
+| S34 | L34 | 52.7 | My in-tray, finished in his handwriting glyphs. Me `stunned`. |
+| S35 | L35 | 55.3 | A sticky note appearing on my monitor, its edge smoking. |
+| S36 | L36 | 57.5 | The note close: a glyph of a down arrow. |
+| S37 | L37 | 58.3 | The coffee machine, both spouts. |
+| S38 | L38 | 60.5 | Close on the hollow decaf glyph. Me `wired`. |
+| S39 | L39 | 61.9 | Ten decafs lined up on my desk. |
+| S40 | L40 | 64.1 | Kai's meter in the split inset dropping, his streak shorter each cut. |
+| S41 | L41 | 65.3 | Kai, ordinary, by the coffee machine, `dazed`, blinking. |
+| S42 | L42 | 68.1 | A sunny lunch spot: Kai and me with sandwiches, `laugh`, the clock glyph moving slowly. |
+| S42a | L42a | 69.7 | Me at the lunch table in a frozen world, Kai holding a sandwich, my beard grown out, a tiny calendar glyph flipping through six weeks. |
+| S43 | L43 | 71.5 | Kai's meter at x1. |
+| S44 | L44 | 72.9 | The decaf spout dripping empty. |
+| S45 | L45 | 74.5 | Me, my meter still at x512, the world around me frozen again. |
+| S45a | L45a | 75.7 | The coffee machine's left spout, close, steam frozen. Push in, then cut to the ninth cup close (S01's framing). Loop. |
 
 ## Lore connection (`stories/lore.md`)
 One plant, a plain tally: two cyan strokes scratched into the coffee machine's chrome drip tray, two for a machine built with two spouts. No extra stroke, no Keeper. Seen in S37 under L37, at the tray's edge, held 1.2 s, never narrated.
@@ -167,6 +170,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L04: Two, / the elevator / takes half as LONG.
 - L05: Four, / everybody else / talks like a SLOW song.
 - L06: Most people / stop at TWO.
+- L06a: Because it never / WEARS off.
 - L07: My best friend, KAI, / sits / one desk OVER.
 - L08: We used to get coffee / every MORNING.
 - L09: For a year now, / he's always / too BUSY.
@@ -200,14 +204,16 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L37: The rule says / every COFFEE / makes you twice as fast.
 - L38: It never says / what DECAF does.
 - L39: Kai was at TEN. / So I made him / ten DECAFS.
-- L40: Each one / HALVED him.
+- L40: Each one / undid a CUP.
 - L41: After the last one, / he was just KAI, / blinking / by the coffee MACHINE.
-- L42: We had LUNCH. / A slow one. / Two HOURS.
-- L43: He's back down / to ONE.
+- L42: We had LUNCH. / Two HOURS / for him.
+- L42a: For me, / at NINE, / it was / six WEEKS.
+- L43: He's back down / to ZERO cups.
 - L44: That was every decaf / in the BUILDING.
-- L45: And ME?
+- L45: And I'm still / at NINE.
+- L45a: And every DAY, / that tenth cup / looks BETTER.
 
-(Loop: L45 runs straight into L01: "And me? Every coffee makes you twice as fast. I've had nine.")
+(Loop: L45a runs straight into L01: "And every day, that tenth cup looks better. Every coffee makes you twice as fast. I've had nine.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: none.

@@ -4,8 +4,8 @@
 - **Pitch:** N13 in `docs/research/2026-11-09-week.md` (panel score 7). Opening shape `if`. Lane: core. Length arm: mid (60 to 90 s).
 - **Title:** Nobody Answers The Closing PAGE 🛒
 - **Changed from the pitch:** the pitch's answer (the night crew stocks the town, people included, and the forty-year cashier was paged in 1985) made people into stock. The back room now keeps everyone's tab instead, and the forty-year cashier is gone. Line 1 is kept.
-- **Word count:** 303 spoken words in 45 lines, all `narrator`, plus one 0.6 s music drop before L18.
-- **Estimated length:** about 70 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L08 and L41 first.
+- **Word count:** 324 spoken words in 47 lines, all `narrator`, plus one 0.6 s music drop before L18.
+- **Estimated length:** about 75 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L08 and L41 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright, cheerful supermarket at 9:59 p.m.: banana yellow, apple green, freezer blue, white floor tiles, fruit stacked in pyramids. The back room (L18 to L33) is lit by long rows of warm work lights, deep but never dark. The overhead lights stay steady.
 - **Hold:** scripts only (batch 8). Not built, not voiced.
 
@@ -39,8 +39,8 @@ The batch table is in `stories/ep85-early-alarm/script.md`. This row:
 - **The rule broken:** L17, about 26 s.
 - **First real scare:** L18 to L28 (28 to 43 s): the back goes on forever, half the town in green aprons stocking in silence, and the Tallyman steps out, beeps at my face and reads my tab.
 - **The climax turns the rule's own logic:** a tab gets worked off, and the rule never says by whom, so Grandma and I split it (L36 to L40). No new magic.
-- **Twist and reveal (L29 to L35, 44 to 55 s):** said plainly. "Every grape was HER." "Every Thursday since I could SIT in the cart, she slipped me one from the BAG. Just ONE. Every AISLE." "The whole town owes for SNACKS."
-- **How the last 15 seconds turn over the first line:** we're down to ninety grapes, and tonight in aisle three Grandma slipped me just one more (L42 to L44). "So if you've ever had just one grape," (L45) runs into L01.
+- **Twist and reveal (L29 to L35, 44 to 55 s):** said plainly. "Every grape was from HER. And the tab goes to whoever EATS it." "Every Thursday since I could SIT in the cart, she slipped me one from the BAG. Just ONE. Every AISLE." "The whole town owes for SNACKS."
+- **How the last 15 seconds turn over the first line:** we're down to ninety grapes, and tonight in aisle three Grandma slipped me just one more, on purpose: it's not the grapes, she likes the nights with me (L42 to L44a). Loving, not sinister. "So if you've ever had just one grape," (L45) runs into L01.
 - **The plants a rewatch catches:**
   1. L15: Grandma says "keep WALKING" the moment my name is paged.
   2. L16: "I've never stolen so much as a GRAPE" (true: they were handed to me).
@@ -72,7 +72,7 @@ One place: a bright small-town supermarket at closing. White tile floor, banana-
 - `me` (an adult man, about 20, the narrator): a buzz-cut block head, a red flannel shirt, jeans, car keys on a lanyard (no text). Faces: `bored`, `neutral`, `confident`, `scared`, `stunned`, `laugh`, `soft`.
 - `bev` (my grandma, Bev, adult, about 75): a puffy white block perm, round pink glasses, a lavender raincoat, a big handbag. Faces: `chatty`, `stern`, `guilty`, `soft`, `laugh`. Named at L10 in the same shot.
 - `mailman` and `dentist` (townspeople in green aprons): L21 only, `blank` (calm, working).
-Every word is the narrator's. L14, L15 and L30 are reported.
+Every word is the narrator's. L14, L15, L30 and L44a are reported.
 
 ## The creature: the Tallyman
 A store clerk-shaped figure of ordinary height built entirely from orange and white price stickers, layer on layer, edges curling, in a green apron. Where its eyes should be, a single red scanner line glows steadily across its face. It never walks on screen: it's already a step out from the crates when we cut to it, and closer at the next cut. It beeps once and reads in a flat glyph read-out on its chest (numerals only). Lit from below by the work lights, with a freezer-blue rim.
@@ -138,21 +138,23 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S28 | L28 | 42.9 | The inset jumps to 4106 with a grape glyph. Me `stunned`. |
 | S29 | L29 | 44.5 | Grandma pushing through the strips with her handbag. |
 | S30 | L30 | 46.1 | Grandma `guilty`. |
-| S31 | L31 | 47.5 | Grandma pushing the cart down aisle after aisle, a wall calendar glyph flipping through years of Thursdays. |
-| S32 | L32 | 49.5 | Her hand at the end of her sleeve dropping a grape into an open palm (cut on the drop). |
-| S33 | L33 | 51.1 | Three quick aisle inserts, a grape each. |
-| S34 | L34 | 52.1 | Full shelves at dawn, aprons going out the back door. |
-| S35 | L35 | 53.7 | The townspeople all looking up from their crates at once, `guilty`. |
-| S36 | L36 | 55.1 | The Tallyman's scanner line on the two of us. |
-| S37 | L37 | 56.9 | Me `soft`, turning to Grandma. |
-| S38 | L38 | 58.1 | Grandma tying on a green apron, then me. |
-| S39 | L39 | 60.1 | Two crates side by side, two glyphs. |
-| S40 | L40 | 60.9 | Grandma stacking an orange pyramid, me on a ladder at the top shelf. |
-| S41 | L41 | 62.9 | Grandma chatting to a melon at 2 a.m., `laugh`. |
-| S42 | L42 | 64.5 | The inset ticking down to 90. |
-| S43 | L43 | 65.7 | The next Thursday in aisle three, the speaker overhead. |
-| S44 | L44 | 66.8 | Grandma's hand dropping one grape in my palm. The inset ticks to 91. A far-off beep. |
-| S45 | L45 | 68.2 | Me looking at the grape, then cut to the speaker close (S01's framing). Loop. |
+| S30a | L30a | 47.7 | The Tallyman's scanner line sliding from Grandma to me, the inset still on 4106. |
+| S31 | L31 | 49.5 | Grandma pushing the cart down aisle after aisle, a wall calendar glyph flipping through years of Thursdays. |
+| S32 | L32 | 51.5 | Her hand at the end of her sleeve dropping a grape into an open palm (cut on the drop). |
+| S33 | L33 | 53.1 | Three quick aisle inserts, a grape each. |
+| S34 | L34 | 54.1 | Full shelves at dawn, aprons going out the back door. |
+| S35 | L35 | 55.7 | The townspeople all looking up from their crates at once, `guilty`. |
+| S36 | L36 | 57.1 | The Tallyman's scanner line on the two of us. |
+| S37 | L37 | 58.9 | Me `soft`, turning to Grandma. |
+| S38 | L38 | 60.1 | Grandma tying on a green apron, then me. |
+| S39 | L39 | 62.1 | Two crates side by side, two glyphs. |
+| S40 | L40 | 62.9 | Grandma stacking an orange pyramid, me on a ladder at the top shelf. |
+| S41 | L41 | 64.9 | Grandma chatting to a melon at 2 a.m., `laugh`. |
+| S42 | L42 | 66.5 | The inset ticking down to 90. |
+| S43 | L43 | 67.7 | The next Thursday in aisle three, the speaker overhead. |
+| S44 | L44 | 68.9 | Grandma's hand dropping one grape in my palm. The inset ticks to 91. A far-off beep. |
+| S44a | L44a | 70.2 | Grandma `soft`, then `laugh`, tying her green apron again, nodding me toward the strips. |
+| S45 | L45 | 72.9 | Me looking at the grape, then cut to the speaker close (S01's framing). Loop. |
 
 ## Lore connection (`stories/lore.md`)
 One plant, a plain tally: two grape-purple strokes scratched into the cart's handle bar, two for a cart built for one to push and one to ride. No extra stroke, no Keeper. Seen in S10 under L10, as Grandma rests her hands on the bar, held 1.4 s, never narrated.
@@ -189,7 +191,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L27: and read / my TAB.
 - L28: Four thousand, / one hundred / and six GRAPES.
 - L29: That's when / Grandma came through / the STRIPS.
-- L30: She said, / every grape / was HER.
+- L30: She said, / every grape / was from HER.
+- L30a: And the tab / goes to whoever EATS it.
 - L31: Every Thursday / since I could SIT / in the cart,
 - L32: she slipped me one / from the BAG.
 - L33: Just ONE. / Every AISLE.
@@ -204,6 +207,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L42: We're down / to ninety GRAPES.
 - L43: And tonight, / in aisle THREE,
 - L44: Grandma slipped me / just one MORE.
+- L44a: She says / it's not the GRAPES. / She likes the NIGHTS / with me.
 - L45: So if you've ever had / just one GRAPE,
 
 (Loop: L45 runs straight into L01: "So if you've ever had just one grape, if they page your name at closing, don't go to the back.")

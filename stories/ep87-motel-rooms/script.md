@@ -4,8 +4,8 @@
 - **Pitch:** N12 in `docs/research/2026-11-09-week.md` (panel score 7), a port of the ranking-countdown niche. Opening shape `cost`. Lane: experiment. Length arm: long (110 to 150 s).
 - **Title:** Ranking This Motel's Worst ROOMS 🛏️
 - **Changed from the pitch:** the pitch's twist ("room one is the room you're watching from") was ep84's "the room you're already in" in other clothes, so the countdown now pays off a new big idea. Line 1 is kept word for word.
-- **Word count:** 514 spoken words in 63 lines, all `narrator`, plus one 0.6 s music drop before L26.
-- **Estimated length:** about 117 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L18 and L49 first.
+- **Word count:** 574 spoken words in 70 lines, all `narrator`, plus one 0.6 s music drop before L26.
+- **Estimated length:** about 130 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L18 and L49 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A sunny, sun-bleached roadside motel: turquoise doors, coral trim, cream walls, a palm in a pot, a pool fence. The night scenes (L19 to L52) are under a warm pink neon star sign and porch bulbs, bright enough to read faces. The sign glows steadily and never flickers.
 - **Hold:** scripts only (batch 8). Not built, not voiced.
 
@@ -40,7 +40,8 @@ Kept clear of floor-thirteen and every hotel story: no elevator, no hallway of n
 - **First real scare:** L26 to L30 (43 to 50 s): I wake with the wall touching my elbow, the room half as wide, the ceiling a hand from my face, Dev squeezed against the dresser.
 - **The climax turns the rule's own logic:** if the motel does whatever the reviews say, a better review is a fix. I write five stars for room one, then cards for every room and for Hal (L43 to L52). No new magic.
 - **Twist and reveal (L32 to L41, 52 to 72 s):** said plainly. The wall of old cards behind the desk reads exactly like the countdown, including "The clerk is creepy. Eight feet tall. Never BLINKS." from 1996. "Those rooms were FINE, / until somebody wrote / that they WEREN'T. / This motel makes every REVIEW / come TRUE."
-- **How the last 15 seconds turn over the first line:** my own first card said we never wanted to leave, so the car starts and we're back in the lot. Dev and I work the desk now, and when a guest asks about the rooms I tell them (L59 to L63), which runs into L01. The countdown we've watched is me at the desk, warning a new guest.
+- **Why the opening countdown still holds:** it's told from the desk, now. New guests keep writing one-star cards, so rooms eleven, eight, six and four go bad again every night and I write them back every morning (L62a to L62c). Hal is in the past tense in the opening ("when we checked IN") because my card fixed him.
+- **How the last 15 seconds turn over the first line:** my own first card said we never wanted to leave, the motel made it true, and we can't leave (L60 to L61). Dev and I work the desk now, and when a guest asks about the rooms I tell them (L59 to L63), which runs into L01. The countdown we've watched is me at the desk, warning a new guest.
 - **The plants a rewatch catches:**
   1. L05 to L12: every room's "rule" is phrased as a guest's complaint.
   2. L21: "The only room with no RULE. YET."
@@ -48,7 +49,7 @@ Kept clear of floor-thirteen and every hotel story: no elevator, no hallway of n
   4. L46: my card, word for word, already says "we never wanted to leave".
   5. Unnarrated: from S01 on, the wall behind the office desk is pinned with small cards, every one with a single star glyph.
 - **Ending shape:** a fix with a funny-cold price, and a loop.
-- **Warmth:** loyalty. I spend the night writing cards to save my cousin and the clerk, and Dev writes the first five stars of his life: "My cousin saved the room."
+- **Warmth:** loyalty. I spend the night writing cards to save my cousin and the clerk, and Dev writes the first five stars of his life, saying his cousin, me, saved the room.
 - **Sad family reveal?** No.
 
 ## Quotable line
@@ -73,7 +74,7 @@ One place: a single-storey roadside motel in a long row of twelve rooms with tur
 - `me` (an adult man, about 25, the narrator): short dark-blond block hair, a coral short-sleeve shirt over a white tee, khaki shorts. Faces: `neutral`, `tired`, `worried`, `scared`, `determined`, `smile`, `laugh`.
 - `dev` (my cousin, Dev, an adult man about 26): a black block quiff, a turquoise windbreaker, a phone always in hand. Faces: `unimpressed`, `asleep`, `confused`, `grin`, `soft`. Named at L16 in the same shot.
 - `hal` (Hal, the night clerk): a mustard motel blazer, a white shirt, a small brass name-tag bar with a glyph only. Eight feet tall from L14 to L52, so he stoops under the office ceiling, his eyes drawn wide open, never a blink. At L53, L54 an ordinary height with a normal blink. Faces: `stare`, `soft`, `smile`.
-Every word is the narrator's. L24, L33 to L36, L46, L52 and L57 are cards read aloud.
+Every word is the narrator's. L24, L33 to L36, L34a, L34b, L46, L52 and L57 are cards read aloud.
 
 ## The creature: Hal, the eight-foot clerk
 An ordinary motel clerk made wrong in one dimension by a review: far too tall, his blazer sleeves too long, so he stoops under the office ceiling with his head tipped. His eyes are drawn wide, white all round, and never blink. Shown little and late: his shoulder and hand at L20, his full height only at L37 to L39. Lit warm by the desk lamp, with a pink rim from the sign.
@@ -125,56 +126,63 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S12 | L12 | 16.8 | The cream wall phone ringing, its cord swinging. |
 | S13 | L13 | 19.2 | Door one, fob 1, then a quick cut away. |
 | S14 | L14 | 21.0 | The office: legs to chest of someone behind the desk, too long. |
-| S15 | L15 | 23.2 | Close on Hal's wide unblinking eyes under the ceiling. |
-| S16 | L16 | 24.0 | Our car on the highway at sunset: Dev at the wheel, me beside him, `smile`. |
-| S17 | L17 | 27.0 | Dev typing on his phone, `unimpressed`, a single star glyph on his screen. |
-| S18 | L18 | 28.2 | Dev holding his phone up at a gorgeous sunset, one star glyph. |
-| S19 | L19 | 29.6 | Our car on the motel lot, hood up, steam. |
-| S20 | L20 | 31.8 | The office: Hal's hand at the end of a too-long mustard sleeve sliding the fob with 1 across the desk. |
-| S21 | L21 | 33.4 | Room one, two beds, a lamp, ordinary. |
-| S22 | L22 | 35.0 | Close on a pillow: a little card with five empty star glyphs. |
-| S23 | L23 | 36.6 | Dev on the bed with one shoe on, already writing. |
-| S24 | L24 | 38.6 | Close on his card: one star filled, scribble lines. |
-| S25 | L25 | 40.2 | The card going into the slot of a box by the office door. |
+| S15 | L15 | 23.8 | Close on Hal's wide unblinking eyes under the ceiling. |
+| S16 | L16 | 24.6 | Our car on the highway at sunset: Dev at the wheel, me beside him, `smile`. |
+| S17 | L17 | 27.6 | Dev typing on his phone, `unimpressed`, a single star glyph on his screen. |
+| S18 | L18 | 28.8 | Dev holding his phone up at a gorgeous sunset, one star glyph. |
+| S19 | L19 | 30.2 | Our car on the motel lot, hood up, steam. |
+| S20 | L20 | 32.4 | The office: Hal's hand at the end of a too-long mustard sleeve sliding the fob with 1 across the desk. |
+| S21 | L21 | 34.0 | Room one, two beds, a lamp, ordinary. |
+| S22 | L22 | 35.6 | Close on a pillow: a little card with five empty star glyphs. |
+| S23 | L23 | 37.2 | Dev on the bed with one shoe on, already writing. |
+| S24 | L24 | 39.2 | Close on his card: one star filled, scribble lines. |
+| S25 | L25 | 40.8 | The card going into the slot of a box by the office door. |
 | (drop) | | | 0.6 s: room one dark, still. |
-| S26 | L26 | 42.8 | Me waking, the wall right against my elbow, `scared`. |
-| S27 | L27 | 45.5 | Top-down: the room squeezed to half its width, the two beds pushed together. |
-| S28 | L28 | 46.9 | The ceiling a hand's width from my face. |
-| S29 | L29 | 48.7 | Dev asleep, `asleep`, squeezed sideways against the dresser. |
-| S30 | L30 | 50.3 | The far wall sliding one more step closer. |
-| S31 | L31 | 51.7 | Me squeezing out the door into the pink neon, running. |
-| S32 | L32 | 52.8 | The office: Hal stooped, reading a card. Behind him a corkboard wall full of one-star cards. |
-| S33 | L33 | 55.3 | Close on a card on the wall (star glyph, scribbles), the bed of room eleven in a small inset. |
-| S34 | L34 | 58.5 | Another card, the TV of room eight in the inset. |
-| S35 | L35 | 60.9 | An old yellowed card pinned in the corner, a little 1996 in numerals. |
-| S36 | L36 | 62.1 | Close on the card's single star. Hal's unblinking eyes beyond it, out of focus. |
-| S37 | L37 | 64.1 | Hal, full height, stooping under the ceiling to look down at me, `stare`. Cover frame. |
-| S38 | L38 | 66.1 | Two quick inserts: room eleven's bed, room eight's TV, each with a one-star card. |
-| S39 | L39 | 68.4 | The corkboard wall, every card glowing faint pink. |
-| S40 | L40 | 70.0 | Hal `soft`, a little nod. |
-| S41 | L41 | 71.6 | Hal at a normal height in a faded photo on the corkboard (no text). |
-| S42 | L42 | 73.2 | Room one through its window: the walls still pressing, Dev asleep against the dresser. |
-| S43 | L43 | 75.4 | The desk: a stack of blank cards, a pen, the brass bell. |
-| S44 | L44 | 76.8 | Me `determined`, Hal watching over my shoulder. |
-| S45 | L45 | 78.6 | Me writing fast at the counter. |
-| S46 | L46 | 79.8 | Close: my card, five stars filled, scribble lines. |
-| S47 | L47 | 82.4 | The card going into the slot. |
-| S48 | L48 | 83.4 | Room one: the walls sliding back, the ceiling lifting. |
-| S49 | L49 | 85.4 | Dev waking up, `confused`, me standing on the bed. |
-| S50 | L50 | 88.0 | Montage: me at the desk writing card after card, the stack growing. |
-| S51 | L51 | 90.7 | Room eleven's pillow plain and cool. Room eight's TV showing a bright cartoonish fish of our own. |
-| S52 | L52 | 92.9 | A card on Hal's desk, five stars. |
-| S53 | L53 | 95.5 | Sunrise through the office door: Hal stepping out from behind the desk, a head shorter. |
-| S54 | L54 | 98.3 | Close: Hal blinking, `smile`. |
-| S55 | L55 | 100.4 | Dev writing a card at the counter, `soft`. |
-| S56 | L56 | 101.5 | His card: five stars filled. |
-| S57 | L57 | 103.1 | Dev and me fist-bumping (no grip), `laugh`. |
-| S58 | L58 | 104.3 | The car, hood down, gleaming in the lot. |
-| S59 | L59 | 105.7 | Me in the driver's seat, `worried`, remembering. |
-| S60 | L60 | 107.3 | My card again in close-up, the five stars. |
-| S61 | L61 | 109.5 | The car pulling out of the lot and, across a cut, nosing back into the same space. |
-| S62 | L62 | 112.2 | Dev and me behind the office desk in mustard blazers, `grin`. |
-| S63 | L63 | 114.0 | A new guest at the counter. I lean in, then cut to the key fob close reading 5 (S01's framing). Loop. |
+| S26 | L26 | 43.5 | Me waking, the wall right against my elbow, `scared`. |
+| S27 | L27 | 46.1 | Top-down: the room squeezed to half its width, the two beds pushed together. |
+| S28 | L28 | 47.5 | The ceiling a hand's width from my face. |
+| S29 | L29 | 49.3 | Dev asleep, `asleep`, squeezed sideways against the dresser. |
+| S30 | L30 | 50.9 | The far wall sliding one more step closer. |
+| S31 | L31 | 52.3 | Me squeezing out the door into the pink neon, running. |
+| S32 | L32 | 53.5 | The office: Hal stooped, reading a card. Behind him a corkboard wall full of one-star cards. |
+| S33 | L33 | 55.9 | Close on a card on the wall (star glyph, scribbles), the bed of room eleven in a small inset. |
+| S34 | L34 | 59.1 | Another card, the TV of room eight in the inset. |
+| S34a | L34a | 61.6 | Another card, room six's pink shower in the inset, steam. |
+| S34b | L34b | 63.8 | Another card, room four's cream phone in the inset. |
+| S35 | L35 | 66.0 | An old yellowed card pinned in the corner, a little 1996 in numerals. |
+| S36 | L36 | 67.2 | Close on the card's single star. Hal's unblinking eyes beyond it, out of focus. |
+| S37 | L37 | 69.2 | Hal, full height, stooping under the ceiling to look down at me, `stare`. Cover frame. |
+| S38 | L38 | 71.2 | Four quick inserts: room eleven's bed, room eight's TV, room six's shower, room four's phone, each with a one-star card. |
+| S39 | L39 | 73.4 | The corkboard wall, every card glowing faint pink. |
+| S40 | L40 | 75.0 | Hal `soft`, a little nod. |
+| S41 | L41 | 76.6 | Hal at a normal height in a faded photo on the corkboard (no text). |
+| S42 | L42 | 78.2 | Room one through its window: the walls still pressing, Dev asleep against the dresser. |
+| S43 | L43 | 80.4 | The desk: a stack of blank cards, a pen, the brass bell. |
+| S44 | L44 | 81.8 | Me `determined`, Hal watching over my shoulder. |
+| S45 | L45 | 83.6 | Me writing fast at the counter. |
+| S46 | L46 | 84.8 | Close: my card, five stars filled, scribble lines. |
+| S47 | L47 | 87.5 | The card going into the slot. |
+| S48 | L48 | 88.4 | Room one: the walls sliding back, the ceiling lifting. |
+| S49 | L49 | 90.4 | Dev waking up, `confused`, me standing on the bed. |
+| S50 | L50 | 93.1 | Montage: me at the desk writing card after card, the stack growing. |
+| S51 | L51 | 95.7 | Four quick inserts: a cool plain pillow, a TV showing a bright cartoon fish of our own, a quiet dry shower, a silent phone, each with a five-star card. |
+| S52 | L52 | 97.1 | A card on Hal's desk, five stars. |
+| S53 | L53 | 99.7 | Sunrise through the office door: Hal stepping out from behind the desk, a head shorter. |
+| S54 | L54 | 102.6 | Close: Hal blinking, `smile`. |
+| S55 | L55 | 104.6 | Dev writing a card at the counter, `soft`. |
+| S56 | L56 | 105.8 | His card: five stars filled. |
+| S57 | L57 | 107.4 | Dev's card, then Dev pointing at me, `grin`. |
+| S58 | L58 | 109.6 | The car, hood down, gleaming in the lot. |
+| S59 | L59 | 111.0 | Me in the driver's seat, `worried`, remembering. |
+| S60 | L60 | 112.6 | My card again in close-up, the five stars. |
+| S60a | L60a | 114.8 | The office card box glowing faint pink. |
+| S60b | L60b | 116.2 | Me at the wheel, `worried`, the motel sign filling the windshield. |
+| S61 | L61 | 117.0 | The car pulling out of the lot and, across a cut, nosing back into the same space. |
+| S62 | L62 | 119.6 | Dev and me behind the office desk in mustard blazers, `grin`. |
+| S62a | L62a | 121.4 | A guest at the counter dropping a card in the box, one star glyph. |
+| S62b | L62b | 123.0 | Night: four quick inserts, the warm pillow, the lot on the TV, the singing shower, the ringing phone. |
+| S62c | L62c | 125.6 | Morning: me at the desk writing four five-star cards, Dev yawning beside me. |
+| S63 | L63 | 127.2 | A new guest at the counter. I lean in, then cut to the key fob close reading 5 (S01's framing). Loop. |
 
 ## Lore connection (`stories/lore.md`)
 One plant, a plain tally: two coral strokes scratched into the brass bell on the office desk, two for a room-one built with two beds. No extra stroke, no Keeper. Seen in S43 under L43 ("So I picked up / a CARD."), as the bell sits beside the blank cards, held 1.2 s, never narrated.
@@ -195,8 +203,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L11: Number TWO. / Room four.
 - L12: The phone rings / all NIGHT, / and it knows / your FULL name.
 - L13: And number ONE? / Room ONE. / We'll get THERE.
-- L14: Oh. / And the night CLERK / is about / eight feet TALL.
-- L15: He never BLINKS.
+- L14: Oh. / And when we checked IN, / the night CLERK / was eight feet TALL.
+- L15: He never BLINKED.
 - L16: My cousin, DEV, / and I / were driving across the country / to his new JOB.
 - L17: Dev reviews EVERYTHING. / One STAR.
 - L18: He gave a SUNSET / one star.
@@ -216,6 +224,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L32: The wall / behind the clerk / was covered / in old comment CARDS.
 - L33: Room eleven. / The bed was warm, / like somebody / just got out of it. / ONE star.
 - L34: Room eight. / The TV only shows / the parking LOT. / One STAR.
+- L34a: Room six. / The shower SANG / at three A.M. / One STAR.
+- L34b: Room four. / The phone knew / my full NAME. / One star.
 - L35: And one / from nineteen ninety-SIX.
 - L36: The clerk is creepy. / Eight feet tall. / Never BLINKS.
 - L37: The clerk / looked down at me, / and didn't BLINK.
@@ -232,21 +242,26 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L48: CREAK. / The walls / slid BACK. / The ceiling went UP.
 - L49: Dev woke up / and asked / why I was standing / on the BED.
 - L50: I spent the rest / of the night / writing cards / for every ROOM.
-- L51: Room eleven. / The bed was NORMAL. / Room eight. / Great TV.
+- L51: Every one / got a FIVE-star card.
 - L52: And for Hal. / The clerk / was a NORMAL height, / and very KIND.
 - L53: At sunrise, / Hal stepped out / from behind the desk / a whole head SHORTER,
 - L54: and BLINKED / for the first time / since nineteen ninety-six.
 - L55: Dev wrote a card TOO.
 - L56: The first five STARS / of his life.
-- L57: My cousin / saved the ROOM.
+- L57: His card said, / my cousin saved the ROOM. / That's ME.
 - L58: The car was fixed / by NINE.
 - L59: And that's when / I remembered / MY card.
 - L60: Room one / was so perfect, / we never wanted / to LEAVE.
+- L60a: And the motel / made it TRUE.
+- L60b: We can't LEAVE.
 - L61: We've tried. / The car STARTS, / and we're back / in the parking LOT.
 - L62: So now / Dev and I / work the DESK.
-- L63: And when a guest asks / about the rooms, / I tell them.
+- L62a: And new guests / keep writing ONE star.
+- L62b: So every NIGHT, / rooms eleven, eight, / six and FOUR / go bad again,
+- L62c: and every MORNING, / I write them BACK.
+- L63: So when a new guest asks / about the rooms, / I WARN them.
 
-(Loop: L63 runs straight into L01: "And when a guest asks about the rooms, I tell them. This motel has five rooms you never book. You're in one.")
+(Loop: L63 runs straight into L01: "So when a new guest asks about the rooms, I warn them. This motel has five rooms you never book. You're in one.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: none.
