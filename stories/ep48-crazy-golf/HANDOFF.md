@@ -20,3 +20,5 @@ Proof run 29 (sha 49c75ad) and proof run 32 (sha 98adf33, after one fix) both fa
 - run 32: picture_changes_per_10s 12.0, _q 13.8, motion_energy_q 5.8
 The one fix (look.polish punch 0.07, punch_rate 1.3, fill 1.2; punch-ins 0.7 to 2.39 per 10 s) moved the numbers by 0.1 at most: punch-ins don't count as picture changes. The film is already at 7.25 cuts per 10 s, near the 8.0 cap, so the shortfall is in how much each shot changes, not in how many cuts. A real fix is a rework across the film (more camera moves and acting in the 104 one-camera-key shots), not one shot or one cue.
 Dropped per the brief (second fail). Not merged, no qa file written, hold was removed from package.json on this branch (re-add it if the branch is ever reused). Note for the queue: this story ends on a sad family (dad) reveal.
+
+STATUS reopened (owner, 2026-11-03: near-miss band, #201). Run 32's craft numbers (12.0, 13.8, 5.8) are within 10% of the bars. Re-scoring its proof artifact (run 41715797482), then Opus qa at stage proof.
