@@ -968,28 +968,31 @@ FLOOR_LOCAL = {"torso": -2.0, "leg-1": -2.0, "leg1": -2.0, "arm-1": -3.75, "arm1
 
 def tag_state(events, i, t):
     """(visible, pop 0..1, fall 0..1) for tag i at t from the character's events."""
-    present, appear, fall0 = False, -9.0, None
+    present, appear, fall0, rest = False, -9.0, None, False
     for c in events:
         if c["t"] > t:
             break
         if c.get("fall"):
             if i >= c["n"] and present:
                 fall0 = c["t"] + 0.05 * (i % 9) + 0.02 * (i % 4)
+                rest = bool(c.get("rest"))
                 present = False
         else:
             n = c["n"]
             if i < n and not present:
-                present, appear, fall0 = True, c["t"] + (0.0 if c.get("pop", True) else -1.0), None
+                present, appear, fall0, rest = True, c["t"] + (0.0 if c.get("pop", True) else -1.0), None, False
             elif i >= n and present:
                 present = False
                 fall0 = None
     if present:
-        return True, ss((t - appear) / 0.3), 0.0
+        return True, ss((t - appear) / 0.3), 0.0, False
     if fall0 is not None and t >= fall0:
         u = (t - fall0) / FALL_DUR
         if u < 1.0:
-            return True, 1.0, u
-    return False, 0.0, 0.0
+            return True, 1.0, u, rest
+        if rest:     # opt-in (cue "rest": true): the tags stay lying on the floor
+            return True, 1.0, 1.0, True
+    return False, 0.0, 0.0, False
 
 
 def animate_tags(kit, ctx, tl, t):
@@ -1001,7 +1004,7 @@ def animate_tags(kit, ctx, tl, t):
             if hidden:
                 ob.hide_render = True
                 continue
-            vis, pop, fall = tag_state(ev, it["i"], t)
+            vis, pop, fall, rest = tag_state(ev, it["i"], t)
             if not vis:
                 ob.hide_render = True
                 continue
@@ -1018,7 +1021,13 @@ def animate_tags(kit, ctx, tl, t):
                 spin = roll + fall * 2.2 * (1 if it["i"] % 2 else -1)
                 ob.location = (x2, y2, z2)
                 ob.rotation_euler = (0.9 * fall + pitch, 0.4 * math.sin(fall * 6 + it["i"]), spin)
-                ob.scale = (1.0, 1.0, 1.0) if fall < 0.92 else (1 - (fall - 0.92) / 0.08,) * 3
+                ob.scale = (1.0, 1.0, 1.0) if (fall < 0.92 or rest) else (1 - (fall - 0.92) / 0.08,) * 3
+                if rest:     # opt-in: land lying flat, scattered round the feet, and stay
+                    f = fall ** 1.5
+                    xt = x * 1.4 + 0.5 * math.sin(it["i"] * 2.3)
+                    yt = 0.2 * y - 0.3 - 0.5 * ((it["i"] * 37) % 11) / 11
+                    ob.location = (x + (xt - x) * f, y + (yt - y) * f, z + (floor_z + 0.1 - z) * f)
+                    ob.rotation_euler = (1.5 * f + pitch * (1 - f), 0.0, roll + (roll * 2 + it["i"] - roll) * f)
             else:
                 ob.location = (x, y, z)
                 ob.rotation_euler = (pitch, 0, roll + flip)

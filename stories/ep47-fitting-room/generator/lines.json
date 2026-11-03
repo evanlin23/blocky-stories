@@ -143,11 +143,15 @@
   "chunks": [
    [
     "No tag lands",
-    "No tag lands"
+    "no tag lands"
    ],
    [
     "on HER.",
     "on her."
+   ],
+   [
+    "She BELIEVES it.",
+    "she believes it."
    ]
   ]
  },
@@ -210,8 +214,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "My Uncle AUREL",
-    "My Uncle Aurel"
+    "My UNCLE,",
+    "my Uncle,"
+   ],
+   [
+    "AUREL,",
+    "Aurel,"
    ],
    [
     "taught me to CUT",
@@ -686,15 +694,15 @@
   "chunks": [
    [
     "He tells me,",
-    "He tells me,"
+    "he tells me,"
    ],
    [
     "\"It's a lovely place,",
-    "It's a lovely place,"
+    "it's a lovely place,"
    ],
    [
-    "LOVE.\"",
-    "love."
+    "LAD.\"",
+    "lad."
    ]
   ]
  },
@@ -1010,8 +1018,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "\"She's HAPPY",
-    "She's happy"
+    "\"My NEPHEW'S",
+    "my nephew's"
+   ],
+   [
+    "HAPPY",
+    "happy"
    ],
    [
     "in the city.\"",
@@ -1150,48 +1162,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I'd never had a TAG,",
-    "I'd never had a tag,"
+    "Uncle LAUGHS",
+    "uncle laughs"
    ],
    [
-    "because I BELIEVED",
-    "because I believed"
+    "for the first time",
+    "for the first time"
    ],
    [
-    "my own LIE.",
-    "my own lie."
-   ]
-  ]
- },
- {
-  "id": "L64",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Just like",
-    "Just like"
-   ],
-   [
-    "Mrs. KETTLE.",
-    "Mrs. Kettle."
-   ]
-  ]
- },
- {
-  "id": "L65",
-  "who": "narrator",
-  "chunks": [
-   [
-    "For two YEARS,",
-    "For two years,"
-   ],
-   [
-    "I'd been rubbing",
-    "I'd been rubbing"
-   ],
-   [
-    "my SLEEVE.",
-    "my sleeve."
+    "all WEEK.",
+    "all week."
    ]
   ]
  },
@@ -1299,8 +1279,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I never had ONE.",
-    "I never had one."
+    "But a lie you BELIEVE",
+    "but a lie you believe"
+   ],
+   [
+    "never gets a TAG.",
+    "never gets a tag."
    ]
   ]
  },
@@ -1309,8 +1293,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I BELIEVED mine.",
-    "I believed mine."
+    "For two YEARS,",
+    "for two years,"
+   ],
+   [
+    "I'd told MYSELF",
+    "i'd told myself"
+   ],
+   [
+    "I was HAPPY",
+    "i was happy"
+   ],
+   [
+    "in the CITY.",
+    "in the city."
    ]
   ]
  },
@@ -1319,12 +1315,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I still",
-    "I still"
+    "And I BELIEVED",
+    "and i believed"
    ],
    [
-    "don't have ONE.",
-    "don't have one."
+    "every WORD.",
+    "every word."
    ]
   ]
  }
