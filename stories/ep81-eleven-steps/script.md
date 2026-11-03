@@ -3,8 +3,8 @@
 - **Slug:** `ep81-eleven-steps` (batch 7, upload order 2 of 5)
 - **Pitch:** N04 in `docs/research/2026-11-09-week.md` (panel score 8). Opening shape `count`. Lane: core. Length arm: long (110 to 150 s).
 - **Title:** Our Stairs Grow One Step At NIGHT 🪜
-- **Word count:** 527 spoken words in 71 lines, all `narrator`, plus one 0.6 s music drop before L33.
-- **Estimated length:** about 121 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. The counted creaks (L30, L32, L33) are voiced slower, one creak under each number, which adds about 2 s, so about 123 s. If it runs over 140 s, cut L05 to L06 first, then L57. If it lands under 112 s, nothing is added.
+- **Word count:** 552 spoken words in 71 lines, all `narrator`, plus one 0.6 s music drop before L33.
+- **Estimated length:** about 126 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. The counted creaks (L30, L32, L33) are voiced slower, one creak under each number, which adds about 2 s, so about 128 s. If it runs over 140 s, cut L05 to L06 first, then L57. If it lands under 112 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright and warm by day and by lamplight. The one dim scene is L29 to L56 (2 a.m., the landing lit by a small amber nightlight and my flashlight). Every light change ramps over 0.3 s or more.
 - **Hold:** scripts only (batch 7). Not built, not voiced.
 
@@ -178,7 +178,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L06: He drove home / at MIDNIGHT. / He's never stayed OVER since.
 - L07: And the CREAKS? / Nobody's EVER / on the stairs.
 - L08: And every MORNING, / the step just below the landing / is ice COLD.
-- L09: My DAD / has one house RULE.
+- L09: I'm a grown MAN. / I live with my DAD, / and he has one house RULE.
 - L10: Upstairs by TEN. / And nobody / on the stairs / AFTER.
 - L11: Not for WATER. / Not for ANYTHING.
 - L12: He always goes up LAST.
@@ -213,7 +213,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L40: Its EYE was at the gap. / An inch from MINE.
 - L41: Something so TALL / it had to FOLD / under our ceiling,
 - L42: its head bent flat / against its SHOULDER.
-- L43: It climbs TEN steps. / Every NIGHT.
+- L43: It climbs exactly TEN steps, / every NIGHT, / whatever the stairs ARE.
 - L44: It has never ONCE / climbed ELEVEN.
 - L45: That's what / Dad's box is FOR.
 - L46: With eleven steps, / ten leaves it / one SHORT.
@@ -221,9 +221,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L48: And he takes the box UP / at dawn, / so I'd never KNOW.
 - L49: The box was / by my BED.
 - L50: Dad always puts it / at the BOTTOM.
-- L51: But a step / doesn't have to BE / at the bottom.
+- L51: But ANY extra step / below my door / keeps it one step AWAY.
 - L52: I cracked the door / and SHOVED the box out / onto the landing.
-- L53: One more STEP, / between it / and ME.
+- L53: It had used up its TEN. / To reach my door now, / it would need an ELEVENTH.
 - L54: It looked at the box / for a LONG time.
 - L55: It didn't CLIMB it.
 - L56: It just STOOD there, / one step SHORT, / till the sun came UP.

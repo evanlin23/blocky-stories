@@ -3,8 +3,8 @@
 - **Slug:** `ep83-free-fries` (batch 7, upload order 4 of 5)
 - **Pitch:** N23 in `docs/research/2026-11-09-week.md` (panel score 7, premise bank P25). Opening shape `cost`. Lane: core. Length arm: mid (60 to 90 s).
 - **Title:** Free Fries, One RULE 🍟
-- **Word count:** 304 spoken words in 43 lines, all `narrator`, plus one 0.6 s music drop before L20.
-- **Estimated length:** about 70 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L07 first. If it lands under 62 s, nothing is added.
+- **Word count:** 321 spoken words in 43 lines, all `narrator`, plus one 0.6 s music drop before L20.
+- **Estimated length:** about 74 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L07 first. If it lands under 62 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright retro diner in afternoon sun: mint, bubblegum pink, chrome, gold fries. The one strange-lit beat is L20 to L27, the view through the kitchen door's round window into our kitchen at home (warm lamplight, still bright). Every light change ramps over 0.3 s or more.
 - **Hold:** scripts only (batch 7). Not built, not voiced.
 
@@ -37,7 +37,7 @@ Against this week's other stories: no drive-thru window (ep71-two-windows), no b
 - **First real scare:** L22 to L27 (33 to 41 s): through the round window is our kitchen at home, Mom at our stove with her eyes shut, and then her eyes open and look straight at me.
 - **The climax turns the rule's own logic:** the rule says whoever cooks for you most makes your fries. So Omar and I start cooking dinner for Mom every night, until we're who cooks for her most, and her fries are ours (L36 to L40). No new magic.
 - **Twist and reveal (L28 to L31, 42 to 47 s):** said plainly. "That's who PAYS. / Whoever cooks for you MOST / makes your fries, / in their OWN kitchen. / They never KNOW / they did it."
-- **How the last 15 seconds turn over the first line:** Mom feels rested, and then the funny sting: every day at noon Omar and I wake up at my stove holding a fry basket (L41, L42). The fries are still free, and now we're the ones paying. The last line ("So if you're ever HUNGRY,") runs into L01.
+- **How the last 15 seconds turn over the first line:** Mom feels rested, and then the funny sting: the second Mom orders, wherever Omar and I are, we blink and we're at our stove holding a fry basket (L41, L42). The fries are still free, and now we're the ones paying. The last line ("So if you're ever HUNGRY,") runs into L01.
 - **The plants a rewatch catches:**
   1. L06: everybody's gloves are a little different (each pair is someone's own kitchen gloves).
   2. L11, L12: my fries taste exactly like my mom's.
@@ -145,8 +145,8 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S37, S38 | L37, L38 | 57.6 | Two quick inserts: a pan of noodles, a tray of something baked, a calendar glyph flipping. |
 | S39 | L39 | 59.5 | The diner at noon: Mom at the counter on her lunch break, a basket sliding out of the hatch in two pairs of hands, a mustard sleeve and a denim cuff. |
 | S40 | L40 | 63.4 | Mom stretching, `soft`, rested. |
-| S41 | L41 | 65.0 | Our kitchen at home, noon: Omar and me blinking awake at my stove, side by side. |
-| S42 | L42 | 67.8 | Close: a fry basket in my hands at the end of my sleeves, gold fries in it. Everything stops but one wobbly note. |
+| S41 | L41 | 65.0 | Two quick inserts: Mom at the diner counter pointing at the hatch, then Omar and me at work in a stockroom, mid-step. |
+| S42 | L42 | 67.8 | Across a cut, Omar and me blinking at our apartment stove side by side, a fry basket in my hands at the end of my sleeves. Everything stops but one wobbly note. |
 | S43 | L43 | 68.8 | The diner hatch again, push in to S01's framing. Loop. |
 
 ## Lore connection (`stories/lore.md`)
@@ -160,11 +160,11 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L03: You sit DOWN. / The BELL dings.
 - L04: A basket slides out / of the HATCH.
 - L05: Two yellow GLOVES. / That's all you ever SEE.
-- L06: Everybody's gloves / are a little DIFFERENT.
+- L06: Everybody's gloves / are DIFFERENT, / and nobody knows WHY.
 - L07: Old Mr. HASKINS / has had free fries here / every day / for forty YEARS.
 - L08: Nobody's EVER / seen the cook.
-- L09: My best friend, OMAR, / and I / are BROKE.
-- L10: So we're here / every day at FOUR.
+- L09: My best friend, OMAR, / and I share an APARTMENT, / and we're BROKE.
+- L10: So after our SHIFTS, / we're here every day at FOUR.
 - L11: Same booth. / Two BASKETS.
 - L12: Mine taste EXACTLY / like my mom's.
 - L13: And every EVENING, / our kitchen at HOME / smells like FRIES.
@@ -184,7 +184,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L26: She looked right / at ME.
 - L27: Like she could SEE me.
 - L28: That's who PAYS.
-- L29: Whoever cooks for you MOST / makes your fries, / in their OWN kitchen.
+- L29: Whoever cooks for you MOST / makes your fries, / in their OWN kitchen, / in their OWN gloves.
 - L30: They never KNOW / they did it.
 - L31: They're just TIRED, / every night.
 - L32: And Mom's cooked for me / every day / of my LIFE.
@@ -196,8 +196,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L38: And EVERY night since.
 - L39: Now when Mom / gets fries here / on her lunch BREAK, / WE'RE the ones / who cook for her MOST.
 - L40: She says she's never felt / so RESTED.
-- L41: So every day at NOON, / Omar and I / wake up at my STOVE,
-- L42: holding a fry BASKET.
+- L41: So the second Mom ORDERS, / wherever Omar and I ARE,
+- L42: we BLINK, / and we're at our stove, / holding a fry BASKET.
 - L43: So if you're ever HUNGRY,
 
 (Loop: L43 runs straight into L01: "So if you're ever hungry, the fries here are free. Just never look in the kitchen.")

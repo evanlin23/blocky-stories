@@ -3,8 +3,8 @@
 - **Slug:** `ep82-no-door` (batch 7, upload order 3 of 5)
 - **Pitch:** N14 in `docs/research/2026-11-09-week.md` (panel score 7, premise bank C4, reworked). Opening shape `confess`. Lane: core. Length arm: mid (60 to 90 s).
 - **Title:** Pizza For The House With No DOOR 🍕
-- **Word count:** 309 spoken words in 44 lines, all `narrator`, plus one 0.6 s music drop before L21.
-- **Estimated length:** about 71 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L10 first. If it lands under 62 s, nothing is added.
+- **Word count:** 317 spoken words in 44 lines, all `narrator`, plus one 0.6 s music drop before L21.
+- **Estimated length:** about 73 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L10 first. If it lands under 62 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright saturated sundown: pink and orange sky, lemon house, every porch light warm. It's six o'clock, the dinner rush, never a night shift. The one dim beat is L16 to L22, when the street's porch lights ramp out (each over 0.6 s, staggered) and the sky stays bright pink. Every light change ramps over 0.3 s or more.
 - **Hold:** scripts only (batch 7). Not built, not voiced.
 
@@ -37,7 +37,7 @@ Against this week's other stories: no drive-thru or second window (ep71-two-wind
 - **First real scare:** L19 to L23 (30 to 35 s): the top windows blink, the lawn splits, the house stands up.
 - **The climax turns the rule's own logic:** the order always says the same thing, "the house with no door", an address and never a person. So I deliver it there: to the bare dirt where the house used to sit. It comes home and sits down on top of it (L30 to L38). No new magic.
 - **Twist and reveal (L23 to L27, 34 to 41 s):** said plainly. "The whole house / was SOMEBODY. / Sitting very STILL, / with a ROOF on." Then one picture each for the knees and the slot that is its mouth.
-- **How the last 15 seconds turn over the first line:** warm on the curb with Marisol, then the sting: last night the order came in for TWO (L43). There's another one sitting somewhere. The last line ("So rain or SHINE,") runs into L01.
+- **How the last 15 seconds turn over the first line:** warm on the curb with Marisol, then the sting: last night a second order came in, from another house with no door (L43). There's another one sitting somewhere on my route. The last line ("So rain or SHINE,") runs into L01.
 - **The plants a rewatch catches:**
   1. L04: the slot is "down at knee HEIGHT".
   2. L05: the slot is warm, "like BREATH".
@@ -151,7 +151,7 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S40 | L40 | 60.8 | Marisol running up the sidewalk with a second pizza box, apron flying. |
 | S41 | L41 | 62.1 | The two of us on the curb, the box open between us, both `laugh`, shoulders shaking, the lemon house behind. |
 | S42 | L42 | 63.7 | Marisol, `soft`, tapping my cap brim. |
-| S43 | L43 | 66.2 | Next evening: the pizza place, the order slip with two doorless house glyphs side by side. The slot's flap lifts twice in a quick insert. Funk cuts. |
+| S43 | L43 | 66.2 | Next evening: the pizza place, a second order slip beside the first, each with a doorless house glyph, and a quick insert of a second lemon house at the far end of another street, its chimney puffing. Funk cuts. |
 | S44 | L44 | 67.6 | Push in on the brass slot to S01's framing. Loop. |
 
 ## Lore connection (`stories/lore.md`)
@@ -188,8 +188,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L25: Sitting very STILL, / with a ROOF on.
 - L26: Its KNEES came up / out of the lawn.
 - L27: The slot was its MOUTH.
-- L28: And it TURNED / toward the only door on the street / still LIT.
-- L29: Marisol's. / On the CORNER.
+- L28: Every porch light was OUT, / so it TURNED / toward the one door still LIT.
+- L29: Marisol's DOOR, / on the CORNER.
 - L30: But the order / always says the same THING.
 - L31: The house with no DOOR.
 - L32: So I carried the pizza / to where the house / USED to be.
@@ -203,7 +203,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L40: Marisol came RUNNING / with a second pizza.
 - L41: We split it / on the CURB, / laughing so hard / we SHOOK.
 - L42: She says / the route is MINE.
-- L43: But last night, / the order came in / for TWO.
+- L43: But last night, / a second order came in, / from ANOTHER house / with no DOOR.
 - L44: So rain or SHINE,
 
 (Loop: L44 runs straight into L01: "So rain or shine, I bring pizza every night to a house with no door.")
