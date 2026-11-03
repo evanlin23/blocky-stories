@@ -44,16 +44,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "The fry van's",
-    "The fry van's"
+    "The fry CART'S",
+    "The fry cart's"
    ],
    [
     "SHINY SIDE",
     "shiny side"
    ],
    [
-    "has a QUEUE",
-    "has a queue"
+    "has a LINE",
+    "has a line"
    ],
    [
     "a hundred LONG.",
@@ -66,8 +66,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "The REAL queue",
-    "The real queue"
+    "The REAL line",
+    "The real line"
    ],
    [
     "is TWO.",

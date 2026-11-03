@@ -1,6 +1,6 @@
 {
  "slug": "ep15-mirror-maze",
- "title": "Your Reflection STAYS When You Walk Away",
+ "title": "Never Walk Away From Your REFLECTION 🪞",
  "made_for_kids": false,
  "premise": "In a town where your reflection stays behind in the glass when you walk away, I meet my best friend Tasha at the travelling fair's mirror maze every night, and on the last night the maze guy starts loading the panes onto the truck.",
  "twist": "I'm not the person, I'm the reflection the real me left in a maze pane last year before moving away. I've never left a reflection because I am one. Tasha has come every night to see me, and when my pane goes on the truck she looks at herself in it on purpose, so her reflection stays behind with mine.",
@@ -14,6 +14,7 @@
  "gap": 0.12,
  "tail": 0.25,
  "fade_in": false,
+ "fade_out": false,
  "look": {
   "fog": "#1c1826",
   "fog_density": 0.055,
@@ -26,7 +27,8 @@
     [
      "L37",
      "L41"
-    ]
+    ],
+    "L01.0"
    ]
   }
  },
@@ -453,16 +455,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "The fry van's",
-     "The fry van's"
+     "The fry CART'S",
+     "The fry cart's"
     ],
     [
      "SHINY SIDE",
      "shiny side"
     ],
     [
-     "has a QUEUE",
-     "has a queue"
+     "has a LINE",
+     "has a line"
     ],
     [
      "a hundred LONG.",
@@ -475,8 +477,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "The REAL queue",
-     "The real queue"
+     "The REAL line",
+     "The real line"
     ],
     [
      "is TWO.",
@@ -1343,29 +1345,29 @@
      0,
      [
       3.0,
-      7.0,
-      2.4
+      5.5,
+      1.8
      ],
      [
       3.0,
-      14.3,
-      2.55
+      13.3,
+      2.0
      ],
-     58
+     38
     ],
     [
      1,
      [
       3.0,
-      8.4,
-      2.45
+      7.2,
+      1.7
      ],
      [
       3.0,
-      14.3,
-      2.52
+      13.3,
+      1.95
      ],
-     78
+     45
     ]
    ],
    "step": 2,
@@ -3549,7 +3551,7 @@
      "rim": true
     },
     {
-     "who": "x1",
+     "who": "x7",
      "pos": [
       3.0,
       14.4,
@@ -5065,9 +5067,9 @@
      14.3,
      1.6
     ],
-    900,
+    350,
     40,
-    "#dfe4ff"
+    "#f0dcff"
    ]
   },
   "S02": {
@@ -5930,7 +5932,7 @@
    "exposure": 0.8,
    "camfill": 1.1,
    "amb": 1.0,
-   "bulbs": 0.5,
+   "bulbs": 0,
    "rim": [
     [
      -2.5,
@@ -6608,11 +6610,6 @@
     "at": "L01>-0.35",
     "kind": "hit",
     "db": -9
-   },
-   {
-    "at": "L01>-0.35",
-    "kind": "whoosh",
-    "db": -20
    },
    {
     "at": "P01",

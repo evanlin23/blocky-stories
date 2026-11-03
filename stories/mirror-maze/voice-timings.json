@@ -58,50 +58,50 @@
    ]
   },
   "L02": {
-   "text": "The fry van's shiny side has a queue a hundred long.",
+   "text": "The fry cart's shiny side has a line a hundred long.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.569,
+   "dur": 2.672,
    "onset": 0.155,
-   "end": 2.379,
+   "end": 2.483,
    "chunks": [
     [
      0.155,
-     0.629
+     0.621
     ],
     [
-     0.629,
-     1.172
+     0.621,
+     1.267
     ],
     [
-     1.172,
-     1.552
+     1.267,
+     1.664
     ],
     [
-     1.552,
-     2.379
+     1.664,
+     2.483
     ]
    ]
   },
   "L03": {
-   "text": "The real queue is two.",
+   "text": "The real line is two.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.362,
+   "dur": 1.448,
    "onset": 0.172,
-   "end": 1.155,
+   "end": 1.241,
    "chunks": [
     [
      0.172,
-     0.586
+     0.672
     ],
     [
-     0.586,
-     1.155
+     0.672,
+     1.241
     ]
    ]
   },

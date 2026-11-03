@@ -78,8 +78,8 @@ Every line is `narrator`, voice A. CAPS are key words in `#ffd23a`. No chunk has
   - [the hook shot: a pane holding a reflection with nobody in front of it. The warning lands by about 2 s]
 - `L01b` narrator: It STAYS / in the GLASS / and WAITS.
   - [Tasha at the maze front, the crowd in the panes behind her is the rule]
-- `L02` narrator: The fry van's / SHINY SIDE / has a QUEUE / a hundred LONG.
-- `L03` narrator: The REAL queue / is TWO.
+- `L02` narrator: The fry CART'S / SHINY SIDE / has a LINE / a hundred LONG.
+- `L03` narrator: The REAL line / is TWO.
 - `L04` narrator: A PUDDLE / on the BOARDS / still has / a MAN / tying his BOOT.
 - `L05` narrator: He tied it / in MARCH.
   - [gap 0.3 s]

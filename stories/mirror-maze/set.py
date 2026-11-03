@@ -431,6 +431,20 @@ def build_gallery(kit, ctx, M):
     """Behind the arch: a row of panes on stands. The strangers (stage cue) stand behind them in two rows."""
     for i, x in enumerate((1.8, 3.0, 4.2)):
         make_pane(kit, M, f"gal{i}", (x, 13.3, PLAT_Z + 0.02), 0, 1.1, 2.3, "silver", 0, None)
+    sh = kit._new("sheen")
+    N, L = sh.node_tree.nodes, sh.node_tree.links
+    N.remove(N["Principled BSDF"])
+    tr, em, mx = N.new("ShaderNodeBsdfTransparent"), N.new("ShaderNodeEmission"), N.new("ShaderNodeMixShader")
+    em.inputs["Color"].default_value = (0.9, 0.9, 1.0, 1)
+    em.inputs["Strength"].default_value = 0.6
+    mx.inputs[0].default_value = 0.16
+    L.new(tr.outputs[0], mx.inputs[1])
+    L.new(em.outputs[0], mx.inputs[2])
+    L.new(mx.outputs[0], N["Material Output"].inputs["Surface"])
+    for i, x in enumerate((1.8, 3.0, 4.2)):   # a diagonal sheen streak on each pane, 2 cm proud of the glass
+        sp = kit.empty(f"sheen{i}", (x, 13.3 - 0.02, PLAT_Z + 0.02 + 1.15), None, rot=(0, math.radians(20), 0))
+        kit.box(f"sheen{i}.a", (0.09, 0.002, 1.7), (0, 0, 0), sh, sp)
+        kit.box(f"sheen{i}.b", (0.025, 0.002, 1.7), (0.1, 0, 0), sh, sp)
     kit.light("gal", "AREA", (ARCH_X, 14.2, PLAT_Z + 3.4), 600.0, "#d8d0ff", size=4.0)
     kit.LIGHTS["gal"]["obj"].rotation_euler = (0, 0, 0)
     kit.LIGHTS["gal"]["obj"].visible_camera = False
@@ -700,7 +714,7 @@ def shot_look(kit, story, tl, t, ctx):
 def build_extras(kit, story, ctx):
     d = Path(bpy.app.tempdir or tempfile.gettempdir()) / "extras-faces"
     d.mkdir(parents=True, exist_ok=True)
-    lil = rim_mat(kit, "rim lilac", LILAC, 1.8)
+    lil = rim_mat(kit, "rim lilac", LILAC, 1.2)
     gry = rim_mat(kit, "rim grey", GREYRIM, 0.25)
     ctx["x"], ctx["base"], ctx["rims"] = {}, {}, {}
     for nm, spec in story.get("extras", {}).items():
@@ -1023,7 +1037,7 @@ def build(kit, story, tl):
     ctx = {"story": story, "kit": kit}
     M = materials(kit)
     ctx["M"] = M
-    ctx["M_rim"] = rim_mat(kit, "rim lilac", LILAC, 1.8)
+    ctx["M_rim"] = rim_mat(kit, "rim lilac", LILAC, 1.2)
     ctx["M_tray"] = pbr(kit, "tray", "#b99a6a", 0.7)
     ctx["M_fry"] = pbr(kit, "fries", "#e3b13c", 0.6)
     build_field(kit, ctx, M)
