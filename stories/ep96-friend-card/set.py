@@ -872,16 +872,13 @@ def build_beach(kit, work, at):
     M, box, cyl = kit.plastic, kit.box, kit.cyl
     ox, oy, _ = at("beach", 0, 0)
     box("beach.sand", (60, 30, 0.2), (ox, oy, -0.1), M("#f7dcab", 0.95, spec=0.05))
-    box("beach.wet", (60, 4, 0.12), (ox, oy + 16, -0.07), M("#d8b88a", 0.6, spec=0.3))
-    box("beach.sea", (140, 80, 0.3), (ox, oy + 58, -0.12), M("#36b9d9", 0.15, spec=0.8))
+    box("beach.wet", (60, 3, 0.12), (ox, oy + 9.5, -0.07), M("#d8b88a", 0.6, spec=0.3))
+    box("beach.sea", (140, 80, 0.3), (ox, oy + 51, -0.12), kit.emit("#2db0dc", 1.1, name="sea"))
     for i in range(6):
-        box(f"beach.wave{i}", (30, 0.5, 0.04), (ox - 10 + i * 6, oy + 17.8 + (i % 2) * 2.0, -0.01), M("#fafafa", 0.6))
+        box(f"beach.wave{i}", (30, 0.5, 0.04), (ox - 10 + i * 6, oy + 11.2 + (i % 2) * 1.6, -0.01), M("#fafafa", 0.6))
     # umbrella and towels
-    cyl("beach.pole", 0.04, 2.3, (ox + 2.6, oy + 5.5, 1.15), M("#e4dccf", 0.6))
-    for i in range(8):
-        a = i * math.pi / 4
-        cyl(f"beach.can{i}", 1.4, 0.4, (ox + 2.6, oy + 5.5, 2.35), M("#ff5a6e" if i % 2 else "#fafafa", 0.6), n=3, r2=0.05)
-    cyl("beach.canopy", 1.5, 0.45, (ox + 2.6, oy + 5.5, 2.3), M("#ff5a6e", 0.6), n=16, r2=0.05)
+    cyl("beach.pole", 0.04, 2.3, (ox + 1.0, oy + 7.2, 1.15), M("#e4dccf", 0.6))
+    cyl("beach.canopy", 1.5, 0.45, (ox + 1.0, oy + 7.2, 2.3), M("#ff5a6e", 0.6), n=16, r2=0.05)
     box("beach.towel1", (1.0, 2.0, 0.02), (ox - 2.6, oy + 4.5, 0.01), M("#4fb0ff", 0.9))
     box("beach.towel2", (1.0, 2.0, 0.02), (ox + 0.2, oy + 7.5, 0.01), M("#ffd23f", 0.9))
     cyl("beach.ball", 0.25, 0.5, (ox - 1.0, oy + 7.0, 0.25), M("#ff9fb8", 0.3), n=14)
@@ -1024,6 +1021,10 @@ def build_helds(kit, work):
     g = grp("phone")
     box("held.ph", (0.07, 0.01, 0.14), (0, 0, 0), M("#2a2a32", 0.5), g, bevel=0.01)
     box("held.ph.s", (0.06, 0.004, 0.12), (0, -0.007, 0), kit.emit("#aee4ff", 3.0, name="phone scr"), g)
+    g = grp("bowlball")
+    kit.sphere("held.bb", 0.13, (0, 0, 0), M("#c23a9a", 0.15, spec=0.9), g, seg=14)
+    for i, (hx, hz) in enumerate(((-0.04, 0.09), (0.04, 0.09), (0.0, 0.04))):
+        kit.sphere(f"held.bbh{i}", 0.018, (hx, -0.12, hz), M("#1a1020", 0.5), g, seg=6)
     # moving boxes
     g = grp("movebox")
     box("held.mb", (0.55, 0.45, 0.4), (0, 0, 0), M("#c99a5e", 0.8), g, bevel=0.01)

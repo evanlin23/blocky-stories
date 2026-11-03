@@ -302,9 +302,9 @@ S("L06.3", "S06c", "lawn", C("lawn", (1.5, 2.0, 1.4), -45, 1.5, 40, 4.0, push=0.
   {"reyes": {"pos": (1.5, 2.0), "yaw": 85, "expr": "angry", "arms": [75, 75]},
    "dad": {"pos": (-1.5, 2.0), "yaw": -85, "expr": "angry", "arms": [75, 75]}})
 
-S("L07", "S07a", "gate", C("gate", (-1.0, 3.8, 1.3), 4, 6.0, 28, 3.0, push=0.12),
-  {"abbott": {"pos": (-2.2, 3.2), "yaw": 30, "expr": "grin", "side": [0, 0], "arms": [0, 150]},
-   "friend": {"pos": (0.2, 4.6), "yaw": 150, "expr": "smile"}})
+S("L07", "S07a", "gate", C("gate", (-0.6, 3.9, 1.3), 4, 4.4, 28, 3.0, push=0.12),
+  {"abbott": {"pos": (-1.4, 3.2), "yaw": 20, "expr": "laugh", "side": [0, 0], "arms": [0, 150]},
+   "friend": {"pos": (0.6, 4.4), "yaw": 150, "expr": "smile"}})
 M("friend", "L07.1", "gate", pos=(2.4, 7.0), yaw=160)
 M("abbott", "L07+0.3", "gate", arms=[0, 120])
 M("abbott", "L07.1", "gate", arms=[0, 165])
@@ -414,12 +414,13 @@ for i in range(8):
     M("maya", f"L18.1+{0.12 + i * 0.13:.2f}", "garage", arms=a)
 cue("L18.1", "show", id="balloons", on=False)
 cue("L18.1", "show", id="cake", on=False)
-S("L19", "S19a", "bowl", C("bowl", (0.0, 2.0, 1.1), 0, 3.6, 30, 2.0, push=0.1),
+S("L19", "S19a", "bowl", C("bowl", (0.0, 2.0, 1.1), 0, 3.6, 30, 12.0, push=0.1),
   {"maya": {"pos": (-0.55, 2.0), "yaw": 0, "expr": "smile"},
-   "nate": {"pos": (0.45, 2.0), "yaw": 0, "expr": "smile"}})
+   "nate": {"pos": (0.45, 2.0), "yaw": 0, "expr": "smile", "arms": [40, 40],
+            "held": held("bowlball", "nate", (0.0, -0.42, 0.85))}})
 M("nate", "L19+0.35", "bowl", arms=[0, 40])
 M("maya", "L19+0.35", "bowl", arms=[35, 0])
-S("L19.2", "S19b", "beach", C("beach", (0.0, 5.5, 1.0), 0, 3.6, 30, 2.0, push=0.1),
+S("L19.2", "S19b", "beach", C("beach", (0.0, 5.5, 1.0), 0, 3.6, 30, 10.0, push=0.1),
   {"maya": {"pos": (-0.5, 5.5), "yaw": 6, "expr": "smile"},
    "nate": {"pos": (0.5, 5.5), "yaw": -6, "expr": "smile"}})
 M("maya", "L19.2+0.1", "beach", arms=[0, 150])
@@ -429,26 +430,26 @@ S("L19.2+0.4", "S19c", "van", C("van", (0.0, 1.0, 1.1), 10, 3.6, 30, 3.0, push=0
             "held": held("movebox", "nate", (-0.55, -0.55, 0.95))}})
 cue("L20", "ring", p=0.06)
 S("L20", "S20a", "bench", C("bench", (-0.4, 4.2, 1.2), -4, 4.2, 32, 3.0, push=0.12),
-  {"maya": {"pos": (-0.42, 3.3), "yaw": -4, "expr": "smile", "sit": 0.7},
-   "nate": {"pos": (0.42, 3.3), "yaw": 4, "expr": "smile", "sit": 0.7},
+  {"maya": {"pos": (-0.55, 3.3), "yaw": -4, "expr": "smile", "sit": 0.7},
+   "nate": {"pos": (0.55, 3.3), "yaw": 4, "expr": "smile", "sit": 0.7},
    "me_d": {"pos": (-1.3, 6.5), "yaw": 6, "expr": "stunned", "arms": [0, 175]}})
 S("L20.1", "S20b", "bench", C("bench", (-1.3, 6.5, 1.4), -50, 1.8, 36, 3.0, push=0.12),
   {"me_d": {"pos": (-1.3, 6.5), "yaw": -50, "expr": "stunned", "arms": [0, 175]},
-   "maya": {"pos": (-0.42, 3.3), "yaw": -4, "expr": "laugh", "sit": 0.7},
-   "nate": {"pos": (0.42, 3.3), "yaw": 4, "expr": "smile", "sit": 0.7}})
-S("L21", "S21a", "street", C("street", (0.0, 2.6, 1.1), -4, 3.0, 30, 3.0, push=0.0, to=(1.5, 2.6, 1.1)),
-  {"maya": {"pos": (-3.4, 2.6), "yaw": 85, "expr": "smile",
+   "maya": {"pos": (-0.55, 3.3), "yaw": -4, "expr": "laugh", "sit": 0.7},
+   "nate": {"pos": (0.55, 3.3), "yaw": 4, "expr": "smile", "sit": 0.7}})
+S("L21", "S21a", "street", C("street", (0.0, 2.6, 1.1), -4, 3.2, 30, 3.0, push=0.0, to=(1.0, 2.6, 1.1)),
+  {"maya": {"pos": (-1.0, 2.6), "yaw": 88, "expr": "smile", "run": True,
             "held": [held("bouquet", "maya", (0.0, -0.42, 1.0)), held("swatches", "maya", (0.42, -0.35, 0.95))]}})
-M("maya", "L21.1", "street", pos=(1.6, 2.6), yaw=88, arms=[45, 130])
-S("L21.1+0.25", "S21b", "street", C("street", (2.0, 2.6, 1.15), -10, 2.2, 36, 3.0, push=0.0, to=(4.5, 2.6, 1.15)),
-  {"maya": {"pos": (2.0, 2.6), "yaw": 88, "expr": "laugh", "arms": [45, 140],
+M("maya", "L21.1", "street", pos=(1.3, 2.6), yaw=88, arms=[45, 130], run=True)
+S("L21.1+0.25", "S21b", "street", C("street", (2.0, 2.6, 1.15), -10, 2.6, 36, 3.0, push=0.0, to=(3.6, 2.6, 1.15)),
+  {"maya": {"pos": (1.6, 2.6), "yaw": 88, "expr": "laugh", "arms": [45, 140], "run": True,
             "held": [held("bouquet", "maya", (0.0, -0.42, 1.0)), held("swatches", "maya", (0.42, -0.35, 0.95))]}})
-M("maya", "L22", "street", pos=(5.5, 2.6))
+M("maya", "L22", "street", pos=(3.6, 2.6), run=True)
 
 S("L22", "S22a", "win", C("win", (0.2, 1.2, 1.4), 10, 2.2, 40, 2.0, push=0.12),
   {"me_d": {"pos": (0.0, 1.2), "yaw": 10, "expr": "worried", "arms": [0, 100],
             "held": held("card", "me_d", (0.44, -0.68, 1.4), s=1.4)}})
-S("L22.1+0.2", "S22b", "win", C("win", (0.12, 1.2, 1.45), -8, 1.4, 50, 2.0, push=0.12),
+S("L22.1+0.2", "S22b", "win", C("win", (0.22, 1.2, 1.45), -8, 1.45, 50, 2.0, push=0.12),
   {"me_d": {"pos": (0.0, 1.2), "yaw": -8, "expr": "worried", "arms": [0, 100],
             "held": held("card", "me_d", (0.44, -0.68, 1.4), s=1.4)}})
 
@@ -568,10 +569,10 @@ hand_cues("L39", "me", "mine", "9:14")
 S("L39.1", "S39b", "hand", HC(0.0, 0.074, -8, 0.15, 55, push=0.2, tx2=0.0, tz2=0.074), None)
 # the reveal: the family photo, held with a slow push
 cue("L40", "ring", p=1.0)
-S("L40", "S40", "roof", C("roof", (0.0, 11.0, 1.25), 0, 4.4, 34, 3.0, push=0.14),
-  {"nate_s": {"pos": (-0.85, 11.0), "yaw": 4, "expr": "smile", "side": [0, 30]},
-   "maya_w": {"pos": (0.0, 10.9), "yaw": 0, "expr": "laugh", "side": [30, 30]},
-   "me": {"pos": (0.85, 11.0), "yaw": -4, "expr": "soft", "side": [30, 0]}})
+S("L40", "S40", "roof", C("roof", (0.0, 11.0, 1.25), 0, 4.9, 34, 3.0, push=0.14),
+  {"nate_s": {"pos": (-1.0, 11.0), "yaw": 4, "expr": "smile", "side": [0, 12]},
+   "maya_w": {"pos": (0.0, 10.9), "yaw": 0, "expr": "laugh", "side": [12, 12]},
+   "me": {"pos": (1.0, 11.0), "yaw": -4, "expr": "soft", "side": [12, 0]}})
 S("L41", "S41a", "roof", C("roof", (0.55, 10.9, 1.5), -10, 1.1, 50, 2.0, push=0.12),
   {"me": {"pos": (0.55, 10.9), "yaw": -10, "expr": "soft"}})
 S("L41.1", "S41b", "roof", C("roof", (0.25, 10.9, 1.4), 0, 3.0, 40, 2.0, push=0.12),
@@ -609,9 +610,9 @@ S("L46", "S46a", "roof", C("roof", (0.75, 10.9, 1.52), -4, 0.95, 55, 2.0, push=0
 S("L46.1", "S46b", "roof", C("roof", (0.75, 10.9, 1.5), 12, 0.85, 55, 2.0, push=0.14),
   {"me": {"pos": (0.75, 10.9), "yaw": 12, "expr": "stunned"}})
 cue("L47", "door", id="porch", open=True, dur=0.1)
-S("L47", "S47a", "porch", C("porch", (0.0, 1.4, 1.3), 0, 3.8, 30, 4.0, push=0.12),
+S("L47", "S47a", "porch", C("porch", (0.0, 1.0, 1.3), 28, 4.8, 30, 4.0, push=0.12),
   {"nate": {"pos": (0.0, -1.1), "yaw": 180, "expr": "smile"},
-   "me_d": {"pos": (0.0, -2.05), "yaw": 180, "expr": "forced", "arms": [80, 80]},
+   "me_d": {"pos": (-0.1, -2.05), "yaw": 180, "expr": "forced", "arms": [80, 80]},
    "maya": {"pos": (0.0, 3.2), "yaw": 0, "expr": "laugh", "arms": [40, 40]}})
 M("nate", "L47.1", "porch", pos=(0.0, 1.2))
 M("me_d", "L47.1", "porch", pos=(0.0, 0.2))
@@ -701,7 +702,7 @@ story = {
              "hdri": "kloppenheim_06_puresky", "hdri_strength": 0.5, "hdri_rotation": 0, "hdri_visible": False,
              "exposure": 0.0, "flash_safe": True,
              "polish": {"reveal": ["L40", "L41"], "quiet": [["L40", "L41"]]}},
-    "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.01, -0.02], "saturation": 1.05, "contrast": 1.04,
+    "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.01, -0.02], "saturation": 1.3, "contrast": 1.04,
               "vignette": 0.2, "bloom": 0.3, "grain": 0.008},
     "phonemes": {"Reyes": "ɹˈAz"},
     "asr_forgive": ["nine fourteen", "nine twelve", "nine thirteen", "twelfth", "mister reyes"],
