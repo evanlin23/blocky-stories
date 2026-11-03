@@ -410,10 +410,6 @@ CUES += [{"at": "L40", "name": "smoke_in"}, {"at": "L59", "name": "smoke_out"},
 # ================================================================================================== story
 shots, ids = [], []
 for sid, n, at, camera, opt in SH:
-    if len(camera) == 1:      # quality lift 2026-11-03: no shot is static, a slow drift toward what it looks at
-        _t, _p, _a, _l = camera[0]
-        _q = [_p[i] + (_a[i] - _p[i]) * 0.05 for i in range(3)]
-        camera = [camera[0], [1, [round(v, 3) for v in _q], list(_a), _l]]
     s = {"id": sid, "n": n, "cam": camera, "step": opt.get("step", 2)}
     if ids:
         s["at"] = at
@@ -435,7 +431,7 @@ story = {
     "tail": 0.25,
     "fade_in": False,       # frame 1 is already the picture (opening recipe v1)
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
-    "look": {"flash_safe": True, "fog": "#bcd6ea", "fog_density": 0.0035, "fog_start": 8.0, "sky": "#9cc8ea", "sky_strength": 1.0,
+    "look": {"flash_safe": True, "polish": {"quiet": [["L55", "L58"], ["L66", "L68"]]}, "fog": "#bcd6ea", "fog_density": 0.0035, "fog_start": 8.0, "sky": "#9cc8ea", "sky_strength": 1.0,
              "exposure": 0.0},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.015, -0.02], "saturation": 1.05, "contrast": 1.03,
               "vignette": 0.22, "bloom": 0.25, "grain": 0.008},
