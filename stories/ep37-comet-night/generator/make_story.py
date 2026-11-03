@@ -47,7 +47,7 @@ for ln in out_lines:
         ln["gap"] = HOLDS[ln["id"]]
 # the word check: slower reads where Whisper hears them wrong (filled in after the first asr run)
 TEMPO = {"L12": 0.92, "L28": 0.92, "L59": 0.92, "L14": 0.95, "L16": 0.85}
-SPOKEN = {("L12", 1): "it was one,", ("L28", 0): "And through it...", ("L14", 1): "Mum, said it", ("L16", 1): "week. He'd, be", ("L59", 1): "seat is not kept"}
+SPOKEN = {("L12", 1): "it was one,", ("L28", 0): "And through it...", ("L14", 1): "Mom, said it", ("L16", 1): "week. He'd, be", ("L59", 1): "seat is not kept"}
 for ln in out_lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -144,10 +144,8 @@ def ref(lid, half=False, k=None):
 DOORSTEP = [HX, 1.3, 0.12]
 SQ = "day"
 SHOTS = [
-    ("S01", None, SQ, still([0, 6.5, 2.3], [0.0, 9.9, 1.75], 19), 4),
-    ("S02", ref("L01", True), SQ, move(([-3, -9, 8.5], [0, 3, 1]), ([3, -9, 9.2], [0, 3, 1]), 24), 4),
-    ("S03", "L02", SQ, still([0.6, 7.0, 2.35], [0.15, 9.9, 2.2], 26), 4),
-    ("S04", ref("L02", True), SQ, still([0, 5.3, 1.8], [0, 10.3, 1.55], 17), 4),
+    ("S01", None, "dome", c([0, D(1.5, 1.3, 1.5), D(-0.45, -0.5, 1.28), 30], [1, D(1.0, 0.7, 1.5), D(-0.45, -0.5, 1.3), 36]), 4),
+    ("S02", "L02", "dome", c([0, D(-0.95, 0.15, 1.75), D(-0.45, -0.52, 1.74), 38], [1, D(-0.7, -0.15, 1.76), D(-0.45, -0.52, 1.76), 38]), 4),
     ("S05", "L03", SQ, still([11.0, -2.6, 1.55], [9.3, -1.0, 1.35], 24), 4),
     ("S06", "L04", SQ, still([-5.7, -1.1, 1.5], [-8.5, -1.1, 1.35], 17), 4),
     ("S07", "L05", SQ, still([3.7, -0.2, 1.55], [3.5, 2.5, 1.45], 26), 4),
@@ -223,6 +221,22 @@ SHOTS = [
     ("S77", "L67", "dome", still(D(1.4, 0.6, 1.45), D(0.75, -0.55, 1.4), 28), 4),
     ("S78", "L68", "dome", still(D(0.15, 1.9, 1.5), D(0.15, -0.55, 1.5), 22), 4),
 ]
+def drift(sid, cam, n):
+    """No shot stays still: a lone key becomes a slow push-in (8% of the way to its target) or a gentle sideways drift."""
+    if len(cam) != 1 or sid == "S20":
+        return cam
+    _, loc, tgt, lens = cam[0]
+    v = [tgt[i] - loc[i] for i in range(3)]
+    if n % 2 == 0:
+        a = [loc[i] + 0.08 * v[i] for i in range(3)]
+        return c([0, loc, tgt, lens], [1, a, tgt, lens])
+    d = math.hypot(v[0], v[1]) or 1.0
+    side = [v[1] / d * 0.12, -v[0] / d * 0.12, 0.0]
+    a = [loc[i] + side[i] for i in range(3)]
+    return c([0, loc, tgt, lens], [1, a, tgt, lens])
+
+
+SHOTS = [(sid, at, scene, drift(sid, cam, n), step) for n, (sid, at, scene, cam, step) in enumerate(SHOTS)]
 shots = []
 for sid, at, scene, cam, step in SHOTS:
     s = {"id": sid, "cam": cam, "hand": 0.0 if step == 1 else 0.004, "step": step, "scene": scene}
@@ -277,9 +291,6 @@ put("dad", 0, D(-0.45, -0.58, SITZ), 180, "tired", sit=True, lean=10)
 put("me", 0, [0, -2.2, 0], 0, "neutral", hidden=True)
 
 # claps (S04 on L02, S09 on L07): hands apart, never touching
-for who in ("c1", "c2", "c3", "c4"):
-    key(who, ref("L02", True), arms=[82, 82], side=[-14, -14], blend=0.1)
-    key(who, "L03", arms=[0, 0], side=[0, 0], blend=0.2)
 for who in ("c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "bride", "groom", "baker"):
     key(who, "L07", arms=[82, 82], side=[-14, -14], blend=0.1)
     key(who, "L08", arms=[0, 0], side=[0, 0], blend=0.3)
@@ -363,7 +374,9 @@ cue("hair", "L40", who="dad", color="#c4c4c0")
 cue("hair", "L56", who="dad", color="#2e2a28")
 cue("hair", "L57", who="dad", color="#c4c4c0")
 # Dad's knot: smaller and harder each night, a faint glow when new (the memory), loosening at L62
-cue("knot", 0, who="dad", i=0, scale=1.0, glow=0.0)
+cue("knot", 0, who="dad", i=0, scale=1.75, glow=0.0, rot=0)       # the opening: a big grey knot over Dad, close
+cue("knot", "L01.3", who="dad", i=0, scale=1.4, rot=90, dur=0.45)  # it cinches one turn on "TIGHT"
+cue("knot", "L03", who="dad", i=0, scale=1.0, rot=0, dur=0.0)
 cue("knot", "L11", who="dad", i=0, scale=0.93, dur=0.7)
 cue("knot", "L13", who="dad", i=0, scale=1.3, glow=1.3, dur=0.0)
 cue("knot", "L14", who="dad", i=0, scale=0.93, glow=0.0, dur=0.0)
@@ -378,6 +391,8 @@ cue("knot", "L56+0.25", who="dad", i=0, scale=1.3, glow=1.1, dur=0.9)
 cue("knot", "L57", who="dad", i=0, scale=0.56, glow=0.0, dur=0.0)
 cue("knot", "L62", who="dad", i=0, scale=0.0, dur=1.2)
 cue("cordset", 0, who="dad", len=0.34, stand=0.0)
+cue("cordset", "L01.3", who="dad", len=0.27, stand=0.0, dur=0.45)
+cue("cordset", "L03", who="dad", len=0.34, stand=0.0, dur=0.0)
 cue("cordset", "L32", who="dad", len=0.31, stand=0.0, dur=0.5)
 cue("cordset", "L36", who="dad", len=0.3, stand=1.0, dur=0.9)
 cue("cordset", "L56", who="dad", len=0.34, stand=0.0, dur=0.0)
@@ -420,6 +435,18 @@ cue("streak", ref("L44", True), dur=1.5)
 # ---------------------------------------------------------------------------------------------------- fx and sound
 fx = []
 sfx = [
+    {"at": "L01.3", "kind": "creak", "db": -9, "dur": 1.5},                   # the knot cinches on TIGHT
+    {"at": "L01.3", "kind": "thud", "db": -20},
+    {"at": "L02", "kind": "whoosh", "db": -28, "dur": 0.8},                   # the push to the insert
+    {"at": "L02.1", "kind": "creak", "db": -16, "dur": 0.9},                  # one TURN
+    {"at": "L03", "kind": "whoosh", "db": -22, "dur": 0.9},                   # cut to the square
+    {"at": "L10", "kind": "whoosh", "db": -26, "dur": 1.0},
+    {"at": "L16", "kind": "whoosh", "db": -28, "dur": 1.0},
+    {"at": "L18", "kind": "door", "db": -26},
+    {"at": "L25", "kind": "thud", "db": -16},                                 # soft impact under the scare and the reveals
+    {"at": "L42", "kind": "thud", "db": -14},
+    {"at": "L53+0.3", "kind": "thud", "db": -16},
+    {"at": "L66", "kind": "thud", "db": -24},
     {"at": "L07", "kind": "bubbles", "db": -20, "dur": 1.6},                  # the clap swell
     {"at": ref("L06", k=1), "kind": "whoosh", "db": -24, "dur": 1.0},         # the puff
     {"at": "L11", "kind": "creak", "db": -18, "dur": 1.2},                    # the knot creak
@@ -452,7 +479,10 @@ music = {"root": 45, "mode": "minor", "bpm": 80, "seed": 37, "sections": [
 sound = {
     "floor": "wood", "steps_db": -22,
     "ambience": [
-        {"kind": "room", "from": 0, "to": "L10", "lufs": -40},
+        {"kind": "room", "from": 0, "to": "L03", "lufs": -38},
+        {"kind": "traffic", "from": "L03", "to": "L10", "lufs": -42},
+        {"kind": "wind", "from": "L03", "to": "L10", "lufs": -42},
+        {"kind": "room", "from": "L10", "to": "L12", "lufs": -40},
         {"kind": "crickets", "from": "L12", "to": "L21", "lufs": -34},
         {"kind": "wind", "from": "L16", "to": "L21", "lufs": -36},
         {"kind": "hum", "from": "L21", "to": "end", "lufs": -40},
@@ -466,7 +496,7 @@ sound = {
 
 story = {
     "slug": "ep37-comet-night",
-    "title": "In this town, every promise ties a knot over your head",
+    "title": "My Dad's Knot Creaks TIGHTER Every Night 🪢",
     "made_for_kids": False,
     "premise": "In my town every promise you make ties a small glowing knot onto a cord over your head until you keep it. I have no knots because I make no promises. My dad has the oldest knot in town, grey and hard, and in shooting-star week I go up to his hilltop observatory, where a man with a square hole through his chest stands a little nearer the empty second chair each night.",
     "twist": "The grey knot was never a broken promise: it was the one Dad kept every August, a saved seat that only counts as kept once I sit in it. The first line opens as a weight and turns into the longest-kept promise in town, and the narrator with no knots makes one.",
@@ -481,7 +511,7 @@ story = {
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.015, 0.0, 0.035], "highlights": [0.02, 0.008, -0.01], "saturation": 0.88, "contrast": 1.06,
               "vignette": 0.34, "bloom": 0.3, "grain": 0.012},
-    "phonemes": {"Mum": "mˈʌm"},
+    "phonemes": {},
     "cast": cast,
     "lines": out_lines,
     "shots": shots,

@@ -426,6 +426,15 @@ def build_square(kit, ctx, M):
     # an umbrella (the kept promise), folded, rests on the neighbour's forearms
     ctx["umbrella"] = kit.cyl("umbrella", 0.045, 0.95, (-2.7, -1.62, 1.02), kit.plastic("#2f5d44", 0.7, name="umbrella"),
                               rot=(math.pi / 2, 0, math.pi / 2))
+    # dressing from the CC0 props (no lettering): trees, bushes and pots in the square's bare corners
+    for nm, loc, rot, kw in [("commontree_1", (-9.5, 6.5, 0), 20, {"height": 5.2}), ("commontree_2", (10.0, 7.2, 0), 200, {"height": 5.6}),
+                             ("bush_1", (-5.4, 8.0, 0), 0, {"height": 0.9}), ("bush_2", (5.4, 8.0, 0), 90, {"height": 0.9}),
+                             ("flowers", (-4.6, 7.4, 0), 0, {"height": 0.5}), ("flowers", (4.6, 7.4, 0), 40, {"height": 0.5}),
+                             ("sub_planter", (-10.5, 3.2, 0), 90, {"fit": 1.4}), ("sub_planter", (9.6, 4.6, 0), 90, {"fit": 1.4}),
+                             ("nat_pot_large", (-6.8, -3.8, 0), 0, {"height": 0.8}), ("nat_pot_large", (6.4, -4.2, 0), 0, {"height": 0.8}),
+                             ("bush_2", (-11.0, -6.5, 0), 40, {"height": 1.2}), ("bush_1", (11.2, -7.0, 0), 130, {"height": 1.2}),
+                             ("table_roundsmall", (-9.4, 1.4, 0), 0, {"height": 0.7})]:
+        kit.prop(nm, loc, rot=rot, **kw)
     # the baker's scarf of cords, built where he stands (3.5, 2.5)
     mx, my = 3.5, 2.5
     rnd = random.Random(5)
@@ -564,6 +573,11 @@ def build_dome(kit, ctx, M):
     ep = kit.empty("eyepiece", D(px, py - 0.12, 1.3))
     kit.cyl("eyepiece tube", 0.04, 0.3, (0, -0.1, 0), M["brass"], ep, rot=(math.pi / 2, 0, 0))
     kit.cyl("eyepiece cap", 0.05, 0.05, (0, -0.27, 0), M["iron"], ep, rot=(math.pi / 2, 0, 0))
+    # props in the dome's bare corners, dust-tinted like everything but the second chair
+    for nm, x, y, rot, kw in [("bookshelf", -3.3, -2.5, 0, {"height": 1.9}), ("drawer_1", 3.5, -2.2, 0, {"fit": 0.9}),
+                              ("shelf_1", 3.9, 0.6, 0, {"height": 1.4}), ("trashcan_cylindric", -3.4, 2.4, 0, {"height": 0.55}),
+                              ("light_floor1", 3.0, -3.0, 0, {"height": 1.6})]:
+        kit.prop(nm, D(x, y, 0), rot=rot, tint="#b8b2a8", **kw)
     ctx["cap"] = box(kit, "eyepiece cap loose", (0.1, 0.1, 0.05), D(0.0, 0.0, 0.67), M["brass"], bevel=0.02)
     ctx["cap"].hide_render = True
     # two chairs side by side by the eyepiece: Dad's worn (at x -0.45), the second clean (at x 0.75)
@@ -618,6 +632,8 @@ def build_dome(kit, ctx, M):
     kit.light("kside", "POINT", D(1.7, -3.1, 1.4), 70, "#ffd2a0", size=0.15)
     kit.light("kred", "POINT", D(-0.6, 1.4, 1.3), 60, "#c0463a", size=0.3)
     kit.light("seat", "POINT", D(1.3, 0.4, 1.6), 40, "#ffb48a", size=0.2)
+    kit.light("open key", "POINT", D(-1.5, 1.3, 2.3), 90, "#ffe0bc", size=0.5)       # reads Dad's face and the knot on a phone
+    kit.light("open top", "POINT", D(-0.45, -0.1, 2.5), 60, "#fff0dc", size=0.4)
     kit.light("shoulder", "POINT", D(-2.8, -1.2, 2.2), 45, "#c0463a", size=0.3)
     # blocky clouds that roll over the slit (a rigid cluster that slides in animate)
     cm = glow_mat(kit, "cloud block", "#6b717e", 0.7)
@@ -935,6 +951,8 @@ def animate(kit, story, tl, t, ctx):
     gains["kred"] = 1.0 if sid in ("S49", "S50", "S53") else (0.5 if sid == "S62" else 0.0)
     gains["seat"] = 1.0 if sid == "S66" else (0.8 if sid == "S49" else 0.0)
     gains["shoulder"] = 1.0 if sid == "S38" else 0.0
+    gains["open key"] = 1.0 if sid in ("S01", "S02") else 0.0
+    gains["open top"] = 1.0 if sid in ("S01", "S02") else 0.0
     # shooting stars (rare) over the slit
     # the doors, the bag
     ctx["mine hinge"].rotation_euler = (0, 0, math.radians(-100 if sc == "memory" else 0))
@@ -1010,6 +1028,7 @@ def place_cords(kit, tl, ctx, t, cam, M):
             sc = knot_val(tl, who, i, "scale", t, 0.0 if spec.get("late") else 1.0)
             kn["ob"].location = p + V((0, 0, -0.012))
             kn["ob"].scale = (max(sc, 0.001),) * 3
+            kn["ob"].rotation_euler = (0, 0, math.radians(knot_val(tl, who, i, "rot", t, 0.0)))
             kn["ob"].hide_render = sc <= 0.002
             g = knot_val(tl, who, i, "glow", t, kn["base"])
             set_emit(kn["mat"], g)

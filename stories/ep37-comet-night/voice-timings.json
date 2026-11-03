@@ -6,66 +6,50 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this town, every promise you make ties a knot over your head.",
+   "text": "Promises tie knots over your head. Don't let one pull tight.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.81,
-   "onset": 0.172,
-   "end": 2.603,
+   "dur": 2.759,
+   "onset": 0.155,
+   "end": 2.552,
    "chunks": [
     [
-     0.172,
-     0.655
+     0.155,
+     0.905
     ],
     [
-     0.707,
-     1.267
+     0.905,
+     1.397
     ],
     [
-     1.267,
-     1.741
+     1.483,
+     1.862
     ],
     [
-     1.741,
-     2.138
-    ],
-    [
-     2.138,
-     2.603
+     1.862,
+     2.552
     ]
    ]
   },
   "L02": {
-   "text": "Say \"I do,\" and you get a bright new one on the steps.",
+   "text": "Not even by one turn.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.379,
-   "onset": 0.19,
-   "end": 2.19,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
    "chunks": [
     [
-     0.19,
-     0.724
+     0.172,
+     0.672
     ],
     [
-     0.828,
-     1.043
-    ],
-    [
-     1.043,
-     1.397
-    ],
-    [
-     1.397,
-     1.638
-    ],
-    [
-     1.638,
-     2.19
+     0.672,
+     1.345
     ]
    ]
   },
@@ -338,30 +322,30 @@
    ]
   },
   "L14": {
-   "text": "This August, Mum, said it had started pulling tight.",
+   "text": "This August, Mom, said it had started pulling tight.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9784999999999999,
-   "dur": 2.483,
+   "dur": 2.517,
    "onset": 0.172,
-   "end": 2.276,
+   "end": 2.31,
    "chunks": [
     [
      0.172,
-     0.586
+     0.569
     ],
     [
-     0.621,
-     1.147
+     0.603,
+     1.181
     ],
     [
-     1.147,
-     1.75
+     1.181,
+     1.784
     ],
     [
-     1.75,
-     2.276
+     1.784,
+     2.31
     ]
    ]
   },
@@ -1738,34 +1722,26 @@
    ]
   },
   "L68": {
-   "text": "In this town, every promise ties a knot. I've got one now.",
+   "text": "I've got one of my own now.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.776,
-   "onset": 0.19,
-   "end": 2.586,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.276,
    "chunks": [
     [
-     0.19,
-     0.569
+     0.155,
+     0.492
     ],
     [
-     0.595,
-     1.267
+     0.492,
+     0.828
     ],
     [
-     1.267,
-     1.638
-    ],
-    [
-     1.707,
-     2.086
-    ],
-    [
-     2.086,
-     2.586
+     0.828,
+     1.276
     ]
    ]
   }
