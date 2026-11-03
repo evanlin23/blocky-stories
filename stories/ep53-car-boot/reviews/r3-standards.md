@@ -1,12 +1,21 @@
-# ep53-car-boot: standards, round 3 (scoped: flashing)
+# ep53-car-boot: standards, round 3 (confirmation, S42 only)
 
-Verdict: revise
+Verdict: approve
 
-I measured the current preview (137.5 s, house bar PASS). The round 2 peak at 68.23 s is gone: 67 to 69 s reads 2 flashes and 4 changes on the 3-frame reading. But removing the L35.2 cut means S42 now carries two `tfill` changes on screen.
+Scope: S42 (L35, 67.43 to 69.13 s) against my two round 3 must-fixes. Nothing else was re-reviewed. I measured the preview drawn at 03:17 UTC from the edits saved at 02:52 (committed as ea8121a). Preflight: flash PASS, 0 blocks.
 
-1. **S42 opening, 67.43 to 67.63 s, `tfill` cue `"at": "L35"`.** The strip flickers. Mean luma goes 77, 118, 98, 118 in 0.2 s (1-frame transitions down, up, down, up, each 25 to 47% of the screen). The 1-frame reading from 66.67 s is 2 flashes, which is exactly the bar. Delete the `L35` cue and change the `L34` cue to `"to": 0.6, "dur": 1.0` so the fill is fully up before the cut. S42 should open steady. Confirm S41 shows no new transition.
-2. **S42 end, 68.36 to 69.13 s, `tfill` cue `"at": "L35.2"`.** In round 2 this ramp sat under a cut. Now it plays on screen: luma goes 119, 99, 47, then 0 (full black for 0.37 s under "on the ARM."), then the cut to 115. That light drop starts 3 frames after the window above. In the final, which draws every frame, it can fall into that window and make 3 flashes. Change `"at"` to `"L36"` so the fill drops under the cut to the shelter.
+Both fixes are in `story.json` and `generator/make_story.py`:
+- The `L35` `tfill` cue is deleted, and `L34` is now `"to": 0.6, "dur": 1.0`.
+- The ramp-down cue is now `"at": "L36"` (`"to": 0.0, "dur": 0.4`).
 
-Re-run preflight. Both readings at 66 to 70 s should be 1 flash or fewer.
+**Flicker at 67.43 s: gone.** Mean luma across S42 holds at 116 to 117 from the first frame to the last. The opening cut (171 to 116, one darkening) is the shot's only transition. On the 1-frame reading S42 has no transitions of its own. On the 3-frame reading it has only the cut, counted as one change down.
 
-On 109.93 s (3 flashes and 6 changes on the 3-frame reading): this is acceptable for the final. It comes from two hard cuts 0.87 s apart (S71 to S72 at 109.97, S72 to S73 at 110.83). Each cut brightens and darkens over 10% of the screen, so the 3-frame reading always scores it as exactly 3 changes, whatever the resolution. S72 is a static still with flat luma (131), so drawing every frame can't add a change. These shots haven't changed since round 2.
+**Black fade at the end of S42: gone.** The last frame is 117. There is no drop under "on the ARM." The cut to S43 lands at 114, and the L36 ramp-down plays under the shelter shot without showing (S43 stays flat at 113 to 114). Windows from 66 to 69.5 s: 1-frame reading 0 flashes and 1 change, 3-frame reading 1 flash and 3 changes or fewer. Both are under the bar.
+
+**S41: no new transition.** The fill now rises on screen through S41 (luma 143 to 170, 65.90 to 66.70 s, a soft brightening of the canopy in the fog). Every step goes the same way (up), so it merges with the S41 opening cut into a single change and can't pair into a flash. The two step-ups the preview's 1-frame reading logs at 66.30 and 66.43 s come from S41 being drawn every 4 frames. The final draws every frame, so this 1.0 s ramp is smooth (hard rule 7).
+
+The new S42 push (end camera `[-1.115, 0.80, 0.73]`, lens 38.6) is gentle and keeps the strip and chair arm readable throughout.
+
+I accepted 109.93 s in round 3, and that still stands.
+
+No must-fixes.
