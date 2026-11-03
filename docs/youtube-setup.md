@@ -1,6 +1,6 @@
 # YouTube upload setup (one time, free, no credit card)
 
-The `upload` workflow uploads one ready story a day to PandaNanoAdventures as a **private** video, then opens an issue so you can watch it and publish it. Until the secrets below exist **and** the audit (step 4) is approved, it opens an "Upload by hand" issue with the download link and the text to paste instead.
+The `upload` workflow uploads one ready story a day to Buhtown as a **private** video, then opens an issue so you can watch it and publish it. Until the secrets below exist **and** the audit (step 4) is approved, it opens an "Upload by hand" issue with the download link and the text to paste instead.
 
 ## 1. Google Cloud (console.cloud.google.com)
 1. Create a project (`blocky-stories`). Skip any billing or free-trial prompt, because none is needed.
@@ -11,9 +11,9 @@ The `upload` workflow uploads one ready story a day to PandaNanoAdventures as a 
 ## 2. Refresh token (browser only)
 At https://developers.google.com/oauthplayground:
 1. Gear icon → "Use your own OAuth credentials" → paste the client ID and secret.
-2. Gear icon: Access type Offline, Force prompt "Consent Screen". Scopes: `https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.force-ssl` → Authorize. Pick the **PandaNanoAdventures** channel and click through "unverified app".
+2. Gear icon: Access type Offline, Force prompt "Consent Screen". Scopes: `https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.force-ssl` → Authorize. Pick the **Buhtown** channel and click through "unverified app".
 3. Exchange the code for tokens and copy the **refresh token**.
-4. Check: GET `https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true` shows PandaNanoAdventures. Note its `id` (UC...).
+4. Check: GET `https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true` shows Buhtown. Note its `id` (UC...).
 
 ## 3. GitHub (repo → Settings)
 - Secrets and variables → Actions → **Secrets**: `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`.

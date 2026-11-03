@@ -63,7 +63,7 @@ Drafts for the writer, to check against each plot. Re-voice lines 1 and 2 only, 
 | ep43-reading-room | "In this town, never let your number hit zero." | "It's how many people know your name. Mine says one." | The glowing 1 over the narrator's head, close | Never Let Your Number Hit Zero 🔢 |
 | ep45-bee-yard | "In this world, don't let your hug clock run out." | "Mine's been blank my whole life." | A dial over a head at 00:00:03, close | Never Let Your Hug Clock Run Out ⏳ |
 
-US English throughout (playbook item 10). Check each new line against hard rule 8 (no dashes, no semicolons).
+US English throughout (playbook item 10). **Vary the titles:** 6 of these 8 drafts start with "Never", which repeats one shape (the panel lesson, hard rule 5). The fix sessions rewrite them so no two in a batch start with the same word. Check each new line against hard rule 8 (no dashes, no semicolons).
 
 ## Order once fixed
 closing-time, moving-day, mirror-maze (the three without a sad family reveal) go first: they're the recipe's test,
