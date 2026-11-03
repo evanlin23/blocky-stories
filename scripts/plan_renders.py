@@ -1,6 +1,6 @@
 """Which stories need a final render: the gate is open and there's no film artifact yet.
 
-    python scripts/plan_renders.py [--story NAME] [--shards 16]
+    python scripts/plan_renders.py [--story NAME] [--shards 32]
 
 Prints `matrix=`, `stories=`, `any=`, `more=` and the slot lines `a=`, `b=` (the first and second story, or empty) and
 `shards=` (JSON list 0..SHARDS-1) for $GITHUB_OUTPUT.
@@ -19,7 +19,7 @@ from blocky.gate import load_package
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--story", default="")
-ap.add_argument("--shards", type=int, default=16)
+ap.add_argument("--shards", type=int, default=32)
 ap.add_argument("--max", type=int, default=2)   # stories per run, clamped to 2 below: render.yml has two slots (a, b), each story's assemble waits only for its own shards; the again job starts the next run for the rest
 a = ap.parse_args()
 
