@@ -54,11 +54,11 @@ SHED = (-5.0, 12.5)
 PULLEY = (SHED[0], SHED[1] - 0.25, 4.7)
 HOUSES = [-16, -8, 0, 8, 16]      # street: ours is index 2, Mr. Pruitt's index 3
 SKY = {   # world colour, strength, window pane colour
-    "dawn": ("#f4c7d6", 1.45, "#ffd6b8"),
+    "dawn": ("#f4c7d6", 1.0, "#ffd6b8"),
     "dark": ("#2a3190", 1.0, "#1f2a86"),
     "night": ("#232d86", 0.8, "#1f2a86"),
-    "day": ("#ffc9a8", 1.7, "#cfe8ff"),
-    "peach": ("#ffbf9a", 1.5, "#ffd6b8"),
+    "day": ("#ffc9a8", 1.2, "#cfe8ff"),
+    "peach": ("#ffbf9a", 1.1, "#ffd6b8"),
 }
 
 
@@ -332,9 +332,9 @@ def build(kit, story, tl):
     # our house, seen from behind
     kit.box("house", (13, 9, 6.4), (-0.5, -5.5, 3.2), cream, bevel=0.04)
     kit.box("house.roof", (13.8, 9.8, 0.3), (-0.5, -5.5, 6.55), P("#8d6aa8"), bevel=0.04)
-    kit.box("house.door", (1.0, 0.1, 2.1), (0.0, -0.98, 1.05), redd, bevel=0.02)
-    kit.box("house.doorframe", (1.3, 0.08, 2.3), (0.0, -0.96, 1.15), white, bevel=0.02)
-    kit.box("house.step", (2.4, 1.0, 0.25), (0.0, -1.5, 0.125), P("#d3cdc6"), bevel=0.03)
+    kit.box("house.door", (1.0, 0.06, 2.1), (0.0, -0.95, 1.05), redd, bevel=0.02)
+    kit.box("house.doorframe", (1.3, 0.04, 2.3), (0.0, -0.97, 1.15), white, bevel=0.02)
+    kit.box("house.step", (2.4, 1.0, 0.25), (0.0, -0.5, 0.125), P("#d3cdc6"), bevel=0.03)
     kit.box("house.kwin", (1.6, 0.05, 1.2), (-3.6, -0.97, 1.7), kit.emit("#ffd18a", 1.5, "kwin"))
     kit.box("house.kwinf", (1.8, 0.04, 1.4), (-3.6, -0.96, 1.7), white)
     kit.box("house.mwin", (1.4, 0.05, 1.2), (3.5, -0.97, 4.3), kit.emit("#2f3fb0", 1.0, "mwin"))
@@ -373,8 +373,8 @@ def build(kit, story, tl):
         ctx["rope_slack"].append(seg)
     ctx["rope_taut"] = kit.cyl("rope.taut", 0.08, 1.0, (0, 0, -50), rope, n=8)
     # the Sun
-    gold = kit.emit("#ffb000", 1.25, "sun shell")
-    core = kit.emit("#ffd25e", 5.0, "sun core")
+    gold = kit.emit("#ffb000", 1.1, "sun shell")
+    core = kit.emit("#ffd25e", 3.2, "sun core")
     sclera = kit.emit("#ffeeb0", 1.1, "eye sclera")
     iris = kit.emit("#ff9d00", 1.2, "eye iris")
     ring = kit.emit("#f09000", 1.2, "eye ring")
@@ -451,13 +451,13 @@ def build(kit, story, tl):
     ctx["lidg"] = lidg
     ctx["eye_parts"] = eye_parts
     # lights: the Sun's own warm light, a sky fill, the shed lamp, a day key
-    Y.light("sunlit", "POINT", (0.3, FRONT - 0.9, 2.0), 160.0, "#ffb347", size=0.9)
+    Y.light("sunlit", "POINT", (0.3, FRONT - 0.9, 2.0), 120.0, "#ffb347", size=0.9)
     Y.light("sunfill", "AREA", (0.0, FRONT - 3.5, 3.5), 40.0, "#ffc060", rot=(math.radians(-15), 0, 0), size=6.0)
     Y.light("shedlamp", "POINT", (sx, sy - 2.4, 1.6), 250.0, "#ffd18a", size=0.5)
     ob = Y.light("rim", "SPOT", (-5.0, 0.5, 5.0), 500.0, "#9fb8ff", size=0.5, spot=60, blend=0.6)
     kit.aim(ob, (-0.5, 5.5, 1.6))
     ob = Y.light("daykey", "SUN", (0, 0, 20), 3.0, "#ffe2c8", rot=(math.radians(35), 0, math.radians(20)))
-    Y.light("stepl", "POINT", (0.0, -1.2, 2.6), 35.0, "#ffd9a8", size=0.4)
+    Y.light("stepl", "POINT", (0.0, -0.3, 2.6), 35.0, "#ffd9a8", size=0.4)
     ctx["st"]["yard"] = Y
 
     # ================================================================ rooms
@@ -505,7 +505,7 @@ def build(kit, story, tl):
         cp = work / "calendar.png"
         calendar_png(cp)
         cm, _ = img_mat(kit, "calendar", cp, 1.1, alpha=False)
-        S.box("calendar", (0.9, 0.03, 1.0), (1.45, 4.36, 1.55), cm)
+        kit.plane("calendar", (0.9, 1.0), S.p((1.45, 4.355, 1.55)), cm, rot=(math.pi / 2, 0, 0))
         # the hall behind the doorway
         S.box("hallpane", (0.05, 1.6, 2.2), (2.9, 1.65, 1.1), kit.emit("#ffe0b0", 1.4, "bhall"))
         S.box("hallfloor", (1.4, 1.6, 0.05), (2.7, 1.65, 0.0), floor)
@@ -605,31 +605,31 @@ def build(kit, story, tl):
     def shed():
         S = Stage(kit, "shed", ctx)
         plank = P("#9c6a45")
-        S.room(4.2, 3.6, 3.4, plank, P("#6f4a30"), P("#6f4a30"))
-        S.box("shelf", (1.4, 0.3, 0.05), (-1.3, 3.4, 1.6), wood_d)
-        S.box("crate", (0.5, 0.5, 0.4), (-1.5, 3.2, 0.2), wood, bevel=0.02)
-        S.box("window", (0.8, 0.03, 0.6), (1.2, 3.57, 2.3), kit.emit("#bfe0ff", 1.2, "shedpane"))
+        S.room(4.2, 5.0, 3.4, plank, P("#6f4a30"), P("#6f4a30"))
+        S.box("shelf", (1.4, 0.3, 0.05), (-1.3, 4.8, 1.6), wood_d)
+        S.box("crate", (0.5, 0.5, 0.4), (-1.5, 4.6, 0.2), wood, bevel=0.02)
+        S.box("window", (0.8, 0.03, 0.6), (1.2, 4.97, 2.3), kit.emit("#bfe0ff", 1.2, "shedpane"))
         # the winch: iron housing facing -y, a drum, a crank on the right, a brake lever on the left
-        S.box("housing", (0.9, 0.7, 1.1), (0.0, 2.6, 0.55), iron, bevel=0.03)
-        S.box("housing.top", (1.0, 0.8, 0.08), (0.0, 2.6, 1.14), iron, bevel=0.02)
-        S.cyl("drum", 0.26, 0.9, (0.0, 2.6, 1.42), steel, rot=(0, math.pi / 2, 0), n=24)
-        S.cyl("coil", 0.3, 0.55, (0.0, 2.6, 1.42), P("#e0b878", 0.9), rot=(0, math.pi / 2, 0), n=24)
+        S.box("housing", (0.9, 0.7, 1.1), (0.0, 3.6, 0.55), iron, bevel=0.03)
+        S.box("housing.top", (1.0, 0.8, 0.08), (0.0, 3.6, 1.14), iron, bevel=0.02)
+        S.cyl("drum", 0.26, 0.9, (0.0, 3.6, 1.42), steel, rot=(0, math.pi / 2, 0), n=24)
+        S.cyl("coil", 0.3, 0.55, (0.0, 3.6, 1.42), P("#e0b878", 0.9), rot=(0, math.pi / 2, 0), n=24)
         # two marigold strokes scratched into the housing, 1 cm proud of its face
         for dx in (-0.12, 0.12):
-            S.box(f"tally{dx}", (0.035, 0.012, 0.3), (dx, 2.244, 0.7), kit.emit("#ffb000", 1.6, "tally"))
-        S.cyl("axle", 0.04, 0.5, (0.65, 2.6, 1.42), steel, rot=(0, math.pi / 2, 0), n=12)
-        ctx["crank"] = kit.empty("crankg", S.p((0.85, 2.6, 1.42)))
+            S.box(f"tally{dx}", (0.035, 0.012, 0.3), (dx, 3.244, 0.7), kit.emit("#ffb000", 1.6, "tally"))
+        S.cyl("axle", 0.04, 0.5, (0.65, 3.6, 1.42), steel, rot=(0, math.pi / 2, 0), n=12)
+        ctx["crank"] = kit.empty("crankg", S.p((0.85, 3.6, 1.42)))
         kit.box("crank.arm", (0.05, 0.05, 0.4), (0, 0, -0.18), steel, ctx["crank"])
         kit.cyl("crank.handle", 0.035, 0.26, (0, 0, -0.38), P("#ff9d3a"), ctx["crank"], rot=(0, math.pi / 2, 0), n=12)
-        kit.cyl("brake.pivot", 0.04, 0.08, S.p((-0.55, 2.6, 0.6)), steel, rot=(0, math.pi / 2, 0), n=12)
+        kit.cyl("brake.pivot", 0.04, 0.08, S.p((-0.55, 3.6, 0.6)), steel, rot=(0, math.pi / 2, 0), n=12)
         th = math.atan2(0.45, 0.6)
-        bl = kit.box("brake.lever", (0.05, 0.05, 0.75), S.p((-0.6, 2.38, 0.88)), P("#d63a30"), rot=(th, 0, 0))
+        bl = kit.box("brake.lever", (0.05, 0.05, 0.75), S.p((-0.6, 3.38, 0.88)), P("#d63a30"), rot=(th, 0, 0))
         # the rope from the drum up to the roof
         ctx["rope_in"] = []
         for i in range(8):
-            ctx["rope_in"].append(kit.cyl(f"shed.rope{i}", 0.05, 0.4, S.p((0, 2.6, 2.0)), P("#e0b878", 0.9), n=8))
-        S.light("lamp", "POINT", (0.0, 1.6, 2.7), 180.0, "#ffd9a8", size=0.4)
-        S.light("lamp2", "POINT", (0.0, 1.0, 1.4), 60.0, "#ffd9a8", size=0.3)
+            ctx["rope_in"].append(kit.cyl(f"shed.rope{i}", 0.05, 0.4, S.p((0, 3.6, 2.0)), P("#e0b878", 0.9), n=8))
+        S.light("lamp", "POINT", (0.0, 2.4, 2.7), 220.0, "#ffd9a8", size=0.4)
+        S.light("lamp2", "POINT", (0.0, 1.4, 1.6), 90.0, "#ffd9a8", size=0.3)
         ctx["st"]["shed"] = S
 
     bed()
@@ -837,8 +837,8 @@ def animate(kit, story, tl, t, ctx):
     slack = 1.0 - ramp(tl, "tight", t, "v", 0.0)
     for i, seg in enumerate(ctx["rope_in"]):
         u0, u1 = i / n, (i + 1) / n
-        a = V((0, 2.6, 1.7 + 1.5 * u0)) + V((0.12 * slack * math.sin(u0 * 6), 0, 0))
-        b = V((0, 2.6, 1.7 + 1.5 * u1)) + V((0.12 * slack * math.sin(u1 * 6), 0, 0))
+        a = V((0, 3.6, 1.7 + 1.5 * u0)) + V((0.12 * slack * math.sin(u0 * 6), 0, 0))
+        b = V((0, 3.6, 1.7 + 1.5 * u1)) + V((0.12 * slack * math.sin(u1 * 6), 0, 0))
         a.x += OR["shed"][0]; b.x += OR["shed"][0]; a.y += OR["shed"][1]; b.y += OR["shed"][1]
         seg.location = tuple((a + b) / 2)
         seg.scale = (1, 1, (b - a).length / 0.4)
