@@ -839,7 +839,7 @@ def _dials(kit, story, tl, t, ctx, st, cam, over):
             d["key"] = key
             if old_img is not None and old_img.name != f"dial_{who}":
                 bpy.data.images.remove(old_img)
-        d["em"].inputs["Strength"].default_value = 0.8 + 0.1 * state["glow"]     # 0.8: a cream face at 1.0 clipped to white under the grade (flash)
+        d["em"].inputs["Strength"].default_value = (0.8 + 0.1 * state["glow"]) * (0.72 + 0.28 * min(1.0, state["vis"]))     # 0.8: a cream face at 1.0 clipped to white under the grade (flash)
 
 
 def _make_dial(kit, who, ctx):

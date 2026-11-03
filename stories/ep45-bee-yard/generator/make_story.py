@@ -175,9 +175,9 @@ H2 = {}     # the lower one: arms under, round the back     # chest to chest, ar
 # S00, the warning (L01): a Friday flash-forward, close and lit, on the wrong thing. The Hover by the shed (his
 # Friday place), the empty air over his head where a dial should be, pushing in. Lena small behind him at row 1, her
 # dial in frame (24 hours, Friday's reading). Never his boots: the gap is saved for L25. n=33 gives it Friday's light.
-S00H = (-0.38, 3.6)
+S00H = (-0.52, 3.6)
 _gy = gz(S00H[1])
-S00L = (0.38, 3.6)
+S00L = (0.52, 3.6)
 # S00a (L01 to "Only"): a chest-up two-shot, centred for TV: Lena with her dial (24) and the Hover with empty air at the
 # same height, both faces over 1/5 of the frame, pushing in. Bees hidden (set.py).
 _cz = _gy + 1.45
@@ -334,7 +334,7 @@ sh("S69", 58, "L58", fc(hd(0.0, 5.4), 180, -78, 1.8, 50), {"me": P(0.0, 5.4, 180
    "lena": P(0.0, 6.0, 0, arms=[82, 82], side=[0, 0], expr="grin")}, hand=0.003)
 sh("S70", 59, "L59", mv([1.6, -3.2, 1.3], [-0.6, 0.3, 0.8], 30, [1.4, -2.9, 1.3], [-0.6, 0.3, 0.8], 30), {}, hand=0.004)
 sh("S71", 60, "L60", fc(hd(0.0, 5.45), 0, 12, 3.4, 35), {"me": P(0.0, 5.45, 0, arms=[82, 82], side=[0, 0], expr="neutral", head=[0, 0]),
-   "lena": P(-0.5, 4.9, 180, arms=[82, 82], side=[0, 0], expr="grin")}, hand=0.004)
+   "lena": P(-0.85, 4.9, 180, arms=[82, 82], side=[0, 0], expr="grin")}, hand=0.004)
 # ---- Monday again, and the turn
 sh("S72", 61, "L61", mv([3.7, -4.5, 1.55], [0.0, 0.0, 1.5], 28, [3.5, -4.3, 1.55], [0.0, 0.0, 1.5], 28),
    {"me": P(0.0, -0.95, 180, arms=[0, 0], side=[0, 0], expr="neutral"), "lena": P(0.0, 0.95, 0, arms=[0, 0], side=[0, 0], expr="neutral")}, hand=0.004)
@@ -558,7 +558,7 @@ story["music"] = {
         {"at": "L66", "voices": ["drone", "pluck_hi", "pad"], "energy": 0.6},
     ]}
 story["sound"] = {
-    "floor": "grass", "steps_db": -26, "rev": 3,
+    "floor": "grass", "steps_db": -26, "rev": 4,
     "ambience": [
         {"kind": "beehum", "from": 0, "to": "L02", "lufs": -42},
         {"kind": "gulls", "from": "L02", "to": "L15", "lufs": -41},
@@ -576,6 +576,7 @@ story["sound"] = {
         {"from": "L44-0.6", "to": "L44+0.45", "keep": ["sting"]},
         {"from": "L54-0.5", "to": "L54+0.2", "keep": ["click"]},
     ]}
+story["clip_ok"] = [f"hpuff{i}" for i in range(12)] + ["lbee0", "lbee1", "lbee2"]
 story["phonemes"] = {"Thursday": "θˈɜɹzdA"}
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {tl0['duration']} s)")
