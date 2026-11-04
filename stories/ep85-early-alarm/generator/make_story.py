@@ -522,6 +522,6 @@ story = {
               "sfx": sfx,
               "music_drops": [{"from": "P01", "to": "P01>", "keep": ["creak"]}, {"from": "P02", "to": "P02>"}]},
 }
-story["rev"] = 8
+story["rev"] = 9
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")

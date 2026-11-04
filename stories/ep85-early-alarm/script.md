@@ -272,7 +272,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L64: It never said / ONE person.
 - L64a: There were TWO of us / on the alarm now.
 - L64b: So it would take / TWO of us / to lift it.
-- L65: So Dad / held the BRAKE, / and I CRANKED.
+- L65: So Dad / held the LEVER, / and I CRANKED.
 - L66: Two of us. / Half the WEIGHT / each.
 - L67: And at five fifty-EIGHT, / the sun went up / over our shed, / STRAIGHT.
 - L68: Dad watched it / with somebody / next to him / for the first time / in thirty YEARS.
