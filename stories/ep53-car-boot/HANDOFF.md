@@ -55,3 +55,9 @@ Two review rounds (r5, r6) used; no rescue round allowed by the brief. Not appro
   3. S64 (92.8 s, "face to FACE"): lean reads, but faces ~1 m apart; bring to ~40 cm or change L50 line/caption.
 - Passing: flash, preflight 0 blocks, measure 0 blocks (one warn walk_dead_end_share 0.5), pytest 171, S67 fixed.
 - Branch claude/ep53-opening holds all work. No drop PR (second orchestrator records drops on main). `hold` left in package.json. Not added to queue.txt.
+
+## r6 must-fixes applied (2026-11-04, no reviews run)
+- S02: the black was Pip's chair back beside the camera (x -0.2, y 1.7). Camera now [0.1, 1.45] to [0.1, 1.15], aim x -0.3, lens 19 to 21: my face whole at the left, the buyer at the right. Brightness 1.9 to 2.4 s: min luma 155, no black frames.
+- S41/S42/S43 (L32 to L34): camera from [-12.5, -12.0] and [-9.5, -9.5], lens 56/58; arms down so it isn't a heap; the head and hair of the silhouette are a shade lighter (#38425a) than the body (#161b26) in set.py (tsil_head), so the head on the shoulder reads.
+- S64: lean starts at 34 (L50) and reaches 46 by L50+1.0 (was 48 over 1.6 s from -8): faces about 40 cm apart from 92.9 s, both heads whole, clipcheck 0.
+- Preview re-rendered (forced S02, S41-43, S64), finished, mixed. Preflight 0 blocks, flash PASS, clipcheck 0, measure 0 blocks (warn walk_dead_end_share 0.5), pytest 196 pass.

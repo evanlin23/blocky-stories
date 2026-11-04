@@ -913,11 +913,15 @@ def animate(kit, story, tl, t, ctx):
     if "tsil_orig" not in ctx:
         ctx["tsil_orig"] = {o: list(o.data.materials) for o in bpy.data.objects
                             if o.name.startswith("tilted.") and o.type == "MESH"}
-        ctx["tsil_mat"] = kit.plastic("#1b212d", 0.95, "tsil")
+        ctx["tsil_mat"] = kit.plastic("#161b26", 0.95, "tsil")
+        ctx["tsil_head"] = kit.plastic("#38425a", 0.95, "tsilhead")   # the head a shade lighter so it reads apart from the shoulder
     sil = bool((_last(_cues(tl, "tsil"), t) or {}).get("on"))
     for o, mats in ctx["tsil_orig"].items():
         for i, m in enumerate(mats):
-            o.data.materials[i] = ctx["tsil_mat"] if sil else m
+            hd, a = False, o
+            while a is not None and not hd:
+                hd, a = ("head" in a.name or "hair" in a.name), a.parent
+            o.data.materials[i] = (ctx["tsil_head"] if hd else ctx["tsil_mat"]) if sil else m
     # ---------------------------------------------------------------- goods turned toward Pip's chair
     gc = _last(_cues(tl, "goods"), t) or {"mode": "straight"}
     for k, (nm, (root, gx, gy)) in enumerate(ctx["goods"].items()):
