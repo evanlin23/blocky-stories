@@ -18,36 +18,30 @@
   "who": "narrator",
   "chunks": [
    [
-    "I've never WRITTEN it.",
-    "I've never written it."
+    "Here, a recipe cooked RIGHT",
+    "Here, a recipe cooked right"
+   ],
+   [
+    "flies to whoever needs it MOST.",
+    "flies to whoever needs it most."
    ]
   ]
  },
  {
-  "id": "L03",
+  "id": "L02b",
   "who": "narrator",
   "chunks": [
    [
-    "In this town,",
-    "In this town,"
+    "Every night at DUSK,",
+    "Every night at dusk,"
    ],
    [
-    "the night you finally cook a recipe RIGHT,",
-    "the night you finally cook a recipe right,"
-   ]
-  ]
- },
- {
-  "id": "L04",
-  "who": "narrator",
-  "chunks": [
-   [
-    "its card flies OFF",
-    "its card flies off"
+    "cards lift out of kitchen WINDOWS",
+    "cards lift out of kitchen windows"
    ],
    [
-    "to whoever needs it MOST.",
-    "to whoever needs it most."
+    "all over TOWN.",
+    "all over town."
    ]
   ]
  },
@@ -182,6 +176,10 @@
    [
     "is MINE.",
     "is mine."
+   ],
+   [
+    "I've never WRITTEN it.",
+    "I've never written it."
    ]
   ]
  },
@@ -829,6 +827,16 @@
   ]
  },
  {
+  "id": "L54b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She didn't look SURPRISED.",
+    "She didn't look surprised."
+   ]
+  ]
+ },
+ {
   "id": "L55",
   "who": "narrator",
   "chunks": [
@@ -935,6 +943,11 @@
   ]
  },
  {
+  "id": "P02",
+  "pause": 1.0,
+  "chunks": []
+ },
+ {
   "id": "L62",
   "who": "narrator",
   "chunks": [
@@ -975,6 +988,11 @@
     "from hers."
    ]
   ]
+ },
+ {
+  "id": "P03",
+  "pause": 1.0,
+  "chunks": []
  },
  {
   "id": "L65",
@@ -1051,6 +1069,28 @@
   ]
  },
  {
+  "id": "L69b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Her card stays",
+    "Her card stays"
+   ],
+   [
+    "in the TIN.",
+    "in the tin."
+   ],
+   [
+    "It's already been",
+    "It's already been"
+   ],
+   [
+    "where it needed to GO.",
+    "where it needed to go."
+   ]
+  ]
+ },
+ {
   "id": "L70",
   "who": "narrator",
   "chunks": [
@@ -1069,8 +1109,12 @@
     "a card just landed"
    ],
    [
-    "in her soup POT,",
-    "in her soup pot,"
+    "in a nineteen-year-old's",
+    "in a nineteen-year-old's"
+   ],
+   [
+    "soup POT,",
+    "soup pot,"
    ]
   ]
  },

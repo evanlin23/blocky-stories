@@ -1,17 +1,19 @@
 # ep93-recipe-card: the script (writer, 2026-11-03, batch 9a)
 
+> **r1 fixes, 2026-11-04** (critic and standards r1 must-fix). L02 is now the rule ("Here, a recipe cooked RIGHT flies to whoever needs it most."), and "I've never WRITTEN it." moved to the end of L11. L03 and L04 are cut. To reach the long arm (critic: 116 s was in no band), L71 has "a nineteen-year-old's" back, there are 1.0 s holds before L62 (P02) and L65 (P03), and three short lines are new: L02b (cards lifting out of windows, so the montage shots stay), L54b ("She didn't look SURPRISED.") and L69b (her card stays in the tin, it's already been where it needed to go). L48 reads PENCIL, as built. Title emoji is now 🍲 (📝 sat too close to ep89's 📓). S01 now opens close on Grandma's blue tin with the old card standing in it and pot steam drifting across, and S72's steam curl match-cuts into that steam (ep89 opened and looped on ink). Cover at about 56.0 s, the card at the window. Changed line ids: L02, L02b (new), L03 and L04 (cut), L11, L54b (new), L69b (new), L71, P02 and P03 (new holds). L48 already voiced as PENCIL.
+
 > **De-templated against ep96, 2026-11-04** (standards must-fix on ep96-friend-card, hard rule 5). Shot plan only, no spoken word changed. Frame 1 is now an extreme close-up of the ink itself (my loops and the boot stain's edge, no hand, no second object beside it). The rule meter is now a lemon kitchen timer in the bottom-right corner, not a card inset top-left. The loop now closes on a match cut from the steam curl in young Grandma's photo to the ink loop of S01, not a push-in to a card. Affected: the marker bullet, opening recipe point 2, S01, S02, S23b, S25, S27 to S31, S36, S41, S46, S51, S53, S71b, S72.
 
 - **Slug:** `ep93-recipe-card` (batch 9a, upload order 2 of 5)
 - **Pitch:** E02 in `docs/research/premise-engines.md` section 3 (rank 1, panels 9 and 8), engine 2, the bootstrap loop. Opening shape `confess`. Lane: core. Length arm: long (110 to 150 s).
-- **Title:** Grandma's Recipe Is In My HANDWRITING 📝
+- **Title:** Grandma's Recipe Is In My HANDWRITING 🍲
 - **Kept from the pitch:** line 1 word for word, the rule (cook it right and the card goes to whoever needs it most), the reveal (the card lands sixty years back in young Grandma's hands, so nobody ever invented the recipe), and both plants (the old stain is the drip I spill tonight, and "you taught me this" every Sunday).
 - **Added:** the only card that flies is the one in your hand, which is why Grandma cooks from memory and keeps hers in a tin. The step under the stain is my own habit (lemon on everything), so the soup has always tasted a little like me.
 - **Kept clear of ep89-sister-diary (batch 8):** that story is two diaries that write to each other across a hall, live, in a sister's and brother's hands. Here nothing writes by itself and nobody writes back. It's one object, a recipe card, in one kitchen, going round once through sixty years. The handwriting is only ever mine, written once, by me, on screen (L48). There's no diary, no bedroom, no ink crawling, and no second person writing.
-- **Word count:** 500 spoken words in 72 lines, all `narrator`, plus one 0.6 s music drop before L37.
-- **Estimated length:** about 115 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L26 and L35 first. If it lands under 110 s, nothing is added.
+- **Word count:** 522 spoken words in 73 lines, all `narrator`, plus one 0.6 s music drop before L37 and 1.0 s holds before L62 and L65.
+- **Estimated length:** about 123 s (the r1 build ran 116 s for 500 words at 0.12 s gaps; this adds 22 words, 2.0 s of holds and one more gap), with the drop and a 0.25 s loop tail. If it runs over 140 s, cut L26 and L35 first. If it lands under 120 s, add a 0.5 s hold before L56 and before L72.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright and warm all the way: Grandma's butter-yellow kitchen, robin's-egg blue cabinets, a copper pot, a bowl of lemons, low gold evening sun through the window over the sink. The town montage is a pink-gold dusk. No dark scene: the one eerie stretch (L32 to L40) keeps the kitchen lit, with the window going deep blue behind.
-- **Hold:** scripts only (batch 9a). Not built, not voiced.
+- **Hold:** batch 9a: in review (removed on approval).
 
 ## Variety table
 The batch table is in `stories/ep92-blackout-ben/script.md`. This row:
@@ -34,23 +36,23 @@ Kept clear of knock-back's farmhouse kitchen (a cellar, a knock, an uncle, night
 
 ## The story
 - **Premise:** In this town, the night you finally cook a recipe right, the card in your hand flies off to whoever needs it most, so people cook with the card under a jar. Grandma Nell keeps her soup card in a tin and cooks from memory. The card is sixty years old, and it's in my handwriting. So this spring I copy it and start cooking it myself.
-- **Rule / hook (L01, L02, about 2.9 s):** "Grandma's secret recipe CARD / is in my HANDWRITING." "I've never WRITTEN it."
+- **Rule / hook (L01, L02, about 5 s):** "Grandma's secret recipe CARD / is in my HANDWRITING." "Here, a recipe cooked RIGHT / flies to whoever needs it MOST." The rule is spoken by about 3 s, over the tin close-up. "I've never WRITTEN it." lands at the end of L11, on the close-up of my loops.
 - **The relatable want or fight:** to make Grandma's soup the way she does, with the whole family teasing every try.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a round lemon-yellow kitchen timer in the bottom-right corner, our own design (it matches the timer tick in the music). Its face shows the try count in big numerals (0 from frame 1, then 1, 9, 20, 39, 40, 41) and a needle that creeps toward a small lemon mark at the top of the dial, one notch per try. From L32 a little paper tag hung on the timer flutters toward the frame edge. At L46 the needle reaches the lemon and the timer gives one soft ring. At L51 the tag gets a tiny boot stain, at L53 it flutters off-screen, and the timer resets to 0 with the needle back at rest.
-- **The 3 to 5 example montage (L03 to L08, 4 to 17 s):** cards lifting out of kitchen windows at dusk (L03, L04), Mr. Ito's chili card at the fire station (L05), Mrs. Bell's pie card on a newlywed's mat (L06), a lasagna card on a lonely guy's windowsill (L07), cards kept under jars and magnets (L08).
-- **A concrete mystery on screen by 15 s:** line 1. The card is mine and I never wrote it (0 to 3 s), and the barred sevens match (L12, about 22 s).
+- **The 3 to 5 example montage (L02b to L08, 5 to 16 s):** cards lifting out of kitchen windows at dusk and gliding down the street (L02b), Mr. Ito's chili card at the fire station (L05), Mrs. Bell's pie card on a newlywed's mat (L06), a lasagna card on a lonely guy's windowsill (L07), cards kept under jars and magnets (L08).
+- **A concrete mystery on screen by 15 s:** line 1. The card is in my writing (0 to 3 s), I've never written it (L11, about 20 s), and the barred sevens match (L12, about 22 s).
 - **How the narrator is the exception:** nobody cooks with the card in their hand. I do (L32).
 - **The loved one at stake:** my grandma, Nell, named at L09 in the same shot as her. She's alive and well from first line to last.
 - **First real scare:** L32 to L38 (about 52 to 63 s): my card tugging toward the dark window like a kite, fluttering under its magnet all night, then the sixty-year-old stain on Grandma's card shining wet.
 - **The climax turns the rule's own logic:** the rule never says whoever needs it most is alive in the same year (L55 to L57). No new magic: the card does exactly what every card in town does.
 - **Twist and reveal (L52 to L66, 82 to 105 s):** said plainly over one picture (S62, Grandma holding the old card beside the framed photo of herself at nineteen, the same card in both): "Nobody ever INVENTED / Grandma's soup." "She learned it / from MY card." "I learned it / from HERS." "It's the SAME card."
-- **How the last 15 seconds turn over the first line:** "I've never written it" was true until tonight. The last three lines put a card in my handwriting into a nineteen-year-old's pot sixty years back, which runs straight into L01.
+- **How the last 15 seconds turn over the first line:** "I've never written it" (L11) was true until tonight. The last three lines put a card in my handwriting into a nineteen-year-old's pot sixty years back, which runs straight into L01.
 - **The plants a rewatch catches:**
   1. L18, L19: the old stain is shaped like a little boot. L50, L51: my drip lands in the same shape.
   2. L14: every Sunday Grandma tells the table I taught her the soup, and everyone laughs.
   3. S09b and every kitchen wide: a framed photo of a young woman at a stove holding a small card. Never narrated until L55.
   4. S14b: at the table I squeeze lemon over my bowl.
-  5. L40: "it's TONIGHT, isn't it." She knew the date.
+  5. L40: "it's TONIGHT, isn't it." She knew the date. L54b pays it: she didn't look surprised.
 - **Ending shape:** a closed loop, warm, ending on the card falling back to the start.
 - **Warmth:** a family dish that goes round. Grandma and I taught each other.
 - **Sad family reveal?** No.
@@ -62,12 +64,12 @@ Kept clear of knock-back's farmhouse kitchen (a cellar, a knock, an uncle, night
 When a man finally cooks his grandma's soup right, his handwritten copy of her recipe card flies out the window and lands sixty years back in his grandma's pot when she was nineteen, so it's the very card she's kept all along. Nobody ever invented the soup: she learned it from his card, and he learned it from hers.
 
 ## The opening recipe (playbook v1), point by point
-1. Line 1 is a confession that something is wrong with you, now: 9 words, about 2.0 s, then L02 (4 words).
-2. Frame 1 is an extreme close-up of the ink itself: my looping handwriting filling the frame, a barred 7, and the edge of a brown boot-shaped stain, already wrong. No hand and no second object in frame. Lit warm and bright to read on a phone, centred. A slow drift across the loops. No wide.
-3. A sound hit on "HANDWRITING": a soft paper flick and a low swell.
-4. L02 tightens it in under 1 s. No names before L09.
-5. L03 to L08 show the rule at work, one or two shots per line, none over 2 s.
-6. The title is line 1 as a statement, 6 words and an emoji, not the reveal.
+1. Line 1 is a confession that something is wrong with me, now: 9 words, about 2.4 s, then L02 states the rule (11 words) over the same close-up.
+2. Frame 1 is a close-up of Grandma's dented robin's-egg blue tin, lid open, with the old yellowed card standing up in it: a barred 7 and the brown boot-shaped stain over the last line read clearly. No hand. Steam from the pot drifts across the card from the left. Lit warm and bright from the window, to read on a phone, centred. A slow push in. No wide.
+3. A sound hit on "HANDWRITING", line 1's last word: a soft paper flick and a low swell.
+4. L02 gives the rule straight after, still on the tin. No names before L09.
+5. L02b to L08 show the rule at work, one or two shots per line, none over 2 s.
+6. The title is line 1 as a statement, 6 words and 🍲, not the reveal.
 7. Seconds 15 to 30 show the card, the sevens and the Sunday table, nobody explaining.
 
 ## World
@@ -75,7 +77,7 @@ When a man finally cooks his grandma's soup right, his handwritten copy of her r
 - **The town montage:** a dusk street of painted houses, a fire station's long table, a doorway full of moving boxes, a bare apartment's sink and window.
 - **The cards:** small cream index cards, rows of handwriting drawn as looping scribble glyphs (never letters), with a barred 7 in the measurements. The boot stain is a soft brown splash shaped like a little boot.
 - **No text anywhere.** Handwriting is scribble loops and numerals only.
-- **What's true underneath (never said):** a card flies only from the hand of someone who has just cooked it right, to whoever needs that dish most, at any time. Grandma's card stays because it's already been where it needed to go.
+- **What's true underneath:** a card flies only from the hand of someone who has just cooked it right, to whoever needs that dish most, at any time. Grandma's card stays because it's already been where it needed to go (said once, L69b).
 
 ## Cast
 - `me` (an adult man, about 24, the narrator): wavy brown block hair, a mustard knit sweater, an apron in my cooking scenes, jeans. Faces: `uneasy`, `embarrassed`, `grimace`, `scared`, `thinking`, `amazed`, `soft`, `laugh`.
