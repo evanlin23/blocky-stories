@@ -218,46 +218,88 @@ def place_tag(kit, ctx, n, lens, big=1.0):
 
 
 # ------------------------------------------------------------------------------------------------ the Under
-def make_under(kit, parent, scale=1.0, pipe_h=5.3):
-    """A blocky person built far too wide and flat, lying face up: only the face. Built once per scene use.
-    Local frame: the face looks +z, its width runs along x, the mouth end is toward -y."""
+def _limb(parent, a, b, w, mat, name):
+    """A box w x w from point a to point b (local coords)."""
+    d = (b[0] - a[0], b[1] - a[1], b[2] - a[2])
+    ln = math.sqrt(d[0] ** 2 + d[1] ** 2 + d[2] ** 2)
+    th = math.acos(d[2] / ln)
+    ph = math.atan2(d[1], d[0])
+    mid = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2)
+    return B(parent, (w, w, ln), mid, mat, name, 0.06, rot=(0, th, ph))
+
+
+def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True):
+    """A person built wrong, lying face up: a head as wide as the cellar, a thin long neck, shoulders wider than the
+    room, one arm far too long that reaches up the wall and hooks its fingers over the crack edge. Local frame: the
+    face looks +z, its width runs along x, the mouth/chin end is toward -y (the body goes that way)."""
     R = E(parent, (0, 0, 0), "under")
-    clay, seam = P("#b98a5a", 0.9, 0.02), P("#3a2e24", 0.9, 0.0)
+    skin = P("#6e4c38", 0.9, 0.02)
+    skin_d = P("#3a2e28", 0.95, 0.0)
+    coat = P("#171b24", 0.9, 0.02)
+    collar = P("#8e8878", 0.85, 0.02)
+    hair = P("#08080a", 0.95, 0.0)
     W_, D_, T_ = 6.4, 4.6, 0.9
-    B(R, (W_, D_, T_), (0, 0, -T_ / 2), clay, "uface", 0.12)
-    # block seams: two long and three cross lines, soot dark, a hair proud of the face
-    for x in (-1.6, 1.6):
-        B(R, (0.07, D_ - 0.1, 0.02), (x, 0, 0.012), seam, "seam")
-    for y in (-1.3, 0.2, 1.5):
-        B(R, (W_ - 0.1, 0.07, 0.02), (0, y, 0.012), seam, "seam")
-    # ears and jaw: flat blocks that make the silhouette a head
+    B(R, (W_, D_, T_), (0, 0, -T_ / 2), skin, "uface", 0.14)
+    # a cheek ridge on each side and a flat bridge of nose: shadows that make the face a face
+    B(R, (0.9, 2.2, 0.35), (0, -0.1, 0.1), skin, "unose", 0.1)
     for sx in (-1, 1):
-        B(R, (0.7, 1.5, 0.5), (sx * (W_ / 2 + 0.3), 0.2, -0.3), clay, "uear", 0.1)
-    B(R, (3.6, 1.1, 0.6), (0, -D_ / 2 - 0.45, -0.35), clay, "uchin", 0.1)
-    B(R, (W_ + 0.4, 1.6, 0.5), (0, D_ / 2 + 0.7, -0.4), P("#8a6a46", 0.9, 0.02), "uforehead", 0.1)   # shoulders hint, dim
-    # brows: heavy soot slabs, slanted
+        B(R, (1.2, 1.4, 0.3), (sx * 2.5, -0.7, 0.05), skin, "ucheek", 0.1)
+    # ears and jaw
     for sx in (-1, 1):
-        B(R, (1.7, 0.34, 0.1), (sx * 1.7, 1.2, 0.05), seam, "ubrow", 0.03, rot=(0, 0, sx * 0.16))
-    # eyes: two thin lamp-yellow glints deep in dark sockets, the brightest thing in frame (no discs, no pupils)
+        B(R, (0.7, 1.5, 0.5), (sx * (W_ / 2 + 0.3), 0.2, -0.3), skin_d, "uear", 0.1)
+    B(R, (3.8, 1.1, 0.6), (0, -D_ / 2 - 0.45, -0.35), skin, "uchin", 0.1)
+    # hair: a dark ragged slab over the crown (toward +y)
+    B(R, (W_ + 0.2, 1.5, 0.5), (0, D_ / 2 + 0.55, -0.1), hair, "uhair", 0.1)
+    for i, hx in enumerate((-2.4, -0.8, 1.0, 2.5)):
+        B(R, (1.1, 0.9, 0.35), (hx, D_ / 2 - 0.35 - 0.12 * (i % 2), 0.06), hair, "uhair", 0.08)
+    # one flat, level brow ridge (no slant): a hollow, not a frown
+    B(R, (W_ - 1.0, 0.45, 0.28), (0, 1.15, 0.09), skin_d, "ubrow", 0.05)
+    # eyes: deep dark sockets and two tiny cold glints (the brightest points in frame)
     ey = []
-    eyes_mat = kit.emit("#ffd84a", 12.0, name="undereye")
-    sock = P("#17110c", 0.95, 0.0)
-    pup = P("#17110c", 0.95, 0.0)
+    eyes_mat = kit.emit("#d8f0ff", 9.0, name="undereye")
+    sock = P("#0a0807", 0.95, 0.0)
+    pup = P("#0a0807", 0.95, 0.0)
     for sx in (-1, 1):
-        B(R, (1.1, 0.6, 0.06), (sx * 1.7, 0.7, 0.03), sock, "usock", 0.05)
-        d = B(R, (0.5, 0.07, 0.05), (sx * 1.7, 0.7, 0.07), eyes_mat, "ueye", 0.0, rot=(0, 0, sx * -0.1))
+        B(R, (1.3, 0.8, 0.12), (sx * 1.7, 0.7, 0.04), sock, "usock", 0.08)
+        d = B(R, (0.14, 0.14, 0.06), (sx * 1.7 + sx * 0.05, 0.62, 0.11), eyes_mat, "ueye", 0.0)
         pu = CY(R, 0.001, 0.001, (sx * 1.7, 0.7, 0.085), pup, "upup", n=6)
         ey.append((d, pu, sx * 1.7))
-    # a wide black gape, a dark lip, and the pipe's end wrapped inside it
-    mouth = CY(R, 1.0, 0.24, (0, -0.95, 0.07), P("#0d0b0a", 0.9, 0.0), "umouth", n=32)
-    mouth.scale = (1.5, 0.62, 1.0)
-    lip = CY(R, 1.15, 0.2, (0, -0.95, 0.04), P("#5a4630", 0.9, 0.02), "ulip", n=32)
-    lip.scale = (1.6, 0.72, 1.0)
+    # a dark uneven gape, low and wide, and the pipe's end wedged in it
+    dk = P("#070606", 0.95, 0.0)
+    mouth = CY(R, 1.0, 0.24, (0.05, -0.95, 0.07), dk, "umouth", n=24)
+    mouth.scale = (1.5, 0.5, 1.0)
+    mouth.rotation_euler = (0, 0, 0.05)
+    m2 = CY(R, 1.0, 0.24, (-0.9, -1.0, 0.065), dk, "umouth2", n=20)
+    m2.scale = (0.9, 0.38, 1.0)
+    lip = CY(R, 1.15, 0.2, (0.05, -0.95, 0.04), P("#2e2420", 0.9, 0.02), "ulip", n=24)
+    lip.scale = (1.6, 0.6, 1.0)
     if pipe_h:
-        CY(R, 0.24, pipe_h, (0, -0.95, pipe_h / 2), kit.emit("#8a5e22", 0.25, name="underpipe"), "upipe")
-        CY(R, 0.34, 0.16, (0, -0.95, 0.18), P("#7a5a20", 0.5, 0.4), "upipecol")
+        brass = P("#4f3d22", 0.55, 0.45)
+        CY(R, 0.24, pipe_h, (0.05, -0.95, pipe_h / 2), brass, "upipe")
+        CY(R, 0.36, 0.16, (0.05, -0.95, 0.2), P("#3c3020", 0.6, 0.4), "upipecol")
+    if body:
+        # neck: thin and too long; shoulders: wider than the room; the coat is near black
+        B(R, (1.7, 2.6, 1.0), (0, -D_ / 2 - 2.0, -0.4), skin_d, "uneck", 0.1)
+        B(R, (10.0, 2.4, 1.7), (0, -D_ / 2 - 4.2, 0.0), coat, "ushoulder", 0.25)
+        # the one lit identity cue: a pale shirt collar and a dark tie at the neck
+        for sx in (-1, 1):
+            B(R, (1.5, 1.3, 0.3), (sx * 0.95, -D_ / 2 - 3.1, 0.62), collar, "ucollar", 0.04, rot=(0, 0, sx * -0.5))
+        B(R, (0.5, 1.8, 0.2), (0, -D_ / 2 - 3.3, 0.7), P("#2a1010", 0.9, 0.0), "utie", 0.03)
+        # right arm: far too long, an extra joint, up the wall and hooked over the crack edge (land coords: x 2.0, y -0.55, z 0)
+        sh = (4.6, -D_ / 2 - 4.2, 0.4)
+        el = (4.0, -D_ / 2 - 3.4, 2.8)
+        wr = (1.0, 0.45, 5.6)
+        _limb(R, sh, el, 1.0, coat, "uarm")
+        _limb(R, el, wr, 0.7, skin_d, "uforearm")
+        B(R, (0.9, 0.55, 0.3), (0.95, 0.5, 5.7), skin, "upalm", 0.05)
+        for i in range(4):
+            B(R, (0.9, 0.2, 0.2), (1.8, 0.2 + 0.28 * i, 5.72 + 0.03 * (i % 2)), skin, "ufinger", 0.05)
+        # left arm lies along the floor, the hand open and too long
+        _limb(R, (-4.6, -D_ / 2 - 4.2, 0.0), (-3.4, -D_ / 2 - 2.0, -0.55), 0.9, coat, "uarmL")
+        B(R, (0.8, 2.2, 0.3), (-3.4, -D_ / 2 - 0.6, -0.55), skin_d, "uhandL", 0.05)
     R.scale = (scale, scale, scale)
     return {"root": R, "eyes": ey}
+
 
 
 # ------------------------------------------------------------------------------------------------ people's extras
@@ -525,9 +567,9 @@ def build_house_set(kit, ctx):
     B(None, (0.12, 0.08, 2.2), (SX - 0.15, 0.54, 1.1), fr, "frame", 0.01)
     B(None, (0.12, 1.16, 0.08), (SX - 0.15, 0, 2.14), fr, "frame", 0.01)
     # two amber strokes scratched into the frame at shoulder height (the lore tally), a hair proud
-    amber = kit.emit("#ffb347", 1.4, name="tally")
-    for yy in (0.5, 0.57):
-        B(None, (0.015, 0.025, 0.22), (SX - 0.225, yy, 1.45), amber, "tally", 0.0)
+    amber = kit.emit("#ffb347", 2.2, name="tally")
+    for yy in (0.515, 0.565):
+        B(None, (0.02, 0.03, 0.34), (SX - 0.228, yy, 1.45), amber, "tally", 0.0)
     # the door leaf, hinged at y=-0.5, opening into the room (toward -x)
     hinge = E(None, (SX - 0.05, -0.5, 0), "doorhinge")
     B(hinge, (0.07, 1.0, 2.1), (0, 0.5, 1.05), P("#c8a46e", 0.55, 0.15), "door", 0.02)
@@ -597,7 +639,7 @@ def build_house_set(kit, ctx):
     B(land, (3.0, 1.5, 0.4), (3.5, 0, -0.2), stone, "landB", 0.01)
     # cavern ceiling beyond the stairwell walls
     for sy in (-1, 1):
-        B(land, (5.9, 4.25, 0.4), (2.65, sy * 2.875, -0.2), stone, "landC", 0.01)
+        B(land, (14.0, 12.25, 0.4), (2.4, sy * 6.875, -0.2), stone, "landC", 0.01)
     B(land, (1.2, 10.0, 0.4), (-0.6, 0, -0.2), stone, "landD", 0.01) if False else None
     # the landing is a small room: a flat ceiling and plain walls round it
     lw = P("#d8c6a6", 0.85, 0.03)
@@ -607,12 +649,12 @@ def build_house_set(kit, ctx):
         B(land, (0.2, 4.15, 2.4), (-0.3, sy * 2.925, 1.1), lw, "landwall", 0.0)
     B(land, (0.2, 10.0, 2.4), (5.6, 0, 1.1), lw, "landwall", 0.0)
     # cavern walls and floor (dark clay)
-    CD, CW = 6.4, 10.0
+    CD, CW = 14.0, 26.0
     B(land, (CD, CW, 0.4), (2.4, 0, -6.9), dark, "cfloor", 0.0)
     for sy in (-1, 1):
         B(land, (CD, 0.4, 6.8), (2.4, sy * (CW / 2), -3.5), dark, "cwall", 0.0)
-    B(land, (0.4, CW, 6.8), (-0.8, 0, -3.5), dark, "cwall", 0.0)
-    B(land, (0.4, CW, 6.8), (5.6, 0, -3.5), dark, "cwall", 0.0)
+    B(land, (0.4, CW, 6.8), (-4.8, 0, -3.5), dark, "cwall", 0.0)
+    B(land, (0.4, CW, 6.8), (9.6, 0, -3.5), dark, "cwall", 0.0)
     # the Under lies on the cavern floor, face up, mouth end toward the stairs; the slot is above its middle
     ctx["under"] = make_under(kit, land, 1.0)
     ctx["under"]["root"].location = (1.45, -1.25, -6.7 + 0.9)
@@ -626,8 +668,9 @@ def build_house_set(kit, ctx):
     ctx["lamp_light"] = kit.light("lamp", "POINT", (SX + 1.0, 0, 0.8), 150, "#ffb347", size=0.15)
     ctx["lamp_light2"] = kit.light("stairl", "POINT", (SX + 0.3, 0, 1.6), 90, "#ffd9a8", size=0.3)
     ctx["landl"] = kit.light("landl", "POINT", (SX, 0, 0), 160, "#ffcf90", size=0.3)
-    ctx["ukey"] = kit.light("ukey", "SPOT", (SX, 0, 0), 90, "#ff9a50", size=0.5, spot=70, blend=0.6)
-    ctx["urim"] = kit.light("urim", "SPOT", (SX, 0, 0), 5200, "#8ab8ff", size=0.5, spot=90, blend=0.7)
+    ctx["ukey"] = kit.light("ukey", "SPOT", (SX, 0, 0), 700, "#ff9a50", size=0.5, spot=70, blend=0.6)
+    ctx["urim"] = kit.light("urim", "SPOT", (SX, 0, 0), 1300, "#8ab8ff", size=0.5, spot=90, blend=0.7)
+    ctx["urim2"] = kit.light("urim2", "SPOT", (SX, 0, 0), 3800, "#9cc4ff", size=0.5, spot=100, blend=0.7)
     ctx["ufill"] = kit.light("ufill", "POINT", (SX, 0, 0), 45, "#ffcf9a", size=1.0, shadow=False)
     # dust motes in the stairwell: a few pale specks
     ctx["motes"] = []
@@ -699,9 +742,9 @@ def build_cutaway(kit, ctx):
     # the pole, the whistle and the long pipe straight down to the Under's mouth
     CY(G, 0.14, 6.0, (0, -0.3, 3.0), P("#2f9a56", 0.4, 0.4), "cpole")
     CY(G, 0.4, 0.9, (0, -0.3, 6.4), P("#f0b84a", 0.28, 0.8), "cwhistle")
-    CY(G, 0.16, 25.0, (0, -0.45, -12.0), kit.emit("#ffc850", 1.6, name="cpipe"), "cpipe")
+    CY(G, 0.16, 25.0, (0, -0.45, -12.0), kit.emit("#b08040", 0.7, name="cpipe"), "cpipe")
     ctx["cut_shaft"] = B(G, (2.6, 0.3, 26.0), (0, -0.55, -40.0), kit.emit("#050403", 1.0, name="cshaft"), "cshaft", 0.0)
-    ctx["cut_under"] = make_under(kit, G, 1.0, pipe_h=0)
+    ctx["cut_under"] = make_under(kit, G, 1.0, pipe_h=0, body=False)
     u = ctx["cut_under"]["root"]
     u.location = (0, -0.8, -27.0)
     u.rotation_euler = (math.pi / 2, 0, 0)           # stood up toward the camera: its face looks -y
@@ -882,13 +925,16 @@ def animate(kit, story, tl, t, ctx):
     ux, uy, uz = base[0] + uo[0], base[1] + uo[1], base[2] + uo[2]
     ctx["ukey"].location = (base[0] + 0.3, base[1] - 0.3, base[2] - 1.3)
     kit.aim(ctx["ukey"], (ux, uy, uz))
-    ctx["urim"].location = (ux + 4.6, uy - 0.6, uz + 0.5)
-    kit.aim(ctx["urim"], (ux, uy, uz))
+    ctx["urim"].location = (ux + 7.0, uy - 3.2, uz + 2.6)
+    kit.aim(ctx["urim"], (ux, uy - 3.5, uz))
+    ctx["urim2"].location = (ux - 1.5, uy + 6.5, uz + 3.2)
+    kit.aim(ctx["urim2"], (ux, uy - 2.0, uz))
     ctx["ufill"].location = (base[0] + 1.45, base[1], base[2] - 2.2)
     # the Under's eyes: pupils look up at us, or (cue "gaze") turn away
     gaze = uc.get("gaze", 0.0)
     for d, pu, ex in u["eyes"]:
         pu.location = (ex + 0.0, 0.7 - 0.12 * gaze, 0.085)
+        d.location = (ex + (0.05 if ex > 0 else -0.05), 0.62 - 0.12 * gaze, 0.11)
     # ---- the door
     dc = cue_at(tl, "door", t)
     open_ = dc.get("open", 0.0)
@@ -945,6 +991,7 @@ def animate(kit, story, tl, t, ctx):
     cg = cc.get("gaze", 0.0)
     for d, pu_, ex in ctx["cut_under"]["eyes"]:
         pu_.location = (ex, 0.7 - 0.12 * cg, 0.085)
+        d.location = (ex + (0.05 if ex > 0 else -0.05), 0.62 - 0.12 * cg, 0.11)
     # ---- the ladder, the leaf, the cutaway's shaft
     hide(ctx["ladder"], not cue_at(tl, "ladder", t).get("on", False))
     lc = cue_at(tl, "leaf", t)
@@ -970,5 +1017,5 @@ def animate(kit, story, tl, t, ctx):
     return {"sun": en * sd.get("sun", 1.0) / 5.0, "camfill": sd.get("fill", 1.0),
             "gceil": inh, "gwin": inh, "kceil": inh, "kwinl": inh, "bceil": inh, "ovenglow": inh,
             "lamp": sd.get("lamp", 1.0), "stairl": sd.get("stairl", 1.0), "landl": sd.get("stairl", 1.0),
-            "ukey": lit * gk, "urim": lit * sd.get("rim", 1.0), "ufill": lit * sd.get("ufill", 1.0),
+            "ukey": lit * gk, "urim": lit * sd.get("rim", 1.0), "ufill": lit * sd.get("ufill", 1.0), "urim2": lit * sd.get("rim", 1.0),
             "cutl": 1.0, "cutlow": 1.0}
