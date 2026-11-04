@@ -1,5 +1,18 @@
-# ep83-free-fries handoff (fix round 1, picture only, no word changes)
-- Done: gloves on Mom at L23/L24/L29.3/L29.5 (acting `arms` are degrees: 95/70 now, were 1 degree) then an empty-hook shot (S38); L42.3 reframed, both heads whole, basket at my sleeve (characters spaced 1.1 m so heads clear sleeves); L36 split into Mom laughing (S45) and the two of us at the stove (S46); P01 clears the stage so the dark round window shows; L25/L26 `wide` eyes, glasses lenses hidden on S31/S32, push-ins, teal dimmed over 1 s before S31; L11 tally strokes enlarged between the baskets; L21 exposure ramp 0.7 s (`expramp` shot key read by set.py).
-- Checks: preflight 0 blocks, flash PASS on the preview (the old 7-in-a-second warning is gone), measure 0 block 0 near, 2 warn (face_big_share 0.372, walk_dead_end_share 0.583).
-- Open: face_big_share and walk_dead_end warns; check flash again on the proof. Delete out/work/<story>/frames-preview before a re-render if shot ids shift (stale frames got mixed in once).
-- Rule marker: diner sign in S01 and the hatch shots; sign copies on kitchen and stockroom walls; corner disc everywhere.
+# ep83-free-fries: DROPPED (2026-11-04)
+
+Not approved after 2 review rounds (rule: at most 2, no rescue round). No PR opened. `"hold"` left in package.json.
+
+## Verdicts
+- Round 1: standards approve (no must-fixes); critic revise (6 must-fixes, all picture).
+- Round 2 (critic only): revise. Average 7.5; hook 8, back-row 8, narrator 9, appeal 9, middle grip 7, twist 8, lore 7, warm turn 6, faces at phone size 6, sound 7, captions 7. Preflight 0 blocks, flash pass, measure 0 block 0 near (warns: face_big_share, walk_dead_end_share).
+- Reviews: `reviews/r1-standards.md`, `reviews/r1-critic.md`, `reviews/r2-critic.md`.
+
+## Open must-fixes (all camera/face, no words)
+1. L29 S37-S38 (49.9-50.9 s, "OWN gloves"): S37 is a big grey pot with Mom's head cut off and the gloves at the frame edges. Frame on her two yellow-gloved hands at her sleeve ends, no face. S38's "empty hook" reads as a pink light switch: hang a visible glove outline or cut S38.
+2. L36 S46 (61.9-63.3 s): a quarter of Omar's head is off the left edge, mine clipped on the right. Pull back, both heads whole; Omar's mouth to `laugh`/`grin`.
+3. L42 S54 (72.5-73.1 s, "we BLINK"): top of my head cut off, Omar hidden behind me. Tilt up, move Omar aside.
+
+## Notes
+- Standards watch items: queue it away from dryer-nine, rule-three, ep54 (all `cost` openings); remove stale `hold` at merge.
+- Closest-to-shippable story: three small camera/face fixes would likely get approval if the owner/orchestrator grants a third round.
+- No engine bug blocked the build.
