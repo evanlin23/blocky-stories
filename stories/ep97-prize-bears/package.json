@@ -6,6 +6,5 @@
   "cover_s": 43.0,
   "shape": "taking-turns",
   "opening": "confess",
-  "lane": "core",
-  "hold": "batch 9b: scripts only, not built yet"
+  "lane": "core"
 }
