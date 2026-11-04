@@ -344,6 +344,7 @@ story = {
     "set_moves": [names["jeep"], names["crowflap"], names["everybody"]],
 }
 story["look"]["polish"] = polish
+story["asr_forgive"] = ["there is", "there's"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
 print(names)
