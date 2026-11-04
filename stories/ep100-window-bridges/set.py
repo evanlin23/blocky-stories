@@ -340,6 +340,7 @@ def build_decor_bridges(kit, ctx):
     zs = (1.2, 4.1, 7.1, 10.1)
     import random
     rnd = random.Random(5)
+    ctx["decor"] = []
     for y in ys:
         for z in zs:
             if rnd.random() < 0.5 and not (y in (-6, 21) and z == 7.1):
@@ -348,15 +349,15 @@ def build_decor_bridges(kit, ctx):
                 continue
             dy = rnd.choice([-0.4, 0, 0.5, 1.0])
             dz = rnd.choice([-0.3, 0, 0.3])
-            span(kit, (-1.5, y, z + dz * 0.0), (1.5, y + dy, z + dz), 0.55, wood if rnd.random() < 0.5 else (pale if rnd.random() < 0.6 else grey), rope,
-                 rope_h=0.35)
+            ctx["decor"].append((y + dy / 2, span(kit, (-1.5, y, z + dz * 0.0), (1.5, y + dy, z + dz), 0.55, wood if rnd.random() < 0.5 else (pale if rnd.random() < 0.6 else grey), rope,
+                 rope_h=0.35)))
     # the neighbours' pair at y = -6 (third floor), a real bridge between open windows
     span(kit, (-1.5, -6, 6.95), (1.5, -6, 6.95), 0.8, pale, P("#c87a50"), rope_h=0.45)
     # Mrs. Vega's web: from her window at y = 3 to many facing windows
     web = [(-4.5, 4.1), (-3.0, 7.1), (-1.5, 10.1), (0.0, 1.2), (1.5, 4.1), (3.0, 7.1), (4.5, 10.1), (6.0, 7.1), (7.5, 4.1), (9.0, 1.2),
            (1.5, 10.1), (6.0, 10.1), (-1.5, 1.2), (4.5, 1.2)]
     for (wy, wz) in web:
-        span(kit, (-1.5, 3.0, 7.3), (1.5, wy, wz), 0.4, pale if wz > 5 else wood, rope, rope_h=0.3)
+        ctx["decor"].append(((3.0 + wy) / 2, span(kit, (-1.5, 3.0, 7.3), (1.5, wy, wz), 0.4, pale if wz > 5 else wood, rope, rope_h=0.3)))
     # the old stone bridge at y = 21
     st = kit.checker("#a8a49c", "#8f8b83", 3.0, rough=0.9)
     B(None, (3.0, 0.9, 0.4), (0, 21, 6.7), st, "stone")
@@ -626,10 +627,10 @@ def build_rooms(kit, ctx):
     B(sw, (0.2, 0.15, 0.04), (0.0, 0.0, 0.11), P("#d9a458", 0.8), "bread2", 0.012, rot=(0, 0.12, 0.06))
     ctx["sandwich"] = sw
     ctx["tray"] = tray
-    mp = E(None, (0.0, OURS_Y, 8.0), "matchpair")
+    mp = E(None, (0.0, OURS_Y - 0.3, 8.0), "matchpair")
     for sx in (-1, 1):
-        B(mp, (0.14, 0.012, 0.012), (sx * 0.12, 0, 0), P("#e8c58a", 0.7), "mstick", 0.003)
-        B(mp, (0.024, 0.02, 0.02), (sx * 0.2, 0, 0), P("#d7263d", 0.5), "mhead", 0.006)
+        B(mp, (0.22, 0.02, 0.02), (sx * 0.15, 0, 0), P("#e8c58a", 0.7), "mstick", 0.004)
+        B(mp, (0.045, 0.036, 0.036), (sx * 0.27, 0, 0), P("#d7263d", 0.5), "mhead", 0.008)
     ctx["matchpair"] = mp
     fr = E(None, (-1.52, 0.0, 7.6), "frost")
     fm = P("#eaf6ff", 0.2, 0.9)
@@ -926,6 +927,9 @@ def animate(kit, story, tl, t, ctx):
     hide(ctx["matchpair"], "matchpair" not in sh)
     hide(ctx["frost"], not cue_at(tl, "frost", t).get("on", False))
     hide(ctx["cards"], "cards" not in sh)
+    clr = cue_at(tl, "clear", t).get("on", False)
+    for ym, r in ctx["decor"]:
+        hide(r, bool(clr) and -5.0 < ym < 5.0)
     hide(ctx["sandwich"], "sandwich" not in sh)
     for m in ctx["mugs"]:
         hide(m, "sandwich" in sh)
