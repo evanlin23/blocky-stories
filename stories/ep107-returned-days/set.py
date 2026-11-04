@@ -348,23 +348,13 @@ def backroom(kit, P):
         merged(kit, f"gb.{nm}.a", a, gray1)
         merged(kit, f"gb.{nm}.b", b, gray2)
         merged(kit, f"gb.{nm}.s", s, stk)
-    # my 47 on the bottom shelf of the right bank (k = 46 is the newest; its box is the hand-held "gb2")
-    a, s, st = [], [], []
-    for k, y in enumerate(ys):
-        if k == 46:
-            continue
-        h = 0.22
-        a.append((4.3 + 0.25, y, 0.14 + h / 2, 0.5, 0.26, h))
-        s.append((4.3 - 0.006, y, 0.14 + h / 2, 0.012, 0.12, 0.075))
-        st.append((4.3 - 0.01, y + 0.07, 0.14 + h / 2 + 0.04, 0.012, 0.012, 0.15))
-    merged(kit, "mine", a, gray1)
-    merged(kit, "mine.s", s, stk_mine)
-    merged(kit, "mine.str", st, plastic("#f6efdc", 0.8))
-    # the hold slip: cream, on the string of the first box, with a glyph I can't read
-    kit.box("slip", (0.012, 0.1, 0.17), (4.3 - 0.018, ys[0] - 0.13, 0.32), stk)
-    kit.box("slip.g1", (0.012, 0.05, 0.02), (4.3 - 0.026, ys[0] - 0.13, 0.36), plastic("#2b2b33", 0.8))
-    kit.box("slip.g2", (0.012, 0.02, 0.05), (4.3 - 0.026, ys[0] - 0.13, 0.30), plastic("#2b2b33", 0.8))
-    kit.cyl("slip.ring", 0.025, 0.006, (4.3 - 0.026, ys[0] - 0.13, 0.25), plastic("#e2463c", 0.6), rot=(0, math.pi / 2, 0), n=12)
+    # my bottom shelf: 46 empty spots (a dust-free square in the dust where each box stood); the 47th, the last box with
+    # the hold slip, is the hand-held "gb2", standing in its slot until it is lifted (see animate)
+    dust = plastic("#a89c8a", 0.95)
+    clean = plastic("#5a3e28", 0.7)
+    kit.box("dust", (0.5, ys[45] - ys[0] + 0.3, 0.01), (4.3 + 0.28, (ys[0] + ys[45]) / 2, 0.105), dust)
+    tiles = [(4.3 + 0.26, y, 0.114, 0.44, 0.25, 0.008) for y in ys[:46]]
+    merged(kit, "cleansq", tiles, clean)
     # the party box (light leaking from its lid) and the rain box (a damp spot under it), both on the left bank
     pz = zs[4] + 0.22
     kit.box("party.glow", (0.3, 0.2, 0.02), (-4.3 + 0.02, 17.6, pz + 0.01), kit.emit("#ffb0d8", 2.5, "partyglow"))
@@ -442,6 +432,10 @@ def kitchen(kit, P):
     kit.box("cradle.s1", (0.012, 0.012, 0.09), (px - 0.02, 8.82, pz + 0.26), plastic("#e2463c", 0.6), rot=(0, 0.3, 0))
     kit.box("cradle.s2", (0.012, 0.012, 0.09), (px + 0.02, 8.82, pz + 0.26), plastic("#e2463c", 0.6), rot=(0, 0.3, 0))
     W["phone_base"] = Vector((px, 8.84, pz + 0.05))
+    # a little mug rack beside the phone: two mugs, one turned upside down
+    kit.box("krack", (0.9, 0.2, 0.04), (kx + 1.4, 8.85, 1.05), plastic("#b78456", 0.7, spec=0.1))
+    kit.cyl("krack.m1", 0.1, 0.13, (kx + 1.15, 8.85, 1.075 + 0.065), plastic("#e2463c", 0.4), n=12)
+    kit.cyl("krack.m2", 0.1, 0.13, (kx + 1.6, 8.85, 1.075 + 0.065), plastic("#fffaf0", 0.4), rot=(math.pi, 0, 0), n=12)
     # the shelf of Dad's 46 boxes beside the phone
     sh = plastic("#b78456", 0.7, spec=0.1)
     boxes = []
@@ -801,6 +795,13 @@ def build(kit, story, tl):
     W["objs"] = {}
     for n in ("gb1", "gb2", "gb3", "gb4", "gb5"):
         W["objs"][n] = gray_box(kit, n, gm, gl, gs)
+    # the hold slip hangs on the last box's string, with a glyph I can't read
+    g2 = W["objs"]["gb2"]
+    ink = plastic("#2b2b33", 0.8)
+    kit.box("slip", (0.09, 0.012, 0.15), (0.11, -0.152, 0.1), gs, g2)
+    kit.box("slip.g1", (0.05, 0.012, 0.02), (0.11, -0.16, 0.14), ink, g2)
+    kit.box("slip.g2", (0.02, 0.012, 0.05), (0.11, -0.16, 0.08), ink, g2)
+    kit.cyl("slip.ring", 0.025, 0.006, (0.14, -0.16, 0.06), plastic("#e2463c", 0.6), g2, rot=(math.pi / 2, 0, 0), n=12)
     rc = kit.empty("rcp", (0, 0, -50))
     kit.box("rcp.p", (0.2, 0.44, 0.008), (0, 0, 0.0), P["cream"], rc)
     for r in range(5):
@@ -1071,7 +1072,9 @@ def animate(kit, story, tl, t, ctx):
     h2 = dist * 12.0 / lens
     w2 = h2 * 9.0 / 16.0
     tag = W["tag"]
-    s = 0.5 * w2
+    # inset so the polish pack's crop (up to 1.18x, plus a slide) never cuts it: its left edge sits at 0.76 of the half
+    # width and its top at 0.78 of the half height
+    s = 0.42 * w2
     tag.scale = (s, s, s)
-    tag.location = (-0.565 * w2, 0.76 * h2, -dist)
+    tag.location = (-0.432 * w2, 0.70 * h2, -dist)
     return gains

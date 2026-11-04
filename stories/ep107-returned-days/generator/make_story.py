@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -43,7 +43,7 @@ lines.insert(idx, {"id": "P01", "pause": 0.6, "chunks": [["", ""]]})
 def remap(ref):
     if not isinstance(ref, str):
         return ref
-    mm = re.match(r"^(L\d+)\.(\d+)(.*)$", ref)
+    mm = re.match(r"^(L\d+b?)\.(\d+)(.*)$", ref)
     if mm and mm.group(1) in CHUNKMAP:
         return f"{mm.group(1)}.{CHUNKMAP[mm.group(1)][int(mm.group(2))]}{mm.group(3)}"
     return ref
@@ -108,7 +108,7 @@ def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="sol
 
 
 cast = {
-    "me": person("#e3b088", "#2f4f86", "#4a6fa5", "#f4f4f2", hair="swoop", hair_c="#c0983f", brow_w=1.9),
+    "me": person("#e3b088", "#2f4f86", "#4a6fa5", "#f4f4f2", hair="cap", hair_c="#c0983f", brow_w=1.9),
     "dad": person("#d9a47c", "#c09a6b", "#5b5547", "#3a2a1c", hair="cap", hair_c="#b8b8be", collar="#e8d9b8", width=1.06),
     "tulley": person("#f0c8a0", "#a77f5a", "#6a5a48", "#3a2a1c", hair="buzz", hair_c="#ececec", pattern="knit",
                      pattern_c="#8a6444", extras=["glasses"], extra_c="#3a3a3e", height=0.96),
@@ -241,7 +241,13 @@ only("L03", ["me"])
 put("me", "L03.1", [APX - 2.2, 4.9, APZ], 0, expr="scared", head=[0, 22], lean=8)
 shot("L03", cam(APX - 2.2, 3.5, APZ + 0.84, 1.2, el=60, lens=40, push=0.15), look="day", name="s3a")
 shot("L03.1", cam(APX - 2.2, 4.9, APZ + 1.45, 1.1, lens=50, push=0.1), name="s3b")
+# L03b: me and my dad barely talk anymore: his empty kitchen and silent wall phone, then my phone face down
+only("L03b", [])
+shot("L03b", cam(KX + 1.5, 8.85, 1.55, 2.8, lens=40, push=0.1), look="day", name="s3c")
+world("L03b.1", "phone", [APX + 3.8, 7.5, APZ + 1.06], rx=90, rz=0)
+shot("L03b.1", cam(APX + 3.8, 7.5, APZ + 1.06, 0.9, el=50, lens=40, push=0.12), name="s3d")
 # L04: Tulley's at night, then me pushing through the door
+unobj("L04", "phone")
 only("L04", ["me"])
 put("me", "L04", [DOOR_F[0], -5.7], 180, expr="neutral", arms=[0, 88])
 hold("L04", "rcp", "me", PALM)
@@ -268,12 +274,12 @@ beat("me", "L05.2", arms=[0, 0], expr="soft")
 shot("L05", cam(-1.8, 3.5, 1.35, 2.1, az=55, el=6, lens=40, push=0.06), look="night", name="s5a")
 shot("L05.1", cam(MX, MY + 0.1, 1.5, 1.6, az=60, el=8, lens=45, push=0.1), name="s5b")
 # L06: the shimmer folds into a little gray box on the counter; I roll my shoulders
-world("L06", "shim", [-2.4, 3.5, 1.15], s=0.32, dur=0.75)
-unobj("L06+0.8", "shim")
-world("L06+0.78", "gb4", [-2.4, 3.5, 1.0], rz=0)
+world("L06", "shim", [-2.4, 3.5, 1.15], s=0.32, dur=0.3)
+unobj("L06+0.32", "shim")
+world("L06+0.3", "gb4", [-2.4, 3.5, 1.0], rz=0)
 beat("me", "L06+0.2", expr="soft", head=[10, -4])
 shot("L06", cam(-2.4, 3.5, 1.15, 1.3, az=-30, el=22, lens=40, push=0.12), name="s6a")
-shot("L06+0.8", cam(MX, MY, 1.5, 0.95, az=180, lens=50, push=0.1), name="s6b")
+shot("L06+0.3", cam(MX, MY, 1.5, 0.95, az=180, lens=50, push=0.1), name="s6b")
 # L07: a street rewinding (the coffee un-spills), then the man walks on
 only("L07", ["man"])
 put("man", "L07", [3.0, -6.2], 0, expr="worried", arms=[0, 88])
@@ -928,7 +934,7 @@ remap_all(music["sections"])
 remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L44")], "twist": remap("L44"),
-          "emph": [remap(x) for x in ["L03.2", "L08", "L12", "L19.1", "L26", "L33.2", "L38.1", "L44", "L45.1", "L54.2", "L64"]],
+          "emph": [remap(x) for x in ["L03.2", "L03b.0+0.3", "L08", "L12", "L19.1", "L26", "L33.2", "L38.1", "L44", "L45.1", "L54.2", "L64"]],
           "quiet": [[remap("L66"), remap("L67")]],
           "sway": [names[n] for n in ("s39", "s40a", "s41a", "s41b", "s42b", "s43a")],
           "hold": [names["s45a"], names["s62a"], names["s66b"]]}

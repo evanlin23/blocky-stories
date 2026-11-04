@@ -458,46 +458,38 @@
    ]
   },
   "L18": {
-   "text": "The whole thing. The way it happened. Mister Tulley says a day nobody remembers goes sour on the shelf.",
+   "text": "The whole thing. Mister Tulley says a day nobody remembers goes sour on the shelf.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 4.414,
+   "dur": 3.69,
    "onset": 0.155,
-   "end": 4.224,
+   "end": 3.5,
    "chunks": [
     [
      0.155,
-     0.672
+     0.724
     ],
     [
-     0.724,
-     0.905
+     0.81,
+     1.371
     ],
     [
-     0.905,
-     1.448
+     1.371,
+     1.638
     ],
     [
-     1.543,
-     2.095
+     1.638,
+     2.345
     ],
     [
-     2.095,
-     2.379
+     2.345,
+     2.819
     ],
     [
-     2.379,
-     3.069
-    ],
-    [
-     3.069,
-     3.543
-    ],
-    [
-     3.543,
-     4.224
+     2.819,
+     3.5
     ]
    ]
   },
@@ -926,54 +918,58 @@
    ]
   },
   "L36": {
-   "text": "Mine were on the bottom shelf. Every one of them.",
+   "text": "Mine were on the bottom shelf. Forty-six empty spots.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.31,
+   "dur": 2.69,
    "onset": 0.19,
-   "end": 2.121,
+   "end": 2.5,
    "chunks": [
     [
      0.19,
-     0.457
+     0.439
     ],
     [
-     0.457,
-     0.586
+     0.439,
+     0.569
     ],
     [
-     0.586,
-     1.207
+     0.569,
+     1.19
     ],
     [
-     1.285,
-     1.629
-    ],
-    [
-     1.629,
-     2.121
+     1.267,
+     2.5
     ]
    ]
   },
   "L37": {
-   "text": "Forty-seven boxes. One hold slip.",
+   "text": "And one last box. With a hold slip.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.207,
-   "onset": 0.19,
-   "end": 2.0,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.862,
    "chunks": [
     [
-     0.19,
-     1.086
+     0.155,
+     0.414
     ],
     [
-     1.155,
-     2.0
+     0.414,
+     0.966
+    ],
+    [
+     1.017,
+     1.172
+    ],
+    [
+     1.172,
+     1.862
     ]
    ]
   },
@@ -1054,14 +1050,14 @@
    ]
   },
   "L41": {
-   "text": "Slow footsteps, straight to my boxes.",
+   "text": "Slow footsteps, straight to my box.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
+   "dur": 1.81,
    "onset": 0.19,
-   "end": 1.707,
+   "end": 1.621,
    "chunks": [
     [
      0.19,
@@ -1073,19 +1069,19 @@
     ],
     [
      0.974,
-     1.707
+     1.621
     ]
    ]
   },
   "L42": {
-   "text": "A hand took the newest one.",
+   "text": "A hand took the last one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.672,
+   "dur": 1.552,
    "onset": 0.172,
-   "end": 1.483,
+   "end": 1.362,
    "chunks": [
     [
      0.172,
@@ -1093,11 +1089,11 @@
     ],
     [
      0.517,
-     0.741
+     0.724
     ],
     [
-     0.741,
-     1.483
+     0.724,
+     1.362
     ]
    ]
   },
@@ -1718,30 +1714,26 @@
    ]
   },
   "L68": {
-   "text": "And tomorrow is a good day. Nothing's wrong.",
+   "text": "And tomorrow is a good day.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.276,
+   "dur": 1.672,
    "onset": 0.155,
-   "end": 2.086,
+   "end": 1.466,
    "chunks": [
     [
      0.155,
-     0.569
+     0.647
     ],
     [
-     0.569,
-     0.69
+     0.647,
+     0.802
     ],
     [
-     0.69,
-     1.155
-    ],
-    [
-     1.25,
-     2.086
+     0.802,
+     1.466
     ]
    ]
   },
@@ -1810,6 +1802,30 @@
     [
      1.457,
      2.276
+    ]
+   ]
+  },
+  "L03b": {
+   "text": "Me and my Dad barely talk anymore.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.724
+    ],
+    [
+     0.724,
+     1.69
     ]
    ]
   }
