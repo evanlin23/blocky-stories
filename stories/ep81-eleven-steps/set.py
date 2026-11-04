@@ -453,12 +453,12 @@ def build(kit, story, tl):
         else:
             B(None, (0.02, 0.36, 0.42), (-0.755, yy, zz), P(colr, 0.7), "art", 0.004)
     # ---- Dad's door on the landing (navy, a stride right of mine, opens into his room), the front door with a glass pane
-    B(None, (0.1, 0.24, 2.1), (1.5, 4.97, LAND_Z + 1.05), fr, "ddframe", 0.006)
-    B(None, (0.1, 0.24, 2.1), (2.4, 4.97, LAND_Z + 1.05), fr, "ddframe", 0.006)
-    B(None, (1.0, 0.24, 0.1), (1.95, 4.97, LAND_Z + 2.1), fr, "ddframe", 0.006)
-    ctx["ddoor"] = E(None, (2.34, 4.935, LAND_Z), "ddoor")
-    B(ctx["ddoor"], (0.78, 0.045, 2.0), (-0.39, 0, 1.02), P("#22306a", 0.45), "ddpanel", 0.008)
-    B(ctx["ddoor"], (0.07, 0.07, 0.07), (-0.68, -0.05, 1.0), brass, "ddknob", 0.02)
+    B(None, (0.1, 0.24, 2.1), (1.4, 4.97, LAND_Z + 1.05), fr, "ddframe", 0.006)
+    B(None, (0.1, 0.24, 2.1), (2.5, 4.97, LAND_Z + 1.05), fr, "ddframe", 0.006)
+    B(None, (1.2, 0.24, 0.1), (1.95, 4.97, LAND_Z + 2.1), fr, "ddframe", 0.006)
+    ctx["ddoor"] = E(None, (2.44, 4.935, LAND_Z), "ddoor")
+    B(ctx["ddoor"], (0.98, 0.045, 2.0), (-0.49, 0, 1.02), P("#22306a", 0.45), "ddpanel", 0.008)
+    B(ctx["ddoor"], (0.07, 0.07, 0.07), (-0.88, -0.05, 1.0), brass, "ddknob", 0.02)
     B(None, (0.9, 0.12, 2.05), (0.0, -4.95, 1.03), white, "fdoor", 0.01)                              # the front door
     ctx["fpane"] = B(None, (0.5, 0.012, 1.1), (0.0, -4.878, 1.2), kit.emit("#1c2748", 0.6, name="fpane"), "fpane", 0.0)   # its glass, 2 cm proud
     B(None, (0.07, 0.07, 0.07), (0.3, -4.86, 1.0), brass, "fknob", 0.02)
