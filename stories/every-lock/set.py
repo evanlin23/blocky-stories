@@ -120,8 +120,8 @@ def mats(kit):
     M["glowwin"] = unfogged_emit(kit, "glowwin", "#cfe8ff", 3.0)
     M["moonwin"] = unfogged_emit(kit, "moonwin", "#9fbfff", 1.4)
     M["phone"] = unfogged_emit(kit, "phone", "#dff4ff", 2.0)
-    M["curtain"] = kit.plastic("#f3a6c8", 0.7, name="curtain_stripe")
-    M["frost"] = kit.plastic("#b8d4e4", 0.5, name="frost")
+    M["curtain"] = kit.plastic("#b83a78", 0.8, name="curtain_stripe")
+    M["frost"] = kit.plastic("#2a7396", 0.6, name="frost")
     M["steam"] = kit.plastic("#ffffff", 0.9, name="steam")
     return M
 
@@ -362,7 +362,7 @@ def build_h(kit, M, ctx):
         pin = kit.cyl(f"hinge pin{i}", 0.014, 0.2, (-DOOR_W / 2 + 0.03, 6.89, z), M["steel"], None, (0, 0, 0), 8)
         ctx["pins"].append((pin, (-DOOR_W / 2 + 0.03, 6.89, z)))
     for k in range(3):
-        bx(kit, f"tally{k}", (0.006, 0.014, 0.1), (-DOOR_W / 2 - 0.035 - 0.02 * k, 6.898, 1.78), M["brassm"])
+        bx(kit, f"tally{k}", (0.035, 0.03, 0.34), (-DOOR_W / 2 - 0.1 - 0.075 * k, 6.9, 1.78), M["black"])
     # rooms off the hall: my room (left), Jade's, Mom's, and the bathroom
     wall(kit, M, "my wallW", "y", -4.9, 3.6, 7.0, WALL_H, wl)
     wall(kit, M, "my wallS", "x", 3.6, -4.9, -H_HALF, WALL_H, wl)
@@ -440,6 +440,8 @@ def build_h(kit, M, ctx):
     L("h_jade", "AREA", (2.9, 5.2, 2.4), 120, "#fff1d8", size=1.0)
     L("h_mom", "AREA", (2.9, 1.8, 2.4), 120, "#fff1d8", size=1.0)
     L("h_nfill", "AREA", (0, 3.0, 2.5), 190, "#ffb86b", size=1.6)
+    jf = L("h_jfill", "AREA", (0.0, 4.3, 1.9), 150, "#ffe2c0", size=0.9)
+    kit.aim(jf, (0.0, 5.9, 1.45))
     L("h_night", "POINT", (-0.7, 1.2, 0.35), 18, "#ffb86b", size=0.08)
     mo = L("h_moon", "AREA", (-5.4, 5.2, 1.9), 900, "#8fb0ff", size=1.6)
     kit.aim(mo, (-1.0, 5.2, 0.9))
@@ -713,7 +715,7 @@ def build_meter(kit, ctx, tl):
     nt.links.new(tex.outputs["Color"], b.inputs["Emission Color"])
     b.inputs["Emission Strength"].default_value = 0.95
     nt.links.new(tex.outputs["Alpha"], b.inputs["Alpha"])
-    plane = kit.plane("meter", (1.0, 260 / 960), (0, 0, -0.3), m, cam)
+    plane = kit.plane("meter", (1.0, 260 / 960), (0, 0, -0.08), m, cam)
     uv = plane.data.uv_layers.new(name="UVMap")
     for i, (u, v) in enumerate(((0, 0), (1, 0), (1, 1), (0, 1))):
         uv.data[i].uv = (u, v)
@@ -760,14 +762,14 @@ def update_meter(kit, ctx, tl, t):
     shot = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1])
     spec = {x["id"]: x for x in ctx["story"]["shots"]}[shot["id"]]
     lens = bl_story.cam_at(spec, shot, t, {}, tl)[2]
-    dist = 0.3
+    dist = 0.08   # right at the lens, so no lock, pile or wall can come between it and the camera
     fh = 24.0 * dist / lens           # the frame's height at that distance (sensor 24 mm, vertical fit)
     fw = fh * 9.0 / 16.0
-    width = fw * 0.86
+    width = fw * 0.70
     pop = 1.0 + 0.2 * (math.sin(math.pi * min(1.0, since / 0.25)) if 0 <= since < 0.25 else 0.0)
     pl = M["plane"]
     pl.scale = (width * pop, width * pop, 1.0)
-    pl.location = (0.0, fh * (0.5 - 0.115), -dist)
+    pl.location = (0.0, fh * (0.5 - 0.135), -dist)
 
 
 
@@ -922,6 +924,7 @@ def animate(kit, story, tl, t, ctx):
     for nm in ("h_a", "h_b", "h_c", "h_my", "h_jade", "h_mom", "h_bath"):
         over[nm] = 1 - 0.88 * p
     over["h_nfill"] = p
+    over["h_jfill"] = p
     over["h_night"] = p
     over["h_moon"] = p
     over["dk_a"] = over["dk_b"] = 1 - pd

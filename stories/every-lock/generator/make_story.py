@@ -134,6 +134,49 @@ def fit(c, hmin=1.5):
     return out
 
 
+def headfit(c, who, top=1.78, share=0.68):
+    """Widen (then pull back) a camera until every standing character's head is inside the frame (critic r1: headless
+    torsos), and keep a hall camera off the hall's walls (a camera outside a wall draws black)."""
+    heads = []
+    for w in (who or {}).values():
+        pos = w["pos"]
+        z = pos[2] if len(pos) > 2 else 0.0
+        if 0.2 < z < 0.35 or w.get("lean", 0) > 20:
+            continue
+        heads.append((pos[0], pos[1], z + top))
+    out = []
+    for k in c:
+        loc, tgt, lens = list(k[1]), list(k[2]), k[3]
+        for _ in range(30):
+            v = [tgt[i] - loc[i] for i in range(3)]
+            n = math.sqrt(sum(x * x for x in v)) or 1e-6
+            v = [x / n for x in v]
+            up = [-v[2] * v[0], -v[2] * v[1], 1 - v[2] * v[2]]
+            un = math.sqrt(sum(x * x for x in up)) or 1e-6
+            up = [x / un for x in up]
+            bad = False
+            for h in heads:
+                rel = [h[i] - loc[i] for i in range(3)]
+                depth = sum(rel[i] * v[i] for i in range(3))
+                vert = sum(rel[i] * up[i] for i in range(3))
+                rt = [v[1] * up[2] - v[2] * up[1], v[2] * up[0] - v[0] * up[2], v[0] * up[1] - v[1] * up[0]]
+                horiz = sum(rel[i] * rt[i] for i in range(3))
+                half = depth * 12.0 / lens
+                if depth > 0.2 and (vert > half * share or abs(horiz) + 0.22 > half * 0.5625 * 0.9):
+                    bad = True
+            if not bad:
+                break
+            if lens > 14.5:
+                lens = max(14.0, lens * 0.92)
+            else:
+                f = 1.08
+                loc = [tgt[i] - (tgt[i] - loc[i]) * f for i in range(3)]
+        if -1.3 < loc[0] < 1.3 and (0.2 < loc[1] < 6.9 or -8.3 < loc[1] < -2.5) and abs(loc[0]) > 0.72:
+            loc[0] = math.copysign(0.72, loc[0])
+        out.append([k[0], loc, tgt, round(lens, 1)] + k[4:])
+    return out
+
+
 def dolly(a, b, ta, tb, la, lb=None):
     return [[0, list(a), list(ta), la], [1, list(b), list(tb), lb or la]]
 
@@ -172,7 +215,7 @@ def MEHOLE(x, y):
     return [x - 0.9, x + 0.9, y - 0.9, y + 0.9, 0.0, 2.4]
 
 
-HOLE_HINGE = [-0.85, -0.2, 5.0, 7.0, 0.0, 2.3]
+HOLE_HINGE = [-0.9, 0.7, 3.2, 7.0, 0.0, 2.3]
 FRONT = (0.0, 5.0, 1.25)
 
 # ---------------------------------------------------------------------------------------------------- the shots
@@ -195,7 +238,7 @@ S("L03.1", cam((DK + 1.5, 0.9, 1.5), (DK - 0.1, 2.5, 1.45), 30), {"downstairs": 
 S("L04", cam((DK + 1.6, 0.2, 1.4), (DK - 0.1, 3.2, 1.1), 20), {"downstairs": FP(DK + 0.6, 2.4, (DK + 1.6, 0.2), SHEEP)},
   note="the 64-lock fridge, the man sheepish", cues=[CU("frtiny", on=True)])
 S("L04+0.7", cam((DK - 0.1, 2.7, 1.68), (DK - 0.1, 3.25, 1.62), 70), note="plant 1: the little keyhole flaps, a tiny lock growing")
-S("L04+1.5", cam((DK + 0.9, -0.06, 1.03), (DK + 1.2, 1.2, 0.4), 34), note="the cooler and the milk (held: no swoop, the 8.3 s flash fix)")
+S("L04+1.5", cam((DK - 0.2, 3.0, 1.35), (DK + 1.2, 1.0, 0.3), 24), note="the cooler and the milk (held: no swoop, the 8.3 s flash fix)")
 S("L05", dolly((-11.8, -1.2, 1.4), (-8.0, -1.2, 1.4), (-9.0, 0.0, 1.2), (-6.0, 0.0, 1.2), 17), note="open front doors on our floor, one propped with a boot")
 S("L05+0.9", dolly((1.0, -0.6, 1.4), (5.0, -0.6, 1.4), (3.0, -2.4, 1.2), (7.0, -2.4, 1.2), 17), note="across the hall, more open doors")
 S("L06", cam((-6.0, -0.6, 1.45), (-6.0, -5.0, 1.0), 19),
@@ -230,7 +273,7 @@ S("L12.1", cam((-0.2, 3.2, 1.5), (0.2, 3.8, 1.5), 32), {"jade": FP(0.2, 3.7, (-0
 S("L12b", cam((0.0, 5.2, 1.3), (0.0, 7.0, 1.1), 20), note="a month ago: the plain yellow door, four locks; the meter winds back",
   cues=[DR(n=4, L=0.0, lean=0.0, swing=0.0), MT(4, dur=0.5)])
 S("L12b.2", cam((0.2, 6.0, 1.1), (0.2, 7.0, 1.1), 32), note="four locks")
-S("L13", cam((K - 1.6, 2.7, 1.8), (K - 2.0, 4.1, 1.9), 26), note="the kitchen clock at 7:15", cues=[CU("clock", h=7.25)])
+S("L13", cam((K - 0.5, 1.4, 1.5), (K - 1.9, 4.1, 1.8), 22), note="the kitchen clock at 7:15", cues=[CU("clock", h=7.25)])
 S("L13.1", cam((-0.85, 4.0, 1.55), (0.0, 5.5, 1.5), 22),
   {"me": P(-0.3, 5.4, 160, ANNOYED), "jade": P(0.3, 5.4, 160, ANNOYED)}, note="the two of us facing the bathroom door")
 S("L14", cam((0.0, 6.3, 1.4), (0.0, 1.5, 1.2), 20),
@@ -350,7 +393,7 @@ S("L53.2", cam((0.0, 4.3, 1.6), (0.0, 5.9, 1.55), 34), {"jadeb": P(0.0, 5.9, 0, 
 S("L54", cam((0.0, 3.8, 1.4), (-0.4, 5.1, 0.9), 26), {"me": P(-0.35, 4.85, 0, SHEEP)}, note="I'm sorry too, foot still on the door",
   cues=[CU("hole", holes=[HOLE_JADE, MEHOLE(-0.35, 4.85)]), CU("night", ref="L54>-0.5", v=0.0, dur=0.5)])
 # 05 the loophole (L55 to L64)
-S("L55", cam((-0.3, 5.2, 1.1), (-0.45, 6.9, 1.1), 30), note="the hall light is on; the hinges, the only bare metal",
+S("L55", cam((-0.2, 5.0, 1.3), (-0.5, 6.9, 1.2), 24), note="the hall light is on; the hinges, the only bare metal",
   cues=[CU("hole", holes=[HOLE_HINGE, HOLE_JADE])])
 S("L56", cam((0.2, 3.6, 1.55), (-0.5, 4.9, 1.5), 28), {"me": FP(-0.5, 4.5, (0.2, 3.6), "smile")}, note="the idea", cues=[CU("hole", holes=[HOLE_HINGE, HOLE_JADE, MEHOLE(-0.5, 4.5)])])
 S("L56.2", cam((0.0, 3.7, 1.6), (0.0, 5.9, 1.55), 26), {"jadeb": P(0.0, 5.9, 0, "smile")}, note="Jade smiles back from the gap", cues=[CU("hole", holes=[HOLE_HINGE, HOLE_JADE])])
@@ -360,7 +403,7 @@ S("L57.1", cam((-0.2, 5.9, 0.9), (-0.45, 6.9, 0.9), 34), {"me": P(-0.55, 6.2, 0,
   note="the middle one, both ringing on the tile", cues=[CU("pin", ref="L57.1+0.1", i=1)])
 S("L58", cam((0.2, 3.8, 1.7), (0.0, 5.9, 1.8), 24), {"jadeb": P(0.0, 5.9, 0, "worried", z=0.45, arms=[160, 160])},
   note="Jade on a chair, stretching over the pile", cues=[CU("chairat", loc=(0.0, 5.9, 0.0))])
-S("L58+0.65", cam((-0.42, 6.1, 1.78), (-0.47, 6.9, 1.78), 55), note="the bare top hinge plate, three tally strokes beside the screws (held)",
+S("L58+0.65", cam((-0.5, 5.2, 1.78), (-0.5, 6.9, 1.78), 24), note="the bare top hinge plate, three tally strokes beside the screws (held)",
   cues=[CU("pin", ref="L58+0.65", i=2)])
 S("L59", cam((0.0, 3.0, 1.5), (0.0, 4.4, 1.5), 22), {"me": P(-0.7, 4.2, 90, "neutral", arms=[40, 40]), "jadeb": P(0.7, 4.2, -90, "neutral", arms=[40, 40])},
   note="a two-person door", cues=[CU("chairat", loc=(0.0, 0.0, -3.0))])
@@ -402,9 +445,9 @@ S("L69", cam((0.0, 0.35, 1.5), (0.0, -7.0, 1.2), 20), note="across the hall, a n
 S("L69.1", cam((0.0, -3.4, 1.5), (0.0, -5.5, 1.4), 24), {"dale": P(0.0, -5.2, 180, "smile")}, note="Mr. Dale admiring it")
 S("L70", cam((0.2, -1.8, 1.5), (0.0, -6.2, 1.2), 22), note="very thick", cues=[DR(L=3.0, dur=0.8)])
 S("L71", cam((0.6, -1.6, 1.6), (0.0, -6.5, 1.3), 22), note="still clicking: new locks budding",
-  cues=[DR(L=3.6, dur=0.8), MT(262144)])
-S("L71.1", cam((3.0, -1.2, 1.5), (0.0, -2.6, 1.3), 18), note="it has filled his hall and nudges his front door",
-  cues=[DR(ref="L71.1", L=5.0, dur=1.0), CU("daledoor", a=85.0), CU("daledoor", ref="L71.1+0.3", a=62.0, dur=1.6)])
+  cues=[DR(L=4.6, dur=0.8), MT(262144)])
+S("L71.1", cam((0.3, -0.5, 1.4), (0.0, -3.2, 1.3), 20), note="it has filled his hall and nudges his front door",
+  cues=[DR(ref="L71.1", L=6.6, dur=1.0), CU("daledoor", a=85.0), CU("daledoor", ref="L71.1+0.3", a=62.0, dur=1.6)])
 S("L72", cam((0.0, -0.9, 1.5), (0.0, -2.8, 1.4), 22), {"dale": P(0.1, -2.75, 180, "neutral", head=[0, 18])}, note="Mr. Dale looks down at his swinging door")
 S("L72.2", cam((0.0, 4.0, 1.6), (0.0, 1.4, 1.5), 30), {"me": P(0.0, 1.4, 180, "worried")}, note="me, straight down the lens; then the cut to frame 1")
 
@@ -449,7 +492,7 @@ if tl:
                 c = [[k[0], k[1], k[2], round(k[3] * 1.1, 1)] + k[4:] for k in c]
             elif j >= 2:
                 c = [[k[0], [k[1][0] + 0.12, k[1][1], k[1][2]], k[2], k[3]] + k[4:] for k in c]
-            piece = {"ref": ref, "cam": fit(c, 1.6), "who": s["who"], "cues": s["cues"] if j == 0 else [], "step": s["step"], "note": s["note"],
+            piece = {"ref": ref, "cam": headfit(fit(c, 1.6), s["who"]), "who": s["who"], "cues": s["cues"] if j == 0 else [], "step": s["step"], "note": s["note"],
                      "orig": i, "first": j == 0}
             final.append(piece)
 else:
@@ -486,6 +529,18 @@ def next_pos(name, k):
     return last_pos[name]
 
 
+def endat(name, k, nxt, pos):
+    """When a character's stay in shot k ends: BL before the next shot, or exactly at it where the next shot puts them
+    somewhere else (a cut, not a walk: a zero-length move, so the sound mix gets no phantom burst of footsteps)."""
+    if nxt == "end":
+        return nxt
+    nw = final[k + 1]["who"].get(name) if k + 1 < len(final) else None
+    npos = nw["pos"] if nw else next_pos(name, k + 1)
+    if math.hypot(npos[0] - pos[0], npos[1] - pos[1]) >= 1.5:
+        return nxt
+    return off(nxt, -BL)
+
+
 for k, p in enumerate(final):
     ref, nxt = refs[k], refs[k + 1]
     t_start = tl["shots"][k]["start"] if False else None
@@ -517,7 +572,7 @@ for k, p in enumerate(final):
             for q, (pt, ln) in enumerate(zip(pts[1:], lens)):
                 acc += ln
                 if q == len(lens) - 1:
-                    key2 = {"at": off(nxt, -BL), "pos": list(pt), "blend": BL}
+                    key2 = {"at": endat(name, k, nxt, pt), "pos": list(pt), "blend": BL}
                 else:
                     key2 = {"at": off(ref, (acc / tot) * dur) if False else f"{line_ref(tl, a_t + acc / tot * dur)}" if tl else ref,
                             "pos": list(pt), "blend": BL}
@@ -527,7 +582,7 @@ for k, p in enumerate(final):
             last_pos[name] = pts[-1]
         else:
             if nxt != "end":
-                acting[name].append({"at": off(nxt, -BL), "pos": list(w["pos"]), "blend": BL})
+                acting[name].append({"at": endat(name, k, nxt, w["pos"]), "pos": list(w["pos"]), "blend": BL})
         if w.get("mouth"):
             acting[name].append({"from": ref if k else 0, "to": nxt if nxt != "end" else "end", "mouth": [0.7, 0.7], "flap": True})
 
@@ -540,36 +595,22 @@ for k, p in enumerate(final):
     for (r, name, fields) in p["cues"]:
         cues.append({"at": r if r is not None else ref, "name": name, **fields})
 
-# meter pops make a soft brass clack in the mix
-sfx = []
-prev = 1024
-for c in cues:
-    if c["name"] == "meter" and not c.get("dur") and c["v"] != prev and c["v"] > prev:
-        sfx.append({"at": c["at"], "kind": "click", "db": -23})
-    if c["name"] == "meter":
-        prev = c["v"]
-sfx += [
-    {"at": "L01>-0.2", "kind": "thud", "db": -4, "dur": 0.5}, {"at": "L01>-0.08", "kind": "thud", "db": -5, "dur": 0.5},
-    {"at": "L01>-0.2", "kind": "latch", "db": -12}, {"at": "L01>-0.05", "kind": "click", "db": -20},
-    {"at": "L01>+0.03", "kind": "click", "db": -21},
-    {"at": "L12b", "kind": "whoosh", "db": -26, "dur": 0.5},
+# the sound budget (2 to 4 events per 10 s, owner 2026-11-03): only the impacts, the doors and a few sparse clicks;
+# the meter pops silently and the polish pack's door marks are off (the door cue is a lock count, not a door).
+sfx = [
+    {"at": "L01>-0.2", "kind": "thud", "db": -4, "dur": 0.5},
     {"at": "L15.2+0.12", "kind": "door", "db": -10}, {"at": "L22>-0.36", "kind": "door", "db": -10}, {"at": "L30+0.05", "kind": "door", "db": -9},
     {"at": "L36.2", "kind": "click", "db": -14}, {"at": "L39.1", "kind": "click", "db": -13}, {"at": "L40.2", "kind": "click", "db": -14},
-    {"at": "L38+0.15", "kind": "click", "db": -22}, {"at": "L38+0.75", "kind": "click", "db": -22},
-    {"at": "L41", "kind": "click", "db": -15}, {"at": "L41.1", "kind": "click", "db": -14}, {"at": "L41.1+0.15", "kind": "click", "db": -15},
-    {"at": "L41.2", "kind": "click", "db": -13}, {"at": "L41.2+0.1", "kind": "click", "db": -14}, {"at": "L41.2+0.2", "kind": "click", "db": -14},
-    {"at": "L41.2+0.3", "kind": "click", "db": -15},
+    {"at": "L41", "kind": "click", "db": -15}, {"at": "L41.1", "kind": "click", "db": -14}, {"at": "L41.2", "kind": "click", "db": -13},
     {"at": "L46", "kind": "creak", "db": -18, "dur": 1.4},
-    {"at": "L57+0.5", "kind": "ding", "db": -26, "pitch": 3200, "lp": 4500}, {"at": "L57.1+0.1", "kind": "ding", "db": -26, "pitch": 3500, "lp": 4500},
+    {"at": "L57+0.5", "kind": "ding", "db": -26, "pitch": 3200, "lp": 4500},
     {"at": "L58+0.65", "kind": "latch", "db": -16},
     {"at": "L60+0.2", "kind": "thud", "db": -14, "dur": 0.6},
     {"at": "L66.1-0.2", "kind": "knock", "pattern": [0, 0.22], "tone": "hand", "db": -12},
     {"at": "P02+0.3", "kind": "thud", "db": -14, "dur": 0.9},
 ]
 # the night's clicks thin in, then thicken, never a buzz
-for lid, n, step, db in (("L43", 3, 0.38, -22), ("L44", 5, 0.3, -20), ("L45", 6, 0.3, -19), ("L46", 6, 0.34, -19), ("L47", 8, 0.34, -18),
-                         ("L48", 6, 0.3, -19), ("L50", 5, 0.32, -20), ("L51", 6, 0.34, -20), ("L52", 5, 0.34, -21), ("L53", 5, 0.4, -21),
-                         ("L62", 5, 0.28, -19), ("L71", 5, 0.4, -24), ("L72", 4, 0.4, -26)):
+for lid, n, step, db in (("L45", 2, 0.5, -19), ("L47", 3, 0.5, -18), ("L52", 2, 0.6, -21)):
     for i in range(n):
         sfx.append({"at": f"{lid}+{0.2 + i * step:.2f}", "kind": "click", "db": db - (i % 3)})
 
@@ -613,7 +654,7 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45}, "key_color": "#ffb21f", "gap": 0.12, "tail": 0, "fade_in": False,
     "look": {"style": "closer", "flash_safe": True,
              "polish": {"emph": ["L01", "L12b", "L30", "L40", "L42", "L44", "L47", "L60"], "reveal": ["L30", "L40", "L44"],
-                        "quiet": [["L52", "L54"]], "sway": SWAY}, "fog": "#dbe9f2", "fog_density": 0.004, "fog_start": 8.0, "sky": "#79c3ff",
+                        "quiet": [["L52", "L54"]], "sway": SWAY, "marks": False}, "fog": "#dbe9f2", "fog_density": 0.004, "fog_start": 8.0, "sky": "#79c3ff",
              "exposure": 0.0, "hdri": "lebombo", "hdri_strength": 0.9, "hdri_rotation": 0},
     "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.01, 0.005, -0.01], "saturation": 1.12, "contrast": 1.04,
               "vignette": 0.18, "bloom": 0.12, "grain": 0.008},
