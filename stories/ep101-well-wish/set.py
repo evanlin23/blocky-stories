@@ -141,7 +141,7 @@ def tree(kit, name, x, y, h=5.0, tint="#cfe8c0", prop="commontree_1"):
         kit.sphere(f"{name}.crown", h * 0.28, (x, y, h * 0.68), kit.plastic("#5fae4a", 0.8), seg=10)
 
 
-def street(kit, name, ox, oy, y0, y1, snow=False, ours=False, wall_cols=None):
+def street(kit, name, ox, oy, y0, y1, snow=False, ours=False, wall_cols=None, skip_w=(), skip_tw=()):
     """A north-south street centred at x=ox: road, curbs, sidewalks, lawns, houses on both sides."""
     p = kit.plastic
     L = y1 - y0
@@ -160,11 +160,12 @@ def street(kit, name, ox, oy, y0, y1, snow=False, ours=False, wall_cols=None):
     for i, y in enumerate(ys):
         if ours and abs(y - oy) < 7:
             continue
-        house_x(kit, f"{name}.w{i}", ox - 14.0, y, 8.0, 9.0, 4.6 + (i % 3) * 0.6, cols[i % 5], +1,
-                roof="#f4f8ff" if snow else "#c4624a")
+        if i not in skip_w:
+            house_x(kit, f"{name}.w{i}", ox - 14.0, y, 8.0, 9.0, 4.6 + (i % 3) * 0.6, cols[i % 5], +1,
+                    roof="#f4f8ff" if snow else "#c4624a")
         house_x(kit, f"{name}.e{i}", ox + 14.0, y + 3, 8.0, 9.0, 4.4 + (i % 2), cols[(i + 2) % 5], -1,
                 roof="#f4f8ff" if snow else "#6a7aa8")
-        if not snow:
+        if not snow and i not in skip_w and i not in skip_tw:
             tree(kit, f"{name}.tw{i}", ox - 6.6, y + 5.5, 4.5 + (i % 2))
             tree(kit, f"{name}.te{i}", ox + 6.6, y - 2, 4.5)
     # far hills behind
@@ -185,6 +186,7 @@ def car(kit, name, body="#2f7fd8"):
             kit.box(f"{name}.pil{sx}{sy}", (0.08, 0.1, 0.8), (sx * 0.83, 0.45 + sy * 1.15, 1.22), bm, root)
             kit.cyl(f"{name}.wh{sx}{sy}", 0.38, 0.24, (sx * 0.92, sy * 1.3, 0.38), p("#25272c", 0.8), root,
                     rot=(0, math.pi / 2, 0), n=14)
+    kit.box(f"{name}.mirror", (0.4, 0.05, 0.14), (0.0, -0.6, 1.5), p("#25272c", 0.4), root)
     kit.box(f"{name}.seat", (0.6, 0.6, 0.12), (0.45, 0.5, 0.46), p("#444a58", 0.8), root)
     for sx in (-1, 1):
         kit.box(f"{name}.hl{sx}", (0.4, 0.06, 0.2), (sx * 0.6, -2.0, 0.7), kit.emit("#fff4c8", 1.2), root)
@@ -335,13 +337,12 @@ def build(kit, story, tl):
     stone = kit.grime("#e8e0cf", 0.9, 2.5, "wellstone", 0.9)
     stone2 = kit.grime("#d9cfb8", 0.9, 2.5, "wellstone2", 0.9)
     kit.cyl("well.base", 1.7, 0.16, (SX, SY, 0.08), stone2, n=32)
-    n = 20
+    n = 36
     for i in range(n):
         a = 2 * math.pi * i / n
-        kit.box(f"well.wall{i}", (0.5, 0.62, 0.9), (SX + 1.22 * math.cos(a), SY + 1.22 * math.sin(a), 0.45), stone,
+        kit.box(f"well.wall{i}", (0.5, 0.56, 0.9), (SX + 1.22 * math.cos(a), SY + 1.22 * math.sin(a), 0.45), stone,
                 rot=(0, 0, a + math.pi / 2))
-    kit.cyl("well.cap", 1.55, 0.06, (SX, SY, 0.93), stone, n=32, r2=1.55)    # (hidden under the rim boxes' top)
-    wat = p("#12305c", 0.06, spec=1.0)
+    wat = p("#1a4a86", 0.4, spec=0.2)
     kit.cyl("well.water", 1.0, 0.02, (SX, SY, 0.58), wat, n=28)
     kit.cyl("well.shaft", 0.99, 0.5, (SX, SY, 0.3), p("#0a1a33", 0.9), n=28)
     # the lore plant: a few newer bricks butted against the old seamless stone
@@ -363,9 +364,11 @@ def build(kit, story, tl):
     ring_g = kit.emit("#ffcf4a", 1.6, "ripple_gold")
     W["ring_a"], W["ring_g"] = ring_a, ring_g
     W["rings"] = []
+    W["rings_in"] = []
     for i in range(4):
-        r = kit.cyl(f"ripple{i}", 1.0, 0.012, (SX, SY, 0.595), ring_a, n=40, r2=1.0)
+        r = kit.cyl(f"ripple{i}", 1.0, 0.012, (SX, SY, 0.595 + i * 0.012), ring_a, n=40, r2=1.0)
         W["rings"].append(r)
+        W["rings_in"].append(kit.cyl(f"ripple_in{i}", 1.0, 0.004, (SX, SY, 0.603 + i * 0.012), wat, n=40, r2=1.0))
     W["coin"] = kit.cyl("coin", 0.11, 0.025, (0, 0, -50), kit.emit("#ffcf4a", 1.1, "coinmat"), n=16, rot=(0, 0, 0))
     # lamp posts
     for k, (lx, ly) in enumerate([(-6, -5), (6, -5), (-6, 7), (6, 7)]):
@@ -429,6 +432,8 @@ def build(kit, story, tl):
     kit.cyl("stop.post", 0.05, 2.2, (ox - 3.5, oy - 14.0, 1.1), p("#b8bcc4", 0.5), n=8)
     kit.cyl("stop.sign", 0.46, 0.05, (ox - 3.5, oy - 13.96, 2.35), p("#e8402f", 0.5), n=8, rot=(math.pi / 2, math.pi / 8, 0))
     kit.box("stop.mark", (0.6, 0.03, 0.12), (ox - 3.5, oy - 13.9, 2.35), p("#ffffff", 0.5))
+    kit.box("crack", (2.4, 0.07, 0.02), (ox - 4.6, oy - 13.8, 0.07), p("#7d838f", 0.9))      # the crack Wes stops at
+    kit.box("crack2", (0.6, 0.06, 0.02), (ox - 5.1, oy - 13.55, 0.07), p("#7d838f", 0.9), rot=(0, 0, 0.9))
     # the town-line post
     kit.box("line.post", (0.14, 0.14, 2.6), (ox - 3.5, G.LINE_Y, 1.3), p("#3b8f4e", 0.5))
     kit.box("line.panel", (1.5, 0.08, 1.1), (ox - 3.5, G.LINE_Y + 0.1, 2.4), p("#2f9e57", 0.4, spec=0.3))
@@ -454,7 +459,7 @@ def build(kit, story, tl):
     W["car"] = car(kit, "hatch")
     W["car"].location = (G.LANE_X - 0.4, oy + 3.0, 0)
     hbx, hby = G.HB
-    street(kit, "hb", hbx, hby, -40, 60)
+    street(kit, "hb", hbx, hby, -40, 60, skip_tw=(3,))
     kit.cyl("hb.signpost", 0.05, 2.6, (hbx - 3.5, hby + 6.0, 1.3), p("#b8bcc4", 0.5), n=8)
     kit.box("hb.sign", (0.7, 0.05, 0.7), (hbx - 3.5, hby + 6.0, 2.7), p("#2f7fd8", 0.5))
     kit.box("hb.bench", (0.6, 2.0, 0.12), (hbx - 5.2, hby + 9.0, 0.55), p("#a8744a", 0.7))
@@ -462,18 +467,18 @@ def build(kit, story, tl):
     W["bus"].location = (hbx - 40.0, hby, 0)
     W["bus"].rotation_euler = (0, 0, 180 * D2R)
     kpx, kpy = G.KP
-    street(kit, "kp", kpx, kpy, -40, 60, snow=True)
+    street(kit, "kp", kpx, kpy, -40, 60, snow=True, skip_w=(4,))
     kit.plane("kp.ground", (900, 200), (kpx, kpy, -0.01), p("#f4f8ff", 0.9, spec=0.05))
-    kit.plane("kp.yard", (7.0, 9.0), (kpx - 10.6, kpy + 8.0, 0.07), p("#5fc13c", 0.9))
-    for i in range(6):
-        for j in range(5):
-            xx, yy = kpx - 12.6 + i * 0.75, kpy + 4.8 + j * 0.9
+    kit.plane("kp.yard", (3.4, 4.2), (kpx - 9.2, kpy + 12.6, 0.07), p("#5fc13c", 0.9))
+    for i in range(5):
+        for j in range(4):
+            xx, yy = kpx - 10.4 + i * 0.45, kpy + 10.8 + j * 0.55
             kit.cyl(f"kp.st{i}{j}", 0.025, 0.4, (xx, yy, 0.27), p("#3f8f2a", 0.8), n=6)
             kit.sphere(f"kp.tu{i}{j}", 0.13, (xx, yy, 0.52), p(["#ff5a7a", "#ffd23f", "#ff9a4a", "#ff7ac0"][(i + j) % 4], 0.6), seg=8)
-    kit.box("kp.chair", (0.8, 1.6, 0.1), (kpx - 9.2, kpy + 9.5, 0.45), p("#fffaf0", 0.6))
+    kit.box("kp.chair", (0.8, 1.6, 0.1), (kpx - 9.2, kpy + 14.0, 0.45), p("#fffaf0", 0.6))
     for k in range(5):
-        kit.box(f"kp.chairs{k}", (0.8, 0.12, 0.05), (kpx - 9.2, kpy + 8.9 + k * 0.3, 0.51), p(["#ff7a8a", "#4fc3d8"][k % 2], 0.6))
-    kit.box("kp.chairback", (0.8, 0.1, 0.9), (kpx - 9.2, kpy + 10.2, 0.8), p("#fffaf0", 0.6), rot=(-0.3, 0, 0))
+        kit.box(f"kp.chairs{k}", (0.8, 0.12, 0.05), (kpx - 9.2, kpy + 13.4 + k * 0.3, 0.51), p(["#ff7a8a", "#4fc3d8"][k % 2], 0.6))
+    kit.box("kp.chairback", (0.8, 0.1, 0.9), (kpx - 9.2, kpy + 14.7, 0.8), p("#fffaf0", 0.6), rot=(-0.3, 0, 0))
     for k in range(4):
         tree(kit, f"kp.tr{k}", kpx + 7 + k * 0.5, kpy - 10 + k * 14, 5.0, tint="#e8f4ff", prop="pinetree_snow_1")
 
@@ -531,8 +536,10 @@ def build(kit, story, tl):
     dh = kit.empty("hl.door", (hlx + 3.85, hly - 0.65, 0))     # Wes's door on the hall's +x wall, hinged at -y
     W["door"] = dh
     kit.box("hl.leaf", (0.12, 1.3, 2.5), (0, 0.65, 1.25), p("#2f7fd8", 0.5, spec=0.3), dh)
-    kit.box("hl.line", (0.14, 1.2, 0.04), (-0.02, 0.65, 0.04), kit.emit("#ffe6a0", 1.6, "doorline"), dh)
+    kit.box("hl.line", (0.14, 1.2, 0.07), (-0.02, 0.65, 0.05), kit.emit("#ffe6a0", 2.0, "doorline"), dh)
     W["doorline"] = dh.children[-1]
+    W["spill"] = kit.box("hl.spill", (0.9, 1.1, 0.01), (hlx + 3.4, hly - 0.1, 0.07), kit.emit("#ffd890", 0.55, "spill"))
+    noshadow(W["spill"])
     kit.box("hl.frame", (0.3, 0.14, 2.6), (hlx + 3.85, hly + 0.72, 1.3), p("#fff4e0", 0.6))
     kit.box("hl.jamb", (0.3, 0.14, 2.6), (hlx + 3.85, hly - 0.72, 1.3), p("#fff4e0", 0.6))
     kit.light("hl", "POINT", (hlx - 1.5, hly - 0.5, 2.8), 260.0, "#fff0d8", size=0.5, shadow=False)
@@ -618,9 +625,10 @@ def _first_frame(kit, story):
     W["inited"] = True
     wh = bpy.data.objects.get("wes.headg")
     if wh is not None:
-        bm = p("#b88a4a", 0.8)
-        kit.box("wes.beard", (1.0, 0.45, 0.5), (0, -0.52, -0.3), bm, wh, bevel=0.1)
-        kit.box("wes.beard2", (1.1, 0.4, 0.28), (0, -0.46, -0.05), bm, wh, bevel=0.08)
+        bm = p("#7a5430", 0.8)       # a darker beard than his hair, sideburns and a chin only: the mouth stays bare
+        kit.box("wes.beard", (0.84, 0.3, 0.22), (0, -0.5, -0.6), bm, wh, bevel=0.06)
+        for sx in (-1, 1):
+            kit.box(f"wes.sideburn{sx}", (0.16, 0.2, 0.5), (sx * 0.52, -0.33, -0.3), bm, wh, bevel=0.04)
     ht = bpy.data.objects.get("wes.torso")
     if ht is not None:
         W["duffel"] = kit.box("wes.duffel", (1.5, 0.8, 1.5), (0, 0.9, 1.1), p("#8a5a2a", 0.8), ht, bevel=0.1)
@@ -631,6 +639,12 @@ def _first_frame(kit, story):
     if mt is not None:
         W["mbox"] = kit.box("me.carrybox", (1.9, 1.1, 1.5), (0, -1.2, 1.3), p("#c9955a", 0.8), mt, bevel=0.03)
         kit.box("me.carrybox.tape", (0.3, 1.14, 1.54), (0, -1.2, 1.3), p("#e8d0a0", 0.8), W["mbox"])
+    ma = bpy.data.objects.get("me.arm1")
+    if ma is not None:
+        ring = kit.box("me.keys", (0.34, 0.34, 0.05), (0, -0.4, -2.14), p("#e8402f", 0.5), ma)
+        kit.box("me.keys.a", (0.12, 0.62, 0.05), (-0.1, -0.12, 0.05), p("#dfe3ea", 0.3, spec=0.8), ring)
+        kit.box("me.keys.b", (0.12, 0.5, 0.05), (0.12, -0.1, 0.05), p("#e8c050", 0.3, spec=0.8), ring)
+        W["keys"] = ring
     for who in ("wes", "me"):
         arm = bpy.data.objects.get(f"{who}.arm1")
         if arm is not None:
@@ -674,6 +688,18 @@ def animate(kit, story, tl, t, ctx):
     for k in range(4):
         gains[f"lamp{k}"] = look["lamp"]
     gains["hl"] = look["hall"]
+    cx_ = None
+    try:
+        sh_ = next((s_ for s_ in tl["shots"] if s_["start"] <= t < s_["end"]), None)
+        sp_ = next((s_ for s_ in story["shots"] if s_["id"] == sh_["id"]), None) if sh_ else None
+        cx_ = sp_["cam"][0][1][0] if sp_ else None
+    except Exception:
+        cx_ = None
+    if cx_ is not None and 425 < cx_ < 450 and look["lamp"] >= 0.99:       # the night hall and bedroom: only their own lamps
+        gains["fill"] *= 0.12
+        gains["front"] *= 0.1
+        gains["sun"] *= 0.2
+        gains["hl"] = 0.9
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (*look["sky"], 1.0)
@@ -695,11 +721,11 @@ def animate(kit, story, tl, t, ctx):
                     break
             else:
                 lens = keys[-1][3]
-    dist = 1.0
+    dist = 0.3         # the tag sits close to the lens, so a prop a metre away never hides it
     h2 = dist * 12.0 / lens
     w2 = h2 * 9.0 / 16.0
     tag = W["tagcam"]["root"]
-    big = bool(spec and spec["cam"][0][2][0] > 590)       # the close-ups of the big tag: no second tag on the lens
+    big = False       # the small tag stays on the lens in every shot, even the close-ups of the big one
     for c_ in [tag] + list(tag.children_recursive):
         c_.hide_render = big
     if not big:
@@ -731,19 +757,21 @@ def animate(kit, story, tl, t, ctx):
     coin.rotation_euler = (cs["spin"] * D2R, 0, 0.4)
     pl = last_cue("plink", tl, t)
     for i, ring in enumerate(W["rings"]):
+        inner = W["rings_in"][i]
         if pl is None:
-            ring.hide_render = True
+            ring.hide_render = inner.hide_render = True
             continue
         a = (t - pl["t"]) - i * 0.16
         if a < 0 or a > 2.2:
-            ring.hide_render = True
+            ring.hide_render = inner.hide_render = True
             continue
         r = 0.12 + a * 0.5
-        if r > 1.0:
-            ring.hide_render = True
+        if r > 0.95:
+            ring.hide_render = inner.hide_render = True
             continue
-        ring.hide_render = False
+        ring.hide_render = inner.hide_render = False
         ring.scale = (r, r, 1.0)
+        inner.scale = (max(0.01, r - 0.07), max(0.01, r - 0.07), 1.0)
         ring.data.materials[0] = W["ring_g"] if pl.get("glow") else W["ring_a"]
 
     # the car, the bus
@@ -796,7 +824,7 @@ def animate(kit, story, tl, t, ctx):
             dff.location = (0, 0.9, 1.1) if du["v"] < 0.5 else (0, -1.1, 0.5)
     for who in ("wes", "me"):
         if f"{who}phone" in W:
-            ph = sample(f"{who}phone", tl, t, {"v": 0.0, "lit": 1.0})
+            ph = sample({"wes": "wphone", "me": "mphone"}[who], tl, t, {"v": 0.0, "lit": 1.0})
             _hide(W[f"{who}phone"], ph["v"] < 0.5)
             W[f"{who}scr"].hide_render = ph["v"] < 0.5 or ph["lit"] < 0.5
     # the bedroom window's weather, the posters, Wes's door
@@ -810,5 +838,15 @@ def animate(kit, story, tl, t, ctx):
         _hide(g, i >= int(round(npost)))
     da = sample("wdoor", tl, t, {"a": 0.0})["a"]
     W["door"].rotation_euler = (0, 0, da * D2R)
-    W["doorline"].hide_render = da > 3.0
+    W["doorline"].hide_render = abs(da) > 3.0
+    W["spill"].hide_render = abs(da) > 3.0
+    if "keys" in W:
+        _hide(W["keys"], sample("keys", tl, t, {"v": 0.0})["v"] < 0.5)
+    # what a hidden character carries stays hidden with them (the pose above hid them, the cues just now showed them)
+    for who, props in (("wes", ("wbox", "duffel", "wesphone")), ("me", ("mbox", "keys", "mephone"))):
+        ro = bpy.data.objects.get(who)
+        if ro is not None and ro.hide_render:
+            for k_ in props:
+                if k_ in W:
+                    _hide(W[k_], True)
     return gains
