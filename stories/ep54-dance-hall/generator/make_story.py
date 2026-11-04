@@ -475,7 +475,7 @@ sfx = [
     {"at": "L16", "kind": "creak", "db": -12, "dur": 1.6},
     {"at": "L16.1", "kind": "creak", "db": -10, "dur": 1.8},
     {"at": "L21.1", "kind": "bell", "db": -24, "dur": 1.0},
-    {"at": "L23.1", "kind": "glitch", "db": -14, "dur": 0.5},
+    {"at": "L23.1", "kind": "glitch", "db": -26, "dur": 0.5},
     {"at": "P01+0.45", "kind": "thud", "db": -6, "keep": True},
     {"at": "L29", "kind": "bell", "db": -20, "dur": 1.6},
     {"at": "L29.2", "kind": "bell", "db": -20, "dur": 1.6},
