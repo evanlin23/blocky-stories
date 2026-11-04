@@ -31,12 +31,8 @@ runs:
     run: |
       S=${{ inputs.story }}
       python -m blocky timeline $S
-      WANT=$(python -c "import json;print(json.load(open('out/work/$S/timeline.json'))['frames'])")
-      HAVE=$(ls out/work/$S/frames/*.png 2>/dev/null | wc -l)
-      if [ "$HAVE" != "$WANT" ]; then
-        echo "::error::$S has $HAVE of $WANT frames: a draw shard is missing. No film is made (finish would copy the frame before into each gap and the film would stutter); the next plan draws it again."
-        exit 1
-      fi
+      # count drawings, not frames: a shot on twos draws every other frame (finish holds it over the next)
+      python scripts/check_drawings.py $S out/work/$S/frames
   - name: finish and mix (with the narration the picture was drawn to)
     run: |
       S=${{ inputs.story }}
