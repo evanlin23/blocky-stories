@@ -1,10 +1,10 @@
 {
- "title": "Everything You FORGET Goes to Floor 13 🛗",
- "description": "In my building, everything you forget turns up on the thirteenth floor. Keys, birthdays, the odd first boyfriend. You just ride up and fetch it.\n\nI've never forgotten a thing, so I've never been up there. Then the lift started going past my floor on its own, to a thirteen with the lights off.\n\nIt's made up, a creepy blocky story built with code and Blender.",
- "pin": "Comment 13 and the first thing of yours that would turn up there.",
+ "title": "My 13 Button Lit Up By ITSELF 🔘",
+ "description": "In my building, everything you forget turns up on the thirteenth floor. Keys, birthdays, the odd first boyfriend. You just ride up and fetch it.\n\nI've never forgotten a thing, so I've never been up there. Then the elevator started going past my floor on its own, to a thirteen with the lights off.\n\nIt's made up, a creepy blocky story built with code and Blender.",
+ "pin": "Comment KEYS if yours would be up there right now.",
  "made_for_kids": false,
- "cover_s": 59.4,
+ "cover_s": 51.4,
  "shape": "lost-property",
  "old_title": "In This Building Everything You FORGET Goes To Floor 13",
- "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
+ "opening": "if"
 }
