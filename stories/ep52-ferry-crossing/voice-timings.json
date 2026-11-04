@@ -974,14 +974,14 @@
    ]
   },
   "L36": {
-   "text": "It's gran, squinting, outside my flat in town.",
+   "text": "It's gran, squinting, outside my place in town.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.431,
+   "dur": 2.448,
    "onset": 0.155,
-   "end": 2.241,
+   "end": 2.259,
    "chunks": [
     [
      0.155,
@@ -993,11 +993,11 @@
     ],
     [
      0.983,
-     1.594
+     1.603
     ],
     [
-     1.594,
-     2.241
+     1.603,
+     2.259
     ]
    ]
   },

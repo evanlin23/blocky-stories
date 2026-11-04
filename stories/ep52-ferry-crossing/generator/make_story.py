@@ -72,7 +72,7 @@ cast = {
                  extra_c="#8a8f94", zip_c="#6a6e72"),
     "gran": person("#e9c9a8", "#8a6f9a", "#5a4a62", "bun", "#f1efea", pattern="knit", pattern_c="#6e557f",
                    collar="#a58bb4", height=0.93, shoes="#3a3030"),
-    "glove_woman": person("#d9a98a", "#2f8f4a", "#2a2d33", "long", "#4a3322", extras=["coat", "hooddown"],
+    "glove_woman": person("#d9a98a", "#51657a", "#2a2d33", "long", "#4a3322", extras=["coat", "hooddown"],
                           face={"eyes": "lashes", "brows": True, "ink": "#161012"}),
     "umbrella_man": person("#dcb08f", "#7a5a3a", "#3a3a3a", "cap", "#6e6a64", pattern="plaid", pattern_c="#5a3f26",
                            hat="ballcap", hat_c="#6a5238", height=1.02,
@@ -110,13 +110,13 @@ def P(pos, **kw):
 # since 2026-11-03: frame 1 is the green glove mid-hop, her face looking back at it; every opening shot is a close
 LOOK = {"head": [150, -4], "expr": "neutral"}
 shot(0, "close: the green glove mid-hop on the bright slipway, the glove woman's face above it looking back at it, pushing in",
-     c([0, [-0.75, 1.0, 0.4], [-0.62, -1.1, 0.7], 26], [1, [-0.7, 0.65, 0.4], [-0.62, -1.3, 0.8], 33]),
+     c([0, [0.1, 2.3, 0.45], [-0.2, -1.4, 0.36], 28], [1, [0.1, 1.9, 0.45], [-0.25, -1.5, 0.4], 30]),
      {"glove_woman": P([-0.4, -1.9], walk=[("L01.2", [-0.4, -2.3])], **LOOK)})
 shot("L01.2", "closer: her face, the glove bobbing in the foreground",
-     c([0, [0.45, -0.1, 0.4], [-0.5, -2.0, 0.95], 26], [1, [0.3, -0.45, 0.45], [-0.45, -2.1, 1.0], 33]),
+     c([0, [0.6, 1.2, 0.45], [-0.3, -2.0, 0.42], 28], [1, [0.5, 0.8, 0.45], [-0.3, -2.1, 0.46], 30]),
      {"glove_woman": P([-0.4, -2.35], walk=[("L02", [-0.4, -2.8])], **LOOK)})
 shot("L02", "low: the glove hopping up the concrete after the raincoat hem",
-     c([0, [0.9, -1.4, 0.3], [-0.4, -3.2, 0.14], 24], [1, [0.7, -1.9, 0.25], [-0.4, -3.4, 0.14], 24]),
+     c([0, [1.0, 0.6, 0.5], [-0.3, -2.5, 0.28], 26], [1, [0.9, 0.2, 0.5], [-0.3, -2.7, 0.32], 26]),
      {"glove_woman": P([-0.4, -2.85], walk=[("L02.1", [-0.4, -3.6])], **LOOK)})
 shot("L02.1", "glove's-eye: the raincoat walking away, the glove at the bottom of frame",
      c([0, [-0.2, -2.9, 0.3], [-0.4, -5.4, 0.7], 22], [1, [-0.25, -3.4, 0.3], [-0.4, -6.0, 0.75], 26]),
@@ -270,7 +270,7 @@ shot("L50", "the full face", still([F + 4.3, 5.3, 5.35], [F + 1.7, 4.85, 5.3], 3
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze")})
 shot("L51", "the head turns to Gran, wide enough that no hump fills the frame", still([F + 5.0, 6.6, 5.4], [F + 1.7, 4.2, 5.1], 20),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze", head=[45, 0])})
-shot("L51.3", "close side two-shot: its face a hand's width from her cheek", still([F + 5.0, 4.3, 5.3], [F + 1.7, 3.95, 5.15], 24),
+shot("L51.3", "close side two-shot: its face a hand's width from her cheek", still([F + 5.0, 4.3, 5.25], [F + 1.7, 3.95, 5.05], 24),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze", head=[45, 0])})
 
 # ------------------------------------------------------------------------------------------------ 07 where things belong
@@ -456,8 +456,8 @@ cue("L48", "shrug", pos=SH_SEAT, yaw=90, u=1.0, head=0, lean=0, tilt=8)
 cue("L49", "shrug", pos=SH_SEAT, yaw=90, u=0.5, head=0, lean=0, tilt=0, dur=1.2)
 cue("L50", "shrug", pos=SH_SEAT, yaw=90, u=0.0, head=0, lean=0, tilt=0, dur=1.5)
 cue("L51", "shrug", pos=SH_SEAT, yaw=90, u=0.0, head=-90, lean=18, tilt=0, dur=1.2)
-cue("L51.3", "shrug", pos=[F + 1.7, 4.7, 3.69], yaw=90, u=0.0, head=-90, lean=50, tilt=-6, dur=2.6)
-cue("L52-0.3", "shrug", pos=[F + 1.7, 4.55, 3.69], yaw=90, u=0.0, head=-90, lean=54, tilt=-6)
+cue("L51.3", "shrug", pos=[F + 1.7, 4.95, 3.69], yaw=90, u=0.0, head=-90, lean=42, tilt=-6, dur=2.6)
+cue("L52-0.3", "shrug", pos=[F + 1.7, 5.0, 3.69], yaw=90, u=0.0, head=-90, lean=44, tilt=-6)
 cue("L43", "mood", v=1.0, dur=1.2)
 cue("L52", "mood", v=0.0, dur=1.2)
 cue("L58.2", "shrug", hidden=True)
@@ -481,8 +481,9 @@ cue("L62", "prop", id="mglove", pos=[F + 2.25, 3.75, 4.97], rot=[-90, 0, 0])
 cue("L63", "prop", id="mglove", hide=True)
 cue("L68", "prop", id="mglove", pos=[X, 34.35, 0.065], rot=[-90, 0, 0])
 cue("L68.4", "prop", id="mglove", pos=[X, 34.35, 0.065], rot=[-90, 0, 0])
-cue("L68.4+0.17", "prop", id="mglove", pos=[X, 34.5, 0.3], rot=[-60, 0, 0])
-cue("L68.4+0.34", "prop", id="mglove", pos=[X, 34.65, 0.065], rot=[-90, 0, 0])
+cue("L68.4+0.17", "prop", id="mglove", pos=[X, 34.35, 0.16], rot=[-75, 0, 0])
+cue("L68.4+0.34", "prop", id="mglove", pos=[X, 34.35, 0.065], rot=[-90, 0, 0])
+cue("L68.4+1.2", "prop", id="mglove", pos=[X, 34.35, 0.065], rot=[-90, 0, 0])
 # the dog
 cue(0, "dog", hide=True, pos=[0, 0, 0])
 cue("L07", "dog", pos=[-2.4, 2.2, 0], yaw=[90], gait=1)
@@ -601,14 +602,14 @@ story = {
     "slug": "ep52-ferry-crossing",
     "title": "In this town, everything you lose finds its way back to you",
     "made_for_kids": False,
-    "premise": "In a harbour town, everything you lose hops home after you, except for me. I throw a glove in a bin on purpose, and on Sunday's call Gran is pulling it on. Then every street I take ends at the slipway, my keys and scarf hop off toward her island, and damp hop-dots start at my own door. I follow them a little further each evening: the ferry's window seat, halfway up her lane, her open door, her glasses on the mat.",
+    "premise": "In a harbor town, everything you lose hops home after you, except for me. I throw a glove in a bin on purpose, and on Sunday's call Gran is pulling it on. Then every street I take ends at the slipway, my keys and scarf hop off toward her island, and damp hop-dots start at my own door. I follow them a little further each evening: the ferry's window seat, halfway up her lane, her open door, her glasses on the mat.",
     "twist": "The rule never said to its owner. Lost things find their way to where they belong, and people count too. Everything of mine went to Gran's because I still belong there, and the pull all week, the streets ending at the slipway and the dots starting at my door, was me, a lost thing, hopping my way back. On the late crossing a passenger in life jacket orange sits in my place beside her, and when I stop fighting it and sit down in my old seat, it is gone.",
-    "world": "a small white car ferry with a rust-streaked hull on flat grey water between a harbour town and an island in late autumn: a concrete slipway, a rust-red ticket hut, a lounge with teal vinyl and a window bench, a stone lane between dry-stone walls, a white cottage with a green door, and a back room hung with every glove and key I ever lost",
+    "world": "a small white car ferry with a rust-streaked hull on flat grey water between a harbor town and an island in late autumn: a concrete slipway, a rust-red ticket hut, a lounge with teal vinyl and a window bench, a stone lane between dry-stone walls, a white cottage with a green door, and a back room hung with every glove and key I ever lost",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#7fe0c8",
     "caption": {"ink": "#08090d", "stroke_add": 2, "shadow": 0.8},
     "key_stroke": 2,
-    "clip_ok": ["S69/shrug", "S89"],
+    "clip_ok": ["S89"],
     "gap": 0.12,
     "tail": 0,
     "look": {"fog": "#b4babd", "fog_density": 0.010, "fog_start": 4.0, "sky": "#c4ccd0", "sky_strength": 1.0,

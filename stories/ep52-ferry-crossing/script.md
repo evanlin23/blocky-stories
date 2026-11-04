@@ -7,7 +7,7 @@
   - The batch-1 ban on a closing "Last NIGHT," style opener ruled out the pitch's "This morning, on her MAT". The sting now opens "And on her MAT".
   - To get both of us on the late boat, I ride it over from the island and back. Gran boards at the town end while I'm looking for her on the car deck, so she's alone on the window bench when the Shrug is shown.
   - The sleepwalk nights start at about 37 s, not 15 s. Seconds 15 to 30 show the rule at work instead (the binned glove turning up on Gran's hand). Nobody explains the rule anywhere.
-  - "Tyres", "teatime", "darned" and "harbour" are left out because Whisper might write them as other words.
+  - "Tyres", "teatime", "darned" and "harbor" are left out because Whisper might write them as other words.
 - **Revision (2026-11-02, owner after ep20: "I didn't really like feel anything from the story... it was also a little bit confusing"):** Gran is now seen and loved by 0:20. The montage is down to three examples (the glove, the umbrella, the dog), so L04, L05 and L06 are cut. New L09a puts Gran on her Sunday call at about 15 s, with what I'd lose ("She's ALL / I've GOT."). L12 changes to "Next SUNDAY," so it follows on. One forward timeline, with no backstory before 0:20 (L15 to L17 now start at about 27 s). The 8 s cut is added back with L18a, L42a and L63a. `jumper-man` and `kite-woman` leave the cast.
 - **Revision round 1 (standards, 2026-11-02, hard rule 5):** the blank evenings and "I come to" read as ep41-orchard-rows (going back to a grandmother's place without knowing, then "it was me"). They're cut. The pull now happens while I'm awake and trying: every street ends at the slipway (L18, L18a), my keys hop out my door to the sea (L19), damp dots start at my door under my feet (L20), I chase the keys onto the ferry (L21), my scarf hops up Gran's lane and I follow it halfway, then turn back before she sees me (L24, L24a), and on Thursday the dots lead me to her door (L25). L56 is now "All WEEK, / I was HOPPING / my way BACK." L24b is cut. New title and description.
 - **Target length:** 2:15 to 2:30.
@@ -17,7 +17,7 @@
 ## The story
 
 - **Premise:** In my town, everything you lose hops home after you. Nothing I lose ever comes back. Gran raised me on the island one ferry crossing out, and I haven't crossed back in four years. I throw a glove away on purpose, and on Sunday's call Gran is pulling it on. Then every street I take ends at the slipway, my keys and my scarf hop off toward the island, and damp hop-dots start at my own door. Each evening I follow them a little further, wanting to and not wanting to: the ferry's window seat, halfway up her lane (where I lose my nerve and turn back), her door. On Thursday her door is open, her glasses are on the mat, she's gone, and the back room is stacked with everything I've ever lost.
-- **Rule:** everything you lose finds its way back. Lost things hop home after their owners (or so it seems). Since 2026-11-03 it's said as a warning: "Never drop anything here unless you want it back." (L01, 9 words), then "It hops home after you." (L02, 5 words).
+- **Rule:** everything you lose finds its way back. Lost things hop home after their owners (or so it seems). Since 2026-11-03 it's said as a warning: "If you drop something here it hops home after you." (L01), then "Even the things you meant to lose." (L02).
 - **Quotable line:** L03, "An umbrella bobs along at a man's heel." (an odd rule detail said flatly, short enough to type).
 - **Twist:** the rule never said "to its owner". Lost things find their way to where they belong, and people count too (the dog). Everything of mine went to Gran's because I still belong there, and the pull all week, the streets that end at the slipway and the dots that start at my own door, was me, a lost thing, hopping my way back. I'm what Gran lost. On the late crossing the Shrug sits in my place on the window bench beside her. When I stop fighting it and sit down in my old seat, it's gone.
 - **Where the twist is planted:**
@@ -31,15 +31,15 @@
 
 ## Opening recipe fix, 2026-11-03
 
-- **Changed:** L01 and L02 only, re-voice these two. L01 was "In this town, everything you lose finds its way back to you." (11 words), now "Never drop anything here unless you want it back." (9 words, about 1.9 s), a warning to you per `docs/research/playbook.md` (opening recipe v1). L02 was "A glove hops after its owner up the slipway." (9 words), now "It hops home after you." (5 words, about 1.0 s), which tightens the same warning. The hopping glove stays in the picture under L01 and L02. No other line is cut or changed. Spoken words go from 621 to 605. L66 still says the rule in full ("everything you LOSE / finds its way BACK"), and the twist ("the rule never said to its owner") still turns on it.
-- **Plot check:** the warning is true of the town, names nobody, and keeps the same misreading the old L01 had ("after you" is how it looks until Gran's back room). The loop is tighter now: "a GLOVE / I haven't LOST / YET." runs into "Never drop anything here unless you want it back."
+- **Changed:** L01 and L02 only, re-voice these two. L01 was "In this town, everything you lose finds its way back to you." (11 words), now "If you drop something here it hops home after you." (9 words, about 1.9 s), a warning to you per `docs/research/playbook.md` (opening recipe v1). L02 was "A glove hops after its owner up the slipway." (9 words), now "Even the things you meant to lose." (5 words, about 1.0 s), which tightens the same warning. The hopping glove stays in the picture under L01 and L02. No other line is cut or changed. Spoken words go from 621 to 605. L66 still says the rule in full ("everything you LOSE / finds its way BACK"), and the twist ("the rule never said to its owner") still turns on it.
+- **Plot check:** the warning is true of the town, names nobody, and keeps the same misreading the old L01 had ("after you" is how it looks until Gran's back room). The loop is tighter now: "a GLOVE / I haven't LOST / YET." runs into "If you drop something here it hops home after you."
 - **US English:** the new lines and the description use "leash", never "Mum" or British spellings. L07 now says "slipped its LEASH".
 - **Quotable line:** L03, "An umbrella bobs along at a man's heel."
 - **First shot (for the builder):** frame 1 looks straight at a green glove on the bright town slipway concrete, already mid-hop off the ground with a short line of damp dots behind it, low at heel height, with the glove woman's face in frame above and behind it, looking back at it, `neutral`. Camera about 1.5 to 2.5 m from the glove, lens 28 mm or longer, pushing in slowly through L01. No wide in the first 3 s: the old L01 low wide up the slipway moves to after L02 or goes, and the old L02 heel-height close becomes the L02 shot (the glove hopping up the concrete after her raincoat hem). Use a green glove for her, as cast, so it never reads as my mustard ones. Sound hit (a soft damp pat, under 4 kHz) on "BACK", the warning's last word, about 1.8 s. Then L03's umbrella as before.
 
 ## World
 
-A small car ferry on its daily crossing between a grey harbour town and an island, in late autumn. Calm grey water only, a flat sea, no waves over the rail, nobody at the rail ever.
+A small car ferry on its daily crossing between a grey harbor town and an island, in late autumn. Calm grey water only, a flat sea, no waves over the rail, nobody at the rail ever.
 
 - **The town slipway:** a wide concrete ramp into the water, a low rust-red ticket hut with no writing, iron bollards, lamp posts, the ferry's bow ramp down. Bright overcast daylight in the opening.
 - **The ferry:** a short white boat with a rust-streaked hull, an open car deck with two parked boxy cars, and a stair up to a small passenger lounge. The lounge has steady fluorescent strips (never flickering), teal vinyl, a big rain-speckled window and, under it, the **window bench**: two padded fold-down seats side by side with a steel armrest between them. Other rows of plain bench seats face forward.
@@ -54,7 +54,7 @@ All adults. Nobody young is in the story, and nobody is ever in peril or hurt.
 
 - `me` (adult man): short black block hair with a side fringe, a navy duffel coat with horn toggles, a grey scarf (worn up to L24, then gone: it hops off up the lane and hangs in the back room from L31), mustard knit gloves (the left one has a hole in the thumb). From L10 to L62 only the right glove is on my hand, and the left one is back on from L63. Faces (from `faces.EXPRESSIONS`): `neutral`, `worried`, `scared`, `soft` (a small smile). No age on screen.
 - `gran` (adult, older): white block hair in a bun, round brown-framed glasses (off from L27 on until L61), a heather cardigan with a diamond knit pattern, and a long plum travelling coat at night. Warm and plain, never cryptic, never explains anything. Faces: `neutral`, `squeeze` (squinting, no glasses), `soft`, `grin` (the reunion).
-- `glove-woman` (adult): green raincoat, block bob. L01, L02.
+- `glove-woman` (adult): slate raincoat, green glove, block bob. L01, L02.
 - `umbrella-man` (adult): brown tweed jacket, flat cap. L01, L03.
 - `passengers` (two adults, plain coats in slate and olive): background on the slipway and the car deck.
 - `dog`: a blocky sandy-brown dog of our own build, short legs, a loose red-brown leash trailing. L07, L08, a still in L54.
@@ -75,7 +75,7 @@ Every lost thing hops home after its owner: a glove, a sock, an umbrella, a key 
 - **Face:** an ochre head `#b8925a` (not grey, not pale). Two small round black eyes with pinprick cream highlights, set slightly too far apart, and a thin straight drawn mouth that runs too wide, almost to the sides of the head. Thick black strokes, our own face. The eye highlights are the brightest things in its shots.
 - **One model**, built once in `set.py`, posed with one shoulder-height value (high, mid, normal), head yaw and a forward lean. It never stands up and never walks.
 - **Never seen moving across the room.** It only sits. The shoulder sink (L49 to L50) and the turn and lean (L51) are slow, over 2 s or more each, or done across cuts. It never chases, lunges, reaches or touches anyone.
-- **Light it so it reads:** the lounge strips behind it are dimmed to a soft fill, the key comes low from the side off the window's harbour lights (warm), a cool rim from the window behind outlines the orange humps. No clipped white. Lit clearly from L45 on.
+- **Light it so it reads:** the lounge strips behind it are dimmed to a soft fill, the key comes low from the side off the window's harbor lights (warm), a cool rim from the window behind outlines the orange humps. No clipped white. Lit clearly from L45 on.
 - **Continuity list:**
   | Beat | Lines | Where it is | Shoulders | Shown how |
   |---|---|---|---|---|
@@ -117,7 +117,7 @@ Every lost thing hops home after its owner: a glove, a sock, an umbrella, a key 
 
 ## The rule and the hits (RULES.md → What the hits do)
 
-- **First line:** "NEVER drop / anything HERE / unless you / want it BACK." (9 words, a warning to you, opening recipe v1, 2026-11-03). L02 tightens it: "It HOPS home / after YOU."
+- **First line:** "If you DROP / something HERE / it HOPS home / after YOU." (9 words, a warning to you, opening recipe v1, 2026-11-03). L02 tightens it: "Even the things / you meant / to LOSE."
 - **Marker by 2 s:** the opening wide on the bright slipway shows a glove and an umbrella hopping after their owners, with faces in frame.
 - **Montage (3, in the first 12 s):** the glove up the slipway, the umbrella at a heel, the dog riding the ferry home alone.
 - **The narrator is the exception:** nothing I lose ever comes back (L09). The binned glove never hops after me (L11).
@@ -136,24 +136,24 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 01 The rule (L01 to L08)
 
-- **Where:** the town slipway and harbour in bright overcast daylight, then quick montage cutaways.
+- **Where:** the town slipway and harbor in bright overcast daylight, then quick montage cutaways.
 - **Shots:** 6.
 
-- `L01` narrator: NEVER drop / anything HERE / unless you / want it BACK.
+- `L01` narrator: If you DROP / something HERE / it HOPS home / after YOU.
   - [since 2026-11-03, frame 1 is the close on the hopping glove (see "Opening recipe fix"), and this wide moves to after 3 s]
   - [bright low wide up the town slipway, the ferry's ramp down behind. The glove woman walks toward camera, face in frame, and a green glove hops after her heel. The umbrella man passes behind her, a black umbrella bobbing at his heel. Hop-dots fade on the concrete]
-- `L02` narrator: It HOPS home / after YOU.
-  - [low close at heel height: the green glove hopping up the concrete after a green raincoat hem]
+- `L02` narrator: Even the things / you meant / to LOSE.
+  - [low close at heel height: the green glove hopping up the concrete after a slate raincoat hem]
 - `L03` narrator: An UMBRELLA / bobs along / at a man's HEEL. (**quotable line**)
   - [side tracking mid shot: the umbrella man, `neutral`, not looking down, the furled umbrella hopping beside his shoe]
 - `L07` narrator: A DOG / slipped its LEASH / in TOWN.
-  - [the sandy dog trotting along the harbour front alone, its leash trailing, no owner in frame]
+  - [the sandy dog trotting along the harbor front alone, its leash trailing, no owner in frame]
 - `L08` narrator: It rode the FERRY / and trotted HOME / all on its OWN.
   - [shot A: the dog trotting up the ferry gangway among passengers' legs. Shot B: the dog on an island doorstep (not Gran's), sitting by a blue door, content]
 
 ## 02 The glove (L09 to L17)
 
-- **Where:** the town slipway, my flat (Gran on the phone), a harbour street, my flat again, then a flashback still of the window bench (after 0:20).
+- **Where:** the town slipway, my flat (Gran on the phone), a harbor street, my flat again, then a flashback still of the window bench (after 0:20).
 - **Shots:** 12.
 
 - `L09` narrator: Except for ME. / Nothing I lose / EVER / comes BACK.
@@ -161,12 +161,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L09a` narrator: Every SUNDAY, / I call GRAN. / She's ALL / I've GOT.
   - [shot A: my phone propped on the table in my flat, daylight. On the screen Gran, `grin`, glasses on, in her kitchen, leaning in far too close to her camera so her glasses fill half the screen. Behind her, on the coat hook, my teal-and-cream striped hat. Not mentioned. Shot B: me at the table, `soft`, laughing at the screen, face in frame]
 - `L10` narrator: So I drop / an old GLOVE / in a BIN, / on PURPOSE.
-  - [a harbour street bin, overcast. Cut away from hands: a mustard knit glove with a hole in the thumb drops into it]
+  - [a harbor street bin, overcast. Cut away from hands: a mustard knit glove with a hole in the thumb drops into it]
 - `L11` narrator: It never HOPS / after me.
   - [me walking away down the street, looking back over my shoulder, `worried`. The bin behind me, nothing hopping]
 - `L12` narrator: Next SUNDAY, / Gran's pulling ON / a GLOVE.
   - [my phone in my flat, propped on the same table, the screen showing Gran in her kitchen, `soft`, glasses on, the mustard glove on her hand. Behind her, on a coat hook, my teal-and-cream striped hat. Not mentioned]
-- `L13` narrator: MY glove, / with the HOLE / in the THUMB.
+- `L13` narrator: MY glove, / with a HOLE / in the THUMB.
   - [close on the phone screen: the glove on Gran's hand, the thumb hole]
 - `L14` narrator: She says / it turned up / on her MAT.
   - [me at the table, `worried`, looking at the screen]
@@ -179,17 +179,17 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 03 The pull (L18 to L24a)
 
-- **Where:** each evening bluer and darker: harbour streets, my flat's door, the town slipway, the ferry lounge, the island lane. I'm awake and trying in every shot. Nothing blacks out and nothing skips.
+- **Where:** each evening bluer and darker: harbor streets, my flat's door, the town slipway, the ferry lounge, the island lane. I'm awake and trying in every shot. Nothing blacks out and nothing skips.
 - **Shots:** 12.
 
 - `L18` narrator: Then every STREET / I take / ends at the SLIPWAY.
-  - [blue dusk: me walking up a harbour street away from the water, `worried`. I round the corner and the street opens straight onto the slipway, the water ahead]
+  - [blue dusk: me walking up a harbor street away from the water, `worried`. I round the corner and the street opens straight onto the slipway, the water ahead]
 - `L18a` narrator: I turn LEFT, / I turn RIGHT, / it's always the WATER.
   - [shot A: me turning left at a corner, the slipway ahead. Shot B: me turning right at another corner, the same slipway ahead, framed the same, `worried`]
 - `L19` narrator: MONDAY, / my KEYS hop / out my DOOR, / down to the SEA.
   - [shot A: my flat's door at dusk, open: my key ring hopping over the step and away down the street, small damp dots behind it. Shot B: high wide, the key ring hopping down the empty slipway to the water's edge, me small at the top, `worried`]
 - `L20` narrator: And damp little DOTS / start at my DOOR, / under my FEET.
-  - [low close at my doorstep: my shoes on the step, and a faint line of damp hop-dots starting right under them and running off down the street toward the harbour. Readable at phone size. Then me, `scared`, looking down]
+  - [low close at my doorstep: my shoes on the step, and a faint line of damp hop-dots starting right under them and running off down the street toward the harbor. Readable at phone size. Then me, `scared`, looking down]
 - `L21` narrator: TUESDAY, / I chase my KEYS / onto the FERRY, / right to the window SEAT.
   - [shot A: me hurrying up the ferry's bow ramp after the hopping key ring, `worried`. Shot B: the lounge at dusk, steady strips: the keys hop on past the bench out of frame, and I'm sitting in the left-hand seat of the window bench, `scared`, as if I sat without meaning to, the grey sea moving past the window]
 - `L22` narrator: The seat / BESIDE me / is folded DOWN, / and EMPTY.
@@ -236,7 +236,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - `L35` narrator: At MIDNIGHT, / my PHONE / BUZZES.
   - [close on my phone on the back room's table among gloves, the screen brightening over 0.5 s]
-- `L36` narrator: It's GRAN, / squinting, / outside my FLAT / in TOWN.
+- `L36` narrator: It's GRAN, / squinting, / outside my PLACE / in TOWN.
   - [the phone screen: Gran, `squeeze`, no glasses, in her plum coat on a dark town doorstep under a lamp]
 - `L37` narrator: She crossed / this MORNING / to come and FIND me.
   - [daylight insert: Gran alone on the town slipway in her plum coat, small, looking up at the streets]
@@ -248,7 +248,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [shot A: the phone screen, Gran `squeeze`, nodding. Shot B: the glasses' outline through my pocket]
 - `L41` narrator: So I ride / the late boat OVER, / to bring her BACK.
   - [the island slipway at night, the ferry's bow ramp down, me walking aboard alone]
-- `L42` narrator: At the town SLIPWAY, / I look for her / on the CAR DECK.
+- `L42` narrator: At the town's SLIPWAY, / I look for her / on the CAR DECK.
   - [the car deck under steady lamps: two parked cars, passengers' backs, me looking between them, `worried`. Gran not there]
 - `L42a` narrator: I can't FIND her / ANYWHERE.
   - [me turning between the two parked cars, `worried`, the deck lamps steady, only passengers' backs]
@@ -294,9 +294,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [quick still: the back room's hooks, the striped hat]
 - `L56` narrator: All WEEK, / I was HOPPING / my way BACK.
   - [quick stills: the hop-dots starting under my shoes at my door (L20), then the dots under my feet on the slipway in L09, now easy to see]
-- `L57` narrator: So I stop / FIGHTING it.
+- `L57` narrator: So I quit / FIGHTING it.
   - [me, `neutral`, taking a breath]
-- `L58` narrator: I walk to / the BENCH, / and sit down / in my old SEAT.
+- `L58` narrator: I go to / the BENCH, / and sit down / in my old SEAT.
   - [shot A: my feet walking up the aisle toward the bench, the orange shape out of focus ahead. Shot B (across the cut): me sitting in the left-hand seat beside Gran. The Shrug is gone]
 - `L59` narrator: It's EMPTY / when I SIT. / Just a DENT / in the cushion.
   - [low close: the cushion beside my coat hem, a dent fading back out of the vinyl]

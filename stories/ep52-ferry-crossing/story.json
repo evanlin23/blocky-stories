@@ -2,9 +2,9 @@
  "slug": "ep52-ferry-crossing",
  "title": "In this town, everything you lose finds its way back to you",
  "made_for_kids": false,
- "premise": "In a harbour town, everything you lose hops home after you, except for me. I throw a glove in a bin on purpose, and on Sunday's call Gran is pulling it on. Then every street I take ends at the slipway, my keys and scarf hop off toward her island, and damp hop-dots start at my own door. I follow them a little further each evening: the ferry's window seat, halfway up her lane, her open door, her glasses on the mat.",
+ "premise": "In a harbor town, everything you lose hops home after you, except for me. I throw a glove in a bin on purpose, and on Sunday's call Gran is pulling it on. Then every street I take ends at the slipway, my keys and scarf hop off toward her island, and damp hop-dots start at my own door. I follow them a little further each evening: the ferry's window seat, halfway up her lane, her open door, her glasses on the mat.",
  "twist": "The rule never said to its owner. Lost things find their way to where they belong, and people count too. Everything of mine went to Gran's because I still belong there, and the pull all week, the streets ending at the slipway and the dots starting at my door, was me, a lost thing, hopping my way back. On the late crossing a passenger in life jacket orange sits in my place beside her, and when I stop fighting it and sit down in my old seat, it is gone.",
- "world": "a small white car ferry with a rust-streaked hull on flat grey water between a harbour town and an island in late autumn: a concrete slipway, a rust-red ticket hut, a lounge with teal vinyl and a window bench, a stone lane between dry-stone walls, a white cottage with a green door, and a back room hung with every glove and key I ever lost",
+ "world": "a small white car ferry with a rust-streaked hull on flat grey water between a harbor town and an island in late autumn: a concrete slipway, a rust-red ticket hut, a lounge with teal vinyl and a window bench, a stone lane between dry-stone walls, a white cottage with a green door, and a back room hung with every glove and key I ever lost",
  "voice": {
   "voice": "am_adam",
   "tempo": 1.03,
@@ -18,7 +18,6 @@
  },
  "key_stroke": 2,
  "clip_ok": [
-  "S69/shrug",
   "S89"
  ],
  "gap": 0.12,
@@ -124,7 +123,7 @@
   "glove_woman": {
    "age": "adult",
    "skin": "#d9a98a",
-   "shirt": "#2f8f4a",
+   "shirt": "#51657a",
    "pattern": "solid",
    "collar": null,
    "pants": "#2a2d33",
@@ -1043,8 +1042,8 @@
      "squinting,"
     ],
     [
-     "outside my FLAT",
-     "outside my flat"
+     "outside my PLACE",
+     "outside my place"
     ],
     [
      "in TOWN.",
@@ -1803,30 +1802,30 @@
     [
      0,
      [
-      -0.75,
-      1.0,
-      0.4
+      0.1,
+      2.3,
+      0.45
      ],
      [
-      -0.62,
-      -1.1,
-      0.7
+      -0.2,
+      -1.4,
+      0.36
      ],
-     26
+     28
     ],
     [
      1,
      [
-      -0.7,
-      0.65,
-      0.4
+      0.1,
+      1.9,
+      0.45
      ],
      [
-      -0.62,
-      -1.3,
-      0.8
+      -0.25,
+      -1.5,
+      0.4
      ],
-     33
+     30
     ]
    ],
    "hand": 0.004,
@@ -1839,30 +1838,30 @@
     [
      0,
      [
-      0.45,
-      -0.1,
-      0.4
+      0.6,
+      1.2,
+      0.45
      ],
      [
-      -0.5,
+      -0.3,
       -2.0,
-      0.95
+      0.42
      ],
-     26
+     28
     ],
     [
      1,
      [
-      0.3,
-      -0.45,
+      0.5,
+      0.8,
       0.45
      ],
      [
-      -0.45,
+      -0.3,
       -2.1,
-      1.0
+      0.46
      ],
-     33
+     30
     ]
    ],
    "hand": 0.004,
@@ -1876,30 +1875,30 @@
     [
      0,
      [
-      0.9,
-      -1.4,
-      0.3
+      1.0,
+      0.6,
+      0.5
      ],
      [
-      -0.4,
-      -3.2,
-      0.14
+      -0.3,
+      -2.5,
+      0.28
      ],
-     24
+     26
     ],
     [
      1,
      [
-      0.7,
-      -1.9,
-      0.25
+      0.9,
+      0.2,
+      0.5
      ],
      [
-      -0.4,
-      -3.4,
-      0.14
+      -0.3,
+      -2.7,
+      0.32
      ],
-     24
+     26
     ]
    ],
    "hand": 0.004,
@@ -3648,12 +3647,12 @@
      [
       1005.0,
       4.3,
-      5.3
+      5.25
      ],
      [
       1001.7,
       3.95,
-      5.15
+      5.05
      ],
      24
     ]
@@ -8425,13 +8424,13 @@
    "name": "shrug",
    "pos": [
     1001.7,
-    4.7,
+    4.95,
     3.69
    ],
    "yaw": 90,
    "u": 0.0,
    "head": -90,
-   "lean": 50,
+   "lean": 42,
    "tilt": -6,
    "dur": 2.6
   },
@@ -8440,13 +8439,13 @@
    "name": "shrug",
    "pos": [
     1001.7,
-    4.55,
+    5.0,
     3.69
    ],
    "yaw": 90,
    "u": 0.0,
    "head": -90,
-   "lean": 54,
+   "lean": 44,
    "tilt": -6
   },
   {
@@ -8695,11 +8694,11 @@
    "id": "mglove",
    "pos": [
     300.0,
-    34.5,
-    0.3
+    34.35,
+    0.16
    ],
    "rot": [
-    -60,
+    -75,
     0,
     0
    ]
@@ -8710,7 +8709,22 @@
    "id": "mglove",
    "pos": [
     300.0,
-    34.65,
+    34.35,
+    0.065
+   ],
+   "rot": [
+    -90,
+    0,
+    0
+   ]
+  },
+  {
+   "at": "L68.4+1.2",
+   "name": "prop",
+   "id": "mglove",
+   "pos": [
+    300.0,
+    34.35,
     0.065
    ],
    "rot": [
