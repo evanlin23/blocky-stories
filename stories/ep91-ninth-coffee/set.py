@@ -936,8 +936,8 @@ def animate(kit, story, tl, t, ctx):
             dx, dy = s["x"] - cl[0], s["y"] - cl[1]
             nrm = max(1e-6, math.hypot(dx, dy))
             rx, ry = dy / nrm, -dx / nrm
-            ctx["tclights"][who].location = (s["x"] + rx * 0.9 - dx / nrm * 0.2, s["y"] + ry * 0.9 - dy / nrm * 0.2, 1.85)
-            ov[f"tcglow_{who}"] = 5.0
+            ctx["tclights"][who].location = (s["x"] + rx * 0.8 - fx * 0.9, s["y"] + ry * 0.8 - fy * 0.9, 2.2)
+            ov[f"tcglow_{who}"] = 6.0
     if side:
         ov["sun"] *= 0.25
         ov["roomfill"] *= 0.3
