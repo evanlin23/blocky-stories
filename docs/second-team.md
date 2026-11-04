@@ -3,39 +3,27 @@
 Status only, one line per item. The second orchestrator keeps it. Messages between the orchestrators go in issue
 #177 ("Orchestrator channel"). Times are US Central.
 
-**Last updated:** Tue 2026-11-03, 11:25 PM Central. The second team owns most story work and every final qa except
+**Last updated:** Wed 2026-11-04, 8:45 AM Central. The second team owns most story work and every final qa except
 closing-time and mirror-maze (owner-approved). Its own usage limit resets Thursdays 8:00 AM Central. Every session
-was told at about 4:20 PM to merge the latest main before it judges anything (owner and #1).
+was told at about 4:20 PM Tuesday to merge the latest main before it judges anything (owner and #1).
 
 | Item | Status | Ready for queue | PR | Next |
 |---|---|---|---|---|
-| final-film qa desk | working | n/a | per film | ep42 and ep48 finals as they land |
-| ep42-barber-chair (count) | merged, proof qa passed, final qa passed | **yes** | #172, #237 | #1 queues it |
-| ep48-crazy-golf (confess) | merged, proof qa passed under the near band (#201) | not yet | #173 | final render, then final qa |
-| ep55-caravan-park (must) | merged, proof qa passed, final qa passed | **yes** | #174, #233 | #1 queues it |
-| warm-shoes (confess) | final qa FAILED: S112 head through a tree canopy (one clip) | no | #238 | one-shot fix, re-proof; a second fail drops it |
-| ep62-six-riders (revival) | merged | not yet | #207 | final render, then final qa |
-| ep92-blackout-ben, ep96-friend-card (batch 9) | merged, proof qa passed | not yet | #232, #231 | final render, then final qa |
-| ep89-sister-diary (batch 8) | revived for one fix (two black shots); standards approved it | no | #236 | proof, proof qa |
-| floor-thirteen (if) | merged, proof qa passed, final qa passed | **yes** | #188, #228 | #1 queues it |
-| dryer-nine (cost) | revived for one fix (S54 too dark) | no | #198 | critic look, proof, proof qa; a fail drops it for good |
-| ep51-fossil-hall (confess) | revived for one fix (two staging fixes) | no | #199 | critic look, proof, proof qa; a fail drops it for good |
-| every-lock (count) | reviews | no | none yet | reviews r1 and r2 |
-| ep49-car-wash (must) | last review round | no | none yet | review r9 is the last |
-| ep45-bee-yard (count) | both reviews approve | no | #213 | proof qa, merge |
-| ep53-car-boot (cost) | revived for one fix (three r6 craft fixes) | no | none yet | critic look, PR, proof qa; a fail drops it for good |
-| ep50-beach-huts (if) | r5 fixes | no | none yet | review r6 is the last |
-| ep52-ferry-crossing (if) | PR open | no | #223 | proof, proof qa |
-| rule-three (cost) | final qa passed (film 13285412545) | yes (in #1's queue) | #227 | upload |
-| ep47-fitting-room (#1's queue) | final qa passed (film 13282116306) | yes (in #1's queue) | #230 | Wednesday's second slot |
-| moving-day (#1's queue) | final qa FAILED on pace (11.2 against 12.5, 10.9 against 14.0) | no | none yet | one fix session (from 9:19 PM): a proof must clear pace before a new final |
-| batch 7 builds: ep81-eleven-steps, ep82-no-door, ep83-free-fries | reviews | no | none yet | reviews, proof |
-| batch 8 builds: ep85-early-alarm, ep86-aunts-keys, ep88-six-paintings, ep89-sister-diary, ep91-ninth-coffee | building; ep91 has a PR | no | #225 (ep91) | reviews, proof |
-| batch 9 builds: ep92-blackout-ben, ep93-recipe-card, ep94-today-again, ep95-corn-maze, ep96-friend-card, ep97-prize-bears, ep98-town-whistle, ep99-statue-years, ep100-window-bridges | building (from 4:21 PM) | no | none yet | creature still, build, reviews |
-| revival: ep58-swing-bridge (craft fixes) | working | no | none yet | 2 review rounds, proof |
-| revivals: ep26-last-skate, ep46-choir-hall (new reveals) | working | no | none yet | 2 review rounds, proof |
-| revivals: ep32-sitter, night-mower, ep43-reading-room (triage picks) | working | no | none yet | 2 review rounds, proof |
-| dropped today | ep41 (5 rounds), ep71 and ep84 (round 2), ep80, ep87, ep90 and the ep34 revival (creature test x3) | no | none | recorded on main and in HANDOFF.md |
+| ready for queue (second team) | merged, proof qa passed, final qa passed: ep42, ep48, ep54, ep55, ep62, ep89, ep92, ep96, ep98, warm-shoes | **yes** | per story | #1 queues them |
+| ready for queue (#1's) | ep47 and ep28 | **yes** | #230 (ep47) | #1 queues them |
+| uploaded | mirror-maze, closing-time, rule-three, floor-thirteen | n/a | per story | none |
+| dropped 9:12 AM Wed: moving-day | the last-chance fix passed pace on the preview, but critic r12 still said revise on S36b | no | none | held on main; #1 removes it from queue.txt |
+| ready for queue: ep99-statue-years | final qa passed (#271) | yes | #259 | #1 queues it |
+| last-chance round: ep83-free-fries | critic r3 approved; proof queued | no | #265 | proof qa, merge |
+| merged 11:20 AM Wed: ep94-today-again | critic r3 approved, proof qa passed; final next | no | #269 | final qa |
+| dropped 10:39 AM Wed: ep97-prize-bears | critic r3 and standards approved, but the proof failed flash (7 a second at 45.1 s, the swinging closet bulb) | no | #267 closed | folder deleted |
+| batch 10 (ep101 to ep107) | 5 building (ep101, ep102, ep103, ep105, ep107); ep104 and ep106 dropped at the creature test | no | #264 scripts | reviews, proofs |
+| batch 11 (ep108 to ep114) | writer started 10:06 AM Wed | no | none yet | builds after the Thursday 8 AM reset |
+| audit and rewrite plan | open | n/a | #258 | review and merge |
+| QA desk | working | n/a | per film | checks finals as they land |
+| dropped | batch 7: ep81-eleven-steps, ep82-no-door; batch 8: ep85-early-alarm, ep86-aunts-keys, ep88-six-paintings, ep91-ninth-coffee (#225 closed); batch 9: ep93-recipe-card, ep95-corn-maze, ep100-window-bridges | no | none | recorded in stories/ideas.md and each package.json hold |
+| dropped (revivals and fix rounds) | ep58-swing-bridge (#244 closed), dryer-nine (#198), ep45-bee-yard (#213), ep49-car-wash, ep50-beach-huts, ep51-fossil-hall (#199), ep52-ferry-crossing (#223), ep53-car-boot, every-lock; revivals of ep26-last-skate, ep32-sitter, ep43-reading-room, ep46-choir-hall | no | none | recorded in stories/ideas.md and each package.json hold |
+| dropped earlier | ep41 (5 rounds), ep71 and ep84 (round 2), ep80, ep87, ep90, the ep34 revival (creature test x3), night-mower | no | none | recorded on main and in HANDOFF.md |
 | creature lab and round 2 | done: nothing passed; no CC0 meshes (owner: "Do whatever you think is best"); the playbook is in writer.md and builder.md | n/a | #220, #224, #221 | ep87 and ep71 stay dropped |
 | pace near-miss band (owner) | merged | n/a | #201 | none |
 | render: lanes (32 shards) and no-waste | merged; run 106 drew 64 shards at once in about 45 min | n/a | #202, #203 | after #222, a run that reuses run 106's shards |
