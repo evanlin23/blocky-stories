@@ -288,7 +288,7 @@ def build_band(kit):
     glove = plastic("#ece9de", 0.6)
     brass = plastic("#d9a62e", 0.28, spec=0.9)
     brass2 = plastic("#e8c050", 0.28, spec=0.9)
-    eye = kit.emit("#fff0b0", 14.0, "bandeye")
+    eye = kit.emit("#ffe9a0", 90.0, "bandeye")
     W["pl"] = []
     for i, x in enumerate(G.BAND_X):
         n = f"pl{i}"
@@ -322,7 +322,7 @@ def build_band(kit):
         P["brimh"] = brimh
         e = []
         for sx in (-1, 1):
-            e.append(kit.sphere(f"{n}.eye{sx}", 0.022, (sx * 0.07, -0.152, 0.2), eye, head, seg=8))
+            e.append(kit.sphere(f"{n}.eye{sx}", 0.045, (sx * 0.075, -0.158, 0.2), eye, head, seg=8))
             e[-1].hide_render = True
         W[f"{n}.eyes"] = e
         P["neck"], P["head"], P["body"] = neck, head, body
@@ -458,9 +458,14 @@ def build(kit, story, tl):
     kit.aim(fill, (0, 0, 0))
     for k, (x, y) in enumerate([(-6, -5), (6, -5), (0, 0), (-6, 3), (6, 3), (0, 6)]):
         kit.light(f"bulb{k}", "POINT", (x, y, 3.2), 1.0, "#ffd890", size=0.4, shadow=False)
-    kit.light("stage", "POINT", (0, G.STAGE[1] + 1.4, 3.1), 1.0, "#ffe2a8", size=0.6, shadow=False)
-    rim = kit.light("rim", "SPOT", (0, G.STAGE[1] + 3.2, 3.3), 1.0, "#fff0cc", spot=100, blend=0.5, shadow=False)
+    kit.light("stage", "POINT", (0, G.STAGE[1] + 1.4, 3.1), 1.0, "#ffe2a8", size=0.03, shadow=False)
+    rim = kit.light("rim", "SPOT", (0, G.STAGE[1] + 3.2, 3.3), 1.0, "#fff0cc", spot=100, blend=0.5, shadow=False, size=0.03)
     kit.aim(rim, (0, G.STAGE[1] - 2.5, 1.2))
+    # a second rim from behind and above the leader, for the band close-ups (gain 0 elsewhere)
+    rim2 = kit.light("rim2", "SPOT", (0.9, G.STAGE[1] + 2.6, 4.6), 1.0, "#cfe0ff", spot=60, blend=0.4, shadow=False, size=0.03)
+    kit.aim(rim2, (0, G.STAGE[1] - 0.2, 3.3))
+    for nm in ["sun", "fill", "stage", "rim", "rim2"] + [f"bulb{k}" for k in range(6)]:
+        kit.LIGHTS[nm]["obj"].visible_camera = False
     # ------------------------------------------------------------------ ground and roads
     kit.plane("ground", (400, 400), (0, 0, -0.02), lawn2)
     kit.plane("lawn", (20, 24.5), (0, 2.2, 0.0), lawn)
@@ -553,6 +558,9 @@ def _digit(d, n):
 
 # ---------------------------------------------------------------------------------------------- the dance
 BENCH_TARGET = G.BENCH1
+LOWKEY = {"S42", "S43", "S44", "S45", "S46", "S66"}
+TAGMACRO = {"S59"}
+HIDEHORN = {"S43", "S44", "S45", "S46"}
 DANCERS = ["grandpa", "bank", "mail", "sand", "t1", "t2", "t3", "t4", "t5", "t6", "t7"]
 
 
@@ -689,9 +697,11 @@ def band_pose(t, tl):
         h = P["horn"]
         h.location = (0.0 + (1 - p) * 0.46, -0.5 * p - 0.1 * (1 - p), 1.12 * p + 0.2 * (1 - p))
         h.rotation_euler = (-(1 - p) * 1.4, 0, 0)
+        if i == 2 and W.get("sid") in HIDEHORN:   # the bell would sit in front of the face the close-up is about
+            h.location = (0.0, -0.1, -0.9)
         rock = 0.03 * math.sin(beat * t / 2 + ph) * p
         P["body"].rotation_euler = (0.06 + rock, 0, 0.04 * math.sin(beat * t / 4 + ph) * p)
-        P["neck"].rotation_euler = (0.5 + 0.04 * math.sin(beat * t + ph) * p, 0, 0)
+        P["neck"].rotation_euler = (0.5 - (0.34 * b["brim"] if i == 2 else 0.0) + 0.04 * math.sin(beat * t + ph) * p, 0, 0)
         brim = 0.5 - (0.42 * b["brim"] if i == 2 else 0.0)
         P["brimh"].rotation_euler = (brim, 0, 0)
         if i == 2:
@@ -717,11 +727,28 @@ def animate(kit, story, tl, t, ctx):
     for k in range(6):
         gains[f"bulb{k}"] = look["bulbs"]
     gains["stage"], gains["rim"] = look["stage"], look["rim"]
+    shot0 = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
+    sid = shot0["id"]
+    # the band close-ups: no key light, only the rim, and none of the bulbs behind the hat
+    lowkey = sid in LOWKEY
+    gains["rim2"] = 0.0
+    W["sid"] = sid
+    if lowkey:
+        for k in range(6):
+            gains[f"bulb{k}"] = 0.0
+        gains["stage"] = 0.0
+        gains["sun"] = 0.0
+        gains["fill"] = look["fill"] * 0.5
+        gains["rim"] = 600.0
+        gains["rim2"] = 2200.0
+    for ob in W["eave_bulbs"] + W["bulbs"]:
+        ob.hide_render = lowkey
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (*look["sky"], 1.0)
     bg.inputs["Strength"].default_value = look["sky_str"]
     W["disc"].hide_render = look["disc"] < 0.01
+    W["disc"].location = (-14, 170, 9) if look["disc"] >= 0.01 else (-14, 170, -400)
     # the clock and the truck
     ck = sample("clock", tl, t, {"h": 12.0})
     W["hour"].rotation_euler = (0, (ck["h"] % 12) * 30 * D2R, 0)
@@ -761,6 +788,9 @@ def animate(kit, story, tl, t, ctx):
     s = 0.58 * w2
     tag.scale = (s, s, s)
     tag.location = (-0.45 * w2, 0.60 * h2, -dist)
+    if sid in TAGMACRO:   # the footprint row, close: the tag blown up so the seven glyphs fill the width
+        tag.scale = (s * 3.1, s * 3.1, s * 3.1)
+        tag.location = (0.0, 0.38 * h2, -dist)
     # the phone: on my hand (photo) or on my chest (call)
     pv = sample("phone", tl, t, {"where": 0.0, "screen": 0.0, "x": 0.0, "y": 0.0, "z": 0.0, "rot": 0.0, "lie": 0.0, "tilt": 0.0})
     ph = W["phone"]
