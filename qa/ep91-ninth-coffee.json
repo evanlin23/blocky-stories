@@ -1,0 +1,22 @@
+{
+ "stage": "proof",
+ "film": "proof-41748339149",
+ "run": 41748339149,
+ "sha": "25c33d63828495b76b3bcbd78496a485dffe3905",
+ "verdict": "fail",
+ "date": "2026-11-04",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "opening recipe",
+  "audio",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening variety"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 18.7 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 29.3 | 14.0– | ok |\n| macro.motion_energy_q | 11.43 | 6.0– | ok |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 12.6 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.01 | –0.25 | ok |\n| spec.shot_p90_s | 1.33 | –2.5 | ok |\n| macro.longest_still_s | 0.1 | –1.5 | ok |\n| macro.motion_energy_mean | 4.62 | 1.5– | ok |\n| spec.camera_move_share | 0.999 | 0.65– | ok |\n| spec.punch_per_10s | 0.75 | 0.4– | ok |\n| macro.brightness_mean | 0.637 | 0.35– | ok |\n| macro.brightness_first_3s | 0.624 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.297 | 0.42– | **warn** |\n| macro.contrast_mean | 0.243 | 0.18– | ok |\n| spec.face_big_share | 0.418 | 0.4– | ok |\n| spec.caption_share | 0.979 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.471 | 0.5– | **warn** |\n| micro.walk_dead_end_share | 0.1 | –0.25 | ok |\n| micro.idle_window_share | 0.02 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 90.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.12 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0012 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.2 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.9 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.04 | –0.08 | ok |\n| sound.hf_jump_max | 0.011 | –0.04 | ok |",
+ "notes": "Proof 80.1 s, 270x480 drawn at sha 25c33d6 (branch tip, no later commit touches the story), timeline matches (102 shots). -14.2 LUFS / -1.9 dBTP, LRA 1.2, 4 kHz windows clean (max 0.04, jump 0.011), voice 10.6 dB over the bed, silence 0.1%. Flash house bar passes (2/s, 3f 5/s at 39.5 s is a warning only, red 0). Polish on. Gate OPEN. Package clean, no spoiler, no 'husband'.\nSecond one: a steaming takeaway cup on a desk in front of a monitor of sticky notes, x512 cup badge top right, slow push; 'Every coffee makes you twice as fast.' by 1.5 s, 'I've had NINE.' poses the threat; no face until the coworker at 4 s.\nFIX 1 (critic's worry confirmed): S41-S43 36.2-38.0 s and S45 38.7-39.5 s, streak.760 behind tc1 is a stack of hard-edged flat cyan slabs that hold still beside the walker; at 37.5-38.25 s (S43, 'TWICE as fast') the frame is a wall of panes with the figure a sliver at the right. Reads as glass panes or frosted dividers, not speed, at the ten-cuppers reveal. Taper and fade the trail along its length, soften the edges, shorten it and let it shrink after the figure.\nFIX 2: S61-S62 55.9-56.8 s ('He was never too busy for me'), streak.765 is one still flat cyan pane covering the left half of the frame beside seated Kai; same at S60 55.0-55.3 s. Fade or drop it while he sits.\nFIX 3: cover_s 51.5 lands on S51 with the 'KAI.' caption across his face and a pane behind him; move to about 50.5 s (S51 'at my DESK' close-up, glasses and face clear) or 68.0 s.\nClips: all 65 hits are figures against their own streaks (tc1-tc5 S41-S51, kai S60-S83), no head through a prop; the problem is how the streaks look (fixes 1 and 2). S46-S51 39.7-42.7 s wide trails read as blur and are fine.\nOtherwise faces, captions and HUD read at phone and TV size, no black, frozen or stray-text frames. Opening 'whatif' fits the what-if power lane (doubling rule, experiment lane); last upload closing-time is 'must', ep49-car-wash untagged: no neighbour clash.\ncraft: 0 block, 0 near, 3 warn: spec.cuts_per_10s 12.6 (5.5-8.0), macro.saturation_mean 0.297 (0.42-), micro.character_motion_shot_share 0.471 (0.5-). Pace well clear of every block (18.7 and 29.3 changes per 10 s, motion 11.43, longest still 0.0 s)."
+}
