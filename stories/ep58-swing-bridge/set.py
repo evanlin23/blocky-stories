@@ -530,8 +530,8 @@ def build_bedroom(kit, ctx):
         kit.box(f"bd_w{sx}", (0.2, 6, 3), (X + sx * 3, 2, 1.5), kit.plastic("#5a5a68", 0.9))
     kit.box("bd_bed", (2.2, 2.4, 0.5), (X, 2.6, 0.25), kit.plastic("#7a6a5a", 0.8), bevel=0.04)
     kit.box("bd_head", (2.4, 0.15, 1.1), (X, 3.9, 0.55), kit.plastic("#5a4330", 0.7))
-    kit.box("bd_pillow1", (0.8, 0.45, 0.14), (X - 0.55, 3.55, 0.57), kit.plastic("#cfd2d8", 0.9), bevel=0.05)
-    kit.box("bd_pillow2", (0.8, 0.45, 0.14), (X + 0.55, 3.55, 0.57), kit.plastic("#cfd2d8", 0.9), bevel=0.05)
+    kit.box("bd_pillow1", (0.8, 0.3, 0.1), (X - 0.55, 3.72, 0.55), kit.plastic("#cfd2d8", 0.9), bevel=0.05)
+    kit.box("bd_pillow2", (0.8, 0.3, 0.1), (X + 0.55, 3.72, 0.55), kit.plastic("#cfd2d8", 0.9), bevel=0.05)
     kit.box("bd_blanket", (2.1, 1.6, 0.14), (X, 1.9, 0.55), kit.plastic("#3a4a6a", 0.9), bevel=0.05)
     kit.box("bd_win", (1.2, 0.05, 1.4), (X + 1.8, -0.88, 1.6), kit.emit("#3a4c78", 0.6))
 
