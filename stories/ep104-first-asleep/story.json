@@ -1,0 +1,27 @@
+{
+  "slug": "ep104-first-asleep",
+  "title": "Whoever Sleeps FIRST Picks Our Nightmare",
+  "made_for_kids": false,
+  "premise": "creature test only",
+  "twist": "creature test only",
+  "world": "a moonlit driveway under a purple sky",
+  "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
+  "key_color": "#b79cff",
+  "gap": 0.12,
+  "tail": 0.25,
+  "min_read": 0.15,
+  "fade_in": false,
+  "fade_out": false,
+  "look": {"fog": "#2a1f55", "fog_density": 0.012, "fog_start": 8.0, "sky": "#3b2a6b", "exposure": 0.0, "flash_safe": true, "style": "closer"},
+  "grade": {"shadows": [0.0, 0.0, 0.04], "highlights": [0.03, 0.01, -0.02], "saturation": 1.1, "contrast": 1.06, "vignette": 0.2, "bloom": 0.25, "grain": 0.008},
+  "cast": {},
+  "lines": [{"id": "P1", "pause": 3.0, "chunks": [["", ""]]}],
+  "shots": [
+    {"id": "S03b", "cam": [[0, [0.5, -2.2, 1.15], [0.1, 3.9, 1.9], 30], [3, [0.4, -2.0, 1.15], [0.1, 3.9, 1.95], 31]], "step": 2, "note": "creature test"}
+  ],
+  "acting": {},
+  "cues": [],
+  "music": {"root": 40, "mode": "minor", "bpm": 112, "seed": 4, "sections": [{"at": 0, "voices": ["pad"], "energy": 0.4}]},
+  "sound": {"rev": 1, "floor": "concrete", "steps_db": -22},
+  "rev": 1
+}
