@@ -122,8 +122,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "He stayed till ONE.",
-    "he stayed till one."
+    "He stayed",
+    "he stayed"
+   ],
+   [
+    "till ONE.",
+    "till one."
    ],
    [
     "He's never stayed",
@@ -412,8 +416,12 @@
     "back up"
    ],
    [
-    "and went to BED,",
-    "and went to bed,"
+    "and went",
+    "and went"
+   ],
+   [
+    "to BED,",
+    "to bed,"
    ],
    [
     "without a look",
@@ -768,16 +776,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "It came up BACKWARDS,",
-    "it came up backwards,"
+    "It came up",
+    "it came up"
    ],
    [
-    "its face on the back",
-    "its face on the back"
+    "BACKWARDS,",
+    "backwards,"
    ],
    [
-    "of its HEAD.",
-    "of its head."
+    "its face on",
+    "its face on"
+   ],
+   [
+    "the back of",
+    "the back of"
+   ],
+   [
+    "its HEAD.",
+    "its head."
    ]
   ]
  },
