@@ -145,7 +145,7 @@ Each line gives the id, then the caption chunks split with ` / `. The spoken tex
 ## 03 Friday, 3 AM (L16 to L24, about 27 to 45 s)
 - `L16`: So on Friday at THREE, / Dad sat out on the PORCH / and LOOKED.
   - [S16. **REUSE S17**: Dad in his robe heading out, past his shoulder the window with the floodlit lawn and stick. S16b **REUSE S26**: Dad on our porch, facing the lawn. Porch lit to the floods' brightness.]
-- `L17`: The clippings / weren't flying OUT.
+- `L17`: Dad WATCHED / the clippings.
   - [S17. **REUSE S27** over Dad's shoulder: the floodlit lawn, the mower running, the stick.]
 - `L18`: They flew back INTO the blades, / and the grass / got LONGER.
   - [S18. **NEW**: the reversed clippings side-on, the stick in the foreground with grass climbing it. Hit on LONGER.]
