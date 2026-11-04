@@ -3,18 +3,20 @@
 Status only, one line per item. The second orchestrator keeps it. Messages between the orchestrators go in issue
 #177 ("Orchestrator channel"). Times are US Central.
 
-**Last updated:** Tue 2026-11-03, 8:25 PM Central. The second team owns most story work and every final qa except
+**Last updated:** Tue 2026-11-03, 11:25 PM Central. The second team owns most story work and every final qa except
 closing-time and mirror-maze (owner-approved). Its own usage limit resets Thursdays 8:00 AM Central. Every session
 was told at about 4:20 PM to merge the latest main before it judges anything (owner and #1).
 
 | Item | Status | Ready for queue | PR | Next |
 |---|---|---|---|---|
 | final-film qa desk | working | n/a | per film | ep42 and ep48 finals as they land |
-| ep42-barber-chair (count) | merged, proof qa passed | not yet | #172 | final render, then final qa |
+| ep42-barber-chair (count) | merged, proof qa passed, final qa passed | **yes** | #172, #237 | #1 queues it |
 | ep48-crazy-golf (confess) | merged, proof qa passed under the near band (#201) | not yet | #173 | final render, then final qa |
-| ep55-caravan-park (must) | merged, proof qa passed | not yet | #174 | final render, then final qa |
-| warm-shoes (confess) | merged, proof qa passed | not yet | #205 | final render, then final qa |
+| ep55-caravan-park (must) | merged, proof qa passed, final qa passed | **yes** | #174, #233 | #1 queues it |
+| warm-shoes (confess) | final qa FAILED: S112 head through a tree canopy (one clip) | no | #238 | one-shot fix, re-proof; a second fail drops it |
 | ep62-six-riders (revival) | merged | not yet | #207 | final render, then final qa |
+| ep92-blackout-ben, ep96-friend-card (batch 9) | merged, proof qa passed | not yet | #232, #231 | final render, then final qa |
+| ep89-sister-diary (batch 8) | revived for one fix (two black shots); standards approved it | no | #236 | proof, proof qa |
 | floor-thirteen (if) | merged, proof qa passed, final qa passed | **yes** | #188, #228 | #1 queues it |
 | dryer-nine (cost) | revived for one fix (S54 too dark) | no | #198 | critic look, proof, proof qa; a fail drops it for good |
 | ep51-fossil-hall (confess) | revived for one fix (two staging fixes) | no | #199 | critic look, proof, proof qa; a fail drops it for good |
@@ -25,6 +27,8 @@ was told at about 4:20 PM to merge the latest main before it judges anything (ow
 | ep50-beach-huts (if) | r5 fixes | no | none yet | review r6 is the last |
 | ep52-ferry-crossing (if) | PR open | no | #223 | proof, proof qa |
 | rule-three (cost) | final qa passed (film 13285412545) | yes (in #1's queue) | #227 | upload |
+| ep47-fitting-room (#1's queue) | final qa passed (film 13282116306) | yes (in #1's queue) | #230 | Wednesday's second slot |
+| moving-day (#1's queue) | final qa FAILED on pace (11.2 against 12.5, 10.9 against 14.0) | no | none yet | one fix session (from 9:19 PM): a proof must clear pace before a new final |
 | batch 7 builds: ep81-eleven-steps, ep82-no-door, ep83-free-fries | reviews | no | none yet | reviews, proof |
 | batch 8 builds: ep85-early-alarm, ep86-aunts-keys, ep88-six-paintings, ep89-sister-diary, ep91-ninth-coffee | building; ep91 has a PR | no | #225 (ep91) | reviews, proof |
 | batch 9 builds: ep92-blackout-ben, ep93-recipe-card, ep94-today-again, ep95-corn-maze, ep96-friend-card, ep97-prize-bears, ep98-town-whistle, ep99-statue-years, ep100-window-bridges | building (from 4:21 PM) | no | none yet | creature still, build, reviews |

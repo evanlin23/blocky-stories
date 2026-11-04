@@ -475,7 +475,7 @@ sfx = [
     {"at": "L16", "kind": "creak", "db": -12, "dur": 1.6},
     {"at": "L16.1", "kind": "creak", "db": -10, "dur": 1.8},
     {"at": "L21.1", "kind": "bell", "db": -24, "dur": 1.0},
-    {"at": "L23.1", "kind": "glitch", "db": -14, "dur": 0.5},
+    {"at": "L23.1", "kind": "glitch", "db": -26, "dur": 0.5},
     {"at": "P01+0.45", "kind": "thud", "db": -6, "keep": True},
     {"at": "L29", "kind": "bell", "db": -20, "dur": 1.6},
     {"at": "L29.2", "kind": "bell", "db": -20, "dur": 1.6},
@@ -497,6 +497,8 @@ sfx = [
     {"at": "L73.3", "kind": "creak", "db": -14, "dur": 1.2},
 ]
 story = {
+    "rev": 4,
+    "clip_ok": ["S04/c1", "S04/d1", "S04/c2", "S05/c1", "S05/d1", "S05/c2", "S90/ros", "S90/me"],
     "slug": "ep54-dance-hall",
     "title": "Someone has the other half of my mark",
     "made_for_kids": False,
@@ -507,7 +509,7 @@ story = {
     "key_color": "#ffcf66",
     "gap": 0.12,
     "tail": 0.25,
-    "look": {"fog": "#c9d8e4", "fog_density": 0.012, "fog_start": 14.0, "sky": "#8fc6ea", "exposure": 0.0, "flash_safe": True},
+    "look": {"fog": "#c9d8e4", "fog_density": 0.012, "fog_start": 14.0, "sky": "#8fc6ea", "exposure": 0.0, "flash_safe": True, "polish": True},
     "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.04, 0.02, -0.03], "saturation": 1.0,
               "contrast": 1.05, "vignette": 0.3, "bloom": 0.45, "grain": 0.01},
     "phonemes": {"her": "hˈɜɹ"},
