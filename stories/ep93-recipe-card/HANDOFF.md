@@ -10,3 +10,14 @@
     and L71 was restored. Expected length is about 124 s.
 - Now: one fresh builder applying all r1 build must-fixes. Next is round 2 (the last): critic and standards both
   said revise, so both re-run.
+
+## Fix round 1 progress
+- Restart 2: plan.py/set.py/cards.py already had most r1 edits; REV bumped to 4, make_story rerun, full voice re-run started (check voice-timings L71 chunks).
+- voice done: 123.5 s, 156 shots.
+- asr fixed (tempo/commas, asr_forgive old's), L71 caption 'nineteen year old's'; clip S018 camera moved. Next: stills + preview.
+- stills of 0-29 s checked ok; preview render started (render --preview --force).
+- preview rendered+mixed (out/work/ep93-recipe-card/ep93-recipe-card-preview.mp4). Next: preflight, measure, frame review.
+- found stale frames in frames-preview (old run mixed in): deleted dir, re-rendering preview clean (log out/ep93/preview5.log).
+- clean preview done; checking flash/preflight.
+- fixed S033/34 (Nell face), S108 (black wedge), S133 reveal two-shot; re-rendering those shots (preview6.log) then finish+mix.
+- r1 done: preview clean, preflight 0 blocks, cover_s 56.8. Report next.

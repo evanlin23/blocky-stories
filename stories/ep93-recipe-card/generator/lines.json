@@ -790,13 +790,14 @@
   "chunks": [
    [
     "Then the card",
-    "Then the card"
+    "Then, the card"
    ],
    [
     "left my HAND.",
     "left my hand."
    ]
-  ]
+  ],
+  "tempo": 1.0
  },
  {
   "id": "L53",
@@ -1056,7 +1057,7 @@
   "chunks": [
    [
     "Now I make it",
-    "Now I make it"
+    "Now, I make it"
    ],
    [
     "every Sunday,",
@@ -1109,14 +1110,15 @@
     "a card just landed"
    ],
    [
-    "in a nineteen-year-old's",
-    "in a nineteen-year-old's"
+    "in a NINETEEN year old's",
+    "in a nineteen year old's"
    ],
    [
     "soup POT,",
     "soup pot,"
    ]
-  ]
+  ],
+  "tempo": 0.93
  },
  {
   "id": "L72",

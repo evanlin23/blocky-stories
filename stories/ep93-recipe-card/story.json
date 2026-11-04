@@ -1,11 +1,14 @@
 {
  "slug": "ep93-recipe-card",
- "rev": 3,
+ "rev": 4,
  "title": "Grandma's Recipe Is In My HANDWRITING",
  "made_for_kids": false,
  "premise": "In a town where the night you finally cook a recipe right its card flies off to whoever needs it most, my grandma's sixty-year-old soup card is in my handwriting, and I've never written it. So I copy it and cook it myself, all spring, until my own card starts tugging toward the window.",
  "twist": "When I finally cook her soup right, my copy flies out the window and lands sixty years back in nineteen-year-old Grandma's soup pot, so she learned it from my card and I learned it from hers: nobody ever invented the soup.",
  "world": "Grandma Nell's butter-yellow kitchen with robin's-egg blue cabinets, a copper pot, a bowl of lemons, a dented tin on a shelf and a framed old photo, in a pink-gold town at dusk.",
+ "asr_forgive": [
+  "old's"
+ ],
  "voice": {
   "voice": "am_adam",
   "tempo": 1.03,
@@ -1178,13 +1181,14 @@
    "chunks": [
     [
      "Then the card",
-     "Then the card"
+     "Then, the card"
     ],
     [
      "left my HAND.",
      "left my hand."
     ]
-   ]
+   ],
+   "tempo": 1.0
   },
   {
    "id": "L53",
@@ -1496,7 +1500,7 @@
    "chunks": [
     [
      "Now I",
-     "Now I"
+     "Now, I"
     ],
     [
      "make it",
@@ -1565,14 +1569,19 @@
      "just landed"
     ],
     [
-     "in a nineteen-year-old's",
-     "in a nineteen-year-old's"
+     "in a NINETEEN",
+     "in a nineteen"
+    ],
+    [
+     "year old's",
+     "year old's"
     ],
     [
      "soup POT,",
      "soup pot,"
     ]
-   ]
+   ],
+   "tempo": 0.93
   },
   {
    "id": "L72",
@@ -2021,8 +2030,8 @@
     [
      0,
      [
-      160.0,
-      -1.0,
+      160.9,
+      0.0,
       1.7
      ],
      [
@@ -2030,7 +2039,7 @@
       -2.4,
       1.7
      ],
-     14.0
+     18.1
     ]
    ],
    "step": 2,
@@ -2399,16 +2408,16 @@
     [
      0,
      [
-      -1.8,
-      -1.0,
-      1.85
+      -2.9,
+      -3.0,
+      1.75
      ],
      [
-      -3.3,
+      -3.0,
       -1.5,
       1.7
      ],
-     20.8
+     19.7
     ]
    ],
    "step": 2,
@@ -2420,12 +2429,12 @@
     [
      0,
      [
-      -2.0,
-      -1.8,
-      1.5
+      -2.4,
+      -2.9,
+      1.6
      ],
      [
-      -3.3,
+      -3.0,
       -1.5,
       1.6
      ],
@@ -4086,16 +4095,16 @@
     [
      0,
      [
-      1.7,
-      1.9,
-      1.3
+      1.8,
+      1.75,
+      1.4
      ],
      [
       1.48,
       2.44,
       0.96
      ],
-     30.4
+     39.5
     ]
    ],
    "step": 2,
@@ -4723,30 +4732,30 @@
     [
      0,
      [
-      1.5,
-      -0.5,
-      1.45
+      1.3,
+      -0.45,
+      1.4
      ],
      [
       3.25,
-      -0.62,
-      1.42
+      -0.5,
+      1.38
      ],
-     20.6
+     15.5
     ],
     [
      1,
      [
-      1.8,
-      -0.55,
-      1.45
+      1.6,
+      -0.5,
+      1.4
      ],
      [
       3.25,
-      -0.62,
-      1.42
+      -0.52,
+      1.38
      ],
-     17.0
+     14.0
     ]
    ],
    "step": 2,
@@ -8748,7 +8757,7 @@
    "pos": [
     2.5,
     -0.4,
-    1.0
+    1.12
    ],
    "rot": [
     0,
@@ -9012,7 +9021,7 @@
  "sound": {
   "floor": "wood",
   "steps_db": -24,
-  "rev": 3,
+  "rev": 4,
   "ambience": [
    {
     "kind": "room",
@@ -9084,6 +9093,11 @@
     "at": "L66",
     "kind": "click",
     "db": -19
+   },
+   {
+    "at": "L69b.2",
+    "kind": "click",
+    "db": -17
    },
    {
     "at": "L53.1",

@@ -202,7 +202,7 @@ S("L07.2", [158.6, -0.8, 1.35], [160.0, -2.0, 1.0], 34)                         
 fly("card_m4", "L07.3", [160.0, -2.3, 1.9], [160.0, -2.3, 1.7], 0.5, (0, 0, 0), (0, 0, 8), 8)
 obj("card_m4", "L07.3+0.6", [160.1, -2.3, 1.7], (0, 0, 4), flutter=10)
 S("L07.3", [159.0, -0.6, 1.7], [160.0, -2.4, 1.7], 34)                                       # S017 something at the window
-S("L07.5", [160.0, -1.0, 1.7], [160.05, -2.4, 1.7], 40)                                      # S018 the card taps the glass
+S("L07.5", [160.9, 0.0, 1.7], [160.05, -2.4, 1.7], 40)                                      # S018 the card taps the glass
 
 # L08 inserts: under a jar, under a magnet, shut in a tin (booth 1)
 hide("gy", at="L08")
@@ -247,8 +247,8 @@ obj("list", "L13", hide=True)
 obj("card_old", "L13", TIN_C, (0, 0, 90))
 put("nell", "L13", [-2.6, -1.55], -90, expr="smile", arms=[0, 70])
 cue("L13.1", "tin", open=0.0, dur=0.5)
-S("L13", [-1.8, -1.0, 1.85], [-3.3, -1.5, 1.7], 44)                                          # S033 the tin's worn paint
-S("L13.1", [-2.0, -1.8, 1.5], [-3.3, -1.5, 1.6], 40)                                         # S034 her hand sets it back
+S("L13", [-2.9, -3.0, 1.75], [-3.0, -1.5, 1.7], 44)                                          # S033 the tin's worn paint
+S("L13.1", [-2.4, -2.9, 1.6], [-3.0, -1.5, 1.6], 40)                                         # S034 her hand sets it back
 
 # L14 Sunday dinner
 hide("nell", at="L14")
@@ -464,7 +464,7 @@ hold_obj("spoon", "L50", "me", arm=1, off=(0.0, -0.1, 0.05), rot=(-50, 0, 0))
 obj("drop", "L50.2", [1.5, 2.44, 1.25], (0, 0, 0))
 obj("drop", "L50.2+0.03", [1.5, 2.44, 0.97], (0, 0, 0), dur=0.5)
 S("L50", [2.3, 1.9, 1.45], [1.45, 2.45, 1.0], -0.7)                                         # S107 a drip falls off my spoon
-S("L50.3", [1.7, 1.9, 1.3], [1.48, 2.44, 0.96], -0.30)                                       # S108 right on top
+S("L50.3", [1.8, 1.75, 1.4], [1.48, 2.44, 0.96], -0.30)                                       # S108 right on top
 obj("drop", "L51", hide=True)
 S("L51", [1.55, 1.95, 1.25], [1.49, 2.44, 0.96], -0.22)                                      # S109 a little boot
 S("L51.1", [1.52, 2.05, 1.1], [1.49, 2.44, 0.96], -0.18)                                     # S110 the fresh stain
@@ -525,8 +525,8 @@ S("P02", [-2.2, -2.6, 1.75], [-3.2, -1.5, 1.95], -0.9, [-2.4, -2.2, 1.85], [-3.1
 # L62 the reveal picture: a close two-shot, her face, the card, the photo, both boot stains
 put("nell", "L62", [2.95, -0.15], -90, expr="soft", arms=[60, 0])
 cue("L62", "tin", open=0.0, dur=0.4)
-obj("card_old", "L62", [2.5, -0.4, 1.0], (0, 0, -90))
-S("L62", [1.5, -0.5, 1.45], [3.25, -0.62, 1.42], -1.15, [1.8, -0.55, 1.45], [3.25, -0.62, 1.42])  # S133 the same card, sixty years apart
+obj("card_old", "L62", [2.5, -0.4, 1.12], (0, 0, -90))
+S("L62", [1.3, -0.45, 1.4], [3.25, -0.5, 1.38], -1.7, [1.6, -0.5, 1.4], [3.25, -0.52, 1.38])  # S133 the same card, sixty years apart
 S("L63", [2.5, -0.95, 1.55], [3.43, -1.0, 1.515], -0.30)                                       # S134 the card in the photo
 S("L64", [1.9, -0.55, 1.0], [2.5, -0.4, 1.0], -0.28)                                           # S135 the card in her hand
 S("P03", [1.9, -0.45, 1.1], [2.5, -0.4, 1.0], -0.5, [2.3, -0.95, 1.45], [3.43, -1.0, 1.515])     # S135b a slow drift from her card to the photo's

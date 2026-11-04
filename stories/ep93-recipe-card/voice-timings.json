@@ -61,59 +61,35 @@
     ]
    ]
   },
-  "L03": {
-   "text": "In this town, the night you finally cook a recipe right,",
+  "L02b": {
+   "text": "Every night at dusk, cards lift out of kitchen windows all over town.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.448,
+   "dur": 3.207,
    "onset": 0.172,
-   "end": 2.259,
+   "end": 3.017,
    "chunks": [
     [
      0.172,
-     0.638
+     0.492
     ],
     [
-     0.664,
-     1.043
+     0.492,
+     0.931
     ],
     [
-     1.043,
-     1.483
+     1.017,
+     1.526
     ],
     [
-     1.483,
-     2.259
-    ]
-   ]
-  },
-  "L04": {
-   "text": "its card flies off to whoever needs it most.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.241,
-   "onset": 0.172,
-   "end": 2.034,
-   "chunks": [
-    [
-     0.172,
-     0.517
+     1.526,
+     2.172
     ],
     [
-     0.517,
-     0.914
-    ],
-    [
-     0.914,
-     1.439
-    ],
-    [
-     1.439,
-     2.034
+     2.172,
+     3.017
     ]
    ]
   },
@@ -1258,22 +1234,22 @@
    ]
   },
   "L52": {
-   "text": "Then the card left my hand.",
+   "text": "Then, the card left my hand.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.569,
+   "dur": 1.655,
    "onset": 0.172,
-   "end": 1.362,
+   "end": 1.448,
    "chunks": [
     [
      0.172,
-     0.534
+     0.638
     ],
     [
-     0.534,
-     1.362
+     0.638,
+     1.448
     ]
    ]
   },
@@ -1318,6 +1294,26 @@
     [
      0.75,
      1.241
+    ]
+   ]
+  },
+  "L54b": {
+   "text": "She didn't look surprised.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     1.172
     ]
    ]
   },
@@ -1654,146 +1650,30 @@
    ]
   },
   "L69": {
-   "text": "Now I make it every Sunday, from memory.",
+   "text": "Now, I make it every Sunday, from memory.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.0,
-   "onset": 0.172,
-   "end": 1.81,
+   "dur": 2.069,
+   "onset": 0.19,
+   "end": 1.879,
    "chunks": [
     [
-     0.172,
-     0.397
+     0.19,
+     0.466
     ],
     [
-     0.397,
-     0.586
+     0.466,
+     0.655
     ],
     [
-     0.586,
-     1.103
-    ],
-    [
-     1.138,
-     1.81
-    ]
-   ]
-  },
-  "L70": {
-   "text": "And sixty years back,",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.362,
-   "onset": 0.155,
-   "end": 1.155,
-   "chunks": [
-    [
-     0.155,
-     0.534
-    ],
-    [
-     0.534,
-     1.155
-    ]
-   ]
-  },
-  "L71": {
-   "text": "a card just landed in a nineteen-year-old's soup pot,",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.466,
-   "onset": 0.172,
-   "end": 2.259,
-   "chunks": [
-    [
-     0.172,
-     0.448
-    ],
-    [
-     0.448,
-     0.897
-    ],
-    [
-     0.897,
-     1.629
-    ],
-    [
-     1.629,
-     2.259
-    ]
-   ]
-  },
-  "L72": {
-   "text": "in my handwriting.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.293,
-   "onset": 0.172,
-   "end": 1.103,
-   "chunks": [
-    [
-     0.172,
-     1.103
-    ]
-   ]
-  },
-  "L02b": {
-   "text": "Every night at dusk, cards lift out of kitchen windows all over town.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.207,
-   "onset": 0.172,
-   "end": 3.017,
-   "chunks": [
-    [
-     0.172,
-     0.492
-    ],
-    [
-     0.492,
-     0.931
-    ],
-    [
-     1.017,
-     1.526
-    ],
-    [
-     1.526,
-     2.172
-    ],
-    [
-     2.172,
-     3.017
-    ]
-   ]
-  },
-  "L54b": {
-   "text": "She didn't look surprised.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.379,
-   "onset": 0.172,
-   "end": 1.172,
-   "chunks": [
-    [
-     0.172,
-     0.37
-    ],
-    [
-     0.37,
+     0.655,
      1.172
+    ],
+    [
+     1.207,
+     1.879
     ]
    ]
   },
@@ -1826,6 +1706,74 @@
     [
      2.224,
      2.759
+    ]
+   ]
+  },
+  "L70": {
+   "text": "And sixty years back,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.155,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.155
+    ]
+   ]
+  },
+  "L71": {
+   "text": "a card just landed in a nineteen year old's soup pot,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 2.621,
+   "onset": 0.19,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ],
+    [
+     0.466,
+     0.914
+    ],
+    [
+     0.914,
+     1.345
+    ],
+    [
+     1.345,
+     1.715
+    ],
+    [
+     1.715,
+     2.414
+    ]
+   ]
+  },
+  "L72": {
+   "text": "in my handwriting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     1.103
     ]
    ]
   }

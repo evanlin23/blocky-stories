@@ -11,7 +11,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
@@ -82,6 +82,7 @@ sfx = [
     {"at": "L24.3", "kind": "click", "db": -19},
     {"at": "L58", "kind": "click", "db": -19},
     {"at": "L66", "kind": "click", "db": -19},
+    {"at": "L69b.2", "kind": "click", "db": -17},            # the tin lid shuts
     {"at": "L53.1", "kind": "creak", "db": -20, "dur": 0.9, "synth": True},
 ]
 music = {
@@ -119,6 +120,7 @@ story = {
               "nobody ever invented the soup."),
     "world": ("Grandma Nell's butter-yellow kitchen with robin's-egg blue cabinets, a copper pot, a bowl of lemons, "
               "a dented tin on a shelf and a framed old photo, in a pink-gold town at dusk."),
+    "asr_forgive": ["old's"],
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ffe14d",
     "gap": 0.12,
