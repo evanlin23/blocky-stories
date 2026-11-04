@@ -1,22 +1,23 @@
 # ep113-moon-lake: the script (writer, 2026-11-04, batch 11)
 
 - **Slug:** `ep113-moon-lake` (batch 11, upload order 6 of 7)
-- **Pitch:** 10 in the batch 11 pitches file (the orchestrator's list calls it 14, and the slug is the same), the sky run by hand, a re-imagining of killed ep85-early-alarm's wonder in a new place with a new mechanic. Opening shape `cost`. Lane: core. Length arm: long (120 to 150 s). **The batch's one full creature reveal** (why, below).
+- **Pitch:** 10 in the batch 11 pitches file (the orchestrator's list calls it 14, and the slug is the same), the sky run by hand, a re-imagining of killed ep85-early-alarm's wonder in a new place with a new mechanic. Opening shape `cost`. Lane: core. Length arm: long (120 to 150 s). **Nothing is shown in full:** the moon is only ever a glow under the water, a reflection, a partial cratered edge at a frame edge, or its light on faces and things (batch 11 is creature-light; why, below).
 - **Title:** Grandma's Lake Glows After NOON 🌙
 - **Changed from the pitch (the panel's note):** the panel said the rule and the moon didn't connect in the first line. Now L01 is the rule and its price, L02 says what's down there ("something GLOWS"), and **L03 names it: "Grandma says / that's the MOON. / It sleeps down there / all DAY."** By 8 s the viewer knows the lake, the rule and the moon are one thing. The cost is said by L04: wake it, and it comes up, whenever you wake it, so a swimmer after noon can pull night down on the whole town in the middle of the afternoon (shown at L23, L24). The climax keeps the pitch's rule logic: swimmers wake it, so when Grandma's oar can't, I swim. The loop is a welcome ("So come on IN, / any MORNING."). Grandma is named Nell.
 - **Everyone is an adult.** I'm 19, Grandma Nell is 81, the lake people are adults.
 - **Revised r1 (standards, 2026-11-04):** lines changed: L01 (a cost line, "Nobody swims / Grandma's lake / after NOON. / It costs the town / its AFTERNOON."), L09 (I help Grandma at the lake every weekend, so there's no one-summer narrator). The premise, S09, the description and the flash notes (1 s ramps, no full-frame white, no moving caustics on S20, S33, S54, S62) changed to match. Not voiced yet, so nothing to re-voice.
 - **Word count:** 539 spoken words in 70 lines (L01 to L70), all `narrator`, plus one 0.7 s music drop before L22.
 - **Estimated length:** about 123.0 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
-- **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright summer: a blue-green lake ringed with pines, a gray wooden dock, Grandma's red rowboat, a white lake house with a screen porch. The afternoon dark (L23 to L28) is a short, eerie dimming of a bright day, never black. The dusk scenes (L30 to L39, L45 to L64) are deep blue, lit from below by the moon's own glow through the water. The moon's light is the brightest thing on screen and never clips to pure white.
-- **Hold:** scripts only (batch 11). Not built, not voiced. The creature test still must pass before anything else is built (RULES, the audit decisions, item 4).
+- **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright summer: a blue-green lake ringed with pines, a gray wooden dock, Grandma's red rowboat, a white lake house with a screen porch. The afternoon dark (L23 to L28) is a short, eerie dimming of a bright day, never black. The dusk scenes (L30 to L39, L45 to L64) are deep blue, lit from below by the moon's own glow through the water. The moon's light (its glow in the water, its reflection, its light on faces) is the brightest thing on screen and never clips to pure white. The moon itself is never seen whole.
+- **Hold:** scripts only (batch 11). Not built, not voiced.
+- **Revised r2 (orchestrator, 2026-11-04, creature-light):** every full creature reveal in batches 9 and 10 failed the phone-size creature test, so batch 11 shows nothing frightening in full. The moon is no longer a full reveal: every shot that showed it whole (S08, S35 to S38, S61 to S64, the lake bed) now shows it by glow, reflection, a partial edge or its effect on people and things. No spoken line changed, so nothing to re-voice; word count and length are the same.
 
 ## Variety table
 The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
 
 | Setting | Creature | First-line type | Ending shape | Kind of warmth |
 |---|---|---|---|---|
-| Grandma's lake, dock and rowboat | the moon asleep on the lake bed (the one full reveal) | `cost` | `inherited-job` | trust, a job handed down |
+| Grandma's lake, dock and rowboat | the moon asleep on the lake bed (never shown whole: glow, reflection, edges) | `cost` | `inherited-job` | trust, a job handed down |
 
 ## The big idea
 **The moon sleeps at the bottom of Grandma's lake every day, and for fifty years she's rowed out at dusk and pushed it back into the sky with her oar. The swimming rule is there because swimmers wake it, and a moon that wakes goes up, whenever it wakes. So when her arms finally can't, the rule's own reason is how I do it: I swim.**
@@ -37,9 +38,9 @@ The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
 - **How the narrator is the exception:** the only one who swims after noon.
 - **The loved one at stake:** my grandma Nell, named "Grandma Nell" at L09 in the same shot as her on the dock.
 - **First real scare (L17 to L28, about 32 to 51 s):** I swim at three, dive, the glow brightens under my hands, something huge rolls over beneath me, and the sky goes dark in the middle of the afternoon.
-- **The full reveal (L34 to L38, about 61 to 70 s, about halfway in):** the moon lifting out from under her boat.
+- **The big beat (L34 to L38, about 61 to 70 s, about halfway in):** the moon lifting out from under her boat, shown only by what it does: the lake swelling and pouring, a cratered edge sliding past the frame's bottom edge, a disc of light climbing up Grandma's face, and its reflection settling over the dock. Never the whole moon.
 - **The climax turns the rule's own logic:** nobody swims after noon because swimmers wake it (L41, L51). So when her oar can't lift it, I swim down and wake it on purpose (L52 to L57). No new magic.
-- **Twist and reveal (L30 to L42):** said plainly (L39: "Grandma's been pushing / the moon up / every night / for fifty YEARS.") over one picture (S37: the moon rising out of the lake with water pouring off its craters, Grandma's red rowboat tiny on the bright water beside it, the oar's silver edge catching the light).
+- **Twist and reveal (L30 to L42):** said plainly (L39: "Grandma's been pushing / the moon up / every night / for fifty YEARS.") over one picture (S37: Grandma's tiny red rowboat on a lake lit pale blue from below, the water around it heaving up and pouring off something under it, her oar's silver edge catching a light that is climbing past her into the sky, and only a sliver of pale cratered edge at the bottom of frame).
 - **How the last 15 seconds turn over the first line:** now we go out together, she rows and I swim. The rule's still the rule, never after noon, unless it's your turn. So come on in, any morning, which runs straight into L01.
 - **The plants a rewatch catches:**
   1. L11: her oar scuffed silver all down one side.
@@ -67,7 +68,7 @@ The moon sleeps at the bottom of the narrator's grandma's lake all day, nobody m
 - **The lake:** round, blue-green, ringed with pines, a little sandy beach and a swim float, a long gray wooden dock off Grandma's lawn, a red rowboat with white oars tied at the end.
 - **Grandma's house:** white with a green screen porch, a breakfast table by the window, a coffee pot.
 - **The neighbors:** three more docks around the lake, swimmers in bright suits, an old man fishing.
-- **The lake bed (seen only at L20 to L22 and L53 to L57):** pale sand in a wide bowl, the moon filling it bank to bank.
+- **The lake bed (seen only at L20 to L22 and L53 to L57):** pale sand in a wide bowl lit from below by a glow too wide to see the edges of. Only a close patch of cratered surface (under my hands) or one curve running off both frame edges is ever seen, never the whole shape.
 - **No text anywhere:** the tag carries glyphs. Nothing on the dock or boat has lettering.
 - **What's true underneath (never said):** nobody knows why the moon sleeps in this lake. It just does, and someone has always rowed out to lift it. Grandma took the oar from someone before her, and nobody says who.
 
@@ -77,20 +78,20 @@ The moon sleeps at the bottom of the narrator's grandma's lake all day, nobody m
 - Lake people (adults): swimmers, the old man fishing, the coffee neighbor.
 Every word is the narrator's. L03, L12, L14 and L29 are reported or quoted.
 
-## The creature (the moon: the batch's one full reveal)
-**Why a full reveal is worth it here (RULES, the audit decisions, item 4):** the whole story is a wonder that turns, and its one picture is the moon rising out of a lake under a little red boat. A cropped or hidden moon would leave the big idea unsaid on screen. It's also the safest full reveal we can make: it isn't a person shape, so none of the robot, mascot, dummy or costume failures apply, and it lights itself, so the under-light and the dark pocket come for free.
+## The creature (the moon: never shown whole)
+**Creature-light (RULES, the 2026-11-04 owner note, item 4; batch 11 orchestrator note):** every full reveal in batches 9 and 10 failed the phone-size creature test, so the moon is never seen whole. It is only ever: a glow under the water, its reflection on the lake, a partial cratered edge running off a frame edge, my two hands on a close patch of its surface, or its effect on people and things (the afternoon dimming, the dial lighting, pale light on faces from below, water heaving and pouring, the boat lifted, the oar scuffed silver). The big idea still lands on screen because the light does the telling: the glow under the boat, then a disc of moonlight climbing out of the lake, up Grandma's face and into the sky over the dock.
 
-`docs/research/creature-playbook.md` section 2, applied while writing:
-- **Wrong silhouette (rule 1):** a sphere far too big for the lake, filling the lake bed bank to bank, half under the water. At a glance it's the moon. Check: could it read as a beach ball, golf ball, snowball, egg or lamp? Only if it's smooth, white and small, so it's never smooth (deep uneven craters on every visible part), never pure white (pale gray-cream), and never small in frame (it always fills a third of the frame or more, or runs off its edges).
-- **What's "stretched" (rule 2, adapted):** its size. It's as wide as Grandma's house and wider than the lake's swim area, so it's wrong for where it is, not for what it is.
-- **Scale proof in the reveal shot (rules 3 and 13):** S37: Grandma's red rowboat, a 3 m boat with her in it, tiny on the bright water beside the rising curve, and the dock posts in the foreground. S61: our boat sitting on its top as it lifts, the two of us small on it.
-- **The one lit identity cue (rule 12):** its craters, lit by its own glow with soft shadow inside each one. It reads as the moon in half a second.
-- **Light (rule 5):** it lights itself, from below everything else. Every face near it is lit from below by it, pale blue-white. A cold rim of lake water runs round its edge as it rises. No warm front light on it, ever.
-- **Dark space (rule 6):** the dusk lake and sky around it are deep blue, so its outline reads against them.
-- **Eyes and mouth (rules 7, 8, 15):** none. The craters must never form a face. The builder checks the test still at 390 px for any two craters plus one below reading as eyes and a mouth, and moves craters until nothing does. It "breathes" only as a slow swell of its glow and the water lifting over it (L55), never a face or a mouth.
+`docs/research/creature-playbook.md` section 2, applied while writing (to the parts we do show):
+- **Wrong silhouette (rule 1):** no silhouette is ever shown. What we see is wrong in size: one pale cratered curve running off both frame edges (S22), wider than the frame can hold. Check: no shot frames a round, whole, small white shape, so it can't read as a beach ball, golf ball, snowball, egg or lamp.
+- **What's "stretched" (rule 2, adapted):** its size. The curve is wider than Grandma's house (L22), so it's wrong for where it is.
+- **Scale proof (rules 3 and 13):** S22: me tiny above the curve that runs off both edges. S37: Grandma's red rowboat, a 3 m boat with her in it, small on water heaving up around it, the dock posts in the foreground. S61: our boat lifted on a swell of pouring water, only a sliver of pale edge under its keel.
+- **The one lit identity cue (rule 12):** craters, seen only in part (under my hands at S54, along the edge at S22 and S36), lit by its own glow with soft shadow inside each one. And its reflection on the lake is always the moon's reflection, a soft pale disc broken by ripples.
+- **Light (rule 5):** it lights from below everything else. Every face near it is lit from below, pale blue-white. No warm front light on it, ever.
+- **Dark space (rule 6):** the dusk lake and sky are deep blue, so the glow and the edge read against them.
+- **Eyes and mouth (rules 7, 8, 15):** none. No patch of craters we show may form a face; the builder checks every crater patch at 390 px. It "breathes" only as a slow swell of its glow (L55).
 - **Materials (rule 9):** matte pale gray-cream `#d9d4c7` with darker crater floors `#9c968a`, a cold blue rim `#9fd2ff`. Not soft white, not shiny.
-- **Pose (rule 10):** tilted, so the craters on its top face us at an angle, never square-on like a dish. Never seen moving fast: it rises slowly, between cuts.
-- **Where it is in each beat:** L02 a pale glow under the water at the dock (part). L08 rising over the dock in the sky, small and ordinary, as the moon looks every night. L20 the glow brightening under my hands (part). L21, L22 one huge pale curve rolling below me in the murk (part, half in shadow). L27 the glow sinking and dimming. L31 to L33 the glow under her boat. **L34 to L38 the one full reveal: it rises out from under her boat, water pouring off, and floats into the sky over the dock.** L47 to L49 the glow under the boat, not moving. L53 to L57 the glow below me as I swim down, my hands on its surface (part). L58 to L64 it rises again under our boat and goes up over the dock (the second time we see it whole, in the same rising pose as L35, so it reads as the same thing). Never touches anyone except my two hands on its surface at L54.
+- **Never seen moving fast:** the glow and the water rise slowly, between cuts.
+- **Where it is in each beat:** L01, L02 a pale glow under the water at the dock (glow). L08 its reflection on the night lake right off Grandma's dock, and moonlight on the dock boards (reflection, effect; the sky moon stays out of frame). L20 the glow brightening under my hands (glow). L21, L22 one huge pale curve rolling below me in the murk, running off both frame edges, mostly in shadow (partial edge). L23, L24 the afternoon dimming and the dial lighting (effect). L27 the glow sinking and dimming. L31 to L33 the glow under her boat, light on her face. **L34 to L38: the rise, by effect only:** the lake swelling, water pouring off a cratered edge at the frame's bottom, a disc of light climbing past the boat and up Grandma's face, then its reflection settling on the water over the dock. L47 to L49 the glow under the boat, not moving, no reflection on the dark lake. L53 to L57 the glow below me, my hands on a close patch of its surface (partial). L58 to L64 the rise again, by effect: the lake bulging, our boat lifted on pouring water with moonlight from below on our faces, then the reflection back over the dock. Never touches anyone except my two hands at L54.
 
 ## Palette
 - Lake blue-green `#1fa6a0`, pine green `#2f6b3a`, dock gray `#9a9187`, rowboat red `#e0453a`, moon cream `#d9d4c7`, crater gray `#9c968a`, moon rim blue `#9fd2ff`, dusk blue `#24346b`, summer sky `#5ab8ff`.
@@ -119,7 +120,7 @@ Times are estimates at 290 wpm with 0.15 s gaps. Every line gets one to three sh
 | S05a, S05b | L05 | (a) Swimmers climbing out in a line at the beach. (b) A wristwatch at 11:59. |
 | S06 | L06 | Under water: a school of fish swimming toward the glow. |
 | S07a, S07b | L07 | (a) A neighbor dipping a coffee pot in the lake. (b) Steam from her mug. |
-| S08a, S08b | L08 | (a) Night: the moon rising over the lake, small and ordinary. (b) Right over Grandma's dock. Plant 2. |
+| S08a, S08b | L08 | (a) Night: the moon's reflection, a soft pale disc on the dark lake, the sky moon out of frame. (b) Moonlight falling on Grandma's dock boards, the reflection just off its end. Plant 2. |
 | S09 | L09 | A Saturday morning: Grandma Nell on her dock waving me in as I come down the lawn with my bag, `smile`. |
 | S10a, S10b | L10 | (a) Grandma tying on her visor. (b) Grandma rowing out at dusk. |
 | S11 | L11 | Close: her white oar, scuffed silver all down one side. Plant 1. |
@@ -133,8 +134,8 @@ Times are estimates at 290 wpm with 0.15 s gaps. Every line gets one to three sh
 | S19 | L19 | Me diving down. |
 | S20 | L20 | Under water: my hands spread over a pale glow that brightens under them over 1 s (steady under-glow, no moving caustics). |
 | (drop) | | 0.7 s: voice and room only. My face under water, eyes wide. |
-| S21 | L21 | Under water: a huge pale shape rolling slowly below me, mostly in shadow. |
-| S22 | L22 | One vast curve of craters, rim-lit, running off both edges of frame, me tiny above it. |
+| S21 | L21 | Under water: pale light sliding past below me as something rolls, mostly in shadow; only a dim curved edge at the bottom of frame. |
+| S22 | L22 | A close strip of a vast curve of craters, rim-lit, running off both edges and the bottom of frame, me tiny above it. Never the whole shape. |
 | S23a, S23b | L23 | (a) Above water: the sky dimming over the lake. (b) The dial's moon glyph lighting in the afternoon. |
 | S24 | L24 | A neighbor on his dock looking up, coffee in hand. |
 | S25 | L25 | Me swimming hard for the dock, `scared`. |
@@ -147,10 +148,10 @@ Times are estimates at 290 wpm with 0.15 s gaps. Every line gets one to three sh
 | S32 | L32 | Grandma leaning the oar straight down into the water. |
 | S33 | L33 | Her face as she pushes, lit from below by the glow, `determined` (steady under-glow, no moving caustics on her face). |
 | S34 | L34 | The water around the boat swelling up. |
-| S35 | L35 | The full reveal begins: the top of the moon breaking the surface under her boat, water pouring off it. |
-| S36 | L36 | Low on the water by the dock posts: the moon half out of the lake, its craters lit, the lake lit pale blue-white over 1 s, never a white frame (the moon is the brightest thing). Cover frame (`cover_s` 65.2): the moon, the rule's lake, no oar. |
-| S37 | L37 | The reveal picture, held 1.8 s with drift: the moon rising clear of the water off the end of her oar, her tiny red boat beside it.   |
-| S38 | L38 | The moon in the sky right over the dock (S08b's framing). |
+| S35 | L35 | Her boat rocking as the water under it heaves up and pours away, the glow brightening from below, light on the hull's underside. |
+| S36 | L36 | Low on the water by the dock posts: water pouring off a pale cratered edge that runs off the top and side of frame, the lake lit pale blue-white over 1 s, never a white frame (the glow is the brightest thing). Cover frame (`cover_s` 65.2): the lit lake, the edge, the dock posts, no oar, never the whole moon. |
+| S37 | L37 | The reveal picture, held 1.8 s with drift: her tiny red boat on the lit, heaving water, the oar's silver edge catching a pale light that climbs past her and up out of frame; her face lit from below, then from above. Only a sliver of cratered edge at the bottom of frame. |
+| S38 | L38 | Moonlight on the dock boards and its reflection just off the end, the water settling (S08b's framing). |
 | S39 | L39 | Grandma rowing back, her face lit by moonlight, `tired`. |
 | S40 | L40 | Me on the dock as she ties up. |
 | S41 | L41 | Grandma's face telling me, `stern`, then soft. |
@@ -173,10 +174,10 @@ Times are estimates at 290 wpm with 0.15 s gaps. Every line gets one to three sh
 | S58 | L58 | Above water: the lake bulging up. |
 | S59 | L59 | Me surfacing beside the red boat. |
 | S60 | L60 | Me climbing in beside Grandma (cut before any grip on the rail). Lore plant on the oarlock. |
-| S61 | L61 | Wide: the moon lifting the whole red boat out of the lake on its top, water pouring off. |
-| S62 | L62 | The two of us sitting in the boat on top of the moon, moonlight on our faces, `awe` and `proud` (steady moonlight, no moving caustics on our faces). |
-| S63 | L63 | The boat sliding off its side and splashing down. |
-| S64 | L64 | The moon floating up over the dock, the dial's moon glyph lit. |
+| S61 | L61 | Wide, low: the red boat lifted high on a swell, water pouring off its sides, pale light from under the keel, only a sliver of cratered edge below it. |
+| S62 | L62 | The two of us in the boat, lit from below, the lake far below the rail, `awe` and `proud` (steady moonlight, no moving caustics on our faces). |
+| S63 | L63 | The boat tipping off a pale curved edge (frame bottom) and splashing down. |
+| S64 | L64 | A disc of light lifting off the water and its reflection settling over the dock, the dial's moon glyph lit. |
 | S65 | L65 | Next dusk: the two of us rowing out. |
 | S66 | L66 | Grandma rowing, me diving. |
 | S67 | L67 | The tag's noon tick, close. |
@@ -189,7 +190,7 @@ The builder's framing pre-check reads exactly these. At phone size (390 px wide)
 1. **S29, L29:** Grandma's face, close, saying "Not yet", lit soft by day.
 2. **S33, L33:** Grandma's face lit from below by the glow as she pushes, the oar resting in its oarlock beside her (no grip on screen).
 3. **S20 and S54, L20 and L54:** my hands glowing over the moon, flat palms, the first look in part and then on its surface.
-4. **S62, L62:** our two faces in moonlight on top of the rising moon, side by side, both at least 1/5 of the frame.
+4. **S62, L62:** our two faces lit from below in the lifted boat, side by side, both at least 1/5 of the frame.
 
 ## Lore connection (`stories/lore.md`)
 One plant, a plain tally: two silver strokes scratched into the brass oarlock of Grandma's rowboat, two for a boat built for two. No extra stroke, no Keeper, no thread touched. Seen in S60 under L60 ("I climbed in / beside HER."), close on the oarlock as I climb over it, held 1.2 s, never narrated.
@@ -272,9 +273,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 (Loop: L70 runs straight into L01: "So come on in, any morning. The water's great. Nobody swims Grandma's lake after noon. It costs the town its afternoon.")
 
 ## Notes for the builder and reviewers
-- **Build order:** the creature test still first (S37 at 390 px, then S22 and S61), judged with the craters checked for faces (rule 7 and 8 above). Nothing else is built until it passes.
+- **Nothing is shown in full:** no shot frames the whole moon (in the lake or the sky). Check S22, S36, S37, S54, S61 and S63 at 390 px for any crater patch reading as a face (rules 7 and 8), and that every edge runs off the frame.
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is in danger in the water: I swim hard for the dock and reach it, nobody sinks, and the dive at L52 is chosen and safe. Grandma's tired arms are said and shown once (L13, L48), never as illness.
-- The moon never chases, grabs or touches anyone except my flat hands on it (L54). It only rises.
-- **Flash (standards r1):** every light drop and rise ramps over at least 1 s and never goes to full-frame white: the afternoon dimming and the sun coming back (L23 to L28, a dimming to dusk blue, never black), the lake lighting up as the moon breaks the surface (L36: the water goes pale blue-white with the moon the brightest thing, the frame never clipped white, whatever the line says), and the glow flaring as it wakes (L57). S20, S33, S54 and S62 put a large face or hands over the moon's light: no moving caustics on them. Light them with a steady under-glow (a slow swell of at most 1 s is fine), and keep any water ripple pattern off the faces.
+- The moon is never seen whole, never chases, grabs or touches anyone except my flat hands on it (L54). It only rises.
+- **Flash (standards r1):** every light drop and rise ramps over at least 1 s and never goes to full-frame white: the afternoon dimming and the sun coming back (L23 to L28, a dimming to dusk blue, never black), the lake lighting up as the moon breaks the surface (L36: the water goes pale blue-white with the glow the brightest thing, the frame never clipped white, whatever the line says), and the glow flaring as it wakes (L57). S20, S33, S54 and S62 put a large face or hands over the moon's light: no moving caustics on them. Light them with a steady under-glow (a slow swell of at most 1 s is fine), and keep any water ripple pattern off the faces.
 - R6 hands can't grip: the oar sits in its oarlock and rests against Grandma's hands, coffee cups rest on the table, I climb in with a cut.
 - Title, description, pin and captions checked against hard rule 8.
