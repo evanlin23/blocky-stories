@@ -1,5 +1,7 @@
 # ep93-recipe-card: the script (writer, 2026-11-03, batch 9a)
 
+> **De-templated against ep96, 2026-11-04** (standards must-fix on ep96-friend-card, hard rule 5). Shot plan only, no spoken word changed. Frame 1 is now an extreme close-up of the ink itself (my loops and the boot stain's edge, no hand, no second object beside it). The rule meter is now a lemon kitchen timer in the bottom-right corner, not a card inset top-left. The loop now closes on a match cut from the steam curl in young Grandma's photo to the ink loop of S01, not a push-in to a card. Affected: the marker bullet, opening recipe point 2, S01, S02, S23b, S25, S27 to S31, S36, S41, S46, S51, S53, S71b, S72.
+
 - **Slug:** `ep93-recipe-card` (batch 9a, upload order 2 of 5)
 - **Pitch:** E02 in `docs/research/premise-engines.md` section 3 (rank 1, panels 9 and 8), engine 2, the bootstrap loop. Opening shape `confess`. Lane: core. Length arm: long (110 to 150 s).
 - **Title:** Grandma's Recipe Is In My HANDWRITING 📝
@@ -34,7 +36,7 @@ Kept clear of knock-back's farmhouse kitchen (a cellar, a knock, an uncle, night
 - **Premise:** In this town, the night you finally cook a recipe right, the card in your hand flies off to whoever needs it most, so people cook with the card under a jar. Grandma Nell keeps her soup card in a tin and cooks from memory. The card is sixty years old, and it's in my handwriting. So this spring I copy it and start cooking it myself.
 - **Rule / hook (L01, L02, about 2.9 s):** "Grandma's secret recipe CARD / is in my HANDWRITING." "I've never WRITTEN it."
 - **The relatable want or fight:** to make Grandma's soup the way she does, with the whole family teasing every try.
-- **The marker (the rule meter), on screen by frame 1 and in every shot:** a card inset in the top-left corner, our own design: Grandma's yellow card with its boot stain until L25, then my white copy with a small try counter (1, 9, 20, 39, 40, 41). At L51 my inset card gets the boot stain. At L53 it flies off the corner and Grandma's old card slides back in.
+- **The marker (the rule meter), on screen by frame 1 and in every shot:** a round lemon-yellow kitchen timer in the bottom-right corner, our own design (it matches the timer tick in the music). Its face shows the try count in big numerals (0 from frame 1, then 1, 9, 20, 39, 40, 41) and a needle that creeps toward a small lemon mark at the top of the dial, one notch per try. From L32 a little paper tag hung on the timer flutters toward the frame edge. At L46 the needle reaches the lemon and the timer gives one soft ring. At L51 the tag gets a tiny boot stain, at L53 it flutters off-screen, and the timer resets to 0 with the needle back at rest.
 - **The 3 to 5 example montage (L03 to L08, 4 to 17 s):** cards lifting out of kitchen windows at dusk (L03, L04), Mr. Ito's chili card at the fire station (L05), Mrs. Bell's pie card on a newlywed's mat (L06), a lasagna card on a lonely guy's windowsill (L07), cards kept under jars and magnets (L08).
 - **A concrete mystery on screen by 15 s:** line 1. The card is mine and I never wrote it (0 to 3 s), and the barred sevens match (L12, about 22 s).
 - **How the narrator is the exception:** nobody cooks with the card in their hand. I do (L32).
@@ -61,7 +63,7 @@ When a man finally cooks his grandma's soup right, his handwritten copy of her r
 
 ## The opening recipe (playbook v1), point by point
 1. Line 1 is a confession that something is wrong with you, now: 9 words, about 2.0 s, then L02 (4 words).
-2. Frame 1 is a close-up of the card in Grandma's hand with my grocery list beside it in the same loops, already wrong. Lit to read, centred. Push in. No wide.
+2. Frame 1 is an extreme close-up of the ink itself: my looping handwriting filling the frame, a barred 7, and the edge of a brown boot-shaped stain, already wrong. No hand and no second object in frame. Lit warm and bright to read on a phone, centred. A slow drift across the loops. No wide.
 3. A sound hit on "HANDWRITING": a soft paper flick and a low swell.
 4. L02 tightens it in under 1 s. No names before L09.
 5. L03 to L08 show the rule at work, one or two shots per line, none over 2 s.
@@ -112,12 +114,12 @@ Synthesized in `blocky/sound.py`. **F Lydian, a 3/4 waltz at 96 BPM**: soft pian
 - L53: the window's soft creak, then quiet.
 
 ## The shot plan
-Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. The card inset is in every shot.
+Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. The lemon timer marker (bottom-right) is in every shot.
 
 | Shots | Lines | Time | Picture |
 |---|---|---|---|
-| S01a, S01b | L01 | 0.0 | (a) Close-up of an old yellowed recipe card in Grandma's hand: rows of looping handwriting (scribble glyphs, no letters) and a brown boot-shaped stain over the last line. On the table beside it, my own grocery list in the very same loops. Push in. (b) Punch in on the two matching loops. Hit on "HANDWRITING". |
-| S02 | L02 | 1.8 | Me `uneasy`, my pen in my hand, looking from my list to the card. |
+| S01a, S01b | L01 | 0.0 | (a) Extreme close-up of handwriting filling the frame: dark ink loops (scribble glyphs, no letters) on yellowed card grain, a barred 7, lit by warm sun. Slow drift right across the loops. No hand, no edges of the card. (b) The drift lands on the soft brown edge of a boot-shaped stain swallowing the last line. Hit on "HANDWRITING". Timer bottom-right at 0. |
+| S02 | L02 | 1.8 | Me `uneasy` at Grandma's counter, a pen in my hand, staring down at the open blue tin. |
 | S03a, S03b | L03 | 2.8 | (a) Above a dusk street: a recipe card lifting out of a lit kitchen window. (b) Cards flapping over the rooftops like small birds. |
 | S04 | L04 | 5.2 | One card gliding down the street, turning a corner. |
 | S05a, S05b | L05 | 7.2 | (a) Mr. Ito at his stove, `proud`, his card leaping off the counter. (b) At the fire station's long table, a firefighter catching a card out of the air, a pot on the stove behind. |
@@ -138,38 +140,38 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S20 | L20 | 36.2 | Me squinting at it against the window. |
 | S21 | L21 | 37.1 | Grandma zipping her lips, `smirk`. |
 | S22 | L22 | 38.1 | Grandma tapping the card. |
-| S23a, S23b | L23 | 39.7 | (a) Me in an apron at her stove, Grandma watching from a kitchen chair. (b) The card inset appears: the old card with a small try counter at 0. |
+| S23a, S23b | L23 | 39.7 | (a) Me in an apron at her stove, Grandma watching from a kitchen chair. (b) Punch in on the lemon timer, bottom-right, as I wind it: 0. |
 | S24 | L24 | 41.5 | My hand at the end of my sleeve writing on a white card beside the old one. |
-| S25 | L25 | 43.3 | The two cards side by side, the same loops, one white, one yellow. The inset switches to my white card. |
+| S25 | L25 | 43.3 | The two cards side by side, the same loops, one white, one yellow. |
 | S26 | L26 | 45.1 | Close on one matching loop on both. |
-| S27 | L27 | 45.7 | Me tasting, `grimace`. Inset: 1. |
-| S28 | L28 | 46.7 | Dad tasting, `pucker`. Inset: 9. |
-| S29a, S29b | L29 | 47.6 | (a) A counter crowded with bowls of soup. Inset: 20. (b) Mom `pleading`, hands together. |
+| S27 | L27 | 45.7 | Me tasting, `grimace`. Timer: 1. |
+| S28 | L28 | 46.7 | Dad tasting, `pucker`. Timer: 9. |
+| S29a, S29b | L29 | 47.6 | (a) A counter crowded with bowls of soup. Timer: 20. (b) Mom `pleading`, hands together. |
 | S30a, S30b | L30 | 49.5 | (a) Grandma tasting, `thoughtful`. (b) Grandma holding a finger and thumb almost together. |
-| S31 | L31 | 51.3 | Inset: 39. Me stirring, steam rising. |
+| S31 | L31 | 51.3 | Timer: 39. Me stirring, steam rising. |
 | S32 | L32 | 51.8 | Close: my card in my hand, bending toward the window, its edges fluttering. |
 | S33 | L33 | 53.4 | My card straining toward the dark window over the sink, me holding it with my face behind it, `scared`. Cover frame. |
 | S34 | L34 | 55.4 | The card under a magnet on the fridge, still twitching. |
 | S35a, S35b | L35 | 57.4 | (a) The fridge at night, the card fluttering under its magnet, the window dark beyond. (b) Punch in on the magnet sliding a little, then holding. |
-| S36 | L36 | 59.9 | Inset: 40. Grandma's eyes going to the tin on the shelf. |
+| S36 | L36 | 59.9 | Timer: 40. Grandma's eyes going to the tin on the shelf. |
 | (drop) | | 60.4 | 0.6 s: Grandma's blue tin on the shelf, the steam from the pot drifting past it. |
 | S37 | L37 | 61.0 | The tin lid lifting. |
 | S38a, S38b | L38 | 62.0 | (a) Close on the old card: the boot stain glistening, fresh. (b) A bead of soup running from it. |
 | S39 | L39 | 64.9 | Grandma's hand resting on mine on the counter. |
 | S40 | L40 | 65.8 | Grandma, close, `soft`. |
-| S41 | L41 | 67.2 | Inset: 41. Me at the pot. |
+| S41 | L41 | 67.2 | Timer: 41. Me at the pot. |
 | S42 | L42 | 67.8 | Me with the spoon, steam. |
 | S43 | L43 | 69.2 | Me `thinking`, spoon in my mouth. |
 | S44 | L44 | 70.6 | The bowl of lemons on the counter, punch in. |
 | S45 | L45 | 72.4 | A lemon squeezed over the pot, one bright drop. |
-| S46 | L46 | 73.4 | Me tasting, eyes wide, `amazed`. |
+| S46 | L46 | 73.4 | Me tasting, eyes wide, `amazed`. The timer's needle reaches the lemon mark and rings once. |
 | S47 | L47 | 74.1 | Grandma tasting from my spoon, `soft`. |
 | S48a, S48b | L48 | 75.1 | (a) My card pulled out from under the magnet. (b) My hand writing a new line at the bottom. |
 | S49 | L49 | 78.1 | The fresh line of loops, close. |
 | S50a, S50b | L50 | 79.5 | (a) The spoon over the card, a drop falling. (b) The drop landing on the last line. |
-| S51 | L51 | 82.2 | The fresh stain: a little boot. The inset card gets the same stain. |
+| S51 | L51 | 82.2 | The fresh stain: a little boot. The timer's paper tag gets a tiny boot too. |
 | S52 | L52 | 83.4 | The card lifting off my palm into the air. |
-| S53a, S53b | L53 | 84.7 | (a) The card through the open window over the sink. (b) The card getting small in the dusk over the rooftops. The inset card flies off its corner, and the old yellow card slides in. |
+| S53a, S53b | L53 | 84.7 | (a) The card through the open window over the sink. (b) The card getting small in the dusk over the rooftops. The timer's tag flutters off-screen and the timer resets to 0. |
 | S54 | L54 | 86.1 | Grandma at the window, `soft`. |
 | S55a, S55b | L55 | 87.1 | (a) The framed old photo on the wall: young Grandma at her first stove. (b) Push in: a small card in her hand and a splash in her pot. |
 | S56 | L56 | 90.6 | Push in on young Grandma's surprised face in the photo. |
@@ -187,8 +189,8 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S68a, S68b | L68 | 107.3 | (a) Grandma, close, `soft`. (b) Me, `soft`. |
 | S69a, S69b | L69 | 109.3 | (a) Me at the stove, Grandma, Mom and Dad laughing at the table. (b) The tin shut on the shelf. |
 | S70 | L70 | 111.1 | The dusk sky out the window, one small card far off. |
-| S71a, S71b | L71 | 112.1 | (a) The framed photo, close. (b) The card in the photo, match-cut toward S01's framing. |
-| S72 | L72 | 114.1 | Close on the old card's loops (S01's framing). Loop. |
+| S71a, S71b | L71 | 112.1 | (a) The framed photo, close. (b) Close on the painted steam rising from young Grandma's pot in the photo, one curl turning over on itself. |
+| S72 | L72 | 114.1 | Match cut: the steam curl's shape becomes the first ink loop of S01a, same position and size, and the camera drifts right across my loops exactly as S01a starts. Timer at 0. Loop. |
 
 ## Lore connection (`stories/lore.md`)
 One plant, a plain tally: two copper strokes scratched into the inside of the tin's lid, two for a recipe kept by two (Grandma and me). No extra stroke, no Keeper, no thread touched. Seen in S37 under L37 ("I opened Grandma's TIN."), as the lid lifts, held 1.2 s, never narrated.

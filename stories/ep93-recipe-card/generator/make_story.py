@@ -11,7 +11,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
@@ -77,6 +77,12 @@ sfx = [
     {"at": "L37", "kind": "creak", "db": -14, "dur": 0.9},   # the tin lid
     {"at": "L50.1", "kind": "click", "db": -16},             # one small drip
     {"at": "L52", "kind": "whoosh", "db": -22},
+    {"at": "L10", "kind": "creak", "db": -22, "dur": 0.7},
+    {"at": "L34.2", "kind": "click", "db": -18},
+    {"at": "L45.1", "kind": "click", "db": -18},
+    {"at": "L24.3", "kind": "click", "db": -19},
+    {"at": "L58", "kind": "click", "db": -19},
+    {"at": "L66", "kind": "click", "db": -19},
     {"at": "L53.1", "kind": "creak", "db": -20, "dur": 0.9, "synth": True},
 ]
 music = {
@@ -119,7 +125,7 @@ story = {
     "tail": 0.25,
     "fade_in": False,
     "look": look,
-    "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.03, 0.012, -0.02], "saturation": 1.12, "contrast": 1.05,
+    "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.03, 0.012, -0.02], "saturation": 1.28, "contrast": 1.05,
               "vignette": 0.15, "bloom": 0.22, "grain": 0.008, "red_line": 0.74},
     "phonemes": {},
     "cast": cast,

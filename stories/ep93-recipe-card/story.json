@@ -57,7 +57,7 @@
    0.012,
    -0.02
   ],
-  "saturation": 1.12,
+  "saturation": 1.28,
   "contrast": 1.05,
   "vignette": 0.15,
   "bloom": 0.22,
@@ -8596,7 +8596,7 @@
  "sound": {
   "floor": "wood",
   "steps_db": -24,
-  "rev": 1,
+  "rev": 2,
   "ambience": [
    {
     "kind": "room",
@@ -8643,6 +8643,37 @@
     "at": "L52",
     "kind": "whoosh",
     "db": -22
+   },
+   {
+    "at": "L10",
+    "kind": "creak",
+    "db": -22,
+    "dur": 0.7
+   },
+   {
+    "at": "L34.2",
+    "kind": "click",
+    "db": -18
+   },
+   {
+    "at": "L45.1",
+    "kind": "click",
+    "db": -18
+   },
+   {
+    "at": "L24.3",
+    "kind": "click",
+    "db": -19
+   },
+   {
+    "at": "L58",
+    "kind": "click",
+    "db": -19
+   },
+   {
+    "at": "L66",
+    "kind": "click",
+    "db": -19
    },
    {
     "at": "L53.1",
