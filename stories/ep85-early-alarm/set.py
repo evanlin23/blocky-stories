@@ -377,8 +377,8 @@ def build(kit, story, tl):
     core = kit.emit("#ffd25e", 3.2, "sun core")
     sclera = kit.emit("#ffeeb0", 1.1, "eye sclera")
     iris = kit.emit("#ff9d00", 1.2, "eye iris")
-    ring = kit.emit("#f09000", 1.2, "eye ring")
-    pupil = kit.emit("#3a1600", 0.1, "eye pupil")
+    ring = kit.emit("#ffae10", 1.1, "eye ring")
+    pupil = kit.emit("#2a1000", 0.1, "eye pupil")
     glint = kit.emit("#ffffff", 3.0, "eye glint")
     lidm = kit.emit("#e88e00", 0.9, "sun lid")
     sroot = kit.empty("sun", SUN)
@@ -408,7 +408,7 @@ def build(kit, story, tl):
     eye_parts.append(ball)
     disc("sun.ring", 0.56, ey - 0.205, ex, ez - 0.02, ring, h=0.03)
     disc("sun.iris", 0.5, ey - 0.225, ex, ez - 0.02, iris, h=0.03)
-    disc("sun.pupil", 0.27, ey - 0.285, ex, ez - 0.02, pupil, 0.62, 1.0, 0.03)
+    disc("sun.pupil", 0.27, ey - 0.285, ex, ez - 0.02, pupil, 0.7, 1.0, 0.03)
     eye_parts.append(kit.sphere("sun.glint", 0.07, (ex + 0.2, ey - 0.31, ez + 0.12), glint, sroot, seg=10))
 
     def shell(name, r, edge, above, mat):
