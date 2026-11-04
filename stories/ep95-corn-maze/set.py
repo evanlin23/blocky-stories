@@ -615,7 +615,7 @@ LOOKS = {
     "predawn": dict(gold=(0.9, "#ffc4a0", 86, 0), moon=(1.2, "#c0d0f4", 45, -35), rim=(0.8, "#a0c0ff", 76, 170), cam=(40.0, "#e6eeff"),
                     sky=("#6f86b8", 1.0), amb=("#8e9cc4", 0.6), exp=0.3, cols=("#b09a40", "#c8ae4c", "#bda444", "#e6d08a", "#4a7a5a"), lant=0.0, star=0.0),
     "dawn": dict(gold=(4.2, "#ffae62", 78, 0), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(55.0, "#ffe6c0"),
-                 sky=("#f7c590", 0.9), amb=("#ffe6cc", 0.9), exp=0.3, cols=GOLD, lant=0.0, star=0.0),
+                 sky=("#e8985c", 0.6), amb=("#ffe6cc", 0.9), exp=0.3, cols=GOLD, lant=0.0, star=0.0),
 }
 
 
