@@ -1,0 +1,1225 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "When the band plays on the town green, everyone has to dance. everyone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.259,
+   "onset": 0.155,
+   "end": 3.069,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.698
+    ],
+    [
+     0.698,
+     0.828
+    ],
+    [
+     0.828,
+     1.31
+    ],
+    [
+     1.362,
+     1.81
+    ],
+    [
+     1.81,
+     2.328
+    ],
+    [
+     2.44,
+     3.069
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Except me. I've never danced once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     1.103
+    ],
+    [
+     1.103,
+     1.621
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Every Saturday night this summer, the band shows up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.293
+    ],
+    [
+     1.362,
+     1.647
+    ],
+    [
+     1.647,
+     2.276
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Five guys in white jackets. Nobody knows them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.19,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     1.362
+    ],
+    [
+     1.439,
+     2.31
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Nobody's ever seen their faces. Just hat brims.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.19,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.19,
+     0.819
+    ],
+    [
+     0.819,
+     1.345
+    ],
+    [
+     1.414,
+     2.31
+    ]
+   ]
+  },
+  "L06": {
+   "text": "The second they play, your feet just go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.776
+    ],
+    [
+     0.81,
+     1.069
+    ],
+    [
+     1.069,
+     1.672
+    ]
+   ]
+  },
+  "L07": {
+   "text": "The bank manager does the robot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.759,
+     1.552
+    ]
+   ]
+  },
+  "L08": {
+   "text": "The mail carrier spins on her bag.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.716
+    ],
+    [
+     0.716,
+     1.043
+    ],
+    [
+     1.043,
+     1.603
+    ]
+   ]
+  },
+  "L09": {
+   "text": "My grandpa's knees click right on the beat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.888
+    ],
+    [
+     0.888,
+     1.086
+    ],
+    [
+     1.086,
+     1.319
+    ],
+    [
+     1.319,
+     1.845
+    ]
+   ]
+  },
+  "L10": {
+   "text": "A guy dances while finishing a sandwich.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.147
+    ],
+    [
+     1.147,
+     1.845
+    ]
+   ]
+  },
+  "L11": {
+   "text": "And I just sit on my bench.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.543
+    ],
+    [
+     0.543,
+     1.241
+    ]
+   ]
+  },
+  "L12": {
+   "text": "My feet never move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.241
+    ]
+   ]
+  },
+  "L13": {
+   "text": "My best friend, Benny, moved away in may.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.931
+    ],
+    [
+     1.008,
+     1.397
+    ],
+    [
+     1.397,
+     1.983
+    ]
+   ]
+  },
+  "L14": {
+   "text": "The band showed up the very next week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.698
+    ],
+    [
+     0.698,
+     0.948
+    ],
+    [
+     0.948,
+     1.638
+    ]
+   ]
+  },
+  "L15": {
+   "text": "We used to sit on this bench and make fun of the dancers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.56
+    ],
+    [
+     0.56,
+     1.112
+    ],
+    [
+     1.112,
+     1.492
+    ],
+    [
+     1.492,
+     2.293
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Now I just watch them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.569,
+     1.207
+    ]
+   ]
+  },
+  "L17": {
+   "text": "And every song ends the same way.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.732
+    ],
+    [
+     0.732,
+     1.026
+    ],
+    [
+     1.026,
+     1.69
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Whichever way they spin, every dancer ends up facing my bench.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.155,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.017
+    ],
+    [
+     1.103,
+     1.603
+    ],
+    [
+     1.603,
+     2.112
+    ],
+    [
+     2.112,
+     2.741
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Last Saturday, the band didn't stop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.681,
+     0.94
+    ],
+    [
+     0.94,
+     1.586
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Midnight. one a.m. Song forty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.19,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.534,
+     0.974
+    ],
+    [
+     0.974,
+     1.724
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Three in the morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.19,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.19,
+     0.457
+    ],
+    [
+     0.457,
+     1.069
+    ]
+   ]
+  },
+  "L22": {
+   "text": "The whole town, drooping, still dancing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.638,
+     0.931
+    ],
+    [
+     0.966,
+     1.741
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Grandpa could barely lift his feet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.008
+    ],
+    [
+     1.008,
+     1.586
+    ]
+   ]
+  },
+  "L24": {
+   "text": "And the band kept playing. They never get tired.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     1.069
+    ],
+    [
+     1.138,
+     1.379
+    ],
+    [
+     1.379,
+     2.103
+    ]
+   ]
+  },
+  "L25": {
+   "text": "The bandleader tipped his brim up. Just an inch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.845
+    ],
+    [
+     0.845,
+     1.276
+    ],
+    [
+     1.353,
+     2.086
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Under it, just dark. And two little lights, looking at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.466,
+     0.983
+    ],
+    [
+     1.052,
+     1.301
+    ],
+    [
+     1.301,
+     1.672
+    ],
+    [
+     1.707,
+     2.397
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Then every face on the green turned toward my bench.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.086
+    ],
+    [
+     1.086,
+     1.534
+    ],
+    [
+     1.534,
+     2.19
+    ]
+   ]
+  },
+  "L28": {
+   "text": "That's when I got it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.069
+    ]
+   ]
+  },
+  "L29": {
+   "text": "The band plays for the saddest one in town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     0.819
+    ],
+    [
+     0.819,
+     1.241
+    ],
+    [
+     1.241,
+     1.897
+    ]
+   ]
+  },
+  "L30": {
+   "text": "And it doesn't stop until they dance.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.732
+    ],
+    [
+     0.732,
+     1.569
+    ]
+   ]
+  },
+  "L31": {
+   "text": "All summer, that was me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.19,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.595,
+     1.224
+    ]
+   ]
+  },
+  "L32": {
+   "text": "The whole town has been dancing right next to me for months.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.207
+    ],
+    [
+     1.207,
+     1.594
+    ],
+    [
+     1.594,
+     1.759
+    ],
+    [
+     1.759,
+     2.397
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Nobody could stop. Not until I danced.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.19,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.19,
+     0.914
+    ],
+    [
+     0.983,
+     1.267
+    ],
+    [
+     1.267,
+     1.862
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Grandpa's knees were paying for my bench.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.121
+    ],
+    [
+     1.121,
+     1.828
+    ]
+   ]
+  },
+  "L35": {
+   "text": "The rule says everyone has to dance.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     1.052
+    ],
+    [
+     1.052,
+     1.672
+    ]
+   ]
+  },
+  "L36": {
+   "text": "And I'm part of everyone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.224
+    ]
+   ]
+  },
+  "L37": {
+   "text": "So I stood up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.172,
+   "end": 0.914,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.914
+    ]
+   ]
+  },
+  "L38": {
+   "text": "I'm a terrible dancer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     1.259
+    ]
+   ]
+  },
+  "L39": {
+   "text": "I danced like a folding chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.664
+    ],
+    [
+     0.664,
+     1.517
+    ]
+   ]
+  },
+  "L40": {
+   "text": "And the song ended on the next bar.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     0.784
+    ],
+    [
+     0.784,
+     0.914
+    ],
+    [
+     0.914,
+     1.655
+    ]
+   ]
+  },
+  "L41": {
+   "text": "The band packed up their horns and walked off into the dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.716
+    ],
+    [
+     0.716,
+     1.155
+    ],
+    [
+     1.155,
+     1.594
+    ],
+    [
+     1.594,
+     2.276
+    ]
+   ]
+  },
+  "L42": {
+   "text": "The whole town lay down on the grass, laughing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.992
+    ],
+    [
+     0.992,
+     1.328
+    ],
+    [
+     1.362,
+     1.966
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Grandpa said his knees will never forgive me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.034
+    ],
+    [
+     1.034,
+     1.379
+    ],
+    [
+     1.379,
+     2.017
+    ]
+   ]
+  },
+  "L44": {
+   "text": "I called Benny right there on the grass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     0.957
+    ],
+    [
+     0.957,
+     1.638
+    ]
+   ]
+  },
+  "L45": {
+   "text": "We talked till the sun came up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.879
+    ],
+    [
+     0.879,
+     1.414
+    ]
+   ]
+  },
+  "L46": {
+   "text": "This Saturday, the band came back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     0.931
+    ],
+    [
+     0.931,
+     1.569
+    ]
+   ]
+  },
+  "L47": {
+   "text": "For somebody else this time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.379
+    ]
+   ]
+  },
+  "L48": {
+   "text": "So I was the first one on the grass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.87
+    ],
+    [
+     0.87,
+     1.569
+    ]
+   ]
+  }
+ }
+}
