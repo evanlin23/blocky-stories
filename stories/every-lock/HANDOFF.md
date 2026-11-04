@@ -1,3 +1,27 @@
+# every-lock: STATUS dropped (2026-11-04, second orchestrator's story session)
+
+Dropped after review round 2 (the last allowed round). No PR was opened. Branch `claude/p5-lock-doors` holds everything, pushed.
+The second orchestrator records the drop on main.
+
+## Verdicts
+- Round 1: critic revise (avg 6.1), standards revise.
+- Round 2: critic revise (avg 6.6; hook 8, narrator 9, appeal 9, twist 6, sound 7, faces 4, lore 3), standards revise.
+- Checks at the end: flash passes (strobe bar), preflight 0 blocks, clipcheck 0, measure 0 block / 0 near / 1 warn, check passes.
+
+## Open must-fixes
+Standards r2:
+1. S046 (L23 second shot, 48.6-49.6 s): blank pale wall, then a black void, then a hard cut to the bright hall. It is the flash peak (7 changes/s). Aim it at Jade and me at the table.
+Critic r2:
+1. Meter cropped at L61, 114.5-115 s.
+2. Heads cut off at 31.5, 58-59, 64.5, 109.6, 117 and 128 s.
+3. Blank or black frames: L12 27 s (Jade not shown), L17 38.5 s, L46 89.5 s (black), L55 104 s, L58 tally 110-110.6 s (white then black), L65b 123 s.
+4. L71.2 at 135 s: Dale's front door being pushed is not shown.
+Faces (4) and lore (3) stayed low in both rounds.
+
+Files: stories/every-lock/reviews/r1-*.md, r2-*.md. Package: title "My Bathroom Door Has 1,024 LOCKS", opening "count", L01 "ELEVEN SLAMS, and YOUR door has ONE THOUSAND and twenty-four LOCKS."
+
+---
+
 # every-lock: handoff (2026-11-04, review round 1 fixes applied)
 
 ## Where it stopped (latest)
