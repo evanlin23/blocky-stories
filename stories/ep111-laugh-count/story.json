@@ -192,20 +192,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Aunt Bev laughs",
-     "aunt bev laughs"
+     "Your number counts",
+     "your number counts"
     ],
     [
-     "ALL night.",
-     "all night."
+     "days without LAUGHING.",
+     "days without laughing."
     ],
     [
-     "Hers says FOUR",
-     "hers says four"
+     "Aunt Bev's says",
+     "aunt bev's says"
     ],
     [
-     "NINETY-TWO.",
-     "ninety-two."
+     "492.",
+     "four-ninety-two."
     ]
    ]
   },
@@ -218,24 +218,16 @@
      "in this town,"
     ],
     [
-     "the number",
-     "the number"
+     "everyone has ONE.",
+     "everyone has one."
     ],
     [
-     "over your head",
-     "over your head"
+     "And she laughs",
+     "and she laughs"
     ],
     [
-     "is how",
-     "is how"
-    ],
-    [
-     "many DAYS",
-     "many days"
-    ],
-    [
-     "since you laughed.",
-     "since you laughed."
+     "ALL night.",
+     "all night."
     ]
    ]
   },
@@ -388,16 +380,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mine has",
-     "mine has"
+     "Mine has never",
+     "mine has never"
     ],
     [
-     "said zero",
-     "said zero"
-    ],
-    [
-     "my whole LIFE.",
-     "my whole life."
+     "gone past ONE.",
+     "gone past one."
     ]
    ]
   },

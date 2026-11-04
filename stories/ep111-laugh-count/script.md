@@ -8,6 +8,7 @@
 - **Revised r1 (standards, 2026-11-04):** L01 and L02 swapped (line 1 is now the wrong count), old L24 cut ("Not X, it's Y" cadence), old L25 rewritten as the new L24 ("It counts the days / since you made / somebody ELSE laugh."), and every line and shot from old L25 on is renumbered down by one (old L47 is L46). S01, S02 and S23 were redrawn to match, and old S24 is now S23b. Not voiced yet, so nothing to re-voice.
 - **Word count:** 341 spoken words in 46 lines (L01 to L46), all `narrator`, plus one 0.6 s music drop before L23.
 - **Estimated length:** about 78.4 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
+- **Revised r1 (critic, 2026-11-04, words only):** L01 now states the rule and keeps Bev's 492 as its last chunk (`opening: count` kept), L02 carries "she laughs ALL night", and L11 is "Mine has never gone past ONE." (it reached 1 at L22). Chunk counts kept at four for L01 and L02, so the shot anchors L01.2, L01.3, L02.2 and L02.3 still land on the same beats. Re-voice L01, L02 and L11. Word count unchanged.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright and saturated: a bowling alley on league night, glossy maple lanes, neon stripes in teal and pink, a big scoreboard of glyphs, a snack bar. No dark scene: the eerie note is color draining out of people, on bright lanes.
 - **Hold:** scripts only (batch 11). Not built, not voiced.
 
@@ -29,12 +30,12 @@ The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
 
 ## The story
 - **Premise:** In this town a number floats over everyone's head, and everyone says it counts the days since you last laughed. Past 500, your color starts to go. My aunt Bev, the funniest person in our family, laughs all night at league night, and hers says 492.
-- **Hook / rule (L01, about 2.6 s, then L02):** "Aunt Bev laughs / ALL night. / Hers says FOUR-NINETY-TWO." L02: "In this town, / the number over your head / is how many DAYS / since you laughed." (r1: swapped so line 1 is the wrong count, its shape `count`, and the rule lands by about 6 s.)
+- **Hook / rule (L01, about 2.3 s, then L02):** "Your number counts / days without LAUGHING. / Aunt Bev's says / FOUR-NINETY-TWO." L02: "In this town, / everyone has ONE. / And she laughs / ALL night." (critic r1: the rule is now in line 1 by about 1.3 s with Bev's count as its last chunk and hit, still shape `count`, and the wrongness lands in L02 by about 4 s.)
 - **The relatable want or fight:** an aunt whose jokes you outgrew, and wanting to make someone you love laugh.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** the number floating over every head, in chunky white numerals with a soft colored glow (Bev's coral, mine teal). A small cream tag top-left mirrors Bev's number and a little gray bar fills toward 500.
 - **The 3 to 5 example montage (L03 to L10, 4 to 20 s):** Earl at shoe rental, never smiles, reads 0. The man in lane four, laughs at his own jokes, reads 9,000 and is totally gray. Past 500, your color goes.
 - **A concrete mystery on screen by 15 s:** the numbers don't fit the rule (L04 to L08).
-- **How the narrator is the exception:** mine has said 0 my whole life, and I don't even laugh much (L11, L12).
+- **How the narrator is the exception:** mine has never gone past 1, and I don't even laugh much (L11, L12).
 - **The loved one at stake:** my aunt Bev, named "My aunt Bev" at L13 with her in frame telling a joke.
 - **The scare (L18, L35, L36):** her sleeves going gray, then gray to her shoulders at 499, the night before 500.
 - **The climax turns the rule's own logic:** a fake laugh doesn't count (L31). It has to be real, so she tells me every joke she has, and what finally gets me is the thing that always gets her: someone falling flat on their back (L39, L40). No new magic.
@@ -55,10 +56,10 @@ The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
 Everyone thinks the number over your head counts days since you laughed, but it counts days since you made someone else laugh, and the narrator's funny aunt is near 500, when your color goes gray, because he stopped laughing at her jokes. A fake laugh doesn't count, so she tries every joke for a week, and what finally makes him laugh is her slipping on the lane like he always does, so her number hits zero.
 
 ## The opening recipe (playbook v1), point by point
-1. Line 1 is a count that's wrong (she laughs all night, and her number is huge). 9 words, about 2.6 s. The rule follows at once in L02, by about 6 s.
+1. Line 1 is the rule and a count that's wrong: "your number counts days without laughing" (about 1.3 s), then Bev's 492 as one chunk with the hit. 11 words, about 2.3 s. L02 says she laughs all night, by about 4 s.
 2. Frame 1 is a close-up of Bev's face mid-laugh with her number, 492, floating over her head, the gray bar in the tag nearly full. No wide.
-3. A sound hit on "laughed": a bowling-ball thunk and a soft swell.
-4. L01 is the mystery (she laughs all night, and her number says 492), and L02 is the rule it breaks.
+3. A sound hit on "FOUR-NINETY-TWO" (L01.3): a bowling-ball thunk and a soft swell.
+4. L01 is the rule and Bev's number, and L02 (she laughs all night) is the mystery that breaks it.
 5. L03 to L10 show the rule at work, one to three shots per line, none over 2 s.
 6. The title is the misread rule, never the reveal.
 
@@ -97,7 +98,7 @@ Times are estimates. Every line gets one to three shots with acting in each, and
 | Shots | Lines | Picture |
 |---|---|---|
 | S01a, S01b | L01 | (a) Close: Bev mid-laugh, slapping the table, `cackle`, number 492 over her head, both in frame. (b) Her number, close: 492. Punch in on "FOUR-NINETY-TWO". |
-| S02a, S02b | L02 | (a) A row of bowlers' heads, numbers over each. (b) Bev's number again over her laughing face. Punch in on "DAYS". |
+| S02a, S02b | L02 | (a) A row of bowlers' heads, numbers over each. (b) Bev's number again over her laughing face, on "And she laughs". (c) Bev laughing, profile, on "ALL night". Punch in on "ALL". |
 | S03 | L03 | Wide: the alley, neon on, league night, everyone's numbers glowing. |
 | S04 | L04 | Me squinting at the numbers, `deadpan`. |
 | S05 | L05 | Earl at shoe rental, `scowl`, spraying a shoe. |
@@ -158,8 +159,8 @@ One plant, a plain tally: two coral strokes scratched into the chrome hood of ou
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: Aunt Bev laughs / ALL night. / Hers says FOUR-NINETY-TWO.
-- L02: In this town, / the number over your head / is how many DAYS / since you laughed.
+- L01: Your number counts / days without LAUGHING. / Aunt Bev's says / 492. (caption "492.", spoken "four-ninety-two": the spelled-out word ran into the right 15%)
+- L02: In this town, / everyone has ONE. / And she laughs / ALL night.
 - L03: Every Thursday / is league night / at the LANES.
 - L04: And the numbers here / are WEIRD.
 - L05: Earl at shoe rental / has never smiled / in his LIFE.
@@ -168,7 +169,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L08: His says / nine THOUSAND.
 - L09: He's gone / totally GRAY.
 - L10: That's what happens / past five HUNDRED. / Your color GOES.
-- L11: Mine has said zero / my whole LIFE.
+- L11: Mine has never / gone past ONE.
 - L12: I don't even laugh / that much. / I mostly fall DOWN.
 - L13: My aunt Bev / is the funniest person / in our FAMILY.
 - L14: Just ask HER.
@@ -206,7 +207,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L45: I haven't fallen / in three DAYS.
 - L46: Mine says THREE now. / I'm working on MATERIAL.
 
-(Loop: L46 runs straight into L01: "Mine says three now. I'm working on material. Aunt Bev laughs all night. Hers says four-ninety-two.")
+(Loop: L46 runs straight into L01: "Mine says three now. I'm working on material. Your number counts days without laughing. Aunt Bev's says four-ninety-two.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Both falls are comic and soft: a flat slide onto the lane, both get up laughing, nobody is hurt (no wince of pain after the first beat, no injury shown).
