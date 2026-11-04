@@ -278,7 +278,7 @@ S("L06.2", K_([-3, -9.5, 1.4], [3, 3, 1.4], 18, [-2, -9.5, 1.4], [4, 3, 1.4], 20
 # --- S07 Mr. Park asleep in his armchair facing his door
 room("L07", ["armchair", "door_a"], chair_yaw=180)
 put(PARK, "L07", [RX + 0.0, RY + 1.0, 0.3], 180, "shut", lean=-28, head=[0, -8])
-S("L07", FC([RX, RY + 1.0], 180, 3.0, -65, 6, 32, 1.4, 1.45, d2=2.6), "int", hand=0.004, rkey=1.0, note="Mr. Park asleep, face")
+S("L07", FC([RX + 0.45, RY + 1.0], 180, 1.9, -20, 4, 28, 1.55, 1.6, d2=1.6), "int", hand=0.004, rkey=1.0, note="Mr. Park asleep, face")
 S("L07.2", K_([RX + 0.9, RY - 2.4, 1.9], [RX + 0.1, RY + 1.6, 1.35], 15, [RX + 0.6, RY - 2.0, 1.8], [RX + 0.1, RY + 1.6, 1.35], 17), "int", hand=0.004, rkey=0.6, note="facing his door")
 # --- S08 Mrs. Haddad with the new lock
 cue("L08", "padlock", on=True, pos=front(9, 1.0, 0.0, 1.2))
@@ -578,9 +578,9 @@ door("L57", 1, 0, 0, 0.1)
 _m0, _m1 = front(1, 2.5, 0.0), front(7, 1.6, 0.0)
 walk(ME, "L57", _m0, "L58", _m1, yaw=None, expr="asleep", arms=[22, 22])
 walk(LOU, "L57", [_m0[0] + 0.9, _m0[1] + 0.5, 0.0], "L58", [_m1[0] + 0.9, _m1[1] + 0.1, 0.0], yaw=None, expr="soft", arms=[0, 80])
-S("L57", K_([-0.2, 2.9, 1.55], [0.45, 0.2, 1.3], 26, [-0.2, 2.6, 1.5], [0.45, 0.2, 1.3], 28), "dawn", note="before sunrise, she walks me back")["follow"] = "me"
-S("L57.1", K_([-0.6, 2.5, 1.5], [0.45, 0.2, 1.3], 26, [-0.5, 2.2, 1.45], [0.45, 0.2, 1.3], 28), "dawn", note="her arm round my shoulders")["follow"] = "me"
-S("L57.3", K_([-0.3, 1.9, 1.5], [0.45, 0.15, 1.3], 22, [-0.2, 1.7, 1.45], [0.45, 0.15, 1.3], 23), "dawn", note="to number SEVEN")["follow"] = "me"
+S("L57", K_([0.2, 2.9, 1.55], [0.55, 0.2, 1.3], 15, [0.2, 2.6, 1.5], [0.55, 0.2, 1.3], 16), "dawn", note="before sunrise, she walks me back")["follow"] = "me"
+S("L57.1", K_([0.0, 2.5, 1.5], [0.55, 0.2, 1.3], 15, [0.1, 2.2, 1.45], [0.55, 0.2, 1.3], 16), "dawn", note="her arm round my shoulders")["follow"] = "me"
+S("L57.3", K_([0.1, 1.9, 1.5], [0.55, 0.15, 1.3], 14, [0.2, 1.7, 1.45], [0.55, 0.15, 1.3], 15), "dawn", note="to number SEVEN")["follow"] = "me"
 # --- S58 my door locks with her key; tag 7 glows
 door("L58", 7, 80, 0, 0.7)
 gone(ME, "L58")
@@ -656,7 +656,7 @@ raw(ME, "L66", head=[60, 0], blend=0.7)
 raw(ME, "L66.1", lean=-90, head=[0, 0], blend=0.9)
 S("L66", FC([RX + 1.9, RY + 0.85], 0, 2.6, 30, 12, 30, 1.2, 1.1, d2=2.0), "intn", hand=0.0, rkey=0.8, note="look around")
 S("L66.1", K_([RX + 0.9, RY - 1.2, 1.9], [RX + 1.9, RY + 1.3, 0.6], 26, [RX + 1.2, RY - 1.0, 1.8], [RX + 1.9, RY + 1.3, 0.6], 28), "intn", hand=0.0, rkey=0.8, note="and lie back down")
-S("L67", K_([RX + 0.6, RY + 1.1, 1.95], [RX + 1.9, RY + 1.05, 0.95], 30, [RX + 0.9, RY + 1.1, 1.8], [RX + 1.9, RY + 1.05, 0.95], 34), "intn", hand=0.002, rkey=0.8, note="already HOME: my sleeping face, calm")
+S("L67", K_([RX + 0.6, RY + 0.4, 1.7], [RX + 1.5, RY + 1.65, 1.0], 24, [RX + 0.8, RY + 0.5, 1.6], [RX + 1.5, RY + 1.65, 1.0], 26), "intn", hand=0.002, rkey=0.8, note="already HOME: my sleeping face, calm")
 # --- S68 11:58, the court locks its own doors
 clock("L68", "11:58")
 gone(ME, "L68")
@@ -673,7 +673,7 @@ S("L68.3", K_([-3, -14, 4.5], [1, 3, 1.5], 14, [-2, -13, 4.0], [1, 3, 1.5], 15),
 # --- S69 the neighbours wave at her window
 put(PARK, "L69", front(1, 5.0, 0.0), yawc(1), "smile", arms=[0, 150])
 put(HAD, "L69", front(1, 4.6, -0.9), yawc(1), "smile", arms=[0, 150])
-S("L69", HC(1, (-0.45, -8.4, 1.4), (-0.45, -4.5, 2.4), 22, (-0.45, -7.8, 1.4), (-0.45, -4.5, 2.4), 24), "dawn", note="and waves at her lit window")
+S("L69", HC(1, (-0.2, -7.4, 1.2), (-0.2, -4.5, 2.3), 23, (-0.2, -7.0, 1.2), (-0.2, -4.5, 2.3), 25), "dawn", note="and waves at her lit window")
 room("L69.1", ["window", "lamp"])
 put(LOU, "L69.1", [RX - 2.4, RY + 0.8, 0.0], 300, "laugh", head=[40, 0])
 S("L69.1", FC([RX - 2.4, RY + 0.8], 300, 3.0, 60, 4, 34, 1.45, 1.45, d2=2.6), "int", fill=1.2, note="at her window, laughing")
