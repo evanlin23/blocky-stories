@@ -164,8 +164,8 @@ def figure(kit, name, x, y, z, s, shirt, skin="#dca97c", hair="#c89a5a", bg=None
 
 def clippings(kit, x0):
     paper_cols = ["#f6ecd0", "#efe0b8", "#f9f1dc", "#e9dcb0"]
-    bgs = ["#8ec9ff", "#ffd66b", "#9fdc9a", "#f4a3a3", "#c9b3ff", "#ffb87a"]
-    shirts = ["#8ec9ff", "#ffd23f", "#e8845a", "#7fb070", "#f4f4f2", "#c0543a"]
+    bgs = ["#ffd66b", "#9fdc9a", "#f4a3a3", "#c9b3ff", "#ffb87a", "#fff0b0"]
+    shirts = ["#5fa8e8"] * 6                  # every clipping is the narrator in his blue hoodie
     ink = kit.plastic("#5a4a36", 0.9)
     yw = G.WALL_Y - 0.15            # the wall's inner face
     W["clip"] = {}
@@ -197,13 +197,13 @@ def clippings(kit, x0):
             kit.box(f"clipB.head", (0.1, 0.006, 0.1), (x, y - 0.02, z + 0.15), kit.plastic("#dca97c", 0.8), bevel=0.01)
             kit.box(f"clipB.hair", (0.05, 0.006, 0.03), (x, y - 0.03, z + 0.2), kit.plastic("#c89a5a", 0.8))
         elif kind == "bowl":
-            kit.box(f"clipT.bg", (0.44, 0.006, 0.3), (x, y, z + 0.1), kit.plastic("#8ec9ff", 0.8))
-            figure(kit, "clipT.me", x - 0.07, y - 0.01, z + 0.1, 1.0, "#e8845a", bg=None)
+            kit.box(f"clipT.bg", (0.44, 0.006, 0.3), (x, y, z + 0.1), kit.plastic("#ffd66b", 0.8))
+            figure(kit, "clipT.me", x - 0.07, y - 0.01, z + 0.1, 1.0, "#5fa8e8", bg=None)
             kit.cyl("clipT.cup", 0.045, 0.1, (x + 0.1, y - 0.04, z + 0.1), kit.plastic("#ffd23f", 0.3, spec=0.7), rot=(math.pi / 2, 0, 0), n=10, r2=0.025)
             kit.box("clipT.base", (0.11, 0.01, 0.03), (x + 0.1, y - 0.04, z + 0.04), kit.plastic("#d9a441", 0.3, spec=0.6))
         else:
             kit.box(f"clipW.bg", (0.44, 0.006, 0.3), (x, y, z + 0.1), kit.plastic("#cfe6c8", 0.8))
-            figure(kit, "clipW.me", x, y - 0.01, z + 0.1, 1.2, "#3a6ea6", bg=None)
+            figure(kit, "clipW.me", x, y - 0.01, z + 0.1, 1.2, "#5fa8e8", bg=None)
         for k in range(3):
             kit.box(f"clip{kind}.ln{k}", (0.44 - 0.1 * k, 0.006, 0.025), (x, y, z - 0.1 - k * 0.055), ink)
     # the big portrait of me, a gold frame, a little proud of the clippings
@@ -321,7 +321,7 @@ def build(kit, story, tl):
     kit.light("lt_party", "POINT", (G.PARTY, -2.5, 3.5), 300.0, "#fff4dc", size=0.5, shadow=False)
     # Grandpa's room: day, the TV (steady), the streetlight, a cold face fill
     kit.light("gpday", "POINT", (G.GP, -0.6, 3.2), 560.0, "#fff0d8", size=0.5, shadow=False)
-    kit.light("gptv", "POINT", (G.GP - 3.3, 1.3, 1.3), 520.0, "#bfd8ff", size=0.5, shadow=False)
+    kit.light("gptv", "POINT", (G.GP - 2.2, 1.3, 1.4), 450.0, "#bfd8ff", size=0.5, shadow=False)
     kit.light("gpface", "POINT", (G.GP + 0.6, -1.6, 1.9), 150.0, "#aac4ff", size=0.6, shadow=False)
     kit.light("gpstreet", "POINT", (G.GP + 4.1, 0.5, 2.3), 160.0, "#dfe8ff", size=0.5, shadow=False)
     kit.light("bedday", "POINT", (G.BED, -0.5, 3.2), 420.0, "#fff0d8", size=0.5, shadow=False)
@@ -473,7 +473,7 @@ def build(kit, story, tl):
     kit.box("gp.rugedge", (6.0, 3.2, 0.021), (gx + 0.2, 0.6, 0.06), plastic("#e9dcb0", 0.95))
     kit.box("gp.rugin", (5.7, 2.9, 0.022), (gx + 0.2, 0.6, 0.08), plastic("#f6ecd0", 0.95))
     armchair(kit, "gp.arm", gx + 1.6, 2.0, "#2f6b4a")
-    sofa(kit, "gp.sofa", gx - 1.7, 2.0, 2.3, plastic("#c98a3a", 0.85, spec=0.08))
+    sofa(kit, "gp.sofa", gx - 0.4, 2.0, 2.3, plastic("#c98a3a", 0.85, spec=0.08))
     kit.box("gp.t1top", (1.6, 0.9, 0.05), (gx + 0.1, 1.0, 0.55), wood, bevel=0.015)
     for tx in (-1, 1):
         for ty in (-1, 1):
@@ -495,20 +495,34 @@ def build(kit, story, tl):
     kit.cyl("gp.t2top", 0.35, 0.05, (gx + 2.85, 2.0, 0.62), wood, n=16)
     kit.cyl("gp.t2leg", 0.06, 0.6, (gx + 2.85, 2.0, 0.3), wood, n=10)
     # the framed photo of young Mom at a stove in a yellow apron (no text)
-    fx, fy, fz = gx + 2.85, 2.0, 0.65
-    kit.box("frame.f", (0.34, 0.04, 0.42), (fx, fy - 0.1, fz + 0.21), plastic("#d9a441", 0.3, spec=0.7), rot=(-0.3, 0, 0), bevel=0.01)
-    kit.box("frame.bg", (0.28, 0.01, 0.35), (fx, fy - 0.128, fz + 0.21), plastic("#cfe6ff", 0.8), rot=(-0.3, 0, 0))
-    kit.box("frame.stove", (0.26, 0.01, 0.15), (fx, fy - 0.142, fz + 0.075), plastic("#3b7fd0", 0.7), rot=(-0.3, 0, 0))
-    kit.box("frame.apron", (0.1, 0.01, 0.15), (fx, fy - 0.155, fz + 0.2), plastic("#ffc94a", 0.7), rot=(-0.3, 0, 0))
-    kit.box("frame.head", (0.08, 0.01, 0.08), (fx, fy - 0.168, fz + 0.31), plastic("#e6b48c", 0.7), rot=(-0.3, 0, 0), bevel=0.01)
-    kit.box("frame.hair", (0.09, 0.01, 0.04), (fx, fy - 0.18, fz + 0.355), plastic("#9a7a45", 0.7), rot=(-0.3, 0, 0))
+    fx, fy, fz = gx + 2.78, 2.0, 0.65
+    zc = fz + 0.36
+    P = lambda nm, size, dx, dz, dy, col, **kw: kit.box(nm, size, (fx + dx, fy - dy, zc + dz), plastic(col, 0.7), **kw)
+    kit.box("frame.f", (0.58, 0.04, 0.7), (fx, fy - 0.1, zc), plastic("#d9a441", 0.3, spec=0.7), bevel=0.01)
+    P("frame.bg", (0.5, 0.01, 0.62), 0, 0, 0.125, "#cfe6ff")
+    P("frame.stove", (0.5, 0.01, 0.24), 0, -0.19, 0.136, "#3b7fd0")
+    P("frame.stovetop", (0.5, 0.01, 0.04), 0, -0.065, 0.146, "#2a2f38")
+    P("frame.oven", (0.26, 0.01, 0.1), 0, -0.2, 0.147, "#fff0cf")
+    P("frame.pot", (0.12, 0.01, 0.07), -0.17, -0.025, 0.147, "#8a8f98")
+    P("frame.hairback", (0.24, 0.01, 0.2), 0, 0.185, 0.14, "#9a7a45", bevel=0.01)
+    P("frame.apron", (0.2, 0.01, 0.2), 0, 0.0, 0.152, "#ffc94a")
+    P("frame.head", (0.15, 0.01, 0.15), 0, 0.17, 0.158, "#e6b48c", bevel=0.01)
+    P("frame.fringe", (0.17, 0.01, 0.05), 0, 0.255, 0.166, "#9a7a45", bevel=0.005)
+    for sx_ in (-1, 1):
+        P(f"frame.eye{sx_}", (0.022, 0.01, 0.03), sx_ * 0.037, 0.18, 0.168, "#1c120c")
+    P("frame.smile", (0.06, 0.01, 0.014), 0, 0.115, 0.168, "#7a3a30")
     kit.cyl("gp.lamp", 0.06, 0.3, (gx + 3.5, 2.5, 0.8), plastic("#f6ecd8", 0.5), n=10)
     kit.cyl("gp.lampshade", 0.16, 0.2, (gx + 3.5, 2.5, 1.05), plastic("#ffe6a8", 0.7), n=14, r2=0.1)
     # the TV on a cart at the west wall, facing +x; its screen is a separate plane so it can fade up
-    kit.box("gp.cart", (0.7, 1.3, 0.6), (gx - 4.55, 1.3, 0.3), wood, bevel=0.02)
-    kit.box("gp.tv", (0.22, 1.1, 0.7), (gx - 4.6, 1.3, 0.95), plastic("#22252c", 0.4, spec=0.3), bevel=0.02)
+    tvx, tvy, tha = gx - 2.9, 1.7, math.radians(-38)
+
+    def tvp(nm, size, dx, dz, mat, bev=0.0):
+        c, sn = math.cos(tha), math.sin(tha)
+        return kit.box(nm, size, (tvx + dx * c, tvy + dx * sn, dz), mat, rot=(0, 0, tha), bevel=bev)
+    tvp("gp.cart", (0.7, 1.3, 0.6), 0, 0.3, wood, 0.02)
+    tvp("gp.tv", (0.22, 1.1, 0.7), -0.05, 0.95, plastic("#22252c", 0.4, spec=0.3), 0.02)
     W["tvmat"] = kit.emit("#bfd8ff", 3.0, "tvglow")
-    kit.box("gp.screen", (0.02, 0.96, 0.56), (gx - 4.47, 1.3, 0.95), W["tvmat"])
+    tvp("gp.screen", (0.02, 0.96, 0.56), 0.08, 0.95, W["tvmat"])
     # the big window (east wall): a pane that goes from sky to night
     kit.box("gp.winframe", (0.06, 2.6, 1.9), (gx + 4.84, 1.5, 1.9), plastic("#fffaf0", 0.6))
     W["winmat"] = kit.emit("#cfeaff", 1.6, "gpwin")
@@ -663,7 +677,7 @@ def animate(kit, story, tl, t, ctx):
     gains["bedday"] = 1.0 - night
     tv = sample("tv", tl, t, {"v": 0.0})["v"]
     gains["gptv"] = 0.14 * tv * night
-    gains["gpface"] = 0.12 * night * (0.35 + 0.65 * tv)
+    gains["gpface"] = 0.2 * night * (0.35 + 0.65 * tv)
     gains["gpstreet"] = 0.15 * night * (0.4 + 0.6 * tv)
     gains["bedmoon"] = 0.35 * night
     gains["bedlamp"] = 0.5 * night
