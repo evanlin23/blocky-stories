@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -309,8 +309,8 @@ shot("L12.2", mv([50.0, -2.0, 9.6], [50.0, 2.8, 0.5], 20, [50.0, -1.8, 9.0], [50
 # L13 the bus slows down, sees me, and keeps going
 only("L13", ["me", "driver", "coatman"])
 cue("L07", "bus", x=-30.0)
-cue("L11", "bus", x=12.0)
-cue("L11+0.01", "bus", x=47.0, dur=3.6)
+cue("L12.2", "bus", x=12.0)
+cue("L12.2+0.01", "bus", x=47.0, dur=1.9)
 cue("L13.2+0.2", "bus", x=95.0, dur=4.0)
 put("driver", "L13", [0, 0, 0], 90, expr="neutral", head=[0, 0])
 cue("L13", "sit", who="driver", on=True)
@@ -318,7 +318,7 @@ put("coatman", "L13", [SHX + 3.6, -4.75], 180, expr="worried")
 beat("driver", "L13.1+0.1", expr="wide", head=[-70, 0])
 beat("driver", "L13.2+0.3", expr="neutral", head=[0, 0])
 shot("L13", mv([SHX - 7.0, -6.6, 1.9], [SHX - 0.5, -2.6, 1.8], 34, [SHX - 5.0, -6.2, 1.9], [SHX + 1.0, -2.6, 1.8], 34), "busslow")
-shot("L13.1", mv([SHX + 0.2, 2.2, 2.3], [SHX, -1.9, 1.75], 30, [SHX + 0.1, 1.9, 2.3], [SHX, -1.9, 1.75], 30), "driver")
+shot("L13.1", mv([SHX + 0.2, 2.2, 2.5], [SHX, -1.9, 2.3], 30, [SHX + 0.1, 1.9, 2.5], [SHX, -1.9, 2.3], 30), "driver")
 # L14 a face in every window
 FACES = [f"c{i + 1}" for i in range(12)]
 WIN14 = [WINS[k] for k in (6, 7, 8, 9, 10, 11, 12, 13)]            # shops 3..6
@@ -337,7 +337,7 @@ shot("L15", mv([61.8, 0.6, 5.3], [62.0, 5.3, 5.15], 62, [62.0, 1.4, 5.25], [62.0
 # L16 the bag tears
 only("L16", ["me"])
 cue("L16+0.5", "tear")
-shot("L16", mv([SPOT[0] + 0.9, -0.8, 1.2], [SPOT[0], 3.0, 0.65], 32, [SPOT[0] + 0.7, -0.5, 1.1], [SPOT[0] + 0.1, 3.0, 0.55], 32), "bag")
+shot("L16", mv([SPOT[0] + 0.9, -0.8, 1.2], [SPOT[0] - 0.1, 3.0, 0.65], 26, [SPOT[0] + 0.7, -0.5, 1.1], [SPOT[0], 3.0, 0.55], 26), "bag")
 
 # ===== 04 the oranges (L17 to L26)
 only("P01", ["me"])
@@ -404,7 +404,7 @@ only("L29", FACES[:8])
 for nm, wx in PAIR:
     put(nm, "L29", [wx, 5.35, G.FACE_Z], 0, expr="wide", head=[0, 0])
     acting[nm].append({"from": "L29", "to": "L29>", "mouth": [0.55, 0.55]})
-shot("L29", mv([PWX[1] + 0.2, -2.2, 4.8], [PWX[1], 5.3, 5.0], 52, [PWX[2] - 0.4, -2.2, 4.8], [PWX[2] - 0.2, 5.3, 5.0], 52), "gasp")
+shot("L29", mv([PWX[1] + 0.1, -2.2, 4.8], [PWX[1], 5.3, 5.0], 50, [PWX[1] + 0.1, -1.6, 4.8], [PWX[1], 5.3, 5.0], 56), "gasp")
 # L30 and L31
 only("L30", ["me", "dev"])
 put("me", "L30", [SPOT[0], 3.0], 20, expr="scared", head=[0, 0])
@@ -491,12 +491,12 @@ clock("L39", 5, 0)
 only("L39", ["me", "dev"])
 cue("L39", "sit", who="me", on=True, z=0.55)
 cue("L39", "sit", who="dev", on=True, z=0.55)
-put("me", "L39", [G.SEAT_ME[0], G.SEAT_ME[1]], 90, expr="sad-smile", head=[0, 10])
-put("dev", "L39", [G.SEAT_DEV[0], G.SEAT_DEV[1]], -90, expr="warm")
-shot("L39", mv([TX - 1.1, 8.9, 1.45], [G.SEAT_ME[0], 6.6, 1.3], 36, [TX - 1.0, 8.5, 1.45], [G.SEAT_ME[0] + 0.1, 6.6, 1.3], 36), "sorry")
-shot("L39.2", fc([G.SEAT_ME[0], 6.6], 20, 2.4, 44, h=1.4, tz=1.25, off=0.14, push=0.2), "sorry2")
-beat("dev", "L40", expr="smile", head=[0, 0])
-shot("L40", mv([TX + 1.1, 8.9, 1.45], [G.SEAT_DEV[0], 6.6, 1.3], 36, [TX + 1.0, 8.5, 1.45], [G.SEAT_DEV[0] - 0.1, 6.6, 1.3], 36), "devsmile")
+put("me", "L39", [G.SEAT_ME[0], G.SEAT_ME[1]], 130, expr="sad-smile", head=[0, 10])
+put("dev", "L39", [G.SEAT_DEV[0], G.SEAT_DEV[1]], -130, expr="warm")
+shot("L39", fc([G.SEAT_ME[0], 6.6], 130, 2.4, 36, h=1.45, tz=1.3, off=0.06, push=0.15), "sorry")
+shot("L39.2", fc([G.SEAT_ME[0], 6.6], 150, 2.6, 40, h=1.45, tz=1.3, off=0.06, push=0.12), "sorry2")
+beat("dev", "L40", expr="smile", head=[0, 0], yaw=-130)
+shot("L40", fc([G.SEAT_DEV[0], 6.6], -140, 2.5, 38, h=1.45, tz=1.3, off=0.06, push=0.12), "devsmile")
 shot("L40.2", mv([TX + 1.4, 8.6, 1.5], [TX + 1.2, 3.0, 1.5], 42, [TX + 1.3, 8.2, 1.5], [TX + 1.3, 3.0, 1.5], 42), "window")
 vis("L41", "plates", True)
 vis("L41", "cake", True)
@@ -510,17 +510,17 @@ shot("L42.2", mv([KX + 1.4, -0.6, 1.9], [KX - 1.0, 2.4, 1.1], 34, [KX + 0.9, -0.
 clock("L43", 11, 59)
 only("L43", ["me", "dev"])
 vis("L43", "plates", True)
-put("me", "L43", [G.SEAT_ME[0], G.SEAT_ME[1]], 90, expr="laugh")
-put("dev", "L43", [G.SEAT_DEV[0], G.SEAT_DEV[1]], -90, expr="laugh")
+put("me", "L43", [G.SEAT_ME[0], G.SEAT_ME[1]], 130, expr="laugh")
+put("dev", "L43", [G.SEAT_DEV[0], G.SEAT_DEV[1]], -130, expr="laugh")
 cue("L43", "sit", who="me", on=True, z=0.55)
 cue("L43", "sit", who="dev", on=True, z=0.55)
-shot("L43", mv([TX - 0.6, 9.2, 1.5], [TX, 6.6, 1.25], 38, [TX - 0.4, 8.8, 1.5], [TX, 6.6, 1.25], 38), "laugh")
+shot("L43", mv([TX, 9.3, 1.5], [TX, 6.6, 1.35], 12.5, [TX, 9.0, 1.5], [TX, 6.6, 1.35], 12.5), "laugh")
 # L44 the next morning, the radio's back
 clock("L44", 7, 0)
 cue("L44", "pair", n=1.0)
 only("L44", ["me"])
 put("me", "L44", [-81.2, 1.0], 180, expr="worried", head=[0, 14])
-shot("L44", mv([KX - 1.9, 3.5, 1.55], [KX - 1.1, 2.2, 1.0], 36, [KX - 1.4, 3.7, 1.5], [KX - 1.1, 2.2, 1.0], 36), "radioback")
+shot("L44", mv([KX - 1.5, 4.4, 1.6], [KX - 1.2, 1.5, 1.45], 26, [KX - 1.4, 4.0, 1.6], [KX - 1.2, 1.5, 1.45], 26), "radioback")
 shot("L44.1", mv([KX - 1.2, 3.9, 1.42], [KX - 1.2, 1.0, 1.3], 34, [KX - 1.1, 3.4, 1.4], [KX - 1.2, 1.0, 1.3], 34), "radioback2")
 only("L45", ["odell"])
 put("odell", "L45", [OD, 5.6, 0.3], 0, expr="wide")
@@ -541,8 +541,8 @@ PH = HOUSES[3:7]                                                   # four window
 PAIR47 = [(FACES[2 * k + j], wx + (-0.34 if j == 0 else 0.34)) for k, wx in enumerate(PH) for j in (0, 1)]
 for nm, wx in PAIR47:
     put(nm, "L47", [wx, -9.35, G.FACE_Z], 180, expr="worried", head=[0, 0])
-shot("L47", mv([OD - 3.0, 1.0, 4.9], [OD - 2.0, -9.3, 5.0], 30, [OD + 3.0, 1.0, 4.9], [OD + 2.0, -9.3, 5.0], 30), "streetwindows")
-shot("L47.2", mv([PH[1] - 0.2, -2.6, 4.8], [PH[1], -9.3, 5.0], 52, [PH[1] + 0.2, -3.2, 4.8], [PH[1] + 0.1, -9.3, 5.0], 52), "streetface")
+shot("L47", mv([OD, 1.0, 4.9], [OD, -9.3, 5.0], 21, [OD, 1.4, 4.9], [OD, -9.3, 5.0], 24), "streetwindows")
+shot("L47.2", mv([PH[2] - 0.2, -2.6, 4.8], [PH[2], -9.3, 5.0], 52, [PH[2] + 0.2, -3.2, 4.8], [PH[2] + 0.1, -9.3, 5.0], 52), "streetface")
 only("L48", ["odell"])
 put("odell", "L48", [OD, 5.6, 0.3], 0, expr="smile")
 shot("L48", mv([OD + 0.3, 1.2, 1.45], [OD, 5.6, 1.4], 38, [OD + 0.1, 1.7, 1.45], [OD, 5.6, 1.4], 38), "odellsmile")
