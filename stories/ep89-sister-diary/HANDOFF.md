@@ -1,27 +1,27 @@
-# ep89-sister-diary: handoff
+# ep89-sister-diary: handoff (DROPPED for good, 2026-11-04)
 
-**Status:** approved. The PR is open and the proof is next.
+**Status:** dropped. The proof qa failed, and the second orchestrator's revival terms were "a qa fail drops it for good".
 
-## History
-1. It was dropped at the 2-round cap, then revived by the second orchestrator for one targeted fix.
-2. Round 2 critic: approve (`reviews/r2-critic.md`). Average about 7.1, hook 8, nothing under 5.
-3. Round 2 standards: revise. Two black shots, S35 and S59.
-4. Both shots were fixed with new cameras (rev 11). The darkest of all 3672 frames averages 55.8/255, and none is under 50.
+## The fail
+The proof qa (`qa/ep89-sister-diary.json`, stage proof, run 41776960749, sha a615559) failed on one thing: **the score uses the `musicbox` voice** at about 0 to 35 s and about 85 to 115 s. RULES hard rule 6 says "no music box".
+
+The fix would be to swap that voice in `generator/make_story.py`, regenerate, and draw a new proof.
+
+## What passed in the proof
+- craft: 0 blocks, 0 near; 2 warns (cuts 8.09 per 10 s, character motion 0.43)
+- flash: passes
+- clips: 0
+- loudness: -14.1 LUFS, -1.8 dBTP
+- gate: OPEN
+
+## Review history
+1. Round 1: critic revise and standards revise.
+2. The fix round.
+3. Round 2: critic approve (average about 7.1, hook 8), standards revise (two black shots).
+4. The orchestrator revived it for one targeted camera fix.
 5. The standards re-check approved (`reviews/r3-standards.md`).
 
-## Before the PR
-- `hold` was removed from package.json.
-- check: passes.
-- gate: OPEN.
-- pytest: 201 passed.
-
-## Next
-1. proof.yml draws the proof on the PR.
-2. The qa agent checks it at stage proof and writes `qa/ep89-sister-diary.json`.
-3. Merge once qa passes and `test` is green.
-
-## Notes
-- The full-rate flash check on the bright shots was not run locally. The proof covers it.
-- L51c shows Nina's face, not the dust-blow (the critic accepted it).
-- Nina's ponytail doesn't show.
-- Engine: `render --force` leaves stale frames. Delete `out/work/<story>/frames-preview` first.
+## For the next writer or builder
+- Check `story.json`'s music voices against hard rule 6 before review. The music plan in `script.md` asked for "soft plucked plinks", and the build mapped them to `musicbox`. Nobody caught it until the proof qa.
+- The PR (#236) is left open for the orchestrator to close or rescue.
+- The engine still offers a `musicbox` voice that the rules forbid. Worth a guard in `check` (I didn't touch the engine).
