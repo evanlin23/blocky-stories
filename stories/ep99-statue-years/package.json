@@ -1,11 +1,11 @@
 {
-  "title": "Nobody Here Ages But The STATUE 🗿",
+  "title": "This Statue Grows OLD So We Don't 🗿",
   "description": "Nobody in this town gets older. On your birthday you light a candle at the statue in the park and give it your year, and its stone beard has grown down to its knees.\n\nMy dad is the only man in town who never gave one, so strangers ask Mom if he's her father. Then this week, the statue started getting younger.\n\nIt's made up. A blocky story, built with code and Blender.",
   "pin": "Comment KEEP if you'd keep your year.",
   "made_for_kids": false,
-  "cover_s": 47.6,
+  "cover_s": 26.2,
   "shape": "taking-back",
   "opening": "cost",
   "lane": "experiment",
-  "hold": "batch 9b: scripts only, not built yet"
+  "hold": "batch 9b: round 1 fixes in progress"
 }
