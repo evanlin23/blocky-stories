@@ -1,4 +1,18 @@
-# every-lock: handoff (2026-11-03, about 10:45 AM Central, handed to the second batch-6 orchestrator)
+# every-lock: handoff (2026-11-04, review round 1 fixes applied)
+
+## Where it stopped (latest)
+- **Branch:** `claude/p5-lock-doors`. Round 1 (critic + standards) fixes are in; preview redrawn, finished, mixed.
+- **Done:** L01/L72 re-voiced (L01.3 shot ref); sound events cut to 3.8 per 10 s (meter clicks and door marks off, night
+  clicks thinned, `marks: false`; also teleport cuts no longer make a phantom burst of footsteps, see `endat` in
+  make_story.py); meter drawn 8 cm from the lens, narrower, so it is whole on every frame; `headfit` widens or backs
+  off every camera so heads stay in frame (and keeps hall cameras off the walls); cooler shot moved inside the kitchen
+  and lit (`dk_c`); L13 clock widened; L53/L55/L58 hinge and tally shots cleared and tally strokes enlarged; curtain
+  darkened; Jade night fill light (`h_jfill`); L71.1 shows the pile pushing Dale's front door; L05 dolly shortened so
+  flash at 10 s reads 3 (was 6).
+- **Checks:** flash PASS (3f max 3/s), preflight 0 blocks, clipcheck 0, measure 0 block 0 near (cuts/10s 9.19 warn only).
+- **Next:** critic/standards round 2, then PR, proof, qa. Stale frames in `frames-preview` corrupt flash readings
+  (a re-render after a timeline change leaves old frames): move any file older than the render out before `finish`.
+
 
 ## Where it stopped (latest)
 - **Branch:** `claude/p5-lock-doors`, pushed, with main merged in, including polish v2.1 and the proof workflow (proof.yml, PR #171). **No PR is open.**

@@ -606,6 +606,8 @@ def build_dk(kit, M, ctx):
     L = kit.light
     L("dk_a", "AREA", (x, 1.8, 2.45), 230, "#fff1d8", size=1.4)
     L("dk_b", "AREA", (x - 0.2, 3.0, 2.4), 170, "#ffffff", size=1.0)
+    dc = L("dk_c", "AREA", (x + 1.1, 1.4, 2.4), 320, "#fff4e0", size=1.4)
+    kit.aim(dc, (x + 1.2, 1.0, 0.2))
     L("dk_n1", "AREA", (x, 1.8, 2.45), 140, "#ffb86b", size=1.6)
     L("dk_n2", "POINT", (x + 0.9, 3.1, 0.45), 26, "#ffb86b", size=0.08)
 
@@ -927,7 +929,7 @@ def animate(kit, story, tl, t, ctx):
     over["h_jfill"] = p
     over["h_night"] = p
     over["h_moon"] = p
-    over["dk_a"] = over["dk_b"] = 1 - pd
+    over["dk_a"] = over["dk_b"] = over["dk_c"] = 1 - pd
     over["dk_n1"] = over["dk_n2"] = pd
     # the pile's own glints at night: a little warm fill by the bath door
     # ---- the meter

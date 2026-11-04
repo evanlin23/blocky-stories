@@ -141,7 +141,7 @@ def headfit(c, who, top=1.78, share=0.68):
     for w in (who or {}).values():
         pos = w["pos"]
         z = pos[2] if len(pos) > 2 else 0.0
-        if 0.2 < z < 0.35 or w.get("lean", 0) > 20:
+        if w.get("lean", 0) > 20:
             continue
         heads.append((pos[0], pos[1], z + top))
     out = []
@@ -239,7 +239,7 @@ S("L04", cam((DK + 1.6, 0.2, 1.4), (DK - 0.1, 3.2, 1.1), 20), {"downstairs": FP(
   note="the 64-lock fridge, the man sheepish", cues=[CU("frtiny", on=True)])
 S("L04+0.7", cam((DK - 0.1, 2.7, 1.68), (DK - 0.1, 3.25, 1.62), 70), note="plant 1: the little keyhole flaps, a tiny lock growing")
 S("L04+1.5", cam((DK - 0.2, 3.0, 1.35), (DK + 1.2, 1.0, 0.3), 24), note="the cooler and the milk (held: no swoop, the 8.3 s flash fix)")
-S("L05", dolly((-11.8, -1.2, 1.4), (-8.0, -1.2, 1.4), (-9.0, 0.0, 1.2), (-6.0, 0.0, 1.2), 17), note="open front doors on our floor, one propped with a boot")
+S("L05", dolly((-11.8, -1.2, 1.4), (-10.2, -1.2, 1.4), (-9.0, 0.0, 1.2), (-7.4, 0.0, 1.2), 17), note="open front doors on our floor, one propped with a boot")
 S("L05+0.9", dolly((1.0, -0.6, 1.4), (5.0, -0.6, 1.4), (3.0, -2.4, 1.2), (7.0, -2.4, 1.2), 17), note="across the hall, more open doors")
 S("L06", cam((-6.0, -0.6, 1.45), (-6.0, -5.0, 1.0), 19),
   {"fa1": P(-6.7, -4.5, 180, "grin", arms=[55, 0]), "fa2": P(-5.3, -4.5, 180, "smile", arms=[0, 55])}, note="a family at dinner")
@@ -296,7 +296,7 @@ S("L20", cam((3.9, 4.4, 1.45), (3.9, 6.3, 1.0), 24), {"jade": P(3.9, 6.15, 0, SM
 S("L20.2", cam((2.5, 6.7, 1.5), (3.9, 6.0, 1.0), 30), {"jade": P(3.9, 6.15, 0, SMUG, z=0.28)}, note="dawn at her window",
   cues=[CU("night", ref="L21-0.5", v=0.55, dur=0.45)])
 S("L21", cam((-3.9, 4.5, 1.4), (-3.9, 6.3, 1.0), 24), {"me": P(-3.9, 6.15, 0, "worried", z=0.28)}, note="me in bed in the dark blue")
-S("L22", cam((0.7, 5.2, 1.5), (0.0, 7.0, 1.3), 22), {"jade": P(0.0, 7.7, 0, SMUG)}, note="Jade already at the bathroom door; the slam",
+S("L22", cam((0.7, 5.2, 1.5), (0.0, 7.0, 1.3), 22), {"jade": P(0.25, 7.7, 0, SMUG)}, note="Jade already at the bathroom door; the slam",
   cues=[DR(swing=80.0), DR(ref="L22>-0.35", swing=0.0, dur=0.14), DR(ref="L22>-0.3", n=128), MT(128, ref="L22>-0.3")])
 S("L23", cam((K - 0.5, 0.6, 1.5), (K - 0.5, 2.6, 1.4), 22), {"mom": P(K - 0.5, 2.4, 0, ANNOYED, arms=[85, 0])},
   note="Mom points at the hall", cues=[CU("night", v=0.0, dur=0.4), CU("keys", v=0.8)])
@@ -377,7 +377,8 @@ S("L48", cam((0.2, 3.7, 1.4), (-0.7, 5.3, 1.2), 26), {"me": FP(-0.45, 3.8, (0.2,
   cues=[CU("mydoor", a=170.0), CU("mydoor", ref="L48", a=140.0, dur=1.2)])
 S("L49", cam((-0.15, 4.5, 1.3), (-0.6, 5.5, 1.2), 42), note="my lockless door, the pile's edge pressing it",
   cues=[CU("mydoor", a=134.0, dur=0.8)])
-S("L50", cam((0.3, 4.2, 0.35), (-0.4, 5.2, 0.15), 30), {"me": P(-0.3, 4.85, 0, "angry")}, note="my sneaker against the bottom of my door")
+S("L50", cam((0.3, 4.2, 0.35), (-0.4, 5.2, 0.15), 30), {"me": P(-0.3, 4.85, 0, "angry")}, note="my sneaker against the bottom of my door",
+  cues=[CU("hole", holes=[MEHOLE(-0.3, 4.85)])])
 S("L51", cam((0.0, 3.6, 1.6), (0.0, 5.9, 1.55), 26), {"jadeb": P(0.0, 5.9, 0, "worried")},
   note="Jade in a gap of the pile, in her blanket", cues=[CU("hole", holes=[HOLE_JADE]), MT(65536)])
 S("L51.1", cam((0.2, 3.4, 1.5), (-0.5, 4.3, 1.5), 30), {"me": FP(-0.55, 4.3, (0.2, 3.4), "worried"), "jadeb": P(0.0, 5.9, 0, "worried")},
@@ -405,11 +406,11 @@ S("L58", cam((0.2, 3.8, 1.7), (0.0, 5.9, 1.8), 24), {"jadeb": P(0.0, 5.9, 0, "wo
   note="Jade on a chair, stretching over the pile", cues=[CU("chairat", loc=(0.0, 5.9, 0.0))])
 S("L58+0.65", cam((-0.5, 5.2, 1.78), (-0.5, 6.9, 1.78), 24), note="the bare top hinge plate, three tally strokes beside the screws (held)",
   cues=[CU("pin", ref="L58+0.65", i=2)])
-S("L59", cam((0.0, 3.0, 1.5), (0.0, 4.4, 1.5), 22), {"me": P(-0.7, 4.2, 90, "neutral", arms=[40, 40]), "jadeb": P(0.7, 4.2, -90, "neutral", arms=[40, 40])},
+S("L59", cam((0.0, 3.0, 1.5), (0.0, 4.4, 1.5), 22), {"me": P(-0.55, 4.2, 90, "neutral", arms=[40, 40]), "jadeb": P(0.55, 4.2, -90, "neutral", arms=[40, 40])},
   note="a two-person door", cues=[CU("chairat", loc=(0.0, 0.0, -3.0))])
-S("L60", cam((0.0, 3.2, 1.6), (0.0, 6.2, 1.2), 20), {"me": P(-0.7, 4.2, 90, "neutral", arms=[60, 60]), "jadeb": P(0.7, 4.2, -90, "neutral", arms=[60, 60])},
+S("L60", cam((0.0, 3.2, 1.6), (0.0, 6.2, 1.2), 20), {"me": P(-0.55, 4.2, 90, "neutral", arms=[60, 60]), "jadeb": P(0.55, 4.2, -90, "neutral", arms=[60, 60])},
   note="we lift it out of the frame", cues=[CU("doorat", loc=(0.0, 7.0, 0.0)), CU("doorat", ref="L60+0.2", loc=(0.0, 5.6, 0.25), dur=0.8)])
-S("L60.2", cam((0.0, 3.0, 1.5), (0.0, 4.8, 1.4), 22), {"me": P(-0.65, 4.4, 90, "neutral", arms=[100, 100]), "jadeb": P(0.65, 4.4, -90, "neutral", arms=[100, 100])},
+S("L60.2", cam((0.0, 3.0, 1.5), (0.0, 4.8, 1.4), 22), {"me": P(-0.55, 4.4, 90, "neutral", arms=[100, 100]), "jadeb": P(0.55, 4.4, -90, "neutral", arms=[100, 100])},
   note="the pile on our shoulders", cues=[CU("doorat", loc=(0.0, 4.9, 0.95), scale=0.5, dur=0.4)])
 S("L61", cam((ST + 1.3, -1.4, 2.8), (ST - 0.8, 1.8, -0.8), 22),
   {"me": P(ST - 1.2, 0.4, 0, "neutral", arms=[100, 100], to=[(ST - 1.2, 2.2, -0.9)]),
@@ -437,7 +438,7 @@ S("L65b", cam((0.6, 4.9, 1.5), (0.0, 6.6, 1.4), 24), {"jade": FP(-0.1, 6.3, (0.6
 S("L65b.1", cam((0.0, 5.6, 1.3), (0.0, 6.9, 1.3), 32), note="no lock pops on; the meter holds")
 S("L66", cam((-0.2, 5.7, 1.3), (-0.55, 6.9, 1.2), 34), {"me": P(-0.6, 6.1, 180, "neutral", arms=[95, 0])}, note="we knock on the bare frame")
 S("L67", cam((K - 1.6, 2.7, 1.8), (K - 2.0, 4.1, 1.9), 26), note="7:15 again", cues=[CU("clock", h=7.25)])
-S("L67.1", cam((-0.5, 2.8, 1.5), (0.3, 4.8, 1.5), 24), {"jade": FP(0.67, 4.8, (-0.5, 2.8), "smile", arms=[0, 100]), "me": P(0.03, 3.2, 180, "neutral", to=[(0.03, 5.6)])},
+S("L67.1", cam((-0.5, 2.8, 1.5), (0.3, 4.8, 1.5), 24), {"jade": FP(0.62, 5.6, (-0.5, 2.8), "smile", arms=[0, 100]), "me": P(-0.12, 3.2, 180, "neutral", to=[(-0.12, 4.4)])},
   note="Jade waves me past")
 S("L68", cam((SR, 4.6, 6.0), (SR + 0.5, 1.0, 0.2), 22), note="the curb is empty")
 S("L69", cam((0.0, 0.35, 1.5), (0.0, -7.0, 1.2), 20), note="across the hall, a new bathroom door at the end of Mr. Dale's hall",
