@@ -48,7 +48,7 @@ def _L(**kw):
 LOOKS = {
     "day": _L(),
     # the one dark scene: no sun, a dim cold sky, the TV and the streetlight do the work
-    "night": _L(sun=0.0, fill=0.16, fill_col="#9fb4ff", sky="#16203c", sky_str=0.32, front=0.0, night=1.0),
+    "night": _L(sun=0.0, fill=0.02, fill_col="#9fb4ff", sky="#0a1020", sky_str=0.06, front=0.0, night=1.0),
 }
 
 
@@ -498,10 +498,10 @@ def build(kit, story, tl):
     fx, fy, fz = gx + 2.85, 2.0, 0.65
     kit.box("frame.f", (0.34, 0.04, 0.42), (fx, fy - 0.1, fz + 0.21), plastic("#d9a441", 0.3, spec=0.7), rot=(-0.3, 0, 0), bevel=0.01)
     kit.box("frame.bg", (0.28, 0.01, 0.35), (fx, fy - 0.128, fz + 0.21), plastic("#cfe6ff", 0.8), rot=(-0.3, 0, 0))
-    kit.box("frame.stove", (0.24, 0.01, 0.12), (fx, fy - 0.134, fz + 0.085), plastic("#3b7fd0", 0.7), rot=(-0.3, 0, 0))
-    kit.box("frame.apron", (0.1, 0.01, 0.15), (fx, fy - 0.139, fz + 0.2), plastic("#ffc94a", 0.7), rot=(-0.3, 0, 0))
-    kit.box("frame.head", (0.08, 0.01, 0.08), (fx, fy - 0.143, fz + 0.31), plastic("#e6b48c", 0.7), rot=(-0.3, 0, 0), bevel=0.01)
-    kit.box("frame.hair", (0.09, 0.01, 0.04), (fx, fy - 0.146, fz + 0.355), plastic("#9a7a45", 0.7), rot=(-0.3, 0, 0))
+    kit.box("frame.stove", (0.26, 0.01, 0.15), (fx, fy - 0.142, fz + 0.075), plastic("#3b7fd0", 0.7), rot=(-0.3, 0, 0))
+    kit.box("frame.apron", (0.1, 0.01, 0.15), (fx, fy - 0.155, fz + 0.2), plastic("#ffc94a", 0.7), rot=(-0.3, 0, 0))
+    kit.box("frame.head", (0.08, 0.01, 0.08), (fx, fy - 0.168, fz + 0.31), plastic("#e6b48c", 0.7), rot=(-0.3, 0, 0), bevel=0.01)
+    kit.box("frame.hair", (0.09, 0.01, 0.04), (fx, fy - 0.18, fz + 0.355), plastic("#9a7a45", 0.7), rot=(-0.3, 0, 0))
     kit.cyl("gp.lamp", 0.06, 0.3, (gx + 3.5, 2.5, 0.8), plastic("#f6ecd8", 0.5), n=10)
     kit.cyl("gp.lampshade", 0.16, 0.2, (gx + 3.5, 2.5, 1.05), plastic("#ffe6a8", 0.7), n=14, r2=0.1)
     # the TV on a cart at the west wall, facing +x; its screen is a separate plane so it can fade up
@@ -605,19 +605,25 @@ def build_tag(kit):
         W["pins"].append(p)
 
 
+def _adopt(parent, ob):
+    """A head part made after the first pose starts hidden when its head is (nobody is at the origin on frame 0)."""
+    ob.hide_render = parent.hide_render
+    return ob
+
+
 def _first_frame(kit, story):
     from blocky import faces
     R, H = faces.HEAD_R, faces.HEAD_H
     gh = bpy.data.objects.get("grandpa.headg")
     if gh is not None:
         m = kit.plastic("#f4f4f0", 0.9)
-        kit.box("grandpa.brow", (0.95, 0.07, 0.09), (0, -R - 0.03, 0.15), m, gh, bevel=0.02)
-        kit.box("grandpa.tuft", (0.28, 0.06, 0.1), (0, -R - 0.04, -0.36), m, gh, bevel=0.02)
+        _adopt(gh, kit.box("grandpa.brow", (0.95, 0.07, 0.09), (0, -R - 0.03, 0.15), m, gh, bevel=0.02))
+        _adopt(gh, kit.box("grandpa.tuft", (0.28, 0.06, 0.1), (0, -R - 0.04, -0.36), m, gh, bevel=0.02))
     mh = bpy.data.objects.get("mom.headg")
     if mh is not None:
         sil = kit.plastic("#cfcfd6", 0.5, spec=0.3)
         for sx in (-1, 1):
-            kit.box(f"mom.temple{sx}", (0.1, 0.46, 0.4), (sx * (R + 0.01), -0.12, H / 2 - 0.42), sil, mh, bevel=0.03)
+            _adopt(mh, kit.box(f"mom.temple{sx}", (0.1, 0.46, 0.4), (sx * (R + 0.01), -0.12, H / 2 - 0.42), sil, mh, bevel=0.03))
     W["holds"] = {}
     for who, sx in (("me", 1), ("mom", 1), ("landlord", 1)):
         arm = bpy.data.objects.get(f"{who}.arm{sx}")
@@ -656,11 +662,11 @@ def animate(kit, story, tl, t, ctx):
     gains["gpday"] = 1.0 - night
     gains["bedday"] = 1.0 - night
     tv = sample("tv", tl, t, {"v": 0.0})["v"]
-    gains["gptv"] = tv * night
-    gains["gpface"] = night * (0.35 + 0.65 * tv)
-    gains["gpstreet"] = night * (0.4 + 0.6 * tv)
-    gains["bedmoon"] = night
-    gains["bedlamp"] = night
+    gains["gptv"] = 0.14 * tv * night
+    gains["gpface"] = 0.12 * night * (0.35 + 0.65 * tv)
+    gains["gpstreet"] = 0.15 * night * (0.4 + 0.6 * tv)
+    gains["bedmoon"] = 0.35 * night
+    gains["bedlamp"] = 0.5 * night
     W["tvmat"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 0.25 + 3.2 * tv * night
     W["winmat"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 1.6 * (1 - night) + 0.5 * night
     w = bpy.context.scene.world
@@ -742,13 +748,34 @@ def animate(kit, story, tl, t, ctx):
         for j in range(32):
             i = grp + j
             ob = W["sw"][i]
-            r0 = (0.25 + 0.4 * rnd(i, 1)) * sw.get("wide", 1.0)
+            r0 = (0.5 + 0.5 * rnd(i, 1)) * sw.get("wide", 1.0)
             ang = rnd(i, 2) * 6.283 + 4.0 * u * (1 if i % 2 else -1)
             rad = r0 * (0.8 + 1.2 * u)
             z = sw["z"] + (rnd(i, 3) - 0.5) * sw.get("tall", 1.7) + 0.6 * u
             ob.location = (sw["x"] + rad * math.cos(ang), sw["y"] + rad * math.sin(ang) * 0.6, max(0.05, z))
             k = max(0.02, (1.0 - ss(u)) ** 0.8) * (0.7 + 0.6 * rnd(i, 4)) * szf
             ob.scale = (k, k, k)
+
+    # nothing gold floats through a face: push every particle out of any visible head
+    heads = [o for o in bpy.data.objects if ".headm" in o.name and not o.hide_render and o.type == "MESH"]
+    if heads:
+        bpy.context.view_layer.update()
+        hs = []
+        for o in heads:
+            pts = [o.matrix_world @ Vector(c) for c in o.bound_box]
+            ctr = sum(pts, Vector()) / 8.0
+            hs.append((ctr, max((p - ctr).length for p in pts) + 0.05))
+        for ob in W["sw"] + W["sp"]:
+            if ob.location.z < -10:
+                continue
+            rr = max(ob.scale.x, 1.0) * ob.dimensions.x * 0.5 if False else 0.0
+            for ctr, hr in hs:
+                dv = ob.location - ctr
+                lim = hr + 0.2
+                if dv.length < lim:
+                    if dv.length < 1e-4:
+                        dv = Vector((1, 0, 0))
+                    ob.location = ctr + dv.normalized() * lim
 
     # the pill bottle slides into the bread box
     pb = sample("pillpos", tl, t, {"u": 0.0})["u"]

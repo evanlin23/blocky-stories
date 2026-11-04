@@ -15,9 +15,11 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
+SPLITS = {"on his LANDLORD'S couch.": [3, 1], "it was a dumb FIGHT,": [3, 2], "in a green ARMCHAIR,": [3, 1],
+          "for a long TIME.": [3, 1], "on a stranger's WALL.": [3, 1], "in his dog's BED.": [3, 1], "it was my BIRTHDAY.": [3, 1]}
 for ln in orig_lines:
     out, mp = [], []
     for cap, spoken in ln["chunks"]:
@@ -25,6 +27,8 @@ for ln in orig_lines:
         n = len(cw)
         k = 1 if n <= 3 else (2 if n <= 6 else 3)
         sizes = [n // k + (1 if i < n % k else 0) for i in range(k)]
+        if cap in SPLITS:
+            sizes = SPLITS[cap]    # keep function words with the word they lead (no 0.1 s "in a" caption)
         mp.append(len(out))
         i = 0
         for sz in sizes:
@@ -106,7 +110,7 @@ cast = {
     "x1": person("#b98456", "#e8845a", "#4a4036", "#2a2a2a", hair="buzz", hair_c="#1a1410", sleeves="short"),
     "x2": person("#f0c8a0", "#8a5ab0", "#2a2a38", "#d8d0c8", hair="long", hair_c="#150f0c", eyes="lashes"),
     "x3": person("#8a5a3a", "#ffd23f", "#3a4a5a", "#3a2a1a", hair="spiky", hair_c="#2a2a2a", sleeves="short"),
-    "x4": person("#d3a07a", "#3a8aaa", "#5a4a3a", "#2a3a2a", hair="swoop", hair_c="#2a2a2a"),
+    "x4": person("#d3a07a", "#e8c040", "#4a5a7a", "#6a3a2a", hair="swoop", hair_c="#7a3a1a", pattern="stripes", pattern_c="#ffffff"),
     "x5": person("#e8b890", "#7fb070", "#6a5a8a", "#f4f4f2", hair="bun", hair_c="#7a4a2c", eyes="lashes"),
     "x6": person("#dca97c", "#f4a3a3", "#3a4a6a", "#2a2a2a", hair="cap", hair_c="#a05a2a", sleeves="short"),
 }
@@ -196,11 +200,11 @@ shot("L01.2", F(PK, -8.0, 1.2, 4.4, 34, dx=-0.3, push=0.12, rise=0.2), "gone1")
 only("L02", ["grandpa", "me"])
 put("grandpa", "L02", list(GCH), 0, expr="warm", arms=[40, 40])
 sit("grandpa", "L02")
-put("me", "L02", [GP + 0.2, 1.1], 0, expr="wide")
-swirl("L02", GP + 0.2, 1.1, 0.95, 1.0)
+put("me", "L02", [GP + 0.8, 1.0], 0, expr="wide")
+swirl("L02", GP + 0.8, 1.0, 0.95, 1.0)
 cue("L02", "pin", v=1.0, dur=0.5)
-shot("L02", F(GP + 0.9, 1.6, 1.25, 3.6, 34, dx=-0.2, push=0.14), "land1")
-shot("L02.2", F(GP + 1.12, 1.6, 0.8, 1.6, 36, dx=-0.15, dz=0.25, push=0.1), "hand1")
+shot("L02", F(GP + 1.2, 1.5, 1.4, 4.6, 26, dx=0.0, push=0.08), "land1")
+shot("L02.2", F(GP + 1.15, 2.0, 0.95, 2.0, 36, dx=1.0, dz=0.2, push=0.08), "hand1")
 
 # ===== 02 the montage (L03 to L08)
 only("L03", ["x1", "x2", "x3", "x4", "x5", "x6"])
@@ -257,8 +261,8 @@ shot("L07.2", F(LD + 0.2, 2.2, 1.2, 5.6, 32, push=0.14), "couch1")
 # L08: the landlord's eyebrows, the man sheepish
 beat("landlord", "L08", expr="angry", head=[-10, 0])
 shot("L08", F(LD + 2.0, 2.2, 1.35, 3.0, 40, dx=0.1, push=0.16), "landlord1")
-beat("party", "L08.1", expr="worried", head=[12, 6])
-shot("L08.1", F(LD - 1.6, 2.2, 1.35, 3.0, 40, dx=-0.1, push=0.16), "party2")
+beat("party", "L08.1+0.33", expr="worried", head=[12, 6])
+shot("L08.1+0.33", F(LD - 1.6, 2.2, 1.35, 3.0, 40, dx=-0.1, push=0.16), "party2")
 sit("party", "L09-0.1", False)
 sit("landlord", "L09-0.1", False)
 hold("landlord", "L09-0.1", False)
@@ -273,8 +277,8 @@ only("L10", ["grandpa"])
 put("grandpa", "L10", list(GCH), 0, expr="warm", arms=[40, 40])
 sit("grandpa", "L10")
 shot("L10", F(GP + 0.4, 2.0, 1.2, 6.8, 30, push=0.12), "room1")
-beat("grandpa", "L10.1", expr="warm", head=[0, -4])
-shot("L10.1", F(GCH[0], GCH[1], 1.4, 2.7, 40, dx=-0.15, push=0.16), "gp1")
+beat("grandpa", "L10.2", expr="warm", head=[0, -4])
+shot("L10.2", F(GCH[0], GCH[1], 1.4, 2.7, 40, dx=-0.15, push=0.16), "gp1")
 # L11: top-down tray
 shot("L11", TOP(GP - 0.25, 1.0, 0.6, 2.5, 34), "tray1")
 # L12: the first time I said sorry and ran
@@ -416,15 +420,15 @@ sit("grandpa", "L28")
 shot("L28", mv([GP + 0.3, -3.6, 1.9], [GP - 0.4, 2.2, 1.2], 27, [GP + 0.5, -2.6, 1.85], [GP - 0.4, 2.2, 1.2], 27), "dark2")
 # L29: he was awake
 shot("L29", F(GCH[0], GCH[1], 1.35, 3.6, 38, dx=-0.5, push=0.16), "awake1")
-beat("grandpa", "L29.1", expr="soft", head=[-6, 0])
-shot("L29.1", F(GCH[0], GCH[1], 1.45, 2.3, 42, dx=-0.3, push=0.14), "awake2")
+beat("grandpa", "L29.2", expr="soft", head=[-6, 0])
+shot("L29.2", F(GCH[0], GCH[1], 1.45, 2.3, 42, dx=-0.3, push=0.14), "awake2")
 # L30: past his shoulder to the wall behind
 shot("L30", mv([GP + 3.4, -0.9, 1.45], [GP + 0.6, 3.0, 1.9], 30, [GP + 2.4, 0.5, 1.5], [GP - 0.6, 3.8, 2.0], 30), "pastshoulder")
 # L31: ME (the portrait)
 shot("L31", F(GP - 3.6, 3.6, 2.25, 2.6, 36, dx=0.1, push=0.2), "portrait")
 # L32: the wall, then one clipping
 shot("L32", mv([GP + 0.2, -3.8, 2.0], [GP + 0.2, 3.8, 2.0], 22, [GP + 0.2, -2.4, 2.0], [GP + 0.2, 3.8, 2.0], 22), "wall1")
-shot("L32.1", F(GP - 2.4, 3.7, 2.0, 2.3, 38, dx=0.2, push=0.2), "clip1")
+shot("L32.2", F(GP - 2.4, 3.7, 2.0, 2.3, 38, dx=0.2, push=0.2), "clip1")
 # L33: notice, trophy, first job
 shot("L33", F(GP - 1.6, 3.7, 2.8, 1.5, 40, dx=0.0, push=0.2), "baby")
 shot("L33.1", F(GP - 0.8, 3.7, 2.8, 1.5, 40, dx=0.0, push=0.2), "bowl")
@@ -458,8 +462,8 @@ cue("L39", "pollen", level=1.0)
 only("L39", ["grandpa"])
 put("grandpa", "L39", list(GCH), 0, expr="sad-smile", arms=[40, 40])
 sit("grandpa", "L39")
-shot("L39", F(GP + 1.1, 2.0, 1.1, 5.3, 32, dx=0.2, push=0.1), "reveal")
-shot("L40", F(GP + 2.85, 1.9, 0.9, 1.2, 40, dx=-0.15, push=0.14), "photo")
+shot("L39", F(GP + 2.2, 2.0, 1.1, 3.5, 21, push=0.1), "reveal")
+shot("L40", F(GP + 2.85, 1.9, 0.86, 1.7, 40, dx=-0.15, push=0.14), "photo")
 beat("grandpa", "L41", expr="sad-smile")
 acting["grandpa"].append({"at": "L41", "pos": list(GCH), "side": [0, 60]})
 shot("L41", F(GP + 2.5, 2.0, 0.95, 1.6, 40, dx=-0.3, dz=0.2, push=0.14), "hand2")
@@ -483,12 +487,12 @@ only("L46", ["mom"])
 put("mom", "L46", [KT + 0.2, 2.6], 0, expr="soft", arms=[0, 150])
 beat("mom", "L46+0.5", expr="smile", arms=[0, 0])
 shot("L46", F(KT + 0.2, 2.6, 1.4, 3.0, 40, dx=0.3, push=0.14), "mornings1")
-put("mom", "L46.1", [KT - 0.3, 2.6], 0, expr="soft", arms=[0, 150])
-shot("L46.1", F(KT - 0.3, 2.6, 1.45, 3.4, 36, dx=-0.6, push=0.14), "mornings2")
-put("mom", "L46.2", [KT + 0.3, 2.55], 0, expr="soft", arms=[0, 150])
-shot("L46.2", F(KT + 0.3, 2.55, 1.4, 2.5, 42, dx=0.1, push=0.16), "mornings3")
-beat("mom", "L46.3", expr="sad-smile", arms=[0, 0])
-shot("L46.3", F(KT + 0.2, 2.6, 1.45, 3.3, 36, dx=0.5, push=0.12), "mornings4")
+put("mom", "L46.1+0.45", [KT - 0.3, 2.6], 0, expr="soft", arms=[0, 150])
+shot("L46.1+0.45", F(KT - 0.3, 2.6, 1.45, 3.4, 36, dx=-0.6, push=0.14), "mornings2")
+put("mom", "L46.3", [KT + 0.3, 2.55], 0, expr="soft", arms=[0, 150])
+shot("L46.3", F(KT + 0.3, 2.55, 1.4, 2.5, 42, dx=0.1, push=0.16), "mornings3")
+beat("mom", "L46.3+0.65", expr="sad-smile", arms=[0, 0])
+shot("L46.3+0.65", F(KT + 0.2, 2.6, 1.45, 3.3, 36, dx=0.5, push=0.12), "mornings4")
 
 # ===== 07 Mom (L47 to L52)
 only("L47", ["mom", "me"])
@@ -530,8 +534,8 @@ go("me", "L53>", [PK + 0.6, -1.0])
 shot("L53", F(PK, 3.0, 1.35, 8.5, 32, dx=0.3, push=0.2), "walkin")
 put("mom", "L54", [PK - 0.6, 1.0], 0, expr="soft")
 put("me", "L54", [PK + 0.6, 1.0], 0, expr="smirk")
-go("mom", "L54.1+0.3", [PK - 0.6, -2.4])
-go("me", "L54.1+0.3", [PK + 0.6, -2.4])
+go("mom", "L54.1+0.3", [PK - 0.5, -1.0])
+go("me", "L54.1+0.3", [PK + 0.6, -1.0])
 shot("L54", mv([PK - 0.8, -4.4, 0.55], [PK, 0.4, 1.0], 36, [PK - 0.2, -3.6, 0.7], [PK, 0.4, 1.1], 36), "grass1")
 shot("L54.1", mv([PK + 1.2, -5.8, 0.6], [PK, -1.0, 0.7], 34, [PK + 0.4, -5.0, 0.8], [PK, -1.0, 0.8], 34), "grass2")
 put("mom", "L55", [PK - 0.5, -1.0], 0, expr="crying")
@@ -541,10 +545,9 @@ beat("mom", "L56.1", expr="smirk", head=[10, 0])
 shot("L56", F(PK - 0.5, -1.0, 1.4, 2.5, 42, dx=-0.3, push=0.16), "dare")
 beat("mom", "L57", **SNEEZE)
 shot("L57", F(PK - 0.5, -1.0, 1.4, 2.8, 40, dx=0.2, push=0.16), "sneezemom")
-beat("mom", "L57+0.8", hidden=True)
-swirl("L57+0.8", PK - 0.5, -1.0, 0.95, 1.1)
-cue("L57+0.9", "pin", v2=1.0, dur=0.4)
-shot("L57+0.8", F(PK - 0.2, -1.0, 1.2, 4.0, 32, dx=0.5, push=0.12, rise=0.15), "pin2")
+beat("mom", "L57+0.45", hidden=True)
+swirl("L57+0.45", PK - 0.5, -1.0, 0.95, 1.1)
+cue("L57+0.55", "pin", v2=1.0, dur=0.4)
 shot("L58", F(PK - 0.5, -1.0, 0.8, 3.0, 36, dx=-0.4, push=0.16, rise=0.3), "empty")
 
 # ===== 09 both thinking about me (L59 to L62)
@@ -568,11 +571,11 @@ put("grandpa", "L62", list(GCH), 0, expr="sad-smile", arms=[40, 40])
 sit("grandpa", "L62")
 put("mom", "L62", list(GSOFA_R), 0, expr="sad-smile", arms=[0, 0])
 sit("mom", "L62")
-put("me", "L62", [GP - 0.6, 0.5], 0, expr="wide")
-swirl("L62", GP - 0.6, 0.5, 0.95, 1.0)
+put("me", "L62", [GP + 0.35, 0.4], 0, expr="wide")
+swirl("L62", GP + 0.35, 0.4, 0.95, 1.0)
 cue("L62", "pin", v=1.0, v2=1.0)
-shot("L62", F(GP + 0.2, 1.6, 1.15, 6.2, 30, push=0.12), "reunion")
-shot("L62.3", F(GP - 0.6, 1.0, 0.7, 1.7, 36, dx=0.5, dz=0.35, push=0.12), "threecups")
+shot("L62", F(GP + 0.3, 1.6, 1.2, 4.6, 20, push=0.08), "reunion")
+shot("L62.3", F(GP - 0.25, 1.0, 0.66, 1.5, 36, dx=-0.7, dz=0.5, push=0.12), "threecups")
 shot("L63", TOP(GP - 0.2, 1.0, 0.6, 2.4, 34), "tray3")
 
 # ===== 10 warm (L64 to L69)
@@ -598,10 +601,10 @@ shot("L68", F(KT - 2.4, 2.45, 1.4, 3.0, 40, dx=0.3, push=0.14), "sneezes")
 cue("L68", "pollen", level=1.8)
 beat("mom", "L69", expr="smile", head=[0, 3])
 shot("L69", F(KT - 2.4, 2.45, 1.45, 2.4, 42, dx=-0.1, push=0.16), "pollen")
-only("L69>-0.7", ["me"])
-put("me", "L69>-0.7", [PK, -8.0], 0, expr="squeeze", head=[0, 6])
-cue("L69>-0.7", "pollen", level=2.4)
-shot("L69>-0.7", F(PK, -8.0, 1.4, 3.3, 40, dx=0.15, push=0.0), "loop")
+only("L69>-0.4", ["me"])
+put("me", "L69>-0.4", [PK, -8.0], 0, expr="squeeze", head=[0, 6])
+cue("L69>-0.4", "pollen", level=2.4)
+shot("L69>-0.4", F(PK, -8.0, 1.4, 3.3, 40, dx=0.15, push=0.0), "loop")
 
 OVR = {}
 SH[:] = [(a, OVR.get(nm, c), st, h, f, nm) for (a, c, st, h, f, nm) in SH]
@@ -625,7 +628,7 @@ for i, (at, camera, step, hand, follow, nm) in enumerate(SH):
 sfx = [
     {"at": "L01.2", "kind": "hit", "db": -9},
     {"at": "L27.2", "kind": "whoosh", "db": -21},
-    {"at": "L57+0.8", "kind": "whoosh", "db": -21},
+    {"at": "L57+0.45", "kind": "whoosh", "db": -21},
     {"at": "L62.3", "kind": "click", "db": -20},
 ]
 music = {
