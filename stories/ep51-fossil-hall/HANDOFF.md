@@ -19,3 +19,6 @@ Rescue fix worked: critic r6 (0-5 s) **approve**, avg 7.75, nothing under 5; sta
 2. S014-S015, 16.2-19.7 s ("Grandpa ABE... BRIGHTEST man in TOWN"): the passers-by (marks moved in the clip fix) stand at the lens, shielding arms fill the centre, Abe is a speck. Push them back/aside.
 Minor: eyes shut on frame 0 (blink); S005 planner's arms hide his face.
 Rule: only a single small fix (one shot or one cue) may be re-proofed once; this is two fixes over three shots, so dropped, not re-proofed. If the owner ever wants it back: fix 1 and 2 above, merge current main, redraw the proof (~55 min), qa again. Hold line for package.json is the second orchestrator's to record on main (no drop PR from here). PR #199 left open, not merged.
+
+## Update 2026-11-04: revived for one fix
+Builder fixed qa's S081 (camera moved, narrator in frame) and S014-S015 (passers-by behind the bench, out of frame). Critic r7 (opus, those shots only): **approve** (S005 7, S014-15 6, S081 6). Advice, not blocking: S081 has a dark block near the mouth (stair beam foot or a head?) for qa to check on the proof; Abe's rim could ramp up ~20% over the S015 push. Gate OPEN, pytest 196 pass. Proof 2 drawing on PR #199; a second qa fail means dropped for good.
