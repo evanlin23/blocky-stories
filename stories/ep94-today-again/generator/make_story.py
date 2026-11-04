@@ -250,11 +250,11 @@ S("L10", ((-0.8, 2.6, 2.6), (-0.8, 0, 2.55), 36, (-0.8, 1.9, 2.5), (-0.8, 0, 2.5
 cue("L10.2-0.02", "rain", on=False)
 S("L10.2", ((1.2, 1.6, 1.4), (1.8, 0, 1.7), 40, (1.4, 1.3, 1.5), (1.8, 0, 1.8), 40), note="rain starting on the window, close")
 cue("L10.2+0.1", "rain", on=True)
-S("L11", ((2.4, -6.2, 1.5), (2.0, 0, 1.8), 24, (2.0, -5.0, 1.5), (2.0, 0, 1.8), 24),
-  who={"n2": (X(6.5, -1.6), -90, "neutral", {})},
+S("L11", ((-4.8, -3.4, 1.35), (2.6, -0.6, 1.9), 22, (-3.4, -3.1, 1.4), (2.6, -0.6, 1.9), 22),
+  who={"n2": (X(2.6, -1.6), -90, "neutral", {})},
   note="from the sidewalk: the whole street sunny and dry, rain only down the bakery window (plant)")
-walk("n2", "L11", X(6.5, -1.6))
-walk("n2", "L11>", X(2.6, -1.6))
+walk("n2", "L11", X(2.6, -1.6))
+walk("n2", "L11>", X(-3.2, -1.6))
 S("L11.1+0.2", ((0.2, -3.6, 1.4), (2.0, 0, 1.9), 28, (1.0, -3.0, 1.6), (2.0, 0, 2.0), 28),
   note="close on the streaming window, dry pavement under it")
 
@@ -293,7 +293,7 @@ cue("L14", "letters_off")
 cue("L14", "clock", v=[9, 15])
 walk("pearl", "L14", X(DOOR, -1.0))
 walk("pearl", "L14.1", X(DOOR, 0.1))
-S("L14.1+0.15", ((0.5, 2.6, 1.0), (-2.4, 0.8, 0.8), 22, (0.2, 2.5, 1.1), (-2.4, 0.8, 0.85), 22),
+S("L14.1+0.15", ((0.5, 2.7, 1.5), (-2.5, 0.5, 1.15), 20, (0.2, 2.6, 1.5), (-2.5, 0.5, 1.15), 20),
   who={"pearl": (X(DOOR, 0.1), 180, "smile", {"arms": [8, 8]})},
   note="Pearl stepping neatly over the mat, her hands with more glitter")
 walk("pearl", "L14.1+0.15", X(DOOR, 0.1))
@@ -301,11 +301,11 @@ walk("pearl", "L14.1+0.7", X(DOOR + 0.1, 1.5))
 raw("pearl", "L14.1+0.15", arms=[16, 16])
 # the third: she holds the door
 cue("L15", "glit", n=3)
-S("L15", ((0.3, 3.4, 1.55), (-2.4, 0.4, 1.25), 22, (0.0, 3.2, 1.55), (-2.4, 0.4, 1.25), 22),
-  who={"pearl": (X(-2.0, 0.9), -125, "smile", {"arms": [10, 85]})},
+S("L15", ((0.6, 3.4, 1.5), (-2.4, 0.5, 1.2), 20, (0.3, 3.2, 1.5), (-2.4, 0.5, 1.2), 20),
+  who={"pearl": (X(-2.0, 0.9), 150, "smile", {"arms": [10, 85]})},
   note="the third today: Pearl holding the door, her hands sparkling")
-S("L15.2", ((0.5, 3.0, 1.55), (-2.4, 0.2, 1.3), 22, (0.2, 2.8, 1.55), (-2.4, 0.2, 1.3), 22),
-  who={"pearl": (X(-2.0, 0.9), -125, "grin", {"arms": [10, 85]}), "lund": (X(DOOR - 0.1, -1.3), 180, "grin", {})},
+S("L15.2", ((0.6, 3.2, 1.5), (-2.5, 0.2, 1.25), 20, (0.3, 3.0, 1.5), (-2.5, 0.2, 1.25), 20),
+  who={"pearl": (X(-2.0, 0.9), 150, "grin", {"arms": [10, 85]}), "lund": (X(DOOR - 0.1, -1.3), 180, "grin", {})},
   note="Mr. Lund coming in, both smiling")
 cue("L15.2", "bell")
 walk("lund", "L15.2", X(DOOR - 0.1, -1.3))
@@ -333,20 +333,20 @@ cue("L16.3+0.35", "muff", v=[-0.5, 4.4, 1.4])
 cue("L16.3+0.8", "muff", v=[-0.5, 4.4, 1.12])
 cue("L16>", "muff", v=[-0.5, 4.4, 1.12])
 # x1: she knocks her coffee over
-S("L17", ((0.8, 5.8, 1.7), (MOMC[0], 3.7, 1.4), 34, (0.5, 5.6, 1.7), (MOMC[0], 3.7, 1.4), 34),
+S("L17", ((0.9, 5.8, 1.75), (MOMC[0], 3.3, 1.6), 30, (0.6, 5.6, 1.75), (MOMC[0], 3.3, 1.6), 30),
   who={"mom": (X(*MOMC), 180, "smile", {"arms": [70, 40]})},
   note="the first today: Mom at the counter with her coffee")
 cue("L17", "cup", mode="hand", tilt=0)
 cue("L17", "coffee_off")
 cue("L17", "clock", v=[9, 30])
-S("L17.1+0.1", ((0.9, 5.7, 1.65), (-0.3, 3.9, 1.2), 32, (0.6, 5.4, 1.6), (-0.3, 3.9, 1.2), 32),
+S("L17.1+0.1", ((0.9, 5.7, 1.9), (-0.3, 3.7, 1.3), 28, (0.6, 5.4, 1.85), (-0.3, 3.7, 1.3), 28),
   who={"mom": (X(*MOMC), 180, "scared", {"arms": [100, 30]})},
   note="her elbow tipping the cup, a brown splash on the counter")
 cue("L17.1+0.1", "cup", mode="hand", tilt=0)
 cue("L17.1+0.3", "cup", mode="hand", tilt=70)
 cue("L17.1+0.32", "spill")
 raw("mom", "L17.1+0.1", arms=[100, 30], blend=0.1)
-S("L17.3", ((0.7, 5.3, 1.55), (-0.3, 3.95, 1.1), 36, (0.4, 5.1, 1.5), (-0.3, 3.95, 1.1), 36),
+S("L17.3", ((0.5, 5.2, 1.9), (-0.3, 3.9, 1.2), 30, (0.2, 5.0, 1.85), (-0.3, 3.9, 1.2), 30),
   who={"mom": (X(*MOMC), 180, "worried", {"arms": [100, 30]})}, note="the brown puddle on the counter")
 cue("L18-0.02", "spill_off")
 S("L18", ((1.0, 6.2, 1.5), (-0.4, 3.5, 1.4), 34, (0.7, 6.0, 1.5), (-0.4, 3.5, 1.4), 34),
@@ -380,22 +380,22 @@ S("L21.1", ((0.3, 3.0, 1.6), (1.0, 5.3, 1.55), 50, (0.5, 3.3, 1.6), (1.0, 5.3, 1
 # each customer stands behind a stand-up table, facing the counter (and the camera behind it), mid-bite or mid-sip
 FROZEN = {
     "n0": (X(-1.9, 0.9), 188, "neutral", {"arms": [100, 0]}), "n1": (X(-0.7, 1.7), 172, "neutral", {"arms": [85, 85]}),
-    "n2": (X(0.5, 1.0), 184, "neutral", {"arms": [100, 0]}), "n3": (X(2.9, 1.1), 168, "neutral", {"arms": [80, 80]}),
+    "n2": (X(0.5, 1.0), 184, "neutral", {"arms": [100, 0]}), "n3": (X(2.4, 1.1), 168, "neutral", {"arms": [80, 80]}),
     "n4": (X(1.1, 2.5), 192, "neutral", {"arms": [100, 0]}), "n5": (X(-2.1, 2.5), 176, "neutral", {"arms": [85, 85]}),
 }
 MOMF = (X(1.7, 0.35), 180, "neutral", {"arms": [80, 0]})
-S("P01", ((0.5, 6.5, 1.75), (0.4, 1.4, 1.4), 15, (0.5, 6.1, 1.75), (0.4, 1.4, 1.4), 15),
+S("P01", ((0.4, 6.8, 1.8), (0.4, 1.4, 0.95), 12, (0.4, 6.4, 1.8), (0.4, 1.4, 0.95), 12),
   who={**FROZEN, "mom": MOMF},
   note="the drop: the whole bakery frozen mid-bite, a coffee pour hanging in the air")
 cue("P01", "pour", on=True)
-S("L22", ((0.5, 6.5, 1.8), (0.4, 1.4, 1.4), 15, (0.5, 6.0, 1.75), (0.4, 1.4, 1.4), 15),
+S("L22", ((0.4, 6.8, 1.85), (0.4, 1.4, 0.95), 12, (0.4, 6.3, 1.8), (0.4, 1.4, 0.95), 12),
   who={**FROZEN, "mom": MOMF},
   note="six customers frozen mid-bite and mid-sip, Mom serious at the back")
 cue("L22", "pour", on=True)
 S("L22.1", ((-2.0, 4.6, 1.7), (-0.7, 1.7, 1.5), 36, (-1.8, 4.3, 1.7), (-0.7, 1.7, 1.5), 36),
   who={**FROZEN}, note="a frozen bite, close")
 cue("L22.1+0.45", "pour", on=False)
-S("L22.1+0.5", ((0.5, 6.3, 1.75), (0.4, 1.4, 1.4), 15, (0.5, 5.8, 1.75), (0.4, 1.4, 1.4), 15),
+S("L22.1+0.5", ((0.4, 6.7, 1.8), (0.4, 1.4, 0.95), 12, (0.4, 6.2, 1.8), (0.4, 1.4, 0.95), 12),
   who={**FROZEN, "mom": MOMF},
   note="every head turning together")
 for _n, _y in (("n0", 81), ("n1", 60), ("n2", 61), ("n3", 302), ("n4", 41), ("n5", 54)):
@@ -407,7 +407,7 @@ S("L24", ((0.1, 2.6, 1.65), (1.3, 0.8, 1.55), 52, (0.9, 2.1, 1.5), (1.65, 0.9, 1
   note="Mom, close, serious, glancing at her watch (cover frame)")
 raw("mom", "L24+0.15", expr="neutral", arms=[100, 0], head=[0, 14], blend=0.3)
 cue("L24.1", "tick")
-S("L24.2", ((0.9, 6.3, 1.75), (0.4, 1.4, 1.4), 15, (0.7, 5.8, 1.75), (0.4, 1.4, 1.4), 15),
+S("L24.2", ((0.5, 6.7, 1.8), (0.4, 1.4, 0.95), 12, (0.4, 6.2, 1.8), (0.4, 1.4, 0.95), 12),
   who={**{k: (v[0], 180, "neutral", {"arms": [30, 30]}) for k, v in FROZEN.items()}},
   note="every customer nodding and quietly putting their cups down")
 for _n in ("n0", "n1", "n2", "n3", "n4", "n5"):
@@ -426,6 +426,7 @@ cue("L25.2+1.0", "tagbig", v=0, dur=0.4)
 
 # =========================================================================================== 10 today five, L26 to L29
 cue("L26", "clock", v=[9, 1])
+cue("L26", "ladder1", on=True)
 cue("L26", "pour", on=False)
 S("L26", ((3.2, 1.5, 1.5), (1.4, 5.3, 1.45), 30, (2.8, 1.8, 1.5), (1.2, 5.3, 1.45), 30),
   who={"me": ((1.4, 5.3), 0, "worried", {"head": [-25, 0], "arms": [25, 25]})}, note="me looking around, then slipping off")
@@ -440,21 +441,21 @@ walk("me", "L26.3+0.5", (3.0, 7.8))
 walk("me", "L26>", (3.0, 9.2))
 cue("L26.3", "bdoor", v=[0], dur=0)
 cue("L26.3+0.3", "bdoor", v=[95], dur=0.5)
-S("L27", ((1.6, -5.0, 1.2), (3.85, -0.7, 3.5), 30, (2.0, -4.4, 1.4), (3.85, -0.7, 3.6), 30),
-  who={"oka": (X(3.85, -0.95, 2.9), -60, "grin", {"arms": [15, 25], "side": [0, 75], "head": [25, 5]})},
+S("L27", ((2.0, -4.2, 1.6), (3.85, -0.9, 3.9), 32, (2.3, -3.8, 1.8), (3.85, -0.9, 3.95), 32),
+  who={"oka": (X(3.85, -0.95, 2.9), -28, "grin", {"arms": [15, 25], "side": [0, 75], "head": [12, 0]})},
   note="low angle up the bakery wall: Mr. Okafor on a tall ladder, focused")
 S("L27.3", ((6.6, -3.0, 1.0), (4.0, -0.9, 0.5), 28, (5.8, -2.8, 1.0), (4.0, -0.9, 0.5), 28),
   note="the ladder's feet in a flower bed")
-S("L27.4", ((2.4, -4.6, 1.8), (3.9, -0.5, 3.8), 28, (2.7, -4.0, 2.1), (3.9, -0.5, 3.9), 28),
-  who={"oka": (X(3.85, -0.95, 2.9), -60, "grin", {"arms": [15, 25], "side": [0, 75], "head": [25, 0]})}, note="up by our roof")
+S("L27.4", ((2.2, -4.0, 1.9), (3.9, -0.7, 3.9), 30, (2.6, -3.6, 2.2), (3.9, -0.7, 3.95), 30),
+  who={"oka": (X(3.85, -0.95, 2.9), -28, "grin", {"arms": [15, 25], "side": [0, 75], "head": [12, 0]})}, note="up by our roof")
 cue("L28-0.2", "hose", on=True)
 cue("L28-0.2", "rain", on=True)
 S("L28", ((1.2, -3.6, 3.0), (3.0, -0.4, 3.3), 30, (1.7, -3.4, 2.9), (3.0, -0.4, 3.2), 30),
-  who={"oka": (X(3.85, -0.95, 2.9), -60, "grin", {"arms": [15, 25], "side": [0, 75], "head": [25, 0]})},
+  who={"oka": (X(3.85, -0.95, 2.9), -28, "grin", {"arms": [15, 25], "side": [0, 75], "head": [12, 0]})},
   note="the hose spraying down over the window's top edge, a little rainbow in the spray")
 cue("L28", "rainbow", on=True)
 S("L28.2", ((-0.5, -5.0, 1.5), (2.0, -0.3, 2.2), 22, (0.3, -4.6, 1.6), (2.0, -0.3, 2.2), 22),
-  who={"oka": (X(3.85, -0.95, 2.9), -60, "grin", {"arms": [15, 25], "side": [0, 75], "head": [25, 0]})},
+  who={"oka": (X(3.85, -0.95, 2.9), -28, "grin", {"arms": [15, 25], "side": [0, 75], "head": [12, 0]})},
   note="the spray streaming down the window")
 cue("L28.2+0.6", "rainbow", on=False)
 cue("L29-0.1", "wet", on=True)
@@ -675,7 +676,7 @@ story = {
     "tail": LOOP,
     "fade_in": False,
     "fade_out": False,
-    "rev": 3,
+    "rev": 6,
     "look": {"style": "closer", "fog": "#d8ecf8", "fog_density": 0.004, "fog_start": 16.0, "sky": "#8fd3ff", "sky_strength": 1.0,
              "exposure": 0.15, "hdri": "kloppenheim_06_puresky", "hdri_strength": 0.5, "hdri_rotation": 40, "flash_safe": True,
              "polish": {"emph": ["L01", "L03", "L11", "L21", "L24", "L36", "L37"], "reveal": ["L37"], "twist": "L37",
@@ -700,7 +701,7 @@ story = {
         {"at": "L37", "voices": ["piano", "pulse", "pad"], "energy": 0.6},
         {"at": "L45", "voices": ["piano", "pulse"], "energy": 0.46}]},
     "sound": {
-        "floor": "wood", "steps_db": -26, "rev": 3,
+        "floor": "wood", "steps_db": -26, "rev": 6,
         "ambience": [{"kind": "rain", "from": "L10", "to": "L11>", "lufs": -38},
                      {"kind": "water", "from": "L28", "to": "L29", "lufs": -40},
                      {"kind": "rain", "from": "L47", "to": "end", "lufs": -38}],

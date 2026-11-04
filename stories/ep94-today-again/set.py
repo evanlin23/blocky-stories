@@ -555,7 +555,7 @@ def build_bakery(kit, M, ctx):
     kit.prop("trashcan_cylindric", (1.0, 8.4, 0), height=0.8, tint="#9ad0f0")
     kit.prop("houseplant_1", (4.4, 8.0, 0), height=0.8)
     # tables: stand-up tables with a cup or a muffin, for the customers
-    for i, (x, y) in enumerate(((-1.9, 1.6), (-0.7, 2.4), (0.5, 1.7), (2.9, 1.8), (1.1, 3.2), (-2.1, 3.2))):
+    for i, (x, y) in enumerate(((-1.9, 1.6), (-0.7, 2.4), (0.5, 1.7), (2.4, 1.8), (1.1, 3.2), (-2.1, 3.2))):
         kit.cyl(f"tbl{i}.top", 0.34, 0.05, (x, y, 1.0), M["white"], n=20)
         kit.cyl(f"tbl{i}.pole", 0.04, 0.98, (x, y, 0.5), M["steel"], n=8)
         kit.cyl(f"tbl{i}.base", 0.2, 0.04, (x, y, 0.02), M["steel"], n=14)
@@ -585,6 +585,7 @@ def build_bakery(kit, M, ctx):
     ctx["ghost"].hide_render = True
     ctx["ghost_alpha"] = gm
     kit.light("alley fill", "POINT", (3.0, 10.4, 3.2), 420.0, "#fff4e6", size=1.0)
+    kit.light("alley face", "POINT", (2.4, 5.2, 2.3), 150.0, "#fff4e6", size=0.8)   # my face coming back in from the alley
     # the coffee splash: blobs thrown up from the spill
     ctx["splash"] = [kit.sphere(f"splash{i}", 0.035 + 0.01 * (i % 3), (0, 0, -40), M["coffee"], seg=8) for i in range(12)]
     # the rain on the window: streaks hung in the opening (centre plane y = -0.1)
@@ -988,6 +989,13 @@ def animate(kit, story, tl, t, ctx):
         if "lund" in rig.CHARS:
             dress_lund(kit, "lund", ctx)
         dress_extra(kit, "mom", ctx)
+        # props added after the first pose follow their owner's hidden state (a render that starts on a shot without me
+        # otherwise draws my curls floating in the room)
+        for _who in ("me", "mom", "oka"):
+            if _who in rig.CHARS:
+                _r = rig.CHARS[_who].root
+                for _ob in _r.children_recursive:
+                    _ob.hide_render = _r.hide_render
         bpy.context.view_layer.update()
     # ---- the clocks (hands ease between cues; the second hand ticks)
     v = eased(tl, "clock", t, default=[9, 2])
@@ -1126,8 +1134,8 @@ def animate(kit, story, tl, t, ctx):
         wet = on_at(tl, "wet", t, False)
         bsdf = next((n for n in hm.node_tree.nodes if n.type == "BSDF_PRINCIPLED"), None)
         if bsdf:
-            bsdf.inputs["Base Color"].default_value = (*lin("#120e0c" if wet else "#1a1512"), 1)
-            bsdf.inputs["Roughness"].default_value = 0.3 if wet else 0.65
+            bsdf.inputs["Base Color"].default_value = (*lin("#16110e" if wet else "#1a1512"), 1)
+            bsdf.inputs["Roughness"].default_value = 0.45 if wet else 0.65
     # ---- the wedding cake in Lund's hands
     wc = latest(tl, "wcake", t)
     cake = ctx["wcake"]
@@ -1212,6 +1220,7 @@ def animate(kit, story, tl, t, ctx):
     # ---- my face in the cake case glass, the yard's second ladder
     ctx["ghost"].hide_render = not on_at(tl, "ghost", t, False)
     hide_tree(ctx["ladder2"], not on_at(tl, "ladder2", t, False))
+    hide_tree(ctx["ladder"], not on_at(tl, "ladder1", t, False))   # Okafor's ladder is only there from L26 on
     # ---- the coffee splash: blobs thrown up and out of the spill, falling back in about 0.7 s
     spc = latest(tl, "spill", t)
     ss_ = None if spc is None else t - spc["t"]
