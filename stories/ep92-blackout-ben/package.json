@@ -6,6 +6,5 @@
   "cover_s": 66.5,
   "shape": "i-swapped",
   "opening": "if",
-  "lane": "core",
-  "hold": "batch 9a: scripts only, not built yet"
+  "lane": "core"
 }
