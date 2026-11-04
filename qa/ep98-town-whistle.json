@@ -1,0 +1,24 @@
+{
+ "stage": "proof",
+ "film": "proof-41793418336",
+ "run": 41793418336,
+ "sha": "c592d4f25ca6fd8ca5605f1c679f41dc91e481ad",
+ "verdict": "pass",
+ "date": "2026-11-04",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "S07 frame by frame",
+  "creature 87-95 s",
+  "cover on TV canvas",
+  "audio",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening variety"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.1 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 17.9 | 14.0– | ok |\n| macro.motion_energy_q | 8.57 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 7.74 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.06 | –0.25 | ok |\n| spec.shot_p90_s | 1.84 | –2.5 | ok |\n| macro.longest_still_s | 0.63 | –1.5 | ok |\n| macro.motion_energy_mean | 3.36 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.544 | 0.35– | ok |\n| macro.brightness_first_3s | 0.694 | 0.3– | ok |\n| macro.dark_frame_share | 0.023 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.483 | 0.42– | ok |\n| macro.contrast_mean | 0.229 | 0.18– | ok |\n| spec.face_big_share | 0.296 | 0.4– | **warn** |\n| spec.caption_share | 0.975 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.003 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.51 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.214 | –0.25 | ok |\n| micro.idle_window_share | 0.0 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 3.91 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0039 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.7 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.7 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0416 | –0.08 | ok |\n| sound.hf_jump_max | 0.015 | –0.04 | ok |",
+ "notes": "Proof 127.9 s, 270x480 drawn at sha c592d4f (PR #248 branch tip; the only later commit, 068512a, touches HANDOFF.md alone), timeline matches (100 shots). -14.1 LUFS / -1.7 dBTP, LRA 1.1, 4 kHz windows clean (max 0.042, jump 0.015), longest gap 0.5 s, L74 'walked to the basement DOOR.' ends cleanly. verdict.json pass, clip.json 0 hits of 635 times. Flash house bar passes (general 4/s, 3f 5/s, red 0); old-bar warnings mean upload adds the 'Flashing lights and fast cuts 0:01 to 2:07' line itself. Polish on. Gate OPEN.\nSecond one: a sunny high shot of the brass whistle on its green pole over our street, steam puffing from its side vent, the '26' stairs sign top right, slow push; caption 'When the town whistle BLOWS,' names it by 0.8 s, so the horn-like bell reads as the whistle. 'you go down to your BASEMENT. Stay up, and you'll meet what walks the STREETS' poses rule and threat by 3 s. First face (a townsman tilting up into frame) at 1.4 s.\nS07 (the doorway shot, 8.5-10.2 s) viewed every frame at phone size: the teal townsfolk pass close to the lens and down the cellar stairs, heads cropped by the top edge, but the camera never enters a head or body (no interior, no black-out). Fix holds.\nCreature 87-95 s viewed at 4 fps and the cover (93.4 s) on a 1920 TV canvas: the Under's dark block face with two glowing eyes, its round lipped mouth wrapped on the brass pipe, lit warm by the lamp; reads creepy, not silly. Cover strong. The pipe-end close-ups (91.5-95 s) are a flat yellow shape, abstract but readable under 'Its mouth was wrapped around the end of the whistle's PIPE.'\nFrames every 2 s: faces read, captions inside the safe area, no stray text or logo, no black or frozen stretch; the sign counts 26, 27, 28 and back to 13 at the end as scripted.\nPackage clean: no twist spoiler, no 'husband', made_for_kids false. Opening 'if' matches L01 ('When the town whistle blows, you go down...', the 'When X, you Y' shape); last upload closing-time is 'must'; ep98 isn't in queue.txt yet, so no queue neighbour to compare.\nMinor, not a fail: face_big_share 0.296 (many wide street and stair shots); the S01 bell could read as a horn without its caption.\ncraft: 0 block, 0 near, 1 warn: spec.face_big_share 0.296 (0.4-). Pace well clear of every block (15.1 and 17.9 changes per 10 s, motion 8.57, longest still 0.53 s)."
+}
