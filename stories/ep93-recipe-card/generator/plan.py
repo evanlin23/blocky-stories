@@ -24,7 +24,8 @@ cast = {
                  pattern_c="#c98f1a", height=1.0),
     "nell": person("#f1cfae", "#d8334a", "#7a4a5a", "#6a3a3a", hair="bun", hair_c="#f4f4f6", extras=["glasses", "apron"],
                    extra_c="#f6ecda", eyes="lashes", height=0.93, glasses_c="#6a4a2a"),
-    "mom": person("#e8b890", "#3f9a5a", "#4a4036", "#3a2a1a", hair="cap", hair_c="#a0522d", eyes="lashes", height=0.97),
+    "mom": person("#e8b890", "#3f9a5a", "#7a4a8a", "#3a2a1a", hair="long", hair_c="#b0522d", eyes="lashes", height=0.95,
+                  extras=["scarf"], extra_c="#f4d8e0"),
     "dad": person("#e0ac80", "#c0602a", "#3a4a6a", "#4a3a2a", hair="buzz", hair_c="#9a9a9a", pattern="plaid",
                   pattern_c="#6a3a1a", height=1.04, width=1.08),
     "ito": person("#c8946a", "#2a7ab0", "#3a3a44", "#2a2a2a", hair="buzz", hair_c="#555555", pattern="stripes",
@@ -125,7 +126,6 @@ def S(at, frm, to, lens=32, frm2=None, to2=None, hand=None):
 
 # ================================================================================================ the cues that run all film
 look(0, "gold")
-cue(0, "tin", open=0.0)
 for t_, k in [(0, "timer_0"), ("L27", "timer_1"), ("L28", "timer_9"), ("L29", "timer_20"), ("L31", "timer_39"),
               ("L36", "timer_40"), ("L41", "timer_41"), ("L53+0.4", "timer_0")]:
     cue(t_, "inset", state=k)
@@ -139,38 +139,34 @@ cue("L48.3", "tex", id="card_new", tex="card_new_line")
 cue("L51", "tex", id="card_new", tex="card_new_stain")
 
 # ================================================================================================ 01 the hook (L01 to L02)
-# frame 1: an extreme close-up of the ink itself (no hand, no card edge), drifting right onto the stain's edge
-obj("card_old2", 0, [0.3, 0.5, 1.2], (0, 0, 0))
-S(0, [0.27, 0.2, 1.15], [0.27, 0.5, 1.15], -0.12, [0.33, 0.2, 1.15], [0.33, 0.5, 1.15], hand=0.0)       # S001 the ink loops
-S("L01.3", [0.33, 0.2, 1.14], [0.33, 0.5, 1.14], -0.12, [0.39, 0.2, 1.14], [0.39, 0.5, 1.14], hand=0.0)  # S002 the stain's edge
-# me at Grandma's counter, a pencil in my hand, staring at the open tin
-obj("card_old2", "L02", hide=True)
-put("me", "L02", [-2.5, -1.5], -90, expr="worried", arms=[0, 70], head=[60, 15])
-hold_obj("pen", "L02", "me", arm=1, off=(0, -0.1, 0.0), rot=(60, 0, 0))
-cue("L02", "tin", open=1.0, dur=0.5)
-obj("card_old", "L02", [-3.27, -1.5, 1.88], (0, 0, 90))
-S("L02", [-1.4, -2.6, 1.55], [-2.7, -1.5, 1.5], 32)                                          # S003 me uneasy at the open tin
+# frame 1: Grandma's open blue tin close, the old card standing in it (barred 7, boot stain, no hand), pot steam crossing
+TIN_C = [-3.27, -1.5, 1.93]
+cue(0, "tin", open=1.0)
+cue(0, "ribbon", on=True)
+cue("L02b", "ribbon", on=False)
+obj("card_old", 0, TIN_C, (0, 0, 90))
+S(0, [-2.25, -1.95, 2.0], [-3.27, -1.5, 1.9], -0.58, [-2.45, -1.85, 1.98], [-3.27, -1.5, 1.9], hand=0.0)          # S001 the open tin, the card in it
+S("L01.3", [-2.55, -1.8, 1.92], [-3.27, -1.5, 1.86], -0.40, [-2.7, -1.72, 1.9], [-3.27, -1.5, 1.86], hand=0.0)    # S002 punch in, the tin rim in frame
+S("L02.2", [-2.4, -1.15, 2.0], [-3.27, -1.45, 1.88], -0.52, [-2.55, -1.25, 1.96], [-3.27, -1.45, 1.88], hand=0.0)  # S003 the stain, steam still crossing
 
-# ================================================================================================ 02 the town (L03 to L08)
-hide("me", at="L03")
-obj("pen", "L03", hide=True)
-obj("card_old", "L03", hide=True)
-cue("L03", "tin", open=0.0, dur=0.4)
-fly("card_m1", "L03", [57.1, -1.75, 1.9], [57.6, 0.8, 7.0], 1.9, (0, 0, 0), (25, 10, 40), 14)
-S("L03", [56.0, 9.0, 2.2], [57.2, -2.0, 3.4], -7.0)                                          # S004 a card lifts from a window
+# ================================================================================================ 02 the town (L02b to L08)
+cue("L02b", "tin", open=0.0, dur=0.4)
+obj("card_old", "L02b", hide=True)
+fly("card_m1", "L02b", [57.1, -1.75, 1.9], [57.6, 0.8, 7.0], 1.9, (0, 0, 0), (25, 10, 40), 14)
+S("L02b", [56.0, 9.0, 2.2], [57.2, -2.0, 3.4], -7.0)                                          # S004 a card lifts from a window
 for i in range(6):
     x0 = 50 + i * 4.0
-    fly(f"fl{i}", "L03.1", [x0, -1.6, 2.2], [x0 + 3 - i * 0.6, 1.5 - (i % 3), 6.0 + (i % 3) * 1.0], 1.9,
+    fly(f"fl{i}", "L02b.1", [x0, -1.6, 2.2], [x0 + 3 - i * 0.6, 1.5 - (i % 3), 6.0 + (i % 3) * 1.0], 1.9,
         (0, 0, 0), (30, 15, 90 + i * 30), 16)
-S("L03.2", [58.0, 9.0, 3.2], [60.0, -3.0, 6.0], -10.0, [58.6, 9.0, 3.4], [60.2, -3.0, 6.2])    # S005 cards over the roofs
-obj("card_m1", "L04", hide=True)
+S("L02b.2", [58.0, 9.0, 3.2], [60.0, -3.0, 6.0], -10.0, [58.6, 9.0, 3.4], [60.2, -3.0, 6.2])    # S005 cards over the roofs
+obj("card_m1", "L02b.3", hide=True)
 for i in range(6):
-    obj(f"fl{i}", "L04", hide=True)
-fly("card_m5", "L04", [52.0, 4.2, 2.0], [60.0, 4.4, 1.6], 1.0, (0, 0, 10), (10, 0, -20), 10)
-obj("card_m5", "L04.2", [60.0, 4.4, 1.6], (10, 0, -20))
-obj("card_m5", "L04.2+0.02", [64.5, 6.4, 2.6], (20, 10, -70), dur=1.1, flutter=10)
-S("L04", [57.0, 9.0, 2.0], [58.0, 4.0, 1.8], -5.0, [57.0, 9.0, 2.0], [60.0, 4.2, 1.7])       # S006 a card glides down the street
-S("L04.2", [61.0, 8.0, 3.0], [64.0, 5.0, 2.2], -5.0)                                         # S007 and turns the corner
+    obj(f"fl{i}", "L02b.3", hide=True)
+fly("card_m5", "L02b.3", [52.0, 4.2, 2.0], [60.0, 4.4, 1.6], 1.0, (0, 0, 10), (10, 0, -20), 10)
+obj("card_m5", "L02b.4", [60.0, 4.4, 1.6], (10, 0, -20))
+obj("card_m5", "L02b.4+0.02", [64.5, 6.4, 2.6], (20, 10, -70), dur=1.1, flutter=10)
+S("L02b.3", [57.0, 9.0, 2.0], [58.0, 4.0, 1.8], -5.0, [57.0, 9.0, 2.0], [60.0, 4.2, 1.7])       # S006 a card glides down the street
+S("L02b.4", [61.0, 8.0, 3.0], [64.0, 5.0, 2.2], -5.0)                                         # S007 and turns the corner
 obj("card_m5", "L05", hide=True)
 
 # L05 Mr. Ito (booth 1), the fire station (booth 2)
@@ -231,21 +227,24 @@ S("L09.3", [-1.9,-1.9,1.55], [-2.45, 0.4, 1.35], 38)                            
 obj("spoon", "L10", hide=True)
 put("nell", "L10", [-2.6, -1.55], -90, expr="smile", arms=[0, 70])
 cue("L10", "tin", open=1.0, dur=0.6)
-obj("card_old", "L10", [-3.27, -1.5, 1.88], (0, 0, 90))
+obj("card_old", "L10", TIN_C, (0, 0, 90))
 S("L10", [-1.4, -0.4, 1.7], [-3.3, -1.5, 1.6], 34)                                           # S025 the tin on the shelf, opened
 S("L10.1", [-2.1, -1.5, 1.8], [-3.3, -1.5, 1.8], 42)                                         # S026 the card in the tin
 S("L10.2", [0.2, -0.2, 1.6], [-3.2, -1.5, 1.4], 28)                                          # S027 the shelf, wide
-put("nell", "L11", [-1.5, -1.3], 15, expr="smile", arms=[0, 85])
-obj("card_old", "L11", [-1.38, -1.75, 1.2], (0, 0, 15))
+put("nell", "L11", [-1.5, -1.3], 15, expr="smile", arms=[0, 60])
+obj("card_old", "L11", [-1.38, -1.75, 1.0], (0, 0, 15))
 cue("L11", "tin", open=0.0, dur=0.6)
-S("L11", [-1.2, -2.9, 1.35], [-1.4, -1.5, 1.2], 40)                                          # S028 Grandma holds the card up
-S("L11.2", [-1.2, -2.7, 1.25], [-1.38, -1.75, 1.2], 56)                                       # S029 close on the writing: mine
-S("L12", [-1.3, -2.7, 1.3], [-1.38, -1.75, 1.22], 66, [-1.3, -2.4, 1.15], [-1.38, -1.75, 1.1])  # S030 a seven with a bar
+S("L11", [-1.0, -2.9, 1.3], [-1.45, -1.5, 1.1], 40)                                           # S028 Grandma holds the card up, low
+S("L11.2", [-1.2, -2.7, 1.0], [-1.38, -1.75, 1.0], -0.30)                                     # S029 close on the writing: mine
+put("me", "L11.3", [0.0, -1.9], 180, expr="worried", arms=[0, 0], head=[0, 8])
+S("L11.3", [-0.1, -0.75, 1.5], [0.0, -1.9, 1.55], -0.8, [0.05, -0.95, 1.5], [0.0, -1.9, 1.55])  # S030 me, uneasy: I've never WRITTEN it
+hide("me", at="L12")
+S("L12", [-1.3, -2.7, 0.95], [-1.38, -1.75, 1.0], -0.26, [-1.3, -2.4, 0.95], [-1.38, -1.75, 1.0])  # S031 a seven with a bar
 obj("list", "L12.2", [-1.9, -2.0, 1.1], (0, 0, 15))
 S("L12.2", [-1.7, -2.9, 1.2], [-1.9, -2.0, 1.1], 60)                                       # S031 my list: the same seven
-S("L12.3", [-1.0, -2.9, 1.25], [-1.6, -1.9, 1.15], 48)                                        # S032 both
+S("L12.3", [-1.0, -2.9, 1.1], [-1.6, -1.9, 1.05], -0.55)                                      # S032 both
 obj("list", "L13", hide=True)
-obj("card_old", "L13", [-3.27, -1.5, 1.88], (0, 0, 90))
+obj("card_old", "L13", TIN_C, (0, 0, 90))
 put("nell", "L13", [-2.6, -1.55], -90, expr="smile", arms=[0, 70])
 cue("L13.1", "tin", open=0.0, dur=0.5)
 S("L13", [-1.8, -1.0, 1.85], [-3.3, -1.5, 1.7], 44)                                          # S033 the tin's worn paint
@@ -258,7 +257,7 @@ put("nell", "L14", [1.6, -0.9], -90, expr="grin", arms=[0, 70])
 sit("nell", "L14")
 put("dad", "L14", [-1.0, -0.9], 90, expr="smile", arms=[0, 0])
 sit("dad", "L14")
-put("mom", "L14", [0.3, -2.2], 180, expr="smile", arms=[0, 0])
+put("mom", "L14", [-0.62, -1.82], 135, expr="smile", arms=[0, 0])
 sit("mom", "L14")
 put("me", "L14", [0.3, 0.4], 0, expr="sad-smile", arms=[0, 0])
 sit("me", "L14")
@@ -272,7 +271,7 @@ hold("mom", "L15", expr="laugh")
 hold("dad", "L15", expr="laugh")
 S("L15", [1.0, 0.4, 1.8], [-0.4, -1.6, 1.15], 30)                                            # S038 Mom and Dad laugh
 obj("wedge", "L16", hide=True)
-S("L16", [0.3, 0.7, 1.7], [0.3, -2.2, 1.3], 36)                                              # S039 Mom waves it off
+S("L16", [0.5, -0.7, 1.7], [-0.62, -1.82, 1.3], 36)                                              # S039 Mom waves it off
 hold("me", "L16.3", arms=[0, 0], expr="sad-smile")
 S("L16.3", [0.9, -2.1, 1.7], [0.3, 0.4, 1.2], 36)                                           # S040 me, embarrassed
 
@@ -280,21 +279,21 @@ S("L16.3", [0.9, -2.1, 1.7], [0.3, 0.4, 1.2], 36)                               
 hold("nell", "L17", arms=[0, 82], expr="smile")
 obj("tbowl0", "L17", hide=True)
 obj("tbowl0", "L20", [1.1, -0.9, 0.78], (0, 0, 0))
-obj("card_old", "L17", [1.15, -0.9, 1.22], (0, 0, -90))
+obj("card_old", "L17", [0.85, -0.9, 0.795], (-90, 0, 0))
 obj("spoon", "L17", hide=True)
-S("L17", [-0.1, -0.9, 1.45], [1.15, -0.9, 1.2], 44)                                            # S041 the soft edge of the card
-S("L17.2", [0.1, -0.9, 1.4], [1.15, -0.9, 1.2], 54)                                        # S042 older than I am
-S("L18", [0.2, -0.8, 1.25], [1.15, -0.9, 1.1], 58)                                            # S043 the bottom, the stain
-S("L18.2", [0.3, -0.85, 1.15], [1.15, -0.85, 1.1], 70, [0.5, -0.85, 1.12], [1.15, -0.85, 1.1])   # S044 old brown stain
-S("L19", [0.55, -0.82, 1.12], [1.15, -0.82, 1.1], 90)                                            # S045 punch in on the boot
-S("L19.1", [0.7, -0.8, 1.14], [1.15, -0.78, 1.13], 100)                                        # S046 a little boot
+S("L17", [0.55, -1.6, 1.25], [0.8, -0.9, 0.8], -0.60)                                          # S041 the soft edge of the card
+S("L17.2", [0.45, -1.35, 1.3], [0.78, -0.92, 0.8], -0.55)                                        # S042 older than I am
+S("L18", [0.75, -1.45, 1.2], [0.92, -0.95, 0.8], -0.36)                                          # S043 the bottom, the stain
+S("L18.2", [0.7, -1.4, 1.15], [0.94, -0.96, 0.8], -0.30, [0.9, -1.3, 1.1], [0.96, -0.96, 0.8])     # S044 old brown stain
+S("L19", [0.9, -1.3, 1.1], [0.95, -0.96, 0.8], -0.24)                                            # S045 punch in on the boot
+S("L19.1", [1.1, -1.2, 1.1], [0.95, -0.96, 0.8], -0.20)                                        # S046 a little boot
 hide("dad", "mom", at="L20")
 put("me", "L20", [0.3, 1.7], 0, expr="worried", arms=[0, 82], head=[0, 8])
 sit("me", "L20", False)
 sit("dad", "L20", False)
 sit("mom", "L20", False)
 sit("nell", "L20", False)
-obj("card_old", "L20", [0.3, 1.25, 1.25], (0, 0, 0))
+obj("card_old", "L20", [0.55, 1.25, 1.1], (0, 0, 0))
 S("L20", [0.7, -0.9, 1.55], [0.3, 1.5, 1.35], 40)                                            # S047 me squinting at it against the window
 S("L20.1", [-0.1, -0.5, 1.5], [0.3, 1.5, 1.35], 46)                                         # S048 the secret step
 put("nell", "L21", [0.6, 0.3], 0, expr="smirk", arms=[0, 0])
@@ -302,8 +301,8 @@ obj("card_old", "L21", hide=True)
 hide("me", at="L21")
 S("L21", [0.9, -1.4, 1.35], [0.6, 0.3, 1.3], 34)                                            # S049 Grandma zips her lips
 S("L21.1", [0.2, -1.2, 1.3], [0.6, 0.3, 1.35], 40)                                           # S050 won't tell me
-hold("nell", "L22", arms=[0, 82], expr="smirk")
-obj("card_old", "L22", [0.6, -0.15, 1.22], (0, 0, 0), flutter=4)
+hold("nell", "L22", arms=[0, 60], expr="smirk")
+obj("card_old", "L22", [0.6, -0.15, 1.0], (0, 0, 0), flutter=4)
 S("L22", [0.2, -1.2, 1.4], [0.6, 0.3, 1.3], 34)                                              # S051 she taps the card
 S("L22.2", [0.5, -0.6, 1.3], [0.6, 0.3, 1.2], 48)                                            # S052 it's on the card
 
@@ -394,17 +393,17 @@ S("L35.4", [1.5, 1.2, 1.35], [2.69, 1.95, 1.45], 40)                            
 put("nell", "L36", [-1.3, -0.1], -95, expr="neutral", arms=[0, 0], look=[-0.8, 0.2])
 S("L36", [-0.1, -0.2, 1.5], [-1.3, -0.1, 1.4], 36)                                           # S079 Grandma's eyes go to the tin
 S("P01", [-2.0, -1.0, 1.75], [-3.3, -1.5, 1.7], 38)                                          # S080 the tin, steam drifting
-# L37 I open the tin
+# L37 I open the tin: the lid lifts and the two copper tally strokes inside it show (held, never narrated)
 hide("nell", at="L37")
 cue("L37", "tin", open=1.0, dur=0.9)
-obj("card_old", "L37", [-3.27, -1.5, 1.88], (0, 0, 90))
-S("L37", [-2.0, -0.6, 1.85], [-3.3, -1.5, 1.8], 38)                                          # S081 the tin lid lifting
-S("L37.1", [-2.2, -1.3, 2.0], [-3.45, -1.5, 1.95], 50)                                       # S082 the tally in the lid
-S("L38", [-2.0, -1.4, 1.85], [-3.27, -1.5, 1.85], 54)                                        # S083 the stain, wet
-obj("drop", "L38.3", [-3.25, -1.43, 1.78], (0, 0, 0))
-obj("drop", "L38.3+0.03", [-3.25, -1.43, 1.62], (0, 0, 0), dur=0.9)
-S("L38.3", [-2.0, -1.2, 1.8], [-3.26, -1.45, 1.78], 60)                                      # S084 a bead of soup runs
-S("L38.5", [-1.7, -0.9, 1.9], [-3.27, -1.5, 1.8], 48)                                        # S085 just spilled
+S("L37", [-2.6, -1.55, 1.7], [-3.45, -1.5, 1.95], -0.45, [-2.6, -1.5, 1.85], [-3.45, -1.5, 1.98])   # S081 the lid lifts
+S("L37.1", [-2.5, -1.5, 2.0], [-3.45, -1.5, 1.99], -0.30, [-2.6, -1.5, 2.0], [-3.45, -1.5, 1.99])   # S082 the tally in the lid
+obj("card_old", "L38", TIN_C, (0, 0, 90))
+S("L38", [-2.8, -1.1, 1.95], [-3.27, -1.42, 1.88], -0.28, [-2.9, -1.2, 1.93], [-3.27, -1.42, 1.86])    # S083 the stain, wet, fills the frame
+obj("drop", "L38.3", [-3.25, -1.43, 1.88], (0, 0, 0))
+obj("drop", "L38.3+0.03", [-3.25, -1.43, 1.82], (0, 0, 0), dur=0.9)
+S("L38.3", [-2.8, -1.2, 1.92], [-3.27, -1.42, 1.86], -0.20)                                           # S084 a bead of soup runs
+S("L38.5", [-2.85, -1.3, 1.95], [-3.27, -1.42, 1.86], -0.17, [-2.95, -1.35, 1.93], [-3.27, -1.42, 1.86])  # S085 just spilled
 obj("drop", "L39", hide=True)
 cue("L39", "tin", open=0.0, dur=0.5)
 obj("card_old", "L39", hide=True)
@@ -451,24 +450,24 @@ hide("nell", at="L48")
 put("me", "L48", [2.15, 1.55], 90, expr="neutral", arms=[0, 95])
 obj("card_new", "L48", [2.69, 1.95, 1.55], (0, 0, -90))
 obj("card_new", "L48+0.1", [2.55, 1.6, 1.3], (0, 0, 90), dur=0.5)
-S("L48", [1.0, 0.2, 1.55], [2.6, 1.8, 1.45], 32)                                             # S101 my card off the magnet
-put("me", "L48.1", [2.05, 1.8], 180, expr="neutral", arms=[0, 62])
+S("L48", [2.3, 0.4, 1.6], [2.62, 1.8, 1.45], 32)                                             # S101 my card off the magnet
+put("me", "L48.1", [1.05, 1.8], 180, expr="neutral", arms=[0, 62])
 obj("card_new", "L48.1", [1.4, 2.5, 0.955], (-90, 0, 0))
 hold_obj("pen", "L48.1", "me", arm=1, off=(0, -0.08, -0.02), rot=(75, 0, 0))
-S("L48.1", [0.9,1.5,1.5], [1.4, 2.5, 0.95], 38)                                            # S102 a pen
-S("L48.3", [0.8,1.6,1.4], [1.4, 2.5, 0.95], 44)                                            # S103 writing
-S("L48.4", [0.9,1.9,1.25], [1.4, 2.5, 0.95], 52)                                            # S104 the last line
-S("L49", [1.0,1.95,1.15], [1.4, 2.5, 0.95], 62)                                             # S105 the fresh line
-S("L49.1", [1.1,1.9,1.3], [1.4, 2.5, 0.95], 56)                                            # S106 lemon at the end
+S("L48.1", [2.2, 1.7, 1.35], [1.4, 2.5, 0.96], -0.9)                                         # S102 a pencil
+S("L48.3", [2.3, 1.9, 1.25], [1.4, 2.5, 0.96], -0.55)                                        # S103 writing
+S("L48.4", [1.95, 2.0, 1.2], [1.4, 2.5, 0.96], -0.38)                                        # S104 the last line
+S("L49", [2.0, 2.1, 1.1], [1.45, 2.5, 0.96], -0.32)                                          # S105 the fresh line
+S("L49.1", [1.9, 2.0, 1.2], [1.45, 2.5, 0.96], -0.36)                                        # S106 lemon at the end
 obj("pen", "L50", hide=True)
 hold_obj("spoon", "L50", "me", arm=1, off=(0.0, -0.1, 0.05), rot=(-50, 0, 0))
-obj("drop", "L50.2", [1.5, 2.45, 1.25], (0, 0, 0))
-obj("drop", "L50.2+0.03", [1.5, 2.45, 0.97], (0, 0, 0), dur=0.5)
-S("L50", [0.8,1.5,1.5], [1.45, 2.45, 1.0], 38)                                             # S107 a drip falls off my spoon
-S("L50.3", [1.0,1.8,1.3], [1.45, 2.5, 0.96], 56)                                           # S108 right on top
+obj("drop", "L50.2", [1.5, 2.44, 1.25], (0, 0, 0))
+obj("drop", "L50.2+0.03", [1.5, 2.44, 0.97], (0, 0, 0), dur=0.5)
+S("L50", [2.3, 1.9, 1.45], [1.45, 2.45, 1.0], -0.7)                                         # S107 a drip falls off my spoon
+S("L50.3", [1.7, 1.9, 1.3], [1.48, 2.44, 0.96], -0.30)                                       # S108 right on top
 obj("drop", "L51", hide=True)
-S("L51", [1.1,1.9,1.25], [1.4, 2.5, 0.96], 64)                                            # S109 a little boot
-S("L51.1", [1.0,2.1,1.05], [1.4, 2.5, 0.96], 80)                                           # S110 the fresh stain
+S("L51", [1.55, 1.95, 1.25], [1.49, 2.44, 0.96], -0.22)                                      # S109 a little boot
+S("L51.1", [1.52, 2.05, 1.1], [1.49, 2.44, 0.96], -0.18)                                     # S110 the fresh stain
 
 # ================================================================================================ 07 it flies (L52 to L61)
 look("L53", "dusk", 1.0)
@@ -488,6 +487,7 @@ hide("me", at="L54")
 put("nell", "L54", [0.0, 1.8], 180, expr="soft", arms=[0, 0])
 S("L54", [0.0, 4.6, 1.5], [0.0, 1.8, 1.4], 30)                                               # S115 Grandma at the window
 S("L54.1", [0.5, 4.4, 1.5], [0.0, 1.8, 1.4], 38)                                             # S116 she watches it go
+S("L54b", [0.4, 4.3, 1.55], [0.0, 1.8, 1.5], -0.55, [0.25, 4.0, 1.55], [0.0, 1.8, 1.5])      # S116b Grandma close, soft: not surprised
 obj("card_new", "L55", hide=True)
 look("L55", "gold", 1.2)
 hide("nell", at="L55")
@@ -500,32 +500,40 @@ S("L56.1", [2.7, -0.8, 1.6], [3.43, -0.95, 1.65], 62)                           
 S("L56.2", [2.4, -1.0, 1.55], [3.43, -0.85, 1.5], 46)                                        # S123 and couldn't boil water
 S("L57", [2.5, -0.5, 1.4], [3.43, -0.8, 1.3], 52)                                            # S124 she cooked it that night
 S("L57.1", [2.5, -0.7, 1.5], [3.43, -0.85, 1.4], 40)                                         # S125 and never stopped
-put("nell", "L58", [2.95, -0.1], -80, expr="soft", arms=[0, 98])
-obj("card_old", "L58", [2.51, -0.18, 1.25], (0, 0, -80))
-S("L58", [1.5, -0.8, 1.45], [2.85, -0.2, 1.35], 40)                                          # S126 the old card, my loops
-S("L58.1", [1.7, -0.9, 1.4], [2.65, -0.25, 1.3], 54)                                         # S127 in MY handwriting
-S("L59", [1.6, -0.6, 1.3], [2.65, -0.25, 1.25], 66)                                          # S128 the stain, dry again
-S("L59.2", [1.8, -0.7, 1.3], [2.65, -0.25, 1.25], 56)                                        # S129 over the last line
+# Grandma at the photo, the card held low on the photo side so it never covers her face
+put("nell", "L58", [2.95, -0.15], -90, expr="soft", arms=[60, 0])
+obj("card_old", "L58", [2.5, -0.4, 1.0], (0, 0, -90))
+S("L58", [1.7, -0.6, 1.05], [2.5, -0.4, 1.0], -0.34)                                           # S126 the old card, my loops
+S("L58.1", [1.8, -0.8, 1.1], [2.5, -0.4, 1.0], -0.30, [1.95, -0.7, 1.05], [2.5, -0.4, 1.0])   # S127 in MY handwriting
+S("L59", [1.9, -0.7, 1.1], [2.5, -0.38, 1.02], -0.24)                                          # S128 the stain, dry again
+S("L59.2", [1.8, -0.55, 1.0], [2.5, -0.38, 1.02], -0.22, [1.9, -0.6, 1.0], [2.5, -0.38, 1.02])  # S129 over the last line
 obj("card_old", "L60", hide=True)
 hold("nell", "L60", arms=[0, 95], expr="smirk")
 hold_obj("lemon_hand", "L60", "nell", arm=1, off=(0.0, -0.1, 0.12))
-S("L60", [1.4, -1.4, 1.5], [2.95, -0.1, 1.4], 34)                                            # S130 Grandma smirks, a lemon up
-S("L60.2", [1.8, -1.5, 1.45], [2.95, -0.1, 1.4], 40)                                         # S131 find the last step herself
+S("L60", [1.3, -0.9, 1.5], [2.95, -0.1, 1.45], -0.9)                                           # S130 Grandma smirks, a lemon up
+S("L60.2", [1.5, -0.5, 1.5], [2.95, -0.1, 1.45], -0.7)                                         # S131 find the last step herself
 put("me", "L61", [2.0, -1.6], 40, expr="laugh", arms=[0, 0])
 obj("lemon_hand", "L61", hide=True)
 S("L61", [3.0, -2.4, 1.5], [2.0, -1.6, 1.4], 34)                                             # S132 me, a soft laugh
-# L62 the reveal picture: Grandma, the card, the photo, one frame
-hide("me", at="L62")
-hold("nell", "L62", arms=[0, 98], expr="soft")
-obj("lemon_hand", "L62", hide=True)
-obj("card_old", "L62", [2.51, -0.18, 1.25], (0, 0, -80))
-S("L62", [0.7, -1.6, 1.5], [3.2, -0.6, 1.5], 30, [0.9, -1.55, 1.5], [3.2, -0.6, 1.5])      # S133 the same card, sixty years apart
-S("L63", [2.4, -1.0, 1.6], [3.43, -0.944, 1.512], 70)                                        # S134 the card in the photo
-S("L64", [1.9, -0.7, 1.45], [2.65, -0.25, 1.3], 70)                                          # S135 the card in her hand
-S("L65", [1.6, -1.2, 1.5], [3.0, -0.5, 1.45], 44, [1.9, -1.0, 1.5], [3.0, -0.5, 1.45])     # S136 both boot stains
-S("L65.1", [1.9, -0.8, 1.5], [3.2, -0.6, 1.5], 50)                                           # S137 the same card
-S("L66", [1.2, 0.2, 1.45], [2.7, -0.25, 1.3], 46, [1.6, -1.0, 1.45], [2.7, -0.25, 1.3])     # S138 circling the card
-S("L66.1", [2.2, -1.4, 1.4], [2.7, -0.25, 1.3], 52, [3.1, -1.0, 1.4], [2.7, -0.25, 1.3])    # S139 around and around
+# P02 (1.0 s hold): Grandma lifts the old card out of the tin, steam drifting
+hide("me", at="P02")
+put("nell", "P02", [-2.6, -1.55], -90, expr="soft", arms=[0, 70])
+cue("P02", "tin", open=1.0, dur=0.4)
+obj("card_old", "P02", TIN_C, (0, 0, 90))
+obj("card_old", "P02+0.2", [-3.05, -1.5, 2.2], (0, 0, 90), dur=0.9)
+S("P02", [-2.2, -2.6, 1.75], [-3.2, -1.5, 1.95], -0.9, [-2.4, -2.2, 1.85], [-3.1, -1.5, 2.1])     # S132b the card lifts from the tin
+# L62 the reveal picture: a close two-shot, her face, the card, the photo, both boot stains
+put("nell", "L62", [2.95, -0.15], -90, expr="soft", arms=[60, 0])
+cue("L62", "tin", open=0.0, dur=0.4)
+obj("card_old", "L62", [2.5, -0.4, 1.0], (0, 0, -90))
+S("L62", [1.5, -0.5, 1.45], [3.25, -0.62, 1.42], -1.15, [1.8, -0.55, 1.45], [3.25, -0.62, 1.42])  # S133 the same card, sixty years apart
+S("L63", [2.5, -0.95, 1.55], [3.43, -1.0, 1.515], -0.30)                                       # S134 the card in the photo
+S("L64", [1.9, -0.55, 1.0], [2.5, -0.4, 1.0], -0.28)                                           # S135 the card in her hand
+S("P03", [1.9, -0.45, 1.1], [2.5, -0.4, 1.0], -0.5, [2.3, -0.95, 1.45], [3.43, -1.0, 1.515])     # S135b a slow drift from her card to the photo's
+S("L65", [1.6, -0.55, 1.3], [3.0, -0.7, 1.3], -0.95, [1.9, -0.6, 1.3], [3.0, -0.7, 1.3])        # S136 both boot stains
+S("L65.1", [2.0, -0.4, 1.3], [3.1, -0.7, 1.4], -0.8)                                           # S137 the same card
+S("L66", [1.5, -0.1, 1.2], [2.5, -0.4, 1.0], -0.5, [1.6, -0.8, 1.2], [2.5, -0.4, 1.0])         # S138 circling the card
+S("L66.1", [2.0, -0.9, 1.15], [2.5, -0.4, 1.0], -0.5, [2.3, 0.0, 1.15], [2.5, -0.4, 1.0])      # S139 around and around
 
 # ================================================================================================ 08 the loop (L67 to L72)
 obj("card_old", "L67", hide=True)
@@ -535,7 +543,7 @@ put("nell", "L67", [1.6, -0.9], -90, expr="soft", arms=[0, 70])
 sit("nell", "L67")
 put("dad", "L67", [-1.0, -0.9], 90, expr="smile", arms=[0, 0])
 sit("dad", "L67")
-put("mom", "L67", [0.3, -2.2], 180, expr="smile", arms=[0, 0])
+put("mom", "L67", [-0.62, -1.82], 135, expr="smile", arms=[0, 0])
 sit("mom", "L67")
 put("me", "L67", [0.3, 0.4], 0, expr="soft", arms=[0, 0])
 sit("me", "L67")
@@ -551,19 +559,28 @@ hold("nell", "L69", expr="laugh")
 hold("mom", "L69", expr="laugh")
 hold("dad", "L69", expr="laugh")
 S("L69", [1.4, 0.8, 1.7], [-1.0, -0.4, 1.2], 26)                                             # S143 I make it every Sunday
-cue("L69.2", "tin", open=0.0)
-S("L69.2", [-2.0, -0.8, 1.8], [-3.3, -1.5, 1.65], 40)                                        # S144 the tin shut on the shelf
-S("L69.3", [-1.4,-1.5,1.5], [-2.45, 0.4, 1.35], 34)                                       # S145 from memory
-hide("me", "nell", "mom", "dad", at="L70")
+S("L69.2", [-1.4, -1.5, 1.5], [-2.45, 0.4, 1.35], 34)                                        # S144 the copper pot steaming
+# L69b her card goes back in the tin
+hide("me", "nell", "mom", "dad", at="L69b")
+sit("nell", "L69b", False)
+sit("mom", "L69b", False)
+sit("dad", "L69b", False)
+sit("me", "L69b", False)
+put("nell", "L69b", [-2.6, -1.55], -90, expr="soft", arms=[0, 70])
+cue("L69b", "tin", open=1.0, dur=0.3)
+obj("card_old", "L69b", [-3.05, -1.5, 2.2], (0, 0, 90))
+obj("card_old", "L69b+0.05", TIN_C, (0, 0, 90), dur=0.8)
+S("L69b", [-2.2, -2.6, 1.8], [-3.2, -1.5, 1.95], -0.8, [-2.4, -2.3, 1.85], [-3.25, -1.5, 1.92])   # S69c the card goes back in
+cue("L69b.2", "tin", open=0.0, dur=0.8)
+S("L69b.2", [-2.4, -1.9, 1.8], [-3.3, -1.5, 1.8], -0.55, [-2.5, -1.7, 1.75], [-3.3, -1.5, 1.78])    # S69d the lid closes
+S("L69b.3", [-2.0, -2.4, 1.6], [-3.3, -1.5, 1.65], -0.9)                                       # S69e the shut tin
+hide("nell", at="L70")
 sit("nell", "L70", False)
-sit("mom", "L70", False)
-sit("dad", "L70", False)
-fly("fl0", "L70", [-1.5, 12.0, 3.4], [-4.0, 16.0, 4.6], 3.0, (0, 0, 0), (20, 10, 60), 10)
-S("L70", [0.0, 1.2, 1.6], [0.0, 16.0, 4.5], 26)                                              # S146 one small card far off
-S("L70.1", [0.8, 1.2, 1.7], [-3.0, 18.0, 6.5], 24)                                           # S147 the dusk sky
+fly("fl0", "L70", [-0.5, 12.0, 3.6], [0.6, 18.0, 6.2], 3.0, (0, 0, 0), (20, 10, 60), 10)
+S("L70", [0.0, 4.0, 1.8], [0.0, 16.0, 5.0], 26)                                              # S146 one small card far off, a clear dusk sky
+S("L70.1", [0.4, 4.0, 2.0], [0.2, 20.0, 6.8], 24)                                            # S147 the dusk sky
 obj("fl0", "L71", hide=True)
 S("L71", [2.5, -0.9, 1.6], [3.43, -0.9, 1.6], 34)                                            # S148 the framed photo
-S("L71.2", [3.05, -0.975, 1.67], [3.43, -0.975, 1.67], -0.075)                                  # S149 close on the painted steam curl
-# L72 loop: the steam curl becomes the first ink loop of S001, same place, same size
-obj("card_old2", "L72", [0.3, 0.5, 1.2], (0, 0, 0))
-S("L72", [0.27, 0.2, 1.15], [0.27, 0.5, 1.15], -0.12, [0.33, 0.2, 1.15], [0.33, 0.5, 1.15], hand=0.0)   # S150 the ink loop: loop
+S("L71.2", [3.0, -1.07, 1.75], [3.43, -1.075, 1.795], -0.26)                                   # S149 close on the painted steam curl
+# L72 loop: the curl, centred and sharp, becomes the steam curl across the tin in S001 (same place, same size)
+S("L72", [3.1, -1.075, 1.795], [3.43, -1.075, 1.795], -0.13)                                    # S150 the curl: loop

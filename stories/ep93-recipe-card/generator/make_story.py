@@ -11,7 +11,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
@@ -70,8 +70,7 @@ for i, (at, camera, hand, follow) in enumerate(SH):
     shots.append(s)
 
 sfx = [
-    {"at": "L01.1", "kind": "click", "db": -16},             # a soft paper flick on "HANDWRITING"
-    {"at": "L03", "kind": "whoosh", "db": -24},
+    {"at": "L01.3", "kind": "click", "db": -16},             # a soft paper flick on "HANDWRITING"
     {"at": "L32", "kind": "creak", "db": -18, "dur": 1.2},
     {"at": "L35", "kind": "creak", "db": -20, "dur": 1.4},
     {"at": "L37", "kind": "creak", "db": -14, "dur": 0.9},   # the tin lid
@@ -109,6 +108,7 @@ look = {"fog": "#ffd9a8", "fog_density": 0.006, "fog_start": 18.0, "sky": "#ffd2
                    "quiet": [["L67", "L69"]], "hold": plan.HOLD}}
 story = {
     "slug": "ep93-recipe-card",
+    "rev": REV,
     "title": "Grandma's Recipe Is In My HANDWRITING",
     "made_for_kids": False,
     "premise": ("In a town where the night you finally cook a recipe right its card flies off to whoever needs it most, "

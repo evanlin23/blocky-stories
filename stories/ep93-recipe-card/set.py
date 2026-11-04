@@ -32,7 +32,7 @@ def ss(x):
 # ---------------------------------------------------------------------------------------------- looks
 def _L(**kw):
     base = dict(sun=1.7, sun_col="#ffc878", el=14.0, sky="#ffd2a0", sky_str=0.9, win="#ffb96e", win_str=2.4,
-                itn=1.0, cool=0.0, fill=1.0)
+                itn=1.0, cool=0.0, fill=1.0, dusk=0.0)
     base.update(kw)
     return base
 
@@ -41,7 +41,7 @@ LOOKS = {
     "gold": _L(),
     "blue": _L(sun=0.0, sky="#2a3c8c", sky_str=0.5, win="#2640a0", win_str=1.6, itn=0.85, cool=1.0, fill=0.9),
     "bright": _L(sun=3.8, sky="#ffe0b0", win="#ffc98a", itn=1.15),
-    "dusk": _L(sun=3.0, sun_col="#ff9e78", el=10, sky="#ffb0a0", sky_str=0.9, win="#ff9a80"),
+    "dusk": _L(sun=3.0, sun_col="#ff9e78", el=10, sky="#ffb0a0", sky_str=0.9, win="#ff9a80", dusk=1.0),
 }
 
 
@@ -190,6 +190,28 @@ def build(kit, story, tl):
     # outside: sky, garden, rooftops
     W["winmat"] = kit.emit("#ffb96e", 2.4, name="winsky")
     kit.plane("k.sky", (60, 30), (0, 26, 8), W["winmat"], rot=(math.pi / 2, 0, 0))
+    # the dusk sky: a gradient with pink cloud bars, faded in by the look's "dusk" weight
+    sm = kit._new("duskmat")
+    nt = sm.node_tree
+    for n_ in list(nt.nodes):
+        if n_.type != "OUTPUT_MATERIAL":
+            nt.nodes.remove(n_)
+    tx = nt.nodes.new("ShaderNodeTexImage")
+    tx.image = bpy.data.images.load(str(W["tex"]["sky"]), check_existing=True)
+    tx.image.colorspace_settings.name = "sRGB"
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    nt.links.new(tc.outputs["Generated"], tx.inputs["Vector"])
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Strength"].default_value = 2.1
+    nt.links.new(tx.outputs["Color"], em.inputs["Color"])
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    mx = nt.nodes.new("ShaderNodeMixShader")
+    mx.inputs[0].default_value = 0.0
+    nt.links.new(tr.outputs[0], mx.inputs[1])
+    nt.links.new(em.outputs[0], mx.inputs[2])
+    nt.links.new(mx.outputs[0], next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL").inputs["Surface"])
+    W["duskmix"] = mx
+    kit.plane("k.sky2", (60, 30), (0, 25.5, 8), sm, rot=(math.pi / 2, 0, 0))
     kit.box("k.garden", (40, 24, 0.1), (0, 14, -0.45), P_("#8ed06a", 0.9))
     for i, (x, y, w, h, c) in enumerate([(-7, 11, 3.0, 2.6, "#c9728a"), (-2, 14, 3.4, 3.4, "#7a9ad0"), (4, 12, 3.0, 2.2, "#e8a05a"),
                                          (9, 15, 3.4, 3.0, "#a77ad0"), (-12, 14, 3.2, 3.0, "#d0a070")]):
@@ -241,9 +263,9 @@ def build(kit, story, tl):
     kit.box("tin.dent", (0.04, 0.12, 0.1), (0.17, 0.08, 0.12), P_("#6fb8cc", 0.5), tin, rot=(0.2, 0, 0.3))
     hinge = kit.empty("tin.hinge", (-0.17, 0, 0.24), tin)
     kit.box("tin.lid", (0.36, 0.44, 0.04), (0.18, 0, 0.02), blue, hinge, bevel=0.015)
-    cop2 = kit.plastic("#d8843a", 0.3, spec=0.7)
+    cop2 = kit.emit("#ff9a3a", 1.4, name="tally")
     for sy in (-0.07, 0.07):          # the lore plant: two copper tally strokes inside the lid
-        kit.box(f"tin.tally{int(sy * 100)}", (0.025, 0.012, 0.18), (0.18, sy, -0.008), cop2, hinge, rot=(0, 0, 0.06))
+        kit.box(f"tin.tally{int(sy * 100)}", (0.04, 0.02, 0.2), (0.18, sy, -0.012), cop2, hinge, rot=(0, 0, 0.06))
     W["tin_hinge"] = hinge
     # east wall: the fridge with magnets, the framed photo
     kit.box("k.fridge", (0.8, 0.9, 1.9), (3.1, 1.7, 0.95), cream, bevel=0.05)
@@ -251,16 +273,27 @@ def build(kit, story, tl):
     kit.box("k.fridge_h", (0.05, 0.05, 0.5), (2.66, 1.4, 1.05), kit.metal("#b8c0c6"), bevel=0.01)
     for i, (hc, yy, zz) in enumerate([("#e8506a", 2.0, 1.55), ("#4a90e0", 1.45, 1.6), ("#f0c030", 1.95, 1.0), ("#5ac078", 1.5, 0.9)]):
         kit.cyl(f"k.mag{i}", 0.05, 0.03, (2.672, yy, zz), P_(hc, 0.4), rot=(0, math.pi / 2, 0))
-    frame = kit.box("k.frame", (0.06, 0.62, 0.78), (3.47, -0.9, 1.55), P_("#a0703a", 0.5), bevel=0.02)
+    frame = kit.box("k.frame", (0.06, 0.82, 1.0), (3.47, -0.9, 1.55), P_("#a0703a", 0.5), bevel=0.02)
     pm, _ = img_mat(kit, "photo", W["tex"]["photo"], emit=0.3)
-    kit.plane("k.photo", (0.5, 0.64), (3.43, -0.9, 1.55), pm, rot=(math.pi / 2, 0, -math.pi / 2))
+    kit.plane("k.photo", (0.7, 0.875), (3.43, -0.9, 1.55), pm, rot=(math.pi / 2, 0, -math.pi / 2))
+    cm, _ = img_mat(kit, "curlmat", W["tex"]["curl"], emit=0.5, alpha=True)     # the painted steam curl, crisp, 1 cm proud
+    kit.plane("k.curl", (0.34, 0.34), (3.42, -1.075, 1.795), cm, rot=(math.pi / 2, 0, -math.pi / 2))
+    # the steam ribbon over Grandma's tin in frame 1: puffs flowing along the same curl
+    rib_m = kit.emit("#ffffff", 1.1, name="ribbon")
+    W["ribbon"] = []
+    for i in range(36):
+        s = kit.sphere(f"rib{i}", 0.034, (0, 0, -50), rib_m, seg=10)
+        noshadow(s)
+        s.visible_diffuse = s.visible_glossy = False
+        W["ribbon"].append(s)
+    W["curl"] = C.curl_pts(120)
     # table, chairs, bowls
     tm = P_("#c8905a", 0.5)
     kit.cyl("k.table", 0.95, 0.06, (0.3, -0.9, 0.75), tm, n=36)
     kit.cyl("k.tleg", 0.12, 0.72, (0.3, -0.9, 0.36), tm)
     kit.cyl("k.tbase", 0.38, 0.04, (0.3, -0.9, 0.02), tm)
     kit.cyl("k.cloth", 0.97, 0.01, (0.3, -0.9, 0.785), P_("#d8334a", 0.8), n=36) if False else None
-    for i, (cx, cy, yaw) in enumerate([(1.6, -0.9, -90), (-1.0, -0.9, 90), (0.3, -2.2, 180), (0.3, 0.4, 0)]):
+    for i, (cx, cy, yaw) in enumerate([(1.6, -0.9, -90), (-1.0, -0.9, 90), (-0.62, -1.82, 135), (0.3, 0.4, 0)]):
         ch = kit.empty(f"k.chair{i}", (cx, cy, 0), rot=(0, 0, yaw * D2R))
         kit.box(f"k.chs{i}", (0.5, 0.5, 0.06), (0, 0, 0.42), P_("#e8a050", 0.5), ch, bevel=0.02)
         for sx in (-1, 1):
@@ -453,6 +486,20 @@ def animate(kit, story, tl, t, ctx):
         if n.type == "EMISSION":
             n.inputs["Color"].default_value = (*_col(look["win"]), 1.0)
             n.inputs["Strength"].default_value = look["win_str"]
+    W["duskmix"].inputs[0].default_value = look["dusk"]
+    # the tin steam ribbon
+    rc = [c for c in tl["cues"] if c["name"] == "ribbon" and c["t"] <= t]
+    on = bool(rc and rc[-1].get("on"))
+    cv = W["curl"]
+    for i, s in enumerate(W["ribbon"]):
+        if not on:
+            s.location = (0, 0, -50)
+            continue
+        u = (i / len(W["ribbon"]) + 0.045 * t) % 1.0
+        q = cv[min(len(cv) - 1, int(u * (len(cv) - 1)))]
+        k = min(1.0, u / 0.1, (1 - u) / 0.1)
+        s.location = (-2.93, -1.5 + q[0] * 0.9, 1.98 + q[1] * 0.9)
+        s.scale = (k, k, k)
     # steam
     for i, s in enumerate(W["steam"]):
         u = (t * 0.28 + i / len(W["steam"])) % 1.0
@@ -462,7 +509,7 @@ def animate(kit, story, tl, t, ctx):
     # the tin lid
     tc = [c for c in tl["cues"] if c["name"] == "tin"]
     v, _ = _sample(tc, t, ["open"], {"open": 0.0})
-    W["tin_hinge"].rotation_euler = (0, -v["open"] * 105 * D2R, 0)
+    W["tin_hinge"].rotation_euler = (0, -v["open"] * 88 * D2R, 0)
     bpy.context.view_layer.update()
     # objects
     tracks = {}

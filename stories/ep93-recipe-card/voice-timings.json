@@ -34,22 +34,30 @@
    ]
   },
   "L02": {
-   "text": "I've never written it.",
+   "text": "Here, a recipe cooked right flies to whoever needs it most.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.328,
+   "dur": 2.724,
    "onset": 0.172,
-   "end": 1.138,
+   "end": 2.517,
    "chunks": [
     [
      0.172,
-     0.578
+     0.793
     ],
     [
-     0.578,
-     1.138
+     0.793,
+     1.164
+    ],
+    [
+     1.164,
+     1.776
+    ],
+    [
+     1.776,
+     2.517
     ]
    ]
   },
@@ -294,26 +302,34 @@
    ]
   },
   "L11": {
-   "text": "And the writing on it is mine.",
+   "text": "And the writing on it is mine. I've never written it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.586,
+   "dur": 2.328,
    "onset": 0.155,
-   "end": 1.397,
+   "end": 2.138,
    "chunks": [
     [
      0.155,
-     0.569
+     0.552
     ],
     [
-     0.569,
-     0.759
+     0.552,
+     0.707
     ],
     [
-     0.759,
-     1.397
+     0.707,
+     1.155
+    ],
+    [
+     1.224,
+     1.578
+    ],
+    [
+     1.578,
+     2.138
     ]
    ]
   },
@@ -1686,14 +1702,14 @@
    ]
   },
   "L71": {
-   "text": "a card just landed in her soup pot,",
+   "text": "a card just landed in a nineteen-year-old's soup pot,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.879,
+   "dur": 2.466,
    "onset": 0.172,
-   "end": 1.672,
+   "end": 2.259,
    "chunks": [
     [
      0.172,
@@ -1701,15 +1717,15 @@
     ],
     [
      0.448,
-     0.87
+     0.897
     ],
     [
-     0.87,
-     1.026
+     0.897,
+     1.629
     ],
     [
-     1.026,
-     1.672
+     1.629,
+     2.259
     ]
    ]
   },
@@ -1726,6 +1742,90 @@
     [
      0.172,
      1.103
+    ]
+   ]
+  },
+  "L02b": {
+   "text": "Every night at dusk, cards lift out of kitchen windows all over town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.207,
+   "onset": 0.172,
+   "end": 3.017,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.931
+    ],
+    [
+     1.017,
+     1.526
+    ],
+    [
+     1.526,
+     2.172
+    ],
+    [
+     2.172,
+     3.017
+    ]
+   ]
+  },
+  "L54b": {
+   "text": "She didn't look surprised.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     1.172
+    ]
+   ]
+  },
+  "L69b": {
+   "text": "Her card stays in the tin. It's already been where it needed to go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.983,
+   "onset": 0.155,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.155,
+     0.768
+    ],
+    [
+     0.768,
+     1.241
+    ],
+    [
+     1.328,
+     1.828
+    ],
+    [
+     1.828,
+     2.224
+    ],
+    [
+     2.224,
+     2.759
     ]
    ]
   }
