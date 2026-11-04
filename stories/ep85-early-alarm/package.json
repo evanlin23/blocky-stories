@@ -7,5 +7,5 @@
   "shape": "lifted",
   "opening": "if",
   "lane": "core",
-  "hold": "batch 8: scripts only, not built yet"
+  "hold": "dropped 2026-11-04: critic r2 revise (avg 7.3, eerie 6, faces 5) and standards revise; two reframes and a cover_s edit open; the build is on branch claude/batch8-ep85-early-alarm"
 }

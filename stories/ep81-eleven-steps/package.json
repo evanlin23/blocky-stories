@@ -7,5 +7,5 @@
   "shape": "decoy",
   "opening": "count",
   "lane": "core",
-  "hold": "batch 7: scripts only, not built yet"
+  "hold": "dropped 2026-11-04: critic revise twice (avg 7.0, none under 5); five camera and lighting fixes open; standards approved; the build is on branch claude/batch7-ep81-eleven-steps"
 }

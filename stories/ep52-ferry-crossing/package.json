@@ -5,5 +5,5 @@
  "made_for_kids": false,
  "cover_s": 1.3,
  "shape": "about-me",
- "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
+ "hold": "dropped 2026-11-04: proof failed pace: picture changes 12.3 against 14.0 and a 1.6 s still; both review rounds spent; PR #223 unmerged; the build is on branch claude/ep52-ferry-crossing-opening"
 }
