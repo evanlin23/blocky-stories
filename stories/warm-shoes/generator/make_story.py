@@ -369,7 +369,7 @@ gone("me", "P01")
 S("P01", X((-6.0, 5.0, 1.45), (-3.5, 0.0, 1.9), 30), N, fill=0.0, note="hold on the window, nothing, then a tap")
 STR("L37", (-3.5, -1.6), 180, "sneaker", lean=14, head=[0, 0])
 S("L37", X((-6.0, 5.0, 1.45), (-3.5, 0.0, 1.9), 30, (-5.8, 4.7, 1.45)), N, fill=0.0, key=1.0, rim=1.0, note="a big dark shape against the violet glass")
-STR("L38", (-3.4, -2.0), 180, "sneaker", lean=40, head=[0, 4])
+STR("L38", (-3.4, -2.35), 180, "sneaker", lean=34, head=[0, 4])
 S("L38", X((-4.9, 4.6, 1.5), (-3.5, -1.2, 2.1), 26, (-4.4, 3.6, 1.6)), N, fill=0.0, key=1.0, rim=1.0, note="bent down to the glass, from the side")
 STR("L39", (-3.5, -2.15), 180, "sneaker", lean=46, head=[0, -38])
 S("L39", X((-3.5, 1.7, 1.85), (-3.5, 0.0, 2.0), 36, (-3.5, 1.3, 1.9)), N, fill=0.0, key=1.0, rim=1.0, note="its face through the glass, lamp-lit, no mouth, two green points")
@@ -390,7 +390,7 @@ S("L44", C((-4.6, 3.9, 0.7), 1.0, 200, 22, 28, d2=0.75), M, fill=0.5, note="Bisc
 # =========================================================================================== 06 Saturday L46-L49
 cat("L46")
 gone("strider", "L46")
-put("dad", "L46", (1.9, -2.15), 180, "neutral", lean=32, arms=[50, 50])
+put("dad", "L46", (1.9, -2.5), 180, "neutral", lean=24, arms=[50, 50])
 cue("L46", "props", carrier={"pos": [1.9, -1.2, DECK + 0.02], "yaw": 0, "scale": 1.3})
 cat("L46", (1.9, -1.2, DECK + 0.08), yaw=0, face="neutral", pose="lie", tail="up")
 S("L46", X((1.7, -5.2, 3.0), (1.9, -1.9, 0.9), 24, (2.0, -4.6, 2.8)), A, note="Dad shuts the carrier door")
@@ -435,7 +435,7 @@ S("L52.2", X((-1.9, -1.2, 1.9), (0.0, -88.0, 1.4), 120), S_, hand=0.004, note="t
 gone("dad", "P02")
 S("P02", X((-1.9, -1.2, 1.9), (3.0, -95.0, 1.5), 135), S_, hand=0.003, note="the far end, the shelter, wind")
 STR("L54", (0.0, -84.0), 180, "rubber")
-S("L54", X((-1.9, -1.2, 1.9), (0.0, -84.0, 1.5), 135, None, None, 150), S_, hand=0.003, note="under the last light, someone, small")
+S("L54", X((-1.9, -1.2, 1.9), (0.0, -84.0, 1.5), 135, None, (0.6, -84.0, 1.45), 185), S_, hand=0.003, note="under the last light, someone, small")
 STR("L55", (0.0, -54.0), 180, "rubber")
 put("dad", "L55", (0.2, -24.5), 180, "neutral")
 S("L55", X((-1.9, -1.2, 1.9), (0.0, -54.0, 1.4), 110), S_, hand=0.004, note="one light closer")
@@ -465,8 +465,8 @@ S("L61", C((GATE_R[0], GATE_R[1], 0.8), 2.6, 150, 8, 34), S_, fill=0.6, note="sm
 gone("strider", "L61+0.38")
 pairs("L61+0.38", rubber=pr((GATE_R[0], GATE_R[1], 0.38), 175, True, 2.3))
 S("L61+0.38", C((GATE_R[0], GATE_R[1], 0.7), 2.6, 150, 8, 34), S_, fill=0.6, note="nothing there but the boots, steaming")
-cat("L62", (1.55, -10.07, 0.4), yaw=-90, pose="stand", face="neutral", pitch=-22, tail="up", mud=True,
-    to=[1.55, -10.07, 0.95], dur=1.3)
+cat("L62", (1.80, -10.04, 0.4), yaw=-90, pose="stand", face="neutral", pitch=-22, tail="up", mud=True,
+    to=[1.80, -10.04, 0.95], dur=1.3)
 S("L62", C((1.38, -10.07, 1.2), 0.95, -90, 3, 30, d2=0.8), S_, fill=1.0, note="low side close, Biscuit's muddy head and ears come out of the left boot, facing us")
 cat("L63", (GATE_R[0] - 0.9, GATE_R[1] + 0.1, 0.4), yaw=12, face="neutral", tail="up", mud=True)
 S("L63", C((GATE_R[0] - 0.9, GATE_R[1] + 0.1, 0.62), 1.0, 10, 8, 30, d2=0.75), S_, fill=0.9, note="muddy to the ears")
@@ -631,5 +631,7 @@ AT = timeline.resolver(_tl0["lines"], _tl0["duration"])
 for k in acting:
     acting[k].sort(key=lambda e: AT(e["at"]))
 cues.sort(key=lambda e: AT(e["at"]))
+story["rev"] = 3
+story["clip_ok"] = ["S09/bed_single"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
