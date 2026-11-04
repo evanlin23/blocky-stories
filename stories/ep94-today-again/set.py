@@ -555,7 +555,7 @@ def build_bakery(kit, M, ctx):
     kit.prop("trashcan_cylindric", (1.0, 8.4, 0), height=0.8, tint="#9ad0f0")
     kit.prop("houseplant_1", (4.4, 8.0, 0), height=0.8)
     # tables: stand-up tables with a cup or a muffin, for the customers
-    for i, (x, y) in enumerate(((-1.9, 1.6), (-0.7, 2.4), (0.5, 1.7), (2.4, 1.8), (1.1, 3.2), (-2.1, 3.2))):
+    for i, (x, y) in enumerate(((-1.9, 1.6), (-0.7, 2.4), (0.5, 1.7), (2.8, 1.9), (1.1, 3.2), (-2.1, 3.2))):
         kit.cyl(f"tbl{i}.top", 0.34, 0.05, (x, y, 1.0), M["white"], n=20)
         kit.cyl(f"tbl{i}.pole", 0.04, 0.98, (x, y, 0.5), M["steel"], n=8)
         kit.cyl(f"tbl{i}.base", 0.2, 0.04, (x, y, 0.02), M["steel"], n=14)

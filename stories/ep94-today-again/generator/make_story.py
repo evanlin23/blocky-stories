@@ -380,10 +380,10 @@ S("L21.1", ((0.3, 3.0, 1.6), (1.0, 5.3, 1.55), 50, (0.5, 3.3, 1.6), (1.0, 5.3, 1
 # each customer stands behind a stand-up table, facing the counter (and the camera behind it), mid-bite or mid-sip
 FROZEN = {
     "n0": (X(-1.9, 0.9), 188, "neutral", {"arms": [100, 0]}), "n1": (X(-0.7, 1.7), 172, "neutral", {"arms": [85, 85]}),
-    "n2": (X(0.5, 1.0), 184, "neutral", {"arms": [100, 0]}), "n3": (X(2.4, 1.1), 168, "neutral", {"arms": [80, 80]}),
+    "n2": (X(0.5, 1.0), 184, "neutral", {"arms": [100, 0]}), "n3": (X(2.8, 1.3), 168, "neutral", {"arms": [80, 80]}),
     "n4": (X(1.1, 2.5), 192, "neutral", {"arms": [100, 0]}), "n5": (X(-2.1, 2.5), 176, "neutral", {"arms": [85, 85]}),
 }
-MOMF = (X(1.7, 0.35), 180, "neutral", {"arms": [80, 0]})
+MOMF = (X(1.35, 0.2), 180, "neutral", {"arms": [80, 0]})
 S("P01", ((0.4, 6.8, 1.8), (0.4, 1.4, 0.95), 12, (0.4, 6.4, 1.8), (0.4, 1.4, 0.95), 12),
   who={**FROZEN, "mom": MOMF},
   note="the drop: the whole bakery frozen mid-bite, a coffee pour hanging in the air")
@@ -441,7 +441,7 @@ walk("me", "L26.3+0.5", (3.0, 7.8))
 walk("me", "L26>", (3.0, 9.2))
 cue("L26.3", "bdoor", v=[0], dur=0)
 cue("L26.3+0.3", "bdoor", v=[95], dur=0.5)
-S("L27", ((2.0, -4.2, 1.6), (3.85, -0.9, 3.9), 32, (2.3, -3.8, 1.8), (3.85, -0.9, 3.95), 32),
+S("L27", ((2.0, -4.2, 2.5), (3.85, -0.9, 3.7), 32, (2.3, -3.8, 2.6), (3.85, -0.9, 3.75), 32),
   who={"oka": (X(3.85, -0.95, 2.9), -28, "grin", {"arms": [15, 25], "side": [0, 75], "head": [12, 0]})},
   note="low angle up the bakery wall: Mr. Okafor on a tall ladder, focused")
 S("L27.3", ((6.6, -3.0, 1.0), (4.0, -0.9, 0.5), 28, (5.8, -2.8, 1.0), (4.0, -0.9, 0.5), 28),
@@ -676,7 +676,7 @@ story = {
     "tail": LOOP,
     "fade_in": False,
     "fade_out": False,
-    "rev": 6,
+    "rev": 7,
     "look": {"style": "closer", "fog": "#d8ecf8", "fog_density": 0.004, "fog_start": 16.0, "sky": "#8fd3ff", "sky_strength": 1.0,
              "exposure": 0.15, "hdri": "kloppenheim_06_puresky", "hdri_strength": 0.5, "hdri_rotation": 40, "flash_safe": True,
              "polish": {"emph": ["L01", "L03", "L11", "L21", "L24", "L36", "L37"], "reveal": ["L37"], "twist": "L37",
@@ -701,7 +701,7 @@ story = {
         {"at": "L37", "voices": ["piano", "pulse", "pad"], "energy": 0.6},
         {"at": "L45", "voices": ["piano", "pulse"], "energy": 0.46}]},
     "sound": {
-        "floor": "wood", "steps_db": -26, "rev": 6,
+        "floor": "wood", "steps_db": -26, "rev": 7,
         "ambience": [{"kind": "rain", "from": "L10", "to": "L11>", "lufs": -38},
                      {"kind": "water", "from": "L28", "to": "L29", "lufs": -40},
                      {"kind": "rain", "from": "L47", "to": "end", "lufs": -38}],
