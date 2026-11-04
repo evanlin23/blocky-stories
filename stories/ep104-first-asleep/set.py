@@ -24,10 +24,10 @@ def E(parent, loc=(0, 0, 0), rot=(0, 0, 0), name="e"):
 def build_giant(kit, at, yaw=0.0):
     """A stooped man, arms past his knees, a long neck, a light-blue cap. Built from boxes. Faces -y (the camera)."""
     root = E(None, at, (0, 0, yaw), "giant")
-    cloth = P("#1d2540", 0.8, 0.1)           # a dark navy shirt
-    pants = P("#14172a", 0.85, 0.05)
-    skin = P("#5b4a5c", 0.7, 0.2)
-    capm = P("#8ec9ff", 0.45, 0.5)
+    cloth = P("#2a3563", 0.55, 0.45)           # a dark navy shirt
+    pants = P("#222a52", 0.55, 0.4)
+    skin = P("#8c7690", 0.6, 0.3)
+    capm = P("#4f86d6", 0.6, 0.3)
     strap = P("#8a5a2b", 0.6, 0.3)
     shoe = P("#0b0b10", 0.5, 0.2)
     # legs, hip at z 1.45; narrow, long
@@ -54,17 +54,15 @@ def build_giant(kit, at, yaw=0.0):
         for f in range(3):
             B(el, (0.025, 0.04, 0.22), (-0.04 + 0.04 * f, 0, -1.12), skin, name="fing")
     # long neck, then the head bent forward and down
-    neck = E(tor, (0, 0, 0.92), (0.3, 0, 0.1), "neck")
-    B(neck, (0.13, 0.13, 0.62), (0, 0, 0.3), skin, name="neckb")
-    head = E(neck, (0, 0, 0.62), (0.25, 0.3, 0), "chead")
-    B(head, (0.26, 0.28, 0.34), (0, 0, 0.17), skin, name="skull")
-    # cap: dome over the top, brim forward (toward -y), pressed low
-    B(head, (0.30, 0.31, 0.15), (0, 0.0, 0.33), capm, bevel=0.04, name="cap")
-    B(head, (0.29, 0.16, 0.03), (0, -0.2, 0.28), capm, rot=(0.2, 0, 0), bevel=0.01, name="brim")
-    # two tiny glints under the brim, no mouth
-    glow = kit.emit("#f4fbff", 30.0, name="glint")
+    neck = E(tor, (0, 0, 0.92), (0.22, 0, 0.05), "neck")
+    B(neck, (0.16, 0.16, 0.66), (0, 0, 0.32), skin, name="neckb")
+    head = E(neck, (0, 0, 0.64), (-0.15, 0, 0), "chead")
+    B(head, (0.32, 0.30, 0.52), (0, 0, 0.26), P("#4a3a54", 0.7, 0.2), name="skull")     # long narrow head
+    B(head, (0.36, 0.34, 0.14), (0, 0.0, 0.5), capm, bevel=0.03, name="cap")   # cap crown over the head
+    B(head, (0.35, 0.18, 0.03), (0, -0.22, 0.46), capm, rot=(0.12, 0, 0), bevel=0.008, name="brim")
+    glow = kit.emit("#f4fbff", 60.0, name="glint")
     for sx in (-1, 1):
-        g = kit.sphere("glint", 0.012, (sx * 0.06, -0.152, 0.2), glow, head, seg=8)
+        kit.sphere("glint", 0.03, (sx * 0.075, -0.15, 0.34), glow, head, seg=8)
     return root
 
 
@@ -85,13 +83,13 @@ def build(kit, story, tl):
     B(None, (5.6, 3.6, 0.25), (0, 4.8, 0.12), P("#6e5a7a", 0.8, 0.1), name="porchfloor", bevel=0.01)
     for sx in (-1, 1):
         B(None, (0.16, 0.16, 2.9), (sx * 2.7, 3.2, 1.5), P("#cfc7e6", 0.6, 0.2), name="post", bevel=0.01)
-    B(None, (6.0, 3.8, 0.18), (0, 5.0, 3.0), kit.emit("#4a3f8a", 0.6, name="roofglow"), name="porchroof", bevel=0.01)
-    B(None, (6.2, 0.2, 0.30), (0, 3.1, 2.95), P("#cfc7e6", 0.6, 0.2), name="fascia", bevel=0.01)
+    B(None, (6.0, 3.8, 0.18), (0, 5.0, 3.0), P("#07061a", 0.9, 0.0), name="porchroof", bevel=0.01)
+    B(None, (6.2, 0.2, 0.30), (0, 3.1, 2.95), P("#e6defa", 0.5, 0.2), name="fascia", bevel=0.01)
     B(None, (1.1, 0.12, 2.0), (-1.4, 6.4, 1.2), P("#5a3c6e", 0.6, 0.1), name="door", bevel=0.01)
     B(None, (1.2, 0.1, 1.0), (2.0, 6.4, 1.6), kit.emit("#ffcf7a", 3.0, name="win"), name="window", bevel=0)
     # mailbox on a post: the scale reference, at the giant's knee
-    B(None, (0.12, 0.12, 0.95), (-0.75, 2.9, 0.5), P("#8a6a4a", 0.7, 0.05), name="mpost", bevel=0.01)
-    B(None, (0.28, 0.55, 0.26), (-0.75, 2.9, 1.08), P("#d7263d", 0.4, 0.3), name="mailbox", bevel=0.05)
+    B(None, (0.14, 0.14, 1.05), (-0.55, 3.4, 0.55), P("#8a6a4a", 0.7, 0.05), name="mpost", bevel=0.01)
+    B(None, (0.4, 0.75, 0.36), (-0.55, 3.4, 1.22), P("#d7263d", 0.4, 0.3), name="mailbox", bevel=0.05)
     # a streetlight behind and to the side of the giant
     B(None, (0.14, 0.14, 5.0), (2.4, 8.0, 2.5), P("#2b2f3b", 0.5, 0.3), name="pole", bevel=0.02)
     B(None, (0.9, 0.12, 0.12), (1.95, 8.0, 5.0), P("#2b2f3b", 0.5, 0.3), name="arm", bevel=0.02)
@@ -107,6 +105,10 @@ def build(kit, story, tl):
     kit.aim(L3, (0.1, 3.9, 1.4))
     L4 = kit.light("capkey", "SPOT", (1.2, -1.5, 3.8), 350, "#cfe8ff", size=0.1, spot=9, blend=0.5)
     kit.aim(L4, (0.1, 3.7, 2.7))
+    L5 = kit.light("rimL", "SPOT", (-2.5, 7.5, 3.5), 6000, "#b79cff", size=0.2, spot=50, blend=0.4)
+    kit.aim(L5, (0.1, 4.2, 1.8))
+    L6 = kit.light("rimR", "SPOT", (2.8, 7.0, 3.0), 6000, "#c9d8ff", size=0.2, spot=50, blend=0.4)
+    kit.aim(L6, (0.1, 4.2, 1.8))
     kit.light("moon", "SUN", (0, 0, 20), 0.5, "#8f8cff", rot=(math.radians(50), 0, math.radians(200)), size=0.1)
     return {}
 
