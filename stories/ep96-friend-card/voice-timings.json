@@ -89,6 +89,30 @@
     ]
    ]
   },
+  "L04": {
+   "text": "it tells you how your closest friendship ends.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.052
+    ],
+    [
+     1.052,
+     1.862
+    ]
+   ]
+  },
   "L05": {
    "text": "my dad's card said, over a parking spot.",
    "who": "narrator",
