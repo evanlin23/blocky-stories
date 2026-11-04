@@ -99,7 +99,7 @@ SH = []
 def put(who, at, pos, yaw=None, **kw):
     p = list(pos)
     acting[who].append({"at": at, "pos": list(last[who])})
-    k = {"at": at, "pos": p, "blend": 0.0, "hidden": False}
+    k = {"at": at, "pos": p, "blend": 0.0, "hidden": False, "lean": 0, "arms": [0, 0], "head": [0, 0], "side": [0, 0]}
     if yaw is not None:
         k["yaw"] = yaw
     k.update(kw)
@@ -155,7 +155,7 @@ def mv(p0, t0, l0, p1=None, t1=None, l1=None):
     return [[0, list(p0), list(t0), l0], [1, list(p1), list(t1 if t1 is not None else t0), l1 or l0]]
 
 
-HMAP = {"reveal": 1.25, "shoes": 1.2, "gpworried": 1.1, "glance": 1.4, "gpporchlight": 1.2, "soft": 1.2, "hedoes": 1.1,
+HMAP = {"reveal": 1.25, "shoes": 1.5, "gpworried": 1.6, "glance": 1.6, "gpporchlight": 1.5, "soft": 1.5, "hedoes": 1.5,
         "meeyes": 1.2, "mestunned": 1.4, "fallsface": 1.1, "melaugh": 1.5, "mesmiles": 1.6, "gpstunned": 1.2,
         "lookplate": 1.5, "straight": 1.3, "nonsense": 1.6, "peek": 1.3, "brisconod": 1.3, "wink": 1.5, "mecoat": 1.5,
         "blanket": 0.9, "revealwide": 3.2, "knocker": 0.9, "knocker2": 0.9, "knockerstill": 0.8, "knockdoor": 1.5}
@@ -195,7 +195,7 @@ beat("me", "L01.1", lean=8, arms=[0, 20])
 put("grandpa", 0, [6.0, 3.4], 90, expr="neutral")
 go("grandpa", "L01.2", [6.0, 3.4])
 go("grandpa", "L01>", [2.6, 3.4])
-S(0, [-1.2, 7.1, 1.15], [1.3, 7.95, 0.85], 40, 0.14, name="hook")
+S(0, [-0.2, 6.9, 0.9], [1.3, 7.95, 0.5], 40, 0.14, name="hook")
 S("L01.1", [-0.2, 6.7, 1.75], [0.0, 9.0, 1.75], 52, 0.12, name="knockdoor")
 S("L01.2", [-1.8, 5.9, 0.45], [0.8, 8.3, 0.3], 40, 0.14, drift=(0.5, 0, 0), name="shadow")
 # L02
@@ -478,7 +478,7 @@ only("L40.1", ["me"])
 put("me", "L40.1", [0.0, 9.9, Z], 0, expr="wide")
 S("L40.1", [0.3, 6.4, 1.7], [0.0, 9.6, 1.65], 50, 0.1, name="mestunned")
 only("L41", ["grandpa"])
-put("grandpa", "L41", [0.0, 7.7, 0.15], 180, expr="worried", arms=[0, 0])
+put("grandpa", "L41", [0.0, 7.7, 0.15], 180, expr="worried", arms=[0, 0], head=[0, 0])
 S("L41", [0.1, 9.9, 1.7], [0.0, 7.7, 1.5], 60, 0.1, name="gpworried")
 beat("grandpa", "L41.2", head=[30, 0], expr="worried")
 S("L41.2", [-0.3, 9.8, 1.7], [0.0, 7.7, 1.5], 44, 0.1, name="glance")
@@ -548,8 +548,8 @@ S("L49.1", [-2.8, -4.2, 1.7], [-1.4, -6.0, 1.6], 44, 0.12, name="ferrowatches")
 only("L50", ["grandpa", "brisco"])
 put("grandpa", "L50", [-1.6, -6.0], 90, expr="angry")
 go("grandpa", "L50>", [1.6, -6.0])
-put("brisco", "L50", [2.4, -5.4], -90, expr="grin")
-go("brisco", "L50>", [-1.0, -5.4])
+put("brisco", "L50", [2.4, -4.3], -90, expr="grin")
+go("brisco", "L50>", [-1.0, -4.3])
 S("L50", [0.0, -2.6, 1.6], [0.0, -6.0, 1.5], 38, 0.14, name="passing")
 # L51: night, washing
 look("L51", "night")
@@ -621,7 +621,7 @@ S("L62", [-14.0, 3.0, 2.0], [8.0, 5.0, 1.6], 30, 0.1, name="sixagain")
 count("L62.2", 43)
 S("L62.2", [1.2, 5.2, 1.2], [1.3, 7.85, 0.4], 40, 0.12, name="fullplate")
 # L63
-put("me", "L63", [1.0, 3.2], 0, expr="smile")
+put("me", "L63", [0.9, 1.4], 0, expr="smile")
 cue("L63", "meplate", v=1.0)
 go("me", "L63.1", [0.8, -5.8])
 S("L63", [-3.4, 0.4, 1.6], [0.9, -1.0, 1.4], 36, 0.1, drift=(1.0, 0, 0), name="crossing")
@@ -680,7 +680,7 @@ S("L71", [-9.0, 4.8, 1.7], [-9.1, 8.2, 1.7], 38, 0.12, name="bothknock")
 only("L71.1", ["me"])
 put("me", "L71.1", [1.3, 8.55, Z], 0, expr="neutral", lean=10, arms=[0, 30])
 beat("me", "L71.1+0.6", lean=20, arms=[0, 78])
-S("L71.1", [-1.2, 7.1, 1.15], [1.3, 7.95, 0.85], 40, 0.14, name="loop")
+S("L71.1", [-0.2, 6.9, 0.9], [1.3, 7.95, 0.5], 40, 0.14, name="loop")
 
 # ---------------------------------------------------------------------------------------------- finish
 for k_ in acting.values():
