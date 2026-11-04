@@ -193,7 +193,8 @@ SHOTS = [
     ("L34", "S40 Mom asleep in the warm light", 1, MUM_SLEEP),
     # 5 ladder height, L35 to L39 (61 to 71 s)
     ("L35", "S41 Mom's room in morning light, the corner empty, the ceiling high", 2, WIDE),
-    ("L35.2", "S42 the stack, whole again, the face box not among them", 4, CLOCK),
+    ("L35.2", "S42 the stack, whole again, the face box not among them", 4,
+     move(([-2.8, -1.75, 1.6], [-2.72, -5.1, 0.8]), ([-2.78, -2.05, 1.55], [-2.72, -5.1, 0.8]), 13, 14)),  # the clock wide, a slow push so it never sits dead
     ("L36", "S43 Mom in the front room with her mug, her head tilting up", 2, still([-1.0, -2.35, 1.5], [-1.9, -3.6, 1.45], 30)),
     ("L36.1+0.37", "S44 her eyeline: the frames at the top of a tall wall", 2, move(([-2.6, -3.4, 1.3], [-4.5, -3.1, 2.4]), ([-2.6, -3.4, 1.3], [-4.5, -3.1, 3.0]), 17)),
     ("L37", "S45 Mom still looking up, mouthing the words", 2, still([-1.0, -2.35, 1.5], [-1.9, -3.6, 1.55], 32)),
