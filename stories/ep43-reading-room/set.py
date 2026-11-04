@@ -602,9 +602,9 @@ def update_numbers(ctx, tl, t, states, vis, scene_on):
 # ------------------------------------------------------------------------------------------------ the upside-down grin
 
 # per shot: (face yaw toward camera, roll of joint 1, roll of joint 2, roll of the head, pitch of joint 1), degrees
-NECK_POSE = {"default": (-35, 55, 55, 55, 15)}
+NECK_POSE = {"default": (40, -25, -70, -70, 5)}
 
-GRIN_W, GRIN_H = 0.62, 0.42   # world size of the decal on the Negative's face (the mouth is about 0.5 wide: ~40% of the head)
+GRIN_W, GRIN_H = 0.78, 0.5   # world size of the decal on the Negative's face (the mouth is about 0.5 wide: ~40% of the head)
 EYE_W, EYE_H = 1.0, 0.40
 
 
@@ -615,16 +615,17 @@ def grin_image(w=1240, h=840):
     im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     cx, hw = w * S / 2, w * S * 0.47
-    top, drop, thick = h * S * 0.30, h * S * 0.42, h * S * 0.20
+    top, drop, sag = h * S * 0.22, h * S * 0.30, h * S * 0.26
     up, lo = [], []
     for k in range(0, 121):
         u = k / 120
         x = cx + hw * (2 * u - 1)
         c = 1 - (2 * u - 1) ** 2
-        up.append((x, top + 0.06 * h * S * (1 - c) ** 1.5))                   # the upper lip: flat, corners tugged up
-        lo.append((x, top + 0.06 * h * S * (1 - c) ** 1.5 + drop * c ** 0.7))  # the lower lip: the deep smile belly
+        y0 = top + sag * c ** 0.8                                             # the upper lip sags: corners tugged up
+        up.append((x, y0))
+        lo.append((x, y0 + drop * c ** 0.6))                                  # the lower lip: the deep smile belly
     d.polygon(up + lo[::-1], fill=(176, 190, 208, 255))
-    o = h * S * 0.016
+    o = h * S * 0.032
     inner = [(x, y + o) for x, y in up] + [(x, y - o) for x, y in lo[::-1]]
     d.polygon(inner, fill=(4, 5, 7, 255))
     return im.resize((w, h), Image.LANCZOS)
@@ -745,7 +746,7 @@ def _extras(kit, ctx):
     hg = bpy.data.objects.get("neg.headg")
     ctx["grin"] = None
     if hg is not None:
-        gm = alpha_mat(kit, "neg grin", grin_image(), emit=0.5)
+        gm = alpha_mat(kit, "neg grin", grin_image(), emit=1.4)
         ctx["grin"] = curved_decal(kit, "neg.grin", (GRIN_W, GRIN_H), -0.24, R + 0.012, gm, hg)
         em_ = alpha_mat(kit, "neg glints", glint_image(), emit=3.0)
         curved_decal(kit, "neg.glints", (EYE_W, EYE_H), 0.17, R + 0.012, em_, hg)
@@ -758,8 +759,8 @@ def _extras(kit, ctx):
         ink = kit.plastic("#15181c", 0.5, "neg neck", 0.2)
         n0 = kit.empty("neg.nk0", (0, 0, 1.98), up)
         n1 = kit.empty("neg.nk1", (0, 0, 0), n0)
-        kit.box("neg.neckbox1", (0.5, 0.5, 0.95), (0, 0, 0.42), ink, n1, bevel=0.05)
-        n2 = kit.empty("neg.nk2", (0, 0, 0.85), n1)
+        kit.box("neg.neckbox1", (0.5, 0.5, 1.35), (0, 0, 0.62), ink, n1, bevel=0.05)
+        n2 = kit.empty("neg.nk2", (0, 0, 1.25), n1)
         kit.box("neg.neckbox2", (0.46, 0.46, 0.95), (0, 0, 0.4), ink, n2, bevel=0.05)
         nk.parent = n2
         nk.matrix_parent_inverse = nk.matrix_parent_inverse.__class__()
@@ -767,7 +768,7 @@ def _extras(kit, ctx):
         kit.box("neg.collar", (1.12, 1.04, 0.16), (0, 0, 2.03), alpha_mat_emit(kit), up, bevel=0.05)
         ctx["nneck"] = (n0, n1, n2, bpy.data.objects.get("neg.head"))
         # a dark pocket behind it: an unlit gap between stacks (cheated in for this figure only)
-        ctx["pocket"] = kit.box("neg.pocket", (4.2, 0.3, 3.6), (3000, 3000, 0), kit.plastic("#030405", 0.9, "neg pocket", 0.0))
+        ctx["pocket"] = kit.box("neg.pocket", (2.4, 0.3, 2.6), (3000, 3000, 0), kit.plastic("#030405", 0.9, "neg pocket", 0.0))
     pm = img_mat(kit, "cat picture", cat_image(), rough=0.4)
     sm = kit.plastic("#16181c", 0.4, "phone body", 0.3)
     ph = kit.empty("phone", (3000, 3000, 0))
@@ -833,13 +834,19 @@ def animate(kit, story, tl, t, ctx):
                 leg = bpy.data.objects.get(f"{who}.leg{sx}")
                 if leg is not None:
                     leg.rotation_euler = (-math.pi / 2, 0, 0)
+    for ob in bpy.data.objects:                # S42's lamp W stands in the sight line: cheat it away for this frame
+        if ob.name.startswith("lamp W") and scene == "room":
+            ob.hide_render = shot == "S42"
+    for ob in bpy.data.objects:                # S42's camera sits where table B stands: cheat that table out of the frame
+        if ob.name.startswith(("table B", "apron B", "lamp B#0")) and scene == "room":
+            ob.hide_render = shot == "S42"
     if shot == "S42":                          # the camera sits where I sit: cheat me out of this one frame
         for ob in [bpy.data.objects.get("me")] + list(bpy.data.objects["me"].children_recursive):
             if ob is not None:
                 ob.hide_render = True
         tn = bpy.data.objects.get("tam.neck")
         if tn is not None:
-            tn.rotation_euler = (math.radians(8), 0, math.radians(-30))
+            tn.rotation_euler = (math.radians(8), 0, math.radians(-55))
     for nm in ("tam.gl-1", "tam.gl1"):
         ob = bpy.data.objects.get(nm)
         if ob is not None:
@@ -929,6 +936,8 @@ def animate(kit, story, tl, t, ctx):
         g = 0.0 if lp["table"] in dead else lamps
         over[lp["light"]] = g * (1.0 + LAMP_BOOST * lamps)
         lp["em"].inputs["Strength"].default_value = (lp["base_em"] * (0.04 if lp["table"] in dead else lamps) + 0.05) * (0.3 if shot == "S42" else 1.0)
+    if shot == "S42":
+        over["lamp.B#0"] = 0.0
     boost = 1.0 + ROOM_BOOST * dome
     over["dome"] = dome * (0.4 + 0.6 * lamps) * boost
     over["fill"] = dome * (0.25 + 0.75 * lamps) * boost
@@ -948,12 +957,12 @@ def animate(kit, story, tl, t, ctx):
         bpy.context.view_layer.update()
         hg = bpy.data.objects.get("neg.headg")
         head = hg.matrix_world.translation.copy()
-        cam = bpy.context.scene.camera.location.copy() if bpy.context.scene.camera else V((-4, -2, 1.2))
+        cam = V(tuple(next(x for x in story["shots"] if x["id"] == shot)["cam"][0][1]))
         tc = V((cam.x - head.x, cam.y - head.y, 0.0))
         tc.normalize()
         side = V((-tc.y, tc.x, 0.0))
         # under-light from Tam's dead lamp (low, between the two, cool); a hard cool rim from behind, dark side to camera
-        for nm, pos, w in (("neg_key", V((head.x, head.y, 0.95)) + tc * 0.9 - side * 0.35, 260.0),
+        for nm, pos, w in (("neg_key", V((head.x, head.y, 0.95)) + tc * 0.8 - side * 0.3, 170.0),
                            ("neg_rim", head - tc * 1.6 + side * 0.9 + V((0, 0, 0.9)), 900.0)):
             ob = K.LIGHTS[nm]["obj"]
             ob.location = pos
@@ -962,11 +971,13 @@ def animate(kit, story, tl, t, ctx):
             over[nm] = 1.0
         pk = ctx.get("pocket")
         if pk is not None and shot == "S42":
-            pk.location = (head.x - tc.x * 1.2, head.y - tc.y * 1.2, 1.5)
+            pk.location = (head.x - tc.x * 1.0, head.y - tc.y * 1.0, 1.55)
             pk.rotation_euler = (0, 0, math.atan2(tc.y, tc.x) - math.pi / 2)
     if ctx.get("pocket") is not None and shot != "S42":
         ctx["pocket"].location = (3000, 3000, 0)
     for who, dd in ctx["num"].items():
         dd["em"].inputs["Strength"].default_value = NUM_GLOW
+    if shot == "S42":
+        inscene = {**inscene, "me": False}
     update_numbers(ctx, tl, t, states, inscene, True)
     return over
