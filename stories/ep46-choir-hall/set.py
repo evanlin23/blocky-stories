@@ -558,7 +558,7 @@ def build_hall(kit, M, ctx):
     kit.aim(sp, (HX - 0.4, -7.2, 0.8))
     kit.light("camfill", "POINT", (0, 0, 0), 1.0, "#a8bce8", size=0.3)
     kit.light("front_key", "POINT", (HX - 3.2, -0.2, 2.9), 300.0, "#ffd9a0", size=0.4)
-    k = kit.light("grin_key", "SPOT", (twelfth[0] + 0.6, -4.4, 0.2), 1100.0, "#9fc4ff", spot=44, blend=0.7, size=0.15)
+    k = kit.light("grin_key", "SPOT", (twelfth[0] + 0.6, -4.4, 0.2), 700.0, "#a9c6f2", spot=44, blend=0.7, size=0.15)
     kit.aim(k, (twelfth[0], twelfth[1], twelfth[2] + 1.9))
     r = kit.light("grin_rim", "SPOT", (twelfth[0] - 1.2, -10.8, 4.2), 1400.0, "#cfe4ff", spot=26, blend=0.5, size=0.1)
     kit.aim(r, (twelfth[0], twelfth[1], twelfth[2] + 2.0))
@@ -569,6 +569,11 @@ def build_hall(kit, M, ctx):
     for i, yy in enumerate((-6.5, 0.0, 6.0)):
         kit.light(f"hall_house{i}", "AREA", (HX, yy, 4.9), 900.0, "#ffe4b8", (0, 0, 0), size=3.5)
     kit.light("hall_low", "AREA", (HX, 0.0, 4.9), 120.0, "#8fa0c8", (0, 0, 0), size=6.0)
+    # the ceiling panels light the room but are never seen as pale rectangles in frame
+    for _n in ("hall_house0", "hall_house1", "hall_house2", "hall_low"):
+        _o = kit.LIGHTS[_n]["obj"] if _n in kit.LIGHTS else bpy.data.objects.get(_n)
+        if _o is not None:
+            _o.visible_camera = False
     # the streetlight through the open door: a narrow spot from the lamp post outside
     kit.light("door_wedge", "SPOT", (HX - 2.5, 10.8, 2.0), 9000.0, "#d4def5", spot=20, blend=0.4, size=0.15)
     kit.aim(kit.LIGHTS["door_wedge"]["obj"], (HX - 0.4, -7.2, 0.9))
@@ -694,7 +699,7 @@ def grin_texture(skin):
     cx = W / 2
     ink = (10, 7, 9)
     # the top half of the face (and head) in shadow: a gradient from near-black at the brow to the skin at the cheeks
-    y_top, y_full = faces._fy(0.0), faces._fy(0.62)
+    y_top, y_full = faces._fy(0.0), faces._fy(0.74)
     px = im.load()
     for y in range(0, int(y_full)):
         u = max(0.0, min(1.0, (y - y_top) / max(1.0, y_full - y_top)))
@@ -709,7 +714,7 @@ def grin_texture(skin):
         rx, ry = 0.11 * s, 0.05 * s
         d.ellipse([ex - rx, ey - ry, ex + rx, ey + ry], fill=(4, 3, 5))
     cy = faces._fy(0.80)
-    lift = 0.07 * s
+    lift = 0.05 * s
     a = 0.40 * s
 
     def y_of(dx):
@@ -724,7 +729,7 @@ def grin_texture(skin):
         dx = (x0 + x1) / 2 - cx
         dx = (dx + W / 2) % W - W / 2   # wrap
         k = max(0.0, 1.0 - (abs(dx) - 0.15 * s) / (0.9 * s))
-        th = (0.020 + 0.016 * min(1.0, k * 1.2)) * s
+        th = (0.034 + 0.020 * min(1.0, k * 1.2)) * s
         d.line([(x0 - 1, y_of(dx)), (x1 + 1, y_of(dx))], fill=ink, width=max(3, int(th)))
     return im
 
@@ -836,18 +841,22 @@ def decorate(kit, story, ctx):
     gh = bpy.data.objects.get("grin.headg")
     if gh is not None:
         # the seam where the grin's line meets itself: a black strip down the back of the head, so it reads from far off
-        bx(kit, "grin.seam", (0.04, 0.04, faces.HEAD_H * 0.92), (0, faces.HEAD_R - 0.01, 0.0),
+        bx(kit, "grin.seam", (0.08, 0.05, faces.HEAD_H * 0.92), (0, faces.HEAD_R - 0.01, 0.0),
            pbr(kit, "grin seam", "#050304", 0.9), gh, bevel=0.012)
         # the buzz-cut slab overhangs the round head like a mortarboard: shrink it inside the outline
         hz = bpy.data.objects.get("grin.buzz")
         if hz is not None:
-            hz.scale = (0.8, 0.8, 1.0)
+            # fitted brown block hair: a short round cap hugging the crown, not a slab
+            hz.hide_render = True
+            hz.scale = (0.01, 0.01, 0.01)
+            kit.cyl("grin.hair", faces.HEAD_R + 0.02, 0.34, (0, 0, faces.HEAD_H / 2 - 0.13), hz.data.materials[0], gh, n=28)
+        gh.scale = (0.86, 0.86, 0.86)           # a head a little small for the body
         # the stretched part: a bare neck far too long, so the head rides high and bends further than any neck should
         NECK = 1.1
         head = bpy.data.objects["grin.head"]
         head.location = (0, 0, NECK)
-        nm = pbr(kit, "grin neck", "#8e7f72", 0.6)
-        bx(kit, "grin.neckbox", (0.34, 0.30, NECK + 0.5), (0, 0.0, NECK / 2 - 0.1), nm, bpy.data.objects["grin.neck"], bevel=0.05)
+        nm = pbr(kit, "grin neck", "#dcae88", 0.55)
+        bx(kit, "grin.neckbox", (0.70, 0.56, NECK + 0.5), (0, 0.0, NECK / 2 - 0.1), nm, bpy.data.objects["grin.neck"], bevel=0.05)
         # two tiny cold glints just in front of the sockets, the brightest points in the frame
         gm = kit.emit("#dff0ff", 70.0, "grin glint")
         for sx in (-1, 1):
