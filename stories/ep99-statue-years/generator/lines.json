@@ -186,16 +186,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "This SUNDAY,",
-    "This sunday,"
+    "I turn twenty-ONE",
+    "I turn twenty-one"
    ],
    [
-    "at the end of the week,",
-    "at the end of the week,"
-   ],
-   [
-    "I turn twenty-ONE.",
-    "I turn twenty-one."
+    "on SUNDAY.",
+    "on sunday."
    ],
    [
     "That's when you give",
@@ -212,8 +208,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then that MONDAY,",
-    "Then that monday,"
+    "But on MONDAY,",
+    "But on monday,"
    ],
    [
     "the statue",

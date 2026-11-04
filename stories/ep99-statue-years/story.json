@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 1,
+ "rev": 2,
  "look": {
   "style": "closer",
   "fog": "#cfe6f5",
@@ -492,20 +492,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "This SUNDAY,",
-     "This sunday,"
+     "I turn twenty-ONE",
+     "I turn twenty-one"
     ],
     [
-     "at the end",
-     "at the end"
-    ],
-    [
-     "of the week,",
-     "of the week,"
-    ],
-    [
-     "I turn twenty-ONE.",
-     "I turn twenty-one."
+     "on SUNDAY.",
+     "on sunday."
     ],
     [
      "That's when",
@@ -526,8 +518,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then that MONDAY,",
-     "Then that monday,"
+     "But on MONDAY,",
+     "But on monday,"
     ],
     [
      "the statue",
@@ -5645,7 +5637,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 1
+  "rev": 2
  },
  "set_moves": [
   "S22",
@@ -5661,10 +5653,8 @@
  ],
  "asr_forgive": [
   "statue's",
-  "turn twenty one",
   "two",
   "toward",
-  "twenty first",
   "watched"
  ]
 }
