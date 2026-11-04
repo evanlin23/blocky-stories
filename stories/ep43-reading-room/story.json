@@ -4132,14 +4132,14 @@
     "at": "L24",
     "yaw": 40,
     "sit": true,
-    "bend": 30,
+    "bend": 12,
     "arms": [
      58,
      50
     ],
     "head": [
      0,
-     24
+     6
     ],
     "expr": "blank",
     "look": [

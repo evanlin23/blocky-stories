@@ -606,25 +606,28 @@ EYE_W, EYE_H = 1.0, 0.40
 
 
 def grin_image(w=1240, h=840):
-    """The laughing D-shaped grin flipped upside down, built as a dark uneven recess: a wide inverted-D gape, black inside,
-    a thin pale lip edge that is thicker on one side and wobbles, no teeth, no tongue."""
+    """The upside-down grin: a wide, shallow inverted crescent, corners dragged down, a dark inside, a thin pale lip and a
+    faint crease at each corner turning down. Wide and shallow so it never reads as a round gasp."""
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    cx = w / 2 + w * 0.02
-    hw, hh = w * 0.46, h * 0.66
-    base = h * 0.80
-    def ring(inset, wob):
-        pts = []
-        for k in range(0, 181):
-            a = math.radians(k)
-            x = cx + (hw - inset) * math.cos(a) * (1.0 + 0.05 * math.sin(3 * a + wob))
-            y = base - (hh - inset) * (math.sin(a) ** 0.75) * (1.0 + 0.10 * math.sin(2.2 * a + wob)) - 0.06 * hh * math.cos(a)
-            pts.append((x, y))
-        return pts
-    d.polygon(ring(0, 0.0), fill=(196, 208, 224, 255))            # the thin cold lip
-    inner = ring(w * 0.05, 0.0)
-    inner = [(x + (w * 0.012 if x > cx else 0), min(y + h * 0.012, base - w * 0.04)) for x, y in inner]   # thicker lip on one side
-    d.polygon(inner, fill=(0, 0, 0, 255))
+    cx, hw = w / 2, w * 0.47
+    base = h * 0.80                      # the corners hang low
+    rise, thick = h * 0.40, h * 0.17
+    up, lo = [], []
+    for k in range(0, 121):
+        u = k / 120
+        x = cx + hw * (2 * u - 1)
+        c = 1 - (2 * u - 1) ** 2
+        up.append((x, base - rise * c ** 0.9))                       # the arch (top edge)
+        lo.append((x, base - rise * c ** 0.9 + thick * c ** 0.8))    # the flatter lower edge
+    d.polygon(up + lo[::-1], fill=(190, 204, 222, 255))
+    o = h * 0.03
+    inner = [(x, y + o) for x, y in up] + [(x, y - o) for x, y in lo[::-1]]
+    d.polygon(inner, fill=(30, 36, 46, 255))
+    for sx in (-1, 1):                                              # the corner creases, turning down
+        x0 = cx + sx * hw * 0.98
+        d.line([(x0, base - h * 0.03), (x0 + sx * w * 0.012, base + h * 0.07), (x0 + sx * w * 0.004, base + h * 0.14)],
+               fill=(120, 132, 150, 255), width=int(h * 0.018))
     return im
 
 
@@ -662,6 +665,10 @@ def alpha_mat(kit, name, pil, emit=0.0):
     nt.links.new(b.outputs[0], mix.inputs[2])
     kit._fogged(m, mix.outputs[0])
     return m
+
+
+def alpha_mat_emit(kit):
+    return kit.emit("#9be0b8", 1.2, "neg collar lit")
 
 
 def curved_decal(kit, name, size, zc, r, mat, parent):
@@ -743,6 +750,12 @@ def _extras(kit, ctx):
         ctx["grin"] = curved_decal(kit, "neg.grin", (GRIN_W, GRIN_H), -0.24, R + 0.012, gm, hg)
         em_ = alpha_mat(kit, "neg glints", glint_image(), emit=3.0)
         curved_decal(kit, "neg.glints", (EYE_W, EYE_H), 0.17, R + 0.012, em_, hg)
+    nk = bpy.data.objects.get("neg.neck")
+    if nk is not None:                                   # a neck about 1.4x too long, the collar lit
+        nk.location.z += 0.55
+        up = bpy.data.objects.get("neg.upper") or nk.parent
+        kit.box("neg.neckbox", (0.7, 0.7, 0.62), (0, 0, 2.28), kit.plastic("#15181c", 0.5, "neg neck", 0.2), up, bevel=0.05)
+        kit.box("neg.collar", (1.12, 1.04, 0.16), (0, 0, 2.03), alpha_mat_emit(kit), up, bevel=0.05)
     pm = img_mat(kit, "cat picture", cat_image(), rough=0.4)
     sm = kit.plastic("#16181c", 0.4, "phone body", 0.3)
     ph = kit.empty("phone", (3000, 3000, 0))
@@ -886,7 +899,7 @@ def animate(kit, story, tl, t, ctx):
     for lp in ctx["lamps"]:
         g = 0.0 if lp["table"] in dead else lamps
         over[lp["light"]] = g * (1.0 + LAMP_BOOST * lamps)
-        lp["em"].inputs["Strength"].default_value = lp["base_em"] * (0.04 if lp["table"] in dead else lamps) + 0.05
+        lp["em"].inputs["Strength"].default_value = (lp["base_em"] * (0.04 if lp["table"] in dead else lamps) + 0.05) * (0.3 if shot == "S42" else 1.0)
     boost = 1.0 + ROOM_BOOST * dome
     over["dome"] = dome * (0.4 + 0.6 * lamps) * boost
     over["fill"] = dome * (0.25 + 0.75 * lamps) * boost
