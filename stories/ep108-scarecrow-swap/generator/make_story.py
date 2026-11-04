@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 lines = json.loads((HERE / "lines.json").read_text())
 # the 0.4 s music drop before L12
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L12")
@@ -56,10 +56,10 @@ cast = {
                       extras=["apron"], extra_c="#fff4dc", height=0.95, brow_w=1.4, width=0.96),
     # the straw one at dinner: Grandpa's second plaid shirt and tan cap on a burlap sack
     "straw": person("#d8b878", "#d6453a", "#4a6ea8", "#6a4a30", hair="none", hair_c="#d8b878", pattern="plaid",
-                    pattern_c="#8a2a22", hat="ballcap", hat_c="#c9a46a", eyes="button", width=1.04),
+                    pattern_c="#8a2a22", hat="ballcap", hat_c="#6a4a2a", eyes="button", width=1.04),
 }
-acting = {n: [{"at": 0, "hidden": True, "pos": [0, 0]}] for n in cast}
-last = {n: [0, 0] for n in cast}
+acting = {n: [{"at": 0, "hidden": True, "pos": [60 + 6 * i, 60]}] for i, n in enumerate(cast)}
+last = {n: [60 + 6 * i, 60] for i, n in enumerate(cast)}
 cues = []
 SH = []
 
@@ -129,33 +129,36 @@ cue(0, "wave", on=0.0)
 cue(0, "tagbig", k=0.0)
 cue(0, "crossword", on=0.0)
 cue(0, "crowfly", u=0.0)
+cue(0, "mask", on=1.0)
+cue("L12", "mask", on=0.0)
+cue("L16", "mask", on=1.0)
 
 # Grandpa on the post for the whole film: arms along the crossbar
 put("grandpa", 0, [PX, PY, STEP], 0, arms=[0, 0], side=[86, 156], expr="blank", blink=True)
 
 # ===== 01 the rule and the first wave (L01 to L02)
-shot(0, near((0.25, PY, 1.8), 1.7, 20, az=-3), "scarecrow")                       # the first frame: face and glove
+shot(0, near((0.22, PY, 1.72), 2.6, 20, az=-3, push=0.08), "scarecrow")                       # the first frame: face and glove
 wave("grandpa", "L01.2", 3, 148, 164, other=86)                                     # the glove tips while "SCARECROW" lands
-shot("L01.2", near((0.7, PY, 2.0), 1.3, 26, az=-10), "glove")
+shot("L01.2", near((0.6, PY, 1.95), 2.7, 24, az=-8, push=0.1), "glove")
 wave("grandpa", "L01.3", 6, 140, 168, other=86)
-cue("L01.3", "wave", on=1.0)
-# L02: me at the fence at dusk (sunset brightness), then the glove lowering
-cue("L02", "look", id="gold", dur=0)
+# L02: me at the fence at dusk, then the glove lowering
+cue("L02", "look", id="dusk", dur=0)
+cue("L02", "wave", on=1.0)
 put("me", "L02", [0.0, -6.5], 180, arms=[0, 62], expr="worried", head=[0, 4])
 shot("L02", mv([0.7, -3.4, 1.55], [0.0, -6.5, 1.45], 30, [0.5, -4.0, 1.55], [0.0, -6.5, 1.45], 30), "mefence")
 acting["grandpa"].append({"at": "L02.2", "side": [86, 86], "blend": 0.5})
-shot("L02.2", near((0.62, PY, 1.7), 2.4, 24, az=15), "lowering")
+shot("L02.2", near((0.6, PY, 1.7), 3.2, 22, az=10, push=0.1), "lowering")
 cue("L02.2+0.5", "wave", on=0.0)
 
 # ===== 02 the mystery at work (L03 to L10)
 cue("L03", "look", id="day", dur=0)
 hide("me", "L03")
-shot("L03", mv([0.0, -12.5, 1.2], [0.0, 4.0, 1.0], 8, [0.0, -11.0, 1.2], [0.0, 4.0, 1.0], 8), "road", step=2)
+shot("L03", mv([-6.2, -8.6, 1.5], [-13.0, -1.0, 0.5], 17, [-6.0, -8.0, 1.45], [-13.0, -1.0, 0.5], 17), "road", step=2)
 shot("L03.2", mv([-4.0, -12.0, 1.2], [-14.0, -6.0, 0.8], 28, [-5.0, -10.0, 1.3], [-14.0, -6.0, 0.8], 28), "crowfence")
 LX_, LY_ = G.LNEIGH
 shot("L04", near((LX_, LY_, 1.9), 4.8, 24), "neighbor")
 shot("L04.3", near((LX_ + 0.03, LY_ - 0.1, 2.0), 2.6, 28, az=5), "hatcrow")
-shot("L05", mv([3.5, -8.5, 1.0], [-1.0, 3.0, 0.6], 22, [2.5, -6.5, 1.1], [-1.0, 3.0, 0.6], 22), "empty")
+shot("L05", mv([0.5, -9.0, 1.0], [0.0, 3.0, 0.6], 22, [0.3, -7.6, 1.05], [0.0, 3.0, 0.6], 22), "empty")
 cue("L05.1", "tagbig", k=1.0, dur=0.3)
 shot("L05.1", mv([1.5, -5.0, 1.1], [0.0, 3.0, 0.8], 24, [1.5, -4.0, 1.1], [0.0, 3.0, 0.8], 24), "tagclose")
 cue("L06", "tagbig", k=0.0, dur=0.0)
@@ -186,7 +189,7 @@ cue("L10", "crossword", on=1.0)
 hide("straw", "L10")
 put("grandma", "L10", [2.0, 1.2], 180, arms=[0, 98], expr="smirk", head=[0, 6])
 beat("grandma", "L10.1", arms=[0, 60], blend=0.5)
-shot("L10", mv([-0.2, -0.3, 1.9], [1.3, 2.1, 1.45], 28, [0.1, 0.0, 1.8], [1.3, 2.1, 1.45], 28), "crossword")
+shot("L10", mv([0.2, -1.4, 1.75], [1.6, 2.3, 1.55], 21, [0.5, -0.9, 1.75], [1.6, 2.3, 1.55], 21), "crossword")
 put("grandma", "L10.2", [1.0, -0.6], 0, expr="smirk", arms=[0, 0])
 go("grandma", "L10.2+0.1", [1.0, -0.6])
 go("grandma", "L10>", [1.0, -4.8])
@@ -200,7 +203,7 @@ shot("L11", mv([33.0, -14.5, 1.5], [34.4, -9.2, 1.3], 30, [33.2, -13.5, 1.5], [3
 put("me", "L11.1", [0.0, -10.0], 180, arms=[0, 78], expr="worried")
 go("me", "L11.1+0.1", [0.0, -10.0])
 go("me", "L11.2", [0.9, -2.6])
-cue("L11.1", "flash", on=1.0, bob=1.0, show=1.0, dur=0.4)
+cue("L11.1", "flash", on=1.0, bob=1.0, show=1.0, beam=1.0, pow=0.6, dur=0.4)
 shot("L11.1", mv([-0.7, -13.5, 1.75], [0.3, -3.0, 1.0], 24, [-0.5, -12.0, 1.75], [0.3, -3.0, 1.0], 24), "beamrows")
 cue("L11.2+0.3", "flash", bob=0.0, dur=0.5)
 shot("L11.2", mv([-0.9, -4.6, 1.35], [0.9, -2.5, 1.2], 34, [-0.6, -4.2, 1.35], [0.9, -2.5, 1.2], 34), "torch")
@@ -210,17 +213,19 @@ shot("P01", mv([-1.4, -0.9, 1.2], [0.0, PY, 1.45], 30, [-1.2, -0.5, 1.25], [0.0,
 beat("grandpa", "L12", expr="blank", blink=False)
 shot("L12", mv([0.9, -0.5, 0.8], [0.0, PY, 1.72], 36, [0.7, 0.1, 0.85], [0.0, PY, 1.72], 36), "frombelow")
 shot("L12.2", near((0.0, PY, 1.7), 1.2, 38, az=8, dz=-0.35), "glasses")
-beat("grandpa", "L13", expr="soft", blink=False)
+beat("grandpa", "L13", expr="blank", blink=False)
+cue("L13", "flash", beam=0.0)
+cue("L14", "flash", beam=1.0)
 acting["grandpa"].append({"from": "L13", "to": "L13>", "mouth": [0.18, 0.18], "flap": True})
-shot("L13", near((0.05, PY, 1.64), 1.0, 34, az=-12, dz=-0.3), "whisperface")
+shot("L13", near((0.05, PY, 1.8), 2.1, 34, az=-12, dz=-0.35, push=0.08), "whisperface")
 beat("me", "L13.2", expr="wide")
 shot("L13.2", mv([0.3, 1.0, 1.4], [1.1, -1.6, 1.35], 32, [0.4, 0.8, 1.4], [1.1, -1.6, 1.35], 32), "mestunned")
 beat("grandpa", "L14", expr="blank", blink=False)
-shot("L14", mv([-0.4, -2.9, 1.25], [0.0, PY, 1.5], 24, [-0.3, -2.3, 1.3], [0.0, PY, 1.5], 24), "reveal")
+shot("L14", mv([-2.1, -1.6, 1.35], [0.0, PY, 1.55], 48, [-1.9, -1.4, 1.35], [0.0, PY, 1.55], 48), "reveal")
 shot("L14.1", near((0.0, PY, 1.2), 3.2, 28, az=-25), "whole")
 shot("L15", mv([-5.0, -3.8, 1.4], [-8.6, -6.8, 1.15], 40, [-5.4, -4.6, 1.4], [-8.6, -6.8, 1.15], 40), "crowlook")
 hide("me", "L15")
-cue("L15", "flash", on=0.0, bob=0.0, show=0.0, dur=0.5)
+cue("L15", "flash", on=0.0, bob=0.0, show=0.0, beam=0.0, dur=0.5)
 cue("L15.2", "crowfly", u=1.0, dur=1.3)
 shot("L15.2", mv([-5.5, -4.4, 1.5], [-8.6, -6.8, 1.4], 30, [-6.5, -5.4, 1.7], [-10.4, -8.0, 4.2], 30), "crowflap")
 shot("L15.4", near((0.0, PY, 1.7), 1.9, 34, az=10, dz=-0.2), "himface")
@@ -229,10 +234,9 @@ beat("grandpa", "L16", blink=True)
 cue("L16", "look", id="day", dur=0)
 put("straw", "L16", [KX, KY - 1.5], 180, arms=[62, 62], expr="neutral", head=[0, 2])
 cue("L16", "sit", who="straw", on=True)
-put("grandma", "L16", [KX, KY + 4.9], 0, expr="laugh", arms=[0, 0], head=[0, 3])
-cue("L16", "sit", who="grandma", on=True)
+put("grandma", "L16", [KX + 0.95, KY - 1.2], -80, expr="laugh", arms=[0, 40], head=[0, 3])
 acting["grandma"].append({"from": "L16", "to": "L16>", "mouth": [0.5, 0.5], "flap": True})
-shot("L16", mv([KX + 2.9, KY + 3.2, 1.65], [KX - 0.1, KY + 0.4, 0.95], 18, [KX + 2.5, KY + 2.9, 1.6], [KX - 0.1, KY + 0.4, 0.95], 18), "kitchenwide")
+shot("L16", mv([KX + 1.7, KY + 2.9, 1.55], [KX + 0.45, KY - 1.3, 1.05], 20, [KX + 1.4, KY + 2.5, 1.55], [KX + 0.45, KY - 1.3, 1.05], 20), "kitchenwide")
 shot("L16.2", mv([KX + 0.3, KY + 1.6, 1.4], [KX, KY - 1.5, 1.25], 36, [KX + 0.3, KY + 1.2, 1.4], [KX, KY - 1.5, 1.25], 36), "strawface")
 
 # ===== 04 the sting (L17 to L21)
@@ -244,10 +248,10 @@ put("grandma", "L17", [1.4, 1.2], -90, arms=[0, 98], expr="smirk", head=[0, 4])
 shot("L17", mv([3.0, 0.6, 1.5], [1.0, 1.6, 1.4], 26, [2.6, 0.9, 1.5], [1.0, 1.6, 1.4], 26), "crosswordgold")
 # L17.1: Grandma comes back in at the back door (three straw-gold strokes on the frame, Rufus on the mat)
 DX, DY = G.DOOR
-put("grandma", "L17.1", [DX - 4.0, DY - 0.2], 90, expr="smile", arms=[0, 0])
-go("grandma", "L17.1+0.1", [DX - 4.0, DY - 0.2])
+put("grandma", "L17.1", [DX - 3.0, DY - 0.2], 90, expr="smile", arms=[0, 0])
+go("grandma", "L17.1+0.1", [DX - 3.0, DY - 0.2])
 go("grandma", "L17>", [DX - 0.5, DY + 0.7])
-shot("L17.1", near((DX, DY - 0.2, 0.9), 3.3, 28, az=-70), "backdoor")
+shot("L17.1", mv([DX - 3.4, DY - 3.0, 1.3], [DX - 0.9, DY - 0.2, 1.4], 24, [DX - 3.1, DY - 2.8, 1.3], [DX - 0.9, DY - 0.2, 1.4], 24), "backdoor")
 hide("grandma", "L18")
 shot("L18", mv([-1.3, 4.2, 0.9], [0.0, G.CHAIR[1], 0.4], 26, [-0.9, 4.6, 0.95], [0.0, G.CHAIR[1], 0.4], 26), "lawnchair")
 shot("L18.2", mv([1.2, 5.2, 0.7], [0.3, G.CHAIR[1], 0.35], 30, [1.0, 5.7, 0.7], [0.3, G.CHAIR[1], 0.35], 30), "thermos")
@@ -258,20 +262,20 @@ cue("L19", "sit", who="grandma", on=True)
 acting["grandma"].append({"from": "L19", "to": "L19>", "mouth": [0.5, 0.5], "flap": True})
 put("straw", "L19", [LX + 0.64, LY], 180, arms=[22, 22], expr="neutral", head=[0, 2])
 cue("L19", "sit", who="straw", on=True)
-shot("L19", mv([LX + 2.3, LY - 3.4, 1.5], [LX, LY + 0.1, 1.0], 24, [LX + 1.9, LY - 2.9, 1.5], [LX, LY + 0.1, 1.0], 24), "couchback")
+shot("L19", mv([LX - 1.7, LY + 3.4, 1.4], [LX, LY, 0.95], 24, [LX - 1.4, LY + 3.0, 1.4], [LX, LY, 0.95], 24), "couchback")
 shot("L19.2", mv([LX - 2.7, LY + 2.6, 1.25], [LX - 0.4, LY, 1.2], 34, [LX - 2.3, LY + 2.3, 1.25], [LX - 0.4, LY, 1.2], 34), "grandmasmile")
 beat("grandma", "L20", arms=[62, 0], expr="warm", blend=0.4)
-shot("L20", mv([LX, LY - 1.6, 1.3], [LX, LY + 0.2, 0.55], 26, [LX, LY - 1.2, 1.2], [LX, LY + 0.2, 0.55], 26), "remote")
-shot("L20.1", mv([LX - 0.2, LY - 0.7, 0.95], [LX - 0.05, LY + 0.35, 0.55], 36, [LX - 0.1, LY - 0.4, 0.9], [LX - 0.05, LY + 0.35, 0.55], 36), "remote2")
+shot("L20", mv([LX + 0.2, LY + 2.2, 1.35], [LX, LY + 0.1, 0.55], 30, [LX + 0.1, LY + 1.8, 1.25], [LX, LY + 0.1, 0.55], 30), "remote")
+shot("L20.1", mv([LX + 0.7, LY + 1.9, 1.1], [LX - 0.05, LY + 0.25, 0.52], 28, [LX + 0.55, LY + 1.6, 1.05], [LX - 0.05, LY + 0.25, 0.52], 28), "remote2")
 # L21: sunset, the jeep passes, Grandpa waves at everybody
 cue("L21", "look", id="gold", dur=0)
 hide("grandma", "L21")
 hide("straw", "L21")
-cue("L21", "jeepgo", x0=-7.0, x1=8.0, dur=3.0)
+cue("L21", "jeepgo", x0=-5.0, x1=9.0, dur=1.3)
 cue("L21", "jwave", on=1.0, dur=0.3)
 cue("L21", "wave", on=1.0)
 wave("grandpa", "L21", 12, 128, 170, both=True, step=0.2)
-shot("L21", mv([-5.0, -19.0, 1.4], [0.0, -4.0, 1.5], 26, [-4.0, -17.5, 1.4], [0.0, -4.0, 1.5], 26), "everybody")
+shot("L21", mv([0.5, 5.6, 2.7], [0.0, -9.0, 0.5], 14.5, [0.4, 5.2, 2.7], [0.0, -9.0, 0.5], 14.5), "everybody")
 shot("L21.2", near((0.25, PY, 1.8), 1.7, 20, az=-3, push=0.2), "loop")
 
 # ---------------------------------------------------------------------------------------------- finish
@@ -344,6 +348,7 @@ story = {
     "set_moves": [names["jeep"], names["crowflap"], names["everybody"]],
 }
 story["look"]["polish"] = polish
+story["clip_ok"] = ["beam.cone", "S20/beam.cone", "S20/beam"]
 story["asr_forgive"] = ["there is", "there's"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

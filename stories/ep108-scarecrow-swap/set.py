@@ -179,7 +179,7 @@ def fence(kit, x0, x1, y, white, gap=None, crows=None, rng=None):
             continue
         kit.box(f"fp{x0}_{n}", (0.14, 0.14, 1.1), (x, y, 0.55), white, bevel=0.02)
         if crows is not None and rng and rng.random() < crows:
-            crow(kit, f"fc{x0}_{n}", x, y, 1.1, yaw=rng.choice([0, 90, 180, 270]))
+            crow(kit, f"fc{x0}_{n}", x, y, 1.1, yaw=rng.choice([0, 90, 180, 270]), sc=2.1)
         n += 1
         x += 1.5
     xa, xb = x0, x1
@@ -207,7 +207,7 @@ def build_field(kit, name, cx, cy, w, d, rng, mats, crows=0, soil=None):
                 continue
             pumpkin(kit, f"{name}.pk{n}", x, y, rng.uniform(0.26, 0.4), mats, rng)
             if crows and rng.random() < crows:
-                crow(kit, f"{name}.cr{n}", x + 0.05, y, rng.uniform(0.5, 0.7), yaw=rng.uniform(0, 360))
+                crow(kit, f"{name}.cr{n}", x + 0.05, y, rng.uniform(0.5, 0.7), yaw=rng.uniform(0, 360), sc=2.1)
             n += 1
     vine = kit.plastic("#3fae4a", 0.8, spec=0.05)
     for r in range(rows):
@@ -216,31 +216,39 @@ def build_field(kit, name, cx, cy, w, d, rng, mats, crows=0, soil=None):
 
 
 def build_jeep(kit):
+    """The mail truck: a closed white van with a blue and a red stripe, a cab with open side windows (its driver waves
+    from one), a windscreen, no lettering. Faces +x."""
     root = kit.empty("jeep", (-100, -15.0, 0))
     W["jeep"] = root
     white = kit.plastic("#f4f4f0", 0.5, spec=0.3)
     blue = kit.plastic("#2f6fd6", 0.5, spec=0.3)
+    red = kit.plastic("#d63a3a", 0.5, spec=0.3)
     dark = kit.plastic("#2a2a30", 0.7)
-    kit.box("jeep.chassis", (3.0, 1.5, 0.45), (0, 0, 0.6), white, root, bevel=0.05)
-    kit.box("jeep.hood", (0.9, 1.4, 0.4), (1.2, 0, 0.95), white, root, bevel=0.05)
-    kit.box("jeep.cargo", (1.35, 1.6, 1.2), (-0.95, 0, 1.25), white, root, bevel=0.05)
-    kit.box("jeep.stripe", (3.02, 1.52, 0.14), (0, 0, 0.7), blue, root, bevel=0.02)
-    kit.box("jeep.cstripe", (1.37, 1.62, 0.14), (-0.95, 0, 1.4), blue, root, bevel=0.02)
-    kit.box("jeep.seat", (0.5, 1.2, 0.18), (0.35, 0, 0.9), dark, root)
-    kit.box("jeep.seatb", (0.12, 1.2, 0.5), (0.1, 0, 1.15), dark, root)
+    glass = kit.plastic("#27324a", 0.2, spec=0.6)
+    kit.box("jeep.chassis", (4.0, 1.6, 0.5), (0.1, 0, 0.62), white, root, bevel=0.05)
+    kit.box("jeep.hood", (0.7, 1.55, 0.45), (2.05, 0, 0.95), white, root, bevel=0.06)
+    kit.box("jeep.cargo", (2.3, 1.7, 1.5), (-0.7, 0, 1.6), white, root, bevel=0.06)
+    kit.box("jeep.stripeB", (2.32, 1.72, 0.13), (-0.7, 0, 1.45), blue, root, bevel=0.02)
+    kit.box("jeep.stripeR", (2.32, 1.72, 0.1), (-0.7, 0, 1.28), red, root, bevel=0.02)
+    kit.box("jeep.slide", (0.04, 1.0, 0.9), (-0.7, 0.87, 1.7), kit.plastic("#e4e4de", 0.5), root)
+    kit.box("jeep.stripeC", (1.3, 1.62, 0.12), (1.0, 0, 1.0), blue, root, bevel=0.02)
+    kit.box("jeep.roof", (1.45, 1.74, 0.09), (1.0, 0, 2.08), white, root, bevel=0.03)
+    for sy in (-1, 1):          # the cab's door panels and posts (the windows stay open)
+        kit.box(f"jeep.door{sy}", (1.3, 0.06, 0.42), (1.0, sy * 0.8, 1.02), white, root)
+        kit.box(f"jeep.cpostF{sy}", (0.1, 0.1, 0.9), (1.68, sy * 0.78, 1.6), white, root)
+        kit.box(f"jeep.cpostB{sy}", (0.1, 0.1, 0.9), (0.38, sy * 0.78, 1.6), white, root)
+    kit.box("jeep.wind", (0.05, 1.45, 0.7), (1.7, 0, 1.6), glass, root, rot=(0, -0.25, 0))
+    kit.box("jeep.cabback", (0.05, 1.5, 0.9), (0.36, 0, 1.6), white, root)
+    kit.box("jeep.seat", (0.4, 1.0, 0.2), (0.85, 0, 0.98), dark, root)
     for sx in (-1, 1):
         for sy in (-1, 1):
-            kit.box(f"jeep.post{sx}{sy}", (0.07, 0.07, 1.0), (0.45 + sx * 0.6, sy * 0.72, 1.55), white, root)
-    kit.box("jeep.roof", (1.4, 1.7, 0.08), (0.45, 0, 2.06), white, root, bevel=0.02)
-    for sx in (-1, 1):
-        for sy in (-1, 1):
-            kit.cyl(f"jeep.wheel{sx}{sy}", 0.34, 0.2, (sx * 1.0, sy * 0.78, 0.34), dark, root, rot=(math.pi / 2, 0, 0), n=14)
-    # the driver (blocks, not a cast member): torso, head, cap, a waving arm
-    kit.box("jeep.dtorso", (0.38, 0.5, 0.6), (0.35, -0.2, 1.3), blue, root, bevel=0.04)
-    kit.box("jeep.dhead", (0.3, 0.3, 0.3), (0.35, -0.2, 1.78), kit.plastic("#e8b88c", 0.5), root, bevel=0.05)
-    kit.box("jeep.dcap", (0.34, 0.34, 0.1), (0.35, -0.2, 1.97), blue, root, bevel=0.03)
-    kit.box("jeep.dcapb", (0.14, 0.24, 0.04), (0.5, -0.2, 1.93), blue, root)
-    piv = kit.empty("jeep.darm", (0.35, 0.02, 1.5), root)
+            kit.cyl(f"jeep.wheel{sx}{sy}", 0.4, 0.22, (sx * 1.35 + 0.2, sy * 0.78, 0.4), dark, root, rot=(math.pi / 2, 0, 0), n=14)
+    # the driver (blocks, not a cast member): torso, head, cap, a waving arm out of the window
+    kit.box("jeep.dtorso", (0.38, 0.5, 0.6), (1.0, 0.0, 1.35), blue, root, bevel=0.04)
+    kit.box("jeep.dhead", (0.3, 0.3, 0.3), (1.0, 0.0, 1.82), kit.plastic("#e8b88c", 0.5), root, bevel=0.05)
+    kit.box("jeep.dcap", (0.34, 0.34, 0.1), (1.0, 0.0, 2.0), blue, root, bevel=0.03)
+    kit.box("jeep.dcapb", (0.14, 0.24, 0.04), (1.15, 0.0, 1.96), blue, root)
+    piv = kit.empty("jeep.darm", (1.0, 0.3, 1.55), root)
     kit.box("jeep.darmb", (0.14, 0.14, 0.55), (0, 0, 0.27), blue, piv, bevel=0.03)
     kit.box("jeep.dhand", (0.16, 0.16, 0.14), (0, 0, 0.6), kit.plastic("#e8b88c", 0.5), piv, bevel=0.03)
     W["darm"] = piv
@@ -425,6 +433,7 @@ def build(kit, story, tl):
     kit.light("kl2", "POINT", (kx, ky + 4.6, 2.7), 300.0, "#fff0d0", size=0.5, shadow=False)
     kit.light("kl3", "POINT", (kx + 0.6, ky - 3.6, 2.4), 260.0, "#fff4dc", size=0.5, shadow=False)
     kit.light("ll1", "POINT", (lx, ly - 0.2, 2.8), 400.0, "#ffe8c4", size=0.6, shadow=False)
+    kit.light("ll3", "POINT", (lx - 1.0, ly + 1.8, 1.5), 170.0, "#fff0d8", size=0.5, shadow=False)
     kit.light("ll2", "POINT", (lx, ly - 3.6, 2.4), 320.0, "#ffe8c4", size=0.5, shadow=False)
     fl = kit.light("flash", "SPOT", (1.0, -1.6, 1.2), 900.0, "#fff4d8", spot=26, blend=0.5, size=0.05)
     kit.aim(fl, (PX, PY, 1.5))
@@ -433,8 +442,11 @@ def build(kit, story, tl):
     kit.plane("ground", (500, 500), (0, 0, 0), grass)
     kit.plane("roadbed", (320, 7.0), (20, G.ROAD_Y, 0.03), road)
     kit.plane("roadline", (320, 0.15), (20, G.ROAD_Y, 0.04), plastic("#ffd23f", 0.7))
-    W["band"] = kit.box("band", (240, 0.5, 5.0), (0, 70, 3.0), kit.emit("#ff8c3a", 5.0, "bandm"))
-    noshadow(W["band"])
+    bandm = kit.emit("#ff6a1a", 1.3, "bandm")
+    W["band"] = kit.box("band", (240, 0.5, 10.0), (0, 32, 7.5), bandm)
+    W["band2"] = [kit.box("bandE", (0.5, 160, 10.0), (62, 0, 7.5), bandm), kit.box("bandW", (0.5, 160, 10.0), (-62, 0, 7.5), bandm)]
+    for ob in [W["band"]] + W["band2"]:
+        noshadow(ob)
     # ---------------------------------------------------------------- Grandpa's patch
     build_field(kit, "ours", 0, 1.5, 13.0, 13.0, rng, orange, crows=0.0, soil=soil)
     # the scarecrow's post, crossbar and step (Grandpa stands on it: set in the cast)
@@ -445,14 +457,19 @@ def build(kit, story, tl):
     # the crossword resting on the crossbar by his glove, a pencil tucked in the fold
     paper = plastic("#fffdf4", 0.8)
     inkm = plastic("#26262e", 0.7)
-    cw = kit.empty("crossword", (PX + 1.3, PY + 0.1, BAR_Z + 0.075))
+    cw = kit.empty("crossword", (PX + 1.0, PY + 0.36, BAR_Z + 0.05), rot=(-0.28, 0, 0))
     W["crossword"] = cw
-    kit.box("cw.paper", (0.3, 0.38, 0.022), (0, 0, 0), paper, cw)
-    for r in range(4):
-        for c in range(4):
-            if (r + c) % 2 == 0:
-                kit.box(f"cw.cell{r}{c}", (0.05, 0.05, 0.004), (-0.1 + c * 0.07, -0.12 + r * 0.075, 0.013), inkm, cw)
-    kit.box("cw.pencil", (0.02, 0.3, 0.02), (0.12, 0.06, 0.03), plastic("#ffd23f", 0.6), cw, rot=(0, 0, 0.1))
+    kit.box("cw.paper", (0.56, 0.025, 0.66), (0, 0, 0.33), paper, cw)
+    kit.box("cw.fold", (0.012, 0.03, 0.66), (0, 0, 0.33), plastic("#d8d4c4", 0.8), cw)
+    for r in range(5):
+        for c in range(5):
+            if (r * 2 + c) % 3 == 0:
+                kit.box(f"cw.cell{r}{c}", (0.075, 0.004, 0.075), (-0.2 + c * 0.1, -0.015, 0.1 + r * 0.1), inkm, cw)
+    for r in range(6):
+        kit.box(f"cw.hl{r}", (0.5, 0.003, 0.008), (0, -0.0135, 0.06 + r * 0.1), plastic("#6a6a74", 0.8), cw)
+        kit.box(f"cw.vl{r}", (0.008, 0.003, 0.5), (-0.25 + r * 0.1, -0.0135, 0.31), plastic("#6a6a74", 0.8), cw)
+    kit.box("cw.pencil", (0.4, 0.03, 0.035), (0.0, -0.03, 0.04), plastic("#ffd23f", 0.6), cw, rot=(0, 0.12, 0))
+    kit.box("cw.tip", (0.06, 0.03, 0.03), (0.22, -0.03, 0.045), plastic("#26262e", 0.6), cw, rot=(0, 0.12, 0))
     # the lawn chair and thermos in the corn clearing
     cx, cy = G.CHAIR
     frame = kit.metal("#9aa0a8", 0.4)
@@ -502,6 +519,19 @@ def build(kit, story, tl):
     kit.box("torch.body", (0.06, 0.06, 0.2), (0, 0, 0), plastic("#e8453c", 0.5, spec=0.3), W["torch"], bevel=0.01)
     tip = kit.box("torch.tip", (0.075, 0.075, 0.03), (0, 0, -0.115), kit.emit("#fff4d0", 3.0, "torchtip"), W["torch"])
     noshadow(tip)
+    bm = kit._new("beam mat")
+    nt = bm.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    tr, em, mx = (nt.nodes.new(n) for n in ("ShaderNodeBsdfTransparent", "ShaderNodeEmission", "ShaderNodeMixShader"))
+    em.inputs["Color"].default_value = kit.col("#ffe9b0")
+    em.inputs["Strength"].default_value = 1.0
+    mx.inputs["Fac"].default_value = 0.09
+    nt.links.new(tr.outputs[0], mx.inputs[1])
+    nt.links.new(em.outputs[0], mx.inputs[2])
+    kit._fogged(bm, mx.outputs[0])
+    W["beam"] = kit.empty("beam", (0, 0, -50))
+    bc = kit.cyl("beam.cone", 0.15, 1.0, (0, 0, -0.5), bm, W["beam"], n=16, r2=0.015)
+    noshadow(W["beam"])
     build_tag(kit)
     return {}
 
@@ -569,11 +599,12 @@ def animate(kit, story, tl, t, ctx):
     bg = w.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (*look["sky"], 1.0)
     bg.inputs["Strength"].default_value = look["sky_str"]
-    W["band"].hide_render = look["band"] < 0.5
+    for ob in [W["band"]] + W["band2"]:
+        ob.hide_render = look["band"] < 0.5
     # which room is lit: all interior lights are always on (they are 100 m away), the sun can't reach them
     bpy.context.view_layer.update()
     # the flashlight: in my hand, aimed at the post's chest, eased on over 0.4 s
-    fl = sample("flash", tl, t, {"on": 0.0, "bob": 0.0, "show": 0.0})
+    fl = sample("flash", tl, t, {"on": 0.0, "bob": 0.0, "show": 0.0, "pow": 1.0, "beam": 0.0})
     me = bpy.data.objects.get("me.arm1")
     torch, L = W["torch"], kit.LIGHTS["flash"]["obj"]
     if me is not None and fl["show"] > 0.5 and not bpy.data.objects["me"].hide_render:
@@ -586,9 +617,16 @@ def animate(kit, story, tl, t, ctx):
         kit.aim(L, aimp)
         torch.rotation_euler = L.rotation_euler
         _hide(torch, False)
-        gains["flash"] = fl["on"]
+        gains["flash"] = fl["on"] * fl["pow"]
+        bm_ = W["beam"]
+        dist = (aimp - tipw).length
+        bm_.location = tipw
+        bm_.rotation_euler = L.rotation_euler
+        bm_.scale = (dist * 1.45, dist * 1.45, dist * 1.8)
+        _hide(bm_, fl["on"] < 0.5 or fl["beam"] < 0.5)
     else:
         _hide(torch, True)
+        _hide(W["beam"], True)
         gains["flash"] = 0.0
     # the mail jeep and its waving driver
     jx = -100.0
@@ -622,6 +660,9 @@ def animate(kit, story, tl, t, ctx):
     wv2 = sample("wave", tl, t, {"on": 0.0})
     for ob in W["wave_lit"]:
         ob.hide_render = wv2["on"] < 0.5
+    mk_ = sample("mask", tl, t, {"on": 1.0})
+    if W.get("mask"):
+        _hide(W["mask"], mk_["on"] < 0.5)
     tg = sample("tagbig", tl, t, {"k": 0.0})
     lens = 40.0
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
@@ -677,9 +718,23 @@ def first_frame(kit, story):
     gp = bpy.data.objects.get("grandpa.headg")
     if gp is not None:
         m = kit.plastic("#f2f2f2", 0.8)
-        kit.box("grandpa.stache", (0.56, 0.08, 0.12), (0, -0.64, -0.22), m, gp, bevel=0.03)
+        for sx in (-1, 1):   # a walrus droop on each side of the nose, never one flat bar (it read as teeth)
+            kit.box(f"grandpa.stache{sx}", (0.3, 0.07, 0.11), (sx * 0.17, -0.64, -0.1), m, gp, rot=(0, sx * 0.35, 0), bevel=0.03)
         for sx in (-1, 1):
             kit.box(f"grandpa.brow{sx}", (0.36, 0.06, 0.07), (sx * 0.24, -0.63, 0.17), m, gp)
+    sk = kit.plastic("#d8b878", 0.9, spec=0.05)
+    ink = kit.plastic("#2a2218", 0.8)
+    W["mask"] = []
+    if gp is not None:
+        mk = kit.empty("grandpa.mask", (0, 0, 0), gp)
+        W["mask"] = mk
+        kit.box("grandpa.mask.sack", (1.3, 0.06, 1.28), (0, -0.70, -0.02), sk, mk, bevel=0.05)
+        for sx in (-1, 1):
+            kit.box(f"grandpa.mask.eye{sx}", (0.2, 0.03, 0.2), (sx * 0.29, -0.745, 0.12), ink, mk)
+            kit.box(f"grandpa.mask.brow{sx}", (0.3, 0.03, 0.05), (sx * 0.29, -0.745, 0.33), ink, mk)
+        kit.box("grandpa.mask.mouth", (0.56, 0.03, 0.06), (0, -0.745, -0.32), ink, mk)
+        for k in range(5):
+            kit.box(f"grandpa.mask.st{k}", (0.05, 0.03, 0.2), (-0.28 + k * 0.14, -0.745, -0.32), ink, mk)
     # straw at Grandpa's collar and cuffs, a sack glove on each hand; the straw one the same
     straw = kit.plastic("#f0c850", 0.9, spec=0.05)
     sack = kit.plastic("#d8b878", 0.9, spec=0.05)
@@ -693,6 +748,13 @@ def first_frame(kit, story):
                 ob = kit.box(f"{who}.cs{sx}{i}", (0.1, 0.1, 0.6), (-0.4 + i * 0.2, 0.0, -1.95), straw, arm)
                 ob.rotation_euler = ((i % 2 - 0.5) * 0.4, (i - 2) * 0.12, 0)
             kit.box(f"{who}.glove{sx}", (1.0, 1.02, 0.3), (0, 0, -2.0), sack, arm, bevel=0.06)
+        if who == "straw":
+            hg = bpy.data.objects.get("straw.headg")
+            if hg is not None:
+                for sx in (-1, 1):
+                    for i in range(4):
+                        ob = kit.box(f"straw.wisp{sx}{i}", (0.08, 0.08, 0.45), (sx * 0.58, -0.1 + i * 0.1, 0.0 - i * 0.12), straw, hg)
+                        ob.rotation_euler = (0, sx * (0.5 + 0.1 * i), 0)
         up = bpy.data.objects.get(f"{who}.torso")
         if up is not None:
             for i in range(7):
