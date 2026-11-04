@@ -43,7 +43,7 @@ Kept clear of ep86 (the batch's other reversal): there the "intruder" is me, alo
 - **How the last 15 seconds turn over the first line:** we write dumb notes all day now, but last night a third hand wrote under both our lines. Grandma made three (L69 to L73). The last line ("So careful what you WRITE.") runs into L01, and "tonight it wrote about YOU" now means the third writer.
 - **The plants a rewatch catches:**
   1. L05: Grandma said they only work as a set.
-  2. L12: "Right as she WROTE it" (it's live).
+  2. L12: "The same DAY / they happened" (it's live).
   3. L27: "It knew things / only FAMILY would know."
   4. L32, L35: "I can hear you", "I know you're in the house" (shared wall, both home).
   5. Unnarrated: in S06, a third diary's spine, sea-green, sits on Grandma's shelf in a framed photo on my wall (a photo of a bookshelf, no people).
@@ -207,7 +207,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L09a: Our rooms / share a WALL. / I can hear her / TYPING.
 - L10: Then last WEEK, / my blank diary / started filling UP.
 - L11: In MY handwriting.
-- L12: But NINA'S words. / Her diary, / right as she WROTE it.
+- L12: Nina's SECRETS. / The same DAY / they happened.
 - L13: The ink just / CRAWLS / across the page.
 - L14: Tuesday. / She hates / her JOB.
 - L15: Wednesday. / It was HER / who dented the CAR.
@@ -268,7 +268,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L67: About the CAR. / About EVERYTHING.
 - L68: Now we write / dumb notes / all day.
 - L69: But last NIGHT, / under both / our lines,
-- L70: a THIRD hand / wrote.
+- L70: a THIRD hand / wrote about YOU.
 - L71: Grandma / made THREE.
 - L72: We still don't know / who has / the other ONE.
 - L73: So careful / what you WRITE.
