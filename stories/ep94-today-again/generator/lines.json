@@ -1,0 +1,943 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Today has happened",
+    "Today has happened"
+   ],
+   [
+    "FIVE times.",
+    "Five times."
+   ],
+   [
+    "Everyone's getting",
+    "Everyone's getting"
+   ],
+   [
+    "BETTER at it.",
+    "Better at it."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Here,",
+    "Here,"
+   ],
+   [
+    "when your day",
+    "when your day"
+   ],
+   [
+    "goes WRONG,",
+    "goes wrong,"
+   ],
+   [
+    "you get it",
+    "you get it"
+   ],
+   [
+    "AGAIN.",
+    "Again."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And only",
+    "And only"
+   ],
+   [
+    "YOU remember.",
+    "You remember."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mr. LUND",
+    "Mister Lund"
+   ],
+   [
+    "dropped his",
+    "dropped his"
+   ],
+   [
+    "wedding CAKE,",
+    "wedding cake,"
+   ],
+   [
+    "and got",
+    "and got"
+   ],
+   [
+    "Saturday AGAIN.",
+    "Saturday again."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mrs. DUNN",
+    "Missus Dunn"
+   ],
+   [
+    "burned the TOAST",
+    "burned the toast"
+   ],
+   [
+    "and lived",
+    "and lived"
+   ],
+   [
+    "Monday TWICE.",
+    "Monday twice."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Nobody ELSE",
+    "Nobody else"
+   ],
+   [
+    "ever notices.",
+    "ever notices."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I work the",
+    "I work the"
+   ],
+   [
+    "morning counter",
+    "morning counter"
+   ],
+   [
+    "at the corner",
+    "at the corner"
+   ],
+   [
+    "BAKERY.",
+    "Bakery."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And today",
+    "And today"
+   ],
+   [
+    "is my",
+    "is my"
+   ],
+   [
+    "BIRTHDAY.",
+    "Birthday."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Nobody's SAID it.",
+    "Nobody's said it."
+   ],
+   [
+    "Not ONCE.",
+    "Not once."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every today,",
+    "Every today,"
+   ],
+   [
+    "at nine-oh-TWO,",
+    "at nine oh two,"
+   ],
+   [
+    "it starts",
+    "it starts"
+   ],
+   [
+    "to RAIN.",
+    "to rain."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Only on the",
+    "Only on the"
+   ],
+   [
+    "bakery WINDOW.",
+    "bakery window."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At nine-FIFTEEN,",
+    "At nine fifteen,"
+   ],
+   [
+    "Pearl, our",
+    "Pearl, our"
+   ],
+   [
+    "mail carrier,",
+    "mail carrier,"
+   ],
+   [
+    "comes in.",
+    "comes in."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The first today,",
+    "The first today,"
+   ],
+   [
+    "she TRIPPED",
+    "she tripped"
+   ],
+   [
+    "on the mat.",
+    "on the mat."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The second,",
+    "The second,"
+   ],
+   [
+    "she stepped",
+    "she stepped"
+   ],
+   [
+    "OVER it.",
+    "Over it."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The third,",
+    "The third,"
+   ],
+   [
+    "she held",
+    "she held"
+   ],
+   [
+    "the door",
+    "the door"
+   ],
+   [
+    "for Mr. LUND.",
+    "for Mister Lund."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At nine-THIRTY,",
+    "At nine thirty,"
+   ],
+   [
+    "my mom",
+    "my Mom"
+   ],
+   [
+    "comes in",
+    "comes in"
+   ],
+   [
+    "for a blueberry",
+    "for a blueberry"
+   ],
+   [
+    "MUFFIN.",
+    "Muffin."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The first today,",
+    "The first today,"
+   ],
+   [
+    "she knocked",
+    "she knocked"
+   ],
+   [
+    "her coffee",
+    "her coffee"
+   ],
+   [
+    "OVER.",
+    "Over."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The third,",
+    "The third,"
+   ],
+   [
+    "she CAUGHT it.",
+    "she caught it."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She hasn't said",
+    "She hasn't said"
+   ],
+   [
+    "happy",
+    "happy"
+   ],
+   [
+    "BIRTHDAY",
+    "Birthday"
+   ],
+   [
+    "once.",
+    "once."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So on today",
+    "So on today"
+   ],
+   [
+    "number FOUR,",
+    "number four,"
+   ],
+   [
+    "I said it",
+    "I said it"
+   ],
+   [
+    "out LOUD.",
+    "out loud."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Is everyone",
+    "Is everyone"
+   ],
+   [
+    "PRETENDING?",
+    "Pretending?"
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 0.6,
+  "chunks": []
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The whole bakery",
+    "The whole bakery"
+   ],
+   [
+    "went QUIET.",
+    "went quiet."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every head",
+    "Every head"
+   ],
+   [
+    "turned to MOM.",
+    "turned to Mom."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She checked",
+    "She checked"
+   ],
+   [
+    "her WATCH,",
+    "her watch,"
+   ],
+   [
+    "and told everyone,",
+    "and told everyone,"
+   ],
+   [
+    "from the TOP.",
+    "from the top."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Next morning,",
+    "Next morning,"
+   ],
+   [
+    "it was",
+    "it was"
+   ],
+   [
+    "TODAY again.",
+    "Today again."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So on",
+    "So on"
+   ],
+   [
+    "today FIVE,",
+    "today five,"
+   ],
+   [
+    "at nine-oh-ONE,",
+    "at nine oh one,"
+   ],
+   [
+    "I went out",
+    "I went out"
+   ],
+   [
+    "the BACK.",
+    "the back."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mr. OKAFOR,",
+    "Mister Okafor,"
+   ],
+   [
+    "our neighbor,",
+    "our neighbor,"
+   ],
+   [
+    "was up",
+    "was up"
+   ],
+   [
+    "a ladder",
+    "a ladder"
+   ],
+   [
+    "by our ROOF,",
+    "by our roof,"
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "holding a",
+    "holding a"
+   ],
+   [
+    "garden HOSE",
+    "garden hose"
+   ],
+   [
+    "over our window.",
+    "over our window."
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That's",
+    "That's"
+   ],
+   [
+    "the RAIN.",
+    "the rain."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Behind the hedge",
+    "Behind the hedge"
+   ],
+   [
+    "was the",
+    "was the"
+   ],
+   [
+    "whole BLOCK,",
+    "whole block,"
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "with BALLOONS",
+    "with balloons"
+   ],
+   [
+    "and a CAKE,",
+    "and a cake,"
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "and Pearl",
+    "and Pearl"
+   ],
+   [
+    "shaking GLITTER",
+    "shaking glitter"
+   ],
+   [
+    "on it.",
+    "on it."
+   ],
+   [
+    "Her hands",
+    "Her hands"
+   ],
+   [
+    "were COVERED.",
+    "were covered."
+   ]
+  ]
+ },
+ {
+  "id": "L33",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In a real",
+    "In a real"
+   ],
+   [
+    "do-over,",
+    "do-over,"
+   ],
+   [
+    "only YOU remember,",
+    "only you remember,"
+   ],
+   [
+    "and everyone else",
+    "and everyone else"
+   ],
+   [
+    "does the day",
+    "does the day"
+   ],
+   [
+    "the SAME.",
+    "the same."
+   ]
+  ]
+ },
+ {
+  "id": "L34",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Everyone here",
+    "Everyone here"
+   ],
+   [
+    "did it",
+    "did it"
+   ],
+   [
+    "BETTER.",
+    "Better."
+   ]
+  ]
+ },
+ {
+  "id": "L35",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So they",
+    "So they"
+   ],
+   [
+    "REMEMBERED.",
+    "Remembered."
+   ]
+  ]
+ },
+ {
+  "id": "L36",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It isn't",
+    "It isn't"
+   ],
+   [
+    "a DO-over.",
+    "a do-over."
+   ]
+  ]
+ },
+ {
+  "id": "L37",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It's a",
+    "It's a"
+   ],
+   [
+    "REHEARSAL.",
+    "Rehearsal."
+   ]
+  ]
+ },
+ {
+  "id": "L38",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My whole block",
+    "My whole block"
+   ],
+   [
+    "has been",
+    "has been"
+   ],
+   [
+    "practicing",
+    "practicing"
+   ],
+   [
+    "my surprise party",
+    "my surprise party"
+   ],
+   [
+    "ON me.",
+    "On me."
+   ]
+  ]
+ },
+ {
+  "id": "L39",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mom had",
+    "Mom had"
+   ],
+   [
+    "a CLIPBOARD",
+    "a clipboard"
+   ],
+   [
+    "of every time",
+    "of every time"
+   ],
+   [
+    "I nearly",
+    "I nearly"
+   ],
+   [
+    "caught ON.",
+    "caught on."
+   ]
+  ]
+ },
+ {
+  "id": "L40",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She's never",
+    "She's never"
+   ],
+   [
+    "thrown me",
+    "thrown me"
+   ],
+   [
+    "a surprise party",
+    "a surprise party"
+   ],
+   [
+    "that WORKED.",
+    "that worked."
+   ]
+  ]
+ },
+ {
+  "id": "L41",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I always",
+    "I always"
+   ],
+   [
+    "KNOW.",
+    "Know."
+   ]
+  ]
+ },
+ {
+  "id": "L42",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every night,",
+    "Every night,"
+   ],
+   [
+    "they set every",
+    "they set every"
+   ],
+   [
+    "clock on",
+    "clock on"
+   ],
+   [
+    "the block",
+    "the block"
+   ],
+   [
+    "BACK,",
+    "Back,"
+   ]
+  ]
+ },
+ {
+  "id": "L43",
+  "who": "narrator",
+  "chunks": [
+   [
+    "even my",
+    "even my"
+   ],
+   [
+    "ALARM,",
+    "Alarm,"
+   ],
+   [
+    "and printed",
+    "and printed"
+   ],
+   [
+    "the same",
+    "the same"
+   ],
+   [
+    "NEWSPAPER.",
+    "Newspaper."
+   ]
+  ]
+ },
+ {
+  "id": "L44",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I snuck",
+    "I snuck"
+   ],
+   [
+    "back in",
+    "back in"
+   ],
+   [
+    "before she",
+    "before she"
+   ],
+   [
+    "SAW me.",
+    "Saw me."
+   ]
+  ]
+ },
+ {
+  "id": "L45",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Tomorrow,",
+    "Tomorrow,"
+   ],
+   [
+    "at nine-THIRTY,",
+    "at nine thirty,"
+   ]
+  ]
+ },
+ {
+  "id": "L46",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I'll act",
+    "I'll act"
+   ],
+   [
+    "SO surprised.",
+    "So surprised."
+   ]
+  ]
+ },
+ {
+  "id": "L47",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Today",
+    "Today"
+   ],
+   [
+    "happens",
+    "happens"
+   ],
+   [
+    "AGAIN.",
+    "Again."
+   ]
+  ]
+ },
+ {
+  "id": "L48",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And I'll be",
+    "And i'll be"
+   ],
+   [
+    "BETTER at it.",
+    "Better at it."
+   ]
+  ]
+ }
+]

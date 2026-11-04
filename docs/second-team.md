@@ -13,9 +13,12 @@ was told at about 4:20 PM Tuesday to merge the latest main before it judges anyt
 | ready for queue (#1's) | ep47 and ep28 | **yes** | #230 (ep47) | #1 queues them |
 | uploaded | mirror-maze, closing-time, rule-three, floor-thirteen | n/a | per story | none |
 | dropped 9:12 AM Wed: moving-day | the last-chance fix passed pace on the preview, but critic r12 still said revise on S36b | no | none | held on main; #1 removes it from queue.txt |
-| last-chance round: ep99-statue-years | title approved; PR open, proof next | no | #259 | one re-review; a fail drops it for good |
-| last-chance round: ep97-prize-bears, ep94-today-again, ep83-free-fries | camera and face fixes | no | none yet | one fix round and one re-review; a fail drops it for good |
-| batch 10 (ep101 to ep107) | 7 scripts merged 9:20 AM Wed, on hold; builds start after the Thursday 8 AM reset | no | #264 | builds |
+| ready for queue: ep99-statue-years | final qa passed (#271) | yes | #259 | #1 queues it |
+| last-chance round: ep83-free-fries | critic r3 approved; proof queued | no | #265 | proof qa, merge |
+| merged 11:20 AM Wed: ep94-today-again | critic r3 approved, proof qa passed; final next | no | #269 | final qa |
+| dropped 10:39 AM Wed: ep97-prize-bears | critic r3 and standards approved, but the proof failed flash (7 a second at 45.1 s, the swinging closet bulb) | no | #267 closed | folder deleted |
+| batch 10 (ep101 to ep107) | 5 building (ep101, ep102, ep103, ep105, ep107); ep104 and ep106 dropped at the creature test | no | #264 scripts | reviews, proofs |
+| batch 11 (ep108 to ep114) | writer started 10:06 AM Wed | no | none yet | builds after the Thursday 8 AM reset |
 | audit and rewrite plan | open | n/a | #258 | review and merge |
 | QA desk | working | n/a | per film | checks finals as they land |
 | dropped | batch 7: ep81-eleven-steps, ep82-no-door; batch 8: ep85-early-alarm, ep86-aunts-keys, ep88-six-paintings, ep91-ninth-coffee (#225 closed); batch 9: ep93-recipe-card, ep95-corn-maze, ep100-window-bridges | no | none | recorded in stories/ideas.md and each package.json hold |
