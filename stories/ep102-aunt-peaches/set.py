@@ -42,8 +42,8 @@ LOOKS = {
     "day": _L(),
     "noon": _L(sun=4.0, el=78.0, az=200.0, front=0.5),
     "morn": _L(sun=3.0, sun_col="#ffe0b0", el=24.0, az=215.0, fill=1.0, fill_col="#ffe6d0", sky="#a8d8ff", front=0.9),
-    "dusk": _L(sun=2.4, sun_col="#ff9a50", el=9.0, az=200.0, fill=1.0, fill_col="#ffc8a0", sky="#ff9a5a", sky_str=0.9,
-               front=1.8),
+    "dusk": _L(sun=2.3, sun_col="#ffb070", el=11.0, az=200.0, fill=1.6, fill_col="#c0d4ff", sky="#ffb27a", sky_str=0.85,
+               front=1.6),
 }
 
 
@@ -284,10 +284,16 @@ def build(kit, story, tl):
     reg("swing", sw)
     # items on the rail: keys
     ky_ = kit.empty("keys", (5.4, 1.56, 1.52))
-    kit.box("keys.ring", (0.14, 0.02, 0.14), (0, 0, 0.0), kit.metal("#c0c4cc", 0.3), ky_)
-    kit.box("keys.k1", (0.05, 0.02, 0.2), (0.08, 0, 0.06), kit.metal("#c0c4cc", 0.3), ky_, rot=(0, 0.3, 0))
-    kit.box("keys.k2", (0.05, 0.02, 0.2), (-0.08, 0, 0.06), kit.metal("#c0c4cc", 0.3), ky_, rot=(0, -0.3, 0))
-    kit.box("keys.fob", (0.16, 0.05, 0.1), (0, -0.01, -0.07), P("#ff5a4a", 0.5), ky_)
+    kmat = P("#ffd23f", 0.35, spec=0.5)
+    rmat = P("#e8ecf2", 0.3, spec=0.5)
+    for nm_, sz_, lc_ in (("t", (0.26, 0.04, 0.04), (0, 0, 0.42)), ("b", (0.26, 0.04, 0.04), (0, 0, 0.24)),
+                          ("l", (0.04, 0.04, 0.22), (-0.11, 0, 0.33)), ("r", (0.04, 0.04, 0.22), (0.11, 0, 0.33))):
+        kit.box(f"keys.ring{nm_}", sz_, lc_, rmat, ky_)
+    for i_, x_ in enumerate((-0.06, 0.06)):
+        kit.box(f"keys.blade{i_}", (0.07, 0.03, 0.24), (x_, -0.01, 0.12), kmat, ky_)
+        kit.box(f"keys.tooth{i_}", (0.05, 0.03, 0.04), (x_ + (0.05 if i_ else -0.05), -0.01, 0.06 + 0.06 * i_), kmat, ky_)
+    kit.box("keys.fob", (0.12, 0.04, 0.16), (0.0, -0.03, 0.3), P("#ff5a4a", 0.5), ky_)
+    ky_.scale = (0.7, 0.7, 0.7)
     reg("keys", ky_)
     # orchard: peach trees in rows both sides and behind
     k = 0
@@ -465,10 +471,9 @@ def build(kit, story, tl):
         W["road"].append((y, seg))
     # tall grass where the road was
     W["rgrass"] = []
-    for k in range(60):
-        a = (k * 2.399) % 6.28
-        x = qx + ((k * 37) % 9 - 4.5) * 0.7
-        y = 14.0 + (k * 13) % 50
+    for k in range(110):
+        x = qx + ((k * 37) % 13 - 6.0) * 0.5
+        y = 10.0 + (k * 13) % 44
         try:
             W["rgrass"].append(kit.prop("grass", (x, y, 0), height=0.9 + 0.3 * (k % 3), tint="#bfe58a"))
         except Exception:
@@ -492,18 +497,18 @@ def build(kit, story, tl):
     W["cars"] = {}
     me_car = car(kit, "mecar", "#e8493a", (qx, 0, 0.0), openc=True)
     mirror(kit, me_car)
-    mapc = kit.empty("map", (-0.05, -0.2, 1.12), me_car)
-    mapc.rotation_euler = (0.7, 0, 0)
-    kit.box("map.sheet", (0.7, 0.5, 0.02), (0, 0, 0), P("#f6ecd0", 0.8), mapc)
-    kit.box("map.city", (0.12, 0.12, 0.02), (-0.2, 0.1, 0.012), P("#8a8f98", 0.8), mapc)
-    kit.box("map.line", (0.16, 0.035, 0.02), (-0.1, 0.1, 0.014), P("#e8493a", 0.6), mapc)
-    kit.sphere("map.peach", 0.055, (0.0, 0.1, 0.03), P("#ff9355", 0.4), mapc, seg=8)
+    mapc = kit.empty("map", (-0.05, -0.2, 1.13), me_car)
+    kit.box("map.sheet", (0.5, 0.7, 0.02), (0, 0, 0), P("#f6ecd0", 0.8), mapc)
+    kit.box("map.road", (0.05, 0.4, 0.02), (0, 0.0, 0.012), P("#e8493a", 0.6), mapc)
+    kit.box("map.city", (0.18, 0.12, 0.02), (0, -0.25, 0.014), P("#6a707a", 0.8), mapc)
+    pg_ = kit.sphere("map.peach", 0.085, (0, 0.24, 0.05), P("#ff8a4a", 0.4), mapc, seg=10)
+    kit.box("map.leaf", (0.07, 0.04, 0.02), (0.05, 0.3, 0.1), P("#3f9e3a", 0.6), mapc)
     car(kit, "momcar", "#2fa8a0", (qx, 90, 0.0), openc=False)
     car(kit, "brocar", "#ffb03a", (gx - 20, gy - 4, 0.0), openc=False)
     car(kit, "city1", "#4a8ad8", (cx + 40, cy - 4.0, 0.0), openc=False)
     car(kit, "city2", "#d9573a", (cx - 40, cy - 1.5, 0.0), openc=False)
     for k in range(1, 9):
-        peach(kit, f"pc{k}", (0, 0, -60), 0.12)
+        peach(kit, f"pc{k}", (0, 0, -60), 0.14)
     ph = kit.empty("phone", (0, 0, -60))
     kit.box("phone.b", (0.09, 0.03, 0.2), (0, 0, 0), kit.plastic("#222428", 0.4, spec=0.5), ph)
     reg("phone", ph)
@@ -525,7 +530,7 @@ def build(kit, story, tl):
 
 
 def build_tag(kit):
-    """The rule meter: a cream plate, a peach glyph (grey then gold), a road glyph and 3 seven-segment digits."""
+    """The rule meter: a cream plate, a round peach glyph (grey then gold) and 3 tight seven-segment digits."""
     cam = kit.OBJ["cam"]
     root = kit.empty("tag", (0, 0, 0), cam)
     W["tag"] = root
@@ -533,8 +538,6 @@ def build_tag(kit):
     edge = kit.emit("#2a1a0e", 0.5, "tagedge")
     ink = kit.emit("#2a1a0e", 0.5, "tagink")
     grey = kit.emit("#8e8e94", 0.8, "taggrey")
-    road = kit.emit("#4a4d55", 0.6, "tagroad")
-    dash = kit.emit("#fff4d8", 0.8, "tagdash")
     gold = kit.emit("#ffb21e", 1.4, "taggold")
     leaf = kit.emit("#4fae4a", 0.8, "tagleaf")
 
@@ -542,26 +545,24 @@ def build_tag(kit):
         ob = kit.box(name, size, loc, mat, root)
         noshadow(ob)
         return ob
-    b("tag.edge", (1.0, 0.52, 0.004), (0, 0, 0.0), edge)
-    b("tag.plate", (0.95, 0.47, 0.004), (0, 0, 0.004), plate)
-    # peach glyph (upper left) and road glyph (lower left)
-    W["pg"] = b("tag.pgrey", (0.26, 0.24, 0.004), (-0.36, 0.07, 0.008), grey)
-    W["pgold"] = b("tag.pgold", (0.26, 0.24, 0.004), (-0.36, 0.07, 0.01), gold)
-    b("tag.pleaf", (0.1, 0.06, 0.004), (-0.3, 0.2, 0.012), leaf)
-    b("tag.road", (0.3, 0.14, 0.004), (-0.36, -0.15, 0.008), road)
-    b("tag.dash", (0.05, 0.03, 0.004), (-0.36, -0.15, 0.012), dash)
-    # digits
+    b("tag.edge", (1.0, 0.5, 0.004), (0, 0, 0.0), edge)
+    b("tag.plate", (0.95, 0.45, 0.004), (0, 0, 0.004), plate)
+    for nm, mat, zz in (("pgrey", grey, 0.008), ("pgold", gold, 0.01)):
+        sp = kit.sphere(f"tag.{nm}", 0.13, (-0.33, -0.02, zz), mat, root, seg=12)
+        sp.scale = (1.0, 1.0, 0.02)
+        noshadow(sp)
+        W["pg" if nm == "pgrey" else "pgold"] = sp
+    b("tag.pleaf", (0.12, 0.06, 0.004), (-0.27, 0.15, 0.014), leaf)
     W["seg"] = []
-    segs = [(0, 0.16, 0.0), (1, 0.08, 0.075), (2, 0.08, -0.075), (3, 0, -0.15), (4, -0.08, -0.075), (5, -0.08, 0.075), (6, 0, 0.0)]
-    # a: top, b: top-right, c: bottom-right, d: bottom, e: bottom-left, f: top-left, g: middle
-    layout = [("a", 0.0, 0.16, 0.2, 0.045), ("b", 0.1, 0.08, 0.045, 0.17), ("c", 0.1, -0.08, 0.045, 0.17),
-              ("d", 0.0, -0.16, 0.2, 0.045), ("e", -0.1, -0.08, 0.045, 0.17), ("f", -0.1, 0.08, 0.045, 0.17),
-              ("g", 0.0, 0.0, 0.2, 0.045)]
+    layout = [("a", 0.0, 0.17, 0.15, 0.05), ("b", 0.075, 0.085, 0.05, 0.17), ("c", 0.075, -0.085, 0.05, 0.17),
+              ("d", 0.0, -0.17, 0.15, 0.05), ("e", -0.075, -0.085, 0.05, 0.17), ("f", -0.075, 0.085, 0.05, 0.17),
+              ("g", 0.0, 0.0, 0.15, 0.05)]
     for d in range(3):
-        cxd = -0.02 + d * 0.27
         row = []
         for nm, x, z, w_, h_ in layout:
-            row.append(b(f"tag.d{d}{nm}", (w_, h_, 0.004), (cxd + x * 1.0, z, 0.012), ink))
+            ob = b(f"tag.d{d}{nm}", (w_, h_, 0.004), (x, z, 0.012), ink)
+            ob["bx"] = x
+            row.append(ob)
         W["seg"].append(row)
 
 
@@ -657,7 +658,7 @@ def animate(kit, story, tl, t, ctx):
     sw.rotation_euler = (rk["a"] * D2R * math.sin(2 * math.pi * t / 2.8), 0, 0)
     # the road behind the car
     gn = sample("gone", tl, t, {"v": 0.0})
-    ycut = 150.0 - gn["v"] * (150.0 - 18.0)
+    ycut = 150.0 - gn["v"] * (150.0 - 7.0)
     for y, seg in W["road"]:
         _hide(seg, y > ycut)
     for ob in W["rgrass"]:
@@ -676,11 +677,22 @@ def animate(kit, story, tl, t, ctx):
     od = sample("odo", tl, t, {"n": 412.0})
     n = max(0, min(999, int(round(od["n"]))))
     digs = [n // 100, (n // 10) % 10, n % 10]
+    cells = []
     for di, dg in enumerate(digs):
         lead = (di == 0 and n < 100) or (di == 1 and n < 10)
+        cells.append(0.0 if lead else (0.09 if dg == 1 else 0.2))
+    tot = sum(cells) + 0.04 * (sum(1 for c_ in cells if c_) - 1)
+    cur = 0.15 - tot / 2
+    for di, dg in enumerate(digs):
+        lead = cells[di] == 0.0
         on = "" if lead else DIG[dg]
+        cc = cur + cells[di] / 2
         for si, nm in enumerate(SEGN):
-            W["seg"][di][si].hide_render = nm not in on
+            ob = W["seg"][di][si]
+            ob.hide_render = nm not in on
+            ob.location.x = cc + ob["bx"] - (0.075 if dg == 1 else 0.0)
+        if not lead:
+            cur += cells[di] + 0.04
     gd = sample("gold", tl, t, {"v": 0.0})
     W["pgold"].hide_render = gd["v"] < 0.5
     # the plate sits in the top-left corner at a fixed angular size, whatever the lens
