@@ -31,7 +31,7 @@ for ln in orig_lines:   # captions are two or three words at a time: longer chun
             i += sz
     CHUNKMAP[ln["id"]] = mp
     lines.append({**ln, "chunks": out})
-REF = re.compile(r"^(L\d+)\.(\d+)(.*)$")
+REF = re.compile(r"^(L\d+b?)\.(\d+)(.*)$")
 
 
 def remap(x):
@@ -244,7 +244,7 @@ go("june", "L19.1-0.1", "day", -2.6, 6.0)
 shot("S19a", "L19", "day", "day", "dusk", C("day", (4.2, 6.0, 1.5), (-0.4, 5.2, 1.4), (3.6, 6.1, 1.5), (-0.8, 5.4, 1.4)))
 put("june", "L19.1", "day", 0.0, 4.5, 20, expr="curious", arms=[0, 0], head=[28, 6])
 st("june", "L19.1+0.5", head=[32, 8])
-shot("S19b", "L19.1", "day", "day", "dusk", C("day", (1.0, 0.2, 1.6), (0.0, 4.5, 1.45), (0.6, 0.6, 1.6), (0.0, 4.5, 1.45)))
+shot("S19b", "L19.1", "day", "day", "dusk", C("day", (0.5, 0.2, 1.6), (0.0, 4.5, 1.45), (0.3, 0.7, 1.6), (0.0, 4.5, 1.45)))
 # ------------------------------------------------------------------ S20 to S27: the last night
 put("june", "L20", "day", -3.4, -30.2, 121, expr="neutral", arms=[70, 70])
 go("june", "L20.1+0.2", "day", -1.2, -28.9)
@@ -287,12 +287,12 @@ shot("S29b", "L29.2", "closed", "closed", "moon", C("closed", (-9.0, 12.4, 0.8),
 # S29c to S29e (L29b): the next path closes too, then the pocket she's left in, corn on every side
 put("june", "L29b", "closed", -9.0, 14.0, -70, expr="worried", arms=[40, 70])
 shot("S29c", "L29b", "closed", "closed", "moon", C("closed", (-9.0, 10.0, 1.45), (-10.6, 14.0, 1.3), (-9.0, 10.4, 1.45), (-10.3, 14.0, 1.3)))
-shot("S29d", "L29b+0.6", "nosid", "nosid", "moon", C("nosid", (-9.0, 10.0, 1.45), (-10.6, 14.0, 1.3), (-9.0, 10.4, 1.45), (-10.3, 14.0, 1.3)))
+shot("S29d", "L29b+0.3", "nosid", "nosid", "moon", C("nosid", (-9.0, 10.0, 1.45), (-10.6, 14.0, 1.3), (-9.0, 10.4, 1.45), (-10.3, 14.0, 1.3)))
 put("june", "L29b.1", "sealed", -9.0, 14.0, 0, expr="worried", arms=[40, 70], blend=0.0)
 st("june", "L29b.1+0.1", yaw=0)
-st("june", "L29b.1+0.6", yaw=130, blend=0.5)
-st("june", "L29b.1+1.1", yaw=250, blend=0.5)
-st("june", "L29b.1+1.6", yaw=360, blend=0.5)
+st("june", "L29b.1+0.3", yaw=130, blend=0.3)
+st("june", "L29b.1+0.6", yaw=250, blend=0.3)
+st("june", "L29b.1+0.9", yaw=360, blend=0.3)
 shot("S29e", "L29b.1", "sealed", "sealed", "moon", C("sealed", (-9.0, 11.0, 0.8), (-9.0, 14.0, 1.35), (-9.0, 11.4, 0.8), (-9.0, 14.0, 1.4)))
 put("june", "L30", "closed", -9.0, 29.3, 0, expr="neutral", arms=[0, 0])
 go("june", "L30.1+0.1", "closed", -9.0, 27.35)
