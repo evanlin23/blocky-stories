@@ -1,0 +1,1809 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "every friday, you have to leave the hungry man a plate. forget, and he knocks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.345,
+   "onset": 0.172,
+   "end": 3.155,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.026
+    ],
+    [
+     1.026,
+     1.509
+    ],
+    [
+     1.509,
+     1.948
+    ],
+    [
+     2.043,
+     2.491
+    ],
+    [
+     2.491,
+     3.155
+    ]
+   ]
+  },
+  "L02": {
+   "text": "all night. until you open the door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     1.043
+    ],
+    [
+     1.043,
+     1.603
+    ]
+   ]
+  },
+  "L03": {
+   "text": "our street has forty-three porches.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     1.621
+    ]
+   ]
+  },
+  "L04": {
+   "text": "every friday at six, all but one put a plate out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.052
+    ],
+    [
+     1.121,
+     1.483
+    ],
+    [
+     1.483,
+     1.621
+    ],
+    [
+     1.621,
+     2.259
+    ]
+   ]
+  },
+  "L05": {
+   "text": "missus ferro leaves lasagna.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.5
+    ]
+   ]
+  },
+  "L06": {
+   "text": "the abernathys leave a whole roast chicken.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.052
+    ],
+    [
+     1.052,
+     1.793
+    ]
+   ]
+  },
+  "L07": {
+   "text": "mister brisco can't cook, so he leaves a sandwich with the crusts cut off.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.259,
+   "onset": 0.172,
+   "end": 3.069,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.207
+    ],
+    [
+     1.293,
+     1.612
+    ],
+    [
+     1.612,
+     2.06
+    ],
+    [
+     2.06,
+     2.448
+    ],
+    [
+     2.448,
+     3.069
+    ]
+   ]
+  },
+  "L08": {
+   "text": "by morning, every plate is empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.974
+    ],
+    [
+     0.974,
+     1.655
+    ]
+   ]
+  },
+  "L09": {
+   "text": "washed and dried, and stacked on the step in little piles of three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.19,
+   "end": 2.707,
+   "chunks": [
+    [
+     0.19,
+     0.931
+    ],
+    [
+     1.0,
+     1.388
+    ],
+    [
+     1.388,
+     1.664
+    ],
+    [
+     1.664,
+     2.112
+    ],
+    [
+     2.112,
+     2.707
+    ]
+   ]
+  },
+  "L10": {
+   "text": "nobody's ever seen him up close. nobody tries.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.19,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.655,
+     0.888
+    ],
+    [
+     0.888,
+     1.397
+    ],
+    [
+     1.474,
+     2.328
+    ]
+   ]
+  },
+  "L11": {
+   "text": "just a tall shape in a long coat, three porches down, under the lights.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.716
+    ],
+    [
+     0.716,
+     0.81
+    ],
+    [
+     0.81,
+     1.362
+    ],
+    [
+     1.439,
+     2.121
+    ],
+    [
+     2.146,
+     2.879
+    ]
+   ]
+  },
+  "L12": {
+   "text": "the one porch with no plate is my grandpa's.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.103
+    ],
+    [
+     1.103,
+     2.034
+    ]
+   ]
+  },
+  "L13": {
+   "text": "right across the street. he's never left one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.966
+    ],
+    [
+     1.034,
+     1.362
+    ],
+    [
+     1.362,
+     2.052
+    ]
+   ]
+  },
+  "L14": {
+   "text": "and the hungry man has never knocked on his door. not once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.828,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.732
+    ],
+    [
+     0.732,
+     1.233
+    ],
+    [
+     1.233,
+     1.81
+    ],
+    [
+     1.906,
+     2.621
+    ]
+   ]
+  },
+  "L15": {
+   "text": "grandpa says he doesn't believe in the hungry man. he says it's nonsense.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.414,
+   "onset": 0.172,
+   "end": 3.207,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.233
+    ],
+    [
+     1.233,
+     1.345
+    ],
+    [
+     1.345,
+     1.983
+    ],
+    [
+     2.069,
+     2.328
+    ],
+    [
+     2.328,
+     3.207
+    ]
+   ]
+  },
+  "L16": {
+   "text": "he hasn't believed in much since our first winter without grandma.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.086
+    ],
+    [
+     1.086,
+     1.319
+    ],
+    [
+     1.319,
+     1.793
+    ],
+    [
+     1.793,
+     2.69
+    ]
+   ]
+  },
+  "L17": {
+   "text": "that winter, he stopped cooking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     1.448
+    ]
+   ]
+  },
+  "L18": {
+   "text": "he mostly stopped eating.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.31
+    ]
+   ]
+  },
+  "L19": {
+   "text": "the whole street brought him casseroles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.638
+    ]
+   ]
+  },
+  "L20": {
+   "text": "he sent every one back across the street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.845
+    ],
+    [
+     0.845,
+     1.276
+    ],
+    [
+     1.276,
+     1.862
+    ]
+   ]
+  },
+  "L21": {
+   "text": "grandpa doesn't take handouts. not from anyone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.31
+    ],
+    [
+     1.379,
+     2.172
+    ]
+   ]
+  },
+  "L22": {
+   "text": "mom told me the hungry man showed up that same winter. she said it with a straight face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.741,
+   "onset": 0.172,
+   "end": 3.552,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.112
+    ],
+    [
+     1.112,
+     1.397
+    ],
+    [
+     1.397,
+     2.207
+    ],
+    [
+     2.301,
+     2.629
+    ],
+    [
+     2.629,
+     2.759
+    ],
+    [
+     2.759,
+     3.552
+    ]
+   ]
+  },
+  "L23": {
+   "text": "i'm twenty-three. i think it's a silly rule for a silly story.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.155,
+   "end": 2.638,
+   "chunks": [
+    [
+     0.155,
+     0.793
+    ],
+    [
+     0.888,
+     1.199
+    ],
+    [
+     1.199,
+     1.741
+    ],
+    [
+     1.741,
+     1.862
+    ],
+    [
+     1.862,
+     2.638
+    ]
+   ]
+  },
+  "L24": {
+   "text": "so last friday, with mom at work late,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.19,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.19,
+     0.862
+    ],
+    [
+     0.888,
+     1.241
+    ],
+    [
+     1.241,
+     1.845
+    ]
+   ]
+  },
+  "L25": {
+   "text": "i didn't put our plate out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.19,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.19,
+     0.595
+    ],
+    [
+     0.595,
+     1.31
+    ]
+   ]
+  },
+  "L26": {
+   "text": "now two porches had no plate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.517
+    ]
+   ]
+  },
+  "L27": {
+   "text": "at ten, the street went quiet. every porch light still on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.716
+    ],
+    [
+     0.716,
+     1.224
+    ],
+    [
+     1.301,
+     1.897
+    ],
+    [
+     1.897,
+     2.552
+    ]
+   ]
+  },
+  "L28": {
+   "text": "at eleven, something walked up our steps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.19,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.19,
+     0.586
+    ],
+    [
+     0.638,
+     1.077
+    ],
+    [
+     1.077,
+     1.81
+    ]
+   ]
+  },
+  "L29": {
+   "text": "it stood there a long time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.414
+    ]
+   ]
+  },
+  "L30": {
+   "text": "then it knocked. three slow knocks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.612,
+     1.534
+    ]
+   ]
+  },
+  "L31": {
+   "text": "i didn't move. i didn't breathe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.19,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.802,
+     1.638
+    ]
+   ]
+  },
+  "L32": {
+   "text": "it knocked again at midnight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.328
+    ]
+   ]
+  },
+  "L33": {
+   "text": "at one. at one-thirty, it tapped on my window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.19,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.56,
+     1.052
+    ],
+    [
+     1.077,
+     1.337
+    ],
+    [
+     1.337,
+     2.069
+    ]
+   ]
+  },
+  "L34": {
+   "text": "through the blinds i saw a long coat, and an empty basket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     0.914
+    ],
+    [
+     0.914,
+     1.466
+    ],
+    [
+     1.517,
+     1.655
+    ],
+    [
+     1.655,
+     2.483
+    ]
+   ]
+  },
+  "L35": {
+   "text": "at two, it said my name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.474,
+     0.681
+    ],
+    [
+     0.681,
+     1.276
+    ]
+   ]
+  },
+  "L36": {
+   "text": "very quietly. like it was worried.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.19,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.19,
+     0.793
+    ],
+    [
+     0.845,
+     1.026
+    ],
+    [
+     1.026,
+     1.707
+    ]
+   ]
+  },
+  "L37": {
+   "text": "so i opened the door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.276
+    ]
+   ]
+  },
+  "L38": {
+   "text": "it was grandpa.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     1.069
+    ]
+   ]
+  },
+  "L39": {
+   "text": "in his old long coat, holding grandma's basket,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.0
+    ],
+    [
+     1.069,
+     1.328
+    ],
+    [
+     1.328,
+     2.328
+    ]
+   ]
+  },
+  "L40": {
+   "text": "more embarrassed than i've ever seen him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.061
+    ],
+    [
+     1.061,
+     1.707
+    ]
+   ]
+  },
+  "L41": {
+   "text": "he said, no plate. i thought something happened to you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.897
+    ],
+    [
+     0.966,
+     1.259
+    ],
+    [
+     1.259,
+     1.707
+    ],
+    [
+     1.707,
+     2.19
+    ]
+   ]
+  },
+  "L42": {
+   "text": "there is no hungry man.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.328
+    ]
+   ]
+  },
+  "L43": {
+   "text": "mom made him up, that first winter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.19,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     0.69
+    ],
+    [
+     0.724,
+     1.655
+    ]
+   ]
+  },
+  "L44": {
+   "text": "grandpa wouldn't take a casserole from anyone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.836
+    ],
+    [
+     0.836,
+     1.31
+    ],
+    [
+     1.31,
+     1.983
+    ]
+   ]
+  },
+  "L45": {
+   "text": "but he'd never let a plate of food go to waste.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.647
+    ],
+    [
+     0.647,
+     0.854
+    ],
+    [
+     0.854,
+     1.155
+    ],
+    [
+     1.155,
+     1.862
+    ]
+   ]
+  },
+  "L46": {
+   "text": "so the whole street leaves him dinner every friday,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.707
+    ],
+    [
+     0.707,
+     1.267
+    ],
+    [
+     1.267,
+     2.103
+    ]
+   ]
+  },
+  "L47": {
+   "text": "and calls it a rule,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.138
+    ]
+   ]
+  },
+  "L48": {
+   "text": "so he never has to say thank you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.776
+    ],
+    [
+     0.776,
+     1.534
+    ]
+   ]
+  },
+  "L49": {
+   "text": "he knows. everybody knows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     1.431
+    ]
+   ]
+  },
+  "L50": {
+   "text": "nobody says it out loud. not even grandpa.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.19,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     0.638
+    ],
+    [
+     0.638,
+     1.155
+    ],
+    [
+     1.224,
+     2.155
+    ]
+   ]
+  },
+  "L51": {
+   "text": "he washes every plate and stacks them in threes,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.983
+    ],
+    [
+     0.983,
+     1.406
+    ],
+    [
+     1.406,
+     2.103
+    ]
+   ]
+  },
+  "L52": {
+   "text": "the way grandma did.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     1.224
+    ]
+   ]
+  },
+  "L53": {
+   "text": "and when a plate's missing,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.655
+    ],
+    [
+     0.655,
+     1.19
+    ]
+   ]
+  },
+  "L54": {
+   "text": "he knocks until somebody answers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.621
+    ]
+   ]
+  },
+  "L55": {
+   "text": "because grandma used to check on the whole street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.793
+    ],
+    [
+     0.793,
+     1.008
+    ],
+    [
+     1.008,
+     1.25
+    ],
+    [
+     1.25,
+     1.983
+    ]
+   ]
+  },
+  "L56": {
+   "text": "somebody has to. so now he does.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.707
+    ],
+    [
+     0.793,
+     1.069
+    ],
+    [
+     1.069,
+     1.672
+    ]
+   ]
+  },
+  "L57": {
+   "text": "that's what the knock is.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.172
+    ]
+   ]
+  },
+  "L58": {
+   "text": "he was checking on me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.121
+    ]
+   ]
+  },
+  "L59": {
+   "text": "i made him a grilled cheese.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.19,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.19,
+     0.492
+    ],
+    [
+     0.492,
+     1.328
+    ]
+   ]
+  },
+  "L60": {
+   "text": "he said it was too dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.56
+    ],
+    [
+     0.56,
+     1.155
+    ]
+   ]
+  },
+  "L61": {
+   "text": "he ate the whole thing. then he washed the plate and stacked it on our step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.172,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.983
+    ],
+    [
+     1.069,
+     1.457
+    ],
+    [
+     1.457,
+     1.698
+    ],
+    [
+     1.698,
+     2.078
+    ],
+    [
+     2.078,
+     2.724
+    ]
+   ]
+  },
+  "L62": {
+   "text": "this friday, for the first time, every porch had a plate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     0.845
+    ],
+    [
+     0.845,
+     1.31
+    ],
+    [
+     1.362,
+     1.784
+    ],
+    [
+     1.784,
+     2.414
+    ]
+   ]
+  },
+  "L63": {
+   "text": "i put the last one on grandpa's porch,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.75
+    ],
+    [
+     0.75,
+     1.793
+    ]
+   ]
+  },
+  "L64": {
+   "text": "and sat down next to it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.224
+    ]
+   ]
+  },
+  "L65": {
+   "text": "at nine, he came up his own steps with the basket,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.509,
+     0.784
+    ],
+    [
+     0.784,
+     1.319
+    ],
+    [
+     1.319,
+     2.052
+    ]
+   ]
+  },
+  "L66": {
+   "text": "and found me there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.0
+    ]
+   ]
+  },
+  "L67": {
+   "text": "he didn't say anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.224
+    ]
+   ]
+  },
+  "L68": {
+   "text": "he just sat down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     1.069
+    ]
+   ]
+  },
+  "L69": {
+   "text": "we ate off the same plate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.31
+    ]
+   ]
+  },
+  "L70": {
+   "text": "now there are two tall shapes on our street on fridays.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.026
+    ],
+    [
+     1.026,
+     1.388
+    ],
+    [
+     1.388,
+     2.207
+    ]
+   ]
+  },
+  "L71": {
+   "text": "and if your plate's not out, we both knock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.914
+    ],
+    [
+     0.948,
+     1.759
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,10020 @@
+{
+ "slug": "ep103-hungry-man",
+ "title": "Feed The Hungry Man, Or He KNOCKS 🍽️",
+ "made_for_kids": false,
+ "premise": "On a street of 43 pastel porches, every Friday at six each house leaves a plate out for the Hungry Man, who knocks all night at any door that forgets; one porch never leaves one, and last Friday, with Mom at work, I skipped ours.",
+ "twist": "There is no Hungry Man: my mom made him up the first winter without Grandma so the street could feed Grandpa, who refused all help, and the tall man in the long coat who collects the plates and knocks to check on us is Grandpa himself.",
+ "world": "A long street of small pastel houses with porches and warm porch lights at golden hour and at night, our cream house with a blue door across from Grandpa's gray-green one, and two small kitchens.",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#ffcf73",
+ "gap": 0.12,
+ "tail": 0.25,
+ "fade_in": false,
+ "fade_out": false,
+ "rev": 1,
+ "look": {
+  "style": "closer",
+  "fog": "#e8d8c8",
+  "fog_density": 0.004,
+  "fog_start": 30.0,
+  "sky": "#9fd8ff",
+  "sky_strength": 1.0,
+  "exposure": 0.2,
+  "flash_safe": true,
+  "polish": {
+   "reveal": [
+    "L38"
+   ],
+   "emph": [
+    "L01.4",
+    "L12.2",
+    "L26",
+    "L37.1",
+    "L42.1",
+    "L58"
+   ],
+   "sway": [
+    "S63",
+    "S68",
+    "S114",
+    "S76"
+   ],
+   "hold": [
+    "S86"
+   ]
+  }
+ },
+ "grade": {
+  "shadows": [
+   0.0,
+   0.0,
+   0.03
+  ],
+  "highlights": [
+   0.03,
+   0.012,
+   -0.02
+  ],
+  "saturation": 1.1,
+  "contrast": 1.05,
+  "vignette": 0.2,
+  "bloom": 0.2,
+  "grain": 0.008
+ },
+ "phonemes": {},
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#dca97c",
+   "shirt": "#8a8f9c",
+   "pattern": "plaid",
+   "pants": "#4a5a7a",
+   "shoes": "#f4f4f2",
+   "sleeves": "long",
+   "hair": "swoop",
+   "hair_c": "#5a3a22",
+   "hat": "none",
+   "hat_c": "#333333",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#1c120c",
+    "brow_w": 1.9
+   },
+   "pattern_c": "#c8504a"
+  },
+  "mecoat": {
+   "age": "adult",
+   "skin": "#dca97c",
+   "shirt": "#2f4a3a",
+   "pattern": "solid",
+   "pants": "#4a5a7a",
+   "shoes": "#f4f4f2",
+   "sleeves": "long",
+   "hair": "swoop",
+   "hair_c": "#5a3a22",
+   "hat": "none",
+   "hat_c": "#333333",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#1c120c",
+    "brow_w": 1.9
+   },
+   "extras": [
+    "coat"
+   ]
+  },
+  "grandpa": {
+   "age": "adult",
+   "skin": "#e8bc98",
+   "shirt": "#2f4a3a",
+   "pattern": "solid",
+   "pants": "#3a3a44",
+   "shoes": "#2a2a2a",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#f2f2f2",
+   "hat": "none",
+   "hat_c": "#333333",
+   "face": {
+    "eyes": "tired",
+    "brows": true,
+    "ink": "#1c120c",
+    "brow_w": 2.6
+   },
+   "extras": [
+    "coat"
+   ],
+   "height": 1.1,
+   "width": 0.94
+  },
+  "mom": {
+   "age": "adult",
+   "skin": "#e6b48c",
+   "shirt": "#6fcfd8",
+   "pattern": "solid",
+   "pants": "#5ab8c4",
+   "shoes": "#f4f4f2",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#7a4a2c",
+   "hat": "none",
+   "hat_c": "#333333",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#1c120c",
+    "brow_w": 1.9
+   },
+   "width": 0.96
+  },
+  "ferro": {
+   "age": "adult",
+   "skin": "#f0c8a0",
+   "shirt": "#fff6e4",
+   "pattern": "solid",
+   "pants": "#8a6a8a",
+   "shoes": "#5a3a2a",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#b8b8c0",
+   "hat": "none",
+   "hat_c": "#333333",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#1c120c"
+   },
+   "extras": [
+    "apron"
+   ],
+   "extra_c": "#d9413b",
+   "width": 1.02
+  },
+  "abern1": {
+   "age": "adult",
+   "skin": "#c99a70",
+   "shirt": "#e0a030",
+   "pattern": "solid",
+   "pants": "#4a4036",
+   "shoes": "#2a2a2a",
+   "sleeves": "short",
+   "hair": "buzz",
+   "hair_c": "#2a2a2a",
+   "hat": "none",
+   "hat_c": "#333333",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#1c120c"
+   }
+  },
+  "abern2": {
+   "age": "adult",
+   "skin": "#d3a07a",
+   "shirt": "#c9b3f2",
+   "pattern": "solid",
+   "pants": "#5a6a7a",
+   "shoes": "#6a4a32",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#2a1a12",
+   "hat": "none",
+   "hat_c": "#333333",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#1c120c"
+   }
+  },
+  "brisco": {
+   "age": "adult",
+   "skin": "#f0c8a0",
+   "shirt": "#fff6e4",
+   "pattern": "solid",
+   "pants": "#3a3a4a",
+   "shoes": "#2a2a2a",
+   "sleeves": "long",
+   "hair": "spiky",
+   "hair_c": "#a05a2a",
+   "hat": "none",
+   "hat_c": "#333333",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#1c120c"
+   },
+   "collar": "#ffffff",
+   "extras": [
+    "tie"
+   ],
+   "extra_c": "#d9413b"
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every Friday, you",
+     "every friday, you"
+    ],
+    [
+     "have to leave",
+     "have to leave"
+    ],
+    [
+     "the Hungry Man",
+     "the hungry man"
+    ],
+    [
+     "a PLATE.",
+     "a plate."
+    ],
+    [
+     "Forget, and",
+     "forget, and"
+    ],
+    [
+     "he KNOCKS.",
+     "he knocks."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "All NIGHT.",
+     "all night."
+    ],
+    [
+     "Until you open",
+     "until you open"
+    ],
+    [
+     "the DOOR.",
+     "the door."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Our street has",
+     "our street has"
+    ],
+    [
+     "forty-three PORCHES.",
+     "forty-three porches."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every Friday",
+     "every friday"
+    ],
+    [
+     "at SIX,",
+     "at six,"
+    ],
+    [
+     "all but ONE",
+     "all but one"
+    ],
+    [
+     "put a",
+     "put a"
+    ],
+    [
+     "plate OUT.",
+     "plate out."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mrs. FERRO",
+     "missus ferro"
+    ],
+    [
+     "leaves lasagna.",
+     "leaves lasagna."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The ABERNATHYS",
+     "the abernathys"
+    ],
+    [
+     "leave a whole",
+     "leave a whole"
+    ],
+    [
+     "roast CHICKEN.",
+     "roast chicken."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mr. Brisco",
+     "mister brisco"
+    ],
+    [
+     "can't COOK,",
+     "can't cook,"
+    ],
+    [
+     "so he leaves",
+     "so he leaves"
+    ],
+    [
+     "a sandwich",
+     "a sandwich"
+    ],
+    [
+     "with the crusts",
+     "with the crusts"
+    ],
+    [
+     "cut OFF.",
+     "cut off."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "By morning,",
+     "by morning,"
+    ],
+    [
+     "every plate",
+     "every plate"
+    ],
+    [
+     "is EMPTY.",
+     "is empty."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Washed and dried,",
+     "washed and dried,"
+    ],
+    [
+     "and stacked on",
+     "and stacked on"
+    ],
+    [
+     "the step",
+     "the step"
+    ],
+    [
+     "in little piles",
+     "in little piles"
+    ],
+    [
+     "of THREE.",
+     "of three."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody's ever",
+     "nobody's ever"
+    ],
+    [
+     "seen him",
+     "seen him"
+    ],
+    [
+     "up CLOSE.",
+     "up close."
+    ],
+    [
+     "Nobody TRIES.",
+     "nobody tries."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Just a",
+     "just a"
+    ],
+    [
+     "tall shape",
+     "tall shape"
+    ],
+    [
+     "in a",
+     "in a"
+    ],
+    [
+     "long COAT,",
+     "long coat,"
+    ],
+    [
+     "three porches DOWN,",
+     "three porches down,"
+    ],
+    [
+     "under the lights.",
+     "under the lights."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The one porch",
+     "the one porch"
+    ],
+    [
+     "with no plate",
+     "with no plate"
+    ],
+    [
+     "is my GRANDPA'S.",
+     "is my grandpa's."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Right across",
+     "right across"
+    ],
+    [
+     "the STREET.",
+     "the street."
+    ],
+    [
+     "He's never",
+     "he's never"
+    ],
+    [
+     "left ONE.",
+     "left one."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the",
+     "and the"
+    ],
+    [
+     "Hungry Man",
+     "hungry man"
+    ],
+    [
+     "has never knocked",
+     "has never knocked"
+    ],
+    [
+     "on HIS door.",
+     "on his door."
+    ],
+    [
+     "Not ONCE.",
+     "not once."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Grandpa says",
+     "grandpa says"
+    ],
+    [
+     "he doesn't believe",
+     "he doesn't believe"
+    ],
+    [
+     "in the",
+     "in the"
+    ],
+    [
+     "Hungry MAN.",
+     "hungry man."
+    ],
+    [
+     "He says",
+     "he says"
+    ],
+    [
+     "it's NONSENSE.",
+     "it's nonsense."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He hasn't believed",
+     "he hasn't believed"
+    ],
+    [
+     "in much",
+     "in much"
+    ],
+    [
+     "since our",
+     "since our"
+    ],
+    [
+     "first winter",
+     "first winter"
+    ],
+    [
+     "without GRANDMA.",
+     "without grandma."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That winter,",
+     "that winter,"
+    ],
+    [
+     "he stopped COOKING.",
+     "he stopped cooking."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He mostly",
+     "he mostly"
+    ],
+    [
+     "stopped EATING.",
+     "stopped eating."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The whole street",
+     "the whole street"
+    ],
+    [
+     "brought him CASSEROLES.",
+     "brought him casseroles."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He sent",
+     "he sent"
+    ],
+    [
+     "every ONE",
+     "every one"
+    ],
+    [
+     "back across",
+     "back across"
+    ],
+    [
+     "the street.",
+     "the street."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Grandpa doesn't",
+     "grandpa doesn't"
+    ],
+    [
+     "take HANDOUTS.",
+     "take handouts."
+    ],
+    [
+     "Not from ANYONE.",
+     "not from anyone."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mom told me",
+     "mom told me"
+    ],
+    [
+     "the Hungry Man",
+     "the hungry man"
+    ],
+    [
+     "showed up",
+     "showed up"
+    ],
+    [
+     "that same WINTER.",
+     "that same winter."
+    ],
+    [
+     "She said it",
+     "she said it"
+    ],
+    [
+     "with a",
+     "with a"
+    ],
+    [
+     "straight FACE.",
+     "straight face."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I'm twenty-THREE.",
+     "i'm twenty-three."
+    ],
+    [
+     "I think it's",
+     "i think it's"
+    ],
+    [
+     "a silly RULE",
+     "a silly rule"
+    ],
+    [
+     "for a",
+     "for a"
+    ],
+    [
+     "silly STORY.",
+     "silly story."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So last Friday,",
+     "so last friday,"
+    ],
+    [
+     "with Mom at",
+     "with mom at"
+    ],
+    [
+     "work LATE,",
+     "work late,"
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I didn't put",
+     "i didn't put"
+    ],
+    [
+     "our plate OUT.",
+     "our plate out."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Now TWO porches",
+     "now two porches"
+    ],
+    [
+     "had no PLATE.",
+     "had no plate."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "At ten,",
+     "at ten,"
+    ],
+    [
+     "the street",
+     "the street"
+    ],
+    [
+     "went QUIET.",
+     "went quiet."
+    ],
+    [
+     "Every porch light",
+     "every porch light"
+    ],
+    [
+     "still ON.",
+     "still on."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "At eleven,",
+     "at eleven,"
+    ],
+    [
+     "something walked",
+     "something walked"
+    ],
+    [
+     "up our STEPS.",
+     "up our steps."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It stood there",
+     "it stood there"
+    ],
+    [
+     "a long TIME.",
+     "a long time."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then it knocked.",
+     "then it knocked."
+    ],
+    [
+     "Three SLOW knocks.",
+     "three slow knocks."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I didn't MOVE.",
+     "i didn't move."
+    ],
+    [
+     "I didn't BREATHE.",
+     "i didn't breathe."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It knocked again",
+     "it knocked again"
+    ],
+    [
+     "at MIDNIGHT.",
+     "at midnight."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "At ONE.",
+     "at one."
+    ],
+    [
+     "At one-thirty,",
+     "at one-thirty,"
+    ],
+    [
+     "it tapped",
+     "it tapped"
+    ],
+    [
+     "on my WINDOW.",
+     "on my window."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Through the blinds",
+     "through the blinds"
+    ],
+    [
+     "I saw a",
+     "i saw a"
+    ],
+    [
+     "long COAT,",
+     "long coat,"
+    ],
+    [
+     "and an",
+     "and an"
+    ],
+    [
+     "empty BASKET.",
+     "empty basket."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "At two,",
+     "at two,"
+    ],
+    [
+     "it said",
+     "it said"
+    ],
+    [
+     "my NAME.",
+     "my name."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Very QUIETLY.",
+     "very quietly."
+    ],
+    [
+     "Like it",
+     "like it"
+    ],
+    [
+     "was WORRIED.",
+     "was worried."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I opened",
+     "so i opened"
+    ],
+    [
+     "the DOOR.",
+     "the door."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.6,
+   "chunks": [
+    [
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was GRANDPA.",
+     "it was grandpa."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In his old",
+     "in his old"
+    ],
+    [
+     "long COAT,",
+     "long coat,"
+    ],
+    [
+     "holding",
+     "holding"
+    ],
+    [
+     "Grandma's BASKET,",
+     "grandma's basket,"
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "more embarrassed",
+     "more embarrassed"
+    ],
+    [
+     "than I've ever",
+     "than i've ever"
+    ],
+    [
+     "SEEN him.",
+     "seen him."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He said,",
+     "he said,"
+    ],
+    [
+     "no plate.",
+     "no plate."
+    ],
+    [
+     "I thought",
+     "i thought"
+    ],
+    [
+     "something HAPPENED",
+     "something happened"
+    ],
+    [
+     "to you.",
+     "to you."
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There is no",
+     "there is no"
+    ],
+    [
+     "Hungry MAN.",
+     "hungry man."
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mom made",
+     "mom made"
+    ],
+    [
+     "him UP,",
+     "him up,"
+    ],
+    [
+     "that first WINTER.",
+     "that first winter."
+    ]
+   ]
+  },
+  {
+   "id": "L44",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Grandpa wouldn't take",
+     "grandpa wouldn't take"
+    ],
+    [
+     "a casserole",
+     "a casserole"
+    ],
+    [
+     "from ANYONE.",
+     "from anyone."
+    ]
+   ]
+  },
+  {
+   "id": "L45",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But he'd",
+     "but he'd"
+    ],
+    [
+     "never let",
+     "never let"
+    ],
+    [
+     "a plate",
+     "a plate"
+    ],
+    [
+     "of food",
+     "of food"
+    ],
+    [
+     "go to WASTE.",
+     "go to waste."
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So the",
+     "so the"
+    ],
+    [
+     "whole street",
+     "whole street"
+    ],
+    [
+     "leaves him DINNER",
+     "leaves him dinner"
+    ],
+    [
+     "every Friday,",
+     "every friday,"
+    ]
+   ]
+  },
+  {
+   "id": "L47",
+   "who": "narrator",
+   "chunks": [
+    [
+     "and calls it",
+     "and calls it"
+    ],
+    [
+     "a RULE,",
+     "a rule,"
+    ]
+   ]
+  },
+  {
+   "id": "L48",
+   "who": "narrator",
+   "chunks": [
+    [
+     "so he never",
+     "so he never"
+    ],
+    [
+     "has to",
+     "has to"
+    ],
+    [
+     "say THANK you.",
+     "say thank you."
+    ]
+   ]
+  },
+  {
+   "id": "L49",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He KNOWS.",
+     "he knows."
+    ],
+    [
+     "Everybody KNOWS.",
+     "everybody knows."
+    ]
+   ]
+  },
+  {
+   "id": "L50",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody",
+     "nobody"
+    ],
+    [
+     "says it",
+     "says it"
+    ],
+    [
+     "out LOUD.",
+     "out loud."
+    ],
+    [
+     "Not even GRANDPA.",
+     "not even grandpa."
+    ]
+   ]
+  },
+  {
+   "id": "L51",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He washes",
+     "he washes"
+    ],
+    [
+     "every PLATE",
+     "every plate"
+    ],
+    [
+     "and stacks them",
+     "and stacks them"
+    ],
+    [
+     "in THREES,",
+     "in threes,"
+    ]
+   ]
+  },
+  {
+   "id": "L52",
+   "who": "narrator",
+   "chunks": [
+    [
+     "the way",
+     "the way"
+    ],
+    [
+     "Grandma DID.",
+     "grandma did."
+    ]
+   ]
+  },
+  {
+   "id": "L53",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And when",
+     "and when"
+    ],
+    [
+     "a plate's",
+     "a plate's"
+    ],
+    [
+     "MISSING,",
+     "missing,"
+    ]
+   ]
+  },
+  {
+   "id": "L54",
+   "who": "narrator",
+   "chunks": [
+    [
+     "he knocks",
+     "he knocks"
+    ],
+    [
+     "until somebody ANSWERS.",
+     "until somebody answers."
+    ]
+   ]
+  },
+  {
+   "id": "L55",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Because Grandma",
+     "because grandma"
+    ],
+    [
+     "used to",
+     "used to"
+    ],
+    [
+     "check on",
+     "check on"
+    ],
+    [
+     "the whole STREET.",
+     "the whole street."
+    ]
+   ]
+  },
+  {
+   "id": "L56",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Somebody",
+     "somebody"
+    ],
+    [
+     "has TO.",
+     "has to."
+    ],
+    [
+     "So now",
+     "so now"
+    ],
+    [
+     "HE does.",
+     "he does."
+    ]
+   ]
+  },
+  {
+   "id": "L57",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's what",
+     "that's what"
+    ],
+    [
+     "the knock IS.",
+     "the knock is."
+    ]
+   ]
+  },
+  {
+   "id": "L58",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He was checking",
+     "he was checking"
+    ],
+    [
+     "on ME.",
+     "on me."
+    ]
+   ]
+  },
+  {
+   "id": "L59",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I made him",
+     "i made him"
+    ],
+    [
+     "a grilled CHEESE.",
+     "a grilled cheese."
+    ]
+   ]
+  },
+  {
+   "id": "L60",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He said",
+     "he said"
+    ],
+    [
+     "it was",
+     "it was"
+    ],
+    [
+     "too DARK.",
+     "too dark."
+    ]
+   ]
+  },
+  {
+   "id": "L61",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He ate",
+     "he ate"
+    ],
+    [
+     "the whole THING.",
+     "the whole thing."
+    ],
+    [
+     "Then he washed",
+     "then he washed"
+    ],
+    [
+     "the plate",
+     "the plate"
+    ],
+    [
+     "and stacked it",
+     "and stacked it"
+    ],
+    [
+     "on our STEP.",
+     "on our step."
+    ]
+   ]
+  },
+  {
+   "id": "L62",
+   "who": "narrator",
+   "chunks": [
+    [
+     "This Friday,",
+     "this friday,"
+    ],
+    [
+     "for the",
+     "for the"
+    ],
+    [
+     "first TIME,",
+     "first time,"
+    ],
+    [
+     "every porch",
+     "every porch"
+    ],
+    [
+     "had a PLATE.",
+     "had a plate."
+    ]
+   ]
+  },
+  {
+   "id": "L63",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I put the",
+     "i put the"
+    ],
+    [
+     "last ONE",
+     "last one"
+    ],
+    [
+     "on Grandpa's porch,",
+     "on grandpa's porch,"
+    ]
+   ]
+  },
+  {
+   "id": "L64",
+   "who": "narrator",
+   "chunks": [
+    [
+     "and sat down",
+     "and sat down"
+    ],
+    [
+     "next to IT.",
+     "next to it."
+    ]
+   ]
+  },
+  {
+   "id": "L65",
+   "who": "narrator",
+   "chunks": [
+    [
+     "At nine,",
+     "at nine,"
+    ],
+    [
+     "he came up",
+     "he came up"
+    ],
+    [
+     "his own STEPS",
+     "his own steps"
+    ],
+    [
+     "with the basket,",
+     "with the basket,"
+    ]
+   ]
+  },
+  {
+   "id": "L66",
+   "who": "narrator",
+   "chunks": [
+    [
+     "and found",
+     "and found"
+    ],
+    [
+     "me THERE.",
+     "me there."
+    ]
+   ]
+  },
+  {
+   "id": "L67",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He didn't say",
+     "he didn't say"
+    ],
+    [
+     "ANYTHING.",
+     "anything."
+    ]
+   ]
+  },
+  {
+   "id": "L68",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He just",
+     "he just"
+    ],
+    [
+     "sat DOWN.",
+     "sat down."
+    ]
+   ]
+  },
+  {
+   "id": "L69",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We ate off",
+     "we ate off"
+    ],
+    [
+     "the same PLATE.",
+     "the same plate."
+    ]
+   ]
+  },
+  {
+   "id": "L70",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Now there are",
+     "now there are"
+    ],
+    [
+     "TWO tall shapes",
+     "two tall shapes"
+    ],
+    [
+     "on our street",
+     "on our street"
+    ],
+    [
+     "on Fridays.",
+     "on fridays."
+    ]
+   ]
+  },
+  {
+   "id": "L71",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And if your",
+     "and if your"
+    ],
+    [
+     "plate's not OUT,",
+     "plate's not out,"
+    ],
+    [
+     "we BOTH knock.",
+     "we both knock."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      -0.7,
+      7.5,
+      0.95
+     ],
+     [
+      1.3,
+      7.95,
+      0.6
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      -0.41999999999999993,
+      7.563,
+      0.9009999999999999
+     ],
+     [
+      1.3,
+      7.95,
+      0.6
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2
+  },
+  {
+   "id": "S02",
+   "cam": [
+    [
+     0,
+     [
+      -0.2,
+      6.7,
+      1.75
+     ],
+     [
+      0.0,
+      9.0,
+      1.75
+     ],
+     18.46943420898431
+    ],
+    [
+     1,
+     [
+      -0.17600000000000002,
+      6.976,
+      1.75
+     ],
+     [
+      0.0,
+      9.0,
+      1.75
+     ],
+     18.46943420898431
+    ]
+   ],
+   "step": 2,
+   "at": "L01.2"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      -1.8,
+      5.9,
+      0.45
+     ],
+     [
+      0.8,
+      8.3,
+      0.3
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      -0.9359999999999999,
+      6.236000000000001,
+      0.429
+     ],
+     [
+      0.8,
+      8.3,
+      0.3
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L01.4"
+  },
+  {
+   "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      1.0,
+      13.8,
+      1.45
+     ],
+     [
+      0.0,
+      10.0,
+      1.2
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      0.88,
+      13.344000000000001,
+      1.42
+     ],
+     [
+      0.0,
+      10.0,
+      1.2
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L02"
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      11.6,
+      0.4
+     ],
+     [
+      0.0,
+      9.15,
+      0.3
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      0.528,
+      11.306,
+      0.388
+     ],
+     [
+      0.0,
+      9.15,
+      0.3
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L02.2"
+  },
+  {
+   "id": "S06",
+   "cam": [
+    [
+     0,
+     [
+      -22.0,
+      3.6,
+      2.6
+     ],
+     [
+      8.0,
+      6.5,
+      1.8
+     ],
+     9.333333333333334
+    ],
+    [
+     1,
+     [
+      -19.0,
+      3.89,
+      2.52
+     ],
+     [
+      8.0,
+      6.5,
+      1.8
+     ],
+     9.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L03"
+  },
+  {
+   "id": "S07",
+   "cam": [
+    [
+     0,
+     [
+      -6.0,
+      3.8,
+      1.0
+     ],
+     [
+      -1.0,
+      7.6,
+      0.8
+     ],
+     11.333333333333334
+    ],
+    [
+     1,
+     [
+      3.5999999999999996,
+      4.256,
+      0.976
+     ],
+     [
+      -1.0,
+      7.6,
+      0.8
+     ],
+     11.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L03.1"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      14.0,
+      -3.2,
+      1.7
+     ],
+     [
+      18.0,
+      -8.2,
+      1.0
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      14.48,
+      -3.8,
+      1.6159999999999999
+     ],
+     [
+      18.0,
+      -8.2,
+      1.0
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L04"
+  },
+  {
+   "id": "S09",
+   "cam": [
+    [
+     0,
+     [
+      14.5,
+      3.4,
+      1.7
+     ],
+     [
+      18.0,
+      8.2,
+      1.1
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      14.92,
+      3.976,
+      1.628
+     ],
+     [
+      18.0,
+      8.2,
+      1.1
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L04.2"
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      -20.5,
+      -4.4,
+      1.6
+     ],
+     [
+      -18.0,
+      -8.0,
+      1.0
+     ],
+     11.333333333333334
+    ],
+    [
+     1,
+     [
+      -20.2,
+      -4.832000000000001,
+      1.528
+     ],
+     [
+      -18.0,
+      -8.0,
+      1.0
+     ],
+     11.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L04.3"
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      16.4,
+      -4.6,
+      1.7
+     ],
+     [
+      18.0,
+      -8.0,
+      1.6
+     ],
+     14.0
+    ],
+    [
+     1,
+     [
+      16.592,
+      -5.008,
+      1.688
+     ],
+     [
+      18.0,
+      -8.0,
+      1.6
+     ],
+     14.0
+    ]
+   ],
+   "step": 2,
+   "at": "L05"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      19.3,
+      -6.5,
+      0.95
+     ],
+     [
+      19.3,
+      -7.85,
+      0.4
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      19.3,
+      -6.635,
+      0.895
+     ],
+     [
+      19.3,
+      -7.85,
+      0.4
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L05.1"
+  },
+  {
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      17.8,
+      4.8,
+      1.5
+     ],
+     [
+      18.1,
+      8.1,
+      1.3
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      17.836000000000002,
+      5.196,
+      1.476
+     ],
+     [
+      18.1,
+      8.1,
+      1.3
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L06"
+  },
+  {
+   "id": "S14",
+   "cam": [
+    [
+     0,
+     [
+      19.3,
+      6.4,
+      0.95
+     ],
+     [
+      19.3,
+      7.85,
+      0.5
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      19.3,
+      6.545,
+      0.9049999999999999
+     ],
+     [
+      19.3,
+      7.85,
+      0.5
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L06.1"
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      16.2,
+      4.2,
+      1.5
+     ],
+     [
+      18.1,
+      8.1,
+      1.4
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      16.428,
+      4.668,
+      1.488
+     ],
+     [
+      18.1,
+      8.1,
+      1.4
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L06.2"
+  },
+  {
+   "id": "S16",
+   "cam": [
+    [
+     0,
+     [
+      -19.5,
+      -4.6,
+      1.6
+     ],
+     [
+      -18.0,
+      -8.0,
+      1.2
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      -19.32,
+      -5.008,
+      1.552
+     ],
+     [
+      -18.0,
+      -8.0,
+      1.2
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L07"
+  },
+  {
+   "id": "S17",
+   "cam": [
+    [
+     0,
+     [
+      -16.7,
+      -6.4,
+      0.9
+     ],
+     [
+      -16.7,
+      -7.85,
+      0.45
+     ],
+     15.333333333333334
+    ],
+    [
+     1,
+     [
+      -16.7,
+      -6.545,
+      0.855
+     ],
+     [
+      -16.7,
+      -7.85,
+      0.45
+     ],
+     15.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L07.2"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      -19.3,
+      -5.0,
+      1.75
+     ],
+     [
+      -18.0,
+      -8.0,
+      1.65
+     ],
+     30.19463489316208
+    ],
+    [
+     1,
+     [
+      -19.144000000000002,
+      -5.36,
+      1.738
+     ],
+     [
+      -18.0,
+      -8.0,
+      1.65
+     ],
+     30.19463489316208
+    ]
+   ],
+   "step": 2,
+   "at": "L07.4"
+  },
+  {
+   "id": "S19",
+   "cam": [
+    [
+     0,
+     [
+      -12.0,
+      3.4,
+      2.4
+     ],
+     [
+      8.0,
+      -6.0,
+      1.0
+     ],
+     10.0
+    ],
+    [
+     1,
+     [
+      -10.0,
+      2.46,
+      2.26
+     ],
+     [
+      8.0,
+      -6.0,
+      1.0
+     ],
+     10.0
+    ]
+   ],
+   "step": 2,
+   "at": "L08"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      16.8,
+      -4.8,
+      1.7
+     ],
+     [
+      18.0,
+      -7.8,
+      1.5
+     ],
+     14.0
+    ],
+    [
+     1,
+     [
+      16.944,
+      -5.16,
+      1.676
+     ],
+     [
+      18.0,
+      -7.8,
+      1.5
+     ],
+     14.0
+    ]
+   ],
+   "step": 2,
+   "at": "L08.2"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      19.3,
+      -6.4,
+      0.85
+     ],
+     [
+      19.3,
+      -7.85,
+      0.4
+     ],
+     15.333333333333334
+    ],
+    [
+     1,
+     [
+      19.3,
+      -6.545,
+      0.8049999999999999
+     ],
+     [
+      19.3,
+      -7.85,
+      0.4
+     ],
+     15.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L09"
+  },
+  {
+   "id": "S22",
+   "cam": [
+    [
+     0,
+     [
+      19.3,
+      6.4,
+      0.85
+     ],
+     [
+      19.3,
+      7.85,
+      0.4
+     ],
+     15.333333333333334
+    ],
+    [
+     1,
+     [
+      19.3,
+      6.545,
+      0.8049999999999999
+     ],
+     [
+      19.3,
+      7.85,
+      0.4
+     ],
+     15.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L09.1"
+  },
+  {
+   "id": "S23",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      5.2,
+      1.3
+     ],
+     [
+      1.3,
+      8.0,
+      0.8
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      0.156,
+      5.5360000000000005,
+      1.24
+     ],
+     [
+      1.3,
+      8.0,
+      0.8
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L09.3"
+  },
+  {
+   "id": "S24",
+   "cam": [
+    [
+     0,
+     [
+      -3.6,
+      -3.0,
+      1.6
+     ],
+     [
+      0.2,
+      -6.2,
+      1.5
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      -3.144,
+      -3.384,
+      1.588
+     ],
+     [
+      0.2,
+      -6.2,
+      1.5
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L10"
+  },
+  {
+   "id": "S25",
+   "cam": [
+    [
+     0,
+     [
+      -21.0,
+      -4.4,
+      1.8
+     ],
+     [
+      -20.0,
+      -7.8,
+      1.65
+     ],
+     32.743218277916206
+    ],
+    [
+     1,
+     [
+      -20.88,
+      -4.808,
+      1.782
+     ],
+     [
+      -20.0,
+      -7.8,
+      1.65
+     ],
+     32.743218277916206
+    ]
+   ],
+   "step": 2,
+   "at": "L10.3"
+  },
+  {
+   "id": "S26",
+   "cam": [
+    [
+     0,
+     [
+      -2.0,
+      -3.6,
+      1.7
+     ],
+     [
+      27.0,
+      -8.0,
+      1.3
+     ],
+     20.666666666666668
+    ],
+    [
+     1,
+     [
+      0.9000000000000004,
+      -4.04,
+      1.66
+     ],
+     [
+      27.0,
+      -8.0,
+      1.3
+     ],
+     20.666666666666668
+    ]
+   ],
+   "step": 2,
+   "at": "L11"
+  },
+  {
+   "id": "S27",
+   "cam": [
+    [
+     0,
+     [
+      -3.6,
+      6.0,
+      1.55
+     ],
+     [
+      -2.3,
+      9.4,
+      1.55
+     ],
+     15.333333333333334
+    ],
+    [
+     1,
+     [
+      -3.47,
+      6.34,
+      1.55
+     ],
+     [
+      -2.3,
+      9.4,
+      1.55
+     ],
+     15.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L11.2"
+  },
+  {
+   "id": "S28",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      -4.6,
+      0.9
+     ],
+     [
+      0.0,
+      -8.0,
+      0.4
+     ],
+     14.0
+    ],
+    [
+     1,
+     [
+      0.528,
+      -5.008,
+      0.8400000000000001
+     ],
+     [
+      0.0,
+      -8.0,
+      0.4
+     ],
+     14.0
+    ]
+   ],
+   "step": 2,
+   "at": "L11.5"
+  },
+  {
+   "id": "S29",
+   "cam": [
+    [
+     0,
+     [
+      -8.0,
+      -5.0,
+      1.0
+     ],
+     [
+      -3.0,
+      -8.0,
+      0.5
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      0.5,
+      -5.3,
+      0.95
+     ],
+     [
+      -3.0,
+      -8.0,
+      0.5
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L12"
+  },
+  {
+   "id": "S30",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -4.6,
+      1.8
+     ],
+     [
+      1.0,
+      -8.0,
+      1.5
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      0.1,
+      -4.9399999999999995,
+      1.77
+     ],
+     [
+      1.0,
+      -8.0,
+      1.5
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L12.2"
+  },
+  {
+   "id": "S31",
+   "cam": [
+    [
+     0,
+     [
+      1.0,
+      6.9,
+      1.7
+     ],
+     [
+      0.0,
+      -9.0,
+      1.6
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      0.88,
+      4.992000000000001,
+      1.688
+     ],
+     [
+      0.0,
+      -9.0,
+      1.6
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L13"
+  },
+  {
+   "id": "S32",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      -5.6,
+      0.95
+     ],
+     [
+      0.0,
+      -8.0,
+      0.4
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      0.35200000000000004,
+      -5.888,
+      0.884
+     ],
+     [
+      0.0,
+      -8.0,
+      0.4
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L13.2"
+  },
+  {
+   "id": "S33",
+   "cam": [
+    [
+     0,
+     [
+      0.8,
+      -4.4,
+      1.6
+     ],
+     [
+      0.0,
+      -9.0,
+      1.4
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      0.7040000000000001,
+      -4.952,
+      1.576
+     ],
+     [
+      0.0,
+      -9.0,
+      1.4
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L14"
+  },
+  {
+   "id": "S34",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      12.6,
+      1.6
+     ],
+     [
+      -2.3,
+      9.4,
+      1.55
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      -0.98,
+      12.216,
+      1.594
+     ],
+     [
+      -2.3,
+      9.4,
+      1.55
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L14.3"
+  },
+  {
+   "id": "S35",
+   "cam": [
+    [
+     0,
+     [
+      1.0,
+      -3.6,
+      1.3
+     ],
+     [
+      0.0,
+      -9.0,
+      1.3
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      0.88,
+      -4.248,
+      1.3
+     ],
+     [
+      0.0,
+      -9.0,
+      1.3
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L14.4"
+  },
+  {
+   "id": "S36",
+   "cam": [
+    [
+     0,
+     [
+      3.8,
+      -3.8,
+      1.7
+     ],
+     [
+      1.0,
+      -7.6,
+      1.5
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      3.464,
+      -4.256,
+      1.676
+     ],
+     [
+      1.0,
+      -7.6,
+      1.5
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L15"
+  },
+  {
+   "id": "S37",
+   "cam": [
+    [
+     0,
+     [
+      -2.4,
+      -5.0,
+      1.7
+     ],
+     [
+      0.4,
+      -8.0,
+      1.6
+     ],
+     30.786563627660684
+    ],
+    [
+     1,
+     [
+      -2.064,
+      -5.36,
+      1.688
+     ],
+     [
+      0.4,
+      -8.0,
+      1.6
+     ],
+     30.786563627660684
+    ]
+   ],
+   "step": 2,
+   "at": "L15.2"
+  },
+  {
+   "id": "S38",
+   "cam": [
+    [
+     0,
+     [
+      1.4,
+      -4.8,
+      1.7
+     ],
+     [
+      0.0,
+      -8.6,
+      1.6
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      1.232,
+      -5.256,
+      1.688
+     ],
+     [
+      0.0,
+      -8.6,
+      1.6
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L15.4"
+  },
+  {
+   "id": "S39",
+   "cam": [
+    [
+     0,
+     [
+      297.6,
+      1.4,
+      1.8
+     ],
+     [
+      297.6,
+      3.4,
+      1.8
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      297.6,
+      1.5999999999999999,
+      1.8
+     ],
+     [
+      297.6,
+      3.4,
+      1.8
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L16"
+  },
+  {
+   "id": "S40",
+   "cam": [
+    [
+     0,
+     [
+      299.8,
+      0.2,
+      1.8
+     ],
+     [
+      298.1,
+      3.2,
+      1.8
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      299.596,
+      0.56,
+      1.8
+     ],
+     [
+      298.1,
+      3.2,
+      1.8
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L16.1"
+  },
+  {
+   "id": "S41",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      -4.8,
+      1.0
+     ],
+     [
+      0.0,
+      -8.2,
+      0.5
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      0.35200000000000004,
+      -5.208,
+      0.94
+     ],
+     [
+      0.0,
+      -8.2,
+      0.5
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L16.4"
+  },
+  {
+   "id": "S42",
+   "cam": [
+    [
+     0,
+     [
+      302.0,
+      0.8,
+      1.5
+     ],
+     [
+      302.4,
+      3.0,
+      0.95
+     ],
+     15.333333333333334
+    ],
+    [
+     1,
+     [
+      302.048,
+      1.064,
+      1.434
+     ],
+     [
+      302.4,
+      3.0,
+      0.95
+     ],
+     15.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L17"
+  },
+  {
+   "id": "S43",
+   "cam": [
+    [
+     0,
+     [
+      300.6,
+      2.6,
+      1.5
+     ],
+     [
+      300.6,
+      -0.4,
+      1.1
+     ],
+     14.0
+    ],
+    [
+     1,
+     [
+      300.6,
+      2.24,
+      1.452
+     ],
+     [
+      300.6,
+      -0.4,
+      1.1
+     ],
+     14.0
+    ]
+   ],
+   "step": 2,
+   "at": "L18"
+  },
+  {
+   "id": "S44",
+   "cam": [
+    [
+     0,
+     [
+      303.4,
+      1.0,
+      1.5
+     ],
+     [
+      303.4,
+      3.3,
+      1.2
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      303.4,
+      1.276,
+      1.464
+     ],
+     [
+      303.4,
+      3.3,
+      1.2
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L18.1"
+  },
+  {
+   "id": "S45",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      -4.2,
+      1.6
+     ],
+     [
+      0.2,
+      -8.0,
+      1.3
+     ],
+     11.333333333333334
+    ],
+    [
+     1,
+     [
+      0.5519999999999999,
+      -4.656000000000001,
+      1.564
+     ],
+     [
+      0.2,
+      -8.0,
+      1.3
+     ],
+     11.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L19"
+  },
+  {
+   "id": "S46",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      -6.0,
+      0.85
+     ],
+     [
+      0.0,
+      -7.85,
+      0.4
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      0.27,
+      -6.185,
+      0.8049999999999999
+     ],
+     [
+      0.0,
+      -7.85,
+      0.4
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L19.1"
+  },
+  {
+   "id": "S47",
+   "cam": [
+    [
+     0,
+     [
+      16.0,
+      -3.6,
+      1.6
+     ],
+     [
+      16.6,
+      -7.0,
+      1.4
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      16.072,
+      -4.008,
+      1.576
+     ],
+     [
+      16.6,
+      -7.0,
+      1.4
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L20"
+  },
+  {
+   "id": "S48",
+   "cam": [
+    [
+     0,
+     [
+      17.6,
+      -4.8,
+      1.7
+     ],
+     [
+      17.6,
+      -8.0,
+      1.5
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      17.6,
+      -5.184,
+      1.676
+     ],
+     [
+      17.6,
+      -8.0,
+      1.5
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L20.2"
+  },
+  {
+   "id": "S49",
+   "cam": [
+    [
+     0,
+     [
+      0.8,
+      -4.6,
+      1.7
+     ],
+     [
+      0.2,
+      -8.0,
+      1.7
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      0.728,
+      -5.008,
+      1.7
+     ],
+     [
+      0.2,
+      -8.0,
+      1.7
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L21"
+  },
+  {
+   "id": "S50",
+   "cam": [
+    [
+     0,
+     [
+      1.8,
+      -4.8,
+      1.7
+     ],
+     [
+      0.5,
+      -7.9,
+      1.6
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      1.6440000000000001,
+      -5.172,
+      1.688
+     ],
+     [
+      0.5,
+      -7.9,
+      1.6
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L21.2"
+  },
+  {
+   "id": "S51",
+   "cam": [
+    [
+     0,
+     [
+      200.8,
+      -1.4,
+      1.65
+     ],
+     [
+      200.2,
+      1.7,
+      1.45
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      200.728,
+      -1.028,
+      1.626
+     ],
+     [
+      200.2,
+      1.7,
+      1.45
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L22"
+  },
+  {
+   "id": "S52",
+   "cam": [
+    [
+     0,
+     [
+      199.0,
+      0.8,
+      1.7
+     ],
+     [
+      197.5,
+      2.8,
+      1.55
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      198.82,
+      1.04,
+      1.682
+     ],
+     [
+      197.5,
+      2.8,
+      1.55
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L22.2"
+  },
+  {
+   "id": "S53",
+   "cam": [
+    [
+     0,
+     [
+      200.5,
+      -0.4,
+      1.7
+     ],
+     [
+      200.2,
+      1.6,
+      1.6
+     ],
+     18.69088313659994
+    ],
+    [
+     1,
+     [
+      200.464,
+      -0.16000000000000003,
+      1.688
+     ],
+     [
+      200.2,
+      1.6,
+      1.6
+     ],
+     18.69088313659994
+    ]
+   ],
+   "step": 2,
+   "at": "L22.4"
+  },
+  {
+   "id": "S54",
+   "cam": [
+    [
+     0,
+     [
+      1.2,
+      10.4,
+      1.45
+     ],
+     [
+      1.6,
+      13.3,
+      1.0
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      1.248,
+      10.748000000000001,
+      1.396
+     ],
+     [
+      1.6,
+      13.3,
+      1.0
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L23"
+  },
+  {
+   "id": "S55",
+   "cam": [
+    [
+     0,
+     [
+      199.4,
+      -0.6,
+      1.65
+     ],
+     [
+      198.8,
+      2.4,
+      1.3
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      199.328,
+      -0.24,
+      1.6079999999999999
+     ],
+     [
+      198.8,
+      2.4,
+      1.3
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L23.2"
+  },
+  {
+   "id": "S56",
+   "cam": [
+    [
+     0,
+     [
+      4.0,
+      0.8,
+      1.2
+     ],
+     [
+      -6.0,
+      -2.8,
+      0.9
+     ],
+     11.333333333333334
+    ],
+    [
+     1,
+     [
+      2.8,
+      0.3680000000000001,
+      1.164
+     ],
+     [
+      -6.0,
+      -2.8,
+      0.9
+     ],
+     11.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L24"
+  },
+  {
+   "id": "S57",
+   "cam": [
+    [
+     0,
+     [
+      1.7,
+      4.4,
+      0.95
+     ],
+     [
+      2.8,
+      6.5,
+      0.6
+     ],
+     14.0
+    ],
+    [
+     1,
+     [
+      1.81,
+      4.61,
+      0.9149999999999999
+     ],
+     [
+      2.8,
+      6.5,
+      0.6
+     ],
+     14.0
+    ]
+   ],
+   "step": 2,
+   "at": "L24.1"
+  },
+  {
+   "id": "S58",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      4.4,
+      1.2
+     ],
+     [
+      1.3,
+      8.0,
+      0.5
+     ],
+     10.666666666666666
+    ],
+    [
+     1,
+     [
+      0.332,
+      4.832000000000001,
+      1.1159999999999999
+     ],
+     [
+      1.3,
+      8.0,
+      0.5
+     ],
+     10.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L25"
+  },
+  {
+   "id": "S59",
+   "cam": [
+    [
+     0,
+     [
+      201.8,
+      -2.6,
+      1.55
+     ],
+     [
+      202.4,
+      -0.2,
+      1.4
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      201.872,
+      -2.3120000000000003,
+      1.532
+     ],
+     [
+      202.4,
+      -0.2,
+      1.4
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L25.1"
+  },
+  {
+   "id": "S60",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      0.4,
+      2.0
+     ],
+     [
+      0.6,
+      8.4,
+      1.0
+     ],
+     10.0
+    ],
+    [
+     1,
+     [
+      0.42400000000000004,
+      1.3599999999999999,
+      1.88
+     ],
+     [
+      0.6,
+      8.4,
+      1.0
+     ],
+     10.0
+    ]
+   ],
+   "step": 2,
+   "at": "L26"
+  },
+  {
+   "id": "S61",
+   "cam": [
+    [
+     0,
+     [
+      -12.0,
+      2.4,
+      2.1
+     ],
+     [
+      10.0,
+      0.0,
+      1.8
+     ],
+     10.0
+    ],
+    [
+     1,
+     [
+      -9.8,
+      2.16,
+      2.0700000000000003
+     ],
+     [
+      10.0,
+      0.0,
+      1.8
+     ],
+     10.0
+    ]
+   ],
+   "step": 2,
+   "at": "L27"
+  },
+  {
+   "id": "S62",
+   "cam": [
+    [
+     0,
+     [
+      -3.6,
+      5.4,
+      1.6
+     ],
+     [
+      -2.3,
+      9.4,
+      1.6
+     ],
+     14.0
+    ],
+    [
+     1,
+     [
+      -3.444,
+      5.880000000000001,
+      1.6
+     ],
+     [
+      -2.3,
+      9.4,
+      1.6
+     ],
+     14.0
+    ]
+   ],
+   "step": 2,
+   "at": "L27.3"
+  },
+  {
+   "id": "S63",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      4.8,
+      0.45
+     ],
+     [
+      0.8,
+      8.3,
+      0.25
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      0.272,
+      5.22,
+      0.426
+     ],
+     [
+      0.8,
+      8.3,
+      0.25
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L28"
+  },
+  {
+   "id": "S64",
+   "cam": [
+    [
+     0,
+     [
+      0.8,
+      10.5,
+      1.4
+     ],
+     [
+      1.6,
+      13.3,
+      1.1
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      0.896,
+      10.836,
+      1.3639999999999999
+     ],
+     [
+      1.6,
+      13.3,
+      1.1
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L28.1"
+  },
+  {
+   "id": "S65",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      11.0,
+      0.42
+     ],
+     [
+      0.0,
+      9.15,
+      0.28
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      0.528,
+      10.778,
+      0.4032
+     ],
+     [
+      0.0,
+      9.15,
+      0.28
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L28.2"
+  },
+  {
+   "id": "S66",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      11.6,
+      1.55
+     ],
+     [
+      0.0,
+      9.15,
+      1.5
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      0.35200000000000004,
+      11.306,
+      1.544
+     ],
+     [
+      0.0,
+      9.15,
+      1.5
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L29"
+  },
+  {
+   "id": "S67",
+   "cam": [
+    [
+     0,
+     [
+      1.1,
+      10.6,
+      1.35
+     ],
+     [
+      1.6,
+      13.3,
+      1.15
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      1.1600000000000001,
+      10.924,
+      1.326
+     ],
+     [
+      1.6,
+      13.3,
+      1.15
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L29.1"
+  },
+  {
+   "id": "S68",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      6.8,
+      1.8
+     ],
+     [
+      0.0,
+      9.0,
+      1.7
+     ],
+     29.634814361190497
+    ],
+    [
+     1,
+     [
+      0.27,
+      7.02,
+      1.79
+     ],
+     [
+      0.0,
+      9.0,
+      1.7
+     ],
+     29.634814361190497
+    ]
+   ],
+   "step": 2,
+   "at": "L30"
+  },
+  {
+   "id": "S69",
+   "cam": [
+    [
+     0,
+     [
+      2.2,
+      10.6,
+      1.5
+     ],
+     [
+      1.6,
+      13.3,
+      1.2
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      2.128,
+      10.924,
+      1.464
+     ],
+     [
+      1.6,
+      13.3,
+      1.2
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L30.1"
+  },
+  {
+   "id": "S70",
+   "cam": [
+    [
+     0,
+     [
+      1.5,
+      11.6,
+      1.2
+     ],
+     [
+      1.6,
+      13.4,
+      1.15
+     ],
+     24.04625172916192
+    ],
+    [
+     1,
+     [
+      1.51,
+      11.78,
+      1.1949999999999998
+     ],
+     [
+      1.6,
+      13.4,
+      1.15
+     ],
+     24.04625172916192
+    ]
+   ],
+   "step": 2,
+   "at": "L31"
+  },
+  {
+   "id": "S71",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      11.2,
+      2.3
+     ],
+     [
+      -3.15,
+      11.6,
+      2.4
+     ],
+     15.333333333333334
+    ],
+    [
+     1,
+     [
+      -1.215,
+      11.239999999999998,
+      2.3099999999999996
+     ],
+     [
+      -3.15,
+      11.6,
+      2.4
+     ],
+     15.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L32"
+  },
+  {
+   "id": "S72",
+   "cam": [
+    [
+     0,
+     [
+      -0.7,
+      11.4,
+      1.9
+     ],
+     [
+      0.1,
+      9.15,
+      1.7
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      -0.604,
+      11.13,
+      1.876
+     ],
+     [
+      0.1,
+      9.15,
+      1.7
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L32.1"
+  },
+  {
+   "id": "S73",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      11.2,
+      2.3
+     ],
+     [
+      -3.15,
+      11.6,
+      2.4
+     ],
+     15.333333333333334
+    ],
+    [
+     1,
+     [
+      -1.215,
+      11.239999999999998,
+      2.3099999999999996
+     ],
+     [
+      -3.15,
+      11.6,
+      2.4
+     ],
+     15.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L33"
+  },
+  {
+   "id": "S74",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      12.0,
+      1.6
+     ],
+     [
+      3.15,
+      12.0,
+      1.8
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      0.9059999999999999,
+      12.0,
+      1.624
+     ],
+     [
+      3.15,
+      12.0,
+      1.8
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L33.2"
+  },
+  {
+   "id": "S75",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      10.4,
+      1.5
+     ],
+     [
+      2.0,
+      12.2,
+      1.4
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      0.41600000000000004,
+      10.616,
+      1.488
+     ],
+     [
+      2.0,
+      12.2,
+      1.4
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L33.3"
+  },
+  {
+   "id": "S76",
+   "cam": [
+    [
+     0,
+     [
+      -2.2,
+      11.2,
+      1.4
+     ],
+     [
+      -2.0,
+      8.3,
+      1.3
+     ],
+     16.666666666666668
+    ],
+    [
+     1,
+     [
+      -2.18,
+      10.91,
+      1.39
+     ],
+     [
+      -2.0,
+      8.3,
+      1.3
+     ],
+     16.666666666666668
+    ]
+   ],
+   "step": 2,
+   "at": "L34"
+  },
+  {
+   "id": "S77",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      6.2,
+      0.9
+     ],
+     [
+      -1.9,
+      8.3,
+      0.85
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      -0.932,
+      6.452,
+      0.894
+     ],
+     [
+      -1.9,
+      8.3,
+      0.85
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L34.3"
+  },
+  {
+   "id": "S78",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      10.9,
+      1.8
+     ],
+     [
+      0.0,
+      9.15,
+      1.75
+     ],
+     16.0
+    ],
+    [
+     1,
+     [
+      0.17600000000000002,
+      10.69,
+      1.794
+     ],
+     [
+      0.0,
+      9.15,
+      1.75
+     ],
+     16.0
+    ]
+   ],
+   "step": 2,
+   "at": "L35"
+  },
+  {
+   "id": "S79",
+   "cam": [
+    [
+     0,
+     [
+      0.9,
+      10.6,
+      1.4
+     ],
+     [
+      1.6,
+      13.3,
+      1.3
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      0.984,
+      10.924,
+      1.388
+     ],
+     [
+      1.6,
+      13.3,
+      1.3
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L35.1"
+  },
+  {
+   "id": "S80",
+   "cam": [
+    [
+     0,
+     [
+      3.0,
+      13.8,
+      1.7
+     ],
+     [
+      0.9,
+      11.2,
+      1.3
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      2.748,
+      13.488000000000001,
+      1.652
+     ],
+     [
+      0.9,
+      11.2,
+      1.3
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L36"
+  },
+  {
+   "id": "S81",
+   "cam": [
+    [
+     0,
+     [
+      1.5,
+      11.0,
+      1.25
+     ],
+     [
+      0.4,
+      9.2,
+      1.15
+     ],
+     17.333333333333332
+    ],
+    [
+     1,
+     [
+      1.3679999999999999,
+      10.784,
+      1.238
+     ],
+     [
+      0.4,
+      9.2,
+      1.15
+     ],
+     17.333333333333332
+    ]
+   ],
+   "step": 2,
+   "at": "L36.1"
+  },
+  {
+   "id": "S82",
+   "cam": [
+    [
+     0,
+     [
+      0.9,
+      10.5,
+      1.2
+     ],
+     [
+      0.45,
+      9.15,
+      1.15
+     ],
+     23.333333333333332
+    ],
+    [
+     1,
+     [
+      0.855,
+      10.365,
+      1.1949999999999998
+     ],
+     [
+      0.45,
+      9.15,
+      1.15
+     ],
+     23.333333333333332
+    ]
+   ],
+   "step": 2,
+   "at": "L37"
+  },
+  {
+   "id": "S83",
+   "cam": [
+    [
+     0,
+     [
+      1.8,
+      12.8,
+      1.5
+     ],
+     [
+      0.0,
+      9.2,
+      1.4
+     ],
+     11.333333333333334
+    ],
+    [
+     1,
+     [
+      1.548,
+      12.296000000000001,
+      1.486
+     ],
+     [
+      0.0,
+      9.2,
+      1.4
+     ],
+     11.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L37.1"
+  },
+  {
+   "id": "S84",
+   "cam": [
+    [
+     0,
+     [
+      1.9,
+      11.6,
+      0.9
+     ],
+     [
+      0.2,
+      9.0,
+      0.3
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      1.73,
+      11.34,
+      0.84
+     ],
+     [
+      0.2,
+      9.0,
+      0.3
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "P01"
+  },
+  {
+   "id": "S85",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      11.2,
+      1.9
+     ],
+     [
+      0.0,
+      7.9,
+      1.85
+     ],
+     31.68363615496175
+    ],
+    [
+     1,
+     [
+      0.0,
+      10.87,
+      1.895
+     ],
+     [
+      0.0,
+      7.9,
+      1.85
+     ],
+     31.68363615496175
+    ]
+   ],
+   "step": 2,
+   "at": "L38"
+  },
+  {
+   "id": "S86",
+   "cam": [
+    [
+     0,
+     [
+      0.7,
+      10.6,
+      1.45
+     ],
+     [
+      0.0,
+      7.0,
+      1.25
+     ],
+     13.773275754155216
+    ],
+    [
+     1,
+     [
+      0.6439999999999999,
+      10.312,
+      1.434
+     ],
+     [
+      0.0,
+      7.0,
+      1.25
+     ],
+     13.773275754155216
+    ]
+   ],
+   "step": 2,
+   "at": "L39"
+  },
+  {
+   "id": "S87",
+   "cam": [
+    [
+     0,
+     [
+      -0.6,
+      9.6,
+      1.2
+     ],
+     [
+      -0.4,
+      7.3,
+      1.0
+     ],
+     16.0
+    ],
+    [
+     1,
+     [
+      -0.58,
+      9.37,
+      1.18
+     ],
+     [
+      -0.4,
+      7.3,
+      1.0
+     ],
+     16.0
+    ]
+   ],
+   "step": 2,
+   "at": "L39.3"
+  },
+  {
+   "id": "S88",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      9.8,
+      1.9
+     ],
+     [
+      0.0,
+      7.6,
+      1.8
+     ],
+     22.045407685048612
+    ],
+    [
+     1,
+     [
+      0.09,
+      9.58,
+      1.89
+     ],
+     [
+      0.0,
+      7.6,
+      1.8
+     ],
+     22.045407685048612
+    ]
+   ],
+   "step": 2,
+   "at": "L40"
+  },
+  {
+   "id": "S89",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      6.4,
+      1.7
+     ],
+     [
+      0.0,
+      9.6,
+      1.65
+     ],
+     27.552176846477877
+    ],
+    [
+     1,
+     [
+      0.27,
+      6.720000000000001,
+      1.6949999999999998
+     ],
+     [
+      0.0,
+      9.6,
+      1.65
+     ],
+     27.552176846477877
+    ]
+   ],
+   "step": 2,
+   "at": "L40.1"
+  },
+  {
+   "id": "S90",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      9.9,
+      1.9
+     ],
+     [
+      0.0,
+      7.7,
+      1.85
+     ],
+     24.030971751175297
+    ],
+    [
+     1,
+     [
+      0.09,
+      9.68,
+      1.895
+     ],
+     [
+      0.0,
+      7.7,
+      1.85
+     ],
+     24.030971751175297
+    ]
+   ],
+   "step": 2,
+   "at": "L41"
+  },
+  {
+   "id": "S91",
+   "cam": [
+    [
+     0,
+     [
+      -1.2,
+      9.0,
+      1.8
+     ],
+     [
+      0.0,
+      7.7,
+      1.8
+     ],
+     15.164405153960685
+    ],
+    [
+     1,
+     [
+      -1.08,
+      8.87,
+      1.8
+     ],
+     [
+      0.0,
+      7.7,
+      1.8
+     ],
+     15.164405153960685
+    ]
+   ],
+   "step": 2,
+   "at": "L41.2"
+  },
+  {
+   "id": "S92",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      6.5,
+      1.7
+     ],
+     [
+      0.0,
+      9.7,
+      1.65
+     ],
+     35.33686764380839
+    ],
+    [
+     1,
+     [
+      0.45,
+      6.82,
+      1.6949999999999998
+     ],
+     [
+      0.0,
+      9.7,
+      1.65
+     ],
+     35.33686764380839
+    ]
+   ],
+   "step": 2,
+   "at": "L41.3"
+  },
+  {
+   "id": "S93",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      8.6,
+      1.7
+     ],
+     [
+      10.0,
+      -3.0,
+      1.0
+     ],
+     9.333333333333334
+    ],
+    [
+     1,
+     [
+      1.552,
+      7.208,
+      1.6159999999999999
+     ],
+     [
+      10.0,
+      -3.0,
+      1.0
+     ],
+     9.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L42"
+  },
+  {
+   "id": "S94",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      10.0,
+      1.85
+     ],
+     [
+      0.0,
+      7.7,
+      1.8
+     ],
+     23.350588857671234
+    ],
+    [
+     1,
+     [
+      0.36,
+      9.77,
+      1.8450000000000002
+     ],
+     [
+      0.0,
+      7.7,
+      1.8
+     ],
+     23.350588857671234
+    ]
+   ],
+   "step": 2,
+   "at": "L42.1"
+  },
+  {
+   "id": "S95",
+   "cam": [
+    [
+     0,
+     [
+      199.0,
+      0.8,
+      1.7
+     ],
+     [
+      197.5,
+      2.8,
+      1.55
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      198.82,
+      1.04,
+      1.682
+     ],
+     [
+      197.5,
+      2.8,
+      1.55
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L43"
+  },
+  {
+   "id": "S96",
+   "cam": [
+    [
+     0,
+     [
+      16.5,
+      -5.2,
+      1.6
+     ],
+     [
+      17.6,
+      -8.2,
+      1.55
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      16.632,
+      -5.5600000000000005,
+      1.594
+     ],
+     [
+      17.6,
+      -8.2,
+      1.55
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L43.2"
+  },
+  {
+   "id": "S97",
+   "cam": [
+    [
+     0,
+     [
+      -3.4,
+      0.0,
+      1.6
+     ],
+     [
+      1.2,
+      0.0,
+      1.4
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      -2.848,
+      0.0,
+      1.576
+     ],
+     [
+      1.2,
+      0.0,
+      1.4
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L44"
+  },
+  {
+   "id": "S98",
+   "cam": [
+    [
+     0,
+     [
+      17.0,
+      -3.8,
+      1.5
+     ],
+     [
+      19.0,
+      -7.0,
+      1.0
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      17.24,
+      -4.184,
+      1.44
+     ],
+     [
+      19.0,
+      -7.0,
+      1.0
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L45"
+  },
+  {
+   "id": "S99",
+   "cam": [
+    [
+     0,
+     [
+      16.8,
+      -4.2,
+      1.6
+     ],
+     [
+      18.6,
+      -6.4,
+      1.3
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      17.016000000000002,
+      -4.464,
+      1.564
+     ],
+     [
+      18.6,
+      -6.4,
+      1.3
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L45.2"
+  },
+  {
+   "id": "S100",
+   "cam": [
+    [
+     0,
+     [
+      20.6,
+      -8.0,
+      1.6
+     ],
+     [
+      18.6,
+      -6.2,
+      1.5
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      20.360000000000003,
+      -7.784,
+      1.588
+     ],
+     [
+      18.6,
+      -6.2,
+      1.5
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L45.4"
+  },
+  {
+   "id": "S101",
+   "cam": [
+    [
+     0,
+     [
+      -20.0,
+      3.4,
+      2.2
+     ],
+     [
+      8.0,
+      -2.0,
+      1.6
+     ],
+     10.0
+    ],
+    [
+     1,
+     [
+      -17.2,
+      2.86,
+      2.14
+     ],
+     [
+      8.0,
+      -2.0,
+      1.6
+     ],
+     10.0
+    ]
+   ],
+   "step": 2,
+   "at": "L46"
+  },
+  {
+   "id": "S102",
+   "cam": [
+    [
+     0,
+     [
+      -0.1,
+      3.4,
+      1.6
+     ],
+     [
+      -0.1,
+      6.0,
+      1.5
+     ],
+     20.8153789300123
+    ],
+    [
+     1,
+     [
+      -0.1,
+      3.7119999999999997,
+      1.588
+     ],
+     [
+      -0.1,
+      6.0,
+      1.5
+     ],
+     20.8153789300123
+    ]
+   ],
+   "step": 2,
+   "at": "L46.2"
+  },
+  {
+   "id": "S103",
+   "cam": [
+    [
+     0,
+     [
+      -19.4,
+      -4.8,
+      1.6
+     ],
+     [
+      -18.0,
+      -8.0,
+      1.2
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      -19.232,
+      -5.184,
+      1.552
+     ],
+     [
+      -18.0,
+      -8.0,
+      1.2
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L47"
+  },
+  {
+   "id": "S104",
+   "cam": [
+    [
+     0,
+     [
+      300.6,
+      2.4,
+      1.4
+     ],
+     [
+      300.6,
+      -0.4,
+      1.2
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      300.6,
+      2.064,
+      1.376
+     ],
+     [
+      300.6,
+      -0.4,
+      1.2
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L48"
+  },
+  {
+   "id": "S105",
+   "cam": [
+    [
+     0,
+     [
+      299.4,
+      1.6,
+      1.4
+     ],
+     [
+      300.6,
+      -0.4,
+      1.2
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      299.544,
+      1.36,
+      1.376
+     ],
+     [
+      300.6,
+      -0.4,
+      1.2
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L48.2"
+  },
+  {
+   "id": "S106",
+   "cam": [
+    [
+     0,
+     [
+      -0.6,
+      -3.2,
+      1.7
+     ],
+     [
+      0.2,
+      -6.0,
+      1.5
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      -0.504,
+      -3.536,
+      1.676
+     ],
+     [
+      0.2,
+      -6.0,
+      1.5
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L49"
+  },
+  {
+   "id": "S107",
+   "cam": [
+    [
+     0,
+     [
+      -2.8,
+      -4.2,
+      1.7
+     ],
+     [
+      -1.4,
+      -6.0,
+      1.6
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      -2.6319999999999997,
+      -4.416,
+      1.688
+     ],
+     [
+      -1.4,
+      -6.0,
+      1.6
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L49.1"
+  },
+  {
+   "id": "S108",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -2.6,
+      1.6
+     ],
+     [
+      0.0,
+      -6.0,
+      1.5
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      0.0,
+      -3.076,
+      1.586
+     ],
+     [
+      0.0,
+      -6.0,
+      1.5
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L50"
+  },
+  {
+   "id": "S109",
+   "cam": [
+    [
+     0,
+     [
+      301.4,
+      -0.4,
+      1.65
+     ],
+     [
+      301.4,
+      2.6,
+      1.3
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      301.4,
+      -0.040000000000000036,
+      1.6079999999999999
+     ],
+     [
+      301.4,
+      2.6,
+      1.3
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L51"
+  },
+  {
+   "id": "S110",
+   "cam": [
+    [
+     0,
+     [
+      302.0,
+      1.8,
+      1.5
+     ],
+     [
+      302.0,
+      3.0,
+      1.05
+     ],
+     16.666666666666668
+    ],
+    [
+     1,
+     [
+      302.0,
+      1.92,
+      1.455
+     ],
+     [
+      302.0,
+      3.0,
+      1.05
+     ],
+     16.666666666666668
+    ]
+   ],
+   "step": 2,
+   "at": "L51.3"
+  },
+  {
+   "id": "S111",
+   "cam": [
+    [
+     0,
+     [
+      297.6,
+      2.0,
+      1.8
+     ],
+     [
+      297.6,
+      3.4,
+      1.8
+     ],
+     17.333333333333332
+    ],
+    [
+     1,
+     [
+      297.6,
+      2.14,
+      1.8
+     ],
+     [
+      297.6,
+      3.4,
+      1.8
+     ],
+     17.333333333333332
+    ]
+   ],
+   "step": 2,
+   "at": "L52"
+  },
+  {
+   "id": "S112",
+   "cam": [
+    [
+     0,
+     [
+      18.0,
+      -5.0,
+      1.0
+     ],
+     [
+      19.3,
+      -7.85,
+      0.4
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      18.156,
+      -5.342,
+      0.928
+     ],
+     [
+      19.3,
+      -7.85,
+      0.4
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L52.1"
+  },
+  {
+   "id": "S113",
+   "cam": [
+    [
+     0,
+     [
+      1.0,
+      5.6,
+      0.9
+     ],
+     [
+      1.3,
+      7.85,
+      0.35
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      1.03,
+      5.824999999999999,
+      0.845
+     ],
+     [
+      1.3,
+      7.85,
+      0.35
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L53"
+  },
+  {
+   "id": "S114",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      6.8,
+      1.8
+     ],
+     [
+      0.0,
+      9.0,
+      1.7
+     ],
+     29.634814361190497
+    ],
+    [
+     1,
+     [
+      0.27,
+      7.02,
+      1.79
+     ],
+     [
+      0.0,
+      9.0,
+      1.7
+     ],
+     29.634814361190497
+    ]
+   ],
+   "step": 2,
+   "at": "L54"
+  },
+  {
+   "id": "S115",
+   "cam": [
+    [
+     0,
+     [
+      2.8,
+      7.6,
+      1.7
+     ],
+     [
+      0.2,
+      7.4,
+      1.8
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      2.488,
+      7.576,
+      1.712
+     ],
+     [
+      0.2,
+      7.4,
+      1.8
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L54.1"
+  },
+  {
+   "id": "S116",
+   "cam": [
+    [
+     0,
+     [
+      299.2,
+      0.4,
+      1.7
+     ],
+     [
+      297.6,
+      3.4,
+      1.8
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      299.008,
+      0.76,
+      1.712
+     ],
+     [
+      297.6,
+      3.4,
+      1.8
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L55"
+  },
+  {
+   "id": "S117",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      9.0,
+      1.9
+     ],
+     [
+      0.0,
+      -6.0,
+      2.0
+     ],
+     11.333333333333334
+    ],
+    [
+     1,
+     [
+      0.43,
+      6.9,
+      1.914
+     ],
+     [
+      0.0,
+      -6.0,
+      2.0
+     ],
+     11.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L55.1"
+  },
+  {
+   "id": "S118",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      11.0,
+      1.9
+     ],
+     [
+      0.0,
+      7.7,
+      1.85
+     ],
+     33.0037876614185
+    ],
+    [
+     1,
+     [
+      0.0,
+      10.67,
+      1.895
+     ],
+     [
+      0.0,
+      7.7,
+      1.85
+     ],
+     33.0037876614185
+    ]
+   ],
+   "step": 2,
+   "at": "L56"
+  },
+  {
+   "id": "S119",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      10.2,
+      1.85
+     ],
+     [
+      0.0,
+      7.7,
+      1.85
+     ],
+     28.047185742943494
+    ],
+    [
+     1,
+     [
+      0.54,
+      9.95,
+      1.85
+     ],
+     [
+      0.0,
+      7.7,
+      1.85
+     ],
+     28.047185742943494
+    ]
+   ],
+   "step": 2,
+   "at": "L56.2"
+  },
+  {
+   "id": "S120",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      6.8,
+      1.8
+     ],
+     [
+      0.0,
+      9.0,
+      1.7
+     ],
+     33.3391661563393
+    ],
+    [
+     1,
+     [
+      0.27599999999999997,
+      6.976,
+      1.792
+     ],
+     [
+      0.0,
+      9.0,
+      1.7
+     ],
+     33.3391661563393
+    ]
+   ],
+   "step": 2,
+   "at": "L57"
+  },
+  {
+   "id": "S121",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      7.0,
+      1.7
+     ],
+     [
+      0.0,
+      9.5,
+      1.65
+     ],
+     25.184320518926057
+    ],
+    [
+     1,
+     [
+      0.27,
+      7.25,
+      1.6949999999999998
+     ],
+     [
+      0.0,
+      9.5,
+      1.65
+     ],
+     25.184320518926057
+    ]
+   ],
+   "step": 2,
+   "at": "L58"
+  },
+  {
+   "id": "S122",
+   "cam": [
+    [
+     0,
+     [
+      200.8,
+      -0.6,
+      1.65
+     ],
+     [
+      200.8,
+      2.5,
+      1.3
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      200.8,
+      -0.22799999999999998,
+      1.6079999999999999
+     ],
+     [
+      200.8,
+      2.5,
+      1.3
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L59"
+  },
+  {
+   "id": "S123",
+   "cam": [
+    [
+     0,
+     [
+      201.4,
+      -3.0,
+      1.6
+     ],
+     [
+      202.4,
+      -0.2,
+      1.4
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      201.52,
+      -2.664,
+      1.576
+     ],
+     [
+      202.4,
+      -0.2,
+      1.4
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L59.1"
+  },
+  {
+   "id": "S124",
+   "cam": [
+    [
+     0,
+     [
+      202.0,
+      -2.0,
+      1.55
+     ],
+     [
+      202.4,
+      -0.2,
+      1.4
+     ],
+     18.666666666666668
+    ],
+    [
+     1,
+     [
+      202.04,
+      -1.82,
+      1.5350000000000001
+     ],
+     [
+      202.4,
+      -0.2,
+      1.4
+     ],
+     18.666666666666668
+    ]
+   ],
+   "step": 2,
+   "at": "L60"
+  },
+  {
+   "id": "S125",
+   "cam": [
+    [
+     0,
+     [
+      202.4,
+      -2.4,
+      1.5
+     ],
+     [
+      202.4,
+      -0.2,
+      1.0
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      202.4,
+      -2.136,
+      1.44
+     ],
+     [
+      202.4,
+      -0.2,
+      1.0
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L61"
+  },
+  {
+   "id": "S126",
+   "cam": [
+    [
+     0,
+     [
+      202.8,
+      -1.2,
+      1.7
+     ],
+     [
+      202.4,
+      1.6,
+      1.6
+     ],
+     22.641554716935854
+    ],
+    [
+     1,
+     [
+      202.752,
+      -0.864,
+      1.688
+     ],
+     [
+      202.4,
+      1.6,
+      1.6
+     ],
+     22.641554716935854
+    ]
+   ],
+   "step": 2,
+   "at": "L61.1"
+  },
+  {
+   "id": "S127",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      5.4,
+      0.9
+     ],
+     [
+      1.3,
+      7.85,
+      0.4
+     ],
+     14.666666666666666
+    ],
+    [
+     1,
+     [
+      0.6699999999999999,
+      5.6450000000000005,
+      0.85
+     ],
+     [
+      1.3,
+      7.85,
+      0.4
+     ],
+     14.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L61.5"
+  },
+  {
+   "id": "S128",
+   "cam": [
+    [
+     0,
+     [
+      -14.0,
+      3.0,
+      2.0
+     ],
+     [
+      8.0,
+      5.0,
+      1.6
+     ],
+     10.0
+    ],
+    [
+     1,
+     [
+      -11.8,
+      3.2,
+      1.96
+     ],
+     [
+      8.0,
+      5.0,
+      1.6
+     ],
+     10.0
+    ]
+   ],
+   "step": 2,
+   "at": "L62"
+  },
+  {
+   "id": "S129",
+   "cam": [
+    [
+     0,
+     [
+      1.2,
+      5.2,
+      1.2
+     ],
+     [
+      1.3,
+      7.85,
+      0.4
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      1.212,
+      5.518,
+      1.1039999999999999
+     ],
+     [
+      1.3,
+      7.85,
+      0.4
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L62.3"
+  },
+  {
+   "id": "S130",
+   "cam": [
+    [
+     0,
+     [
+      -3.4,
+      0.4,
+      1.6
+     ],
+     [
+      0.9,
+      -1.0,
+      1.4
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      -1.9699999999999998,
+      0.26,
+      1.58
+     ],
+     [
+      0.9,
+      -1.0,
+      1.4
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L63"
+  },
+  {
+   "id": "S131",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      -5.0,
+      1.2
+     ],
+     [
+      0.4,
+      -7.5,
+      0.7
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      -0.8320000000000001,
+      -5.3,
+      1.14
+     ],
+     [
+      0.4,
+      -7.5,
+      0.7
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L63.2"
+  },
+  {
+   "id": "S132",
+   "cam": [
+    [
+     0,
+     [
+      1.2,
+      -3.6,
+      1.3
+     ],
+     [
+      -0.4,
+      -7.2,
+      0.8
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      1.008,
+      -4.032,
+      1.24
+     ],
+     [
+      -0.4,
+      -7.2,
+      0.8
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L64"
+  },
+  {
+   "id": "S133",
+   "cam": [
+    [
+     0,
+     [
+      4.8,
+      -3.0,
+      1.6
+     ],
+     [
+      2.4,
+      -4.2,
+      1.4
+     ],
+     12.0
+    ],
+    [
+     1,
+     [
+      4.512,
+      -3.144,
+      1.576
+     ],
+     [
+      2.4,
+      -4.2,
+      1.4
+     ],
+     12.0
+    ]
+   ],
+   "step": 2,
+   "at": "L65"
+  },
+  {
+   "id": "S134",
+   "cam": [
+    [
+     0,
+     [
+      3.0,
+      -3.4,
+      1.6
+     ],
+     [
+      1.0,
+      -6.2,
+      1.4
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      2.76,
+      -3.7359999999999998,
+      1.576
+     ],
+     [
+      1.0,
+      -6.2,
+      1.4
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L65.2"
+  },
+  {
+   "id": "S135",
+   "cam": [
+    [
+     0,
+     [
+      -2.4,
+      -7.4,
+      1.0
+     ],
+     [
+      -0.2,
+      -7.2,
+      0.9
+     ],
+     16.585008290621985
+    ],
+    [
+     1,
+     [
+      -2.1799999999999997,
+      -7.380000000000001,
+      0.99
+     ],
+     [
+      -0.2,
+      -7.2,
+      0.9
+     ],
+     16.585008290621985
+    ]
+   ],
+   "step": 2,
+   "at": "L66"
+  },
+  {
+   "id": "S136",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      -5.0,
+      1.8
+     ],
+     [
+      1.2,
+      -6.0,
+      1.8
+     ],
+     11.661903789690603
+    ],
+    [
+     1,
+     [
+      0.6599999999999999,
+      -5.1,
+      1.8
+     ],
+     [
+      1.2,
+      -6.0,
+      1.8
+     ],
+     11.661903789690603
+    ]
+   ],
+   "step": 2,
+   "at": "L66+0.55"
+  },
+  {
+   "id": "S137",
+   "cam": [
+    [
+     0,
+     [
+      3.0,
+      -5.6,
+      1.6
+     ],
+     [
+      1.2,
+      -6.0,
+      1.7
+     ],
+     14.772948250095512
+    ],
+    [
+     1,
+     [
+      2.82,
+      -5.64,
+      1.61
+     ],
+     [
+      1.2,
+      -6.0,
+      1.7
+     ],
+     14.772948250095512
+    ]
+   ],
+   "step": 2,
+   "at": "L67"
+  },
+  {
+   "id": "S138",
+   "cam": [
+    [
+     0,
+     [
+      2.2,
+      -4.4,
+      1.4
+     ],
+     [
+      0.5,
+      -7.0,
+      0.9
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      1.9960000000000002,
+      -4.712000000000001,
+      1.3399999999999999
+     ],
+     [
+      0.5,
+      -7.0,
+      0.9
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L68"
+  },
+  {
+   "id": "S139",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      -4.2,
+      1.0
+     ],
+     [
+      0.0,
+      -7.4,
+      0.7
+     ],
+     11.333333333333334
+    ],
+    [
+     1,
+     [
+      0.27,
+      -4.5200000000000005,
+      0.97
+     ],
+     [
+      0.0,
+      -7.4,
+      0.7
+     ],
+     11.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L68.1"
+  },
+  {
+   "id": "S140",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      -6.0,
+      0.7
+     ],
+     [
+      0.0,
+      -7.6,
+      0.25
+     ],
+     15.333333333333334
+    ],
+    [
+     1,
+     [
+      0.18,
+      -6.16,
+      0.6549999999999999
+     ],
+     [
+      0.0,
+      -7.6,
+      0.25
+     ],
+     15.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L69"
+  },
+  {
+   "id": "S141",
+   "cam": [
+    [
+     0,
+     [
+      2.2,
+      -4.8,
+      0.9
+     ],
+     [
+      0.0,
+      -7.4,
+      0.5
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      1.9360000000000002,
+      -5.112,
+      0.852
+     ],
+     [
+      0.0,
+      -7.4,
+      0.5
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L69.1"
+  },
+  {
+   "id": "S142",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      -3.6,
+      1.7
+     ],
+     [
+      26.5,
+      -8.0,
+      1.3
+     ],
+     20.666666666666668
+    ],
+    [
+     1,
+     [
+      1.75,
+      -4.04,
+      1.66
+     ],
+     [
+      26.5,
+      -8.0,
+      1.3
+     ],
+     20.666666666666668
+    ]
+   ],
+   "step": 2,
+   "at": "L70"
+  },
+  {
+   "id": "S143",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      10.2,
+      1.7
+     ],
+     [
+      0.6,
+      7.5,
+      1.6
+     ],
+     21.850400453996254
+    ],
+    [
+     1,
+     [
+      0.24000000000000002,
+      9.93,
+      1.69
+     ],
+     [
+      0.6,
+      7.5,
+      1.6
+     ],
+     21.850400453996254
+    ]
+   ],
+   "step": 2,
+   "at": "L70.2"
+  },
+  {
+   "id": "S144",
+   "cam": [
+    [
+     0,
+     [
+      -9.0,
+      4.8,
+      1.7
+     ],
+     [
+      -9.1,
+      8.2,
+      1.7
+     ],
+     12.666666666666666
+    ],
+    [
+     1,
+     [
+      -9.012,
+      5.208,
+      1.7
+     ],
+     [
+      -9.1,
+      8.2,
+      1.7
+     ],
+     12.666666666666666
+    ]
+   ],
+   "step": 2,
+   "at": "L71"
+  },
+  {
+   "id": "S145",
+   "cam": [
+    [
+     0,
+     [
+      -0.7,
+      7.5,
+      0.95
+     ],
+     [
+      1.3,
+      7.95,
+      0.6
+     ],
+     13.333333333333334
+    ],
+    [
+     1,
+     [
+      -0.41999999999999993,
+      7.563,
+      0.9009999999999999
+     ],
+     [
+      1.3,
+      7.95,
+      0.6
+     ],
+     13.333333333333334
+    ]
+   ],
+   "step": 2,
+   "at": "L71.2"
+  }
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "hidden": true,
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     1.3,
+     8.55,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "neutral",
+    "lean": 20,
+    "arms": [
+     0,
+     78
+    ]
+   },
+   {
+    "at": "L01.2",
+    "pos": [
+     1.3,
+     8.55,
+     0.3
+    ],
+    "lean": 8,
+    "arms": [
+     0,
+     20
+    ]
+   },
+   {
+    "at": "L02",
+    "pos": [
+     1.3,
+     8.55,
+     0.3
+    ]
+   },
+   {
+    "at": "L02",
+    "pos": [
+     0.2,
+     10.1,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "worried"
+   },
+   {
+    "at": "L02.1",
+    "pos": [
+     0.2,
+     10.1,
+     0.3
+    ],
+    "expr": "wide",
+    "head": [
+     0,
+     -6
+    ]
+   },
+   {
+    "at": "L03",
+    "hidden": true
+   },
+   {
+    "at": "L09.3",
+    "pos": [
+     0.2,
+     10.1,
+     0.3
+    ]
+   },
+   {
+    "at": "L09.3",
+    "pos": [
+     1.3,
+     8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smirk",
+    "lean": 30,
+    "arms": [
+     0,
+     55
+    ]
+   },
+   {
+    "at": "L10",
+    "hidden": true
+   },
+   {
+    "at": "L11.2",
+    "pos": [
+     1.3,
+     8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L11.2",
+    "pos": [
+     -2.3,
+     10.3,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "worried",
+    "arms": [
+     0,
+     90
+    ]
+   },
+   {
+    "at": "L11.5",
+    "hidden": true
+   },
+   {
+    "at": "L14.3",
+    "pos": [
+     -2.3,
+     10.3,
+     0.3
+    ]
+   },
+   {
+    "at": "L14.3",
+    "pos": [
+     -2.3,
+     10.4,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "worried",
+    "head": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L15",
+    "hidden": true
+   },
+   {
+    "at": "L23",
+    "pos": [
+     -2.3,
+     10.4,
+     0.3
+    ]
+   },
+   {
+    "at": "L23",
+    "pos": [
+     1.6,
+     13.3,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smirk",
+    "arms": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L23.2",
+    "pos": [
+     1.6,
+     13.3,
+     0.3
+    ]
+   },
+   {
+    "at": "L23.2",
+    "pos": [
+     199.0,
+     2.0
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "smirk",
+    "head": [
+     -20,
+     0
+    ]
+   },
+   {
+    "at": "L24.1",
+    "pos": [
+     199.0,
+     2.0
+    ]
+   },
+   {
+    "at": "L24.1",
+    "pos": [
+     1.0,
+     8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smile",
+    "arms": [
+     0,
+     150
+    ]
+   },
+   {
+    "at": "L25",
+    "hidden": true
+   },
+   {
+    "at": "L25.1",
+    "pos": [
+     1.0,
+     8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L25.1",
+    "pos": [
+     202.4,
+     -0.4
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "smirk"
+   },
+   {
+    "at": "L26",
+    "hidden": true
+   },
+   {
+    "at": "L28.1",
+    "pos": [
+     202.4,
+     -0.4
+    ]
+   },
+   {
+    "at": "L28.1",
+    "pos": [
+     1.6,
+     13.3,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "worried",
+    "arms": [
+     0,
+     75
+    ]
+   },
+   {
+    "at": "L29.1",
+    "pos": [
+     1.6,
+     13.3,
+     0.3
+    ],
+    "expr": "scared",
+    "arms": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L30.1",
+    "pos": [
+     1.6,
+     13.3,
+     0.3
+    ],
+    "lean": -12,
+    "expr": "terrified"
+   },
+   {
+    "at": "L31",
+    "pos": [
+     1.6,
+     13.3,
+     0.3
+    ],
+    "lean": 0,
+    "expr": "wide",
+    "arms": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L33.2",
+    "hidden": true
+   },
+   {
+    "at": "L33.3",
+    "pos": [
+     1.6,
+     13.3,
+     0.3
+    ]
+   },
+   {
+    "at": "L33.3",
+    "pos": [
+     2.0,
+     12.2,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "terrified",
+    "lean": -14
+   },
+   {
+    "at": "L34",
+    "hidden": true
+   },
+   {
+    "at": "L35.1",
+    "pos": [
+     2.0,
+     12.2,
+     0.3
+    ]
+   },
+   {
+    "at": "L35.1",
+    "pos": [
+     1.6,
+     13.3,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "scared"
+   },
+   {
+    "at": "L36",
+    "pos": [
+     1.6,
+     13.3,
+     0.3
+    ]
+   },
+   {
+    "at": "L36",
+    "pos": [
+     1.6,
+     12.4,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "scared"
+   },
+   {
+    "at": "L36>",
+    "pos": [
+     0.5,
+     10.1,
+     0.3
+    ]
+   },
+   {
+    "at": "L36.1",
+    "pos": [
+     0.5,
+     10.1,
+     0.3
+    ],
+    "arms": [
+     0,
+     60
+    ]
+   },
+   {
+    "at": "P01",
+    "pos": [
+     0.5,
+     10.1,
+     0.3
+    ]
+   },
+   {
+    "at": "P01",
+    "pos": [
+     1.0,
+     10.8,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "wide"
+   },
+   {
+    "at": "L38",
+    "hidden": true
+   },
+   {
+    "at": "L40.1",
+    "pos": [
+     1.0,
+     10.8,
+     0.3
+    ]
+   },
+   {
+    "at": "L40.1",
+    "pos": [
+     0.0,
+     9.9,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "wide"
+   },
+   {
+    "at": "L41",
+    "hidden": true
+   },
+   {
+    "at": "L41.3",
+    "pos": [
+     0.0,
+     9.9,
+     0.3
+    ],
+    "expr": "worried"
+   },
+   {
+    "at": "L58",
+    "pos": [
+     0.0,
+     9.9,
+     0.3
+    ]
+   },
+   {
+    "at": "L58",
+    "pos": [
+     0.0,
+     9.8,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "soft"
+   },
+   {
+    "at": "L59",
+    "pos": [
+     0.0,
+     9.8,
+     0.3
+    ]
+   },
+   {
+    "at": "L59",
+    "pos": [
+     200.8,
+     2.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "smile",
+    "arms": [
+     50,
+     0
+    ]
+   },
+   {
+    "at": "L60",
+    "hidden": true
+   },
+   {
+    "at": "L61.1",
+    "pos": [
+     200.8,
+     2.3
+    ]
+   },
+   {
+    "at": "L61.1",
+    "pos": [
+     202.4,
+     1.6
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "laugh"
+   },
+   {
+    "at": "L61.5",
+    "hidden": true
+   },
+   {
+    "at": "L63",
+    "pos": [
+     202.4,
+     1.6
+    ]
+   },
+   {
+    "at": "L63",
+    "pos": [
+     1.0,
+     3.2
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smile"
+   },
+   {
+    "at": "L63.2-0.2",
+    "pos": [
+     0.8,
+     -5.8
+    ]
+   },
+   {
+    "at": "L63.2+0.7",
+    "pos": [
+     0.4,
+     -7.2,
+     0.3
+    ]
+   },
+   {
+    "at": "L63.2+0.9",
+    "pos": [
+     0.4,
+     -7.2,
+     0.3
+    ],
+    "lean": 20,
+    "arms": [
+     0,
+     50
+    ]
+   },
+   {
+    "at": "L64",
+    "pos": [
+     0.4,
+     -7.2,
+     0.3
+    ]
+   },
+   {
+    "at": "L64",
+    "pos": [
+     -0.7,
+     -7.2,
+     0.15
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "smile",
+    "lean": 0,
+    "arms": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L70",
+    "hidden": true
+   },
+   {
+    "at": "L71.2",
+    "pos": [
+     -0.7,
+     -7.2,
+     0.15
+    ]
+   },
+   {
+    "at": "L71.2",
+    "pos": [
+     1.3,
+     8.55,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "neutral",
+    "lean": 10,
+    "arms": [
+     0,
+     30
+    ]
+   },
+   {
+    "at": "L71.2+0.6",
+    "pos": [
+     1.3,
+     8.55,
+     0.3
+    ],
+    "lean": 20,
+    "arms": [
+     0,
+     78
+    ]
+   }
+  ],
+  "mecoat": [
+   {
+    "at": 0,
+    "hidden": true,
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L70",
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L70",
+    "pos": [
+     25.0,
+     -7.4,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "neutral",
+    "lean": 26,
+    "arms": [
+     0,
+     55
+    ]
+   },
+   {
+    "at": "L70.2",
+    "pos": [
+     25.0,
+     -7.4,
+     0.3
+    ]
+   },
+   {
+    "at": "L70.2",
+    "pos": [
+     0.6,
+     7.5,
+     0.15
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "grin"
+   },
+   {
+    "at": "L71",
+    "pos": [
+     0.6,
+     7.5,
+     0.15
+    ]
+   },
+   {
+    "at": "L71",
+    "pos": [
+     -8.4,
+     8.2,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "angry",
+    "arms": [
+     0,
+     100
+    ]
+   },
+   {
+    "at": "L71.2",
+    "hidden": true
+   }
+  ],
+  "grandpa": [
+   {
+    "at": 0,
+    "hidden": true,
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     6.0,
+     3.4
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "neutral"
+   },
+   {
+    "at": "L01.4",
+    "pos": [
+     6.0,
+     3.4
+    ]
+   },
+   {
+    "at": "L01>",
+    "pos": [
+     2.6,
+     3.4
+    ]
+   },
+   {
+    "at": "L02",
+    "hidden": true
+   },
+   {
+    "at": "L11",
+    "pos": [
+     2.6,
+     3.4
+    ]
+   },
+   {
+    "at": "L11",
+    "pos": [
+     28.0,
+     -7.4,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "neutral",
+    "lean": 32,
+    "arms": [
+     0,
+     55
+    ]
+   },
+   {
+    "at": "L11.2",
+    "hidden": true
+   },
+   {
+    "at": "L12.2",
+    "pos": [
+     28.0,
+     -7.4,
+     0.3
+    ]
+   },
+   {
+    "at": "L12.2",
+    "pos": [
+     1.0,
+     -8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "neutral",
+    "arms": [
+     55,
+     0
+    ]
+   },
+   {
+    "at": "L14",
+    "hidden": true
+   },
+   {
+    "at": "L15",
+    "pos": [
+     1.0,
+     -8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L15",
+    "pos": [
+     0.4,
+     -8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "angry",
+    "side": [
+     0,
+     40
+    ]
+   },
+   {
+    "at": "L15.2",
+    "pos": [
+     0.4,
+     -8.0,
+     0.3
+    ],
+    "head": [
+     40,
+     0
+    ]
+   },
+   {
+    "at": "L15.4",
+    "pos": [
+     0.0,
+     -8.0,
+     0.3
+    ],
+    "yaw": 180
+   },
+   {
+    "at": "L16",
+    "hidden": true
+   },
+   {
+    "at": "L16.1",
+    "pos": [
+     0.0,
+     -8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L16.1",
+    "pos": [
+     298.4,
+     2.9
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "soft",
+    "arms": [
+     0,
+     150
+    ]
+   },
+   {
+    "at": "L16.4",
+    "hidden": true
+   },
+   {
+    "at": "L18",
+    "pos": [
+     298.4,
+     2.9
+    ]
+   },
+   {
+    "at": "L18",
+    "pos": [
+     300.6,
+     -0.35
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "blank"
+   },
+   {
+    "at": "L19",
+    "hidden": true
+   },
+   {
+    "at": "L20",
+    "pos": [
+     300.6,
+     -0.35
+    ]
+   },
+   {
+    "at": "L20",
+    "pos": [
+     15.4,
+     -6.4
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 61.38954033403481,
+    "expr": "angry"
+   },
+   {
+    "at": "L20.2-0.1",
+    "pos": [
+     16.8,
+     -7.3
+    ]
+   },
+   {
+    "at": "L21",
+    "pos": [
+     16.8,
+     -7.3
+    ]
+   },
+   {
+    "at": "L21",
+    "pos": [
+     0.2,
+     -8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "angry",
+    "arms": [
+     85,
+     85
+    ],
+    "head": [
+     0,
+     -8
+    ]
+   },
+   {
+    "at": "L21.2",
+    "hidden": true
+   },
+   {
+    "at": "L28",
+    "pos": [
+     0.2,
+     -8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L28",
+    "pos": [
+     1.2,
+     3.6
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "neutral"
+   },
+   {
+    "at": "L28>",
+    "pos": [
+     1.2,
+     6.4
+    ]
+   },
+   {
+    "at": "L28.2",
+    "pos": [
+     1.2,
+     6.4
+    ]
+   },
+   {
+    "at": "L28.2",
+    "pos": [
+     0.0,
+     8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "neutral"
+   },
+   {
+    "at": "L33.2",
+    "pos": [
+     0.0,
+     8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L33.2",
+    "pos": [
+     2.4,
+     8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "neutral"
+   },
+   {
+    "at": "L34",
+    "pos": [
+     2.4,
+     8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -2.0,
+     8.3,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "neutral",
+    "arms": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L35",
+    "pos": [
+     -2.0,
+     8.3,
+     0.3
+    ]
+   },
+   {
+    "at": "L35",
+    "pos": [
+     0.0,
+     8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "worried"
+   },
+   {
+    "at": "P01",
+    "pos": [
+     0.0,
+     8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "P01",
+    "pos": [
+     0.0,
+     7.7,
+     0.15
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "polite",
+    "arms": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L40",
+    "pos": [
+     0.0,
+     7.7,
+     0.15
+    ],
+    "head": [
+     0,
+     22
+    ],
+    "expr": "polite"
+   },
+   {
+    "at": "L40.1",
+    "hidden": true
+   },
+   {
+    "at": "L41",
+    "pos": [
+     0.0,
+     7.7,
+     0.15
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "expr": "worried"
+   },
+   {
+    "at": "L41.2",
+    "pos": [
+     0.0,
+     7.7,
+     0.15
+    ],
+    "head": [
+     30,
+     0
+    ],
+    "expr": "worried"
+   },
+   {
+    "at": "L42.1",
+    "pos": [
+     0.0,
+     7.7,
+     0.15
+    ]
+   },
+   {
+    "at": "L42.1",
+    "pos": [
+     0.0,
+     7.7,
+     0.15
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "polite"
+   },
+   {
+    "at": "L43",
+    "hidden": true
+   },
+   {
+    "at": "L44",
+    "pos": [
+     0.0,
+     7.7,
+     0.15
+    ]
+   },
+   {
+    "at": "L44",
+    "pos": [
+     1.2,
+     -2.2
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "angry"
+   },
+   {
+    "at": "L44>",
+    "pos": [
+     1.2,
+     2.2
+    ]
+   },
+   {
+    "at": "L45",
+    "pos": [
+     1.2,
+     2.2
+    ]
+   },
+   {
+    "at": "L45",
+    "pos": [
+     18.6,
+     -6.4
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "soft",
+    "head": [
+     0,
+     22
+    ]
+   },
+   {
+    "at": "L45.2",
+    "pos": [
+     18.6,
+     -6.4
+    ],
+    "head": [
+     -40,
+     0
+    ],
+    "arms": [
+     0,
+     60
+    ]
+   },
+   {
+    "at": "L45.4",
+    "pos": [
+     18.6,
+     -6.4
+    ],
+    "head": [
+     40,
+     0
+    ],
+    "expr": "worried"
+   },
+   {
+    "at": "L46",
+    "hidden": true
+   },
+   {
+    "at": "L48",
+    "pos": [
+     18.6,
+     -6.4
+    ]
+   },
+   {
+    "at": "L48",
+    "pos": [
+     300.6,
+     -0.35
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "shut",
+    "arms": [
+     40,
+     40
+    ]
+   },
+   {
+    "at": "L48.2",
+    "pos": [
+     300.6,
+     -0.35
+    ],
+    "expr": "soft",
+    "head": [
+     18,
+     0
+    ]
+   },
+   {
+    "at": "L49",
+    "pos": [
+     300.6,
+     -0.35
+    ]
+   },
+   {
+    "at": "L49",
+    "pos": [
+     1.8,
+     -6.0
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "angry",
+    "head": [
+     10,
+     0
+    ]
+   },
+   {
+    "at": "L50",
+    "pos": [
+     1.8,
+     -6.0
+    ]
+   },
+   {
+    "at": "L50",
+    "pos": [
+     -1.6,
+     -6.0
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "angry"
+   },
+   {
+    "at": "L50>",
+    "pos": [
+     1.6,
+     -6.0
+    ]
+   },
+   {
+    "at": "L51",
+    "pos": [
+     1.6,
+     -6.0
+    ]
+   },
+   {
+    "at": "L51",
+    "pos": [
+     301.4,
+     2.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "soft",
+    "arms": [
+     55,
+     55
+    ]
+   },
+   {
+    "at": "L52.1",
+    "hidden": true
+   },
+   {
+    "at": "L54.1",
+    "pos": [
+     301.4,
+     2.3
+    ]
+   },
+   {
+    "at": "L54.1",
+    "pos": [
+     0.2,
+     7.2,
+     0.15
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 140,
+    "expr": "worried",
+    "arms": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L55.1",
+    "pos": [
+     0.2,
+     7.2,
+     0.15
+    ]
+   },
+   {
+    "at": "L55.1",
+    "pos": [
+     0.0,
+     7.0,
+     0.15
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "soft"
+   },
+   {
+    "at": "L56",
+    "pos": [
+     0.0,
+     7.0,
+     0.15
+    ]
+   },
+   {
+    "at": "L56",
+    "pos": [
+     0.0,
+     7.7,
+     0.15
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "soft"
+   },
+   {
+    "at": "L56.2",
+    "pos": [
+     0.0,
+     7.7,
+     0.15
+    ],
+    "expr": "smile"
+   },
+   {
+    "at": "L57",
+    "hidden": true
+   },
+   {
+    "at": "L59.1",
+    "pos": [
+     0.0,
+     7.7,
+     0.15
+    ]
+   },
+   {
+    "at": "L59.1",
+    "pos": [
+     202.4,
+     -0.4
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "polite",
+    "arms": [
+     60,
+     60
+    ]
+   },
+   {
+    "at": "L60",
+    "pos": [
+     202.4,
+     -0.4
+    ],
+    "arms": [
+     0,
+     75
+    ],
+    "expr": "angry"
+   },
+   {
+    "at": "L61",
+    "pos": [
+     202.4,
+     -0.4
+    ],
+    "arms": [
+     0,
+     0
+    ],
+    "expr": "smile"
+   },
+   {
+    "at": "L61.5",
+    "hidden": true
+   },
+   {
+    "at": "L65",
+    "pos": [
+     202.4,
+     -0.4
+    ]
+   },
+   {
+    "at": "L65",
+    "pos": [
+     3.4,
+     -2.6
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": -33.690067525979785,
+    "expr": "neutral"
+   },
+   {
+    "at": "L65.2",
+    "pos": [
+     1.4,
+     -5.6
+    ]
+   },
+   {
+    "at": "L66",
+    "pos": [
+     1.4,
+     -5.6
+    ],
+    "expr": "wide"
+   },
+   {
+    "at": "L67",
+    "pos": [
+     1.4,
+     -5.6
+    ],
+    "head": [
+     0,
+     22
+    ],
+    "expr": "soft"
+   },
+   {
+    "at": "L68",
+    "pos": [
+     0.5,
+     -7.2,
+     0.15
+    ],
+    "yaw": 180
+   },
+   {
+    "at": "L69.1",
+    "pos": [
+     0.5,
+     -7.2,
+     0.15
+    ],
+    "expr": "smile",
+    "arms": [
+     40,
+     0
+    ]
+   },
+   {
+    "at": "L70",
+    "pos": [
+     0.5,
+     -7.2,
+     0.15
+    ]
+   },
+   {
+    "at": "L70",
+    "pos": [
+     28.0,
+     -7.4,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "neutral",
+    "lean": 30,
+    "arms": [
+     0,
+     55
+    ]
+   },
+   {
+    "at": "L71",
+    "pos": [
+     28.0,
+     -7.4,
+     0.3
+    ]
+   },
+   {
+    "at": "L71",
+    "pos": [
+     -9.8,
+     8.2,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "angry",
+    "arms": [
+     0,
+     100
+    ]
+   },
+   {
+    "at": "L71.2",
+    "hidden": true
+   }
+  ],
+  "mom": [
+   {
+    "at": 0,
+    "hidden": true,
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L22",
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L22",
+    "pos": [
+     200.2,
+     1.6
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "soft",
+    "arms": [
+     50,
+     50
+    ]
+   },
+   {
+    "at": "L22.2",
+    "pos": [
+     200.2,
+     1.6
+    ]
+   },
+   {
+    "at": "L22.2",
+    "pos": [
+     197.5,
+     2.8
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "worried",
+    "head": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L22.4",
+    "pos": [
+     197.5,
+     2.8
+    ]
+   },
+   {
+    "at": "L22.4",
+    "pos": [
+     200.2,
+     1.6
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "polite"
+   },
+   {
+    "at": "L23",
+    "hidden": true
+   },
+   {
+    "at": "L43",
+    "pos": [
+     200.2,
+     1.6
+    ]
+   },
+   {
+    "at": "L43",
+    "pos": [
+     197.5,
+     2.8
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "worried",
+    "arms": [
+     0,
+     150
+    ]
+   },
+   {
+    "at": "L43.2",
+    "pos": [
+     197.5,
+     2.8
+    ]
+   },
+   {
+    "at": "L43.2",
+    "pos": [
+     17.6,
+     -8.2,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "polite",
+    "arms": [
+     0,
+     120
+    ]
+   },
+   {
+    "at": "L44",
+    "hidden": true
+   }
+  ],
+  "ferro": [
+   {
+    "at": 0,
+    "hidden": true,
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     18.0,
+     -8.2,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "smile",
+    "lean": 26,
+    "arms": [
+     0,
+     55
+    ]
+   },
+   {
+    "at": "L04.3",
+    "hidden": true
+   },
+   {
+    "at": "L05",
+    "pos": [
+     18.0,
+     -8.2,
+     0.3
+    ]
+   },
+   {
+    "at": "L05",
+    "pos": [
+     18.0,
+     -8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "smile"
+   },
+   {
+    "at": "L05.1",
+    "pos": [
+     18.0,
+     -8.0,
+     0.3
+    ],
+    "expr": "delighted",
+    "arms": [
+     0,
+     155
+    ],
+    "head": [
+     0,
+     -6
+    ]
+   },
+   {
+    "at": "L06",
+    "hidden": true
+   },
+   {
+    "at": "L08.2",
+    "pos": [
+     18.0,
+     -8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L08.2",
+    "pos": [
+     18.0,
+     -7.8,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "smile",
+    "arms": [
+     0,
+     70
+    ]
+   },
+   {
+    "at": "L09.3",
+    "hidden": true
+   },
+   {
+    "at": "L10",
+    "pos": [
+     18.0,
+     -7.8,
+     0.3
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -1.0,
+     -6.2
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L10.2",
+    "pos": [
+     -1.0,
+     -6.2
+    ],
+    "head": [
+     -30,
+     0
+    ]
+   },
+   {
+    "at": "L10.3",
+    "hidden": true
+   },
+   {
+    "at": "L19",
+    "pos": [
+     -1.0,
+     -6.2
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     -1.4,
+     -7.6,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smile",
+    "arms": [
+     70,
+     70
+    ]
+   },
+   {
+    "at": "L20.2",
+    "pos": [
+     -1.4,
+     -7.6,
+     0.3
+    ]
+   },
+   {
+    "at": "L20.2",
+    "pos": [
+     18.0,
+     -8.3,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "worried",
+    "arms": [
+     70,
+     70
+    ]
+   },
+   {
+    "at": "L21",
+    "hidden": true
+   },
+   {
+    "at": "L46.2",
+    "pos": [
+     18.0,
+     -8.3,
+     0.3
+    ]
+   },
+   {
+    "at": "L46.2",
+    "pos": [
+     -0.8,
+     6.0
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 90.0,
+    "expr": "smirk"
+   },
+   {
+    "at": "L47",
+    "hidden": true
+   },
+   {
+    "at": "L49",
+    "pos": [
+     -0.8,
+     6.0
+    ]
+   },
+   {
+    "at": "L49",
+    "pos": [
+     -1.4,
+     -6.0
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 90.0,
+    "expr": "smile",
+    "arms": [
+     0,
+     150
+    ]
+   },
+   {
+    "at": "L50",
+    "hidden": true
+   }
+  ],
+  "abern1": [
+   {
+    "at": 0,
+    "hidden": true,
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     17.4,
+     8.2,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smile",
+    "lean": 20,
+    "arms": [
+     50,
+     50
+    ]
+   },
+   {
+    "at": "L04.3",
+    "hidden": true
+   },
+   {
+    "at": "L06",
+    "pos": [
+     17.4,
+     8.2,
+     0.3
+    ]
+   },
+   {
+    "at": "L06",
+    "pos": [
+     17.4,
+     8.1,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "grin",
+    "arms": [
+     75,
+     75
+    ]
+   },
+   {
+    "at": "L06.1",
+    "pos": [
+     17.4,
+     8.1,
+     0.3
+    ],
+    "arms": [
+     0,
+     0
+    ],
+    "expr": "smile"
+   },
+   {
+    "at": "L07",
+    "hidden": true
+   },
+   {
+    "at": "L10",
+    "pos": [
+     17.4,
+     8.1,
+     0.3
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     0.2,
+     -6.2
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L10.2",
+    "pos": [
+     0.2,
+     -6.2
+    ],
+    "head": [
+     -30,
+     0
+    ]
+   },
+   {
+    "at": "L10.3",
+    "hidden": true
+   },
+   {
+    "at": "L19",
+    "pos": [
+     0.2,
+     -6.2
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     -0.3,
+     -7.6,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smile",
+    "arms": [
+     70,
+     70
+    ]
+   },
+   {
+    "at": "L20",
+    "hidden": true
+   },
+   {
+    "at": "L49",
+    "pos": [
+     -0.3,
+     -7.6,
+     0.3
+    ]
+   },
+   {
+    "at": "L49",
+    "pos": [
+     -0.2,
+     -6.0
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 90.0,
+    "expr": "smile",
+    "arms": [
+     0,
+     150
+    ]
+   },
+   {
+    "at": "L50",
+    "hidden": true
+   }
+  ],
+  "abern2": [
+   {
+    "at": 0,
+    "hidden": true,
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     18.8,
+     8.2,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smile",
+    "lean": 20,
+    "arms": [
+     50,
+     50
+    ]
+   },
+   {
+    "at": "L04.3",
+    "hidden": true
+   },
+   {
+    "at": "L06",
+    "pos": [
+     18.8,
+     8.2,
+     0.3
+    ]
+   },
+   {
+    "at": "L06",
+    "pos": [
+     18.8,
+     8.1,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "grin",
+    "arms": [
+     75,
+     75
+    ]
+   },
+   {
+    "at": "L06.1",
+    "pos": [
+     18.8,
+     8.1,
+     0.3
+    ],
+    "arms": [
+     0,
+     0
+    ],
+    "expr": "smile"
+   },
+   {
+    "at": "L07",
+    "hidden": true
+   },
+   {
+    "at": "L19",
+    "pos": [
+     18.8,
+     8.1,
+     0.3
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     0.8,
+     -7.6,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smile",
+    "arms": [
+     70,
+     70
+    ]
+   },
+   {
+    "at": "L20",
+    "hidden": true
+   },
+   {
+    "at": "L46.2",
+    "pos": [
+     0.8,
+     -7.6,
+     0.3
+    ]
+   },
+   {
+    "at": "L46.2",
+    "pos": [
+     0.6,
+     6.0
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": -90.0,
+    "expr": "grin"
+   },
+   {
+    "at": "L47",
+    "hidden": true
+   }
+  ],
+  "brisco": [
+   {
+    "at": 0,
+    "hidden": true,
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L04.3",
+    "pos": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L04.3",
+    "pos": [
+     -18.0,
+     -8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "smile",
+    "lean": 24,
+    "arms": [
+     0,
+     55
+    ]
+   },
+   {
+    "at": "L05",
+    "hidden": true
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -18.0,
+     -8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -18.0,
+     -8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "smile",
+    "lean": 18,
+    "arms": [
+     0,
+     50
+    ]
+   },
+   {
+    "at": "L07.4",
+    "pos": [
+     -18.0,
+     -8.0,
+     0.3
+    ],
+    "lean": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "head": [
+     0,
+     -8
+    ]
+   },
+   {
+    "at": "L08",
+    "hidden": true
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -18.0,
+     -8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     1.4,
+     -6.2
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 90,
+    "expr": "worried"
+   },
+   {
+    "at": "L10.3",
+    "pos": [
+     1.4,
+     -6.2
+    ]
+   },
+   {
+    "at": "L10.3",
+    "pos": [
+     -20.0,
+     -7.8,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "worried",
+    "head": [
+     -20,
+     0
+    ]
+   },
+   {
+    "at": "L11",
+    "hidden": true
+   },
+   {
+    "at": "L15",
+    "pos": [
+     -20.0,
+     -7.8,
+     0.3
+    ]
+   },
+   {
+    "at": "L15",
+    "pos": [
+     2.0,
+     -6.4
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": -45.000000000000014,
+    "expr": "smile",
+    "arms": [
+     75,
+     75
+    ]
+   },
+   {
+    "at": "L16",
+    "hidden": true
+   },
+   {
+    "at": "L19",
+    "pos": [
+     2.0,
+     -6.4
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     1.9,
+     -7.6,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "smile",
+    "arms": [
+     70,
+     70
+    ]
+   },
+   {
+    "at": "L20",
+    "hidden": true
+   },
+   {
+    "at": "L21.2",
+    "pos": [
+     1.9,
+     -7.6,
+     0.3
+    ]
+   },
+   {
+    "at": "L21.2",
+    "pos": [
+     0.6,
+     -7.4,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 0,
+    "expr": "grin"
+   },
+   {
+    "at": "L22",
+    "hidden": true
+   },
+   {
+    "at": "L47",
+    "pos": [
+     0.6,
+     -7.4,
+     0.3
+    ]
+   },
+   {
+    "at": "L47",
+    "pos": [
+     -18.0,
+     -8.0,
+     0.3
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "expr": "angry",
+    "lean": 18,
+    "arms": [
+     0,
+     50
+    ]
+   },
+   {
+    "at": "L48",
+    "hidden": true
+   },
+   {
+    "at": "L50",
+    "pos": [
+     -18.0,
+     -8.0,
+     0.3
+    ]
+   },
+   {
+    "at": "L50",
+    "pos": [
+     2.4,
+     -5.4
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": -90,
+    "expr": "grin"
+   },
+   {
+    "at": "L50>",
+    "pos": [
+     -1.0,
+     -5.4
+    ]
+   },
+   {
+    "at": "L51",
+    "hidden": true
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "look",
+   "id": "gold",
+   "dur": 0
+  },
+  {
+   "at": 0,
+   "name": "count",
+   "n": 42.0
+  },
+  {
+   "at": 0,
+   "name": "plates",
+   "street": 1.0,
+   "ours": 1.0,
+   "gp": 0.0
+  },
+  {
+   "at": 0,
+   "name": "carry",
+   "v": 0.0
+  },
+  {
+   "at": 0,
+   "name": "car",
+   "x": 60.0
+  },
+  {
+   "at": 0,
+   "name": "blind",
+   "v": 1.0
+  },
+  {
+   "at": 0,
+   "name": "clock",
+   "h": 11.0,
+   "m": 0.0
+  },
+  {
+   "at": 0,
+   "name": "snow",
+   "v": 0.0
+  },
+  {
+   "at": 0,
+   "name": "knock",
+   "v": 0.0
+  },
+  {
+   "at": 0,
+   "name": "door_open",
+   "v": 0.0
+  },
+  {
+   "at": "L08",
+   "name": "look",
+   "id": "morning",
+   "dur": 0
+  },
+  {
+   "at": "L08",
+   "name": "plates",
+   "street": 2.0,
+   "ours": 2.0,
+   "gp": 0.0
+  },
+  {
+   "at": "L10",
+   "name": "look",
+   "id": "gold",
+   "dur": 0
+  },
+  {
+   "at": "L10",
+   "name": "plates",
+   "street": 1.0,
+   "ours": 1.0,
+   "gp": 0.0
+  },
+  {
+   "at": "L11",
+   "name": "look",
+   "id": "night",
+   "dur": 0
+  },
+  {
+   "at": "L11.2",
+   "name": "blind",
+   "v": 0.0
+  },
+  {
+   "at": "L11.5",
+   "name": "blind",
+   "v": 1.0
+  },
+  {
+   "at": "L12",
+   "name": "look",
+   "id": "gold",
+   "dur": 0
+  },
+  {
+   "at": "L14",
+   "name": "look",
+   "id": "night",
+   "dur": 0
+  },
+  {
+   "at": "L15",
+   "name": "look",
+   "id": "gold",
+   "dur": 0
+  },
+  {
+   "at": "L16",
+   "name": "look",
+   "id": "snow",
+   "dur": 0
+  },
+  {
+   "at": "L16.4",
+   "name": "snow",
+   "v": 1.0
+  },
+  {
+   "at": "L18",
+   "name": "sit",
+   "who": "grandpa",
+   "on": true,
+   "z": 0.62
+  },
+  {
+   "at": "L19",
+   "name": "sit",
+   "who": "grandpa",
+   "on": false,
+   "z": 0.62
+  },
+  {
+   "at": "L19",
+   "name": "plates",
+   "street": 1.0,
+   "ours": 1.0,
+   "gp": 1.0
+  },
+  {
+   "at": "L20",
+   "name": "plates",
+   "street": 1.0,
+   "ours": 1.0,
+   "gp": 0.0
+  },
+  {
+   "at": "L20",
+   "name": "carry",
+   "v": 2.0
+  },
+  {
+   "at": "L21",
+   "name": "carry",
+   "v": 0.0
+  },
+  {
+   "at": "L22",
+   "name": "look",
+   "id": "snow",
+   "dur": 0
+  },
+  {
+   "at": "L23",
+   "name": "look",
+   "id": "gold",
+   "dur": 0
+  },
+  {
+   "at": "L23",
+   "name": "snow",
+   "v": 0.0
+  },
+  {
+   "at": "L23",
+   "name": "sit",
+   "who": "me",
+   "on": true,
+   "z": 0.62
+  },
+  {
+   "at": "L23",
+   "name": "chips",
+   "v": 1.0
+  },
+  {
+   "at": "L23.2",
+   "name": "chips",
+   "v": 0.0
+  },
+  {
+   "at": "L23.2",
+   "name": "sit",
+   "who": "me",
+   "on": false,
+   "z": 0.62
+  },
+  {
+   "at": "L24",
+   "name": "car",
+   "x": -2.0
+  },
+  {
+   "at": "L24+0.35",
+   "name": "car",
+   "x": -52.0,
+   "dur": 1.7
+  },
+  {
+   "at": "L25",
+   "name": "plates",
+   "street": 1.0,
+   "ours": 0.0,
+   "gp": 0.0
+  },
+  {
+   "at": "L25.1",
+   "name": "meplate",
+   "v": 1.0
+  },
+  {
+   "at": "L26",
+   "name": "meplate",
+   "v": 0.0
+  },
+  {
+   "at": "L26",
+   "name": "count",
+   "n": 41.0
+  },
+  {
+   "at": "L27",
+   "name": "look",
+   "id": "night",
+   "dur": 0
+  },
+  {
+   "at": "L27.3",
+   "name": "blind",
+   "v": 1.0
+  },
+  {
+   "at": "L28.1",
+   "name": "sit",
+   "who": "me",
+   "on": true,
+   "z": 0.62
+  },
+  {
+   "at": "L28.1",
+   "name": "chips",
+   "v": 1.0
+  },
+  {
+   "at": "L29.1",
+   "name": "chips",
+   "v": 0.0
+  },
+  {
+   "at": "L30",
+   "name": "knock",
+   "v": 1.0
+  },
+  {
+   "at": "L30>",
+   "name": "knock",
+   "v": 0.0
+  },
+  {
+   "at": "L32",
+   "name": "clock",
+   "h": 12.0,
+   "m": 0.0
+  },
+  {
+   "at": "L32.1",
+   "name": "knock",
+   "v": 0.6
+  },
+  {
+   "at": "L32>",
+   "name": "knock",
+   "v": 0.0
+  },
+  {
+   "at": "L33",
+   "name": "clock",
+   "h": 1.0,
+   "m": 0.0
+  },
+  {
+   "at": "L33.2",
+   "name": "sit",
+   "who": "me",
+   "on": false,
+   "z": 0.62
+  },
+  {
+   "at": "L34",
+   "name": "blind",
+   "v": 0.0
+  },
+  {
+   "at": "L34",
+   "name": "carry",
+   "v": 1.0
+  },
+  {
+   "at": "L35",
+   "name": "blind",
+   "v": 1.0
+  },
+  {
+   "at": "L35.1",
+   "name": "sit",
+   "who": "me",
+   "on": true,
+   "z": 0.62
+  },
+  {
+   "at": "L36",
+   "name": "sit",
+   "who": "me",
+   "on": false,
+   "z": 0.62
+  },
+  {
+   "at": "L37.1",
+   "name": "door_open",
+   "v": 1.0,
+   "dur": 1.1
+  },
+  {
+   "at": "L43",
+   "name": "look",
+   "id": "snow",
+   "dur": 0
+  },
+  {
+   "at": "L43",
+   "name": "snow",
+   "v": 1.0
+  },
+  {
+   "at": "L44",
+   "name": "carry",
+   "v": 2.0
+  },
+  {
+   "at": "L45",
+   "name": "carry",
+   "v": 0.0
+  },
+  {
+   "at": "L46",
+   "name": "look",
+   "id": "gold",
+   "dur": 0
+  },
+  {
+   "at": "L46",
+   "name": "snow",
+   "v": 0.0
+  },
+  {
+   "at": "L46",
+   "name": "plates",
+   "street": 1.0,
+   "ours": 1.0,
+   "gp": 0.0
+  },
+  {
+   "at": "L48",
+   "name": "look",
+   "id": "night",
+   "dur": 0
+  },
+  {
+   "at": "L48",
+   "name": "sit",
+   "who": "grandpa",
+   "on": true,
+   "z": 0.62
+  },
+  {
+   "at": "L49",
+   "name": "look",
+   "id": "morning",
+   "dur": 0
+  },
+  {
+   "at": "L49",
+   "name": "sit",
+   "who": "grandpa",
+   "on": false,
+   "z": 0.62
+  },
+  {
+   "at": "L51",
+   "name": "look",
+   "id": "night",
+   "dur": 0
+  },
+  {
+   "at": "L52.1",
+   "name": "look",
+   "id": "morning",
+   "dur": 0
+  },
+  {
+   "at": "L52.1",
+   "name": "plates",
+   "street": 2.0,
+   "ours": 2.0,
+   "gp": 0.0
+  },
+  {
+   "at": "L53",
+   "name": "look",
+   "id": "night",
+   "dur": 0
+  },
+  {
+   "at": "L53",
+   "name": "plates",
+   "street": 1.0,
+   "ours": 0.0,
+   "gp": 0.0
+  },
+  {
+   "at": "L54",
+   "name": "knock",
+   "v": 1.0
+  },
+  {
+   "at": "L54>",
+   "name": "knock",
+   "v": 0.0
+  },
+  {
+   "at": "L57",
+   "name": "knock",
+   "v": 0.0
+  },
+  {
+   "at": "L59",
+   "name": "look",
+   "id": "night",
+   "dur": 0
+  },
+  {
+   "at": "L59.1",
+   "name": "sit",
+   "who": "grandpa",
+   "on": true,
+   "z": 0.62
+  },
+  {
+   "at": "L60",
+   "name": "carry",
+   "v": 4.0
+  },
+  {
+   "at": "L61",
+   "name": "carry",
+   "v": 0.0
+  },
+  {
+   "at": "L61.5",
+   "name": "look",
+   "id": "morning",
+   "dur": 0
+  },
+  {
+   "at": "L61.5",
+   "name": "plates",
+   "street": 1.0,
+   "ours": 2.0,
+   "gp": 0.0
+  },
+  {
+   "at": "L61.5",
+   "name": "sit",
+   "who": "grandpa",
+   "on": false,
+   "z": 0.62
+  },
+  {
+   "at": "L62",
+   "name": "look",
+   "id": "gold",
+   "dur": 0
+  },
+  {
+   "at": "L62",
+   "name": "plates",
+   "street": 1.0,
+   "ours": 1.0,
+   "gp": 0.0
+  },
+  {
+   "at": "L62.3",
+   "name": "count",
+   "n": 43.0
+  },
+  {
+   "at": "L63",
+   "name": "meplate",
+   "v": 1.0
+  },
+  {
+   "at": "L63.2+1.0",
+   "name": "meplate",
+   "v": 0.0
+  },
+  {
+   "at": "L63.2+1.0",
+   "name": "plates",
+   "street": 1.0,
+   "ours": 1.0,
+   "gp": 1.0
+  },
+  {
+   "at": "L64",
+   "name": "look",
+   "id": "night",
+   "dur": 0
+  },
+  {
+   "at": "L64",
+   "name": "sit",
+   "who": "me",
+   "on": true,
+   "z": 0.62
+  },
+  {
+   "at": "L65",
+   "name": "carry",
+   "v": 3.0
+  },
+  {
+   "at": "L68",
+   "name": "carry",
+   "v": 0.0
+  },
+  {
+   "at": "L68+0.7",
+   "name": "sit",
+   "who": "grandpa",
+   "on": true,
+   "z": 0.62
+  },
+  {
+   "at": "L69",
+   "name": "plates",
+   "street": 1.0,
+   "ours": 1.0,
+   "gp": 3.0
+  },
+  {
+   "at": "L70",
+   "name": "look",
+   "id": "night",
+   "dur": 0
+  },
+  {
+   "at": "L70",
+   "name": "sit",
+   "who": "grandpa",
+   "on": false,
+   "z": 0.62
+  },
+  {
+   "at": "L70",
+   "name": "sit",
+   "who": "me",
+   "on": false,
+   "z": 0.62
+  },
+  {
+   "at": "L70.2",
+   "name": "carry",
+   "v": 0.0
+  },
+  {
+   "at": "L71",
+   "name": "look",
+   "id": "gold",
+   "dur": 0
+  }
+ ],
+ "fx": [],
+ "music": {
+  "root": 53,
+  "mode": "major",
+  "bpm": 96,
+  "seed": 103,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "piano",
+     "pad"
+    ],
+    "energy": 0.4,
+    "root": 53,
+    "mode": "major"
+   },
+   {
+    "at": "L10",
+    "voices": [
+     "piano",
+     "drone"
+    ],
+    "energy": 0.3,
+    "root": 53,
+    "mode": "major"
+   },
+   {
+    "at": "L23",
+    "voices": [
+     "pulse",
+     "pad"
+    ],
+    "energy": 0.35,
+    "root": 53,
+    "mode": "major"
+   },
+   {
+    "at": "L28",
+    "voices": [
+     "drone",
+     "pulse"
+    ],
+    "energy": 0.45,
+    "root": 41,
+    "mode": "minor"
+   },
+   {
+    "at": "L38",
+    "voices": [
+     "pad",
+     "piano"
+    ],
+    "energy": 0.35,
+    "root": 53,
+    "mode": "major"
+   },
+   {
+    "at": "L59",
+    "voices": [
+     "piano",
+     "pad",
+     "pulse"
+    ],
+    "energy": 0.6,
+    "root": 53,
+    "mode": "major"
+   }
+  ]
+ },
+ "sound": {
+  "floor": "wood",
+  "steps_db": -26,
+  "ambience": [
+   {
+    "kind": "crickets",
+    "from": "L27",
+    "to": "L37",
+    "lufs": -44
+   },
+   {
+    "kind": "room",
+    "from": "L38",
+    "to": "end",
+    "lufs": -46
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L01.4",
+    "kind": "knock",
+    "pattern": [
+     0.0,
+     0.32,
+     0.64
+    ],
+    "tone": "soft",
+    "db": -9
+   },
+   {
+    "at": "L30.1",
+    "kind": "knock",
+    "pattern": [
+     0.0,
+     0.8,
+     1.6
+    ],
+    "tone": "below",
+    "db": -11
+   },
+   {
+    "at": "L32.1",
+    "kind": "knock",
+    "pattern": [
+     0.0,
+     0.7,
+     1.4
+    ],
+    "tone": "below",
+    "db": -14
+   },
+   {
+    "at": "L33.2",
+    "kind": "knock",
+    "pattern": [
+     0.0,
+     0.3
+    ],
+    "tone": "glass_soft",
+    "db": -16
+   },
+   {
+    "at": "L54",
+    "kind": "knock",
+    "pattern": [
+     0.0,
+     0.7,
+     1.4
+    ],
+    "tone": "hand",
+    "db": -14
+   }
+  ],
+  "music_drops": [
+   {
+    "from": "P01",
+    "to": "P01>"
+   }
+  ],
+  "rev": 1
+ },
+ "set_moves": [
+  "S83",
+  "S56"
+ ],
+ "asr_forgive": [
+  "missus ferro",
+  "mister brisco",
+  "in",
+  "light",
+  "the"
+ ]
+}
