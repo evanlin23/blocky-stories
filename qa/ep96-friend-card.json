@@ -1,0 +1,19 @@
+{
+ "stage": "final",
+ "film": 13301744012,
+ "run": 41781679146,
+ "sha": "9750ed54a98135aea2cd5607a74c440622757d42",
+ "verdict": "pass",
+ "date": "2026-11-04",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "cover",
+  "fine detail",
+  "loudness",
+  "craft",
+  "flash"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 19.3 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 30.0 | 14.0– | ok |\n| macro.motion_energy_q | 13.18 | 6.0– | ok |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 13.89 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.0 | –2.5 | ok |\n| macro.longest_still_s | 0.07 | –1.5 | ok |\n| macro.motion_energy_mean | 5.22 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.67 | 0.4– | ok |\n| macro.brightness_mean | 0.636 | 0.35– | ok |\n| macro.brightness_first_3s | 0.732 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.359 | 0.42– | **warn** |\n| macro.contrast_mean | 0.267 | 0.18– | ok |\n| spec.face_big_share | 0.615 | 0.4– | ok |\n| spec.caption_share | 0.976 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.686 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.2 | –0.25 | ok |\n| micro.idle_window_share | 0.0 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 85.0 | –120 | ok |\n| spec.sound_events_per_10s | 4.01 | 2.0–4.0 | **warn** |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.9 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0426 | –0.08 | ok |\n| sound.hf_jump_max | 0.0112 | –0.04 | ok |",
+ "notes": "Final 1080x1920 6 samples, 74.87 s, 2246 frames, run 41781679146 sha 9750ed5; film files unchanged since proof sha 88e3d7a (only package.json cover_s and HANDOFF.md differ), timeline matches. Frames every 4 s plus every frame of 0-3 s at phone size, crops at 100%: fine detail clean (card glyphs, eye rims, bouquet, suit), no noise, no sharpening halo, no stray text; blackdetect and freezedetect none.\nSecond one (same as proof): lit, centred close-up of the cream 6/12 9:14 card in my hand pushing in, my watch at 9:11 below, 'Everyone here gets / a card / that says when / their best / friendship ENDS.'; my nervous face at 2.9 s 'Mine says TONIGHT,'.\nCover 4.0 s (S02, new): my worried face fills the top half, eyes and wavy mouth read at thumbnail size, the 9:14 card on my chest and the 9:14 clock badge, caption 'at nine-FOURTEEN.' in the safe area; matches the title, no spoiler (nothing of Maya or the wedding). cover.jpg is that frame. Strong.\nLoudness -14.1 LUFS integrated, true peak -1.8 dBTP, LRA 1.1 (same as proof). Flash house bar pass (general 2/s at 18.4 s, 3f 4/s at 18.5 s, red 0), same as proof.\ncraft: 0 block, 0 near, 3 warn: spec.cuts_per_10s 13.89 (5.5-8.0), macro.saturation_mean 0.359 (0.42-), spec.sound_events_per_10s 4.01 (2.0-4.0). All match the proof within 0.2 (picture changes 19.3 vs 19.5, motion q 13.18 vs 13.16, held 0.001 vs 0.0); warnings as judged on the proof (montage beats, sunset palette, polish hits).\nVerdict: pass. Nothing new at full size or 6 samples; no fixes."
+}
