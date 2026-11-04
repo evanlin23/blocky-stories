@@ -90,7 +90,7 @@ def storey(kit, nm, cx, w, fy, inn, col, roofc, ground=True, wide_curtain=None):
         kit.box(f"{nm}.frt{j}", (1.7, 0.12, 0.1), (x, fy - inn * 0.02, z1 + 0.05), cream)
         kit.box(f"{nm}.frb{j}", (1.7, 0.12, 0.1), (x, fy - inn * 0.02, z0 - 0.05), cream)
         flowers(kit, f"{nm}.w{j}", x, fy, z0 - 0.12, -inn)
-        cw = 0.34
+        cw = 0.17
         for sgn in (-1, 1):
             w_ = cw
             if wide_curtain is not None and abs(x - wide_curtain) < 0.1 and sgn == -1:
@@ -166,6 +166,10 @@ def build(kit, story, tl):
     kit.light("caf", "POINT", (G.CAFE, 8.0, 3.0), 340.0, "#fff0d0", size=0.6, shadow=False)
     kit.light("caf2", "POINT", (G.TABLE[0], G.TABLE[1] + 1.4, 2.2), 160.0, "#fff4e0", size=0.4, shadow=False)
     kit.light("odl", "POINT", (G.OD, 7.5, 2.4), 200.0, "#fff0d0", size=0.5, shadow=False)
+    kit.light("odwin", "POINT", (G.OD, -3.2, 6.2), 1500.0, "#fff2dc", size=1.0, shadow=False)
+    kit.light("nbl", "POINT", (G.NB_X + 4.0, G.K[1], 2.6), 420.0, "#fff2dc", size=0.6, shadow=False)
+    kit.light("benchkey", "POINT", (G.BENCH[0] - 0.4, -4.6, 2.8), 520.0, "#fff0d8", size=0.6, shadow=False)
+    kit.light("woman", "POINT", (G.BENCH[0] - 0.9, -4.2, 2.6), 300.0, "#fff0d8", size=0.6, shadow=False)
 
     ground = kit.grime("#a8ec9c", 0.92, 1.2, "ground", 0.95)
     lawn = kit.grime("#9be58f", 0.9, 1.4, "lawn", 0.95)
@@ -188,7 +192,7 @@ def build(kit, story, tl):
     for i, cx in enumerate(G.SHOP_X):
         ground_floor = cx not in (G.BAKERY, G.CAFE)
         storey(kit, f"n{i}", cx, 8.0, G.NY, +1, cols[i % 6], roofs[i % 6], ground=ground_floor,
-               wide_curtain=70.0 if cx == 68.0 else None)
+               wide_curtain=None)
         if ground_floor and cx != 60.0 or cx == 60.0:
             if ground_floor:
                 gl = P("#8fd3ff", 0.2, spec=0.8)
@@ -254,8 +258,8 @@ def build(kit, story, tl):
     W["plates"] = []
     W["plates"].append(kit.cyl("cf.plateA", 0.17, 0.02, (tx - 0.2, ty, 0.865), P("#ffffff", 0.3, spec=0.5), n=16))
     pdev = kit.cyl("cf.plateB", 0.17, 0.02, (tx + 0.2, ty, 0.865), P("#ffffff", 0.3, spec=0.5), n=16)
-    kit.box("cf.cake", (0.17, 0.12, 0.1), (0, 0, 0.06), P("#ff9ab0", 0.6), pdev, bevel=0.02)
-    kit.box("cf.icing", (0.17, 0.12, 0.025), (0, 0, 0.12), P("#fff1d6", 0.6), pdev, bevel=0.01)
+    kit.box("cf.cake", (0.17, 0.12, 0.1), (0, 0, 0.06), P("#7a3b24", 0.6), pdev, bevel=0.02)
+    kit.box("cf.icing", (0.17, 0.12, 0.025), (0, 0, 0.12), P("#e8507f", 0.6), pdev, bevel=0.01)
     W["plates"].append(pdev)
     W["plateB"] = pdev
     # fruit stand
@@ -284,7 +288,7 @@ def build(kit, story, tl):
     # the bus shelter
     shx, shy = G.SHELTER
     gl = P("#bfe6ff", 0.15, spec=0.9)
-    kit.box("sh.roof", (3.4, 1.8, 0.12), (shx, shy, 2.5), P("#ff8a70", 0.6))
+    W["shroof"] = kit.box("sh.roof", (3.4, 1.8, 0.12), (shx, shy, 2.5), P("#ff8a70", 0.6))
     kit.box("sh.back", (3.2, 0.06, 2.2), (shx, shy - 0.8, 1.35), gl)
     for sg in (-1, 1):
         kit.box(f"sh.post{sg}", (0.1, 0.1, 2.5), (shx + sg * 1.6, shy + 0.8, 1.25), P("#5a4a7a", 0.5))
@@ -371,7 +375,7 @@ def build(kit, story, tl):
     for k in range(9):
         kit.box(f"radio.rib{k}", (0.015, 0.03, 0.28), (rx_ - 0.4 + k * 0.05, fy_ - 0.04, zc_), P("#c9894a", 0.9, spec=0.02))
     kit.cyl("radio.ring", 0.17, 0.03, (rx_ + 0.27, fy_ - 0.02, zc_), cream, rot=(math.pi / 2, 0, 0), n=24)
-    W["dialm"] = kit.emit("#e0453a", 2.6, "dialred")
+    W["dialm"] = kit.emit("#e0453a", 1.2, "dialred")
     kit.cyl("radio.dial", 0.14, 0.03, (rx_ + 0.27, fy_ - 0.04, zc_), W["dialm"], rot=(math.pi / 2, 0, 0), n=24)
     for k in range(12):
         a = k * 30 * D2R
@@ -519,16 +523,16 @@ def build_tag(kit):
     c("tag.dial.hub", 0.05, (dx, 0, 0.028), ink, 14)
     # the clock: four seven-segment digits and a colon
     W["digits"] = []
-    zc = 0.24
-    dxs = [0.07, 0.22, 0.45, 0.60]
+    zc = 0.22
+    dxs = [0.03, 0.20, 0.47, 0.64]
     for di, X in enumerate(dxs):
         segs = {}
         for k, (sx, sz, hz, vt) in SEGS.items():
-            wdt, hgt = (0.09, 0.03) if hz else (0.03, 0.09)
-            segs[k] = b(f"tag.d{di}{k}", (wdt, hgt, 0.004), (X + sx * 0.055, zc + sz * 0.17 if not hz else zc + sz * 0.17, 0.008), ink)
+            wdt, hgt = (0.10, 0.05) if hz else (0.05, 0.13)
+            segs[k] = b(f"tag.d{di}{k}", (wdt, hgt, 0.004), (X + sx * 0.05, zc + sz * 0.17, 0.008), ink)
         W["digits"].append(segs)
     for sgn in (-1, 1):
-        c(f"tag.colon{sgn}", 0.018, (0.335, zc + sgn * 0.07, 0.008), ink, 10)
+        c(f"tag.colon{sgn}", 0.026, (0.335, zc + sgn * 0.08, 0.008), ink, 10)
     # the ring with the person glyph(s)
     rx, rz = 0.36, -0.2
     c("tag.ring.out", 0.215, (rx, rz, 0.008), teal)
@@ -611,7 +615,7 @@ def animate(kit, story, tl, t, ctx):
     s1 = 1.0 - 0.15 * n2
     W["p1"].scale = (s1, s1, s1)
     # the radio dial breathes slowly
-    W["dialm"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 2.4 + 0.5 * math.sin(t * 2.2)
+    W["dialm"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 1.15 + 0.25 * math.sin(t * 2.2)
     # the bus
     bs = sample("bus", tl, t, {"x": -30.0})
     W["bus"].location = (bs["x"], G.BUS_Y, 0.0)
@@ -654,6 +658,7 @@ def animate(kit, story, tl, t, ctx):
                 if leg:
                     leg.rotation_euler = (math.pi / 2 * 0.95, 0, 0)
     bpy.context.view_layer.update()
+    show(W["shroof"], not vis(tl, t, "shroof_off"))
     # table things
     show(W["stub"], vis(tl, t, "stub"))
     show(W["stub2"], vis(tl, t, "stub"))
@@ -679,6 +684,13 @@ def animate(kit, story, tl, t, ctx):
         p = hand_world("me", 1, (0.0, -0.05, -1.5))
         if p is not None:
             cup.location = (p.x, p.y, p.z + 0.17 + 0.07)
+    cake = _get_prop(kit, "cupcake", lambda: _mk_cupcake(kit))
+    on = vis(tl, t, "cupcake")
+    show(cake, on)
+    if on:
+        p = hand_world("greenw", 1, (0.0, -0.05, -1.5))
+        if p is not None:
+            cake.location = (p.x, p.y, p.z + 0.17 + 0.05)
     phone = _get_prop(kit, "phone", lambda: _mk_phone(kit))
     on = vis(tl, t, "phone")
     show(phone, on)
@@ -706,6 +718,9 @@ def animate(kit, story, tl, t, ctx):
             bag.location = (sx0 + 0.15 * u, sy0, 0.45 * (1 - u) + 0.14 * u)
             bag.rotation_euler = (0, 80 * D2R * u, 0)
             bag.scale = (1, 1, 1 - 0.35 * u)
+    for ob in bag.children:
+        if ob.name.startswith("bag.tear"):
+            ob.hide_render = not (bag_on and t >= T0 + 0.15)
     for i, o in enumerate(oranges):
         if i < 3 and t < T0 + G.orange_release(i) and vis(tl, t, "bag") and t >= 0:
             p = hand_world("me", 1, (0.0, 0.0, -1.7))
@@ -717,6 +732,7 @@ def animate(kit, story, tl, t, ctx):
         elif t >= T0 + G.orange_release(i):
             x, y, z = G.orange_at(i, t - T0 - G.orange_release(i))
             held = [c for c in tl["cues"] if c["name"] == "pick" and c["t"] <= t]
+            held = held if held and held[-1].get("on", True) else []
             if i == 0 and held:
                 p = hand_world("dev", 1, (0.0, -0.05, -1.5))
                 if p is not None:
@@ -742,7 +758,7 @@ def animate(kit, story, tl, t, ctx):
                 lens = keys[-1][3]
     h2 = 12.0 / lens
     w2 = h2 * 9.0 / 16.0
-    s = 0.58 * w2
+    s = 0.62 * w2
     tag = W["tag"]
     tag.scale = (s, s, s)
     tag.location = (-0.9 * w2 + 0.75 * s, 0.88 * h2 - 0.45 * s, -1.0)
@@ -755,6 +771,15 @@ def _mk_cup(kit):
     kit.cyl("cup.body", 0.07, 0.12, (0, 0, 0), P("#ffffff", 0.35, spec=0.4), r, n=14)
     kit.cyl("cup.coffee", 0.058, 0.01, (0, 0, 0.062), P("#6b3a22", 0.4), r, n=14)
     kit.box("cup.handle", (0.05, 0.02, 0.06), (0.09, 0, 0.0), P("#ffffff", 0.35), r)
+    return r
+
+
+def _mk_cupcake(kit):
+    P = kit.plastic
+    r = kit.empty("cupcake", (0, 0, -9))
+    kit.cyl("cupcake.cup", 0.055, 0.07, (0, 0, 0), P("#ffd23a", 0.5, spec=0.2), r, n=12, r2=0.04)
+    kit.sphere("cupcake.icing", 0.06, (0, 0, 0.06), P("#ff9ab0", 0.5, spec=0.3), r, seg=10)
+    kit.sphere("cupcake.cherry", 0.022, (0, 0, 0.12), P("#e8281a", 0.4, spec=0.5), r, seg=8)
     return r
 
 
@@ -771,6 +796,10 @@ def _mk_bag(kit):
     r = kit.empty("bag", (0, 0, -9))
     kit.box("bag.body", (0.34, 0.24, 0.42), (0, 0, 0.0), P("#d9a36a", 0.9, spec=0.02), r, bevel=0.02)
     kit.box("bag.fold", (0.34, 0.03, 0.1), (0, -0.125, 0.19), P("#c68a52", 0.9, spec=0.02), r)
+    dark = P("#4a2a14", 0.9, spec=0.02)
+    kit.box("bag.tear0", (0.2, 0.012, 0.07), (0, -0.126, -0.15), dark, r)
+    kit.box("bag.tear1", (0.12, 0.012, 0.06), (-0.06, -0.126, -0.09), dark, r, rot=(0, 0.5, 0))
+    kit.box("bag.tear2", (0.1, 0.012, 0.05), (0.07, -0.126, -0.1), dark, r, rot=(0, -0.6, 0))
     return r
 
 
