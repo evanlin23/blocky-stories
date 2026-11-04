@@ -1,0 +1,20 @@
+{
+ "stage": "final",
+ "film": 13291349812,
+ "run": 41757568253,
+ "pass": true,
+ "verdict": "pass",
+ "date": "2026-11-04",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "fine detail",
+  "cover",
+  "loudness",
+  "craft",
+  "proof compare",
+  "flash"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 12.9 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 14.2 | 14.0– | ok |\n| macro.motion_energy_q | 6.04 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 6.86 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.095 | –0.25 | ok |\n| spec.shot_p90_s | 1.99 | –2.5 | ok |\n| macro.longest_still_s | 0.9 | –1.5 | ok |\n| macro.motion_energy_mean | 2.38 | 1.5– | ok |\n| spec.camera_move_share | 0.991 | 0.65– | ok |\n| spec.punch_per_10s | 0.73 | 0.4– | ok |\n| macro.brightness_mean | 0.512 | 0.35– | ok |\n| macro.brightness_first_3s | 0.802 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.418 | 0.42– | **warn** |\n| macro.contrast_mean | 0.202 | 0.18– | ok |\n| spec.face_big_share | 0.41 | 0.4– | ok |\n| spec.caption_share | 0.97 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.013 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.537 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.188 | –0.25 | ok |\n| micro.idle_window_share | 0.033 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 65.0 | –120 | ok |\n| spec.sound_events_per_10s | 3.43 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0029 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.7 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0433 | –0.08 | ok |\n| sound.hf_jump_max | 0.0136 | –0.04 | ok |",
+ "notes": "Final film-ep55-caravan-park 13291349812 (render run 41757568253, sha 418dee2, drawn 2026-11-04T03:02Z, 6 samples), 137.1 s, 1080x1920, timeline matches (no length warning). Story files unchanged since the passed proof (run 41723819976, bb0bd41).\nSecond one: same as the proof. A bright, lit, slow push on the moss-covered empty chair between two granite gateposts at the cream caravan, under 'You CAN'T wait / for someone / at the front / GATE.' From frame 2 the bucket-hat neighbour peers from behind the left gatepost. At 1.93 s it cuts to his close-up, 'MOSS grows / on you / while you WAIT.'\nFrames every 4 s plus all of the first 3 s at phone size: faces and captions read, there are no black, frozen or missing frames, and there's no stray text. Fine detail at full size (1, 44.5, 84.5, 92.5, 100.5, 112.5 s): the moss texture on the chair and pads resolves, the dark chair close-up at 100 s and the fog headland at 92 s are clean. There's no render noise, fireflies, denoiser blotching or sharpening halo from the 6-sample drop. The 44 s moss-ground shot is soft by design (depth of field), as in the proof.\nCover 84.5 s (the Kneeler close-up) is lit, crisp and uncanny.\nAudio: -14.1 LUFS, -1.8 dBTP, LRA 1.1, identical to the proof. Flash house bar passes (general 1/s, 3f 3/s at 39.07 s, red 0).\ncraft: 0 block, 0 near, 1 warn: macro.saturation_mean 0.418 (0.42-). The table matches the proof within 0.2 everywhere (changes_q 14.0 to 14.2, motion_energy_q 6.06 to 6.04, saturation 0.419 to 0.418, held_frame_share 0.007 to 0.013). Nothing moved past a block. The saturation miss is the foggy headland greys and loses no one.\nMinor, carried from the proof (no fail): the S01 1-frame neighbour pop-in at t=0, 'there are FLOWERS' over Maggie's mouth at about 37 s, and the hazy S75 bench wide at 108-110 s.\nVerdict: pass. Nothing the proof couldn't show is wrong here. Ok to upload."
+}
