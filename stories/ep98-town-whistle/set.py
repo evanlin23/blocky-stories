@@ -228,13 +228,13 @@ def _limb(parent, a, b, w, mat, name):
     return B(parent, (w, w, ln), mid, mat, name, 0.06, rot=(0, th, ph))
 
 
-def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True):
+def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True, dark=False):
     """A person built wrong, lying face up: a head as wide as the cellar, a thin long neck, shoulders wider than the
     room, one arm far too long that reaches up the wall and hooks its fingers over the crack edge. Local frame: the
     face looks +z, its width runs along x, the mouth/chin end is toward -y (the body goes that way)."""
     R = E(parent, (0, 0, 0), "under")
-    skin = P("#6e4c38", 0.9, 0.02)
-    skin_d = P("#3a2e28", 0.95, 0.0)
+    skin = P("#2a201c" if dark else "#6e4c38", 0.9, 0.02)
+    skin_d = P("#120e0d" if dark else "#3a2e28", 0.95, 0.0)
     coat = P("#171b24", 0.9, 0.02)
     collar = P("#d4ccb4", 0.85, 0.02)
     hair = P("#08080a", 0.95, 0.0)
@@ -744,7 +744,7 @@ def build_cutaway(kit, ctx):
     CY(G, 0.4, 0.9, (0, -0.3, 6.4), P("#f0b84a", 0.28, 0.8), "cwhistle")
     CY(G, 0.16, 25.0, (0, -0.45, -12.0), kit.emit("#b08040", 0.7, name="cpipe"), "cpipe")
     ctx["cut_shaft"] = B(G, (2.6, 0.3, 26.0), (0, -0.55, -40.0), kit.emit("#050403", 1.0, name="cshaft"), "cshaft", 0.0)
-    ctx["cut_under"] = make_under(kit, G, 1.0, pipe_h=0, body=False)
+    ctx["cut_under"] = make_under(kit, G, 1.0, pipe_h=0, body=False, dark=True)
     u = ctx["cut_under"]["root"]
     u.location = (0, -0.8, -27.0)
     u.rotation_euler = (math.pi / 2, 0, 0)           # stood up toward the camera: its face looks -y
