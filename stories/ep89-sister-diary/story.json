@@ -9121,7 +9121,7 @@
    {
     "at": 0,
     "voices": [
-     "musicbox",
+     "bubble",
      "pulse"
     ],
     "energy": 0.35
@@ -9169,7 +9169,7 @@
     "voices": [
      "pad",
      "piano",
-     "musicbox"
+     "bubble"
     ],
     "energy": 0.55,
     "mode": "major"
@@ -9187,7 +9187,7 @@
  "sound": {
   "floor": "wood",
   "steps_db": -26,
-  "rev": 11,
+  "rev": 12,
   "ambience": [
    {
     "kind": "room",
