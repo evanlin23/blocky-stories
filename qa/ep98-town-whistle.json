@@ -1,0 +1,22 @@
+{
+ "stage": "final",
+ "film": 13316298441,
+ "run": 41806194471,
+ "verdict": "pass",
+ "date": "2026-11-04",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "S07 frame by frame",
+  "creature 87-95 s",
+  "cover on TV canvas",
+  "fine detail and noise",
+  "loudness",
+  "craft vs proof",
+  "flash",
+  "package gate",
+  "opening tag"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.1 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 17.7 | 14.0– | ok |\n| macro.motion_energy_q | 8.51 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 7.74 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.06 | –0.25 | ok |\n| spec.shot_p90_s | 1.84 | –2.5 | ok |\n| macro.longest_still_s | 0.7 | –1.5 | ok |\n| macro.motion_energy_mean | 3.31 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.544 | 0.35– | ok |\n| macro.brightness_first_3s | 0.693 | 0.3– | ok |\n| macro.dark_frame_share | 0.031 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.482 | 0.42– | ok |\n| macro.contrast_mean | 0.229 | 0.18– | ok |\n| spec.face_big_share | 0.296 | 0.4– | **warn** |\n| spec.caption_share | 0.975 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.005 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.51 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.214 | –0.25 | ok |\n| micro.idle_window_share | 0.0 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 3.91 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0039 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.7 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.7 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0418 | –0.08 | ok |\n| sound.hf_jump_max | 0.0155 | –0.04 | ok |",
+ "notes": "Final 1080x1920, 127.9 s, 30 fps, 6 samples, drawn at 8f19841 (proof sha c592d4f; only HANDOFF.md changed); timeline matches (100 shots). -14.1 LUFS / -1.7 dBTP, LRA 1.1, 4 kHz windows clean (max 0.042, jump 0.016). Flash house bar passes (general 4/s, 3f 5/s, red 0); upload adds the 'Flashing lights and fast cuts from 0:01 to 2:07' line. Gate OPEN, opening 'if' tagged.\nSecond one, same as proof: sunny high push on the brass whistle on its green pole, steam from its vent, '26' stairs sign top right; caption 'When the town whistle BLOWS,' by 0.8 s, first face at 1.4 s.\nS07 (8.5-10.2 s) at 10 fps: teal townsfolk pass close to the lens and down the cellar stairs, heads cropped by the top edge; the camera never enters a head or body. Fix holds.\nCreature 87-95 s at 4 fps and the cover (93.4 s) on a 1920 TV canvas: the Under's dark block face, two glowing eyes, round lipped mouth on the brass pipe, lit warm; creepy, not silly. Cover strong.\nFine detail at full size: edges clean, no fireflies or grain in the dark basement (89 s, lifted), no sharpening halos; shirt fabric weave reads; slight denoiser smoothing on the S01 bell, invisible at phone size.\nFrames every 4 s: faces read, captions inside the safe area, no stray text or logo, no black or frozen stretch; sign counts 26, 27, 28, back to 13 as scripted.\nCraft matches the proof within a little: changes 15.1/17.7 (proof 15.1/17.9), motion_q 8.51 (8.57), longest still_q 0.8 s (0.53; the 32.4-33.1 s low-up on the whistle under 'of our STREET.', under the 1.0 bar, looked at: fine).\ncraft: 0 block, 0 near, 1 warn: spec.face_big_share 0.296 (0.4-), same as proof, not a fail."
+}

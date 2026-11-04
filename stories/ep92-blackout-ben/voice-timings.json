@@ -1,0 +1,1877 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "If your brother is nice after a blackout, he isn't yours.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.155,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     0.879
+    ],
+    [
+     0.879,
+     1.534
+    ],
+    [
+     1.603,
+     2.483
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Mine just made me a sandwich.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.681
+    ],
+    [
+     0.681,
+     1.397
+    ]
+   ]
+  },
+  "L03": {
+   "text": "In this town, when the power goes out,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.19,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.19,
+     0.621
+    ],
+    [
+     0.647,
+     1.017
+    ],
+    [
+     1.017,
+     1.638
+    ]
+   ]
+  },
+  "L04": {
+   "text": "anyone sitting alone in the dark can swap",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.888
+    ],
+    [
+     0.888,
+     1.224
+    ],
+    [
+     1.224,
+     1.845
+    ]
+   ]
+  },
+  "L05": {
+   "text": "with another version of themselves.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     1.603
+    ]
+   ]
+  },
+  "L06": {
+   "text": "So families sit together with flashlights till it's over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.043
+    ],
+    [
+     1.043,
+     1.621
+    ],
+    [
+     1.621,
+     2.328
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Mr. varga, sat alone once and came out with a ponytail.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.784,
+     1.414
+    ],
+    [
+     1.414,
+     1.75
+    ],
+    [
+     1.75,
+     2.569
+    ]
+   ]
+  },
+  "L08": {
+   "text": "The Dales' grumpy grandpa came out smiling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     1.052
+    ],
+    [
+     1.052,
+     1.983
+    ]
+   ]
+  },
+  "L09": {
+   "text": "They're keeping that one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.155,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.121
+    ]
+   ]
+  },
+  "L10": {
+   "text": "To swap back, you sit alone in the next one and hope.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.732,
+     1.147
+    ],
+    [
+     1.147,
+     1.259
+    ],
+    [
+     1.259,
+     1.561
+    ],
+    [
+     1.561,
+     2.086
+    ]
+   ]
+  },
+  "L11": {
+   "text": "My big brother, ben, and I haven't been nice to each other in three years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.259,
+   "onset": 0.172,
+   "end": 3.069,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.086
+    ],
+    [
+     1.155,
+     1.31
+    ],
+    [
+     1.31,
+     1.81
+    ],
+    [
+     1.81,
+     2.224
+    ],
+    [
+     2.224,
+     3.069
+    ]
+   ]
+  },
+  "L11b": {
+   "text": "He eats my cereal. I hide the remote.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.914
+    ],
+    [
+     0.966,
+     1.215
+    ],
+    [
+     1.215,
+     1.845
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Nobody remembers why. Not even us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.19,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.19,
+     1.034
+    ],
+    [
+     1.121,
+     1.879
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Tuesday, the power went out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.819
+    ],
+    [
+     0.819,
+     1.362
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Mom, Ben and our dog, pickle, sat in the living room with the flashlights.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.155,
+   "onset": 0.19,
+   "end": 2.966,
+   "chunks": [
+    [
+     0.19,
+     0.595
+    ],
+    [
+     0.595,
+     0.759
+    ],
+    [
+     0.759,
+     1.397
+    ],
+    [
+     1.492,
+     1.776
+    ],
+    [
+     1.776,
+     2.112
+    ],
+    [
+     2.112,
+     2.966
+    ]
+   ]
+  },
+  "L14b": {
+   "text": "Ben's flashlight lit up his black watch, on his left wrist.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     1.086
+    ],
+    [
+     1.086,
+     1.569
+    ],
+    [
+     1.603,
+     1.81
+    ],
+    [
+     1.81,
+     2.483
+    ]
+   ]
+  },
+  "L15": {
+   "text": "I stayed in my room with the door shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.819
+    ],
+    [
+     0.819,
+     0.948
+    ],
+    [
+     0.948,
+     1.603
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Ben knocked twice. I didn't answer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.879,
+     1.655
+    ]
+   ]
+  },
+  "L17": {
+   "text": "When the lights came back, that's when he made me the sandwich.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.155,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     1.017
+    ],
+    [
+     1.086,
+     1.371
+    ],
+    [
+     1.371,
+     1.647
+    ],
+    [
+     1.647,
+     2.362
+    ]
+   ]
+  },
+  "L18": {
+   "text": "He has never made me a sandwich.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.793
+    ],
+    [
+     0.793,
+     1.534
+    ]
+   ]
+  },
+  "L19": {
+   "text": "He cut off the crusts.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.155,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     1.138
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Then I saw his watch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.155
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Ben has worn a black one on his left wrist his whole life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     0.957
+    ],
+    [
+     0.957,
+     1.138
+    ],
+    [
+     1.138,
+     1.578
+    ],
+    [
+     1.578,
+     2.379
+    ]
+   ]
+  },
+  "L22": {
+   "text": "This one was red. On his right wrist.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.741
+    ],
+    [
+     0.793,
+     1.0
+    ],
+    [
+     1.0,
+     1.655
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Mom said I was being silly.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.655
+    ],
+    [
+     0.655,
+     1.397
+    ]
+   ]
+  },
+  "L24": {
+   "text": "But that night, he called Pickle noodle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.655,
+     1.207
+    ],
+    [
+     1.207,
+     1.707
+    ]
+   ]
+  },
+  "L25": {
+   "text": "That's the name we almost gave her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.052
+    ],
+    [
+     1.052,
+     1.638
+    ]
+   ]
+  },
+  "L26": {
+   "text": "And she came running.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.155,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     1.086
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Wednesday, he asked me how my day was.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.474,
+     0.81
+    ],
+    [
+     0.81,
+     1.052
+    ],
+    [
+     1.052,
+     1.724
+    ]
+   ]
+  },
+  "L27b": {
+   "text": "Then he gave me the last slice of pizza.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.509
+    ],
+    [
+     0.509,
+     1.061
+    ],
+    [
+     1.061,
+     1.672
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Thursday, he laughed at my joke,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.836
+    ],
+    [
+     0.836,
+     1.448
+    ]
+   ]
+  },
+  "L29": {
+   "text": "and gave me the front seat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     1.207
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Mom acted like this was totally normal.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.19,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.19,
+     0.647
+    ],
+    [
+     0.647,
+     1.077
+    ],
+    [
+     1.077,
+     1.931
+    ]
+   ]
+  },
+  "L30b": {
+   "text": "Thursday night, a flashlight beam sat under my door for an hour.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.793,
+     1.526
+    ],
+    [
+     1.526,
+     1.801
+    ],
+    [
+     1.801,
+     2.103
+    ],
+    [
+     2.103,
+     2.776
+    ]
+   ]
+  },
+  "L30c": {
+   "text": "When I opened it, the hall was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.655
+    ],
+    [
+     0.681,
+     0.94
+    ],
+    [
+     0.94,
+     1.638
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Friday, at two a.m., I woke up,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.423,
+     0.879
+    ],
+    [
+     0.905,
+     1.552
+    ]
+   ]
+  },
+  "L32": {
+   "text": "and Ben was standing in my doorway,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.802
+    ],
+    [
+     0.802,
+     1.466
+    ]
+   ]
+  },
+  "L33": {
+   "text": "shining a flashlight right in my face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.19,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.19,
+     0.81
+    ],
+    [
+     0.81,
+     1.026
+    ],
+    [
+     1.026,
+     1.655
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Not moving.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.069,
+   "onset": 0.172,
+   "end": 0.879,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ]
+   ]
+  },
+  "L35": {
+   "text": "He said he was making sure I was still here.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.534
+    ],
+    [
+     0.534,
+     0.94
+    ],
+    [
+     0.94,
+     1.086
+    ],
+    [
+     1.086,
+     1.741
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Then he asked me what our dog's name was.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.595
+    ],
+    [
+     0.595,
+     1.052
+    ],
+    [
+     1.052,
+     1.741
+    ]
+   ]
+  },
+  "L37": {
+   "text": "I said, pickle. In his house, she's noodle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.414,
+     0.724
+    ],
+    [
+     0.776,
+     1.155
+    ],
+    [
+     1.19,
+     1.862
+    ]
+   ]
+  },
+  "L38": {
+   "text": "He switched off the flashlight and went back to bed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     1.069
+    ],
+    [
+     1.069,
+     1.448
+    ],
+    [
+     1.448,
+     2.0
+    ]
+   ]
+  },
+  "L38b": {
+   "text": "I lay awake till the sun came up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.017
+    ],
+    [
+     1.017,
+     1.569
+    ]
+   ]
+  },
+  "L39": {
+   "text": "That's when I really looked at the photo on the mantle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.888
+    ],
+    [
+     0.888,
+     1.301
+    ],
+    [
+     1.301,
+     2.017
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Ben and me in a canoe, laughing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.879
+    ],
+    [
+     0.931,
+     1.534
+    ]
+   ]
+  },
+  "L40b": {
+   "text": "The canoe was red. Same red as his watch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.81
+    ],
+    [
+     0.888,
+     1.267
+    ],
+    [
+     1.267,
+     1.983
+    ]
+   ]
+  },
+  "L41": {
+   "text": "I've never been in a canoe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.379
+    ]
+   ]
+  },
+  "L42": {
+   "text": "On Tuesday, I was the one alone in the dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.793,
+     0.974
+    ],
+    [
+     0.974,
+     1.172
+    ],
+    [
+     1.172,
+     1.474
+    ],
+    [
+     1.474,
+     2.034
+    ]
+   ]
+  },
+  "L43": {
+   "text": "With the door shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.155,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     1.017
+    ]
+   ]
+  },
+  "L44": {
+   "text": "I'm the one who swapped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.086
+    ]
+   ]
+  },
+  "L45": {
+   "text": "This is the house where my brother and I never stopped being friends.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.768
+    ],
+    [
+     0.768,
+     1.31
+    ],
+    [
+     1.31,
+     1.483
+    ],
+    [
+     1.483,
+     1.897
+    ],
+    [
+     1.897,
+     2.724
+    ]
+   ]
+  },
+  "L46": {
+   "text": "And this Ben has been checking on me all week,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.112
+    ],
+    [
+     1.112,
+     1.293
+    ],
+    [
+     1.293,
+     1.879
+    ]
+   ]
+  },
+  "L47": {
+   "text": "because his brother is at my house. With my Ben.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.155,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     0.862
+    ],
+    [
+     0.862,
+     1.31
+    ],
+    [
+     1.379,
+     2.172
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Saturday, he told me he left his brother alone on Tuesday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.914
+    ],
+    [
+     0.914,
+     1.276
+    ],
+    [
+     1.276,
+     1.81
+    ],
+    [
+     1.81,
+     2.621
+    ]
+   ]
+  },
+  "L49": {
+   "text": "One minute, to find batteries.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     1.466
+    ]
+   ]
+  },
+  "L50": {
+   "text": "I could stay here.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     1.052
+    ]
+   ]
+  },
+  "L51": {
+   "text": "With a brother who cuts off the crusts.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     0.957
+    ],
+    [
+     0.957,
+     1.603
+    ]
+   ]
+  },
+  "L52": {
+   "text": "That night, a storm came in,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.759
+    ],
+    [
+     0.759,
+     1.31
+    ]
+   ]
+  },
+  "L53": {
+   "text": "and the power went out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.121
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Ben walked me to my room with his flashlight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     0.992
+    ],
+    [
+     0.992,
+     1.828
+    ]
+   ]
+  },
+  "L55": {
+   "text": "He said, tell him I'm sorry I left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.483,
+     0.681
+    ],
+    [
+     0.681,
+     1.026
+    ],
+    [
+     1.026,
+     1.621
+    ]
+   ]
+  },
+  "L56": {
+   "text": "Then he shut the door, and I sat alone in the dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.845
+    ],
+    [
+     0.897,
+     1.259
+    ],
+    [
+     1.259,
+     1.509
+    ],
+    [
+     1.509,
+     2.121
+    ]
+   ]
+  },
+  "L57": {
+   "text": "The longest minute of my life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.431
+    ]
+   ]
+  },
+  "L58": {
+   "text": "When the lights came back,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.155,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     1.138
+    ]
+   ]
+  },
+  "L59": {
+   "text": "my brother was in my doorway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.759
+    ],
+    [
+     0.759,
+     1.448
+    ]
+   ]
+  },
+  "L60": {
+   "text": "Black watch. Left wrist.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     1.293
+    ]
+   ]
+  },
+  "L61": {
+   "text": "My ben.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.966,
+   "onset": 0.172,
+   "end": 0.741,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ]
+   ]
+  },
+  "L62": {
+   "text": "He looked at me for a long time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.586
+    ],
+    [
+     0.586,
+     0.724
+    ],
+    [
+     0.724,
+     1.517
+    ]
+   ]
+  },
+  "L63": {
+   "text": "Then he said that all week I'd been nice to him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.931
+    ],
+    [
+     0.931,
+     1.379
+    ],
+    [
+     1.379,
+     1.914
+    ]
+   ]
+  },
+  "L64": {
+   "text": "He said he kind of liked it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.672
+    ],
+    [
+     0.672,
+     1.276
+    ]
+   ]
+  },
+  "L65": {
+   "text": "So I made him a sandwich.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.509
+    ],
+    [
+     0.509,
+     1.241
+    ]
+   ]
+  },
+  "L66": {
+   "text": "I cut off the crusts.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.121
+    ]
+   ]
+  },
+  "L67": {
+   "text": "Now he's sure I'm not his.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.293
+    ]
+   ]
+  }
+ }
+}
