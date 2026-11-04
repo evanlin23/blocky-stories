@@ -5,3 +5,4 @@
 - The calm opening (#209) was cancelled: the polish pack's hook punch-in and swoosh stay.
 - 2026-11-04: two container restarts during the build; resumed from checkpoints. Preview built (77.5 s): preflight 0 blocks; measure 0 blocks (changes/10 s 18.3 and 30.9, motion energy 10.4, longest still 0.27 s); warns: cuts 9.68/10 s, sound 4.13/10 s. Flash on preview PASS. The full-rate flash on S22-S27 and S46 was not run locally; the proof checks it.
 - Review round 1 (critic + standards, opus) started.
+- Round 1: critic revise (scare 4, night read as day; avg ~7.2), standards revise (ending too close to mirror-maze, banned cadence, title opening). Writer rewrote the ending (she stays; at dawn the maze shows her face), retitled "Lights Out Means You STAY All Night 🌽" (98373b17). One fix builder is applying every must-fix. Round 2 is the last.
