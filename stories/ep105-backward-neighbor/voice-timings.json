@@ -1,0 +1,1705 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "My neighbor Vern lives backward. He said goodbye the day we met.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.345
+    ],
+    [
+     1.414,
+     1.948
+    ],
+    [
+     1.948,
+     2.172
+    ],
+    [
+     2.172,
+     2.741
+    ]
+   ]
+  },
+  "L02": {
+   "text": "He hugged me on my new lawn, in front of the movers, and cried.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.155,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.655
+    ],
+    [
+     0.655,
+     1.138
+    ],
+    [
+     1.207,
+     1.492
+    ],
+    [
+     1.492,
+     1.828
+    ],
+    [
+     1.862,
+     2.534
+    ]
+   ]
+  },
+  "L03": {
+   "text": "He said, thank you for thirty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.5,
+     0.793
+    ],
+    [
+     0.793,
+     1.638
+    ]
+   ]
+  },
+  "L04": {
+   "text": "I'd known him for a minute. I didn't even know his last name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.052
+    ],
+    [
+     1.121,
+     1.337
+    ],
+    [
+     1.337,
+     1.629
+    ],
+    [
+     1.629,
+     2.534
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Vern's days run in reverse.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.19,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.19,
+     0.707
+    ],
+    [
+     0.707,
+     1.534
+    ]
+   ]
+  },
+  "L06": {
+   "text": "His tomorrow is my yesterday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     1.586
+    ]
+   ]
+  },
+  "L07": {
+   "text": "So he remembers everything that hasn't happened yet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.138
+    ],
+    [
+     1.138,
+     1.431
+    ],
+    [
+     1.431,
+     2.138
+    ]
+   ]
+  },
+  "L08": {
+   "text": "His mailbox flag goes up before the mail comes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.155,
+     0.914
+    ],
+    [
+     0.914,
+     1.224
+    ],
+    [
+     1.224,
+     1.466
+    ],
+    [
+     1.466,
+     2.224
+    ]
+   ]
+  },
+  "L09": {
+   "text": "He waves before I open the door. Every single time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.026
+    ],
+    [
+     1.026,
+     1.414
+    ],
+    [
+     1.509,
+     2.534
+    ]
+   ]
+  },
+  "L10": {
+   "text": "His porch calendar flips backward every morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.155,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.155,
+     0.854
+    ],
+    [
+     0.854,
+     1.397
+    ],
+    [
+     1.397,
+     2.138
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Ten thousand, nine hundred and fifty days.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.112
+    ],
+    [
+     1.112,
+     1.931
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Counting down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ]
+   ]
+  },
+  "L13": {
+   "text": "That first night, I watched him carry his boxes out to a moving truck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.103,
+   "onset": 0.172,
+   "end": 2.897,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.879,
+     1.199
+    ],
+    [
+     1.199,
+     1.492
+    ],
+    [
+     1.492,
+     2.052
+    ],
+    [
+     2.052,
+     2.172
+    ],
+    [
+     2.172,
+     2.897
+    ]
+   ]
+  },
+  "L14": {
+   "text": "The next morning, every box was back inside. Unpacked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.155,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.612,
+     1.026
+    ],
+    [
+     1.026,
+     1.793
+    ],
+    [
+     1.888,
+     2.603
+    ]
+   ]
+  },
+  "L15": {
+   "text": "The truck was gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.155
+    ]
+   ]
+  },
+  "L16": {
+   "text": "He thanked me for fixing his fence. He made me lemonade for it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.155,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.819
+    ],
+    [
+     0.819,
+     1.31
+    ],
+    [
+     1.379,
+     1.655
+    ],
+    [
+     1.655,
+     2.534
+    ]
+   ]
+  },
+  "L17": {
+   "text": "His fence was fine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.155,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.155
+    ]
+   ]
+  },
+  "L18": {
+   "text": "That Friday a storm knocked it flat. I fixed it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.81
+    ],
+    [
+     0.81,
+     1.379
+    ],
+    [
+     1.431,
+     2.121
+    ]
+   ]
+  },
+  "L19": {
+   "text": "He asked me how Nora was. I didn't know a Nora. I didn't know anybody here.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.276,
+   "onset": 0.172,
+   "end": 3.069,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.19
+    ],
+    [
+     1.259,
+     1.594
+    ],
+    [
+     1.594,
+     1.914
+    ],
+    [
+     1.948,
+     2.276
+    ],
+    [
+     2.276,
+     3.069
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Two years later, I married her. My wife, Nora.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.19
+    ],
+    [
+     1.276,
+     2.121
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Vern cried the whole time. He knew every word of my vows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.19,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     1.172
+    ],
+    [
+     1.241,
+     1.457
+    ],
+    [
+     1.457,
+     1.837
+    ],
+    [
+     1.837,
+     2.586
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Every year, Vern got a little younger. I got a little older.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     0.905
+    ],
+    [
+     0.905,
+     1.483
+    ],
+    [
+     1.569,
+     1.837
+    ],
+    [
+     1.837,
+     2.552
+    ]
+   ]
+  },
+  "L23": {
+   "text": "His hair went from white to gray to brown.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.897
+    ],
+    [
+     0.897,
+     1.155
+    ],
+    [
+     1.155,
+     1.793
+    ]
+   ]
+  },
+  "L24": {
+   "text": "His cane turned up in the garage, like he didn't need it yet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.155,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.854
+    ],
+    [
+     0.854,
+     1.397
+    ],
+    [
+     1.466,
+     1.793
+    ],
+    [
+     1.793,
+     2.448
+    ]
+   ]
+  },
+  "L25": {
+   "text": "He never remembered anything we did yesterday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.87
+    ],
+    [
+     0.87,
+     1.483
+    ],
+    [
+     1.483,
+     2.155
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Only tomorrow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L27": {
+   "text": "And every year, he was a little happier around me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.759,
+     0.957
+    ],
+    [
+     0.957,
+     1.397
+    ],
+    [
+     1.397,
+     2.052
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Like the best part was still ahead of him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.741
+    ],
+    [
+     0.741,
+     1.0
+    ],
+    [
+     1.0,
+     1.655
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Because it was.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Our days together were running out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.81
+    ],
+    [
+     0.81,
+     1.569
+    ]
+   ]
+  },
+  "L31": {
+   "text": "The calendar kept counting down. Faster than I wanted.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.155,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.31
+    ],
+    [
+     1.388,
+     1.715
+    ],
+    [
+     1.715,
+     2.379
+    ]
+   ]
+  },
+  "L32": {
+   "text": "One night on his porch, I asked him what happens at zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.948
+    ],
+    [
+     1.017,
+     1.388
+    ],
+    [
+     1.388,
+     1.759
+    ],
+    [
+     1.759,
+     2.431
+    ]
+   ]
+  },
+  "L33": {
+   "text": "He wouldn't say. He just rocked in his chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.707,
+     1.147
+    ],
+    [
+     1.147,
+     1.828
+    ]
+   ]
+  },
+  "L34": {
+   "text": "He said, you'll be fine. You'll be the one who knows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.439,
+     1.0
+    ],
+    [
+     1.069,
+     1.267
+    ],
+    [
+     1.267,
+     1.439
+    ],
+    [
+     1.439,
+     2.103
+    ]
+   ]
+  },
+  "L35": {
+   "text": "His walls had always been full of pictures of us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.914
+    ],
+    [
+     0.914,
+     1.199
+    ],
+    [
+     1.199,
+     1.621
+    ],
+    [
+     1.621,
+     2.138
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Every one came down the day after it happened.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.87
+    ],
+    [
+     0.87,
+     1.353
+    ],
+    [
+     1.353,
+     1.983
+    ]
+   ]
+  },
+  "L37": {
+   "text": "The fence went first. Then the wedding.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.879
+    ],
+    [
+     0.948,
+     1.707
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Last month, there was only one left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     0.732
+    ],
+    [
+     0.732,
+     1.603
+    ]
+   ]
+  },
+  "L39": {
+   "text": "A young guy hugging an old man on this lawn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     0.897
+    ],
+    [
+     0.897,
+     1.25
+    ],
+    [
+     1.25,
+     1.948
+    ]
+   ]
+  },
+  "L40": {
+   "text": "The old man was me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.224
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Last week he waved at me like a stranger. Polite, the way you wave at a new neighbor.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.672,
+   "onset": 0.172,
+   "end": 3.466,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.819
+    ],
+    [
+     0.819,
+     0.983
+    ],
+    [
+     0.983,
+     1.672
+    ],
+    [
+     1.767,
+     2.121
+    ],
+    [
+     2.172,
+     2.397
+    ],
+    [
+     2.397,
+     2.699
+    ],
+    [
+     2.699,
+     2.793
+    ],
+    [
+     2.793,
+     3.466
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Like he was trying to remember my name. And COULDN'T.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.638
+    ],
+    [
+     0.638,
+     0.931
+    ],
+    [
+     0.931,
+     1.414
+    ],
+    [
+     1.483,
+     2.138
+    ]
+   ]
+  },
+  "L43": {
+   "text": "The calendar said one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.259
+    ]
+   ]
+  },
+  "L44": {
+   "text": "This morning, a moving truck pulled in next door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     1.086
+    ],
+    [
+     1.086,
+     1.345
+    ],
+    [
+     1.345,
+     2.052
+    ]
+   ]
+  },
+  "L45": {
+   "text": "A young guy, about my age when we met, jumped down with a box.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.172,
+   "end": 2.707,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.69,
+     1.147
+    ],
+    [
+     1.147,
+     1.569
+    ],
+    [
+     1.647,
+     2.043
+    ],
+    [
+     2.043,
+     2.707
+    ]
+   ]
+  },
+  "L46": {
+   "text": "He had Vern's ears. Vern's laugh. He didn't need his glasses yet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.155,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.879
+    ],
+    [
+     0.94,
+     1.483
+    ],
+    [
+     1.509,
+     1.837
+    ],
+    [
+     1.837,
+     2.759
+    ]
+   ]
+  },
+  "L47": {
+   "text": "He walked over, stuck out his hand,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.69,
+     0.94
+    ],
+    [
+     0.94,
+     1.552
+    ]
+   ]
+  },
+  "L48": {
+   "text": "and said, hi, I'm Vern. I just moved in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.414,
+     1.0
+    ],
+    [
+     1.069,
+     1.276
+    ],
+    [
+     1.276,
+     1.948
+    ]
+   ]
+  },
+  "L49": {
+   "text": "The same Vern. Today is his first day on our street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.793,
+     1.19
+    ],
+    [
+     1.19,
+     1.561
+    ],
+    [
+     1.561,
+     2.241
+    ]
+   ]
+  },
+  "L50": {
+   "text": "He doesn't know me yet. He doesn't know my name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.603
+    ],
+    [
+     0.603,
+     0.845
+    ],
+    [
+     0.897,
+     1.293
+    ],
+    [
+     1.293,
+     1.931
+    ]
+   ]
+  },
+  "L51": {
+   "text": "He has thirty years of me still ahead of him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.026
+    ],
+    [
+     1.026,
+     1.388
+    ],
+    [
+     1.388,
+     1.862
+    ]
+   ]
+  },
+  "L52": {
+   "text": "All the ones I already had.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.569,
+     1.414
+    ]
+   ]
+  },
+  "L53": {
+   "text": "And I know every one of them, from the fence to the rocking chairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.155,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     0.854
+    ],
+    [
+     0.854,
+     1.155
+    ],
+    [
+     1.224,
+     1.621
+    ],
+    [
+     1.621,
+     1.741
+    ],
+    [
+     1.741,
+     2.621
+    ]
+   ]
+  },
+  "L54": {
+   "text": "I tried to just shake his hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.768
+    ],
+    [
+     0.768,
+     1.397
+    ]
+   ]
+  },
+  "L55": {
+   "text": "I COULDN'T.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.931,
+   "onset": 0.172,
+   "end": 0.724,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ]
+   ]
+  },
+  "L56": {
+   "text": "I hugged him on his new lawn, and cried.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.69
+    ],
+    [
+     0.69,
+     1.069
+    ],
+    [
+     1.094,
+     1.741
+    ]
+   ]
+  },
+  "L57": {
+   "text": "I said, thank you for thirty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.517,
+     0.776
+    ],
+    [
+     0.776,
+     1.621
+    ]
+   ]
+  },
+  "L58": {
+   "text": "Nora took a picture.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.19,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.19,
+     0.509
+    ],
+    [
+     0.509,
+     1.103
+    ]
+   ]
+  },
+  "L59": {
+   "text": "He looked at me like I was crazy.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.534
+    ],
+    [
+     0.534,
+     0.732
+    ],
+    [
+     0.732,
+     1.483
+    ]
+   ]
+  },
+  "L60": {
+   "text": "Then he laughed Vern's laugh, and said he'd look forward to them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.19
+    ],
+    [
+     1.241,
+     1.457
+    ],
+    [
+     1.457,
+     1.914
+    ],
+    [
+     1.914,
+     2.431
+    ]
+   ]
+  },
+  "L61": {
+   "text": "Tomorrow his house will be empty. Today was our last day together. I'll still be here, with Nora.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 4.103,
+   "onset": 0.172,
+   "end": 3.879,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.75
+    ],
+    [
+     0.75,
+     1.328
+    ],
+    [
+     1.422,
+     1.733
+    ],
+    [
+     1.733,
+     2.069
+    ],
+    [
+     2.069,
+     2.586
+    ],
+    [
+     2.655,
+     2.966
+    ],
+    [
+     2.966,
+     3.224
+    ],
+    [
+     3.25,
+     3.879
+    ]
+   ]
+  },
+  "L62": {
+   "text": "So that's why he cried.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.276
+    ]
+   ]
+  }
+ }
+}
