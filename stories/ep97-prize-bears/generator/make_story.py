@@ -247,7 +247,7 @@ hold("hockey_b", "L05+0.6", arms=[1.5, 0], head=[-30, 4])
 # ---- S05b L05.2: the chrome rim, two orange strokes (the lore tally), a puck sliding past
 obj("puck", "L05.2-0.2", pos=(-1.4, 5.0, 0.76))
 obj("puck", "L05.2", pos=(-1.1, 3.0, 0.76), dur=1.0)
-S("S05b", "L05.2", C((-0.3, 2.55, 1.0), (-1.03, 3.45, 0.87), 50, (-0.55, 3.15, 0.99), (-1.03, 3.45, 0.87), 50), hand=0.006)
+S("S05b", "L05.2", C((-0.3, 2.55, 1.0), (-1.03, 3.45, 0.87), 50, (-0.55, 3.15, 0.99), (-1.03, 3.45, 0.87), 50), hand=0.006, cfill=2.0)
 scene("L05.2")
 # ---- S05c L05.3: neither knows; they leave
 obj("puck", "L05.3", hide=True)
@@ -258,7 +258,7 @@ walk("hockey_a", "L06-0.05", (0.6, -2.0))
 walk("hockey_b", "L06-0.05", (-0.6, -2.2))
 # ---- S06a L06.0: the jackpot lady wins
 obj("ladytix", "L06", pos=(0, 0, 0))
-S("S06a", "L06", C((2.6, 6.4, 1.95), (1.7, 4.2, 1.6), 32, (2.2, 6.0, 1.9), (1.7, 4.2, 1.6), 32), hand=0.01)
+S("S06a", "L06", C((3.7, 6.3, 1.95), (1.7, 4.0, 1.6), 32, (3.3, 5.9, 1.9), (1.7, 4.0, 1.6), 32), hand=0.01)
 scene("L06", jackpot_lady=dict(pos=(1.7, 3.3), yaw=180, expr="smile", arms=[2.4, 2.4]))
 hold("jackpot_lady", "L06+0.3", arms=[2.7, 2.2], expr="laugh")
 hold("jackpot_lady", "L06+0.6", arms=[2.2, 2.7])
@@ -325,7 +325,7 @@ scene("L12.3", me=dict(pos=(-0.3, 8.0), yaw=180, expr="neutral", head=[-30, 0]),
 hold("me", "L12.3+0.3", head=[-45, 0], yaw=140)
 # ---- S13 L13: Tess laughs a little too fast
 S("S13", "L13", C((0.0, 10.2, 1.75), (1.0, 8.0, 1.65), 34, (0.3, 9.9, 1.75), (1.0, 8.0, 1.65), 34), hand=0.006)
-scene("L13", tess=dict(pos=(1.0, 8.0), yaw=180, expr="laugh", head=[0, 0]))
+scene("L13", tess=dict(pos=(1.0, 8.0), yaw=180, expr="sheepish", head=[0, 0]))
 hold("tess", "L13+0.5", expr="sheepish", head=[-35, 4])
 # ---- S14a L14.0: Tess on a stool, holding my jacket
 obj("jacket", "L14", pos=(0, 0, 0))
@@ -417,14 +417,15 @@ walk("prize", "L21.1+0.5", (4.1, 10.3))
 walk("prize", "L22", (4.1, 12.5))
 # ---- S22a L22.0: the door ajar, a slice of warm bulb light
 cdoor("L22", 24.0, 85.0, 0.8)
-S("S22a", "L22", C((2.7, 8.2, 0.9), (3.9, 11.0, 1.2), 30, (3.0, 8.9, 1.0), (4.0, 11.0, 1.3), 30), hand=0.006)
-scene("L22", me=dict(pos=(3.0, 8.2), yaw=180, expr="worried"))
+S("S22a", "L22", C((1.2, 6.4, 1.6), (3.7, 10.8, 1.3), 30, (1.9, 6.9, 1.6), (3.8, 10.8, 1.3), 30), hand=0.006)
+scene("L22", me=dict(pos=(3.0, 9.7), yaw=180, expr="worried", lean=4))
+hold("me", "L22+0.4", lean=14)
 # ---- S22b L22.1: I lean to look
 S("S22b", "L22:1+0.3", C((4.4, 7.9, 1.85), (3.5, 9.9, 1.55), 36, (4.2, 8.4, 1.8), (3.5, 9.9, 1.55), 36), hand=0.008)
 scene("L22:1+0.3", me=dict(pos=(3.4, 9.6), yaw=180, expr="worried", head=[100, 0], lean=0))
 hold("me", "L22:1+0.6", head=[75, 0], lean=12)
 # ---- the drop: the dark slice of the door
-S("S22c", "P01", C((4.1, 9.6, 1.3), (4.05, 13.0, 1.3), 40, (4.1, 10.3, 1.3), (4.05, 13.0, 1.3), 40), cfill=0.05, hand=0.004)
+S("S22c", "P01", C((1.6, 7.4, 1.6), (3.6, 10.2, 1.35), 30, (1.9, 7.8, 1.6), (3.6, 10.2, 1.35), 30), cfill=0.5, hand=0.004)
 scene("P01", me=dict(pos=(3.4, 9.6), yaw=180, expr="worried", head=[75, 0], lean=12))
 # ---- S23a L23.0: through the door into the closet
 cdoor("L23", 88.0, 24.0, 0.5)
@@ -443,23 +444,23 @@ tickets("L25", 40, True)
 S("S25", "L25", C((4.1, 11.5, 2.3), (4.1, 15.0, 1.7), 24, (4.1, 11.9, 2.1), (4.1, 15.0, 1.7), 24), hand=0.004, cfill=0.15)
 scene("L25")
 # ---- S26a L26.0-1 / S26b L26.2: ears and tags
-S("S26a", "L26", C((3.3, 15.0, 1.15), (3.45, 16.03, 1.05), 36, (4.7, 14.95, 1.15), (4.5, 16.03, 1.05), 36), hand=0.004, cfill=0.15)
+S("S26a", "L26", C((3.3, 15.0, 1.15), (3.45, 16.0, 1.1), 36, (4.7, 14.95, 1.15), (4.5, 16.0, 1.1), 36), hand=0.004, cfill=0.9)
 scene("L26")
-S("S26b", "L26.2", C((3.92, 15.3, 1.1), (3.92, 16.03, 1.04), 40, (3.92, 15.5, 1.06), (3.92, 16.03, 1.03), 40), hand=0.003, cfill=0.15)
+S("S26b", "L26.2", C((3.9, 15.3, 1.18), (3.91, 15.96, 1.12), 40, (3.9, 15.5, 1.12), (3.91, 15.96, 1.1), 40), hand=0.003, cfill=1.2)
 scene("L26.2")
 # ---- S27a L27.0: the tag, tight; S27b L27.1: me, scared, in the doorway
-S("S27a", "L27", C((3.92, 15.58, 1.05), (3.92, 16.03, 1.03), 42, (3.92, 15.66, 1.04), (3.92, 16.03, 1.03), 42), hand=0.0025, cfill=0.3)
+S("S27a", "L27", C((3.91, 15.55, 1.1), (3.91, 15.96, 1.1), 42, (3.91, 15.68, 1.1), (3.91, 15.96, 1.1), 42), hand=0.0025, cfill=1.5)
 scene("L27")
 S("S27b", "L27.1", C((4.1, 14.2, 1.6), (4.1, 11.4, 1.58), 32, (4.1, 13.5, 1.6), (4.1, 11.4, 1.58), 32), hand=0.008, cfill=0.4)
 scene("L27.1", me=dict(pos=(4.1, 11.6), yaw=180, expr="scared", head=[0, 0]))
 hold("me", "L27.1+0.3", lean=-6, head=[8, -3])
 # ---- S28a L28.0-1: Tess at the counter behind me (over my shoulder)
-S("S28a", "L28", C((4.1, 12.3, 1.6), (2.9, 8.4, 1.5), 30, (4.0, 11.9, 1.6), (2.9, 8.4, 1.5), 30), cfill=0.3, hand=0.01)
-scene("L28", tess=dict(pos=(2.7, 8.4), yaw=180, expr="soft", head=[20, 0]))
+S("S28a", "L28", C((4.1, 12.3, 1.6), (2.6, 7.7, 1.5), 30, (4.0, 11.9, 1.6), (2.6, 7.7, 1.5), 30), cfill=0.3, hand=0.01)
+scene("L28", tess=dict(pos=(2.5, 7.6), yaw=180, expr="soft", head=[20, 0]))
 # ---- S28b L28.2: close on Tess, caught
-S("S28b", "L28:2", C((2.5, 5.9, 1.6), (2.7, 8.4, 1.5), 34, (2.5, 6.5, 1.6), (2.7, 8.4, 1.5), 34), hand=0.006)
-scene("L28:2", tess=dict(pos=(2.7, 8.4), yaw=180, expr="soft", head=[25, 0]))
-hold("tess", "L28:2+0.3", head=[-5, 3], expr="sheepish")
+S("S28b", "L28:2", C((3.4, 10.2, 1.62), (2.5, 7.6, 1.5), 34, (3.1, 9.9, 1.62), (2.5, 7.6, 1.5), 34), hand=0.006)
+scene("L28:2", tess=dict(pos=(2.5, 7.6), yaw=180, expr="soft", head=[25, 0]))
+hold("tess", "L28:2+0.3", head=[-5, 3], expr="soft")
 # ---- S29: the same spot, sun, rain, leaves
 cue("L29", "look", id="sun", dur=0.4)
 S("S29a", "L29", C((0.2, -15.0, 1.4), (3.0, -6.6, 1.0), 32, (0.8, -13.8, 1.4), (3.0, -6.6, 1.0), 32), hand=0.008)
@@ -514,24 +515,24 @@ obj("bear_prize", "L33", hide=True)
 obj("bear_me", "L33", pos=(0, 0, 0))
 cdoor("L33", 24.0, 88.0, 0.5)
 S("S33a", "L33", C((-0.2, 5.5, 1.6), (-0.2, 7.2, 1.45), 34, (-0.2, 6.0, 1.6), (-0.2, 7.2, 1.45), 34), hand=0.008)
-scene("L33", me=dict(pos=(-0.8, 7.2), yaw=90, expr="grin", arms=[1.4, 1.4]),
+scene("L33", me=dict(pos=(-0.8, 7.2), yaw=90, expr="smile", arms=[1.4, 1.4]),
       tess=dict(pos=(0.4, 7.2), yaw=-90, expr="smile", arms=[0.4, 0.4]))
 S("S33b", "L33.1", C((-0.5, 5.5, 1.65), (0.4, 7.2, 1.62), 40, (-0.1, 5.8, 1.65), (0.4, 7.2, 1.62), 40), hand=0.006)
 obj("bear_me", "L33.1", hide=True)
 obj("bear_tess", "L33.1", pos=(0, 0, 0))
 scene("L33.1", tess=dict(pos=(0.4, 7.2), yaw=-90, expr="soft", arms=[1.0, 1.0]),
-      me=dict(pos=(-0.8, 7.2), yaw=90, expr="grin"))
+      me=dict(pos=(-0.8, 7.2), yaw=90, expr="smile"))
 S("S33c", "L33.2", C((-0.8, 5.5, 1.65), (-0.8, 7.2, 1.62), 40, (-0.8, 5.9, 1.65), (-0.8, 7.2, 1.62), 40), hand=0.006)
-scene("L33.2", me=dict(pos=(-0.8, 7.2), yaw=0, expr="grin"))
+scene("L33.2", me=dict(pos=(-0.8, 7.2), yaw=0, expr="smile"))
 hold("me", "L33.2+0.3", head=[10, 0])
 S("S33d", "L33.3-0.15", C((3.8, 3.2, 1.8), (0.0, 8.0, 1.2), 28, (3.0, 3.8, 1.7), (0.0, 8.0, 1.2), 28), hand=0.01)
-scene("L33.3-0.15", me=dict(pos=(-0.6, 8.0), yaw=180, expr="grin"), tess=dict(pos=(0.6, 8.0), yaw=180, expr="smile"))
+scene("L33.3-0.15", me=dict(pos=(-0.6, 8.0), yaw=180, expr="smile"), tess=dict(pos=(0.6, 8.0), yaw=180, expr="smile"))
 hold("tess", "L33.3+0.1", arms=[0, 1.2])
 S("S33e", "L33.4", C((0.3, 5.9, 1.65), (0.4, 7.6, 1.62), 40, (0.35, 6.3, 1.65), (0.4, 7.6, 1.62), 40), hand=0.006)
 scene("L33.4", tess=dict(pos=(0.4, 7.6), yaw=0, expr="laugh", head=[0, 0]))
 hold("tess", "L33.4+0.3", head=[-10, 2], expr="soft")
 S("S33f", "L33.5", C((-0.6, 5.4, 1.62), (-0.6, 7.4, 1.6), 40, (-0.6, 6.0, 1.62), (-0.6, 7.4, 1.6), 40), hand=0.006)
-scene("L33.5", me=dict(pos=(-0.6, 7.4), yaw=0, expr="grin"))
+scene("L33.5", me=dict(pos=(-0.6, 7.4), yaw=0, expr="smile"))
 hold("me", "L33.5+0.4", head=[-8, 2], expr="soft")
 # ---- S34a L34.0: the glass door, sun, the shimmer on its frame
 tickets("L34", 0)
@@ -546,9 +547,9 @@ S("S34b", "L34.1", C((2.0, 5.3, 1.7), (1.7, 3.2, 1.5), 32, (1.9, 4.9, 1.7), (1.7
 scene("L34.1", me=dict(pos=(1.7, 3.2), yaw=180, expr="soft", head=[-12, 0]))
 hold("me", "L34.1+0.5", head=[10, 3])
 # ---- S35a L35.0: a token slides across to Tess
-obj("token", "L35", pos=(-0.2, 8.4, 1.12))
-obj("token", "L35+0.05", pos=(0.5, 8.4, 1.12), dur=0.7)
-S("S35a", "L35", C((0.0, 7.0, 1.5), (0.1, 8.45, 1.12), 38, (0.2, 7.2, 1.4), (0.4, 8.45, 1.12), 38), hand=0.004)
+obj("token", "L35", pos=(-0.2, 8.72, 1.13))
+obj("token", "L35+0.05", pos=(0.55, 8.72, 1.13), dur=0.7)
+S("S35a", "L35", C((1.0, 9.9, 1.5), (0.1, 8.72, 1.1), 38, (1.1, 9.6, 1.45), (0.5, 8.72, 1.1), 38), hand=0.004)
 scene("L35", tess=dict(pos=(0.8, 8.0), yaw=180, expr="smile", head=[0, 25]))
 S("S35b", "L35.1", C((0.6, 9.9, 1.65), (0.8, 8.0, 1.62), 38, (0.7, 9.4, 1.65), (0.8, 8.0, 1.62), 38), hand=0.006)
 scene("L35.1", tess=dict(pos=(0.8, 8.0), yaw=180, expr="smile", head=[0, 22]))
@@ -594,11 +595,13 @@ scene("L39.2", tess=dict(pos=(69.5, 0.1, -0.5), yaw=180, expr="smile", arms=[1.2
 # ---- S40 L40: now I always call her back
 tickets("L40", 0)
 S("S40", "L40", C((40.2, 0.9, 1.25), (40.0, 3.9, 1.2), 35, (40.1, 1.5, 1.25), (40.0, 3.9, 1.2), 35), hand=0.008)
+obj("phone", "L40", pos=(0, 0, 0))
 scene("L40", me=dict(pos=(40.0, 3.7, -0.2), yaw=0, expr="smile", arms=[0, 2.75], head=[-8, 0]))
-hold("me", "L40+0.5", head=[8, 2], expr="grin")
+hold("me", "L40+0.5", head=[8, 2], expr="smile")
 # ---- S41 L41: we take turns
+obj("phone", "L41", hide=True)
 obj("token", "L41", pos=(1.2, 1.3, 1.12))
-S("S41", "L41", C((1.8, 3.4, 1.55), (1.75, 0.6, 1.25), 30, (1.75, 2.9, 1.5), (1.75, 0.6, 1.25), 30), hand=0.01)
+S("S41", "L41", C((1.75, 3.35, 1.45), (1.75, 0.6, 1.15), 21, (1.75, 3.1, 1.45), (1.75, 0.6, 1.15), 21), hand=0.01)
 scene("L41", tess=dict(pos=(1.2, 0.6, -0.12), yaw=180, expr="laugh", arms=[0, 1.6]),
       me=dict(pos=(2.3, 0.6, -0.12), yaw=180, expr="smile", head=[-25, 0]))
 hold("tess", "L41+0.4", arms=[0, 1.0], expr="smile")
@@ -606,9 +609,9 @@ hold("tess", "L41+0.4", arms=[0, 1.0], expr="smile")
 obj("token", "L42", hide=True)
 tickets("L42", 0)
 cue("L42", "look", id="sun", dur=0.4)
-obj("car", "L42-0.01", pos=(3.2, -15.0, 0.0))
+obj("car", "L42-0.01", pos=(3.2, -11.5, 0.0))
 obj("car", "L42", pos=(3.2, -6.4, 0.0), dur=1.2)
-S("S42a", "L42", C((-1.5, -17.5, 1.4), (3.0, -9.0, 0.9), 30, (-0.8, -16.5, 1.4), (3.2, -8.0, 0.9), 30), hand=0.008)
+S("S42a", "L42", C((0.8, -18.0, 1.5), (3.2, -8.5, 1.0), 24, (1.4, -17.0, 1.5), (3.2, -8.0, 1.0), 24), hand=0.008)
 scene("L42")
 # ---- S42b L42.1: we walk toward the door
 S("S42b", "L42.1+0.2", C((0.4, -9.3, 1.55), (1.4, -4.0, 1.4), 32, (0.6, -8.4, 1.55), (1.2, -3.0, 1.4), 32), hand=0.01)
@@ -626,7 +629,7 @@ scene("L43.1+0.15", me=dict(pos=(-3.1, 7.4), yaw=180, expr="neutral", head=[0, -
 walk("me", "L43.1+0.6", (-5.0, 7.4))
 
 # portrait frames are narrow: pull face shots back and aim at eye level
-EXC = {"S01", "S07a", "S10a", "S10b", "S18", "S23a", "S23b", "S24a", "S24b", "S25", "S26a", "S26b", "S27a", "S27b", "S22c",
+EXC = {"S41", "S42a", "S12b", "S13", "S30a", "S28b", "S01", "S07a", "S10a", "S10b", "S18", "S23a", "S23b", "S24a", "S24b", "S25", "S26a", "S26b", "S27a", "S27b", "S22c",
        "S05b", "S11", "S16b", "S17a", "S17b", "S15b", "S35a", "S37b", "S39b", "S19a"}
 for sh in shots:
     if sh["id"] in EXC:
@@ -685,7 +688,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"style": "closer", "flash_safe": True, "polish": {"twist": "L28", "reveal": ["L25", "L31"],
-                                                                   "sway": ["S27b", "S28a"]},
+                                                                   "sway": ["S27b", "S28a"], "hold": ["S22a", "S22c", "S41", "S42a", "S17a"]},
              "fog": "#dfe9ff", "fog_density": 0.004, "fog_start": 20.0, "sky": "#bfe3ff", "sky_strength": 1.0,
              "exposure": 0.0},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.015, -0.02], "saturation": 1.1, "contrast": 1.04,
@@ -701,7 +704,7 @@ story = {
     "fx": [],
     "music": music,
     "sound": sound,
-    "rev": 1,
+    "rev": 2,
     "asr_forgive": ["thousand"],
     "clip_ok": ["S03b", "S04a", "S30b", "S38a", "S06c", "S34a"],
 }

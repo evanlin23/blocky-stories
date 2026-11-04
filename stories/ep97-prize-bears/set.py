@@ -343,8 +343,8 @@ def bear(kit, name, loc, yaw=0.0, scale=1.0, bow=True, parent=None, black_eyes=T
 
 
 def tag_obj(kit, parent, loc, mat_tag):
-    t = B(parent, (0.09, 0.012, 0.13), loc, P("#ff9a1f", 0.5), "tag", 0.004)
-    p = kit.plane(nm("tagp"), (0.08, 0.115), (loc[0], loc[1] - 0.008, loc[2]), mat_tag, parent, FACE)
+    t = B(parent, (0.12, 0.014, 0.17), loc, P("#ff9a1f", 0.5), "tag", 0.004)
+    p = kit.plane(nm("tagp"), (0.105, 0.15), (loc[0], loc[1] - 0.012, loc[2]), mat_tag, parent, FACE)
     no_shadow(p)
     return t
 
@@ -491,9 +491,9 @@ def build(kit, story, tl):
         kit.cyl(nm("coin"), 0.07, 0.015, (-0.3 + (j % 4) * 0.2, -0.2 + (j // 4) * 0.25, 1.06), P_("#ffd23f", 0.3), cp, n=12)
     B(cp, (0.2, 0.2, 0.2), (0, 0.4, 1.5), P_("#2a5bd7", 0.4), "cpt", 0.02)
     ctx["beacon"] = E(cp, (0, 0.4, 1.78), "beacon")
-    kit.sphere(nm("jp"), 0.12, (0, 0, 0), kit.emit("#ffb347", 3.0, "jackpot"), ctx["beacon"], 10)
+    kit.sphere(nm("jp"), 0.12, (0, 0, 0), kit.emit("#ffb347", 1.5, "jackpot"), ctx["beacon"], 10)
     for sx in (-1, 1):
-        B(ctx["beacon"], (0.5, 0.05, 0.05), (sx * 0.3, 0, 0), kit.emit("#ffd23f", 2.5, "jpbeam"), "beam", 0.01)
+        B(ctx["beacon"], (0.5, 0.05, 0.05), (sx * 0.3, 0, 0), kit.emit("#ffd23f", 1.25, "jpbeam"), "beam", 0.01)
     # ---- ring drop game (a post and a table)
     rg = E(None, (-4.3, 3.2, 0), "ringgame")
     B(rg, (0.9, 1.1, 0.9), (0, 0, 0.45), P_("#ff9a1f", 0.5), "rgb", 0.03)
@@ -531,7 +531,7 @@ def build(kit, story, tl):
     ctx["tagm"] = img_mat(kit, "tag", tag_png(), emit=0.0, rough=0.7)
     ctx["tagm_em"] = ctx["tagm"]
     gb = bear(kit, "giantbear", (0, 10.5, 2.16), 0, 1.1)
-    tag_obj(kit, gb, (-0.19, -0.08, 1.02), ctx["tagm"])
+    tag_obj(kit, gb, (-0.2, -0.15, 1.1), ctx["tagm"])
     ctx["giant"] = gb
     # the counter
     B(None, (4.2, 0.8, 1.05), (0, 9.0, 0.525), white, "counter", 0.03)
@@ -573,16 +573,16 @@ def build(kit, story, tl):
     for z in levels:
         for y in (12.0, 13.1, 14.2, 15.3):
             b1 = bear(kit, f"cb{nb}", (2.05, y, z + 0.06), -90 + 38, 0.95)
-            tag_obj(kit, b1, (-0.19, -0.08, 1.02), ctx["tagm"])
+            tag_obj(kit, b1, (-0.2, -0.15, 1.1), ctx["tagm"])
             b2 = bear(kit, f"cb{nb + 1}", (6.15, y, z + 0.06), 90 - 38, 0.95)
-            tag_obj(kit, b2, (-0.19, -0.08, 1.02), ctx["tagm"])
+            tag_obj(kit, b2, (-0.2, -0.15, 1.1), ctx["tagm"])
             nb += 2
         for x in (2.9, 3.5, 4.1, 4.7, 5.3):
             b3 = bear(kit, f"cb{nb}", (x, 16.1, z + 0.06), 0, 0.95)
-            tag_obj(kit, b3, (-0.19, -0.08, 1.02), ctx["tagm"])
+            tag_obj(kit, b3, (-0.2, -0.15, 1.1), ctx["tagm"])
             nb += 1
     b4 = bear(kit, f"cb{nb}", (4.1, 14.6, 0.0), 0, 0.95)
-    tag_obj(kit, b4, (-0.19, -0.08, 1.02), ctx["tagm"])
+    tag_obj(kit, b4, (-0.2, -0.15, 1.1), ctx["tagm"])
     nb += 1
     ctx["n_bears"] = nb
     # the bare bulb on its cord, swinging
@@ -617,9 +617,6 @@ def build(kit, story, tl):
         B(car, (0.2, 0.05, 0.1), (sx * 0.7, -1.93, 0.72), P_("#ff4f4f", 0.3), "tail", 0.02)
         B(car, (0.2, 0.05, 0.1), (sx * 0.7, 1.93, 0.72), P_("#fff4c0", 0.3), "head", 0.02)
     cream = P_("#f3e2c4", 0.8, 0.15)
-    kit.sphere(nm("foot"), 0.12, (0.18, -1.435, 1.14), cream, car, 8)
-    for k in range(3):
-        kit.sphere(nm("toe"), 0.04, (0.1 + k * 0.08, -1.45, 1.27), P_("#fff3dc", 0.8, 0.1), car, 6)
     ctx["car"] = car
     ctx["objs"]["car"] = car
     # leaves and rain (shown by cues)
@@ -830,6 +827,11 @@ def dress_all(kit, ctx):
     d = E(c.P["arm1"], (0, -0.1, -1.95), "handduck")
     duck_parts(kit, d, 3.4)
     held["handduck"] = d
+    me_ = R["me"]
+    ph = E(me_.upper, (0.95, -0.3, 2.0), "phone")
+    kit.box(nm("ph"), (0.4, 0.12, 0.75), (0, 0, 0), P("#16161c", 0.3), ph, bevel=0.04)
+    kit.box(nm("phs"), (0.32, 0.02, 0.6), (0, -0.07, 0), kit.emit("#7fe9ff", 2.0, "phscreen"), ph, bevel=0.02)
+    held["phone"] = ph
     jk = E(c.upper, (0, -0.6, 0.0), "jacket")
     kit.box(nm("jk"), (1.9, 0.7, 0.9), (0, -0.1, 0.2), P("#6b7a3a", 0.8), jk, bevel=0.1)
     kit.box(nm("jk"), (0.8, 0.5, 0.8), (0.0, -0.3, 0.6), P("#f2f2f2", 0.8), jk, bevel=0.1)
@@ -935,10 +937,10 @@ def animate(kit, story, tl, t, ctx):
         ca = lerp(cd.get("from", 0.0), cd.get("angle", 0.0), ss((t - cd["t"]) / dur))
     ctx["cdoor"].rotation_euler = (0, 0, math.radians(ca))
     # ---- the bulb swings a little
-    ctx["bulbp"].rotation_euler = (0.05 * math.sin(t * 2.1), 0.06 * math.sin(t * 1.7 + 1.0), 0)
-    kit.LIGHTS["bulb"]["obj"].location = (4.1 + 0.05 * math.sin(t * 1.7 + 1.0) * 0.9, 12.8 + 0.05 * math.sin(t * 2.1) * 0.9, 2.6)
+    ctx["bulbp"].rotation_euler = (0.025 * math.sin(t * 2.1), 0.03 * math.sin(t * 1.7 + 1.0), 0)
+    kit.LIGHTS["bulb"]["obj"].location = (4.1 + 0.025 * math.sin(t * 1.7 + 1.0) * 0.9, 12.8 + 0.025 * math.sin(t * 2.1) * 0.9, 2.6)
     # ---- beacon turns slowly; board row 1 breathes
-    ctx["beacon"].rotation_euler = (0, 0, t * 0.9)
+    ctx["beacon"].rotation_euler = (0, 0, t * 0.35)
     NODES[ctx["row1m"].name]["em"].inputs["Strength"].default_value = 1.3 + 0.55 * math.sin(t * 3.4)
     # ---- cabinet 2 can bloom orange on a "win" cue
     wn = cue_at(tl, "win", t)
@@ -960,7 +962,7 @@ def animate(kit, story, tl, t, ctx):
         o.scale = (scl, scl, scl)
     for key, o in ctx["held"].items():
         owner = {"crown": "tess", "keys": "tess", "handduck": "tess", "jacket": "tess", "fist": "ticket_man",
-                 "ladytix": "jackpot_lady"}.get(key, key.replace("bear_", ""))
+                 "ladytix": "jackpot_lady", "phone": "me"}.get(key, key.replace("bear_", ""))
         hid = obj_state(tr[key], t)[0] if key in tr else True
         hide(o, hid or rig.CHARS[owner].root.hide_render)
     if "held" in ctx:

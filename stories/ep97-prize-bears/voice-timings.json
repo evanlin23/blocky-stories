@@ -74,14 +74,14 @@
    ]
   },
   "L03": {
-   "text": "it takes it at the door, on your way out.",
+   "text": "it takes it at the door, from whoever played last.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
+   "dur": 2.155,
    "onset": 0.172,
-   "end": 1.586,
+   "end": 1.948,
    "chunks": [
     [
      0.172,
@@ -89,15 +89,15 @@
     ],
     [
      0.474,
-     0.81
+     0.793
     ],
     [
-     0.845,
-     1.017
+     0.828,
+     1.19
     ],
     [
-     1.017,
-     1.586
+     1.19,
+     1.948
     ]
    ]
   },
@@ -134,14 +134,14 @@
    ]
   },
   "L05": {
-   "text": "two guys leave arguing who won at air hockey. neither knows.",
+   "text": "two guys leave arguing who won at air hockey. only one knows.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.862,
+   "dur": 2.948,
    "onset": 0.172,
-   "end": 2.672,
+   "end": 2.759,
    "chunks": [
     [
      0.172,
@@ -149,15 +149,15 @@
     ],
     [
      0.672,
-     1.164
+     1.147
     ],
     [
-     1.164,
-     1.759
+     1.147,
+     1.741
     ],
     [
-     1.854,
-     2.672
+     1.837,
+     2.759
     ]
    ]
   },
@@ -870,14 +870,14 @@
    ]
   },
   "L34": {
-   "text": "the rule only takes it from whoever plays.",
+   "text": "the door only takes it from whoever played last.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.983,
+   "dur": 2.207,
    "onset": 0.172,
-   "end": 1.793,
+   "end": 2.0,
    "chunks": [
     [
      0.172,
@@ -885,11 +885,15 @@
     ],
     [
      0.638,
-     0.897
+     0.879
     ],
     [
-     0.897,
-     1.793
+     0.879,
+     1.241
+    ],
+    [
+     1.241,
+     2.0
     ]
    ]
   },
@@ -1014,22 +1018,22 @@
    ]
   },
   "L40": {
-   "text": "i call her back now.",
+   "text": "now i always call her back.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.379,
+   "dur": 1.569,
    "onset": 0.172,
-   "end": 1.172,
+   "end": 1.362,
    "chunks": [
     [
      0.172,
-     0.517
+     0.707
     ],
     [
-     0.517,
-     1.172
+     0.707,
+     1.362
     ]
    ]
   },
