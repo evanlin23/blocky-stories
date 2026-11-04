@@ -698,3 +698,10 @@ def test_proof_verdict_fails_on_a_block_flash_clip_or_hot_peak():
     assert not pr.verdict(craft, flash, mix, None)[0]
     md = pr.markdown("w", False, ["craft block: x"], "| t |", mix, {"sha": "abc123def4", "minutes": 21.5})
     assert "FAIL" in md and "abc123def" in md and "21.5 min" in md and "craft block: x" in md
+
+
+def test_check_blocks_the_music_box_voice():
+    from blocky import checks
+    st = {"sound": {"music": {"sections": [{"at": "L01", "voices": ["pad", "musicbox"]}]}}}
+    assert any(k == "block" and "music box" in m for k, m in checks.harsh_sound(st))
+    assert not any(k == "block" for k, m in checks.harsh_sound({"sound": {"music": {"sections": [{"voices": ["pad"]}]}}}))
