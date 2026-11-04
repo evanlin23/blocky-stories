@@ -1,0 +1,1765 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "If you sneeze here, you land next to whoever's thinking about you most.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.155,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.897
+    ],
+    [
+     0.948,
+     1.353
+    ],
+    [
+     1.353,
+     1.724
+    ],
+    [
+     1.724,
+     2.103
+    ],
+    [
+     2.103,
+     2.724
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Sixty-three sneezes this spring. Same stranger. Every time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.121,
+   "onset": 0.19,
+   "end": 2.914,
+   "chunks": [
+    [
+     0.19,
+     0.966
+    ],
+    [
+     0.966,
+     1.5
+    ],
+    [
+     1.594,
+     2.138
+    ],
+    [
+     2.172,
+     2.914
+    ]
+   ]
+  },
+  "L03": {
+   "text": "In our town, allergy season is a lot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.69,
+     1.293
+    ],
+    [
+     1.293,
+     1.897
+    ]
+   ]
+  },
+  "L04": {
+   "text": "A guy sneezes in a meeting and lands in his mom's kitchen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     1.362
+    ],
+    [
+     1.362,
+     1.784
+    ],
+    [
+     1.784,
+     2.741
+    ]
+   ]
+  },
+  "L05": {
+   "text": "She already has a plate out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.664
+    ],
+    [
+     0.664,
+     1.362
+    ]
+   ]
+  },
+  "L06": {
+   "text": "A dog walker sneezes and lands in his dog's bed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     1.034
+    ],
+    [
+     1.034,
+     1.371
+    ],
+    [
+     1.371,
+     1.534
+    ],
+    [
+     1.534,
+     2.276
+    ]
+   ]
+  },
+  "L07": {
+   "text": "A man sneezes at a party and lands on his landlord's couch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.172,
+   "end": 2.793,
+   "chunks": [
+    [
+     0.172,
+     0.784
+    ],
+    [
+     0.784,
+     1.345
+    ],
+    [
+     1.345,
+     1.681
+    ],
+    [
+     1.681,
+     1.862
+    ],
+    [
+     1.862,
+     2.793
+    ]
+   ]
+  },
+  "L08": {
+   "text": "His rent was three days late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.155,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.759
+    ],
+    [
+     0.759,
+     1.379
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Me? I land next to him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.345,
+     0.784
+    ],
+    [
+     0.784,
+     1.259
+    ]
+   ]
+  },
+  "L10": {
+   "text": "An old man in a green armchair, across town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.638
+    ],
+    [
+     0.638,
+     1.207
+    ],
+    [
+     1.241,
+     2.052
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Two cups of tea, already poured.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.776
+    ],
+    [
+     0.828,
+     1.603
+    ]
+   ]
+  },
+  "L12": {
+   "text": "The first time, I said sorry and ran.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.647,
+     1.147
+    ],
+    [
+     1.147,
+     1.724
+    ]
+   ]
+  },
+  "L13": {
+   "text": "He just said, \"Bless you.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.621,
+     1.19
+    ]
+   ]
+  },
+  "L14": {
+   "text": "By sneeze twenty, I sat down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.768,
+     1.534
+    ]
+   ]
+  },
+  "L15": {
+   "text": "By forty, I was drinking the tea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.621,
+     1.077
+    ],
+    [
+     1.077,
+     1.655
+    ]
+   ]
+  },
+  "L16": {
+   "text": "He never asks my name. He already knows it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.017
+    ],
+    [
+     1.086,
+     1.431
+    ],
+    [
+     1.431,
+     1.983
+    ]
+   ]
+  },
+  "L17": {
+   "text": "He asks how my new job is going.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.802
+    ],
+    [
+     0.802,
+     1.638
+    ]
+   ]
+  },
+  "L18": {
+   "text": "I never told him I got one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.698
+    ],
+    [
+     0.698,
+     1.414
+    ]
+   ]
+  },
+  "L19": {
+   "text": "He hums while he pours. The same song Mom hums at the stove.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.155,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     1.069
+    ],
+    [
+     1.138,
+     1.655
+    ],
+    [
+     1.655,
+     2.112
+    ],
+    [
+     2.112,
+     2.741
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Mom never sneezes. Not once. Not even in may.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ],
+    [
+     0.983,
+     1.328
+    ],
+    [
+     1.362,
+     1.612
+    ],
+    [
+     1.612,
+     2.172
+    ]
+   ]
+  },
+  "L21": {
+   "text": "She takes a little white allergy pill every morning. She's never missed one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.259,
+   "onset": 0.172,
+   "end": 3.069,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.854
+    ],
+    [
+     0.854,
+     1.397
+    ],
+    [
+     1.397,
+     2.017
+    ],
+    [
+     2.112,
+     2.431
+    ],
+    [
+     2.431,
+     3.069
+    ]
+   ]
+  },
+  "L22": {
+   "text": "She says she's just careful.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     1.259
+    ]
+   ]
+  },
+  "L23": {
+   "text": "I asked her who'd be thinking about me that hard.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.974
+    ],
+    [
+     0.974,
+     1.259
+    ],
+    [
+     1.259,
+     1.914
+    ]
+   ]
+  },
+  "L24": {
+   "text": "She said probably some fan, and changed the subject.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     1.19
+    ],
+    [
+     1.215,
+     1.561
+    ],
+    [
+     1.561,
+     2.276
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Sneeze fifty, he had my favorite cookies out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.724,
+     1.043
+    ],
+    [
+     1.043,
+     1.931
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Sneeze sixty, he knew it was my birthday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.759,
+     0.957
+    ],
+    [
+     0.957,
+     1.086
+    ],
+    [
+     1.086,
+     1.81
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Then last Tuesday, I sneezed at two in the morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ],
+    [
+     0.966,
+     1.353
+    ],
+    [
+     1.353,
+     1.629
+    ],
+    [
+     1.629,
+     2.259
+    ]
+   ]
+  },
+  "L28": {
+   "text": "His room was dark. Just the TV on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.845
+    ],
+    [
+     0.897,
+     1.077
+    ],
+    [
+     1.077,
+     1.828
+    ]
+   ]
+  },
+  "L29": {
+   "text": "He was awake. Just sitting there, in the dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.69,
+     1.172
+    ],
+    [
+     1.199,
+     1.793
+    ]
+   ]
+  },
+  "L30": {
+   "text": "And on the wall behind him...",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
+     0.638
+    ],
+    [
+     0.638,
+     1.345
+    ]
+   ]
+  },
+  "L31": {
+   "text": "me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.707,
+   "onset": 0.19,
+   "end": 0.466,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Every clipping with my name in the paper.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.094
+    ],
+    [
+     1.094,
+     1.776
+    ]
+   ]
+  },
+  "L33": {
+   "text": "My birth notice. My bowling trophy. My first job.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.81,
+     1.483
+    ],
+    [
+     1.517,
+     2.379
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Twenty-four years of me, on a stranger's wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     0.983
+    ],
+    [
+     1.052,
+     1.19
+    ],
+    [
+     1.19,
+     2.086
+    ]
+   ]
+  },
+  "L35": {
+   "text": "He looked up and said, \"Couldn't sleep?\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.741
+    ],
+    [
+     0.828,
+     1.483
+    ]
+   ]
+  },
+  "L36": {
+   "text": "And I said, \"who are you?\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.586,
+     1.172
+    ]
+   ]
+  },
+  "L37": {
+   "text": "He looked at the wall for a long time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.724
+    ],
+    [
+     0.724,
+     0.862
+    ],
+    [
+     0.862,
+     1.655
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Then he asked me how carol was.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.603
+    ],
+    [
+     0.603,
+     1.483
+    ]
+   ]
+  },
+  "L39": {
+   "text": "That's my mom.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ]
+   ]
+  },
+  "L40": {
+   "text": "He's my grandpa. Mom's dad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.845,
+     1.621
+    ]
+   ]
+  },
+  "L41": {
+   "text": "They haven't spoken since before I was born.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.784
+    ],
+    [
+     0.784,
+     1.181
+    ],
+    [
+     1.181,
+     1.931
+    ]
+   ]
+  },
+  "L42": {
+   "text": "He's thought about me every day of my life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.776
+    ],
+    [
+     0.776,
+     1.164
+    ],
+    [
+     1.164,
+     1.845
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Mom's allergy pills were never about the pollen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ],
+    [
+     1.0,
+     1.474
+    ],
+    [
+     1.474,
+     2.121
+    ]
+   ]
+  },
+  "L44": {
+   "text": "If she ever sneezed, she'd land right next to him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.948
+    ],
+    [
+     1.017,
+     1.345
+    ],
+    [
+     1.345,
+     1.664
+    ],
+    [
+     1.664,
+     2.155
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Because he thinks about her too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     0.957
+    ],
+    [
+     0.957,
+     1.414
+    ]
+   ]
+  },
+  "L46": {
+   "text": "Every morning for twenty-four years, one little pill, so she'd never have to land there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.552,
+   "onset": 0.172,
+   "end": 3.362,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.414
+    ],
+    [
+     1.483,
+     2.017
+    ],
+    [
+     2.052,
+     2.466
+    ],
+    [
+     2.466,
+     2.69
+    ],
+    [
+     2.69,
+     3.362
+    ]
+   ]
+  },
+  "L47": {
+   "text": "When I got home, I sat Mom down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.655
+    ],
+    [
+     0.681,
+     0.966
+    ],
+    [
+     0.966,
+     1.69
+    ]
+   ]
+  },
+  "L48": {
+   "text": "She said it was a dumb fight, so long ago she can't remember who started it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.328,
+   "onset": 0.19,
+   "end": 3.138,
+   "chunks": [
+    [
+     0.19,
+     0.423
+    ],
+    [
+     0.423,
+     0.612
+    ],
+    [
+     0.612,
+     1.19
+    ],
+    [
+     1.285,
+     1.759
+    ],
+    [
+     1.759,
+     2.371
+    ],
+    [
+     2.371,
+     3.138
+    ]
+   ]
+  },
+  "L49": {
+   "text": "She said it's too late now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.621
+    ],
+    [
+     0.621,
+     1.241
+    ]
+   ]
+  },
+  "L50": {
+   "text": "She said he wouldn't even want to see her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.681
+    ],
+    [
+     0.681,
+     0.974
+    ],
+    [
+     0.974,
+     1.621
+    ]
+   ]
+  },
+  "L51": {
+   "text": "But I'd seen the photo by his armchair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.914
+    ],
+    [
+     0.914,
+     1.793
+    ]
+   ]
+  },
+  "L52": {
+   "text": "I hid her allergy pills.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.31
+    ]
+   ]
+  },
+  "L53": {
+   "text": "And I walked her through the park.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.664
+    ],
+    [
+     0.664,
+     1.345
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Through the yellow grass, pollen up to our knees.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.845
+    ],
+    [
+     0.897,
+     1.285
+    ],
+    [
+     1.285,
+     1.914
+    ]
+   ]
+  },
+  "L55": {
+   "text": "Mom's eyes started to water.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.466
+    ]
+   ]
+  },
+  "L56": {
+   "text": "She looked at me and said, \"Don't you dare.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.19,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.19,
+     0.406
+    ],
+    [
+     0.406,
+     0.56
+    ],
+    [
+     0.56,
+     0.845
+    ],
+    [
+     0.931,
+     1.69
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Then she sneezed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ]
+   ]
+  },
+  "L58": {
+   "text": "And she was gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.155,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     1.017
+    ]
+   ]
+  },
+  "L59": {
+   "text": "The rule says you land next to whoever's thinking about you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.112
+    ],
+    [
+     1.112,
+     1.492
+    ],
+    [
+     1.492,
+     2.31
+    ]
+   ]
+  },
+  "L60": {
+   "text": "And right then, Mom and Grandpa were both thinking about me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.768,
+     1.406
+    ],
+    [
+     1.406,
+     1.914
+    ],
+    [
+     1.914,
+     2.517
+    ]
+   ]
+  },
+  "L61": {
+   "text": "So I sneezed too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     1.121
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Green armchair. Two people not talking. three cups.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.879,
+     1.199
+    ],
+    [
+     1.199,
+     1.621
+    ],
+    [
+     1.664,
+     2.345
+    ]
+   ]
+  },
+  "L63": {
+   "text": "He'd poured one more before we even landed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.862
+    ],
+    [
+     0.862,
+     1.172
+    ],
+    [
+     1.172,
+     1.931
+    ]
+   ]
+  },
+  "L64": {
+   "text": "Nobody said anything for a long time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.845,
+     0.983
+    ],
+    [
+     0.983,
+     1.776
+    ]
+   ]
+  },
+  "L65": {
+   "text": "Mom just held her cup and looked at the wall. At me, all over it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.19,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.19,
+     0.664
+    ],
+    [
+     0.664,
+     0.905
+    ],
+    [
+     0.905,
+     1.181
+    ],
+    [
+     1.181,
+     1.638
+    ],
+    [
+     1.724,
+     2.017
+    ],
+    [
+     2.069,
+     2.776
+    ]
+   ]
+  },
+  "L66": {
+   "text": "Then Grandpa started to hum.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.517
+    ]
+   ]
+  },
+  "L67": {
+   "text": "And Mom hummed the next part.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.759
+    ],
+    [
+     0.759,
+     1.397
+    ]
+   ]
+  },
+  "L68": {
+   "text": "Mom sneezes a lot now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.379
+    ]
+   ]
+  },
+  "L69": {
+   "text": "She says it's the pollen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.241
+    ]
+   ]
+  }
+ }
+}
