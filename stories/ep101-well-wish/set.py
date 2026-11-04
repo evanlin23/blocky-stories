@@ -503,7 +503,7 @@ def build(kit, story, tl):
     # ------------------------------------------------------------------ the rooms
     wood_f = kit.planks("#c9976a", "#b78456", 1.0)
     lrx, lry = G.LR
-    room(kit, "lr", lrx, lry, 9.0, 8.0, 3.4, "#fbe6c8", wood_f)
+    room(kit, "lr", lrx, lry, 9.0, 8.0, 3.4, "#d9b78e", wood_f)
     for k in range(8):                            # the stairs, rising along +x on the back wall
         kit.box(f"lr.stair{k}", (0.6, 1.8, 0.3 * (k + 1)), (lrx - 1.4 + k * 0.6, lry + 3.0, 0.15 * (k + 1)), p("#e8d8b8", 0.8))
     kit.box("lr.landing", (1.6, 1.8, 2.4), (lrx + 3.6, lry + 3.0, 1.2), p("#e8d8b8", 0.8))
@@ -519,10 +519,10 @@ def build(kit, story, tl):
         kit.box("lr.chair", (0.9, 0.9, 0.8), (lrx + 2.2, lry - 1.2, 0.4), p("#e3a72f", 0.7))
     kit.box("lr.tvstand", (2.4, 0.6, 0.6), (lrx - 3.5, lry - 3.7, 0.3), wood)
     kit.box("lr.tv", (1.7, 0.1, 1.0), (lrx - 3.5, lry - 3.55, 1.1), p("#20242c", 0.2, spec=0.7))
-    kit.light("lr", "POINT", (lrx, lry - 0.5, 3.0), 380.0, "#fff0d8", size=0.5, shadow=False)
+    kit.light("lr", "POINT", (lrx, lry - 0.5, 3.0), 200.0, "#fff0d8", size=0.5, shadow=False)
 
     wrx, wry = G.WR
-    room(kit, "wr", wrx, wry, 8.0, 7.0, 3.2, "#cfe8f4", kit.planks("#d8b288", "#c9a070", 1.0), ceil=False, door="left")
+    room(kit, "wr", wrx, wry, 8.0, 7.0, 3.2, "#8fb4c8", kit.planks("#d8b288", "#c9a070", 1.0), ceil=False, door="left")
     kit.box("wr.desk", (1.0, 2.2, 0.9), (wrx + 3.1, wry - 0.6, 0.45), wood)
     kit.box("wr.deskchair", (0.6, 0.6, 0.1), (wrx + 2.0, wry - 0.6, 0.5), p("#2f7fd8", 0.6))
     kit.box("wr.lamp", (0.2, 0.2, 0.5), (wrx + 3.2, wry + 0.3, 1.15), kit.emit("#fff0c0", 1.0))
@@ -547,7 +547,7 @@ def build(kit, story, tl):
         kit.sphere(f"wr.poster{i}.c", 0.14, (0, -0.04, -0.35), p("#ffffff", 0.6), grp, seg=8)
         W["posters"].append(grp)
     kit.box("wr.rug", (3.0, 2.2, 0.03), (wrx, wry - 1.0, 0.05), p("#ffb0a0", 0.9))
-    kit.light("wr", "POINT", (wrx, wry - 0.5, 2.9), 330.0, "#fff0d8", size=0.5, shadow=False)
+    kit.light("wr", "POINT", (wrx, wry - 0.5, 2.9), 190.0, "#fff0d8", size=0.5, shadow=False)
 
     hlx, hly = G.HL
     room(kit, "hl", hlx, hly, 8.0, 5.0, 3.2, "#f6dcc8", wood_f, ceil=True, door="right")
