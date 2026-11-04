@@ -4,7 +4,7 @@
   "pin": "Comment GLOW if someone needs you more than they'd ever say.",
   "made_for_kids": false,
   "opening": "if",
-  "cover_s": 103.4,
+  "cover_s": 101.9,
   "shape": "about-me",
   "lane": "core",
   "hold": "held 2026-11-03: qa fail (artifact 13232810143), needs a new S01, polish, the murky middle lifted and a cover; see qa/ep58-swing-bridge.json"

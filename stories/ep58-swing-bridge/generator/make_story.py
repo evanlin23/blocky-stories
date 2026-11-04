@@ -284,20 +284,20 @@ sh("S62", 42, "L42", mv([21.2, 3.6, 1.55], [19.95, 1.4, 1.5], 34), {}, look="cab
 sh("S63", 43, "L43", mv([15.3, -3.6, 1.3], [19.6, 1.3, 1.4], 24), {}, look="fogpale", reach="stand", sash=True, fd=0.022, hand=0.003)
 sh("S64", 44, "L44", mv([18.9, 0.85, 1.28], [0.0, 0.8, 1.12], 30), {}, look="fogpale", reach="stand", sash=True, fd=0.03, hand=0.003)
 sh("S65", 45, "L45", cam([0, [19.45, 2.72, 1.25], [20.2, 2.72, 1.2], 16]),
-   {"me": P(20.25, 3.05, 0, z=-0.09, sit=True, arms=[0, 0], side=[0, 0], expr="terrified")}, look="lean_ext", reach="lean", sash=True, sill=3.5, hand=0.003,
+   {"me": P(20.25, 3.05, 0, z=-0.09, sit=True, arms=[0, 0], side=[0, 0], expr="terrified")}, look="lean_ext", reach="lean", sash=True, sill=0.9, hand=0.003,
    lk={"cab_lamp": 1.0, "cab_amb": 1.4}, fill_k=1.0)
 sh("S66", 45, "L45.3", mv([21.5, 0.2, 1.4], [20.1, 3.0, 1.3], 40, [21.3, 0.3, 1.4], [20.1, 3.0, 1.3], 40),
    {"me": P(20.25, 3.05, 0, z=-0.09, sit=True, arms=[0, 0], side=[0, 0], expr="terrified"), "emrys": emr(-25)}, look="lean_ext", glow={"emrys": 0.05},
-   reach="lean", sash=True, hand=0.003, sill=3.0, lk={"cab_lamp": 1.0, "cab_amb": 1.4}, fill_k=1.0)
+   reach="lean", sash=True, hand=0.003, sill=0.9, lk={"cab_lamp": 1.0, "cab_amb": 1.4}, fill_k=1.0)
 sh("S67", 46, "L46", mv([21.4, 3.0, 0.95], [21.75, 3.5, 0.8], 38), {"emrys": emr(-25, head=[0, 20])}, look="cab_low", glow={"emrys": 0.05}, hand=0.002,
    reach="lean", sash=True)
 sh("S67b", 46, "L46b", mv([20.9, 3.7, 1.45], [20.2, 2.5, 1.25], 34), {}, look="cab_low", reach="lean", sash=True, hand=0.003,
-   sill=3.0, lk={"cab_amb": 1.3}, fill_k=0.8)
+   sill=0.9, lk={"cab_amb": 1.3}, fill_k=0.8)
 ins("S67")
 sh("S68", 47, "L47", fc(hd(20.2, 2.95), 0, 10, 2.0, 40, rise=0.1),
    {"me": P(20.2, 2.95, 0, arms=[40, 40], side=[0, 0], expr="wide", head=[0, 24])}, look="cab_low", glow={"me": 0.4}, hand=0.003)
 sh("S69", 48, "L48", mv([20.2, 4.85, 2.6], [20.2, 1.2, 1.2], 20), {"me": P(20.2, 4.4, 0, arms=[88, 88], side=[0, 0], expr="wide")},
-   look="cab_low", glow={"me": 0.9}, glow_k=2.0, reach="lean", sash=True, sill=3.0, hand=0.003, lk={"cab_lamp": 0.0, "cab_amb": 0.8, "cab_stove": 0.0})
+   look="cab_low", glow={"me": 0.9}, glow_k=2.0, reach="lean", sash=True, sill=0.9, hand=0.003, lk={"cab_lamp": 0.0, "cab_amb": 0.8, "cab_stove": 0.0})
 lvl("stove", "L47", 0.0, 0.5)
 lvl("glow.me", "L47+0.1", 0.9, 1.0)
 sh("S70", 49, "L49", fc(hd(20.2, 2.95), 0, 8, 1.4, 42, rise=0.08, el=-0.1),
@@ -423,11 +423,11 @@ redo("S63", mv([27.0, -1.0, 1.45], [12.0, 1.3, 0.75], 18, [26.6, -0.9, 1.45], [1
 redo("S64", mv([19.0, 0.8, 1.5], [0.0, 0.8, 1.15], 28, [18.7, 0.8, 1.45], [0.0, 0.8, 1.15], 28), reach="stand", sash=True, nobar=True, **RV)
 # ---- dark shots, hand inserts, exposure, the rule marker
 HL = dict(look="cab_eve", lk={"cab_amb": 1.3}, fill_k=1.5, glow_k=4.0, hand=0.002)
-redo("S23", cfc((21.65, 3.4, 0.9), (21.65, 2.35), 10, 0.0, cz=1.0), {"emrys": emr(-25, arms=[75, 75])}, glow={"emrys": 0.8}, **HL)
+redo("S23", cfc((21.65, 3.4, 1.12), (21.65, 2.35), 10, 0.0, cz=1.05), {"emrys": emr(-25, arms=[75, 75])}, glow={"emrys": 0.8}, **HL)
 redo("S49", cfc((21.65, 3.4, 0.85), (21.65, 2.35), 10, 0.0, cz=0.95), {"emrys": emr(-25)}, glow={"emrys": 0.9}, **HL)
 redo("S67", cfc((21.65, 3.4, 0.85), (20.3, 2.5), 11, 0.0, cz=0.95), {"emrys": emr(-25, head=[0, 20])}, glow={"emrys": 0.7}, **HL)
 redo("S79", cfc((21.65, 3.4, 0.9), (21.0, 2.4), 10, 0.0, cz=0.8), {"emrys": emr(-25, arms=[75, 75])}, glow={"emrys": 0.4}, **HL)
-redo("S68", mv([20.2, 1.0, 1.15], [20.35, 2.6, 1.0], 24), glow={"me": 0.3}, look="cab_low", nosash=True, lk={"cab_amb": 1.3}, fill_k=0.9, glow_k=4.0, hand=0.002)
+redo("S68", mv([20.2, 1.0, 1.3], [20.35, 2.6, 1.3], 24), glow={"me": 0.3}, look="cab_low", nosash=True, lk={"cab_amb": 1.3}, fill_k=0.9, glow_k=4.0, hand=0.002)
 redo("S70", mv([19.9, 1.0, 1.35], [20.4, 2.45, 1.2], 30), glow={"me": 0.8}, look="cab_low", nosash=True, lk={"cab_lamp": 0.0, "cab_amb": 1.0}, fill_k=0.9, glow_k=4.0, hand=0.002)
 redo("S32", cam([0, [22.3, -14.6, 1.2], [21.6, -12.0, 0.95], 28]), {"mec": P(21.6, -12.0, 0, arms=[0, 0], side=[0, 0], expr="neutral")},
      look="dusk", fill_k=2.2, lk={"lamppost": 1.0}, hand=0.002)
@@ -442,15 +442,19 @@ redo("S41", fill_k=0.6)
 # ---- picture fixes: no clipped whites, the lean read face to face, pale hands
 redo("S17", mv([250.8, -0.2, 1.5], [250.0, 3.4, 0.8], 21, [250.6, -0.1, 1.5], [250.0, 3.4, 0.8], 21), em_k=0.5, glow_k=0.7, fill_k=0.6, lk={"ki_amb": 0.5, "ki_win": 0.4}, sky_k=0.6)
 redo("S19", mv([250.0, -0.3, 1.5], [249.9, 4.0, 1.0], 22, [250.0, -0.2, 1.5], [249.9, 4.0, 1.0], 22), em_k=0.5, glow_k=0.7, fill_k=0.6, lk={"ki_amb": 0.5, "ki_win": 0.4}, sky_k=0.6)
-redo("S41", fill_k=0.6, lk={"cab_amb": 0.7})
+redo("S41", fill_k=0.1, lk={"cab_amb": 0.15})
 redo("S70", glow_k=1.5, fill_k=0.7, lk={"cab_lamp": 0.0, "cab_amb": 0.8}, em_k=0.6, halo_k=0.6)
 for _sid in ("S88", "S89", "S92"):
     redo(_sid, glow_k=0.6, em_k=0.5, halo_k=0.55)
 redo("S64", mv([4.6, -0.6, 1.4], [1.2, 0.8, 1.0], 32, [4.2, -0.5, 1.35], [1.2, 0.8, 1.0], 32), reach="far2", handlamp=0.35, sash=False,
      nobar=True, look="fogreach", fd=0.02, hl_pos=(1.0, 0.1, 0.6), moon_k=0.8, sky_k=0.9)
-redo("S65", cam([0, [18.0, -2.6, 2.5], [19.6, 2.3, 1.2], 28], [1, [18.3, -2.5, 2.5], [19.6, 2.3, 1.25], 26]), {}, sill=2.5, hyaw=0.65, hpitch=0.1, nosash=True, moon_k=0.8, sky_k=0.9)
-redo("S66", cam([0, [20.2, 4.6, 1.3], [20.2, 2.2, 1.32], 40], [1, [20.2, 4.3, 1.3], [20.2, 2.2, 1.32], 40]), {}, sill=2.5, moon_k=0.8)
+redo("S65", cam([0, [18.0, -2.6, 2.5], [19.6, 2.3, 1.2], 28], [1, [18.3, -2.5, 2.5], [19.6, 2.3, 1.25], 26]), {}, sill=0.4, hyaw=0.65, hpitch=0.1, nosash=True, moon_k=0.8, sky_k=0.9)
+redo("S66", cam([0, [20.4, 4.6, 1.3], [20.35, 2.2, 1.32], 40], [1, [20.4, 4.3, 1.3], [20.35, 2.2, 1.32], 40]), {}, sill=0.8, moon_k=0.8)
 redo("S91", mv([349.9, 3.7, 1.5], [349.9, 5.9, 1.15], 28), bedreach=True, fd=0.03)
+for _sid in ("S60", "S61", "S62", "S63", "S65", "S66", "S67", "S67b", "S69", "S77"):
+    redo(_sid, farlamp=0.15, fill_k=0.25, **({"sill": 0.3} if _sid in ("S60", "S61", "S62", "S63") else {}))     # the point light 1 m from the sleeves washed them to pale grey: they read as cloth, dark on fog
+for _sid in ("S23", "S29", "S36", "S41", "S49", "S67", "S67b", "S68", "S69", "S70", "S73", "S76", "S78", "S79"):
+    redo(_sid, steam=False)      # the steam wisps read as a stray grey rod in the mug (qa, 2026-11-03)
 
 
 def nudge(sid, off):
@@ -604,7 +608,7 @@ story["music"] = {
         {"at": "L65", "voices": ["drone", "pluck"], "energy": 0.3},
     ]}
 story["sound"] = {
-    "floor": "wood", "steps_db": -26, "rev": 3,
+    "floor": "wood", "steps_db": -26, "rev": 6,
     "ambience": [
         {"kind": "water", "from": 0, "to": "end", "lufs": -42},
         {"kind": "hum", "from": 0, "to": "L22", "lufs": -46},

@@ -23,7 +23,7 @@ from blocky import acting, rig
 
 OCHRE, PEAT, TAN, CLAY = "#8a6424", "#2b2420", "#b39a78", "#c49a74"
 HAND_SKIN = "#e0b894"
-COAT, RIM = "#3a2c22", "#9cc0e4"
+COAT, RIM = "#3a2a20", "#9cc0e4"
 GOLD = "#ffc76a"
 SPAN_X = 18.3          # the pivot
 RAIL_Y = 0.8
@@ -57,9 +57,13 @@ def long_arm(kit, name, pts, t=0.26, fold=1.4, hand=True, grp=None, skin_c=None,
     """One continuous sleeve through pts (shoulder first, hand end last): blocks <= fold long laid end to end, a fold
     of cloth at each join, a thin cool rim along the top, and at the end a plain skin hand lying flat: a palm block
     and four blocky fingers together, palms down."""
-    sl = kit.plastic(coat_c or COAT, 0.85)
-    cuffm = kit.plastic(coat_c or COAT, 0.85)
-    rim = kit.emit(RIM, 1.3)
+    # dark cloth that does not pick up the scene's fill: lit plastic washed to a pale grey pipe (qa, 2026-11-03)
+    if em:      # the bedroom's sleeves glow faintly and keep the lit material
+        sl, cuffm = kit.plastic(coat_c or COAT, 0.85), kit.plastic(coat_c or COAT, 0.85)
+    else:
+        sl = kit.emit(coat_c or COAT, 0.9, name=f"sleeve {coat_c or COAT}")
+        cuffm = sl
+    rim = kit.emit(RIM, 0.25)
     skin = kit.plastic(skin_c or HAND_SKIN, 0.9 if skin_c else 0.55)
     if em:
         for m_ in (skin, sl, cuffm):
@@ -78,7 +82,7 @@ def long_arm(kit, name, pts, t=0.26, fold=1.4, hand=True, grp=None, skin_c=None,
     for i in range(len(joints) - 1):
         a, b = joints[i], joints[i + 1]
         obs.append(seg(kit, f"{name}.s{i}", a, b, t, sl))
-        obs.append(seg(kit, f"{name}.r{i}", a + up * (t / 2 + 0.006), b + up * (t / 2 + 0.006), 0.06, rim, 0.012))
+        obs.append(seg(kit, f"{name}.r{i}", a + up * (t / 2 + 0.006), b + up * (t / 2 + 0.006), 0.035, rim, 0.01))
     for i in range(1, len(joints) - 1):
         d = joints[i + 1] - joints[i - 1]
         obs.append(kit.box(f"{name}.f{i}", (t * 1.18, t * 1.18, 0.12), tuple(joints[i]), sl,
