@@ -486,26 +486,30 @@
    ]
   },
   "L20": {
-   "text": "At nine fifty-eight, June walked in alone,",
+   "text": "Two minutes to ten, June walked in alone,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.034,
-   "onset": 0.155,
-   "end": 1.845,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
    "chunks": [
     [
-     0.155,
-     0.741
+     0.172,
+     0.483
     ],
     [
-     0.802,
-     1.215
+     0.483,
+     0.81
     ],
     [
-     1.215,
-     1.845
+     0.888,
+     1.285
+    ],
+    [
+     1.285,
+     1.931
     ]
    ]
   },

@@ -47,7 +47,7 @@ def remap(x):
     return x
 
 
-REV = 6
+REV = 7
 
 
 def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="solid", pattern_c=None, hat="none", hat_c="#333333",

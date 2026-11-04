@@ -941,8 +941,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "At nine fifty-EIGHT,",
-     "At nine fifty-eight,"
+     "Two minutes",
+     "Two minutes"
+    ],
+    [
+     "to TEN,",
+     "to ten,"
     ],
     [
      "June walked",
@@ -4472,7 +4476,7 @@
     ]
    },
    {
-    "at": "L20.1+0.2",
+    "at": "L20.2+0.2",
     "pos": [
      800.25,
      -28.8
@@ -6192,5 +6196,5 @@
    ]
   ]
  },
- "rev": 6
+ "rev": 7
 }
