@@ -252,7 +252,7 @@ def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True, dark=False):
     # ears and jaw
     for sx in (-1, 1):
         B(R, (0.7, 1.5, 0.5), (sx * (W_ / 2 + 0.3), 0.2, -0.3), skin_d, "uear", 0.1)
-    B(R, (3.8, 1.1, 0.6), (0, -D_ / 2 - 0.45, -0.35), skin_d, "uchin", 0.1)
+    B(R, (4.6, 1.9, 0.6), (0, -D_ / 2 - 0.55, -0.2), (P("#2a201c", 0.9, 0.02) if dark else kit.emit("#4a3020", 0.45, name="uchinm")), "uchin", 0.1)
     # hair: a dark ragged slab over the crown (toward +y)
     B(R, (W_ + 0.2, 1.5, 0.5), (0, D_ / 2 + 0.55, -0.1), hair, "uhair", 0.1)
     for i, hx in enumerate((-2.4, -0.8, 1.0, 2.5)):
@@ -269,11 +269,13 @@ def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True, dark=False):
         B(R, (0.09, 2.0, 0.08), (sx * 2.7, 0.8, 0.03), soot, "uscar", 0.0)
     # eyes: square blocks sunk in dark sockets, two lamp-yellow glints (the brightest points in frame)
     ey = []
-    eyes_mat = kit.emit("#ffd84a", 1.1, name="undereye")
+    eyes_mat = kit.emit("#ffd84a", 3.2, name="undereye")
     sock = P("#050404", 0.95, 0.0)
+    halo = kit.emit("#a86a14", 0.9, name="uhalo")
     pup = P("#0a0807", 0.95, 0.0)
     for sx in (-1, 1):
         B(R, (1.4, 1.0, 0.12), (sx * EX, EYY, 0.04), sock, "usock", 0.06)
+        B(R, (0.9, 0.62, 0.05), (sx * EX, EYY - 0.08, 0.075), halo, "uhalo", 0.0)
         d = B(R, (0.62, 0.4, 0.06), (sx * EX, EYY - 0.08, 0.11), eyes_mat, "ueye", 0.0)
         pu = CY(R, 0.001, 0.001, (sx * EX, EYY, 0.085), pup, "upup", n=6)
         ey.append((d, pu, sx * EX))
@@ -281,10 +283,12 @@ def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True, dark=False):
     dk = P("#020202", 0.95, 0.0)
     MY = -1.15
     CY(R, 1.0, 0.1, (0.0, MY, 0.06), dk, "umouth", n=16)
-    lipm = P("#2a1f1a" if dark else "#c99a68", 0.8, 0.02)
+    lipm = P("#2a1f1a" if dark else "#9c7048", 0.8, 0.02)
+    lipin = P("#1a110c", 0.9, 0.0)
     for i in range(12):
         an = 2 * math.pi * i / 12
         B(R, (0.78, 0.5, 0.34), (1.28 * math.cos(an), MY + 1.28 * math.sin(an), 0.2), lipm, "ulip", 0.1, rot=(0, 0, an + math.pi / 2))
+        B(R, (0.62, 0.34, 0.3), (1.0 * math.cos(an), MY + 1.0 * math.sin(an), 0.22), lipin, "ulipin", 0.08, rot=(0, 0, an + math.pi / 2))
     prm = None
     if pipe_h:
         # the pipe: bright brass, wedged in the mouth; rake shots shorten it (scale z) so its tip stays in view
@@ -978,7 +982,8 @@ def animate(kit, story, tl, t, ctx):
     for o in u["body"]:
         o.hide_render = rk
     if u["pipe_root"] is not None:
-        u["pipe_root"].scale = (0.8, 0.8, 0.35) if rk else (1, 1, 1)
+        u["pipe_root"].scale = (1.2, 1.2, 1.0) if rk else (1, 1, 1)
+        u["pipe_root"].rotation_euler = (0, -0.42, 0) if rk else (0, 0, 0)
     lit = uc.get("light", 0.0)
     base = ctx["land"].location
     uo = u["root"].location

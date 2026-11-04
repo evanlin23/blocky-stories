@@ -413,9 +413,9 @@ S("P02", PX((LX + 0.45, -0.35, LZ + 0.9), (LX + 1.45, 0.0, LZ - 0.1), 36, 0.14),
 cue("L53", "under", on=True, light=0.12)
 S("L53", PX((LX + 1.45, 0.6, LZ + 1.3), (LX + 1.45, -0.55, LZ - 5.8), 24, 0.10), "night", fill=0.0, lamp=0.0, stairl=0.0, inside=0.5, ufill=1.0, name="eyes")
 cue("L53.1", "under", on=True, light=1.0)
-S("L53.1", PX((LX + 1.45, -0.2, LZ + 0.9), (LX + 1.45, -1.0, LZ - 5.8), 14.4, 0.03), "night", fill=0.0, lamp=0.0, stairl=0.0, inside=0.5, ufill=0.0, rim=0.6, key=5.0, rake=1, name="face")
-S("L54", PX((LX + 1.45, -0.15, LZ + 0.9), (LX + 1.45, -1.2, LZ - 5.8), 14.4, 0.03), "night", fill=0.0, lamp=0.0, stairl=0.0, inside=0.5, ufill=0.0, rim=0.6, key=5.0, rake=1, name="face2")
-S("L54.2", PX((LX + 1.4, -0.3, LZ + 0.9), (LX + 1.45, -1.4, LZ - 5.8), 14.4, 0.03), "night", fill=0.0, lamp=0.0, stairl=0.0, inside=0.5, ufill=0.0, rim=0.6, key=5.0, rake=1)
+S("L53.1", PX((LX + 1.45, -0.35, LZ + 0.9), (LX + 1.45, -1.15, LZ - 5.8), 14.4, 0.03), "night", fill=0.0, lamp=0.0, stairl=0.0, inside=0.5, ufill=0.0, rim=0.6, key=5.0, rake=1, name="face")
+S("L54", PX((LX + 1.45, -0.3, LZ + 0.9), (LX + 1.45, -1.35, LZ - 5.8), 14.4, 0.03), "night", fill=0.0, lamp=0.0, stairl=0.0, inside=0.5, ufill=0.0, rim=0.6, key=5.0, rake=1, name="face2")
+S("L54.2", PX((LX + 1.4, -0.45, LZ + 0.9), (LX + 1.45, -1.55, LZ - 5.8), 14.4, 0.03), "night", fill=0.0, lamp=0.0, stairl=0.0, inside=0.5, ufill=0.0, rim=0.6, key=5.0, rake=1)
 S("L55", PX((LX + 3.2, -3.4, LZ - 3.6), (LX + 1.45, -2.2, LZ - 5.4), 22, 0.10), "night", fill=0.0, lamp=0.0, stairl=0.0, inside=0.5, name="mouth")
 S("L55.2", PX((LX - 0.3, -3.2, LZ - 3.2), (LX + 1.45, -2.2, LZ - 5.2), 22, 0.08), "night", fill=0.0, lamp=0.0, stairl=0.0, inside=0.5)
 cue("L56", "under", on=False, light=0.0)
@@ -509,17 +509,14 @@ S("L74.3", PX((SX - 1.1, -1.7, 1.15), (SX - 0.1, 0.4, 1.1), 26, 0.12), "in", fil
 whistle = lambda at, db=-12, d=1.6, pitch=220: {"at": at, "kind": "whistle", "db": db, "dur": d, "pitch": pitch}
 sfx = [
     whistle("L01.2+0.12", -12, 1.5),
-    whistle("L14-0.2", -22, 1.3, 880),
     whistle("L24", -12, 1.6),
     {"at": "L25+0.35", "kind": "door", "db": -15},
     whistle("L34", -13, 1.5),
-    whistle("L35", -22, 1.4, 880),
     whistle("L43", -12, 1.8),
     whistle("L50", -17, 1.4),
     {"at": "P02+0.4", "kind": "breath", "db": -16, "dur": 0.6, "keep": True},
     whistle("L64.2", -11, 1.6),
     {"at": "L68", "kind": "thud", "db": -18},
-    whistle("L73", -24, 1.5),
 ]
 music = {"root": 50, "mode": "minor", "bpm": 84, "seed": 98,
          "sections": [
