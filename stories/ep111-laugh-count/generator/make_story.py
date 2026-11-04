@@ -413,12 +413,16 @@ story = {
                   {"at": "L42", "voices": ["bubble", "pluck_hi", "pad", "pulse"], "energy": 0.65},
               ]},
     "sound": {
-        "rev": 1, "floor": "wood", "steps_db": -22,
+        "rev": 3, "floor": "wood", "steps_db": -22,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -40}],
         "sfx": [
             {"at": "L01.3", "kind": "thud", "db": -14},
+            {"at": "L12.3+0.35", "kind": "thud", "db": -19},
+            {"at": "L16+1.2", "kind": "thud", "db": -20},
             {"at": "L20.1", "kind": "thud", "db": -18},
+            {"at": "L38", "kind": "thud", "db": -21},
             {"at": "L39.1", "kind": "thud", "db": -18},
+            {"at": "L44", "kind": "latch", "db": -22},
             {"at": "L42", "kind": "hit", "db": -18},
         ],
         "music_drops": [{"from": "L22>", "to": "P01>"}],
