@@ -275,7 +275,7 @@ shot("L59", "the lamp room in the dark, rain settling", still([0.5, -2.0, LF + 1
 # 10 dawn
 SIT_ME, YAW_ME, SEAT_ME = sit_at(42)
 SIT_IN, YAW_IN, SEAT_IN = sit_at(40)
-SIT_IN2, YAW_IN2, SEAT_IN2 = sit_at(41)
+SIT_IN2, YAW_IN2, SEAT_IN2 = sit_at(41, back=0.55)
 shot("L60", "gold sun rises on my face, eyes open", still(local(SEAT_ME, YAW_ME, 1.7, -0.1, 1.2), local(SEAT_ME, YAW_ME, 0, 0, 0.92), 30))
 shot("L60.1+0.5", "wider: me slumped on a step in the sun", still(local(SEAT_ME, YAW_ME, 3.0, 0.9, 1.6), local(SEAT_ME, YAW_ME, 0, 0, 0.8), 24))
 shot("L62", "below her door, open, the room empty", still([-1.5, -0.2, 8.4], [2.3, 0.6, 9.6], 24))
@@ -357,6 +357,16 @@ def at_rail(n, at, **kw):
     put("me", at, ME_R(n), yaw=FACE_IN, **kw)
 
 
+# the high five (S07): turned toward each other along the stair, a little further apart than a tread, so the raised
+# hands meet between us and neither head is near the other's arm
+_HF_M = tread(43.5, 1.7)
+_HF_T = (-math.sin(math.radians(30 * 43.5)), math.cos(math.radians(30 * 43.5)))
+HF_GAP = 0.36
+HF_ME = [round(_HF_M[0] + _HF_T[0] * HF_GAP, 3), round(_HF_M[1] + _HF_T[1] * HF_GAP, 3), round(44 * STEP, 3)]
+HF_IN = [round(_HF_M[0] - _HF_T[0] * HF_GAP, 3), round(_HF_M[1] - _HF_T[1] * HF_GAP, 3), round(43 * STEP, 3)]
+HF_ME_YAW = yaw_to(HF_ME, HF_IN)
+HF_IN_YAW = yaw_to(HF_IN, HF_ME)
+
 # me
 put("me", 0, [1.05, 0.95, Z7], yaw=-53, expr="worried", head=[0, 14], lean=4, blink=False)   # S01: at the top rail, looking down the well
 hide("me", "L02")
@@ -365,7 +375,7 @@ key("me", "L02b.2", head=[40, 0], blend=0.3)   # I glance away
 hide("me", "L03")
 put("me", "L04", SEAT_K(-0.75), yaw=180, sit=True, expr="smirk", head=[0, 8])
 hide("me", "L05-0.01")
-put("me", "L05", tread(44, 1.7), yaw=yaw_to(tread(44), (0, 0)), arms=[0, 150], expr="smirk", head=[0, 0])
+put("me", "L05", HF_ME, yaw=HF_ME_YAW, arms=[0, 150], expr="smirk", head=[0, 0])
 hide("me", "L06")
 put("me", "L06.2", [0.0, -1.45, 15.0], yaw=yaw_to([0.0, -1.45], [0, 0]), head=[0, 30], lean=10, arms=[0, 20], expr="worried", blink=False)   # S06b: over my shoulder, flashlight in hand
 put("me", "L07", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-6, arms=[60, 60], head=[0, 22], expr="worried")
@@ -430,9 +440,15 @@ key("me", "L61", expr="worried", blend=0.2)
 key("me", "L67", expr="wide", head=[24, 26], blend=0.4)
 put("me", "L68", tread(43.0, 1.7), yaw=yaw_to(tread(43), tread(42)), arms=[38, 38], expr="shut", blink=False)
 arc("me", "L68", 43.0, 41.2, 3.5, r=1.7, n=5, arms=[38, 38])
+for _k in acting["me"][-6:]:   # a hair under the treads overhead
+    if "pos" in _k:
+        _k["pos"] = [_k["pos"][0], _k["pos"][1], round(_k["pos"][2] - 0.1, 3)]
 put("me", "L69", tread(41, 1.7), yaw=yaw_to(tread(41), tread(40)), arms=[12, 12], expr="shut", blink=False)
-put("me", "L70", tread(50, 1.7), yaw=yaw_to(tread(50), tread(49)), arms=[38, 38], expr="shut", blink=False)
-arc("me", "L70", 50, 46.5, 1.67, r=1.7, n=4, arms=[38, 38])
+put("me", "L70", tread(50, 1.8), yaw=yaw_to(tread(50), tread(49)), arms=[38, 38], expr="shut", blink=False, lean=6, head=[0, 12])
+arc("me", "L70", 50, 46.5, 1.67, r=1.8, n=4, arms=[38, 38], lean=6, head=[0, 12])
+for _k in acting["me"][-5:]:   # a hair under the treads overhead (the head clears the stair a turn above)
+    if "pos" in _k:
+        _k["pos"] = [_k["pos"][0], _k["pos"][1], round(_k["pos"][2] - 0.06, 3)]
 put("me", "L72", tread(47, 1.55), yaw=FACE_IN - 20, expr="shut", blink=False, lean=8, head=[0, 20])
 key("me", "L72.2", expr="wide", blend=0.2)
 put("me", "L73", SIT_ME, yaw=YAW_ME, sit=True, lean=8, head=[0, 10], expr="worried")
@@ -449,7 +465,7 @@ put("ines", "L03", [1.9, 0.0, Z4], yaw=FACE_IN, expr="smirk", head=[0, 4])
 hide("ines", "L03.2")
 put("ines", "L04", SEAT_K(0.95), yaw=0, sit=True, expr="smirk", arms=[28, 28], head=[0, 4])
 hide("ines", "L05-0.01")
-put("ines", "L05", tread(43, 1.7), yaw=yaw_to(tread(43), (0, 0)), arms=[150, 0], expr="smirk", head=[0, 0])
+put("ines", "L05", HF_IN, yaw=HF_IN_YAW, arms=[150, 0], expr="smirk", head=[0, 0])
 hide("ines", "L06-0.01")
 put("ines", "L06", [1.9, 0.0, Z4 - 0.51], yaw=FACE_IN, sit=True, lean=-6, arms=[60, 60], head=[0, 22], expr="warm")
 hide("ines", "L06.2")
@@ -469,11 +485,11 @@ hide("ines", "L41")
 put("ines", "L55", SEAT_K(0.95), yaw=0, sit=True, expr="neutral", head=[0, 6])
 put("ines", "L56", SEAT_K(0.95), yaw=0, sit=True, expr="neutral", head=[0, 6])
 key("ines", "L56.1", sit=False, blend=0.1)
-walk("ines", "L56.1+0.7", [KX + 0.62, -0.15, 0])
-put("ines", "L56.1+0.75", [KX + 0.62, -0.55, -0.06], yaw=180, sit=True, expr="neutral", head=[0, 6])
+walk("ines", "L56.1+0.7", [KX + 0.95, -0.15, 0])
+put("ines", "L56.1+0.75", [KX + 0.95, -0.55, -0.06], yaw=180, sit=True, expr="neutral", head=[0, 6])
 put("ines", "L57", [1.8, 0.0, Z4], yaw=yaw_to([1.8, 0.0], [0.0, -0.75]), expr="warm", head=[0, 2], arms=[30, 30], blink=False)
 hide("ines", "L58")
-put("ines", "L62", [2.0, 0.0, Z4], yaw=FACE_IN, expr="neutral")
+put("ines", "L62", tread(47, 1.8), yaw=yaw_to(tread(47), tread(48)), expr="neutral")
 hide("ines", "L62+0.2")
 put("ines", "L63", SIT_IN, yaw=YAW_IN, sit=True, expr="asleep", blink=False, head=[0, 6], lean=4)
 hide("ines", "L64")
@@ -632,7 +648,8 @@ cues = [
     {"at": "L58", "name": "door", "open": 0.0, "glow": 0.0, "dur": 0.0},
     {"at": "L62", "name": "door", "open": 85.0, "glow": 0.5, "dur": 0.0},
     {"at": "L62+0.2", "name": "door", "open": 85.0, "glow": 0.5, "dur": 0.0},
-    {"at": "L70", "name": "door", "open": 60.0, "glow": 0.5, "dur": 0.0},
+    {"at": "L70", "name": "door", "open": 14.0, "glow": 0.5, "dur": 0.0},
+    {"at": "L71", "name": "door", "open": 60.0, "glow": 0.5, "dur": 0.0},
     {"at": "L73", "name": "door", "open": 85.0, "glow": 0.5, "dur": 0.0},
     {"at": "L25b", "name": "shudder", "amp": 1.0},
     {"at": "L26", "name": "shudder", "amp": 0.0},
@@ -711,9 +728,9 @@ story = {
     "caption": {"ink": "#08090d", "stroke_add": 2, "shadow": 0.8},
     "gap": 0.12,
     "tail": 0,
-    "look": {"fog": "#202838", "fog_density": 0.02, "fog_start": 2.5, "sky": "#0d1220", "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True,
-             "polish": {"quiet": [["L55", "L56>"], ["L60", "L76>"]], "reveal": ["L18", "L50", "L67"], "twist": "L67"}},
-    "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.025, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
+    "look": {"fog": "#202838", "fog_density": 0.02, "fog_start": 2.5, "sky": "#0d1220", "sky_strength": 1.0, "exposure": 0.3, "flash_safe": True,
+             "polish": {"quiet": [["L55", "L56>"], ["L73", "L76>"]], "sway": True, "reframe_every": 0.65, "push": 0.15, "cam_push": 0.11, "cam_arc": 4.5, "reveal": ["L18", "L50", "L67"], "twist": "L67"}},
+    "grade": {"shadows": [0.01, 0.03, 0.09], "highlights": [0.025, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012, "red_line": 0.79},
     "rain_shots": rain_shots,
     "shot_grades": {sid: {"highlights": [-0.22, -0.2, -0.2]} for sid in ("S33", "S34", "S76", "S77")}
