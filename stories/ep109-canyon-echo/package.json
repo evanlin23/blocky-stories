@@ -1,0 +1,11 @@
+{
+  "title": "This Canyon Echoes Whoever MISSES You 🏜️",
+  "description": "Out here, if you shout your name at the canyon, it answers in the voice of whoever misses you most. People hear their moms. One woman heard her old dog.\n\nI moved out west in May, and my dad hasn't called once. So I shouted mine.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Comment ECHO if you'd shout yours.",
+  "made_for_kids": false,
+  "cover_s": 2.2,
+  "shape": "same-voice",
+  "opening": "ban",
+  "lane": "core",
+  "hold": "batch 11: scripts only, not built yet"
+}
