@@ -2,10 +2,11 @@
 
 - **Slug:** `every-lock` (batch 6, slot P5, the lead's slug, and it uploads in the order the queue sets)
 - **From:** batch 6 brief pitch W4 ("Every Door I Close Gets Another LOCK 🔒"), the what-if escalation lane (`docs/research/port-study.md` → What-if escalation). Kept: the lock meter that doubles, the apartment's doors, a fight over a door. Changed: the escalation is stated as fact, the slammer is my big sister, and the title is now the concrete impossible count frame 1 shows ("My Bathroom Door Has 1,024 LOCKS 🔒").
+- **Revision 2 (2026-11-04, critic r1 must-fix 1):** L01 is now a threat to "you" led by the count, and L72 ends "Because HERE," so the loop reads as one sentence: "Because here, eleven slams, and your door has 1,024 locks." Changed: L01, L72. Eleven closes is exact: a door's first close gives it one lock, and ten doublings make 1,024.
 - **Revision 1 (2026-11-03, before build):** the blind premise check scored the old title and L01 a 6 ("the payoff stays abstract"), so frame 1 is now a flash-forward to our 1,024-lock door and L01 names it. Changed or new: L01, L02, L02b, L10b, L12b, L38, L40, L53, L57, L58, L65b, L71, L72. The lore shot moves from L57 to L58.
 - **Lane:** experiment (what-if escalation). **Length arm:** long.
 - **Word count:** 632 spoken words in 76 lines, all `narrator`, plus 2 music drops (1.2 s) and the lore shot held inside L58.
-- **Estimated length:** 632 words at 290 wpm is 2:10 of speech. The 0.12 s gaps add 9.1 s, the drops 1.2 s and the loop tail 0.25 s: about 2:18 to 2:22. If it lands over 2:30, cut L45 first, then L62, then L33.
+- **Estimated length:** 633 words at 290 wpm is 2:10 of speech. The 0.12 s gaps add 9.1 s, the drops 1.2 s and the loop tail 0.25 s: about 2:18 to 2:22. If it lands over 2:30, cut L45 first, then L62, then L33.
 - **Look:** `look.style: "closer"`, `look.flash_safe: true`, `look.polish: true` if the polish pack has merged. Bright and saturated everywhere except one scene (the night, L36 to L54), which is lit by warm night lights, never black.
 
 ## The big idea
@@ -17,16 +18,16 @@ The "wait, what": the rule we've watched all story (closing a door doubles its l
 ## The story
 
 - **Premise:** In our apartment building, closing a door doubles its locks, and the locks never come off, so everybody lives with their doors open. I've never closed a door in my life. My big sister Jade slams them. We have one bathroom, we both need it at 7:15, and every morning she gets there first and slams it. The bathroom door doubles from 4 to 1,024 locks as our fight escalates, until it's so thick it leans into the hall.
-- **Rule / hook:** "Never let a door shut here. Ours has a thousand locks." Frame 1 is a flash-forward to our bathroom door at 1,024 (the L31 look), and L12b winds the meter back to the month it had four. A door that has never been closed has no locks. Every close doubles the count (a new door's first close gives it one). Each lock arrives shut, with its own key and its own little brass keyhole flap.
+- **Rule / hook:** "Eleven slams, and your door has one thousand and twenty-four locks." Frame 1 is a flash-forward to our bathroom door at 1,024 (the L31 look), and L12b winds the meter back to the month it had four. A door that has never been closed has no locks. Every close doubles the count (a new door's first close gives it one). Each lock arrives shut, with its own key and its own little brass keyhole flap.
 - **The turn:** the night after the 1,024th lock, one keyhole flap swings shut on its own (the door is so heavy it leans). A flap is a little door, so that lock gets a lock. Then those flaps close. The door doubles by itself, and by three in the morning it fills our hall and is pushing my bedroom door shut.
 - **The loophole (the climax turns the rule's own words):** "the locks never come off." The door does. Jade and I pull the three hinge pins, lift the whole clicking pile out of the frame together and carry it down to the curb.
-- **The sting and loop:** in the morning the curb is empty. Mr. Dale across the hall, who takes home anything left at the curb, has a new, very thick bathroom door. It's still clicking, and overnight it has grown down his little hall until it's pushing on his own front door, the way ours pushed my bedroom door (L48 to L50). If his front door shuts, that one starts doubling too, and it faces ours. "So, Mr. Dale, get your foot on it. And whatever you do," loops into "Never let a door shut here."
+- **The sting and loop:** in the morning the curb is empty. Mr. Dale across the hall, who takes home anything left at the curb, has a new, very thick bathroom door. It's still clicking, and overnight it has grown down his little hall until it's pushing on his own front door, the way ours pushed my bedroom door (L48 to L50). If his front door shuts, that one starts doubling too, and it faces ours. "So, Mr. Dale, get your foot on it. Because here," loops into "eleven slams, and your door has one thousand and twenty-four locks."
 - **Where the turn is planted (a rewatch catches both):**
   - Plant 1, L04 (the fridge downstairs): the insert on the fridge's locks shows each one's little brass keyhole flap, and one lock near the top already has a tiny lock of its own growing on it. Not narrated.
   - Plant 2, L17 ("Every lock comes with its own KEY."): close on one new lock on our door, its keyhole flap swinging and settling half shut. Not narrated.
   - Plant 3, L10b ("the fridge downstairs CLICKS by ITSELF"): narrated, at about 22 s, the early unsettling beat. Nobody says why until L40.
   - Plant for the sting, L10 and L34: Mr. Dale takes home anything left at the curb, and he looks at our 1,024-lock door and says it's a good door.
-- **How the last 15 seconds turn over the first line:** the first time, "Never let a door shut here" is a warning to the viewer about how this building works. On the loop it's me pleading with Mr. Dale about his front door, which his new door is pushing shut, the way ours nearly shut mine. It's the one thing he can still stop, with his foot, the way I did. The rule never needed a person at all.
+- **How the last 15 seconds turn over the first line:** the first time, "Eleven slams, and your door has 1,024 locks" is a threat to the viewer about how this building works. On the loop it's me warning Mr. Dale about his front door, which his new door is pushing shut, the way ours nearly shut mine. It's the one thing he can still stop, with his foot, the way I did. The rule never needed a person at all.
 - **Ending shape:** a door given away (the problem moves across the hall). Shape tag `runaway`.
 - **Warmth:** a sibling truce. Shown: Jade laughing so hard she sits on the door on the stairs, then she slams the new shower curtain for fun (a curtain isn't a door, so nothing happens), the next morning she lets me go first, and we knock on the bare frame.
 - **Not a sad family reveal.** Nobody is gone, sick, estranged or secretly grieving. The fight is a bathroom fight.
@@ -107,11 +108,11 @@ There's no monster. The thing that grows is the bathroom door. It's one model in
 - **Sound hit on L01's last word:** a heavy bolt "clunk" doubled (two clunks 0.12 s apart) on "LOCKS", and the whole pile shudders with a jingle of brass.
 - **L12b:** a soft tape-rewind zip under the meter's wind back (0.5 s, mid range, quiet).
 - **Ambience:** apartment room tone, a far-off street, the brothers' muffled argument at L07, Mrs. Pike singing (a hummed synth vowel, no words) at L08 and L09, the key bucket's rattle at L45, the ceiling light's creak at L46, footsteps on stairs (soft recorded steps from `assets/audio/`).
-- **The loop:** 0.25 s after "DO,", cut to L01's first frame.
+- **The loop:** 0.25 s after "HERE,", cut to L01's first frame.
 
 ## The opening recipe (playbook v1), point by point
 
-1. **Line 1 is a warning to "you", around one concrete impossible count:** "Never let a DOOR / shut here. / Ours has a THOUSAND LOCKS." 10 words, about 2.1 s.
+1. **Line 1 is a threat to "you", led by one concrete impossible count:** "ELEVEN SLAMS, / and YOUR door has / ONE THOUSAND / and twenty-four LOCKS." 11 words, about 2.3 s. It opens on the number, so it tags as `count`, not `ban` or `must`.
 2. **Frame 1 looks straight at the warned-of thing, already wrong:** a tight close on our bathroom door at 1,024 locks, a lumpy brass bulge where a yellow door should be, a sliver of yellow paint at the frame. Lit bright, centred, pushing in. The meter reads 1,024. No wide, no establishing shot in the first 3 s.
 3. **A sound hit on the last word:** the doubled bolt clunk lands on "LOCKS" and the whole pile shudders.
 4. **Line 2 tightens it in at most 1.5 s:** "Every time it SHUTS, / they DOUBLE." 6 words, about 1.2 s, shown on our kitchen cupboard (1 lock → 2). L02b, "And they NEVER / come OFF.", follows at once. No names, places or backstory before 4 s (the first name, Mrs. Pike, is at about 17 s).
@@ -152,7 +153,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** our bathroom door, the downstairs kitchen, the building's hall, the stairwell, upstairs.
 - **Shots:** 17.
 
-- `L01` narrator: Our bathroom DOOR / has ONE THOUSAND / and twenty-four LOCKS. (opening: count, 2026-11-03)
+- `L01` narrator: ELEVEN SLAMS, / and YOUR door has / ONE THOUSAND / and twenty-four LOCKS. (opening: count, 2026-11-04)
   - [two shots: a tight close, centred, on our bathroom door at 1,024 locks, bright morning, a lumpy brass and chrome bulge with a sliver of yellow paint at the frame. Push in. Then a punch in across the locks, every keyhole flap glinting. On "LOCKS" the doubled clunk and the whole pile shudders with a jingle. Meter 1,024 from the first frame]
 - `L02` narrator: Every time it SHUTS, / they DOUBLE.
   - [our kitchen cupboard door with one brass lock, nudged shut by my elbow: a second lock pops on beside the first. Bright]
@@ -334,8 +335,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [punch in on the pile in his doorway, glinting]
 - `L71` narrator: It's still CLICKING. / And it's PUSHING / on his FRONT DOOR.
   - [two shots: a close on one of its flaps swinging shut, new locks budding. Meter 262,144. Then wider across the building hall: the pile has filled his little hall overnight, and its front lump nudges his wide-open front door, which starts to swing toward shut, facing ours]
-- `L72` narrator: So, Mr. DALE, / get your FOOT on it. / And whatever you DO,
-  - [two shots: Mr. Dale in his doorway, `neutral`, looking down at his swinging door, a slipper lifting. Then me looking straight down the lens, `worried`. 0.25 s after "DO," cut to L01's first frame: our 1,024-lock door, meter back to 1,024]
+- `L72` narrator: So, Mr. DALE, / get your FOOT on it. / Because HERE,
+  - [two shots: Mr. Dale in his doorway, `neutral`, looking down at his swinging door, a slipper lifting. Then me looking straight down the lens, `worried`. 0.25 s after "HERE," cut to L01's first frame: our 1,024-lock door, meter back to 1,024]
 
 ## Risks
 
