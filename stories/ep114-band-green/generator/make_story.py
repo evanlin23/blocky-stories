@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -160,17 +160,18 @@ cue(0, "sit6", s=0.0)
 cue(0, "phone", where=0.0, screen=0.0)
 
 # ===== 01 the rule (L01 to L05)
-FEETCAM = [[0, [-6.0, -4.3, 0.28], [-3.0, -0.2, 0.9], 14], [1, [-5.9, -4.2, 0.3], [-3.0, -0.1, 0.95], 14]]
+FEETCAM = [[0, [-5.1, -6.0, 0.25], [-5.5, -1.8, 0.4], 16], [1, [-5.1, -5.9, 0.27], [-5.5, -1.8, 0.42], 16]]
+FEET2CAM = [[0, [-5.9, -5.6, 0.25], [-5.7, -1.75, 0.45], 16], [1, [-5.9, -5.5, 0.27], [-5.7, -1.75, 0.47], 16]]
 shot(0, FEETCAM, "feet1")
 shot("L01.1", cam(1.0, -1.0, 1.2, 8.5, 5, 28), "row")
-shot("L01.2", cam(-3.2, -1.0, 1.3, 5.5, 85, 30), "dancers")
+shot("L01.2", [[0, [4.2, -7.6, 2.8], [-2.0, 0.0, 1.0], 26]], "dancers")
 shot("L02", cam(MEX, MEY, 1.42, 3.2, 90, 40), "meglum")
 cue("L02", "song", n=1.0)
 shot("L02.2", [[0, [-4.3, -2.6, 0.5], [-5.35, -1.75, 0.58], 30], [1, [-4.4, -2.5, 0.52], [-5.35, -1.75, 0.58], 30]], "sneakers")
 # L03: the wide sunset, the band shows up
 shot("L03", [[0, [0.0, -9.5, 1.9], [0.0, 6.0, 2.9], 18]], "wide")
 cue("L03", "song", n=2.0)
-shot("L03.2", [[0, [0.6, 2.4, 1.5], [0.0, 9.0, 2.5], 30]], "bandshows")
+shot("L03.2", [[0, [0.9, 1.0, 2.7], [0.0, 9.0, 2.3], 30]], "bandshows")
 # L04: from behind the crowd
 shot("L04", [[0, [2.4, 3.6, 1.7], [0.0, 9.0, 2.4], 26]], "behindcrowd")
 shot("L04.2", [[0, [-0.9, 5.4, 1.9], [-0.8, 8.8, 2.3], 38]], "jackets")
@@ -179,7 +180,7 @@ shot("L05.2", [[0, [3.8, 6.2, 1.6], [1.4, 8.8, 3.1], 38]], "brims2")
 
 # ===== 02 the rule at work (L06 to L10)
 shot("L06", cam(D["t2"][0], D["t2"][1], 0.4, 2.4, 120, 28, cz=0.3), "feetgo")
-shot("L07", front("bank", 1.3, 3.6, 34), "bank")
+shot("L07", front("bank", 1.3, 3.2, 34, off=-40), "bank")
 shot("L08", cam(D["mail"][0], D["mail"][1], 0.85, 4.2, 170, 30, cz=1.2), "mail")
 shot("L09", front("grandpa", 1.35, 3.6, 34), "grandpa")
 shot("L09.1", front("grandpa", 0.55, 2.2, 30, cz=0.45), "knees")
@@ -193,8 +194,8 @@ shot("L12", [[0, [-4.3, -0.4, 0.75], [-5.7, -1.3, 0.58], 28], [1, [-4.4, -0.5, 0
 # L13: the photo of me and Benny on my phone, held on my raised hand
 key("me", "L13", arms=[0, 88], head=[0, 8], expr="worried")
 key("me", "L13.2", arms=[0, 88], head=[0, 8])
-cue("L13", "phone", where=1.0, screen=0.0, x=MEX + 0.7, y=MEY + 0.52, z=1.7, rot=90.0, tilt=-8.0, lie=0.0)
-shot("L13", [[0, [-2.8, -0.9, 1.5], [-5.9, -1.5, 1.5], 22]], "photo")
+cue("L13", "phone", where=1.0, screen=0.0, x=MEX + 0.85, y=MEY + 0.5, z=1.3, rot=90.0, tilt=-8.0, lie=0.0)
+shot("L13", [[0, [-3.5, -1.2, 1.5], [-5.4, -1.25, 1.3], 30], [1, [-3.7, -1.2, 1.45], [-5.4, -1.25, 1.3], 30]], "photo")
 key("me", "L13.1", arms=[0, 0], head=[0, 6])
 cue("L13.1", "phone", where=0.0)
 cue("L13.1", "truck", y=-8.0, dur=0)
@@ -246,7 +247,7 @@ shot("L21", [[0, [5.6, 0.8, 6.3], [14.0, 1.0, 7.2], 24]], "clock3")
 cue("L22", "dance", amp=0.5, tired=0.9, dur=0.8)
 cue("L22", "song", n=44.0, dur=0.3)
 shot("L22", [[0, [0.0, -9.5, 3.2], [-1.0, 1.0, 1.2], 20]], "drooping")
-shot("L22.2", [[0, [-1.8, -5.0, 0.3], [0.0, -2.0, 0.4], 24]], "dragging")
+shot("L22.2", [[0, [-2.2, -7.8, 0.4], [-2.6, -3.4, 0.4], 22]], "dragging")
 for w in D:
     key(w, "L21", expr="worried")
 key("grandpa", "L23", expr="worried")
@@ -286,9 +287,17 @@ shot("L31", cam(MEX, MEY, 1.38, 2.6, 80, 38), "mebench")
 shot("L32", [[0, [-7.6, 1.8, 1.6], [D["bank"][0], D["bank"][1], 1.5], 40]], "stepbank")
 shot("L32.1", [[0, [-7.6, 1.8, 1.6], [D["mail"][0], D["mail"][1], 1.2], 40]], "stepmail")
 shot("L32.2", [[0, [-7.6, 1.8, 1.6], [D["sand"][0], D["sand"][1], 1.5], 42]], "stepsand")
-shot("L32.3", [[0, [-7.6, -4.2, 1.7], [D["grandpa"][0], D["grandpa"][1], 1.5], 28]], "stepgrandpa")
-shot("L33", [[0, [-7.0, -4.8, 1.7], [D["grandpa"][0], D["grandpa"][1], 1.5], 26]], "gface")
-shot("L34", [[0, [-6.2, -4.0, 0.8], [-5.1, -2.2, 0.55], 13]], "kneesbench")
+# Grandpa is tired, upright, and looks at me: the camera sits by my shoulder, in front of his face
+cue("L32.2", "dance", amp=0.12, tired=0.0, dur=0.5)
+key("grandpa", "L32.2", expr="worried", head=[0, 0], lean=0)
+_gx, _gy = D["grandpa"][:2]
+_dx, _dy = MEX - _gx, MEY - _gy
+_dl = math.hypot(_dx, _dy)
+_ux, _uy = _dx / _dl, _dy / _dl
+shot("L32.3", [[0, [_gx + _ux * 2.6 + _uy * 0.9, _gy + _uy * 2.6 - _ux * 0.9, 1.75], [_gx, _gy, 1.5], 30]], "stepgrandpa")
+shot("L33", [[0, [_gx + _ux * 1.7 - _uy * 0.35, _gy + _uy * 1.7 + _ux * 0.35, 1.6], [_gx, _gy, 1.55], 30],
+             [1, [_gx + _ux * 1.5 - _uy * 0.3, _gy + _uy * 1.5 + _ux * 0.3, 1.6], [_gx, _gy, 1.55], 30]], "gface")
+shot("L34", [[0, [-5.2, -5.7, 0.32], [-5.0, -2.1, 0.45], 15]], "kneesbench")
 
 # ===== 06 the rule's own logic (L35 to L40)
 shot("L35", [[0, [-2.4, -4.0, 0.4], [-4.2, -2.4, 0.35], 24]], "feetrow")
@@ -321,10 +330,16 @@ cue("L42", "look", id="dawn", dur=1.6)
 cue("L42", "band", u=0.0, turn=0.0, dur=0)
 LIE = {"grandpa": 125, "bank": 0, "mail": 30, "sand": 190, "t1": 180, "t2": 150, "t3": 0, "t4": 40, "t5": 90,
        "t6": 70, "t7": 160}
+LCAM = (-2.5, -6.9)      # the low camera among them; everyone falls so their faces look toward it
+cue("L42+0.5", "lying", k=1.0)
 for who in D:
-    key(who, "L42+0.7", blend=0.7, lean=-90, yaw=LIE[who], expr="laugh", arms=[0, 0], side=[70, 70])
-key("me", "L42+0.7", blend=0.7, lean=-90, yaw=0, expr="laugh", arms=[0, 0], head=[0, 0])
-shot("L42", [[0, [-9.0, -6.0, 3.6], [-1.0, 0.0, 0.4], 22]], "lying")
+    x_, y_, _ = D[who]
+    face_cam = math.degrees(math.atan2(LCAM[0] - x_, -(LCAM[1] - y_)))
+    if who == "t5":     # her head would end up in the bandstand steps
+        face_cam += 180
+    key(who, "L42+1.5", blend=1.0, lean=-84, yaw=face_cam + (-14 if sum(map(ord, who)) % 2 else 14), expr="laugh", arms=[0, 0], side=[70, 70])
+key("me", "L42+1.5", blend=1.0, lean=-84, yaw=-100, expr="laugh", arms=[0, 0], head=[0, 0])
+shot("L42", [[0, [-2.5, -6.9, 0.55], [-2.4, -2.2, 0.85], 22], [1, [-2.5, -6.2, 0.5], [-2.4, -2.2, 0.85], 22]], "lying")
 shot("L43", [[0, [-4.0, -2.75, 2.4], [-5.6, -3.85, 0.35], 28]], "glaugh")
 cx_ = STAND[0] + 0.0
 cue("L44", "phone", where=1.0, lie=1.0, screen=1.0, x=STAND[0], y=STAND[1] + 1.12, z=0.43, rot=0.0)
@@ -332,6 +347,7 @@ shot("L44", [[0, [STAND[0], STAND[1] + 0.25, 2.8], [STAND[0], STAND[1] + 1.25, 0
 shot("L45", [[0, [-3.0, -7.0, 0.8], [0.0, 20.0, 5.0], 22]], "sunrise")
 cue("L46", "look", id="dusk", dur=0)
 cue("L46", "phone", where=0.0)
+cue("L46", "lying", k=0.0, dur=0)
 cue("L46", "dance", amp=1.0, tired=0.0, dur=0)
 cue("L46", "feet", n=6.0, dur=0)
 cue("L46", "song", n=1.0, dur=0)
@@ -353,7 +369,7 @@ shot("L47", [[0, [2.4, -0.8, 1.45], [7.1, -1.1, 1.25], 30]], "otherman")
 cue("L48", "medance", amp=1.0, dur=0.3)
 teleport("grandpa", "L48", [-3.0, -4.8])
 shot("L48", cam(-5.7, -1.75, 1.2, 3.0, 70, 30), "first")
-shot("L48.1", FEETCAM, "feet2")
+shot("L48.1", FEET2CAM, "feet2")
 # ---------------------------------------------------------------------------------------------- finish
 remap_all(cues)
 for k_ in acting.values():
@@ -373,6 +389,11 @@ sfx = [
     {"at": "L09.1", "kind": "click", "db": -16},
     {"at": "L09.1+0.47", "kind": "click", "db": -16},
     {"at": "L40.2+0.3", "kind": "sting", "db": -10},
+    {"at": "L21", "kind": "click", "db": -14},
+    {"at": "L25.2", "kind": "creak", "db": -16},
+    {"at": "L37", "kind": "creak", "db": -14},
+    {"at": "L37+0.45", "kind": "click", "db": -9},
+    {"at": "L44", "kind": "thud", "db": -16},
 ]
 music = {
     "root": 46, "mode": "major", "bpm": 128, "seed": 114,
@@ -405,7 +426,7 @@ polish = {"reveal": [remap("L27")], "twist": remap("L28"),
           "hold": [names["scratch"], names["photo"], names["call"]]}
 story = {
     "slug": "ep114-band-green",
-    "title": "When the Band Plays, EVERYONE Dances",
+    "title": "Everyone Here Has to DANCE",
     "made_for_kids": False,
     "premise": ("In a town where a band nobody knows plays on the green every Saturday and everyone has to dance, "
                 "I'm the only one whose feet never move, since my best friend moved away."),

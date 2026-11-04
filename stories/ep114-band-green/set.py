@@ -464,7 +464,10 @@ def build(kit, story, tl):
     # a second rim from behind and above the leader, for the band close-ups (gain 0 elsewhere)
     rim2 = kit.light("rim2", "SPOT", (0.9, G.STAGE[1] + 2.6, 4.6), 1.0, "#cfe0ff", spot=60, blend=0.4, shadow=False, size=0.03)
     kit.aim(rim2, (0, G.STAGE[1] - 0.2, 3.3))
-    for nm in ["sun", "fill", "stage", "rim", "rim2"] + [f"bulb{k}" for k in range(6)]:
+    for k_, sx_ in enumerate((-1, 1)):
+        r3 = kit.light(f"edge{k_}", "SPOT", (sx_ * 2.4, G.STAGE[1] + 1.9, 3.2), 1.0, "#d8e6ff", spot=70, blend=0.5, shadow=False, size=0.03)
+        kit.aim(r3, (sx_ * 0.15, G.STAGE[1] - 0.3, 2.9))
+    for nm in ["sun", "fill", "stage", "rim", "rim2", "edge0", "edge1"] + [f"bulb{k}" for k in range(6)]:
         kit.LIGHTS[nm]["obj"].visible_camera = False
     # ------------------------------------------------------------------ ground and roads
     kit.plane("ground", (400, 400), (0, 0, -0.02), lawn2)
@@ -558,8 +561,10 @@ def _digit(d, n):
 
 # ---------------------------------------------------------------------------------------------- the dance
 BENCH_TARGET = G.BENCH1
-LOWKEY = {"S42", "S43", "S44", "S45", "S46", "S66"}
+LOWKEY = {"S41", "S42", "S43", "S44", "S45", "S46", "S66"}
 TAGMACRO = {"S59"}
+EDGE = {"S41": 900.0, "S44": 1500.0, "S45": 2000.0, "S66": 1800.0}
+DIM = {"S67": (0.0, 0.04, 0.35, 0.1)}
 HIDEHORN = {"S43", "S44", "S45", "S46"}
 DANCERS = ["grandpa", "bank", "mail", "sand", "t1", "t2", "t3", "t4", "t5", "t6", "t7"]
 
@@ -732,7 +737,14 @@ def animate(kit, story, tl, t, ctx):
     # the band close-ups: no key light, only the rim, and none of the bulbs behind the hat
     lowkey = sid in LOWKEY
     gains["rim2"] = 0.0
+    gains["edge0"] = gains["edge1"] = 0.0
     W["sid"] = sid
+    if sid in DIM:     # the white-lit bandstand held down so the cuts to and from navy don't flash
+        gains["stage"] *= DIM[sid][0]
+        gains["rim"] *= DIM[sid][1]
+        gains["fill"] *= DIM[sid][2]
+        for k in range(6):
+            gains[f"bulb{k}"] *= DIM[sid][3]
     if lowkey:
         for k in range(6):
             gains[f"bulb{k}"] = 0.0
@@ -741,6 +753,10 @@ def animate(kit, story, tl, t, ctx):
         gains["fill"] = look["fill"] * 0.5
         gains["rim"] = 600.0
         gains["rim2"] = 2200.0
+        if sid == "S41":
+            gains["rim"], gains["rim2"] = 0.0, 500.0
+        if sid in EDGE:
+            gains["edge0"] = gains["edge1"] = EDGE[sid]
     for ob in W["eave_bulbs"] + W["bulbs"]:
         ob.hide_render = lowkey
     w = bpy.context.scene.world
@@ -811,7 +827,11 @@ def animate(kit, story, tl, t, ctx):
         r_ = bpy.data.objects.get(who)
         if r_ is not None:   # lying on the back: lift the body half its thickness off the grass
             r_.location.z += 0.27 * min(1.0, max(0.0, -r_.rotation_euler.x / 1.4))
+    lay = sample("lying", tl, t, {"k": 0.0})["k"]
     for who in DANCERS:
+        if lay > 0.5 and who != "t6":
+            _laugh(who, t)
+            continue
         if who == "t6" and s6 > 0.01:
             for sx in (-1, 1):
                 leg = bpy.data.objects.get(f"t6.leg{sx}")
@@ -825,7 +845,9 @@ def animate(kit, story, tl, t, ctx):
     sit = sample("sit", tl, t, {"s": 1.0})["s"]
     md = sample("medance", tl, t, {"amp": 0.0})["amp"]
     if me is not None:
-        if md > 0.01:
+        if lay > 0.5:
+            _laugh("me", t)
+        elif md > 0.01:
             _dance_me(t, md)
         if sit > 0.001:
             for sx in (-1, 1):
@@ -838,12 +860,32 @@ def animate(kit, story, tl, t, ctx):
     return gains
 
 
+def _laugh(who, t):
+    """On the back, laughing: arms waving in the air, legs kicking, the chest shaking, the head up toward the camera."""
+    root = bpy.data.objects.get(who)
+    ph = (sum(map(ord, who)) % 17) * 0.9
+    s1 = math.sin(7.0 * t + ph)
+    s2 = math.sin(6.0 * t + ph + 1.7)
+    P = lambda n: bpy.data.objects.get(f"{who}.{n}")
+    if P("arm-1"):
+        P("arm-1").rotation_euler = (-(1.5 + 0.6 * s1), 0.5, 0)
+    if P("arm1"):
+        P("arm1").rotation_euler = (-(1.5 + 0.6 * s2), -0.5, 0)
+    if P("leg-1"):
+        P("leg-1").rotation_euler = (0.5 * s2, 0, 0)
+    if P("leg1"):
+        P("leg1").rotation_euler = (-0.5 * s1, 0, 0)
+    if P("neck"):
+        P("neck").rotation_euler = (P("neck").rotation_euler.x + 0.95, 0, 0.25 * s1)
+    root.rotation_euler = (root.rotation_euler.x + 0.05 * s1, 0, root.rotation_euler.z)
+
+
 def _dance_me(t, amp):
     root = bpy.data.objects.get("me")
     beat = 2 * math.pi / G.BEAT
-    step = math.floor(t / (G.BEAT * 0.5)) % 2
-    root.location.z += 0.08 * step * amp
-    root.rotation_euler = (root.rotation_euler.x, 0, root.rotation_euler.z + (0.28 if step else -0.28) * amp)
+    sn = math.sin(2 * math.pi * t / G.BEAT)      # smooth, so a big close figure doesn't flash on a pose snap
+    root.location.z += 0.04 * (1 + sn) * amp
+    root.rotation_euler = (root.rotation_euler.x, 0, root.rotation_euler.z + 0.28 * sn * amp)
     al, ar = bpy.data.objects.get("me.arm-1"), bpy.data.objects.get("me.arm1")
     if al:
         al.rotation_euler = (-0.15, 1.5 * amp, 0)
