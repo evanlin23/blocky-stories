@@ -562,7 +562,7 @@ cue("L70.2", "tally", on=1.0, dur=0.4)
 cue("L71.1", "tally", on=0.0, dur=0.4)
 shot("L70.2", "hall", C([-2.9, -2.6, 0.62], [-1.25, -3.4, 0.3], 16), {
     "abe": SIT(HX["abe"], BY, 180, expr=MOVED), "me": SIT(HX["me"], BY, 180, expr=MOVED)},
-     "the lore plant: wide on my seat, the iron leg lit, two short strokes scratched in", step=4, hand=0.002)
+     "the lore plant: wide on my seat, the iron leg lit, two short strokes scratched in", step=1, hand=0.002)
 # ---- 07 the name (L71 to L80)
 shot("L71.1", "hall", C([6.9, -1.7, 1.4], [5.1, -0.3, 1.45], 28), {
     "curator": P(5.55, -0.5, -90, arms=[50, 0], expr=SMILE), "abe": P(4.6, -0.5, 90, arms=[50, 0], expr=SMILE)},
@@ -682,7 +682,7 @@ story = {
                   {"at": "L66", "voices": ["drone", "pad", "piano"], "energy": 0.5, "mode": "major", "root": 53},
                   {"at": "L76", "voices": ["drone", "choir"], "energy": 0.45},
               ]},
-    "sound": {"floor": "stone", "steps_db": -22, "samples": True, "rev": 5,
+    "sound": {"floor": "stone", "steps_db": -22, "samples": True, "rev": 6,
               "ambience": [
                   {"kind": "room", "from": 0, "to": "L04", "lufs": -38},
                   {"kind": "room", "from": "L05", "to": "L06", "lufs": -38},

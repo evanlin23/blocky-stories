@@ -22,3 +22,6 @@ Rule: only a single small fix (one shot or one cue) may be re-proofed once; this
 
 ## Update 2026-11-04: revived for one fix
 Builder fixed qa's S081 (camera moved, narrator in frame) and S014-S015 (passers-by behind the bench, out of frame). Critic r7 (opus, those shots only): **approve** (S005 7, S014-15 6, S081 6). Advice, not blocking: S081 has a dark block near the mouth (stair beam foot or a head?) for qa to check on the proof; Abe's rim could ramp up ~20% over the S015 push. Gate OPEN, pytest 196 pass. Proof 2 drawing on PR #199; a second qa fail means dropped for good.
+
+## Update 2026-11-04: proof assemble guard
+Proof runs 41743302267 and 41743814506 both failed at assemble "every frame must be there": 4233 of 4261 frames. Cause: shot S089 had step=4 (the lore plant), so the proof draws 1 in 4 frames of it and the guard counts them all. Fixed in the story (generator S089 step=1, sound.rev 6): frame_list now 4261/4261. Not an engine change. Other step!=1 shots would trip the same guard.

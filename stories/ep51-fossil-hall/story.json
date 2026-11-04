@@ -5449,7 +5449,7 @@
     ]
    ],
    "hand": 0.002,
-   "step": 4,
+   "step": 1,
    "what": "the lore plant: wide on my seat, the iron leg lit, two short strokes scratched in",
    "at": "L70.2"
   },
@@ -15199,7 +15199,7 @@
   "floor": "stone",
   "steps_db": -22,
   "samples": true,
-  "rev": 5,
+  "rev": 6,
   "ambience": [
    {
     "kind": "room",
