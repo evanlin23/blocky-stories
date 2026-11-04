@@ -1,6 +1,8 @@
 # ep99-statue-years: handoff
 
-**STATUS: dropped** (2026-11-04), after the 2-round review cap. No PR opened.
+**STATUS: revived** (2026-11-04, orchestrator): a title-only standards check (r3-standards.md) approved "The Statue That Grows OLD For Us 🗿". Hold removed; check passes, gate OPEN. PR and proof next.
+
+Earlier: dropped after the 2-round review cap.
 
 ## Why
 - Round 2 critic: **approve**, average 7.0, nothing under 5, no must-fixes (r2-critic.md).
