@@ -21,3 +21,12 @@ Keep ep101 at least 2 slots from ep96-friend-card (another wording loophole) and
 The plan asked for a `grin` on Wes at S92. In the render his mouth is a tight grimace. It reads fine as nerves before the reveal, so leave it unless the critic objects.
 
 Verdict: approve
+
+## Rescue re-look (flash and picture only, 2026-11-04)
+
+Fix checked: darker living-room and bedroom walls (set.py, L19-L20).
+
+- **Flash** (new preview, measured with flash.run): PASS. general_3f peaks at 5 flashes/s at 34.27 s (cap 6). The general_3f extended run is now 3.0 s from 27.43 s, down from 4.27 s and about 1 s under the 4 s limit. Red is 0, and the house bar passes. This is still indicative only, because the final gets measured again on Actions.
+- **Picture, 27-38 s** (2 fps sheet): readable and bright. Mean luma per second runs 108-165. The L19-L20 rooms read as pale blue walls with clear faces and clear captions. Nothing is murky or crushed.
+
+Verdict: approve
