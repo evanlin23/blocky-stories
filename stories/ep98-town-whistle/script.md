@@ -2,7 +2,7 @@
 
 - **Slug:** `ep98-town-whistle` (batch 9b, upload order 2 of 4)
 - **Pitch:** E12 in `docs/research/premise-engines.md` (engine 14, the threat is already inside, panel A 5, panel B 8). Panel A's note ("no threat yet in line 1") is met by L02, which adds the threat without spoiling the reveal (see below). Opening shape `if`. Lane: core. Length arm: long (110 to 150 s).
-- **Title:** Everyone Hides When The WHISTLE Blows 📯 (changed from the pitch's "When The Whistle Blows, Go DOWNSTAIRS": RULES → Titles bars "a bare instruction that reads like a game hint", the "When the floor knocks, knock back" shape).
+- **Title:** Our Town Hides When The WHISTLE Blows 📯 (changed from the pitch's "When The Whistle Blows, Go DOWNSTAIRS": RULES → Titles bars "a bare instruction that reads like a game hint", the "When the floor knocks, knock back" shape).
 - **Word count:** 549 spoken words in 74 lines, all `narrator`, plus two 0.7 s music drops (before L30 and before L53).
 - **Estimated length:** about 126 s at 290 wpm with 0.15 s gaps, the drops and the loop tail. If it runs over 145 s, cut L06, then L23, then L39. If it lands under 112 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright small town in high summer: white and pastel clapboard houses with green lawns, blue sky, a brass whistle on a tall green pole in the middle of our street. The one dark scene is our basement stairs at midnight (L43 to L55), lit warm by my lamp. The sundown scene (L24 to L36) is gold, never dark. Light changes ramp over 0.3 s or more.
@@ -89,7 +89,7 @@ Every word is the narrator's. L36 is quoted inside the narration.
   | Sundown whistle | L24 to L36 | unseen. Every basement window well on the street breathes out dust at once, in time with the whistle (S32 to S34) |
   | Morning after | L37 to L42 | unseen. Dad grey with dust |
   | Midnight, the stairs | L43 to L52 | unseen. Warm air up the crack under the bottom step lifts the dust (S49), the whistle note from the crack (S50, S51) |
-  | Shown | L53 to L55 | far below the crack: its face, looking up, eyes lit, mouth round the pipe end (S53 to S55). Cover frame 88.4 |
+  | Shown | L53 to L55 | far below the crack: its face, looking up, eyes lit, mouth round the pipe end (S53 to S55). Cover frame 93.4 (S71, "our whole BASEMENT.") |
   | Reveal | L56 to L61 | a cutaway: the street from the side, cut like a cake, the houses and their long stairs going down, the Under lying far below with the pipe running down to its mouth (diagram-simple, bright above, dim below) |
   | Climax | L64 to L69 | unseen. The pipe's collar in the road puffs dust down instead of up, heavy soft steps going down, fading (sound only) |
   | Sting | L72 to L74 | unseen. A faint whistle from under the kitchen floor |
@@ -172,7 +172,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S52 | L52 | 84.3 | My lamp lowered toward the gap (lamp handle already in place, no grip). |
 | (drop) | | 85.9 | 0.7 s: the dark gap, still. |
 | S53 | L53 | 86.6 | Through the crack, far below: two small lamp-yellow eyes open in the dark. |
-| S54 | L54 | 88.0 | Wider down the crack: the Under's huge flat face filling the space below, clay tan with soot seams. Cover frame (88.4). |
+| S54 | L54 | 88.0 | Wider down the crack: the Under's huge flat face filling the space below, clay tan with soot seams. Cover frame was 88.4; now 93.4, in S71 on "our whole BASEMENT.". |
 | S55 | L55 | 89.8 | Its round black mouth wrapped around the end of the brass pipe. |
 | S56 | L56 | 92.2 | Cut up to the bright empty street at dawn. |
 | S57 | L57 | 93.2 | The cutaway: our street from the side, cut like a cake, the stairs going down, the Under lying far below. |
@@ -210,7 +210,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L08: Now it has / TWENTY-six.
 - L09: Every whistle, / one more STEP.
 - L10: Nobody else COUNTS. / I do.
-- L11: My grandpa, HAL, / Dad's dad, / lives next DOOR.
+- L11: My grandpa, ARLO, / Dad's dad, / lives next DOOR.
 - L12: His house is the only one in town / with no BASEMENT.
 - L13: He built it himself, / up on stone BLOCKS.
 - L14: When the whistle blows, / he makes TEA.
