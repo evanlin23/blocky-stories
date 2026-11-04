@@ -1,0 +1,1181 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "aunt bev laughs all night. hers says four ninety-two.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.121
+    ],
+    [
+     1.19,
+     1.655
+    ],
+    [
+     1.655,
+     2.31
+    ]
+   ]
+  },
+  "L02": {
+   "text": "in this town, the number over your head is how many days since you laughed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     0.922
+    ],
+    [
+     0.922,
+     1.414
+    ],
+    [
+     1.414,
+     1.621
+    ],
+    [
+     1.621,
+     2.034
+    ],
+    [
+     2.034,
+     2.81
+    ]
+   ]
+  },
+  "L03": {
+   "text": "every thursday is league night at the lanes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.233
+    ],
+    [
+     1.233,
+     1.914
+    ]
+   ]
+  },
+  "L04": {
+   "text": "and the numbers here are weird.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.75
+    ],
+    [
+     0.75,
+     1.414
+    ]
+   ]
+  },
+  "L05": {
+   "text": "earl at shoe rental has never smiled in his life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.897
+    ],
+    [
+     0.897,
+     1.578
+    ],
+    [
+     1.578,
+     2.241
+    ]
+   ]
+  },
+  "L06": {
+   "text": "his says zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ]
+   ]
+  },
+  "L07": {
+   "text": "the guy in lane four laughs at every one of his own jokes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.155,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.81
+    ],
+    [
+     0.81,
+     1.121
+    ],
+    [
+     1.121,
+     1.371
+    ],
+    [
+     1.371,
+     1.517
+    ],
+    [
+     1.517,
+     2.259
+    ]
+   ]
+  },
+  "L08": {
+   "text": "his says nine thousand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.31
+    ]
+   ]
+  },
+  "L09": {
+   "text": "he's gone totally gray.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.31
+    ]
+   ]
+  },
+  "L10": {
+   "text": "that's what happens past five hundred. your color goes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.448
+    ],
+    [
+     1.534,
+     2.466
+    ]
+   ]
+  },
+  "L11": {
+   "text": "mine has said zero my whole life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.81
+    ],
+    [
+     0.81,
+     1.586
+    ]
+   ]
+  },
+  "L12": {
+   "text": "i don't even laugh that much. i mostly fall down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.655
+    ],
+    [
+     0.655,
+     1.086
+    ],
+    [
+     1.181,
+     1.569
+    ],
+    [
+     1.569,
+     2.31
+    ]
+   ]
+  },
+  "L13": {
+   "text": "my aunt bev is the funniest person in our family.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     0.888
+    ],
+    [
+     0.888,
+     1.509
+    ],
+    [
+     1.509,
+     2.259
+    ]
+   ]
+  },
+  "L14": {
+   "text": "just ask her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L15": {
+   "text": "tonight she told the waitress the pickle joke.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.698
+    ],
+    [
+     0.698,
+     1.069
+    ],
+    [
+     1.069,
+     1.862
+    ]
+   ]
+  },
+  "L16": {
+   "text": "she laughed so hard she had to sit down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.19,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.483,
+     0.828
+    ],
+    [
+     0.828,
+     0.974
+    ],
+    [
+     0.974,
+     1.69
+    ]
+   ]
+  },
+  "L17": {
+   "text": "her number didn't move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.293
+    ]
+   ]
+  },
+  "L18": {
+   "text": "and her sleeves were starting to go gray.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.034
+    ],
+    [
+     1.034,
+     1.707
+    ]
+   ]
+  },
+  "L19": {
+   "text": "then i went up to bowl.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.724
+    ],
+    [
+     0.724,
+     1.31
+    ]
+   ]
+  },
+  "L20": {
+   "text": "and slipped. flat on my back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.56,
+     0.819
+    ],
+    [
+     0.819,
+     1.397
+    ]
+   ]
+  },
+  "L21": {
+   "text": "bev laughed so hard she snorted.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.879
+    ],
+    [
+     0.879,
+     1.586
+    ]
+   ]
+  },
+  "L22": {
+   "text": "and over my head, a one flipped back to zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.759
+    ],
+    [
+     0.81,
+     1.026
+    ],
+    [
+     1.026,
+     1.414
+    ],
+    [
+     1.414,
+     2.052
+    ]
+   ]
+  },
+  "L23": {
+   "text": "that's when i got it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.155
+    ]
+   ]
+  },
+  "L24": {
+   "text": "it counts the days since you made somebody else laugh.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.879
+    ],
+    [
+     0.879,
+     1.207
+    ],
+    [
+     1.207,
+     2.121
+    ]
+   ]
+  },
+  "L25": {
+   "text": "everybody laughs at earl.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     1.259
+    ]
+   ]
+  },
+  "L26": {
+   "text": "nobody laughs at lane four's jokes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     0.914
+    ],
+    [
+     0.914,
+     1.655
+    ]
+   ]
+  },
+  "L27": {
+   "text": "and aunt bev?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L28": {
+   "text": "the last real laugh she got was from me, four hundred and ninety-two days ago.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.534,
+   "onset": 0.172,
+   "end": 3.345,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.845
+    ],
+    [
+     0.845,
+     1.112
+    ],
+    [
+     1.112,
+     1.603
+    ],
+    [
+     1.698,
+     2.19
+    ],
+    [
+     2.19,
+     2.621
+    ],
+    [
+     2.621,
+     3.345
+    ]
+   ]
+  },
+  "L29": {
+   "text": "the day i decided i was too cool for her jokes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.155,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.836
+    ],
+    [
+     0.836,
+     1.069
+    ],
+    [
+     1.069,
+     1.414
+    ],
+    [
+     1.414,
+     2.121
+    ]
+   ]
+  },
+  "L30": {
+   "text": "so i laughed right then. a big one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.0
+    ],
+    [
+     1.077,
+     1.741
+    ]
+   ]
+  },
+  "L31": {
+   "text": "nothing. a fake laugh doesn't count.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.19,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.483,
+     0.966
+    ],
+    [
+     0.966,
+     1.655
+    ]
+   ]
+  },
+  "L32": {
+   "text": "bev looked at me. then she cracked her knuckles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.759
+    ],
+    [
+     0.828,
+     1.285
+    ],
+    [
+     1.285,
+     1.931
+    ]
+   ]
+  },
+  "L33": {
+   "text": "for a whole week, she told me every joke she has.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.276
+    ],
+    [
+     0.276,
+     0.621
+    ],
+    [
+     0.655,
+     1.026
+    ],
+    [
+     1.026,
+     1.466
+    ],
+    [
+     1.466,
+     2.086
+    ]
+   ]
+  },
+  "L34": {
+   "text": "the duck one. the dentist one. the pickle one, again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.603,
+     1.224
+    ],
+    [
+     1.293,
+     1.603
+    ],
+    [
+     1.603,
+     2.276
+    ]
+   ]
+  },
+  "L35": {
+   "text": "four-ninety eight. gray up to her shoulders.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.741
+    ],
+    [
+     0.802,
+     1.086
+    ],
+    [
+     1.086,
+     1.828
+    ]
+   ]
+  },
+  "L36": {
+   "text": "four-ninety nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.19,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.19,
+     0.552
+    ],
+    [
+     0.552,
+     1.052
+    ]
+   ]
+  },
+  "L37": {
+   "text": "then she ran out of jokes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.647
+    ],
+    [
+     0.647,
+     1.241
+    ]
+   ]
+  },
+  "L38": {
+   "text": "she just picked up her ball and sighed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.578
+    ],
+    [
+     0.578,
+     0.87
+    ],
+    [
+     0.87,
+     1.5
+    ]
+   ]
+  },
+  "L39": {
+   "text": "and slipped. flat on her back. exactly like me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     0.768
+    ],
+    [
+     0.768,
+     1.103
+    ],
+    [
+     1.172,
+     2.138
+    ]
+   ]
+  },
+  "L40": {
+   "text": "i laughed so hard i couldn't breathe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.81
+    ],
+    [
+     0.81,
+     1.655
+    ]
+   ]
+  },
+  "L41": {
+   "text": "her number rolled all the way down to zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.716
+    ],
+    [
+     0.716,
+     0.914
+    ],
+    [
+     0.914,
+     1.241
+    ],
+    [
+     1.241,
+     1.845
+    ]
+   ]
+  },
+  "L42": {
+   "text": "strike.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.845,
+   "onset": 0.172,
+   "end": 0.621,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ]
+   ]
+  },
+  "L43": {
+   "text": "turns out it runs in the family.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.854
+    ],
+    [
+     0.854,
+     1.586
+    ]
+   ]
+  },
+  "L44": {
+   "text": "then bev bought me bowling shoes that fit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.638
+    ],
+    [
+     0.638,
+     1.155
+    ],
+    [
+     1.155,
+     1.759
+    ]
+   ]
+  },
+  "L45": {
+   "text": "i haven't fallen in three days.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.569
+    ]
+   ]
+  },
+  "L46": {
+   "text": "mine says three now. i'm working on material.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.19,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.534,
+     0.966
+    ],
+    [
+     1.052,
+     1.371
+    ],
+    [
+     1.371,
+     2.103
+    ]
+   ]
+  }
+ }
+}

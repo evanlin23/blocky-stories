@@ -1,0 +1,6520 @@
+{
+ "slug": "ep111-laugh-count",
+ "title": "Aunt Bev Hasn't LAUGHED in 492 Days 😂",
+ "made_for_kids": false,
+ "premise": "In this town a number floats over everyone's head and everyone says it counts the days since you last laughed. Past 500, your color starts to go. My aunt Bev, the funniest person in our family, laughs all night at league night, and hers says 492.",
+ "twist": "It counts the days since you made somebody else laugh. Bev's last real laugh was from me, 492 days ago, the day I decided I was too cool for her jokes. A fake laugh doesn't count; what finally gets me is her slipping on the lane like I always do, and her counter rolls to 0 on a strike.",
+ "world": "a bright bowling alley on league night with glossy maple lanes, teal and pink neon, a glyph scoreboard, a snack bar and a shoe-rental counter",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#ff5fa2",
+ "gap": 0.12,
+ "tail": 0.25,
+ "min_read": 0.15,
+ "fade_in": false,
+ "fade_out": false,
+ "look": {
+  "fog": "#dff4ff",
+  "fog_density": 0.0,
+  "fog_start": 40.0,
+  "sky": "#dff4ff",
+  "sky_strength": 1.0,
+  "exposure": 0.0,
+  "flash_safe": true,
+  "style": "closer",
+  "polish": {
+   "reveal": [
+    "L24"
+   ],
+   "twist": "L23",
+   "quiet": [
+    [
+     "L43",
+     "L45"
+    ]
+   ],
+   "hold": [
+    "S03",
+    "S24",
+    "S40"
+   ],
+   "camera": true,
+   "idle": true,
+   "ease": true
+  }
+ },
+ "grade": {
+  "shadows": [
+   0.0,
+   0.0,
+   0.03
+  ],
+  "highlights": [
+   0.03,
+   0.015,
+   -0.02
+  ],
+  "saturation": 1.25,
+  "contrast": 1.05,
+  "vignette": 0.15,
+  "bloom": 0.3,
+  "grain": 0.008,
+  "red_line": 0.7
+ },
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#2fb8b0",
+   "pattern": "stripes",
+   "pattern_c": "#ffffff",
+   "pants": "#3f5f9a",
+   "shoes": "#e0443a",
+   "sleeves": "short",
+   "hair": "spiky",
+   "hair_c": "#16120f",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "bev": {
+   "age": "adult",
+   "skin": "#e8b48c",
+   "shirt": "#ff6f61",
+   "pattern": "stripes",
+   "pattern_c": "#ffffff",
+   "pants": "#7a4fa3",
+   "shoes": "#f4f4f2",
+   "sleeves": "long",
+   "hair": "mop",
+   "hair_c": "#ff5a3c",
+   "extras": [
+    "glasses"
+   ],
+   "extra_c": "#ff5fa2",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "earl": {
+   "age": "adult",
+   "skin": "#d9a679",
+   "shirt": "#f1ead8",
+   "pants": "#6b7078",
+   "shoes": "#2a2d3a",
+   "sleeves": "long",
+   "vest": "#d94a3d",
+   "hair": "buzz",
+   "hair_c": "#8d9096",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "lanefour": {
+   "age": "adult",
+   "skin": "#b4b4b4",
+   "shirt": "#9d9d9d",
+   "pants": "#858585",
+   "shoes": "#767676",
+   "sleeves": "short",
+   "hair": "cap",
+   "hair_c": "#8a8a8a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#3a3a3a"
+   }
+  },
+  "wait": {
+   "age": "adult",
+   "skin": "#c98e62",
+   "shirt": "#ff9ccf",
+   "pattern": "stripes",
+   "pattern_c": "#ffffff",
+   "pants": "#2a2d3a",
+   "shoes": "#f4f4f2",
+   "sleeves": "short",
+   "hair": "bun",
+   "hair_c": "#2a1d15",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "b1": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#ffd21a",
+   "pattern": "stripes",
+   "pattern_c": "#ffffff",
+   "pants": "#2f6f5f",
+   "shoes": "#f4f4f2",
+   "sleeves": "short",
+   "hair": "swoop",
+   "hair_c": "#5a3a1f",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "b2": {
+   "age": "adult",
+   "skin": "#8d5a3a",
+   "shirt": "#7fd16a",
+   "pattern": "stripes",
+   "pattern_c": "#ffffff",
+   "pants": "#33405e",
+   "shoes": "#f4f4f2",
+   "sleeves": "short",
+   "hair": "buzz",
+   "hair_c": "#14110e",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Aunt Bev laughs",
+     "aunt bev laughs"
+    ],
+    [
+     "ALL night.",
+     "all night."
+    ],
+    [
+     "Hers says FOUR",
+     "hers says four"
+    ],
+    [
+     "NINETY-TWO.",
+     "ninety-two."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In this town,",
+     "in this town,"
+    ],
+    [
+     "the number",
+     "the number"
+    ],
+    [
+     "over your head",
+     "over your head"
+    ],
+    [
+     "is how",
+     "is how"
+    ],
+    [
+     "many DAYS",
+     "many days"
+    ],
+    [
+     "since you laughed.",
+     "since you laughed."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every Thursday",
+     "every thursday"
+    ],
+    [
+     "is league night",
+     "is league night"
+    ],
+    [
+     "at the LANES.",
+     "at the lanes."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the",
+     "and the"
+    ],
+    [
+     "numbers here",
+     "numbers here"
+    ],
+    [
+     "are WEIRD.",
+     "are weird."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Earl at",
+     "earl at"
+    ],
+    [
+     "shoe rental",
+     "shoe rental"
+    ],
+    [
+     "has never smiled",
+     "has never smiled"
+    ],
+    [
+     "in his LIFE.",
+     "in his life."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "His says ZERO.",
+     "his says zero."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The guy",
+     "the guy"
+    ],
+    [
+     "in lane four",
+     "in lane four"
+    ],
+    [
+     "laughs at",
+     "laughs at"
+    ],
+    [
+     "every one",
+     "every one"
+    ],
+    [
+     "of his",
+     "of his"
+    ],
+    [
+     "own JOKES.",
+     "own jokes."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "His says",
+     "his says"
+    ],
+    [
+     "nine THOUSAND.",
+     "nine thousand."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He's gone",
+     "he's gone"
+    ],
+    [
+     "totally GRAY.",
+     "totally gray."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's what happens",
+     "that's what happens"
+    ],
+    [
+     "past five HUNDRED.",
+     "past five hundred."
+    ],
+    [
+     "Your color GOES.",
+     "your color goes."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mine has",
+     "mine has"
+    ],
+    [
+     "said zero",
+     "said zero"
+    ],
+    [
+     "my whole LIFE.",
+     "my whole life."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I don't",
+     "i don't"
+    ],
+    [
+     "even laugh",
+     "even laugh"
+    ],
+    [
+     "that much.",
+     "that much."
+    ],
+    [
+     "I mostly",
+     "i mostly"
+    ],
+    [
+     "fall DOWN.",
+     "fall down."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My aunt Bev",
+     "my aunt bev"
+    ],
+    [
+     "is the",
+     "is the"
+    ],
+    [
+     "funniest person",
+     "funniest person"
+    ],
+    [
+     "in our FAMILY.",
+     "in our family."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Just ask HER.",
+     "just ask her."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Tonight",
+     "tonight"
+    ],
+    [
+     "she told",
+     "she told"
+    ],
+    [
+     "the waitress",
+     "the waitress"
+    ],
+    [
+     "the PICKLE joke.",
+     "the pickle joke."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She laughed",
+     "she laughed"
+    ],
+    [
+     "so hard",
+     "so hard"
+    ],
+    [
+     "she had",
+     "she had"
+    ],
+    [
+     "to sit DOWN.",
+     "to sit down."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her number",
+     "her number"
+    ],
+    [
+     "didn't MOVE.",
+     "didn't move."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And her sleeves",
+     "and her sleeves"
+    ],
+    [
+     "were starting",
+     "were starting"
+    ],
+    [
+     "to go GRAY.",
+     "to go gray."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then I",
+     "then i"
+    ],
+    [
+     "went up",
+     "went up"
+    ],
+    [
+     "to bowl.",
+     "to bowl."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And slipped.",
+     "and slipped."
+    ],
+    [
+     "Flat on",
+     "flat on"
+    ],
+    [
+     "my BACK.",
+     "my back."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Bev laughed",
+     "bev laughed"
+    ],
+    [
+     "so hard",
+     "so hard"
+    ],
+    [
+     "she SNORTED.",
+     "she snorted."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And over",
+     "and over"
+    ],
+    [
+     "my head,",
+     "my head,"
+    ],
+    [
+     "a one",
+     "a one"
+    ],
+    [
+     "flipped back",
+     "flipped back"
+    ],
+    [
+     "to ZERO.",
+     "to zero."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.6,
+   "chunks": []
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's when",
+     "that's when"
+    ],
+    [
+     "I GOT it.",
+     "i got it."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It counts",
+     "it counts"
+    ],
+    [
+     "the days",
+     "the days"
+    ],
+    [
+     "since you made",
+     "since you made"
+    ],
+    [
+     "somebody ELSE laugh.",
+     "somebody else laugh."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Everybody laughs",
+     "everybody laughs"
+    ],
+    [
+     "at EARL.",
+     "at earl."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody laughs",
+     "nobody laughs"
+    ],
+    [
+     "at lane",
+     "at lane"
+    ],
+    [
+     "four's JOKES.",
+     "four's jokes."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And Aunt BEV?",
+     "and aunt bev?"
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The last",
+     "the last"
+    ],
+    [
+     "REAL laugh",
+     "real laugh"
+    ],
+    [
+     "she got",
+     "she got"
+    ],
+    [
+     "was from me,",
+     "was from me,"
+    ],
+    [
+     "four hundred",
+     "four hundred"
+    ],
+    [
+     "and ninety-two",
+     "and ninety-two"
+    ],
+    [
+     "days AGO.",
+     "days ago."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The day",
+     "the day"
+    ],
+    [
+     "I decided",
+     "i decided"
+    ],
+    [
+     "I was",
+     "i was"
+    ],
+    [
+     "too COOL",
+     "too cool"
+    ],
+    [
+     "for her jokes.",
+     "for her jokes."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I laughed",
+     "so i laughed"
+    ],
+    [
+     "RIGHT then.",
+     "right then."
+    ],
+    [
+     "A big one.",
+     "a big one."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nothing.",
+     "nothing."
+    ],
+    [
+     "A FAKE laugh",
+     "a fake laugh"
+    ],
+    [
+     "doesn't count.",
+     "doesn't count."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Bev looked",
+     "bev looked"
+    ],
+    [
+     "at me.",
+     "at me."
+    ],
+    [
+     "Then she cracked",
+     "then she cracked"
+    ],
+    [
+     "her KNUCKLES.",
+     "her knuckles."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "For a",
+     "for a"
+    ],
+    [
+     "whole week,",
+     "whole week,"
+    ],
+    [
+     "she told me",
+     "she told me"
+    ],
+    [
+     "every joke",
+     "every joke"
+    ],
+    [
+     "she HAS.",
+     "she has."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The duck one.",
+     "the duck one."
+    ],
+    [
+     "The dentist one.",
+     "the dentist one."
+    ],
+    [
+     "The PICKLE",
+     "the pickle"
+    ],
+    [
+     "one, again.",
+     "one, again."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Four-ninety",
+     "four-ninety"
+    ],
+    [
+     "EIGHT.",
+     "eight."
+    ],
+    [
+     "Gray up",
+     "gray up"
+    ],
+    [
+     "to her SHOULDERS.",
+     "to her shoulders."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Four-ninety",
+     "four-ninety"
+    ],
+    [
+     "NINE.",
+     "nine."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then she",
+     "then she"
+    ],
+    [
+     "ran out",
+     "ran out"
+    ],
+    [
+     "of JOKES.",
+     "of jokes."
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She just",
+     "she just"
+    ],
+    [
+     "picked up",
+     "picked up"
+    ],
+    [
+     "her ball",
+     "her ball"
+    ],
+    [
+     "and SIGHED.",
+     "and sighed."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And slipped.",
+     "and slipped."
+    ],
+    [
+     "Flat on",
+     "flat on"
+    ],
+    [
+     "her BACK.",
+     "her back."
+    ],
+    [
+     "Exactly like ME.",
+     "exactly like me."
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I laughed",
+     "i laughed"
+    ],
+    [
+     "so hard",
+     "so hard"
+    ],
+    [
+     "I couldn't BREATHE.",
+     "i couldn't breathe."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her number rolled",
+     "her number rolled"
+    ],
+    [
+     "all the",
+     "all the"
+    ],
+    [
+     "way down",
+     "way down"
+    ],
+    [
+     "to ZERO.",
+     "to zero."
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "STRIKE.",
+     "strike."
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Turns out",
+     "turns out"
+    ],
+    [
+     "it runs",
+     "it runs"
+    ],
+    [
+     "in the FAMILY.",
+     "in the family."
+    ]
+   ]
+  },
+  {
+   "id": "L44",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then Bev",
+     "then bev"
+    ],
+    [
+     "bought me",
+     "bought me"
+    ],
+    [
+     "bowling shoes",
+     "bowling shoes"
+    ],
+    [
+     "that FIT.",
+     "that fit."
+    ]
+   ]
+  },
+  {
+   "id": "L45",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I haven't fallen",
+     "i haven't fallen"
+    ],
+    [
+     "in three DAYS.",
+     "in three days."
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mine says",
+     "mine says"
+    ],
+    [
+     "THREE now.",
+     "three now."
+    ],
+    [
+     "I'm working",
+     "i'm working"
+    ],
+    [
+     "on MATERIAL.",
+     "on material."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      -3.0,
+      -0.907,
+      1.581
+     ],
+     [
+      -3.0,
+      -3.7,
+      1.3855
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "note": "S01a Bev mid-laugh with 492 over her head, close"
+  },
+  {
+   "id": "S02",
+   "cam": [
+    [
+     0,
+     [
+      -2.321,
+      -0.976,
+      1.828
+     ],
+     [
+      -2.9,
+      -3.7,
+      1.5354999999999999
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -2.321,
+      -0.976,
+      1.828
+     ],
+     [
+      -2.9,
+      -3.7,
+      1.5354999999999999
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L01.2",
+   "note": "S01b her number, close, punch in"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      1.852,
+      1.524
+     ],
+     [
+      -0.0,
+      -2.7,
+      1.2059999999999997
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      1.438,
+      1.549
+     ],
+     [
+      -0.0,
+      -2.7,
+      1.2599999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L02",
+   "note": "S02a two bowlers' heads, numbers over each"
+  },
+  {
+   "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      -3.722,
+      -1.006,
+      1.68
+     ],
+     [
+      -3.0,
+      -3.7,
+      1.4354999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -3.722,
+      -1.006,
+      1.68
+     ],
+     [
+      -3.0,
+      -3.7,
+      1.4354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L02.2",
+   "note": "S02b Bev again, laughing, number over her"
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      -1.703,
+      -1.281,
+      1.631
+     ],
+     [
+      -3.1,
+      -3.7,
+      1.4354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L02.3",
+   "note": "S02c Bev, profile, laughing"
+  },
+  {
+   "id": "S06",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -6.6,
+      2.5
+     ],
+     [
+      0,
+      9.0,
+      1.4
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.0,
+      -5.4,
+      2.3
+     ],
+     [
+      0,
+      9.0,
+      1.4
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L03",
+   "note": "S03 wide: the alley, neon on, league night, everyone's numbers glowing"
+  },
+  {
+   "id": "S07",
+   "cam": [
+    [
+     0,
+     [
+      -1.2,
+      -1.6,
+      1.7
+     ],
+     [
+      -0.5,
+      6.0,
+      1.3
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      -0.6,
+      -1.2,
+      1.7
+     ],
+     [
+      0.2,
+      6.0,
+      1.3
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L03.2",
+   "note": "S03b low behind the bowlers toward the lanes"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.196,
+      1.582
+     ],
+     [
+      0.0,
+      -2.6,
+      1.4354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L04",
+   "note": "S04 me squinting at the numbers, deadpan"
+  },
+  {
+   "id": "S09",
+   "cam": [
+    [
+     0,
+     [
+      -5.5,
+      -5.607,
+      1.531
+     ],
+     [
+      -5.5,
+      -8.4,
+      1.3355
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L05",
+   "note": "S05 Earl at shoe rental, scowl, spraying a shoe"
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      -4.445,
+      -5.775,
+      1.581
+     ],
+     [
+      -5.4,
+      -8.4,
+      1.3855
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -4.445,
+      -5.775,
+      1.581
+     ],
+     [
+      -5.4,
+      -8.4,
+      1.3855
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L05.1",
+   "note": "S05b Earl scowl closer"
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      -6.879,
+      -5.872,
+      1.78
+     ],
+     [
+      -5.7,
+      -8.4,
+      1.5354999999999999
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -6.879,
+      -5.872,
+      1.78
+     ],
+     [
+      -5.7,
+      -8.4,
+      1.5354999999999999
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L06",
+   "note": "S06 his number: 0; a bowler laughing"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      2.6,
+      3.924,
+      1.474
+     ],
+     [
+      2.6,
+      0.2,
+      1.214
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      2.6,
+      3.51,
+      1.499
+     ],
+     [
+      2.6,
+      0.2,
+      1.2679999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L07",
+   "note": "S07a the man in lane four telling a joke to nobody"
+  },
+  {
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      2.844,
+      2.986,
+      1.382
+     ],
+     [
+      2.6,
+      0.2,
+      1.2354999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      2.844,
+      2.986,
+      1.382
+     ],
+     [
+      2.6,
+      0.2,
+      1.2354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L07.1",
+   "note": "S07b him laughing at it, guffaw"
+  },
+  {
+   "id": "S14",
+   "cam": [
+    [
+     0,
+     [
+      2.6,
+      2.989,
+      1.93
+     ],
+     [
+      2.6,
+      0.2,
+      1.6854999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      2.6,
+      2.989,
+      1.93
+     ],
+     [
+      2.6,
+      0.2,
+      1.6854999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L08",
+   "note": "S08 his number: 9,000"
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      2.6,
+      2.989,
+      1.78
+     ],
+     [
+      2.6,
+      0.2,
+      1.5354999999999999
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      2.6,
+      3.299,
+      0.316
+     ],
+     [
+      2.6,
+      0.2,
+      0.04500000000000001
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L09",
+   "note": "S09 tilt down him: gray everywhere"
+  },
+  {
+   "id": "S16",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      1.097,
+      1.425
+     ],
+     [
+      -1.0,
+      -1.8,
+      1.222
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -1.0,
+      0.993,
+      1.431
+     ],
+     [
+      -1.0,
+      -1.8,
+      1.2354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L10",
+   "note": "S10 Bev's sleeve, the coral starting to go gray at the cuff"
+  },
+  {
+   "id": "S17",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      0.993,
+      1.431
+     ],
+     [
+      -1.0,
+      -1.8,
+      1.2354999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -1.0,
+      0.993,
+      1.431
+     ],
+     [
+      -1.0,
+      -1.8,
+      1.2354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L10.2",
+   "note": "S10b past five hundred your color goes"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.193,
+      1.631
+     ],
+     [
+      0.0,
+      -2.6,
+      1.4354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L11",
+   "note": "S11 my number over my head: 0"
+  },
+  {
+   "id": "S19",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.699,
+      1.466
+     ],
+     [
+      0.0,
+      0.6,
+      1.1949999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      3.493,
+      1.475
+     ],
+     [
+      0.0,
+      0.6,
+      1.222
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L12",
+   "note": "S12a me tripping on the approach, wince"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      2.104,
+      6.757,
+      1.319
+     ],
+     [
+      0.3,
+      1.8,
+      0.19799999999999993
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L12.2",
+   "note": "S12b my shoe flying off"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      0.53,
+      1.892,
+      1.412
+     ],
+     [
+      0.8,
+      -1.2,
+      1.1949999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.557,
+      1.583,
+      1.431
+     ],
+     [
+      0.8,
+      -1.2,
+      1.2354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L13",
+   "note": "S13 Bev mid-joke at our lane, grin"
+  },
+  {
+   "id": "S22",
+   "cam": [
+    [
+     0,
+     [
+      1.016,
+      1.27,
+      1.393
+     ],
+     [
+      0.8,
+      -1.2,
+      1.176
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L14",
+   "note": "S14 Bev pointing at herself"
+  },
+  {
+   "id": "S23",
+   "cam": [
+    [
+     0,
+     [
+      11.607,
+      -7.4,
+      1.224
+     ],
+     [
+      5.4,
+      -7.4,
+      0.7899999999999999
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      10.986,
+      -7.4,
+      1.262
+     ],
+     [
+      5.4,
+      -7.4,
+      0.8709999999999999
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L15",
+   "note": "S15 Bev leaning on the snack bar, telling the waitress a joke"
+  },
+  {
+   "id": "S24",
+   "cam": [
+    [
+     0,
+     [
+      5.6,
+      -2.607,
+      1.581
+     ],
+     [
+      5.6,
+      -5.4,
+      1.3855
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L16",
+   "note": "S16a Bev howling, cackle"
+  },
+  {
+   "id": "S25",
+   "cam": [
+    [
+     0,
+     [
+      5.708,
+      -2.298,
+      1.012
+     ],
+     [
+      5.6,
+      -5.4,
+      0.795
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      5.701,
+      -2.505,
+      1.025
+     ],
+     [
+      5.6,
+      -5.4,
+      0.8220000000000001
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L16+1.1",
+   "note": "S16b Bev sitting down hard on a stool"
+  },
+  {
+   "id": "S26",
+   "cam": [
+    [
+     0,
+     [
+      5.6,
+      -3.331,
+      1.425
+     ],
+     [
+      5.6,
+      -5.4,
+      1.2799999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L17",
+   "note": "S17 her number, close: unchanged"
+  },
+  {
+   "id": "S27",
+   "cam": [
+    [
+     0,
+     [
+      5.736,
+      -3.401,
+      1.075
+     ],
+     [
+      5.2,
+      -5.4,
+      0.93
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      5.682,
+      -3.601,
+      1.087
+     ],
+     [
+      5.2,
+      -5.4,
+      0.957
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L18",
+   "note": "S18 her sleeves, gray creeping past the elbow"
+  },
+  {
+   "id": "S28",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.957,
+      1.11
+     ],
+     [
+      0.0,
+      0.45,
+      0.741
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      3.544,
+      1.12
+     ],
+     [
+      0.0,
+      0.45,
+      0.795
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L19",
+   "note": "S19 me on the approach with a ball"
+  },
+  {
+   "id": "S29",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.081,
+      1.628
+     ],
+     [
+      0.0,
+      1.0,
+      1.1949999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L20",
+   "note": "S20a slipping"
+  },
+  {
+   "id": "S30",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.798,
+      2.856
+     ],
+     [
+      0.0,
+      2.5,
+      -0.08600000000000005
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      4.543,
+      2.583
+     ],
+     [
+      0.0,
+      2.5,
+      -0.032000000000000056
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L20.1",
+   "note": "S20b flat on my back on the lane"
+  },
+  {
+   "id": "S31",
+   "cam": [
+    [
+     0,
+     [
+      0.15,
+      3.881,
+      1.628
+     ],
+     [
+      0.15,
+      0.8,
+      1.1949999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.15,
+      3.675,
+      1.626
+     ],
+     [
+      0.15,
+      0.8,
+      1.222
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L21",
+   "note": "S21 Bev above me, snorting with laughter"
+  },
+  {
+   "id": "S32",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.965,
+      2.301
+     ],
+     [
+      0.0,
+      2.3,
+      -0.07799999999999999
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L22",
+   "note": "S22a over my head the 0"
+  },
+  {
+   "id": "S33",
+   "cam": [
+    [
+     0,
+     [
+      0.135,
+      3.841,
+      2.158
+     ],
+     [
+      0.0,
+      2.3,
+      -0.05100000000000002
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.124,
+      3.722,
+      2.015
+     ],
+     [
+      0.0,
+      2.3,
+      -0.023999999999999994
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L22.2",
+   "note": "S22b and back to 0"
+  },
+  {
+   "id": "S34",
+   "cam": [
+    [
+     0,
+     [
+      0.058,
+      3.964,
+      2.301
+     ],
+     [
+      0.0,
+      2.3,
+      -0.07799999999999999
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.052,
+      3.786,
+      2.086
+     ],
+     [
+      0.0,
+      2.3,
+      -0.037500000000000006
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "P01",
+   "note": "the drop: my face on the lane, staring up at my number"
+  },
+  {
+   "id": "S35",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.692,
+      2.039
+     ],
+     [
+      0.0,
+      2.3,
+      -0.023999999999999994
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      3.576,
+      1.894
+     ],
+     [
+      0.0,
+      2.3,
+      0.002999999999999975
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L23",
+   "note": "S23a my face, stunned"
+  },
+  {
+   "id": "S36",
+   "cam": [
+    [
+     0,
+     [
+      -0.597,
+      3.676,
+      1.628
+     ],
+     [
+      0.2,
+      0.7,
+      1.1949999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L23+0.9",
+   "note": "S23b Bev's number unmoved as she laughs"
+  },
+  {
+   "id": "S37",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      5.153,
+      2.485
+     ],
+     [
+      0.1,
+      1.5,
+      0.11299999999999996
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.1,
+      4.892,
+      2.356
+     ],
+     [
+      0.1,
+      1.5,
+      0.15350000000000005
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L24",
+   "note": "S24 the reveal: me flat, 0 glowing, Bev doubled over, 492",
+   "hold": true
+  },
+  {
+   "id": "S38",
+   "cam": [
+    [
+     0,
+     [
+      -0.854,
+      3.595,
+      1.628
+     ],
+     [
+      0.2,
+      0.7,
+      1.1949999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.783,
+      3.402,
+      1.626
+     ],
+     [
+      0.2,
+      0.7,
+      1.222
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L24.2",
+   "note": "S24b Bev, ELSE"
+  },
+  {
+   "id": "S39",
+   "cam": [
+    [
+     0,
+     [
+      -6.689,
+      -0.937,
+      1.532
+     ],
+     [
+      -5.4,
+      -7.0,
+      0.9899999999999999
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -6.517,
+      -1.745,
+      1.568
+     ],
+     [
+      -5.4,
+      -7.0,
+      1.0979999999999999
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L25",
+   "note": "S25 Earl at the counter, a line of bowlers laughing"
+  },
+  {
+   "id": "S40",
+   "cam": [
+    [
+     0,
+     [
+      2.6,
+      5.507,
+      1.424
+     ],
+     [
+      2.6,
+      -0.7,
+      0.9899999999999999
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      2.6,
+      4.886,
+      1.462
+     ],
+     [
+      2.6,
+      -0.7,
+      1.0709999999999997
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L26",
+   "note": "S26 lane four's man telling a joke, his whole lane silent"
+  },
+  {
+   "id": "S41",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.393,
+      1.581
+     ],
+     [
+      0.0,
+      -2.4,
+      1.3855
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L27",
+   "note": "S27 Bev close, grin"
+  },
+  {
+   "id": "S42",
+   "cam": [
+    [
+     0,
+     [
+      0.352,
+      0.482,
+      1.675
+     ],
+     [
+      0.1,
+      -2.4,
+      1.4219999999999997
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.343,
+      0.379,
+      1.68
+     ],
+     [
+      0.1,
+      -2.4,
+      1.4354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L28",
+   "note": "S28 her number, close"
+  },
+  {
+   "id": "S43",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.393,
+      1.581
+     ],
+     [
+      0.0,
+      -2.4,
+      1.3855
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L29",
+   "note": "S29 me, sheepish, my old too-cool face"
+  },
+  {
+   "id": "S44",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.393,
+      1.581
+     ],
+     [
+      0.0,
+      -2.4,
+      1.3855
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L30",
+   "note": "S30 me laughing loud (a fake laugh)"
+  },
+  {
+   "id": "S45",
+   "cam": [
+    [
+     0,
+     [
+      1.02,
+      0.687,
+      1.666
+     ],
+     [
+      0.75,
+      -2.4,
+      1.3949999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.993,
+      0.379,
+      1.68
+     ],
+     [
+      0.75,
+      -2.4,
+      1.4354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L31",
+   "note": "S31 her number, unmoved"
+  },
+  {
+   "id": "S46",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.393,
+      1.581
+     ],
+     [
+      0.0,
+      -2.4,
+      1.3855
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L32",
+   "note": "S32a Bev looking at me, determined"
+  },
+  {
+   "id": "S47",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.704,
+      1.212
+     ],
+     [
+      0.0,
+      -2.4,
+      0.995
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      0.393,
+      1.231
+     ],
+     [
+      0.0,
+      -2.4,
+      1.0354999999999999
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L32.2",
+   "note": "S32b cracking her knuckles"
+  },
+  {
+   "id": "S48",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      2.345,
+      1.387
+     ],
+     [
+      0.0,
+      -2.0,
+      1.0829999999999997
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      1.931,
+      1.412
+     ],
+     [
+      0.0,
+      -2.0,
+      1.137
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L33",
+   "note": "S33 next Thursday: Bev telling a joke, me straight-faced"
+  },
+  {
+   "id": "S49",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.899,
+      1.366
+     ],
+     [
+      0.0,
+      -2.2,
+      1.095
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L34",
+   "note": "S34a the duck"
+  },
+  {
+   "id": "S50",
+   "cam": [
+    [
+     0,
+     [
+      0.991,
+      0.522,
+      1.425
+     ],
+     [
+      0.0,
+      -2.2,
+      1.222
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.955,
+      0.425,
+      1.431
+     ],
+     [
+      0.0,
+      -2.2,
+      1.2354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L34.1",
+   "note": "S34b the dentist"
+  },
+  {
+   "id": "S51",
+   "cam": [
+    [
+     0,
+     [
+      -0.952,
+      0.417,
+      1.528
+     ],
+     [
+      0.0,
+      -2.2,
+      1.2354999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.952,
+      0.417,
+      1.528
+     ],
+     [
+      0.0,
+      -2.2,
+      1.2354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L34.2",
+   "note": "S34c the pickle one again"
+  },
+  {
+   "id": "S52",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.704,
+      1.462
+     ],
+     [
+      0.0,
+      -2.4,
+      1.2449999999999999
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      0.393,
+      1.481
+     ],
+     [
+      0.0,
+      -2.4,
+      1.2854999999999999
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L35",
+   "note": "S35 her number 498, gray up to her shoulders"
+  },
+  {
+   "id": "S53",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.393,
+      1.631
+     ],
+     [
+      0.0,
+      -2.4,
+      1.4354999999999998
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      0.393,
+      1.631
+     ],
+     [
+      0.0,
+      -2.4,
+      1.4354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L36",
+   "note": "S36 the tag: 499"
+  },
+  {
+   "id": "S54",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.493,
+      1.525
+     ],
+     [
+      0.0,
+      -2.4,
+      1.2719999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L37",
+   "note": "S37 Bev, deflated, out of jokes"
+  },
+  {
+   "id": "S55",
+   "cam": [
+    [
+     0,
+     [
+      0.75,
+      2.281,
+      1.128
+     ],
+     [
+      0.75,
+      -0.8,
+      0.695
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.75,
+      1.973,
+      1.125
+     ],
+     [
+      0.75,
+      -0.8,
+      0.7354999999999999
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L38",
+   "note": "S38 Bev picking up her ball, sighing"
+  },
+  {
+   "id": "S56",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      4.902,
+      1.035
+     ],
+     [
+      0.4,
+      1.0,
+      0.4870000000000001
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L39",
+   "note": "S39a Bev slipping"
+  },
+  {
+   "id": "S57",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      2.822,
+      2.729
+     ],
+     [
+      0.0,
+      0.8,
+      -0.159
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      2.703,
+      2.586
+     ],
+     [
+      0.0,
+      0.8,
+      -0.13200000000000003
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L39.1",
+   "note": "S39b flat on her back, exactly like me"
+  },
+  {
+   "id": "S58",
+   "cam": [
+    [
+     0,
+     [
+      -0.85,
+      4.627,
+      1.054
+     ],
+     [
+      -0.85,
+      1.0,
+      0.9274999999999999
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -0.85,
+      4.316,
+      1.084
+     ],
+     [
+      -0.85,
+      1.0,
+      0.9680000000000001
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L40",
+   "note": "S40 me laughing so hard, bent over; the ball return behind me",
+   "hold": true
+  },
+  {
+   "id": "S59",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      2.703,
+      2.586
+     ],
+     [
+      0.0,
+      0.8,
+      -0.13200000000000003
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L41",
+   "note": "S41a her number rolling down 499, 300, 50, 0"
+  },
+  {
+   "id": "S60",
+   "cam": [
+    [
+     0,
+     [
+      0.35,
+      7.0,
+      0.55
+     ],
+     [
+      0.0,
+      18.4,
+      0.4
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.2,
+      10.0,
+      0.5
+     ],
+     [
+      0.0,
+      18.4,
+      0.4
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L41.2",
+   "note": "S41b her ball rolling slowly down the lane; color flooding back into her sleeves"
+  },
+  {
+   "id": "S61",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      14.6,
+      0.9
+     ],
+     [
+      0.0,
+      18.4,
+      0.3
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.4,
+      15.0,
+      1.0
+     ],
+     [
+      0.0,
+      18.4,
+      0.3
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L42",
+   "note": "S42a the pins all falling"
+  },
+  {
+   "id": "S62",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      2.822,
+      2.729
+     ],
+     [
+      0.0,
+      0.8,
+      -0.159
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L42.0+0.4",
+   "note": "S42b Bev on the floor, joy"
+  },
+  {
+   "id": "S63",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.737,
+      4.618
+     ],
+     [
+      0.0,
+      1.55,
+      -0.483
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      4.518,
+      4.32
+     ],
+     [
+      0.0,
+      1.55,
+      -0.42900000000000005
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L43",
+   "note": "S43 Bev and me both on our backs on the lane, laughing"
+  },
+  {
+   "id": "S64",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.044,
+      1.528
+     ],
+     [
+      0.0,
+      -1.7,
+      1.029
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      2.632,
+      1.538
+     ],
+     [
+      0.0,
+      -1.7,
+      1.0829999999999997
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L44",
+   "note": "S44 Bev handing me bowling shoes on flat palms"
+  },
+  {
+   "id": "S65",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.532,
+      1.222
+     ],
+     [
+      0.0,
+      -0.6,
+      0.86
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.0,
+      2.913,
+      1.248
+     ],
+     [
+      0.0,
+      -0.6,
+      0.941
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L45",
+   "note": "S45 me walking the approach, steady, proud"
+  },
+  {
+   "id": "S66",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.789,
+      1.68
+     ],
+     [
+      0.0,
+      -2.0,
+      1.4354999999999998
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L46",
+   "note": "S46a my number: 3"
+  },
+  {
+   "id": "S67",
+   "cam": [
+    [
+     0,
+     [
+      -3.0,
+      -0.907,
+      1.581
+     ],
+     [
+      -3.0,
+      -3.7,
+      1.3855
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      -3.0,
+      -0.907,
+      1.581
+     ],
+     [
+      -3.0,
+      -3.7,
+      1.3855
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L46.1",
+   "note": "S46b push in on Bev mid-laugh (S01a framing). Loop"
+  }
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     -30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L03",
+    "pos": [
+     0,
+     -30,
+     0
+    ]
+   },
+   {
+    "at": "L03",
+    "pos": [
+     -0.6,
+     -0.5,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L04",
+    "pos": [
+     -0.6,
+     -0.5,
+     0
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     0.0,
+     -2.6,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L05",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L11",
+    "pos": [
+     0.0,
+     -2.6,
+     0
+    ]
+   },
+   {
+    "at": "L11",
+    "pos": [
+     0.0,
+     -2.6,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L12",
+    "pos": [
+     0.0,
+     -2.6,
+     0
+    ]
+   },
+   {
+    "at": "L12",
+    "pos": [
+     0.0,
+     0.6,
+     0
+    ],
+    "blend": 0.3,
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     10,
+     25
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 14,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L13",
+    "pos": [
+     0.0,
+     0.6,
+     0
+    ]
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -0.8,
+     -1.2,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L15",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L19",
+    "pos": [
+     -0.8,
+     -1.2,
+     0
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     0.0,
+     0.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     75,
+     75
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L20",
+    "pos": [
+     0.0,
+     0.9,
+     0.0
+    ],
+    "lean": -30,
+    "expr": "wide",
+    "blend": 0.15,
+    "arms": [
+     30,
+     30
+    ]
+   },
+   {
+    "at": "L20.1",
+    "pos": [
+     0.0,
+     0.9,
+     0.0
+    ]
+   },
+   {
+    "at": "L20.1",
+    "pos": [
+     0.0,
+     3.6,
+     0.23
+    ],
+    "blend": 0.1,
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 0,
+    "blink": false
+   },
+   {
+    "at": "L21",
+    "pos": [
+     0.0,
+     3.6,
+     0.23
+    ]
+   },
+   {
+    "at": "L21",
+    "pos": [
+     0.0,
+     3.6,
+     0.23
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 0,
+    "blink": false
+   },
+   {
+    "at": "L23",
+    "pos": [
+     0.0,
+     3.6,
+     0.23
+    ]
+   },
+   {
+    "at": "L23",
+    "pos": [
+     0.0,
+     3.6,
+     0.23
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "wide",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 0,
+    "blink": false
+   },
+   {
+    "at": "L25",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L29",
+    "pos": [
+     0.0,
+     3.6,
+     0.23
+    ]
+   },
+   {
+    "at": "L29",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smirk",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L30",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ]
+   },
+   {
+    "at": "L30",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 3,
+    "blink": true
+   },
+   {
+    "at": "L32",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L33",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ]
+   },
+   {
+    "at": "L33",
+    "pos": [
+     0.8,
+     -2.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 210,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L34",
+    "pos": [
+     0.8,
+     -2.0,
+     0
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     1.4,
+     -2.2,
+     0
+    ],
+    "blend": 0,
+    "yaw": 205,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L35",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L40",
+    "pos": [
+     1.4,
+     -2.2,
+     0
+    ]
+   },
+   {
+    "at": "L40",
+    "pos": [
+     -0.5,
+     1.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     10,
+     10
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 24,
+    "tremble": 5,
+    "blink": true
+   },
+   {
+    "at": "L42.0+0.4",
+    "pos": [
+     -0.5,
+     1.0,
+     0
+    ]
+   },
+   {
+    "at": "L42.0+0.4",
+    "pos": [
+     -1.1,
+     0.7,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 24,
+    "tremble": 5,
+    "blink": true
+   },
+   {
+    "at": "L43",
+    "pos": [
+     -1.1,
+     0.7,
+     0
+    ]
+   },
+   {
+    "at": "L43",
+    "pos": [
+     -0.75,
+     3.6,
+     0.23
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 4,
+    "blink": false
+   },
+   {
+    "at": "L44",
+    "pos": [
+     -0.75,
+     3.6,
+     0.23
+    ]
+   },
+   {
+    "at": "L44",
+    "pos": [
+     0.7,
+     -2.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 210,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L45",
+    "pos": [
+     0.7,
+     -2.0,
+     0
+    ]
+   },
+   {
+    "at": "L45",
+    "pos": [
+     0.0,
+     -2.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L45+0.1",
+    "pos": [
+     0.0,
+     -2.0,
+     0
+    ]
+   },
+   {
+    "at": "L45+0.1",
+    "pos": [
+     0.0,
+     -1.9,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L45>",
+    "pos": [
+     0.0,
+     -1.9,
+     0
+    ]
+   },
+   {
+    "at": "L45>",
+    "pos": [
+     0.0,
+     0.6,
+     0
+    ],
+    "blend": 0.2,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L46",
+    "pos": [
+     0.0,
+     0.6,
+     0
+    ]
+   },
+   {
+    "at": "L46",
+    "pos": [
+     0.0,
+     -2.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -4
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L46.1",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "bev": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     -30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": 0,
+    "pos": [
+     0,
+     -30,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     -3.0,
+     -3.7,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     8,
+     8
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 3,
+    "blink": true
+   },
+   {
+    "at": "L03",
+    "pos": [
+     -3.0,
+     -3.7,
+     0
+    ]
+   },
+   {
+    "at": "L03",
+    "pos": [
+     0.9,
+     -0.7,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 3,
+    "blink": true
+   },
+   {
+    "at": "L04",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L10",
+    "pos": [
+     0.9,
+     -0.7,
+     0
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -1.0,
+     -1.8,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     55
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L11",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -1.0,
+     -1.8,
+     0
+    ]
+   },
+   {
+    "at": "L13",
+    "pos": [
+     0.8,
+     -1.2,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     20,
+     8
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 1.5,
+    "blink": true
+   },
+   {
+    "at": "L14",
+    "arms": [
+     85,
+     85
+    ],
+    "side": [
+     -18,
+     -18
+    ],
+    "expr": "grin",
+    "blend": 0.2
+   },
+   {
+    "at": "L15",
+    "pos": [
+     0.8,
+     -1.2,
+     0
+    ]
+   },
+   {
+    "at": "L15",
+    "pos": [
+     5.4,
+     -6.6,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     30
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L16",
+    "pos": [
+     5.4,
+     -6.6,
+     0
+    ]
+   },
+   {
+    "at": "L16",
+    "pos": [
+     5.6,
+     -5.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 4,
+    "blink": true
+   },
+   {
+    "at": "L16+1.1",
+    "pos": [
+     5.6,
+     -5.4,
+     -0.2
+    ],
+    "blend": 0.15
+   },
+   {
+    "at": "L18",
+    "pos": [
+     5.6,
+     -5.4,
+     -0.2
+    ]
+   },
+   {
+    "at": "L18",
+    "pos": [
+     5.6,
+     -5.4,
+     -0.2
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     40
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 2.5,
+    "blink": true
+   },
+   {
+    "at": "L19",
+    "pos": [
+     5.6,
+     -5.4,
+     -0.2
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     0.9,
+     -1.3,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 2,
+    "blink": true
+   },
+   {
+    "at": "L21",
+    "pos": [
+     0.9,
+     -1.3,
+     0
+    ]
+   },
+   {
+    "at": "L21",
+    "pos": [
+     0.15,
+     0.7,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     12,
+     12
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 22,
+    "tremble": 4,
+    "blink": true
+   },
+   {
+    "at": "L23",
+    "pos": [
+     0.15,
+     0.7,
+     0
+    ]
+   },
+   {
+    "at": "L23",
+    "pos": [
+     0.2,
+     0.7,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     12,
+     12
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -8
+    ],
+    "lean": 12,
+    "tremble": 4,
+    "blink": true
+   },
+   {
+    "at": "L25",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L27",
+    "pos": [
+     0.2,
+     0.7,
+     0
+    ]
+   },
+   {
+    "at": "L27",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L29",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L30",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ]
+   },
+   {
+    "at": "L30",
+    "pos": [
+     1.2,
+     -2.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 200,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L32",
+    "pos": [
+     1.2,
+     -2.4,
+     0
+    ]
+   },
+   {
+    "at": "L32",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smirk",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L32.2",
+    "expr": "angry",
+    "arms": [
+     75,
+     75
+    ],
+    "side": [
+     -25,
+     -25
+    ],
+    "blend": 0.2
+   },
+   {
+    "at": "L33",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ]
+   },
+   {
+    "at": "L33",
+    "pos": [
+     -0.8,
+     -2.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 150,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     30,
+     20
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 1.5,
+    "blink": true
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -0.8,
+     -2.0,
+     0
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     0.0,
+     -2.2,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     40,
+     40
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 2,
+    "blink": true
+   },
+   {
+    "at": "L34.1",
+    "arms": [
+     90,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "expr": "smirk",
+    "head": [
+     0,
+     12
+    ],
+    "blend": 0.15
+   },
+   {
+    "at": "L34.2",
+    "arms": [
+     10,
+     10
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "head": [
+     0,
+     0
+    ],
+    "lean": 8,
+    "blend": 0.15
+   },
+   {
+    "at": "L35",
+    "pos": [
+     0.0,
+     -2.2,
+     0
+    ]
+   },
+   {
+    "at": "L35",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L37",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ]
+   },
+   {
+    "at": "L37",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     16
+    ],
+    "lean": 4,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L38",
+    "pos": [
+     0.0,
+     -2.4,
+     0
+    ]
+   },
+   {
+    "at": "L38",
+    "pos": [
+     0.75,
+     -1.1,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     72,
+     72
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L39",
+    "pos": [
+     0.4,
+     0.9,
+     0
+    ],
+    "lean": -28,
+    "expr": "wide",
+    "blend": 0.15,
+    "arms": [
+     40,
+     40
+    ]
+   },
+   {
+    "at": "L39.1",
+    "pos": [
+     0.4,
+     0.9,
+     0
+    ]
+   },
+   {
+    "at": "L39.1",
+    "pos": [
+     0.0,
+     1.9,
+     0.23
+    ],
+    "blend": 0.1,
+    "yaw": 180,
+    "expr": "wide",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 0,
+    "blink": false
+   },
+   {
+    "at": "L40",
+    "pos": [
+     0.0,
+     1.9,
+     0.23
+    ]
+   },
+   {
+    "at": "L40",
+    "pos": [
+     0.0,
+     1.9,
+     0.23
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "wide",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 0,
+    "blink": false
+   },
+   {
+    "at": "L41",
+    "expr": "laugh",
+    "blend": 0.1,
+    "tremble": 4
+   },
+   {
+    "at": "L42.0+0.4",
+    "pos": [
+     0.0,
+     1.9,
+     0.23
+    ]
+   },
+   {
+    "at": "L42.0+0.4",
+    "pos": [
+     0.0,
+     1.9,
+     0.23
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 4,
+    "blink": false
+   },
+   {
+    "at": "L43",
+    "pos": [
+     0.0,
+     1.9,
+     0.23
+    ]
+   },
+   {
+    "at": "L43",
+    "pos": [
+     0.8,
+     3.6,
+     0.23
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": -90,
+    "tremble": 4,
+    "blink": false
+   },
+   {
+    "at": "L44",
+    "pos": [
+     0.8,
+     3.6,
+     0.23
+    ]
+   },
+   {
+    "at": "L44",
+    "pos": [
+     -0.7,
+     -2.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 150,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     75,
+     75
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L45",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L46.1",
+    "pos": [
+     -0.7,
+     -2.0,
+     0
+    ]
+   },
+   {
+    "at": "L46.1",
+    "pos": [
+     -3.0,
+     -3.7,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     8,
+     8
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 3,
+    "blink": true
+   }
+  ],
+  "earl": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     -30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L05",
+    "pos": [
+     0,
+     -30,
+     0
+    ]
+   },
+   {
+    "at": "L05",
+    "pos": [
+     -5.5,
+     -8.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "angry",
+    "hidden": false,
+    "arms": [
+     0,
+     72
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L25",
+    "pos": [
+     -5.5,
+     -8.4,
+     0
+    ]
+   },
+   {
+    "at": "L25",
+    "pos": [
+     -5.5,
+     -8.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "angry",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L26",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "lanefour": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     -30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L03",
+    "pos": [
+     0,
+     -30,
+     0
+    ]
+   },
+   {
+    "at": "L03",
+    "pos": [
+     5.2,
+     -0.5,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L04",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L07",
+    "pos": [
+     5.2,
+     -0.5,
+     0
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
+     2.6,
+     0.2,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07.1",
+    "expr": "laugh",
+    "tremble": 4,
+    "blend": 0.1
+   },
+   {
+    "at": "L10",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L26",
+    "pos": [
+     2.6,
+     0.2,
+     0
+    ]
+   },
+   {
+    "at": "L26",
+    "pos": [
+     2.6,
+     0.2,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 3,
+    "blink": true
+   },
+   {
+    "at": "L27",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "wait": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     -30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L15",
+    "pos": [
+     0,
+     -30,
+     0
+    ]
+   },
+   {
+    "at": "L15",
+    "pos": [
+     5.4,
+     -8.2,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L16",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L25",
+    "pos": [
+     5.4,
+     -8.2,
+     0
+    ]
+   },
+   {
+    "at": "L25",
+    "pos": [
+     -4.4,
+     -5.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 4,
+    "blink": true
+   },
+   {
+    "at": "L26",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "b1": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     -30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": 0,
+    "pos": [
+     0,
+     -30,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     -0.7,
+     -2.6,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L03",
+    "pos": [
+     -0.7,
+     -2.6,
+     0
+    ]
+   },
+   {
+    "at": "L03",
+    "pos": [
+     -2.6,
+     -0.6,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L04",
+    "pos": [
+     -2.6,
+     -0.6,
+     0
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     -1.8,
+     -5.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L05",
+    "pos": [
+     -1.8,
+     -5.0,
+     0
+    ]
+   },
+   {
+    "at": "L05",
+    "pos": [
+     -3.9,
+     -6.2,
+     0
+    ],
+    "blend": 0,
+    "yaw": 150,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 3,
+    "blink": true
+   },
+   {
+    "at": "L07",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L25",
+    "pos": [
+     -3.9,
+     -6.2,
+     0
+    ]
+   },
+   {
+    "at": "L25",
+    "pos": [
+     -5.2,
+     -6.2,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 4,
+    "blink": true
+   },
+   {
+    "at": "L26",
+    "pos": [
+     -5.2,
+     -6.2,
+     0
+    ]
+   },
+   {
+    "at": "L26",
+    "pos": [
+     1.3,
+     -1.6,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L27",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "b2": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     -30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": 0,
+    "pos": [
+     0,
+     -30,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     0.8,
+     -2.8,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L03",
+    "pos": [
+     0.8,
+     -2.8,
+     0
+    ]
+   },
+   {
+    "at": "L03",
+    "pos": [
+     2.6,
+     -0.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L04",
+    "pos": [
+     2.6,
+     -0.4,
+     0
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     1.6,
+     -5.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L05",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L25",
+    "pos": [
+     1.6,
+     -5.4,
+     0
+    ]
+   },
+   {
+    "at": "L25",
+    "pos": [
+     -6.1,
+     -5.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 4,
+    "blink": true
+   },
+   {
+    "at": "L26",
+    "pos": [
+     -6.1,
+     -5.4,
+     0
+    ]
+   },
+   {
+    "at": "L26",
+    "pos": [
+     3.9,
+     -1.6,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "blank",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L27",
+    "hidden": true,
+    "blend": 0
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": 0,
+   "name": "gray",
+   "g": 0.12
+  },
+  {
+   "at": 0,
+   "name": "tagbev",
+   "on": true
+  },
+  {
+   "at": 0,
+   "name": "n_b1",
+   "v": "17"
+  },
+  {
+   "at": 0,
+   "name": "n_b2",
+   "v": "3"
+  },
+  {
+   "at": "L03",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L03",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L03",
+   "name": "n_b1",
+   "v": "17"
+  },
+  {
+   "at": "L03",
+   "name": "n_b2",
+   "v": "3"
+  },
+  {
+   "at": "L03",
+   "name": "n_lanefour",
+   "v": "9,000"
+  },
+  {
+   "at": "L04",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L05",
+   "name": "n_earl",
+   "v": "0"
+  },
+  {
+   "at": "L05",
+   "name": "n_b1",
+   "v": "17"
+  },
+  {
+   "at": "L05",
+   "name": "spray",
+   "on": true
+  },
+  {
+   "at": "L07",
+   "name": "n_lanefour",
+   "v": "9,000"
+  },
+  {
+   "at": "L07",
+   "name": "spray",
+   "on": false
+  },
+  {
+   "at": "L10",
+   "name": "gray",
+   "g": 0.18
+  },
+  {
+   "at": "L10",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L11",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L12",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L12.2",
+   "name": "shoe",
+   "dur": 0.9,
+   "x0": 0.15,
+   "y0": 0.9,
+   "z0": 0.1,
+   "x1": 0.9,
+   "y1": 3.2,
+   "z1": 0.1,
+   "lift": 1.6
+  },
+  {
+   "at": "L13",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L13",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L15",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L15",
+   "name": "n_wait",
+   "v": "8"
+  },
+  {
+   "at": "L16",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L16+1.1",
+   "name": "stool",
+   "on": true
+  },
+  {
+   "at": "L18",
+   "name": "gray",
+   "g": 0.62
+  },
+  {
+   "at": "L18",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L19",
+   "name": "stool",
+   "on": false
+  },
+  {
+   "at": "L19",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L19",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L19",
+   "name": "ball",
+   "mode": "hold",
+   "who": "me",
+   "y": 0.55
+  },
+  {
+   "at": "L20",
+   "name": "ball",
+   "mode": "roll",
+   "dur": 2.4,
+   "x0": 0.0,
+   "y0": 0.9,
+   "x1": 0.0,
+   "y1": 9.0
+  },
+  {
+   "at": "L21",
+   "name": "ball",
+   "mode": "off"
+  },
+  {
+   "at": "L21",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L21",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L22.1",
+   "name": "n_me",
+   "v": "1"
+  },
+  {
+   "at": "L22.1",
+   "name": "tick",
+   "t": 0
+  },
+  {
+   "at": "L22.2",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L25",
+   "name": "n_earl",
+   "v": "0"
+  },
+  {
+   "at": "L25",
+   "name": "n_b1",
+   "v": "140"
+  },
+  {
+   "at": "L25",
+   "name": "n_b2",
+   "v": "77"
+  },
+  {
+   "at": "L25",
+   "name": "n_wait",
+   "v": "8"
+  },
+  {
+   "at": "L26",
+   "name": "n_lanefour",
+   "v": "9,000"
+  },
+  {
+   "at": "L26",
+   "name": "n_b1",
+   "v": "61"
+  },
+  {
+   "at": "L26",
+   "name": "n_b2",
+   "v": "140"
+  },
+  {
+   "at": "L27",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L29",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L30",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L30",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L32",
+   "name": "n_bev",
+   "v": "492"
+  },
+  {
+   "at": "L33",
+   "name": "n_bev",
+   "v": "495"
+  },
+  {
+   "at": "L33",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L33",
+   "name": "gray",
+   "g": 0.8
+  },
+  {
+   "at": "L34",
+   "name": "n_bev",
+   "v": "496"
+  },
+  {
+   "at": "L34",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L35",
+   "name": "n_bev",
+   "v": "498"
+  },
+  {
+   "at": "L35",
+   "name": "gray",
+   "g": 1.0
+  },
+  {
+   "at": "L36",
+   "name": "n_bev",
+   "v": "499"
+  },
+  {
+   "at": "L37",
+   "name": "n_bev",
+   "v": "499"
+  },
+  {
+   "at": "L38",
+   "name": "n_bev",
+   "v": "499"
+  },
+  {
+   "at": "L38",
+   "name": "ball",
+   "mode": "hold",
+   "who": "bev",
+   "y": 0.55,
+   "dx": 0.0
+  },
+  {
+   "at": "L39+0.1",
+   "name": "ball",
+   "mode": "roll",
+   "dur": 3.4,
+   "x0": 0.3,
+   "y0": 1.0,
+   "x1": 0.0,
+   "y1": 18.2
+  },
+  {
+   "at": "L40",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L40",
+   "name": "n_bev",
+   "v": "499"
+  },
+  {
+   "at": "L40",
+   "name": "lore",
+   "on": true
+  },
+  {
+   "at": "L41",
+   "name": "gray",
+   "g": 0.0,
+   "dur": 2.2
+  },
+  {
+   "at": "L41+0.00",
+   "name": "n_bev",
+   "v": "499"
+  },
+  {
+   "at": "L41+0.14",
+   "name": "n_bev",
+   "v": "463"
+  },
+  {
+   "at": "L41+0.29",
+   "name": "n_bev",
+   "v": "428"
+  },
+  {
+   "at": "L41+0.43",
+   "name": "n_bev",
+   "v": "392"
+  },
+  {
+   "at": "L41+0.57",
+   "name": "n_bev",
+   "v": "356"
+  },
+  {
+   "at": "L41+0.71",
+   "name": "n_bev",
+   "v": "321"
+  },
+  {
+   "at": "L41+0.86",
+   "name": "n_bev",
+   "v": "285"
+  },
+  {
+   "at": "L41+1.00",
+   "name": "n_bev",
+   "v": "250"
+  },
+  {
+   "at": "L41+1.14",
+   "name": "n_bev",
+   "v": "214"
+  },
+  {
+   "at": "L41+1.29",
+   "name": "n_bev",
+   "v": "178"
+  },
+  {
+   "at": "L41+1.43",
+   "name": "n_bev",
+   "v": "143"
+  },
+  {
+   "at": "L41+1.57",
+   "name": "n_bev",
+   "v": "107"
+  },
+  {
+   "at": "L41+1.71",
+   "name": "n_bev",
+   "v": "71"
+  },
+  {
+   "at": "L42",
+   "name": "pins",
+   "dur": 0.9
+  },
+  {
+   "at": "L41+1.86",
+   "name": "n_bev",
+   "v": "36"
+  },
+  {
+   "at": "L41+2.00",
+   "name": "n_bev",
+   "v": "0"
+  },
+  {
+   "at": "L42.0+0.4",
+   "name": "n_bev",
+   "v": "0"
+  },
+  {
+   "at": "L42.0+0.4",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L43",
+   "name": "ball",
+   "mode": "off"
+  },
+  {
+   "at": "L43",
+   "name": "n_bev",
+   "v": "0"
+  },
+  {
+   "at": "L43",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L44",
+   "name": "n_bev",
+   "v": "0"
+  },
+  {
+   "at": "L44",
+   "name": "n_me",
+   "v": "0"
+  },
+  {
+   "at": "L44",
+   "name": "shoes",
+   "on": true
+  },
+  {
+   "at": "L45",
+   "name": "shoes",
+   "on": false
+  },
+  {
+   "at": "L45",
+   "name": "n_me",
+   "v": "3"
+  },
+  {
+   "at": "L46",
+   "name": "n_me",
+   "v": "3"
+  },
+  {
+   "at": "L46.1",
+   "name": "gray",
+   "g": 0.12,
+   "dur": 0.1
+  },
+  {
+   "at": "L46.1",
+   "name": "n_bev",
+   "v": "492"
+  }
+ ],
+ "asr_forgive": [
+  "hers",
+  "his",
+  "four",
+  "four's",
+  "mine has",
+  "bowl",
+  "sighed",
+  "then",
+  "thousand",
+  "four ninety two",
+  "four ninety eight",
+  "four ninety nine"
+ ],
+ "set_moves": [],
+ "clip_ok": [
+  "rim",
+  "S01",
+  "S29"
+ ],
+ "music": {
+  "root": 53,
+  "mode": "major",
+  "bpm": 120,
+  "seed": 111,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "bubble",
+     "pulse",
+     "pluck_hi"
+    ],
+    "energy": 0.6
+   },
+   {
+    "at": "L11",
+    "voices": [
+     "bubble",
+     "pad",
+     "pluck"
+    ],
+    "energy": 0.45
+   },
+   {
+    "at": "L23",
+    "voices": [
+     "drone",
+     "pad"
+    ],
+    "energy": 0.4,
+    "mode": "minor"
+   },
+   {
+    "at": "L32",
+    "voices": [
+     "pad",
+     "pulse",
+     "pluck"
+    ],
+    "energy": 0.55,
+    "mode": "major"
+   },
+   {
+    "at": "L39",
+    "voices": [
+     "pad",
+     "pulse"
+    ],
+    "energy": 0.4
+   },
+   {
+    "at": "L42",
+    "voices": [
+     "bubble",
+     "pluck_hi",
+     "pad",
+     "pulse"
+    ],
+    "energy": 0.65
+   }
+  ]
+ },
+ "sound": {
+  "rev": 1,
+  "floor": "wood",
+  "steps_db": -22,
+  "ambience": [
+   {
+    "kind": "room",
+    "from": 0,
+    "to": "end",
+    "lufs": -40
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L01.3",
+    "kind": "thud",
+    "db": -14
+   },
+   {
+    "at": "L20.1",
+    "kind": "thud",
+    "db": -18
+   },
+   {
+    "at": "L39.1",
+    "kind": "thud",
+    "db": -18
+   },
+   {
+    "at": "L42",
+    "kind": "hit",
+    "db": -18
+   }
+  ],
+  "music_drops": [
+   {
+    "from": "L22>",
+    "to": "P01>"
+   }
+  ]
+ },
+ "rev": 1
+}
