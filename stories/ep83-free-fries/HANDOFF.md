@@ -1,18 +1,8 @@
-# ep83-free-fries: DROPPED (2026-11-04)
+# ep83-free-fries handoff
 
-Not approved after 2 review rounds (rule: at most 2, no rescue round). No PR opened. `"hold"` left in package.json.
+Status: built, approved, proof passed. PR #265.
 
-## Verdicts
-- Round 1: standards approve (no must-fixes); critic revise (6 must-fixes, all picture).
-- Round 2 (critic only): revise. Average 7.5; hook 8, back-row 8, narrator 9, appeal 9, middle grip 7, twist 8, lore 7, warm turn 6, faces at phone size 6, sound 7, captions 7. Preflight 0 blocks, flash pass, measure 0 block 0 near (warns: face_big_share, walk_dead_end_share).
-- Reviews: `reviews/r1-standards.md`, `reviews/r1-critic.md`, `reviews/r2-critic.md`.
-
-## Open must-fixes (all camera/face, no words)
-1. L29 S37-S38 (49.9-50.9 s, "OWN gloves"): S37 is a big grey pot with Mom's head cut off and the gloves at the frame edges. Frame on her two yellow-gloved hands at her sleeve ends, no face. S38's "empty hook" reads as a pink light switch: hang a visible glove outline or cut S38.
-2. L36 S46 (61.9-63.3 s): a quarter of Omar's head is off the left edge, mine clipped on the right. Pull back, both heads whole; Omar's mouth to `laugh`/`grin`.
-3. L42 S54 (72.5-73.1 s, "we BLINK"): top of my head cut off, Omar hidden behind me. Tilt up, move Omar aside.
-
-## Notes
-- Standards watch items: queue it away from dryer-nine, rule-three, ep54 (all `cost` openings); remove stale `hold` at merge.
-- Closest-to-shippable story: three small camera/face fixes would likely get approval if the owner/orchestrator grants a third round.
-- No engine bug blocked the build.
+- Round 1: standards approve, critic revise (6 picture must-fixes). Round 2: critic revise (3 camera/face). Rescue round (granted by the second orchestrator): critic round 3 approve, avg 7.6, nothing under 7.
+- Proof run 41857138077 (sha a2b810b9): this story's proof passed (0 clips, -14.1 LUFS, -1.8 dBTP, flash clear, craft 0 block 0 near). The run's overall FAILURE came from `assemble (dryer-nine)`, a different story that the plan step added; not this story's.
+- Proof qa (opus): pass, `qa/ep83-free-fries.json`. Optional: cover_s 45.0 (eyes-open stare) may be a stronger cover than 41.5.
+- Queue note: keep away from dryer-nine, rule-three, ep54 (all `cost` openings). The first orchestrator queues it.
