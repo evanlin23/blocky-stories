@@ -6,42 +6,38 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "When the band plays on the town green, everyone has to dance. everyone.",
+   "text": "On our town green, everyone has to dance to the band. everyone.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.259,
+   "dur": 3.0,
    "onset": 0.155,
-   "end": 3.069,
+   "end": 2.81,
    "chunks": [
     [
      0.155,
-     0.293
+     0.328
     ],
     [
-     0.293,
-     0.698
+     0.328,
+     0.776
     ],
     [
-     0.698,
-     0.828
+     0.81,
+     1.259
     ],
     [
-     0.828,
-     1.31
+     1.259,
+     1.552
     ],
     [
-     1.362,
-     1.81
+     1.552,
+     2.069
     ],
     [
-     1.81,
-     2.328
-    ],
-    [
-     2.44,
-     3.069
+     2.181,
+     2.81
     ]
    ]
   },
