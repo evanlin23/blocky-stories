@@ -6,6 +6,5 @@
   "cover_s": 43.0,
   "shape": "backwards-warning",
   "opening": "ban",
-  "lane": "core",
-  "hold": "batch 10: in review"
+  "lane": "core"
 }
