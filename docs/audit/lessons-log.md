@@ -184,6 +184,14 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Briefs say to wait on runs with a Monitor until-loop, never by ending the turn (docs/briefs/build.md). The
     plan's PR-based inbox (step 9) should subscribe build sessions to their PR's events.
 
+32. **Batch 10's framing pre-check didn't lift the pass rate: 1 merged, 1 still building and 5 dropped out of 7.** Two of the
+    drops failed the creature test. The other three failed on single shots framed on the wrong thing: the back of a head, an
+    empty wall, a crop of hair over the line it should show, and one sinister `grin` face on a warm beat. The pre-check
+    looks at the key beats only, and these shots weren't key beats. Film length isn't the cause: most of the 15 passed
+    films are long too.
+    → An automated check over EVERY shot: face box size, a head cut by the frame, a back-of-head shot on a line about
+    that person, and the line's named object in frame. That is plan step 8 (C + N), the most valuable step left.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
