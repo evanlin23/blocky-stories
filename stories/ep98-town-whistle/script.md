@@ -6,7 +6,7 @@
 - **Word count:** 549 spoken words in 74 lines, all `narrator`, plus two 0.7 s music drops (before L30 and before L53).
 - **Estimated length:** about 126 s at 290 wpm with 0.15 s gaps, the drops and the loop tail. If it runs over 145 s, cut L06, then L23, then L39. If it lands under 112 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright small town in high summer: white and pastel clapboard houses with green lawns, blue sky, a brass whistle on a tall green pole in the middle of our street. The one dark scene is our basement stairs at midnight (L43 to L55), lit warm by my lamp. The sundown scene (L24 to L36) is gold, never dark. Light changes ramp over 0.3 s or more.
-- **Hold:** scripts only (batch 9b). Not built, not voiced.
+- **Hold:** none. Built and voiced (batch 9b); both reviews approved.
 
 ## Variety table
 The batch table is in `stories/ep97-prize-bears/script.md`. This row:

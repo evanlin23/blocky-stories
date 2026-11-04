@@ -189,7 +189,7 @@ for i, who in enumerate(("t1", "t2", "t3", "t4")):
     for j, k in enumerate((1, 3, 6, 9)):
         raw(who, f"L05.2+{t0 + 0.2 * (j + 1):.2f}", pos=[stair(k)[0], ln, stair(k)[1]])
     gone(who, f"L05.2+{t0 + 0.95:.2f}")
-S("L05.2", PX((97.6, 0.3, 1.7), (102.4, 0.0, -1.2), 17, 0.08), "in", fill=0.9, stairl=1.5)
+S("L05.2", PX((97.2, 1.1, 1.8), (102.4, 0.0, -1.2), 17, 0.08), "in", fill=0.9, stairl=1.5)
 walk("mail", "L06", (4.6, -14.0), "L06.2", (9.9, -6.0), expr="scared")
 gone("mail", "L06.2+0.25")
 S("L06", PX((3.2, -16.0, 1.5), (8.6, -8.0, 1.1), 20, 0.12), "day", fill=0.9)
@@ -560,7 +560,7 @@ music = {"root": 50, "mode": "minor", "bpm": 84, "seed": 98,
              {"at": "L70", "voices": ["pad", "pluck_hi"], "energy": 0.4, "mode": "major"},
              {"at": "L72", "voices": ["drone", "pad"], "energy": 0.3, "mode": "minor"},
          ]}
-sound = {"rev": 2, "floor": "grass", "steps_db": -22,
+sound = {"rev": 3, "floor": "grass", "steps_db": -22,
          "floor_spans": [{"from": "L05.2", "to": "L06", "floor": "wood"}, {"from": "L07", "to": "L11", "floor": "wood"},
                          {"from": "L21", "to": "L22", "floor": "wood"}, {"from": "L25", "to": "L26", "floor": "wood"},
                          {"from": "L40", "to": "L43", "floor": "wood"}, {"from": "L44", "to": "L53", "floor": "wood"},
