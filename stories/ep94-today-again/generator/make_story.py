@@ -495,7 +495,7 @@ S("L32", ((14.3, 8.6, 1.9), (13.0, 9.9, 1.5), 36, (14.0, 8.2, 1.8), (13.0, 9.9, 
 cue("L32", "jar", on=True)
 S("L32.2", ((13.1, 8.6, 1.7), (13.0, 9.9, 1.1), 36, (12.8, 8.9, 1.5), (13.0, 9.9, 1.05), 36),
   who={"pearl": (X(13.0, 10.4), 0, "grin", {"arms": [100, 40]})}, note="glitter falling on the cake")
-S("L32.4", ((12.6, 8.5, 1.45), (13.0, 9.9, 1.25), 62, (12.9, 8.9, 1.4), (13.0, 9.9, 1.25), 62),
+S("L32.4", ((13.0, 7.3, 2.0), (13.0, 9.6, 1.0), 32, (13.0, 7.6, 1.9), (13.0, 9.6, 1.0), 32),
   who={"pearl": (X(13.0, 10.4), 0, "smile", {"arms": [85, 60]})}, note="close on her hands, sparkling")
 cue("L32.4", "jar", on=False)
 cue("L32.4", "glit", n=4)
@@ -522,7 +522,7 @@ S("L33.5", ((2.0, 6.0, 1.7), (-0.4, 3.4, 1.5), 28, (1.6, 5.8, 1.7), (-0.4, 3.4, 
   note="everyone else does the day the same: the bakery, again")
 cue("L33.5", "wcake", mode="hide")
 cue("L33.5", "cup", mode="hand", tilt=0)
-S("L34", ((1.6, 2.0, 1.4), (-0.4, 3.6, 1.2), 32, (1.4, 2.2, 1.4), (-0.4, 3.6, 1.2), 32),
+S("L34", ((2.6, 1.0, 1.8), (-0.4, 3.4, 1.7), 30, (2.4, 1.2, 1.8), (-0.4, 3.4, 1.7), 30),
   who={"mom": (X(*MOMC), 180, "scared", {"arms": [100, 30]})},
   note="a callback to the first coffee: the cup tipping")
 cue("L34", "cup", mode="hand", tilt=0)
@@ -571,8 +571,8 @@ def MC(d, side=0.3, h=1.55):
 
 MOMP = (X(*CLIP_AT), -60)
 cue("L39", "clip", mode="hand")
-S("L39", (MC(1.9, 0.25, 1.45), (CLIP_AT[0] + 0.8 * MF[0], CLIP_AT[1] + 0.8 * MF[1], 1.2), 30,
-          MC(1.6, 0.15, 1.4), (CLIP_AT[0] + 0.8 * MF[0], CLIP_AT[1] + 0.8 * MF[1], 1.2), 30),
+S("L39", (MC(2.6, 0.25, 1.9), (CLIP_AT[0] + 0.5 * MF[0], CLIP_AT[1] + 0.5 * MF[1], 1.7), 30,
+          MC(2.3, 0.15, 1.85), (CLIP_AT[0] + 0.5 * MF[0], CLIP_AT[1] + 0.5 * MF[1], 1.7), 30),
   who={"mom": (*MOMP, "neutral", {"arms": [75, 75]})},
   note="close on the clipboard: three rows of glyph ticks and a doodle of my face")
 S("L39.3", (MC(2.7, 0.4, 1.6), (CLIP_AT[0], CLIP_AT[1], 1.55), 46, MC(2.4, 0.2, 1.6), (CLIP_AT[0], CLIP_AT[1], 1.55), 46),
@@ -676,7 +676,7 @@ story = {
     "tail": LOOP,
     "fade_in": False,
     "fade_out": False,
-    "rev": 7,
+    "rev": 8,
     "look": {"style": "closer", "fog": "#d8ecf8", "fog_density": 0.004, "fog_start": 16.0, "sky": "#8fd3ff", "sky_strength": 1.0,
              "exposure": 0.15, "hdri": "kloppenheim_06_puresky", "hdri_strength": 0.5, "hdri_rotation": 40, "flash_safe": True,
              "polish": {"emph": ["L01", "L03", "L11", "L21", "L24", "L36", "L37"], "reveal": ["L37"], "twist": "L37",

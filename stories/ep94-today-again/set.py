@@ -897,12 +897,12 @@ def dress_pearl(kit, name, ctx):
     rng = random.Random(21)
     ctx["specks"] = []
     cols = ["#ffe14d", "#ff7fb2", "#7fe0ff", "#ffffff"]
-    for i in range(70):
+    for i in range(110):
         arm = c.P["arm-1" if i % 2 == 0 else "arm1"]
         face = rng.choice(["x+", "x-", "y-", "y+", "z-"])
         u, v = rng.uniform(-0.45, 0.45), rng.uniform(-1.95, -1.15)
         pos = {"x+": (0.51, u, v), "x-": (-0.51, u, v), "y-": (u, -0.51, v), "y+": (u, 0.51, v), "z-": (u, rng.uniform(-0.45, 0.45), -2.0)}[face]
-        o = kit.box(f"{name}.speck{i}", (0.07, 0.07, 0.07), pos, kit.emit(cols[i % 4], 2.5, f"sp{i % 4}"), arm)
+        o = kit.box(f"{name}.speck{i}", (0.1, 0.1, 0.1), pos, kit.emit(cols[i % 4], 2.5, f"sp{i % 4}"), arm)
         ctx["specks"].append(o)
 
 
@@ -922,8 +922,14 @@ def dress_me(kit, name):
 
 def dress_oka(kit, name):
     hg = _hg(name)
-    kit.box(f"{name}.beard", (0.95, 0.36, 0.5), (0, -0.5, -0.36), kit.plastic("#f2f2f2", 0.85, "beard"), hg, bevel=0.1)
-    kit.box(f"{name}.stache", (0.7, 0.14, 0.14), (0, -0.62, -0.12), kit.plastic("#f2f2f2", 0.85, "beard"), hg, bevel=0.05)
+    grey = kit.plastic("#8d9096", 0.95, "beard")
+    dark = kit.plastic("#5a5d64", 0.95, "beard dark")
+    kit.box(f"{name}.beard", (0.95, 0.36, 0.5), (0, -0.5, -0.36), grey, hg, bevel=0.1)
+    kit.box(f"{name}.stache", (0.7, 0.14, 0.14), (0, -0.62, -0.12), dark, hg, bevel=0.05)
+    # texture: tufts of darker and lighter fur standing 1 cm proud, and a dark mouth line
+    for i, (x, z, c) in enumerate(((-0.32, -0.5, dark), (0.0, -0.55, dark), (0.3, -0.5, dark), (-0.15, -0.32, grey), (0.18, -0.34, grey), (-0.4, -0.3, dark), (0.4, -0.3, dark))):
+        kit.box(f"{name}.tuft{i}", (0.12, 0.06, 0.2), (x, -0.69, z), c, hg, bevel=0.02)
+    kit.box(f"{name}.mouthline", (0.42, 0.05, 0.06), (0, -0.72, -0.27), kit.plastic("#1a1214", 0.7, "mouth line"), hg)
 
 
 def dress_lund(kit, name, ctx):
@@ -1094,7 +1100,7 @@ def animate(kit, story, tl, t, ctx):
     # ---- Pearl's glitter count
     gl = latest(tl, "glit", t)
     n = gl["n"] if gl else 0
-    counts = {0: 0, 1: 6, 2: 18, 3: 42, 4: 70}
+    counts = {0: 0, 1: 6, 2: 18, 3: 60, 4: 110}
     for i, o in enumerate(ctx.get("specks", [])):
         o.hide_render = i >= counts[n]
     # ---- the hose, the spray and the rainbow
