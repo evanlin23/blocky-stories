@@ -246,8 +246,8 @@
     "She said,"
    ],
    [
-    "so you can wave GOODBYE.",
-    "so you can wave goodbye."
+    "so you'd HAVE one.",
+    "so you'd have one."
    ]
   ]
  },
@@ -256,12 +256,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "She sold the FARM.",
-    "She sold the farm."
+    "She's never been LOST in here,",
+    "She's never been lost in here,"
    ],
    [
-    "Tonight's the last NIGHT.",
-    "Tonight's the last night."
+    "so she's never HEARD it.",
+    "so she's never heard it."
    ]
   ]
  },
@@ -341,7 +341,11 @@
   "chunks": [
    [
     "RIGHT, June.",
-    "right, June."
+    "Right, June."
+   ],
+   [
+    "NOW.",
+    "Now."
    ]
   ]
  },
@@ -378,8 +382,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "The corn LEANED in",
-    "The corn leaned in"
+    "The corn CLOSED in",
+    "The corn closed in"
    ],
    [
     "behind her,",
@@ -402,6 +406,20 @@
    [
     "was GONE.",
     "was gone."
+   ]
+  ]
+ },
+ {
+  "id": "L29b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then the NEXT path.",
+    "Then the next path."
+   ],
+   [
+    "Then the NEXT.",
+    "Then the next."
    ]
   ]
  },
@@ -452,8 +470,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "I'm not a PERSON.",
-    "I'm not a person."
+    "I don't have FEET.",
+    "I don't have feet."
    ]
   ]
  },
@@ -536,12 +554,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "She didn't walk in",
-    "She didn't walk in"
-   ],
-   [
-    "to get LOST.",
-    "to get lost."
+    "She knew the way OUT.",
+    "She knew the way out."
    ]
   ]
  },
@@ -642,16 +656,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "At dawn,",
-    "At dawn,"
+    "Every year,",
+    "Every year,"
    ],
    [
-    "I opened one path",
-    "I opened one path"
-   ],
-   [
-    "straight to her TRUCK.",
-    "straight to her truck."
+    "she gave me a SHAPE.",
+    "she gave me a shape."
    ]
   ]
  },
@@ -660,12 +670,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "She filled her pockets",
-    "She filled her pockets"
+    "That night,",
+    "That night,"
    ],
    [
-    "with SEED corn,",
-    "with seed corn,"
+    "I gave her ONE.",
+    "I gave her one."
    ]
   ]
  },
@@ -674,8 +684,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "for her new YARD.",
-    "for her new yard."
+    "At DAWN,",
+    "At dawn,"
+   ],
+   [
+    "she looked down",
+    "she looked down"
+   ],
+   [
+    "from the porch ROOF.",
+    "from the porch roof."
    ]
   ]
  },
@@ -684,12 +702,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "So next fall,",
-    "So next fall,"
+    "The face in the corn",
+    "The face in the corn"
    ],
    [
-    "in some other TOWN,",
-    "in some other town,"
+    "was HERS.",
+    "was hers."
    ]
   ]
  },
@@ -698,8 +716,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "when the lanterns go OUT,",
-    "when the lanterns go out,"
+    "She WAVED,",
+    "She waved,"
+   ],
+   [
+    "and the whole field",
+    "and the whole field"
+   ],
+   [
+    "waved BACK.",
+    "waved back."
    ]
   ]
  },
@@ -708,12 +734,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I'll be the voice",
-    "I'll be the voice"
+    "So now,",
+    "So now,"
    ],
    [
-    "you HEAR.",
-    "you hear."
+    "I'm the one",
+    "I'm the one"
+   ],
+   [
+    "who says the RULE.",
+    "who says the rule."
    ]
   ]
  }
