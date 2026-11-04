@@ -367,7 +367,7 @@ put("me", "L37>", [0.15, 7.0, LZ + 0.17], 180, "scared", lean=-86, arms=[80, 0],
 # the gap: the Climber folded backwards at its knees, the face on the back of its head upside down at the door
 GAP = dict(yaw=0, k=60.0, stoop=-95.0, al=0, ar=0, hp=0.0, hr=180.0, hipz=0.40, hy=0.0, kx=0.0, ky=1.0, kz=0.03, ax=0.0, ay=0.85, az=0.1,
            rx=0.5, ry=-0.2, rz=1.2)
-clm("L38", [0.18, 3.77, LZ + 0.07], **GAP)
+clm("L38", [0.18, 3.77, LZ + 0.13], **GAP)
 S("L38", X((0.04, 5.3, LZ + 0.075), (0.04, 4.7, LZ + 0.075), 22, (0.05, 5.15, LZ + 0.075), None, 22), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
   note="the gap: one pinprick eye and the edge of a cream face, lit amber from below")
 S("L39", X((0.07, 5.2, LZ + 0.075), (0.07, 4.7, LZ + 0.075), 26, (0.08, 5.08, LZ + 0.075), None, 26), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
@@ -445,20 +445,21 @@ cue("L57", "torch", on=False)
 clm("L58", None)
 box("L58", DOORBOX)
 count("L58", 10)
-ME_SIT, DAD_SIT = [0.3, 4.6, LZ - 0.62], [-0.3, 4.6, LZ - 0.62]
+ME_SIT, DAD_SIT = [0.75, 4.4, LZ - 0.62], [-0.55, 4.4, LZ - 0.62]
 put("me", "L58", ME_SIT, 0, "asleep", lean=0)
 put("dad", "L58", [DDOOR[0], DDOOR[1], LZ], -70, "soft")
 cue("L58", "ddoor", open=85)
 S("L58", X((1.1, 2.9, LZ + 1.5), (1.25, 4.7, LZ + 1.0), 10.5, (1.1, 3.1, LZ + 1.45), None, 10.5), "dawn", fill=1.0, note="morning: the landing empty but for the box; me asleep against my door, Dad in his doorway beside mine")
 S("L59", X((1.1, 3.1, LZ + 1.55), (DDOOR[0], DDOOR[1], LZ + 1.5), 19, (1.2, 3.3, LZ + 1.55), None, 19), "dawn", fill=0.9, note="Dad's face, soft")
-walk("dad", "L60", [DDOOR[0], DDOOR[1], LZ], "L60.2", [-0.3, 4.6, LZ], -70, "soft")
+walk("dad", "L60", [DDOOR[0], DDOOR[1], LZ], "L60.1", [-0.6, 3.6, LZ], 0, "soft")
+walk("dad", "L60.1", [-0.6, 3.6, LZ], "L60.2", [-0.55, 4.4, LZ], 0, "soft")
 raw("dad", "L60.3", pos=DAD_SIT, yaw=0)
 S("L60", X((0.8, 2.9, LZ + 1.4), (0.8, 4.6, LZ + 0.9), 10.5, (0.4, 3.0, LZ + 1.2), (0.0, 4.6, LZ + 0.9), 10.5), "dawn", fill=0.9, note="Dad crosses the landing and sits down beside me")
 S("L61", X((1.2, 3.0, LZ + 0.95), (0.0, 4.5, LZ + 0.5), 12), "dawn", fill=0.9, note="the box in front of us, the two of us behind it")
 put("dad", "L62", DAD_SIT, 0, "soft", head=[0, 0])
-S("L62", X((-0.1, 3.5, LZ + 0.95), (-0.5, 4.66, LZ + 0.95), 21), "dawn", fill=0.9, note="Dad, close, soft")
+S("L62", X((-0.2, 3.4, LZ + 0.95), (-0.55, 4.4, LZ + 0.95), 21), "dawn", fill=0.9, note="Dad, close, soft")
 put("me", "L63", ME_SIT, 0, "soft")
-S("L63", X((1.1, 3.5, LZ + 0.95), (0.55, 4.66, LZ + 0.95), 21), "dawn", fill=0.9, note="me, close, awake")
+S("L63", X((1.3, 3.4, LZ + 0.95), (0.75, 4.4, LZ + 0.95), 21), "dawn", fill=0.9, note="me, close, awake")
 put("me", "L64", ME_SIT, 0, "smile")
 put("dad", "L64", DAD_SIT, 0, "smile")
 S("L64", X((0.0, 3.0, LZ + 0.8), (0.0, 4.6, LZ + 0.7), 13), "day", fill=0.9, note="down the stairs in daylight, both of us on the landing, the box in front, smiling")
