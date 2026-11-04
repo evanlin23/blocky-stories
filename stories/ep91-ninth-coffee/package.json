@@ -6,6 +6,5 @@
   "cover_s": 51.5,
   "shape": "too-fast",
   "opening": "whatif",
-  "lane": "experiment",
-  "hold": "batch 8: scripts only, not built yet"
+  "lane": "experiment"
 }
