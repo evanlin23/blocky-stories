@@ -6,6 +6,5 @@
   "cover_s": 41.5,
   "shape": "who-pays",
   "opening": "cost",
-  "lane": "core",
-  "hold": "batch 7: scripts only, not built yet"
+  "lane": "core"
 }
