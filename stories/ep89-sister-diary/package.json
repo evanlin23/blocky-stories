@@ -6,6 +6,5 @@
   "cover_s": 71.0,
   "shape": "each-others-ghost",
   "opening": "must",
-  "lane": "core",
-  "hold": "batch 8: scripts only, not built yet"
+  "lane": "core"
 }
