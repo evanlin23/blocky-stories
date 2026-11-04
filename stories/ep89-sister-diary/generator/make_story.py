@@ -713,7 +713,7 @@ story = {
     "cues": cues,
     "shotlook": SHOTLOOK,
     "fx": [],
-    "rev": 7,
+    "rev": 8,
     "music": {"root": 51, "mode": "major", "bpm": 100, "seed": 89, "sections": [
         {"at": 0, "voices": ["musicbox", "pulse"], "energy": 0.35},
         {"at": "L21", "voices": ["piano", "drone"], "energy": 0.4, "mode": "minor"},
@@ -723,10 +723,10 @@ story = {
         {"at": "L49", "voices": ["pad", "piano", "musicbox"], "energy": 0.55, "mode": "major"},
         {"at": "L69", "voices": ["drone"], "energy": 0.4, "mode": "minor"}]},
     "sound": {
-        "floor": "wood", "steps_db": -26, "rev": 7,
+        "floor": "wood", "steps_db": -26, "rev": 8,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -40},
                      {"kind": "crickets", "from": "L21", "to": "L48", "lufs": -46}],
-        "sfx": [{"at": "L01.3+0.05", "kind": "hit", "db": -7},
+        "sfx": [{"at": "L01.4+0.05", "kind": "hit", "db": -7},
                 {"at": "L09+0.05", "kind": "door", "db": -13},
                 {"at": "L38.2", "kind": "click", "db": -14},
                 {"at": "L61+0.1", "kind": "bell", "db": -16},

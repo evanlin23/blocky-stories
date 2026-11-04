@@ -123,20 +123,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "My sister's diary",
-     "My sister's diary"
+     "You can't READ",
+     "You can't read"
     ],
     [
-     "answers BACK.",
-     "answers back."
+     "my sister's diary.",
+     "my sister's diary."
     ],
     [
-     "And tonight",
-     "And tonight"
+     "It writes BACK.",
+     "It writes back."
     ],
     [
-     "it wrote",
-     "it wrote"
+     "Tonight it wrote",
+     "Tonight it wrote"
     ],
     [
      "about YOU.",
@@ -8987,7 +8987,7 @@
   }
  },
  "fx": [],
- "rev": 7,
+ "rev": 8,
  "music": {
   "root": 51,
   "mode": "major",
@@ -9063,7 +9063,7 @@
  "sound": {
   "floor": "wood",
   "steps_db": -26,
-  "rev": 7,
+  "rev": 8,
   "ambience": [
    {
     "kind": "room",
@@ -9080,7 +9080,7 @@
   ],
   "sfx": [
    {
-    "at": "L01.3+0.05",
+    "at": "L01.4+0.05",
     "kind": "hit",
     "db": -7
    },
