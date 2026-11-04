@@ -90,7 +90,7 @@ HAIRS = ["#2a1d15", "#6a5a3a", "#1a1412", "#9a5a32", "#8a8a8a", "#3a2a22", "#4a3
 for i in range(11):
     cast[f"c{i + 1}"] = person(SKINS[i % 8], "#4c3038", "#4c3038", "#2a2022", STYLES[i], HAIRS[i], "solid", None, "#f3efe6",
                                dict(FACE), ["coat"], zip_c="#4a2230", height=[1.0, 0.96, 1.03, 0.98, 1.02, 0.95, 1.0, 1.04, 0.97, 1.01, 0.99][i])
-cast["grin"] = person("#dcae88", "#4c3038", "#4c3038", "#2a2022", "buzz", "#5a4030", "solid", None, "#f3efe6",
+cast["grin"] = person("#cdb6a2", "#4c3038", "#4c3038", "#2a2022", "buzz", "#5a4030", "solid", None, "#f3efe6",
                       {"eyes": "none", "brows": False, "ink": "#1a1214", "mouth": "none"}, ["coat"], zip_c="#4a2230", height=1.35)
 NAMES = list(cast)
 
@@ -487,22 +487,22 @@ shot("L40.2", "its head now turned toward the hall, mid shot",
      {**hall()})
 GCAM = (TW - 0.7, -3.6)
 shot("L41", "front, lamp key: the grin and the teeth, the black line across the cheeks and round the sides",
-     still((GCAM[0], GCAM[1] + 1.8, 2.0), (TW, TWELFTH[1], 2.75), 36),
+     still((GCAM[0], GCAM[1] + 1.8, 1.0), (TW, TWELFTH[1], 1.75), 36),
      {**choir(skip=("c4", "c5", "c8", "c9")), "grin": G(yaw=yaw_to(GRINP, GCAM), tilt=-20, roll=8)}, fill=[55, "#a8c4f0"])
 shot("L41.2", "punch in on the eyes",
      still((GCAM[0] - 0.1, -6.2, 2.6), (TW, TWELFTH[1], 3.45), 30),
      {**choir(skip=("c4", "c5", "c8", "c9")), "grin": G(yaw=yaw_to(GRINP, GCAM), tilt=-20, roll=8)}, fill=[45, "#a8c4f0"])
 shot("L42", "from behind the riser: the seam meeting at mouth height",
-     still((TW + 0.15, -11.0, 3.0), (TW, TWELFTH[1], 3.3), 28),
+     still((TW + 0.5, -11.0, 2.5), (TW + 0.25, TWELFTH[1], 3.0), 20),
      {**hall()})
 GF = [50, "#a8c4f0"]
 shot("L43", "the Grin leans out of its chair to Mom's ear, a hand's width off, never touching",
      still((HX - 2.7, -3.2, 1.5), (HX - 2.6, TWELFTH[1], 2.8), 36),
-     {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "smile", arms=[10, 10], head=[0, 0]),
+     {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "soft", tilt=8, arms=[10, 10], head=[0, 0]),
       "grin": G(head=[52, 0], roll=36, tilt=-24)}, fill=GF)
 shot("L44", "close on its still grin beside her ear, the eye highlight brightest",
-     still((HX - 3.0, -5.6, 2.0), (HX - 3.0, TWELFTH[1], 2.52), 34),
-     {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=40, tilt=-22)}, fill=GF)
+     still((HX - 3.0, -5.6, 2.5), (HX - 2.9, TWELFTH[1], 3.2), 30),
+     {"mumr": P(MUMP, 180, "soft", tilt=8), "grin": G(head=[62, 0], roll=40, tilt=-22)}, fill=GF)
 shot("L44.2", "me at the back, scared, ten lit, as she smiles at ME",
      move(((HX + 3.4, 4.6, 1.5), (ME_BACK[0], ME_BACK[1], 1.5)), ((HX + 2.6, 5.4, 1.5), (ME_BACK[0], ME_BACK[1], 1.5)), 28, 32),
      {"me": P(ME_BACK, 0, "scared")})
@@ -539,7 +539,7 @@ shot("L48", "the gate again, wider: the man talks, ten lit; the neighbour's bead
 shot("L49", "back to the wide: the Grin at her ear",
      still(*REV_CAM), REV_CAST, fill=[40, "#a8c4f0"])
 shot("L49.2", "close on the Grin at her ear",
-     still((HX - 3.0, -5.6, 2.0), (HX - 3.0, TWELFTH[1], 2.52), 34),
+     still((HX - 3.0, -5.6, 2.5), (HX - 2.9, TWELFTH[1], 3.2), 30),
      {"mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=40, tilt=-22)}, fill=GF)
 shot("L50", "punch in on Mom's face, smiling up at it",
      front(MUMP, 180, 1.6, 2.6, 2.5, 38, 6),
@@ -769,11 +769,9 @@ cue(0, "scarf", who=["mum", "mumr"])
 cue(0, "props", scarf=False, robe=False)
 cue(0, "stand", pos=[HX + 1.2, -3.5, 0.0])
 cue(shift("L43", -0.3), "lt", l="grin_rim", v=2.2, dur=0.3)     # the rim and a warmer pocket on Mom lift for the lean
-cue(shift("L43", -0.3), "lt", l="front_key", v=1.6, dur=0.3)
 cue(shift("L44.2", -0.3), "lt", l="grin_rim", v=1.0, dur=0.3)
-cue(shift("L44.2", -0.3), "lt", l="front_key", v=0.0, dur=0.3)
-for _l in ("riser", "grin_rim", "back_wash"):      # the back view: the lights behind the riser down so the neck isn't a white blow-out
-    cue(shift("L42", -0.3), "lt", l=_l, v=0.25 if _l != "back_wash" else 0.0, dur=0.3)
+for _l in ("riser", "grin_rim", "back_wash"):      # the back view: the lights behind the riser off, so only the cold key rims the head
+    cue(shift("L42", -0.3), "lt", l=_l, v={"riser": 0.4, "grin_rim": 0.3}.get(_l, 0.0), dur=0.3)
 cue(shift("L43", -0.3), "lt", l="riser", v=1.0, dur=0.3)
 cue(0, "farwin", on=False)
 cue("L62", "farwin", on=True)

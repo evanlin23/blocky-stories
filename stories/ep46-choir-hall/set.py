@@ -697,7 +697,7 @@ def grin_texture(skin):
     W, H = im.size
     s = faces.FX1 - faces.FX0
     cx = W / 2
-    ink = (10, 7, 9)
+    ink = (3, 2, 3)
     # the top half of the face (and head) in shadow: a gradient from near-black at the brow to the skin at the cheeks
     y_top, y_full = faces._fy(0.0), faces._fy(0.74)
     px = im.load()
@@ -707,6 +707,14 @@ def grin_texture(skin):
         for x in range(W):
             r, g, b = px[x, y]
             px[x, y] = (int(r * k), int(g * k), int(b * (k * 1.08)))
+    # the back and the far sides of the head are dark: only the front reads, the rim catches the outline
+    for y in range(H):
+        for x in range(W):
+            dx = abs((x - cx + W / 2) % W - W / 2) / s
+            f = 1.0 if dx < 0.5 else max(0.1, 1.0 - (dx - 0.5) * 2.2)
+            if f < 1.0:
+                r, g, b = px[x, y]
+                px[x, y] = (int(r * f), int(g * f), int(b * f))
     # two sunk sockets, no whites and no pupils
     ey = faces._fy(0.40)
     for side in (-1, 1):
@@ -714,23 +722,23 @@ def grin_texture(skin):
         rx, ry = 0.11 * s, 0.05 * s
         d.ellipse([ex - rx, ey - ry, ex + rx, ey + ry], fill=(4, 3, 5))
     cy = faces._fy(0.80)
-    lift = 0.05 * s
     a = 0.40 * s
 
     def y_of(dx):
+        # uneven corners: the left one lifts further than the right, with a small wobble
         r = min(1.0, abs(dx) / a)
-        return cy - lift * r * r
+        lift = (0.085 if dx < 0 else 0.045) * s
+        return cy - lift * r * r + 0.008 * s * math.sin(dx / s * 9.0)
 
-    # a thin seam all the way round: finest at the back, a touch heavier at the front
+    # a thick near-black seam all the way round, meeting itself once at the back
     n = 720
     for i in range(n):
         x0 = W * i / n
         x1 = W * (i + 1) / n
         dx = (x0 + x1) / 2 - cx
         dx = (dx + W / 2) % W - W / 2   # wrap
-        k = max(0.0, 1.0 - (abs(dx) - 0.15 * s) / (0.9 * s))
-        th = (0.034 + 0.020 * min(1.0, k * 1.2)) * s
-        d.line([(x0 - 1, y_of(dx)), (x1 + 1, y_of(dx))], fill=ink, width=max(3, int(th)))
+        th = (0.060 + 0.022 * max(0.0, 1.0 - abs(dx) / (0.9 * s))) * s
+        d.line([(x0 - 1, y_of(dx)), (x1 + 1, y_of(dx))], fill=ink, width=max(4, int(th)))
     return im
 
 
@@ -840,9 +848,6 @@ def decorate(kit, story, ctx):
         bx(kit, "postman.strap", (0.2, 1.06, 0.08), (0, 0.0, 1.5), pbr(kit, "satchel", "#7a5a38", 0.8), pt, rot=(0, -0.65, 0))
     gh = bpy.data.objects.get("grin.headg")
     if gh is not None:
-        # the seam where the grin's line meets itself: a black strip down the back of the head, so it reads from far off
-        bx(kit, "grin.seam", (0.08, 0.05, faces.HEAD_H * 0.92), (0, faces.HEAD_R - 0.01, 0.0),
-           pbr(kit, "grin seam", "#050304", 0.9), gh, bevel=0.012)
         # the buzz-cut slab overhangs the round head like a mortarboard: shrink it inside the outline
         hz = bpy.data.objects.get("grin.buzz")
         if hz is not None:
@@ -850,13 +855,13 @@ def decorate(kit, story, ctx):
             hz.hide_render = True
             hz.scale = (0.01, 0.01, 0.01)
             kit.cyl("grin.hair", faces.HEAD_R + 0.02, 0.34, (0, 0, faces.HEAD_H / 2 - 0.13), hz.data.materials[0], gh, n=28)
-        gh.scale = (0.86, 0.86, 0.86)           # a head a little small for the body
+        gh.scale = (0.92, 0.92, 0.92)           # a head a little small for the body
         # the stretched part: a bare neck far too long, so the head rides high and bends further than any neck should
         NECK = 1.1
         head = bpy.data.objects["grin.head"]
         head.location = (0, 0, NECK)
-        nm = pbr(kit, "grin neck", "#dcae88", 0.55)
-        bx(kit, "grin.neckbox", (0.70, 0.56, NECK + 0.5), (0, 0.0, NECK / 2 - 0.1), nm, bpy.data.objects["grin.neck"], bevel=0.05)
+        nm = pbr(kit, "grin neck", "#9d998c", 0.5)
+        bx(kit, "grin.neckbox", (0.58, 0.48, NECK + 0.5), (0, 0.0, NECK / 2 - 0.1), nm, bpy.data.objects["grin.neck"], bevel=0.05)
         # two tiny cold glints just in front of the sockets, the brightest points in the frame
         gm = kit.emit("#dff0ff", 70.0, "grin glint")
         for sx in (-1, 1):
@@ -1037,7 +1042,15 @@ def animate(kit, story, tl, t, ctx):
         tor = bpy.data.objects.get(f"{who}.torso")
         neck = bpy.data.objects.get(f"{who}.neck")
         tor.rotation_euler = (math.radians(ac._held(keys, "bend", t, 0.0)), math.radians(ac._held(keys, "roll", t, 0.0)), 0)
-        neck.rotation_euler = (neck.rotation_euler.x, math.radians(ac._held(keys, "tilt", t, 0.0)), neck.rotation_euler.z)
+        _tl = ac._held(keys, "tilt", t, 0.0)
+        if who == "grin":
+            # the neck stays nearly upright; the small head folds sideways at the top joint
+            neck.rotation_euler = (neck.rotation_euler.x, math.radians(_tl * 0.2), neck.rotation_euler.z)
+            _hb = bpy.data.objects.get("grin.head")
+            if _hb is not None:
+                _hb.rotation_euler = (0, math.radians(_tl * 1.25 if _tl else -24.0), 0)
+        else:
+            neck.rotation_euler = (neck.rotation_euler.x, math.radians(_tl), neck.rotation_euler.z)
         lunge = ac._held(keys, "lunge", t, 0.0)
         if lunge:
             for sx, sgn in ((-1, -1), (1, 1)):

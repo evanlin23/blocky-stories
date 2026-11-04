@@ -75,11 +75,11 @@ Every word is the narrator's. Mom's thanks (L06, L24) is reported speech.
 
 ## The creature: the twelfth singer (the Grin)
 
-- **Look, unchanged:** an ordinary singer from the same R6 blocks, same height and width, in the maroon choir robe with the white collar. Plain mid-brown block hair, skin a little waxy (never grey). Two round eyes with small highlights, straight ahead, never blinking. The wrong thing is its mouth: a thick black upturned grin with a row of flat white teeth, and the line runs on round the sides of the head and meets itself at the back (the seam strip as built).
+- **Look:** a person made wrong, in the maroon choir robe with the white collar and a pale skin a little waxy. A too-long, pale, bare neck (grey-cream, about half the head's width) carries a small head bent sideways about 25 degrees at the top joint, not the neck tilted as a whole. Plain mid-brown block hair. No drawn eyes: two sunk sockets with two tiny cold glints, the brightest points in frame. The top half of the face sits in shadow from a cold under-light, with a cold rim on the outline and no warm light on the neck or face. The only mouth is a thin near-black seam, thick enough to read at phone size, with uneven upturned corners. It wraps round the sides of the head and meets itself once at the back (no stripe down the back, no teeth). The back and sides of the head are dark.
 - **No cord, no beads.** The only bare neck in the village. That is how the viewer knows it from L12 on.
 - **Always there:** it sits in every hall shot, far right of the top step. Before L40 it's seen only from behind, from the side in shadow, or small and soft in the background, so the grin's wrap isn't visible until L41.
 - **One model**, built once, posed per shot. Never seen moving, and its mouth never moves. Every change of pose happens across a cut.
-- **Light it for fear (L40 to L50):** the hall lamp above and to the side as the key, front light dead, a warm rim from the lamp on the robe's shoulders, teeth no brighter than mid-grey, the eye highlights the brightest point in frame.
+- **Light it for fear (L40 to L50):** the hall lamp above and to the side as the key, front light dead, a warm rim from the lamp on the robe's shoulders, the eye highlights the brightest point in frame.
 - **Never touches anyone.** At its closest its face is a hand's width from Mom's ear, with a visible gap.
 - **Continuity list:**
   | Beat | Lines | Where it is | What shows |
@@ -254,7 +254,7 @@ Shot ids S01 onward are in the brackets. Total shots: 102, about 1.35 s each ove
 - `L40` narrator: And the twelfth SINGER / turns its HEAD.
   - [S60, cut away to Mom at the stand, `listening`. S61, its head now turned toward the hall, mid shot. Never the turn itself]
 - `L41` narrator: Its GRIN / goes all the way / ROUND.
-  - [S62, front, lamp key from above and to the side: the grin and teeth, the black line across the cheeks and round the sides. About 86 s (62%). S63, punch in on the eyes]
+  - [S62, front, lamp key from above and to the side: the grin seam, the black line across the cheeks and round the sides. About 86 s (62%). S63, punch in on the eyes]
 - `L42` narrator: Right round the BACK, / where the two ENDS / MEET.
   - [S64, from behind the riser: the back of its head, the seam meeting at mouth height]
 - `L43` narrator: It leans / to Mom's EAR.
