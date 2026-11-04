@@ -158,3 +158,6 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
+
+## Creature round 2 (2026-11-03, second orchestrator)
+- Two creature tries each for Hal (ep87) and the Server (ep71), each judged by two Opus critics: best 5/4 and 4/4, neither passed (`docs/research/creature-round-2.md`). Cost: 4 builder runs (the ep71 one about 28 min) and 8 critic reads. Suggested fix: a wide-slab head reads as an appliance whatever the design, so send such creatures back to the writer before any build try; and a builder should self-check the two scale facts (head against a lit ceiling, the reference person's whole head in frame) before reporting.
