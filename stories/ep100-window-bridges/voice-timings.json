@@ -34,26 +34,26 @@
    ]
   },
   "L02": {
-   "text": "I've never burned a bridge in my life.",
+   "text": "somebody over there forgot me three times.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
-   "onset": 0.172,
-   "end": 1.707,
+   "dur": 2.0,
+   "onset": 0.19,
+   "end": 1.793,
    "chunks": [
     [
-     0.172,
-     0.716
+     0.19,
+     0.69
     ],
     [
-     0.716,
+     0.69,
      1.026
     ],
     [
      1.026,
-     1.707
+     1.793
     ]
    ]
   },
@@ -1290,50 +1290,50 @@
    ]
   },
   "L50": {
-   "text": "I showed Eli the handprints. he had forgotten me too. he stared at the matches on his sill like he'd never seen them before.",
+   "text": "I showed Eli the handprints. he didn't remember me either. he stared at the matches on his sill like he'd never seen them before.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 5.103,
+   "dur": 5.241,
    "onset": 0.155,
-   "end": 4.897,
+   "end": 5.034,
    "chunks": [
     [
      0.155,
-     0.716
+     0.724
     ],
     [
-     0.716,
-     1.328
+     0.724,
+     1.345
     ],
     [
-     1.397,
-     1.819
+     1.414,
+     1.923
     ],
     [
-     1.819,
-     2.328
+     1.923,
+     2.431
     ],
     [
-     2.448,
-     2.819
+     2.517,
+     2.888
     ],
     [
-     2.819,
-     3.181
+     2.888,
+     3.25
     ],
     [
-     3.181,
-     3.603
+     3.25,
+     3.69
     ],
     [
-     3.603,
-     4.043
+     3.69,
+     4.163
     ],
     [
-     4.043,
-     4.897
+     4.163,
+     5.034
     ]
    ]
   },
@@ -1670,6 +1670,30 @@
     [
      0.517,
      1.259
+    ]
+   ]
+  },
+  "L14b": {
+   "text": "he made me a bad sandwich and called it lunch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     1.103
+    ],
+    [
+     1.103,
+     1.948
     ]
    ]
   }

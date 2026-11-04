@@ -132,7 +132,7 @@ def X(loc, tgt, lens, loc2=None, tgt2=None, lens2=None):
 
 
 HOLD, SWAY = [], []
-KEEP_AT = {"L02.2", "L06.1", "L07.1", "L24.1", "L35.2", "L49.2", "L36.2", "L12.1", "L12.2", "L56", "L64"}
+KEEP_AT = {"L24.1", "L02.2", "L06.1", "L07.1", "L24.1", "L35.2", "L49.2", "L36.2", "L12.1", "L12.2", "L56", "L64"}
 
 
 def S(at, cam, look="day", fill=1.0, hand=0.004, dof=None, exp=0.0, torch=None, note="", step=2, hold=False, sway=False):
@@ -202,8 +202,8 @@ SH = ["matches"]
 show(0, *SH)
 # S01: close, straight down from my sill: our new planks in the foreground, the three charred bridges on the cobbles, the
 # teal shutters opposite at the top of the frame
-S(0, X((-1.25, -1.9, 7.6), (0.9, 0.2, 1.2), 22, (-1.0, -1.6, 7.0), (0.9, 0.2, 1.0), 25), "day", fill=1.0, hand=0.003,
-  note="frame 1: our newest planks at my sill, the three burnt bridges below, shutters opposite")
+S(0, X((-2.3, 0.1, 8.1), (0.9, 0.1, 2.3), 22, (-1.9, 0.1, 7.7), (1.0, 0.1, 1.5), 26), "day", fill=1.3, hand=0.002,
+  note="frame 1: from my sill, level: the three burnt bridges side by side on the cobbles to the shutters opposite")
 me_w("L02", "worried", head=DOWN)
 S("L02", at_me(2.3, 30, 0.3, dz=0.55, z2=0.7, d2=1.9, lens2=33), "day", note="me at my window, worried, looking down")
 S("L02.2", X((-1.0, -2.6, 0.9), (1.0, -1.6, 0.25), 26, (-0.7, -2.5, 0.7), (1.2, -1.6, 0.2), 28), "day", hand=0.003,
@@ -224,7 +224,7 @@ put("stone_a", "L06", (-2.25, 21.0, 6.0), 90, "neutral")
 put("stone_b", "L06", (2.25, 21.0, 6.0), -90, "neutral")
 S("L06", X((0.1, 20.2, 8.0), (-2.25, 21.0, 7.45), 30, (0.1, 20.4, 7.9), (-2.25, 21.0, 7.45), 34), "day", note="an old guy in a flat cap at his window")
 S("L06.1", X((-0.1, 21.8, 8.0), (2.25, 21.0, 7.45), 30, (-0.1, 21.6, 7.9), (2.25, 21.0, 7.45), 34), "day", note="and the other, facing him")
-S("L06.2", X((-1.2, 17.0, 8.3), (0.0, 21.0, 6.9), 24, (-1.0, 17.6, 8.1), (0.0, 21.0, 6.9), 27), "day", note="their bridge, smooth grey stone")
+S("L06.2", X((0.0, 15.2, 8.3), (0.0, 21.0, 6.9), 24, (0.0, 16.4, 8.0), (0.0, 21.0, 6.9), 27), "day", hold=True, note="the two old guys at their windows and the stone bridge between")
 gone("stone_a", "L07")
 gone("stone_b", "L07")
 put("nb1", "L07", (-2.25, -6.0, 6.0), 90, "angry", arms=[0, 0])
@@ -253,7 +253,7 @@ put("eli", "L09", EL, -90, "smile", side=[0, 0], arms=[0, 100])
 pose("eli", "L09+0.6", 0.25, arms=[0, 80], head=[10, 0])
 pose("eli", "L09+1.2", 0.25, arms=[0, 110], head=[-8, 0])
 S("L09", at_eli(2.6, 30, -0.3, z2=0.6, d2=2.0, lens2=33), "april", note="April sun: Eli at his window, sunburned forearms, waving")
-S("L09.2", X((-1.3, -1.4, 7.9), (2.0, -0.3, 7.2), 24, (-1.0, -1.2, 7.8), (2.1, -0.3, 7.3), 26), "april", note="the guy across the alley, ELI")
+S("L09.2", X((-0.9, -1.1, 7.9), (2.15, -0.5, 7.4), 42, (-0.5, -0.9, 7.8), (2.2, -0.5, 7.4), 52), "april", note="the guy across the alley, ELI")
 me_w("L10", "laugh")
 eli_w("L10", "laugh")
 pose("me", "L10+0.5", 0.2, head=[0, 8], side=[0, 20])
@@ -288,11 +288,14 @@ cue("L14", "tray", x=-1.4, x_to=1.4, dur=1.3)
 S("L14", X((0.0, -1.7, 7.9), (0.0, -0.5, 7.1), 28, (0.0, -1.4, 7.7), (0.0, -0.5, 7.1), 32), "april", hand=0.003,
   note="two mugs, one sliding across the bridge on a little tray")
 S("L14.1", X((-0.7, -1.2, 7.5), (0.2, -0.5, 7.1), 36, (0.5, -1.0, 7.4), (0.6, -0.5, 7.1), 36), "april", hand=0.002, note="the tray slides")
+SH.append("sandwich")
+show("L14b", *SH)
 pose("eli", "L14b", 0.2, expr="laugh", arms=[0, 70], side=[0, 20])
 pose("me", "L14b", 0.2, expr="smirk", head=[0, 10])
-S("L14b", at_eli(2.3, 30, -0.3, z2=0.6, d2=1.9, lens2=33), "april", note="Eli, proud, waving at the sandwich on the tray")
+S("L14b", X((0.4, -1.3, 7.95), (1.4, -0.5, 7.15), 38, (0.8, -1.2, 7.85), (1.45, -0.5, 7.15), 44), "april", hand=0.002, note="a bad sandwich on the tray, at Eli's end of the bridge")
 S("L14b.2", at_me(2.2, 30, 0.2, z2=0.6, d2=1.8, lens2=34), "april", note="me, smirking at it: and called it LUNCH")
 cue("L15", "tray", off=True)
+SH.remove("sandwich")
 SH.append("cards")
 show("L15", *SH)
 pose("eli", "L15", 0.2, expr="sly", head=[0, -8], side=[0, 40])
@@ -313,7 +316,7 @@ put("eli", "L17", (39.1, -1.6, 0.0), 180, "laugh")
 pose("eli", "L17+0.5", 0.25, lean=10, arms=[40, 40])
 cue("L17", "pip", pos=[40.6, -0.3, 0.0], yaw=-52, pos_to=[39.4, -1.3, 0.0], dur=0.9, hop=0.8)
 S("L17", X((41.6, 0.4, 1.5), (39.2, -1.4, 0.9), 22, (41.2, 0.2, 1.5), (39.2, -1.4, 0.9), 24), "home", note="Pip the terrier leaps at Eli in our hall, tail going")
-S("L17.1", X((40.4, -0.1, 1.0), (39.4, -1.3, 0.8), 26, (40.1, -0.3, 1.0), (39.4, -1.3, 0.8), 30), "home", note="Pip jumping up, close")
+S("L17.1", X((41.3, -1.9, 0.95), (40.1, -0.7, 0.4), 26, (41.0, -1.6, 0.85), (39.9, -0.9, 0.4), 28), "home", note="Pip the terrier jumping up at Eli, whole dog in frame")
 gone("eli", "L18")
 put("mom", "L18", (38.5, -1.9, 0.0), 150, "smile")
 pose("mom", "L18+0.4", 0.2, side=[0, 25])
@@ -344,13 +347,12 @@ S("L23", X((-0.5, -0.6, 7.7), (3.0, -0.5, 7.3), 22, (0.1, -0.6, 7.6), (3.2, -0.5
 S("L23+0.7", X((0.2, 0.9, 7.8), (3.5, -0.8, 6.8), 22, (0.8, 0.8, 7.7), (3.6, -0.8, 6.8), 24), "day", hand=0.003, note="the room, a bed, a sea bag")
 burnt("L24", [0.0, 0.0, 0.0])
 count("L24", 64)
-S("L24", X((-1.2, -2.1, 7.4), (0.8, 0.0, 1.0), 22, (-0.9, -1.8, 6.8), (0.8, 0.1, 0.8), 24), "day", hand=0.003,
-  note="over the lane: the three burnt bridges lie exactly under ours")
-eli_w("L24.1", "neutral", lean=14, arms=[0, 0])
-pose("eli", "L24.1+0.3", 0.4, lean=26, head=[0, 10])
-S("L24.1", X((-1.2, -1.0, 3.0), (1.6, -0.5, 7.0), 22, (-1.0, -0.8, 3.6), (1.6, -0.5, 7.2), 24), "day", note="their far ends, right under Eli's window, Eli leaning out above")
-S("L24.2", at_eli(2.4, 30, -0.4, dz=0.9, z2=0.4, d2=1.8, lens2=34), "day", note="Eli leaning out at his sill")
-
+S("L24", X((-0.6, -1.6, 3.4), (1.7, -0.5, 6.9), 24, (-0.3, -1.3, 3.9), (1.75, -0.5, 7.0), 26), "day", hand=0.003,
+  note="up from the cobbles: the far ends of the three bridges, and Eli upright in his window above them")
+put("eli", "L24", (2.0, -0.5, 6.0), -90, "neutral", lean=10, arms=[0, 0])
+pose("eli", "L24.2", 0.5, lean=18, head=[0, 4])
+S("L24.1", X((-0.2, -1.2, 5.2), (1.8, -0.5, 7.2), 30, (0.0, -1.1, 5.6), (1.9, -0.5, 7.3), 34), "day", note="Eli leaning out above the bridge ends")
+S("L24.2", X((0.2, -1.5, 7.0), (2.0, -0.5, 7.5), 40, (0.5, -1.3, 7.2), (2.0, -0.5, 7.5), 46), "day", note="Eli's face, upright, leaning out at his sill")
 # ===================================================================================================== 05 the nights L25-L33
 gone("eli", "L25")
 me_w("L25", "worried", head=[0, 6], side=[0, 0], lean=6)
@@ -364,35 +366,34 @@ S("L26.1", X((1.0, -3.0, 0.22), (-0.5, 0.5, 0.25), 26, (0.7, -2.7, 0.2), (-0.5, 
 burnt("L27", [1.0, 0.8, 0.7], sway=0.5)
 S("L27", X((0.0, -6.5, 1.6), (0.0, 0.4, 1.3), 24, (0.0, -6.0, 1.7), (0.0, 0.4, 1.3), 26), "night", fill=1.2, note="wider: lifted to waist height, swaying")
 S("L27.1", X((1.1, -2.8, 1.3), (-0.8, 0.5, 1.1), 26, (0.9, -2.4, 1.4), (-0.8, 0.5, 1.1), 28), "night", fill=1.2, note="swaying planks, close")
-burnt("L28", [3.7, 3.2, 2.9], sway=0.8, tilt=[0.1, 0.05, 0.05])
-S("L28", X((0.8, -5.0, 1.6), (0.0, 0.5, 3.8), 18, (0.8, -4.2, 1.8), (0.0, 0.5, 4.0), 18), "night", fill=1.0, note="from below: the burnt bridges a floor up, black and cracked")
-S("L28.1", X((-1.3, -3.0, 2.0), (0.5, 0.5, 4.4), 20, (-1.1, -2.6, 2.2), (0.5, 0.5, 4.6), 22), "night", fill=1.0, note="rising toward us")
-S("L28.2", X((-2.6, -0.2, 7.7), (0.6, 0.6, 3.8), 22, (-2.5, -0.2, 7.6), (0.6, 0.6, 3.9), 24), "night", fill=1.0, note="from my window: swaying UP")
+burnt("L28", [3.9, 3.4, 3.1], sway=0.8, tilt=[0.1, 0.05, 0.05])
+S("L28", X((0.8, -5.0, 1.4), (0.0, 0.5, 3.9), 18, (0.8, -4.2, 1.6), (0.0, 0.5, 4.1), 18), "night", fill=1.4, exp=0.15, note="from below: the burnt bridges a floor up, black against the lit windows")
+S("L28.1", X((-1.3, -3.0, 2.0), (0.5, 0.5, 4.4), 20, (-1.1, -2.6, 2.2), (0.5, 0.5, 4.6), 22), "night", fill=1.4, exp=0.15, note="rising toward us")
+S("L28.2", X((1.25, -4.2, 6.3), (-0.6, 0.6, 4.6), 22, (1.25, -3.6, 6.4), (-0.6, 0.6, 4.8), 24), "night", fill=1.4, exp=0.15, note="from Eli's side: the black bridges swaying UP under my lit windows")
 burnt("L29", [5.6, 4.6, 4.2], sway=0.8)
-S("L29", X((0.8, -5.0, 1.6), (0.0, 0.5, 5.4), 18, (0.8, -4.4, 1.9), (0.0, 0.5, 5.6), 18), "night", fill=1.0, note="the next night: higher")
-S("L29.1", X((-2.6, -0.2, 7.7), (0.4, 0.6, 5.2), 22, (-2.5, -0.2, 7.6), (0.4, 0.6, 5.4), 24), "night", fill=1.0, note="from my window, higher")
+S("L29", X((0.8, -5.0, 1.8), (0.0, 0.5, 5.6), 18, (0.8, -4.4, 2.1), (0.0, 0.5, 5.8), 18), "night", fill=1.4, exp=0.15, note="the next night: higher, near the string lights")
+S("L29.1", X((1.2, -3.8, 7.6), (-0.5, 0.6, 5.7), 22, (1.2, -3.4, 7.7), (-0.5, 0.6, 5.9), 24), "night", fill=1.4, exp=0.15, note="level with my window, the black bridges higher")
 burnt("L30", [5.6, 4.6, 4.2], sway=0.8)
 gone("me", "L30")
 S("L30", X((0.0, 9.5, 2.0), (0.0, 16.0, 0.6), 24, (0.0, 9.0, 2.0), (0.0, 16.0, 0.6), 26), "night", fill=1.3, hand=0.004,
   note="down the lane: someone else's old burnt bridge, flat on the cobbles")
 S("L30.1", X((-1.2, 10.8, 0.9), (0.0, 13.0, 0.25), 28, (-1.0, 11.4, 0.7), (0.0, 13.0, 0.25), 32), "night", fill=1.4, hand=0.003, note="the other burnt bridge, flat, still")
-walk("vega", "L31", (1.15, -4.6, 0.0), "L31>", (-1.15, -4.6, 0.0), -90, "worried")
-S("L31", X((0.0, -9.0, 1.6), (0.0, -1.0, 1.4), 26, (0.0, -8.6, 1.6), (0.0, 0.0, 1.4), 28), "night", fill=1.2, note="Mrs. Vega crosses the lane so she won't walk under them")
-S("L31.1", X((-1.0, -7.0, 1.6), (1.0, -1.5, 1.4), 26, (-0.8, -6.2, 1.6), (1.0, 0.0, 1.4), 28), "night", fill=1.3, note="her scarlet shawl, hurrying along the wall")
+walk("vega", "L31", (1.15, -4.6, 0.0), "L31.3", (-1.15, -4.6, 0.0), -90, "worried")
+S("L31", X((0.4, -7.0, 1.5), (1.0, -4.6, 1.5), 30, (-0.2, -7.0, 1.5), (0.0, -4.6, 1.5), 30), "night", fill=1.4, exp=0.1, note="Mrs. Vega crosses the lane so she won't walk under them")
+S("L31.1", X((-1.3, -6.6, 1.6), (0.3, -4.6, 1.5), 28, (-1.3, -6.3, 1.6), (-0.4, -4.6, 1.5), 30), "night", fill=1.4, exp=0.1, note="her scarlet shawl and her face, hurrying along the wall")
 gone("vega", "L32")
 put("me", "L32", (-4.45, 0.5, 6.75), 0, "worried", lean=-90)
 pose("me", "L32+0.8", 0.4, head=[0, 0], expr="scared")
 S("L32", X((-2.4, -1.5, 8.3), (-4.4, 1.0, 6.6), 26, (-2.9, -1.3, 8.0), (-4.4, 1.0, 6.6), 28), "night", fill=0.7, exp=-0.05,
   note="me waking in bed, the clock glyph at three")
 S("L32.1", X((-3.4, 1.9, 7.6), (-5.4, 1.9, 7.6), 30, (-3.6, 1.9, 7.6), (-5.4, 1.9, 7.6), 34), "night", fill=0.9, hand=0.002, note="the clock glyph at three")
-S("P01", X((-1.0, -0.6, 7.9), (-2.5, -0.5, 7.4), 24, (-1.3, -0.6, 7.8), (-2.5, -0.5, 7.4), 26), "night", fill=0.5, hand=0.002, exp=-0.15,
-  note="drop: my dark window, still")
+S("P01", X((0.5, -2.4, 7.6), (-1.6, -0.3, 7.1), 28, (0.3, -2.0, 7.5), (-1.6, -0.3, 7.1), 30), "night", fill=0.9, hand=0.002, exp=0.05,
+  note="drop: my window from the lane, dark, the empty sill")
 burnt("L33", [6.1, 5.3, 5.0], tilt=[0.5, 0.3, 0.25], sway=0.2)
 gone("me", "L33")
-S("L33", X((-3.2, 0.2, 7.7), (-1.4, 0.55, 7.0), 30, (-3.0, 0.3, 7.6), (-1.4, 0.55, 7.0), 34), "night", fill=0.9, hand=0.002, note="the oldest burnt bridge's end resting on my windowsill")
-S("L33.1", X((-0.2, -0.6, 8.0), (-1.5, 0.55, 7.0), 28, (-0.4, -0.4, 7.9), (-1.5, 0.55, 7.0), 32), "night", fill=1.0, note="charred wood on my sill, from outside")
-S("L33.2", X((0.5, -4.0, 5.0), (-0.5, 0.6, 6.0), 20, (0.4, -3.6, 5.3), (-0.5, 0.6, 6.2), 22), "night", fill=1.1, note="the other two just below")
-
+S("L33", X((0.9, -2.3, 7.9), (-1.0, 0.55, 6.9), 26, (0.7, -2.0, 7.8), (-1.2, 0.55, 6.9), 28), "night", fill=1.3, exp=0.1, hand=0.002, note="the oldest burnt bridge, its charred end resting on my windowsill")
+S("L33.1", X((-0.2, -0.6, 8.0), (-1.5, 0.55, 7.0), 28, (-0.4, -0.4, 7.9), (-1.5, 0.55, 7.0), 32), "night", fill=1.3, exp=0.1, note="charred wood on my sill, close")
+S("L33.2", X((0.5, -4.0, 5.0), (-0.5, 0.6, 6.0), 20, (0.4, -3.6, 5.3), (-0.5, 0.6, 6.2), 22), "night", fill=1.4, exp=0.1, note="the other two just below")
 # ===================================================================================================== 06 the alley at 3 a.m. L34-L43
 LOW = [1.2, 0.8, 0.6]
 burnt("L34", LOW, sway=0.15)
@@ -447,21 +448,23 @@ count("L44", 64)
 S("L44", X((-0.5, 0.55, 2.1), (0.0, 0.55, 0.1), 30, (-0.3, 0.55, 1.5), (0.0, 0.55, 0.1), 36), "day", fill=1.0, hand=0.002, hold=True,
   note="the handprints again, close, daylight: we never fought")
 S("L44+0.7", X((-0.45, 0.55, 1.7), (0.0, 0.55, 0.08), 38, (-0.3, 0.55, 1.3), (0.0, 0.55, 0.08), 48), "day", hand=0.0015, hold=True, note="the two hands, close")
+count("L45", 3)
+show("L45", "matchpair", *[x for x in SH if x != "matches"])
 put("me", "L45", (-0.37, -0.5, 6.96), 90, "soft", head=[0, 0])
 put("eli", "L45", (0.37, -0.5, 6.96), -90, "soft")
 pose("me", "L45+0.8", 0.5, head=[0, 5])
 pose("eli", "L45+0.8", 0.5, head=[0, 4])
-S("L45", X((0.0, -3.6, 8.2), (0.0, -0.5, 8.0), 26, (0.0, -3.0, 8.2), (0.0, -0.5, 8.0), 28), "autumn", fill=1.1, exp=0.1, note="a memory, last November: Eli and me in the middle of our bridge at night, string lights on, soft")
-S("L45.1", X((0.0, -2.4, 8.3), (0.0, -0.5, 8.1), 30, (0.0, -2.0, 8.3), (0.0, -0.5, 8.1), 34), "autumn", fill=1.1, exp=0.1, note="closer, both soft")
+S("L45", X((0.0, -3.9, 8.4), (0.0, -0.5, 8.35), 26, (0.0, -3.2, 8.4), (0.0, -0.5, 8.35), 28), "night", fill=1.5, exp=0.2, note="a memory, last November, night: Eli and me in the middle of our bridge under the string lights, matches in hand")
+S("L45.1", X((0.0, -2.7, 8.3), (0.0, -0.5, 8.35), 30, (0.0, -2.2, 8.3), (0.0, -0.5, 8.35), 34), "night", fill=1.5, exp=0.2, note="closer, both soft, faces whole")
 show("L46", "matchpair", *[x for x in SH if x != "matches"])
 pose("me", "L46", 0.4, arms=[0, 80], expr="soft")
 pose("eli", "L46", 0.4, arms=[0, 80], expr="soft")
-S("L46", X((-1.2, -2.8, 8.6), (0.0, -0.5, 7.9), 22, (-1.0, -2.6, 8.5), (0.0, -0.5, 7.9), 24), "autumn", fill=1.0, exp=0.1, note="wide: both of us in the middle, two matches held out in the dark (never lit)")
-S("L46.1", X((0.0, -1.6, 8.2), (0.0, -0.5, 8.0), 40, (0.0, -1.3, 8.2), (0.0, -0.5, 8.0), 46), "autumn", fill=1.1, hand=0.002, exp=0.1, note="two matches held out")
+S("L46", X((-1.2, -3.0, 8.9), (0.0, -0.5, 8.2), 22, (-1.0, -2.7, 8.8), (0.0, -0.5, 8.2), 24), "night", fill=1.5, exp=0.2, note="wide: both of us in the middle, two matches held out in the dark (never lit)")
+S("L46.1", X((0.0, -2.0, 8.4), (0.0, -0.5, 8.3), 36, (0.0, -1.7, 8.4), (0.0, -0.5, 8.3), 40), "night", fill=1.5, hand=0.002, exp=0.2, note="two matches held out")
 pose("me", "L47", 0.3, expr="shut", arms=[0, 0], head=[0, 0])
 pose("eli", "L47", 0.3, expr="shut", arms=[0, 0], head=[0, 0])
-S("L47", X((0.0, -2.0, 8.3), (0.0, -0.5, 8.1), 36, (0.0, -1.7, 8.3), (0.0, -0.5, 8.1), 40), "autumn", fill=1.1, exp=0.1, hand=0.002, note="my face and Eli's, side by side, eyes shut")
-S("L47.1", X((0.3, -1.7, 8.3), (0.0, -0.5, 8.1), 34, (0.2, -1.5, 8.3), (0.0, -0.5, 8.1), 38), "autumn", fill=1.1, hand=0.002, exp=0.1, note="eyes shut")
+S("L47", X((0.0, -2.2, 8.5), (0.0, -0.5, 8.35), 34, (0.0, -1.9, 8.5), (0.0, -0.5, 8.35), 38), "night", fill=1.5, exp=0.2, hand=0.002, note="my face and Eli's, side by side, eyes shut")
+S("L47.1", X((0.3, -1.9, 8.5), (0.0, -0.5, 8.35), 32, (0.2, -1.7, 8.5), (0.0, -0.5, 8.35), 36), "night", fill=1.5, hand=0.002, exp=0.2, note="eyes shut")
 gone("me", "L48")
 gone("eli", "L48")
 show("L48", *[x for x in SH if x != "matchpair"])
@@ -617,7 +620,7 @@ story = {
                   {"at": "L62", "voices": ["pad", "pluck"], "energy": 0.3, "mode": "major"},
               ]},
     "sound": {
-        "rev": 1, "floor": "stone", "steps_db": -22,
+        "rev": 2, "floor": "stone", "steps_db": -22,
         "ambience": [{"kind": "gulls", "from": 0, "to": "L25", "lufs": -46},
                      {"kind": "water", "from": 0, "to": "L25", "lufs": -44},
                      {"kind": "crickets", "from": "L25", "to": "L43", "lufs": -42},
@@ -645,7 +648,7 @@ try:
     for k in acting:
         acting[k].sort(key=lambda e: AT(e["at"]))
     cues.sort(key=lambda e: AT(e["at"]))
-except FileNotFoundError:
+except (FileNotFoundError, SystemExit):
     print("no voice-timings yet: acting and cues left unsorted")
 try:
     if shots:

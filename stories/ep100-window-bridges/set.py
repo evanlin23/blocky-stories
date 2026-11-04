@@ -615,9 +615,16 @@ def build_rooms(kit, ctx):
     ctx["cards"] = cards
     tray = E(None, (0, OURS_Y, 6.99), "tray")
     B(tray, (0.34, 0.2, 0.025), (0, 0, 0.0125), P("#f2e6c8", 0.6), "trayb", 0.01)
+    ctx["mugs"] = []
     for dx in (-0.08, 0.08):
-        kit.cyl(nm("mug"), 0.045, 0.1, (dx, 0, 0.075), P(("#ff6f61", "#2bbfb3")[dx > 0], 0.4), tray, n=16)
-        B(tray, (0.02, 0.02, 0.05), (dx + 0.058, 0, 0.075), P(("#ff6f61", "#2bbfb3")[dx > 0], 0.4), "handle", 0.005)
+        ctx["mugs"].append(kit.cyl(nm("mug"), 0.045, 0.1, (dx, 0, 0.075), P(("#ff6f61", "#2bbfb3")[dx > 0], 0.4), tray, n=16))
+        ctx["mugs"].append(B(tray, (0.02, 0.02, 0.05), (dx + 0.058, 0, 0.075), P(("#ff6f61", "#2bbfb3")[dx > 0], 0.4), "handle", 0.005))
+    sw = E(tray, (0, 0, 0.025), "sandwich")
+    B(sw, (0.2, 0.15, 0.035), (0, 0, 0.0175), P("#e2b36a", 0.8), "bread1", 0.01)
+    B(sw, (0.21, 0.16, 0.025), (0, 0, 0.05), P("#6fae3c", 0.7), "lettuce", 0.008)
+    B(sw, (0.19, 0.14, 0.03), (0, 0, 0.0775), P("#e0574f", 0.7), "tomato", 0.008)
+    B(sw, (0.2, 0.15, 0.04), (0.0, 0.0, 0.11), P("#d9a458", 0.8), "bread2", 0.012, rot=(0, 0.12, 0.06))
+    ctx["sandwich"] = sw
     ctx["tray"] = tray
     mp = E(None, (0.0, OURS_Y, 8.0), "matchpair")
     for sx in (-1, 1):
@@ -919,6 +926,9 @@ def animate(kit, story, tl, t, ctx):
     hide(ctx["matchpair"], "matchpair" not in sh)
     hide(ctx["frost"], not cue_at(tl, "frost", t).get("on", False))
     hide(ctx["cards"], "cards" not in sh)
+    hide(ctx["sandwich"], "sandwich" not in sh)
+    for m in ctx["mugs"]:
+        hide(m, "sandwich" in sh)
     tr = cue_at(tl, "tray", t)
     if tr and not tr.get("off"):
         ctx["tray"].location = (anim_val(tr, "x", t, -1.4), OURS_Y, 6.99)
