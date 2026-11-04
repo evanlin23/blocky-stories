@@ -1,0 +1,19 @@
+{
+ "stage": "final",
+ "film": 13285412545,
+ "run": 41744608226,
+ "verdict": "pass",
+ "date": "2026-11-04",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "audio",
+  "polish",
+  "craft",
+  "flash",
+  "package",
+  "opening variety"
+ ],
+ "craft": "**rule-three**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 16.4 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 15.6 | 14.0– | ok |\n| macro.motion_energy_q | 8.14 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 7.86 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.016 | –0.25 | ok |\n| spec.shot_p90_s | 1.57 | –2.5 | ok |\n| macro.longest_still_s | 0.47 | –1.5 | ok |\n| macro.motion_energy_mean | 3.05 | 1.5– | ok |\n| spec.camera_move_share | 0.999 | 0.65– | ok |\n| spec.punch_per_10s | 0.64 | 0.4– | ok |\n| macro.brightness_mean | 0.518 | 0.35– | ok |\n| macro.brightness_first_3s | 0.649 | 0.3– | ok |\n| macro.dark_frame_share | 0.009 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.492 | 0.42– | ok |\n| macro.contrast_mean | 0.222 | 0.18– | ok |\n| spec.face_big_share | 0.506 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.629 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.333 | –0.25 | **warn** |\n| micro.idle_window_share | 0.051 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 131.0 | –120 | **warn** |\n| spec.sound_events_per_10s | 3.22 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 13.1 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0357 | –0.08 | ok |\n| sound.hf_jump_max | 0.0093 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 32 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Second one: lit cream rulebook page, top-left torn '3' tag, ink-blue '52' and glyph rows, the blue thumbprint on the torn stub, pushing in; 'Rule THREE is MISSING, and everyone in town still OBEYS it.' (opening 'cost', matches the package tag). No face until the cook at 4 s; frame 1 lit (0.649) and moving; the mystery reads at once.\nFilm 77.6 s, 62 shots, as expected. Frames every 2 s plus every frame of the first 3 s, at phone size and on a 1920 canvas: faces read, captions inside the safe area and readable, nothing black/frozen/intersecting, no real words (page glyphs only), the parrot reads as a bird, not silly; the rule tag flips 3 to 4 at L43 as scripted. 20.5-21.3 s (bridge shot, 'on the BRIDGE'): near-empty frame of sky and arch before the jogger enters, weak but short; no fix needed.\nCover 52.7 s ('RULE THREE.', torn page, thumbprint): clear and on the mystery but faceless; acceptable.\nAudio: -14.1 LUFS, -1.8 dBTP, 4 kHz share max 0.036, jump 0.009, voice 13.1 dB over the bed, no silence; the loop tail cuts clean after 'FAVOR'. Polish on (emph, reveal, quiet L38-L41, sway); punch-ins and hits soft, nothing masks a word.\ncraft: 0 block, 0 near, 2 warn: walk_dead_end_share 0.333 (-0.25), caption_sync_p90_ms 131.0 (-120). Neither loses viewers on the watch; no fix.\nFlash: house bar passes (general 1/s, 3-frame 2/s, red 0). No clip.json on a render artifact; head-near-prop beats in the frames show nothing through anything.\nPackage: title/description/pin match, no spoiler, no husband, 'It's made up.' present; gate OPEN (1 caption warn: 'the book' under 0.2 s).\nQueue note: neighbour before rule-three in queue.txt is ep54-dance-hall, also 'cost' (upload.py reorders); last upload closing-time is 'must'."
+}
