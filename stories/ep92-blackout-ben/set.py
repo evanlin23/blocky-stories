@@ -6,6 +6,7 @@ flashlights ("fl"), the watch ("watch"), the two versions of the living room ("v
 check inset (the rule meter, glued to the camera).
 """
 import math
+import os
 import sys
 import tempfile
 from pathlib import Path
@@ -58,7 +59,7 @@ def hide(ob, h=True):
 # ---------------------------------------------------------------------------------------------- looks
 def _L(**kw):
     base = dict(sun=0.0, sun_col="#fff1d6", el=60.0, az=-15.0, fill=0.0, fill_col="#ffffff", moon=0.0,
-                moon_col="#8fb0ff", sky="#9fd0ff", sky_str=1.0, lr=0.0, hall=0.0, br=0.0, wr=0.0)
+                moon_col="#8fb0ff", sky="#9fd0ff", sky_str=1.0, lr=0.0, hall=0.0, br=0.0, wr=0.0, mf=0.0)
     base.update(kw)
     return base
 
@@ -68,6 +69,12 @@ LOOKS = {
     "dusk": _L(sun=2.6, sun_col="#ff9a5a", el=9, az=-60, fill=0.8, fill_col="#ffc9a0", sky="#f7a46a", sky_str=0.9),
     "night": _L(moon=2.0, el=64, az=-12, fill=1.15, fill_col="#7f9cff", sky="#2d5be3", sky_str=0.65, hall=0.4,
                 wr=0.0),
+    # the montage street: the night look plus a warm shadowless face light from our side of the street, so each
+    # neighbour's face and shirt read at phone size
+    "street": _L(moon=1.1, el=64, az=-12, fill=1.0, fill_col="#7f9cff", sky="#2d5be3", sky_str=0.7, hall=0.4, mf=2.6),
+    # first light, peach through the bedroom window
+    "dawn": _L(sun=2.4, sun_col="#ffa070", el=11, az=-55, fill=1.0, fill_col="#ffc8a8", sky="#ffb48c", sky_str=0.9,
+               hall=0.4),
     # the hook: cobalt room, the table flashlight does the lighting
     "hook": _L(moon=1.4, el=64, az=-12, fill=1.0, fill_col="#7f9cff", sky="#2d5be3", sky_str=0.55, lr=0.0),
     # lights back on at night: warm lamps inside, blue outside
@@ -253,7 +260,7 @@ def photo(kit, name, loc, rot_z, kind, w=0.42, h=0.34, stand=False):
     e = kit.empty(name, loc, rot=(0, 0, rot_z * D2R))
     frame = kit.plastic("#fff4d0" if kind == "canoe" else "#f4ead8", 0.5)
     kit.box(f"{name}.fr", (w, 0.03, h), (0, 0, 0), frame, e, bevel=0.008)
-    back = {"canoe": "#6fb9ff", "fish": "#79c4ff", "road": "#ffd27a", "ball": "#7fd06a", "camp": "#26305a"}[kind]
+    back = {"canoe": "#bfe6ff", "fish": "#79c4ff", "road": "#ffd27a", "ball": "#7fd06a", "camp": "#26305a"}[kind]
     kit.box(f"{name}.bg", (w - 0.05, 0.01, h - 0.05), (0, -0.016, 0), kit.plastic(back, 0.7), e)
     zb = -h / 2 + 0.05
     # the brothers: Ben (sandy hair, navy) and me (dark hair, grey)
@@ -261,7 +268,9 @@ def photo(kit, name, loc, rot_z, kind, w=0.42, h=0.34, stand=False):
     person_box(kit, e, f"{name}.b", bx, -0.03, zb + 0.07, "#f0c8a0", "#26355e", "#c9a35a")
     person_box(kit, e, f"{name}.m", -bx, -0.03, zb + 0.07, "#e8b890", "#8d9099", "#2a1d15")
     if kind == "canoe":
-        kit.box(f"{name}.lake", (w - 0.05, 0.012, 0.13), (0, -0.02, -h / 2 + 0.05 + 0.03), kit.plastic("#2f78d8", 0.5), e)
+        kit.box(f"{name}.lake", (w - 0.05, 0.012, 0.17), (0, -0.024, -h / 2 + 0.025 + 0.085), kit.plastic("#1f6be0", 0.45), e)
+        for k_, wx_ in enumerate((-0.17, 0.0, 0.17)):
+            kit.box(f"{name}.wave{k_}", (0.07, 0.006, 0.012), (wx_, -0.032, -h / 2 + 0.045), kit.plastic("#d8f0ff", 0.5), e)
         kit.box(f"{name}.can", (0.3, 0.05, 0.05), (0, -0.04, zb + 0.07), kit.plastic("#ff5a4e", 0.5), e, bevel=0.015)
         for sx in (-1, 1):
             kit.box(f"{name}.cb{sx}", (0.06, 0.05, 0.05), (sx * 0.16, -0.04, zb + 0.085), kit.plastic("#ff5a4e", 0.5), e,
@@ -331,12 +340,17 @@ def build(kit, story, tl):
     kit.aim(fill, (0, 0, 0))
     moon = kit.light("moon", "SUN", (-10, -6, 30), 1.0, "#8fb0ff")
     moon.data.angle = 0.1
+    mf = kit.light("mf", "SUN", (0, 30, 20), 1.0, "#ffd9a8", shadow=False)
+    mf.data.angle = 0.3
+    kit.aim(mf, (0, 0, 0))
     kit.light("lamp_lr", "POINT", (0.3, 0.4, 2.45), 1.0, "#ffd9a0", size=0.25)
     kit.light("lamp_h", "POINT", (8.5, 0.0, 2.3), 1.0, "#ffd9a0", size=0.25)
     kit.light("lamp_br", "POINT", (14.6, 0.2, 2.3), 1.0, "#ffd9a0", size=0.25)
     kit.light("wr", "POINT", (G.WR[0], G.WR[1] + 2.6, 2.3), 1.0, "#dfe8ff", size=0.3, shadow=False)
     kit.light("spl", "POINT", (120.0, -2.0, 2.2), 1.0, "#ffffff", size=0.5, shadow=False)
     kit.light("kd", "POINT", (G.KD[0], G.KD[1] - 1.4, 2.0), 1.0, "#ffffff", size=0.5, shadow=False)
+    bf = kit.light("bface", "SPOT", (13.0, 0.2, 1.5), 1.0, "#fff4d0", size=0.06, spot=40, blend=0.6, shadow=False)
+    kit.aim(bf, (16.0, 1.15, 1.3))
     ufl = kit.light("ufl", "SPOT", (0.3, 0.1, 0.5), 1.0, "#fff4d0", size=0.06, spot=48, blend=0.5)
     W["ufl"] = ufl
     ring = kit.light("ring", "SPOT", (G.WR[0], G.WR[1] + 2.6, 0.5), 1.0, "#fff4d0", size=0.05, spot=70, blend=0.6)
@@ -500,8 +514,8 @@ def build(kit, story, tl):
     hide(W["sheet"], True)
     # ---------------------------------------------------------------------------- the plate and friends
     pl = kit.empty("plate", (0, 0, -50))
-    kit.cyl("plate.disc", 0.2, 0.02, (0, 0, 0), plastic("#ffffff", 0.35), pl, n=24)
-    bread = plastic("#f3d9a0", 0.8)
+    kit.cyl("plate.disc", 0.2, 0.02, (0, 0, 0), plastic("#d9d2c2", 0.45), pl, n=24)
+    bread = plastic("#d9b377", 0.8)
     fill_ = plastic("#d9534f", 0.7)
     for sgn in (-1, 1):
         tri = kit.mesh_obj(f"plate.tri{sgn}", [(-0.08, -0.08, 0), (0.08, -0.08, 0), (-0.08, 0.08, 0),
@@ -518,13 +532,28 @@ def build(kit, story, tl):
     cer = kit.empty("cereal", (0, 0, -50))
     kit.box("cereal.box", (0.2, 0.08, 0.3), (0, 0, 0), plastic("#ff9a3a", 0.5), cer, bevel=0.01)
     kit.box("cereal.pic", (0.14, 0.01, 0.12), (0, -0.045, 0.03), plastic("#ffe27a", 0.5), cer)
-    W["objs"] = {"plate": pl, "remote": rem, "cereal": cer}
+    bowl = kit.empty("bowl", (0, 0, -50))
+    kit.cyl("bowl.cup", 0.13, 0.09, (0, 0, 0.045), plastic("#4aa8e8", 0.4), bowl, n=18, r2=0.1)
+    kit.cyl("bowl.milk", 0.11, 0.012, (0, 0, 0.085), plastic("#fff4e0", 0.4), bowl, n=18)
+    for k in range(5):
+        kit.sphere(f"bowl.o{k}", 0.024, (-0.06 + 0.03 * k, 0.03 * ((k * 3) % 4 - 1.5) / 1.5, 0.1), plastic("#ffb83a", 0.5), bowl, seg=6)
+    # a pizza box with a one-slice pizza, and the slice on its own so it can slide to my plate
+    pz = kit.empty("pizza", (0, 0, -50))
+    kit.box("pizza.box", (0.56, 0.56, 0.04), (0, 0, 0.02), plastic("#c9a070", 0.7), pz, bevel=0.01)
+    kit.box("pizza.lid", (0.56, 0.03, 0.4), (0, 0.29, 0.2), plastic("#c9a070", 0.7), pz, rot=(-0.25, 0, 0))
+    kit.box("pizza.dots", (0.1, 0.012, 0.1), (0.1, 0.2, 0.05), plastic("#ff5a4e", 0.5), pz, rot=(0, 0, 0.78))
+    sl = kit.empty("slice", (0, 0, -50))
+    kit.mesh_obj("slice.tri", [(-0.1, -0.1, 0), (0.1, -0.1, 0), (0, 0.12, 0), (-0.1, -0.1, 0.035), (0.1, -0.1, 0.035), (0, 0.12, 0.035)],
+                 [(0, 2, 1), (3, 4, 5), (0, 1, 4, 3), (1, 2, 5, 4), (2, 0, 3, 5)], plastic("#f2b83a", 0.6), sl, (0, 0, 0), (0, 0, 0))
+    for k, (px_, py_) in enumerate([(-0.04, -0.04), (0.04, -0.03), (0.0, 0.05)]):
+        kit.cyl(f"slice.pep{k}", 0.028, 0.012, (px_, py_, 0.04), plastic("#c8342c", 0.5), sl, n=10)
+    W["objs"] = {"plate": pl, "remote": rem, "cereal": cer, "bowl": bowl, "pizza": pz, "slice": sl}
     # flashlight standing on the coffee table (a prop; the light is "ufl")
     fts = kit.empty("tblfl", (0, 0, -50))
     kit.cyl("tblfl.body", 0.04, 0.26, (0, 0, 0.13), plastic("#ff5a4e", 0.4), fts, n=10)
     kit.cyl("tblfl.head", 0.065, 0.06, (0, 0, 0.29), plastic("#333844", 0.3), fts, n=10)
     kit.cyl("tblfl.lens", 0.055, 0.01, (0, 0, 0.325), kit.emit("#fff4d0", 6.0), fts, n=10)
-    beam = alpha_mat(kit, "beam_up", "#fff0c0", 0.05, 1.5)
+    beam = alpha_mat(kit, "beam_up", "#fff0c0", 0.018, 1.5)
     kit.cyl("tblfl.beam", 0.05, 1.6, (0, 0, 1.1), beam, fts, n=24, r2=0.45)
     noshadow(fts)
     W["objs"]["tblfl"] = fts
@@ -558,6 +587,8 @@ def build(kit, story, tl):
     kit.box("car.seatB", (0.5, 1.5, 0.35), (-0.95, 0, 0.85), seatm, car, bevel=0.05)
     kit.box("car.seatBb", (0.14, 1.5, 0.6), (-1.18, 0, 1.2), seatm, car, bevel=0.05)
     kit.box("car.dash", (0.3, 1.6, 0.4), (1.2, 0, 1.15), plastic("#262c3c", 0.6), car, bevel=0.03)
+    kit.cyl("car.wheel", 0.24, 0.05, (0.98, 0.42, 1.3), plastic("#262c3c", 0.5), car, rot=(0, math.pi / 2 - 0.5, 0), n=18, r2=0.24)
+    kit.cyl("car.wheelhub", 0.07, 0.07, (1.0, 0.42, 1.32), plastic("#ffd23a", 0.4), car, rot=(0, math.pi / 2 - 0.5, 0), n=10)
     # the passenger door (side facing -y), hinged at its front edge x = +1.1
     W["cardoor"] = kit.empty("cardoor", (cx_ + 1.1, cy_ - 0.9, 0))
     kit.box("cardoor.leaf", (1.6, 0.07, 0.6), (-0.8, 0, 0.98), cb, W["cardoor"], bevel=0.02)
@@ -597,11 +628,18 @@ def build(kit, story, tl):
     kit.box("kd.top", (2.7, 0.8, 0.06), (kx, ky + 1.1, 0.93), plastic("#fff4d0", 0.5), None, bevel=0.01)
     kit.box("kd.drawer", (2.2, 0.62, 0.22), (kx, ky + 0.5, 0.72), plastic("#8ec5ff", 0.6), None, bevel=0.02)
     kit.box("kd.in", (2.1, 0.55, 0.02), (kx, ky + 0.5, 0.64), plastic("#26305a", 0.8), None)
-    cols = ["#ffd23a", "#ff5a4e", "#4ad08a", "#ffffff"]
-    for r in range(3):
-        for c in range(11):
-            kit.cyl(f"kd.bat{r}{c}", 0.045, 0.2, (kx - 0.98 + c * 0.19, ky + 0.3 + r * 0.17, 0.77),
-                    plastic(cols[(r + c) % 4], 0.4), None, rot=(math.pi / 2, 0, 0), n=10)
+    # batteries you can name at a glance: a dark or gold body, a white band and a silver nub, lying along x
+    kit.box("kd.tray", (2.1, 0.56, 0.02), (kx, ky + 0.5, 0.84), plastic("#26305a", 0.8), None)
+    bcols = ["#23262f", "#ffb02e", "#23262f", "#3fa84a"]
+    for r in range(5):
+        for c in range(6):
+            bz = 0.89 + (0.09 if (r + c) % 3 == 0 else 0.0)
+            bxx = kx - 0.88 + c * 0.35 + (0.12 if r % 2 else 0.0)
+            byy = ky + 0.26 + r * 0.11
+            mat_ = plastic(bcols[(r + c) % 4], 0.4)
+            kit.cyl(f"kd.bat{r}{c}", 0.05, 0.3, (bxx, byy, bz), mat_, None, rot=(0, math.pi / 2, 0), n=10)
+            kit.cyl(f"kd.bat{r}{c}n", 0.026, 0.05, (bxx + 0.17, byy, bz), plastic("#e8e8ee", 0.25, spec=0.8), None, rot=(0, math.pi / 2, 0), n=8)
+            kit.cyl(f"kd.bat{r}{c}b", 0.053, 0.05, (bxx - 0.05, byy, bz), plastic("#fff4d0", 0.4), None, rot=(0, math.pi / 2, 0), n=10)
     # ---------------------------------------------------------------------------- the split pair
     sx0 = 120.0
     for side, (hexc, nm) in enumerate([(mus, "A"), (teal, "B")]):
@@ -756,10 +794,11 @@ def place_inset(ctx, state, big, lens):
     tex2.image = tex.image
     d = 0.15
     unit = d / lens
-    pw = 0.42 * 13.5 * unit
-    ph = pw * 300 / 800
-    x = -0.40 * 6.75 * unit
-    y = 0.775 * 12.0 * unit
+    pw0 = 0.42 * 13.5 * unit
+    ph0 = pw0 * 300 / 800
+    pw, ph = pw0 * 1.3, ph0 * 1.3             # 1.3x larger (critic r1), top and left edges where they were
+    x = -0.40 * 6.75 * unit + (pw - pw0) / 2
+    y = 0.775 * 12.0 * unit - (ph - ph0) / 2
     if big:
         pl.location, pl.scale = (0, 0, 5), (pw, ph, 1)        # out of sight behind the camera
         bw = 0.86 * 13.5 * unit
@@ -781,7 +820,7 @@ def _first(kit, story, tl):
         e = kit.empty(f"fl.{who}", (0, 0, -1.55), a)
         kit.cyl(f"fl.{who}.body", 0.19, 1.0, (0, 0, 0.0), kit.plastic("#ff5a4e", 0.4), e, n=10)
         kit.cyl(f"fl.{who}.head", 0.3, 0.3, (0, 0, -0.62), kit.plastic("#333844", 0.3), e, n=10)
-        kit.cyl(f"fl.{who}.lens", 0.25, 0.04, (0, 0, -0.79), kit.emit("#fff4d0", 6.0), e, n=10)
+        kit.cyl(f"fl.{who}.lens", 0.25, 0.04, (0, 0, -0.79), kit.emit("#fff4d0", 14.0), e, n=10)
         bm = kit.cyl(f"fl.{who}.beam", 3.0, 11.0, (0, 0, -6.3), beam, e, n=20, r2=0.2)
         bm.scale = (1, 1, 1)
         # the beam's wide end is at -z: cyl() puts r at -h/2 and r2 at +h/2, so swap by making r the far end
@@ -789,25 +828,28 @@ def _first(kit, story, tl):
         noshadow(e)
         W["fls"][who] = e
         hide(e, True)
-    # the watch: black band with a pale dial, one on each wrist; the cue picks the side
+    # the watch: my Ben's is BLACK on his LEFT wrist (arm1), this Ben's canoe red on his RIGHT (arm-1). A plain pale
+    # disc dial on the front, the outer side and the back of the band (it reads from any side), no numerals
     W["watch"] = {}
-    for side, arm in (("L", "arm1"), ("R", "arm-1")):
+    for side, arm, bandc in (("L", "arm1", "#16181e"), ("R", "arm-1", "#d00018")):
         a = bpy.data.objects.get(f"ben.{arm}")
         if a is None:
             continue
         e = kit.empty(f"watch{side}", (0, 0, -1.4), a)
-        kit.box(f"watch{side}.band", (1.1, 1.08, 0.4), (0, 0, 0), kit.plastic("#16181e", 0.35, spec=0.6), e, bevel=0.05)
-        kit.box(f"watch{side}.dial", (0.74, 0.06, 0.3), (0, -0.56, 0.0), kit.plastic("#f4ead8", 0.3), e, bevel=0.03)
-        kit.box(f"watch{side}.h1", (0.05, 0.02, 0.2), (0, -0.6, 0.04), kit.plastic("#16181e", 0.3), e)
+        bmat = kit.emit(bandc, 0.9, name="watchR_em") if side == "R" else kit.plastic(bandc, 0.35, spec=0.6)
+        kit.box(f"watch{side}.band", (1.2, 1.18, 0.7), (0, 0, 0), bmat, e, bevel=0.05)
         sgn = 1 if side == "L" else -1
-        kit.box(f"watch{side}.dial2", (0.06, 0.6, 0.3), (sgn * 0.56, 0, 0.0), kit.plastic("#f4ead8", 0.3), e, bevel=0.03)
+        dc = kit.plastic("#fbf3df", 0.3)
+        kit.box(f"watch{side}.dial", (0.9, 0.12, 0.54), (0, -0.6, 0.0), dc, e, bevel=0.04)
+        kit.box(f"watch{side}.dialb", (0.9, 0.12, 0.54), (0, 0.6, 0.0), dc, e, bevel=0.04)
+        kit.box(f"watch{side}.dial2", (0.12, 0.9, 0.54), (sgn * 0.6, 0, 0.0), dc, e, bevel=0.04)
         hide(e, True)
         W["watch"][side] = e
     # Varga's ponytail
     hg = bpy.data.objects.get("varga2.headg")
     if hg is not None:
         kit.box("pony.tie", (0.2, 0.2, 0.14), (0, 0.66, 0.12), kit.plastic("#ff5a4e", 0.5), hg)
-        kit.box("pony.tail", (0.3, 0.26, 1.5), (0, 0.78, -0.55), kit.plastic("#9a9aa6", 0.65), hg, bevel=0.1)
+        kit.box("pony.tail", (0.34, 0.3, 1.9), (0, 0.8, -0.75), kit.plastic("#e6e6f2", 0.65), hg, bevel=0.1)
     W["inited"] = True
 
 
@@ -832,6 +874,7 @@ def animate(kit, story, tl, t, ctx):
     mo.location = d * 60
     kit.aim(mo, (0, 0, 0))
     gains["fill"] = L["fill"]
+    gains["mf"] = L["mf"]
     kit.LIGHTS["fill"]["light"].color = L["fill_col"]
     gains["lamp_lr"] = L["lr"] * 260.0
     gains["lamp_h"] = L["hall"] * 140.0 if L["lr"] > 0.5 else L["hall"] * 40.0
@@ -886,6 +929,8 @@ def animate(kit, story, tl, t, ctx):
     W["ufl"].location = tuple(uv["pos"])
     kit.aim(W["ufl"], tuple(uv["tgt"]))
     gains["ufl"] = uv["v"] * 45.0
+    bv, _ = sample([c for c in tl["cues"] if c["name"] == "bface"], t, ["v"], {"v": 0.0})
+    gains["bface"] = bv["v"] * 450.0
     rv, _ = sample([c for c in tl["cues"] if c["name"] == "ringlight"], t, ["v"], {"v": 0.0})
     gains["ring"] = rv["v"] * 110.0
     # ---- objects (props, the dog): "obj" cues
@@ -970,6 +1015,26 @@ def animate(kit, story, tl, t, ctx):
         big = bool(ch.get("big"))
     _, _, lens, _ = _cam_now(story, tl, t)
     place_inset(ctx, state, big, lens)
+    # a per-shot light scale (the plate close-ups, so the plate isn't blown white): the "gain" cue, set between cuts
+    gv, _ = sample([c for c in tl["cues"] if c["name"] == "gain"], t, ["v"], {"v": 1.0})
+    for nm in ("sun", "moon", "fill", "mf", "lamp_lr", "lamp_h", "lamp_br", "ufl"):
+        if nm in gains:
+            gains[nm] = gains[nm] * gv["v"]
+    gains["ufl"] = gains.get("ufl", 0.0)
+    if os.environ.get("EP92_DBG"):
+        bpy.context.view_layer.update()
+        for s_, e_ in W["watch"].items():
+            if not e_.hide_render:
+                print("DBG watch", s_, [round(v, 2) for v in e_.matrix_world.translation], flush=True)
+        for nm in ("ben", "me"):
+            h_ = bpy.data.objects.get(f"{nm}.headg")
+            if h_ is not None:
+                print("DBG head", nm, [round(v, 2) for v in h_.matrix_world.translation], flush=True)
+        for nm in ("ben", "me"):
+            for a_ in ("arm1", "arm-1"):
+                o_ = bpy.data.objects.get(f"{nm}.{a_}")
+                if o_ is not None:
+                    print("DBG arm", nm, a_, [round(v, 2) for v in o_.matrix_world.translation], flush=True)
     return gains
 
 

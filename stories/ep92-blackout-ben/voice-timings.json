@@ -154,30 +154,30 @@
    ]
   },
   "L07": {
-   "text": "Mr. varga sat alone once and came out with a ponytail.",
+   "text": "Mr. varga, sat alone once and came out with a ponytail.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.81,
+   "dur": 2.759,
    "onset": 0.172,
-   "end": 2.621,
+   "end": 2.569,
    "chunks": [
     [
      0.172,
-     0.647
+     0.707
     ],
     [
-     0.647,
-     1.422
+     0.784,
+     1.414
     ],
     [
-     1.422,
-     1.784
+     1.414,
+     1.75
     ],
     [
-     1.784,
-     2.621
+     1.75,
+     2.569
     ]
    ]
   },

@@ -71,20 +71,20 @@ def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="sol
 
 cast = {
     "me": person("#e8b890", "#8d9099", "#6a7a9a", "#f4f4f2", hair="cap", hair_c="#2a1d15", sleeves="short",
-                 pattern="stripes", pattern_c="#ff5a4e", collar="#ff5a4e", brow_w=1.3),
+                 pattern="stripes", pattern_c="#e8301f", collar="#e8301f", brow_w=1.3),
     "ben": person("#f0c8a0", "#26355e", "#3d5a8a", "#f4f4f2", hair="swoop", hair_c="#c9a35a", extras=["hooddown"],
                   extra_c="#26355e"),
     "mom": person("#e0a878", "#b79ad8", "#4a4a66", "#2a2a30", hair="long", hair_c="#b9b6c4", pattern="knit",
                   pattern_c="#d9c4ef", eyes="lashes"),
-    "varga": person("#e8b890", "#4a8a6a", "#6a5a3a", "#3a2a1a", hair="none", sleeves="short"),
-    "varga2": person("#e8b890", "#4a8a6a", "#6a5a3a", "#3a2a1a", hair="cap", hair_c="#9a9aa6", sleeves="short"),
-    "dale": person("#e8c4a0", "#a8763a", "#4a4036", "#3a2a1a", hair="none", eyes="tired", ink="#55555c",
+    "varga": person("#e8b890", "#ff8a3a", "#6a5a3a", "#3a2a1a", hair="none", sleeves="short"),
+    "varga2": person("#e8b890", "#ff8a3a", "#6a5a3a", "#3a2a1a", hair="cap", hair_c="#9a9aa6", sleeves="short"),
+    "dale": person("#e8c4a0", "#ffb03a", "#4a4036", "#3a2a1a", hair="none", eyes="tired", ink="#55555c",
                    extras=["glasses"]),
     "f1": person("#d3a07a", "#ff8a6a", "#2f3548", "#f2f2f0", hair="long", hair_c="#3a1f14", eyes="lashes"),
     "f2": person("#e8b890", "#3a8a6a", "#4a4036", "#3a2a1a", hair="buzz", hair_c="#5a3a22"),
     "f3": person("#b98456", "#6a8cff", "#3a3a44", "#f2f2f0", hair="bun", hair_c="#150f0c", eyes="lashes"),
-    "n1": person("#d9a577", "#d9534f", "#3a3a44", "#e8e8e8", hair="spiky", hair_c="#2a1d15", brow_w=1.0),
-    "n1b": person("#d9a577", "#3f9bd9", "#3a3a44", "#e8e8e8", hair="spiky", hair_c="#2a1d15", brow_w=2.0),
+    "n1": person("#d9a577", "#ffd23a", "#3a3a44", "#e8e8e8", hair="spiky", hair_c="#2a1d15", brow_w=1.0),
+    "n1b": person("#d9a577", "#2f6bff", "#3a3a44", "#e8e8e8", hair="spiky", hair_c="#2a1d15", brow_w=2.0),
 }
 
 EXP = {"annoyed": "angry", "sulky": "worried", "stunned": "wide", "uneasy": "worried", "suspicious": "smirk",
@@ -179,6 +179,10 @@ def watch(at, side):
     cue(at, "watch", side=side)
 
 
+def gain(at, v):
+    cue(at, "gain", v=v, dur=0.0)
+
+
 def check(at, state, big=False):
     cue(at, "check", state=state, big=big)
 
@@ -248,7 +252,9 @@ check("L02", "A0")
 check("L02+0.3", "A")
 check("L02+0.6", "A0")
 check("L02+0.9", "A")
-shot("S02", "L02", C([0.3, 0.5, 2.0], [0.3, 0.28, 1.15], 30, [0.3, 0.4, 1.8], [0.3, 0.28, 1.15], 30))
+gain("L02", 0.7)
+shot("S02", "L02", C([0.3, 0.55, 2.2], [0.3, 0.28, 1.15], 24, [0.3, 0.45, 2.0], [0.3, 0.28, 1.15], 24))
+gain("L03", 1.0)
 uplight("L03", 0.0, dur=0.4)
 
 # ========================================================================================== 02 the montage (L03 to L10)
@@ -261,7 +267,7 @@ for i in range(len(HX)):
     hs(0, i, win=1.0, porch=1.0, dur=0)
 for i in range(len(HX)):
     hs(f"L03.1+{0.12 * i:.2f}", i, win=0.0, porch=0.0, dur=0.4)
-look("L03.1", "night", 0.5)
+look("L03.1", "street", 0.5)
 shot("S03", "L03", C([0.0, -9.2, 2.4], [0.0, -24.0, 2.6], 10, [0.0, -10.2, 2.5], [0.0, -24.0, 2.6], 10))
 # L04: a neighbour alone on a dark porch step, then the porch light returns and the shirt has changed
 put("n1", "L04", [N_ - 0.2, -18.55], 180, sit=0.38, expr="neutral", head=[0, 6])
@@ -282,13 +288,13 @@ hs("L05.1", 1, porch=0.0, dur=0.4)
 # L06: through a window, a family inside a ring of flashlight beams; then two sisters
 WX, WY = G.WR
 hide("n1b", "L06")
-look("L06", "night", 0)
+look("L06", "street", 0)
 put("f1", "L06", [WX - 1.1, WY + 4.2], 0, sit=SZ, expr="soft")
 put("f2", "L06", [WX + 1.1, WY + 4.2], 0, sit=SZ, expr="smile")
 put("f3", "L06", [WX + 0.0, WY + 4.2], 0, sit=SZ, expr="soft")
 obj("ring", "L06", [WX, WY + 2.6, 0.0])
 cue("L06", "ringlight", v=1.0, dur=0.0)
-shot("S06a", "L06", C([WX - 0.3, WY - 2.4, 1.45], [WX, WY + 3.6, 1.2], 16, [WX + 0.3, WY - 2.1, 1.45], [WX, WY + 3.6, 1.2], 16))
+shot("S06a", "L06", C([WX - 0.3, WY - 1.4, 1.4], [WX, WY + 4.0, 1.1], 28, [WX + 0.2, WY - 1.1, 1.4], [WX, WY + 4.0, 1.1], 28))
 hide("f1", "L06.1")
 hide("f2", "L06.1")
 hide("f3", "L06.1")
@@ -297,7 +303,7 @@ put("f1", "L06.1", [sx2 - 0.9, WY + 2.0], 40, expr="laugh", arms=[0, 165])
 put("f3", "L06.1", [sx2 + 0.9, WY + 2.0], -40, expr="laugh", arms=[0, 165])
 fl("f1", "L06.1", 1.0)
 fl("f3", "L06.1", 1.0)
-shot("S06b", "L06.1", C([sx2 - 0.2, WY - 2.0, 1.5], [sx2, WY + 2.0, 1.45], 18, [sx2 + 0.2, WY - 1.8, 1.5], [sx2, WY + 2.0, 1.45], 18))
+shot("S06b", "L06.1", C([sx2 - 0.2, WY - 2.0, 1.5], [sx2, WY + 2.0, 1.45], 26, [sx2 + 0.2, WY - 1.8, 1.5], [sx2, WY + 2.0, 1.45], 26))
 # L07: Mr. Varga alone in the dark, then lights up with a ponytail
 hide("f1", "L07")
 hide("f3", "L07")
@@ -308,9 +314,9 @@ obj("ring", "L07", hide_=True)
 put("varga", "L07", [V_, -19.6], 180, sit=0.97, expr="neutral")
 shot("S07a", "L07", C([V_ + 0.2, -15.6, 1.4], [V_, -19.4, 1.3], 25))
 hide("varga", "L07.2")
-put("varga2", "L07.2", [V_, -19.6], 180, sit=0.97, expr="confused", arms=[0, 150])
+put("varga2", "L07.2", [V_, -19.6], 90, sit=0.97, expr="confused", arms=[0, 150])
 hs("L07.2", 2, porch=1.0, dur=0.4)
-shot("S07b", "L07.2", C([V_ - 0.4, -15.8, 1.45], [V_, -19.4, 1.4], 24, [V_ - 0.2, -16.3, 1.45], [V_, -19.4, 1.4], 24))
+shot("S07b", "L07.2", C([V_ + 0.3, -15.8, 1.5], [V_, -19.4, 1.4], 24, [V_ + 0.1, -16.3, 1.5], [V_, -19.4, 1.4], 24))
 # L08: Mr. Dale in a lawn chair, scowling in the dark, then lights up and he's beaming
 hide("varga2", "L08")
 hs("L08", 2, porch=0.0, dur=0.4)
@@ -329,8 +335,8 @@ shot("S09", "L09", C([D_ + 0.2, -15.0, 1.7], [D_, -19.3, 1.4], 24, [D_ + 0.1, -1
 for who in ("dale", "f1", "f2", "f3"):
     hide(who, "L10")
 hs("L10", 3, porch=0.0, dur=0.4)
-put("varga2", "L10", [V_, -19.6], 180, sit=0.97, expr="squeeze")
-shot("S10a", "L10", C([V_ + 0.3, -15.8, 1.45], [V_, -19.4, 1.4], 24))
+put("varga2", "L10", [V_, -19.6], 90, sit=0.97, expr="squeeze")
+shot("S10a", "L10", C([V_ + 0.3, -15.8, 1.5], [V_, -19.4, 1.4], 24))
 hide("varga2", "L10.3")
 put("varga", "L10.3", [V_, -19.6], 180, sit=0.97, expr="relieved", arms=[0, 150])
 hs("L10.3", 2, porch=1.0, dur=0.4)
@@ -351,7 +357,20 @@ obj("cereal", "L11.2", [S_R - 0.2, 1.35, 1.0], 0)
 obj("cereal", "L11.2+0.25", [S_R - 0.2, 1.35, 1.1], 0, dur=0.12)
 obj("cereal", "L11.2+0.45", [S_R - 0.2, 1.35, 0.95], 0, dur=0.12)
 shot("S11b", "L11.2", C([S_R + 0.2, -0.2, 1.5], [S_R - 0.1, 1.9, 1.35], 30))
-obj("cereal", "L12", hide_=True)
+# L11b: he tips my last cereal into his own bowl; I slide the remote under a cushion while he isn't looking
+obj("cereal", "L11b", [S_R - 0.15, 1.5, 1.12], 0)
+obj("cereal", "L11b+0.35", [S_R - 0.15, 1.5, 1.1], 150, dur=0.5, rot=[0, 150, 0])
+obj("bowl", "L11b", [S_R - 0.15, 1.5, 0.74], 0)
+pose("ben", "L11b", expr="smug", arms=[0, 70])
+shot("S11c", "L11b", C([S_R + 0.9, 0.2, 1.25], [S_R - 0.15, 1.6, 0.95], 30, [S_R + 0.7, 0.5, 1.2], [S_R - 0.15, 1.6, 0.95], 30))
+obj("cereal", "L11b.1", hide_=True)
+obj("bowl", "L11b.1", hide_=True)
+pose("ben", "L11b.1", expr="smug", arms=[0, 0], head=[-40, 0])
+pose("me", "L11b.1", expr="smug", arms=[0, 60], head=[20, 0])
+obj("remote", "L11b.1+0.1", [0.3, 1.95, 0.7])
+obj("remote", "L11b.1+0.35", [-0.35, 2.0, 0.62], 0, dur=0.5)
+shot("S11d", "L11b.1", C([0.0, -0.4, 1.3], [-0.1, 1.95, 0.95], 28, [-0.1, -0.1, 1.25], [-0.1, 1.95, 0.95], 28))
+obj("remote", "L12", hide_=True)
 pose("ben", "L12", expr="annoyed", arms=[0, 0], side=[50, 50])
 pose("me", "L12", expr="annoyed", side=[50, 50], head=[0, -6])
 shot("S12", "L12", C([0.3, -0.2, 1.3], [0.3, 2.1, 1.1], 17, [0.3, -0.5, 1.3], [0.3, 2.1, 1.1], 17))
@@ -370,6 +389,11 @@ fl("ben", "L14", 1.0)
 obj("dog", "L14", [S_M, SY + 0.05, SZ - 0.1], 0)
 shot("S14a", "L14", C([0.3, -1.4, 1.3], [0.3, 2.1, 1.0], 21, [0.3, -1.0, 1.3], [0.3, 2.1, 1.0], 21))
 shot("S14b", "L14.1+0.5", C([S_M, -0.5, 1.25], [S_M, 2.1, 0.8], 34, [S_M, -0.2, 1.2], [S_M, 2.1, 0.8], 34))
+# L14b: his flashlight lights his BLACK watch on his LEFT wrist (S14c), then a pull to his smug face (S14d)
+pose("ben", "L14b", expr="smug", arms=[165, 55])
+shot("S14c", "L14b", C([3.9, 1.1, 1.4], [2.18, 1.73, 1.03], 34, [3.6, 1.2, 1.32], [2.18, 1.73, 1.03], 34))
+pose("ben", "L14b.2", expr="smug", arms=[105, 20], head=[0, 0])
+shot("S14d", "L14b.2", C([1.2, -0.4, 1.4], [S_R, 2.1, 1.3], 28, [1.3, -0.1, 1.4], [S_R, 2.1, 1.3], 28))
 # L15: me alone on my bed in the dark, door shut
 hide("mom", "L15")
 hide("ben", "L15")
@@ -411,27 +435,26 @@ obj("plate", "L19", [0.1, 0.3, 1.12])
 shot("S19", "L19", C([0.1, -0.75, 1.5], [0.1, 0.3, 1.12], 40, [0.1, -0.65, 1.35], [0.1, 0.3, 1.12], 40))
 # L20: his watch, on the right
 check("L20", "B")
-pose("ben", "L20", arms=[60, 0], expr="soft")
+pose("ben", "L20", arms=[0, 0], side=[14, 14], expr="soft")
 obj("plate", "L20", hide_=True)
-shot("S20", "L20", C([-0.2, -2.2, 1.35], [-0.41, 0.3, 1.1], 34, [-0.2, -2.0, 1.3], [-0.41, 0.3, 1.1], 34))
+shot("S20", "L20", C([-0.45, -0.75, 1.0], [-0.45, 0.95, 0.92], 34, [-0.45, -0.55, 1.0], [-0.45, 0.95, 0.92], 34))
 # L21: callbacks to my Ben, watch on his left, a rewind
 look("L21", "day", 0)
 ver("L21", "A")
 watch("L21", "L")
 hide("ben", "L21")
-put("ben", "L21", [S_R, SY], 0, sit=SZ, expr="annoyed")
+put("ben", "L21", [S_R, SY], 0, sit=SZ, expr="annoyed", arms=[0, 55])
 shot("S21a", "L21", C([0.9, -0.6, 1.3], [S_R, 2.1, 1.1], 24))
-pose("ben", "L21.1+0.5", expr="smug", arms=[0, 70])
-obj("remote", "L21.1+0.5", [1.2, 1.95, 0.66])
-shot("S21b", "L21.1+0.5", C([S_R - 0.3, 0.6, 0.95], [S_R + 0.3, 1.9, 0.8], 34))
+pose("ben", "L21.1", expr="smug", arms=[0, 60])
+shot("S21b", "L21.1", C([3.7, 0.7, 1.3], [1.96, 1.8, 1.0], 34, [3.4, 0.85, 1.25], [1.96, 1.8, 1.0], 34))
 # L22: back to now, his right wrist
 look("L22", "lamp", 0)
 ver("L22", "B")
 watch("L22", "R")
 obj("remote", "L22", hide_=True)
 hide("ben", "L22")
-put("ben", "L22", [0.1, 0.95], 0, expr="soft", arms=[60, 0])
-shot("S22", "L22", C([-0.2, -2.0, 1.3], [-0.41, 0.3, 1.1], 34, [-0.2, -1.8, 1.25], [-0.41, 0.3, 1.1], 34))
+put("ben", "L22", [0.1, 0.95], 0, expr="soft", arms=[0, 0], side=[14, 14])
+shot("S22", "L22", C([-1.5, -0.4, 0.95], [-0.45, 0.95, 0.92], 34, [-1.2, -0.2, 0.95], [-0.45, 0.95, 0.92], 34))
 # L23: Mom waves me off, the canoe photo behind her
 hide("ben", "L23")
 put("mom", "L23", [S_L + 0.6, SY], 0, sit=SZ, expr="amused", arms=[0, 100])
@@ -457,7 +480,18 @@ look("L27", "day", 0)
 put("ben", "L27", [-3.8, 1.45], 0, sit=0.5, expr="soft", head=[-30, 0], lean=0.1)
 put("me", "L27", [-2.6, 1.45], 0, sit=0.5, expr="suspicious", head=[10, 0])
 shot("S27", "L27", C([-3.2, -1.2, 1.4], [-3.2, 1.2, 1.15], 22, [-3.2, -0.9, 1.4], [-3.2, 1.2, 1.15], 22))
+# L27b: the last slice of pizza: the box first, then Ben slides the slice onto my plate
+obj("pizza", "L27b", [-3.2, 0.3, 0.8], 0)
+obj("slice", "L27b", [-3.2, 0.3, 0.84], 0)
+shot("S27b", "L27b", C([-3.0, -0.5, 1.35], [-3.2, 0.35, 0.8], 30, [-3.1, -0.3, 1.25], [-3.2, 0.35, 0.8], 30))
+pose("ben", "L27b.2", expr="soft", arms=[0, 70], head=[-20, 0])
+pose("me", "L27b.2", expr="suspicious", head=[10, 0])
+obj("slice", "L27b.2", [-3.2, 0.3, 0.84], 0)
+obj("slice", "L27b.2+0.1", [-2.6, 0.62, 0.82], 20, dur=0.55)
+shot("S27c", "L27b.2", C([-3.2, -1.2, 1.5], [-3.2, 0.9, 0.95], 24, [-3.2, -0.9, 1.45], [-3.2, 0.9, 0.95], 24))
 # L28: Ben laughing, me stunned
+obj("pizza", "L28", hide_=True)
+obj("slice", "L28", hide_=True)
 pose("ben", "L28", expr="laugh", head=[-20, 0])
 pose("me", "L28", expr="stunned", head=[10, 0])
 shot("S28", "L28", C([-3.4, -0.3, 1.3], [-3.2, 1.4, 1.2], 28, [-3.3, 0.0, 1.3], [-3.2, 1.4, 1.2], 28))
@@ -467,10 +501,39 @@ hide("me", "L29")
 cue("L29", "cardoor", open=1.0, dur=0.5)
 put("ben", "L29", [CAR[0] + 0.1, CAR[1] - 1.9], 180, expr="soft", arms=[0, 70])
 shot("S29", "L29", C([CAR[0] + 1.8, CAR[1] - 5.2, 1.5], [CAR[0] + 0.1, CAR[1] - 1.7, 1.2], 24, [CAR[0] + 1.4, CAR[1] - 4.8, 1.5], [CAR[0] + 0.1, CAR[1] - 1.7, 1.2], 24))
+# the second half of L29: Ben at the wheel, me beside him (so it is Ben who drives)
+hide("ben", "L29.1")
+put("ben", "L29.1", [CAR[0] + 0.45, CAR[1] + 0.42], 90, sit=0.82, expr="soft", arms=[70, 70])
+put("me", "L29.1", [CAR[0] + 0.45, CAR[1] - 0.42], 90, sit=0.82, expr="stunned")
+shot("S29b", "L29.1", C([CAR[0] + 3.4, CAR[1] + 1.2, 1.7], [CAR[0] + 0.45, CAR[1], 1.45], 26, [CAR[0] + 3.0, CAR[1] + 0.9, 1.7], [CAR[0] + 0.45, CAR[1], 1.45], 26))
+hide("me", "L30")
 # L30: Mom in the back seat, humming
 hide("ben", "L30")
 put("mom", "L30", [CAR[0] - 0.95, CAR[1]], 90, sit=0.82, expr="content")
 shot("S30", "L30", C([CAR[0] + 3.0, CAR[1] - 1.4, 1.65], [CAR[0] - 0.95, CAR[1], 1.45], 24, [CAR[0] + 2.7, CAR[1] - 1.2, 1.65], [CAR[0] - 0.95, CAR[1], 1.45], 24))
+
+# L30b: Thursday night, a strip of flashlight light sat under my door for an hour (the clock rolls on)
+hide("mom", "L30b")
+look("L30b", "night", 0)
+cue("L30b", "sheet", on=False)
+cue("L30b", "clock", txt="11:04")
+cue("L30b", "doorm", open=0.0, dur=0.0)
+cue("L30b", "strip", v=1.0, dur=0.4)
+put("me", "L30b", [16.05, 1.15], -90, sit=0.66, expr="uneasy")
+shot("S30b", "L30b", C([13.4, -1.7, 1.15], [15.7, 0.9, 0.9], 26, [13.8, -1.4, 1.15], [15.7, 0.9, 0.9], 26))
+shot("S30b2", "L30b.1", C([14.3, -0.7, 0.5], [12.2, 0.0, 0.25], 26, [13.9, -0.5, 0.45], [12.2, 0.0, 0.25], 26))
+cue("L30b.3", "clock", txt="11:04")
+cue("L30b.3+0.45", "clock", txt="12:04")
+shot("S30c", "L30b.3", C([14.6, -0.9, 0.95], [16.35, -0.1, 0.62], 34, [15.0, -0.7, 0.9], [16.35, -0.1, 0.62], 34))
+# L30c: I open the door a crack, scared; the hall is empty
+hide("me", "L30c")
+put("me", "L30c", [13.0, -0.3], -90, expr="scared", arms=[0, 60])
+cue("L30c", "doorm", open=0.5, dur=0.4)
+shot("S30d", "L30c", C([10.6, -0.3, 1.5], [13.0, -0.2, 1.4], 26, [10.9, -0.3, 1.5], [13.0, -0.2, 1.4], 26))
+hide("me", "L30c.1")
+cue("L30c.1", "strip", v=0.0, dur=0.4)
+cue("L30c.1", "doorm", open=1.0, dur=0.4)
+shot("S30e", "L30c.1", C([12.9, -0.3, 1.45], [5.0, 0.0, 1.3], 24, [12.4, -0.2, 1.45], [5.0, 0.0, 1.3], 24))
 
 # ========================================================================================== 05 Friday night (L31 to L38)
 # L31: my room at night, the clock reads 2:00
@@ -484,38 +547,52 @@ pose("me", "L31+0.9", expr="wide")
 shot("S31", "L31", C([13.6, -1.3, 1.1], [16.3, 0.5, 0.8], 30, [14.0, -1.1, 1.1], [16.3, 0.5, 0.8], 30))
 # L32: Ben in my doorway, lit by his own flashlight
 cue("L32-0.7", "doorm", open=1.0, dur=0.45)
-put("ben", "L32", [12.0, 0.0], 94, expr="blank", arms=[85, 0])
+put("ben", "L32", [12.0, 0.0], 90, expr="blank", arms=[100, 0], side=[-25, 0])
+uplight("L32", 1.0, [12.55, -0.3, 1.12], [12.0, 0.0, 1.55])
 fl("ben", "L32", 1.0)
 shot("S32", "L32", C([15.0, 0.3, 1.35], [12.0, 0.0, 1.4], 28, [14.6, 0.3, 1.4], [12.0, 0.0, 1.4], 28))
 # L33: my point of view into the beam (cover frame)
-shot("S33", "L33", C([14.5, 0.9, 1.4], [12.0, 0.0, 1.55], 30, [14.0, 0.8, 1.4], [12.0, 0.0, 1.55], 30))
+shot("S33", "L33", C([14.4, 0.15, 1.45], [12.5, -0.2, 1.45], 30, [13.9, 0.05, 1.45], [12.5, -0.2, 1.45], 30))
 # L34: Ben, close, perfectly still
-shot("S34", "L34", C([13.4, 0.0, 1.55], [12.0, 0.0, 1.5], 34, [13.1, 0.0, 1.55], [12.0, 0.0, 1.5], 34))
+shot("S34", "L34", C([13.7, 0.3, 1.55], [12.2, -0.1, 1.5], 30, [13.4, 0.2, 1.55], [12.2, -0.1, 1.5], 30))
 # L35: me scared with the sheet to my chin, then Ben close again
-pose("ben", "L35", yaw=106)
-shot("S35a", "L35", C([13.8, 0.7, 1.3], [16.0, 1.15, 1.05], 26, [14.1, 0.8, 1.3], [16.0, 1.15, 1.05], 26))
+pose("ben", "L35", yaw=90)
+cue("L35", "bface", v=1.0, dur=0.4)
+shot("S35a", "L35", C([13.5, 0.2, 1.45], [16.0, 1.15, 1.15], 26, [13.9, 0.3, 1.45], [16.0, 1.15, 1.15], 26))
 pose("me", "L35", expr="scared", arms=[0, 0])
-pose("ben", "L35.2", yaw=94)
+pose("ben", "L35.2", yaw=90)
 shot("S35b", "L35.2", C([13.2, -0.3, 1.5], [12.0, 0.0, 1.5], 34))
 # the drop: the beam steady on my face, dust in the light
 cue("P01", "dust", on=True)
-pose("ben", "P01", yaw=106)
+pose("ben", "P01", yaw=90)
 shot("SP01", "P01", C([13.5, 0.7, 1.3], [12.5, 0.1, 1.35], 38, [13.1, 0.6, 1.3], [12.5, 0.1, 1.35], 38))
 cue("L36", "dust", on=False)
 # L36: Ben close, blank, the beam not moving; L37 me close, scared
-pose("ben", "L36", yaw=94)
-shot("S36", "L36", C([13.3, -0.2, 1.5], [12.0, 0.0, 1.5], 36, [13.0, -0.1, 1.5], [12.0, 0.0, 1.5], 36))
+pose("ben", "L36", yaw=90)
+shot("S36", "L36", C([13.6, -0.2, 1.5], [12.0, 0.0, 1.5], 30, [13.3, -0.1, 1.5], [12.0, 0.0, 1.5], 30))
 shot("S37", "L37", C([14.4, 1.15, 1.55], [16.0, 1.15, 1.5], 30, [14.8, 1.15, 1.55], [16.0, 1.15, 1.5], 30))
 # L38: the flashlight clicks off, then the empty doorway and his footsteps
 fl("ben", "L38", 0.0, dur=0.4)
+uplight("L38", 0.0, dur=0.4)
+cue("L38", "bface", v=0.0, dur=0.4)
 shot("S38a", "L38", C([13.3, -0.2, 1.5], [12.0, 0.0, 1.5], 36))
 go("ben", "L38.1", [12.0, 0.0])
 go("ben", "L38>", [6.0, 0.0], yaw=-90)
 hide("ben", "L38>")
 shot("S38b", "L38.1", C([13.8, 0.2, 1.4], [8.0, 0.0, 1.3], 24, [13.0, 0.2, 1.4], [8.0, 0.0, 1.3], 24))
 
+# L38b: I lie awake till the sun comes up (the window goes from cobalt to peach)
+hide("ben", "L38b")
+fl("ben", "L38b", -1.0)
+pose("me", "L38b", expr="uneasy", arms=[0, 0])
+shot("S38c", "L38b", C([13.7, -1.6, 1.2], [15.9, 1.0, 0.95], 26, [14.0, -1.4, 1.2], [15.9, 1.0, 0.95], 26))
+look("L38b.1", "dawn", 0.9)
+pose("me", "L38b.1", expr="wide")
+shot("S38d", "L38b.1", C([14.4, -1.2, 1.15], [15.9, 1.0, 0.95], 26, [14.7, -1.0, 1.15], [15.9, 1.0, 0.95], 26))
+
 # ========================================================================================== 06 the reveal (L39 to L47)
 # L39: me in the dark living room with my own flashlight; the beam lands on the mantel photo
+look("L39", "night", 0)
 fl("ben", "L39", -1.0)
 cue("L39", "sheet", on=False)
 cue("L39", "doorm", open=0.0, dur=0.0)
@@ -527,23 +604,37 @@ shot("S39b", "L39.2", C([0.2, 0.9, 1.35], [-0.3, 3.2, 1.45], 28, [-0.1, 1.5, 1.4
 # L40: the photo
 hide("me", "L40")
 fl("me", "L40", -1.0)
+uplight("L39.2", 0.8, [-0.4, 1.9, 1.4], [-0.4, 3.2, 1.55])
 shot("S40", "L40", C([-0.4, 2.2, 1.55], [-0.4, 3.2, 1.55], 22, [-0.4, 2.45, 1.55], [-0.4, 3.2, 1.55], 22))
+# L40b: push in on the red canoe, then a callback insert of S20: this Ben's canoe-red watch on his right wrist
+shot("S40b", "L40b", C([-0.4, 2.7, 1.55], [-0.4, 3.2, 1.55], 26, [-0.4, 2.95, 1.55], [-0.4, 3.2, 1.57], 26))
+look("L40b.1", "lamp", 0)
+put("ben", "L40b.1", [0.1, 0.95], 0, expr="soft", arms=[0, 0], side=[14, 14])
+shot("S40c", "L40b.1", C([-0.45, -0.75, 1.0], [-0.45, 0.95, 0.92], 34, [-0.45, -0.55, 1.0], [-0.45, 0.95, 0.92], 34))
+look("L41", "night", 0)
+uplight("L41", 0.8, [-0.4, 1.9, 1.4], [-0.4, 3.2, 1.55])
+hide("ben", "L41")
 # L41: me stunned, the beam trembling
 put("me", "L41", [0.3, -0.2], 0, expr="stunned", arms=[0, 0])
 pose("me", "L41+0.3", arms=[0, 6])
 pose("me", "L41+0.6", arms=[0, 0])
 shot("S41", "L41", C([0.3, -1.8, 1.55], [0.3, 0.0, 1.5], 32, [0.3, -1.5, 1.55], [0.3, 0.0, 1.5], 32))
 # L42: a callback to S15, and the check inset's question mark slides onto me
+uplight("L42", 0.0, dur=0.4)
 hide("me", "L42")
 put("me", "L42", [16.05, 1.15], -90, sit=0.66, expr="sulky")
 shot("S42a", "L42", C([13.9, -1.6, 1.4], [15.9, 1.1, 0.95], 26, [14.1, -1.5, 1.4], [15.9, 1.1, 0.95], 26))
 for k, u in enumerate([0.0, 0.2, 0.4, 0.6, 0.8, 1.0]):
     check(f"L42.1+{0.14 * k:.2f}", ["q", "tick", round(u, 2)] if u < 1.0 else "C", big=True)
-check("L42.1+1.5", "C", big=False)
+check("L42.1+1.2", "C", big=False)
 hide("me", "L42.1")
 put("me", "L42.1", [0.3, -0.2], 0, expr="stunned")
 shot("S42b", "L42.1", C([0.3, -1.6, 1.55], [0.3, 0.0, 1.5], 30, [0.3, -1.4, 1.55], [0.3, 0.0, 1.5], 30))
-shot("S43", "L43", C([0.3, -1.1, 1.58], [0.3, 0.0, 1.55], 34, [0.3, -0.9, 1.58], [0.3, 0.0, 1.55], 34))
+# L43: a callback to S16a (my shut door, the strip under it), then me close
+cue("L43", "strip", v=1.0, dur=0.4)
+shot("S43", "L43", C([15.2, 0.4, 0.8], [12.0, 0.0, 0.6], 27, [14.6, 0.3, 0.7], [12.0, 0.0, 0.55], 27))
+cue("L43+0.5", "strip", v=0.0, dur=0.4)
+shot("S43b", "L43+0.5", C([0.3, -1.1, 1.58], [0.3, 0.0, 1.55], 34, [0.3, -0.9, 1.58], [0.3, 0.0, 1.55], 34))
 # L44: the one reveal picture, a split of the two living rooms
 hide("me", "L44")
 look("L44", "split", 0)
@@ -585,16 +676,18 @@ look("L48", "day", 0)
 put("ben", "L48", [2.1, -6.85], 0, sit=0.3, expr="sad", head=[0, 14])
 put("me", "L48", [3.5, -6.85], 0, sit=0.3, expr="uneasy", head=[-20, 0])
 shot("S48a", "L48", C([2.8, -10.0, 1.2], [2.8, -6.8, 0.95], 24, [2.8, -9.4, 1.2], [2.8, -6.8, 0.95], 24))
-pose("ben", "L48.2", arms=[40, 0], head=[0, 22])
+pose("ben", "L48.2", arms=[90, 0], head=[0, 22])
 fl("ben", "L48.2", 0.0)
-shot("S48b", "L48.2", C([1.5, -7.4, 0.95], [2.1, -7.2, 0.6], 36, [1.6, -7.3, 0.9], [2.1, -7.2, 0.6], 36))
-pose("ben", "L48.2+0.7", arms=[62, 0])
+shot("S48b", "L48.2", C([-0.1, -7.5, 1.0], [1.6, -7.45, 0.85], 30, [0.1, -7.5, 0.98], [1.6, -7.45, 0.85], 30))
+pose("ben", "L48.2+0.7", arms=[76, 0])
 # L49: a drawer of batteries
 look("L49", "split", 0)
+gain("L49", 0.6)
 KX, KY = G.KD
-shot("S49", "L49", C([KX, KY - 0.9, 1.7], [KX, KY + 0.45, 0.72], 28, [KX, KY - 0.6, 1.6], [KX, KY + 0.45, 0.72], 28))
+shot("S49", "L49", C([KX - 0.3, KY - 0.7, 1.55], [KX - 0.3, KY + 0.5, 0.85], 24, [KX - 0.3, KY - 0.5, 1.45], [KX - 0.3, KY + 0.5, 0.85], 24))
 # L50: me on the porch, Pickle's head on my knee
 look("L50", "day", 0)
+gain("L50", 1.0)
 fl("ben", "L50", -1.0)
 hide("ben", "L50")
 hide("me", "L50")
@@ -605,7 +698,9 @@ shot("S50", "L50", C([3.4, -9.6, 1.1], [2.6, -6.9, 0.75], 28, [3.1, -9.2, 1.1], 
 hide("me", "L51")
 obj("dog", "L51", hide_=True)
 obj("plate", "L51", [0.3, 0.1, 0.46])
-shot("S51", "L51", C([0.3, -0.35, 0.95], [0.3, 0.1, 0.46], 40, [0.3, -0.25, 0.9], [0.3, 0.1, 0.46], 40))
+gain("L51", 0.45)
+shot("S51", "L51", C([0.3, -0.45, 1.05], [0.3, 0.1, 0.46], 34, [0.3, -0.35, 1.0], [0.3, 0.1, 0.46], 34))
+gain("L52", 1.0)
 # L52: a storm over the street
 obj("plate", "L52", hide_=True)
 look("L52", "storm", 0)
@@ -637,7 +732,7 @@ uplight("L56", 0.0, dur=0.4)
 hide("ben", "L56")
 cue("L56", "doorm", open=1.0, dur=0.0)
 cue("L56", "doorm", open=0.0, dur=0.6)
-cue("L56", "strip", v=1.0, dur=0.0)
+cue("L56", "strip", v=1.0, dur=0.4)
 cue("L56+0.8", "strip", v=0.0, dur=0.4)
 shot("S56a", "L56", C([15.0, 0.4, 0.9], [12.0, 0.0, 0.8], 28, [14.4, 0.3, 0.9], [12.0, 0.0, 0.8], 28))
 put("me", "L56.2", [16.05, 1.15], -90, sit=0.66, expr="squeeze")
@@ -656,19 +751,25 @@ hide("me", "L58")
 shot("S58", "L58", C([14.8, 0.6, 1.2], [12.0, 0.2, 1.1], 22))
 cue("L59-0.7", "doorm", open=1.0, dur=0.4)
 put("ben", "L59", [12.0, 0.0], 90, expr="unsure")
+go("ben", "L59.1+0.2", [12.0, 0.0])
+go("ben", "L60", [12.7, 0.0])
+cue("L60", "doorm", open=0.0, dur=0.0)
 shot("S59", "L59", C([15.0, 0.4, 1.3], [8.0, 0.4, 1.2], 22, [14.4, 0.4, 1.3], [8.0, 0.4, 1.2], 22))
 pose("ben", "L60", arms=[0, 30])
-shot("S60", "L60", C([13.3, 0.6, 1.0], [12.0, 0.34, 0.9], 40, [13.0, 0.6, 1.0], [12.0, 0.34, 0.9], 40))
+shot("S60", "L60", C([14.6, 1.5, 1.3], [12.9, 0.85, 1.0], 34, [14.3, 1.4, 1.25], [12.9, 0.85, 1.0], 34))
+# L61 "My BEN.": Ben on the line, not me; every icon in the check inset gets a tick
 check("L61", "D")
+pose("ben", "L61", expr="soft")
 put("me", "L61", [15.0, 1.15], -90, sit=0.66, expr="relief")
-shot("S61", "L61", C([13.6, 0.4, 1.3], [15.0, 1.15, 1.15], 28, [14.0, 0.5, 1.3], [15.0, 1.15, 1.15], 28))
-shot("S62", "L62", C([13.4, 0.2, 1.5], [12.0, 0.0, 1.5], 34, [13.1, 0.2, 1.5], [12.0, 0.0, 1.5], 34))
+shot("S61", "L61", C([14.7, 0.4, 1.5], [12.7, 0.0, 1.38], 26, [14.4, 0.3, 1.48], [12.7, 0.0, 1.38], 26))
+pose("ben", "L62", expr="unsure")
+shot("S62", "L62", C([14.7, 0.5, 1.5], [12.7, 0.0, 1.38], 26, [14.3, 0.3, 1.48], [12.7, 0.0, 1.38], 26))
 pose("ben", "L63", expr="polite", arms=[0, 165], head=[0, 8])
-shot("S63a", "L63", C([13.2, -0.3, 1.5], [12.0, 0.0, 1.5], 32))
+shot("S63a", "L63", C([14.6, 0.2, 1.5], [12.7, 0.0, 1.38], 26))
 pose("me", "L63.2", expr="stunned")
-shot("S63b", "L63.2", C([13.6, 0.4, 1.3], [15.0, 1.15, 1.15], 28))
+shot("S63b", "L63.2", C([13.0, 0.5, 1.4], [15.3, 1.15, 1.2], 24))
 pose("ben", "L64", expr="sheepish", arms=[0, 0], head=[35, 6])
-shot("S64", "L64", C([13.1, -0.2, 1.5], [12.0, 0.0, 1.5], 34, [12.9, -0.1, 1.5], [12.0, 0.0, 1.5], 34))
+shot("S64", "L64", C([14.6, 0.1, 1.5], [12.7, 0.0, 1.38], 26, [14.3, 0.1, 1.48], [12.7, 0.0, 1.38], 26))
 # L65: I hold a plate out to him
 hide("ben", "L65")
 hide("me", "L65")
@@ -678,12 +779,14 @@ obj("plate", "L65", [0.3, 0.3, 1.12])
 shot("S65", "L65", C([0.3, 1.8, 1.4], [0.3, -0.2, 1.35], 26, [0.3, 1.5, 1.4], [0.3, -0.2, 1.35], 26))
 hide("me", "L66")
 obj("plate", "L66", [0.3, 0.28, 1.15])
-shot("S66", "L66", C([0.3, 0.5, 2.0], [0.3, 0.28, 1.15], 30, [0.3, 0.4, 1.8], [0.3, 0.28, 1.15], 30))
+gain("L66", 0.45)
+shot("S66", "L66", C([0.3, 0.55, 2.2], [0.3, 0.28, 1.15], 24, [0.3, 0.45, 2.0], [0.3, 0.28, 1.15], 24))
+gain("L67", 1.0)
 # L67: Ben looks from the sandwich to me, the question mark returns; push in to the first frame
 put("ben", "L67", [0.3, 0.95], 0, expr="suspicious", arms=[85, 85])
 check("L67", "C")
 shot("S67a", "L67", C([0.3, -1.9, 1.5], [0.3, 0.9, 1.4], 30))
-look("L67.1", "hook", 0.0)
+look("L67.1", "day", 0.5)
 shot("S67b", "L67.1", C([0.3, -1.8, 1.52], [0.3, 0.9, 1.42], 36, [0.3, -1.5, 1.52], [0.3, 0.9, 1.42], 36))
 
 # ---------------------------------------------------------------------------------------------- finish the lists
@@ -760,7 +863,7 @@ story = {
     "tail": 0.25,
     "look": {"fog": "#9fd0ff", "fog_density": 0.0, "fog_start": 30.0, "sky": "#a8d8ff", "sky_strength": 1.0,
              "exposure": 0.3, "flash_safe": True, "style": "closer",
-             "polish": {"emph": ["L02", "L19", "L22", "L36", "L43", "L67"], "reveal": ["L44"], "twist": "L42",
+             "polish": {"emph": ["L02", "L19", "L22", "L36", "L44", "L67"], "reveal": ["L44"], "twist": "L42",
                         "sway": ["S32", "S33", "S34", "S35b", "S36"], "hold": ["S44"]}},
     "grade": {"shadows": [-0.01, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 1.1, "contrast": 1.05,
               "vignette": 0.2, "bloom": 0.25, "grain": 0.009, "red_line": 0.7},
