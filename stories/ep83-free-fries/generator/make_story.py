@@ -241,8 +241,10 @@ cue("L29.3", "mbA", on=False)
 scene("L29.3", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[95, 95]))
 S("L29.3", C((KM - 0.2, 1.7, 1.25), 1.6, 0, 18, 36, d2=1.2), note="Mom's kitchen, her hands in the same yellow gloves")
 cue("L29.5", "mgloves", on=True)
-S("L29.5", C((KM - 0.2, 1.4, 1.1), 1.0, -25, 50, 36, d2=0.8), ring=False, note="in their OWN gloves: her hands in the yellow gloves")
-S("L29.5+0.6", C((KM + 2.0, 3.4, 1.85), 1.0, 0, 3, 36, d2=0.85), ring=False, note="the hook by her sink, empty")
+cue("L29.5+0.6", "mgloves", on=False)
+scene("L29.5", mom=dict(pos=(KM + 1.5, 2.7, 0), yaw=0, expr="asleep", arms=[30, 30], side=[-27, -27]))
+S("L29.5", C((KM + 1.5, 2.3, 0.66), 1.1, 0, 25, 36, d2=0.95), ring=False, note="in their OWN gloves: her two yellow-gloved hands, no face")
+S("L29.5+0.6", C((KM + 1.95, 3.3, 1.72), 0.85, 0, 2, 36, d2=0.7), ring=False, note="the hook by her sink, the yellow gloves hanging on it, her own")
 cue("L30", "mgloves", on=False)
 scene("L30", mom=dict(pos=MOM_COUCH, yaw=0, expr="asleep", head=[0, 0.25]))
 S("L30", C((KM + 0.4, 2.85, 1.15), 2.3, 12, 8, 32, d2=1.9), look="eve", note="Mom asleep on the couch")
@@ -268,7 +270,10 @@ scene("L36", omar=dict(pos=(HM - 0.6, 1.95, 0), yaw=0, expr="grin", arms=[75, 75
       me=dict(pos=(HM + 0.5, 1.95, 0), yaw=0, expr="smile", arms=[75, 75]),
       mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="laugh"))
 S("L36", C((HM - 2.4, 2.25, 1.3), 1.5, 0, 4, 36, d2=1.2), note="Mom laughing at the table")
-S("L36+1.0", C((HM - 0.05, 1.95, 1.35), 1.9, 0, 5, 36, d2=1.6), note="Omar and me at the stove")
+scene("L36+1.0", omar=dict(pos=(HM - 0.6, 1.95, 0), yaw=0, expr="laugh", arms=[75, 75]),
+      me=dict(pos=(HM + 0.5, 1.95, 0), yaw=0, expr="smile", arms=[75, 75]),
+      mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="laugh"))
+S("L36+1.0", C((HM - 0.05, 1.95, 1.3), 2.5, 0, 4, 30, d2=2.2), note="Omar and me at the stove")
 cue("L37", "dish", which="pan")
 scene("L37")
 S("L37", C((HM - 0.2, 0.95, 1.0), 0.9, 15, 40, 36, d2=0.65), note="a pan of noodles")
@@ -295,8 +300,8 @@ raw("me", "L41.2+1.4", pos=[SR + 0.2, 0.9, 0])
 raw("omar", "L41.2+1.4", pos=[SR + 0.8, 1.7, 0])
 S("L41.2", C((SR, 1.3, 1.2), 3.4, 0, 5, 30, d2=3.0), note="Omar and me at work in a stockroom, mid-step, carrying a box")
 cue("L42", "srbox", x0=SR, x1=SR, y0=1.3, y1=1.3, dur=0.1)
-scene("L42", me=dict(pos=(SR - 0.45, 1.5, 0), yaw=0, expr="shut"), omar=dict(pos=(SR + 0.45, 1.5, 0), yaw=0, expr="shut"))
-S("L42", C((SR, 1.5, 1.55), 2.7, 0, 3, 36, d2=2.4), note="we blink")
+scene("L42", me=dict(pos=(SR - 0.95, 1.5, 0), yaw=0, expr="shut", head=[0, 12]), omar=dict(pos=(SR + 0.8, 1.5, 0), yaw=0, expr="shut"))
+S("L42", C((SR, 1.5, 1.2), 3.0, 0, 0, 30, d2=2.8), note="we blink")
 cue("L42.2", "hbask", on=True)
 cue("L42.2", "stove", on=True)
 scene("L42.2", omar=dict(pos=(HM - 0.6, 1.95, 0), yaw=0, expr="wide", arms=[75, 75]),
@@ -313,7 +318,7 @@ S("L43", C((0.45, 3.9, 1.95), 2.6, 0, 4, 30, d2=2.5), hand=0.004, note="the hatc
 look = {"fog": "#cfeeff", "fog_density": 0.0, "fog_start": 30.0, "sky": "#cfeeff", "exposure": 0.0, "flash_safe": True,
         "style": "closer",
         "polish": {"emph": ["L01", "L12", "L20", "L26", "L28"], "reveal": ["L28"], "twist": "L28",
-                   "quiet": [["L36", "L38"]], "sway": ["S22", "S23"], "camera": True, "idle": True, "ease": True}}
+                   "quiet": [["L36", "L38"]], "hold": ["S46", "S54"], "sway": ["S22", "S23"], "camera": True, "idle": True, "ease": True}}
 story = {
     "slug": "ep83-free-fries",
     "title": "Free Fries, One RULE \U0001F35F",

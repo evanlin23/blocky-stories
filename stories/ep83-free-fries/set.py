@@ -395,8 +395,8 @@ def build_kitchen(kit, ox, home, ctx):
     for sx in (-1, 1):
         B(None, (0.2, 0.8, 0.62), (ox + 0.4 + sx * 0.9, 3.0, 0.31), cc, "couchA", 0.05)
     # the hook beside the window, with the yellow gloves hanging (hidden while Mom wears them)
-    B(None, (0.08, 0.1, 0.08), (ox + 1.95, 3.37, 1.9), M("#aab3ba", 0.3), "hook", 0.005)
-    B(None, (0.2, 0.02, 0.2), (ox + 1.95, 3.395, 1.9), P("#ff9ccf", 0.5), "hookplate", 0.01)
+    B(None, (0.1, 0.12, 0.1), (ox + 1.95, 3.37, 1.9), M("#4a4f57", 0.3), "hook", 0.005)
+    B(None, (0.45, 0.02, 0.55) if not home else (0.2, 0.02, 0.2), (ox + 1.95, 3.395, 1.75 if not home else 1.9), P("#3f9bb0" if not home else "#ff9ccf", 0.5), "hookplate", 0.01)
     hang = E(None, (ox + 1.95, 3.34, 1.82), "hang")
     for sx in (-1, 1):
         B(hang, (0.12, 0.05, 0.3), (sx * 0.07, 0, -0.1), P(YEL, 0.5), "hglove", 0.02)
