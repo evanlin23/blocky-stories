@@ -18,8 +18,8 @@ sys.path.insert(0, str(HERE.parents[2]))
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.25
-MIN_SHOT = 0.72
-MIN_PRIMARY = 0.55
+MIN_SHOT = 0.58
+MIN_PRIMARY = 0.48
 
 FACE = {"eyes": "round", "brows": True, "ink": "#24131f"}
 LASH = {"eyes": "lashes", "brows": True, "ink": "#24131f"}
@@ -277,7 +277,7 @@ S("L12", X((-0.5, -1.7, 7.7), (-1.2, -0.5, 6.95), 28, (-0.4, -1.5, 7.55), (-1.25
   note="LORE: the first plank at my sill, two teal strokes, the counter ticking")
 S("L12.1", X((-1.3, -1.4, 7.8), (0.8, -0.5, 6.95), 24, (-1.0, -1.3, 7.7), (1.0, -0.5, 6.95), 26), "april", note="planks growing across")
 S("L12.2", X((0.0, -4.0, 5.2), (0.0, -0.5, 7.0), 28, (0.0, -3.3, 5.6), (0.0, -0.5, 7.0), 30), "april", note="the whole bridge, thirty planks, from below")
-S("L13", C((0.0, 21.0, 6.9), 3.4, 30, 8, 30, d2=2.7, az2=60), "day", note="bridges take years: the old stone bridge for scale")
+S("L13", X((-1.2, 17.5, 8.2), (0.0, 21.0, 6.9), 24, (-1.0, 18.0, 8.0), (0.0, 21.0, 6.9), 27), "day", note="bridges take years: the old stone bridge for scale")
 count("L13", 30)
 bridge("L13", 22)
 
@@ -371,11 +371,11 @@ burnt("L30", [5.6, 4.6, 4.2], sway=0.8)
 gone("me", "L30")
 S("L30", X((0.0, 9.5, 2.0), (0.0, 16.0, 0.6), 24, (0.0, 9.0, 2.0), (0.0, 16.0, 0.6), 26), "night", fill=1.3, hand=0.004,
   note="down the lane: someone else's old burnt bridge, flat on the cobbles")
-S("L30.1", C((0.0, 13.0, 0.25), 2.4, 70, 12, 30, d2=1.8), "night", fill=1.4, hand=0.003, note="the other burnt bridge, flat, still")
+S("L30.1", X((-1.2, 10.8, 0.9), (0.0, 13.0, 0.25), 28, (-1.0, 11.4, 0.7), (0.0, 13.0, 0.25), 32), "night", fill=1.4, hand=0.003, note="the other burnt bridge, flat, still")
 walk("vega", "L31", (1.1, -5.5, 0.0), "L31>", (1.1, 4.5, 0.0), 180 - 180, "worried")
 raw("vega", "L31", yaw=180)
 S("L31", X((0.0, -9.0, 1.6), (0.0, -1.0, 1.4), 26, (0.0, -8.6, 1.6), (0.0, 0.0, 1.4), 28), "night", fill=1.2, note="Mrs. Vega crosses the lane so she won't walk under them")
-S("L31.1", C((0.8, -1.0, 1.3), 3.2, 90, 10, 28, d2=2.6), "night", fill=1.3, note="her scarlet shawl, hurrying along the wall")
+S("L31.1", X((-1.0, -7.0, 1.6), (1.0, -1.5, 1.4), 26, (-0.8, -6.2, 1.6), (1.0, 0.0, 1.4), 28), "night", fill=1.3, note="her scarlet shawl, hurrying along the wall")
 gone("vega", "L32")
 put("me", "L32", (-4.45, 0.5, 6.75), 0, "worried", lean=-90)
 pose("me", "L32+0.8", 0.4, head=[0, 0], expr="scared")
@@ -397,7 +397,7 @@ put("me", "L34", (-0.9, -2.3, 0.0), 180, "worried", head=[0, 12])
 raw("me", "L34>", pos=[-0.7, -1.2, 0.0])
 S("L34", X((-1.4, -5.0, 1.7), (-0.7, -1.3, 1.3), 28, (-1.3, -4.2, 1.6), (-0.6, -0.8, 1.3), 30), "night", fill=1.1, torch=[0.0, 0.55, 1.3, 0.0, 0.4],
   note="me on the cobbles in my hoodie, phone torch on")
-S("L34.1", C((-0.7, -1.2, 1.4), 1.8, -30, 4, 30, d2=1.4), "night", fill=1.2, torch=[0.0, 0.55, 1.3, 0.0, 0.4], note="my face in the torch light")
+S("L34.1", C((-0.7, -1.2, 1.4), 1.8, 30, 4, 30, d2=1.4), "night", fill=1.2, torch=[0.0, 0.55, 1.3, 0.0, 0.4], note="my face in the torch light")
 S("L35", X((-1.45, 0.55, 1.6), (0.6, 0.55, 1.2), 22, (-1.0, 0.55, 1.5), (0.7, 0.55, 1.2), 24), "night", fill=1.2, torch=[0.0, 0.55, 1.3, 0.0, 0.4], hand=0.003,
   note="along the lowest burnt bridge to its middle")
 S("L35.2", X((-0.55, 0.55, 2.4), (0.0, 0.55, 1.28), 30, (-0.3, 0.55, 2.0), (0.0, 0.55, 1.28), 34), "night", fill=1.2, torch=[0.0, 0.55, 1.3, 0.0, 0.4], hand=0.002,
