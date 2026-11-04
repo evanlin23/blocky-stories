@@ -2,7 +2,7 @@
 
 - **Slug:** `ep99-statue-years` (batch 9b, upload order 3 of 4)
 - **Pitch:** E17 in `docs/research/premise-engines.md` (engine 19, someone else carries your aging, panel A 8, panel B 5). Panel B's note ("mechanics take too long to parse") is met by cutting the second turn to one beat: the reveal is one line said first ("It was MOM.", L26) and then one picture (a wrinkle sliding off the stone onto Mom's smile, L27). Opening shape `cost`. Lane: experiment (a warm wonder rule with no creature, against the creepy core). Length arm: mid (60 to 90 s).
-- **Title:** This Statue Grows OLD So We Don't 🗿
+- **Title:** The Statue That Grows OLD For Us 🗿
 - **Word count:** 309 spoken words in 40 lines, all `narrator`, plus one 0.6 s music drop before L25.
 - **Estimated length:** about 72 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L17 first. If it lands under 62 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A sunny small town on a hill: a park at the top of long brick steps, rose sandstone, sunflower beds, sage lawns, a bright sky. The one dim scene is the pre-dawn park (L25 to L31), a clear lilac-and-peach dawn sky, still bright enough to read every face. Light changes ramp over 0.3 s or more.

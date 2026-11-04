@@ -489,7 +489,7 @@ polish = {"reveal": [remap("L26")], "emph": [remap(x) for x in ["L01.2", "L05.1"
           "hold": [names["photo"]]}
 story = {
     "slug": "ep99-statue-years",
-    "title": "This Statue Grows OLD So We Don't 🗿",
+    "title": "The Statue That Grows OLD For Us 🗿",
     "made_for_kids": False,
     "premise": ("In a sunny hilltop town where you give a giant stone statue your year on every birthday so nobody "
                 "ages, I watch the statue get younger one wrinkle a day while my mom grows her first gray hair and "
