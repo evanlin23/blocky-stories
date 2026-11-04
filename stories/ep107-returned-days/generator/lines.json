@@ -58,6 +58,20 @@
   ]
  },
  {
+  "id": "L03b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Me and my DAD",
+    "Me and my Dad"
+   ],
+   [
+    "barely TALK anymore.",
+    "barely talk anymore."
+   ]
+  ]
+ },
+ {
   "id": "L04",
   "who": "narrator",
   "chunks": [
@@ -300,10 +314,6 @@
    [
     "The whole THING.",
     "The whole thing."
-   ],
-   [
-    "The way it HAPPENED.",
-    "The way it happened."
    ],
    [
     "Mr. Tulley says",
@@ -614,8 +624,8 @@
     "on the bottom shelf."
    ],
    [
-    "Every ONE of them.",
-    "Every one of them."
+    "Forty-six EMPTY spots.",
+    "Forty-six empty spots."
    ]
   ]
  },
@@ -624,12 +634,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Forty-seven BOXES.",
-    "Forty-seven boxes."
+    "And one last BOX.",
+    "And one last box."
    ],
    [
-    "One HOLD slip.",
-    "One hold slip."
+    "With a HOLD slip.",
+    "With a hold slip."
    ]
   ]
  },
@@ -692,8 +702,8 @@
     "Slow footsteps,"
    ],
    [
-    "straight to my BOXES.",
-    "straight to my boxes."
+    "straight to my BOX.",
+    "straight to my box."
    ]
   ]
  },
@@ -706,8 +716,8 @@
     "A hand"
    ],
    [
-    "took the newest ONE.",
-    "took the newest one."
+    "took the last ONE.",
+    "took the last one."
    ]
   ]
  },
@@ -1120,10 +1130,6 @@
    [
     "is a GOOD day.",
     "is a good day."
-   ],
-   [
-    "Nothing's WRONG.",
-    "Nothing's wrong."
    ]
   ]
  },

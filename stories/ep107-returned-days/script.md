@@ -5,8 +5,8 @@
 - **Title:** Someone Buys My Bad DAYS 🧾
 - **Changed from the pitch (the hook pass):** the panel said "whimsical, not creepy", and I'd flagged the mechanics. Line 1 now carries the creepy half in the same breath as the wonder: you can return a bad day, and then they sell it to somebody else. L03 makes it a threat to me: somebody has bought every one of mine. The mechanics are cut to two plain rules, each said once with a picture: a returned day un-happens for you and everyone in it (L05 to L08), and whoever buys it gets to remember it (L17, L18). The title was "Pell's Takes Back ANYTHING, Even Days" and now leads with the creepy buyer. The shop is renamed Tulley's because a Mr. Pell is already in ep33 and ep36.
 - **Everyone is an adult.** I'm 26, Dad is about 60, Mr. Tulley about 75, Mrs. Oduya about 60, my friend Rich 26.
-- **Word count:** 555 spoken words in 71 lines (L01 to L71), all `narrator`, plus one 0.6 s music drop before L44.
-- **Estimated length:** about 123.0 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 148 s, cut L12 and L35 first.
+- **Word count:** 558 spoken words in 72 lines (L01 to L71, plus L03b), all `narrator`, plus one 0.6 s music drop before L44.
+- **Estimated length:** about 123.8 s at 290 wpm with 0.15 s gaps, the drop and the loop tail (review r1 added L03b and trimmed L18 and L68 to hold the length). If it runs over 148 s, cut L12 and L35 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright: a sunny small downtown, Tulley's as a cheerful mint-and-cream shop with a striped awning and a long returns counter. The back room (L31 to L47) is the story's one dim scene: tall shelves of little gray boxes lit by one hanging bulb and the glow from the open door. Dad's kitchen at the end is warm and bright.
 - **Hold:** scripts only (batch 10). Not built, not voiced.
 
@@ -21,28 +21,28 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 **At Tulley's you can return a bad day, and it un-happens for you and everyone in it, but the fine print says returned days are restocked and sold, and whoever buys one gets to remember it. Every bad day I've returned in two years was bought by my dad, because a bad day was the only kind of day I ever called him, and every return took the call away.**
 
 - **Engine:** the fine print (engine 7). No film's shop, keeper or line: our counter, our receipts, our boxes.
-- **Why it clicks:** I don't remember any of my 47 returned days, only the receipts (L23, L24). Every receipt is stamped sold (L25, L26). My dad and I "stopped talking" (L59). The buyer goes straight to my boxes (L41), whistling Dad's whistle (L43). And Dad's reason is the cleanest fact in the story: every one of those days, I called him (L51 to L54).
+- **Why it clicks:** I don't remember any of my 47 returned days, only the receipts (L23, L24). Every receipt is stamped sold (L25, L26). My dad and I "stopped talking" (L59). The buyer goes straight to the last box on my shelf (L41), whistling Dad's whistle (L43). And Dad's reason is the cleanest fact in the story: every one of those days, I called him (L51 to L54).
 - Ten pitched, this one kept. Dropped: the buyer is a stranger collecting misery (a creature with no turn), the buyer is me in the future (time), the bad days pile up in someone else's life (ep83's who-pays), returned days come back worse (no feeling), Mr. Tulley eats the days (a monster), you can return a person (dark), the store returns your good days too (a muddle), the days are memories traded as money (ep97), my mom buys them (sad and off-limits for the batch), Dad's been returning his own days (a second mechanic).
 - Checked against "Claimed big ideas" and every twist: not a stand-in, not ep97's memory as payment (nobody pays with memory, a day is a thing on a shelf), not ep83's someone pays for me (Dad isn't carrying my bad days, he's keeping our phone calls), not the crowded forgotten theme (I'm not forgotten, the calls are). Shape `bought-back`.
 - **The rule is the clue:** "they sell it to somebody ELSE" first reads as creepy. After L56 it reads as a dad buying back phone calls at four dollars each.
 
 ## The story
-- **Premise:** At Tulley's you can return a bad day before midnight: it un-happens for you and everyone in it, and nobody remembers. Returned days are restocked in little gray boxes in the back room, and whoever buys one gets to remember it. I've returned 47 days in two years, and every receipt is stamped sold. Tonight I stay after closing to see who's buying my worst days.
-- **Rule / hook (L01, about 3.2 s):** "At TULLEY'S, / you can return / a bad DAY. / Then they SELL it / to somebody ELSE." Then L03: "And somebody / has bought / every ONE of mine."
+- **Premise:** At Tulley's you can return a bad day before midnight: it un-happens for you and everyone in it, and nobody remembers. Returned days are restocked in little gray boxes in the back room, and whoever buys one gets to remember it. I've returned 47 days in two years, and every receipt is stamped sold. My dad and I barely talk anymore. Tonight I stay after closing to see who's buying my worst days.
+- **Rule / hook (L01, about 3.2 s):** "At TULLEY'S, / you can return / a bad DAY. / Then they SELL it / to somebody ELSE." Then L03: "And somebody / has bought / every ONE of mine." Then L03b sets the stake by about 7 s: "Me and my DAD / barely TALK anymore."
 - **The relatable want or fight:** drifting from a parent and not knowing why.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream receipt tag in the top-left: a box glyph with 47 beside it, and a small red ring glyph (sold) that's lit. At L64 a second line appears: a key glyph with 1 (kept).
 - **The 3 to 5 example montage (L04 to L12, 6 to 23 s):** the receipt at the counter (L04), the day coming off like a coat (L05, L06), Mrs. Oduya's flattened mailbox that's fine now (L09, L10), my friend Rich and his slippers (L11, L12).
-- **A concrete mystery on screen by 15 s:** the meter's 47 and lit sold ring from frame 1, and L03's buyer.
+- **A concrete mystery on screen by 15 s:** the meter's 47 and lit sold ring from frame 1, and L03's buyer. The stake (me and my dad, drifting) is said at L03b over his silent wall phone.
 - **How the narrator is the exception:** everybody returns a day now and then. I return every bad one.
-- **The loved one at stake:** my dad, named "my DAD" at L44 in the same shot as him.
+- **The loved one at stake:** my dad, named plainly at L03b ("Me and my DAD / barely TALK anymore.") over his silent wall phone, face not shown, and named again at L44 ("It was my DAD.") in the same shot as his face. L03b sets him up as the person I've drifted from; L44 lands as: the buyer is the one I barely talk to.
 - **The rule broken:** I stay after closing and open the back room (L29 to L31).
-- **First real scare:** L32 to L43 (about 56 to 76 s): shelves to the ceiling of boxes you can hear, my 47 on the bottom shelf with one hold slip, the bell after closing, slow footsteps straight to my boxes, a hand taking the newest one.
+- **First real scare:** L32 to L43 (about 56 to 76 s): shelves to the ceiling of boxes you can hear, my bottom shelf with 46 empty spots and one last box with a hold slip, the bell after closing, slow footsteps straight to my box, a hand taking the last one.
 - **The climax turns the rule's own logic:** the store's own rule (whoever buys a day remembers it) is how Dad has kept every call. And the only way to keep a day is not to return it (L61 to L64). No new magic.
 - **Twist and reveal (L44 to L58, about 77 to 102 s):** said plainly (L44, L54) over one picture (S45: Dad at the counter of the dark back room, a gray box on his flat palm, four dollars on the shelf, his face plain in the door's light).
 - **How the last 15 seconds turn over the first line:** I keep today, drive him home and talk till two in the morning, the first day he didn't have to buy. Tomorrow's a good day and I'm calling him anyway. When we walk past Tulley's now, Dad taps the window and says it, which runs into L01.
 - **The plants a rewatch catches:**
   1. L19 to L22: my 47 days are all ones where something went wrong and I'd be the kind of guy who calls his dad (a breakdown, a lay-off, locked out in the rain).
-  2. L37: one hold slip on all 47.
+  2. L36, L37: 46 empty spots and one last box with a hold slip: somebody has been taking them one at a time, and has already paid for this one.
   3. L43: the whistle only one person I know whistles.
 - **Ending shape:** a father bought back what I kept giving away, then a loop where he says the rule himself.
 - **Warmth:** a dad and his grown son, finally talking.
@@ -73,7 +73,7 @@ At Tulley's you can return a bad day so it never happened, but returned days are
 
 ## Cast
 - `me` (an adult man, 26, the narrator): short dark-blond hair, a navy windbreaker, jeans. Faces: `tired`, `relieved`, `curious`, `scared`, `stunned`, `guilty`, `teary`, `soft`, `laugh`.
-- `dad` (my dad, about 60): a gray crew cut, a thick gray mustache, a tan work jacket, a wristwatch with a brown strap. Whistles two notes up and one down. Faces: `startled`, `sheepish`, `sad`, `soft`, `laugh`. Named "my DAD" at L44 in the same shot as his face.
+- `dad` (my dad, about 60): a gray crew cut, a thick gray mustache, a tan work jacket, a wristwatch with a brown strap. Whistles two notes up and one down. Faces: `startled`, `sheepish`, `sad`, `soft`, `laugh`. First named "my DAD" at L03b over his wall phone (face not shown), then "my DAD" at L44 in the same shot as his face.
 - `tulley` (Mr. Tulley, the shopkeeper, about 75): tiny round glasses, a cardigan, a pencil behind his ear, a polite smile. Faces: `polite`, `knowing`. An ordinary old man, never a creature.
 - `oduya` (Mrs. Oduya, a neighbor, about 60): a bright headwrap, a minivan. `rich` (my friend Rich, 26): a tie and fuzzy slippers.
 Every word is the narrator's. L47 and L51 to L54 are reported.
@@ -104,6 +104,7 @@ Times are estimates at 290 wpm with 0.15 s between lines. Every line gets one to
 | S01a, S01b, S01c | L01 | 0.0 | (a) Close-up: a receipt sliding across a mint counter under a brass bell, Mr. Tulley's hand at the end of his cardigan sleeve stamping it with a red ring glyph. The tag top-left: a box glyph, 47, and a lit red ring. (b) Mr. Tulley (tiny glasses, pencil behind his ear) smiling over the counter, `polite`. (c) A little gray box sliding onto a shelf behind him. Punch in on "TULLEY'S". |
 | S02a, S02b | L02 | 3.3 | (a) The back of the receipt, close: a long line of tiny glyphs. (b) Me squinting at it, `curious`. Punch in on "PRINT". |
 | S03a, S03b | L03 | 4.6 | (a) A fan of receipts on my kitchen table, every one stamped with the red ring. (b) Me close, `scared`. Punch in on "ONE". |
+| S03c, S03d | L03b | 6.5 | (new in review r1) (a) Dad's yellow kitchen, empty: his old wall phone on its cradle, silent, the cord hanging still, two mugs with one turned upside down on the rack. No Dad in shot. (b) My phone face down on my counter, my hand at the end of my sleeve resting beside it, not picking it up. Punch in on "DAD". Times below run about 1.9 s later than listed until L18, then about 0.9 s later. |
 | S04a, S04b | L04 | 6.5 | (a) Tulley's at night, its window lit, the street dark around it. (b) Me pushing through the door, the bell jingling. Punch in on "RECEIPT". |
 | S05a, S05b | L05 | 7.8 | (a) Mr. Tulley taking the receipt from my flat palm. (b) A soft gray shimmer peeling off my shoulders. Punch in on "YOU". |
 | S06a, S06b | L06 | 10.1 | (a) The gray shimmer folding itself into a little gray box on the counter. (b) Me rolling my shoulders, lighter, `relieved`. |
@@ -136,32 +137,32 @@ Times are estimates at 290 wpm with 0.15 s between lines. Every line gets one to
 | S33a, S33b | L33 | 56.9 | (a) A slow pan along a shelf, box after box. (b) The bulb swaying. Punch in on "BOXES". |
 | S34a, S34b | L34 | 59.2 | (a) Me leaning my ear to a box. (b) My face close, eyes widening. Punch in on "CLOSE". |
 | S35a, S35b | L35 | 61.0 | (a) One box with faint party light leaking from its lid. (b) Another box with a damp dark spot under it, rain sound. Punch in on "PARTY". |
-| S36a, S36b, S36c | L36 | 62.8 | (a) Me crouching at the bottom shelf, my name glyph on a row of boxes. (b) Forty-seven boxes in a row, close. (c) My hand at the end of my sleeve resting on the row. Punch in on "SHELF". |
-| S37a, S37b | L37 | 65.0 | (a) A single cream hold slip tucked under the string of the first box, a glyph name on it I can't read. (b) Me close, `curious`. Punch in on "BOXES". |
+| S36a, S36b, S36c | L36 | 62.8 | (a) Me crouching at the bottom shelf, my name glyph on the shelf's edge. (b) The bottom shelf close: a long row of empty, dust-free box spots, each with a faint square in the dust around it. (c) My hand at the end of my sleeve resting in an empty spot. Punch in on "EMPTY". |
+| S37a, S37b | L37 | 65.0 | (a) At the far end of the empty row, one last gray box, a single cream hold slip tucked under its string, a glyph name on it I can't read. (b) Me close, `curious`. Punch in on "HOLD". |
 | S38a, S38b | L38 | 66.2 | (a) The brass bell over the front door swinging in the dark shop. (b) Me freezing on the floor. Punch in on "RANG". |
 | S39 | L39 | 67.4 | The shop through the bead curtain: a shape at the front door, lit from behind by the streetlight. Punch in on "CLOSING". |
 | S40a, S40b | L40 | 68.7 | (a) Me squeezing behind a shelf, holding my breath, `scared`. (b) The bulb swaying over the empty aisle. Punch in on "SHELF". |
-| S41a, S41b | L41 | 70.8 | (a) Low on the boards: work boots walking slowly into the bulb's light. (b) The boots stopping at my bottom shelf. Punch in on "FOOTSTEPS". |
-| S42a, S42b | L42 | 72.2 | (a) A box lifting off my shelf on a flat palm at the end of a tan sleeve. (b) Me peeking through a gap between boxes. Punch in on "ONE". |
+| S41a, S41b | L41 | 70.8 | (a) Low on the boards: work boots walking slowly into the bulb's light. (b) The boots stopping at the last box on my bottom shelf. Punch in on "FOOTSTEPS". |
+| S42a, S42b | L42 | 72.2 | (a) The last box lifting off my shelf on a flat palm at the end of a tan sleeve, leaving the whole bottom shelf empty. (b) Me peeking through a gap between boxes on the next shelf over. Punch in on "ONE". |
 | S43a, S43b | L43 | 73.5 | (a) The shape in the half dark, back to me, whistling two notes up, one down. (b) Me close, my face changing, `stunned`. Punch in on "WHISTLED". |
 | (drop) | | 76.0 | 0.6 s: music and room drop to the voice and the hit. The bulb on its cord swaying, the gray boxes in its light, a figure's shadow on the shelf. |
 | S44 | L44 | 76.6 | Dad (gray crew cut, mustache, tan work jacket) turning into the bulb's light, his face plain, a gray box on his palm. Punch in on "DAD". |
-| S45a, S45b | L45 | 77.5 | (a) The one reveal picture, held 1.6 s with drift: Dad in the back room's light, my gray box on his flat palm, four coins left on the shelf, my 46 other boxes behind him. Cover frame. (b) The coins close. Punch in on "DOLLARS". |
+| S45a, S45b | L45 | 77.5 | (a) The one reveal picture, held 1.6 s with drift: Dad in the back room's light, my gray box on his flat palm, four coins left on the shelf, my empty bottom shelf behind him. (b) The coins close. Punch in on "DOLLARS". |
 | S46a, S46b | L46 | 79.3 | (a) The box's sticker close: a date and a glyph. (b) A flash of me in the office hallway with my cardboard box. Punch in on "JOB". |
 | S47a, S47b | L47 | 80.9 | (a) Me stepping into the light. (b) Dad jumping, `startled`. Punch in on "SHELF". |
 | S48a, S48b | L48 | 83.2 | (a) The box wobbling on his palm, Dad steadying it against his chest. (b) Dad close, `sheepish`. Punch in on "DROPPED". |
 | S49 | L49 | 84.1 | Me close, `stunned`. Punch in on "WHY". |
-| S50a, S50b | L50 | 85.1 | (a) Me waving at the 46 boxes. (b) Dad looking at the floor. Punch in on "ANYONE". |
+| S50a, S50b | L50 | 85.1 | (a) Me waving at the 46 empty spots on my shelf. (b) Dad looking at the floor. Punch in on "ANYONE". |
 | S51a, S51b | L51 | 86.3 | (a) Dad close, his voice soft, `sad`. (b) Me close. Punch in on "CALLED". |
-| S52a, S52b | L52 | 87.7 | (a) Dad touching the row of my boxes, one by one. (b) The 46 boxes in the bulb light. Punch in on "CALLED". |
+| S52a, S52b | L52 | 87.7 | (a) Dad touching the empty spots on my shelf, one by one. (b) The empty bottom shelf in the bulb light. Punch in on "CALLED". |
 | S53a, S53b, S53c | L53 | 89.7 | (a) The car on the shoulder: me on my phone, talking fast. (b) The rainy step: me on my phone, laughing. (c) Dad's kitchen: Dad on his wall phone at the same moment, `soft`. Punch in on "CALLED". |
 | S54a, S54b | L54 | 91.7 | (a) Dad close, half a smile, `sad`. (b) Me close, `guilty`. Punch in on "CALL". |
 | S55a, S55b | L55 | 93.9 | (a) A callback: a gray shimmer peeling off my shoulders at the counter. (b) Dad's wall phone, the cord swinging, silent. Punch in on "WITH". |
 | S56a, S56b, S56c | L56 | 96.4 | (a) Dad at Tulley's counter on another night, sliding coins over, `sheepish`. (b) Mr. Tulley handing him a gray box, `knowing`. (c) Dad walking home with it under his arm. Punch in on "BACK". |
-| S57a, S57b, S57c | L57 | 98.6 | (a) Dad's kitchen shelf: 46 gray boxes stacked neatly by the phone. (b) The tag close: 47. (c) Dad's wall phone close, an old cord. Punch in on "CALLS". |
+| S57a, S57b, S57c | L57 | 98.6 | (a) Dad's kitchen shelf: 46 gray boxes stacked neatly by the phone, every one he bought before tonight (tonight's makes 47). (b) The tag close: 47. (c) Dad's wall phone close, an old cord. Punch in on "CALLS". |
 | S58a, S58b | L58 | 100.6 | (a) Dad opening one box at his table, its glow on his face, smiling at the phone. (b) Push in on his face. Punch in on "SHELF". |
 | S59a, S59b | L59 | 102.2 | (a) Me close, `teary`. (b) A callback: my phone face down on my counter. Punch in on "TALKING". |
-| S60a, S60b | L60 | 104.2 | (a) Me looking at the row of boxes. (b) Dad nudging the newest box toward me. Punch in on "BACK". |
+| S60a, S60b | L60 | 104.2 | (a) Me looking at the empty shelf. (b) Dad holding the last box out toward me on his flat palm. Punch in on "BACK". |
 | S61 | L61 | 106.0 | Me close, wiping my eyes on my sleeve, `soft`. Punch in on "TOO". |
 | S62a, S62b | L62 | 107.4 | (a) Dad and me in the doorway of the back room, the bulb behind us. (b) Me looking at my phone's call list: only rainy-day icons. Punch in on "DAD". |
 | S63a, S63b | L63 | 110.2 | (a) My receipt for today in my pocket, crumpled on my palm. (b) Me dropping it in the trash by the counter. Punch in on "RETURN". |
@@ -183,6 +184,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L01: At TULLEY'S, / you can return / a bad DAY. / Then they SELL it / to somebody ELSE.
 - L02: That part's in / the fine PRINT.
 - L03: And somebody / has bought / every ONE of mine.
+- L03b: Me and my DAD / barely TALK anymore.
 - L04: You bring your RECEIPT / before MIDNIGHT.
 - L05: Mr. Tulley takes it, / and the day / comes off YOU,
 - L06: like a COAT.
@@ -197,7 +199,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L15: In the back room / they sit on a SHELF / in little gray BOXES.
 - L16: And somebody / can BUY them. / Four dollars EACH.
 - L17: Whoever buys a DAY / gets to REMEMBER it.
-- L18: The whole THING. / The way it HAPPENED. / Mr. Tulley says / a day nobody remembers / goes SOUR / on the shelf.
+- L18: The whole THING. / Mr. Tulley says / a day nobody remembers / goes SOUR / on the shelf.
 - L19: I've returned / forty-seven DAYS.
 - L20: Every bad one / in two YEARS.
 - L21: My car breaking DOWN. / The day I got / laid OFF.
@@ -215,13 +217,13 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L33: Thousands / of little gray BOXES. / Every one, / somebody's bad DAY.
 - L34: You can hear them / if you get CLOSE.
 - L35: A birthday PARTY / in one. / Rain / in ANOTHER.
-- L36: Mine were / on the bottom SHELF. / Every ONE of them.
-- L37: Forty-seven BOXES. / One HOLD slip.
+- L36: Mine were / on the bottom SHELF. / Forty-six EMPTY spots.
+- L37: And one last BOX. / With a HOLD slip.
 - L38: Then the front bell / RANG.
 - L39: Somebody / was coming in / after CLOSING.
 - L40: I hid / behind the SHELF / and held my BREATH.
-- L41: Slow FOOTSTEPS, / straight to my BOXES.
-- L42: A hand / took the newest ONE.
+- L41: Slow FOOTSTEPS, / straight to my BOX.
+- L42: A hand / took the last ONE.
 - L43: Then he WHISTLED, / the way / only one guy I know / whistles.
 - (music drop, 0.6 s)
 - L44: It was my DAD.
@@ -248,7 +250,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L65: I drove him HOME,
 - L66: and we talked / till two in the MORNING.
 - L67: It's the first one / he didn't have to BUY.
-- L68: And tomorrow / is a GOOD day. / Nothing's WRONG.
+- L68: And tomorrow / is a GOOD day.
 - L69: I'm calling him / ANYWAY.
 - L70: When we walk / past Tulley's NOW,
 - L71: Dad still taps / the WINDOW / and reads me / the fine PRINT.
@@ -257,8 +259,17 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt and nobody is in danger. "Laid off" is the worst thing that happens, and the car breakdown is a hood up and some steam.
-- Dad is named "my DAD" at L44 in the same shot as his face. The twist is said in words (L44, L51 to L54) and shown on his lit face, never read off his jacket or his silhouette. The whistle is a sound cue, then the face.
+- Dad is first named "my DAD" at L03b over his empty kitchen and silent wall phone (no face, no silhouette), and named again at L44 in the same shot as his face. The twist is said in words (L44, L51 to L54) and shown on his lit face, never read off his jacket or his silhouette. The whistle is a sound cue, then the face.
 - Mr. Tulley is an ordinary old shopkeeper. He's never a creature and never sinister on screen: polite, a little knowing.
 - R6 hands can't grip: boxes rest on flat palms, coins sit on the shelf, the phone is shown on its cradle or held in a cut-in, Dad's window tap is a cut-in with no knuckles shown.
 - No real words on any set piece: receipts, stickers, the door sign and the stamp are numerals and glyphs.
 - Title, description, pin and captions checked against hard rule 8.
+
+## Changes (review r1)
+Critic must-fixes A to C. Line ids kept; one line added. Re-voice: **L03b (new), L18, L36, L37, L41, L42, L68.** No other line's words changed.
+
+- **A, the count.** 47 boxes can't still be on my shelf when all 47 are sold and Dad's kitchen holds them. Now Dad has taken 46 already and tonight's is the last one, on hold. L36 "Every ONE of them." is now "Forty-six EMPTY spots." L37 "Forty-seven BOXES. / One HOLD slip." is now "And one last BOX. / With a HOLD slip." L41 "my BOXES" is now "my BOX." L42 "the newest ONE" is now "the last ONE." The meter's 47, the receipts (L19 to L28), L57's forty-seven calls and Dad's 46 kitchen boxes (S57a) stay as they were and now add up: 46 at home plus tonight's makes 47. Notes changed to match: Why it clicks, First real scare, plant 2, S36, S37, S41b, S42, S45a, S50a, S52, S57a, S60.
+- **B, the stake by 0:20.** New line **L03b** "Me and my DAD / barely TALK anymore." right after L03, at about 6.5 s. New shots **S03c, S03d** (named so they don't clash with L03's S03a and S03b): Dad's empty kitchen and silent wall phone, then my phone face down. Dad's face isn't shown, so L44 "It was my DAD." still lands, now as "the buyer is the man I barely talk to." The premise, loved-one, cast and builder notes say this. L59 ("I thought we'd just stopped TALKING.") now pays L03b off.
+- **Length.** L03b adds 7 words. To make up for it, L18 loses "The way it HAPPENED." and L68 loses "Nothing's WRONG." The net change is +3 words (558 words, 72 lines), about +0.8 s.
+- **C, package.json.** Took out `hold` and set `cover_s` to 65.0. S45a isn't marked as the cover frame any more. Builder: after re-voicing, check which shot lands at 65.0 s.
+- **Builder must redo:** add the L03b shots (S03c, S03d), rebuild S36 (empty spots), S37 (the last box at the end of the row), S41b, S42a (the shelf left empty), S45a, S50a, S52a/b and S60 (empty shelf, Dad holding the last box out), and re-time everything after L03 and L18 to the new voice.
