@@ -1,6 +1,6 @@
 # ep94-today-again: handoff (2026-11-04)
 
-**Update:** the second orchestrator granted one framing-only rescue round. Critic r3 **approves** (`reviews/r3-critic.md`): faces 7 (up from 5), average 7.1, lowest 5 (lore). Standards r2 approves. The hold is removed, check finds no problems and the gate is OPEN. Next: the PR, the proof, then proof qa. One non-blocking note for the proof: at 36.6 to 37.4 s, Mom's hair is cut at the right edge.
+**Update:** the second orchestrator granted one framing-only rescue round. Critic r3 **approves** (`reviews/r3-critic.md`): faces 7 (up from 5), average 7.1, lowest 5 (lore). Standards r2 approves. The hold is removed, check finds no problems and the gate is OPEN. PR #269. Proof run 41867133086 is clean. Proof qa first failed on the cover only; cover_s is now 37.4, and qa passes. Next: merge on `test` green. One non-blocking note for the proof: at 36.6 to 37.4 s, Mom's hair is cut at the right edge.
 
 ## History (dropped after round 2, then rescued)
 
