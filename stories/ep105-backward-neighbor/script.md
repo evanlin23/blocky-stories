@@ -1,12 +1,12 @@
 # ep105-backward-neighbor: the script (writer, 2026-11-04, batch 10)
 
 - **Slug:** `ep105-backward-neighbor` (batch 10, upload order 5 of 7)
-- **Pitch:** P12 in the batch 10 pitches (blind panel 27/40), engine 3, the reversed life. Opening shape `confess`. Lane: experiment (an eerie, bittersweet life-span story told in two minutes). Length arm: long (120 to 150 s).
+- **Pitch:** P12 in the batch 10 pitches (blind panel 27/40), engine 3, the reversed life. Opening shape `count` (recast from `confess` in standards r1, batch 10 at 5 stories). Lane: experiment (an eerie, bittersweet life-span story told in two minutes). Length arm: long (120 to 150 s).
 - **Title:** He Said Goodbye The Day We MET 📦
-- **Changed from the pitch (the hook pass):** the panel said "eerie, have to think a sec". Line 1 now says the rule first and plainly: "My neighbor VERN / lives BACKWARD." Then the eerie picture: he said goodbye the day we met. The pitch's key-in-the-lock ending is dropped (it was a bootstrap object, ep93's shape). The new last turn is symmetric and needs no object: on his first day, I'm the one who knows everything, and I'm the one who says goodbye and cries. The neighbor is Vern and my wife Nora (Walt is in ep23, June in ep95 and ep96).
+- **Changed from the pitch (the hook pass):** the panel said "eerie, have to think a sec". Line 1 now says the rule first and plainly: "My neighbor VERN / counts our days BACKWARD." (standards r1: was "lives BACKWARD", a `confess` opening; now `count`, the calendar tag at 10,950 is the count that's wrong). Then the eerie picture: he said goodbye the day we met. The pitch's key-in-the-lock ending is dropped (it was a bootstrap object, ep93's shape). The new last turn is symmetric and needs no object: on his first day, I'm the one who knows everything, and I'm the one who says goodbye and cries. The neighbor is Vern and my wife Nora (Walt is in ep23, June in ep95 and ep96).
 - **Everyone is an adult.** I'm 26 at the start and 56 at the end. Vern looks about 85 at the start and about 26 at the end (he gets younger as I get older). My wife Nora is an adult, met at L19 to L20.
-- **Word count:** 556 spoken words in 62 lines (L01 to L62), all `narrator`, plus one 0.6 s music drop before L44.
-- **Estimated length:** about 124.1 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 148 s, cut L24 and L52 first.
+- **Word count:** 558 spoken words in 62 lines (L01 to L62), all `narrator`, plus one 0.6 s music drop before L44.
+- **Estimated length:** about 124.5 s at 290 wpm (L01 now 0.4 s longer; shot times after S01 shift by about 0.4 s) with 0.15 s gaps, the drop and the loop tail. If it runs over 148 s, cut L24 and L52 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright suburban: two small houses side by side on a sunny cul-de-sac, a white picket fence between our yards, Vern's porch with a flip calendar on a nail. Thirty years pass in seasons: summer, autumn leaves, snow, spring blossom, all bright. The one dim beat is Vern's emptying living room at dusk (L35 to L43).
 - **Hold:** scripts only (batch 10). Not built, not voiced.
 
@@ -15,7 +15,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 
 | Setting | Creature | First-line type | Ending shape | Kind of warmth |
 |---|---|---|---|---|
-| two houses side by side on a cul-de-sac over thirty years | none: a neighbor who lives backward | `confess` | `swapped-ends` | a lifelong friendship with a neighbor |
+| two houses side by side on a cul-de-sac over thirty years | none: a neighbor who lives backward | `count` | `swapped-ends` | a lifelong friendship with a neighbor |
 
 ## The big idea
 **My neighbor Vern lives his days in reverse, so the day I moved in was his last day on our street, and the thirty years of friendship he thanked me for, crying, are thirty years I'm only about to have. On his first day, thirty years later, I'm the one who knows everything, and I'm the one who says goodbye.**
@@ -28,7 +28,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 
 ## The story
 - **Premise:** The day I moved into my first house, my neighbor Vern, about 85, hugged me on my lawn, cried, and thanked me for thirty years. Vern lives backward. Every year I know him he's a year younger, he never remembers yesterday, only tomorrow, and he's a little happier around me while our days together run out. His porch calendar counts down from 10,950.
-- **Rule / hook (L01, about 3.0 s):** "My neighbor VERN / lives BACKWARD. / He said goodbye / the day we MET."
+- **Rule / hook (L01, about 3.4 s):** "My neighbor VERN / counts our days BACKWARD. / He said goodbye / the day we MET."
 - **The relatable want or fight:** a friend you know you'll lose, and spending the time anyway.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream flip-calendar tag in the top-left counting Vern's days down: 10,950 in the hook, dropping by years through the montage (9,125, 5,475, 1,825), 7 at L41, 1 at L43 and 0 at L60.
 - **The 3 to 5 example montage (L05 to L15, 10 to 28 s):** his mailbox flag up before the mail (L08), his wave before I open the door (L09), his calendar flipping backward (L10 to L12), his boxes going out to a truck at night and back inside unpacked in the morning (L13 to L15).
@@ -57,10 +57,10 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 The narrator's neighbor Vern lives his days in reverse, so the day they met was Vern's last day on the street, which is why old Vern cried and thanked him for thirty years of friendship he hadn't had yet. Thirty years later a young Vern moves in for what is his first day, and now the narrator is the one who knows everything, cries and says goodbye.
 
 ## The opening recipe (playbook v1), point by point
-1. Line 1 is first person, already in it (`confess`): the rule, then the eerie picture. 12 words, about 3.0 s.
+1. Line 1 is a count that's wrong (`count`): my neighbor counts our days backward from 10,950 (the tag in shot), then the eerie picture. 14 words, about 3.4 s.
 2. Frame 1 is a close-up of Vern's old face (85, white hair, tears on his cheeks) hugging me on my new lawn, the calendar tag at 10,950. No wide.
 3. A sound hit on "MET": a soft low chime and a swell.
-4. "BACKWARD" lands at about 1.2 s: the rule is in the first breath.
+4. "BACKWARD" lands at about 1.5 s: the rule is in the first breath.
 5. L02 to L12 show the rule at work, one to three shots per line, none over 2 s.
 6. The title is the eerie picture, never the reveal.
 7. Seconds 15 to 30 show his backward days in pictures (boxes, the fence), and nobody explains them.
@@ -171,7 +171,7 @@ One plant, a plain tally: two maple-orange strokes scratched into the arm of Ver
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: My neighbor VERN / lives BACKWARD. / He said goodbye / the day we MET.
+- L01: My neighbor VERN / counts our days BACKWARD. / He said goodbye / the day we MET.
 - L02: He hugged me / on my new LAWN, / in front of the MOVERS, / and CRIED.
 - L03: He said, / thank you / for thirty YEARS.
 - L04: I'd known him / for a MINUTE. / I didn't even know / his last NAME.
@@ -235,7 +235,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L61: Tomorrow / his house / will be EMPTY. / Today was / our last day TOGETHER. / I'll still be here, / with NORA.
 - L62: So THAT'S / why he cried.
 
-(Loop: L62 runs straight into L01: "So that's why he cried. My neighbor Vern lives backward. He said goodbye the day we met." On the loop, my first day reads as Vern's last day with me. Nobody dies: he just moves on to the day before we met.)
+(Loop: L62 runs straight into L01: "So that's why he cried. My neighbor Vern counts our days backward. He said goodbye the day we met." On the loop, my first day reads as Vern's last day with me. Nobody dies: he just moves on to the day before we met.)
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt and nobody is in danger. Vern is never ill: he's an old man at the start and a young man at the end. "Zero" is never his end, only the day before he came (L45, L56), said as moving in.

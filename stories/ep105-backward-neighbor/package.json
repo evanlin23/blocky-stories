@@ -5,7 +5,7 @@
   "made_for_kids": false,
   "cover_s": 95.5,
   "shape": "swapped-ends",
-  "opening": "confess",
+  "opening": "count",
   "lane": "experiment",
   "hold": "batch 10: scripts only, not built yet"
 }
