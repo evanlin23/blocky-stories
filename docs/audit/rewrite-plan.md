@@ -138,6 +138,16 @@ week of buffer. Steps are ordered by value over effort.
 
 ## 6. Open questions for the owner
 
+**Answered 2026-11-04** (owner: "Go with your recommendations on all six"; RULES.md, "The audit decisions"):
+1. One queue owner, the first orchestrator. The second account is build capacity.
+2. The bar changes weekly, between batches, by PR. A story is judged on the bar in force when its script merged, and the owner's own feedback takes effect at once.
+3. Yes: two rounds and one single-fix rescue, enforced in code.
+4. Yes: creature-light by default.
+5. Yes: one digest a day, plus direct pings only for what needs the owner.
+6. Delete the dropped story folders and keep the research.
+
+The questions as asked:
+
 1. **One orchestrator or two?** Two gives a second usage pool, but costs the polling lag, the owner emails and the
    ownership splits (root cause 5). The plan works either way if one of them owns the queue alone.
 2. **When may the bar change?** Proposed: once a week, between batches, by PR; a finished story is judged on the bar
