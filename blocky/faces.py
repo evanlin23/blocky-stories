@@ -28,7 +28,8 @@ FY0, FY1 = int(TEX_H * 0.08), int(TEX_H * 0.92)
 
 EXPRESSIONS = ("neutral", "worried", "scared", "crying", "angry", "smirk", "blank", "wide", "shut", "grin",
                "terrified", "squeeze", "soft", "asleep", "fish", "laugh", "smile", "hopeful", "polite", "delighted",
-               "sad-smile")
+               "sad-smile", "warm")
+# warm: eyes open and a touch narrowed, brows level and relaxed, a wide closed smile with no teeth. Opt-in.
 # hopeful: opt-in (ep46): raised inner brows over a small smile.
 # fish: opt-in (ep20): lips pushed out into a small pursed pout, cheeks sucked in (two slanted hollows beside the
 # mouth), eyes open and a little wide. It never opens the mouth: the pout is the joke.
@@ -167,6 +168,8 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
             x = cx - ww / 2 + k * ww / 10
             d.line([(x, cy - w * 0.18), (x, cy + w * 0.26)], fill=ink, width=max(4, th // 3))
         d.line([(cx - ww / 2, cy + w * 0.04), (cx + ww / 2, cy + w * 0.04)], fill=ink, width=max(4, th // 3))
+    elif expr == "warm":   # a wide closed smile, no teeth
+        _stroke(d, _curve(cx, cy - 0.012 * s, w * 1.0, 0.05 * s), ink, th)
     elif expr == "smile":   # eyes open, brows level, a plain smile (ep32; opt-in)
         _stroke(d, _curve(cx, cy - 0.012 * s, w * 0.95, 0.05 * s), ink, th)
     elif expr == "hopeful":   # opt-in (ep46): a small smile under raised inner brows
@@ -239,6 +242,8 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
             ry = rx * (1.0 - 0.85 * blink)
             if eyes == "tired" or expr == "angry":
                 ry *= 0.78
+            if expr == "warm":
+                ry *= 0.86
             if eyes == "negative":
                 _ellipse(d, cx, ey, rx, max(2, ry), fill=(5, 6, 7))   # no ring: black eyes, pinprick pupils
                 pr = rx * 0.13
@@ -304,8 +309,8 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
         if brows and eyes not in ("hollow", "none"):
             tilt = {"worried": 0.9, "crying": 1.0, "scared": 0.7, "angry": -0.9, "wide": 0.4, "smirk": -0.25,
                     "grin": -0.4, "terrified": 1.0, "hopeful": 0.55, "sad-smile": 0.75,
-                    "delighted": 0.3}.get(expr, 0.0)
-            by = ey - 0.175 * s - (0.05 * s if expr == "terrified" else 0.03 * s if expr in ("scared", "wide", "delighted", "sad-smile") else 0)
+                    "delighted": 0.3, "warm": 0.08}.get(expr, 0.0)
+            by = ey - 0.175 * s - (0.05 * s if expr == "terrified" else 0.03 * s if expr in ("scared", "wide", "delighted", "sad-smile", "warm") else 0)
             _brow(d, cx, by, 0.16 * s, tilt, inkc, bth, side)
     if expr == "crying" and not shut:
         tear = (120, 190, 255)
