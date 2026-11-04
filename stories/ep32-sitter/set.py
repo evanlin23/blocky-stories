@@ -1646,6 +1646,15 @@ def animate(kit, story, tl, t, ctx):
                 c_.hide_render = True
     ov = bool(spec.get("noceil"))
     ctx["easels"][7].rotation_euler = (0, 0, 0.0 if spec.get("turn8") else math.radians(ctx["TH"][7] + 90))
+    ctx["easels"][6].rotation_euler = (0, 0, math.radians(ctx["TH"][6] + 90))
+    for ch in ctx["easels"][6].children:
+        if ch.name.startswith("easel back leg"):     # swung away with the turn: it would pass through Petra
+            ch.hide_render = bool(spec.get("turn7"))
+    if spec.get("turn7"):    # Petra swings her panel round to face the camera (S35)
+        u = min(1.0, max(0.0, ((t - shot["start"]) / max(1e-6, shot["end"] - shot["start"]) - 0.1) / 0.6))
+        u = u * u * (3 - 2 * u)
+        a0, a1 = ctx["TH"][6] + 90, spec["turn7"]
+        ctx["easels"][6].rotation_euler = (0, 0, math.radians(a0 + (a1 - a0) * u))
     ctx["ceiling"].hide_render = ov
     ctx["roof"].hide_render = ov
     ctx["tally"].hide_render = not spec.get("tally")

@@ -219,7 +219,7 @@ shot("S14", "L13.3", "Kofi at the door with his keys, waving me out, the lamps r
      c([0, [-1.4, -2.0, 1.55], [-4.9, -2.85, 1.4], 24], [1, [-1.9, -2.2, 1.55], [-4.9, -2.85, 1.4], 24]))
 shot("S15", "L14", "the car park at dusk under the lamp post, me looking back", still([-4.2, -12.0, 1.5], [-1.2, -8.5, 1.55], 28))
 shot("S15b", "L14.2", "through the lit window, my panel on easel 8, Dario's painted eyes turned to the glass",
-     c([0, [0.9, -8.6, 1.45], [3.08, -0.4, 1.3], 56], [1, [1.2, -8.0, 1.45], [3.08, -0.4, 1.3], 62]), turn8=True, hide_cast=["petra", "bg5"])
+     c([0, [0.9, -8.6, 1.4], [3.08, -0.4, 1.3], 100], [1, [1.2, -8.0, 1.4], [3.08, -0.4, 1.3], 112]), turn8=True, hide_cast=["petra", "bg5"], hide_easels=[6, 7])
 # 03 Tuesday to Thursday: Mom's hall at night
 shot("S16", "L15", "Mom's hall at night, one wall lamp: pine Dario at the far end by the stairs, facing my door",
      c([0, [38.35, 3.4, 1.5], [40.5, 6.6, 1.2], 28], [1, [38.5, 3.6, 1.5], [40.5, 6.6, 1.2], 30]), hand=0.01)
@@ -247,9 +247,9 @@ shot("S23", "L22", "Mom's hall, warm evening: Mom at the table, Dario coming dow
 shot("S23b", "L22.3", "Dario in the third chair", c([0, [39.4, 0.2, 1.45], [40.25, 2.1, 1.5], 26], [1, [39.6, 0.5, 1.45], [40.2, 2.1, 1.55], 28]))
 shot("S24", "L23", "Mom calmly laying a third plate in front of Dario", c([0, [39.5, 0.2, 1.65], [39.5, 2.3, 1.35], 22], [1, [39.5, 0.4, 1.65], [39.5, 2.3, 1.35], 22]))
 shot("S24b", "L23.2", "me, stunned", face_cam(SEAT_ME, 90, -45, 1.8, 1.45, 30, 1.45, push=0.15))
-PICM, PICY = (39.55, 0.12), (39.55, -0.45)
+PICM, PICY = (39.55, 0.12), (39.55, -0.42)
 shot("S25", "L24", "THE PICTURE: Mom turns to camera, her fingertip on the ear patch, her face close and kind, her folded easel behind us",
-     c([0, [41.3, -0.1, 1.62], [39.55, -0.15, 1.58], 36], [1, [41.0, -0.1, 1.62], [39.55, -0.15, 1.58], 38]), hand=0.002)
+     c([0, [41.0, 1.05, 1.8], [39.6, -0.1, 1.6], 36], [1, [40.8, 0.9, 1.8], [39.6, -0.1, 1.6], 38]), hand=0.002)
 shot("S26", "L25", "the life room, a wide of the eight easels in afternoon light, nobody there",
      c([0, [-4.6, -3.6, 1.7], [1.5, 0.4, 1.3], 22], [1, [-4.2, -3.2, 1.7], [1.5, 0.4, 1.3], 22]))
 shot("S26b", "L25.2", "Kofi's glasses catching the lamp", face_cam((0.6, -1.8), 20, 55, 1.9, 1.6, 34, 1.55, push=0.2))
@@ -274,7 +274,7 @@ shot("S34", "L33", "Kofi behind us, arms folded, smiling", face_cam((4.5, 0.0), 
 shot("S34b", "L33.2", "two-shot, Mom and me at our easels", c([0, [1.9, -1.0, 2.3], [3.67, -0.25, 1.5], 30], [1, [2.1, -0.9, 2.3], [3.67, -0.25, 1.5], 30]))
 # 06 the new student
 shot("S35", "L34", "the life room, colder: Petra at easel 7 turning her panel to the wall, glancing around",
-     c([0, [1.6, -0.3, 2.3], [PETRA[0], PETRA[1], 1.5], 36], [1, [1.8, -0.5, 2.3], [PETRA[0], PETRA[1], 1.5], 36]))
+     c([0, [1.5, -0.4, 2.35], [PETRA[0] - 0.2, PETRA[1] + 0.1, 1.5], 50], [1, [1.7, -0.5, 2.35], [PETRA[0] - 0.2, PETRA[1] + 0.1, 1.5], 50]), turn7=225.5)
 shot("S36", "L35", "from behind easel 7, the panel's front: a face half painted, half bare pine and pencil", canvas_cam(7, 1.25, 1.3, 36, push=0.2),
      hand=0.002, hide_cast=["petra"])
 P7S = (round(PETRA[0] - 0.25 * T8[0] * 0, 3), PETRA[1])
@@ -319,7 +319,7 @@ SH = [(a, b, c_, widen(a, d), e) for a, b, c_, d, e in SH]
 shots = []
 for i, (sid, at, what, cam, fl) in enumerate(SH):
     s = {"id": sid, "cam": cam, "hand": fl.get("hand", 0.006), "step": 2, "what": what}
-    s.update({k: v for k, v in fl.items() if k in ("noceil", "hide_easels", "hide_cast", "fill", "ev", "turn8", "tally", "unp_gain", "noear")})
+    s.update({k: v for k, v in fl.items() if k in ("noceil", "hide_easels", "hide_cast", "fill", "ev", "turn8", "turn7", "tally", "unp_gain", "noear")})
     if i:
         s["at"] = at
     shots.append(s)
@@ -430,8 +430,8 @@ hide("mum", "L09")
 put("mum", "L22", (SEAT_MOM[0], SEAT_MOM[1], Z_CHAIR + 0.02), yaw=0, expr="soft", **SIT)
 key("mum", "L23.1", arms=[0, 60], expr="soft", blend=0.4)
 key("mum", "L23.2+0.9", arms=[24, 24], blend=0.5)
-put("mum", "L24", (PICY[0], PICY[1]), yaw=180, expr="soft", arms=[0, 122], head=[-50, 0], **STAND)
-key("mum", "L24.2", arms=[0, 122], expr="smile", blend=0.4)
+put("mum", "L24", (PICY[0], PICY[1], 0.22), yaw=185, expr="soft", arms=[100, 0], head=[-50, 0], **STAND)
+key("mum", "L24.2", arms=[100, 0], expr="smile", blend=0.4)
 put("mum", "L26", (SEAT_MOM[0], SEAT_MOM[1], Z_CHAIR + 0.02), yaw=0, expr="worried", **SIT)
 key("mum", "L28", expr="soft", blend=0.4)
 key("mum", "L29", arms=[0, 50], expr="smile", blend=0.4)
