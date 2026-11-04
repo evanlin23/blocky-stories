@@ -7,5 +7,5 @@
  "shape": "held-in",
  "opening": "count",
  "lane": "core",
- "hold": "awaiting review (rework 2026-11-03, revival triage pick 3: new script, not yet built)"
+ "hold": "dropped 2026-11-03 again: the creature test still failed all three tries with the Opus critic at phone size (sad cartoon face; penguin blob, 3/10; sulky mascot, 4/10). The upside-down-grin plant needs a drawn mouth, which reads cartoonish in this engine. See HANDOFF.md."
 }
