@@ -22,6 +22,8 @@ D2R = math.pi / 180.0
 W = {}
 PX, PY = G.POST
 STEP = G.STEP
+MASK_UP = 0.85
+MASK_TILT = -0.4
 BAR_Z = 1.40          # the crossbar's centre (the arms rest along it)
 
 
@@ -662,7 +664,10 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = wv2["on"] < 0.5
     mk_ = sample("mask", tl, t, {"on": 1.0})
     if W.get("mask"):
-        _hide(W["mask"], mk_["on"] < 0.5)
+        u_ = mk_["on"]          # 1: worn over the face; 0: pushed up on the hat brim (reading glasses show)
+        mk = W["mask"]
+        mk.location = (0.0, 0.14 * (1 - u_), MASK_UP * (1 - u_))
+        mk.rotation_euler = (MASK_TILT * (1 - u_), 0.0, 0.0)
     tg = sample("tagbig", tl, t, {"k": 0.0})
     lens = 40.0
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
@@ -725,16 +730,22 @@ def first_frame(kit, story):
     sk = kit.plastic("#d8b878", 0.9, spec=0.05)
     ink = kit.plastic("#2a2218", 0.8)
     W["mask"] = []
-    if gp is not None:
-        mk = kit.empty("grandpa.mask", (0, 0, 0), gp)
-        W["mask"] = mk
-        kit.box("grandpa.mask.sack", (1.3, 0.06, 1.28), (0, -0.70, -0.02), sk, mk, bevel=0.05)
+
+    def make_mask(who):
+        hh = bpy.data.objects.get(f"{who}.headg")
+        if hh is None:
+            return None
+        mk = kit.empty(f"{who}.mask", (0, 0, 0), hh)
+        kit.box(f"{who}.mask.sack", (1.3, 0.06, 1.28), (0, -0.70, -0.02), sk, mk, bevel=0.05)
         for sx in (-1, 1):
-            kit.box(f"grandpa.mask.eye{sx}", (0.2, 0.03, 0.2), (sx * 0.29, -0.745, 0.12), ink, mk)
-            kit.box(f"grandpa.mask.brow{sx}", (0.3, 0.03, 0.05), (sx * 0.29, -0.745, 0.33), ink, mk)
-        kit.box("grandpa.mask.mouth", (0.56, 0.03, 0.06), (0, -0.745, -0.32), ink, mk)
+            kit.box(f"{who}.mask.eye{sx}", (0.2, 0.03, 0.2), (sx * 0.29, -0.745, 0.12), ink, mk)
+            kit.box(f"{who}.mask.brow{sx}", (0.3, 0.03, 0.05), (sx * 0.29, -0.745, 0.33), ink, mk)
+        kit.box(f"{who}.mask.mouth", (0.56, 0.03, 0.06), (0, -0.745, -0.32), ink, mk)
         for k in range(5):
-            kit.box(f"grandpa.mask.st{k}", (0.05, 0.03, 0.2), (-0.28 + k * 0.14, -0.745, -0.32), ink, mk)
+            kit.box(f"{who}.mask.st{k}", (0.05, 0.03, 0.2), (-0.28 + k * 0.14, -0.745, -0.32), ink, mk)
+        return mk
+    W["mask"] = make_mask("grandpa")
+    make_mask("straw")           # the straw one wears the same stitched sack face, always
     # straw at Grandpa's collar and cuffs, a sack glove on each hand; the straw one the same
     straw = kit.plastic("#f0c850", 0.9, spec=0.05)
     sack = kit.plastic("#d8b878", 0.9, spec=0.05)

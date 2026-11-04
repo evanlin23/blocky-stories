@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 lines = json.loads((HERE / "lines.json").read_text())
 # the 0.4 s music drop before L12
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L12")
@@ -130,10 +130,12 @@ cue(0, "tagbig", k=0.0)
 cue(0, "crossword", on=0.0)
 cue(0, "crowfly", u=0.0)
 cue(0, "mask", on=1.0)
-cue("L12", "mask", on=0.0)
+cue("L12", "mask", on=0.0, dur=0.3)     # pushed up onto the hat brim, glasses showing
 cue("L16", "mask", on=1.0)
 
 # Grandpa on the post for the whole film: arms along the crossbar
+last["grandpa"] = [PX, PY, STEP]
+acting["grandpa"] = []                   # no hidden key at 0: the first drawing already holds him on the post
 put("grandpa", 0, [PX, PY, STEP], 0, arms=[0, 0], side=[86, 156], expr="blank", blink=True)
 
 # ===== 01 the rule and the first wave (L01 to L02)
@@ -265,8 +267,8 @@ cue("L19", "sit", who="straw", on=True)
 shot("L19", mv([LX - 1.7, LY + 3.4, 1.4], [LX, LY, 0.95], 24, [LX - 1.4, LY + 3.0, 1.4], [LX, LY, 0.95], 24), "couchback")
 shot("L19.2", mv([LX - 2.7, LY + 2.6, 1.25], [LX - 0.4, LY, 1.2], 34, [LX - 2.3, LY + 2.3, 1.25], [LX - 0.4, LY, 1.2], 34), "grandmasmile")
 beat("grandma", "L20", arms=[62, 0], expr="warm", blend=0.4)
-shot("L20", mv([LX + 0.2, LY + 2.2, 1.35], [LX, LY + 0.1, 0.55], 30, [LX + 0.1, LY + 1.8, 1.25], [LX, LY + 0.1, 0.55], 30), "remote")
-shot("L20.1", mv([LX + 0.7, LY + 1.9, 1.1], [LX - 0.05, LY + 0.25, 0.52], 28, [LX + 0.55, LY + 1.6, 1.05], [LX - 0.05, LY + 0.25, 0.52], 28), "remote2")
+shot("L20", mv([LX + 0.55, LY + 2.3, 1.3], [LX - 0.15, LY + 0.65, 0.85], 26, [LX + 0.4, LY + 2.0, 1.25], [LX - 0.15, LY + 0.65, 0.85], 26), "remote")      # her hand and the remote from the first drawing
+shot("L20.1", mv([LX + 0.9, LY + 1.9, 1.15], [LX - 0.15, LY + 0.65, 0.88], 30, [LX + 0.7, LY + 1.6, 1.1], [LX - 0.15, LY + 0.65, 0.88], 30), "remote2")
 # L21: sunset, the jeep passes, Grandpa waves at everybody
 cue("L21", "look", id="gold", dur=0)
 hide("grandma", "L21")
