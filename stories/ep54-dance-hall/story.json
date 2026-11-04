@@ -19,7 +19,8 @@
   "fog_start": 14.0,
   "sky": "#8fc6ea",
   "exposure": 0.0,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": true
  },
  "grade": {
   "shadows": [
