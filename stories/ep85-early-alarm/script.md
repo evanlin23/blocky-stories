@@ -2,7 +2,7 @@
 
 - **Slug:** `ep85-early-alarm` (batch 8, upload order 1 of 7)
 - **Pitch:** N19 in `docs/research/2026-11-09-week.md` (panel score 7). Opening shape `if`. Lane: core. Length arm: long (110 to 150 s).
-- **Title:** Don't Get Up Before The ALARM ⏰
+- **Title:** If It Rings EARLY, Stay In Bed ⏰
 - **Word count:** 577 spoken words in 77 lines, all `narrator`, plus one 0.6 s music drop before L38.
 - **Estimated length:** about 132 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L32 and L47 first. If it lands under 110 s, nothing is added (the long arm's floor is a guide, not a pad).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright and saturated: a peach-and-lavender suburban dawn, marigold sun light. The one dim stretch is L20 to L37 (the dark mornings), lit by porch lamps and a deep-blue sky that still reads on a phone. The sun's glow ramps up over 1.5 s at L44 and never flickers.
@@ -126,7 +126,7 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S07 | L07 | 10.2 | Wide-ish street, four dark windows in a row. |
 | S08 | L08 | 11.6 | Our kitchen window, the only one lit. |
 | S09 | L09 | 12.2 | Dad at the kitchen table, `cheerful`, mug in front of him. |
-| S10 | L10 | 13.8 | Me coming downstairs, `sleepy`, the clock inset at 7:00. |
+| S10 | L10 | 13.8 | Me coming downstairs, `sleepy`, the clock inset at 6:00. |
 | S11 | L11 | 16.2 | Close on Dad's red sunburned face. A frosty window behind him. |
 | S12 | L12 | 17.0 | Top-down on the counter: thick work gloves, a faint warm shimmer over them. |
 | S13 | L13 | 18.8 | From my window: every yard white with frost, ours green with a round bare patch. |
@@ -211,7 +211,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L07: Nobody's lights / come on / before SIX.
 - L08: Except OURS.
 - L09: My dad, FRANK, / is up / before EVERYONE.
-- L10: I come down at SEVEN, / and he's already / at the TABLE,
+- L10: I come down at SIX, / and he's already / at the TABLE,
 - L11: SUNBURNED. / In NOVEMBER.
 - L12: His work gloves / on the counter, / still WARM.
 - L13: Our backyard / is the only one on the street / that never gets FROST.
