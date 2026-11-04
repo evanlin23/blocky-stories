@@ -47,7 +47,7 @@ def remap(x):
     return x
 
 
-REV = 8
+REV = 9
 
 
 def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="solid", pattern_c=None, hat="none", hat_c="#333333",
@@ -288,7 +288,7 @@ st("june", "L31", expr="smile", arms=[0, 0], head=[0, 0])
 shot("S31", "L31", "closed", "closed", "moon", C("closed", (-9.0, 24.8, 1.0), (-9.0, 27.2, 0.72), (-9.0, 24.5, 0.95), (-9.0, 27.2, 0.75)))
 shot("S32", "L32", "closed", "closed", "moon", C("closed", (-8.2, 25.2, 0.95), (-10.6, 29.8, 1.4), (-8.6, 25.6, 0.95), (-10.6, 29.8, 1.5)))
 hide("june", "L33")
-shot("S33", "L33", "face", "face", "moonhi", [[0, G.W("face", -6.2, 11.3, 1.2), G.W("face", -6.2, 14.0, 1.4), 34],
+shot("S33", "L33", "face", "face", "moonhi", [[0, G.W("face", -6.2, 6.0, 8.0), G.W("face", -6.2, 12.0, 0.0), 34],
                                            [0.5, G.W("face", -5.6, 9.5, 22.0), G.W("face", -5.6, 9.8, 0.0), 34],
                                            [1, G.W("face", 0.0, -13.8, 70.0), G.W("face", 0.0, -13.5, 0.0), 34]])
 shot("S34", "L34", "face", "face", "moonhi", [[0, G.W("face", 0.0, -13.8, 140.0), G.W("face", 0.0, -13.5, 0.0), 34],
