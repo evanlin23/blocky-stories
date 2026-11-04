@@ -47,7 +47,8 @@ LOOKS = {
     "dusk": _L(sun=1.8, sun_col="#ffb070", el=9.0, az=-70.0, fill=0.9, fill_col="#ffd2b0", sky="#f0a878", sky_str=0.8,
                front=0.9),
     "bluedusk": _L(sun=0.7, sun_col="#ff9a78", el=7.0, az=-70.0, fill=1.5, fill_col="#7e96e0", sky="#5668b0", sky_str=0.8,
-                   front=0.25, room=0.55),
+                   front=0.9, room=0.85),
+    "dayroom": _L(fill=1.5, room=7.0),
     "morning": _L(sun=3.0, sun_col="#ffe2b8", el=24.0, az=-60.0, fill=1.0, fill_col="#ffeedd", sky="#a8dcff", front=0.3),
 }
 
@@ -517,7 +518,7 @@ def build(kit, story, tl):
     vis("bbq", gr)
 
     # ------------------------------------------------------------------ Vern's living room (far east)
-    wallp = kit.grime("#d9a878", 0.8, 2.0, "wallpaper", 0.9)
+    wallp = kit.grime("#d8b48c", 0.8, 2.0, "wallpaper", 0.9)
     kit.plane("rfloor", (12, 9), (rx, ry, 0.03), kit.planks("#c9976a", "#b78456", 1.0))
     kit.box("rback", (12, 0.3, 3.4), (rx, ry + 3.5, 1.7), wallp)
     for sx in (-1, 1):
@@ -527,7 +528,7 @@ def build(kit, story, tl):
     kit.box("rfr", (3.5, 0.3, 3.4), (rx + 4.25, ry - 3.5, 1.7), wallp)
     kit.box("rfb", (5.0, 0.3, 0.9), (rx, ry - 3.5, 0.45), wallp)
     kit.box("rft", (5.0, 0.3, 0.8), (rx, ry - 3.5, 3.0), wallp)
-    kit.box("rglass", (5.0, 0.03, 1.7), (rx, ry - 3.4, 1.75), kit.glass("#e8f4ff"))
+    vis("rglass", kit.box("rglass", (5.0, 0.03, 1.7), (rx, ry - 3.4, 1.75), kit.glass("#e8f4ff")))
     for sx in (-1, 0, 1):
         kit.box(f"rwf{sx}", (0.1, 0.1, 1.8), (rx + sx * 2.5, ry - 3.4, 1.75), pl("#fffdf4", 0.6))
     kit.box("rwfh", (5.2, 0.1, 0.1), (rx, ry - 3.4, 2.6), pl("#fffdf4", 0.6))
@@ -689,11 +690,20 @@ def _first_frame(kit, story):
             vis(f"carry_{who}", box)
     me_ = bpy.data.objects.get("me")
     if me_ is not None:
-        tb = kit.empty("me.tbrush", (0.1, -0.9, 3.7), me_)
-        kit.box("me.tb.handle", (1.5, 0.14, 0.16), (0.85, 0, -0.25), pl("#fafafa", 0.5), tb, rot=(0, -0.3, 0))
-        kit.box("me.tb.head", (0.45, 0.16, 0.2), (0.0, 0, 0.0), pl("#4f7ae0", 0.5), tb)
+        tb = kit.empty("me.tbrush", (0.15, -1.15, 4.35), me_)
+        kit.box("me.tb.handle", (1.6, 0.16, 0.18), (0.95, 0, -0.3), pl("#fafafa", 0.5), tb, rot=(0, -0.3, 0))
+        kit.box("me.tb.head", (0.6, 0.2, 0.26), (0.0, 0, 0.0), pl("#4f7ae0", 0.5), tb)
         kit.box("me.tb.bris", (0.4, 0.1, 0.1), (-0.05, -0.1, 0.0), pl("#fafafa", 0.7), tb)
         vis("tb_me", tb)
+    g1 = bpy.data.objects.get("me3.gl1")
+    if g1 is not None:        # me at 56: plain clear lenses with red rims, so they never read as sunglasses
+        hgp = g1.parent
+        rim = pl("#d8452f", 0.4)
+        for sx in (-1, 1):
+            bpy.data.objects[f"me3.gl{sx}"].hide_render = True
+            kit.box(f"me3.rimb{sx}", (0.46, 0.04, 0.05), (sx * 0.24, -0.67, -0.19), rim, hgp)
+            for ex in (-1, 1):
+                kit.box(f"me3.rims{sx}{ex}", (0.05, 0.04, 0.32), (sx * 0.24 + ex * 0.21, -0.67, -0.02), rim, hgp)
     nr = bpy.data.objects.get("nora2")
     if nr is not None:
         cm = kit.empty("nora2.cam", (0, -1.6, 3.7), nr)
@@ -801,11 +811,16 @@ def animate(kit, story, tl, t, ctx):
     for nm, obs in W["vis"].items():
         if nm.startswith("lit_"):
             continue
-        on = state.get(nm, nm in ("cal", "chairs"))
+        on = state.get(nm, nm in ("cal", "chairs", "rglass"))
         for ob in obs:
             _hide(ob, not on)
     show_number(W["tslots"], W["tcomma"], round(ct["n"]))
     show_number(W["wslots"], W["wcomma"], round(ct["n"]))
+    if not state.get("cal", True):          # the porch card is off: its digits must go too (show_number just lit them)
+        for dsl in W["wslots"]:
+            for ob in dsl.values():
+                ob.hide_render = True
+        W["wcomma"].hide_render = True
     # the wind chime and the rocking chairs
     W["chime"].rotation_euler = (0.12 * math.sin(t * 2.3), 0.1 * math.sin(t * 1.7 + 1), 0)
     rocks = {}

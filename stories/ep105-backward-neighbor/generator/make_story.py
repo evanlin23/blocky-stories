@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -92,9 +92,9 @@ def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="sol
 VS = "#e8bd98"       # Vern's skin, the same at every age
 CARD = "#8a5a3c"     # Vern's brown cardigan
 cast = {
-    "me": person("#e6b48a", "#4fc060", "#3a4a6a", "#f4f4f2", hair="cap", hair_c="#1c1410", brow_w=1.9),
-    "me2": person("#e6b48a", "#4fc060", "#3a4a6a", "#f4f4f2", hair="cap", hair_c="#8a8a92", brow_w=1.9),
-    "me3": person("#e6b48a", "#6a9a8a", "#4a4a5a", "#6a5a4a", hair="cap", hair_c="#74747e", pattern="knit",
+    "me": person("#f0c4a0", "#4fc060", "#3a4a6a", "#f4f4f2", hair="cap", hair_c="#1c1410", brow_w=1.9),
+    "me2": person("#f0c4a0", "#4fc060", "#3a4a6a", "#f4f4f2", hair="cap", hair_c="#8a8a92", brow_w=1.9),
+    "me3": person("#f0c4a0", "#6a9a8a", "#4a4a5a", "#6a5a4a", hair="cap", hair_c="#74747e", pattern="knit",
                   pattern_c="#587a6c", extras=["glasses"], extra_c="#d8452f", glasses_c="#d8452f", brow_w=1.9),
     "vern0": person(VS, CARD, "#6b5a48", "#4a3626", hair="cap", hair_c="#f6f6f6", pattern="knit", pattern_c="#6e4630",
                     extras=["glasses"], extra_c="#3a3a3e", brow_w=1.6),
@@ -588,6 +588,9 @@ count("L39", 30)
 shot("L39", C(RX + 0.1, RY + 3.3, 1.85, 6.2, 40, ang=0), "lastframe")
 shot("L39.1", C(RX + 0.15, RY + 3.3, 1.95, 2.7, 40, ang=0, push=0.08), "youngears")
 shot("L40", C(RX + 0.3, RY + 3.3, 1.97, 2.4, 40, ang=0, push=0.08), "oldman")
+look("L40.1", "dayroom", 0.4)
+show("L40.1", "rglass", False)
+show("L41", "rglass")
 only("L40.1", ["me3"])
 put("me3", "L40.1", [RX + 0.6, RY - 4.5], 180, expr="scared")
 shot("L40.1", mv([RX + 0.2, RY - 2.0, 1.6], [RX + 0.6, RY - 4.5, 1.5], 50, [RX + 0.3, RY - 2.4, 1.6], [RX + 0.6, RY - 4.5, 1.5], 50), "scaredwin")
@@ -625,10 +628,10 @@ look("L44", "morning")
 count("L44", 1)
 cue("L44", "truck", y=-8.0, vis=1.0)
 cue("L44", "truckdoor", a=0.0)
-cue("L44", "truck", y=0.0, vis=1.0, dur=2.4)
+cue("L44", "truck", y=0.0, vis=1.0, dur=1.4)
 shot("L44", mv([DX - 7.5, -11.0, 1.5], [DX, -4.0, 1.4], 32, [DX - 6.5, -10.0, 1.5], [DX, -2.5, 1.4], 32), "backing")
 cue("L44.2", "truckdoor", a=110.0, dur=0.8)
-shot("L44.2", C(DX, 4.8, 1.3, 7.0, 34, ang=-40), "dooropen")
+shot("L44.2", C(DX, 3.0, 1.6, 14.0, 28, ang=-55), "dooropen")
 # L45: a young guy jumps down with a box
 only("L45", ["vern4"])
 put("vern4", "L45", [DX - 1.6, -1.0, 0.6], 20, expr="grin")
