@@ -31,10 +31,11 @@ runs:
     run: |
       S=${{ inputs.story }}
       python -m blocky timeline $S
-      WANT=$(python -c "import json;print(json.load(open('out/work/$S/timeline.json'))['frames'])")
+      # the final draws each shot on its own step (twos, ones), so the drawings are fewer than the film's frames (moving-day: 2398 of 2635); finish fills the gaps
+      WANT=$(python -c "import json;from blocky import timeline;print(len(timeline.frame_list(json.load(open('out/work/$S/timeline.json')), None)))")
       HAVE=$(ls out/work/$S/frames/*.png 2>/dev/null | wc -l)
       if [ "$HAVE" != "$WANT" ]; then
-        echo "::error::$S has $HAVE of $WANT frames: a draw shard is missing. No film is made (finish would copy the frame before into each gap and the film would stutter); the next plan draws it again."
+        echo "::error::$S has $HAVE of $WANT drawings: a draw shard is missing. No film is made (finish would copy the frame before into each missing drawing and the film would stutter); the next plan draws it again."
         exit 1
       fi
   - name: finish and mix (with the narration the picture was drawn to)
