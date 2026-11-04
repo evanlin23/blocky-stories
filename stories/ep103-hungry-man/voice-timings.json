@@ -6,14 +6,14 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "every friday, you have to leave the hungry man a plate. forget, and he knocks.",
+   "text": "every friday, you have to leave the supper man a plate. forget, and he knocks.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.345,
+   "dur": 3.31,
    "onset": 0.172,
-   "end": 3.155,
+   "end": 3.121,
    "chunks": [
     [
      0.172,
@@ -25,19 +25,19 @@
     ],
     [
      1.026,
-     1.509
+     1.492
     ],
     [
-     1.509,
-     1.948
+     1.492,
+     1.931
     ],
     [
-     2.043,
-     2.491
+     2.026,
+     2.457
     ],
     [
-     2.491,
-     3.155
+     2.457,
+     3.121
     ]
    ]
   },
@@ -162,14 +162,14 @@
    ]
   },
   "L07": {
-   "text": "mister brisco can't cook, so he leaves a sandwich with the crusts cut off.",
+   "text": "mister brisco can't cook, so he leaves cereal with the milk on the side.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.259,
+   "dur": 3.172,
    "onset": 0.172,
-   "end": 3.069,
+   "end": 2.966,
    "chunks": [
     [
      0.172,
@@ -181,19 +181,19 @@
     ],
     [
      1.293,
-     1.612
+     1.466
     ],
     [
-     1.612,
-     2.06
+     1.466,
+     1.957
     ],
     [
-     2.06,
-     2.448
+     1.957,
+     2.268
     ],
     [
-     2.448,
-     3.069
+     2.268,
+     2.966
     ]
    ]
   },
@@ -370,46 +370,46 @@
    ]
   },
   "L14": {
-   "text": "and the hungry man has never knocked on his door. not once.",
+   "text": "and the supper man has never knocked on his door. not once.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.828,
+   "dur": 2.81,
    "onset": 0.172,
-   "end": 2.621,
+   "end": 2.603,
    "chunks": [
     [
      0.172,
-     0.293
+     0.302
     ],
     [
-     0.293,
+     0.302,
      0.732
     ],
     [
      0.732,
-     1.233
+     1.25
     ],
     [
-     1.233,
-     1.81
+     1.25,
+     1.793
     ],
     [
-     1.906,
-     2.621
+     1.888,
+     2.603
     ]
    ]
   },
   "L15": {
-   "text": "grandpa says he doesn't believe in the hungry man. he says it's nonsense.",
+   "text": "grandpa says he doesn't believe in the supper man. he says it's nonsense.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.414,
+   "dur": 3.397,
    "onset": 0.172,
-   "end": 3.207,
+   "end": 3.19,
    "chunks": [
     [
      0.172,
@@ -421,19 +421,19 @@
     ],
     [
      1.233,
-     1.345
+     1.353
     ],
     [
-     1.345,
-     1.983
+     1.353,
+     1.966
     ],
     [
-     2.069,
-     2.328
+     2.052,
+     2.31
     ],
     [
-     2.328,
-     3.207
+     2.31,
+     3.19
     ]
    ]
   },
@@ -582,14 +582,14 @@
    ]
   },
   "L22": {
-   "text": "mom told me the hungry man showed up that same winter. she said it with a straight face.",
+   "text": "mom told me the supper man showed up that same winter. she said it with a straight face.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.741,
+   "dur": 3.724,
    "onset": 0.172,
-   "end": 3.552,
+   "end": 3.534,
    "chunks": [
     [
      0.172,
@@ -597,59 +597,59 @@
     ],
     [
      0.578,
-     1.112
+     1.129
     ],
     [
-     1.112,
-     1.397
+     1.129,
+     1.379
     ],
     [
-     1.397,
-     2.207
+     1.379,
+     2.19
     ],
     [
-     2.301,
-     2.629
+     2.284,
+     2.612
     ],
     [
-     2.629,
-     2.759
+     2.612,
+     2.741
     ],
     [
-     2.759,
-     3.552
+     2.741,
+     3.534
     ]
    ]
   },
   "L23": {
-   "text": "i'm twenty-three. i think it's a silly rule for a silly story.",
+   "text": "i'm too old for a silly story. i think it's a silly rule",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.845,
+   "dur": 2.741,
    "onset": 0.155,
-   "end": 2.638,
+   "end": 2.569,
    "chunks": [
     [
      0.155,
-     0.793
+     0.586
     ],
     [
-     0.888,
-     1.199
+     0.586,
+     0.707
     ],
     [
-     1.199,
-     1.741
+     0.707,
+     1.293
     ],
     [
-     1.741,
-     1.862
+     1.388,
+     1.698
     ],
     [
-     1.862,
-     2.638
+     1.698,
+     2.569
     ]
    ]
   },
@@ -1082,22 +1082,22 @@
    ]
   },
   "L42": {
-   "text": "there is no hungry man.",
+   "text": "there is no supper man.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.534,
+   "dur": 1.552,
    "onset": 0.172,
-   "end": 1.328,
+   "end": 1.345,
    "chunks": [
     [
      0.172,
-     0.56
+     0.595
     ],
     [
-     0.56,
-     1.328
+     0.595,
+     1.345
     ]
    ]
   },
@@ -1545,10 +1545,10 @@
    "chunks": [
     [
      0.172,
-     0.37
+     0.431
     ],
     [
-     0.37,
+     0.431,
      0.983
     ],
     [

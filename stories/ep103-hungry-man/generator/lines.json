@@ -8,8 +8,8 @@
     "every friday, you have to leave"
    ],
    [
-    "the Hungry Man a PLATE.",
-    "the hungry man a plate."
+    "the Supper Man a PLATE.",
+    "the supper man a plate."
    ],
    [
     "Forget, and he KNOCKS.",
@@ -112,12 +112,12 @@
     "can't cook,"
    ],
    [
-    "so he leaves a sandwich",
-    "so he leaves a sandwich"
+    "so he leaves cereal",
+    "so he leaves cereal"
    ],
    [
-    "with the crusts cut OFF.",
-    "with the crusts cut off."
+    "with the milk on the SIDE.",
+    "with the milk on the side."
    ]
   ]
  },
@@ -238,8 +238,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "And the Hungry Man",
-    "and the hungry man"
+    "And the Supper Man",
+    "and the supper man"
    ],
    [
     "has never knocked",
@@ -268,8 +268,8 @@
     "he doesn't believe"
    ],
    [
-    "in the Hungry MAN.",
-    "in the hungry man."
+    "in the Supper MAN.",
+    "in the supper man."
    ],
    [
     "He says it's NONSENSE.",
@@ -378,8 +378,8 @@
     "mom told me"
    ],
    [
-    "the Hungry Man",
-    "the hungry man"
+    "the Supper Man",
+    "the supper man"
    ],
    [
     "showed up",
@@ -404,8 +404,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I'm twenty-THREE.",
-    "i'm twenty-three."
+    "I'm too OLD",
+    "i'm too old"
+   ],
+   [
+    "for a silly STORY.",
+    "for a silly story."
    ],
    [
     "I think it's",
@@ -414,10 +418,6 @@
    [
     "a silly RULE",
     "a silly rule"
-   ],
-   [
-    "for a silly STORY.",
-    "for a silly story."
    ]
   ]
  },
@@ -718,8 +718,8 @@
     "there is no"
    ],
    [
-    "Hungry MAN.",
-    "hungry man."
+    "Supper MAN.",
+    "supper man."
    ]
   ]
  },
@@ -1012,12 +1012,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "He ate",
-    "he ate"
-   ],
-   [
-    "the whole THING.",
-    "the whole thing."
+    "He ate the whole THING.",
+    "he ate the whole thing."
    ],
    [
     "Then he washed the plate",

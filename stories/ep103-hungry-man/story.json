@@ -1,9 +1,9 @@
 {
  "slug": "ep103-hungry-man",
- "title": "Feed The Hungry Man, Or He KNOCKS 🍽️",
+ "title": "Feed The Supper Man, Or He KNOCKS 🍽️",
  "made_for_kids": false,
- "premise": "On a street of 43 pastel porches, every Friday at six each house leaves a plate out for the Hungry Man, who knocks all night at any door that forgets; one porch never leaves one, and last Friday, with Mom at work, I skipped ours.",
- "twist": "There is no Hungry Man: my mom made him up the first winter without Grandma so the street could feed Grandpa, who refused all help, and the tall man in the long coat who collects the plates and knocks to check on us is Grandpa himself.",
+ "premise": "On a street of 43 pastel porches, every Friday at six each house leaves a plate out for the Supper Man, who knocks all night at any door that forgets; one porch never leaves one, and last Friday, with Mom at work, I skipped ours.",
+ "twist": "There is no Supper Man: my mom made him up the first winter without Grandma so the street could feed Grandpa, who refused all help, and the tall man in the long coat who collects the plates and knocks to check on us is Grandpa himself.",
  "world": "A long street of small pastel houses with porches and warm porch lights at golden hour and at night, our cream house with a blue door across from Grandpa's gray-green one, and two small kitchens.",
  "voice": {
   "voice": "am_adam",
@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 2,
+ "rev": 3,
  "look": {
   "style": "closer",
   "fog": "#e8d8c8",
@@ -250,8 +250,8 @@
      "have to leave"
     ],
     [
-     "the Hungry Man",
-     "the hungry man"
+     "the Supper Man",
+     "the supper man"
     ],
     [
      "a PLATE.",
@@ -370,20 +370,20 @@
      "can't cook,"
     ],
     [
-     "so he leaves",
-     "so he leaves"
+     "so he",
+     "so he"
     ],
     [
-     "a sandwich",
-     "a sandwich"
+     "leaves cereal",
+     "leaves cereal"
     ],
     [
-     "with the crusts",
-     "with the crusts"
+     "with the milk",
+     "with the milk"
     ],
     [
-     "cut OFF.",
-     "cut off."
+     "on the SIDE.",
+     "on the side."
     ]
    ]
   },
@@ -532,8 +532,8 @@
      "and the"
     ],
     [
-     "Hungry Man",
-     "hungry man"
+     "Supper Man",
+     "supper man"
     ],
     [
      "has never knocked",
@@ -566,8 +566,8 @@
      "in the"
     ],
     [
-     "Hungry MAN.",
-     "hungry man."
+     "Supper MAN.",
+     "supper man."
     ],
     [
      "He says",
@@ -696,8 +696,8 @@
      "mom told me"
     ],
     [
-     "the Hungry Man",
-     "the hungry man"
+     "the Supper Man",
+     "the supper man"
     ],
     [
      "showed up",
@@ -726,16 +726,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'm twenty-THREE.",
-     "i'm twenty-three."
-    ],
-    [
-     "I think it's",
-     "i think it's"
-    ],
-    [
-     "a silly RULE",
-     "a silly rule"
+     "I'm too OLD",
+     "i'm too old"
     ],
     [
      "for a",
@@ -744,6 +736,14 @@
     [
      "silly STORY.",
      "silly story."
+    ],
+    [
+     "I think it's",
+     "i think it's"
+    ],
+    [
+     "a silly RULE",
+     "a silly rule"
     ]
    ]
   },
@@ -1086,8 +1086,8 @@
      "there is no"
     ],
     [
-     "Hungry MAN.",
-     "hungry man."
+     "Supper MAN.",
+     "supper man."
     ]
    ]
   },
@@ -1420,12 +1420,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He ate",
-     "he ate"
+     "He ate the",
+     "he ate the"
     ],
     [
-     "the whole THING.",
-     "the whole thing."
+     "whole THING.",
+     "whole thing."
     ],
     [
      "Then he washed",
@@ -1629,30 +1629,30 @@
     [
      0,
      [
-      -0.8,
-      5.3,
-      1.25
+      0.3,
+      6.3,
+      1.0
      ],
      [
       1.3,
-      8.2,
-      1.1
+      7.95,
+      0.3
      ],
-     14.334573589751457
+     14.487794648310915
     ],
     [
      1,
      [
-      -0.5900000000000001,
-      5.59,
-      1.235
+      0.33999999999999997,
+      6.366,
+      0.972
      ],
      [
       1.3,
-      8.2,
-      1.1
+      7.95,
+      0.3
      ],
-     14.334573589751457
+     14.487794648310915
     ]
    ],
    "step": 2
@@ -3545,7 +3545,7 @@
     ]
    ],
    "step": 2,
-   "at": "L23.2"
+   "at": "L23.3"
   },
   {
    "id": "S56",
@@ -4393,30 +4393,30 @@
     [
      0,
      [
-      3.0,
-      13.8,
-      1.7
+      -1.5,
+      9.7,
+      1.6
      ],
      [
-      0.9,
-      11.2,
-      1.3
+      1.0,
+      11.8,
+      1.45
      ],
-     12.0
+     16.34204699540422
     ],
     [
      1,
      [
-      2.748,
-      13.488000000000001,
-      1.652
+      -1.25,
+      9.91,
+      1.585
      ],
      [
-      0.9,
-      11.2,
-      1.3
+      1.0,
+      11.8,
+      1.45
      ],
-     12.0
+     16.34204699540422
     ]
    ],
    "step": 2,
@@ -4428,30 +4428,30 @@
     [
      0,
      [
-      1.5,
-      11.0,
-      1.25
+      -1.0,
+      9.7,
+      1.6
      ],
      [
-      0.4,
-      9.2,
-      1.15
+      0.5,
+      10.8,
+      1.5
      ],
-     17.333333333333332
+     11.765012216966632
     ],
     [
      1,
      [
-      1.3679999999999999,
-      10.784,
-      1.238
+      -0.88,
+      9.788,
+      1.592
      ],
      [
-      0.4,
-      9.2,
-      1.15
+      0.5,
+      10.8,
+      1.5
      ],
-     17.333333333333332
+     11.765012216966632
     ]
    ],
    "step": 2,
@@ -5268,28 +5268,28 @@
     [
      0,
      [
-      299.4,
-      1.6,
-      1.4
+      299.8,
+      1.9,
+      1.35
      ],
      [
-      300.6,
-      -0.4,
-      1.2
+      300.8,
+      0.0,
+      1.1
      ],
      14.666666666666666
     ],
     [
      1,
      [
-      299.544,
-      1.36,
-      1.376
+      299.92,
+      1.672,
+      1.32
      ],
      [
-      300.6,
-      -0.4,
-      1.2
+      300.8,
+      0.0,
+      1.1
      ],
      14.666666666666666
     ]
@@ -5417,7 +5417,7 @@
       2.4,
       1.4
      ],
-     14.527560015364148
+     18.159450019205185
     ],
     [
      1,
@@ -5431,7 +5431,7 @@
       2.4,
       1.4
      ],
-     14.527560015364148
+     18.159450019205185
     ]
    ],
    "step": 2,
@@ -6030,7 +6030,7 @@
     ]
    ],
    "step": 2,
-   "at": "L61.1"
+   "at": "L61.2"
   },
   {
    "id": "S127",
@@ -6633,30 +6633,30 @@
     [
      0,
      [
-      -5.8,
-      5.2,
+      -9.0,
+      4.2,
       1.6
      ],
      [
-      -9.1,
+      -9.0,
       8.3,
       1.7
      ],
-     15.095989165632338
+     13.670731102939921
     ],
     [
      1,
      [
-      -6.13,
-      5.51,
+      -9.0,
+      4.61,
       1.61
      ],
      [
-      -9.1,
+      -9.0,
       8.3,
       1.7
      ],
-     15.095989165632338
+     13.670731102939921
     ]
    ],
    "step": 2,
@@ -6719,15 +6719,15 @@
     "at": 0,
     "pos": [
      1.3,
-     8.55,
+     8.75,
      0.3
     ],
     "blend": 0.0,
     "hidden": false,
-    "lean": 20,
+    "lean": 30,
     "arms": [
      0,
-     78
+     100
     ],
     "head": [
      0,
@@ -6744,7 +6744,7 @@
     "at": "L01.2",
     "pos": [
      1.3,
-     8.55,
+     8.75,
      0.3
     ],
     "lean": 8,
@@ -6757,7 +6757,7 @@
     "at": "L02",
     "pos": [
      1.3,
-     8.55,
+     8.75,
      0.3
     ]
    },
@@ -6948,7 +6948,7 @@
     "expr": "smirk"
    },
    {
-    "at": "L23.2",
+    "at": "L23.3",
     "pos": [
      1.6,
      13.3,
@@ -6956,7 +6956,7 @@
     ]
    },
    {
-    "at": "L23.2",
+    "at": "L23.3",
     "pos": [
      199.0,
      2.0
@@ -7428,14 +7428,14 @@
     "hidden": true
    },
    {
-    "at": "L61.1",
+    "at": "L61.2",
     "pos": [
      200.8,
      2.3
     ]
    },
    {
-    "at": "L61.1",
+    "at": "L61.2",
     "pos": [
      202.4,
      1.6
@@ -7691,7 +7691,7 @@
    {
     "at": "L71",
     "pos": [
-     -8.4,
+     -8.1,
      8.2,
      0.3
     ],
@@ -9096,7 +9096,7 @@
      0,
      0
     ],
-    "yaw": 130,
+    "yaw": 75,
     "expr": "worried"
    },
    {
@@ -10260,6 +10260,11 @@
   },
   {
    "at": 0,
+   "name": "cereal",
+   "v": 0.0
+  },
+  {
+   "at": 0,
    "name": "shade",
    "v": 0.0
   },
@@ -10439,12 +10444,12 @@
    "v": 1.0
   },
   {
-   "at": "L23.2",
+   "at": "L23.3",
    "name": "chips",
    "v": 0.0
   },
   {
-   "at": "L23.2",
+   "at": "L23.3",
    "name": "sit",
    "who": "me",
    "on": false,
@@ -10670,6 +10675,16 @@
    "z": 0.62
   },
   {
+   "at": "L48.2",
+   "name": "cereal",
+   "v": 1.0
+  },
+  {
+   "at": "L49",
+   "name": "cereal",
+   "v": 0.0
+  },
+  {
    "at": "L49",
    "name": "look",
    "id": "morning",
@@ -10687,6 +10702,26 @@
    "name": "look",
    "id": "night",
    "dur": 0
+  },
+  {
+   "at": "L51",
+   "name": "rim",
+   "v": 0.0,
+   "x": 303.0,
+   "y": 1.4,
+   "z": 2.3
+  },
+  {
+   "at": "L51",
+   "name": "rim",
+   "v": 0.45,
+   "dur": 0.4
+  },
+  {
+   "at": "L51.3",
+   "name": "rim",
+   "v": 0.0,
+   "dur": 0.4
   },
   {
    "at": "L52.1",
@@ -11045,7 +11080,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 2
+  "rev": 3
  },
  "set_moves": [
   "S83",

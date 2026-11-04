@@ -124,12 +124,19 @@ def make_plate_objs(kit, name, x, y, z, food=None):
             p1.append(kit.cyl(f"{name}.leg{sx}", 0.04, 0.25, (x + sx * 0.18, y - 0.08, z + 0.13), kit.plastic("#a95f20", 0.5),
                               rot=(0, sx * 1.1, 0), n=8))
             p1.append(kit.sphere(f"{name}.knob{sx}", 0.06, (x + sx * 0.3, y - 0.08, z + 0.09), kit.plastic("#f6ecd8", 0.6), seg=8))
-    elif food == "sandwich":
-        p1.append(kit.box(f"{name}.food", (0.2, 0.2, 0.04), (x, y, z + 0.06), kit.plastic("#f0d8a0", 0.6), bevel=0.015))
-        p1.append(kit.box(f"{name}.food2", (0.2, 0.2, 0.025), (x, y, z + 0.095), kit.plastic("#7bbf5a", 0.6), bevel=0.01))
-        p1.append(kit.box(f"{name}.food3", (0.2, 0.2, 0.04), (x, y, z + 0.13), kit.plastic("#f0d8a0", 0.6), bevel=0.015))
-        p1.append(kit.cyl(f"{name}.pick", 0.008, 0.16, (x, y, z + 0.2), kit.plastic("#8a5a3a", 0.8), n=6))
-        p1.append(kit.sphere(f"{name}.pickb", 0.025, (x, y, z + 0.29), kit.plastic("#d9413b", 0.5), seg=6))
+    elif food == "cereal":
+        bowl = kit.cyl(f"{name}.food", 0.15, 0.09, (x - 0.08, y, z + 0.07), kit.plastic("#7fb8e8", 0.5, spec=0.3), n=16)
+        p1.append(bowl)
+        p1.append(kit.cyl(f"{name}.food2", 0.125, 0.02, (x - 0.08, y, z + 0.12), kit.plastic("#e0a850", 0.7), n=16))
+        for i in range(7):
+            ang = i * 0.9
+            p1.append(kit.sphere(f"{name}.o{i}", 0.032, (x - 0.08 + 0.07 * math.cos(ang) * (0.4 + (i % 3) * 0.3),
+                                                          y + 0.07 * math.sin(ang) * (0.4 + (i % 3) * 0.3), z + 0.135),
+                                 kit.plastic("#f0c070", 0.6), seg=6))
+        p1.append(kit.box(f"{name}.jug", (0.1, 0.08, 0.2), (x + 0.17, y, z + 0.15), kit.plastic("#fbfbff", 0.4, spec=0.4),
+                          bevel=0.015))
+        p1.append(kit.box(f"{name}.jugc", (0.06, 0.05, 0.05), (x + 0.17, y, z + 0.27), kit.plastic("#3a78d9", 0.4)))
+        p1.append(kit.box(f"{name}.jugs", (0.1, 0.082, 0.05), (x + 0.17, y, z + 0.14), kit.plastic("#4f90e0", 0.4), bevel=0.01))
     else:
         dome = kit.sphere(f"{name}.foil", 0.29, (x, y, z + 0.05), foil, seg=14)
         dome.scale = (1.0, 1.0, 0.5)
@@ -190,7 +197,7 @@ def house(kit, side, k):
     elif (side, k) == G.ABERN:
         food = "chicken"
     elif (side, k) == G.BRISCO:
-        food = "sandwich"
+        food = "cereal"
     if gp:
         px_ = x + 0.0
         py_ = side * 7.35
@@ -351,7 +358,8 @@ def build(kit, story, tl):
     bulb = kit.emit("#bfd4ff", 6.0, "slbulb")
     for i, xx in enumerate(range(-54, 55, 18)):
         streetlight(kit, xx + 4.5, -5.6, dark, bulb)
-        streetlight(kit, xx + 9, 5.6, dark, bulb)
+        if xx + 9 != -9:                      # (the pole at x = -9 would stand in front of the L71 two-shot)
+            streetlight(kit, xx + 9, 5.6, dark, bulb)
 
     W["plates"] = {}
     for side in (1, -1):
@@ -458,6 +466,15 @@ def build(kit, story, tl):
             kit.box(f"grm.tl{sx}{sy}", (0.1, 0.1, 0.75), (gx_ + 0.6 + sx * 0.7, gy_ + 0.4 + sy * 0.4, 0.38), wood)
     kit.cyl("grm.dish", 0.2, 0.03, (gx_ + 0.6, gy_ + 0.4, 0.86), plastic("#fff6e4", 0.5), n=14)
     kit.box("grm.cracker", (0.12, 0.12, 0.02), (gx_ + 0.6, gy_ + 0.4, 0.89), plastic("#e8c88a", 0.7))
+    cer = kit.empty("grm.cereal", (0, 0, 0))
+    kit.cyl("grm.cb", 0.17, 0.1, (gx_ + 1.0, gy_ + 0.5, 0.88), plastic("#7fb8e8", 0.5), cer, n=16)
+    kit.cyl("grm.cm", 0.14, 0.02, (gx_ + 1.0, gy_ + 0.5, 0.94), plastic("#fbfbff", 0.4), cer, n=16)
+    jug = kit.empty("grm.jugpour", (gx_ + 1.0, gy_ + 0.5, 1.28), cer)
+    jug.rotation_euler = (0.9, 0, 0)
+    kit.box("grm.jb", (0.12, 0.1, 0.24), (0, 0, 0), plastic("#fbfbff", 0.4), jug, bevel=0.015)
+    kit.box("grm.jc", (0.07, 0.06, 0.05), (0, 0, 0.14), plastic("#3a78d9", 0.4), jug)
+    kit.box("grm.stream", (0.03, 0.03, 0.34), (gx_ + 1.0, gy_ + 0.5, 1.1), plastic("#fbfbff", 0.4), cer)
+    W["cereal"] = cer
     kit.box("grm.chair", (0.55, 0.55, 0.08), (gx_ + 0.6, gy_ - 0.55, 0.5), wood)
     kit.box("grm.chairb", (0.55, 0.08, 0.6), (gx_ + 0.6, gy_ - 0.85, 0.85), wood)
     # the hook and the long coat
@@ -507,10 +524,12 @@ def build_tag(kit):
     b("rim", kit.cyl("tag.rim", 0.52, 0.004, (0, 0, 0.0), rim, root, n=40))
     b("ring", kit.cyl("tag.ring", 0.47, 0.004, (0, 0, 0.004), ring, root, n=40))
     b("plate", kit.cyl("tag.plate", 0.42, 0.004, (0, 0, 0.008), cream, root, n=40))
-    b("bar", kit.box("tag.bar", (0.62, 0.05, 0.004), (0, 0, 0.014), ink, root))
+    # a small plate icon between the numbers (dark rim, cream well) so the tag reads as plates
+    b("ip", kit.cyl("tag.ip", 0.088, 0.004, (0, 0, 0.014), ink, root, n=20))
+    b("ipc", kit.cyl("tag.ipc", 0.056, 0.004, (0, 0, 0.018), cream, root, n=20))
     segs = "abcdefg"
 
-    def digit(nm, cx, cy, w=0.24, h=0.34, t=0.07):
+    def digit(nm, cx, cy, w=0.21, h=0.29, t=0.08):
         out = {}
         xs0, xs1 = w / 2 - t / 2, -(w / 2 - t / 2)
         pos = {"a": (0, h / 2 - t / 2, w - t, t), "g": (0, 0, w - t, t), "d": (0, -h / 2 + t / 2, w - t, t),
@@ -519,15 +538,19 @@ def build_tag(kit):
         for s in segs:
             dx, dz, sw, sh = pos[s]
             out[s] = b(nm, kit.box(f"tag.{nm}{s}", (sw, sh, 0.004), (cx + dx, cy + dz, 0.016), ink, root))
+        # a "1" with a flag and a foot (stem centred) so it can't be read as an "i" or a bar
+        out["s"] = b(nm, kit.box(f"tag.{nm}s", (t * 1.15, h, 0.004), (cx + 0.01, cy, 0.016), ink, root))
+        out["l"] = b(nm, kit.box(f"tag.{nm}l", (0.1, t, 0.004), (cx - 0.05, cy + h / 2 - t * 1.2, 0.016), ink, root))
+        out["z"] = b(nm, kit.box(f"tag.{nm}z", (w, t * 0.9, 0.004), (cx, cy - h / 2 + t * 0.45, 0.016), ink, root))
         return out
 
-    W["d_t1"] = digit("t1", -0.15, 0.2)
-    W["d_t2"] = digit("t2", 0.15, 0.2)
-    W["d_b1"] = digit("b1", -0.15, -0.2)
-    W["d_b2"] = digit("b2", 0.15, -0.2)
+    W["d_t1"] = digit("t1", -0.125, 0.235)
+    W["d_t2"] = digit("t2", 0.125, 0.235)
+    W["d_b1"] = digit("b1", -0.125, -0.235)
+    W["d_b2"] = digit("b2", 0.125, -0.235)
 
 
-SEG = {"0": "abcdef", "1": "bc", "2": "abged", "3": "abgcd", "4": "fgbc", "5": "afgcd", "6": "afgedc", "7": "abc",
+SEG = {"0": "abcdef", "1": "slz", "2": "abged", "3": "abgcd", "4": "fgbc", "5": "afgcd", "6": "afgedc", "7": "abc",
        "8": "abcdefg", "9": "abcdfg"}
 
 
@@ -562,9 +585,11 @@ def _first_frame(kit, story):
         kit.box("dish.f", (1.5, 1.1, 0.12), (0, 0, 0.26), kit.metal("#dfe3e8", 0.28), dish)
         W["carry"][2] = dish
         sw = kit.empty("carry.sand", (0, -0.9, -1.6), ga)
-        kit.box("sw.b", (1.0, 0.9, 0.18), (0, 0, 0), kit.plastic("#f0d8a0", 0.6), sw, bevel=0.03)
-        kit.box("sw.c", (1.0, 0.92, 0.1), (0, 0, 0.12), kit.plastic("#6a3a1a", 0.7), sw)
-        kit.box("sw.d", (1.0, 0.9, 0.18), (0, 0, 0.24), kit.plastic("#f0d8a0", 0.6), sw, bevel=0.03)
+        toast = kit.plastic("#c47f32", 0.6)
+        kit.box("sw.b", (1.0, 0.9, 0.18), (0, 0, 0), toast, sw, bevel=0.05)
+        kit.box("sw.c", (1.1, 1.0, 0.14), (0, 0, 0.12), kit.plastic("#ffcf2a", 0.5), sw)
+        kit.box("sw.d", (1.0, 0.9, 0.18), (0, 0, 0.24), toast, sw, bevel=0.05)
+        kit.box("sw.e", (0.8, 0.7, 0.02), (0, 0, 0.34), kit.plastic("#e0a050", 0.6), sw)
         W["carry"][4] = sw
     me = bpy.data.objects.get("me.arm1")
     if me is not None:
@@ -672,6 +697,9 @@ def animate(kit, story, tl, t, ctx):
     mp = sample("meplate", tl, t, {"v": 0.0})
     if W.get("meplate") is not None:
         _hide(W["meplate"], mp["v"] < 0.5)
+    ce = sample("cereal", tl, t, {"v": 0.0})
+    if W.get("cereal") is not None:
+        _hide(W["cereal"], ce["v"] < 0.5)
     ch = sample("chips", tl, t, {"v": 0.0})
     if W.get("chips") is not None:
         _hide(W["chips"], ch["v"] < 0.5)

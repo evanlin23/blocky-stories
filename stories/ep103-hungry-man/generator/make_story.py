@@ -15,9 +15,10 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
+WHOLE = set()   # five words, kept as one caption (no 0.2 s stub)
 for ln in orig_lines:
     if "pause" in ln:
         lines.append(ln)
@@ -26,7 +27,7 @@ for ln in orig_lines:
     for cap, spoken in ln["chunks"]:
         cw, sw = cap.split(), spoken.split()
         n = len(cw)
-        k = 1 if n <= 3 else (2 if n <= 6 else 3)
+        k = 1 if (n <= 3 or cap in WHOLE) else (2 if n <= 6 else 3)
         sizes = [n // k + (1 if i < n % k else 0) for i in range(k)]
         mp.append(len(out))
         i = 0
@@ -158,9 +159,9 @@ def mv(p0, t0, l0, p1=None, t1=None, l1=None):
 HMAP = {"reveal": 1.25, "shoes": 1.5, "gpworried": 1.6, "glance": 1.6, "gpporchlight": 1.5, "soft": 1.5, "hedoes": 1.5,
         "meeyes": 1.2, "mestunned": 1.4, "fallsface": 1.1, "melaugh": 1.5, "mesmiles": 1.6, "gpstunned": 1.2,
         "lookplate": 1.5, "straight": 1.3, "nonsense": 1.6, "peek": 1.3, "brisconod": 1.3, "wink": 1.5, "mecoat": 1.5,
-        "blanket": 0.9, "revealwide": 3.2, "knocker": 2.4, "knocker2": 2.4, "knockerstill": 2.4, "knockdoor": 1.5, "hook": 3.0, "shadow": 3.6, "shadowsteps": 3.4, "faraway": 3.6, "twoshapes": 5.0,
+        "blanket": 0.9, "revealwide": 3.2, "knocker": 2.4, "knocker2": 2.4, "knockerstill": 2.4, "knockdoor": 1.5, "hook": 1.7, "shadow": 3.6, "shadowsteps": 3.4, "faraway": 3.6, "twoshapes": 5.0,
         "ferro": 2.4, "basketclose": 1.7, "loop": 3.0, "bothknock": 3.6, "sidebyside": 2.4, "crossing": 4.0, "setbare": 2.6,
-        "straighten": 2.6, "sink": 2.0, "phone": 2.0, "momwindow": 1.7, "slit": 1.7}
+        "straighten": 2.6, "sink": 1.6, "phone": 2.0, "momwindow": 1.7, "handlatch": 1.9, "slit": 1.7, "walkdoor": 2.4}
 
 
 def S(at, pos, tgt, lens=40, push=0.1, tgt2=None, name=None, drift=(0, 0, 0)):
@@ -191,15 +192,16 @@ cue(0, "clock", h=11.0, m=0.0)
 cue(0, "snow", v=0.0)
 cue(0, "knock", v=0.0)
 cue(0, "door_open", v=0.0)
+cue(0, "cereal", v=0.0)
 cue(0, "shade", v=0.0)
 cue(0, "rim", v=0.0)
 # L01: close on the hand setting the plate down
-put("me", 0, [1.3, 8.55, Z], 0, expr="neutral", lean=20, arms=[0, 78])
+put("me", 0, [1.3, 8.75, Z], 0, expr="neutral", lean=30, arms=[0, 100])
 beat("me", "L01.1", lean=8, arms=[0, 20])
 put("grandpa", 0, [6.0, 3.4], 90, expr="neutral")
 go("grandpa", "L01.2", [6.0, 3.4])
 go("grandpa", "L01>", [2.6, 3.4])
-S(0, [-0.8, 5.3, 1.25], [1.3, 8.2, 1.1], 40, 0.1, name="hook")
+S(0, [0.3, 6.3, 1.0], [1.3, 7.95, 0.3], 40, 0.04, name="hook")
 S("L01.1", [-0.2, 6.7, 1.75], [0.0, 9.0, 1.75], 52, 0.12, name="knockdoor")
 cue("L01.2", "shade", v=1.0, dur=0.4)
 cue("L02", "shade", v=0.0, dur=0.4)
@@ -239,11 +241,11 @@ beat("abern1", "L06.1", arms=[0, 0], expr="smile")
 beat("abern2", "L06.1", arms=[0, 0], expr="smile")
 S("L06.1", [19.3, 6.4, 0.95], [19.3, 7.85, 0.5], 44, 0.1, name="chicken")
 S("L06.2", [16.2, 4.2, 1.5], [18.1, 8.1, 1.4], 40, 0.12, name="abern2s")
-# L07: Mr. Brisco's sandwich
+# L07: Mr. Brisco's cereal, the milk on the side
 only("L07", ["brisco"])
 put("brisco", "L07", [-18.0, -8.0, Z], 180, expr="smile", lean=18, arms=[0, 50])
 S("L07", [-19.5, -4.6, 1.6], [-18.0, -8.0, 1.2], 38, 0.12, name="brisco")
-S("L07.2", [-16.7, -6.4, 0.9], [-16.7, -7.85, 0.45], 46, 0.1, name="sandwich")
+S("L07.2", [-16.7, -6.4, 0.9], [-16.7, -7.85, 0.45], 46, 0.1, name="cereal")
 beat("brisco", "L07.3", lean=0, arms=[0, 0], expr="grin", head=[0, -8])
 S("L07.3", [-19.3, -5.0, 1.75], [-18.0, -8.0, 1.65], 44, 0.12, name="brisconod")
 # L08: morning, every plate empty
@@ -470,9 +472,9 @@ only("L36", ["me", "grandpa"])
 sit("me", "L36", on=False)
 put("me", "L36", [1.6, 12.4, Z], 0, expr="scared")
 go("me", "L36>", [0.5, 10.1, Z])
-S("L36", [3.0, 13.8, 1.7], [0.9, 11.2, 1.3], 36, 0.12, name="walkdoor")
+S("L36", [-1.5, 9.7, 1.6], [1.0, 11.8, 1.45], 36, 0.1, name="walkdoor")
 beat("me", "L36.1", arms=[0, 60])
-S("L36.1", [1.5, 11.0, 1.25], [0.4, 9.2, 1.15], 52, 0.12, name="handlatch")
+S("L36.1", [-1.0, 9.7, 1.6], [0.5, 10.8, 1.5], 52, 0.08, name="handlatch")
 # L37: the door opens
 S("L37", [0.9, 10.5, 1.2], [0.45, 9.15, 1.15], 70, 0.1, name="latch")
 cue("L37.1", "door_open", v=1.0, dur=1.1)
@@ -509,7 +511,7 @@ S("L42.1", [0.4, 10.0, 1.7], [0.0, 7.7, 1.5], 52, 0.1, name="gpporchlight")
 look("L43", "snow")
 cue("L43", "snow", v=1.0)
 only("L43", ["mom"])
-put("mom", "L43", [kx - 2.5, ky + 2.0], 130, expr="worried", arms=[0, 150])
+put("mom", "L43", [kx - 2.5, ky + 2.0], 75, expr="worried", arms=[0, 150])
 S("L43", [kx + 0.7, ky + 0.9, 1.65], [kx - 2.4, ky + 2.1, 1.55], 38, 0.1, name="phone")
 put("mom", "L43.1", [17.6, -8.2, Z], 0, expr="polite", arms=[0, 120])
 S("L43.1", [16.5, -5.2, 1.6], [17.6, -8.2, 1.55], 40, 0.12, name="momknocks")
@@ -548,7 +550,9 @@ put("grandpa", "L48", [gx + 0.6, gy - 0.35], 180, expr="shut", arms=[40, 40])
 sit("grandpa", "L48")
 S("L48", [gx + 0.6, gy + 2.4, 1.4], [gx + 0.6, gy - 0.4, 1.2], 40, 0.12, name="eatslasagna")
 beat("grandpa", "L48.1", expr="soft", head=[18, 0])
-S("L48.1", [gx - 0.6, gy + 1.6, 1.4], [gx + 0.6, gy - 0.4, 1.2], 44, 0.12, name="eatssandwich")
+cue("L48.1", "cereal", v=1.0)
+cue("L49", "cereal", v=0.0)
+S("L48.1", [gx - 0.2, gy + 1.9, 1.35], [gx + 0.8, gy + 0.0, 1.1], 44, 0.12, name="eatssandwich")
 # L49: morning waves
 look("L49", "morning")
 sit("grandpa", "L49", on=False)
@@ -569,6 +573,9 @@ S("L50", [0.0, -2.6, 1.6], [0.0, -6.0, 1.5], 38, 0.14, name="passing")
 look("L51", "night")
 only("L51", ["grandpa"])
 put("grandpa", "L51", [gx + 1.4, gy + 2.3], 105, expr="soft", arms=[55, 55])
+cue("L51", "rim", v=0.0, x=gx + 3.0, y=gy + 1.4, z=2.3)
+cue("L51", "rim", v=0.45, dur=0.4)
+cue("L51.2", "rim", v=0.0, dur=0.4)
 S("L51", [gx + 3.6, gy + 1.4, 1.55], [gx + 1.4, gy + 2.4, 1.4], 38, 0.1, name="sink")
 S("L51.2", [gx + 2.0, gy + 1.8, 1.5], [gx + 2.0, gy + 3.0, 1.05], 50, 0.1, name="threeplates")
 S("L52", [gx - 2.4, gy + 2.0, 1.8], [gx - 2.4, gy + 3.4, 1.8], 52, 0.1, name="photo2")
@@ -623,11 +630,11 @@ S("L61", [kx + 2.4, ky - 2.4, 1.5], [kx + 2.4, ky - 0.2, 1.0], 44, 0.12, name="e
 only("L61.1", ["me", "grandpa"])
 put("me", "L61.1", [kx + 2.4, ky + 1.6], 0, expr="laugh")
 S("L61.1", [kx + 2.8, ky - 1.2, 1.7], [kx + 2.4, ky + 1.6, 1.6], 44, 0.12, name="melaugh")
-look("L61.4", "morning")
-plates("L61.4", street=1.0, ours=2.0, gp=0.0)
-only("L61.4", [])
-sit("grandpa", "L61.4", on=False)
-S("L61.4", [0.6, 5.4, 0.9], [1.3, 7.85, 0.4], 44, 0.1, name="ourdawn")
+look("L61.3", "morning")
+plates("L61.3", street=1.0, ours=2.0, gp=0.0)
+only("L61.3", [])
+sit("grandpa", "L61.3", on=False)
+S("L61.3", [0.6, 5.4, 0.9], [1.3, 7.85, 0.4], 44, 0.1, name="ourdawn")
 # L62
 look("L62", "gold")
 plates("L62", street=1.0, ours=1.0, gp=0.0)
@@ -692,8 +699,8 @@ S("L70.2", [0.2, 10.2, 1.7], [0.6, 7.5, 1.6], 50, 0.1, name="mecoat")
 look("L71", "gold")
 only("L71", ["grandpa", "mecoat"])
 put("grandpa", "L71", [-9.9, 8.2, Z], 150, expr="angry", arms=[0, 100])
-put("mecoat", "L71", [-8.4, 8.2, Z], 170, expr="angry", arms=[0, 100])
-S("L71", [-5.8, 5.2, 1.6], [-9.1, 8.3, 1.7], 38, 0.1, name="bothknock")
+put("mecoat", "L71", [-8.1, 8.2, Z], 170, expr="angry", arms=[0, 100])
+S("L71", [-9.0, 4.2, 1.6], [-9.0, 8.3, 1.7], 38, 0.1, name="bothknock")
 only("L71.1", ["me"])
 put("me", "L71.1", [1.3, 8.55, Z], 0, expr="neutral", lean=10, arms=[0, 30])
 beat("me", "L71.1+0.6", lean=20, arms=[0, 78])
@@ -746,12 +753,12 @@ polish = {"reveal": [remap("L38")], "emph": [remap(x) for x in ["L01.2", "L12.2"
           "hold": [names["revealwide"]]}
 story = {
     "slug": "ep103-hungry-man",
-    "title": "Feed The Hungry Man, Or He KNOCKS 🍽️",
+    "title": "Feed The Supper Man, Or He KNOCKS 🍽️",
     "made_for_kids": False,
-    "premise": ("On a street of 43 pastel porches, every Friday at six each house leaves a plate out for the Hungry Man, "
+    "premise": ("On a street of 43 pastel porches, every Friday at six each house leaves a plate out for the Supper Man, "
                 "who knocks all night at any door that forgets; one porch never leaves one, and last Friday, with "
                 "Mom at work, I skipped ours."),
-    "twist": ("There is no Hungry Man: my mom made him up the first winter without Grandma so the street could feed "
+    "twist": ("There is no Supper Man: my mom made him up the first winter without Grandma so the street could feed "
               "Grandpa, who refused all help, and the tall man in the long coat who collects the plates and knocks "
               "to check on us is Grandpa himself."),
     "world": ("A long street of small pastel houses with porches and warm porch lights at golden hour and at night, "
