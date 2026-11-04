@@ -244,7 +244,7 @@ for _r in (0, 1):
 write("blue", 0.05, "lilac", dur=2.6, to=1.0, size=1.3)
 write("blue", "L02", "lilac", dur=2.2, to=1.0)
 
-S(0, MV((-0.95, 1.98, 1.1), (-0.32, 1.42, 0.82), (-0.72, 1.74, 0.96), (-0.34, 1.43, 0.80), 27), hand=0.0, look={"cutwall": True},
+S(0, MV((-1.1, 2.15, 1.2), (-0.4, 1.5, 0.8), (-0.62, 1.8, 1.0), (-0.38, 1.5, 0.8), 26), hand=0.0, look={"cutwall": True},
   note="a real book: the open blue diary on the desk, cover rim, brass caps and clasp tab, the lamp, lilac ink crawling; push in")
 S("L02", MV((0.8, 2.0, 1.5), (-1.25, 1.5, 1.33), (0.5, 1.8, 1.45), (-1.25, 1.5, 1.33), 26),
   who={"me": sit_me("worried", head=[0, 6])}, look={"cutwall": True},
@@ -272,7 +272,7 @@ cue("L06", "drawer", to=1.0, dur=1.0)
 S("L06", MV((-3.2, 3.0, 1.45), (-3.2, 4.05, 0.66), (-3.2, 3.25, 1.2), (-3.2, 3.8, 0.66), 34),
   look={"cutwall": False},
   note="my drawer sliding open, the blue diary inside, dust on it; a framed bookshelf photo on the wall above")
-S("L06a", MV((3.42, 3.55, 0.98), (3.42, 4.12, 0.58), (3.42, 3.75, 0.8), (3.42, 4.12, 0.58), 36),
+S("L06a", MV((3.5, 3.6, 0.95), (3.5, 4.2, 0.6), (3.5, 3.8, 0.8), (3.5, 4.2, 0.6), 36),
   note="Neither of us: the lilac diary on Nina's shelf, dusty")
 S("L06a.1", MV((-3.2, 3.35, 1.1), (-3.2, 3.78, 0.66), (-3.2, 3.5, 0.95), (-3.2, 3.78, 0.66), 44),
   note="ever WROTE in them: the blue one in my drawer, dusty")
@@ -299,7 +299,7 @@ S("L09.2", MV((0.0, -1.0, 1.3), (0.0, -2.0, 0.95), (0.0, -1.2, 1.2), (0.0, -2.0,
   who={"me": (X(-0.5, -1.65), 0, "angry", {"arms": [80, 80]}), "nina": (X(0.5, -1.65), 0, "angry", {"arms": [80, 80]})},
   note="two hands reaching for the keys (cut before any grip)")
 cue("L09a", "ndoor", to=0, dur=0.01)
-S("L09a", MV((-1.2, 2.5, 1.35), (-0.4, 3.75, 0.95), (-1.0, 2.6, 1.3), (-0.4, 3.75, 0.95), 28),
+S("L09a", MV((1.1, 3.2, 1.15), (-0.6, 3.75, 0.85), (0.6, 3.4, 1.0), (-0.6, 3.75, 0.85), 28),
   who={"me": (X(-0.6, 3.75, 0.38), 90, "angry", {"sit": True, "arms": [10, 10]})},
   look={"cutwall": False},
   note="me on my bed, ear near the wall, annoyed, her keyboard tapping through it")
@@ -339,7 +339,7 @@ S("L16", MV((0.8, 1.5, 1.55), (-1.25, 1.5, 1.3), (0.5, 1.5, 1.5), (-1.25, 1.5, 1
   who={"me": sit_me("worried", head=[0, 8])}, look={"cutwall": True},
   note="me, guilty, hand on the cover")
 cue("L17", "pageturn")
-S("L17", MV((-0.905, 0.95, 1.1), (-0.365, 1.43, 0.79), (-0.75, 1.0, 1.05), (-0.365, 1.43, 0.79), 36),
+S("L17", MV((-0.9, 2.05, 1.2), (-0.365, 1.5, 0.79), (-0.72, 1.95, 1.05), (-0.365, 1.5, 0.79), 36),
   who={"me": sit_me("worried", head=[0, 18])},
   note="me turning the page anyway")
 cue("L18", "pen", d="blue", on=1)
@@ -383,7 +383,7 @@ S("L25", MV((-0.905, 2.2, 1.25), (-0.365, 1.43, 0.79), (-0.805, 2.05, 1.1), (-0.
   who={"me": sit_me("worried", head=[0, 14])},
   note="night after night: the diary opening on my desk, lamp-lit insert")
 write("blue", "L25.1", "lilac", dur=1.4, to=1.0)
-S("L25.1", MV((-0.605, 0.95, 1.05), (-0.365, 1.43, 0.79), (-0.505, 0.98, 0.95), (-0.365, 1.43, 0.79), 36), hand=0.0,
+S("L25.1", MV((-0.7, 2.0, 1.1), (-0.365, 1.5, 0.79), (-0.55, 1.95, 1.0), (-0.365, 1.5, 0.79), 36), hand=0.0,
   note="insert two")
 write("blue", "L25.2", "lilac", dur=1.0, to=1.0)
 S("L25.2", MV((0.7, 1.9, 1.2), (-1.2, 1.5, 1.2), (0.5, 1.8, 1.2), (-1.2, 1.5, 1.2), 30),
@@ -402,7 +402,7 @@ S("L27.1", MV((-0.685, 1.48, 0.95), (-0.365, 1.43, 0.79), (-0.525, 1.45, 0.88), 
   note="only FAMILY would know: the line")
 cue("L28", "mydoor", to=110, dur=0.5)
 place("blue", "L28", "nightstand")
-S("L28", MV((-2.6, 2.6, 1.3), (-2.05, 3.8, 0.9), (-2.45, 2.9, 1.25), (-2.05, 3.8, 0.9), 30),
+S("L28", MV((-2.25, 3.1, 1.8), (-2.05, 3.85, 0.95), (-2.15, 3.45, 1.5), (-2.05, 3.85, 0.95), 30),
   who={"me": (X(-2.05, 3.8, 0.83), -90, "squeeze", {"lean": -90, "blink": False}),
        "mom": (X(-1.5, -0.55), 180, "soft", {})},
   look={"cutwall": False},
@@ -495,14 +495,14 @@ S("L43", MV((3.8, 0.4, 1.8), (1.2, 1.9, 1.0), (3.6, 0.5, 1.75), (1.2, 1.9, 1.0),
 S("L44", MV((-0.8, 1.5, 1.5), (1.25, 1.5, 1.28), (-0.6, 1.5, 1.45), (1.25, 1.5, 1.3), 30),
   who={"nina": sit_ni("terrified", head=[0, 14])}, look={"cutwall": True},
   note="Nina close, terrified, writing. Cover frame")
-S("L45", MV((1.6, 1.3, 1.55), (0.7, 2.8, 1.1), (1.5, 1.55, 1.55), (0.7, 2.8, 1.1), 28),
+S("L45", MV((0.6, 1.3, 1.5), (0.6, 2.8, 0.8), (0.65, 1.6, 1.4), (0.6, 2.8, 0.8), 28),
   who={"nina": (X(0.95, 2.75), -75, "terrified", {"arms": [80, 80]})},
   note="her dresser shoved against our shared wall")
-S("L46", MV((1.05, 2.5, 1.55), (0.75, 1.55, 1.0), (0.95, 2.35, 1.45), (0.7, 1.55, 1.0), 30),
+S("L46", MV((2.1, 2.3, 1.7), (0.5, 1.5, 0.8), (1.85, 2.0, 1.55), (0.5, 1.5, 0.8), 30),
   who={"nina": (X(NI_D[0], NI_D[1], SEATZ), -75, "terrified", {"sit": True, "arms": [66, 66], "head": [0, 24]})},
   note="over her shoulder: her pen moving")
 write("lilac", "L47", "lilac", dur=1.3, to=1.0, tag="who")
-S("L47", MV((0.7, 1.57, 1.0), (0.365, 1.57, 0.79), (0.55, 1.57, 0.92), (0.365, 1.57, 0.79), 36), hand=0.0,
+S("L47", MV((0.7, 2.1, 1.2), (0.37, 1.57, 0.79), (0.5, 1.9, 1.0), (0.37, 1.57, 0.79), 36), hand=0.0,
   note="her lilac line close")
 write("blue", "L48", "lilac", dur=1.3, to=1.0, tag="who")
 cue("L48", "hud2", to=1, dur=0.5)
@@ -545,7 +545,7 @@ S("L51.2", MV((PAIR - 0.14, -0.25, 0.98), (PAIR - 0.14, 0.0, 0.8), (PAIR + 0.14,
 S("L51b", C3((0.6, 1.5, 1.6), (-1.25, 1.5, 1.3), 26),
   who={"me": sit_me("scared", head=[0, 8])}, look={"cutwall": True},
   note="me earlier, staring at my own scribble style")
-S("L51b.1", C3((-0.6, 1.5, 1.5), (1.25, 1.5, 1.6), 28),
+S("L51b.1", C3((-0.6, 1.5, 1.55), (1.25, 1.5, 1.38), 28),
   who={"nina": sit_ni("scared", head=[0, 8])}, look={"cutwall": True},
   note="Nina earlier, staring at hers")
 place("lilac", "L51c", "ndeskdust")
@@ -720,7 +720,7 @@ story = {
     "cues": cues,
     "shotlook": SHOTLOOK,
     "fx": [],
-    "rev": 8,
+    "rev": 9,
     "music": {"root": 51, "mode": "major", "bpm": 100, "seed": 89, "sections": [
         {"at": 0, "voices": ["musicbox", "pulse"], "energy": 0.35},
         {"at": "L21", "voices": ["piano", "drone"], "energy": 0.4, "mode": "minor"},
@@ -730,7 +730,7 @@ story = {
         {"at": "L49", "voices": ["pad", "piano", "musicbox"], "energy": 0.55, "mode": "major"},
         {"at": "L69", "voices": ["drone"], "energy": 0.4, "mode": "minor"}]},
     "sound": {
-        "floor": "wood", "steps_db": -26, "rev": 8,
+        "floor": "wood", "steps_db": -26, "rev": 9,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -40},
                      {"kind": "crickets", "from": "L21", "to": "L48", "lufs": -46}],
         "sfx": [{"at": "L01.4+0.05", "kind": "hit", "db": -7},
