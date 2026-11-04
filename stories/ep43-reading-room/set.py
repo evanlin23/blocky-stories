@@ -416,8 +416,11 @@ def build_room(kit, ctx, M, story):
         ctx["stack"].append(kit.box(f"stack book {k}", (w, d, hh), (0.015 * ((-1) ** k), 0.01 * (k % 3 - 1), zz + hh / 2), M["book"][k % 6], grp, bevel=0.01, rot=(0, 0, 0.05 * (k % 4 - 1.5))))
         zz += hh
     # the Negative's key (cold, from the side) and rim (cool, behind it); its table lamp is dead
-    kit.light("neg_key", "SPOT", (0, 0, 3), 0.0, "#a9c4e8", size=0.12, spot=34, blend=0.6)
-    kit.light("neg_rim", "SPOT", (0, 0, 3), 0.0, "#8fb0e0", size=0.1, spot=40, blend=0.5)
+    kit.light("neg_key", "SPOT", (0, 0, 3), 0.0, "#dbe6f4", size=0.1, spot=40, blend=0.7)
+    kit.light("neg_rim", "SPOT", (0, 0, 3), 0.0, "#9bbcf0", size=0.05, spot=62, blend=0.3)
+    kit.light("neg_rim2", "SPOT", (0, 0, 3), 0.0, "#9bbcf0", size=0.05, spot=62, blend=0.3)
+    kit.light("neg_fill", "SPOT", (0, 0, 3), 0.0, "#b8cce6", size=0.3, spot=60, blend=0.8)
+    kit.light("neg_hand", "SPOT", (0, 0, 3), 0.0, "#ffe2b0", size=0.1, spot=38, blend=0.6)
 
     # CC0 props (2026-11-03 quality pass): a rug under the window table, plants, a floor lamp
     kit.prop("carpet_1", (-7.0, 0.0, 0.0), rot=90, fit=3.4, tint="#7a5a4a")
@@ -601,33 +604,30 @@ def update_numbers(ctx, tl, t, states, vis, scene_on):
 
 # ------------------------------------------------------------------------------------------------ the upside-down grin
 
-# per shot: (face yaw toward camera, roll of joint 1, roll of joint 2, roll of the head, pitch of joint 1), degrees
-NECK_POSE = {"default": (40, -25, -70, -70, 5)}
-
-GRIN_W, GRIN_H = 0.78, 0.5   # world size of the decal on the Negative's face (the mouth is about 0.5 wide: ~40% of the head)
+GRIN_W, GRIN_H = 1.2, 0.6   # world size of the decal on the Negative's face (the mouth is about 0.5 wide: ~40% of the head)
 EYE_W, EYE_H = 1.0, 0.40
 
 
 def grin_image(w=1240, h=840):
-    """The grin in the head's OWN frame: a wide smile, corners UP, a dark recess inside a thin pale lip, no teeth. The whole
-    head hangs upside down (see _extras), so on screen it sits above the eyes and curves the wrong way (Thatcher)."""
+    """The mouth in the head's own frame, head upright: a very wide DOWNTURNED crescent (corners low), a dark recess inside a
+    thin pale lip edge, no teeth. The 'upside-down grin': a grin's curve, flipped."""
     S = 2
     im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     cx, hw = w * S / 2, w * S * 0.47
-    top, drop, sag = h * S * 0.22, h * S * 0.30, h * S * 0.26
+    top, drop, sag = h * S * 0.18, h * S * 0.17, h * S * 0.40
     up, lo = [], []
     for k in range(0, 121):
         u = k / 120
         x = cx + hw * (2 * u - 1)
         c = 1 - (2 * u - 1) ** 2
-        y0 = top + sag * c ** 0.8                                             # the upper lip sags: corners tugged up
+        y0 = top + sag * (1 - c ** 0.8)                                       # the corners are dragged down
         up.append((x, y0))
-        lo.append((x, y0 + drop * c ** 0.6))                                  # the lower lip: the deep smile belly
-    d.polygon(up + lo[::-1], fill=(176, 190, 208, 255))
-    o = h * S * 0.032
+        lo.append((x, y0 + drop * c ** 0.6))                                  # the lower lip: the deep belly of the crescent
+    d.polygon(up + lo[::-1], fill=(150, 164, 182, 255))
+    o = h * S * 0.030
     inner = [(x, y + o) for x, y in up] + [(x, y - o) for x, y in lo[::-1]]
-    d.polygon(inner, fill=(4, 5, 7, 255))
+    d.polygon(inner, fill=(3, 4, 6, 255))
     return im.resize((w, h), Image.LANCZOS)
 
 
@@ -638,7 +638,7 @@ def glint_image(w=1000, h=400):
     d = ImageDraw.Draw(im)
     for sx, dy in ((-1, 0.0), (1, -0.015)):
         x, y = w * S / 2 + sx * w * S * 0.24, h * S * (0.58 + dy)
-        d.ellipse([x - 20 * S, y - 7 * S, x + 20 * S, y + 7 * S], fill=(225, 240, 255, 255))
+        d.ellipse([x - 26 * S, y - 9 * S, x + 26 * S, y + 9 * S], fill=(225, 240, 255, 255))
     return im.resize((w, h), Image.LANCZOS)
 
 
@@ -734,6 +734,187 @@ def build(kit, story, tl):
 SKY = {"door": ("#9ccdf0", 0.8), "street": ("#a9c4d8", 1.0)}
 
 
+POCKET_SHOTS = {"S42"}
+
+
+def _matte(ob, hexc=None):
+    """A private copy of every material on ob, made fully matte (roughness 1, no specular, no sheen)."""
+    for sl in ob.material_slots:
+        m = sl.material
+        if m is None:
+            continue
+        m = m.copy()
+        sl.material = m
+        if m.use_nodes:
+            for n in m.node_tree.nodes:
+                if n.type == "BSDF_PRINCIPLED":
+                    n.inputs["Roughness"].default_value = 1.0
+                    for k in ("Specular IOR Level", "Specular"):
+                        if k in n.inputs:
+                            n.inputs[k].default_value = 0.0
+                    for k in ("Sheen Weight", "Coat Weight", "Clearcoat"):
+                        if k in n.inputs:
+                            n.inputs[k].default_value = 0.0
+                    if hexc:
+                        n.inputs["Base Color"].default_value = _col(hexc)
+
+
+def _col(h):
+    h = h.lstrip("#")
+    c = [int(h[i:i + 2], 16) / 255 for i in (0, 2, 4)]
+    lin = [x / 12.92 if x <= 0.04045 else ((x + 0.055) / 1.055) ** 2.4 for x in c]
+    return (*lin, 1.0)
+
+
+def _build_neg(kit, ctx, nk):
+    """The Negative, all clean boxes: a person seated across the table whose torso is ~1.6x too long, neck ~1.5x too long,
+    shoulders too narrow and arms ~1.7x too long, ending in thin hands flat on the table. The rig supplies only the head
+    (and its hair); every other rig part of 'neg' is hidden. Posed each frame by _pose_neg."""
+    skin = kit.plastic("#1b1f24", 1.0, "neg skin", 0.0)
+    jump = kit.plastic("#3a7a62", 1.0, "neg jumper", 0.0)
+    pants = kit.plastic("#8a8470", 1.0, "neg trousers", 0.0)
+    shoe = kit.plastic("#b9bcc0", 1.0, "neg shoes", 0.0)
+    root = bpy.data.objects["neg"]
+    head_tree = set()
+    hd = bpy.data.objects["neg.head"]
+    head_tree.add(hd)
+    head_tree.update(hd.children_recursive)
+    rig_hide = [o for o in root.children_recursive if o not in head_tree and o.type == "MESH"]
+    for o in rig_hide:
+        o.hide_render = True
+    # the head: the rig's own head and hair, re-parented to a pivot we move
+    hp = kit.empty("negx.head", (3000, 3000, 0))
+    nk.parent = hp
+    nk.matrix_parent_inverse = nk.matrix_parent_inverse.__class__()
+    nk.location = (0, 0, 0)
+    nk.rotation_euler = (0, 0, 0)
+    for o in [hd] + list(hd.children_recursive):
+        if o.type == "MESH":
+            _matte(o, "#aab0b8" if o.name.endswith("hcap") else None)
+    parts = {}
+
+    def bx(name, mat, bevel=0.0):
+        parts[name] = kit.box("negx." + name, (1, 1, 1), (3000, 3000, 0), mat, None, bevel=bevel)
+        return parts[name]
+
+    for nm, mt in (("pelvis", pants), ("torso", jump), ("neck", skin), ("shoulders", jump),
+                   ("collar", kit.emit("#9be0b8", 0.9, "neg collar lit")), ("thighL", pants), ("thighR", pants),
+                   ("shinL", pants), ("shinR", pants), ("shoeL", shoe), ("shoeR", shoe),
+                   ("upL", jump), ("upR", jump), ("foL", jump), ("foR", jump), ("cuffL", skin), ("cuffR", skin),
+                   ("palmL", skin), ("palmR", skin)):
+        bx(nm, mt)
+    for sd in "LR":
+        for f in range(4):
+            bx(f"fing{sd}{f}", skin)
+    return {"parts": parts, "head": hp, "hide": rig_hide, "head_tree": list(head_tree) + [nk]}
+
+
+def _place(ob, a, b, w, d, M, side=(1, 0, 0), k=1.0):
+    """Stretch a unit box between two points (local to the figure), widths w (side) and d (depth), through matrix M."""
+    a, b = V(a), V(b)
+    z = b - a
+    L = z.length
+    if L < 1e-6:
+        return
+    z = z / L
+    sd = V(side)
+    x = sd - z * sd.dot(z)
+    if x.length < 1e-6:
+        x = V((0, -1, 0)) - z * z.y * -1
+    x.normalize()
+    y = z.cross(x)
+    from mathutils import Matrix
+    R = Matrix(((x.x * w, y.x * d, z.x * L), (x.y * w, y.y * d, z.y * L), (x.z * w, y.z * d, z.z * L)))
+    R = R.to_4x4()
+    mid = (a + b) / 2
+    R.translation = mid
+    ob.matrix_world = M @ R
+
+
+def _ik(sh, wr, la, lb, pole):
+    d = (wr - sh)
+    dl = min(d.length, la + lb - 1e-3)
+    dn = d.normalized()
+    aa = (la * la - lb * lb + dl * dl) / (2 * dl)
+    hh = math.sqrt(max(la * la - aa * aa, 1e-6))
+    pv = V(pole) - dn * V(pole).dot(dn)
+    pv.normalize()
+    return sh + dn * aa + pv * hh
+
+
+def _pose_neg(ctx, tl, t, shot, keys):
+    """Pose the Negative from the rig root's place and yaw and the acting 'bend' key."""
+    from mathutils import Matrix
+    from blocky import acting as ac
+    nb = ctx["nbody"]
+    nr = bpy.data.objects["neg"]
+    parts, hp = nb["parts"], nb["head"]
+    sc_c = _last(_cues(tl, "negscale"), t)
+    k = sc_c["v"] if sc_c else 1.0
+    bend = ac._held(keys, "bend", t, 0.0)
+    yaw = nr.rotation_euler[2]
+    M = Matrix.Translation((nr.location.x, nr.location.y, 0.0)) @ Matrix.Rotation(yaw, 4, "Z")
+    lean = bend > 20
+    th = math.radians(8 + bend * (0.55 if lean else 0.3))           # torso lean from the hips, forward and down
+    hip = V((0, 0, 0.50))
+    u = V((0, -math.sin(th), math.cos(th)))
+    P0 = hip + V((0, 0, 0.08))
+    Lt = 1.22 * k
+    Sh = P0 + u * Lt
+    # pelvis, legs
+    _place(parts["pelvis"], hip - V((0, 0, 0.1)), hip + V((0, 0, 0.1)), 0.34, 0.26, M)
+    for sd, sx in (("L", -1), ("R", 1)):
+        x = sx * 0.09
+        _place(parts[f"thigh{sd}"], (x, 0.1, 0.47), (x, -0.5, 0.47), 0.13, 0.14, M)
+        _place(parts[f"shin{sd}"], (x, -0.5, 0.53), (x, -0.5, 0.1), 0.13, 0.13, M)
+        _place(parts[f"shoe{sd}"], (x, -0.46, 0.04), (x, -0.64, 0.04), 0.14, 0.08, M)
+    # torso: narrow, long
+    _place(parts["torso"], P0, Sh, 0.36, 0.2, M, side=(1, 0, 0))
+    _place(parts["shoulders"], Sh + V((-0.2, 0, -0.04)), Sh + V((0.2, 0, -0.04)), 0.12, 0.2, M, side=(0, 0, 1))
+    # neck: 1.5x too long, bends on forward
+    thn = th + math.radians(28 if lean else 8)
+    un = V((0, -math.sin(thn), math.cos(thn)))
+    Ln = 0.40 * k
+    N0 = Sh + u * 0.03
+    N1 = N0 + un * Ln
+    _place(parts["neck"], N0, N1, 0.15, 0.15, M, side=(1, 0, 0))
+    _place(parts["collar"], N0 - un * 0.02, N0 + un * 0.07, 0.2, 0.18, M, side=(1, 0, 0))
+    # head: the rig head, pitched so its face points down toward the table, a little rolled
+    thh = thn - math.radians(20 if lean else 8)
+    ah = V((0, -math.sin(thh), math.cos(thh)))
+    fw = V((0, -1, 0))
+    fw = fw - ah * fw.dot(ah)
+    fw.normalize()
+    ry = -fw
+    rx = ry.cross(ah)
+    roll = Matrix.Rotation(math.radians(12), 3, fw)
+    Rm = Matrix(((rx.x, ry.x, ah.x), (rx.y, ry.y, ah.y), (rx.z, ry.z, ah.z)))
+    Rm = (roll @ Rm).to_4x4()
+    hs = 0.34
+    Rm = Rm @ Matrix.Scale(hs, 4)
+    Rm.translation = N1 - ah * 0.02
+    hp.matrix_world = M @ Rm
+    ctx["neg_head_local"] = (N1 + ah * 0.22, N1, Sh, ah, hip)
+    # arms: 1.7x too long, two bones with the elbows high and out, thin hands flat on the table
+    reach = ctx.get("neg_reach", {}).get(shot, 0.0)
+    ua = 0.62 * k
+    fa = 0.62 * k
+    for sd, sx in (("L", -1), ("R", 1)):
+        sh = Sh + V((sx * 0.25, 0, -0.06))
+        far = reach if sd == "R" else 0.0
+        hx, hy, hz = sx * 0.2, -(0.80 + far), 0.80
+        wr = V((hx, hy + 0.09, hz + 0.03))
+        el = _ik(sh, wr, ua, fa, (sx * 0.5, 0.3, -0.5))
+        _place(parts[f"up{sd}"], sh, el, 0.11, 0.11, M, side=(1, 0, 0))
+        _place(parts[f"fo{sd}"], el, wr, 0.095, 0.095, M, side=(1, 0, 0))
+        _place(parts[f"cuff{sd}"], wr, wr + (V((hx, hy - 0.02, hz + 0.02)) - wr) * 0.5, 0.085, 0.085, M, side=(1, 0, 0))
+        _place(parts[f"palm{sd}"], (hx, hy + 0.06, hz), (hx, hy - 0.05, hz), 0.10, 0.03, M, side=(1, 0, 0))
+        for f in range(4):
+            fx = hx + (f - 1.5) * 0.024
+            ln = (0.13, 0.15, 0.14, 0.11)[f]
+            _place(parts[f"fing{sd}{f}"], (fx, hy - 0.05, hz), (fx, hy - 0.05 - ln, hz), 0.02, 0.02, M, side=(1, 0, 0))
+
+
 def _extras(kit, ctx):
     """Parts the rig doesn't have: Tam's pencil, the Negative's upside-down grin, the phone."""
     ctx["extras_done"] = True
@@ -750,25 +931,11 @@ def _extras(kit, ctx):
         ctx["grin"] = curved_decal(kit, "neg.grin", (GRIN_W, GRIN_H), -0.24, R + 0.012, gm, hg)
         em_ = alpha_mat(kit, "neg glints", glint_image(), emit=3.0)
         curved_decal(kit, "neg.glints", (EYE_W, EYE_H), 0.17, R + 0.012, em_, hg)
+    ctx["nbody"] = None
     nk = bpy.data.objects.get("neg.neck")
-    ctx["nneck"] = None
     if nk is not None:
-        # a neck 1.5x too long that bends over sideways in two joints, ending in a head hung upside down (chin up, crown down).
-        # nk0 turns the face toward the camera, nk1 and nk2 roll the neck over, neg.head rolls the head the rest of the way.
-        up = bpy.data.objects.get("neg.upper") or nk.parent
-        ink = kit.plastic("#15181c", 0.5, "neg neck", 0.2)
-        n0 = kit.empty("neg.nk0", (0, 0, 1.98), up)
-        n1 = kit.empty("neg.nk1", (0, 0, 0), n0)
-        kit.box("neg.neckbox1", (0.5, 0.5, 1.35), (0, 0, 0.62), ink, n1, bevel=0.05)
-        n2 = kit.empty("neg.nk2", (0, 0, 1.25), n1)
-        kit.box("neg.neckbox2", (0.46, 0.46, 0.95), (0, 0, 0.4), ink, n2, bevel=0.05)
-        nk.parent = n2
-        nk.matrix_parent_inverse = nk.matrix_parent_inverse.__class__()
-        nk.location = (0, 0, 0.8)
-        kit.box("neg.collar", (1.12, 1.04, 0.16), (0, 0, 2.03), alpha_mat_emit(kit), up, bevel=0.05)
-        ctx["nneck"] = (n0, n1, n2, bpy.data.objects.get("neg.head"))
-        # a dark pocket behind it: an unlit gap between stacks (cheated in for this figure only)
-        ctx["pocket"] = kit.box("neg.pocket", (2.4, 0.3, 2.6), (3000, 3000, 0), kit.plastic("#030405", 0.9, "neg pocket", 0.0))
+        ctx["nbody"] = _build_neg(kit, ctx, nk)
+        ctx["pocket"] = kit.box("neg.pocket", (1.8, 0.3, 9.0), (3000, 3000, 0), kit.plastic("#020304", 1.0, "neg pocket", 0.0))
     pm = img_mat(kit, "cat picture", cat_image(), rough=0.4)
     sm = kit.plastic("#16181c", 0.4, "phone body", 0.3)
     ph = kit.empty("phone", (3000, 3000, 0))
@@ -840,6 +1007,14 @@ def animate(kit, story, tl, t, ctx):
     for ob in bpy.data.objects:                # S42's camera sits where table B stands: cheat that table out of the frame
         if ob.name.startswith(("table B", "apron B", "lamp B#0")) and scene == "room":
             ob.hide_render = shot == "S42"
+    for ob in bpy.data.objects:                # S42's low camera: the chairs, the man and table M between it and the figures
+        if scene == "room" and (ob.name.startswith(("table M", "apron M", "lamp M", "lamp.M")) or
+                                (ob.name.startswith("chair") and (ob.matrix_world.translation.x > -4.9 or (ob.matrix_world.translation.x > -6.0 and ob.matrix_world.translation.y < 0)))):
+            ob.hide_render = ob.hide_render or shot == "S42"
+    if shot == "S42":
+        for ob in [bpy.data.objects.get("man")] + list(bpy.data.objects["man"].children_recursive):
+            if ob is not None:
+                ob.hide_render = True
     if shot == "S42":                          # the camera sits where I sit: cheat me out of this one frame
         for ob in [bpy.data.objects.get("me")] + list(bpy.data.objects["me"].children_recursive):
             if ob is not None:
@@ -851,29 +1026,18 @@ def animate(kit, story, tl, t, ctx):
         ob = bpy.data.objects.get(nm)
         if ob is not None:
             ob.hide_render = True
-    # ---- the Negative grows with each swallowed laugh; it changes size only across a cut
-    nr = bpy.data.objects.get("neg")
-    sc_c = _last(_cues(tl, "negscale"), t)
-    if nr is not None:
-        if "neg_base" not in ctx:
-            ctx["neg_base"] = nr.scale.copy()     # the rig's own root scale; ours multiplies it
-        k = sc_c["v"] if sc_c else 1.0
-        # a little too tall and too thin: wrong proportions, not a soft box
-        nr.scale = tuple(v * k * m for v, m in zip(ctx["neg_base"], (0.9, 0.9, 1.14)))
-        for nm in ("arm-1", "arm1"):
-            ob = bpy.data.objects.get(f"neg.{nm}")
-            if ob is not None:
-                ob.scale = (0.62, 0.62, 1.55)
-        # the hung head: one model, posed per shot (yaw turns the face toward the camera; the roll angles sum to ~160 deg)
-        pz = NECK_POSE.get(shot, NECK_POSE["default"])
-        if ctx.get("nneck"):
-            n0, n1, n2, hd = ctx["nneck"]
-            n0.rotation_euler = (0, 0, math.radians(pz[0]))
-            n1.rotation_euler = (math.radians(pz[4]), math.radians(pz[1]), 0)
-            n2.rotation_euler = (0, math.radians(pz[2]), 0)
-            nr_neck = bpy.data.objects.get("neg.neck")
-            nr_neck.rotation_euler = (0, 0, 0)
-            hd.rotation_euler = (0, math.radians(pz[3]), 0)
+    # ---- the Negative: our own boxes, posed from the rig root's place, yaw and bend; the rig's body stays hidden
+    if ctx.get("nbody"):
+        on = inscene["neg"] and scene == "room"
+        nb = ctx["nbody"]
+        for o in nb["head_tree"]:
+            o.hide_render = not on
+        for o in nb["parts"].values():
+            o.hide_render = not on
+        if on:
+            _pose_neg(ctx, tl, t, shot, tl["acting"]["neg"])
+        else:
+            nb["head"].location = (3000, 3000, 0)
     # ---- the stack of books appears with its cue
     stc = _last(_cues(tl, "stack"), t)
     for ob in ctx["stack"]:
@@ -882,28 +1046,27 @@ def animate(kit, story, tl, t, ctx):
     ap = _last(_cues(tl, "apart"), t)
     if ap and ap.get("off"):
         ap = None
-    if not ctx.get("apart_base"):
-        ctx["apart_base"] = {}
-        for nm in ("torso", "leg-1", "leg1", "neck"):
-            ob = bpy.data.objects.get(f"neg.{nm}")
-            if ob is not None:
-                ctx["apart_base"][nm] = (ob, ob.location.copy())
-        for nm in ("arm-1", "arm1"):
-            ob = bpy.data.objects.get(f"neg.{nm}")
-            if ob is not None:
-                ctx["apart_base"][nm] = (ob, ob.location.copy())
     x = (t - ap["t"]) if ap else -1.0
-    sep = _ss(x / 1.6) if x > 0 else 0.0
-    rise = _ss((x - 1.2) / 3.2) if x > 0 else 0.0
-    off = {"neck": (0, 0, 0.75), "torso": (0, 0, 0.0), "arm-1": (-0.7, 0, 0.1), "arm1": (0.7, 0, 0.1),
-           "leg-1": (-0.15, 0, -0.55), "leg1": (0.15, 0, -0.55)}
-    for nm, (ob, b0) in ctx["apart_base"].items():
-        o = off[nm]
-        spread = 1.0 if nm != "torso" else 0.0
-        ob.location = (b0.x + o[0] * sep, b0.y + o[1] * sep, b0.z + o[2] * sep + rise * (5.0 + 1.4 * (len(nm) % 3)))
-        ob.rotation_euler[2] = rise * (0.7 if nm in ("neck", "arm1") else -0.5)
-    if nr is not None and ap and x > 0:
-        nr.scale = tuple(v * (1.0 - _ss((x - 3.6) / 1.0)) + 1e-5 for v in nr.scale)
+    if ap and x > 0 and ctx.get("nbody"):
+        sep = _ss(x / 1.6)
+        rise = _ss((x - 1.2) / 3.2)
+        shrink = 1.0 - _ss((x - 3.6) / 1.0) + 1e-5
+        grp = {"neck": (0, 0, 0.6), "collar": (0, 0, 0.5), "up": (0.5, 0, 0.1), "fo": (0.6, 0, 0.0), "cuff": (0.6, 0, 0.0),
+               "palm": (0.6, 0, 0.0), "fing": (0.6, 0, 0.0), "thigh": (0, 0, -0.35), "shin": (0, 0, -0.5),
+               "shoe": (0, 0, -0.6), "pelvis": (0, 0, -0.2)}
+        nb = ctx["nbody"]
+        for nm, ob in nb["parts"].items():
+            key = next((g for g in grp if nm.startswith(g)), None)
+            o = grp.get(key, (0, 0, 0))
+            sx = -1 if nm.endswith("L") or "L" in nm[-2:-1] else 1
+            c = ob.matrix_world.translation
+            ob.location = (c.x + o[0] * sx * sep, c.y, c.z + o[2] * sep + rise * (5.0 + 1.4 * (len(nm) % 3)))
+            ob.rotation_euler[2] += rise * (0.7 if len(nm) % 2 else -0.5)
+            ob.scale = tuple(v * shrink for v in ob.scale)
+        hpx = nb["head"]
+        c = hpx.matrix_world.translation
+        hpx.location = (c.x, c.y, c.z + 0.7 * sep + rise * 6.0)
+        hpx.scale = tuple(v * shrink for v in hpx.scale)
     # ---- the phone (a cat picture), held where the cue says
     pc = _last(_cues(tl, "phone"), t)
     ph = ctx["phone"]
@@ -952,28 +1115,39 @@ def animate(kit, story, tl, t, ctx):
     ctx["page"].rotation_euler = (0.0, -math.pi * 0.96 * u, 0.0)
     # ---- the Negative's light: a cold key from the side and a cool rim behind it; its lamp is dead
     s = states["neg"]
-    over["neg_key"] = over["neg_rim"] = 0.0
+    over["neg_key"] = over["neg_rim"] = over["neg_rim2"] = over["neg_hand"] = over["neg_fill"] = 0.0
     if inscene["neg"] and scene == "room":
         bpy.context.view_layer.update()
         hg = bpy.data.objects.get("neg.headg")
         head = hg.matrix_world.translation.copy()
+        yaw_n = bpy.data.objects["neg"].rotation_euler[2]
         cam = V(tuple(next(x for x in story["shots"] if x["id"] == shot)["cam"][0][1]))
         tc = V((cam.x - head.x, cam.y - head.y, 0.0))
         tc.normalize()
         side = V((-tc.y, tc.x, 0.0))
-        # under-light from Tam's dead lamp (low, between the two, cool); a hard cool rim from behind, dark side to camera
-        for nm, pos, w in (("neg_key", V((head.x, head.y, 0.95)) + tc * 0.8 - side * 0.3, 170.0),
-                           ("neg_rim", head - tc * 1.6 + side * 0.9 + V((0, 0, 0.9)), 900.0)):
+        # Tam's lamp on the table lights its chin, mouth and lower face from below (cool-pale); a hard cool rim from behind
+        # traces hair, neck, shoulders and arms; no warm frontal light on it
+        fwd = V((math.sin(yaw_n), -math.cos(yaw_n), 0.0))
+        tgt = head + V((0, 0, -0.12))
+        mid = V((head.x, head.y, 1.3))
+        hand = V((head.x, head.y, 0.8)) + fwd * 0.9
+        torso_c = V((head.x, head.y, 0.95)) + fwd * 0.4
+        for nm, pos, aim, w in (("neg_key", V((head.x, head.y, 0.86)) + fwd * 0.6 - side * 0.1, tgt, 520.0),
+                                ("neg_rim", head - tc * 1.6 + side * 1.2 + V((0, 0, 1.6)), mid, 2200.0),
+                                ("neg_rim2", head - tc * 1.6 - side * 1.2 + V((0, 0, 1.0)), mid, 1400.0),
+                                ("neg_hand", V((head.x, head.y, 1.55)) + fwd * 0.75, hand, 260.0),
+                                ("neg_fill", V((head.x, head.y, 1.6)) + fwd * 1.6 + side * 0.3, torso_c, 90.0)):
             ob = K.LIGHTS[nm]["obj"]
             ob.location = pos
-            ob.rotation_euler = (head - pos).to_track_quat("-Z", "Y").to_euler()
+            ob.rotation_euler = (aim - pos).to_track_quat("-Z", "Y").to_euler()
             K.LIGHTS[nm]["base"] = w
             over[nm] = 1.0
         pk = ctx.get("pocket")
-        if pk is not None and shot == "S42":
-            pk.location = (head.x - tc.x * 1.0, head.y - tc.y * 1.0, 1.55)
+        if pk is not None:
+            pk.location = (head.x - tc.x * 1.0, head.y - tc.y * 1.0, 4.5)
             pk.rotation_euler = (0, 0, math.atan2(tc.y, tc.x) - math.pi / 2)
-    if ctx.get("pocket") is not None and shot != "S42":
+            pk.hide_render = shot not in POCKET_SHOTS
+    if ctx.get("pocket") is not None and not (inscene["neg"] and scene == "room"):
         ctx["pocket"].location = (3000, 3000, 0)
     for who, dd in ctx["num"].items():
         dd["em"].inputs["Strength"].default_value = NUM_GLOW
