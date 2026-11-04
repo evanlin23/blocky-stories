@@ -374,6 +374,9 @@ def backroom(kit, P):
     kit.light("bdoorglow", "POINT", (2.57, 11.0, 2.2), 260.0, "#e8f0ff", size=0.5, shadow=False)
     kit.light("bfill", "POINT", (0.0, 19.0, 5.0), 450.0, "#c8d6ff", size=0.6, shadow=False)
     kit.light("bfill2", "POINT", (0.0, 24.5, 3.0), 260.0, "#ffe0b8", size=0.6, shadow=False)
+    # a still rim light behind the man at the shelf, and a soft fill where I stand in the aisle (nothing swings)
+    kit.light("brim", "POINT", (4.6, 25.0, 2.3), 260.0, "#fff0d0", size=0.3, shadow=False)
+    kit.light("bfill3", "POINT", (-1.2, 25.0, 1.9), 150.0, "#ffe0b8", size=0.4, shadow=False)
     # the four coins on the bottom shelf by the newest box
     W["coins"] = [kit.cyl(f"coin{k}", 0.05, 0.012, (4.3 + 0.3, 26.55 - 0.04, 0.15 + k * 0.0), P["brass"], n=10) for k in range(4)]
     for k, c in enumerate(W["coins"]):
