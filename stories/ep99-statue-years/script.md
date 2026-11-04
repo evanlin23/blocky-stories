@@ -2,11 +2,11 @@
 
 - **Slug:** `ep99-statue-years` (batch 9b, upload order 3 of 4)
 - **Pitch:** E17 in `docs/research/premise-engines.md` (engine 19, someone else carries your aging, panel A 8, panel B 5). Panel B's note ("mechanics take too long to parse") is met by cutting the second turn to one beat: the reveal is one line said first ("It was MOM.", L26) and then one picture (a wrinkle sliding off the stone onto Mom's smile, L27). Opening shape `cost`. Lane: experiment (a warm wonder rule with no creature, against the creepy core). Length arm: mid (60 to 90 s).
-- **Title:** Nobody Here Ages But The STATUE 🗿
-- **Word count:** 315 spoken words in 40 lines, all `narrator`, plus one 0.6 s music drop before L25.
+- **Title:** The Statue That Grows OLD For Us 🗿
+- **Word count:** 309 spoken words in 40 lines, all `narrator`, plus one 0.6 s music drop before L25.
 - **Estimated length:** about 72 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L17 first. If it lands under 62 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A sunny small town on a hill: a park at the top of long brick steps, rose sandstone, sunflower beds, sage lawns, a bright sky. The one dim scene is the pre-dawn park (L25 to L31), a clear lilac-and-peach dawn sky, still bright enough to read every face. Light changes ramp over 0.3 s or more.
-- **Hold:** scripts only (batch 9b). Not built, not voiced.
+- **Hold:** batch 9b: round 1 fixes in progress (removed on approval).
 
 ## Variety table
 The batch table is in `stories/ep97-prize-bears/script.md`. This row:
@@ -26,13 +26,13 @@ Against everything made: ep33 owns time at altitude (a day up there costs a year
 - **One move, as the panel asked:** the plant is in the montage (L07: "You can take your years BACK. / Nobody ever HAS."), so the reveal needs no new rule. The picture does the work.
 
 ## The story
-- **Premise:** On your birthday you light a candle at the statue's feet, touch its toe and give it your year, so nobody in town gets older, and the statue's stone beard hangs to its knees. You can take your years back, but nobody ever has. My dad has never given one, so he's the only old face in town, and strangers ask Mom if he's her father. I'm grown, and at the end of this week, on Sunday, I turn twenty-one, the age this town gives its first year. That same Monday the statue gets younger: a wrinkle gone, then two, the beard up to its chest. Nobody has a new gray hair except Mom, who smiles at hers, and she's up before the sun every morning.
+- **Premise:** On your birthday you light a candle at the statue's feet, touch its toe and give it your year, so nobody in town gets older, and the statue's stone beard hangs to its knees. You can take your years back, but nobody ever has. My dad has never given one, so he's the only old face in town, and strangers ask Mom if he's her father. I'm grown, and at the end of this week, on Sunday, I turn twenty-one, the age this town gives its first year. The Monday before it, the statue gets younger: a wrinkle gone, then two, the beard up to its chest. Nobody has a new gray hair except Mom, who smiles at hers, and she's up before the sun every morning.
 - **Rule / hook (L01, about 2.2 s):** "Nobody here gets OLDER. / The statue does it / for US." L02 tightens it with the price: "On your birthday, / you give it / your YEAR."
 - **The relatable want:** never getting older, the wish anyone has had, and a family that gets stared at: people think my mom is my sister.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** the statue's stone beard, plus a corner tag in the top-left: a sandstone plate with a candle glyph and a number, the statue's wrinkles counted in short carved lines (a row of 12 lines at the start, one fewer each day from L13, 7 at L16, and it ticks down by one under L27 as the line slides onto Mom). Frame 1 is the statue's ancient stone face, close.
 - **The 3 to 5 example montage (L03 to L07, 4 to 15 s):** a candle at its feet and a hand to its toe (L03), Mrs. Lark at the bakery, thirty-two for fifty years (L04), people thinking my mom is my sister (L05), the stone beard to its knees (L06), and the one rule nobody uses: you can take them back (L07).
 - **A concrete mystery by 15 s:** Dad, the only old face in town (L08 to L09, 15 to 18 s). The bigger mystery lands at 24 s: the statue getting younger (L13).
-- **How the narrator is the exception:** I'm an adult who hasn't given a year yet: here you give your first at twenty-one, and I turn twenty-one this Sunday at the end of the week (L12), the day after the dawn reveal. Dad is the town's other exception.
+- **How the narrator is the exception:** I'm an adult who hasn't given a year yet: here you give your first at twenty-one, and I turn twenty-one on Sunday (L12), the day after the dawn reveal; the statue starts getting younger the Monday before (L13). Dad is the town's other exception.
 - **The loved ones at stake:** my mom (named at L05 in the same shot, standing beside me, both looking the same age) and my dad (named at L08, gray-haired, arm round Mom).
 - **The rule broken:** nobody breaks it. Mom uses the half everyone forgets.
 - **The eerie middle (L13 to L25, 24 to 45 s):** the statue getting younger day by day, the whole town at its mirrors, "whose are they?", and at dawn the statue's stone head bent down toward Mom.
@@ -57,7 +57,7 @@ Against everything made: ep33 owns time at altitude (a day up there costs a year
 3. A sound hit on "US": a soft low stone thud plus a sub swell.
 4. L02 tightens it with the price in 1.8 s. First name (Mrs. Lark) at 6.5 s.
 5. L03 to L07 show the rule at work, one shot each, each under 2.5 s (L03 and L04 get two shots).
-6. The title is the town's rule as a statement, 6 words and an emoji, not the reveal.
+6. The title is the town's rule as a statement, 7 words and an emoji, not the reveal (round 1: no longer opens "Nobody...").
 7. Seconds 15 to 30 escalate (Dad the only old face, my birthday tomorrow, the statue getting younger). Nobody explains the rule.
 
 ## World
@@ -120,7 +120,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S10 | L10 | 18.1 | Dad, `laugh`, patting his gray hair. |
 | S11 | L11 | 19.9 | A stranger at the bakery counter nodding from Dad to Mom, Mom's hand on Dad's gray hair, `sheepish`. |
 | S12a, S12b | L12 | 21.7 | A calendar glyph flipping to a circled day. Then me at the top of the park steps, looking at the statue, `smile`. |
-| S13 | L13 | 24.1 | The statue's face, close, the same as S01. |
+| S13 | L13 | 24.1 | The statue's face, close, the same as S01. Cover frame (about 26.2 s in the preview, under "got YOUNGER."). |
 | S14 | L14 | 25.7 | Tight on its cheek: a carved wrinkle gone, a smooth patch. The tag drops a line. |
 | S15 | L15 | 26.5 | Another wrinkle gone, the tag drops again. |
 | S16 | L16 | 27.1 | Wide: the stone beard now ending at its chest. |
@@ -135,7 +135,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | (drop) | | 42.5 | 0.6 s: the dawn park, the statue's dark outline, still. |
 | S25 | L25 | 43.1 | (revised) From behind me: the statue's huge head bent down toward a small figure at its feet, back to us. |
 | S26 | L26 | 45.5 | (revised) The figure turns into the dawn light: Mom, `calm`. |
-| S27a, S27b | L27 | 46.3 | (revised) Mom's hand at the end of her sleeve flat on its stone cheek. Then close: a thin crack line sliding off the stone onto Mom's face. The tag drops a line. Cover frame (48.0). |
+| S27a, S27b | L27 | 46.3 | (revised) Mom's hand at the end of her sleeve flat on its stone cheek. Then close: a thin crack line sliding off the stone onto Mom's face. The tag drops a line. |
 | S28 | L28 | 49.5 | Mom's face: a new smile line, `smile`. |
 | S29 | L29 | 51.0 | (revised) Me behind a sunflower bed, `amazed`, then the sun coming up behind the statue. |
 | S30 | L30 | 52.8 | (revised) Mom on the plinth step, a little grayer, looking down the hill toward our house where Dad sleeps. |
@@ -167,8 +167,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L09: He's the only / old face / in TOWN.
 - L10: He says / he wants every year / he GETS.
 - L11: And Mom gets asked / if he's her FATHER.
-- L12: This SUNDAY, / at the end of the week, / I turn twenty-ONE. / That's when you give / your first YEAR.
-- L13: Then that MONDAY, / the statue / got YOUNGER.
+- L12: I turn twenty-ONE / on SUNDAY. / That's when you give / your first YEAR.
+- L13: But on MONDAY, / the statue / got YOUNGER.
 - L14: One wrinkle, / GONE.
 - L15: Tuesday, TWO.
 - L16: By Friday, / its beard / was up to its CHEST.
