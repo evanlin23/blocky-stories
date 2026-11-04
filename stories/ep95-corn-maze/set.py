@@ -466,16 +466,16 @@ def build_sky(kit, M):
     when it looks down). Shown only by the night looks."""
     cam = kit.OBJ["cam"]
     D = 250.0
-    moon = kit.sphere("moon.disc", 26.0, (34.0, 100.0, -D), M["moon"], parent=cam, seg=24)
-    halo = kit.sphere("moon.halo", 40.0, (34.0, 100.0, -D - 30.0), M["moonhalo"], parent=cam, seg=20)
+    moon = kit.sphere("moon.disc", 11.0, (24.0, 72.0, -D), M["moon"], parent=cam, seg=24)
+    halo = kit.sphere("moon.halo", 17.0, (24.0, 72.0, -D - 30.0), M["moonhalo"], parent=cam, seg=20)
     import random
     rnd = random.Random(95)
     stars = []
     for q in range(46):
-        x, y = rnd.uniform(-150, 150), rnd.uniform(40, 215)
-        if (x - 34) ** 2 + (y - 100) ** 2 < 70 ** 2:
+        x, y = rnd.uniform(-50, 50), rnd.uniform(30, 110)
+        if (x - 24) ** 2 + (y - 72) ** 2 < 30 ** 2:
             continue
-        stars.append(kit.sphere("star", rnd.uniform(0.8, 1.5), (x, y, -D - 20.0), M["star"], parent=cam, seg=6))
+        stars.append(kit.sphere("star", rnd.uniform(0.35, 0.6), (x, y, -D - 20.0), M["star"], parent=cam, seg=6))
     return [moon, halo] + stars
 
 
