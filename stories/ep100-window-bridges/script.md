@@ -3,10 +3,10 @@
 - **Slug:** `ep100-window-bridges` (batch 9b, upload order 4 of 4)
 - **Pitch:** E25 in `docs/research/premise-engines.md` (engine 5, erased and drawn back, panel A 7, panel B 6). Rebuilt from the engine up, as asked: the pitch's memory shop and paid forgetting are gone, because ep97 (engine 4) is in this batch. Here nobody pays anyone: a friendship is a bridge you can see, and burning it is the erasing. Panel B's note ("known from film") is met with a picture of our own: three burnt bridges lying in an alley that rise toward two windows at night, and a fourth that grows out over the sea. Opening shape `count`. Lane: core. Length arm: long (110 to 150 s).
 - **Title:** Three Burnt Bridges To A STRANGER 🌉 (revision 1: the blind check scored "Fourth Time Meeting My Best FRIEND" 5, "confusing, not creepy")
-- **Word count:** 542 spoken words in 64 lines, all `narrator`, plus one 0.6 s music drop before L33.
-- **Estimated length:** about 124 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 145 s, cut L15, then L31. If it lands under 110 s, add back a line from the notes (L14b: "He made me a bad sandwich / and called it LUNCH.").
+- **Word count:** 552 spoken words in 65 lines, all `narrator`, plus one 0.6 s music drop before L33.
+- **Estimated length:** about 126 s at 290 wpm with 0.15 s gaps, the drop and the loop tail (the r1 preview ran 119.6 s before L14b went in, revision 2). If it runs over 145 s, cut L15, then L31.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright old seaside town: a narrow cobbled alley between tall terracotta and ochre apartment houses with teal shutters, window boxes and dozens of little plank-and-rope bridges strung between windows above it, the sea glittering at the end of the alley. Spring and summer are sunny. The one dark scene is the alley at 3 a.m. (L32 to L39), lit by string lights left on across the bridges and my phone torch, warm and readable. The burnt bridges never show flame: they're already charred black.
-- **Hold:** scripts only (batch 9b). Not built, not voiced.
+- **Hold:** built and previewed (r1). Revision 2 re-voices L02, L14b (new) and L50.
 
 ## Variety table
 The batch table is in `stories/ep97-prize-bears/script.md`. This row:
@@ -22,12 +22,12 @@ The batch table is in `stories/ep97-prize-bears/script.md`. This row:
 
 - Ten pitched, this one kept. Dropped: a memory shop or any paid forgetting (ep97's lane this batch, and the orchestrator's note), we keep erasing over the same fight (the film engine as-is, panel B knew it), a third person burns it each time (a villain), the bridges are made of the forgotten memories (new magic), one of us is a ghost (death), the friend is my future self (time loop), we're brothers who forgot it (a family reveal), the bridge burns itself when one of us lies (lie tags, ep47), the town keeps a ledger of burnt bridges (the pitch's ledger, a paper version of the shop), the bridge is a tightrope we must cross (peril).
 - Checked against "Claimed big ideas" and every twist: not being forgotten by someone (both forget, by choice, and the twist is that it was kind), not a stand-in, not a relived day. The engine stays (two people erase each other and keep finding each other), the device and picture are ours.
-- **The rule is the clue:** "Three burnt BRIDGES / run from my window / to a STRANGER'S. / I've never burned / a bridge / in my LIFE." first reads as an impossible fact: someone has burned a stranger out of my life three times, and it wasn't me. After the reveal, the count is of goodbyes: three years, three Novembers, three burnings done together. The fourth is the first we keep.
+- **The rule is the clue:** "Three burnt BRIDGES / run from my window / to a STRANGER'S. / Somebody over there / forgot me / three TIMES." first reads as an impossible fact: a stranger has forgotten me three times, and I've never met him. After the reveal, the count is of goodbyes: three years, three Novembers, three burnings done together. The fourth is the first we keep.
 - **Clarity test (two sentences):** Every year, the night before Eli ships out, he and I burn the bridge between our windows so we forget each other and don't have to miss each other, and every spring we meet again and become best friends. This year I found the handprints, so we kept the bridge, and I missed him all winter while it grew out over the sea toward his boat.
 
 ## The story
 - **Premise:** Here every friend you make builds a bridge between your windows, one plank at a time. If you burn one, you both forget the other ever lived, and nobody tells you who you burned. In April I finally meet Eli, the guy across the alley, and by the end of the week he's my best friend, like the brother I never had. Our bridge grows thirty planks in a week, when bridges take years. He already knows how I take my coffee, my dog jumps on him like she missed him, and my mom calls him Eli before I've said his name. Three burnt bridges lie in the alley under ours, and all three ran from his window to mine.
-- **Rule / hook (L01, about 2.2 s, revision 1):** "Three burnt BRIDGES / run from my window / to a STRANGER'S." L02 makes it impossible: "I've never burned / a bridge / in my LIFE."
+- **Rule / hook (L01, about 2.2 s, revision 1):** "Three burnt BRIDGES / run from my window / to a STRANGER'S." L02 makes it impossible (revision 2, standards r1: no "I've never X" next to ep97): "Somebody over there / forgot me / three TIMES."
 - **The relatable want:** a best friend you click with at once, and not wanting to lose him.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** our bridge itself, plus a plank counter in the top-right corner: a small teal plank glyph with our bridge's plank count (3 at L09, 30 at L12, 64 by L24, then 65, 66 a plank a night from L58, past 200 at L61). Frame 1 is the fourth bridge, close, its newest plank at my window's sill, Eli's teal shutters at the far end.
 - **The 3 to 5 example montage (L03 to L08, 4 to 19 s):** bridges between windows all over the alley (L03), one plank at a time (L04), Mrs. Vega's sixty bridges like a web (L05), two old guys' bridge so old it turned to stone (L06), burning one (L07), nobody telling (L08).
@@ -52,7 +52,7 @@ The batch table is in `stories/ep97-prize-bears/script.md`. This row:
 **L52 and L53: "He said, / "So I'd have to MISS you?" / I said, / "GOOD.""** Short enough to type back. Backup: L05's "Her window looks like a WEB."
 
 ## The opening recipe (playbook v1), point by point
-1. Line 1 is a count that's wrong (`count`): three burnt bridges to a stranger's window, 10 words, about 2.2 s. L02 makes it impossible (I've never burned one).
+1. Line 1 is a count that's wrong (`count`): three burnt bridges to a stranger's window, 10 words, about 2.2 s. L02 makes it impossible (a stranger has forgotten me three times).
 2. Frame 1 looks straight down from my sill at the three charred bridges on the cobbles, running to the teal shutters opposite, the plank counter glyph top-right. Push in. No wide.
 3. A sound hit on "STRANGER'S": a soft charred-wood creak plus a sub swell.
 4. L02 tightens it in 1.8 s. No names before 19 s.
@@ -126,6 +126,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S12 | L12 | 25.0 | Time-lapse feel in three cuts: our bridge 10, 20, 30 planks, the counter ticking. |
 | S13 | L13 | 26.9 | The old stone bridge at the end of the street again, for scale. |
 | S14 | L14 | 27.6 | Two mugs, one sliding across the bridge on a little tray (no grip). |
+| S14b-a, S14b-b | L14b | 29.2 | (revision 2) Eli at his window, `laugh`, proud, a lopsided sandwich on the tray between us. Then me, `smirk`, looking at it on "LUNCH". Our bridge in both. |
 | S15 | L15 | 29.2 | Eli and me sitting on the bridge with cards, Eli `sly`, a card up his sleeve. |
 | S16 | L16 | 30.8 | Eli handing me a mug made exactly how I like it (cut before hands meet), me `worried`. |
 | S17 | L17 | 32.6 | Pip the terrier leaping at Eli in our hallway, tail going. |
@@ -162,7 +163,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S47 | L47 | 85.3 | My face and Eli's, side by side, eyes shut. |
 | S48 | L48 | 87.3 | Spring: Eli at his window waving for the first time, the S09 framing. |
 | S49 | L49 | 90.2 | (revised) The three burnt bridges at night from below, raised toward our windows, the string lights over them. Then the handprint plank. |
-| S50 | L50 | 92.2 | (revised) Me at my window pointing down at the handprints. Then Eli staring at the matches on his sill, `neutral`, blank, like a stranger's. |
+| S50 | L50 | 92.2 | (revised) Me at my window pointing down at the handprints ("He didn't remember me EITHER": this winter's forgetting, not the spring). Then Eli staring at the matches on his sill, `neutral`, blank, like a stranger's. |
 | S51 | L51 | 94.2 | His hand at the end of his sleeve sweeping the box into his pocket. |
 | S52 | L52 | 95.8 | Eli, `grin`, across the bridge. |
 | S53 | L53 | 97.6 | Me, `laugh`. |
@@ -185,7 +186,7 @@ One plant, a plain tally: two teal strokes scratched into the first plank of our
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
 - L01: Three burnt BRIDGES / run from my window / to a STRANGER'S.
-- L02: I've never burned / a bridge / in my LIFE.
+- L02: Somebody over there / forgot me / three TIMES.
 - L03: Here, every friend you make / builds a little BRIDGE / between your windows.
 - L04: One PLANK / at a time.
 - L05: Mrs. Vega upstairs / has SIXTY. / Her window looks like a WEB.
@@ -198,6 +199,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L12: Our bridge grew / thirty planks / in a WEEK.
 - L13: Bridges take YEARS.
 - L14: We passed coffee / across it / every MORNING.
+- L14b: He made me a bad SANDWICH / and called it LUNCH.
 - L15: He's terrible at CARDS. / He cheats ANYWAY.
 - L16: Eli already knew / how I take my COFFEE.
 - L17: My dog jumped all over him / like she'd MISSED him.
@@ -233,7 +235,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L47: so neither of us / has to MISS the other.
 - L48: And every SPRING, / when he comes HOME, / we meet / for the first TIME.
 - L49: That's why they rise / when it gets COLD. / A burnt bridge remembers / what the two of you FORGOT, / and reaches back / on the night it BURNED.
-- L50: I showed Eli / the HANDPRINTS. / He'd forgotten me TOO. / He stared at the matches / on his SILL / like he'd never seen them BEFORE.
+- L50: I showed Eli / the HANDPRINTS. / He didn't remember me EITHER. / He stared at the matches / on his SILL / like he'd never seen them BEFORE.
 - L51: Then he put them / in his POCKET.
 - L52: He said, / "So I'd have to MISS you?"
 - L53: I said, / "GOOD."

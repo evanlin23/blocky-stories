@@ -26,16 +26,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I've never burned",
-    "I've never burned"
+    "Somebody over there",
+    "somebody over there"
    ],
    [
-    "a bridge",
-    "a bridge"
+    "forgot me",
+    "forgot me"
    ],
    [
-    "in my LIFE.",
-    "in my life."
+    "three TIMES.",
+    "three times."
    ]
   ]
  },
@@ -292,6 +292,24 @@
    [
     "every MORNING.",
     "every morning."
+   ]
+  ]
+ },
+ {
+  "id": "L14b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He made me",
+    "he made me"
+   ],
+   [
+    "a bad SANDWICH",
+    "a bad sandwich"
+   ],
+   [
+    "and called it LUNCH.",
+    "and called it lunch."
    ]
   ]
  },
@@ -1007,12 +1025,12 @@
     "the handprints."
    ],
    [
-    "He had forgotten",
-    "he had forgotten"
+    "He didn't remember",
+    "he didn't remember"
    ],
    [
-    "me TOO.",
-    "me too."
+    "me EITHER.",
+    "me either."
    ],
    [
     "He stared at",
