@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 7
+REV = 8
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -96,9 +96,9 @@ cast = {
     "me2": person("#f0c4a0", "#4fc060", "#3a4a6a", "#f4f4f2", hair="cap", hair_c="#8a8a92", brow_w=1.9),
     "me3": person("#f0c4a0", "#6a9a8a", "#4a4a5a", "#6a5a4a", hair="cap", hair_c="#74747e", pattern="knit",
                   pattern_c="#587a6c", extras=["glasses"], extra_c="#d8452f", glasses_c="#d8452f", brow_w=1.9),
-    "vern0": person(VS, CARD, "#6b5a48", "#4a3626", hair="cap", hair_c="#f6f6f6", pattern="knit", pattern_c="#6e4630",
+    "vern0": person(VS, CARD, "#6b5a48", "#4a3626", hair="cap", hair_c="#d2d4dc", pattern="knit", pattern_c="#6e4630",
                     extras=["glasses"], extra_c="#3a3a3e", brow_w=1.6),
-    "vern0s": person(VS, "#34406a", "#34406a", "#2a2a32", hair="cap", hair_c="#f6f6f6", collar="#f4f4f4",
+    "vern0s": person(VS, "#34406a", "#34406a", "#2a2a32", hair="cap", hair_c="#d2d4dc", collar="#f4f4f4",
                      extras=["glasses", "tie"], extra_c="#e8553f", brow_w=1.6),
     "vern1": person(VS, CARD, "#6b5a48", "#4a3626", hair="cap", hair_c="#b0b0b8", pattern="knit", pattern_c="#6e4630",
                     brow_w=1.6),
@@ -233,7 +233,7 @@ show(0, "cane_vern0")
 show(0, "cal", False)
 put("vern0", 0, HUGV, -45, expr="crying", arms=[75, 75])
 put("me", 0, HUGM, 55, expr="worried", arms=[50, 50])
-shot(0, cu(HUGV, -45, 4.7, 46, tz2=FACE, dx=0.0), "hook")
+shot(0, cu(HUGV, -45, 3.7, 50, tz2=FACE, dx=0.0), "hook")
 shot("L01.1", cu(HUGM, 55, 4.6, 46), "mehug")
 shot("L01.2", C(-4.9, -2.8, 0.7, 5.0, 36, ang=-10, dz=0.5), "boxfeet")
 shot("L01.3", C(-4.9, -1.8, 1.5, 6.2, 36, ang=-8), "hugwide")
@@ -393,7 +393,7 @@ cue("L18.2+0.1", "fence", v=1.0, dur=0.7)
 shot("L18.1", C(0, -1.0, 1.4, 8.0, 28, ang=-12), "storm")
 look("L18.3", "day")
 show("L18.3", "hammer")
-put("me", "L18.3", [-1.3, -1.4], 70, expr="grin", arms=[60, 60])
+put("me", "L18.3", [-1.3, -1.4], 70, expr="smile", arms=[60, 60])
 cue("L18.3", "fence", v=1.0)
 cue("L18.3+0.1", "fence", v=0.0, dur=1.1)
 shot("L18.3", cu((-1.3, -1.4), 55, 4.2, 40, side=15), "fixing")
@@ -503,7 +503,7 @@ put("vern2", "L27", [AX, AY - 0.15], 0, expr="smile")
 sit("vern2", "L27", "chairA", rock=True)
 shot("L27", C(AX, AY, 1.3, 5.0, 40, ang=-10), "watchplant")
 sit("vern2", "L27.1", on=False)
-put("vern2", "L27.1", [VX - 1.2, 4.4], 0, expr="grin", arms=[0, 150])
+put("vern2", "L27.1", [VX - 1.2, 4.4], 0, expr="smile", arms=[0, 150])
 shot("L27.1", C(VX - 1.2, 4.4, 1.5, 4.8, 40, ang=-3), "wavefirst")
 put("vern2", "L28", [AX, AY - 0.15], 0, expr="smile", arms=[0, 0])
 sit("vern2", "L28", "chairA", rock=True)
@@ -533,18 +533,20 @@ sit("vern3", "L31.2", on=False)
 put("me2", "L31.2", [-6.0, 4.6], 0, expr="worried")
 shot("L31.2", C(-6.0, 4.6, 1.4, 5.0, 38, ang=0), "watchme")
 # ===== 06 zero (L32 to L34)
-look("L32", "night")
+look("L32", "dusk")
 count("L32", 900)
+show("L32", "tallylamp")
+show("L34", "tallylamp", False)
 only("L32", ["vern3", "me2"])
 show("L32", "chairs")
 put("vern3", "L32", [AX, AY - 0.15], 0, expr="soft")
 sit("vern3", "L32", "chairA", rock=True)
 put("me2", "L32", [BX, BY - 0.15], 0, expr="worried", head=[-25, 0], lean=14)
 sit("me2", "L32", "chairB", z=0.56)
-shot("L32", C(AX + 0.8, AY, 1.1, 6.2, 38, ang=-10, push=0.1), "twochairs")
+shot("L32", C(AX + 0.8, AY, 1.2, 7.4, 34, ang=-10, push=0.06), "twochairs")
 shot("L32.2", mv([AX - 0.8, AY - 1.6, 1.15], [AX - 0.46, AY, 0.83], 46, [AX - 0.6, AY - 1.3, 1.1], [AX - 0.46, AY, 0.83], 46), "tally")
 shot("L32.3", cal_close(3.6, 28), "darkcal")
-look("L33", "night")
+look("L33", "dusk")
 beat("vern3", "L33", expr="smile", head=[18, 0])
 shot("L33", cu((AX, AY), 8, 3.4, 52), "shake")
 shot("L33.1", C(AX, AY, 1.3, 4.4, 40, ang=-15), "rocks")
@@ -597,7 +599,7 @@ shot("L40.1", mv([RX + 0.2, RY - 2.0, 1.6], [RX + 0.6, RY - 4.5, 1.5], 50, [RX +
 # L41: last week he waved at me like a stranger
 look("L41", "day")
 count("L41", 7)
-cue("L41", "photos", n=0.0)
+cue("L41", "photos", n=1.0)
 only("L41", ["vern3"])
 put("vern3", "L41", [VX - 1.2, 4.4], 0, expr="blank", arms=[0, 120])
 shot("L41", cu((VX - 1.2, 4.4), 0, 4.8, 42, dx=0.0), "strangerwave")
@@ -620,7 +622,8 @@ count("L43", 1)
 only("L43", [])
 shot("L43", cal_close(2.6, 28), "calone")
 shot("L43.1", mv([RX, RY - 2.0, 1.8], [RX, RY + 3.3, 1.8], 32, [RX, RY - 1.2, 1.8], [RX, RY + 3.3, 1.8], 32), "barewall")
-cue("L43.1", "photos", n=0.0)
+cue("L43.1", "photos", n=1.0)
+cue("L44", "photos", n=0.0)
 # the drop: the porch calendar, last page at 1
 shot("P01", cal_close(2.8, 28), "dropcal")
 # ===== 08 the twist (L44 to L53)
@@ -634,7 +637,7 @@ cue("L44.2", "truckdoor", a=110.0, dur=0.8)
 shot("L44.2", C(DX, 3.0, 1.6, 14.0, 28, ang=-55), "dooropen")
 # L45: a young guy jumps down with a box
 only("L45", ["vern4"])
-put("vern4", "L45", [DX - 1.6, -1.0, 0.6], 20, expr="grin")
+put("vern4", "L45", [DX - 1.6, -1.0, 0.6], 20, expr="smile")
 show("L45", "carry_vern4")
 shot("L45", cu((DX - 1.7, -1.0), 20, 3.0, 46, z=1.8), "hopprep")
 put("m1", "L45.2", [DX + 0.4, 5.9], 0, expr="neutral", arms=[40, 40])
@@ -642,7 +645,7 @@ put("m2", "L45.2", [DX - 0.8, 5.9], 0, expr="neutral", arms=[40, 40])
 show("L45.2", "carry_m1")
 shot("L45.2", C(DX, 5.6, 1.3, 6.0, 36, ang=-20), "moversup")
 only("L45.3", ["vern4"])
-put("vern4", "L45.3", [DX - 1.6, -1.0, 0.6], 20, expr="grin")
+put("vern4", "L45.3", [DX - 1.6, -1.0, 0.6], 20, expr="smile")
 go("vern4", "L45.3+0.3", [DX - 1.9, -1.2, 0.0])
 beat("vern4", "L45.4", yaw=180, expr="smile")
 shot("L45.3", C(DX - 1.7, -1.1, 1.0, 5.4, 40, ang=-10), "hop")
@@ -666,8 +669,8 @@ go("vern4", "L47+0.45", [MEET_V[0], MEET_V[1]], arms=[0, 0])
 shot("L47", C(DX - 6.0, MEET_V[1], 1.4, 6.0, 36, ang=10), "walkover")
 only("L47.1", ["vern4", "me3"])
 put("vern4", "L47.1", [MEET_V[0], MEET_V[1]], -50, expr="smile", arms=[80, 80])
-put("me3", "L47.1", [MEET_V[0] - 1.6, MEET_V[1]], 50, expr="soft")
-shot("L47.1", C(MEET_V[0] - 0.8, MEET_V[1], 1.5, 5.4, 36, ang=0, push=0.06), "reveal")
+put("me3", "L47.1", [MEET_V[0] - 1.3, MEET_V[1]], 50, expr="soft")
+shot("L47.1", C(MEET_V[0] - 0.65, MEET_V[1], 1.6, 7.6, 36, ang=0, push=0.04), "reveal")
 shot("L48.2", cu(MEET_V, -20, 3.0, 54), "justmoved")
 # L49
 only("L49", ["vern4"])
@@ -796,6 +799,9 @@ cue(0, "rboxes", n=0.0)
 cue(0, "mydoor", a=0.0)
 season(0, "summer")
 for k_ in acting.values():
+    vi = next((i for i, a in enumerate(k_) if a.get("at") == 0 and a.get("hidden") is False), None)
+    if vi is not None:
+        k_[:vi] = []
     remap_all(k_)
 remap_all(cues)
 shots, names = [], {}
@@ -838,7 +844,7 @@ remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L48"), remap("L49")], "emph": [remap(x) for x in ["L01.1", "L06.1", "L12", "L20.2", "L26", "L34.3",
                                                                           "L40", "L48.1", "L55", "L62.1"]],
-          "quiet": [[remap("L57"), remap("L58")]], "sway": [names["strangerwave"], names["squint2"]]}
+          "quiet": [[remap("L57"), remap("L58")]], "sway": [names["strangerwave"], names["squint2"]], "hold": [names["reveal"]]}
 story = {
     "slug": "ep105-backward-neighbor",
     "title": "He Said Goodbye The Day We MET 📦",

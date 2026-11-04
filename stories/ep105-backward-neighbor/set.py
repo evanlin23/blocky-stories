@@ -47,7 +47,7 @@ LOOKS = {
     "dusk": _L(sun=1.8, sun_col="#ffb070", el=9.0, az=-70.0, fill=0.9, fill_col="#ffd2b0", sky="#f0a878", sky_str=0.8,
                front=0.9),
     "bluedusk": _L(sun=0.7, sun_col="#ff9a78", el=7.0, az=-70.0, fill=1.5, fill_col="#7e96e0", sky="#5668b0", sky_str=0.8,
-                   front=0.9, room=0.85),
+                   front=0.9, room=2.4),
     "dayroom": _L(fill=1.5, room=7.0),
     "morning": _L(sun=3.0, sun_col="#ffe2b8", el=24.0, az=-60.0, fill=1.0, fill_col="#ffeedd", sky="#a8dcff", front=0.3),
 }
@@ -264,10 +264,9 @@ def tree(kit, name, x, y, h=6.0, tint="#cfe8c0"):
 def cardboard(kit, name, loc, size=(0.6, 0.5, 0.45), rot=0.0, parent=None, mark=True):
     b = kit.box(name, size, loc, kit.plastic("#d9a05a", 0.8, spec=0.05), parent, rot=(0, 0, rot * D2R), bevel=0.02)
     kit.box(f"{name}.tape", (0.1, size[1] + 0.02, size[2] + 0.02), (0, 0, 0), kit.plastic("#f4d8a0", 0.8), b)
-    if mark:     # a plain glyph (a plus) in red on the front face, no letters
-        m = kit.plastic("#e8553f", 0.7)
-        kit.box(f"{name}.m1", (0.16, 0.02, 0.04), (0.0, -size[1] / 2 - 0.012, 0.0), m, b)
-        kit.box(f"{name}.m2", (0.04, 0.02, 0.16), (0.0, -size[1] / 2 - 0.012, 0.0), m, b)
+    if mark:     # a plain glyph (a maple-orange disc) on the front face, no letters
+        m = kit.plastic("#ff8c3a", 0.7)
+        kit.cyl(f"{name}.m1", 0.1, 0.02, (0.0, -size[1] / 2 - 0.012, 0.0), m, b, rot=(math.pi / 2, 0, 0), n=16)
     return b
 
 
@@ -307,7 +306,7 @@ def rocker(kit, name, x, y):
 def photo(kit, name, cx, cy, z, w, h, young_hair, old_hair, truck=False, big=False, wallcol=None):
     """A framed picture on the +y wall (faces -y): two plain figures hugging. No letters."""
     y = cy
-    fr = kit.plastic("#7a4a2c" if not big else "#c8903a", 0.6)
+    fr = kit.plastic("#5a3420" if not big else "#e8a63a", 0.6)
     root = kit.empty(name, (0, 0, 0))
     kit.box(f"{name}.frame", (w + 0.16, 0.06, h + 0.16), (cx, y - 0.05, z), fr, root, bevel=0.015)
     kit.box(f"{name}.bg", (w, 0.03, h), (cx, y - 0.1, z), kit.plastic("#cfe8ff", 0.9), root)
@@ -319,7 +318,7 @@ def photo(kit, name, cx, cy, z, w, h, young_hair, old_hair, truck=False, big=Fal
     skin = kit.plastic("#e8bd98", 0.7)
     sp = 0.12 if big else 0.17
     zb = 0.25 if big else 0.2
-    for who, dx, col, hc in [("a", -sp * w, "#5a82c0", young_hair), ("b", sp * w, "#6a8f7a", old_hair)]:
+    for who, dx, col, hc in [("a", -sp * w, "#5a82c0", young_hair), ("b", sp * w, "#3f9a92", old_hair)]:
         bx = cx + dx + (w * 0.12 if truck else 0)
         kit.box(f"{name}.{who}body", (0.2 * s * 1.1 * k, 0.03, 0.42 * s * k), (bx, y - 0.14, z - zb * s), kit.plastic(col, 0.7), root)
         kit.box(f"{name}.{who}head", (0.19 * s * 1.1 * k, 0.03, 0.19 * s * k), (bx, y - 0.15, z + 0.12 * s * k), skin, root)
@@ -328,14 +327,17 @@ def photo(kit, name, cx, cy, z, w, h, young_hair, old_hair, truck=False, big=Fal
             kit.box(f"{name}.{who}eye{ex}", (0.025 * s * k, 0.02, 0.03 * s * k), (bx + ex * 0.04 * s * k, y - 0.18, z + 0.13 * s * k), kit.plastic("#1c120c", 0.6), root)
         kit.box(f"{name}.{who}smile", (0.06 * s * k, 0.02, 0.012 * s * k), (bx, y - 0.18, z + 0.07 * s * k), kit.plastic("#7a3a30", 0.6), root)
         if who == "b":
-            kit.box(f"{name}.{who}gl", (0.14 * s * k, 0.02, 0.02 * s * k), (bx, y - 0.19, z + 0.14 * s * k), kit.plastic("#3a3a3e", 0.5), root)
+            gm = kit.plastic("#ff7a2a", 0.5)
+            kit.box(f"{name}.{who}gl", (0.16 * s * k, 0.02, 0.025 * s * k), (bx, y - 0.19, z + 0.14 * s * k), gm, root)
+            for ex in (-1, 1):
+                kit.box(f"{name}.{who}gr{ex}", (0.06 * s * k, 0.02, 0.06 * s * k), (bx + ex * 0.04 * s * k, y - 0.195, z + 0.13 * s * k), gm, root)
     # the arms around each other: each one's arm wraps across the other's back
     mx = cx + (w * 0.12 if truck else 0)
     ax = 0.17 * s * k
     kit.box(f"{name}.hug", (2 * sp * w + 0.2 * s * 1.1 * k, 0.03, 0.08 * s * k), (mx, y - 0.16, z - 0.02 * s * k),
             kit.plastic("#5a82c0", 0.7), root)
     kit.box(f"{name}.hug2", (2 * sp * w + 0.1 * s * k, 0.03, 0.07 * s * k), (mx + ax * 0.2, y - 0.175, z - 0.1 * s * k),
-            kit.plastic("#6a8f7a", 0.7), root)
+            kit.plastic("#3f9a92", 0.7), root)
     return root
 
 
@@ -445,7 +447,8 @@ def build(kit, story, tl):
     kit.box("chairA.mark1", (0.03, 0.4, 0.02), (G.CHAIR_A[0] + 0.5, G.CHAIR_A[1], 0.8 + 0.0), pl("#ff8c3a", 0.6), ca)
     # two maple-orange strokes scratched into the arm of Vern's left rocking chair (the lore tally)
     for k in range(2):
-        kit.box(f"chairA.stroke{k}", (0.025, 0.22, 0.012), (-0.44 + 0.0 + k * 0.06 - 0.0, 0.05, 0.83), pl("#ff8c3a", 0.6), ca)
+        kit.box(f"chairA.stroke{k}", (0.035, 0.34, 0.02), (-0.44 + 0.0 + k * 0.06 - 0.0, 0.0, 0.84), kit.emit("#ffb050", 1.2, f"stroke{k}"), ca)
+    kit.light("tallylamp", "POINT", (G.CHAIR_A[0] - 0.9, G.CHAIR_A[1] - 1.0, 1.4), 40.0, "#fff0d8", size=0.3, shadow=False)
     vis("chairs", ca, cb)
     cx, cy = G.CAL
     paper = pl("#f4ead2", 0.7)
@@ -518,7 +521,7 @@ def build(kit, story, tl):
     vis("bbq", gr)
 
     # ------------------------------------------------------------------ Vern's living room (far east)
-    wallp = kit.grime("#d8b48c", 0.8, 2.0, "wallpaper", 0.9)
+    wallp = kit.grime("#f4e4cc", 0.8, 2.0, "wallpaper", 0.9)
     kit.plane("rfloor", (12, 9), (rx, ry, 0.03), kit.planks("#c9976a", "#b78456", 1.0))
     kit.box("rback", (12, 0.3, 3.4), (rx, ry + 3.5, 1.7), wallp)
     for sx in (-1, 1):
@@ -554,7 +557,7 @@ def build(kit, story, tl):
     hairs = [("#6a4228", "#c9c9d0"), ("#5a3a22", "#fafafa"), ("#7a5a3a", "#e0e0e6"), ("#6a4228", "#f4f4f4"),
              ("#5a3a22", "#9a9aa2"), ("#5a3a22", "#f4f4f4"), ("#6a4228", "#c9c9d0"), ("#7a5a3a", "#9a9aa2"),
              ("#5a3a22", "#e0e0e6")]
-    pale = pl("#fff0cc", 0.9)
+    pale = pl("#ffffff", 0.9)
     W["photos"] = []
     for i, (px, pz, pw, ph) in enumerate(spots):
         kit.box(f"pale{i}", (pw + 0.28, 0.02, ph + 0.28), (rx + px, ry + 3.33, pz), pale)
@@ -690,10 +693,11 @@ def _first_frame(kit, story):
             vis(f"carry_{who}", box)
     me_ = bpy.data.objects.get("me")
     if me_ is not None:
-        tb = kit.empty("me.tbrush", (0.15, -1.15, 4.35), me_)
-        kit.box("me.tb.handle", (1.6, 0.16, 0.18), (0.95, 0, -0.3), pl("#fafafa", 0.5), tb, rot=(0, -0.3, 0))
-        kit.box("me.tb.head", (0.6, 0.2, 0.26), (0.0, 0, 0.0), pl("#4f7ae0", 0.5), tb)
-        kit.box("me.tb.bris", (0.4, 0.1, 0.1), (-0.05, -0.1, 0.0), pl("#fafafa", 0.7), tb)
+        tb = kit.empty("me.tbrush", (1.1, -1.35, 3.0), me_)
+        kit.cyl("me.tb.cup", 0.42, 0.8, (0, 0, 0), pl("#fafafa", 0.5), tb, n=14)
+        kit.cyl("me.tb.tea", 0.34, 0.04, (0, 0, 0.39), pl("#8a4a22", 0.5), tb, n=14)
+        kit.box("me.tb.handle", (0.14, 0.16, 0.5), (0.5, 0, 0.0), pl("#fafafa", 0.5), tb)
+        kit.box("me.tb.band", (0.86, 0.86, 0.14), (0, 0, 0.1), pl("#4f7ae0", 0.5), tb)
         vis("tb_me", tb)
     g1 = bpy.data.objects.get("me3.gl1")
     if g1 is not None:        # me at 56: plain clear lenses with red rims, so they never read as sunglasses
@@ -738,6 +742,7 @@ def animate(kit, story, tl, t, ctx):
     bg.inputs["Strength"].default_value = look["sky_str"]
     night = 1.0 if (tl["cues"] and look["sky_str"] < 0.7) else 0.0
     gains["room"] = gains["room2"] = look["room"]
+    gains["tallylamp"] = 0.0
     gains["porchv"] = 1.0 if night else 0.0
     gains["porchm"] = 1.0 if night else 0.0
 
@@ -814,6 +819,8 @@ def animate(kit, story, tl, t, ctx):
         on = state.get(nm, nm in ("cal", "chairs", "rglass"))
         for ob in obs:
             _hide(ob, not on)
+    if state.get("tallylamp"):
+        gains["tallylamp"] = 1.0
     show_number(W["tslots"], W["tcomma"], round(ct["n"]))
     show_number(W["wslots"], W["wcomma"], round(ct["n"]))
     if not state.get("cal", True):          # the porch card is off: its digits must go too (show_number just lit them)
