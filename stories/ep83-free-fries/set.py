@@ -429,7 +429,7 @@ def build_kitchen(kit, ox, home, ctx):
         B(tray, (0.6, 0.4, 0.03), (0, 0, 0.015), M("#aab3ba", 0.4), "trayb", 0.005)
         for i in range(6):
             B(tray, (0.15, 0.15, 0.09), (-0.2 + 0.2 * (i % 3), -0.1 + 0.2 * (i // 3), 0.075), P("#c98d4d", 0.6), "bake", 0.04)
-        ctx["hbk"] = basket(None, (ox + 0.35, 1.5, 1.1), "hbk")
+        ctx["hbk"] = basket(None, (ox + 0.5, 1.5, 1.1), "hbk")
         hide(ctx["hbk"], True)
         ctx["dishes"] = {"pan": pan, "tray": tray}
         hide(pan, True)

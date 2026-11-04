@@ -1,4 +1,5 @@
-# ep83-free-fries handoff
-- Flash: preview passes; only the old house warning "general_3f: 7 changes in a second" remains, around 8.6 s (S06-S08 hatch close-ups). In the preview it comes from the 4-frame draw step; not cleared at full rate (no full-rate draw was possible here). Check it on the proof.
-- Open warns: face_big_share 0.345, walk_dead_end_share 0.583, saturation 0.356, silence_share 0.0052.
-- Rule marker: diner sign in S01 and the hatch shots; sign copies (stove-timer signs) on the kitchen and stockroom walls; corner disc everywhere. Top-down table shots (S16, S23) and extreme close-ups (S25, S26) show only the corner disc.
+# ep83-free-fries handoff (fix round 1, picture only, no word changes)
+- Done: gloves on Mom at L23/L24/L29.3/L29.5 (acting `arms` are degrees: 95/70 now, were 1 degree) then an empty-hook shot (S38); L42.3 reframed, both heads whole, basket at my sleeve (characters spaced 1.1 m so heads clear sleeves); L36 split into Mom laughing (S45) and the two of us at the stove (S46); P01 clears the stage so the dark round window shows; L25/L26 `wide` eyes, glasses lenses hidden on S31/S32, push-ins, teal dimmed over 1 s before S31; L11 tally strokes enlarged between the baskets; L21 exposure ramp 0.7 s (`expramp` shot key read by set.py).
+- Checks: preflight 0 blocks, flash PASS on the preview (the old 7-in-a-second warning is gone), measure 0 block 0 near, 2 warn (face_big_share 0.372, walk_dead_end_share 0.583).
+- Open: face_big_share and walk_dead_end warns; check flash again on the proof. Delete out/work/<story>/frames-preview before a re-render if shot ids shift (stale frames got mixed in once).
+- Rule marker: diner sign in S01 and the hatch shots; sign copies on kitchen and stockroom walls; corner disc everywhere.

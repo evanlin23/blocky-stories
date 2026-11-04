@@ -264,8 +264,8 @@ cue("L35", "mgloves", on=False)
 scene("L35", mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="smile"), omar=dict(pos=HK_SEATS["omar"], yaw=0, expr="grin"),
       me=dict(pos=HK_SEATS["me"], yaw=0, expr="smile"))
 S("L35", C((HM - 2.4, 2.25, 1.25), 3.1, 0, 5, 30, d2=2.6), note="our kitchen table: Mom, me and Omar at dinner, Omar's plate full")
-scene("L36", omar=dict(pos=(HM - 0.45, 1.95, 0), yaw=0, expr="grin", arms=[75, 75]),
-      me=dict(pos=(HM + 0.35, 1.95, 0), yaw=0, expr="smile", arms=[75, 75]),
+scene("L36", omar=dict(pos=(HM - 0.6, 1.95, 0), yaw=0, expr="grin", arms=[75, 75]),
+      me=dict(pos=(HM + 0.5, 1.95, 0), yaw=0, expr="smile", arms=[75, 75]),
       mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="laugh"))
 S("L36", C((HM - 2.4, 2.25, 1.3), 1.5, 0, 4, 36, d2=1.2), note="Mom laughing at the table")
 S("L36+1.0", C((HM - 0.05, 1.95, 1.35), 1.9, 0, 5, 36, d2=1.6), note="Omar and me at the stove")
@@ -299,8 +299,8 @@ scene("L42", me=dict(pos=(SR - 0.45, 1.5, 0), yaw=0, expr="shut"), omar=dict(pos
 S("L42", C((SR, 1.5, 1.55), 2.7, 0, 3, 36, d2=2.4), note="we blink")
 cue("L42.2", "hbask", on=True)
 cue("L42.2", "stove", on=True)
-scene("L42.2", omar=dict(pos=(HM - 0.45, 1.95, 0), yaw=0, expr="wide", arms=[75, 75]),
-      me=dict(pos=(HM + 0.35, 1.95, 0), yaw=0, expr="wide", arms=[70, 70]))
+scene("L42.2", omar=dict(pos=(HM - 0.6, 1.95, 0), yaw=0, expr="wide", arms=[75, 75]),
+      me=dict(pos=(HM + 0.5, 1.95, 0), yaw=0, expr="wide", arms=[70, 70]))
 S("L42.2", C((HM, 1.95, 1.35), 2.7, 0, 5, 30, d2=2.3), note="at our apartment stove side by side, a fry basket in my hands")
 S("L42.3", C((HM - 0.05, 1.95, 1.3), 2.2, 0, 16, 34, d2=1.9), note="both of us whole, the fry basket at the end of my sleeve")
 cue("L43", "hbask", on=False)
