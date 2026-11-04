@@ -601,34 +601,33 @@ def update_numbers(ctx, tl, t, states, vis, scene_on):
 
 # ------------------------------------------------------------------------------------------------ the upside-down grin
 
+# per shot: (face yaw toward camera, roll of joint 1, roll of joint 2, roll of the head, pitch of joint 1), degrees
+NECK_POSE = {"default": (-35, 55, 55, 55, 15)}
+
 GRIN_W, GRIN_H = 0.62, 0.42   # world size of the decal on the Negative's face (the mouth is about 0.5 wide: ~40% of the head)
 EYE_W, EYE_H = 1.0, 0.40
 
 
 def grin_image(w=1240, h=840):
-    """The upside-down grin: a wide, shallow inverted crescent, corners dragged down, a dark inside, a thin pale lip and a
-    faint crease at each corner turning down. Wide and shallow so it never reads as a round gasp."""
-    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    """The grin in the head's OWN frame: a wide smile, corners UP, a dark recess inside a thin pale lip, no teeth. The whole
+    head hangs upside down (see _extras), so on screen it sits above the eyes and curves the wrong way (Thatcher)."""
+    S = 2
+    im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    cx, hw = w / 2, w * 0.47
-    base = h * 0.80                      # the corners hang low
-    rise, thick = h * 0.40, h * 0.17
+    cx, hw = w * S / 2, w * S * 0.47
+    top, drop, thick = h * S * 0.30, h * S * 0.42, h * S * 0.20
     up, lo = [], []
     for k in range(0, 121):
         u = k / 120
         x = cx + hw * (2 * u - 1)
         c = 1 - (2 * u - 1) ** 2
-        up.append((x, base - rise * c ** 0.9))                       # the arch (top edge)
-        lo.append((x, base - rise * c ** 0.9 + thick * c ** 0.8))    # the flatter lower edge
-    d.polygon(up + lo[::-1], fill=(190, 204, 222, 255))
-    o = h * 0.03
+        up.append((x, top + 0.06 * h * S * (1 - c) ** 1.5))                   # the upper lip: flat, corners tugged up
+        lo.append((x, top + 0.06 * h * S * (1 - c) ** 1.5 + drop * c ** 0.7))  # the lower lip: the deep smile belly
+    d.polygon(up + lo[::-1], fill=(176, 190, 208, 255))
+    o = h * S * 0.016
     inner = [(x, y + o) for x, y in up] + [(x, y - o) for x, y in lo[::-1]]
-    d.polygon(inner, fill=(30, 36, 46, 255))
-    for sx in (-1, 1):                                              # the corner creases, turning down
-        x0 = cx + sx * hw * 0.98
-        d.line([(x0, base - h * 0.03), (x0 + sx * w * 0.012, base + h * 0.07), (x0 + sx * w * 0.004, base + h * 0.14)],
-               fill=(120, 132, 150, 255), width=int(h * 0.018))
-    return im
+    d.polygon(inner, fill=(4, 5, 7, 255))
+    return im.resize((w, h), Image.LANCZOS)
 
 
 def glint_image(w=1000, h=400):
@@ -751,11 +750,24 @@ def _extras(kit, ctx):
         em_ = alpha_mat(kit, "neg glints", glint_image(), emit=3.0)
         curved_decal(kit, "neg.glints", (EYE_W, EYE_H), 0.17, R + 0.012, em_, hg)
     nk = bpy.data.objects.get("neg.neck")
-    if nk is not None:                                   # a neck about 1.4x too long, the collar lit
-        nk.location.z += 0.55
+    ctx["nneck"] = None
+    if nk is not None:
+        # a neck 1.5x too long that bends over sideways in two joints, ending in a head hung upside down (chin up, crown down).
+        # nk0 turns the face toward the camera, nk1 and nk2 roll the neck over, neg.head rolls the head the rest of the way.
         up = bpy.data.objects.get("neg.upper") or nk.parent
-        kit.box("neg.neckbox", (0.7, 0.7, 0.62), (0, 0, 2.28), kit.plastic("#15181c", 0.5, "neg neck", 0.2), up, bevel=0.05)
+        ink = kit.plastic("#15181c", 0.5, "neg neck", 0.2)
+        n0 = kit.empty("neg.nk0", (0, 0, 1.98), up)
+        n1 = kit.empty("neg.nk1", (0, 0, 0), n0)
+        kit.box("neg.neckbox1", (0.5, 0.5, 0.95), (0, 0, 0.42), ink, n1, bevel=0.05)
+        n2 = kit.empty("neg.nk2", (0, 0, 0.85), n1)
+        kit.box("neg.neckbox2", (0.46, 0.46, 0.95), (0, 0, 0.4), ink, n2, bevel=0.05)
+        nk.parent = n2
+        nk.matrix_parent_inverse = nk.matrix_parent_inverse.__class__()
+        nk.location = (0, 0, 0.8)
         kit.box("neg.collar", (1.12, 1.04, 0.16), (0, 0, 2.03), alpha_mat_emit(kit), up, bevel=0.05)
+        ctx["nneck"] = (n0, n1, n2, bpy.data.objects.get("neg.head"))
+        # a dark pocket behind it: an unlit gap between stacks (cheated in for this figure only)
+        ctx["pocket"] = kit.box("neg.pocket", (4.2, 0.3, 3.6), (3000, 3000, 0), kit.plastic("#030405", 0.9, "neg pocket", 0.0))
     pm = img_mat(kit, "cat picture", cat_image(), rough=0.4)
     sm = kit.plastic("#16181c", 0.4, "phone body", 0.3)
     ph = kit.empty("phone", (3000, 3000, 0))
@@ -821,6 +833,13 @@ def animate(kit, story, tl, t, ctx):
                 leg = bpy.data.objects.get(f"{who}.leg{sx}")
                 if leg is not None:
                     leg.rotation_euler = (-math.pi / 2, 0, 0)
+    if shot == "S42":                          # the camera sits where I sit: cheat me out of this one frame
+        for ob in [bpy.data.objects.get("me")] + list(bpy.data.objects["me"].children_recursive):
+            if ob is not None:
+                ob.hide_render = True
+        tn = bpy.data.objects.get("tam.neck")
+        if tn is not None:
+            tn.rotation_euler = (math.radians(8), 0, math.radians(-30))
     for nm in ("tam.gl-1", "tam.gl1"):
         ob = bpy.data.objects.get(nm)
         if ob is not None:
@@ -838,6 +857,16 @@ def animate(kit, story, tl, t, ctx):
             ob = bpy.data.objects.get(f"neg.{nm}")
             if ob is not None:
                 ob.scale = (0.62, 0.62, 1.55)
+        # the hung head: one model, posed per shot (yaw turns the face toward the camera; the roll angles sum to ~160 deg)
+        pz = NECK_POSE.get(shot, NECK_POSE["default"])
+        if ctx.get("nneck"):
+            n0, n1, n2, hd = ctx["nneck"]
+            n0.rotation_euler = (0, 0, math.radians(pz[0]))
+            n1.rotation_euler = (math.radians(pz[4]), math.radians(pz[1]), 0)
+            n2.rotation_euler = (0, math.radians(pz[2]), 0)
+            nr_neck = bpy.data.objects.get("neg.neck")
+            nr_neck.rotation_euler = (0, 0, 0)
+            hd.rotation_euler = (0, math.radians(pz[3]), 0)
     # ---- the stack of books appears with its cue
     stc = _last(_cues(tl, "stack"), t)
     for ob in ctx["stack"]:
@@ -916,21 +945,27 @@ def animate(kit, story, tl, t, ctx):
     s = states["neg"]
     over["neg_key"] = over["neg_rim"] = 0.0
     if inscene["neg"] and scene == "room":
-        yaw = math.radians(s["yaw"])
-        f = V((math.sin(yaw), -math.cos(yaw), 0.0))
-        sd = V((math.cos(yaw), math.sin(yaw), 0.0))
-        if sd.x > 0:
-            sd = -sd
-        bend = ac._held(tl["acting"]["neg"], "bend", t, 0.0)
-        head = V((s["x"], s["y"], s["z"] + 1.35)) + f * 0.25 * (1 + math.sin(math.radians(bend)))
-        head += f * 0.55 * math.sin(math.radians(bend))
-        for nm, pos, w in (("neg_key", head + sd * 0.3 + f * 1.0 + V((0, 0, -1.25)), 380.0),
-                           ("neg_rim", head - f * 1.5 - sd * 0.5 + V((0, 0, 1.4)), 800.0)):
+        bpy.context.view_layer.update()
+        hg = bpy.data.objects.get("neg.headg")
+        head = hg.matrix_world.translation.copy()
+        cam = bpy.context.scene.camera.location.copy() if bpy.context.scene.camera else V((-4, -2, 1.2))
+        tc = V((cam.x - head.x, cam.y - head.y, 0.0))
+        tc.normalize()
+        side = V((-tc.y, tc.x, 0.0))
+        # under-light from Tam's dead lamp (low, between the two, cool); a hard cool rim from behind, dark side to camera
+        for nm, pos, w in (("neg_key", V((head.x, head.y, 0.95)) + tc * 0.9 - side * 0.35, 260.0),
+                           ("neg_rim", head - tc * 1.6 + side * 0.9 + V((0, 0, 0.9)), 900.0)):
             ob = K.LIGHTS[nm]["obj"]
             ob.location = pos
             ob.rotation_euler = (head - pos).to_track_quat("-Z", "Y").to_euler()
             K.LIGHTS[nm]["base"] = w
             over[nm] = 1.0
+        pk = ctx.get("pocket")
+        if pk is not None and shot == "S42":
+            pk.location = (head.x - tc.x * 1.2, head.y - tc.y * 1.2, 1.5)
+            pk.rotation_euler = (0, 0, math.atan2(tc.y, tc.x) - math.pi / 2)
+    if ctx.get("pocket") is not None and shot != "S42":
+        ctx["pocket"].location = (3000, 3000, 0)
     for who, dd in ctx["num"].items():
         dd["em"].inputs["Strength"].default_value = NUM_GLOW
     update_numbers(ctx, tl, t, states, inscene, True)
