@@ -1,0 +1,11 @@
+{
+  "title": "Don't Wave at the SCARECROW 🌾",
+  "description": "My grandpa's pumpkin patch is the only field on our road without a single crow. Every other field is black with them. The neighbor's scarecrow has one living in its hat.\n\nSince June, Grandpa has gone very quiet at dinner. And every night, Grandma takes his crossword out to the field.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Comment WAVE if your grandpa waves at everybody too.",
+  "made_for_kids": false,
+  "cover_s": 24.4,
+  "shape": "straw-swap",
+  "opening": "ban",
+  "lane": "experiment",
+  "hold": "batch 11: scripts only, not built yet"
+}
