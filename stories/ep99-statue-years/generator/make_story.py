@@ -521,7 +521,7 @@ story = {
     "sound": sound,
     "set_moves": [names["calflip"], names["slide"], names["slide2"], names["sunrise"], names["handcheek"]],
     "clip_ok": ["crack", "slab.crack", "S54/slab", "S55/slab"],
-    "asr_forgive": ["statue's", "two", "toward", "twenty first", "watched"],
+    "asr_forgive": ["statue's", "two", "toward", "twenty first", "watched", "whose"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
