@@ -70,8 +70,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "After DARK,",
-    "after dark,"
+    "After MIDNIGHT,",
+    "after midnight,"
    ],
    [
     "it's ELEVEN,",
@@ -122,12 +122,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "He drove home",
-    "he drove home"
-   ],
-   [
-    "at MIDNIGHT.",
-    "at midnight."
+    "He stayed till ONE.",
+    "he stayed till one."
    ],
    [
     "He's never stayed",
@@ -236,12 +232,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Not for WATER.",
-    "not for water."
+    "Not even",
+    "not even"
    ],
    [
-    "Not for ANYTHING.",
-    "not for anything."
+    "for WATER.",
+    "for water."
    ]
   ]
  },
@@ -304,12 +300,12 @@
     "so last friday,"
    ],
    [
-    "I sat at",
-    "i sat at"
+    "I waited behind",
+    "i waited behind"
    ],
    [
-    "the TOP",
-    "the top"
+    "my DOOR",
+    "my door"
    ],
    [
     "with a FLASHLIGHT,",
@@ -344,8 +340,12 @@
     "at midnight,"
    ],
    [
-    "Dad's door OPENED.",
-    "dad's door opened."
+    "Dad's door OPENED,",
+    "dad's door opened,"
+   ],
+   [
+    "across the LANDING.",
+    "across the landing."
    ]
   ]
  },
@@ -404,20 +404,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then he went",
-    "then he went"
+    "Then he came",
+    "then he came"
    ],
    [
-    "back to BED,",
-    "back to bed,"
+    "back UP",
+    "back up"
    ],
    [
-    "without one",
-    "without one"
+    "and went to BED,",
+    "and went to bed,"
    ],
    [
-    "look UP.",
-    "look up."
+    "without a look",
+    "without a look"
+   ],
+   [
+    "at my DOOR.",
+    "at my door."
    ]
   ]
  },
@@ -732,12 +736,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "SIDEWAYS.",
-    "sideways."
-   ],
-   [
-    "Way too BIG.",
-    "way too big."
+    "It didn't BLINK.",
+    "it didn't blink."
    ]
   ]
  },
@@ -768,20 +768,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Something so TALL",
-    "something so tall"
+    "It came up BACKWARDS,",
+    "it came up backwards,"
    ],
    [
-    "it had",
-    "it had"
+    "its face on the back",
+    "its face on the back"
    ],
    [
-    "to FOLD",
-    "to fold"
-   ],
-   [
-    "under our ceiling,",
-    "under our ceiling,"
+    "of its HEAD.",
+    "of its head."
    ]
   ]
  },
@@ -790,16 +786,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "its head",
-    "its head"
+    "It can't SEE",
+    "it can't see"
    ],
    [
-    "bent flat",
-    "bent flat"
+    "the stairs.",
+    "the stairs."
    ],
    [
-    "against its SHOULDER.",
-    "against its shoulder."
+    "It COUNTS them.",
+    "it counts them."
    ]
   ]
  },

@@ -1,9 +1,9 @@
 {
  "slug": "ep81-eleven-steps",
- "title": "Our Stairs Grow One Step At NIGHT 🪜",
+ "title": "Ten Steps By Day, ELEVEN At Night 🪜",
  "made_for_kids": false,
  "premise": "Our stairs have ten steps by day and eleven at night, and at two in the morning they creak ten times with nobody on them. Dad's one house rule is that everyone is upstairs by ten and nobody is on the stairs after, so one night I sit at the top with a flashlight to catch the new step.",
- "twist": "The eleventh step is a carpeted box Dad has set at the bottom of the stairs every night for eleven years, because something very tall climbs exactly ten steps each night and stops one short of my door. With the box in my room it reaches the landing, and shoved out in front of my door it stands one step short until dawn. Now we take turns setting it, and last night it sat down to wait.",
+ "twist": "The eleventh step is a carpeted box Dad has set at the bottom of the stairs every night for eleven years, because something that climbs backwards, with its face on the back of its head, climbs exactly ten steps each night and stops one short of my door. With the box in my room it reaches the landing, and shoved out in front of my door it stands one step short until dawn. Now we take turns setting it, and last night it sat down to wait.",
  "world": "a two-storey house's one straight staircase of honey oak and plum carpet with a landing, a round window and an amber nightlight, a hall with a mustard lamp, and a kitchen beside it",
  "voice": {
   "voice": "am_adam",
@@ -22,9 +22,10 @@
   "he's"
  ],
  "clip_ok": [
-  "bed_single",
-  "S34",
-  "S38"
+  "bed_single"
+ ],
+ "clip_heads": [
+  "chead"
  ],
  "fade_in": false,
  "fade_out": false,
@@ -52,6 +53,13 @@
      "L59",
      "L63"
     ]
+   ],
+   "hold": [
+    "S67",
+    "S75"
+   ],
+   "sway": [
+    "S34"
    ],
    "camera": true,
    "idle": true,
@@ -208,8 +216,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "After DARK,",
-     "after dark,"
+     "After MIDNIGHT,",
+     "after midnight,"
     ],
     [
      "it's ELEVEN,",
@@ -260,12 +268,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "He drove home",
-     "he drove home"
-    ],
-    [
-     "at MIDNIGHT.",
-     "at midnight."
+     "He stayed till ONE.",
+     "he stayed till one."
     ],
     [
      "He's never stayed",
@@ -374,12 +378,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Not for WATER.",
-     "not for water."
+     "Not even",
+     "not even"
     ],
     [
-     "Not for ANYTHING.",
-     "not for anything."
+     "for WATER.",
+     "for water."
     ]
    ]
   },
@@ -442,12 +446,12 @@
      "so last friday,"
     ],
     [
-     "I sat at",
-     "i sat at"
+     "I waited behind",
+     "i waited behind"
     ],
     [
-     "the TOP",
-     "the top"
+     "my DOOR",
+     "my door"
     ],
     [
      "with a FLASHLIGHT,",
@@ -482,8 +486,12 @@
      "at midnight,"
     ],
     [
-     "Dad's door OPENED.",
-     "dad's door opened."
+     "Dad's door OPENED,",
+     "dad's door opened,"
+    ],
+    [
+     "across the LANDING.",
+     "across the landing."
     ]
    ]
   },
@@ -542,20 +550,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then he went",
-     "then he went"
+     "Then he came",
+     "then he came"
     ],
     [
-     "back to BED,",
-     "back to bed,"
+     "back UP",
+     "back up"
     ],
     [
-     "without one",
-     "without one"
+     "and went to BED,",
+     "and went to bed,"
     ],
     [
-     "look UP.",
-     "look up."
+     "without a look",
+     "without a look"
+    ],
+    [
+     "at my DOOR.",
+     "at my door."
     ]
    ]
   },
@@ -870,12 +882,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "SIDEWAYS.",
-     "sideways."
-    ],
-    [
-     "Way too BIG.",
-     "way too big."
+     "It didn't BLINK.",
+     "it didn't blink."
     ]
    ]
   },
@@ -906,20 +914,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Something so TALL",
-     "something so tall"
+     "It came up BACKWARDS,",
+     "it came up backwards,"
     ],
     [
-     "it had",
-     "it had"
+     "its face on the back",
+     "its face on the back"
     ],
     [
-     "to FOLD",
-     "to fold"
-    ],
-    [
-     "under our ceiling,",
-     "under our ceiling,"
+     "of its HEAD.",
+     "of its head."
     ]
    ]
   },
@@ -928,16 +932,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "its head",
-     "its head"
+     "It can't SEE",
+     "it can't see"
     ],
     [
-     "bent flat",
-     "bent flat"
+     "the stairs.",
+     "the stairs."
     ],
     [
-     "against its SHOULDER.",
-     "against its shoulder."
+     "It COUNTS them.",
+     "it counts them."
     ]
    ]
   },
@@ -2042,37 +2046,37 @@
     [
      0,
      [
+      0.9,
       3.0,
-      0.2,
-      1.7
+      3.3499999999999996
      ],
      [
-      0.0,
-      1.6,
-      2.0
+      0.1,
+      4.8,
+      3.3499999999999996
      ],
-     11.5
+     10.5
     ],
     [
      1,
      [
-      2.7,
-      0.34,
-      1.73
+      1.0,
+      3.1,
+      3.3499999999999996
      ],
      [
-      0.0,
-      1.6,
-      2.0
+      1.7,
+      4.8,
+      3.3499999999999996
      ],
-     11.5
+     10.5
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "day",
    "at": "L11",
-   "note": "me at the top with an empty glass, Dad below shaking his head"
+   "note": "both of us in our doorways on the landing: me with an empty glass, Dad shaking his head"
   },
   {
    "id": "S16",
@@ -2081,36 +2085,36 @@
      0,
      [
       0.0,
-      -2.0,
-      1.2
+      0.95,
+      1.1
      ],
      [
       0.0,
-      0.3,
-      0.9
+      3.0,
+      2.3
      ],
-     13
+     12
     ],
     [
      1,
      [
       0.0,
-      -1.77,
-      1.17
+      1.155,
+      1.22
      ],
      [
       0.0,
-      0.3,
-      0.9
+      3.0,
+      2.3
      ],
-     13
+     12
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "evening",
    "at": "L12",
-   "note": "Dad's slippers on the bottom steps from behind, me already upstairs"
+   "note": "Dad's slippers climbing the top steps from behind; my door is already shut at the end of the landing"
   },
   {
    "id": "S17",
@@ -2194,37 +2198,38 @@
     [
      0,
      [
-      0.2,
-      4.2,
-      3.0
+      0.35,
+      3.7,
+      3.52
      ],
      [
-      0.0,
-      2.6,
-      2.4
+      0.35,
+      4.9,
+      3.5
      ],
-     12
+     15
     ],
     [
      1,
      [
-      0.18,
-      4.04,
-      2.94
+      0.35,
+      3.8200000000000003,
+      3.518
      ],
      [
-      0.0,
-      2.6,
-      2.4
+      0.35,
+      4.9,
+      3.5
      ],
-     12
+     15
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "evening",
    "at": "L15",
-   "note": "me at the top step with a flashlight, tag 10"
+   "fill": 1.2,
+   "note": "me behind my door, open a crack, one eye on the landing, tag 10"
   },
   {
    "id": "S20",
@@ -2232,37 +2237,37 @@
     [
      0,
      [
-      0.0,
-      3.6,
-      3.4
+      0.55,
+      5.05,
+      3.48
      ],
      [
       0.0,
-      0.9,
-      1.0
+      3.0,
+      2.5999999999999996
      ],
-     11.5
+     12
     ],
     [
      1,
      [
-      0.0,
-      3.33,
-      3.16
+      0.5,
+      5.0,
+      3.48
      ],
      [
       0.0,
-      0.9,
-      1.0
+      3.0,
+      2.5999999999999996
      ],
-     11.5
+     12
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "evening",
    "at": "L16",
-   "note": "the flashlight down the empty stairs"
+   "note": "through the crack: the empty landing and the top of the stairs, tag 11"
   },
   {
    "id": "S21",
@@ -2270,28 +2275,28 @@
     [
      0,
      [
-      0.0,
-      2.9,
-      2.9
+      0.1,
+      4.6,
+      3.3499999999999996
      ],
      [
-      -0.9,
-      -1.8,
-      1.0
+      1.9,
+      4.9,
+      3.2
      ],
      12.5
     ],
     [
      1,
      [
-      -0.09000000000000001,
-      2.4299999999999997,
-      2.71
+      0.35,
+      4.55,
+      3.3499999999999996
      ],
      [
-      -0.9,
-      -1.8,
-      1.0
+      1.9,
+      4.9,
+      3.2
      ],
      12.5
     ]
@@ -2300,7 +2305,7 @@
    "hand": 0.004,
    "look": "evening",
    "at": "L17",
-   "note": "down the stairs: Dad's door opening in the hall below"
+   "note": "from my doorway: Dad's door opening across the landing"
   },
   {
    "id": "S22",
@@ -2308,37 +2313,37 @@
     [
      0,
      [
-      0.9,
-      -0.1,
-      1.5
+      0.3,
+      2.2,
+      3.4
      ],
      [
-      -0.25,
-      -1.4,
-      1.1
+      1.4,
+      4.6,
+      2.9
      ],
-     13
+     11.5
     ],
     [
      1,
      [
-      0.785,
-      -0.22999999999999998,
-      1.46
+      0.55,
+      2.4,
+      3.4
      ],
      [
-      -0.25,
-      -1.4,
-      1.1
+      1.4,
+      4.6,
+      2.9
      ],
-     13
+     11.5
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "evening",
    "at": "L18",
-   "note": "Dad carrying the carpeted box out of his room"
+   "note": "Dad carrying the carpeted box out of his room across the landing"
   },
   {
    "id": "S23",
@@ -2346,30 +2351,30 @@
     [
      0,
      [
-      0.35,
-      -0.55,
-      1.35
+      0.3,
+      1.2,
+      2.95
      ],
      [
-      0.0,
-      -1.5,
-      1.05
+      0.1,
+      2.4,
+      2.75
      ],
-     14
+     13
     ],
     [
      1,
      [
-      0.25,
-      -0.75,
-      1.3
+      0.27999999999999997,
+      1.3199999999999998,
+      2.93
      ],
      [
-      0.0,
-      -1.5,
-      1.05
+      0.1,
+      2.4,
+      2.75
      ],
-     14
+     13
     ]
    ],
    "step": 2,
@@ -2422,37 +2427,37 @@
     [
      0,
      [
-      0.0,
-      0.9,
-      1.7
+      0.2,
+      0.1,
+      1.75
      ],
      [
-      -0.3,
-      -1.6,
-      1.3
+      0.6,
+      4.2,
+      2.8
      ],
-     14
+     10
     ],
     [
      1,
      [
-      -0.03,
-      0.65,
-      1.66
+      0.25,
+      0.4,
+      1.75
      ],
      [
-      -0.3,
-      -1.6,
-      1.3
+      0.6,
+      4.2,
+      2.8
      ],
-     14
+     10
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "evening",
    "at": "L21",
-   "note": "Dad walking back to his room without looking up"
+   "note": "Dad climbing back up and into his room, never a glance at my door"
   },
   {
    "id": "S26",
@@ -2726,7 +2731,7 @@
     [
      0,
      [
-      1.5,
+      1.05,
       5.6,
       3.4
      ],
@@ -2740,7 +2745,7 @@
     [
      1,
      [
-      1.3,
+      0.895,
       5.699999999999999,
       3.28
      ],
@@ -2764,12 +2769,12 @@
     [
      0,
      [
-      0.0,
-      5.8,
-      2.8
+      0.1,
+      5.7,
+      2.9
      ],
      [
-      -1.2,
+      -1.1,
       8.0,
       2.5
      ],
@@ -2778,16 +2783,16 @@
     [
      1,
      [
-      -0.12,
-      6.02,
-      2.77
+      -0.7,
+      6.9,
+      2.95
      ],
      [
-      -1.2,
+      -1.65,
       8.0,
-      2.5
+      2.7
      ],
-     11.5
+     14
     ]
    ],
    "step": 2,
@@ -2833,6 +2838,8 @@
    "hand": 0.002,
    "look": "dim",
    "at": "L30",
+   "fill": 0.35,
+   "exp": -0.3,
    "note": "tread 1 dips, nobody on it"
   },
   {
@@ -2871,6 +2878,8 @@
    "hand": 0.002,
    "look": "dim",
    "at": "L30.1",
+   "fill": 0.35,
+   "exp": -0.3,
    "note": "tread 2 dips, nobody on it"
   },
   {
@@ -2909,6 +2918,8 @@
    "hand": 0.002,
    "look": "dim",
    "at": "L30.2",
+   "fill": 0.35,
+   "exp": -0.3,
    "note": "tread 3 dips, nobody on it"
   },
   {
@@ -2986,6 +2997,8 @@
    "hand": 0.002,
    "look": "dim",
    "at": "L32",
+   "fill": 0.35,
+   "exp": -0.3,
    "note": "tread 7 dips, nobody on it"
   },
   {
@@ -3024,6 +3037,8 @@
    "hand": 0.002,
    "look": "dim",
    "at": "L32.1",
+   "fill": 0.35,
+   "exp": -0.3,
    "note": "tread 8 dips, nobody on it"
   },
   {
@@ -3062,6 +3077,8 @@
    "hand": 0.002,
    "look": "dim",
    "at": "L32.2",
+   "fill": 0.35,
+   "exp": -0.3,
    "note": "tread 9 dips, nobody on it"
   },
   {
@@ -3139,6 +3156,8 @@
    "hand": 0.002,
    "look": "dim",
    "at": "L33",
+   "fill": 0.35,
+   "exp": -0.3,
    "note": "the top tread at the landing dips"
   },
   {
@@ -3224,28 +3243,28 @@
     [
      0,
      [
-      0.0,
-      5.9,
-      2.4
+      0.1,
+      6.0,
+      2.32
      ],
      [
-      0.0,
-      4.9,
-      2.25
+      0.1,
+      5.0,
+      1.92
      ],
      13
     ],
     [
      1,
      [
-      0.0,
-      5.6,
+      0.1,
+      5.7,
       2.1999999999999997
      ],
      [
-      0.0,
-      4.9,
-      2.25
+      0.1,
+      5.0,
+      1.92
      ],
      13
     ]
@@ -3255,7 +3274,7 @@
    "look": "roomdim",
    "at": "L36",
    "fill": 0.5,
-   "note": "my door bows in its frame; a long flat hand just past the gap"
+   "note": "my door bows in its frame; a long flat hand reaches under it toward me"
   },
   {
    "id": "S47",
@@ -3263,7 +3282,7 @@
     [
      0,
      [
-      1.5,
+      1.05,
       6.2,
       2.7
      ],
@@ -3277,7 +3296,7 @@
     [
      1,
      [
-      1.36,
+      0.9550000000000001,
       6.16,
       2.6350000000000002
      ],
@@ -3302,30 +3321,30 @@
     [
      0,
      [
-      0.0,
-      5.65,
-      1.9649999999999999
+      0.04,
+      5.3,
+      1.9749999999999999
      ],
      [
-      0.0,
+      0.04,
       4.7,
-      1.9649999999999999
+      1.9749999999999999
      ],
-     12
+     22
     ],
     [
      1,
      [
-      0.0,
-      5.45,
-      1.9649999999999999
+      0.05,
+      5.15,
+      1.9749999999999999
      ],
      [
-      0.0,
+      0.04,
       4.7,
-      1.9649999999999999
+      1.9749999999999999
      ],
-     12
+     22
     ]
    ],
    "step": 2,
@@ -3333,7 +3352,9 @@
    "look": "roomdim",
    "at": "L38",
    "fill": 0.0,
-   "note": "the gap: two big black eyes in a cream face, looking back"
+   "clkey": 0.7,
+   "clrim": 0.0,
+   "note": "the gap: one pinprick eye and the edge of a cream face, lit amber from below"
   },
   {
    "id": "S49",
@@ -3341,30 +3362,30 @@
     [
      0,
      [
-      0.0,
-      5.4,
-      1.9649999999999999
+      0.07,
+      5.2,
+      1.9749999999999999
      ],
      [
-      0.0,
+      0.07,
       4.7,
-      1.9649999999999999
+      1.9749999999999999
      ],
-     12
+     26
     ],
     [
      1,
      [
-      0.0,
-      5.2,
-      1.9649999999999999
+      0.08,
+      5.08,
+      1.9749999999999999
      ],
      [
-      0.0,
+      0.07,
       4.7,
-      1.9649999999999999
+      1.9749999999999999
      ],
-     12
+     26
     ]
    ],
    "step": 2,
@@ -3372,7 +3393,9 @@
    "look": "roomdim",
    "at": "L39",
    "fill": 0.0,
-   "note": "sideways, way too big"
+   "clkey": 0.7,
+   "clrim": 0.0,
+   "note": "it doesn't blink"
   },
   {
    "id": "S50",
@@ -3380,30 +3403,30 @@
     [
      0,
      [
-      -0.12,
-      5.5,
-      1.96
+      0.105,
+      5.1,
+      1.9749999999999999
      ],
      [
-      -0.2,
+      0.105,
       4.7,
       1.9749999999999999
      ],
-     20
+     28
     ],
     [
      1,
      [
-      -0.12,
-      5.25,
-      1.96
+      0.105,
+      5.0,
+      1.9749999999999999
      ],
      [
-      -0.2,
+      0.105,
       4.7,
       1.9749999999999999
      ],
-     20
+     28
     ]
    ],
    "step": 2,
@@ -3411,6 +3434,8 @@
    "look": "roomdim",
    "at": "L40",
    "fill": 0.0,
+   "clkey": 0.7,
+   "clrim": 0.0,
    "note": "the cover frame: one eye at the gap, an inch from mine"
   },
   {
@@ -3419,30 +3444,30 @@
     [
      0,
      [
-      0.3,
-      4.85,
+      0.7,
+      2.7,
       2.15
      ],
      [
-      0.1,
-      2.6,
-      3.8
+      0.6,
+      4.5,
+      2.8499999999999996
      ],
-     10
+     10.5
     ],
     [
      1,
      [
-      0.28,
-      4.6,
+      0.7,
+      2.95,
       2.17
      ],
      [
-      0.1,
-      2.6,
-      3.8
+      0.6,
+      4.5,
+      2.8499999999999996
      ],
-     10
+     10.5
     ]
    ],
    "step": 2,
@@ -3451,9 +3476,9 @@
    "at": "L41",
    "fill": 0.0,
    "door": 0.3,
-   "clkey": 1.8,
-   "clrim": 7.0,
-   "note": "low from my doorway: it has to fold under our ceiling"
+   "clkey": 2.0,
+   "clrim": 2.5,
+   "note": "low from the top step: it stands, chest and buttons toward us, knees the wrong way, only hair on the front of its head"
   },
   {
    "id": "S52",
@@ -3461,30 +3486,30 @@
     [
      0,
      [
-      0.4,
-      4.8,
-      2.3
+      1.75,
+      4.35,
+      3.2
      ],
      [
-      0.1,
-      2.6,
-      4.199999999999999
+      0.38,
+      4.5,
+      3.5
      ],
-     14
+     16
     ],
     [
      1,
      [
-      0.38,
-      4.5,
-      2.32
+      1.6,
+      4.37,
+      3.2
      ],
      [
-      0.1,
-      2.6,
-      4.199999999999999
+      0.38,
+      4.5,
+      3.5
      ],
-     14
+     16
     ]
    ],
    "step": 2,
@@ -3493,9 +3518,9 @@
    "at": "L42",
    "fill": 0.0,
    "door": 0.3,
-   "clkey": 1.8,
-   "clrim": 7.0,
-   "note": "its head bent flat on its shoulder, its eye on me"
+   "clkey": 1.1,
+   "clrim": 3.0,
+   "note": "from the side: the face on the back of its head, turned to us"
   },
   {
    "id": "S53",
@@ -3579,7 +3604,7 @@
     [
      0,
      [
-      1.5,
+      1.05,
       5.6,
       3.4
      ],
@@ -3593,7 +3618,7 @@
     [
      1,
      [
-      1.295,
+      0.89,
       5.699999999999999,
       3.28
      ],
@@ -3686,8 +3711,8 @@
    "look": "dim",
    "at": "L46.1",
    "fill": 0.3,
-   "clkey": 1.8,
-   "clrim": 5.0,
+   "clkey": 2.0,
+   "clrim": 2.5,
    "note": "ten leaves it one tread below the landing"
   },
   {
@@ -3726,6 +3751,8 @@
    "hand": 0.004,
    "look": "evening",
    "at": "L47",
+   "fill": 1.2,
+   "exp": 0.25,
    "note": "one step below the landing, one step from me"
   },
   {
@@ -3772,7 +3799,7 @@
     [
      0,
      [
-      1.6,
+      1.05,
       5.7,
       3.5
      ],
@@ -3786,7 +3813,7 @@
     [
      1,
      [
-      1.385,
+      0.89,
       5.78,
       3.365
      ],
@@ -3810,7 +3837,7 @@
     [
      0,
      [
-      1.3,
+      1.05,
       7.6,
       3.5999999999999996
      ],
@@ -3824,7 +3851,7 @@
     [
      1,
      [
-      1.2,
+      0.9750000000000001,
       7.46,
       3.5799999999999996
      ],
@@ -3933,10 +3960,10 @@
      ],
      [
       0.1,
-      2.6,
-      2.8
+      3.4,
+      2.8499999999999996
      ],
-     11
+     10.5
     ],
     [
      1,
@@ -3947,10 +3974,10 @@
      ],
      [
       0.1,
-      2.6,
-      2.8
+      3.4,
+      2.8499999999999996
      ],
-     11
+     10.5
     ]
    ],
    "step": 2,
@@ -3959,9 +3986,9 @@
    "at": "L53",
    "fill": 0.0,
    "door": 0.3,
-   "clkey": 1.8,
-   "clrim": 7.0,
-   "note": "floor level: the box between its flat hands and my door"
+   "clkey": 1.6,
+   "clrim": 2.5,
+   "note": "floor level: the box between the Climber's heels and my door"
   },
   {
    "id": "S65",
@@ -3969,30 +3996,30 @@
     [
      0,
      [
-      0.45,
-      4.85,
-      2.3
+      0.55,
+      4.6,
+      3.15
      ],
      [
-      0.15,
-      2.6,
+      0.1,
+      3.4,
       3.5
      ],
-     12
+     15
     ],
     [
      1,
      [
-      0.42,
-      4.78,
-      2.32
+      0.45,
+      4.45,
+      3.17
      ],
      [
-      0.15,
-      2.6,
+      0.1,
+      3.4,
       3.5
      ],
-     12
+     15
     ]
    ],
    "step": 2,
@@ -4001,9 +4028,9 @@
    "at": "L54",
    "fill": 0.0,
    "door": 0.3,
-   "clkey": 1.8,
-   "clrim": 7.0,
-   "note": "it looks down at the box, a long time"
+   "clkey": 1.4,
+   "clrim": 3.0,
+   "note": "the face on the back of its head looks down at the box, a long time"
   },
   {
    "id": "S66",
@@ -4011,28 +4038,28 @@
     [
      0,
      [
-      -0.3,
-      4.85,
-      2.1
+      -0.4,
+      4.7,
+      2.25
      ],
      [
-      0.15,
-      2.6,
-      3.4
+      0.1,
+      3.4,
+      2.8
      ],
      10
     ],
     [
      1,
      [
-      -0.25,
-      4.8,
-      2.12
+      -0.3,
+      4.55,
+      2.27
      ],
      [
-      0.15,
-      2.6,
-      3.4
+      0.1,
+      3.4,
+      2.8
      ],
      10
     ]
@@ -4043,8 +4070,8 @@
    "at": "L55",
    "fill": 0.0,
    "door": 0.3,
-   "clkey": 1.8,
-   "clrim": 7.0,
+   "clkey": 1.6,
+   "clrim": 2.5,
    "note": "it doesn't climb it"
   },
   {
@@ -4054,29 +4081,29 @@
      0,
      [
       0.9,
-      2.2,
-      2.8
+      4.7,
+      3.05
      ],
      [
-      0.2,
-      3.8,
-      3.3
+      0.1,
+      3.4,
+      3.0999999999999996
      ],
-     11.5
+     11
     ],
     [
      1,
      [
       0.9,
-      2.3,
-      2.9
+      4.7,
+      3.0999999999999996
      ],
      [
-      0.2,
-      3.8,
-      3.3
+      2.1,
+      3.5,
+      3.3499999999999996
      ],
-     11.5
+     11
     ]
    ],
    "step": 2,
@@ -4130,37 +4157,37 @@
     [
      0,
      [
-      1.8,
-      2.8,
-      3.5
+      1.0,
+      2.9,
+      3.4
      ],
      [
-      0.2,
-      4.4,
-      2.4
+      0.9,
+      4.7,
+      2.65
      ],
-     12
+     11
     ],
     [
      1,
      [
-      1.6400000000000001,
-      2.96,
-      3.39
+      1.0,
+      3.1,
+      3.3499999999999996
      ],
      [
-      0.2,
-      4.4,
-      2.4
+      0.9,
+      4.7,
+      2.65
      ],
-     12
+     11
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "dawn",
    "at": "L58",
-   "note": "morning: the landing empty but for the box; me asleep against my door"
+   "note": "morning: the landing empty but for the box; me asleep against my door, Dad in his doorway beside mine"
   },
   {
    "id": "S70",
@@ -4168,30 +4195,30 @@
     [
      0,
      [
-      0.0,
-      4.3,
-      3.3
+      1.1,
+      3.1,
+      3.45
      ],
      [
-      0.0,
-      2.6,
+      1.95,
+      4.72,
       3.4
      ],
-     14
+     19
     ],
     [
      1,
      [
-      0.0,
-      4.13,
-      3.3099999999999996
+      1.2,
+      3.3,
+      3.45
      ],
      [
-      0.0,
-      2.6,
+      1.95,
+      4.72,
       3.4
      ],
-     14
+     19
     ]
    ],
    "step": 2,
@@ -4199,7 +4226,7 @@
    "look": "dawn",
    "at": "L59",
    "fill": 0.9,
-   "note": "Dad's face at the top of the stairs, soft"
+   "note": "Dad's face, soft"
   },
   {
    "id": "S71",
@@ -4207,30 +4234,30 @@
     [
      0,
      [
-      2.0,
-      3.0,
-      3.4
+      0.8,
+      2.9,
+      3.3
      ],
      [
-      -0.1,
-      4.2,
-      2.9
+      0.8,
+      4.6,
+      2.8
      ],
-     13
+     11
     ],
     [
      1,
      [
-      1.79,
-      3.12,
-      3.35
+      0.4,
+      3.0,
+      3.0999999999999996
      ],
      [
-      -0.1,
-      4.2,
-      2.9
+      0.1,
+      4.6,
+      2.8
      ],
-     13
+     11
     ]
    ],
    "step": 2,
@@ -4238,7 +4265,7 @@
    "look": "dawn",
    "at": "L60",
    "fill": 0.9,
-   "note": "Dad sits down beside me on the landing"
+   "note": "Dad crosses the landing and sits down beside me"
   },
   {
    "id": "S72",
@@ -4246,38 +4273,38 @@
     [
      0,
      [
-      1.0,
+      0.0,
       3.0,
-      2.5999999999999996
+      2.65
      ],
      [
       0.0,
-      4.4,
-      2.3
+      4.5,
+      2.45
      ],
-     13
+     12
     ],
     [
      1,
      [
-      0.9,
-      3.14,
-      2.57
+      0.0,
+      3.15,
+      2.63
      ],
      [
       0.0,
-      4.4,
-      2.3
+      4.5,
+      2.45
      ],
-     13
+     12
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "dawn",
    "at": "L61",
-   "fill": 0.8,
-   "note": "the box between us"
+   "fill": 0.9,
+   "note": "the box in front of us, the two of us behind it"
   },
   {
    "id": "S73",
@@ -4285,30 +4312,30 @@
     [
      0,
      [
-      0.0,
-      3.2,
-      3.0999999999999996
+      -0.1,
+      3.5,
+      2.8499999999999996
      ],
      [
-      -0.35,
-      4.0,
-      2.9
+      -0.5,
+      4.66,
+      2.8499999999999996
      ],
-     20
+     21
     ],
     [
      1,
      [
-      -0.034999999999999996,
-      3.2800000000000002,
-      3.0799999999999996
+      -0.14,
+      3.616,
+      2.8499999999999996
      ],
      [
-      -0.35,
-      4.0,
-      2.9
+      -0.5,
+      4.66,
+      2.8499999999999996
      ],
-     20
+     21
     ]
    ],
    "step": 2,
@@ -4324,30 +4351,30 @@
     [
      0,
      [
-      0.5,
-      3.2,
-      3.0999999999999996
+      1.1,
+      3.5,
+      2.8499999999999996
      ],
      [
-      0.35,
-      4.35,
-      2.9
+      0.55,
+      4.66,
+      2.8499999999999996
      ],
-     20
+     21
     ],
     [
      1,
      [
-      0.485,
-      3.315,
-      3.0799999999999996
+      1.0450000000000002,
+      3.616,
+      2.8499999999999996
      ],
      [
-      0.35,
-      4.35,
-      2.9
+      0.55,
+      4.66,
+      2.8499999999999996
      ],
-     20
+     21
     ]
    ],
    "step": 2,
@@ -4363,30 +4390,30 @@
     [
      0,
      [
-      0.2,
-      0.4,
-      3.3
+      0.0,
+      2.55,
+      2.65
      ],
      [
       0.0,
-      4.0,
-      2.2
+      4.6,
+      2.5
      ],
-     11.5
+     14
     ],
     [
      1,
      [
-      0.18,
-      0.76,
-      3.19
+      0.0,
+      2.755,
+      2.635
      ],
      [
       0.0,
-      4.0,
-      2.2
+      4.6,
+      2.5
      ],
-     11.5
+     14
     ]
    ],
    "step": 2,
@@ -4394,7 +4421,7 @@
    "look": "day",
    "at": "L64",
    "fill": 0.9,
-   "note": "wide down the stairs in daylight, both of us on the landing, smiling"
+   "note": "down the stairs in daylight, both of us on the landing, the box in front, smiling"
   },
   {
    "id": "S76",
@@ -4402,30 +4429,30 @@
     [
      0,
      [
-      1.2,
-      -1.8,
-      0.8
+      1.3,
+      -2.1,
+      1.3
      ],
      [
       0.0,
-      -0.3,
-      0.3
+      -0.7,
+      0.8
      ],
-     13
+     14
     ],
     [
      1,
      [
-      1.08,
-      -1.65,
-      0.75
+      1.17,
+      -1.96,
+      1.25
      ],
      [
       0.0,
-      -0.3,
-      0.3
+      -0.7,
+      0.8
      ],
-     13
+     14
     ]
    ],
    "step": 2,
@@ -4440,30 +4467,30 @@
     [
      0,
      [
-      1.2,
-      -1.7,
-      0.9
+      1.3,
+      -2.0,
+      1.35
      ],
      [
       0.0,
-      -0.5,
-      0.4
+      -0.7,
+      0.9
      ],
-     13
+     14
     ],
     [
      1,
      [
-      1.08,
-      -1.58,
-      0.85
+      1.17,
+      -1.87,
+      1.3050000000000002
      ],
      [
       0.0,
-      -0.5,
-      0.4
+      -0.7,
+      0.9
      ],
-     13
+     14
     ]
    ],
    "step": 2,
@@ -4554,30 +4581,30 @@
     [
      0,
      [
-      0.5,
-      4.85,
-      2.7
+      0.35,
+      0.9,
+      1.95
      ],
      [
       0.0,
       2.4,
-      3.0
+      2.15
      ],
-     8
+     11
     ],
     [
      1,
      [
-      0.48,
-      4.8,
-      2.7199999999999998
+      0.35,
+      1.1,
+      1.97
      ],
      [
       0.0,
       2.4,
-      3.0
+      2.15
      ],
-     8
+     11
     ]
    ],
    "step": 2,
@@ -4586,9 +4613,9 @@
    "at": "L69",
    "fill": 0.0,
    "door": 0.3,
-   "clkey": 1.2,
-   "clrim": 7.0,
-   "note": "on the step just below the landing, it has sat down"
+   "clkey": 1.8,
+   "clrim": 2.5,
+   "note": "on the step just below the landing it has sat down, chest toward the hall"
   },
   {
    "id": "S81",
@@ -4596,30 +4623,30 @@
     [
      0,
      [
-      0.3,
-      4.85,
-      2.4
+      1.15,
+      2.7,
+      2.65
      ],
      [
       0.0,
-      2.4,
-      3.9
+      2.45,
+      2.45
      ],
-     12
+     14
     ],
     [
      1,
      [
-      0.28,
-      4.8,
-      2.42
+      1.0,
+      2.65,
+      2.65
      ],
      [
       0.0,
-      2.4,
-      3.9
+      2.45,
+      2.45
      ],
-     12
+     14
     ]
    ],
    "step": 2,
@@ -4628,9 +4655,9 @@
    "at": "L70",
    "fill": 0.0,
    "door": 0.3,
-   "clkey": 1.2,
-   "clrim": 7.0,
-   "note": "head on its shoulder, facing up, waiting"
+   "clkey": 1.1,
+   "clrim": 3.0,
+   "note": "the face on the back of its head looking up at our doors, waiting"
   },
   {
    "id": "S82",
@@ -4849,11 +4876,11 @@
     "at": "L11",
     "pos": [
      0.0,
-     3.2,
+     4.72,
      1.9
     ],
     "blend": 0,
-    "yaw": 180,
+    "yaw": 0,
     "expr": "neutral",
     "hidden": false,
     "arms": [
@@ -4881,7 +4908,7 @@
     "at": "L14",
     "pos": [
      0.0,
-     3.2,
+     4.72,
      1.9
     ]
    },
@@ -4926,17 +4953,17 @@
    {
     "at": "L15",
     "pos": [
-     0.2,
-     3.0,
-     1.2799999999999998
+     0.5,
+     5.3,
+     1.9
     ],
     "blend": 0,
-    "yaw": 180,
-    "expr": "neutral",
+    "yaw": 0,
+    "expr": "worried",
     "hidden": false,
     "arms": [
-     40,
-     40
+     0,
+     0
     ],
     "side": [
      0,
@@ -4958,9 +4985,9 @@
    {
     "at": "L23",
     "pos": [
-     0.2,
-     3.0,
-     1.2799999999999998
+     0.5,
+     5.3,
+     1.9
     ]
    },
    {
@@ -5468,12 +5495,12 @@
    {
     "at": "L58",
     "pos": [
-     0.35,
-     4.35,
+     0.55,
+     4.66,
      1.2799999999999998
     ],
     "blend": 0,
-    "yaw": 180,
+    "yaw": 0,
     "expr": "asleep",
     "hidden": false,
     "arms": [
@@ -5495,20 +5522,20 @@
    {
     "at": "L63",
     "pos": [
-     0.35,
-     4.35,
+     0.55,
+     4.66,
      1.2799999999999998
     ]
    },
    {
     "at": "L63",
     "pos": [
-     0.35,
-     4.35,
+     0.55,
+     4.66,
      1.2799999999999998
     ],
     "blend": 0,
-    "yaw": 180,
+    "yaw": 0,
     "expr": "soft",
     "hidden": false,
     "arms": [
@@ -5530,20 +5557,20 @@
    {
     "at": "L64",
     "pos": [
-     0.35,
-     4.35,
+     0.55,
+     4.66,
      1.2799999999999998
     ]
    },
    {
     "at": "L64",
     "pos": [
-     0.35,
-     4.35,
+     0.55,
+     4.66,
      1.2799999999999998
     ],
     "blend": 0,
-    "yaw": 180,
+    "yaw": 0,
     "expr": "smile",
     "hidden": false,
     "arms": [
@@ -5565,8 +5592,8 @@
    {
     "at": "L65",
     "pos": [
-     0.35,
-     4.35,
+     0.55,
+     4.66,
      1.2799999999999998
     ]
    },
@@ -5574,7 +5601,7 @@
     "at": "L65",
     "pos": [
      0.0,
-     -1.0,
+     -1.1,
      0.0
     ],
     "blend": 0,
@@ -5706,11 +5733,12 @@
    {
     "at": "L11",
     "pos": [
-     0.15,
-     -0.9
+     1.95,
+     4.72,
+     1.9
     ],
     "blend": 0,
-    "yaw": 180,
+    "yaw": 0,
     "expr": "stern",
     "hidden": false,
     "arms": [
@@ -5740,16 +5768,17 @@
    {
     "at": "L12",
     "pos": [
-     0.15,
-     -0.9
+     1.95,
+     4.72,
+     1.9
     ]
    },
    {
     "at": "L12",
     "pos": [
      0.0,
-     -0.45,
-     0.0
+     1.2600000000000002,
+     0.95
     ],
     "blend": 0,
     "yaw": 180,
@@ -5775,16 +5804,16 @@
     "at": "L12>",
     "pos": [
      0.0,
-     0.42000000000000004,
-     0.38
+     3.2,
+     1.9
     ]
    },
    {
     "at": "L13",
     "pos": [
      0.0,
-     0.42000000000000004,
-     0.38
+     3.2,
+     1.9
     ]
    },
    {
@@ -5828,49 +5857,17 @@
    {
     "at": "L18",
     "pos": [
-     -0.1,
-     -1.6
+     1.95,
+     5.25,
+     1.9
     ],
     "blend": 0,
     "yaw": 0,
     "expr": "stern",
     "hidden": false,
     "arms": [
-     50,
-     50
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true
-   },
-   {
-    "at": "L18",
-    "pos": [
-     -0.1,
-     -1.6
-    ]
-   },
-   {
-    "at": "L18",
-    "pos": [
-     -0.45,
-     -1.9
-    ],
-    "blend": 0,
-    "yaw": 0,
-    "expr": "stern",
-    "hidden": false,
-    "arms": [
-     50,
-     50
+     55,
+     55
     ],
     "side": [
      0,
@@ -5887,25 +5884,28 @@
    {
     "at": "L18>",
     "pos": [
-     0.0,
-     -1.1
+     0.5,
+     3.1,
+     1.9
     ]
    },
    {
     "at": "L19",
     "pos": [
-     0.0,
-     -1.1
+     0.5,
+     3.1,
+     1.9
     ]
    },
    {
     "at": "L19",
     "pos": [
-     0.0,
-     -1.0
+     0.4,
+     2.9,
+     1.9
     ],
     "blend": 0,
-    "yaw": 180,
+    "yaw": 0,
     "expr": "stern",
     "hidden": false,
     "arms": [
@@ -5925,10 +5925,19 @@
     "blink": true
    },
    {
+    "at": "L19>",
+    "pos": [
+     0.0,
+     2.3800000000000003,
+     1.71
+    ]
+   },
+   {
     "at": "L20",
     "pos": [
      0.0,
-     -1.0
+     2.3800000000000003,
+     1.71
     ]
    },
    {
@@ -5968,10 +5977,11 @@
     "at": "L21",
     "pos": [
      0.0,
-     -0.9
+     -0.45,
+     0.0
     ],
     "blend": 0,
-    "yaw": 0,
+    "yaw": 180,
     "expr": "tired",
     "hidden": false,
     "arms": [
@@ -5991,10 +6001,27 @@
     "blink": true
    },
    {
+    "at": "L21.2",
+    "pos": [
+     0.0,
+     3.2,
+     1.9
+    ]
+   },
+   {
+    "at": "L21.3",
+    "pos": [
+     1.95,
+     4.75,
+     1.9
+    ]
+   },
+   {
     "at": "L21>",
     "pos": [
-     -0.5,
-     -1.8
+     1.95,
+     5.5,
+     1.9
     ]
    },
    {
@@ -6005,8 +6032,9 @@
    {
     "at": "L26",
     "pos": [
-     -0.5,
-     -1.8
+     1.95,
+     5.5,
+     1.9
     ]
    },
    {
@@ -6121,9 +6149,96 @@
    {
     "at": "L58",
     "pos": [
-     0.0,
-     2.6,
+     1.95,
+     4.72,
      1.9
+    ],
+    "blend": 0,
+    "yaw": -70,
+    "expr": "soft",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L60",
+    "pos": [
+     1.95,
+     4.72,
+     1.9
+    ]
+   },
+   {
+    "at": "L60",
+    "pos": [
+     1.95,
+     4.72,
+     1.9
+    ],
+    "blend": 0,
+    "yaw": -70,
+    "expr": "soft",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L60.2",
+    "pos": [
+     -0.55,
+     4.66,
+     1.9
+    ]
+   },
+   {
+    "at": "L60.3",
+    "pos": [
+     -0.55,
+     4.66,
+     1.2799999999999998
+    ],
+    "yaw": 0
+   },
+   {
+    "at": "L62",
+    "pos": [
+     -0.55,
+     4.66,
+     1.2799999999999998
+    ]
+   },
+   {
+    "at": "L62",
+    "pos": [
+     -0.55,
+     4.66,
+     1.2799999999999998
     ],
     "blend": 0,
     "yaw": 0,
@@ -6146,135 +6261,22 @@
     "blink": true
    },
    {
-    "at": "L58.1",
-    "pos": [
-     0.0,
-     2.6,
-     1.9
-    ]
-   },
-   {
-    "at": "L58.1",
-    "pos": [
-     0.0,
-     2.6,
-     1.9
-    ],
-    "blend": 0,
-    "yaw": 180,
-    "expr": "soft",
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true
-   },
-   {
-    "at": "L59",
-    "pos": [
-     0.0,
-     3.0,
-     1.9
-    ]
-   },
-   {
-    "at": "L60",
-    "pos": [
-     0.0,
-     3.0,
-     1.9
-    ]
-   },
-   {
-    "at": "L60",
-    "pos": [
-     -0.35,
-     4.0,
-     1.2799999999999998
-    ],
-    "blend": 0,
-    "yaw": 180,
-    "expr": "soft",
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true
-   },
-   {
-    "at": "L62",
-    "pos": [
-     -0.35,
-     4.0,
-     1.2799999999999998
-    ]
-   },
-   {
-    "at": "L62",
-    "pos": [
-     -0.35,
-     4.0,
-     1.2799999999999998
-    ],
-    "blend": 0,
-    "yaw": 180,
-    "expr": "soft",
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     40,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true
-   },
-   {
     "at": "L64",
     "pos": [
-     -0.35,
-     4.0,
+     -0.55,
+     4.66,
      1.2799999999999998
     ]
    },
    {
     "at": "L64",
     "pos": [
-     -0.35,
-     4.0,
+     -0.55,
+     4.66,
      1.2799999999999998
     ],
     "blend": 0,
-    "yaw": 180,
+    "yaw": 0,
     "expr": "smile",
     "hidden": false,
     "arms": [
@@ -6301,8 +6303,8 @@
    {
     "at": "L66",
     "pos": [
-     -0.35,
-     4.0,
+     -0.55,
+     4.66,
      1.2799999999999998
     ]
    },
@@ -6310,7 +6312,7 @@
     "at": "L66",
     "pos": [
      0.0,
-     -0.95,
+     -1.0,
      0.0
     ],
     "blend": 0,
@@ -6607,8 +6609,28 @@
   },
   {
    "at": "L11",
+   "name": "mydoor",
+   "open": 80
+  },
+  {
+   "at": "L11",
+   "name": "ddoor",
+   "open": 80
+  },
+  {
+   "at": "L11",
    "name": "props",
    "hold_glass": true
+  },
+  {
+   "at": "L12",
+   "name": "mydoor",
+   "open": 0
+  },
+  {
+   "at": "L12",
+   "name": "ddoor",
+   "open": 0
   },
   {
    "at": "L12",
@@ -6626,23 +6648,13 @@
   },
   {
    "at": "L15",
-   "name": "props",
-   "hold_flash": true
+   "name": "mydoor",
+   "open": 9
   },
   {
    "at": "L15",
-   "name": "torch",
-   "on": true,
-   "pos": [
-    0.2,
-    2.9,
-    2.5999999999999996
-   ],
-   "target": [
-    0.0,
-    0.5,
-    0.9
-   ]
+   "name": "props",
+   "hold_flash": true
   },
   {
    "at": "L16",
@@ -6651,12 +6663,12 @@
   },
   {
    "at": "L17",
-   "name": "torch",
-   "on": false
+   "name": "props"
   },
   {
    "at": "L17",
-   "name": "props"
+   "name": "mydoor",
+   "open": 0
   },
   {
    "at": "L17.1",
@@ -6675,29 +6687,35 @@
    "name": "box",
    "on": true,
    "pos": [
-    -0.45,
-    -2.2,
-    0.95
+    1.95,
+    4.75,
+    2.9
    ],
    "pitch": 8,
    "to": [
-    0.0,
-    -1.5,
-    0.95
+    0.5,
+    2.65,
+    2.9
    ],
-   "dur": 1.9
+   "dur": 1.1899999999999977
   },
   {
    "at": "L19",
    "name": "box",
    "on": true,
    "pos": [
-    0.0,
-    -1.55,
-    1.0
+    0.4,
+    2.45,
+    2.9
    ],
-   "pitch": 75,
-   "roll": 0
+   "pitch": -75,
+   "roll": 0,
+   "to": [
+    0.0,
+    1.93,
+    2.71
+   ],
+   "dur": 1.1559999999999988
   },
   {
    "at": "L20",
@@ -6715,11 +6733,18 @@
    ]
   },
   {
-   "at": "L21>",
+   "at": "L21.1",
+   "name": "ddoor",
+   "open": 0,
+   "to": 88,
+   "dur": 0.8
+  },
+  {
+   "at": "L21.4",
    "name": "ddoor",
    "open": 88,
    "to": 0,
-   "dur": 0.8
+   "dur": 0.6
   },
   {
    "at": "L26",
@@ -6889,9 +6914,9 @@
    "name": "props",
    "chand": {
     "pos": [
-     0.0,
-     4.72,
-     1.9449999999999998
+     0.1,
+     5.2,
+     1.904
     ],
     "yaw": 0
    }
@@ -6936,25 +6961,32 @@
    ]
   },
   {
-   "at": "L37",
+   "at": "L38",
    "name": "climber",
    "on": true,
    "pos": [
-    0.0,
-    3.22,
+    0.18,
+    3.77,
     1.9
    ],
-   "yaw": 180,
-   "fold": 1.5,
-   "roll": 0,
-   "reach": 8,
-   "hp": 0,
-   "hoff": 0.05,
+   "yaw": 0,
+   "k": 60.0,
+   "stoop": -95.0,
+   "al": 0,
+   "ar": 0,
+   "hp": 0.0,
+   "hr": 180.0,
+   "hipz": 0.4,
+   "hy": 0.0,
    "kx": 0.0,
    "ky": 1.0,
-   "kz": 0.2,
+   "kz": 0.03,
    "ax": 0.0,
-   "az": 1.3
+   "ay": 0.85,
+   "az": 0.1,
+   "rx": 0.5,
+   "ry": -0.2,
+   "rz": 1.2
   },
   {
    "at": "L41",
@@ -6967,31 +6999,58 @@
    "name": "climber",
    "on": true,
    "pos": [
-    0.15,
-    2.6,
+    0.38,
+    4.45,
     1.9
    ],
-   "yaw": 180,
-   "fold": 0.62,
-   "roll": -75,
-   "reach": 8,
-   "hp": 5,
-   "hy": 0,
-   "hoff": 0.42,
-   "kx": -0.2,
-   "ky": 1.3,
-   "kz": 0.15,
-   "ax": 0.1,
+   "yaw": 35,
+   "k": 36.0,
+   "stoop": 14.0,
+   "al": -4,
+   "ar": 22,
+   "hp": 20.0,
+   "hr": 9.0,
+   "kx": -0.8,
+   "ky": -1.1,
+   "kz": 0.03,
+   "ax": 0.0,
    "ay": 0.0,
-   "az": 2.1,
-   "rx": -1.2,
-   "ry": -0.6,
-   "rz": 2.3
+   "az": 1.15,
+   "rx": 1.7,
+   "ry": -0.3,
+   "rz": 1.9
   },
   {
    "at": "L41",
    "name": "torch",
    "on": false
+  },
+  {
+   "at": "L42",
+   "name": "climber",
+   "on": true,
+   "pos": [
+    0.38,
+    4.45,
+    1.9
+   ],
+   "yaw": 0,
+   "k": 36.0,
+   "stoop": 14.0,
+   "al": -4,
+   "ar": 22,
+   "hp": 12.0,
+   "hr": 9.0,
+   "kx": 1.0,
+   "ky": 0.0,
+   "kz": 0.04,
+   "ax": 0.0,
+   "ay": 0.0,
+   "az": 1.65,
+   "rx": -0.7,
+   "ry": 0.0,
+   "rz": 2.0,
+   "hy": -80.0
   },
   {
    "at": "L43",
@@ -7037,22 +7096,22 @@
     2.38,
     1.71
    ],
-   "yaw": 180,
-   "fold": 0.62,
-   "roll": -75,
-   "reach": 8,
-   "hp": 5,
-   "hy": 0,
-   "hoff": 0.42,
-   "kx": -0.2,
-   "ky": 1.3,
-   "kz": 0.3,
-   "ax": 0.1,
+   "yaw": 0,
+   "k": 36.0,
+   "stoop": 14.0,
+   "al": -4,
+   "ar": 22,
+   "hp": 20.0,
+   "hr": 9.0,
+   "kx": -0.5,
+   "ky": -1.2,
+   "kz": 0.1,
+   "ax": 0.0,
    "ay": 0.0,
-   "az": 2.0,
-   "rx": -1.2,
-   "ry": -0.6,
-   "rz": 2.3
+   "az": 1.1,
+   "rx": 1.5,
+   "ry": -0.3,
+   "rz": 1.9
   },
   {
    "at": "L46.1",
@@ -7118,7 +7177,7 @@
    ],
    "to": [
     0.0,
-    4.45,
+    4.1,
     1.96
    ],
    "dur": 0.8
@@ -7138,26 +7197,26 @@
    "name": "climber",
    "on": true,
    "pos": [
-    0.15,
-    2.6,
+    0.1,
+    3.4,
     1.9
    ],
-   "yaw": 180,
-   "fold": 0.62,
-   "roll": -75,
-   "reach": 8,
-   "hp": -10,
-   "hy": 0,
-   "hoff": 0.42,
-   "kx": -0.2,
-   "ky": 1.3,
-   "kz": 0.15,
-   "ax": 0.1,
-   "ay": 0.0,
-   "az": 2.1,
-   "rx": -1.2,
-   "ry": -0.6,
-   "rz": 2.3
+   "yaw": 0,
+   "k": 34.0,
+   "stoop": 12.0,
+   "al": -4,
+   "ar": 18,
+   "hp": -12.0,
+   "hr": 6.0,
+   "kx": 0.3,
+   "ky": 0.9,
+   "kz": 0.1,
+   "ax": 0.0,
+   "ay": 0.1,
+   "az": 1.65,
+   "rx": 0.5,
+   "ry": -0.9,
+   "rz": 2.2
   },
   {
    "at": "L53",
@@ -7165,7 +7224,7 @@
    "on": true,
    "pos": [
     0.0,
-    4.45,
+    4.1,
     1.96
    ]
   },
@@ -7190,7 +7249,7 @@
    "on": true,
    "pos": [
     0.0,
-    4.45,
+    4.1,
     1.96
    ]
   },
@@ -7198,6 +7257,11 @@
    "at": "L58",
    "name": "count",
    "n": 10
+  },
+  {
+   "at": "L58",
+   "name": "ddoor",
+   "open": 85
   },
   {
    "at": "L65",
@@ -7263,24 +7327,53 @@
    "pos": [
     0.0,
     2.38,
-    1.3599999999999999
+    1.71
    ],
-   "yaw": 180,
-   "fold": 0.55,
-   "roll": -75,
-   "reach": 8,
-   "hp": -5,
-   "hy": 0,
-   "hoff": 0.42,
-   "kx": -0.2,
-   "ky": 1.3,
-   "kz": 0.3,
-   "ax": 0.1,
+   "yaw": 0,
+   "k": 72.0,
+   "stoop": 10.0,
+   "al": -40,
+   "ar": -40,
+   "hp": 25.0,
+   "hr": 6.0,
+   "hipz": 0.38,
+   "kx": -0.4,
+   "ky": -1.2,
+   "kz": 0.1,
+   "ax": 0.0,
    "ay": 0.0,
-   "az": 2.0,
-   "rx": -1.2,
-   "ry": -0.6,
-   "rz": 2.3
+   "az": 1.0,
+   "rx": 1.3,
+   "ry": -0.3,
+   "rz": 1.6
+  },
+  {
+   "at": "L70",
+   "name": "climber",
+   "on": true,
+   "pos": [
+    0.0,
+    2.38,
+    1.71
+   ],
+   "yaw": 0,
+   "k": 72.0,
+   "stoop": 10.0,
+   "al": -40,
+   "ar": -40,
+   "hp": 35.0,
+   "hr": 6.0,
+   "hipz": 0.38,
+   "kx": 0.9,
+   "ky": 0.4,
+   "kz": 0.1,
+   "ax": 0.0,
+   "ay": 0.0,
+   "az": 1.3,
+   "rx": -0.7,
+   "ry": 0.0,
+   "rz": 1.7,
+   "hy": -60.0
   },
   {
    "at": "L71",
@@ -7353,7 +7446,7 @@
   ]
  },
  "sound": {
-  "rev": 3,
+  "rev": 4,
   "floor": "wood",
   "steps_db": -24,
   "ambience": [

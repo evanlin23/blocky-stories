@@ -90,38 +90,38 @@
    ]
   },
   "L04": {
-   "text": "after dark, it's eleven, and i can never tell which one is new.",
+   "text": "after midnight, it's eleven, and i can never tell which one is new.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.034,
+   "dur": 3.121,
    "onset": 0.172,
-   "end": 2.828,
+   "end": 2.914,
    "chunks": [
     [
      0.172,
-     0.603
+     0.672
     ],
     [
-     0.629,
-     1.207
+     0.698,
+     1.276
     ],
     [
-     1.276,
-     1.621
+     1.345,
+     1.69
     ],
     [
-     1.621,
-     2.017
+     1.69,
+     2.103
     ],
     [
-     2.017,
-     2.259
+     2.103,
+     2.345
     ],
     [
-     2.259,
-     2.828
+     2.345,
+     2.914
     ]
    ]
   },
@@ -154,30 +154,26 @@
    ]
   },
   "L06": {
-   "text": "he drove home at midnight. he's never stayed over since.",
+   "text": "he stayed till one. he's never stayed over since.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.672,
+   "dur": 2.483,
    "onset": 0.172,
-   "end": 2.466,
+   "end": 2.276,
    "chunks": [
     [
      0.172,
-     0.664
+     0.948
     ],
     [
-     0.664,
-     1.138
+     1.017,
+     1.578
     ],
     [
-     1.207,
-     1.733
-    ],
-    [
-     1.733,
-     2.466
+     1.578,
+     2.276
     ]
    ]
   },
@@ -298,22 +294,22 @@
    ]
   },
   "L11": {
-   "text": "not for water. not for anything.",
+   "text": "not even for water.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.724,
+   "dur": 1.345,
    "onset": 0.172,
-   "end": 1.534,
+   "end": 1.138,
    "chunks": [
     [
      0.172,
-     0.672
+     0.517
     ],
     [
-     0.724,
-     1.534
+     0.517,
+     1.138
     ]
    ]
   },
@@ -386,30 +382,30 @@
    ]
   },
   "L15": {
-   "text": "so last friday, i sat at the top with a flashlight,",
+   "text": "so last friday, i waited behind my door with a flashlight,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.517,
-   "onset": 0.172,
-   "end": 2.31,
+   "dur": 2.81,
+   "onset": 0.19,
+   "end": 2.603,
    "chunks": [
     [
-     0.172,
-     0.862
+     0.19,
+     0.897
     ],
     [
-     0.931,
-     1.285
-    ],
-    [
-     1.285,
+     0.966,
      1.526
     ],
     [
      1.526,
-     2.31
+     1.819
+    ],
+    [
+     1.819,
+     2.603
     ]
    ]
   },
@@ -438,22 +434,26 @@
    ]
   },
   "L17": {
-   "text": "at midnight, dad's door opened.",
+   "text": "at midnight, dad's door opened, across the landing.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
-   "onset": 0.19,
-   "end": 1.552,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
    "chunks": [
     [
-     0.19,
-     0.569
+     0.172,
+     0.517
     ],
     [
-     0.603,
-     1.552
+     0.552,
+     1.276
+    ],
+    [
+     1.345,
+     2.276
     ]
    ]
   },
@@ -526,30 +526,34 @@
    ]
   },
   "L21": {
-   "text": "then he went back to bed, without one look up.",
+   "text": "then he came back up and went to bed, without a look at my door.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.138,
+   "dur": 2.759,
    "onset": 0.172,
-   "end": 1.931,
+   "end": 2.569,
    "chunks": [
     [
      0.172,
-     0.414
+     0.5
     ],
     [
-     0.414,
-     0.948
+     0.5,
+     0.802
     ],
     [
-     1.017,
-     1.397
+     0.802,
+     1.362
     ],
     [
-     1.397,
-     1.931
+     1.431,
+     1.854
+    ],
+    [
+     1.854,
+     2.569
     ]
    ]
   },
@@ -954,22 +958,18 @@
    ]
   },
   "L39": {
-   "text": "sideways. way too big.",
+   "text": "it didn't blink.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.569,
-   "onset": 0.19,
-   "end": 1.362,
+   "dur": 1.121,
+   "onset": 0.172,
+   "end": 0.914,
    "chunks": [
     [
-     0.19,
-     0.552
-    ],
-    [
-     0.586,
-     1.362
+     0.172,
+     0.914
     ]
    ]
   },
@@ -1002,54 +1002,50 @@
    ]
   },
   "L41": {
-   "text": "something so tall it had to fold under our ceiling,",
+   "text": "it came up backwards, its face on the back of its head.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
+   "dur": 2.5,
    "onset": 0.172,
-   "end": 2.052,
+   "end": 2.293,
    "chunks": [
     [
      0.172,
-     0.802
+     0.966
     ],
     [
-     0.802,
-     0.922
+     1.034,
+     1.664
     ],
     [
-     0.922,
-     1.25
-    ],
-    [
-     1.25,
-     2.052
+     1.664,
+     2.293
     ]
    ]
   },
   "L42": {
-   "text": "its head bent flat against its shoulder.",
+   "text": "it can't see the stairs. it counts them.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.948,
+   "dur": 1.914,
    "onset": 0.172,
-   "end": 1.741,
+   "end": 1.724,
    "chunks": [
     [
      0.172,
-     0.414
+     0.509
     ],
     [
-     0.414,
-     0.879
+     0.509,
+     0.931
     ],
     [
-     0.879,
-     1.741
+     0.983,
+     1.724
     ]
    ]
   },

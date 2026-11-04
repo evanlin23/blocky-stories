@@ -34,6 +34,29 @@ cast = {
              "face": dict(FACE)},
 }
 
+from blocky import timeline
+
+voice = json.loads((HERE.parent / "voice-timings.json").read_text())
+_tl0 = timeline.build({"name": "ep81-eleven-steps", "lines": lines, "shots": [{"id": "S0"}], "gap": 0.12, "tail": LOOP,
+                       "min_read": 0.15, "cast": cast}, voice)
+_AT = timeline.resolver(_tl0["lines"], _tl0["duration"])
+
+
+def AT(ref):
+    """The time of a reference; with MS_LOOSE=1 (before a re-voice) a chunk that doesn't exist yet falls back to its line."""
+    try:
+        return _AT(ref)
+    except BaseException:
+        import os
+        if os.environ.get("MS_LOOSE") and isinstance(ref, str):
+            return _AT(ref.split(".")[0].rstrip(">+") if "." in ref else ref)
+        raise
+
+
+def DUR(a, b):
+    return max(0.3, AT(b) - AT(a))
+
+
 # ---------------------------------------------------------------------------------------------------- state
 NEUTRAL = {"arms": [0, 0], "side": [0, 0], "head": [0, 0], "lean": 0, "tremble": 0, "blink": True}
 acting = {k: [] for k in cast}
@@ -83,7 +106,7 @@ def box(at, pos=None, **kw):
 
 BOT = (0.0, -0.25, 0.06)                       # the box at the foot of the stairs, snug against the first step
 ROOMBOX = (-0.55, 6.5, LZ + 0.06)              # beside my bed
-DOORBOX = (0.0, 4.45, LZ + 0.06)               # shoved out onto the landing in front of my door
+DOORBOX = (0.0, 4.1, LZ + 0.06)               # shoved out onto the landing in front of my door
 
 
 def clm(at, pos=None, **kw):
@@ -94,6 +117,8 @@ def clm(at, pos=None, **kw):
 
 
 PS = {}
+HOLD = []
+SWAY = []
 
 
 def props(at, **kw):
@@ -199,6 +224,7 @@ S("L08", X((0.8, 1.2, 2.5), (0.0, 2.3, 1.7), 13, (0.55, 1.5, 2.35), None, 13), "
 gone("me", "L08>")
 
 # =========================================================================================== 02 L09-L16 Dad's rule
+DDOOR = (1.95, 4.72)                           # Dad's doorway on the landing, a stride right of mine
 put("dad", "L09", (0.15, -0.9), 180, "stern")
 props("L09", hold_mug=True)
 S("L09", X((0.0, 1.0, 1.75), (0.0, -0.9, 1.45), 14), "day", note="Dad at the foot of the stairs with his mug, stern")
@@ -206,53 +232,65 @@ S("L10", X((-0.2, -2.6, 1.65), (-0.78, -3.4, 1.7), 19), "day", note="the hall cl
 put("dad", "L10.1", (0.15, -0.9), 180, "stern", arms=[0, 100])
 props("L10.1", hold_mug=False)
 S("L10.1", X((2.4, -0.3, 1.5), (0.1, -0.9, 1.45), 14), "day", note="Dad pointing up the stairs")
-put("me", "L11", ST(10), 180, "neutral", arms=[0, 40])
-props("L11", hold_glass=True)
-S("L11", X((3.0, 0.2, 1.7), (0.0, 1.6, 2.0), 11.5), "day", note="me at the top with an empty glass, Dad below shaking his head")
-put("dad", "L11", (0.15, -0.9), 180, "stern", head=[25, 0])
+# L11: both of us in our doorways on the landing, me with an empty glass, Dad shaking his head; the camera crosses from me to him
+put("me", "L11", [0.0, 4.72, LZ], 0, "neutral", arms=[0, 40])
+put("dad", "L11", [DDOOR[0], DDOOR[1], LZ], 0, "stern", head=[25, 0])
 raw("dad", "L11.1", head=[-25, 0], blend=0.3)
+cue("L11", "mydoor", open=80)
+cue("L11", "ddoor", open=80)
+props("L11", hold_glass=True)
+S("L11", X((0.9, 3.0, LZ + 1.45), (0.1, 4.8, LZ + 1.45), 10.5, (1.0, 3.1, LZ + 1.45), (1.7, 4.8, LZ + 1.45), 10.5), "day",
+  note="both of us in our doorways on the landing: me with an empty glass, Dad shaking his head")
 gone("me", "L12")
+cue("L12", "mydoor", open=0)
+cue("L12", "ddoor", open=0)
 props("L12", hold_glass=False)
-walk("dad", "L12", ST(0), "L12>", ST(2), 180, "tired")
-S("L12", X((0.0, -2.0, 1.2), (0.0, 0.3, 0.9), 13), "evening", note="Dad's slippers on the bottom steps from behind, me already upstairs")
+walk("dad", "L12", ST(5), "L12>", ST(10), 180, "tired")
+S("L12", X((0.0, 0.95, 1.1), (0.0, 3.0, 2.3), 12), "evening", note="Dad's slippers climbing the top steps from behind; my door is already shut at the end of the landing")
 put("dad", "L13", (2.2, -1.2), 90, "tired")
 S("L13", X((3.4, -0.4, 0.8), (2.2, -1.2, 0.5), 15), "day", hand=0.003, note="morning kitchen doorway: carpet fluff on Dad's pajama knees")
 gone("dad", "L14")
 put("me", "L14", (4.6, 1.55), 90, "smirk", arms=[0, 40])
 S("L14", X((3.0, 0.6, 1.6), (4.6, 1.6, 1.4), 14), "day", note="me at the fridge, smirking")
 gone("me", "L15")
-# L15, L16: night, me at the top with a flashlight, tag 10 (the box isn't out yet)
+# L15, L16: night, me behind my door open a crack, flashlight off, one eye on the landing, tag 10 then 11
 count("L15", 10)
 count("L16", 11)
 box("L15")
-put("me", "L15", [0.2, 3.0, LZ - 0.62], 180, "neutral", arms=[40, 40])
+cue("L15", "mydoor", open=9)
+put("me", "L15", [0.5, 5.3, LZ], 0, "worried", head=[0, 0])
 props("L15", hold_flash=True)
-cue("L15", "torch", on=True, pos=[0.2, 2.9, LZ + 0.7], target=[0.0, 0.5, 0.9])
-S("L15", X((0.2, 4.2, LZ + 1.1), (0.0, 2.6, LZ + 0.5), 12), "evening", note="me at the top step with a flashlight, tag 10")
-S("L16", X((0.0, 3.6, 3.4), (0.0, 0.9, 1.0), 11.5), "evening", note="the flashlight down the empty stairs")
+S("L15", X((0.35, 3.7, LZ + 1.62), (0.35, 4.9, LZ + 1.6), 15), "evening", fill=1.2, note="me behind my door, open a crack, one eye on the landing, tag 10")
+S("L16", X((0.55, 5.05, LZ + 1.58), (0.0, 3.0, LZ + 0.7), 12, (0.5, 5.0, LZ + 1.58), None, 12), "evening", note="through the crack: the empty landing and the top of the stairs, tag 11")
 
 # =========================================================================================== 03 L17-L21 Dad and the box
-cue("L17", "torch", on=False)
 props("L17", hold_flash=False)
 gone("me", "L17")
+cue("L17", "mydoor", open=0)
 cue("L17.1", "ddoor", open=0, to=88, dur=1.0)
-S("L17", X((0.0, 2.9, 2.9), (-0.9, -1.8, 1.0), 12.5), "evening", note="down the stairs: Dad's door opening in the hall below")
-put("dad", "L18", (-0.1, -1.6), 0, "stern", arms=[50, 50])
+S("L17", X((0.1, 4.6, LZ + 1.45), (1.9, 4.9, LZ + 1.3), 12.5, (0.35, 4.55, LZ + 1.45), None, 12.5), "evening", note="from my doorway: Dad's door opening across the landing")
+# L18: Dad comes out with the box and crosses to the stairs
+d18 = DUR("L18", "L18>")
+put("dad", "L18", (DDOOR[0], 5.25, LZ), 0, "stern", arms=[55, 55])
+raw("dad", "L18>", pos=[0.5, 3.1, LZ])
 cue("L18", "ddoor", open=88)
-walk("dad", "L18", (-0.45, -1.9), "L18>", (0.0, -1.1), 0, "stern", arms=[50, 50])
-box("L18", (-0.45, -2.2, 0.95), pitch=8, to=[0.0, -1.5, 0.95], dur=1.9)
-S("L18", X((0.9, -0.1, 1.5), (-0.25, -1.4, 1.1), 13), "evening", note="Dad carrying the carpeted box out of his room")
-put("dad", "L19", (0.0, -1.0), 180, "stern", lean=18, arms=[55, 55])
-box("L19", (0.0, -1.55, 1.0), pitch=75, roll=0)
-S("L19", X((0.35, -0.55, 1.35), (0.0, -1.5, 1.05), 14, (0.25, -0.75, 1.3), None, 14), "evening", hand=0.002,
+box("L18", (DDOOR[0], 4.75, LZ + 1.0), pitch=8, to=[0.5, 2.65, LZ + 1.0], dur=d18)
+S("L18", X((0.3, 2.2, LZ + 1.5), (1.4, 4.6, LZ + 1.0), 11.5, (0.55, 2.4, LZ + 1.5), None, 11.5), "evening", note="Dad carrying the carpeted box out of his room across the landing")
+walk("dad", "L19", (0.4, 2.9, LZ), "L19>", ST(9), 0, "stern", lean=18, arms=[55, 55])
+box("L19", (0.4, 2.45, LZ + 1.0), pitch=-75, roll=0, to=[0.0, 1.93, 0.19 * 9 + 1.0], dur=DUR("L19", "L19>"))
+S("L19", X((0.3, 1.2, 2.95), (0.1, 2.4, 2.75), 13), "evening", hand=0.002,
   note="close: the box's plum carpet, its brass rod; tilted, two plum strokes on the underside")
 put("dad", "L20", (0.0, -0.95), 180, "stern", lean=38, arms=[60, 60])
 count("L20", 11)
 box("L20", BOT)
 S("L20", X((1.1, -1.7, 0.75), (0.0, -0.3, 0.3), 13), "evening", note="Dad sets it snug against the first step")
-walk("dad", "L21", (0.0, -0.9), "L21>", (-0.5, -1.8), 0, "tired")
-cue("L21>", "ddoor", open=88, to=0, dur=0.8)
-S("L21", X((0.0, 0.9, 1.7), (-0.3, -1.6, 1.3), 14), "evening", note="Dad walking back to his room without looking up")
+# L21: he climbs back up and into his room without a look at my door
+walk("dad", "L21", ST(0), "L21.2", ST(10), 180, "tired")
+raw("dad", "L21.3", pos=[1.95, 4.75, LZ])
+raw("dad", "L21>", pos=[1.95, 5.5, LZ])
+cue("L21.1", "ddoor", open=0, to=88, dur=0.8)
+cue("L21.4", "ddoor", open=88, to=0, dur=0.6)
+S("L21", X((0.2, 0.1, 1.75), (0.6, 4.2, LZ + 0.9), 10, (0.25, 0.4, 1.75), None, 10), "evening", note="Dad climbing back up and into his room, never a glance at my door")
 gone("dad", "L21>")
 
 # =========================================================================================== 04 L22-L28 the box, the fight
@@ -282,16 +320,17 @@ box("L28", (0.0, -0.85, 1.0), pitch=6, to=[0.0, 3.1, LZ + 1.0], dur=1.7)
 S("L28", X((3.0, 0.2, 1.7), (0.0, 1.4, 1.5), 11.5), "night", note="night: me carrying the box up the stairs")
 gone("me", "L28.3")
 box("L28.3", ROOMBOX)
-S("L28.3", X((1.5, 5.6, LZ + 1.5), (-0.5, 6.6, LZ + 0.3), 12), "roomdim", note="the box beside my bed, tag back to 10")
+S("L28.3", X((1.05, 5.6, LZ + 1.5), (-0.5, 6.6, LZ + 0.3), 12), "roomdim", note="the box beside my bed, tag back to 10")
 
 # =========================================================================================== 05 L29-L35 the count
 put("me", "L29", [-1.7, 7.2, LZ + 0.68], 0, "worried", lean=-90, arms=[0, 0])
-S("L29", X((0.0, 5.8, LZ + 0.9), (-1.2, 8.0, LZ + 0.6), 11.5), "roomdim", fill=0.6,
+S("L29", X((0.1, 5.7, LZ + 1.0), (-1.1, 8.0, LZ + 0.6), 11.5, (-0.7, 6.9, LZ + 1.05), (-1.65, 8.0, LZ + 0.8), 14), "roomdim", fill=0.6,
   note="my room in the dark, me in bed with my eyes open, the gap under the door glowing amber")
+SWAY.append(shots[-1]["id"])
 for i, (ref, k) in enumerate((("L30", 1), ("L30.1", 2), ("L30.2", 3))):
     count(ref, 10, i + 1)
     dip(ref, k, 0.55)
-    S(ref, X((0.9, -0.2 + 0.28 * i, 0.55 + 0.19 * i), (0.0, 0.1 + 0.28 * i, 0.3 + 0.19 * i), 15, push=0.12), "dim", hand=0.002,
+    S(ref, X((0.9, -0.2 + 0.28 * i, 0.55 + 0.19 * i), (0.0, 0.1 + 0.28 * i, 0.3 + 0.19 * i), 15, push=0.12), "dim", hand=0.002, fill=0.35, exp=-0.3,
       note=f"tread {k} dips, nobody on it")
 put("me", "L31", [-1.7, 7.2, LZ + 0.68], 0, "scared", lean=-90, arms=[70, 0])
 count("L31", 10, 3)
@@ -300,13 +339,13 @@ gone("me", "L31>")
 for i, (ref, k) in enumerate((("L32", 7), ("L32.1", 8), ("L32.2", 9))):
     count(ref, 10, k)
     dip(ref, k, 0.55)
-    S(ref, X((0.9, 0.28 * (k - 1) - 0.1, 0.19 * k + 0.35), (0.0, 0.28 * (k - 1) + 0.14, 0.19 * k), 15, push=0.12), "dim", hand=0.002,
+    S(ref, X((0.9, 0.28 * (k - 1) - 0.1, 0.19 * k + 0.35), (0.0, 0.28 * (k - 1) + 0.14, 0.19 * k), 15, push=0.12), "dim", hand=0.002, fill=0.35, exp=-0.3,
       note=f"tread {k} dips, nobody on it")
 count("P01", 10, 9)
 S("P01", X((0.0, 6.1, LZ + 0.05), (0.0, 4.95, LZ + 0.04), 13), "roomdim", fill=0.0, note="the gap under my door, still, glowing")
 count("L33", 10, 10)
 dip("L33", 9, 0.7)
-S("L33", X((0.8, 2.0, 2.2), (0.0, 2.4, 1.75), 15), "dim", hand=0.002, note="the top tread at the landing dips")
+S("L33", X((0.8, 2.0, 2.2), (0.0, 2.4, 1.75), 15), "dim", hand=0.002, fill=0.35, exp=-0.3, note="the top tread at the landing dips")
 S("L34", X((0.0, 2.7, 2.7), (0.0, 4.8, LZ + 0.2), 12), "dim", note="ten is the landing: the nightlight, my door at the end")
 S("L35", X((0.0, 6.6, LZ + 1.3), (0.0, 4.95, LZ + 1.2), 13), "roomdim", fill=0.4, note="ten is my door, from inside")
 
@@ -316,27 +355,35 @@ count("L36", 10)
 cue("L36", "mydoor", open=0, bow=0.0)
 cue("L36.2", "mydoor", open=0, bow=0.0, to=0, bow_to=1.0, dur=0.9)
 clm("L36", None)
-props("L36", chand={"pos": [0.0, 4.72, LZ + 0.045], "yaw": 0})
+props("L36", chand={"pos": [0.1, 5.2, LZ + 0.004], "yaw": 0})
 cue("L36", "torch", on=False)
-S("L36", X((0.0, 5.9, LZ + 0.5), (0.0, 4.9, LZ + 0.35), 13, (0.0, 5.6, LZ + 0.3), None, 13), "roomdim", fill=0.5, note="my door bows in its frame; a long flat hand just past the gap")
+S("L36", X((0.1, 6.0, LZ + 0.42), (0.1, 5.0, LZ + 0.02), 13, (0.1, 5.7, LZ + 0.3), None, 13), "roomdim", fill=0.5, note="my door bows in its frame; a long flat hand reaches under it toward me")
 put("me", "L37", [0.15, 7.0, LZ + 0.17], 180, "scared", lean=-86, arms=[80, 0])
 props("L37", chand=None)
 cue("L37", "mydoor", open=0, bow=1.0)
 cue("L37", "torch", on=True, pos=[0.4, 5.75, LZ + 0.08], target=[0.0, 4.7, LZ + 0.05])
-clm("L37", [0.0, 3.22, LZ], yaw=180, fold=1.5, roll=0, reach=8, hp=0, hoff=0.05, kx=0.0, ky=1.0, kz=0.2, ax=0.0, az=1.3)
-S("L37", X((1.5, 6.2, LZ + 0.8), (0.1, 5.8, LZ + 0.15), 12), "roomdim", fill=0.4, note="me flat on the floor with the flashlight, looking at the gap")
+S("L37", X((1.05, 6.2, LZ + 0.8), (0.1, 5.8, LZ + 0.15), 12), "roomdim", fill=0.4, note="me flat on the floor with the flashlight, looking at the gap")
 put("me", "L37>", [0.15, 7.0, LZ + 0.17], 180, "scared", lean=-86, arms=[80, 0], hidden=True)
-S("L38", X((0.0, 5.65, LZ + 0.065), (0.0, 4.7, LZ + 0.065), 12, (0.0, 5.45, LZ + 0.065), None, 12), "roomdim", fill=0.0, hand=0.002,
-  note="the gap: two big black eyes in a cream face, looking back")
-S("L39", X((0.0, 5.4, LZ + 0.065), (0.0, 4.7, LZ + 0.065), 12, (0.0, 5.2, LZ + 0.065), None, 12), "roomdim", fill=0.0, hand=0.002,
-  note="sideways, way too big")
-S("L40", X((-0.12, 5.5, LZ + 0.06), (-0.2, 4.7, LZ + 0.075), 20, (-0.12, 5.25, LZ + 0.06), None, 20), "roomdim", fill=0.0, hand=0.002,
+# the gap: the Climber folded backwards at its knees, the face on the back of its head upside down at the door
+GAP = dict(yaw=0, k=60.0, stoop=-95.0, al=0, ar=0, hp=0.0, hr=180.0, hipz=0.40, hy=0.0, kx=0.0, ky=1.0, kz=0.03, ax=0.0, ay=0.85, az=0.1,
+           rx=0.5, ry=-0.2, rz=1.2)
+clm("L38", [0.18, 3.77, LZ], **GAP)
+S("L38", X((0.04, 5.3, LZ + 0.075), (0.04, 4.7, LZ + 0.075), 22, (0.05, 5.15, LZ + 0.075), None, 22), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
+  note="the gap: one pinprick eye and the edge of a cream face, lit amber from below")
+S("L39", X((0.07, 5.2, LZ + 0.075), (0.07, 4.7, LZ + 0.075), 26, (0.08, 5.08, LZ + 0.075), None, 26), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
+  note="it doesn't blink")
+S("L40", X((0.105, 5.1, LZ + 0.075), (0.105, 4.7, LZ + 0.075), 28, (0.105, 5.0, LZ + 0.075), None, 28), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
   note="the cover frame: one eye at the gap, an inch from mine")
+# L41: the whole of it from the top of the stairs: chest and buttons toward us, knees the wrong way, hair
 cue("L41", "mydoor", open=0, bow=0.0)
-clm("L41", [0.15, 2.6, LZ], yaw=180, fold=0.62, roll=-75, reach=8, hp=5, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.15, ax=0.1, ay=0.0, az=2.1, rx=-1.2, ry=-0.6, rz=2.3)
+STAND = dict(yaw=35, k=36.0, stoop=14.0, al=-4, ar=22, hp=20.0, hr=9.0, kx=-0.8, ky=-1.1, kz=0.03, ax=0.0, ay=0.0, az=1.15, rx=1.7, ry=-0.3, rz=1.9)
+clm("L41", [0.38, 4.45, LZ], **STAND)
 cue("L41", "torch", on=False)
-S("L41", X((0.3, 4.85, LZ + 0.25), (0.1, 2.6, LZ + 1.9), 10, (0.28, 4.6, LZ + 0.27), None, 10), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="low from my doorway: it has to fold under our ceiling")
-S("L42", X((0.4, 4.8, LZ + 0.4), (0.1, 2.6, LZ + 2.3), 14, (0.38, 4.5, LZ + 0.42), None, 14), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="its head bent flat on its shoulder, its eye on me")
+S("L41", X((0.7, 2.7, LZ + 0.25), (0.6, 4.5, LZ + 0.95), 10.5, (0.7, 2.95, LZ + 0.27), None, 10.5), "creature", fill=0.0, door=0.3, clkey=2.0, clrim=2.5, hand=0.003,
+  note="low from the top step: it stands, chest and buttons toward us, knees the wrong way, only hair on the front of its head")
+clm("L42", [0.38, 4.45, LZ], **dict(STAND, yaw=0, hy=-80.0, hp=12.0, kx=1.0, ky=0.0, kz=0.04, ax=0.0, ay=0.0, az=1.65, rx=-0.7, ry=0.0, rz=2.0))
+S("L42", X((1.75, 4.35, LZ + 1.3), (0.38, 4.5, LZ + 1.6), 16, (1.6, 4.37, LZ + 1.3), None, 16), "creature", fill=0.0, door=0.3, clkey=1.1, clrim=3.0, hand=0.003,
+  note="from the side: the face on the back of its head, turned to us")
 
 # =========================================================================================== 07 L43-L51 the rule's logic
 count("L43", 10)
@@ -344,15 +391,15 @@ clm("L43", None)
 S("L43", X((0.0, 3.4, 3.2), (0.0, 0.2, 0.7), 11.5), "dim", note="down the stairs past where it stood: ten treads, the bottom one bare")
 S("L44", X((0.0, 1.2, 1.8), (0.0, 3.0, 1.9), 40, (0.0, 1.2, 1.8), None, 55), "dim", hand=0.002, note="the tag, ten")
 box("L45", ROOMBOX)
-S("L45", X((1.5, 5.6, LZ + 1.5), (-0.55, 6.6, LZ + 0.3), 12), "roomdim", note="the box beside my bed")
+S("L45", X((1.05, 5.6, LZ + 1.5), (-0.55, 6.6, LZ + 0.3), 12), "roomdim", note="the box beside my bed")
 # L46-L47: the diagram-like top-down: the box at the bottom, the Climber one tread below the landing
 count("L46", 11)
 box("L46", BOT)
 S("L46", X((0.0, 3.9, 4.4), (0.0, 0.2, 0.4), 10.5), "evening", note="top-down: with eleven steps (the box the bottom one)")
-clm("L46.1", [0.0, 2.38, 0.19 * 9], yaw=180, fold=0.62, roll=-75, reach=8, hp=5, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.3, ax=0.1, ay=0.0, az=2.0, rx=-1.2, ry=-0.6, rz=2.3)
+clm("L46.1", [0.0, 2.38, 0.19 * 9], **dict(STAND, yaw=0, hr=9.0, kx=-0.5, ky=-1.2, kz=0.1, az=1.1, rx=1.5, ry=-0.3, rz=1.9))
 count("L46.1", 11)
-S("L46.1", X((0.0, -1.3, 0.9), (0.0, 2.4, 2.9), 12, (0.0, -1.0, 0.95), None, 12), "dim", fill=0.3, clkey=1.8, clrim=5.0, note="ten leaves it one tread below the landing")
-S("L47", X((1.1, 4.1, 3.0), (0.0, 2.4, 1.9), 13), "evening", note="one step below the landing, one step from me")
+S("L46.1", X((0.0, -1.3, 0.9), (0.0, 2.4, 2.9), 12, (0.0, -1.0, 0.95), None, 12), "dim", fill=0.3, clkey=2.0, clrim=2.5, note="ten leaves it one tread below the landing")
+S("L47", X((1.1, 4.1, 3.0), (0.0, 2.4, 1.9), 13), "evening", fill=1.2, exp=0.25, note="one step below the landing, one step from me")
 clm("L48", None)
 S("L48", X((1.3, -1.7, 0.9), (0.0, -0.4, 0.4), 13), "dawn", note="dawn: Dad lifts the box away so I'd never know")
 put("dad", "L48", (0.0, -0.95), 180, "tired", lean=30, arms=[60, 60])
@@ -362,9 +409,9 @@ box("L48>")
 gone("dad", "L48>")
 count("L49", 10)
 box("L49", ROOMBOX)
-S("L49", X((1.6, 5.7, LZ + 1.6), (-0.55, 6.5, LZ + 0.25), 12), "roomdim", note="the box by my bed")
+S("L49", X((1.05, 5.7, LZ + 1.6), (-0.55, 6.5, LZ + 0.25), 12), "roomdim", note="the box by my bed")
 put("me", "L50", [0.3, 6.2, LZ], 90, "worried", head=[-40, 0])
-S("L50", X((1.3, 7.6, LZ + 1.7), (0.3, 6.2, LZ + 1.5), 12), "roomdim", fill=0.8, note="me, worried, looking from the box to the door")
+S("L50", X((1.05, 7.6, LZ + 1.7), (0.3, 6.2, LZ + 1.5), 12), "roomdim", fill=0.8, note="me, worried, looking from the box to the door")
 put("me", "L51", [0.3, 6.2, LZ], 180, "neutral", head=[0, 0])
 raw("me", "L51.1", expr="angry")
 S("L51", X((0.4, 7.8, LZ + 1.6), (0.3, 6.2, LZ + 1.6), 14), "roomdim", fill=0.9, note="me, eyes widening, then determined")
@@ -377,49 +424,55 @@ box("L52.2", ROOMBOX, to=list(DOORBOX), dur=0.8)
 gone("me", "L52.3")
 count("L52.4", 11)
 cue("L52.3", "mydoor", open=26)
-clm("L53", [0.15, 2.6, LZ], yaw=180, fold=0.62, roll=-75, reach=8, hp=-10, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.15, ax=0.1, ay=0.0, az=2.1, rx=-1.2, ry=-0.6, rz=2.3)
+FIG = dict(yaw=0, k=34.0, stoop=12.0, al=-4, ar=18, hp=-12.0, hr=6.0, kx=0.3, ky=0.9, kz=0.1, ax=0.0, ay=0.1, az=1.65, rx=0.5, ry=-0.9, rz=2.2)
+clm("L53", [0.1, 3.4, LZ], **FIG)
 box("L53", DOORBOX)
-S("L53", X((0.3, 4.85, LZ + 0.3), (0.1, 2.6, LZ + 0.9), 11, (0.28, 4.8, LZ + 0.32), None, 11), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="floor level: the box between its flat hands and my door")
+S("L53", X((0.3, 4.85, LZ + 0.3), (0.1, 3.4, LZ + 0.95), 10.5, (0.28, 4.8, LZ + 0.32), None, 10.5), "creature", fill=0.0, door=0.3, clkey=1.6, clrim=2.5, hand=0.003, note="floor level: the box between the Climber's heels and my door")
 cue("L53", "mydoor", open=0)
-S("L54", X((0.45, 4.85, LZ + 0.4), (0.15, 2.6, LZ + 1.6), 12, (0.42, 4.78, LZ + 0.42), None, 12), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003,
-  note="it looks down at the box, a long time")
-S("L55", X((-0.3, 4.85, LZ + 0.2), (0.15, 2.6, LZ + 1.5), 10, (-0.25, 4.8, LZ + 0.22), None, 10), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="it doesn't climb it")
-S("L56", X((0.9, 2.2, 2.8), (0.2, 3.8, 3.3), 11.5, (0.9, 2.3, 2.9), None, 11.5), "dawn", hand=0.003, note="dawn comes up in the round window, it stands one step short")
+S("L54", X((0.55, 4.6, LZ + 1.25), (0.1, 3.4, LZ + 1.6), 15, (0.45, 4.45, LZ + 1.27), None, 15), "creature", fill=0.0, door=0.3, clkey=1.4, clrim=3.0, hand=0.003,
+  note="the face on the back of its head looks down at the box, a long time")
+S("L55", X((-0.4, 4.7, LZ + 0.35), (0.1, 3.4, LZ + 0.9), 10, (-0.3, 4.55, LZ + 0.37), None, 10), "creature", fill=0.0, door=0.3, clkey=1.6, clrim=2.5, hand=0.003, note="it doesn't climb it")
+S("L56", X((0.9, 4.7, LZ + 1.15), (0.1, 3.4, LZ + 1.2), 11, (0.9, 4.7, LZ + 1.2), (2.1, 3.5, LZ + 1.45), 11), "dawn", hand=0.003, note="dawn comes up in the round window, it stands one step short")
+HOLD.append(shots[-1]["id"])
 S("L57", X((0.0, 6.6, LZ + 1.0), (0.0, 5.1, LZ + 0.8), 13), "dawn", fill=0.9, note="me with my back to the door, listening")
 put("me", "L57", [0.0, 5.45, LZ - 0.62], 180, "scared", arms=[40, 40])
 raw("me", "L57.3", expr="tired")
 cue("L57", "torch", on=False)
 
 # =========================================================================================== 09 L58-L66 the warm turn
+# the landing at dawn: the box in front of my door, me asleep against it, Dad's door open beside mine
 clm("L58", None)
 box("L58", DOORBOX)
 count("L58", 10)
-put("me", "L58", [0.35, 4.35, LZ - 0.62], 180, "asleep", lean=0)
-S("L58", X((1.8, 2.8, LZ + 1.6), (0.2, 4.4, LZ + 0.5), 12), "dawn", fill=1.0, note="morning: the landing empty but for the box; me asleep against my door")
-put("dad", "L58", [0.0, 2.6, LZ], 0, "soft")
-walk("dad", "L58.1", [0.0, 2.6, LZ], "L59", [0.0, 3.0, LZ], 180, "soft")
-S("L59", X((0.0, 4.3, LZ + 1.4), (0.0, 2.6, LZ + 1.5), 14), "dawn", fill=0.9, note="Dad's face at the top of the stairs, soft")
-put("dad", "L60", [-0.35, 4.0, LZ - 0.62], 180, "soft")
-S("L60", X((2.0, 3.0, LZ + 1.5), (-0.1, 4.2, LZ + 1.0), 13), "dawn", fill=0.9, note="Dad sits down beside me on the landing")
-S("L61", X((1.0, 3.0, LZ + 0.7), (0.0, 4.4, LZ + 0.4), 13), "dawn", fill=0.8, note="the box between us")
-put("dad", "L62", [-0.35, 4.0, LZ - 0.62], 180, "soft", head=[40, 0])
-S("L62", X((0.0, 3.2, LZ + 1.2), (-0.35, 4.0, LZ + 1.0), 20), "dawn", fill=0.9, note="Dad, close, soft")
-put("me", "L63", [0.35, 4.35, LZ - 0.62], 180, "soft")
-S("L63", X((0.5, 3.2, LZ + 1.2), (0.35, 4.35, LZ + 1.0), 20), "dawn", fill=0.9, note="me, close, awake")
-put("me", "L64", [0.35, 4.35, LZ - 0.62], 180, "smile")
-put("dad", "L64", [-0.35, 4.0, LZ - 0.62], 180, "smile")
-S("L64", X((0.2, 0.4, 3.3), (0.0, 4.0, 2.2), 11.5), "day", fill=0.9, note="wide down the stairs in daylight, both of us on the landing, smiling")
+ME_SIT, DAD_SIT = [0.55, 4.66, LZ - 0.62], [-0.55, 4.66, LZ - 0.62]
+put("me", "L58", ME_SIT, 0, "asleep", lean=0)
+put("dad", "L58", [DDOOR[0], DDOOR[1], LZ], -70, "soft")
+cue("L58", "ddoor", open=85)
+S("L58", X((1.0, 2.9, LZ + 1.5), (0.9, 4.7, LZ + 0.75), 11, (1.0, 3.1, LZ + 1.45), None, 11), "dawn", fill=1.0, note="morning: the landing empty but for the box; me asleep against my door, Dad in his doorway beside mine")
+S("L59", X((1.1, 3.1, LZ + 1.55), (DDOOR[0], DDOOR[1], LZ + 1.5), 19, (1.2, 3.3, LZ + 1.55), None, 19), "dawn", fill=0.9, note="Dad's face, soft")
+walk("dad", "L60", [DDOOR[0], DDOOR[1], LZ], "L60.2", [-0.55, 4.66, LZ], -70, "soft")
+raw("dad", "L60.3", pos=DAD_SIT, yaw=0)
+S("L60", X((0.8, 2.9, LZ + 1.4), (0.8, 4.6, LZ + 0.9), 11, (0.4, 3.0, LZ + 1.2), (0.1, 4.6, LZ + 0.9), 11), "dawn", fill=0.9, note="Dad crosses the landing and sits down beside me")
+S("L61", X((0.0, 3.0, LZ + 0.75), (0.0, 4.5, LZ + 0.55), 12), "dawn", fill=0.9, note="the box in front of us, the two of us behind it")
+put("dad", "L62", DAD_SIT, 0, "soft", head=[0, 0])
+S("L62", X((-0.1, 3.5, LZ + 0.95), (-0.5, 4.66, LZ + 0.95), 21), "dawn", fill=0.9, note="Dad, close, soft")
+put("me", "L63", ME_SIT, 0, "soft")
+S("L63", X((1.1, 3.5, LZ + 0.95), (0.55, 4.66, LZ + 0.95), 21), "dawn", fill=0.9, note="me, close, awake")
+put("me", "L64", ME_SIT, 0, "smile")
+put("dad", "L64", DAD_SIT, 0, "smile")
+S("L64", X((0.0, 2.55, LZ + 0.75), (0.0, 4.6, LZ + 0.6), 14), "day", fill=0.9, note="down the stairs in daylight, both of us on the landing, the box in front, smiling")
+HOLD.append(shots[-1]["id"])
 # L65, L66: taking turns
 gone("dad", "L65")
 count("L65", 11)
 box("L65", BOT)
-put("me", "L65", [0.0, -1.0, 0.0], 180, "neutral", lean=26, arms=[55, 55])
-S("L65", X((1.2, -1.8, 0.8), (0.0, -0.3, 0.3), 13), "night", note="night: me setting the box at the bottom, tag 11")
+put("me", "L65", [0.0, -1.1, 0.0], 180, "neutral", lean=26, arms=[55, 55])
+S("L65", X((1.3, -2.1, 1.3), (0.0, -0.7, 0.8), 14), "night", note="night: me setting the box at the bottom, tag 11")
 gone("me", "L65>")
 count("L66", 10)
 box("L66", (0.0, -0.62, 0.9), pitch=6)
-put("dad", "L66", [0.0, -0.95, 0.0], 180, "tired", lean=30, arms=[60, 60])
-S("L66", X((1.2, -1.7, 0.9), (0.0, -0.5, 0.4), 13), "dawn", note="dawn: Dad lifting it, tag 10")
+put("dad", "L66", [0.0, -1.0, 0.0], 180, "tired", lean=30, arms=[60, 60])
+S("L66", X((1.3, -2.0, 1.35), (0.0, -0.7, 0.9), 14), "dawn", note="dawn: Dad lifting it, tag 10")
 box("L66>")
 gone("dad", "L66>")
 
@@ -429,9 +482,11 @@ box("L67", BOT)
 S("L67", X((0.0, -1.5, 0.35), (0.0, 1.7, 1.1), 12.5, (0.0, -1.15, 0.37), None, 12.5), "night", hand=0.003, note="the stairs at two a.m. from the bottom, one tread dips")
 dip("L67.1", 5, 0.6)
 S("L68", X((0.8, 1.6, 2.6), (0.0, 2.3, 1.75), 14), "night", hand=0.003, note="the cold step just below the landing")
-clm("L69", [0.0, 2.38, 0.19 * 9 - 0.35], yaw=180, fold=0.55, roll=-75, reach=8, hp=-5, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.3, ax=0.1, ay=0.0, az=2.0, rx=-1.2, ry=-0.6, rz=2.3)
-S("L69", X((0.5, 4.85, LZ + 0.8), (0.0, 2.4, 3.0), 8, (0.48, 4.8, LZ + 0.82), None, 8), "creature", fill=0.0, door=0.3, clkey=1.2, clrim=7.0, hand=0.003, note="on the step just below the landing, it has sat down")
-S("L70", X((0.3, 4.85, LZ + 0.5), (0.0, 2.4, 3.9), 12, (0.28, 4.8, LZ + 0.52), None, 12), "creature", fill=0.0, door=0.3, clkey=1.2, clrim=7.0, hand=0.003, note="head on its shoulder, facing up, waiting")
+SIT = dict(yaw=0, k=72.0, stoop=10.0, al=-40, ar=-40, hp=25.0, hr=6.0, hipz=0.38, kx=-0.4, ky=-1.2, kz=0.1, ax=0.0, ay=0.0, az=1.0, rx=1.3, ry=-0.3, rz=1.6)
+clm("L69", [0.0, 2.38, 0.19 * 9], **SIT)
+S("L69", X((0.35, 0.9, 1.95), (0.0, 2.4, 2.15), 11, (0.35, 1.1, 1.97), None, 11), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=2.5, hand=0.003, note="on the step just below the landing it has sat down, chest toward the hall")
+clm("L70", [0.0, 2.38, 0.19 * 9], **dict(SIT, hy=-60.0, hp=35.0, kx=0.9, ky=0.4, kz=0.1, az=1.3, rx=-0.7, ry=0.0, rz=1.7))
+S("L70", X((1.15, 2.7, LZ + 0.75), (0.0, 2.45, LZ + 0.55), 14, (1.0, 2.65, LZ + 0.75), None, 14), "creature", fill=0.0, door=0.3, clkey=1.1, clrim=3.0, hand=0.003, note="the face on the back of its head looking up at our doors, waiting")
 clm("L71", None)
 count("L71", 11)
 S("L71", X((0.05, -1.5, 0.3), (0.0, 1.7, 1.05), 12.5, (0.05, -1.15, 0.31), None, 12.5), "night", hand=0.003, note="push in to the bottom step: frame 1 again")
@@ -439,16 +494,16 @@ S("L71", X((0.05, -1.5, 0.3), (0.0, 1.7, 1.05), 12.5, (0.05, -1.15, 0.31), None,
 # ---------------------------------------------------------------------------------------------------- story
 look = {"style": "closer", "flash_safe": True,
         "polish": {"emph": ["L01", "L22", "L33", "L38", "L44", "L52", "L70"], "reveal": ["L38", "L44", "L70"], "twist": "L43",
-                   "quiet": [["L59", "L63"]], "camera": True, "idle": True, "ease": True}}
+                   "quiet": [["L59", "L63"]], "hold": HOLD, "sway": SWAY, "camera": True, "idle": True, "ease": True}}
 story = {
     "slug": "ep81-eleven-steps",
-    "title": "Our Stairs Grow One Step At NIGHT \U0001FA9C",
+    "title": "Ten Steps By Day, ELEVEN At Night \U0001FA9C",
     "made_for_kids": False,
     "premise": "Our stairs have ten steps by day and eleven at night, and at two in the morning they creak ten times with "
                "nobody on them. Dad's one house rule is that everyone is upstairs by ten and nobody is on the stairs "
                "after, so one night I sit at the top with a flashlight to catch the new step.",
     "twist": "The eleventh step is a carpeted box Dad has set at the bottom of the stairs every night for eleven years, "
-             "because something very tall climbs exactly ten steps each night and stops one short of my door. With the "
+             "because something that climbs backwards, with its face on the back of its head, climbs exactly ten steps each night and stops one short of my door. With the "
              "box in my room it reaches the landing, and shoved out in front of my door it stands one step short until "
              "dawn. Now we take turns setting it, and last night it sat down to wait.",
     "world": "a two-storey house's one straight staircase of honey oak and plum carpet with a landing, a round window "
@@ -459,7 +514,7 @@ story = {
     "tail": LOOP,
     "min_read": 0.15,
     "asr_forgive": ["a", "luis", "every one", "it", "he's"],
-    "clip_ok": ["bed_single", "S34", "S38"],
+    "clip_ok": ["bed_single"], "clip_heads": ["chead"],
     "fade_in": False,
     "fade_out": False,
     "look": look,
@@ -480,7 +535,7 @@ story = {
                   {"at": "L67", "voices": ["drone", "tick"], "energy": 0.35},
               ]},
     "sound": {
-        "rev": 3, "floor": "wood", "steps_db": -24,
+        "rev": 4, "floor": "wood", "steps_db": -24,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -44}],
         "sfx": [
             {"at": "L01.3", "kind": "creak", "db": -14, "dur": 0.9},
@@ -500,12 +555,6 @@ story = {
         "music_drops": [{"from": "L32>", "to": "P01>"}],
     },
 }
-from blocky import timeline
-
-voice = json.loads((HERE.parent / "voice-timings.json").read_text())
-_tl0 = timeline.build({"name": "ep81-eleven-steps", "lines": lines, "shots": [{"id": "S0"}], "gap": 0.12, "tail": LOOP,
-                       "min_read": 0.15, "cast": cast}, voice)
-AT = timeline.resolver(_tl0["lines"], _tl0["duration"])
 for k in acting:
     acting[k].sort(key=lambda e: AT(e["at"]))
 cues.sort(key=lambda e: AT(e["at"]))

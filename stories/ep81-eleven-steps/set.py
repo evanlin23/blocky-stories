@@ -21,7 +21,6 @@ Cues (story.json "cues", each restates its whole state): count, box, climber, di
 from __future__ import annotations
 
 import math
-import os
 import tempfile
 from pathlib import Path
 
@@ -174,119 +173,108 @@ def place_inset(kit, ctx, n, ticks, lens):
 
 
 # ------------------------------------------------------------------------------------------------ the Climber
-def face_image(path):
-    from PIL import Image, ImageDraw
-
-    S = 512
-    # a cream disc lit from below: warm amber at the chin, dark toward the brow, no mouth, no nose
-    top, bot = hexrgb("#2a2622"), hexrgb("#d9a867")
-    im = Image.new("RGB", (S, S))
-    px = im.load()
-    for yy in range(S):
-        u = (yy / (S - 1)) ** 1.3
-        c = tuple(int(top[i] + (bot[i] - top[i]) * u) for i in range(3))
-        for xx in range(S):
-            px[xx, yy] = c
-    d = ImageDraw.Draw(im)
-    for sx in (-1, 1):
-        cx, cy, r = S / 2 + sx * 150, S * 0.46, 40
-        d.ellipse([cx - r * 1.3, cy - r * 1.3, cx + r * 1.3, cy + r * 1.3], fill=(238, 222, 180))   # a pale eye ring: the brightest thing
-        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(8, 7, 9))
-        d.ellipse([cx - r * 0.42, cy - r * 0.5, cx - r * 0.2, cy - r * 0.28], fill=(255, 252, 240))   # a pinpoint glint
-    im.save(path)
-    return path
-
-
 class Climber:
-    """The Climber: far too tall (3.2 m standing), a heavy moss coat to the shins, wide shoulders, long arms with flat
-    hands, a round cream head rolled flat onto its left shoulder, so its face is turned 90 degrees. Front is -y at yaw 0."""
+    """The Climber: a stooped man of Dad's height in a near-black coat who climbs BACKWARDS. His chest and buttons face
+    -y at yaw 0 (down the stairs), his knees bend the wrong way (back, toward +y, the shin coming forward), his arms are
+    long with flat hands, and his face is on the BACK of his head (it looks toward +y and a little up). The front of
+    his head is short dark hair. Eyes: two pinprick glints in a cream face, set far apart under a brow ridge."""
+
+    L = 0.46                                                    # thigh and shin length
 
     def __init__(self, kit):
         self.kit = kit
-        moss, brass, cream = P("#5f7d5b", 0.85, 0.08), P("#a8874a", 0.45, 0.5), P("#efe3c4", 0.7, 0.1)
-        dark = P("#3f5a40", 0.9, 0.05)
+        coat = P("#1b2621", 0.85, 0.12)
+        coat2 = P("#222f29", 0.85, 0.1)
+        trou = P("#15191a", 0.9, 0.05)
+        brass = P("#a8874a", 0.4, 0.6)
+        cream = P("#efe3c4", 0.7, 0.12)
+        hair = P("#2a2420", 0.9, 0.05)
+        hand = P("#a99c80", 0.8, 0.08)
         self.root = E(None, (0, 0, 0), "climber")
-        # legs and the lower coat are scaled to the hip height by place()
-        self.legs = [B(self.root, (0.36, 0.4, 1.0), (sx * 0.27, 0, 0.5), dark, "clleg", 0.05) for sx in (-1, 1)]
-        self.shoes = [B(self.root, (0.4, 0.8, 0.16), (sx * 0.27, -0.18, 0.08), P("#26231f", 0.6), "clshoe", 0.05) for sx in (-1, 1)]
-        self.skirt = B(self.root, (1.1, 0.72, 1.0), (0, 0, 1.0), moss, "clskirt", 0.1)
-        self.hips = E(self.root, (0, 0, 1.4), "clhips")
+        self.hips = E(self.root, (0, 0, 0.9), "clhips")
+        # legs: a thigh that goes BACK from the hip, a shin that comes forward again, a bare foot with its toes to the back
+        self.knees, self.ankles = [], []
+        self.hipj = []
+        for sx in (-1, 1):
+            hj = E(self.hips, (sx * 0.1, 0, 0), "clhipj")
+            B(hj, (0.15, 0.16, self.L), (0, 0, -self.L / 2), trou, "clthigh", 0.04)
+            kn = E(hj, (0, 0, -self.L), "clknee")
+            B(kn, (0.115, 0.12, self.L), (0, 0, -self.L / 2), trou, "clshin", 0.035)
+            B(kn, (0.13, 0.14, 0.06), (0, 0.0, 0.0), trou, "clkneecap", 0.03)
+            an = E(kn, (0, 0, -self.L), "clankle")
+            B(an, (0.1, 0.30, 0.06), (0, 0.1, -0.03), cream, "clfoot", 0.025)
+            for i in range(5):
+                B(an, (0.018, 0.04, 0.035), (-0.04 + 0.02 * i, 0.26, -0.04), cream, "cltoe", 0.006)
+            self.hipj.append(hj)
+            self.knees.append(kn)
+            self.ankles.append(an)
+        self.skirt = B(self.hips, (0.44, 0.27, 0.46), (0, 0, -0.2), coat, "clskirt", 0.06)
+        # the upper body, stooped forward about the hips
         self.upper = E(self.hips, (0, 0, 0), "clupper")
-        B(self.upper, (1.05, 0.66, 1.25), (0, 0, 0.55), moss, "cltorso", 0.1)
-        B(self.upper, (1.6, 0.74, 0.42), (0, 0, 1.22), moss, "clshoulders", 0.12)
-        B(self.upper, (0.5, 0.5, 0.2), (0, 0, 1.5), dark, "clcollar", 0.07)
-        for i in range(4):
-            kit.cyl(nm("clbutton"), 0.055, 0.04, (0, -0.35, 0.0 + 0.32 * i), brass, self.upper, rot=(math.pi / 2, 0, 0), n=14)
-        # arms: a hinge at each shoulder, a long sleeve, a flat hand
+        B(self.upper, (0.38, 0.23, 0.58), (0, 0, 0.27), coat, "cltorso", 0.06)
+        B(self.upper, (0.52, 0.25, 0.14), (0, 0.0, 0.56), coat2, "clshoulders", 0.06)
+        B(self.upper, (0.24, 0.2, 0.09), (0, 0.01, 0.65), coat, "clcollar", 0.03)
+        B(self.upper, (0.07, 0.04, 0.2), (-0.09, -0.12, 0.54), coat2, "cllapel", 0.012, rot=(0, 0.35, 0))
+        B(self.upper, (0.07, 0.04, 0.2), (0.09, -0.12, 0.54), coat2, "cllapel", 0.012, rot=(0, -0.35, 0))
+        for i in range(5):
+            kit.cyl(nm("clbutton"), 0.022, 0.016, (0.0, -0.124, 0.46 - 0.095 * i), brass, self.upper, rot=(math.pi / 2, 0, 0), n=14)
+        # arms: long sleeves, flat pale hands with separate fingers, hanging past the knees
         self.arms = []
         for sx in (-1, 1):
-            hinge = E(self.upper, (sx * 0.95, 0, 1.25), "clarm")
-            B(hinge, (0.3, 0.34, 1.95), (0, 0, -0.97), P("#56724f", 0.85, 0.08), "clsleeve", 0.08)
-            B(hinge, (0.3, 0.44, 0.08), (0, -0.04, -2.0), cream, "clhand", 0.025)
-            B(hinge, (0.32, 0.32, 0.05), (0, 0, -1.93), brass, "clcuff", 0.015)
-            self.arms.append((hinge, sx))
-        # the head: a round cream drum rolled about the neck, the face a disc 1.2 cm proud of its front
-        self.neck = E(self.upper, (0, -0.03, 1.55), "clneck")
-        self.hroot = E(self.root, (0, 0, 1.5), "clhroot")      # the head hangs off the root, so its facing is set directly
-        self.hyaw = E(self.hroot, (0, 0, 0), "clhyaw")
+            hg = E(self.upper, (sx * 0.31, 0.0, 0.55), "clarm")
+            B(hg, (0.11, 0.13, 1.0), (0, 0, -0.5), coat2, "clsleeve", 0.03)
+            B(hg, (0.05, 0.14, 0.1), (0, 0, -1.02), hand, "clpalm", 0.012)
+            for i in range(4):
+                B(hg, (0.034, 0.026, 0.27 - 0.02 * (i % 2)), (0, -0.054 + 0.036 * i, -1.16), hand, "clfinger", 0.008)
+            self.arms.append(hg)
+        # the neck, long, and the head set too far back. Local head axes: front (hair) -y, face +y.
+        self.neck = E(self.upper, (0, 0.04, 0.66), "clneck")
+        B(self.neck, (0.08, 0.08, 0.2), (0, 0.02, 0.1), P("#3e342c", 0.85, 0.05), "clneckb", 0.02)
+        self.hyaw = E(self.neck, (0, 0.06, 0.2), "clhyaw")
         self.hpitch = E(self.hyaw, (0, 0, 0), "clhpitch")
-        self.rollg = E(self.hpitch, (0, 0, 0), "clroll")
-        self.headg = E(self.rollg, (0, 0, 0.42), "clheadg")
-        R = 0.5
-        kit.cyl(nm("clhead"), R, 0.4, (0, 0, 0), P("#e2d3ad", 0.7, 0.1), self.headg, rot=(math.pi / 2, 0, 0), n=32)
-        self.face_mat = kit._new(nm("clface"))
-        nt = self.face_mat.node_tree
-        b = nt.nodes["Principled BSDF"]
-        b.inputs["Roughness"].default_value = 0.7
-        tex = nt.nodes.new("ShaderNodeTexImage")
-        gc = nt.nodes.new("ShaderNodeTexCoord")
-        nt.links.new(gc.outputs["Generated"], tex.inputs["Vector"])
-        nt.links.new(tex.outputs["Color"], b.inputs["Base Color"])
-        em = nt.nodes.new("ShaderNodeEmission")
-        em.inputs["Strength"].default_value = 0.3
-        nt.links.new(tex.outputs["Color"], em.inputs["Color"])
-        ad = nt.nodes.new("ShaderNodeAddShader")
-        nt.links.new(b.outputs[0], ad.inputs[0])
-        nt.links.new(em.outputs[0], ad.inputs[1])
-        kit._fogged(self.face_mat, ad.outputs[0])
-        im = bpy.data.images.load(face_image(str(TMP / "climber-face.png")))
-        im.colorspace_settings.name = "sRGB"
-        tex.image = im
-        self.face = kit.cyl(nm("clfaced"), R - 0.004, 0.012, (0, -0.206, 0), self.face_mat, self.headg, rot=(math.pi / 2, 0, 0), n=48)
-        self.moss = moss
+        self.hroll = E(self.hpitch, (0, 0, 0), "clhroll")
+        hg = E(self.hroll, (0, 0, 0.13), "clheadg")
+        self.headg = hg
+        sk = kit.sphere(nm("cheadskull"), 0.165, (0, 0, 0), cream, hg, seg=20)
+        sk.scale = (0.92, 0.97, 1.08)
+        B(hg, (0.35, 0.2, 0.37), (0, -0.14, 0.0), hair, "clhairf", 0.05)
+        B(hg, (0.34, 0.3, 0.07), (0, -0.04, 0.16), hair, "clhairt", 0.03)
+        for sx in (-1, 1):
+            B(hg, (0.02, 0.05, 0.08), (sx * 0.16, 0.0, -0.02), cream, "clear", 0.006)
+        # the face: a brow ridge, a nose bridge, and two dark sockets each holding a pinprick glint
+        B(hg, (0.25, 0.06, 0.045), (0, 0.145, 0.065), cream, "clbrow", 0.015)
+        B(hg, (0.035, 0.05, 0.1), (0, 0.15, -0.02), cream, "clnose", 0.01)
+        dark = P("#1a1410", 0.9, 0.0)
+        self.eyes = []
+        for sx in (-1, 1):
+            B(hg, (0.05, 0.03, 0.04), (sx * 0.075, 0.146, 0.02), dark, "clsocket", 0.018, rot=(0, 0.25 * sx, 0))
+            e = kit.sphere(nm("cleye"), 0.009, (sx * 0.075, 0.163, 0.02), kit.emit("#fff0cc", 12.0, name="cleyeem"), hg, seg=14)
+            no_shadow(e)
+            self.eyes.append(e)
 
-    def place(self, x, y, z, yaw, fold=1.0, roll=80.0, reach=50.0, reach2=None, hidden=False, hp=0.0, hy=0.0, hoff=0.42):
+    def place(self, x, y, z, yaw=0.0, k=28.0, stoop=14.0, al=6.0, ar=11.0, hy=0.0, hp=18.0, hr=0.0, hidden=False,
+              hipz=None, sit=0.0):
         r = self.root
         r.location = (x, y, z)
         r.rotation_euler = (0, 0, math.radians(yaw))
         hide(r, hidden)
         if hidden:
             return
-        beta = math.radians(78.0 * fold)
-        hipz = 1.5 - 0.55 * fold
-        self.hips.location = (0, 0, hipz)
-        self.upper.rotation_euler = (beta, 0, 0)
-        for lg in self.legs:
-            lg.scale = (1, 1, hipz)
-            lg.location = (lg.location.x, 0, hipz / 2)
-        h = hipz - 0.2
-        self.skirt.scale = (1, 1, h)
-        self.skirt.location = (0, 0, 0.3 + h / 2)
-        # arms hang to the world's vertical, then swing forward by `reach` (and `reach2` for the left one)
-        for (hinge, sx), rch in zip(self.arms, (reach, reach if reach2 is None else reach2)):
-            hinge.rotation_euler = (-math.radians(rch) - beta, 0, 0)
-        # the head: anchored at the neck (it follows the bend), its facing set from the creature's own frame:
-        # hy turns it about the vertical (+ toward the creature's left), hp lifts it, roll tips it onto a shoulder
-        bpy.context.view_layer.update()
-        self.hroot.location = self.root.matrix_world.inverted() @ self.neck.matrix_world.translation
+        L = self.L
+        ka = math.radians(k)
+        hz = 0.06 + 2 * L * math.cos(ka) if hipz is None else hipz
+        self.hips.location = (0, 0, hz)
+        for hj, kn, an in zip(self.hipj, self.knees, self.ankles):
+            hj.rotation_euler = (ka, 0, 0)
+            kn.rotation_euler = (-2 * ka, 0, 0)
+            an.rotation_euler = (ka, 0, 0)
+        self.skirt.location = (0, 0, -0.2)
+        self.upper.rotation_euler = (math.radians(stoop), 0, 0)
+        for hg, a in zip(self.arms, (al, ar)):
+            hg.rotation_euler = (math.radians(a) - math.radians(stoop), 0, 0)
         self.hyaw.rotation_euler = (0, 0, math.radians(hy))
-        self.hpitch.rotation_euler = (math.radians(hp), 0, 0)
-        self.rollg.rotation_euler = (0, math.radians(roll), 0)
-        self.headg.location = (0, 0, hoff)
-        if os.environ.get("CL_DEBUG"):
-            bpy.context.view_layer.update()
-            print("HEAD", tuple(round(v, 2) for v in self.headg.matrix_world.translation),
-                  "HAND", [tuple(round(v, 2) for v in (h.matrix_world @ V((0, 0, -2.0))))  for h, _ in self.arms], flush=True)
+        self.hpitch.rotation_euler = (math.radians(hp) - math.radians(stoop), 0, 0)
+        self.hroll.rotation_euler = (0, math.radians(hr), 0)
 
 
 # ------------------------------------------------------------------------------------------------ looks
@@ -347,7 +335,7 @@ def build(kit, story, tl):
             ("hallceil", "POINT", (0.0, -2.2, 2.35), 260, "#fff0d8", 0.5),
             ("stairs", "POINT", (0.0, 1.2, 3.7), 420, "#fff0d8", 0.5),
             ("landing", "POINT", (1.2, 3.5, 3.9), 380, "#fff0d8", 0.5),
-            ("nl", "POINT", (1.65, 4.72, 2.35), 26, "#ffb24d", 0.06),
+            ("nl", "POINT", (1.0, 4.72, 2.35), 26, "#ffb24d", 0.06),
             ("kitchen", "POINT", (2.8, -0.8, 2.35), 520, "#fff4e0", 0.6),
             ("room", "POINT", (0.0, 7.0, 4.0), 380, "#fff0d8", 0.5)):
         ctx["lights"][nme] = kit.light(nme, kind, loc, en, colr, size=size)
@@ -357,8 +345,8 @@ def build(kit, story, tl):
     ctx["moon"] = moon
     ctx["camfill"] = kit.light("camfill", "POINT", (0, 0, 2), 14, "#ffe9cf", size=0.5, shadow=False)
     ctx["torch"] = kit.light("torch", "SPOT", (0, 0, 0), 6, "#dbe8ff", size=0.06, spot=60, blend=0.9)
-    ctx["clkey"] = kit.light("clkey", "SPOT", (0, 0, 0), 16, "#ffb050", size=0.2, spot=70, blend=0.6)
-    ctx["clrim"] = kit.light("clrim", "SPOT", (0, 0, 0), 22, "#8fa8ff", size=0.2, spot=70, blend=0.6)
+    ctx["clkey"] = kit.light("clkey", "SPOT", (0, 0, 0), 40, "#ffb050", size=0.2, spot=70, blend=0.6)
+    ctx["clrim"] = kit.light("clrim", "SPOT", (0, 0, 0), 40, "#8fa8ff", size=0.2, spot=70, blend=0.6)
 
     # ---- materials
     cream, white = P(CREAM, 0.85, 0.05), P(WHITE, 0.5)
@@ -372,10 +360,7 @@ def build(kit, story, tl):
     B(None, (1.9, 5.2, 0.014), (0, -2.5, 0.007), P("#c9923f", 0.9, 0.05), "hallrug", 0.0)       # a runner in the hall
     # hall walls, ceiling
     wl_y0, wl_y1 = -5.1, 0.0
-    B(None, (0.2, 2.9, HALL_CEIL), (-0.9, -3.65, HALL_CEIL / 2), cream, "wallL", 0.0)                     # y -5.1..-2.2
-    B(None, (0.2, 0.9, HALL_CEIL - 2.05), (-0.9, -1.8, 2.05 + (HALL_CEIL - 2.05) / 2), cream, "lintel", 0.0)
-    # y -2.25..-1.35 is Dad's door; the wall fills -1.35..0 with this piece:
-    B(None, (0.2, 1.35, HALL_CEIL), (-0.9, -0.675, HALL_CEIL / 2), cream, "wallL", 0.0)
+    B(None, (0.2, 5.2, HALL_CEIL), (-0.9, -2.6, HALL_CEIL / 2), cream, "wallL", 0.0)                     # the hall's left wall
     B(None, (1.8, 0.2, HALL_CEIL), (0, -5.1, HALL_CEIL / 2), cream, "wallF", 0.0)                         # the front wall
     B(None, (0.2, 1.4, HALL_CEIL), (0.9, -4.5, HALL_CEIL / 2), cream, "wallR", 0.0)                       # hall right wall, y -5.2..-3.8
     B(None, (0.2, 1.4, HALL_CEIL - 2.1), (0.9, -3.4, 2.1 + (HALL_CEIL - 2.1) / 2), cream, "kopen", 0.0)   # lintel over the opening
@@ -412,7 +397,8 @@ def build(kit, story, tl):
     B(None, (0.2, 2.38, CEIL - LAND_Z), (2.7, LAND_Y + 1.19, LAND_Z + (CEIL - LAND_Z) / 2), cream, "landwallE", 0.0)
     B(None, (3.6, 0.2, CEIL - LAND_Z - 2.1), (0.9, 5.0, LAND_Z + 2.1 + (CEIL - LAND_Z - 2.1) / 2), cream, "doorhead", 0.0)
     B(None, (0.4, 0.2, 2.1), (-0.7, 5.0, LAND_Z + 1.05), cream, "wallBL", 0.0)
-    B(None, (2.2, 0.2, 2.1), (1.6, 5.0, LAND_Z + 1.05), cream, "wallBR", 0.0)
+    B(None, (0.95, 0.2, 2.1), (0.975, 5.0, LAND_Z + 1.05), cream, "wallBR", 0.0)
+    B(None, (0.25, 0.2, 2.1), (2.575, 5.0, LAND_Z + 1.05), cream, "wallBR2", 0.0)
     B(None, (3.6, 5.2, 0.2), (0.9, 2.5, CEIL + 0.1), P("#fbf4e4", 0.9, 0.02), "stairceil", 0.0)
     # my door: frame, hinge pivot, bow pivot, panel with a gap under it, a brass knob
     fr = P("#f1ece0", 0.5)
@@ -425,18 +411,24 @@ def build(kit, story, tl):
     B(bow, (0.9, 0.045, 1.9), (0, 0, -0.95), ctx["doormat"], "doorpanel", 0.008)
     B(bow, (0.07, 0.07, 0.07), (0.34, -0.05, -1.0), brass, "knob", 0.02)
     ctx["mybow"] = bow
-    # the room behind it
-    B(None, (5.0, 4.4, 0.2), (0, 7.2, LAND_Z - 0.1), floorw, "roomfloor", 0.0)
-    B(None, (5.0, 4.4, 0.2), (0, 7.2, CEIL + 0.1), P("#fbf4e4", 0.9, 0.02), "roomceil", 0.0)
+    # the room behind it (x -2.5..1.25), a partition at x 1.35, and Dad's room beyond (x 1.45..4.5) behind his door
+    B(None, (3.75, 4.4, 0.2), (-0.625, 7.2, LAND_Z - 0.1), floorw, "roomfloor", 0.0)
+    B(None, (3.75, 4.4, 0.2), (-0.625, 7.2, CEIL + 0.1), P("#fbf4e4", 0.9, 0.02), "roomceil", 0.0)
     B(None, (0.2, 4.4, CEIL - LAND_Z), (-2.5, 7.2, LAND_Z + (CEIL - LAND_Z) / 2), cream, "roomwL", 0.0)
-    B(None, (0.2, 4.4, CEIL - LAND_Z), (2.5, 7.2, LAND_Z + (CEIL - LAND_Z) / 2), cream, "roomwR", 0.0)
-    B(None, (5.0, 0.2, CEIL - LAND_Z), (0, 9.5, LAND_Z + (CEIL - LAND_Z) / 2), cream, "roomwB", 0.0)
-    B(None, (2.8, 2.0, 0.02), (0.0, 7.4, LAND_Z + 0.011), P("#9a4a9b", 0.95, 0.02), "roomrug", 0.0)
+    B(None, (0.2, 4.4, CEIL - LAND_Z), (1.35, 7.2, LAND_Z + (CEIL - LAND_Z) / 2), cream, "roomwR", 0.0)
+    B(None, (3.95, 0.2, CEIL - LAND_Z), (-0.525, 9.5, LAND_Z + (CEIL - LAND_Z) / 2), cream, "roomwB", 0.0)
+    B(None, (2.2, 2.0, 0.02), (-0.3, 7.4, LAND_Z + 0.011), P("#9a4a9b", 0.95, 0.02), "roomrug", 0.0)
+    dr = P("#6a5a78", 0.9, 0.03)
+    B(None, (3.05, 4.4, 0.2), (2.975, 7.2, LAND_Z - 0.1), P("#8a6a4a", 0.8, 0.03), "droomfloor", 0.0)
+    B(None, (3.05, 4.4, 0.2), (2.975, 7.2, CEIL + 0.1), P("#fbf4e4", 0.9, 0.02), "droomceil", 0.0)
+    B(None, (0.2, 4.4, CEIL - LAND_Z), (4.6, 7.2, LAND_Z + (CEIL - LAND_Z) / 2), dr, "droomwR", 0.0)
+    B(None, (3.25, 0.2, CEIL - LAND_Z), (3.075, 9.5, LAND_Z + (CEIL - LAND_Z) / 2), dr, "droomwB", 0.0)
+    B(None, (1.2, 2.0, 0.5), (3.8, 7.6, LAND_Z + 0.25), P("#5a4a8a", 0.8, 0.05), "dbed", 0.04)
     try:
         kit.prop("bed_single", (-1.7, 8.2, LAND_Z), rot=0, scale=1.25)
         kit.prop("nightstand_1", (-0.7, 9.2, LAND_Z), rot=180, scale=1.2)
-        kit.prop("drawer_1", (1.6, 9.2, LAND_Z), rot=180, scale=1.1)
-        kit.prop("houseplant_1", (2.0, 5.5, LAND_Z), scale=1.3)
+        kit.prop("drawer_1", (0.5, 9.2, LAND_Z), rot=180, scale=1.1)
+        kit.prop("houseplant_1", (0.85, 5.55, LAND_Z), scale=1.3)
     except Exception as ex:
         print("props:", ex)
     # the threshold under my door, and the amber glow of the nightlight along the gap on my side
@@ -451,8 +443,8 @@ def build(kit, story, tl):
                               None, rot=(0, math.pi / 2, 0), n=24)
     ctx["winmat"] = ctx["win"].data.materials[0]
     no_shadow(ctx["win"]), no_shadow(ctx["moondisc"])
-    B(None, (0.1, 0.1, 0.16), (1.65, 4.83, LAND_Z + 0.35), P("#f4efe6", 0.5), "nlbody", 0.02)
-    kit.cyl(nm("nlbulb"), 0.045, 0.03, (1.65, 4.775, LAND_Z + 0.37), kit.emit("#ffb24d", 7.0, name="nlemit"), None, rot=(math.pi / 2, 0, 0), n=16)
+    B(None, (0.1, 0.1, 0.16), (1.0, 4.83, LAND_Z + 0.35), P("#f4efe6", 0.5), "nlbody", 0.02)
+    kit.cyl(nm("nlbulb"), 0.045, 0.03, (1.0, 4.775, LAND_Z + 0.37), kit.emit("#ffb24d", 5.0, name="nlemit"), None, rot=(math.pi / 2, 0, 0), n=16)
     # a few framed shapes on the stair wall (no text, no faces)
     for k, (yy, zz, colr, shape) in enumerate(((0.7, 1.75, "#4c8fd0", "sq"), (1.5, 2.2, "#e0573f", "circ"), (2.2, 2.65, "#6cc24a", "sq"))):
         B(None, (0.04, 0.5, 0.6), (-0.775, yy, zz), P("#f6f3ec", 0.5), "frame", 0.01)
@@ -460,15 +452,13 @@ def build(kit, story, tl):
             kit.cyl(nm("art"), 0.19, 0.02, (-0.75, yy, zz), P(colr, 0.7), None, rot=(0, math.pi / 2, 0), n=24)
         else:
             B(None, (0.02, 0.36, 0.42), (-0.755, yy, zz), P(colr, 0.7), "art", 0.004)
-    # ---- Dad's door (navy, opens on the left wall), the front door with a glass pane, the hall lamp and clock
-    ctx["ddoor"] = E(None, (-0.88, -2.25, 0), "ddoor")
-    B(ctx["ddoor"], (0.05, 0.86, 2.02), (0, 0.43, 1.01), P("#22306a", 0.45), "ddpanel", 0.008)
-    B(ctx["ddoor"], (0.07, 0.07, 0.07), (0.05, 0.78, 1.0), brass, "ddknob", 0.02)
-    B(None, (0.12, 0.08, 2.1), (-0.9, -1.31, 1.05), fr, "ddframe", 0.006)
-    B(None, (0.12, 0.08, 2.1), (-0.9, -2.29, 1.05), fr, "ddframe", 0.006)
-    B(None, (1.4, 3.0, 0.1), (-1.55, -1.8, 0.05), P("#6a4a3a", 0.9, 0.02), "droomfloor", 0.0)       # Dad's room, just a hint
-    B(None, (0.2, 3.0, 2.6), (-2.3, -1.8, 1.3), P("#5a4a58", 0.9, 0.02), "droomwall", 0.0)
-    B(None, (0.7, 1.6, 0.5), (-1.7, -1.7, 0.3), P("#7a6a9a", 0.8, 0.05), "dbed", 0.04)
+    # ---- Dad's door on the landing (navy, a stride right of mine, opens into his room), the front door with a glass pane
+    B(None, (0.1, 0.24, 2.1), (1.5, 4.97, LAND_Z + 1.05), fr, "ddframe", 0.006)
+    B(None, (0.1, 0.24, 2.1), (2.4, 4.97, LAND_Z + 1.05), fr, "ddframe", 0.006)
+    B(None, (1.0, 0.24, 0.1), (1.95, 4.97, LAND_Z + 2.1), fr, "ddframe", 0.006)
+    ctx["ddoor"] = E(None, (2.34, 4.935, LAND_Z), "ddoor")
+    B(ctx["ddoor"], (0.78, 0.045, 2.0), (-0.39, 0, 1.02), P("#22306a", 0.45), "ddpanel", 0.008)
+    B(ctx["ddoor"], (0.07, 0.07, 0.07), (-0.68, -0.05, 1.0), brass, "ddknob", 0.02)
     B(None, (0.9, 0.12, 2.05), (0.0, -4.95, 1.03), white, "fdoor", 0.01)                              # the front door
     ctx["fpane"] = B(None, (0.5, 0.012, 1.1), (0.0, -4.878, 1.2), kit.emit("#1c2748", 0.6, name="fpane"), "fpane", 0.0)   # its glass, 2 cm proud
     B(None, (0.07, 0.07, 0.07), (0.3, -4.86, 1.0), brass, "fknob", 0.02)
@@ -539,12 +529,14 @@ def build_props(kit):
           P("#fff3c4", 0.8), "pop", 0.015)
     hide(bowl, True)
     pr["bowl"] = bowl
-    ch = E(None, (0, 0, 0), "chand")
-    cream = P("#efe3c4", 0.7, 0.1)
-    B(ch, (0.36, 0.34, 0.07), (0, 0.0, 0.035), cream, "chpalm", 0.02)
-    for i, dx in enumerate((-0.12, -0.04, 0.04, 0.12)):
-        B(ch, (0.06, 0.34, 0.06), (dx, -0.3 - 0.02 * (i % 2), 0.03), cream, "chfinger", 0.02)
-    B(ch, (0.16, 0.2, 0.07), (0.0, 0.3, 0.035), P("#6f8f6a", 0.85, 0.08), "chcuff", 0.02)
+    ch = E(None, (0, 0, 0), "chand")                          # a long flat hand lying on the floor, fingers to +y, the sleeve to -y
+    cream = P("#efe3c4", 0.7, 0.12)
+    B(ch, (0.11, 0.12, 0.03), (0, 0.0, 0.015), cream, "chpalm", 0.01)
+    for i, dx in enumerate((-0.042, -0.014, 0.014, 0.042)):
+        ln = (0.27, 0.31, 0.29, 0.22)[i]
+        B(ch, (0.024, ln, 0.022), (dx * 1.15, 0.06 + ln / 2, 0.011), cream, "chfinger", 0.007, rot=(0, 0, 0.05 * (i - 1.5)))
+    B(ch, (0.1, 0.1, 0.034), (0, -0.1, 0.017), cream, "chwrist", 0.01)
+    B(ch, (0.13, 0.6, 0.05), (0, -0.4, 0.027), P("#1b2621", 0.85, 0.1), "chsleeve", 0.015)
     hide(ch, True)
     pr["chand"] = ch
     mug = E(None, (0, 0, 0), "mug")
@@ -642,10 +634,9 @@ def animate(kit, story, tl, t, ctx):
     cl_ = ctx["cl"]
     if cc and cc.get("on", True):
         p = cc["pos"]
-        cl_.place(p[0], p[1], p[2], cc.get("yaw", 180), cc.get("fold", 1.0), cc.get("roll", 80.0), cc.get("reach", 50.0),
-                  cc.get("reach2"), False, cc.get("hp", 0.0), cc.get("hy", 0.0), cc.get("hoff", 0.42))
+        cl_.place(p[0], p[1], p[2], cc.get("yaw", 0.0), cc.get("k", 28.0), cc.get("stoop", 14.0), cc.get("al", 6.0),
+                  cc.get("ar", 11.0), cc.get("hy", 0.0), cc.get("hp", 18.0), cc.get("hr", 0.0), False, cc.get("hipz"))
         # amber from below, a cool rim from behind: placed round the creature at its yaw
-        a = math.radians(cc.get("yaw", 180))
         ctx["clkey"].location = (p[0] + cc.get("kx", 0.0), p[1] + cc.get("ky", -1.2), p[2] + cc.get("kz", 0.25))
         kit.aim(ctx["clkey"], (p[0] + cc.get("ax", 0.0), p[1] + cc.get("ay", 0.3), p[2] + cc.get("az", 1.0)))
         ctx["clrim"].location = (p[0] + cc.get("rx", 1.6), p[1] + cc.get("ry", 0.4), p[2] + cc.get("rz", 2.3))
