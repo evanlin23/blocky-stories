@@ -6,50 +6,78 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this building, everything you forget turns up on floor thirteen.",
+   "text": "If thirteen lights up by itself, don't step out.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.897,
-   "onset": 0.172,
-   "end": 2.707,
+   "tempo": 1.1330000000000002,
+   "dur": 2.138,
+   "onset": 0.138,
+   "end": 1.948,
    "chunks": [
     [
-     0.172,
-     0.707
+     0.138,
+     0.517
+    ],
+    [
+     0.517,
+     0.759
     ],
     [
      0.759,
-     1.379
+     1.172
     ],
     [
-     1.379,
-     1.681
-    ],
-    [
-     1.681,
-     2.707
+     1.207,
+     1.948
     ]
    ]
   },
   "L02": {
-   "text": "Lost your keys? thirteen.",
+   "text": "Even if your keys are up there.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.603,
    "onset": 0.172,
-   "end": 1.397,
+   "end": 1.414,
    "chunks": [
     [
      0.172,
-     0.69
+     0.406
     ],
     [
-     0.741,
-     1.397
+     0.406,
+     0.759
+    ],
+    [
+     0.759,
+     1.414
+    ]
+   ]
+  },
+  "L02b": {
+   "text": "Everything you forget turns up on floor thirteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.793,
+     1.094
+    ],
+    [
+     1.094,
+     2.086
     ]
    ]
   },
@@ -338,22 +366,22 @@
    ]
   },
   "L14": {
-   "text": "The lift went past it.",
+   "text": "The elevator went past it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.379,
+   "dur": 1.552,
    "onset": 0.172,
-   "end": 1.19,
+   "end": 1.362,
    "chunks": [
     [
      0.172,
-     0.466
+     0.603
     ],
     [
-     0.466,
-     1.19
+     0.603,
+     1.362
     ]
    ]
   },
@@ -566,14 +594,14 @@
    ]
   },
   "L23": {
-   "text": "Where its face should be was a panel of lift buttons.",
+   "text": "Where its face should be was a panel of buttons.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.328,
+   "dur": 2.121,
    "onset": 0.155,
-   "end": 2.121,
+   "end": 1.914,
    "chunks": [
     [
      0.155,
@@ -585,11 +613,11 @@
     ],
     [
      0.845,
-     1.276
+     1.25
     ],
     [
-     1.276,
-     2.121
+     1.25,
+     1.914
     ]
    ]
   },
@@ -762,26 +790,26 @@
    ]
   },
   "L31": {
-   "text": "It had my flat number on it.",
+   "text": "It had my number on it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.638,
+   "dur": 1.483,
    "onset": 0.155,
-   "end": 1.448,
+   "end": 1.293,
    "chunks": [
     [
      0.155,
-     0.353
+     0.397
     ],
     [
-     0.353,
-     0.966
+     0.397,
+     0.81
     ],
     [
-     0.966,
-     1.448
+     0.81,
+     1.293
     ]
    ]
   },
@@ -858,30 +886,30 @@
    ]
   },
   "L35": {
-   "text": "Then the doors shut, and the lift didn't move.",
+   "text": "Then the doors shut, and the elevator didn't move.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
+   "dur": 2.328,
    "onset": 0.172,
-   "end": 1.862,
+   "end": 2.138,
    "chunks": [
     [
      0.172,
-     0.56
+     0.586
     ],
     [
-     0.56,
-     0.81
+     0.586,
+     0.879
     ],
     [
-     0.862,
-     1.172
+     0.931,
+     1.431
     ],
     [
-     1.172,
-     1.862
+     1.431,
+     2.138
     ]
    ]
   },
