@@ -179,14 +179,14 @@ def car(kit, name, body="#2f7fd8"):
     bm = p(body, 0.35, spec=0.5)
     kit.box(f"{name}.low", (1.8, 4.0, 0.55), (0, 0, 0.62), bm, root, bevel=0.1)
     kit.box(f"{name}.hood", (1.7, 1.3, 0.08), (0, -1.5, 0.92), bm, root, bevel=0.03)
-    kit.box(f"{name}.cab", (1.62, 2.3, 0.78), (0, 0.45, 1.22), kit.glass("#b8d8f0"), root)
-    kit.box(f"{name}.roof", (1.74, 2.44, 0.08), (0, 0.45, 1.64), bm, root, bevel=0.03)
+    kit.box(f"{name}.cab", (1.62, 2.3, 0.98), (0, 0.45, 1.32), kit.glass("#e6f2fc"), root)
+    kit.box(f"{name}.roof", (1.74, 2.44, 0.08), (0, 0.45, 1.84), bm, root, bevel=0.03)
     for sx in (-1, 1):
         for sy in (-1, 1):
-            kit.box(f"{name}.pil{sx}{sy}", (0.08, 0.1, 0.8), (sx * 0.83, 0.45 + sy * 1.15, 1.22), bm, root)
+            kit.box(f"{name}.pil{sx}{sy}", (0.08, 0.1, 1.0), (sx * 0.83, 0.45 + sy * 1.15, 1.32), bm, root)
             kit.cyl(f"{name}.wh{sx}{sy}", 0.38, 0.24, (sx * 0.92, sy * 1.3, 0.38), p("#25272c", 0.8), root,
                     rot=(0, math.pi / 2, 0), n=14)
-    kit.box(f"{name}.mirror", (0.4, 0.05, 0.14), (0.0, -0.6, 1.5), p("#25272c", 0.4), root)
+    kit.box(f"{name}.mirror", (0.4, 0.05, 0.14), (0.0, -0.6, 1.7), p("#25272c", 0.4), root)
     kit.box(f"{name}.seat", (0.6, 0.6, 0.12), (0.45, 0.5, 0.46), p("#444a58", 0.8), root)
     for sx in (-1, 1):
         kit.box(f"{name}.hl{sx}", (0.4, 0.06, 0.2), (sx * 0.6, -2.0, 0.7), kit.emit("#fff4c8", 1.2), root)
@@ -276,9 +276,18 @@ def build_meter(kit, name, parent, world=False):
     ink = kit.emit("#1f2a44", 0.9, "m_ink")
     b("edge", (1.0, 0.58, k), (0, 0, 0.0), edge)
     b("plate", (0.92, 0.5, k), (0, 0, k), plate)
-    b("road", (0.2, 0.38, k), (-0.33, 0, 2 * k), road)
+    road_ob = b("road", (0.2, 0.38, k), (-0.33, 0, 2 * k), road)
+    road_set = [road_ob]
     for i in range(3):
-        b(f"dash{i}", (0.03, 0.07, k), (-0.33, -0.13 + i * 0.13, 3 * k), dash)
+        road_set.append(b(f"dash{i}", (0.03, 0.07, k), (-0.33, -0.13 + i * 0.13, 3 * k), dash))
+    # the miles glyph (shown with the digits): a green post plate with a white blocky m, so a bare number has a unit
+    mplate = kit.emit("#1f7a4a", 0.9, "m_mile")
+    mile_set = [b("milep", (0.2, 0.38, k), (-0.33, 0, 2 * k), mplate)]
+    for j, mx in enumerate((-0.065, 0.0, 0.065)):
+        mile_set.append(b(f"milem{j}", (0.032, 0.17, k), (-0.33 + mx, -0.03, 3 * k), dash))
+    mile_set.append(b("milet", (0.162, 0.032, k), (-0.33, 0.05, 3 * k), dash))
+    for ob in mile_set:
+        ob.hide_render = True
     X0, X1 = -0.18, 0.42
     trk = b("track", (X1 - X0, 0.1, k), ((X0 + X1) / 2, 0, 2 * k), track)
     unit = (X1 - X0) / 1.25
@@ -288,7 +297,7 @@ def build_meter(kit, name, parent, world=False):
     for i, dx in enumerate((-0.07, 0.15, 0.37)):
         digs.append(seven_seg(kit, root, f"{name}.d{i}", dx, ink, lambda n, s, l, m, par: _seg(kit, n, s, l, m, par)))
     return {"root": root, "fill": fill, "teal": teal, "red": red, "notch": notch, "track": trk, "unit": unit, "x0": X0,
-            "digs": digs, "world": world}
+            "digs": digs, "world": world, "road_set": road_set, "mile_set": mile_set}
 
 
 def _seg(kit, n, s, l, m, par):
@@ -307,6 +316,10 @@ def update_meter(M, st):
     dig = st["digits"] > 0.5
     for ob in (f, M["notch"], M["track"]):
         ob.hide_render = dig
+    for ob in M["road_set"]:
+        ob.hide_render = dig
+    for ob in M["mile_set"]:
+        ob.hide_render = not dig
     n = int(round(st["num"]))
     s = str(max(0, n))
     for i in range(3):
@@ -330,6 +343,11 @@ def build(kit, story, tl):
     front = kit.light("front", "SUN", (-10, -30, 20), 1.0, "#ffd2ae", shadow=False)
     front.data.angle = 0.4
     kit.aim(front, (0, 0, 0))
+
+    kit.light("wfill", "POINT", (0, 0, 0), 40.0, "#fff2e0", size=0.6, shadow=False)
+    kit.LIGHTS["wfill"]["light"].specular_factor = 0.0
+    kit.LIGHTS["wfill"]["obj"].visible_glossy = False
+    kit.LIGHTS["wfill"]["obj"].visible_transmission = False
 
     # ------------------------------------------------------------------ the square and the well
     kit.plane("ground", (900, 300), (300, 0, -0.02), p("#9fd37a", 0.9, spec=0.05))
@@ -849,4 +867,30 @@ def animate(kit, story, tl, t, ctx):
             for k_ in props:
                 if k_ in W:
                     _hide(W[k_], True)
+    # a soft fill on Wes's face in the car and in the dark hall, so he reads like his porch shots
+    wes_o = bpy.data.objects.get("wes")
+    cam_o = kit.OBJ.get("cam")
+    fillg = 0.0
+    if wes_o is not None and cam_o is not None and not wes_o.hide_render:
+        in_car = sample("ride", tl, t, {"v": 0.0})["v"] > 0.5
+        dark_hall = cx_ is not None and 425 < cx_ < 450
+        if in_car or dark_hall:
+            hp = Vector(wes_o.location) + Vector((0, 0, 1.6 if in_car else 1.5))
+            cp = Vector(cam_o.matrix_world.translation)
+            if sp_ is not None and sh_ is not None:      # the camera is placed after this runs: use the shot's own path
+                ks = sp_["cam"]
+                uu = (t - sh_["start"]) / max(1e-6, sh_["end"] - sh_["start"])
+                a_, b_ = ks[0], ks[-1]
+                for k0, k1 in zip(ks, ks[1:]):
+                    if uu <= k1[0]:
+                        a_, b_ = k0, k1
+                        break
+                fr = min(1.0, max(0.0, (uu - a_[0]) / max(1e-6, b_[0] - a_[0]))) if b_ is not a_ else 0.0
+                cp = Vector(a_[1]) * (1 - fr) + Vector(b_[1]) * fr
+            dv = cp - hp
+            dl = max(0.01, dv.length)
+            dist = min(0.8 if in_car else 1.2, dl * 0.6)
+            kit.LIGHTS["wfill"]["obj"].location = hp + dv / dl * dist
+            fillg = 1.0 if in_car else 1.0
+    gains["wfill"] = fillg
     return gains

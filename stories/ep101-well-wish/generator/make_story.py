@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -211,12 +211,15 @@ STEP = (STX - 6.9, 0.0)       # the upper step (top at 0.4)
 CORNER = (STX - 4.6, STY - 14.3)  # the sidewalk beside the stop sign
 
 
+CARZ = 0.26                   # Wes's seat height in the car: head under the roof
+
+
 def ride(at, v=1.0):
     cue(at, "ride", v=v)
 
 
 def wes_seat_drive(at):
-    sit("wes", at, True, 0.38)
+    sit("wes", at, True, CARZ)
 
 
 # ============================================================================================ L01 to L07
@@ -279,7 +282,7 @@ shot("L05", mv([KPX + 1.0, KPY + 5.0, 3.0], [KPX - 9.2, KPY + 12.6, 0.8], 22, [K
 go("n1", "L05.2", [KPX - 4.8, KPY + 17.0, 0], tremble=7)
 beat("kemp", "L05.2", arms=[0, 165], expr="laugh")
 shot("L05.1", A((KPX - 9.2, KPY + 14.0, 1.1), 90, 6.0, off=-35, lens=30, push=0.12), name="chair")
-shot("L05.2+0.2", mv([KPX - 2.4, KPY + 10.3, 1.9], [KPX - 9.2, KPY + 12.8, 0.9], 22, [KPX - 2.7, KPY + 10.7, 1.8], [KPX - 9.2, KPY + 12.8, 0.9], 22), name="parka")
+shot("L05.2+0.2", mv([KPX - 5.4, KPY + 10.4, 1.5], [KPX - 9.2, KPY + 13.8, 1.15], 30, [KPX - 5.9, KPY + 11.0, 1.45], [KPX - 9.2, KPY + 13.9, 1.15], 30), name="parka")
 
 # L06, L07 -- Mr. Hobb
 only("L06", ["hobb"])
@@ -350,7 +353,7 @@ only("L12", ["wes"])
 look("L12", "day")
 cue("L12", "duffel", v=0)
 put("wes", "L12", [CURB_CAR[0] + 0.45, CURB_CAR[1] + 0.35, 0], 0, expr="grin")
-sit("wes", "L12", True, 0.38)
+sit("wes", "L12", True, CARZ)
 ride("L12")
 cue("L12", "car", x=LANE, y=-4.0, yaw=0.0, dur=0.9)
 cue("L12+0.9", "car", x=LANE, y=STOP_CAR[1], dur=1.35)
@@ -364,18 +367,18 @@ shot("L12.2", A((LANE, -9.0, 1.0), 270, 6.5, off=25, lens=32, push=0.1), name="n
 meter("L13", bar=1.0, red=1.0)
 shot("L13", A((LANE, STOP_CAR[1] + 1.5, 0.8), 0, 5.0, off=165, lens=30, push=0.1, dz=0.5), name="halt")
 beat("wes", "L13.1", expr="angry", arms=[0, 0])
-shot("L13.1", A((LANE + 0.45, STOP_CAR[1] + 0.4, 1.2), 90, 3.0, off=-25, lens=36, push=0.12), name="keyturn")
+shot("L13.1", A((LANE + 0.45, STOP_CAR[1] + 0.4, 1.4), 0, 3.0, off=-8, lens=36, push=0.12), name="keyturn")
 cue("L14", "car", x=LANE, y=-4.0, dur=1.2)
 cue("L14.1", "car", x=CURB_CAR[0] - 0.0, y=CURB_CAR[1], dur=1.1)
 meter("L14", bar=0.2, red=0.0, dur=1.0)
-beat("wes", "L14", arms=[170, 170], expr="wide")
-shot("L14", mv([LANE + 6.0, -12.8, 1.7], [LANE, -11.9, 1.0], 22, [LANE + 6.0, -9.8, 1.7], [LANE, -9.0, 1.0], 22), name="rollback")
+beat("wes", "L14", arms=[75, 75], expr="wide", head=[0, -10])
+shot("L14", mv([LANE + 4.6, -12.8, 1.4], [LANE, -11.9, 1.25], 24, [LANE + 4.6, -9.8, 1.4], [LANE, -9.0, 1.25], 24), name="rollback")
 shot("L14.1", A((CURB_CAR[0], CURB_CAR[1], 0.9), 90, 7.5, off=-40, lens=32, push=0.12), name="parked")
 only("L14.2", ["wes", "me"])
 ride("L14.2", 0.0)
 put("me", "L14.2", [PORCH[0], PORCH[1] + 1.0, 0.6], 90, expr="scared")
 put("wes", "L14.2", [CURB_CAR[0] + 0.45, CURB_CAR[1] + 0.35, 0], 0, expr="angry")
-sit("wes", "L14.2", True, 0.38)
+sit("wes", "L14.2", True, CARZ)
 ride("L14.2", 1.0)
 shot("L14.2", A((PORCH[0], PORCH[1] + 1.0, 2.0), 90, 4.2, off=-30, lens=34, push=0.1), name="porchscared")
 # L15 -- the bus
@@ -564,7 +567,7 @@ shot("L33.2", A((STX - 4.85, STY + 1.0, 1.3), 90, 5.0, off=60, lens=30, push=0.1
 only("L34", ["wes"])
 cue("L34", "car", x=LANE, y=CURB_CAR[1], yaw=0.0)
 put("wes", "L34", [CURB_CAR[0] + 0.45, CURB_CAR[1] + 0.35, 0], 0, expr="grin")
-sit("wes", "L34", True, 0.38)
+sit("wes", "L34", True, CARZ)
 ride("L34")
 cue("L33.2+0.9", "car", x=LANE, y=-5.0, dur=0.6)
 cue("L34", "car", x=LANE, y=-16.0, dur=0.65)
@@ -577,9 +580,10 @@ shot("L34.2", A((MTX, MTY, 3.0), 0, 5.0, off=0, lens=34, push=0.1), name="meterp
 # L35 -- two blocks, then past the town line
 cue("L35", "car", x=LANE, y=-60.0, dur=0.8)
 cue("L35.1", "car", x=LANE, y=-130.0, dur=1.1)
-meter("L35.1", digits=1.0, num=3.0)
-meter("L35.1+0.25", num=9.0, dur=0.25)
-meter("L35.1+0.5", num=14.0, dur=0.25)
+meter("L35", bar=1.25, red=0.0)
+meter("L35.2+0.2", digits=1.0, num=3.0)
+meter("L35.2+0.45", num=9.0, dur=0.25)
+meter("L35.2+0.7", num=14.0, dur=0.25)
 shot("L35", mv([G.ST[0] - 6.0, G.LINE_Y + 12.0, 2.0], [G.ST[0] - 3.5, G.LINE_Y, 2.0], 36, [G.ST[0] - 5.5, G.LINE_Y + 6.0, 2.0], [G.ST[0] - 3.5, G.LINE_Y, 2.0], 36), name="townline")
 ride("L35.2", 0.0)
 only("L35.2", ["me"])
@@ -603,11 +607,11 @@ shot("L37.1", A((STX - 4.6, STY - 1.0, 1.55), 180, 3.2, off=-28, lens=38, push=0
 # L38 -- the flash back: he was watching me wish
 look("L38", "dusk")
 only("L38", ["wes"])
-put("wes", "L38", [SQX - 1.5, SQY + 10.6, 0], 0, expr="soft", arms=[0, 0])
-shot("L38", mv([SQX - 1.9, SQY + 5.0, 1.45], [SQX - 1.5, SQY + 10.6, 1.35], 40, [SQX - 1.7, SQY + 5.6, 1.45], [SQX - 1.5, SQY + 10.6, 1.4], 40), name="awning")
+put("wes", "L38", [SQX - 1.5, SQY + 10.6, 0], 15, expr="soft", arms=[0, 0], head=[-20, 0])
+shot("L38", mv([SQX + 0.9, SQY + 5.6, 1.1], [SQX - 1.5, SQY + 10.6, 1.6], 36, [SQX + 0.4, SQY + 6.4, 1.2], [SQX - 1.5, SQY + 10.6, 1.6], 36), name="awning")
 look("L38.2", "day")
 only("L38.2", ["wes"])
-sit("wes", "L38.2", True, 0.38)
+sit("wes", "L38.2", True, CARZ)
 put("wes", "L38.2", [LANE + 0.45, -20.0 + 0.35, 0], 0, expr="smirk")
 cue("L38.2", "car", x=LANE, y=-20.0, yaw=0.0)
 ride("L38.2")
@@ -633,11 +637,12 @@ shot("L39.1", A((CURB_CAR[0] - 0.4, CURB_CAR[1] - 0.2, 0.9), 90, 4.4, off=-30, l
 # L40, L41, L42
 sit("me", "L40-0.02", False)
 only("L40", ["wes", "mom"])
-put("wes", "L40", [STX - 7.4, STY + 0.2, 0.4], 270, expr="grin", arms=[0, 0])
+put("wes", "L40", [STX - 7.4, STY + 0.2, 0.4], 90, expr="grin", arms=[75, 75], keep_yaw=True)
 cue("L40", "wbox", v=1.0)
-put("mom", "L40", [STX - 9.5, STY + 0.2, 0.6], 90, expr="soft")
-shot("L40", A((STX - 7.4, STY + 0.2, 1.4), 270, 5.0, off=-30, lens=34, push=0.12), name="sunday")
+put("mom", "L40", [STX - 9.5, STY + 0.2, 0.6], 90, expr="soft", arms=[0, 0])
+shot("L40", A((STX - 7.4, STY + 0.2, 1.75), 90, 4.4, off=-48, lens=36, push=0.1, tz=2.1), name="sunday")
 beat("mom", "L40.1", arms=[75, 75])
+beat("wes", "L40.1", arms=[75, 75], expr="grin")
 go("wes", "L40.1+0.1", [STX - 8.4, STY + 0.2, 0.6])
 cue("L40.1", "wbox", v=0.0)
 beat("wes", "L40.1+0.7", arms=[75, 75], expr="grin")
@@ -703,6 +708,7 @@ sfx = [
     {"at": "L14.1", "kind": "creak", "db": -20, "dur": 0.8},
     {"at": "L27.1+0.5", "kind": "click", "db": -14},
     {"at": "L36+0.5", "kind": "click", "db": -12},
+    {"at": "L35.2+0.2", "kind": "hit", "db": -8},
 ]
 music = {
     "root": 50, "mode": "major", "bpm": 104, "seed": 101,
