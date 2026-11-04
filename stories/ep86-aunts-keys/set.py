@@ -402,7 +402,7 @@ def draw_keys(d, x0, y0, zoom, S, glow):
     """key ring: a wide brass loop across the top and eleven keys hanging from it, each a round numbered bow over a toothed blade"""
     z=zoom*S
     brass=hexrgb(BRASS)+(255,); dark=(90,62,20,255)
-    pw,ph=214*z,132*z
+    pw,ph=214*z,100*z
     d.rounded_rectangle([x0,y0,x0+pw,y0+ph],16*z,fill=(22,30,46,215),outline=brass,width=max(2,int(4*z)))
     # the loop
     lx0,ly0,lx1,ly1=x0+10*z,y0+10*z,x0+pw-10*z,y0+40*z
@@ -419,9 +419,9 @@ def draw_keys(d, x0, y0, zoom, S, glow):
         cx,cy=(lx0+lx1)/2,(ly0+ly1)/2
         ey=cy+ (ly1-ly0)/2*math.sqrt(max(0,1-((bx-cx)/((lx1-lx0)/2))**2))
         by=ey+9*z
-        r=8.6*z
+        r=9.4*z
         # blade
-        bl=44*z+ (6*z if i%2 else 0)
+        bl=26*z+ (5*z if i%3==1 else 0)
         w=3.4*z
         d.rectangle([bx-w,by+r-2*z,bx+w,by+r+bl],fill=brass,outline=dark)
         for k in (0.4,0.7):
@@ -582,7 +582,10 @@ def build_room(kit, ctx):
         kit.cyl(nm("wet"), 0.16 - 0.02 * i, 0.006, (rx + gx, ry + gy, 0.012), P("#8a7a62", 0.12, 0.9), parts["grass"], n=16)
     parts["window"] = E(None, (rx, ry, 0), "rwindow")
     B(parts["window"], (0.08, 1.3, 1.5), (-3.42, 0.8, 1.6), P("#ffffff", 0.5), "rwframe")
-    B(parts["window"], (0.05, 1.1, 1.3), (-3.38, 0.8, 1.6), kit.emit("#ffcf7a", 0.9, name="rwpane"), "rwpane")
+    B(parts["window"], (0.05, 1.1, 1.3), (-3.38, 0.8, 1.6), kit.emit("#ffcf7a", 0.55, name="rwpane"), "rwpane")
+    # a second lit window on the back wall (behind Lou when she laughs at it), proud of the wall by 2.5 cm
+    B(parts["window"], (1.3, 0.04, 1.5), (rx - 2.4, ry + 2.91, 1.7), P("#ffffff", 0.5), "rwframe2")
+    B(parts["window"], (1.1, 0.03, 1.3), (rx - 2.4, ry + 2.88, 1.7), kit.emit("#ffcf7a", 0.55, name="rwpane2"), "rwpane2")
     # furniture
     parts["armchair"] = armchair(None, "#c48a3a")
     parts["armchair"].location = (rx + 0.0, ry + 0.95, 0)
@@ -704,7 +707,7 @@ def animate(kit, story, tl, t, ctx):
             nd.inputs["Strength"].default_value = L["water"]
     for nd in ctx["lou_win"].node_tree.nodes:
         if nd.type == "EMISSION":
-            nd.inputs["Strength"].default_value = 0.5 + 1.3 * L["lamp"]
+            nd.inputs["Strength"].default_value = 0.45 + 0.5 * L["lamp"]
     # the sleepwalker's face: a warm lamp from the side and above, the fountain's teal from below, no flat frontal fill
     if sd.get("face"):
         fx, fy = ct[0] - cl[0], ct[1] - cl[1]
