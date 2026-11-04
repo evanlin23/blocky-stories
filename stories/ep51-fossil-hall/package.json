@@ -5,5 +5,5 @@
  "made_for_kids": false,
  "cover_s": 98.67,
  "shape": "about-me",
- "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
+ "hold": "dropped 2026-11-04: second proof qa failed: S081 narrator hidden and S014-S015 staging; two fixes over three shots, more than one re-proof allows; the build is on branch claude/ep51-fossil-hall-opening"
 }

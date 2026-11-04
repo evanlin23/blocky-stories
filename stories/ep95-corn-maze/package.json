@@ -7,5 +7,5 @@
   "shape": "maze-narrator",
   "opening": "if",
   "lane": "experiment",
-  "hold": "batch 9a: scripts only, not built yet"
+  "hold": "dropped 2026-11-04: standards: the star reads as a pentacle; critic broad appeal 4, the reveal and payoff unclear to a cold viewer; six fixes open; the build is on branch claude/batch9-ep95-corn-maze"
 }

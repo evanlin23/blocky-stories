@@ -5,5 +5,5 @@
  "made_for_kids": false,
  "cover_s": 88.2,
  "shape": "misread",
- "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
+ "hold": "dropped 2026-11-04: critic r6 kill (avg about 6.4; middle 4, creature 4, twist 4); standards approved; the build is on branch claude/ep50-beach-huts-opening"
 }

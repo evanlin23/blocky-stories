@@ -7,5 +7,5 @@
   "shape": "window",
   "opening": "count",
   "lane": "experiment",
-  "hold": "batch 8: scripts only, not built yet"
+  "hold": "dropped 2026-11-04: critic r2 revise: big idea 6 and lore 3, a clever trick needing a stronger reframe; standards approved; the build is on branch claude/batch8-ep88-six-paintings"
 }

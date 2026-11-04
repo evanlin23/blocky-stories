@@ -7,5 +7,5 @@
   "shape": "on-purpose",
   "opening": "count",
   "lane": "core",
-  "hold": "batch 9b: scripts only, not built yet"
+  "hold": "dropped 2026-11-04: critic r2 revise (avg about 7.6, nothing under 5); two camera fixes open at S138 and S109; standards approved; the build is on branch claude/batch9-ep100-window-bridges"
 }

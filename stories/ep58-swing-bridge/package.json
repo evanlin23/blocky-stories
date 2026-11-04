@@ -6,5 +6,5 @@
   "cover_s": 103.4,
   "shape": "about-me",
   "lane": "core",
-  "hold": "held 2026-11-03: qa fail (artifact 13232810143), needs a new S01, polish, the murky middle lifted and a cover; see qa/ep58-swing-bridge.json"
+  "hold": "dropped 2026-11-04: revival proof failed pace: picture changes 11.1 against 12.5, quarter-size 10.2 against 14.0; PR #244 closed; the build is on branch claude/revival-ep58"
 }

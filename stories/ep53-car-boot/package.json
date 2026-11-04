@@ -5,5 +5,5 @@
  "made_for_kids": false,
  "cover_s": 83.3,
  "shape": "about-me",
- "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
+ "hold": "dropped 2026-11-04: revive round r7: critic revise (avg 7.4), one dark-wedge glitch in S02 open; dropped for good; the build is on branch claude/ep53-opening"
 }
