@@ -338,3 +338,5 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **The Kneeler's height vs the gatepost:** both 2.1 m at the head top. Check in the test still that it reads as kneeling (shins flat behind, hands on thighs) and not as a standing person with short legs.
 - **Face to face (L47 to L48):** 40 cm apart, no intersection. Check the head and my hair in the stills.
 - **Light:** four ramps to pre-check (porch lamp twice, fog in, fog out). No step changes.
+
+- **Opening revision, 2026-11-03 (queue audit):** must: line 1 is now 'You can't wait for someone at the front gate.' (was the ban 'Never wait...'), same close-up of the chair at the gate and same sound hit on GATE; L01b and the loop line unchanged. Tagged `"opening"` in package.json. Not yet drawn or listened to; the hold stays until the proof render and critic pass.

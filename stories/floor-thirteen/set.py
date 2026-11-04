@@ -536,6 +536,7 @@ def build_car(kit, ctx, M):
     # the back wall: walnut, for bounce, but the camera (just behind it) doesn't see it
     bw = _wbox(kit, "back_wall", (x0, CAR_Y1, 0), (x1, CAR_Y1 + WALL_T, CAR_H), M["walnut"])
     bw.visible_camera = False
+    ctx["back_wall"] = bw
     # the front wall: walnut either side of the opening and over it, satin steel jambs and header, a grooved sill
     yf = CAR_Y0
     for side, (xa, xb) in ((-1, (x0, -DOOR_W / 2 - 0.04)), (1, (DOOR_W / 2 + 0.04, x1))):
@@ -584,16 +585,29 @@ def build_panel(kit, ctx, M):
     for i, (x, z) in enumerate(slots):
         kit.cyl(f"pbezel{i}", pr * 1.39, 0.012, (x, py + 0.004, z), M["brass_dark"], rot=(math.pi / 2, 0, 0), n=28)
         bm = button_mat(kit, f"panel button {i}", pr, style=ctx.get("style", "ring"))
+        if i == 12:   # the 13 lights cold: it is the warned-of thing, and it was nobody's finger
+            bm.node_tree.nodes["Principled BSDF"].inputs["Emission Color"].default_value = kit.col("#7fb0ff")
         kit.cyl(f"pbutton{i}", pr, 0.012, (x, py + 0.008, z), bm, rot=(math.pi / 2, 0, 0), n=28)
         pbtn.append(bm)
     gy = py + 0.0145
-    # raised brass numerals beside the 12 and 13 buttons (slots 11 and 12), and nothing else on the panel
-    for i, label in ((11, "12"), (12, "13")):
+    # a digit on every floor button (floors 1..20, slots 0..19): our own segment digits stood 3.5 mm off the glass.
+    # Unlit they glow pale; the lit button's digit goes dark on its bright face, so the 13 reads from the first frame.
+    ctx["panel_digit_mats"] = {}
+    for i in range(20):
         x, z = slots[i]
-        side = -1 if x < PANEL_X else 1          # the left or right column; the digits go outboard of the bezel
-        cx = x + side * (pr * 1.39 + 0.0105)
-        seg_digits(kit, f"num{label}_", label, (cx, z, gy + 0.0015), 0.0035, 0.0085, 0.0016, M["brass"], mirror=True,
-                   depth=0.003, axis="y")
+        dname = f"pdigit{i}" if i in (11, 12) else "pdigit"
+        fresh = dname not in kit.MATS
+        dm = kit.MATS[dname] if not fresh else kit._new(dname)
+        if fresh:
+            b = dm.node_tree.nodes["Principled BSDF"]
+            b.inputs["Base Color"].default_value = kit.col("#05070a")
+            b.inputs["Roughness"].default_value = 0.8
+            b.inputs["Emission Color"].default_value = kit.col("#dfe6ee")
+            b.inputs["Emission Strength"].default_value = 0.9
+            kit._fogged(dm, b.outputs[0])
+        ctx["panel_digit_mats"][i] = dm
+        seg_digits(kit, f"num{i + 1}_", str(i + 1), (x, z, py + 0.014 + 0.0035), 0.0062, 0.0108, 0.0036, dm,
+                   mirror=True, depth=0.004, axis="y")
     for i, outward in ((20, True), (21, False)):   # open: <|>  close: >|<
         x, z = slots[i]
         for s in (-1, 1):
@@ -937,7 +951,7 @@ def build_lights(kit, ctx):
     kit.light("att_rim", "AREA", (0.0, 0.0, 2.5), 240.0, "#a9c4e6", size=0.6)
     # the cold lamp over my shelf (cue "shelf": a gain)
     kit.aim(kit.light("shelf_lamp", "AREA", (-0.6, SILL_Y - 7.0, 2.2), 160.0, "#a9c4e6", size=0.5), (-1.3, SILL_Y - 7.0, 1.2))
-    kit.aim(kit.light("stair_lamp", "AREA", (STX, -2.0, 3.0), 420.0, "#e8e2cc", size=1.2), (STX, -2.0, 0.3))
+    kit.aim(kit.light("stair_lamp", "AREA", (STX, -2.0, 3.0), 190.0, "#e8e2cc", size=1.2), (STX, -2.0, 0.3))
     kit.light("hall_low", "SPOT", (0.25, SILL_Y - 3.0, 0.7), 140.0, "#a9c4e6", spot=35, blend=0.5, size=0.25)
     # 13's light off the sill, seen only in reflections: the brass buttons and piping down its jacket catch it
     ping = kit.light("brass_ping", "AREA", (0.0, CAR_Y0 + 0.25, 0.06), 36.0, "#b9cde6", size=0.5)
@@ -1151,7 +1165,18 @@ def build_land(kit, ctx, M):
     _wbox(kit, "land_floor", (-1.6, yE, -0.1), (1.6, y0, 0.0), M["land_carpet"])
     _wbox(kit, "land_ceiling", (-1.6, yE, hh), (1.6, y0, hh + 0.1), M["land_ceil"])
     _wbox(kit, "land_wall_l", (-1.6, yE, 0.0), (-1.5, y0, hh), M["land_wall"])
-    _wbox(kit, "land_wall_r", (1.5, yE, 0.0), (1.6, y0, hh), M["land_wall"])
+    sd0, sd1 = yE + 1.2, yE + 2.1      # the stairwell door in the right wall
+    _wbox(kit, "land_wall_r0", (1.5, yE, 0.0), (1.6, sd0, hh), M["land_wall"])
+    _wbox(kit, "land_wall_r1", (1.5, sd1, 0.0), (1.6, y0, hh), M["land_wall"])
+    _wbox(kit, "land_wall_rt", (1.5, sd0, 2.1), (1.6, sd1, hh), M["land_wall"])
+    _wbox(kit, "stairwell_back", (2.6, sd0 - 0.3, 0.0), (2.7, sd1 + 0.3, hh), M["room_dark"])
+    _wbox(kit, "stairwell_floor", (1.6, sd0 - 0.3, -0.1), (2.7, sd1 + 0.3, 0.0), M["room_dark"])
+    _wbox(kit, "stairwell_s0", (1.6, sd0 - 0.31, 0.0), (2.7, sd0 - 0.3, hh), M["room_dark"])
+    _wbox(kit, "stairwell_s1", (1.6, sd1 + 0.3, 0.0), (2.7, sd1 + 0.31, hh), M["room_dark"])
+    sh = kit.empty("stair_hinge", (1.53, sd1, 0.0))
+    kit.box("stair_leaf", (0.04, 0.9, 2.04), (0, -0.45, 1.02), M["land_door"], sh, bevel=0.005)
+    kit.box("stair_bar", (0.03, 0.5, 0.04), (-0.03, -0.45, 1.0), M["brass"], sh)
+    ctx["stair_hinge"] = sh
     for k, (lo, hi) in enumerate((((-1.6, y0 - 0.06, 0.0), (-DOOR_W / 2 - 0.06, y0, hh)),
                                    ((DOOR_W / 2 + 0.06, y0 - 0.06, 0.0), (1.6, y0, hh)),
                                    ((-DOOR_W / 2 - 0.06, y0 - 0.06, 2.1), (DOOR_W / 2 + 0.06, y0, hh)))):
@@ -1513,6 +1538,13 @@ def animate(kit, story, tl, t, ctx):
             else:
                 him_v = val
     set_land_doors(ctx, me_v, him_v)
+    sds = _cues(tl, "stair_door")
+    sdc = _last(sds, t)
+    if sdc is not None and "stair_hinge" in ctx:
+        psd = _prev(sds, sdc)
+        v0 = float(psd["open"]) if psd is not None and psd is not sdc else 0.0
+        v = v0 + (float(sdc["open"]) - v0) * kit_ss((t - sdc["t"]) / sdc.get("dur", 0.6))
+        ctx["stair_hinge"].rotation_euler = (0, 0, math.radians(100.0 * v))
     # --- the lights (a change eases over the cue's "dur": the car's panel dims, never cuts)
     lcs = _cues(tl, "lights")
     lc = _last(lcs, t) or {}
@@ -1546,6 +1578,10 @@ def animate(kit, story, tl, t, ctx):
     shots_by_id = ctx.setdefault("shot_spec", {x["id"]: x for x in story["shots"]})
     sh = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1])
     kspec = shots_by_id.get(sh["id"], {}).get("key")
+    # the back wall shows for a camera standing in front of it (the face shots, filmed from the doors' side)
+    cam0 = shots_by_id.get(sh["id"], {}).get("cam") or [[0, [0, 9, 0]]]
+    if ctx.get("back_wall") is not None:
+        ctx["back_wall"].visible_camera = float(cam0[0][1][1]) < 0.5
     if cast and not ctx.get("key_linked"):
         link_light("face_key", cast)
         ctx["key_linked"] = True
@@ -1579,12 +1615,15 @@ def animate(kit, story, tl, t, ctx):
     pcur = _last(pcs, t) or {}
     pl = pcur.get("lit", [])
     ppl = (_prev(pcs, pcur) or {}).get("lit", []) if pcur else []
-    pu = max(0.0, min(1.0, (t - pcur["t"]) / 0.3)) if pcur else 1.0
+    pu = max(0.0, min(1.0, (t - pcur["t"]) / 0.3)) if pcur and ppl is not None and _prev(pcs, pcur) is not None else 1.0
     pu = pu * pu * (3 - 2 * pu)
     for i, m in enumerate(ctx["panel_buttons"]):
-        a0 = 2.4 if i in ppl else 0.0
-        a1 = 2.4 if i in pl else 0.0
+        a0 = (0.55 if i == 12 else 1.7) if i in ppl else 0.0
+        a1 = (0.55 if i == 12 else 1.7) if i in pl else 0.0
         set_button(m, a0 + (a1 - a0) * pu)
+        dm = ctx["panel_digit_mats"].get(i)
+        if dm is not None:
+            dm.node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = 0.9 * (1.0 - (a0 + (a1 - a0) * pu) / (0.55 if i == 12 else 1.7))
     # --- the finger: on a floor-panel button, pressed in by "press" (0..1), coming in from the car
     fc = _last(_cues(tl, "finger"), t) or {}
     if fc.get("on"):
