@@ -7,5 +7,5 @@
   "shape": "written-true",
   "opening": "cost",
   "lane": "experiment",
-  "hold": "batch 8: scripts only, not built yet"
+  "hold": "dropped 2026-11-03 (batch 8 build): Hal failed the creature test still three times (read as a friendly, then startled, then sleepy clerk; no sense of scale). HANDOFF.md on claude/batch8-ep87-motel-rooms"
 }

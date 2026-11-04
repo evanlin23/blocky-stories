@@ -7,5 +7,5 @@
   "shape": "behind-you",
   "opening": "if",
   "lane": "experiment",
-  "hold": "batch 7: scripts only, not built yet"
+  "hold": "dropped 2026-11-03 (batch 7 build): round 2 of 2 not approved; critic revise (big idea 6, feeling 6) and standards revise (S19 flashing). HANDOFF.md on claude/batch7-ep84-pick-door"
 }
