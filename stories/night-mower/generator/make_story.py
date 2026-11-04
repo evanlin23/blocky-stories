@@ -161,7 +161,8 @@ X0 = 3.4   # the mow line
 # ---------------------------------------------------------------------------------------------------- 01 the rule
 shot("S01", 0, C((3.1, 4.4, 0.5), (3.3, 8.4, 0.78), 24, (3.1, 5.2, 0.5), (3.3, 8.4, 0.8), 24),
      "frame 1: the red mower coming straight at camera at grass height, a fountain of clippings UP into the deck, "
-     "the taller strip behind it, Mr. Odell's shut-eyed face above the handle, the lime yardstick left", step=1, hand=0.004)
+     "the taller strip behind it, Mr. Odell's shut-eyed face above the handle, the lime yardstick left", step=1, hand=0.004,
+     up=True, tall=0.5)
 stage(0, odell=((X0, 9.9), 0, "shut"))
 walk("odell", "L02", (X0, 8.2))
 shot("S02", "L02", C((129.3, -1.6, 0.95), (130.0, -0.3, 0.7), 40, (129.6, -1.3, 0.9), (130.0, -0.3, 0.69), 44),
@@ -234,17 +235,17 @@ QX = 4.2
 shot("S12", "L12", C((2.2, -0.2, 1.6), (4.3, 3.9, 1.3), 28, (2.4, 0.2, 1.6), (4.3, 3.9, 1.3), 30),
      "the coffee cart, morning sun: Mr. Odell at the counter with his back half to camera, his plain lidded cup held low, "
      "Dad and me behind; the street and the stick behind", day=1, mower="park", strip=0.0)
-stage("L12", odell=((QX, 3.7), 160, "smile", {"arms": [0, 50]}), dad=((QX, 2.9), 180, "neutral"), me=((QX, 2.15), 180, "neutral"))
+stage("L12", odell=((QX, 3.7), 160, "smile", {"arms": [50, 0]}), dad=((QX, 2.9), 180, "neutral"), me=((QX, 2.15), 180, "neutral"))
 shot("S12b", "L12.2", C((5.2, 1.9, 1.65), (4.2, 3.6, 1.65), 42, (5.0, 2.1, 1.65), (4.2, 3.6, 1.65), 46),
      "Mr. Odell turning to Dad, smile; the cup out of frame", day=1, mower="park", strip=0.0)
-stage("L12.2", odell=((QX, 3.7), 160, "smile", {"arms": [0, 50]}), dad=((QX, 2.9), 180, "neutral"), me=((QX, 2.15), 180, "neutral"))
+stage("L12.2", odell=((QX, 3.7), 160, "smile", {"arms": [50, 0]}), dad=((QX, 2.9), 180, "neutral"), me=((QX, 2.15), 180, "neutral"))
 key("odell", "L12.2+0.2", yaw=15, blend=0.5, arms=[0, 0])
-shot("S13", "L13", C((3.3, 3.95, 1.62), (4.2, 2.8, 1.6), 42, (3.4, 3.8, 1.62), (4.2, 2.7, 1.6), 46),
+shot("S13", "L13", C((3.0, 4.35, 1.55), (4.2, 2.8, 1.58), 32, (3.1, 4.2, 1.55), (4.2, 2.75, 1.58), 34),
      "Dad's face, frozen; me behind him, worried", day=1, mower="park", strip=0.0)
 stage("L13", odell=((QX, 3.7), 10, "smile"), dad=((QX, 2.9), 180, "neutral"), me=((QX, 2.15), 180, "worried"))
-shot("S14", "L14", C((2.6, 3.3, 1.3), (3.8, 3.15, 1.22), 24, (2.8, 3.3, 1.3), (3.8, 3.15, 1.22), 24),
+shot("S14", "L14", C((3.4, 4.2, 1.55), (4.0, 3.0, 1.5), 30, (3.5, 4.1, 1.55), (4.0, 3.0, 1.5), 32),
      "close on a new white cup with a brown lid at Mr. Odell's sleeve end, held toward Dad", day=1, mower="park", strip=0.0)
-stage("L14", odell=((QX, 3.7), 0, "smile", {"arms": [0, 78]}), dad=((QX, 2.9), 180, "neutral"))
+stage("L14", odell=((QX, 3.7), 0, "smile", {"arms": [78, 0]}), dad=((QX, 2.9), 180, "neutral"))
 shot("S15", "L15-0.45", C((2.9, 3.0, 1.4), (4.3, 4.9, 1.2), 30, (3.1, 3.2, 1.4), (4.3, 4.9, 1.2), 32),
      "the cart counter, nobody serving yet", day=1, mower="park", strip=0.0)
 stage("L15-0.45")
@@ -283,10 +284,10 @@ walk("odell", "L19>", (X0, 9.6))
 shot("S19b", "L19.1+0.5", C((5.2, 5.6, 0.45), (3.4, 8.4, 0.8), 30, (5.0, 5.8, 0.45), (3.4, 8.6, 0.85), 30),
      "low from the side: the mower and Odell moving backward, the clippings flying in", step=1)
 shot("S20", "L20", C((-9.6, 10.2, 1.7), (0.5, 8.0, 1.2), 56, (-9.4, 10.3, 1.7), (0.5, 8.0, 1.25), 62),
-     "over Dad's shoulder: a figure fading in by the fence in a pool of warm morning light, at night", flood=0.5)
+     "over Dad's shoulder: a figure fading in by the fence in a pool of warm morning light, at night", flood=0.35)
 stage("L20", dadn=((-8.4, 10.9, 0.2), 90, "scared"), dad=((0.5, 8.0), -90, "smile", {"arms": [58, 58]}))
-shot("S21", "L21", C((-1.9, 8.1, 1.62), (0.55, 8.0, 1.5), 40, (-1.7, 8.1, 1.62), (0.55, 8.0, 1.5), 44),
-     "the vision: Dad in day clothes at the fence with two cups, warm key, night all round", flood=0.5, ticks=[1, 1])
+shot("S21", "L21", C((-2.7, 8.05, 1.55), (0.55, 8.0, 1.4), 40, (-2.5, 8.05, 1.55), (0.55, 8.0, 1.4), 44),
+     "the vision: Dad in day clothes at the fence with two cups, warm key, night all round", flood=0.35, ticks=[1, 1])
 stage("L21", dad=((0.55, 8.0), -90, "smile", {"arms": [58, 58]}))
 shot("S21b", "L21.2", C((-5.9, 10.4, 1.65), (-8.2, 10.8, 1.6), 46, (-6.0, 10.4, 1.65), (-8.2, 10.8, 1.6), 50),
      "robe Dad on the porch, scared", flood=0.6, ticks=[1, 1])
@@ -320,30 +321,30 @@ shot("S25", "L25", C((-1.6, 5.4, 5.2), (3.3, 7.6, 0.4), 30, (-1.0, 5.6, 5.0), (3
      "high above the fence: his lawn under the floods, the mower stopped, a slow fountain still rising into the deck, "
      "the stick at four ticks", mower=MS, clip=0.35, hand=0.0, step=1)
 stage("L25", odell=((X0, 7.5), 0, "shut"))
-shot("S26", "L26", C((-3.0, 5.3, 1.4), (-8.0, 10.8, 1.2), 28, (-3.0, 5.3, 1.4), (4.2, 8.0, 0.8), 28),
-     "a slow pan along the fence from our porch to his, the stick passing through frame", mower=MS, clip=0.0, hand=0.003)
+shot("S26", "L26", C((-3.0, 5.3, 1.4), (-2.0, 8.0, 1.2), 28, (-3.0, 5.3, 1.4), (4.2, 8.0, 0.8), 28),
+     "a slow pan along the fence toward his lawn (the porch lamp stays out of frame), the stick passing through frame", mower=MS, clip=0.0, hand=0.003)
 stage("L26", dadn=((-8.2, 10.8, 0.2), 90, "neutral"), odell=((X0, 7.5), 0, "shut"))
 shot("S27", "L27", C((3.0, 4.15, 1.62), (4.2, 3.2, 1.6), 38, (3.2, 4.0, 1.62), (4.2, 3.2, 1.6), 40),
-     "day: Mr. Odell at the cart, careful and stiff", day=1, mower="park", strip=0.0)
+     "day: Mr. Odell at the cart, careful and stiff", day=1, mower="park", strip=0.0, ramp=0.3)
 stage("L27", odell=((QX, 3.4), 140, "smile"))
 shot("S27b", "L27.2", C((2.1, 5.7, 1.5), (3.3, 8.4, 1.6), 46, (2.2, 5.9, 1.5), (3.3, 8.4, 1.6), 50),
-     "night: the same face, eyes shut, at ease behind the mower", step=1)
+     "night: the same face, eyes shut, at ease behind the mower", step=1, ramp=0.3)
 stage("L27.2", odell=((3.3, 8.5), 0, "shut"))
 walk("odell", "L27>", (3.3, 7.8))
 shot("S28", "L28", C((-6.0, 3.8, 3.8), (-6.0, -9.0, 3.9), 17, (-6.0, 3.2, 3.8), (-6.0, -9.0, 3.9), 17),
      "the coral house's blinds, shut tight", mower=None)
 stage("L28")
-shot("S28b", "L28.1+0.2", C((-10.3, 8.9, 1.7), (-7.0, 11.0, 1.3), 34, (-10.2, 9.4, 1.7), (-6.4, 11.0, 1.3), 34),
+shot("S28b", "L28.1+0.2", C((-10.8, 8.4, 1.95), (-7.4, 11.2, 1.75), 30, (-10.6, 8.7, 1.95), (-6.8, 11.2, 1.7), 30),
      "Dad on the porch, still looking", sway=True, mower=MS, clip=0.0)
 stage("L28.1+0.2", dadn=((-8.2, 10.8, 0.2), 90, "neutral"), odell=((X0, 7.5), 0, "shut"))
 shot("S29", "L29", C((1.0, 5.8, 0.45), (2.75, 7.0, 0.3), 36, (1.2, 5.9, 0.45), (2.75, 7.0, 0.3), 38),
-     "the stick by day, the grass sinking", day=1, mower="park", strip=0.0, ticks=[4, 1])
+     "the stick by day, the grass sinking", day=1, mower="park", strip=0.0, ticks=[4, 1], ramp=0.3)
 stage("L29")
 shot("S29b", "L29.2", C((1.2, 6.1, 0.4), (2.75, 7.0, 0.3), 36, (1.3, 6.2, 0.4), (2.75, 7.0, 0.3), 38),
-     "the stick at night, the grass climbing", mower=MS, clip=0.0, ticks=[1, 4])
+     "the stick at night, the grass climbing", mower=MS, clip=0.0, ticks=[1, 4], ramp=0.3)
 stage("L29.2")
 shot("S29c", "L29.3", C((1.0, 5.8, 0.5), (2.75, 7.0, 0.3), 34, (1.2, 5.9, 0.5), (2.75, 7.0, 0.3), 36),
-     "morning: the stick at one tick, exactly as before", day=1, mower="park", strip=0.0, ticks=[1, 1])
+     "morning: the stick at one tick, exactly as before", day=1, mower="park", strip=0.0, ticks=[1, 1], ramp=0.3)
 stage("L29.3")
 shot("S30", "L30", C((-0.6, 5.4, 0.55), (5.5, 8.6, 0.1), 28, (-0.2, 5.5, 0.5), (5.5, 8.6, 0.1), 28),
      "the straight-striped lawn in morning light, every blade even", day=1, mower="park", strip=0.0, ticks=[1, 1])
@@ -376,7 +377,7 @@ SUN = dict(day=0.85, warm=1.0, mower="park", strip=0.0)
 shot("S34", "L34", C((3.7, 0.9, 1.5), (4.0, 3.7, 1.4), 32, (3.8, 1.2, 1.5), (4.0, 3.7, 1.4), 34),
      "the cart at sunrise: Dad with two cups at his sleeve ends, me beside him, smiling; the stick far behind", **SUN)
 stage("L34", dad=((4.6, 3.5), 0, "smile", {"arms": [58, 58]}), me=((3.6, 3.5), 0, "smile"))
-shot("S35", "L35", C((4.2, 3.9, 1.35), (4.25, 4.6, 1.05), 60, (4.2, 4.0, 1.3), (4.25, 4.6, 1.05), 68),
+shot("S35", "L35", C((4.25, 3.1, 1.5), (4.25, 4.6, 1.17), 30, (4.25, 3.25, 1.48), (4.25, 4.6, 1.17), 32),
      "close on the two cups, a lime sleeve slipping onto one", **SUN)
 stage("L35")
 shot("S36", "L36", C((4.6, 1.8, 1.62), (4.6, 3.4, 1.6), 46, (4.6, 2.0, 1.62), (4.6, 3.4, 1.6), 52),
@@ -391,25 +392,25 @@ walk("dad", "L37+0.5", (-0.5, 7.5))
 walk("dad", "L37+0.85", (0.0, 7.5, 0.42))
 walk("dad", "L37+1.2", (0.6, 7.5))
 walk("dad", "L37>", (2.2, 7.4))
-shot("S38", "L38", C((0.9, 6.0, 1.55), (3.3, 7.9, 1.6), 38, (1.1, 6.2, 1.55), (3.3, 7.9, 1.6), 40),
-     "Mr. Odell turning toward Dad's steps, eyes opening, smile", **SUN)
+shot("S38", "L38", C((3.0, 3.6, 1.5), (3.0, 7.6, 1.45), 21, (3.0, 3.9, 1.5), (3.0, 7.6, 1.45), 22),
+     "Mr. Odell turning toward Dad's steps, eyes opening, smile", cupglow=0.3, **SUN)
 stage("L38", odell=((3.7, 7.9), -60, "shut", {"arms": [0, 0]}), dad=((2.2, 7.4), 90, "smile", {"arms": [58, 58]}))
 key("odell", "L38.1", yaw=-90, blend=0.5, expr="smile")
 shot("S38b", "L38.2", C((2.5, 6.2, 1.5), (3.0, 7.7, 1.4), 46, (2.6, 6.3, 1.5), (3.0, 7.7, 1.4), 50),
-     "the lime-sleeve cup passes to him on a cut", **SUN)
-stage("L38.2", odell=((3.4, 7.6), -90, "smile", {"arms": [0, 60]}), dad=((2.2, 7.4), 90, "smile", {"arms": [58, 58]}))
-shot("S39", "L39", C((2.75, 4.8, 1.35), (2.75, 7.2, 1.25), 36, (2.75, 5.1, 1.35), (2.75, 7.2, 1.25), 40),
-     "the two at the fence, cups up, side by side, the stick between them", **SUN)
-stage("L39", odell=((3.4, 7.2), -90, "smile", {"arms": [0, 62]}), dad=((2.1, 7.2), 90, "smile", {"arms": [62, 62]}))
-shot("S39b", "L39.2", C((3.0, 6.3, 1.2), (3.35, 7.2, 1.15), 60, (3.05, 6.4, 1.2), (3.35, 7.2, 1.15), 68),
-     "punch in on the lime sleeve", **SUN)
-stage("L39.2", odell=((3.4, 7.2), -90, "smile", {"arms": [0, 62]}), dad=((2.1, 7.2), 90, "smile", {"arms": [62, 62]}))
+     "the lime-sleeve cup passes to him on a cut", cupglow=0.3, **SUN)
+stage("L38.2", odell=((3.4, 7.6), -90, "smile", {"arms": [60, 0]}), dad=((2.2, 7.4), 90, "smile", {"arms": [58, 58]}))
+shot("S39", "L39", C((2.75, 3.7, 1.5), (2.75, 7.2, 1.4), 20, (2.75, 4.0, 1.5), (2.75, 7.2, 1.4), 22),
+     "the two at the fence, cups up, side by side, the stick between them", cupglow=0.3, **SUN)
+stage("L39", odell=((3.4, 7.2), -90, "smile", {"arms": [62, 0]}), dad=((2.1, 7.2), 90, "smile", {"arms": [8, 62]}))
+shot("S39b", "L39.2", C((2.71, 5.4, 1.3), (2.71, 7.6, 1.22), 42, (2.71, 5.8, 1.3), (2.71, 7.6, 1.22), 48),
+     "punch in on the lime sleeve", cupglow=0.3, **SUN)
+stage("L39.2", odell=((3.4, 7.2), -90, "smile", {"arms": [62, 0]}), dad=((2.1, 7.2), 90, "smile", {"arms": [8, 62]}))
 shot("S40", "L40", C((2.2, 5.5, 1.62), (2.1, 7.2, 1.6), 46, (2.2, 5.7, 1.62), (2.1, 7.2, 1.6), 50),
      "Dad's face, smile, morning sun", **SUN)
 stage("L40", dad=((2.1, 7.2), 0, "smile", {"arms": [62, 62]}))
 shot("S41", "L41", C((3.5, 5.5, 1.5), (3.4, 7.2, 1.55), 46, (3.4, 5.7, 1.5), (3.4, 7.2, 1.55), 52),
-     "Mr. Odell's face, smile, holding the cup, eyes closing slowly; the sting", **SUN)
-stage("L41", odell=((3.4, 7.2), 0, "smile", {"arms": [0, 62]}))
+     "Mr. Odell's face, smile, holding the cup, eyes closing slowly; the sting", cupglow=0.3, **SUN)
+stage("L41", odell=((3.4, 7.2), 0, "smile", {"arms": [62, 0]}))
 key("odell", "L41+0.7", expr="soft")
 
 # ---------------------------------------------------------------------------------------------------- 06 loop
@@ -431,17 +432,17 @@ stage("L43.2")
 # ---------------------------------------------------------------------------------------------------- cups
 cups = [
     {"who": "odell", "hand": "r", "from": "L12", "to": "L12.2", "kind": "plain"},           # his plain lidded cup, never named
-    {"who": "odell", "hand": "r", "from": "L14", "to": "L15", "kind": "plain", "scale": 1.6},   # the one held toward Dad
-    {"who": "dad", "hand": "l", "from": "L20", "to": "L22", "kind": "plain"},               # the vision's two cups
-    {"who": "dad", "hand": "r", "from": "L20", "to": "L22", "kind": "plain"},
+    {"who": "odell", "hand": "r", "from": "L14", "to": "L15", "kind": "plain", "scale": 1.9, "reach": 0.1, "dz": 0.0},   # the one held toward Dad
+    {"who": "dad", "hand": "l", "from": "L20", "to": "L22", "kind": "plain", "scale": 2.2, "reach": 0.15, "dz": 0.15},               # the vision's two cups
+    {"who": "dad", "hand": "r", "from": "L20", "to": "L22", "kind": "plain", "scale": 2.2, "reach": 0.15, "dz": 0.15},
     {"who": "dad", "hand": "l", "from": "L34", "to": "L35", "kind": "plain"},               # sunrise: two coffees
     {"who": "dad", "hand": "r", "from": "L34", "to": "L35", "kind": "plain"},
-    {"pos": [4.0, 4.6, 1.035], "from": "L35", "to": "L36", "kind": "plain", "scale": 2.0, "shots": ["S35"]},
-    {"pos": [4.5, 4.6, 1.035], "from": "L35", "to": "L36", "kind": "lime", "scale": 2.0, "shots": ["S35"],
+    {"pos": [4.1, 4.6, 1.035], "from": "L35", "to": "L36", "kind": "plain", "scale": 1.7, "shots": ["S35"]},
+    {"pos": [4.4, 4.6, 1.035], "from": "L35", "to": "L36", "kind": "lime", "scale": 1.7, "shots": ["S35"],
      "slide": ["L35.2", "L35.2+0.5"]},
-    {"who": "dad", "hand": "l", "from": "L36", "to": "L41>", "kind": "plain"},
-    {"who": "dad", "hand": "r", "from": "L36", "to": "L38.2", "kind": "lime"},
-    {"who": "odell", "hand": "r", "from": "L38.2", "to": "L41>", "kind": "lime"},
+    {"who": "dad", "hand": "l", "from": "L36", "to": "L41>", "kind": "plain", "scale": 1.5, "reach": 0.0, "dz": 0.06},
+    {"who": "dad", "hand": "r", "from": "L36", "to": "L38.2", "kind": "lime", "scale": 1.5, "reach": 0.1, "dz": 0.06},
+    {"who": "odell", "hand": "r", "from": "L38.2", "to": "L41>", "kind": "lime", "scale": 1.5, "reach": 0.14, "dz": 0.06},
     {"who": "dadn", "hand": "r", "from": "L42", "to": "end", "kind": "lime"},
     {"pos": [0.0, 8.25, 0.575], "from": 0, "to": "end", "kind": "plain", "shots": ["S32"]},
     {"pos": [0.0, 8.75, 0.575], "from": 0, "to": "end", "kind": "plain", "shots": ["S32"]},
@@ -478,7 +479,7 @@ world = ("a bright suburban cul-de-sac at three in the morning: a floodlit strai
 
 story = {
     "slug": "night-mower",
-    "rev": 3,
+    "rev": 5,
     "title": "His Mower Makes Grass LONGER",
     "made_for_kids": False,
     "premise": premise,
@@ -521,7 +522,7 @@ story = {
                   {"at": "L40", "voices": ["pad"], "energy": 0.3, "mode": "major", "root": 50},
                   {"at": "L42", "voices": ["drone", "pad"], "energy": 0.45, "mode": "mixolydian", "root": 50},
               ]},
-    "sound": {"floor": "grass", "steps_db": -22, "rev": 3,
+    "sound": {"floor": "grass", "steps_db": -22, "rev": 5,
               "ambience": [
                   {"kind": "crickets", "from": 0, "to": "L06", "lufs": -36},
                   {"kind": "hum", "from": 0, "to": "L02", "lufs": -34},

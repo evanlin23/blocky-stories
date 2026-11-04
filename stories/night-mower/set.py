@@ -39,7 +39,7 @@ TMP.mkdir(parents=True, exist_ok=True)
 
 LAWN = (0.2, 15.0, 5.2, 12.0)    # Mr. Odell's lawn x0, x1, y0, y1
 STK = (2.75, 7.0)                 # the yardstick
-STRIP = (3.0, 3.8, 5.6, 11.6)    # the mow strip x0, x1, y0, y1
+STRIP = (3.0, 4.1, 5.6, 11.6)    # the mow strip x0, x1, y0, y1
 CART = (4.2, 4.9)
 PARK = (11.4, 10.7, 0.0)         # the parked mower
 Z2 = 2.8
@@ -549,7 +549,8 @@ def build_chips(kit, ctx, M):
         s = rng.uniform(0.04, 0.065)
         body = kit.box(f"chip{k}", (s, s * 0.6, 0.012), (0, 0, -30), M[mm[k % 3]])
         gh = [kit.box(f"ghost{k}_{j}", (s * (0.72 - 0.25 * j), s * 0.45, 0.01), (0, 0, -30), M["streak"]) for j in range(2)]
-        ctx["chips"].append({"body": body, "ghosts": gh, "ph": rng.uniform(0, 1), "a": rng.uniform(-0.5, 0.5),
+        stalk = kit.box(f"stalk{k}", (0.012, 0.012, 1.0), (0, 0, -30), M["streak"])
+        ctx["chips"].append({"body": body, "ghosts": gh, "stalk": stalk, "ph": rng.uniform(0, 1), "a": rng.uniform(-0.5, 0.5),
                              "b": rng.uniform(0.15, 0.85), "pk": rng.uniform(0.28, 0.6), "sp": rng.uniform(0.9, 1.25),
                              "spin": rng.uniform(-6, 6), "k": k})
 
@@ -575,8 +576,10 @@ def build_lights(kit, ctx, M):
     kit.light("porchfill", "POINT", (-7.2, 10.2, 2.3), 140.0, "#ffd9a0", size=0.2)
     kit.light("faces", "AREA", (3.0, 2.0, 3.6), 330.0, "#fff1c2", size=5.0)
     kit.aim(kit.LIGHTS["faces"]["obj"], (3.0, 8.0, 0.8))
-    kit.light("visionkey", "SPOT", (-3.2, 4.6, 4.2), 900.0, "#ffd9a0", size=0.4, spot=34, blend=0.5)
-    kit.aim(kit.LIGHTS["visionkey"]["obj"], (0.5, 8.0, 1.0))
+    kit.light("visionkey", "SPOT", (-3.0, 5.0, 3.4), 2600.0, "#ffb868", size=0.4, spot=40, blend=0.5)   # warm morning sun
+    kit.aim(kit.LIGHTS["visionkey"]["obj"], (0.5, 8.0, 1.2))
+    kit.light("visionrim", "SPOT", (3.2, 10.6, 3.0), 1800.0, "#ffc888", size=0.3, spot=40, blend=0.5)  # low sun from behind
+    kit.aim(kit.LIGHTS["visionrim"]["obj"], (0.5, 8.0, 1.3))
 
 
 # ------------------------------------------------------------------------------------------------ build
@@ -606,16 +609,17 @@ def build(kit, story, tl):
 
 
 # ------------------------------------------------------------------------------------------------ animate
-def hand_pos(st, hand):
+def hand_pos(st, hand, reach_extra=0.0, dz=0.0):
     """Where a hand is: the shoulder, the arm's length out along the raised arm."""
     yaw = st["yaw"]
     d = (math.sin(yaw), -math.cos(yaw))
     rt = (-math.cos(yaw), -math.sin(yaw))
     right = hand == "r"
-    a = st["arms"][1 if right else 0]
+    a = st["arms"][0 if right else 1]       # the rig raises arm index 0 on the character's right (+rt side)
     lat = 0.40 if right else -0.40
-    reach = 0.5 * math.sin(a) + 0.08
-    return (st["x"] + rt[0] * lat + d[0] * reach, st["y"] + rt[1] * lat + d[1] * reach, st["z"] + 1.30 - 0.5 * math.cos(a) + 0.04)
+    reach = 0.5 * math.sin(a) + 0.08 + reach_extra
+    return (st["x"] + rt[0] * lat + d[0] * reach, st["y"] + rt[1] * lat + d[1] * reach,
+            st["z"] + 1.30 - 0.5 * math.cos(a) + 0.04 + dz)
 
 
 def shot_ticks(look, tl, t, sh, at):
@@ -630,8 +634,22 @@ def animate(kit, story, tl, t, ctx):
     sh = timeline.shot_at(tl, t)
     sid = sh["id"]
     look = story["looks"].get(sid, {})
-    day = float(look.get("day", 0))
-    night = day < 0.01
+    # lighting: a shot with "ramp": s eases from the previous shot's light over its first s seconds (no day/night strobe)
+    def lp(lk):
+        dd = float(lk.get("day", 0))
+        return {"day": dd, "exp": float(lk.get("exposure", 0.0)), "warm": float(lk.get("warm", 0.0)),
+                "nf": 1.0 if dd < 0.01 else 0.0, "flood": float(lk.get("flood", 1.0)),
+                "faces": float(lk.get("faces", 1.0)), "porch": float(lk.get("porch", 1.0))}
+    P = lp(look)
+    if look.get("ramp"):
+        ids = [x["id"] for x in tl["shots"]]
+        i = ids.index(sid)
+        if i > 0:
+            Q = lp(story["looks"].get(ids[i - 1], {}))
+            w = _ss((t - sh["start"]) / float(look["ramp"]))
+            P = {k: Q[k] + (P[k] - Q[k]) * w for k in P}
+    day = P["day"]
+    day_raw = float(look.get("day", 0))
     sky = [27 / 255, 42 / 255, 107 / 255], [126 / 255, 200 / 255, 255 / 255]
     skyc = tuple(a + (b - a) * min(1.0, day) for a, b in zip(*sky))
     for n in ctx["bg_nodes"]:
@@ -639,8 +657,8 @@ def animate(kit, story, tl, t, ctx):
             n.inputs["Strength"].default_value = 0.6 * (1 - min(1.0, day)) + 0.25 * min(1.0, day)
         else:
             n.inputs["Color"].default_value = (*[kit.srgb(v) for v in skyc], 1.0)
-    bpy.context.scene.view_settings.exposure = float(look.get("exposure", 0.0))
-    warm = float(look.get("warm", 0.0))
+    bpy.context.scene.view_settings.exposure = P["exp"]
+    warm = P["warm"]
     c0, c1 = (1.0, 0.945, 0.82), (1.0, 0.72, 0.5)
     kit.LIGHTS["sun"]["light"].color = tuple(a + (b - a) * warm for a, b in zip(c0, c1))
 
@@ -715,7 +733,7 @@ def animate(kit, story, tl, t, ctx):
             tall = tall * tall * (3 - 2 * tall)
         else:
             tall = np.zeros(f["n"])
-        set_heights(f, (H_SHORT + (H_TALL - H_SHORT) * tall) * f["rnd"] ** 0.5)
+        set_heights(f, (H_SHORT + (float(look.get("tall", H_TALL)) - H_SHORT) * tall) * f["rnd"] ** 0.5)
 
     # the reversed clippings: lift off the lawn ahead of the deck, arc up, and vanish under the skirt
     rate = float(look.get("clip", 1.0)) if shown and mode != "park" else 0.0
@@ -726,6 +744,8 @@ def animate(kit, story, tl, t, ctx):
     d = (math.sin(myaw), -math.cos(myaw))
     rt = (-math.cos(myaw), -math.sin(myaw))
     top = max(ticks * 0.1, 0.06)
+    up = bool(look.get("up"))
+
     def chip_pos(c_, u):
         e = u * u * (3 - 2 * u) * 0.6 + u * 0.4
         if macro:
@@ -734,6 +754,11 @@ def animate(kit, story, tl, t, ctx):
             sx, sy = STK[0] + rr * math.cos(ang), STK[1] + rr * math.sin(ang)
             ex, ey = STK[0] + 0.45 * rr * math.cos(ang), STK[1] + 0.45 * rr * math.sin(ang)
             z = 0.01 + (top * 0.9) * e + c_["pk"] * 0.3 * 4 * u * (1 - u)
+        elif up:       # S01: a slow climb along the ground, then a steep lift into the deck's front
+            aa, bb = c_["a"], c_["b"]
+            sx, sy = mx + d[0] * (0.5 + 0.8 * bb) + rt[0] * aa * 0.9, my + d[1] * (0.5 + 0.8 * bb) + rt[1] * aa * 0.9
+            ex, ey = mx + d[0] * 0.3 + rt[0] * aa * 0.4, my + d[1] * 0.3 + rt[1] * aa * 0.4
+            return sx + (ex - sx) * u, sy + (ey - sy) * u, 0.02 + 0.30 * u ** 1.7
         else:
             aa, bb = c_["a"], c_["b"]
             sx, sy = mx + d[0] * (0.55 + bb) + rt[0] * aa, my + d[1] * (0.55 + bb) + rt[1] * aa
@@ -745,13 +770,20 @@ def animate(kit, story, tl, t, ctx):
         on = rate > 0.01 and c_["k"] < 60 * frac
         if not on:
             c_["body"].location = (0, 0, -30)
+            c_["stalk"].location = (0, 0, -30)
             for g_ in c_["ghosts"]:
                 g_.location = (0, 0, -30)
             continue
-        u = (t * c_["sp"] * 0.95 * (rate if rate < 1 else 1.0) + c_["ph"]) % 1.0
+        u = (t * c_["sp"] * 0.95 * (rate if rate < 1 else 1.0) * (0.5 if up else 1.0) + c_["ph"]) % 1.0
         px, py, z = chip_pos(c_, u)
         vis = u < 0.96
         c_["body"].location = (px, py, z if vis else -30)
+        if up and vis:       # a streak hanging under each clipping: it is being drawn UP
+            ln = max(0.05, min(z - 0.01, 0.16))
+            c_["stalk"].location = (px, py, z - ln / 2 - 0.01)
+            c_["stalk"].scale = (1, 1, ln)
+        else:
+            c_["stalk"].location = (0, 0, -30)
         c_["body"].rotation_euler = (0.9 + 0.5 * math.sin(u * 5 + c_["ph"]), 0.4 * math.cos(u * 4 + c_["ph"]), c_["spin"] * u)
         for j, g_ in enumerate(c_["ghosts"]):
             ug = u - 0.07 * (j + 1)
@@ -762,7 +794,7 @@ def animate(kit, story, tl, t, ctx):
             g_.location = (gx, gy, gz)
             g_.rotation_euler = c_["body"].rotation_euler
 
-    ctx["cart"].location = (CART[0], CART[1], 0.0 if day > 0.5 else -20.0)
+    ctx["cart"].location = (CART[0], CART[1], 0.0 if day_raw > 0.5 else -20.0)
 
     # chairs (S32 only)
     for root, (x, y), rot in ctx["chairs"]:
@@ -783,7 +815,7 @@ def animate(kit, story, tl, t, ctx):
             if st["hidden"]:
                 c_["root"].location = (0, 0, -20)
                 continue
-            c_["root"].location = hand_pos(st, sp_["hand"])
+            c_["root"].location = hand_pos(st, sp_["hand"], sp_.get("reach", 0.0), sp_.get("dz", 0.0))
         c_["root"].scale = (sp_.get("scale", 1.0),) * 3
         if c_["sleeve"] is not None:
             ss = sp_.get("slide")
@@ -794,16 +826,24 @@ def animate(kit, story, tl, t, ctx):
             else:
                 c_["sleeve"].location.z = 0.05
 
+    # cups in a character's shadow stay readable: a little glow on the plastic in the shots that need it
+    glow = float(look.get("cupglow", 0.0))
+    for mk, hexc in (("cup", (0.98, 0.98, 0.95, 1.0)), ("sleeve", (0.55, 1.0, 0.1, 1.0))):
+        pb = ctx["M"][mk].node_tree.nodes["Principled BSDF"]
+        pb.inputs["Emission Color"].default_value = hexc
+        pb.inputs["Emission Strength"].default_value = glow
+
     # light gains
     g = {}
-    fl = float(look.get("flood", 1.0))
+    fl = P["flood"]
     g["sun"] = min(1.0, day)
     g["dayfill"] = min(1.0, day)
     g["moon"] = 1.0 - min(1.0, day)
     for f in ctx["floods"]:
-        g[f] = fl if night else 0.0
-    g["faces"] = float(look.get("faces", 1.0)) if night else 0.0
-    g["streetfill"] = 1.0 if night else 0.0
-    g["porchfill"] = float(look.get("porch", 1.0)) if night else 0.0
+        g[f] = fl * P["nf"]
+    g["faces"] = P["faces"] * P["nf"]
+    g["streetfill"] = P["nf"]
+    g["porchfill"] = P["porch"] * P["nf"]
     g["visionkey"] = tv(ctx, "vision", t)
+    g["visionrim"] = 0.6 * tv(ctx, "vision", t)
     return g
