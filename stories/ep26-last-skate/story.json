@@ -2062,7 +2062,7 @@
    "step": 2,
    "what": "Gus in the booth beside Lenny, crown on, at the mic",
    "at": "L19",
-   "expo": 0.55
+   "expo": 0.62
   },
   {
    "id": "S37",
@@ -2087,7 +2087,7 @@
    "step": 2,
    "what": "Gus looking out over the booth, right at camera",
    "at": "L19.2",
-   "expo": 0.55
+   "expo": 0.62
   },
   {
    "id": "S38",
@@ -2860,7 +2860,7 @@
    "step": 2,
    "what": "Gus at the booth mic, crown on, the room bright",
    "at": "L31b.1",
-   "expo": 0.55
+   "expo": 0.62
   },
   {
    "id": "S75",
@@ -2885,7 +2885,7 @@
    "step": 2,
    "what": "Gus at the mic, soft, pointing out at the floor",
    "at": "L32",
-   "expo": 0.55
+   "expo": 0.62
   },
   {
    "id": "S77",
@@ -14047,6 +14047,6 @@
     ]
    }
   ],
-  "rev": 44
+  "rev": 46
  }
 }

@@ -242,7 +242,7 @@ for i, (at, what, step, cam) in enumerate(SHOTS):
 shots[0]["expo"] = 0.45
 for sh in shots:
     if sh["id"] in ("S36", "S37", "S74", "S75"):
-        sh["expo"] = 0.55          # Gus at the mic was blown out
+        sh["expo"] = 0.62          # Gus at the mic was blown out
     if sh["id"] == "S48":
         sh["skboost"] = 2.0
         sh["expo"] = 1.1
