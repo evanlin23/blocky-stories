@@ -361,20 +361,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "But NINA'S words.",
-     "But Nina's words."
+     "Nina's SECRETS.",
+     "Nina's secrets."
     ],
     [
-     "Her diary,",
-     "Her diary,"
+     "The same DAY",
+     "The same day"
     ],
     [
-     "right as she",
-     "right as she"
-    ],
-    [
-     "WROTE it.",
-     "wrote it."
+     "they happened.",
+     "they happened."
     ]
    ]
   },
@@ -1445,8 +1441,8 @@
      "A third hand"
     ],
     [
-     "wrote.",
-     "wrote."
+     "wrote about YOU.",
+     "wrote about you."
     ]
    ]
   },
@@ -8991,7 +8987,7 @@
   }
  },
  "fx": [],
- "rev": 6,
+ "rev": 7,
  "music": {
   "root": 51,
   "mode": "major",
@@ -9067,7 +9063,7 @@
  "sound": {
   "floor": "wood",
   "steps_db": -26,
-  "rev": 6,
+  "rev": 7,
   "ambience": [
    {
     "kind": "room",

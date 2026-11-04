@@ -1,7 +1,7 @@
 # ep89-sister-diary: the script (writer, 2026-11-03, batch 8)
 
 - **Slug:** `ep89-sister-diary` (batch 8, upload order 5 of 7)
-- **Pitch:** N22 in `docs/research/2026-11-09-week.md` (panel score 7, premise bank P16, the bank's top premise). Opening shape `confess`. Lane: core. Length arm: long (110 to 150 s).
+- **Pitch:** N22 in `docs/research/2026-11-09-week.md` (panel score 7, premise bank P16, the bank's top premise). Opening shape `must`. Lane: core. Length arm: long (110 to 150 s).
 - **Title:** My Sister's Diary ANSWERS Me 📓
 - **Changed from the pitch:** the pitch's answer (her ten years from now, warning me) is a message across time, close to the owner's one-way-door example and to ep33's time lane. The answer is now a pair of diaries and two siblings each haunting the other. Line 1 keeps the pitch's shape.
 - **Word count:** 526 spoken words in 78 lines, all `narrator`, plus one 0.6 s music drop before L21.
@@ -14,7 +14,7 @@ The batch table is in `stories/ep85-early-alarm/script.md`. This row:
 
 | Setting | Rule type | Creature | Line 1 shape | Twist shape | Palette | Music mood | Warmth |
 |---|---|---|---|---|---|---|---|
-| my bedroom desk and my sister's door across the hall | a diary that answers | none: ink crawling across a page | confess | `each-others-ghost` | lilac, sky blue, warm lamp amber, night navy | soft plinks over a pencil-scratch rhythm, Eb major, 100 BPM | siblings talking again |
+| my bedroom desk and my sister's door across the hall | a diary that answers | none: ink crawling across a page | must | `each-others-ghost` | lilac, sky blue, warm lamp amber, night navy | soft plinks over a pencil-scratch rhythm, Eb major, 100 BPM | siblings talking again |
 
 Kept clear of ep86 (the batch's other reversal): there the "intruder" is me, alone. Here two people each think the other is the ghost, and both are right about everything but who.
 
@@ -29,7 +29,7 @@ Kept clear of ep86 (the batch's other reversal): there the "intruder" is me, alo
 
 ## The story
 - **Premise:** Years ago Grandma gave my big sister Nina and me matching diaries, lilac and blue, and said they only work as a set. Neither of us ever wrote in them. Nina's 19, I'm her brother, 17, and we don't really talk. Last week my blank diary started filling with Nina's words as she wrote, in my own handwriting (the pair copies words in the reader's hand). I wrote back under her line, "Who is this?", and it answered.
-- **Rule / hook (L01, about 2.4 s):** "My sister's diary / answers BACK. / And tonight / it wrote about YOU." L02 keeps the threat on you: "And it knows / you're READING."
+- **Rule / hook (L01, about 2.6 s):** "You can't READ / my sister's diary. / It writes BACK. / Tonight it wrote / about YOU." L02 keeps the threat on you: "And it knows / you're READING."
 - **The relatable want or fight:** snooping on a sibling, and two siblings who only slam doors and fight over the car.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** the open blue diary as an inset in the top-right corner, our own design, with lilac ink crawling across it whenever it writes and a small pen glyph that ticks a count of answers (1, 2, 3...). At L48 a second inset, the lilac diary, appears beside it with the same words crawling in both. Frame 1 is the blue diary itself, close, ink crawling.
 - **The 3 to 5 example montage (L03 to L15, 3 to 24 s):** the two diaries and Grandma's "only as a set" (L03 to L05), mine blank for years (L06), door slams and the car (L09), then the ink crawling in her hand (L10 to L13) with her days in it: she hates her job (L14), she dented the car (L15).
@@ -40,7 +40,7 @@ Kept clear of ep86 (the batch's other reversal): there the "intruder" is me, alo
 - **First real scare:** L32 to L38 (45 to 56 s): "I can HEAR you", "I know you're in the house", "please leave me alone", "I'm going to find you", and a lamp clicks on down the hall.
 - **The climax turns the rule's own logic:** whatever you write in one shows in the other, so the one thing I'd never say out loud (L60, "I miss my SISTER") is already in hers, and hers is already in mine (L63). No new magic.
 - **Twist and reveal (L46 to L57, 67 to 86 s):** said plainly. "Grandma's diaries are a PAIR. / Whatever you write in one / shows up in the OTHER." "It was ME. And mine was HER. / We were each other's GHOST."
-- **How the last 15 seconds turn over the first line:** we write dumb notes all day now, but last night a third hand wrote under both our lines. Grandma made three (L69 to L73). The last line ("So careful what you WRITE.") runs into L01, and "tonight it wrote about YOU" now means the third writer.
+- **How the last 15 seconds turn over the first line:** we write dumb notes all day now, but last night a third hand wrote under both our lines. Grandma made three (L69 to L73). The last line ("So careful what you WRITE.") runs into L01, and "Tonight it wrote about YOU" now means the third writer.
 - **The plants a rewatch catches:**
   1. L05: Grandma said they only work as a set.
   2. L12: "The same DAY / they happened" (it's live).
@@ -194,7 +194,7 @@ One plant, a plain tally: two lilac strokes scratched inside the brass clasp of 
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: My sister's diary / answers BACK. / And tonight / it wrote about YOU.
+- L01: You can't READ / my sister's diary. / It writes BACK. / Tonight it wrote / about YOU.
 - L02: And it knows / you're READING.
 - L03: Years ago, / Grandma gave us / matching DIARIES.
 - L04: Nina's is LILAC. / Mine is BLUE.
@@ -273,7 +273,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L72: We still don't know / who has / the other ONE.
 - L73: So careful / what you WRITE.
 
-(Loop: L73 runs straight into L01: "So careful what you write. My sister's diary answers back. And tonight it wrote about you.")
+(Loop: L73 runs straight into L01: "So careful what you write. You can't read my sister's diary. It writes back. Tonight it wrote about you.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: none.

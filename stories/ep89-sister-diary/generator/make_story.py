@@ -713,7 +713,7 @@ story = {
     "cues": cues,
     "shotlook": SHOTLOOK,
     "fx": [],
-    "rev": 6,
+    "rev": 7,
     "music": {"root": 51, "mode": "major", "bpm": 100, "seed": 89, "sections": [
         {"at": 0, "voices": ["musicbox", "pulse"], "energy": 0.35},
         {"at": "L21", "voices": ["piano", "drone"], "energy": 0.4, "mode": "minor"},
@@ -723,7 +723,7 @@ story = {
         {"at": "L49", "voices": ["pad", "piano", "musicbox"], "energy": 0.55, "mode": "major"},
         {"at": "L69", "voices": ["drone"], "energy": 0.4, "mode": "minor"}]},
     "sound": {
-        "floor": "wood", "steps_db": -26, "rev": 6,
+        "floor": "wood", "steps_db": -26, "rev": 7,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -40},
                      {"kind": "crickets", "from": "L21", "to": "L48", "lufs": -46}],
         "sfx": [{"at": "L01.3+0.05", "kind": "hit", "db": -7},

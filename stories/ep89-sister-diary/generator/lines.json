@@ -4,20 +4,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "My sister's diary",
-    "My sister's diary"
+    "You can't READ",
+    "You can't read"
    ],
    [
-    "answers BACK.",
-    "answers back."
+    "my sister's diary.",
+    "my sister's diary."
    ],
    [
-    "And tonight",
-    "And tonight"
+    "It writes BACK.",
+    "It writes back."
    ],
    [
-    "it wrote about YOU.",
-    "it wrote about you."
+    "Tonight it wrote",
+    "Tonight it wrote"
+   ],
+   [
+    "about YOU.",
+    "about you."
    ]
   ]
  },

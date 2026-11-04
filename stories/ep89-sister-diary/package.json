@@ -5,7 +5,7 @@
   "made_for_kids": false,
   "cover_s": 69.9,
   "shape": "each-others-ghost",
-  "opening": "confess",
+  "opening": "must",
   "lane": "core",
   "hold": "batch 8: scripts only, not built yet"
 }
