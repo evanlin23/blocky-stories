@@ -205,6 +205,9 @@ POSES = {
                  # not as a black hair-piece (the critic's round 1)
                  "body_key": [1.1, 0.7, 1.7], "body_aim": [-0.45, 2.4, 2.0], "body_gain": 1.3},
 }
+# the arms coming down over L31 (S36): the same pose with the hands higher, swapped on the cuts
+POSES["over_bed_hi"] = {**POSES["over_bed"], "hands": {"-1": [-0.3, 2.05, 1.35], "1": [0.35, 2.15, 1.3]}}
+POSES["over_bed_mid"] = {**POSES["over_bed"], "hands": {"-1": [-0.2, 2.2, 1.0], "1": [0.28, 2.3, 0.95]}}
 
 
 def _ss(x):
