@@ -6,9 +6,9 @@ Dropped at the creature test (build step 1). Three tries at most, none passed.
 |---|---|---|---|
 | 1 | 3 | 3 | no, no |
 | 2 | 4 | 4 | no, no |
-| 3 | not waited for | 4 | no (B) |
+| 3 | 4 | 4 | no, no |
 
-Both critics must score 7+ and call it frightening; critic B's 4 on try 3 closes it.
+Both critics must score 7+ and call it frightening; Try 3 scored 4 and 4.
 
 ## Open must-fixes (the same notes came back every try)
 - The thin body reads as a toy or clothespin, not eerie: a big head on a rail gets "bobblehead on stilts".
