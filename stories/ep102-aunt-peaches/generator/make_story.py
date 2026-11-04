@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 6
+REV = 8
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -369,7 +369,7 @@ shot("L20.1", mv([QX + 3.6, 12.0, 1.9], [QX, 0.5, 0.9], 30, [QX + 3.0, 10.0, 1.8
 # ===================================================================== 05 the gate (L21 to L26)
 sit("me", "L21", False)
 cue("L21", "lane", v=1.0)
-look("L21", "dusk")
+look("L21", "duskgate")
 only("L21", ["clem"])
 move("L21", "mecar", x=0.0, y=-15.6, z=0.0, yaw=180.0)
 move("L21", "gateleaf", yaw=0.0)
@@ -385,8 +385,10 @@ put("clem", "L21.2+0.5", [0.0, -8.7, 0.0], 0, expr="relieved" if False else "war
 put("me", "L22", [1.6, -10.0, 0.0], 180, expr="worried", arms=[60, 0])
 acting["me"].append({"from": "L22", "to": "L22>", "mouth": [0.2, 0.6]})
 shot("L22", fr(0.0, -8.7, 1.85, 4.2, 54, dx=0.4), "clemclose")
+look("L22.1", "duskrev")
 shot("L22.1", mv([3.8, -6.0, 1.7], [1.6, -10.0, 1.4], 40, [3.4, -6.4, 1.7], [1.6, -10.0, 1.4], 40), "grippost")
 # L23: the warning's backwards
+look("L23", "duskgate")
 beat("clem", "L23", head=[18, 0])
 beat("clem", "L23+0.35", head=[-18, 0])
 beat("clem", "L23+0.7", head=[16, 0])
@@ -404,13 +406,15 @@ beat("b3", "L24.1+0.5", arms=[0, 120])
 beat("b4", "L24.1+0.5", arms=[120, 0])
 shot("L24.1", mv([GX - 3.0, GY - 12.0, 3.0], [GX - 0.2, GY + 7.0, 4.6], 34, [GX - 2.4, GY - 11.0, 3.2], [GX - 0.2, GY + 7.0, 4.6], 34), "roofwave")
 # L25: the reveal picture
+look("L25", "duskrev")
 move("L25", "gateleaf", yaw=98.0)
 move("L25", "mecar", y=-11.6)
 move("L25", "pc3", x=-1.4, y=-6.5, z=1.6)
 only("L25", ["clem"])
 put("clem", "L25", [-0.9, -7.0, 0.0], 180, expr="warm", arms=[0, 80])
-shot("L25", mv([-0.6, -2.4, 1.75], [-1.1, -7.0, 1.6], 32, [-0.7, -2.9, 1.75], [-1.1, -7.0, 1.6], 32), "reveal")
+shot("L25", mv([-0.2, -2.3, 1.75], [-1.0, -7.3, 1.5], 29, [-0.3, -2.8, 1.75], [-1.0, -7.3, 1.5], 29), "reveal")
 # L26: forgot you more
+look("L26", "duskgate")
 move("L26", "pc3", z=-60.0)
 only("L26", [])
 cue("L26", "sill", n=12.0)

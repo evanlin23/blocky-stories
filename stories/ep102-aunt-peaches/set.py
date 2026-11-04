@@ -33,7 +33,7 @@ def kit_col(h):
 
 def _L(**kw):
     base = dict(sun=3.6, sun_col="#fff0d8", el=48.0, az=205.0, fill=0.9, fill_col="#fff0e0", sky="#7ec8ff",
-                sky_str=1.0, front=0.6)
+                sky_str=1.0, front=0.6, front_col="#ffd2ae", front2=0.0)
     base.update(kw)
     return base
 
@@ -44,6 +44,11 @@ LOOKS = {
     "morn": _L(sun=3.0, sun_col="#ffe0b0", el=24.0, az=215.0, fill=1.0, fill_col="#ffe6d0", sky="#a8d8ff", front=0.9),
     "dusk": _L(sun=2.3, sun_col="#ffc890", el=11.0, az=200.0, fill=2.0, fill_col="#e8eeff", sky="#ffc49a", sky_str=0.9,
                front=2.6),
+    # the gate beats: sunset stays on sky and ground, a near-white key holds skin and clothes true
+    "duskgate": _L(sun=1.0, sun_col="#ffe2c8", el=11.0, az=200.0, fill=2.4, fill_col="#fffaf4", sky="#ffc49a",
+                   sky_str=0.55, front=4.2, front_col="#fffdf8"),
+    "duskrev": _L(sun=1.0, sun_col="#ffe2c8", el=11.0, az=200.0, fill=2.4, fill_col="#fffaf4", sky="#ffc49a",
+                  sky_str=0.55, front=0.8, front_col="#fffdf8", front2=4.2),
 }
 
 
@@ -208,6 +213,9 @@ def build(kit, story, tl):
     front = kit.light("front", "SUN", (-10, -30, 20), 1.0, "#ffd2ae", shadow=False)
     front.data.angle = 0.4
     kit.aim(front, (0, 0, 0))
+    front2 = kit.light("front2", "SUN", (10, 30, 20), 1.0, "#fffdf8", shadow=False)
+    front2.data.angle = 0.4
+    kit.aim(front2, (0, 0, 0))
     for nm, c, z in (("room", G.ROOM, 2.6), ("kit", G.KIT, 2.8), ("bus", G.BUS, 2.6)):
         kit.light(nm, "POINT", (c[0], c[1] - 2.0, z), 220.0, "#ffe6c0", size=0.5, shadow=False)
 
@@ -616,7 +624,9 @@ def animate(kit, story, tl, t, ctx):
     kit.aim(so, (0, 0, 0))
     kit.LIGHTS["sun"]["light"].color = look["sun_col"]
     kit.LIGHTS["fill"]["light"].color = look["fill_col"]
+    kit.LIGHTS["front"]["light"].color = look["front_col"]
     gains["sun"], gains["fill"], gains["front"] = look["sun"], look["fill"], look["front"]
+    gains["front2"] = look["front2"]
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (*look["sky"], 1.0)
