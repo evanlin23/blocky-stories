@@ -1,0 +1,88 @@
+name: render-assemble
+description: Finish one story's film from its drawn shards and the narration, mix, flash-measure and keep it as the artifact film-<story> (used by render.yml's assemble-a and assemble-b). Needs GH_TOKEN in the job env.
+inputs:
+  story: {description: story folder, required: true}
+  reuse: {description: 'JSON {shard: artifact id} of shards an earlier run drew (plan_renders.py reuse_a/reuse_b); downloaded with GH_TOKEN', default: '{}'}
+runs:
+  using: composite
+  steps:
+  - uses: actions/setup-python@v5
+    with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+  - run: sudo apt-get update -q && sudo apt-get install -yq ffmpeg espeak-ng
+    shell: bash
+  - run: pip install -r requirements.txt -r requirements-tts.txt --extra-index-url https://download.pytorch.org/whl/cpu
+    shell: bash
+  - uses: actions/cache@v4
+    with: {path: ~/.cache/huggingface, key: hf-kokoro-v1}
+  - uses: actions/download-artifact@v4
+    continue-on-error: true   # none match when every shard was drawn by an earlier run; "every frame must be there" below still checks
+    with:
+      pattern: frames-${{ inputs.story }}-*
+      path: out/work/${{ inputs.story }}/frames
+      merge-multiple: true
+  - name: shards an earlier run drew (same story commit, not expired)
+    shell: bash
+    env: {REUSE: "${{ inputs.reuse }}", REPO: "${{ github.repository }}"}
+    run: python scripts/fetch_shards.py "${{ inputs.story }}"
+  - uses: actions/download-artifact@v4
+    with: {name: "voice-${{ inputs.story }}", path: .}
+  - name: every frame must be there
+    shell: bash
+    run: |
+      S=${{ inputs.story }}
+      python -m blocky timeline $S
+      # count drawings, not frames: a shot on twos draws every other frame (finish holds it over the next)
+      python scripts/check_drawings.py $S out/work/$S/frames
+  - name: finish and mix (with the narration the picture was drawn to)
+    run: |
+      S=${{ inputs.story }}
+      python -m blocky timeline $S
+      python -m blocky finish $S
+      python -m blocky mix $S
+    shell: bash
+  - name: flash measure
+    id: flash
+    run: |
+      S=${{ inputs.story }}
+      set +e; python -m blocky flash $S; echo "code=$?" >> "$GITHUB_OUTPUT"
+    shell: bash
+  - name: cover frame
+    run: |
+      S=${{ inputs.story }}
+      SLUG=$(python -c "import json;print(json.load(open('stories/$S/story.json')).get('slug','$S'))")
+      python - "$S" "$SLUG" <<'PY'
+      import json, subprocess, sys
+      from pathlib import Path
+      s, slug = sys.argv[1], sys.argv[2]
+      pkg = Path(f"stories/{s}/package.json")
+      cover = json.loads(pkg.read_text()).get("cover_s") if pkg.exists() else None
+      dur = json.loads(Path(f"out/work/{s}/timeline.json").read_text())["duration"]
+      t = float(cover) if cover is not None else round(dur * 0.78, 2)   # default: near the reveal
+      subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", f"{t:.2f}", "-i", f"out/{slug}.mp4",
+                      "-frames:v", "1", "-q:v", "3", f"out/{slug}.cover.jpg"], check=True)
+      Path(f"out/{slug}.cover.txt").write_text(f"{t:.2f}\n")
+      PY
+    shell: bash
+  - name: keep the film
+    uses: actions/upload-artifact@v4
+    with:
+      name: film-${{ inputs.story }}
+      path: |
+        out/*.mp4
+        out/*.contact.png
+        out/*.cover.jpg
+        out/*.cover.txt
+        out/*.flash.json
+        out/work/${{ inputs.story }}/mix.json
+      retention-days: 90
+      compression-level: 0
+  - name: flash result
+    run: |
+      if [ "${{ steps.flash.outputs.code }}" != "0" ]; then
+        echo "::error::the film fails the flash bar; it's kept as the film artifact but won't be uploaded. Redraw the shots the flash report names."
+        exit 1
+      fi
+      echo "film-${{ inputs.story }} is ready for the daily upload"
+
+
+    shell: bash
