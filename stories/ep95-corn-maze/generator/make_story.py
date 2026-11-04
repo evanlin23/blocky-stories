@@ -434,7 +434,7 @@ story = {
     "fade_out": False,
     "look": {"style": "closer", "flash_safe": True, "fog": "#0a1233", "fog_density": 0.0, "fog_start": 500.0, "sky": "#0a1233",
              "exposure": 0.3,
-             "polish": {"hold": ["S34"], "twist": "L33", "reveal": ["L33", "L34"],
+             "polish": {"hold": ["S34"], "punch_rate": 0.5, "twist": "L33", "reveal": ["L33", "L34"],
                         "emph": ["L01.2", "L10.2", "L24", "L25.1", "L27.2", "L33", "L34", "L38.2", "L40.1", "L49.1"],
                         "sway": ["S22", "S23a", "S24", "S25a", "S25b", "S26", "S28a", "S28b", "S29a", "S29b", "S29c", "S29d", "S29e"]}},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.0, 0.0, 0.0], "saturation": 1.05, "contrast": 1.05,

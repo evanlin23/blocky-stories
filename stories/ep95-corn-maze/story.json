@@ -27,6 +27,7 @@
    "hold": [
     "S34"
    ],
+   "punch_rate": 0.5,
    "twist": "L33",
    "reveal": [
     "L33",
