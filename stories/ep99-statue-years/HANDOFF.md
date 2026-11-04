@@ -19,3 +19,4 @@ Earlier: dropped after the 2-round review cap.
 - Round 1: critic revise (avg 6.7, 9 must-fixes), standards revise (title, cover spoiler, hold). Writer and builder fixed all of them.
 - Two container restarts interrupted the reviews and the fix round. Both were re-run.
 - The calm opening was cancelled by the orchestrator (the owner wants the swoosh). The polish pack's opening is as the pack makes it.
+- PR #259 opened; proof run 41848449860 drawing (voice job started 14:32 UTC, 8:32 AM Central).
