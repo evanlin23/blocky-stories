@@ -141,14 +141,14 @@ scene(0, bev=dict(pos=(*BEV_D, 0), yaw=180, expr="laugh", tremble=3, arms=[8, 8]
 num(0, "b1", 17)
 num(0, "b2", 3)
 bh = H(BEV_D[0], BEV_D[1])
-S(0, C((bh[0], bh[1], 1.85), 1.15, 180, 4), note="S01a Bev mid-laugh with 492 over her head, close")
+S(0, C((bh[0] + 0.22, bh[1], 1.85), 1.15, 180, 4), note="S01a Bev mid-laugh with 492 over her head, close")
 S("L01.2", C((bh[0] + 0.1, bh[1], 2.0), 0.95, 168, 6, w2=0.85), note="S01b her number, close, punch in")
 S("L02", C((-0.0, -2.7, 1.9), 2.2, 180, 4, w2=2.0), note="S02a two bowlers' heads, numbers over each")
 S("L02.2", C((bh[0], bh[1], 1.9), 1.2, 195, 5, w2=1.05), note="S02b Bev again, laughing, number over her")
 S("L02.3", C((bh[0] - 0.1, bh[1], 1.9), 1.0, 150, 4), note="S02c Bev, profile, laughing")
 
 # ---------------------------------------------------------------------------- the rule at work (L03 to L10)
-scene("L03", me=dict(pos=(-0.6, -0.5, 0), yaw=180, expr="blank"), bev=dict(pos=(0.9, -0.7, 0), yaw=180, expr="laugh",
+scene("L03", me=dict(pos=(-0.55, -0.5, 0), yaw=-35, expr="blank"), bev=dict(pos=(0.45, -0.7, 0), yaw=35, expr="laugh",
       tremble=3), b1=dict(pos=(-2.6, -0.6, 0), yaw=180, expr="grin"), b2=dict(pos=(2.6, -0.4, 0), yaw=180,
                                                                               expr="laugh"),
       lanefour=dict(pos=(5.2, -0.5, 0), yaw=180, expr="laugh"))
@@ -159,6 +159,8 @@ num("L03", "b2", 3)
 num("L03", "lanefour", "9,000")
 S("L03", [[0, [0.0, -6.6, 2.5], [0, 9.0, 1.4], 26], [1, [0.0, -5.4, 2.3], [0, 9.0, 1.4], 26]], hand=0.004,
   note="S03 wide: the alley, neon on, league night, everyone's numbers glowing")
+raw("me", "L03.2", yaw=180, blend=0.2)
+raw("bev", "L03.2", yaw=180, blend=0.2)
 S("L03.2", [[0, [-1.2, -1.6, 1.7], [-0.5, 6.0, 1.3], 26], [1, [-0.6, -1.2, 1.7], [0.2, 6.0, 1.3], 26]],
   note="S03b low behind the bowlers toward the lanes")
 scene("L04", me=dict(pos=(0.0, -2.6, 0), yaw=180, expr="blank", head=[0, 6]), b1=dict(pos=(-1.8, -5.0, 0), yaw=180,
@@ -192,9 +194,11 @@ num("L11", "me", 0)
 S("L11", C((0.0, -2.6, 1.9), 1.05, 180, 4), note="S11 my number over my head: 0")
 scene("L12", me=dict(pos=(0.0, 0.6, 0), yaw=180, expr="worried", lean=14, arms=[10, 25], blend=0.3))
 num("L12", "me", 0)
-S("L12", C((0.0, 0.6, 1.7), 1.5, 180, 5, w2=1.4), note="S12a me tripping on the approach, wince")
-cue("L12.2", "shoe", dur=0.9, x0=0.15, y0=0.9, z0=0.1, x1=0.9, y1=3.2, z1=0.1, lift=1.6)
-S("L12.2", C((0.3, 1.8, 1.0), 2.6, 160, 12), note="S12b my shoe flying off")
+S("L12", C((0.0, 0.6, 1.7), 1.5, 180, 5, w2=1.4), note="S12a me on the approach, wince")
+S("L12.2", C((0.3, 0.6, 1.9), 2.0, 180, 5), note="S12b about to go")
+raw("me", "L12.3", pos=[0.1, 0.95, 0.0], lean=-34, expr="wide", blend=0.3, arms=[45, 45], head=[0, 0])
+cue("L12.3+0.1", "shoe", dur=0.9, x0=0.1, y0=0.95, z0=0.1, x1=0.9, y1=3.6, z1=0.1, lift=1.6)
+S("L12.3", C((0.3, 1.0, 1.7), 1.55, 160, 6, w2=1.45), note="S12c the trip itself, shoe flying off")
 # ---------------------------------------------------------------------------- Bev (L13 to L18)
 scene("L13", bev=dict(pos=(0.8, -1.2, 0), yaw=180, expr="grin", arms=[20, 8], tremble=1.5), me=dict(pos=(-0.8, -1.2, 0),
       yaw=180, expr="blank"))
@@ -248,9 +252,10 @@ S("P01", C((0.0, 2.3, 0.4), 1.4, 178, 55, w2=1.25), note="the drop: my face on t
 scene("L23", me=dict(pos=(0.0, 3.6, 0.23), yaw=180, expr="wide", lean=-90, blink=False),
       bev=dict(pos=(0.2, 0.7, 0), yaw=180, expr="laugh", tremble=4, lean=12, arms=[12, 12], head=[0, -8]))
 S("L23", C((0.0, 2.3, 0.4), 1.2, 180, 56, w2=1.1), note="S23a my face, stunned")
-S("L23+0.9", C((0.2, 0.7, 1.7), 1.5, 195, 8), note="S23b Bev's number unmoved as she laughs")
-S("L24", C((0.1, 1.5, 0.78), 2.1, 180, 33, w2=1.95), hold=True, note="S24 the reveal: me flat, 0 glowing, Bev doubled over, 492")
-S("L24.2", C((0.2, 0.7, 1.7), 1.5, 200, 8, w2=1.4), note="S24b Bev, ELSE")
+raw("me", "L24", head=[0, 60], blend=0.2)
+raw("bev", "L24", pos=[-0.75, 0.7, 0.0], blend=0)
+S("L24", C((-0.3, 2.0, 1.64), 2.3, 180, 27, w2=2.25), hold=True, note="S24 the reveal: me flat, 0 glowing, Bev doubled over, 492")
+S("L24.2", C((-0.65, 0.7, 1.7), 1.5, 200, 8, w2=1.4), note="S24b Bev, ELSE")
 # ---------------------------------------------------------------------------- the rule read right (L25 to L31)
 scene("L25", earl=dict(pos=(*EARL, 0), yaw=180, expr="angry"), b1=dict(pos=(-5.2, -6.2, 0), yaw=0, expr="laugh",
       tremble=4), b2=dict(pos=(-6.1, -5.4, 0), yaw=0, expr="laugh", tremble=4), wait=dict(pos=(-4.4, -5.0, 0), yaw=0,
@@ -320,14 +325,14 @@ S("L39", C((0.4, 1.0, 1.1), 1.9, 180, 8), note="S39a Bev slipping")
 put("bev", "L39.1", (0.0, 1.9, 0.23), 180, "wide", lean=-90, blend=0.1, blink=False)
 S("L39.1", C((0.0, 0.8, 0.4), 1.7, 180, 55, w2=1.6), note="S39b flat on her back, exactly like me")
 scene("L40", me=dict(pos=(-0.5, 1.0, 0), yaw=180, expr="laugh", tremble=5, lean=24, arms=[10, 10]),
-      bev=dict(pos=(0.0, 1.9, 0.23), yaw=180, expr="wide", lean=-90, blink=False))
+      bev=dict(pos=(0.9, 1.9, 0.23), yaw=180, expr="wide", lean=-90, blink=False))
 num("L40", "me", 0)
 num("L40", "bev", 499)
 cue("L40", "lore", on=True)
-S("L40", C((-0.85, 1.0, 1.5), 1.75, 180, 2, w2=1.6), hold=True, note="S40 me laughing so hard, bent over; the ball return behind me")
+S("L40", C((-0.4, 1.0, 1.8), 2.3, 180, 4, w2=2.2), hold=True, note="S40 me laughing so hard, bent over; the ball return behind me")
 cue("L41", "gray", g=0.0, dur=2.2)
 count("bev", "L41", 2.0, 499, 0, 14)
-raw("bev", "L41", expr="laugh", blend=0.1, tremble=4)
+raw("bev", "L41", pos=[0.0, 1.9, 0.23], expr="laugh", blend=0.1, tremble=4)
 S("L41", C((0.0, 0.8, 0.4), 1.6, 180, 55), note="S41a her number rolling down 499, 300, 50, 0")
 S("L41.2", [[0, [0.35, 7.0, 0.55], [0.0, 18.4, 0.4], 26], [1, [0.2, 10.0, 0.5], [0.0, 18.4, 0.4], 26]],
   note="S41b her ball rolling slowly down the lane; color flooding back into her sleeves")
@@ -337,7 +342,6 @@ scene("L42.0+0.4", bev=dict(pos=(0.0, 1.9, 0.23), yaw=180, expr="laugh", tremble
       me=dict(pos=(-1.1, 0.7, 0), yaw=180, expr="laugh", tremble=5, lean=24))
 num("L42.0+0.4", "bev", 0)
 num("L42.0+0.4", "me", 0)
-S("L42.0+0.4", C((0.0, 0.8, 0.4), 1.7, 180, 55), note="S42b Bev on the floor, joy")
 # ---------------------------------------------------------------------------- warm turn and loop
 cue("L43", "ball", mode="off")
 scene("L43", bev=dict(pos=(0.8, 3.6, 0.23), yaw=180, expr="laugh", tremble=4, lean=-90, blink=False),
@@ -345,12 +349,12 @@ scene("L43", bev=dict(pos=(0.8, 3.6, 0.23), yaw=180, expr="laugh", tremble=4, le
 num("L43", "bev", 0)
 num("L43", "me", 0)
 S("L43", C((0.0, 1.55, 0.4), 2.9, 180, 58, w2=2.7), note="S43 Bev and me both on our backs on the lane, laughing")
-scene("L44", bev=dict(pos=(-0.7, -2.0, 0), yaw=150, expr="grin", arms=[75, 75]), me=dict(pos=(0.7, -2.0, 0), yaw=210,
+scene("L44", bev=dict(pos=(-0.45, -2.0, 0), yaw=150, expr="grin", arms=[75, 75]), me=dict(pos=(0.45, -2.0, 0), yaw=210,
       expr="smile"))
 num("L44", "bev", 0)
 num("L44", "me", 0)
 cue("L44", "shoes", on=True)
-S("L44", C((0.0, -1.7, 1.75), 2.3, 180, 6, w2=2.1), note="S44 Bev handing me bowling shoes on flat palms")
+S("L44", C((0.0, -1.7, 1.75), 1.6, 180, 6, w2=1.5), note="S44 Bev handing me bowling shoes on flat palms")
 cue("L45", "shoes", on=False)
 scene("L45", me=dict(pos=(0.0, -2.0, 0), yaw=180, expr="smile"))
 put("me", "L45+0.1", (0.0, -1.9, 0), 180, "smile")
@@ -363,11 +367,11 @@ S("L46", C((0.0, -2.0, 1.9), 1.05, 180, 5), note="S46a my number: 3")
 scene("L46.1", bev=dict(pos=(*BEV_D, 0), yaw=180, expr="laugh", tremble=3, arms=[8, 8]))
 cue("L46.1", "gray", g=GRAY0, dur=0.1)
 num("L46.1", "bev", 492)
-S("L46.1", C((bh[0], bh[1], 1.85), 1.15, 180, 4, w2=1.05), note="S46b push in on Bev mid-laugh (S01a framing). Loop")
+S("L46.1", C((bh[0] + 0.22, bh[1], 1.85), 1.15, 180, 4, w2=1.05), note="S46b push in on Bev mid-laugh (S01a framing). Loop")
 
 look = {"fog": "#dff4ff", "fog_density": 0.0, "fog_start": 40.0, "sky": "#dff4ff", "sky_strength": 1.0,
         "exposure": 0.0, "flash_safe": True, "style": "closer",
-        "polish": {"reveal": ["L24"], "twist": "L23", "quiet": [["L43", "L45"]], "hold": ["S03", "S24", "S40"],
+        "polish": {"reveal": ["L24"], "twist": "L23", "quiet": [["L43", "L45"]], "hold": [x["id"] for x in shots if x["note"].split()[0] in ("S03", "S24", "S40")],
                    "camera": True, "idle": True, "ease": True}}
 story = {
     "slug": "ep111-laugh-count",
@@ -396,9 +400,9 @@ story = {
     "shots": shots,
     "acting": acting,
     "cues": cues,
-    "asr_forgive": ["hers", "his", "four", "four's", "mine has", "bowl", "sighed", "then", "thousand", "four ninety two", "four ninety eight", "four ninety nine"],
+    "asr_forgive": ["hers", "his", "four", "four's", "mine has", "bowl", "sighed", "and sighed", "then", "thousand", "four ninety two", "four ninety eight", "four ninety nine"],
     "set_moves": [],
-    "clip_ok": ["rim", "S01", "S29"],
+    "clip_ok": ["rim", "S01"] + [x["id"] for x in shots if x["note"].split()[0] == "S20a"],
     "music": {"root": 53, "mode": "major", "bpm": 120, "seed": 111,
               "sections": [
                   {"at": 0, "voices": ["bubble", "pulse", "pluck_hi"], "energy": 0.6},
@@ -431,6 +435,6 @@ if vt.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(e["at"]))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 1
+story["rev"] = 10
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")

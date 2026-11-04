@@ -200,8 +200,8 @@ def build_alley(kit, ctx):
     for hx in (-1.3, 1.3):
         B(None, (0.58, 1.0, 0.46), (hx, -0.2, 0.23), M("#d9e1e8", 0.2), "hood", 0.04)
         CY(None, 0.3, 0.9, (hx, -0.2, 0.46), M("#e6eef4", 0.18), "hoodtop", rot=(math.pi / 2, 0, 0), n=20)
-    B(None, (0.02, 0.012, 0.16), (-1.38, 0.31, 0.3), P(CORAL, 0.4), "tally", 0.002)
-    B(None, (0.02, 0.012, 0.16), (-1.28, 0.31, 0.3), P(CORAL, 0.4), "tally", 0.002)
+    B(None, (0.03, 0.012, 0.24), (-1.4, 0.31, 0.3), P(CORAL, 0.4), "tally", 0.002)
+    B(None, (0.03, 0.012, 0.24), (-1.26, 0.31, 0.3), P(CORAL, 0.4), "tally", 0.002)
     # scoring desk where Bev stands, with a rail
     B(None, (2.0, 0.7, 0.95), (-3.0, -3.0, 0.475), P("#35c9bd", 0.4), "desk", 0.02)
     B(None, (2.1, 0.8, 0.06), (-3.0, -3.0, 0.97), P("#fbfbf8", 0.3), "desktop", 0.02)
@@ -258,7 +258,7 @@ def place_tag(tg, ctx, cl, cq, who, v, hidden):
         return
     hide(tg.piv, False)
     neck = ch.neck.matrix_world.translation
-    top = V((neck.x, neck.y, neck.z + 0.72))
+    top = V((neck.x, neck.y, neck.z + (0.9 if who == 'bev' else 0.72)))
     if neck.z < 0.9:      # lying down: lift the number along the screen's up so it never sits on the face
         top = V(neck) + (cq @ V((0, 1, 0))) * 0.85 + V((0, 0, 0.1))
     tg.piv.location = top
@@ -316,12 +316,27 @@ def place_cam_tag(ctx, lens, v, on):
 
 
 # ---------------------------------------------------------------------------------------------- props on the cast
+def shoe_model(col, k=1.0):
+    """A bowling shoe: dark sole, coloured upper and toe, cream heel patch, white laces, tongue; long axis y (toe +y)."""
+    e = K.kit.empty(nm("shoe"), (0, 0, 0), None)
+    sole = P("#2b2b33", 0.6)
+    cream = P("#fbf6e6", 0.4)
+    B(e, (0.13 * k, 0.34 * k, 0.03 * k), (0, 0, 0.015 * k), sole, "sole", 0.008)
+    B(e, (0.12 * k, 0.2 * k, 0.09 * k), (0, -0.05 * k, 0.075 * k), P(col, 0.45), "upper", 0.02)
+    B(e, (0.12 * k, 0.12 * k, 0.06 * k), (0, 0.1 * k, 0.06 * k), P(col, 0.45), "toe", 0.025)
+    B(e, (0.125 * k, 0.07 * k, 0.07 * k), (0, -0.13 * k, 0.065 * k), cream, "heel", 0.015)
+    B(e, (0.07 * k, 0.1 * k, 0.02 * k), (0, 0.0, 0.125 * k), cream, "tongue", 0.006)
+    for i in range(3):
+        B(e, (0.1 * k, 0.018 * k, 0.012 * k), (0, (0.03 + 0.035 * i) * k - 0.02 * k, 0.138 * k), P("#ffffff", 0.4),
+          "lace", 0.003)
+    return e
+
+
 def build_props(kit, ctx):
     red, blue = P("#e0443a", 0.5), P("#3c78e6", 0.5)
     ctx["ball"] = kit.sphere(nm("ball"), 0.115, (0, 0, 0.115), P("#ff5fa2", 0.12, 0.9), None, 20)
-    ctx["shoe"] = B(None, (0.12, 0.3, 0.1), (0, 0, 0), red, "flyshoe", 0.03)
-    ctx["shoes"] = [B(None, (0.14, 0.32, 0.11), (0, 0, 0), red, "pairshoe", 0.03),
-                    B(None, (0.14, 0.32, 0.11), (0, 0, 0), blue, "pairshoe", 0.03)]
+    ctx["shoe"] = shoe_model("#e0443a", 1.0)
+    ctx["shoes"] = [shoe_model("#e0443a", 1.6), shoe_model("#3c78e6", 1.6)]
     earl = rig.CHARS.get("earl")
     if earl:
         B(earl.P["arm1"], (0.55, 0.55, 1.0), (0, -0.7, -1.95), P("#2fe0d0", 0.3), "can", 0.1)
@@ -330,6 +345,14 @@ def build_props(kit, ctx):
     ctx["covers"] = []
     if bev:
         gm = P("#9a9a9a", 0.6)
+        # open the lenses: hide the opaque glass and ring each eye with a thin frame so her eyes show
+        fr = P("#ff5fa2", 0.4)
+        for ob in list(bpy.data.objects):
+            if ob.name.startswith("bev.gl") and not ob.name.startswith("bev.glf") and not ob.name.startswith("bev.glb"):
+                ob.hide_render = True
+                l = ob.location
+                for dx, dz, sx, sz in ((0, -0.16, 0.46, 0.04), (-0.21, 0, 0.04, 0.32), (0.21, 0, 0.04, 0.32)):
+                    kit.box(nm("glring"), (sx, 0.04, sz), (l.x + dx, l.y - 0.01, l.z + dz), fr, ob.parent)
         for k in ("arm-1", "arm1"):
             c = B(bev.P[k], (1.03, 1.05, 1.0), (0, 0, -1.5), gm, "gray", 0.04)
             ctx["covers"].append(c)
@@ -398,12 +421,12 @@ def animate(kit, story, tl, t, ctx):
     fs = ctx["shoe"]
     if sh and 0 <= t - sh["t"] < sh["dur"] + 0.6:
         u = min(1.0, (t - sh["t"]) / sh["dur"])
-        fs.hide_render = False
+        hide(fs, False)
         fs.location = (lerp(sh["x0"], sh["x1"], u), lerp(sh["y0"], sh["y1"], u),
                        sh["z0"] + sh["lift"] * 4 * u * (1 - u) + 0.05)
         fs.rotation_euler = (u * 5.0, u * 3.0, u * 2.0)
     else:
-        fs.hide_render = True
+        hide(fs, True)
     # ---- pins
     pc = cue_at(tl, "pins", t)
     for e, x, y, i in ctx["pins"]:
@@ -419,8 +442,8 @@ def animate(kit, story, tl, t, ctx):
     sc = cue_at(tl, "shoes", t).get("on", False)
     bev = rig.CHARS.get("bev")
     for i, o in enumerate(ctx["shoes"]):
-        o.hide_render = not sc
+        hide(o, not sc)
         if sc and bev:
-            o.location = (-0.39 + (i - 0.5) * 0.2, -1.46, 1.1)
+            o.location = (-0.14 + (i - 0.5) * 0.26, -1.46, 1.1)
             o.rotation_euler = (0, 0, 0.5)
     return {"camfill": 1.0}
