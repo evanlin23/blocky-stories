@@ -8,10 +8,12 @@
   - **ep110-bless-you's rule** (a sneeze lands you beside whoever thinks of you most) moves people toward love. This rule keeps a whole town away from one named person, and nobody moves anywhere by magic. Nothing here is about who thinks of whom.
   - **ep114-band-green's warmth** (after r1: getting up because the town and Grandpa's knees were paying for my sadness, then calling a friend who moved away). This warmth is owning up: I left my best friend alone on his named day, his birthday, and I say sorry to his face. He's the one who forgives, and he never moved away.
 - **Everyone is an adult.** I'm 24, Dev is 24, Mrs. Odell is 81, the townspeople are adults.
-- **Word count:** 388 spoken words in 48 lines (L01 to L48), all `narrator`, plus one 0.6 s music drop before L17.
+- **Word count:** 389 spoken words in 48 lines (L01 to L48), all `narrator`, plus one 0.6 s music drop before L17.
 - **Estimated length:** about 88.4 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright Saturday: a pastel main street with a bakery, a bus shelter, a park bench and a cafe with a striped awning, blue sky, flower boxes. No dark scene. The eerie note is daylight with nobody near me, and faces at every window.
 - **Hold:** scripts only (batch 11). Not built, not voiced.
+- **Revision (standards r2, 2026-11-04):** L09 now opens "My whole LIFE," (was "Twenty-four YEARS,"). S34 changes only the tag clock's numerals, with no time-lapse light on the picture.
+  - Changed line ids, to re-voice: **L09.** Nothing else moves.
 
 ## Variety table
 The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
@@ -30,13 +32,13 @@ The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
 - **The rule is the clue:** "you can't go near that person all day" first reads as protection from bad luck. After L37 it's the only bad luck there ever was.
 
 ## The story
-- **Premise:** In our town, each morning the kitchen radio reads out one name, and nobody may go near that person all day, because a named day is the worst day of your life and bad luck is catching. In twenty-four years it's never said mine. This Saturday morning, it does. Last spring it named my best friend Dev, on his birthday, and I stayed home like everybody else. We haven't talked since.
+- **Premise:** In our town, each morning the kitchen radio reads out one name, and nobody may go near that person all day, because a named day is the worst day of your life and bad luck is catching. In my whole life it's never said mine. This Saturday morning, it does. Last spring it named my best friend Dev, on his birthday, and I stayed home like everybody else. We haven't talked since.
 - **Rule / hook (L01, about 3 s):** "When the morning radio / says a NAME, / you can't go near that person / all DAY." L02: "This morning, / it said MINE."
 - **The relatable want or fight:** a best friend you let down and never apologized to.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream tag top-left with a radio-dial glyph lit red and a day clock running from 7:00 to midnight (7:02 at L02, 9:40 at L16, 2:00 at L35, 11:59 at L43). Beside it, a little person glyph inside a ring: an empty ring around me while I'm alone, and a second little person glyph appearing inside it at L28 when Dev kneels down.
 - **The 3 to 5 example montage (L05 to L08, 8 to 19 s):** the named baker selling nothing, the named man whose bus didn't stop, the named woman eating lunch alone on her birthday, the named man whose new phone never rang.
-- **A concrete mystery on screen by 15 s:** the radio says my name (L02, the first frame's dial), and I'm 24 and it's never said it before (L09, about 19 s). The threat to me is in L02.
-- **How the narrator is the exception:** never named in twenty-four years, and today, the only one in town nobody will go near.
+- **A concrete mystery on screen by 15 s:** the radio says my name (L02, the first frame's dial), and it's never said it before in my whole life (L09, about 19 s). The threat to me is in L02.
+- **How the narrator is the exception:** never named in my whole life, and today, the only one in town nobody will go near.
 - **The loved one at stake:** my best friend Dev, named "My best friend, DEV." at L21 over a present-day shot of our photo on my fridge.
 - **First real scare (L14 to L19, about 30 to 37 s):** a face in every window on the street, watching me, then my bag tears and a dozen people watch the oranges roll and nobody moves.
 - **The climax turns the rule's own logic:** the town's reason for the rule is that a named day is the worst day of your life and bad luck is catching. Dev stays with me all day, and nothing bad happens to either of us (L34 to L36). So the worst day "of your life" was only ever the day nobody came, and mine isn't one (L42, L43). No new magic.
@@ -137,7 +139,7 @@ Times are estimates at 290 wpm with 0.15 s gaps. Every line gets one to three sh
 | S31 | L31 | Dev, `wry`. |
 | S32 | L32 | Dev's face, close, `calm`. |
 | S33 | L33 | Dev's face, a small shrug. |
-| S34 | L34 | The tag's day clock running fast, 10:00 to 2:00. |
+| S34 | L34 | Dev and me side by side on the sidewalk, the light steady; only the tag clock's numerals change, 10:00 to 2:00. No time-lapse light, no shifting sun or shadows. |
 | S35a, S35b, S35c | L35 | (a) Two coffees on a cafe table. (b) Dev taping my bag. (c) The two of us on the park bench where the woman sat. |
 | S36 | L36 | The two of us walking down the bright street, nothing happening. |
 | S37 | L37 | The reveal picture, held 1.6 s with drift: high wide on the noon street, Dev and me on the bench in the middle of a perfect empty ring, a face at every window. |
@@ -175,7 +177,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L06: It named a guy / at the bus STOP. / His bus / didn't STOP.
 - L07: It named a woman / on her BIRTHDAY. / She ate lunch / on a bench, ALONE.
 - L08: It named a guy / with a new PHONE. / It never rang / ONCE.
-- L09: Twenty-four YEARS, / and it had never / said mine.
+- L09: My whole LIFE, / and it had never / said mine.
 - L10: So I went out / for ORANGES, / like a normal SATURDAY.
 - L11: The bakery line / stepped BACK. / All at ONCE.
 - L12: Everywhere I walked, / the crowd opened UP. / A perfect empty RING.
