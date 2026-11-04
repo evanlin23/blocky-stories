@@ -393,7 +393,7 @@ def build(kit, story, tl):
     B(None, (0.1, 0.1, 1.0), (0.74, -0.05, 0.5 + 0.0), white, "newel", 0.01)
     # the landing: a solid block, a plum runner to my door, the end wall with my door's frame
     B(None, (3.4, 2.38, LAND_Z), (0.9, LAND_Y + 1.19, LAND_Z / 2), floorw, "landing", 0.0)
-    B(None, (0.95, 2.38, 0.012), (0, LAND_Y + 1.19, LAND_Z + 0.006), plum, "landrun", 0.004)
+    B(None, (0.95, 1.95, 0.012), (0, LAND_Y + 0.975, LAND_Z + 0.006), plum, "landrun", 0.004)
     B(None, (0.2, 2.38, CEIL - LAND_Z), (2.7, LAND_Y + 1.19, LAND_Z + (CEIL - LAND_Z) / 2), cream, "landwallE", 0.0)
     B(None, (3.6, 0.2, CEIL - LAND_Z - 2.1), (0.9, 5.0, LAND_Z + 2.1 + (CEIL - LAND_Z - 2.1) / 2), cream, "doorhead", 0.0)
     B(None, (0.4, 0.2, 2.1), (-0.7, 5.0, LAND_Z + 1.05), cream, "wallBL", 0.0)

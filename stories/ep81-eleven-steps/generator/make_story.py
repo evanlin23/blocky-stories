@@ -367,12 +367,12 @@ put("me", "L37>", [0.15, 7.0, LZ + 0.17], 180, "scared", lean=-86, arms=[80, 0],
 # the gap: the Climber folded backwards at its knees, the face on the back of its head upside down at the door
 GAP = dict(yaw=0, k=60.0, stoop=-95.0, al=0, ar=0, hp=0.0, hr=180.0, hipz=0.40, hy=0.0, kx=0.0, ky=1.0, kz=0.03, ax=0.0, ay=0.85, az=0.1,
            rx=0.5, ry=-0.2, rz=1.2)
-clm("L38", [0.18, 3.77, LZ + 0.13], **GAP)
-S("L38", X((0.04, 5.3, LZ + 0.075), (0.04, 4.7, LZ + 0.075), 22, (0.05, 5.15, LZ + 0.075), None, 22), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
+clm("L38", [0.18, 3.77, LZ + 0.07], **GAP)
+S("L38", X((0.04, 5.3, LZ + 0.085), (0.04, 4.7, LZ + 0.085), 22, (0.05, 5.15, LZ + 0.085), None, 22), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
   note="the gap: one pinprick eye and the edge of a cream face, lit amber from below")
-S("L39", X((0.07, 5.2, LZ + 0.075), (0.07, 4.7, LZ + 0.075), 26, (0.08, 5.08, LZ + 0.075), None, 26), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
+S("L39", X((0.07, 5.2, LZ + 0.085), (0.07, 4.7, LZ + 0.085), 26, (0.08, 5.08, LZ + 0.085), None, 26), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
   note="it doesn't blink")
-S("L40", X((0.105, 5.1, LZ + 0.075), (0.105, 4.7, LZ + 0.075), 28, (0.105, 5.0, LZ + 0.075), None, 28), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
+S("L40", X((0.105, 5.1, LZ + 0.095), (0.105, 4.7, LZ + 0.14), 28, (0.105, 5.0, LZ + 0.095), None, 28), "roomdim", fill=0.0, hand=0.002, clkey=0.7, clrim=0.0,
   note="the cover frame: one eye at the gap, an inch from mine")
 # L41: the whole of it from the top of the stairs: chest and buttons toward us, knees the wrong way, hair
 cue("L41", "mydoor", open=0, bow=0.0)
@@ -537,7 +537,7 @@ story = {
                   {"at": "L67", "voices": ["drone", "tick"], "energy": 0.35},
               ]},
     "sound": {
-        "rev": 6, "floor": "wood", "steps_db": -24,
+        "rev": 8, "floor": "wood", "steps_db": -24,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -44}],
         "sfx": [
             {"at": "L01.3", "kind": "creak", "db": -14, "dur": 0.9},
