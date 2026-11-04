@@ -31,7 +31,7 @@
    ],
    "twist": "L28",
    "emph": [
-    "L01.6",
+    "L01.5",
     "L02",
     "L19",
     "L25.1",
@@ -307,16 +307,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "When the",
-     "When the"
-    ],
-    [
-     "band plays",
-     "band plays"
-    ],
-    [
-     "on the",
-     "on the"
+     "On our",
+     "On our"
     ],
     [
      "town GREEN,",
@@ -327,8 +319,12 @@
      "everyone has"
     ],
     [
-     "to DANCE.",
-     "to dance."
+     "to DANCE",
+     "to dance"
+    ],
+    [
+     "to the band.",
+     "to the band."
     ],
     [
      "EVERYONE.",
@@ -4679,12 +4675,12 @@
   ],
   "sfx": [
    {
-    "at": "L01.6",
+    "at": "L01.5",
     "kind": "sting",
     "db": -14
    },
    {
-    "at": "L01.6",
+    "at": "L01.5",
     "kind": "thud",
     "db": -9
    },

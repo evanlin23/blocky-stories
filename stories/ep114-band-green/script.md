@@ -2,7 +2,7 @@
 
 - **Slug:** `ep114-band-green` (batch 11, upload order 7 of 7)
 - **Pitch:** 13 in the batch 11 pitches file (the orchestrator's list calls it 3, and the slug is the same), blind panel 22.3, a new engine: the dance that won't stop (folk, named only as an engine). Opening shape `must`. Lane: core. Length arm: mid (60 to 90 s).
-- **Title:** When the Band Plays, EVERYONE Dances 🎺
+- **Title:** Everyone Here Has to DANCE 🎺
 - **Changed from the pitch:** my best friend is Benny (no name clash). The band is never fully shown: five tall players in white jackets whose heads bend under the bandstand roof, hat brims always down, seen in parts and rim-lit from behind. The bandleader tips his brim up an inch once (L25, L26), and under it there's only dark and two small points of light. "Seven months" is now "all summer", so the timeline is one summer of Saturdays. Nobody in town explains anything. The town can't stop until I dance, so my sitting out is what costs them (L33, L34, r1).
 - **Everyone is an adult.** I'm 20, Grandpa about 75, Benny 20, the townspeople adults.
 - **Revised r1 (standards, 2026-11-04):** lines changed: L33 ("Nobody could STOP. / Not until I danced.") and L34 ("Grandpa's knees / were paying / for MY bench."), so the twist is the rule's cost on the town, not the town quietly kind to me. Shots S33, S34, the warmth notes and the caption key (lawn green) changed to match. Not voiced yet, so nothing to re-voice.
@@ -29,7 +29,7 @@ The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
 
 ## The story
 - **Premise:** Every Saturday night this summer a band nobody knows has played on the town green, and the moment it plays, everyone dances. Everyone but me: I sit on the bench Benny and I used to sit on, and my feet never move. Last Saturday the band didn't stop.
-- **Rule / hook (L01, about 2.7 s):** "When the band plays / on the town GREEN, / everyone has to DANCE. / EVERYONE." L02: "Except ME. / I've never danced / ONCE."
+- **Rule / hook (L01, about 2.7 s):** "On our town GREEN, / everyone has to DANCE / to the band. / EVERYONE." L02: "Except ME. / I've never danced / ONCE."
 - **The relatable want or fight:** missing a best friend who moved away, and not feeling like joining in.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream tag top-left with a music-note glyph and a song counter (1 to 47), and a tiny row of footprint glyphs that light when people dance. Mine, the last one, stays dark until L37.
 - **The 3 to 5 example montage (L06 to L10, 9 to 19 s):** the bank manager doing the robot, the mail carrier spinning on her bag, Grandpa's knees clicking on the beat, a man dancing while he finishes a sandwich.
@@ -168,7 +168,7 @@ One plant, a plain tally: two bench-green strokes scratched into the iron arm of
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: When the band plays / on the town GREEN, / everyone has to DANCE. / EVERYONE.
+- L01: On our town GREEN, / everyone has to DANCE / to the band. / EVERYONE.
 - L02: Except ME. / I've never danced / ONCE.
 - L03: Every Saturday night / this summer, / the band shows UP.
 - L04: Five guys / in white JACKETS. / Nobody knows them.
@@ -218,7 +218,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L47: For somebody ELSE / this time.
 - L48: So I was the FIRST one / on the grass.
 
-(Loop: L48 runs straight into L01: "So I was the first one on the grass. When the band plays on the town green, everyone has to dance. Everyone.")
+(Loop: L48 runs straight into L01: "So I was the first one on the grass. On our town green, everyone has to dance to the band. Everyone.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt: the 3 a.m. town is tired, never falling or in pain, and Grandpa's knees are a joke (L09, L43).
