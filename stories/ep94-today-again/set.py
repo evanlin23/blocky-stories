@@ -396,8 +396,8 @@ def materials(kit):
     M["dark"] = P("#2a2a34", 0.7, "dark")
     M["tile"] = kit.checker("#fff3dc", "#ffd9e8", 2.0, "bakery tile", 0.4)
     M["glass"] = film(kit, "glass film")
-    M["water"] = kit.emit("#8fcaff", 1.0, "water streak")
-    M["drop"] = kit.emit("#9fd2ff", 1.0, "spray drop")
+    M["water"] = kit.emit("#86bdf0", 0.55, "water streak")
+    M["drop"] = kit.emit("#8fc4f2", 0.6, "spray drop")
     M["road"] = kit.texture("asphalt", 0.6, tint="#a8aebb", rough=0.8, mat_name="road")
     M["grass"] = kit.texture("grass", 1.0, tint="#8fe56e", rough=0.9, mat_name="lawn")
     M["walk"] = P("#e6e2da", 0.85, "sidewalk")
@@ -555,7 +555,7 @@ def build_bakery(kit, M, ctx):
     kit.prop("trashcan_cylindric", (1.0, 8.4, 0), height=0.8, tint="#9ad0f0")
     kit.prop("houseplant_1", (4.4, 8.0, 0), height=0.8)
     # tables: stand-up tables with a cup or a muffin, for the customers
-    for i, (x, y) in enumerate(((-2.45, 1.55), (-1.15, 2.05), (0.35, 1.45), (2.0, 2.0), (3.0, 1.0), (3.45, 2.9))):
+    for i, (x, y) in enumerate(((-1.9, 1.6), (-0.7, 2.4), (0.5, 1.7), (2.9, 1.8), (1.1, 3.2), (-2.1, 3.2))):
         kit.cyl(f"tbl{i}.top", 0.34, 0.05, (x, y, 1.0), M["white"], n=20)
         kit.cyl(f"tbl{i}.pole", 0.04, 0.98, (x, y, 0.5), M["steel"], n=8)
         kit.cyl(f"tbl{i}.base", 0.2, 0.04, (x, y, 0.02), M["steel"], n=14)
@@ -581,17 +581,17 @@ def build_bakery(kit, M, ctx):
     ctx["spill"] = sp
     # my surprised face "reflected" in the cake case glass (shown by the "ghost" cue), 1.5 cm proud of the glass
     gm = img_material(kit, "ghost", ghost_image(), 0.4, emit=1.0)
-    ctx["ghost"] = img_plane(kit, "ghost", 0.9, 0.9, gm, (-2.35, 3.835, 1.52), None, right=(-1, 0, 0), up=(0, 0, 1))
+    ctx["ghost"] = img_plane(kit, "ghost", 0.9, 0.9, gm, (-2.0, 3.835, 1.52), None, right=(-1, 0, 0), up=(0, 0, 1))
     ctx["ghost"].hide_render = True
     ctx["ghost_alpha"] = gm
-    kit.light("alley fill", "POINT", (3.0, 10.4, 3.2), 260.0, "#fff4e6", size=1.0)
+    kit.light("alley fill", "POINT", (3.0, 10.4, 3.2), 420.0, "#fff4e6", size=1.0)
     # the coffee splash: blobs thrown up from the spill
     ctx["splash"] = [kit.sphere(f"splash{i}", 0.035 + 0.01 * (i % 3), (0, 0, -40), M["coffee"], seg=8) for i in range(12)]
     # the rain on the window: streaks hung in the opening (centre plane y = -0.1)
     rng = random.Random(11)
     ctx["streaks"] = []
-    for i in range(64):
-        x = 0.62 + (i + rng.random() * 0.6) * (2.76 / 64)
+    for i in range(44):
+        x = 0.62 + (i + rng.random() * 0.6) * (2.76 / 44)
         ln = rng.uniform(0.22, 0.6)
         o = B(f"streak{i}", (0.017, 0.014, ln), (x, -0.1, 2.0), M["water"], bevel=0.004)
         ctx["streaks"].append((o, rng.uniform(0.35, 0.8), rng.random() * 2.2, ln))
@@ -1020,7 +1020,7 @@ def animate(kit, story, tl, t, ctx):
             o.hide_render = True
             continue
         o.hide_render = False
-        z = 2.9 - ((t * v_ + ph) % 2.1)
+        z = 2.9 - ((t * v_ * 0.45 + ph) % 2.1)
         o.location = (o.location.x, -0.1, z)
         o.scale = (1.0, 1.0, max(0.05, ramp))
     # ---- the candle and its flame
@@ -1186,7 +1186,7 @@ def animate(kit, story, tl, t, ctx):
     cm = latest(tl, "clip", t)
     if cm and cm.get("mode") in ("hand", "chest") and "mom" in rig.CHARS and not rig.CHARS["mom"].root.hide_render:
         up = rig.CHARS["mom"].upper
-        local = (0.0, -0.95, 1.05) if cm["mode"] == "hand" else (0.0, -0.66, 1.15)
+        local = (0.0, -0.95, 1.05) if cm["mode"] == "hand" else (0.0, -0.66, 0.62)
         cl.location = up.matrix_world @ V(local)
         e = up.matrix_world.to_euler()
         # paper side faces her when held out (so we see it over her shoulder); chest: board's back out
