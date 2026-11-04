@@ -11,9 +11,10 @@ CELL = 0.5
 FW, FH = 40.0, 64.0
 
 ORG = {"face": (0, 0), "partial": (1200, 0), "star": (0, 0), "tractor": (0, 0), "pig": (0, 0),
-       "entrance": (400, 0), "day": (800, 0), "closed": (800, 0), "open": (800, 0),
-       "summer": (1200, 0), "dawn": (1600, 0), "new": (2000, 0)}
-SIZE = {"new": (20.0, 26.0)}
+       "entrance": (400, 0), "day": (800, 0), "closed": (800, 0), "open": (800, 0), "nosid": (800, 0), "sealed": (800, 0),
+       "summer": (1200, 0), "dawn": (1600, 0), "curve": (1600, 0), "herface": (1600, 0)}
+SIZE = {}
+OVERHEAD = ("face", "star", "tractor", "pig", "herface")
 
 
 def W(scene, x, y, z=0.0):
@@ -175,6 +176,55 @@ def face_fn():
     return lambda x, y: (head_outside(x, y) and mz(x, y)) or outline_band(x, y) or any(f(x, y) for f in feats)
 
 
+# ---------------------------------------------------------------------------------------------- June's face (the dawn overhead)
+HER = (0.0, -4.0, 11.5, 13.5)       # the face: cx, cy, rx, ry
+BRIM_Y = 9.5
+BRAID = [(12.8, 1.0), (14.4, -3.0), (12.8, -7.0), (14.4, -11.0), (12.8, -15.0), (14.4, -19.0), (13.4, -23.0)]
+
+
+def her_features():
+    cx, cy, rx, ry = HER
+    f = []
+    # the hat: a long brim with upturned ends, a dome crown ringed in path, a band across the crown
+    f.append(poly([(-18.5, BRIM_Y + 1.4), (-16.5, BRIM_Y), (16.5, BRIM_Y), (18.5, BRIM_Y + 1.4)], 1.7))
+    f.append(arc(0, BRIM_Y, 8.2, 8, 172, 1.5))
+    f.append(seg(-7.8, BRIM_Y + 3.4, 7.8, BRIM_Y + 3.4, 1.1))
+    # the face below the brim: an outline, two round eyes, a nose, a wide smile with upturned corners
+    def outline(x, y):
+        if y > BRIM_Y - 0.4:
+            return False
+        rho = math.hypot((x - cx) / rx, (y - cy) / ry)
+        return abs(rho - 1.0) * rx <= 0.75
+    f.append(outline)
+    f += [disc(-4.2, 2.4, 1.35), disc(4.2, 2.4, 1.35), seg(0, 0.4, -0.9, -2.4, 0.9), seg(-0.9, -2.4, 0.9, -2.4, 0.9)]
+    f += [arc(0, -3.6, 7.6, 212, 328, 1.7), seg(-6.4, -8.0, -7.4, -5.6, 1.5), seg(6.4, -8.0, 7.4, -5.6, 1.5)]
+    # the long braid down one side, with its ticks and a tie
+    f.append(poly(BRAID, 1.5))
+    for (x, y) in BRAID[1:-1]:
+        f.append(seg(x - 1.3, y, x + 1.3, y, 1.0))
+    f.append(disc(13.4, -24.6, 1.1))
+    return f
+
+
+def herface_fn():
+    mz = maze_fn()
+    cx, cy, rx, ry = HER
+    feats = her_features()
+    braid_zone = poly(BRAID + [(13.4, -25.0)], 5.2)
+
+    def face_inside(x, y):
+        return (math.hypot((x - cx) / rx, (y - cy) / ry) <= 1.0 + 0.9 / rx and y <= BRIM_Y) or \
+               (BRIM_Y - 0.6 <= y <= BRIM_Y + 9.8 and abs(x) <= 19.5)
+
+    def f(x, y):
+        if any(g(x, y) for g in feats):
+            return True
+        if face_inside(x, y) or braid_zone(x, y):
+            return False
+        return mz(x, y)
+    return f
+
+
 # ---------------------------------------------------------------------------------------------- the overhead shapes
 def _pent(r, cx, cy):
     return [(cx + r * math.sin(math.radians(144 * k)), cy + r * math.cos(math.radians(144 * k))) for k in range(5)]
@@ -210,10 +260,14 @@ CW = 2.6      # corridor width
 
 def day_shapes(variant="day"):
     L_UP = seg(-9, 9.5, -9, 24, CW)
-    clear = disc(-9, 26.4, 3.4)
+    clear = disc(-9, 26.4, 4.0)
     loop3 = poly([(-9, 14), (-17, 14), (-17, 28)], CW)
     if variant == "closed":
         return [L_UP, clear, loop3]
+    if variant == "nosid":      # the side path at y = 14 is gone (S29b)
+        return [L_UP, clear]
+    if variant == "sealed":     # a short pocket of path with corn on every side (S29b)
+        return [seg(-9, 9.5, -9, 15.5, CW)]
     if variant == "open":
         return [L_UP, clear, loop3, poly([(-9, 26.4), (-1.5, 26.4), (-1.5, 17), (5.5, 17), (5.5, 27), (12, 27)], CW)]
     return [seg(-12, -29.5, 12, -29.5, 5.0), seg(0, -29, 0, 6, CW), poly([(0, 6), (-9, 6), (-9, 24)], CW), clear,
@@ -224,7 +278,6 @@ def day_shapes(variant="day"):
 # lanterns along the way, in the order they go out: the gate first, the exit one last
 LANT_DAY = [(-1.9, -29.4), (0.95, -21), (-0.95, -16), (0.95, -11), (-0.95, -6), (0.95, -1), (-0.95, 3.2),
             (-4.2, 5.05), (-7.5, 6.95), (-8.05, 12.0), (-9.95, 17.0), (7.05, -26.2)]
-LANT_NEW = [(-1.9, -9.0), (1.9, -9.0), (-5.2, -1.0), (3.4, 5.0)]
 LANT_ENT = (0.3, 0.0)
 
 # June's route in the day maze
@@ -249,12 +302,9 @@ def dawn_shapes():
             poly([(0, -10), (-6, -10), (-6, 2)], CW)]
 
 
-def new_shapes():
-    return [seg(-8, -12, 8, -12, 3.0), poly([(0, -12), (0, -6), (-3.4, -2), (-3.4, 4), (1.5, 7.5), (1.5, 11)], 1.8),
-            poly([(0, -6), (4.8, -4), (4.8, 2)], 1.8)]
-
-
-NEW_SHOOTS = [(0, -9), (0.2, -6), (-0.8, -4.2), (-2.2, -2.6), (-3.2, -0.8), (-3.4, 1.4), (-3.2, 3.6), (-2.2, 5.4), (-0.6, 6.8), (1.0, 7.8)]
+def curve_shapes():
+    """One long smooth curve, like the edge of something bigger (S47b)."""
+    return [seg(-12, -29.5, 12, -29.5, 5.0), arc(0, 3.0, 14.0, 215, 300, 2.4)]
 
 
 def entrance_shapes():
@@ -274,12 +324,14 @@ def layout_shapes(name):
         return surround(pig_shapes(), 21, 27)
     if name == "entrance":
         return entrance_shapes()
-    if name in ("day", "closed", "open"):
+    if name in ("day", "closed", "open", "nosid", "sealed"):
         return day_shapes(name)
     if name == "summer":
         return summer_shapes()
     if name == "dawn":
         return dawn_shapes()
-    if name == "new":
-        return new_shapes()
+    if name == "curve":
+        return curve_shapes()
+    if name == "herface":
+        return [herface_fn()]
     raise KeyError(name)
