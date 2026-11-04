@@ -1,4 +1,4 @@
-"""Writes ../story.json for "Everyone Hides When The WHISTLE Blows" (ep98-town-whistle, batch 9b).
+"""Writes ../story.json for "Our Town Hides When The WHISTLE Blows" (ep98-town-whistle, batch 9b).
 
 Run from anywhere: python stories/ep98-town-whistle/generator/make_story.py
 The words are in lines.json (made from script.md by mklines.py). Everything else is here: the cast, the shots and
@@ -22,6 +22,7 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.25
 SX, RISE, RUN = 100.0, 0.27, 0.28
+SEATR = 1.55
 
 # ------------------------------------------------------------------------------------------------ cast
 FACE = {"eyes": "round", "brows": True, "ink": "#24131f"}
@@ -37,6 +38,7 @@ def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", eyes="round"
 cast = {
     "me": person("#e8b88f", "#d83a34", "#d8c38a", "#f4f4f2", hair="cap", hair_c="#15100c", collar="#ffffff"),
     "dad": person("#dba27a", "#4a86d6", "#8a8f98", "#4a3a2a", hair="cap", hair_c="#8d8d90", eyes="tired"),
+    "dadg": person("#b4b2b0", "#4a86d6", "#8a8f98", "#4a3a2a", hair="cap", hair_c="#8d8d90", eyes="tired"),
     "arlo": person("#ecc09a", "#3a9a5a", "#7a5a3a", "#8a5a3a", hair="cap", hair_c="#f4f4f4", pattern="knit",
                    pattern_c="#2f7f49", sleeves="long", height=0.96),
     "dunn": person("#e3a878", "#ff8a58", "#ff8a58", "#c89a70", hair="long", hair_c="#a2a2ae", eyes="lashes"),
@@ -135,6 +137,12 @@ def ab(x, h, n=28):
     return max(-RISE * (x - SX) / RUN, -RISE * n) + h
 
 
+def HS(tx, ty, tz, ang, d, lens, k=0.08, dz=0.05):
+    """A head-and-shoulders push: the camera d metres from the target toward world angle ang (degrees)."""
+    loc = (tx + d * math.cos(math.radians(ang)), ty + d * math.sin(math.radians(ang)), tz + dz)
+    return PX(loc, (tx, ty, tz), lens, k)
+
+
 # the whistle's mouth, the pole's foot, anchors
 WM = (0.0, -0.5, 6.9)
 LX, LZ = SX + RUN * 28, -RISE * 28
@@ -149,11 +157,12 @@ steps(0, 26)
 tag(0, 26)
 cue(0, "door", open=0.0)
 cue(0, "lamp", pos=[99.9, 0.0, 0.95], off=True)
-S(0, PX((0.7, -4.2, 7.0), (0, 0, 6.95), 28, 0.12), "day", name="hook", fill=0.7, hand=0.004)
-walk("n1", "L01.2", (4.9, 0.6), "L02-0.3", (7.4, 3.5), expr="scared")
-raw("n1", "L02+0.1", pos=[8.2, 3.6])
-gone("n1", "L02+0.15")
-S("L01.2", PX((3.6, -1.2, 1.5), (8.0, 3.4, 0.7), 20, 0.10), "day", fill=0.9)
+S(0, PX((1.2, -4.6, 9.4), (0, 0, 7.6), 24, 0.10), "day", name="hook", fill=0.7, hand=0.004)
+put("n1", "L01.2", (5.0, 1.8), 305, "scared", head=[0, 50], arms=[0, 0])
+key("n1", "L01.2+0.4", head=[0, 0], arms=[25, 10])
+key("n1", "L02-0.1", arms=[60, 30], head=[0, 0])
+gone("n1", "L02+0.1")
+S("L01.2", HS(5.0, 1.8, 1.6, 215, 2.2, 22, 0.10), "day", fill=0.9)
 S("L02", PX((1.4, -34.0, 0.55), (0, 6.0, 2.2), 22, 0.14), "day", fill=0.6)
 cue("L02", "puff", whistle=0.0)
 
@@ -166,13 +175,12 @@ put("baker", "L04", (-200.0, 0.4), 180, "wide", arms=[40, 40])
 walk("baker", "L04", (-200.0, 0.5), "L04.1", (-200.0, 0.5), 180, "wide", arms=[40, 40])
 raw("baker", "L04.2", pos=[-198.2, -1.5], expr="scared")
 gone("baker", "L05-0.05")
-S("L04", PX((-197.4, -2.6, 1.7), (-200.0, 1.6, 1.0), 20, 0.10), "in", fill=0.8, inside=1.4)
+S("L04", PX((-196.6, -4.0, 1.7), (-199.4, 0.5, 1.2), 17, 0.06), "in", fill=0.5, inside=0.8, exp=-0.45)
 for i, who in enumerate(("t1", "t2", "t3", "t4")):
     walk(who, "L05", (-3.0 + 2.0 * i, -62.0 + (i % 2) * 1.2), "L05.2-0.1", (-3.0 + 2.0 * i + 1.0, -52.0 - i * 0.6), expr="scared")
     gone(who, "L05.2")
 S("L05", PX((7.0, -46.0, 1.5), (0, -62.0, 0.9), 18, 0.10), "day", fill=0.9)
 steps("L05.2", 13)
-tag("L05.2", 13)
 cue("L05.2", "door", open=1.0)
 for i, who in enumerate(("t1", "t2", "t3", "t4")):
     ln = -0.3 + 0.2 * i
@@ -199,9 +207,9 @@ for j, k in enumerate((1, 3, 5)):
 cue("L07", "lamp", pos=[99.9, 0.0, 0.95], to=[102.4, 0.0, -0.2], dur=1.3)
 S("L07", PX((97.0, 3.4, 1.5), (99.0, -0.1, 1.2), 18, 0.10), "in", fill=0.9, stairl=1.4, lamp=1.2)
 gone("dad", "L07.3+0.1")
-tag("L07.3", 13)
-for k, (dt, n) in enumerate(((0.35, 15), (0.5, 17), (0.65, 20), (0.8, 23))):
-    tag(f"L07.4+{dt - 0.35:.2f}", n)
+tag("L07.4", 13)
+for dt, n in ((0.2, 15), (0.4, 17), (0.6, 20), (0.8, 22)):
+    tag(f"L07.4+{dt:.2f}", n)
 tag("L08", 24)
 tag("L08.1", 26)
 S("L07.3", X((97.0, 0.1, 1.5), (100.0, 0.1, 1.4), 24, (97.8, 0.1, 1.5), (100.0, 0.1, 1.4), 24), "in", fill=0.4, tagbig=3.0, name="tagbig")
@@ -252,9 +260,12 @@ S("L19", PX((2.0, -1.2, 1.7), (7.2, 3.0, 1.1), 18, 0.10), "morning", fill=1.0)
 gone("n1", "L19.3")
 gone("n2", "L19.3+0.1")
 put("dad", "L19.3", (-9.4, 2.6, 0.0), 90, "worried")
-S("L19.3", PX((-4.6, 1.4, 1.7), (-9.4, 2.6, 1.55), 24, 0.10), "morning", fill=1.0)
+key("dad", "L19.3+0.5", head=[0, 25], arms=[20, 0])
+S("L19.3", HS(-9.4, 2.6, 1.55, 20, 2.6, 28, 0.10), "morning", fill=1.0)
 cue("L20", "puff", shoulder=[-9.4, 2.1, 1.45])
-S("L20", PX((-7.6, 0.2, 1.9), (-9.4, 2.3, 1.5), 34, 0.12), "morning", fill=0.8)
+key("dad", "L20", head=[8, -12], arms=[40, 40], expr="tired")
+key("dad", "L20+0.6", head=[0, 12], arms=[10, 40])
+S("L20", HS(-9.4, 2.6, 1.6, -28, 2.5, 30, 0.10), "morning", fill=0.9)
 cue("L21", "puff", shoulder=None)
 cue("L21", "dust", who=["dad"])
 gone("dad", "L21-0.05")
@@ -262,18 +273,20 @@ steps("L21", 26)
 put("dad", "L21", (stair(26)[0], 0.0, stair(26)[1] - 0.42), 90, "asleep", lean=18, head=[0, 20])
 cue("L21", "lamp", pos=[stair(25)[0] - 0.1, 0.55, stair(25)[1] + 0.2])
 cue("L21", "puff", shoulder=[stair(26)[0], 0.0, stair(26)[1] + 0.6])
-S("L21", PX((stair(21)[0], -0.4, ab(stair(21)[0], 1.1, 26)), (stair(26)[0], 0.0, stair(26)[1] + 0.5), 22, 0.10), "in", fill=0.9, lamp=1.2, stairl=1.2)
+S("L21", PX((stair(15)[0], -0.5, ab(stair(15)[0], 0.8, 26)), (stair(26)[0], 0.0, stair(26)[1] + 1.0), 24, 0.08), "in", fill=1.0, lamp=1.2, stairl=1.3)
 gone("dad", "L22-0.05")
 cue("L22", "puff", shoulder=None)
 cue("L22", "dust", who=[])
 put("arlo", "L22", (-9.9, -4.6, 0.9), 90, "smile")
-S("L22", PX((-5.6, -5.2, 1.9), (-9.9, -4.6, 1.65), 24, 0.10), "day", fill=0.9)
+S("L22", HS(-9.9, -4.6, 2.35, -30, 2.6, 30, 0.08), "day", fill=0.9)
 gone("arlo", "L23-0.05")
-put("dad", "L23", (-9.4, 0.1, 0.0), 0, "angry", arms=[85, 0])
-key("dad", "L23.2", arms=[95, 0], head=[20, 0])
-S("L23", X((-5.0, 0.4, 1.7), (-9.4, 0.0, 1.6), 22, (-5.6, 0.4, 1.7), (-9.4, 0.0, 1.6), 22), "day", fill=0.9, name="dadpoint")
-put("arlo", "L23.1", (-9.9, -3.0, 0.9), 90, "smile")
-S("L23.1", PX((-6.0, -1.0, 1.9), (-9.6, -1.2, 1.6), 20, 0.10), "day", fill=0.9)
+put("dad", "L23", (-9.4, 0.1, 0.0), 35, "angry", arms=[85, 0])
+key("dad", "L23.1", arms=[95, 0], head=[0, -12])
+key("dad", "L23.2", arms=[85, 0], head=[10, 0])
+S("L23", HS(-9.4, 0.1, 1.5, -22, 3.2, 24, 0.08), "day", fill=0.9, name="dadpoint")
+put("arlo", "L23.2", (-9.9, -4.6, 0.9), 90, "smile")
+key("arlo", "L23.3", arms=[0, 40])
+S("L23.2", HS(-9.9, -4.6, 2.35, 25, 2.6, 30, 0.08), "day", fill=0.9)
 
 # --- 06 Tuesday at sundown, L24 to L29
 gone("dad", "L24-0.05")
@@ -282,8 +295,8 @@ cue("L24", "puff", whistle=1.0)
 S("L24", PX((1.2, -3.2, 6.3), (0, 0, 6.95), 26, 0.10), "gold", fill=0.7)
 cue("L25", "puff", whistle=0.0)
 cue("L25", "door", open=0.0, to=1.0, dur=0.7)
-walk("dad", "L25", (95.6, 3.0), "L25+1.0", (99.0, 0.15), 90, "scared")
-S("L25", X((97.8, -1.7, 1.5), (99.75, 0.55, 1.4), 20, (98.2, -1.5, 1.5), (99.75, 0.55, 1.4), 20), "in", fill=1.1, name="tally")
+walk("dad", "L25", (95.6, -2.0), "L25+1.0", (99.0, -0.2), 90, "scared")
+S("L25", X((96.6, 0.8, 1.45), (100.0, 0.58, 1.45), 44, (97.2, 0.75, 1.45), (100.0, 0.58, 1.45), 50), "in", fill=1.1, name="tally")
 gone("dad", "L26-0.05")
 walk("me", "L26", (-9.5, 1.5), "L26+0.5", (-9.5, -0.8, 0.9), 180, "scared")
 raw("me", "L26+0.95", pos=[-9.5, -2.2, 0.0])
@@ -309,19 +322,22 @@ cue("L31", "leaf", pos=[0.3, -9.0])
 S("L31", PX((-2.2, -20.0, 0.42), (0.3, -8.0, 0.2), 20, 0.12), "gold", fill=0.5)
 cue("L32", "leaf", off=True)
 cue("L32", "puff", wells=1.0)
-S("L32", PX((-5.8, -7.0, 0.9), (-10.1, 6.0, 0.35), 17, 0.10), "gold", fill=0.5)
-S("L32.2", PX((-5.4, 0.2, 0.8), (-10.1, 2.6, 0.3), 24, 0.10), "gold", fill=0.5)
-S("L33", PX((5.4, 12.0, 0.9), (10.1, 7.0, 0.3), 18, 0.10), "gold", fill=0.5)
+S("L32", PX((-6.4, 2.6, 0.7), (-10.1, 2.6, 0.9), 18, 0.08), "gold", fill=0.7)
+S("L32.2", PX((-7.8, 0.0, 1.7), (-10.1, 2.6, 0.5), 20, 0.08), "gold", fill=0.7)
+S("L33", PX((6.6, 8.1, 0.7), (10.1, 8.1, 0.9), 18, 0.08), "gold", fill=0.7)
 cue("L34", "puff", whistle=1.0)
 S("L34", PX((-1.4, -3.6, 7.9), (0, 0, 7.0), 24, 0.08), "gold", fill=0.5)
 cue("L35", "puff", whistle=0.0, wells=0.0)
 cue("L35", "leaf", off=True)
 cue("L35", "kettle", on=True)
-put("arlo", "L35", (-15.9, -6.5, 0.9), -90, "soft", arms=[55, 0])
-S("L35", PX((-12.6, -8.6, 2.5), (-16.0, -6.5, 2.3), 17, 0.10), "gold", fill=0.8, inside=1.2)
-put("arlo", "L36", (-14.5, -6.4, 0.9), 0, "neutral", arms=[60, 60])
-put("me", "L36", (-14.5, -3.9, 0.9), 180, "worried", arms=[45, 45])
-S("L36", PX((-11.4, -5.0, 2.4), (-14.5, -5.2, 2.3), 15, 0.10), "gold", fill=0.8, inside=1.2)
+put("arlo", "L35", (-15.9, -6.5, 0.9), 80, "soft", arms=[55, 0])
+key("arlo", "L35+0.7", head=[10, 0], arms=[70, 0])
+S("L35", HS(-15.9, -6.5, 2.35, -25, 3.0, 22, 0.08), "gold", fill=0.8, inside=1.2)
+put("arlo", "L36", (-14.4, -5.9, 0.9), 75, "smirk", arms=[60, 60])
+put("me", "L36", (-14.4, -4.3, 0.9), 105, "worried", arms=[45, 45])
+key("arlo", "L36+0.6", head=[0, 10], arms=[80, 60])
+key("me", "L36+0.5", head=[10, -8], arms=[30, 45])
+S("L36", PX((-11.2, -5.1, 2.35), (-14.4, -5.1, 2.3), 13, 0.08), "gold", fill=0.8, inside=1.2)
 cue("L37", "kettle", on=False)
 
 # --- 08 the Dunns, L37 to L42
@@ -332,28 +348,30 @@ gone("me", "L37-0.05")
 put("mr_dunn", "L37", (6.2, 4.6), 90, "neutral")
 put("dunn", "L37", (6.6, 3.0), 90, "neutral")
 S("L37", PX((1.4, 0.4, 1.7), (7.2, 3.6, 1.3), 18, 0.12), "morning", fill=0.5)
-S("L37.2", X((5.2, 2.2, 1.3), (8.2, 3.6, 0.7), 26, (5.8, 2.6, 1.2), (8.2, 3.6, 0.7), 26), "morning", fill=0.5)
+key("dunn", "L37.2", head=[0, 15], arms=[0, 0])
+S("L37.2", PX((9.7, 1.2, 1.75), (6.6, 3.0, 1.6), 28, 0.08), "morning", fill=0.9)
 steps("L38", 41)
 tag("L38", 27)
 S("L38", PX((98.4, 0.0, 0.9), (110.0, 0.0, -8.5), 15, 0.08), "in", fill=1.0, stairl=2.5, lamp=0.0)
 steps("L39", 27)
-key("dunn", "L39", expr="polite")
+key("dunn", "L39", expr="smile")
 gone("mr_dunn", "L39-0.05")
-put("dunn", "L39", (6.6, 3.5), 90, "polite")
-S("L39", PX((3.6, 2.4, 1.6), (6.6, 3.5, 1.55), 30, 0.10), "morning", fill=0.5)
-walk("dunn", "L39.2", (6.6, 3.5), "L39.5+0.2", (7.5, 3.6), 90, "polite")
-S("L39.3", PX((3.8, 5.6, 1.4), (7.6, 3.6, 0.9), 20, 0.08), "morning", fill=0.5)
+put("dunn", "L39", (6.6, 3.5), 90, "smile")
+S("L39", PX((9.4, 1.5, 1.75), (6.6, 3.5, 1.65), 30, 0.10), "morning", fill=0.9)
+walk("dunn", "L39.2", (6.6, 3.5), "L39.5+0.2", (7.5, 3.6), 90, "smile")
+S("L39.3", PX((10.4, 1.3, 1.75), (7.4, 3.6, 1.55), 28, 0.08), "morning", fill=0.9)
 gone("dunn", "L40-0.05")
-cue("L40", "dust", who=["dad"])
-walk("dad", "L40", (stair(8)[0], 0.0, stair(8)[1]), "L40.2", (99.6, 0.0, 0.0), 270, "blank", lean=6)
-S("L40", PX((97.0, 0.0, 1.2), (stair(5)[0], 0.0, stair(5)[1] + 0.8), 20, 0.10), "in", fill=1.0, stairl=1.6, lamp=0.0)
-gone("dad", "L41-0.05")
+cue("L40", "dust", who=["dadg"])
+walk("dadg", "L40", (stair(8)[0], 0.0, stair(8)[1]), "L40.2", (99.6, 0.0, 0.0), 270, "blank", lean=6)
+S("L40", PX((96.0, 0.2, 1.75), (99.9, 0.0, 1.35), 20, 0.10), "in", fill=1.0, stairl=1.6, lamp=0.0)
+gone("dadg", "L41-0.05")
 cue("L41", "dust", who=[])
-put("dad", "L41", (SX - 7.0 + 1.35 * math.cos(math.radians(200)), 1.35 * math.sin(math.radians(200)), -0.22), 20, "blank")
-put("arlo", "L41", (SX - 7.0 + 1.35 * math.cos(math.radians(320)), 1.35 * math.sin(math.radians(320)), -0.22), 130, "neutral")
-S("L41", PX((SX - 10.5, 1.8, 1.7), (SX - 7.0, 0.0, 1.0), 19, 0.10), "in", fill=1.0, inside=1.4)
+put("dadg", "L41", (SX - 7.0 + SEATR * math.cos(math.radians(322)), SEATR * math.sin(math.radians(322)), -0.22), 270, "blank")
+put("arlo", "L41", (SX - 7.0 + SEATR * math.cos(math.radians(38)), SEATR * math.sin(math.radians(38)), -0.22), 270, "neutral")
+key("arlo", "L41+0.8", head=[0, -10], arms=[0, 30])
+S("L41", PX((SX - 9.6, 0.0, 1.4), (SX - 6.6, 0.0, 1.3), 18, 0.08), "in", fill=1.0, inside=1.4)
 gone("arlo", "L42-0.05")
-put("dad", "L42", (SX - 3.0, 0.3, 0.0), 90, "blank")
+put("dadg", "L42", (SX - 3.0, 0.3, 0.0), 90, "blank")
 S("L42", PX((SX - 1.2, 0.0, 1.55), (SX - 3.0, 0.3, 1.5), 32, 0.10), "in", fill=0.9, inside=1.0)
 
 # --- 09 midnight, L43 to L52
@@ -451,13 +469,14 @@ gone("dad", "L63-0.05")
 gone("me", "L63-0.05")
 cue("L63", "dust", who=[])
 cue("L63", "ladder", on=True)
-put("arlo", "L63", (0.0, -1.3), 180, "neutral", arms=[55, 55])
-S("L63", PX((3.4, -5.0, 1.9), (0.0, -0.4, 2.4), 22, 0.10), "dawn", fill=0.9)
-put("me", "L64", (0.0, -1.0, 5.15), 180, "focus" if False else "neutral", arms=[70, 70])
+put("arlo", "L63", (0.8, -1.3), 135, "neutral", arms=[55, 55])
+key("arlo", "L63+0.7", head=[-10, 0], arms=[70, 70])
+S("L63", HS(0.8, -1.3, 1.5, 40, 2.8, 24, 0.08), "dawn", fill=0.9)
+put("me", "L64", (0.0, -1.12, 5.15), 180, "focus" if False else "neutral", arms=[70, 70])
 key("me", "L64.2", arms=[70, 70], head=[0, -10])
 S("L64", PX((3.4, -1.0, 6.2), (0.0, -0.9, 6.3), 24, 0.10), "dawn", fill=0.9)
 cue("L64.2", "puff", whistle=-1.0)
-S("L64.2", PX((2.0, -2.8, 7.1), (0.0, -0.6, 6.9), 28, 0.10), "dawn", fill=0.7)
+S("L64.2", PX((2.6, 1.8, 6.95), (0.0, -1.12, 6.75), 26, 0.08), "dawn", fill=0.8)
 gone("me", "L65-0.05")
 gone("arlo", "L65-0.05")
 cue("L65", "puff", whistle=0.0, collar=-1.0)
@@ -470,8 +489,9 @@ S("L66", PX((0.0, 170.0, -10.0), (0.0, 200.0, -16.0), 18, 0.10), "day", fill=0.0
 S("L66.2", PX((0.0, 176.0, -22.0), (0.0, 200.0, -26.0), 20, 0.12), "day", fill=0.0, exp=0.2)
 cue("L67", "puff", wells=-1.0)
 S("L67", PX((0.0, 27.0, 1.6), (0.0, -10.0, 0.3), 14, 0.10), "dawn", fill=0.6)
-put("arlo", "L67.2", (1.3, -1.7), 270, "neutral", head=[0, 38])
-S("L67.2", PX((2.4, -4.0, 1.4), (0.4, -1.3, 1.3), 28, 0.10), "dawn", fill=0.9)
+put("arlo", "L67.2", (1.3, -1.7), 270, "neutral", head=[0, 20])
+key("arlo", "L67.2+0.4", head=[-8, 0], expr="smile")
+S("L67.2", HS(1.3, -1.7, 1.5, 200, 2.4, 28, 0.08), "dawn", fill=0.9)
 cue("L68", "puff", wells=0.0)
 cue("L68", "cut", ext=3, gaze=1.0, gone=True)
 gone("arlo", "L68+0.8")
@@ -485,10 +505,16 @@ S("L70", PX((98.4, 0.0, 1.1), (SX + 3.4, 0.0, -1.8), 16, 0.08), "in", fill=1.0, 
 cue("L70", "lamp", pos=[SX + 2.0, 0.0, -0.4], off=True)
 cue("L70", "door", open=1.0)
 cue("L71", "door", open=1.0, to=0.0, dur=0.7)
-put("dad", "L71", (SX - 7.0 + 1.35 * math.cos(math.radians(200)), 1.35 * math.sin(math.radians(200)), -0.22), 20, "laugh")
-put("arlo", "L71", (SX - 7.0 + 1.35 * math.cos(math.radians(320)), 1.35 * math.sin(math.radians(320)), -0.22), 130, "laugh")
-put("me", "L71", (SX - 7.0, 1.4, -0.22), 180, "smile")
-S("L71", PX((SX - 10.6, -2.2, 1.9), (SX - 7.0, 0.1, 1.0), 20, 0.10), "in", fill=1.1, inside=1.5)
+put("dad", "L71", (SX - 7.0 + SEATR * math.cos(math.radians(322)), SEATR * math.sin(math.radians(322)), -0.22), 270, "laugh")
+put("arlo", "L71", (SX - 7.0 + SEATR * math.cos(math.radians(38)), SEATR * math.sin(math.radians(38)), -0.22), 270, "laugh")
+put("me", "L71", (SX - 7.0 + SEATR, 0.0, -0.22), 270, "smile")
+for j in range(6):
+    tt = f"L71+{0.2 + 0.28 * j:.2f}"
+    up = j % 2 == 0
+    key("dad", tt, head=[-10 if up else 6, 8 if up else -8], lean=-6 if up else 4, arms=[10, 10])
+    key("arlo", tt, head=[-12 if up else 6, -8 if up else 8], lean=-8 if up else 4, arms=[0, 20])
+    key("me", tt, head=[0, 6 if up else -6], lean=2 if up else -2)
+S("L71", PX((SX - 10.0, 0.0, 1.4), (SX - 6.4, 0.0, 1.25), 19, 0.06), "in", fill=1.1, inside=1.4)
 gone("dad", "L72-0.05")
 gone("arlo", "L72-0.05")
 gone("me", "L72-0.05")
@@ -532,7 +558,7 @@ music = {"root": 50, "mode": "minor", "bpm": 84, "seed": 98,
              {"at": "L70", "voices": ["pad", "pluck_hi"], "energy": 0.4, "mode": "major"},
              {"at": "L72", "voices": ["drone", "pad"], "energy": 0.3, "mode": "minor"},
          ]}
-sound = {"rev": 1, "floor": "grass", "steps_db": -22,
+sound = {"rev": 2, "floor": "grass", "steps_db": -22,
          "floor_spans": [{"from": "L05.2", "to": "L06", "floor": "wood"}, {"from": "L07", "to": "L11", "floor": "wood"},
                          {"from": "L21", "to": "L22", "floor": "wood"}, {"from": "L25", "to": "L26", "floor": "wood"},
                          {"from": "L40", "to": "L43", "floor": "wood"}, {"from": "L44", "to": "L53", "floor": "wood"},
@@ -552,7 +578,7 @@ look = {"fog": "#cfe8ff", "fog_density": 0.003, "fog_start": 45.0, "sky": "#8fd0
 
 story = {
     "slug": "ep98-town-whistle",
-    "title": "Everyone Hides When The WHISTLE Blows \U0001F4EF",
+    "title": "Our Town Hides When The WHISTLE Blows \U0001F4EF",
     "made_for_kids": False,
     "premise": ("When the town whistle blows, at any hour, everyone goes down to their basement until it stops. I'm 24, "
                 "back living with Dad, and our basement has gained one step every whistle, from thirteen to twenty-six. "

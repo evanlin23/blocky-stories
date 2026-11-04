@@ -327,7 +327,7 @@ def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True, dark=False):
 def late_extras(kit, ctx):
     """Called once the cast exists: mustaches, beard, shoulder dust."""
     C = rig.CHARS
-    ink = {"dad": "#3a2e28", "me": "#2a1c14", "arlo": "#f4f4f2", "mr_dunn": "#3a3430"}
+    ink = {"dad": "#3a2e28", "dadg": "#3a2e28", "me": "#2a1c14", "arlo": "#f4f4f2", "mr_dunn": "#3a3430"}
     for who, col in ink.items():
         ch = C.get(who)
         if ch is None:
@@ -336,7 +336,7 @@ def late_extras(kit, ctx):
         hg = next((c for c in ch.head.children if c.name.endswith(".headg")), hg)
         m = P(col, 0.8, 0.05)
         R = faces.HEAD_R
-        if who in ("dad", "arlo", "mr_dunn"):
+        if who in ("dad", "dadg", "arlo", "mr_dunn"):
             B(hg, (0.62, 0.1, 0.17), (0, -R + 0.005, -0.11), m, "must", 0.04)
             for sx in (-1, 1):
                 B(hg, (0.2, 0.1, 0.15), (sx * 0.36, -R + 0.03, -0.14), m, "must", 0.04, rot=(0, 0, sx * -0.3))
@@ -430,9 +430,14 @@ def build_street(kit, ctx):
     CY(Pl, 0.5, 0.34, (0, 0, 6.2), brass, "wbase", r2=0.38)
     CY(Pl, 0.36, 0.9, (0, 0, 6.82), brass, "wbody")
     CY(Pl, 0.4, 0.14, (0, 0, 7.34), brass, "wcap")
+    # the flared bell on top (a steam-whistle horn) with a dark blow hole in its mouth, so it reads as a whistle
+    brass2 = P("#f2b43c", 0.22, 0.9)
+    CY(Pl, 0.3, 0.8, (0, 0, 7.8), brass2, "wbell", n=32, r2=0.82)
+    CY(Pl, 0.86, 0.1, (0, 0, 8.22), brass2, "wbellrim", n=32)
+    CY(Pl, 0.66, 0.04, (0, 0, 8.285), P("#120c08", 0.9, 0.0), "wblow", n=32)
+    CY(Pl, 0.5, 0.08, (0, 0, 7.5), brass2, "wring", n=24)
     B(Pl, (0.46, 0.22, 0.34), (0, -0.33, 6.9), P("#1b130d", 0.9, 0.0), "wmouth", 0.02)          # the slot
     B(Pl, (0.58, 0.12, 0.1), (0, -0.38, 7.12), brass, "wlip", 0.02)
-    CY(Pl, 0.07, 0.4, (0, 0, 7.62), brass, "wknob")
     # the pipe at the foot: out of the pole, out sideways, down into a round iron collar in the road
     CY(Pl, 0.1, 1.0, (0.55, 0, 0.9), brass, "pipeh", rot=(0, math.pi / 2, 0))
     CY(Pl, 0.1, 0.9, (1.05, 0, 0.5), brass, "pipev")
@@ -584,13 +589,15 @@ def build_house_set(kit, ctx):
     B(None, (0.3, 3.75, 3.0), (SX, 2.375, 1.5), wall, "kfront", 0.01)
     B(None, (0.3, 1.0, 0.9), (SX, 0, 2.55), wall, "klintel", 0.01)
     fr = P("#fffaf0", 0.5, 0.2)
-    B(None, (0.12, 0.08, 2.2), (SX - 0.15, -0.54, 1.1), fr, "frame", 0.01)
-    B(None, (0.12, 0.08, 2.2), (SX - 0.15, 0.54, 1.1), fr, "frame", 0.01)
-    B(None, (0.12, 1.16, 0.08), (SX - 0.15, 0, 2.14), fr, "frame", 0.01)
-    # two amber strokes scratched into the frame at shoulder height (the lore tally), a hair proud
-    amber = kit.emit("#ffb347", 2.2, name="tally")
-    for yy in (0.515, 0.565):
-        B(None, (0.02, 0.03, 0.34), (SX - 0.228, yy, 1.45), amber, "tally", 0.0)
+    B(None, (0.12, 0.16, 2.2), (SX - 0.15, -0.58, 1.1), fr, "frame", 0.01)
+    B(None, (0.12, 0.16, 2.2), (SX - 0.15, 0.58, 1.1), fr, "frame", 0.01)
+    B(None, (0.12, 1.32, 0.08), (SX - 0.15, 0, 2.14), fr, "frame", 0.01)
+    # two amber strokes scratched into the frame at shoulder height (the lore tally), well proud, each in a dark groove
+    amber = kit.emit("#ff9a1c", 1.7, name="tally")
+    groove = P("#2a1608", 0.9, 0.0)
+    for yy in (0.54, 0.62):
+        B(None, (0.05, 0.05, 0.64), (SX - 0.225, yy, 1.45), groove, "tallyg", 0.0)
+        B(None, (0.05, 0.034, 0.58), (SX - 0.24, yy, 1.45), amber, "tally", 0.0)
     # the door leaf, hinged at y=-0.5, opening into the room (toward -x)
     hinge = E(None, (SX - 0.05, -0.5, 0), "doorhinge")
     B(hinge, (0.07, 1.0, 2.1), (0, 0.5, 1.05), P("#c8a46e", 0.55, 0.15), "door", 0.02)
@@ -603,8 +610,8 @@ def build_house_set(kit, ctx):
     CY(tb, 0.95, 0.07, (0, 0, 0.76), P("#9b6a3a", 0.5, 0.15), "ttop", n=32)
     CY(tb, 0.12, 0.74, (0, 0, 0.37), P("#6b4426", 0.6, 0.1), "tleg")
     CY(tb, 0.45, 0.04, (0, 0, 0.02), P("#6b4426", 0.6, 0.1), "tfoot")
-    for i, a in enumerate((200, 90, 320)):
-        ch = E(None, (SX - 7.0 + 1.35 * math.cos(math.radians(a)), 1.35 * math.sin(math.radians(a)), 0), "dchair")
+    for i, a in enumerate((322, 0, 38)):
+        ch = E(None, (SX - 7.0 + 1.55 * math.cos(math.radians(a)), 1.55 * math.sin(math.radians(a)), 0), "dchair")
         ch.rotation_euler = (0, 0, math.radians(a))
         B(ch, (0.5, 0.5, 0.07), (0, 0, 0.46), P("#3f78c8", 0.55, 0.15), "seat", 0.02)
         B(ch, (0.07, 0.5, 0.5), (0.22, 0, 0.74), P("#3f78c8", 0.55, 0.15), "back", 0.02)
@@ -850,10 +857,10 @@ def build(kit, story, tl):
     n_.nodes.remove(n_.nodes["Principled BSDF"])
     tr = n_.nodes.new("ShaderNodeBsdfTransparent")
     em = n_.nodes.new("ShaderNodeEmission")
-    em.inputs["Color"].default_value = (0.86, 0.78, 0.6, 1)
+    em.inputs["Color"].default_value = (0.5, 0.4, 0.27, 1)
     em.inputs["Strength"].default_value = 1.1
     mx = n_.nodes.new("ShaderNodeMixShader")
-    mx.inputs["Fac"].default_value = 0.3
+    mx.inputs["Fac"].default_value = 0.42
     n_.links.new(tr.outputs[0], mx.inputs[1])
     n_.links.new(em.outputs[0], mx.inputs[2])
     out = next(n for n in n_.nodes if n.type == "OUTPUT_MATERIAL")
@@ -872,7 +879,7 @@ def build(kit, story, tl):
     pool("whistle", 12, 0.13)
     pool("collar", 8, 0.07)
     for i in range(len(ctx["wells"])):
-        pool(f"well{i}", 6, 0.2)
+        pool(f"well{i}", 9, 0.38)
     pool("shoulder", 10, 0.03)
     ctx["steam"] = [kit.sphere(nm("steam"), 0.06, (0, 0, -50), pm, None, seg=10) for _ in range(8)]
     for o in ctx["steam"]:
@@ -1032,8 +1039,8 @@ def animate(kit, story, tl, t, ctx):
     cp = ctx["collar_pos"]
     puff_pool(ctx, "collar", t, cp, 1, pc.get("collar", 0), reach=0.9, spread=0.2, rate=1.0)
     for i, (wx, wy) in enumerate(ctx["wells"]):
-        puff_pool(ctx, f"well{i}", t, (wx, wy, 0.2), 1, pc.get("wells", 0) * (0.7 + 0.3 * pulse), reach=1.0, spread=0.2,
-                  rate=1.0)
+        puff_pool(ctx, f"well{i}", t, (wx, wy, 0.2), 1, pc.get("wells", 0) * (0.8 + 0.2 * pulse), reach=1.9, spread=0.35,
+                  rate=1.1)
     # the pools keep their sign for "in" via negative amp
     sp = pc.get("shoulder")
     puff_pool(ctx, "shoulder", t, tuple(sp) if sp else (0, 0, -50), 1, 1 if sp else 0, reach=0.5, spread=0.1, rate=0.8)
