@@ -578,8 +578,8 @@ LOOKS = {
                     sky=("#2c3f78", 0.9), amb=("#9aa4c0", 0.8), exp=0.45, cols=("#b89638", "#ceac48", "#c4a240", "#e8cc7e", "#2c5a4a"), lant=1.0),
     "moon": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(3.4, "#d2deff", 40, -35), rim=(2.2, "#8fb8ff", 76, 170), cam=(75.0, "#dce6ff"),
                  sky=("#4c68ac", 1.1), amb=("#a8b2d0", 1.0), exp=0.35, cols=("#b08f34", "#c8a442", "#bf9c3a", "#ecce84", "#2f5e55"), lant=0.0),
-    "moonhi": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(5.5, "#dfe8ff", 38, -35), rim=(3.0, "#8fb8ff", 70, 170), cam=(0.0, "#dce6ff"),
-                   sky=("#2a3e78", 1.0), amb=("#c0c8e0", 1.6), exp=0.5, cols=("#8a7228", "#a8892f", "#9c7f2c", "#f6dc90", "#223c2a"), lant=0.0),
+    "moonhi": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(3.8, "#dfe8ff", 38, -35), rim=(3.0, "#8fb8ff", 70, 170), cam=(0.0, "#dce6ff"),
+                   sky=("#2a3e78", 1.0), amb=("#b4bedc", 1.0), exp=0.3, cols=("#8a7228", "#a8892f", "#9c7f2c", "#e6c36c", "#22405c"), lant=0.0),
     "dawn": dict(gold=(4.2, "#ffae62", 78, 0), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(55.0, "#ffe6c0"),
                  sky=("#f7c590", 0.9), amb=("#ffe6cc", 0.9), exp=0.3, cols=GOLD, lant=0.0),
 }
