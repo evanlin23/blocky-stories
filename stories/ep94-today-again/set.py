@@ -1060,6 +1060,8 @@ def animate(kit, story, tl, t, ctx):
         hp = hand_pos("mom", 0, (0, -0.1, -1.75))
         cup.location = (hp.x, hp.y, hp.z + 0.04)
         cup.rotation_euler = (math.radians(tilt), 0, 0)
+        big = 2.6 if cc["t"] > 50 else 1.0   # the L34 catch: a cup big enough to read at phone size
+        cup.scale = (big, big, big)
     else:
         cup.location = (0, 0, -40)
     sp = latest(tl, "spill", t)
