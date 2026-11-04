@@ -30,7 +30,7 @@ from blocky import acting as ac
 W, H = 0.14, 0.19                # one page
 PAGE_TOP = 0.0185
 ROWS, COLS = 6, 11
-INK = {"lilac": "#7a3dff", "blue": "#1f5fe0", "green": "#1fbf94", "dark": "#5a2fd0"}
+INK = {"lilac": "#6a2af0", "blue": "#1448d0", "green": "#12b088", "dark": "#4a1fc0"}
 GIFT, CAR, WORK, PAIR = 30.0, 60.0, 90.0, 120.0
 
 
@@ -126,9 +126,13 @@ def materials(kit):
     M["h_cb"] = kit.emit("#2f7fe8", 1.0, "hud cover b")
     M["h_cl"] = kit.emit("#9a6ff0", 1.0, "hud cover l")
     M["h_gold"] = kit.emit("#ffd35a", 1.6, "hud gold")
+    M["h_pedge"] = kit.emit("#d8c08e", 0.9, "hud page edge")
+    M["h_spb"] = kit.emit("#1a4fb0", 1.0, "hud spine b")
+    M["h_spl"] = kit.emit("#6a3fc8", 1.0, "hud spine l")
+    M["h_shadow"] = kit.emit("#101a3c", 0.9, "hud shadow")
     M["h_pen"] = kit.emit("#ffffff", 1.0, "hud pen")
     for k, h in INK.items():
-        M[f"ink_{k}"] = kit.emit(h, 1.7, f"ink {k}")
+        M[f"ink_{k}"] = kit.emit(h, 1.0, f"ink {k}")
         M[f"hink_{k}"] = kit.emit(h, 1.25, f"hud ink {k}")
     return M
 
@@ -259,15 +263,20 @@ def row_state(seg, d, r, T):
 def build_diary(kit, M, name, cover, lilac):
     root = kit.empty(name, (0, 0, 0))
     mc = M["cover_l" if lilac else "cover_b"]
-    box(kit, f"{name}.back", (-0.002, -0.004, 0.0), (W + 0.004, H + 0.004, 0.006), mc, root, bevel=0.0015)
+    box(kit, f"{name}.back", (-0.006, -0.008, 0.0), (W + 0.008, H + 0.008, 0.006), mc, root, bevel=0.002)
+    for sy in (0, 1):      # brass corner caps and the clasp tab on the back cover, seen when the book lies open
+        y = (-0.008 if not sy else H + 0.008 - 0.02)
+        box(kit, f"{name}.bcap{sy}", (W + 0.008 - 0.02, y, 0.006), (W + 0.008, y + 0.02, 0.0085), M["brass"], root)
+    box(kit, f"{name}.btab", (W + 0.008, H / 2 - 0.012, 0.0), (W + 0.022, H / 2 + 0.012, 0.0075), M["brass"], root, bevel=0.002)
+    kit.cyl(f"{name}.bdot", 0.006, 0.0035, (W + 0.016, H / 2, 0.0095), M["brass"], root, n=14)
     box(kit, f"{name}.rpages", (0.0, 0.003, 0.006), (W - 0.003, H - 0.003, PAGE_TOP), M["page"], root)
     front = kit.empty(f"{name}.front", (0, 0, PAGE_TOP), root)
     box(kit, f"{name}.lpages", (0.0, 0.003, 0.0), (W - 0.003, H - 0.003, 0.0125), M["page"], front)
-    box(kit, f"{name}.fcover", (-0.002, -0.004, 0.0125), (W + 0.004, H + 0.004, 0.0185), mc, front, bevel=0.0015)
+    box(kit, f"{name}.fcover", (-0.006, -0.008, 0.0125), (W + 0.008, H + 0.008, 0.0185), mc, front, bevel=0.002)
     for sy in (0, 1):
         for sx in (0, 1):
-            x = (-0.002 if not sx else W + 0.004 - 0.018)
-            y = (-0.004 if not sy else H + 0.004 - 0.018)
+            x = (-0.006 if not sx else W + 0.008 - 0.018)
+            y = (-0.008 if not sy else H + 0.008 - 0.018)
             box(kit, f"{name}.cap{sx}{sy}", (x, y, 0.0185), (x + 0.018, y + 0.018, 0.0205), M["brass"], front)
     kit.cyl(f"{name}.clasp", 0.0125, 0.0035, (W - 0.014, H / 2, 0.0205 + 0.00175), M["brass"], front, n=18)
     box(kit, f"{name}.clasptab", (W - 0.004, H / 2 - 0.008, 0.0185), (W + 0.007, H / 2 + 0.008, 0.0205), M["brass"], front)
@@ -305,25 +314,37 @@ def build_penhand(kit, M, name, sleeve_hex, inkc):
 
 # --------------------------------------------------------------------------------------------------- the marker
 class Hud:
+    """The marker: a small open book (coloured cover with brass caps and a clasp, a dark spine, a stack of page edges,
+    cream pages with the ink) tilted a few degrees, over a soft dark shadow, so it reads as a book, not a screen."""
+
     def __init__(self, kit, M, name, lilac):
         self.kit, self.M = kit, M
         self.grp = kit.empty(name, (0, 0, -0.12), kit.OBJ["cam"])
         g = self.grp
-        box(kit, f"{name}.edge", (-0.186, -0.186, -0.004), (0.186, 0.186, -0.001), M["h_edge"], g)
-        box(kit, f"{name}.plate", (-0.18, -0.18, 0.0), (0.18, 0.18, 0.003), M["h_plate"], g)
+        bk = kit.empty(f"{name}.bk", (0, 0.02, 0), g)
+        bk.rotation_euler = (0, 0, math.radians(-7))
         mc = M["h_cl" if lilac else "h_cb"]
-        box(kit, f"{name}.cover", (-0.152, -0.067, 0.004), (0.152, 0.129, 0.007), mc, g)
-        box(kit, f"{name}.lp", (-0.144, -0.059, 0.008), (-0.004, 0.121, 0.011), M["h_page"], g)
-        box(kit, f"{name}.rp", (0.004, -0.059, 0.008), (0.144, 0.121, 0.011), M["h_page"], g)
-        rootp = kit.empty(f"{name}.page", (0.0, -0.059, 0.011 - PAGE_TOP + 0.0), g)
+        sp = M["h_spl" if lilac else "h_spb"]
+        box(kit, f"{name}.shadow", (-0.19, -0.13, -0.003), (0.2, 0.15, -0.0005), M["h_shadow"], bk, bevel=0.01)
+        box(kit, f"{name}.cover", (-0.17, -0.098, 0.0), (0.17, 0.14, 0.004), mc, bk, bevel=0.006)
+        box(kit, f"{name}.pstack", (-0.152, -0.088, 0.0035), (0.152, 0.12, 0.0075), M["h_pedge"], bk)
+        box(kit, f"{name}.lp", (-0.148, -0.068, 0.0075), (-0.006, 0.118, 0.0105), M["h_page"], bk)
+        box(kit, f"{name}.rp", (0.006, -0.068, 0.0075), (0.148, 0.118, 0.0105), M["h_page"], bk)
+        box(kit, f"{name}.spine", (-0.008, -0.1, 0.0075), (0.008, 0.142, 0.0125), sp, bk)
+        for sx in (-1, 1):
+            for sy in (-1, 1):
+                cx, cy = sx * 0.158, 0.021 + sy * 0.112
+                box(kit, f"{name}.cap{sx}{sy}", (cx - 0.018, cy - 0.018, 0.004), (cx + 0.018, cy + 0.018, 0.0065), M["h_gold"], bk)
+        box(kit, f"{name}.clasp", (0.165, -0.02, 0.0), (0.196, 0.062, 0.0055), M["h_gold"], bk, bevel=0.004)
+        rootp = kit.empty(f"{name}.page", (0.0, -0.068, 0.0105 - PAGE_TOP), bk)
         # the page's ink: bigger, thicker glyphs on the right page
         self.ink = Ink(kit, name + ".ink", rootp, "loop" if lilac else "block", M, PAGE_TOP + 0.0, 0.0124, 1.35, 2.0, "hink_", 0.0235)
         # the pen glyph and the tally
-        pen = kit.box(f"{name}.pen", (0.07, 0.014, 0.004), (-0.135, -0.13, 0.008), M["h_pen"], g, rot=(0, 0, 0.6))
-        kit.box(f"{name}.pent", (0.016, 0.014, 0.004), (-0.158, -0.153, 0.008), M["hink_dark" if lilac else "hink_blue"], g, rot=(0, 0, 0.6))
+        pen = kit.box(f"{name}.pen", (0.07, 0.014, 0.004), (-0.135, -0.17, 0.008), M["h_pen"], g, rot=(0, 0, 0.6))
+        kit.box(f"{name}.pent", (0.016, 0.014, 0.004), (-0.158, -0.193, 0.008), M["hink_dark" if lilac else "hink_blue"], g, rot=(0, 0, 0.6))
         self.tally = []
         for i in range(10):
-            t = kit.box(f"{name}.tal{i}", (0.013, 0.05, 0.004), (-0.07 + i * 0.026, -0.13, 0.008), M["h_gold"], g)
+            t = kit.box(f"{name}.tal{i}", (0.013, 0.05, 0.004), (-0.07 + i * 0.026, -0.17, 0.008), M["h_gold"], g)
             t.hide_render = True
             self.tally.append(t)
         self.lilac = lilac
@@ -341,7 +362,8 @@ def place_hud(ctx, lens, shown2):
     s = 0.25 * wf / 0.372
     for key, u in (("hud1", 0.55), ("hud2", 0.0)):
         h = ctx[key]
-        h.grp.location = (u * wf / 2, 0.69 * hf / 2, -d)
+        off = ctx.get("hudoff", (0.0, 0.0))
+        h.grp.location = (u * wf / 2 + off[0] * wf, 0.69 * hf / 2 + off[1] * hf, -d)
         h.grp.scale = (s, s, s)
 
 
@@ -489,7 +511,7 @@ def build_rooms(kit, ctx, M):
     fx, fz = -3.2, 1.5
     b("pframe", (fx - 0.34, 4.36, fz - 0.26), (fx + 0.34, 4.4, fz + 0.26), M["trim"])
     b("pbg", (fx - 0.3, 4.34, fz - 0.22), (fx + 0.3, 4.36, fz + 0.22), M["page"])
-    kit_cols = ["#e8605a", "#f2b84a", "#5aa0e8", "#7ac26a", "#c06adf", "#f28a4a", "#4ac2c2", "#e86aa0"]
+    kit_cols = ["#e8605a", "#f2b84a", "#5aa0e8", "#f28a4a", "#c06adf", "#e86aa0", "#d8c8a0", "#9a5a3a"]
     rnd = random.Random(11)
     for row, zb in enumerate((fz - 0.2, fz + 0.02)):
         b(f"pshelf{row}", (fx - 0.3, 4.325, zb - 0.012), (fx + 0.3, 4.34, zb), M["wood2"])
@@ -499,10 +521,13 @@ def build_rooms(kit, ctx, M):
             w = rnd.uniform(0.022, 0.036)
             h = rnd.uniform(0.11, 0.17)
             c = kit_cols[(k + row * 3) % len(kit_cols)]
-            if row == 1 and k == 6:
-                c = "#2fbf94"; h = 0.15     # the third diary: sea green
             if row == 1 and k in (3, 4):
                 c = "#b48cf2" if k == 3 else "#3f8fff"; h = 0.15
+            if row == 1 and k == 6:
+                c = "#10c090"; h = 0.17; w = 0.045     # the third diary: sea green, the only teal spine, with a brass clasp
+                b("pclasp", (x + 0.012, 4.3, zb + 0.07), (x + w - 0.012, 4.32, zb + 0.1), M["brass"])
+                b("pband1", (x, 4.31, zb + 0.015), (x + w, 4.32, zb + 0.022), M["brass"])
+                b("pband2", (x, 4.31, zb + h - 0.022), (x + w, 4.32, zb + h - 0.015), M["brass"])
             b(f"pbook{row}{k}", (x, 4.32, zb), (x + w, 4.34, zb + h), kit.plastic(c, 0.6, f"pb{c}", 0.2))
             x += w + 0.004
             k += 1
@@ -517,6 +542,20 @@ def build_rooms(kit, ctx, M):
     for p in (ctx["clockh"], ctx["clockm"]):
         p.location = (0, -0.012, 0)
     ctx["clockg"] = ck
+    ck2 = kit.empty("clock2", (0.13, 2.2, 1.55))
+    ck2.rotation_euler = (0, 0, math.radians(90))
+    kit.cyl("clock2.face", 0.15, 0.02, (0, 0, 0), M["clockface"], ck2, rot=(math.pi / 2, 0, 0), n=28)
+    kit.cyl("clock2.rim", 0.17, 0.012, (0, 0.006, 0), M["brass"], ck2, rot=(math.pi / 2, 0, 0), n=28)
+    ctx["clockh2"] = box(kit, "clock2.h", (-0.008, -0.04, -0.006), (0.008, 0.0, 0.07), M["hand"], ck2)
+    ctx["clockm2"] = box(kit, "clock2.m", (-0.006, -0.04, -0.006), (0.006, 0.0, 0.115), M["hand"], ck2)
+    for p in (ctx["clockh2"], ctx["clockm2"]):
+        p.location = (0, -0.02, 0)
+    for k in range(12):
+        a = k * math.pi / 6
+        o = box(kit, f"clock2.t{k}", (-0.006, -0.03, 0.112), (0.006, -0.026, 0.14), M["hand"], ck2)
+        o.location = (0, 0, 0)
+        o.rotation_euler = (0, a, 0)
+        o.location = (0, 0, 0)
     for k in range(12):      # hour ticks (glyphs, not numbers)
         a = k * math.pi / 6
         o = box(kit, f"clock.t{k}", (-0.003, -0.016, 0.058), (0.003, -0.013, 0.07), M["hand"], ck)
@@ -555,7 +594,7 @@ def build_rooms(kit, ctx, M):
     ctx["m_n1"] = kit.emit("#ffc470", 0.01, "shade n1")
     n1.data.materials.append(ctx["m_n1"])
     # the strip of light under Nina's door and the glow it throws on the hall floor
-    ctx["strip"] = box(kit, "doorstrip", (1.17, -0.06, 0.004), (2.03, 0.06, 0.012), M["strip"])
+    ctx["strip"] = box(kit, "doorstrip", (1.17, -0.1, 0.004), (2.03, 0.1, 0.03), M["strip"])
     ctx["glow"] = box(kit, "doorglow", (1.15, -0.8, 0.018), (2.05, -0.05, 0.022), kit.emit("#ffd08a", 0.01, "glow n"))
     # a wastebasket
     kit.cyl("waste", 0.14, 0.34, (0.9, 1.0, 0.17), M["white"], None, n=16)
@@ -650,7 +689,8 @@ PLACE = {
     "gift": {"blue": ((GIFT + 0.14, 0.0, 0.76), 170.0), "lilac": ((GIFT - 0.14, 0.0, 0.76), 8.0)},
     "touch": {"blue": ((GIFT + 0.071, 0.0, 0.76), 180.0), "lilac": ((GIFT - 0.071, 0.0, 0.76), 0.0)},
     "pair": {"blue": ((PAIR - 0.15, 0.0, 0.76), 0.0), "lilac": ((PAIR + 0.15, 0.0, 0.76), 0.0)},
-    "nshelf": ((3.5, 4.15, 0.97), 0.0),
+    "nshelf": ((3.42, 4.12, 0.57), 0.0),
+    "ndeskdust": ((0.46, 1.5, 0.76), 90.0),
     "nightstand": ((-0.33, 2.95, 0.5), 20.0),
     "edge": ((0.72, 1.1, 0.76), 90.0),
     "toyou": ((0.7, 1.2, 0.76), 90.0),
@@ -776,6 +816,7 @@ def animate(kit, story, tl, t, ctx):
         _set_wall_cam_vis(o, not look.get("cutwall", False))
     for o in ctx["ceil"]:
         o.hide_render = bool(look.get("noceil", False))
+    ctx["hudoff"] = tuple(look.get("hud", (0.0, 0.0)))
     # doors, drawer, clock
     ctx["mydoor"].rotation_euler = (0, 0, math.radians(_level(tl, "mydoor", t, 0.0)))
     ctx["ndoor"].rotation_euler = (0, 0, -math.radians(_level(tl, "ndoor", t, 0.0)))
@@ -789,6 +830,8 @@ def animate(kit, story, tl, t, ctx):
     # hands lie in the clock's local XZ plane (face looks along -y): rotate about y
     ctx["clockh"].rotation_euler = (0, -ang_h, 0)
     ctx["clockm"].rotation_euler = (0, -ang_m, 0)
+    ctx["clockh2"].rotation_euler = (0, -ang_h, 0)
+    ctx["clockm2"].rotation_euler = (0, -ang_m, 0)
     # lamps: Nina's come on in turn (each ramps over 0.4 s)
     g1 = _level(tl, "lamp", t, 0.0, n="n1")
     g2 = _level(tl, "lamp", t, 0.0, n="n2")
@@ -796,8 +839,8 @@ def animate(kit, story, tl, t, ctx):
     ctx["m_n1"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 0.2 + 2.2 * g1
     ctx["n2em"].data.materials[0].node_tree.nodes["Emission"].inputs["Strength"].default_value = 0.2 + 2.2 * g2
     ctx["n3em"].data.materials[0].node_tree.nodes["Emission"].inputs["Strength"].default_value = 0.2 + 2.2 * g3
-    ctx["strip"].data.materials[0].node_tree.nodes["Emission"].inputs["Strength"].default_value = 2.5 * g1
-    ctx["glow"].data.materials[0].node_tree.nodes["Emission"].inputs["Strength"].default_value = 0.9 * g1
+    ctx["strip"].data.materials[0].node_tree.nodes["Emission"].inputs["Strength"].default_value = 7.0 * g1
+    ctx["glow"].data.materials[0].node_tree.nodes["Emission"].inputs["Strength"].default_value = 2.2 * g1
     over = {"nlamp1": g1, "nlamp2": g2, "nlamp3": g3, "strip": g1 * (1 - _level(tl, "ndoor", t, 0.0) / 80.0 * 0 ),
             "nfill": 0.55 + 0.45 * max(g1, g2, g3), "mom": 1.0 if "mom" in tl["acting"] else 0.0}
     # who is lit where: far rooms only light when they are on screen (cheaper, cleaner)
@@ -820,7 +863,17 @@ def animate(kit, story, tl, t, ctx):
         for o in D["rib"]:
             o.hide_render = not (_switch(tl, "ribbon", "on", t, 0) and to == "gift")
         for o in D["dust"]:
-            o.hide_render = to not in ("drawer", "nshelf") or t > 20 and False
+            o.hide_render = to not in ("drawer", "nshelf", "ndeskdust")
+            if to == "ndeskdust":    # Nina blows the dust off: the specks lift and fade
+                u = _ss((t - _blow_t(tl)) / 1.2) if _blow_t(tl) < 1e8 else 0.0
+                for k_, o in enumerate(D["dust"]):
+                    if "b0" not in o:
+                        o["b0"] = tuple(o.location)
+                    b0 = o["b0"]
+                    o.location = (b0[0] + 0.05 * u * (k_ - 2), b0[1], b0[2] + 0.07 * u * (1 + k_ % 3))
+                    o.scale = (max(0.001, 1 - u),) * 3
+                    if u >= 0.98:
+                        o.hide_render = True
         D["ink"].root_visible = op > 0.55
         for r in range(ROWS):
             p, col, size, shake = row_state(ctx["seg"], d, r, t)
@@ -875,6 +928,11 @@ def animate(kit, story, tl, t, ctx):
     else:
         ctx["glint"].location = (0, 0, -9)
     return over
+
+
+def _blow_t(tl):
+    cs = _cues(tl, "blow")
+    return cs[0]["t"] if cs else 1e9
 
 
 def _switch(tl, name, key, t, default):
