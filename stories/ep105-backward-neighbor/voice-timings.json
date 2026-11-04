@@ -6,38 +6,38 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "My neighbor Vern counts our days backward. He said goodbye the day we met.",
+   "text": "Vern's calendar says almost eleven thousand days left. He said goodbye the day we met.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.31,
-   "onset": 0.172,
-   "end": 3.103,
+   "dur": 4.017,
+   "onset": 0.19,
+   "end": 3.81,
    "chunks": [
     [
-     0.172,
-     0.741
+     0.19,
+     0.931
     ],
     [
-     0.741,
-     1.034
+     0.931,
+     1.793
     ],
     [
-     1.034,
-     1.672
+     1.793,
+     2.431
     ],
     [
-     1.759,
-     2.293
+     2.5,
+     3.017
     ],
     [
-     2.293,
-     2.534
+     3.017,
+     3.241
     ],
     [
-     2.534,
-     3.103
+     3.241,
+     3.81
     ]
    ]
   },

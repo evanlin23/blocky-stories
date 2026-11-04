@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 8,
+ "rev": 9,
  "look": {
   "style": "closer",
   "fog": "#d8ecf8",
@@ -75,6 +75,10 @@
   "grain": 0.008
  },
  "phonemes": {},
+ "homophones": {
+  "zero": "thousand",
+  "when": "a"
+ },
  "cast": {
   "me": {
    "age": "adult",
@@ -432,16 +436,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "My neighbor VERN",
-     "My neighbor Vern"
+     "Vern's calendar says",
+     "Vern's calendar says"
     ],
     [
-     "counts our",
-     "counts our"
+     "almost eleven thousand",
+     "almost eleven thousand"
     ],
     [
-     "days BACKWARD.",
-     "days backward."
+     "days LEFT.",
+     "days left."
     ],
     [
      "He said goodbye",
@@ -10752,7 +10756,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 8
+  "rev": 9
  },
  "set_moves": [
   "S24",

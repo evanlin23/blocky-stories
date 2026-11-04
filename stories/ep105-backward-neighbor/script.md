@@ -28,7 +28,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 
 ## The story
 - **Premise:** The day I moved into my first house, my neighbor Vern, about 85, hugged me on my lawn, cried, and thanked me for thirty years. Vern lives backward. Every year I know him he's a year younger, he never remembers yesterday, only tomorrow, and he's a little happier around me while our days together run out. His porch calendar counts down from 10,950.
-- **Rule / hook (L01, about 3.4 s):** "My neighbor VERN / counts our days BACKWARD. / He said goodbye / the day we MET."
+- **Rule / hook (L01, about 3.4 s):** "Vern's calendar says / almost eleven thousand days LEFT. / He said goodbye / the day we MET."
 - **The relatable want or fight:** a friend you know you'll lose, and spending the time anyway.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream flip-calendar tag in the top-left counting Vern's days down: 10,950 in the hook, dropping by years through the montage (9,125, 5,475, 1,825), 7 at L41, 1 at L43 and 0 at L60.
 - **The 3 to 5 example montage (L05 to L15, 10 to 28 s):** his mailbox flag up before the mail (L08), his wave before I open the door (L09), his calendar flipping backward (L10 to L12), his boxes going out to a truck at night and back inside unpacked in the morning (L13 to L15).
@@ -171,7 +171,7 @@ One plant, a plain tally: two maple-orange strokes scratched into the arm of Ver
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: My neighbor VERN / counts our days BACKWARD. / He said goodbye / the day we MET.
+- L01: Vern's calendar says / almost eleven thousand days LEFT. / He said goodbye / the day we MET.
 - L02: He hugged me / on my new LAWN, / in front of the MOVERS, / and CRIED.
 - L03: He said, / thank you / for thirty YEARS.
 - L04: I'd known him / for a MINUTE. / I didn't even know / his last NAME.
@@ -235,7 +235,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L61: Tomorrow / his house / will be EMPTY. / Today was / our last day TOGETHER. / I'll still be here, / with NORA.
 - L62: So THAT'S / why he cried.
 
-(Loop: L62 runs straight into L01: "So that's why he cried. My neighbor Vern counts our days backward. He said goodbye the day we met." On the loop, my first day reads as Vern's last day with me. Nobody dies: he just moves on to the day before we met.)
+(Loop: L62 runs straight into L01: "So that's why he cried. Vern's calendar says almost eleven thousand days left. He said goodbye the day we met." On the loop, my first day reads as Vern's last day with me. Nobody dies: he just moves on to the day before we met.)
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt and nobody is in danger. Vern is never ill: he's an old man at the start and a young man at the end. "Zero" is never his end, only the day before he came (L45, L56), said as moving in.

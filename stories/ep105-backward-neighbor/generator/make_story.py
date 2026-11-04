@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 8
+REV = 9
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -870,6 +870,7 @@ story = {
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.012, -0.02], "saturation": 1.12, "contrast": 1.05,
               "vignette": 0.2, "bloom": 0.2, "grain": 0.008},
     "phonemes": {},
+    "homophones": {"zero": "thousand", "when": "a"},   # Whisper writes "11,000" and hears "a Nora" as "when Nora"
     "cast": cast,
     "lines": lines,
     "shots": shots,
