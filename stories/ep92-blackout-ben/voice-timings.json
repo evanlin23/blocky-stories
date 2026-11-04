@@ -293,6 +293,34 @@
     ]
    ]
   },
+  "L11b": {
+   "text": "He eats my cereal. I hide the remote.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.914
+    ],
+    [
+     0.966,
+     1.215
+    ],
+    [
+     1.215,
+     1.845
+    ]
+   ]
+  },
   "L12": {
    "text": "Nobody remembers why. Not even us.",
    "who": "narrator",
@@ -370,6 +398,38 @@
     [
      2.112,
      2.966
+    ]
+   ]
+  },
+  "L14b": {
+   "text": "Ben's flashlight lit up his black watch, on his left wrist.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     1.086
+    ],
+    [
+     1.086,
+     1.569
+    ],
+    [
+     1.603,
+     1.81
+    ],
+    [
+     1.81,
+     2.483
     ]
    ]
   },
@@ -697,6 +757,34 @@
     ]
    ]
   },
+  "L27b": {
+   "text": "Then he gave me the last slice of pizza.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.509
+    ],
+    [
+     0.509,
+     1.061
+    ],
+    [
+     1.061,
+     1.672
+    ]
+   ]
+  },
   "L28": {
    "text": "Thursday, he laughed at my joke,",
    "who": "narrator",
@@ -762,6 +850,66 @@
     [
      1.077,
      1.931
+    ]
+   ]
+  },
+  "L30b": {
+   "text": "Thursday night, a flashlight beam sat under my door for an hour.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.793,
+     1.526
+    ],
+    [
+     1.526,
+     1.801
+    ],
+    [
+     1.801,
+     2.103
+    ],
+    [
+     2.103,
+     2.776
+    ]
+   ]
+  },
+  "L30c": {
+   "text": "When I opened it, the hall was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.655
+    ],
+    [
+     0.681,
+     0.94
+    ],
+    [
+     0.94,
+     1.638
     ]
    ]
   },
@@ -969,6 +1117,30 @@
     ]
    ]
   },
+  "L38b": {
+   "text": "I lay awake till the sun came up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.017
+    ],
+    [
+     1.017,
+     1.569
+    ]
+   ]
+  },
   "L39": {
    "text": "That's when I really looked at the photo on the mantle.",
    "who": "narrator",
@@ -1018,6 +1190,34 @@
     [
      0.931,
      1.534
+    ]
+   ]
+  },
+  "L40b": {
+   "text": "The canoe was red. Same red as his watch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.81
+    ],
+    [
+     0.888,
+     1.267
+    ],
+    [
+     1.267,
+     1.983
     ]
    ]
   },
@@ -1670,206 +1870,6 @@
     [
      0.612,
      1.293
-    ]
-   ]
-  },
-  "L11b": {
-   "text": "He eats my cereal. I hide the remote.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.034,
-   "onset": 0.172,
-   "end": 1.845,
-   "chunks": [
-    [
-     0.172,
-     0.431
-    ],
-    [
-     0.431,
-     0.914
-    ],
-    [
-     0.966,
-     1.215
-    ],
-    [
-     1.215,
-     1.845
-    ]
-   ]
-  },
-  "L14b": {
-   "text": "Ben's flashlight lit up his black watch, on his left wrist.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.69,
-   "onset": 0.172,
-   "end": 2.483,
-   "chunks": [
-    [
-     0.172,
-     0.81
-    ],
-    [
-     0.81,
-     1.086
-    ],
-    [
-     1.086,
-     1.569
-    ],
-    [
-     1.603,
-     1.81
-    ],
-    [
-     1.81,
-     2.483
-    ]
-   ]
-  },
-  "L27b": {
-   "text": "Then he gave me the last slice of pizza.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.897,
-   "onset": 0.155,
-   "end": 1.672,
-   "chunks": [
-    [
-     0.155,
-     0.293
-    ],
-    [
-     0.293,
-     0.509
-    ],
-    [
-     0.509,
-     1.061
-    ],
-    [
-     1.061,
-     1.672
-    ]
-   ]
-  },
-  "L30b": {
-   "text": "Thursday night, a flashlight beam sat under my door for an hour.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.966,
-   "onset": 0.172,
-   "end": 2.776,
-   "chunks": [
-    [
-     0.172,
-     0.741
-    ],
-    [
-     0.793,
-     1.526
-    ],
-    [
-     1.526,
-     1.801
-    ],
-    [
-     1.801,
-     2.103
-    ],
-    [
-     2.103,
-     2.776
-    ]
-   ]
-  },
-  "L30c": {
-   "text": "When I opened it, the hall was empty.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.828,
-   "onset": 0.155,
-   "end": 1.638,
-   "chunks": [
-    [
-     0.155,
-     0.328
-    ],
-    [
-     0.328,
-     0.655
-    ],
-    [
-     0.681,
-     0.94
-    ],
-    [
-     0.94,
-     1.638
-    ]
-   ]
-  },
-  "L38b": {
-   "text": "I lay awake till the sun came up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.172,
-   "end": 1.569,
-   "chunks": [
-    [
-     0.172,
-     0.672
-    ],
-    [
-     0.672,
-     1.017
-    ],
-    [
-     1.017,
-     1.569
-    ]
-   ]
-  },
-  "L40b": {
-   "text": "The canoe was red. Same red as his watch.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.19,
-   "onset": 0.155,
-   "end": 1.983,
-   "chunks": [
-    [
-     0.155,
-     0.414
-    ],
-    [
-     0.414,
-     0.81
-    ],
-    [
-     0.888,
-     1.267
-    ],
-    [
-     1.267,
-     1.983
     ]
    ]
   }
