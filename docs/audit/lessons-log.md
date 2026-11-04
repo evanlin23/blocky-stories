@@ -169,6 +169,21 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Pick creature concepts the rig can carry, at the writing stage: a person made wrong, or a threat that never
     needs a full creature reveal. Don't spend build sessions trying to rescue a weak creature design.
 
+29. **"Creature-light" still put two full reveals into batch 10, and both failed the creature test.** ep104's dream
+    giant (5, 5, 4) and ep106's split Grandma (3 to 4 every try) were "a person made wrong", shown in full. Both
+    dropped within 40 minutes of starting, before any voice or preview. The test is cheap, but the scripts were spent.
+    → Batch 11 has zero creature tests: nothing frightening is shown in full (a shadow, a hand, a partial shape, the
+    effect on people). Move this check to the writing stage, as the plan's step 6 says.
+30. **A proof failed flash on a light the builder didn't treat as a light change.** ep97 passed both reviews and its
+    rescue, then failed its proof at 7 flashes a second (cap 6) from a closet bulb swinging in frame (S24 to S26).
+    → Any swinging, flickering or switching practical light gets a full-rate flash check before reviews, with margin
+    (5 a second or under). Batch 10 was told on 2026-11-04. Make `check` flag moving practical lights (plan step 8).
+
+31. **A build session went idle while its proof ran, and nothing woke it.** ep83's proof failed at 10:21 AM, and the
+    session didn't look until the orchestrator found it at 12:15 PM. Sessions don't wake on Actions events.
+    → Briefs say to wait on runs with a Monitor until-loop, never by ending the turn (docs/briefs/build.md). The
+    plan's PR-based inbox (step 9) should subscribe build sessions to their PR's events.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
