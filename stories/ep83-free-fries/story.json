@@ -1,0 +1,5318 @@
+{
+ "slug": "ep83-free-fries",
+ "title": "Free Fries, One RULE 🍟",
+ "made_for_kids": false,
+ "premise": "At this diner the fries are free, forever. Two yellow gloves slide every basket out of the order hatch, nobody has seen the cook, and the one rule is never look in the kitchen. My best friend Omar and I are broke, so we sit in the same booth every day at four. My fries taste just like my mom's, her kitchen across town smells of fries though nobody's cooked, and she's asleep on the couch by five. Omar bets me his last dollar I won't look.",
+ "twist": "Through the kitchen door's round window is my mom's kitchen: she fries my basket in her own yellow gloves, eyes shut, every afternoon, never knowing. Whoever cooks for you most makes your fries, so Omar and I start cooking dinner for her every night until we are the ones who cook for her most. Now the second she orders, we blink and we're at our stove holding a fry basket.",
+ "world": "a small bright retro diner in afternoon sun with a mint booth, a chrome order hatch under a round glowing 0.00 sign and a kitchen door with one round window, and a yellow home kitchen across town",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#ffc21a",
+ "gap": 0.12,
+ "tail": 0.25,
+ "min_read": 0.15,
+ "fade_in": false,
+ "fade_out": false,
+ "look": {
+  "fog": "#cfeeff",
+  "fog_density": 0.0,
+  "fog_start": 30.0,
+  "sky": "#cfeeff",
+  "exposure": 0.0,
+  "flash_safe": true,
+  "style": "closer",
+  "polish": {
+   "emph": [
+    "L01",
+    "L12",
+    "L20",
+    "L26",
+    "L28"
+   ],
+   "reveal": [
+    "L28"
+   ],
+   "twist": "L28",
+   "quiet": [
+    [
+     "L36",
+     "L38"
+    ]
+   ],
+   "hold": [
+    "S46",
+    "S54"
+   ],
+   "sway": [
+    "S22",
+    "S23"
+   ],
+   "camera": true,
+   "idle": true,
+   "ease": true
+  }
+ },
+ "grade": {
+  "shadows": [
+   0.0,
+   0.0,
+   0.03
+  ],
+  "highlights": [
+   0.03,
+   0.015,
+   -0.02
+  ],
+  "saturation": 1.3,
+  "contrast": 1.05,
+  "vignette": 0.15,
+  "bloom": 0.3,
+  "grain": 0.008,
+  "red_line": 0.7
+ },
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#8de3c4",
+   "pattern": "stripes",
+   "pattern_c": "#ffffff",
+   "pants": "#4a6fa5",
+   "shoes": "#f4f4f2",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#c8a15a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "omar": {
+   "age": "adult",
+   "skin": "#a8714a",
+   "shirt": "#e8b923",
+   "pattern": "solid",
+   "pants": "#7d828c",
+   "shoes": "#f4f4f2",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#14110e",
+   "extras": [
+    "hooddown"
+   ],
+   "extra_c": "#e8b923",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "mom": {
+   "age": "adult",
+   "skin": "#e0b08a",
+   "shirt": "#c9a8ff",
+   "pattern": "solid",
+   "pants": "#5a5a7a",
+   "shoes": "#2a2d3a",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#4a2e1f",
+   "extras": [
+    "glasses"
+   ],
+   "extra_c": "#2a2d3a",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "haskins": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#f5e8c8",
+   "pattern": "solid",
+   "pants": "#7d828c",
+   "shoes": "#2a2d3a",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#f2f2f2",
+   "extras": [
+    "tie"
+   ],
+   "extra_c": "#e23a3a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The fries here",
+     "the fries here"
+    ],
+    [
+     "are FREE.",
+     "are free."
+    ],
+    [
+     "Just never look",
+     "just never look"
+    ],
+    [
+     "in the KITCHEN.",
+     "in the kitchen."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "If you LOOK,",
+     "if you look,"
+    ],
+    [
+     "you'll see",
+     "you'll see"
+    ],
+    [
+     "who's PAYING.",
+     "who's paying."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "You sit DOWN.",
+     "you sit down."
+    ],
+    [
+     "The BELL dings.",
+     "the bell dings."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A basket",
+     "a basket"
+    ],
+    [
+     "slides out",
+     "slides out"
+    ],
+    [
+     "of the HATCH.",
+     "of the hatch."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Two yellow GLOVES.",
+     "two yellow gloves."
+    ],
+    [
+     "That's all",
+     "that's all"
+    ],
+    [
+     "you ever SEE.",
+     "you ever see."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Everybody's gloves",
+     "everybody's gloves"
+    ],
+    [
+     "are DIFFERENT,",
+     "are different,"
+    ],
+    [
+     "and nobody",
+     "and nobody"
+    ],
+    [
+     "knows WHY.",
+     "knows why."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Old Mr. HASKINS",
+     "old mr. haskins"
+    ],
+    [
+     "has had free",
+     "has had free"
+    ],
+    [
+     "fries here",
+     "fries here"
+    ],
+    [
+     "every day",
+     "every day"
+    ],
+    [
+     "for forty YEARS.",
+     "for forty years."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody's EVER",
+     "nobody's ever"
+    ],
+    [
+     "seen the cook.",
+     "seen the cook."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My best friend,",
+     "my best friend,"
+    ],
+    [
+     "OMAR,",
+     "omar,"
+    ],
+    [
+     "and I share",
+     "and i share"
+    ],
+    [
+     "an APARTMENT,",
+     "an apartment,"
+    ],
+    [
+     "and we're BROKE.",
+     "and we're broke."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So after",
+     "so after"
+    ],
+    [
+     "our SHIFTS,",
+     "our shifts,"
+    ],
+    [
+     "we're here",
+     "we're here"
+    ],
+    [
+     "every day",
+     "every day"
+    ],
+    [
+     "at FOUR.",
+     "at four."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Same booth.",
+     "same booth."
+    ],
+    [
+     "Two BASKETS.",
+     "two baskets."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mine taste EXACTLY",
+     "mine taste exactly"
+    ],
+    [
+     "like my mom's.",
+     "like my mom's."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And every EVENING,",
+     "and every evening,"
+    ],
+    [
+     "my mom's KITCHEN,",
+     "my mom's kitchen,"
+    ],
+    [
+     "across town,",
+     "across town,"
+    ],
+    [
+     "smells like FRIES.",
+     "smells like fries."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody's COOKED.",
+     "nobody's cooked."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mom keeps saying",
+     "mom keeps saying"
+    ],
+    [
+     "she's never",
+     "she's never"
+    ],
+    [
+     "been so TIRED.",
+     "been so tired."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She's asleep",
+     "she's asleep"
+    ],
+    [
+     "on the COUCH",
+     "on the couch"
+    ],
+    [
+     "by five,",
+     "by five,"
+    ],
+    [
+     "every single DAY.",
+     "every single day."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then on Tuesday,",
+     "then on tuesday,"
+    ],
+    [
+     "Omar DARED me.",
+     "omar dared me."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He bet me",
+     "he bet me"
+    ],
+    [
+     "his last DOLLAR.",
+     "his last dollar."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The kitchen door",
+     "the kitchen door"
+    ],
+    [
+     "has one little",
+     "has one little"
+    ],
+    [
+     "round WINDOW.",
+     "round window."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.6,
+   "chunks": []
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I LOOKED.",
+     "i looked."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There was",
+     "there was"
+    ],
+    [
+     "no KITCHEN.",
+     "no kitchen."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Through the window",
+     "through the window"
+    ],
+    [
+     "was my",
+     "was my"
+    ],
+    [
+     "MOM'S kitchen.",
+     "mom's kitchen."
+    ],
+    [
+     "Across TOWN.",
+     "across town."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And MOM,",
+     "and mom,"
+    ],
+    [
+     "at her stove,",
+     "at her stove,"
+    ],
+    [
+     "eyes SHUT,",
+     "eyes shut,"
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "lowering fries",
+     "lowering fries"
+    ],
+    [
+     "into the OIL.",
+     "into the oil."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then her eyes",
+     "then her eyes"
+    ],
+    [
+     "OPENED.",
+     "opened."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She looked right",
+     "she looked right"
+    ],
+    [
+     "at ME.",
+     "at me."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Like she",
+     "like she"
+    ],
+    [
+     "could SEE me.",
+     "could see me."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's who PAYS.",
+     "that's who pays."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Whoever cooks",
+     "whoever cooks"
+    ],
+    [
+     "for you MOST",
+     "for you most"
+    ],
+    [
+     "makes your fries,",
+     "makes your fries,"
+    ],
+    [
+     "in their",
+     "in their"
+    ],
+    [
+     "OWN kitchen,",
+     "own kitchen,"
+    ],
+    [
+     "in their",
+     "in their"
+    ],
+    [
+     "OWN gloves.",
+     "own gloves."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "They never KNOW",
+     "they never know"
+    ],
+    [
+     "they did it.",
+     "they did it."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "They're just TIRED,",
+     "they're just tired,"
+    ],
+    [
+     "every night.",
+     "every night."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And Mom's",
+     "and mom's"
+    ],
+    [
+     "cooked for me",
+     "cooked for me"
+    ],
+    [
+     "every day",
+     "every day"
+    ],
+    [
+     "of my LIFE.",
+     "of my life."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then Omar's basket",
+     "then omar's basket"
+    ],
+    [
+     "came out of",
+     "came out of"
+    ],
+    [
+     "the HATCH.",
+     "the hatch."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And through",
+     "and through"
+    ],
+    [
+     "the window,",
+     "the window,"
+    ],
+    [
+     "I watched Mom",
+     "i watched mom"
+    ],
+    [
+     "cook his BASKET.",
+     "cook his basket."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He's at Mom's",
+     "he's at mom's"
+    ],
+    [
+     "for dinner",
+     "for dinner"
+    ],
+    [
+     "most NIGHTS.",
+     "most nights."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So that night,",
+     "so that night,"
+    ],
+    [
+     "Omar and I",
+     "omar and i"
+    ],
+    [
+     "cooked Mom DINNER,",
+     "cooked mom dinner,"
+    ],
+    [
+     "at OUR place.",
+     "at our place."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the",
+     "and the"
+    ],
+    [
+     "night AFTER.",
+     "night after."
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And EVERY",
+     "and every"
+    ],
+    [
+     "night since.",
+     "night since."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Now when Mom",
+     "now when mom"
+    ],
+    [
+     "gets fries here",
+     "gets fries here"
+    ],
+    [
+     "on her",
+     "on her"
+    ],
+    [
+     "lunch BREAK,",
+     "lunch break,"
+    ],
+    [
+     "WE'RE the ones",
+     "we're the ones"
+    ],
+    [
+     "who cook for",
+     "who cook for"
+    ],
+    [
+     "her MOST.",
+     "her most."
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She says",
+     "she says"
+    ],
+    [
+     "she's never felt",
+     "she's never felt"
+    ],
+    [
+     "so RESTED.",
+     "so rested."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So the second",
+     "so the second"
+    ],
+    [
+     "Mom ORDERS,",
+     "mom orders,"
+    ],
+    [
+     "wherever Omar",
+     "wherever omar"
+    ],
+    [
+     "and I ARE,",
+     "and i are,"
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "we BLINK,",
+     "we blink,"
+    ],
+    [
+     "and we're",
+     "and we're"
+    ],
+    [
+     "at our stove,",
+     "at our stove,"
+    ],
+    [
+     "holding a",
+     "holding a"
+    ],
+    [
+     "fry BASKET.",
+     "fry basket."
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So if you're",
+     "so if you're"
+    ],
+    [
+     "ever HUNGRY,",
+     "ever hungry,"
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      0.45,
+      0.658,
+      2.177
+     ],
+     [
+      0.45,
+      3.9,
+      1.95
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      0.45,
+      1.306,
+      2.131
+     ],
+     [
+      0.45,
+      3.9,
+      1.95
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "note": "frame 1: close on the hatch, yellow gloves sliding a gold basket, the sign above, the dark round window beside"
+  },
+  {
+   "id": "S02",
+   "cam": [
+    [
+     0,
+     [
+      1.803,
+      2.395,
+      1.682
+     ],
+     [
+      1.4,
+      3.9,
+      1.6
+     ],
+     24.0
+    ],
+    [
+     1,
+     [
+      1.702,
+      2.771,
+      1.661
+     ],
+     [
+      1.4,
+      3.9,
+      1.6
+     ],
+     24.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L02",
+   "note": "close on the round window, dark, the pink glow on its glass"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      3.7,
+      -1.79,
+      1.172
+     ],
+     [
+      3.7,
+      2.1,
+      0.9
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      3.7,
+      -1.272,
+      1.136
+     ],
+     [
+      3.7,
+      2.1,
+      0.9
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L03",
+   "note": "a customer slides into the booth"
+  },
+  {
+   "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      0.932,
+      2.837,
+      1.266
+     ],
+     [
+      0.78,
+      3.7,
+      1.08
+     ],
+     24.0
+    ],
+    [
+     1,
+     [
+      0.894,
+      3.053,
+      1.22
+     ],
+     [
+      0.78,
+      3.7,
+      1.08
+     ],
+     24.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L03.1",
+   "note": "the little brass bell dings by itself"
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      -0.335,
+      1.798,
+      1.351
+     ],
+     [
+      0,
+      3.7,
+      1.08
+     ],
+     20.4
+    ],
+    [
+     1,
+     [
+      -0.246,
+      2.305,
+      1.279
+     ],
+     [
+      0,
+      3.7,
+      1.08
+     ],
+     20.4
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L04",
+   "note": "a basket slides out of the hatch"
+  },
+  {
+   "id": "S06",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      2.786,
+      1.322
+     ],
+     [
+      0,
+      3.95,
+      1.2
+     ],
+     24.0
+    ],
+    [
+     1,
+     [
+      0.0,
+      3.045,
+      1.295
+     ],
+     [
+      0,
+      3.95,
+      1.2
+     ],
+     24.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "at": "L05",
+   "note": "tighter on the yellow gloves, the dark beyond"
+  },
+  {
+   "id": "S07",
+   "cam": [
+    [
+     0,
+     [
+      0.616,
+      2.006,
+      1.353
+     ],
+     [
+      0,
+      3.7,
+      1.1
+     ],
+     20.4
+    ],
+    [
+     1,
+     [
+      0.484,
+      2.369,
+      1.299
+     ],
+     [
+      0,
+      3.7,
+      1.1
+     ],
+     20.4
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L06",
+   "note": "pink gloves"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      -0.616,
+      2.006,
+      1.353
+     ],
+     [
+      0,
+      3.7,
+      1.1
+     ],
+     20.4
+    ],
+    [
+     1,
+     [
+      -0.484,
+      2.369,
+      1.299
+     ],
+     [
+      0,
+      3.7,
+      1.1
+     ],
+     20.4
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L06.1",
+   "note": "green gardening gloves"
+  },
+  {
+   "id": "S09",
+   "cam": [
+    [
+     0,
+     [
+      0.143,
+      2.066,
+      1.509
+     ],
+     [
+      0,
+      3.7,
+      1.1
+     ],
+     20.4
+    ],
+    [
+     1,
+     [
+      0.11,
+      2.443,
+      1.414
+     ],
+     [
+      0,
+      3.7,
+      1.1
+     ],
+     20.4
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L06.2",
+   "note": "oven mitts with hearts"
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      -3.8,
+      -1.495,
+      1.454
+     ],
+     [
+      -3.8,
+      2.4,
+      1.25
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      -3.8,
+      -0.975,
+      1.427
+     ],
+     [
+      -3.8,
+      2.4,
+      1.25
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L07",
+   "note": "Mr. Haskins at the counter, a basket beside him"
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      -4.0,
+      -0.196,
+      1.686
+     ],
+     [
+      -4.0,
+      2.4,
+      1.55
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      -4.0,
+      0.193,
+      1.666
+     ],
+     [
+      -4.0,
+      2.4,
+      1.55
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L07.3",
+   "note": "his smile, forty years of it"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      2.008,
+      0.778
+     ],
+     [
+      0,
+      3.9,
+      1.25
+     ],
+     16.8
+    ],
+    [
+     1,
+     [
+      0.0,
+      2.386,
+      0.873
+     ],
+     [
+      0,
+      3.9,
+      1.25
+     ],
+     16.8
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L08",
+   "note": "the hatch from a customer's low angle: gloves only"
+  },
+  {
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      5.1,
+      -0.83,
+      1.599
+     ],
+     [
+      5.1,
+      3.45,
+      1.3
+     ],
+     15.6
+    ],
+    [
+     1,
+     [
+      5.1,
+      -0.311,
+      1.563
+     ],
+     [
+      5.1,
+      3.45,
+      1.3
+     ],
+     15.6
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L09",
+   "note": "our booth: Omar and me laughing"
+  },
+  {
+   "id": "S14",
+   "cam": [
+    [
+     0,
+     [
+      5.1,
+      -0.44,
+      1.572
+     ],
+     [
+      5.1,
+      3.45,
+      1.3
+     ],
+     16.8
+    ],
+    [
+     1,
+     [
+      5.1,
+      0.078,
+      1.536
+     ],
+     [
+      5.1,
+      3.45,
+      1.3
+     ],
+     16.8
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L09.4",
+   "note": "BROKE: pockets out"
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      -2.4,
+      1.98,
+      2.6
+     ],
+     [
+      -2.4,
+      3.8,
+      2.6
+     ],
+     19.2
+    ],
+    [
+     1,
+     [
+      -2.4,
+      2.5,
+      2.6
+     ],
+     [
+      -2.4,
+      3.8,
+      2.6
+     ],
+     19.2
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L10",
+   "note": "the round wall clock at four"
+  },
+  {
+   "id": "S16",
+   "cam": [
+    [
+     0,
+     [
+      5.1,
+      1.749,
+      2.453
+     ],
+     [
+      5.1,
+      2.1,
+      0.8
+     ],
+     19.2
+    ],
+    [
+     1,
+     [
+      5.1,
+      1.83,
+      2.072
+     ],
+     [
+      5.1,
+      2.1,
+      0.8
+     ],
+     19.2
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L11",
+   "note": "top-down: two baskets, the two gold strokes on the edge"
+  },
+  {
+   "id": "S17",
+   "cam": [
+    [
+     0,
+     [
+      4.4,
+      0.594,
+      1.5
+     ],
+     [
+      4.4,
+      3.45,
+      1.35
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      4.4,
+      1.113,
+      1.472
+     ],
+     [
+      4.4,
+      3.45,
+      1.35
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L12",
+   "note": "me tasting a fry, eyes closed"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      60.0,
+      -2.247,
+      1.72
+     ],
+     [
+      60.0,
+      1.1,
+      1.25
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      60.0,
+      -1.603,
+      1.63
+     ],
+     [
+      60.0,
+      1.1,
+      1.25
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L13",
+   "look": "eve",
+   "note": "Mom's kitchen across town, evening: the stove cold, the smell of fries a gold shimmer"
+  },
+  {
+   "id": "S19",
+   "cam": [
+    [
+     0,
+     [
+      60.077,
+      -0.419,
+      2.437
+     ],
+     [
+      59.8,
+      1.15,
+      1.1
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      60.025,
+      -0.125,
+      2.186
+     ],
+     [
+      59.8,
+      1.15,
+      1.1
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L14",
+   "look": "eve",
+   "note": "the cold empty pot"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      57.6,
+      -0.214,
+      1.472
+     ],
+     [
+      57.6,
+      2.25,
+      1.3
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      57.6,
+      0.305,
+      1.436
+     ],
+     [
+      57.6,
+      2.25,
+      1.3
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L15",
+   "look": "eve",
+   "note": "Mom at the table rubbing her eyes"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      61.016,
+      -0.046,
+      1.566
+     ],
+     [
+      60.4,
+      2.85,
+      1.15
+     ],
+     19.2
+    ],
+    [
+     1,
+     [
+      60.909,
+      0.457,
+      1.494
+     ],
+     [
+      60.4,
+      2.85,
+      1.15
+     ],
+     19.2
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L16",
+   "look": "eve",
+   "note": "Mom asleep on the couch, glasses on her nose"
+  },
+  {
+   "id": "S22",
+   "cam": [
+    [
+     0,
+     [
+      5.1,
+      -0.44,
+      1.572
+     ],
+     [
+      5.1,
+      3.45,
+      1.3
+     ],
+     16.8
+    ],
+    [
+     1,
+     [
+      5.1,
+      0.078,
+      1.536
+     ],
+     [
+      5.1,
+      3.45,
+      1.3
+     ],
+     16.8
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L17",
+   "note": "Omar nodding at the kitchen door"
+  },
+  {
+   "id": "S23",
+   "cam": [
+    [
+     0,
+     [
+      5.1,
+      1.635,
+      2.038
+     ],
+     [
+      5.1,
+      2.35,
+      0.8
+     ],
+     20.4
+    ],
+    [
+     1,
+     [
+      5.1,
+      1.765,
+      1.813
+     ],
+     [
+      5.1,
+      2.35,
+      0.8
+     ],
+     20.4
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L18",
+   "note": "Omar's single green dollar slapped on the table"
+  },
+  {
+   "id": "S24",
+   "cam": [
+    [
+     0,
+     [
+      0.303,
+      1.237,
+      1.672
+     ],
+     [
+      1.4,
+      3.3,
+      1.55
+     ],
+     22.8
+    ],
+    [
+     1,
+     [
+      0.486,
+      1.581,
+      1.652
+     ],
+     [
+      1.4,
+      3.3,
+      1.55
+     ],
+     22.8
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L19",
+   "note": "me at the kitchen door, the round window at eye level"
+  },
+  {
+   "id": "S25",
+   "cam": [
+    [
+     0,
+     [
+      1.4,
+      2.601,
+      1.625
+     ],
+     [
+      1.4,
+      3.9,
+      1.58
+     ],
+     24.0
+    ],
+    [
+     1,
+     [
+      1.4,
+      2.861,
+      1.616
+     ],
+     [
+      1.4,
+      3.9,
+      1.58
+     ],
+     24.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "P01",
+   "note": "the drop: the round window, still"
+  },
+  {
+   "id": "S26",
+   "cam": [
+    [
+     0,
+     [
+      2.611,
+      2.693,
+      1.625
+     ],
+     [
+      1.4,
+      3.45,
+      1.55
+     ],
+     24.0
+    ],
+    [
+     1,
+     [
+      2.336,
+      2.865,
+      1.608
+     ],
+     [
+      1.4,
+      3.45,
+      1.55
+     ],
+     24.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L20",
+   "note": "I lean to the glass"
+  },
+  {
+   "id": "S27",
+   "cam": [
+    [
+     0,
+     [
+      60.0,
+      0.392,
+      1.582
+     ],
+     [
+      60.0,
+      1.95,
+      1.5
+     ],
+     24.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L21",
+   "look": "eve",
+   "dof": [
+    0.3,
+    0.7
+   ],
+   "ring": true,
+   "expramp": [
+    -1.6,
+    0.7
+   ],
+   "note": "through the window: no diner kitchen, a blur of butter yellow"
+  },
+  {
+   "id": "S28",
+   "cam": [
+    [
+     0,
+     [
+      61.3,
+      -0.795,
+      1.704
+     ],
+     [
+      61.3,
+      3.1,
+      1.5
+     ],
+     15.6
+    ],
+    [
+     1,
+     [
+      61.3,
+      -0.275,
+      1.677
+     ],
+     [
+      61.3,
+      3.1,
+      1.5
+     ],
+     15.6
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L22",
+   "dof": [
+    2.9,
+    6.0
+   ],
+   "ring": true,
+   "note": "it sharpens: Mom's kitchen, the sink window, the hook"
+  },
+  {
+   "id": "S29",
+   "cam": [
+    [
+     0,
+     [
+      60.571,
+      -0.418,
+      2.961
+     ],
+     [
+      59.8,
+      1.7,
+      1.2
+     ],
+     24.0
+    ],
+    [
+     1,
+     [
+      60.431,
+      -0.033,
+      2.641
+     ],
+     [
+      59.8,
+      1.7,
+      1.2
+     ],
+     24.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L23",
+   "ring": true,
+   "note": "Mom at her stove, eyes shut, calm. Cover frame"
+  },
+  {
+   "id": "S30",
+   "cam": [
+    [
+     0,
+     [
+      59.8,
+      0.108,
+      1.943
+     ],
+     [
+      59.8,
+      1.6,
+      1.15
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      59.8,
+      0.452,
+      1.76
+     ],
+     [
+      59.8,
+      1.6,
+      1.15
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L24",
+   "ring": true,
+   "note": "her hands at the ends of her sleeves lowering the basket into the oil"
+  },
+  {
+   "id": "S31",
+   "cam": [
+    [
+     0,
+     [
+      59.8,
+      0.001,
+      1.648
+     ],
+     [
+      59.8,
+      1.95,
+      1.58
+     ],
+     25.2
+    ],
+    [
+     1,
+     [
+      59.8,
+      0.651,
+      1.625
+     ],
+     [
+      59.8,
+      1.95,
+      1.58
+     ],
+     25.2
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L25",
+   "ring": true,
+   "note": "close: her eyes open"
+  },
+  {
+   "id": "S32",
+   "cam": [
+    [
+     0,
+     [
+      59.8,
+      0.65,
+      1.58
+     ],
+     [
+      59.8,
+      1.95,
+      1.58
+     ],
+     25.2
+    ],
+    [
+     1,
+     [
+      59.8,
+      0.975,
+      1.58
+     ],
+     [
+      59.8,
+      1.95,
+      1.58
+     ],
+     25.2
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L26",
+   "ring": true,
+   "note": "her face straight to camera through the glass"
+  },
+  {
+   "id": "S33",
+   "cam": [
+    [
+     0,
+     [
+      1.4,
+      -0.098,
+      1.671
+     ],
+     [
+      1.4,
+      2.5,
+      1.58
+     ],
+     24.0
+    ],
+    [
+     1,
+     [
+      1.4,
+      0.421,
+      1.653
+     ],
+     [
+      1.4,
+      2.5,
+      1.58
+     ],
+     24.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L27",
+   "note": "my face on my side of the glass, the sign's glow on my cheek"
+  },
+  {
+   "id": "S34",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      1.72,
+      2.5
+     ],
+     [
+      0,
+      3.8,
+      2.5
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      0.0,
+      2.305,
+      2.5
+     ],
+     [
+      0,
+      3.8,
+      2.5
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L28",
+   "note": "the 0.00 sign, its digits ramping from pink to gold"
+  },
+  {
+   "id": "S35",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      2.607,
+      1.386
+     ],
+     [
+      0,
+      3.9,
+      1.25
+     ],
+     24.0
+    ],
+    [
+     1,
+     [
+      0.0,
+      2.93,
+      1.352
+     ],
+     [
+      0,
+      3.9,
+      1.25
+     ],
+     24.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L29",
+   "note": "the hatch gloves"
+  },
+  {
+   "id": "S36",
+   "cam": [
+    [
+     0,
+     [
+      59.8,
+      -0.278,
+      1.893
+     ],
+     [
+      59.8,
+      1.7,
+      1.25
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      59.8,
+      0.216,
+      1.732
+     ],
+     [
+      59.8,
+      1.7,
+      1.25
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L29.3",
+   "note": "Mom's kitchen, her hands in the same yellow gloves"
+  },
+  {
+   "id": "S37",
+   "cam": [
+    [
+     0,
+     [
+      61.5,
+      1.004,
+      1.264
+     ],
+     [
+      61.5,
+      2.3,
+      0.66
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      61.5,
+      1.181,
+      1.182
+     ],
+     [
+      61.5,
+      2.3,
+      0.66
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L29.5",
+   "note": "in their OWN gloves: her two yellow-gloved hands, no face"
+  },
+  {
+   "id": "S38",
+   "cam": [
+    [
+     0,
+     [
+      61.95,
+      2.349,
+      1.753
+     ],
+     [
+      61.95,
+      3.3,
+      1.72
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      61.95,
+      2.516,
+      1.747
+     ],
+     [
+      61.95,
+      3.3,
+      1.72
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L29.5+0.6",
+   "note": "the hook by her sink, the yellow gloves hanging on it, her own"
+  },
+  {
+   "id": "S39",
+   "cam": [
+    [
+     0,
+     [
+      61.016,
+      -0.046,
+      1.566
+     ],
+     [
+      60.4,
+      2.85,
+      1.15
+     ],
+     19.2
+    ],
+    [
+     1,
+     [
+      60.909,
+      0.457,
+      1.494
+     ],
+     [
+      60.4,
+      2.85,
+      1.15
+     ],
+     19.2
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L30",
+   "look": "eve",
+   "note": "Mom asleep on the couch"
+  },
+  {
+   "id": "S40",
+   "cam": [
+    [
+     0,
+     [
+      57.6,
+      -0.214,
+      1.522
+     ],
+     [
+      57.6,
+      2.25,
+      1.35
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      57.6,
+      0.305,
+      1.486
+     ],
+     [
+      57.6,
+      2.25,
+      1.35
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L31",
+   "look": "eve",
+   "note": "Mom at the table, tired"
+  },
+  {
+   "id": "S41",
+   "cam": [
+    [
+     0,
+     [
+      60.0,
+      -2.709,
+      2.505
+     ],
+     [
+      60.0,
+      1.0,
+      1.3
+     ],
+     16.8
+    ],
+    [
+     1,
+     [
+      60.0,
+      -1.967,
+      2.264
+     ],
+     [
+      60.0,
+      1.0,
+      1.3
+     ],
+     16.8
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L32",
+   "look": "eve",
+   "note": "Mom's kitchen from the doorway, a pot on, warm light"
+  },
+  {
+   "id": "S42",
+   "cam": [
+    [
+     0,
+     [
+      0.464,
+      1.917,
+      1.29
+     ],
+     [
+      0.15,
+      3.7,
+      1.1
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      0.397,
+      2.299,
+      1.249
+     ],
+     [
+      0.15,
+      3.7,
+      1.1
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L33",
+   "note": "a second basket sliding out, toward Omar"
+  },
+  {
+   "id": "S43",
+   "cam": [
+    [
+     0,
+     [
+      60.1,
+      -0.646,
+      1.536
+     ],
+     [
+      60.1,
+      1.95,
+      1.4
+     ],
+     24.0
+    ],
+    [
+     1,
+     [
+      60.1,
+      -0.127,
+      1.509
+     ],
+     [
+      60.1,
+      1.95,
+      1.4
+     ],
+     24.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L34",
+   "ring": true,
+   "note": "through the window: Mom setting a second basket in the oil"
+  },
+  {
+   "id": "S44",
+   "cam": [
+    [
+     0,
+     [
+      97.6,
+      -1.765,
+      1.601
+     ],
+     [
+      97.6,
+      2.25,
+      1.25
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      97.6,
+      -1.117,
+      1.545
+     ],
+     [
+      97.6,
+      2.25,
+      1.25
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L35",
+   "note": "our kitchen table: Mom, me and Omar at dinner, Omar's plate full"
+  },
+  {
+   "id": "S45",
+   "cam": [
+    [
+     0,
+     [
+      97.6,
+      0.305,
+      1.436
+     ],
+     [
+      97.6,
+      2.25,
+      1.3
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      97.6,
+      0.694,
+      1.409
+     ],
+     [
+      97.6,
+      2.25,
+      1.3
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L36",
+   "note": "Mom laughing at the table"
+  },
+  {
+   "id": "S46",
+   "cam": [
+    [
+     0,
+     [
+      99.95,
+      -1.292,
+      1.527
+     ],
+     [
+      99.95,
+      1.95,
+      1.3
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      99.95,
+      -0.903,
+      1.5
+     ],
+     [
+      99.95,
+      1.95,
+      1.3
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L36+1.0",
+   "note": "Omar and me at the stove"
+  },
+  {
+   "id": "S47",
+   "cam": [
+    [
+     0,
+     [
+      100.032,
+      0.084,
+      1.752
+     ],
+     [
+      99.8,
+      0.95,
+      1.0
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      99.968,
+      0.325,
+      1.543
+     ],
+     [
+      99.8,
+      0.95,
+      1.0
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L37",
+   "note": "a pan of noodles"
+  },
+  {
+   "id": "S48",
+   "cam": [
+    [
+     0,
+     [
+      100.068,
+      0.084,
+      1.752
+     ],
+     [
+      100.3,
+      0.95,
+      1.0
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      100.132,
+      0.325,
+      1.543
+     ],
+     [
+      100.3,
+      0.95,
+      1.0
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L38",
+   "note": "a tray of something baked"
+  },
+  {
+   "id": "S49",
+   "cam": [
+    [
+     0,
+     [
+      101.2,
+      2.08,
+      1.55
+     ],
+     [
+      101.2,
+      3.38,
+      1.55
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      101.2,
+      2.34,
+      1.55
+     ],
+     [
+      101.2,
+      3.38,
+      1.55
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L38+0.65",
+   "note": "a calendar page flipping"
+  },
+  {
+   "id": "S50",
+   "cam": [
+    [
+     0,
+     [
+      -0.5,
+      -0.95,
+      1.64
+     ],
+     [
+      -0.5,
+      3.2,
+      1.35
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      -0.5,
+      -0.301,
+      1.595
+     ],
+     [
+      -0.5,
+      3.2,
+      1.35
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L39",
+   "note": "the diner at noon: Mom waits, a basket slides out in a mustard sleeve and a denim cuff"
+  },
+  {
+   "id": "S51",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      -0.912,
+      1.668
+     ],
+     [
+      0.2,
+      2.2,
+      1.45
+     ],
+     19.2
+    ],
+    [
+     1,
+     [
+      0.2,
+      -0.264,
+      1.622
+     ],
+     [
+      0.2,
+      2.2,
+      1.45
+     ],
+     19.2
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L40",
+   "note": "Mom stretching, rested"
+  },
+  {
+   "id": "S52",
+   "cam": [
+    [
+     0,
+     [
+      1.34,
+      1.362,
+      1.6
+     ],
+     [
+      -1.0,
+      3.0,
+      1.45
+     ],
+     21.599999999999998
+    ],
+    [
+     1,
+     [
+      0.914,
+      1.66,
+      1.572
+     ],
+     [
+      -1.0,
+      3.0,
+      1.45
+     ],
+     21.599999999999998
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L41",
+   "note": "Mom at the diner counter, pointing at the hatch"
+  },
+  {
+   "id": "S53",
+   "cam": [
+    [
+     0,
+     [
+      140.0,
+      -3.103,
+      1.585
+     ],
+     [
+      140.0,
+      1.3,
+      1.2
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      140.0,
+      -2.585,
+      1.54
+     ],
+     [
+      140.0,
+      1.3,
+      1.2
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L41.2",
+   "note": "Omar and me at work in a stockroom, mid-step, carrying a box"
+  },
+  {
+   "id": "S54",
+   "cam": [
+    [
+     0,
+     [
+      140.0,
+      -2.4,
+      1.2
+     ],
+     [
+      140.0,
+      1.5,
+      1.2
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      140.0,
+      -2.14,
+      1.2
+     ],
+     [
+      140.0,
+      1.5,
+      1.2
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L42",
+   "note": "we blink"
+  },
+  {
+   "id": "S55",
+   "cam": [
+    [
+     0,
+     [
+      100.0,
+      -1.547,
+      1.656
+     ],
+     [
+      100.0,
+      1.95,
+      1.35
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      100.0,
+      -1.029,
+      1.611
+     ],
+     [
+      100.0,
+      1.95,
+      1.35
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L42.2",
+   "note": "at our apartment stove side by side, a fry basket in my hands"
+  },
+  {
+   "id": "S56",
+   "cam": [
+    [
+     0,
+     [
+      99.95,
+      -0.799,
+      2.088
+     ],
+     [
+      99.95,
+      1.95,
+      1.3
+     ],
+     20.4
+    ],
+    [
+     1,
+     [
+      99.95,
+      -0.424,
+      1.981
+     ],
+     [
+      99.95,
+      1.95,
+      1.3
+     ],
+     20.4
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "at": "L42.3",
+   "note": "both of us whole, the fry basket at the end of my sleeve"
+  },
+  {
+   "id": "S57",
+   "cam": [
+    [
+     0,
+     [
+      0.45,
+      0.528,
+      2.186
+     ],
+     [
+      0.45,
+      3.9,
+      1.95
+     ],
+     18.0
+    ],
+    [
+     1,
+     [
+      0.45,
+      0.658,
+      2.177
+     ],
+     [
+      0.45,
+      3.9,
+      1.95
+     ],
+     18.0
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L43",
+   "note": "the hatch again, back to S01's framing. Loop"
+  }
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L03",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L03",
+    "pos": [
+     2.6,
+     0.6,
+     0
+    ],
+    "blend": 0,
+    "yaw": 40,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L03.1-0.3",
+    "pos": [
+     4.4,
+     2.8,
+     0
+    ]
+   },
+   {
+    "at": "L03.1",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L03.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L09",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L09",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L09.4",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L09.4",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0.9,
+     0.9
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L10",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L11",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L11",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L12",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L12",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "soft",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L13",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L17",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L17",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L18",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L18",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L19",
+    "pos": [
+     4.4,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     1.4,
+     2.9,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "P01",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L20",
+    "pos": [
+     1.4,
+     2.9,
+     0
+    ]
+   },
+   {
+    "at": "L20",
+    "pos": [
+     1.4,
+     3.3,
+     0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0.25,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L21",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L27",
+    "pos": [
+     1.4,
+     3.3,
+     0
+    ]
+   },
+   {
+    "at": "L27",
+    "pos": [
+     1.4,
+     2.5,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "scared",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L28",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L35",
+    "pos": [
+     1.4,
+     2.5,
+     0
+    ]
+   },
+   {
+    "at": "L35",
+    "pos": [
+     98.35,
+     2.25,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L36",
+    "pos": [
+     98.35,
+     2.25,
+     -0.23
+    ]
+   },
+   {
+    "at": "L36",
+    "pos": [
+     100.5,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     75,
+     75
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L36+1.0",
+    "pos": [
+     100.5,
+     1.95,
+     0
+    ]
+   },
+   {
+    "at": "L36+1.0",
+    "pos": [
+     100.5,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     75,
+     75
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L37",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L41.2",
+    "pos": [
+     100.5,
+     1.95,
+     0
+    ]
+   },
+   {
+    "at": "L41.2",
+    "pos": [
+     138.8,
+     0.9,
+     0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0.9,
+     0.9
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L42",
+    "pos": [
+     140.2,
+     0.9,
+     0
+    ]
+   },
+   {
+    "at": "L42",
+    "pos": [
+     139.05,
+     1.5,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "shut",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     12
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L41.2+1.4",
+    "pos": [
+     140.2,
+     0.9,
+     0
+    ]
+   },
+   {
+    "at": "L42.2",
+    "pos": [
+     139.05,
+     1.5,
+     0
+    ]
+   },
+   {
+    "at": "L42.2",
+    "pos": [
+     100.5,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "wide",
+    "hidden": false,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L43",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "omar": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L09",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L09",
+    "pos": [
+     5.8,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L09.4",
+    "pos": [
+     5.8,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L09.4",
+    "pos": [
+     5.8,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0.9,
+     0.9
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L10",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L11",
+    "pos": [
+     5.8,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L11",
+    "pos": [
+     5.8,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L12",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L17",
+    "pos": [
+     5.8,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L17",
+    "pos": [
+     5.8,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": -40,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L18",
+    "pos": [
+     5.8,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L18",
+    "pos": [
+     5.8,
+     3.45,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     1.2,
+     1.2
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L19",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L35",
+    "pos": [
+     5.8,
+     3.45,
+     -0.23
+    ]
+   },
+   {
+    "at": "L35",
+    "pos": [
+     96.85,
+     2.25,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L36",
+    "pos": [
+     96.85,
+     2.25,
+     -0.23
+    ]
+   },
+   {
+    "at": "L36",
+    "pos": [
+     99.4,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "grin",
+    "hidden": false,
+    "arms": [
+     75,
+     75
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L36+1.0",
+    "pos": [
+     99.4,
+     1.95,
+     0
+    ]
+   },
+   {
+    "at": "L36+1.0",
+    "pos": [
+     99.4,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     75,
+     75
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L37",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L41.2",
+    "pos": [
+     99.4,
+     1.95,
+     0
+    ]
+   },
+   {
+    "at": "L41.2",
+    "pos": [
+     139.4,
+     1.7,
+     0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0.9,
+     0.9
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L42",
+    "pos": [
+     140.8,
+     1.7,
+     0
+    ]
+   },
+   {
+    "at": "L42",
+    "pos": [
+     140.8,
+     1.5,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "shut",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L41.2+1.4",
+    "pos": [
+     140.8,
+     1.7,
+     0
+    ]
+   },
+   {
+    "at": "L42.2",
+    "pos": [
+     140.8,
+     1.5,
+     0
+    ]
+   },
+   {
+    "at": "L42.2",
+    "pos": [
+     99.4,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "wide",
+    "hidden": false,
+    "arms": [
+     75,
+     75
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L43",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "mom": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L15",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L15",
+    "pos": [
+     57.6,
+     2.25,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "squeeze",
+    "hidden": false,
+    "arms": [
+     0,
+     2.0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L16",
+    "pos": [
+     57.6,
+     2.25,
+     -0.23
+    ]
+   },
+   {
+    "at": "L16",
+    "pos": [
+     60.4,
+     2.85,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "asleep",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0.25
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L17",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L23",
+    "pos": [
+     60.4,
+     2.85,
+     -0.23
+    ]
+   },
+   {
+    "at": "L23",
+    "pos": [
+     59.8,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "asleep",
+    "hidden": false,
+    "arms": [
+     95,
+     95
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L24",
+    "pos": [
+     59.8,
+     1.95,
+     0
+    ]
+   },
+   {
+    "at": "L24",
+    "pos": [
+     59.8,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "asleep",
+    "hidden": false,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L25",
+    "pos": [
+     59.8,
+     1.95,
+     0
+    ]
+   },
+   {
+    "at": "L25",
+    "pos": [
+     59.8,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "wide",
+    "hidden": false,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L27",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L29.3",
+    "pos": [
+     59.8,
+     1.95,
+     0
+    ]
+   },
+   {
+    "at": "L29.3",
+    "pos": [
+     59.8,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "asleep",
+    "hidden": false,
+    "arms": [
+     95,
+     95
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L29.5",
+    "pos": [
+     59.8,
+     1.95,
+     0
+    ]
+   },
+   {
+    "at": "L29.5",
+    "pos": [
+     61.5,
+     2.7,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "asleep",
+    "hidden": false,
+    "arms": [
+     30,
+     30
+    ],
+    "side": [
+     -27,
+     -27
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L30",
+    "pos": [
+     61.5,
+     2.7,
+     0
+    ]
+   },
+   {
+    "at": "L30",
+    "pos": [
+     60.4,
+     2.85,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "asleep",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0.25
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L31",
+    "pos": [
+     60.4,
+     2.85,
+     -0.23
+    ]
+   },
+   {
+    "at": "L31",
+    "pos": [
+     57.6,
+     2.25,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L32",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L34",
+    "pos": [
+     57.6,
+     2.25,
+     -0.23
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     60.25,
+     1.95,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "asleep",
+    "hidden": false,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L35",
+    "pos": [
+     60.25,
+     1.95,
+     0
+    ]
+   },
+   {
+    "at": "L35",
+    "pos": [
+     97.6,
+     2.25,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L36",
+    "pos": [
+     97.6,
+     2.25,
+     -0.23
+    ]
+   },
+   {
+    "at": "L36",
+    "pos": [
+     97.6,
+     2.25,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L36+1.0",
+    "pos": [
+     97.6,
+     2.25,
+     -0.23
+    ]
+   },
+   {
+    "at": "L36+1.0",
+    "pos": [
+     97.6,
+     2.25,
+     -0.23
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L37",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L39",
+    "pos": [
+     97.6,
+     2.25,
+     -0.23
+    ]
+   },
+   {
+    "at": "L39",
+    "pos": [
+     -1.1,
+     3.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L40",
+    "pos": [
+     -1.1,
+     3.0,
+     0
+    ]
+   },
+   {
+    "at": "L40",
+    "pos": [
+     0.2,
+     2.2,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "soft",
+    "hidden": false,
+    "arms": [
+     3.0,
+     3.0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L41",
+    "pos": [
+     0.2,
+     2.2,
+     0
+    ]
+   },
+   {
+    "at": "L41",
+    "pos": [
+     -1.0,
+     3.0,
+     0
+    ],
+    "blend": 0,
+    "yaw": 120,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     1.5,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L41.2",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "haskins": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L07",
+    "pos": [
+     0,
+     20,
+     0
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -4.0,
+     2.4,
+     0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L08",
+    "hidden": true,
+    "blend": 0
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "sign",
+   "tint": "pink"
+  },
+  {
+   "at": 0,
+   "name": "hatch",
+   "kind": "yellow",
+   "s0": 0.0,
+   "s1": 1.0,
+   "dur": 1.6,
+   "basket": true,
+   "wig": 0.0,
+   "second": false
+  },
+  {
+   "at": "L03",
+   "name": "hatch",
+   "kind": "yellow",
+   "s0": 1.0,
+   "s1": 1.0,
+   "dur": 1.2,
+   "basket": false,
+   "wig": 0.0,
+   "second": false
+  },
+  {
+   "at": "L03.1",
+   "name": "bell"
+  },
+  {
+   "at": "L04",
+   "name": "hatch",
+   "kind": "yellow",
+   "s0": 0.0,
+   "s1": 1.0,
+   "dur": 1.2,
+   "basket": true,
+   "wig": 0.0,
+   "second": false
+  },
+  {
+   "at": "L05",
+   "name": "hatch",
+   "kind": "yellow",
+   "s0": 1.0,
+   "s1": 1.0,
+   "dur": 1.2,
+   "basket": true,
+   "wig": 1.0,
+   "second": false
+  },
+  {
+   "at": "L06",
+   "name": "hatch",
+   "kind": "pink",
+   "s0": 0.0,
+   "s1": 1.0,
+   "dur": 0.8,
+   "basket": true,
+   "wig": 0.0,
+   "second": false
+  },
+  {
+   "at": "L06.1",
+   "name": "hatch",
+   "kind": "green",
+   "s0": 0.0,
+   "s1": 1.0,
+   "dur": 0.8,
+   "basket": true,
+   "wig": 0.0,
+   "second": false
+  },
+  {
+   "at": "L06.2",
+   "name": "hatch",
+   "kind": "mitt",
+   "s0": 0.0,
+   "s1": 1.0,
+   "dur": 0.8,
+   "basket": true,
+   "wig": 0.0,
+   "second": false
+  },
+  {
+   "at": "L07",
+   "name": "hatch",
+   "kind": "yellow",
+   "s0": 1.0,
+   "s1": 1.0,
+   "dur": 1.2,
+   "basket": false,
+   "wig": 0.0,
+   "second": false
+  },
+  {
+   "at": "L08",
+   "name": "hatch",
+   "kind": "yellow",
+   "s0": 1.0,
+   "s1": 1.0,
+   "dur": 1.2,
+   "basket": false,
+   "wig": 1.0,
+   "second": false
+  },
+  {
+   "at": "L11",
+   "name": "tb",
+   "on": true
+  },
+  {
+   "at": "L13",
+   "name": "smell",
+   "on": true
+  },
+  {
+   "at": "L14",
+   "name": "smell",
+   "on": false
+  },
+  {
+   "at": "L18.1",
+   "name": "dollar",
+   "on": true
+  },
+  {
+   "at": "L19",
+   "name": "dollar",
+   "on": false
+  },
+  {
+   "at": "L21",
+   "name": "stove",
+   "on": true
+  },
+  {
+   "at": "L23",
+   "name": "mgloves",
+   "on": true
+  },
+  {
+   "at": "L24",
+   "name": "mbA",
+   "on": true,
+   "dur": 1.4,
+   "z0": 1.35,
+   "z1": 1.13,
+   "y0": 1.25
+  },
+  {
+   "at": "L28",
+   "name": "sign",
+   "tint": "gold",
+   "dur": 0.5
+  },
+  {
+   "at": "L29",
+   "name": "sign",
+   "tint": "pink"
+  },
+  {
+   "at": "L29",
+   "name": "hatch",
+   "kind": "yellow",
+   "s0": 1.0,
+   "s1": 1.0,
+   "dur": 1.2,
+   "basket": true,
+   "wig": 1.0,
+   "second": false
+  },
+  {
+   "at": "L29.3",
+   "name": "mbA",
+   "on": false
+  },
+  {
+   "at": "L29.5",
+   "name": "mgloves",
+   "on": true
+  },
+  {
+   "at": "L29.5+0.6",
+   "name": "mgloves",
+   "on": false
+  },
+  {
+   "at": "L30",
+   "name": "mgloves",
+   "on": false
+  },
+  {
+   "at": "L32",
+   "name": "stove",
+   "on": true
+  },
+  {
+   "at": "L33",
+   "name": "hatch",
+   "kind": "yellow",
+   "s0": 0.0,
+   "s1": 1.0,
+   "dur": 1.2,
+   "basket": true,
+   "wig": 0.0,
+   "second": true
+  },
+  {
+   "at": "L34",
+   "name": "mbA",
+   "on": true,
+   "dur": 0.01,
+   "z0": 1.13,
+   "z1": 1.13
+  },
+  {
+   "at": "L34",
+   "name": "mbB",
+   "on": true,
+   "dur": 1.4,
+   "z0": 1.35,
+   "z1": 1.13,
+   "y0": 1.25
+  },
+  {
+   "at": "L34",
+   "name": "mgloves",
+   "on": true
+  },
+  {
+   "at": "L35",
+   "name": "mgloves",
+   "on": false
+  },
+  {
+   "at": "L37",
+   "name": "dish",
+   "which": "pan"
+  },
+  {
+   "at": "L38",
+   "name": "dish",
+   "which": "tray"
+  },
+  {
+   "at": "L38+0.65",
+   "name": "dish",
+   "which": null
+  },
+  {
+   "at": "L38+0.65",
+   "name": "cal",
+   "dur": 0.8
+  },
+  {
+   "at": "L39",
+   "name": "cal",
+   "dur": 0.01
+  },
+  {
+   "at": "L39",
+   "name": "hatch",
+   "kind": "ours",
+   "s0": 0.0,
+   "s1": 1.0,
+   "dur": 1.1,
+   "basket": true,
+   "wig": 0.0,
+   "second": false
+  },
+  {
+   "at": "L40",
+   "name": "hatch",
+   "kind": "yellow",
+   "s0": 0.0,
+   "s1": 0.0,
+   "dur": 1.2,
+   "basket": false,
+   "wig": 0.0,
+   "second": false
+  },
+  {
+   "at": "L41.2",
+   "name": "srbox",
+   "x0": 139.0,
+   "x1": 140.2,
+   "y0": 1.3,
+   "y1": 1.3,
+   "dur": 1.4
+  },
+  {
+   "at": "L42",
+   "name": "srbox",
+   "x0": 140.0,
+   "x1": 140.0,
+   "y0": 1.3,
+   "y1": 1.3,
+   "dur": 0.1
+  },
+  {
+   "at": "L42.2",
+   "name": "hbask",
+   "on": true
+  },
+  {
+   "at": "L42.2",
+   "name": "stove",
+   "on": true
+  },
+  {
+   "at": "L43",
+   "name": "hbask",
+   "on": false
+  },
+  {
+   "at": "L43",
+   "name": "stove",
+   "on": false
+  },
+  {
+   "at": "L43",
+   "name": "hatch",
+   "kind": "yellow",
+   "s0": 0.0,
+   "s1": 1.0,
+   "dur": 1.6,
+   "basket": true,
+   "wig": 0.0,
+   "second": false
+  }
+ ],
+ "set_moves": [],
+ "music": {
+  "root": 53,
+  "mode": "major",
+  "bpm": 132,
+  "seed": 83,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "bubble",
+     "pulse",
+     "pluck_hi"
+    ],
+    "energy": 0.6
+   },
+   {
+    "at": "L12",
+    "voices": [
+     "bubble",
+     "pulse",
+     "pluck",
+     "pad"
+    ],
+    "energy": 0.55
+   },
+   {
+    "at": "L20",
+    "voices": [
+     "drone",
+     "pad",
+     "pluck"
+    ],
+    "energy": 0.4,
+    "mode": "minor"
+   },
+   {
+    "at": "L28",
+    "voices": [
+     "drone",
+     "pad"
+    ],
+    "energy": 0.5,
+    "mode": "minor"
+   },
+   {
+    "at": "L33",
+    "voices": [
+     "pad",
+     "pluck",
+     "bubble"
+    ],
+    "energy": 0.45,
+    "mode": "major"
+   },
+   {
+    "at": "L36",
+    "voices": [
+     "pad",
+     "pluck_hi",
+     "bubble",
+     "pulse"
+    ],
+    "energy": 0.5,
+    "mode": "major"
+   },
+   {
+    "at": "L41",
+    "voices": [
+     "drone"
+    ],
+    "energy": 0.3,
+    "mode": "minor"
+   }
+  ]
+ },
+ "sound": {
+  "rev": 2,
+  "floor": "wood",
+  "steps_db": -22,
+  "ambience": [
+   {
+    "kind": "room",
+    "from": 0,
+    "to": "end",
+    "lufs": -40
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L01.3",
+    "kind": "bell",
+    "db": -12
+   },
+   {
+    "at": "L03.1",
+    "kind": "ding",
+    "db": -16
+   },
+   {
+    "at": "L18.1",
+    "kind": "thud",
+    "db": -16
+   },
+   {
+    "at": "L20",
+    "kind": "creak",
+    "db": -20,
+    "dur": 0.9
+   },
+   {
+    "at": "L25",
+    "kind": "hit",
+    "db": -26
+   },
+   {
+    "at": "L40.2",
+    "kind": "chime",
+    "db": -24
+   },
+   {
+    "at": "L42.2",
+    "kind": "burner",
+    "db": -28,
+    "dur": 1.2
+   }
+  ],
+  "music_drops": [
+   {
+    "from": "L19>",
+    "to": "P01>"
+   }
+  ]
+ },
+ "rev": 15
+}

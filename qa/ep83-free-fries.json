@@ -1,0 +1,26 @@
+{
+ "stage": "proof",
+ "film": "proof-41857138077",
+ "run": 41857138077,
+ "sha": "a2b810b9d7dc2fb287ec0e2fb299c79cb30f4de4",
+ "verdict": "pass",
+ "date": "2026-11-04",
+ "checked": [
+  "frames every 2 s",
+  "first 3 s every frame",
+  "phone and TV size",
+  "head-near-prop beats 34-37 s, 71-74.5 s",
+  "clip",
+  "cover",
+  "loudness",
+  "hf windows",
+  "polish",
+  "craft",
+  "flash",
+  "opening",
+  "package",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.2 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 21.2 | 14.0– | ok |\n| macro.motion_energy_q | 8.38 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 7.34 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.123 | –0.25 | ok |\n| spec.shot_p90_s | 2.11 | –2.5 | ok |\n| macro.longest_still_s | 0.2 | –1.5 | ok |\n| macro.motion_energy_mean | 3.14 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.66 | 0.4– | ok |\n| macro.brightness_mean | 0.671 | 0.35– | ok |\n| macro.brightness_first_3s | 0.655 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.357 | 0.42– | **warn** |\n| macro.contrast_mean | 0.26 | 0.18– | ok |\n| spec.face_big_share | 0.342 | 0.4– | **warn** |\n| spec.caption_share | 0.976 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.526 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.667 | –0.25 | **warn** |\n| micro.idle_window_share | 0.078 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 84.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.1 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0052 | –0.005 | **warn** |\n| sound.voice_bed_gap_db | 9.9 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0372 | –0.08 | ok |\n| sound.hf_jump_max | 0.0152 | –0.04 | ok |",
+ "notes": "Proof 76.3 s at a2b810b9 (270x480 drawn, 4 samples, upscaled to 1080x1920). verdict.json pass; flash max 1/s (3f 3/s), red 0; clip.json 344 times, 0 hits. -14.1 LUFS / -1.8 dBTP, LRA 1.4; HF >4 kHz 0.9-3.2% per 5 s, max jump 0.02; L43 ends before the cut. Gate OPEN (warn: 5 captions up under 0.2 s).\nSecond one: bright mint diner, centred close-up of the steel hatch as two yellow gloves slide a gold basket of fries out, the pink 0.00 sign glowing above, the kitchen door round window beside, slow push in; \"The fries here are FREE. Just never look in the KITCHEN.\" then \"If you LOOK, you will see who is PAYING\" on the dark window. No face in frame 1 (the gloves stand in, as scripted); lit and moving.\nFrames every 2 s, all of 0-3 s, phone and 1920-wide: faces read (Mom eyes-shut behind glasses 40-42 s, stare 44-46 s), captions centred at ~65% height in the safe area, nothing black or frozen, no stray text (signs are numerals only), no intersections: head-near-prop beats checked at 34-37 s (my head by the round window), 71-74.5 s (stockroom walk, then the basket held at my chest at the stove, no clip).\nNotes, not fails: S19 34.6-36.0 s and S20 36.6-37.3 s show only the back/side of my head cropped at frame right, so my worried face is never seen before the look; cover_s 41.5 (Mom eyes shut in the porthole) is good, 45.0 (her open-eyed stare) may be stronger.\nPolish on: 5 punch-ins (land on emph lines L01/L12/L20/L26/L28), 3 whooshes, all sounds under 4 kHz, voice never buried (bed gap 9.9 dB). The 0.6 s drop at 36.0-36.6 s (about -60 dB) is the scripted music drop before I LOOKED; it fades down rather than rising in, acceptable.\nOpening: package opening cost matches \"The fries here are FREE\" (the place rule with its price); last upload floor-thirteen is if, no clash. ep83 is not yet in queue.txt: queue it away from the other cost stories (ep54, rule-three, dryer-nine).\nPackage: title, description, pin match and do not spoil the who-pays twist; narrator male, no husband; Omar is best friend.\ncraft: 0 block, 0 near, 4 warn: macro.saturation_mean 0.357 (0.42-), spec.face_big_share 0.342 (0.4-), micro.walk_dead_end_share 0.667 (-0.25), sound.silence_share 0.0052 (-0.005); looked at: pastel palette is by design and reads bright, the walk ends at 72.5 s on a scripted cut, the silence is the drop. None loses viewers. No fixes required."
+}

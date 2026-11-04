@@ -1,0 +1,1053 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "the fries here are free. just never look in the kitchen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.155,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     1.103
+    ],
+    [
+     1.199,
+     1.733
+    ],
+    [
+     1.733,
+     2.397
+    ]
+   ]
+  },
+  "L02": {
+   "text": "if you look, you'll see who's paying.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.836
+    ],
+    [
+     0.836,
+     1.569
+    ]
+   ]
+  },
+  "L03": {
+   "text": "you sit down. the bell dings.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.681,
+     1.466
+    ]
+   ]
+  },
+  "L04": {
+   "text": "a basket slides out of the hatch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.94
+    ],
+    [
+     0.94,
+     1.552
+    ]
+   ]
+  },
+  "L05": {
+   "text": "two yellow gloves. that's all you ever see.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.897,
+     1.19
+    ],
+    [
+     1.19,
+     1.897
+    ]
+   ]
+  },
+  "L06": {
+   "text": "everybody's gloves are different, and nobody knows why.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.259
+    ],
+    [
+     1.328,
+     1.655
+    ],
+    [
+     1.655,
+     2.379
+    ]
+   ]
+  },
+  "L07": {
+   "text": "old mr. haskins has had free fries here every day for forty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.276,
+   "onset": 0.172,
+   "end": 3.086,
+   "chunks": [
+    [
+     0.172,
+     0.905
+    ],
+    [
+     0.905,
+     1.337
+    ],
+    [
+     1.337,
+     1.81
+    ],
+    [
+     1.81,
+     2.224
+    ],
+    [
+     2.224,
+     3.086
+    ]
+   ]
+  },
+  "L08": {
+   "text": "nobody's ever seen the cook.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.724,
+     1.362
+    ]
+   ]
+  },
+  "L09": {
+   "text": "my best friend, omar, and i share an apartment, and we're broke.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.155,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.69,
+     1.0
+    ],
+    [
+     1.026,
+     1.474
+    ],
+    [
+     1.474,
+     1.879
+    ],
+    [
+     1.906,
+     2.569
+    ]
+   ]
+  },
+  "L10": {
+   "text": "so after our shifts, we're here every day at four.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.862
+    ],
+    [
+     0.888,
+     1.138
+    ],
+    [
+     1.138,
+     1.492
+    ],
+    [
+     1.492,
+     2.086
+    ]
+   ]
+  },
+  "L11": {
+   "text": "same booth. two baskets.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.552
+    ],
+    [
+     0.586,
+     1.362
+    ]
+   ]
+  },
+  "L12": {
+   "text": "mine taste exactly like my mom's.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.957
+    ],
+    [
+     0.957,
+     1.776
+    ]
+   ]
+  },
+  "L13": {
+   "text": "and every evening, my mom's kitchen, across town, smells like fries.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.224
+    ],
+    [
+     1.25,
+     1.759
+    ],
+    [
+     1.819,
+     2.879
+    ]
+   ]
+  },
+  "L14": {
+   "text": "nobody's cooked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.19,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.19,
+     1.017
+    ]
+   ]
+  },
+  "L15": {
+   "text": "mom keeps saying she's never been so tired.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.061
+    ],
+    [
+     1.061,
+     1.931
+    ]
+   ]
+  },
+  "L16": {
+   "text": "she's asleep on the couch by five, every single day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.828
+    ],
+    [
+     0.828,
+     1.293
+    ],
+    [
+     1.362,
+     2.362
+    ]
+   ]
+  },
+  "L17": {
+   "text": "then on tuesday, omar dared me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.81,
+     1.69
+    ]
+   ]
+  },
+  "L18": {
+   "text": "he bet me his last dollar.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     1.379
+    ]
+   ]
+  },
+  "L19": {
+   "text": "the kitchen door has one little round window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.19
+    ],
+    [
+     1.19,
+     2.017
+    ]
+   ]
+  },
+  "L20": {
+   "text": "i looked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.983,
+   "onset": 0.19,
+   "end": 0.776,
+   "chunks": [
+    [
+     0.19,
+     0.776
+    ]
+   ]
+  },
+  "L21": {
+   "text": "there was no kitchen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     1.121
+    ]
+   ]
+  },
+  "L22": {
+   "text": "through the window was my mom's kitchen. across town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.776
+    ],
+    [
+     0.776,
+     1.448
+    ],
+    [
+     1.543,
+     2.414
+    ]
+   ]
+  },
+  "L23": {
+   "text": "and mom, at her stove, eyes shut,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.439,
+     0.845
+    ],
+    [
+     0.879,
+     1.534
+    ]
+   ]
+  },
+  "L24": {
+   "text": "lowering fries into the oil.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.19,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.19,
+     0.716
+    ],
+    [
+     0.716,
+     1.431
+    ]
+   ]
+  },
+  "L25": {
+   "text": "then her eyes opened.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.224
+    ]
+   ]
+  },
+  "L26": {
+   "text": "she looked right at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.19,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     1.086
+    ]
+   ]
+  },
+  "L27": {
+   "text": "like she could see me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.121
+    ]
+   ]
+  },
+  "L28": {
+   "text": "that's who pays.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ]
+   ]
+  },
+  "L29": {
+   "text": "whoever cooks for you most makes your fries, in their own kitchen, in their own gloves.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.328,
+   "onset": 0.155,
+   "end": 3.138,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.819
+    ],
+    [
+     0.819,
+     1.517
+    ],
+    [
+     1.561,
+     1.707
+    ],
+    [
+     1.707,
+     2.172
+    ],
+    [
+     2.199,
+     2.362
+    ],
+    [
+     2.362,
+     3.138
+    ]
+   ]
+  },
+  "L30": {
+   "text": "they never know they did it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.345
+    ]
+   ]
+  },
+  "L31": {
+   "text": "they're just tired, every night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.698,
+     1.362
+    ]
+   ]
+  },
+  "L32": {
+   "text": "and mom's cooked for me every day of my life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.888
+    ],
+    [
+     0.888,
+     1.25
+    ],
+    [
+     1.25,
+     1.931
+    ]
+   ]
+  },
+  "L33": {
+   "text": "then omar's basket came out of the hatch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ],
+    [
+     0.966,
+     1.25
+    ],
+    [
+     1.25,
+     1.81
+    ]
+   ]
+  },
+  "L34": {
+   "text": "and through the window, i watched mom cook his basket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.759
+    ],
+    [
+     0.828,
+     1.431
+    ],
+    [
+     1.431,
+     2.259
+    ]
+   ]
+  },
+  "L35": {
+   "text": "he's at mom's for dinner most nights.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     0.897
+    ],
+    [
+     0.897,
+     1.603
+    ]
+   ]
+  },
+  "L36": {
+   "text": "so that night, omar and i cooked mom dinner, at our place.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.638,
+     1.103
+    ],
+    [
+     1.103,
+     1.672
+    ],
+    [
+     1.698,
+     2.397
+    ]
+   ]
+  },
+  "L37": {
+   "text": "and the night after.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     1.052
+    ]
+   ]
+  },
+  "L38": {
+   "text": "and every night since.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.172
+    ]
+   ]
+  },
+  "L39": {
+   "text": "now when mom gets fries here on her lunch break, we're the ones who cook for her most.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.5,
+   "onset": 0.19,
+   "end": 3.293,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     1.215
+    ],
+    [
+     1.215,
+     1.362
+    ],
+    [
+     1.362,
+     1.966
+    ],
+    [
+     2.034,
+     2.337
+    ],
+    [
+     2.337,
+     2.681
+    ],
+    [
+     2.681,
+     3.293
+    ]
+   ]
+  },
+  "L40": {
+   "text": "she says she's never felt so rested.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.19,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.448,
+     1.0
+    ],
+    [
+     1.0,
+     1.69
+    ]
+   ]
+  },
+  "L41": {
+   "text": "so the second mom orders, wherever omar and i are,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.086
+    ],
+    [
+     1.138,
+     1.664
+    ],
+    [
+     1.664,
+     2.31
+    ]
+   ]
+  },
+  "L42": {
+   "text": "we blink, and we're at our stove, holding a fry basket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.724
+    ],
+    [
+     0.724,
+     1.224
+    ],
+    [
+     1.276,
+     1.561
+    ],
+    [
+     1.561,
+     2.397
+    ]
+   ]
+  },
+  "L43": {
+   "text": "so if you're ever hungry,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.31
+    ]
+   ]
+  }
+ }
+}
