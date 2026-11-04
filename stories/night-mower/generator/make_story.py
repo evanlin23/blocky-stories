@@ -243,7 +243,7 @@ key("odell", "L12.2+0.2", yaw=15, blend=0.5, arms=[0, 0])
 shot("S13", "L13", C((3.0, 4.35, 1.55), (4.2, 2.8, 1.58), 32, (3.1, 4.2, 1.55), (4.2, 2.75, 1.58), 34),
      "Dad's face, frozen; me behind him, worried", day=1, mower="park", strip=0.0)
 stage("L13", odell=((QX, 3.7), 10, "smile"), dad=((QX, 2.9), 180, "neutral"), me=((QX, 2.15), 180, "worried"))
-shot("S14", "L14", C((3.4, 4.2, 1.55), (4.0, 3.0, 1.5), 30, (3.5, 4.1, 1.55), (4.0, 3.0, 1.5), 32),
+shot("S14", "L14", C((2.6, 4.1, 1.6), (4.0, 3.0, 1.5), 22, (2.7, 4.0, 1.6), (4.0, 3.0, 1.5), 24),
      "close on a new white cup with a brown lid at Mr. Odell's sleeve end, held toward Dad", day=1, mower="park", strip=0.0)
 stage("L14", odell=((QX, 3.7), 0, "smile", {"arms": [78, 0]}), dad=((QX, 2.9), 180, "neutral"))
 shot("S15", "L15-0.45", C((2.9, 3.0, 1.4), (4.3, 4.9, 1.2), 30, (3.1, 3.2, 1.4), (4.3, 4.9, 1.2), 32),
@@ -334,7 +334,7 @@ walk("odell", "L27>", (3.3, 7.8))
 shot("S28", "L28", C((-6.0, 3.8, 3.8), (-6.0, -9.0, 3.9), 17, (-6.0, 3.2, 3.8), (-6.0, -9.0, 3.9), 17),
      "the coral house's blinds, shut tight", mower=None)
 stage("L28")
-shot("S28b", "L28.1+0.2", C((-10.8, 8.4, 1.95), (-7.4, 11.2, 1.75), 30, (-10.6, 8.7, 1.95), (-6.8, 11.2, 1.7), 30),
+shot("S28b", "L28.1+0.2", C((-10.8, 8.4, 1.95), (-8.5, 11.0, 1.7), 28, (-10.6, 8.7, 1.95), (-8.2, 11.0, 1.7), 28),
      "Dad on the porch, still looking", sway=True, mower=MS, clip=0.0)
 stage("L28.1+0.2", dadn=((-8.2, 10.8, 0.2), 90, "neutral"), odell=((X0, 7.5), 0, "shut"))
 shot("S29", "L29", C((1.0, 5.8, 0.45), (2.75, 7.0, 0.3), 36, (1.2, 5.9, 0.45), (2.75, 7.0, 0.3), 38),
@@ -479,7 +479,7 @@ world = ("a bright suburban cul-de-sac at three in the morning: a floodlit strai
 
 story = {
     "slug": "night-mower",
-    "rev": 5,
+    "rev": 6,
     "title": "His Mower Makes Grass LONGER",
     "made_for_kids": False,
     "premise": premise,
@@ -522,7 +522,7 @@ story = {
                   {"at": "L40", "voices": ["pad"], "energy": 0.3, "mode": "major", "root": 50},
                   {"at": "L42", "voices": ["drone", "pad"], "energy": 0.45, "mode": "mixolydian", "root": 50},
               ]},
-    "sound": {"floor": "grass", "steps_db": -22, "rev": 5,
+    "sound": {"floor": "grass", "steps_db": -26, "rev": 6,
               "ambience": [
                   {"kind": "crickets", "from": 0, "to": "L06", "lufs": -36},
                   {"kind": "hum", "from": 0, "to": "L02", "lufs": -34},
