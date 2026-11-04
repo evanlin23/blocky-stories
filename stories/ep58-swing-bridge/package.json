@@ -6,5 +6,6 @@
   "opening": "if",
   "cover_s": 105.0,
   "shape": "about-me",
-  "lane": "core"
+  "lane": "core",
+  "hold": "held 2026-11-04: revival proof (run 41791592439, sha 064b194) blocked on pace: picture_changes_per_10s 11.1 (12.5-), _q 10.2 (14.0-), longest_still_q_s 1.07 (-1.0); see HANDOFF.md"
 }
