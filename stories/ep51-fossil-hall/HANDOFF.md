@@ -25,3 +25,9 @@ Builder fixed qa's S081 (camera moved, narrator in frame) and S014-S015 (passers
 
 ## Update 2026-11-04: proof assemble guard
 Proof runs 41743302267 and 41743814506 both failed at assemble "every frame must be there": 4233 of 4261 frames. Cause: shot S089 had step=4 (the lore plant), so the proof draws 1 in 4 frames of it and the guard counts them all. Fixed in the story (generator S089 step=1, sound.rev 6): frame_list now 4261/4261. Not an engine change. Other step!=1 shots would trip the same guard.
+
+## Update 2026-11-04: second proof qa FAILED, dropped for good
+Proof run 41752181376 (sha 3fdabab, 4261 frames, craft 0 block/0 near/0 warn, flash pass, -14.1 LUFS / -1.8 dBTP) passed its own verdict. Proof qa (opus) = **fail**, one fix left:
+- S081 (109.3-111.3 s, "to the WHOLE CROWD / out LOUD"): narrator is in frame now, but the Stooped's head (and neck as a diagonal beam) is pressed into the front of his face and covers his mouth on the climax line (clip.json flags it 109.5-111.0). S079 (105.9-107.0 s) has the same head touching the back of his head. Fix would be: move the Stooped's L62 head back or step him forward ~0.3 m, or swing the camera; clear S079 in the same move.
+Fixed and confirmed: S014-S015 (Abe reads, no arm slab), S089 on ones. Minor: eyes shut on frame 0; S005 planner's arms hide his face.
+Per the second orchestrator's rule, a second qa fail means dropped for good. PR #199 left open and unmerged; the second orchestrator records the drop on main.
