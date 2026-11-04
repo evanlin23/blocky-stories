@@ -1,0 +1,1253 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "when the morning radio says a name, you can't go near that person all day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.172,
+   "onset": 0.155,
+   "end": 2.983,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.845
+    ],
+    [
+     0.845,
+     1.362
+    ],
+    [
+     1.431,
+     1.776
+    ],
+    [
+     1.776,
+     2.345
+    ],
+    [
+     2.345,
+     2.983
+    ]
+   ]
+  },
+  "L02": {
+   "text": "this morning, it said mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     1.31
+    ]
+   ]
+  },
+  "L03": {
+   "text": "everybody knows why. a named day is the worst day of your life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.086,
+   "onset": 0.172,
+   "end": 2.897,
+   "chunks": [
+    [
+     0.172,
+     1.069
+    ],
+    [
+     1.181,
+     1.741
+    ],
+    [
+     1.741,
+     1.914
+    ],
+    [
+     1.914,
+     2.268
+    ],
+    [
+     2.268,
+     2.897
+    ]
+   ]
+  },
+  "L04": {
+   "text": "and bad luck is catching.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.293
+    ]
+   ]
+  },
+  "L05": {
+   "text": "last week it named the baker. he didn't sell a single roll.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.19,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.19,
+     0.526
+    ],
+    [
+     0.526,
+     0.75
+    ],
+    [
+     0.75,
+     1.224
+    ],
+    [
+     1.293,
+     1.664
+    ],
+    [
+     1.664,
+     2.552
+    ]
+   ]
+  },
+  "L06": {
+   "text": "it named a guy at the bus stop. his bus didn't stop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.681
+    ],
+    [
+     0.681,
+     0.793
+    ],
+    [
+     0.793,
+     1.31
+    ],
+    [
+     1.379,
+     1.724
+    ],
+    [
+     1.724,
+     2.379
+    ]
+   ]
+  },
+  "L07": {
+   "text": "it named a woman on her birthday. she ate lunch on a bench, alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.681
+    ],
+    [
+     0.681,
+     1.31
+    ],
+    [
+     1.406,
+     1.854
+    ],
+    [
+     1.854,
+     1.966
+    ],
+    [
+     1.966,
+     2.828
+    ]
+   ]
+  },
+  "L08": {
+   "text": "it named a guy with a new phone. it never rang once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.698
+    ],
+    [
+     0.698,
+     0.81
+    ],
+    [
+     0.81,
+     1.328
+    ],
+    [
+     1.406,
+     1.897
+    ],
+    [
+     1.897,
+     2.431
+    ]
+   ]
+  },
+  "L09": {
+   "text": "my whole life, and it had never said mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.759,
+     0.888
+    ],
+    [
+     0.888,
+     1.224
+    ],
+    [
+     1.224,
+     1.914
+    ]
+   ]
+  },
+  "L10": {
+   "text": "so I went out for oranges, like a normal Saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.534
+    ],
+    [
+     0.534,
+     1.086
+    ],
+    [
+     1.155,
+     1.337
+    ],
+    [
+     1.337,
+     2.276
+    ]
+   ]
+  },
+  "L11": {
+   "text": "the bakery line stepped back. all at once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     1.172
+    ],
+    [
+     1.25,
+     1.948
+    ]
+   ]
+  },
+  "L12": {
+   "text": "everywhere I walked, the crowd opened up. a perfect empty ring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.983,
+   "onset": 0.172,
+   "end": 2.793,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.784,
+     1.069
+    ],
+    [
+     1.069,
+     1.552
+    ],
+    [
+     1.647,
+     2.069
+    ],
+    [
+     2.069,
+     2.793
+    ]
+   ]
+  },
+  "L13": {
+   "text": "the bus slowed down, saw me, and kept going.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.81
+    ],
+    [
+     0.87,
+     1.121
+    ],
+    [
+     1.147,
+     1.966
+    ]
+   ]
+  },
+  "L14": {
+   "text": "every window on the street had a face in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.017
+    ],
+    [
+     1.017,
+     1.397
+    ],
+    [
+     1.397,
+     1.845
+    ]
+   ]
+  },
+  "L15": {
+   "text": "all watching me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.19,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.19,
+     1.034
+    ]
+   ]
+  },
+  "L16": {
+   "text": "then my bag tore.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     1.086
+    ]
+   ]
+  },
+  "L17": {
+   "text": "oranges, all over the sidewalk.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.836
+    ],
+    [
+     0.836,
+     1.569
+    ]
+   ]
+  },
+  "L18": {
+   "text": "a dozen people watched them roll.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.569
+    ]
+   ]
+  },
+  "L19": {
+   "text": "nobody moved.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.19,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.19,
+     0.966
+    ]
+   ]
+  },
+  "L20": {
+   "text": "all I could think about was Dev.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.81
+    ],
+    [
+     0.81,
+     1.466
+    ]
+   ]
+  },
+  "L21": {
+   "text": "my best friend, Dev. the radio named him last spring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.0
+    ],
+    [
+     1.086,
+     1.414
+    ],
+    [
+     1.414,
+     1.655
+    ],
+    [
+     1.655,
+     2.431
+    ]
+   ]
+  },
+  "L22": {
+   "text": "on his birthday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     1.052
+    ]
+   ]
+  },
+  "L23": {
+   "text": "and I stayed home. like everybody else.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.828
+    ],
+    [
+     0.879,
+     1.793
+    ]
+   ]
+  },
+  "L24": {
+   "text": "that night I walked past the cafe. he was at a table with a cake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.034,
+   "onset": 0.172,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.94
+    ],
+    [
+     0.94,
+     1.5
+    ],
+    [
+     1.586,
+     1.819
+    ],
+    [
+     1.819,
+     2.181
+    ],
+    [
+     2.181,
+     2.828
+    ]
+   ]
+  },
+  "L25": {
+   "text": "and two plates.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.086,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L26": {
+   "text": "we haven't talked since.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.155
+    ]
+   ]
+  },
+  "L27": {
+   "text": "then somebody knelt down next to an orange.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.879
+    ],
+    [
+     0.879,
+     1.112
+    ],
+    [
+     1.112,
+     1.741
+    ]
+   ]
+  },
+  "L28": {
+   "text": "it was Dev.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ]
+   ]
+  },
+  "L29": {
+   "text": "the whole street gasped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.155,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     1.19
+    ]
+   ]
+  },
+  "L30": {
+   "text": "I told him he'd catch it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.224
+    ]
+   ]
+  },
+  "L31": {
+   "text": "he said he already had it. last spring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.741
+    ],
+    [
+     0.741,
+     1.034
+    ],
+    [
+     1.112,
+     1.879
+    ]
+   ]
+  },
+  "L32": {
+   "text": "he said, \"you know what went wrong on the worst day of my life?\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.155,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.586,
+     0.836
+    ],
+    [
+     0.836,
+     1.129
+    ],
+    [
+     1.129,
+     1.259
+    ],
+    [
+     1.259,
+     1.594
+    ],
+    [
+     1.594,
+     2.31
+    ]
+   ]
+  },
+  "L33": {
+   "text": "\"nothing. nobody came. that was it.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.19,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.19,
+     0.414
+    ],
+    [
+     0.448,
+     0.897
+    ],
+    [
+     0.948,
+     1.603
+    ]
+   ]
+  },
+  "L34": {
+   "text": "so he stayed. all day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.293
+    ]
+   ]
+  },
+  "L35": {
+   "text": "we got coffee. he fixed my bag. we sat on that bench where she ate alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.31,
+   "onset": 0.172,
+   "end": 3.121,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     0.94
+    ],
+    [
+     0.94,
+     1.431
+    ],
+    [
+     1.517,
+     1.837
+    ],
+    [
+     1.837,
+     2.199
+    ],
+    [
+     2.199,
+     2.397
+    ],
+    [
+     2.397,
+     3.121
+    ]
+   ]
+  },
+  "L36": {
+   "text": "and nothing bad happened.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.31
+    ]
+   ]
+  },
+  "L37": {
+   "text": "every bad day the radio ever called was just a whole town staying away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.259,
+   "onset": 0.172,
+   "end": 3.069,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.103
+    ],
+    [
+     1.103,
+     1.534
+    ],
+    [
+     1.534,
+     1.793
+    ],
+    [
+     1.793,
+     2.268
+    ],
+    [
+     2.268,
+     3.069
+    ]
+   ]
+  },
+  "L38": {
+   "text": "the bad day is us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.155,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.121
+    ]
+   ]
+  },
+  "L39": {
+   "text": "at the cafe, I finally said sorry. for his birthday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     0.966
+    ],
+    [
+     0.966,
+     1.5
+    ],
+    [
+     1.586,
+     2.431
+    ]
+   ]
+  },
+  "L40": {
+   "text": "he said he knew. he saw me at the window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.741
+    ],
+    [
+     0.828,
+     1.199
+    ],
+    [
+     1.199,
+     1.845
+    ]
+   ]
+  },
+  "L41": {
+   "text": "that second plate was for me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.362
+    ]
+   ]
+  },
+  "L42": {
+   "text": "the radio says it's the worst day of your life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     0.897
+    ],
+    [
+     0.897,
+     1.267
+    ],
+    [
+     1.267,
+     1.897
+    ]
+   ]
+  },
+  "L43": {
+   "text": "mine wasn't. one person didn't stay away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.19,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.802,
+     1.241
+    ],
+    [
+     1.241,
+     2.086
+    ]
+   ]
+  },
+  "L44": {
+   "text": "the next morning, the radio said Missus Odell.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.716,
+     1.25
+    ],
+    [
+     1.25,
+     2.052
+    ]
+   ]
+  },
+  "L45": {
+   "text": "our neighbor. she's eighty-one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.552,
+     1.276
+    ]
+   ]
+  },
+  "L46": {
+   "text": "Dev and I were on her porch by seven. with coffee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.19,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.19,
+     0.509
+    ],
+    [
+     0.509,
+     0.664
+    ],
+    [
+     0.664,
+     0.948
+    ],
+    [
+     0.948,
+     1.448
+    ],
+    [
+     1.534,
+     2.259
+    ]
+   ]
+  },
+  "L47": {
+   "text": "the rest of the street watched us from their windows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.836
+    ],
+    [
+     0.836,
+     1.19
+    ],
+    [
+     1.19,
+     2.052
+    ]
+   ]
+  },
+  "L48": {
+   "text": "they still think it's the rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.362
+    ]
+   ]
+  }
+ }
+}
