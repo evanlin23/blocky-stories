@@ -154,8 +154,8 @@ def ins(after):
 
 # ============================================================================================ the shots
 # ---- the hook and the montage (S01 to S09)
-sh("S01", 1, 0, fc(hd(3.4, -0.1), 90, -32, 3.0, 32, rise=0.1, push=0.5),
-   {"mec": P(3.4, -0.1, 90, expr="neutral", arms=[70, 70], side=[-6, -6], head=[0, 0])}, look="day", reach="far",
+sh("S01", 1, 0, mv([6.6, -3.3, 1.5], [2.3, 0.4, 1.2], 22, [6.0, -2.8, 1.5], [2.3, 0.4, 1.2], 24),
+   {"mec": P(4.0, -0.4, 25, expr="neutral", arms=[45, 20], side=[-10, -8], head=[-35, 0], look=[-0.5, 0])}, look="day", reach="far",
    fd=0.02, fs=8, fogc="#e4eaee", sun=(24, 160, 3.6, "#ffd9a0"), fill_k=2.0, hand=0.003)
 sh("S02", 1, "L01.3+0.55", mv([21.0, -2.6, 1.15], [21.0, 0.5, 1.12], 24, [20.95, -2.3, 1.15], [21.0, 0.5, 1.12], 24),
    {"t1": P(21.0, 0.5, 0, expr="neutral", arms=[78, 78], side=[-12, -12])}, glow={"t1": B}, hand=0.004, sun=(10, 25, 0.5, "#ffd9a0"), sky_k=0.55, fill_k=0.5, glow_k=0.6, em_k=0.5, halo_k=0.55)
@@ -279,7 +279,7 @@ sh("S59", 39, "L39.3", mv([20.3, 3.3, 1.7], [21.2, 4.98, 1.5], 30), {}, look="ca
 sh("S60", 40, "L40", mv([22.2, 5.0, 1.55], [20.5, 2.5, 1.2], 24, [22.1, 4.9, 1.55], [20.5, 2.5, 1.2], 24),
    {"emrys": emr(-25), "me": mecr()}, look="cab_low", glow={"emrys": 0.12, "me": F}, reach="stand", sash=True, stool2=180, hand=0.003)
 sh("S61", 41, "L41", mv([19.95, 1.95, 1.5], [5.0, 0.8, 1.15], 45), {}, look="fogpale", reach="stand", sash=True, fd=0.03, hand=0.003)
-sh("S62", 42, "L42", mv([21.2, 3.6, 1.55], [19.95, 1.4, 1.5], 34), {}, look="cab_low", reach="stand", sash=True, hand=0.003, farlamp=0.9,
+sh("S62", 42, "L42", mv([21.2, 3.6, 1.98], [19.95, 1.4, 1.45], 34), {}, look="cab_low", reach="stand", nosash=True, hand=0.003, farlamp=0.9,
    lk={"cab_stove": 1.4, "cab_lamp": 0.0})
 sh("S63", 43, "L43", mv([15.3, -3.6, 1.3], [19.6, 1.3, 1.4], 24), {}, look="fogpale", reach="stand", sash=True, fd=0.022, hand=0.003)
 sh("S64", 44, "L44", mv([18.9, 0.85, 1.28], [0.0, 0.8, 1.12], 30), {}, look="fogpale", reach="stand", sash=True, fd=0.03, hand=0.003)
@@ -291,8 +291,8 @@ sh("S66", 45, "L45.3", mv([21.5, 0.2, 1.4], [20.1, 3.0, 1.3], 40, [21.3, 0.3, 1.
    reach="lean", sash=True, hand=0.003, sill=0.9, lk={"cab_lamp": 1.0, "cab_amb": 1.4}, fill_k=1.0)
 sh("S67", 46, "L46", mv([21.4, 3.0, 0.95], [21.75, 3.5, 0.8], 38), {"emrys": emr(-25, head=[0, 20])}, look="cab_low", glow={"emrys": 0.05}, hand=0.002,
    reach="lean", sash=True)
-sh("S67b", 46, "L46b", mv([20.9, 3.7, 1.45], [20.2, 2.5, 1.25], 34), {}, look="cab_low", reach="lean", sash=True, hand=0.003,
-   sill=0.9, lk={"cab_amb": 1.3}, fill_k=0.8)
+sh("S67b", 46, "L46b", mv([20.9, 3.7, 1.45], [20.2, 2.5, 1.25], 34), {}, look="lean_ext", reach="lean", sash=True, hand=0.003,
+   sill=0.9, lk={"cab_amb": 2.6, "cab_lamp": 1.4, "cab_stove": 1.1}, fill_k=0.8)
 ins("S67")
 sh("S68", 47, "L47", fc(hd(20.2, 2.95), 0, 10, 2.0, 40, rise=0.1),
    {"me": P(20.2, 2.95, 0, arms=[40, 40], side=[0, 0], expr="wide", head=[0, 24])}, look="cab_low", glow={"me": 0.4}, hand=0.003)
@@ -448,8 +448,9 @@ for _sid in ("S88", "S89", "S92"):
     redo(_sid, glow_k=0.6, em_k=0.5, halo_k=0.55)
 redo("S64", mv([4.6, -0.6, 1.4], [1.2, 0.8, 1.0], 32, [4.2, -0.5, 1.35], [1.2, 0.8, 1.0], 32), reach="far2", handlamp=0.35, sash=False,
      nobar=True, look="fogreach", fd=0.02, hl_pos=(1.0, 0.1, 0.6), moon_k=0.8, sky_k=0.9)
-redo("S65", cam([0, [18.0, -2.6, 2.5], [19.6, 2.3, 1.2], 28], [1, [18.3, -2.5, 2.5], [19.6, 2.3, 1.25], 26]), {}, sill=0.4, hyaw=0.65, hpitch=0.1, nosash=True, moon_k=0.8, sky_k=0.9)
-redo("S66", cam([0, [20.4, 4.6, 1.3], [20.35, 2.2, 1.32], 40], [1, [20.4, 4.3, 1.3], [20.35, 2.2, 1.32], 40]), {}, sill=0.8, moon_k=0.8)
+redo("S65", cam([0, [15.4, -4.2, 2.3], [19.4, 2.3, 1.2], 30], [1, [15.9, -4.0, 2.3], [19.4, 2.3, 1.25], 28]), {}, sill=0.4, hyaw=0.65, hpitch=0.1, nosash=True, moon_k=0.8, sky_k=0.9)
+redo("S66", cam([0, [22.2, 2.95, 1.5], [20.2, 2.62, 1.4], 17], [1, [21.9, 2.85, 1.5], [20.2, 2.62, 1.4], 18]),
+     {"me": P(20.25, 3.05, 0, z=-0.09, sit=True, arms=[0, 0], side=[0, 0], expr="terrified", head=[0, 0])}, sill=0.8, moon_k=0.8)
 redo("S91", mv([349.9, 3.7, 1.5], [349.9, 5.9, 1.15], 28), bedreach=True, fd=0.03)
 for _sid in ("S60", "S61", "S62", "S63", "S65", "S66", "S67", "S67b", "S69", "S77"):
     redo(_sid, farlamp=0.15, fill_k=0.25, **({"sill": 0.3} if _sid in ("S60", "S61", "S62", "S63") else {}))     # the point light 1 m from the sleeves washed them to pale grey: they read as cloth, dark on fog
@@ -539,7 +540,9 @@ def put(who, ref, key):
 
 prev_end, visible = {}, {}
 for w in cast:
-    put(w, 0, {"pos": [0.0, 0.0, -50.0], "hidden": True})
+    # anyone placed in the first shot is there from drawing 0: a hidden key at t=0 popped the narrator in (critic r4)
+    if w not in PL[ids[0]]:
+        put(w, 0, {"pos": [0.0, 0.0, -50.0], "hidden": True})
     prev_end[w] = [0.0, 0.0, -50.0]
     visible[w] = False
 DEF = dict(arms=[0, 0], side=[0, 0], head=[0, 0], lean=0, look=[0, 0], expr="neutral", sit=False)
@@ -549,7 +552,8 @@ for i, sid in enumerate(ids):
     for w in cast:
         if w in pl:
             p = pl[w]
-            put(w, ref, {"pos": list(prev_end[w])})
+            if i > 0 or w not in PL[ids[0]]:
+                put(w, ref, {"pos": list(prev_end[w])})
             k = {**DEF, "yaw": p["yaw"], "pos": list(p["pos"]), "blend": 0.0, "hidden": False}
             for a in ("arms", "side", "head", "lean", "look", "expr", "blink", "sit"):
                 if a in p:

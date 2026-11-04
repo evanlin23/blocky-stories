@@ -23,7 +23,8 @@ from blocky import acting, rig
 
 OCHRE, PEAT, TAN, CLAY = "#8a6424", "#2b2420", "#b39a78", "#c49a74"
 HAND_SKIN = "#e0b894"
-COAT, RIM = "#3a2a20", "#9cc0e4"
+COAT, RIM = "#25202a", "#a9cbee"     # dark cool cloth (the old brown read as a wooden beam), a cool rim
+FOLD = "#3a3340"
 GOLD = "#ffc76a"
 SPAN_X = 18.3          # the pivot
 RAIL_Y = 0.8
@@ -33,7 +34,7 @@ CH = {}
 
 REACH_SPEC = {
     "age": "adult", "skin": CLAY, "shirt": OCHRE, "pattern": "solid", "collar": "#4a3c30", "pants": PEAT, "shoes": TAN,
-    "sleeves": "none", "hair": "cap", "hair_c": "#3a2e26", "hat": "none", "body_width": 0.78,
+    "sleeves": "none", "hair": "cap", "hair_c": "#120e0d", "hat": "none", "body_width": 0.78,
     "face": {"eyes": "pin", "mouth": "flat", "brows": False, "ink": "#161012"},
 }
 
@@ -63,7 +64,8 @@ def long_arm(kit, name, pts, t=0.26, fold=1.4, hand=True, grp=None, skin_c=None,
     else:
         sl = kit.emit(coat_c or COAT, 0.9, name=f"sleeve {coat_c or COAT}")
         cuffm = sl
-    rim = kit.emit(RIM, 0.25)
+    rim = kit.emit(RIM, 0.35)
+    foldm = sl if em else kit.emit(FOLD, 0.9, name="sleeve fold")
     skin = kit.plastic(skin_c or HAND_SKIN, 0.9 if skin_c else 0.55)
     if em:
         for m_ in (skin, sl, cuffm):
@@ -85,7 +87,7 @@ def long_arm(kit, name, pts, t=0.26, fold=1.4, hand=True, grp=None, skin_c=None,
         obs.append(seg(kit, f"{name}.r{i}", a + up * (t / 2 + 0.006), b + up * (t / 2 + 0.006), 0.035, rim, 0.01))
     for i in range(1, len(joints) - 1):
         d = joints[i + 1] - joints[i - 1]
-        obs.append(kit.box(f"{name}.f{i}", (t * 1.18, t * 1.18, 0.12), tuple(joints[i]), sl,
+        obs.append(kit.box(f"{name}.f{i}", (t * 1.3, t * 1.3, 0.16), tuple(joints[i]), foldm,
                            rot=d.to_track_quat("Z", "Y").to_euler(), bevel=0.05))
     if hand:
         H = 1.5      # a big, pale hand: palm and four blocky fingers, palms down
@@ -106,7 +108,7 @@ def long_arm(kit, name, pts, t=0.26, fold=1.4, hand=True, grp=None, skin_c=None,
     return obs
 
 
-def make_reach(kit, workdir, name, pos, yaw=0.0, lean=0.0, head_pitch=0.0, paths=None):
+def make_reach(kit, workdir, name, pos, yaw=0.0, lean=0.0, head_pitch=0.0, paths=None, fold=1.4):
     """One Reach: a man, plus two continuous sleeves. paths(shoulderL, shoulderR) -> two point lists. Returns every
     object, so a shot can show the one it wants."""
     n0 = set(bpy.data.objects.keys())
@@ -119,7 +121,7 @@ def make_reach(kit, workdir, name, pos, yaw=0.0, lean=0.0, head_pitch=0.0, paths
     bpy.context.view_layer.update()
     sh = [ch.torso.matrix_world @ V((sx * 1.5 * REACH_SPEC["body_width"], 0, 1.75)) for sx in (-1, 1)]
     for nm, pts in zip(("armL", "armR"), paths(*sh)):
-        long_arm(kit, f"{name}.{nm}", pts)
+        long_arm(kit, f"{name}.{nm}", pts, fold=fold)
     skip = set()
     for sx in (-1, 1):
         skip.update(o.name for o in ch.P[f"arm{sx}"].children_recursive)
@@ -564,7 +566,7 @@ def build(kit, story, tl):
                            paths=lambda sl, sr, xe=xe: [rail_path(sl, 0.2, xe, kink_x=min(4.0, xe - 1), side=-1),
                                                         rail_path(sr, 0.2, xe, kink_x=min(4.0, xe - 1), side=1)])
     # Thursday, standing at the window: his arms run back along the whole rail to the far bank
-    R["stand"] = make_reach(kit, wd, "reach_stand", (19.95, 1.15, 0.0), yaw=math.radians(180), head_pitch=0.1,
+    R["stand"] = make_reach(kit, wd, "reach_stand", (19.95, 1.15, 0.0), yaw=math.radians(180), head_pitch=0.1, fold=0.8,
                             paths=lambda sl, sr: [rail_path(sl, 18.3, 0.5, kink_x=11.0, side=-1),
                                                   rail_path(sr, 18.3, 0.5, kink_x=11.0, side=1)])
     # the lean: head and shoulders in at the open sash, face to face with me. He stands on a low stone step, and each
@@ -577,7 +579,7 @@ def build(kit, story, tl):
         pts += [V((11.0, yy, 1.13)), V((10.6, yy + side * 0.07, 1.13)), V((0.5, yy, 1.13))]
         return pts
     # leaning in from the ankles: the feet outside at y 1.2, the body tilted 42 degrees so the head is just inside the open sash
-    R["lean"] = make_reach(kit, wd, "reach_lean", (20.2, 1.2, 0.0), yaw=math.radians(180), lean=0.74, head_pitch=-0.62,
+    R["lean"] = make_reach(kit, wd, "reach_lean", (20.2, 1.2, 0.0), yaw=math.radians(180), lean=0.74, head_pitch=-0.62, fold=0.8,
                            paths=lambda sl, sr: [lean_path(sl, -1 if sl.x < sr.x else 1), lean_path(sr, 1 if sl.x < sr.x else -1)])
     # S11c: only two dull flat hands at the far end of the rail, the sleeves running off into the fog, no body
     def two_sleeves(name, mk, **kw):
