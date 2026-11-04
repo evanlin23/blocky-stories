@@ -267,7 +267,7 @@ cue("L19", "sit", who="straw", on=True)
 shot("L19", mv([LX - 1.7, LY + 3.4, 1.4], [LX, LY, 0.95], 24, [LX - 1.4, LY + 3.0, 1.4], [LX, LY, 0.95], 24), "couchback")
 shot("L19.2", mv([LX - 2.7, LY + 2.6, 1.25], [LX - 0.4, LY, 1.2], 34, [LX - 2.3, LY + 2.3, 1.25], [LX - 0.4, LY, 1.2], 34), "grandmasmile")
 beat("grandma", "L20", arms=[62, 0], expr="warm", blend=0.4)
-shot("L20", mv([LX + 0.55, LY + 2.3, 1.3], [LX - 0.15, LY + 0.65, 0.85], 26, [LX + 0.4, LY + 2.0, 1.25], [LX - 0.15, LY + 0.65, 0.85], 26), "remote")      # her hand and the remote from the first drawing
+shot("L20", mv([LX - 0.03, LY + 3.6, 1.6], [LX - 0.03, LY + 0.3, 0.95], 20, [LX - 0.03, LY + 3.3, 1.55], [LX - 0.03, LY + 0.3, 0.95], 20), "remote")      # her hand and the remote from the first drawing
 shot("L20.1", mv([LX + 0.9, LY + 1.9, 1.15], [LX - 0.15, LY + 0.65, 0.88], 30, [LX + 0.7, LY + 1.6, 1.1], [LX - 0.15, LY + 0.65, 0.88], 30), "remote2")
 # L21: sunset, the jeep passes, Grandpa waves at everybody
 cue("L21", "look", id="gold", dur=0)
