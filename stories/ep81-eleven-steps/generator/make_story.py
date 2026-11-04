@@ -537,7 +537,7 @@ story = {
                   {"at": "L67", "voices": ["drone", "tick"], "energy": 0.35},
               ]},
     "sound": {
-        "rev": 5, "floor": "wood", "steps_db": -24,
+        "rev": 6, "floor": "wood", "steps_db": -24,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -44}],
         "sfx": [
             {"at": "L01.3", "kind": "creak", "db": -14, "dur": 0.9},
