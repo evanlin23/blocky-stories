@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 SPLITS = {"on his LANDLORD'S couch.": [3, 1], "it was a dumb FIGHT,": [3, 2], "in a green ARMCHAIR,": [3, 1],
@@ -105,8 +105,7 @@ cast = {
                      sleeves="short"),
     "party": person("#f0c8a0", "#ff9fc0", "#3a4a5a", "#f4f4f2", hair="spiky", hair_c="#a05a2a", pattern="stripes",
                     pattern_c="#ffd23f", sleeves="short"),
-    "landlord": person("#e8b890", "#c9b27a", "#5a5048", "#4a3626", hair="cap", hair_c="#bdbdc4", vest="#7a8a4a", extras=["glasses"],
-                       extra_c="#3a3a3e", width=1.04),
+    "landlord": person("#e8b890", "#c9b27a", "#5a5048", "#4a3626", hair="cap", hair_c="#6a4528", vest="#4a6a9a", width=1.04),
     "x1": person("#b98456", "#e8845a", "#4a4036", "#2a2a2a", hair="buzz", hair_c="#1a1410", sleeves="short"),
     "x2": person("#f0c8a0", "#8a5ab0", "#2a2a38", "#d8d0c8", hair="long", hair_c="#150f0c", eyes="lashes"),
     "x3": person("#8a5a3a", "#ffd23f", "#3a4a5a", "#3a2a1a", hair="spiky", hair_c="#2a2a2a", sleeves="short"),
@@ -178,6 +177,7 @@ cue(0, "tv", v=0.0)
 cue(0, "pollen", level=1.0)
 cue(0, "treat", v=0.0)
 cue(0, "cup3", v=0.0)
+cue(0, "wall", v=0.0)
 cue(0, "pillpos", u=0.0)
 
 PK, ST, OF, MK, DG, PT, LD, GP, KT, BD = (G.PARK, G.STREET, G.OFFICE, G.MKIT, G.DOG, G.PARTY, G.LAND, G.GP, G.KIT, G.BED)
@@ -191,7 +191,7 @@ acting["me"][-1]["head"] = [0, 6]
 beat("me", "L01.1", head=[0, 22], expr="squeeze")
 acting["me"].append({"at": 0, "pos": [PK, -8.0], "mouth": None}) if False else None
 acting["me"].append({"from": 0, "to": "L01.2", "mouth": [0.1, 0.7]})
-shot(0, F(PK, -8.0, 1.4, 3.3, 40, dx=0.15, push=0.16), "sneeze1")
+shot(0, F(PK, -8.0, 1.4, 2.1, 40, dx=0.05, push=0.1), "sneeze1")
 beat("me", "L01.2", hidden=True)
 visible.discard("me")
 swirl("L01.2", PK, -8.0, 0.95, 1.0)
@@ -212,13 +212,20 @@ xs = [("x1", -5.5, -1.2), ("x2", -3.2, 1.0), ("x3", -1.0, -0.8), ("x4", 1.2, 1.2
 for k, (w_, x, y) in enumerate(xs):
     put(w_, "L03", [ST + x, y], 0, expr="neutral")
 for k, w_ in enumerate(("x2", "x5", "x1", "x4", "x3", "x6")):
-    ts = f"L03+{0.12 + 0.2 * k:.2f}"
+    ts = f"L03+{0.12 + 0.13 * k:.2f}"
     beat(w_, ts, **SNEEZE)
     x, y = last[w_]
-    beat(w_, f"L03+{0.12 + 0.2 * k + 0.32:.2f}", hidden=True)
-    swirl(f"L03+{0.12 + 0.2 * k + 0.3:.2f}", x, y, 0.95, 0.8, sz=1.2)
+    beat(w_, f"L03+{0.12 + 0.13 * k + 0.28:.2f}", hidden=True)
+    swirl(f"L03+{0.12 + 0.13 * k + 0.26:.2f}", x, y, 0.95, 0.6, sz=1.2)
 shot("L03", mv([ST - 1.0, -9.6, 3.0], [ST, 0.2, 1.3], 30, [ST + 0.4, -8.4, 2.7], [ST, 0.2, 1.3], 30), "street1")
-shot("L03.2", F(ST + 1.2, 1.2, 1.3, 5.2, 34, dx=1.4, push=0.14), "street2")
+# our kitchen: Mom at the stove-side counter, the pill bottle by the coffee maker, me sneezing away beside her
+only("L03.2", ["mom", "me"])
+put("mom", "L03.2", [KT - 0.75, 2.55], 0, expr="soft", arms=[40, 0])
+put("me", "L03.2", [KT + 0.15, 2.2], 0, expr="neutral")
+beat("me", "L03.2+0.08", **SNEEZE)
+beat("me", "L03.2+0.4", hidden=True)
+swirl("L03.2+0.4", KT + 0.15, 2.2, 0.95, 0.5, sz=1.0)
+shot("L03.2", F(KT - 0.1, 2.6, 1.3, 4.8, 30, dx=0.0, push=0.06), "kitchen0")
 cue("L03", "pollen", level=1.8)
 # L04: the meeting man sneezes at a glass table, lands in a kitchen
 only("L04", ["m1"])
@@ -410,8 +417,8 @@ cue("L27.2", "count", n=64.0)
 cue("L27.2", "pin", v=1.0, dur=0.4)
 shot("L27", F(BD - 0.1, 2.55, 1.45, 3.7, 36, dx=0.3, push=0.14), "bed")
 only("P01", [])
-cue("P01", "tv", v=0.0)
-cue("P01+0.1", "tv", v=1.0, dur=0.7)
+cue("P01", "tv", v=0.35)
+cue("P01+0.05", "tv", v=1.0, dur=0.9)
 shot("P01", mv([GP + 0.4, -2.8, 1.8], [GP + 0.6, 2.0, 1.1], 30, [GP + 0.4, -2.5, 1.75], [GP + 0.6, 2.0, 1.1], 30), "dark")
 only("L28", ["grandpa"])
 cue("L28", "look", id="night", dur=0)
@@ -423,6 +430,7 @@ shot("L29", F(GCH[0], GCH[1], 1.35, 3.6, 38, dx=-0.5, push=0.16), "awake1")
 beat("grandpa", "L29.2", expr="soft", head=[-6, 0])
 shot("L29.2", F(GCH[0], GCH[1], 1.45, 2.3, 42, dx=-0.3, push=0.14), "awake2")
 # L30: past his shoulder to the wall behind
+cue("L30", "wall", v=1.0)
 shot("L30", mv([GP + 3.4, -0.9, 1.45], [GP + 0.6, 3.0, 1.9], 30, [GP + 2.4, 0.5, 1.5], [GP - 0.6, 3.8, 2.0], 30), "pastshoulder")
 # L31: ME (the portrait)
 shot("L31", F(GP - 3.6, 3.6, 2.25, 2.6, 36, dx=0.1, push=0.2), "portrait")
@@ -456,8 +464,8 @@ put("grandpa", "L38", [GP + 0.4, 3.1], 0, expr="sad-smile")
 shot("L38", F(GP + 0.4, 3.1, 1.45, 2.4, 42, dx=0.2, push=0.16), "carol")
 
 # ===== 06 the reveal (L39 to L46)
-cue("L39", "look", id="day", dur=0)
-cue("L39", "tv", v=0.0)
+cue("L39", "look", id="day", dur=0.8)
+cue("L39+0.9", "tv", v=0.0)
 cue("L39", "pollen", level=1.0)
 only("L39", ["grandpa"])
 put("grandpa", "L39", list(GCH), 0, expr="sad-smile", arms=[40, 40])
@@ -503,7 +511,7 @@ swirl("L47", KT - 0.4, 0.9, 0.95, 0.9)
 shot("L47", F(KT + 0.9, 1.4, 1.3, 5.2, 32, push=0.14), "home")
 beat("me", "L47+0.5", expr="polite", yaw=30)
 beat("mom", "L48", expr="sad-smile", head=[10, 0])
-shot("L48", F(KT + 1.85, 1.5, 1.4, 2.6, 40, dx=0.5, push=0.16), "carolface")
+shot("L48", F(KT + 1.85, 1.5, 1.5, 3.0, 36, dx=-0.2, push=0.1), "carolface")
 beat("mom", "L48.1", expr="crying")
 beat("mom", "L49", expr="polite", head=[-25, 0])
 beat("mom", "L49+0.5", expr="polite", head=[25, 0])
@@ -522,7 +530,7 @@ put("me", "L52", [KT + 0.35, 2.45], 160, expr="smirk", arms=[0, 75])
 cue("L52", "pillpos", u=0.0)
 cue("L52+0.2", "pillpos", u=1.0, dur=1.0)
 beat("me", "L52+0.3", yaw=160, arms=[0, 85])
-shot("L52", mv([KT + 1.2, 1.2, 1.7], [KT + 0.95, 3.2, 1.05], 38, [KT + 1.1, 1.5, 1.5], [KT + 0.95, 3.2, 1.05], 38), "breadbox")
+shot("L52", mv([KT + 2.5, 1.7, 1.75], [KT + 1.05, 3.2, 1.05], 40, [KT + 2.2, 1.9, 1.6], [KT + 1.1, 3.2, 1.05], 40), "breadbox")
 
 # ===== 08 the field (L53 to L58)
 only("L53", ["me", "mom"])
@@ -558,7 +566,7 @@ put("grandpa", "L60", list(GCH), 0, expr="wide", arms=[40, 40])
 sit("grandpa", "L60")
 put("mom", "L60", [GP + 0.35, 1.25], 0, expr="wide", arms=[0, 0])
 swirl("L60", GP + 0.35, 1.25, 0.95, 1.0)
-shot("L60", F(GP + 0.95, 1.7, 1.3, 3.8, 36, dx=-0.1, push=0.14), "momlands")
+shot("L60", F(GP + 0.65, 1.6, 1.4, 4.0, 34, dx=0.0, push=0.1), "momlands")
 only("L61", ["me"])
 put("me", "L61", [PK + 0.6, -1.0], 0, expr="smirk")
 beat("me", "L61.0+0.5", **SNEEZE)
@@ -630,7 +638,7 @@ sfx = [
     {"at": "L01.2", "kind": "hit", "db": -9},
     {"at": "L27.2", "kind": "whoosh", "db": -21},
     {"at": "L57+0.45", "kind": "whoosh", "db": -21},
-    {"at": "L62.3", "kind": "click", "db": -20},
+    {"at": "L62.3", "kind": "click", "db": -20, "lp": 3000},
     {"at": "L11", "kind": "click", "db": -22},
     {"at": "L21.1", "kind": "click", "db": -22},
     {"at": "L39", "kind": "hit", "db": -16},
@@ -640,13 +648,13 @@ sfx = [
 music = {
     "root": 55, "mode": "major", "bpm": 108, "seed": 110,
     "sections": [
-        {"at": 0, "voices": ["piano", "musicbox", "pulse"], "energy": 0.5, "root": 55, "mode": "major"},
+        {"at": 0, "voices": ["piano", "bubble", "pulse"], "energy": 0.5, "root": 55, "mode": "major"},
         {"at": "L09", "voices": ["piano", "pad"], "energy": 0.35, "root": 55, "mode": "minor"},
         {"at": "L27", "voices": ["drone", "pad"], "energy": 0.45, "root": 43, "mode": "minor"},
         {"at": "L39", "voices": ["pad", "piano"], "energy": 0.32, "root": 55, "mode": "minor"},
         {"at": "L43", "voices": ["piano", "pad"], "energy": 0.35, "root": 55, "mode": "minor"},
         {"at": "L47", "voices": ["pulse", "piano", "pad"], "energy": 0.5, "root": 55, "mode": "minor"},
-        {"at": "L62", "voices": ["piano", "musicbox", "pad"], "energy": 0.45, "root": 55, "mode": "major"},
+        {"at": "L62", "voices": ["piano", "bubble", "pad"], "energy": 0.45, "root": 55, "mode": "major"},
     ],
 }
 sound = {
@@ -664,7 +672,7 @@ polish = {"reveal": [remap("L39")], "twist": remap("L39"),
           "emph": [remap(x) for x in ["L01.2", "L04.2", "L07.3", "L09.1", "L11.1", "L19", "L31", "L34", "L39.0", "L44.2", "L57"]],
           "quiet": [[remap("L64"), remap("L67")]],
           "sway": [names[n] for n in ("dark2", "awake1", "awake2", "pastshoulder", "portrait", "wall1", "clip1", "scared", "back")],
-          "hold": [names[n] for n in ("wall1", "wide34", "reunion", "tray1", "tray3", "cookies")]}
+          "hold": [names[n] for n in ("wall1", "wide34", "reunion", "tray1", "tray3", "cookies", "kitchen0", "momlands", "carolface")]}
 story = {
     "slug": "ep110-bless-you",
     "title": "Every Sneeze Lands Me by a STRANGER 🤧",

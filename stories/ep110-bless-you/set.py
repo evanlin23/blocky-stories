@@ -323,6 +323,7 @@ def build(kit, story, tl):
     kit.light("gpday", "POINT", (G.GP, -0.6, 3.2), 560.0, "#fff0d8", size=0.5, shadow=False)
     kit.light("gptv", "POINT", (G.GP - 2.2, 1.3, 1.4), 450.0, "#bfd8ff", size=0.5, shadow=False)
     kit.light("gpface", "POINT", (G.GP + 0.6, -1.6, 1.9), 150.0, "#aac4ff", size=0.6, shadow=False)
+    kit.light("gpkey", "POINT", (G.GP + 1.0, -0.6, 1.7), 150.0, "#ffe6cc", size=0.5, shadow=False)
     kit.light("gpstreet", "POINT", (G.GP + 4.1, 0.5, 2.3), 160.0, "#dfe8ff", size=0.5, shadow=False)
     kit.light("bedday", "POINT", (G.BED, -0.5, 3.2), 420.0, "#fff0d8", size=0.5, shadow=False)
     kit.light("bedmoon", "POINT", (G.BED + 2.4, 0.5, 2.2), 380.0, "#a8c0ff", size=0.6, shadow=False)
@@ -453,7 +454,7 @@ def build(kit, story, tl):
     room(kit, lx, plastic("#f2d6c0", 0.85, spec=0.05), kit.planks("#b98a5a", "#a87848", 1.0), "land")
     plaid = kit.checker("#c0543a", "#f1e4cc", 4.0, "plaid")
     sofa(kit, "land.couch", lx - 1.7, 2.6, 2.4, plaid)
-    armchair(kit, "land.arm", lx + 2.0, 2.6, "#6a7a4a")
+    armchair(kit, "land.arm", lx + 2.0, 2.6, "#8a5a3a")
     kit.box("land.coffee", (1.0, 0.6, 0.06), (lx + 0.15, 1.7, 0.4), wood, bevel=0.02)
     for tx in (-1, 1):
         kit.box(f"land.cleg{tx}", (0.06, 0.5, 0.38), (lx + 0.15 + tx * 0.42, 1.7, 0.19), wood)
@@ -677,10 +678,16 @@ def animate(kit, story, tl, t, ctx):
     gains["bedday"] = 1.0 - night
     tv = sample("tv", tl, t, {"v": 0.0})["v"]
     gains["gptv"] = 0.14 * tv * night
+    gains["gpkey"] = 1.2 * night * (0.55 + 0.45 * tv)
     gains["gpface"] = 0.2 * night * (0.35 + 0.65 * tv)
     gains["gpstreet"] = 0.15 * night * (0.4 + 0.6 * tv)
     gains["bedmoon"] = 0.35 * night
     gains["bedlamp"] = 0.5 * night
+    if "wallobs" not in W:
+        W["wallobs"] = [o for o in bpy.data.objects if o.name.startswith(("clip", "portrait"))]
+    wall_on = sample("wall", tl, t, {"v": 0.0})["v"] > 0.5
+    for o in W["wallobs"]:
+        o.hide_render = not wall_on
     W["tvmat"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 0.25 + 3.2 * tv * night
     W["winmat"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 1.6 * (1 - night) + 0.5 * night
     w = bpy.context.scene.world
@@ -796,7 +803,13 @@ def animate(kit, story, tl, t, ctx):
     if W.get("pill") is not None:
         h = Vector(W["pillhome"])
         e = Vector(W["pillbox"])
-        W["pill"].location = h.lerp(e, ss(pb))
+        # slide along the counter front, lift to the slot, then push in through the slot
+        mid = Vector((e.x, h.y - 0.16, e.z))
+        if pb < 0.55:
+            loc = h.lerp(mid, ss(pb / 0.55))
+        else:
+            loc = mid.lerp(e, ss((pb - 0.55) / 0.45))
+        W["pill"].location = loc
         _hide(W["pill"], pb >= 0.99)
     # cups held on a palm
     hold = {}
