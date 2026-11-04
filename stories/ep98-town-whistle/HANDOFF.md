@@ -1,6 +1,6 @@
 # ep98-town-whistle handoff
 
-- **State:** built and approved. The PR is #248. It is waiting on proof.yml, then the proof qa, then the merge.
+- **State:** built, approved, and the proof qa passed (run 41793418336, sha c592d4f). The merge waits on `test`.
 - **Creature test:** passed on try 3 of 3 (Opus critic: frightening, narrowly). Tries 1 and 2 were judged unreadable.
 - **Reviews:**
   - Round 1: critic revise (6.7) and standards revise (title, cover and flash margin).
