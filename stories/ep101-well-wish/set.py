@@ -356,7 +356,7 @@ def build(kit, story, tl):
     for sx in (-1, 1):
         kit.box(f"well.roof{sx}", (1.2, 1.9, 0.1), (SX + sx * 0.62, SY + 0.05, 2.62), p("#c4553b", 0.7),
                 rot=(0, -sx * 0.35, 0), bevel=0.02)
-    kit.cyl("well.bucket", 0.22, 0.34, (SX + 1.28, SY - 1.0, 1.1), p("#8a6a4a", 0.7), n=14, r2=0.26)
+    kit.cyl("well.bucket", 0.22, 0.34, (SX + 1.0, SY + 1.0, 1.1), p("#8a6a4a", 0.7), n=14, r2=0.26)
     kit.box("well.crankarm", (0.7, 0.07, 0.07), (SX + 1.62, SY - 0.1, 1.9), wood)
     # ripples (rings on the water) and the coin
     ring_a = kit.emit("#d8ecff", 0.9, "ripple")
@@ -681,8 +681,6 @@ def animate(kit, story, tl, t, ctx):
 
     # the meter
     ms = sample("meter", tl, t, {"bar": 0.3, "red": 0.0, "digits": 0.0, "num": 0.0})
-    update_meter(W["tagcam"], ms)
-    update_meter(W["tagw"], ms)
     lens = 40.0
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
     spec = next((s for s in story["shots"] if s["id"] == shot["id"]), None)
@@ -702,12 +700,14 @@ def animate(kit, story, tl, t, ctx):
     w2 = h2 * 9.0 / 16.0
     tag = W["tagcam"]["root"]
     big = bool(spec and spec["cam"][0][2][0] > 590)       # the close-ups of the big tag: no second tag on the lens
-    tag.hide_render = big
-    for c_ in tag.children_recursive:
+    for c_ in [tag] + list(tag.children_recursive):
         c_.hide_render = big
+    if not big:
+        update_meter(W["tagcam"], ms)
+    update_meter(W["tagw"], ms)
     s = 0.66 * w2
     tag.scale = (s, s, s)
-    tag.location = (-0.30 * w2, 0.72 * h2, -dist)
+    tag.location = (-0.04 * w2, 0.72 * h2, -dist)
 
     # the clock
     ck = sample("clock", tl, t, {"h": 10.0})
