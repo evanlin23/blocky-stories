@@ -156,7 +156,7 @@ def asr(wav: Path, timeline: Path) -> int:
         if sa in json.loads(os.environ.get("BLOCKY_ASR_FORGIVE", "[]")):   # opt-in (ep62): a run of letter names Whisper can't spell
             print(f"  letters: script {sa!r} | heard {sb!r} (a run of letter names, checked by ear)")
             continue
-        if same_spoken(sa, sb):
+        if same_spoken(sa, sb, tl.get("homophones")):
             print(f"  spelling: script {sa!r} | heard {sb!r} (the same words, spelled another way)")
             continue
         bad += 1
@@ -169,7 +169,7 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite", "zeros"
 # homophones: the same sound, and Whisper picks the spelling from the words around it ("under the bulb threw"), so
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
-# (ep17), Wren said "ren" (ep20)
+# (ep17), Wren said "ren" (ep20). A story can add its own pairs ("homophones" in story.json, opt-in: {"too": "two"}).
 HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo",   # ep34: Jo
               "threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
               "wren": "ren", "wrens": "rens", "remy": "remi", "remys": "remis", "hot": "hut", "too": "to",   # "too" (ep15: "back TOO,"); remy/hot (ep50)
@@ -185,6 +185,7 @@ HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo",   # ep34: Jo
               "grand": "gran", "girl": "gull",   # ep33: Gran (heard as grand) and the gull
               "pane": "pain", "panes": "pains", "boards": "board",   # ep15 redo: pane/pain (Whisper picks by context), boards/board
               "higher": "hire",   # higher/hire (ep26)
+              "passed": "past", "press": "pressed",   # ep14: "past twelve", "pressed twelve" (Whisper drops the -ed)
               "c": "see", "d": "dee"}   # ep62: single letters voiced as their names, which Whisper writes as letters
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
@@ -197,7 +198,7 @@ def _under100(n: int) -> str:
     return tens[n // 10] + (NUMBERS[n % 10] if n % 10 else "")
 
 
-def same_spoken(script: str, heard: str) -> bool:
+def same_spoken(script: str, heard: str, extra: dict | None = None) -> bool:
     """True when two transcripts differ only in spelling: a spacing ("hand print"), an apostrophe
     ("mannequins"), a British spelling ("gray"), digits ("11") or a homophone ("threw" for "through"). Whisper
     writes what it hears its own way, so these aren't mispronunciations."""
@@ -212,7 +213,7 @@ def same_spoken(script: str, heard: str) -> bool:
                 h, r = divmod(int(w), 100)
                 w = ("a" if h == 1 else NUMBERS.get(h, str(h))) + "hundred" + ("and" + _under100(r) if r else "")
             w = SPELLINGS.get(w, w)
-            out.append(HOMOPHONES.get(w, w))
+            out.append((extra or {}).get(w, HOMOPHONES.get(w, w)))
         return "".join(out)
     return bool(script or heard) and canon(script) == canon(heard)
 

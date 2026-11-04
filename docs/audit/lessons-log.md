@@ -131,6 +131,47 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Every brief has a "merge origin/main" step before each judge step (review, proof, qa, merge). Also, `proof.yml`
     and qa should take their tools from main, not from the branch.
 
+23. **Most drops are the creature, and the test comes too late.** On 2026-11-03, 6 of 10 drops died on the creature,
+    with the Opus critic saying "silly": ep80, ep87, ep90, the ep34 revival, ep71 (creature 5) and ep41 (creature 4).
+    The notes repeat: warm frontal light, disc or dot eyes, no scale reference, the whole body shown small in a bright
+    set, soft boxy shapes. The writer designs a creature the rig can't make frightening, and the creature test only runs
+    after a build session has spent its setup.
+    → 6 stories and their sessions, and 3 creature tries each.
+    → A creature playbook (a lab started 5:10 PM) that the writer applies in the script, and a creature test still made
+    right after the script merges, by one cheap session, before any build is started.
+24. **A study's top fix was already shipped.** Render-throughput change 7 ("finish on 4 processes") was already in the
+    engine since PR #94. The study misread the measured 0.33 s a frame as single-process. A session was spent finding
+    that out.
+    → One session.
+    → A study checks the code path it's measuring (a grep for the worker pool) before it proposes a change.
+25. **The orchestrator asserted how a workflow triggers without reading it.** It told #1 that merging the samples change
+    would replace the pending render run. render.yml only triggers on `stories/*/**`, so it wouldn't have, and #1 caught
+    it.
+    → A near-miss: the next finals would have drawn at 10 samples.
+    → Read the `on:` block before any claim about what a merge starts.
+26. **Small staging fixes made new framing errors.** dryer-nine (S54 black after the pair moved) and ep51 (passers-by at
+    the lens after the clip fix) failed on framing that a clip fix introduced, and both were dropped at the round cap.
+    → Two near-ready stories (revived 5:10 PM for one targeted fix each).
+    → An automated framing check after every staging change: is the shot's subject in frame and unblocked? `measure.py`
+    already projects heads for `face_big`, so it can flag a shot where no cast face is visible.
+
+27. **Our own guard threw away complete films.** The "every frame must be there" check (#178, #194) counted PNGs
+    against the timeline's frames. A shot on twos draws every other frame and `finish` holds it over the next, so
+    every film with a twos shot failed. moving-day was refused twice: run 97 (2,398 of 2,635, exactly its drawings)
+    and run 106. The guard was tested only on a synthetic all-ones case.
+    → Two moving-day finals, about 16 + 32 runner-hours, and the 7:41 PM slot's backup.
+    → Fixed in #222 (`scripts/check_drawings.py` checks each drawing `frame_list` asks for, by name). For the rewrite,
+    a guard is tested on a real timeline from main, with twos, before it ships.
+28. **Two creature rounds with the playbook didn't rescue a dropped creature.** The lab (#220) and round 2 (#224,
+    two critics each) both failed Hal (ep87) and ep71's creature. The playbook moved the critics' words (no more
+    "mascot" or "snowman"), but not the scores.
+    → Two sessions, and ep87 and ep71 stay dropped.
+    → Pick creature concepts the rig can carry, at the writing stage: a person made wrong, or a threat that never
+    needs a full creature reveal. Don't spend build sessions trying to rescue a weak creature design.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
+
+## Creature round 2 (2026-11-03, second orchestrator)
+- Two creature tries each for Hal (ep87) and the Server (ep71), each judged by two Opus critics: best 5/4 and 4/4, neither passed (`docs/research/creature-round-2.md`). Cost: 4 builder runs (the ep71 one about 28 min) and 8 critic reads. Suggested fix: a wide-slab head reads as an appliance whatever the design, so send such creatures back to the writer before any build try; and a builder should self-check the two scale facts (head against a lit ceiling, the reference person's whole head in frame) before reporting.

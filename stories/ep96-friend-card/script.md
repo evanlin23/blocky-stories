@@ -1,11 +1,11 @@
 # ep96-friend-card: the script (writer, 2026-11-03, batch 9a)
 
 - **Slug:** `ep96-friend-card` (batch 9a, upload order 5 of 5)
-- **Pitch:** E18 in `docs/research/premise-engines.md` section 3 (rank 4, panels 8 and 6), engine 10, the double reading. Opening shape `confess` (the pitch's `count` line recast, since ep94 is this batch's count). Lane: core. Length arm: mid (60 to 90 s).
+- **Pitch:** E18 in `docs/research/premise-engines.md` section 3 (rank 4, panels 8 and 6), engine 10, the double reading. Opening shape `cost` (the pitch's `count` line recast, since ep94 is this batch's count; first written as `confess`, recast to `cost` in r1 because ep93 is 9a's other `confess` and ep97 right after is `confess` too). Lane: core. Length arm: mid (60 to 90 s).
 - **Title:** My Card Says We Stop Being FRIENDS ✉️
 - **Changed from the pitch:** the emoji is an envelope instead of a heart letter, so the title can't read as a romance between me and my best friend. The pitch's rule, reveal and both plants are kept (my brother at her side for years, "it won't hurt" on the back). Added a second turn for the last 15 s: her card says the same, she worked out what it meant at eighteen and never told me. Added a self-fulfilling layer: dodging her by bringing my brother everywhere is how they met.
 - **Everyone is an adult.** The card comes at eighteen. Tonight is ten years later: I'm 28, Maya is 28, my big brother Nate is 31. No one young is on screen.
-- **Word count:** 319 spoken words in 49 lines, all `narrator`, plus one 0.6 s music drop before L34.
+- **Word count:** 316 spoken words in 48 lines (L01 to L49, L04 cut in r1), all `narrator`, plus one 0.6 s music drop before L34.
 - **Estimated length:** about 74 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L13 and L48 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright and warm: a rooftop at golden hour and sunset, white chairs, a flower arch, string lights, a peach sky. The ten-year montage is sunny day scenes. One rainy window at L22 is still bright. No dark scene.
 - **Hold:** scripts only (batch 9a). Not built, not voiced.
@@ -15,7 +15,7 @@ The batch table is in `stories/ep92-blackout-ben/script.md`. This row:
 
 | Setting | Rule type | Creature | Line 1 shape | Twist shape | Palette | Music mood | Warmth |
 |---|---|---|---|---|---|---|---|
-| a rooftop wedding at sunset | a card at eighteen says how your closest friendship ends | none: a sealed card with a time on it | confess | `double-reading` | sunset peach, chair white, sage green, string-light gold | a ticking countdown under a swelling pad, B major, 108 BPM, the tick slowing to 9:14 | a best friend becomes family |
+| a rooftop wedding at sunset | a card at eighteen says how your closest friendship ends | none: a sealed card with a time on it | cost | `double-reading` | sunset peach, chair white, sage green, string-light gold | a ticking countdown under a swelling pad, B major, 108 BPM, the tick slowing to 9:14 | a best friend becomes family |
 
 Kept clear of ep20 (a hotel hall wedding, a photo booth, two estranged sisters, a creature between them): no booth, no hall, no creature, nobody estranged. Kept clear of E08 (a fortune card that comes true by being dodged) which isn't made: the dodge here is a side layer, the reveal is the second reading of the card's words.
 
@@ -30,10 +30,10 @@ Kept clear of ep20 (a hotel hall wedding, a photo booth, two estranged sisters, 
 
 ## The story
 - **Premise:** Everybody here gets one card at eighteen telling them how their closest friendship ends, and the cards are never wrong. Mine says Maya, my best friend since we were six, 9:14 p.m., June 12th. On the back, in tiny writing: it won't hurt. For ten years I've dodged a fight by never being alone with her and bringing my big brother Nate everywhere. Tonight is June 12th.
-- **Rule / hook (L01, about 2.6 s):** "My card says / my best friend and I / stop being friends TONIGHT." L02 tightens it: "At nine-FOURTEEN. / The cards are never WRONG."
+- **Rule / hook (L01, about 2.6 s):** "Everyone here gets a card / that says when / their best friendship ENDS." L02 makes it a threat to me, tonight, by about 3 s: "Mine says TONIGHT, / at nine-FOURTEEN. / The cards are never WRONG."
 - **The relatable want or fight:** keeping my best friend when my big brother's marrying her and she's stopped calling.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream card inset of our own design in the top-left corner, printed 9:14 with a thin ring around it that fills as tonight gets closer: a quarter full in the hook, nearly empty in the ten-year montage (years away), filling through the ceremony, closed at L34.
-- **The 3 to 5 example montage (L03 to L07, 4 to 12 s):** a card through a mail slot (L03), its face (L04), Dad and Mr. Reyes over a parking spot (L05, L06), Mrs. Abbott at gate nine (L07).
+- **The 3 to 5 example montage (L03 to L07, 5 to 13 s):** a card through a mail slot, opened, its face (L03), Dad and Mr. Reyes over a parking spot (L05, L06), Mrs. Abbott at gate nine (L07).
 - **A concrete mystery on screen by 15 s:** my card's time, 9:14 tonight, and "it won't hurt" on the back (L11, L12, about 16 to 20 s). The hook's 9:14 is on screen from frame 1.
 - **How the narrator is the exception:** everyone's card comes true. I've spent ten years making sure mine can't.
 - **The loved one at stake:** Maya, my best friend, named at L08 and L09 in the same shots as her, and my big brother Nate, named at L17.
@@ -58,12 +58,12 @@ Kept clear of ep20 (a hotel hall wedding, a photo booth, two estranged sisters, 
 A man's card, given to everyone at eighteen, says he and his best friend Maya stop being friends at 9:14 tonight, and at 9:14 she marries his big brother, so she's his sister now. Her card said the same, she worked out what it meant at eighteen, and she never told him.
 
 ## The opening recipe (playbook v1), point by point
-1. Line 1 is a confession of a threat to me, tonight: 12 words, about 2.6 s.
+1. Line 1 is the place's rule with its price (`cost`): everyone's card says when their best friendship ends. 12 words, about 2.6 s.
 2. Frame 1 is a close-up of the card in my hand with 9:14 big and my watch at 9:11 beside it, already wrong (the time is minutes away). Lit to read, centred. Push in. No wide.
-3. A sound hit on "TONIGHT": a soft clock tick and a low swell.
-4. L02 tightens it in about 1.6 s. No names before L05.
-5. L03 to L07 show the rule at work, one or two shots per line, none over 2 s.
-6. The title is line 1 as a statement, 7 words and an emoji, never the reveal.
+3. A sound hit on "ENDS" (L01's last word): a soft clock tick and a low swell.
+4. L02 turns the rule on me in about 2.4 s: TONIGHT is its second word, at about 2.9 s. No names before L05.
+5. L03 to L07 show the rule at work, one to three shots per line, none over 2 s.
+6. The title is the hook (L01 and L02) as one statement, 7 words and an emoji, never the reveal.
 7. Seconds 15 to 30 show my card and ten years of dodging in pictures, nobody explaining.
 
 ## World
@@ -92,7 +92,7 @@ There isn't one. The eerie is a card that has never been wrong, counting down to
 Synthesized in `blocky/sound.py`. **B major, 108 BPM**: a soft ticking pulse under a warm swelling pad (L01 to L13). L14 to L21: the pad lifts into a bouncy montage figure on piano. L22: back to the tick alone. L23 to L28: the pad swells with a slow processional chord pattern. L29 to L33: the tick slows a little each line and the pad holds. **Drop** to voice and hit for 0.6 s before L34. L35, L36: a full bright chord and a cheer swell. L37 to L49: the pad warm and full, the tick back at tempo and light. 0.25 s after L49 before the loop cut.
 
 ## Sound
-- The hit on "TONIGHT" (L01): a soft clock tick plus a sub swell.
+- The hit on "ENDS" (L01's last word): a soft clock tick plus a sub swell.
 - L03: a card through a mail slot, a soft flap.
 - L29, L32, L34: one watch tick each, low.
 - L36: a soft crowd cheer.
@@ -102,10 +102,9 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 
 | Shots | Lines | Time | Picture |
 |---|---|---|---|
-| S01a, S01b | L01 | 0.0 | (a) Close-up of a small cream card in my hand, a big printed 9:14 and a line of glyphs, my wristwatch beside it reading 9:11, gold sunset light. Push in. (b) Punch in on the 9:14. Hit on "TONIGHT". |
+| S01a, S01b | L01 | 0.0 | (a) Close-up of a small cream card in my hand, a big printed 9:14 and a line of glyphs, my wristwatch beside it reading 9:11, gold sunset light. Push in. (b) Punch in on the 9:14. Hit on "ENDS". |
 | S02 | L02 | 2.6 | Me `nervous` in a suit, tucking the card into my breast pocket. The card inset appears: 9:14, its ring a quarter full. |
-| S03a, S03b | L03 | 4.2 | (a) A mail slot dropping a small sealed card onto a hall floor. (b) Hands at the end of sleeves opening one. |
-| S04 | L04 | 5.8 | The card's face, close: a time and a line of glyphs. |
+| S03a, S03b, S04 | L03 | 5.2 | (a) A mail slot dropping a small sealed card onto a hall floor (on "in the mail"). (b) Hands at the end of sleeves opening one. S04: the card's face, close: a time and a line of glyphs (on "EIGHTEEN"). About 0.55 s each. (L04 cut in r1.) |
 | S05 | L05 | 7.6 | Dad and Mr. Reyes glaring at each other across one empty parking space between their two cars. |
 | S06 | L06 | 9.4 | The two of them watering their lawns on either side of a fence, backs to each other. |
 | S07 | L07 | 11.5 | An airport gate with a big 9 over it, Mrs. Abbott waving her best friend through. |
@@ -159,10 +158,10 @@ One plant, a plain tally: two string-light-gold strokes scratched into the brass
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: My card says / my best friend and I / stop being friends TONIGHT.
-- L02: At nine-FOURTEEN. / The cards are never WRONG.
-- L03: Everybody here / gets one card / at EIGHTEEN.
-- L04: It tells you / how your closest friendship ENDS.
+- L01: Everyone here gets a card / that says when / their best friendship ENDS.
+- L02: Mine says TONIGHT, / at nine-FOURTEEN. / The cards are never WRONG.
+- L03: Yours comes in the mail / at EIGHTEEN.
+- (L04 cut in r1: L01 now states the rule. Ids are not renumbered.)
 - L05: My dad's card said, / over a parking SPOT.
 - L06: He and Mr. REYES / haven't spoken / in thirty years.
 - L07: Our neighbor Mrs. ABBOTT'S / card said, / at gate NINE.
@@ -210,7 +209,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L48: She wanted / to see my FACE.
 - L49: Every June twelfth, / she makes me / read mine out LOUD.
 
-(Loop: L49 runs straight into L01: "She makes me read mine out loud. My card says my best friend and I stop being friends tonight.")
+(Loop: L49 runs straight into L01 and L02, as the toast she makes me give: "She makes me read mine out loud. Everyone here gets a card that says when their best friendship ends. Mine says tonight." On the loop, "tonight" is the anniversary and the threat is the family joke.)
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt and nobody is in danger.

@@ -140,6 +140,49 @@ def draw_captions(img: Image.Image, t: float, caps: list[dict], shake: float = 0
         img.alpha_composite(im, (int(CX - im.width / 2 + dx), int(CY - im.height / 2 + dy)))
 
 
+def _meter_val(cs: list, t: float, key: str) -> float:
+    vals = [c for c in cs if key in c and c["t"] <= t + 1e-9]
+    if not vals:
+        return 7.0 if key == "me" else 4.0
+    cur = vals[-1]
+    prev = vals[-2][key] if len(vals) > 1 else cur[key]
+    d = cur.get("dur", 0.0)
+    u = min(1.0, max(0.0, (t - cur["t"]) / d)) if d > 0 else 1.0
+    u = u * u * (3 - 2 * u)
+    return prev + (cur[key] - prev) * u
+
+
+def draw_meter(img: Image.Image, t: float, tl: dict) -> None:
+    """Opt-in (ep28): cues named "meter" ({"me": 7, "ines": 4, "dur": 0.4}, in stair turns) draw a small tower glyph
+    top-left, outside the caption band, with seven ticks and a sea-glass dot (me) and a blue dot (Ines) on them."""
+    cs = [c for c in tl.get("cues", []) if c["name"] == "meter"]
+    if not cs:
+        return
+    k = 3
+    pw, ph = 230, 260
+    pat = Image.new("RGBA", (pw * k, ph * k), (0, 0, 0, 0))
+    d = ImageDraw.Draw(pat)
+
+    def R(x0, y0, x1, y1, **kw):
+        d.rounded_rectangle([x0 * k, y0 * k, x1 * k, y1 * k], **kw)
+
+    R(0, 0, pw - 1, ph - 1, radius=22 * k, fill=(10, 14, 24, 150))
+    cream = (240, 232, 214, 255)
+    d.polygon([(c_[0] * k, c_[1] * k) for c_ in ((46, 70), (74, 70), (84, 235), (36, 235))], fill=cream)   # tower
+    d.polygon([(c_[0] * k, c_[1] * k) for c_ in ((42, 70), (78, 70), (60, 50))], fill=(200, 70, 60, 255))   # roof
+    R(48, 58, 72, 70, radius=3 * k, fill=(255, 214, 110, 255))                                               # lamp
+    top, bot = 80, 225
+    for n in range(1, 8):
+        y = bot - (n - 1) / 6 * (bot - top)
+        d.line([(92 * k, y * k), (120 * k, y * k)], fill=(240, 232, 214, 255), width=3 * k)
+    me, ines = _meter_val(cs, t, "me"), _meter_val(cs, t, "ines")
+    for val, col, x in ((ines, (96, 150, 255, 255), 152), (me, (110, 224, 190, 255), 188)):
+        y = bot - (val - 1) / 6 * (bot - top)
+        d.ellipse([(x - 13) * k, (y - 13) * k, (x + 13) * k, (y + 13) * k], fill=col, outline=(8, 12, 20, 255), width=3 * k)
+    pat = pat.resize((pw, ph), Image.LANCZOS)
+    img.alpha_composite(pat, (36, 120))
+
+
 # ----------------------------------------------------------------------------------------- the image
 
 
@@ -360,6 +403,7 @@ def finish(tl: dict, st: dict, f: int, raw: Path, rain: Rain | None = None, grai
     if g.get("red_line"):   # a warm story's picture stays under WCAG's saturated red (the captions are drawn after)
         img = red_clamp(img, g["red_line"], g.get("red_lift_blue", 0.25))
     out = Image.fromarray(np.clip(img * 255 + 0.5, 0, 255).astype(np.uint8)).convert("RGBA")
+    draw_meter(out, t, tl)
     draw_captions(out, t, tl["captions"], fx["shake"] * 0.6, quick=bool(pol and pol["pop"]))
     return np.asarray(out.convert("RGB"))
 
