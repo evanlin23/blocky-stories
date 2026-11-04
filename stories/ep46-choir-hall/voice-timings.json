@@ -1226,30 +1226,30 @@
    ]
   },
   "L47": {
-   "text": "the beads never counted the words you say.",
+   "text": "the beads never count the words you say.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
-   "onset": 0.172,
-   "end": 1.897,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.707,
    "chunks": [
     [
-     0.172,
-     0.543
+     0.155,
+     0.474
     ],
     [
-     0.543,
-     1.061
+     0.474,
+     0.87
     ],
     [
-     1.061,
-     1.328
+     0.87,
+     1.138
     ],
     [
-     1.328,
-     1.897
+     1.138,
+     1.707
     ]
    ]
   },
@@ -1662,26 +1662,22 @@
    ]
   },
   "L63": {
-   "text": "and mom is asleep in her chair.",
+   "text": "mom is asleep in her chair.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.724,
-   "onset": 0.172,
-   "end": 1.534,
+   "dur": 1.621,
+   "onset": 0.19,
+   "end": 1.431,
    "chunks": [
     [
-     0.172,
-     0.483
+     0.19,
+     0.75
     ],
     [
-     0.483,
-     0.854
-    ],
-    [
-     0.854,
-     1.534
+     0.75,
+     1.431
     ]
    ]
   }

@@ -205,7 +205,7 @@ def listenk(pos, yaw=180, tilt=12, **kw):
     return listen(pos, yaw, tilt, sit=True, **kw)
 
 
-GRINP = (TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2]) - 0.12)
+GRINP = (TWELFTH[0] - 0.22, TWELFTH[1], sit_z(TWELFTH[2]) - 0.12)
 
 
 def G(**kw):
@@ -458,7 +458,7 @@ shot("L34.5", "wide from behind: the two of us on the lane, nothing beside me bu
       "mum": P((-0.4, -17.0), 180, "smile", walks=[("L34>", (-0.4, -20.0))])}, fill=[50, "#a8bce8"])
 
 # ---- 06 the concert, L35 to L46
-MUMX = TW - 1.1
+MUMX = TW - 1.7
 MUMP = (MUMX, TWELFTH[1], 0.9)           # Mom on the top step beside the twelfth chair
 ME_BACK = (HX + 3.8, 7.6)
 shot("L35", "the hall is packed: bunting, the audience, the twelve singing 'ah'",
@@ -502,7 +502,7 @@ shot("L43", "the Grin leans out of its chair to Mom's ear, a hand's width off, n
       "grin": G(head=[52, 0], roll=26, tilt=-18)}, fill=GF)
 shot("L44", "close on its still grin beside her ear, the eye highlight brightest",
      still((MUMX - 0.5, -6.8, 2.5), (MUMX + 0.3, TWELFTH[1], 2.45), 44),
-     {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=38, tilt=-26)}, fill=GF)
+     {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=30, tilt=-16)}, fill=GF)
 shot("L44.2", "me at the back, scared, ten lit, as she smiles at ME",
      move(((HX + 3.4, 4.6, 1.5), (ME_BACK[0], ME_BACK[1], 1.5)), ((HX + 2.6, 5.4, 1.5), (ME_BACK[0], ME_BACK[1], 1.5)), 28, 32),
      {"me": P(ME_BACK, 0, "scared")})
@@ -525,13 +525,13 @@ shot("P02", "hold on Mom's face",
      front(MUMP, 180, 1.6, 2.6, 2.5, 38, 6),
      {"mumr": P(MUMP, 180, "soft", blink=False)}, step=4)
 REV_CAM = ((MUMX - 1.0, -4.0, 3.2), (MUMX + 0.6, -7.0, 1.7), 24)
-REV_CAST = {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=38, tilt=-26),
+REV_CAST = {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=30, tilt=-16),
             "me": P((HX + 0.6, 5.0), 0, "scared")}
 shot("L47", "the reveal picture, wide: Mom's dark cord, the Grin at her ear, me at the back with ten lit",
      still(*REV_CAM), REV_CAST, fill=[90, "#ffe2c4"])
 shot("L47.2", "punch in on Mom's dark cord",
      front(MUMP, 180, 1.4, 2.0, 1.9, 34, 12),
-     {"mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=38, tilt=-26)}, fill=GF)
+     {"mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=30, tilt=-16)}, fill=GF)
 shot("L48", "the gate again, wider: the man talks, ten lit; the neighbour's bead goes dark",
      still((-1.2, -5.3, 1.45), (-3.7, -3.5, 1.1), 30),
      {"gateman": P(GM, -90, "neutral", talks=[("L48", "L48.2")], arms=[40, 0]),
@@ -540,10 +540,10 @@ shot("L49", "back to the wide: the Grin at her ear",
      still(*REV_CAM), REV_CAST, fill=[90, "#ffe2c4"])
 shot("L49.2", "close on the Grin at her ear",
      still((MUMX - 0.5, -6.8, 2.5), (MUMX + 0.3, TWELFTH[1], 2.45), 44),
-     {"mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=38, tilt=-26)}, fill=GF)
+     {"mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=30, tilt=-16)}, fill=GF)
 shot("L50", "punch in on Mom's face, smiling up at it",
      front(MUMP, 180, 1.6, 2.6, 2.5, 38, 6),
-     {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=38, tilt=-26)}, fill=GF)
+     {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=30, tilt=-16)}, fill=GF)
 shot("L51-0.4", "punch in on me at the back, scared, ten lit",
      front(ME_BACK, 0, 1.7, 1.55, 1.5, 34, 20),
      {"me": P(ME_BACK, 0, "scared")})
@@ -560,7 +560,7 @@ shot("L52.2", "me starting up the aisle between the dark rows, worried",
      {"me": P((HX - 0.2, 3.0), 0, "worried", walks=[("L52>", (HX - 0.2, -1.0))]), **hall()})
 shot("L53", "the eleven in the lamp light, round mouths, cords lit, Mom on the step among them",
      still((MUMX - 1.3, -5.0, 2.9), (MUMX + 1.0, TWELFTH[1], 2.1), 30),
-     {**choir("L53", "L53>"), "mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=38, tilt=-26)}, fill=GF)
+     {**choir("L53", "L53>"), "mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=30, tilt=-16)}, fill=GF)
 shot("L53.2", "Mom's face, turned only toward the Grin",
      front(MUMP, 180, 1.6, 2.6, 2.5, 38, 6),
      {"mumr": P(MUMP, 180, "polite", tilt=12, head=[30, 0])})

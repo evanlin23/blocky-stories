@@ -838,8 +838,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "The beads never counted",
-    "the beads never counted"
+    "The beads never COUNT",
+    "the beads never count"
    ],
    [
     "the words you SAY.",
@@ -1130,12 +1130,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "And Mom",
-    "and mom"
-   ],
-   [
-    "is asleep",
-    "is asleep"
+    "Mom is asleep",
+    "mom is asleep"
    ],
    [
     "in her CHAIR.",
