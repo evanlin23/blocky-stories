@@ -113,9 +113,9 @@ def make_plate_objs(kit, name, x, y, z, food=None):
     p1.append(kit.cyl(f"{name}.pl", 0.3, 0.04, (x, y, z + 0.02), cream, n=20))
     p1.append(kit.cyl(f"{name}.plr", 0.22, 0.05, (x, y, z + 0.025), kit.plastic("#f1e2c4", 0.5), n=20))
     if food == "lasagna":
-        p1.append(kit.box(f"{name}.food", (0.5, 0.4, 0.07), (x, y, z + 0.075), kit.plastic("#e8693a", 0.6), bevel=0.02))
-        p1.append(kit.box(f"{name}.food2", (0.5, 0.4, 0.03), (x, y, z + 0.13), kit.plastic("#ffe08a", 0.6), bevel=0.01))
-        p1.append(kit.box(f"{name}.food3", (0.5, 0.4, 0.03), (x, y, z + 0.16), kit.plastic("#c93a2c", 0.6), bevel=0.01))
+        p1.append(kit.box(f"{name}.food", (0.62, 0.5, 0.1), (x, y, z + 0.08), kit.plastic("#e8693a", 0.6), bevel=0.02))
+        p1.append(kit.box(f"{name}.food2", (0.62, 0.5, 0.04), (x, y, z + 0.15), kit.plastic("#ffe08a", 0.6), bevel=0.01))
+        p1.append(kit.box(f"{name}.food3", (0.62, 0.5, 0.04), (x, y, z + 0.19), kit.plastic("#c93a2c", 0.6), bevel=0.01))
     elif food == "chicken":
         ch = kit.sphere(f"{name}.food", 0.2, (x, y, z + 0.2), kit.plastic("#c8782c", 0.5, spec=0.5), seg=12)
         ch.scale = (1.2, 0.9, 0.8)
@@ -193,6 +193,7 @@ def house(kit, side, k):
         food = "sandwich"
     if gp:
         px_ = x + 0.0
+        py_ = side * 7.35
     return name, make_plate_objs(kit, name, px_, py_, pz_, food)
 
 
@@ -241,7 +242,7 @@ def hollow_house(kit):
     for i in range(10):
         z = 1.25 + i * 0.115
         ob = kit.box(f"hn0.slat{i}", (1.4, 0.03, 0.09), (-2.3, 9.4, z), bl)
-        if i in (0, 1, 2, 3):
+        if i in (0, 1, 2, 3, 4, 5):
             W["blind_slit"].append(ob)
     W["slit_lit"] = []
     # the door (inward)
@@ -251,14 +252,24 @@ def hollow_house(kit):
     kit.box("hn0.door.leaf", (1.2, 0.1, 2.3), (0.6, 0, 1.2), kit.plastic("#3f78d9", 0.5, spec=0.3), door)
     kit.box("hn0.door.pane", (0.4, 0.115, 0.4), (0.6, 0, 1.95), kit.plastic("#cfe8ff", 0.2, spec=0.7), door)
     kit.sphere("hn0.door.knob", 0.06, (1.05, 0.12, 1.1), kit.plastic("#e3b04b", 0.3, spec=0.6), door, seg=8)
-    kn = kit.empty("hn0.knocker", (0.6, -0.07, 1.4), door)
+    kn = kit.empty("hn0.knocker", (0.6, -0.075, 1.5), door)
     W["knocker"] = kn
-    brass = kit.plastic("#e3b04b", 0.3, spec=0.7)
-    kit.box("hn0.kn.plate", (0.16, 0.03, 0.2), (0, 0.0, 0.0), brass, kn)
-    kit.box("hn0.kn.bar", (0.12, 0.05, 0.05), (0, -0.04, -0.14), brass, kn)
-    kit.box("hn0.kn.l", (0.035, 0.05, 0.3), (-0.07, -0.03, -0.06), brass, kn)
-    kit.box("hn0.kn.r", (0.035, 0.05, 0.3), (0.07, -0.03, -0.06), brass, kn)
-    kit.box("hn0.kn.top", (0.17, 0.05, 0.035), (0, -0.03, 0.09), brass, kn)
+    brass = kit.plastic("#f0b93a", 0.25, spec=0.8)
+    kit.cyl("hn0.kn.mount", 0.13, 0.03, (0, 0.0, 0.0), brass, kn, rot=(math.pi / 2, 0, 0), n=16)
+    kit.sphere("hn0.kn.stud", 0.05, (0, -0.03, 0.0), brass, kn, seg=8)
+    for i in range(12):                      # a round brass ring hanging from the stud
+        a = i * 30 * D2R
+        kit.box(f"hn0.kn.r{i}", (0.075, 0.06, 0.075), (math.sin(a) * 0.15, -0.045, -0.2 + math.cos(a) * 0.15), brass, kn,
+                rot=(0, -a, 0))
+    kit.box("hn0.kn.strike", (0.2, 0.05, 0.06), (0, -0.05, -0.44), brass, kn)
+    # the long shadow of a tall man standing in the street, on our boards (1.2 cm proud of the deck)
+    shm = kit.plastic("#7a4f2e", 0.95, spec=0.0)
+    W["shade"] = []
+    zs = 0.3 + 0.012
+    for nm, sx, y0, y1, w in (("l0", -0.2, 7.2, 8.1, 0.17), ("l1", 0.2, 7.2, 8.1, 0.17), ("hip", 0.0, 8.1, 8.45, 0.62),
+                              ("sh", 0.0, 8.45, 8.78, 0.95), ("arm0", -0.62, 8.2, 8.74, 0.2), ("arm1", 0.62, 8.2, 8.74, 0.2),
+                              ("hd", 0.0, 8.8, 8.98, 0.4)):
+        W["shade"].append(kit.box(f"hn0.shade.{nm}", (w, y1 - y0, 0.004), (0.3 + sx, (y0 + y1) / 2, zs), shm))
     # furniture: couch, TV, clock, side window, table, lamp
     cou = kit.plastic("#5f8fb8", 0.8)
     kit.box("hn0.couch.seat", (2.6, 1.0, 0.5), (1.6, 13.6, 0.55), cou, bevel=0.05)
@@ -328,6 +339,7 @@ def build(kit, story, tl):
                          "p_c": (-18.0, -7.6), "p_d": (9.0, 7.6), "p_e": (-9.0, -7.6)}.items():
         kit.light(nm, "POINT", (lx + 1.0, ly, 2.2), 160.0 if nm in ("p_ours", "p_gp") else 90.0, "#ffcf73", size=0.5,
                   shadow=False)
+    kit.light("rim", "POINT", (0.0, 0.0, 2.0), 900.0, "#ffd9a8", size=0.5, shadow=False)
     kit.light("street", "POINT", (-3.0, 0.0, 4.5), 700.0, "#7fa0ff", size=1.0, shadow=False)
 
     kit.plane("ground", (700, 700), (0, 0, 0), ground)
@@ -583,6 +595,12 @@ def animate(kit, story, tl, t, ctx):
     for nm in ("p_ours", "p_gp", "p_a", "p_b", "p_c", "p_d", "p_e"):
         gains[nm] = look["porch"]
     gains["street"] = look["street"] * 0.8
+    rm = sample("rim", tl, t, {"v": 0.0, "x": 0.0, "y": 0.0, "z": 2.0})
+    kit.LIGHTS["rim"]["obj"].location = (rm["x"], rm["y"], rm["z"])
+    gains["rim"] = rm["v"]
+    sh_ = sample("shade", tl, t, {"v": 0.0})
+    for ob in W["shade"]:
+        ob.hide_render = sh_["v"] < 0.5
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (*look["sky"], 1.0)
@@ -635,13 +653,13 @@ def animate(kit, story, tl, t, ctx):
     kn0 = sample("knock", tl, t, {"v": 0.0})
     W["door"].rotation_euler = (0, 0, dr["v"] * 100 * D2R + (0.004 * math.sin(t * 50) * kn0["v"]))
     kn = sample("knock", tl, t, {"v": 0.0})
-    W["knocker"].rotation_euler = (kn["v"] * 0.5 * math.sin(t * 40), 0, 0)
+    W["knocker"].rotation_euler = (kn["v"] * 0.55 * math.sin(t * 12), 0, 0)
     ck = sample("clock", tl, t, {"h": 11.0, "m": 0.0})
     W["hand_h"].rotation_euler = (-ck["h"] * 30 * D2R, 0, 0)
     W["hand_m"].rotation_euler = (-ck["m"] * 6 * D2R, 0, 0)
     bl = sample("blind", tl, t, {"v": 1.0})
     for ob in W["blind_slit"]:
-        ob.hide_render = bl["v"] > 0.5
+        ob.hide_render = bl["v"] < 0.5
     sn = sample("snow", tl, t, {"v": 0.0})
     for ob in W["snow"]:
         ob.hide_render = sn["v"] < 0.5
