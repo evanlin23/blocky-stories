@@ -1074,14 +1074,14 @@
    ]
   },
   "L41": {
-   "text": "Last week he waved at me like a stranger. Polite, the way you wave at a new neighbor.",
+   "text": "Last week he waved at me like a stranger. Polite, the way you wave, at a new neighbor.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.672,
+   "dur": 3.776,
    "onset": 0.172,
-   "end": 3.466,
+   "end": 3.569,
    "chunks": [
     [
      0.172,
@@ -1093,31 +1093,31 @@
     ],
     [
      0.819,
-     0.983
+     0.966
     ],
     [
-     0.983,
-     1.672
+     0.966,
+     1.655
     ],
     [
-     1.767,
-     2.121
+     1.75,
+     2.086
     ],
     [
-     2.172,
-     2.397
+     2.138,
+     2.362
     ],
     [
-     2.397,
-     2.699
-    ],
-    [
-     2.699,
-     2.793
+     2.362,
+     2.759
     ],
     [
      2.793,
-     3.466
+     2.897
+    ],
+    [
+     2.897,
+     3.569
     ]
    ]
   },
@@ -1202,7 +1202,7 @@
    ]
   },
   "L45": {
-   "text": "A young guy, about my age when we met, jumped down with a box.",
+   "text": "a young guy, about my age when we met, jumped down with a box.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,

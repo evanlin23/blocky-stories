@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -92,10 +92,10 @@ def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="sol
 VS = "#e8bd98"       # Vern's skin, the same at every age
 CARD = "#8a5a3c"     # Vern's brown cardigan
 cast = {
-    "me": person("#dca97c", "#4fc060", "#3a4a6a", "#f4f4f2", hair="cap", hair_c="#1c1410", brow_w=1.9),
-    "me2": person("#dca97c", "#4fc060", "#3a4a6a", "#f4f4f2", hair="cap", hair_c="#8a8a92", brow_w=1.9),
-    "me3": person("#dca97c", "#6a9a8a", "#4a4a5a", "#6a5a4a", hair="cap", hair_c="#d4d4da", pattern="knit",
-                  pattern_c="#587a6c", extras=["glasses"], extra_c="#8a5a3c", brow_w=1.9),
+    "me": person("#e6b48a", "#4fc060", "#3a4a6a", "#f4f4f2", hair="cap", hair_c="#1c1410", brow_w=1.9),
+    "me2": person("#e6b48a", "#4fc060", "#3a4a6a", "#f4f4f2", hair="cap", hair_c="#8a8a92", brow_w=1.9),
+    "me3": person("#e6b48a", "#6a9a8a", "#4a4a5a", "#6a5a4a", hair="cap", hair_c="#74747e", pattern="knit",
+                  pattern_c="#587a6c", extras=["glasses"], extra_c="#d8452f", glasses_c="#d8452f", brow_w=1.9),
     "vern0": person(VS, CARD, "#6b5a48", "#4a3626", hair="cap", hair_c="#f6f6f6", pattern="knit", pattern_c="#6e4630",
                     extras=["glasses"], extra_c="#3a3a3e", brow_w=1.6),
     "vern0s": person(VS, "#34406a", "#34406a", "#2a2a32", hair="cap", hair_c="#f6f6f6", collar="#f4f4f4",
@@ -104,13 +104,13 @@ cast = {
                     brow_w=1.6),
     "vern2": person(VS, CARD, "#6b5a48", "#4a3626", hair="cap", hair_c="#7a5a44", pattern="knit", pattern_c="#6e4630",
                     brow_w=1.6),
-    "vern3": person(VS, CARD, "#6b5a48", "#4a3626", hair="mop", hair_c="#6a4228", pattern="knit", pattern_c="#6e4630",
+    "vern3": person(VS, CARD, "#6b5a48", "#4a3626", hair="spiky", hair_c="#6a4228", pattern="knit", pattern_c="#6e4630",
                     brow_w=1.6),
-    "vern4": person(VS, "#5a8ad0", "#3a4a6a", "#f4f4f2", hair="mop", hair_c="#6a4228", collar="#f4f4f4", brow_w=1.6,
+    "vern4": person(VS, "#5a8ad0", "#3a4a6a", "#f4f4f2", hair="spiky", hair_c="#6a4228", collar="#f4f4f4", brow_w=1.6,
                     extras=["coat"], zip_c="#3a5a90"),
     "nora": person("#f0c8a0", "#ffd23f", "#ffd23f", "#f4f4f2", hair="mop", hair_c="#e8553f", eyes="lashes", brow_w=1.9,
                    width=0.96),
-    "nora2": person("#f0c8a0", "#e8a060", "#6a5a6a", "#6a5a4a", hair="mop", hair_c="#c4c4cc", eyes="lashes", brow_w=1.9,
+    "nora2": person("#f0c8a0", "#e8a060", "#6a5a6a", "#6a5a4a", hair="bun", hair_c="#bfa6a8", eyes="lashes", brow_w=1.9,
                     width=0.96, pattern="knit", pattern_c="#d08a50"),
     "m1": person("#b98456", "#ff9a30", "#3a3a48", "#2a2a2a", hair="buzz", hair_c="#1a1410", sleeves="short"),
     "m2": person("#f0c8a0", "#3aa0a0", "#3a3a48", "#2a2a2a", hair="cap", hair_c="#6a4a2a", hat="ballcap", hat_c="#2f6fb0",
@@ -222,7 +222,7 @@ def cu(pos, yaw, d=3.4, lens=50, side=0.0, z=FACE, **kw):
 
 
 def cal_close(d=3.4, lens=28, z=2.0, **kw):
-    return C(CALX, CALY - 0.2, z, d, lens, **kw)
+    return C(CALX + 0.1, CALY - 0.2, z, d, lens, **kw)
 
 
 # ===== 01 the hook (L01 to L04)
@@ -230,10 +230,11 @@ look(0, "day")
 count(0, 10950)
 show(0, "movebox")
 show(0, "cane_vern0")
+show(0, "cal", False)
 put("vern0", 0, HUGV, -45, expr="crying", arms=[75, 75])
 put("me", 0, HUGM, 55, expr="worried", arms=[50, 50])
-shot(0, cu(HUGV, -45, 3.3, 52, tz2=FACE), "hook")
-shot("L01.1", cu(HUGM, 55, 3.6, 50), "mehug")
+shot(0, cu(HUGV, -45, 4.7, 46, tz2=FACE, dx=0.0), "hook")
+shot("L01.1", cu(HUGM, 55, 4.6, 46), "mehug")
 shot("L01.2", C(-4.9, -2.8, 0.7, 5.0, 36, ang=-10, dz=0.5), "boxfeet")
 shot("L01.3", C(-4.9, -1.8, 1.5, 6.2, 36, ang=-8), "hugwide")
 # L02: Vern steps back and wipes his glasses; the movers freeze with a couch
@@ -268,6 +269,7 @@ shot("L04.3", C(0.5, -1.0, 1.4, 9.0, 28, ang=-5, push=0.18), "walkhome")
 # ===== 02 the rule at work (L05 to L12)
 only("L05", ["vern0", "me"])
 show("L05", "cane_vern0", False)
+show("L05", "cal")
 show("L05", "carry_me", False)
 shot("L05", cal_close(3.6, 28), "calendar")
 put("vern0", "L05.1", [AX, AY - 0.15], 0, expr="smile")
@@ -316,13 +318,13 @@ shot("L09.3", cu((-6.0, 3.2), 0, 3.4, 50), "confused")
 only("L10", [])
 cue("L10", "mydoor", a=0.0)
 flip("L10", 10950)
-shot("L10", cal_close(3.4, 28), "flip")
-shot("L10.1", cal_close(1.9, 28, 1.95), "flipclose")
+shot("L10", cal_close(3.9, 28), "flip")
+shot("L10.1", cal_close(2.4, 28, 1.95), "flipclose")
 shot("L10.2", C(CALX + 1.5, CALY - 3.0, 1.8, 3.6, 34, ang=35), "flipside")
 # L11: ten thousand nine hundred and fifty
 put("me", "L11", [CALX, 3.9], 180, expr="wide")
 shot("L11", C(CALX, 3.9, 1.6, 4.2, 34, ang=150), "reading")
-shot("L11.2", cal_close(1.8, 28, 1.95), "number")
+shot("L11.2", cal_close(2.3, 28, 1.95), "number")
 # L12: counting down
 only("L12", [])
 flip("L12", 10949)
@@ -341,7 +343,9 @@ go("m1", "L13+1.9", [DX + 0.6, 6.2])
 shot("L13", mv([-3.0, 1.8, 1.8], [8.5, 4.6, 1.2], 30, [-2.2, 1.9, 1.8], [8.6, 4.6, 1.2], 30), "nightwin")
 only("L13.1", ["vern0", "m1"])
 put("me", "L13.1", [-9.4, 7.3], 0, expr="worried")
-shot("L13.1", C(-9.4, 7.3, 1.55, 4.6, 50, ang=0, push=0.1), "toothbrush")
+show("L13.1", "tb_me")
+shot("L13.1", C(-9.4, 7.3, 1.55, 4.2, 50, ang=0, push=0.1), "toothbrush")
+show("L13.2", "tb_me", False)
 only("L13.2", ["m2", "vern0"])
 put("m2", "L13.2", [VX + 2.6, 4.2], 90, expr="neutral", arms=[40, 40])
 show("L13.2", "carry_m2")
@@ -412,18 +416,18 @@ only("L20", ["nora", "me"])
 season("L20", "summer")
 count("L20", 10220)
 show("L20", "movebox", False)
-put("nora", "L20", [WX + 0.7, WY + 0.9], 0, expr="laugh")
-put("me", "L20", [WX - 0.7, WY + 0.9], 0, expr="laugh")
-shot("L20", C(WX, WY + 0.9, 1.5, 5.6, 38, ang=0), "wedding")
+put("nora", "L20", [WX + 0.55, WY + 0.9], 0, expr="laugh", arms=[15, 15])
+put("me", "L20", [WX - 0.55, WY + 0.9], 0, expr="laugh", arms=[15, 15])
+shot("L20", C(WX, WY + 0.9, 1.5, 6.4, 38, ang=0), "wedding")
 only("L20.1", ["nora", "me", "g1", "g2", "g3"])
 put("g1", "L20.1", [WX - 2.4, WY - 1.0], 0, expr="laugh", arms=[110, 110])
 put("g2", "L20.1", [WX + 2.4, WY - 1.0], 0, expr="laugh", arms=[100, 100])
 put("g3", "L20.1", [WX + 3.4, WY - 2.2], 0, expr="grin", arms=[80, 80])
-beat("nora", "L20.1", arms=[150, 150], expr="laugh")
-shot("L20.1", C(WX + 0.7, WY + 0.9, 1.7, 4.6, 40, ang=-10), "bouquet")
+beat("nora", "L20.1", arms=[60, 60], expr="laugh")
+shot("L20.1", C(WX, WY + 0.9, 1.6, 6.2, 40, ang=-6), "bouquet")
 only("L20.2", ["nora"])
 beat("nora", "L20.2", arms=[0, 0], expr="laugh")
-shot("L20.2", cu((WX + 0.7, WY + 0.9), 0, 3.3, 52), "noracu")
+shot("L20.2", cu((WX + 0.55, WY + 0.9), 0, 3.3, 52), "noracu")
 # L21: Vern cries through the vows
 only("L21", ["vern0s"])
 put("vern0s", "L21", [WX - 1.8, WY - 0.6], 20, expr="crying")
@@ -478,7 +482,7 @@ shot("L23.3", C(3.4, -2.2, 1.5, 4.2, 44, ang=-10), "bbqlaugh")
 only("L24", [])
 show("L24", "bbq", False)
 count("L24", 6200)
-shot("L24", C(GX - 0.5, GY + 2.3, 0.8, 3.2, 40, ang=0), "cane")
+shot("L24", C(GX - 0.5, GY + 2.1, 0.95, 5.0, 40, ang=0, push=0.1), "cane")
 only("L24.2", ["me2", "vern2"])
 put("me2", "L24.2", [GX - 0.2, GY + 0.8], 0, expr="worried", arms=[70, 0])
 put("vern2", "L24.2", [GX + 1.2, GY + 0.2], 0, expr="laugh", arms=[150, 150])
@@ -535,9 +539,10 @@ only("L32", ["vern3", "me2"])
 show("L32", "chairs")
 put("vern3", "L32", [AX, AY - 0.15], 0, expr="soft")
 sit("vern3", "L32", "chairA", rock=True)
-put("me2", "L32", [BX, BY - 0.15], 0, expr="worried", head=[-25, 0])
+put("me2", "L32", [BX, BY - 0.15], 0, expr="worried", head=[-25, 0], lean=14)
 sit("me2", "L32", "chairB", z=0.56)
-shot("L32", mv([AX - 0.6, AY - 1.0, 1.15], [AX - 0.46, AY, 0.83], 52, [AX - 0.5, AY - 0.8, 1.1], [AX - 0.46, AY, 0.83], 52), "tally")
+shot("L32", C(AX + 0.8, AY, 1.1, 6.2, 38, ang=-10, push=0.1), "twochairs")
+shot("L32.2", mv([AX - 0.8, AY - 1.6, 1.15], [AX - 0.46, AY, 0.83], 46, [AX - 0.6, AY - 1.3, 1.1], [AX - 0.46, AY, 0.83], 46), "tally")
 shot("L32.3", cal_close(3.6, 28), "darkcal")
 look("L33", "night")
 beat("vern3", "L33", expr="smile", head=[18, 0])
@@ -551,7 +556,7 @@ put("vern3", "L34", [VX - 1.2, 4.4], 0, expr="warm")
 shot("L34", cu((VX - 1.2, 4.4), 0, 3.3, 52), "youllknow")
 shot("L34.3", mv([G.CHAIR_B[0] + 0.5, 2.6, 2.4], [G.CHAIR_B[0] + 0.5, 4.6, 2.3], 55, [G.CHAIR_B[0] + 0.4, 2.9, 2.35], [G.CHAIR_B[0] + 0.5, 4.6, 2.3], 55), "chime")
 # ===== 07 the photos come down (L35 to L43)
-look("L35", "dusk")
+look("L35", "bluedusk")
 count("L35", 600)
 only("L35", [])
 cue("L35", "photos", n=9.0)
@@ -563,10 +568,11 @@ cue("L36.1", "photos", n=8.0)
 shot("L36.1", C(RX + 2.3, RY + 3.3, 1.1, 3.2, 46, ang=0, dz=0.1), "paleSquare")
 put("vern3", "L36.2", [RX + 1.0, RY + 2.4], 180, expr="blank", arms=[150, 150])
 shot("L36.2", C(RX + 1.0, RY + 2.4, 1.6, 3.8, 42, ang=170), "lifting")
-cue("L37", "photos", n=7.0)
+cue("L37", "photos", n=8.0)
+cue("L37+0.3", "photos", n=7.0)
 count("L37", 300)
 only("L37", [])
-shot("L37", C(RX + 1.15, RY + 3.3, 1.2, 3.2, 46, ang=0, dz=0.1), "fencegone")
+shot("L37", C(RX + 1.15, RY + 3.3, 1.3, 4.6, 40, ang=0), "fencegone")
 cue("L37.1", "photos", n=6.0)
 shot("L37.1", C(RX - 1.15, RY + 3.3, 2.35, 3.2, 46, ang=0), "weddinggone")
 cue("L37.1+0.4", "photos", n=3.0)
@@ -580,8 +586,8 @@ shot("L38.2", mv([RX, RY - 1.2, 1.6], [RX + 0.6, RY - 4.5, 1.5], 44, [RX + 0.1, 
 only("L39", [])
 count("L39", 30)
 shot("L39", C(RX + 0.1, RY + 3.3, 1.85, 6.2, 40, ang=0), "lastframe")
-shot("L39.1", C(RX + 0.05, RY + 3.3, 1.9, 4.0, 40, ang=0), "youngears")
-shot("L40", C(RX + 0.4, RY + 3.3, 1.9, 3.4, 40, ang=0), "oldman")
+shot("L39.1", C(RX + 0.15, RY + 3.3, 1.95, 2.7, 40, ang=0, push=0.08), "youngears")
+shot("L40", C(RX + 0.3, RY + 3.3, 1.97, 2.4, 40, ang=0, push=0.08), "oldman")
 only("L40.1", ["me3"])
 put("me3", "L40.1", [RX + 0.6, RY - 4.5], 180, expr="scared")
 shot("L40.1", mv([RX + 0.2, RY - 2.0, 1.6], [RX + 0.6, RY - 4.5, 1.5], 50, [RX + 0.3, RY - 2.4, 1.6], [RX + 0.6, RY - 4.5, 1.5], 50), "scaredwin")
@@ -591,7 +597,7 @@ count("L41", 7)
 cue("L41", "photos", n=0.0)
 only("L41", ["vern3"])
 put("vern3", "L41", [VX - 1.2, 4.4], 0, expr="blank", arms=[0, 120])
-shot("L41", cu((VX - 1.2, 4.4), 0, 3.6, 48), "strangerwave")
+shot("L41", cu((VX - 1.2, 4.4), 0, 4.8, 42, dx=0.0), "strangerwave")
 beat("vern3", "L41.2", expr="polite", arms=[0, 0])
 go("vern3", "L41.2+0.5", [VX, 6.3])
 shot("L41.2", C(VX - 0.5, 4.4, 1.5, 5.0, 38, ang=-4), "turnsaway")
@@ -617,17 +623,17 @@ shot("P01", cal_close(2.8, 28), "dropcal")
 # ===== 08 the twist (L44 to L53)
 look("L44", "morning")
 count("L44", 1)
-cue("L44", "truck", y=-16.0, vis=1.0)
+cue("L44", "truck", y=-8.0, vis=1.0)
 cue("L44", "truckdoor", a=0.0)
 cue("L44", "truck", y=0.0, vis=1.0, dur=2.4)
-shot("L44", mv([DX - 7.0, -9.0, 1.4], [DX, -4.0, 1.3], 30, [DX - 6.0, -8.0, 1.4], [DX, -2.0, 1.3], 30), "backing")
+shot("L44", mv([DX - 7.5, -11.0, 1.5], [DX, -4.0, 1.4], 32, [DX - 6.5, -10.0, 1.5], [DX, -2.5, 1.4], 32), "backing")
 cue("L44.2", "truckdoor", a=110.0, dur=0.8)
 shot("L44.2", C(DX, 4.8, 1.3, 7.0, 34, ang=-40), "dooropen")
 # L45: a young guy jumps down with a box
 only("L45", ["vern4"])
 put("vern4", "L45", [DX - 1.6, -1.0, 0.6], 20, expr="grin")
 show("L45", "carry_vern4")
-shot("L45", cu((DX - 1.7, -1.0), 20, 4.0, 46, z=1.9), "hopprep")
+shot("L45", cu((DX - 1.7, -1.0), 20, 3.0, 46, z=1.8), "hopprep")
 put("m1", "L45.2", [DX + 0.4, 5.9], 0, expr="neutral", arms=[40, 40])
 put("m2", "L45.2", [DX - 0.8, 5.9], 0, expr="neutral", arms=[40, 40])
 show("L45.2", "carry_m1")
@@ -656,9 +662,9 @@ put("vern4", "L47", [DX - 5.5, MEET_V[1]], -90, expr="smile", arms=[0, 0])
 go("vern4", "L47+0.45", [MEET_V[0], MEET_V[1]], arms=[0, 0])
 shot("L47", C(DX - 6.0, MEET_V[1], 1.4, 6.0, 36, ang=10), "walkover")
 only("L47.1", ["vern4", "me3"])
-put("vern4", "L47.1", [MEET_V[0], MEET_V[1]], -80, expr="smile", arms=[0, 90])
-put("me3", "L47.1", [MEET_V[0] - 4.4, MEET_V[1]], 80, expr="soft")
-shot("L47.1", mv([MEET_V[0] - 2.2, -15.5, 1.7], [MEET_V[0] - 2.2, MEET_V[1], 1.3], 26, [MEET_V[0] - 2.2, -14.5, 1.7], [MEET_V[0] - 2.2, MEET_V[1], 1.3], 26), "reveal")
+put("vern4", "L47.1", [MEET_V[0], MEET_V[1]], -50, expr="smile", arms=[80, 80])
+put("me3", "L47.1", [MEET_V[0] - 1.6, MEET_V[1]], 50, expr="soft")
+shot("L47.1", C(MEET_V[0] - 0.8, MEET_V[1], 1.5, 5.4, 36, ang=0, push=0.06), "reveal")
 shot("L48.2", cu(MEET_V, -20, 3.0, 54), "justmoved")
 # L49
 only("L49", ["vern4"])
@@ -714,7 +720,7 @@ only("L56", ["me3", "vern4"])
 put("me3", "L56", [MEET_V[0] - 0.7, MEET_V[1]], 80, expr="crying", arms=[75, 75])
 put("vern4", "L56", [MEET_V[0] + 0.3, MEET_V[1]], -80, expr="wide", arms=[40, 40])
 show("L56", "carry_vern4")
-shot("L56", C(MEET_V[0] - 0.2, MEET_V[1], 1.4, 4.2, 42, ang=-10), "hug")
+shot("L56", C(MEET_V[0] - 0.2, MEET_V[1], 1.5, 5.4, 42, ang=-5, push=0.06), "hug")
 shot("L56.2", cu((MEET_V[0] - 0.7, MEET_V[1]), 55, 3.2, 50), "cried")
 # L57
 beat("me3", "L57", expr="sad-smile")
@@ -722,9 +728,12 @@ shot("L57", cu((MEET_V[0] - 0.7, MEET_V[1]), 60, 3.2, 52), "wetsmile")
 beat("vern4", "L57.2", expr="wide")
 shot("L57.2", cu((MEET_V[0] + 0.3, MEET_V[1]), -60, 3.2, 52), "stunned2")
 # L58: the picture
+show("L58", "carry_vern4", False)
+show("L58", "cam_nora")
 only("L58", ["nora2"])
 put("nora2", "L58", [-6.0, 4.5], 0, expr="smile", arms=[100, 100])
-shot("L58", C(-6.0, 4.5, 1.5, 4.6, 40, ang=0), "noracam")
+shot("L58", C(-6.0, 4.5, 1.6, 3.8, 40, ang=0), "noracam")
+show("L58.1", "cam_nora", False)
 only("L58.1", ["me3", "vern4"])
 put("me3", "L58.1", [MEET_V[0] - 0.5, MEET_V[1]], 70, expr="crying", arms=[75, 75])
 put("vern4", "L58.1", [MEET_V[0] + 0.5, MEET_V[1]], -70, expr="wide", arms=[60, 60])
@@ -762,9 +771,9 @@ only("L61.4", ["me3"])
 put("me3", "L61.4", [-0.7, -1.3], 80, expr="soft", arms=[50, 0])
 shot("L61.4", cu((-0.7, -1.3), 55, 3.4, 50), "picket")
 only("L61.5", ["me3", "nora2"])
-put("me3", "L61.5", [-4.6, -2.0], 0, expr="soft")
-put("nora2", "L61.5", [-3.8, -2.0], 0, expr="soft", arms=[0, 70])
-shot("L61.5", C(-4.2, -2.0, 1.5, 5.4, 36, ang=0), "nora_me")
+put("me3", "L61.5", [-4.6, -2.0], 35, expr="soft")
+put("nora2", "L61.5", [-3.4, -2.0], -35, expr="soft", arms=[80, 80])
+shot("L61.5", C(-4.0, -2.0, 1.5, 5.0, 38, ang=0), "nora_me")
 only("L62.1", ["vern0", "me"])
 count("L62.1", 10950)
 look("L62.1", "day")
@@ -772,7 +781,7 @@ show("L62.1", "movebox")
 show("L62.1", "cane_vern0")
 put("vern0", "L62.1", HUGV, -45, expr="crying", arms=[75, 75])
 put("me", "L62.1", HUGM, 55, expr="worried", arms=[50, 50])
-shot("L62.1", cu(HUGV, -45, 3.9, 52, push=0.2), "loop")
+shot("L62.1", cu(HUGV, -45, 4.9, 46, push=0.15), "loop")
 
 # ---------------------------------------------------------------------------------------------- finish
 cue(0, "flip", v=1.0)
@@ -863,7 +872,7 @@ story = {
     "set_moves": [names["flip"], names["flipclose"], names["tick"], names["flip3"], names["storm"], names["fixing"],
                   names["backing"], names["dooropen"], names["truckdoors"]],
     "clip_ok": [],
-    "asr_forgive": ["thousand nine hundred and fifty"],
+    "asr_forgive": ["thousand nine hundred and fifty", "the way you wave", "wave at a new neighbor"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

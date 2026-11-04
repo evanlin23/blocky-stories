@@ -33,7 +33,7 @@ def kit_col(h):
 
 def _L(**kw):
     base = dict(sun=3.4, sun_col="#fff0d8", el=48.0, az=-25.0, fill=0.9, fill_col="#fff0e0", sky="#8fd3ff", sky_str=1.0,
-                front=0.0)
+                front=0.0, room=1.0)
     base.update(kw)
     return base
 
@@ -46,6 +46,8 @@ LOOKS = {
                 front=0.7),
     "dusk": _L(sun=1.8, sun_col="#ffb070", el=9.0, az=-70.0, fill=0.9, fill_col="#ffd2b0", sky="#f0a878", sky_str=0.8,
                front=0.9),
+    "bluedusk": _L(sun=0.7, sun_col="#ff9a78", el=7.0, az=-70.0, fill=1.5, fill_col="#7e96e0", sky="#5668b0", sky_str=0.8,
+                   front=0.25, room=0.55),
     "morning": _L(sun=3.0, sun_col="#ffe2b8", el=24.0, az=-60.0, fill=1.0, fill_col="#ffeedd", sky="#a8dcff", front=0.3),
 }
 
@@ -172,7 +174,7 @@ def house(kit, name, cx, cy, w, d, h, wall, roof, front=-1, hollow=None, lit=Non
         kit.box(f"{name}.cfloor", (cw, 2.7, 0.06), (cx - w / 2 + cw / 2, fy + t + 1.35, 0.03), pl("#e8c89a", 0.7))
         kit.box(f"{name}.cceil", (cw, 2.7, 0.2), (cx - w / 2 + cw / 2, fy + t + 1.35, h - 0.1), pl("#fff4e0", 0.7))
         kit.box(f"{name}.cwall", (0.05, 2.7, 1.8), (cx - w / 2 + cw + 0.0 - 0.03 - 0.3, fy + t + 1.35, 1.6),
-                pl("#ffd8e0", 0.7))
+                pl("#5a5078", 0.7))
         kit.light(f"{name}.cell", "POINT", (cx - w / 2 + cw / 2, fy + t + 1.0, h - 0.6), 70.0, "#fff0d8", size=0.4, shadow=False)
     # roof
     run = w / 2 + 0.45
@@ -310,22 +312,29 @@ def photo(kit, name, cx, cy, z, w, h, young_hair, old_hair, truck=False, big=Fal
     kit.box(f"{name}.bg", (w, 0.03, h), (cx, y - 0.1, z), kit.plastic("#cfe8ff", 0.9), root)
     kit.box(f"{name}.grass", (w, 0.03, h * 0.28), (cx, y - 0.115, z - h * 0.36), kit.plastic("#7ed957", 0.9), root)
     s = h / 1.1
+    k = 1.4 if big else 1.0
     if truck:
         kit.box(f"{name}.truck", (w * 0.45, 0.03, h * 0.5), (cx - w * 0.22, y - 0.13, z + h * 0.02), kit.plastic("#fafafa", 0.7), root)
     skin = kit.plastic("#e8bd98", 0.7)
-    for who, dx, col, hc in [("a", -0.17 * w, "#5a82c0", young_hair), ("b", 0.17 * w, "#6a8f7a", old_hair)]:
+    sp = 0.12 if big else 0.17
+    zb = 0.25 if big else 0.2
+    for who, dx, col, hc in [("a", -sp * w, "#5a82c0", young_hair), ("b", sp * w, "#6a8f7a", old_hair)]:
         bx = cx + dx + (w * 0.12 if truck else 0)
-        kit.box(f"{name}.{who}body", (0.2 * s * 1.1, 0.03, 0.42 * s), (bx, y - 0.14, z - 0.2 * s), kit.plastic(col, 0.7), root)
-        kit.box(f"{name}.{who}head", (0.19 * s * 1.1, 0.03, 0.19 * s), (bx, y - 0.15, z + 0.12 * s), skin, root)
-        kit.box(f"{name}.{who}hair", (0.2 * s * 1.1, 0.03, 0.08 * s), (bx, y - 0.165, z + 0.2 * s), kit.plastic(hc, 0.7), root)
+        kit.box(f"{name}.{who}body", (0.2 * s * 1.1 * k, 0.03, 0.42 * s * k), (bx, y - 0.14, z - zb * s), kit.plastic(col, 0.7), root)
+        kit.box(f"{name}.{who}head", (0.19 * s * 1.1 * k, 0.03, 0.19 * s * k), (bx, y - 0.15, z + 0.12 * s * k), skin, root)
+        kit.box(f"{name}.{who}hair", (0.2 * s * 1.1 * k, 0.03, 0.08 * s * k), (bx, y - 0.165, z + 0.2 * s * k), kit.plastic(hc, 0.7), root)
         for ex in (-1, 1):
-            kit.box(f"{name}.{who}eye{ex}", (0.025 * s, 0.02, 0.03 * s), (bx + ex * 0.04 * s, y - 0.18, z + 0.13 * s), kit.plastic("#1c120c", 0.6), root)
-        kit.box(f"{name}.{who}smile", (0.06 * s, 0.02, 0.012 * s), (bx, y - 0.18, z + 0.07 * s), kit.plastic("#7a3a30", 0.6), root)
+            kit.box(f"{name}.{who}eye{ex}", (0.025 * s * k, 0.02, 0.03 * s * k), (bx + ex * 0.04 * s * k, y - 0.18, z + 0.13 * s * k), kit.plastic("#1c120c", 0.6), root)
+        kit.box(f"{name}.{who}smile", (0.06 * s * k, 0.02, 0.012 * s * k), (bx, y - 0.18, z + 0.07 * s * k), kit.plastic("#7a3a30", 0.6), root)
         if who == "b":
-            kit.box(f"{name}.{who}gl", (0.14 * s, 0.02, 0.02 * s), (bx, y - 0.19, z + 0.14 * s), kit.plastic("#3a3a3e", 0.5), root)
-    # the arms around each other
-    kit.box(f"{name}.hug", (0.34 * s * 1.1, 0.03, 0.08 * s), (cx + (w * 0.12 if truck else 0), y - 0.16, z - 0.06 * s),
+            kit.box(f"{name}.{who}gl", (0.14 * s * k, 0.02, 0.02 * s * k), (bx, y - 0.19, z + 0.14 * s * k), kit.plastic("#3a3a3e", 0.5), root)
+    # the arms around each other: each one's arm wraps across the other's back
+    mx = cx + (w * 0.12 if truck else 0)
+    ax = 0.17 * s * k
+    kit.box(f"{name}.hug", (2 * sp * w + 0.2 * s * 1.1 * k, 0.03, 0.08 * s * k), (mx, y - 0.16, z - 0.02 * s * k),
             kit.plastic("#5a82c0", 0.7), root)
+    kit.box(f"{name}.hug2", (2 * sp * w + 0.1 * s * k, 0.03, 0.07 * s * k), (mx + ax * 0.2, y - 0.175, z - 0.1 * s * k),
+            kit.plastic("#6a8f7a", 0.7), root)
     return root
 
 
@@ -387,7 +396,7 @@ def build(kit, story, tl):
           door_col="#ffd23f")
     house(kit, "vern", 7.5, 9.0, 7.0, 6.0, 3.6, "#ffe58a", "#e8553f", door_x=7.5, door_col="#2f8f6f")
     # my window glass (a thin pane just in front of the opening)
-    kit.box("mywin.glass", (1.4, 0.03, 1.3), (-9.4, 5.93, 1.65), kit.glass("#e8f4ff"))
+    kit.box("mywin.cellback", (3.2, 0.04, 2.6), (-9.45, 8.95, 1.5), pl("#4a4670", 0.8))
     for sx in (-1, 1):
         kit.box(f"mywin.f{sx}", (0.1, 0.12, 1.4), (-9.4 + sx * 0.75, 5.88, 1.65), pl("#fffdf4", 0.6))
     for sz in (-1, 1):
@@ -508,7 +517,7 @@ def build(kit, story, tl):
     vis("bbq", gr)
 
     # ------------------------------------------------------------------ Vern's living room (far east)
-    wallp = kit.grime("#f2b878", 0.8, 2.0, "wallpaper", 0.9)
+    wallp = kit.grime("#d9a878", 0.8, 2.0, "wallpaper", 0.9)
     kit.plane("rfloor", (12, 9), (rx, ry, 0.03), kit.planks("#c9976a", "#b78456", 1.0))
     kit.box("rback", (12, 0.3, 3.4), (rx, ry + 3.5, 1.7), wallp)
     for sx in (-1, 1):
@@ -535,8 +544,8 @@ def build(kit, story, tl):
     kit.box("radio", (0.7, 0.3, 0.4), (rx - 3.8, ry + 3.05, 1.0), rad, bevel=0.04)
     kit.cyl("radio.d1", 0.1, 0.04, (rx - 3.95, ry + 2.88, 1.02), pl("#fff4c8", 0.4), rot=(math.pi / 2, 0, 0), n=14)
     kit.cyl("radio.d2", 0.07, 0.04, (rx - 3.62, ry + 2.88, 1.02), pl("#ffd23f", 0.4), rot=(math.pi / 2, 0, 0), n=14)
-    kit.cyl("lampbase", 0.12, 0.8, (rx + 5.0, ry + 3.0, 0.4), pl("#b87a4a", 0.7), n=10)
-    kit.cyl("lampshade", 0.3, 0.35, (rx + 5.0, ry + 3.0, 1.0), kit.emit("#ffd8a0", 1.2, "shade"), n=14, r2=0.2)
+    kit.cyl("lampbase", 0.12, 0.8, (rx + 5.3, ry + 2.6, 0.4), pl("#b87a4a", 0.7), n=10)
+    kit.cyl("lampshade", 0.3, 0.35, (rx + 5.3, ry + 2.6, 1.0), kit.emit("#ffd8a0", 0.5, "shade"), n=14, r2=0.2)
     # the photo wall: 9 frames (0 = the last one, big and central), the pale squares under them
     spots = [(0.0, 1.85, 1.5, 1.1), (-2.3, 2.15, 0.9, 0.7), (-1.15, 2.35, 0.8, 0.65), (1.15, 2.4, 0.8, 0.65),
              (2.3, 2.1, 0.9, 0.7), (-2.3, 1.1, 0.9, 0.7), (-1.15, 1.2, 0.8, 0.65), (1.15, 1.2, 0.8, 0.65),
@@ -548,6 +557,9 @@ def build(kit, story, tl):
     W["photos"] = []
     for i, (px, pz, pw, ph) in enumerate(spots):
         kit.box(f"pale{i}", (pw + 0.28, 0.02, ph + 0.28), (rx + px, ry + 3.33, pz), pale)
+        sh = pl("#b8946a", 0.9)
+        kit.box(f"pale{i}.top", (pw + 0.28, 0.02, 0.06), (rx + px, ry + 3.31, pz + (ph + 0.28) / 2 - 0.03), sh)
+        kit.box(f"pale{i}.left", (0.06, 0.02, ph + 0.28), (rx + px - (pw + 0.28) / 2 + 0.03, ry + 3.31, pz), sh)
         g = photo(kit, f"photo{i}", rx + px, ry + 3.32, pz, pw * (0.8 if i == 0 else 1), ph * (0.8 if i == 0 else 1), hairs[i][0], hairs[i][1], truck=(i == 0), big=(i == 0))
         W["photos"].append(g)
     # boxes by the door (left wall), stacked as the days go
@@ -603,10 +615,22 @@ def build(kit, story, tl):
         kit.box(f"ladder.r{sx}", (0.06, 0.06, 2.4), (gx + 2.2 + sx * 0.22, gy + 2.1, 1.2), pl("#ffb040", 0.5), rot=(0, 0.1, 0))
     for k in range(7):
         kit.box(f"ladder.s{k}", (0.44, 0.05, 0.05), (gx + 2.2, gy + 2.1, 0.3 + k * 0.33), pl("#ffb040", 0.5))
-    cane = kit.empty("garcane", (gx - 0.5, gy + 2.3, 0))
+    kit.box("peg.board", (2.4, 0.05, 1.7), (gx - 0.5, gy + 2.325, 1.35), pl("#c9a46c", 0.8))
+    for k in range(6):
+        for j in range(4):
+            kit.box(f"peg.h{k}{j}", (0.04, 0.012, 0.04), (gx - 1.5 + k * 0.4, gy + 2.296, 0.75 + j * 0.42), pl("#7a5a38", 0.9))
+    kit.box("peg.hamH", (0.07, 0.03, 0.55), (gx - 1.3, gy + 2.28, 1.55), pl("#8a5a3a", 0.7))
+    kit.box("peg.hamD", (0.3, 0.04, 0.12), (gx - 1.3, gy + 2.28, 1.88), pl("#6a7080", 0.4, spec=0.5))
+    kit.box("peg.sawB", (0.7, 0.03, 0.2), (gx - 0.3, gy + 2.28, 1.7), pl("#c8cdd6", 0.4, spec=0.5))
+    kit.box("peg.sawH", (0.2, 0.04, 0.26), (gx + 0.15, gy + 2.28, 1.7), pl("#e8553f", 0.6))
+    kit.box("peg.wrN", (0.08, 0.03, 0.6), (gx + 0.5, gy + 2.28, 1.45), pl("#6a7080", 0.4, spec=0.5))
+    kit.box("peg.wrH", (0.22, 0.04, 0.16), (gx + 0.5, gy + 2.28, 1.82), pl("#6a7080", 0.4, spec=0.5))
+    kit.box("gbucket", (0.5, 0.5, 0.5), (gx + 0.9, gy + 1.7, 0.28), pl("#e8553f", 0.6))
+    cane = kit.empty("garcane", (gx - 0.5, gy + 2.1, 0))
     cm = pl("#b87a4a", 0.6)
     kit.cyl("garcane.shaft", 0.03, 1.25, (0, 0, 0.62), cm, cane, rot=(0, 0.2, 0), n=8)
-    kit.cyl("garcane.crook", 0.05, 0.22, (-0.12, 0, 1.25), cm, cane, rot=(0, math.pi / 2, 0), n=8)
+    kit.cyl("garcane.crook", 0.045, 0.34, (-0.1, 0, 1.28), cm, cane, rot=(0, math.pi / 2, 0), n=8)
+    kit.cyl("garcane.hook", 0.045, 0.22, (-0.27, 0, 1.16), cm, cane, n=8)
     dust = pl("#d8d0c4", 0.95)
     kit.box("garcane.dust", (0.08, 0.08, 0.5), (0.04, 0.0, 0.5), dust, cane, rot=(0, 0.2, 0))
 
@@ -663,6 +687,19 @@ def _first_frame(kit, story):
             kit.box(f"{who}.cboxb", (1.8, 1.4, 1.4), (0, 0, 0), pl("#d9a05a", 0.8, spec=0.05), box, bevel=0.05)
             kit.box(f"{who}.cboxt", (0.3, 1.42, 1.42), (0, 0, 0), pl("#f4d8a0", 0.8), box)
             vis(f"carry_{who}", box)
+    me_ = bpy.data.objects.get("me")
+    if me_ is not None:
+        tb = kit.empty("me.tbrush", (0.1, -0.9, 3.7), me_)
+        kit.box("me.tb.handle", (1.5, 0.14, 0.16), (0.85, 0, -0.25), pl("#fafafa", 0.5), tb, rot=(0, -0.3, 0))
+        kit.box("me.tb.head", (0.45, 0.16, 0.2), (0.0, 0, 0.0), pl("#4f7ae0", 0.5), tb)
+        kit.box("me.tb.bris", (0.4, 0.1, 0.1), (-0.05, -0.1, 0.0), pl("#fafafa", 0.7), tb)
+        vis("tb_me", tb)
+    nr = bpy.data.objects.get("nora2")
+    if nr is not None:
+        cm = kit.empty("nora2.cam", (0, -1.6, 3.7), nr)
+        kit.box("nora2.cam.body", (1.3, 0.7, 0.9), (0, 0, 0), pl("#2a2d36", 0.5, spec=0.3), cm, bevel=0.05)
+        kit.cyl("nora2.cam.lens", 0.28, 0.4, (0, -0.5, 0), pl("#8a96b0", 0.3, spec=0.7), cm, rot=(math.pi / 2, 0, 0), n=14)
+        vis("cam_nora", cm)
     W["inited"] = True
 
 
@@ -690,6 +727,7 @@ def animate(kit, story, tl, t, ctx):
     bg.inputs["Color"].default_value = (*look["sky"], 1.0)
     bg.inputs["Strength"].default_value = look["sky_str"]
     night = 1.0 if (tl["cues"] and look["sky_str"] < 0.7) else 0.0
+    gains["room"] = gains["room2"] = look["room"]
     gains["porchv"] = 1.0 if night else 0.0
     gains["porchm"] = 1.0 if night else 0.0
 
