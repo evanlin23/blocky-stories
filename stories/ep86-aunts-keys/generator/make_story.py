@@ -474,7 +474,7 @@ S("L44.3", K_(PORCH, [0.0, 0.0, 0.9], 15, PORCH, [0.4, 0.0, 0.9], 16), "night", 
 door("L45", 1, 0, 85, 0.5)
 put(LOU, "L45", front(1, 0.9, 0.0), yawc(1), "worried", arms=[0, 0])
 S("L45", K_([-3, -14, 2.4], [-8.4, -5.6, 2.7], 15, [-4, -12.5, 2.6], [-8.4, -5.6, 2.8], 16), "night", hand=0.0, note="her door, my old room's lit window")
-S("L45.2", HC(1, (0.5, -3.4, 1.4), (0.0, 0, 1.0), 26, (0.3, -2.9, 1.4), (0.0, 0, 1.05), 28), "night", fill=1.4, note="Lou in her doorway, the window lit above")
+S("L45.2", HC(1, (0.5, -3.4, 1.4), (0.0, 0, 1.0), 26, (0.3, -2.9, 1.4), (0.0, 0, 1.05), 28), "night", fill=0.6, exp=-0.35, note="Lou in her doorway, the window lit above")
 S("L45.3", K_(PORCH, [-2.0, 3.0, 0.9], 20, PORCH, [-3.5, 3.0, 0.9], 22), "night", hand=0.0, fill=1.0, note="sleepwalking home")
 # --- S46 trying door after door
 walk(ME, "L46", front(8, 3.0, 0.0), "L46.1", front(8, 1.4, 0.0), yaw=yawf(8), expr="asleep", arms=[22, 22])

@@ -206,7 +206,7 @@ def build_house(kit, ctx, k):
     # door (hinged at its left edge so it can open), frame, step, handle plate and knob; a lit or dark recess behind it
     B(H, (1.2, 0.07, 2.28), (0, -0.035, 1.14), white, "frame")
     glowdoor = k in (1, 7)
-    B(H, (0.96, 0.012, 2.06), (0, -0.024, 1.03), kit.emit("#ffcf8a", 1.3, name="recess warm") if glowdoor else P("#2a2230", 0.9), "recess")
+    B(H, (0.96, 0.012, 2.06), (0, -0.024, 1.03), kit.emit("#ffcf7a", 0.65, name="recess warm") if glowdoor else P("#2a2230", 0.9), "recess")
     Hg = E(H, (-0.5, 0, 0), f"hinge{k}")
     ctx["hinges"][k] = Hg
     B(Hg, (1.0, 0.09, 2.1), (0.5, -0.075, 1.05), P(DOORS[k], 0.4), "door")
