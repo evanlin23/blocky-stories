@@ -13,11 +13,11 @@ was told at about 4:20 PM Tuesday to merge the latest main before it judges anyt
 | ready for queue (#1's) | ep47 and ep28 | **yes** | #230 (ep47) | #1 queues them |
 | uploaded | mirror-maze, closing-time, rule-three, floor-thirteen | n/a | per story | none |
 | dropped 9:12 AM Wed: moving-day | the last-chance fix passed pace on the preview, but critic r12 still said revise on S36b | no | none | held on main; #1 removes it from queue.txt |
-| merged 9:26 AM Wed: ep99-statue-years | title approved, proof qa passed; final drawing in render run 125 | no | #259 | final qa, then ready for queue |
+| ready for queue: ep99-statue-years | final qa passed (#271) | yes | #259 | #1 queues it |
 | last-chance round: ep83-free-fries | critic r3 approved; proof queued | no | #265 | proof qa, merge |
-| last-chance round: ep94-today-again | framing fix round | no | none yet | critic r3 |
+| merged 11:20 AM Wed: ep94-today-again | critic r3 approved, proof qa passed; final next | no | #269 | final qa |
 | dropped 10:39 AM Wed: ep97-prize-bears | critic r3 and standards approved, but the proof failed flash (7 a second at 45.1 s, the swinging closet bulb) | no | #267 closed | folder deleted |
-| batch 10 (ep101 to ep107) | 7 builds started 10:06 AM Wed (docs/briefs/build.md, with the framing pre-check) | no | #264 scripts | reviews, proofs |
+| batch 10 (ep101 to ep107) | 5 building (ep101, ep102, ep103, ep105, ep107); ep104 and ep106 dropped at the creature test | no | #264 scripts | reviews, proofs |
 | batch 11 (ep108 to ep114) | writer started 10:06 AM Wed | no | none yet | builds after the Thursday 8 AM reset |
 | audit and rewrite plan | open | n/a | #258 | review and merge |
 | QA desk | working | n/a | per film | checks finals as they land |
