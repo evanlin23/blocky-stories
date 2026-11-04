@@ -426,13 +426,13 @@ def kitchen(kit, P):
         kit.cyl(f"mug{sx}", 0.1, 0.13, (kx - 1.0 + sx, 4.8, 0.88), plastic(c, 0.4), n=12)
     # the clock at two: ticks, hour hand toward 2, minute hand toward 12
     cl = plastic("#fffaf0", 0.5)
-    cxk, cyk, czk = kx - 3.0, 8.95, 2.1
+    cxk, cyk, czk = kx + 0.9, 8.95, 2.35
     kit.cyl("clock", 0.32, 0.05, (cxk, cyk, czk), cl, rot=(math.pi / 2, 0, 0), n=24)
     for k in range(12):
         a = k * 30 * D2R
-        kit.box(f"clk.t{k}", (0.025, 0.02, 0.07), (cxk + math.sin(a) * 0.26, cyk - 0.035, czk + math.cos(a) * 0.26), plastic("#2b2b33", 0.6), rot=(0, -a, 0))
+        kit.box(f"clk.t{k}", (0.025, 0.02, 0.07), (cxk + math.sin(a) * 0.26, cyk - 0.035, czk + math.cos(a) * 0.26), plastic("#2b2b33", 0.6), rot=(0, a, 0))
     a = 60 * D2R
-    kit.box("clk.h", (0.035, 0.02, 0.17), (cxk + math.sin(a) * 0.085, cyk - 0.045, czk + math.cos(a) * 0.085), plastic("#2b2b33", 0.6), rot=(0, -a, 0))
+    kit.box("clk.h", (0.035, 0.02, 0.17), (cxk + math.sin(a) * 0.085, cyk - 0.045, czk + math.cos(a) * 0.085), plastic("#2b2b33", 0.6), rot=(0, a, 0))
     kit.box("clk.m", (0.025, 0.02, 0.25), (cxk, cyk - 0.052, czk + 0.12), plastic("#2b2b33", 0.6))
     # the old wall phone: body, cradle with two stamp-red strokes scratched on it
     px, pz = kx + 2.4, 1.5
@@ -755,14 +755,14 @@ def build_tag(kit):
     # row 2 (grows in at L64): a key and 1
     r2 = kit.empty("tag.r2", (0, 0, 0), root)
     W["r2"] = r2
-    b("tag.r2.edge", (1.0, 0.56, 0.004), (-0.28, -0.6, 0.0), edge, r2)
-    b("tag.r2.paper", (0.92, 0.48, 0.004), (-0.28, -0.6, 0.004), paper, r2)
-    cyl("tag.key.head", 0.14, (-0.56, -0.6, 0.008), brassm, r2)
-    cyl("tag.key.hole", 0.06, (-0.56, -0.6, 0.012), paper, r2)
-    b("tag.key.shaft", (0.3, 0.07, 0.004), (-0.3, -0.6, 0.008), brassm, r2)
-    b("tag.key.t1", (0.06, 0.12, 0.004), (-0.18, -0.67, 0.008), brassm, r2)
-    b("tag.key.t2", (0.06, 0.1, 0.004), (-0.1, -0.665, 0.008), brassm, r2)
-    seg7("tag.d1", 0.08, "bc", y=-0.6, root_=r2, hh=0.36, ww=0.2, t=0.06)
+    b("tag.r2.edge", (1.56, 0.68, 0.004), (0, -0.72, 0.0), edge, r2)
+    b("tag.r2.paper", (1.48, 0.6, 0.004), (0, -0.72, 0.004), paper, r2)
+    cyl("tag.key.head", 0.19, (-0.6, -0.72, 0.008), brassm, r2)
+    cyl("tag.key.hole", 0.08, (-0.6, -0.72, 0.012), paper, r2)
+    b("tag.key.shaft", (0.5, 0.09, 0.004), (-0.3, -0.72, 0.008), brassm, r2)
+    b("tag.key.t1", (0.08, 0.17, 0.004), (-0.12, -0.8, 0.008), brassm, r2)
+    b("tag.key.t2", (0.08, 0.14, 0.004), (-0.26, -0.79, 0.008), brassm, r2)
+    seg7("tag.d1", 0.2, "bc", y=-0.72, root_=r2)
 
 
 # ---------------------------------------------------------------------------------------------- build
