@@ -229,6 +229,7 @@ def _limb(parent, a, b, w, mat, name):
 
 
 EYY = 1.1   # eye height on the face (local y)
+EX = 1.1    # eye half-spacing
 
 
 def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True, dark=False):
@@ -236,17 +237,18 @@ def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True, dark=False):
     room, one arm far too long that reaches up the wall and hooks its fingers over the crack edge. Local frame: the
     face looks +z, its width runs along x, the mouth/chin end is toward -y (the body goes that way)."""
     R = E(parent, (0, 0, 0), "under")
-    skin = P("#2a201c" if dark else "#4d3425", 0.9, 0.02)
-    skin_d = P("#120e0d" if dark else "#241b17", 0.95, 0.0)
+    skin = P("#2a201c" if dark else "#7a5638", 0.9, 0.02)
+    skin_d = P("#120e0d" if dark else "#2b2019", 0.95, 0.0)
+    clay = P("#2a201c" if dark else "#b98a5a", 0.9, 0.02)
     coat = P("#171b24", 0.9, 0.02)
     collar = P("#3a3630", 0.85, 0.02)
     hair = P("#08080a", 0.95, 0.0)
     W_, D_, T_ = 6.4, 4.6, 0.9
     B(R, (W_, D_, T_), (0, 0, -T_ / 2), skin, "uface", 0.14)
-    # a cheek ridge on each side and a flat bridge of nose: shadows that make the face a face
+    # a cheek ridge on each side (warm clay, raked by the key) and a flat bridge of nose
     B(R, (0.5, 1.3, 0.25), (0, 0.15, 0.06), skin, "unose", 0.1)
     for sx in (-1, 1):
-        B(R, (1.2, 1.4, 0.3), (sx * 2.5, -0.7, 0.05), skin, "ucheek", 0.1)
+        B(R, (1.7, 1.9, 0.3), (sx * 2.3, -0.8, 0.05), clay, "ucheek", 0.1)
     # ears and jaw
     for sx in (-1, 1):
         B(R, (0.7, 1.5, 0.5), (sx * (W_ / 2 + 0.3), 0.2, -0.3), skin_d, "uear", 0.1)
@@ -255,64 +257,65 @@ def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True, dark=False):
     B(R, (W_ + 0.2, 1.5, 0.5), (0, D_ / 2 + 0.55, -0.1), hair, "uhair", 0.1)
     for i, hx in enumerate((-2.4, -0.8, 1.0, 2.5)):
         B(R, (1.1, 0.9, 0.35), (hx, D_ / 2 - 0.35 - 0.12 * (i % 2), 0.06), hair, "uhair", 0.08)
-    # a heavy sooty brow overhang, level; the eyes sit under it, high on the face
+    # a hard sooty brow block right above each eye
     soot = P("#0e0b0a", 0.95, 0.0)
-    B(R, (W_ - 0.8, 0.7, 0.5), (0, EYY + 0.55, 0.2), soot, "ubrow", 0.05)
-    B(R, (1.0, 0.5, 0.4), (-2.6, EYY + 0.3, 0.12), soot, "ubrow", 0.05, rot=(0, 0, 0.2))
-    B(R, (1.0, 0.5, 0.4), (2.6, EYY + 0.3, 0.12), soot, "ubrow", 0.05, rot=(0, 0, -0.2))
-    # heavy soot seams across the clay face
-    for sy_, w_ in ((0.2, 5.6), (-2.0, 5.0)):
+    for sx in (-1, 1):
+        B(R, (1.7, 0.55, 0.5), (sx * 1.15, EYY + 0.62, 0.2), soot, "ubrow", 0.04, rot=(0, 0, sx * 0.1))
+    # soot seams across the clay face (kept off the eyes and the mouth)
+    for sy_, w_ in ((0.25, 5.6), (-2.1, 5.0)):
         B(R, (w_, 0.09, 0.08), (0, sy_, 0.03), soot, "uscar", 0.0)
     for sx in (-1, 1):
-        B(R, (0.09, 3.6, 0.08), (sx * 1.3, -0.3, 0.03), soot, "uscar", 0.0)
-        B(R, (0.09, 2.0, 0.08), (sx * 2.6, 0.8, 0.03), soot, "uscar", 0.0)
-    # eyes: deep dark sockets and two lamp-yellow glints (the brightest points in frame)
+        B(R, (0.09, 1.6, 0.08), (sx * 2.1, -0.9, 0.03), soot, "uscar", 0.0)
+        B(R, (0.09, 2.0, 0.08), (sx * 2.7, 0.8, 0.03), soot, "uscar", 0.0)
+    # eyes: square blocks sunk in dark sockets, two lamp-yellow glints (the brightest points in frame)
     ey = []
     eyes_mat = kit.emit("#ffd84a", 1.1, name="undereye")
     sock = P("#050404", 0.95, 0.0)
     pup = P("#0a0807", 0.95, 0.0)
     for sx in (-1, 1):
-        B(R, (1.5, 0.8, 0.12), (sx * 1.6, EYY, 0.04), sock, "usock", 0.08)
-        d = B(R, (0.62, 0.3, 0.06), (sx * 1.6, EYY - 0.08, 0.11), eyes_mat, "ueye", 0.0)
-        pu = CY(R, 0.001, 0.001, (sx * 1.6, EYY, 0.085), pup, "upup", n=6)
-        ey.append((d, pu, sx * 1.6))
-    # a deep uneven black recess, sunk by a ragged raised lip; the pipe wedged in it off-centre and tilted
-    dk = P("#030303", 0.95, 0.0)
+        B(R, (1.4, 1.0, 0.12), (sx * EX, EYY, 0.04), sock, "usock", 0.06)
+        d = B(R, (0.62, 0.4, 0.06), (sx * EX, EYY - 0.08, 0.11), eyes_mat, "ueye", 0.0)
+        pu = CY(R, 0.001, 0.001, (sx * EX, EYY, 0.085), pup, "upup", n=6)
+        ey.append((d, pu, sx * EX))
+    # the mouth: a round coal-black hole inside a raised, lit clay lip ring
+    dk = P("#020202", 0.95, 0.0)
     MY = -1.15
-    B(R, (3.4, 1.15, 0.1), (0.2, MY, 0.05), dk, "umouth", 0.05, rot=(0, 0, 0.05))
-    B(R, (1.8, 0.8, 0.1), (-0.9, MY - 0.15, 0.05), dk, "umouth2", 0.05, rot=(0, 0, -0.12))
-    lipm = P("#2a1f1a", 0.9, 0.02)
-    B(R, (4.0, 0.4, 0.42), (0.2, MY + 0.8, 0.2), lipm, "ulip", 0.08, rot=(0, 0, 0.05))
-    B(R, (3.6, 0.4, 0.4), (0.0, MY - 0.8, 0.2), lipm, "ulip", 0.08, rot=(0, 0, -0.04))
-    B(R, (0.4, 1.4, 0.4), (-2.0, MY, 0.2), lipm, "ulip", 0.08)
-    B(R, (0.4, 1.4, 0.4), (2.2, MY, 0.2), lipm, "ulip", 0.08)
+    CY(R, 1.0, 0.1, (0.0, MY, 0.06), dk, "umouth", n=16)
+    lipm = P("#2a1f1a" if dark else "#c99a68", 0.8, 0.02)
+    for i in range(12):
+        an = 2 * math.pi * i / 12
+        B(R, (0.78, 0.5, 0.34), (1.28 * math.cos(an), MY + 1.28 * math.sin(an), 0.2), lipm, "ulip", 0.1, rot=(0, 0, an + math.pi / 2))
+    prm = None
     if pipe_h:
-        brass = P("#4f3d22", 0.55, 0.45)
-        pp = CY(R, 0.13, pipe_h, (0.7, MY, pipe_h / 2), brass, "upipe")
+        # the pipe: bright brass, wedged in the mouth; rake shots shorten it (scale z) so its tip stays in view
+        brass = kit.emit("#e8b44a", 0.6, name="upipebrass")
+        prm = E(R, (0.3, MY, 0.0), "upiper")
+        pp = CY(prm, 0.2, pipe_h, (0, 0, pipe_h / 2), brass, "upipe")
         pp.rotation_euler = (0.1, 0.14, 0)
-        CY(R, 0.2, 0.16, (0.7, MY, 0.2), P("#3c3020", 0.6, 0.4), "upipecol")
+        CY(prm, 0.34, 0.2, (0, 0, 0.3), brass, "upipecol")
+    bod = []
     if body:
         # neck: thin and too long; shoulders: wider than the room; the coat is near black
-        B(R, (1.7, 2.6, 1.0), (0, -D_ / 2 - 2.0, -0.4), skin_d, "uneck", 0.1)
-        B(R, (10.0, 2.4, 1.7), (0, -D_ / 2 - 4.2, 0.0), coat, "ushoulder", 0.25)
+        bod.append(B(R, (1.7, 2.6, 1.0), (0, -D_ / 2 - 2.0, -0.4), skin_d, "uneck", 0.1))
+        bod.append(B(R, (10.0, 2.4, 1.7), (0, -D_ / 2 - 4.2, 0.0), coat, "ushoulder", 0.25))
         # the one lit identity cue: a pale shirt collar and a dark tie at the neck
         for sx in (-1, 1):
-            B(R, (2.0, 1.9, 0.3), (sx * 1.15, -D_ / 2 - 3.0, 0.62), collar, "ucollar", 0.04, rot=(0, 0, sx * -0.5))
-        B(R, (0.5, 1.8, 0.2), (0, -D_ / 2 - 3.3, 0.7), P("#2a1010", 0.9, 0.0), "utie", 0.03)
+            bod.append(B(R, (2.0, 1.9, 0.3), (sx * 1.15, -D_ / 2 - 3.0, 0.62), collar, "ucollar", 0.04, rot=(0, 0, sx * -0.5)))
+        bod.append(B(R, (0.5, 1.8, 0.2), (0, -D_ / 2 - 3.3, 0.7), P("#2a1010", 0.9, 0.0), "utie", 0.03))
         # right arm: far too long, an extra joint, up the wall and hooked over the crack edge (land coords: x 2.0, y -0.55, z 0)
         sh = (4.6, -D_ / 2 - 4.2, 0.4)
         el = (4.0, -D_ / 2 - 3.4, 2.8)
         wr = (1.0, 0.45, 5.6)
-        _limb(R, sh, el, 1.0, coat, "uarm")
-        _limb(R, el, wr, 0.7, skin_d, "uforearm")
-        B(R, (0.9, 0.55, 0.3), (0.95, 0.5, 5.7), skin, "upalm", 0.05)
+        bod.append(_limb(R, sh, el, 1.0, coat, "uarm"))
+        bod.append(_limb(R, el, wr, 0.7, skin_d, "uforearm"))
+        bod.append(B(R, (0.9, 0.55, 0.3), (0.95, 0.5, 5.7), skin, "upalm", 0.05))
         for i in range(4):
-            B(R, (0.9, 0.2, 0.2), (1.8, 0.2 + 0.28 * i, 5.72 + 0.03 * (i % 2)), skin, "ufinger", 0.05)
+            bod.append(B(R, (0.9, 0.2, 0.2), (1.8, 0.2 + 0.28 * i, 5.72 + 0.03 * (i % 2)), skin, "ufinger", 0.05))
         # left arm lies along the floor, the hand open and too long
-        _limb(R, (-4.6, -D_ / 2 - 4.2, 0.0), (-3.4, -D_ / 2 - 2.0, -0.55), 0.9, coat, "uarmL")
-        B(R, (0.8, 2.2, 0.3), (-3.4, -D_ / 2 - 0.6, -0.55), skin_d, "uhandL", 0.05)
+        bod.append(_limb(R, (-4.6, -D_ / 2 - 4.2, 0.0), (-3.4, -D_ / 2 - 2.0, -0.55), 0.9, coat, "uarmL"))
+        bod.append(B(R, (0.8, 2.2, 0.3), (-3.4, -D_ / 2 - 0.6, -0.55), skin_d, "uhandL", 0.05))
     R.scale = (scale, scale, scale)
-    return {"root": R, "eyes": ey}
+    return {"root": R, "eyes": ey, "pipe_root": prm, "body": bod}
 
 
 
@@ -649,19 +652,20 @@ def build_house_set(kit, ctx):
     stone = P("#8d8378", 0.85, 0.05)
     dark = P("#2a2018", 0.95, 0.0)
     # landing floor: front piece (x 0..0.9), back piece (x 2.0..4.0), the slot x 0.9..2.0 over the full cavern width
-    B(land, (0.9, 1.5, 0.4), (0.45, 0, -0.2), stone, "landA", 0.01)
-    B(land, (3.0, 1.5, 0.4), (3.5, 0, -0.2), stone, "landB", 0.01)
+    ctx["landvis"] = [B(land, (0.9, 1.5, 0.4), (0.45, 0, -0.2), stone, "landA", 0.01),
+                      B(land, (3.0, 1.5, 0.4), (3.5, 0, -0.2), stone, "landB", 0.01)]
     # cavern ceiling beyond the stairwell walls
+    ctx["landC"] = []
     for sy in (-1, 1):
-        B(land, (14.0, 12.25, 0.4), (2.4, sy * 6.875, -0.2), stone, "landC", 0.01)
+        ctx["landC"].append(B(land, (14.0, 12.25, 0.4), (2.4, sy * 6.875, -0.2), stone, "landC", 0.01))
     B(land, (1.2, 10.0, 0.4), (-0.6, 0, -0.2), stone, "landD", 0.01) if False else None
     # the landing is a small room: a flat ceiling and plain walls round it
     lw = P("#d8c6a6", 0.85, 0.03)
     B(land, (5.9, 10.0, 0.2), (2.65, 0, 2.3), P("#cdb894", 0.85, 0.03), "landceil", 0.0)
     for sy in (-1, 1):
-        B(land, (5.9, 0.2, 2.4), (2.65, sy * 5.0, 1.1), lw, "landwall", 0.0)
-        B(land, (0.2, 4.15, 2.4), (-0.3, sy * 2.925, 1.1), lw, "landwall", 0.0)
-    B(land, (0.2, 10.0, 2.4), (5.6, 0, 1.1), lw, "landwall", 0.0)
+        ctx["landvis"].append(B(land, (5.9, 0.2, 2.4), (2.65, sy * 5.0, 1.1), lw, "landwall", 0.0))
+        ctx["landvis"].append(B(land, (0.2, 4.15, 2.4), (-0.3, sy * 2.925, 1.1), lw, "landwall", 0.0))
+    ctx["landvis"].append(B(land, (0.2, 10.0, 2.4), (5.6, 0, 1.1), lw, "landwall", 0.0))
     # cavern walls and floor (dark clay)
     CD, CW = 14.0, 26.0
     B(land, (CD, CW, 0.4), (2.4, 0, -6.9), dark, "cfloor", 0.0)
@@ -670,18 +674,35 @@ def build_house_set(kit, ctx):
     B(land, (0.4, CW, 6.8), (-4.8, 0, -3.5), dark, "cwall", 0.0)
     B(land, (0.4, CW, 6.8), (9.6, 0, -3.5), dark, "cwall", 0.0)
     # the crack's broken edge: black ragged teeth under the landing and two cross-beams, so the face is seen through a gap
+    oldc = E(land, (0, 0, 0), "oldcrack")
+    ctx["oldcrack"] = oldc
     blk = P("#020202", 0.95, 0.0)
     # a scorched black border round the hole on the landing floor, and black liners down its four sides
-    B(land, (2.4, 0.9, 0.04), (1.45, -1.2, 0.03), blk, "crackrim", 0.0)
-    B(land, (2.4, 0.9, 0.04), (1.45, 1.2, 0.03), blk, "crackrim", 0.0)
-    B(land, (0.7, 1.5, 0.04), (0.55, 0, 0.03), blk, "crackrim", 0.0)
-    B(land, (0.7, 1.5, 0.04), (2.35, 0, 0.03), blk, "crackrim", 0.0)
+    B(oldc, (2.4, 0.9, 0.04), (1.45, -1.2, 0.03), blk, "crackrim", 0.0)
+    B(oldc, (2.4, 0.9, 0.04), (1.45, 1.2, 0.03), blk, "crackrim", 0.0)
+    B(oldc, (0.7, 1.5, 0.04), (0.55, 0, 0.03), blk, "crackrim", 0.0)
+    B(oldc, (0.7, 1.5, 0.04), (2.35, 0, 0.03), blk, "crackrim", 0.0)
     for lx_, ly_, lw_, lh_ in ((0.89, 0, 0.04, 1.5), (2.01, 0, 0.04, 1.5), (1.45, -0.74, 1.1, 0.04), (1.45, 0.74, 1.1, 0.04)):
-        B(land, (lw_, lh_, 0.6), (lx_, ly_, -0.2), blk, "crackliner", 0.0)
+        B(oldc, (lw_, lh_, 0.6), (lx_, ly_, -0.2), blk, "crackliner", 0.0)
     for i, (ty, tw, tl_, side) in enumerate(((-0.6, 0.3, 0.1, -1), (-0.25, 0.25, 0.07, 1), (0.1, 0.3, 0.09, -1), (0.45, 0.25, 0.1, 1),
                                              (0.65, 0.2, 0.07, -1))):
         cx = 0.9 + 0.5 * tl_ if side < 0 else 2.0 - 0.5 * tl_
-        B(land, (tl_, tw, 0.5), (cx, ty, -0.6 + 0.07 * (i % 3)), blk, "crackteeth", 0.04, rot=(0, 0, 0.12 * (i % 3 - 1)))
+        B(oldc, (tl_, tw, 0.5), (cx, ty, -0.6 + 0.07 * (i % 3)), blk, "crackteeth", 0.04, rot=(0, 0, 0.12 * (i % 3 - 1)))
+    # the face-through-the-crack shots (rake): a thin lamp-lit ragged edge of broken stone round the view
+    rock = kit.emit("#d9a860", 0.8, name="crackstone")
+    cfg = E(land, (0, 0, 0), "crackframe")
+    CX_, CYY, OX, OY = 1.45, -0.3, 0.52, 0.95
+    for i, (bx, by, bw, bh, bz) in enumerate((
+            (-1, 0, 0.3, 3.6, -0.07), (1, 0, 0.3, 3.6, -0.08),
+            (0, -1, 1.8, 0.3, -0.09), (0, 1, 1.8, 0.3, -0.06))):
+        B(cfg, (bw, bh, 0.2), (CX_ + bx * (OX + bw / 2 - (0.0 if bx else 0)), CYY + by * (OY + bh / 2), bz), rock, "crackedge", 0.03)
+    for i, (px, py, pw, ph) in enumerate(((-1, -0.45, 0.16, 0.3), (1, -0.2, 0.14, 0.26), (-1, 0.25, 0.13, 0.3), (1, 0.4, 0.15, 0.22),
+                                          (-1, -0.05, 0.1, 0.18), (1, 0.1, 0.1, 0.2))):
+        B(cfg, (pw, ph, 0.2), (CX_ + px * (OX - pw / 2 + 0.01), CYY + py, -0.04 - 0.01 * i), rock, "crackjag", 0.02, rot=(0, 0, 0.3 * px))
+    for i, (py, pw, ph, sx) in enumerate(((-1, 0.3, 0.14, -0.2), (1, 0.26, 0.13, 0.15), (-1, 0.2, 0.12, 0.2), (1, 0.18, 0.1, -0.22))):
+        B(cfg, (pw, ph, 0.2), (CX_ + sx, CYY + py * (OY - ph / 2 + 0.01), -0.05 - 0.01 * i), rock, "crackjag", 0.02)
+    hide(cfg, True)
+    ctx["crackframe"] = cfg
     # the Under lies on the cavern floor, face up, mouth end toward the stairs; the slot is above its middle
     ctx["under"] = make_under(kit, land, 1.0)
     ctx["under"]["root"].location = (1.45, -1.25, -6.7 + 0.9)
@@ -947,7 +968,17 @@ def animate(kit, story, tl, t, ctx):
     u = ctx["under"]
     hide(u["root"], not show)
     # the face shots look straight down through the crack: turn the head so the crown is toward the top of frame
-    u["root"].rotation_euler = (0, 0, math.pi if sd.get("rake") else 0)
+    rk = bool(sd.get("rake"))
+    u["root"].rotation_euler = (0, 0, math.pi if rk else 0)
+    u["root"].location = (1.45, -2.9 if rk else -1.25, -6.7 + 0.9)
+    hide(ctx["crackframe"], not (rk and show))
+    hide(ctx["oldcrack"], rk)
+    for o in ctx["landC"] + ctx["landvis"] + list(ctx["stairwalls"]) + [ctx["stairceil"]]:
+        o.hide_render = rk
+    for o in u["body"]:
+        o.hide_render = rk
+    if u["pipe_root"] is not None:
+        u["pipe_root"].scale = (0.8, 0.8, 0.35) if rk else (1, 1, 1)
     lit = uc.get("light", 0.0)
     base = ctx["land"].location
     uo = u["root"].location
@@ -956,12 +987,17 @@ def animate(kit, story, tl, t, ctx):
     kit.aim(ctx["ukey"], (ux, uy, uz))
     if sd.get("rake"):
         # the lamp above at one side, raking across the face; a cool rim on the far edge
-        ctx["ukey"].location = (ux - 4.3, uy + 0.8, uz + 1.7)
-        kit.aim(ctx["ukey"], (ux + 0.3, uy - 1.2, uz))
-        ctx["ukey"].data.spot_size = math.radians(38)
-        ctx["ukey"].data.spot_blend = 0.9
+        ctx["ukey"].location = (ux - 4.3, uy + 0.4, uz + 1.7)
+        kit.aim(ctx["ukey"], (ux + 0.2, uy, uz))
+        ctx["ukey"].data.spot_size = math.radians(60)
+        ctx["ukey"].data.spot_blend = 0.8
+        ctx["ukey"].data.color = (1.0, 0.72, 0.42)
     ctx["urim"].location = (ux + 7.0, uy - 3.2, uz + 2.6)
     kit.aim(ctx["urim"], (ux, uy - 3.5, uz))
+    if sd.get("rake"):
+        ctx["urim"].location = (ux + 6.0, uy + 1.2, uz + 1.2)
+        kit.aim(ctx["urim"], (ux + 3.1, uy + 0.4, uz))
+        ctx["urim"].data.spot_size = math.radians(22)
     ctx["urim2"].location = (ux - 1.5, uy + 6.5, uz + 3.2)
     kit.aim(ctx["urim2"], (ux, uy - 2.0, uz))
     ctx["ufill"].location = (base[0] + 1.45, base[1], base[2] - 2.2)
@@ -1052,5 +1088,5 @@ def animate(kit, story, tl, t, ctx):
     return {"sun": en * sd.get("sun", 1.0) / 5.0, "camfill": sd.get("fill", 1.0),
             "gceil": inh, "gwin": inh, "kceil": inh, "kwinl": inh, "bceil": inh, "ovenglow": inh,
             "lamp": sd.get("lamp", 1.0), "stairl": sd.get("stairl", 1.0), "landl": sd.get("stairl", 1.0),
-            "ukey": lit * gk, "urim": lit * sd.get("rim", 1.0), "ufill": lit * sd.get("ufill", 1.0), "urim2": lit * sd.get("rim", 1.0),
+            "ukey": lit * gk, "urim": lit * sd.get("rim", 1.0), "ufill": lit * sd.get("ufill", 1.0), "urim2": 0.0 if sd.get("rake") else lit * sd.get("rim", 1.0),
             "cutl": 1.0, "cutlow": 1.0}
