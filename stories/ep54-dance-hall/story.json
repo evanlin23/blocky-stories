@@ -1,4 +1,15 @@
 {
+ "rev": 4,
+ "clip_ok": [
+  "S04/c1",
+  "S04/d1",
+  "S04/c2",
+  "S05/c1",
+  "S05/d1",
+  "S05/c2",
+  "S90/ros",
+  "S90/me"
+ ],
  "slug": "ep54-dance-hall",
  "title": "Someone has the other half of my mark",
  "made_for_kids": false,
