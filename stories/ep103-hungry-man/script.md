@@ -5,7 +5,7 @@
 - **Title:** Feed The Hungry Man, Or He KNOCKS 🍽️
 - **Changed from the pitch (the hook pass):** the panel praised the creepy name and said "no threat in the line, just a ritual". Line 1 now carries the or-else in the same breath ("Forget, and he KNOCKS."), and L02 makes it worse ("All night. / Until you open the DOOR."). The pitch's muddle about who leaves the plates is fixed: the street leaves them, the Hungry Man takes them, and the Hungry Man is my grandpa. The knock is new and is the warm turn: when a plate is missing, he knocks because he's checking you're all right, the way Grandma used to. Neighbor names are fresh (the Okafors and a Mr. Lund were in my first draft and are already in ep94).
 - **Everyone is an adult.** I'm 23, Mom is about 50, Grandpa is about 78. The neighbors are adults.
-- **Word count:** 543 spoken words in 71 lines (L01 to L71), all `narrator`, plus one 0.6 s music drop before L38.
+- **Word count:** 559 spoken words in 71 lines (L01 to L71), all `narrator`, plus one 0.6 s music drop before L38.
 - **Estimated length:** about 123.8 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 148 s, cut L07 and L60 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright: a long street of pastel porches at golden hour on Friday, every porch light warm. The night beats (L27 to L41) are the story's one dark scene, porch lights and a blue streetlight, the face at the door lit by our porch bulb. Morning and the last scenes are sunny again.
 - **Hold:** scripts only (batch 10). Not built, not voiced.
@@ -21,7 +21,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 **There is no Hungry Man. The first winter without Grandma, Grandpa stopped eating and sent every casserole back, so my mom made up a hungry stranger and the whole street has left him dinner every Friday since, and called it a rule, so Grandpa never has to say thank you. The tall shape in the long coat collecting the plates is Grandpa, and when a plate's missing, he knocks to check you're all right.**
 
 - **Engine:** the cover story (engine 11). The scary rule is a kindness in disguise. No film's figure or town.
-- **Why it clicks:** 43 porches, 42 plates (L03, L04), and the one porch with no plate is Grandpa's (L12, L13), the only house that's never heard a knock (L14). Plates come back washed and stacked in threes (L09), the way Grandma did (L51, L52). The Hungry Man showed up the same winter Grandpa sent the casseroles back (L19 to L22). The long coat three porches down (L11) is the coat at our door (L39).
+- **Why it clicks:** 43 porches, 42 plates (L03, L04), and the one porch with no plate is Grandpa's (L12, L13), the only door the Hungry Man has never knocked on (L14). Plates come back washed and stacked in threes (L09), the way Grandma did (L51, L52). The Hungry Man showed up the same winter Grandpa sent the casseroles back (L19 to L22). The long coat three porches down (L11) is the coat at our door (L39).
 - Ten pitched, this one kept. Dropped: the Hungry Man is a real giant who guards the street (a monster), the plates feed the street's Keeper (canon as twist), he's Grandma (sad and spooky), the plates go to the town's dogs (a gag), I'm the Hungry Man sleepwalking (ep86), the rule was made to stop a feud (no feeling), the food goes to a family who can't afford it (a lecture), Grandpa cooks for everyone (a muddle about who leaves what), the Hungry Man is from the past (time), the street is fattening something (horror cliche).
 - Checked against "Claimed big ideas" and every twist: not a stand-in, not ep82's fed house (no creature, no disguise as a building), not ep83's someone cooks for you (the street cooks openly, the secret is who eats), not ep12's guard knock (this knock is a man checking on his neighbors). Shape `cover-story`.
 - **The rule is the clue:** "Forget, and he KNOCKS" first reads as a threat. After L58 it's a man who can't stop checking on the people he loves.
@@ -34,7 +34,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 - **The 3 to 5 example montage (L03 to L09, 5 to 18 s):** forty-two plates going out at six (L04), Mrs. Ferro's lasagna (L05), the Abernathys' roast chicken (L06), Mr. Brisco's sandwich with the crusts cut off (L07), the plates back in the morning, washed and stacked in threes (L08, L09).
 - **A concrete mystery on screen by 15 s:** the count, 42 plates for 43 porches, from frame 1, and the porch with no plate (L12 to L14, about 22 s).
 - **How the narrator is the exception:** I'm the one who thinks the rule is silly, and the one who skips it.
-- **The loved one at stake:** Grandpa, named "my GRANDPA" at L13 in the same shot, and Mom, named at L22.
+- **The loved one at stake:** Grandpa, named "my GRANDPA'S" porch at L12 in the same shot, and Mom, named at L22.
 - **The rule broken:** I don't put our plate out (L24 to L26).
 - **First real scare:** L28 to L37 (about 52 to 68 s): something on our steps, three slow knocks, again at midnight, at one, a long coat and an empty basket through the window, my name said through the door.
 - **The climax turns the rule's own logic:** the knock is the rule's threat, and it's the rule's whole point: he knocks because he's checking (L53 to L58). No new magic.
@@ -42,7 +42,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 - **How the last 15 seconds turn over the first line:** this Friday 43 plates go out, I put the last one on Grandpa's porch and sit next to it, and he sits down and we eat off the same plate. Now there are two tall shapes on our street on Fridays, and if your plate's not out, we both knock, which runs into L01.
 - **The plants a rewatch catches:**
   1. L09: the plates come back washed and stacked in threes.
-  2. L12 to L14: Grandpa's is the one porch with no plate, and nobody's ever heard a knock there.
+  2. L12 to L14: Grandpa's is the one porch with no plate, he's never left one, and the Hungry Man has never knocked on his door.
   3. L19 to L22: he sent every casserole back, and the Hungry Man showed up the same winter.
   4. L36: the voice at the door says my name "like it was WORRIED".
 - **Ending shape:** a cover story made plain, then a loop where I join it.
@@ -75,7 +75,7 @@ A street leaves plates out every Friday for "the Hungry Man", who knocks all nig
 
 ## Cast
 - `me` (an adult man, 23, the narrator): short brown hair, a gray T-shirt, a flannel over it. Faces: `eye-roll`, `smug`, `nervous`, `scared`, `stunned`, `soft`, `laugh`.
-- `grandpa` (my grandpa, Mom's dad, about 78): tall and thin with a slight stoop, white hair combed back, bushy white brows, a long dark-green wool coat to his shins over a cardigan, a flat cap. Faces: `stern`, `embarrassed`, `worried`, `gruff`, `soft`, `smile`. Named "my GRANDPA" at L13.
+- `grandpa` (my grandpa, Mom's dad, about 78): tall and thin with a slight stoop, white hair combed back, bushy white brows, a long dark-green wool coat to his shins over a cardigan, a flat cap. Faces: `stern`, `embarrassed`, `worried`, `gruff`, `soft`, `smile`. Named "my GRANDPA'S" porch at L12.
 - `mom` (my mom, about 50): a brown ponytail, scrubs for her late shift. `knowing`, `laugh`. Named at L22.
 - `ferro` (Mrs. Ferro, a neighbor, about 65): a red apron. `abernathys` (the Abernathys, a couple, about 50, neighbors): an oven mitt each. `brisco` (Mr. Brisco, a neighbor, about 40): a bow tie, proud of his sandwich.
 - Grandma is never shown, except as a framed photo in Grandpa's hall (an older woman with a silver bun, smiling). Never a body, never a grave.
@@ -106,7 +106,7 @@ Times are estimates at 290 wpm with 0.15 s between lines. Every line gets one to
 | S01a, S01b, S01c | L01 | 0.0 | (a) Close-up: a hand at the end of a flannel sleeve sets a foil-covered plate on a porch step under a warm porch light. The plate tag top-left reads 42/43. (b) Our blue front door, close, its brass knocker. (c) A long shadow sliding over the porch boards. Punch in on "PLATE". |
 | S02a, S02b | L02 | 3.3 | (a) Me inside, back against the door, eyes wide, half joking `nervous`. (b) The door, low, a line of porch light under it. Punch in on "NIGHT". |
 | S03a, S03b | L03 | 4.9 | (a) The whole curving street at golden hour, pastel houses, porch lights coming on one by one. (b) A row of porch steps, quick pan. Punch in on "PORCHES". |
-| S04a, S04b, S04c | L04 | 6.0 | (a) Doors opening up and down the street at once. (b) Neighbors bending to set plates on their steps. (c) The plate tag close: 42/43. Punch in on "SIX". |
+| S04a, S04b, S04c | L04 | 6.0 | (a) Doors opening up and down the street at once. (b) Neighbors bending to set plates on their steps. (c) The plate tag close: 42/43. Punch in on "ONE". |
 | S05 | L05 | 7.8 | Mrs. Ferro (red apron) setting down a steaming lasagna, kissing her fingers. Punch in on "FERRO". |
 | S06a, S06b | L06 | 8.8 | (a) The Abernathys carrying a huge roast chicken out together in oven mitts. (b) Both of them stepping back and admiring it. Punch in on "ABERNATHYS". |
 | S07a, S07b, S07c | L07 | 10.4 | (a) Mr. Brisco (bow tie) setting down a tiny sandwich on a big plate. (b) The sandwich close, crustless, a toothpick in it. (c) Mr. Brisco nodding, proud. Punch in on "COOK". |
@@ -114,9 +114,9 @@ Times are estimates at 290 wpm with 0.15 s between lines. Every line gets one to
 | S09a, S09b, S09c | L09 | 14.9 | (a) A step close: three clean plates stacked neat. (b) Another step: three more. (c) Me on our step picking up our stack, `eye-roll`. Punch in on "THREE". |
 | S10a, S10b | L10 | 17.7 | (a) Neighbors on the sidewalk at dusk, glancing down the street. (b) Mr. Brisco peeking through his curtains. Punch in on "CLOSE". |
 | S11a, S11b, S11c | L11 | 19.5 | (a) Night, far down the street: a figure in a long coat bending at a step, lit from behind by porch lights, its face in shadow. (b) Me at our window, blinds parted with one finger, squinting. (c) The figure gone, only a step with no plate. Punch in on "COAT". |
-| S12a, S12b | L12 | 22.5 | (a) A slow push along the steps: plate, plate, plate, a bare step. (b) The plate tag close: 42/43. Punch in on "OUT". |
-| S13a, S13b | L13 | 24.8 | (a) Grandpa's gray-green house across from ours, a bare porch, a rocking chair. (b) Grandpa (78, tall, white hair, cardigan) on his porch, `stern`, watering a wild flower box. Punch in on "GRANDPA'S". |
-| S14a, S14b | L14 | 26.2 | (a) Grandpa's door at night, dark, still. (b) Me at our window looking across, `suspicious`. Punch in on "KNOCK". |
+| S12a, S12b | L12 | 22.5 | (a) A slow push along the steps: plate, plate, plate, a bare step. (b) Grandpa (78, tall, white hair, cardigan) on that bare porch, `stern`, watering a wild flower box. Punch in on "GRANDPA'S". |
+| S13a, S13b | L13 | 24.8 | (a) Grandpa's gray-green house across from ours, a bare porch, a rocking chair. (b) The plate tag close: 42/43. Punch in on "ONE". |
+| S14a, S14b | L14 | 26.2 | (a) Grandpa's door at night, dark, still. (b) Me at our window looking across, `suspicious`. Punch in on "HIS". |
 | S15a, S15b | L15 | 28.4 | (a) Grandpa waving off Mr. Brisco, who's holding a plate out to show him. (b) Grandpa going inside, shutting the door. Punch in on "MAN". |
 | S16a, S16b, S16c | L16 | 31.2 | (a) Grandpa's hall: a framed photo of Grandma (silver bun, smiling). (b) Grandpa straightening it, alone, `soft`. (c) Snow on his empty porch. Punch in on "GRANDMA". |
 | S17 | L17 | 33.6 | Grandpa's kitchen, cold stove, one mug by the sink. Punch in on "COOKING". |
@@ -128,7 +128,7 @@ Times are estimates at 290 wpm with 0.15 s between lines. Every line gets one to
 | S23a, S23b | L23 | 44.5 | (a) Me on the couch with chips, `smug`. (b) Me rolling my eyes at a plate on the counter. Punch in on "THREE". |
 | S24a, S24b | L24 | 47.1 | (a) Mom's car leaving the driveway at dusk. (b) Me waving her off from the porch. Punch in on "LATE". |
 | S25a, S25b | L25 | 48.9 | (a) Our step at six, bare, while every other step on the street gets a plate. (b) Me inside, eating the plate's mac and cheese straight from the dish, `smug`. Punch in on "OUT". |
-| S26 | L26 | 50.3 | The plate tag close: 41/43. |
+| S26 | L26 | 50.3 | The plate tag close: 41/43. Punch in on "TWO". |
 | S27a, S27b | L27 | 50.7 | (a) The street at night, porch lights on, no one out. (b) Our window, blinds down, the TV glow. Punch in on "QUIET". |
 | S28a, S28b, S28c | L28 | 53.1 | (a) Low on our porch boards: a long shadow climbing the steps, cast by the streetlight. (b) Me on the couch, frozen, chip halfway to my mouth. (c) The line of light under our door breaking as something stands there. Punch in on "STEPS". |
 | S29a, S29b | L29 | 54.7 | (a) The door from inside, close, still. (b) Me holding my breath, `scared`. Punch in on "TIME". |
@@ -165,7 +165,7 @@ Times are estimates at 290 wpm with 0.15 s between lines. Every line gets one to
 | S59a, S59b | L59 | 101.6 | (a) Our kitchen at 2 a.m., me at the stove, a pan sizzling. (b) Grandpa at our little table, coat still on, hat in his hands. Punch in on "CHEESE". |
 | S60 | L60 | 103.0 | Grandpa lifting the sandwich, looking at its burnt side, `gruff`. Punch in on "DARK". |
 | S61a, S61b, S61c | L61 | 104.4 | (a) The empty plate. Grandpa wiping his mouth, a tiny smile. (b) Me across from him, `laugh`. (c) Our step at dawn: one clean plate on its own, stacked neat. Punch in on "THING". |
-| S62a, S62b | L62 | 107.8 | (a) The street at six, every door opening. (b) The plate tag close: 43/43. Punch in on "THREE". |
+| S62a, S62b | L62 | 107.8 | (a) The street at six, every door opening. (b) The plate tag close: 43/43. Punch in on "PLATE". |
 | S63a, S63b | L63 | 109.2 | (a) Me crossing the street with a covered plate. (b) Me setting it on Grandpa's bare step. Punch in on "ONE". |
 | S64 | L64 | 111.0 | Me sitting on Grandpa's step beside the plate, in the porch light. Punch in on "IT". |
 | S65a, S65b | L65 | 112.4 | (a) Grandpa walking up his own path in the long coat, the basket full of covered plates. (b) Grandpa stopping at the bottom step. Punch in on "STEPS". |
@@ -185,7 +185,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L01: Every Friday, you have to leave / the Hungry Man a PLATE. / Forget, and he KNOCKS.
 - L02: All NIGHT. / Until you open / the DOOR.
 - L03: Our street has / forty-three PORCHES.
-- L04: Every Friday at SIX, / forty-two plates / go OUT.
+- L04: Every Friday at SIX, / all but ONE / put a plate OUT.
 - L05: Mrs. FERRO / leaves lasagna.
 - L06: The ABERNATHYS / leave a whole / roast CHICKEN.
 - L07: Mr. Brisco / can't COOK, / so he leaves a sandwich / with the crusts cut OFF.
@@ -193,9 +193,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L09: Washed and dried, / and stacked on the step / in little piles of THREE.
 - L10: Nobody's ever seen him / up CLOSE. / Nobody TRIES.
 - L11: Just a tall shape / in a long COAT, / three porches DOWN, / under the lights.
-- L12: And every Friday, / one porch / never puts a plate OUT.
-- L13: My GRANDPA'S. / Right across the STREET.
-- L14: And nobody's ever heard / a single KNOCK there. / Not ONCE.
+- L12: The one porch / with no plate / is my GRANDPA'S.
+- L13: Right across the STREET. / He's never / left ONE.
+- L14: And the Hungry Man / has never knocked / on HIS door. / Not ONCE.
 - L15: Grandpa says / he doesn't believe / in the Hungry MAN. / He says it's NONSENSE.
 - L16: He hasn't believed / in much / since our first winter / without GRANDMA.
 - L17: That winter, / he stopped COOKING.
@@ -207,7 +207,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L23: I'm twenty-THREE. / I think it's / a silly RULE / for a silly STORY.
 - L24: So last Friday, / with Mom at work LATE,
 - L25: I didn't put / our plate OUT.
-- L26: Forty-ONE.
+- L26: Now TWO porches / had no PLATE.
 - L27: At ten, / the street / went QUIET. / Every porch light / still ON.
 - L28: At eleven, / something walked / up our STEPS.
 - L29: It stood there / a long TIME.
@@ -244,7 +244,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L59: I made him / a grilled CHEESE.
 - L60: He said / it was too DARK.
 - L61: He ate / the whole THING. / Then he washed the plate / and stacked it / on our STEP.
-- L62: This Friday, / forty-THREE plates / went out.
+- L62: This Friday, / for the first TIME, / every porch / had a PLATE.
 - L63: I put the last ONE / on Grandpa's porch,
 - L64: and sat down / next to IT.
 - L65: At nine, / he came up / his own STEPS / with the basket,
@@ -259,7 +259,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt and nobody is in danger. Grandma being gone is said only as "our first winter without GRANDMA" (L16): no death words, no grave, no hospital.
-- The twist is said in words (L38, L42) and shown on Grandpa's lit face at our door. The long coat is a callback, never the reveal. Grandpa is named "my GRANDPA" at L13 in the same shot as him, well before the reveal.
+- The twist is said in words (L38, L42) and shown on Grandpa's lit face at our door. The long coat is a callback, never the reveal. Grandpa is named "my GRANDPA'S" porch at L12 in the same shot as him, well before the reveal.
 - R6 hands can't grip: the knocker is shown moving on its own in close-up, the basket hangs at the end of a sleeve, forks are cut-ins.
 - "Mrs. Ferro" kissing her fingers (L05) is a chef's kiss gesture, nothing more.
 - Title, description, pin and captions checked against hard rule 8.

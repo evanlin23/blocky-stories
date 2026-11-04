@@ -5,7 +5,7 @@
 - **Title:** Someone Buys My Bad DAYS 🧾
 - **Changed from the pitch (the hook pass):** the panel said "whimsical, not creepy", and I'd flagged the mechanics. Line 1 now carries the creepy half in the same breath as the wonder: you can return a bad day, and then they sell it to somebody else. L03 makes it a threat to me: somebody has bought every one of mine. The mechanics are cut to two plain rules, each said once with a picture: a returned day un-happens for you and everyone in it (L05 to L08), and whoever buys it gets to remember it (L17, L18). The title was "Pell's Takes Back ANYTHING, Even Days" and now leads with the creepy buyer. The shop is renamed Tulley's because a Mr. Pell is already in ep33 and ep36.
 - **Everyone is an adult.** I'm 26, Dad is about 60, Mr. Tulley about 75, Mrs. Oduya about 60, my friend Rich 26.
-- **Word count:** 539 spoken words in 71 lines (L01 to L71), all `narrator`, plus one 0.6 s music drop before L44.
+- **Word count:** 555 spoken words in 71 lines (L01 to L71), all `narrator`, plus one 0.6 s music drop before L44.
 - **Estimated length:** about 123.0 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 148 s, cut L12 and L35 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright: a sunny small downtown, Tulley's as a cheerful mint-and-cream shop with a striped awning and a long returns counter. The back room (L31 to L47) is the story's one dim scene: tall shelves of little gray boxes lit by one hanging bulb and the glow from the open door. Dad's kitchen at the end is warm and bright.
 - **Hold:** scripts only (batch 10). Not built, not voiced.
@@ -197,7 +197,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L15: In the back room / they sit on a SHELF / in little gray BOXES.
 - L16: And somebody / can BUY them. / Four dollars EACH.
 - L17: Whoever buys a DAY / gets to REMEMBER it.
-- L18: The whole THING. / The way it HAPPENED.
+- L18: The whole THING. / The way it HAPPENED. / Mr. Tulley says / a day nobody remembers / goes SOUR / on the shelf.
 - L19: I've returned / forty-seven DAYS.
 - L20: Every bad one / in two YEARS.
 - L21: My car breaking DOWN. / The day I got / laid OFF.
@@ -251,9 +251,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L68: And tomorrow / is a GOOD day. / Nothing's WRONG.
 - L69: I'm calling him / ANYWAY.
 - L70: When we walk / past Tulley's NOW,
-- L71: Dad still taps / the WINDOW / and says,
+- L71: Dad still taps / the WINDOW / and reads me / the fine PRINT.
 
-(Loop: L71 runs straight into L01, as what Dad says: "Dad still taps the window and says, at Tulley's, you can return a bad day. Then they sell it to somebody else." On the loop it's a dad's joke, not a threat.)
+(Loop: L71 runs straight into L01, as what Dad says: "Dad still taps the window and reads me the fine print. At Tulley's, you can return a bad day. Then they sell it to somebody else." On the loop it's a dad's joke, not a threat.)
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt and nobody is in danger. "Laid off" is the worst thing that happens, and the car breakdown is a hood up and some steam.

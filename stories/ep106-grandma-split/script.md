@@ -5,7 +5,7 @@
 - **Title:** Grandma Was In TWO Places Again 🥧
 - **Changed from the pitch (the hook pass):** the panel praised "Again." and said "low stakes". Line 1 is kept word for word, and L02 and L03 give it a price in one breath: here, if two people need you at the same time, you split, and you come back a little thinner. Grandma is at stake in every shot (the meter is her width). The twins are gone: the second Grandma is the other half of the same Grandma, at my cousin's table. The cousin is Marco (Dev is already in ep38 and ep87).
 - **Everyone is an adult.** I'm 27, my cousin Marco is 28, Grandma is about 80, Mom and Aunt Ruth are about 55, Mr. Pratt about 50, Mrs. Lin about 70.
-- **Word count:** 286 spoken words in 37 lines (L01 to L37), all `narrator`, plus one 0.6 s music drop before L22.
+- **Word count:** 288 spoken words in 37 lines (L01 to L37), all `narrator`, plus one 0.6 s music drop before L22.
 - **Estimated length:** about 65.6 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L06 and L36 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright and homey: my sunny apartment kitchen, Marco's little blue house across town, Sunday roast steam, gold evening light. The one dim beat is Marco's window at dusk (L20 to L24), the kitchen behind it bright.
 - **Hold:** scripts only (batch 10). Not built, not voiced.
@@ -188,9 +188,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L34: Then she came back / TOGETHER.
 - L35: Wide enough / to hug us BOTH / at once.
 - L36: She hasn't split / in a MONTH.
-- L37: Then Mom / and Aunt RUTH / stopped TALKING.
+- L37: Then Mom / and her sister, / Aunt RUTH, / stopped TALKING.
 
-(Loop: L37 runs straight into L01: "Then Mom and Aunt Ruth stopped talking. Grandma was in two places at once last Sunday. Again." On the loop, "again" means it's starting over with the next fight.)
+(Loop: L37 runs straight into L01: "Then Mom and her sister, Aunt Ruth, stopped talking. Grandma was in two places at once last Sunday. Again." On the loop, "again" means it's starting over with the next fight.)
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt and nobody is in danger. Splitting never hurts: Grandma is thin, laughing, and whole again at L34. The carving is with a fork and a board, no knife in any shot.

@@ -5,7 +5,7 @@
 - **Title:** Whoever Sleeps FIRST Picks Our Nightmare 💤
 - **Changed from the pitch (the hook pass):** the panel said "neat idea, no danger yet, your dream could just be nice". Line 1 now says the danger: the whole town has your NIGHTMARE. The pitch's ending (the town dreams of the old dog after he's gone) was a third sad family reveal for the batch, so it's replaced by a comedy twist: for three years the town's shared nightmare is a giant mail carrier, because the first one asleep every night is our dog, Waffles. The dog is Waffles and the mail carrier Mr. Bixby (Noodle, Dale and Pruitt are already used in ep92 and ep85).
 - **Everyone is an adult.** I'm 20, Mr. Bixby is about 50, the neighbors are adults. Waffles is a dog.
-- **Word count:** 154 spoken words in 19 lines (L01 to L19), all `narrator`, plus one 0.6 s music drop before L12.
+- **Word count:** 156 spoken words in 19 lines (L01 to L19), all `narrator`, plus one 0.6 s music drop before L12.
 - **Estimated length:** about 35.6 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright by day: a sunny small town of pastel houses with chimneys, a mail truck, a living room with a dog basket by the fireplace. The dream (L03, L04) is the one dark scene: a moonlit driveway, the giant lit from behind by a streetlight, a purple sky. The dream smoke is soft lavender, readable on both.
 - **Hold:** scripts only (batch 10). Not built, not voiced.
@@ -38,7 +38,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 - **The rule broken / the scare:** the giant itself (L03, L04, about 5 to 9 s), shown first.
 - **The climax turns the rule's own logic:** if the dog picks the dream, change the dog's mind about the mail carrier (L15, L16). No new magic.
 - **Twist and reveal (L12 to L14, about 22 to 27 s):** said plainly (L13: "The monster / is Mr. BIXBY.") over one picture (S13: Waffles in his basket, growling in his sleep, the lavender smoke rising up the chimney, and in the smoke the giant's blue cap).
-- **How the last seconds turn over the first line:** Mr. Bixby gives Waffles a treat, then another, and the whole town dreams about a big red ball. Waffles is still first every night, and last night he had a nightmare about the VACUUM, which runs straight into L01.
+- **How the last seconds turn over the first line:** Mr. Bixby gives Waffles a treat, then another, and the whole town dreams about a big red ball. Waffles is still first every night, and last night the whole town woke up screaming about our VACUUM (his nightmare, shared), which runs straight into L01.
 - **The plants a rewatch catches:**
   1. L04: a bag full of PAPER (mail).
   2. L07: Mr. Bixby says the giant looks a little like him.
@@ -47,7 +47,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 - **Sad family reveal?** No.
 
 ## Quotable line
-**L19: "Last night / he had a nightmare / about the VACUUM."** The sting, short enough to type.
+**L19: "Last night, / the whole town / woke up SCREAMING / about our VACUUM."** The sting, short enough to type.
 
 ## Clarity test (cold, two sentences)
 In this town, whoever falls asleep first makes everyone dream their dream, and for three years everyone has dreamed of a giant mail carrier because the first one asleep is the narrator's dog, who hates the mail carrier. The mail carrier gives the dog treats, the town dreams of a red ball, and now the dog's having nightmares about the vacuum.
@@ -148,11 +148,11 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L14: Waffles has been barking / at him / for three YEARS.
 - L15: So this morning, / Mr. Bixby / gave Waffles a TREAT.
 - L16: Then ANOTHER one.
-- L17: Last night, / the whole town / dreamed about / a big red BALL.
+- L17: That NIGHT, / the whole town / dreamed about / a big red BALL.
 - L18: Waffles is still / FIRST / every night.
-- L19: Last night / he had a nightmare / about the VACUUM.
+- L19: Last night, / the whole town / woke up SCREAMING / about our VACUUM.
 
-(Loop: L19 runs straight into L01: "Last night he had a nightmare about the vacuum. If you fall asleep first here, the whole town has your nightmare.")
+(Loop: L19 runs straight into L01: "Last night, the whole town woke up screaming about our vacuum. If you fall asleep first here, the whole town has your nightmare.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt. The giant only stands and bends. He never reaches, chases or touches anyone.

@@ -5,7 +5,7 @@
 - **Title:** He Said Goodbye The Day We MET 📦
 - **Changed from the pitch (the hook pass):** the panel said "eerie, have to think a sec". Line 1 now says the rule first and plainly: "My neighbor VERN / lives BACKWARD." Then the eerie picture: he said goodbye the day we met. The pitch's key-in-the-lock ending is dropped (it was a bootstrap object, ep93's shape). The new last turn is symmetric and needs no object: on his first day, I'm the one who knows everything, and I'm the one who says goodbye and cries. The neighbor is Vern and my wife Nora (Walt is in ep23, June in ep95 and ep96).
 - **Everyone is an adult.** I'm 26 at the start and 56 at the end. Vern looks about 85 at the start and about 26 at the end (he gets younger as I get older). My wife Nora is an adult, met at L19 to L20.
-- **Word count:** 551 spoken words in 62 lines (L01 to L62), all `narrator`, plus one 0.6 s music drop before L44.
+- **Word count:** 556 spoken words in 62 lines (L01 to L62), all `narrator`, plus one 0.6 s music drop before L44.
 - **Estimated length:** about 124.1 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 148 s, cut L24 and L52 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright suburban: two small houses side by side on a sunny cul-de-sac, a white picket fence between our yards, Vern's porch with a flip calendar on a nail. Thirty years pass in seasons: summer, autumn leaves, snow, spring blossom, all bright. The one dim beat is Vern's emptying living room at dusk (L35 to L43).
 - **Hold:** scripts only (batch 10). Not built, not voiced.
@@ -27,7 +27,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 - **The rule is the clue:** "He said goodbye the day we met" first reads as eerie. After L57 it's what I do on his first day, and what he'll go on to do on mine.
 
 ## The story
-- **Premise:** The day I moved into my first house, my neighbor Vern, about 85, hugged me on my lawn, cried, and thanked me for thirty years. Vern lives backward. Every year I know him he's a year younger, he never remembers yesterday, only tomorrow, and he's a little happier around me while I'm the one running out. His porch calendar counts down from 10,950.
+- **Premise:** The day I moved into my first house, my neighbor Vern, about 85, hugged me on my lawn, cried, and thanked me for thirty years. Vern lives backward. Every year I know him he's a year younger, he never remembers yesterday, only tomorrow, and he's a little happier around me while our days together run out. His porch calendar counts down from 10,950.
 - **Rule / hook (L01, about 3.0 s):** "My neighbor VERN / lives BACKWARD. / He said goodbye / the day we MET."
 - **The relatable want or fight:** a friend you know you'll lose, and spending the time anyway.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream flip-calendar tag in the top-left counting Vern's days down: 10,950 in the hook, dropping by years through the montage (9,125, 5,475, 1,825), 7 at L41, 1 at L43 and 0 at L60.
@@ -130,7 +130,7 @@ Times are estimates at 290 wpm with 0.15 s between lines. Every line gets one to
 | S27a, S27b | L27 | 52.1 | (a) Vern on his porch watching Nora and me plant a tree, `smile`. (b) Vern waving first, grinning, before I'm even out the door. Punch in on "HAPPIER". |
 | S28a, S28b | L28 | 54.3 | (a) Vern rocking in his chair, humming, eyes on our house. (b) The calendar on its nail, close. Punch in on "PART". |
 | S29 | L29 | 56.3 | Vern close, young-ish now, `smile`, his glasses off. |
-| S30a, S30b | L30 | 57.1 | (a) Me at my bathroom mirror, gray at the temples, `worried`. (b) The tag close: 1,825. Punch in on "OUT". |
+| S30a, S30b | L30 | 57.1 | (a) Me and Vern on his porch steps, `soft`, the calendar on its nail behind us. (b) The tag close: 1,825. Punch in on "TOGETHER". |
 | S31a, S31b, S31c | L31 | 58.5 | (a) The calendar flipping. (b) Vern rocking faster in his chair, happy. (c) Me watching it from my porch, `worried`. Punch in on "DOWN". |
 | S32a, S32b, S32c | L32 | 60.5 | (a) Vern's porch at night, the two rocking chairs, me leaning toward him, `worried`. (b) Vern (about 35 now, brown hair) looking out at the street. (c) The calendar on the nail between us, dark. Punch in on "ZERO". |
 | S33a, S33b | L33 | 63.1 | (a) Vern shaking his head, a small smile. (b) Vern in his rocking chair, rocking, eyes on the street. Punch in on "SAY". |
@@ -150,7 +150,7 @@ Times are estimates at 290 wpm with 0.15 s between lines. Every line gets one to
 | S46a, S46b, S46c | L46 | 91.1 | (a) Young Vern laughing at a mover's joke, head back. (b) A cut to old Vern's laugh on the first day (S02), same angle. (c) His bare face close, no glasses, bright eyes. Punch in on "EARS". |
 | S47a, S47b | L47 | 93.8 | (a) Young Vern crossing my lawn toward me. (b) His open hand, close. Punch in on "HAND". |
 | S48a, S48b | L48 | 95.4 | (a) The one reveal picture, held 1.6 s with drift: young Vern with his hand out on the lawn between our houses, the moving truck behind him, and me at 56 on my step. Cover frame. (b) Young Vern close, `smile`, easy. Punch in on "VERN". |
-| S49a, S49b | L49 | 97.4 | (a) Young Vern looking around the cul-de-sac, delighted. (b) The tag close: one flip from 0. Punch in on "FIRST". |
+| S49a, S49b | L49 | 97.4 | (a) Young Vern looking around the cul-de-sac, delighted. (b) The tag close: one flip from 0. Punch in on "VERN". |
 | S50a, S50b | L50 | 99.6 | (a) Me close, `teary`, trying to smile. (b) Young Vern tilting his head, waiting for my name. Punch in on "KNOW". |
 | S51a, S51b | L51 | 101.8 | (a) A quick callback run: the fence, the wedding, the rocking chairs, played forward. (b) Young Vern grinning at me, all of it ahead of him. Punch in on "AHEAD". |
 | S52 | L52 | 104.0 | Me looking at Vern's porch: the bare nail where the calendar will hang. Punch in on "HAD". |
@@ -200,7 +200,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L27: And every year, / he was a little HAPPIER / around me.
 - L28: Like the best PART / was still / AHEAD of him.
 - L29: Because it WAS.
-- L30: I was the one / running OUT.
+- L30: Our days / TOGETHER / were running OUT.
 - L31: The calendar / kept counting DOWN. / Faster than I WANTED.
 - L32: One night / on his porch, / I asked him / what happens at ZERO.
 - L33: He wouldn't SAY. / He just rocked / in his CHAIR.
@@ -220,7 +220,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L46: He had Vern's EARS. / Vern's LAUGH. / He didn't need / his GLASSES yet.
 - L47: He walked over, / stuck out his HAND,
 - L48: and said, / hi, I'm VERN. / I just moved IN.
-- L49: For him, / today is / the FIRST day / on our STREET.
+- L49: The same VERN. / Today is his FIRST day / on our STREET.
 - L50: He doesn't KNOW me / yet. / He doesn't know / my NAME.
 - L51: He has thirty years of me / still AHEAD of him.
 - L52: All the ones / I already HAD.
@@ -232,10 +232,10 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L58: Nora took / a PICTURE.
 - L59: He looked at me / like I was CRAZY.
 - L60: Then he laughed / Vern's LAUGH, / and said / he'd look forward / to THEM.
-- L61: Tomorrow / his house / will be EMPTY. / For him, / it's the day / before we MET.
+- L61: Tomorrow / his house / will be EMPTY. / Today was / our last day TOGETHER. / I'll still be here, / with NORA.
 - L62: So THAT'S / why he cried.
 
-(Loop: L62 runs straight into L01: "So that's why he cried. My neighbor Vern lives backward. He said goodbye the day we met." On the loop, the first day reads as Vern's last and mine at once.)
+(Loop: L62 runs straight into L01: "So that's why he cried. My neighbor Vern lives backward. He said goodbye the day we met." On the loop, my first day reads as Vern's last day with me. Nobody dies: he just moves on to the day before we met.)
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt and nobody is in danger. Vern is never ill: he's an old man at the start and a young man at the end. "Zero" is never his end, only the day before he came (L45, L56), said as moving in.

@@ -5,7 +5,7 @@
 - **Title:** One Bite Here And You STAY 🍑
 - **Changed from the pitch (the hook pass):** the panel said "very clear but a well-known fairy rule, generic". Line 1 now has our own picture and our own person in it: my aunt's peaches, and every road out leading back to her gate (a road that loops, which nobody's fairy rule says). The rule meter is new and is the mystery: the drive to her valley gets longer every summer though the map says it hasn't moved. Grandma became my mom's sister, Aunt Clem, because ep106 in this batch is a grandma story. Kept clear of ep83's food rule (free fries cooked by whoever cooks for you most): nobody cooks, nothing is free, the food changes no one's luck, it only lets a road remember you.
 - **Everyone is an adult.** I'm 24, Aunt Clem is about 60, Mom is about 55, the mail carrier about 60, the two hiking brothers in their 30s.
-- **Word count:** 305 spoken words in 39 lines (L01 to L39), all `narrator`, plus one 0.6 s music drop before L18.
+- **Word count:** 316 spoken words in 39 lines (L01 to L39), all `narrator`, plus one 0.6 s music drop before L18.
 - **Estimated length:** about 69.8 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L12 and L35 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright and hot: a green valley of peach orchards under a blue sky, a white farmhouse with a porch swing, a gas station with a striped awning, a winding two-lane road. The one dark beat is dusk on the road (L17 to L20), sunset orange, never black.
 - **Hold:** scripts only (batch 10). Not built, not voiced.
@@ -21,7 +21,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 **Everyone warns you never to eat a peach in my aunt's valley or every road out leads back to her gate, and the warning is backwards: the valley's road only remembers the people who've eaten there. For twelve summers I never ate one, so the road has been forgetting me, a few miles longer every year, and this summer it rubbed itself out behind me.**
 
 - **Engine:** food of the other world (engine 29), turned over. No myth's pomegranate, no film's orchard: our peach, our road, our odometer.
-- **Why it clicks:** the drive getting longer every summer (L09 to L12) is the road forgetting me. The mail carrier and the two brothers (L03 to L06) "never left", and it turns out they leave all the time and are always home by lunch (L27, L28). Mom "keeps missing the turn" (L14, L15) because she stopped eating them when she moved away. Aunt Clem's peach by my bag every summer (L07) was her trying.
+- **Why it clicks:** the drive getting longer every summer (L09 to L12) is the road forgetting me. The mail carrier and the two brothers (L03 to L06) always "end up back" here, which sounds like a trap, and it turns out they leave all the time and are always home by lunch (L27, L28). Mom "keeps missing the turn" (L14, L15) because she stopped eating them when she moved away. Aunt Clem's peach by my bag every summer (L07) was her trying.
 - Ten pitched, this one kept. Dropped: the peach makes you forget the city (crowded memory theme), the valley's people are all peaches (a gag), the peach makes you a tree (body horror), Aunt Clem is the valley (a creature twist), the road eats people (a monster), you age there (ep33's time), the valley is a model (ep80), the peach is a debt (ep90's tab), Aunt Clem is lonely and lying (sad), the peaches are free and someone pays (ep83).
 - Checked against "Claimed big ideas" and every twist: not a stand-in, not ep52 (nothing I own travels, a road forgets a person), not ep93's loop, not a fed thing. Shape `backwards-warning`.
 - **The rule is the clue:** "every road out leads back to her gate" first reads as a trap. After L25 it reads as a promise: the road will always bring you back.
@@ -41,7 +41,7 @@ The batch table is in `stories/ep101-well-wish/script.md`. This row:
 - **Twist and reveal (L23 to L26, about 39 to 46 s):** said plainly (L24, L25) over one picture (S25: Aunt Clem at her gate with the peach, the road a strip of grass behind my car).
 - **How the last 15 seconds turn over the first line:** the drive home is twelve minutes, Mom eats the second peach and finds the turn for the first time in five years, and now when people ask why I keep going back, I tell them the rule, which loops into L01 and now sounds like a promise.
 - **The plants a rewatch catches:**
-  1. L04: the mail carrier is "still on the route" after thirty years (he's free to come and go, so he stays because he likes it).
+  1. L04: every route the mail carrier drives "still ends at her gate", and every road "brings" the brothers back (true both ways: they come and go, and always get home).
   2. L07, L08: Aunt Clem leaves a peach by my bag every summer, and I leave it on the sill.
   3. L14 to L16: Mom keeps missing the turn, and she grew up here.
 - **Ending shape:** a warning read backwards, then a loop where the same rule is a welcome.
@@ -150,9 +150,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L01: Never eat Aunt Clem's PEACHES, / or every road out / leads back to her GATE.
 - L02: Twelve SUMMERS / I've visited. / I've never had ONE.
 - L03: Her mail carrier / ate one / on his first DELIVERY.
-- L04: That was thirty years AGO. / He's still on the ROUTE.
+- L04: That was thirty years AGO. / Every route he drives / still ends at her GATE.
 - L05: Two BROTHERS hiking through / stopped for / one slice of PIE.
-- L06: They run the gas station NOW.
+- L06: They run the gas station NOW. / Every road they take / brings them BACK.
 - L07: Every summer, / Aunt Clem, / my mom's SISTER, / leaves a peach / by my BAG.
 - L08: Every summer, / I leave it / on the SILL.
 - L09: But the valley / keeps getting FARTHER.

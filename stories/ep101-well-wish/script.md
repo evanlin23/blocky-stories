@@ -5,7 +5,7 @@
 - **Title:** The Well Heard EVERY Word 🪣
 - **Changed from the pitch (the hook pass):** the panel said "dread works, twist still vague". Line 1 now says the rule and its price in one breath: what I wished, and what it did to him ("Now he can't get one BLOCK away."). The twist is said in one plain line (L30: you only lose what you don't mean to let go of) and paid in one picture (his car passing the town line). Added a second turn for the last 15 s: Wes heard me at the well three years ago and never said, so the leash I thought he hated was one he wore on purpose. The brother is renamed Wes (ep100 already has an Eli).
 - **Everyone is an adult.** I'm 22, my big brother Wes is 27, Mom is about 55. I was 19 when I made the wish (said once, never shown young).
-- **Word count:** 358 spoken words in 42 lines (L01 to L42), all `narrator`, plus one 0.6 s music drop before L33.
+- **Word count:** 360 spoken words in 42 lines (L01 to L42), all `narrator`, plus one 0.6 s music drop before L33.
 - **Estimated length:** about 81.2 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L07 and L27 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright: a sunny brick town square with a round stone well, a hilly street of painted houses, a green town-line sign post with a glyph (no words). One night scene at the well (L25 to L30) lit by lamp posts and the moon on the water, still readable.
 - **Hold:** scripts only (batch 10). Not built, not voiced.
@@ -45,7 +45,7 @@ Two rows share `confess` (ep101 and ep105, never adjacent): seven stories and th
 - **First real scare:** L13 to L16 (about 25 to 33 s): his car stops at one block, then rolls back on its own and parks itself at our curb, his own feet walk him home.
 - **The climax turns the rule's own logic:** the wish says I'd never lose him. You only lose what you don't mean to let go of. So I let him go, on purpose (L28 to L33). No new magic.
 - **Twist and reveal (L28 to L35, about 50 to 66 s):** said plainly (L30) and shown in one picture (S35: his car passing the green town-line post, the meter bar sailing past its red notch).
-- **How the last 15 seconds turn over the first line:** his text says he heard me at the well and always knew (L38). He gave up three years so I wouldn't feel bad. Then he's back on our porch on Sunday, 600 miles, because he wanted to be. L42 runs into L01 as the thing he teases me about.
+- **How the last 15 seconds turn over the first line:** his text says he heard my first wish three years ago and always knew (L38). He gave up three years so I wouldn't feel bad. Then he's back on our porch on Sunday, 600 miles, because he wanted to be. L42 runs into L01 as the thing he teases me about.
 - **The plants a rewatch catches:**
   1. L02 and L03: the well gives you what you SAID, not what you meant.
   2. L18: he never asked me why. (He already knew.)
@@ -163,7 +163,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L06: Mr. HOBB / wished he'd never be LATE.
 - L07: Now the bus waits / at his corner / for twenty MINUTES.
 - L08: Three years ago, / my big brother WES / was moving OUT.
-- L09: I was NINETEEN. / I didn't want / to be alone / in that HOUSE.
+- L09: Back then / I was NINETEEN. / I didn't want / to be alone / in that HOUSE.
 - L10: So I took a coin / to the well / and said it EXACTLY.
 - L11: I wish / I'd never LOSE him.
 - L12: The next morning, / Wes drove off / to his new PLACE.
@@ -193,7 +193,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L35: Two blocks. / Then past / the town LINE.
 - L36: My phone BUZZED.
 - L37: A picture of the HIGHWAY. / He wrote, / first time in three YEARS.
-- L38: Then he wrote, / I heard you at the well / that night. / I always KNEW.
+- L38: Then he wrote, / I heard your first WISH, / three years ago. / I always KNEW.
 - L39: He gave up three YEARS / so I wouldn't feel BAD.
 - L40: Last Sunday, / there he was / on our PORCH again.
 - L41: Six hundred MILES. / Because he WANTED to.
