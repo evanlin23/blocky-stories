@@ -267,8 +267,8 @@
   },
   "p1": {
    "age": "adult",
-   "skin": "#8a5a3a",
-   "shirt": "#8a5ab0",
+   "skin": "#9a6a48",
+   "shirt": "#c0507a",
    "pattern": "solid",
    "pants": "#2a2a38",
    "shoes": "#d8d0c8",
@@ -11741,11 +11741,16 @@
   "bk"
  ],
  "asr_forgive": [
-  "Tulley's",
-  "Tulley",
-  "Oduya",
-  "unhappens",
+  "tulley's",
+  "tulley",
   "mister",
-  "missus"
+  "missus",
+  "returned",
+  "dollars",
+  "i've",
+  "we'd",
+  "every",
+  "one",
+  "unhappens"
  ]
 }

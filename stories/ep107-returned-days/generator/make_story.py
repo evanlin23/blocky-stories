@@ -121,7 +121,7 @@ cast = {
     "intv": person("#c88f66", "#555b6a", "#2a2f3a", "#1c1c20", hair="bun", hair_c="#1a1410", eyes="lashes"),
     "cust": person("#f0c8a0", "#e8845a", "#4a5a7a", "#6a4a32", hair="long", hair_c="#6a3a1a", eyes="lashes"),
     "man": person("#b98456", "#f6f6f2", "#4a4036", "#2a2a2a", hair="buzz", hair_c="#1a1410", sleeves="short"),
-    "p1": person("#8a5a3a", "#8a5ab0", "#2a2a38", "#d8d0c8", hair="long", hair_c="#150f0c", eyes="lashes"),
+    "p1": person("#9a6a48", "#c0507a", "#2a2a38", "#d8d0c8", hair="long", hair_c="#150f0c", eyes="lashes"),
     "p2": person("#e8b890", "#3a8aaa", "#5a4a3a", "#2a3a2a", hair="spiky", hair_c="#a05a2a", sleeves="short"),
     "p3": person("#d3a07a", "#5fae4a", "#3a3a4a", "#6a4a32", hair="cap", hair_c="#2a2a2a"),
 }
@@ -964,7 +964,7 @@ story = {
     "rain_shots": [names["s22"], names["s53b"]],
     "set_moves": [],
     "clip_ok": ["mbx", "van", "S09", "S10", "bk"],
-    "asr_forgive": ["Tulley's", "Tulley", "Oduya", "unhappens", "mister", "missus"],
+    "asr_forgive": ["tulley's", "tulley", "mister", "missus", "returned", "dollars", "i've", "we'd", "every", "one", "unhappens"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

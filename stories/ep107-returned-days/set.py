@@ -248,7 +248,7 @@ def shop(kit, P):
     for i, lx in enumerate((-4.0, 0.0, 4.0)):
         m = kit.emit("#fff0c8", 5.0, f"lampmat{i}")
         W["lampmats"].append(m)
-        kit.cyl(f"lamp{i}.cord", 0.012, 1.1, (lx, 1.5, 3.85), plastic("#444", 0.6), n=6)
+        kit.cyl(f"lamp{i}.cord", 0.012, 1.1, (lx, 1.5, 3.85), plastic("#444444", 0.6), n=6)
         kit.sphere(f"lamp{i}.bulb", 0.2, (lx, 1.5, 3.2), m, seg=10)
         kit.light(f"pl{i}", "POINT", (lx, 1.5, 3.1), 520.0, "#ffe9c4", size=0.3, shadow=False)
     kit.light("ctr", "POINT", (-1.0, 2.2, 2.4), 260.0, "#fff0d8", size=0.4, shadow=False)
@@ -377,9 +377,9 @@ def backroom(kit, P):
     # the bulb on its cord, swinging from a pivot high up
     piv = kit.empty("bulbpiv", (G.BULB[0], G.BULB[1], 7.0))
     W["bulbpiv"] = piv
-    kit.cyl("bulb.cord", 0.01, 3.4, (0, 0, -1.7), plastic("#222", 0.6), piv, n=6)
+    kit.cyl("bulb.cord", 0.01, 3.4, (0, 0, -1.7), plastic("#222222", 0.6), piv, n=6)
     kit.sphere("bulb.glass", 0.13, (0, 0, -3.4), kit.emit("#ffe2a8", 9.0, "bulbmat"), piv, seg=10)
-    kit.cyl("bulb.cap", 0.07, 0.1, (0, 0, -3.25), plastic("#555", 0.5), piv, n=8)
+    kit.cyl("bulb.cap", 0.07, 0.1, (0, 0, -3.25), plastic("#555555", 0.5), piv, n=8)
     kit.light("bulb", "POINT", (0, 0, -3.4), 1500.0, "#ffd9a0", size=0.2, shadow=True, parent=piv)
     kit.light("bdoorglow", "POINT", (2.57, 11.0, 2.2), 260.0, "#e8f0ff", size=0.5, shadow=False)
     kit.light("bfill", "POINT", (0.0, 19.0, 5.0), 450.0, "#c8d6ff", size=0.6, shadow=False)
