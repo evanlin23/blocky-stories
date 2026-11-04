@@ -406,12 +406,12 @@ scene("L20", prize=dict(pos=(0.1, 9.6), yaw=0, expr="neutral", head=[0, 6]))
 hold("prize", "L20.1", yaw=0, head=[10, 0])
 hold("prize", "L20.1+0.9", yaw=140, head=[0, 0])
 # ---- S21a L21.0: he goes for one from the back
-S("S21a", "L21", C((1.6, 7.6, 1.5), (2.2, 9.9, 1.45), 30, (2.4, 7.9, 1.5), (3.0, 10.0, 1.45), 30), cfill=0.5)
+S("S21a", "L21", C((1.6, 7.6, 1.5), (2.2, 9.9, 1.45), 30, (2.4, 7.9, 1.5), (3.0, 10.0, 1.45), 30))
 scene("L21", prize=dict(pos=(0.5, 9.9), yaw=90, expr="neutral"))
 walk("prize", "L21.1", (3.1, 9.95))
 # ---- S21b L21.1: through the plain back door
-cdoor("L21.1+0.45", 24.0, 0.0, 0.6)   # he opens it only a slice, his body fills the gap
-S("S21b", "L21.1", C((3.9, 7.8, 1.5), (4.0, 11.0, 1.35), 32, (4.0, 8.6, 1.5), (4.1, 11.2, 1.35), 32), cfill=0.5)
+cdoor("L21.1+0.3", 24.0, 0.0, 1.6)   # he opens it only a slice, his body fills the gap
+S("S21b", "L21.1", C((3.9, 7.8, 1.5), (4.0, 11.0, 1.35), 32, (4.0, 8.6, 1.5), (4.1, 11.2, 1.35), 32))
 scene("L21.1", prize=dict(pos=(3.2, 9.95), yaw=90, expr="neutral"))
 walk("prize", "L21.1+0.5", (4.1, 10.3))
 walk("prize", "L22", (4.1, 12.5))
@@ -424,7 +424,7 @@ S("S22b", "L22:1+0.3", C((4.4, 7.9, 1.85), (3.5, 9.9, 1.55), 36, (4.2, 8.4, 1.8)
 scene("L22:1+0.3", me=dict(pos=(3.4, 9.6), yaw=180, expr="worried", head=[100, 0], lean=0))
 hold("me", "L22:1+0.6", head=[75, 0], lean=12)
 # ---- the drop: the dark slice of the door
-S("S22c", "P01", C((1.6, 7.4, 1.6), (3.6, 10.2, 1.35), 30, (1.9, 7.8, 1.6), (3.6, 10.2, 1.35), 30), cfill=0.5, hand=0.004)
+S("S22c", "P01", C((1.6, 7.4, 1.6), (3.6, 10.2, 1.35), 30, (1.9, 7.8, 1.6), (3.6, 10.2, 1.35), 30), hand=0.004)
 scene("P01", me=dict(pos=(3.4, 9.6), yaw=180, expr="worried", head=[75, 0], lean=12))
 # ---- S23a L23.0: through the door into the closet
 cdoor("L23", 88.0, 24.0, 0.5)
@@ -703,7 +703,7 @@ story = {
     "fx": [],
     "music": music,
     "sound": sound,
-    "rev": 3,
+    "rev": 4,
     "asr_forgive": ["thousand"],
     "clip_ok": ["S03b", "S04a", "S30b", "S38a", "S06c", "S34a"],
 }
