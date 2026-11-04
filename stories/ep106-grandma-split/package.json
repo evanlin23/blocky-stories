@@ -1,0 +1,11 @@
+{
+  "title": "Grandma Was In TWO Places Again 🥧",
+  "description": "In this town, if two people need you at the same time, you split in two. And every time, you come back a little thinner.\n\nGrandma has been at my table every Sunday at six for two years. Someone keeps seeing her across town at six too, and she's getting so thin she can stand sideways behind a door.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Comment PIE if your grandma would split for you.",
+  "made_for_kids": false,
+  "cover_s": 41.0,
+  "shape": "two-tables",
+  "opening": "count",
+  "lane": "core",
+  "hold": "batch 10: scripts only, not built yet"
+}
