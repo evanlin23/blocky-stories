@@ -368,8 +368,8 @@ S("L23+0.55", MV((0.7, 1.5, 1.45), (-1.25, 1.5, 1.3), (0.45, 1.5, 1.42), (-1.25,
   who={"me": sit_me("scared", head=[0, 6])}, look={"cutwall": True},
   note="Who are YOU? me, scared")
 openb("blue", "L24", 0.0, 0.2)
-S("L24", MV((-0.805, 2.15, 1.2), (-0.365, 1.43, 0.79), (-0.705, 2.0, 1.05), (-0.365, 1.43, 0.79), 36),
-  who={"me": sit_me("scared", arms=[80, 80])},
+S("L24", MV((-0.3, 3.0, 1.6), (-0.46, 1.5, 0.8), (-0.35, 2.85, 1.55), (-0.46, 1.5, 0.8), 30),
+  who={"me": sit_me("scared", arms=[80, 80])}, look={"cutwall": True},
   note="I shut it: snapping it shut")
 S("L24.1", MV((-2.5, 2.2, 1.7), (-1.2, 3.8, 0.85), (-2.2, 2.4, 1.6), (-1.2, 3.8, 0.85), 30),
   who={"me": (X(-2.05, 3.8, 0.83), -90, "wide", {"lean": -90, "blink": False})},
@@ -477,7 +477,7 @@ S("L40", MV((-2.9, -1.7, 1.2), (0.0, -0.5, 1.0), (-2.2, -1.7, 1.2), (0.6, -0.5, 
   note="me crossing the hall in socks")
 raw("me", "L40+0.3", pos=[1.0, -0.6], yaw=90, arms=[70, 70])
 cue("L41", "ndoor", to=40, dur=0.3)
-S("L41", MV((1.0, -0.8, 1.4), (1.5, 1.5, 1.2), (1.0, -0.6, 1.4), (1.5, 1.5, 1.2), 30),
+S("L41", MV((3.2, -1.6, 1.3), (1.6, 0.0, 1.1), (3.0, -1.45, 1.3), (1.6, 0.0, 1.1), 30),
   who={"me": (X(1.0, -0.6), 90, "scared", {"arms": [70, 70]})},
   look={"cutwall": False},
   note="her door open an inch, lamplight in the gap")
@@ -721,7 +721,7 @@ story = {
     "cues": cues,
     "shotlook": SHOTLOOK,
     "fx": [],
-    "rev": 9,
+    "rev": 11,
     "music": {"root": 51, "mode": "major", "bpm": 100, "seed": 89, "sections": [
         {"at": 0, "voices": ["musicbox", "pulse"], "energy": 0.35},
         {"at": "L21", "voices": ["piano", "drone"], "energy": 0.4, "mode": "minor"},
@@ -731,7 +731,7 @@ story = {
         {"at": "L49", "voices": ["pad", "piano", "musicbox"], "energy": 0.55, "mode": "major"},
         {"at": "L69", "voices": ["drone"], "energy": 0.4, "mode": "minor"}]},
     "sound": {
-        "floor": "wood", "steps_db": -26, "rev": 9,
+        "floor": "wood", "steps_db": -26, "rev": 11,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -40},
                      {"kind": "crickets", "from": "L21", "to": "L48", "lufs": -46}],
         "sfx": [{"at": "L01.4+0.05", "kind": "hit", "db": -7},
