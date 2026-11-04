@@ -6,6 +6,5 @@
   "cover_s": 36.9,
   "shape": "double-reading",
   "opening": "cost",
-  "lane": "core",
-  "hold": "batch 9a: scripts only, not built yet"
+  "lane": "core"
 }
