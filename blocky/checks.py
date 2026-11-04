@@ -230,6 +230,11 @@ def harsh_sound(st: dict) -> list[tuple[str, str]]:
             out.append(("warn", f"static ambience at {a.get('lufs')} LUFS will sound like hiss; keep it under -40"))
     if len(sfx) > 6:
         out.append(("warn", f"{len(sfx)} bright, noisy effects; repeated, they read as scratching (ep36's grass steps)"))
+    # hard rule 6: no music box. sound.py still has the voice for old tests, so a story naming it is blocked here
+    # (ep89's proof qa caught it after every review missed it, 2026-11-03)
+    voices = [v for sec in ((st.get("sound") or {}).get("music") or {}).get("sections", []) for v in sec.get("voices", [])]
+    if "musicbox" in voices or "musicbox" in json.dumps(st.get("sound") or {}):
+        out.append(("block", "the score uses the `musicbox` voice: RULES hard rule 6 says no music box. Use piano, pad or choir"))
     return out
 
 

@@ -7,17 +7,20 @@
 # 2026-11-03 queue audit (docs/research/queue-audit.md): recipe fixes first; ep36, ep32, ep31 dropped; ep42, ep48, ep55 held until 3 recipe films pass; ep33 dropped 2026-11-03 (opening redo, critic r8)
 # 2026-11-03 shapes: ban (mirror-maze, moving-day) 4 apart; cost (ep54, rule-three, dryer-nine) never adjacent; ep49/ep45 stay held on main until docs/second-team.md says ready for queue; ep50 (reflection) never next to mirror-maze
 # 2026-11-03 3 PM: queue.txt also sets which finals render first, so the stories closest to uploading lead (merged with a fix and waiting for a final, then the PRs nearest merge). upload.py still never puts two of one opening in a row
-closing-time
+# 2026-11-04 12:30 AM: final-qa passes first (ep47, rule-three, floor-thirteen, ep55, ep42, ep48, ep62); the sad reveals (ep55, ep42, ep48) 3 apart; moving-day and warm-shoes after their fixes pass
 ep47-fitting-room
-moving-day
-ep54-dance-hall
 rule-three
 floor-thirteen
 ep55-caravan-park
+ep62-six-riders
+ep54-dance-hall
 ep42-barber-chair
+ep92-blackout-ben
+ep96-friend-card
+ep48-crazy-golf
+moving-day
 warm-shoes
 dryer-nine
 ep51-fossil-hall
-ep48-crazy-golf
 ep45-bee-yard
 ep49-car-wash
