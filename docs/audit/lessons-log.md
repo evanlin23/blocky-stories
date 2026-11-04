@@ -179,6 +179,11 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Any swinging, flickering or switching practical light gets a full-rate flash check before reviews, with margin
     (5 a second or under). Batch 10 was told on 2026-11-04. Make `check` flag moving practical lights (plan step 8).
 
+31. **A build session went idle while its proof ran, and nothing woke it.** ep83's proof failed at 10:21 AM, and the
+    session didn't look until the orchestrator found it at 12:15 PM. Sessions don't wake on Actions events.
+    → Briefs say to wait on runs with a Monitor until-loop, never by ending the turn (docs/briefs/build.md). The
+    plan's PR-based inbox (step 9) should subscribe build sessions to their PR's events.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
