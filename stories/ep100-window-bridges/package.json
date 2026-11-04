@@ -6,6 +6,5 @@
   "cover_s": 1.8,
   "shape": "on-purpose",
   "opening": "count",
-  "lane": "core",
-  "hold": "batch 9b: scripts only, not built yet"
+  "lane": "core"
 }

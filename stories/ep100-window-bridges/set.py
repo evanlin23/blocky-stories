@@ -627,10 +627,10 @@ def build_rooms(kit, ctx):
     B(sw, (0.2, 0.15, 0.04), (0.0, 0.0, 0.11), P("#d9a458", 0.8), "bread2", 0.012, rot=(0, 0.12, 0.06))
     ctx["sandwich"] = sw
     ctx["tray"] = tray
-    mp = E(None, (0.0, OURS_Y - 0.3, 8.0), "matchpair")
+    mp = E(None, (0.0, OURS_Y - 0.62, 8.3), "matchpair")
     for sx in (-1, 1):
-        B(mp, (0.22, 0.02, 0.02), (sx * 0.15, 0, 0), P("#e8c58a", 0.7), "mstick", 0.004)
-        B(mp, (0.045, 0.036, 0.036), (sx * 0.27, 0, 0), P("#d7263d", 0.5), "mhead", 0.008)
+        B(mp, (0.3, 0.035, 0.035), (sx * 0.2, 0, 0), P("#7a4a1e", 0.7), "mstick", 0.006)
+        B(mp, (0.11, 0.09, 0.09), (sx * 0.37, 0, 0), kit.emit("#ff3b30", 2.5, name="mhead"), "mhead", 0.012)
     ctx["matchpair"] = mp
     fr = E(None, (-1.52, 0.0, 7.6), "frost")
     fm = P("#eaf6ff", 0.2, 0.9)

@@ -410,14 +410,14 @@
    ]
   },
   "L16": {
-   "text": "Eli already knew how I take my coffee.",
+   "text": "Eli already knew how I drink my coffee.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.069,
+   "dur": 2.086,
    "onset": 0.172,
-   "end": 1.862,
+   "end": 1.879,
    "chunks": [
     [
      0.172,
@@ -425,11 +425,11 @@
     ],
     [
      0.828,
-     1.172
+     1.19
     ],
     [
-     1.172,
-     1.862
+     1.19,
+     1.879
     ]
    ]
   },
@@ -1693,6 +1693,10 @@
     ],
     [
      1.103,
+     1.371
+    ],
+    [
+     1.371,
      1.948
     ]
    ]
