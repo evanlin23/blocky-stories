@@ -236,7 +236,7 @@ def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True):
     skin = P("#6e4c38", 0.9, 0.02)
     skin_d = P("#3a2e28", 0.95, 0.0)
     coat = P("#171b24", 0.9, 0.02)
-    collar = P("#8e8878", 0.85, 0.02)
+    collar = P("#d4ccb4", 0.85, 0.02)
     hair = P("#08080a", 0.95, 0.0)
     W_, D_, T_ = 6.4, 4.6, 0.9
     B(R, (W_, D_, T_), (0, 0, -T_ / 2), skin, "uface", 0.14)
@@ -275,15 +275,15 @@ def make_under(kit, parent, scale=1.0, pipe_h=5.3, body=True):
     lip.scale = (1.6, 0.6, 1.0)
     if pipe_h:
         brass = P("#4f3d22", 0.55, 0.45)
-        CY(R, 0.24, pipe_h, (0.05, -0.95, pipe_h / 2), brass, "upipe")
-        CY(R, 0.36, 0.16, (0.05, -0.95, 0.2), P("#3c3020", 0.6, 0.4), "upipecol")
+        CY(R, 0.13, pipe_h, (0.05, -0.95, pipe_h / 2), brass, "upipe")
+        CY(R, 0.2, 0.16, (0.05, -0.95, 0.2), P("#3c3020", 0.6, 0.4), "upipecol")
     if body:
         # neck: thin and too long; shoulders: wider than the room; the coat is near black
         B(R, (1.7, 2.6, 1.0), (0, -D_ / 2 - 2.0, -0.4), skin_d, "uneck", 0.1)
         B(R, (10.0, 2.4, 1.7), (0, -D_ / 2 - 4.2, 0.0), coat, "ushoulder", 0.25)
         # the one lit identity cue: a pale shirt collar and a dark tie at the neck
         for sx in (-1, 1):
-            B(R, (1.5, 1.3, 0.3), (sx * 0.95, -D_ / 2 - 3.1, 0.62), collar, "ucollar", 0.04, rot=(0, 0, sx * -0.5))
+            B(R, (2.0, 1.9, 0.3), (sx * 1.15, -D_ / 2 - 3.0, 0.62), collar, "ucollar", 0.04, rot=(0, 0, sx * -0.5))
         B(R, (0.5, 1.8, 0.2), (0, -D_ / 2 - 3.3, 0.7), P("#2a1010", 0.9, 0.0), "utie", 0.03)
         # right arm: far too long, an extra joint, up the wall and hooked over the crack edge (land coords: x 2.0, y -0.55, z 0)
         sh = (4.6, -D_ / 2 - 4.2, 0.4)
