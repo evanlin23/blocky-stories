@@ -173,7 +173,7 @@ shot(0, "S01: me at the top rail, both lit lamps in frame, push in down the well
      c([0, S01_A, [1.05, 0.95, 16.9], 30], [0.31, S01_A, [1.05, 0.95, 16.9], 30], [0.5, S01_A, [1.16, 0.65, 15.9], 14], [1, [-0.9, 0.85, 17.25], [1.16, 0.65, 15.4], 13.5]), hand=0.002)
 shot("L02", "S02: punch in to the stair foot: sand has crept onto the bottom step",
      move(([-0.5, -0.5, 1.0], [0.9, 1.2, 0.3]), ([-0.3, -0.2, 0.95], [0.9, 1.2, 0.3]), 18), hand=0.002)
-shot("L02b", "S02b: two-shot at the stair foot, a hand's gap between our shoulders", still([0.0, -1.15, 1.55], [0.0, 0.65, 1.5], 12), hand=0.003)
+shot("L02b", "S02b: two-shot at the stair foot, a hand's gap between our shoulders", still([0.0, -1.0, 1.6], [0.0, 0.65, 1.5], 13), hand=0.003)
 shot("L03", "S03: Ines at her blue door halfway up, under her lamp", RF(4, d=2.0, lens=28))
 shot("L03.2", "S03b: my cot beside the dead lens, rain starting", still([0.6, -2.3, LF + 1.4], [-1.1, 0.2, LF + 0.7], 28), rain=True)
 shot("L04", "kitchen, grey daylight going: eating fast", still([KX + 1.6, -1.4, 1.75], [KX, 0.1, 1.2], 26))
@@ -265,7 +265,16 @@ def runcam(i, az, lens=24):
 
 shot("L54", "running up, one", runcam(48.6, 18), step=1)
 shot("L54.1", "running up, two", runcam(61.9, 57, 20), step=1)
-shot("L54.2", "running up, three", runcam(73.9, 57, 20), step=1)
+def runcam_follow(i, az0, az1, lens=20):
+    """Like runcam, but the aim follows me round the spiral (az0 at the start, az1 at the cut)."""
+    z = i * STEP
+    a = math.radians(az0 + 80)
+    loc = [round(0.8 * math.cos(a), 3), round(0.8 * math.sin(a), 3), round(z + 1.6, 3)]
+    tg = lambda az, dz: [round(1.8 * math.cos(math.radians(az)), 3), round(1.8 * math.sin(math.radians(az)), 3), round(z + dz, 3)]
+    return c([0, loc, tg(az0, 1.3), lens], [1, loc, tg(az1, 1.65), lens])
+
+
+shot("L54.2", "running up, three", runcam_follow(73.9, 72, 112), step=1)
 # 09 the last day
 shot("L55", "kitchen, flat bright daylight: medium close-up of Ines alone, held still", still([KX + 0.9, -0.35, 1.5], [KX + 0.02, 0.95, 1.4], 26), hand=0)
 shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.45, 1.1], 16))
@@ -283,7 +292,8 @@ shot("L63", "Ines asleep two steps down in the blanket",
      still(local(SEAT_IN, YAW_IN, 2.0, -0.35, 1.4), local(SEAT_IN, YAW_IN, 0, 0, 0.85), 30))
 shot("L64", "S65: pulled back: my legs and socks on the step under her camel coat, her hand on it",
      still(local(SEAT_ME, YAW_ME, 3.0, 0.5, 2.6), local(SEAT_ME, YAW_ME, 0.35, 0.0, 0.5), 24), hand=0.004)
-shot("L65", "high: me, Ines, the stair winding down", still([-0.2, -0.4, 10.4], [-1.9, 1.2, 6.8], 22))
+_MX, _MY, _MZ = (SEAT_IN[0] + SEAT_ME[0]) / 2, (SEAT_IN[1] + SEAT_ME[1]) / 2, (SEAT_IN[2] + SEAT_ME[2]) / 2
+shot("L65", "high: me, Ines, the stair winding down", still([round(-0.15 * _MX, 3), round(-0.15 * _MY, 3), round(_MZ + 1.5, 3)], [round(_MX, 3), round(_MY, 3), round(_MZ + 0.95, 3)], 22))
 shot("L66", "POV down the sunlit well: empty", still([-0.8, -0.9, 8.7], [0.0, 1.8, 0.2], 24), hand=0.004)
 shot("L67", "close on me, understanding", still(local(SEAT_ME, YAW_ME, 2.6, -0.25, 1.4), local(SEAT_ME, YAW_ME, 0, 0, 0.66), 30))
 def up(p, dz):
@@ -298,7 +308,7 @@ shot("L69", "memory: the Upward's crown face below the sleeping me",
 shot("L70", "memory: me walking past her blue door, eyes shut",
      still(up(tread(45.0, 1.5), 1.55), up(tread(48.2, 1.7), 1.4), 24), hand=0.004)
 shot("L71", "memory: Ines frightened, phone glow", still([0.1, 0.55, Z4 + 1.55], [2.0, 0.55, Z4 + 1.4], 30))
-shot("L72", "memory: Ines worried and soft, me waking at the rail", still([-0.3, 0.0, Z4 + 1.6], [1.9, 0.0, Z4 + 1.3], 26))
+shot("L72", "memory: Ines worried and soft, me waking at the rail", still([0.0, 0.05, Z4 + 1.75], [2.0, 0.7, Z4 + 1.7], 24))
 shot("L73", "dawn: Ines asleep in the blanket in the sun",
      still(local(SEAT_IN, YAW_IN, 1.9, -0.3, 1.3), local(SEAT_IN, YAW_IN, 0, 0, 0.88), 32))
 shot("L74", "Ines opens her eyes, a small smile, lifts her phone",
@@ -428,7 +438,8 @@ put("me", "L54.1", tread(61.6, 1.8), yaw=yaw_to(tread(61.6), tread(62.6)), expr=
 arc("me", "L54.1", 61.6, 62.8, 0.8)
 put("me", "L54.2", tread(73.6, 1.8), yaw=yaw_to(tread(73.6), tread(74.6)), expr="terrified")
 arc("me", "L54.2", 73.6, 74.8, 0.76)
-hide("me", "L54.3")
+arc("me", "L54.3", 74.8, 75.5, 0.95, r=1.8)   # still running, in frame and lit, until the cut
+hide("me", "L55")
 put("me", "L55", SEAT_K(-0.75), yaw=180, sit=True, expr="worried", head=[0, 8])
 key("me", "L56", head=[0, 8])
 hide("me", "L57")
@@ -497,7 +508,7 @@ put("ines", "L65", SIT_IN, yaw=YAW_IN, sit=True, expr="asleep", blink=False, hea
 put("ines", "L68", SIT_IN, yaw=YAW_IN, sit=True, expr="asleep", blink=False)
 hide("ines", "L69")
 put("ines", "L71", [2.0, 0.55, Z4], yaw=FACE_IN, expr="scared", arms=[0, 66], head=[0, 14])
-key("ines", "L72", expr="worried", blend=0.2)
+key("ines", "L72", expr="worried", arms=[0, 0], blend=0.2)
 key("ines", "L72.2", expr="soft", blend=0.4)
 put("ines", "L73", SIT_IN, yaw=YAW_IN, sit=True, expr="asleep", blink=False, head=[0, 6], lean=4)
 key("ines", "L74", expr="smirk", blend=0.2)
@@ -524,7 +535,6 @@ cues = [
     {"at": "L46b", "name": "mode", "set": "day", "dur": 0.8},
     {"at": "L47", "name": "mode", "set": "dark", "dur": 0.8},
     {"at": "L54", "name": "mode", "set": "run", "dur": 0.3},
-    {"at": "L54.3", "name": "mode", "set": "dark", "dur": 0.3},
     {"at": "L55", "name": "mode", "set": "day", "dur": 1.5},
     {"at": "L57", "name": "mode", "set": "doorlamp", "dur": 0.6},
     {"at": "L58", "name": "mode", "set": "night", "dur": 0.6},
@@ -580,7 +590,6 @@ cues = [
     {"at": "L52", "name": "torch", "on": 1.0, "from": [1.45, 0.0, Z4 + 1.05], "aim": [1.6, 0.0, 3 * RISE + 1.0], "gain": 0.5, "spill": 0.8},
     {"at": "L53", "name": "torch", "on": 1.0, "from": [1.3, 0.0, Z4 + 1.55], "aim": [1.6, 0.0, 3 * RISE + 1.5], "gain": 0.4, "spill": 0.0},
     {"at": "L54", "name": "torch", "on": 0.0, "from": [1.3, 0.0, Z4 + 1.55], "aim": [1.6, 0.0, 3 * RISE + 1.5], "dur": 0.1, "gain": 1.0},
-    {"at": "L54.3", "name": "torch", "on": 1.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "gain": 0.22, "spill": 0.0},
     {"at": "L55", "name": "torch", "on": 0.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "gain": 0.45, "dur": 0.0},
     # the Upward, seen only from above and only nearer each time
     {"at": 0, "name": "up", "hidden": True},
@@ -617,7 +626,6 @@ cues = [
     {"at": "L54", "name": "clear", "az": 25, "span": 75, "z0": 10.5, "z1": 11.6},
     {"at": "L54.1", "name": "clear", "az": 55, "span": 80, "z0": 12.8, "z1": 14.2},
     {"at": "L54.2", "name": "clear", "az": 55, "span": 80, "z0": 15.0, "z1": 16.3},
-    {"at": "L54.3", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
     {"at": "L55", "name": "clear", "az": None},
     {"at": "L57", "name": "clear", "az": 0, "span": 45, "z0": Z4 + 1.5, "z1": Z4 + 3.4, "rails": [Z4 - 0.5, Z4 + 1.8], "rail_span": 75},
     {"at": "L58", "name": "clear", "az": None},
@@ -729,7 +737,7 @@ story = {
     "gap": 0.12,
     "tail": 0,
     "look": {"fog": "#202838", "fog_density": 0.02, "fog_start": 2.5, "sky": "#0d1220", "sky_strength": 1.0, "exposure": 0.3, "flash_safe": True,
-             "polish": {"quiet": [["L55", "L56>"], ["L73", "L76>"]], "sway": True, "reframe_every": 0.65, "push": 0.15, "cam_push": 0.11, "cam_arc": 4.5, "reveal": ["L18", "L50", "L67"], "twist": "L67"}},
+             "polish": {"hold": ["S03", "S07", "S77", "S84"], "quiet": [["L55", "L56>"], ["L73", "L76>"]], "sway": True, "reframe_every": 0.65, "push": 0.15, "cam_push": 0.11, "cam_arc": 4.5, "reveal": ["L18", "L50", "L67"], "twist": "L67"}},
     "grade": {"shadows": [0.01, 0.03, 0.09], "highlights": [0.025, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012, "red_line": 0.79},
     "rain_shots": rain_shots,
