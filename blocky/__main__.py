@@ -25,7 +25,7 @@ QUALITY = {
     # stills, the flashing and the pace are the final's, only the detail is softer
     "preview": {"res": [270, 480], "samples": 4, "step": 4},
     "proof": {"res": [270, 480], "samples": 4, "step": None},
-    "final": {"res": [540, 960], "samples": 10, "step": None},
+    "final": {"res": [540, 960], "samples": 6, "step": None},   # 10 -> 6 on 2026-11-03 (docs/research/engine-ab.md: 27% fewer runner-minutes, critic "same")
 }
 
 

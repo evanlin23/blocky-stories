@@ -232,8 +232,8 @@ walk("jory", "L67.3", [-0.4, 7.6, 0.0])
 set_("jory", "L67.3", yaw=-85, blend=0.5)
 walk("jory", "L67>", [0.0, 5.0, 0.0])
 set_("me", "L68", expr="soft")
-put("jory", "L69", [0.7, 2.4, 0.0], 0, expr="soft", sit=False)
-walk("jory", "L69>", [0.7, -0.5, 0.0])
+put("jory", "L69", [0.3, 2.4, 0.0], 0, expr="soft", sit=False)
+walk("jory", "L69>", [0.3, -0.5, 0.0])
 put("jory", "L70", [CH_JO[0], CH_JO[1], SIT], 180, expr="soft", sit=True)
 put("jory", "L72", [CH_JO[0], CH_JO[1], SIT], 180, expr="neutral", sit=True, head=[75, 0])
 hide("jory", "L72.4")
@@ -353,7 +353,7 @@ S("L41", mv([-2.4, -1.6, 0.4], [-2.0, -2.3, 0.0], 28, [-2.35, -1.7, 0.36], [-2.0
 S("P02", mv([-2.4, -1.6, 0.42], [-2.0, -2.3, 0.0], 28, [-2.45, -1.65, 0.4], [-2.0, -2.3, 0.0], 28))
 
 KH = [KN[0], -2.0, 1.2]    # the middle of the Kneeler, kneeling upright
-c42 = mv([-1.9, -1.2, 0.25], [-1.7, -2.3, 0.15], 28, [-1.9, -1.3, 0.3], [-1.7, -2.3, 1.7], 28)
+c42 = mv([-1.9, -1.2, 0.25], [-1.7, -2.3, 0.15], 28, [-1.9, -1.3, 0.3], [-1.7, -2.3, 0.45], 28)
 S("L42", c42, look=kn_look([-1.9, -1.2, 0.8], [-1.7, -2.3, 1.1]))
 c42b = mv([3.6, -1.4, 1.3], [-1.7, -2.3, 1.2], 30, [3.3, -1.4, 1.3], [-1.7, -2.3, 1.2], 30)
 S("L42.2", c42b, look=kn_look([3.6, -1.4, 1.3], [-1.7, -2.3, 1.2]))
@@ -583,7 +583,8 @@ sound = {"floor": "grass", "steps_db": -26,
 fx = []
 
 story = {
-    "rev": 4,
+    "rev": 5,
+    "clip_ok": ["S01/me", "S01/jory", "S05/train", "S06/train", "S07/flake20", "S07/flake22", "S07/flake47", "S23/me", "S75/jory", "S76/jory", "S77/jory", "S81/flake40", "S81/flake46"],
     "slug": "ep55-caravan-park",
     "title": "In this town, moss grows on you while you wait",
     "made_for_kids": False,
@@ -595,7 +596,7 @@ story = {
     "gap": 0.12,
     "tail": 0.25,
     "look": {"fog": "#c9d7dc", "fog_density": 0.012, "fog_start": 5.0, "sky": "#bfd3df", "sky_strength": 1.15,
-             "exposure": 0.0, "flash_safe": True},
+             "exposure": 0.0, "flash_safe": True, "polish": True},
     "fade_in": False, "fade_out": False,
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.015, -0.03], "saturation": 1.0,
               "contrast": 1.05, "vignette": 0.3, "bloom": 0.22, "grain": 0.012},

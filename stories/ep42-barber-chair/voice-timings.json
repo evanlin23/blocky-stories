@@ -6,34 +6,58 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this town, everyone hums one note of their own, all day long.",
+   "text": "Sixty-four people on this street. Sixty-three are humming.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.017,
+   "dur": 2.569,
    "onset": 0.172,
-   "end": 2.828,
+   "end": 2.379,
    "chunks": [
     [
      0.172,
-     0.603
+     0.768
     ],
     [
-     0.655,
-     1.164
+     0.768,
+     1.259
     ],
     [
-     1.164,
-     1.439
+     1.337,
+     1.776
     ],
     [
-     1.439,
-     1.897
+     1.776,
+     2.379
+    ]
+   ]
+  },
+  "L01b": {
+   "text": "In this town, everyone hums one note of their own.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.638
     ],
     [
-     1.966,
-     2.828
+     0.69,
+     1.25
+    ],
+    [
+     1.25,
+     1.578
+    ],
+    [
+     1.578,
+     2.241
     ]
    ]
   },

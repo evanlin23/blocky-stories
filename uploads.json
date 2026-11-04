@@ -23,12 +23,20 @@
   "uploaded": "2026-11-02",
   "title": "In This Farmhouse the Floor KNOCKS Back",
   "note": "a late GitHub schedule run uploaded it at 9:04 PM Central on Nov 2 (public 10:04 PM); counted on Nov 2, the owner's day",
-  "publish_at": "2026-11-03T04:04:40Z"
+  "publish_at": "2026-11-03T04:04:40Z",
+  "commented": true
  },
  "mirror-maze": {
   "video_id": "NUwN2m7JRuA",
   "uploaded": "2026-11-03",
   "title": "Never Walk Away From Your REFLECTION \ud83e\ude9e",
-  "publish_at": "2026-11-03T22:00:00Z"
+  "publish_at": "2026-11-03T22:00:00Z",
+  "commented": true
+ },
+ "closing-time": {
+  "video_id": "BZb-AhIgIiQ",
+  "uploaded": "2026-11-03",
+  "title": "Skipping the Goodbye Wave Is DANGEROUS \ud83d\udc1f",
+  "publish_at": "2026-11-04T01:41:00Z"
  }
 }
