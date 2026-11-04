@@ -13,7 +13,7 @@
  "key_color": "#ff7f9e",
  "gap": 0.12,
  "tail": 0,
- "rev": 26,
+ "rev": 34,
  "look": {
   "fog": "#c8d4de",
   "fog_density": 0.01,
@@ -503,8 +503,8 @@
    "hair_c": "#5a4030",
    "hat": "none",
    "face": {
-    "eyes": "round",
-    "brows": true,
+    "eyes": "none",
+    "brows": false,
     "ink": "#1a1214",
     "mouth": "none"
    },
@@ -3299,16 +3299,16 @@
     [
      0,
      [
-      98.85,
-      -5.2,
-      3.0
+      97.64999999999999,
+      -3.6,
+      1.9
      ],
      [
       98.35,
       -8.65,
-      2.6
+      2.9
      ],
-     44
+     36
     ]
    ],
    "hand": 0.006,
@@ -3316,8 +3316,8 @@
    "what": "front, lamp key: the grin and the teeth, the black line across the cheeks and round the sides",
    "at": "L41",
    "fill": [
-    180,
-    "#ffe2c4"
+    55,
+    "#a8c4f0"
    ]
   },
   {
@@ -3326,14 +3326,14 @@
     [
      0,
      [
-      98.75,
-      -6.9,
-      2.9
+      97.55,
+      -6.2,
+      2.6
      ],
      [
       98.35,
       -8.65,
-      2.75
+      3.45
      ],
      30
     ]
@@ -3343,8 +3343,8 @@
    "what": "punch in on the eyes",
    "at": "L41.2",
    "fill": [
-    150,
-    "#ffe2c4"
+    45,
+    "#a8c4f0"
    ]
   },
   {
@@ -3360,7 +3360,7 @@
      [
       98.35,
       -8.65,
-      2.65
+      3.3
      ],
      28
     ]
@@ -3376,16 +3376,16 @@
     [
      0,
      [
-      94.94999999999999,
-      -5.0,
-      3.0
+      97.3,
+      -3.2,
+      1.5
      ],
      [
-      97.35,
+      97.4,
       -8.65,
-      2.55
+      2.8
      ],
-     29
+     36
     ]
    ],
    "hand": 0.006,
@@ -3393,8 +3393,8 @@
    "what": "the Grin leans out of its chair to Mom's ear, a hand's width off, never touching",
    "at": "L43",
    "fill": [
-    170,
-    "#ffe2c4"
+    50,
+    "#a8c4f0"
    ]
   },
   {
@@ -3403,16 +3403,16 @@
     [
      0,
      [
-      96.14999999999999,
-      -6.8,
-      2.5
+      97.0,
+      -5.6,
+      2.2
      ],
      [
-      96.94999999999999,
+      97.0,
       -8.65,
-      2.45
+      2.85
      ],
-     44
+     34
     ]
    ],
    "hand": 0.006,
@@ -3420,8 +3420,8 @@
    "what": "close on its still grin beside her ear, the eye highlight brightest",
    "at": "L44",
    "fill": [
-    170,
-    "#ffe2c4"
+    50,
+    "#a8c4f0"
    ]
   },
   {
@@ -3507,8 +3507,8 @@
    "what": "low: Mom on the first riser step, the singers either side still on their ah, the Grin above leaning down",
    "at": "L45.1+0.2",
    "fill": [
-    170,
-    "#ffe2c4"
+    50,
+    "#a8c4f0"
    ]
   },
   {
@@ -3603,8 +3603,8 @@
    "what": "the reveal picture, wide: Mom's dark cord, the Grin at her ear, me at the back with ten lit",
    "at": "L47",
    "fill": [
-    90,
-    "#ffe2c4"
+    40,
+    "#a8c4f0"
    ]
   },
   {
@@ -3630,8 +3630,8 @@
    "what": "punch in on Mom's dark cord",
    "at": "L47.2",
    "fill": [
-    170,
-    "#ffe2c4"
+    50,
+    "#a8c4f0"
    ]
   },
   {
@@ -3680,8 +3680,8 @@
    "what": "back to the wide: the Grin at her ear",
    "at": "L49",
    "fill": [
-    90,
-    "#ffe2c4"
+    40,
+    "#a8c4f0"
    ]
   },
   {
@@ -3690,16 +3690,16 @@
     [
      0,
      [
-      96.14999999999999,
-      -6.8,
-      2.5
+      97.0,
+      -5.6,
+      2.2
      ],
      [
-      96.94999999999999,
+      97.0,
       -8.65,
-      2.45
+      2.85
      ],
-     44
+     34
     ]
    ],
    "hand": 0.006,
@@ -3707,8 +3707,8 @@
    "what": "close on the Grin at her ear",
    "at": "L49.2",
    "fill": [
-    170,
-    "#ffe2c4"
+    50,
+    "#a8c4f0"
    ]
   },
   {
@@ -3734,8 +3734,8 @@
    "what": "punch in on Mom's face, smiling up at it",
    "at": "L50",
    "fill": [
-    170,
-    "#ffe2c4"
+    50,
+    "#a8c4f0"
    ]
   },
   {
@@ -3853,8 +3853,8 @@
    "what": "the eleven in the lamp light, round mouths, cords lit, Mom on the step among them",
    "at": "L53",
    "fill": [
-    170,
-    "#ffe2c4"
+    50,
+    "#a8c4f0"
    ]
   },
   {
@@ -3940,8 +3940,8 @@
    "what": "me at the foot of the riser below Mom, mouth open on a word; she doesn't look down",
    "at": "L55",
    "fill": [
-    170,
-    "#ffe2c4"
+    50,
+    "#a8c4f0"
    ]
   },
   {
@@ -4096,8 +4096,8 @@
    "what": "wide of the riser: Mom turned down to me, the Grin sat upright in its chair, facing front, head slightly down",
    "at": "L58",
    "fill": [
-    90,
-    "#ffe2c4"
+    40,
+    "#a8c4f0"
    ]
   },
   {
@@ -14345,83 +14345,8 @@
    },
    {
     "at": "L41",
-    "pos": [
-     99.45,
-     -7.15,
-     0.54
-    ]
-   },
-   {
-    "at": "L41",
-    "pos": [
-     99.45,
-     -7.15,
-     0.54
-    ],
-    "yaw": 180,
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     14,
-     14
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": true,
-    "bend": 0,
-    "roll": 0,
-    "tilt": 0,
-    "lunge": 0,
-    "expr": "neutral"
-   },
-   {
-    "at": "L41.2",
-    "pos": [
-     99.45,
-     -7.15,
-     0.54
-    ]
-   },
-   {
-    "at": "L41.2",
-    "pos": [
-     99.45,
-     -7.15,
-     0.54
-    ],
-    "yaw": 180,
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     14,
-     14
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": true,
-    "bend": 0,
-    "roll": 0,
-    "tilt": 0,
-    "lunge": 0,
-    "expr": "neutral"
+    "hidden": true,
+    "blend": 0
    },
    {
     "at": "L42",
@@ -18718,83 +18643,8 @@
    },
    {
     "at": "L41",
-    "pos": [
-     99.45,
-     -5.65,
-     0.24
-    ]
-   },
-   {
-    "at": "L41",
-    "pos": [
-     99.45,
-     -5.65,
-     0.24
-    ],
-    "yaw": 180,
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     14,
-     14
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": true,
-    "bend": 0,
-    "roll": 0,
-    "tilt": 0,
-    "lunge": 0,
-    "expr": "neutral"
-   },
-   {
-    "at": "L41.2",
-    "pos": [
-     99.45,
-     -5.65,
-     0.24
-    ]
-   },
-   {
-    "at": "L41.2",
-    "pos": [
-     99.45,
-     -5.65,
-     0.24
-    ],
-    "yaw": 180,
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     14,
-     14
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": true,
-    "bend": 0,
-    "roll": 0,
-    "tilt": 0,
-    "lunge": 0,
-    "expr": "neutral"
+    "hidden": true,
+    "blend": 0
    },
    {
     "at": "L42",
@@ -22245,7 +22095,7 @@
      -8.65,
      0.72
     ],
-    "yaw": 168.2,
+    "yaw": -174.6,
     "blend": 0,
     "hidden": false,
     "arms": [
@@ -22265,8 +22115,8 @@
     "blink": false,
     "sit": true,
     "bend": 0,
-    "roll": 0,
-    "tilt": 0,
+    "roll": 8,
+    "tilt": -30,
     "lunge": 0,
     "expr": "neutral"
    },
@@ -22285,7 +22135,7 @@
      -8.65,
      0.72
     ],
-    "yaw": 168.2,
+    "yaw": -174.6,
     "blend": 0,
     "hidden": false,
     "arms": [
@@ -22305,8 +22155,8 @@
     "blink": false,
     "sit": true,
     "bend": 0,
-    "roll": 0,
-    "tilt": 0,
+    "roll": 8,
+    "tilt": -30,
     "lunge": 0,
     "expr": "neutral"
    },
@@ -22385,8 +22235,8 @@
     "blink": false,
     "sit": true,
     "bend": 0,
-    "roll": 26,
-    "tilt": -18,
+    "roll": 36,
+    "tilt": -24,
     "lunge": 0,
     "expr": "neutral"
    },
@@ -22425,8 +22275,8 @@
     "blink": false,
     "sit": true,
     "bend": 0,
-    "roll": 30,
-    "tilt": -16,
+    "roll": 40,
+    "tilt": -22,
     "lunge": 0,
     "expr": "neutral"
    },
@@ -22510,7 +22360,7 @@
     "blink": false,
     "sit": true,
     "bend": 18,
-    "roll": 14,
+    "roll": 18,
     "tilt": -14,
     "lunge": 0,
     "expr": "neutral"
@@ -22555,8 +22405,8 @@
     "blink": false,
     "sit": true,
     "bend": 0,
-    "roll": 30,
-    "tilt": -16,
+    "roll": 40,
+    "tilt": -22,
     "lunge": 0,
     "expr": "neutral"
    },
@@ -22595,8 +22445,8 @@
     "blink": false,
     "sit": true,
     "bend": 0,
-    "roll": 30,
-    "tilt": -16,
+    "roll": 40,
+    "tilt": -22,
     "lunge": 0,
     "expr": "neutral"
    },
@@ -22640,8 +22490,8 @@
     "blink": false,
     "sit": true,
     "bend": 0,
-    "roll": 30,
-    "tilt": -16,
+    "roll": 40,
+    "tilt": -22,
     "lunge": 0,
     "expr": "neutral"
    },
@@ -22680,8 +22530,8 @@
     "blink": false,
     "sit": true,
     "bend": 0,
-    "roll": 30,
-    "tilt": -16,
+    "roll": 40,
+    "tilt": -22,
     "lunge": 0,
     "expr": "neutral"
    },
@@ -22720,8 +22570,8 @@
     "blink": false,
     "sit": true,
     "bend": 0,
-    "roll": 30,
-    "tilt": -16,
+    "roll": 40,
+    "tilt": -22,
     "lunge": 0,
     "expr": "neutral"
    },
@@ -22805,8 +22655,8 @@
     "blink": false,
     "sit": true,
     "bend": 0,
-    "roll": 30,
-    "tilt": -16,
+    "roll": 40,
+    "tilt": -22,
     "lunge": 0,
     "expr": "neutral"
    },
@@ -22890,7 +22740,7 @@
     "blink": false,
     "sit": true,
     "bend": 18,
-    "roll": 14,
+    "roll": 18,
     "tilt": -14,
     "lunge": 0,
     "expr": "neutral"

@@ -9,8 +9,8 @@ x = 60, the HALL at x = 100 (HX): stage end at y = -10.5, back wall (door and wi
 post outside it.
 
 THE GRIN (the creature). One model, built once and posed by the acting keys: an ordinary singer from the same blocks, in
-the choir robe, with a plain waxy face and two round eyes. What is wrong is its mouth: a thick black grin with a row of
-flat teeth whose line goes on round the sides of the head and meets itself at the back. It has no cord and no beads.
+the choir robe, with a pale waxy face, no drawn eyes (two tiny glints) and a bare neck far too long. What is wrong is its mouth: a
+thin dark seam, upturned at the corners, that goes on round the sides of the head and meets itself at the back. It has no cord and no beads.
 It is never seen moving: every change of pose is across a cut.
 
 Cues read here: tod, lt (one light's level, with a ramp), bead_off / bead_on, cord, cordfade, bulge, scarf, door, hdoor, c12
@@ -558,10 +558,10 @@ def build_hall(kit, M, ctx):
     kit.aim(sp, (HX - 0.4, -7.2, 0.8))
     kit.light("camfill", "POINT", (0, 0, 0), 1.0, "#a8bce8", size=0.3)
     kit.light("front_key", "POINT", (HX - 3.2, -0.2, 2.9), 300.0, "#ffd9a0", size=0.4)
-    k = kit.light("grin_key", "SPOT", (twelfth[0] + 2.4, -4.6, 1.3), 520.0, "#ffe2c4", spot=26, blend=0.7, size=0.2)
-    kit.aim(k, (twelfth[0], twelfth[1], twelfth[2] + 1.35))
-    r = kit.light("grin_rim", "SPOT", (twelfth[0] - 1.6, -10.0, 3.6), 650.0, "#ffc890", spot=24, blend=0.7, size=0.2)
-    kit.aim(r, (twelfth[0], twelfth[1], twelfth[2] + 1.0))
+    k = kit.light("grin_key", "SPOT", (twelfth[0] + 0.6, -4.4, 0.2), 1100.0, "#9fc4ff", spot=44, blend=0.7, size=0.15)
+    kit.aim(k, (twelfth[0], twelfth[1], twelfth[2] + 1.9))
+    r = kit.light("grin_rim", "SPOT", (twelfth[0] - 1.2, -10.8, 4.2), 1400.0, "#cfe4ff", spot=26, blend=0.5, size=0.1)
+    kit.aim(r, (twelfth[0], twelfth[1], twelfth[2] + 2.0))
     # a wash from behind the riser that lights the backboard strokes and the backs of the heads (cued)
     bw = kit.light("back_wash", "SPOT", (HX - 0.4, -11.5, 3.9), 900.0, "#ffd9b0", spot=70, blend=0.7, size=0.3)
     kit.aim(bw, (HX - 0.4, -8.2, 1.6))
@@ -683,36 +683,40 @@ def build(kit, story, tl):
 
 # ------------------------------------------------------------------------------------------------ the Grin's face
 def grin_texture(skin):
-    """A plain face with two wide round eyes and pin pupils, and a grin whose black line goes on all the way round
-    the head."""
-    face = {"eyes": "round", "brows": False, "mouth": "none", "ink": "#1a1416"}
-    im = faces.face_image(face, skin, "neutral", 0.0, (0, 0), 0.0).copy()
+    """A pale waxy face with no drawn eyes (two dark sockets; the glints are kit.emit pieces in decorate), its top half
+    sunk in shadow, and a thin dark seam for a mouth, slightly upturned at the corners, that runs all the way round the
+    head and meets itself at the back."""
+    face = {"eyes": "none", "brows": False, "mouth": "none", "ink": "#1a1416"}
+    im = faces.face_image(face, skin, "neutral", 0.0, (0, 0), 0.0).copy().convert("RGB")
     d = ImageDraw.Draw(im)
     W, H = im.size
     s = faces.FX1 - faces.FX0
     cx = W / 2
-    ink = (12, 8, 10)
-    # the eyes: ordinary round whites, wide, with a tiny pupil and one small highlight (straight ahead, never blinking)
+    ink = (10, 7, 9)
+    # the top half of the face (and head) in shadow: a gradient from near-black at the brow to the skin at the cheeks
+    y_top, y_full = faces._fy(0.0), faces._fy(0.62)
+    px = im.load()
+    for y in range(0, int(y_full)):
+        u = max(0.0, min(1.0, (y - y_top) / max(1.0, y_full - y_top)))
+        k = 0.05 + 0.95 * u ** 2.5
+        for x in range(W):
+            r, g, b = px[x, y]
+            px[x, y] = (int(r * k), int(g * k), int(b * (k * 1.08)))
+    # two sunk sockets, no whites and no pupils
     ey = faces._fy(0.40)
     for side in (-1, 1):
-        ex = cx + side * 0.22 * s
-        rx, ry = 0.125 * s, 0.135 * s
-        d.ellipse([ex - rx - 10, ey - ry - 10, ex + rx + 10, ey + ry + 10], fill=skin)
-        d.ellipse([ex - rx, ey - ry, ex + rx, ey + ry], fill=(252, 252, 248), outline=ink, width=int(0.036 * s))
-        pr = 0.034 * s
-        d.ellipse([ex - pr, ey - pr, ex + pr, ey + pr], fill=(8, 6, 8))
-        d.ellipse([ex - pr * 0.1 - pr * 0.9, ey - pr * 1.3, ex - pr * 0.1 - pr * 0.1, ey - pr * 0.5], fill=(255, 255, 255))
-        # a flat level brow above each, heavy
-        d.line([(ex - rx, ey - ry - 0.05 * s), (ex + rx, ey - ry - 0.05 * s)], fill=ink, width=int(0.03 * s))
+        ex = cx + side * 0.21 * s
+        rx, ry = 0.11 * s, 0.05 * s
+        d.ellipse([ex - rx, ey - ry, ex + rx, ey + ry], fill=(4, 3, 5))
     cy = faces._fy(0.80)
-    lift = 0.11 * s
-    a = 0.42 * s
+    lift = 0.07 * s
+    a = 0.40 * s
 
     def y_of(dx):
         r = min(1.0, abs(dx) / a)
         return cy - lift * r * r
 
-    # the line all the way round: thick at the front, thinning to a seam at the back
+    # a thin seam all the way round: finest at the back, a touch heavier at the front
     n = 720
     for i in range(n):
         x0 = W * i / n
@@ -720,22 +724,8 @@ def grin_texture(skin):
         dx = (x0 + x1) / 2 - cx
         dx = (dx + W / 2) % W - W / 2   # wrap
         k = max(0.0, 1.0 - (abs(dx) - 0.15 * s) / (0.9 * s))
-        th = (0.03 + 0.04 * min(1.0, k * 1.2)) * s
-        d.line([(x0 - 1, y_of(dx)), (x1 + 1, y_of(dx))], fill=ink, width=int(th))
-    # teeth: a lens between the line and a lower lip, flat blocks with thin dark gaps
-    half = 0.40 * s
-    steps = 90
-    pts_top, pts_bot = [], []
-    for i in range(steps + 1):
-        dx = -half + 2 * half * i / steps
-        r = abs(dx) / half
-        pts_top.append((cx + dx, y_of(dx) + 0.012 * s))
-        pts_bot.append((cx + dx, y_of(dx) + 0.012 * s + 0.125 * s * max(0.0, 1 - r ** 2) ** 0.7))
-    d.polygon(pts_top + pts_bot[::-1], fill=(200, 196, 182))
-    for i in range(0, steps + 1, 4):
-        d.line([pts_top[i], pts_bot[i]], fill=(34, 28, 28), width=int(0.011 * s))
-    d.line(pts_bot, fill=ink, width=int(0.03 * s))
-    d.line(pts_top, fill=ink, width=int(0.04 * s))
+        th = (0.020 + 0.016 * min(1.0, k * 1.2)) * s
+        d.line([(x0 - 1, y_of(dx)), (x1 + 1, y_of(dx))], fill=ink, width=max(3, int(th)))
     return im
 
 
@@ -846,8 +836,22 @@ def decorate(kit, story, ctx):
     gh = bpy.data.objects.get("grin.headg")
     if gh is not None:
         # the seam where the grin's line meets itself: a black strip down the back of the head, so it reads from far off
-        bx(kit, "grin.seam", (0.07, 0.04, faces.HEAD_H * 0.92), (0, faces.HEAD_R - 0.01, 0.0),
+        bx(kit, "grin.seam", (0.04, 0.04, faces.HEAD_H * 0.92), (0, faces.HEAD_R - 0.01, 0.0),
            pbr(kit, "grin seam", "#050304", 0.9), gh, bevel=0.012)
+        # the buzz-cut slab overhangs the round head like a mortarboard: shrink it inside the outline
+        hz = bpy.data.objects.get("grin.buzz")
+        if hz is not None:
+            hz.scale = (0.8, 0.8, 1.0)
+        # the stretched part: a bare neck far too long, so the head rides high and bends further than any neck should
+        NECK = 1.1
+        head = bpy.data.objects["grin.head"]
+        head.location = (0, 0, NECK)
+        nm = pbr(kit, "grin neck", "#8e7f72", 0.6)
+        bx(kit, "grin.neckbox", (0.34, 0.30, NECK + 0.5), (0, 0.0, NECK / 2 - 0.1), nm, bpy.data.objects["grin.neck"], bevel=0.05)
+        # two tiny cold glints just in front of the sockets, the brightest points in the frame
+        gm = kit.emit("#dff0ff", 70.0, "grin glint")
+        for sx in (-1, 1):
+            kit.sphere(f"grin.glint{sx}", 0.024, (sx * 0.21 * 0.9, -(faces.HEAD_R + 0.012), 0.12), gm, gh, seg=8)
     # Ron's earmuffs: two fat knitted cranberry cups and a band over the crown, on his head
     rg = bpy.data.objects.get("ron.headg")
     if rg is not None:

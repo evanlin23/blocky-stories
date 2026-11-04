@@ -91,7 +91,7 @@ for i in range(11):
     cast[f"c{i + 1}"] = person(SKINS[i % 8], "#4c3038", "#4c3038", "#2a2022", STYLES[i], HAIRS[i], "solid", None, "#f3efe6",
                                dict(FACE), ["coat"], zip_c="#4a2230", height=[1.0, 0.96, 1.03, 0.98, 1.02, 0.95, 1.0, 1.04, 0.97, 1.01, 0.99][i])
 cast["grin"] = person("#d8c0a6", "#4c3038", "#4c3038", "#2a2022", "buzz", "#5a4030", "solid", None, "#f3efe6",
-                      {"eyes": "round", "brows": True, "ink": "#1a1214", "mouth": "none"}, ["coat"], zip_c="#4a2230", height=1.35)
+                      {"eyes": "none", "brows": False, "ink": "#1a1214", "mouth": "none"}, ["coat"], zip_c="#4a2230", height=1.35)
 NAMES = list(cast)
 
 # the twelve chairs (set.py's STEPS and CHX)
@@ -485,24 +485,24 @@ shot("L39.2", "cut away to Mom at the stand, listening",
 shot("L40.2", "its head now turned toward the hall, mid shot",
      still((HX - 1.4, -3.4, 2.55), (TW, TWELFTH[1], 2.1), 48),
      {**hall()})
-GCAM = (TW + 0.5, -5.2)
+GCAM = (TW - 0.7, -3.6)
 shot("L41", "front, lamp key: the grin and the teeth, the black line across the cheeks and round the sides",
-     still((GCAM[0], GCAM[1], 3.0), (TW, TWELFTH[1], 2.6), 44),
-     {**choir(skip=("c4", "c8")), "grin": G(yaw=yaw_to(GRINP, GCAM))}, fill=[180, "#ffe2c4"])
+     still((GCAM[0], GCAM[1], 1.9), (TW, TWELFTH[1], 2.9), 36),
+     {**choir(skip=("c4", "c5", "c8", "c9")), "grin": G(yaw=yaw_to(GRINP, GCAM), tilt=-30, roll=8)}, fill=[55, "#a8c4f0"])
 shot("L41.2", "punch in on the eyes",
-     still((GCAM[0] - 0.1, -6.9, 2.9), (TW, TWELFTH[1], 2.75), 30),
-     {**choir(skip=("c4", "c8")), "grin": G(yaw=yaw_to(GRINP, GCAM))}, fill=[150, "#ffe2c4"])
+     still((GCAM[0] - 0.1, -6.2, 2.6), (TW, TWELFTH[1], 3.45), 30),
+     {**choir(skip=("c4", "c5", "c8", "c9")), "grin": G(yaw=yaw_to(GRINP, GCAM), tilt=-30, roll=8)}, fill=[45, "#a8c4f0"])
 shot("L42", "from behind the riser: the seam meeting at mouth height",
-     still((TW + 0.15, -11.0, 3.0), (TW, TWELFTH[1], 2.65), 28),
+     still((TW + 0.15, -11.0, 3.0), (TW, TWELFTH[1], 3.3), 28),
      {**hall()})
-GF = [170, "#ffe2c4"]
+GF = [50, "#a8c4f0"]
 shot("L43", "the Grin leans out of its chair to Mom's ear, a hand's width off, never touching",
-     still((MUMX - 1.7, -5.0, 3.0), (MUMX + 0.7, TWELFTH[1], 2.55), 29),
+     still((HX - 2.7, -3.2, 1.5), (HX - 2.6, TWELFTH[1], 2.8), 36),
      {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "smile", arms=[10, 10], head=[0, 0]),
-      "grin": G(head=[52, 0], roll=26, tilt=-18)}, fill=GF)
+      "grin": G(head=[52, 0], roll=36, tilt=-24)}, fill=GF)
 shot("L44", "close on its still grin beside her ear, the eye highlight brightest",
-     still((MUMX - 0.5, -6.8, 2.5), (MUMX + 0.3, TWELFTH[1], 2.45), 44),
-     {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=30, tilt=-16)}, fill=GF)
+     still((HX - 3.0, -5.6, 2.2), (HX - 3.0, TWELFTH[1], 2.85), 34),
+     {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=40, tilt=-22)}, fill=GF)
 shot("L44.2", "me at the back, scared, ten lit, as she smiles at ME",
      move(((HX + 3.4, 4.6, 1.5), (ME_BACK[0], ME_BACK[1], 1.5)), ((HX + 2.6, 5.4, 1.5), (ME_BACK[0], ME_BACK[1], 1.5)), 28, 32),
      {"me": P(ME_BACK, 0, "scared")})
@@ -512,7 +512,7 @@ shot("L44.5+0.2", "Mom steps away from her bare stand toward the riser",
 shot("L45.1+0.2", "low: Mom on the first riser step, the singers either side still on their ah, the Grin above leaning down",
      still((MUMX + 1.6, -3.9, 0.9), (MUMX, -5.65, 1.9), 30),
      {**choir(skip=("c4",)), "mumr": P((MUMX, -5.65, 0.3), 180, "soft"),
-      "grin": G(head=[40, 0], roll=14, tilt=-14, bend=18)}, fill=GF)
+      "grin": G(head=[40, 0], roll=18, tilt=-14, bend=18)}, fill=GF)
 shot("L46", "me at the back, mouth open on her name, ten lit",
      still((HX + 3.4, 4.6, 1.5), (ME_BACK[0], ME_BACK[1], 1.5), 28),
      {"me": P(ME_BACK, 0, "worried", talks=[("L46.1", "L46.2")])})
@@ -525,25 +525,25 @@ shot("P02", "hold on Mom's face",
      front(MUMP, 180, 1.6, 2.6, 2.5, 38, 6),
      {"mumr": P(MUMP, 180, "soft", blink=False)}, step=4)
 REV_CAM = ((MUMX - 1.0, -4.0, 3.2), (MUMX + 0.6, -7.0, 1.7), 24)
-REV_CAST = {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=30, tilt=-16),
+REV_CAST = {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=40, tilt=-22),
             "me": P((HX + 0.6, 5.0), 0, "scared")}
 shot("L47", "the reveal picture, wide: Mom's dark cord, the Grin at her ear, me at the back with ten lit",
-     still(*REV_CAM), REV_CAST, fill=[90, "#ffe2c4"])
+     still(*REV_CAM), REV_CAST, fill=[40, "#a8c4f0"])
 shot("L47.2", "punch in on Mom's dark cord",
      front(MUMP, 180, 1.4, 2.0, 1.9, 34, 12),
-     {"mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=30, tilt=-16)}, fill=GF)
+     {"mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=40, tilt=-22)}, fill=GF)
 shot("L48", "the gate again, wider: the man talks, ten lit; the neighbour's bead goes dark",
      still((-1.2, -5.3, 1.45), (-3.7, -3.5, 1.1), 30),
      {"gateman": P(GM, -90, "neutral", talks=[("L48", "L48.2")], arms=[40, 0]),
       "gatewoman": P(GW, yaw_to(GW, (-1.2, -5.3)), "neutral")})
 shot("L49", "back to the wide: the Grin at her ear",
-     still(*REV_CAM), REV_CAST, fill=[90, "#ffe2c4"])
+     still(*REV_CAM), REV_CAST, fill=[40, "#a8c4f0"])
 shot("L49.2", "close on the Grin at her ear",
-     still((MUMX - 0.5, -6.8, 2.5), (MUMX + 0.3, TWELFTH[1], 2.45), 44),
-     {"mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=30, tilt=-16)}, fill=GF)
+     still((HX - 3.0, -5.6, 2.2), (HX - 3.0, TWELFTH[1], 2.85), 34),
+     {"mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=40, tilt=-22)}, fill=GF)
 shot("L50", "punch in on Mom's face, smiling up at it",
      front(MUMP, 180, 1.6, 2.6, 2.5, 38, 6),
-     {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=30, tilt=-16)}, fill=GF)
+     {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=40, tilt=-22)}, fill=GF)
 shot("L51-0.4", "punch in on me at the back, scared, ten lit",
      front(ME_BACK, 0, 1.7, 1.55, 1.5, 34, 20),
      {"me": P(ME_BACK, 0, "scared")})
@@ -560,7 +560,7 @@ shot("L52.2", "me starting up the aisle between the dark rows, worried",
      {"me": P((HX - 0.2, 3.0), 0, "worried", walks=[("L52>", (HX - 0.2, -1.0))]), **hall()})
 shot("L53", "the eleven in the lamp light, round mouths, cords lit, Mom on the step among them",
      still((MUMX - 1.3, -5.0, 2.9), (MUMX + 1.0, TWELFTH[1], 2.1), 30),
-     {**choir("L53", "L53>"), "mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=30, tilt=-16)}, fill=GF)
+     {**choir("L53", "L53>"), "mumr": P(MUMP, 180, "soft"), "grin": G(head=[62, 0], roll=40, tilt=-22)}, fill=GF)
 shot("L53.2", "Mom's face, turned only toward the Grin",
      front(MUMP, 180, 1.6, 2.6, 2.5, 38, 6),
      {"mumr": P(MUMP, 180, "polite", tilt=12, head=[30, 0])})
@@ -572,7 +572,7 @@ shot("L55", "me at the foot of the riser below Mom, mouth open on a word; she do
      still((MUMX + 2.2, -2.2, 1.5), (MUMX, -4.8, 1.8), 30),
      {"me": P(FOOT, 180, "neutral", talks=[("L55", "L55.1", 0.55)]),
       "mumr": P((MUMX, -5.65, 0.3), 180, "soft", head=[0, 0]),
-      **choir(skip=("c4",)), "grin": G(head=[40, 0], roll=14, tilt=-14, bend=18)}, fill=GF)
+      **choir(skip=("c4",)), "grin": G(head=[40, 0], roll=18, tilt=-14, bend=18)}, fill=GF)
 shot("L55.2", "close on Mom's dark cord",
      front((MUMX, -5.65, 0.3), 180, 1.4, 1.5, 1.4, 34, 10),
      {"mumr": P((MUMX, -5.65, 0.3), 180, "soft")})
@@ -591,7 +591,7 @@ shot("L57.3", "close on my cord as I sing: all ten stay lit",
 shot("L58", "wide of the riser: Mom turned down to me, the Grin sat upright in its chair, facing front, head slightly down",
      move(((TW + 2.0, -3.4, 3.0), (TW + 0.2, TWELFTH[1], 1.9)), ((TW + 1.4, -3.9, 2.7), (TW + 0.2, TWELFTH[1], 1.9)), 22, 24),
      {**choir(skip=("c4",)), "mumr": P((MUMX, -5.65, 0.3), 180, "soft", head=[0, 12]),
-      "grin": G(head=[0, 14]), "me": P(FOOT, 180, "neutral", sings=[("L58", "L58>")])}, fill=[90, "#ffe2c4"])
+      "grin": G(head=[0, 14]), "me": P(FOOT, 180, "neutral", sings=[("L58", "L58>")])}, fill=[40, "#a8c4f0"])
 shot("L58.3", "behind the riser: eleven strokes scratched in a row, the stretch behind the twelfth chair bare",
      still((TW + 1.3, -11.05, 1.3), (TW + 1.3, -9.5, 1.25), 14),
      {**choir()}, step=4, hold=True)
@@ -833,7 +833,7 @@ story = {
     "key_color": "#ff7f9e",
     "gap": 0.12,
     "tail": 0,
-    "rev": 20,
+    "rev": 34,
     "look": {"fog": "#c8d4de", "fog_density": 0.01, "fog_start": 6.0, "sky": "#b6cde0", "sky_strength": 1.0,
              "exposure": 0.0, "flash_safe": True,
              "polish": {"reveal": ["L41", "L48", "L63"], "twist": "L62",
