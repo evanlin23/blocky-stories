@@ -59,6 +59,7 @@ SKY = {   # world colour, strength, window pane colour
     "night": ("#232d86", 0.8, "#1f2a86"),
     "day": ("#ffc9a8", 1.2, "#cfe8ff"),
     "peach": ("#ffbf9a", 1.1, "#ffd6b8"),
+    "ember": ("#9a6a9a", 1.0, "#1f2a86"),       # the street inserts at 96 s: warm mauve, half way between night and the Sun's glow
 }
 
 
@@ -321,6 +322,10 @@ def build(kit, story, tl):
     ctx["lawn_mat"], ctx["frost_mat"] = lawn, frost
     bare = P("#c9a27a", 0.95)
     kit.plane("ground", (400, 400), (0, 20, 0), frost)
+    frost2 = P("#fbfdff", 0.9)       # the neighbours' yards: thick white frost, so our bare patch is the only one without
+    ctx["frost2_mat"] = frost2
+    for nx in (-15.0, 13.0):
+        kit.box(f"nyard{nx}", (12, 20, 0.04), (nx, 9, 0.02), frost2)
     kit.box("lawn", (16, 20, 0.04), (-1, 9, 0.02), lawn)
     kit.cyl("bare", 4.6, 0.02, (0, 7.0, 0.045), bare, n=48)
     for i in range(-9, 8):
@@ -341,7 +346,7 @@ def build(kit, story, tl):
     for x, z in ((-3.5, 4.3), (0.0, 4.3)):
         kit.box(f"house.uw{x}", (1.4, 0.05, 1.2), (x, -0.97, z), kit.emit("#2f3fb0", 1.0, f"uw{x}"))
     # trees and bushes
-    for i, (x, y) in enumerate(((-14, 12), (14, 10), (-12, 26), (12, 28), (0, 34), (-26, 22), (26, 20))):
+    for i, (x, y) in enumerate(((14, 10), (12, 28), (0, 34), (26, 20))):
         kit.prop("sub_tree_large", (x, y, 0), height=5.5)
     for i, (x, y) in enumerate(((5.8, 3.0), (-8.0, 2.0), (-8.0, 16), (5.8, 16))):
         kit.prop("bush_1", (x, y, 0), height=1.2)
@@ -384,13 +389,15 @@ def build(kit, story, tl):
     sroot = kit.empty("sun", SUN)
     ctx["sun"] = sroot
     kit.sphere("sun.core", 2.35, (0, 0, 0), core, sroot, seg=24)
+    ctx["sun_ball"] = kit.sphere("sun.ball.sky", 2.4, (0, 0, 0), kit.emit("#ffa800", 1.25, "sky sun"), sroot, seg=32)
     k = 0
+    ctx["sun_blks"] = []
     for ix in (-1, 0, 1):
         for iy in (-1, 0, 1):
             for iz in (-1, 0, 1):
                 if abs(ix) + abs(iy) + abs(iz) == 3:
                     continue
-                kit.box(f"sun.blk{k}", (1.55, 1.55, 1.55), (ix * PITCH, iy * PITCH, iz * PITCH), gold, sroot, bevel=0.42, seg=4)
+                ctx["sun_blks"].append(kit.box(f"sun.blk{k}", (1.55, 1.55, 1.55), (ix * PITCH, iy * PITCH, iz * PITCH), gold, sroot, bevel=0.42, seg=4))
                 k += 1
     ex, ey, ez = EYE[0] - SUN[0], EYE[1] - SUN[1], EYE[2] - SUN[2]
     eye_parts = []
@@ -456,6 +463,7 @@ def build(kit, story, tl):
     Y.light("shedlamp", "POINT", (sx, sy - 2.4, 1.6), 250.0, "#ffd18a", size=0.5)
     ob = Y.light("rim", "SPOT", (-5.0, 0.5, 5.0), 500.0, "#9fb8ff", size=0.5, spot=60, blend=0.6)
     kit.aim(ob, (-0.5, 5.5, 1.6))
+    Y.light("inwarm", "POINT", (3.0, 9.0, 2.4), 450.0, "#ffb347", size=0.8)
     ob = Y.light("daykey", "SUN", (0, 0, 20), 3.0, "#ffe2c8", rot=(math.radians(35), 0, math.radians(20)))
     Y.light("stepl", "POINT", (0.0, -0.3, 2.6), 35.0, "#ffd9a8", size=0.4)
     ctx["st"]["yard"] = Y
@@ -770,8 +778,8 @@ def animate(kit, story, tl, t, ctx):
     stage = spec.get("stage", "yard")
     sky = spec.get("sky", "dawn")
     set_sky(kit, sky)
-    dk = sky in ("dark", "night")
-    for mat, c_day, c_dark in ((ctx["lawn_mat"], "#58b866", "#1f6a58"), (ctx["frost_mat"], "#e3eef8", "#6f86b8")):
+    dk = sky in ("dark", "night", "ember")
+    for mat, c_day, c_dark in ((ctx["lawn_mat"], "#58b866", "#1f6a58"), (ctx["frost_mat"], "#e3eef8", "#6f86b8"), (ctx["frost2_mat"], "#fbfdff", "#9fb4e4")):
         mat.node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value = kit.col(c_dark if dk else c_day)
     over = {}
     keys_on = {"key": spec.get("key", 1.0), "kfill": spec.get("kfill", 1.0)}
@@ -792,6 +800,9 @@ def animate(kit, story, tl, t, ctx):
     root.location = tuple(pos)
     root.scale = (sc * breathe,) * 3
     far = pos[1] > 25
+    for ob in ctx["sun_blks"]:      # the ordinary sun in the sky is a plain glowing ball
+        ob.hide_render = bool(far)
+    ctx["sun_ball"].hide_render = not far
     for ob in ctx["eye_parts"] + [ctx["lidg"]] + list(ctx["lidg"].children):
         ob.hide_render = face < 0.5
     eye = ramp(tl, "eye", t, "v", 0.0)
@@ -810,9 +821,10 @@ def animate(kit, story, tl, t, ctx):
     kit.LIGHTS["yard.sunfill"]["obj"].location = (pos[0], pos[1] - 8.0 * sc, pos[2] + 1.5)
     daylevel = {"dawn": 1.0, "peach": 1.0, "day": 1.0}.get(sky, 0.0)
     over["yard.daykey"] = daylevel * ss((pos[1] - 15.0) / 25.0)
-    over["yard.rim"] = 1.0 if sky in ("night", "dark") else 0.0
+    over["yard.rim"] = 1.0 if sky in ("night", "dark", "ember") else 0.0
     over["yard.shedlamp"] = 1.0
-    over["yard.stepl"] = 1.0 if sky in ("night", "dark") else 0.0
+    over["yard.inwarm"] = spec.get("warm", 0.0)
+    over["yard.stepl"] = 1.0 if sky in ("night", "dark", "ember") else 0.0
     # ---- the rope
     mode = (latest(tl, "rope", t) or {}).get("mode", "slack")
     taut = ctx["rope_taut"]
@@ -875,7 +887,7 @@ def animate(kit, story, tl, t, ctx):
     half_w = half_h * 9 / 16
     big = ramp(tl, "clock", t, "big", 0.0)
     dia = 0.44 * 2 * half_w * (1 + 0.5 * big)
-    cxp = (0.40 - 0.2 * big) * half_w
+    cxp = (0.40 * spec.get("hudx", 1.0) - 0.2 * big) * half_w
     cyp = (0.56 - 0.1 * big) * half_h
     hud.location = (cxp, cyp, -dist)
     ring = ramp(tl, "clock", t, "ring", 0.0)

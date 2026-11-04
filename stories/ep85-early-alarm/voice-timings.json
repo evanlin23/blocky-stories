@@ -218,14 +218,14 @@
    ]
   },
   "L10": {
-   "text": "I come down at seven, and he's already at the table,",
+   "text": "I come down at six, and he's already at the table,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.448,
+   "dur": 2.414,
    "onset": 0.155,
-   "end": 2.259,
+   "end": 2.224,
    "chunks": [
     [
      0.155,
@@ -233,15 +233,15 @@
     ],
     [
      0.578,
-     1.034
+     1.017
     ],
     [
-     1.103,
-     1.594
+     1.069,
+     1.561
     ],
     [
-     1.594,
-     2.259
+     1.561,
+     2.224
     ]
    ]
   },
@@ -854,26 +854,22 @@
    ]
   },
   "L35": {
-   "text": "We had our worst fight in years.",
+   "text": "We had our worst fight",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.655,
-   "onset": 0.155,
-   "end": 1.466,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.069,
    "chunks": [
     [
-     0.155,
-     0.319
+     0.172,
+     0.448
     ],
     [
-     0.319,
-     0.828
-    ],
-    [
-     0.828,
-     1.466
+     0.448,
+     1.069
     ]
    ]
   },
@@ -1754,14 +1750,14 @@
    ]
   },
   "L67": {
-   "text": "And at five fifty-eight, the sun went up over our shed, straight.",
+   "text": "And at five fifty-eight, the sun went up over our shed,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.655,
+   "dur": 2.448,
    "onset": 0.155,
-   "end": 2.448,
+   "end": 2.241,
    "chunks": [
     [
      0.155,
@@ -1769,23 +1765,19 @@
     ],
     [
      0.293,
-     0.897
+     0.931
     ],
     [
-     0.94,
-     1.215
+     0.983,
+     1.276
     ],
     [
-     1.215,
-     1.422
+     1.276,
+     1.647
     ],
     [
-     1.422,
-     1.879
-    ],
-    [
-     1.914,
-     2.448
+     1.647,
+     2.241
     ]
    ]
   },
