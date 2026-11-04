@@ -260,8 +260,8 @@ hold("L05", "rcp", "me", PALM)
 world("L05+0.5", "rcp", [-1.52, 3.45, 1.012], rz=0, dur=0.4)
 hold("L05+0.95", "rcp", "tulley", (0.51, -0.7, 1.27))
 unobj("L05+1.4", "rcp")
-hold("L05.1", "shim", "me", (0.0, 0.25, 1.2))
-hold("L05.2", "shim", "me", (0.0, 0.42, 2.0), dur=0.7)
+hold("L05.1", "shim", "me", (0.0, 0.4, 1.1))
+hold("L05.2", "shim", "me", (0.0, 1.0, 1.9), dur=0.7)
 beat("me", "L05.2", arms=[0, 0], expr="soft")
 shot("L05", cam(-1.5, 3.4, 1.35, 2.4, az=90, el=6, lens=40, push=0.1), look="night", name="s5a")
 shot("L05.1", cam(MX, MY + 0.1, 1.5, 1.6, az=60, el=8, lens=45, push=0.1), name="s5b")
@@ -305,7 +305,7 @@ go("oduya", "L09.2+0.7", [ODX + 4.6, -2.35])
 cue("L09.2+0.3", "mbx", f=0.0)
 cue("L09.2+0.4", "mbx", f=1.0, dur=0.3)
 shot("L09", cam(ODX + 4.6, 0.0, 1.0, 6.0, az=90, lens=40, push=0.1), look="day", name="s9a")
-shot("L09.1", cam(ODX + 4.6, 2.0, 1.5, 1.1, az=180, lens=50, push=0.1, sh=(0, -2.5, 0)), name="s9b")
+shot("L09.1", cm([ODX + 6.4, -3.2, 1.7], [ODX + 4.6, 1.2, 1.5], [ODX + 6.0, -3.0, 1.7], [ODX + 4.6, -0.4, 1.5], 45), name="s9b")
 shot("L09.2", cam(ODX + 4.6, -3.0, 0.9, 3.8, az=120, lens=40, push=0.1), name="s9c")
 only("L09.3", ["oduya"])
 sit("oduya", "L09.3", False)
@@ -436,9 +436,8 @@ shot("L20", cam(-1.4, 3.35, 1.02, 1.1, el=40, lens=40, push=0.12), name="s20")
 only("L21", ["me"])
 unobj("L21", "rcp")
 shot("L21", cam(CX + 0.5, -4.5, 1.1, 5.2, az=160, lens=40, push=0.1, dz=0.4), look="day", name="s21a")
-put("me", "L21.1", [HALLX, 8.0], 0, expr="worried", arms=[88, 88], head=[0, 14])
-go("me", "L21.1+1.2", [HALLX, 4.2])
-hold("L21.1", "cbox", "me", BOTH)
+put("me", "L21.1", [HALLX, 4.2], 0, expr="worried", arms=[88, 88], head=[0, 14])
+hold("L21.1", "cbox", "me", (0.0, -0.95, 1.05))
 shot("L21.1", cam(HALLX, 5.5, 1.35, 2.3, lens=40, push=0.1), name="s21b")
 # L22: locked out in the rain
 only("L22", ["me"])
@@ -618,7 +617,7 @@ shot("L45.1", cm([3.4, 25.3, 0.55], [4.45, 26.4, 0.12], [3.5, 25.5, 0.5], [4.45,
 shot("L46", cam(3.5, 24.5, 1.3, 0.6, lens=45, az=-10, push=0.12, dz=0.0), name="s46a")
 only("L46.1", ["me"])
 put("me", "L46.1", [HALLX, 4.2], 0, expr="worried", arms=[88, 88], head=[0, 14])
-hold("L46.1", "cbox", "me", BOTH)
+hold("L46.1", "cbox", "me", (0.0, -0.95, 1.05))
 shot("L46.1", cam(HALLX, 4.2, 1.35, 2.0, lens=40, push=0.1), look="day", name="s46b")
 # L47: I stepped out from behind the shelf
 unobj("L47", "cbox")
@@ -627,7 +626,7 @@ put("me", "L47", [-1.9, 27.4], 270, expr="neutral", arms=[0, 0])
 go("me", "L47.1", [0.0, 28.0], yaw=90)
 go("me", "L47.1+1.0", [1.6, 27.3], yaw=90)
 go("me", "L47.2", [2.3, 26.6], yaw=60)
-shot("L47", cm([-0.2, 22.5, 1.6], [0.0, 28.0, 1.5], [0.4, 22.5, 1.6], [0.6, 27.6, 1.5], 40), look="dim", name="s47a")
+shot("L47", cm([2.5, 21.0, 1.5], [0.8, 27.6, 1.4], [2.5, 21.6, 1.5], [1.2, 27.4, 1.4], 34), look="dim", name="s47a")
 only("L47.2", ["me", "dad"])
 put("dad", "L47.2", [3.0, 25.3], 0, expr="startled", arms=[0, 88])
 hold("L47.2", "gb2", "dad", PALM)
@@ -668,7 +667,7 @@ put("dad", "L52", [3.45, 20.4], 90, expr="sad-smile", arms=[0, 60])
 sit("dad", "L52", True, 0.17)
 go("dad", "L52.1+0.2", [3.45, 21.6])
 go("dad", "L52.2", [3.45, 22.8])
-shot("L52", cam(3.9, 20.8, 0.6, 1.6, az=-75, el=8, lens=40, push=0.12, sh=(0, 1.2, 0)), name="s52a")
+shot("L52", cam(3.9, 20.8, 0.6, 1.6, az=-45, el=8, lens=32, push=0.12, sh=(0, 1.2, 0)), name="s52a")
 shot("L52.2", cm([3.0, 17.0, 0.55], [4.3, 22.5, 0.3], [3.2, 17.8, 0.55], [4.3, 23.5, 0.3], 36), name="s52b")
 # L53: car broke down, you called; locked out, you called
 only("L53", ["me"])
@@ -697,8 +696,8 @@ shot("L54.1", cam(2.3, 26.6, 1.52, 0.95, az=-60, lens=50, push=0.1), name="s54b"
 only("L55", ["me", "tulley"])
 put("me", "L55", [MX, MY], 180, expr="soft", arms=[0, 0])
 put("tulley", "L55", [TX, TY], 0, expr="polite", arms=[0, 0])
-hold("L55", "shim", "me", (0.0, 0.25, 1.2))
-hold("L55.1", "shim", "me", (0.0, 0.42, 2.0), dur=0.7)
+hold("L55", "shim", "me", (0.0, 0.4, 1.1))
+hold("L55.1", "shim", "me", (0.0, 1.0, 1.9), dur=0.7)
 unobj("L55.2", "shim")
 shot("L55", cam(-1.5, 3.4, 1.35, 2.4, az=90, el=6, lens=40, push=0.1), look="night", name="s55a")
 only("L55.2", [])
@@ -771,13 +770,15 @@ beat("me", "L61+0.2", arms=[0, 140], head=[0, 14])
 shot("L61", cam(2.3, 26.6, 1.52, 0.9, az=-60, lens=50, push=0.12), name="s61")
 # L62: I found out I don't call my Dad on the good ones
 only("L62", ["me", "dad"])
-put("me", "L62", [AR - 0.5, 10.3], 0, expr="soft", arms=[0, 0])
-put("dad", "L62", [AR + 0.5, 10.3], 0, expr="soft", arms=[0, 0])
-shot("L62", cam(AR, 10.3, 1.35, 2.5, lens=50, push=0.1, dz=0.0), look="dim", name="s62a")
+bdoor("L62-0.3", -165, dur=0.3)
+put("me", "L62", [2.1, 11.2], 0, expr="soft", arms=[0, 0])
+put("dad", "L62", [3.03, 11.2], 0, expr="soft", arms=[0, 0])
+shot("L62", cm([2.4, 1.6, 2.3], [2.57, 11.2, 1.4], [2.45, 2.2, 2.3], [2.57, 11.2, 1.4], 50), look="dim", name="s62a")
 only("L62.2", ["me"])
 beat("me", "L62.2", arms=[88, 88], expr="soft")
 hold("L62.2", "phone", "me", (0.0, -0.45, 1.5))
-shot("L62.2", cam(AR, 10.3, 1.5, 0.95, az=0, lens=50, push=0.1), name="s62b")
+shot("L62.2", cam(2.1, 11.2, 1.5, 0.95, az=0, lens=50, push=0.1), name="s62b")
+bdoor("L63", 0, dur=0.5)
 # L63: but I didn't return it
 only("L63", ["me"])
 unobj("L63", "phone")
@@ -850,7 +851,7 @@ shot("L70", cam(-3.5, -6.1, 1.4, 4.4, az=-10, lens=40, push=0.1, sh=(1.0, 0, 0))
 put("tulley", "L70.1", [2.4, -2.6], 0, expr="knowing", arms=[0, 150])
 visible.add("tulley")
 beat("tulley", "L70.1+0.5", arms=[0, 135])
-shot("L70.1", cam(2.5, -4.1, 1.5, 2.2, az=0, lens=40, push=0.1), name="s70b")
+shot("L70.1", cam(2.4, -3.4, 1.5, 1.5, az=0, lens=40, push=0.1), name="s70b")
 # L71: Dad taps the window and reads me the fine print (and the loop back to the counter)
 only("L71", ["dad", "tulley"])
 put("dad", "L71", [2.0, -5.0], 180, expr="laugh", arms=[0, 100])
@@ -949,7 +950,7 @@ story = {
     "fade_out": False,
     "rev": REV,
     "look": {"style": "closer", "fog": "#cfe6f5", "fog_density": 0.002, "fog_start": 40.0, "sky": "#8fd3ff",
-             "sky_strength": 1.0, "exposure": 0.2, "flash_safe": True, "polish": polish},
+             "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True, "polish": polish},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.012, -0.02], "saturation": 1.1, "contrast": 1.05,
               "vignette": 0.2, "bloom": 0.2, "grain": 0.008},
     "phonemes": {"Oduya": "ˌOdˈujə"},
@@ -964,7 +965,7 @@ story = {
     "rain_shots": [names["s22"], names["s53b"]],
     "set_moves": [],
     "clip_ok": ["mbx", "van", "S09", "S10", "bk"],
-    "asr_forgive": ["tulley's", "tulley", "mister", "missus", "returned", "dollars", "i've", "we'd", "every", "one", "unhappens"],
+    "asr_forgive": ["mister tulley", "tulley's", "tulley", "mister", "missus", "returned", "dollars", "i've", "we'd", "every", "one", "unhappens"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

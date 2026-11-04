@@ -35,8 +35,8 @@ def kit_col(h):
 
 
 def _L(**kw):
-    base = dict(sun=2.6, sun_col="#fff0d8", el=50.0, az=150.0, fill=0.9, fill_col="#fff0e0", sky="#8fd3ff", sky_str=1.0,
-                front=0.5, st=0.0)
+    base = dict(sun=1.8, sun_col="#fff0d8", el=50.0, az=150.0, fill=0.55, fill_col="#fff0e0", sky="#8fd3ff", sky_str=0.85,
+                front=0.3, st=0.0)
     base.update(kw)
     return base
 
@@ -250,10 +250,10 @@ def shop(kit, P):
         W["lampmats"].append(m)
         kit.cyl(f"lamp{i}.cord", 0.012, 1.1, (lx, 1.5, 3.85), plastic("#444444", 0.6), n=6)
         kit.sphere(f"lamp{i}.bulb", 0.2, (lx, 1.5, 3.2), m, seg=10)
-        kit.light(f"pl{i}", "POINT", (lx, 1.5, 3.1), 520.0, "#ffe9c4", size=0.3, shadow=False)
-    kit.light("ctr", "POINT", (-1.0, 2.2, 2.4), 260.0, "#fff0d8", size=0.4, shadow=False)
-    kit.light("shopfill", "POINT", (0.0, 6.5, 3.4), 260.0, "#fff4e0", size=0.5, shadow=False)
-    kit.light("shopfill2", "POINT", (0.0, -1.5, 2.8), 160.0, "#fff4e0", size=0.5, shadow=False)
+        kit.light(f"pl{i}", "POINT", (lx, 1.5, 3.1), 240.0, "#ffe9c4", size=0.3, shadow=False)
+    kit.light("ctr", "POINT", (-1.0, 2.2, 2.4), 110.0, "#fff0d8", size=0.4, shadow=False)
+    kit.light("shopfill", "POINT", (0.0, 6.5, 3.4), 110.0, "#fff4e0", size=0.5, shadow=False)
+    kit.light("shopfill2", "POINT", (0.0, -1.5, 2.8), 70.0, "#fff4e0", size=0.5, shadow=False)
     # shelf behind the counter with a few little boxes already on it
     wood = plastic("#b78456", 0.7, spec=0.1)
     for z in (1.3, 1.95):
@@ -452,8 +452,8 @@ def kitchen(kit, P):
         for k in range(n):
             boxes.append((kx + 3.6 + k * 0.2 + (0.1 if n == 11 else 0.0), 8.82, z + 0.025 + 0.11, 0.17, 0.28, 0.22))
     merged(kit, "kboxes", boxes, P["gray"])
-    kit.light("kitl", "POINT", (kx, 3.5, 3.0), 380.0, "#ffe6c0", size=0.5, shadow=False)
-    kit.light("kitl2", "POINT", (kx + 2.4, 5.0, 2.6), 260.0, "#fff0d8", size=0.5, shadow=False)
+    kit.light("kitl", "POINT", (kx, 3.5, 3.0), 190.0, "#ffe6c0", size=0.5, shadow=False)
+    kit.light("kitl2", "POINT", (kx + 2.4, 5.0, 2.6), 120.0, "#fff0d8", size=0.5, shadow=False)
 
 
 def house_out(kit, P):
@@ -471,7 +471,7 @@ def house_out(kit, P):
     kit.box("hh.porch", (2.4, 1.2, 0.18), (hx + 1.0, 5.2, 0.09), plastic("#efe6d4", 0.8))
     kit.sphere("hh.lamp", 0.14, (hx + 2.0, 5.85, 2.7), kit.emit("#ffe2a0", 4.0, "hhlamp"), seg=10)
     kit.light("porch", "POINT", (hx + 2.0, 5.2, 2.7), 220.0, "#ffd9a0", size=0.3, shadow=False)
-    kit.light("hhfill", "POINT", (hx, -1.5, 3.0), 260.0, "#fff0d8", size=0.6, shadow=False)
+    kit.light("hhfill", "POINT", (hx, -1.5, 3.0), 130.0, "#fff0d8", size=0.6, shadow=False)
     for i, x in enumerate((-18, -9, 10, 19)):
         bldg(kit, f"hhn{i}", hx + x, 9.0, 7.0, 6.0, 4.2 + (i % 2), ["#f2c9a8", "#e8b49c", "#f6d8b8", "#ee9c86"][i], face=-1)
     tree(kit, "hhtree", hx - 5.5, 3.0, 4.8)
@@ -496,7 +496,7 @@ def road(kit, P):
     wm = plastic("#fafafa", 0.9, spec=0.0)
     for k in range(6):
         W["steam"].append(kit.sphere(f"steam{k}", 0.2, (cx + 1.9, -4.5, 1.2), wm, seg=8))
-    kit.light("rfill", "POINT", (cx, -8.0, 3.0), 200.0, "#fff0d8", size=0.6, shadow=False)
+    kit.light("rfill", "POINT", (cx, -8.0, 3.0), 100.0, "#fff0d8", size=0.6, shadow=False)
 
 
 def hall(kit, P):
@@ -513,8 +513,8 @@ def hall(kit, P):
             kit.box(f"hld{sx}{k}", (0.08, 1.1, 2.3), (hx + sx * 4.44, y, 1.15), plastic("#b88a5a", 0.6))
     kit.box("hlwin", (3.0, 0.06, 2.2), (hx, 11.95, 1.9), kit.emit("#dff2ff", 1.4, "hlwinglow"))
     kit.box("hlwinfr", (3.3, 0.04, 2.5), (hx, 11.93, 1.9), plastic("#fffaf0", 0.7))
-    kit.light("halll", "POINT", (hx, 5.0, 3.0), 420.0, "#fff4e0", size=0.6, shadow=False)
-    kit.light("halll2", "POINT", (hx, -1.0, 2.6), 250.0, "#fff4e0", size=0.6, shadow=False)
+    kit.light("halll", "POINT", (hx, 5.0, 3.0), 220.0, "#fff4e0", size=0.6, shadow=False)
+    kit.light("halll2", "POINT", (hx, -1.0, 2.6), 120.0, "#fff4e0", size=0.6, shadow=False)
 
 
 def rainstep(kit, P):
@@ -529,7 +529,7 @@ def rainstep(kit, P):
     kit.box("rs.step2", (2.0, 0.7, 0.4), (rx, 5.7, 0.2), plastic("#c8ccd4", 0.5))
     kit.sphere("rs.lamp", 0.14, (rx + 1.4, 5.85, 2.8), kit.emit("#ffe2a0", 2.0, "rslamp"), seg=10)
     kit.light("rsl", "POINT", (rx + 1.4, 5.0, 2.8), 120.0, "#ffd9a0", size=0.3, shadow=False)
-    kit.light("rsfill", "POINT", (rx, 0.5, 3.0), 280.0, "#e8f0ff", size=0.6, shadow=False)
+    kit.light("rsfill", "POINT", (rx, 0.5, 3.0), 140.0, "#e8f0ff", size=0.6, shadow=False)
     for i, x in enumerate((-9, 9)):
         bldg(kit, f"rsn{i}", rx + x, 8.0, 7.0, 6.0, 4.5, ["#e8b49c", "#f2c9a8"][i], face=-1)
     tree(kit, "rstree", rx - 4.5, 3.0, 5.0, tint="#a8c4a0")
@@ -566,7 +566,7 @@ def driveway(kit, P):
         kit.box(f"van.tl{sx}", (0.3, 0.06, 0.16), (sx * 0.65, -2.33, 0.75), kit.emit("#e2463c", 1.4), van)
     kit.box("van.seat", (0.7, 0.5, 0.3), (0, 0.15, 0.8), plastic("#444a52", 0.8), van)
     W["van"] = van
-    kit.light("odfill", "POINT", (ox + 3.0, -2.0, 3.0), 200.0, "#fff0d8", size=0.6, shadow=False)
+    kit.light("odfill", "POINT", (ox + 3.0, -2.0, 3.0), 100.0, "#fff0d8", size=0.6, shadow=False)
 
 
 def lobby(kit, P):
@@ -574,7 +574,9 @@ def lobby(kit, P):
     lx = G.LOBX
     kit.plane("lbfloor", (16, 14), (lx, 4, 0.02), plastic("#8aa0c0", 0.5, spec=0.3))
     wl = plastic("#f1ece0", 0.85, spec=0.05)
-    bx(kit, "lbb", lx - 8, lx + 8, 10.0, 10.2, 0, 4.0, wl)
+    bx(kit, "lbb0", lx - 8, lx + 3.7, 10.0, 10.2, 0, 4.0, wl)
+    bx(kit, "lbb1", lx + 6.7, lx + 8, 10.0, 10.2, 0, 4.0, wl)
+    bx(kit, "lbb2", lx + 3.7, lx + 6.7, 10.0, 10.2, 2.8, 4.0, wl)
     bx(kit, "lbl", lx - 8.2, lx - 8.0, -3.0, 10.2, 0, 4.0, wl)
     bx(kit, "lbr", lx + 8.0, lx + 8.2, -3.0, 10.2, 0, 4.0, wl)
     kit.box("lb.win", (4.2, 0.06, 2.4), (lx - 3.0, 9.94, 2.0), kit.emit("#dff2ff", 1.3, "lbwinglow"))
@@ -592,8 +594,8 @@ def lobby(kit, P):
     kit.box("el.lamp", (1.6, 1.4, 0.04), (ex, 11.3, 2.66), kit.emit("#fff4e0", 2.5, "ellamp"))
     bx(kit, "el.dL", ex - 1.5, ex - 1.1, 10.1, 10.25, 0, 2.7, plastic("#b4bac4", 0.4, spec=0.6))
     bx(kit, "el.dR", ex + 1.1, ex + 1.5, 10.1, 10.25, 0, 2.7, plastic("#b4bac4", 0.4, spec=0.6))
-    kit.light("lobl", "POINT", (lx, 3.0, 3.2), 420.0, "#fff4e0", size=0.6, shadow=False)
-    kit.light("lobl2", "POINT", (lx + 4.0, 5.0, 3.0), 260.0, "#fff4e0", size=0.6, shadow=False)
+    kit.light("lobl", "POINT", (lx, 3.0, 3.2), 220.0, "#fff4e0", size=0.6, shadow=False)
+    kit.light("lobl2", "POINT", (lx + 4.0, 5.0, 3.0), 120.0, "#fff4e0", size=0.6, shadow=False)
 
 
 def apartment(kit, P):
@@ -636,9 +638,9 @@ def apartment(kit, P):
     kit.box("stack.b1", (0.26, 0.04, 0.22), (ax + 3.8, 6.8, z0 + 0.84), plastic("#e2463c", 0.6))
     kit.box("stack.b2", (0.26, 0.04, 0.22), (ax + 3.8, 7.02, z0 + 0.84), plastic("#e2463c", 0.6))
     prop(kit, "houseplant_1", (ax + 5.2, 7.2, z0), height=1.2)
-    kit.light("apl", "POINT", (ax, 3.0, z0 + 3.0), 380.0, "#fff4e0", size=0.6, shadow=False)
-    kit.light("apl2", "POINT", (ax - 2.0, 6.0, z0 + 2.6), 220.0, "#fff4e0", size=0.6, shadow=False)
-    kit.light("apst", "POINT", (ax, 13.0, 3.0), 300.0, "#fff4e0", size=0.8, shadow=False)
+    kit.light("apl", "POINT", (ax, 3.0, z0 + 3.0), 200.0, "#fff4e0", size=0.6, shadow=False)
+    kit.light("apl2", "POINT", (ax - 2.0, 6.0, z0 + 2.6), 110.0, "#fff4e0", size=0.6, shadow=False)
+    kit.light("apst", "POINT", (ax, 13.0, 3.0), 150.0, "#fff4e0", size=0.8, shadow=False)
     # the fan of stamped receipts on the table (seven, each with a red ring)
     for k in range(7):
         a = (k - 3) * 17
@@ -696,9 +698,9 @@ def macro(kit, P):
     kit.cyl("mag.hole", 0.34, 0.06, (0, 0, 0), kit.plastic("#fffdf0", 0.2, spec=0.9), mg, rot=(math.pi / 2, 0, 0), n=28)
     kit.box("mag.handle", (0.08, 0.06, 0.6), (0.28, 0, -0.62), plastic("#8a5a3a", 0.6), mg, rot=(0, 0.45, 0))
     W["mag"] = mg
-    kit.light("macl", "POINT", (bx_ + 3.0, -3.0, 3.0), 400.0, "#fff4e0", size=0.8, shadow=False)
-    kit.light("macl2", "POINT", (bx_ + 14.0, -3.0, 3.0), 300.0, "#fff4e0", size=0.8, shadow=False)
-    kit.light("macl3", "POINT", (bx_, -3.0, 3.0), 300.0, "#fff4e0", size=0.8, shadow=False)
+    kit.light("macl", "POINT", (bx_ + 3.0, -3.0, 3.0), 110.0, "#fff4e0", size=0.8, shadow=False)
+    kit.light("macl2", "POINT", (bx_ + 14.0, -3.0, 3.0), 90.0, "#fff4e0", size=0.8, shadow=False)
+    kit.light("macl3", "POINT", (bx_, -3.0, 3.0), 90.0, "#fff4e0", size=0.8, shadow=False)
 
 
 # ---------------------------------------------------------------------------------------------- the tag
@@ -711,7 +713,7 @@ def build_tag(kit):
     paper = kit.emit("#fbf4e0", 1.0, "tagpaper")
     edge = kit.emit("#2a2a33", 0.5, "tagedge")
     ink = kit.emit("#1c1c24", 0.5, "tagink")
-    redm = kit.emit("#ff2e22", 2.0, "tagred")
+    redm = kit.emit("#e8281e", 1.0, "tagred")
     grayg = kit.emit("#8d939b", 0.9, "taggray")
     grayd = kit.emit("#4d535c", 0.6, "taggraydark")
     brassm = kit.emit("#f0b53c", 1.2, "tagbrass")
@@ -722,17 +724,17 @@ def build_tag(kit):
         return ob
 
     def cyl(name, r, loc, mat, parent=root):
-        ob = kit.cyl(name, r, 0.004, loc, mat, parent, rot=(math.pi / 2, 0, 0), n=24)
+        ob = kit.cyl(name, r, 0.004, loc, mat, parent, n=24)
         noshadow(ob)
         return ob
 
     # row 1
     b("tag.edge", (1.56, 0.68, 0.004), (0, 0, 0.0), edge)
     b("tag.paper", (1.48, 0.6, 0.004), (0, 0, 0.004), paper)
-    # the box glyph: a gray box with a darker lid and a tied string
-    b("tag.bx", (0.34, 0.26, 0.004), (-0.52, -0.04, 0.008), grayg)
-    b("tag.bxlid", (0.4, 0.1, 0.004), (-0.52, 0.12, 0.012), grayd)
-    b("tag.bxstr", (0.04, 0.3, 0.004), (-0.52, -0.02, 0.016), ink)
+    # the box glyph: a gray box with a lighter overhanging lid (a little tied-up shoebox)
+    b("tag.bx", (0.36, 0.3, 0.004), (-0.54, -0.07, 0.008), grayd)
+    b("tag.bxlid", (0.44, 0.12, 0.004), (-0.54, 0.12, 0.012), grayg)
+    b("tag.bxstk", (0.14, 0.1, 0.004), (-0.54, -0.07, 0.016), paper)
     # the digits "47" in seven segments
     def seg7(prefix, x, segs, y=0.0, root_=root, mat=ink, hh=0.48, ww=0.27, t=0.075):
         pos = {"a": (0, hh / 2 - t / 2, ww - t, t), "g": (0, 0, ww - t, t), "d": (0, -hh / 2 + t / 2, ww - t, t),
@@ -745,11 +747,11 @@ def build_tag(kit):
     seg7("tag.d4", -0.14, "fgbc")
     seg7("tag.d7", 0.2, "abc")
     # the lit red ring
-    ringg = kit.empty("tag.ringg", (0.58, 0.0, 0.0), root)
+    ringg = kit.empty("tag.ringg", (0.56, 0.0, 0.0), root)
     W["ring"] = ringg
-    cyl("tag.ring", 0.2, (0, 0, 0.008), redm, ringg)
-    cyl("tag.ringin", 0.12, (0, 0, 0.012), paper, ringg)
-    b("tag.ringbar", (0.34, 0.06, 0.004), (0, 0, 0.016), redm, ringg).rotation_euler = (0, 0, 0.0)
+    cyl("tag.ring", 0.24, (0, 0, 0.008), redm, ringg)
+    cyl("tag.ringin", 0.13, (0, 0, 0.012), paper, ringg)
+    b("tag.ringbar", (0.4, 0.07, 0.004), (0, 0, 0.016), redm, ringg)
     # row 2 (grows in at L64): a key and 1
     r2 = kit.empty("tag.r2", (0, 0, 0), root)
     W["r2"] = r2
@@ -983,7 +985,7 @@ def animate(kit, story, tl, t, ctx):
         W["van"].hide_render = od.hide_render
         for c in W["van"].children_recursive:
             c.hide_render = od.hide_render
-        W["van"].rotation_euler = (0, 0, od.rotation_euler.z + 0.0)
+        W["van"].rotation_euler = (0, 0, od.rotation_euler.z + math.pi)
     # the coffee stain
     stc = sample("stain", tl, t, {"v": 1.0})
     if W.get("stain") is not None:
