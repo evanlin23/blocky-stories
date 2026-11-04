@@ -1,0 +1,2121 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In this lighthouse, after dark you have to stay on your floor.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.19,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.19,
+     0.828
+    ],
+    [
+     0.897,
+     1.285
+    ],
+    [
+     1.285,
+     1.517
+    ],
+    [
+     1.517,
+     1.784
+    ],
+    [
+     1.784,
+     2.414
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Not even for a text.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.19
+    ]
+   ]
+  },
+  "L03": {
+   "text": "The tower slept two, her room halfway up, mine at the top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.155,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.879
+    ],
+    [
+     0.931,
+     1.172
+    ],
+    [
+     1.172,
+     1.603
+    ],
+    [
+     1.638,
+     1.854
+    ],
+    [
+     1.854,
+     2.414
+    ]
+   ]
+  },
+  "L04": {
+   "text": "So we ate dinner at four, racing the dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.664
+    ],
+    [
+     0.664,
+     0.983
+    ],
+    [
+     1.017,
+     1.828
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Date night ended at sunset, with a high five on the stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.207
+    ],
+    [
+     1.276,
+     1.414
+    ],
+    [
+     1.414,
+     1.837
+    ],
+    [
+     1.837,
+     2.603
+    ]
+   ]
+  },
+  "L06": {
+   "text": "We said goodnight by text. Every night after, I woke up at the rail.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.103,
+   "onset": 0.155,
+   "end": 2.914,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.293
+    ],
+    [
+     1.388,
+     1.914
+    ],
+    [
+     1.939,
+     2.268
+    ],
+    [
+     2.268,
+     2.914
+    ]
+   ]
+  },
+  "L07": {
+   "text": "That first night, I typed, \"love you,\" then deleted it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     1.0
+    ],
+    [
+     1.103,
+     1.431
+    ],
+    [
+     1.534,
+     2.362
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Too soon. She'd run a mile.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     0.75
+    ],
+    [
+     0.75,
+     1.328
+    ]
+   ]
+  },
+  "L09": {
+   "text": "She sent back one little kiss, and I lay there grinning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.19
+    ],
+    [
+     1.259,
+     1.431
+    ],
+    [
+     1.431,
+     1.733
+    ],
+    [
+     1.733,
+     2.31
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Her light went out halfway down the tower.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.672
+    ],
+    [
+     0.672,
+     1.094
+    ],
+    [
+     1.094,
+     1.724
+    ]
+   ]
+  },
+  "L11": {
+   "text": "And the stairs between us went dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.983
+    ],
+    [
+     0.983,
+     1.586
+    ]
+   ]
+  },
+  "L12": {
+   "text": "The stairs were steep, and the storm door at the bottom opened onto the sea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.19,
+   "onset": 0.155,
+   "end": 3.0,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     1.017
+    ],
+    [
+     1.086,
+     1.224
+    ],
+    [
+     1.224,
+     1.647
+    ],
+    [
+     1.647,
+     2.017
+    ],
+    [
+     2.017,
+     2.423
+    ],
+    [
+     2.423,
+     3.0
+    ]
+   ]
+  },
+  "L13": {
+   "text": "The lamp room door had a little brass bolt.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.828
+    ],
+    [
+     0.828,
+     1.103
+    ],
+    [
+     1.103,
+     1.862
+    ]
+   ]
+  },
+  "L14": {
+   "text": "I bolted the lamp room door and fell asleep to the waves.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.155,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.759
+    ],
+    [
+     0.759,
+     1.241
+    ],
+    [
+     1.241,
+     1.707
+    ],
+    [
+     1.707,
+     2.414
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Her text woke me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.155,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.086
+    ]
+   ]
+  },
+  "L16": {
+   "text": "I was out at the rail, flashlight in my hand, looking down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.862
+    ],
+    [
+     0.94,
+     1.371
+    ],
+    [
+     1.371,
+     1.724
+    ],
+    [
+     1.75,
+     2.517
+    ]
+   ]
+  },
+  "L17": {
+   "text": "And at the very bottom, by the storm door, something looked up at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.155,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.155,
+     0.284
+    ],
+    [
+     0.284,
+     0.862
+    ],
+    [
+     0.897,
+     1.052
+    ],
+    [
+     1.052,
+     1.638
+    ],
+    [
+     1.707,
+     2.207
+    ],
+    [
+     2.207,
+     2.69
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Its face was on the top of its head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     0.768
+    ],
+    [
+     0.768,
+     1.008
+    ],
+    [
+     1.008,
+     1.655
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Flat on the crown, staring straight up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.707
+    ],
+    [
+     0.741,
+     1.621
+    ]
+   ]
+  },
+  "L20": {
+   "text": "It wore a yellow oilskin, and its eyes never blinked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.155,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     1.241
+    ],
+    [
+     1.31,
+     1.707
+    ],
+    [
+     1.707,
+     2.414
+    ]
+   ]
+  },
+  "L21": {
+   "text": "I ran back in and bolted the door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.776
+    ],
+    [
+     0.776,
+     1.129
+    ],
+    [
+     1.129,
+     1.69
+    ]
+   ]
+  },
+  "L22": {
+   "text": "I texted Ines, \"Keep your door shut.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.828
+    ],
+    [
+     0.931,
+     1.121
+    ],
+    [
+     1.121,
+     1.741
+    ]
+   ]
+  },
+  "L23": {
+   "text": "She never answered.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.19,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.19,
+     1.103
+    ]
+   ]
+  },
+  "L24": {
+   "text": "In the morning, there was sand on my socks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     0.974
+    ],
+    [
+     0.974,
+     1.724
+    ]
+   ]
+  },
+  "L25": {
+   "text": "We hadn't been near the beach.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.241
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Ines made toast and asked if I'd slept okay.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.147
+    ],
+    [
+     1.147,
+     1.345
+    ],
+    [
+     1.345,
+     2.103
+    ]
+   ]
+  },
+  "L27": {
+   "text": "She looked at me for a long time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.19,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     0.603
+    ],
+    [
+     0.603,
+     0.741
+    ],
+    [
+     0.741,
+     1.534
+    ]
+   ]
+  },
+  "L28": {
+   "text": "I thought she was already sorry she'd come.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     0.543
+    ],
+    [
+     0.543,
+     1.069
+    ],
+    [
+     1.069,
+     1.69
+    ]
+   ]
+  },
+  "L29": {
+   "text": "So I never mentioned the thing on the stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.819
+    ],
+    [
+     0.819,
+     1.077
+    ],
+    [
+     1.077,
+     1.845
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Too soon for that, too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.19
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Night. Two, the storm got worse.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.19,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.19,
+     0.552
+    ],
+    [
+     0.578,
+     0.862
+    ],
+    [
+     0.862,
+     1.517
+    ]
+   ]
+  },
+  "L31b": {
+   "text": "The windows hummed, and the whole tower creaked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.802,
+     0.931
+    ],
+    [
+     0.931,
+     1.353
+    ],
+    [
+     1.353,
+     1.879
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Three in the morning, my phone buzzed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8755,
+   "dur": 1.966,
+   "onset": 0.224,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.224,
+     0.423
+    ],
+    [
+     0.423,
+     0.707
+    ],
+    [
+     0.732,
+     1.741
+    ]
+   ]
+  },
+  "L33": {
+   "text": "\"Who's that on the stairs?\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.241
+    ]
+   ]
+  },
+  "L34": {
+   "text": "And I was at the rail again, before I knew I'd gotten up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.155,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.483
+    ],
+    [
+     0.483,
+     1.0
+    ],
+    [
+     1.069,
+     1.569
+    ],
+    [
+     1.569,
+     2.31
+    ]
+   ]
+  },
+  "L35": {
+   "text": "It was two turns closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     1.328
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Its face still pointed up, right at mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     1.0
+    ],
+    [
+     1.052,
+     1.793
+    ]
+   ]
+  },
+  "L37": {
+   "text": "I ran back up and bolted the door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.75
+    ],
+    [
+     0.75,
+     1.094
+    ],
+    [
+     1.094,
+     1.655
+    ]
+   ]
+  },
+  "L38": {
+   "text": "In the morning, more sand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     1.276
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Ines asked again if I'd slept okay.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.19,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.19,
+     0.784
+    ],
+    [
+     0.784,
+     0.983
+    ],
+    [
+     0.983,
+     1.759
+    ]
+   ]
+  },
+  "L40": {
+   "text": "That same look, like she was waiting for something.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.75,
+     0.94
+    ],
+    [
+     0.94,
+     1.293
+    ],
+    [
+     1.293,
+     1.966
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Night three, I tried to stay awake. I couldn't.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.492,
+     0.698
+    ],
+    [
+     0.698,
+     1.276
+    ],
+    [
+     1.345,
+     1.983
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Then the buzz again, and I was back at the rail.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.31,
+     0.793
+    ],
+    [
+     0.862,
+     1.008
+    ],
+    [
+     1.008,
+     1.285
+    ],
+    [
+     1.285,
+     1.931
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Two turns closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     1.138
+    ]
+   ]
+  },
+  "L44": {
+   "text": "Close enough now to see its mouth, a little round hole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     0.87
+    ],
+    [
+     0.87,
+     1.345
+    ],
+    [
+     1.414,
+     1.586
+    ],
+    [
+     1.586,
+     2.362
+    ]
+   ]
+  },
+  "L45": {
+   "text": "It was coming up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.155,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.948
+    ]
+   ]
+  },
+  "L46": {
+   "text": "Every night, closer to the top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     0.905
+    ],
+    [
+     0.905,
+     1.431
+    ]
+   ]
+  },
+  "L47": {
+   "text": "Night four, I woke up to the cold.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.862
+    ],
+    [
+     0.862,
+     1.534
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Flashlight in my hand. Leaning over the rail.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.19,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.19,
+     0.578
+    ],
+    [
+     0.578,
+     1.052
+    ],
+    [
+     1.147,
+     1.509
+    ],
+    [
+     1.509,
+     2.086
+    ]
+   ]
+  },
+  "L49": {
+   "text": "I, pointed it down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.172
+    ]
+   ]
+  },
+  "L50": {
+   "text": "It was one turn below me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.759
+    ],
+    [
+     0.759,
+     1.397
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Its, flat face filled my flashlight beam, its round mouth open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.052,
+   "onset": 0.155,
+   "end": 2.862,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.724,
+     0.966
+    ],
+    [
+     0.966,
+     1.707
+    ],
+    [
+     1.776,
+     2.328
+    ],
+    [
+     2.328,
+     2.862
+    ]
+   ]
+  },
+  "L52": {
+   "text": "And my phone buzzed in my hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.854
+    ],
+    [
+     0.854,
+     1.552
+    ]
+   ]
+  },
+  "L53": {
+   "text": "\"Who's that on the stairs?\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.241
+    ]
+   ]
+  },
+  "L54": {
+   "text": "I ran, round and round, till the lamp room door was bolted behind me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.345,
+   "onset": 0.155,
+   "end": 3.155,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.517,
+     1.259
+    ],
+    [
+     1.345,
+     1.5
+    ],
+    [
+     1.5,
+     2.086
+    ],
+    [
+     2.086,
+     2.483
+    ],
+    [
+     2.483,
+     3.155
+    ]
+   ]
+  },
+  "L55": {
+   "text": "Next day, Ines didn't ask how I'd slept.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     1.094
+    ],
+    [
+     1.094,
+     1.862
+    ]
+   ]
+  },
+  "L56": {
+   "text": "She just sat next to me instead of across.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.879
+    ],
+    [
+     0.879,
+     1.793
+    ]
+   ]
+  },
+  "L57": {
+   "text": "That night she said goodnight at her door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     1.017
+    ],
+    [
+     1.017,
+     1.672
+    ]
+   ]
+  },
+  "L58": {
+   "text": "After I'd gone up, I heard her door open again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.845
+    ],
+    [
+     0.914,
+     1.129
+    ],
+    [
+     1.129,
+     1.414
+    ],
+    [
+     1.414,
+     2.155
+    ]
+   ]
+  },
+  "L59": {
+   "text": "And then nothing, all night long.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.655,
+     1.483
+    ]
+   ]
+  },
+  "L60": {
+   "text": "I woke up in sunlight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.224
+    ]
+   ]
+  },
+  "L61": {
+   "text": "On the stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L62": {
+   "text": "below her bedroom door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     1.293
+    ]
+   ]
+  },
+  "L63": {
+   "text": "Ines was asleep two steps down, in a blanket, back to the wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.19,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.19,
+     0.707
+    ],
+    [
+     0.707,
+     1.414
+    ],
+    [
+     1.483,
+     1.879
+    ],
+    [
+     1.914,
+     2.164
+    ],
+    [
+     2.164,
+     2.759
+    ]
+   ]
+  },
+  "L64": {
+   "text": "Her coat was over my feet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.724
+    ],
+    [
+     0.724,
+     1.345
+    ]
+   ]
+  },
+  "L65": {
+   "text": "She was sitting between me and the storm door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.992
+    ],
+    [
+     0.992,
+     1.147
+    ],
+    [
+     1.147,
+     1.931
+    ]
+   ]
+  },
+  "L66": {
+   "text": "And the bottom of the stairs was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     0.948
+    ],
+    [
+     0.948,
+     1.672
+    ]
+   ]
+  },
+  "L67": {
+   "text": "Every night, the one on the stairs was me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     0.802
+    ],
+    [
+     0.802,
+     1.224
+    ],
+    [
+     1.224,
+     1.81
+    ]
+   ]
+  },
+  "L68": {
+   "text": "Fast asleep, walking down toward the storm door, a turn further each time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8240000000000001,
+   "dur": 3.983,
+   "onset": 0.224,
+   "end": 3.759,
+   "chunks": [
+    [
+     0.224,
+     0.759
+    ],
+    [
+     0.793,
+     1.293
+    ],
+    [
+     1.293,
+     1.483
+    ],
+    [
+     1.483,
+     2.19
+    ],
+    [
+     2.284,
+     2.621
+    ],
+    [
+     2.621,
+     3.759
+    ]
+   ]
+  },
+  "L69": {
+   "text": "And that thing came up a turn every time I came down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.768
+    ],
+    [
+     0.768,
+     1.129
+    ],
+    [
+     1.129,
+     1.526
+    ],
+    [
+     1.526,
+     2.345
+    ]
+   ]
+  },
+  "L70": {
+   "text": "Ines had watched me walk past her door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.19,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.483,
+     0.759
+    ],
+    [
+     0.759,
+     1.164
+    ],
+    [
+     1.164,
+     1.741
+    ]
+   ]
+  },
+  "L71": {
+   "text": "The first night she didn't know it was me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     1.043
+    ],
+    [
+     1.043,
+     1.69
+    ]
+   ]
+  },
+  "L72": {
+   "text": "After that she texted just to wake me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.957
+    ],
+    [
+     0.957,
+     1.224
+    ],
+    [
+     1.224,
+     1.759
+    ]
+   ]
+  },
+  "L73": {
+   "text": "This time, she'd sat up till the light came.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     1.0
+    ],
+    [
+     1.0,
+     1.155
+    ],
+    [
+     1.155,
+     1.862
+    ]
+   ]
+  },
+  "L74": {
+   "text": "She woke, saw me awake, and picked up her phone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.19,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ],
+    [
+     0.5,
+     0.966
+    ],
+    [
+     0.992,
+     1.233
+    ],
+    [
+     1.233,
+     1.931
+    ]
+   ]
+  },
+  "L75": {
+   "text": "Ines texted me, \"Who's that on the stairs?\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.19,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.19,
+     0.862
+    ],
+    [
+     0.966,
+     1.215
+    ],
+    [
+     1.215,
+     2.0
+    ]
+   ]
+  },
+  "L76": {
+   "text": "I texted back, \"us.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.793,
+     1.224
+    ]
+   ]
+  },
+  "L02b": {
+   "text": "My girlfriend, Ines, and I were one month in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ],
+    [
+     1.069,
+     1.215
+    ],
+    [
+     1.215,
+     1.448
+    ],
+    [
+     1.448,
+     2.034
+    ]
+   ]
+  },
+  "L25b": {
+   "text": "The only sand was under the storm door, the one that opened onto the sea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.121,
+   "onset": 0.155,
+   "end": 2.931,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     0.87
+    ],
+    [
+     0.87,
+     1.569
+    ],
+    [
+     1.655,
+     1.854
+    ],
+    [
+     1.854,
+     2.19
+    ],
+    [
+     2.19,
+     2.931
+    ]
+   ]
+  },
+  "L46b": {
+   "text": "In the morning, there was sand in my bed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     0.992
+    ],
+    [
+     0.992,
+     1.621
+    ]
+   ]
+  }
+ }
+}

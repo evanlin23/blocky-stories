@@ -3,18 +3,20 @@
 Status only, one line per item. The second orchestrator keeps it. Messages between the orchestrators go in issue
 #177 ("Orchestrator channel"). Times are US Central.
 
-**Last updated:** Tue 2026-11-03, 9:25 PM Central. The second team owns most story work and every final qa except
+**Last updated:** Tue 2026-11-03, 11:25 PM Central. The second team owns most story work and every final qa except
 closing-time and mirror-maze (owner-approved). Its own usage limit resets Thursdays 8:00 AM Central. Every session
 was told at about 4:20 PM to merge the latest main before it judges anything (owner and #1).
 
 | Item | Status | Ready for queue | PR | Next |
 |---|---|---|---|---|
 | final-film qa desk | working | n/a | per film | ep42 and ep48 finals as they land |
-| ep42-barber-chair (count) | merged, proof qa passed | not yet | #172 | final render, then final qa |
+| ep42-barber-chair (count) | merged, proof qa passed, final qa passed | **yes** | #172, #237 | #1 queues it |
 | ep48-crazy-golf (confess) | merged, proof qa passed under the near band (#201) | not yet | #173 | final render, then final qa |
 | ep55-caravan-park (must) | merged, proof qa passed, final qa passed | **yes** | #174, #233 | #1 queues it |
-| warm-shoes (confess) | merged, proof qa passed | not yet | #205 | final render, then final qa |
+| warm-shoes (confess) | final qa FAILED: S112 head through a tree canopy (one clip) | no | #238 | one-shot fix, re-proof; a second fail drops it |
 | ep62-six-riders (revival) | merged | not yet | #207 | final render, then final qa |
+| ep92-blackout-ben, ep96-friend-card (batch 9) | merged, proof qa passed | not yet | #232, #231 | final render, then final qa |
+| ep89-sister-diary (batch 8) | revived for one fix (two black shots); standards approved it | no | #236 | proof, proof qa |
 | floor-thirteen (if) | merged, proof qa passed, final qa passed | **yes** | #188, #228 | #1 queues it |
 | dryer-nine (cost) | revived for one fix (S54 too dark) | no | #198 | critic look, proof, proof qa; a fail drops it for good |
 | ep51-fossil-hall (confess) | revived for one fix (two staging fixes) | no | #199 | critic look, proof, proof qa; a fail drops it for good |

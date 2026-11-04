@@ -225,7 +225,8 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
             "fade_in": st.get("fade_in", True),
             "voice": {k: voice.get(k) for k in ("voice", "rate", "tempo", "model")},
             "lines": placed, "order": order, "captions": caps, "talk": talk, "shots": shots,
-            "cues": cues, "fx": fx, "acting": acting, "motion": _motion(st)}
+            "cues": cues, "fx": fx, "acting": acting, "motion": _motion(st),
+            **({"homophones": st["homophones"]} if st.get("homophones") else {})}
     if out["motion"]:   # the polish pack: shots with a walk on ones; reveal shots calm
         from blocky import polish
         p = polish.spec(st)

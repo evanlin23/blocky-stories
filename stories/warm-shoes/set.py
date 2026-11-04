@@ -572,7 +572,7 @@ def build(kit, story, tl):
             kit.prop("bldg_1story", (x, y, 0), rot=rot, scale=1.0, tint=tint)
         except Exception:
             pass
-    for i, (nme, x, y, h) in enumerate((("commontree_1", -9, -16, 5.5), ("birchtree_1", -9.5, -40, 7.0), ("commontree_2", 9.5, -18, 6.0),
+    for i, (nme, x, y, h) in enumerate((("commontree_1", -9, -16, 5.5), ("birchtree_1", -22, -40, 7.0), ("commontree_2", 9.5, -18, 6.0),
                                        ("commontree_1", -9, -64, 5.5), ("birchtree_1", 9.5, -34, 7.0), ("commontree_2", 12, -72, 6.0),
                                        ("birchtree_1", 14, -12, 7.0), ("commontree_1", -11, -88, 6.0))):
         try:
