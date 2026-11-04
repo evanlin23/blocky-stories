@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -544,14 +544,13 @@ shot("L38", mv([QX - 9.0, G.POST_Y - 5.5, 1.6], [QX - 3.0, G.POST_Y + 9.0, 1.0],
 move("L38.2-0.05", "gateleaf", yaw=82.0)
 only("L38.2", ["clem", "mom"])
 move("L38.2", "gateleaf", yaw=82.0)
-put("clem", "L38.2", [-0.4, -7.6, 0.0], 0, expr="laugh", run=True)
+put("clem", "L38.2", [-0.4, -8.9, 0.0], 0, expr="laugh", run=True)
 go("clem", "L38.2+0.45", [-0.4, -10.0, 0.0], expr="laugh", run=True)
 put("mom", "L38.2", [-0.4, -11.9, 0.0], 180, expr="smile")
 go("mom", "L38.2+0.45", [-0.4, -10.8, 0.0], expr="smile")
 beat("clem", "L38.3-0.1", arms=[90, 90], yaw=0, expr="laugh")
 beat("mom", "L38.3-0.1", arms=[90, 90], yaw=180, expr="sad-smile")
-shot("L38.2", mv([6.0, -8.8, 1.7], [0.0, -9.4, 1.2], 34, [5.6, -9.8, 1.7], [-0.3, -10.4, 1.3], 34), "runhug")
-shot("L38.3", mv([6.8, -10.4, 1.75], [-0.4, -10.4, 1.4], 34, [6.2, -10.4, 1.75], [-0.4, -10.4, 1.4], 34), "hug")
+shot("L38.2", mv([6.8, -10.4, 1.75], [-0.4, -10.2, 1.4], 32, [6.2, -10.4, 1.75], [-0.4, -10.3, 1.4], 32), "hug")
 # L39: the rule, loop
 look("L39", "dusk", 0.6)
 cue("L39", "rock", a=6.0)
