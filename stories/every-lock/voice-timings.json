@@ -6,26 +6,34 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "our bathroom door has one thousand and twenty-four locks.",
+   "text": "eleven slams, and your door has one thousand and twenty-four locks.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.603,
-   "onset": 0.155,
-   "end": 2.414,
+   "dur": 3.121,
+   "onset": 0.172,
+   "end": 2.931,
    "chunks": [
     [
-     0.155,
-     0.741
+     0.172,
+     0.879
     ],
     [
-     0.741,
+     0.931,
+     1.086
+    ],
+    [
+     1.086,
      1.422
     ],
     [
      1.422,
-     2.414
+     1.939
+    ],
+    [
+     1.939,
+     2.931
     ]
    ]
   },
@@ -1918,34 +1926,30 @@
    ]
   },
   "L72": {
-   "text": "so, mister dale, get your foot on it. and whatever you do,",
+   "text": "so, mister dale, get your foot on it. because here,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.569,
+   "dur": 2.31,
    "onset": 0.19,
-   "end": 2.328,
+   "end": 2.103,
    "chunks": [
     [
      0.19,
-     0.707
+     0.672
     ],
     [
-     0.732,
-     1.077
+     0.698,
+     1.043
     ],
     [
-     1.077,
-     1.414
+     1.043,
+     1.345
     ],
     [
-     1.483,
-     1.793
-    ],
-    [
-     1.793,
-     2.328
+     1.414,
+     2.103
     ]
    ]
   }

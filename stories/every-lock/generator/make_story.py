@@ -179,7 +179,7 @@ FRONT = (0.0, 5.0, 1.25)
 # 01 the rule (L01 to L10b)
 S(0, dolly((0, 4.6, 1.22), (0, 5.6, 1.2), (0, 7, 1.1), (0, 7, 1.1), 19, 24), note="frame 1: the 1,024-lock door, pushing in",
   cues=[DR(n=1024, L=0.4, lean=4.0, swing=0.0), MT(1024), CU("flap", a=70.0), CU("keys", v=0.0)], step=1)
-S("L01.2", dolly((0.0, 5.9, 1.55), (0.3, 5.7, 1.85), (0.1, 7, 1.6), (0.17, 6.6, 1.86), 40, 55), note="a punch in across the locks, the flaps glint; the clunk",
+S("L01.3", dolly((0.0, 5.9, 1.55), (0.3, 5.7, 1.85), (0.1, 7, 1.6), (0.17, 6.6, 1.86), 40, 55), note="a punch in across the locks, the flaps glint; the clunk",
   cues=[CU("shudder", ref="L01>-0.2")])
 S(
     "L02", cam((K - 0.8, 1.9, 1.0), (K - 0.8, 3.64, 0.95), 26),
