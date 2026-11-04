@@ -226,24 +226,6 @@
   ]
  },
  {
-  "id": "L12",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She did",
-    "she did"
-   ],
-   [
-    "this route",
-    "this route"
-   ],
-   [
-    "for TEN years.",
-    "for ten years."
-   ]
-  ]
- },
- {
   "id": "L13",
   "who": "narrator",
   "chunks": [
@@ -252,12 +234,12 @@
     "this month,"
    ],
    [
-    "she gave it",
-    "she gave it"
+    "she gave me",
+    "she gave me"
    ],
    [
-    "to ME.",
-    "to me."
+    "her ROUTE.",
+    "her route."
    ]
   ]
  },
@@ -581,32 +563,28 @@
   "who": "narrator",
   "chunks": [
    [
-    "I set",
-    "i set"
+    "I set it",
+    "i set it"
    ],
    [
-    "it DOWN",
-    "it down"
-   ],
-   [
-    "in the",
-    "in the"
+    "DOWN in the",
+    "down in the"
    ],
    [
     "bare dirt,",
     "bare dirt,"
    ],
    [
-    "right in",
-    "right in"
+    "right in the",
+    "right in the"
    ],
    [
-    "the middle",
-    "the middle"
+    "MIDDLE of",
+    "middle of"
    ],
    [
-    "of the LOT.",
-    "of the lot."
+    "the LOT.",
+    "the lot."
    ]
   ]
  },
@@ -773,16 +751,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "But last night,",
-    "but last night,"
+    "Then a second",
+    "then a second"
    ],
    [
-    "a second order",
-    "a second order"
-   ],
-   [
-    "came in,",
-    "came in,"
+    "order came in,",
+    "order came in,"
    ],
    [
     "from ANOTHER house",

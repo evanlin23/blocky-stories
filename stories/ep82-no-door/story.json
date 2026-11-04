@@ -49,6 +49,12 @@
      "L42"
     ]
    ],
+   "hold": [
+    "S19",
+    "S60",
+    "S61",
+    "S62"
+   ],
    "camera": true,
    "idle": true,
    "ease": true
@@ -392,24 +398,6 @@
    ]
   },
   {
-   "id": "L12",
-   "who": "narrator",
-   "chunks": [
-    [
-     "She did",
-     "she did"
-    ],
-    [
-     "this route",
-     "this route"
-    ],
-    [
-     "for TEN years.",
-     "for ten years."
-    ]
-   ]
-  },
-  {
    "id": "L13",
    "who": "narrator",
    "chunks": [
@@ -418,12 +406,12 @@
      "this month,"
     ],
     [
-     "she gave it",
-     "she gave it"
+     "she gave me",
+     "she gave me"
     ],
     [
-     "to ME.",
-     "to me."
+     "her ROUTE.",
+     "her route."
     ]
    ]
   },
@@ -747,32 +735,28 @@
    "who": "narrator",
    "chunks": [
     [
-     "I set",
-     "i set"
+     "I set it",
+     "i set it"
     ],
     [
-     "it DOWN",
-     "it down"
-    ],
-    [
-     "in the",
-     "in the"
+     "DOWN in the",
+     "down in the"
     ],
     [
      "bare dirt,",
      "bare dirt,"
     ],
     [
-     "right in",
-     "right in"
+     "right in the",
+     "right in the"
     ],
     [
-     "the middle",
-     "the middle"
+     "MIDDLE of",
+     "middle of"
     ],
     [
-     "of the LOT.",
-     "of the lot."
+     "the LOT.",
+     "the lot."
     ]
    ]
   },
@@ -939,16 +923,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "But last night,",
-     "but last night,"
+     "Then a second",
+     "then a second"
     ],
     [
-     "a second order",
-     "a second order"
-    ],
-    [
-     "came in,",
-     "came in,"
+     "order came in,",
+     "order came in,"
     ],
     [
      "from ANOTHER house",
@@ -1314,43 +1294,6 @@
     [
      0,
      [
-      -2.0,
-      -0.9,
-      0.45
-     ],
-     [
-      -1.5,
-      -0.15,
-      0.27
-     ],
-     36
-    ],
-    [
-     1,
-     [
-      -1.8,
-      -0.65,
-      0.38
-     ],
-     [
-      -1.5,
-      -0.15,
-      0.27
-     ],
-     36
-    ]
-   ],
-   "step": 2,
-   "hand": 0.006,
-   "at": "L07.1",
-   "note": "folded into"
-  },
-  {
-   "id": "S11",
-   "cam": [
-    [
-     0,
-     [
       -2.1,
       -1.1,
       0.3
@@ -1383,7 +1326,7 @@
    "note": "a tiny HOUSE: the quotable line"
   },
   {
-   "id": "S12",
+   "id": "S11",
    "cam": [
     [
      0,
@@ -1420,7 +1363,7 @@
    "note": "its chimney puffs against the pink sky"
   },
   {
-   "id": "S13",
+   "id": "S12",
    "cam": [
     [
      0,
@@ -1457,7 +1400,7 @@
    "note": "like clockwork: the whole house, a puff over it"
   },
   {
-   "id": "S14",
+   "id": "S13",
    "cam": [
     [
      0,
@@ -1494,7 +1437,7 @@
    "note": "three porches in a row, lights on"
   },
   {
-   "id": "S15",
+   "id": "S14",
    "cam": [
     [
      0,
@@ -1531,7 +1474,7 @@
    "note": "till it's delivered: a neighbor watching"
   },
   {
-   "id": "S16",
+   "id": "S15",
    "cam": [
     [
      0,
@@ -1568,7 +1511,7 @@
    "note": "nobody walks a dog past it: a woman and dog hurry by"
   },
   {
-   "id": "S17",
+   "id": "S16",
    "cam": [
     [
      0,
@@ -1605,7 +1548,7 @@
    "note": "across the road, far sidewalk"
   },
   {
-   "id": "S18",
+   "id": "S17",
    "cam": [
     [
      0,
@@ -1642,7 +1585,7 @@
    "note": "the pizza place: Marisol and me, both smile"
   },
   {
-   "id": "S19",
+   "id": "S18",
    "cam": [
     [
      0,
@@ -1679,27 +1622,27 @@
    "note": "on the corner, the red door and its warm light"
   },
   {
-   "id": "S20",
+   "id": "S19",
    "cam": [
     [
      0,
      [
       -40.4,
-      -2.4,
-      1.6
+      -4.4,
+      1.55
      ],
      [
       -40.4,
       1.5,
       1.4
      ],
-     26
+     22
     ],
     [
      1,
      [
       -40.4,
-      -1.9,
+      -3.9,
       1.5
      ],
      [
@@ -1707,16 +1650,16 @@
       1.5,
       1.4
      ],
-     26
+     22
     ]
    ],
    "step": 2,
    "hand": 0.006,
-   "at": "L12",
+   "at": "L13",
    "note": "Marisol hands me the red bag"
   },
   {
-   "id": "S21",
+   "id": "S20",
    "cam": [
     [
      0,
@@ -1749,11 +1692,11 @@
    ],
    "step": 2,
    "hand": 0.006,
-   "at": "L13",
+   "at": "L13.2",
    "note": "the red car pulls out of the lot"
   },
   {
-   "id": "S22",
+   "id": "S21",
    "cam": [
     [
      0,
@@ -1790,7 +1733,7 @@
    "note": "tonight: the car stopped, me beside it"
   },
   {
-   "id": "S23",
+   "id": "S22",
    "cam": [
     [
      0,
@@ -1827,7 +1770,7 @@
    "note": "my tire went flat"
   },
   {
-   "id": "S24",
+   "id": "S23",
    "cam": [
     [
      0,
@@ -1864,7 +1807,7 @@
    "note": "two blocks away"
   },
   {
-   "id": "S25",
+   "id": "S24",
    "cam": [
     [
      0,
@@ -1902,7 +1845,7 @@
    "note": "so I ran it"
   },
   {
-   "id": "S26",
+   "id": "S25",
    "cam": [
     [
      0,
@@ -1940,7 +1883,7 @@
    "note": "six-oh-one"
   },
   {
-   "id": "S27",
+   "id": "S26",
    "cam": [
     [
      0,
@@ -1977,44 +1920,7 @@
    "note": "up and down the street the porch lights go out"
   },
   {
-   "id": "S28",
-   "cam": [
-    [
-     0,
-     [
-      -2,
-      -5.8,
-      1.7
-     ],
-     [
-      -26,
-      -0.5,
-      2.3
-     ],
-     20
-    ],
-    [
-     1,
-     [
-      -4,
-      -5.8,
-      1.7
-     ],
-     [
-      -26,
-      -0.5,
-      2.3
-     ],
-     20
-    ]
-   ],
-   "step": 2,
-   "hand": 0.006,
-   "at": "L17.3",
-   "note": "dark porches, the sky still pink"
-  },
-  {
-   "id": "S29",
+   "id": "S27",
    "cam": [
     [
      0,
@@ -2051,7 +1957,7 @@
    "note": "six-oh-two: me, out of breath"
   },
   {
-   "id": "S30",
+   "id": "S28",
    "cam": [
     [
      0,
@@ -2088,7 +1994,7 @@
    "note": "the two top windows"
   },
   {
-   "id": "S31",
+   "id": "S29",
    "cam": [
     [
      0,
@@ -2125,7 +2031,7 @@
    "note": "went dark"
   },
   {
-   "id": "S32",
+   "id": "S30",
    "cam": [
     [
      0,
@@ -2162,7 +2068,7 @@
    "note": "and lit again"
   },
   {
-   "id": "S33",
+   "id": "S31",
    "cam": [
     [
      0,
@@ -2199,7 +2105,7 @@
    "note": "like it blinked"
   },
   {
-   "id": "S34",
+   "id": "S32",
    "cam": [
     [
      0,
@@ -2236,7 +2142,7 @@
    "note": "the drop: the house, still"
   },
   {
-   "id": "S35",
+   "id": "S33",
    "cam": [
     [
      0,
@@ -2273,7 +2179,7 @@
    "note": "six-oh-three: me looking up"
   },
   {
-   "id": "S36",
+   "id": "S34",
    "cam": [
     [
      0,
@@ -2310,7 +2216,7 @@
    "note": "the lawn splits"
   },
   {
-   "id": "S37",
+   "id": "S35",
    "cam": [
     [
      0,
@@ -2347,19 +2253,19 @@
    "note": "the house rises, the sky pink behind it"
   },
   {
-   "id": "S38",
+   "id": "S36",
    "cam": [
     [
      0,
      [
       0,
       -23,
-      3.2
+      1.0
      ],
      [
       0,
       0,
-      5.0
+      7.0
      ],
      30
     ],
@@ -2368,12 +2274,12 @@
      [
       0,
       -21,
-      3.6
+      1.2
      ],
      [
       0,
       0,
-      5.0
+      7.0
      ],
      30
     ]
@@ -2384,7 +2290,7 @@
    "note": "the whole house, standing, roof on"
   },
   {
-   "id": "S39",
+   "id": "S37",
    "cam": [
     [
      0,
@@ -2421,7 +2327,7 @@
    "note": "the cover frame: me tiny at its feet"
   },
   {
-   "id": "S40",
+   "id": "S38",
    "cam": [
     [
      0,
@@ -2458,7 +2364,7 @@
    "note": "its knees came up"
   },
   {
-   "id": "S41",
+   "id": "S39",
    "cam": [
     [
      0,
@@ -2495,7 +2401,7 @@
    "note": "the slot was its mouth; the tally on the flap"
   },
   {
-   "id": "S42",
+   "id": "S40",
    "cam": [
     [
      0,
@@ -2532,7 +2438,7 @@
    "note": "every porch light was out"
   },
   {
-   "id": "S43",
+   "id": "S41",
    "cam": [
     [
      0,
@@ -2569,7 +2475,7 @@
    "note": "so it turned"
   },
   {
-   "id": "S44",
+   "id": "S42",
    "cam": [
     [
      0,
@@ -2606,7 +2512,7 @@
    "note": "toward the one door still lit"
   },
   {
-   "id": "S45",
+   "id": "S43",
    "cam": [
     [
      0,
@@ -2643,7 +2549,7 @@
    "note": "Marisol's door"
   },
   {
-   "id": "S46",
+   "id": "S44",
    "cam": [
     [
      0,
@@ -2680,7 +2586,7 @@
    "note": "the order slip on the lid: a doorless house glyph"
   },
   {
-   "id": "S47",
+   "id": "S45",
    "cam": [
     [
      0,
@@ -2717,7 +2623,7 @@
    "note": "the house with no door: my face"
   },
   {
-   "id": "S48",
+   "id": "S46",
    "cam": [
     [
      0,
@@ -2755,7 +2661,7 @@
    "note": "so I carried the pizza"
   },
   {
-   "id": "S49",
+   "id": "S47",
    "cam": [
     [
      0,
@@ -2792,7 +2698,7 @@
    "note": "used to be: bare dirt"
   },
   {
-   "id": "S50",
+   "id": "S48",
    "cam": [
     [
      0,
@@ -2829,7 +2735,7 @@
    "note": "I set it down"
   },
   {
-   "id": "S51",
+   "id": "S49",
    "cam": [
     [
      0,
@@ -2866,7 +2772,7 @@
    "note": "top-down: the box on the bare dirt"
   },
   {
-   "id": "S52",
+   "id": "S50",
    "cam": [
     [
      0,
@@ -2899,11 +2805,11 @@
    ],
    "step": 2,
    "hand": 0.006,
-   "at": "L33.6",
+   "at": "L33.4",
    "note": "of the lot, the standing house beside it"
   },
   {
-   "id": "S53",
+   "id": "S51",
    "cam": [
     [
      0,
@@ -2940,7 +2846,7 @@
    "note": "it stopped: its feet, still"
   },
   {
-   "id": "S54",
+   "id": "S52",
    "cam": [
     [
      0,
@@ -2977,7 +2883,7 @@
    "note": "its window-eyes lowered toward the box"
   },
   {
-   "id": "S55",
+   "id": "S53",
    "cam": [
     [
      0,
@@ -3014,7 +2920,7 @@
    "note": "across a cut: it's back over its lot"
   },
   {
-   "id": "S56",
+   "id": "S54",
    "cam": [
     [
      0,
@@ -3051,7 +2957,7 @@
    "note": "and sat down"
   },
   {
-   "id": "S57",
+   "id": "S55",
    "cam": [
     [
      0,
@@ -3088,7 +2994,7 @@
    "note": "its knees sink back under the lawn"
   },
   {
-   "id": "S58",
+   "id": "S56",
    "cam": [
     [
      0,
@@ -3125,7 +3031,7 @@
    "note": "just a house at sundown"
   },
   {
-   "id": "S59",
+   "id": "S57",
    "cam": [
     [
      0,
@@ -3162,7 +3068,7 @@
    "note": "porch lights ramp back on"
   },
   {
-   "id": "S60",
+   "id": "S58",
    "cam": [
     [
      0,
@@ -3199,7 +3105,7 @@
    "note": "the slot pushes out a twenty"
   },
   {
-   "id": "S61",
+   "id": "S59",
    "cam": [
     [
      0,
@@ -3236,7 +3142,7 @@
    "note": "Marisol comes running"
   },
   {
-   "id": "S62",
+   "id": "S60",
    "cam": [
     [
      0,
@@ -3273,35 +3179,35 @@
    "note": "we split it on the curb"
   },
   {
-   "id": "S63",
+   "id": "S61",
    "cam": [
     [
      0,
      [
       0.5,
-      -9.5,
-      1.45
+      -10.5,
+      1.5
      ],
      [
       0.5,
       -5.75,
-      1.25
+      1.4
      ],
-     30
+     20
     ],
     [
      1,
      [
       0.5,
-      -8.5,
-      1.4
+      -9.5,
+      1.5
      ],
      [
       0.5,
       -5.75,
-      1.25
+      1.4
      ],
-     30
+     20
     ]
    ],
    "step": 2,
@@ -3310,7 +3216,7 @@
    "note": "laughing so hard"
   },
   {
-   "id": "S64",
+   "id": "S62",
    "cam": [
     [
      0,
@@ -3347,7 +3253,7 @@
    "note": "the route is mine: she taps my cap brim"
   },
   {
-   "id": "S65",
+   "id": "S63",
    "cam": [
     [
      0,
@@ -3384,7 +3290,7 @@
    "note": "last night: a second slip beside the first"
   },
   {
-   "id": "S66",
+   "id": "S64",
    "cam": [
     [
      0,
@@ -3417,11 +3323,11 @@
    ],
    "step": 2,
    "hand": 0.006,
-   "at": "L43.3",
+   "at": "L43.2",
    "note": "from another house: a second lemon house, puffing"
   },
   {
-   "id": "S67",
+   "id": "S65",
    "cam": [
     [
      0,
@@ -3454,11 +3360,11 @@
    ],
    "step": 2,
    "hand": 0.006,
-   "at": "L43.4",
+   "at": "L43.3",
    "note": "with no door: the slot's flap lifts twice"
   },
   {
-   "id": "S68",
+   "id": "S66",
    "cam": [
     [
      0,
@@ -3633,14 +3539,14 @@
     "blink": true
    },
    {
-    "at": "L12",
+    "at": "L13",
     "pos": [
      -41.2,
      1.9
     ]
    },
    {
-    "at": "L12",
+    "at": "L13",
     "pos": [
      -41.2,
      1.9
@@ -3666,19 +3572,19 @@
     "blink": true
    },
    {
-    "at": "L13",
+    "at": "L13.2",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L13",
+    "at": "L13.2",
     "pos": [
      -41.2,
      1.9
     ]
    },
    {
-    "at": "L13",
+    "at": "L13.2",
     "pos": [
      -36.3,
      -11.55,
@@ -4232,14 +4138,14 @@
     "blink": true
    },
    {
-    "at": "L12",
+    "at": "L13",
     "pos": [
      -39.8,
      1.9
     ]
    },
    {
-    "at": "L12",
+    "at": "L13",
     "pos": [
      -39.6,
      1.9
@@ -4265,40 +4171,7 @@
     "blink": true
    },
    {
-    "at": "L12.2",
-    "pos": [
-     -39.6,
-     1.9
-    ]
-   },
-   {
-    "at": "L12.2",
-    "pos": [
-     -39.6,
-     1.9
-    ],
-    "blend": 0,
-    "yaw": 0,
-    "expr": "smile",
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true
-   },
-   {
-    "at": "L13",
+    "at": "L13.2",
     "hidden": true,
     "blend": 0
    },
@@ -4920,7 +4793,8 @@
     -1.5,
     -0.15,
     0.23
-   ]
+   ],
+   "scale": 1.8
   },
   {
    "at": "L08",
@@ -4979,7 +4853,7 @@
    "name": "puff"
   },
   {
-   "at": "L12",
+   "at": "L13",
    "name": "obj",
    "k": "bag",
    "on": true,
@@ -4990,13 +4864,13 @@
    ]
   },
   {
-   "at": "L13",
+   "at": "L13.2",
    "name": "obj",
    "k": "bag",
    "on": false
   },
   {
-   "at": "L13",
+   "at": "L13.2",
    "name": "obj",
    "k": "car",
    "on": true,
@@ -5008,7 +4882,7 @@
     -27.0,
     -12.0
    ],
-   "dur": 1.25,
+   "dur": 1.1,
    "yaw": 90
   },
   {
@@ -5076,25 +4950,21 @@
    "dur": 0.6
   },
   {
-   "at": "L17+0.30",
+   "at": "L17+0.55",
    "name": "ch",
    "k": "plight3",
    "v": 0.0,
    "dur": 0.6
   },
   {
-   "at": "L17+0.70",
+   "at": "L17+1.05",
    "name": "ch",
    "k": "plight1",
    "v": 0.0,
    "dur": 0.6
   },
   {
-   "at": 29.5,
-   "name": "puff"
-  },
-  {
-   "at": "L17+1.20",
+   "at": "L17+1.55",
    "name": "ch",
    "k": "plight2",
    "v": 0.0,
@@ -5113,6 +4983,10 @@
    "on": false
   },
   {
+   "at": 29.5,
+   "name": "puff"
+  },
+  {
    "at": "L19.2",
    "name": "ch",
    "k": "eyes",
@@ -5127,10 +5001,38 @@
    "dur": 0.4
   },
   {
+   "at": "L19.3+0.2",
+   "name": "ch",
+   "k": "pupil",
+   "v": 1.0,
+   "dur": 0.5
+  },
+  {
    "at": "L21",
    "name": "badge",
    "txt": "+0:03",
    "mode": "late"
+  },
+  {
+   "at": "L21+0.2",
+   "name": "ch",
+   "k": "eyes",
+   "v": 0.0,
+   "dur": 0.6
+  },
+  {
+   "at": "L21+0.2",
+   "name": "ch",
+   "k": "pupil",
+   "v": 0.0,
+   "dur": 0.6
+  },
+  {
+   "at": "L21+0.2",
+   "name": "ch",
+   "k": "pin",
+   "v": 1.0,
+   "dur": 0.6
   },
   {
    "at": "L22",
@@ -5145,6 +5047,13 @@
    "k": "rise",
    "v": 1.0,
    "dur": 1.5
+  },
+  {
+   "at": "L24",
+   "name": "ch",
+   "k": "bow",
+   "v": 8.0,
+   "dur": 1.0
   },
   {
    "at": "L27+0.2",
@@ -5317,6 +5226,20 @@
   },
   {
    "at": "L36.2",
+   "name": "ch",
+   "k": "eyes",
+   "v": 1.0,
+   "dur": 0.5
+  },
+  {
+   "at": "L36.2",
+   "name": "ch",
+   "k": "pin",
+   "v": 0.0,
+   "dur": 0.5
+  },
+  {
+   "at": "L36.2",
    "name": "obj",
    "k": "box",
    "on": false
@@ -5363,10 +5286,6 @@
    "dur": 0.6
   },
   {
-   "at": 61.5,
-   "name": "puff"
-  },
-  {
    "at": "L38+0.95",
    "name": "ch",
    "k": "plight2",
@@ -5383,7 +5302,7 @@
   {
    "at": "L39",
    "name": "obj",
-   "k": "bill",
+   "k": "tiny",
    "on": true,
    "pos": [
     -1.5,
@@ -5395,24 +5314,12 @@
     -0.2,
     0.238
    ],
-   "dur": 0.7
+   "dur": 0.7,
+   "scale": 1.8
   },
   {
-   "at": "L39.2",
-   "name": "obj",
-   "k": "bill",
-   "on": false
-  },
-  {
-   "at": "L39.2",
-   "name": "obj",
-   "k": "tiny",
-   "on": true,
-   "pos": [
-    -1.5,
-    -0.15,
-    0.23
-   ]
+   "at": 61.5,
+   "name": "puff"
   },
   {
    "at": "L39+0.9",
@@ -5500,37 +5407,37 @@
    ]
   },
   {
-   "at": 69.5,
-   "name": "puff"
-  },
-  {
-   "at": "L43.4",
+   "at": "L43.3",
    "name": "obj",
    "k": "slip",
    "on": false
   },
   {
-   "at": "L43.4",
+   "at": "L43.3",
    "name": "obj",
    "k": "slip2",
    "on": false
   },
   {
-   "at": "L43.4+0.1",
+   "at": "L43.3+0.1",
    "name": "ch",
    "k": "flap",
    "v": 1.0,
    "dur": 0.2
   },
   {
-   "at": "L43.4+0.4",
+   "at": "L43.3+0.4",
    "name": "ch",
    "k": "flap",
    "v": 0.0,
    "dur": 0.2
   },
   {
-   "at": "L43.4+0.7",
+   "at": 69.5,
+   "name": "puff"
+  },
+  {
+   "at": "L43.3+0.7",
    "name": "ch",
    "k": "flap",
    "v": 1.0,
@@ -5554,7 +5461,7 @@
    ]
   },
   {
-   "at": "L43.4+1.0",
+   "at": "L43.3+1.0",
    "name": "ch",
    "k": "flap",
    "v": 0.0,
@@ -5673,7 +5580,7 @@
     "db": -9
    },
    {
-    "at": "L43.4",
+    "at": "L43.3",
     "kind": "thud",
     "db": -14
    }
@@ -5685,5 +5592,5 @@
    }
   ]
  },
- "rev": 4
+ "rev": 5
 }

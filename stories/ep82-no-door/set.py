@@ -24,7 +24,7 @@ from blocky import acting, bl_story, rig
 TMP = Path(tempfile.mkdtemp(prefix="nodoor-"))
 FONT = Path(__file__).resolve().parents[2] / "blocky" / "fonts" / "SchibstedGrotesk-Black.ttf"
 Y0 = 2.5            # the doorless house: front wall at y 0, body 6 x 5, centred on y 2.5
-RISE = 4.2          # how high its legs lift it
+RISE = 6.4          # how high its legs lift it
 _n = [0]
 
 
@@ -268,15 +268,20 @@ def build_creature(kit, ctx):
     BB((0.9, 0.9, 1.9), 2.0, 3.6, 6.55, red, "chimney", 0.03)
     BB((1.1, 1.1, 0.14), 2.0, 3.6, 7.55, dark, "chcap", 0.02)
     ctx["chimney"] = (2.0, 3.6 - Y0, 7.65)
-    # the eyes: two curtainless top windows, a warm pane with a round dark centre; stern brows over them
+    # the eyes: two curtainless top windows, plain until a pupil/pinpoint channel turns them into a face (no brows)
     ctx["panes"] = []
     for sx in (-1, 1):
         m, node = emat(kit, "#ff9d2e", 1.9, "eye")
         ctx["panes"].append(node)
         window(kit, bodyg, sx * 1.7, 3.9, 1.2, 0.95, white, m, y=-Y0)
-        pup = kit.cyl(nm("pupil"), 0.21, 0.04, (sx * 1.7, -Y0 - 0.065, 3.85), dark, bodyg, rot=(math.pi / 2, 0, 0), n=16)
-        ctx["panes"][-1] = node
-        B(bodyg, (1.7, 0.16, 0.24), (sx * 1.7, -Y0 - 0.09, 4.58), P("#7a2420", 0.6), "brow", 0.03, rot=(0, -sx * 0.34, 0))
+        pup = kit.cyl(nm("pupil"), 0.13, 0.04, (sx * 1.7, -Y0 - 0.065, 3.9), dark, bodyg, rot=(math.pi / 2, 0, 0), n=16)
+        pup.scale = (0.001,) * 3
+        ctx.setdefault("pupils", []).append(pup)
+        pm, pn = emat(kit, "#fff1c8", 16.0, "pin")
+        pin = kit.sphere(nm("pin"), 0.065, (sx * 1.7, -Y0 - 0.07, 3.9), pm, bodyg, seg=10)
+        no_shadow(pin)
+        pin.scale = (0.001,) * 3
+        ctx.setdefault("pins", []).append(pin)
     # pupils/eyes need body-local y (-Y0 offset is for BB only; windows above were placed with y relative to the body origin)
     # the chest: a bay window in the lower storey
     mb, nb = emat(kit, "#ffd890", 1.3, "bay")
@@ -383,8 +388,8 @@ def painted_house(kit, ctx, x, y, body_c, door_c, roof_c, facing, idx=None):
     B(g, (0.14, 0.14, 2.7), (2.6, -1.7, 1.5), white, "post", 0.02)
     B(g, (3.0, 2.0, 0.14), (1.4, -0.95, 2.9), P(roof_c, 0.5), "porchroof", 0.02)
     if idx is not None:
-        m, node = emat(kit, "#ffc66e", 7.0, "bulb")
-        kit.sphere(nm("bulb"), 0.13, (1.4, -0.45, 2.7), m, g, seg=10)
+        m, node = emat(kit, "#ffc66e", 12.0, "bulb")
+        kit.sphere(nm("bulb"), 0.2, (1.4, -0.45, 2.7), m, g, seg=10)
         wp = g.matrix_world @ V((1.4, -0.45, 2.6)) if False else V((x + (1.4 if facing == 1 else -1.4), y - facing * 0.45, 2.6))
         kit.light(f"porch{idx}", "POINT", tuple(wp), 90, "#ffb866", size=0.2, shadow=False)
         ctx["bulbs"][idx] = node
@@ -487,10 +492,14 @@ def build_props(kit):
     B(g, (0.08, 0.1, 0.004), (0, 0, 0.0045), P("#4fa95d", 0.6), "billmark", 0.001)
     pr["bill"] = g
     g = E(None, (0, 0, -50), "tiny")
-    gm = P("#5fc46f", 0.5)
+    gm, gd, gr = P("#5fc46f", 0.5), P("#2f7d3e", 0.6), P("#3f9a50", 0.5)
     B(g, (0.13, 0.1, 0.08), (0, 0, 0.04), gm, "tbody", 0.004)
     for sgn in (-1, 1):
-        B(g, (0.15, 0.08, 0.012), (0, sgn * 0.035, 0.1), P("#3f9a50", 0.5), "troof", 0.002, rot=(-sgn * 0.8, 0, 0))
+        B(g, (0.15, 0.08, 0.012), (0, sgn * 0.035, 0.1), gr, "troof", 0.002, rot=(-sgn * 0.8, 0, 0))
+    verts = [(-0.065, -0.05, 0.08), (-0.065, 0.05, 0.08), (-0.065, 0, 0.14), (0.065, -0.05, 0.08), (0.065, 0.05, 0.08), (0.065, 0, 0.14)]
+    kit.mesh_obj(nm("tgable"), verts, [(0, 2, 1), (3, 4, 5), (0, 3, 5, 2), (1, 2, 5, 4)], gm, g)
+    B(g, (0.03, 0.012, 0.045), (0, -0.054, 0.027), gd, "tdoor", 0.002)
+    B(g, (0.028, 0.012, 0.028), (-0.04, -0.054, 0.05), gd, "twin", 0.002)
     pr["tiny"] = g
     # the order slip
     g = E(None, (0, 0, -50), "slip")
@@ -554,6 +563,8 @@ def build(kit, story, tl):
 
     sun("sunset", 180, 9, 6.5, "#ff8a5a")
     sun("key", -28, 38, 1.7, "#fff4e4")
+    sun("rim", 160, 22, 5.0, "#ff6fb0")
+    kit.light("uplight", "POINT", (0, -5.5, 0.3), 1800, "#ffb878", size=0.4, shadow=False)
     ctx["fill"] = kit.light("camfill", "SUN", (0, 0, 2), 1.3, "#ffe9cf", size=0.1, shadow=False)
     kit.light("slotglow", "POINT", (-1.5, -0.3, 0.45), 14, "#ffb866", size=0.1, shadow=False)
     # the low red sun itself, a disc behind the house
@@ -682,6 +693,17 @@ def animate(kit, story, tl, t, ctx):
         piv.rotation_euler = (-0.55 * chan(tl, k, t), 0, 0)
     for node in ctx["panes"]:
         node.inputs["Strength"].default_value = 1.9 * eyes
+    for key, objs_ in (("pupil", ctx["pupils"]), ("pin", ctx["pins"])):
+        v = max(chan(tl, key, t), 0.001)
+        for o in objs_:
+            o.scale = (v, v, v)
+    rs = ss(rise / 0.6)
+    ov["uplight"] = rs * chan(tl, "up", t, 1.0)
+    ov["rim"] = rs
+    ov["camfill"] = sd.get("fill", 1.0) * (1.0 - 0.8 * rs)
+    ov["key"] = 1.0 - 0.7 * rs
+    ov["sunset"] = 1.0 + 0.4 * rs
+    sc.view_settings.exposure = sd.get("exp", 0.0) - 0.45 * rs
     # ---- chimney puffs: each "puff" cue is a 1.8 s plume
     cx, cy, cz = ctx["chimney"]
     used = 0
@@ -720,7 +742,7 @@ def animate(kit, story, tl, t, ctx):
     # ---- porch lights
     for i, node in ctx["bulbs"].items():
         v = chan(tl, f"plight{i}", t, 1.0)
-        node.inputs["Strength"].default_value = 7.0 * v
+        node.inputs["Strength"].default_value = 12.0 * v
         ov[f"porch{i}"] = v
     # ---- the badge
     bd = cue_at(tl, "badge", t)

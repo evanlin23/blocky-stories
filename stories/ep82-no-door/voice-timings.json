@@ -297,39 +297,15 @@
     ]
    ]
   },
-  "L12": {
-   "text": "she did this route for ten years.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.638,
-   "onset": 0.19,
-   "end": 1.448,
-   "chunks": [
-    [
-     0.19,
-     0.37
-    ],
-    [
-     0.37,
-     0.69
-    ],
-    [
-     0.69,
-     1.448
-    ]
-   ]
-  },
   "L13": {
-   "text": "this month, she gave it to me.",
+   "text": "this month, she gave me her route.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.517,
+   "dur": 1.621,
    "onset": 0.172,
-   "end": 1.31,
+   "end": 1.431,
    "chunks": [
     [
      0.172,
@@ -337,11 +313,11 @@
     ],
     [
      0.534,
-     0.862
+     0.87
     ],
     [
-     0.862,
-     1.31
+     0.87,
+     1.431
     ]
    ]
   },
@@ -781,14 +757,10 @@
    "chunks": [
     [
      0.19,
-     0.474
+     0.534
     ],
     [
-     0.474,
-     0.716
-    ],
-    [
-     0.716,
+     0.534,
      0.828
     ],
     [
@@ -797,14 +769,14 @@
     ],
     [
      1.422,
-     1.681
+     1.741
     ],
     [
-     1.681,
-     1.888
+     1.741,
+     1.939
     ],
     [
-     1.888,
+     1.939,
      2.5
     ]
    ]
@@ -1022,34 +994,30 @@
    ]
   },
   "L43": {
-   "text": "but last night, a second order came in, from another house with no door.",
+   "text": "then a second order came in, from another house with no door.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.276,
-   "onset": 0.155,
-   "end": 3.086,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
    "chunks": [
     [
-     0.155,
-     0.672
+     0.172,
+     0.56
     ],
     [
-     0.707,
-     1.207
+     0.56,
+     1.155
     ],
     [
-     1.207,
-     1.638
+     1.224,
+     1.793
     ],
     [
-     1.707,
-     2.276
-    ],
-    [
-     2.276,
-     3.086
+     1.793,
+     2.586
     ]
    ]
   },
