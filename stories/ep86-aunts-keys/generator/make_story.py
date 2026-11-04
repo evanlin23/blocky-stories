@@ -34,7 +34,7 @@ cast = {
            "sleeves": "long", "hair": "spiky", "hair_c": "#16131a", "extras": ["hooddown"], "extra_c": "#256a3e",
            "face": dict(FACE)},
     "lou": {"age": "adult", "skin": "#f1c9a0", "shirt": "#ffc23a", "pattern": "solid", "pants": "#6b4a2a", "shoes": "#6b3d1e",
-            "sleeves": "long", "hair": "long", "hair_c": "#c9ced8", "extras": ["coat", "glasses"], "extra_c": "#3a3a46",
+            "sleeves": "long", "hair": "long", "hair_c": "#f6f4ee", "extras": ["coat", "glasses"], "extra_c": "#3a3a46",
             "zip_c": "#d8a93b", "height": 0.94, "width": 1.0,
             "face": {"eyes": "lashes", "brows": True, "ink": "#24131f"}},
     "park": {"age": "adult", "skin": "#d9a27a", "shirt": "#5f78b5", "pattern": "stripes", "pattern_c": "#eef0f8",
@@ -187,14 +187,14 @@ def clock(at, text=None, day=None):
     cue(at, "clock", text=text, day=day)
 
 
-def ring(at, k=None, pos=None, yaw=0, turn=(0, 0), dur=1.0, hand=True, tilt=0, on=True, lx=0.38, lz=0.78):
+def ring(at, k=None, pos=None, yaw=0, turn=(0, 0), dur=1.0, hand=True, tilt=0, on=True, lx=0.38, lz=0.78, scale=1.0):
     if k is not None:
         pos = hw(k, lx, -0.145, lz)
         yaw = -ang(k)
     if not on:
         cue(at, "ring", on=False)
         return
-    cue(at, "ring", on=True, pos=list(pos), yaw=yaw, turn=list(turn), dur=dur, hand=hand, tilt=tilt)
+    cue(at, "ring", on=True, pos=list(pos), yaw=yaw, turn=list(turn), dur=dur, hand=hand, tilt=tilt, scale=scale)
 
 
 def RK(k, lx, ly, z, dx=0.0):
@@ -235,20 +235,30 @@ def ARC(k, d=1.0, lx=0.0):
 
 
 # ================================================================================================== S01 - S26: the montage
-# --- S01/S02: the key already in a stranger's lock, at midnight-warm dusk
-ring(0, k=4, turn=(0, 0), dur=1.0)
-S(0, HC(4, (0.52, -0.62, 0.8), (0.38, -0.2, 0.74), 34, (0.46, -0.50, 0.78), (0.38, -0.2, 0.72), 40), "dusk", fill=1.4, hand=0.003, note="the ring in her hand, a key in a red door's lock")
-ring("L02", k=4, turn=(0, 80), dur=1.2)
-S("L02", HC(4, (0.12, -0.5, 0.95), (0.38, -0.15, 0.78), 38, (0.2, -0.38, 0.9), (0.38, -0.15, 0.78), 46), "dusk", fill=1.4, hand=0.003, note="the key turning")
+# --- S01/S02: Lou at a stranger's red door at dusk, her key already in the deadbolt, her face in frame from frame 1
+LOCK4 = hw(4, 0.38, -0.155, 1.3)
+LOU_AT = hw(4, 0.95, -0.4, 0.0)
+_LOOKAT = hw(4, 0.3, -0.15, 0.0)
+_CAM0 = hw(4, -0.1, -2.1, 1.5)
+LOU_YAW = yaw_to(LOU_AT, _LOOKAT)
+_hy = (yaw_to(LOU_AT, _CAM0) - LOU_YAW + 180) % 360 - 180
+LOU_HEAD = [round(_hy * 0.85, 1), 0]
+ring(0, k=4, lz=1.3, turn=(0, 0), dur=1.0, hand=False, scale=2.3)
+put(LOU, 0, LOU_AT, LOU_YAW, "brisk", arms=[72, 72], head=LOU_HEAD)
+S(0, HC(4, (-0.1, -2.1, 1.45), (0.58, -0.3, 1.3), 28, (0.05, -1.8, 1.42), (0.56, -0.3, 1.3), 32), "dusk", fill=1.6, hand=0.003, note="Lou's face, the ring in her hands, a key in a red door's lock")
+ring("L02", k=4, lz=1.3, turn=(0, 80), dur=0.5, hand=False, scale=2.3)
+S("L02", HC(4, (0.05, -0.95, 1.5), (0.4, -0.15, 1.32), 38, (0.15, -0.75, 1.46), (0.4, -0.15, 1.32), 44), "dusk", fill=1.6, hand=0.003, note="the key turning")
 ring("L02.2", k=4, turn=(80, 80), dur=1.0, on=False)
+gone(LOU, "L02.2")
 clock("L02.2", None)
 clock("L56", None)
 clock("L57", "05:52")
 clock("L59", None)
 # --- S03: the court by day from above; S04: at midnight
-S("L03", K_([0, -27, 16], [0, 3, 1.5], 14, [2, -24, 13], [0, 3, 1.5], 14.5), "day", hand=0.0, note="twelve houses round a fountain")
+S("L02.1", K_([0, -27, 16], [0, 3, 1.5], 14, [2, -24, 13], [0, 3, 1.5], 14.5), "day", hand=0.0, note="twelve houses round a fountain")
+S("L03.1", K_([7, -25, 9], [-1, 2, 1.8], 17, [5, -22, 8], [-1, 2, 1.8], 18), "day", hand=0.0, note="closer on the fountain")
 S("L04", K_([-5, -21, 7.0], [0, 1, 2.0], 15, [-3, -19, 6.0], [0, 1, 2.2], 15), "night", hand=0.0, note="midnight, four lamps on")
-S("L04.3", HC(5, (-0.3, -2.8, 1.0), (0.1, 0.0, 1.6), 20, (-0.1, -2.2, 1.1), (0.1, 0.0, 1.5), 20), "night", note="you can hear it from every door")
+S("L04.2", HC(5, (-0.3, -2.8, 1.0), (0.1, 0.0, 1.6), 20, (-0.1, -2.2, 1.1), (0.1, 0.0, 1.5), 20), "night", note="you can hear it from every door")
 # --- S05: three keys turning in three locks
 ring("L05", k=2, turn=(0, 70), dur=0.5)
 S("L05", HC(2, (0.05, -0.55, 0.9), (0.38, -0.13, 0.78), 40, (0.15, -0.42, 0.86), (0.38, -0.13, 0.78), 46), "night", fill=1.4, hand=0.003, note="CLICK one")
@@ -268,7 +278,8 @@ S("L06.2", K_([-3, -9.5, 1.4], [3, 3, 1.4], 18, [-2, -9.5, 1.4], [4, 3, 1.4], 20
 # --- S07 Mr. Park asleep in his armchair facing his door
 room("L07", ["armchair", "door_a"], chair_yaw=180)
 put(PARK, "L07", [RX + 0.0, RY + 0.55, 0.35], 180, "shut", lean=-28, head=[0, -8])
-S("L07", K_([RX + 0.9, RY - 1.9, 1.7], [RX + 0.1, RY + 1.6, 1.1], 15, [RX + 0.6, RY - 1.5, 1.6], [RX + 0.1, RY + 1.6, 1.1], 17), "int", hand=0.004, rkey=0.6, note="Mr. Park asleep facing his door")
+S("L07", FC([RX, RY + 0.55], 180, 3.2, -45, 6, 32, 1.2, 1.0, d2=2.8), "int", hand=0.004, rkey=1.0, note="Mr. Park asleep, face")
+S("L07.2", K_([RX + 0.9, RY - 2.4, 1.9], [RX + 0.1, RY + 1.6, 1.35], 15, [RX + 0.6, RY - 2.0, 1.8], [RX + 0.1, RY + 1.6, 1.35], 17), "int", hand=0.004, rkey=0.6, note="facing his door")
 # --- S08 Mrs. Haddad with the new lock
 cue("L08", "padlock", on=True, pos=front(9, 1.0, 0.0, 1.2))
 put(HAD, "L08", front(9, 1.1, 0.0), yawf(9) + 180, "angry", arms=[75, 75], head=[0, 5])
@@ -342,9 +353,10 @@ put(LOU, "L21", front(1, 1.2, 0.0), yawf(1) + 180 + 40, "neutral")
 S("L21", W(front(1, 1.6, 0.4), 4.4, 20, 5, 30, h=1.1, d2=3.6), "day", note="Lou and me on her step")
 put(ME, "L22", front(1, 2.0, 1.2), yawf(1) + 180 - 90, "angry", arms=[85, 85])
 S("L22", FC(front(1, 2.0, 1.2), yawf(1) + 180 - 90, 1.9, 35, 4, 36, 1.4, 1.3, d2=1.5), "day", note="palm out for the ring")
+gone(ME, "L23")
 put(LOU, "L23", front(1, 1.2, 0.0), yawf(1) + 180 + 40, "soft", head=[0, 5])
 ring("L23", pos=[front(1, 1.2, 0.0)[0] + 0.15, front(1, 1.2, 0.0)[1] + 0.1, 1.0], yaw=yawf(1) + 180 + 40, hand=False)
-S("L23", FC(front(1, 1.2, 0.0), yawf(1) + 180 + 40, 1.3, 20, 3, 42, 1.45, 1.45, d2=1.05), "day", note="Lou, soft, not handing it over")
+S("L23", FC(front(1, 1.2, 0.0), yawf(1) + 180 + 40, 2.4, 25, 3, 36, 1.35, 1.35, d2=2.0), "day", fill=1.0, face=True, note="Lou, soft, not handing it over")
 ring("L24", on=False)
 gone(LOU, "L24")
 # --- S24 I leave my door open on purpose; S25 the camera; S26 its view
@@ -380,7 +392,7 @@ raw(LOU, "L29>", pos=front(6, 1.1, 0.0), run=True)
 tags("L29.2", [2, 3])
 tags("L29.3", [2, 3, 4])
 tags("L29.4", [2, 3, 4, 5])
-ring("L29.3", k=3, turn=(0, 70), dur=0.5, hand=True)
+ring("L29.2", k=3, turn=(0, 70), dur=0.5, hand=True)
 S("L29.2", HC(3, (0.1, -0.55, 0.9), (0.38, -0.13, 0.78), 40, (0.2, -0.42, 0.86), (0.38, -0.13, 0.78), 46), "night", fill=1.4, hand=0.003, note="a key turning, fast")
 ring("L29.4", on=False)
 S("L29.3", K_(PORCH, [2.0, 7.0, 1.0], 20, PORCH, [3.5, 6.0, 1.0], 22), "night", hand=0.0, fill=1.3, note="Lou across the court")
@@ -388,7 +400,7 @@ tags("L29>", [2, 3, 4, 5, 6])
 # --- S30: close on Lou's face, worried, glancing at my door
 put(LOU, "L30", front(6, 1.3, 0.2), yawf(6) + 180 + 25, "worried", head=[40, 0], look=[0.8, 0])
 gone(LOU, "L32+0.8")
-S("L30", FC(front(6, 1.3, 0.2), yawf(6) + 180 + 25, 1.5, 10, 3, 42, 1.42, 1.42, d2=1.2), "night", fill=1.5, note="her face, worried")
+S("L30", FC(front(6, 1.3, 0.2), yawf(6) + 180 + 25, 2.3, 10, 3, 36, 1.35, 1.35, d2=1.95), "night", fill=2.0, note="her face, worried")
 walk(LOU, "L31", front(6, 1.3, 0.2), "L31>", front(8, 1.3, 0.0), yaw=None, expr="worried", run=True)
 S("L31", K_(PORCH, [3.5, 8.0, 1.0], 21, PORCH, [2.6, 8.6, 1.0], 24), "night", hand=0.0, fill=1.3, note="she passes number seven")
 # L32: she steps inside number one, leaving her door open
@@ -401,6 +413,8 @@ clock("L33", "12:04")
 clock("L67", None)
 tags("L33", [2, 3, 4, 5, 6, 8, 9, 10, 11, 12])
 S("L33", K_(PORCH, [0, 0, 1.0], 14, PORCH, [0.3, 0.2, 1.0], 16), "night", hand=0.0, fill=1.2, note="12:04")
+# --- the hush before it: my door, closed, a held breath
+S("P02", HC(7, (-1.5, -4.6, 1.9), (0.0, 0.0, 1.2), 20, (-1.1, -3.9, 1.8), (0.0, 0.0, 1.2), 22), "night", hand=0.002, fill=1.2, note="my door, closed, still")
 # --- S34: my door opens from inside
 door("L34", 7, 0, 80, 0.9)
 S("L34", HC(7, (-1.0, -3.4, 1.9), (0.0, 0.0, 1.2), 24, (-0.7, -2.8, 1.8), (0.0, 0.0, 1.2), 26), "night", hand=0.002, fill=1.2, note="my door swings open")
@@ -457,8 +471,10 @@ S("L44", K_(PORCH, [0.0, 0.0, 0.9], 13, [PORCH[0] - 0.2, PORCH[1] - 0.3, PORCH[2
 S("L44.1", K_([0.8, -4.8, 0.32], [0.0, -2.3, 0.3], 20, [0.4, -3.9, 0.34], [0.0, -2.3, 0.3], 22), "night", hand=0.0, fill=0.6, note="two brass strokes, low at the rim (never narrated)")
 S("L44.3", K_(PORCH, [0.0, 0.0, 0.9], 15, PORCH, [0.4, 0.0, 0.9], 16), "night", hand=0.0, fill=1.0, note="at MIDNIGHT")
 # --- S45 number one's lit window
-S("L45", K_([-3, -14, 3.0], [-9.0, -6.3, 4.0], 20, [-4, -12.5, 3.5], [-9.0, -6.3, 4.2], 24), "night", hand=0.0, note="my old room's lit window")
-S("L45.2", HC(1, (-0.6, -4.0, 3.2), (-0.95, 0, 4.3), 28, (-0.8, -3.0, 3.6), (-0.95, 0, 4.3), 32), "night", note="since the night I moved out")
+door("L45", 1, 0, 85, 0.5)
+put(LOU, "L45", front(1, 0.9, 0.0), yawc(1), "worried", arms=[0, 0])
+S("L45", K_([-3, -14, 2.4], [-8.4, -5.6, 2.7], 15, [-4, -12.5, 2.6], [-8.4, -5.6, 2.8], 16), "night", hand=0.0, note="her door, my old room's lit window")
+S("L45.2", HC(1, (0.5, -3.4, 1.4), (0.0, 0, 1.0), 26, (0.3, -2.9, 1.4), (0.0, 0, 1.05), 28), "night", fill=1.4, note="Lou in her doorway, the window lit above")
 S("L45.3", K_(PORCH, [-2.0, 3.0, 0.9], 20, PORCH, [-3.5, 3.0, 0.9], 22), "night", hand=0.0, fill=1.0, note="sleepwalking home")
 # --- S46 trying door after door
 walk(ME, "L46", front(8, 3.0, 0.0), "L46.1", front(8, 1.4, 0.0), yaw=yawf(8), expr="asleep", arms=[22, 22])
@@ -470,11 +486,12 @@ S("L46.1", HC(9, (0.8, -0.6, 1.2), (0.38, -0.15, 1.0), 40, (0.65, -0.5, 1.1), (0
 hand("L46.2", on=False)
 S("L46.2", K_(PORCH, [7.0, -1.0, 1.0], 22, PORCH, [8.0, -1.8, 1.0], 24), "night", hand=0.0, fill=1.2, note="to find my old ROOM")
 # --- S47 Lou at her window watching the clock; she races
+door("L47", 1, 85, 0, 0.4)
 clock("L47", None)
 gone(ME, "L47")
 room("L47", ["window", "clock", "lamp"])
-put(LOU, "L47", [RX - 2.4, RY + 0.8, 0.0], 270, "worried", head=[0, 0])
-S("L47", K_([RX - 0.6, RY - 2.2, 1.5], [RX - 2.6, RY + 1.0, 1.4], 24, [RX - 0.8, RY - 1.8, 1.5], [RX - 2.7, RY + 1.0, 1.35], 28), "intn", hand=0.004, rkey=0.8, note="Aunt Lou at her window, watching the clock")
+put(LOU, "L47", [RX - 2.4, RY + 0.8, 0.0], 300, "worried", head=[40, 0])
+S("L47", FC([RX - 2.4, RY + 0.8], 300, 3.2, 60, 4, 36, 1.4, 1.4, d2=2.8), "intn", hand=0.004, rkey=0.5, fill=1.0, note="Aunt Lou at her window, watching the clock")
 clock("L47.1", "12:04")
 put(LOU, "L47.1", front(2, 2.6, 0.0), yawf(2) + 180, "worried", run=True)
 raw(LOU, "L48-0.2", pos=front(5, 1.2, 0.0), run=True)
@@ -496,7 +513,17 @@ door("L49", 1, 0, 14, 0.5)
 walk(ME, "L49", front(1, 6.0, 0.0), "L49.3", front(1, 2.0, 0.0), yaw=yawf(1), expr="asleep", arms=[22, 22])
 S("L49", K_(PORCH, [-4, -1, 1.0], 18, PORCH, [-6, -4, 1.0], 22), "night", hand=0.0, fill=1.2, note="the only one I can open")
 S("L49.3", HC(1, (0.5, -1.6, 1.3), (0.2, 0, 1.1), 30, (0.35, -1.2, 1.3), (0.15, 0, 1.1), 36), "night", fill=0.8, note="is hers, a crack, warm light")
+# --- S49a my own door from inside: my sleeping hand on the brass thumb-turn, turning it open
+THUMB = [RX + 0.7, RY + 2.805, 1.1]
+room("L49a", ["door_b"])
+put(ME, "L49a", [RX - 0.3, RY + 1.0, 0.0], 180, "asleep", arms=[0, 70])
+S("L49a", FC([RX - 0.3, RY + 1.0], 180, 2.9, -55, 4, 36, 1.45, 1.45, d2=2.5), "intn", hand=0.002, fill=1.3, rkey=1.0, note="me, asleep, at my own door")
+hand("L49a.2", pos=THUMB, yaw=0, a0=0, a1=0, dur=0.5)
+S("L49a.2", K_([RX + 1.7, RY + 1.5, 1.4], [RX + 0.7, RY + 2.75, 1.1], 40, [RX + 1.5, RY + 1.7, 1.35], [RX + 0.7, RY + 2.75, 1.1], 44), "intn", hand=0.002, fill=1.2, rkey=1.0, note="my hand on the brass thumb-turn")
+hand("L49a.5", pos=THUMB, yaw=0, a0=0, a1=90, dur=0.9)
+S("L49a.5", K_([RX + 1.6, RY + 1.9, 1.3], [RX + 0.7, RY + 2.75, 1.1], 44, [RX + 1.4, RY + 2.1, 1.25], [RX + 0.7, RY + 2.75, 1.1], 50), "intn", hand=0.002, fill=1.2, rkey=1.0, note="I just TURN it")
 # --- S50 Thursday
+hand("L50", on=False)
 door("L50", 1, 14, 0, 0.5)
 clock("L50", "12:04", 4)
 gone(ME, "L50")
@@ -505,15 +532,14 @@ S("L50", K_(PORCH, [0, 0, 1.0], 13), "night", hand=0.0, fill=1.2, note="Thursday
 S("L50.1", K_(PORCH, [-2, 0, 1.0], 17, PORCH, [-3, 0, 1.0], 18), "night", hand=0.0, fill=1.2, note="the worst")
 # --- S51 Lou's knee
 put(LOU, "L51", front(2, 3.0, 0.0), yawc(2) + 40, "worried", lean=10, arms=[0, 0])
-raw(LOU, "L52", pos=front(2, 3.2, 0.0))
-S("L51", K_(PORCH, [-6.0, 3.0, 1.0], 22, PORCH, [-5.0, 4.0, 1.0], 24), "night", hand=0.0, fill=1.3, note="her knee, slow")
-S("L51.2", FC(front(2, 3.0, 0.0), yawc(2) + 40, 2.4, 20, 4, 36, 1.2, 1.2, d2=1.8), "night", fill=1.5, note="she was slow")
+S("L51", FC(front(2, 3.0, 0.0), yawc(2) + 40, 3.6, 25, 4, 30, 1.1, 1.1, d2=3.1), "night", fill=1.8, note="her knee, slow")
+S("L51.2", FC(front(2, 3.0, 0.0), yawc(2) + 40, 2.9, 20, 4, 36, 1.3, 1.3, d2=2.5), "night", fill=2.0, note="she was slow")
 # --- S52 me at Mr. Park's door first
 put(ME, "L52", front(3, 3.0, 0.0), yawf(3), "asleep", arms=[22, 22])
 raw(ME, "L52.1", pos=front(3, 1.4, 0.0))
-S("L52", K_(PORCH, [-5.0, 4.0, 1.0], 20, PORCH, [-4.0, 5.0, 1.0], 22), "night", hand=0.0, fill=1.3, note="me first")
-S("L52.1", K_(PORCH, [-5.5, 5.5, 1.1], 28, PORCH, [-5.0, 6.0, 1.1], 30), "night", hand=0.0, fill=1.3, note="at Mr. Park's door")
-S("L52.3", K_(PORCH, [-3.0, 3.0, 1.0], 14, PORCH, [-4.0, 4.0, 1.0], 15), "night", hand=0.0, fill=1.2, note="first")
+S("L52", FC(front(3, 2.2, 0.0), yawf(3), 3.4, 60, 4, 36, 1.4, 1.4, d2=3.1), "night", fill=1.4, note="me first")
+S("L52.1", FC(front(3, 1.6, 0.0), yawf(3), 3.4, 80, 4, 36, 1.4, 1.4, d2=3.0), "night", fill=1.4, note="at Mr. Park's door")
+S("L52.3", FC(front(3, 1.4, 0.0), yawf(3), 3.2, -75, 4, 36, 1.4, 1.4, d2=2.8), "night", fill=1.4, note="first")
 # --- S53 his handle starts to turn
 S("L53", FC(front(3, 1.4, 0.0), yawf(3), 2.2, 160, 6, 30, 1.2, 1.3, d2=1.8), "night", fill=1.5, note="I watched myself")
 hand("L53.1", k=3, shake=0.0, a0=0, a1=35, dur=0.8)
@@ -541,20 +567,20 @@ S("L55.3", HC(1, (0.9, -2.6, 1.5), (0.0, 0.0, 1.2), 24, (0.7, -2.0, 1.4), (0.0, 
 # --- S56 inside number one, Lou with a blanket
 gone(ME, "L56")
 door("L56", 1, 75, 75, 0.1)
-room("L56", ["stairs", "lamp", "window"])
+room("L56", ["lamp", "window"])
 cue("L56", "blanket", on=True)
-put(LOU, "L56", [RX + 2.7, RY + 0.4, 0.66], 270, "soft", arms=[40, 40])
-S("L56", K_([RX - 0.8, RY - 2.4, 1.6], [RX + 2.4, RY + 0.6, 1.2], 26, [RX - 0.4, RY - 2.0, 1.6], [RX + 2.5, RY + 0.5, 1.2], 28), "intn", hand=0.004, rkey=0.8, note="Lou waiting with a blanket")
-S("L56.1", FC([RX + 2.7, RY + 0.4], 270, 1.7, 25, 3, 38, 1.5, 1.5, d2=1.3), "intn", hand=0.004, rkey=0.8, note="a blanket")
+put(LOU, "L56", [RX + 1.4, RY + 0.4, 0.0], 270, "soft", arms=[40, 40])
+S("L56", K_([RX - 1.6, RY - 2.6, 1.6], [RX + 1.4, RY + 0.5, 1.15], 26, [RX - 1.2, RY - 2.2, 1.55], [RX + 1.5, RY + 0.5, 1.15], 28), "intn", hand=0.004, rkey=0.8, note="Lou waiting with a blanket")
+S("L56.1", FC([RX + 1.4, RY + 0.4], 270, 3.0, 25, 3, 36, 1.3, 1.3, d2=2.6), "intn", hand=0.004, rkey=0.9, note="a blanket")
 # --- S57 dawn: she walks me back
 cue("L57", "blanket", on=False)
 door("L57", 1, 0, 0, 0.1)
 _m0, _m1 = front(1, 2.5, 0.0), front(7, 1.6, 0.0)
 walk(ME, "L57", _m0, "L58", _m1, yaw=None, expr="asleep", arms=[22, 22])
 walk(LOU, "L57", [_m0[0] + 0.9, _m0[1] + 0.5, 0.0], "L58", [_m1[0] + 0.9, _m1[1] + 0.1, 0.0], yaw=None, expr="soft", arms=[0, 80])
-S("L57", K_([4, -14, 4.0], [-1, 3, 1.2], 16, [3, -13, 3.5], [0, 3, 1.2], 18), "dawn", hand=0.0, note="before sunrise, she walks me back")
-S("L57.1", W([-2.5, 2.0], 5.0, 30, 6, 30, h=1.2, d2=4.0), "dawn", note="her arm round my shoulders")
-S("L57.3", W(front(7, 3.0, 0.4), 4.5, 330, 4, 28, h=1.2, d2=3.8), "dawn", note="to number SEVEN")
+S("L57", W([-4.6, -0.8], 6.0, 150, 6, 22, h=1.3, d2=4.8), "dawn", note="before sunrise, she walks me back")
+S("L57.1", W([-1.6, 3.0], 4.6, 160, 4, 26, h=1.3, d2=3.8), "dawn", note="her arm round my shoulders")
+S("L57.3", W(front(7, 3.0, 0.4), 4.6, 55, 4, 28, h=1.2, d2=3.9), "dawn", note="to number SEVEN")
 # --- S58 my door locks with her key; tag 7 glows
 door("L58", 7, 80, 0, 0.7)
 gone(ME, "L58")
@@ -565,16 +591,16 @@ tags("L58.3", [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 S("L58.3", HC(7, (0.1, -0.55, 0.9), (0.38, -0.13, 0.78), 40, (0.2, -0.42, 0.86), (0.38, -0.13, 0.78), 46), "dawn", fill=1.3, hand=0.003, note="with HER key, tag 7 glows")
 # --- S58a then she unlocks the other ten, the tags fade
 ring("L58a", on=False)
-walk(LOU, "L58a", front(6, 2.6, 0.0), "L58a.2", front(5, 2.6, 0.0), yaw=yawf(6), expr="neutral", run=True)
-raw(LOU, "L58a.4", pos=front(4, 1.2, 0.0), run=True)
+walk(LOU, "L58a", front(6, 2.6, 0.0), "L58a.1", front(5, 2.6, 0.0), yaw=yawf(6), expr="neutral", run=True)
+raw(LOU, "L58a.3", pos=front(4, 1.2, 0.0), run=True)
 raw(LOU, "L59-0.3", pos=front(3, 1.2, 0.0), run=True)
 S("L58a", K_(PORCH, [0, 0, 1.0], 13, [PORCH[0] - 0.2, PORCH[1], PORCH[2]], [0, 0, 1.0], 14), "dawn", hand=0.0, fill=1.0, note="she goes round again")
-ring("L58a.2", k=5, turn=(70, 0), dur=0.5)
+ring("L58a.1", k=5, turn=(70, 0), dur=0.5)
 for i, n in enumerate([12, 11, 10, 9, 8, 7, 6, 5, 4, 3]):
     tags(f"L58a+{0.35 + i * 0.28:.2f}", [x for x in range(2, 13) if x not in [12, 11, 10, 9, 8, 7, 6, 5, 4, 3][:i + 1]])
-S("L58a.2", HC(5, (0.15, -0.55, 0.9), (0.38, -0.13, 0.78), 40, (0.25, -0.42, 0.86), (0.38, -0.13, 0.78), 46), "dawn", fill=1.3, hand=0.003, note="unlocking the other ten")
-ring("L58a.4", on=False)
-S("L58a.4", K_([2, -12, 3.0], [-1, 2, 1.5], 16, [1, -11, 2.5], [-1, 2, 1.5], 18), "dawn", hand=0.0, note="before anyone wakes")
+S("L58a.1", HC(5, (0.15, -0.55, 0.9), (0.38, -0.13, 0.78), 40, (0.25, -0.42, 0.86), (0.38, -0.13, 0.78), 46), "dawn", fill=1.3, hand=0.003, note="unlocking the other ten")
+ring("L58a.3", on=False)
+S("L58a.3", K_([2, -12, 3.0], [-1, 2, 1.5], 16, [1, -11, 2.5], [-1, 2, 1.5], 18), "dawn", hand=0.0, note="before anyone wakes")
 tags("L59", [])
 # --- S59 the ring's tag 7
 gone(LOU, "L59")
@@ -587,11 +613,11 @@ put(LOU, "L60", [RX - 0.2, RY + 0.95, 0.0], 0, "worried", head=[0, 10])
 S("L60", FC([RX - 0.2, RY + 0.95], 0, 2.2, 15, 4, 34, 1.3, 1.3, d2=1.7), "int", hand=0.004, note="Aunt Lou, tired, a mug, the ring")
 ring("L60.2", pos=[RX - 0.2, RY + 0.1, 0.8], yaw=0, tilt=90, hand=False)
 S("L60.2", K_([RX - 0.2, RY - 0.9, 1.5], [RX - 0.2, RY + 0.1, 0.8], 36, [RX - 0.2, RY - 0.6, 1.3], [RX - 0.2, RY + 0.1, 0.8], 40), "int", hand=0.003, note="the ring beside it")
-ring("L60.4", on=False)
-S("L60.4", FC([RX - 0.2, RY + 0.95], 0, 1.5, -20, 3, 40, 1.4, 1.35, d2=1.2), "int", note="she didn't want me scared")
-gone(LOU, "L60.5")
-put(ME, "L60.5", front(7, 2.8, 0.0), yawc(7), "worried")
-S("L60.5", FC(front(7, 2.8, 0.0), yawc(7), 2.4, 15, 4, 34, 1.5, 1.5, d2=1.9), "dawn", note="in my own place")
+ring("L60.3", on=False)
+S("L60.3", FC([RX - 0.2, RY + 0.95], 0, 1.5, -20, 3, 40, 1.4, 1.35, d2=1.2), "int", note="she didn't want me scared")
+gone(LOU, "L60.4")
+put(ME, "L60.4", front(7, 2.8, 0.0), yawc(7), "worried")
+S("L60.4", FC(front(7, 2.8, 0.0), yawc(7), 2.4, 15, 4, 34, 1.5, 1.5, d2=1.9), "dawn", note="in my own place")
 # --- S61 me at my table, phone down, soft
 gone(ME, "L61")
 put(ME, "L61", [RX - 0.3, RY - 0.4, 0.0], 150, "soft", arms=[0, 0], head=[0, 5])
@@ -607,19 +633,19 @@ room("L63", [])
 cue("L63", "bed", on=True, pos=[-3.0, -6.0, 0.9], to=[1.2, -4.0, 0.9], yaw=90, dur=2.0)
 walk(ME, "L63", [-4.5, -6.0, 0.0], "L64", [-0.3, -4.0, 0.0], yaw=None, expr="neutral", arms=[40, 40])
 walk(LOU, "L63", [-1.7, -6.0, 0.0], "L64", [2.5, -4.0, 0.0], yaw=None, expr="neutral", arms=[40, 40])
-S("L63", W([-1.5, -6.0], 5.5, 20, 8, 28, h=1.0, d2=4.5), "day", note="Sunday, we carry it")
-S("L63.1", W([-0.2, -5.0], 5.0, 330, 5, 28, h=1.0, d2=4.0), "day", note="we carried it")
-S("L63.2", W([1.5, -3.6], 5.5, 40, 6, 26, h=1.0, d2=4.5), "day", note="across the COURT, past the fountain")
+S("L63", W([-1.5, -5.6], 6.0, 100, 6, 28, h=1.2, d2=5.0), "day", note="Sunday, we carry it")
+S("L63.1", W([0.2, -4.7], 4.6, 105, 5, 28, h=1.2, d2=3.9), "day", note="we carried it")
+S("L63.2", W([1.4, -4.1], 4.4, 100, 5, 28, h=1.25, d2=3.7), "day", note="across the COURT, past the fountain")
 # --- S64 my old lamp, my squeaky bed
 cue("L64", "bed", on=False)
 gone(LOU, "L64")
 gone(ME, "L64")
 room("L64", ["lamp", "bed", "window"], bed_yaw=0)
-S("L64", K_([RX + 2.2, RY + 0.4, 1.2], [RX + 2.9, RY + 2.3, 0.95], 34, [RX + 2.3, RY + 0.8, 1.2], [RX + 2.9, RY + 2.3, 0.95], 38), "int", rkey=0.7, note="my old lamp")
+S("L64", K_([RX + 0.5, RY - 0.8, 1.5], [RX + 2.9, RY + 2.3, 0.9], 30, [RX + 0.9, RY - 0.4, 1.4], [RX + 2.9, RY + 2.3, 0.9], 34), "int", rkey=0.7, note="my old lamp")
 put(ME, "L64.1", [RX + 1.9, RY + 1.0, 0.45], 0, "smile")
 raw(ME, "L64.1", pos=[RX + 1.9, RY + 1.0, 0.45])
 raw(ME, "L65", pos=[RX + 1.9, RY + 1.0, 0.4])
-S("L64.1", K_([RX + 0.4, RY - 1.4, 1.5], [RX + 1.9, RY + 1.0, 0.8], 30, [RX + 0.7, RY - 1.2, 1.4], [RX + 1.9, RY + 1.0, 0.8], 33), "int", note="my squeaky old bed")
+S("L64.1", K_([RX + 0.3, RY - 2.5, 1.7], [RX + 1.9, RY + 1.0, 1.15], 25, [RX + 0.7, RY - 2.2, 1.65], [RX + 1.9, RY + 1.0, 1.2], 27), "int", note="my squeaky old bed")
 # --- S65 - S67 that night, on a camera on my shelf
 clock("L65", "12:04")
 put(ME, "L65", [RX + 1.9, RY + 0.3, 0.7], 0, "asleep", lean=-90)
@@ -638,35 +664,38 @@ room("L68", [])
 put(PARK, "L68", front(3, 1.0, 0.7), yawc(3), "neutral")
 door("L68", 3, 80, 0, 0.5)
 S("L68", FC(front(3, 1.0, 0.7), yawc(3), 2.3, 20, 4, 34, 1.5, 1.5, d2=1.8), "night", fill=1.3, note="Mr. Park, his own door")
-put(HAD, "L68.2", front(9, 1.0, 0.0), yawc(9), "neutral", arms=[40, 0])
-ring("L68.2", k=9, turn=(0, 75), dur=0.5, hand=False)
-S("L68.2", FC(front(9, 1.0, 0.0), yawc(9), 2.0, -25, 4, 34, 1.45, 1.4, d2=1.6), "night", fill=1.3, note="Mrs. Haddad, her own key")
-ring("L68.4", on=False)
-clock("L68.4", None)
-S("L68.4", K_([-3, -14, 4.5], [1, 3, 1.5], 14, [-2, -13, 4.0], [1, 3, 1.5], 15), "night", hand=0.0, note="the whole court")
+put(HAD, "L68.1", front(9, 1.0, 0.0), yawc(9), "neutral", arms=[40, 0])
+ring("L68.1", k=9, turn=(0, 75), dur=0.5, hand=False)
+S("L68.1", FC(front(9, 1.0, 0.0), yawc(9), 2.0, -25, 4, 34, 1.45, 1.4, d2=1.6), "night", fill=1.3, note="Mrs. Haddad, her own key")
+ring("L68.3", on=False)
+clock("L68.3", None)
+S("L68.3", K_([-3, -14, 4.5], [1, 3, 1.5], 14, [-2, -13, 4.0], [1, 3, 1.5], 15), "night", hand=0.0, note="the whole court")
 # --- S69 the neighbours wave at her window
-put(PARK, "L69", front(3, 4.5, 0.4), yawf(1) + 180 - 20, "smile", arms=[0, 150])
-put(HAD, "L69", front(3, 4.5, -1.2), yawf(1) + 180 - 10, "smile", arms=[0, 150])
-S("L69", W(front(3, 4.0, 0.0), 4.0, 25, 4, 28, h=1.4, d2=3.3), "dawn", note="and waves")
+put(PARK, "L69", front(1, 5.0, 0.0), yawc(1), "smile", arms=[0, 150])
+put(HAD, "L69", front(1, 4.6, -0.9), yawc(1), "smile", arms=[0, 150])
+S("L69", HC(1, (-0.45, -10.2, 1.6), (-0.45, -4.5, 2.1), 34, (-0.45, -9.3, 1.6), (-0.45, -4.5, 2.1), 36), "dawn", note="and waves at her lit window")
 room("L69.1", ["window", "lamp"])
-put(LOU, "L69.1", [RX - 2.4, RY + 0.8, 0.0], 270, "laugh", arms=[0, 140])
-S("L69.1", FC([RX - 2.4, RY + 0.8], 270, 1.7, 30, 3, 36, 1.5, 1.5, d2=1.3), "int", note="at her window, laughing")
+put(LOU, "L69.1", [RX - 2.4, RY + 0.8, 0.0], 300, "laugh", head=[40, 0])
+S("L69.1", FC([RX - 2.4, RY + 0.8], 300, 3.2, 60, 4, 36, 1.4, 1.4, d2=2.8), "int", fill=1.2, note="at her window, laughing")
 gone(PARK, "L69.1")
 gone(HAD, "L69.1")
 # --- S70 she still does her rounds
-walk(LOU, "L70", front(4, 1.4, 0.0), "L70.2", front(6, 1.4, 0.0), yaw=None, expr="soft")
+walk(LOU, "L70", front(5, 1.2, -0.6), "L70.1", front(5, 3.2, 0.2), yaw=None, expr="soft")
+put(LOU, "L70.2", front(6, 1.4, 0.0), yawc(6) + 20, "soft")
 tags("L70", [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
-S("L70", W(front(5, 1.4, 0.0), 6.0, 340, 6, 26, h=1.2, d2=5.0), "dusk", note="she still does her rounds")
-S("L70.1", FC(front(5, 1.4, 0.0), yawc(5), 3.0, 20, 4, 30, 1.3, 1.3, d2=2.4), "dusk", note="old habit")
-S("L70.2", FC(front(6, 1.4, 0.0), yawc(6) + 20, 1.9, 15, 4, 36, 1.35, 1.35, d2=1.5), "dusk", note="her face, soft")
+S("L70", HC(5, (0.2, -6.8, 1.5), (0.0, -1.0, 1.2), 30, (0.2, -6.2, 1.5), (0.0, -1.2, 1.2), 32), "dusk", fill=1.4, note="she still does her rounds")
+S("L70.1", HC(5, (1.6, -6.2, 1.4), (0.3, -2.6, 1.2), 32, (1.2, -5.6, 1.4), (0.3, -2.6, 1.2), 34), "dusk", fill=1.4, note="old habit")
+S("L70.2", FC(front(6, 1.4, 0.0), yawc(6) + 20, 2.4, 15, 4, 36, 1.35, 1.35, d2=2.0), "dusk", fill=1.5, note="her face, soft")
 # --- S71 me on my step, then the ring close: the loop
 tags("L71", [])
 gone(LOU, "L71")
 put(ME, "L71", front(7, 1.2, 0.0), yawc(7), "smile")
 S("L71", FC(front(7, 1.2, 0.0), yawc(7), 2.3, 18, 4, 34, 1.55, 1.55, d2=1.8), "dusk", note="me on my step")
 S("L71.2", FC(front(7, 1.2, 0.0), yawc(7), 1.5, -15, 3, 40, 1.58, 1.58, d2=1.2), "dusk", note="I tell them")
-ring("L71.3", k=4, turn=(0, 0), dur=1.0)
-S("L71.3", HC(4, (0.52, -0.62, 0.8), (0.38, -0.2, 0.74), 34, (0.46, -0.50, 0.78), (0.38, -0.2, 0.72), 40), "dusk", fill=1.4, hand=0.003, note="the ring: S01 again")
+gone(ME, "L71.3")
+ring("L71.3", k=4, lz=1.3, turn=(0, 0), dur=1.0, hand=False, scale=2.3)
+put(LOU, "L71.3", LOU_AT, LOU_YAW, "brisk", arms=[72, 72], head=LOU_HEAD)
+S("L71.3", HC(4, (-0.1, -2.1, 1.45), (0.58, -0.3, 1.3), 28, (0.05, -1.8, 1.42), (0.56, -0.3, 1.3), 32), "dusk", fill=1.6, hand=0.003, note="the hook again: Lou, the ring, the key")
 
 
 # ---------------------------------------------------------------------------------------------------- story
@@ -715,21 +744,19 @@ story = {
                   {"at": "L70", "voices": ["pad", "pluck"], "energy": 0.25, "mode": "major"},
               ]},
     "sound": {
-        "rev": 1, "floor": "stone", "steps_db": -22,
+        "rev": 2, "floor": "stone", "steps_db": -22,
         "ambience": [{"kind": "crickets", "from": "L27", "to": "L55", "lufs": -40},
                      {"kind": "water", "from": "L44", "to": "L59", "lufs": -44}],
         "sfx": [
             {"at": "L01.4", "kind": "hit", "db": -9},
             {"at": "L05", "kind": "click", "db": -20},
-            {"at": "L05.1", "kind": "click", "db": -21},
-            {"at": "L05.2", "kind": "click", "db": -22},
             {"at": "L34+0.2", "kind": "creak", "db": -16, "dur": 1.0},
             {"at": "L36.1", "kind": "knock", "db": -24, "pattern": [0, 0.12], "tone": "soft"},
             {"at": "L54.2+0.4", "kind": "click", "db": -14},
-            {"at": "L56", "kind": "thud", "db": -26},
+            {"at": "L33", "kind": "riser", "db": -16, "dur": 0.8},
             {"at": "L71.3", "kind": "click", "db": -22},
         ],
-        "music_drops": [{"from": "L26>", "to": "P01>"}],
+        "music_drops": [{"from": "L26>", "to": "P01>", "db": -60}, {"from": "L33>", "to": "P02>", "db": -60}],
     },
 }
 from blocky import timeline

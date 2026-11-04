@@ -113,7 +113,7 @@
    "shoes": "#6b3d1e",
    "sleeves": "long",
    "hair": "long",
-   "hair_c": "#c9ced8",
+   "hair_c": "#f6f4ee",
    "extras": [
     "coat",
     "glasses"
@@ -175,12 +175,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "My aunt has",
-     "my aunt has"
+     "My aunt",
+     "my aunt"
     ],
     [
-     "a key",
-     "a key"
+     "has a key",
+     "has a key"
     ],
     [
      "to every",
@@ -237,28 +237,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "For a",
-     "for a"
+     "For a month",
+     "for a month"
     ],
     [
-     "month now,",
-     "month now,"
+     "now, at midnight,",
+     "now, at midnight,"
     ],
     [
-     "at midnight,",
-     "at midnight,"
+     "you can hear",
+     "you can hear"
     ],
     [
-     "you can",
-     "you can"
+     "it from every",
+     "it from every"
     ],
     [
-     "hear it",
-     "hear it"
-    ],
-    [
-     "from every DOOR.",
-     "from every door."
+     "DOOR.",
+     "door."
     ]
    ]
   },
@@ -713,16 +709,12 @@
      "locking every"
     ],
     [
-     "OTHER house",
-     "other house"
+     "OTHER house with",
+     "other house with"
     ],
     [
-     "with its",
-     "with its"
-    ],
-    [
-     "own KEY.",
-     "own key."
+     "its own KEY.",
+     "its own key."
     ]
    ]
   },
@@ -771,6 +763,16 @@
     [
      "Twelve oh-FOUR.",
      "twelve oh-four."
+    ]
+   ]
+  },
+  {
+   "id": "P02",
+   "pause": 0.5,
+   "chunks": [
+    [
+     "",
+     ""
     ]
    ]
   },
@@ -1059,8 +1061,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "She can't lock me IN.",
-     "she can't lock me in."
+     "She can't lock",
+     "she can't lock"
+    ],
+    [
+     "me IN.",
+     "me in."
     ],
     [
      "My bolt turns",
@@ -1071,12 +1077,12 @@
      "from inside,"
     ],
     [
-     "and asleep,",
-     "and asleep,"
+     "and asleep, I",
+     "and asleep, i"
     ],
     [
-     "I just TURN it.",
-     "i just turn it."
+     "just TURN it.",
+     "just turn it."
     ]
    ]
   },
@@ -1255,24 +1261,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then she",
-     "then she"
+     "Then she goes",
+     "then she goes"
     ],
     [
-     "goes round",
-     "goes round"
+     "round UNLOCKING",
+     "round unlocking"
     ],
     [
-     "UNLOCKING the",
-     "unlocking the"
+     "the other ten,",
+     "the other ten,"
     ],
     [
-     "other ten,",
-     "other ten,"
+     "before anyone",
+     "before anyone"
     ],
     [
-     "before anyone WAKES.",
-     "before anyone wakes."
+     "WAKES.",
+     "wakes."
     ]
    ]
   },
@@ -1295,32 +1301,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "She never",
-     "she never"
+     "She never told",
+     "she never told"
     ],
     [
-     "told me.",
-     "told me."
+     "me. She didn't",
+     "me. she didn't"
     ],
     [
-     "She didn't",
-     "she didn't"
+     "want me scared",
+     "want me scared"
     ],
     [
-     "want me",
-     "want me"
+     "to sleep in",
+     "to sleep in"
     ],
     [
-     "scared to sleep",
-     "scared to sleep"
-    ],
-    [
-     "in my",
-     "in my"
-    ],
-    [
-     "own PLACE.",
-     "own place."
+     "my own PLACE.",
+     "my own place."
     ]
    ]
   },
@@ -1451,16 +1449,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Now the",
-     "now the"
+     "Now the whole",
+     "now the whole"
     ],
     [
-     "whole court",
-     "whole court"
-    ],
-    [
-     "locks its",
-     "locks its"
+     "court locks its",
+     "court locks its"
     ],
     [
      "own doors",
@@ -1534,37 +1528,37 @@
     [
      0,
      [
-      -7.889,
-      5.981,
-      0.8720000000000001
+      -7.503,
+      4.787,
+      1.45
      ],
      [
-      -8.831,
-      6.229,
-      0.74
+      -8.638,
+      6.342,
+      1.3
      ],
-     34
+     28
     ],
     [
      1,
      [
-      -8.182,
-      6.015,
-      0.8520000000000001
+      -7.672,
+      5.077,
+      1.42
      ],
      [
-      -8.831,
-      6.229,
-      0.72
+      -8.649,
+      6.325,
+      1.3
      ],
-     40
+     32
     ]
    ],
    "step": 2,
    "hand": 0.003,
    "look": "dusk",
-   "fill": 1.4,
-   "note": "the ring in her hand, a key in a red door's lock"
+   "fill": 1.6,
+   "note": "Lou's face, the ring in her hands, a key in a red door's lock"
   },
   {
    "id": "S02",
@@ -1572,37 +1566,37 @@
     [
      0,
      [
-      -8.541,
-      5.356,
-      1.154
+      -8.384,
+      5.542,
+      1.5
      ],
      [
-      -8.873,
-      6.256,
-      0.78
+      -8.862,
+      6.273,
+      1.32
      ],
      38
     ],
     [
      1,
      [
-      -8.666,
-      5.648,
-      1.044
+      -8.497,
+      5.735,
+      1.46
      ],
      [
-      -8.873,
-      6.256,
-      0.78
+      -8.862,
+      6.273,
+      1.32
      ],
-     46
+     44
     ]
    ],
    "step": 2,
    "hand": 0.003,
    "look": "dusk",
    "at": "L02",
-   "fill": 1.4,
+   "fill": 1.6,
    "note": "the key turning"
   },
   {
@@ -1640,11 +1634,49 @@
    "step": 2,
    "hand": 0.0,
    "look": "day",
-   "at": "L03",
+   "at": "L02.1",
    "note": "twelve houses round a fountain"
   },
   {
    "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      7,
+      -25,
+      9
+     ],
+     [
+      -1,
+      2,
+      1.8
+     ],
+     17
+    ],
+    [
+     1,
+     [
+      5,
+      -22,
+      8
+     ],
+     [
+      -1,
+      2,
+      1.8
+     ],
+     18
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "look": "day",
+   "at": "L03.1",
+   "note": "closer on the fountain"
+  },
+  {
+   "id": "S05",
    "cam": [
     [
      0,
@@ -1682,7 +1714,7 @@
    "note": "midnight, four lamps on"
   },
   {
-   "id": "S05",
+   "id": "S06",
    "cam": [
     [
      0,
@@ -1716,11 +1748,11 @@
    "step": 2,
    "hand": 0.006,
    "look": "night",
-   "at": "L04.3",
+   "at": "L04.2",
    "note": "you can hear it from every door"
   },
   {
-   "id": "S06",
+   "id": "S07",
    "cam": [
     [
      0,
@@ -1759,7 +1791,7 @@
    "note": "CLICK one"
   },
   {
-   "id": "S07",
+   "id": "S08",
    "cam": [
     [
      0,
@@ -1798,7 +1830,7 @@
    "note": "click two"
   },
   {
-   "id": "S08",
+   "id": "S09",
    "cam": [
     [
      0,
@@ -1837,7 +1869,7 @@
    "note": "CLICK three"
   },
   {
-   "id": "S09",
+   "id": "S10",
    "cam": [
     [
      0,
@@ -1876,7 +1908,7 @@
    "note": "the key turning back"
   },
   {
-   "id": "S10",
+   "id": "S11",
    "cam": [
     [
      0,
@@ -1915,7 +1947,7 @@
    "note": "click, click"
   },
   {
-   "id": "S11",
+   "id": "S12",
    "cam": [
     [
      0,
@@ -1953,19 +1985,57 @@
    "note": "she unlocks them all again"
   },
   {
-   "id": "S12",
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      42.263,
+      2.813,
+      1.534
+     ],
+     [
+      40.0,
+      0.55,
+      1.0
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      41.98,
+      2.53,
+      1.493
+     ],
+     [
+      40.0,
+      0.55,
+      1.0
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "int",
+   "at": "L07",
+   "note": "Mr. Park asleep, face"
+  },
+  {
+   "id": "S14",
    "cam": [
     [
      0,
      [
       40.9,
-      -1.9,
-      1.7
+      -2.4,
+      1.9
      ],
      [
       40.1,
       1.6,
-      1.1
+      1.35
      ],
      15
     ],
@@ -1973,13 +2043,13 @@
      1,
      [
       40.6,
-      -1.5,
-      1.6
+      -2.0,
+      1.8
      ],
      [
       40.1,
       1.6,
-      1.1
+      1.35
      ],
      17
     ]
@@ -1987,12 +2057,12 @@
    "step": 2,
    "hand": 0.004,
    "look": "int",
-   "at": "L07",
+   "at": "L07.2",
    "rkey": 0.6,
-   "note": "Mr. Park asleep facing his door"
+   "note": "facing his door"
   },
   {
-   "id": "S13",
+   "id": "S15",
    "cam": [
     [
      0,
@@ -2030,7 +2100,7 @@
    "note": "Mrs. Haddad, a new shiny lock"
   },
   {
-   "id": "S14",
+   "id": "S16",
    "cam": [
     [
      0,
@@ -2068,7 +2138,7 @@
    "note": "Lou threading a new key onto her ring"
   },
   {
-   "id": "S15",
+   "id": "S17",
    "cam": [
     [
      0,
@@ -2106,7 +2176,7 @@
    "note": "the shop window of hanging blank keys"
   },
   {
-   "id": "S16",
+   "id": "S18",
    "cam": [
     [
      0,
@@ -2144,7 +2214,7 @@
    "note": "my aunt Lou, number one, ring in hand"
   },
   {
-   "id": "S17",
+   "id": "S19",
    "cam": [
     [
      0,
@@ -2182,7 +2252,7 @@
    "note": "number ONE: a plain latch, no lock"
   },
   {
-   "id": "S18",
+   "id": "S20",
    "cam": [
     [
      0,
@@ -2220,7 +2290,7 @@
    "note": "me with a box at number seven"
   },
   {
-   "id": "S19",
+   "id": "S21",
    "cam": [
     [
      0,
@@ -2258,7 +2328,7 @@
    "note": "number SEVEN, my new doormat"
   },
   {
-   "id": "S20",
+   "id": "S22",
    "cam": [
     [
      0,
@@ -2282,7 +2352,7 @@
    "note": "my first place"
   },
   {
-   "id": "S21",
+   "id": "S23",
    "cam": [
     [
      0,
@@ -2321,7 +2391,7 @@
    "note": "my one key into my pocket"
   },
   {
-   "id": "S22",
+   "id": "S24",
    "cam": [
     [
      0,
@@ -2346,7 +2416,7 @@
    "note": "the ring: a tag with 7"
   },
   {
-   "id": "S23",
+   "id": "S25",
    "cam": [
     [
      0,
@@ -2384,7 +2454,7 @@
    "note": "from my window, the tags glow"
   },
   {
-   "id": "S24",
+   "id": "S26",
    "cam": [
     [
      0,
@@ -2423,7 +2493,7 @@
    "note": "my door from inside, still open"
   },
   {
-   "id": "S25",
+   "id": "S27",
    "cam": [
     [
      0,
@@ -2461,7 +2531,7 @@
    "note": "waking in bed"
   },
   {
-   "id": "S26",
+   "id": "S28",
    "cam": [
     [
      0,
@@ -2499,7 +2569,7 @@
    "note": "the sneakers, wet"
   },
   {
-   "id": "S27",
+   "id": "S29",
    "cam": [
     [
      0,
@@ -2537,7 +2607,7 @@
    "note": "grass on the floorboards"
   },
   {
-   "id": "S28",
+   "id": "S30",
    "cam": [
     [
      0,
@@ -2575,7 +2645,7 @@
    "note": "two neighbours whispering at the fountain"
   },
   {
-   "id": "S29",
+   "id": "S31",
    "cam": [
     [
      0,
@@ -2613,7 +2683,7 @@
    "note": "the night landlady"
   },
   {
-   "id": "S30",
+   "id": "S32",
    "cam": [
     [
      0,
@@ -2651,7 +2721,7 @@
    "note": "me, embarrassed"
   },
   {
-   "id": "S31",
+   "id": "S33",
    "cam": [
     [
      0,
@@ -2689,7 +2759,7 @@
    "note": "Lou and me on her step"
   },
   {
-   "id": "S32",
+   "id": "S34",
    "cam": [
     [
      0,
@@ -2727,45 +2797,46 @@
    "note": "palm out for the ring"
   },
   {
-   "id": "S33",
+   "id": "S35",
    "cam": [
     [
      0,
      [
-      -8.141,
-      -4.326,
-      1.518
+      -8.445,
+      -3.257,
+      1.476
      ],
      [
       -8.028,
       -5.621,
-      1.45
+      1.35
      ],
-     42
+     36
     ],
     [
      1,
      [
-      -8.12,
-      -4.575,
-      1.505
+      -8.375,
+      -3.651,
+      1.455
      ],
      [
       -8.028,
       -5.621,
-      1.45
+      1.35
      ],
-     42
+     36
     ]
    ],
    "step": 2,
    "hand": 0.006,
    "look": "day",
    "at": "L23",
+   "face": true,
    "note": "Lou, soft, not handing it over"
   },
   {
-   "id": "S34",
+   "id": "S36",
    "cam": [
     [
      0,
@@ -2804,7 +2875,7 @@
    "note": "at my door that night"
   },
   {
-   "id": "S35",
+   "id": "S37",
    "cam": [
     [
      0,
@@ -2843,7 +2914,7 @@
    "note": "on PURPOSE"
   },
   {
-   "id": "S36",
+   "id": "S38",
    "cam": [
     [
      0,
@@ -2881,7 +2952,7 @@
    "note": "the little camera on its bracket"
   },
   {
-   "id": "S37",
+   "id": "S39",
    "cam": [
     [
      0,
@@ -2919,7 +2990,7 @@
    "note": "facing the court"
   },
   {
-   "id": "S38",
+   "id": "S40",
    "cam": [
     [
      0,
@@ -2957,7 +3028,7 @@
    "note": "what it sees"
   },
   {
-   "id": "S39",
+   "id": "S41",
    "cam": [
     [
      0,
@@ -2981,7 +3052,7 @@
    "note": "the camera's view by day"
   },
   {
-   "id": "S40",
+   "id": "S42",
    "cam": [
     [
      0,
@@ -3020,7 +3091,7 @@
    "note": "the footage, still, 12:00"
   },
   {
-   "id": "S41",
+   "id": "S43",
    "cam": [
     [
      0,
@@ -3045,7 +3116,7 @@
    "note": "12:01"
   },
   {
-   "id": "S42",
+   "id": "S44",
    "cam": [
     [
      0,
@@ -3070,7 +3141,7 @@
    "note": "Aunt Lou comes in from number one"
   },
   {
-   "id": "S43",
+   "id": "S45",
    "cam": [
     [
      0,
@@ -3109,7 +3180,7 @@
    "note": "in her yellow raincoat"
   },
   {
-   "id": "S44",
+   "id": "S46",
    "cam": [
     [
      0,
@@ -3148,7 +3219,7 @@
    "note": "door to door, fast"
   },
   {
-   "id": "S45",
+   "id": "S47",
    "cam": [
     [
      0,
@@ -3187,7 +3258,7 @@
    "note": "a key turning, fast"
   },
   {
-   "id": "S46",
+   "id": "S48",
    "cam": [
     [
      0,
@@ -3226,46 +3297,46 @@
    "note": "Lou across the court"
   },
   {
-   "id": "S47",
+   "id": "S49",
    "cam": [
     [
      0,
      [
-      -0.629,
-      8.514,
-      1.499
+      -0.05,
+      7.962,
+      1.47
      ],
      [
       -1.715,
       9.549,
-      1.42
+      1.35
      ],
-     42
+     36
     ],
     [
      1,
      [
-      -0.847,
-      8.721,
-      1.483
+      -0.304,
+      8.203,
+      1.452
      ],
      [
       -1.715,
       9.549,
-      1.42
+      1.35
      ],
-     42
+     36
     ]
    ],
    "step": 2,
    "hand": 0.006,
    "look": "night",
    "at": "L30",
-   "fill": 1.5,
+   "fill": 2.0,
    "note": "her face, worried"
   },
   {
-   "id": "S48",
+   "id": "S50",
    "cam": [
     [
      0,
@@ -3304,7 +3375,7 @@
    "note": "she passes number seven"
   },
   {
-   "id": "S49",
+   "id": "S51",
    "cam": [
     [
      0,
@@ -3343,7 +3414,7 @@
    "note": "she skips her own door"
   },
   {
-   "id": "S50",
+   "id": "S52",
    "cam": [
     [
      0,
@@ -3382,7 +3453,46 @@
    "note": "12:04"
   },
   {
-   "id": "S51",
+   "id": "S53",
+   "cam": [
+    [
+     0,
+     [
+      -0.21,
+      6.57,
+      1.9
+     ],
+     [
+      2.167,
+      10.784,
+      1.2
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      0.321,
+      7.178,
+      1.8
+     ],
+     [
+      2.167,
+      10.784,
+      1.2
+     ],
+     22
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "P02",
+   "fill": 1.2,
+   "note": "my door, closed, still"
+  },
+  {
+   "id": "S54",
    "cam": [
     [
      0,
@@ -3421,7 +3531,7 @@
    "note": "my door swings open"
   },
   {
-   "id": "S52",
+   "id": "S55",
    "cam": [
     [
      0,
@@ -3459,7 +3569,7 @@
    "note": "from behind and far, arms out"
   },
   {
-   "id": "S53",
+   "id": "S56",
    "cam": [
     [
      0,
@@ -3497,7 +3607,7 @@
    "note": "slow, walking away"
   },
   {
-   "id": "S54",
+   "id": "S57",
    "cam": [
     [
      0,
@@ -3536,7 +3646,7 @@
    "note": "a hand on a handle, rattling"
   },
   {
-   "id": "S55",
+   "id": "S58",
    "cam": [
     [
      0,
@@ -3575,7 +3685,7 @@
    "note": "another"
   },
   {
-   "id": "S56",
+   "id": "S59",
    "cam": [
     [
      0,
@@ -3614,7 +3724,7 @@
    "note": "and another"
   },
   {
-   "id": "S57",
+   "id": "S60",
    "cam": [
     [
      0,
@@ -3653,7 +3763,7 @@
    "note": "trying every door"
   },
   {
-   "id": "S58",
+   "id": "S61",
    "cam": [
     [
      0,
@@ -3692,7 +3802,7 @@
    "note": "holds shut"
   },
   {
-   "id": "S59",
+   "id": "S62",
    "cam": [
     [
      0,
@@ -3731,7 +3841,7 @@
    "note": "it turns to the camera"
   },
   {
-   "id": "S60",
+   "id": "S63",
    "cam": [
     [
      0,
@@ -3772,7 +3882,7 @@
    "note": "my face, eyes shut: it's ME"
   },
   {
-   "id": "S61",
+   "id": "S64",
    "cam": [
     [
      0,
@@ -3813,7 +3923,7 @@
    "note": "eyes shut, fast asleep"
   },
   {
-   "id": "S62",
+   "id": "S65",
    "cam": [
     [
      0,
@@ -3851,7 +3961,7 @@
    "note": "me now, watching, scared"
   },
   {
-   "id": "S63",
+   "id": "S66",
    "cam": [
     [
      0,
@@ -3890,7 +4000,7 @@
    "note": "walking straight at the camera"
   },
   {
-   "id": "S64",
+   "id": "S67",
    "cam": [
     [
      0,
@@ -3929,7 +4039,7 @@
    "note": "straight at the CAMERA"
   },
   {
-   "id": "S65",
+   "id": "S68",
    "cam": [
     [
      0,
@@ -3968,7 +4078,7 @@
    "note": "closer"
   },
   {
-   "id": "S66",
+   "id": "S69",
    "cam": [
     [
      0,
@@ -4007,7 +4117,7 @@
    "note": "and CLOSER"
   },
   {
-   "id": "S67",
+   "id": "S70",
    "cam": [
     [
      0,
@@ -4048,7 +4158,7 @@
    "note": "my sleeping face fills the screen"
   },
   {
-   "id": "S68",
+   "id": "S71",
    "cam": [
     [
      0,
@@ -4089,7 +4199,7 @@
    "note": "eyes shut, lit warm"
   },
   {
-   "id": "S69",
+   "id": "S72",
    "cam": [
     [
      0,
@@ -4127,7 +4237,7 @@
    "note": "me small at the fountain, arms out"
   },
   {
-   "id": "S70",
+   "id": "S73",
    "cam": [
     [
      0,
@@ -4166,7 +4276,7 @@
    "note": "two brass strokes, low at the rim (never narrated)"
   },
   {
-   "id": "S71",
+   "id": "S74",
    "cam": [
     [
      0,
@@ -4204,83 +4314,84 @@
    "note": "at MIDNIGHT"
   },
   {
-   "id": "S72",
+   "id": "S75",
    "cam": [
     [
      0,
      [
       -3,
       -14,
-      3.0
+      2.4
      ],
      [
-      -9.0,
-      -6.3,
-      4.0
+      -8.4,
+      -5.6,
+      2.7
      ],
-     20
+     15
     ],
     [
      1,
      [
       -4,
       -12.5,
-      3.5
+      2.6
      ],
      [
-      -9.0,
-      -6.3,
-      4.2
+      -8.4,
+      -5.6,
+      2.8
      ],
-     24
+     16
     ]
    ],
    "step": 2,
    "hand": 0.0,
    "look": "night",
    "at": "L45",
-   "note": "my old room's lit window"
+   "note": "her door, my old room's lit window"
   },
   {
-   "id": "S73",
+   "id": "S76",
    "cam": [
     [
      0,
      [
-      -5.39,
-      -4.507,
-      3.2
+      -6.512,
+      -3.95,
+      1.4
      ],
      [
-      -8.466,
-      -7.088,
-      4.3
+      -9.011,
+      -6.309,
+      1.0
      ],
-     28
+     26
     ],
     [
      1,
      [
-      -6.094,
-      -5.244,
-      3.6
+      -6.807,
+      -4.4,
+      1.4
      ],
      [
-      -8.466,
-      -7.088,
-      4.3
+      -9.011,
+      -6.309,
+      1.05
      ],
-     32
+     28
     ]
    ],
    "step": 2,
    "hand": 0.006,
    "look": "night",
    "at": "L45.2",
-   "note": "since the night I moved out"
+   "fill": 1.4,
+   "note": "Lou in her doorway, the window lit above"
   },
   {
-   "id": "S74",
+   "id": "S77",
    "cam": [
     [
      0,
@@ -4318,7 +4429,7 @@
    "note": "sleepwalking home"
   },
   {
-   "id": "S75",
+   "id": "S78",
    "cam": [
     [
      0,
@@ -4357,7 +4468,7 @@
    "note": "trying every door"
   },
   {
-   "id": "S76",
+   "id": "S79",
    "cam": [
     [
      0,
@@ -4396,7 +4507,7 @@
    "note": "a handle"
   },
   {
-   "id": "S77",
+   "id": "S80",
    "cam": [
     [
      0,
@@ -4435,46 +4546,46 @@
    "note": "to find my old ROOM"
   },
   {
-   "id": "S78",
+   "id": "S81",
    "cam": [
     [
      0,
      [
-      39.4,
-      -2.2,
-      1.5
+      37.6,
+      -2.4,
+      1.623
      ],
      [
-      37.4,
-      1.0,
+      37.6,
+      0.8,
       1.4
      ],
-     24
+     36
     ],
     [
      1,
      [
-      39.2,
-      -1.8,
-      1.5
+      37.6,
+      -2.0,
+      1.595
      ],
      [
-      37.3,
-      1.0,
-      1.35
+      37.6,
+      0.8,
+      1.4
      ],
-     28
+     36
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "intn",
    "at": "L47",
-   "rkey": 0.8,
+   "rkey": 0.5,
    "note": "Aunt Lou at her window, watching the clock"
   },
   {
-   "id": "S79",
+   "id": "S82",
    "cam": [
     [
      0,
@@ -4513,7 +4624,7 @@
    "note": "Aunt Lou races me"
   },
   {
-   "id": "S80",
+   "id": "S83",
    "cam": [
     [
      0,
@@ -4552,7 +4663,7 @@
    "note": "she locks"
   },
   {
-   "id": "S81",
+   "id": "S84",
    "cam": [
     [
      0,
@@ -4591,7 +4702,7 @@
    "note": "TEN tags glowing, big"
   },
   {
-   "id": "S82",
+   "id": "S85",
    "cam": [
     [
      0,
@@ -4630,7 +4741,7 @@
    "note": "with their own keys"
   },
   {
-   "id": "S83",
+   "id": "S86",
    "cam": [
     [
      0,
@@ -4669,7 +4780,7 @@
    "note": "the only one I can open"
   },
   {
-   "id": "S84",
+   "id": "S87",
    "cam": [
     [
      0,
@@ -4708,7 +4819,124 @@
    "note": "is hers, a crack, warm light"
   },
   {
-   "id": "S85",
+   "id": "S88",
+   "cam": [
+    [
+     0,
+     [
+      42.076,
+      2.663,
+      1.652
+     ],
+     [
+      39.7,
+      1.0,
+      1.45
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      41.748,
+      2.434,
+      1.624
+     ],
+     [
+      39.7,
+      1.0,
+      1.45
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "intn",
+   "at": "L49a",
+   "fill": 1.3,
+   "note": "me, asleep, at my own door"
+  },
+  {
+   "id": "S89",
+   "cam": [
+    [
+     0,
+     [
+      41.7,
+      1.5,
+      1.4
+     ],
+     [
+      40.7,
+      2.75,
+      1.1
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      41.5,
+      1.7,
+      1.35
+     ],
+     [
+      40.7,
+      2.75,
+      1.1
+     ],
+     44
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "intn",
+   "at": "L49a.2",
+   "fill": 1.2,
+   "note": "my hand on the brass thumb-turn"
+  },
+  {
+   "id": "S90",
+   "cam": [
+    [
+     0,
+     [
+      41.6,
+      1.9,
+      1.3
+     ],
+     [
+      40.7,
+      2.75,
+      1.1
+     ],
+     44
+    ],
+    [
+     1,
+     [
+      41.4,
+      2.1,
+      1.25
+     ],
+     [
+      40.7,
+      2.75,
+      1.1
+     ],
+     50
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "intn",
+   "at": "L49a.5",
+   "fill": 1.2,
+   "note": "I just TURN it"
+  },
+  {
+   "id": "S91",
    "cam": [
     [
      0,
@@ -4733,7 +4961,7 @@
    "note": "Thursday, 12:04"
   },
   {
-   "id": "S86",
+   "id": "S92",
    "cam": [
     [
      0,
@@ -4772,72 +5000,72 @@
    "note": "the worst"
   },
   {
-   "id": "S87",
+   "id": "S93",
    "cam": [
     [
      0,
      [
-      1.137,
-      10.226,
-      3.0
-     ],
-     [
-      -6.0,
-      3.0,
-      1.0
-     ],
-     22
-    ],
-    [
-     1,
-     [
-      1.137,
-      10.226,
-      3.0
-     ],
-     [
-      -5.0,
-      4.0,
-      1.0
-     ],
-     24
-    ]
-   ],
-   "step": 2,
-   "hand": 0.0,
-   "look": "night",
-   "at": "L51",
-   "fill": 1.3,
-   "note": "her knee, slow"
-  },
-  {
-   "id": "S88",
-   "cam": [
-    [
-     0,
-     [
-      -7.086,
-      0.585,
-      1.367
+      -7.024,
+      1.811,
+      1.351
      ],
      [
       -7.817,
       -1.701,
-      1.2
+      1.1
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -7.134,
+      1.323,
+      1.316
+     ],
+     [
+      -7.817,
+      -1.701,
+      1.1
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.006,
+   "look": "night",
+   "at": "L51",
+   "fill": 1.8,
+   "note": "her knee, slow"
+  },
+  {
+   "id": "S94",
+   "cam": [
+    [
+     0,
+     [
+      -6.934,
+      1.061,
+      1.502
+     ],
+     [
+      -7.817,
+      -1.701,
+      1.3
      ],
      36
     ],
     [
      1,
      [
-      -7.269,
-      0.014,
-      1.326
+      -7.056,
+      0.68,
+      1.474
      ],
      [
       -7.817,
       -1.701,
-      1.2
+      1.3
      ],
      36
     ]
@@ -4846,128 +5074,128 @@
    "hand": 0.006,
    "look": "night",
    "at": "L51.2",
-   "fill": 1.5,
+   "fill": 2.0,
    "note": "she was slow"
   },
   {
-   "id": "S89",
+   "id": "S95",
    "cam": [
     [
      0,
      [
-      1.137,
-      10.226,
-      3.0
+      -10.86,
+      -0.99,
+      1.637
      ],
      [
-      -5.0,
-      4.0,
-      1.0
+      -8.654,
+      1.597,
+      1.4
      ],
-     20
+     36
     ],
     [
      1,
      [
-      1.137,
-      10.226,
-      3.0
+      -10.665,
+      -0.762,
+      1.616
      ],
      [
-      -4.0,
-      5.0,
-      1.0
+      -8.654,
+      1.597,
+      1.4
      ],
-     22
+     36
     ]
    ],
    "step": 2,
-   "hand": 0.0,
+   "hand": 0.006,
    "look": "night",
    "at": "L52",
-   "fill": 1.3,
+   "fill": 1.4,
    "note": "me first"
   },
   {
-   "id": "S90",
+   "id": "S96",
    "cam": [
     [
      0,
      [
-      1.137,
-      10.226,
-      3.0
+      -10.432,
+      -1.48,
+      1.637
      ],
      [
-      -5.5,
-      5.5,
-      1.1
+      -9.244,
+      1.706,
+      1.4
      ],
-     28
+     36
     ],
     [
      1,
      [
-      1.137,
-      10.226,
-      3.0
+      -10.292,
+      -1.105,
+      1.609
      ],
      [
-      -5.0,
-      6.0,
-      1.1
+      -9.244,
+      1.706,
+      1.4
      ],
-     30
+     36
     ]
    ],
    "step": 2,
-   "hand": 0.0,
+   "hand": 0.006,
    "look": "night",
    "at": "L52.1",
-   "fill": 1.3,
+   "fill": 1.4,
    "note": "at Mr. Park's door"
   },
   {
-   "id": "S91",
+   "id": "S97",
    "cam": [
     [
      0,
      [
-      1.137,
-      10.226,
-      3.0
+      -9.695,
+      4.932,
+      1.623
      ],
      [
-      -3.0,
-      3.0,
-      1.0
+      -9.441,
+      1.742,
+      1.4
      ],
-     14
+     36
     ],
     [
      1,
      [
-      1.137,
-      10.226,
-      3.0
+      -9.663,
+      4.533,
+      1.595
      ],
      [
-      -4.0,
-      4.0,
-      1.0
+      -9.441,
+      1.742,
+      1.4
      ],
-     15
+     36
     ]
    ],
    "step": 2,
-   "hand": 0.0,
+   "hand": 0.006,
    "look": "night",
    "at": "L52.3",
-   "fill": 1.2,
+   "fill": 1.4,
    "note": "first"
   },
   {
-   "id": "S92",
+   "id": "S98",
    "cam": [
     [
      0,
@@ -5006,7 +5234,7 @@
    "note": "I watched myself"
   },
   {
-   "id": "S93",
+   "id": "S99",
    "cam": [
     [
      0,
@@ -5045,7 +5273,7 @@
    "note": "the handle starts to turn"
   },
   {
-   "id": "S94",
+   "id": "S100",
    "cam": [
     [
      0,
@@ -5084,7 +5312,7 @@
    "note": "she turns the key"
   },
   {
-   "id": "S95",
+   "id": "S101",
    "cam": [
     [
      0,
@@ -5123,7 +5351,7 @@
    "note": "the handle stops"
   },
   {
-   "id": "S96",
+   "id": "S102",
    "cam": [
     [
      0,
@@ -5162,7 +5390,7 @@
    "note": "one second to spare"
   },
   {
-   "id": "S97",
+   "id": "S103",
    "cam": [
     [
      0,
@@ -5201,7 +5429,7 @@
    "note": "on the video"
   },
   {
-   "id": "S98",
+   "id": "S104",
    "cam": [
     [
      0,
@@ -5240,7 +5468,7 @@
    "note": "I try her handle"
   },
   {
-   "id": "S99",
+   "id": "S105",
    "cam": [
     [
      0,
@@ -5278,33 +5506,33 @@
    "note": "it OPENS"
   },
   {
-   "id": "S100",
+   "id": "S106",
    "cam": [
     [
      0,
      [
-      39.2,
-      -2.4,
+      38.4,
+      -2.6,
       1.6
      ],
      [
-      42.4,
-      0.6,
-      1.2
+      41.4,
+      0.5,
+      1.15
      ],
      26
     ],
     [
      1,
      [
-      39.6,
-      -2.0,
-      1.6
+      38.8,
+      -2.2,
+      1.55
      ],
      [
-      42.5,
+      41.5,
       0.5,
-      1.2
+      1.15
      ],
      28
     ]
@@ -5317,112 +5545,112 @@
    "note": "Lou waiting with a blanket"
   },
   {
-   "id": "S101",
+   "id": "S107",
    "cam": [
     [
      0,
      [
-      41.159,
-      -0.318,
-      1.589
+      38.681,
+      -0.868,
+      1.457
      ],
      [
-      42.7,
+      41.4,
       0.4,
-      1.5
+      1.3
      ],
-     38
+     36
     ],
     [
      1,
      [
-      41.522,
-      -0.149,
-      1.568
+      39.044,
+      -0.699,
+      1.436
      ],
      [
-      42.7,
+      41.4,
       0.4,
-      1.5
+      1.3
      ],
-     38
+     36
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "intn",
    "at": "L56.1",
-   "rkey": 0.8,
+   "rkey": 0.9,
    "note": "a blanket"
   },
   {
-   "id": "S102",
+   "id": "S108",
    "cam": [
     [
      0,
      [
-      4,
-      -14,
-      4.0
+      -1.616,
+      4.368,
+      1.927
      ],
      [
-      -1,
-      3,
-      1.2
+      -4.6,
+      -0.8,
+      1.3
      ],
-     16
+     22
     ],
     [
      1,
      [
-      3,
-      -13,
-      3.5
+      -2.213,
+      3.334,
+      1.802
      ],
      [
-      0,
-      3,
-      1.2
+      -4.6,
+      -0.8,
+      1.3
      ],
-     18
+     22
     ]
    ],
    "step": 2,
-   "hand": 0.0,
+   "hand": 0.006,
    "look": "dawn",
    "at": "L57",
    "note": "before sunrise, she walks me back"
   },
   {
-   "id": "S103",
+   "id": "S109",
    "cam": [
     [
      0,
      [
-      -0.014,
-      -2.306,
-      1.723
+      -0.031,
+      7.312,
+      1.621
      ],
      [
-      -2.5,
-      2.0,
-      1.2
+      -1.6,
+      3.0,
+      1.3
      ],
-     30
+     26
     ],
     [
      1,
      [
-      -0.511,
-      -1.445,
-      1.618
+      -0.303,
+      6.562,
+      1.565
      ],
      [
-      -2.5,
-      2.0,
-      1.2
+      -1.6,
+      3.0,
+      1.3
      ],
-     30
+     26
     ]
    ],
    "step": 2,
@@ -5432,14 +5660,14 @@
    "note": "her arm round my shoulders"
   },
   {
-   "id": "S104",
+   "id": "S110",
    "cam": [
     [
      0,
      [
-      -0.277,
-      3.876,
-      1.514
+      5.727,
+      5.132,
+      1.521
      ],
      [
       1.968,
@@ -5451,9 +5679,9 @@
     [
      1,
      [
-      0.073,
-      4.481,
-      1.465
+      5.155,
+      5.533,
+      1.472
      ],
      [
       1.968,
@@ -5470,7 +5698,7 @@
    "note": "to number SEVEN"
   },
   {
-   "id": "S105",
+   "id": "S111",
    "cam": [
     [
      0,
@@ -5508,7 +5736,7 @@
    "note": "and locks my door behind me"
   },
   {
-   "id": "S106",
+   "id": "S112",
    "cam": [
     [
      0,
@@ -5547,7 +5775,7 @@
    "note": "with HER key, tag 7 glows"
   },
   {
-   "id": "S107",
+   "id": "S113",
    "cam": [
     [
      0,
@@ -5585,7 +5813,7 @@
    "note": "she goes round again"
   },
   {
-   "id": "S108",
+   "id": "S114",
    "cam": [
     [
      0,
@@ -5619,12 +5847,12 @@
    "step": 2,
    "hand": 0.003,
    "look": "dawn",
-   "at": "L58a.2",
+   "at": "L58a.1",
    "fill": 1.3,
    "note": "unlocking the other ten"
   },
   {
-   "id": "S109",
+   "id": "S115",
    "cam": [
     [
      0,
@@ -5658,11 +5886,11 @@
    "step": 2,
    "hand": 0.0,
    "look": "dawn",
-   "at": "L58a.4",
+   "at": "L58a.3",
    "note": "before anyone wakes"
   },
   {
-   "id": "S110",
+   "id": "S116",
    "cam": [
     [
      0,
@@ -5701,7 +5929,7 @@
    "note": "that's why she has one"
   },
   {
-   "id": "S111",
+   "id": "S117",
    "cam": [
     [
      0,
@@ -5739,7 +5967,7 @@
    "note": "Aunt Lou, tired, a mug, the ring"
   },
   {
-   "id": "S112",
+   "id": "S118",
    "cam": [
     [
      0,
@@ -5777,7 +6005,7 @@
    "note": "the ring beside it"
   },
   {
-   "id": "S113",
+   "id": "S119",
    "cam": [
     [
      0,
@@ -5811,11 +6039,11 @@
    "step": 2,
    "hand": 0.006,
    "look": "int",
-   "at": "L60.4",
+   "at": "L60.3",
    "note": "she didn't want me scared"
   },
   {
-   "id": "S114",
+   "id": "S120",
    "cam": [
     [
      0,
@@ -5849,11 +6077,11 @@
    "step": 2,
    "hand": 0.006,
    "look": "dawn",
-   "at": "L60.5",
+   "at": "L60.4",
    "note": "in my own place"
   },
   {
-   "id": "S115",
+   "id": "S121",
    "cam": [
     [
      0,
@@ -5891,7 +6119,7 @@
    "note": "me at my table, phone down"
   },
   {
-   "id": "S116",
+   "id": "S122",
    "cam": [
     [
      0,
@@ -5929,7 +6157,7 @@
    "note": "what I was looking for"
   },
   {
-   "id": "S117",
+   "id": "S123",
    "cam": [
     [
      0,
@@ -5967,33 +6195,33 @@
    "note": "my old room"
   },
   {
-   "id": "S118",
+   "id": "S124",
    "cam": [
     [
      0,
      [
-      0.363,
-      -11.118,
-      1.765
+      4.376,
+      -4.564,
+      1.827
      ],
      [
       -1.5,
-      -6.0,
-      1.0
+      -5.6,
+      1.2
      ],
      28
     ],
     [
      1,
      [
-      0.024,
-      -10.187,
-      1.626
+      3.397,
+      -4.737,
+      1.723
      ],
      [
       -1.5,
-      -6.0,
-      1.0
+      -5.6,
+      1.2
      ],
      28
     ]
@@ -6005,33 +6233,33 @@
    "note": "Sunday, we carry it"
   },
   {
-   "id": "S119",
+   "id": "S125",
    "cam": [
     [
      0,
      [
-      -2.69,
-      -9.314,
-      1.436
+      4.626,
+      -3.514,
+      1.601
      ],
      [
-      -0.2,
-      -5.0,
-      1.0
+      0.2,
+      -4.7,
+      1.2
      ],
      28
     ],
     [
      1,
      [
-      -2.192,
-      -8.451,
-      1.349
+      3.953,
+      -3.694,
+      1.54
      ],
      [
-      -0.2,
-      -5.0,
-      1.0
+      0.2,
+      -4.7,
+      1.2
      ],
      28
     ]
@@ -6043,35 +6271,35 @@
    "note": "we carried it"
   },
   {
-   "id": "S120",
+   "id": "S126",
    "cam": [
     [
      0,
      [
-      5.016,
-      -7.79,
-      1.575
+      5.717,
+      -3.339,
+      1.633
      ],
      [
-      1.5,
-      -3.6,
-      1.0
+      1.4,
+      -4.1,
+      1.25
      ],
-     26
+     28
     ],
     [
      1,
      [
-      4.377,
-      -7.028,
-      1.47
+      5.03,
+      -3.46,
+      1.572
      ],
      [
-      1.5,
-      -3.6,
-      1.0
+      1.4,
+      -4.1,
+      1.25
      ],
-     26
+     28
     ]
    ],
    "step": 2,
@@ -6081,35 +6309,35 @@
    "note": "across the COURT, past the fountain"
   },
   {
-   "id": "S121",
+   "id": "S127",
    "cam": [
     [
      0,
      [
-      42.2,
-      0.4,
-      1.2
+      40.5,
+      -0.8,
+      1.5
      ],
      [
       42.9,
       2.3,
-      0.95
+      0.9
      ],
-     34
+     30
     ],
     [
      1,
      [
-      42.3,
-      0.8,
-      1.2
+      40.9,
+      -0.4,
+      1.4
      ],
      [
       42.9,
       2.3,
-      0.95
+      0.9
      ],
-     38
+     34
     ]
    ],
    "step": 2,
@@ -6120,35 +6348,35 @@
    "note": "my old lamp"
   },
   {
-   "id": "S122",
+   "id": "S128",
    "cam": [
     [
      0,
      [
-      40.4,
-      -1.4,
-      1.5
+      40.3,
+      -2.5,
+      1.7
      ],
      [
       41.9,
       1.0,
-      0.8
+      1.15
      ],
-     30
+     25
     ],
     [
      1,
      [
       40.7,
-      -1.2,
-      1.4
+      -2.2,
+      1.65
      ],
      [
       41.9,
       1.0,
-      0.8
+      1.2
      ],
-     33
+     27
     ]
    ],
    "step": 2,
@@ -6158,7 +6386,7 @@
    "note": "my squeaky old bed"
   },
   {
-   "id": "S123",
+   "id": "S129",
    "cam": [
     [
      0,
@@ -6197,7 +6425,7 @@
    "note": "that night, on my shelf camera"
   },
   {
-   "id": "S124",
+   "id": "S130",
    "cam": [
     [
      0,
@@ -6236,7 +6464,7 @@
    "note": "I sit up at twelve oh-four"
   },
   {
-   "id": "S125",
+   "id": "S131",
    "cam": [
     [
      0,
@@ -6275,7 +6503,7 @@
    "note": "look around"
   },
   {
-   "id": "S126",
+   "id": "S132",
    "cam": [
     [
      0,
@@ -6314,7 +6542,7 @@
    "note": "and lie back down"
   },
   {
-   "id": "S127",
+   "id": "S133",
    "cam": [
     [
      0,
@@ -6353,7 +6581,7 @@
    "note": "already HOME: my sleeping face, calm"
   },
   {
-   "id": "S128",
+   "id": "S134",
    "cam": [
     [
      0,
@@ -6392,7 +6620,7 @@
    "note": "Mr. Park, his own door"
   },
   {
-   "id": "S129",
+   "id": "S135",
    "cam": [
     [
      0,
@@ -6426,12 +6654,12 @@
    "step": 2,
    "hand": 0.006,
    "look": "night",
-   "at": "L68.2",
+   "at": "L68.1",
    "fill": 1.3,
    "note": "Mrs. Haddad, her own key"
   },
   {
-   "id": "S130",
+   "id": "S136",
    "cam": [
     [
      0,
@@ -6465,75 +6693,75 @@
    "step": 2,
    "hand": 0.0,
    "look": "night",
-   "at": "L68.4",
+   "at": "L68.3",
    "note": "the whole court"
   },
   {
-   "id": "S131",
+   "id": "S137",
    "cam": [
     [
      0,
      [
-      -5.198,
-      -2.346,
-      1.679
+      -0.397,
+      -0.827,
+      1.6
      ],
      [
-      -6.884,
-      1.27,
-      1.4
+      -5.066,
+      -4.097,
+      2.1
      ],
-     28
+     34
     ],
     [
      1,
      [
-      -5.493,
-      -1.714,
-      1.63
+      -1.134,
+      -1.344,
+      1.6
      ],
      [
-      -6.884,
-      1.27,
-      1.4
+      -5.066,
+      -4.097,
+      2.1
      ],
-     28
+     36
     ]
    ],
    "step": 2,
    "hand": 0.006,
    "look": "dawn",
    "at": "L69",
-   "note": "and waves"
+   "note": "and waves at her lit window"
   },
   {
-   "id": "S132",
+   "id": "S138",
    "cam": [
     [
      0,
      [
-      36.128,
-      -0.05,
-      1.589
+      37.6,
+      -2.4,
+      1.623
      ],
      [
       37.6,
       0.8,
-      1.5
+      1.4
      ],
      36
     ],
     [
      1,
      [
-      36.474,
-      0.15,
-      1.568
+      37.6,
+      -2.0,
+      1.595
      ],
      [
       37.6,
       0.8,
-      1.5
+      1.4
      ],
      36
     ]
@@ -6542,93 +6770,96 @@
    "hand": 0.006,
    "look": "int",
    "at": "L69.1",
+   "fill": 1.2,
    "note": "at her window, laughing"
   },
   {
-   "id": "S133",
+   "id": "S139",
    "cam": [
     [
      0,
      [
-      -7.422,
-      2.343,
-      1.827
+      -2.189,
+      3.59,
+      1.5
      ],
      [
-      -5.381,
-      7.95,
+      -5.605,
+      8.281,
       1.2
      ],
-     26
+     30
     ],
     [
      1,
      [
-      -7.082,
-      3.277,
-      1.723
+      -2.525,
+      4.087,
+      1.5
      ],
      [
-      -5.381,
-      7.95,
+      -5.493,
+      8.116,
       1.2
      ],
-     26
+     32
     ]
    ],
    "step": 2,
    "hand": 0.006,
    "look": "dusk",
    "at": "L70",
+   "fill": 1.4,
    "note": "she still does her rounds"
   },
   {
-   "id": "S134",
+   "id": "S140",
    "cam": [
     [
      0,
      [
-      -2.951,
-      6.19,
-      1.509
+      -1.365,
+      4.872,
+      1.4
      ],
      [
-      -5.381,
-      7.95,
-      1.3
+      -4.46,
+      7.125,
+      1.2
      ],
-     30
+     32
     ],
     [
      1,
      [
-      -3.437,
-      6.542,
-      1.467
+      -2.033,
+      5.145,
+      1.4
      ],
      [
-      -5.381,
-      7.95,
-      1.3
+      -4.46,
+      7.125,
+      1.2
      ],
-     30
+     34
     ]
    ],
    "step": 2,
    "hand": 0.006,
    "look": "dusk",
    "at": "L70.1",
+   "fill": 1.4,
    "note": "old habit"
   },
   {
-   "id": "S135",
+   "id": "S141",
    "cam": [
     [
      0,
      [
-      -0.517,
-      8.101,
-      1.483
+      -0.155,
+      7.756,
+      1.517
      ],
      [
       -1.892,
@@ -6640,9 +6871,9 @@
     [
      1,
      [
-      -0.806,
-      8.377,
-      1.455
+      -0.445,
+      8.032,
+      1.49
      ],
      [
       -1.892,
@@ -6656,10 +6887,11 @@
    "hand": 0.006,
    "look": "dusk",
    "at": "L70.2",
+   "fill": 1.5,
    "note": "her face, soft"
   },
   {
-   "id": "S136",
+   "id": "S142",
    "cam": [
     [
      0,
@@ -6697,7 +6929,7 @@
    "note": "me on my step"
   },
   {
-   "id": "S137",
+   "id": "S143",
    "cam": [
     [
      0,
@@ -6735,43 +6967,43 @@
    "note": "I tell them"
   },
   {
-   "id": "S138",
+   "id": "S144",
    "cam": [
     [
      0,
      [
-      -7.889,
-      5.981,
-      0.8720000000000001
+      -7.503,
+      4.787,
+      1.45
      ],
      [
-      -8.831,
-      6.229,
-      0.74
+      -8.638,
+      6.342,
+      1.3
      ],
-     34
+     28
     ],
     [
      1,
      [
-      -8.182,
-      6.015,
-      0.8520000000000001
+      -7.672,
+      5.077,
+      1.42
      ],
      [
-      -8.831,
-      6.229,
-      0.72
+      -8.649,
+      6.325,
+      1.3
      ],
-     40
+     32
     ]
    ],
    "step": 2,
    "hand": 0.003,
    "look": "dusk",
    "at": "L71.3",
-   "fill": 1.4,
-   "note": "the ring: S01 again"
+   "fill": 1.6,
+   "note": "the hook again: Lou, the ring, the key"
   }
  ],
  "acting": {
@@ -6956,6 +7188,11 @@
     "lean": 0,
     "tremble": 0,
     "blink": true
+   },
+   {
+    "at": "L23",
+    "hidden": true,
+    "blend": 0
    },
    {
     "at": "L24",
@@ -7442,6 +7679,41 @@
     ]
    },
    {
+    "at": "L49a",
+    "pos": [
+     -7.372,
+     -5.162,
+     0.0
+    ]
+   },
+   {
+    "at": "L49a",
+    "pos": [
+     39.7,
+     1.0,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "asleep",
+    "hidden": false,
+    "arms": [
+     0,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
     "at": "L50",
     "hidden": true,
     "blend": 0
@@ -7449,8 +7721,8 @@
    {
     "at": "L52",
     "pos": [
-     -7.372,
-     -5.162,
+     39.7,
+     1.0,
      0.0
     ]
    },
@@ -7586,7 +7858,7 @@
     "blend": 0
    },
    {
-    "at": "L60.5",
+    "at": "L60.4",
     "pos": [
      1.852,
      9.216,
@@ -7594,7 +7866,7 @@
     ]
    },
    {
-    "at": "L60.5",
+    "at": "L60.4",
     "pos": [
      1.616,
      8.039,
@@ -7860,9 +8132,54 @@
     "lean": 0,
     "tremble": 0,
     "blink": true
+   },
+   {
+    "at": "L71.3",
+    "hidden": true,
+    "blend": 0
    }
   ],
   "lou": [
+   {
+    "at": 0,
+    "pos": [
+     -8.352,
+     6.596,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": -54.23275770885738,
+    "expr": "brisk",
+    "hidden": false,
+    "arms": [
+     72,
+     72
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     67.5,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L02.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L06.2",
+    "pos": [
+     -8.352,
+     6.596,
+     0.0
+    ]
+   },
    {
     "at": "L06.2",
     "pos": [
@@ -8341,7 +8658,7 @@
     "blend": 0
    },
    {
-    "at": "L47",
+    "at": "L45",
     "pos": [
      -8.491,
      -5.396,
@@ -8349,14 +8666,14 @@
     ]
    },
    {
-    "at": "L47",
+    "at": "L45",
     "pos": [
-     37.6,
-     0.8,
+     -8.273,
+     -5.793,
      0.0
     ],
     "blend": 0,
-    "yaw": 270,
+    "yaw": 125.0,
     "expr": "worried",
     "hidden": false,
     "arms": [
@@ -8369,6 +8686,41 @@
     ],
     "head": [
      0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L47",
+    "pos": [
+     -8.273,
+     -5.793,
+     0.0
+    ]
+   },
+   {
+    "at": "L47",
+    "pos": [
+     37.6,
+     0.8,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 300,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     40,
      0
     ],
     "lean": 0,
@@ -8461,18 +8813,10 @@
     "blink": true
    },
    {
-    "at": "L52",
-    "pos": [
-     -7.622,
-     -1.658,
-     0.0
-    ]
-   },
-   {
     "at": "L54.3",
     "pos": [
-     -7.622,
-     -1.658,
+     -7.817,
+     -1.701,
      0.0
     ]
    },
@@ -8519,9 +8863,9 @@
    {
     "at": "L56",
     "pos": [
-     42.7,
+     41.4,
      0.4,
-     0.66
+     0.0
     ],
     "blend": 0,
     "yaw": 270,
@@ -8546,9 +8890,9 @@
    {
     "at": "L57",
     "pos": [
-     42.7,
+     41.4,
      0.4,
-     0.66
+     0.0
     ]
    },
    {
@@ -8658,7 +9002,7 @@
     "run": true
    },
    {
-    "at": "L58a.2",
+    "at": "L58a.1",
     "pos": [
      -4.708,
      6.956,
@@ -8666,7 +9010,7 @@
     ]
    },
    {
-    "at": "L58a.4",
+    "at": "L58a.3",
     "pos": [
      -8.202,
      5.364,
@@ -8724,7 +9068,7 @@
     "blink": true
    },
    {
-    "at": "L60.5",
+    "at": "L60.4",
     "hidden": true,
     "blend": 0
    },
@@ -8792,19 +9136,19 @@
      0.0
     ],
     "blend": 0,
-    "yaw": 270,
+    "yaw": 300,
     "expr": "laugh",
     "hidden": false,
     "arms": [
      0,
-     140
+     0
     ],
     "side": [
      0,
      0
     ],
     "head": [
-     0,
+     40,
      0
     ],
     "lean": 0,
@@ -8822,8 +9166,8 @@
    {
     "at": "L70",
     "pos": [
-     -8.035,
-     5.254,
+     -5.99,
+     7.78,
      0.0
     ],
     "blend": 0,
@@ -8847,7 +9191,55 @@
     "blink": true
    },
    {
+    "at": "L70.1",
+    "pos": [
+     -4.206,
+     6.572,
+     0.0
+    ]
+   },
+   {
     "at": "L70.2",
+    "pos": [
+     -4.206,
+     6.572,
+     0.0
+    ]
+   },
+   {
+    "at": "L70.2",
+    "pos": [
+     -1.892,
+     9.412,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 31.363636363636374,
+    "expr": "soft",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L71",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L71.3",
     "pos": [
      -1.892,
      9.412,
@@ -8855,9 +9247,31 @@
     ]
    },
    {
-    "at": "L71",
-    "hidden": true,
-    "blend": 0
+    "at": "L71.3",
+    "pos": [
+     -8.352,
+     6.596,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": -54.23275770885738,
+    "expr": "brisk",
+    "hidden": false,
+    "arms": [
+     72,
+     72
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     67.5,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
    }
   ],
   "park": [
@@ -9021,12 +9435,12 @@
    {
     "at": "L69",
     "pos": [
-     -6.32,
-     1.573,
+     -4.915,
+     -3.441,
      0.0
     ],
     "blend": 0,
-    "yaw": 465.0,
+    "yaw": 125.0,
     "expr": "smile",
     "hidden": false,
     "arms": [
@@ -9120,7 +9534,7 @@
     "blend": 0
    },
    {
-    "at": "L68.2",
+    "at": "L68.1",
     "pos": [
      0.4,
      -3.3,
@@ -9128,7 +9542,7 @@
     ]
    },
    {
-    "at": "L68.2",
+    "at": "L68.1",
     "pos": [
      8.369,
      5.473,
@@ -9165,12 +9579,12 @@
    {
     "at": "L69",
     "pos": [
-     -6.61,
-     -0.001,
+     -4.726,
+     -4.408,
      0.0
     ],
     "blend": 0,
-    "yaw": 475.0,
+    "yaw": 125.0,
     "expr": "smile",
     "hidden": false,
     "arms": [
@@ -9204,7 +9618,7 @@
    "pos": [
     -8.877,
     6.259,
-    0.78
+    1.3
    ],
    "yaw": 56.81818181818181,
    "turn": [
@@ -9212,8 +9626,9 @@
     0
    ],
    "dur": 1.0,
-   "hand": true,
-   "tilt": 0
+   "hand": false,
+   "tilt": 0,
+   "scale": 2.3
   },
   {
    "at": "L02",
@@ -9222,16 +9637,17 @@
    "pos": [
     -8.877,
     6.259,
-    0.78
+    1.3
    ],
    "yaw": 56.81818181818181,
    "turn": [
     0,
     80
    ],
-   "dur": 1.2,
-   "hand": true,
-   "tilt": 0
+   "dur": 0.5,
+   "hand": false,
+   "tilt": 0,
+   "scale": 2.3
   },
   {
    "at": "L02.2",
@@ -9260,7 +9676,8 @@
    ],
    "dur": 0.5,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L05.1",
@@ -9278,7 +9695,8 @@
    ],
    "dur": 0.5,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L05.2",
@@ -9296,7 +9714,8 @@
    ],
    "dur": 0.5,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L06",
@@ -9314,7 +9733,8 @@
    ],
    "dur": 0.6,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L06.1",
@@ -9332,7 +9752,8 @@
    ],
    "dur": 0.5,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L06.2",
@@ -9379,7 +9800,8 @@
    ],
    "dur": 1.0,
    "hand": false,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L10",
@@ -9402,7 +9824,8 @@
    ],
    "dur": 1.0,
    "hand": false,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L11.2",
@@ -9446,7 +9869,8 @@
    ],
    "dur": 1.0,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L15",
@@ -9627,7 +10051,8 @@
    ],
    "dur": 1.0,
    "hand": false,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L24",
@@ -9670,17 +10095,7 @@
    "big": false
   },
   {
-   "at": "L29.3",
-   "name": "tags",
-   "glow": [
-    2,
-    3,
-    4
-   ],
-   "big": false
-  },
-  {
-   "at": "L29.3",
+   "at": "L29.2",
    "name": "ring",
    "on": true,
    "pos": [
@@ -9695,7 +10110,18 @@
    ],
    "dur": 0.5,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
+  },
+  {
+   "at": "L29.3",
+   "name": "tags",
+   "glow": [
+    2,
+    3,
+    4
+   ],
+   "big": false
   },
   {
    "at": "L29.4",
@@ -9850,6 +10276,13 @@
    "on": false
   },
   {
+   "at": "L45",
+   "name": "door1",
+   "a0": 0,
+   "a1": 85,
+   "dur": 0.5
+  },
+  {
    "at": "L46.1",
    "name": "hand",
    "on": true,
@@ -9868,6 +10301,13 @@
    "at": "L46.2",
    "name": "hand",
    "on": false
+  },
+  {
+   "at": "L47",
+   "name": "door1",
+   "a0": 85,
+   "a1": 0,
+   "dur": 0.4
   },
   {
    "at": "L47",
@@ -9906,7 +10346,8 @@
    ],
    "dur": 0.5,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L48.1",
@@ -9963,7 +10404,8 @@
    ],
    "dur": 0.5,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L49",
@@ -9976,6 +10418,48 @@
    "a0": 0,
    "a1": 14,
    "dur": 0.5
+  },
+  {
+   "at": "L49a",
+   "name": "room",
+   "show": [
+    "door_b"
+   ]
+  },
+  {
+   "at": "L49a.2",
+   "name": "hand",
+   "on": true,
+   "pos": [
+    40.7,
+    2.805,
+    1.1
+   ],
+   "yaw": 0,
+   "shake": 0.0,
+   "dur": 0.5,
+   "a0": 0,
+   "a1": 0
+  },
+  {
+   "at": "L49a.5",
+   "name": "hand",
+   "on": true,
+   "pos": [
+    40.7,
+    2.805,
+    1.1
+   ],
+   "yaw": 0,
+   "shake": 0.0,
+   "dur": 0.9,
+   "a0": 0,
+   "a1": 90
+  },
+  {
+   "at": "L50",
+   "name": "hand",
+   "on": false
   },
   {
    "at": "L50",
@@ -10026,7 +10510,8 @@
    ],
    "dur": 0.5,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L54.2",
@@ -10097,7 +10582,6 @@
    "at": "L56",
    "name": "room",
    "show": [
-    "stairs",
     "lamp",
     "window"
    ]
@@ -10148,7 +10632,8 @@
    ],
    "dur": 0.5,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L58.3",
@@ -10174,6 +10659,25 @@
    "on": false
   },
   {
+   "at": "L58a.1",
+   "name": "ring",
+   "on": true,
+   "pos": [
+    -5.77,
+    9.203,
+    0.78
+   ],
+   "yaw": 34.09090909090909,
+   "turn": [
+    70,
+    0
+   ],
+   "dur": 0.5,
+   "hand": true,
+   "tilt": 0,
+   "scale": 1.0
+  },
+  {
    "at": "L58a+0.35",
    "name": "tags",
    "glow": [
@@ -10189,24 +10693,6 @@
     11
    ],
    "big": false
-  },
-  {
-   "at": "L58a.2",
-   "name": "ring",
-   "on": true,
-   "pos": [
-    -5.77,
-    9.203,
-    0.78
-   ],
-   "yaw": 34.09090909090909,
-   "turn": [
-    70,
-    0
-   ],
-   "dur": 0.5,
-   "hand": true,
-   "tilt": 0
   },
   {
    "at": "L58a+0.63",
@@ -10267,7 +10753,7 @@
    "big": false
   },
   {
-   "at": "L58a.4",
+   "at": "L58a.3",
    "name": "ring",
    "on": false
   },
@@ -10341,7 +10827,8 @@
    ],
    "dur": 1.0,
    "hand": true,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
    "at": "L58a+2.87",
@@ -10367,7 +10854,8 @@
    ],
    "dur": 1.0,
    "hand": false,
-   "tilt": 90
+   "tilt": 90,
+   "scale": 1.0
   },
   {
    "at": "L60",
@@ -10393,10 +10881,11 @@
    ],
    "dur": 1.0,
    "hand": false,
-   "tilt": 90
+   "tilt": 90,
+   "scale": 1.0
   },
   {
-   "at": "L60.4",
+   "at": "L60.3",
    "name": "ring",
    "on": false
   },
@@ -10485,7 +10974,7 @@
    "dur": 0.5
   },
   {
-   "at": "L68.2",
+   "at": "L68.1",
    "name": "ring",
    "on": true,
    "pos": [
@@ -10500,15 +10989,16 @@
    ],
    "dur": 0.5,
    "hand": false,
-   "tilt": 0
+   "tilt": 0,
+   "scale": 1.0
   },
   {
-   "at": "L68.4",
+   "at": "L68.3",
    "name": "ring",
    "on": false
   },
   {
-   "at": "L68.4",
+   "at": "L68.3",
    "name": "clock",
    "text": null,
    "day": null
@@ -10552,7 +11042,7 @@
    "pos": [
     -8.877,
     6.259,
-    0.78
+    1.3
    ],
    "yaw": 56.81818181818181,
    "turn": [
@@ -10560,8 +11050,9 @@
     0
    ],
    "dur": 1.0,
-   "hand": true,
-   "tilt": 0
+   "hand": false,
+   "tilt": 0,
+   "scale": 2.3
   }
  ],
  "rev": 2,
@@ -10628,7 +11119,7 @@
   ]
  },
  "sound": {
-  "rev": 1,
+  "rev": 2,
   "floor": "stone",
   "steps_db": -22,
   "ambience": [
@@ -10657,16 +11148,6 @@
     "db": -20
    },
    {
-    "at": "L05.1",
-    "kind": "click",
-    "db": -21
-   },
-   {
-    "at": "L05.2",
-    "kind": "click",
-    "db": -22
-   },
-   {
     "at": "L34+0.2",
     "kind": "creak",
     "db": -16,
@@ -10688,9 +11169,10 @@
     "db": -14
    },
    {
-    "at": "L56",
-    "kind": "thud",
-    "db": -26
+    "at": "L33",
+    "kind": "riser",
+    "db": -16,
+    "dur": 0.8
    },
    {
     "at": "L71.3",
@@ -10701,7 +11183,13 @@
   "music_drops": [
    {
     "from": "L26>",
-    "to": "P01>"
+    "to": "P01>",
+    "db": -60
+   },
+   {
+    "from": "L33>",
+    "to": "P02>",
+    "db": -60
    }
   ]
  }

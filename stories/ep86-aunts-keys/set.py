@@ -206,7 +206,7 @@ def build_house(kit, ctx, k):
     # door (hinged at its left edge so it can open), frame, step, handle plate and knob; a lit or dark recess behind it
     B(H, (1.2, 0.07, 2.28), (0, -0.035, 1.14), white, "frame")
     glowdoor = k in (1, 7)
-    B(H, (0.96, 0.012, 2.06), (0, -0.024, 1.03), kit.emit("#ffcf8a", 2.6, name="recess warm") if glowdoor else P("#2a2230", 0.9), "recess")
+    B(H, (0.96, 0.012, 2.06), (0, -0.024, 1.03), kit.emit("#ffcf8a", 1.3, name="recess warm") if glowdoor else P("#2a2230", 0.9), "recess")
     Hg = E(H, (-0.5, 0, 0), f"hinge{k}")
     ctx["hinges"][k] = Hg
     B(Hg, (1.0, 0.09, 2.1), (0.5, -0.075, 1.05), P(DOORS[k], 0.4), "door")
@@ -218,6 +218,9 @@ def build_house(kit, ctx, k):
         B(Hg, (0.10, 0.02, 0.22), (0.88, -0.13, 0.78), brass, "lockplate")
         B(Hg, (0.018, 0.012, 0.05), (0.88, -0.145, 0.78), P("#15131a", 0.9), "keyhole")
         kit.sphere(nm("knob"), 0.05, (0.88, -0.17, 0.96), brass, Hg, seg=12)
+        # a deadbolt above the knob (its keyhole is where the hook's key goes): a round brass plate, a dark slot
+        kit.cyl(nm("dbplate"), 0.075, 0.022, (0.88, -0.14, 1.3), brass, Hg, rot=(math.pi / 2, 0, 0), n=18)
+        B(Hg, (0.016, 0.012, 0.05), (0.88, -0.155, 1.3), P("#15131a", 0.9), "dbhole")
     # number plate (numerals only), 2 cm proud of the wall
     pl = kit.plane(nm("plate"), (0.36, 0.24), (0, -0.02, 2.6), imgmat(numeral_image(k, BRASS, "#3a2a14", name="plate"), 0.4), H,
                    rot=(math.pi / 2, 0, 0))
@@ -269,7 +272,7 @@ def build_court(kit, ctx):
     kit.cyl("courtring", 6.6, 0.125, (0, 0, -0.025), P("#d3c4a8", 0.8), None, n=48)
     ctx["porch"] = []
     ctx["hinges"] = {}
-    ctx["lou_win"] = kit.emit("#ffe2a8", 0.8, name="louwindow")
+    ctx["lou_win"] = kit.emit("#ffcf7a", 0.8, name="louwindow")
     ctx["houses"] = [build_house(kit, ctx, k) for k in range(1, 13)]
     # the fountain: a stone basin with a teal-lit pool, a column and a bowl
     stone, stone2 = P("#d8d2c4", 0.75, 0.1), P("#bdb6a6", 0.75, 0.1)
@@ -305,7 +308,7 @@ def build_court(kit, ctx):
             kit.prop("commontree_1" if i % 2 == 0 else "birchtree_1", (x, y, 0), rot=37 * i, height=h, tint="#8fd860")
         except Exception:
             pass
-    for (x, y) in ((-3.0, 7.6), (4.2, 8.0), (-12.5, -1.0), (12.8, -2.0)):
+    for (x, y) in ((-8.2, 7.0), (8.6, 4.4), (-12.5, -1.0), (12.8, -2.0)):
         try:
             kit.prop("bush_1", (x, y, 0), rot=x * 9, height=1.1, tint="#58c24a")
         except Exception:
@@ -383,6 +386,7 @@ def place_ring(ctx, cue, t):
         return
     px, py, pz = cue["pos"]
     root.location = (px, py, pz)
+    root.scale = (cue.get("scale", 1.0),) * 3
     root.rotation_euler = (0, 0, math.radians(cue.get("yaw", 0)))
     a0, a1 = cue.get("turn", [0, 0])
     u = ss((t - cue["t"]) / max(1e-3, cue.get("dur", 1.0)))
@@ -394,6 +398,45 @@ def place_ring(ctx, cue, t):
 
 
 # ---------------------------------------------------------------------------------------------------- the overlay
+def draw_keys(d, x0, y0, zoom, S, glow):
+    """key ring: a wide brass loop across the top and eleven keys hanging from it, each a round numbered bow over a toothed blade"""
+    z=zoom*S
+    brass=hexrgb(BRASS)+(255,); dark=(90,62,20,255)
+    pw,ph=214*z,132*z
+    d.rounded_rectangle([x0,y0,x0+pw,y0+ph],16*z,fill=(22,30,46,215),outline=brass,width=max(2,int(4*z)))
+    # the loop
+    lx0,ly0,lx1,ly1=x0+10*z,y0+10*z,x0+pw-10*z,y0+40*z
+    d.ellipse([lx0,ly0,lx1,ly1],outline=brass,width=int(6*z))
+    d.ellipse([lx0-1*z,ly0-1*z,lx1+1*z,ly1+1*z],outline=dark,width=max(1,int(1.5*z)))
+    f=_font(int(12.5*z))
+    n=11; sp=18.2*z
+    for i in range(n):
+        nn=i+2
+        bx=x0+pw/2+(i-(n-1)/2)*sp
+        t=(i-(n-1)/2)/((n-1)/2)           # -1..1
+        by=y0+ly1-y0-4*z+ 0*z + (abs(t)**2)*(-0)  # bow centre y: just under the loop
+        # the loop's lower edge follows the ellipse
+        cx,cy=(lx0+lx1)/2,(ly0+ly1)/2
+        ey=cy+ (ly1-ly0)/2*math.sqrt(max(0,1-((bx-cx)/((lx1-lx0)/2))**2))
+        by=ey+9*z
+        r=8.6*z
+        # blade
+        bl=44*z+ (6*z if i%2 else 0)
+        w=3.4*z
+        d.rectangle([bx-w,by+r-2*z,bx+w,by+r+bl],fill=brass,outline=dark)
+        for k in (0.4,0.7):
+            yy=by+r+bl*k
+            d.rectangle([bx+w,yy,bx+w+4*z,yy+5*z],fill=brass,outline=dark)
+        lit=nn in glow
+        if lit:
+            d.ellipse([bx-r-5*z,by-r-5*z,bx+r+5*z,by+r+5*z],fill=(46,196,182,130))
+            d.ellipse([bx-r,by-r,bx+r,by+r],fill=(60,235,215,255),outline=(255,255,255,255),width=max(2,int(2*z)))
+        else:
+            d.ellipse([bx-r,by-r,bx+r,by+r],fill=brass,outline=dark,width=max(2,int(2*z)))
+        tx=str(nn); bb=d.textbbox((0,0),tx,font=f)
+        d.text((bx-(bb[2]-bb[0])/2-bb[0],by-(bb[3]-bb[1])/2-bb[1]),tx,fill=(24,30,40,255),font=f)
+
+
 def ring_marker_image(glow, clock, day, big=False):
     """RGBA, 540 x 960: the key-ring inset (top left) with glowing tags, and the porch camera's brackets and clock."""
     from PIL import Image, ImageDraw
@@ -406,27 +449,10 @@ def ring_marker_image(glow, clock, day, big=False):
     S = 2
     im = Image.new("RGBA", (W * S, H * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    cx, cy, r = (270 * S, 400 * S, 224 * S) if big else (96 * S, 118 * S, 78 * S)
-    zoom = r / (78 * S)
-    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(22, 30, 46, 215))
-    d.ellipse([cx - r + 3 * S, cy - r + 3 * S, cx + r - 3 * S, cy + r - 3 * S], outline=hexrgb(BRASS) + (255,), width=int(6 * S * zoom))
-    f = _font(int(21 * S * zoom))
-    pr = 49 * S * zoom
-    for n in range(2, 13):
-        a = math.radians(-90 + (n - 2) * 360 / 11)
-        tx, ty = cx + pr * math.cos(a), cy + pr * math.sin(a)
-        rr = 17 * S * zoom
-        lit = n in glow
-        if lit:
-            d.ellipse([tx - rr - 7 * S, ty - rr - 7 * S, tx + rr + 7 * S, ty + rr + 7 * S], fill=(46, 196, 182, 120))
-            d.ellipse([tx - rr, ty - rr, tx + rr, ty + rr], fill=(60, 235, 215, 255), outline=(255, 255, 255, 255), width=2 * S)
-        else:
-            d.ellipse([tx - rr, ty - rr, tx + rr, ty + rr], fill=hexrgb(BRASS) + (255,), outline=(90, 62, 20, 255), width=2 * S)
-        txt = str(n)
-        bb = d.textbbox((0, 0), txt, font=f)
-        d.text((tx - (bb[2] - bb[0]) / 2 - bb[0], ty - (bb[3] - bb[1]) / 2 - bb[1]), txt, fill=(24, 30, 40, 255), font=f)
-    d.ellipse([cx - 13 * S * zoom, cy - 13 * S * zoom, cx + 13 * S * zoom, cy + 13 * S * zoom], fill=hexrgb(BRASS) + (255,), outline=(90, 62, 20, 255), width=2 * S)
-    d.ellipse([cx - 5 * S * zoom, cy - 5 * S * zoom, cx + 5 * S * zoom, cy + 5 * S * zoom], fill=(22, 30, 46, 255))
+    zoom = 2.0 if big else 1.0
+    x0 = (270 - 107 * zoom) * S if big else 16 * S
+    y0 = (400 - 66 * zoom) * S if big else 34 * S
+    draw_keys(d, x0, y0, zoom, S, glow)
     if clock and not big:
         m, L, w = 26 * S, 54 * S, 5 * S
         wh = (255, 255, 255, 235)
@@ -539,12 +565,16 @@ def build_room(kit, ctx):
         B(g, (1.0, 0.08, 2.1), (0.4, 2.88, 1.05), P(colr, 0.4), "rdoor")
         B(g, (0.1, 0.03, 0.2), (0.7, 2.82, 0.8), P(BRASS, 0.3, 0.9), "rdplate")
         B(g, (0.03, 0.03, 0.09), (0.7, 2.79, 0.8), P(BRASS, 0.3, 0.9), "rdbolt")
+        if key == "door_b":   # my brass thumb-turn: a round base and a bar that turns about the y axis
+            kit.cyl(nm("tbase"), 0.06, 0.03, (0.7, 2.815, 1.1), P(BRASS, 0.3, 0.9), g, rot=(math.pi / 2, 0, 0), n=18)
+            parts["thumb"] = E(g, (0.7, 2.79, 1.1), "thumb")
+            B(parts["thumb"], (0.22, 0.04, 0.06), (0, 0, 0), P(BRASS, 0.3, 0.9), "tbar", 0.015)
         kit.sphere(nm("rdknob"), 0.05, (0.7, 2.8, 0.98), P(BRASS, 0.3, 0.9), g, seg=12)
-    parts["clock"] = E(None, (rx, ry, 0), "rclock")
+    parts["clock"] = E(None, (0, 0, 0), "rclock")
     kit.cyl(nm("clockface"), 0.24, 0.04, (rx - 1.2, ry + 2.88, 2.1), P("#f6f1e6", 0.4), parts["clock"], rot=(math.pi / 2, 0, 0), n=24)
     B(parts["clock"], (0.02, 0.02, 0.17), (rx - 1.2, ry + 2.85, 2.16), P("#2b2f3a", 0.5), "hhand")
     B(parts["clock"], (0.13, 0.02, 0.02), (rx - 1.14, ry + 2.85, 2.1), P("#2b2f3a", 0.5), "mhand")
-    parts["grass"] = E(None, (rx, ry, 0), "rgrass")
+    parts["grass"] = E(None, (0, 0, 0), "rgrass")
     for i in range(16):
         B(parts["grass"], (0.06, 0.4, 0.02), (rx + 0.9 + 0.12 * ((i * 5) % 7) - 0.3, ry + 0.2 + 0.14 * ((i * 3) % 6), 0.01 + 0.002 * i),
           P("#4fae5a" if i % 2 else "#3f9a4c", 0.8), "blade", rot=(0, 0, 0.5 * ((i * 7) % 6) - 1.2))
@@ -552,25 +582,25 @@ def build_room(kit, ctx):
         kit.cyl(nm("wet"), 0.16 - 0.02 * i, 0.006, (rx + gx, ry + gy, 0.012), P("#8a7a62", 0.12, 0.9), parts["grass"], n=16)
     parts["window"] = E(None, (rx, ry, 0), "rwindow")
     B(parts["window"], (0.08, 1.3, 1.5), (-3.42, 0.8, 1.6), P("#ffffff", 0.5), "rwframe")
-    B(parts["window"], (0.05, 1.1, 1.3), (-3.38, 0.8, 1.6), kit.emit("#cfe8ff", 1.6, name="rwpane"), "rwpane")
+    B(parts["window"], (0.05, 1.1, 1.3), (-3.38, 0.8, 1.6), kit.emit("#ffcf7a", 0.9, name="rwpane"), "rwpane")
     # furniture
     parts["armchair"] = armchair(None, "#c48a3a")
     parts["armchair"].location = (rx + 0.0, ry + 0.95, 0)
     parts["armchair"].rotation_euler = (0, 0, math.pi)       # its back toward the front of the room... turned later by cue
     parts["bed"] = kit.prop("bed_single", (rx + 1.9, ry + 1.6, 0), rot=0, scale=1.0, tint="#e8b8a0")
-    parts["table"] = E(None, (rx, ry, 0), "rtable")
+    parts["table"] = E(None, (0, 0, 0), "rtable")
     kit.prop("table_roundsmall", (rx + 1.2, ry + 1.0, 0), rot=0, scale=1.3, parent=parts["table"])
     kit.cyl(nm("mug"), 0.05, 0.1, (rx + 1.05, ry + 0.95, 0.86), P("#f2f2ee", 0.4), parts["table"], n=14)
-    parts["lamp"] = E(None, (rx, ry, 0), "rlamp")
+    parts["lamp"] = E(None, (0, 0, 0), "rlamp")
     B(parts["lamp"], (0.3, 0.3, 0.05), (rx + 2.9, ry + 2.3, 0.72), P("#7a5230", 0.6), "lampbase")
     kit.cyl(nm("lampshade"), 0.18, 0.28, (rx + 2.9, ry + 2.3, 0.95), kit.emit("#ffd9a0", 3.0, name="shade"), parts["lamp"], n=16, r2=0.12)
     B(parts["lamp"], (0.55, 0.55, 0.7), (rx + 2.9, ry + 2.3, 0.35), P("#a0714a", 0.6), "nightstand")
-    parts["stairs"] = E(None, (rx, ry, 0), "rstairs")
+    parts["stairs"] = E(None, (0, 0, 0), "rstairs")
     for i in range(7):
         B(parts["stairs"], (1.0, 0.4, 0.22 * (i + 1)), (rx + 2.7, ry - 0.8 + 0.4 * i, 0.11 * (i + 1)), P("#b98a5a" if i % 2 else "#a97a4a", 0.6), "stair")
     parts["rail"] = B(parts["stairs"], (0.08, 3.0, 0.1), (rx + 2.15, ry + 0.6, 1.1), P("#7a5230", 0.6), "stairrail", 0.01, rot=(0.0, 0.0, 0.0))
     # a moving box, a kitchen table for the morning scenes
-    parts["kitchen"] = E(None, (rx, ry, 0), "rkitchen")
+    parts["kitchen"] = E(None, (0, 0, 0), "rkitchen")
     kit.prop("table_roundlarge", (rx - 0.2, ry + 0.4, 0), scale=1.0, parent=parts["kitchen"])
     kit.cyl(nm("kmug"), 0.06, 0.11, (rx - 0.5, ry + 0.2, 0.8), P("#f2f2ee", 0.4), parts["kitchen"], n=14)
     B(parts["kitchen"], (0.55, 0.55, 0.05), (rx + 2.9, ry - 1.0, 0.025), P("#2fb5a8", 0.9, 0.05), "rug")
@@ -674,7 +704,7 @@ def animate(kit, story, tl, t, ctx):
             nd.inputs["Strength"].default_value = L["water"]
     for nd in ctx["lou_win"].node_tree.nodes:
         if nd.type == "EMISSION":
-            nd.inputs["Strength"].default_value = 0.6 + 4.0 * L["lamp"]
+            nd.inputs["Strength"].default_value = 0.5 + 1.3 * L["lamp"]
     # the sleepwalker's face: a warm lamp from the side and above, the fountain's teal from below, no flat frontal fill
     if sd.get("face"):
         fx, fy = ct[0] - cl[0], ct[1] - cl[1]
@@ -736,6 +766,10 @@ def animate(kit, story, tl, t, ctx):
         ha.rotation_euler = (0.03 * sh * math.sin(t * 38.0), math.radians(lerp(hc.get("a0", 0), hc.get("a1", 0), ss((t - hc["t"]) / max(1e-3, hc.get("dur", 1.0))))) + 0.05 * sh * math.sin(t * 31.0), math.radians(hc.get("yaw", 0)))
     else:
         ha.location = (0, 0, -20)
+    th = ctx["room_parts"].get("thumb")
+    if th is not None:
+        u_ = ss((t - hc["t"]) / max(1e-3, hc.get("dur", 1.0))) if hc.get("on") else 0.0
+        th.rotation_euler = (0, math.radians(lerp(hc.get("a0", 0), hc.get("a1", 0), u_)) if hc.get("on") else 0.0, 0)
     pc = cue_at(tl, "padlock", t)
     ctx["padlock"].location = tuple(pc["pos"]) if pc.get("on") else (0, 0, -20)
     # the pocket scene (S13)

@@ -4,12 +4,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "My aunt has",
-    "my aunt has"
+    "My aunt",
+    "my aunt"
    ],
    [
-    "a key",
-    "a key"
+    "has a key",
+    "has a key"
    ],
    [
     "to every",
@@ -66,28 +66,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "For a",
-    "for a"
+    "For a month",
+    "for a month"
    ],
    [
-    "month now,",
-    "month now,"
+    "now, at midnight,",
+    "now, at midnight,"
    ],
    [
-    "at midnight,",
-    "at midnight,"
+    "you can hear",
+    "you can hear"
    ],
    [
-    "you can",
-    "you can"
+    "it from every",
+    "it from every"
    ],
    [
-    "hear it",
-    "hear it"
-   ],
-   [
-    "from every DOOR.",
-    "from every door."
+    "DOOR.",
+    "door."
    ]
   ]
  },
@@ -542,16 +538,12 @@
     "locking every"
    ],
    [
-    "OTHER house",
-    "other house"
+    "OTHER house with",
+    "other house with"
    ],
    [
-    "with its",
-    "with its"
-   ],
-   [
-    "own KEY.",
-    "own key."
+    "its own KEY.",
+    "its own key."
    ]
   ]
  },
@@ -600,6 +592,16 @@
    [
     "Twelve oh-FOUR.",
     "twelve oh-four."
+   ]
+  ]
+ },
+ {
+  "id": "P02",
+  "pause": 0.5,
+  "chunks": [
+   [
+    "",
+    ""
    ]
   ]
  },
@@ -888,8 +890,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "She can't lock me IN.",
-    "she can't lock me in."
+    "She can't lock",
+    "she can't lock"
+   ],
+   [
+    "me IN.",
+    "me in."
    ],
    [
     "My bolt turns",
@@ -900,12 +906,12 @@
     "from inside,"
    ],
    [
-    "and asleep,",
-    "and asleep,"
+    "and asleep, I",
+    "and asleep, i"
    ],
    [
-    "I just TURN it.",
-    "i just turn it."
+    "just TURN it.",
+    "just turn it."
    ]
   ]
  },
@@ -1084,24 +1090,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then she",
-    "then she"
+    "Then she goes",
+    "then she goes"
    ],
    [
-    "goes round",
-    "goes round"
+    "round UNLOCKING",
+    "round unlocking"
    ],
    [
-    "UNLOCKING the",
-    "unlocking the"
+    "the other ten,",
+    "the other ten,"
    ],
    [
-    "other ten,",
-    "other ten,"
+    "before anyone",
+    "before anyone"
    ],
    [
-    "before anyone WAKES.",
-    "before anyone wakes."
+    "WAKES.",
+    "wakes."
    ]
   ]
  },
@@ -1124,32 +1130,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "She never",
-    "she never"
+    "She never told",
+    "she never told"
    ],
    [
-    "told me.",
-    "told me."
+    "me. She didn't",
+    "me. she didn't"
    ],
    [
-    "She didn't",
-    "she didn't"
+    "want me scared",
+    "want me scared"
    ],
    [
-    "want me",
-    "want me"
+    "to sleep in",
+    "to sleep in"
    ],
    [
-    "scared to sleep",
-    "scared to sleep"
-   ],
-   [
-    "in my",
-    "in my"
-   ],
-   [
-    "own PLACE.",
-    "own place."
+    "my own PLACE.",
+    "my own place."
    ]
   ]
  },
@@ -1280,16 +1278,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Now the",
-    "now the"
+    "Now the whole",
+    "now the whole"
    ],
    [
-    "whole court",
-    "whole court"
-   ],
-   [
-    "locks its",
-    "locks its"
+    "court locks its",
+    "court locks its"
    ],
    [
     "own doors",
