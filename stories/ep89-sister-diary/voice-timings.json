@@ -1082,26 +1082,26 @@
    ]
   },
   "L45": {
-   "text": "She'd pushed her dresser against the wall.",
+   "text": "She had pushed her dresser against the wall.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.845,
+   "dur": 1.914,
    "onset": 0.172,
-   "end": 1.655,
+   "end": 1.724,
    "chunks": [
     [
      0.172,
-     0.439
+     0.492
     ],
     [
-     0.439,
-     0.845
+     0.492,
+     0.914
     ],
     [
-     0.845,
-     1.655
+     0.914,
+     1.724
     ]
    ]
   },
