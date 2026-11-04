@@ -15,7 +15,7 @@ The story was re-imagined as **heard-ten**: "If someone's still TALKING after yo
 The brief allows no rescue past the last try.
 
 ## What a retry needs
-- **A new creature concept** from a writer, not another tweak of this one. A person-shape made wrong on the R6 cylinder head keeps reading as an object, and the mouth seam fights playbook rule 8 (never a grin). One option is to keep the idea, since the voice is the threat, and show the twelfth singer only as a silhouette behind the hall's frosted window, or by what it does: Mom's face turned to an empty chair is not allowed (no empty-chair twist), so it would need its own picture.
+- **A new creature concept** from a writer, not another tweak of this one. A person-shape made wrong on the R6 cylinder head keeps reading as an object, and the mouth seam fights playbook rule 8 (never a grin). One option keeps the idea, since the voice is the threat: show the twelfth singer only as a silhouette behind the hall's frosted window, or only in part (a bare neck at the edge of the lamp light). Never an empty chair (no kept-place twist).
 - The script, cold-read notes and story are sound. Cut the L41 "Its GRIN goes all the way ROUND" beat if the mouth goes.
 - Before any proof or preview, redraw the preview. The one in out/ predates the creature changes.
 
