@@ -306,57 +306,49 @@
    ]
   },
   "L12": {
-   "text": "This sunday, at the end of the week, I turn twenty-one. That's when you give your first year.",
+   "text": "I'll turn twenty-one on sunday. That's when you give your first year.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.672,
+   "dur": 2.966,
    "onset": 0.172,
-   "end": 3.483,
+   "end": 2.759,
    "chunks": [
     [
      0.172,
-     0.638
+     0.87
     ],
     [
-     0.664,
-     0.922
+     0.87,
+     1.466
     ],
     [
-     0.922,
-     1.224
+     1.552,
+     1.837
     ],
     [
-     1.25,
-     2.121
+     1.837,
+     2.026
     ],
     [
-     2.215,
-     2.509
-    ],
-    [
-     2.509,
-     2.699
-    ],
-    [
-     2.699,
-     3.483
+     2.026,
+     2.759
     ]
    ]
   },
   "L13": {
-   "text": "Then that monday, the statue got younger.",
+   "text": "But on monday, the statue got younger.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 2.017,
-   "onset": 0.172,
+   "onset": 0.155,
    "end": 1.81,
    "chunks": [
     [
-     0.172,
+     0.155,
      0.724
     ],
     [
@@ -802,26 +794,26 @@
    ]
   },
   "L32": {
-   "text": "Now they walk to the bakery arm in arm.",
+   "text": "Now they walk, to the bakery arm in arm.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.931,
+   "dur": 1.983,
    "onset": 0.172,
-   "end": 1.741,
+   "end": 1.793,
    "chunks": [
     [
      0.172,
-     0.586
+     0.621
     ],
     [
-     0.586,
-     1.0
+     0.655,
+     1.069
     ],
     [
-     1.0,
-     1.741
+     1.069,
+     1.793
     ]
    ]
   },

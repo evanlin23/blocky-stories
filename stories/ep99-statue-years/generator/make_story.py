@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -182,10 +182,10 @@ shot("L03.1", mv([2.6, -5.4, Z0 + 1.9], [-1.05, -4.1, Z0 + 1.5], 40, [2.2, -5.0,
 # L04: Mrs. Lark
 only("L04", ["lark"])
 put("lark", "L04", [CX, CY + 1.4], 0, expr="smile")
-beat("lark", "L04.1", expr="grin", head=[10, 0])
+beat("lark", "L04.1", expr="smile", head=[8, 0])
 shot("L04", mv([CX, CY - 3.0, 1.55], [CX, CY + 1.4, 1.5], 36, [CX, CY - 2.5, 1.55], [CX, CY + 1.4, 1.5], 36), name="lark")
-shot("L04.1", mv([CX + 1.0, CY + 0.2, 1.95], [CX + 2.0, CY + 3.2, 1.95], 45, [CX + 1.4, CY + 1.2, 1.95], [CX + 2.0, CY + 3.2, 1.95], 45), name="photo")
-shot("L04.2", mv([CX, CY - 1.0, 1.65], [CX, CY + 1.4, 1.6], 55, [CX, CY - 0.6, 1.65], [CX, CY + 1.4, 1.6], 55), name="lark2")
+shot("L04.1", mv([CX, CY - 1.0, 1.65], [CX, CY + 1.4, 1.6], 55, [CX, CY - 0.6, 1.65], [CX, CY + 1.4, 1.6], 55), name="lark2")
+shot("L04.2", mv([CX + 3.4, CY - 0.1, 1.9], [CX + 4.2, CY + 3.3, 1.9], 36, [CX + 3.5, CY + 0.2, 1.9], [CX + 4.2, CY + 3.3, 1.9], 36), name="photo")
 # L05: Mom and me on the main street
 only("L05", ["mom", "me"])
 put("mom", "L05", [SX - 0.75, SY - 1.0], 0, expr="grin")
@@ -234,12 +234,12 @@ only("L12", [])
 cue("L12", "flip", v=0.0)
 cue("L12+0.1", "flip", v=1.0, dur=0.7)
 shot("L12", mv([CAX, CAY - 5.4, 2.6], [CAX, CAY, 2.6], 38, [CAX, CAY - 4.6, 2.6], [CAX, CAY, 2.6], 38), name="calflip")
-shot("L12+1.1", mv([CAX + 0.2, CAY - 3.2, 2.5], [CAX, CAY, 2.4], 50, [CAX, CAY - 2.6, 2.45], [CAX, CAY, 2.4], 50), name="calring")
-put("me", "L12+1.9", [0.0, -15.2, Z0], 180, expr="smile")
-shot("L12+1.9", mv([-0.6, -19.0, Z0 + 1.6], [0.0, -2.0, Z0 + 5.5], 28, [-0.2, -18.2, Z0 + 1.7], [0.0, -2.0, Z0 + 5.6], 28), name="mebehind")
-put("me", "L12+2.6", [-1.8, -13.5, Z0], 172, expr="smile")
-beat("me", "L12+3.0", expr="grin", head=[-12, 0])
-shot("L12+2.6", mv([-3.6, -9.6, Z0 + 1.55], [-1.8, -13.5, Z0 + 1.5], 48, [-3.2, -9.9, Z0 + 1.55], [-1.8, -13.5, Z0 + 1.5], 48), name="meface")
+shot("L12+0.95", mv([CAX + 0.2, CAY - 3.2, 2.5], [CAX, CAY, 2.4], 50, [CAX, CAY - 2.6, 2.45], [CAX, CAY, 2.4], 50), name="calring")
+put("me", "L12+1.55", [0.0, -15.2, Z0], 180, expr="smile")
+shot("L12+1.55", mv([-0.6, -19.0, Z0 + 1.6], [0.0, -2.0, Z0 + 5.5], 28, [-0.2, -18.2, Z0 + 1.7], [0.0, -2.0, Z0 + 5.6], 28), name="mebehind")
+put("me", "L12+2.05", [-1.8, -13.5, Z0], 172, expr="smile")
+beat("me", "L12+2.3", expr="smile", head=[-12, 0])
+shot("L12+2.05", mv([-3.6, -9.6, Z0 + 1.55], [-1.8, -13.5, Z0 + 1.5], 48, [-3.2, -9.9, Z0 + 1.55], [-1.8, -13.5, Z0 + 1.5], 48), name="meface")
 
 # ===== 02 the statue gets younger (L13 to L24)
 only("L13", [])
@@ -265,17 +265,14 @@ only("L17.1", ["lark"])
 put("lark", "L17.1", [CX - 2.8, CY + 2.3], 180, expr="worried")
 beat("lark", "L17.1+0.6", head=[0, 10], expr="wide")
 shot("L17.1", mv([CX - 2.2, CY + 0.3, 1.8], [CX - 2.8, CY + 3.2, 1.8], 38, [CX - 2.4, CY + 0.9, 1.8], [CX - 2.8, CY + 3.2, 1.8], 38), name="larkmirror")
-# L18: me on the bench, worried
-only("L18", ["me"])
-put("me", "L18", [bx, by], 180, expr="worried", head=[0, 5])
-sit("me", "L18", True, 0.62)
-beat("me", "L18.1", head=[0, 14], expr="worried")
-shot("L18", mv([bx + 2.4, by + 4.2, Z0 + 1.45], [bx, by, Z0 + 1.2], 38, [bx + 2.0, by + 3.8, Z0 + 1.45], [bx, by, Z0 + 1.2], 38), name="mebench")
+# L18: the statue's smoother face, then the bench's view of it, then a townsperson at a mirror, face to us
+only("L18", [])
+shot("L18", mv([0.0, -9.0, FACE_Z - 0.3], [0.0, FACE_Y, FACE_Z - 0.2], 32, [0.0, -8.0, FACE_Z - 0.3], [0.0, FACE_Y, FACE_Z - 0.2], 32), name="smooth")
 shot("L18.1", mv([bx, by + 0.2, Z0 + 1.3], [0.0, -0.4, 12.3], 34, [bx + 0.3, by + 0.2, Z0 + 1.35], [0.0, -0.4, 12.0], 34), name="povface")
-shot("L18.2", mv([bx + 1.2, by + 1.8, Z0 + 1.5], [bx, by, Z0 + 1.35], 58, [bx + 0.9, by + 1.6, Z0 + 1.5], [bx, by, Z0 + 1.35], 58), name="mebench2")
+put("c3", "L18.2", [MX + 0.65, MY + 1.4], 0, expr="worried", head=[0, 4])
+shot("L18.2", mv([MX + 0.4, MY - 1.2, 1.75], [MX + 0.65, MY + 1.4, 1.5], 45, [MX + 0.5, MY - 0.6, 1.75], [MX + 0.65, MY + 1.4, 1.5], 45), name="mirrorface")
 # L19: three young heads, no gray
 only("L19", ["c3"])
-sit("me", "L19", False)
 put("c3", "L19", [SX - 3.0, SY - 1.0], 0, expr="smile")
 shot("L19", mv([SX - 3.2, SY - 3.4, 1.7], [SX - 3.0, SY - 1.0, 1.7], 55), name="young1")
 only("L19+0.5", ["c4"])
@@ -289,12 +286,12 @@ only("L20", ["mom"])
 put("mom", "L20", [HX - 1.5, HY + 2.0], 180, expr="soft")
 shot("L20", mv([HX + 1.8, HY - 1.6, 1.75], [HX - 1.5, HY + 3.0, 1.7], 30, [HX + 1.4, HY - 1.4, 1.75], [HX - 1.5, HY + 3.0, 1.7], 30), name="hallmirror")
 cue("L21", "mom", streak=1.0)
-put("mom", "L21", [HX + 0.5, HY + 0.6], 0, expr="soft")
-shot("L21", mv([HX + 0.3, HY - 1.0, 2.1], [HX + 0.5, HY + 0.6, 1.9], 70, [HX + 0.4, HY - 0.8, 2.1], [HX + 0.5, HY + 0.6, 1.9], 70), name="streak")
+put("mom", "L21", [HX - 1.5, HY + 2.4], 0, expr="soft")
+shot("L21", mv([HX - 1.4, HY - 0.2, 1.75], [HX - 1.5, HY + 2.4, 1.65], 50, [HX - 1.5, HY + 0.2, 1.75], [HX - 1.5, HY + 2.4, 1.65], 50), name="streak")
 beat("mom", "L22", arms=[0, 150], expr="soft", head=[0, 4])
-shot("L22", mv([HX + 1.2, HY - 0.9, 1.95], [HX + 0.5, HY + 0.6, 1.8], 50, [HX + 1.0, HY - 0.9, 1.95], [HX + 0.5, HY + 0.6, 1.8], 50), name="handstreak")
+shot("L22", mv([HX - 0.4, HY - 0.2, 1.95], [HX - 1.5, HY + 2.4, 1.7], 45, [HX - 0.7, HY + 0.2, 1.95], [HX - 1.5, HY + 2.4, 1.7], 45), name="handstreak")
 beat("mom", "L22.1", arms=[0, 0], expr="smile", head=[0, 0])
-shot("L22.1", mv([HX + 0.5, HY - 1.8, 1.7], [HX + 0.5, HY + 0.6, 1.65], 50, [HX + 0.5, HY - 1.4, 1.7], [HX + 0.5, HY + 0.6, 1.65], 50), name="momsmile")
+shot("L22.1", mv([HX - 1.5, HY - 0.1, 1.65], [HX - 1.5, HY + 2.4, 1.6], 45, [HX - 1.5, HY + 0.3, 1.65], [HX - 1.5, HY + 2.4, 1.6], 45), name="momsmile")
 
 # ===== 03 dawn (L23 to L31)
 only("L23", ["mom"])
@@ -329,14 +326,14 @@ shot("L26", mv([0.2, -9.0, Z0 + 1.6], [0.4, -4.4, Z0 + 1.6], 42, [0.3, -7.8, Z0 
 # L27: her hand on the stone, a line slides onto her face
 only("L27", ["mom"])
 statue("L27", wr=6.0)
-put("mom", "L27", [0.8, SLY, 0], 45, expr="soft", arms=[90, 90])
+put("mom", "L27", [0.4, SLY, 0], 0, expr="polite", side=[0, 135])
 cue("L27.2", "slide", u=0.0)
 cue("L27.2+0.1", "slide", u=1.0, dur=1.3)
 cue("L27.2+1.4", "mom", smile=1.0)
 tally("L27.2", 6, 0.5)
-shot("L27", mv([-0.8, SLY - 4.4, 1.6], [0.9, SLY, 1.5], 30, [-0.4, SLY - 4.0, 1.6], [0.9, SLY, 1.5], 30), name="handcheek")
-shot("L27.2", mv([0.2, SLY - 3.0, 1.65], [1.0, SLY, 1.55], 42, [0.5, SLY - 2.7, 1.65], [1.0, SLY, 1.55], 42), name="slide")
-shot("L27.3", mv([-0.6, SLY - 3.2, 1.7], [1.0, SLY, 1.5], 38, [-0.2, SLY - 2.9, 1.7], [1.0, SLY, 1.5], 38), name="slide2")
+shot("L27", mv([-11.0, SLY - 1.2, 3.4], [1.0, SLY - 1.4, 3.2], 22, [-9.6, SLY - 1.2, 3.4], [1.0, SLY - 1.4, 3.2], 22), name="handcheek")
+shot("L27.2", mv([-2.6, SLY - 3.0, 2.1], [0.7, SLY - 0.2, 2.0], 34, [-2.3, SLY - 2.8, 2.1], [0.7, SLY - 0.2, 2.0], 34), name="slide")
+shot("L27.3", mv([-1.9, SLY - 2.4, 2.1], [0.7, SLY - 0.2, 2.0], 34, [-1.6, SLY - 2.2, 2.1], [0.7, SLY - 0.2, 2.0], 34), name="slide2")
 only("L28", ["mom"])
 put("mom", "L28", [0.4, -4.4, Z0], 0, expr="smile")
 shot("L28", mv([0.4, -7.4, Z0 + 1.65], [0.4, -4.4, Z0 + 1.58], 55, [0.4, -6.6, Z0 + 1.65], [0.4, -4.4, Z0 + 1.58], 55), name="smileline")
@@ -386,7 +383,7 @@ put("lark", "L34", [CX, CY + 1.4], 0, expr="smile")
 put("dad", "L34", [CX - 0.8, CY - 1.0], 180, expr="smile", arms=[0, 40])
 put("mom", "L34", [CX + 0.8, CY - 1.0], 180, expr="smile", arms=[40, 0])
 only("L34.1", ["lark"])
-beat("lark", "L34.1", expr="grin", head=[0, 5])
+beat("lark", "L34.1", expr="smile", head=[0, 5])
 shot("L34", mv([CX, CY - 4.4, 1.6], [CX, CY + 0.2, 1.55], 36, [CX, CY - 3.6, 1.6], [CX, CY + 0.2, 1.55], 36), name="larksmile")
 shot("L34.1", mv([CX + 0.4, CY - 2.8, 1.7], [CX, CY + 1.4, 1.6], 50, [CX + 0.3, CY - 2.4, 1.7], [CX, CY + 1.4, 1.6], 50), name="larksmile2")
 # L35: the kitchen, my birthday
@@ -403,9 +400,9 @@ go("me", "L36+0.85", [3.4, -8.4, Z0])
 shot("L36", mv([0.6, -12.6, Z0 + 1.0], [0.0, -8.4, Z0 + 1.6], 34, [-0.4, -12.4, Z0 + 1.0], [0.4, -8.4, Z0 + 1.6], 34), name="walkpast")
 put("me", "L36+0.9", [-2.4, -9.6, Z0], 90, expr="smile")
 go("me", "L36>", [2.6, -9.6, Z0])
-shot("L36+0.9", mv([-1.0, -5.2, Z0 + 0.5], [0.0, -9.6, Z0 + 1.0], 40, [1.0, -5.0, Z0 + 0.5], [0.4, -9.6, Z0 + 1.0], 40), name="walkpast2")
-put("me", "L37", [0.0, -16.3, Z0], 0, expr="grin")
-shot("L37", mv([0.0, -22.0, 1.8], [0.0, -16.3, Z0 + 1.5], 40, [0.0, -21.0, 2.0], [0.0, -16.3, Z0 + 1.55], 40), name="topstep")
+shot("L36+0.9", mv([-1.0, -3.6, Z0 + 2.6], [0.0, -9.6, Z0 + 1.0], 40, [1.0, -3.4, Z0 + 2.6], [0.4, -9.6, Z0 + 1.0], 40), name="walkpast2")
+put("me", "L37", [0.0, -16.3, Z0], 0, expr="delighted")
+shot("L37", mv([0.0, -20.8, Z0 + 1.8], [0.0, -16.3, Z0 + 1.35], 40, [0.0, -19.8, Z0 + 1.8], [0.0, -16.3, Z0 + 1.35], 40), name="topstep")
 # L38: the statue turns its head to watch me go
 put("me", "L38", [2.4, -16.8, Z0], 0, expr="smile")
 go("me", "L38+1.4", [2.4, -24.0, 0.3])
@@ -430,7 +427,7 @@ OVR = {
     "dad": front(SX, SY + 0.8, 1.7, 6.6, 36, -0.3), "dad2": front(SX, SY + 0.8, 1.95, 5.6, 34, 0.3),
     "dadlaugh": front(SX, SY - 0.5, 1.55, 4.2, 46, -0.3),
     "stranger": front(CX + 0.2, CY - 0.9, 1.55, 7.2, 32, 0.5), "momhand": front(CX - 0.3, CY - 0.9, 1.6, 5.6, 40, 0.3),
-    "lark": front(CX, CY + 1.4, 1.5, 4.6, 36), "photo": front(CX + 2.0, CY + 3.3, 1.95, 4.2, 40, -0.3),
+    "lark": front(CX, CY + 1.4, 1.5, 4.6, 36), "photo": front(CX + 4.2, CY + 3.3, 1.9, 4.8, 24, -0.2),
     "lark2": front(CX, CY + 1.4, 1.6, 3.6, 55, 0.3),
     "armarm2": front(SX, SY - 0.6, 1.75, 5.6, 36),
     "twoheads": mv([SX, SY - 5.6, 1.9], [SX, SY + 0.8, 1.8], 32, [SX, SY - 4.8, 1.9], [SX, SY + 0.8, 1.8], 32),
@@ -492,7 +489,7 @@ polish = {"reveal": [remap("L26")], "emph": [remap(x) for x in ["L01.2", "L05.1"
           "hold": [names["photo"]]}
 story = {
     "slug": "ep99-statue-years",
-    "title": "Nobody Here Ages But The STATUE",
+    "title": "This Statue Grows OLD So We Don't 🗿",
     "made_for_kids": False,
     "premise": ("In a sunny hilltop town where you give a giant stone statue your year on every birthday so nobody "
                 "ages, I watch the statue get younger one wrinkle a day while my mom grows her first gray hair and "
@@ -523,8 +520,8 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [names["calflip"], names["slide"], names["slide2"], names["sunrise"], names["handcheek"]],
-    "clip_ok": ["crack", "S54/slab.crack", "S55/slab.crack"],
-    "asr_forgive": ["statue's", "turn twenty one", "two", "toward", "twenty first", "watched"],
+    "clip_ok": ["crack", "slab.crack", "S54/slab", "S55/slab"],
+    "asr_forgive": ["statue's", "two", "toward", "twenty first", "watched"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

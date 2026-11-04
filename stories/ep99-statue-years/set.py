@@ -336,14 +336,29 @@ def build(kit, story, tl):
     for k in range(10):
         for z in (1.5, 2.2):
             kit.box(f"loaf{z}_{k}", (0.5, 0.3, 0.26), (cx - 2.2 + k * 0.5, cy + 3.1, z + 0.18), plastic("#d99a4a", 0.7, spec=0.1), bevel=0.08)
-    px, py = cx + 2.0, cy + 3.3
-    kit.box("photo.frame", (1.5, 0.08, 1.2), (px, py, 1.95), plastic("#5a3b24", 0.7))
-    kit.box("photo.bg", (1.3, 0.05, 1.0), (px, py - 0.06, 1.95), plastic("#e9dcc0", 0.9))
-    kit.box("photo.shop", (0.7, 0.04, 0.55), (px - 0.25, py - 0.1, 1.85), plastic("#8a7e70", 0.9))
-    kit.box("photo.awn", (0.75, 0.04, 0.12), (px - 0.25, py - 0.11, 2.15), plastic("#a8a090", 0.9))
-    kit.box("photo.body", (0.12, 0.04, 0.2), (px + 0.35, py - 0.1, 1.72), plastic("#5fa8a8", 0.8))
-    kit.box("photo.head", (0.1, 0.04, 0.09), (px + 0.35, py - 0.11, 1.87), plastic("#f0c8a0", 0.8))
-    kit.box("photo.bun", (0.07, 0.04, 0.05), (px + 0.35, py - 0.115, 1.95), plastic("#1c1612", 0.8))
+    # the old photo on the back wall, past the shelf: young Mrs. Lark beside the shabby old bakery front (no text)
+    px, py = cx + 4.2, cy + 3.3
+    pz = 1.9
+    pl = lambda c, r=0.9: plastic(c, r)
+    kit.box("photo.frame", (2.0, 0.08, 1.6), (px, py, pz), pl("#5a3b24", 0.7))
+    kit.box("photo.bg", (1.8, 0.05, 1.4), (px, py - 0.06, pz), pl("#e9d8b4"))
+    kit.box("photo.sky", (1.8, 0.02, 0.5), (px, py - 0.075, pz + 0.45), pl("#d6dcc8"))
+    kit.box("photo.shop", (1.0, 0.03, 0.85), (px - 0.4, py - 0.09, pz - 0.15), pl("#7c7062"))
+    kit.box("photo.roof", (1.1, 0.03, 0.14), (px - 0.4, py - 0.10, pz + 0.33), pl("#4a4036"))
+    kit.box("photo.awn", (1.1, 0.03, 0.2), (px - 0.4, py - 0.11, pz + 0.12), pl("#a8a090"))
+    for k in range(4):
+        kit.box(f"photo.awnstripe{k}", (0.13, 0.03, 0.2), (px - 0.75 + k * 0.3, py - 0.12, pz + 0.12), pl("#6e665a"))
+    kit.box("photo.door", (0.3, 0.03, 0.5), (px - 0.4, py - 0.11, pz - 0.35), pl("#3c2e22"))
+    kit.box("photo.win", (0.28, 0.03, 0.28), (px - 0.8, py - 0.11, pz - 0.18), pl("#9aa4a0"))
+    kit.box("photo.crack", (0.03, 0.03, 0.3), (px - 0.08, py - 0.11, pz - 0.05), pl("#2e261e"))
+    kit.box("photo.body", (0.34, 0.03, 0.55), (px + 0.5, py - 0.10, pz - 0.35), pl("#2fa8a0"))
+    kit.box("photo.apron", (0.22, 0.03, 0.38), (px + 0.5, py - 0.11, pz - 0.42), pl("#fffaf0"))
+    kit.box("photo.head", (0.32, 0.03, 0.32), (px + 0.5, py - 0.11, pz + 0.07), pl("#f0c8a0"))
+    kit.box("photo.hair", (0.34, 0.03, 0.1), (px + 0.5, py - 0.12, pz + 0.2), pl("#18120e"))
+    kit.sphere("photo.bun", 0.1, (px + 0.5, py - 0.12, pz + 0.3), pl("#18120e"), seg=8)
+    for sx in (-1, 1):
+        kit.box(f"photo.eye{sx}", (0.05, 0.03, 0.05), (px + 0.5 + sx * 0.08, py - 0.125, pz + 0.1), pl("#1c120c"))
+    kit.box("photo.smile", (0.14, 0.03, 0.03), (px + 0.5, py - 0.125, pz - 0.02), pl("#7a3a30"))
     mirr = kit.metal("#fbfbff", 0.03)
     mfr = plastic("#e3b04b", 0.4, spec=0.5)
     kit.box("bkmirror.frame", (1.1, 0.06, 1.6), (cx - 2.8, cy + 3.3, 1.9), mfr)
@@ -397,10 +412,28 @@ def build(kit, story, tl):
     W["calhinge"] = hinge
 
     # ------------------------------------------------------------------ the stone cheek, close, with Mom's hand on it
-    kit.box("slab", (1.0, 7.0, 6.0), (G.SLAB_X + 0.5, sy_, 3.0), sand)
-    for i, (z, ln) in enumerate([(1.4, 3.2), (1.9, 2.6), (2.5, 3.0), (3.1, 2.4), (3.7, 2.9)]):
-        kit.box(f"slab.wr{i}", (0.05, ln, 0.07), (G.SLAB_X - 0.025, sy_ - 1.6 + 0.2 * i, z + 0.4), crackm)
-    W["crack"] = kit.box("slab.crack", (0.06, 0.55, 0.08), (G.SLAB_X - 0.03, sy_ - 0.35, 1.5), crackm)
+    sand2s = kit.grime("#f0b878", 0.86, 3.0, "sand2", 0.88)
+    dark = plastic("#3a1c0a", 0.9, spec=0.05)
+    yc = sy_ - 1.5                       # the face's centre line; Mom's hand is on its +y cheek
+    X0 = G.SLAB_X
+    kit.box("slab", (1.0, 11.0, 7.0), (X0 + 0.5, yc + 0.5, 3.5), sand)
+    kit.box("slab.brow", (0.5, 6.0, 0.5), (X0 - 0.25, yc, 4.2), sand2s, bevel=0.05)
+    kit.box("slab.nose", (0.7, 0.9, 2.3), (X0 - 0.35, yc, 2.7), sand2s, bevel=0.06)
+    kit.box("slab.nosebase", (0.55, 1.5, 0.35), (X0 - 0.28, yc, 1.6), sand2s, bevel=0.05)
+    for sg in (-1, 1):
+        kit.box(f"slab.eye{sg}", (0.08, 1.5, 0.4), (X0 - 0.04, yc + sg * 1.5, 3.55), dark)
+        kit.box(f"slab.lid{sg}", (0.3, 1.8, 0.22), (X0 - 0.15, yc + sg * 1.5, 3.9), sand2s, bevel=0.03)
+        kit.box(f"slab.cheek{sg}", (0.3, 1.5, 1.0), (X0 - 0.15, yc + sg * 1.5, 2.0), sand2s, bevel=0.07)
+    kit.box("slab.mouth", (0.08, 3.0, 0.16), (X0 - 0.04, yc, 0.8), dark)
+    kit.box("slab.stache", (0.3, 3.4, 0.4), (X0 - 0.15, yc, 1.1), sand2s, bevel=0.06)
+    # the forehead wrinkles (the statue's carved lines) and crow's feet by each eye
+    for i in range(6):
+        kit.box(f"slab.wr{i}", (0.06, 4.6 - 0.2 * i, 0.09), (X0 - 0.03, yc, 4.65 + 0.22 * i), dark)
+    for sg in (-1, 1):
+        for k in range(2):
+            kit.box(f"slab.crow{sg}{k}", (0.06, 0.6, 0.07), (X0 - 0.03, yc + sg * 2.6, 3.45 + 0.3 * k), dark,
+                    rot=(sg * (0.4 - 0.8 * k), 0, 0))
+    W["crack"] = kit.box("slab.crack", (0.1, 0.9, 0.13), (X0 - 0.34, sy_ - 0.1, 2.0), dark)
     kit.plane("slabfloor", (20, 20), (0, sy_, 0.03), lawn)
 
     # ------------------------------------------------------------------ the sun coming up behind the statue
@@ -420,35 +453,36 @@ def noshadow(ob):
 
 
 def build_tag(kit):
+    """The rule meter: a carved stone FACE on a dark plate. Its forehead carries the statue's wrinkles as 12 horizontal
+    carved dashes (two columns of six); each gone wrinkle takes a dash off the forehead."""
     cam = kit.OBJ["cam"]
     root = kit.empty("tag", (0, 0, 0), cam)
     W["tag"] = root
-    stone = kit.emit("#f0c898", 0.7, "tagstone")
-    edge = kit.emit("#b88660", 0.45, "tagedge")
-    ink = kit.emit("#4a2a14", 0.5, "tagink")
-    flame_m = kit.emit("#ffb21e", 1.6, "tagflame")
-    wax = kit.emit("#fff6e4", 0.8, "tagwax")
-    # unit plate: 1 wide, 0.5 tall; layers 0.01 apart toward the camera (-z in camera space is forward)
+    stone = kit.emit("#f6d6a6", 0.8, "tagstone")
+    edge = kit.emit("#3a2210", 0.5, "tagedge")
+    ink = kit.emit("#3a1c0a", 0.5, "tagink")
+    beard_m = kit.emit("#b9824f", 0.6, "tagbeard")
+    # unit plate: 1 wide, 0.9 tall; layers 0.004 apart toward the camera
     def b(name, size, loc, mat):
         ob = kit.box(name, size, loc, mat, root)
         noshadow(ob)
         return ob
-    b("tag.edge", (1.0, 0.52, 0.004), (0, 0, 0.0), edge)
-    b("tag.plate", (0.95, 0.47, 0.004), (0, 0, 0.004), stone)
-    # the candle glyph on the left: a wax stick with a flame
-    b("tag.cwax", (0.11, 0.24, 0.004), (-0.36, -0.05, 0.008), wax)
-    b("tag.cink", (0.15, 0.03, 0.004), (-0.36, -0.185, 0.008), ink)
-    fl = kit.cyl("tag.flame", 0.06, 0.004, (-0.36, 0.14, 0.008), flame_m, root, rot=(math.pi / 2, 0, 0), n=3)
-    fl.scale = (0.7, 1.0, 1.5)
-    noshadow(fl)
-    b("tag.wick", (0.015, 0.05, 0.004), (-0.36, 0.085, 0.008), ink)
-    b("tag.div", (0.012, 0.38, 0.004), (-0.22, 0, 0.008), ink)
+    b("tag.edge", (1.0, 0.92, 0.004), (0, 0, 0.0), edge)
+    b("tag.plate", (0.9, 0.82, 0.004), (0, 0, 0.004), stone)
+    # beard and eyes
+    b("tag.beard", (0.62, 0.24, 0.004), (0, -0.28, 0.008), beard_m)
+    b("tag.mouth", (0.24, 0.04, 0.004), (0, -0.2, 0.012), ink)
+    for sx in (-1, 1):
+        b(f"tag.eye{sx}", (0.15, 0.1, 0.004), (sx * 0.22, -0.02, 0.008), ink)
+        b(f"tag.brow{sx}", (0.26, 0.05, 0.004), (sx * 0.22, 0.07, 0.008), ink)
+    b("tag.nose", (0.08, 0.17, 0.004), (0, -0.1, 0.008), beard_m)
     W["bars"] = []
     for i in range(12):
-        row, col = divmod(i, 6)
-        x = -0.1 + col * 0.095
-        bar = b(f"tag.bar{i}", (0.045, 0.18, 0.004), (x, 0.105 - row * 0.21, 0.008), ink)
-        W["bars"].append((bar, 0.105 - row * 0.21))
+        col, row = divmod(i, 6)
+        x = -0.2 + col * 0.4
+        z0 = 0.33 - row * 0.043
+        bar = b(f"tag.bar{i}", (0.34, 0.026, 0.004), (x, z0, 0.008), ink)
+        W["bars"].append((bar, z0))
 
 
 def _first_frame(kit, story):
@@ -469,7 +503,14 @@ def _first_frame(kit, story):
             ob.rotation_euler = (0, 0, (-10 + 8 * i) * D2R)
             W["streak"].append(ob)
         W["streak"].append(kit.box("mom.silvtop", (1.36, 1.3, 0.05), (0, 0.0, 0.72), sil, mh, bevel=0.02))
-        W["streak"].append(kit.box("mom.silvback", (1.1, 0.05, 1.0), (0, 0.78, -0.05), sil, mh, bevel=0.02))
+        W["back"] = []
+        # uneven silver streaks running down the back of her hair from the crown, a wide band at the top
+        for k, (x, h_, w_, rz) in enumerate([(-0.42, 1.45, 0.2, 6), (-0.14, 1.0, 0.11, -5), (0.14, 1.55, 0.22, 4),
+                                             (0.4, 1.1, 0.12, -6), (-0.28, 0.6, 0.09, 3), (0.28, 0.7, 0.09, -3)]):
+            ob = kit.box(f"mom.back{k}", (w_, 0.06, h_), (x, 0.8, 0.7 - h_ / 2), sil, mh, bevel=0.01)
+            ob.rotation_euler = (0, rz * D2R, 0)
+            W["back"].append(ob)
+        W["back"].append(kit.box("mom.backtop", (1.1, 0.06, 0.45), (0, 0.8, 0.5), sil, mh, bevel=0.01))
         clipm = kit.plastic("#ffd23f", 0.5)
         kit.box("mom.clip", (0.22, 0.1, 0.22), (0.45, -0.55, 0.42), clipm, mh, bevel=0.05)
         kit.sphere("mom.clip2", 0.11, (0.45, -0.6, 0.42), kit.plastic("#6b4326", 0.8), mh, seg=8)
@@ -542,9 +583,9 @@ def animate(kit, story, tl, t, ctx):
     h2 = dist * 12.0 / lens
     w2 = h2 * 9.0 / 16.0
     tag = W["tag"]
-    s = 0.56 * w2
+    s = 0.52 * w2
     tag.scale = (s, s, s)
-    tag.location = (-0.36 * w2, 0.64 * h2, -dist)
+    tag.location = (-0.38 * w2, 0.585 * h2, -dist)
     # the calendar page
     fl = sample("flip", tl, t, {"v": 0.0})
     W["calhinge"].rotation_euler = (-fl["v"] * 175 * D2R, 0, 0)
@@ -554,23 +595,30 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = i >= int(round(mo["streak"]))
     for ob in W["smile"]:
         ob.hide_render = mo["smile"] < 0.5
+    for ob in W.get("back", []):
+        ob.hide_render = mo["streak"] < 5.5
     # the crack sliding off the stone onto Mom's cheek
     sl = sample("slide", tl, t, {"u": 0.0})
     ck = W["crack"]
     u = sl["u"]
     mh = bpy.data.objects.get("mom.headg")
+    start = Vector((G.SLAB_X - 0.34, G.SLAB[1] - 0.1, 2.0))
     if u <= 0.001:
-        ck.location = (G.SLAB_X - 0.03, G.SLAB[1] - 0.35, 1.5)
+        ck.location = start
+        ck.rotation_euler = (0, 0, 0)
+        ck.scale = (1, 1, 1)
         ck.hide_render = False
     elif u >= 0.999:
         ck.hide_render = True
     else:
         bpy.context.view_layer.update()
-        tgt = mh.matrix_world @ Vector((0.72, -0.8, -0.26)) if mh is not None else Vector((0.9, G.SLAB[1], 1.4))
-        a = Vector((G.SLAB_X - 0.03, G.SLAB[1] - 0.35, 1.5))
-        p = a.lerp(tgt, ss(u))
+        tgt = mh.matrix_world @ Vector((0.4, -0.66, -0.22)) if mh is not None else Vector((0.7, G.SLAB[1], 1.7))
+        p = start.lerp(tgt, ss(u))
+        p.x -= 0.12 * math.sin(math.pi * u)          # lifts off the stone as it goes
         ck.location = p
-        ck.rotation_euler = (0, 0, 0)
+        ck.rotation_euler = (0, 0, 90 * D2R * ss(u))
+        k_ = 1.0 - 0.75 * ss(u)
+        ck.scale = (k_, k_, k_)
         ck.hide_render = False
     # who sits: legs straight out forward, hips on the seat
     sits = {}
