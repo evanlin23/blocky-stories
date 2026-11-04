@@ -9,13 +9,13 @@ Two camera reframes, no words. Everything else from r1 is fixed.
 **Hits:** 1 yes 0.0 · 2 yes 0.0 · 3 yes 4.4-13.2 · 4 yes 61.1 · 5 yes 13.2 · 6 yes 109-115 · 7 yes 17.3-26.9 / 128.3 · 8 yes · 9 yes (1.33 s).
 
 **Scores:** hook 8 · back-row 8 · narrator 9 · appeal 9 · relationships 8 · feeling 7 · big idea 8 · eerie 6 · creature 6 (while it rises in S67, 118.3-119.5, it reads as a yellow cloud or flower) · twist 7, lore 7 · warm turn 7 · variety 7 · **faces 5** · sound 8 · captions 7. Average 7.3.
-Reset: 129.3 s (long arm) · a want and a fight · no sad family reveal · the rule over the clock close-up at 0.0 · the meter in every shot · cuts every 1.33 s · a bright look · a loop · the title passes · the pin "FIVE" passes. Preflight: 0 blocks, 0 clip. Flash passes.
+Reset: 129.3 s (long arm) · a want and a fight · no sad family reveal · the rule over the clock close-up at 0.0 · the meter in every shot · cuts every 1.33 s · a bright look · a loop · the title passes · the pin "FIVE" passes.
 
 **Panel**
 - Creepy fan: may drift at 50-58 s. "He says it's heavier in WINTER" lol.
 - ep11-13 viewer: "two strokes, two of them on the winch."
-- Scroller: holds now that S13 reads. "FIVE".
-- Top comment: "heavier in winter". No count slips left (six to the table, nine, eleven, 5:58).
+- Scroller: holds. "FIVE".
+- Top comment: "heavier in winter". No count slips left.
 
 **Must-fix**
 1. [build] S65b (116.13-116.97, L65 "and I CRANKED"): my head sits fully behind the clock inset for the whole shot. Only the hoodie and an arm show. Lower the camera or move me left so my face is clear under the inset.
