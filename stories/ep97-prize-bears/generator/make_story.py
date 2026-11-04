@@ -410,13 +410,12 @@ S("S21a", "L21", C((1.6, 7.6, 1.5), (2.2, 9.9, 1.45), 30, (2.4, 7.9, 1.5), (3.0,
 scene("L21", prize=dict(pos=(0.5, 9.9), yaw=90, expr="neutral"))
 walk("prize", "L21.1", (3.1, 9.95))
 # ---- S21b L21.1: through the plain back door
-cdoor("L21.1-0.2", 85.0, 0.0, 0.5)
+cdoor("L21.1+0.45", 24.0, 0.0, 0.6)   # he opens it only a slice, his body fills the gap
 S("S21b", "L21.1", C((3.9, 7.8, 1.5), (4.0, 11.0, 1.35), 32, (4.0, 8.6, 1.5), (4.1, 11.2, 1.35), 32), cfill=0.5)
 scene("L21.1", prize=dict(pos=(3.2, 9.95), yaw=90, expr="neutral"))
 walk("prize", "L21.1+0.5", (4.1, 10.3))
 walk("prize", "L22", (4.1, 12.5))
 # ---- S22a L22.0: the door ajar, a slice of warm bulb light
-cdoor("L22", 24.0, 85.0, 0.8)
 S("S22a", "L22", C((1.2, 6.4, 1.6), (3.7, 10.8, 1.3), 30, (1.9, 6.9, 1.6), (3.8, 10.8, 1.3), 30), hand=0.006)
 scene("L22", me=dict(pos=(3.0, 9.7), yaw=180, expr="worried", lean=4))
 hold("me", "L22+0.4", lean=14)
@@ -549,9 +548,9 @@ hold("me", "L34.1+0.5", head=[10, 3])
 # ---- S35a L35.0: a token slides across to Tess
 obj("token", "L35", pos=(-0.2, 8.72, 1.13))
 obj("token", "L35+0.05", pos=(0.55, 8.72, 1.13), dur=0.7)
-S("S35a", "L35", C((1.0, 9.9, 1.5), (0.1, 8.72, 1.1), 38, (1.1, 9.6, 1.45), (0.5, 8.72, 1.1), 38), hand=0.004)
+S("S35a", "L35", C((-0.1, 9.1, 1.28), (-0.15, 8.72, 1.13), 50, (0.5, 9.1, 1.28), (0.5, 8.72, 1.13), 50), hand=0.002)
 scene("L35", tess=dict(pos=(0.8, 8.0), yaw=180, expr="smile", head=[0, 25]))
-S("S35b", "L35.1", C((0.6, 9.9, 1.65), (0.8, 8.0, 1.62), 38, (0.7, 9.4, 1.65), (0.8, 8.0, 1.62), 38), hand=0.006)
+S("S35b", "L35.1", C((0.7, 10.04, 1.65), (0.8, 8.0, 1.62), 38, (0.7, 9.9, 1.65), (0.8, 8.0, 1.62), 38), hand=0.006)
 scene("L35.1", tess=dict(pos=(0.8, 8.0), yaw=180, expr="smile", head=[0, 22]))
 hold("tess", "L35.1+0.4", head=[0, 0], expr="laugh")
 # ---- S36 L36: she's terrible
@@ -704,7 +703,7 @@ story = {
     "fx": [],
     "music": music,
     "sound": sound,
-    "rev": 2,
+    "rev": 3,
     "asr_forgive": ["thousand"],
     "clip_ok": ["S03b", "S04a", "S30b", "S38a", "S06c", "S34a"],
 }
