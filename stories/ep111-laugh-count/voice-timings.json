@@ -6,66 +6,58 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "aunt bev laughs all night. hers says four ninety-two.",
+   "text": "your number counts days without laughing. aunt bev's says four-ninety-two.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.534,
+   "dur": 3.155,
    "onset": 0.172,
-   "end": 2.31,
+   "end": 2.931,
    "chunks": [
     [
      0.172,
-     0.681
+     0.621
     ],
     [
-     0.681,
-     1.121
+     0.621,
+     1.517
     ],
     [
-     1.19,
-     1.655
+     1.612,
+     2.172
     ],
     [
-     1.655,
-     2.31
+     2.172,
+     2.931
     ]
    ]
   },
   "L02": {
-   "text": "in this town, the number over your head is how many days since you laughed.",
+   "text": "in this town, everyone has one. and she laughs all night.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.017,
-   "onset": 0.172,
-   "end": 2.81,
+   "dur": 2.69,
+   "onset": 0.19,
+   "end": 2.5,
    "chunks": [
     [
-     0.172,
-     0.638
+     0.19,
+     0.586
     ],
     [
-     0.664,
-     0.922
+     0.621,
+     1.397
     ],
     [
-     0.922,
-     1.414
+     1.466,
+     1.888
     ],
     [
-     1.414,
-     1.621
-    ],
-    [
-     1.621,
-     2.034
-    ],
-    [
-     2.034,
-     2.81
+     1.888,
+     2.5
     ]
    ]
   },
@@ -262,26 +254,22 @@
    ]
   },
   "L11": {
-   "text": "mine has said zero my whole life.",
+   "text": "mine has never gone past one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.172,
-   "end": 1.586,
+   "dur": 1.828,
+   "onset": 0.19,
+   "end": 1.638,
    "chunks": [
     [
-     0.172,
-     0.397
+     0.19,
+     0.69
     ],
     [
-     0.397,
-     0.81
-    ],
-    [
-     0.81,
-     1.586
+     0.69,
+     1.638
     ]
    ]
   },

@@ -200,8 +200,8 @@ def build_alley(kit, ctx):
     for hx in (-1.3, 1.3):
         B(None, (0.58, 1.0, 0.46), (hx, -0.2, 0.23), M("#d9e1e8", 0.2), "hood", 0.04)
         CY(None, 0.3, 0.9, (hx, -0.2, 0.46), M("#e6eef4", 0.18), "hoodtop", rot=(math.pi / 2, 0, 0), n=20)
-    B(None, (0.03, 0.012, 0.24), (-1.4, 0.31, 0.3), P(CORAL, 0.4), "tally", 0.002)
-    B(None, (0.03, 0.012, 0.24), (-1.26, 0.31, 0.3), P(CORAL, 0.4), "tally", 0.002)
+    B(None, (0.07, 0.02, 0.34), (-1.42, 0.31, 0.29), P(CORAL, 0.4), "tally", 0.002)
+    B(None, (0.07, 0.02, 0.34), (-1.2, 0.31, 0.29), P(CORAL, 0.4), "tally", 0.002)
     # scoring desk where Bev stands, with a rail
     B(None, (2.0, 0.7, 0.95), (-3.0, -3.0, 0.475), P("#35c9bd", 0.4), "desk", 0.02)
     B(None, (2.1, 0.8, 0.06), (-3.0, -3.0, 0.97), P("#fbfbf8", 0.3), "desktop", 0.02)
@@ -253,12 +253,12 @@ def build_tags(kit, ctx):
 
 def place_tag(tg, ctx, cl, cq, who, v, hidden):
     ch = rig.CHARS.get(who)
-    if ch is None or hidden or not v:
+    if ch is None or hidden or not v or v == "none":
         hide(tg.piv, True)
         return
     hide(tg.piv, False)
     neck = ch.neck.matrix_world.translation
-    top = V((neck.x, neck.y, neck.z + (0.9 if who == 'bev' else 0.72)))
+    top = V((neck.x, neck.y, neck.z + (0.8 if who == 'bev' else 0.72)))
     if neck.z < 0.9:      # lying down: lift the number along the screen's up so it never sits on the face
         top = V(neck) + (cq @ V((0, 1, 0))) * 0.85 + V((0, 0, 0.1))
     tg.piv.location = top
@@ -353,6 +353,14 @@ def build_props(kit, ctx):
                 l = ob.location
                 for dx, dz, sx, sz in ((0, -0.16, 0.46, 0.04), (-0.21, 0, 0.04, 0.32), (0.21, 0, 0.04, 0.32)):
                     kit.box(nm("glring"), (sx, 0.04, sz), (l.x + dx, l.y - 0.01, l.z + dz), fr, ob.parent)
+        gold = P("#ffd21a", 0.3, 0.8)
+        for ob in list(bpy.data.objects):
+            if ob.name.startswith("bev.glb"):
+                for sx in (-1, 1):       # hoop earrings, a ring facing the viewer at each ear
+                    x0, y0, z0 = sx * 0.6, ob.location.y + 0.02, -0.3
+                    for dx, dz, sx_, sz_ in ((0, 0.14, 0.34, 0.06), (0, -0.14, 0.34, 0.06), (-0.14, 0, 0.06, 0.34),
+                                             (0.14, 0, 0.06, 0.34)):
+                        kit.box(nm("hoop"), (sx_, 0.06, sz_), (x0 + dx, y0, z0 + dz), gold, ob.parent)
         for k in ("arm-1", "arm1"):
             c = B(bev.P[k], (1.03, 1.05, 1.0), (0, 0, -1.5), gm, "gray", 0.04)
             ctx["covers"].append(c)
