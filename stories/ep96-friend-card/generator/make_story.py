@@ -258,8 +258,8 @@ cue(0, "ring", p=0.25)
 hand_cues(0, "me", "mine", "9:11", tremble=0)
 cue(0, "card", face="mine", rz=0, dur=0.01)
 S(0, "S01a", "hand", HC(0.0, 0.0, 0, 0.34, 40, push=0.12), None)
-S("L01.1", "S01b", "hand", HC(0.0, 0.074, 6, 0.22, 40, push=0.10), None)
-S("L01.2", "S01c", "hand", HC(0.05, -0.083, -8, 0.15, 50, push=0.10), None)
+S("L01.2", "S01b", "hand", HC(0.0, 0.074, 6, 0.22, 40, push=0.10), None)
+S("L01.3", "S01c", "hand", HC(0.05, -0.083, -8, 0.15, 50, push=0.10), None)
 S("L01.4", "S01d", "hand", HC(0.0, 0.03, 0, 0.30, 40, push=0.22, tx2=0.0, tz2=0.062), None)
 
 # ---- S02 (me, the suit, tucking the card away) on the roof, near the entrance
@@ -268,21 +268,19 @@ S("L02", "S02a", "roof", C("roof", (-0.3, 1.0, 1.25), 14, 1.55, 40, 2.0, push=0.
           "held": held("card", "me", (0.46, -0.52, 1.02), s=1.0)}})
 M("me", "L02+0.45", "roof", arms=[0, 25])
 cue("L02+0.45", "held", obj="card", who="me", off=[0.16, -0.19, 1.2], dur=0.4)
-S("L02.1", "S02b", "roof", C("roof", (-0.3, 1.0, 1.52), -16, 0.95, 50, 2.0, push=0.1),
+S("L02.2", "S02b", "roof", C("roof", (-0.3, 1.0, 1.52), -16, 0.95, 50, 2.0, push=0.1),
   {"me": {"pos": (-0.3, 1.0), "yaw": -16, "expr": "nervous", "arms": [0, 25],
           "held": held("card", "me", (0.16, -0.19, 1.2))}})
-M("me", "L02.1+0.3", "roof", expr="worried", head=[0.2, 0.0])
+M("me", "L02.2+0.2", "roof", expr="worried", head=[0.2, 0.0])
 
 # ---- S03 to S07: the rule at work
-cue("L03", "drop")
-S("L03", "S03a", "hall", C("hall", (0, 3.5, 0.55), 8, 1.7, 30, 4.0, push=0.12), None)
-S("L03.2", "S03b", "hand", HC(0.02, 0.0, 0, 0.30, 40, push=0.15), None)
-hand_cues("L03.2", "me", "sealed", "9:11", rz=0, dur=0.01)
-cue("L03.2+0.28", "card", face="mine", rz=0, dur=0.01)
-S("L04", "S04a", "hand", HC(0.0, 0.074, 14, 0.2, 50, push=0.1, tx2=0.0, tz2=0.07), None)
-hand_cues("L04", "me", "mine", "9:11")
-S("L04.1", "S04b", "hand", HC(0.0, 0.052, -12, 0.12, 50, push=0.25, tx2=0.02, tz2=0.04), None)
-S("L04.2", "S04c", "hand", HC(0.03, 0.01, 18, 0.34, 40, push=0.12), None)
+cue("L03+0.1", "drop")
+S("L03+0.1", "S03a", "hall", C("hall", (0, 3.5, 0.55), 8, 1.7, 30, 4.0, push=0.12), None)
+S("L03.1+0.08", "S03b", "hand", HC(0.02, 0.0, 0, 0.30, 40, push=0.15), None)
+hand_cues("L03.1+0.08", "me", "sealed", "9:11", rz=0, dur=0.01)
+cue("L03.1+0.15", "card", face="mine", rz=0, dur=0.01)
+S("L03.2", "S04", "hand", HC(0.0, 0.074, 14, 0.2, 50, push=0.14, tx2=0.0, tz2=0.07), None)
+hand_cues("L03.2", "me", "mine", "9:11")
 
 S("L05", "S05a", "park", C("park", (0.0, 3.0, 0.9), 0, 9.0, 24, 28.0, push=0.1),
   {"dad": {"pos": (-1.15, 2.6), "yaw": 80, "expr": "angry", "arms": [10, 10]},
@@ -296,11 +294,12 @@ M("reyes", "L05.3", "park", head=[0.0, 0.2])
 S("L06", "S06a", "lawn", C("lawn", (0.0, 2.2, 1.2), 38, 6.0, 30, 4.0, push=0.12),
   {"dad": {"pos": (-1.5, 2.0), "yaw": -85, "expr": "angry", "arms": [75, 75]},
    "reyes": {"pos": (1.5, 2.0), "yaw": 85, "expr": "angry", "arms": [75, 75]}})
-S("L06.2", "S06b", "lawn", C("lawn", (-1.5, 2.0, 1.45), 55, 1.3, 45, 4.0, push=0.12),
-  {"dad": {"pos": (-1.5, 2.0), "yaw": -85, "expr": "angry", "arms": [75, 75]}})
-S("L06.3", "S06c", "lawn", C("lawn", (1.5, 2.0, 1.4), -45, 1.5, 40, 4.0, push=0.12),
-  {"reyes": {"pos": (1.5, 2.0), "yaw": 85, "expr": "angry", "arms": [75, 75]},
-   "dad": {"pos": (-1.5, 2.0), "yaw": -85, "expr": "angry", "arms": [75, 75]}})
+S("L06.2", "S06b", "lawn", C("lawn", (0.0, 2.0, 1.45), 10, 3.6, 35, 3.0, push=0.1),
+  {"dad": {"pos": (-0.6, 2.0), "yaw": 55, "expr": "angry", "arms": [60, 60]},
+   "reyes": {"pos": (0.6, 2.0), "yaw": -55, "expr": "angry", "arms": [60, 60]}})
+S("L06.3", "S06c", "lawn", C("lawn", (0.0, 2.0, 1.45), -14, 3.4, 35, 3.0, push=0.1),
+  {"dad": {"pos": (-0.58, 2.0), "yaw": 60, "expr": "angry", "arms": [60, 60]},
+   "reyes": {"pos": (0.58, 2.0), "yaw": -60, "expr": "angry", "arms": [60, 60]}})
 
 S("L07", "S07a", "gate", C("gate", (-0.6, 3.9, 1.3), 4, 4.4, 28, 3.0, push=0.12),
   {"abbott": {"pos": (-1.4, 3.2), "yaw": 20, "expr": "laugh", "side": [0, 0], "arms": [0, 150]},
@@ -308,8 +307,10 @@ S("L07", "S07a", "gate", C("gate", (-0.6, 3.9, 1.3), 4, 4.4, 28, 3.0, push=0.12)
 M("friend", "L07.1", "gate", pos=(2.4, 7.0), yaw=160)
 M("abbott", "L07+0.3", "gate", arms=[0, 120])
 M("abbott", "L07.1", "gate", arms=[0, 165])
-S("L07.2", "S07b", "gate", C("gate", (3.3, 8.4, 2.9), 0, 5.7, 28, 2.0, push=0.12, to=(3.3, 8.4, 3.2)),
-  {"friend": {"pos": (2.6, 7.2), "yaw": 160, "expr": "smile"}})
+S("L07.2", "S07b", "gate", C("gate", (3.5, 7.6, 2.2), 0, 4.5, 28, 2.0, push=0.08),
+  {"abbott": {"pos": (3.4, 5.8), "yaw": 0, "expr": "laugh", "arms": [0, 165]},
+   "friend": {"pos": (3.7, 8.2), "yaw": 180, "expr": "smile"}})
+M("abbott", "L07.2+0.35", "gate", arms=[0, 120])
 S("L07.3", "S07c", "gate", C("gate", (2.8, 6.8, 1.3), -20, 3.5, 30, 3.0, push=0.12),
   {"friend": {"pos": (2.2, 5.0), "yaw": 170, "expr": "smile"}})
 M("friend", "L07.3+0.1", "gate", pos=(3.5, 8.0), yaw=180)
@@ -460,7 +461,7 @@ S("L23.1+0.2", "S23b", "hand", HC(0.0, 0.074, -8, 0.22, 45, push=0.12), None)
 hand_cues("L23.1+0.2", "me", "mine", "9:00")
 cue("L24", "ring", p=0.38)
 # S24a: the arch low from the aisle; the tally on the brass base sits low in the frame
-S("L24", "S24a", "roof", C("roof", (-0.9, 12.0, 0.5), 0, 2.0, 28, 8.0, push=0.12, to=(-0.9, 12.0, 0.6)), None)
+S("L24", "S24a", "roof", C("roof", (-0.4, 11.5, 2.0), 8, 7.0, 26, -2.0, push=0.1), None)
 S("L24.2", "S24b", "roof", C("roof", (-1.8, 10.6, 1.45), 14, 1.2, 45, 2.0, push=0.1),
   {"me": {"pos": (-1.8, 10.6), "yaw": 14, "expr": "nervous"},
    "nate_s": {"pos": (-0.55, 10.6), "yaw": 0, "expr": "nervous"}})
@@ -658,7 +659,7 @@ cue("L49.3-0.01", "ring", p=1.0)
 cues.sort(key=lambda c: T(c["at"]))
 
 sfx = [
-    {"at": "L03+0.55", "kind": "click", "db": -17},          # the card lands on the mat
+    {"at": "L03+0.25", "kind": "click", "db": -17},          # the card lands on the mat
     {"at": "L16.3", "kind": "door", "db": -20},              # the diner door
     {"at": "L29+0.05", "kind": "click", "db": -15},          # one watch tick each: 9:12, 9:13, 9:14
     {"at": "L32+0.05", "kind": "click", "db": -15},
@@ -679,7 +680,7 @@ music = {
     ],
 }
 story = {
-    "rev": 1,
+    "rev": 6,
     "slug": "ep96-friend-card",
     "title": "My Card Says We Stop Being FRIENDS",
     "made_for_kids": False,

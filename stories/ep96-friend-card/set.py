@@ -336,8 +336,8 @@ def build_roof(kit, work, at):
         box(f"roof.plinth{sx}", (0.7, 0.5, 0.22), (sx * 1.35, ay, 0.11), brass, bevel=0.02)
     # the tally: two string-light-gold strokes scratched into the left brass base, proud of its front face
     gold = kit.emit("#ffd98a", 2.2, name="tally")
-    box("roof.tally0", (0.022, 0.012, 0.13), (-1.35 - 0.1, ay - 0.256, 0.11), gold)
-    box("roof.tally1", (0.022, 0.012, 0.13), (-1.35 + 0.1, ay - 0.256, 0.11), gold)
+    box("roof.tally0", (0.04, 0.012, 0.17), (-1.35 - 0.1, ay - 0.256, 0.11), gold)
+    box("roof.tally1", (0.04, 0.012, 0.17), (-1.35 + 0.1, ay - 0.256, 0.11), gold)
     petal_cols = ["#ffc1cc", "#fafafa", "#9cc59a", "#ffb38a", "#ffe08a"]
     for i in range(23):
         a = math.pi * i / 22
@@ -381,6 +381,14 @@ def build_roof(kit, work, at):
                     box(f"roof.tl{k}{lx}{ly}", (0.2, 0.2, 1.4), (cx + lx * 0.9, cy + ly * 0.9, tz + 0.7), M("#7a6a62", 0.8))
             cyl(f"roof.tank{k}", 1.4, 2.4, (cx, cy, tz + 2.5), M("#c98a64", 0.7), n=16)
             cyl(f"roof.tcap{k}", 1.5, 0.9, (cx, cy, tz + 4.1), M("#a8694a", 0.7), n=16, r2=0.15)
+    # two water-tower rooftops placed behind the arch so the arch shot reads as a rooftop
+    for bx, by, btop, bc in ((-9.0, 34.0, 1.2, "#e9c0d0"), (8.5, 38.0, 2.4, "#f6d3a6")):
+        box(f"roof.wbld{bx}", (7.0, 7.0, btop + 40), (bx, by, (btop - 40) / 2), M(bc, 0.8, spec=0.1))
+        for lx in (-1, 1):
+            for ly in (-1, 1):
+                box(f"roof.wtl{bx}{lx}{ly}", (0.2, 0.2, 1.4), (bx + lx * 0.9, by + ly * 0.9, btop + 0.7), M("#7a6a62", 0.8))
+        cyl(f"roof.wtank{bx}", 1.4, 2.4, (bx, by, btop + 2.5), M("#c98a64", 0.7), n=16)
+        cyl(f"roof.wtcap{bx}", 1.5, 0.9, (bx, by, btop + 4.1), M("#a8694a", 0.7), n=16, r2=0.15)
     # the back wall of sky: nothing. Lights: a warm low fill from the arch end and a soft one from the entrance end
     kit.light("roof.fillA", "AREA", (0, 17.0, 3.2), 520, "#ffcf9e", rot=(math.radians(-100), 0, 0), size=8)
     kit.light("roof.fillB", "AREA", (0, -4.0, 3.0), 360, "#ffe6c8", rot=(math.radians(100), 0, 0), size=8)
