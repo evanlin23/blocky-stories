@@ -394,13 +394,14 @@ def build(kit, story, tl):
     kit.light("tfill", "AREA", (60, 8, 8), 1.0, "#ffe0c8", rot=(0, 0, 0), size=14.0)
     W["inited"] = False
     ctx = {}
-    # the rule marker, parented to the camera
+    # the rule marker (a lemon kitchen timer and its paper tag), parented to the camera
     cam = kit.OBJ["cam"]
     W["inset"] = {}
-    for k in ("old", "old0", "new0", "new1", "new9", "new20", "new39", "new40", "new41", "new41s"):
-        m, _ = img_mat(kit, "inset." + k, W["tex"]["inset_" + k], emit=1.0, alpha=True)
+    for k in ("timer_0", "timer_1", "timer_9", "timer_20", "timer_39", "timer_40", "timer_41", "tag", "tag_stain"):
+        m, _ = img_mat(kit, "inset." + k, W["tex"][k], emit=1.0, alpha=True)
         pl = kit.plane("inset." + k, (1.0, 1.0), (0, 0, -0.2), m, cam)
         pl.visible_shadow = pl.visible_diffuse = pl.visible_glossy = False
+        pl.hide_render = True
         W["inset"][k] = pl
     return ctx
 
@@ -562,8 +563,8 @@ def _sample(cues, t, fields, defaults):
     return cur, last
 
 
-# the marker: NDC centre and size (fractions of the half frame), kept inside the safe 80% of the frame
-INS_U, INS_V, INS_W = -0.46, 0.72, 0.70
+# the marker: NDC centre and size (fractions of the half frame), kept inside the safe 80% of the frame, bottom right
+INS_U, INS_V, INS_W = 0.48, -0.64, 0.60
 
 
 def _inset(kit, tl, t, bl_story):
@@ -571,39 +572,45 @@ def _inset(kit, tl, t, bl_story):
     spec = W["shots"][shot["id"]]
     _, _, lens, _ = bl_story.cam_at(spec, shot, t, None, tl)
     d = 0.2
-    kx, ky = d * 6.75 / lens, d * 12.0 / lens             # metres per NDC unit at depth d (sensor 24 mm tall)
-    state = "old"
-    st_t = 0.0
+    kx, ky = d * 6.75 / lens, d * 12.0 / lens
+    state = "t0"
     for c in tl["cues"]:
         if c["name"] == "inset" and c["t"] <= t:
-            state, st_t = c["state"], c["t"]
-    fly = next((c for c in tl["cues"] if c["name"] == "inset_fly"), None)
-    wd = INS_W
-    # plate height in NDC-y units: width in pixels is wd * 270, so height px = that * 420/640; NDC-y per px = 1/480
-    ht = (wd * 270.0 * (420 / 640)) / 480.0
-    for k, pl in W["inset"].items():
+            state = c["state"]
+    for pl in W["inset"].values():
         pl.hide_render = True
-    du = dv = 0.0
-    sk = state
-    rot = -5.0 * D2R
-    show = [(state, 0.0, 0.0, 1.0)]
-    if fly is not None and t >= fly["t"]:
-        u = ss((t - fly["t"]) / 0.8)
-        u2 = ss((t - fly["t"] - 0.45) / 0.7)
-        show = []
-        if u < 1.0:
-            show.append((fly.get("from", "new41s"), 1.3 * u, 1.2 * u, 1.0))
-        if u2 > 0:
-            show.append(("old", -1.3 * (1 - u2), 0.0, 1.0))
-        if t >= fly["t"] + 1.15:
-            show = [("old", 0.0, 0.0, 1.0)]
-    for key, ou, ov, _ in show:
+    cam = kit.OBJ["cam"]
+    px = INS_W * 270.0                                   # the dial is square: its pixel size
+    wu, hv = px / 270.0, px / 480.0                      # NDC extents
+    ring = 0.0
+    for c in tl["cues"]:
+        if c["name"] == "ring" and c["t"] <= t < c["t"] + 0.6:
+            ring = 9.0 * math.sin((t - c["t"]) * 40.0) * (1 - (t - c["t"]) / 0.6) * D2R
+    dial = W["inset"][state]
+    dial.hide_render = False
+    dial.parent = cam
+    dial.location = (INS_U * kx, INS_V * ky, -d)
+    dial.rotation_euler = (0, 0, ring)
+    dial.scale = (wu * kx, hv * ky, 1.0)
+    # the paper tag: from the first tug (cue "tag") it flutters on the dial's lower left; "tag_off" sends it away
+    tg = [c for c in tl["cues"] if c["name"] == "tag" and c["t"] <= t]
+    if tg:
+        c0 = tg[-1]
+        key = "tag_stain" if c0.get("stain") else "tag"
         pl = W["inset"][key]
         pl.hide_render = False
-        pl.parent = kit.OBJ["cam"]
-        u_, v_ = INS_U + ou, INS_V + ov
-        pl.location = (u_ * kx, v_ * ky, -d)
-        pl.rotation_euler = (0, 0, rot)
-        pl.scale = (wd * kx, ht * ky, 1.0)
-        if os.environ.get('EP93DBG'):
-            print('INSET', key, tuple(pl.location), tuple(pl.scale), lens, pl.parent.name if pl.parent else None, flush=True)
+        pl.parent = cam
+        off = 0.0
+        if c0.get("off"):
+            off = ss((t - c0["t"]) / 0.9)
+            if t > c0["t"] + 0.9:
+                pl.hide_render = True
+        amp = min(1.0, (t - c0["t"]) / 1.0 + 0.3)
+        sway = amp * (14 * math.sin(t * 6.0) + 6 * math.sin(t * 11.0)) * D2R
+        u_ = INS_U - 0.34 + 1.2 * off
+        v_ = INS_V - 0.04 + 0.5 * off
+        dd = 0.19                                          # in front of the dial, never the same depth
+        pl.location = (u_ * kx * dd / d, v_ * ky * dd / d, -dd)
+        pl.rotation_euler = (0, 0, sway)
+        tw = 0.30
+        pl.scale = (tw * kx * dd / d, tw * (128 / 192) * (270.0 / 480.0) * ky * dd / d, 1.0)

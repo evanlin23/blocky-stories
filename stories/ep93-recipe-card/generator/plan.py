@@ -126,32 +126,36 @@ def S(at, frm, to, lens=32, frm2=None, to2=None, hand=None):
 # ================================================================================================ the cues that run all film
 look(0, "gold")
 cue(0, "tin", open=0.0)
-for t_, k in [(0, "old"), ("L23", "old0"), ("L25", "new0"), ("L27", "new1"), ("L28", "new9"), ("L29", "new20"),
-              ("L31", "new39"), ("L36", "new40"), ("L41", "new41"), ("L51", "new41s")]:
+for t_, k in [(0, "timer_0"), ("L27", "timer_1"), ("L28", "timer_9"), ("L29", "timer_20"), ("L31", "timer_39"),
+              ("L36", "timer_40"), ("L41", "timer_41"), ("L53+0.4", "timer_0")]:
     cue(t_, "inset", state=k)
-cue("L53", "inset_fly", **{"from": "new41s"})
+cue("L32", "tag")
+cue("L46", "ring")
+cue("L51", "tag", stain=True)
+cue("L53", "tag", stain=True, off=True)
 cue("L38", "tex", id="card_old", tex="card_old_wet")
 cue("L59", "tex", id="card_old", tex="card_old")
 cue("L48.3", "tex", id="card_new", tex="card_new_line")
 cue("L51", "tex", id="card_new", tex="card_new_stain")
 
 # ================================================================================================ 01 the hook (L01 to L02)
-# Grandma holds the card up to the camera over the table; my list lies on the table
-put("nell", 0, [0.3, 0.8], 0, expr="smile", arms=[0, 80])
-obj("card_old", 0, [0.5, 0.38, 1.25], (0, 0, 0), flutter=2)
-obj("list", 0, [0.0, 0.02, 0.795], [-90, 0, 8])
-S(0, [0.4, -0.75, 1.5], [0.35, 0.3, 1.02], 44)                                          # S001 the card, close
-S("L01.3", [0.5, -0.3, 1.3], [0.5, 0.38, 1.22], 62, [0.5, -0.1, 1.28], [0.5, 0.38, 1.22])    # S002 the matching loops
-hide("nell", at="L02")
-obj("card_old", "L02", hide=True)
-obj("list", "L02", hide=True)
-put("me", "L02", [0.3, 0.9], 0, expr="worried", arms=[0, 70], head=[0, 10])
+# frame 1: an extreme close-up of the ink itself (no hand, no card edge), drifting right onto the stain's edge
+obj("card_old2", 0, [0.3, 0.5, 1.2], (0, 0, 0))
+S(0, [0.27, 0.2, 1.15], [0.27, 0.5, 1.15], -0.12, [0.33, 0.2, 1.15], [0.33, 0.5, 1.15], hand=0.0)       # S001 the ink loops
+S("L01.3", [0.33, 0.2, 1.14], [0.33, 0.5, 1.14], -0.12, [0.39, 0.2, 1.14], [0.39, 0.5, 1.14], hand=0.0)  # S002 the stain's edge
+# me at Grandma's counter, a pencil in my hand, staring at the open tin
+obj("card_old2", "L02", hide=True)
+put("me", "L02", [-2.5, -1.5], -90, expr="worried", arms=[0, 70], head=[60, 15])
 hold_obj("pen", "L02", "me", arm=1, off=(0, -0.1, 0.0), rot=(60, 0, 0))
-S("L02", [0.7, -0.8, 1.55], [0.3, 0.9, 1.45], 36)                                         # S003 me uneasy
+cue("L02", "tin", open=1.0, dur=0.5)
+obj("card_old", "L02", [-3.27, -1.5, 1.88], (0, 0, 90))
+S("L02", [-1.4, -2.6, 1.55], [-2.7, -1.5, 1.5], 32)                                          # S003 me uneasy at the open tin
 
 # ================================================================================================ 02 the town (L03 to L08)
 hide("me", at="L03")
 obj("pen", "L03", hide=True)
+obj("card_old", "L03", hide=True)
+cue("L03", "tin", open=0.0, dur=0.4)
 fly("card_m1", "L03", [57.1, -1.75, 1.9], [57.6, 0.8, 7.0], 1.9, (0, 0, 0), (25, 10, 40), 14)
 S("L03", [56.0, 9.0, 2.2], [57.2, -2.0, 3.4], -7.0)                                          # S004 a card lifts from a window
 for i in range(6):
@@ -559,10 +563,7 @@ S("L70", [0.0, 1.2, 1.6], [0.0, 16.0, 4.5], 26)                                 
 S("L70.1", [0.8, 1.2, 1.7], [-3.0, 18.0, 6.5], 24)                                           # S147 the dusk sky
 obj("fl0", "L71", hide=True)
 S("L71", [2.5, -0.9, 1.6], [3.43, -0.9, 1.6], 34)                                            # S148 the framed photo
-S("L71.2", [2.5, -0.9, 1.55], [3.43, -0.944, 1.512], 56)                                     # S149 a card just landed
-# L72 loop: back to S001's framing, the card in Grandma's hand
-put("nell", "L72", [0.3, 0.8], 0, expr="smile", arms=[0, 80])
-obj("card_old", "L72", [0.5, 0.38, 1.25], (0, 0, 0), flutter=2)
-obj("list", "L72", [0.0, 0.02, 0.795], (-90, 0, 8))
-cue("L72", "tin", open=0.0)
-S("L72", [0.4, -0.75, 1.5], [0.35, 0.3, 1.02], 44)                                             # S150 close on the card: loop
+S("L71.2", [3.05, -0.975, 1.67], [3.43, -0.975, 1.67], -0.075)                                  # S149 close on the painted steam curl
+# L72 loop: the steam curl becomes the first ink loop of S001, same place, same size
+obj("card_old2", "L72", [0.3, 0.5, 1.2], (0, 0, 0))
+S("L72", [0.27, 0.2, 1.15], [0.27, 0.5, 1.15], -0.12, [0.33, 0.2, 1.15], [0.33, 0.5, 1.15], hand=0.0)   # S150 the ink loop: loop

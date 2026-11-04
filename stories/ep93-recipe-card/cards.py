@@ -134,6 +134,49 @@ def inset(kind, n=None):
     return im
 
 
+def timer(n, tag=None):
+    """The rule marker: a round lemon-yellow kitchen timer. Face = the try count, a needle creeping toward the lemon
+    mark at the top (one notch per try). RGBA 512 x 512."""
+    S_ = 512
+    im = Image.new("RGBA", (S_, S_), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    for fx in (110, 402):
+        d.ellipse([fx - 38, 6, fx + 38, 70], fill=(40, 24, 18, 255))                 # the two bells on top
+    d.ellipse([10, 30, S_ - 10, S_ - 10], fill=(40, 24, 18, 255))
+    d.ellipse([34, 54, S_ - 34, S_ - 34], fill=(255, 225, 77, 255))
+    d.ellipse([70, 90, S_ - 70, S_ - 70], fill=(255, 244, 190, 255), outline=(40, 24, 18, 255), width=8)
+    for k in range(12):
+        a = k * math.pi / 6
+        x0, y0 = 256 + 170 * math.sin(a), 270 - 170 * math.cos(a)
+        x1, y1 = 256 + 190 * math.sin(a), 270 - 190 * math.cos(a)
+        d.line([(x0, y0), (x1, y1)], fill=(40, 24, 18, 255), width=8)
+    d.ellipse([226, 98, 286, 150], fill=(255, 225, 77, 255), outline=(40, 24, 18, 255), width=7)   # the lemon mark
+    d.polygon([(256, 98), (284, 80), (292, 104)], fill=(70, 170, 80, 255))
+    f = ImageFont.truetype(str(FONT), 190 if n < 10 else 160)
+    s_ = str(n)
+    bb = d.textbbox((0, 0), s_, font=f)
+    d.text((256 - (bb[0] + bb[2]) / 2, 340 - (bb[1] + bb[3]) / 2), s_, font=f, fill=(40, 24, 18, 255))
+    ang = (-150 + 150 * min(1.0, n / 41.0)) * math.pi / 180        # rest at lower left, the lemon at the top
+    d.line([(256, 270), (256 + 135 * math.sin(ang), 270 - 135 * math.cos(ang))], fill=(216, 51, 74, 255), width=14)
+    d.ellipse([240, 254, 272, 286], fill=(40, 24, 18, 255))
+    return im
+
+
+def tag(stain=False):
+    """The paper tag hung on the timer: a tiny card with loops (and a tiny boot once it is stained)."""
+    im = Image.new("RGBA", (192, 128), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle([0, 0, 191, 127], radius=12, fill=(40, 24, 18, 255))
+    d.rounded_rectangle([8, 8, 183, 119], radius=8, fill=(239, 220, 174, 255))
+    d.rectangle([8, 8, 183, 30], fill=(216, 51, 74, 255))
+    rng = random.Random(5)
+    for r in range(3):
+        _loop_word(d, 22, 62 + r * 24, 120, 12, INK_OLD, 4, rng)
+    if stain:
+        boot(d, 120, 62, 46, STAIN)
+    return im
+
+
 def photo():
     """The framed photo, sixty years back: young Nell at her first stove, laughing, a small card in her hand."""
     W_, H_ = 800, 1000
@@ -146,8 +189,13 @@ def photo():
     d.rectangle([420, 520, 780, 840], fill=(226, 222, 208), outline=(120, 110, 100), width=8)   # old stove
     d.rectangle([450, 440, 750, 520], fill=(120, 110, 105))
     d.rectangle([500, 380, 700, 520], fill=(200, 116, 58), outline=(120, 70, 30), width=8)       # copper pot
-    for sx in (520, 600, 680):                                    # painted steam
-        d.arc([sx - 30, 250, sx + 30, 370], 200, 340, fill=(250, 245, 235), width=12)
+    for sx in (520, 600, 680):                                    # painted steam: curls that turn over on themselves
+        pts = []
+        for i in range(61):
+            u = i / 60
+            th = u * 2.0 * math.pi * 1.4
+            pts.append((sx + 24 * math.sin(th) * (1 - 0.3 * u), 380 - 150 * u - 20 * (1 - math.cos(th))))
+        d.line(pts, fill=(250, 245, 235), width=14, joint="curve")
     for dx, dy in ((470, 360), (730, 340), (740, 400), (480, 410)):                               # the splash
         d.ellipse([dx - 12, dy - 12, dx + 12, dy + 12], fill=(230, 160, 70))
     # young Nell
@@ -185,12 +233,12 @@ def build_all(outdir):
     photo().save(outdir / "photo.png")
     made["list"] = outdir / "list.png"
     made["photo"] = outdir / "photo.png"
-    states = {"old": ("old", None), "old0": ("old", 0), "new0": ("new", 0), "new1": ("new", 1), "new9": ("new", 9),
-              "new20": ("new", 20), "new39": ("new", 39), "new40": ("new", 40), "new41": ("new", 41),
-              "new41s": ("new_stain", 41)}
-    for k, (kind, n) in states.items():
-        inset(kind, n).save(outdir / f"inset_{k}.png")
-        made[f"inset_{k}"] = outdir / f"inset_{k}.png"
+    for n in (0, 1, 9, 20, 39, 40, 41):
+        timer(n).save(outdir / f"timer_{n}.png")
+        made[f"timer_{n}"] = outdir / f"timer_{n}.png"
+    for k, st in (("tag", False), ("tag_stain", True)):
+        tag(st).save(outdir / f"{k}.png")
+        made[k] = outdir / f"{k}.png"
     return made
 
 

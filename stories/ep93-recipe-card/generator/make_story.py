@@ -77,7 +77,7 @@ sfx = [
     {"at": "L37", "kind": "creak", "db": -14, "dur": 0.9},   # the tin lid
     {"at": "L50.1", "kind": "click", "db": -16},             # one small drip
     {"at": "L52", "kind": "whoosh", "db": -22},
-    {"at": "L10", "kind": "creak", "db": -22, "dur": 0.7},
+    {"at": "L46", "kind": "bell", "db": -20},
     {"at": "L34.2", "kind": "click", "db": -18},
     {"at": "L45.1", "kind": "click", "db": -18},
     {"at": "L24.3", "kind": "click", "db": -19},
