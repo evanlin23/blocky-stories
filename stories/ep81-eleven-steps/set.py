@@ -470,9 +470,9 @@ def build(kit, story, tl):
     B(None, (0.2, 3.0, 2.6), (-2.3, -1.8, 1.3), P("#5a4a58", 0.9, 0.02), "droomwall", 0.0)
     B(None, (0.7, 1.6, 0.5), (-1.7, -1.7, 0.3), P("#7a6a9a", 0.8, 0.05), "dbed", 0.04)
     B(None, (0.9, 0.12, 2.05), (0.0, -4.95, 1.03), white, "fdoor", 0.01)                              # the front door
-    ctx["fpane"] = B(None, (0.5, 0.03, 1.1), (0.0, -5.0, 1.2), kit.emit("#1c2748", 0.6, name="fpane"), "fpane", 0.004)
+    ctx["fpane"] = B(None, (0.5, 0.012, 1.1), (0.0, -4.878, 1.2), kit.emit("#1c2748", 0.6, name="fpane"), "fpane", 0.0)   # its glass, 2 cm proud
     B(None, (0.07, 0.07, 0.07), (0.3, -4.86, 1.0), brass, "fknob", 0.02)
-    ctx["tails"] = [B(None, (0.12, 0.05, 0.08), (sx * 0.12, -5.5, 1.05), kit.emit("#ff2a2a", 3.0, name="tail"), "tail", 0.01) for sx in (-1, 1)]
+    ctx["tails"] = [B(None, (0.12, 0.05, 0.08), (sx * 0.12, -4.868, 1.05), kit.emit("#ff2a2a", 3.0, name="tail"), "tail", 0.01) for sx in (-1, 1)]
     for o in ctx["tails"]:
         o.hide_render = True
     # the hall table and its mustard lamp, a clock that reads ten
@@ -681,7 +681,8 @@ def animate(kit, story, tl, t, ctx):
         o.hide_render = not on
         if on:
             u = ss((t - cs["t"]) / max(1e-3, cs.get("dur", 1.6))) if cs.get("go") else 0.0
-            o.location = ((-1 if i == 0 else 1) * lerp(0.12, 0.04, u), lerp(-5.5, -9.5, u), 1.05)
+            o.location = ((-1 if i == 0 else 1) * lerp(0.12, 0.03, u), -4.868, 1.05)
+            o.scale = (lerp(1.0, 0.25, u),) * 3
     dm = ctx["doormat"].node_tree.nodes["Principled BSDF"].inputs["Base Color"]
     dk = sd.get("door", 1.0)
     dm.default_value = (dk, dk, dk, 1.0)
