@@ -804,11 +804,11 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = bool(far)
     ctx["sun_ball"].hide_render = not far
     for ob in ctx["eye_parts"] + [ctx["lidg"]] + list(ctx["lidg"].children):
-        ob.hide_render = face < 0.5
+        ob.hide_render = face < 0.5 or bool(far)
     eye = ramp(tl, "eye", t, "v", 0.0)
     lidg = ctx["lidg"]
     lidg.scale = (1.0, 1.0, max(0.001, 1.0 - eye))
-    lidg.hide_render = face < 0.5 or eye >= 0.999
+    lidg.hide_render = face < 0.5 or bool(far) or eye >= 0.999
     for ob in lidg.children:
         ob.hide_render = lidg.hide_render
     g = ramp(tl, "glow", t, "v", 1.0)
@@ -830,7 +830,7 @@ def animate(kit, story, tl, t, ctx):
     taut = ctx["rope_taut"]
     for seg in ctx["rope_slack"]:
         seg.hide_render = mode == "taut"
-    taut.hide_render = mode != "taut"
+    taut.hide_render = mode != "taut" or (bool(far) and t > 110.0)
     if mode == "taut":
         a = V(PULLEY)
         b = V(pos) + V((0, -2.2 * sc if not far else -1.0, 0))
