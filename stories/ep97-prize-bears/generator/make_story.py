@@ -541,7 +541,7 @@ cue("L34", "fdoor", angle=0.0, **{"from": 95.0}, dur=0.5)
 shimmer("L34", (0.9, -0.7, 1.4), (0, 0.5, 0.25), 1.4)
 S("S34a", "L34", C((0.4, 3.4, 1.5), (0, -1.0, 1.45), 30, (0.2, 2.4, 1.5), (0, -1.0, 1.45), 30))
 scene("L34")
-# ---- S34b L34.2: from whoever plays
+# ---- S34b L34.2: from whoever played last
 S("S34b", "L34.1", C((2.0, 5.3, 1.7), (1.7, 3.2, 1.5), 32, (1.9, 4.9, 1.7), (1.7, 3.2, 1.5), 32), hand=0.008)
 scene("L34.1", me=dict(pos=(1.7, 3.2), yaw=180, expr="soft", head=[-12, 0]))
 hold("me", "L34.1+0.5", head=[10, 3])
@@ -591,7 +591,7 @@ hold("tess", "L39+0.7", head=[-18, 0], expr="laugh")
 # ---- S39b L39.2: every Saturday; the duck on the dash
 S("S39b", "L39.2", C((69.8, 2.0, 1.4), (69.9, 0.95, 1.1), 36, (69.8, 1.7, 1.35), (69.9, 0.95, 1.1), 36), hand=0.01)
 scene("L39.2", tess=dict(pos=(69.5, 0.1, -0.5), yaw=180, expr="smile", arms=[1.25, 1.25], head=[-12, 0]))
-# ---- S40 L40: I call her back now
+# ---- S40 L40: now I always call her back
 tickets("L40", 0)
 S("S40", "L40", C((40.2, 0.9, 1.25), (40.0, 3.9, 1.2), 35, (40.1, 1.5, 1.25), (40.0, 3.9, 1.2), 35), hand=0.008)
 scene("L40", me=dict(pos=(40.0, 3.7, -0.2), yaw=0, expr="smile", arms=[0, 2.75], head=[-8, 0]))
@@ -670,11 +670,11 @@ story = {
     "slug": "ep97-prize-bears",
     "title": "This Arcade Takes MEMORIES, Not Coins \U0001F579️",
     "made_for_kids": False,
-    "premise": ("At a bright arcade every game costs you the memory of ever coming there, taken at the door on your way "
-                "out, so my name is on every high score and I have never played, and my big sister brings me for her "
+    "premise": ("At a bright arcade every game costs you the memory of ever coming there, taken at the door from whoever "
+                "played last, so my name is on every high score and I have never played, and my big sister brings me for her "
                 "birthday to win the giant bear on the top shelf."),
     "twist": ("She has brought me every Saturday for forty weeks; I win her the same bear every time and lose the "
-              "afternoon at the door, while she never plays and keeps every one. The rule only takes from whoever plays, "
+              "afternoon at the door, while she never plays and keeps every one. The door only takes from whoever played last, "
               "so I hand her my last token and now I remember the day for both of us."),
     "world": ("A sunny arcade with grape violet carpet, cyan and orange cabinets, skee-ball lanes, an air hockey table, "
               "a coin pusher, a white prize counter, a wall of plush and a back closet full of forty identical giant bears."),
@@ -702,7 +702,7 @@ story = {
     "music": music,
     "sound": sound,
     "rev": 1,
-    "asr_forgive": ["thousand", "call"],
+    "asr_forgive": ["thousand"],
     "clip_ok": ["S03b", "S04a", "S30b", "S38a", "S06c", "S34a"],
 }
 for it in (sfx, music["sections"], sound["music_drops"], sound["ambience"], cues, story["shots"]):

@@ -48,8 +48,8 @@
     "at the door,"
    ],
    [
-    "on your way OUT.",
-    "on your way out."
+    "from whoever played LAST.",
+    "from whoever played last."
    ]
   ]
  },
@@ -88,8 +88,8 @@
     "at air hockey."
    ],
    [
-    "Neither KNOWS.",
-    "neither knows."
+    "Only ONE knows.",
+    "only one knows."
    ]
   ]
  },
@@ -542,12 +542,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "The rule only takes it",
-    "the rule only takes it"
+    "The door only takes it",
+    "the door only takes it"
    ],
    [
-    "from whoever PLAYS.",
-    "from whoever plays."
+    "from whoever played LAST.",
+    "from whoever played last."
    ]
   ]
  },
@@ -634,8 +634,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "I call her back NOW.",
-    "i call her back now."
+    "Now I always call her BACK.",
+    "now i always call her back."
    ]
   ]
  },

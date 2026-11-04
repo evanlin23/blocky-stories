@@ -3,7 +3,7 @@
 - **Slug:** `ep97-prize-bears` (batch 9b, upload order 1 of 4)
 - **Pitch:** E04 in `docs/research/premise-engines.md` (engine 4, memory as currency, panel A 7, panel B 7). Opening moved off `cost` to `confess`, as asked. Lane: core. Length arm: mid (60 to 90 s).
 - **Title:** This Arcade Takes MEMORIES, Not Coins 🕹️
-- **Word count:** 349 spoken words in 43 lines, all `narrator`, plus one 0.6 s music drop before L23.
+- **Word count:** 352 spoken words in 43 lines, all `narrator`, plus one 0.6 s music drop before L23.
 - **Estimated length:** about 80 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L06 first, then L19. If it lands under 62 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright arcade in the afternoon: grape violet carpet with a printed glyph pattern, cyan and orange cabinet glow, a white prize counter. No dark scene. The prize closet (L23 to L27) is lit by one warm bare bulb, still bright. Cabinet lights pulse slowly (flash_safe), never strobe.
 - **Hold:** scripts only (batch 9b). Not built, not voiced.
@@ -26,11 +26,11 @@ Checked against Made (ep11 to ep84) and the batch 7 list: no arcade, no prize co
 - **The rule is the clue:** "My name is on every high score. I've never played." first reads as a glitch. After the closet, it's literal: I've played here forty Saturdays and been very good, and every one of them was taken at the door.
 
 ## The story
-- **Premise:** At this arcade every game costs the memory of ever coming here, taken at the door on your way out. My big sister, Tess, says I never call her back, so for her birthday I let her drive me there. She wants the giant bear on the top shelf, ten thousand tickets. The prize man says "Welcome back." Tess never plays. I'm far too good, and when I hit ten thousand the prize man says "Same as always?" and leaves the back door open.
+- **Premise:** At this arcade every game costs the memory of ever coming here, taken at the door from whoever played last. My big sister, Tess, says I never call her back, so for her birthday I let her drive me there. She wants the giant bear on the top shelf, ten thousand tickets. The prize man says "Welcome back." Tess never plays. I'm far too good, and when I hit ten thousand the prize man says "Same as always?" and leaves the back door open.
 - **Rule / hook (L01, about 2.4 s):** "My name is on / every HIGH score here. / I've never PLAYED." L02 states the rule: "Because here, every game / costs you the MEMORY / of ever coming HERE."
 - **The relatable want or fight:** a big sister who says I never call her back, and a little brother trying to make it up with a giant bear.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a ticket-orange ticket counter in the top-left corner, a strip of ticket with a number on it, counting my tickets toward 10,000. It starts at 0 at L08, rolls at the games, hits 10,000 at L18, and after the closet it shows 40 bears in the same strip (a small bear glyph beside the number) from L25 to L33, then back to tickets. Frame 1 also shows the cyan high-score board with my name on every row (three letters, `CAL`, as arcade boards do).
-- **The 3 to 5 example montage (L03 to L07, 5 to 17 s):** the door taking it as people leave (L03), a man walking out with a fistful of tickets and no idea why (L04), two guys arguing who won air hockey (L05), a lady winning the jackpot and walking straight back in (L06), every board blank but mine (L07).
+- **The 3 to 5 example montage (L03 to L07, 5 to 17 s):** the door taking it from whoever played last (L03), a man walking out with a fistful of tickets and no idea why (L04), two guys arguing who won air hockey, and only one remembers (L05), a lady winning the jackpot and walking straight back in (L06), every board blank but mine (L07).
 - **A concrete mystery by 15 s:** my name on every board, and I've never played (L01, L07). "Welcome back" lands at 24 s.
 - **How the narrator is the exception:** nobody's name stays on a board. Mine is on all of them.
 - **The loved one at stake:** my big sister, Tess (named at L08 in the same shot as her, keys in hand by her car).
@@ -38,8 +38,8 @@ Checked against Made (ep11 to ep84) and the batch 7 list: no arcade, no prize co
 - **The scare (L22 to L26, 40 to 47 s):** the prize closet: one bulb, forty identical giant bears floor to ceiling, every button-eyed face toward the door.
 - **Twist and reveal (L28 to L31, 48 to 56 s):** said plainly, in one move. "She's brought me / every Saturday / for forty WEEKS. / I win it / every TIME. / And at the DOOR, / I lose it. / Tess never plays, / so she remembers / every ONE."
 - **Why (L32, L33, revised):** she leaves every bear at the arcade with the prize man so I never find out (that's why the closet is there, not at her place), because to me it's always the first time I ever won her anything, and she says that's the happiest she ever sees me. Warm, for my sake.
-- **The climax turns the rule's own logic:** the rule only takes it from whoever plays. So I give Tess my last token. She plays once, badly, wins me a rubber duck, and at the door she forgets the afternoon while I keep it. No new magic.
-- **How the last 15 seconds turn over the first line:** in the car I tell her every Saturday. I call her back now. We take turns remembering. Next week it's my turn to forget: "I'll walk in, / and look UP," runs straight into L01, so the opening becomes next Saturday, with me not knowing again.
+- **The climax turns the rule's own logic:** the door only takes it from whoever played last. Tess never plays, so for forty Saturdays that was always me. So I give Tess my last token, and she plays after me. She plays once, badly, wins me a rubber duck, and at the door she forgets the afternoon while I keep it. No new magic.
+- **How the last 15 seconds turn over the first line:** in the car I tell her every Saturday. Now I always call her back. We take turns remembering. Next week it's my turn to forget: "I'll walk in, / and look UP," runs straight into L01, so the opening becomes next Saturday, with me not knowing again.
 - **The plants a rewatch catches:**
   1. L12: the prize man says "Welcome BACK."
   2. L14: Tess never plays. She just watches me.
@@ -65,7 +65,7 @@ Checked against Made (ep11 to ep84) and the batch 7 list: no arcade, no prize co
 One place: a bright arcade on a sunny afternoon. Grape-violet carpet with a printed pattern of our own glyphs (stars, bolts, no letters), rows of chunky cabinets with cyan and orange glowing screens of abstract shapes (no game names), two skee-ball lanes, an air hockey table, a coin pusher with a jackpot light, a glass front door with a chrome bar handle and sunlight beyond. Along the back, a white prize counter with glass cases of small prizes, a wall of plush, and on the top shelf one giant bear, cream with an orange bow. Behind the counter, a plain door to the prize closet: a narrow storeroom with shelves floor to ceiling, one bare warm bulb.
 - **No text anywhere** except the three-letter `CAL` on the boards (a name, not a word, checked against real places: none) and numerals on the ticket counter.
 - **The door:** the moment the memory goes is shown the same way each time: a person steps through the glass door into the sun and blinks twice, and a faint orange shimmer slides off their shoulders back into the arcade. Soft, never a flash.
-- **What's true underneath (never said beyond the reveal):** the memory goes at the door, and only from whoever played a game that visit. Skill stays. Tickets and prizes stay. The prize man has worked here so long he never plays, so he remembers everyone.
+- **What's true underneath (never said beyond the reveal):** the memory goes at the door, and only from whoever played last in your group that visit. Everyone who played before them keeps the day. Tess never plays, so for forty Saturdays the last player was always me, and I forgot every one. Whoever forgets next week is whoever plays last. Skill stays. Tickets and prizes stay. The prize man has worked here so long he never plays, so he remembers everyone.
 
 ## Cast
 - `me` (Cal, the narrator, an adult man, about 20): short dark-brown block hair with a cowlick, an olive bomber jacket over a white tee, black jeans, cyan sneakers. Faces: `neutral`, `smile`, `grin`, `focus`, `worried`, `scared`, `soft`.
@@ -162,9 +162,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 
 - L01: My name is on / every HIGH score here. / I've never PLAYED.
 - L02: Because here, every game / costs you the MEMORY / of ever coming HERE.
-- L03: It takes it / at the DOOR, / on your way OUT.
+- L03: It takes it / at the DOOR, / from whoever played LAST.
 - L04: People walk out / with a fistful of TICKETS / and no idea WHY.
-- L05: Two guys leave / arguing who won / at air HOCKEY. / Neither KNOWS.
+- L05: Two guys leave / arguing who won / at air HOCKEY. / Only ONE knows.
 - L06: A lady wins the JACKPOT, / walks out, / and walks right back IN.
 - L07: Nobody's name / stays on a BOARD. / Except MINE.
 - L08: My big sister, TESS, / says I never call her BACK.
@@ -193,13 +193,13 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L31: Tess never plays, / so she remembers / every ONE.
 - L32: She leaves every bear HERE, / with the prize man, / so I never find OUT.
 - L33: Because to me, / it's always the first time / I ever won her ANYTHING, / and she says / that's the happiest / she ever sees me.
-- L34: The rule only takes it / from whoever PLAYS.
+- L34: The door only takes it / from whoever played LAST.
 - L35: So I handed Tess / my last TOKEN.
 - L36: She's TERRIBLE.
 - L37: She won me / one tiny rubber DUCK.
 - L38: At the DOOR, / she blinked, / and asked / where we'd BEEN.
 - L39: So in the car, / I told her / every SATURDAY.
-- L40: I call her back NOW.
+- L40: Now I always call her BACK.
 - L41: And we take TURNS.
 - L42: Next week / it's my turn to FORGET.
 - L43: I'll walk in, / and look UP,

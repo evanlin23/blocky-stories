@@ -2,8 +2,8 @@
  "slug": "ep97-prize-bears",
  "title": "This Arcade Takes MEMORIES, Not Coins 🕹️",
  "made_for_kids": false,
- "premise": "At a bright arcade every game costs you the memory of ever coming there, taken at the door on your way out, so my name is on every high score and I have never played, and my big sister brings me for her birthday to win the giant bear on the top shelf.",
- "twist": "She has brought me every Saturday for forty weeks; I win her the same bear every time and lose the afternoon at the door, while she never plays and keeps every one. The rule only takes from whoever plays, so I hand her my last token and now I remember the day for both of us.",
+ "premise": "At a bright arcade every game costs you the memory of ever coming there, taken at the door from whoever played last, so my name is on every high score and I have never played, and my big sister brings me for her birthday to win the giant bear on the top shelf.",
+ "twist": "She has brought me every Saturday for forty weeks; I win her the same bear every time and lose the afternoon at the door, while she never plays and keeps every one. The door only takes from whoever played last, so I hand her my last token and now I remember the day for both of us.",
  "world": "A sunny arcade with grape violet carpet, cyan and orange cabinets, skee-ball lanes, an air hockey table, a coin pusher, a white prize counter, a wall of plush and a back closet full of forty identical giant bears.",
  "voice": {
   "voice": "am_adam",
@@ -298,12 +298,12 @@
      "at the door,"
     ],
     [
-     "on your",
-     "on your"
+     "from whoever",
+     "from whoever"
     ],
     [
-     "way OUT.",
-     "way out."
+     "played LAST.",
+     "played last."
     ]
    ]
   },
@@ -350,8 +350,8 @@
      "at air hockey."
     ],
     [
-     "Neither KNOWS.",
-     "neither knows."
+     "Only ONE knows.",
+     "only one knows."
     ]
    ]
   },
@@ -905,16 +905,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "The rule only",
-     "the rule only"
+     "The door only",
+     "the door only"
     ],
     [
      "takes it",
      "takes it"
     ],
     [
-     "from whoever PLAYS.",
-     "from whoever plays."
+     "from whoever",
+     "from whoever"
+    ],
+    [
+     "played LAST.",
+     "played last."
     ]
    ]
   },
@@ -1013,12 +1017,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I call her",
-     "i call her"
+     "Now I always",
+     "now i always"
     ],
     [
-     "back NOW.",
-     "back now."
+     "call her BACK.",
+     "call her back."
     ]
    ]
   },
@@ -8206,8 +8210,7 @@
  },
  "rev": 1,
  "asr_forgive": [
-  "thousand",
-  "call"
+  "thousand"
  ],
  "clip_ok": [
   "S03b",
