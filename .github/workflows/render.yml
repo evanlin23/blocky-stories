@@ -12,7 +12,7 @@ on:
 concurrency: {group: render, cancel-in-progress: false}
 permissions: {contents: read, actions: read}
 env:
-  REQUIRE_PROOF: "false"   # the proof gate is OFF until the pre-proof stories have uploaded or been proofed; then set "true" (plan skips unproofed stories and says why)
+  REQUIRE_PROOF: "true"   # on since 2026-11-04: every pre-proof story has uploaded, been proofed or dropped (plan skips unproofed stories and says why)
   SHARDS: 32   # finer shards: a fast runner takes the next one (docs/research/render-throughput.md, change 6)
 jobs:
   plan:
