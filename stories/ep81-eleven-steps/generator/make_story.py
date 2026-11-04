@@ -515,7 +515,7 @@ story = {
     "gap": 0.12,
     "tail": LOOP,
     "min_read": 0.15,
-    "asr_forgive": ["a", "luis", "every one", "it", "he's"],
+    "asr_forgive": ["a", "luis", "every one", "it", "he's", ""],
     "clip_ok": ["bed_single"], "clip_heads": ["chead"],
     "fade_in": False,
     "fade_out": False,
