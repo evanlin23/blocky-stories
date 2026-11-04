@@ -6,6 +6,5 @@
   "cover_s": 99.4,
   "shape": "about-me",
   "opening": "cost",
-  "lane": "core",
-  "hold": "awaiting the polish pack and a passed proof (2026-11-04): no look.polish, and preflight finds 50 stills over 1 s; a final now would fail the pace blocks"
+  "lane": "core"
 }
