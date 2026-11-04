@@ -268,13 +268,14 @@ cue("L05.1+0.2", "glint", dur=0.6)
 S("L05", MV((GIFT - 0.02, -0.28, 0.94), (GIFT, 0.0, 0.83), (GIFT, -0.2, 0.9), (GIFT, 0.0, 0.83), 45),
   note="the two clasps touching, a tiny glint between them")
 place("blue", "L06", "drawer")
+place("lilac", "L06", "ndeskdust")
 cue("L06", "drawer", to=1.0, dur=1.0)
-S("L06", MV((-3.2, 3.0, 1.45), (-3.2, 4.05, 0.66), (-3.2, 3.25, 1.2), (-3.2, 3.8, 0.66), 34),
+S("L06", MV((-3.3, 3.0, 1.45), (-3.3, 4.05, 0.66), (-3.3, 3.25, 1.2), (-3.3, 3.8, 0.66), 34),
   look={"cutwall": False},
   note="my drawer sliding open, the blue diary inside, dust on it; a framed bookshelf photo on the wall above")
-S("L06a", MV((3.5, 3.6, 0.95), (3.5, 4.2, 0.6), (3.5, 3.8, 0.8), (3.5, 4.2, 0.6), 36),
-  note="Neither of us: the lilac diary on Nina's shelf, dusty")
-S("L06a.1", MV((-3.2, 3.35, 1.1), (-3.2, 3.78, 0.66), (-3.2, 3.5, 0.95), (-3.2, 3.78, 0.66), 44),
+S("L06a", MV((0.95, 2.25, 1.2), (0.46, 1.58, 0.78), (0.72, 1.95, 0.98), (0.46, 1.58, 0.78), 34),
+  note="Neither of us: the lilac diary dusty on Nina's desk")
+S("L06a.1", MV((-3.3, 3.35, 1.1), (-3.3, 3.78, 0.66), (-3.3, 3.5, 0.95), (-3.3, 3.78, 0.66), 44),
   note="ever WROTE in them: the blue one in my drawer, dusty")
 
 # ===================================================================================================== 03 Nina, the hall, L07 to L09a
@@ -299,9 +300,9 @@ S("L09.2", MV((0.0, -1.0, 1.3), (0.0, -2.0, 0.95), (0.0, -1.2, 1.2), (0.0, -2.0,
   who={"me": (X(-0.5, -1.65), 0, "angry", {"arms": [80, 80]}), "nina": (X(0.5, -1.65), 0, "angry", {"arms": [80, 80]})},
   note="two hands reaching for the keys (cut before any grip)")
 cue("L09a", "ndoor", to=0, dur=0.01)
-S("L09a", MV((1.1, 3.2, 1.15), (-0.6, 3.75, 0.85), (0.6, 3.4, 1.0), (-0.6, 3.75, 0.85), 28),
-  who={"me": (X(-0.6, 3.75, 0.38), 90, "angry", {"sit": True, "arms": [10, 10]})},
-  look={"cutwall": False},
+S("L09a", MV((0.8, 2.0, 1.5), (-1.25, 1.5, 1.33), (0.5, 1.8, 1.45), (-1.25, 1.5, 1.33), 26),
+  who={"me": sit_me("angry", head=[0, 6])},
+  look={"cutwall": True},
   note="me on my bed, ear near the wall, annoyed, her keyboard tapping through it")
 
 # ===================================================================================================== 04 the ink, L10 to L15
@@ -402,8 +403,8 @@ S("L27.1", MV((-0.685, 1.48, 0.95), (-0.365, 1.43, 0.79), (-0.525, 1.45, 0.88), 
   note="only FAMILY would know: the line")
 cue("L28", "mydoor", to=110, dur=0.5)
 place("blue", "L28", "nightstand")
-S("L28", MV((-2.25, 3.1, 1.8), (-2.05, 3.85, 0.95), (-2.15, 3.45, 1.5), (-2.05, 3.85, 0.95), 30),
-  who={"me": (X(-2.05, 3.8, 0.83), -90, "squeeze", {"lean": -90, "blink": False}),
+S("L28", MV((-2.0, 2.3, 1.75), (-2.05, 3.8, 1.55), (-2.05, 2.4, 1.7), (-2.05, 3.8, 1.55), 30),
+  who={"me": (X(-2.05, 3.8, 0.1), 0, "squeeze", {"sit": True, "arms": [20, 20], "blink": False}),
        "mom": (X(-1.5, -0.55), 180, "soft", {})},
   look={"cutwall": False},
   note="me in bed, eyes shut tight, Mom's face lit in the doorway, then she leaves")

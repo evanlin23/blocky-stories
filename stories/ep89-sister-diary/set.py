@@ -126,6 +126,7 @@ def materials(kit):
     M["h_cb"] = kit.emit("#2f7fe8", 1.0, "hud cover b")
     M["h_cl"] = kit.emit("#9a6ff0", 1.0, "hud cover l")
     M["h_gold"] = kit.emit("#ffd35a", 1.6, "hud gold")
+    M["leaf"] = kit.emit("#8a6f45", 0.5, "leaf line")
     M["h_pedge"] = kit.emit("#d8c08e", 0.9, "hud page edge")
     M["h_spb"] = kit.emit("#1a4fb0", 1.0, "hud spine b")
     M["h_spl"] = kit.emit("#6a3fc8", 1.0, "hud spine l")
@@ -270,7 +271,17 @@ def build_diary(kit, M, name, cover, lilac):
     box(kit, f"{name}.btab", (W + 0.008, H / 2 - 0.012, 0.0), (W + 0.022, H / 2 + 0.012, 0.0075), M["brass"], root, bevel=0.002)
     kit.cyl(f"{name}.bdot", 0.006, 0.0035, (W + 0.016, H / 2, 0.0095), M["brass"], root, n=14)
     box(kit, f"{name}.rpages", (0.0, 0.003, 0.006), (W - 0.003, H - 0.003, PAGE_TOP), M["page"], root)
+    # the gutter (a dark crease down the spine) and leaf lines on the page stacks, so the open pages read as a book
+    box(kit, f"{name}.gutter", (-0.005, 0.003, PAGE_TOP - 0.0004), (0.005, H - 0.003, PAGE_TOP + 0.0007), M["leaf"], root)
+    for k, zz in enumerate((0.0095, 0.013, 0.0165)):
+        box(kit, f"{name}.rleafa{k}", (0.0, 0.0025, zz), (W - 0.0025, 0.0036, zz + 0.0006), M["leaf"], root)
+        box(kit, f"{name}.rleafb{k}", (0.0, H - 0.0036, zz), (W - 0.0025, H - 0.0025, zz + 0.0006), M["leaf"], root)
+        box(kit, f"{name}.rleafc{k}", (W - 0.0036, 0.003, zz), (W - 0.0025, H - 0.003, zz + 0.0006), M["leaf"], root)
     front = kit.empty(f"{name}.front", (0, 0, PAGE_TOP), root)
+    for k, zz in enumerate((0.0035, 0.007, 0.0105)):
+        box(kit, f"{name}.lleafa{k}", (0.0, 0.0025, zz), (W - 0.0025, 0.0036, zz + 0.0006), M["leaf"], front)
+        box(kit, f"{name}.lleafb{k}", (0.0, H - 0.0036, zz), (W - 0.0025, H - 0.0025, zz + 0.0006), M["leaf"], front)
+        box(kit, f"{name}.lleafc{k}", (W - 0.0036, 0.003, zz), (W - 0.0025, H - 0.003, zz + 0.0006), M["leaf"], front)
     box(kit, f"{name}.lpages", (0.0, 0.003, 0.0), (W - 0.003, H - 0.003, 0.0125), M["page"], front)
     box(kit, f"{name}.fcover", (-0.006, -0.008, 0.0125), (W + 0.008, H + 0.008, 0.0185), mc, front, bevel=0.002)
     for sy in (0, 1):
