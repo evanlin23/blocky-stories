@@ -6,6 +6,5 @@
   "cover_s": 41.6,
   "shape": "rehearsal",
   "opening": "count",
-  "lane": "experiment",
-  "hold": "batch 9a: scripts only, not built yet"
+  "lane": "experiment"
 }
