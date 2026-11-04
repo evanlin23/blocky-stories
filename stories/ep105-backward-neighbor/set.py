@@ -604,7 +604,7 @@ def build(kit, story, tl):
     kit.box("bmirror.f", (2.8, 0.08, 1.9), (bx_, by_ + 2.3, 1.7), pl("#e3b04b", 0.4, spec=0.5))
     kit.box("bmirror.g", (2.6, 0.04, 1.7), (bx_, by_ + 2.26, 1.7), kit.metal("#fbfbff", 0.03))
     kit.box("bchair.seat", (0.9, 0.9, 0.2), (bx_, by_ + 0.9, 0.5), pl("#e8553f", 0.5, spec=0.3))
-    kit.box("bchair.back", (0.9, 0.2, 1.0), (bx_, by_ + 1.35, 1.0), pl("#e8553f", 0.5, spec=0.3))
+    kit.box("bchair.back", (0.9, 0.2, 1.0), (bx_, by_ + 1.65, 1.0), pl("#e8553f", 0.5, spec=0.3))
     kit.cyl("bchair.base", 0.2, 0.4, (bx_, by_ + 0.9, 0.2), pl("#c8cdd6", 0.4, spec=0.6), n=12)
     for sx in (-1, 1):
         kit.box(f"bchair.arm{sx}", (0.14, 0.7, 0.14), (bx_ + sx * 0.5, by_ + 0.9, 0.78), pl("#c8cdd6", 0.4, spec=0.6))
