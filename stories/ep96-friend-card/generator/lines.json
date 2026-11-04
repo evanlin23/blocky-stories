@@ -4,16 +4,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "My card says",
-    "my card says"
+    "Everyone here gets a card",
+    "everyone here gets a card"
    ],
    [
-    "my best friend and I",
-    "my best friend and i"
+    "that says when",
+    "that says when"
    ],
    [
-    "stop being friends TONIGHT.",
-    "stop being friends tonight."
+    "their best friendship ENDS.",
+    "their best friendship ends."
    ]
   ]
  },
@@ -22,7 +22,11 @@
   "who": "narrator",
   "chunks": [
    [
-    "At nine-FOURTEEN.",
+    "Mine says TONIGHT,",
+    "mine says tonight,"
+   ],
+   [
+    "at nine-FOURTEEN.",
     "at nine-fourteen."
    ],
    [
@@ -36,30 +40,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Everybody here",
-    "everybody here"
-   ],
-   [
-    "gets one card",
-    "gets one card"
+    "Yours comes in the mail",
+    "yours comes in the mail"
    ],
    [
     "at EIGHTEEN.",
     "at eighteen."
-   ]
-  ]
- },
- {
-  "id": "L04",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It tells you",
-    "it tells you"
-   ],
-   [
-    "how your closest friendship ENDS.",
-    "how your closest friendship ends."
    ]
   ]
  },
