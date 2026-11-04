@@ -7,5 +7,5 @@
   "shape": "backwards-warning",
   "opening": "ban",
   "lane": "core",
-  "hold": "batch 10: scripts only, not built yet"
+  "hold": "batch 10: in review"
 }

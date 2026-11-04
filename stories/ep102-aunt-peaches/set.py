@@ -1,7 +1,7 @@
 """ep102 "aunt peaches": a green peach valley under a blue sky.
 
-Rule meter: a cream odometer plate in the top-left corner of every frame (a peach glyph that is grey until I eat one, a
-road glyph, and three big digits of miles to Aunt Clem's gate). It is a child of the camera.
+Rule meter: a cream odometer plate near the top of every frame (a peach glyph, pink until I eat one then gold, and
+three big digits of miles to Aunt Clem's gate; no road glyph, ep101 owns that). It is a child of the camera.
 Cues (story.json) drive: look (day / morn / dusk / noon), odo (the digits), gold (the peach glyph), mv (move anything
 named: peaches, cars, the gate leaf), sill (how many peaches on the sill), rock (the porch swing), gone (the ridge road
 behind the car), lane (the lane behind the car at the gate), sit (who is seated).
@@ -42,8 +42,8 @@ LOOKS = {
     "day": _L(),
     "noon": _L(sun=4.0, el=78.0, az=200.0, front=0.5),
     "morn": _L(sun=3.0, sun_col="#ffe0b0", el=24.0, az=215.0, fill=1.0, fill_col="#ffe6d0", sky="#a8d8ff", front=0.9),
-    "dusk": _L(sun=2.3, sun_col="#ffb070", el=11.0, az=200.0, fill=1.6, fill_col="#c0d4ff", sky="#ffb27a", sky_str=0.85,
-               front=1.6),
+    "dusk": _L(sun=2.3, sun_col="#ffc890", el=11.0, az=200.0, fill=2.0, fill_col="#e8eeff", sky="#ffc49a", sky_str=0.9,
+               front=2.6),
 }
 
 
@@ -278,9 +278,9 @@ def build(kit, story, tl):
     kit.box("swback", (2.9, 0.1, 0.8), (0, 0.38, -1.9), P("#e8d4a0", 0.7, spec=0.1), sw, bevel=0.03)
     kit.box("swarm", (0.14, 0.7, 0.1), (-1.45, -0.0, -2.0), wood, sw)
     kit.box("swarm2", (0.14, 0.7, 0.1), (1.45, -0.0, -2.0), wood, sw)
-    kit.box("swplate", (0.34, 0.06, 0.34), (1.3, -0.17, 0.02), iron, sw)         # on the beam, in the chain's top
+    kit.box("swplate", (0.5, 0.06, 0.5), (1.3, -0.17, 0.02), iron, sw)         # on the beam, in the chain's top
     for k in range(2):
-        kit.box(f"swstroke{k}", (0.04, 0.02, 0.2), (1.24 + k * 0.12, -0.21, 0.02), P("#ff9a5a", 0.5), sw, rot=(0, 0, 0.35))
+        kit.box(f"swstroke{k}", (0.07, 0.03, 0.32), (1.2 + k * 0.17, -0.225, 0.02), P("#ff9a5a", 0.5), sw, rot=(0, 0, 0.35))
     reg("swing", sw)
     # items on the rail: keys
     ky_ = kit.empty("keys", (5.4, 1.56, 1.52))
@@ -537,8 +537,9 @@ def build_tag(kit):
     plate = kit.emit("#fff1cf", 1.0, "tagplate")
     edge = kit.emit("#2a1a0e", 0.5, "tagedge")
     ink = kit.emit("#2a1a0e", 0.5, "tagink")
-    grey = kit.emit("#8e8e94", 0.8, "taggrey")
-    gold = kit.emit("#ffb21e", 1.4, "taggold")
+    grey = kit.emit("#ff7f66", 1.0, "taggrey")
+    gold = kit.emit("#ffc21e", 1.4, "taggold")
+    rim = kit.emit("#2a1a0e", 0.5, "tagrim")
     leaf = kit.emit("#4fae4a", 0.8, "tagleaf")
 
     def b(name, size, loc, mat):
@@ -548,11 +549,15 @@ def build_tag(kit):
     b("tag.edge", (1.0, 0.5, 0.004), (0, 0, 0.0), edge)
     b("tag.plate", (0.95, 0.45, 0.004), (0, 0, 0.004), plate)
     for nm, mat, zz in (("pgrey", grey, 0.008), ("pgold", gold, 0.01)):
-        sp = kit.sphere(f"tag.{nm}", 0.13, (-0.33, -0.02, zz), mat, root, seg=12)
+        sp = kit.sphere(f"tag.{nm}", 0.15, (-0.33, -0.03, zz + 0.002), mat, root, seg=14)
         sp.scale = (1.0, 1.0, 0.02)
         noshadow(sp)
         W["pg" if nm == "pgrey" else "pgold"] = sp
-    b("tag.pleaf", (0.12, 0.06, 0.004), (-0.27, 0.15, 0.014), leaf)
+    rg = kit.sphere("tag.prim", 0.175, (-0.33, -0.03, 0.006), rim, root, seg=14)
+    rg.scale = (1.0, 1.0, 0.02)
+    noshadow(rg)
+    lf = kit.box("tag.pleaf", (0.14, 0.07, 0.004), (-0.28, 0.17, 0.016), leaf, root, rot=(0, 0, 0.6))
+    noshadow(lf)
     W["seg"] = []
     layout = [("a", 0.0, 0.17, 0.15, 0.05), ("b", 0.075, 0.085, 0.05, 0.17), ("c", 0.075, -0.085, 0.05, 0.17),
               ("d", 0.0, -0.17, 0.15, 0.05), ("e", -0.075, -0.085, 0.05, 0.17), ("f", -0.075, 0.085, 0.05, 0.17),
@@ -715,7 +720,7 @@ def animate(kit, story, tl, t, ctx):
     tag = W["tag"]
     s = 0.8 * w2
     tag.scale = (s, s, s)
-    tag.location = (-0.5 * w2 + 0.4 * w2 + 0.06 * w2, 0.76 * h2, -1.0)
+    tag.location = (-0.5 * w2 + 0.4 * w2 + 0.06 * w2, 0.66 * h2, -1.0)
     # who sits: legs straight out forward, hips on the seat
     sits = {}
     for c in tl["cues"]:
