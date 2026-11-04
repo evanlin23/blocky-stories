@@ -155,6 +155,20 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → An automated framing check after every staging change: is the shot's subject in frame and unblocked? `measure.py`
     already projects heads for `face_big`, so it can flag a shot where no cast face is visible.
 
+27. **Our own guard threw away complete films.** The "every frame must be there" check (#178, #194) counted PNGs
+    against the timeline's frames. A shot on twos draws every other frame and `finish` holds it over the next, so
+    every film with a twos shot failed. moving-day was refused twice: run 97 (2,398 of 2,635, exactly its drawings)
+    and run 106. The guard was tested only on a synthetic all-ones case.
+    → Two moving-day finals, about 16 + 32 runner-hours, and the 7:41 PM slot's backup.
+    → Fixed in #222 (`scripts/check_drawings.py` checks each drawing `frame_list` asks for, by name). For the rewrite,
+    a guard is tested on a real timeline from main, with twos, before it ships.
+28. **Two creature rounds with the playbook didn't rescue a dropped creature.** The lab (#220) and round 2 (#224,
+    two critics each) both failed Hal (ep87) and ep71's creature. The playbook moved the critics' words (no more
+    "mascot" or "snowman"), but not the scores.
+    → Two sessions, and ep87 and ep71 stay dropped.
+    → Pick creature concepts the rig can carry, at the writing stage: a person made wrong, or a threat that never
+    needs a full creature reveal. Don't spend build sessions trying to rescue a weak creature design.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
