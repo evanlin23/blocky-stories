@@ -659,6 +659,7 @@ cue("L49.3-0.01", "ring", p=1.0)
 cues.sort(key=lambda c: T(c["at"]))
 
 sfx = [
+    {"at": "L01.4", "kind": "thud", "db": -14},               # the hit on ENDS
     {"at": "L03+0.25", "kind": "click", "db": -17},          # the card lands on the mat
     {"at": "L16.3", "kind": "door", "db": -20},              # the diner door
     {"at": "L29+0.05", "kind": "click", "db": -15},          # one watch tick each: 9:12, 9:13, 9:14
@@ -680,7 +681,7 @@ music = {
     ],
 }
 story = {
-    "rev": 6,
+    "rev": 7,
     "slug": "ep96-friend-card",
     "title": "My Card Says We Stop Being FRIENDS",
     "made_for_kids": False,

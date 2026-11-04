@@ -1,5 +1,5 @@
 {
- "rev": 6,
+ "rev": 7,
  "slug": "ep96-friend-card",
  "title": "My Card Says We Stop Being FRIENDS",
  "made_for_kids": false,
@@ -10258,6 +10258,11 @@
    }
   ],
   "sfx": [
+   {
+    "at": "L01.4",
+    "kind": "thud",
+    "db": -14
+   },
    {
     "at": "L03+0.25",
     "kind": "click",
