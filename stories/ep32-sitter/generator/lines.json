@@ -4,8 +4,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "If you paint a PERSON",
-    "If you paint a person"
+    "If you paint",
+    "If you paint"
+   ],
+   [
+    "a PERSON",
+    "a person"
    ],
    [
     "in Kofi's CLASS,",
@@ -166,8 +170,12 @@
     "My mom says"
    ],
    [
-    "one of me is PLENTY.",
-    "one of me is plenty."
+    "one of me",
+    "one of me"
+   ],
+   [
+    "is PLENTY.",
+    "is plenty."
    ]
   ]
  },
@@ -264,12 +272,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I got as far",
-    "I got as far"
+    "I got as",
+    "I got as"
    ],
    [
-    "as his NOSE",
-    "as his nose"
+    "far as",
+    "far as"
+   ],
+   [
+    "his NOSE",
+    "his nose"
    ],
    [
     "when Kofi",
@@ -290,8 +302,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "From the car PARK,",
-    "From the car park,"
+    "From the car",
+    "From the car"
+   ],
+   [
+    "PARK,",
+    "park,"
    ],
    [
     "his face",
@@ -368,8 +384,12 @@
     "to his chest,"
    ],
    [
-    "and he was one step",
-    "and he was one step"
+    "and he was",
+    "and he was"
+   ],
+   [
+    "one step",
+    "one step"
    ],
    [
     "nearer my DOOR.",
@@ -386,8 +406,12 @@
     "Thursday morning,"
    ],
    [
-    "he was at the end",
-    "he was at the end"
+    "he was at",
+    "he was at"
+   ],
+   [
+    "the end",
+    "the end"
    ],
    [
     "of my BED.",
@@ -404,8 +428,12 @@
     "In full color,"
    ],
    [
-    "with a bare pine NOSE.",
-    "with a bear pine nose."
+    "with a bare",
+    "with a bear"
+   ],
+   [
+    "pine NOSE.",
+    "pine nose."
    ]
   ]
  },
@@ -490,8 +518,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then she touched the pine",
-    "Then she touched the pine"
+    "Then she touched",
+    "Then she touched"
+   ],
+   [
+    "the pine",
+    "the pine"
    ],
    [
     "behind my EAR,",
@@ -632,8 +664,12 @@
     "on the dais,"
    ],
    [
-    "and I painted his NOSE.",
-    "and I painted his nose."
+    "and I painted",
+    "and I painted"
+   ],
+   [
+    "his NOSE.",
+    "his nose."
    ]
   ]
  },

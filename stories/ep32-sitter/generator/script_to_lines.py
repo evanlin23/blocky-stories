@@ -58,11 +58,27 @@ for ln in OUT:
         ln["chunks"][2][1] = "pencil lines,"
 (HERE / "lines.json").write_text(json.dumps(OUT, indent=1, ensure_ascii=False) + "\n")
 
-# round 1 fix (2026-11-03): caption chunks under 0.2 s merge into the next chunk (voice-timings had them at 0.11 to 0.19 s)
-MERGE = {"L01": 0, "L08": 3, "L13": 0, "L14": 0, "L17": 4, "L18": 1, "L19": 1, "L24": 0, "L31": 3}
+# round 1 fix (2026-11-03): caption chunks under 0.2 s ("If you", "one of", "and he"...) are re-split into chunks of 2 or 3 words
+SPLIT = {
+    "L01": ["If you paint", "a PERSON", "in Kofi's CLASS,", "they come HOME."],
+    "L08": ["I've always wanted", "a big BROTHER.", "My mom says", "one of me", "is PLENTY."],
+    "L13": ["I got as", "far as", "his NOSE", "when Kofi", "locked up", "for the NIGHT."],
+    "L14": ["From the car", "PARK,", "his face", "on my EASEL", "was looking OUT."],
+    "L17": ["WEDNESDAY,", "the color", "had climbed", "to his CHEST,", "and he was", "one step", "nearer my DOOR."],
+    "L18": ["THURSDAY MORNING,", "he was at", "the end", "of my BED."],
+    "L19": ["In full COLOR,", "with a bare", "pine NOSE."],
+    "L24": ["Then she touched", "the pine", "behind my EAR,", "and told me."],
+    "L31": ["So on MONDAY,", "Dario sat", "on the DAIS,", "and I painted", "his NOSE."],
+}
 for ln in OUT:
-    m = MERGE.get(ln["id"])
-    if m is not None:
-        ch = ln["chunks"]
-        ch[m:m + 2] = [[ch[m][0] + " " + ch[m + 1][0], ch[m][1] + " " + ch[m + 1][1]]]
+    if ln["id"] in SPLIT:
+        caps = SPLIT[ln["id"]]
+        spk_words = " ".join(c[1] for c in ln["chunks"]).split(" ")
+        out, k = [], 0
+        for cap in caps:
+            n = len(cap.split(" "))
+            out.append([cap, " ".join(spk_words[k:k + n])])
+            k += n
+        assert k == len(spk_words), ln["id"]
+        ln["chunks"] = out
 (HERE / "lines.json").write_text(json.dumps(OUT, indent=1, ensure_ascii=False) + "\n")

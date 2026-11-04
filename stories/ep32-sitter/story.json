@@ -30,7 +30,7 @@
   "flash_safe": true,
   "polish": {
    "emph": [
-    "L01.2",
+    "L01.3",
     "L07.5",
     "L11.4",
     "L15.4",
@@ -38,7 +38,7 @@
     "L20.2",
     "L23.2",
     "L26.2",
-    "L31.3"
+    "L31.4"
    ],
    "reveal": [
     "L07.5",
@@ -64,7 +64,7 @@
     "S18b"
    ],
    "bed_kind": "room",
-   "bed_lufs": -40.0,
+   "bed_lufs": -27.0,
    "bed_drop_db": -4.0
   }
  },
@@ -456,8 +456,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "If you paint a PERSON",
-     "If you paint a person"
+     "If you paint",
+     "If you paint"
+    ],
+    [
+     "a PERSON",
+     "a person"
     ],
     [
      "in Kofi's CLASS,",
@@ -618,8 +622,12 @@
      "My mom says"
     ],
     [
-     "one of me is PLENTY.",
-     "one of me is plenty."
+     "one of me",
+     "one of me"
+    ],
+    [
+     "is PLENTY.",
+     "is plenty."
     ]
    ]
   },
@@ -717,12 +725,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "I got as far",
-     "I got as far"
+     "I got as",
+     "I got as"
     ],
     [
-     "as his NOSE",
-     "as his nose"
+     "far as",
+     "far as"
+    ],
+    [
+     "his NOSE",
+     "his nose"
     ],
     [
      "when Kofi",
@@ -737,15 +749,19 @@
      "for the night."
     ]
    ],
-   "tempo": 0.96
+   "tempo": 0.92
   },
   {
    "id": "L14",
    "who": "narrator",
    "chunks": [
     [
-     "From the car PARK,",
-     "From the car park,"
+     "From the car",
+     "From the car"
+    ],
+    [
+     "PARK,",
+     "park,"
     ],
     [
      "his face",
@@ -822,8 +838,12 @@
      "to his chest,"
     ],
     [
-     "and he was one step",
-     "and he was one step"
+     "and he was",
+     "and he was"
+    ],
+    [
+     "one step",
+     "one step"
     ],
     [
      "nearer my DOOR.",
@@ -840,8 +860,12 @@
      "Thursday morning,"
     ],
     [
-     "he was at the end",
-     "he was at the end"
+     "he was at",
+     "he was at"
+    ],
+    [
+     "the end",
+     "the end"
     ],
     [
      "of my BED.",
@@ -858,8 +882,12 @@
      "In full color,"
     ],
     [
-     "with a bare pine NOSE.",
-     "with a bear pine nose."
+     "with a bare",
+     "with a bear"
+    ],
+    [
+     "pine NOSE.",
+     "pine nose."
     ]
    ],
    "gap": 0.7
@@ -947,8 +975,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then she touched the pine",
-     "Then she touched the pine"
+     "Then she touched",
+     "Then she touched"
+    ],
+    [
+     "the pine",
+     "the pine"
     ],
     [
      "behind my EAR,",
@@ -1089,8 +1121,12 @@
      "on the dais,"
     ],
     [
-     "and I painted his NOSE.",
-     "and I painted his nose."
+     "and I painted",
+     "and I painted"
+    ],
+    [
+     "his NOSE.",
+     "his nose."
     ]
    ]
   },
@@ -1278,7 +1314,7 @@
    "hand": 0.002,
    "step": 2,
    "what": "punch in on the line where paint stops and pine begins",
-   "at": "L01.1"
+   "at": "L01.2"
   },
   {
    "id": "S02",
@@ -2218,7 +2254,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "Kofi at the door with his keys, waving me out, the lamps ramping down behind him",
-   "at": "L13.2"
+   "at": "L13.3"
   },
   {
    "id": "S15",
@@ -2249,30 +2285,30 @@
     [
      0,
      [
-      3.4,
-      -7.2,
-      1.4
+      0.9,
+      -8.6,
+      1.45
      ],
      [
       3.08,
       -0.4,
       1.3
      ],
-     64
+     56
     ],
     [
      1,
      [
-      3.3,
-      -6.6,
-      1.4
+      1.2,
+      -8.0,
+      1.45
      ],
      [
       3.08,
       -0.4,
       1.3
      ],
-     70
+     62
     ]
    ],
    "hand": 0.006,
@@ -2280,9 +2316,10 @@
    "what": "through the lit window, my panel on easel 8, Dario's painted eyes turned to the glass",
    "turn8": true,
    "hide_cast": [
-    "petra"
+    "petra",
+    "bg5"
    ],
-   "at": "L14.1"
+   "at": "L14.2"
   },
   {
    "id": "S16",
@@ -2541,7 +2578,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "me sitting up fast, the ear patch toward the camera",
-   "at": "L18.1"
+   "at": "L18.2"
   },
   {
    "id": "S20",
@@ -3404,30 +3441,30 @@
     [
      0,
      [
-      1.7,
-      -1.6,
-      1.9
+      1.9,
+      -1.0,
+      2.3
      ],
      [
       3.67,
       -0.25,
-      1.55
+      1.5
      ],
-     11.0
+     15.0
     ],
     [
      1,
      [
-      1.9,
-      -1.5,
-      1.9
+      2.1,
+      -0.9,
+      2.3
      ],
      [
       3.67,
       -0.25,
-      1.55
+      1.5
      ],
-     11.0
+     15.0
     ]
    ],
    "hand": 0.006,
@@ -3441,30 +3478,30 @@
     [
      0,
      [
-      1.3,
+      1.6,
       -0.3,
-      1.9
+      2.3
      ],
      [
       3.285,
       -1.703,
-      1.55
+      1.5
      ],
-     14.0
+     18.0
     ],
     [
      1,
      [
-      1.5,
+      1.8,
       -0.5,
-      1.9
+      2.3
      ],
      [
       3.285,
       -1.703,
-      1.55
+      1.5
      ],
-     14.0
+     18.0
     ]
    ],
    "hand": 0.006,
@@ -3518,30 +3555,30 @@
     [
      0,
      [
-      1.3,
-      -0.8,
-      1.75
+      1.5,
+      -0.9,
+      2.3
      ],
      [
       3.4,
       -2.1,
-      1.6
+      1.55
      ],
-     13.0
+     20.0
     ],
     [
      1,
      [
-      1.5,
-      -0.7,
-      1.75
+      1.7,
+      -0.8,
+      2.3
      ],
      [
       3.4,
       -2.1,
-      1.6
+      1.55
      ],
-     14.0
+     22.0
     ]
    ],
    "hand": 0.006,
@@ -3762,14 +3799,14 @@
     "blend": 0.3
    },
    {
-    "at": "L13.2",
+    "at": "L13.3",
     "pos": [
      3.672,
      -0.451
     ]
    },
    {
-    "at": "L13.2",
+    "at": "L13.3",
     "pos": [
      -3.0,
      -2.5
@@ -3795,7 +3832,7 @@
     "yaw": -90
    },
    {
-    "at": "L13.2+0.9",
+    "at": "L13.3+0.9",
     "pos": [
      -3.9,
      -2.5
@@ -3835,7 +3872,7 @@
     "yaw": 180
    },
    {
-    "at": "L14.1",
+    "at": "L14.2",
     "expr": "scared",
     "blend": 0.4
    },
@@ -3883,14 +3920,14 @@
     "blend": 0
    },
    {
-    "at": "L18.1",
+    "at": "L18.2",
     "pos": [
      38.45,
      3.85
     ]
    },
    {
-    "at": "L18.1",
+    "at": "L18.2",
     "pos": [
      -40.0,
      0.45,
@@ -3923,7 +3960,7 @@
     ]
    },
    {
-    "at": "L18.1",
+    "at": "L18.2",
     "head": [
      0,
      0
@@ -4328,7 +4365,7 @@
     "hidden": false,
     "arms": [
      0,
-     78
+     122
     ],
     "side": [
      0,
@@ -4351,10 +4388,10 @@
     ]
    },
    {
-    "at": "L24.1",
+    "at": "L24.2",
     "arms": [
      0,
-     82
+     122
     ],
     "expr": "smile",
     "blend": 0.4
@@ -4916,19 +4953,19 @@
     "yaw": -7.0
    },
    {
-    "at": "L13.1",
+    "at": "L13.2",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L13.2",
+    "at": "L13.3",
     "pos": [
      3.788,
      0.492
     ]
    },
    {
-    "at": "L13.2",
+    "at": "L13.3",
     "pos": [
      -5.0,
      -2.9
@@ -4954,7 +4991,7 @@
     "yaw": -90
    },
    {
-    "at": "L13.4",
+    "at": "L13.5",
     "arms": [
      0,
      30
@@ -5076,7 +5113,7 @@
     "yaw": -117.4
    },
    {
-    "at": "L25",
+    "at": "L13.3",
     "hidden": true,
     "blend": 0
    },
@@ -5239,7 +5276,7 @@
     "yaw": 117.4
    },
    {
-    "at": "L25",
+    "at": "L13.3",
     "hidden": true,
     "blend": 0
    },
@@ -5310,7 +5347,7 @@
     "yaw": 137.8
    },
    {
-    "at": "L25",
+    "at": "L13.3",
     "hidden": true,
     "blend": 0
    },
@@ -5381,7 +5418,7 @@
     "yaw": 158.2
    },
    {
-    "at": "L25",
+    "at": "L13.3",
     "hidden": true,
     "blend": 0
    },
@@ -5452,7 +5489,7 @@
     "yaw": -169.8
    },
    {
-    "at": "L25",
+    "at": "L13.3",
     "hidden": true,
     "blend": 0
    },
@@ -5523,7 +5560,7 @@
     "yaw": -149.4
    },
    {
-    "at": "L25",
+    "at": "L13.3",
     "hidden": true,
     "blend": 0
    },
@@ -5594,7 +5631,7 @@
     "yaw": 97.0
    },
    {
-    "at": "L25",
+    "at": "L13.3",
     "hidden": true,
     "blend": 0
    },
@@ -5851,7 +5888,7 @@
    "set": "warm"
   },
   {
-   "at": "L13.2",
+   "at": "L13.3",
    "name": "time",
    "set": "dusk"
   },
@@ -6049,7 +6086,7 @@
    "on": true
   },
   {
-   "at": "L13.2",
+   "at": "L13.3",
    "name": "dip",
    "down": 1.2,
    "hold": 0.0,
