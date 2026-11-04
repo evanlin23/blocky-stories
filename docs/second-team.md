@@ -12,10 +12,10 @@ was told at about 4:20 PM Tuesday to merge the latest main before it judges anyt
 | ready for queue (second team) | merged, proof qa passed, final qa passed: ep42, ep48, ep54, ep55, ep62, ep89, ep92, ep96, ep98, warm-shoes | **yes** | per story | #1 queues them |
 | ready for queue (#1's) | ep47 and ep28 | **yes** | #230 (ep47) | #1 queues them |
 | uploaded | mirror-maze, closing-time, rule-three, floor-thirteen | n/a | per story | none |
-| last-chance round (granted 8:30 AM Wed): moving-day | merged, but the final failed pace; the fix is on claude/moving-day-pace | no | none yet | one fix round and one re-review; a fail drops it for good |
-| last-chance round: ep99-statue-years | a title-only standards check | no | none yet | one re-review; a fail drops it for good |
+| dropped 9:12 AM Wed: moving-day | the last-chance fix passed pace on the preview, but critic r12 still said revise on S36b | no | none | held on main; #1 removes it from queue.txt |
+| last-chance round: ep99-statue-years | title approved; PR open, proof next | no | #259 | one re-review; a fail drops it for good |
 | last-chance round: ep97-prize-bears, ep94-today-again, ep83-free-fries | camera and face fixes | no | none yet | one fix round and one re-review; a fail drops it for good |
-| writing: batch 10 | writing; its builds start after the Thursday 8 AM reset | no | none yet | builds |
+| batch 10 (ep101 to ep107) | 7 scripts merged 9:20 AM Wed, on hold; builds start after the Thursday 8 AM reset | no | #264 | builds |
 | audit and rewrite plan | open | n/a | #258 | review and merge |
 | QA desk | working | n/a | per film | checks finals as they land |
 | dropped | batch 7: ep81-eleven-steps, ep82-no-door; batch 8: ep85-early-alarm, ep86-aunts-keys, ep88-six-paintings, ep91-ninth-coffee (#225 closed); batch 9: ep93-recipe-card, ep95-corn-maze, ep100-window-bridges | no | none | recorded in stories/ideas.md and each package.json hold |
