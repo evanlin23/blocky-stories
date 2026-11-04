@@ -6,6 +6,5 @@
   "cover_s": 2.6,
   "shape": "literal-wording",
   "opening": "confess",
-  "lane": "core",
-  "hold": "batch 10: scripts only, not built yet"
+  "lane": "core"
 }
