@@ -61,3 +61,9 @@ Two review rounds (r5, r6) used; no rescue round allowed by the brief. Not appro
 - S41/S42/S43 (L32 to L34): camera from [-12.5, -12.0] and [-9.5, -9.5], lens 56/58; arms down so it isn't a heap; the head and hair of the silhouette are a shade lighter (#38425a) than the body (#161b26) in set.py (tsil_head), so the head on the shoulder reads.
 - S64: lean starts at 34 (L50) and reaches 46 by L50+1.0 (was 48 over 1.6 s from -8): faces about 40 cm apart from 92.9 s, both heads whole, clipcheck 0.
 - Preview re-rendered (forced S02, S41-43, S64), finished, mixed. Preflight 0 blocks, flash PASS, clipcheck 0, measure 0 blocks (warn walk_dead_end_share 0.5), pytest 196 pass.
+
+## DROPPED FOR GOOD (2026-11-04, after revive round r7)
+Revived once by the second orchestrator for the three r6 must-fixes; r7 critic (opus) says **revise** (avg 7.4, nothing under 6, hook 7). By the revive rule, the story is dropped for good.
+- S41-S43 fog glimpse: done. S64 face to face (~40 cm): done. S02 black frames: gone.
+- Only open must-fix: S02 (1.97 to 2.23 s, drawings f00059/f00063): a dark-green wedge top right (unidentified object, maybe a tarp, parasol or Pip's chair moved by the L02 acting cues) shadows the blue jug and pops off at f00067 (2.23 s). Reads as a glitch inside the hook. Hide/move the object or aim the camera out of it, then re-check f00059 to f00090. Advice: show chair legs under the S41-S43 silhouette.
+- Passing: preflight 0 blocks, clipcheck 0, flash, measure 0 blocks, pytest 196. r5 standards approved. `hold` stays in package.json; not in queue.txt; no PR.
