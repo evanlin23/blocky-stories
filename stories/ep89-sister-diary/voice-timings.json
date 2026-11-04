@@ -6,34 +6,34 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "My sister's diary answers back. And tonight it wrote about you.",
+   "text": "You can't read my sister's diary. It writes back. Tonight it wrote about you.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.0,
+   "dur": 3.362,
    "onset": 0.172,
-   "end": 2.776,
+   "end": 3.121,
    "chunks": [
     [
      0.172,
-     0.888
+     0.543
     ],
     [
-     0.888,
-     1.552
+     0.543,
+     1.293
     ],
     [
-     1.621,
-     1.939
+     1.345,
+     1.983
     ],
     [
-     1.939,
-     2.146
+     2.06,
+     2.491
     ],
     [
-     2.146,
-     2.776
+     2.491,
+     3.121
     ]
    ]
   },
