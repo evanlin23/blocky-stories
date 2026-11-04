@@ -5,13 +5,14 @@
 - **Title:** Every Sneeze Lands Me by a STRANGER 🤧
 - **Changed from the pitch:** the rule says "thinking about you MOST" so the old man winning sixty-three times is the clue, not a hole. The pitch's fourth montage beat (a grandma landing at every family dinner) is cut, because the narrator's own grandparents are the reveal and a second grandma would muddy it. The middle scare is a 2 a.m. sneeze into his dark front room and the wall of clippings, lit by the TV. Mom's fight with her dad is kept vague and small on purpose ("a dumb fight, so long ago she can't remember who started it"), so nobody takes a side. Mom is named Carol.
 - **Everyone is an adult.** I'm 24, Mom is about 52, Grandpa about 80, the montage people are adults.
-- **Word count:** 549 spoken words in 69 lines (L01 to L69), all `narrator`, plus one 0.6 s music drop before L28.
-- **Estimated length:** about 124.8 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
+- **Revised r1 (standards, 2026-11-04):** lines changed: L07, L08 (a landlord's couch, not a boss's office), L21, L43, L52 (her pills named as allergy pills), and L29 ("He was AWAKE. / Just SITTING there, / in the dark.", the writer's own catch: the old line had the banned "Not X, it was Y" cadence). Shots changed: S01b, S07b, S08, the drop, S28, and the flash notes (soft pollen swirls, a steady TV glow at S27 to S38). Description trimmed to match L07. Not voiced yet, so nothing to re-voice.
+- **Word count:** 547 spoken words in 69 lines (L01 to L69), all `narrator`, plus one 0.6 s music drop before L28.
+- **Estimated length:** about 124.4 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright spring: pollen-gold air, yellow grass, a pastel town, the old man's front room in deep green and cream with a big window. The 2 a.m. visit (L27 to L38) is the one dark scene, lit blue-white by his TV and the streetlight through the window. The field walk and the last scene are golden afternoon.
 - **Hold:** scripts only (batch 11). Not built, not voiced.
 
 ## Variety table
-The batch table is in `stories/ep108-lamp-man/script.md`. This row:
+The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
 
 | Setting | Creature | First-line type | Ending shape | Kind of warmth |
 |---|---|---|---|---|
@@ -31,7 +32,7 @@ The batch table is in `stories/ep108-lamp-man/script.md`. This row:
 - **Rule / hook (L01, about 2.6 s):** "If you sneeze HERE, / you land next to whoever's / thinking about you MOST." L02: "Sixty-three sneezes / this spring. / Same STRANGER. / Every time."
 - **The relatable want or fight:** allergy season, and a parent who won't talk about her own parent.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream tag in the top-left: a pollen glyph with a five-dot count (5 of 5 lit in spring), a sneeze count (63), and a little map pin glyph that's green when I've landed at the armchair. It ticks to 64 at L27, the pin turns green and pulses. At L57 a second pin appears, then both sit side by side at L62.
-- **The 3 to 5 example montage (L03 to L08, 3 to 18 s):** the meeting sneezer landing in his mom's kitchen with a plate already out, the dog walker in his dog's bed, the party sneezer in his boss's office.
+- **The 3 to 5 example montage (L03 to L08, 3 to 18 s):** the meeting sneezer landing in his mom's kitchen with a plate already out, the dog walker in his dog's bed, the party sneezer on his landlord's couch (r1: was a boss's office, which could read as a crush).
 - **A concrete mystery on screen by 15 s:** the same stranger sixty-three times (L02), then the armchair (L09 to L11, about 18 to 23 s).
 - **How the narrator is the exception:** everyone lands beside family or friends. I land beside a stranger.
 - **The loved one at stake:** my mom, Carol, named "Mom" at L19 with her humming at the stove in frame, and by name at L38.
@@ -48,7 +49,7 @@ The batch table is in `stories/ep108-lamp-man/script.md`. This row:
 - **Sad family reveal?** Yes, soft: twenty-four years apart over a fight nobody remembers. Nobody is gone, and it ends warm.
 
 ## Quotable line
-**L21: "She takes a little white PILL / every morning. / She's never missed ONE."** Rewatch bait. And the funniest line to type: **L08: "He's still / not sure / what that MEANS."**
+**L21: "She takes a little white allergy PILL / every morning. / She's never missed ONE."** Rewatch bait. And the funniest line to type: **L08: "His rent / was three days LATE."**
 
 ## Clarity test (cold, two sentences)
 In this town every sneeze takes you to whoever's thinking about you most, and the narrator keeps landing beside an old stranger, who turns out to be his grandpa, his mom's dad, who has thought about him every day though they've never met. His mom took allergy pills so she'd never sneeze and land beside her own dad, so the narrator walks her through the pollen, she sneezes to her dad, he sneezes after her, and the family is back together.
@@ -73,7 +74,7 @@ In this town every sneeze takes you to whoever's thinking about you most, and th
 - `me` (a man, 24, the narrator): short sandy hair, a light-blue zip hoodie, jeans, white sneakers, red nose. Faces: `sneeze`, `sheepish`, `uneasy`, `scared`, `stunned`, `determined`, `teary-smile`.
 - `mom` (my mom, Carol, about 52): a dark-blond bob with gray at the temples, a yellow apron over a striped shirt. Faces: `bright`, `guarded`, `sharp`, `teary`, `sneeze`, `smile`. Named "Mom" at L19 at the stove, and "Carol" at L38.
 - `grandpa` (Mom's dad, about 80): a white combed-back side part, thick white brows, glasses, a green cardigan over a cream shirt. Faces: `kind`, `quiet`, `sad`, `smile`, `hum`. Named "my GRANDPA. / Mom's DAD." at L39, L40 in the same shot.
-- Montage (adults): the meeting man and his mom, the dog walker and his dog, the party man and his boss.
+- Montage (adults): the meeting man and his mom, the dog walker and his dog, the party man and his landlord (an older man).
 Every word is the narrator's. L13, L24, L35, L36, L38, L48 and L49 are reported or quoted inside the narration.
 
 ## No creature
@@ -98,14 +99,14 @@ Times are estimates at 290 wpm with 0.15 s gaps. Every line gets one to three sh
 
 | Shots | Lines | Picture |
 |---|---|---|
-| S01a, S01b | L01 | (a) Close: my face mid-sneeze in a cloud of gold pollen, `sneeze`, tag 63. (b) Pop: I'm gone, pollen swirling where I was. Punch in on "MOST". |
+| S01a, S01b | L01 | (a) Close: my face mid-sneeze in a cloud of gold pollen, `sneeze`, tag 63. (b) I'm gone in a soft swirl of gold pollen where I was (no white pop, no flash frame). Punch in on "MOST". |
 | S02a, S02b | L02 | (a) Me landing on a cream rug beside a green armchair, the tag's pin going green. (b) An old man's hand resting on the armchair's arm beside me. Punch in on "STRANGER". |
 | S03 | L03 | Wide sunny street, gold pollen drifting, a dozen people sneezing and vanishing. |
 | S04a, S04b | L04 | (a) A man at a glass office table, mid-sneeze. (b) Him landing in a kitchen. |
 | S05 | L05 | His mom at her counter, a plate already out for him, `bright`. |
 | S06a, S06b | L06 | (a) A dog walker sneezing on a path. (b) Him landing in a dog bed beside his dog. |
-| S07a, S07b | L07 | (a) A man at a backyard party, sneezing. (b) Him landing in an office facing his boss at her desk. |
-| S08 | L08 | The boss and him staring at each other, his face `sheepish`. |
+| S07a, S07b | L07 | (a) A man at a backyard party, sneezing. (b) Him landing on a plaid couch in his landlord's living room, the landlord (an older man in a sweater vest) in the armchair opposite with a mug. |
+| S08 | L08 | The landlord raising his eyebrows, the man's face `sheepish`. |
 | S09 | L09 | Me mid-sneeze in the park. |
 | S10a, S10b | L10 | (a) The green armchair room, the old man in it. (b) His face, `kind`. |
 | S11 | L11 | Top-down: the tea tray, two cups already poured. Plant 3. |
@@ -125,8 +126,8 @@ Times are estimates at 290 wpm with 0.15 s gaps. Every line gets one to three sh
 | S25 | L25 | Top-down: a plate of my favorite cookies beside the two cups. |
 | S26 | L26 | A small cake on the tray with one candle, him smiling, me staring, `uneasy`. |
 | S27 | L27 | My bedroom at night, me sneezing in bed, clock at 2:00. Tag 64. |
-| (drop) | | 0.6 s: voice and room only. Black, then the TV's blue glow. |
-| S28 | L28 | The front room in the dark, only the TV glowing. |
+| (drop) | | 0.6 s: voice and room only. Dark, then the TV's steady blue glow fading up (no flicker). |
+| S28 | L28 | The front room in the dark, only the TV glowing, steady, no flicker. |
 | S29a, S29b | L29 | (a) The old man in the armchair, awake, TV light on his glasses. (b) His face, `quiet`. |
 | S30 | L30 | Slow push past his shoulder to the wall behind. |
 | S31 | L31 | Punch in: the wall. My face in a photo. |
@@ -189,8 +190,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L04: A guy sneezes / in a MEETING / and lands in his mom's KITCHEN.
 - L05: She already has / a plate OUT.
 - L06: A dog walker sneezes / and lands / in his dog's BED.
-- L07: A man sneezes / at a party / and lands / in his BOSS'S office.
-- L08: He's still / not sure / what that MEANS.
+- L07: A man sneezes / at a party / and lands / on his LANDLORD'S couch.
+- L08: His rent / was three days LATE.
 - L09: Me? / I land next to HIM.
 - L10: An old man / in a green ARMCHAIR, / across town.
 - L11: Two cups of tea, / already POURED.
@@ -203,7 +204,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L18: I never TOLD him / I got one.
 - L19: He hums / while he pours. / The same song / Mom hums at the STOVE.
 - L20: Mom never sneezes. / Not once. / Not even in MAY.
-- L21: She takes a little white PILL / every morning. / She's never missed ONE.
+- L21: She takes a little white allergy PILL / every morning. / She's never missed ONE.
 - L22: She says / she's just CAREFUL.
 - L23: I asked her / who'd be thinking about me / that HARD.
 - L24: She said / probably some fan, / and changed the SUBJECT.
@@ -212,7 +213,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L27: Then last Tuesday, / I sneezed / at two in the MORNING.
 - (music drop, 0.6 s)
 - L28: His room was DARK. / Just the TV on.
-- L29: He wasn't asleep. / He was just SITTING there.
+- L29: He was AWAKE. / Just SITTING there, / in the dark.
 - L30: And on the wall / behind him...
 - L31: ME.
 - L32: Every clipping / with my name / in the PAPER.
@@ -226,7 +227,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L40: He's my GRANDPA. / Mom's DAD.
 - L41: They haven't spoken / since before / I was BORN.
 - L42: He's thought about me / every day / of my LIFE.
-- L43: And Mom's pills / were never / for the POLLEN.
+- L43: Mom's allergy pills / were never about the POLLEN.
 - L44: If she ever sneezed, / she'd land / right next to HIM.
 - L45: Because he thinks / about HER / too.
 - L46: Every morning / for twenty-four years, / one little PILL, / so she'd never have to LAND there.
@@ -235,7 +236,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L49: She said / it's too LATE now.
 - L50: She said / he wouldn't even want / to SEE her.
 - L51: But I'd seen the photo / by his ARMCHAIR.
-- L52: So the next morning, / I hid her PILLS.
+- L52: I hid her allergy PILLS.
 - L53: And I walked her / through the PARK.
 - L54: Through the yellow GRASS, / pollen up to our KNEES.
 - L55: Mom's eyes / started to WATER.
@@ -262,4 +263,6 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - The relationships are named in plain words the moment they're revealed (L39, L40) and shown with the young-Mom photo at the stove (S39, S40), never read off a cardigan or hairstyle.
 - Mom's fight with her dad stays small and unnamed (L48). Nobody is the bad guy.
 - R6 hands can't grip: cups rest on flat palms or the tray, the pill bottle slides with a cut, hands rest on the armchair arm.
+- **Flash (standards r1):** every sneeze vanish and landing (S01b, S02a, S03, S04, S06, S07, S09, S14, S27, S47, S57, S58, S61, S62) is a soft swirl of gold pollen that thins over at least 0.5 s, never a white pop or a bright frame. S27 to S38 (the 2 a.m. visit): the TV's blue-white glow is steady, with no flicker, no picture changes on its screen and no brightness pulsing, and the black under the 0.6 s drop fades into the TV glow over at least 0.5 s.
+- **Queue (standards r1, nice to have, for the orchestrator):** keep this story 4 or more slots from ep106-grandma-split in `queue.txt`, since both reunite estranged family.
 - Title, description, pin and captions checked against hard rule 8.

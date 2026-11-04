@@ -1,0 +1,11 @@
+{
+  "title": "The Radio Said My NAME 📻",
+  "description": "Every morning, the radio in our kitchen reads out one name, and nobody goes near that person all day. Everybody knows a named day is the worst day of your life, and bad luck is catching.\n\nIn twenty-four years it had never said mine. This Saturday, it did. I still needed oranges.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Comment ORANGE if you'd have picked one up.",
+  "made_for_kids": false,
+  "cover_s": 26.0,
+  "shape": "self-fulfilling",
+  "opening": "must",
+  "lane": "core",
+  "hold": "batch 11: scripts only, not built yet"
+}

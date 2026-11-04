@@ -3,19 +3,20 @@
 - **Slug:** `ep114-band-green` (batch 11, upload order 7 of 7)
 - **Pitch:** 13 in the batch 11 pitches file (the orchestrator's list calls it 3, and the slug is the same), blind panel 22.3, a new engine: the dance that won't stop (folk, named only as an engine). Opening shape `must`. Lane: core. Length arm: mid (60 to 90 s).
 - **Title:** When the Band Plays, EVERYONE Dances 🎺
-- **Changed from the pitch:** my best friend is Benny (no name clash). The band is never fully shown: five tall players in white jackets whose heads bend under the bandstand roof, hat brims always down, seen in parts and rim-lit from behind. The bandleader tips his brim up an inch once (L25, L26), and under it there's only dark and two small points of light. "Seven months" is now "all summer", so the timeline is one summer of Saturdays. Nobody in town explains anything: they just keep dancing beside me (L33, L34).
+- **Changed from the pitch:** my best friend is Benny (no name clash). The band is never fully shown: five tall players in white jackets whose heads bend under the bandstand roof, hat brims always down, seen in parts and rim-lit from behind. The bandleader tips his brim up an inch once (L25, L26), and under it there's only dark and two small points of light. "Seven months" is now "all summer", so the timeline is one summer of Saturdays. Nobody in town explains anything. The town can't stop until I dance, so my sitting out is what costs them (L33, L34, r1).
 - **Everyone is an adult.** I'm 20, Grandpa about 75, Benny 20, the townspeople adults.
-- **Word count:** 357 spoken words in 48 lines (L01 to L48), all `narrator`, plus one 0.6 s music drop before L21.
-- **Estimated length:** about 81.9 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
+- **Revised r1 (standards, 2026-11-04):** lines changed: L33 ("Nobody could STOP. / Not until I danced.") and L34 ("Grandpa's knees / were paying / for MY bench."), so the twist is the rule's cost on the town, not the town quietly kind to me. Shots S33, S34, the warmth notes and the caption key (lawn green) changed to match. Not voiced yet, so nothing to re-voice.
+- **Word count:** 360 spoken words in 48 lines (L01 to L48), all `narrator`, plus one 0.6 s music drop before L21.
+- **Estimated length:** about 82.6 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright summer evenings on a green lawn with string lights and a white bandstand, painted shops around the green. The 3 a.m. stretch (L21 to L28) is the one dark scene: the string lights the only light, the bandstand lit from inside so the players are rim-lit silhouettes. Sunrise on the grass at the end is gold.
 - **Hold:** scripts only (batch 11). Not built, not voiced.
 
 ## Variety table
-The batch table is in `stories/ep108-lamp-man/script.md`. This row:
+The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
 
 | Setting | Creature | First-line type | Ending shape | Kind of warmth |
 |---|---|---|---|---|
-| a town green with a white bandstand | a band nobody knows, never fully shown | `must` | `for-me` | a whole town, quietly beside me |
+| a town green with a white bandstand | a band nobody knows, never fully shown | `must` | `for-me` | getting up for the people paying for my sadness |
 
 ## The big idea
 **The band on the green plays for the saddest person in town and won't stop until they dance, and all summer the whole town has been dancing every Saturday, past three in the morning, because the saddest one was me, on my bench, since my best friend moved away.**
@@ -43,14 +44,14 @@ The batch table is in `stories/ep108-lamp-man/script.md`. This row:
   1. L18: every dancer ends each song facing my bench.
   2. L14: the band first came the very next week after Benny left.
 - **Ending shape:** the exception turns out to be the reason, and joins in.
-- **Warmth:** community, a whole town quietly beside one sad person.
+- **Warmth:** getting up for the people my sadness was costing (the town, and Grandpa's knees), then calling my best friend. The rule's cost, never a town being quietly kind (r1).
 - **Sad family reveal?** No.
 
 ## Quotable line
 **L39: "I danced / like a folding CHAIR."**
 
 ## Clarity test (cold, two sentences)
-In this town, when a strange band plays on the green everyone has to dance, except the narrator, who's never danced since his best friend moved away. The band plays for the saddest person in town and won't stop until they dance, so the whole town has been dancing beside him all summer, and when he finally stands up and dances, the music stops and he calls his friend.
+In this town, when a strange band plays on the green everyone has to dance, except the narrator, who's never danced since his best friend moved away. The band plays for the saddest person in town and won't stop until they dance, so the whole town, his grandpa's sore knees included, has had to keep dancing all summer because he wouldn't, and when he finally stands up and dances, the music stops and he calls his friend.
 
 ## The opening recipe (playbook v1), point by point
 1. Line 1 is an obligation (`must`). 13 words, about 2.7 s.
@@ -86,7 +87,7 @@ Creature-light: five players, never fully shown, never the whole body lit at onc
 
 ## Palette
 - Lawn green `#4fc45a`, bandstand white `#f2f0e8`, string-light gold `#ffd36b`, brass `#d9a62e`, night blue `#22305e`, my mustard `#e0a32a`, Benny green `#3e9e5a`.
-- **Caption key colour:** brass `#d9a62e`.
+- **Caption key colour:** lawn green `#4fc45a` (r1: brass was the batch's fourth gold).
 
 ## Music
 Synthesized in `blocky/sound.py`: our own brass-band-style tune (a march and a waltz of our own, never a known melody). **B-flat major, 128 BPM** for the montage, bright and bouncy (L03 to L10). L11 to L18: the same tune, heard from the bench, thinner. L19, L20: the tune looping, slightly slower and flatter each time. **Drop** for 0.6 s before L21. L21 to L27: the tune's loop under a heavy low drone, the brass going sour. L28 to L34: the drone alone, soft. L37 to L40: the tune back at full, then a big final chord on "BAR". L41 to L48: string-light hum, birds at sunrise, then the tune starting again far off on L46.
@@ -136,8 +137,8 @@ Times are estimates. Every line gets one to three shots with acting in each, and
 | S30 | L30 | Grandpa's tired feet, still going. |
 | S31 | L31 | Me on the bench, close. |
 | S32a, S32b | L32 | (a) Quick cuts: the bank manager, the mail carrier, the sandwich man, each dancing a step from my bench. (b) Grandpa a step from me. |
-| S33 | L33 | Grandpa's face, `tired`, smiling at me. |
-| S34 | L34 | The dancers around my bench, close. |
+| S33 | L33 | Grandpa's face, `tired`, still dancing, looking at me. |
+| S34 | L34 | Grandpa's knees, close, still going on the beat, my still sneakers on the bench edge in the same frame. |
 | S35 | L35 | The tag's footprint row, close, mine dark. |
 | S36 | L36 | My face, `determined`. |
 | S37 | L37 | Me standing up off the bench. My footprint glyph lights. |
@@ -156,7 +157,7 @@ Times are estimates. Every line gets one to three shots with acting in each, and
 ## Face and hands beats
 The builder's framing pre-check reads exactly these. At phone size (390 px wide) each face is at least 1/5 of the frame width and out of the caption band.
 1. **S02a, L02:** my face on the bench, `glum`, close.
-2. **S23 and S33, L23 and L33:** Grandpa's tired face mid-dance, then smiling at me, close.
+2. **S23 and S33, L23 and L33:** Grandpa's tired face mid-dance, then looking at me, still dancing, close.
 3. **S25 and S26, L25 and L26:** the bandleader's face half under his brim, the top half in full shadow, two small lights, low camera.
 4. **S27, L27:** a row of dancers' faces turned to me, each readable, me in the same frame.
 5. **S44, L44:** my face on the grass with the phone on my chest and Benny's face on its screen (no grip).
@@ -200,8 +201,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L30: And it doesn't STOP / until they dance.
 - L31: All summer, / that was ME.
 - L32: The whole town / has been dancing / right next to me / for MONTHS.
-- L33: Nobody ever / said a WORD.
-- L34: They just / kept DANCING. / Beside me.
+- L33: Nobody could STOP. / Not until I danced.
+- L34: Grandpa's knees / were paying / for MY bench.
 - L35: The rule says / everyone has to DANCE.
 - L36: And I'm part / of EVERYONE.
 - L37: So I stood UP.

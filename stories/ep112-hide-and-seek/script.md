@@ -1,29 +1,30 @@
 # ep112-hide-and-seek: the script (writer, 2026-11-04, batch 11)
 
 - **Slug:** `ep112-hide-and-seek` (batch 11, upload order 5 of 7)
-- **Pitch:** 9 in the batch 11 pitches (blind panel 24.5), a new engine: hiding in plain sight (named only as an engine). Opening shape `count`. **Lane: experiment** (comedy). Length arm: ultra-short (20 to 45 s): one rule, one beat, one twist.
-- **Title:** Uncle Pete Has Been Hiding 31 YEARS 🫣
+- **Pitch:** 9 in the batch 11 pitches (blind panel 24.5), a new engine: hiding in plain sight (named only as an engine). Opening shape `confess` (r1: line 1 is "My family's game...", already in it, so the `count` tag was wrong). **Lane: experiment** (comedy). Length arm: ultra-short (20 to 45 s): one rule, one beat, one twist.
+- **Title:** Our Family Game Never ENDED 🫣
 - **Changed from the pitch:** the neighbor is Mr. Glenn (the pitch's Mr. Dale is already used in ep85 and ep92). The pitch's sting ("Grandpa? He's been hiding since 2004.") could read as a grandpa who's gone, so it's cut. The loop is mine instead: Pete's "it" now, I'm hiding, and I'll be at next year's reunion in a mustache. Both plants come before the reveal: Mr. Glenn always sits facing the old shed (L08), and his potato salad is Pete's (L11).
 - **Everyone is an adult.** I'm 21, Uncle Pete is about 55, Grandma about 80, the cousins adults. The game started thirty-one years ago, when everyone playing was a grown-up (Pete was 24). Nobody young is in the cast.
+- **Revised r1 (standards, 2026-11-04):** S02 and S03 are now present-day shots (the old group photo on Grandma's flat palm, Pete's empty spot), the title is "Our Family Game Never ENDED 🫣", the opening tag is `confess`, the description no longer mentions the neighbor, and the caption key is checked red. No spoken line changed.
 - **Word count:** 145 spoken words in 21 lines (L01 to L21), all `narrator`, plus one 0.4 s music drop before L13.
 - **Estimated length:** about 33.8 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright summer afternoon: Grandma's big green backyard, red-checked picnic tables, string lights, a sagging old shed, the white fence to the neighbor's yellow house. No dark scene.
 - **Hold:** scripts only (batch 11). Not built, not voiced.
 
 ## Variety table
-The batch table is in `stories/ep108-lamp-man/script.md`. This row:
+The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
 
 | Setting | Creature | First-line type | Ending shape | Kind of warmth |
 |---|---|---|---|---|
-| Grandma's backyard reunion | a disguise (a mustache too big) | `count` | `plain-sight` | family play (comedy) |
+| Grandma's backyard reunion | a disguise (a mustache too big) | `confess` | `plain-sight` | family play (comedy) |
 
 ## The big idea
 **Our family's hide-and-seek game has never ended because Uncle Pete was never found, and for thirty-one years he's been hiding as our grandma's next-door neighbor, Mr. Glenn, who helps us look for him every reunion.**
 
 - **Engine:** hiding in plain sight. No story's letter or line: our reunion, our salad.
 - **Why it clicks:** Mr. Glenn helps look every year (L07), always sits facing the old shed where Pete hid (L08), and brings Pete's famous potato salad that nobody else has the recipe for (L09 to L12). Nobody looks at the guy helping you look (L18).
-- Ten pitched, this one kept. Dropped: Pete hid in the shed and never came out (a person gone, too dark), Pete is the family dog (a gag with no logic), Pete is a scarecrow (the dropped scarecrow-swap), Grandma is hiding from all of us (a sad beat), Pete is me (muddled), Pete went to the moon (no picture), the shed is bigger inside (a door idea), Pete is Grandpa in disguise (two relatives at once), the game counts us and we're one too many (a Keeper's count), Pete hides by standing very still (ep88's man in the window).
-- Checked against "Claimed big ideas" and every twist: not ep82's house in disguise (a person, not a creature), not ep88's still watcher, not a copy or a swap, and the reveal rests on his salad and his own words, never on reading the mustache alone. Shape `plain-sight`. (ep108-lamp-man, four uploads earlier, also hides two men in a coat. That's a costume worn for a job and a secret partnership. This is a game and a joke. See the report.)
+- Ten pitched, this one kept. Dropped: Pete hid in the shed and never came out (a person gone, too dark), Pete is the family dog (a gag with no logic), Pete is a scarecrow (ep108-scarecrow-swap's field), Grandma is hiding from all of us (a sad beat), Pete is me (muddled), Pete went to the moon (no picture), the shed is bigger inside (a door idea), Pete is Grandpa in disguise (two relatives at once), the game counts us and we're one too many (a Keeper's count), Pete hides by standing very still (ep88's man in the window).
+- Checked against "Claimed big ideas" and every twist: not ep82's house in disguise (a person, not a creature), not ep88's still watcher, not a copy or a swap, and the reveal rests on his salad and his own words, never on reading the mustache alone. Shape `plain-sight`. (ep108-scarecrow-swap, four uploads earlier, is a grandpa swapped with a straw scarecrow for a job, set up with Grandma, on a farm at dusk, ending on Grandma preferring the straw one. This is one relative posing as another person to win a family game, at a reunion, ending on the next one hiding.)
 - **The rule is the clue:** "Uncle Pete's still hiding" reads as a mystery or a vanishing. After L14 he's been next door the whole time.
 
 ## The story
@@ -52,12 +53,12 @@ The batch table is in `stories/ep108-lamp-man/script.md`. This row:
 The narrator's family has played one hide-and-seek game for thirty-one years because Uncle Pete was never found. Pete has been living next door to Grandma in a fake mustache as "Mr. Glenn" and helping them look for himself, until the narrator recognizes his potato salad.
 
 ## The opening recipe (playbook v1), point by point
-1. Line 1 is a count that's wrong (thirty-one years, one still hiding). 14 words, about 2.8 s.
+1. Line 1 is a `confess` line ("My family's game...") with a count in it (thirty-one years, one still hiding). 14 words, about 2.8 s.
 2. Frame 1 is a close-up of Grandma's face, eyes shut, counting against the old shed, the tag at 31 : 204. No wide.
 3. A sound hit on "HIDING": a soft comic boing-thump and a swell.
 4. The mystery is in line 1.
 5. L02 to L09 show the game at work, one or two shots per line, none over 2 s.
-6. The title is the count, never the neighbor.
+6. The title is the game that never ended, never the neighbor.
 
 ## World
 - **Grandma's backyard:** big and green, two red-checked picnic tables, a grill, string lights, a sagging gray shed at the back, a white fence, and over it the neighbor's tidy yellow house.
@@ -80,7 +81,7 @@ Creature-light: Mr. Glenn is an ordinary man, made a little wrong by one thing. 
 
 ## Palette
 - Grass green `#5fcf5a`, checked red `#e84a4a`, shed gray `#9aa0a6`, neighbor's yellow `#ffd84a`, mustache brown `#6b4226`, salad cream `#f4e7b0`, Grandma purple `#9b6bd6`.
-- **Caption key colour:** neighbor's yellow `#ffd84a`.
+- **Caption key colour:** checked red `#e84a4a` (r1: the yellow matched ep110's gold).
 
 ## Music
 Synthesized in `blocky/sound.py`. **C major, 126 BPM**: a sneaky pizzicato figure, light and comic. L10 to L12: the figure slows, one note held. **Drop** for 0.4 s before L13. L14, L15: a comic sting on "PETE". L16 to L21: the sneaky figure back, quicker.
@@ -96,8 +97,8 @@ Times are estimates. Every line gets one or two shots with acting in each, and a
 | Shots | Lines | Picture |
 |---|---|---|
 | S01a, S01b | L01 | (a) Close: Grandma's face today against the shed, eyes shut, counting, as she does at the start of every reunion, tag 31 : 204. (b) Cousins scattering across the yard. Punch in on "HIDING". |
-| S02a, S02b | L02 | In a warm faded-photo tint, thirty-one years ago, everyone a grown-up in older clothes: (a) a younger Grandma counting at the same shed. (b) Grown cousins found behind the grill, laughing. |
-| S03 | L03 | Same tint: young Grandma looking around an empty yard at dusk. |
+| S02a, S02b | L02 | Present day: (a) Grandma's flat palm holding the old group photo from that first reunion (grown-ups in older clothes, everyone found, lined up by the grill). (b) Punch in on the photo. |
+| S03 | L03 | Close on the photo in her palm: one empty spot in the back row, where Pete should be. |
 | S04 | L04 | Grandma at a reunion table, tapping it with one finger, `stunned`. |
 | S05a, S05b | L05 | (a) Today's reunion: the family at the tables. (b) The tag ticks a day. |
 | S06a, S06b | L06 | (a) Cousins peering under the porch. (b) Me checking behind the old shed. |
@@ -159,6 +160,6 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt, nobody is gone: L01's "still hiding" is answered by L14 inside 20 s.
 - The reveal is said in words (L14) and proven by the salad (L11, L12), and the mustache falling only confirms it. The relationship (my uncle) is named in L01 and again at L14.
-- The 31-years-ago shots (S02, S03, in a faded-photo tint) shows the family as adults in older clothes, no young cast. It's the rule's montage, not a backstory scene, and it's done by 8 s.
+- No flashback (standards r1). S02 and S03 are present-day shots of Grandma's flat palm holding the old group photo, with Pete's empty spot in the back row. The people in the photo are adults in older clothes, a still picture inside a present-day frame, no young cast.
 - R6 hands can't grip: the bowl rests on flat palms, the flashlight rests on the fence rail, I point with an open hand, the mustache drops from his lip.
 - Title, description, pin and captions checked against hard rule 8.
