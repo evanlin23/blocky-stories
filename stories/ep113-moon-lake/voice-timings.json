@@ -1,0 +1,1777 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Nobody swims Grandma's lake after noon. It costs the town its afternoon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.586,
+   "onset": 0.19,
+   "end": 3.397,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.724,
+     1.241
+    ],
+    [
+     1.241,
+     1.81
+    ],
+    [
+     1.879,
+     2.241
+    ],
+    [
+     2.241,
+     2.577
+    ],
+    [
+     2.577,
+     3.397
+    ]
+   ]
+  },
+  "L02": {
+   "text": "After noon, the water gets warm. And something down there glows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.845
+    ],
+    [
+     0.845,
+     1.431
+    ],
+    [
+     1.5,
+     1.992
+    ],
+    [
+     1.992,
+     2.69
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Grandma says that's the moon. It sleeps down there all day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.241
+    ],
+    [
+     1.31,
+     1.638
+    ],
+    [
+     1.638,
+     1.914
+    ],
+    [
+     1.914,
+     2.517
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Wake it, and it comes up. Whenever it wakes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.586
+    ],
+    [
+     0.586,
+     1.052
+    ],
+    [
+     1.121,
+     1.948
+    ]
+   ]
+  },
+  "L05": {
+   "text": "So at eleven fifty-nine, every swimmer climbs out in a line.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     1.172
+    ],
+    [
+     1.259,
+     1.724
+    ],
+    [
+     1.724,
+     2.164
+    ],
+    [
+     2.164,
+     2.759
+    ]
+   ]
+  },
+  "L06": {
+   "text": "At noon, the fish all swim to the middle, where it's warm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.543,
+     0.759
+    ],
+    [
+     0.759,
+     1.138
+    ],
+    [
+     1.138,
+     1.448
+    ],
+    [
+     1.474,
+     2.241
+    ]
+   ]
+  },
+  "L07": {
+   "text": "People make their afternoon coffee straight from the lake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.155,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     1.388
+    ],
+    [
+     1.388,
+     1.698
+    ],
+    [
+     1.698,
+     2.241
+    ]
+   ]
+  },
+  "L08": {
+   "text": "And every night, the moon comes up right over Grandma's dock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.155,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.647,
+     0.914
+    ],
+    [
+     0.914,
+     1.215
+    ],
+    [
+     1.215,
+     1.534
+    ],
+    [
+     1.534,
+     2.448
+    ]
+   ]
+  },
+  "L09": {
+   "text": "I help Grandma Nell at the lake every weekend.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.87
+    ],
+    [
+     0.87,
+     1.172
+    ],
+    [
+     1.172,
+     2.017
+    ]
+   ]
+  },
+  "L10": {
+   "text": "She's eighty-one. She still rows out every single evening.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.793,
+     1.069
+    ],
+    [
+     1.069,
+     1.431
+    ],
+    [
+     1.431,
+     2.517
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Her oar is scuffed silver all down one side.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.948
+    ],
+    [
+     0.948,
+     1.276
+    ],
+    [
+     1.276,
+     1.948
+    ]
+   ]
+  },
+  "L12": {
+   "text": "She says she's checking her fishing lines.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.905
+    ],
+    [
+     0.905,
+     1.724
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Her arms shake at breakfast now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.81
+    ],
+    [
+     0.81,
+     1.552
+    ]
+   ]
+  },
+  "L14": {
+   "text": "She says it's just the coffee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.75
+    ],
+    [
+     0.75,
+     1.379
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Then one afternoon, it hit a hundred degrees.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.931,
+     1.138
+    ],
+    [
+     1.138,
+     2.034
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Grandma was napping. The lake was right there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     1.017,
+     1.414
+    ],
+    [
+     1.414,
+     2.069
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Three o'clock. I jumped in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.19,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.664,
+     1.431
+    ]
+   ]
+  },
+  "L18": {
+   "text": "It was warm as a bath.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.259
+    ]
+   ]
+  },
+  "L19": {
+   "text": "I dove down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ]
+   ]
+  },
+  "L20": {
+   "text": "And under my hands, the glow got brighter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     0.81
+    ],
+    [
+     0.836,
+     1.069
+    ],
+    [
+     1.069,
+     1.776
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Something huge rolled over beneath me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.138
+    ],
+    [
+     1.138,
+     1.793
+    ]
+   ]
+  },
+  "L22": {
+   "text": "One pale curve, wider than Grandma's house.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.914,
+     1.207
+    ],
+    [
+     1.207,
+     2.121
+    ]
+   ]
+  },
+  "L23": {
+   "text": "And the sky started to go dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     0.836
+    ],
+    [
+     0.836,
+     1.5
+    ]
+   ]
+  },
+  "L24": {
+   "text": "At three in the afternoon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.362
+    ]
+   ]
+  },
+  "L25": {
+   "text": "I swam for the dock as hard as I could.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     0.897
+    ],
+    [
+     0.897,
+     1.267
+    ],
+    [
+     1.267,
+     1.862
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Grandma was on it, in her robe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.776
+    ],
+    [
+     0.802,
+     1.466
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Behind me, the glow sank down and went dim.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.543,
+     0.802
+    ],
+    [
+     0.802,
+     1.215
+    ],
+    [
+     1.215,
+     1.897
+    ]
+   ]
+  },
+  "L28": {
+   "text": "And the sun came back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.155,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     1.155
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Grandma didn't yell. She just looked at me and said, \"Not yet.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ],
+    [
+     0.966,
+     1.319
+    ],
+    [
+     1.319,
+     1.474
+    ],
+    [
+     1.474,
+     1.741
+    ],
+    [
+     1.81,
+     2.431
+    ]
+   ]
+  },
+  "L30": {
+   "text": "So that night, I followed her down to the dock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     1.103
+    ],
+    [
+     1.103,
+     1.353
+    ],
+    [
+     1.353,
+     1.914
+    ]
+   ]
+  },
+  "L31": {
+   "text": "She rowed out to the middle, where the glow is brightest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.19,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.569,
+     0.966
+    ],
+    [
+     1.034,
+     1.448
+    ],
+    [
+     1.448,
+     2.172
+    ]
+   ]
+  },
+  "L32": {
+   "text": "She leaned her oar down into the water.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.19,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.19,
+     0.406
+    ],
+    [
+     0.406,
+     0.603
+    ],
+    [
+     0.603,
+     0.957
+    ],
+    [
+     0.957,
+     1.534
+    ]
+   ]
+  },
+  "L33": {
+   "text": "And she pushed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.034,
+   "onset": 0.155,
+   "end": 0.828,
+   "chunks": [
+    [
+     0.155,
+     0.828
+    ]
+   ]
+  },
+  "L34": {
+   "text": "The whole lake started to rise.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.5
+    ]
+   ]
+  },
+  "L35": {
+   "text": "And the moon came up out from under her boat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.793
+    ],
+    [
+     0.793,
+     1.164
+    ],
+    [
+     1.164,
+     1.741
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Water pouring off its craters. The lake lit up white.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.241
+    ],
+    [
+     1.31,
+     1.603
+    ],
+    [
+     1.603,
+     2.293
+    ]
+   ]
+  },
+  "L37": {
+   "text": "It lifted off the end of her oar, and floated up into the sky.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.155,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.854
+    ],
+    [
+     0.854,
+     1.31
+    ],
+    [
+     1.379,
+     1.733
+    ],
+    [
+     1.733,
+     1.957
+    ],
+    [
+     1.957,
+     2.603
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Right over the dock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.19,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     1.0
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Grandma's been pushing the moon up every night for fifty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.957
+    ],
+    [
+     0.957,
+     1.319
+    ],
+    [
+     1.319,
+     1.724
+    ],
+    [
+     1.724,
+     2.586
+    ]
+   ]
+  },
+  "L40": {
+   "text": "When she got back, she told me the rest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.707
+    ],
+    [
+     0.741,
+     1.077
+    ],
+    [
+     1.077,
+     1.621
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Nobody swims after noon, because swimmers wake it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.207
+    ],
+    [
+     1.259,
+     1.759
+    ],
+    [
+     1.759,
+     2.328
+    ]
+   ]
+  },
+  "L42": {
+   "text": "And if it wakes in the afternoon, so does the night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.543
+    ],
+    [
+     0.543,
+     1.172
+    ],
+    [
+     1.241,
+     1.526
+    ],
+    [
+     1.526,
+     2.069
+    ]
+   ]
+  },
+  "L43": {
+   "text": "I asked her what happens when she can't row anymore.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.957
+    ],
+    [
+     0.957,
+     1.345
+    ],
+    [
+     1.345,
+     2.086
+    ]
+   ]
+  },
+  "L44": {
+   "text": "She just rubbed her arms.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     1.259
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Then last Friday at dusk, she rowed out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.698
+    ],
+    [
+     0.698,
+     1.034
+    ],
+    [
+     1.103,
+     1.828
+    ]
+   ]
+  },
+  "L46": {
+   "text": "She leaned the oar in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.19,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.19,
+     0.492
+    ],
+    [
+     0.492,
+     1.172
+    ]
+   ]
+  },
+  "L47": {
+   "text": "And it didn't move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.155,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     1.052
+    ]
+   ]
+  },
+  "L48": {
+   "text": "She pushed again, her arms shaking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.603
+    ]
+   ]
+  },
+  "L49": {
+   "text": "The sky stayed dark. No moon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.914
+    ],
+    [
+     0.992,
+     1.638
+    ]
+   ]
+  },
+  "L50": {
+   "text": "And Grandma looked back at me on the dock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     0.957
+    ],
+    [
+     0.957,
+     1.112
+    ],
+    [
+     1.112,
+     1.759
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Nobody swims after noon, because swimmers wake it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.207
+    ],
+    [
+     1.259,
+     1.759
+    ],
+    [
+     1.759,
+     2.328
+    ]
+   ]
+  },
+  "L52": {
+   "text": "So I swam.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L53": {
+   "text": "Straight down into the glow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.276
+    ]
+   ]
+  },
+  "L54": {
+   "text": "I put both hands on the moon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.768
+    ],
+    [
+     0.768,
+     1.397
+    ]
+   ]
+  },
+  "L55": {
+   "text": "It was warm. And it was breathing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.672,
+     0.819
+    ],
+    [
+     0.819,
+     1.534
+    ]
+   ]
+  },
+  "L56": {
+   "text": "And I kicked as hard as I could.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.87
+    ],
+    [
+     0.87,
+     1.534
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Then it woke.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.052,
+   "onset": 0.172,
+   "end": 0.845,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ]
+   ]
+  },
+  "L58": {
+   "text": "The whole lake came up with it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     0.87
+    ],
+    [
+     0.87,
+     1.345
+    ]
+   ]
+  },
+  "L59": {
+   "text": "I came up beside Grandma's boat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     1.638
+    ]
+   ]
+  },
+  "L60": {
+   "text": "I climbed in beside her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.31
+    ]
+   ]
+  },
+  "L61": {
+   "text": "And under us, the moon lifted our whole boat right out of the lake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.155,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.681,
+     0.948
+    ],
+    [
+     0.948,
+     1.259
+    ],
+    [
+     1.259,
+     1.698
+    ],
+    [
+     1.698,
+     2.009
+    ],
+    [
+     2.009,
+     2.569
+    ]
+   ]
+  },
+  "L62": {
+   "text": "For one second, we were sitting on top of it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.732,
+     1.061
+    ],
+    [
+     1.061,
+     1.388
+    ],
+    [
+     1.388,
+     1.793
+    ]
+   ]
+  },
+  "L63": {
+   "text": "Then it slid out from under us, and we splashed down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.672
+    ],
+    [
+     0.672,
+     1.103
+    ],
+    [
+     1.155,
+     1.319
+    ],
+    [
+     1.319,
+     2.207
+    ]
+   ]
+  },
+  "L64": {
+   "text": "And it went up. Right over the dock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.586
+    ],
+    [
+     0.647,
+     0.957
+    ],
+    [
+     0.957,
+     1.517
+    ]
+   ]
+  },
+  "L65": {
+   "text": "Now we go out together.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.19,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.448,
+     0.724
+    ],
+    [
+     0.724,
+     1.259
+    ]
+   ]
+  },
+  "L66": {
+   "text": "She rows. I swim.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.19,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.526,
+     1.155
+    ]
+   ]
+  },
+  "L67": {
+   "text": "The rule's still the rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.276
+    ]
+   ]
+  },
+  "L68": {
+   "text": "No swimming after noon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.655,
+     1.362
+    ]
+   ]
+  },
+  "L69": {
+   "text": "Unless it's your turn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.19,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.448,
+     1.224
+    ]
+   ]
+  },
+  "L70": {
+   "text": "So come on in, any morning. The water's great.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.603
+    ],
+    [
+     0.629,
+     1.103
+    ],
+    [
+     1.172,
+     2.069
+    ]
+   ]
+  }
+ }
+}
