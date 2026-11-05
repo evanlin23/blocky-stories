@@ -15,7 +15,7 @@
  "tail": 0.0,
  "fade_in": false,
  "fade_out": false,
- "rev": 3,
+ "rev": 4,
  "look": {
   "style": "closer",
   "fog": "#e4f1fb",
@@ -336,7 +336,7 @@
     ],
     [
      "asked it ONCE.",
-     "asked it once."
+     "asked it. Once."
     ],
     [
      "The pizza",
@@ -446,7 +446,7 @@
    "chunks": [
     [
      "Mom packed snacks",
-     "Mom packed snacks"
+     "Mom packed, snacks"
     ],
     [
      "like we",
@@ -480,11 +480,11 @@
     ],
     [
      "that HONKS,",
-     "that honks,"
+     "that honks."
     ],
     [
      "and a",
-     "and a"
+     "And a"
     ],
     [
      "frozen WATERFALL.",
@@ -4608,7 +4608,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 3
+  "rev": 4
  },
  "set_moves": [],
  "clip_ok": [],

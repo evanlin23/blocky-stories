@@ -110,34 +110,34 @@
    ]
   },
   "L05": {
-   "text": "A pizza guy asked it once. The pizza showed up a week late.",
+   "text": "A pizza guy asked it. Once. The pizza showed up a week late.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.948,
+   "dur": 3.034,
    "onset": 0.172,
-   "end": 2.741,
+   "end": 2.845,
    "chunks": [
     [
      0.172,
-     0.664
+     0.647
     ],
     [
-     0.664,
-     1.345
+     0.647,
+     1.466
     ],
     [
-     1.431,
-     1.767
+     1.552,
+     1.87
     ],
     [
-     1.767,
-     2.026
+     1.87,
+     2.129
     ],
     [
-     2.026,
-     2.741
+     2.129,
+     2.845
     ]
    ]
   },
@@ -254,42 +254,42 @@
    ]
   },
   "L10": {
-   "text": "Mom packed snacks like we were driving to the moon.",
+   "text": "Mom packed, snacks like we were driving to the moon.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.207,
+   "dur": 2.362,
    "onset": 0.172,
-   "end": 2.017,
+   "end": 2.172,
    "chunks": [
     [
      0.172,
-     0.87
+     1.008
     ],
     [
-     0.87,
-     1.043
+     1.008,
+     1.181
     ],
     [
-     1.043,
-     1.397
+     1.181,
+     1.534
     ],
     [
-     1.397,
-     2.017
+     1.534,
+     2.172
     ]
    ]
   },
   "L11": {
-   "text": "A big snowy pine, a snowplow that honks, and a frozen waterfall.",
+   "text": "A big snowy pine, a snowplow that honks. And a frozen waterfall.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.017,
+   "dur": 3.207,
    "onset": 0.172,
-   "end": 2.828,
+   "end": 3.017,
    "chunks": [
     [
      0.172,
@@ -297,23 +297,23 @@
     ],
     [
      0.379,
-     0.897
+     0.845
     ],
     [
-     0.948,
-     1.371
+     0.87,
+     1.301
     ],
     [
-     1.371,
-     1.69
+     1.301,
+     1.776
     ],
     [
-     1.715,
-     1.837
+     1.845,
+     1.992
     ],
     [
-     1.837,
-     2.828
+     1.992,
+     3.017
     ]
    ]
   },
