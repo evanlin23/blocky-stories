@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -159,6 +159,8 @@ ME2 = (TAX - 1.8, TAY + 0.3)                      # where I stand to say it
 PHOTO_AT = (2.2, 1.7)                             # Grandma showing the photo
 PHOTO_W = (PHOTO_AT[0] + 0.47, PHOTO_AT[1] - 0.49, 1.14)   # about where the photo lies, in the world
 GY = -120.0
+BN = (-3.6, 5.6)                                  # the bench Glenn sits on in the shed shot
+BNY = -131.3
 
 # ===================================================================== 01 the hook (L01 to L03)
 cue(0, "clock", y=31.0, d=204.0)
@@ -170,19 +172,22 @@ move(0, "shedd", yaw=0.0)
 move(0, "fork", z=-60.0)
 move(0, "bowl", z=-60.0)
 move(0, "fst", z=-60.0)
+move(0, "bench", vis=0.0)
 put("grandma", 0, [GRS[0], GRS[1]], 0, expr="shut", arms=[0, 150])
 shot(0, orb(GRS[0], GRS[1], 1.38, 0, 3.0, 40, push=0.14), "grancount")
 only("L01.2", ["grandma", "c1", "c2", "c3"])
-put("c1", "L01.2", [-4.0, 5.4], 90, expr="grin")
-put("c2", "L01.2", [-5.0, 6.4], 180, expr="grin")
-put("c3", "L01.2", [-6.6, 5.0], -90, expr="grin")
-go("c1", "L01.3+0.3", [4.5, 7.6], run=True)
-go("c2", "L01.3+0.3", [-4.0, 11.5], run=True)
-go("c3", "L01.3+0.3", [-11.0, 2.5], run=True)
-shot("L01.2", mv([-2.6, -1.5, 2.0], [-3.4, 5.5, 1.0], 26, [-2.2, -1.2, 2.0], [-3.0, 5.5, 1.0], 26), "scatter")
-only("L01.3", [])
+put("c1", "L01.2", [-3.7, 1.4], 15, expr="smile")
+put("c2", "L01.2", [-9.0, 2.6], 0, expr="grin")
+put("c3", "L01.2", [-4.8, 1.4], -15, expr="smile")
+beat("c1", "L01.2+0.3", expr="laugh")
+beat("c3", "L01.2+0.3", expr="laugh")
+go("c1", "L01.3-0.02", [-0.5, 6.5], run=True)
+go("c3", "L01.3-0.02", [-8.0, 6.0], run=True)
+shot("L01.2", mv([-4.25, -2.9, 1.45], [-4.25, 1.4, 1.2], 24, [-4.25, -2.5, 1.45], [-4.25, 1.4, 1.2], 24), "scatter")
+only("L01.3", ["grandma"])
+put("grandma", "L01.3", [-7.0, 6.7], 25, expr="worried", arms=[0, 0], head=[-35, 0])
 move("L01.3", "shedd", dur=0.5, yaw=38.0)
-shot("L01.3", orb(SHX + 1.0, 7.4, 1.0, -8, 4.0, 34, dz=0.5), "shedajar")
+shot("L01.3", orb(-6.6, 7.0, 1.2, -20, 4.2, 26, dz=0.2), "shedajar")
 
 # L02: the old photo on Grandma's palm
 cue("L02", "photo", v=1.0)
@@ -213,27 +218,27 @@ sit("c3", "L05", True)
 sit("c2", "L05", True)
 put("grandma", "L05", GR, 0, expr="smile")
 put("c2", "L05", [GL[0], FARA], 0, expr="smile")
-put("c1", "L05", [TBX - 0.9, FARB], 0, expr="laugh")
-put("c3", "L05", [TBX + 0.9, FARB], 0, expr="smile")
-shot("L05", mv([-2.6, -3.8, 2.4], [-2.2, 4.6, 1.0], 22, [-2.4, -3.2, 2.3], [-2.1, 4.6, 1.0], 22), "reunion")
+put("c1", "L05", [TBX - 0.6, FARB], 0, expr="laugh")
+put("c3", "L05", [TBX + 0.6, FARB], 0, expr="smile")
+shot("L05", orb(0.15, FARA, 1.2, 0, 4.6, 26, dz=0.4, push=0.1), "reunion")
 cue("L05.1", "clock", y=31.0, d=205.0)
 cue("L05.1", "pulse")
 beat("c1", "L05.1", head=[30, 0])
 beat("c3", "L05.1", head=[-30, 0])
-shot("L05.1", orb(TBX, FARB, 1.3, 25, 5.0, 30, dz=0.2), "tick")
+shot("L05.1", orb(TBX, FARB, 1.3, 25, 5.2, 30, dz=0.2), "tick")
 # L06: under the porch, behind the shed
 only("L06", ["c1", "c3"])
 sit("c1", "L06", False)
 sit("c3", "L06", False)
 px, py = G.PORCH
-put("c1", "L06", [px - 5.5, py - 0.8], 70, expr="worried", lean=10.0, head=[0, 34])
-put("c3", "L06", [px - 6.5, py - 1.4], 70, expr="worried", lean=12.0, head=[0, 30])
-beat("c1", "L06+0.5", lean=12.0, head=[-8, 38])
-shot("L06", mv([px - 2.0, py - 3.9, 1.4], [px - 6.0, py - 1.1, 1.05], 32, [px - 2.4, py - 3.5, 1.4], [px - 6.0, py - 1.1, 1.05], 32), "porch")
+put("c1", "L06", [px - 3.0, py - 2.0], 180, expr="worried", lean=14.0, head=[0, 30])
+put("c3", "L06", [px - 1.9, py - 2.0], 180, expr="worried", lean=16.0, head=[0, 26])
+beat("c1", "L06+0.5", lean=16.0, head=[-8, 34])
+shot("L06", mv([px - 4.6, py + 0.5, 1.1], [px - 2.4, py - 2.0, 1.15], 24, [px - 4.4, py + 0.3, 1.1], [px - 2.4, py - 2.0, 1.15], 24), "porch")
 only("L06.1+0.3", ["me"])
-put("me", "L06.1+0.3", [SHX + 2.0, SHY + 2.0], 66, expr="worried", head=[-20, 8])
+put("me", "L06.1+0.3", [SHX + 2.6, SHY + 2.2], 66, expr="worried", head=[-20, 8])
 beat("me", "L06.1+0.7", head=[18, 4], expr="worried")
-shot("L06.1+0.3", mv([SHX + 5.6, SHY + 0.8, 1.55], [SHX + 1.2, SHY + 1.8, 1.45], 32, [SHX + 5.2, SHY + 1.0, 1.55], [SHX + 1.2, SHY + 1.8, 1.45], 32), "behindshed")
+shot("L06.1+0.3", mv([SHX + 5.0, SHY + 0.6, 1.6], [SHX + 1.4, SHY + 1.6, 1.5], 26, [SHX + 4.7, SHY + 0.8, 1.6], [SHX + 1.4, SHY + 1.6, 1.5], 26), "behindshed")
 # L07: Mr. Glenn at the fence
 FX, FY = G.GLENN_FENCE
 only("L07", ["glenn"])
@@ -249,7 +254,10 @@ only("L08", ["glenn"])
 sit("glenn", "L08", True)
 put("glenn", "L08", GL, GY, expr="smile")
 shot("L08", orb(GL[0], GL[1], 1.32, GY, 3.0, 40, push=0.12), "glennstache")
-shot("L08.2", mv([GL[0] + 2.6, GL[1] - 1.5, 1.9], [-5.8, 7.9, 1.4], 28, [GL[0] + 2.4, GL[1] - 1.3, 1.9], [-6.0, 7.9, 1.4], 28), "glennshed")
+move("L08.2-0.05", "bench", vis=1.0)
+put("glenn", "L08.2", list(BN), BNY, expr="smile")
+shot("L08.2", mv([BN[0] - 4.0, BN[1] - 0.2, 1.45], [BN[0] - 1.6, BN[1] + 1.4, 1.35], 20, [BN[0] - 3.8, BN[1] - 0.1, 1.45], [BN[0] - 1.6, BN[1] + 1.4, 1.35], 20), "glennshed")
+move("L09-0.1", "bench", vis=0.0)
 # L09: the potato salad
 move("L09-0.05", "bowl", x=BOWL[0], y=BOWL[1] - 0.55, z=1.1)
 only("L09", ["glenn"])
@@ -258,7 +266,7 @@ put("glenn", "L09", [BOWL[0], BOWL[1] - 1.1], 180, expr="smile", arms=[75, 75])
 move("L09+0.15", "bowl", dur=0.45, x=BOWL[0], y=BOWL[1], z=0.815)
 beat("glenn", "L09+0.55", arms=[0, 0])
 shot("L09", mv([BOWL[0] + 0.3, BOWL[1] + 3.2, 1.9], [BOWL[0], BOWL[1] - 1.0, 1.2], 34, [BOWL[0] + 0.2, BOWL[1] + 2.8, 1.9], [BOWL[0], BOWL[1] - 1.0, 1.2], 34), "bringsalad")
-shot("L09.1+0.35", orb(BOWL[0], BOWL[1], 0.98, 180, 2.1, 40, dz=0.45), "bowlclose")
+shot("L09.1+0.35", orb(BOWL[0], BOWL[1] - 0.4, 1.2, 180, 3.3, 36, dz=0.15, push=0.1), "bowlclose")
 # L10: I finally try it
 only("L10", ["me", "c1", "c3"])
 sit("me", "L10", True)
@@ -279,11 +287,11 @@ shot("L11", orb(MEB[0], MEB[1], 1.3, 14, 2.8, 42, dz=0.05, push=0.16), "mechew")
 only("L12", ["c1", "c3"])
 sit("c1", "L12", False)
 sit("c3", "L12", False)
-put("c1", "L12", [TBX - 0.55, TBY - 1.6], 0, expr="worried")
-acting["c1"].append({"at": "L12+0.2", "pos": [TBX - 0.55, TBY - 1.6], "side": [55, 55], "expr": "worried"})
-put("c3", "L12", [TBX + 0.55, TBY - 1.6], 0, expr="worried")
-acting["c3"].append({"at": "L12.1", "pos": [TBX + 0.55, TBY - 1.6], "side": [55, 55], "expr": "worried"})
-shot("L12", orb(TBX, TBY - 1.6, 1.45, 0, 4.4, 38), "cousinshrug")
+put("c1", "L12", [TBX - 0.5, TBY - 1.6], 0, expr="worried")
+acting["c1"].append({"at": "L12+0.2", "pos": [TBX - 0.5, TBY - 1.6], "side": [55, 55], "expr": "worried"})
+put("c3", "L12", [TBX + 0.5, TBY - 1.6], 0, expr="worried")
+acting["c3"].append({"at": "L12.1", "pos": [TBX + 0.5, TBY - 1.6], "side": [55, 55], "expr": "worried"})
+shot("L12", orb(TBX, TBY - 1.6, 1.4, 0, 5.2, 38), "cousinshrug")
 
 # ===================================================================== 03 the reveal (P01, L13 to L19)
 # the 0.4 s hole: me looking from the bowl to Mr. Glenn
@@ -293,7 +301,7 @@ sit("glenn", "P01", True)
 put("me", "P01", list(MEB), 0, expr="worried", head=[0, 14])
 put("glenn", "P01", GL, GY, expr="smile")
 acting["me"].append({"at": "P01+0.15", "pos": list(MEB), "head": [34, 0]})
-shot("P01", orb(MEB[0], MEB[1], 1.35, -8, 2.6, 44), "melook")
+shot("P01", orb(MEB[0], MEB[1], 1.25, -8, 3.2, 40), "melook")
 # L13: so I walked over
 sit("me", "L13", False)
 put("me", "L13", list(MEB), 90, expr="smirk")
@@ -304,7 +312,7 @@ shot("L13", mv([-3.4, 0.4, 1.7], [-3.2, 4.4, 1.3], 28, [-2.6, 1.0, 1.65], [-1.3,
 acting["me"].append({"at": "L14", "pos": list(ME2), "yaw": 55.0, "expr": "smirk"})
 acting["me"].append({"at": "L14+0.25", "pos": list(ME2), "yaw": 55.0, "arms": [0, 85], "expr": "smirk"})
 beat("glenn", "L14", expr="worried", yaw=-35.0)
-shot("L14", orb(-1.05, 4.7, 1.4, -5, 4.0, 32, push=0.1), "point")
+shot("L14", orb(-1.2, 4.6, 1.35, -4, 5.2, 32, push=0.08), "point")
 cue("L14.2", "eye", v=1.0)
 cue("L14.2", "pulse")
 beat("glenn", "L14.2", expr="wide", yaw=-12.0)
@@ -341,7 +349,7 @@ sit("glenn", "L18", True)
 put("glenn", "L18", GL, 0, expr="smile")
 shot("L18", orb(GL[0], GL[1], 1.35, 0, 3.0, 40, push=0.1), "petegrin")
 beat("glenn", "L18.1", expr="laugh", side=[45, 45], head=[0, 0])
-shot("L18.2", orb(TAX - 1.44, FARA, 0.3, -55, 1.4, 36, dz=0.1, push=0.06), "tally")
+shot("L18.2", orb(TAX - 1.1, FARA, 0.55, -70, 2.8, 28, dz=0.15, push=0.06), "tally")
 beat("glenn", "L18.3", expr="smile", side=[55, 55])
 shot("L18.3", orb(GL[0], GL[1], 1.2, 12, 2.8, 36, dz=0.1), "peteshrug")
 # L19: so now Pete's it
@@ -353,13 +361,14 @@ only("L19", ["glenn"])
 put("glenn", "L19", [GRS[0] + 0.2, GRS[1]], 0, expr="shut", arms=[0, 150])
 shot("L19", orb(GRS[0] + 0.2, GRS[1], 1.45, 0, 3.2, 40, push=0.14), "petecount")
 only("L19.1", ["glenn", "c1", "c2", "c3"])
+beat("glenn", "L19.1", arms=[0, 0], expr="shut")
 put("c1", "L19.1", [-4.0, 5.4], 90, expr="grin")
 put("c2", "L19.1", [-5.0, 6.4], 180, expr="grin")
 put("c3", "L19.1", [-6.6, 5.0], -90, expr="grin")
 go("c1", "L20", [4.5, 7.6], run=True)
 go("c2", "L20", [-4.0, 11.5], run=True)
 go("c3", "L20", [-11.0, 2.5], run=True)
-shot("L19.1", mv([-1.9, 2.0, 1.8], [-7.0, 6.6, 1.2], 30, [-2.2, 2.2, 1.8], [-6.8, 6.6, 1.2], 30), "scatter2")
+shot("L19.1", orb(GRS[0] + 0.2, GRS[1], 1.4, 35, 4.6, 30, dz=0.1, push=0.1), "scatter2")
 # L20: and I'm hiding
 only("L20", ["me"])
 put("me", "L20", [3.0, 11.4], 15, expr="laugh", arms=[0, 0])
@@ -374,10 +383,10 @@ cue("L21.2", "mst", v=1.0)
 beat("me", "L21.2", expr="smirk", arms=[0, 150], head=[0, 0])
 shot("L21.2", orb(SHX + 2.0, SHY + 2.0, 1.5, 66, 2.4, 44), "mestache")
 cue("L21.3", "photo", v=0.0)
-only("L21.3", ["grandma"])
-sit("grandma", "L21.3", False)
-put("grandma", "L21.3", [GRS[0], GRS[1]], 0, expr="shut", arms=[0, 150])
-shot("L21.3", orb(GRS[0], GRS[1], 1.38, 0, 3.0, 40, push=0.14), "grancount2")
+only("L21.3+0.7", ["grandma"])
+sit("grandma", "L21.3+0.7", False)
+put("grandma", "L21.3+0.7", [GRS[0], GRS[1]], 0, expr="shut", arms=[0, 150])
+shot("L21.3+0.7", orb(GRS[0], GRS[1], 1.38, 0, 3.0, 40, push=0.14), "grancount2")
 
 # ---------------------------------------------------------------------------------------------- finish
 for k_ in acting.values():
@@ -399,6 +408,7 @@ sfx = [
     {"at": "L14.2", "kind": "sting", "db": -14},
     {"at": "L15.1+0.6", "kind": "thud", "db": -22},
     {"at": "L16+0.7", "kind": "click", "db": -20},
+    {"at": "L01.3+0.55", "kind": "thud", "db": -24},
 ]
 music = {
     "root": 48, "mode": "major", "bpm": 126, "seed": 112,
