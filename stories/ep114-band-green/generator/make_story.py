@@ -143,7 +143,7 @@ MEX, MEY = SEAT
 BX, BY = G.BENCH1
 # ---------------------------------------------------------------------------------------------- the town at rest
 for who, (x, y, yaw) in D.items():
-    key(who, 0, [x, y], yaw=yaw, expr="grin", lean=0, arms=[0, 0], side=[0, 0])
+    key(who, 0, [x, y], yaw=yaw, expr="smile", lean=0, arms=[0, 0], side=[0, 0])
 key("me", 0, SEAT, yaw=90, expr="worried", head=[0, 6], lean=0, arms=[0, 0], side=[0, 0])
 
 cue(0, "look", id="dusk", dur=0)
@@ -160,11 +160,16 @@ cue(0, "sit6", s=0.0)
 cue(0, "phone", where=0.0, screen=0.0)
 
 # ===== 01 the rule (L01 to L05)
-FEETCAM = [[0, [-2.5, -2.0, 0.3], [-4.9, -2.3, 0.3], 34], [1, [-2.6, -2.0, 0.32], [-4.9, -2.3, 0.32], 34]]
-FEET2CAM = [[0, [-3.0, -3.3, 0.28], [-5.5, -1.75, 0.3], 24], [1, [-3.1, -3.2, 0.3], [-5.5, -1.75, 0.32], 24]]
+FEETCAM = [[0, [-7.2, -4.8, 0.3], [-5.0, -2.2, 0.75], 22], [1, [-7.1, -4.65, 0.3], [-5.0, -2.2, 0.75], 22]]
+FEET2CAM = [[0, [-1.3, -5.0, 0.5], [-5.3, -1.2, 0.9], 28], [1, [-1.4, -4.9, 0.5], [-5.3, -1.2, 0.9], 28]]
+# the opening: grandpa dances close to my sneakers for the first beat, then back to his mark
+acting["grandpa"][0]["pos"] = [-4.75, -2.45]
+acting["grandpa"][0]["yaw"] = 80.0
+last["grandpa"] = [-4.75, -2.45]
+teleport("grandpa", "L01.1", [D["grandpa"][0], D["grandpa"][1]], yaw=D["grandpa"][2])
 shot(0, FEETCAM, "feet1")
 shot("L01.1", cam(1.0, -1.0, 1.2, 8.5, 5, 28), "row")
-shot("L01.2", [[0, [4.2, -7.6, 2.8], [-2.0, 0.0, 1.0], 26]], "dancers")
+shot("L01.2", [[0, [-6.5, -9.0, 2.7], [0.0, 0.5, 1.0], 26]], "dancers")
 shot("L02", cam(MEX, MEY, 1.42, 3.2, 90, 40), "meglum")
 cue("L02", "song", n=1.0)
 shot("L02.2", [[0, [-4.3, -2.6, 0.5], [-5.35, -1.75, 0.58], 30], [1, [-4.4, -2.5, 0.52], [-5.35, -1.75, 0.58], 30]], "sneakers")
@@ -174,7 +179,7 @@ cue("L03", "song", n=2.0)
 shot("L03.2", [[0, [0.9, 1.0, 2.7], [0.0, 9.0, 2.3], 30]], "bandshows")
 # L04: from behind the crowd
 shot("L04", [[0, [2.4, 3.6, 1.7], [0.0, 9.0, 2.4], 26]], "behindcrowd")
-shot("L04.2", [[0, [-0.9, 5.4, 1.9], [-0.8, 8.8, 2.3], 38]], "jackets")
+shot("L04.2", [[0, [-2.6, 4.6, 1.6], [-1.2, 8.8, 2.4], 26]], "jackets")
 shot("L05", [[0, [0.3, 5.9, 1.3], [0.0, 8.8, 3.1], 36]], "brims")
 shot("L05.2", [[0, [3.8, 6.2, 1.6], [1.4, 8.8, 3.1], 38]], "brims2")
 
@@ -189,15 +194,17 @@ shot("L10.2", cam(D["sand"][0], D["sand"][1], 1.3, 3.4, 15, 26, cz=1.5), "sandwi
 cue("L06", "song", n=3.0)
 
 # ===== 03 me on the bench (L11 to L18)
-shot("L11", [[0, [-8.0, -4.6, 1.5], [-5.7, -1.6, 1.35], 24]], "bench")
-shot("L12", [[0, [-4.3, -0.4, 0.75], [-5.7, -1.3, 0.58], 28], [1, [-4.4, -0.5, 0.72], [-5.7, -1.3, 0.58], 28]], "sneakers2")
+teleport("grandpa", "L11", [-2.7, -4.7], yaw=D["grandpa"][2])
+shot("L11", [[0, [-3.6, -3.6, 1.45], [-6.1, -1.85, 1.3], 28], [1, [-3.7, -3.5, 1.45], [-6.1, -1.85, 1.3], 28]], "bench")
+teleport("grandpa", "L12", [D["grandpa"][0], D["grandpa"][1]], yaw=D["grandpa"][2])
+shot("L12", [[0, [-3.4, -2.9, 0.55], [-5.5, -1.75, 0.5], 27], [1, [-3.5, -2.8, 0.55], [-5.5, -1.75, 0.5], 27]], "sneakers2")
 # L13: the photo of me and Benny on my phone, held on my raised hand
 key("me", "L13", arms=[0, 88], head=[0, 8], expr="worried")
 key("me", "L13.2", arms=[0, 88], head=[0, 8])
-cue("L13", "phone", where=1.0, screen=0.0, x=MEX + 0.85, y=MEY + 0.5, z=1.3, rot=90.0, tilt=-8.0, lie=0.0)
-shot("L13", [[0, [-3.5, -1.2, 1.5], [-5.4, -1.25, 1.3], 30], [1, [-3.7, -1.2, 1.45], [-5.4, -1.25, 1.3], 30]], "photo")
+cue("L13", "phone", where=1.0, screen=0.0, x=MEX + 0.85, y=MEY + 0.5, z=1.3, rot=90.0, tilt=-8.0, lie=0.0, sc=1.9)
+shot("L13", [[0, [-3.3, -1.25, 1.4], [-5.4, -1.25, 1.3], 30], [1, [-3.5, -1.25, 1.38], [-5.4, -1.25, 1.3], 30]], "photo")
 key("me", "L13.1", arms=[0, 0], head=[0, 6])
-cue("L13.1", "phone", where=0.0)
+cue("L13.1", "phone", where=0.0, sc=1.0)
 cue("L13.1", "truck", y=-8.0, dur=0)
 cue("L13.1+0.1", "truck", y=38.0, dur=3.6)
 shot("L13.1", [[0, [4.5, -5.5, 1.3], [12.3, -1.5, 1.8], 10]], "truck")
@@ -238,7 +245,7 @@ cue("L20.1", "clock", h=13.0)
 cue("L20.1", "song", n=38.0, dur=0.3)
 shot("L20.1", [[0, [6.4, 1.2, 6.5], [14.0, 1.0, 7.2], 26]], "clock1")
 cue("L20.2", "song", n=40.0, dur=0.3)
-shot("L20.2", [[0, [-2.0, -6.0, 0.45], [-0.6, -3.6, 0.5], 20]], "song40")
+shot("L20.2", [[0, [-0.6, -8.4, 1.0], [-0.6, -3.6, 0.95], 20], [1, [-0.7, -8.0, 1.0], [-0.6, -3.6, 0.95], 20]], "song40")
 shot("P01", [[0, [0.0, 3.4, 1.0], [0.0, 8.8, 2.7], 28]], "drop")
 cue("L21", "clock", h=3.0)
 cue("L21", "song", n=43.0, dur=0.3)
@@ -247,7 +254,7 @@ shot("L21", [[0, [5.6, 0.8, 6.3], [14.0, 1.0, 7.2], 24]], "clock3")
 cue("L22", "dance", amp=0.5, tired=0.9, dur=0.8)
 cue("L22", "song", n=44.0, dur=0.3)
 shot("L22", [[0, [0.0, -9.5, 3.2], [-1.0, 1.0, 1.2], 20]], "drooping")
-shot("L22.2", [[0, [-2.2, -7.8, 0.4], [-2.6, -3.4, 0.4], 22]], "dragging")
+shot("L22.2", [[0, [-2.2, -9.6, 0.9], [-2.0, -3.0, 0.7], 22]], "dragging")
 for w in D:
     key(w, "L21", expr="worried")
 key("grandpa", "L23", expr="worried")
@@ -297,11 +304,18 @@ _ux, _uy = _dx / _dl, _dy / _dl
 shot("L32.3", [[0, [_gx + _ux * 2.6 + _uy * 0.9, _gy + _uy * 2.6 - _ux * 0.9, 1.75], [_gx, _gy, 1.5], 30]], "stepgrandpa")
 shot("L33", [[0, [_gx + _ux * 1.7 - _uy * 0.35, _gy + _uy * 1.7 + _ux * 0.35, 1.6], [_gx, _gy, 1.55], 30],
              [1, [_gx + _ux * 1.5 - _uy * 0.3, _gy + _uy * 1.5 + _ux * 0.3, 1.6], [_gx, _gy, 1.55], 30]], "gface")
-shot("L34", [[0, [-5.2, -5.7, 0.32], [-5.0, -2.1, 0.45], 15]], "kneesbench")
+teleport("grandpa", "L34", [-4.95, -2.5], yaw=70.0)
+shot("L34", [[0, [-2.6, -0.5, 0.6], [-5.25, -2.0, 0.6], 21], [1, [-2.7, -0.6, 0.6], [-5.25, -2.0, 0.6], 21]], "kneesbench")
+teleport("grandpa", "L35", [D["grandpa"][0], D["grandpa"][1]], yaw=D["grandpa"][2])
 
 # ===== 06 the rule's own logic (L35 to L40)
 shot("L35", [[0, [-2.4, -4.0, 0.4], [-4.2, -2.4, 0.35], 24]], "feetrow")
 key("me", "L36", expr="angry", head=[0, 0])
+teleport("grandpa", "L36", [-1.8, -3.2], yaw=D["grandpa"][2])
+teleport("sand", "L36", [-1.0, -3.5], yaw=D["sand"][2])
+teleport("bank", "L36", [-2.0, 3.0], yaw=D["bank"][2])
+for w_ in ("grandpa", "sand", "bank"):
+    teleport(w_, "L40", [D[w_][0], D[w_][1]], yaw=D[w_][2])
 shot("L36", cam(MEX, MEY, 1.42, 2.6, 100, 40), "determined")
 cue("L37", "sit", s=0.0, dur=0.55)
 key("me", "L37", expr="hopeful")
@@ -310,10 +324,10 @@ cue("L37+0.4", "feet", n=7.0, dur=0.3)
 cue("L37+0.6", "medance", amp=1.0, dur=0.4)
 cue("L37+0.4", "face", m=0.0, dur=1.0)
 cue("L37+0.5", "dance", amp=1.0, tired=0.0, dur=1.4)
-shot("L37", [[0, [-7.4, -4.6, 1.9], [-5.5, -1.3, 0.95], 20]], "standup")
+shot("L37", [[0, [-2.9, -0.2, 1.5], [-5.3, -1.3, 1.0], 26]], "standup")
 key("me", "L38", expr="laugh", yaw=90)
 shot("L38", cam(STAND[0], STAND[1], 1.2, 3.6, 50, 28), "terrible")
-shot("L39", cam(STAND[0], STAND[1], 1.1, 4.4, 60, 26), "chair")
+shot("L39", cam(STAND[0], STAND[1], 1.1, 4.4, 60, 26, cz=2.4), "chair")
 shot("L39.1+0.45", cam(STAND[0], STAND[1], 1.25, 2.8, 38, 36), "chair2")
 cue("L40", "dance", amp=1.0)
 shot("L40", [[0, [-8.0, -5.0, 2.2], [-1.0, 0.5, 1.2], 22]], "alldance")
@@ -328,23 +342,29 @@ shot("L41", [[0, [0.0, 4.6, 1.8], [0.0, 11.0, 2.2], 24]], "walkoff")
 # ===== 07 the warm turn (L42 to L48)
 cue("L42", "look", id="dawn", dur=1.6)
 cue("L42", "band", u=0.0, turn=0.0, dur=0)
-LIE = {"grandpa": 125, "bank": 0, "mail": 30, "sand": 190, "t1": 180, "t2": 150, "t3": 0, "t4": 40, "t5": 90,
-       "t6": 70, "t7": 160}
-LCAM = (-2.5, -6.9)      # the low camera among them; everyone falls so their faces look toward it
-cue("L42+0.5", "lying", k=1.0)
+LCAM = (-2.6, -7.6)      # the low camera among them; everyone falls so their faces look toward it
+# they lie down while the camera is on the band walking off (S67), so S68 opens on a town already on its back
+LIEPOS = {"grandpa": (-3.2, -5.4), "sand": (-2.3, -5.4), "t1": (-1.4, -5.4), "t2": (0.6, -4.9), "me": (-7.4, -4.6)}
+cue("L41+0.9", "lying", k=1.0)
 for who in D:
     x_, y_, _ = D[who]
+    if who in LIEPOS:
+        x_, y_ = LIEPOS[who]
     face_cam = math.degrees(math.atan2(LCAM[0] - x_, -(LCAM[1] - y_)))
     if who == "t5":     # her head would end up in the bandstand steps
         face_cam += 180
-    key(who, "L42+1.5", blend=1.0, lean=-84, yaw=face_cam + (-14 if sum(map(ord, who)) % 2 else 14), expr="laugh", arms=[0, 0], side=[70, 70])
-key("me", "L42+1.5", blend=1.0, lean=-84, yaw=-100, expr="laugh", arms=[0, 0], head=[0, 0])
-shot("L42", [[0, [-2.5, -6.9, 0.55], [-2.4, -2.2, 0.85], 22], [1, [-2.5, -6.2, 0.5], [-2.4, -2.2, 0.85], 22]], "lying")
-shot("L43", [[0, [-4.0, -2.75, 2.4], [-5.6, -3.85, 0.35], 28]], "glaugh")
-cx_ = STAND[0] + 0.0
-cue("L44", "phone", where=1.0, lie=1.0, screen=1.0, x=STAND[0], y=STAND[1] + 1.12, z=0.43, rot=0.0)
-shot("L44", [[0, [STAND[0], STAND[1] + 0.25, 2.8], [STAND[0], STAND[1] + 1.25, 0.3], 24]], "call")
+    if who in LIEPOS:
+        teleport(who, "L41+0.5", [x_, y_], yaw=face_cam)
+    key(who, "L41+1.6", blend=1.0, lean=-84, yaw=face_cam + (-14 if sum(map(ord, who)) % 2 else 14), expr="laugh", arms=[0, 0], side=[70, 70])
+teleport("me", "L41+0.5", list(LIEPOS["me"]), yaw=0.0)
+key("me", "L41+1.6", blend=1.0, lean=-84, yaw=0.0, expr="laugh", arms=[0, 0], head=[0, 0])
+shot("L42", [[0, [-2.3, -7.2, 0.95], [-2.3, -3.6, 0.8], 15], [1, [-2.3, -6.9, 0.95], [-2.3, -3.6, 0.8], 15]], "lying")
+shot("L43", [[0, [-3.5, -7.4, 0.9], [-3.7, -4.2, 0.55], 28], [1, [-3.6, -7.0, 0.9], [-3.7, -4.2, 0.55], 28]], "glaugh")
+cue("L44", "phone", where=1.0, lie=1.0, screen=1.0, x=LIEPOS["me"][0], y=LIEPOS["me"][1] + 1.1, z=0.5, rot=0.0, sc=2.1)
+shot("L44", [[0, [-7.4, -6.5, 1.6], [-7.4, -3.5, 0.7], 30]], "call")
 shot("L45", [[0, [-3.0, -7.0, 0.8], [0.0, 20.0, 5.0], 22]], "sunrise")
+cue("L42", "look", id="dawn", dur=1.6)
+cue("L42", "band", u=0.0, turn=0.0, dur=0)
 cue("L46", "look", id="dusk", dur=0)
 cue("L46", "phone", where=0.0)
 cue("L46", "lying", k=0.0, dur=0)
@@ -360,7 +380,7 @@ for who in D:
     if who == "t6":
         teleport(who, "L46", [7.15, -1.2], lean=0, yaw=-90, expr="worried", blend=0.0, arms=[0, 0], side=[0, 0])
     else:
-        teleport(who, "L46", [D[who][0], D[who][1]], lean=0, yaw=D[who][2], expr="grin", blend=0.0, arms=[0, 0], side=[0, 0])
+        teleport(who, "L46", [D[who][0], D[who][1]], lean=0, yaw=D[who][2], expr="smile", blend=0.0, arms=[0, 0], side=[0, 0])
 teleport("me", "L46", [-5.7, -1.75], lean=0, yaw=90, expr="smile", blend=0.0, arms=[0, 0], head=[0, 0])
 cue("L46", "sit", s=0.0, dur=0)
 shot("L46", [[0, [0.0, 3.4, 1.5], [0.0, 10.0, 1.9], 24]], "bandback2")
@@ -423,7 +443,7 @@ remap_all(sound["ambience"])
 polish = {"reveal": [remap("L27")], "twist": remap("L28"),
           "emph": [remap(x) for x in ["L01.3", "L02", "L19", "L25.1", "L26.3", "L37", "L39.1"]],
           "quiet": [[remap("L43"), remap("L45")]],
-          "hold": [names["scratch"], names["photo"], names["call"]]}
+          "hold": [names["scratch"], names["photo"], names["call"], names["feet1"], names["feet2"]]}
 story = {
     "slug": "ep114-band-green",
     "title": "Everyone Here Has to DANCE",

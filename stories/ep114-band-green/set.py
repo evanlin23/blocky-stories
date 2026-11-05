@@ -421,13 +421,13 @@ def build_phone(kit):
     photo.append(px("ph.sky", (0.21, 0.004, 0.43), (0, 0, 0), em("#8fd3ff")))
     photo.append(px("ph.grass", (0.21, 0.004, 0.14), (0, 0.003, -0.145), em("#4fc45a")))
     for who, ox, skin, hair, shirt in (("me", -0.052, "#8a5a3a", "#15110f", "#e0a32a"), ("ben", 0.052, "#f0c8a0", "#d9501c", "#3e9e5a")):
-        photo.append(px(f"ph.{who}.body", (0.085, 0.004, 0.09), (ox, 0.006, -0.08), em(shirt)))
-        photo.append(px(f"ph.{who}.head", (0.075, 0.004, 0.07), (ox, 0.009, -0.002), em(skin)))
-        photo.append(px(f"ph.{who}.hair", (0.085, 0.004, 0.032), (ox, 0.012, 0.04), em(hair)))
+        photo.append(px(f"ph.{who}.body", (0.1, 0.004, 0.08), (ox, 0.006, -0.1), em(shirt)))
+        photo.append(px(f"ph.{who}.head", (0.094, 0.004, 0.094), (ox, 0.009, 0.0), em(skin)))
+        photo.append(px(f"ph.{who}.hair", (0.1, 0.004, 0.04), (ox, 0.012, 0.062), em(hair)))
         for sx in (-1, 1):
-            photo.append(px(f"ph.{who}.eye{sx}", (0.009, 0.004, 0.013), (ox + sx * 0.02, 0.012, 0.004), em("#1c120c")))
-        photo.append(px(f"ph.{who}.mouth", (0.034, 0.004, 0.02), (ox, 0.012, -0.027), em("#5a1f1a")))
-        photo.append(px(f"ph.{who}.teeth", (0.028, 0.004, 0.007), (ox, 0.014, -0.02), em("#fffdf4")))
+            photo.append(px(f"ph.{who}.eye{sx}", (0.012, 0.004, 0.02), (ox + sx * 0.026, 0.012, 0.01), em("#1c120c")))
+        photo.append(px(f"ph.{who}.mouth", (0.05, 0.004, 0.026), (ox, 0.012, -0.03), em("#5a1f1a")))
+        photo.append(px(f"ph.{who}.teeth", (0.042, 0.004, 0.009), (ox, 0.014, -0.02), em("#fffdf4")))
     # call: Benny big, laughing, on a warm room wall
     call.append(px("cl.bg", (0.21, 0.004, 0.43), (0, 0, 0), em("#f6d8a0")))
     call.append(px("cl.body", (0.17, 0.004, 0.14), (0, 0.004, -0.17), em("#3e9e5a")))
@@ -565,6 +565,7 @@ LOWKEY = {"S41", "S42", "S43", "S44", "S45", "S46", "S66"}
 TAGMACRO = {"S59"}
 EDGE = {"S41": 900.0, "S44": 1500.0, "S45": 2000.0, "S66": 1800.0}
 DIM = {"S67": (0.0, 0.04, 0.35, 0.1)}
+DARKSKY = {"S67"}
 HIDEHORN = {"S43", "S44", "S45", "S46"}
 DANCERS = ["grandpa", "bank", "mail", "sand", "t1", "t2", "t3", "t4", "t5", "t6", "t7"]
 
@@ -762,7 +763,7 @@ def animate(kit, story, tl, t, ctx):
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (*look["sky"], 1.0)
-    bg.inputs["Strength"].default_value = look["sky_str"]
+    bg.inputs["Strength"].default_value = look["sky_str"] * (0.0 if sid in DARKSKY else 1.0)
     W["disc"].hide_render = look["disc"] < 0.01
     W["disc"].location = (-14, 170, 9) if look["disc"] >= 0.01 else (-14, 170, -400)
     # the clock and the truck
@@ -808,12 +809,13 @@ def animate(kit, story, tl, t, ctx):
         tag.scale = (s * 3.1, s * 3.1, s * 3.1)
         tag.location = (0.0, 0.38 * h2, -dist)
     # the phone: on my hand (photo) or on my chest (call)
-    pv = sample("phone", tl, t, {"where": 0.0, "screen": 0.0, "x": 0.0, "y": 0.0, "z": 0.0, "rot": 0.0, "lie": 0.0, "tilt": 0.0})
+    pv = sample("phone", tl, t, {"where": 0.0, "screen": 0.0, "x": 0.0, "y": 0.0, "z": 0.0, "rot": 0.0, "lie": 0.0, "tilt": 0.0, "sc": 1.0})
     ph = W["phone"]
     if pv["where"] < 0.5:
         ph.location = (0, 0, -50)
     else:
         ph.location = (pv["x"], pv["y"], pv["z"])
+        ph.scale = (pv["sc"],) * 3
         ph.rotation_euler = ((-math.pi / 2) if pv["lie"] > 0.5 else pv["tilt"] * D2R, 0, pv["rot"] * D2R)
     for ob in W["photo"]:
         ob.hide_render = pv["screen"] > 0.5
