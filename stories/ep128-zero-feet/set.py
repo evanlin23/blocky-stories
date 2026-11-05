@@ -119,9 +119,10 @@ def road(add, cx, cy, s):
         add(f"d{k}", (0.1 * s, h * s), (cx, cy + yy * s))
 
 
-def make_phone(kit, pl, n, loc, yaw, digits, glyph="foot"):
+def make_phone(kit, pl, n, loc, yaw, digits, glyph="foot", scale=1.0):
     """A phone lying flat, screen up, top of the screen toward (-sin yaw, cos yaw). Blocky digits and a glyph only."""
     root = pl.empty(n, loc, (0, 0, yaw * D2R))
+    root.scale = (scale, scale, scale)
     body = kit.plastic("#2a2d3a", 0.35, spec=0.5)
     screen = kit.emit("#fff1c4", 0.9, "phscreen")
     ink = kit.emit("#16222e", 1.0, "phink")
@@ -161,11 +162,34 @@ def basket(kit, pl, n, x, y, z, scale=1.0):
         pl.box(f"{n}.sl{k}", (0.12 * scale, 0.34 * scale, 0.077), (x - 0.18 * scale, y, z + 0.08 + k * 0.078), kit.plastic(cols[(k + 3) % 6], 0.8, spec=0.1))
 
 
-def window_backdrop(kit, pl, n, x, y0, y1, z0, z1, night, faceplus=False):
+def laundry_pile(kit, pl, n, x, y, z):
+    """A sky-blue plastic laundry basket heaped with folded coloured shirts (collars and sleeves), and a neat stack on the couch beside it."""
+    bas = kit.plastic("#4f9fe8", 0.5, spec=0.25)
+    pl.box(f"{n}.base", (0.7, 0.5, 0.05), (x, y, z + 0.025), bas, bevel=0.01)
+    for sx in (-1, 1):
+        pl.box(f"{n}.sx{sx}", (0.05, 0.5, 0.3), (x + sx * 0.325, y, z + 0.17), bas, bevel=0.01)
+    for sy in (-1, 1):
+        pl.box(f"{n}.sy{sy}", (0.7, 0.05, 0.3), (x, y + sy * 0.225, z + 0.17), bas, bevel=0.01)
+        for k in range(3):
+            pl.box(f"{n}.slot{sy}{k}", (0.12, 0.052, 0.07), (x - 0.2 + k * 0.2, y + sy * 0.225, z + 0.19), kit.plastic("#2f78c4", 0.5))
+    cols = ["#ff7a5c", "#ffd95a", "#ffffff", "#ff9ac8", "#9be15d", "#b9a4f0"]
+    for k in range(5):
+        c = kit.plastic(cols[k], 0.8, spec=0.05)
+        r = (0.16, -0.12, 0.2, -0.18, 0.1)[k]
+        zz = z + 0.2 + k * 0.075
+        pl.box(f"{n}.sh{k}", (0.5, 0.38, 0.07), (x + 0.015 * (k % 2), y, zz), c, rot=(0, 0, r), bevel=0.012)
+        pl.box(f"{n}.sl{k}", (0.14, 0.3, 0.075), (x + (0.28 if k % 2 else -0.28) * math.cos(r), y + 0.0, zz), c, rot=(0, 0, r + 0.3), bevel=0.01)
+        pl.box(f"{n}.co{k}", (0.14, 0.05, 0.078), (x + 0.0, y - 0.19, zz), kit.plastic(cols[(k + 2) % 6], 0.8), rot=(0, 0, r), bevel=0.008)
+    # folded shirts on the couch seat beside it
+    for k in range(3):
+        pl.box(f"{n}.cs{k}", (0.42, 0.32, 0.07), (x + 0.8, y - 0.12, z + 0.035 + 0.075 * k), kit.plastic(["#7cc4ff", "#ff9a2e", "#ff7a5c"][k], 0.8), rot=(0, 0, 0.06 * (k - 1)), bevel=0.012)
+
+
+def window_backdrop(kit, pl, n, x, y0, y1, z0, z1, night, faceplus=False, k=1.0):
     """A painted city behind a window on a side wall: steady, flat, never changing."""
-    sky = kit.emit("#7a68d8" if night else "#8fd8ff", 0.85 if night else 1.1, f"sky{int(night)}")
+    sky = kit.emit("#5a45cc" if night else "#8fd8ff", 1.0 if night else 1.1 * k, f"sky{int(night)}{int(k * 10)}")
     pl.box(f"{n}.sky", (0.05, y1 - y0, z1 - z0), (x, (y0 + y1) / 2, (z0 + z1) / 2), sky)
-    cols = (["#4a3b9f", "#5a4cb8", "#3f348f", "#6a58c8"] if night else ["#ffb59a", "#ffe08a", "#9be3c8", "#f6a8d0"])
+    cols = (["#2c2370", "#3a2f8a", "#261e66", "#40349a"] if night else ["#ffb59a", "#ffe08a", "#9be3c8", "#f6a8d0"])
     sgn = -1 if x < 0 else 1
     ww = (y1 - y0) / 4
     for k in range(4):
@@ -229,9 +253,9 @@ def mom_kitchen(kit, pl, n, x, ya, yb, z0, cab_col, fridge_col, fridge_y):
 # ----------------------------------------------------------------------------------------------- the apartment
 def build_apt(kit, O, tag, night, boxes):
     pl = Pl(kit, O, tag)
-    wall = kit.plastic("#f4ead8", 0.85, spec=0.05)
-    floor = kit.planks("#d9ab72", "#c99a62", 1.0)
-    ceil = kit.plastic("#dcd5e2", 0.9, spec=0.02)
+    wall = kit.plastic("#d4c6ee" if night else "#f4ead8", 0.85, spec=0.05)
+    floor = kit.planks("#c08f62", "#b2835a", 1.0) if night else kit.planks("#d9ab72", "#c99a62", 1.0)
+    ceil = kit.plastic("#aca2cc" if night else "#dcd5e2", 0.9, spec=0.02)
     room_shell(kit, pl, "r", -3.0, 3.0, -1.2, 5.6, 0.0, 2.9, wall, floor, ceil,
                front_holes=[(-1.55, -0.65, 0.0, 2.2)], left_holes=[(1.4, 3.8, 0.9, 2.4)])
     white = kit.plastic("#ffffff", 0.6, spec=0.15)
@@ -244,17 +268,34 @@ def build_apt(kit, O, tag, night, boxes):
     # my door to the stairs
     pl.box("door", (0.9, 0.08, 2.2), (-1.1, -1.22, 1.1), kit.plastic("#b8793f", 0.6, spec=0.15), bevel=0.02)
     pl.sph("knob", 0.045, (-0.8, -1.15, 1.05), kit.plastic("#e3b04b", 0.3, spec=0.7))
-    # a picture of colour blocks over the couch (no marks)
-    pl.box("pic", (1.1, 0.04, 0.75), (-1.3, 5.56, 1.75), kit.plastic("#5a3b24", 0.7))
-    for k, c in enumerate(["#ff7a5c", "#f6c453", "#2fb8a8"]):
-        pl.box(f"pic{k}", (0.28, 0.02, 0.55), (-1.55 + k * 0.3, 5.53, 1.75), kit.plastic(c, 0.6))
+    if night:
+        # a second painted dusk window over the couch (flat on the wall, steady): the night read behind my head
+        sk = kit.emit("#5a45cc", 1.0, "sky10")
+        pl.box("bwin.sky", (1.3, 0.02, 0.95), (-1.3, 5.585, 1.8), sk)
+        for k, (bx, bh) in enumerate([(-1.82, 0.5), (-1.45, 0.72), (-1.1, 0.42), (-0.75, 0.6)]):
+            pl.box(f"bwin.b{k}", (0.3, 0.02, bh), (bx + 0.08, 5.57, 1.325 + bh / 2), kit.emit(["#2c2370", "#3a2f8a", "#261e66", "#40349a"][k], 0.8, f"bd{k}1"))
+        for nm, sz, lc in [("t", (1.42, 0.04, 0.06), (-1.3, 5.53, 2.3)), ("b", (1.42, 0.04, 0.06), (-1.3, 5.53, 1.3)),
+                           ("l", (0.06, 0.04, 1.0), (-2.0, 5.53, 1.8)), ("r", (0.06, 0.04, 1.0), (-0.6, 5.53, 1.8)),
+                           ("m", (0.04, 0.04, 0.95), (-1.3, 5.53, 1.8))]:
+            pl.box(f"bwin.f{nm}", sz, lc, white)
+    else:
+        # a picture of colour blocks over the couch (no marks)
+        pl.box("pic", (1.1, 0.04, 0.75), (-1.3, 5.56, 1.75), kit.plastic("#5a3b24", 0.7))
+        for k, c in enumerate(["#ff7a5c", "#f6c453", "#2fb8a8"]):
+            pl.box(f"pic{k}", (0.28, 0.02, 0.55), (-1.55 + k * 0.3, 5.53, 1.75), kit.plastic(c, 0.6))
     couch(kit, pl, "cch", -1.3, 5.05, 0.0, "#ff7a5c", "#ff9a80")
     pl.box("rug", (2.2, 1.8, 0.02), (-0.6, 2.7, 0.01), kit.plastic("#f6c453", 0.9, spec=0.02))
     pl.box("rug2", (1.8, 1.4, 0.022), (-0.6, 2.7, 0.011), kit.plastic("#ffd978", 0.9, spec=0.02))
     mom_kitchen(kit, pl, "k", 2.55, 0.9, 4.5, 0.0, "#2fb8a8", "#ffd95a", 5.25)
     basket(kit, pl, "bk", -2.3, 3.4, 0.0)
     make_phone(kit, pl, "phone", (2.5, 3.5, 0.96), -90, "0", "foot")
-    make_phone(kit, pl, "cphone", G.PHONE_COUCH, 0, "0", "foot")
+    make_phone(kit, pl, "cphone", G.PHONE_COUCH, 0, "0", "foot", scale=1.35)
+    # a plain ceiling fixture and two ceiling beams, so a shot at the ceiling reads as a ceiling
+    fx = kit.plastic("#f4f0fa", 0.6, spec=0.1)
+    pl.cyl("cfix", 0.36, 0.09, (0.3, 3.0, 2.865), fx, nseg=24)
+    pl.cyl("cdome", 0.24, 0.05, (0.3, 3.0, 2.82), kit.emit("#ffe2bd", 0.9, "cdome") if night else fx, nseg=24)
+    for k, by in enumerate((1.7, 4.3)):
+        pl.box(f"cbeam{k}", (5.9, 0.28, 0.07), (0.0, by, 2.865), kit.plastic("#c9c0e2" if night else "#f2eef8", 0.85))
     if boxes:
         card = kit.plastic("#d9a86a", 0.8, spec=0.05)
         tape = kit.plastic("#f0d9a0", 0.6)
@@ -263,16 +304,18 @@ def build_apt(kit, O, tag, night, boxes):
                                                     (-2.0, 1.6, 0.2, 0.5, 0.5, 0.4, 0.0), (1.2, 4.2, 0.22, 0.5, 0.5, 0.44, 0.2)]):
             pl.box(f"cb{k}", (sx, sy, sz), (x, y, z), card, rot=(0, 0, r), bevel=0.01)
             pl.box(f"cbt{k}", (0.1, sy + 0.01, 0.012), (x, y, z + sz / 2 + 0.005), tape, rot=(0, 0, r))
-    # steady light: ceiling-height lamps spread about the room, a front fill, and the window
-    warm = "#ffe2bd" if night else "#fff3e0"
-    pl.light("k1", (-1.4, 2.0, 2.25), 520, warm)
-    pl.light("k2", (1.4, 2.0, 2.25), 520, warm)
-    pl.light("k3", (0.0, 4.1, 2.25), 460, warm)
-    pl.light("f1", (0.0, 0.0, 1.9), 420, warm)
-    pl.light("f2", (1.8, 0.0, 1.4), 220, warm)
-    pl.light("f3", (-1.0, -0.6, 1.6), 200, warm)
+    # steady light. By night: the ceiling lamps are low, a warm key from the front lights my face, the dusk window glows violet
+    warm = "#ffd9a8" if night else "#fff3e0"
+    dm = 0.3 if night else 1.0
+    pl.light("k1", (-1.4, 2.0, 2.25), 520 * dm, warm)
+    pl.light("k2", (1.4, 2.0, 2.25), 520 * dm, warm)
+    pl.light("k3", (0.0, 4.1, 2.25), 460 * dm, warm)
+    pl.light("f1", (0.0, 0.0, 1.9), 420 * (0.9 if night else 1.0), warm)
+    pl.light("f2", (1.8, 0.0, 1.4), 220 * (0.8 if night else 1.0), warm)
+    pl.light("f3", (-1.0, -0.6, 1.6), 200 * (0.8 if night else 1.0), warm)
     if night:
-        pl.light("win", (-2.6, 2.6, 1.9), 160, "#b9a8ff")
+        pl.light("win", (-2.5, 2.6, 1.9), 520, "#9d86ff")
+        pl.light("bwin", (-1.3, 4.6, 2.2), 160, "#a890ff")
     else:
         pl.light("win", (-2.5, 2.6, 1.9), 420, "#fff6e6")
 
@@ -282,7 +325,7 @@ def build_stair(kit, O, tag, night, flat):
     pl = Pl(kit, O, tag)
     mint = kit.plastic("#bfeedd", 0.85, spec=0.05)
     white = kit.plastic("#fafafa", 0.7, spec=0.1)
-    ceil = kit.plastic("#f6f6f2", 0.9, spec=0.02)
+    ceil = kit.plastic("#dcdad6" if not night else "#a9a0c8", 0.9, spec=0.02)
     wood = kit.plastic("#b8793f", 0.6, spec=0.15)
     brass = kit.plastic("#e3b04b", 0.3, spec=0.7)
     run = kit.plastic("#ff9a8a", 0.9, spec=0.02)
@@ -307,17 +350,18 @@ def build_stair(kit, O, tag, night, flat):
     ln = math.hypot(4.2, LAND - G.STEP_DZ)
     pl.box("rail", (0.07, ln, 0.07), (-1.0, 2.1, (LAND + G.STEP_DZ) / 2 + 0.85), white, rot=(ang, 0, 0))
     # the newel post at the foot, a brass cap with two mint strokes scratched on its front
-    pl.box("newel", (0.2, 0.2, 1.05), (-1.0, -0.2, 0.525), white)
-    pl.box("cap", (0.28, 0.28, 0.1), (-1.0, -0.2, 1.1), brass, bevel=0.01)
+    pl.box("newel", (0.26, 0.26, 1.05), (-1.0, -0.2, 0.525), white)
+    pl.box("cap", (0.38, 0.38, 0.16), (-1.0, -0.2, 1.13), brass, bevel=0.01)
     for k in range(2):
-        pl.box(f"cap{k}", (0.014, 0.012, 0.07), (-1.03 + k * 0.06, -0.346, 1.1), kit.plastic("#5ee0a8", 0.5))
+        pl.box(f"cap{k}", (0.035, 0.02, 0.11), (-1.06 + k * 0.12, -0.4, 1.13), kit.plastic("#2fae7a", 0.5))
     # the landing window and its painted backdrop, the landing light (a fixture, always on)
-    window_backdrop(kit, pl, "lw", -2.1, 4.6, 6.0, 3.1, 5.0, night)
-    pl.box("lfix", (0.5, 0.5, 0.07), (0, 5.3, top_z - 0.04), kit.emit("#ffc070", 2.0, "landlamp"))
-    pl.light("land", (0, 5.3, 4.95), 1000, "#ffc070", size=0.8)
-    pl.light("mid", (0, 2.4, 4.5), 800, "#fff6e8")
-    pl.light("low", (0, 0.4, 3.4), 700, "#ffffff")
-    pl.light("foot", (0, -1.9, 3.0), 600, "#fff3df")
+    window_backdrop(kit, pl, "lw", -2.1, 4.6, 6.0, 3.1, 5.0, night, k=0.55)
+    pl.box("lfix", (0.5, 0.5, 0.07), (0, 5.3, top_z - 0.04), kit.emit("#ffc070", 0.9 if not night else 1.1, "landlamp"))
+    dm = 0.55 if night else 1.0
+    pl.light("land", (0, 5.3, 4.95), 380 if not night else 330, "#ffc070", size=0.8)
+    pl.light("mid", (0, 2.4, 4.5), 800 * dm, "#fff6e8")
+    pl.light("low", (0, 0.4, 3.4), 700 * dm, "#ffffff")
+    pl.light("foot", (0, -1.9, 3.0), 600 * (0.85 if night else 1.0), "#fff3df")
     # Mom's door at the top
     hinge = pl.empty("hinge", (-0.55, G.DOOR_Y - 0.0, LAND), (0, 0, (100 if flat else 0) * D2R))
     pl.box("leaf", (1.1, 0.08, 2.2), (0.55, 0, 1.1), kit.plastic("#d4b8f2", 0.6, spec=0.15), bevel=0.02, parent=hinge)
@@ -361,7 +405,7 @@ def build_stair(kit, O, tag, night, flat):
             for ly in (-1, 1):
                 pl.box(f"chl{k}{lx}{ly}", (0.04, 0.04, 0.4), (tx + sx * 0.8 + lx * 0.18, ty - 0.1 + ly * 0.18, z0 + 0.2), wood2)
     make_phone(kit, pl, "mphone", (tx + 0.0, ty + 0.02, z0 + 0.815), 0, "0", "foot")
-    basket(kit, pl, "fbk", -1.3, 11.45, z0 + 0.44, 0.9)
+    laundry_pile(kit, pl, "fbk", -1.4, 11.1, z0 + 0.44)
     # floor lamps (steady shades) and the lights that make her room bright
     for k, (lx, ly) in enumerate([(-2.5, 7.4), (2.6, 11.6)]):
         pl.cyl(f"lp{k}", 0.04, 1.4, (lx, ly, z0 + 0.7), kit.plastic("#555a66", 0.4, spec=0.5), nseg=8)
@@ -444,15 +488,16 @@ def build_den(kit, O):
     pl.wall_y("right", 3.3, -1.2, 5.2, 0.0, 2.8, 0.2, wall)
     pl.box("wain", (6.6, 0.05, 0.9), (0, 5.07, 0.45), kit.plastic("#b88a5a", 0.7))
     pl.box("rug", (3.0, 2.2, 0.02), (0.6, 3.4, 0.01), kit.plastic("#c04a4a", 0.9, spec=0.02))
-    brown = kit.plastic("#7a4a2e", 0.65, spec=0.15)
+    brown = kit.plastic("#6b3f26", 0.65, spec=0.15)
     brown2 = kit.plastic("#8d5a38", 0.65, spec=0.15)
     cx, cy = 0.6, 4.2
-    pl.box("cbase", (0.9, 1.1, 0.32), (cx, cy, 0.16), brown, bevel=0.04)
-    pl.box("cseat", (0.86, 1.0, 0.12), (cx, cy - 0.02, 0.38), brown2, bevel=0.04)
-    pl.box("cback", (1.5, 0.22, 1.0), (0.75, 4.82, 0.7), brown, bevel=0.05)
-    pl.box("clarm", (0.18, 1.1, 0.34), (0.06, cy, 0.46), brown, bevel=0.04)
-    pl.box("crarm", (0.4, 1.1, 0.34), (1.2, cy, 0.46), brown, bevel=0.04)
-    make_phone(kit, pl, "phone", (1.2, 3.95, 0.64), 0, "3", "foot")
+    pl.box("cbase", (1.3, 1.1, 0.32), (cx, cy, 0.16), brown, bevel=0.04)
+    pl.box("cseat", (1.0, 1.0, 0.12), (cx, cy - 0.02, 0.38), brown2, bevel=0.04)
+    pl.box("cback", (1.5, 0.22, 1.15), (cx, 4.82, 0.75), brown, bevel=0.05)
+    pl.box("cpanel", (0.9, 0.04, 0.8), (cx, 4.69, 0.8), brown2, bevel=0.02)
+    pl.box("clarm", (0.22, 1.1, 0.34), (-0.05, cy, 0.46), brown, bevel=0.04)
+    pl.box("crarm", (0.46, 1.1, 0.34), (1.27, cy, 0.46), brown, bevel=0.04)
+    make_phone(kit, pl, "phone", (1.25, 4.0, 0.63), 0, "3", "foot", scale=1.3)
     # a bookshelf of colour blocks, a painting of blocks, a plant, a lamp
     pl.box("shelf", (1.5, 0.35, 2.0), (-2.2, 4.95, 1.0), kit.plastic("#8d5a38", 0.7))
     for r in range(4):
@@ -506,7 +551,7 @@ def build_diner(kit, O):
 
 def build_hall(kit, O, tag, night):
     pl = Pl(kit, O, tag)
-    wall = kit.plastic("#ffd9b8", 0.85, spec=0.05)
+    wall = kit.plastic("#e6c2c8" if night else "#ffd9b8", 0.85, spec=0.05)
     pl.box("floor", (2.6, 8.4, 0.1), (0, 3.8, -0.05), kit.planks("#d9ab72", "#c99a62", 1.0))
     pl.box("ceil", (2.6, 8.4, 0.1), (0, 3.8, 2.85), kit.plastic("#f1ede6", 0.9, spec=0.02))
     pl.wall_y("left", -1.1, 0, 7.7, 0.0, 2.8, 0.2, wall)
@@ -545,10 +590,13 @@ def build_hall(kit, O, tag, night):
     for k, c in enumerate(["#4f8fe8", "#f6c453", "#e8584a", "#9be15d"]):
         pl.box(f"pst{k}", (0.03, 0.3, 0.3), (-1.0, 2.4 + 0.36 * k, 1.7), kit.plastic(c, 0.6))
     warm = "#ffd7a8" if night else "#fff3e0"
-    pl.light("h1", (0, 1.4, 2.35), 420, warm)
-    pl.light("h2", (0, 4.4, 2.35), 420, warm)
-    pl.light("h3", (0.6, 2.8, 1.8), 220, warm)
-    pl.light("h0", (0.2, 0.4, 1.9), 320, warm)
+    hd = 0.5 if night else 1.0
+    pl.light("h1", (0, 1.4, 2.35), 420 * hd, warm)
+    pl.light("h2", (0, 4.4, 2.35), 420 * hd, warm)
+    pl.light("h3", (0.6, 2.8, 1.8), 220 * hd, warm)
+    pl.light("h0", (0.2, 0.4, 1.9), 320 * (0.8 if night else 1.0), warm)
+    if night:
+        pl.light("hwin", (0.6, 4.7, 1.8), 260, "#9d86ff")
 
 
 def build_car(kit, O):
@@ -650,9 +698,9 @@ def _first_frame(kit, story):
         kit.box("mom.bobB", (2 * R + 0.12, 0.4, 0.9), (0, R - 0.1, top - 0.45), hair, mh, bevel=0.1)
         for sx in (-1, 1):
             kit.box(f"mom.bobS{sx}", (0.26, 0.85, 0.82), (sx * (R + 0.02), 0.12, top - 0.43), hair, mh, bevel=0.1)
-        sil = kit.plastic("#b4b4c4", 0.5, spec=0.3)
-        ob = kit.box("mom.streak", (0.1, 0.03, 0.34), (-0.18, -R - 0.065, top - 0.06), sil, mh, bevel=0.01)
-        ob.rotation_euler = (0, 0.1, 0.0)
+        sil = kit.plastic("#8b8796", 0.8, spec=0.05)
+        ob = kit.box("mom.streak", (0.045, 0.02, 0.26), (-0.17, -R - 0.052, top - 0.11), sil, mh, bevel=0.01)
+        ob.rotation_euler = (0, 0.08, 0.0)
         ear = kit.plastic("#ffd54a", 0.3, spec=0.7)
         for sx in (-1, 1):
             kit.sphere(f"mom.ear{sx}", 0.07, (sx * (R + 0.06), -0.02, -0.22), ear, mh, seg=8)
