@@ -144,6 +144,8 @@ def build(kit, story, tl):
     front2.data.angle = 0.4
     kit.aim(front2, (0, 0, 0))
 
+    # a soft warm key on whoever counts at the shed, so the face lifts off the gray wall
+    gf = kit.light("gface", "POINT", (G.SHED[0] - 0.6, G.SHED[1] - 4.4, 2.3), 260, "#fff0d8", size=0.6, shadow=False)
     # ground and mowing stripes
     kit.plane("ground", (1500, 500), (100, 0, -0.02), grass)
     for i in range(10):
@@ -251,7 +253,7 @@ def build(kit, story, tl):
     kit.cyl("flash.h", 0.05, 0.07, (-1.45, G.FENCE_Y - 0.14, 1.32), P("#ffe9a0", 0.3), rot=(math.pi / 2, 0, 0.0), n=10)
 
     # a plain bench by the shed (shown only in the "facing the shed" shot)
-    bn = kit.empty("bench", (-4.4, 6.2, 0.0), None, rot=(0, 0, 1.53))
+    bn = kit.empty("bench", (-4.5, 8.6, 0.0), None, rot=(0, 0, 1.53))
     kit.box("bench.seat", (1.5, 0.32, 0.07), (0, 0, 0.425), wood, bn)
     for sx in (-1, 1):
         kit.box(f"bench.leg{sx}", (0.1, 0.28, 0.4), (sx * 0.62, 0, 0.2), woodd, bn)
@@ -395,25 +397,34 @@ def _first_frame(kit, story):
         pr = kit.empty("photo", (0.0, -0.53, -1.5), arm)
         W["photo"] = pr
         kit.box("photo.fr", (1.3, 0.04, 1.5), (0, 0, 0), P("#fffdf6", 0.6), pr)
-        kit.box("photo.sky", (1.12, 0.04, 0.5), (0, -0.04, 0.4), P("#a8dcff", 0.9), pr)
-        kit.box("photo.bg", (1.12, 0.04, 0.62), (0, -0.04, -0.16), P("#7ccf6a", 0.9), pr)
+        kit.box("photo.sky", (1.24, 0.04, 0.5), (0, -0.04, 0.45), P("#a8dcff", 0.9), pr)
+        kit.box("photo.bg", (1.24, 0.04, 0.95), (0, -0.04, -0.27), P("#7ccf6a", 0.9), pr)
         shirts = ["#b05a3a", "#d8a62a", "#3a8a8a", "#8a5a9a", "#5a7a3a", "#c0603a", "#3a5a9a", "#9a8a6a"]
         skins = ["#e6b48c", "#c89870", "#f0c8a8", "#8a5a3c", "#dca97c"]
         hairs = ["#2a1a10", "#6a3a1a", "#c8a050", "#1a1410", "#8a8a8a"]
         eye = P("#1c120c", 0.5)
         ppl = []
-        for i, xx in enumerate((-0.2, 0.06, 0.32, 0.58)):    # back row, the third slot left empty
+        for i, xx in enumerate((-0.435, -0.145, 0.145, 0.435)):    # back row, the third slot left empty
             if i == 2:
                 continue
-            ppl.append((f"b{i}", xx - 0.02, 0.13, i))
-        for i, xx in enumerate((-0.4, -0.14, 0.12, 0.38)):
-            ppl.append((f"f{i}", xx, -0.3, i + 4))
-        for nm, xx, zz, k in ppl:
-            kit.box(f"photo.{nm}b", (0.2, 0.05, 0.26), (xx, -0.1, zz - 0.02), P(shirts[k % 8], 0.6), pr, bevel=0.01)
-            kit.sphere(f"photo.{nm}h", 0.095, (xx, -0.12, zz + 0.2), P(skins[k % 5], 0.6), pr, seg=8)
-            kit.box(f"photo.{nm}r", (0.2, 0.07, 0.07), (xx, -0.135, zz + 0.265), P(hairs[k % 5], 0.7), pr, bevel=0.015)
+            ppl.append((f"b{i}", xx, 0.08, -0.10, i))
+        for i, xx in enumerate((-0.435, -0.145, 0.145, 0.435)):
+            ppl.append((f"f{i}", xx, -0.38, -0.17, i + 4))
+        for nm, xx, zz, yy, k in ppl:
+            sh = P(shirts[k % 8], 0.6)
+            kit.box(f"photo.{nm}b", (0.26, 0.05, 0.42), (xx, yy, zz), sh, pr, bevel=0.01)
+            kit.box(f"photo.{nm}s", (0.32, 0.05, 0.1), (xx, yy, zz + 0.16), sh, pr, bevel=0.02)       # shoulders
+            kit.box(f"photo.{nm}n", (0.05, 0.04, 0.05), (xx, yy - 0.01, zz + 0.23), P(skins[k % 5], 0.6), pr)
+            kit.sphere(f"photo.{nm}h", 0.065, (xx, yy - 0.02, zz + 0.29), P(skins[k % 5], 0.6), pr, seg=8)
+            kit.box(f"photo.{nm}r", (0.14, 0.07, 0.05), (xx, yy - 0.01, zz + 0.335), P(hairs[k % 5], 0.7), pr, bevel=0.015)
             for sx in (-1, 1):
-                kit.box(f"photo.{nm}e{sx}", (0.03, 0.02, 0.035), (xx + sx * 0.04, -0.215, zz + 0.2), eye, pr)
+                kit.box(f"photo.{nm}e{sx}", (0.02, 0.015, 0.025), (xx + sx * 0.026, yy - 0.083, zz + 0.3), eye, pr)
+        # adult cues: a mustache on one, glasses on another
+        kit.box("photo.f1m", (0.1, 0.02, 0.025), (-0.145, -0.17 - 0.092, -0.38 + 0.27), P("#3a2414", 0.7), pr)
+        gl_ = P("#1c120c", 0.5)
+        for sx in (-1, 1):
+            kit.box(f"photo.b0g{sx}", (0.045, 0.015, 0.04), (-0.435 + sx * 0.026, -0.10 - 0.088, 0.08 + 0.3), gl_, pr)
+        kit.box("photo.b0gb", (0.02, 0.015, 0.012), (-0.435, -0.10 - 0.088, 0.08 + 0.31), gl_, pr)
         noshadow(pr)
 
 

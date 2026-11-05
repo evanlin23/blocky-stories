@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 6
+REV = 9
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -159,8 +159,8 @@ ME2 = (TAX - 1.8, TAY + 0.3)                      # where I stand to say it
 PHOTO_AT = (2.2, 1.7)                             # Grandma showing the photo
 PHOTO_W = (PHOTO_AT[0] + 0.47, PHOTO_AT[1] - 0.49, 1.14)   # about where the photo lies, in the world
 GY = -120.0
-BN = (-4.4, 6.2)                                  # the bench Glenn sits on in the shed shot
-BNY = -88.0
+BN = (-4.5, 8.6)                                  # the bench Glenn sits on in the shed shot
+BNY = -70.0
 
 # ===================================================================== 01 the hook (L01 to L03)
 cue(0, "clock", y=31.0, d=204.0)
@@ -174,6 +174,7 @@ move(0, "bowl", z=-60.0)
 move(0, "fst", z=-60.0)
 move(0, "bench", vis=0.0)
 put("grandma", 0, [GRS[0], GRS[1]], 0, expr="shut", arms=[0, 150])
+acting["grandma"] = acting["grandma"][-1:]   # visible from the very first drawing (no hidden key at 0)
 shot(0, orb(GRS[0], GRS[1], 1.38, 0, 3.0, 40, push=0.14), "grancount")
 only("L01.2", ["grandma", "c1", "c2", "c3"])
 put("c1", "L01.2", [-3.7, 1.4], 15, expr="smile")
@@ -201,16 +202,10 @@ shot("L03", orb(PHOTO_W[0], PHOTO_W[1], PHOTO_W[2], 0, 1.45, 50, dz=0.9, push=0.
 # ===================================================================== 02 the game at work (L04 to L12)
 cue("L04", "photo", v=0.0)
 only("L04", ["grandma"])
-sit("grandma", "L04", True)
-put("grandma", "L04", GR, 0, expr="wide", arms=[0, 70])
-beat("grandma", "L04+0.3", arms=[0, 62])
-beat("grandma", "L04+0.6", arms=[0, 72])
-beat("grandma", "L04+0.9", arms=[0, 62])
-shot("L04", orb(GR[0], GR[1], 1.2, 0, 3.4, 38, dz=0.15), "grantable")
-beat("grandma", "L04.2", arms=[0, 72], expr="angry")
-beat("grandma", "L04.2+0.3", arms=[0, 62])
-beat("grandma", "L04.2+0.6", arms=[0, 72])
-shot("L04.2", orb(GR[0] + 0.1, GR[1] - 0.2, 1.2, -40, 3.2, 34, dz=0.15), "tap")
+put("grandma", "L04", [GRS[0] + 0.1, GRS[1]], 8, expr="shut", arms=[0, 120])
+for i_, a_ in enumerate((135, 105, 130, 100, 125)):
+    beat("grandma", f"L04+{0.15 + 0.2 * i_:.2f}", arms=[0, a_])
+shot("L04", orb(GRS[0] + 0.1, GRS[1], 1.38, 18, 2.9, 40, push=0.14), "grantable")
 # L05: the reunion today
 only("L05", ["grandma", "c1", "c2", "c3"])
 sit("c1", "L05", True)
@@ -256,7 +251,7 @@ put("glenn", "L08", GL, GY, expr="smile")
 shot("L08", orb(GL[0], GL[1], 1.32, GY, 3.0, 40, push=0.12), "glennstache")
 move("L08.2-0.05", "bench", vis=1.0)
 put("glenn", "L08.2", list(BN), BNY, expr="smile")
-shot("L08.2", mv([-7.0, 3.9, 1.5], [-5.1, 6.5, 1.5], 22, [-6.8, 4.0, 1.5], [-5.1, 6.5, 1.5], 22), "glennshed")
+shot("L08.2", mv([-5.6, 5.2, 1.4], [-4.9, 8.6, 1.35], 26, [-5.5, 5.4, 1.4], [-4.9, 8.6, 1.35], 26), "glennshed")
 move("L09-0.1", "bench", vis=0.0)
 # L09: the potato salad
 move("L09-0.05", "bowl", x=BOWL[0], y=BOWL[1] - 0.55, z=1.1)
@@ -266,6 +261,11 @@ put("glenn", "L09", [BOWL[0], BOWL[1] - 1.1], 180, expr="smile", arms=[75, 75])
 move("L09+0.15", "bowl", dur=0.45, x=BOWL[0], y=BOWL[1], z=0.815)
 beat("glenn", "L09+0.55", arms=[0, 0])
 shot("L09", mv([BOWL[0] + 0.3, BOWL[1] + 3.2, 1.9], [BOWL[0], BOWL[1] - 1.0, 1.2], 34, [BOWL[0] + 0.2, BOWL[1] + 2.8, 1.9], [BOWL[0], BOWL[1] - 1.0, 1.2], 34), "bringsalad")
+only("L09.1", ["glenn", "c1", "c2"])
+put("c1", "L09.1", [TBX + 0.2, 0.5], 90, expr="smile")
+put("c2", "L09.1", [TBX - 0.9, 0.5], 90, expr="smile")
+go("c1", "L09.1+1.6", [TBX + 3.4, 0.5])
+go("c2", "L09.1+1.6", [TBX + 2.3, 0.5])
 shot("L09.1+0.35", orb(BOWL[0], BOWL[1] - 0.4, 1.2, 180, 3.3, 36, dz=0.15, push=0.1), "bowlclose")
 # L10: I finally try it
 only("L10", ["me", "c1", "c3"])
@@ -283,15 +283,16 @@ shot("L10", orb(MEB[0], MEB[1], 1.25, 0, 3.4, 38, dz=0.1), "metry")
 beat("me", "L11", expr="smirk", arms=[0, 0], head=[0, 8])
 beat("me", "L11.1", expr="wide", head=[0, 0])
 shot("L11", orb(MEB[0], MEB[1], 1.3, 14, 2.8, 42, dz=0.05, push=0.16), "mechew")
-# L12: nobody else has the recipe
-only("L12", ["c1", "c3"])
+# L12: Grandma tastes her own copy and frowns
+only("L12", ["grandma"])
 sit("c1", "L12", False)
 sit("c3", "L12", False)
-put("c1", "L12", [TBX - 0.5, TBY - 1.6], 0, expr="worried")
-acting["c1"].append({"at": "L12+0.2", "pos": [TBX - 0.5, TBY - 1.6], "side": [55, 55], "expr": "worried"})
-put("c3", "L12", [TBX + 0.5, TBY - 1.6], 0, expr="worried")
-acting["c3"].append({"at": "L12.1", "pos": [TBX + 0.5, TBY - 1.6], "side": [55, 55], "expr": "worried"})
-shot("L12", orb(TBX, TBY - 1.6, 1.4, 0, 5.2, 38), "cousinshrug")
+sit("grandma", "L12", True)
+put("grandma", "L12", GR, 0, expr="angry", arms=[0, 70], head=[0, 8])
+acting["grandma"].append({"from": "L12", "to": "L12+0.8", "mouth": [0.0, 0.9]})
+beat("grandma", "L12.1", expr="worried", arms=[0, 60], head=[10, 0])
+shot("L12", orb(GR[0], GR[1], 1.2, -8, 2.9, 40, dz=0.1, push=0.12), "grancopy")
+shot("L12.1", orb(GR[0], GR[1], 1.25, 14, 2.5, 42, dz=0.1, push=0.08), "grancopy2")
 
 # ===================================================================== 03 the reveal (P01, L13 to L19)
 # the 0.4 s hole: me looking from the bowl to Mr. Glenn
@@ -368,7 +369,7 @@ put("c3", "L19.1", [-6.6, 5.0], -90, expr="grin")
 go("c1", "L20", [4.5, 7.6], run=True)
 go("c2", "L20", [-4.0, 11.5], run=True)
 go("c3", "L20", [-11.0, 2.5], run=True)
-shot("L19.1", orb(GRS[0] + 0.2, GRS[1], 1.4, 35, 4.6, 30, dz=0.1, push=0.1), "scatter2")
+shot("L19.1", orb(GRS[0] + 0.2, GRS[1], 1.4, 35, 3.3, 34, dz=0.1, push=0.1), "scatter2")
 # L20: and I'm hiding
 only("L20", ["me"])
 put("me", "L20", [3.0, 11.4], 15, expr="laugh", arms=[0, 0])
@@ -421,8 +422,7 @@ for i, (at, camera, step, hand, follow, nm) in enumerate(SH):
 
 sfx = [
     {"at": "L14.2", "kind": "sting", "db": -14},
-    {"at": "L15.1+0.6", "kind": "thud", "db": -22},
-    {"at": "L01.3+0.55", "kind": "thud", "db": -24},
+    {"at": "L01.3+0.15", "kind": "thud", "db": -20},
 ]
 music = {
     "root": 48, "mode": "major", "bpm": 126, "seed": 112,
@@ -444,7 +444,7 @@ remap_all(sfx)
 remap_all(music["sections"])
 remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
-polish = {"reveal": [remap("L15.1"), remap("L14.2")],
+polish = {"emph": ["L01.3"], "reveal": [remap("L15.1"), remap("L14.2")],
           "hold": [names[n_] for n_ in ("reveal", "tally", "photogap", "palm1", "grantable", "glennface", "grandfork", "reunion", "walkover", "sneak")]}
 story = {
     "slug": "ep112-hide-and-seek",
