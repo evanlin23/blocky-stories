@@ -140,26 +140,31 @@ def backdrop(kit, x0, y0, n=9, span=40.0, tall=7.0):
 
 
 def falls_rock(kit, name, loc, yaw=0.0, w=14.0, h=9.0):
-    """The frozen waterfall: a grey rock face, a snow cap, and ice hanging down it. Its viewing side is local -y."""
+    """The frozen waterfall: a dark grey rock face with a snow cap, a sheet of ice-blue ice and uneven drips of ice
+    hanging down it. Its viewing side is local -y."""
     P = kit.plastic
     root = kit.empty(name, loc)
     root.rotation_euler = (0, 0, yaw)
-    rock = P("#7f90a4", 0.9, spec=0.05)
-    rock2 = P("#6c7d92", 0.9, spec=0.05)
-    ice = P("#aee3f6", 0.2, spec=0.9)
-    ice2 = P("#d8f4fd", 0.25, spec=0.8)
+    rock = P("#5f6d80", 0.9, spec=0.05)
+    rock2 = P("#4c5a6d", 0.9, spec=0.05)
+    rock3 = P("#7a8798", 0.9, spec=0.05)
     kit.box(f"{name}.wall", (w, 3.0, h), (0, 0, h / 2 + G.ROAD_Z), rock, root)
-    for i, (dx, dz, ww, hh) in enumerate([(-4.8, 3.0, 3.6, 1.0), (4.2, 5.4, 4.2, 1.2), (-2.5, 7.0, 3.0, 1.0),
-                                          (5.8, 2.0, 2.4, 1.4)]):
-        kit.box(f"{name}.ledge{i}", (ww, 0.7, hh), (dx, -1.75, dz + G.ROAD_Z), rock2, root, bevel=0.1)
+    for i, (dx, dz, ww, hh) in enumerate([(-4.8, 3.0, 3.6, 1.0), (4.2, 5.4, 4.2, 1.2), (-5.5, 6.6, 2.6, 1.3),
+                                          (5.8, 2.0, 2.4, 1.4), (-3.0, 1.0, 2.2, 0.8)]):
+        kit.box(f"{name}.ledge{i}", (ww, 0.7, hh), (dx, -1.75, dz + G.ROAD_Z), rock2 if i % 2 else rock3, root, bevel=0.1)
     kit.box(f"{name}.cap", (w + 0.4, 3.2, 0.9), (0, 0, h + G.ROAD_Z + 0.2), P(SNOW, 0.9, spec=0.05), root, bevel=0.2)
-    base = 0.0
-    for i, (dx, ww, top) in enumerate([(-1.7, 0.7, 6.8), (-0.7, 1.1, 7.6), (0.5, 0.8, 7.2), (1.5, 1.0, 7.9), (2.5, 0.6, 6.4)]):
-        kit.box(f"{name}.ice{i}", (ww, 0.5, top), (dx, -1.9, top / 2 + G.ROAD_Z + 0.2 + base), ice, root, bevel=0.12)
-        kit.box(f"{name}.iceh{i}", (ww * 0.4, 0.2, top * 0.8), (dx - ww * 0.12, -2.2, top * 0.45 + G.ROAD_Z + 0.2), ice2,
-                root, bevel=0.06)
-    s = kit.sphere(f"{name}.pool", 2.4, (0.4, -2.4, G.ROAD_Z + 0.1), ice, root, seg=12)
-    s.scale = (1.4, 0.8, 0.3)
+    ice = [P("#7cc8ee", 0.2, spec=0.9), P("#9ad9f6", 0.2, spec=0.9), P("#b6e6fb", 0.25, spec=0.8)]
+    # a sheet of blue ice down the middle, then drips of every length
+    top = h + G.ROAD_Z
+    kit.box(f"{name}.sheet", (5.6, 0.35, 6.2), (0.3, -1.65, top - 3.1), ice[1], root, bevel=0.12)
+    drips = [(-2.9, 0.7, 4.9), (-2.1, 0.45, 6.6), (-1.3, 0.9, 7.3), (-0.4, 0.5, 5.6), (0.5, 1.0, 7.9), (1.4, 0.55, 6.1),
+             (2.2, 0.8, 7.0), (3.0, 0.45, 5.2), (3.6, 0.35, 3.9)]
+    for i, (dx, ww, ln) in enumerate(drips):
+        m = ice[i % 3]
+        kit.box(f"{name}.ice{i}", (ww, 0.55, ln), (dx, -1.95, top - ln / 2), m, root, bevel=0.14)
+        kit.box(f"{name}.tip{i}", (ww * 0.55, 0.5, ln * 0.18), (dx, -1.95, top - ln - ln * 0.07), m, root, bevel=0.1)
+    s = kit.sphere(f"{name}.pool", 2.6, (0.4, -2.4, G.ROAD_Z + 0.1), ice[2], root, seg=12)
+    s.scale = (1.5, 0.8, 0.3)
     return root
 
 
@@ -167,15 +172,15 @@ def cabin(kit, name, loc):
     """The little log cabin: brown logs, a snowy roof, a chimney with smoke, a blank sign. Front is -y."""
     P = kit.plastic
     root = kit.empty(name, loc)
-    log = P("#8a5a36", 0.85, spec=0.05)
-    log2 = P("#7a4c2c", 0.85, spec=0.05)
+    log = P("#b07a48", 0.85, spec=0.05)
+    log2 = P("#9a6636", 0.85, spec=0.05)
     kit.box(f"{name}.body", (6.2, 4.6, 3.0), (0, 0, 1.5), log, root)
     for i in range(6):
         kit.cyl(f"{name}.log{i}", 0.2, 6.5, (0, -2.35, 0.3 + i * 0.5), log2 if i % 2 else log, root, rot=(0, math.pi / 2, 0), n=10)
     snow = P(SNOW, 0.9, spec=0.05)
     for sx in (-1, 1):
-        kit.box(f"{name}.roof{sx}", (3.9, 5.2, 0.35), (sx * 1.7, 0, 3.55), P("#5a3a26", 0.8), root, rot=(0, -sx * 0.45, 0))
-        kit.box(f"{name}.rsnow{sx}", (3.9, 5.3, 0.3), (sx * 1.7, 0, 3.8), snow, root, rot=(0, -sx * 0.45, 0), bevel=0.1)
+        kit.box(f"{name}.roof{sx}", (3.9, 5.2, 0.35), (sx * 1.7, 0, 3.55), P("#5a3a26", 0.8), root, rot=(0, sx * 0.45, 0))
+        kit.box(f"{name}.rsnow{sx}", (3.9, 5.3, 0.3), (sx * 1.7, 0, 3.8), snow, root, rot=(0, sx * 0.45, 0), bevel=0.1)
     kit.box(f"{name}.chim", (0.7, 0.7, 1.8), (1.9, 0.5, 4.3), P("#7a6a5e", 0.9), root)
     kit.box(f"{name}.door", (1.2, 0.14, 2.2), (-0.8, -2.34, 1.1), P("#5a3a22", 0.7), root)
     kit.box(f"{name}.win", (1.2, 0.12, 1.0), (1.6, -2.34, 1.7), kit.emit("#ffd98a", 1.6), root)
@@ -270,6 +275,21 @@ def cabin_door_stage(kit, x0):
     kit.box("pizza.stripe", (0.3, 0.3, 0.01), (0, 0, 0.055), P("#e8493a", 0.6), box)
 
 
+def packet(kit, name, loc, col, parent, flat=False, rot=0.0, sz=1.0):
+    """A pillow snack packet with crimped ends and no writing. Upright it faces +y (the hatch camera); flat it faces up."""
+    P = kit.plastic
+    root = kit.empty(name, loc, parent)
+    root.rotation_euler = (math.pi / 2, 0, rot) if flat else (0, rot * 3.0, 0)
+    k = sz
+    body = P(col, 0.45, spec=0.35)
+    crimp = P("#fff6e0", 0.5, spec=0.2)
+    kit.box(f"{name}.b", (0.34 * k, 0.1 * k, 0.24 * k), (0, 0, 0), body, root, bevel=0.035 * k)
+    for sx in (-1, 1):
+        kit.box(f"{name}.c{sx}", (0.07 * k, 0.045 * k, 0.28 * k), (sx * 0.19 * k, 0, 0), crimp, root)
+    kit.box(f"{name}.s", (0.2 * k, 0.104 * k, 0.04 * k), (0, 0, 0.0), crimp, root)
+    return root
+
+
 # ---------------------------------------------------------------------------------------------- the van
 def van(kit):
     P = kit.plastic
@@ -293,7 +313,7 @@ def van(kit):
         for sy in (-0.85, 1.6):
             kit.cyl(f"vwh{sx}{sy}", 0.38, 0.28, (sx * 1.2, sy, -0.07), dark, rot=(0, math.pi / 2, 0), n=18)
             kit.cyl(f"vhub{sx}{sy}", 0.17, 0.3, (sx * 1.21, sy, -0.07), kit.metal("#b4bac2", 0.3), rot=(0, math.pi / 2, 0), n=12)
-        kit.box(f"vlamp{sx}", (0.42, 0.1, 0.22), (sx * 0.8, -2.83, 0.28), kit.emit("#fff6d8", 2.6))
+        kit.box(f"vlamp{sx}", (0.42, 0.1, 0.22), (sx * 0.8, -2.97, 0.3), kit.emit("#fff6d8", 2.6))
     kit.box("vceil", (2.5, ln, 0.1), (0, yc, 2.12), cream)
     kit.box("vroof", (2.62, ln, 0.1), (0, yc, 2.23), teal, bevel=0.04)
     # the cowl, the hood and the dash
@@ -310,30 +330,33 @@ def van(kit):
     kit.box("benchb", (2.3, 0.14, 0.75), (0, G.JO[1] + 0.4, 0.88), tan, bevel=0.05)
     for x_ in (G.ME[0], G.JO[0]):
         kit.box(f"benchh{x_}", (0.4, 0.12, 0.28), (x_, G.JO[1] + 0.4, 1.4), tan, bevel=0.04)
-    # the cooler between the back seats, lid up, packed to the top
+    # the cooler between the back seats, lid up, packed to the top with pillow packets
     cx, cy = G.COOLER
     cr = kit.empty("cooler", (cx, cy, 0.5))
-    kit.box("cool.body", (0.3, 0.4, 0.36), (0, 0, 0.18), P("#3f9ee0", 0.5, spec=0.3), cr, bevel=0.03)
+    cr.scale = (1.25, 1.25, 1.25)
+    kit.box("cool.body", (0.3, 0.4, 0.36), (0, 0, 0.18), P("#59b4f2", 0.5, spec=0.3), cr, bevel=0.03)
     kit.box("cool.rim", (0.34, 0.44, 0.04), (0, 0, 0.37), P("#f4f8fb", 0.5), cr, bevel=0.01)
     lid = kit.empty("cool.lid", (0, 0.2, 0.38), cr)
     kit.box("cool.lidb", (0.34, 0.44, 0.05), (0, -0.22, 0.0), P("#f4f8fb", 0.5), lid, bevel=0.02)
     lid.rotation_euler = (-1.9, 0, 0)
     cols = ["#ff5a4a", "#ffd23f", "#4fd06a", "#ff9a2e", "#c07ae8", "#46c8e8", "#ff7aa8"]
     n = 0
-    for r in range(2):
-        for c in range(3):
-            kit.box(f"cool.bag{n}", (0.08, 0.035, 0.2), (-0.1 + c * 0.1, -0.09 + r * 0.17, 0.46 + 0.02 * (c % 2)),
-                    P(cols[n % 7], 0.5, spec=0.25), cr, rot=(0, 0.1 * ((c % 3) - 1), 0.12 * (r - 0.5)), bevel=0.012)
-            n += 1
-    for c in range(3):
-        kit.box(f"cool.cocoa{c}", (0.07, 0.025, 0.1), (-0.1 + c * 0.1, 0.0, 0.42), P("#7a4a2a", 0.6), cr,
-                rot=(0, 0, 0.3 * (c - 1.5)))
-    # the cargo: snack bags stacked high behind the back seat
-    for r in range(3):
-        for c in range(6):
+    for lay in range(2):
+        for r in range(4):
+            for c in range(3):
+                packet(kit, f"cool.pk{n}", (-0.1 + c * 0.1 + 0.02 * lay, -0.14 + r * 0.095, 0.4 + lay * 0.035), cols[(n * 3) % 7], cr,
+                       flat=True, rot=0.35 * (((n * 5) % 7) - 3) / 3, sz=0.28)
+                n += 1
+    reg("cooler", cr)
+    kit.light("coolerlight", "POINT", (-0.45, -0.45, 1.3), 16.0, "#fffaf0", size=0.3, shadow=False)
+    # the cargo: pillow snack packets stacked high behind the back seat
+    n = 0
+    for r in range(7):
+        for c in range(5):
             for d in range(2):
-                kit.box(f"cargo{r}{c}{d}", (0.34, 0.26, 0.34), (-0.85 + c * 0.35 + (0.12 if r % 2 else 0.0), 2.18 + d * 0.3, 0.2 + r * 0.36),
-                        P(cols[(r + c + d) % 7], 0.55, spec=0.2), bevel=0.04, rot=(0, 0, 0.05 * ((c + d) % 3 - 1)))
+                packet(kit, f"cargo{n}", (-0.85 + c * 0.44 + (0.2 if r % 2 else 0.0) + d * 0.1, 2.2 + d * 0.17, 0.12 + r * 0.19),
+                       cols[(r + c * 2 + d) % 7], None, flat=False, rot=0.06 * ((c + d + r) % 3 - 1), sz=1.0)
+                n += 1
     # the hatch (lifts away on a cue); a window in it
     ht = kit.empty("hatch", (0, 2.78, 0.0))
     kit.box("hatch.low", (2.4, 0.1, 1.2), (0, 0, 0.3), teal, ht)
@@ -365,16 +388,16 @@ def van(kit):
     ph = kit.empty("phone", (0, 0, -60))
     kit.box("phone.b", (0.1, 0.014, 0.2), (0, 0, 0), P("#1a1c20", 0.4, spec=0.5), ph, bevel=0.012)
     kit.box("phone.s", (0.088, 0.004, 0.18), (0, -0.009, 0), kit.emit("#e8f6ff", 1.5), ph)
-    pm = P("#10151a", 0.5)
+    pm = kit.emit("#101418", 0.0)
     segs = {"a": (0, 1, 1), "b": (1, 0.5, 0), "c": (1, -0.5, 0), "d": (0, -1, 1), "e": (-1, -0.5, 0), "f": (-1, 0.5, 0), "g": (0, 0, 1)}
     dig = {"4": "fgbc", "1": "bc", "2": "abged"}
     for di, (ch, cx_) in enumerate((("4", -0.036), ("1", -0.001), ("2", 0.03))):
         for k in dig[ch]:
             sx_, sz_, across = segs[k]
-            size = (0.02, 0.003, 0.0045) if across else (0.0045, 0.003, 0.024)
-            kit.box(f"phone.d{di}{k}", size, (cx_ + sx_ * 0.0105, -0.0115, sz_ * 0.024), pm, ph)
+            size = (0.022, 0.003, 0.007) if across else (0.007, 0.003, 0.026)
+            kit.box(f"phone.d{di}{k}", size, (cx_ + sx_ * 0.0105, -0.0135, sz_ * 0.024), pm, ph)
     for zz in (-0.012, 0.012):
-        kit.box(f"phone.col{zz}", (0.005, 0.003, 0.005), (-0.0185, -0.0115, zz), pm, ph)
+        kit.box(f"phone.col{zz}", (0.005, 0.003, 0.005), (-0.0185, -0.0135, zz), pm, ph)
     reg("phone", ph)
     kit.light("phonelight", "POINT", (0.38, 0.6, 1.2), 1.0, "#dff2ff", size=0.2, shadow=False)
     # light inside the van, from the camera's side, so every face is lit
@@ -424,13 +447,15 @@ def world(kit):
     cb = cabin(kit, "cabin", (-6, -112, 8.4))
     reg("cabin", cb)
     mp = kit.empty("post", (G.POST_X, -40, 0))
-    kit.box("post.b", (0.34, 0.2, 2.2), (0, 0, G.ROAD_Z + 1.1), P("#fbfbf6", 0.5, spec=0.2), mp, bevel=0.04)
-    kit.box("post.cap", (0.4, 0.26, 0.14), (0, 0, G.ROAD_Z + 2.25), P("#2a2d33", 0.6), mp, bevel=0.02)
-    kit.box("post.band", (0.36, 0.22, 0.16), (0, 0, G.ROAD_Z + 1.9), P("#e8493a", 0.5), mp)
-    for face in (-1, 1):
-        kit.box(f"post.one{face}", (0.07, 0.03, 0.8), (0.0, face * 0.115, G.ROAD_Z + 1.25), P("#111114", 0.6), mp)
-        kit.box(f"post.oneflag{face}", (0.14, 0.03, 0.06), (-0.05, face * 0.115, G.ROAD_Z + 1.6), P("#111114", 0.6), mp, rot=(0, 0.6, 0))
-        kit.box(f"post.onebase{face}", (0.2, 0.03, 0.06), (0.0, face * 0.115, G.ROAD_Z + 0.85), P("#111114", 0.6), mp)
+    kit.box("post.b", (0.34, 0.34, 2.2), (0, 0, G.ROAD_Z + 1.1), P("#fbfbf6", 0.5, spec=0.2), mp, bevel=0.04)
+    kit.box("post.cap", (0.4, 0.4, 0.14), (0, 0, G.ROAD_Z + 2.25), P("#2a2d33", 0.6), mp, bevel=0.02)
+    kit.box("post.band", (0.36, 0.36, 0.16), (0, 0, G.ROAD_Z + 1.9), P("#e8493a", 0.5), mp)
+    ink = P("#111114", 0.6)
+    for sx in (-1, 1):    # the black 1 on the two faces the road looks at (the sides toward and away from it)
+        xf = sx * 0.19
+        kit.box(f"post.one{sx}", (0.03, 0.06, 0.8), (xf, 0.0, G.ROAD_Z + 1.25), ink, mp)
+        kit.box(f"post.oneflag{sx}", (0.03, 0.14, 0.07), (xf, -sx * 0.05, G.ROAD_Z + 1.6), ink, mp, rot=(0.6 * sx, 0, 0))
+        kit.box(f"post.onebase{sx}", (0.03, 0.22, 0.07), (xf, 0.0, G.ROAD_Z + 0.85), ink, mp)
     reg("post", mp)
     fv = falls_rock(kit, "fallsv", (G.FALLS_X + 1.5, G.FALLS_Y, -60.0), yaw=-math.pi / 2)
     reg("falls", fv)
@@ -555,7 +580,7 @@ def build(kit, story, tl):
         u = ((i * 37) % 97) / 97.0
         v = ((i * 53) % 89) / 89.0
         d = 1.0 + 5.0 * (((i * 29) % 83) / 83.0)
-        ob = kit.box(f"flake{i}", (0.07, 0.07, 0.07), (0, 0, -d), fm, cam, rot=(0.3 * i, 0.5 * i, 0.2 * i))
+        ob = kit.box(f"flake{i}", (0.045, 0.045, 0.045), (0, 0, -d), fm, cam, rot=(0.3 * i, 0.5 * i, 0.2 * i))
         noshadow(ob)
         ob["d"], ob["u"], ob["v"] = d, u, v
         W["flakes"].append(ob)
@@ -578,11 +603,33 @@ def _first_frame(kit, story):
             kit.box("jo.tail", (0.28, 0.28, 1.1), (0, 0.66, 0.35), m, jh, bevel=0.1)
         ph_ = bpy.data.objects.get("pizza.headg")
         if ph_ is not None:
-            m = kit.plastic("#6a5a4c", 0.95)
-            kit.box("pizza.chin", (0.6, 0.06, 0.2), (0, -0.62, -0.5), m, ph_, bevel=0.03)
-            kit.box("pizza.lip", (0.4, 0.06, 0.08), (0, -0.62, -0.28), m, ph_, bevel=0.02)
+            m = kit.plastic("#7a6252", 0.95)     # stubble: a shaded band across the whole jaw, no moustache
+            kit.box("pizza.chin", (0.98, 0.06, 0.3), (0, -0.64, -0.42), m, ph_, bevel=0.03)
             for sx in (-1, 1):
-                kit.box(f"pizza.cheek{sx}", (0.1, 0.06, 0.36), (sx * 0.5, -0.5, -0.3), m, ph_, bevel=0.03)
+                kit.box(f"pizza.cheek{sx}", (0.14, 0.06, 0.5), (sx * 0.5, -0.55, -0.2), m, ph_, bevel=0.03)
+        for who, light, sleeve in (("quiet1", "#f6d6b4", "#6a7a8a"), ("quiet2", "#ecc096", "#8a5a7a")):
+            qh = bpy.data.objects.get(f"{who}.headg")
+            if qh is not None:     # a flat palm over the mouth, with the wrist and sleeve rising to it
+                ed = kit.plastic("#6a4630", 0.6)
+                pc = kit.plastic(light, 0.6)
+                kit.box(f"{who}.pedge", (0.84, 0.1, 0.5), (0, -0.7, -0.3), ed, qh, bevel=0.04)
+                kit.box(f"{who}.palm", (0.76, 0.12, 0.42), (0, -0.76, -0.3), pc, qh, bevel=0.04)
+                for fx in (-0.19, 0.0, 0.19):
+                    kit.box(f"{who}.fgap{fx}", (0.02, 0.04, 0.3), (fx, -0.83, -0.2), ed, qh)
+                kit.box(f"{who}.thumb", (0.14, 0.1, 0.3), (0.42, -0.74, -0.52), pc, qh, bevel=0.03)
+                kit.box(f"{who}.wrist", (0.34, 0.18, 0.5), (0.0, -0.76, -0.75), pc, qh, bevel=0.04)
+                kit.box(f"{who}.sleeve", (0.5, 0.26, 0.6), (0.0, -0.78, -1.2), kit.plastic(sleeve, 0.8), qh, bevel=0.05)
+        if mh0 := bpy.data.objects.get("mom.headg"):
+            # clear lenses with a thin dark frame all round, so her eyes read
+            for sx in (-1, 1):
+                gl = bpy.data.objects.get(f"mom.gl{sx}")
+                if gl is not None:
+                    gl.hide_render = True
+                fr = kit.plastic("#2a1a16", 0.4)
+                x0 = sx * 0.24
+                kit.box(f"mom.flo{sx}", (0.46, 0.04, 0.035), (x0, -0.67, -0.19), fr, mh0)
+                for ex in (-1, 1):
+                    kit.box(f"mom.fl{sx}{ex}", (0.035, 0.04, 0.34), (x0 + ex * 0.22, -0.67, -0.02), fr, mh0)
         mh = bpy.data.objects.get("mom.headg")
         if mh is not None:
             m = kit.plastic("#9a8878", 0.9)
@@ -711,9 +758,29 @@ def animate(kit, story, tl, t, ctx):
                 leg = bpy.data.objects.get(f"{who}.leg{sx}")
                 if leg:
                     leg.rotation_euler = (-math.pi / 2 * 0.97, 0, 0)
-    # the squall's flakes ride on the camera
+    # the squall's flakes ride on the camera, but never inside the van or a cab: those are culled by world position
     fl = sample("flakes", tl, t, {"v": 0.0})
     on = fl["v"] > 0.5
+    cam_m = None
+    if on and spec:
+        try:
+            from mathutils import Matrix
+            keys = spec["cam"]
+            u = (t - shot["start"]) / max(1e-6, shot["end"] - shot["start"])
+            loc_, tgt_ = keys[0][1], keys[0][2]
+            if len(keys) > 1 and u > keys[0][0]:
+                loc_, tgt_ = keys[-1][1], keys[-1][2]
+                for a, b in zip(keys, keys[1:]):
+                    if u <= b[0]:
+                        v = ss((u - a[0]) / max(1e-6, b[0] - a[0]))
+                        loc_ = [a[1][i] + (b[1][i] - a[1][i]) * v for i in range(3)]
+                        tgt_ = [a[2][i] + (b[2][i] - a[2][i]) * v for i in range(3)]
+                        break
+            q = (Vector(tgt_) - Vector(loc_)).to_track_quat("-Z", "Y")
+            cam_m = Matrix.Translation(loc_) @ q.to_matrix().to_4x4()
+        except Exception:
+            cam_m = None
+    boxes = [(-1.5, 1.5, -3.2, 3.0, -0.8, 2.6), (G.PLOW[0] - 2.4, G.PLOW[0] + 3.4, -7.0, 2.2, -0.8, 4.2)]
     for ob in W["flakes"]:
         ob.hide_render = not on
         if not on:
@@ -726,4 +793,8 @@ def animate(kit, story, tl, t, ctx):
         sc_ = 0.6 + 0.8 * (dd / 6.0)
         ob.location = (x, y, -dd)
         ob.scale = (sc_, sc_, sc_)
+        if cam_m is not None:
+            wp = cam_m @ Vector((x, y, -dd))
+            if any(b[0] < wp.x < b[1] and b[2] < wp.y < b[3] and b[4] < wp.z < b[5] for b in boxes):
+                ob.hide_render = True
     return gains
