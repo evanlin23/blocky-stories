@@ -221,7 +221,6 @@ shot(0, mv([KX - 0.2, -0.9, 1.95], [KX - 1.3, 2.7, 1.5], 36, [KX - 0.55, -0.2, 1
 shot("L01.2", mv([KX - 0.9, 0.45, 1.3], [KX - 0.97, 1.9, 1.2], 38, [KX - 0.9, 0.9, 1.3], [KX - 0.97, 1.9, 1.2], 38), "dial")
 shot("L02", fc(ME_K, 0, 2.7, 30, h=1.5, tz=1.45, off=-0.36, push=0.1), "stunned")
 shot("L03", mv([KX - 0.7, 0.0, 1.55], [KX - 1.0, 2.6, 1.5], 26, [KX - 0.75, 0.4, 1.55], [KX - 1.0, 2.6, 1.5], 26), "hand")
-shot("L03.2", mv([KX - 1.9, 0.7, 1.15], [KX - 0.97, 2.0, 1.2], 36, [KX - 1.5, 0.9, 1.2], [KX - 0.97, 2.0, 1.25], 36), "hand2")
 vis("L03", "cup", False)
 # L04 the neighbor, across the street, closing his curtains
 only("L04", ["neighbor"])
@@ -236,7 +235,6 @@ only("L05", ["baker"])
 put("baker", "L05", [BREAD, 8.3], 0, expr="smile")
 beat("baker", "L05.1", expr="smile", head=[10, 0], arms=[0, 40])
 shot("L05", mv([BREAD + 0.3, 3.2, 1.75], [BREAD, 8.0, 1.35], 46, [BREAD + 0.1, 3.8, 1.7], [BREAD, 8.0, 1.3], 46), "baker")
-shot("L05.2", mv([BREAD - 1.4, 3.6, 1.15], [BREAD + 0.3, 8.2, 1.3], 42, [BREAD - 1.0, 4.2, 1.2], [BREAD + 0.3, 8.2, 1.35], 42), "shelves")
 beat("baker", "L05.2", expr="worried", head=[-12, 0], arms=[0, 0])
 only("L06", ["coatman"])
 put("coatman", "L06", [SHX, -4.75], 180, expr="neutral")
@@ -279,7 +277,6 @@ put("me", "L16", [SPOT[0] - 0.3, 3.0], 90, expr="wide", arms=[0, 0])
 go("me", "L16+0.7", [SPOT[0], 3.0], expr="wide")
 only("L10", ["me"])
 shot("L10", mv([44.8, -0.3, 1.6], [40.9, 2.6, 1.5], 38, [44.2, -0.1, 1.6], [41.3, 2.6, 1.5], 38), "step")
-shot("L10.2", mv([47.6, 0.2, 1.1], [42.3, 2.7, 0.95], 30, [47.2, 0.4, 1.1], [42.8, 2.7, 0.95], 30), "walk")
 # L11 the bakery line steps back, all at once
 LINE = [(54.2, 4.0), (53.1, 4.0), (52.0, 4.0), (50.9, 4.0), (49.8, 4.0), (48.7, 4.0)]
 for i, (lx, ly) in enumerate(LINE):
@@ -307,7 +304,6 @@ only("L12", [f"c{i + 1}" for i in range(12)] + ["me"])
 vis("L12", "shroof_off", True)
 vis("L13", "shroof_off", False)
 shot("L12", mv([44.2, -1.6, 8.8], [47.4, 2.75, 0.6], 22, [45.4, -1.8, 8.6], [48.6, 2.78, 0.6], 22), "ring")
-shot("L12.2", mv([50.0, -2.0, 9.6], [50.0, 2.8, 0.5], 20, [50.0, -1.8, 9.0], [50.0, 2.8, 0.5], 20), "ring2")
 # L13 the bus slows down, sees me, and keeps going
 only("L13", ["me", "driver", "coatman"])
 cue("L07", "bus", x=-30.0)
@@ -366,7 +362,6 @@ put("me", "L21", [-78.0, 1.0], 0, expr="worried")
 cue("L21", "clock", m=9 * 60 + 41.0)
 shot("L21", mv([KX + 3.3, 0.9, 1.5], [KX + 3.6, 3.3, 1.5], 50, [KX + 3.55, 1.5, 1.5], [KX + 3.6, 3.3, 1.5], 50), "photo")
 shot("L21.1", mv([KX - 1.4, 0.3, 1.38], [KX - 0.97, 1.9, 1.34], 40, [KX - 1.2, 0.8, 1.38], [KX - 0.97, 1.9, 1.34], 40), "dial2")
-shot("L22", mv([KX - 0.55, 0.5, 1.2], [KX - 1.0, 1.9, 1.35], 34, [KX - 0.75, 1.05, 1.28], [KX - 1.0, 1.9, 1.35], 34), "dial3")
 only("L23", ["me"])
 put("me", "L23", [NB + 10.6, KY], -90, expr="worried", head=[0, 14])
 shot("L23", mv([NB + 7.4, KY - 0.3, 1.6], [NB + 10.6, KY, 1.5], 38, [NB + 7.6, KY - 0.2, 1.6], [NB + 10.4, KY, 1.5], 38), "windowme")
@@ -419,7 +414,6 @@ shot("L30", mv([MX_ + 0.2, MY_ - 4.2, 1.3], [MX_, MY_, 1.25], 28, [MX_ + 0.1, MY
 only("L31", ["dev"])
 beat("dev", "L31", expr="smirk", yaw=-70, arms=[0, 70])
 shot("L31", fc(DK, -70, 3.4, 34, h=1.0, tz=1.0, off=0.4, push=0.1), "wry")
-shot("L31.2", mv([DK[0] - 2.3, 3.0 - 1.9, 1.05], [DK[0] - 0.15, 3.2, 1.0], 28, [DK[0] - 2.0, 3.0 - 1.7, 1.05], [DK[0] - 0.15, 3.2, 1.0], 28), "wry2")
 # L32 and L33 Dev's words: he stands
 only("L32", ["me", "dev"])
 cue("L32", "kneel", who="dev", on=False)
@@ -427,7 +421,6 @@ put("dev", "L32", [SPOT[0] + 1.2, 3.0], -90, expr="warm")
 put("me", "L32", [SPOT[0], 3.0], 90, expr="worried")
 beat("dev", "L32.2", expr="neutral", head=[0, 4])
 shot("L32", fc([SPOT[0] + 1.2, 3.0], -60, 2.5, 40, h=1.6, tz=1.52, off=0.06, push=0.15), "devface")
-shot("L32.2", fc([SPOT[0] + 1.2, 3.0], -45, 2.7, 40, h=1.55, tz=1.5, off=0.06, push=0.15), "devface2")
 beat("dev", "L33", expr="smirk", head=[0, -4], side=[0, 0], arms=[0, 0])
 shot("L33", fc([SPOT[0] + 1.2, 3.0], -52, 2.3, 42, h=1.6, tz=1.5, off=0.06, push=0.18), "shrug")
 # L34 side by side on the sidewalk, the clock runs
@@ -590,7 +583,6 @@ sfx = [
     {"at": "L01.3", "kind": "glitch", "db": -27, "dur": 0.45},
     {"at": "L01.3", "kind": "thud", "db": -9},
     {"at": "L16+0.5", "kind": "creak", "db": -16, "dur": 0.5, "tone": "cardboard"},
-    {"at": "L46.2", "kind": "click", "db": -20},
 ]
 music = {
     "root": 57, "mode": "major", "bpm": 116, "seed": 109,
