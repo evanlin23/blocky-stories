@@ -119,7 +119,7 @@ def shelf_unit(kit, name, x, y, w=1.2, d=0.5, h=2.4, face=-1, seed=0, bins=True)
 
 def seg_digit(kit, root, name, cx, cy, h, mat, z=0.0):
     """Seven boxes (a b c d e f g) for a numeral in the tag's plane (x right, y up, z toward the viewer)."""
-    w, t = 0.55 * h, 0.17 * h
+    w, t = 0.6 * h, 0.21 * h
     pos = {"a": (cx, cy + h / 2 - t / 2, w, t), "g": (cx, cy, w, t), "d": (cx, cy - h / 2 + t / 2, w, t),
            "f": (cx - w / 2 + t / 2, cy + h / 4, t, h / 2 - t / 2), "b": (cx + w / 2 - t / 2, cy + h / 4, t, h / 2 - t / 2),
            "e": (cx - w / 2 + t / 2, cy - h / 4, t, h / 2 - t / 2), "c": (cx + w / 2 - t / 2, cy - h / 4, t, h / 2 - t / 2)}
@@ -493,9 +493,9 @@ def build_tag(kit):
     # feet, a fat dot, then the inches: "9 . 0" and "5 . 10", big digits and no thin marks
     for name, cy, h in [("g", 0.24, 0.34), ("m", -0.25, 0.34)]:
         slots = {}
-        for key, cx in [("feet", -0.17), ("tens", 0.12), ("ones", 0.34)]:
+        for key, cx in [("feet", -0.2), ("tens", 0.06), ("ones", 0.34)]:
             slots[key] = seg_digit(kit, root, f"tag.{name}.{key}", cx, cy, h, ink, 0.012)
-        b(f"tag.{name}.dot", (0.06, 0.06, 0.004), (-0.01, cy - h * 0.4, 0.012), ink)
+        b(f"tag.{name}.dot", (0.06, 0.06, 0.004), (-0.04, cy - h * 0.4, 0.012), ink)
         rows[name] = slots
     W["rows"] = rows
     W["tag_state"] = None
