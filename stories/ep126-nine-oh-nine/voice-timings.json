@@ -1,0 +1,1065 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Out past nine oh-nine here, nobody lets you in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.172
+    ],
+    [
+     1.241,
+     1.655
+    ],
+    [
+     1.655,
+     2.19
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Not till dawn. Nobody knows why.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     1.586
+    ]
+   ]
+  },
+  "L03": {
+   "text": "The bakery closes at nine oh-eight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.793
+    ],
+    [
+     0.793,
+     1.655
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Mister Tran walks his dog at a run.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.147
+    ],
+    [
+     1.147,
+     1.724
+    ]
+   ]
+  },
+  "L05": {
+   "text": "At nine oh-nine, every door in town is shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.81,
+     1.147
+    ],
+    [
+     1.147,
+     1.422
+    ],
+    [
+     1.422,
+     1.983
+    ]
+   ]
+  },
+  "L06": {
+   "text": "I've lived here twenty-four years. I've never been out past it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.345
+    ],
+    [
+     1.414,
+     1.681
+    ],
+    [
+     1.681,
+     1.948
+    ],
+    [
+     1.948,
+     2.552
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Until Tuesday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.155,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.155,
+     1.086
+    ]
+   ]
+  },
+  "L08": {
+   "text": "My bus broke down two miles out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.845
+    ],
+    [
+     0.845,
+     1.621
+    ]
+   ]
+  },
+  "L09": {
+   "text": "I ran the whole way.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     1.121
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Nine oh-nine. Grandma's door was locked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.19,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.741,
+     1.301
+    ],
+    [
+     1.301,
+     1.931
+    ]
+   ]
+  },
+  "L11": {
+   "text": "I knocked. Nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     1.086
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Every shade on main street came down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.069
+    ],
+    [
+     1.069,
+     1.793
+    ]
+   ]
+  },
+  "L13": {
+   "text": "The whole town was mine, and it was silent.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.0
+    ],
+    [
+     1.052,
+     1.181
+    ],
+    [
+     1.181,
+     1.862
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Then, from somewhere up, I heard music.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.948
+    ],
+    [
+     1.0,
+     1.793
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Slow. Old.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.19,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.19,
+     0.397
+    ],
+    [
+     0.439,
+     0.966
+    ]
+   ]
+  },
+  "L16": {
+   "text": "It was coming from the roof of the feed store.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.974
+    ],
+    [
+     0.974,
+     1.112
+    ],
+    [
+     1.112,
+     1.862
+    ]
+   ]
+  },
+  "L17": {
+   "text": "There's a ladder up the back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     1.224
+    ]
+   ]
+  },
+  "L18": {
+   "text": "I've walked past it my whole life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.716
+    ],
+    [
+     0.716,
+     1.483
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Its rungs are worn smooth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     1.397
+    ]
+   ]
+  },
+  "L20": {
+   "text": "So I climbed it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     1.0
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Two people on the roof.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.155
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Dancing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.966,
+   "onset": 0.19,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ]
+   ]
+  },
+  "L23": {
+   "text": "It was Grandma.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.155,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.155,
+     1.0
+    ]
+   ]
+  },
+  "L24": {
+   "text": "And Grandpa.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Grandma's always asleep by nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.724
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Grandpa's knee is always too bad for stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.103
+    ],
+    [
+     1.103,
+     1.431
+    ],
+    [
+     1.431,
+     2.121
+    ]
+   ]
+  },
+  "L27": {
+   "text": "They looked at me. I looked at them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.655
+    ],
+    [
+     0.724,
+     1.0
+    ],
+    [
+     1.0,
+     1.5
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Grandma said, Well. You'd better sit down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     0.897
+    ],
+    [
+     0.966,
+     1.267
+    ],
+    [
+     1.267,
+     1.983
+    ]
+   ]
+  },
+  "L29": {
+   "text": "She was seventeen in nineteen sixty-five.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.931
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Grandpa was the boy with the radio.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     0.974
+    ],
+    [
+     0.974,
+     1.707
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Her father said she had to be home by nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     0.957
+    ],
+    [
+     0.957,
+     1.241
+    ],
+    [
+     1.241,
+     1.879
+    ]
+   ]
+  },
+  "L32": {
+   "text": "So she made up a rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.578
+    ],
+    [
+     0.578,
+     1.172
+    ]
+   ]
+  },
+  "L33": {
+   "text": "She pinned it on the town board herself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.629
+    ],
+    [
+     0.629,
+     1.129
+    ],
+    [
+     1.129,
+     1.724
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Inside by nine oh-nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.19,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.5,
+     1.397
+    ]
+   ]
+  },
+  "L35": {
+   "text": "And everybody just followed it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.431
+    ]
+   ]
+  },
+  "L36": {
+   "text": "They've met on this roof every night since.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.888
+    ],
+    [
+     0.888,
+     1.793
+    ]
+   ]
+  },
+  "L37": {
+   "text": "Sixty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.19,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.19,
+     0.966
+    ]
+   ]
+  },
+  "L38": {
+   "text": "The whole town indoors, so two people could dance.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.948
+    ],
+    [
+     1.0,
+     1.466
+    ],
+    [
+     1.466,
+     2.086
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Nobody ever asked why.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.19,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     1.328
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Grandma made me promise never to tell.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.112
+    ],
+    [
+     1.112,
+     1.845
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Then Grandpa turned the radio up,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     0.897
+    ],
+    [
+     0.897,
+     1.552
+    ]
+   ]
+  },
+  "L42": {
+   "text": "And they danced till dawn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.259
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Grandpa's bad knee was fine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.854
+    ],
+    [
+     0.854,
+     1.483
+    ]
+   ]
+  },
+  "L44": {
+   "text": "Now I take the late bus on purpose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.992
+    ],
+    [
+     0.992,
+     1.707
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Somebody has to hold the ladder.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.19,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.483,
+     0.888
+    ],
+    [
+     0.888,
+     1.483
+    ]
+   ]
+  },
+  "L46": {
+   "text": "So if you're ever in our town, be inside by nine oh-eight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.302
+    ],
+    [
+     0.302,
+     0.543
+    ],
+    [
+     0.543,
+     1.017
+    ],
+    [
+     1.086,
+     1.534
+    ],
+    [
+     1.534,
+     2.431
+    ]
+   ]
+  }
+ }
+}
