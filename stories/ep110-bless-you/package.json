@@ -3,9 +3,8 @@
   "description": "In our town, every sneeze takes you to whoever's thinking about you most. People land in their mom's kitchen, in their dog's bed, once on a landlord's couch.\n\nSixty-three sneezes this spring, and every one has put me next to the same old man in a green armchair, with two cups of tea already poured. My mom has never sneezed in her life.\n\nIt's made up. A blocky story, built with code and Blender.",
   "pin": "Comment ACHOO if allergy season got you this year.",
   "made_for_kids": false,
-  "cover_s": 19.4,
+  "cover_s": 4.5,
   "shape": "who-thinks",
   "opening": "if",
-  "lane": "core",
-  "hold": "batch 11: scripts only, not built yet"
+  "lane": "core"
 }
