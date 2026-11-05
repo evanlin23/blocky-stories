@@ -583,7 +583,7 @@ def build(kit, story, tl):
     kit._fogged(nm_, bs.outputs[0])
     ctx["note_mat"] = nm_
     ctx["note"] = kit.plane(nm("note"), (0.3, 0.38), (his.sgn * 0 + (-his.sgn * 2.95), 0.0, 1.5), nm_, his.root, rot=(math.pi / 2, 0, 0))
-    ctx["note"].location = (-his.sgn * 2.95, 0.035, 1.55)
+    ctx["note"].location = (-his.sgn * 2.95, 0.035, 1.25)
     no_shadow(ctx["note"])
     ctx["note"].hide_render = True
     # a big copy of the note for the close shot
@@ -626,6 +626,7 @@ def build(kit, story, tl):
     ctx["pk1"] = kit.light("porchA", "POINT", (-ours.sgn * 2.1, -0.9, 2.7), 150, "#ffe3a8", size=0.2, parent=ours.root, shadow=False)
     ctx["pk2"] = kit.light("porchB", "POINT", (-his.sgn * 2.1, -0.9, 2.7), 150, "#ffe3a8", size=0.2, parent=his.root, shadow=False)
     ctx["gaplight"] = kit.light("gaplight", "POINT", (0.0, -1.5, 4.8), 120, "#ffcf7a", size=0.4, shadow=False)
+    ctx["doorl"] = kit.light("doorl", "POINT", (3.4, -1.6, 2.6), 350, "#fff3d8", size=0.5, shadow=False)
     ctx["hlmat"], ctx["hlnode"] = glow_mat(kit, "#ffe2a0")
     ctx["plmat"], ctx["plnode"] = glow_mat(kit, "#ffd890")
     # wall lamp in our hall (a globe on a bracket), his lamp on a stand near his window
@@ -637,9 +638,15 @@ def build(kit, story, tl):
     no_shadow(ctx["lampp"])
     # Mr. Pruitt's navy sleeve and flat hand reaching out of his dark window (S19, S20); his face is never in these shots
     ao = E(his.root, (0, 0, 0), "armout")
-    B(ao, (0.3, 1.2, 0.28), (0.3, 0.1, 4.46), P("#26365e", 0.7, 0.1), "sleeve", 0.04, rot=(0, 0, -0.4))
-    B(ao, (0.26, 0.3, 0.1), (0.0, -0.52, 4.44), P("#ecc3a0", 0.6, 0.2), "palm", 0.02, rot=(0, 0, -0.4))
-    B(ao, (0.26, 0.2, 0.08), (-0.07, -0.69, 4.44), P("#ecc3a0", 0.6, 0.2), "fingers", 0.02, rot=(0, 0, -0.4))
+    navy, cuffc = P("#26365e", 0.7, 0.1), P("#3f5594", 0.6, 0.1)
+    skin_h = P("#e8b894", 0.55, 0.15)
+    arm = E(ao, (-0.35, -0.8, 4.45), "armrot", rot=(0, 0, -0.9))      # tip of the cuff; the arm runs back along +y
+    B(arm, (0.3, 1.5, 0.3), (0, 0.75, 0.0), navy, "sleeve", 0.04)
+    B(arm, (0.34, 0.12, 0.34), (0, 0.0, 0.0), cuffc, "cuff", 0.03)
+    B(arm, (0.27, 0.22, 0.09), (0, -0.17, 0.0), skin_h, "palm", 0.025)
+    for fx, fl in ((-0.1, 0.2), (-0.033, 0.25), (0.033, 0.25), (0.1, 0.2)):
+        B(arm, (0.05, fl, 0.06), (fx, -0.28 - fl / 2, 0.0), skin_h, "finger", 0.02)
+    B(arm, (0.07, 0.15, 0.06), (0.18, -0.22, 0.0), skin_h, "thumb", 0.02, rot=(0, 0, 0.6))
     ctx["armout"] = ao
     hide(ao, True)
     ctx["late"] = False
@@ -717,14 +724,15 @@ def place_inset(kit, ctx, v, lens):
     unit = d / lens
     pw = 0.23 * 13.5 * unit
     ph = pw * 340 / 280
-    x = -0.665 * 6.75 * unit
-    y = 0.80 * 12.0 * unit
+    x = -0.62 * 6.75 * unit
+    y = 0.62 * 12.0 * unit      # low enough that the pack's biggest crop (1.18x) keeps the whole tag in frame
     pl.location, pl.scale = (x, y, -d), (pw, ph, 1)
 
 
 # ------------------------------------------------------------------------------------------------ late touches on the cast
 def late(kit, ctx):
     ctx["dads"] = []
+    skin_f = P("#d9a27a", 0.6, 0.2)
     wh = P("#f4f1ea", 0.7)
     gray = P("#c9c9cf", 0.7)
     for nme in ("dad", "dad_n"):
@@ -736,6 +744,12 @@ def late(kit, ctx):
         for sx in (-1, 1):       # two thick drooping lobes with a gap, so it reads as a mustache, not tape
             B(hg, (0.27, 0.15, 0.15), (sx * 0.15, -R - 0.05, -0.085), wh, "mustache", 0.06, rot=(0, sx * 0.45, 0))
             B(hg, (0.12, 0.13, 0.13), (sx * 0.27, -R - 0.045, -0.17), wh, "mustache", 0.05)
+        if nme == "dad":     # the flat finger he lays across his lips (L37)
+            sh = E(hg, (0, 0, 0), "shush")
+            B(sh, (0.07, 0.07, 0.3), (0.02, -R - 0.14, -0.2), skin_f, "finger", 0.025)
+            B(sh, (0.2, 0.12, 0.17), (0.1, -R - 0.12, -0.4), skin_f, "fist", 0.04)
+            hide(sh, True)
+            ctx["shush"] = sh
         for sx in (-1, 1):
             B(hg, (0.2, 0.9, 0.5), (sx * (R - 0.02), 0.18, 0.0), gray, "sidehair", 0.08)
             B(hg, (0.16, 0.5, 0.18), (sx * (R - 0.03), 0.3, 0.3), gray, "sidehair2", 0.05)
@@ -780,6 +794,8 @@ def animate(kit, story, tl, t, ctx):
         clear_lenses(kit)
         late_hold(kit, ctx)
         ctx["late"] = True
+    if "shush" in ctx:
+        hide(ctx["shush"], not cue_at(tl, "shush", t).get("on", False))
     hc = cue_at(tl, "hold", t)
     hide(ctx["armout"], not ctx["shots"][next((x["id"] for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1]["id"])].get("armout"))
     for key, m in ctx.get("held", {}).items():
@@ -826,7 +842,7 @@ def animate(kit, story, tl, t, ctx):
         piv.rotation_euler = (0, math.radians(sign * crook), 0)
     # ---- lights
     ov = {"sun": L["sun"] / 4.6, "camfill": L["fill"], "kitchenl": L["kl"], "halll": L["hl"], "pruittl": L["pl"],
-          "porchA": L["pk"], "porchB": L["pk"], "gaplight": L["pk"] * 0.6}
+          "porchA": L["pk"], "porchB": L["pk"], "gaplight": L["pk"] * 0.6, "doorl": sd.get("dl", 0.0)}
     ctx["hlnode"].inputs["Strength"].default_value = 6.0 * L["hl"]
     ctx["plnode"].inputs["Strength"].default_value = 6.0 * L["pl"]
     # ---- the kitchen: sill mug with level coffee, the table on books
@@ -899,6 +915,7 @@ def animate(kit, story, tl, t, ctx):
         hide(sq, False)
         sq.location = tuple(sqc["pos"])
         sq.rotation_euler = (0, 0, math.radians(sqc.get("yaw", 0)))
+        sq.scale = (sqc.get("scale", 1.0),) * 3
     else:
         hide(sq, True)
     # ---- the note

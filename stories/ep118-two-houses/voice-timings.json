@@ -1030,26 +1030,26 @@
    ]
   },
   "L42": {
-   "text": "and nobody in our house is fighting anybody.",
+   "text": "and nobody in our house is fighting them.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.259,
+   "dur": 1.948,
    "onset": 0.172,
-   "end": 2.069,
+   "end": 1.759,
    "chunks": [
     [
      0.172,
-     0.56
+     0.629
     ],
     [
-     0.56,
-     0.974
+     0.629,
+     0.966
     ],
     [
-     0.974,
-     2.069
+     0.966,
+     1.759
     ]
    ]
   },
