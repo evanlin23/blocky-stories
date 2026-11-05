@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -555,8 +555,11 @@ sit("me", "L36", True, 0.17)
 shot("L36", cm([2.9, 20.4, 1.1], [3.45, 17.0, 0.7], [3.0, 20.0, 1.05], [3.45, 17.0, 0.7], 30), name="s36a")
 only("L36.1", [])
 shot("L36.1", cm([3.2, 12.0, 0.45], [4.3, 20.0, 0.3], [3.3, 13.0, 0.45], [4.3, 21.0, 0.3], 35), name="s36b")
-put("me", "L36.2", [3.3, 17.0], 90, expr="soft", arms=[0, 55])
-shot("L36.2", cam(4.0, 17.0, 0.15, 0.8, az=-70, el=50, lens=40, push=0.12), name="s36c")
+put("me", "L36.2", [3.5, 16.45], 90, expr="soft", arms=[0, 95], head=[0, 25])
+cue("L36.2-0.5", "glow", x=3.7, y=17.2, z=0.75, g=0.0)
+cue("L36.2-0.2", "glow", x=3.7, y=17.2, z=0.75, g=0.7, dur=0.4)
+cue("L37", "glow", x=3.7, y=17.2, z=0.75, g=0.0, dur=0.4)
+shot("L36.2", cam(4.4, 17.05, 0.14, 1.1, az=238, el=26, lens=40, push=0.1), name="s36c")
 # L37: forty-seven boxes, one hold slip
 only("L37", [])
 shot("L37", cm([2.9, 22.6, 0.55], [4.4, 26.2, 0.2], [3.2, 23.2, 0.5], [4.4, 26.2, 0.2], 45), name="s37a")
@@ -666,9 +669,8 @@ only("L51", ["dad"])
 beat("dad", "L51", head=[0, 0], expr="sad-smile")
 talk("dad", "L51", "L51>", 0.35)
 shot("L51", cam(3.0, 25.3, 1.52, 0.95, lens=50, push=0.1), name="s51a")
-only("L51.1", ["me"])
-beat("me", "L51.1", arms=[0, 0], expr="worried")
-shot("L51.1", cam(2.3, 26.6, 1.52, 0.95, az=10, lens=50, push=0.1), name="s51b")
+beat("dad", "L51.1", head=[0, 0], expr="sad-smile")
+shot("L51.1", cam(3.0, 25.3, 1.55, 0.7, lens=50, push=0.1), name="s51b")
 # L52: on every one of these days you called me (Dad touches my row, one by one)
 only("L52", ["dad"])
 unobj("L52", "gb2")
@@ -862,12 +864,14 @@ visible.add("tulley")
 beat("tulley", "L70.1+0.5", arms=[0, 135])
 shot("L70.1", cam(1.9, -3.4, 1.5, 1.5, az=0, lens=40, push=0.1), name="s70b")
 # L71: Dad taps the window and reads me the fine print (and the loop back to the counter)
-only("L71", ["dad", "tulley"])
+only("L71", ["dad"])
 put("dad", "L71", [2.0, -4.75], 180, expr="laugh", arms=[0, 100])
+shot("L71", cam(2.0, -4.75, 1.45, 1.1, az=180, lens=45, push=0.08), name="s71a")
+beat("dad", "L71.1", arms=[0, 100])
 beat("dad", "L71.1+0.2", arms=[0, 88])
-beat("dad", "L71.1+0.5", arms=[0, 100])
-beat("dad", "L71.1+0.8", arms=[0, 88])
-shot("L71", cam(2.0, -4.5, 1.55, 1.3, az=90, lens=45, push=0.08), name="s71a")
+beat("dad", "L71.1+0.45", arms=[0, 100])
+beat("dad", "L71.1+0.7", arms=[0, 88])
+shot("L71.1", cam(1.65, -4.15, 1.4, 0.55, az=160, lens=45, push=0.06), name="s71c")
 only("L71.2", [])
 world("L71.2", "rcp", [-3.4, 3.2, 1.012], rz=-25)
 cue("L71.2", "ring", v=0.0)
@@ -973,6 +977,11 @@ story = {
     "sound": sound,
     "rain_shots": [names["s22"], names["s53b"]],
     "set_moves": [],
+    # deliberate: prop and shelf b-roll under the line (S36, S56, S66, S67, S73, S74, S81, S115), the shop and kitchen
+    # cutaways where the named person is the voice and not the picture (S14, S91, S94, S126, S136, S138, S144), Oduya's
+    # drive-by (S20 to S25), Tulley and Dad turned away on purpose (S60, S61, S131), tight Dad crops (S103, S113)
+    "framing_ok": ["S14", "S20", "S21", "S22", "S23", "S24", "S25", "S36", "S56", "S60", "S61", "S66", "S67", "S73",
+                   "S74", "S81", "S91", "S94", "S103", "S113", "S115", "S126", "S131", "S136", "S138", "S144"],
     "clip_ok": ["mbx", "van", "S09", "S10", "bk"],
     "asr_forgive": ["mister tulley", "tulley's", "tulley", "mister", "missus", "returned", "dollars", "i've", "we'd", "every", "one", "unhappens"],
 }
