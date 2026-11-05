@@ -305,10 +305,11 @@ def build_house(kit, k):
             knocker(kit, Hg, 0.3, 1.6)
         if k == G.HADDAD:    # her new shiny lock, twice changed
             chrome = P("#f4f6f8", 0.12, 0.95)
-            B(Hg, (0.16, 0.05, 0.34), (0.88, -0.16, 1.62), chrome, "newlockplate", 0.012)
-            C(Hg, 0.06, 0.05, (0.88, -0.2, 1.7), chrome, "newlockcyl", rot=(math.pi / 2, 0, 0), n=18)
-            B(Hg, (0.02, 0.012, 0.06), (0.88, -0.23, 1.7), P("#15131a", 0.9), "newlockhole")
-            B(Hg, (0.1, 0.05, 0.16), (0.88, -0.2, 1.5), P("#ffe27a", 0.15, 1.0), "newlockbolt", 0.01)
+            lx_, lz_ = 0.6, 1.5
+            B(Hg, (0.24, 0.05, 0.5), (lx_, -0.16, lz_), chrome, "newlockplate", 0.012)
+            C(Hg, 0.09, 0.06, (lx_, -0.21, lz_ + 0.1), chrome, "newlockcyl", rot=(math.pi / 2, 0, 0), n=18)
+            B(Hg, (0.025, 0.012, 0.08), (lx_, -0.245, lz_ + 0.1), P("#15131a", 0.9), "newlockhole")
+            B(Hg, (0.16, 0.06, 0.2), (lx_, -0.21, lz_ - 0.14), P("#ffe27a", 0.15, 1.0), "newlockbolt", 0.01)
         if k == G.ME:
             B(Hg, (0.3, 0.015, 0.1), (0.5, -0.125, 1.75), P("#c28a1c", 0.4, 0.3), "mydoorstripe")
     # the numeral plate above the door, 2 cm proud of the wall
@@ -496,7 +497,11 @@ def build_room(kit):
     C(None, 0.7, 0.05, (kx0, ky0 - 2.3, 0.77), tab, "kitchentable", n=32)
     C(None, 0.07, 0.75, (kx0, ky0 - 2.3, 0.38), P("#8a5a32", 0.6), "tableleg", n=10)
     C(None, 0.3, 0.04, (kx0, ky0 - 2.3, 0.02), P("#8a5a32", 0.6), "tablefoot", n=16)
+    C(None, 2.0, 0.012, (kx0, ky0 - 2.3, 0.008), P("#f4e2c0", 0.9, 0.05), "kitchenrug", n=40)
     cloth = P("#f2d8d0", 0.8, 0.05)
+    lad = P("#c8ced8", 0.25, 0.9)
+    B(None, (0.5, 0.03, 0.025), (kx0 + 0.15, ky0 - 2.62, 0.838), lad, "ladlehandle", 0.008)
+    C(None, 0.07, 0.04, (kx0 + 0.43, ky0 - 2.62, 0.845), lad, "ladlebowl", n=16)
     C(None, 0.72, 0.012, (kx0, ky0 - 2.3, 0.802), cloth, "tablecloth", n=32)
     for sx in (-1, 1):
         px = kx0 + sx * 0.42
@@ -504,11 +509,11 @@ def build_room(kit):
         C(None, 0.09, 0.05, (px, ky0 - 2.3, 0.855), P("#e8604a", 0.4, 0.4), "bowl", n=16, r2=0.12)
         # a chair behind each place, backs outward
         cx = kx0 + sx * 1.0
-        B(None, (0.45, 0.45, 0.06), (cx, ky0 - 2.3, 0.45), P("#9c6a3a", 0.6), "chairseat", 0.01)
-        B(None, (0.06, 0.45, 0.5), (cx + sx * 0.2, ky0 - 2.3, 0.75), P("#9c6a3a", 0.6), "chairback", 0.01)
+        B(None, (0.45, 0.45, 0.06), (cx, ky0 - 2.3, 0.45), P("#e0aa62", 0.6), "chairseat", 0.01)
+        B(None, (0.06, 0.45, 0.5), (cx + sx * 0.2, ky0 - 2.3, 0.75), P("#e0aa62", 0.6), "chairback", 0.01)
         for lx_ in (-1, 1):
             for ly_ in (-1, 1):
-                B(None, (0.05, 0.05, 0.42), (cx + lx_ * 0.19, ky0 - 2.3 + ly_ * 0.19, 0.21), P("#7a4e28", 0.6), "chairleg")
+                B(None, (0.05, 0.05, 0.42), (cx + lx_ * 0.19, ky0 - 2.3 + ly_ * 0.19, 0.21), P("#c08a48", 0.6), "chairleg")
     B(None, (1.0, 0.7, 0.9), (kx0 + 2.5, ky0 - 0.45, 0.45), P("#e8e4dc", 0.4, 0.3), "stove", 0.02)
     B(None, (0.8, 0.55, 0.04), (kx0 + 2.5, ky0 - 0.45, 0.92), P("#2a2a30", 0.4, 0.5), "stovetop")
     C(None, 0.26, 0.32, (kx0 + 2.5, ky0 - 0.45, 1.1), P("#b8c0cc", 0.25, 0.9), "soup.pot", n=24)
@@ -748,7 +753,12 @@ def build(kit, story, tl):
     W["key"] = None
     W["camkey"] = kit.light("camkey", "POINT", (0, 0, 5), 60, "#ffc27a", size=0.5, shadow=False)
     W["camfill"] = kit.light("camfill", "POINT", (0, 0, 5), 40, "#fff0dc", size=0.8, shadow=False)
-    for nmx in ("sun", "moon", "camkey", "camfill"):
+    W["loulight"] = kit.light("loulight", "POINT", (0, 0, 5), 34, "#ffd2a0", size=0.5, shadow=False)
+    W["tablelight"] = kit.light("tablelight", "POINT", (G.STAGE["kitchen"][0], G.STAGE["kitchen"][1] - 2.3, 2.5), 260, "#ffd9a8",
+                                size=0.6, shadow=False)
+    W["stairlight"] = kit.light("stairlight", "POINT", (G.STAGE["hall"][0] - 1.4, G.STAGE["hall"][1] - 1.2, 1.9), 120, "#ffc680",
+                                size=0.5, shadow=False)
+    for nmx in ("sun", "moon", "camkey", "camfill", "loulight", "tablelight", "stairlight"):
         kit.LIGHTS[nmx]["obj"].visible_camera = False
     build_court(kit)
     build_key(kit)
@@ -778,11 +788,14 @@ def late(kit):
                             B(la, (1.52, 1.72, 0.12), (0, -0.55, -1.0), stripe, "blanketstripe", 0.04)]
     mt = g("me.torso")
     if mt is not None:
-        W["blanket_sh"] = [B(mt, (2.5, 1.5, 0.5), (0, 0.0, 1.8), blue, "shoulderblanket", 0.12),
-                           B(mt, (2.5, 0.3, 2.3), (0, 0.66, 1.0), blue, "backblanket", 0.1),
-                           B(mt, (0.7, 0.2, 1.4), (-0.85, -0.64, 1.2), blue, "frontflap", 0.08),
-                           B(mt, (0.7, 0.2, 1.4), (0.85, -0.64, 1.2), blue, "frontflap", 0.08),
-                           B(mt, (2.52, 1.52, 0.1), (0, 0.0, 1.97), stripe, "shoulderstripe", 0.03)]
+        W["blanket_sh"] = [B(mt, (3.0, 1.9, 0.75), (0, 0.0, 1.62), blue, "shoulderblanket", 0.14),
+                           B(mt, (3.0, 0.45, 3.0), (0, 0.8, 0.5), blue, "backblanket", 0.1),
+                           B(mt, (1.1, 0.3, 2.2), (-0.95, -0.82, 0.85), blue, "frontflap", 0.1),
+                           B(mt, (1.1, 0.3, 2.2), (0.95, -0.82, 0.85), blue, "frontflap", 0.1),
+                           B(mt, (1.12, 0.32, 0.18), (-0.95, -0.82, -0.1), stripe, "flapstripe", 0.04),
+                           B(mt, (1.12, 0.32, 0.18), (0.95, -0.82, -0.1), stripe, "flapstripe", 0.04),
+                           B(mt, (3.02, 0.47, 0.18), (0, 0.8, -0.9), stripe, "backstripe", 0.04),
+                           B(mt, (3.02, 1.92, 0.12), (0, 0.0, 1.99), stripe, "shoulderstripe", 0.03)]
         W["mebox"] = [B(mt, (1.7, 1.2, 1.3), (0.0, -1.15, 0.15), P("#c8995a", 0.85, 0.05), "mebox", 0.05),
                       B(mt, (1.72, 0.2, 0.16), (0.0, -1.15, 0.8), P("#e8d0a0", 0.85, 0.05), "meboxtape")]
     for sx in (-1, 1):
@@ -803,10 +816,11 @@ def late(kit):
         for sx in (-1, 1):
             B(ah, (0.12, 0.1, 0.14), (sx * 0.28, -0.6, -0.22), wm, "amesmoustache", 0.04)
     lh = g("lou.headg")
-    for nm_ in ("lou.gl-1", "lou.gl1"):
-        o = g(nm_)
-        if o is not None:
+    import re as _re
+    for o in bpy.data.objects:      # clear lenses: frames only, so her eyes show at phone size
+        if _re.match(r"^lou\.gl-?1(\.\d+)?$", o.name):
             o.hide_render = True
+            o.scale = (0.001, 0.001, 0.001)     # the pose re-shows hidden parts, so shrink the lens away too
     if lh is not None:
         pr = P("#f8f4ee", 0.2, 0.9)
         for sx in (-1, 1):
@@ -857,7 +871,19 @@ def animate(kit, story, tl, t, ctx):
     W["camfill"].location = (fpos.x, fpos.y, fpos.z)
     fg = min(2.2, max(0.05, (dist / 3.0) ** 2))
     face = 1.0 if sd.get("face", True) else 0.0
-    gains = {"sun": L["sun"], "moon": L["moon"],
+    # a steady soft warm light in front of Lou's face, whenever she is near the camera
+    lg = 0.0
+    lh_ = bpy.data.objects.get("lou.headg")
+    if lh_ is not None:
+        bpy.context.view_layer.update()
+        hp = lh_.matrix_world.translation
+        dv = V(cl) - hp
+        if dv.length < 8.0 and hp.z > -5 and hp.y > -30:
+            dv.normalize()
+            q = hp + dv * 1.0 + V((0, 0, 0.15))
+            W["loulight"].location = (q.x, q.y, q.z)
+            lg = 1.0
+    gains = {"loulight": lg, "sun": L["sun"], "moon": L["moon"],
              "camkey": face * sd.get("key", 1.0) * fg * (0.55 if L["sun"] > 0.3 else 1.0),
              "camfill": L["fill"] * sd.get("fill", 1.0) * fg * (1.0 if face else 0.4)}
     # the key in a lock

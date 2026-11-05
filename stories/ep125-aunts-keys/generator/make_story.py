@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L35")
@@ -422,6 +422,7 @@ shot("L34", cam_at(hw(1, 0.45, 0.15, LAND + 1.7), hw(1, 0.0, 1.1, 1.85), 13), "n
 K("me", "L34>", SM, expr="asleep", yaw=YF[1])
 K("me", "P01+0.35", ST, expr="asleep", yaw=YF[1])
 shot("P01", foot(32, (0.2, 0.3, 2.2), (1.8, 4.0, 2.3)), "night", "dropdoor", face=False)
+HIDE("lou", "P01")     # nobody else in the reveal footage
 cue("P01+0.5", "blanket", where="arm")
 TP("me", "L35", ST, YC[1], "asleep")
 shot("L35", cam_face(ST, YC[1], "me", 3.4, 13, 30, tdz=-0.12, hdz=0.0, shift=0.1), "night", "reveal", key=0.9)
@@ -443,15 +444,15 @@ cue("L39", "blanket", where="shoulders")
 TP("me", "L39", land(1, -0.15, 0.75), YC[1], "asleep")
 TP("lou", "L39", land(1, 0.62, 0.4), YC[1], "warm")
 mid39 = [(land(1, -0.15, 0.75)[0] + land(1, 0.62, 0.4)[0]) / 2, (land(1, -0.15, 0.75)[1] + land(1, 0.62, 0.4)[1]) / 2, LAND]
-shot("L39", cam_face(mid39, YC[1], "me", 3.4, 4, 30, shift=-0.02, hdz=-0.1, tdz=-0.3), "night", "blanket")
+shot("L39", cam_face(mid39, YC[1], "me", 3.4, 4, 30, shift=-0.02, hdz=-0.1, tdz=-0.14), "night", "blanket")
 hx, hy = G.STAGE["hall"]
-FOOT = [hx - 2.2, hy - 2.9, 0.0]
+FOOT = [hx - 4.0, hy - 2.7, 0.0]
 cue("L40", "blanket", where="shoulders")
 TP("lou", "L40", FOOT, G.yaw_to(FOOT, [hx - 5.6, hy - 5.0]), "sad-smile")
 TP("me", "L40", [hx - 0.65, hy - 2.0, 0.44], 0, "asleep")
 K("me", "L40", [hx - 0.65, hy - 2.0, 0.44], yaw=180)
 K("me", "L40>", [hx - 0.65, hy + 0.4, 1.32], yaw=180)
-shot("L40", cam_at([hx - 5.4, hy - 5.1, 1.7], [hx - 1.9, hy - 2.1, 1.35], 27), "night", "hall")
+shot("L40", cam_at([hx - 5.4, hy - 5.1, 1.6], [hx - 2.6, hy - 1.9, 1.3], 27), "night", "hall")
 
 # ===== 41 to 44 the twist said plainly
 cue("L41", "blanket", where="none")
@@ -561,9 +562,9 @@ shot("L58", cam_face(MEMID, 180, "me", 2.8, 10, 34), "night", "walkingto")
 # the hall door, past the stair, to the kitchen table
 K("me", "L59", MEMID)
 HIDE("me", "L59")
-shot("L59", cam_at([kx0 - 0.1, ky0 - 6.4, 1.5], [kx0, ky0 - 2.3, 0.9], 27), "day", "tableend", key=1.4)
-shot("L60", cam_at([kx0 + 1.0, ky0 - 4.4, 1.5], [kx0, ky0 - 2.3, 0.8], 30, [kx0 + 0.6, ky0 - 3.8, 1.3], [kx0, ky0 - 2.3, 0.8], 30),
-     "day", "tableclose", key=1.2)
+shot("L59", cam_at([kx0 - 0.1, ky0 - 6.2, 1.7], [kx0, ky0 - 2.3, 0.7], 27), "day", "tableend", key=1.4, exp=0.15)
+shot("L60", cam_at([kx0 + 0.9, ky0 - 5.0, 1.8], [kx0, ky0 - 2.3, 0.75], 22, [kx0 + 0.6, ky0 - 4.5, 1.6], [kx0, ky0 - 2.3, 0.75], 22),
+     "day", "tableclose", key=1.2, exp=0.15)
 STOVE = [kx0 + 1.8, ky0 - 1.05, 0.0]
 TP("lou", "L60.1", STOVE, 0, "smile")
 shot("L60.1", cam_face(STOVE, 0, "lou", 3.2, 12, 34, tdz=-0.28), "day", "stove")
@@ -581,7 +582,7 @@ shot("L62", cam_at(hw(1, 0.3, 1.0, LAND + 1.3), hw(1, 0.0, 6.0, 1.2), 32), "day"
 TABLE = [kx0, ky0 - 1.25, 0.0]
 HIDE("me", "L63")
 TP("lou", "L63", TABLE, 0, "smile", arms=[0, 50])
-shot("L63", cam_face(TABLE, 0, "lou", 3.2, 12, 34, tdz=-0.28), "day", "soup")
+shot("L63", cam_face(TABLE, 0, "lou", 3.2, 12, 34, tdz=-0.28), "day", "soup", exp=0.25)
 HIDE("lou", "L64")
 HOME0 = court(7, 0.0, 7.0)
 TP("me", "L64", HOME0, G.yaw_to(HOME0, court(7, 0.0, 3.4)), "warm")
@@ -707,6 +708,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": [names[n] for n in ("courtnight", "fightme", "round", "footage1203", "feetbottom", "lk1", "lk2", "lk3", "boltturn")],
+    "frames_ok": [names[n] for n in ("dawnwalk", "tableend")],     # the dawn brightening and the day look easing in at the cut
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
