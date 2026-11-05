@@ -52,6 +52,9 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
   "acting": {"me": [{"at": 0, "pos": [0, 4], "yaw": 0, "expr": "worried"}, {"at": "L02", "pos": [0, 4]},
                     {"at": "L03", "pos": [0, 1], "expr": "scared", "run": true}]},
   "cues": [{"at": "L05.2", "name": "lights_out"}],    // read by set.py's animate()
+  "hud": {"object": "tag", "at": [-0.37, 0.6], "size": 0.56},   // optional (blocky/hud.py): the engine places set.py's
+                                  // camera-parented tag just past the near plane each frame, at `at` in the frame and `size` x
+                                  // the half width, in the top corner clear of faces (once a shot); set.py's own placement is overridden
   "fx": [{"at": "L06", "kind": "shake|flash|black|static|red|punch", "dur": 0.4, "amp": 1, "fade": 0.2, "zoom": 1.15}],
   "music": {"root": 50, "mode": "minor|phrygian|dorian|harmonic|locrian|major|whole", "bpm": 72, "seed": 3,
             "sections": [{"at": 0, "voices": ["drone", "pad", "musicbox", "piano", "pulse", "choir"], "energy": 0.4}]},

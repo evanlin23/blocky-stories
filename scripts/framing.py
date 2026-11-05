@@ -58,6 +58,7 @@ for _p in (str(ROOT), str(HERE)):
         sys.path.insert(0, _p)
 
 import measure  # noqa: E402
+from blocky import hud  # noqa: E402
 
 U = 0.34                               # metres per rig unit, at height 1 (blocky/rig.py S)
 HEAD_Z = U * (4.0 + 0.02 + 0.6)        # head centre above the feet: neck at 4, head 1.2 tall
@@ -388,6 +389,20 @@ def lint(st: dict, tl: dict, story_dir: Path | None = None, use_set: bool = True
                     any(point_in(loc, tgt, lens, q, cr) for q in body_points(s, cs))
             samples.append((t, (loc, tgt, lens), cr, vs, body))
             tags[(sid, t)] = places.hud(t, lens, cr)
+        if hud.spec(st):   # the engine keeps the tag in the corner clear of faces (blocky/hud.py): follow its choice
+            faces = []
+            for t in (shot["start"], (shot["start"] + shot["end"]) / 2, max(shot["start"], shot["end"] - 1 / 30)):
+                loc, tgt, lens = measure.cam_at(spec, shot, t, tl)
+                for name, cs in cast.items():
+                    s_ = acting.state(tl, name, t)
+                    v = None if s_["hidden"] else head_view(loc, tgt, lens, s_, cs, crop(t))
+                    if v is not None and in_frame(v):
+                        faces.append((v["x"] - v["hw"], v["y"] - v["hh"], v["x"] + v["hw"], v["y"] + v["hh"]))
+            b0 = next((tags[(sid, x[0])] for x in samples if tags.get((sid, x[0]))), None)
+            if b0 is not None and hud.choose(b0, faces):
+                for x in samples:
+                    if tags.get((sid, x[0])):
+                        tags[(sid, x[0])] = hud.mirror(tags[(sid, x[0])])
         lids = [l for l in voiced
                 if min(shot["end"], tl["lines"][l]["end"]) - max(shot["start"], tl["lines"][l]["onset"]) >= MIN_OVERLAP]
 
