@@ -100,7 +100,10 @@ cast = {
     "s3": person("#8a5a3a", "#ffd23f", "#e8493a", "#8a5a3a", hair="spiky", hair_c="#150f0c", sleeves="none"),
     "s4": person("#e8b890", "#8a5ab0", "#2fa8a0", "#e8b890", hair="swoop", hair_c="#a05a2a", sleeves="none"),
 }
-acting = {n: [{"at": 0, "hidden": True, "pos": [0, 0]}] for n in cast}
+DEF = {"lean": 0.0, "arms": [0, 0], "side": [0, 0], "head": [0, 0], "yaw": 0, "expr": "neutral"}
+# every attribute starts at its default: the engine holds the FIRST key's value before a key that sets it, so a later
+# "lean": 165 would otherwise turn the character upside down from frame 0
+acting = {n: [{"at": 0, "hidden": True, "pos": [0, 0], **DEF}] for n in cast}
 last = {n: [0, 0, 0] for n in cast}
 visible = set()
 cues = []
@@ -112,7 +115,7 @@ def put(who, at, pos, yaw=None, **kw):
     if len(p) == 2:
         p.append(0.0)
     acting[who].append({"at": at, "pos": list(last[who])})
-    k = {"at": at, "pos": p, "blend": 0.0, "hidden": False}
+    k = {"at": at, "pos": p, "blend": 0.0, "hidden": False, "lean": 0.0, "arms": [0, 0], "side": [0, 0], "head": [0, 0]}
     if yaw is not None:
         k["yaw"] = yaw
     k.update(kw)

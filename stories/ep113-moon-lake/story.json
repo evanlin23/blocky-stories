@@ -5133,7 +5133,22 @@
     "pos": [
      0,
      0
-    ]
+    ],
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "neutral"
    },
    {
     "at": "L01.2",
@@ -5152,12 +5167,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "squeeze",
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      0,
      22
-    ]
+    ],
+    "yaw": 180,
+    "expr": "squeeze"
    },
    {
     "at": "L02",
@@ -5180,6 +5204,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 160,
     "expr": "smile"
    },
@@ -5213,6 +5250,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 180,
     "expr": "grin",
     "run": true
@@ -5259,6 +5309,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 180,
     "expr": "squeeze"
    },
@@ -5288,13 +5351,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 0,
-    "expr": "wide",
     "lean": 165,
     "arms": [
      160,
      160
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "wide"
    },
    {
     "at": "L19>",
@@ -5321,13 +5392,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 0,
-    "expr": "wide",
     "lean": 84,
     "arms": [
      96,
      96
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "wide"
    },
    {
     "at": "P01",
@@ -5346,13 +5425,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 0,
-    "expr": "terrified",
     "lean": 8,
     "arms": [
      0,
      0
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "terrified"
    },
    {
     "at": "L21",
@@ -5371,9 +5458,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 40,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 20,
-    "expr": "scared",
-    "lean": 40
+    "expr": "scared"
    },
    {
     "at": "L22",
@@ -5392,13 +5491,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "wide",
     "lean": 5,
     "arms": [
      0,
      0
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 180,
+    "expr": "wide"
    },
    {
     "at": "L23",
@@ -5421,6 +5528,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "scared"
    },
@@ -5567,6 +5687,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "scared"
    },
@@ -5591,12 +5724,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 90,
-    "expr": "worried",
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      0,
      0
-    ]
+    ],
+    "yaw": 90,
+    "expr": "worried"
    },
    {
     "at": "L30.1",
@@ -5619,12 +5761,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "smile",
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      40,
      0
-    ]
+    ],
+    "yaw": 180,
+    "expr": "smile"
    },
    {
     "at": "L41",
@@ -5643,6 +5794,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 180,
     "expr": "worried"
    },
@@ -5663,6 +5827,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 180,
     "expr": "worried"
    },
@@ -5683,6 +5860,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 180,
     "expr": "worried"
    },
@@ -5707,6 +5897,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 180,
     "expr": "worried"
    },
@@ -5727,12 +5930,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "squeeze",
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      0,
      6
-    ]
+    ],
+    "yaw": 180,
+    "expr": "squeeze"
    },
    {
     "at": "L51.2",
@@ -5764,6 +5976,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 180,
     "expr": "grin",
     "run": true
@@ -5801,13 +6026,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 0,
-    "expr": "squeeze",
     "lean": 165,
     "arms": [
      165,
      165
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "squeeze"
    },
    {
     "at": "L53>",
@@ -5834,13 +6067,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 0,
-    "expr": "wide",
     "lean": 84,
     "arms": [
      96,
      96
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "wide"
    },
    {
     "at": "L55",
@@ -5868,13 +6109,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 20,
-    "expr": "squeeze",
     "lean": 70,
     "arms": [
      150,
      150
     ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 20,
+    "expr": "squeeze",
     "run": true
    },
    {
@@ -5903,13 +6152,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 0,
-    "expr": "wide",
     "lean": 60,
     "arms": [
      110,
      110
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "wide"
    },
    {
     "at": "L58",
@@ -5932,6 +6189,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 20,
     "expr": "grin"
    },
@@ -5952,6 +6222,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "grin"
    },
@@ -5972,6 +6255,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "wide"
    },
@@ -6014,6 +6310,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "grin"
    },
@@ -6042,6 +6351,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "grin"
    },
@@ -6150,12 +6472,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": -90,
-    "expr": "grin",
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      30,
      -8
-    ]
+    ],
+    "yaw": -90,
+    "expr": "grin"
    },
    {
     "at": "L70",
@@ -6174,12 +6505,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "grin",
+    "lean": 0.0,
     "arms": [
      0,
      150
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 180,
+    "expr": "grin"
    },
    {
     "at": "L70.2",
@@ -6205,7 +6545,22 @@
     "pos": [
      0,
      0
-    ]
+    ],
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "neutral"
    },
    {
     "at": "L03",
@@ -6224,12 +6579,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "neutral",
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      0,
      0
-    ]
+    ],
+    "yaw": 180,
+    "expr": "neutral"
    },
    {
     "at": "L03.0+0.5",
@@ -6264,12 +6628,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 0,
-    "expr": "smile",
+    "lean": 0.0,
     "arms": [
      0,
      150
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "smile"
    },
    {
     "at": "L09.2",
@@ -6300,16 +6673,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "smile",
+    "lean": 0.0,
     "arms": [
      150,
      150
     ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      0,
      0
-    ]
+    ],
+    "yaw": 180,
+    "expr": "smile"
    },
    {
     "at": "L10.0+0.9",
@@ -6340,6 +6718,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "neutral"
    },
@@ -6372,16 +6763,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "neutral",
+    "lean": 0.0,
     "arms": [
      0,
      90
     ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      0,
      10
-    ]
+    ],
+    "yaw": 180,
+    "expr": "neutral"
    },
    {
     "at": "L12.0+0.8",
@@ -6417,12 +6813,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "sad-smile",
+    "lean": 0.0,
     "arms": [
      60,
      60
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 180,
+    "expr": "sad-smile"
    },
    {
     "at": "L13+0.15",
@@ -6660,6 +7065,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 180,
     "expr": "asleep"
    },
@@ -6684,12 +7102,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "worried",
+    "lean": 0.0,
     "arms": [
      0,
      0
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 180,
+    "expr": "worried"
    },
    {
     "at": "L27",
@@ -6712,12 +7139,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "neutral",
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      0,
      4
-    ]
+    ],
+    "yaw": 180,
+    "expr": "neutral"
    },
    {
     "at": "L29.3",
@@ -6749,12 +7185,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "neutral",
+    "lean": 0.0,
     "arms": [
      0,
      0
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 180,
+    "expr": "neutral"
    },
    {
     "at": "L30>",
@@ -6781,6 +7226,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "neutral"
    },
@@ -6841,6 +7299,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "wide"
    },
@@ -6865,6 +7336,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "sad-smile"
    },
@@ -6893,6 +7377,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "sad-smile"
    },
@@ -6913,6 +7410,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "neutral"
    },
@@ -6942,6 +7452,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 180,
     "expr": "neutral"
    },
@@ -7083,6 +7606,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "neutral"
    },
@@ -7266,16 +7802,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 0,
-    "expr": "worried",
+    "lean": 0.0,
+    "arms": [
+     70,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      0,
      0
     ],
-    "arms": [
-     70,
-     70
-    ]
+    "yaw": 0,
+    "expr": "worried"
    },
    {
     "at": "L50.1",
@@ -7311,6 +7852,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "wide"
    },
@@ -7331,6 +7885,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "wide"
    },
@@ -7351,6 +7918,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "smile"
    },
@@ -7371,6 +7951,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "wide"
    },
@@ -7413,6 +8006,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "smile"
    },
@@ -7441,6 +8047,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 0,
     "expr": "smile"
    },
@@ -7465,12 +8084,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 90,
-    "expr": "smile",
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      -40,
      0
-    ]
+    ],
+    "yaw": 90,
+    "expr": "smile"
    },
    {
     "at": "L70",
@@ -7484,7 +8112,22 @@
     "pos": [
      0,
      0
-    ]
+    ],
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "neutral"
    },
    {
     "at": "L07",
@@ -7503,13 +8146,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "smile",
+    "lean": 24,
     "arms": [
      40,
      40
     ],
-    "lean": 24
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 180,
+    "expr": "smile"
    },
    {
     "at": "L07.0+0.7",
@@ -7536,7 +8187,22 @@
     "pos": [
      0,
      0
-    ]
+    ],
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "neutral"
    },
    {
     "at": "L24",
@@ -7555,16 +8221,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
-    "expr": "worried",
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
     "head": [
      0,
      0
     ],
-    "arms": [
-     0,
-     0
-    ]
+    "yaw": 180,
+    "expr": "worried"
    },
    {
     "at": "L24+0.5",
@@ -7591,7 +8262,22 @@
     "pos": [
      0,
      0
-    ]
+    ],
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "neutral"
    },
    {
     "at": "L04",
@@ -7610,12 +8296,21 @@
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 90,
-    "expr": "grin",
+    "lean": 0.0,
     "arms": [
      0,
      0
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 90,
+    "expr": "grin"
    },
    {
     "at": "L04.3",
@@ -7647,6 +8342,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": -54,
     "expr": "grin"
    },
@@ -7689,6 +8397,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": -54,
     "expr": "smile"
    },
@@ -7722,7 +8443,22 @@
     "pos": [
      0,
      0
-    ]
+    ],
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "neutral"
    },
    {
     "at": "L04",
@@ -7741,6 +8477,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 160,
     "expr": "smile"
    },
@@ -7765,6 +8514,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": -54,
     "expr": "smile"
    },
@@ -7807,6 +8569,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": -54,
     "expr": "grin"
    },
@@ -7840,7 +8615,22 @@
     "pos": [
      0,
      0
-    ]
+    ],
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "neutral"
    },
    {
     "at": "L04",
@@ -7859,6 +8649,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": 20,
     "expr": "grin"
    },
@@ -7883,6 +8686,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": -54,
     "expr": "grin"
    },
@@ -7925,6 +8741,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": -54,
     "expr": "smile"
    },
@@ -7958,7 +8787,22 @@
     "pos": [
      0,
      0
-    ]
+    ],
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "yaw": 0,
+    "expr": "neutral"
    },
    {
     "at": "L05.2",
@@ -7977,6 +8821,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": -54,
     "expr": "smile"
    },
@@ -8019,6 +8876,19 @@
     ],
     "blend": 0.0,
     "hidden": false,
+    "lean": 0.0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
     "yaw": -54,
     "expr": "grin"
    },

@@ -132,8 +132,9 @@ def cratered(kit, root, name, R, n, theta_max, seed, rmin, rmax, mats):
 
 
 def moon_mats(kit):
-    return (kit.emit("#d9d4c7", 0.55, "moonbody"), kit.emit("#8a8578", 0.4, "moonfloor"),
-            kit.emit("#bfe0ff", 0.7, "moonrim"))
+    # a cool, darker body (never beige, never white), deep blue crater floors and a pale-blue lip on each crater
+    return (kit.emit("#6f86b4", 0.62, "moonbody"), kit.emit("#2a3a68", 0.5, "moonfloor"),
+            kit.emit("#bfe0ff", 0.85, "moonrim"))
 
 
 # ---------------------------------------------------------------------------------------------- dial (the rule meter)
@@ -389,12 +390,16 @@ def build(kit, story, tl):
     kit.cyl("nmug", 0.12, 0.2, (G.NDOCK1[0] - 0.9, G.NDOCK1[1] - 3.0, G.DECK + 1.1), pl("#f2a8a0", 0.5), n=12)
     kit.box("nmugpost", (0.22, 0.22, 1.0), (G.NDOCK1[0] - 0.9, G.NDOCK1[1] - 3.0, G.DECK + 0.45), darkw)
     W["steam"] = []
-    sm = pl("#f4f8ff", 0.9, spec=0.0)
+    sm = pl("#b9d6e4", 0.9, spec=0.0)
     for k in range(6):
-        W["steam"].append(kit.box(f"steam{k}", (0.1, 0.1, 0.5), (G.NDOCK1[0] - 0.9, G.NDOCK1[1] - 3.0, G.DECK + 1.5), sm))
+        ob = kit.sphere(f"steam{k}", 0.09, (G.NDOCK1[0] - 0.9, G.NDOCK1[1] - 3.0, G.DECK + 1.5), sm, seg=10)
+        noshadow(ob)
+        W["steam"].append(ob)
     W["lakesteam"] = []
     for k in range(14):
-        W["lakesteam"].append(kit.box(f"lsteam{k}", (0.5, 0.5, 1.4), (0, 0, WZ), sm))
+        ob = kit.sphere(f"lsteam{k}", 0.16, (0, 0, WZ), sm, seg=10)
+        noshadow(ob)
+        W["lakesteam"].append(ob)
     pot_m = pl("#c9d2dc", 0.35, spec=0.6)
     W["nbrpot"] = kit.cyl("nbrpot", 0.16, 0.3, (G.NDOCK1[0] + 0.4, G.NDOCK1[1] + 0.9, WZ + 0.1), pot_m, n=14)
     kit.box("nbrpot.spout", (0.14, 0.06, 0.06), (G.NDOCK1[0] + 0.28, G.NDOCK1[1] + 0.9, WZ + 0.2), pot_m)
@@ -433,7 +438,7 @@ def build(kit, story, tl):
     R = G.DOME_R
     W["moon"] = kit.empty("moon", (G.MID[0], G.MID[1], -R - 3.0), None)
     ms = kit.sphere("moon.sph", R, (0, 0, 0), mats[0], W["moon"], seg=48)
-    cratered(kit, W["moon"], "moon", R, 34, 62, 11, 0.7, 2.0, mats)
+    cratered(kit, W["moon"], "moon", R, 26, 66, 11, 1.2, 3.4, mats)
     noshadow(W["moon"])
     # water pouring off the cap
     W["pour"] = []
@@ -504,9 +509,12 @@ def _first_frame(kit, story):
     top = H / 2
     gh = bpy.data.objects.get("grandma.headg")
     if gh is not None:
-        vm = kit.plastic("#f5f0ea", 0.7)
+        vm = kit.plastic("#f0509a", 0.6)
         kit.box("grandma.vband", (2 * R + 0.14, 2 * R + 0.14, 0.2), (0, 0.0, top - 0.02), vm, gh, bevel=0.05)
         kit.box("grandma.vbrim", (2 * R * 0.95, 0.85, 0.07), (0, -R - 0.4, top - 0.05), vm, gh, bevel=0.03)
+        # a white bun on top and to the back of her head (an old woman's cue)
+        hair = kit.plastic("#f4f4f6", 0.8)
+        kit.sphere("grandma.bun", R * 0.5, (0, R * 0.45, top + R * 0.42), hair, gh, seg=12)
     W["inited"] = True
 
 
