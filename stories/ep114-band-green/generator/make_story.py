@@ -344,13 +344,15 @@ cue("L42", "look", id="dawn", dur=1.6)
 cue("L42", "band", u=0.0, turn=0.0, dur=0)
 LCAM = (-2.6, -7.6)      # the low camera among them; everyone falls so their faces look toward it
 # they lie down while the camera is on the band walking off (S67), so S68 opens on a town already on its back
-LIEPOS = {"grandpa": (-3.2, -5.4), "sand": (-2.3, -5.4), "t1": (-1.4, -5.4), "t2": (0.6, -4.9), "me": (-7.4, -4.6)}
+LIEPOS = {"grandpa": (-3.6, -5.4), "sand": (-2.3, -5.3), "t1": (-1.0, -5.5), "t2": (0.6, -4.9), "me": (-7.4, -4.6)}
 cue("L41+0.9", "lying", k=1.0)
 for who in D:
     x_, y_, _ = D[who]
     if who in LIEPOS:
         x_, y_ = LIEPOS[who]
     face_cam = math.degrees(math.atan2(LCAM[0] - x_, -(LCAM[1] - y_)))
+    if who in LIEPOS:   # a tidy row, heads away from the camera
+        face_cam = 0.0
     if who == "t5":     # her head would end up in the bandstand steps
         face_cam += 180
     if who in LIEPOS:
@@ -358,10 +360,10 @@ for who in D:
     key(who, "L41+1.6", blend=1.0, lean=-84, yaw=face_cam + (-14 if sum(map(ord, who)) % 2 else 14), expr="laugh", arms=[0, 0], side=[70, 70])
 teleport("me", "L41+0.5", list(LIEPOS["me"]), yaw=0.0)
 key("me", "L41+1.6", blend=1.0, lean=-84, yaw=0.0, expr="laugh", arms=[0, 0], head=[0, 0])
-shot("L42", [[0, [-2.3, -7.3, 1.4], [-2.3, -3.8, 0.5], 17], [1, [-2.3, -7.0, 1.3], [-2.3, -3.8, 0.5], 17]], "lying")
-shot("L43", [[0, [-3.0, -6.8, 1.7], [-3.2, -3.8, 0.5], 24], [1, [-3.0, -6.4, 1.6], [-3.2, -3.8, 0.5], 24]], "glaugh")
-cue("L44", "phone", where=1.0, lie=1.0, screen=1.0, x=LIEPOS["me"][0], y=LIEPOS["me"][1] + 1.1, z=0.5, rot=0.0, sc=2.1)
-shot("L44", [[0, [-7.4, -6.5, 1.6], [-7.4, -3.5, 0.7], 30]], "call")
+shot("L42", [[0, [-2.2, -7.2, 1.3], [-2.2, -3.7, 0.5], 12], [1, [-2.2, -6.9, 1.2], [-2.2, -3.7, 0.5], 12]], "lying")
+shot("L43", [[0, [-3.3, -6.8, 1.7], [-3.6, -3.8, 0.5], 24], [1, [-3.3, -6.4, 1.6], [-3.6, -3.8, 0.5], 24]], "glaugh")
+cue("L44", "phone", where=1.0, lie=1.0, screen=1.0, x=LIEPOS["me"][0], y=LIEPOS["me"][1] + 0.85, z=0.5, rot=0.0, sc=1.5)
+shot("L44", [[0, [-7.4, -6.2, 1.6], [-7.4, -3.7, 0.7], 32]], "call")
 shot("L45", [[0, [-3.0, -7.0, 0.8], [0.0, 20.0, 5.0], 22]], "sunrise")
 cue("L42", "look", id="dawn", dur=1.6)
 cue("L42", "band", u=0.0, turn=0.0, dur=0)
