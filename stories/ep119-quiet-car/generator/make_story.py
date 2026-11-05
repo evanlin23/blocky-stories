@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 11
+REV = 18
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -88,8 +88,8 @@ cast = {
     "c1": person("#b98456", "#2fa8a0", "#4a4036", "#2a2a2a", hair="buzz", hair_c="#1a1410", sleeves="short"),
     "c2": person("#f0c8a0", "#8a5ab0", "#2a2a38", "#d8d0c8", hair="long", hair_c="#7a4a2c", eyes="lashes"),
 }
-acting = {n: [{"at": 0, "hidden": True, "pos": [0, 0]}] for n in cast}
-last = {n: [0, 0] for n in cast}
+acting = {n: [{"at": 0, "hidden": n != "me", "pos": list(G.ME) if n == "me" else [0, 0]}] for n in cast}
+last = {n: (list(G.ME) if n == "me" else [0, 0]) for n in cast}
 visible = set()
 cues = []
 SH = []
@@ -269,8 +269,8 @@ shot("L07.2", P([9.0, -3.0, 1.6], [4.3, 0.2, 1.2], 22), "commuters2")
 # S08: I step into the quiet car (door open), face to camera
 only("L08", ["me"])
 cue("L08", "sit", who="me", on=False, z=SIT)
-put("me", "L08", [3.2, DY], -90, expr="neutral")
-go("me", "L08+0.9", [0.3, DY])
+put("me", "L08", [2.2, DY], -90, expr="neutral")
+go("me", "L08+0.6", [0.3, DY])
 shot("L08", P([-1.6, 1.3, 1.55], [1.2, DY, 1.4], 36), "enter")
 # S09: in my seat, morning light; the stone door frame, held
 env("L09", plat=0.0)
@@ -476,7 +476,7 @@ put("me", "L47", [0.15, MEY], 218, expr="wide", head=[0, 0])
 acting["me"].append({"from": "L47", "to": "L47.1>", "mouth": [0.2, 0.9]})
 shot("L47", P2([-1.35, MEY + 1.8, 1.45], [0.5, MEY - 0.6, 1.5], [-1.35, MEY + 1.5, 1.45], [0.5, MEY - 0.6, 1.5], 17), "reveal")
 # S48: handprints press into the fog
-cue("L48", "fogmax", m=0.62, dur=0.6)
+cue("L48", "fogmax", m=0.36, dur=0.6)
 cue("L52+0.5", "fogmax", m=0.88, dur=1.2)
 cue("L48", "prints", p=1.0, dur=0.2)
 shot("L48", P([-0.5, ry(6) + 0.15, 1.6], [HALF_, ry(6) + 0.15, 1.5], 24), "prints1")
@@ -491,7 +491,7 @@ cue("L50+0.1", "dip", u=1.0, dur=0.7)
 cue("L50", "prints", p=8.0)
 shot("L50", P2([0.0, 5.0, 1.8], [0.0, 13.0, 0.8], [0.0, 6.0, 1.8], [0.0, 13.0, 0.8], 26), "dipped")
 # S51: fogged windows, one after another
-shot("L51", P2([-0.9, ry(3.6), 1.6], [HALF_ - 0.04, ry(4.6), 1.5], [-0.9, ry(4.9), 1.6], [HALF_ - 0.04, ry(5.9), 1.5], 46), "fogpan")
+shot("L51", P2([-0.9, ry(3.6), 1.6], [HALF_ - 0.04, ry(4.6), 1.5], [-0.9, ry(3.9), 1.6], [HALF_ - 0.04, ry(4.9), 1.5], 46), "fogpan")
 # S52: Teddy's seat, the smiley in the fog
 shot("L52", P2([-0.3, TEY + 1.0, 1.6], [HALF_, TEY - 0.05, 1.5], [-0.3, TEY + 0.7, 1.58], [HALF_, TEY - 0.05, 1.5], 24), "emptyseat3")
 # S53: my face, uneasy
@@ -530,7 +530,7 @@ shot("L61.1", AIS(3.0, 40, 0.1), "face18")
 # S62: the windows clear one by one
 cue("L62", "clear", q=0.0)
 cue("L62+0.1", "clear", q=1.0, dur=3.4)
-shot("L62", P2([0.0, ry(5.2), 1.7], [-HALF_, ry(1.6), 1.4], [0.0, ry(4.8), 1.7], [HALF_, ry(1.2), 1.4], 28), "clearing")
+shot("L62", P2([0.0, ry(5.2), 1.7], [-0.45 * HALF_, ry(1.6), 1.4], [0.0, ry(4.8), 1.7], [0.45 * HALF_, ry(1.2), 1.4], 28), "clearing")
 # S63: my face, laughing
 beat("me", "L63", expr="laugh")
 move("L63>", 0)
@@ -573,7 +573,7 @@ shot("L69", P([5.6, DY - 2.9, 1.58], [5.6, DY + 0.1, 1.55], 22), "glasses")
 put("teddy", "L70", [4.2, DY - 0.5], 0, expr="laugh", arms=[60, 20])
 beat("teddy", "L70+0.5", expr="laugh", arms=[20, 80])
 beat("teddy", "L70+1.0", expr="smile", arms=[85, 25])
-beat("teddy", "L70+1.5", expr="laugh", arms=[30, 70])
+beat("teddy", "L70+1.2", expr="laugh", arms=[30, 70])
 put("me", "L70", [5.2, DY - 0.5], 0, expr="smile")
 cue("L70", "glass", a=0.0, s=0.0, dur=0.5)
 shot("L70", K((4.6, DY - 0.5, 1.55), 262, 3.4, 40, 2), "talk")
@@ -721,7 +721,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": [names["exterior"], names["bussmile"], names["emptyseat2"], names["swell"], names["loudcar"]],
-    "frames_ok": ["S01", names["inseat"], names["loudcar"]],
+    "frames_ok": [],
     "clip_ok": [],
     "asr_forgive": ["nineteen eighty seven", "walk the", "walked a", "1987"],
 }
