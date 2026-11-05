@@ -141,13 +141,14 @@ BX = (-0.06, 0.0)
 # =========================================================================================== 01 L01-L05  (day, lean 5)
 # S01a: Dad at the island in our kitchen, his mug tilted on it (it leans with the house), a crooked frame behind him
 dadk = feet("o", 2.55, 3.85, F1)
-S("S01a", 0, cam(add(feet("o", 2.55, 0.55, F1), (0, 0, 1.5)), add(dadk, (0, 0, 1.52)), 40, add(feet("o", 2.55, 0.9, F1), (0, 0, 1.5))),
+S("S01a", 0, cam(add(feet("o", 2.55, 1.4, F1), (0, 0, 1.62)), add(dadk, (0, 0, 1.45)), 40, add(feet("o", 2.55, 1.8, F1), (0, 0, 1.62))),
   "day", fill=0.7)
 put("dad", 0, dadk, 0, ANG)
 cue(0, "tag", v="a")
 cue(0, "frames", deg=3.0)
 # S01b: Pruitt's face in his window
 pw = feet("h", 0.5, 0.5, F2)
+pw = add(pw, (0, 0, -0.27))       # head fully inside the window, under the lintel
 pwh = add(pw, (0, 0, 1.68))
 S("S01b", "L01.1", cam(add(pwh, (0.0, -2.4, 0.0)), pwh, 34, add(pwh, (0.0, -2.0, 0.0))), "day", fill=0.5)
 put("pruitt", "L01.1", pw, 0, ANG)
@@ -181,15 +182,15 @@ show("S08", "L08", cam(add(feet("o", 0.8, 0.2, F1), (0, 0, 0.8)), add(feet("o", 
                       add(feet("o", 0.8, 0.7, F1), (0, 0, 0.8)), add(feet("o", 1.0, 1.9, F1), (0, 0, 1.0))), "day",
      [("me", feet("o", 1.0, 2.5, F1), 0, "neutral", {})], fill=0.6)
 # S09: the marble, in the hall, rolls to his side
-cue("L09.1-0.4", "marble", ux=2.5, y=2.3)
-show("S09a", "L09", cam(add(feet("o", 2.9, 1.2, F2), (0, 0, 0.5)), add(feet("o", 2.9, 2.3, F2), (0, 0, 0.35)), 30,
-                       add(feet("o", 2.8, 1.2, F2), (0, 0, 0.45))), "day", [], hl=0.7, fill=0.5)
-S("S09b", "L09.1", cam(add(feet("o", 1.7, 0.3, F2), (0, 0, 0.25)), add(feet("o", 1.7, 2.3, F2), (0, 0, 0.12)), 17,
-                       add(feet("o", 1.7, 0.5, F2), (0, 0, 0.22)), add(feet("o", 1.7, 2.3, F2), (0, 0, 0.12))), "day", hl=0.7, fill=0.5)
+cue("L09.1-0.4", "marble", ux=2.5, y=1.5)
+show("S09a", "L09", cam(add(feet("o", 2.9, 0.4, F2), (0, 0, 0.55)), add(feet("o", 2.55, 1.5, F2), (0, 0, 0.3)), 30,
+                       add(feet("o", 2.8, 0.6, F2), (0, 0, 0.5))), "day", [], hl=0.7, fill=0.5)
+S("S09b", "L09.1", cam(add(feet("o", 1.6, 0.2, F2), (0, 0, 0.4)), add(feet("o", 1.6, 1.5, F2), (0, 0, 0.1)), 24,
+                       add(feet("o", 1.6, 0.4, F2), (0, 0, 0.36)), add(feet("o", 1.5, 1.5, F2), (0, 0, 0.1))), "day", hl=0.7, fill=0.5)
 # S10: Dad's mug tilted, the coffee level, his face behind it (cover frame)
 mugw = feet("o", 2.75, 2.9, F1)
-show("S10", "L10", cam(add(feet("o", 2.55, 1.75, F1), (0, 0, 1.55)), add(feet("o", 2.55, 3.4, F1), (0, 0, 1.3)), 40,
-                      add(feet("o", 2.55, 1.95, F1), (0, 0, 1.5)), add(feet("o", 2.55, 3.4, F1), (0, 0, 1.38))), "day",
+show("S10", "L10", cam(add(feet("o", 2.55, 1.5, F1), (0, 0, 1.68)), add(feet("o", 2.55, 3.4, F1), (0, 0, 1.38)), 40,
+                      add(feet("o", 2.55, 1.8, F1), (0, 0, 1.64)), add(feet("o", 2.55, 3.4, F1), (0, 0, 1.42))), "day",
      [("dad", dadk, 0, ANG, {})], fill=0.7)
 # S11: at the gate, pointing with flat hands
 show("S11", "L11", cam([0.0, -8.0, 1.7], [0.0, -4.5, 1.45], 26, [0.0, -7.2, 1.7]), "day",
@@ -237,36 +238,39 @@ S("S18b", "L18.2", cam([0.0, -2.8, 4.5], [0.0, 0.0, 4.5], 34, [0.0, -2.3, 4.5]),
 # the drop: his lamp goes out slowly (the shot before ramps it down over 0.35 s)
 S("S19a", "P01", cam([-0.25, -2.3, 4.5], [0.0, 0.0, 4.5], 36, [-0.2, -2.0, 4.5]), "night", pl=0.0, pk=0.5, fill=0.15, rain=True)
 # S19: out of his dark window, something reaches
-PR_WIN = feet("h", 0.35, 0.45, F2)
+PR_WIN = feet("h", 0.5, 0.45, F2)
+PR_DARK = add(feet("h", 0.55, 0.55, F2), (0, 0, -0.9))      # standing back in the dark room, only the arm reaches out
 show("S19", "L19", cam([-0.9, -2.0, 4.5], [0.35, 0.0, 4.45], 36, [-0.7, -1.8, 4.5], [0.3, 0.0, 4.45]), "night",
-     [("pruitt_n", PR_WIN, -25, "neutral", {"arms": [90, 0], "lean": 10})], pl=0.0, pk=0.5, fill=0.15, rain=True)
+     [], pl=0.0, pk=0.5, fill=0.1, rain=True, armout=True)
 cue("L19", "hold", p=False, d=False)
 # S20: A HAND. toward ours -- me, scared, in our window
 ME_WIN = feet("o", 0.45, 0.5, F2)
-show("S20", "L20", cam([-1.7, -1.5, 4.5], [-0.05, 0.0, 4.5], 34, [-1.5, -1.3, 4.5]), "night",
-     [("me", ME_WIN, 0, "scared", {}), ("pruitt_n", PR_WIN, -25, "neutral", {"arms": [90, 0], "lean": 10})], pl=0.0, pk=0.5, fill=0.3, rain=True)
+show("S20", "L20", cam([0.0, -2.3, 4.5], [-0.27, 0.0, 4.5], 32, [0.0, -1.9, 4.5]), "night",
+     [("me", ME_WIN, 15, "scared", {})], pl=0.0, pk=0.5, fill=0.3, rain=True, armout=True)
 cue("L21+0.15", "sash", dur=0.55)
 show("S21", "L21", cam([-0.64, -1.7, 4.45], [-0.64, 0.0, 4.4], 40, [-0.64, -1.35, 4.45]), "night",
      [], pl=0.5, pk=0.6, fill=0.25, rain=True)
-DAD_WIN = feet("o", 0.4, 0.4, F2)
+DAD_WIN = feet("o", 0.5, 0.4, F2)
 show("S22", "L22", cam(add(DAD_WIN, (-0.15, -2.1, 1.4)), add(DAD_WIN, (0, 0, 1.4)), 38, add(DAD_WIN, (-0.1, -1.8, 1.42))), "night",
      [("dad_n", DAD_WIN, 0, "neutral", {"lean": 6})], pl=0.9, pk=0.8, fill=0.35, rain=True)
 cue("L23", "hold", p=True, d=False)
-show("S23", "L23", cam([0.55, -1.7, 4.45], [0.05, -0.5, 4.3], 38, [0.4, -1.5, 4.4]), "night",
+show("S23", "L23", cam([0.0, -3.5, 4.55], [0.0, 0.0, 4.5], 21, [0.0, -3.1, 4.55]), "night",
      [("pruitt_n", PR_WIN, -25, "neutral", {"arms": [90, 0], "lean": 10}), ("dad_n", DAD_WIN, 25, "neutral", {"lean": 6})],
      pl=0.9, pk=0.8, fill=0.3, rain=True)
 cue("L24", "hold", p=False, d=True)
-show("S24", "L24", cam([0.2, -2.3, 4.55], [0.3, 0.0, 4.5], 36, [0.3, -2.0, 4.55]), "night",
+show("S24", "L24", cam([0.0, -3.5, 4.55], [0.0, 0.0, 4.5], 21, [0.0, -3.1, 4.55]), "night",
      [("pruitt_n", PR_WIN, -25, WARM, {"arms": [60, 0], "lean": 3}),
       ("dad_n", DAD_WIN, 25, WARM, {"arms": [0, 60], "lean": 6})], pl=1.0, pk=0.8, fill=0.35, rain=True)
 show("S25", "L25", cam(add(DAD_WIN, (0.1, -2.1, 1.4)), add(DAD_WIN, (0, 0, 1.42)), 38, add(DAD_WIN, (0.1, -1.8, 1.42))), "night",
      [("dad_n", DAD_WIN, 0, LAUGH, {"lean": 6})], pl=1.0, pk=0.8, fill=0.35, rain=True)
 cue("L25", "hold", p=False, d=False)
-BOTH = [("pruitt_n", PR_WIN, 0, LAUGH, {"lean": 6}), ("dad_n", DAD_WIN, 0, LAUGH, {"lean": 6})]
+BOTH = [("pruitt_n", PR_WIN, -25, LAUGH, {"arms": [90, 0], "lean": 6}), ("dad_n", DAD_WIN, 25, LAUGH, {"arms": [0, 90], "lean": 6})]
+cue("L26", "hold", p=False, d=True)
 show("S26a", "L26", cam([0.0, -3.6, 4.55], [0.0, 0.0, 4.55], 21, [0.0, -3.3, 4.55]), "night", BOTH, pl=1.0, pk=0.8, fill=0.4,
      rain=True)
 S("S26b", "L26.2", cam([0.05, -2.4, 4.6], [0.0, 0.0, 4.55], 31, [0.0, -2.0, 4.6]), "night", keep=("pruitt_n", "dad_n"),
   pl=1.0, pk=0.8, fill=0.4, rain=True)
+cue("L27", "hold", p=False, d=False)
 show("S27a", "L27", cam(add(mehall, (0.0, -2.3, 1.55)), add(mehall, (0, 0, 1.5)), 32, add(mehall, (0.0, -1.9, 1.55))), "night",
      [("me", mehall, 0, "wide", {})], fill=0.45, hl=1.0)
 show("S27b", "L27.1", cam(add(DAD_WIN, (0.2, -2.0, 1.4)), add(DAD_WIN, (0, 0, 1.42)), 38, add(DAD_WIN, (0.2, -1.7, 1.42))), "night",
@@ -282,7 +286,7 @@ S("S29", "L29", cam([0.0, -7.5, 4.0], [0.0, 0.0, 4.4], 24, [0.0, -6.6, 4.1]), "n
   fill=0.2, rain=True)
 cue("L30", "hold", p=True, d=True)
 show("S30", "L30", cam([0.0, -3.4, 4.5], [0.0, 0.0, 4.55], 22, [0.0, -3.0, 4.55]), "night",
-     [("pruitt_n", PR_WIN, -25, WARM, {"arms": [60, 0], "lean": 3}), ("dad_n", DAD_WIN, 25, WARM, {"arms": [0, 60], "lean": 8})],
+     [("pruitt_n", PR_WIN, -35, WARM, {"arms": [90, 0], "lean": 3}), ("dad_n", DAD_WIN, 35, WARM, {"arms": [0, 90], "lean": 8})],
      pl=1.0, pk=0.8, fill=0.4, rain=True)
 cue("L31", "hold", p=False, d=False)
 lean("L31", "main", 8.5, 1.6)
@@ -321,20 +325,20 @@ show("S40", "L40", cam(add(WIN_K, (0.1, -1.7, 1.45)), add(WIN_K, (0, 0, 1.52)), 
 lean("L41", "mint", 3.2, 0.7)
 cue("L41", "tag", v="b")
 S("S41a", "L41", cam([-1.0, -1.4, 1.7], [-0.4, -15.6, 3.6], 30, [-1.0, -1.7, 1.7]), "day", fill=0.1)
-cue("L41.2", "marble", mode="step", pos=[-1.6, -0.5, 0.12], dir=[0.0, -1.0], acc=1.6)
-S("S41b", "L41.2", cam([-1.1, -0.1, 0.5], [-1.6, -1.1, 0.2], 32, [-1.2, -0.5, 0.45], [-1.6, -1.8, 0.2]), "day", fill=0.9)
+cue("L41.2", "marble", mode="step", pos=[-3.75, -0.95, 0.19], dir=[0.0, -1.0], acc=1.6)
+S("S41b", "L41.2", cam([-3.75, -0.2, 0.95], [-3.75, -1.5, 0.1], 32, [-3.75, -0.5, 0.9], [-3.75, -2.5, 0.1]), "day", fill=0.9)
 show("S42", "L42", cam([-0.9 + 1.2, -2.2, 1.6], [-0.9 + 1.2, 0.0, 1.55], 32, [-0.9 + 1.2, -1.9, 1.6]), "day", [])
 # Dad and me at the kitchen window (ground floor front window ux 1.0..2.1)
-w_dad = feet("o", 1.12, 0.5, F1)
-w_me = feet("o", 2.1, 0.5, F1)
+w_dad = feet("o", 1.0, 0.4, F1)
+w_me = feet("o", 1.9, 0.5, F1)
 cx = (w_dad[0] + w_me[0]) / 2
-shots[-1]["cam"] = cam([cx, -2.5, 1.65], [cx, 0.0, 1.62], 34, [cx, -2.1, 1.65])
+shots[-1]["cam"] = cam([cx, -3.0, 1.65], [cx, 0.0, 1.62], 23, [cx, -2.7, 1.65])
 put("dad", "L42", w_dad, 0, "wide")
 put("me", "L42", w_me, 0, "wide")
 show("S43a", "L43", cam(add(WIN_K, (0.1, -1.9, 1.45)), add(WIN_K, (0, 0, 1.52)), 36, add(WIN_K, (0.1, -1.5, 1.5))), "day",
      [("me", WIN_K, 0, "worried", {})], fill=0.6)
 # the loop: back to S01a's picture (Dad, cross, the tilted mug on the island)
-S("S43b", "L43+0.55", cam(add(feet("o", 2.55, 0.55, F1), (0, 0, 1.5)), add(dadk, (0, 0, 1.52)), 40), "day", fill=0.7)
+S("S43b", "L43+0.55", cam(add(feet("o", 2.55, 1.4, F1), (0, 0, 1.62)), add(dadk, (0, 0, 1.45)), 40), "day", fill=0.7)
 put("dad", "L43+0.55", dadk, 0, ANG)
 
 # ---------------------------------------------------------------------------------------------------- story
@@ -393,6 +397,8 @@ story = {
             {"at": "L01>-0.2", "kind": "thud", "db": -14},
             {"at": "L17", "kind": "creak", "db": -18, "dur": 1.2},
             {"at": "L21+0.15", "kind": "creak", "db": -18, "dur": 0.6},
+            {"at": "L19+0.2", "kind": "thud", "db": -16},
+            {"at": "L38.1", "kind": "latch", "db": -18},
             {"at": "L40.1", "kind": "creak", "db": -16, "dur": 1.0},
             {"at": "L41+0.1", "kind": "creak", "db": -14, "dur": 0.8},
         ],
@@ -410,8 +416,8 @@ if vt.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(e["at"]))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 1
+story["rev"] = 12
 story["clip_ok"] = ["sidehair", "sidehair2"]
-story["framing_ok"] = ["S13", "S03a", "S03b", "S05", "S07", "S16", "S35", "S41a", "S41b"]
+story["framing_ok"] = ["S13", "S03a", "S03b", "S05", "S07", "S16", "S35", "S41a"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")

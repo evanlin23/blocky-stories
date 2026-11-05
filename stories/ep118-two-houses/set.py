@@ -266,7 +266,7 @@ def mug(kit, parent, loc, color, name="mug", rot=(0, 0, 0), scale=1.4):
 
 
 def coffee_disc(kit, r_in):
-    c = kit.cyl(nm("coffee"), r_in * 0.92, 0.004, (0, 0, -9), P("#3a2214", 0.2, 0.9), None, n=20)
+    c = kit.cyl(nm("coffee"), r_in * 0.92, 0.004, (0, 0, -9), P("#9a5c2c", 0.3, 0.6), None, n=20)
     no_shadow(c)
     return c
 
@@ -526,9 +526,11 @@ def build(kit, story, tl):
             pass
     # ---- the yards: hedge, fence, gate with the tally
     hedge = P("#3f9e4a", 0.85, 0.05)
-    B(None, (0.5, 2.3, 1.45), (0, -1.45, 0.725), hedge, "hedge", 0.12)
+    B(None, (0.5, 2.3, 0.6), (0, -1.45, 0.3), hedge, "hedge", 0.12)
     for k in range(2):
-        B(None, (0.58, 0.9, 0.3), (0, -0.7 - k * 1.0, 1.5), P("#4cae56", 0.85, 0.05), "hedgetop", 0.12)
+        B(None, (0.58, 0.9, 0.2), (0, -0.7 - k * 1.0, 0.64), P("#4cae56", 0.85, 0.05), "hedgetop", 0.12)
+    for k in range(5):       # the hedge row along the bottom of the yard shots (front of the yards)
+        B(None, (0.62, 0.7, 0.62 + 0.08 * (k % 2)), (-1.24 + k * 0.62, -3.0, 0.33), P("#3f9e4a" if k % 2 else "#4cae56", 0.85, 0.05), "hedgerow", 0.12)
     white = P("#f6f4ee", 0.5)
     for k in range(10):
         y = -3.45 - k * 0.27
@@ -550,6 +552,8 @@ def build(kit, story, tl):
     for k, yy in enumerate((-0.80, -0.87)):                                       # two shutter-blue strokes
         B(gate, (0.012, 0.014, 0.045), (-0.1, yy - 0.0, 0.5), P("#4aa3ff", 0.4, 0.3), "stroke", 0.002, rot=(0.3, 0, 0))
     ctx["gate"] = gate
+    # the porch: boards in front of our house for the marble at L41
+    B(None, (2.7, 3.4, 0.09), (-3.05, -1.7, 0.045), kit.planks("#c8935a", "#a8743f", 1.0, "X"), "porch", 0.01)
     # ---- the squirrel (hidden until it's needed)
     sq = E(None, (0, 0, 0), "squirrel")
     fur, cream = P("#a8683a", 0.8), P("#f2dcc0", 0.8)
@@ -610,7 +614,7 @@ def build(kit, story, tl):
     ctx["kitchen"] = build_kitchen(kit, ours, ctx)
     build_hall_bits(kit, ours, his, ctx)
     # marble
-    ctx["marble"] = kit.sphere(nm("marble"), 0.045, (0, 0, -9), P("#3fa0ff", 0.12, 1.0), None, seg=16)
+    ctx["marble"] = kit.sphere(nm("marble"), 0.09, (0, 0, -9), P("#3fa0ff", 0.12, 1.0), None, seg=16)
     ctx["marble"].hide_render = True
     # ---- the porch lamps (outside), kitchen & hall lamps
     ctx["kl"] = kit.light("kitchenl", "POINT", (-ours.sgn * 1.7, 2.3, 2.45), 300, "#fff0d0", size=0.4, parent=ours.root)
@@ -628,6 +632,13 @@ def build(kit, story, tl):
     B(his.root, (0.1, 0.1, 0.9), (-his.sgn * 1.0, 1.3, FLOOR2 + 0.45), P("#5a4a3a", 0.5), "lampstand", 0.02)
     ctx["lampp"] = kit.sphere(nm("lampshade"), 0.2, (-his.sgn * 1.0, 1.3, FLOOR2 + 1.05), ctx["plmat"], his.root, seg=14)
     no_shadow(ctx["lampp"])
+    # Mr. Pruitt's navy sleeve and flat hand reaching out of his dark window (S19, S20); his face is never in these shots
+    ao = E(his.root, (0, 0, 0), "armout")
+    B(ao, (0.3, 1.2, 0.28), (0.3, 0.1, 4.46), P("#26365e", 0.7, 0.1), "sleeve", 0.04, rot=(0, 0, -0.4))
+    B(ao, (0.26, 0.3, 0.1), (0.0, -0.52, 4.44), P("#ecc3a0", 0.6, 0.2), "palm", 0.02, rot=(0, 0, -0.4))
+    B(ao, (0.26, 0.2, 0.08), (-0.07, -0.69, 4.44), P("#ecc3a0", 0.6, 0.2), "fingers", 0.02, rot=(0, 0, -0.4))
+    ctx["armout"] = ao
+    hide(ao, True)
     ctx["late"] = False
     ctx["tagmat"] = None
     build_inset(kit, ctx)
@@ -654,8 +665,9 @@ def build_kitchen(kit, ours, ctx):
     K_["m3"] = mug(kit, ours.root, (-ours.sgn * 1.8, y0 + 0.05, 0.95), "#ff8e72", "drainA", scale=1.2)
     K_["m4"] = mug(kit, ours.root, (-ours.sgn * 2.2, y0 + 0.05, 0.95), "#4aa3ff", "drainB", scale=1.2)
     K_["juice"] = kit.cyl(nm("juice"), 0.05, 0.13, (-ours.sgn * 3.0, ym, 1.015), P("#ff9a2e", 0.2, 0.8), ours.root, n=16)
-    K_["dadmug"] = mug(kit, ours.root, (-ours.sgn * 2.75, ym, 0.95), "#ffd23a", "dadmug", scale=1.7)
-    K_["dadcoffee"] = coffee_disc(kit, 0.037 * 1.7 * 0.8)
+    ours.b(ours.root, (2.55, 2.85), (2.63, 2.93), (0.95, 1.32), P("#d7503a", 0.5), "trivet", 0.01)
+    K_["dadmug"] = mug(kit, ours.root, (-ours.sgn * 2.7, 2.78, 1.32), "#ffd23a", "dadmug", rot=(0, 0.2, 0), scale=2.3)
+    K_["dadcoffee"] = coffee_disc(kit, 0.037 * 2.3 * 0.85)
     tm = P("#e8b070", 0.5)
     K_["ttop"] = kit.cyl(nm("ttop"), 0.62, 0.06, (0, 0, -9), tm, None, n=28)
     K_["tlegs"] = [kit.box(nm("tleg"), (0.07, 0.07, 0.75), (0, 0, -9), tm, None, bevel=0.01) for _ in range(4)]
@@ -718,7 +730,9 @@ def late(kit, ctx):
             continue
         hg = ch.head.children[0]
         R = faces.HEAD_R
-        B(hg, (0.5, 0.1, 0.09), (0, -R - 0.04, -0.07), wh, "mustache", 0.04)
+        for sx in (-1, 1):       # two thick drooping lobes with a gap, so it reads as a mustache, not tape
+            B(hg, (0.27, 0.15, 0.15), (sx * 0.15, -R - 0.05, -0.085), wh, "mustache", 0.06, rot=(0, sx * 0.45, 0))
+            B(hg, (0.12, 0.13, 0.13), (sx * 0.27, -R - 0.045, -0.17), wh, "mustache", 0.05)
         for sx in (-1, 1):
             B(hg, (0.2, 0.9, 0.5), (sx * (R - 0.02), 0.18, 0.0), gray, "sidehair", 0.08)
             B(hg, (0.16, 0.5, 0.18), (sx * (R - 0.03), 0.3, 0.3), gray, "sidehair2", 0.05)
@@ -731,7 +745,7 @@ def late_hold(kit, ctx):
         ch = rig.CHARS.get(who)
         if ch is None:
             continue
-        m = mug(kit, ch.P[arm], (0, 0.5, -1.7), "#fff1c9", f"held{key}", rot=(-math.pi / 2, 0, 0), scale=3.4)
+        m = mug(kit, ch.P[arm], (0, -0.55, -1.5), "#fff1c9", f"held{key}", rot=(math.pi / 2, 0, 0), scale=8.0)
         ctx["held"][key] = m
         hide(m, True)
 
@@ -752,6 +766,7 @@ def animate(kit, story, tl, t, ctx):
         late_hold(kit, ctx)
         ctx["late"] = True
     hc = cue_at(tl, "hold", t)
+    hide(ctx["armout"], not ctx["shots"][next((x["id"] for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1]["id"])].get("armout"))
     for key, m in ctx.get("held", {}).items():
         hide(m, not hc.get(key, False))
     sc = bpy.context.scene
@@ -804,7 +819,7 @@ def animate(kit, story, tl, t, ctx):
     dm = K_["dadmug"]
     mwm = dm.matrix_world
     ax = mwm.to_3x3() @ V((0, 0, 1))
-    pt = mwm.translation + ax.normalized() * 0.115
+    pt = mwm.translation + ax.normalized() * 0.2
     K_["dadcoffee"].location = (pt.x, pt.y, pt.z)
     # the table: world-level top, legs on the floor, books under the downhill pair
     a = math.radians(ours.deg)
@@ -859,7 +874,7 @@ def animate(kit, story, tl, t, ctx):
                 ux = ux0 - 0.5 * acc * roll_t * roll_t * (1.0 + 0.5 * min(1.0, roll_t))
                 ux = max(ux, 0.28)
             p = floor_world(ours, ux, yy, fz)
-            mo.location = (p.x, p.y, p.z + 0.03 + h)
+            mo.location = (p.x, p.y, p.z + 0.07 + h)
     else:
         mo.hide_render = True
     # ---- the squirrel
