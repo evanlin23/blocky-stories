@@ -1,0 +1,1109 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "I wished I'd never lose my brother. Now he can't get one block away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.207,
+   "onset": 0.155,
+   "end": 3.0,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     0.966
+    ],
+    [
+     0.966,
+     1.466
+    ],
+    [
+     1.561,
+     1.793
+    ],
+    [
+     1.793,
+     2.069
+    ],
+    [
+     2.069,
+     3.0
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Our town well grants every wish word for word.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.293
+    ],
+    [
+     1.293,
+     2.086
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Not what you meant. What you said.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.741
+    ],
+    [
+     0.793,
+     1.466
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Missus Kemp wished she'd never be cold.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.077
+    ],
+    [
+     1.077,
+     1.724
+    ]
+   ]
+  },
+  "L05": {
+   "text": "It's snowed for a week. Her yard is still in summer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     0.914
+    ],
+    [
+     0.983,
+     1.301
+    ],
+    [
+     1.301,
+     1.526
+    ],
+    [
+     1.526,
+     2.155
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Mister Hobb wished he'd never be late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.112
+    ],
+    [
+     1.112,
+     1.69
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Now the bus waits at his corner for twenty minutes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.802
+    ],
+    [
+     0.802,
+     1.224
+    ],
+    [
+     1.224,
+     2.034
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Three years ago, my big brother Wes was moving out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.793,
+     1.103
+    ],
+    [
+     1.103,
+     1.509
+    ],
+    [
+     1.509,
+     2.293
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Back then I was nineteen. I didn't want to be alone in that house.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.224
+    ],
+    [
+     1.293,
+     1.612
+    ],
+    [
+     1.612,
+     2.009
+    ],
+    [
+     2.009,
+     2.741
+    ]
+   ]
+  },
+  "L10": {
+   "text": "So I took a coin to the well and said it exactly.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.741
+    ],
+    [
+     0.741,
+     1.129
+    ],
+    [
+     1.129,
+     1.353
+    ],
+    [
+     1.353,
+     2.103
+    ]
+   ]
+  },
+  "L11": {
+   "text": "I wish I'd never lose him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.828
+    ],
+    [
+     0.828,
+     1.448
+    ]
+   ]
+  },
+  "L12": {
+   "text": "The next morning, Wes drove off to his new place.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.681,
+     1.207
+    ],
+    [
+     1.207,
+     1.379
+    ],
+    [
+     1.379,
+     2.052
+    ]
+   ]
+  },
+  "L13": {
+   "text": "One block later, his car stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.75,
+     1.569
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Then it rolled back and parked itself at our curb.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.81
+    ],
+    [
+     0.81,
+     1.353
+    ],
+    [
+     1.353,
+     2.034
+    ]
+   ]
+  },
+  "L15": {
+   "text": "He tried the bus. It turned around.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.741
+    ],
+    [
+     0.81,
+     1.724
+    ]
+   ]
+  },
+  "L16": {
+   "text": "He tried walking. His feet walked him home.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.81
+    ],
+    [
+     0.862,
+     1.155
+    ],
+    [
+     1.155,
+     1.983
+    ]
+   ]
+  },
+  "L17": {
+   "text": "One block. Never one inch more.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     0.888
+    ],
+    [
+     0.888,
+     1.483
+    ]
+   ]
+  },
+  "L18": {
+   "text": "He never asked me why.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     1.259
+    ]
+   ]
+  },
+  "L19": {
+   "text": "He just moved back into his old room.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.397,
+     0.819
+    ],
+    [
+     0.819,
+     1.069
+    ],
+    [
+     1.069,
+     1.741
+    ]
+   ]
+  },
+  "L20": {
+   "text": "For three years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.172,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Last week, Wes got his dream job.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.922
+    ],
+    [
+     0.922,
+     1.707
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Across the country.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     1.086
+    ]
+   ]
+  },
+  "L23": {
+   "text": "At two in the morning I heard him on the phone,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.828
+    ],
+    [
+     0.828,
+     1.147
+    ],
+    [
+     1.147,
+     1.845
+    ]
+   ]
+  },
+  "L24": {
+   "text": "turning it down. He said, my brother needs me close.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.793,
+     1.052
+    ],
+    [
+     1.077,
+     1.319
+    ],
+    [
+     1.319,
+     2.121
+    ]
+   ]
+  },
+  "L25": {
+   "text": "So that night I went back to the well.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.034
+    ],
+    [
+     1.034,
+     1.621
+    ]
+   ]
+  },
+  "L26": {
+   "text": "You can't take a wish back. I tried for an hour.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.017
+    ],
+    [
+     1.086,
+     1.474
+    ],
+    [
+     1.474,
+     2.069
+    ]
+   ]
+  },
+  "L27": {
+   "text": "The water just spat my coin back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.845
+    ],
+    [
+     0.845,
+     1.5
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Then I thought about the words.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.328
+    ]
+   ]
+  },
+  "L29": {
+   "text": "I'd never lose him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.19
+    ]
+   ]
+  },
+  "L30": {
+   "text": "But you only lose what you don't mean to let go of.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.819
+    ],
+    [
+     0.819,
+     0.983
+    ],
+    [
+     0.983,
+     1.276
+    ],
+    [
+     1.276,
+     1.466
+    ],
+    [
+     1.466,
+     2.034
+    ]
+   ]
+  },
+  "L31": {
+   "text": "At dawn I carried his boxes out to his car.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.819
+    ],
+    [
+     0.819,
+     1.224
+    ],
+    [
+     1.224,
+     1.422
+    ],
+    [
+     1.422,
+     2.052
+    ]
+   ]
+  },
+  "L32": {
+   "text": "He said, you know it won't let me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.5,
+     0.741
+    ],
+    [
+     0.741,
+     1.414
+    ]
+   ]
+  },
+  "L33": {
+   "text": "I said, I'm not losing you. I'm letting you go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.406,
+     0.603
+    ],
+    [
+     0.603,
+     1.052
+    ],
+    [
+     1.138,
+     1.466
+    ],
+    [
+     1.466,
+     2.017
+    ]
+   ]
+  },
+  "L34": {
+   "text": "He drove to the corner. The car didn't stop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.966
+    ],
+    [
+     1.034,
+     1.293
+    ],
+    [
+     1.293,
+     1.931
+    ]
+   ]
+  },
+  "L35": {
+   "text": "Two blocks. Then past the town line.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     0.992
+    ],
+    [
+     0.992,
+     1.793
+    ]
+   ]
+  },
+  "L36": {
+   "text": "My phone buzzed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ]
+   ]
+  },
+  "L37": {
+   "text": "A picture of the highway. He wrote, first time in three years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.017
+    ],
+    [
+     1.103,
+     1.345
+    ],
+    [
+     1.379,
+     1.819
+    ],
+    [
+     1.819,
+     2.534
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Then he wrote, I heard your first wish, three years ago. I always knew.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.828
+    ],
+    [
+     0.828,
+     1.241
+    ],
+    [
+     1.276,
+     1.879
+    ],
+    [
+     1.966,
+     2.759
+    ]
+   ]
+  },
+  "L39": {
+   "text": "He gave up three years so I wouldn't feel bad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.897
+    ],
+    [
+     0.897,
+     1.207
+    ],
+    [
+     1.207,
+     1.897
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Last Sunday, there he was on our porch again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.19,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.19,
+     0.741
+    ],
+    [
+     0.793,
+     1.061
+    ],
+    [
+     1.061,
+     1.241
+    ],
+    [
+     1.241,
+     1.983
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Six hundred miles. Because he wanted to.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.19,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.19,
+     0.966
+    ],
+    [
+     1.017,
+     1.276
+    ],
+    [
+     1.276,
+     1.793
+    ]
+   ]
+  },
+  "L42": {
+   "text": "He still teases me about what I said at the well.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.879
+    ],
+    [
+     0.879,
+     1.164
+    ],
+    [
+     1.164,
+     1.422
+    ],
+    [
+     1.422,
+     2.0
+    ]
+   ]
+  }
+ }
+}

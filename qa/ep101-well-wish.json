@@ -1,0 +1,25 @@
+{
+ "stage": "proof",
+ "film": "proof-41906475044",
+ "run": 41906475044,
+ "sha": "597261f323915074dade9e1c1ce2f72d32e990ef",
+ "verdict": "fail",
+ "date": "2026-11-04",
+ "checked": [
+  "frames every 2 s",
+  "first 3 s every frame",
+  "Wes faces 14-16 s, 37 s, 70-73 s",
+  "porch beat 70.6-72.6 s",
+  "end loop",
+  "cover",
+  "loudness",
+  "hf windows",
+  "craft",
+  "flash",
+  "clip",
+  "opening tag",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 19.3 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 33.0 | 14.0– | ok |\n| macro.motion_energy_q | 12.71 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 12.71 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.07 | –2.5 | ok |\n| macro.longest_still_s | 0.13 | –1.5 | ok |\n| macro.motion_energy_mean | 5.48 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.66 | 0.4– | ok |\n| macro.brightness_mean | 0.528 | 0.35– | ok |\n| macro.brightness_first_3s | 0.549 | 0.3– | ok |\n| macro.dark_frame_share | 0.003 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.436 | 0.42– | ok |\n| macro.contrast_mean | 0.227 | 0.18– | ok |\n| spec.face_big_share | 0.558 | 0.4– | ok |\n| spec.caption_share | 0.979 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.003 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.714 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.3 | –0.25 | **warn** |\n| micro.idle_window_share | 0.014 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 65.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.62 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0039 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.3 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0422 | –0.08 | ok |\n| sound.hf_jump_max | 0.0149 | –0.04 | ok |",
+ "notes": "Proof 76.3 s at 597261f (latest film-file commit; later commits are reviews only). -14.1 LUFS / -1.8 dBTP, LRA 1.1; HF share 0.020-0.042 per 5 s, max jump 0.012; tail loops to the well, no cut. Flash passes the house bar (2/s, 3f 6/s, 3f busy 3.6 s from 27.4 s, red 0); clip.json 0 hits of 385. Gate OPEN. Opening 'confess' matches L01; last upload floor-thirteen is 'if'.\nSecond one: lit top-down push onto the round well, a coin drops and ripples, the blocks meter top left, 'I wished I'd / never lose'; first face (my brother Wes, worried smile) at 1.6 s, 'Now he can't get one BLOCK away' poses the threat. Cover 2.6 s Wes close-up is strong.\nFIX (fail): Wes wears expr 'grin' (faces.py: 'the uncanny one', too many teeth) with furrowed brows at warm beats, so he reads angry/sinister and muddles the twist: 70.6-72.6 s S92/S93 L40 'Last Sunday, there he was on our PORCH again' (the payoff); 37.3-37.8 s S51 L21 'dream JOB'; 14-16 s S20-S22 L08 'my big brother WES'. Use smile/delighted/warm (and check L12 S30-S31, L34 S79-S81 keys).\nShould fix: frame 1 has no face (well only) until 1.6 s; 42 s L23 'into his' is a blank blue wall shot.\nPolish on: punch-ins on key words, caption pop clean, no still over 0.8 s, risers present, silence share 0.0039.\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 12.71 (5.5-8.0), micro.walk_dead_end_share 0.3 (-0.25); cuts are busy but read clean at phone size."
+}
