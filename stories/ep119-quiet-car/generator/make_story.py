@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 18
+REV = 22
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -322,10 +322,9 @@ seat_me("L15", "neutral")
 shot("L15", K2((0.0, ry(2.5), 1.4), 100, 3.8, (0.4, ry(3.9), 1.4), 115, 3.2, 38), "slideseat")
 # S16: Teddy lights up at me, then says it
 beat("teddy", "L16", expr="smile", head=[-20, 0])
-shot("L16", K(TEH, 118, 2.9, 50, 3, 0.05), "tedlit")
+shot("L16", K2(TEH, 118, 2.9, TEH, 125, 2.3, 50, 3, 55, 0.05), "tedlit")
 beat("teddy", "L16.2", expr="smile", head=[-20, 0])
 acting["teddy"].append({"from": "L16.2", "to": "L16.2>", "mouth": [0.3, 0.9], "flap": True})
-shot("L16.2", K(TEH, 125, 2.3, 55, 3, 0.05), "tedmouth")
 # S17: I freeze (Teddy out of the frame: hidden for this one shot, back at L18)
 only("L17", ["me"])
 beat("me", "L17", expr="scared", head=[0, 0])
@@ -400,6 +399,8 @@ shot("L31", K((TEX - 0.2, TEY - 0.1, 0.55), 240, 1.2, 45, 20), "buzz")
 only("L32", [])
 cue("L32.1", "hat", v=1.0)
 cue("L32", "phone", v=0.0)
+move("L32", 0.0)
+move("L33", 1)
 shot("L32", P([0.9, ry(7.4), 1.2], [-1.9, ry(8) + 0.0, 2.1], 34), "rack")
 shot("L32.3", P2([0.2, ry(7.5), 2.0], [-1.7, ry(8), 2.1], [0.2, ry(7.5), 1.2], [-1.7, ry(8), 0.7], 34), "rackdown")
 # S33: a cake with candles on seat twelve, then out
@@ -434,7 +435,7 @@ put("conductor", "L40", [0.0, -0.55], 180, expr="neutral", head=[60, 0])
 beat("conductor", "L40+0.9", expr="neutral", head=[-60, 0])
 shot("L40", P([0.0, 2.6, 1.62], [0.0, -0.55, 1.62], 50), "conductor1")
 only("L40.3", [])
-shot("L40.3", K2((0.0, ry(4.4), 1.45), 280, 2.3, (0.0, ry(4.4), 1.45), 262, 2.0, 40, 4), "tickets")
+shot("L40.3", K2((0.0, ry(4.4), 1.45), 278, 2.3, (0.0, ry(4.4), 1.45), 268, 2.15, 40, 4), "tickets")
 # S41: Teddy's empty seat, the steaming coffee, my face soft behind it
 seat_me("L41", "worried")
 cue("L41", "cup", v=1.0)
@@ -478,9 +479,9 @@ shot("L47", P2([-1.35, MEY + 1.8, 1.45], [0.5, MEY - 0.6, 1.5], [-1.35, MEY + 1.
 # S48: handprints press into the fog
 cue("L48", "fogmax", m=0.36, dur=0.6)
 cue("L52+0.5", "fogmax", m=0.88, dur=1.2)
-cue("L48", "prints", p=1.0, dur=0.2)
+cue("L48-0.3", "prints", p=1.0, dur=0.2)
 shot("L48", P([-0.5, ry(6) + 0.15, 1.6], [HALF_, ry(6) + 0.15, 1.5], 24), "prints1")
-cue("L48.1", "prints", p=4.0, dur=0.5)
+cue("L48.1-0.45", "prints", p=4.0, dur=0.5)
 shot("L48.1", P([0.5, ry(5) + 0.15, 1.6], [-HALF_, ry(5) + 0.15, 1.5], 24), "prints2")
 # S49: my face, stunned
 put("me", "L49", [0.0, MEY], 180, expr="wide")
@@ -635,7 +636,7 @@ for k_ in acting.values():
     remap_all(k_)
 remap_all(cues)
 # cues and keys landing exactly on a cut can miss the cut's first drawing: apply them a frame early (frames.py pops)
-EARLY = {remap(x) for x in ("L09", "L48", "L48.1", "L71")}
+EARLY = set()
 for k_ in list(acting.values()) + [cues]:
     for it in k_:
         if it.get("at") in EARLY and it["at"] == it.get("at"):

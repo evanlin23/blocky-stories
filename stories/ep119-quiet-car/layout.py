@@ -30,4 +30,4 @@ PARTY = (60.0, 0.0)
 BUS = (60.0, 40.0)
 BATH = (60.0, 80.0)
 ENV_PERIOD = 48.0
-SPEED = 4.0
+SPEED = 2.4
