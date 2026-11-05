@@ -389,7 +389,7 @@ def build(kit, story, tl):
     dm_ = P("#fffaf0", 0.9, spec=0.0)
     for i in range(10):
         a = i * 2.4
-        W["dust"].append((kit.box(f"dust{i}", (0.12, 0.12, 0.12), (G.G_POS[0], G.G_POS[1], CEIL - 0.1), dm_, bevel=0.03),
+        W["dust"].append((kit.box(f"dust{i}", (0.06, 0.06, 0.06), (G.G_POS[0], G.G_POS[1], CEIL - 0.1), dm_, bevel=0.03),
                           (math.cos(a), math.sin(a), -0.35 - 0.25 * (i % 3))))
 
     # ---- the montage places
