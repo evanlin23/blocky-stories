@@ -15,7 +15,7 @@
  "tail": 0.2,
  "fade_in": false,
  "fade_out": false,
- "rev": 2,
+ "rev": 5,
  "look": {
   "style": "closer",
   "fog": "#d6e0ff",
@@ -59,6 +59,8 @@
     "S14",
     "S24",
     "S27",
+    "S23",
+    "S25",
     "S08",
     "S09",
     "S06"
@@ -4761,6 +4763,12 @@
    "z": 0.67
   },
   {
+   "at": "P01",
+   "name": "look",
+   "id": "gum",
+   "dur": 0.0
+  },
+  {
    "at": "L16",
    "name": "sit",
    "who": "me",
@@ -4775,28 +4783,16 @@
    "z": 0.67
   },
   {
-   "at": "L17-0.1",
-   "name": "look",
-   "id": "gum",
-   "dur": 0.6
-  },
-  {
-   "at": "L17-0.1",
-   "name": "gmom",
-   "v": 0.9,
-   "dur": 0.0
-  },
-  {
-   "at": "L17.2-0.8",
+   "at": "L17",
    "name": "gmom",
    "v": 1.8,
-   "dur": 0.6
+   "dur": 0.8
   },
   {
    "at": "L17.3+0.1",
    "name": "gmom",
    "v": 0.9,
-   "dur": 0.7
+   "dur": 0.9
   },
   {
    "at": "L17",
@@ -4807,12 +4803,6 @@
    "at": "L18",
    "name": "gshadow",
    "v": 0.0
-  },
-  {
-   "at": "L18.2",
-   "name": "look",
-   "id": "room",
-   "dur": 0.8
   },
   {
    "at": "L19",
@@ -5217,7 +5207,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 2
+  "rev": 5
  },
  "set_moves": [],
  "framing_ok": [

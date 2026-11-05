@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -310,18 +310,17 @@ seat("me", "L15", 0.2, "neutral")
 shot("L15", fr(0.2, SY, 1.15, 3.3, 34, dx=-0.2), "meknow")
 
 # ===================================================================== 05 the two asks (L16 to L20)
+look("P01", "gum")
 only("P01", [])
 shot("P01", mv([GX - 0.4, 0.6, 1.9], [GX, GY, 1.45], 40, [GX - 0.2, 1.0, 1.85], [GX, GY, 1.45], 40), "gumdrop")
 only("L16", ["mom", "me"])
 put("me", "L16", [GX - 1.15, 2.45, 0.0], 0, expr="neutral")
 put("mom", "L16", [GX - 0.55, 2.45, 0.0], 0, expr="sad-smile")
 shot("L16", mv([GX - 0.44, 2.45 - 5.4, 1.2], [GX - 0.44, 2.45, 1.2], 34, [GX - 0.44, 2.45 - 5.2, 1.2], [GX - 0.44, 2.45, 1.2], 34), "gum16")
-look("L17-0.1", "gum", 0.6)
 only("L17", ["mom"])
 put("mom", "L17", [GX - 0.55, 2.45, 0.0], 0, expr="sheepish" if False else "sad-smile")
-glow("L17-0.1", "mom", BASE)
-glow("L17.1-0.8", "mom", 1.8, 0.6)
-glow("L17.2+0.1", "mom", BASE, 0.7)
+glow("L17", "mom", 1.8, 0.8)
+glow("L17.2+0.1", "mom", BASE, 0.9)
 shot("L17", fr(GX - 0.55, 2.45, 1.3, 3.2, 34, dx=0.15, dz=-0.1), "momflare")
 put("mom", "L17.1", [GX - 1.65, 2.45, 0.0], 0, expr="sad-smile")
 cue("L17", "gshadow", v=1.0)
@@ -331,7 +330,6 @@ cue("L18", "gshadow", v=0.0)
 put("mom", "L18", [GX - 0.55, 2.45, 0.0], 0, expr="sad-smile", arms=[0, 0])
 beat("mom", "L18.1", arms=[0, 112], side=[0, -28])
 shot("L18", fr(GX - 0.55, 2.45, 1.3, 3.2, 34, dx=-0.1, dz=-0.1), "momsh")
-look("L18.1", "room", 0.8)
 look("L19", "lot")
 glow("L19", "mom", BASE)
 only("L19", ["dad", "me"])
@@ -452,7 +450,7 @@ remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L24.2")], "twist": remap("L21"),
           "emph": [remap("L01.1"), remap("L17.2"), remap("L24.3"), remap("L27.2"), remap("L30")],
-          "hold": [names[n_] for n_ in ("reveal", "wide9", "trio28", "trio31", "trio32", "emptybooth", "lot11", "hook", "sheep", "duo7", "side8", "moth12", "gum16", "dadme19", "polite1", "side29", "side31", "loop", "nudge", "shadows", "dadflare", "fridge1", "fridge2", "planner")]}
+          "hold": [names[n_] for n_ in ("reveal", "wide9", "trio28", "trio31", "trio32", "emptybooth", "lot11", "hook", "sheep", "duo7", "side8", "moth12", "gum16", "dadme19", "polite1", "side29", "side31", "loop", "nudge", "shadows", "dadflare", "momflare", "momsh", "fridge1", "fridge2", "planner")]}
 story = {
     "slug": "ep117-glow-secret",
     "title": "My Parents GLOW In The Dark 💡",
