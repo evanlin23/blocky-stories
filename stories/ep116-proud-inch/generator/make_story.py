@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -81,7 +81,8 @@ cast = {
     "cust": person("#b98456", "#5a8ad0", "#4a4036", "#2a2a2a", hair="buzz", hair_c="#1a1410"),
     "dad1": person("#e2b088", "#4aa86a", "#4a5a7a", "#3a2a1a", hair="spiky", hair_c="#7a4a2a", sleeves="short",
                    height=1.22),
-    "mail": person("#d3a07a", "#3a6fd0", "#2c3a5a", "#2a2a2a", hair="bun", hair_c="#2a1a12", eyes="lashes",
+    "mail": person("#d3a07a", "#3a6fd0", "#2c3a5a", "#2a2a2a", hair="long", hair_c="#5a2e18", eyes="lashes",
+                  hat="ballcap", hat_c="#23318a",
                    extras=["backpack"], extra_c="#e8b830", height=1.25),
     "bridedad": person("#e8b890", "#8a909c", "#6a707c", "#2a2a2a", hair="cap", hair_c="#b4b4ba", collar="#fffaf0",
                        extras=["tie"], extra_c="#d9443a", height=1.2),
@@ -154,6 +155,8 @@ MEX, MEY = G.ME_POS
 FX, FY = G.ME_FRONT
 HM = G.ME_HEAD
 GP = [GX, GY]
+TX, TY = 2.2, 0.3            # where I stand beside Grandpa in a two-shot (close enough that both faces fit)
+TWO = (2.65, 0.65, 1.85)     # the centre of a two-shot
 
 
 def grandpa_sit(at, on=True):
@@ -177,18 +180,18 @@ put("me", 0, [MEX, MEY], 0, expr="neutral")
 shot(0, fc(GHD, 1.9, 34, fx=0.35, fy=0.5, push=0.06), "face1")
 shot("L01.3", fc(GHD, 1.1, 40, fx=0.5, fy=0.48, push=0.22), "face1b")
 # L02: me beside him, a sideways look
-put("me", "L02", [FX, FY], 0, expr="neutral", head=[-35, 0])
+put("me", "L02", [TX, TY], 0, expr="neutral", head=[-35, 0])
 beat("grandpa", "L02", expr="neutral")
 beat("grandpa", "L02.2", expr="polite", head=[18, 0])
-shot("L02", fc((2.4, 0.8, 1.85), 2.1, 34, fx=0.5, fy=0.5, push=0.1), "two")
-shot("L02.2", fc((FX, FY, HM), 1.1, 40, fx=0.5, fy=0.45, push=0.15), "mefix")
+shot("L02", fc(TWO, 2.3, 34, fx=0.5, fy=0.5, push=0.04), "two")
+shot("L02.2", fc((TX, TY, HM), 1.1, 40, fx=0.5, fy=0.45, push=0.15), "mefix")
 # L03: the dad at the cafe door
 only("L03", ["dad1"])
 cx0, cy0 = G.CAFE
-put("dad1", "L03", [cx0, cy0 - 0.9], 0, expr="grin", lean=26, head=[0, 8], arms=[0, 40])
-beat("dad1", "L03.1", expr="smile", lean=34, head=[0, 14])
-shot("L03", fc((cx0, cy0 - 1.2, 1.62), 1.8, 34, fx=0.55, fy=0.5, push=0.12), "dad")
-shot("L03.1", fc((cx0, cy0 - 1.2, 1.55), 1.5, 40, fx=0.55, fy=0.5, push=0.12, ccx=0.5), "dad2")
+put("dad1", "L03", [cx0, cy0 - 0.55], 0, expr="grin", lean=10, head=[0, 0], arms=[0, 0])
+beat("dad1", "L03.1", expr="smile", lean=14, head=[0, 0])
+shot("L03", fc((cx0, cy0 - 0.55, 1.85), 1.9, 34, fx=0.5, fy=0.4, push=0.05), "dad")
+shot("L03.1", fc((cx0, cy0 - 0.55, 1.85), 2.4, 34, fx=0.5, fy=0.42, push=0.06, ccx=0.5), "dad2")
 # L04: the mail carrier and her tomatoes
 only("L04", ["mail"])
 gx, gy = G.GARDEN
@@ -203,11 +206,11 @@ shot("L04.2", fc((gx, gy + 1.0, 1.97), 2.1, 30, fx=0.5, fy=0.36, push=0.1, ccz=-
 # L05: the bride's dad dances on his knees
 only("L05", ["bridedad"])
 wx, wy = G.WEDDING
-put("bridedad", "L05", [wx, wy, -0.74], 0, expr="smile", arms=[70, 70])
-beat("bridedad", "L05.1", expr="grin", arms=[20, 120], head=[10, 0], lean=-6)
-go("bridedad", "L05>", [wx + 0.2, wy, -0.74])
-shot("L05", fc((wx, wy, 0.5 + 0.95), 1.9, 34, fx=0.55, fy=0.46, push=0.1), "bride")
-shot("L05.1", fc((wx, wy, 1.4), 1.5, 42, fx=0.5, fy=0.46, push=0.15, ccx=-0.4), "bride2")
+put("bridedad", "L05", [wx, wy, -0.41], 0, expr="smile", arms=[30, 30])
+beat("bridedad", "L05.1", expr="grin", arms=[40, 40], head=[0, 0], lean=0, yaw=0)
+go("bridedad", "L05>", [wx + 0.2, wy, -0.41])
+shot("L05", fc((wx, wy, 1.5), 1.7, 34, fx=0.5, fy=0.36, push=0.04), "bride")
+shot("L05.1", fc((wx, wy, 1.5), 1.7, 34, fx=0.5, fy=0.36, push=0.04), "bride2")
 
 # ===== 02 Grandpa (L06 to L15)
 only("L06", ["grandpa"])
@@ -220,11 +223,11 @@ shot("L06.1", mv([2.0, -5.0, 1.9], [2.3, 1.2, 1.7], 28, [2.2, -4.3, 1.9], [2.4, 
 # L07: from low and to the side, under the hat shelf (the cover frame)
 only("L07", ["grandpa"])
 put("grandpa", "L07", GP, 0, expr="neutral", head=[-12, 0])
-shot("L07", mv([1.4, -1.8, 1.1], [3.4, 1.0, 2.25], 30, [1.7, -1.5, 1.2], [3.4, 1.0, 2.3], 30), "low")
-shot("L07+0.9", fc(GHD, 1.5, 36, fx=0.45, fy=0.5, push=0.12, ccx=-1.0, ccz=-0.4), "low2")
+shot("L07", fc(GHD, 2.5, 32, fx=0.58, fy=0.55, push=0.08, ccx=-1.0, ccz=-0.6), "low")
+shot("L07+0.9", fc(GHD, 2.5, 32, fx=0.6, fy=0.55, push=0.1, ccx=-1.4, ccz=-0.6), "low2")
 # L08: the crate, then his face across the counter
 beat("grandpa", "L08", expr="neutral", head=[0, 0])
-shot("L08", mv([3.2, -2.6, 1.5], [3.1, 1.0, 1.75], 26, [3.2, -2.3, 1.55], [3.1, 1.0, 1.77], 26), "crate")
+shot("L08", fc(GHD, 2.0, 32, fx=0.5, fy=0.34, push=0.05, ccx=-3.2, ccz=-0.3), "crate")
 put("cust", "L08.1", [2.1, -1.1], 180, expr="neutral", lean=0)
 beat("grandpa", "L08.1", expr="smile")
 shot("L08.1", mv([2.2, -1.9, 1.75], [3.15, 1.0, 2.0], 40, [2.4, -1.7, 1.78], [3.15, 1.0, 2.0], 40), "cust")
@@ -235,17 +238,18 @@ beat("grandpa", "L09.1+0.35", head=[0, -2])
 shot("L09", fc(GHD, 1.1, 42, fx=0.5, fy=0.48, push=0.12), "nod")
 # L10: me, glum, Grandpa soft behind
 only("L10", ["me", "grandpa"])
-put("me", "L10", [FX, FY], 0, expr="worried", head=[0, 6])
+put("me", "L10", [2.5, 0.15], 0, expr="worried", head=[0, 6])
 put("grandpa", "L10", GP, 0, expr="neutral")
-shot("L10", fc((2.4, 0.8, 1.85), 2.1, 34, fx=0.5, fy=0.5, push=0.12, ccx=-0.7), "meglum")
+shot("L10", fc((2.5, 0.15, HM), 1.6, 34, fx=0.42, fy=0.55, push=0.06), "meglum")
 # L11: Saturdays at his counter; the key machine's vise
-put("me", "L11", [FX, FY], 0, expr="neutral", arms=[0, 92], head=[-20, 0])
+put("me", "L11", [TX, TY], 30, expr="neutral", arms=[0, 92], head=[-20, 0])
+put("grandpa", "L11", GP, 0, expr="neutral", head=[10, 6])
 cue("L11", "item", key=1.0)
-shot("L11", fc((2.4, 0.8, 1.85), 2.1, 34, fx=0.5, fy=0.5, push=0.12, ccx=0.4), "keyslide")
+shot("L11", fc(TWO, 2.3, 34, fx=0.5, fy=0.5, push=0.04), "keyslide")
 cue("L11.2", "item", key=0.0)
 only("L11.1", [])
-shot("L11.1", mv([-1.94, -1.05, 1.5], [-1.9, -0.3, 1.45], 50, [-1.94, -0.85, 1.5], [-1.9, -0.3, 1.45], 50), "vise")
-put("me", "L11.2", [MEX, MEY], 0, expr="neutral")
+shot("L11.1", mv([-1.85, -2.9, 1.65], [-1.85, 0.0, 1.4], 34, [-1.85, -2.6, 1.62], [-1.85, 0.0, 1.4], 34), "vise")
+put("me", "L11.2", [MEX, MEY], 0, expr="neutral", arms=[0, 0])
 shot("L11.2", mv([0.4, -2.6, 1.7], [0.3, 0.6, 1.5], 30, [0.7, -2.2, 1.7], [0.5, 0.6, 1.5], 30), "counter")
 # L12: my face
 only("L12", ["me"])
@@ -253,9 +257,9 @@ put("me", "L12", [MEX, MEY], 0, expr="sad-smile", head=[0, 8])
 shot("L12", fc((MEX, MEY, HM), 1.1, 40, fx=0.55, fy=0.5, push=0.14), "meface")
 # L13: both of us, me looking up at him
 only("L13", ["me", "grandpa"])
-put("me", "L13", [FX, FY], 0, expr="sad-smile", head=[-30, -18])
+put("me", "L13", [TX, TY], 0, expr="sad-smile", head=[-30, -18])
 put("grandpa", "L13", GP, 0, expr="neutral", head=[20, 8])
-shot("L13", fc((2.4, 0.8, 1.85), 2.1, 34, fx=0.5, fy=0.5, push=0.1), "look-up")
+shot("L13", fc(TWO, 2.3, 34, fx=0.5, fy=0.5, push=0.04), "look-up")
 # L14: the hems
 only("L14", ["grandpa"])
 put("grandpa", "L14", GP, 0, expr="neutral")
@@ -267,18 +271,17 @@ cue("L15", "item", hinge=1.0)
 beat("grandpa", "L15", expr="neutral", side=[0, 170], blend=0.2)
 cue("L15+0.3", "hat", u=1.0, dur=0.9)
 beat("grandpa", "L15+0.4", side=[0, 40], blend=0.8)
-shot("L15", fc((GX, GY, 2.0), 3.0, 34, fx=0.8, fy=0.5, push=0.1), "hat")
+shot("L15", fc((GX, GY, 2.0), 3.4, 24, fx=0.72, fy=0.5, push=0.05), "hat")
 
 # ===== 03 the dark shop (L16 to L20)
 only("L16", ["me"])
 cue("L16", "look", id="dark", dur=0)
 cue("L16", "item", hinge=0.0)
 cue("L16", "hat", u=0.0)
-cue("L16", "fdoor", u=0.0)
-cue("L16+0.1", "fdoor", u=1.0, dur=0.6)
-put("me", "L16", [G.FDOOR_X, G.FRONT_Y - 0.5], 180, expr="neutral")
-go("me", "L16+0.7", [G.FDOOR_X, G.FRONT_Y - 0.5])
-shot("L16", mv([-4.6, -2.0, 1.55], [G.FDOOR_X, G.FRONT_Y, 1.5], 32, [-4.9, -2.4, 1.55], [G.FDOOR_X, G.FRONT_Y, 1.5], 32), "door")
+cue("L16", "fdoor", u=1.0, dur=0.3)
+put("me", "L16", [G.FDOOR_X, G.FRONT_Y - 1.0], 180, expr="neutral")
+go("me", "L16+0.7", [G.FDOOR_X, G.FRONT_Y - 0.4])
+shot("L16", mv([G.FDOOR_X, -1.9, 1.6], [G.FDOOR_X, -6.5, 1.5], 34, [G.FDOOR_X, -2.2, 1.6], [G.FDOOR_X, -6.5, 1.5], 34), "door")
 put("me", "L16.1", [-4.9, -3.6], 180, expr="neutral")
 go("me", "L16>", [-4.9, -2.7])
 shot("L16.1", mv([-4.9, -0.8, 1.6], [-4.9, -3.2, 1.45], 34, [-4.9, -1.2, 1.6], [-4.9, -3.2, 1.45], 34), "enter")
@@ -293,8 +296,8 @@ shot("L19", mv([2.2, -0.9, 0.9], [3.1, 1.0, 3.3], 28, [2.5, -0.6, 0.9], [3.1, 1.
 cue("L19", "tile", u=0.04, dur=0.6)
 cue("L19+0.9", "tile", u=0.0, dur=0.3)
 shot("P01", mv([1.4, -0.4, 0.8], [3.1, 1.0, 3.35], 30, [1.6, -0.2, 0.8], [3.1, 1.0, 3.38], 30), "ceiling2")
-shot("L20", mv([2.9, -0.2, 1.0], [3.1, 1.0, 3.3], 34, [3.0, 0.2, 1.1], [3.1, 1.0, 3.35], 34), "tile")
-cue("L20+0.1", "tile", u=0.15, dur=0.8)
+shot("L20", mv([3.1, -1.4, 0.9], [3.1, 1.0, 3.35], 28, [3.1, -1.2, 0.95], [3.1, 1.0, 3.35], 28), "tile")
+cue("L20", "tile", u=0.15, dur=0.35)
 
 # ===== 04 the lights, Mrs. Bloom (L21 to L28)
 only("L21", ["bloom"])
@@ -303,14 +306,14 @@ put("bloom", "L21", [FX, FY], 0, expr="smile")
 grandpa_sit("L21")
 shot("L21", fc((FX, FY, HM), 1.2, 40, fx=0.5, fy=0.46, push=0.12), "bloom")
 put("grandpa", "L21.2", GP, 0, expr="neutral")
-put("bloom", "L21.2", [FX, FY], 0, expr="smile")
+put("bloom", "L21.2", [TX, TY], 0, expr="smile")
 beat("grandpa", "L21.2+0.5", expr="warm")
-shot("L21.2", fc((2.4, 0.8, 1.85), 2.1, 34, fx=0.5, fy=0.5, push=0.1), "bloomgpa")
+shot("L21.2", fc(TWO, 2.3, 34, fx=0.5, fy=0.5, push=0.04), "bloomgpa")
 only("L22", ["bloom"])
-put("bloom", "L22", [FX, FY], 0, expr="smile", arms=[0, 92])
+put("bloom", "L22", [FX, FY], 0, expr="smile", arms=[92, 92])
 cue("L22", "item", faucet=1.0)
 shot("L22", fc((FX, FY, HM), 1.6, 38, fx=0.32, fy=0.46, push=0.15), "faucet")
-beat("bloom", "L23", expr="warm", arms=[0, 92])
+beat("bloom", "L23", expr="warm", arms=[92, 92])
 shot("L23", fc((FX, FY, HM), 1.1, 40, fx=0.5, fy=0.45, push=0.14), "bloom2")
 cue("L24", "item", faucet=0.0)
 only("L24", ["grandpa"])
@@ -341,15 +344,15 @@ put("me", "L31", [2.55, 4.0], 0, expr="smile", head=[20, 0])
 shot("L31", fc((2.55, 4.0, HM), 1.9, 32, fx=0.64, fy=0.58, push=0.1), "meframe")
 only("L32", [])
 shot("L32", mv([1.95, 3.2, 2.3], [1.85, 4.4, 2.31], 55, [1.95, 3.5, 2.3], [1.85, 4.4, 2.31], 55), "bike")
-shot("L32.1", mv([2.0, 3.2, 2.45], [1.9, 4.4, 2.43], 55, [2.0, 3.5, 2.45], [1.9, 4.4, 2.43], 55), "roof")
+shot("L32.1", mv([1.85, 2.6, 2.43], [1.85, 4.4, 2.43], 40, [1.85, 2.9, 2.43], [1.85, 4.4, 2.43], 40), "roof")
 only("L33", ["grandpa"])
 put("grandpa", "L33", GP, 0, expr="warm")
 shot("L33", fc(GHD, 2.2, 34, fx=0.72, fy=0.55, push=0.05, ccx=0.0), "reveal")
 only("L34", ["bloom"])
-put("bloom", "L34", [FX, FY], 0, expr="smile", arms=[0, 92])
+put("bloom", "L34", [FX, FY], 0, expr="smile", arms=[92, 92])
 cue("L34", "item", faucet=1.0)
 cue("L35", "item", faucet=0.0)
-shot("L34", fc((FX, FY, HM), 1.3, 38, fx=0.3, fy=0.46, push=0.12), "bloom3")
+shot("L34", fc((FX, FY, HM), 1.5, 38, fx=0.5, fy=0.36, push=0.05), "bloom3")
 only("L35", ["me"])
 put("me", "L35", [FX, FY], 0, expr="sad-smile", head=[0, 6])
 shot("L35", fc((FX, FY, HM), 1.1, 40, fx=0.55, fy=0.46, push=0.14), "meglum2")
@@ -395,8 +398,8 @@ cue("L41.1", "tag", g=2.0)
 shot("L41.1", fc(GHD, 1.5, 34, fx=0.5, fy=0.56, push=0.1), "gpaunder")
 only("L42", ["grandpa", "me"])
 put("grandpa", "L42", GP, 0, expr="warm", head=[18, 8])
-put("me", "L42", [FX, FY], 0, expr="smile", head=[-25, -15])
-shot("L42", fc((2.4, 0.8, 1.85), 2.1, 34, fx=0.5, fy=0.5, push=0.1), "sayback")
+put("me", "L42", [TX, TY], 0, expr="smile", head=[-25, -15])
+shot("L42", fc(TWO, 2.3, 34, fx=0.5, fy=0.5, push=0.04), "sayback")
 only("L43", ["me"])
 put("me", "L43", [FX, FY], 0, expr="smile")
 cue("L43+0.15", "tag", m=10.0)
@@ -406,10 +409,10 @@ shot("L43.1", fc((FX, FY, HM), 1.0, 44, fx=0.5, fy=0.46, push=0.16), "mylaugh")
 # L44: Grandpa stooped through the back doorway, me beside him, the new mark
 only("L44", ["grandpa", "me"])
 grandpa_sit("L44", False)
-put("grandpa", "L44", [2.85, 3.9], 0, expr="smile", lean=24, head=[0, -6])
-put("me", "L44", [1.6, 3.75], 0, expr="smile")
+put("grandpa", "L44", [2.8, 4.25], 0, expr="smile", lean=38, head=[0, -6])
+put("me", "L44", [1.1, 3.3], 0, expr="smile")
 cue("L44+0.3", "newmark", v=1.0)
-shot("L44", fc((2.5, 3.7, 2.0), 3.0, 30, fx=0.55, fy=0.5, push=0.1), "doorway")
+shot("L44", fc((2.0, 3.9, 1.9), 3.0, 26, fx=0.5, fy=0.5, push=0.03), "doorway")
 only("L45", ["me"])
 put("me", "L45", [MEX, MEY], 0, expr="smile")
 shot("L45", fc((MEX, MEY, HM), 1.1, 40, fx=0.5, fy=0.46, push=0.12), "mylast")
@@ -465,7 +468,10 @@ remap_all(music["sections"])
 remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L33.0"), remap("L41")], "emph": [remap(x) for x in ["L01.3", "L04.2", "L07", "L08", "L19", "L33.0", "L38.1", "L43"]],
-          "twist": remap("L33.0")}
+          "twist": remap("L33.0"),
+          "hold": [names[n] for n in ["dad", "dad2", "bride", "bride2", "low", "low2", "crate", "meglum", "two", "keyslide",
+                                      "look-up", "bloomgpa", "sayback", "doorway", "hat", "door", "bloom3", "roof", "vise",
+                                      "tile", "mail", "mail2", "tomato", "pop"]]}
 story = {
     "slug": "ep116-proud-inch",
     "title": "Grandpa Is Nine Feet TALL 📏",
@@ -500,6 +506,7 @@ story = {
     "sound": sound,
     "set_moves": [names["tile"], names["pop"], names["swing"], names["door"]],
     "clip_ok": [],
+    "framing_ok": [],
     "asr_forgive": ["dads duck", "mail", "he's", "said"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

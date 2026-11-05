@@ -33,10 +33,10 @@ def kit_col(h):
 
 LOOKS = {
     "day": dict(sun=3.0, sun_col="#fff0d8", fill=0.6, fill_col="#fff2e2", front=0.45, front_col="#fff0e0", pts=0.6,
-                sky="#9fd8ff", sky_str=1.0, win="#e6f6ff", win_str=3.0),
+                sky="#9fd8ff", sky_str=1.0, win="#e6f6ff", win_str=3.0, pan=2.0),
     # the dark dawn: no overheads, blue light through the window, a blue front light so every face still reads
-    "dark": dict(sun=0.0, sun_col="#8fa6e8", fill=0.9, fill_col="#7f9bf0", front=0.9, front_col="#9db4ff", pts=0.0,
-                 sky="#4a6cc0", sky_str=0.9, win="#5b82da", win_str=2.6),
+    "dark": dict(sun=0.0, sun_col="#8fa6e8", fill=0.38, fill_col="#7f9bf0", front=0.42, front_col="#9db4ff", pts=0.0,
+                 sky="#3a5cb0", sky_str=0.6, win="#5b82da", win_str=2.4, pan=0.0),
 }
 
 
@@ -78,6 +78,11 @@ def sample(name, tl, t, defaults):
             u = ss((t - c["t"]) / dur)
             return {k: (prev[k] + (cur[k] - prev[k]) * u if isinstance(cur[k], (int, float)) else cur[k]) for k in cur}
     return cur
+
+
+def noshadow_ret(ob):
+    noshadow(ob)
+    return ob
 
 
 def noshadow(ob):
@@ -143,7 +148,8 @@ def drawing(kit, kind, k, x, z, y):
     """A tiny pencil drawing beside a mark, about 0.17 m: a key, a lamp, a truck, a fish, a roller, a bike, a roof, a
     chair, a kettle, a door. Pictures only."""
     cols = ["#d9443a", "#2f7fd1", "#2f9e4a", "#e0900f", "#8a4fc0"]
-    m = kit.emit(cols[k % len(cols)], 1.2, f"pen{k % len(cols)}")
+    ci = 0 if kind == "roof" else k % len(cols)
+    m = kit.emit(cols[ci], 1.2, f"pen{ci}")
     n = f"draw{k}"
     if kind == "key":
         disc(kit, n + "r", x - 0.055, z, 0.04, m, y)
@@ -173,9 +179,9 @@ def drawing(kit, kind, k, x, z, y):
         flat(kit, n + "f", x + 0.005, z + 0.015, 0.1, 0.018, m, y)
         flat(kit, n + "h", x + 0.07, z + 0.045, 0.03, 0.018, m, y)
     elif kind == "roof":
-        flat(kit, n + "h", x, z - 0.03, 0.12, 0.07, m, y)
-        flat(kit, n + "r1", x - 0.035, z + 0.04, 0.09, 0.02, m, y, rot=35)
-        flat(kit, n + "r2", x + 0.035, z + 0.04, 0.09, 0.02, m, y, rot=-35)
+        # a plain house: a square with a triangle roof (a three-sided prism, apex up)
+        flat(kit, n + "h", x, z - 0.03, 0.09, 0.07, m, y)
+        kit.cyl(n + "tri", 0.062, 0.012, (x, y, z + 0.032), m, rot=(math.pi / 2, -math.pi / 2, 0), n=3)
     elif kind == "chair":
         flat(kit, n + "s", x, z - 0.01, 0.1, 0.02, m, y)
         flat(kit, n + "b", x - 0.045, z + 0.04, 0.02, 0.09, m, y)
@@ -280,8 +286,11 @@ def build(kit, story, tl):
             kit.box(f"ct{ix}_{iy}", (0.78, 0.78, 0.04), (x, y, CEIL - 0.02), ceil_m)
     W["tile"] = kit.box("tile", (0.78, 0.78, 0.04), (G.G_POS[0], G.G_POS[1], CEIL - 0.02), ceil_m)
     W["tile_base"] = Vector((G.G_POS[0], G.G_POS[1], CEIL - 0.02))
+    rim = kit.emit("#fff6dc", 9.0, "tilerim")
+    W["rim"] = noshadow_ret(kit.box("tile.rim", (0.78, 0.05, 0.03), (0, -0.39, -0.02), rim, W["tile"]))
     # overhead panels (fixed flat lights, no cords)
     pan = kit.emit("#fffaf0", 2.0, "panel")
+    W["pan_m"] = pan
     for px, py in [(-4.0, 1.6), (0.0, 1.6), (-4.0, -2.4), (0.0, -2.4)]:
         noshadow(kit.box(f"panel{px}{py}", (1.5, 0.5, 0.03), (px, py, CEIL - 0.07), pan))
 
@@ -313,7 +322,7 @@ def build(kit, story, tl):
     kit.box("keym.jaw", (0.36, 0.12, 0.2), (kx - 0.08, -0.26, 1.45), brass, bevel=0.015)
     ym = kit.emit("#ffcf3a", 2.0, "stroke")
     for i in range(2):
-        kit.box(f"keym.stroke{i}", (0.012, 0.004, 0.11), (kx - 0.14 + i * 0.07, -0.327, 1.45), ym)
+        kit.box(f"keym.stroke{i}", (0.03, 0.006, 0.15), (kx - 0.14 + i * 0.08, -0.33, 1.45), ym)
     # till with numerals
     kit.box("till", (0.7, 0.55, 0.3), (-3.6, 0.1, 1.23), P("#b8c0cc", 0.4, spec=0.4), bevel=0.03)
     kit.box("till.screen", (0.4, 0.04, 0.16), (-3.6, -0.17, 1.42), kit.emit("#1c2a22", 0.5, "tillscr"))
@@ -341,6 +350,7 @@ def build(kit, story, tl):
     # ---- Grandpa's crate (upturned), cart, cartons
     kit.box("crate", (0.8, 0.7, G.CRATE_H), (G.G_POS[0], G.G_POS[1], G.CRATE_H / 2), P("#d99a4a", 0.65, spec=0.1), bevel=0.02)
     for i in range(3):
+        kit.box(f"crate.slatL{i}", (0.03, 0.72, 0.06), (G.G_POS[0] - 0.41, G.G_POS[1], 0.08 + i * 0.13), P("#9c6a2c", 0.7))
         kit.box(f"crate.slat{i}", (0.82, 0.03, 0.06), (G.G_POS[0], G.G_POS[1] - 0.36, 0.08 + i * 0.13), P("#9c6a2c", 0.7))
         kit.box(f"crate.slatR{i}", (0.03, 0.72, 0.06), (G.G_POS[0] + 0.41, G.G_POS[1], 0.08 + i * 0.13), P("#9c6a2c", 0.7))
     kit.box("rug", (2.4, 1.6, 0.012), (3.0, 0.4, 0.006), P("#e8654a", 0.9, spec=0.02))
@@ -379,6 +389,8 @@ def build(kit, story, tl):
     # the new mark with a tiny door, shown at the end
     z = G.MARK_Z0 + G.MARK_DZ * G.MARKS
     new = kit.empty("newmark", (0, 0, 0))
+    new.scale = (1.6, 1.6, 1.6)                  # bigger than the old marks, so it reads from across the room
+    new.location = (1.7 * (1 - 1.6), ym_ * (1 - 1.6), z * (1 - 1.6))
     W["newmark"] = new
     kit.box("newmark.line", (0.22, 0.008, 0.016), (G.MARK_X - 0.025, ym_ - 0.002, z), kit.emit("#d9443a", 1.4, "newm"), new)
     drawing(kit, "door", 7, 1.93, z, ym_ - 0.002)
@@ -386,23 +398,24 @@ def build(kit, story, tl):
         ob.parent = new
     # dust for the tile
     W["dust"] = []
-    dm_ = P("#fffaf0", 0.9, spec=0.0)
-    for i in range(10):
+    dm_ = P("#a39d92", 0.95, spec=0.0)
+    for i in range(36):
         a = i * 2.4
-        W["dust"].append((kit.box(f"dust{i}", (0.06, 0.06, 0.06), (G.G_POS[0], G.G_POS[1], CEIL - 0.1), dm_, bevel=0.03),
-                          (math.cos(a), math.sin(a), -0.35 - 0.25 * (i % 3))))
+        r_ = 0.35 + 0.65 * ((i * 7) % 11) / 10.0
+        W["dust"].append((kit.box(f"dust{i}", (0.045, 0.045, 0.045), (G.G_POS[0], G.G_POS[1], CEIL - 0.1), dm_),
+                          (r_ * math.cos(a), r_ * math.sin(a), -0.25 - 0.3 * ((i * 5) % 7) / 6.0)))
 
     # ---- the montage places
     # a cafe door: a low doorway and an awning, the lintel is below a tall man's head
     cx0, cy0 = G.CAFE
     kit.plane("cafe.ground", (30, 30), (cx0, cy0 - 6, -0.01), P("#e8d6b0", 0.9, spec=0.02))
     for nm, (bx, sz) in {"l": (cx0 - 2.6, 3.4), "r": (cx0 + 2.6, 3.4)}.items():
-        kit.box(f"cafe.w{nm}", (sz, 0.4, 3.2), (bx, cy0 + 0.2, 1.6), P("#ff9fb0", 0.8, spec=0.05))
-    kit.box("cafe.top", (2.0, 0.4, 1.2), (cx0, cy0 + 0.2, 2.6), P("#ff9fb0", 0.8, spec=0.05))
-    kit.box("cafe.in", (2.0, 2.0, 2.2), (cx0, cy0 + 1.3, 1.1), P("#ffcf88", 0.7))
+        kit.box(f"cafe.w{nm}", (sz, 0.4, 3.4), (bx, cy0 + 0.2, 1.7), P("#ff9fb0", 0.8, spec=0.05))
+    kit.box("cafe.top", (2.0, 0.4, 1.8), (cx0, cy0 + 0.2, 2.5), P("#ff9fb0", 0.8, spec=0.05))   # a low door: its top edge at 1.6
+    kit.box("cafe.in", (2.0, 2.0, 1.6), (cx0, cy0 + 1.3, 0.8), P("#ffcf88", 0.7))
     for i in range(8):
-        kit.box(f"cafe.aw{i}", (0.5, 1.0, 0.1), (cx0 - 1.75 + i * 0.5, cy0 - 0.5, 2.34 - (0.0)), P("#e8493a" if i % 2 else "#fffaf0", 0.6))
-    kit.box("cafe.frame", (1.2, 0.1, 0.1), (cx0, cy0 - 0.02, 2.0), P("#7a4a2a", 0.7))
+        kit.box(f"cafe.aw{i}", (0.5, 1.0, 0.1), (cx0 - 1.75 + i * 0.5, cy0 - 0.5, 2.75), P("#e8493a" if i % 2 else "#fffaf0", 0.6))
+    kit.box("cafe.frame", (2.0, 0.1, 0.1), (cx0, cy0 - 0.02, 1.6), P("#7a4a2a", 0.7))
     kit.light("cafel", "POINT", (cx0, cy0 - 2.0, 2.4), 200.0, "#fff0d8", size=0.5, shadow=False)
     # a tomato garden: a fence, rows of plants at knee height
     gx, gy = G.GARDEN
@@ -535,11 +548,11 @@ def _first_frame(kit, story):
         kit.cyl(f"{h.name}.c", 0.2, 0.08, (0, 0, 1.0), P("#3f9a3a", 0.7), h, n=7)
 
     def faucet(h):
-        m = kit.metal("#d8dee8", 0.2)
+        m = P("#e0742a", 0.35, spec=0.4)
         kit.cyl(f"{h.name}.b", 0.28, 0.5, (0, 0, 0.25), m, h, n=14)
         kit.cyl(f"{h.name}.n", 0.16, 0.9, (0, 0, 0.95), m, h, n=12)
         kit.box(f"{h.name}.s", (0.18, 0.9, 0.16), (0, -0.4, 1.4), m, h, bevel=0.04)
-        kit.box(f"{h.name}.h", (0.7, 0.12, 0.12), (0, 0, 0.8), m, h)
+        kit.box(f"{h.name}.h", (0.7, 0.12, 0.12), (0, 0, 0.8), P("#23318a", 0.4), h)
 
     def key(h):
         m = P("#f2c14a", 0.3, spec=0.6)
@@ -551,7 +564,10 @@ def _first_frame(kit, story):
     W["tomato"] = held("mail", "tomato", tomato, (1.5, -1.35, 4.26))
     if W["tomato"] is not None:
         W["tomato"].scale = (1.0, 1.0, 1.0)
-    W["faucet"] = held("bloom", "faucet", faucet, (1.5, -1.35, 4.26))
+    W["faucet"] = held("bloom", "faucet", faucet, (-0.55, -1.4, 3.55))
+    if W["faucet"] is not None:
+        W["faucet"].scale = (0.95, 0.95, 0.95)
+        W["faucet"].rotation_euler = (0, math.pi / 2, 0)       # lying across both palms
     W["key"] = held("me", "key", key, (1.3, -1.35, 4.26))
     W["inited"] = True
 
@@ -572,7 +588,8 @@ def animate(kit, story, tl, t, ctx):
     gains["sun"], gains["fill"], gains["front"] = look["sun"], look["fill"], look["front"]
     for nm in ("pL1", "pL2", "pL3", "pL4", "pL5", "pL6"):
         gains[nm] = look["pts"]
-    gains["dk"] = 1.0 - min(1.0, look["pts"] / 0.6)
+    gains["dk"] = 0.55 * (1.0 - min(1.0, look["pts"] / 0.6))
+    W["pan_m"].node_tree.nodes["Emission"].inputs["Strength"].default_value = max(0.02, look["pan"])
     gains["stock"] = max(look["pts"], 0.25)
     gains["cafel"] = gains["wedl"] = gains["gardl"] = 1.0
     w = bpy.context.scene.world
@@ -638,14 +655,16 @@ def animate(kit, story, tl, t, ctx):
     # the ceiling tile (0 in, 0.15 an inch up, 1 out and gone) and the dust
     tu = sample("tile", tl, t, {"u": 0.0})["u"]
     tile = W["tile"]
+    W["rim"].hide_render = not (0.02 < tu < 0.999)
     if tu >= 0.999:
         tile.hide_render = True
     else:
         tile.hide_render = False
         base = W["tile_base"]
         if tu <= 0.15:
-            tile.location = (base.x, base.y, base.z + tu * 0.6)
-            tile.rotation_euler = (0, 0, 0)
+            k = tu / 0.15                    # the near edge lifts: a dark gap above it, a rim of window light on the edge
+            tile.location = (base.x, base.y, base.z + 0.138 * k)
+            tile.rotation_euler = (-0.36 * k, 0, 0)
         else:
             k = (tu - 0.15) / 0.85
             tile.location = (base.x + 0.1 * k, base.y, base.z + 0.09 + k * 0.9)
@@ -660,7 +679,7 @@ def animate(kit, story, tl, t, ctx):
         else:
             ob.hide_render = False
             ob.location = (G.G_POS[0] + dirv[0] * 0.9 * du, G.G_POS[1] + dirv[1] * 0.9 * du, CEIL - 0.1 + dirv[2] * du)
-            k = max(0.05, math.sin(math.pi * min(1.0, du)) * 1.6)
+            k = max(0.05, math.sin(math.pi * min(1.0, du)) * 1.0)
             ob.scale = (k, k, k)
     # doors: back door (0 shut, 1 open), front door
     bd = sample("bdoor", tl, t, {"u": 0.0})["u"]
