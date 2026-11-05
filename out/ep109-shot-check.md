@@ -1,14 +1,8 @@
-# ep109 shot check, FINAL preview (75 shots), 2026-11-05
-Pass = line's subject in frame, lit, facing camera, face >= 1/5 width (or an object/wide shot that is the line's subject).
-PASS: S01-S08 S10-S15 S19 S22 S24-S26 S28-S30 S31 (awning now in frame) S32-S36 S40-S50 S52 S53 S55-S66 S69-S71 S73-S75
- (S02/S04/S05/S33/S34/S64/S65 dial shots: dial reads red-brick; S20/S21/S56 wide ring/reveal establishing; S37-S39/S52 cafe table objects)
-FAIL / weak:
-- S09 bus-stop man: face small, dark blue background
-- S16 (L10 "for ORANGES"): me half cropped at left edge
-- S18 (L11 line steps back): faces in profile, about 1/8 width
-- S23 (L13 driver): face dim behind the bus pillar
-- S27 (L17 first orange): head cut by the top, orange is the subject
-- S41/S42 Dev kneel: face about 1/7 width (wide enough, head whole)
-- S51 side by side, S54 bench: two-person, one head touches the edge
-- S67/S68 radio back (lore shot): face small / only hair above the radio, by design
-- S72 street windows: establishing wide, faces tiny (S73 is the close face)
+# ep109 shot check, FINAL preview (68 shots, 87.2 s), 2026-11-05
+Preview: out/work/ep109-said-your-name/ep109-said-your-name-preview.mp4; contact sheet out/ep109-contact-sheet.png.
+framing.py: 0 findings. measure.py: 0 block, 0 warn (cuts 7.8/10 s, sound 3.x/10 s). clipcheck: 0. flash (preview, house bar): pass, max 2/s general and general_3f.
+Fixed this round: S02 (me hidden, dial only), coat man bright + fill light, S16 me whole, S18 line faces the camera (keep_yaw), driver lit (point light follows bus),
+S27 low on the oranges, S45 me + Dev two-shot, S46/S47 Dev lone with room right of the tag, S51/S54 wider, S59 Dev close, S60 two-shot at table,
+S67/S68 me behind the radio facing camera, S71 Dev + me with coffees, S72 two windows, closer lens.
+Merged away: hand2, shelves, walk, ring2, dial3, wry2, devface2 (cut pace). Removed click sfx at L46.2.
+Open: S72 faces still small (wide street windows, S73 is the close face).
