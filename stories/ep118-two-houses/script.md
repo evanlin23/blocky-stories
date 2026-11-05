@@ -3,19 +3,19 @@
 - **Slug:** `ep118-two-houses` (batch 12, upload order 4 of 7)
 - **Pitch:** 9 in `out/batch12-pitches.md`, blind panel 22/30. Engine: the feud as friendship (the fight is the ritual), unused. It re-imagines the backlog's `nine-flamingos` feud with no flamingo and no disguise. Opening shape `cost`. Lane: core. Length arm: mid.
 - **Title:** Our House Leans Toward HIS 🏠
-- **Changed from the pitch (panel notes):** faces are big, and the lean is shown through objects in close shots, never only in wides: a kitchen table propped on a stack of books (L08), a marble rolling down our hallway toward his house (L09), Dad's coffee sitting level in a tilted mug (L10), picture frames hanging crooked. The street's lean is seen in only two wides (L04, L05 montage, other houses) and one of ours (L18), each held under 1.5 s. The scare is a hand reaching out of Mr. Pruitt's dark window across the gap (partial, at the frame's edge), which turns out to be a mug on a flat palm. The fish doodle on Dad's notes is now their signal ("see you at two", L34). The rule counts a fight, never whether you mean it (L35, L36), which is how their trick works. Revised r1 (standards, 2026-11-05): L02 no longer shares ep117's "that means" shape, L03 and L29 add "SLOWLY" (so the nightly make-up doesn't undo the lean), and the ending is no longer me adopting the rule: I keep their secret, and the last beat is a cold sting, the house across the street leaning toward ours when nobody in our house is fighting anybody. Lines changed: L02, L03, L29, L35 to L43. Revised r2 (standards and critic, 2026-11-05): the feud is forty years (Dad is 66, friends since ten), and the rule is now line 1 over Dad's close-up, with the eleven-foot count in L02. Lines changed: L01, L02, L03, L06, L33. The story is built and voiced.
+- **Changed from the pitch (panel notes):** faces are big, and the lean is shown through objects in close shots, never only in wides: a kitchen table propped on a stack of books (L08), a marble rolling down our hallway toward his house (L09), Dad's coffee sitting level in a tilted mug (L10), picture frames hanging crooked. The street's lean is seen in only two wides (L04, L05 montage, other houses) and one of ours (L18), each held under 1.5 s. The scare is a hand reaching out of Mr. Pruitt's dark window across the gap (partial, at the frame's edge), which turns out to be a mug on a flat palm. The fish doodle on Dad's notes is now their signal ("see you at two", L34). The rule counts a fight, never whether you mean it (L35, L36), which is how their trick works. Revised r1 (standards, 2026-11-05): L02 no longer shares ep117's "that means" shape, L03 and L29 add "SLOWLY" (so the nightly make-up doesn't undo the lean), and the ending is no longer me adopting the rule: I keep their secret, and the last beat is a cold sting, the house across the street leaning toward ours when nobody in our house is fighting them. Lines changed: L02, L03, L29, L35 to L43. Revised r2 (standards and critic, 2026-11-05): the feud is forty years (Dad is 66, friends since ten), and the rule is now line 1 over Dad's close-up, with the eleven-foot count in L02. Lines changed: L01, L02, L03, L06, L33. The story is built and voiced. Revised r3 (critic r1 on the retry, 2026-11-05): L42 now ends "fighting THEM" instead of "fighting ANYBODY", which contradicted L38 (Dad fights Mr. Pruitt every morning). Lines changed: L42.
 - **Everyone is an adult.** I'm 25 and live with Dad. Dad is about 66, Mr. Pruitt about 66. "Since they were TEN" is a memory, never shown.
 - **Word count:** 331 spoken words in 43 lines (L01 to L43), all `narrator`, plus one 0.6 s music drop before L19.
 - **Estimated length:** about 76 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright, steep little street of narrow painted houses (ours butter yellow, Mr. Pruitt's sky blue) under a clear sky, a white picket gate between the yards, a hedge. Inside ours: a sunny yellow kitchen and a wood-floored upstairs hall. The storm night (L16 to L27) is the one dark scene: blue-black rain, our hall lamp (a fixed wall lamp, steady) and Mr. Pruitt's steady window lamp, the gap between the windows lit from both sides. No swinging lights.
-- **Hold:** scripts only (batch 12). Not built, not voiced.
+- **Hold:** held until the owner's approval (batch 12 retry). Built and voiced; L42 needs a re-voice after r3.
 
 ## Variety table
 The batch table is in `stories/ep115-are-we-there/script.md`. This row:
 
 | Setting | Strange thing | First-line type | Ending shape | Kind of warmth |
 |---|---|---|---|---|
-| two narrow houses on a steep street | houses leaning until the windows meet | `count`: a measured lean | `fake-feud` | old friends dressed as enemies |
+| two narrow houses on a steep street | houses leaning until the windows meet | `cost`: a measured lean | `fake-feud` | old friends dressed as enemies |
 
 ## The big idea
 **On our street, feuding neighbors' houses lean toward each other until they make up, and Dad and Mr. Pruitt's forty-year feud, the longest lean in town, is fake: they're best friends who make up every night at two a.m., passing coffee window to window, and start a fresh fight every morning so the houses stay close enough to do it.**
@@ -28,7 +28,7 @@ The batch table is in `stories/ep115-are-we-there/script.md`. This row:
 
 ## The story
 - **Premise:** Feuding neighbors' houses lean together here until they make up. Dad and Mr. Pruitt next door have fought for forty years, and our house leans eleven feet toward his. One stormy night the windows end up a foot apart, and at two a.m. I see what really happens there.
-- **Rule / hook (L01, about 1.45 s, over Dad's close-up):** "On our street, / fighting neighbors' houses LEAN." L02, the count: "Ours leans / ELEVEN feet / toward Mr. Pruitt's." L03: "Forty years / of FIGHTING / did that."
+- **Rule / hook (L01, about 1.45 s, over Dad's close-up):** "On our street, / fighting neighbors' houses LEAN." L02, the cost: "Ours leans / ELEVEN feet / toward Mr. Pruitt's." L03: "Forty years / of FIGHTING / did that."
 - **The relatable want or fight:** a dad's endless feud with the neighbor.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream tag top-left with a tilted-house glyph and the lean in feet (11 ft throughout, and at L41 a second small glyph appears: the house across the street, tipped toward ours, at 1 ft). Numerals and glyphs only.
 - **The 3 to 5 example montage (L04, L05, L08 to L10, about 7 to 20 s):** two bakeries leaning roof to roof over a street, a duplex folded like a book, then our own house: the table on books, the marble rolling to his side, Dad's coffee level in a tilted mug.
@@ -53,7 +53,7 @@ The batch table is in `stories/ep115-are-we-there/script.md`. This row:
 On the narrator's street, the houses of neighbors who are fighting lean toward each other, and his dad's forty-year feud with Mr. Pruitt has their houses leaning eleven feet together. In a storm he sees the two old men passing coffee between their windows at two a.m., laughing: they're best friends who make up every night and fake a new fight every morning to keep their windows close, and he keeps their secret, until a house across the street starts leaning toward his.
 
 ## The opening recipe (playbook v1), point by point
-1. Line 1 is the rule over a close-up (7 words, about 1.45 s), and the count lands right after it in L02 (`count`): eleven feet, about 3 s in.
+1. Line 1 is the rule over a close-up (7 words, about 1.45 s), and the cost lands right after it in L02 (`cost`): eleven feet, about 3 s in.
 2. Frame 1 is a close-up of Dad's face at our kitchen window, a crooked picture frame behind him, his coffee sitting level in a tilted mug in the foreground, the tag at 11 ft. No wide.
 3. A sound hit on "ELEVEN" (L02): a long wooden creak and a low thump.
 4. L03 says what made it: forty years of fighting, and how it undoes, slowly.
@@ -203,7 +203,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L39: And every night, / I wash two MUGS.
 - L40: Then this morning, / something CREAKED / across the street.
 - L41: The house across from us / has started leaning / toward OURS.
-- L42: And nobody in our house / is fighting ANYBODY.
+- L42: And nobody in our house / is fighting THEM.
 - L43: That I know OF.
 
 (Loop: L43 runs straight into L01: "That I know of. On our street, fighting neighbors' houses lean.")
