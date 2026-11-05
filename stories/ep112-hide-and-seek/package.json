@@ -6,6 +6,5 @@
   "cover_s": 1.2,
   "shape": "plain-sight",
   "opening": "confess",
-  "lane": "experiment",
-  "hold": "batch 11: scripts only, not built yet"
+  "lane": "experiment"
 }
