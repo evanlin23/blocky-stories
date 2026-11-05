@@ -173,7 +173,7 @@ def rgba_mat(kit, name, path, strength=1.0):
 
 
 # the tag in camera space (mm on the sensor, 13.5 wide x 24 tall): centre, size
-TAG_C, TAG_S = (-3.75, 9.0), (5.2, 3.25)
+TAG_C, TAG_S = (-2.9, 7.5), (4.6, 2.875)
 DOT_X = (590 / 1024, 760 / 1024, 930 / 1024)
 
 
@@ -229,6 +229,10 @@ def slip_obj(parent, name, base, kind, lines=4):
     """A paper strip, 0.3 x 0.085 m. kind 'blue' draws scribble lines (shown progressively); returns (root, lines)."""
     R = E(parent, (0, 0, 0), name)
     B(R, (0.30, 0.085, 0.006), (0, 0, 0), P(base, 0.6), "slipb", 0.0015)
+    edge = P("#cfc6ae" if base == SLIP else "#d1b24a", 0.7)
+    for (ex, ey, sx, sy) in ((0, 0.0405, 0.30, 0.004), (0, -0.0405, 0.30, 0.004), (0.1455, 0, 0.009, 0.085),
+                             (-0.1455, 0, 0.009, 0.085)):
+        B(R, (sx, sy, 0.0016), (ex, ey, 0.0038), edge, "slipe", 0.0004)
     rows = []
     for r in range(lines):
         row = E(R, (0, 0, 0.0045), "row")
@@ -241,12 +245,21 @@ def slip_obj(parent, name, base, kind, lines=4):
     return R, rows
 
 
+CALLX = []
+
+
 def phone_obj(parent, imgs):
     R = E(parent, (0, 0, 0), "phone")
     B(R, (0.1, 0.19, 0.012), (0, 0, 0), P("#22242e", 0.35), "ph", 0.01)
     scr = B(R, (0.088, 0.17, 0.002), (0, 0, 0.0075), EM("#1c2438", 1.0), "scr", 0.0)
     ring = K.kit.plane(nm("ring"), (0.085, 0.085), (0, 0.0, 0.0094), rgba_mat(K.kit, nm("hs"), imgs["handset"], 1.2), R)
     face = K.kit.plane(nm("callface"), (0.086, 0.086), (0, 0.0, 0.0095), None, R)
+    # Grandpa on the call: his red cap, white hair tufts and white mustache, laid over the face picture
+    CALLX[:] = [B(R, (0.088, 0.028, 0.004), (0, 0.047, 0.0108), P("#c8372d", 0.5), "ccap", 0.001),
+                B(R, (0.07, 0.01, 0.004), (0, 0.029, 0.0108), P("#9c2820", 0.5), "cbrim", 0.001),
+                B(R, (0.012, 0.03, 0.004), (-0.041, 0.016, 0.0108), P("#f4f4f4", 0.8), "chairl", 0.001),
+                B(R, (0.012, 0.03, 0.004), (0.041, 0.016, 0.0108), P("#f4f4f4", 0.8), "chairr", 0.001),
+                B(R, (0.048, 0.011, 0.004), (0, -0.012, 0.0108), P("#f4f4f4", 0.8), "cmust", 0.002)]
     return R, ring, face, scr
 
 
@@ -320,8 +333,8 @@ def build_station(kit, ctx):
         B(R, (0.8, 0.55, 1.5), (0, 0, 0.75), P(PUMP, 0.4), "pumpb", 0.03)
         B(R, (0.86, 0.6, 0.1), (0, 0, 1.55), P("#d8d8d8", 0.4), "pumpt", 0.02)
         B(R, (0.6, 0.02, 0.4), (0, -0.28, 1.15), P("#20242c", 0.3), "pumpd", 0.0)
-        CY(R, 0.17, 0.02, (0, -0.296, 1.15), P("#fffaf0", 0.4), "gauge", rot=(math.pi / 2, 0, 0))
-        B(R, (0.012, 0.012, 0.13), (-0.055, -0.31, 1.17), P("#e23a3a", 0.4), "needle", 0.0, rot=(0, 0.9, 0))
+        CY(R, 0.2, 0.02, (0, -0.296, 1.15), P("#fffaf0", 0.4), "gauge", rot=(math.pi / 2, 0, 0))
+        B(R, (0.02, 0.012, 0.17), (-0.07, -0.312, 1.17), P("#e23a3a", 0.4), "needle", 0.0, rot=(0, 0.9, 0))
         B(R, (0.6, 0.02, 0.2), (0, -0.28, 0.82), P("#f2f2ee", 0.5), "pumpp", 0.0)
         CY(R, 0.05, 0.1, (0.0, -0.3, 0.9), P("#20242c", 0.5), "pumpr", rot=(math.pi / 2, 0, 0))
         hol = B(R, (0.16, 0.14, 0.34), (0.28, -0.36, 0.78), M("#cfd6dc", 0.2), "holster", 0.02)
@@ -370,7 +383,7 @@ def build_shop(kit, ctx):
             B(None, (0.34, 0.2, 0.34), (ox - 2.4 + k * 0.5, 5.9, z + 0.2), P(c, 0.5), "box", 0.01)
     # counter
     B(None, (3.6, 0.8, 1.05), (ox, 3.0, 0.52), P("#b87a45", 0.5), "counter", 0.01)
-    B(None, (3.8, 0.9, 0.06), (ox, 3.0, 1.07), P("#fdfbf6", 0.4), "ctop", 0.01)
+    B(None, (3.8, 0.9, 0.06), (ox, 3.0, 1.07), P("#e6dcc6", 0.5), "ctop", 0.01)
     # the register and the jar of wrapped cookies
     B(None, (0.5, 0.4, 0.3), (ox + 1.2, 3.0, 1.25), P("#d5d9de", 0.4), "reg", 0.02)
     B(None, (0.42, 0.04, 0.22), (ox + 1.2, 2.8, 1.42), kit.emit("#2a3a5a", 0.8, name="regscr"), "regs", 0.0)
@@ -383,8 +396,8 @@ def build_shop(kit, ctx):
         B(None, (0.11, 0.08, 0.05), (ox - 1.0 + rr * math.cos(a), 3.1 + rr * math.sin(a), z), P(GOLD if i % 3 else "#d89a3c", 0.5),
           "jc", 0.012, rot=(0.3 * (i % 3), 0.2 * (i % 4), a))
     CY(None, 0.25, 0.04, (ox - 1.0, 3.1, 1.76), P("#c9c4b8", 0.4), "jarlid")
-    kit.light("shop-key", "POINT", (ox, 1.6, 2.7), 110, "#fff4e0", size=0.8, shadow=False)
-    kit.light("shop-back", "POINT", (ox, 4.6, 2.6), 70, "#fff0d0", size=0.8, shadow=False)
+    kit.light("shop-key", "POINT", (ox, 1.6, 2.7), 70, "#fff4e0", size=0.8, shadow=False)
+    kit.light("shop-back", "POINT", (ox, 4.6, 2.6), 50, "#fff0d0", size=0.8, shadow=False)
 
 
 def build_tire(kit, ctx):
@@ -493,8 +506,8 @@ def build_bed(kit, ctx):
     # the nightstand with a lamp (steady)
     B(None, (0.55, 0.5, 0.6), (ox + 1.2, 3.55, 0.3), P("#b87a45", 0.5), "ns", 0.01)
     B(None, (0.5, 0.01, 0.1), (ox + 1.2, 3.29, 0.42), P("#8a5a34", 0.5), "nsd", 0.0)
-    CY(None, 0.08, 0.04, (ox + 1.4, 3.55, 0.62), P("#7a5a3a", 0.5), "lampb")
-    CY(None, 0.2, 0.28, (ox + 1.4, 3.55, 0.86), kit.emit("#ffd9a0", 2.2, name="shade"), "shade", r2=0.12)
+    CY(None, 0.07, 0.04, (ox + 1.4, 3.7, 0.62), P("#7a5a3a", 0.5), "lampb")
+    CY(None, 0.13, 0.22, (ox + 1.4, 3.7, 0.8), kit.emit("#ffd9a0", 1.2, name="shade"), "shade", r2=0.08)
     kit.light("bed-lamp", "POINT", (ox + 1.4, 3.1, 1.0), 40, "#ffcf90", size=0.4, shadow=False)
     kit.light("bed-moon", "POINT", (ox + 1.5, 3.2, 2.0), 25, "#a8b8ff", size=0.6, shadow=False)
     kit.light("bed-key", "POINT", (ox, 0.4, 2.2), 55, "#d8e0ff", size=0.8, shadow=False)
@@ -504,7 +517,7 @@ def build_house(kit, ctx):
     ox = X_HOUSE
     B(None, (80, 50, 0.1), (ox, 20, -0.1), P("#3f8a4a", 0.9, 0.05), "hground", 0.0)
     B(None, (80, 5, 0.1), (ox, -1.0, -0.04), P("#4b4d55", 0.9, 0.05), "hroad", 0.0)
-    B(None, (80, 0.6, 30), (ox, 50, 12), kit.emit("#8aa6e0", 1.0, name="hsky"), "hsky", 0.0)
+    B(None, (80, 0.6, 30), (ox, 50, 12), kit.emit("#0d1636", 1.0, name="hsky"), "hsky", 0.0)
     B(None, (5.0, 3.6, 2.7), (ox, 8.0, 1.35), P("#e8d6b0", 0.6), "house", 0.02)
     B(None, (5.4, 2.2, 0.16), (ox - 0.0, 8.4, 3.0), P("#a8473f", 0.6), "roofa", 0.02, rot=(0.0, 0.0, 0))
     B(None, (5.4, 2.0, 0.16), (ox, 7.4, 3.25), P("#a8473f", 0.6), "roofb", 0.02, rot=(0.5, 0, 0))
@@ -554,27 +567,24 @@ def build_gkitchen(kit, ctx):
     # outside the window: night, or the big storm
     ctx["snowmat"] = kit.emit("#0b1228", 1.0, name="gnight")
     ctx["snowpane"] = B(None, (1.6, 0.06, 1.3), (ox - 2.0, 4.8, 1.55), ctx["snowmat"], "snowp", 0.0)
-    ctx["snowmat2"] = kit.emit("#eaf2ff", 2.4, name="gsnow")
+    ctx["snowmat2"] = kit.emit("#7f9acb", 1.1, name="gsnow")
     ctx["snowpane2"] = B(None, (1.6, 0.06, 1.3), (ox - 2.0, 4.7, 1.55), ctx["snowmat2"], "snowp2", 0.0)
     hide(ctx["snowpane2"], True)
     flakes = []
-    for i in range(36):
-        f = B(None, (0.035, 0.035, 0.035), (ox - 2.0, 4.55, 1.5), EM("#ffffff", 3.0), "flake", 0.0)
+    for i in range(60):
+        f = B(None, (0.07, 0.02, 0.07), (ox - 2.0, 4.55, 1.5), EM("#ffffff", 3.0), "flake", 0.0)
         no_shadow(f)
         hide(f, True)
         flakes.append(f)
     ctx["flakes"] = flakes
     # the table: a yellow block with a skirt (people sit behind it), two chairs, the lamp above
     B(None, (1.6, 0.95, 0.68), (ox, 1.9, 0.34), P(KY, 0.45), "tabl", 0.02)
-    B(None, (1.7, 1.05, 0.06), (ox, 1.9, 0.71), P("#e3c06a", 0.5, 0.15), "tabt", 0.02)
-    for sx in (-1, 1):
-        B(None, (0.12, 0.7, 0.08), (ox + sx * 0.35, 1.9, 0.76), P("#ffb94d", 0.5), "runner", 0.0)
+    B(None, (1.7, 1.05, 0.06), (ox, 1.9, 0.71), P("#9a6a43", 0.55, 0.1), "tabt", 0.02)
     B(None, (0.7, 0.08, 0.9), (ox, 3.45, 0.55), P("#b87a45", 0.5), "chairb", 0.03)
     B(None, (0.7, 0.7, 0.08), (ox, 3.1, 0.34), P("#b87a45", 0.5), "chairs", 0.03)
     B(None, (0.7, 0.08, 0.9), (ox, 0.6, 0.55), P("#b87a45", 0.5), "chairb2", 0.03)
-    CY(None, 0.02, 0.9, (ox, 1.9, 2.45), P("#2a2a2a", 0.5), "cord")
-    CY(None, 0.34, 0.2, (ox, 1.9, 1.95), kit.emit("#ffe3a0", 1.3, name="cshade"), "cshade", r2=0.12)
-    kit.light("kit-lamp", "POINT", (ox, 1.9, 1.7), 60, "#ffe3b0", size=0.4, shadow=False)
+    CY(None, 0.5, 0.1, (ox, 1.9, 2.83), kit.emit("#ffe3a0", 0.9, name="cshade"), "cshade", r2=0.34)
+    kit.light("kit-lamp", "POINT", (ox, 1.9, 2.3), 34, "#ffe3b0", size=0.4, shadow=False)
     # the living room: Grandma's green armchair and the floor lamp
     B(None, (1.0, 0.95, 0.5), (ox + 0.2, 4.85, 0.25), P("#4f8f5a", 0.6), "armch", 0.06)
     B(None, (1.0, 0.22, 0.95), (ox + 0.2, 5.27, 0.7), P("#4f8f5a", 0.6), "armb", 0.06)
@@ -587,9 +597,12 @@ def build_gkitchen(kit, ctx):
     kit.light("floor-lamp", "POINT", (ox + 1.2, 4.8, 1.6), 70, "#ffd9a0", size=0.4, shadow=False)
     B(None, (1.4, 0.4, 0.9), (ox - 2.4, 8.2, 0.45), P("#c9a070", 0.5), "lshelf", 0.02)
     # on the table: the wallet, the pen
-    ctx["wallet"] = B(None, (0.2, 0.14, 0.045), (ox - 0.3, 1.7, 0.77), P("#6a3f1f", 0.7), "wallet", 0.02)
-    ctx["pen"] = B(None, (0.15, 0.014, 0.014), (ox + 0.3, 1.65, 0.77), P("#2a56d6", 0.4), "pen", 0.004)
-    kit.light("gk-fill", "POINT", (ox, 0.3, 2.4), 40, "#ffe8c0", size=0.8, shadow=False)
+    ctx["wallet"] = B(None, (0.2, 0.14, 0.045), (ox + 0.55, 2.1, 0.77), P("#6a3f1f", 0.7), "wallet", 0.02)
+    ctx["pen"] = B(None, (0.30, 0.024, 0.024), (ox, 1.5, 0.75), P("#141c4a", 0.3), "pen", 0.006)
+    B(ctx["pen"], (0.07, 0.027, 0.027), (0.115, 0, 0), M("#cfd6dc", 0.2), "pencap", 0.004)
+    B(ctx["pen"], (0.03, 0.01, 0.005), (-0.02, 0, 0.0135), M("#cfd6dc", 0.2), "penclip", 0.002)
+    kit.light("gk-grandma", "POINT", (ox + 0.2, 4.35, 1.8), 45, "#ffe8c8", size=0.5, shadow=False)
+    kit.light("gk-fill", "POINT", (ox, 0.3, 2.4), 28, "#ffe8c0", size=0.8, shadow=False)
 
 
 def build_dash(kit, ctx):
@@ -769,6 +782,8 @@ def animate(kit, story, tl, t, ctx):
         ph.scale = (pc.get("s", 1.0),) * 3
         ring.hide_render = pc.get("mode") != "ring"
         cface.hide_render = pc.get("mode") != "call"
+        for cx_ in CALLX:
+            cx_.hide_render = pc.get("mode") != "call"
     # ---- the soda
     sc_ = cue_at(tl, "soda", t)
     if sc_.get("on"):
@@ -814,8 +829,8 @@ def animate(kit, story, tl, t, ctx):
     for i, f in enumerate(ctx["flakes"]):
         hide(f, not sn)
         if sn:
-            ph_ = (t * 0.7 + i / len(ctx["flakes"])) % 1.0
-            f.location = (X_GK - 2.0 + 0.7 * math.sin(i * 2.3 + t * 0.9), 4.55, 2.15 - 1.2 * ph_)
+            ph_ = (t * 0.7 + ((i * 0.618) % 1.0)) % 1.0
+            f.location = (X_GK - 2.0 + 0.72 * math.sin(i * 2.3 + t * 0.9), 4.55, 2.1 - 1.2 * ph_)
     cd = kit.OBJ["cam"].data
     cd.dof.use_dof = False
     return ov
