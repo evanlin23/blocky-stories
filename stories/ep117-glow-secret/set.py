@@ -20,8 +20,8 @@ import layout as G  # noqa: E402
 
 D2R = math.pi / 180.0
 W = {"obj": {}, "init": {}}
-HALO = 1.0
-EM = 0.6          # emission of a glowing face at glow level 1
+HALO = 1.4
+EM = 0.9          # emission of a glowing face at glow level 1
 
 
 def ss(x):
@@ -37,7 +37,7 @@ def kit_col(h):
 
 def _L(**kw):
     base = dict(sun=2.0, sun_col="#fff0dc", el=50.0, az=205.0, fill=1.1, fill_col="#fff1e2", sky="#ffe9cc",
-                sky_str=0.9, front=1.3, front_col="#fff0e0")
+                sky_str=0.9, front=1.3, front_col="#fff0e0", pend=1.0)
     base.update(kw)
     return base
 
@@ -45,6 +45,7 @@ def _L(**kw):
 LOOKS = {
     "room": _L(sun=1.2, fill=0.7, front=0.9, sky_str=0.7),
     "day": _L(sky="#cfe6ff", sky_str=0.8, sun=1.8, fill=0.8, front=1.0),
+    "roomdim": _L(sun=0.3, fill=0.3, front=0.35, sky_str=0.4, pend=0.12),
     "gum": _L(sun=0.45, fill=0.3, front=0.45, sky_str=0.3),
     "lot": _L(sun=0.5, sun_col="#9db4ff", el=35.0, az=200.0, fill=1.1, fill_col="#8aa2f0", sky="#33509a", sky_str=0.8,
               front=2.1, front_col="#ffe6d2"),
@@ -129,17 +130,21 @@ def gum_machine(kit, x, y):
 
 
 def wagon(kit, x, y):
+    """The station wagon, nose to the camera (-y): a hood, a windshield, two glowing headlights, wheels down both sides."""
     P = kit.plastic
-    body = P("#2f8a52", 0.4, spec=0.5)
-    kit.box("car.low", (4.7, 1.9, 0.75), (x, y, 0.62), body, bevel=0.08)
-    kit.box("car.cab", (2.9, 1.8, 0.7), (x - 0.35, y, 1.32), body, bevel=0.08)
+    body = P("#3fae68", 0.4, spec=0.5)
+    kit.box("car.low", (1.9, 4.7, 0.75), (x, y, 0.62), body, bevel=0.08)
+    kit.box("car.cab", (1.8, 2.9, 0.7), (x, y + 0.35, 1.32), body, bevel=0.08)
     dark = P("#16213f", 0.2, spec=0.8)
-    for s in (-1, 1):
-        kit.box(f"car.win{s}", (2.5, 0.02, 0.46), (x - 0.35, y + s * 0.915, 1.36), dark)
-        for wx in (-1.45, 1.45):
-            ob = kit.cyl(f"car.wh{s}{wx}", 0.34, 0.2, (x + wx, y + s * 0.88, 0.34), P("#1a1a1f", 0.7),
-                         rot=(math.pi / 2, 0, 0), n=16)
-    kit.box("car.hl", (0.04, 0.5, 0.18), (x + 2.37, y, 0.78), P("#fff2c8", 0.3))
+    kit.box("car.wind", (1.5, 0.02, 0.5), (x, y + 0.35 - 1.46, 1.34), dark)
+    for s_ in (-1, 1):
+        kit.box(f"car.win{s_}", (0.02, 2.5, 0.46), (x + s_ * 0.905, y + 0.35, 1.36), dark)
+        for wy in (-1.45, 1.45):
+            kit.cyl(f"car.wh{s_}{wy}", 0.34, 0.2, (x + s_ * 0.88, y + wy, 0.34), P("#1a1a1f", 0.7),
+                    rot=(0, math.pi / 2, 0), n=16)
+        kit.box(f"car.hl{s_}", (0.34, 0.04, 0.2), (x + s_ * 0.6, y - 2.37, 0.78), kit.emit("#fff2c8", 6.0, f"hl{s_}"))
+    kit.box("car.grille", (0.7, 0.04, 0.16), (x, y - 2.37, 0.66), P("#2a2a30", 0.4, spec=0.6))
+    kit.box("car.bump", (1.9, 0.1, 0.14), (x, y - 2.4, 0.3), P("#cfd3d8", 0.3, spec=0.8))
 
 
 def tree_ball(kit, name, x, y, z, col):
@@ -147,6 +152,9 @@ def tree_ball(kit, name, x, y, z, col):
 
 
 # ---------------------------------------------------------------------------------------------- build
+GX_, GY_ = G.GUM
+
+
 def build(kit, story, tl):
     tl["cues"].sort(key=lambda c: c["t"])
     P = kit.plastic
@@ -163,13 +171,13 @@ def build(kit, story, tl):
     kit.aim(front, (0, 0, 0))
     for i, px in enumerate((-3.0, 0.0, 3.0)):
         kit.light(f"pend{i}", "POINT", (px, 2.2, 2.3), 90.0, "#ffd9a8", size=0.3, shadow=False)
-    kit.light("glowmom", "POINT", (0, 0, 2), 22.0, "#ffd98a", size=0.25, shadow=True)
-    kit.light("glowdad", "POINT", (0, 0, 2), 22.0, "#ffd98a", size=0.25, shadow=False)
-    kit.light("glowme", "POINT", (0, 0, 2), 22.0, "#ffd98a", size=0.25, shadow=False)
+    kit.light("glowmom", "POINT", (0, 0, 2), 26.0, "#ffd98a", size=0.25, shadow=True)
+    kit.light("glowdad", "POINT", (0, 0, 2), 26.0, "#ffd98a", size=0.25, shadow=False)
+    kit.light("glowme", "POINT", (0, 0, 2), 26.0, "#ffd98a", size=0.25, shadow=False)
     kit.light("glowoth", "POINT", (0, 0, 2), 14.0, "#ffd98a", size=0.25, shadow=False)
     kit.light("bglow", "POINT", (0, 1.4, 2.4), 160.0, "#ffcf70", size=0.6, shadow=False)
     kit.light("fridge", "POINT", (G.FRIDGE[0] - 0.3, 2.7, 1.2), 70.0, "#f0f6ff", size=0.4, shadow=False)
-    kit.light("lamp", "POINT", (G.LOT[0] + 9.0, 26.0, 6.5), 1500.0, "#ffd9a0", size=0.4, shadow=False)
+    kit.light("lamp", "POINT", (G.LOT[0] + 4.0, 12.5, 5.5), 1100.0, "#ffd9a0", size=0.4, shadow=False)
     sp = kit.light("spot", "SPOT", (G.STAGE[0] + 0.6, -0.5, 5.0), 1400.0, "#fff4e0", size=0.2, spot=34, blend=0.5,
                    shadow=False)
     kit.aim(sp, (G.STAGE[0], 3.0, 1.45))
@@ -194,7 +202,7 @@ def build(kit, story, tl):
     kit.box("bench.back", (5.0, 0.2, 0.7), (0, 3.85, 0.85), red, bevel=0.04)
     kit.box("bench.trim", (5.02, 0.22, 0.05), (0, 3.85, 1.2), P("#b0282d", 0.5))
     # the table, set high enough to clear sitters' knees
-    kit.box("table.top", (4.2, 0.9, 0.06), (0, 2.8, 0.95), cream, bevel=0.02)
+    kit.box("table.top", (4.2, 0.9, 0.06), (0, 2.8, 0.95), P("#dcc9a0", 0.7, spec=0.05), bevel=0.02)
     for tx in (-1.4, 1.4):
         kit.cyl(f"table.leg{tx}", 0.09, 0.9, (tx, 2.8, 0.45), P("#9fa4aa", 0.3, spec=0.7), n=12)
         kit.cyl(f"table.foot{tx}", 0.3, 0.05, (tx, 2.8, 0.03), P("#9fa4aa", 0.3, spec=0.7), n=16)
@@ -236,6 +244,7 @@ def build(kit, story, tl):
     kit.box("slice.crust", (0.22, 0.05, 0.075), (0, 0.43, 0.037), P("#e0a65a", 0.6), sl, bevel=0.01)
     kit.box("slice.pa", (0.07, 0.07, 0.03), (0.04, 0.25, 0.085), pine, sl)
     kit.box("slice.an", (0.16, 0.03, 0.02), (-0.05, 0.32, 0.08), anch, sl, rot=(0, 0, 0.5))
+    kit.cyl("slice.tray", 0.4, 0.02, (0.0, 0.18, 0.012), P("#8f2024", 0.5, spec=0.3), sl, n=24)
     reg("slice", sl)
     # pendant lamps (fixed)
     for i, px in enumerate((-3.0, 0.0, 3.0)):
@@ -243,22 +252,45 @@ def build(kit, story, tl):
         kit.sphere(f"pend{i}.shade", 0.3, (px, 2.2, 2.3), kit.emit("#fff0cf", 1.0), seg=14)
     # the gumball machine and a small counter
     gum_machine(kit, *G.GUM)
+    # coloured gumball shadows on the wall behind the machine (shown only while Mom's light is on it, cue gshadow):
+    # each ball projected from a low lamp left of the machine, stretched along the wall, in a dark shade of its colour
+    W["gsh"] = []
+    Lp = (GX_ - 2.2, 0.8, 1.0)
+    dcols_ = ["#b8281c", "#c89400", "#1480b8", "#2f9a2f", "#b83a90", "#8a8a98", "#c05c10", "#6030c0"]
+    cols_ = ["#ff4b3a", "#ffd23f", "#3fd0ff", "#7be07a", "#ff7ad9", "#ffffff", "#ff9a3a", "#9a6bff"]
+    for k in range(0, 34, 3):
+        a = k * 2.399
+        r = 0.05 + 0.24 * ((k * 0.37) % 1.0) ** 0.6
+        h = 1.14 + (k % 5) * 0.09 + (0.0 if r < 0.2 else -0.06)
+        bx, bz = GX_ + r * math.cos(a), h
+        by = GY_ + r * math.sin(a)
+        sc_ = (3.97 - Lp[1]) / (by - Lp[1])
+        wx, wz = Lp[0] + sc_ * (bx - Lp[0]), Lp[2] + sc_ * (bz - Lp[2])
+        mt = kit.emit(dcols_[k % 8], 0.9, f"gshm{k}")
+        d_ = kit.cyl(f"gsh{k}", 0.1, 0.01, (wx, 3.975, wz), mt, rot=(math.pi / 2, 0, 0), n=16)
+        d_.scale = (2.2, 1.0, 1.0)
+        W["gsh"].append(d_)
     kit.box("counter", (5.0, 0.8, 1.05), (-9.0, 3.4, 0.525), P("#7a3a2a", 0.6))
     kit.box("counter.top", (5.2, 0.9, 0.06), (-9.0, 3.38, 1.08), cream)
     kit.box("box.pz", (0.7, 0.7, 0.07), (-8.5, 3.38, 1.14), P("#e8d8b8", 0.8))
     # the coat hook at the end of the booth, with three pizza-red strokes (a tally, no words)
     chrome = kit.metal("#cfd3d8", 0.25)
-    kit.box("hook.post", (0.12, 0.12, 1.5), (2.75, 3.45, 0.75), chrome)
-    kit.box("hook.arm", (0.07, 0.3, 0.07), (2.75, 3.3, 1.45), chrome)
-    kit.box("hook.tip", (0.07, 0.07, 0.16), (2.75, 3.16, 1.5), chrome)
-    for k, dx in enumerate((-0.03, 0.0, 0.03)):
-        kit.box(f"hook.t{k}", (0.018, 0.02, 0.3), (2.75 + dx * 1.5, 3.385, 0.8), P("#ff4b3a", 0.5))
+    steel = P("#5d636e", 0.35, spec=0.5)
+    kit.box("hook.post", (0.3, 0.2, 1.3), (2.75, 3.45, 0.65), steel)
+    kit.box("hook.arm", (0.12, 0.45, 0.12), (2.75, 3.15, 1.22), steel)
+    kit.box("hook.tip", (0.12, 0.12, 0.28), (2.75, 2.95, 1.3), steel)
+    for k, dx in enumerate((-0.095, 0.0, 0.095)):
+        kit.box(f"hook.t{k}", (0.07, 0.02, 0.6), (2.75 + dx, 3.34, 0.62), P("#ff2a20", 0.5))
     # the waiter's arm (a sleeve, a flat hand and a fresh pie), off screen until L32
     wa = kit.empty("wa", (2.6, 1.4, -60.0))
-    kit.box("wa.sleeve", (0.3, 1.1, 0.3), (0.55, 0.0, 0.62), P("#f4f4f2", 0.6), wa, bevel=0.04)
-    kit.box("wa.hand", (0.22, 0.22, 0.1), (0.0, 0.0, 0.33), P("#cf9d74", 0.5), wa, bevel=0.02)
-    kit.cyl("wa.pan", 0.5, 0.02, (0.0, 0.0, 0.4), P("#aeb2b8", 0.3, spec=0.7), wa, n=24)
-    kit.cyl("wa.pie", 0.4, 0.06, (0.0, 0.0, 0.44), P("#ffcf5a", 0.5), wa, n=24)
+    kit.box("wa.sleeve", (1.3, 0.3, 0.26), (1.15, 0.0, 0.14), P("#f4f4f2", 0.6), wa, bevel=0.04)
+    kit.box("wa.hand", (0.3, 0.22, 0.12), (0.5, 0.0, 0.06), P("#cf9d74", 0.5), wa, bevel=0.02)
+    kit.cyl("wa.pan", 0.44, 0.02, (0.0, 0.0, 0.0), P("#aeb2b8", 0.3, spec=0.7), wa, n=24)
+    kit.cyl("wa.pie", 0.36, 0.06, (0.0, 0.0, 0.04), P("#ffcf5a", 0.5), wa, n=24)
+    for k in range(7):
+        a = k * 2.4
+        kit.box(f"wa.top{k}", (0.07, 0.03, 0.02), (0.22 * math.cos(a) * ((k % 3 + 1) / 3), 0.22 * math.sin(a) * ((k % 3 + 1) / 3), 0.085),
+                P("#6b5a4c" if k % 2 else "#ffe35a", 0.5), wa)
     reg("wa", wa)
 
     # ============================================================== the lot
@@ -301,7 +333,7 @@ def build(kit, story, tl):
     kit.plane("pl.ground", (30, 14), (PX, 0, 0.0), P("#c9a070", 0.7))
     kit.box("pl.wall", (30, 0.3, 4.0), (PX, 4.15, 2.0), P("#b8467f", 0.8))
     kit.box("pl.base", (30, 0.1, 0.3), (PX, 3.95, 0.15), P("#fff8e8", 0.6))
-    door = kit.empty("door", (PX - 1.5, 2.55, 0.0), None, rot=(0, 0, math.radians(-12)))
+    door = kit.empty("door", (PX - 0.95, 2.55, 0.0), None, rot=(0, 0, math.radians(-8)))
     kit.box("door.leaf", (1.3, 0.08, 2.2), (0.65, 0, 1.1), P("#5a8ad8", 0.5), door, bevel=0.02)
     kit.sphere("door.knob", 0.05, (1.15, -0.07, 1.05), kit.metal("#e0c070", 0.3), door, seg=8)
     for k, c in enumerate(["#ff4b3a", "#ffd23f", "#3fd0ff"]):
@@ -344,8 +376,8 @@ def build(kit, story, tl):
     dl = kit.empty("fr.door", (gx - 0.53, gy - 0.45, 0.0), None, rot=(0, 0, math.radians(100)))
     kit.box("fr.doorleaf", (1.06, 0.08, 1.9), (0.53, 0, 0.95), fw, dl)
     bx = kit.empty("box", (0, 0, -60))
-    kit.box("box.b", (0.3, 0.24, 0.12), (0, 0, 0), P("#fff8e8", 0.6), bx, bevel=0.01)
-    kit.box("box.s", (0.31, 0.06, 0.125), (0, 0, 0), P("#ff4b3a", 0.5), bx)
+    kit.box("box.b", (0.36, 0.24, 0.26), (0, 0, 0), P("#fff8e8", 0.6), bx, bevel=0.01)
+    kit.box("box.s", (0.37, 0.25, 0.08), (0, 0, 0.02), P("#ff2a20", 0.5), bx)
     reg("box", bx)
 
     # ============================================================== the stage
@@ -368,7 +400,7 @@ def build(kit, story, tl):
         tr = nt.nodes.new("ShaderNodeBsdfTransparent")
         em = nt.nodes.new("ShaderNodeEmission")
         em.inputs["Color"].default_value = (1.0, 0.62, 0.15, 1.0)
-        em.inputs["Strength"].default_value = 2.4
+        em.inputs["Strength"].default_value = 2.6
         tc = nt.nodes.new("ShaderNodeTexCoord")
         gr = nt.nodes.new("ShaderNodeTexGradient")
         gr.gradient_type = "QUADRATIC_SPHERE"
@@ -408,25 +440,40 @@ def build_tag(kit):
         return ob
     b("tag.edge", (1.0, 0.56, 0.004), (0, 0, 0.0), edge)
     b("tag.plate", (0.95, 0.51, 0.004), (0, 0, 0.004), plate)
-    # the bulb: a gold disc with a dark rim, a grey screw base
-    rim = kit.sphere("tag.brim", 0.2, (-0.3, 0.06, 0.006), ink, root, seg=16)
-    rim.scale = (1.0, 1.0, 0.02)
-    noshadow(rim)
-    bulb = kit.sphere("tag.bulb", 0.165, (-0.3, 0.06, 0.012), gold, root, seg=16)
-    bulb.scale = (1.0, 1.0, 0.02)
-    noshadow(bulb)
-    b("tag.neck", (0.15, 0.1, 0.004), (-0.3, -0.12, 0.012), grey)
-    b("tag.base", (0.12, 0.06, 0.004), (-0.3, -0.19, 0.012), ink)
-    b("tag.fil", (0.05, 0.12, 0.004), (-0.3, 0.07, 0.02), ink)
+    # the bulb: a clear glass globe (pale rim, dark outline) with a glowing gold fill, a filament, a screw base
+    glass = kit.emit("#eef6ff", 1.0, "tagglass")
+    hot = kit.emit("#ffc21e", 3.0, "taghot")
+
+    def disc(name, r, loc, mat):
+        ob = kit.sphere(name, r, loc, mat, root, seg=20)
+        ob.scale = (1.0, 1.0, 0.02)
+        noshadow(ob)
+        return ob
+    disc("tag.brim", 0.2, (-0.3, 0.045, 0.006), ink)
+    disc("tag.bglass", 0.178, (-0.3, 0.045, 0.010), glass)
+    disc("tag.bulb", 0.14, (-0.3, 0.045, 0.014), hot)
+    disc("tag.shine", 0.03, (-0.36, 0.11, 0.018), glass)
+    b("tag.neckO", (0.17, 0.1, 0.004), (-0.3, -0.115, 0.008), ink)
+    b("tag.neck", (0.13, 0.09, 0.004), (-0.3, -0.115, 0.012), glass)
+    b("tag.baseO", (0.15, 0.115, 0.004), (-0.3, -0.2, 0.008), ink)
+    b("tag.base1", (0.115, 0.035, 0.004), (-0.3, -0.175, 0.012), grey)
+    b("tag.base2", (0.115, 0.035, 0.004), (-0.3, -0.225, 0.012), grey)
+    # filament: a small V on a stem
+    for sx_ in (-1, 1):
+        f_ = b(f"tag.fil{sx_}", (0.018, 0.1, 0.004), (-0.3 + sx_ * 0.032, 0.07, 0.022), ink)
+        f_.rotation_euler = (0, 0, -sx_ * 0.5)
+    b("tag.stem", (0.018, 0.1, 0.004), (-0.3, -0.04, 0.022), ink)
     # three bars: an empty slot, then a gold fill that grows from the bottom
     W["bars"] = []
-    for i, x in enumerate((0.0, 0.17, 0.34)):
-        b(f"tag.slot{i}", (0.12, 0.4, 0.004), (x + 0.02, 0.0, 0.01), ink)
-        b(f"tag.dim{i}", (0.1, 0.38, 0.004), (x + 0.02, 0.0, 0.016), dim)
-        pivot = kit.empty(f"tag.bar{i}", (x + 0.02, -0.19, 0.022), root)
-        fill = kit.box(f"tag.fill{i}", (0.1, 0.38, 0.004), (0, 0.19, 0.0), gold, pivot)
+    for i, (x, dc) in enumerate(zip((0.0, 0.17, 0.34), ("#e0a32a", "#3f8a4e", "#3d74d6"))):
+        b(f"tag.slot{i}", (0.12, 0.32, 0.004), (x + 0.02, 0.04, 0.01), ink)
+        b(f"tag.dim{i}", (0.1, 0.30, 0.004), (x + 0.02, 0.04, 0.016), dim)
+        pivot = kit.empty(f"tag.bar{i}", (x + 0.02, -0.11, 0.022), root)
+        fill = kit.box(f"tag.fill{i}", (0.1, 0.30, 0.004), (0, 0.15, 0.0), gold, pivot)
         noshadow(fill)
         W["bars"].append(pivot)
+        for nm_, r_, z_, m_ in ((f"tag.doto{i}", 0.062, 0.010, ink), (f"tag.dot{i}", 0.05, 0.014, kit.emit(dc, 1.1, f"tagdot{i}"))):
+            disc(nm_, r_, (x + 0.02, -0.19, z_), m_)
 
 
 # ---------------------------------------------------------------------------------------------- first frame extras
@@ -503,6 +550,8 @@ def animate(kit, story, tl, t, ctx):
     kit.LIGHTS["fill"]["light"].color = look["fill_col"]
     kit.LIGHTS["front"]["light"].color = look["front_col"]
     gains["sun"], gains["fill"], gains["front"] = look["sun"], look["fill"], look["front"]
+    for i_ in range(3):
+        gains[f"pend{i_}"] = look["pend"]
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (*look["sky"], 1.0)
@@ -542,6 +591,10 @@ def animate(kit, story, tl, t, ctx):
     st = sample("pie", tl, t, {"v": 1.0})
     _hide(W["obj"]["pie"], st["v"] < 0.5)
     _hide(W["obj"]["slice"], st["v"] > 0.5)
+
+    gs_ = sample("gshadow", tl, t, {"v": 0.0})["v"]
+    for d_ in W.get("gsh", []):
+        _hide(d_, gs_ < 0.5)
 
     # sunglasses
     for who in ("mom", "dad"):
@@ -590,7 +643,7 @@ def animate(kit, story, tl, t, ctx):
             ob.location = (0, 0, -90.0)
             continue
         ob.location = (hp.x, hp.y + 0.45, hp.z - 0.1)
-        r = 1.15 + 0.25 * max(0.0, v - 0.8)
+        r = 0.75 + 0.15 * max(0.0, v - 0.8)
         ob.scale = (r, r, r)
         sq.inputs[1].default_value = HALO * min(v, 1.9)
     # the tag's bars
@@ -620,12 +673,12 @@ def animate(kit, story, tl, t, ctx):
             m.location = (0, 0, -80)
             continue
         a = t * (0.9 + 0.12 * k) + k * 1.1
-        r = 0.55 + 0.12 * (k % 3)
-        m.location = (hp.x + r * math.cos(a), hp.y - 0.4 + 0.25 * math.sin(a * 0.7), hp.z + 0.05 + 0.3 * math.sin(a * 1.3 + k))
+        r = 0.6 + 0.12 * (k % 3)
+        m.location = (hp.x + r * math.cos(a), hp.y - 0.4 + 0.25 * math.sin(a * 0.7), hp.z + 0.05 + 0.4 * math.sin(a * 1.3 + k))
         m.rotation_euler = (0.3, 0, a)
         m.children[0].rotation_euler = (0, 0.7 * math.sin(t * 22 + k), 0)
         m.children[1].rotation_euler = (0, -0.7 * math.sin(t * 22 + k), 0)
-        m.scale = (mv_,) * 3
+        m.scale = (3.4 * mv_,) * 3
 
     # the tag sits top-left at a fixed angular size, whatever the lens
     lens = 40.0

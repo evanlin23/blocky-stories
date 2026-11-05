@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -113,8 +113,11 @@ def put(who, at, pos, yaw=None, seat=False, **kw):
     if who in seated and not seat:
         sit(who, at, False)
     p = list(pos)
-    acting[who].append({"at": at, "pos": list(last[who])})
-    k = {"at": at, "pos": p, "blend": 0.0, "hidden": False}
+    if at == 0:   # the first frame is already in place: no hidden key at the origin to clip at t=0
+        acting[who] = [k_ for k_ in acting[who] if k_.get("at") != 0]
+    else:
+        acting[who].append({"at": at, "pos": list(last[who])})
+    k = {"at": at, "pos": p, "blend": 0.0, "hidden": False, "arms": [0, 0], "side": [0, 0]}
     if yaw is not None:
         k["yaw"] = yaw
     k.update(kw)
@@ -163,9 +166,9 @@ def move(at, obj, dur=0.0, **kw):
 
 SX, SY_ = G.ROOM
 SY = G.SEAT_Y
-BASE = 0.8                      # Mom's and Dad's steady glow, every shot
-MX, DX_, ME_X = -0.5, 0.5, 0.0  # pair seats
-TM, TD, TS = -0.85, 0.85, 0.0   # trio seats: Mom, Dad, me in the middle
+BASE = 0.9                      # Mom's and Dad's steady glow, every shot
+MX, DX_, ME_X = -0.45, 0.45, 0.0  # pair seats
+TM, TD, TS = -0.68, 0.68, 0.0   # trio seats: Mom, Dad, me in the middle
 GX, GY = G.GUM
 LX, LY = G.LOT
 CX, CY = G.CAR
@@ -186,10 +189,10 @@ def duo(at, em="smile", ed="smile", **kw):
     seat("dad", at, DX_, ed, **kw)
 
 
-def trio(at, em="smile", ed="smile", ee="smile"):
+def trio(at, em="smile", ed="smile", ee="smile", sp=None):
     only(at, ["mom", "dad", "me"])
-    seat("mom", at, TM, em)
-    seat("dad", at, TD, ed)
+    seat("mom", at, TM if sp is None else -sp, em)
+    seat("dad", at, TD if sp is None else sp, ed)
     seat("me", at, TS, ee)
 
 
@@ -209,12 +212,12 @@ cue(0, "waiter", v=0.0)
 
 # ===================================================================== 01 the hook (L01 to L02)
 duo(0, "smile", "smile")
-shot(0, mv([0.0, SY - 4.1, 1.28], [0.0, SY, 1.15], 34, [0.0, SY - 3.55, 1.28], [0.0, SY, 1.15], 34), "hook", hand=0.006)
+shot(0, mv([0.0, SY - 4.6, 1.28], [0.0, SY, 1.15], 34, [0.0, SY - 4.2, 1.28], [0.0, SY, 1.15], 34), "hook", hand=0.006)
 only("L02", ["me"])
 seat("me", "L02", 0.25, "smirk")
 shot("L02", fr(0.25, SY, 1.15, 3.7, 34, dx=0.15), "mecross")
 duo("L02.2", "sad-smile", "sad-smile")
-shot("L02.2", fr(0.0, SY, 1.15, 3.9, 34, dx=-0.2), "sheep")
+shot("L02.2", fr(0.0, SY, 1.15, 4.5, 34, dx=-0.1, push=0.08), "sheep")
 
 # ===================================================================== 02 the montage (L03 to L06)
 look("L03", "day")
@@ -228,9 +231,9 @@ shot("L03.2", fr(BX - 0.2, 2.2, 1.45, 2.9, 34, dx=-0.3), "bus2")
 # L04 planner behind a door
 glow("L04", "oth", 1.0)
 only("L04", ["planner"])
-put("planner", "L04", [PX + 0.1, 3.0, 0.0], 0, expr="smirk", arms=[0, 0])
-beat("planner", "L04+0.5", arms=[0, 112], side=[0, -28])
-shot("L04", fr(PX + 0.1, 3.0, 1.3, 3.5, 34, dx=0.25), "planner")
+put("planner", "L04", [PX + 0.7, 3.0, 0.0], 0, expr="smirk", arms=[0, 0])
+beat("planner", "L04+0.5", arms=[0, 125], side=[0, 45])
+shot("L04", fr(PX + 0.65, 3.0, 1.3, 3.5, 34, dx=0.0, push=0.06), "planner")
 # L05 the card table
 glow("L05", "oth", 0.0)
 only("L05", [])
@@ -239,11 +242,11 @@ shot("L05", mv([KX + 0.2, -1.3, 1.9], [KX, 1.9, 0.85], 32, [KX + 0.5, -0.2, 1.6]
 glow("L06", "oth", 0.5)
 only("L06", ["roommate"])
 put("roommate", "L06", [FX + 0.95, 2.1, 0.0], -12, expr="sad-smile", arms=[0, 80])
-move("L06", "box", x=FX + 0.95 + 0.34, y=2.1 - 0.52, z=1.27)
+move("L06", "box", x=FX + 0.95 + 0.4, y=1.36, z=1.48)
 cue("L06", "fridgeglow", v=1.0)
-shot("L06", fr(FX + 0.5, 2.1, 1.25, 4.1, 34, dx=-0.2), "fridge1")
+shot("L06", fr(FX + 1.1, 2.1, 1.3, 4.6, 34, dx=-0.1, push=0.06), "fridge1")
 glow("L06.2", "oth", 0.6)
-shot("L06.2", fr(FX + 0.95, 2.1, 1.35, 3.0, 34, dx=0.3), "fridge2")
+shot("L06.2", fr(FX + 1.1, 2.1, 1.3, 4.6, 34, dx=0.4, push=0.06), "fridge2")
 
 # ===================================================================== 03 thirty years (L07 to L10)
 look("L07", "room")
@@ -251,36 +254,37 @@ move("L07-0.1", "box", z=-60.0)
 cue("L07", "fridgeglow", v=0.0)
 glow("L07", "oth", 0.0)
 duo("L07", "warm", "warm")
-shot("L07", mv([0.3, SY - 4.0, 1.3], [0.0, SY, 1.15], 34, [0.15, SY - 3.5, 1.3], [0.0, SY, 1.15], 34), "duo7")
+shot("L07", mv([0.15, SY - 4.6, 1.3], [0.0, SY, 1.15], 34, [0.05, SY - 4.2, 1.3], [0.0, SY, 1.15], 34), "duo7")
 duo("L08", "smile", "smile")
-shot("L08", mv([2.5, 0.3, 1.5], [0.0, SY, 1.45], 36, [2.2, 0.5, 1.5], [0.0, SY, 1.45], 36), "side8")
+shot("L08", mv([3.0, -0.4, 1.5], [0.0, SY, 1.4], 36, [2.7, -0.2, 1.5], [0.0, SY, 1.4], 36), "side8")
 trio("L09", "smile", "smile", "smile")
-shot("L09", mv([0.0, SY - 5.4, 1.2], [0.0, SY, 1.25], 34, [0.0, SY - 5.0, 1.2], [0.0, SY, 1.25], 34), "wide9")
+shot("L09", mv([0.0, SY - 5.7, 1.2], [0.0, SY, 1.25], 34, [0.0, SY - 5.4, 1.2], [0.0, SY, 1.25], 34), "wide9")
 only("L10", ["mom", "dad"])
 seat("mom", "L10", MX, "smile")
 seat("dad", "L10", DX_, "smile")
 shot("L10", mv([0.1, -0.7, 2.0], [0.0, 3.0, 1.2], 34, [0.05, -0.2, 1.95], [0.0, 3.0, 1.2], 34), "pizzaclose")
-seat("mom", "L10.1", -0.3, "sad-smile", arms=[0, 70], side=[0, -12])
-seat("dad", "L10.1", 0.3, "sad-smile", arms=[70, 0], side=[-12, 0])
+seat("mom", "L10.1", -0.45, "sad-smile", arms=[0, 70], side=[0, -6])
+seat("dad", "L10.1", 0.45, "sad-smile", arms=[70, 0], side=[-6, 0])
+look("L10.1", "roomdim", 0.6)
 cue("L10.1", "pie", v=0.0)
-move("L10.1", "slice", dur=0.5, x=-0.12, y=2.55, z=0.99)
-move("L10.1+0.7", "slice", dur=0.5, x=0.12, y=2.55, z=0.99)
-shot("L10.1", mv([0.0, 1.2, 2.6], [0.0, 2.6, 0.95], 36, [0.0, 1.5, 2.45], [0.0, 2.6, 0.95], 36), "nudge")
+move("L10.1", "slice", dur=0.5, x=-0.12, y=2.7, z=0.99)
+move("L10.1+0.7", "slice", dur=0.5, x=0.12, y=2.7, z=0.99)
+shot("L10.1", mv([0.0, 0.1, 2.0], [0.0, 2.75, 0.98], 34, [0.0, 0.4, 1.95], [0.0, 2.75, 0.98], 34), "nudge")
 
 # ===================================================================== 04 the dark lot (L11 to L15)
 look("L11", "lot")
 cue("L11", "pie", v=1.0)
 only("L11", ["mom", "dad"])
-put("mom", "L11", [LX - 0.5, CY - 1.2, 0.0], 0, expr="smile")
-put("dad", "L11", [LX + 0.5, CY - 1.2, 0.0], 0, expr="smile")
-go("mom", "L11>", [LX - 0.5, CY - 6.0, 0.0], expr="smile")
-go("dad", "L11>", [LX + 0.5, CY - 6.0, 0.0], expr="smile")
-shot("L11", mv([LX, 3.6, 1.45], [LX, CY - 3.5, 1.35], 62, [LX, 4.4, 1.45], [LX, CY - 3.5, 1.35], 60), "lot11", step=1)
+put("mom", "L11", [LX - 0.65, CY - 4.6, 0.0], 0, expr="smile")
+put("dad", "L11", [LX + 0.65, CY - 4.6, 0.0], 0, expr="smile")
+go("mom", "L11>", [LX - 0.65, CY - 5.3, 0.0], expr="smile")
+go("dad", "L11>", [LX + 0.65, CY - 5.3, 0.0], expr="smile")
+shot("L11", mv([LX, 6.9, 1.45], [LX, CY - 4.4, 1.25], 26, [LX, 7.2, 1.45], [LX, CY - 4.6, 1.25], 26), "lot11", step=1)
 only("L12", ["mom", "dad"])
-put("mom", "L12", [LX - 0.5, CY - 1.9, 0.0], 0, expr="warm")
-put("dad", "L12", [LX + 0.5, CY - 1.9, 0.0], 0, expr="warm")
+put("mom", "L12", [LX - 0.65, CY - 5.3, 0.0], 0, expr="warm")
+put("dad", "L12", [LX + 0.65, CY - 5.3, 0.0], 0, expr="warm")
 cue("L12", "moths", v=1.0, dur=0.4)
-shot("L12", mv([LX, CY - 6.0, 1.45], [LX, CY - 1.9, 1.25], 34, [LX, CY - 5.6, 1.45], [LX, CY - 1.9, 1.25], 34), "moth12")
+shot("L12", mv([LX, 6.9, 1.45], [LX, CY - 5.3, 1.3], 26, [LX, 7.2, 1.45], [LX, CY - 5.3, 1.3], 26), "moth12")
 cue("L13-0.1", "moths", v=0.0, dur=0.3)
 only("L13", ["me"])
 put("me", "L13", [LX + 0.1, CY - 2.2, 0.0], 0, expr="worried")
@@ -309,35 +313,38 @@ shot("L15", fr(0.2, SY, 1.15, 3.3, 34, dx=-0.2), "meknow")
 only("P01", [])
 shot("P01", mv([GX - 0.4, 0.6, 1.9], [GX, GY, 1.45], 40, [GX - 0.2, 1.0, 1.85], [GX, GY, 1.45], 40), "gumdrop")
 only("L16", ["mom", "me"])
-put("me", "L16", [GX - 1.6, 2.45, 0.0], 0, expr="neutral")
-put("mom", "L16", [GX - 0.65, 2.45, 0.0], 0, expr="sad-smile")
-shot("L16", mv([GX - 1.0, 2.45 - 5.0, 1.2], [GX - 1.0, 2.45, 1.2], 30, [GX - 1.0, 2.45 - 4.6, 1.2], [GX - 1.0, 2.45, 1.2], 30), "gum16")
+put("me", "L16", [GX - 1.15, 2.45, 0.0], 0, expr="neutral")
+put("mom", "L16", [GX - 0.55, 2.45, 0.0], 0, expr="sad-smile")
+shot("L16", mv([GX - 0.44, 2.45 - 5.4, 1.2], [GX - 0.44, 2.45, 1.2], 34, [GX - 0.44, 2.45 - 5.2, 1.2], [GX - 0.44, 2.45, 1.2], 34), "gum16")
 look("L17-0.1", "gum", 0.6)
 only("L17", ["mom"])
-put("mom", "L17", [GX - 0.65, 2.45, 0.0], 0, expr="sheepish" if False else "sad-smile")
+put("mom", "L17", [GX - 0.55, 2.45, 0.0], 0, expr="sheepish" if False else "sad-smile")
 glow("L17-0.1", "mom", BASE)
-glow("L17.1-0.8", "mom", 2.2, 0.6)
+glow("L17.1-0.8", "mom", 1.8, 0.6)
 glow("L17.2+0.1", "mom", BASE, 0.7)
-shot("L17", fr(GX - 0.65, 2.45, 1.3, 3.2, 34, dx=0.15, dz=-0.1), "momflare")
-shot("L17.1", mv([GX - 0.7, -1.4, 1.5], [GX - 0.5, 3.0, 1.35], 30, [GX - 0.6, -0.9, 1.5], [GX - 0.5, 3.0, 1.35], 30), "shadows")
+shot("L17", fr(GX - 0.55, 2.45, 1.3, 3.2, 34, dx=0.15, dz=-0.1), "momflare")
+put("mom", "L17.1", [GX - 1.65, 2.45, 0.0], 0, expr="sad-smile")
+cue("L17", "gshadow", v=1.0)
+shot("L17.1", mv([GX + 0.5, -1.4, 1.3], [GX + 0.5, 3.2, 1.2], 26, [GX + 0.45, -0.9, 1.3], [GX + 0.45, 3.2, 1.2], 26), "shadows")
 only("L18", ["mom"])
-put("mom", "L18", [GX - 0.65, 2.45, 0.0], 0, expr="sad-smile", arms=[0, 0])
+cue("L18", "gshadow", v=0.0)
+put("mom", "L18", [GX - 0.55, 2.45, 0.0], 0, expr="sad-smile", arms=[0, 0])
 beat("mom", "L18.1", arms=[0, 112], side=[0, -28])
-shot("L18", fr(GX - 0.65, 2.45, 1.3, 3.2, 34, dx=-0.1, dz=-0.1), "momsh")
+shot("L18", fr(GX - 0.55, 2.45, 1.3, 3.2, 34, dx=-0.1, dz=-0.1), "momsh")
 look("L18.1", "room", 0.8)
 look("L19", "lot")
 glow("L19", "mom", BASE)
 only("L19", ["dad", "me"])
-put("me", "L19", [LX + 0.45, CY - 2.0, 0.0], 0, expr="neutral")
-put("dad", "L19", [LX - 0.5, CY - 2.0, 0.0], 0, expr="sad-smile")
-shot("L19", mv([LX, CY - 6.7, 1.3], [LX, CY - 2.0, 1.25], 34, [LX, CY - 6.2, 1.3], [LX, CY - 2.0, 1.25], 34), "dadme19")
+put("me", "L19", [LX + 0.65, CY - 4.6, 0.0], 0, expr="neutral")
+put("dad", "L19", [LX - 0.65, CY - 4.6, 0.0], 0, expr="sad-smile")
+shot("L19", mv([LX, 6.7, 1.3], [LX, CY - 4.6, 1.25], 26, [LX, 7.0, 1.3], [LX, CY - 4.6, 1.25], 26), "dadme19")
 only("L20", ["dad"])
-put("dad", "L20", [LX, CY - 2.0, 0.0], 0, expr="sad-smile", arms=[0, 0])
+put("dad", "L20", [LX - 0.9, CY - 4.6, 0.0], 0, expr="sad-smile", arms=[0, 0])
 glow("L20-0.1", "dad", BASE)
-glow("L20", "dad", 1.15, 0.6)
+glow("L20", "dad", 1.7, 0.6)
 glow("L20.1+0.2", "dad", BASE, 0.7)
 beat("dad", "L20.1", arms=[0, 112], side=[0, -28])
-shot("L20", fr(LX, CY - 2.0, 1.3, 3.2, 34, dx=0.15, dz=-0.1), "dadflare")
+shot("L20", fr(LX - 0.5, CY - 4.6, 1.3, 3.8, 30, dx=0.0, dz=-0.1), "dadflare")
 only("L21", ["me"])
 put("me", "L21", [LX + 0.1, CY - 2.2, 0.0], 0, expr="wide")
 shot("L21", fr(LX + 0.1, CY - 2.2, 1.3, 3.2, 34, dx=-0.2), "mestun")
@@ -345,7 +352,7 @@ shot("L21", fr(LX + 0.1, CY - 2.2, 1.3, 3.2, 34, dx=-0.2), "mestun")
 # ===================================================================== 06 the reveal (L22 to L27)
 look("L22", "room")
 only("L22", [])
-shot("L22", mv([-1.6, 0.4, 1.75], [1.6, 3.2, 1.1], 34, [-1.2, 0.6, 1.7], [1.6, 3.2, 1.1], 34), "emptybooth")
+shot("L22", mv([3.8, 0.2, 1.5], [2.4, 3.4, 0.9], 34, [3.5, 0.5, 1.45], [2.4, 3.4, 0.9], 34), "emptybooth")
 duo("L23", "fish", "fish")
 only("L23", ["mom"])
 seat("mom", "L23", 0.0, "fish")
@@ -354,9 +361,9 @@ only("L23.1", ["dad"])
 seat("dad", "L23.1", 0.0, "fish")
 shot("L23.1", fr(0.0, SY, 1.3, 2.8, 34, dx=-0.1), "dadfish")
 duo("L24", "polite", "polite", head=[0, 8])
-shot("L24", mv([2.4, 0.9, 1.5], [0.0, SY, 1.3], 36, [2.1, 1.1, 1.5], [0.0, SY, 1.3], 36), "polite1")
+shot("L24", mv([3.0, -0.2, 1.5], [0.0, SY, 1.3], 36, [2.7, 0.0, 1.5], [0.0, SY, 1.3], 36), "polite1")
 duo("L24.2", "polite", "polite", head=[0, 12])
-shot("L24.2", mv([0.0, SY - 4.5, 1.15], [0.0, SY, 1.15], 34, [0.0, SY - 4.1, 1.15], [0.0, SY, 1.15], 34), "reveal", hand=0.006)
+shot("L24.2", mv([0.0, SY - 5.0, 1.15], [0.0, SY, 1.15], 34, [0.0, SY - 4.6, 1.15], [0.0, SY, 1.15], 34), "reveal", hand=0.006)
 only("L25", [])
 shot("L25", mv([-0.35, 1.3, 1.5], [0.0, 2.8, 1.0], 36, [0.3, 1.6, 1.35], [0.0, 2.8, 1.0], 36), "pizza25")
 only("L26", ["me"])
@@ -368,31 +375,31 @@ shot("L27", fr(0.0, SY, 1.3, 2.9, 34, dx=0.1), "momsock")
 
 # ===================================================================== 07 the warm turn (L28 to L33)
 trio("L28", "sad-smile", "sad-smile", "smile")
-shot("L28", mv([0.0, SY - 5.5, 1.2], [0.0, SY, 1.25], 34, [0.0, SY - 5.1, 1.2], [0.0, SY, 1.25], 34), "trio28")
+shot("L28", mv([0.0, SY - 5.7, 1.2], [0.0, SY, 1.25], 34, [0.0, SY - 5.4, 1.2], [0.0, SY, 1.25], 34), "trio28")
 trio("L29", "smile", "smile", "neutral")
-shot("L29", mv([3.3, 0.7, 1.45], [0.0, SY, 1.4], 36, [3.0, 0.95, 1.45], [0.0, SY, 1.4], 36), "side29")
+shot("L29", mv([1.9, -1.4, 1.5], [0.0, SY, 1.4], 34, [1.7, -1.0, 1.5], [0.0, SY, 1.4], 34), "side29")
 only("L30", ["me"])
 seat("me", "L30", 0.0, "smile")
-glow("L30", "me", 1.0, 1.2)
+glow("L30", "me", 1.4, 1.2)
 bar("L30", dur=1.2, s=1.0)
 shot("L30", fr(0.0, SY, 1.25, 2.8, 34, dx=0.1), "meglow")
 trio("L31", "smile", "smile", "smile")
-glow("L31", "me", 1.0)
+glow("L31", "me", 1.4)
 cue("L31", "bglow", v=1.0, dur=1.0)
-shot("L31", mv([0.0, SY - 5.4, 1.2], [0.0, SY, 1.25], 34, [0.0, SY - 5.0, 1.2], [0.0, SY, 1.25], 34), "trio31")
-shot("L31.2", mv([-3.0, 0.8, 1.45], [0.0, SY, 1.4], 36, [-2.7, 1.0, 1.45], [0.0, SY, 1.4], 36), "side31")
-trio("L32", "laugh", "laugh", "smile")
+shot("L31", mv([0.0, SY - 5.7, 1.2], [0.0, SY, 1.25], 34, [0.0, SY - 5.4, 1.2], [0.0, SY, 1.25], 34), "trio31")
+shot("L31.2", mv([-1.9, -1.4, 1.5], [0.0, SY, 1.4], 34, [-1.7, -1.0, 1.5], [0.0, SY, 1.4], 34), "side31")
+trio("L32", "laugh", "laugh", "smile", sp=0.58)
 cue("L32", "waiter", v=1.0, dur=0.0)
-move("L32", "wa", x=2.6, y=1.4, z=0.88)
-move("L32+0.1", "wa", dur=0.9, x=1.45, y=1.4, z=0.88)
-shot("L32", mv([0.1, SY - 5.4, 1.2], [0.0, SY, 1.25], 34, [0.0, SY - 5.0, 1.2], [0.0, SY, 1.25], 34), "trio32")
+move("L32", "wa", x=2.5, y=2.35, z=1.25)
+move("L32+0.1", "wa", dur=0.9, x=0.9, y=2.55, z=1.01)
+shot("L32", mv([0.3, SY - 5.9, 1.2], [0.3, SY, 1.25], 34, [0.25, SY - 5.6, 1.2], [0.25, SY, 1.25], 34), "trio32")
 cue("L33-0.1", "waiter", v=0.0)
 only("L33", ["me"])
 seat("me", "L33", 0.0, "smile")
 shot("L33", fr(0.0, SY, 1.25, 2.8, 34, dx=-0.1), "mefinal")
 duo("L33.1", "smile", "smile")
 cue("L33.1", "bglow", v=0.0, dur=0.3)
-shot("L33.1", mv([0.0, SY - 4.1, 1.28], [0.0, SY, 1.15], 34, [0.0, SY - 3.55, 1.28], [0.0, SY, 1.15], 34), "loop", hand=0.006)
+shot("L33.1", mv([0.0, SY - 4.6, 1.28], [0.0, SY, 1.15], 34, [0.0, SY - 4.2, 1.28], [0.0, SY, 1.15], 34), "loop", hand=0.006)
 
 # ---------------------------------------------------------------------------------------------- finish
 for k_ in acting.values():
@@ -445,7 +452,7 @@ remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L24.2")], "twist": remap("L21"),
           "emph": [remap("L01.1"), remap("L17.2"), remap("L24.3"), remap("L27.2"), remap("L30")],
-          "hold": [names[n_] for n_ in ("reveal", "wide9", "trio28", "trio31", "trio32", "emptybooth", "lot11")]}
+          "hold": [names[n_] for n_ in ("reveal", "wide9", "trio28", "trio31", "trio32", "emptybooth", "lot11", "hook", "sheep", "duo7", "side8", "moth12", "gum16", "dadme19", "polite1", "side29", "side31", "loop", "nudge", "shadows", "dadflare", "fridge1", "fridge2", "planner")]}
 story = {
     "slug": "ep117-glow-secret",
     "title": "My Parents GLOW In The Dark 💡",
@@ -468,7 +475,7 @@ story = {
     "look": {"style": "closer", "fog": "#d6e0ff", "fog_density": 0.002, "fog_start": 40.0, "sky": "#ffe8c8",
              "sky_strength": 1.0, "exposure": 0.1, "flash_safe": True, "polish": polish},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.012, -0.02], "saturation": 1.1, "contrast": 1.05,
-              "vignette": 0.2, "bloom": 0.25, "grain": 0.008},
+              "vignette": 0.2, "bloom": 0.35, "grain": 0.008},
     "phonemes": {},
     "cast": cast,
     "lines": lines,
@@ -479,7 +486,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": [],
+    "framing_ok": ["S14", "S24"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print({v: k for k, v in names.items()}) if __import__("os").environ.get("NAMES") else None
