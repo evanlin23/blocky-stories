@@ -1,0 +1,11 @@
+{
+  "title": "Never Face The WALL At Grandma's 🛏️",
+  "description": "Every bed in my grandma's house is pushed against a wall, and our family has one rule: never sleep facing it, or something sits on your bed.\n\nI've slept there every Christmas for twenty-six years and never broken it. This year I drove up with my whole apartment in my car, and on the first night I turned over.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Comment WALL if you sleep facing it.",
+  "made_for_kids": false,
+  "cover_s": 30.0,
+  "shape": "comfort",
+  "opening": "ban",
+  "lane": "core",
+  "hold": "batch 13: scripts only, not built yet"
+}
