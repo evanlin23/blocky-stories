@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 17
+REV = 18
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 SPLITS = {"on his LANDLORD'S couch.": [3, 1], "it was a dumb FIGHT,": [3, 2], "in a green ARMCHAIR,": [3, 1],
@@ -640,6 +640,8 @@ sfx = [
     {"at": "L57+0.45", "kind": "whoosh", "db": -21},
     {"at": "L62.3", "kind": "click", "db": -20, "lp": 3000},
     {"at": "L11", "kind": "click", "db": -22},
+    {"at": "L21", "kind": "click", "db": -22, "lp": 3000},
+    {"at": "L51", "kind": "click", "db": -23, "lp": 3000},
     {"at": "L21.1", "kind": "click", "db": -22},
     {"at": "L39", "kind": "hit", "db": -16},
     {"at": "L52+0.9", "kind": "thud", "db": -20},

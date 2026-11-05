@@ -23,7 +23,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 17,
+ "rev": 18,
  "look": {
   "style": "closer",
   "fog": "#e6f2ff",
@@ -8554,6 +8554,18 @@
     "db": -22
    },
    {
+    "at": "L21",
+    "kind": "click",
+    "db": -22,
+    "lp": 3000
+   },
+   {
+    "at": "L51",
+    "kind": "click",
+    "db": -23,
+    "lp": 3000
+   },
+   {
     "at": "L21.3",
     "kind": "click",
     "db": -22
@@ -8580,7 +8592,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 17
+  "rev": 18
  },
  "set_moves": [],
  "clip_ok": [],
