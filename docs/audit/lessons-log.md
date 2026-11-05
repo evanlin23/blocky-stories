@@ -229,6 +229,7 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     every must-fix it can find. Round 2 checks only those fixes and any regressions. A new, non-severe finding in
     round 2 becomes a should-fix, not a block. Pair it with the framing lint so mechanical misses never reach a
     reviewer.
+    → Done 2026-11-05: the owner said "yes, do the review change" (RULES decision 8; critic.md, standards.md, the week skill and the build brief).
 39. **The same engine defaults keep killing stories** (blocky/, #1's). In the last 24 hours:
     - the rule tag sits at a fixed 1.0 m from the camera, so it vanishes in close-ups or lands over a face (ep120, ep116, ep111, ep112);
     - fill lights fade in over 0.3 s after a cut, so the shot opens dark (ep120);
