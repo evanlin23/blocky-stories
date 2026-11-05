@@ -9,7 +9,7 @@
 - **Word count:** 547 spoken words in 69 lines (L01 to L69), all `narrator`, plus one 0.6 s music drop before L28.
 - **Estimated length:** about 124.4 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright spring: pollen-gold air, yellow grass, a pastel town, the old man's front room in deep green and cream with a big window. The 2 a.m. visit (L27 to L38) is the one dark scene, lit blue-white by his TV and the streetlight through the window. The field walk and the last scene are golden afternoon.
-- **Hold:** scripts only (batch 11). Not built, not voiced.
+- **Hold:** none. Built and reviewed (batch 11).
 
 ## Variety table
 The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
