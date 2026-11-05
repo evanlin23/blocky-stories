@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig = json.loads((HERE / "lines.json").read_text())
 lines, CM = T.split_lines(orig)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L34")
@@ -63,7 +63,7 @@ def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="sol
 
 cast = {
     "me": person("#8a5a3a", "#3fa66a", "#8d93a0", "#f2eadb", hair="spiky", hair_c="#17100c", extras=["hooddown"], brow_w=1.5),
-    "dad": person("#855536", "#c8473a", "#3a4560", "#2a2a30", hair="cap", hair_c="#a0a0a8", pattern="plaid",
+    "dad": person("#855536", "#c8473a", "#3a4560", "#2a2a30", hair="cap", hair_c="#7c7c86", pattern="plaid",
                   pattern_c="#6e1c18", brow_w=1.7, width=1.04),
     "grandma": person("#9a6a48", "#f4ecf6", "#f4ecf6", "#7fd8b8", hair="cap", hair_c="#fbfbff", extras=["glasses"],
                       glasses_c="#e6c050", eyes="lashes", height=0.72),
@@ -114,6 +114,13 @@ def sit(pos, yaw, expr="neutral", z=0.0, **kw):
     return stand(pos, yaw, expr, z, **kw)
 
 
+def grandma_in_bed():
+    """Grandma on her own bed (centre line GBX, head to the pillow at y 8.95), head turned to the east wall."""
+    h = cast["grandma"].get("height", 1.0)
+    return {"pos": [G.GBX, 8.95 - 1.571 * h, 0.70], "yaw": 0.0, "expr": "neutral", "lean": -84.0, "head": [90, 0], "arms": [0, 0],
+            "side": [0, 0], "blink": False, "look": [0, 0]}
+
+
 def shot(at, camera, name, look="N", cast_=None, step=2, **meta):
     SH.append({"at": at, "cam": camera, "name": name, "look": look, "cast": cast_ or {}, "step": step, "meta": meta})
 
@@ -139,7 +146,7 @@ HIDE_SPW = ["w_sp_W", "fl_N"]
 NIGHT = "N"
 
 # ---------------------------------------------------------------------------------------------- 01 the rule (L01, L02)
-shot(0, fc(HS, 1.0, 180, 0.46, 30), "S01a face", "N", {"me": lying("me", -90)}, hide=HIDE_SPW)
+shot(0, fc(HS, 1.0, 180, 0.46, 30, up=0.0), "S01a face", "N", {"me": lying("me", -90)}, hide=HIDE_SPW)
 shot(Raw(f"L01.{CM['L01'][0] + 1}"), fc(HS, 1.0, 180, 0.62, 42, up=0.0), "S01b eyes", "N", {"me": lying("me", -90)}, hide=HIDE_SPW)
 shot("L02", G.orbit((-3.2, 2.3, 0.75), 2.6, 215, 0.25, 28), "S02 edge", "N", {"me": lying("me", -90)}, hide=HIDE_SPW)
 # ---------------------------------------------------------------------------------------------- 02 the rule at work (L03 to L08)
@@ -166,14 +173,14 @@ shot("L13", fc((KX + 1.4, 4.05, 1.131), 0.72, 270, 0.4, 35), "S13a Grandma stove
 shot("L13.2", fc((KX + 3.0, 3.95, 1.35), 1.0, 270, 0.4, 35), "S13b me", "K",
      {"me": sit((KX + 3.0, 3.95), 0, "sad-smile", z=-0.22)}, sit={"me": 85})
 shot("L14", fc((0.7, G.DOOR_Y, 1.571), 1.0, 180, 0.36, 26, up=0.0), "S14 Dad", "D",
-     {"dad": stand((0.7, G.DOOR_Y), -90, "smile")}, hide=["w_sp_E", "w_sp_W"], door_sp=85)
+     {"dad": stand((0.7, G.DOOR_Y), -90, "smile")}, hide=["w_sp_E", "w_sp_W"], door_sp=85, door_dd=88)
 shot("L15", fc(HS, 1.0, 348, 0.42, 35, up=0.1), "S15 boxes", "N", {"me": lying("me", 90)}, quilt="lump")
 # L16: I roll over to face the wall; the tag ticks to 1
 shot("L16", fc(HS, 1.0, 180, 0.44, 35, up=0.1), "S16a roll", "N", {"me": lying("me", 90, "worried")}, hide=HIDE_SPW, roll=True)
-shot("L16.1", fc(HS, 1.0, 180, 0.5, 38, up=0.08), "S16b tick", "N", {"me": lying("me", -90, "worried", blend=0.5)}, hide=HIDE_SPW)
+shot("L16.1", fc(HS, 1.0, 180, 0.5, 38, up=-0.05), "S16b tick", "N", {"me": lying("me", -90, "worried", blend=0.5)}, hide=HIDE_SPW)
 # ---------------------------------------------------------------------------------------------- night one (L17 to L22)
 CLK = (-2.95, 3.35, 0.68)
-shot("L17", G.orbit(CLK, 0.8, 188, 0.2, 38), "S17a clock", "N", {}, quilt="lump")
+shot("L17", G.orbit(CLK, 1.0, 180, 0.0, 38), "S17a clock", "N", {}, quilt="lump")
 shot("L17.1", fc(HS, 1.0, 180, 0.48, 35, up=0.1), "S17b dip", "N", {"me": lying("me", -90, "shut")}, hide=HIDE_SPW, snap=True)
 shot("L18", [[0, [-3.45, 0.55, 0.62], [-3.5, 2.2, 0.72], 26]], "S18 foot", "N", {"me": lying("me", -90)}, quilt="foot", rim=0)
 shot("L19", fc(HS, 1.0, 180, 0.44, 35, up=0.1), "S19 scared", "N", {"me": lying("me", -90, "scared")}, hide=HIDE_SPW)
@@ -184,14 +191,14 @@ shot("L23", fc((KX + 3.0, 4.25, 1.131), 0.72, 270, 0.36, 35), "S23 pancake", "K"
      {"grandma": stand((KX + 3.0, 4.25), 0, "smile")}, glasses=True, card=True, cake0=True)
 shot("L24", fc((KX + 3.0, 3.95, 1.35), 1.0, 270, 0.4, 35), "S24 me pancake", "K",
      {"me": sit((KX + 3.0, 3.95), 0, "wide", z=-0.22)}, sit={"me": 85}, cake0=True)
-shot("L25", [[0, [G.SX + 0.5, -0.7, 0.62], [G.SX, 0.55, 0.45], 30]], "S25a slippers", "SD",
-     {"grandma": stand((G.SX, 0.42), 180, "neutral", z=0.38)}, card=True, glasses=True)
-shot("L25.1", fc((G.SX, 1.0, G.STEP_RISE * 4 + 1.131), 0.72, 90, 0.4, 35), "S25b Grandma stair", "SD",
-     {"grandma": stand((G.SX, 1.0), 180, "worried", z=G.STEP_RISE * 4)}, card=True, glasses=True)
+shot("L25", [[0, [G.SX + 1.15, -0.1, 0.62], [G.SX, 0.42, 0.62], 30]], "S25a slippers", "SD",
+     {"grandma": stand((G.SX, 0.42), 180, "neutral", z=0.38)}, card=True, glasses=True, hide=["s_E"], noskirt=True)
+shot("L25.1", fc((G.SX, 1.0, G.STEP_RISE * 4 + 1.131), 0.72, 270, 0.4, 35, up=0.05), "S25b Grandma stair", "SD",
+     {"grandma": stand((G.SX, 1.0), 0, "worried", z=G.STEP_RISE * 4)}, card=True, glasses=True)
 # ---------------------------------------------------------------------------------------------- night two (L26 to L30)
 shot("L26", fc(HS, 1.0, 180, 0.44, 35, up=0.1), "S26 roll", "N", {"me": lying("me", 90, "worried")}, hide=HIDE_SPW, roll=True)
-shot("L26.1", fc(HS, 1.0, 180, 0.5, 38, up=0.08), "S26b tick", "N", {"me": lying("me", -90, "worried", blend=0.5)}, hide=HIDE_SPW)
-shot("L27", G.orbit(CLK, 0.8, 188, 0.2, 38), "S27a clock", "N", {}, quilt="lump")
+shot("L26.1", fc(HS, 1.0, 180, 0.5, 38, up=-0.05), "S26b tick", "N", {"me": lying("me", -90, "worried", blend=0.5)}, hide=HIDE_SPW)
+shot("L27", G.orbit(CLK, 1.0, 180, 0.0, 38), "S27a clock", "N", {}, quilt="lump")
 shot("L27.1", [[0, [-3.45, 0.55, 0.62], [-3.5, 2.3, 0.72], 26]], "S27b knees", "N", {"me": lying("me", -90)}, quilt="knee")
 shot("L28", fc((HS[0], 3.0, 0.8), 1.0, 180, 0.42, 35, up=0.12), "S28 shoulder", "N", {"me": lying("me", -90, "scared")}, hide=HIDE_SPW, quilt="shoulder")
 shot("L29", [[0, [-3.0, 1.9, 1.15], [-3.6, 2.65, 0.95], 50]], "S29 dent", "N", {"me": lying("me", -90)}, quilt="shoulder")
@@ -202,36 +209,37 @@ shot("L32", fc(HS, 1.0, 180, 0.6, 40, up=0.02), "S32 breathing", "N", {"me": lyi
 shot("L33", fc(HS, 1.0, 180, 0.44, 35, up=0.1), "S33 turn", "N", {"me": lying("me", -90, "scared")}, hide=HIDE_SPW, pillow="dent", turn=True)
 shot("P01", [[0, [-2.0, 1.1, 1.0], [-3.2, 3.0, 0.7], 28]], "drop", "N", {"me": lying("me", 90, blend=0.8)}, quilt="lump", pillow="dent")
 GRAN = (-3.35, 3.1)
+SCARE_RIM, SCARE_FILL, SCARE_G = 1500, 1.8, 0.5
 shot("L34", G.orbit((GRAN[0], GRAN[1], 1.28), 1.6, 180, 0.0, 32, tz=1.02), "S34 face", "N",
-     {"grandma": stand(GRAN, -90, "blank", z=0.06, lean=8)}, hide=HIDE_SPW, rim=6000, fill=2.4, sit={"grandma": 90})
-shot("L35", G.orbit((GRAN[0], GRAN[1], 1.3), 1.25, 180, 0.0, 30, tz=1.05), "S35 closer", "N",
-     {"grandma": stand(GRAN, -90, "blank", z=0.06, lean=8)}, hide=HIDE_SPW, rim=6000, fill=2.4, sit={"grandma": 90})
+     {"grandma": stand(GRAN, -90, "blank", z=0.06, lean=8)}, hide=HIDE_SPW, rim=SCARE_RIM, fill=SCARE_FILL, gmul=SCARE_G, sit={"grandma": 90})
+shot("L35", G.orbit((GRAN[0], GRAN[1], 1.3), 1.5, 180, 0.0, 36, tz=1.05), "S35 closer", "N",
+     {"grandma": stand(GRAN, -90, "blank", z=0.06, lean=8)}, hide=HIDE_SPW, rim=SCARE_RIM, fill=SCARE_FILL, gmul=SCARE_G, sit={"grandma": 90})
 shot("L36", fc(HS, 1.0, 348, 0.44, 35, up=0.1), "S36 squeeze", "N", {"me": lying("me", 90, "squeeze")}, quilt="lump")
-shot("L37", [[0, [-3.3, 0.3, 1.0], [-3.4, 2.4, 0.72], 34]], "S37 pat", "N",
-     {"me": lying("me", 90, "squeeze"), "grandma": stand((-3.0, 2.3), -90, "neutral", z=0.06)}, quilt="lump", sit={"grandma": 90})
+shot("L37", [[0, [-2.2, 0.9, 1.45], [-3.5, 2.6, 0.85], 32]], "S37 pat", "N",
+     {"me": lying("me", 90, "squeeze"), "grandma": stand((-3.0, 2.3), -90, "neutral", z=0.06, arms=[0, 55])}, quilt="lump", sit={"grandma": 90})
 shot("L38", [[0, [-1.5, 1.2, 0.3], [-1.9, 2.6, 0.05], 30]], "S38 stripe", "N",
      {"grandma": stand((-2.9, 2.6), 90, "neutral")}, quilt="lump", door_sp=14)
-shot("L39", [[0, [0.3, 1.0, 0.3], [-0.4, 3.0, 0.05], 30]], "S39 slippers", "D", {}, slippers=True, door_sp=85, hide=[])
+shot("L39", [[0, [-0.2, 2.35, 0.78], [-0.21, 3.4, 0.05], 36]], "S39 slippers", "D", {}, slippers=True, door_sp=85, hide=[])
 shot("L40", fc((KX + 3.0, 3.95, 1.35), 1.0, 270, 0.4, 35), "S40 me pancake", "K",
      {"me": sit((KX + 3.0, 3.95), 0, "worried", z=-0.22)}, sit={"me": 85}, cake0=True)
 # ---------------------------------------------------------------------------------------------- night four (L41 to L50)
 shot("L41", fc(HS, 1.0, 348, 0.42, 35, up=0.1), "S41 awake", "N", {"me": lying("me", 90, "worried")}, quilt="lump")
 shot("L42", [[0, [-3.3, 3.0, 1.05], [0.7, 2.6, 0.95], 24]], "S42 across", "NDAD", {}, quilt="lump", door_sp=60, hide=[])
-shot("L43", [[0, [0.0, 2.6, 1.1], [3.7, 2.9, 0.8], 30]], "S43 Dad back", "NDAD", {"dad": lying("dad", 90, bed="dad")}, door_dd=85)
+shot("L43", [[0, [1.4, 1.9, 1.5], [3.7, 3.0, 0.85], 28]], "S43 Dad back", "NDAD", {"dad": lying("dad", 90, bed="dad")}, door_dd=85)
 GD = (2.9, 2.75)
-shot("L44", [[0, [0.3, 2.7, 1.0], [3.12, 2.75, 0.85], 32]], "S44 buttons", "NDAD",
-     {"dad": lying("dad", 90, bed="dad"), "grandma": stand(GD, -90, "neutral", z=0.04)}, card=True, sit={"grandma": 80}, door_dd=90)
-shot("L45", fc((GD[0], GD[1], 1.15), 0.72, 180, 0.34, 40, up=0.08), "S45 reveal", "NDAD",
-     {"dad": lying("dad", 90, bed="dad"), "grandma": stand(GD, -90, "warm", z=0.04)}, card=True, sit={"grandma": 80}, door_dd=90)
-shot("L46", fc((GD[0], GD[1], 1.15), 0.72, 180, 0.5, 35, up=0.06), "S46 face", "NDAD",
+shot("L44", [[0, [0.8, 3.4, 1.6], [3.2, 2.7, 0.8], 26]], "S44 buttons", "NDAD",
+     {"dad": lying("dad", 90, bed="dad"), "grandma": stand(GD, -90, "neutral", z=0.04)}, card=True, sit={"grandma": 80}, door_dd=90, hide=["w_dd_W", "w_dd_N"])
+shot("L45", [[0, [1.0, 3.45, 1.35], [3.1, 2.9, 1.0], 32]], "S45 reveal", "NDAD",
+     {"dad": lying("dad", 90, bed="dad"), "grandma": stand(GD, -90, "warm", z=0.04)}, card=True, sit={"grandma": 80}, door_dd=90, hide=["w_dd_W", "w_dd_N"])
+shot("L46", fc((GD[0], GD[1], 1.15), 0.72, 180, 0.5, 35, up=-0.07), "S46 face", "NDAD",
      {"dad": lying("dad", 90, bed="dad"), "grandma": stand(GD, -90, "warm", z=0.04)}, card=True, sit={"grandma": 80}, door_dd=90)
 shot("L47", fc((-1.1, G.DOOR_Y, 1.571), 1.0, 0, 0.44, 28), "S47 me doorway", "NDAD",
-     {"me": stand((-1.1, G.DOOR_Y), 90, "wide")}, hide=["w_sp_E"], door_sp=85)
+     {"me": stand((-1.1, G.DOOR_Y), 90, "wide")}, hide=["w_sp_E"], door_sp=85, door_dd=88)
 shot("L48", fc((EX, 5.1, 1.571), 1.0, 270, 0.42, 33), "S48a Ro", "E", {"ro": stand((EX, 5.1), 0, "worried")})
 shot("L48.1", fc((KX + 3.0, 3.95, 1.35), 1.0, 270, 0.42, 35), "S48b Ezra", "K",
      {"ezra": sit((KX + 3.0, 3.95), 0, "worried", z=-0.22)}, sit={"ezra": 85})
 shot("L48.2", fc((-1.1, G.DOOR_Y, 1.571), 1.0, 0, 0.44, 28), "S48c me", "NDAD",
-     {"me": stand((-1.1, G.DOOR_Y), 90, "worried")}, hide=["w_sp_E"], door_sp=85)
+     {"me": stand((-1.1, G.DOOR_Y), 90, "worried")}, hide=["w_sp_E"], door_sp=85, door_dd=88)
 shot("L49", fc((GD[0], GD[1], 1.1), 0.72, 180, 0.42, 35, up=0.14), "S49 hand", "NDAD",
      {"dad": lying("dad", 90, bed="dad"), "grandma": stand(GD, -90, "warm", z=0.04, arms=[0, 62])}, card=True, sit={"grandma": 80}, door_dd=90)
 shot("L50", fc((GD[0], GD[1], 1.15), 0.72, 190, 0.4, 35, up=0.1), "S50 sits", "NDAD",
@@ -239,10 +247,10 @@ shot("L50", fc((GD[0], GD[1], 1.15), 0.72, 190, 0.4, 35, up=0.1), "S50 sits", "N
 shot("L51", G.orbit((EX + 3.4, 1.0, 0.9), 6.0, 215, 0.8, 28), "S51 car prints", "E", {}, cargo=True)
 shot("L52", [[0, [G.SX, 2.2, 2.2], [G.SX, 0.5, 1.05], 30]], "S52 stair", "SN",
      {"grandma": stand((G.SX, 0.5), 180, "worried", z=G.STEP_RISE * 2 - 0.04, arms=[0, 20])}, card=True, sit={"grandma": 80}, door_dd=90)
-shot("L53", [[0, [0.0, 2.6, 1.1], [3.7, 2.9, 0.8], 30]], "S53 Dad wall", "NDAD", {"dad": lying("dad", 90, bed="dad")}, door_dd=85)
+shot("L53", [[0, [1.4, 1.9, 1.5], [3.7, 3.0, 0.85], 28]], "S53 Dad wall", "NDAD", {"dad": lying("dad", 90, bed="dad")}, door_dd=85)
 shot("L54", fc(HS, 1.0, 348, 0.42, 35, up=0.1), "S54 me", "N", {"me": lying("me", 90, "neutral")}, quilt="lump")
-shot("L55", fc((-1.1, G.DOOR_Y, 1.571), 1.0, 0, 0.46, 28), "S55 me", "NDAD", {"me": stand((-1.1, G.DOOR_Y), 90, "hopeful")},
-     hide=["w_sp_E"], door_sp=85)
+shot("L55", fc((-1.1, G.DOOR_Y, 1.571), 1.0, 0, 0.46, 28, up=0.0), "S55 me", "NDAD", {"me": stand((-1.1, G.DOOR_Y), 90, "hopeful")},
+     hide=["w_sp_E"], door_sp=85, door_dd=88)
 shot("L56", [[0, [0.0, 1.0, 0.22], [0.0, 2.6, 0.08], 30]], "S56 socks", "N",
      {"me": stand((-0.35, 2.55), 90, "neutral")}, door_sp=85, hide=[])
 shot("L57", fc((GD[0], GD[1], 1.571 - 0.35), 1.0, 180, 0.34, 32, up=0.0), "S57 me on bed", "NDAD",
@@ -251,20 +259,20 @@ shot("L58", fc((GD[0], GD[1], 1.571 - 0.35), 1.0, 175, 0.4, 35, up=0.0), "S58 me
      {"dad": lying("dad", 90, bed="dad"), "me": stand(GD, -90, "neutral", z=-0.1)}, sit={"me": 80}, door_dd=90)
 shot("L59", fc(HD, 1.0, 0, 0.44, 35, up=0.1), "S59 Dad", "NDAD", {"dad": lying("dad", 90, "worried", bed="dad")},
    hide=["w_dd_E"], quilt="lump")
-shot("L60", fc(HD, 1.0, 180, 0.44, 35, up=0.1), "S60 Dad turns", "NDAD", {"dad": lying("dad", 90, "worried", bed="dad")}, turn_dad=True)
-shot("L61", fc((KX + 3.0, 3.95, 1.4), 1.0, 270, 0.4, 35), "S61 Dad pancake", "K",
+shot("L60", fc(HD, 1.0, 180, 0.44, 35, up=-0.12), "S60 Dad turns", "NDAD", {"dad": lying("dad", 90, "worried", bed="dad")}, turn_dad=True)
+shot("L61", fc((KX + 3.0, 3.95, 1.4), 1.0, 270, 0.4, 35, up=0.0), "S61 Dad pancake", "K",
      {"dad": sit((KX + 3.0, 3.95), 0, "smile", z=-0.22), "me": stand((KX + 4.2, 3.4), -90, "smile", arms=[0, 52])},
      sit={"dad": 85}, cake0=True)
 shot("L62", fc((KX + 1.4, 4.05, 1.571), 1.0, 270, 0.4, 35), "S62 me stove", "K",
      {"me": stand((KX + 1.4, 4.05), 0, "smile")})
-shot("L63", fc((KX + 3.0, 3.95, 1.1), 0.72, 270, 0.38, 35), "S63 wink", "K",
+shot("L63", fc((KX + 3.0, 3.95, 1.1), 0.72, 270, 0.38, 35, up=0.0), "S63 wink", "K",
      {"grandma": sit((KX + 3.0, 3.95), 0, "smile", z=-0.04)}, sit={"grandma": 85}, glasses=True, card=True, wink=True)
 shot("L64", G.orbit((EX + 3.4, 1.0, 0.9), 6.0, 235, 0.8, 28), "S64 car", "E", {}, cargo=False)
 shot("L65", [[0, [0.0, 0.9, 1.15], [0.0, 6.55, 1.1], 30]], "S65 door", "N", {}, door_gr=14, door_sp=85, hide=[])
-shot("L66", [[0, [-0.15, 5.7, 0.95], [1.1, 8.3, 0.7], 30]], "S66 Grandma wall", "N",
-     {"grandma": lying("grandma", 90, "neutral", bed="gr")}, door_gr=14, hide=[], gbed=True)
-shot("L67", fc((0.0, 5.3, 1.571), 1.0, 270, 0.42, 33), "S67 hall me", "N", {"me": stand((0.0, 5.3), 0, "warm")}, door_gr=14, hide=[])
-shot("L68", fc(HS, 1.0, 180, 0.46, 30), "S68 loop", "N", {"me": lying("me", -90)}, hide=HIDE_SPW)
+shot("L66", [[0, [-0.2, 7.9, 1.9], [1.2, 8.75, 0.75], 34]], "S66 Grandma wall", "N",
+     {"grandma": grandma_in_bed()}, door_gr=14, hide=[], gbed=True)
+shot("L67", fc((0.0, 5.3, 1.571), 1.0, 270, 0.42, 33, up=-0.06, dz=0.3), "S67 hall me", "N", {"me": stand((0.0, 5.3), 0, "warm")}, door_gr=14, hide=[])
+shot("L68", fc(HS, 1.0, 180, 0.46, 30, up=0.0), "S68 loop", "N", {"me": lying("me", -90)}, hide=HIDE_SPW)
 
 # ---------------------------------------------------------------------------------------------- finish: ids, acting, cues
 shots, meta_out = [], {}
@@ -405,6 +413,7 @@ story = {
     "grade": {"shadows": [0.01, 0.0, 0.04], "highlights": [0.03, 0.015, -0.01], "saturation": 1.12, "contrast": 1.04,
               "vignette": 0.15, "bloom": 0.2, "grain": 0.006},
     "phonemes": {"Ro": "ɹˈO", "Ezra": "ˈɛzɹə", "Elsie": "ˈɛlsi"},
+    "homophones": {"row": "ro", "at": "it", "asked": "asks", "grandma": "grandmas"},
     "cast": cast,
     "lines": lines,
     "shots": shots,

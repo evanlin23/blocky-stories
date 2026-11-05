@@ -166,7 +166,7 @@ def make_pillow(kit, name, mat, bx, dents=()):
     def fn(x, y):
         u = (x / 0.3) ** 2
         v = ((y - 3.14) / 0.36) ** 2
-        z = 0.52 + 0.10 * max(0.0, 1.0 - (u * 0.7 + v * 0.7) ** 1.3) ** 0.7
+        z = 0.52 + 0.06 * max(0.0, 1.0 - (u * 0.7 + v * 0.7) ** 1.3) ** 0.7
         for cx, cy, dp, sg in dents:
             z += dent(x, y, cx, cy, dp, sg) * (1 if z > 0.55 else 0)
         return max(z, 0.52)
@@ -432,7 +432,7 @@ def build_upstairs(kit):
                 (nx - 0.045, ny - 0.07 * math.sin(a), cz + 0.07 * math.cos(a)), ink)
     # the hands show 2:00: the hour hand at 60 degrees (up and south as seen from the west), the minute hand at 12
     kit.box("clock.hour", (0.008, 0.012, 0.052), (nx - 0.05, ny - 0.026 * math.sin(60 * D2R), cz + 0.026 * math.cos(60 * D2R)), ink,
-            rot=(-60 * D2R, 0, 0))
+            rot=(60 * D2R, 0, 0))
     kit.box("clock.min", (0.008, 0.01, 0.07), (nx - 0.052, ny, cz + 0.035), ink)
     for sy in (-1, 1):   # the two bells and feet
         kit.sphere(f"clock.bell{sy}", 0.03, (nx, ny + sy * 0.075, cz + 0.1), brass, seg=8)
@@ -458,7 +458,7 @@ def build_upstairs(kit):
     groot = kit.empty("bed.gr", (G.GBX + 0.0, G.GY, 0))
     iron_bed(kit, "bed.gr", "bed_gr", groot, white, mattress_mat)
     kit.box("gquilt", (1.0, 1.25, 0.14), (G.GBX, G.GY - 0.15, 0.6), kit.checker("#8fd8bc", "#b6ebd6", 5.0, rough=0.9), bevel=0.05)
-    kit.box("gpillow", (0.55, 0.36, 0.14), (G.GBX, G.GY + 0.75, 0.6), pillow_mat, bevel=0.05)
+    kit.box("gpillow", (0.55, 0.36, 0.1), (G.GBX, G.GY + 0.75, 0.58), pillow_mat, bevel=0.04)
     kit.box("gr.nightstand", (0.42, 0.4, 0.5), (0.35, G.GY + 0.9, 0.25), plastic("#d9a47a", 0.7), bevel=0.02)
     kit.box("gr.glasses", (0.12, 0.04, 0.04), (0.35, G.GY + 0.9, 0.55), plastic("#e6c050", 0.3, spec=0.8))
     kit.box("gr.slipperL", (0.1, 0.22, 0.05), (-0.25, 6.2, 0.025), plastic("#7fd8b8", 0.8), rot=(0, 0, 0.1))
@@ -482,9 +482,11 @@ def build_upstairs(kit):
     grp("pennant", kit.box("pennant.stick", (1.3, 0.025, 0.025), (-2.5, 0.9, 0.03), plastic("#b07c4a", 0.6)))
     # a hall rug and the mint slippers outside my door (morning)
     kit.box("hall.rug", (0.7, 1.4, 0.015), (0.0, 4.6, 0.008), plastic("#e8869e", 0.9, spec=0.03))
-    for sx in (-1, 1):
-        sl = kit.box(f"slip{sx}", (0.1, 0.24, 0.07), (-0.38 + sx * 0.0, G.DOOR_Y + sx * 0.1 + 0.9, 0.04), plastic("#7fd8b8", 0.8), bevel=0.03)
+    cream_s = plastic("#f7edd3", 0.8)
+    for sx in (-1, 1):   # a pair side by side just outside my door, toes toward the door's wall
+        sl = kit.box(f"slip{sx}", (0.11, 0.26, 0.07), (-0.21 + sx * 0.09, 3.4, 0.04), plastic("#7fd8b8", 0.8), bevel=0.03)
         grp("slippers", sl)
+        grp("slippers", kit.box(f"slip{sx}.cuff", (0.07, 0.1, 0.02), (-0.21 + sx * 0.09, 3.47, 0.085), cream_s, bevel=0.008))
     # the stairs' top: a gap in the floor, a banister
     kit.box("rail.top", (0.05, 0.05, 0.9), (0.55, -0.2, 0.45), plastic("#b07c4a", 0.6))
     kit.box("rail.bar", (0.05, 1.0, 0.05), (0.55, -0.7, 0.9), plastic("#b07c4a", 0.6))
@@ -784,6 +786,23 @@ def _first_frame(kit, story):
             kit.sphere(f"grandma.curls2{sx}", 0.18, (sx * 0.56, 0.12, -0.15), curl, gh, seg=8)
         skin = plastic("#9a6a48", 0.5)
         kit.box("grandma.nose", (0.1, 0.08, 0.13), (0, -0.635, -0.05), skin, gh, bevel=0.03)
+    # the wink: a skin lid over one eye with a short dark closed-eye arc, both 1 cm or more proud of the head
+    if gh is not None:
+        import math as _m
+        skin_w = plastic("#a8754f", 0.5)
+        ink_w = plastic("#1c120c", 0.5)
+        W["wink"] = []
+        ang = 22.0
+        ex_, ey_ = 0.62 * _m.sin(ang * D2R), -0.62 * _m.cos(ang * D2R)
+        rr = 0.64
+        px, py = rr * _m.sin(ang * D2R), -rr * _m.cos(ang * D2R)
+        W["wink"].append(kit.box("grandma.lid", (0.28, 0.02, 0.27), (px, py, 0.08), skin_w, gh, rot=(0, 0, ang * D2R), bevel=0.04))
+        rr2 = 0.675
+        for k, (dx, tilt) in enumerate(((-0.065, -14.0), (0.065, 14.0))):
+            lx = rr2 * _m.sin(ang * D2R) + dx * _m.cos(ang * D2R)
+            ly = -rr2 * _m.cos(ang * D2R) + dx * _m.sin(ang * D2R)
+            ob = kit.box(f"grandma.lidline{k}", (0.13, 0.02, 0.035), (lx, ly, 0.08 + 0.012), ink_w, gh, rot=(0, tilt * D2R, ang * D2R))
+            W["wink"].append(ob)
     gt = B("grandma.torso")
     if gt is not None:
         mint = plastic("#7fd8b8", 0.7, spec=0.1)
@@ -804,9 +823,11 @@ def _first_frame(kit, story):
     # Dad: a short gray beard and reading glasses pushed up on his head
     dh = B("dad.headg")
     if dh is not None:
-        gray = plastic("#c9c9cf", 0.8, spec=0.05)
+        gray = plastic("#a2a2ab", 0.8, spec=0.05)
         kit.box("dad.beard", (0.9, 0.12, 0.3), (0, -0.56, -0.47), gray, dh, bevel=0.05)
         kit.box("dad.beardsides", (1.22, 0.5, 0.45), (0, -0.2, -0.33), gray, dh, bevel=0.1)
+        for sx in (-1, 1):   # ears, so a head turned away still reads as a head
+            kit.box(f"dad.ear{sx}", (0.1, 0.16, 0.3), (sx * 0.665, 0.02, -0.02), plastic("#855536", 0.5), dh, bevel=0.03)
         blk = plastic("#2b2b34", 0.4)
         kit.box("dad.rd1", (1.0, 0.05, 0.05), (0, -0.52, 0.5), blk, dh)
         for sx in (-1, 1):
@@ -899,6 +920,10 @@ def animate(kit, story, tl, t, ctx):
         _group(f"plate{i}", True)
     _group("boxes", True)
     W["car"].hide_render = False
+    if W.get("gskirt") is not None:
+        W["gskirt"].hide_render = bool(m.get("noskirt", False))
+    for ob in W.get("wink", []):
+        ob.hide_render = not m.get("wink", False)
     for ob in W.get("gcard", []):
         ob.hide_render = not m.get("card", False)
     # glasses: Grandma's rig extras on by day only
@@ -939,3 +964,7 @@ def _apply_cast_pose(m):
             leg = bpy.data.objects.get(f"{who}.leg{sx}")
             if leg is not None:
                 leg.rotation_euler = (-ang * D2R, 0, 0)
+    sl = m.get("stepleg")
+    leg = bpy.data.objects.get("grandma.leg-1")
+    if leg is not None and sl:
+        leg.rotation_euler = (-sl * D2R, 0, 0)

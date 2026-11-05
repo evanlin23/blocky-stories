@@ -122,7 +122,8 @@
    "w_sp_E",
    "w_sp_W"
   ],
-  "door_sp": 85
+  "door_sp": 85,
+  "door_dd": 88
  },
  "S20": {
   "look": "N",
@@ -215,7 +216,11 @@
   "look": "SD",
   "name": "S25a slippers",
   "card": true,
-  "glasses": true
+  "glasses": true,
+  "hide": [
+   "s_E"
+  ],
+  "noskirt": true
  },
  "S33": {
   "look": "SD",
@@ -314,8 +319,9 @@
    "w_sp_W",
    "fl_N"
   ],
-  "rim": 6000,
-  "fill": 2.4,
+  "rim": 1500,
+  "fill": 1.8,
+  "gmul": 0.5,
   "sit": {
    "grandma": 90
   }
@@ -327,8 +333,9 @@
    "w_sp_W",
    "fl_N"
   ],
-  "rim": 6000,
-  "fill": 2.4,
+  "rim": 1500,
+  "fill": 1.8,
+  "gmul": 0.5,
   "sit": {
    "grandma": 90
   }
@@ -391,7 +398,11 @@
   "sit": {
    "grandma": 80
   },
-  "door_dd": 90
+  "door_dd": 90,
+  "hide": [
+   "w_dd_W",
+   "w_dd_N"
+  ]
  },
  "S56": {
   "look": "NDAD",
@@ -400,7 +411,11 @@
   "sit": {
    "grandma": 80
   },
-  "door_dd": 90
+  "door_dd": 90,
+  "hide": [
+   "w_dd_W",
+   "w_dd_N"
+  ]
  },
  "S57": {
   "look": "NDAD",
@@ -417,7 +432,8 @@
   "hide": [
    "w_sp_E"
   ],
-  "door_sp": 85
+  "door_sp": 85,
+  "door_dd": 88
  },
  "S59": {
   "look": "E",
@@ -436,7 +452,8 @@
   "hide": [
    "w_sp_E"
   ],
-  "door_sp": 85
+  "door_sp": 85,
+  "door_dd": 88
  },
  "S62": {
   "look": "NDAD",
@@ -486,7 +503,8 @@
   "hide": [
    "w_sp_E"
   ],
-  "door_sp": 85
+  "door_sp": 85,
+  "door_dd": 88
  },
  "S69": {
   "look": "N",
