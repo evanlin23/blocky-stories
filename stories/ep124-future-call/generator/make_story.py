@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L26
@@ -170,7 +170,7 @@ shot("S02", "L02", mecam(2.1, 14, 38))
 
 # ===== 02 the rule at work (L03 to L06)
 MX, MY = G.MOM_ROOM
-shot("S03", "L03", cam(MX, MY + 1.25, 1.6, 3.2, 0, 34, cz=1.25))
+shot("S03", "L03", cam(MX + 0.2, MY + 1.0, 1.75, 4.4, 0, 34, cz=1.4))
 UX, UY = G.UNCLE_ROOM
 shot("S04a", "L04", cam(UX, UY + 0.15, 1.15, 3.0, 8, 34, cz=1.3))
 shot("S04b", "L04.4", cam(UX + 0.1, UY - 0.1, 0.15, 1.5, 15, 30, cz=1.25))
@@ -191,7 +191,7 @@ shot("S09", "L09", cam(PH[0], PH[1], PH[2], 1.3, -6, 38, cz=1.35))
 # ===== 04 the call (L10 to L17)
 cue("L10", "btn", p=1.0, dur=0.12)
 cut("me", "L10", (-0.27, 3.1), yaw=-90, expr="smile", arms=[0, 96], head=[0, 0])
-shot("S10a", "L10", cam(PH[0] + 0.3, PH[1], 1.3, 2.0, 0, 40, cz=1.3))
+shot("S10a", "L10", cam(PH[0] + 0.25, PH[1], 1.3, 2.3, 0, 38, cz=1.3))
 cut("me", "L10.1", ME, yaw=0, expr="smile", arms=[0, 0], head=[0, 0])
 mouth("me", "L10.1", "L10.1>", 0.5)
 shot("S10b", "L10.1", mecam(2.2, 0, 36, tx=-0.6))
@@ -203,7 +203,7 @@ shot("S13", "L13", mecam(2.0, -8, 36))
 shot("S14", "L14", mecam(1.7, 8, 36))
 shot("S15", "L15", mecam(1.45, -5, 36))
 cut("me", "L16", ME, yaw=0, expr="neutral", head=[-28, 0])
-shot("S16", "L16", mecam(1.7, 12, 36))
+shot("S16", "L16", mecam(1.7, 12, 36, tx=-0.35))
 cue("L17", "btn", p=1.0)
 shot("S17", "L17", cam(PH[0], PH[1], 1.25, 1.0, -12, 38, cz=1.3))
 
@@ -249,10 +249,10 @@ key("me", "L31.2", ME_NEAR, yaw=0, head=[0, 0], blend=0.4)
 shot("S31", "L31", cam(0.95, 3.35, 1.25, 2.6, 2, 27, cz=1.4))
 key("dad", "L32", expr="laugh", head=[0, -3])
 mouth("dad", "L32", "L32>", 0.4)
-shot("S32", "L32", dadcam(2.1, 6, 36))
+shot("S32", "L32", dadcam(2.1, 6, 36, tx=1.7))
 key("dad", "L33", expr="laugh")
 mouth("dad", "L33", "L33.2", 0.4)
-shot("S33a", "L33", cam(1.3, DAD[1], 1.05, 2.1, 6, 32, cz=1.25))
+shot("S33a", "L33", cam(1.7, DAD[1], 1.05, 2.1, 6, 32, cz=1.25))
 key("me", "L33.2", expr="laugh")
 shot("S33b", "L33.2", cam(ME_NEAR[0], DAD[1], 1.1, 2.0, -6, 32, cz=1.25))
 key("dad", "L34", expr="laugh", head=[0, -4])
@@ -307,6 +307,18 @@ sfx = [
     {"at": "L34", "kind": "creak", "db": -22, "dur": 0.35},
     {"at": "L34.1", "kind": "thud", "db": -20},
     {"at": "L17", "kind": "click", "db": -17},
+    # soft breaths on the line (low band noise, nothing above 4 kHz): slow in L12 to L15, held while I talk (L16, L17),
+    # a shaky pair at L22, a fading one at L24 and L25, a laugh-like triple at L35, gone after the click
+    {"at": "L12", "kind": "breath", "db": -22, "dur": 1.6},
+    {"at": "L13.2", "kind": "breath", "db": -23, "dur": 1.5},
+    {"at": "L14.2", "kind": "breath", "db": -23, "dur": 1.5},
+    {"at": "L15.1", "kind": "breath", "db": -24, "dur": 1.4},
+    {"at": "L22.1", "kind": "breath", "db": -23, "dur": 0.45},
+    {"at": "L22.2", "kind": "breath", "db": -23, "dur": 0.45},
+    {"at": "L24.1", "kind": "breath", "db": -24, "dur": 1.6},
+    {"at": "L25.1", "kind": "breath", "db": -27, "dur": 1.4},
+    {"at": "L35.1", "kind": "breath", "db": -23, "dur": 0.35},
+    {"at": "L35.2", "kind": "breath", "db": -23, "dur": 0.35},
 ]
 music = {
     "root": 52, "mode": "minor", "bpm": 84, "seed": 124,
@@ -322,7 +334,6 @@ music = {
 }
 sound = {
     "floor": "concrete", "steps_db": -26,
-    "ambience": [{"kind": "wind", "from": "L12", "to": "L38", "lufs": -40}],
     "sfx": sfx,
     "music_drops": [{"from": "P01", "to": "P01>"}],
     "rev": REV,
@@ -330,7 +341,6 @@ sound = {
 remap_all(sfx)
 remap_all(music["sections"])
 remap_all(sound["music_drops"])
-remap_all(sound["ambience"])
 polish = {"reveal": [remap("L27")], "twist": remap("L26"),
           "emph": [remap(x) for x in ["L01.3", "L09.2", "L20", "L21.2", "L26.1", "L36.2"]],
           "quiet": [[remap("L39"), remap("L42")]],
@@ -369,7 +379,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "frames_ok": ["S31"],
-    "framing_ok": ["S10a", "S26", "S35", "S42"],
+    "framing_ok": ["S26", "S35", "S42"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

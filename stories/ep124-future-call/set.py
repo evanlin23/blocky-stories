@@ -260,9 +260,11 @@ def build_patio(kit):
     kit.cyl("patio.table", 0.78, 0.05, (mx, ty, 0.73), pl("#fff7e6", 0.45), n=22)
     kit.cyl("patio.tableleg", 0.06, 0.7, (mx, ty, 0.35), pl("#8a8e96", 0.5), n=8)
     chair(kit, "patio.chair", mx, my + 1.25, pl)
-    kit.cyl("umbrella.pole", 0.03, 2.5, (mx + 0.6, ty, 1.25), pl("#cfd2d6", 0.4, spec=0.7), n=8)
-    kit.cyl("umbrella.canopy", 1.75, 0.5, (mx + 0.6, ty, 2.45), kit.emit("#e02a22", 1.0, "umbrellared"), n=14, r2=0.08)
-    kit.cyl("umbrella.rim", 1.77, 0.07, (mx + 0.6, ty, 2.2), kit.emit("#b3231c", 1.0, "umbrellarim"), n=14)
+    ux_ = mx + 0.5
+    kit.cyl("umbrella.pole", 0.035, 2.2, (ux_, ty, 1.1), pl("#cfd2d6", 0.4, spec=0.7), n=8)
+    kit.cyl("umbrella.canopy", 1.15, 0.38, (ux_, ty, 2.3), pl("#c8141a", 0.55, spec=0.15), n=16, r2=0.06)
+    kit.cyl("umbrella.rim", 1.17, 0.05, (ux_, ty, 2.13), pl("#8e0c12", 0.6), n=16)
+    kit.cyl("umbrella.tip", 0.04, 0.12, (ux_, ty, 2.52), pl("#cfd2d6", 0.4, spec=0.7), n=8)
     for k, (dx, dy) in enumerate([(-1.9, 0.0), (2.0, 0.6), (-0.9, 2.0), (1.1, 2.1)]):
         kit.cyl(f"patio.puddle{k}", 0.38, 0.01, (mx + dx, my + dy, 0.09), pl("#6ab4e8", 0.1, spec=0.9), n=16)
     for k in range(2):
@@ -286,7 +288,7 @@ def build_pond(kit):
     for sx in (-1, 1):
         kit.box(f"boat.end{sx}", (0.08, 1.1, 0.36), (ux + sx * 1.42, uy + 0.15, 0.27), g, bevel=0.02)
     kit.box("boat.thwart", (0.32, 1.1, 0.05), (ux, uy + 0.15, 0.47), g)
-    kit.box("boat.water", (0.9, 0.7, 0.012), (ux - 1.0, uy + 0.15, 0.135), pl("#4fa8e0", 0.1, spec=0.9))
+    kit.box("boat.water", (1.1, 0.8, 0.03), (ux - 0.75, uy + 0.15, 0.148), pl("#1e90ff", 0.2, spec=0.5))
     kit.cyl("boat.cup", 0.06, 0.1, (ux - 0.6, uy - 0.05, 0.19), pl("#f2c230", 0.5), n=12)
     kit.box("boat.oar", (2.0, 0.06, 0.03), (ux + 0.2, uy + 0.65, 0.42), pl("#b5733a", 0.6))
 
@@ -383,6 +385,9 @@ def build(kit, story, tl):
     build_pond(kit)
     build_kitchen(kit)
     build_tag(kit)
+    # a constant soft fill on the uncle's face under his hat (never changes)
+    uf = kit.light("ufill", "AREA", (G.UNCLE_ROOM[0] + 0.4, G.UNCLE_ROOM[1] - 2.2, 1.7), 260, "#fff4e4", size=1.6, shadow=False)
+    kit.aim(uf, (G.UNCLE_ROOM[0], G.UNCLE_ROOM[1] + 0.15, 1.05))
     return {}
 
 
@@ -397,6 +402,11 @@ def animate(kit, story, tl, t, ctx):
     if not W.get("inited"):
         _first_frame(kit, story)
     gains = {"sun": 4.2, "fill": 1.2}
+    # the drop (S25b) looks across the bench: keep the rubber chicken out of its foreground
+    cur = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), None)
+    for ob in bpy.data.objects:
+        if ob.name.startswith("chicken."):
+            ob.hide_render = bool(cur and cur["id"] == "S25b")
     # the tag: "1" until the call, then the timer
     tm = sample("timer", tl, t, {"mode": 0.0, "s": 0.0})
     secs = int(round(tm["s"]))
