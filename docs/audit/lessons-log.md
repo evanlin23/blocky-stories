@@ -239,6 +239,15 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     faces, cut-aligned light cues with no fade-in at a cut, the pose applied on frame 0, a camera-in-geometry check in
     preflight, and the caption splitter keeping all words. Each fix removes a whole class of drop.
 
+40. **Proof qa finds what the critic didn't, and by then no round is left.** ep105 (blank frames at S85 and S139), ep116
+    (frame-0 pop and a head cut) and ep121 (four fixes) all had critic and standards approval, then failed proof qa.
+    Several of the misses are mechanical: blank or near-uniform frames, a character missing on frame 0, a head cut
+    at an edge.
+    → A frame lint over the preview (scripts/, report-only, like framing.py) before reviews: near-uniform frames,
+    frame 0 against frame 1 for a pop, and the head-cut check on the rendered frames, not just the geometry. And the
+    proposal in lesson 38 applies to qa too: the proof qa's checklist runs once on the preview, so the critic sees a
+    clean film.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
