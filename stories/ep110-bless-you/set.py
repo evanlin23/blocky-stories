@@ -633,6 +633,14 @@ def _first_frame(kit, story):
     if gh is not None:
         m = kit.plastic("#f4f4f0", 0.9)
         _adopt(gh, kit.box("grandpa.brow", (0.95, 0.07, 0.09), (0, -R - 0.03, 0.15), m, gh, bevel=0.02))
+        # clear pale lenses (the stock glass mirrors the dark room and reads black): see-through, so the eyes show
+        lm = kit.plastic("#dfe8ec", 0.2)
+        lm.node_tree.nodes["Principled BSDF"].inputs["Alpha"].default_value = 0.22
+        for sx in (-1, 1):
+            lo = bpy.data.objects.get(f"grandpa.gl{sx}")
+            if lo is not None:
+                lo.data.materials.clear()
+                lo.data.materials.append(lm)
         _adopt(gh, kit.box("grandpa.tuft", (0.28, 0.06, 0.1), (0, -R - 0.04, -0.36), m, gh, bevel=0.02))
     mh = bpy.data.objects.get("mom.headg")
     if mh is not None:
