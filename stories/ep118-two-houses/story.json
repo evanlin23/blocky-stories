@@ -2,7 +2,7 @@
  "slug": "ep118-two-houses",
  "title": "Our House Leans Toward HIS 🏠",
  "made_for_kids": false,
- "premise": "On our street, when neighbors fight, their houses lean toward each other until they make up. Dad and Mr. Pruitt next door have fought for thirty years, and our house leans eleven feet toward his. One stormy night the upstairs windows end up a foot apart, and at two a.m. I see what really happens there.",
+ "premise": "On our street, when neighbors fight, their houses lean toward each other until they make up. Dad and Mr. Pruitt next door have fought for forty years, and our house leans eleven feet toward his. One stormy night the upstairs windows end up a foot apart, and at two a.m. I see what really happens there.",
  "twist": "The longest lean in town is fake: Dad and Mr. Pruitt are best friends who make up every night at two a.m., passing coffee from window to window, and start a new fight every morning so the houses stay close enough to do it. The rule only counts a fight, never whether you mean it. And now the house across the street is leaning toward ours.",
  "world": "a bright steep street of narrow painted houses, ours butter yellow and Mr. Pruitt's sky blue, a hedge, a picket gate between the yards, and a rainy blue night with two lit windows a foot apart",
  "voice": {
@@ -16,6 +16,10 @@
  "min_read": 0.15,
  "fade_in": false,
  "fade_out": false,
+ "homophones": {
+  "hours": "ours",
+  "watch": "wash"
+ },
  "phonemes": {
   "pruitt": "pɹˈuɪt",
   "wash": "wˈɔʃ",
@@ -32,7 +36,7 @@
   "polish": {
    "emph": [
     "L01",
-    "L03.2",
+    "L02.1",
     "L19",
     "L26",
     "L41"
@@ -223,8 +227,26 @@
    "who": "narrator",
    "chunks": [
     [
-     "Our house leans",
-     "our house leans"
+     "On our street,",
+     "on our street,"
+    ],
+    [
+     "fighting neighbors'",
+     "fighting neighbors'"
+    ],
+    [
+     "houses LEAN.",
+     "houses lean."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Ours leans",
+     "ours leans"
     ],
     [
      "ELEVEN feet",
@@ -237,12 +259,12 @@
    ]
   },
   {
-   "id": "L02",
+   "id": "L03",
    "who": "narrator",
    "chunks": [
     [
-     "Thirty years",
-     "thirty years"
+     "Forty years",
+     "forty years"
     ],
     [
      "of FIGHTING",
@@ -251,28 +273,6 @@
     [
      "did that.",
      "did that."
-    ]
-   ]
-  },
-  {
-   "id": "L03",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Fight your",
-     "fight your"
-    ],
-    [
-     "neighbor here,",
-     "neighbor here,"
-    ],
-    [
-     "and your",
-     "and your"
-    ],
-    [
-     "houses LEAN.",
-     "houses lean."
     ],
     [
      "Make up,",
@@ -349,8 +349,8 @@
      "have fought"
     ],
     [
-     "for thirty YEARS.",
-     "for thirty years."
+     "for forty YEARS.",
+     "for forty years."
     ]
    ]
   },
@@ -848,8 +848,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Thirty years",
-     "thirty years"
+     "Forty years",
+     "forty years"
     ],
     [
      "of FAKE fighting.",
@@ -1046,13 +1046,13 @@
      0,
      [
       -3.333,
-      1.4,
-      1.922
+      1.3,
+      2.452
      ],
      [
       -3.333,
       3.85,
-      1.752
+      1.702
      ],
      40
     ],
@@ -1060,13 +1060,13 @@
      1,
      [
       -3.333,
-      1.8,
-      1.922
+      1.7,
+      2.402
      ],
      [
       -3.333,
       3.85,
-      1.752
+      1.702
      ],
      40
     ]
@@ -1111,7 +1111,7 @@
    "step": 2,
    "hand": 0.004,
    "look": "day",
-   "at": "L01.1",
+   "at": "L02",
    "fill": 0.5
   },
   {
@@ -1149,7 +1149,7 @@
    "step": 2,
    "hand": 0.004,
    "look": "day",
-   "at": "L02",
+   "at": "L03",
    "fill": 0.7
   },
   {
@@ -1187,7 +1187,7 @@
    "step": 2,
    "hand": 0.004,
    "look": "day",
-   "at": "L03"
+   "at": "L03.3"
   },
   {
    "id": "S03b",
@@ -1461,7 +1461,7 @@
      ],
      [
       -3.079,
-      1.5,
+      0.95,
       3.511
      ],
      30
@@ -1475,7 +1475,7 @@
      ],
      [
       -3.079,
-      1.5,
+      0.95,
       3.511
      ],
      30
@@ -1494,30 +1494,30 @@
     [
      0,
      [
-      -2.132,
-      0.2,
-      3.528
+      -3.029,
+      0.25,
+      3.506
      ],
      [
-      -2.132,
-      1.5,
-      3.228
+      -2.83,
+      0.95,
+      3.309
      ],
-     24
+     15
     ],
     [
      1,
      [
-      -2.132,
-      0.4,
-      3.488
+      -2.232,
+      0.25,
+      3.437
      ],
      [
-      -2.033,
-      1.5,
-      3.219
+      -1.834,
+      0.95,
+      3.222
      ],
-     24
+     15
     ]
    ],
    "step": 2,
@@ -1534,13 +1534,13 @@
      0,
      [
       -3.333,
-      1.5,
-      1.982
+      1.3,
+      2.452
      ],
      [
       -3.333,
       3.4,
-      1.682
+      1.702
      ],
      40
     ],
@@ -1548,8 +1548,8 @@
      1,
      [
       -3.333,
-      1.8,
-      1.942
+      1.7,
+      2.402
      ],
      [
       -3.333,
@@ -2096,6 +2096,87 @@
    "hand": 0.004,
    "look": "night",
    "at": "L19",
+   "pl": 0.0,
+   "pk": 0.5,
+   "fill": 0.1
+  },
+  {
+   "id": "S19b",
+   "cam": [
+    [
+     0,
+     [
+      -0.2,
+      -1.9,
+      4.5
+     ],
+     [
+      0.2,
+      0.0,
+      4.4
+     ],
+     48
+    ],
+    [
+     1,
+     [
+      -0.1,
+      -1.6,
+      4.5
+     ],
+     [
+      0.25,
+      0.0,
+      4.4
+     ],
+     48
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L19.1",
+   "pl": 0.0,
+   "pk": 0.5,
+   "fill": 0.1,
+   "armout": true
+  },
+  {
+   "id": "S19c",
+   "cam": [
+    [
+     0,
+     [
+      0.7,
+      -2.2,
+      4.4
+     ],
+     [
+      -0.1,
+      0.0,
+      4.45
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.55,
+      -1.8,
+      4.45
+     ],
+     [
+      -0.15,
+      0.0,
+      4.45
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L19.2",
    "pl": 0.0,
    "pk": 0.5,
    "fill": 0.1,
@@ -3125,28 +3206,28 @@
     [
      0,
      [
-      -1.0,
-      -1.4,
-      1.7
+      -15.0,
+      -15.6,
+      1.8
      ],
      [
-      -0.4,
+      -2.2,
       -15.6,
-      3.6
+      3.4
      ],
      30
     ],
     [
      1,
      [
-      -1.0,
-      -1.7,
-      1.7
+      -14.2,
+      -15.6,
+      1.8
      ],
      [
-      -0.4,
+      -2.2,
       -15.6,
-      3.6
+      3.4
      ],
      30
     ]
@@ -3201,30 +3282,30 @@
     [
      0,
      [
-      -2.222,
+      -2.3455000000000004,
       -3.0,
-      1.65
+      1.7
      ],
      [
-      -2.222,
+      -2.3455000000000004,
       0.0,
-      1.62
+      1.68
      ],
-     23
+     30
     ],
     [
      1,
      [
-      -2.222,
-      -2.7,
-      1.65
+      -2.3455000000000004,
+      -2.6,
+      1.7
      ],
      [
-      -2.222,
+      -2.3455000000000004,
       0.0,
-      1.62
+      1.68
      ],
-     23
+     30
     ]
    ],
    "step": 2,
@@ -3277,13 +3358,27 @@
      0,
      [
       -3.31,
-      1.4,
-      2.076
+      1.3,
+      2.606
      ],
      [
       -3.333,
       3.85,
-      1.752
+      1.702
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -3.31,
+      1.7,
+      2.556
+     ],
+     [
+      -3.333,
+      3.85,
+      1.702
      ],
      40
     ]
@@ -3702,9 +3797,9 @@
    {
     "at": "L42",
     "pos": [
-     -2.667,
-     0.5,
-     0.36
+     -2.568,
+     0.8,
+     0.645
     ],
     "blend": 0,
     "yaw": 0,
@@ -3734,9 +3829,9 @@
    {
     "at": "L43",
     "pos": [
-     -2.667,
-     0.5,
-     0.36
+     -2.568,
+     0.8,
+     0.645
     ]
    },
    {
@@ -3834,12 +3929,12 @@
     "blink": true
    },
    {
-    "at": "L01.1",
+    "at": "L02",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L02",
+    "at": "L03",
     "pos": [
      -3.333,
      3.85,
@@ -3847,7 +3942,7 @@
     ]
    },
    {
-    "at": "L02",
+    "at": "L03",
     "pos": [
      -0.5,
      -1.6,
@@ -3874,7 +3969,7 @@
     "blink": true
    },
    {
-    "at": "L03",
+    "at": "L03.3",
     "hidden": true,
     "blend": 0
    },
@@ -4383,9 +4478,9 @@
    {
     "at": "L42",
     "pos": [
-     -1.777,
-     0.4,
-     0.227
+     -2.123,
+     0.3,
+     0.279
     ],
     "blend": 0,
     "yaw": 0,
@@ -4415,9 +4510,9 @@
    {
     "at": "L43+0.55",
     "pos": [
-     -1.777,
-     0.4,
-     0.227
+     -2.123,
+     0.3,
+     0.279
     ]
    },
    {
@@ -4826,7 +4921,7 @@
     "blink": true
    },
    {
-    "at": "L01.1",
+    "at": "L02",
     "pos": [
      0,
      40,
@@ -4834,7 +4929,7 @@
     ]
    },
    {
-    "at": "L01.1",
+    "at": "L02",
     "pos": [
      1.037,
      0.5,
@@ -4861,12 +4956,12 @@
     "blink": true
    },
    {
-    "at": "L02",
+    "at": "L03",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L02",
+    "at": "L03",
     "pos": [
      1.037,
      0.5,
@@ -4874,7 +4969,7 @@
     ]
    },
    {
-    "at": "L02",
+    "at": "L03",
     "pos": [
      0.5,
      -1.6,
@@ -4901,7 +4996,7 @@
     "blink": true
    },
    {
-    "at": "L03",
+    "at": "L03.3",
     "hidden": true,
     "blend": 0
    },
@@ -5183,6 +5278,26 @@
     "lean": 0,
     "tremble": 0,
     "blink": true
+   },
+   {
+    "at": "L34.1+0.35",
+    "pos": [
+     3.3,
+     -1.0,
+     0
+    ],
+    "expr": "soft",
+    "blend": 0.15
+   },
+   {
+    "at": "L34.1+0.75",
+    "pos": [
+     3.3,
+     -1.0,
+     0
+    ],
+    "expr": "smile",
+    "blend": 0.15
    },
    {
     "at": "L35",
@@ -5644,18 +5759,18 @@
    "deg": 3.0
   },
   {
-   "at": "L03",
+   "at": "L03.2",
    "name": "lean",
    "who": "lilac",
    "deg": 8.0,
-   "dur": 1.2
+   "dur": 1.0
   },
   {
-   "at": "L03",
+   "at": "L03.2",
    "name": "lean",
    "who": "coral",
    "deg": 8.0,
-   "dur": 1.2
+   "dur": 1.0
   },
   {
    "at": "L03.4",
@@ -5689,7 +5804,7 @@
    "at": "L09.1-0.4",
    "name": "marble",
    "ux": 2.5,
-   "y": 1.5
+   "y": 0.95
   },
   {
    "at": "L12.1",
@@ -5825,7 +5940,7 @@
    "scale": 1.0
   },
   {
-   "at": "L35",
+   "at": "L34.1",
    "name": "notebig",
    "on": false,
    "pos": [
@@ -5838,7 +5953,7 @@
    "at": "L41",
    "name": "lean",
    "who": "mint",
-   "deg": 3.2,
+   "deg": 8.0,
    "dur": 0.7
   },
   {
@@ -5868,6 +5983,8 @@
   "S18b",
   "S19a",
   "S19",
+  "S19b",
+  "S19c",
   "S20",
   "S21",
   "S22",
@@ -5982,7 +6099,7 @@
   ],
   "sfx": [
    {
-    "at": "L01.1",
+    "at": "L02.1",
     "kind": "creak",
     "db": -16,
     "dur": 0.9
@@ -6010,9 +6127,25 @@
     "db": -16
    },
    {
-    "at": "L38.1",
+    "at": "L38+0.12",
     "kind": "latch",
-    "db": -18
+    "db": -16
+   },
+   {
+    "at": "L09.1+0.25",
+    "kind": "click",
+    "db": -24
+   },
+   {
+    "at": "L30+0.3",
+    "kind": "bell",
+    "db": -26,
+    "dur": 0.4
+   },
+   {
+    "at": "L41.2+0.1",
+    "kind": "click",
+    "db": -22
    },
    {
     "at": "L40.1",
@@ -6034,7 +6167,7 @@
    }
   ]
  },
- "rev": 12,
+ "rev": 13,
  "clip_ok": [
   "sidehair",
   "sidehair2"

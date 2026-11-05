@@ -266,7 +266,7 @@ def mug(kit, parent, loc, color, name="mug", rot=(0, 0, 0), scale=1.4):
 
 
 def coffee_disc(kit, r_in):
-    c = kit.cyl(nm("coffee"), r_in * 0.92, 0.004, (0, 0, -9), P("#9a5c2c", 0.3, 0.6), None, n=20)
+    c = kit.cyl(nm("coffee"), r_in * 0.97, 0.006, (0, 0, -9), P("#3a1c0c", 0.25, 0.7), None, n=24)
     no_shadow(c)
     return c
 
@@ -614,7 +614,7 @@ def build(kit, story, tl):
     ctx["kitchen"] = build_kitchen(kit, ours, ctx)
     build_hall_bits(kit, ours, his, ctx)
     # marble
-    ctx["marble"] = kit.sphere(nm("marble"), 0.09, (0, 0, -9), P("#3fa0ff", 0.12, 1.0), None, seg=16)
+    ctx["marble"] = kit.sphere(nm("marble"), 0.12, (0, 0, -9), P("#3fa0ff", 0.12, 1.0), None, seg=16)
     ctx["marble"].hide_render = True
     # ---- the porch lamps (outside), kitchen & hall lamps
     ctx["kl"] = kit.light("kitchenl", "POINT", (-ours.sgn * 1.7, 2.3, 2.45), 300, "#fff0d0", size=0.4, parent=ours.root)
@@ -667,7 +667,7 @@ def build_kitchen(kit, ours, ctx):
     K_["juice"] = kit.cyl(nm("juice"), 0.05, 0.13, (-ours.sgn * 3.0, ym, 1.015), P("#ff9a2e", 0.2, 0.8), ours.root, n=16)
     ours.b(ours.root, (2.55, 2.85), (2.63, 2.93), (0.95, 1.32), P("#d7503a", 0.5), "trivet", 0.01)
     K_["dadmug"] = mug(kit, ours.root, (-ours.sgn * 2.7, 2.78, 1.32), "#ffd23a", "dadmug", rot=(0, 0.2, 0), scale=2.3)
-    K_["dadcoffee"] = coffee_disc(kit, 0.037 * 2.3 * 0.85)
+    K_["dadcoffee"] = coffee_disc(kit, 0.037 * 2.3 * 1.05)
     tm = P("#e8b070", 0.5)
     K_["ttop"] = kit.cyl(nm("ttop"), 0.62, 0.06, (0, 0, -9), tm, None, n=28)
     K_["tlegs"] = [kit.box(nm("tleg"), (0.07, 0.07, 0.75), (0, 0, -9), tm, None, bevel=0.01) for _ in range(4)]
@@ -738,6 +738,17 @@ def late(kit, ctx):
             B(hg, (0.16, 0.5, 0.18), (sx * (R - 0.03), 0.3, 0.3), gray, "sidehair2", 0.05)
 
 
+def clear_lenses(kit):
+    """Pruitt's lenses: nearly clear, a faint light glint, so his eyes and his wink read (the glass shader rendered black)."""
+    lens = clear_pane(kit)
+    lens.node_tree.nodes[[n.name for n in lens.node_tree.nodes if n.type == "MIX_SHADER"][0]].inputs["Fac"].default_value = 0.1
+    for ob in bpy.data.objects:
+        if ".gl-1" in ob.name or ".gl1" in ob.name:
+            if "pruitt" in ob.name:
+                ob.data.materials.clear()
+                ob.data.materials.append(lens)
+
+
 def late_hold(kit, ctx):
     """Mugs held on flat palms: one on Mr. Pruitt's night arm, one on Dad's (parented to the rig arms, rig units)."""
     ctx["held"] = {}
@@ -763,6 +774,7 @@ def floor_world(H, ux, y, z):
 def animate(kit, story, tl, t, ctx):
     if not ctx["late"]:
         late(kit, ctx)
+        clear_lenses(kit)
         late_hold(kit, ctx)
         ctx["late"] = True
     hc = cue_at(tl, "hold", t)
@@ -819,7 +831,7 @@ def animate(kit, story, tl, t, ctx):
     dm = K_["dadmug"]
     mwm = dm.matrix_world
     ax = mwm.to_3x3() @ V((0, 0, 1))
-    pt = mwm.translation + ax.normalized() * 0.2
+    pt = mwm.translation + ax.normalized() * 0.185
     K_["dadcoffee"].location = (pt.x, pt.y, pt.z)
     # the table: world-level top, legs on the floor, books under the downhill pair
     a = math.radians(ours.deg)
@@ -874,7 +886,7 @@ def animate(kit, story, tl, t, ctx):
                 ux = ux0 - 0.5 * acc * roll_t * roll_t * (1.0 + 0.5 * min(1.0, roll_t))
                 ux = max(ux, 0.28)
             p = floor_world(ours, ux, yy, fz)
-            mo.location = (p.x, p.y, p.z + 0.07 + h)
+            mo.location = (p.x, p.y, p.z + 0.1 + h)
     else:
         mo.hide_render = True
     # ---- the squirrel
