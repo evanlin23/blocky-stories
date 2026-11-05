@@ -300,10 +300,10 @@ sfx = [s for s in sfx if s["at"] != "L10.2"]
 music = {
     "root": 50, "mode": "major", "bpm": 120, "seed": 108,
     "sections": [
-        {"at": 0, "voices": ["musicbox", "pulse"], "energy": 0.4},
-        {"at": "L11", "voices": ["musicbox", "drone"], "energy": 0.25},
+        {"at": 0, "voices": ["piano", "pulse"], "energy": 0.4},
+        {"at": "L11", "voices": ["piano", "drone"], "energy": 0.25},
         {"at": "L12", "voices": ["drone"], "energy": 0.3},
-        {"at": "L15", "voices": ["musicbox", "pulse", "pad"], "energy": 0.5},
+        {"at": "L15", "voices": ["piano", "pulse", "pad"], "energy": 0.5},
     ],
 }
 sound = {
