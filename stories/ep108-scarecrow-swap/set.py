@@ -406,10 +406,10 @@ def build_kitchen(kit):
         pass
     kit.box("l.win", (1.8, 0.06, 1.3), (lx - 3.5, ly + 5.6, 1.9), kit.emit("#e8f6ff", 2.0, "lwin"))
     # the remote (placed under Grandma's hand in animate)
-    W["remote"] = kit.box("remote", (0.07, 0.2, 0.025), (lx, ly, 0.5), kit.plastic("#2a2a30", 0.5), bevel=0.01)
+    W["remote"] = kit.box("remote", (0.1, 0.28, 0.035), (lx, ly, 0.5), kit.plastic("#2a2a30", 0.5), bevel=0.01)
     for k in range(3):
-        kit.box(f"remote.b{k}", (0.025, 0.025, 0.012), (0, 0, 0), kit.plastic("#ff8c1a", 0.5), W["remote"])
-        W["remote"].children[-1].location = (0, -0.05 + 0.05 * k, 0.016)
+        kit.box(f"remote.b{k}", (0.036, 0.036, 0.016), (0, 0, 0), kit.plastic("#ff8c1a", 0.5), W["remote"])
+        W["remote"].children[-1].location = (0, -0.07 + 0.07 * k, 0.022)
 
 
 def build(kit, story, tl):
@@ -704,10 +704,16 @@ def animate(kit, story, tl, t, ctx):
                 leg = bpy.data.objects.get(f"{who}.leg{sx}")
                 if leg:
                     leg.rotation_euler = (-math.pi / 2 * 0.97, 0, 0)
+    # Grandma's arms are slim (0.75 wide): a raised hand seen end-on stays under a sixth of the frame width
+    for sx in (-1, 1):
+        ga = bpy.data.objects.get(f"grandma.arm{sx}")
+        if ga is not None:
+            ga.scale = (0.75, 1.0, 1.0)
     # the remote: on the cushion under Grandma's right hand
     gm = bpy.data.objects.get("grandma.arm-1")
     rem = W["remote"]
-    if gm is not None and not bpy.data.objects["grandma"].hide_render:
+    if gm is not None and not bpy.data.objects["grandma"].hide_render \
+            and bpy.data.objects["grandma"].location.x > 120:
         bpy.context.view_layer.update()
         hp = gm.matrix_world @ Vector((0, -0.3, -2.0))
         rem.location = (hp.x, hp.y + 0.02, max(0.5, hp.z - 0.03))
