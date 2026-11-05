@@ -1,0 +1,30 @@
+{
+ "stage": "proof",
+ "film": "proof-ep121-blank-fortune",
+ "artifact": 13398409713,
+ "run": 41989825036,
+ "sha": "0edb268eef49a5a8f34fc3649d809775c6cdd5d3",
+ "verdict": "fail",
+ "date": "2026-11-05",
+ "checked": [
+  "frames every 2 s at phone and 1920 TV size (all 36)",
+  "first 3 s frame by frame (90)",
+  "cover 14.65 s",
+  "43-46.5 s and 58.5-62 s caption bands",
+  "62.6-68.5 s pump ending at 10 fps",
+  "tag in every shot, no real words",
+  "loudness, true peak, HF windows, tail",
+  "craft",
+  "flash",
+  "clip",
+  "package and opening",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.1 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 18.4 | 14.0– | ok |\n| macro.motion_energy_q | 6.93 | 6.0– | ok |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 9.41 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.61 | –2.5 | ok |\n| macro.longest_still_s | 0.1 | –1.5 | ok |\n| macro.motion_energy_mean | 2.67 | 1.5– | ok |\n| spec.camera_move_share | 0.998 | 0.65– | ok |\n| spec.punch_per_10s | 0.69 | 0.4– | ok |\n| macro.brightness_mean | 0.526 | 0.35– | ok |\n| macro.brightness_first_3s | 0.735 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.463 | 0.42– | ok |\n| macro.contrast_mean | 0.227 | 0.18– | ok |\n| spec.face_big_share | 0.725 | 0.4– | ok |\n| spec.caption_share | 0.979 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.0 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.739 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.03 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 58.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.77 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0048 | –0.005 | ok |\n| sound.voice_bed_gap_db | 7.5 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0357 | –0.08 | ok |\n| sound.hf_jump_max | 0.0122 | –0.04 | ok |",
+ "notes": "Proof 72.27 s (270x480 drawn, 4 samples) at 0edb268, the branch head and latest story commit. -14.1 LUFS / -1.8 dBTP, LRA 1.6; HF max 0.036, jump 0.012, no scratch; last 0.5 s is music tail at -29 dB, no cutoff. Flash passes (1/s, 3f 3/s, red 0); clip.json 0 hits of 334. Gate OPEN. Opening whatif matches L01; neighbours floor-thirteen (if) and ep99-statue-years (cost) differ.\nSecond one: frame 0 is the pump with a floating cookie and no one there; from frame 1 a lit close-up of me (navy cap, plaid) behind the cookie at the pump, tag top left, 'What if every fortune cookie came true by FRIDAY?' - a clear rule, no threat to me, mystery lands at BLANK 14.6 s.\nFIX 1, 0.00 s S01: the narrator is missing on the very first frame (pops in at 0.033 s); frame 1 must show his face. Key his visibility/pose from frame 0.\nFIX 2, 63.83-64.6 s S64 (L41 'That's ME'): the video-call phone from S62 is still in shot and its screen cuts through the left side of my face (left eye hidden) at the frame edge, and Grandpa stands beside me while still on the call. Drop the phone from S64 or reframe.\nFIX 3, 44.6-46.07 s S48 (L27 'for GRANDMA.') and 60.17-61.83 s S59 (L38 'Grandma WOKE up.'): the caption sits on foreground Grandpa's mustache and mouth; raise his face out of the caption band (or move him up/aside).\nAlso seen, not fails: 65.4-67.4 s S65 two-shot crops both heads at the frame edges and my flat arm reaches into Grandpa's side; 30 s S36 'couldn't SLEEP' is the nightstand, no face. Tag present in every shot, glyphs only; slips are gray bars/blue scribble, no real words or logos; no husband, narrator male. Cover 14.65 s (my stunned face, blank slip, BLANK.) is strong.\nPolish on (emph, reveal L24, quiet, camera, idle, ease); no stills (longest 0.1 s), longest silence 0.2 s at the drop.\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 9.41 (5.5-8.0), sound.voice_bed_gap_db 7.5 (8.0-14.0). Cuts read as quick, not choppy; voice stem -16 vs music -23.5 LUFS, voice stays on top.",
+ "fixes": [
+  "0.00 s S01: narrator missing on frame 0, pops in at 0.033 s",
+  "63.83-64.6 s S64: phone screen through my face, phone left over from S62",
+  "44.6-46.07 s S48 and 60.17-61.83 s S59: caption over Grandpa's mouth"
+ ]
+}
