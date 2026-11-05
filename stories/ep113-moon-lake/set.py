@@ -43,11 +43,11 @@ LOOKS = {
     # the afternoon goes dark: a dimming to dusk blue, never black
     "dim": _L(rim=0.25, sun=1.1, sun_col="#d4d8ff", el=40.0, fill=1.0, fill_col="#a8b8f0", front=0.5, front_col="#c8d4ff",
               sky="#5d72c4", sky_str=0.85),
-    "dusk": _L(rim=0.6, sun=0.3, sun_col="#8fa0ff", el=6.0, fill=1.1, fill_col="#8aa2e8", front=0.7, front_col="#9fb8ff",
+    "dusk": _L(rim=0.6, sun=0.3, sun_col="#8fa0ff", el=6.0, fill=1.4, fill_col="#a8bcf0", front=1.1, front_col="#c8d6ff",
                sky="#26397a", sky_str=0.85),
-    "night": _L(rim=0.55, sun=0.0, sun_col="#8fa0ff", el=6.0, fill=1.0, fill_col="#7f98e0", front=0.55, front_col="#9fb8ff",
+    "night": _L(rim=0.55, sun=0.0, sun_col="#8fa0ff", el=6.0, fill=1.4, fill_col="#a0b4f0", front=1.1, front_col="#c8d6ff",
                 moonl=1.5, sky="#1e2d66", sky_str=0.8),
-    "under": _L(rim=0.6, sun=0.0, fill=0.0, front=0.5, front_col="#a8e6ee", ufill=2.6, sky="#1a7a88", sky_str=0.9),
+    "under": _L(rim=0.6, sun=0.0, fill=0.0, front=1.4, front_col="#ffd0a8", ufill=2.6, sky="#1a7a88", sky_str=0.9),
 }
 LIGHTS = ("sun", "fill", "front", "moonl", "rim")
 
@@ -412,8 +412,8 @@ def build(kit, story, tl):
     kit.box("nbrpot.spout", (0.14, 0.06, 0.06), (G.NDOCK1[0] + 0.28, G.NDOCK1[1] + 0.9, WZ + 0.2), pot_m)
     # the old man's chair and line
     kit.box("fchair", (0.5, 0.5, 0.08), (G.NDOCK2[0], G.NDOCK2[1] - 1.6, G.DECK + 0.35), darkw)
-    kit.box("frod", (0.04, 3.0, 0.04), (G.NDOCK2[0] + 0.5, G.NDOCK2[1] + 0.6, G.DECK + 1.5), darkw, rot=(-0.5, 0, 0))
-    kit.box("fline", (0.012, 0.012, 2.4), (G.NDOCK2[0] + 0.5, G.NDOCK2[1] + 2.1, G.DECK + 0.4), pl("#dddddd", 0.5))
+    kit.box("frod", (0.04, 3.0, 0.04), (G.NDOCK2[0] + 1.4, G.NDOCK2[1] + 0.6, G.DECK + 1.5), darkw, rot=(-0.5, 0, 0))
+    kit.box("fline", (0.012, 0.012, 2.4), (G.NDOCK2[0] + 1.4, G.NDOCK2[1] + 2.1, G.DECK + 0.4), pl("#dddddd", 0.5))
     # the swim float
     kit.box("float", (2.4, 2.4, 0.3), (-26.0, -20.0, WZ + 0.05), pl("#ffd23f", 0.6))
     kit.box("float2", (2.0, 2.0, 0.05), (-26.0, -20.0, WZ + 0.22), pl("#ffffff", 0.7))
@@ -430,7 +430,7 @@ def build(kit, story, tl):
         ob = kit.cyl(f"gd{i}", r_, 0.02, (0, 0, 0.012 * i), kit.emit(col_, st, f"gdm{i}"), W["glowdisc"], n=40)
         noshadow(ob)
     W["gdock"] = kit.empty("gdock", (0.45, -28.6, WZ + 0.1), None)
-    for i, (r_, col_, st) in enumerate([(3.2, "#2fa0b4", 0.42), (2.2, "#5cc0da", 0.55), (1.3, "#8fd8ea", 0.7)]):
+    for i, (r_, col_, st) in enumerate([(3.2, "#4fb8d0", 0.45), (2.2, "#6fcfe2", 0.55), (1.3, "#9fe0ee", 0.7)]):
         ob = kit.cyl(f"gdk{i}", r_, 0.02, (0, 0, 0.012 * i), kit.emit(col_, st, f"gdkm{i}"), W["gdock"], n=32)
         noshadow(ob)
     # its reflection off the dock (S08a): a pale disc in strips so ripples break it
@@ -551,7 +551,7 @@ def animate(kit, story, tl, t, ctx):
     kit.LIGHTS["fill"]["light"].color = look["fill_col"]
     kit.LIGHTS["front"]["light"].color = look["front_col"]
     kit.LIGHTS["moonl"]["light"].color = look["moonl_col"]
-    kit.LIGHTS["ufill"]["light"].color = (0.45, 0.8, 0.85)
+    kit.LIGHTS["ufill"]["light"].color = (0.75, 0.85, 0.85)
     gains["sun"], gains["fill"], gains["front"] = look["sun"], look["fill"], look["front"]
     gains["moonl"], gains["ufill"] = look["moonl"], look["ufill"]
     gains["rim"] = look["rim"]
