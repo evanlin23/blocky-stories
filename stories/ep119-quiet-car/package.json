@@ -1,0 +1,11 @@
+{
+  "title": "Nobody Talks In The QUIET Car 🚆",
+  "description": "On our morning train, you never say a word in the quiet car. Say one, and you can't get off until somebody answers you. A man who sneezed in there years ago still gets his lunch left on seat nine.\n\nI've ridden it in silence every morning for six years. This spring my cousin got on, saw me, and said hey. I didn't answer.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Comment MORNING if you'd have answered him.",
+  "made_for_kids": false,
+  "cover_s": 30.6,
+  "shape": "all-at-once",
+  "opening": "ban",
+  "lane": "core",
+  "hold": "batch 12: scripts only, not built yet"
+}
