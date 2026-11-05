@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -833,10 +833,10 @@ shot("L67.1", cam(KX - 1.0, 3.6, 1.42, 0.95, az=180, lens=50, push=0.1), name="s
 only("L68", ["me"])
 sit("me", "L68", False)
 put("me", "L68", [APX, 5.0, APZ], 0, expr="smile", arms=[170, 170])
-beat("me", "L68.1", arms=[10, 10], expr="grin")
+beat("me", "L68.1", arms=[10, 10], expr="smile")
 shot("L68", cam(APX, 5.0, APZ + 1.4, 2.2, lens=40, push=0.12), look="day", name="s68")
 # L69: I'm calling him anyway
-put("me", "L69", [APX - 1.0, 4.6, APZ], 0, expr="grin", arms=[0, 125])
+put("me", "L69", [APX - 1.0, 4.6, APZ], 0, expr="smile", arms=[0, 125])
 hold("L69", "phone", "me", EAR)
 talk("me", "L69", "L69>", 0.6)
 shot("L69", cam(APX - 1.0, 4.6, APZ + 1.45, 1.2, lens=45, push=0.12), name="s69a")
@@ -844,7 +844,7 @@ only("L69.0+0.9", ["dad"])
 unobj("L69.0+0.9", "phone")
 put("dad", "L69.0+0.9", [KX + 2.3, 8.2], 0, expr="startled", arms=[0, 125])
 hold("L69.0+0.9", "handset", "dad", EAR)
-beat("dad", "L69.0+0.95", expr="grin")
+beat("dad", "L69.0+0.95", expr="smile")
 shot("L69.0+0.9", cam(KX + 2.3, 8.2, 1.5, 1.4, az=0, lens=45, push=0.12), name="s69b")
 # L70: when we walk past Tulley's now
 only("L70", ["dad", "me"])

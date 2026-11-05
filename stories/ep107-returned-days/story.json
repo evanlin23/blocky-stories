@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 5,
+ "rev": 6,
  "look": {
   "style": "closer",
   "fog": "#cfe6f5",
@@ -8076,7 +8076,7 @@
      10,
      10
     ],
-    "expr": "grin"
+    "expr": "smile"
    },
    {
     "at": "L69",
@@ -8096,7 +8096,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 0,
-    "expr": "grin",
+    "expr": "smile",
     "arms": [
      0,
      125
@@ -8778,7 +8778,7 @@
      82.3,
      8.2
     ],
-    "expr": "grin"
+    "expr": "smile"
    },
    {
     "at": "L70",
@@ -11924,7 +11924,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 5
+  "rev": 6
  },
  "rain_shots": [
   "S49",
