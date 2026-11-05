@@ -248,8 +248,8 @@ S("S19c", "L19.2", cam([0.7, -2.2, 4.4], [-0.1, 0.0, 4.45], 40, [0.55, -1.8, 4.4
   pl=0.0, pk=0.5, fill=0.1, rain=True, armout=True)
 cue("L19", "hold", p=False, d=False)
 # S20: A HAND. toward ours -- me, scared, in our window
-ME_WIN = feet("o", 0.45, 0.5, F2)
-show("S20", "L20", cam([0.0, -2.3, 4.5], [-0.27, 0.0, 4.5], 32, [0.0, -1.9, 4.5]), "night",
+ME_WIN = feet("o", 0.33, 1.0, F2)
+show("S20", "L20", cam([0.5, -2.3, 4.5], [-0.55, 0.0, 4.5], 40, [0.6, -2.3, 4.5]), "night",
      [("me", ME_WIN, 15, "scared", {})], pl=0.0, pk=0.5, fill=0.3, rain=True, armout=True)
 cue("L21+0.15", "sash", dur=0.55)
 show("S21", "L21", cam([-0.64, -1.7, 4.45], [-0.64, 0.0, 4.4], 40, [-0.64, -1.35, 4.45]), "night",
@@ -312,7 +312,7 @@ raw("pruitt", "L34.1+0.75", pos=[3.3, -1.0, 0], expr=SMILE, blend=0.15)
 show("S35", "L35", cam([0.0, -9.0, 0.7], [0.0, 0.0, 5.0], 22, [0.0, -8.4, 0.9], [0.0, 0.0, 5.3]), "day", [])
 show("S36", "L36", cam([0.55, -4.6, 1.75], [0.0, -1.6, 1.6], 26, [0.45, -4.1, 1.75]), "day",
      [("dad", (*YARD_D, 0), 0, ANG, {}), ("pruitt", (*YARD_P, 0), 0, SMILE, {})], fill=0.7)
-show("S37", "L37", cam([0.0, -3.4, 1.7], [-0.55, -1.6, 1.62], 34, [0.0, -3.0, 1.7]), "day",
+show("S37", "L37", cam([0.0, -3.4, 1.7], [-0.55, -1.6, 1.38], 34, [0.0, -3.0, 1.7], [-0.55, -1.6, 1.38]), "day",
      [("dad", (-0.55, -1.6, 0), 0, SHEEP, {"arms": [0, 0], "side": [0, 0]})], fill=0.8)
 raw("dad", "L37.2", pos=[-0.55, -1.6, 0], arms=[130, 0], expr=SHEEP, blend=0.3)
 
@@ -426,9 +426,9 @@ if vt.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(e["at"]))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 18
+story["rev"] = 27
 story["clip_ok"] = ["sidehair", "sidehair2"]
-story["framing_ok"] = ["S13", "S03a", "S03b", "S05", "S07", "S16", "S35", "S20", "S37", "S41a"]
+story["framing_ok"] = ["S13", "S03a", "S03b", "S05", "S07", "S16", "S35", "S41a"]
 story["frames_ok"] = ["S01a", "S09a", "S14a", "S43b"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
