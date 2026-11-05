@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 lines = json.loads((HERE / "lines.json").read_text())
 # the 0.4 s music drop before L12
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L12")
@@ -184,14 +184,14 @@ acting["grandma"].append({"from": "L08.1", "to": "L08>", "mouth": [0.5, 0.5], "f
 shot("L08.2", mv([KX + 0.5, KY + 1.8, 1.5], [KX, KY + 4.9, 1.3], 28, [KX + 0.4, KY + 2.6, 1.5], [KX, KY + 4.9, 1.3], 28), "grandmatalk")
 hide("grandma", "L09")
 cue("L09", "sit", who="grandma", on=False)
-shot("L09", mv([KX + 1.5, KY + 1.5, 1.2], [KX, KY - 1.3, 0.95], 28, [KX + 1.2, KY + 1.0, 1.2], [KX, KY - 1.3, 0.95], 28), "sleeve")
+shot("L09", mv([KX + 1.4, KY + 0.8, 1.0], [KX + 0.5, KY - 1.45, 0.6], 30, [KX + 1.3, KY + 0.55, 1.0], [KX + 0.5, KY - 1.45, 0.6], 30), "sleeve")
 # L10: dusk at the post: the crossword on the crossbar, Grandma's palm sliding away, then she walks home
-cue("L10", "look", id="dusk", dur=0)
+cue("L10", "look", id="dusk2", dur=0)
 cue("L10", "crossword", on=1.0)
 hide("straw", "L10")
 put("grandma", "L10", [2.0, 1.2], 180, arms=[0, 98], expr="smirk", head=[0, 6])
 beat("grandma", "L10.1", arms=[0, 60], blend=0.5)
-shot("L10", mv([0.2, -1.4, 1.75], [1.6, 2.3, 1.55], 21, [0.5, -0.9, 1.75], [1.6, 2.3, 1.55], 21), "crossword")
+shot("L10", mv([0.5, -1.6, 1.75], [1.85, 2.3, 1.6], 18, [0.8, -1.1, 1.75], [1.85, 2.3, 1.6], 18), "crossword")
 put("grandma", "L10.2", [1.0, -0.6], 0, expr="smirk", arms=[0, 0])
 go("grandma", "L10.2+0.1", [1.0, -0.6])
 go("grandma", "L10>", [1.0, -4.8])
@@ -199,6 +199,7 @@ shot("L10.2", mv([1.9, -9.0, 1.45], [1.0, -2.8, 1.35], 36, [1.7, -8.0, 1.45], [1
 
 # ===== 03 the beam and the reveal (L11 to L16)
 put("me", "L11", [34.4, -9.2], 0, arms=[0, 78], expr="worried", head=[0, 4])
+cue("L11", "look", id="dusk", dur=0)
 hide("grandma", "L11")
 cue("L11", "flash", show=1.0, on=0.0, bob=0.0)
 shot("L11", mv([33.0, -14.5, 1.5], [34.4, -9.2, 1.3], 30, [33.2, -13.5, 1.5], [34.4, -9.2, 1.3], 30), "porch")
@@ -268,8 +269,8 @@ shot("L19", mv([LX - 1.7, LY + 3.4, 1.4], [LX, LY, 0.95], 24, [LX - 1.4, LY + 3.
 shot("L19.2", mv([LX - 2.7, LY + 2.6, 1.25], [LX - 0.4, LY, 1.2], 34, [LX - 2.3, LY + 2.3, 1.25], [LX - 0.4, LY, 1.2], 34), "grandmasmile")
 beat("grandma", "L20", arms=[62, 0], expr="warm", blend=0.4)
 shot("L20", mv([LX - 0.03, LY + 3.6, 1.6], [LX - 0.03, LY + 0.3, 0.95], 20, [LX - 0.03, LY + 3.3, 1.55], [LX - 0.03, LY + 0.3, 0.95], 20), "remote")      # her hand and the remote from the first drawing
-beat("grandma", "L20.1", arms=[20, 0], blend=0.3)
-shot("L20.1", mv([LX - 0.05, LY + 4.0, 1.5], [LX - 0.5, LY, 1.0], 30, [LX - 0.15, LY + 3.7, 1.5], [LX - 0.5, LY, 1.0], 30), "remote2")
+beat("grandma", "L20.1", arms=[6, 0], blend=0.3)
+shot("L20.1", mv([LX - 0.05, LY + 4.0, 1.5], [LX - 0.5, LY, 0.74], 30, [LX - 0.15, LY + 3.7, 1.5], [LX - 0.5, LY, 0.74], 30), "remote2")
 # L21: sunset, the jeep passes, Grandpa waves at everybody
 cue("L21", "look", id="gold", dur=0)
 hide("grandma", "L21")
@@ -352,7 +353,7 @@ story = {
     "set_moves": [names["jeep"], names["crowflap"], names["everybody"]],
 }
 story["look"]["polish"] = polish
-story["framing_ok"] = ["S42"]
+story["framing_ok"] = ["S42", "S16"]   # S16: the straw head is cropped on purpose (the sack face must not show before L16)
 story["clip_ok"] = ["beam.cone", "S20/beam.cone", "S20/beam"]
 story["asr_forgive"] = ["there is", "there's"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

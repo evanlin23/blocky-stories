@@ -52,6 +52,9 @@ LOOKS = {
     # the one dim scene: violet sky, orange band at the horizon behind the post, the flashlight is the key
     "dusk": _L(sun=2.0, sun_col="#ff9a50", el=4.0, az=8.0, fill=1.25, fill_col="#b4a4ff", sky="#6a58b8",
                sky_str=1.2, band=1.0),
+    # L10's dusk at the post: the same sky, but Grandma's bob and face are lit (warm key, brighter fill)
+    "dusk2": _L(sun=3.0, sun_col="#ffb070", el=6.0, az=8.0, fill=3.0, fill_col="#f0e6ff", sky="#6a58b8",
+                sky_str=1.2, band=1.0),
 }
 
 
@@ -716,7 +719,8 @@ def animate(kit, story, tl, t, ctx):
             and bpy.data.objects["grandma"].location.x > 120:
         bpy.context.view_layer.update()
         hp = gm.matrix_world @ Vector((0, -0.3, -2.0))
-        rem.location = (hp.x, hp.y + 0.02, max(0.5, hp.z - 0.03))
+        rem.location = (hp.x, hp.y + 0.02, max(0.5, hp.z - 0.03) + 0.1)
+        rem.scale = (1.7, 1.7, 1.7)   # a big, readable remote at phone size
         _hide(rem, False)
     else:
         rem.hide_render = True
