@@ -54,6 +54,26 @@ def test_captions_follow_the_voice(tl):
     assert all(a["end"] <= b["start"] + 1e-6 for a, b in zip(caps, caps[1:]))
 
 
+def test_frame_zero_takes_the_last_of_the_keys_stacked_at_zero():
+    """Keys stacked at 0 (a generator's "hide everyone" at the origin, then the shot's own place): frame 0 poses from
+    the last of them, as frame 1 does, so nothing pops on frame 0 or on a loop wrap (ep116: Grandpa missing on
+    frame 0 of S01, there on frame 1)."""
+    st = tiny_story(acting={"me": [{"at": 0, "pos": [0, 0], "hidden": True}, {"at": 0, "pos": [0, 0]},
+                                   {"at": 0, "pos": [3.1, 1.0], "blend": 0.0, "hidden": False, "yaw": 90,
+                                    "arms": [20, 0], "head": [10, 0], "lean": 3, "expr": "worried"},
+                                   {"at": "L02", "pos": [3.1, 1.0]}]})
+    tl = timeline.build(st, tiny_voice())
+    f0, f1 = acting.state(tl, "me", 0.0), acting.state(tl, "me", 1 / 30)
+    for k in ("x", "y", "z", "yaw", "arms", "head_yaw", "lean", "expr", "hidden"):
+        assert f0[k] == pytest.approx(f1[k]) if not isinstance(f0[k], str) else f0[k] == f1[k], k
+    assert (f0["x"], f0["y"], f0["hidden"]) == (3.1, 1.0, False)
+    # before a first key that isn't at 0, the character holds that key's place (unchanged)
+    st2 = tiny_story(acting={"me": [{"at": "L01.1", "pos": [1, 2]}, {"at": "L01.1", "pos": [4, 5]},
+                                    {"at": "L02", "pos": [4, 5]}]})
+    tl2 = timeline.build(st2, tiny_voice())
+    assert acting.position(tl2["acting"]["me"], 0.0)[:2] == (4, 5)
+
+
 def test_only_characters_move_their_mouths(tl):
     assert tl["talk"]["me"] and all(a >= tl["lines"]["L02"]["onset"] - 1e-6 for a, _ in tl["talk"]["me"])
 
