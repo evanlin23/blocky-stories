@@ -15,7 +15,9 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+# shots that are deliberately the glow / the sky itself (S05 "something GLOWS", S35 the sky going dark, S40 the glow sinking)
+FRAMING_OK = ["S05", "S35", "S40"]
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -278,7 +280,7 @@ cue("L03", "gdock", on=0.0)
 put("grandma", "L03", [0.4, -33.0, DECK], 180, expr="neutral", head=[0, 0])
 beat("grandma", "L03.0+0.5", head=[0, 14])
 shot("L03", F([0.4, -33.0], 180, 4.4, 1.8, 36, tzoff=1.5, push=0.1), "grannod")
-shot("L03.2", mv([1.5, -22.5, 14.0], [1.5, -18.0, 0.0], 22, [1.5, -20.0, 8.0], [1.5, -18.0, 0.0], 22), "pushdown")
+shot("L03.2+0.5", mv([1.5, -22.5, 14.0], [1.5, -18.0, 0.0], 22, [1.5, -20.0, 8.0], [1.5, -18.0, 0.0], 22), "pushdown")
 
 # ===== 02 the rule at work (L04 to L08)
 only("L04", ["s1", "s2", "s3"])
@@ -341,7 +343,7 @@ put("me", "L09", [-1.8, -57.0, 0.0], 160, expr="smile")
 go("me", "L09.1+0.6", [-1.0, -50.5, 0.0], yaw=160)
 beat("grandma", "L09.1", arms=[0, 120])
 shot("L09", F([0.3, -45.0], 0, 3.8, 1.75, 34, tzoff=1.55, off=14, push=0.1), "waveme")
-shot("L09.1", FL([1.0, 3.3, 1.75], [0.0, 0.0, 1.5], 34, [0.8, 2.9, 1.7]), "comes", follow="me")
+shot("L09.2", FL([1.0, 3.3, 1.75], [0.0, 0.0, 1.5], 34, [0.8, 2.9, 1.7]), "comes", follow="me")
 # L10: tying on her visor, then rowing out at dusk
 only("L10", ["grandma"])
 put("grandma", "L10", [0.4, -31.5, DECK], 180, expr="smile", arms=[150, 150], head=[0, 0])
@@ -382,7 +384,7 @@ sit("grandma", "L13", True, 0.42)
 put("grandma", "L13", [tx - 0.1, ty - 0.9, 0.25], 180, expr="sad-smile", arms=[60, 60])
 for k_ in range(14):
     acting["grandma"].append({"at": f"L13+{0.15 + k_ * 0.14:.2f}", "pos": list(last["grandma"]), "arms": [60 + (6 if k_ % 2 else -6), 60 + (-6 if k_ % 2 else 6)], "blend": 0.05})
-shot("L13", mv([tx + 0.5, ty + 3.4, 1.55], [tx - 0.05, ty - 0.55, 1.1], 40, [tx + 0.4, ty + 2.8, 1.5], [tx - 0.1, ty - 0.55, 1.1], 40), "tremble")
+shot("L13", mv([tx + 0.5, ty + 3.4, 1.55], [tx + 0.15, ty - 0.55, 1.6], 40, [tx + 0.4, ty + 2.8, 1.5], [tx + 0.1, ty - 0.55, 1.6], 40), "tremble")
 beat("grandma", "L14", arms=[100, 100], expr="sad-smile", head=[0, 6])
 beat("grandma", "L14+0.8", arms=[100, 100], head=[0, 0])
 shot("L14", mv([tx + 0.9, ty + 3.6, 1.7], [tx - 0.1, ty - 0.9, 1.35], 40, [tx + 0.6, ty + 3.0, 1.65], [tx - 0.1, ty - 0.9, 1.4], 40), "lift")
@@ -398,10 +400,10 @@ only("L16", ["grandma"])
 sit("grandma", "L16", True, 0.35)
 put("grandma", "L16", [hx_ - 3.6, G.PORCH_Y + 0.5, 0.25], 180, expr="asleep")
 shot("L16", F([hx_ - 3.6, G.PORCH_Y + 0.5], 180, 4.0, 1.6, 36, tzoff=1.0, base=0.25, off=-18, push=0.1), "nap")
-only("L16.1", [])
-sit("grandma", "L16.1", False)
-glow("L16.1", g=0.8)
-shot("L16.1", mv([-4.0, -34.0, 1.4], [1.5, -18.0, 0.1], 30, [-2.6, -33.0, 1.5], [1.5, -18.0, 0.1], 30), "flatlake")
+only("L16.1+0.55", [])
+sit("grandma", "L16.1+0.55", False)
+glow("L16.1+0.55", g=0.8)
+shot("L16.1+0.55", mv([-4.0, -34.0, 1.4], [1.5, -18.0, 0.1], 30, [-2.6, -33.0, 1.5], [1.5, -18.0, 0.1], 30), "flatlake")
 # L17: three o'clock on the dial, then the run and the jump
 dial("L17", 0.78, dur=0.3)
 zoom("L17", 1.0)
@@ -534,7 +536,7 @@ boatc("L35", z=3.0, dur=2.6, rock=1.0)
 glow("L35", e=700.0, dur=1.2)
 go("grandma", "L35", inboat(MX, MY, 0.8), yaw=0, keep_yaw=True)
 go("grandma", "L35+2.6", inboat(MX, MY, 3.0), yaw=0, keep_yaw=True)
-shot("L35", mv([MX + 4.6, MY - 7.8, 1.1], [MX, MY, 2.4], 44, [MX + 4.0, MY - 7.2, 1.4], [MX, MY, 3.3], 44), "heave")
+shot("L35", mv([MX + 4.6, MY - 7.8, 1.1], [MX, MY, 2.4], 58, [MX + 4.0, MY - 7.2, 1.4], [MX, MY, 3.3], 58), "heave")
 # L36: water pouring off its craters, the lake lit up white
 moonc("L36", 4.2, dur=2.0)
 boatc("L36", z=4.2, dur=2.0, rock=0.6)
@@ -575,10 +577,9 @@ shot("L39.2", mv([bxh + 0.5, byh - 3.8, 1.4], [bxh, byh - 0.5, 1.1], 40, [bxh + 
 # ===== 07 the rest of the rule (L40 to L44)
 sit("grandma", "L40", False)
 only("L40", ["me", "grandma"])
-put("me", "L40", [0.0, -32.4, DECK], 90, expr="smile")
-put("grandma", "L40", [bxh, byh + 0.25, WZ + 0.18], 0, expr="sad-smile", keep_yaw=True)
-sit("grandma", "L40", True, GRAN_BENCH_Z)
-shot("L40", F([0.0, -32.4], 90, 3.6, 1.7, 36, tzoff=1.55, off=-14, push=0.1), "metie")
+put("me", "L40", [-0.4, -36.4, DECK], 180, expr="smile")
+put("grandma", "L40", [0.3, -33.4, DECK], 0, expr="sad-smile")
+shot("L40", mv([2.6, -35.6, DECK + 1.65], [0.2, -33.5, DECK + 1.5], 34, [2.3, -35.3, DECK + 1.65], [0.2, -33.5, DECK + 1.5], 34), "metie")
 sit("grandma", "L41", False)
 only("L41", ["grandma", "me"])
 put("grandma", "L41", [0.3, -33.4, DECK], 0, expr="neutral")
@@ -618,7 +619,7 @@ for tt, ang in [("L45", 0), ("L45+0.8", 25), ("L45+1.6", -20)]:
     oarc(tt, a=70.0, b=ang, dur=0.7)
 boatc("L45+0.2", x=MX + 1.0, y=MY - 5.0, dur=3.0)
 go("grandma", "L45>", inboat(MX + 1.0, MY - 5.0, WZ), yaw=0, keep_yaw=True)
-shot("L45", mv([-0.3, -26.6, 1.8], [-0.5, -30.9, 1.7], 32, [-0.3, -26.9, 1.8], [-0.5, -30.9, 1.72], 32), "weekafter")
+shot("L45", mv([5.0, -33.0, 1.7], [1.2, -29.8, 1.4], 38, [4.7, -32.7, 1.7], [1.2, -29.8, 1.4], 38), "weekafter")
 shot("L45.2", FL([1.8, -5.2, 1.0], [0.0, 0.0, 1.0], 34, [1.5, -4.6, 1.0]), "rowsout", follow="grandma")
 # L46 oar in, L47 it didn't move
 boatc("L46", x=MX, y=MY, z=WZ, dur=0.01)
@@ -626,7 +627,7 @@ go("grandma", "L46", inboat(MX, MY, WZ), yaw=0, keep_yaw=True)
 oarc("L46", a=80.0, b=0.0)
 oarc("L46+0.2", a=28.0, b=10.0, dur=1.2)
 shot("L46", mv([MX + 0.4, MY - 4.4, 1.55], [MX, MY + 0.3, 1.25], 36, [MX + 0.2, MY - 3.9, 1.5], [MX, MY + 0.3, 1.3], 36), "oarin")
-shot("L47", mv([MX + 4.5, MY - 10.0, 1.6], [MX, MY, 0.8], 30, [MX + 3.8, MY - 9.0, 1.5], [MX, MY, 0.8], 30), "stillglow")
+shot("L47", mv([MX + 4.5, MY - 10.0, 1.6], [MX, MY, 1.9], 30, [MX + 3.8, MY - 9.0, 1.5], [MX, MY, 1.9], 30), "stillglow")
 dial("L47", 0.93, lit=0.0)
 zoom("L47", 0.7)
 zoom("L47.0+1.0", 0.0)
@@ -670,7 +671,7 @@ ugc("L55", e=200.0, dur=1.0)
 ugc("L55+1.0", e=330.0, dur=1.2)
 ugc("L55+2.2", e=210.0, dur=1.2)
 beat("me", "L55", expr="soft")
-shot("L55", mv([UX - 3.8, UY - 4.6, UT + 1.3], [UX, UY - 1.0, UT + 0.6], 28, [UX - 3.4, UY - 4.2, UT + 1.2], [UX, UY - 1.0, UT + 0.6], 28), "breathing")
+shot("L55", mv([UX - 1.5, UY - 8.5, UT + 0.1], [UX, UY - 0.5, UT + 1.0], 28, [UX - 1.2, UY - 7.8, UT + 0.1], [UX, UY - 0.5, UT + 1.0], 28), "breathing")
 # L56: kicking hard
 put("me", "L56", [UX, UY + 0.2, UT + 1.2], 0, expr="squeeze", lean=30, arms=[150, 150], run=True)
 go("me", "L56>", [UX, UY - 3.4, UT + 2.8], run=True)
@@ -707,7 +708,7 @@ glow("L59", g=1.0, e=260.0)
 only("L59", ["grandma", "me"])
 put("grandma", "L59", inboat(MX, MY, WZ), 0, expr="wide", keep_yaw=True)
 put("me", "L59", [MX + 1.5, MY - 1.4, -0.7], 20, expr="grin")
-shot("L59", mv([MX + 2.4, MY - 4.8, 1.5], [MX + 1.5, MY - 1.4, 0.8], 36, [MX + 2.2, MY - 4.4, 1.5], [MX + 1.4, MY - 1.3, 0.85], 36), "surface")
+shot("L59", mv([MX + 2.4, MY - 4.8, 1.5], [MX + 0.8, MY - 1.0, 1.5], 36, [MX + 2.2, MY - 4.4, 1.5], [MX + 0.8, MY - 0.9, 1.5], 36), "surface")
 # L60: I climbed in beside her (the oarlock plant, then both of us in the boat)
 shot("L60", mv([MX + 2.2, MY - 1.4, 1.5], [MX + 0.8, MY + 0.1, 0.74], 42, [MX + 1.8, MY - 1.1, 1.2], [MX + 0.8, MY + 0.1, 0.74], 46), "oarlock")
 oarc("L60", a=75.0, b=0.0)
@@ -753,7 +754,7 @@ dial("L64", 0.97, lit=1.0)
 sit("grandma", "L64", False)
 sit("me", "L64", False)
 only("L64", [])
-shot("L64", mv([0.4, -20.5, 6.5], [0.3, -27.8, 0.2], 24, [0.4, -21.5, 6.0], [0.3, -27.6, 0.2], 24), "settle")
+shot("L64", mv([0.4, -22.5, 6.5], [0.3, -35.0, 0.3], 24, [0.4, -23.5, 6.0], [0.3, -34.8, 0.3], 24), "settle")
 shot("L64.1", mv([0.0, -35.0, 1.5], [0.3, -27.8, 0.3], 30, [0.1, -33.6, 1.3], [0.3, -27.8, 0.35], 30), "overdock")
 
 # ===== 10 the warm turn: together, and the loop (L65 to L70)
@@ -918,6 +919,8 @@ story = {
     "sound": sound,
     "set_moves": [],
     "clip_ok": [],
+    "framing_ok": FRAMING_OK,
+    "framing_props": {"dock": [0.0, -34.0, 0.6]},
     "asr_forgive": ["oar is", "oar", "order", "rowed", "rode", "rows", "rose"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
