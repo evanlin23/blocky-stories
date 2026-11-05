@@ -216,6 +216,9 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     same sha, find why they differ (frame rate, resolution, polish pass, frames held over), and make the local check
     measure what the proof measures. Until then, a story with a glow or a flipping light needs the proof's numbers
     at 5 a second or under before reviews spend rounds on it.
+    → Done 2026-11-05 (#310, merged 2:42 PM): the preview draws every 4th frame and holds it, so lights that flip
+    every 1 to 3 frames alias low. Meter size is not the cause. `blocky flash <story> --like-proof` draws every frame
+    at the meter's size and reads what the proof reads. The build brief and builder.md now use it, at 5 a second or under.
 37. **The framing lint still misses heads cut at the frame edge and mouths in the caption band.** ep115 reported 0
     findings but had five heads cut at the left edge and a mouth inside the caption band; ep112 the same (lesson 34).
     → Plan step 8's recalibration adds a caption-band check (a mouth inside the bottom 62 to 70 percent of the
