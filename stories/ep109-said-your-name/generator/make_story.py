@@ -94,7 +94,7 @@ cast = {
     "coatman": person("#c58c5a", "#a0724a", "#4a4036", "#2a2a2a", hair="buzz", hair_c="#c8c8cc", extras=["coat"], zip_c="#6a4a2a"),
     "greenw": person("#f0c8a0", "#7fd9a0", "#7fd9a0", "#e8e0d0", hair="long", hair_c="#7a4a2c", eyes="lashes", sleeves="short"),
     "hoodie": person("#d3a07a", "#ff6a5a", "#3a4a6a", "#f4f4f2", hair="spiky", hair_c="#2a2a2a", extras=["hooddown"]),
-    "driver": person("#b98456", "#6cc4ff", "#3a4a6a", "#2a2a2a", hair="buzz", hair_c="#1a1410", hat="ballcap", hat_c="#4f78b8"),
+    "driver": person("#dca97c", "#6cc4ff", "#3a4a6a", "#2a2a2a", hair="buzz", hair_c="#1a1410", hat="ballcap", hat_c="#4f78b8"),
     "neighbor": person("#e2b088", "#b8a0ff", "#6b5a48", "#4a3626", hair="cap", hair_c="#b4b4ba", extras=["glasses"], extra_c="#3a3a3e"),
     "seller": person("#d3a07a", "#ff9a1f", "#4a4036", "#2a2a2a", hair="cap", hair_c="#2a1d15", extras=["apron"], extra_c="#fffaf0"),
 }
@@ -202,6 +202,7 @@ SPOT = G.SPOT
 TX, TY = G.TABLE
 OD = G.OD
 BREAD = G.BAKERY
+CAFE = G.CAFE
 SHX = G.SHELTER[0]
 
 cue(0, "clock", m=7 * 60 + 2.0)
@@ -318,7 +319,7 @@ put("coatman", "L13", [SHX + 3.6, -4.75], 180, expr="worried")
 beat("driver", "L13.1+0.1", expr="wide", head=[70, 0])
 beat("driver", "L13.2+0.3", expr="neutral", head=[0, 0])
 shot("L13", mv([SHX - 7.0, -6.6, 1.9], [SHX - 0.5, -2.6, 1.8], 34, [SHX - 5.0, -6.2, 1.9], [SHX + 1.0, -2.6, 1.8], 34), "busslow")
-shot("L13.1", mv([SHX + 0.2, 2.2, 2.5], [SHX, -1.9, 2.3], 30, [SHX + 0.1, 1.9, 2.5], [SHX, -1.9, 2.3], 30), "driver")
+shot("L13.1", mv([SHX + 0.7, 2.2, 2.1], [SHX + 0.5, -1.9, 2.0], 32, [SHX + 0.6, 1.9, 2.1], [SHX + 0.5, -1.9, 2.0], 32), "driver")
 # L14 a face in every window
 FACES = [f"c{i + 1}" for i in range(12)]
 WIN14 = [WINS[k] for k in (6, 7, 8, 9, 10, 11, 12, 13)]            # shops 3..6
@@ -337,7 +338,7 @@ shot("L15", mv([61.8, 0.6, 5.3], [62.0, 5.3, 5.15], 62, [62.0, 1.4, 5.25], [62.0
 # L16 the bag tears
 only("L16", ["me"])
 cue("L16+0.5", "tear")
-shot("L16", mv([SPOT[0] + 1.6, -0.6, 1.0], [SPOT[0] + 0.3, 3.0, 0.6], 30, [SPOT[0] + 1.4, -0.4, 0.9], [SPOT[0] + 0.3, 3.0, 0.5], 30), "bag")
+shot("L16", mv([SPOT[0] + 2.2, -1.4, 1.0], [SPOT[0] + 0.3, 3.0, 0.75], 26, [SPOT[0] + 2.0, -1.2, 0.9], [SPOT[0] + 0.3, 3.0, 0.65], 26), "bag")
 
 # ===== 04 the oranges (L17 to L26)
 only("P01", ["me"])
@@ -356,7 +357,7 @@ for i, (x, y) in enumerate(RING):
 shot("L18", mv([62.4, 4.3, 2.5], [60.2, -2.0, 1.3], 24, [62.0, 4.3, 2.5], [60.2, -2.0, 1.3], 24), "dozen")
 shot("L19", fc([SPOT[0], 3.0], 0, 3.3, 40, h=1.35, tz=1.3, off=0.08, push=0.15), "alone")
 beat("me", "L19", expr="scared", head=[0, 12])
-shot("L20.1", mv([SPOT[0] - 1.6, 0.6, 1.5], [SPOT[0] + 10.0, 5.2, 2.2], 30, [SPOT[0] - 1.2, 0.8, 1.5], [SPOT[0] + 10.0, 5.2, 2.2], 30), "towardcafe")
+shot("L20.1", mv([SPOT[0] + 1.0, -2.2, 2.0], [CAFE, 5.0, 2.8], 36, [SPOT[0] + 1.8, -2.0, 2.0], [CAFE, 5.0, 2.8], 40), "towardcafe")
 beat("me", "L20.1", expr="worried", head=[0, 0], yaw=90)
 # L21 back home: our photo, the dial
 only("L21", ["me"])
@@ -393,7 +394,7 @@ only("L27", ["me", "dev"])
 put("dev", "L26", [OX + 4.0, OY + 0.2], -90, expr="neutral", arms=[0, 0])
 go("dev", "L27.1-0.1", [DEVK[0], DEVK[1]], yaw=-90, arms=[40, 40])
 cue("L27.1", "kneel", who="dev", on=True)
-shot("L27", mv([OX - 3.0, OY - 3.4, 1.4], [OX + 0.4, OY, 0.95], 30, [OX - 2.6, OY - 3.0, 1.3], [OX + 0.4, OY, 0.9], 30), "kneel")
+shot("L27", mv([OX - 3.0, OY - 3.4, 1.4], [OX + 0.4, OY, 0.95], 38, [OX - 2.6, OY - 3.0, 1.3], [OX + 0.4, OY, 0.9], 40), "kneel")
 shot("L27.2", mv([OX - 2.2, OY - 2.5, 1.1], [OX + 0.2, OY, 0.78], 26, [OX - 1.9, OY - 2.2, 1.0], [OX + 0.2, OY, 0.75], 26), "sleeve")
 cue("L28-0.1", "pick")
 cue("L28", "pair", n=2.0, dur=0.5)
@@ -515,7 +516,8 @@ put("me", "L43", [G.SEAT_ME[0], G.SEAT_ME[1]], 130, expr="laugh")
 put("dev", "L43", [G.SEAT_DEV[0], G.SEAT_DEV[1]], -130, expr="laugh")
 cue("L43", "sit", who="me", on=True, z=0.55)
 cue("L43", "sit", who="dev", on=True, z=0.55)
-shot("L43", mv([TX, 9.3, 1.5], [TX, 6.6, 1.3], 23, [TX, 9.0, 1.5], [TX, 6.6, 1.3], 25), "laugh")
+shot("L43", fc([G.SEAT_ME[0], 6.6], 130, 2.4, 36, h=1.45, tz=1.3, off=0.06, push=0.15), "laughme")
+shot("L43.1", fc([G.SEAT_DEV[0], 6.6], -140, 2.5, 38, h=1.45, tz=1.3, off=0.06, push=0.12), "laughdev")
 # L44 the next morning, the radio's back
 clock("L44", 7, 0)
 cue("L44", "pair", n=1.0)
@@ -530,11 +532,11 @@ shot("L45", mv([OD + 0.4, 1.0, 1.35], [OD, 5.6, 1.35], 36, [OD + 0.3, 1.6, 1.35]
 only("L46", ["me", "dev", "odell"])
 cue("L46", "pair", n=2.0, dur=0.5)
 vis("L46", "cups2", False)
-put("dev", "L46", [OD + 1.6, 3.6, 0.3], 0, expr="warm")
-put("me", "L46", [OD + 3.2, 3.6, 0.3], 0, expr="smile")
+put("dev", "L46", [OD + 2.0, 3.6, 0.3], 0, expr="warm")
+put("me", "L46", [OD + 3.0, 3.6, 0.3], 0, expr="smile")
 put("odell", "L46", [OD, 5.6, 0.3], 0, expr="smile")
 vis("L46.2", "cups2", True)
-shot("L46", mv([OD + 2.4, -1.0, 1.9], [OD + 2.4, 3.6, 1.7], 38, [OD + 2.4, -0.5, 1.9], [OD + 2.4, 3.6, 1.7], 42), "porch")
+shot("L46", mv([OD + 2.5, -1.0, 1.9], [OD + 2.5, 3.6, 1.7], 27, [OD + 2.5, -0.5, 1.9], [OD + 2.5, 3.6, 1.7], 29), "porch")
 shot("L46.2", mv([OD + 2.4, 1.3, 1.4], [OD + 2.4, 3.6, 0.95], 50, [OD + 2.4, 1.6, 1.3], [OD + 2.4, 3.6, 0.95], 50), "coffees2")
 HOUSES = [x for i in range(6) for x in G.win_xs(OD - 20 + i * 8.0)]
 only("L47", FACES[:8] + ["me", "dev"])

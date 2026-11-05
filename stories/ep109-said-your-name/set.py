@@ -375,7 +375,7 @@ def build(kit, story, tl):
     for k in range(9):
         kit.box(f"radio.rib{k}", (0.015, 0.03, 0.28), (rx_ - 0.4 + k * 0.05, fy_ - 0.04, zc_), P("#c9894a", 0.9, spec=0.02))
     kit.cyl("radio.ring", 0.17, 0.03, (rx_ + 0.27, fy_ - 0.02, zc_), cream, rot=(math.pi / 2, 0, 0), n=24)
-    W["dialm"] = kit.emit("#c8101a", 0.9, "dialred")
+    W["dialm"] = kit.emit("#c80030", 0.65, "dialred")
     kit.cyl("radio.dial", 0.14, 0.03, (rx_ + 0.27, fy_ - 0.04, zc_), W["dialm"], rot=(math.pi / 2, 0, 0), n=24)
     for k in range(12):
         a = k * 30 * D2R
@@ -492,7 +492,7 @@ def build_tag(kit):
     W["tag"] = root
     plate = kit.emit("#fff1d6", 0.6, "tagplate")
     edge = kit.emit("#6b3a22", 0.6, "tagedge")
-    redm = kit.emit("#c8101a", 0.6, "tagred")
+    redm = kit.emit("#c00030", 0.6, "tagred")
     ink = kit.emit("#2a2250", 0.8, "taginkk")
     teal = kit.emit("#1f9a94", 0.9, "tagteal")
     p1m = kit.emit("#5a3ca0", 0.9, "tagp1")
@@ -615,7 +615,7 @@ def animate(kit, story, tl, t, ctx):
     s1 = 1.0 - 0.15 * n2
     W["p1"].scale = (s1, s1, s1)
     # the radio dial breathes slowly
-    W["dialm"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 0.9 + 0.2 * math.sin(t * 2.2)
+    W["dialm"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 0.6 + 0.1 * math.sin(t * 2.2)
     # the bus
     bs = sample("bus", tl, t, {"x": -30.0})
     W["bus"].location = (bs["x"], G.BUS_Y, 0.0)
