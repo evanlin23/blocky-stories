@@ -1,0 +1,517 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "My family's game of hide-and-seek started thirty-one years ago. Uncle Pete's still hiding.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.914,
+   "onset": 0.172,
+   "end": 3.724,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     1.259
+    ],
+    [
+     1.259,
+     1.828
+    ],
+    [
+     1.828,
+     2.379
+    ],
+    [
+     2.491,
+     2.983
+    ],
+    [
+     2.983,
+     3.724
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Grandma counted to ten. Everyone else was found by dinner.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.138
+    ],
+    [
+     1.233,
+     1.724
+    ],
+    [
+     1.724,
+     2.052
+    ],
+    [
+     2.052,
+     2.69
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Except pete.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.086,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Grandma says the game's not over till everyone's found.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     0.983
+    ],
+    [
+     0.983,
+     1.345
+    ],
+    [
+     1.345,
+     2.379
+    ]
+   ]
+  },
+  "L05": {
+   "text": "So every reunion, we still look.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.888,
+     1.603
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Under the porch. Behind the old shed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.69,
+     1.017
+    ],
+    [
+     1.017,
+     1.672
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Our neighbor, Mr. Glenn, helps us look every year.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     1.086
+    ],
+    [
+     1.155,
+     1.621
+    ],
+    [
+     1.621,
+     2.31
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Nice guy. Big mustache. Always sits facing the shed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     1.172
+    ],
+    [
+     1.259,
+     1.672
+    ],
+    [
+     1.672,
+     2.483
+    ]
+   ]
+  },
+  "L09": {
+   "text": "He brings the potato salad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     1.466
+    ]
+   ]
+  },
+  "L10": {
+   "text": "This year I finally tried it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.888
+    ],
+    [
+     0.888,
+     1.466
+    ]
+   ]
+  },
+  "L11": {
+   "text": "It's Uncle Pete's famous potato salad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.664
+    ],
+    [
+     0.664,
+     1.81
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Nobody else has the recipe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.19,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.655,
+     1.534
+    ]
+   ]
+  },
+  "L13": {
+   "text": "So I walked over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     1.069
+    ]
+   ]
+  },
+  "L14": {
+   "text": "And I said, \"Found you, Uncle pete.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.672,
+     0.914
+    ],
+    [
+     0.94,
+     1.586
+    ]
+   ]
+  },
+  "L15": {
+   "text": "His mustache fell into the salad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.716
+    ],
+    [
+     0.716,
+     1.008
+    ],
+    [
+     1.008,
+     1.655
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Grandma dropped her fork.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.328
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Thirty-one years. He lives next door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.724,
+     1.0
+    ],
+    [
+     1.0,
+     1.707
+    ]
+   ]
+  },
+  "L18": {
+   "text": "He said nobody ever looks at the guy helping you look.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     1.199
+    ],
+    [
+     1.199,
+     1.569
+    ],
+    [
+     1.569,
+     2.328
+    ]
+   ]
+  },
+  "L19": {
+   "text": "So now Pete's it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.19,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     1.034
+    ]
+   ]
+  },
+  "L20": {
+   "text": "And I'm hiding.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L21": {
+   "text": "See you at next year's reunion. I'll be the one with the mustache.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.19,
+   "end": 2.638,
+   "chunks": [
+    [
+     0.19,
+     0.414
+    ],
+    [
+     0.414,
+     0.664
+    ],
+    [
+     0.664,
+     1.328
+    ],
+    [
+     1.414,
+     1.621
+    ],
+    [
+     1.621,
+     1.819
+    ],
+    [
+     1.819,
+     2.638
+    ]
+   ]
+  }
+ }
+}
