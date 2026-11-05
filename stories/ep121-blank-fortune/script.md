@@ -4,10 +4,10 @@
 - **Pitch:** the backlog's `fortune-cookie` (batch 10's fresh list: "Every fortune cookie at our corner place comes true by Friday. Mine was blank."), picked over `yawn-street` and `library-whisper` after standards r1 killed ep121-redo-hour (2026-11-05). The corner place is now a highway gas station, so it's clear of ep83's diner booth and ep94's bakery counter. Engine: the literal wish turned around (the blank is its own reading). Opening shape `whatif`, the batch's only one. Lane: experiment (comedy, warm). Length arm: mid.
 - **Title:** My Fortune Cookie Was BLANK 🥠
 - **Everyone is an adult.** I'm 27, Grandpa Ike about 76, Grandma Faye about 74, the clerk about 40, the montage people adults.
-- **Word count:** 315 spoken words in 44 lines (L01 to L44), all `narrator`, plus one 0.5 s music drop before L20.
-- **Estimated length:** about 73 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
+- **Word count:** 307 spoken words in 44 lines (L01 to L44), all `narrator`, plus one 0.5 s music drop before L20.
+- **Estimated length:** about 72 s (the r1 build measured 73.6 s; the r1 cuts save about 1.2 s), with the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright little highway gas station on a sunny Wednesday: two red pumps under a white canopy, a small shop with a big window and a counter with a jar of wrapped fortune cookies, blue sky, flat green fields. Grandpa's teal pickup. The one dim scene is Thursday night (L20 to L24): Grandpa's kitchen lit by one steady ceiling lamp over the table, Grandma asleep in her armchair by a steady floor lamp. No swinging lights, no flicker.
-- **Hold:** scripts only (batch 12). Not built, not voiced.
+- **Hold:** built and voiced (batch 12); round-1 revision on 2026-11-05 changed L03, L06, L07, L08 and L16 (re-voice those). The package `hold` stays until both reviews approve.
 
 ## Variety table
 The batch table is in `stories/ep115-are-we-there/script.md`. This row:
@@ -17,7 +17,7 @@ The batch table is in `stories/ep115-are-we-there/script.md`. This row:
 | a highway gas station's pumps and counter, Grandpa's kitchen | fortunes that come true word for word, a blank slip | `whatif`: a rule as a question | `yours-to-write` | a grandpa's fifty-year promise, and a grandson's new one (comedy) |
 
 ## The big idea
-**At the gas station where every fortune cookie comes true by Friday, my blank fortune isn't a week with nothing in it: a blank is the one fortune you get to write, and it comes true for whoever you hand it to, and the only other blank anyone remembers was Grandpa's, fifty years ago, which he wrote for Grandma: "You will never eat dinner alone."**
+**At the gas station where every fortune cookie comes true by Friday, my blank fortune isn't empty days until Friday: a blank is the one fortune you get to write, and it comes true for whoever you hand it to, and the only other blank anyone remembers was Grandpa's, fifty years ago, which he wrote for Grandma: "You will never eat dinner alone."**
 
 - **Engine:** the literal wish turned around: the fortune you write instead of the one you're given. No film's fortune teller.
 - **Why it clicks:** the clerk has seen one blank before, Grandpa's (L11, L12), Grandpa only smiles (L13), he has never once missed dinner at home (L30), and he reads every fortune out loud like it's binding (L07).
@@ -31,16 +31,16 @@ The batch table is in `stories/ep115-are-we-there/script.md`. This row:
 - **The relatable want or fight:** dreading a bad sign, and wanting to know what a grandparent won't say.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream tag top-left with a cookie glyph and a weekday dial (W, T, F as three dots, no letters) with a needle that moves toward the Friday dot. It resets to Wednesday at L41. Glyphs only.
 - **The 3 to 5 example montage (L04, L05, about 4 to 11 s):** a man pulling forty dollars out of a tire tread, a woman crossing a parking lot followed by a line of geese.
-- **A concrete mystery on screen by 15 s:** my blank slip, no words on either side (L08, L09, about 16 to 18 s, with the rule's funny side already at work from 4 s).
+- **A concrete mystery on screen by 15 s:** my blank slip, no words on either side (L08, L09, "BLANK" at about 14.6 s after the r1 cuts, with the rule's funny side already at work from 4 s).
 - **How the narrator is the exception:** the only blank fortune anyone has seen in fifty years, but one.
 - **The loved ones:** my grandpa Ike, named "my grandpa Ike" at L06, face to camera at the pump, and Grandma Faye, named "Grandma" at L21, asleep in her chair, face to camera.
-- **The tense beat (L16 to L20, about 24 to 32 s):** a whole week where nothing happens, which is worse, and a sleepless Thursday night.
+- **The tense beat (L16 to L20, about 24 to 32 s):** a whole Thursday where nothing happens, which is worse, and a sleepless Thursday night.
 - **The climax turns the rule's own logic:** whatever you write comes true for whoever you hand it to (L26), so I write one for Grandpa, and it binds *me* (L36 to L41). No new magic.
 - **Twist and reveal (L22 to L34, about 33 to 56 s):** shown in one picture (S24: Grandpa at his kitchen table, face to camera, `warm`, his old yellow slip open on the table, covered in his handwriting, Grandma asleep in her chair behind him), then said plainly (L25 to L28).
 - **How the last 15 seconds turn over the first line:** Friday morning Grandpa calls with an empty tank, and every Wednesday we each read a new fortune out loud, which runs into L01.
 - **The plants a rewatch catches:**
   1. L12, L13: the clerk's one other blank was Grandpa's, and Grandpa only smiles.
-  2. L07: Grandpa reads every fortune out loud, like it's a promise.
+  2. L07: Grandpa reads every fortune out loud, like a promise.
 - **Ending shape:** `yours-to-write`: the empty fortune is the one you write for someone you love.
 - **Warmth:** a grandpa's fifty-year promise, and his grandson's new, funny one.
 - **Sad family reveal?** No. Grandma and Grandpa are both well, and the reveal is a love story told by a man who's kept a promise.
@@ -104,7 +104,7 @@ Times are estimates. Every line gets one to three shots with acting in each, and
 | S05a, S05b | L05 | (a) A woman crossing the lot, face to camera, `uneasy`. (b) A line of geese waddling after her. |
 | S06 | L06 | Grandpa at the pump beside his teal truck, face to camera, `smile`, me beside him. |
 | S07a, S07b | L07 | (a) Grandpa's face, close, reading out loud, `warm`. (b) My face, reading mine. Plant 2. |
-| S08 | L08 | My face, `stunned`, the slip on my flat palm. |
+| S08 | L08 | My face, `stunned`, the slip on my flat palm. Cover frame: set `cover_s` to this shot ("mine was BLANK.", the blank slip that goes with the title) after the rebuild. |
 | S09a, S09b | L09 | (a) Close: the blank slip, one side. (b) Flipped: the other side, blank. |
 | S10 | L10 | The clerk's face behind the counter, `stunned`, going pale. |
 | S11 | L11 | The clerk's face, close. |
@@ -136,7 +136,7 @@ Times are estimates. Every line gets one to three shots with acting in each, and
 | S36 | L36 | My face over the slip, `smile`, blue scribble appearing on it line by line. |
 | S37 | L37 | Close: my slip, covered in my scribble, slid across to Grandpa on my flat palm. |
 | S38 | L38 | Grandpa's face, `laugh`, and Grandma waking in her chair behind him, `laugh`. |
-| S39 | L39 | Friday morning: my phone ringing on my flat palm, my face behind it. The tag's needle at Friday. Cover frame (`cover_s` 62.8). |
+| S39 | L39 | Friday morning: my phone ringing on my flat palm, my face behind it. The tag's needle at Friday. |
 | S40 | L40 | Grandpa at the pump on a video call (my phone on my flat palm), his face on the screen, `smile`, the pump's gauge at zero. |
 | S41a, S41b | L41 | (a) My face, `laugh`. (b) Me and Grandpa at the pump, both faces to camera, `smile`, the tag resetting to Wednesday. |
 | S42 | L42 | Close: my slip taped to his dashboard, Grandpa's face beyond it. |
@@ -158,19 +158,19 @@ The builder's framing pre-check (`scripts/framing.py`) reads exactly these. At p
 Hands: no grips. Cookies, the slip and the phone rest on flat palms, the pen lies beside the slip while scribble appears on its own (cut away from any writing hand), the wallet sits on the table.
 
 ## Lore connection (`stories/lore.md`)
-One plant, a plain tally: two cookie-gold strokes scratched into the chrome holster of pump two's nozzle, two for a pump built to fill two sides. No extra stroke, no Keeper, no thread touched. Seen in S06 under L06 ("Every Wednesday, / my grandpa Ike and I / fill up his TRUCK."), low at the frame's right edge, held 1.2 s, not narrated.
+One plant, a plain tally: two cookie-gold strokes scratched into the chrome holster of pump two's nozzle, two for a pump built to fill two sides. No extra stroke, no Keeper, no thread touched. Seen in S06 under L06 ("Wednesdays, / my grandpa Ike and I / fill up his TRUCK."), low at the frame's right edge, held 1.2 s, not narrated.
 
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
 - L01: What if every fortune cookie / came true / by FRIDAY?
 - L02: At the gas station / on our highway, / they DO.
-- L03: You get one / with every FILL-UP.
+- L03: Free with GAS.
 - L04: "You will come into MONEY." / A guy found / forty bucks / in his TIRE.
 - L05: "You will be the center / of ATTENTION." / Geese followed her / for a WEEK.
-- L06: Every Wednesday, / my grandpa Ike and I / fill up his TRUCK.
-- L07: He reads his fortune / out loud, / like it's a PROMISE.
-- L08: Last Wednesday, / mine was BLANK.
+- L06: Wednesdays, / my grandpa Ike and I / fill up his TRUCK.
+- L07: He reads his / fortune out loud, / like a PROMISE.
+- L08: Mine was BLANK.
 - L09: No WORDS. / Either SIDE.
 - L10: The clerk / went PALE.
 - L11: He said / he'd only heard of / one blank BEFORE.
@@ -178,7 +178,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L13: Grandpa just / SMILED.
 - L14: He wouldn't tell me / what his DID.
 - L15: The clerk / gave me / a free SODA. / Just in CASE.
-- L16: So all week, / I waited / for something to HAPPEN.
+- L16: So all Thursday, / I waited / for something to HAPPEN.
 - L17: NOTHING did.
 - L18: Which was WORSE.
 - L19: Thursday night, / I couldn't SLEEP.
@@ -212,6 +212,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 (Loop: L44 runs straight into L01: "He reads his out loud. What if every fortune cookie came true by Friday?")
 
 ## Notes for the builder and reviewers
+- **Cover:** `cover_s` must be the blank-slip shot, about "mine was BLANK." (S08/S09, near 14.6 s after the r1 cuts). The orchestrator sets the number after the rebuild; 62.8 is stale.
+- **r1 (2026-11-05):** L03 "You get one / with every FILL-UP." became "Free with GAS."; L06 "Every Wednesday," became "Wednesdays,"; L07 dropped "it's"; L08 dropped "Last Wednesday,"; L16 "all week" became "all Thursday" (the story runs Wednesday to Thursday night). 8 words and about 1.2 s cut so "BLANK" lands before 15 s.
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt or in peril. The snowstorm at L31 is a window, never a person in danger.
 - No readable words anywhere (hard rule 1): printed fortunes are gray bars, handwriting is blue scribble, and the narrator says every fortune's words.
 - R6 hands can't grip: nobody is shown holding a pen or writing. The scribble appears on the slip by itself in a close-up, with the pen lying beside it.
