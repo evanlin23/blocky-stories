@@ -302,38 +302,34 @@
    ]
   },
   "L12": {
-   "text": "I figured his place had been yelling it at him for two years.",
+   "text": "I figured his place had been yelling my words at him for two years.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.569,
+   "dur": 2.793,
    "onset": 0.172,
-   "end": 2.379,
+   "end": 2.603,
    "chunks": [
     [
      0.172,
-     0.492
+     0.603
     ],
     [
-     0.492,
-     0.836
+     0.603,
+     1.017
     ],
     [
-     0.836,
-     1.043
+     1.017,
+     1.603
     ],
     [
-     1.043,
-     1.379
+     1.603,
+     1.888
     ],
     [
-     1.379,
-     1.586
-    ],
-    [
-     1.586,
-     2.379
+     1.888,
+     2.603
     ]
    ]
   },
@@ -1018,30 +1014,30 @@
    ]
   },
   "L42": {
-   "text": "He's slept on the couch in his shop for two years.",
+   "text": "He slept on the couch in his shop for two years.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.138,
+   "dur": 2.121,
    "onset": 0.155,
-   "end": 1.948,
+   "end": 1.931,
    "chunks": [
     [
      0.155,
-     0.509
+     0.492
     ],
     [
-     0.509,
-     0.836
+     0.492,
+     0.819
     ],
     [
-     0.836,
-     1.19
+     0.819,
+     1.172
     ],
     [
-     1.19,
-     1.948
+     1.172,
+     1.931
     ]
    ]
   },
@@ -1182,7 +1178,7 @@
    ]
   },
   "L48": {
-   "text": "I'd told him not to call.",
+   "text": "I told him not to call.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1193,10 +1189,10 @@
    "chunks": [
     [
      0.172,
-     0.578
+     0.569
     ],
     [
-     0.578,
+     0.569,
      1.293
     ]
    ]
@@ -1294,34 +1290,34 @@
    ]
   },
   "L53": {
-   "text": "Last night, he'd finally gone up to my door to knock.",
+   "text": "This time, he'd finally gone up to my door to knock.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.414,
+   "dur": 2.448,
    "onset": 0.172,
-   "end": 2.207,
+   "end": 2.241,
    "chunks": [
     [
      0.172,
-     0.534
+     0.552
     ],
     [
-     0.56,
-     0.966
+     0.578,
+     1.0
     ],
     [
-     0.966,
-     1.276
+     1.0,
+     1.31
     ],
     [
-     1.276,
-     1.621
+     1.31,
+     1.655
     ],
     [
-     1.621,
-     2.207
+     1.655,
+     2.241
     ]
    ]
   },
@@ -1710,70 +1706,74 @@
    ]
   },
   "L69": {
-   "text": "I come over every sunday now.",
+   "text": "Now I come over every sunday.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.155,
-   "end": 1.569,
+   "dur": 1.81,
+   "onset": 0.19,
+   "end": 1.603,
    "chunks": [
     [
-     0.155,
-     0.595
+     0.19,
+     0.431
     ],
     [
-     0.595,
-     1.569
+     0.431,
+     0.784
+    ],
+    [
+     0.784,
+     1.603
     ]
    ]
   },
   "L70": {
-   "text": "And I pick my last words carefully.",
+   "text": "And I pick, my last words carefully.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
+   "dur": 1.983,
    "onset": 0.155,
-   "end": 1.707,
+   "end": 1.793,
    "chunks": [
     [
      0.155,
-     0.483
+     0.569
     ],
     [
-     0.483,
-     1.086
+     0.595,
+     1.172
     ],
     [
-     1.086,
-     1.707
+     1.172,
+     1.793
     ]
    ]
   },
   "L71": {
-   "text": "His place says \"See you sunday.\"",
+   "text": "Now his apartment says \"See you sunday.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
-   "onset": 0.155,
-   "end": 1.483,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.828,
    "chunks": [
     [
-     0.155,
-     0.517
+     0.172,
+     0.397
     ],
     [
-     0.517,
-     0.724
+     0.397,
+     1.043
     ],
     [
-     0.776,
-     1.483
+     1.103,
+     1.828
     ]
    ]
   }

@@ -362,7 +362,13 @@ def cab_interior(kit, m, ox, oy):
     kit.cyl("cab.thermos.cap", 0.062, 0.07, (0, 0, 0.33), kit.metal("#c9ced4", 0.3), th, n=18)
     kit.cyl("cab.thermos.lip", 0.07, 0.02, (0, 0, 0.285), kit.metal("#c9ced4", 0.3), th, n=18)
     kit.box("cab.thermos.handle", (0.025, 0.1, 0.17), (0.0, 0.0, 0.17), p("#2e8f4d", 0.5), th)
-    kit.sphere("cab.thermos.dent", 0.04, (0, -0.062, 0.14), p("#2f8c4b", 0.6, spec=0.2), th, seg=8).scale = (1.0, 0.35, 1.2)
+    # the dent faces the cameras at its +x,+y side: a dark squashed hollow with a pale scuffed lip under it
+    dn = kit.sphere("cab.thermos.dent", 0.034, (0.0425, 0.0495, 0.16), p("#1b5530", 0.4, spec=0.1), th, seg=18)
+    dn.scale = (1.3, 0.3, 1.7)
+    dn.rotation_euler = (0, 0, -40.5 * D2R)
+    dr_ = kit.sphere("cab.thermos.dentlip", 0.036, (0.0445, 0.0522, 0.118), kit.metal("#d8f2de", 0.3), th, seg=18)
+    dr_.scale = (1.2, 0.2, 0.4)
+    dr_.rotation_euler = (0, 0, -40.5 * D2R)
     W["thermos"] = th
     W["palm3"] = palm(kit, "palm3", (ox + 0.05, oy - 0.05, 0.54), 0, "#d9a67a")
 
@@ -453,9 +459,9 @@ def build_hall(kit, m):
     B(kit, "hall.doorframe", ox - 0.75, ox + 1.4, oy + 4.44, oy + 4.5, 0, 2.35, m["white"])
     B(kit, "hall.door", ox - 0.6, ox + 0.4, oy + 4.38, oy + 4.44, 0, 2.2, p("#6fc7e8", 0.45, spec=0.3), bevel=0.02)
     kit.sphere("hall.knob", 0.05, (ox + 0.25, oy + 4.33, 1.05), m["chrome"], seg=8)
-    B(kit, "hall.sidelight", ox + 0.55, ox + 1.3, oy + 4.38, oy + 4.44, 0.45, 2.2, kit.emit("#dff4ff", 3.2, "hallglass"))
+    B(kit, "hall.sidelight", ox + 0.55, ox + 1.3, oy + 4.38, oy + 4.44, 0.45, 2.2, kit.emit("#bcd8ee", 1.1, "hallglass"))
     B(kit, "hall.mullion", ox + 0.9, ox + 0.94, oy + 4.35, oy + 4.38, 0.45, 2.2, m["white"])
-    B(kit, "hall.doorlite", ox - 0.35, ox + 0.15, oy + 4.35, oy + 4.38, 1.4, 2.0, kit.emit("#dff4ff", 2.2, "hallglass2"))
+    B(kit, "hall.doorlite", ox - 0.35, ox + 0.15, oy + 4.35, oy + 4.38, 1.4, 2.0, kit.emit("#bcd8ee", 0.9, "hallglass2"))
     LT(kit, "hall", "main", "POINT", (ox + 0.2, oy - 0.8, 2.6), 520.0, "#fff1d8", size=0.5)
     LT(kit, "hall", "fill", "AREA", (ox - 0.4, oy - 2.6, 1.8), 180.0, "#e8f0ff", size=2.0, shadow=False)
     kit.aim(kit.LIGHTS["hall.fill"]["obj"], (ox + 0.3, oy + 3.5, 1.4))
@@ -857,6 +863,8 @@ def build(kit, story, tl):
     build_cab(kit, m)
     shop(kit, m, "shop", G.SHOP[0], G.SHOP[1], night=True)
     build_shopin(kit, m)
+    for st_ in ("lot", "shop"):   # a cool fill that rides with Dad in the dark yard shots, so his hair and skin read
+        LT(kit, st_, "dadfill", "AREA", (0, 0, 3.0), 140.0, "#e4ecff", size=1.6, shadow=False)
     build_ripple(kit)
     build_tag(kit)
     build_bezel(kit)
@@ -940,6 +948,16 @@ def animate(kit, story, tl, t, ctx):
     rl = sample("roomlamp", tl, t, {"v": 1.0})
     gains["lot.roomlamp"] = rl["v"]
     gains["lot.roomfill"] = 0.35 + 0.65 * rl["v"]
+    # the cool fill that follows Dad (cue "dadfill": v and the offset from him)
+    df = sample("dadfill", tl, t, {"v": 0.0, "ox": 0.0, "oy": -2.0, "oz": 2.0})
+    dadob = bpy.data.objects.get("dad")
+    for st_ in ("lot", "shop"):
+        fl = kit.LIGHTS[f"{st_}.dadfill"]["obj"]
+        gains[f"{st_}.dadfill"] = df["v"] if st_ == stage else 0.0
+        if dadob is not None:
+            dp = dadob.location
+            fl.location = (dp.x + df["ox"], dp.y + df["oy"], dp.z + df["oz"])
+            kit.aim(fl, (dp.x, dp.y, dp.z + 1.45))
     # dad's phone light
     ph = sample("phone", tl, t, {"v": 0.0})
     gains["lot.phone"] = ph["v"]

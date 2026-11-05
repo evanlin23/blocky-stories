@@ -194,24 +194,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I figured",
-    "I figured"
+    "I figured his",
+    "I figured his"
    ],
    [
-    "his place had been",
-    "his place had been"
+    "place had been",
+    "place had been"
    ],
    [
     "yelling my words",
     "yelling my words"
    ],
    [
-    "at him",
-    "at him"
-   ],
-   [
-    "for two YEARS.",
-    "for two years."
+    "at him for two YEARS.",
+    "at him for two years."
    ]
   ]
  },
@@ -1120,12 +1116,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I come over",
-    "I come over"
+    "Now I come over",
+    "Now I come over"
    ],
    [
-    "every SUNDAY now.",
-    "every sunday now."
+    "every SUNDAY.",
+    "every sunday."
    ]
   ]
  },
@@ -1135,7 +1131,7 @@
   "chunks": [
    [
     "And I pick",
-    "And I pick"
+    "And I pick,"
    ],
    [
     "my last words",

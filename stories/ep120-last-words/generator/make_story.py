@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -293,7 +293,13 @@ cue("L13+0.02", "ride", dx=-1.3, dy=0.0, on=1.0, dur=2.6)
 cue("L14-0.1", "ride", dx=0.0, dy=0.0, on=0.0, dur=0.0)
 shot("L13", mv([DX + 2.6, -3.7, 1.55], [DX + 1.5, 0.0, 1.4], 38, [DX + 1.7, -3.7, 1.55], [DX + 0.7, 0.0, 1.4], 38), "drive", hand=0.01)
 beat("me", "L13+1.2", arms=[70, 0], head=[55, 10])
-shot("L13+1.2", mv([DX + 1.4, -2.4, 1.5], [DX + 0.5, 0.0, 1.4], 46, [DX + 0.5, -2.4, 1.5], [DX - 0.3, 0.0, 1.4], 46), "radio", hand=0.01)
+# the camera rides along the car beside me, tracking my eased drive offset (the ride cue is a 2.6 s smoothstep)
+_ss = lambda x: x * x * (3 - 2 * x)
+_rk = []
+for _u in (0.0, 0.25, 0.5, 0.75, 1.0):
+    _x = DX + 0.2 + 1.3 - 2.6 * _ss((1.18 + _u * 1.42) / 2.6)
+    _rk.append([_u, [_x - 0.15, -2.3, 1.5], [_x - 0.15, -0.45, 1.38], 30])
+shot("L13+1.2", _rk, "radio", hand=0.01)
 # L14: Then the TRUCK started: my face at my window
 sit("me", "L14-0.05", on=False)
 F("L14", "me", [LX + 0.0, LY + 10.8, RZ], 0, "uneasy", "me_window", d=6.0, lens=52, aimz=1.55)
@@ -328,7 +334,7 @@ only("P01", [])
 shot("L22", mv(FROM_WIN, [TR[0] - 0.3, TR[1] + 0.3, 1.5], 40, [LX + 0.0, LY + 10.35, RZ + 1.9], [TR[0] - 0.3, TR[1] + 0.3, 1.5], 46), "eleven")
 cue("L22+1.2", "truck", shape=0.0, dur=0.0)
 cue("L22+1.2", "truck", door=1.0, dur=0.8)
-shot("L23", mv([LX - 3.15, LY + 2.65, 1.2], [LX - 3.27, LY + 1.41, 0.88], 44, [LX - 3.17, LY + 2.45, 1.17], [LX - 3.27, LY + 1.41, 0.88], 44), "handle")
+shot("L23", mv([LX - 4.6, LY - 2.4, 1.6], [LX - 2.6, LY + 1.2, 0.95], 30, [LX - 4.5, LY + 3.9, 1.35], [LX - 3.1, LY + 1.4, 0.9], 34), "handle")
 put("me", "L23+1.2", [LX, LY + 10.8, RZ], 0, expr="scared")
 only("L23+1.2", ["me"])
 shot("L23+1.2", mv([LX + 0.55, LY + 5.2, RZ + 1.7], [LX, LY + 10.8, RZ + 1.55], 52, push=0.07), "me_dark3")
@@ -345,12 +351,12 @@ shot("L27+1.1", mv([CBX + 0.5, CBY + 0.35, 0.82], [CBX + 0.4, CBY - 0.15, 0.7], 
 put("me", "L28", [CBX - 0.45, CBY - 0.2], 180, expr="stunned")
 sit("me", "L28")
 only("L28", ["me"])
-shot("L28", mv([CBX + 0.1, CBY + 1.5, 1.7], [CBX - 0.4, CBY - 0.2, 1.35], 28, [CBX + 0.0, CBY + 1.3, 1.65], [CBX - 0.4, CBY - 0.2, 1.35], 28), "me_cab")
+shot("L28", mv([CBX - 0.45, CBY + 2.0, 1.7], [CBX - 0.45, CBY - 0.2, 1.5], 27, [CBX - 0.45, CBY + 1.75, 1.68], [CBX - 0.45, CBY - 0.2, 1.5], 27), "me_cab")
 only("L29", [])
 shot("L29", mv([CBX + 0.6, CBY + 0.3, 0.85], [CBX + 0.4, CBY - 0.15, 0.75], 55, push=0.1), "thermos2")
 put("me", "L29+0.45", [CBX - 0.45, CBY - 0.2], 180, expr="stunned")
 only("L29+0.45", ["me"])
-shot("L29+0.45", mv([CBX + 0.5, CBY + 1.4, 1.6], [CBX - 0.4, CBY - 0.2, 1.4], 30, [CBX + 0.35, CBY + 1.2, 1.55], [CBX - 0.4, CBY - 0.2, 1.4], 30), "me_cab2")
+shot("L29+0.45", mv([CBX - 0.45, CBY + 2.0, 1.7], [CBX - 0.45, CBY - 0.2, 1.5], 27, [CBX - 0.45, CBY + 1.75, 1.68], [CBX - 0.45, CBY - 0.2, 1.5], 27), "me_cab2")
 sit("me", "L30", on=False)
 put("me", "L30", [LX + 1.0, LY + 4.6], 0, expr="uneasy", arms=[0, 90])
 talk("me", "L30", "L30+1.0", 0.8)
@@ -417,6 +423,11 @@ put("dad", "L46", [LX + 4.7, LY + 9.0], 10, expr="glum", arms=[30, 0], side=[70,
 shot("L46", mv([LX + 3.4, LY + 4.6, 1.65], [LX + 5.0, LY + 9.0, 1.5], 34, [LX + 3.7, LY + 5.0, 1.65], [LX + 5.0, LY + 9.0, 1.5], 34), "dad_buzzer")
 beat("dad", "L47", expr="glum", arms=[0, 0], side=[0, 0], yaw=-30)
 shot("L47", mv([LX + 3.2, LY + 5.0, 1.65], [LX + 4.7, LY + 9.0, 1.55], 40, [LX + 3.6, LY + 5.4, 1.65], [LX + 4.7, LY + 9.0, 1.55], 40), "dad_turns")
+cue("L46-0.05", "dadfill", v=1.0, ox=0.6, oy=-2.2, oz=2.0, dur=0.3)
+cue("L50", "dadfill", v=0.0, dur=0.3)
+cue("L52-0.05", "dadfill", v=1.0, ox=0.5, oy=-2.0, oz=1.9, dur=0.3)
+cue("L53", "dadfill", v=1.0, ox=0.0, oy=2.0, oz=3.0, dur=0.3)
+cue("L56", "dadfill", v=0.0, dur=0.3)
 cue("L48", "phone", v=1.0, dur=0.3)
 cue("L49", "phone", v=0.0, dur=0.3)
 put("dad", "L48", [LX - 6.0, LY + 6.0], 0, expr="glum", arms=[70, 0], side=[0, 0])
@@ -501,7 +512,7 @@ cue("L68", "plates", v=1.0)
 cue("L68", "eggs", v=0.0)
 beat("me", "L68", expr="smile")
 beat("dad", "L68", expr="smile")
-shot("L68", mv([NX + 0.3, NY + 1.6, AZ + 1.35], [NX + 0.3, NY + 3.8, AZ + 1.0], 38, [NX + 0.3, NY + 2.0, AZ + 1.3], [NX + 0.3, NY + 3.8, AZ + 1.0], 38), "cold_eggs")
+shot("L68", mv([NX + 0.3, NY + 0.9, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.55], 28, [NX + 0.3, NY + 1.3, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.5], 28), "cold_eggs")
 sit("me", "L69", on=False)
 sit("dad", "L69", on=False)
 put("dad", "L69", [DX - 2.2, DY - 0.9, 1.8], 0, expr="smile", arms=[0, 150])
@@ -518,10 +529,10 @@ sit("dad", "L71")
 only("L71", ["dad"])
 rip("L71", NX + 0.5, NY + 3.3, AZ + 1.7, s=1.0)
 shot("L71", mv([NX + 0.5, NY + 1.2, AZ + 1.45], [NX + 0.5, NY + 4.75, AZ + 1.35], 34, [NX + 0.5, NY + 1.6, AZ + 1.45], [NX + 0.5, NY + 4.75, AZ + 1.35], 34), "dad_chair")
-only("L71+1.0", [])
-cue("L71+1.0", "days", n=731.0)
-rip("L71+1.0", HALLX + 0.2, HALLY + 2.4, 1.4, s=1.35)
-shot("L71+1.0", mv([HALLX + 0.1, HALLY + 1.0, 1.55], [HALLX + 0.5, HALLY + 4.4, 1.5], 30, [HALLX + 0.25, HALLY + 1.9, 1.55], [HALLX + 0.5, HALLY + 4.4, 1.5], 30), "loop_door")
+only("L71>", [])
+cue("L71>", "days", n=731.0)
+rip("L71>", HALLX + 0.2, HALLY + 2.4, 1.4, s=1.35)
+shot("L71>", mv([HALLX + 0.1, HALLY + 1.0, 1.55], [HALLX + 0.5, HALLY + 4.4, 1.5], 30, [HALLX + 0.25, HALLY + 1.9, 1.55], [HALLX + 0.5, HALLY + 4.4, 1.5], 30), "loop_door")
 
 # ---------------------------------------------------------------------------------------------- finish
 for k_ in acting.values():
@@ -599,7 +610,7 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#49c06b",
     "gap": 0.18,
-    "tail": 0.25,
+    "tail": 0.75,
     "fade_in": False,
     "fade_out": False,
     "rev": REV,
