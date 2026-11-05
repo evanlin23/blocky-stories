@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 7
+REV = 11
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -530,7 +530,7 @@ shot("L61.1", AIS(3.0, 40, 0.1), "face18")
 # S62: the windows clear one by one
 cue("L62", "clear", q=0.0)
 cue("L62+0.1", "clear", q=1.0, dur=3.4)
-shot("L62", P2([0.0, ry(2.2), 1.7], [-HALF_, ry(6), 1.4], [0.0, ry(5), 1.7], [HALF_, ry(7), 1.4], 28), "clearing")
+shot("L62", P2([0.0, ry(5.2), 1.7], [-HALF_, ry(1.6), 1.4], [0.0, ry(4.8), 1.7], [HALF_, ry(1.2), 1.4], 28), "clearing")
 # S63: my face, laughing
 beat("me", "L63", expr="laugh")
 move("L63>", 0)
@@ -639,7 +639,7 @@ EARLY = {remap(x) for x in ("L09", "L48", "L48.1", "L71")}
 for k_ in list(acting.values()) + [cues]:
     for it in k_:
         if it.get("at") in EARLY and it["at"] == it.get("at"):
-            it["at"] = f"{it['at']}-0.2"
+            it["at"] = f"{it['at']}-0.2" if ("blend" in it or "pos" not in it) else f"{it['at']}-0.22"
 cues.sort(key=lambda c: (0 if c["at"] == 0 else 1))
 shots, names = [], {}
 for i, (at, camera, step, follow, nm) in enumerate(SH):
@@ -682,7 +682,7 @@ sound = {
 remap_all(sfx)
 remap_all(music["sections"])
 remap_all(sound["music_drops"])
-polish = {"bed_drop_db": -3.0, "hold": [names["reveal"]], "reveal": [remap("L47")], "twist": remap("L49"),
+polish = {"bed_drop_db": -3.0, "hold": [names["reveal"], names["clearing"], names["dipped"]], "reveal": [remap("L47")], "twist": remap("L49"),
           "emph": [remap(x) for x in ["L01.1", "L16.2", "L47", "L59.1", "L61.1", "L64"]],
           "quiet": [[remap("L67"), remap("L70")]],
           "sway": [names["freeze"], names["face10"], names["face15"]]}
@@ -721,6 +721,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": [names["exterior"], names["bussmile"], names["emptyseat2"], names["swell"], names["loudcar"]],
+    "frames_ok": ["S01", names["inseat"], names["loudcar"]],
     "clip_ok": [],
     "asr_forgive": ["nineteen eighty seven", "walk the", "walked a", "1987"],
 }
