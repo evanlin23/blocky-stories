@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -160,8 +160,8 @@ cue(0, "sit6", s=0.0)
 cue(0, "phone", where=0.0, screen=0.0)
 
 # ===== 01 the rule (L01 to L05)
-FEETCAM = [[0, [-5.1, -6.0, 0.25], [-5.5, -1.8, 0.4], 16], [1, [-5.1, -5.9, 0.27], [-5.5, -1.8, 0.42], 16]]
-FEET2CAM = [[0, [-5.9, -5.6, 0.25], [-5.7, -1.75, 0.45], 16], [1, [-5.9, -5.5, 0.27], [-5.7, -1.75, 0.47], 16]]
+FEETCAM = [[0, [-2.5, -2.0, 0.3], [-4.9, -2.3, 0.3], 34], [1, [-2.6, -2.0, 0.32], [-4.9, -2.3, 0.32], 34]]
+FEET2CAM = [[0, [-3.0, -3.3, 0.28], [-5.5, -1.75, 0.3], 24], [1, [-3.1, -3.2, 0.3], [-5.5, -1.75, 0.32], 24]]
 shot(0, FEETCAM, "feet1")
 shot("L01.1", cam(1.0, -1.0, 1.2, 8.5, 5, 28), "row")
 shot("L01.2", [[0, [4.2, -7.6, 2.8], [-2.0, 0.0, 1.0], 26]], "dancers")
