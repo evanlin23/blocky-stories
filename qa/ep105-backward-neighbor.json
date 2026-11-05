@@ -1,0 +1,28 @@
+{
+ "stage": "proof",
+ "film": "proof-41943778750",
+ "run": 41943778750,
+ "sha": "8ae9ddfe1ef35d6e318b236fdd0bc0df82f7f76e",
+ "verdict": "fail",
+ "date": "2026-11-05",
+ "checked": [
+  "frames every 2 s at phone size, first frame at 540 wide",
+  "first 3 s frame by frame",
+  "15 framing-tool shots",
+  "S85 70.2-73.4 s",
+  "S139 116.8-118.4 s",
+  "S125 105.8-107.2 s",
+  "cover",
+  "loudness",
+  "hf windows",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 16.8 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 23.0 | 14.0– | ok |\n| macro.motion_energy_q | 10.14 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 11.6 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.27 | –2.5 | ok |\n| macro.longest_still_s | 0.63 | –1.5 | ok |\n| macro.motion_energy_mean | 4.03 | 1.5– | ok |\n| spec.camera_move_share | 0.999 | 0.65– | ok |\n| spec.punch_per_10s | 0.73 | 0.4– | ok |\n| macro.brightness_mean | 0.55 | 0.35– | ok |\n| macro.brightness_first_3s | 0.488 | 0.3– | ok |\n| macro.dark_frame_share | 0.013 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.424 | 0.42– | ok |\n| macro.contrast_mean | 0.228 | 0.18– | ok |\n| spec.face_big_share | 0.612 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.618 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.208 | –0.25 | ok |\n| micro.idle_window_share | 0.02 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 67.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.43 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.3 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0431 | –0.08 | ok |\n| sound.hf_jump_max | 0.0191 | –0.04 | ok |",
+ "notes": "FAIL. S85 71.6-73.0 s (L36.2 'the day after it HAPPENED'): 1.4 s of flat navy, no picture: the camera (61.66, 6.14) sits behind Vern's photo wall (y 3.3) and films its back. Fix: put S85 in the room in front of the wall (y < 3.3) on Vern lifting a frame off its hook, as the script's S36b says.\nFAIL. S139 117.4-118.0 s (L60.4 'to THEM.'): 0.6 s near-black dark-brown frame, camera (7.28, 7.48) inside Vern's house/porch geometry; the script's S60c (him hanging the 0 calendar) never shows. Fix: move S139 outside the porch on young Vern at the nail. clip.json has no hits; neither is a head-through-prop, so the clip check missed both.\nFraming advice judged at phone size: S09-S12 (Vern out of frame on L03/L04) are fine, the mailbox/calendar inserts carry the lines; S58/S63 heads half cut but faces read; S60 51.1 s both faces off frame (weak, 1.1 s, not a fail alone); S74-76 and S111-112 small faces read at 270 wide; S34/S42 empty inserts are fine; S125 106.3-106.5 s a canopy fills the top third and the tag drops out for 2 frames (minor).\nCover: cover_s 95.5 is a wide handshake with small faces (S112); fix: set cover_s to a lit close-up, e.g. 0.3 s (old Vern crying, 10,950 tag) or 110 s.\nSecond one: a lit close-up of old Vern, white hair, glasses, blue tears, the 10,950 calendar tag top left, a slow push; 'Vern's calendar says almost eleven thousand days LEFT. He said goodbye the day we MET.' poses the mystery; opening 'count' matches L01, differs from floor-thirteen (if) and ep99 (cost).\nAudio -14.1 LUFS / -1.8 dBTP, LRA 1.2; hf max 0.043, jump 0.019; only silence is the scripted 0.6 s drop at 86.6 s; voice clear, no clipping or cut tail. Polish on (emph, reveal, quiet, sway, hold). Flash passes (2/s, red 0); verdict.json pass; gate OPEN (3 short-caption warns).\ncraft: 0 block, 0 near, 1 warn: spec.cuts_per_10s 11.6 (5.5-8.0); at phone size the pace reads busy but not jarring, not a fail."
+}
