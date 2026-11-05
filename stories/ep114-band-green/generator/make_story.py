@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -186,7 +186,10 @@ shot("L05.2", [[0, [3.8, 6.2, 1.6], [1.4, 8.8, 3.1], 38]], "brims2")
 # ===== 02 the rule at work (L06 to L10)
 shot("L06", cam(D["t2"][0], D["t2"][1], 0.4, 2.4, 120, 28, cz=0.3), "feetgo")
 shot("L07", front("bank", 1.3, 3.2, 34, off=-40), "bank")
-shot("L08", cam(D["mail"][0], D["mail"][1], 0.85, 4.2, 170, 30, cz=1.2), "mail")
+for w_ in ("t5", "t3", "t4"):
+    teleport(w_, "L08", [-5.5 + (w_ == "t3") * 2, 5.8 + (w_ == "t4")], yaw=D[w_][2])
+    teleport(w_, "L09", [D[w_][0], D[w_][1]], yaw=D[w_][2])
+shot("L08", cam(D["mail"][0], D["mail"][1], 0.9, 3.4, 100, 30, cz=1.2), "mail")
 shot("L09", front("grandpa", 1.35, 3.6, 34), "grandpa")
 shot("L09.1", front("grandpa", 0.55, 2.2, 30, cz=0.45), "knees")
 shot("L10", cam(D["sand"][0], D["sand"][1], 1.0, 3.6, -25, 30, cz=1.2), "sand")
@@ -195,9 +198,14 @@ cue("L06", "song", n=3.0)
 
 # ===== 03 me on the bench (L11 to L18)
 teleport("grandpa", "L11", [-2.7, -4.7], yaw=D["grandpa"][2])
-shot("L11", [[0, [-3.6, -3.6, 1.45], [-6.1, -1.85, 1.3], 28], [1, [-3.7, -3.5, 1.45], [-6.1, -1.85, 1.3], 28]], "bench")
+BEHIND = {"t1": [-8.4, -1.2], "t3": [-8.6, 0.6], "t7": [-7.8, 1.6]}
+for w_, p_ in BEHIND.items():
+    teleport(w_, "L11", p_, yaw=90.0)
+shot("L11", [[0, [-3.6, -3.6, 1.45], [-6.1, -1.85, 1.3], 24], [1, [-3.7, -3.5, 1.45], [-6.1, -1.85, 1.3], 24]], "bench")
+for w_ in BEHIND:
+    teleport(w_, "L12", [D[w_][0], D[w_][1]], yaw=D[w_][2])
 teleport("grandpa", "L12", [D["grandpa"][0], D["grandpa"][1]], yaw=D["grandpa"][2])
-shot("L12", [[0, [-3.4, -2.9, 0.22], [-5.5, -1.75, 0.2], 27], [1, [-3.5, -2.8, 0.22], [-5.5, -1.75, 0.2], 27]], "sneakers2")
+shot("L12", [[0, [-3.4, -0.8, 0.7], [-5.8, -1.75, 0.75], 24], [1, [-3.5, -0.8, 0.7], [-5.8, -1.75, 0.75], 24]], "sneakers2")
 # L13: the photo of me and Benny on my phone, held on my raised hand
 key("me", "L13", arms=[0, 88], head=[0, 8], expr="worried")
 key("me", "L13.2", arms=[0, 88], head=[0, 8])
@@ -215,7 +223,7 @@ cue("L14+1.2", "band", play=1.0, dur=0.5)
 shot("L14", [[0, [0.0, 3.4, 1.5], [0.0, 10.0, 1.9], 24]], "bandwalk")
 cue("L15", "song", n=4.0)
 shot("L15", [[0, [-5.55, -0.55, 1.5], [BX - 0.05, BY + 1.5, 0.86], 55]], "scratch")
-shot("L15.3", [[0, [-6.0, -0.6, 1.3], [-2.0, 1.0, 1.55], 20]], "mypov")
+shot("L15.3", [[0, [-1.0, -0.4, 1.4], [-3.4, 0.5, 1.45], 30]], "mypov")
 key("me", "L16", head=[-25, 4], expr="worried")
 shot("L16", cam(MEX, MEY, 1.42, 2.8, 115, 38), "watch")
 shot("L17", [[0, [3.1, -8.5, 2.0], [-1.0, 0.5, 1.2], 22]], "songend")
@@ -240,7 +248,7 @@ cue("L19", "song", n=20.0, dur=0.4)
 shot("L19", [[0, [0.0, -9.5, 2.3], [0.0, 2.0, 1.8], 20]], "night")
 cue("L20", "song", n=36.0, dur=0.5)
 cue("L20", "clock", h=12.0)
-shot("L19.2+0.3", [[0, [5.6, 1.0, 6.3], [14.0, 1.0, 7.2], 24]], "clock12")
+shot("L19.2+0.3", [[0, [1.0, 0.6, 1.2], [14.0, 1.0, 4.4], 20]], "clock12")
 cue("L20.1", "clock", h=13.0)
 cue("L20.1", "song", n=38.0, dur=0.3)
 shot("L20.1", [[0, [6.4, 1.2, 6.5], [14.0, 1.0, 7.2], 26]], "clock1")
@@ -250,7 +258,7 @@ shot("P01", [[0, [0.0, 3.4, 1.0], [0.0, 8.8, 2.7], 28]], "drop")
 cue("L21", "clock", h=3.0)
 cue("L21", "song", n=43.0, dur=0.3)
 cue("L21", "dance", amp=0.65, tired=0.5, dur=1.0)
-shot("L21", [[0, [5.6, 0.8, 6.3], [14.0, 1.0, 7.2], 24]], "clock3")
+shot("L21", [[0, [1.2, 0.4, 1.2], [14.0, 1.0, 4.4], 20]], "clock3")
 cue("L22", "dance", amp=0.5, tired=0.9, dur=0.8)
 cue("L22", "song", n=44.0, dur=0.3)
 shot("L22", [[0, [0.0, -9.5, 3.2], [-1.0, 1.0, 1.2], 20]], "drooping")
@@ -305,7 +313,7 @@ shot("L32.3", [[0, [_gx + _ux * 2.6 + _uy * 0.9, _gy + _uy * 2.6 - _ux * 0.9, 1.
 shot("L33", [[0, [_gx + _ux * 1.7 - _uy * 0.35, _gy + _uy * 1.7 + _ux * 0.35, 1.6], [_gx, _gy, 1.55], 30],
              [1, [_gx + _ux * 1.5 - _uy * 0.3, _gy + _uy * 1.5 + _ux * 0.3, 1.6], [_gx, _gy, 1.55], 30]], "gface")
 teleport("grandpa", "L34", [-4.95, -2.5], yaw=70.0)
-shot("L34", [[0, [-2.6, -0.5, 0.6], [-5.25, -2.0, 0.6], 21], [1, [-2.7, -0.6, 0.6], [-5.25, -2.0, 0.6], 21]], "kneesbench")
+shot("L34", [[0, [-2.6, -0.5, 0.6], [-5.2, -2.1, 0.8], 17], [1, [-2.7, -0.6, 0.6], [-5.2, -2.1, 0.8], 17]], "kneesbench")
 teleport("grandpa", "L35", [D["grandpa"][0], D["grandpa"][1]], yaw=D["grandpa"][2])
 
 # ===== 06 the rule's own logic (L35 to L40)
@@ -324,7 +332,7 @@ cue("L37+0.4", "feet", n=7.0, dur=0.3)
 cue("L37+0.6", "medance", amp=1.0, dur=0.4)
 cue("L37+0.4", "face", m=0.0, dur=1.0)
 cue("L37+0.5", "dance", amp=1.0, tired=0.0, dur=1.4)
-shot("L37", [[0, [-2.9, -0.2, 1.5], [-5.6, -1.1, 0.95], 20]], "standup")
+shot("L37", [[0, [-3.0, -1.5, 1.45], [-5.6, -1.2, 1.0], 24]], "standup")
 key("me", "L38", expr="laugh", yaw=90)
 shot("L38", cam(STAND[0], STAND[1], 1.2, 3.6, 50, 28), "terrible")
 shot("L39", cam(STAND[0], STAND[1], 1.1, 4.4, 60, 26, cz=2.4), "chair")
@@ -360,10 +368,10 @@ for who in D:
     key(who, "L41+1.6", blend=1.0, lean=-84, yaw=face_cam + (0 if who in LIEPOS else (-14 if sum(map(ord, who)) % 2 else 14)), expr="laugh", arms=[0, 0], side=[70, 70])
 teleport("me", "L41+0.5", list(LIEPOS["me"]), yaw=0.0)
 key("me", "L41+1.6", blend=1.0, lean=-84, yaw=0.0, expr="laugh", arms=[0, 0], head=[0, 0])
-shot("L42", [[0, [-2.3, -7.3, 1.3], [-2.3, -3.7, 0.5], 11], [1, [-2.3, -7.0, 1.2], [-2.3, -3.7, 0.5], 11]], "lying")
+shot("L42", [[0, [-2.3, -7.0, 1.3], [-2.2, -4.8, 0.45], 16], [1, [-2.3, -6.7, 1.2], [-2.2, -4.8, 0.45], 16]], "lying")
 shot("L43", [[0, [-3.4, -6.8, 1.7], [-3.7, -3.8, 0.5], 24], [1, [-3.4, -6.4, 1.6], [-3.7, -3.8, 0.5], 24]], "glaugh")
 cue("L44", "phone", where=1.0, lie=1.0, screen=1.0, x=LIEPOS["me"][0], y=LIEPOS["me"][1] + 0.85, z=0.5, rot=0.0, sc=1.5)
-shot("L44", [[0, [-7.4, -6.2, 1.6], [-7.4, -3.7, 0.7], 32]], "call")
+shot("L44", [[0, [-7.4, -6.6, 1.7], [-7.4, -3.3, 0.6], 30]], "call")
 shot("L45", [[0, [-3.0, -7.0, 0.8], [0.0, 20.0, 5.0], 22]], "sunrise")
 cue("L42", "look", id="dawn", dur=1.6)
 cue("L42", "band", u=0.0, turn=0.0, dur=0)
@@ -479,6 +487,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
+    "framing_ok": ["S43", "S44"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

@@ -564,7 +564,9 @@ BENCH_TARGET = G.BENCH1
 LOWKEY = {"S41", "S42", "S43", "S44", "S45", "S46", "S66"}
 TAGMACRO = {"S59"}
 EDGE = {"S41": 900.0, "S44": 1500.0, "S45": 2000.0, "S66": 1800.0}
-DIM = {"S67": (0.0, 0.04, 0.35, 0.1)}
+DIM = {"S67": (0.0, 0.04, 0.35, 0.1), "S35": (0.15, 0.12, 0.8, 0.5)}
+GLOW = {"S42": 200.0, "S43": 260.0, "S44": 260.0, "S45": 160.0}
+SKYOV = {"S71": ("#f7b84e", 0.8)}
 DARKSKY = {"S67"}
 HIDEHORN = {"S43", "S44", "S45", "S46"}
 DANCERS = ["grandpa", "bank", "mail", "sand", "t1", "t2", "t3", "t4", "t5", "t6", "t7"]
@@ -607,7 +609,10 @@ def dance_one(who, t, amp, tired, fm, ftarget, W_):
         yaw += 0.15 * q(s1) * amp
         z_add = 0.02 * bounce * amp
     elif style == "spin":     # the mail carrier, seated on her bag, spinning
-        yaw += (t * 5.4 + ph) * min(1.0, amp * 1.5) if amp > 0.01 else 0
+        if W_.get("sid") == "S14":   # the close-up: she swings round, never turning her back to the camera
+            yaw += 0.85 * math.sin(t * 5.4 + ph) * min(1.0, amp * 1.5)
+        else:
+            yaw += (t * 5.4 + ph) * min(1.0, amp * 1.5) if amp > 0.01 else 0
         aL = aR = 0.3 * amp
         sL = sR = 1.25 * amp
         lL = lR = -1.4
@@ -756,14 +761,19 @@ def animate(kit, story, tl, t, ctx):
         gains["rim2"] = 2200.0
         if sid == "S41":
             gains["rim"], gains["rim2"] = 0.0, 500.0
+        if sid in GLOW:
+            gains["stage"] = GLOW[sid]
         if sid in EDGE:
             gains["edge0"] = gains["edge1"] = EDGE[sid]
     for ob in W["eave_bulbs"] + W["bulbs"]:
         ob.hide_render = lowkey
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
-    bg.inputs["Color"].default_value = (*look["sky"], 1.0)
-    bg.inputs["Strength"].default_value = look["sky_str"] * (0.0 if sid in DARKSKY else 1.0)
+    skyc, skys = look["sky"], look["sky_str"]
+    if sid in SKYOV:
+        skyc, skys = kit_col(SKYOV[sid][0]), SKYOV[sid][1]
+    bg.inputs["Color"].default_value = (*skyc, 1.0)
+    bg.inputs["Strength"].default_value = skys * (0.0 if sid in DARKSKY else 1.0)
     W["disc"].hide_render = look["disc"] < 0.01
     W["disc"].location = (-14, 170, 9) if look["disc"] >= 0.01 else (-14, 170, -400)
     # the clock and the truck
