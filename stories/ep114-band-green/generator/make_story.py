@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -197,7 +197,7 @@ cue("L06", "song", n=3.0)
 teleport("grandpa", "L11", [-2.7, -4.7], yaw=D["grandpa"][2])
 shot("L11", [[0, [-3.6, -3.6, 1.45], [-6.1, -1.85, 1.3], 28], [1, [-3.7, -3.5, 1.45], [-6.1, -1.85, 1.3], 28]], "bench")
 teleport("grandpa", "L12", [D["grandpa"][0], D["grandpa"][1]], yaw=D["grandpa"][2])
-shot("L12", [[0, [-3.4, -2.9, 0.55], [-5.5, -1.75, 0.5], 27], [1, [-3.5, -2.8, 0.55], [-5.5, -1.75, 0.5], 27]], "sneakers2")
+shot("L12", [[0, [-3.4, -2.9, 0.3], [-5.5, -1.75, 0.34], 26], [1, [-3.5, -2.8, 0.3], [-5.5, -1.75, 0.34], 26]], "sneakers2")
 # L13: the photo of me and Benny on my phone, held on my raised hand
 key("me", "L13", arms=[0, 88], head=[0, 8], expr="worried")
 key("me", "L13.2", arms=[0, 88], head=[0, 8])
@@ -324,7 +324,7 @@ cue("L37+0.4", "feet", n=7.0, dur=0.3)
 cue("L37+0.6", "medance", amp=1.0, dur=0.4)
 cue("L37+0.4", "face", m=0.0, dur=1.0)
 cue("L37+0.5", "dance", amp=1.0, tired=0.0, dur=1.4)
-shot("L37", [[0, [-2.9, -0.2, 1.5], [-5.3, -1.3, 1.0], 26]], "standup")
+shot("L37", [[0, [-2.9, -0.2, 1.5], [-5.6, -1.1, 0.95], 20]], "standup")
 key("me", "L38", expr="laugh", yaw=90)
 shot("L38", cam(STAND[0], STAND[1], 1.2, 3.6, 50, 28), "terrible")
 shot("L39", cam(STAND[0], STAND[1], 1.1, 4.4, 60, 26, cz=2.4), "chair")
@@ -358,8 +358,8 @@ for who in D:
     key(who, "L41+1.6", blend=1.0, lean=-84, yaw=face_cam + (-14 if sum(map(ord, who)) % 2 else 14), expr="laugh", arms=[0, 0], side=[70, 70])
 teleport("me", "L41+0.5", list(LIEPOS["me"]), yaw=0.0)
 key("me", "L41+1.6", blend=1.0, lean=-84, yaw=0.0, expr="laugh", arms=[0, 0], head=[0, 0])
-shot("L42", [[0, [-2.3, -7.2, 0.95], [-2.3, -3.6, 0.8], 15], [1, [-2.3, -6.9, 0.95], [-2.3, -3.6, 0.8], 15]], "lying")
-shot("L43", [[0, [-3.5, -7.4, 0.9], [-3.7, -4.2, 0.55], 28], [1, [-3.6, -7.0, 0.9], [-3.7, -4.2, 0.55], 28]], "glaugh")
+shot("L42", [[0, [-2.3, -7.3, 1.4], [-2.3, -3.8, 0.5], 17], [1, [-2.3, -7.0, 1.3], [-2.3, -3.8, 0.5], 17]], "lying")
+shot("L43", [[0, [-3.0, -6.8, 1.7], [-3.2, -3.8, 0.5], 24], [1, [-3.0, -6.4, 1.6], [-3.2, -3.8, 0.5], 24]], "glaugh")
 cue("L44", "phone", where=1.0, lie=1.0, screen=1.0, x=LIEPOS["me"][0], y=LIEPOS["me"][1] + 1.1, z=0.5, rot=0.0, sc=2.1)
 shot("L44", [[0, [-7.4, -6.5, 1.6], [-7.4, -3.5, 0.7], 30]], "call")
 shot("L45", [[0, [-3.0, -7.0, 0.8], [0.0, 20.0, 5.0], 22]], "sunrise")
@@ -414,6 +414,7 @@ sfx = [
     {"at": "L37", "kind": "creak", "db": -14},
     {"at": "L37+0.45", "kind": "click", "db": -9},
     {"at": "L44", "kind": "thud", "db": -16},
+    {"at": "L41+0.9", "kind": "thud", "db": -13},
 ]
 music = {
     "root": 46, "mode": "major", "bpm": 128, "seed": 114,
