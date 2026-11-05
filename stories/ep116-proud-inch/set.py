@@ -478,32 +478,24 @@ def build_tag(kit):
         ob = kit.box(name, size, loc, mat, root)
         noshadow(ob)
         return ob
-    b("tag.edge", (1.12, 0.84, 0.004), (0, 0, 0.0), edge)
-    b("tag.plate", (1.06, 0.78, 0.004), (0, 0, 0.004), plate)
-    b("tag.div", (0.96, 0.012, 0.004), (0, -0.02, 0.008), ink)
+    b("tag.edge", (1.12, 0.96, 0.004), (0, 0, 0.0), edge)
+    b("tag.plate", (1.06, 0.9, 0.004), (0, 0, 0.004), plate)
+    b("tag.div", (0.96, 0.014, 0.004), (0, 0.0, 0.008), ink)
     # the ruler glyph: a tall yellow bar with ticks (row 1)
-    b("tag.ruler", (0.15, 0.34, 0.004), (-0.4, 0.2, 0.008), yel)
+    b("tag.ruler", (0.15, 0.34, 0.004), (-0.4, 0.24, 0.008), yel)
     for i in range(5):
         ln = 0.09 if i % 2 == 0 else 0.06
-        b(f"tag.tick{i}", (ln, 0.018, 0.004), (-0.475 + ln / 2, 0.09 + i * 0.065, 0.012), ink)
+        b(f"tag.tick{i}", (ln, 0.018, 0.004), (-0.475 + ln / 2, 0.13 + i * 0.065, 0.012), ink)
     # my apron glyph (row 2)
-    b("tag.apron", (0.16, 0.2, 0.004), (-0.4, -0.27, 0.008), red)
-    b("tag.apron2", (0.07, 0.07, 0.004), (-0.4, -0.3, 0.012), plate)
+    b("tag.apron", (0.16, 0.2, 0.004), (-0.4, -0.25, 0.008), red)
+    b("tag.apron2", (0.07, 0.07, 0.004), (-0.4, -0.28, 0.012), plate)
     rows = {}
-    for name, cy, h, ox in [("g", 0.2, 0.34, 0.0), ("m", -0.27, 0.23, 0.0)]:
-        sc = h / 0.34
+    # feet, a fat dot, then the inches: "9 . 0" and "5 . 10", big digits and no thin marks
+    for name, cy, h in [("g", 0.24, 0.34), ("m", -0.25, 0.34)]:
         slots = {}
-        for key, cx in [("feet", -0.17), ("tens", 0.09), ("ones", 0.26)]:
-            sl = {}
-            seg_root = root
-            sl = seg_digit(kit, seg_root, f"tag.{name}.{key}", -0.2 + (cx + 0.2) * (1.0 if name == "g" else 0.78), cy, h, ink, 0.012)
-            slots[key] = sl
-        # feet and inch marks
-        mx = -0.2 + (-0.05 + 0.2) * (1.0 if name == "g" else 0.78)
-        b(f"tag.{name}.foot", (0.03 * sc, 0.1 * sc, 0.004), (mx, cy + h * 0.32, 0.012), ink)
-        ix = -0.2 + (0.4 + 0.2) * (1.0 if name == "g" else 0.78)
-        for q in (0, 1):
-            b(f"tag.{name}.inch{q}", (0.03 * sc, 0.1 * sc, 0.004), (ix + q * 0.05 * sc, cy + h * 0.32, 0.012), ink)
+        for key, cx in [("feet", -0.17), ("tens", 0.12), ("ones", 0.34)]:
+            slots[key] = seg_digit(kit, root, f"tag.{name}.{key}", cx, cy, h, ink, 0.012)
+        b(f"tag.{name}.dot", (0.06, 0.06, 0.004), (-0.01, cy - h * 0.4, 0.012), ink)
         rows[name] = slots
     W["rows"] = rows
     W["tag_state"] = None
