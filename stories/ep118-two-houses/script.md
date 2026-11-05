@@ -3,10 +3,10 @@
 - **Slug:** `ep118-two-houses` (batch 12, upload order 4 of 7)
 - **Pitch:** 9 in `out/batch12-pitches.md`, blind panel 22/30. Engine: the feud as friendship (the fight is the ritual), unused. It re-imagines the backlog's `nine-flamingos` feud with no flamingo and no disguise. Opening shape `count`. Lane: core. Length arm: mid.
 - **Title:** Our House Leans Toward HIS 🏠
-- **Changed from the pitch (panel notes):** faces are big, and the lean is shown through objects in close shots, never only in wides: a kitchen table propped on a stack of books (L08), a marble rolling down our hallway toward his house (L09), Dad's coffee sitting level in a tilted mug (L10), picture frames hanging crooked. The street's lean is seen in only two wides (L04, L05 montage, other houses) and one of ours (L18), each held under 1.5 s. The scare is a hand reaching out of Mr. Pruitt's dark window across the gap (partial, at the frame's edge), which turns out to be a mug on a flat palm. The fish doodle on Dad's notes is now their signal ("see you at two", L34). I join the fake fight at the end, and that's the climax: the rule counts a fight, not whether you mean it.
+- **Changed from the pitch (panel notes):** faces are big, and the lean is shown through objects in close shots, never only in wides: a kitchen table propped on a stack of books (L08), a marble rolling down our hallway toward his house (L09), Dad's coffee sitting level in a tilted mug (L10), picture frames hanging crooked. The street's lean is seen in only two wides (L04, L05 montage, other houses) and one of ours (L18), each held under 1.5 s. The scare is a hand reaching out of Mr. Pruitt's dark window across the gap (partial, at the frame's edge), which turns out to be a mug on a flat palm. The fish doodle on Dad's notes is now their signal ("see you at two", L34). The rule counts a fight, never whether you mean it (L35, L36), which is how their trick works. Revised r1 (standards, 2026-11-05): L02 no longer shares ep117's "that means" shape, L03 and L29 add "SLOWLY" (so the nightly make-up doesn't undo the lean), and the ending is no longer me adopting the rule: I keep their secret, and the last beat is a cold sting, the house across the street leaning toward ours when nobody in our house is fighting anybody. Lines changed: L02, L03, L29, L35 to L43. Nothing is voiced yet.
 - **Everyone is an adult.** I'm 25 and live with Dad. Dad is about 66, Mr. Pruitt about 66. "Since they were TEN" is a memory, never shown.
-- **Word count:** 329 spoken words in 43 lines (L01 to L43), all `narrator`, plus one 0.6 s music drop before L19.
-- **Estimated length:** about 75 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
+- **Word count:** 334 spoken words in 43 lines (L01 to L43), all `narrator`, plus one 0.6 s music drop before L19.
+- **Estimated length:** about 77 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright, steep little street of narrow painted houses (ours butter yellow, Mr. Pruitt's sky blue) under a clear sky, a white picket gate between the yards, a hedge. Inside ours: a sunny yellow kitchen and a wood-floored upstairs hall. The storm night (L16 to L27) is the one dark scene: blue-black rain, our hall lamp (a fixed wall lamp, steady) and Mr. Pruitt's steady window lamp, the gap between the windows lit from both sides. No swinging lights.
 - **Hold:** scripts only (batch 12). Not built, not voiced.
 
@@ -30,19 +30,19 @@ The batch table is in `stories/ep115-are-we-there/script.md`. This row:
 - **Premise:** Feuding neighbors' houses lean together here until they make up. Dad and Mr. Pruitt next door have fought for thirty years, and our house leans eleven feet toward his. One stormy night the windows end up a foot apart, and at two a.m. I see what really happens there.
 - **Rule / hook (L01, about 1.9 s):** "Our house leans / ELEVEN feet / toward Mr. Pruitt's." L02: "On our street, / that means / we're FIGHTING."
 - **The relatable want or fight:** a dad's endless feud with the neighbor.
-- **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream tag top-left with a tilted-house glyph and the lean in feet (11 ft, rising to 12 ft at L42). Numerals and glyphs only.
+- **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream tag top-left with a tilted-house glyph and the lean in feet (11 ft throughout, and at L41 a second small glyph appears: the house across the street, tipped toward ours, at 1 ft). Numerals and glyphs only.
 - **The 3 to 5 example montage (L04, L05, L08 to L10, about 7 to 20 s):** two bakeries leaning roof to roof over a street, a duplex folded like a book, then our own house: the table on books, the marble rolling to his side, Dad's coffee level in a tilted mug.
 - **A concrete mystery on screen by 15 s:** eleven feet, the longest lean in town (L07, about 13 s).
 - **How the narrator is the exception:** I've never fought with anyone on the street, and I live in the most-leaning house on it.
 - **The loved ones:** Dad, and Mr. Pruitt, named "My dad and Mr. Pruitt / next door" at L06, both facing camera across the hedge.
 - **First real scare (L16 to L21, about 31 to 41 s):** the storm, the houses creaking, the windows a foot apart, and a hand reaching out of Mr. Pruitt's dark window toward ours.
-- **The climax turns the rule's own logic:** the rule only counts a fight, it never checks if you mean it (L36, L37), so I join in (L38 to L41). No new magic.
+- **The climax turns the rule's own logic:** the rule only counts a fight, it never checks if you mean it (L35, L36), so two best friends can fake one for thirty years. No new magic.
 - **Twist and reveal (L22 to L32, about 41 to 59 s):** shown in one picture (S26: two old men in robes, one at each window, a foot apart in the rain, a mug passing from flat palm to flat palm, both laughing, faces to camera), then said plainly (L28 to L32).
-- **How the last 15 seconds turn over the first line:** next morning I insult his mug, he insults my sneakers, Dad yells about the hedge, and both houses creak closer, which runs into L01's eleven feet.
+- **How the last 15 seconds turn over the first line:** I keep their secret and wash two mugs every night, then the house across the street starts leaning toward ours, though nobody in our house is fighting anybody, "that I know OF", which runs into L01's eleven feet and makes the lean a question again.
 - **The plants a rewatch catches:**
   1. L15: two coffee mugs in our sink every morning, and I don't drink coffee.
   2. L14: every angry note ends with the same fish doodle.
-- **Ending shape:** `fake-feud`: the fight was the friendship, and I join it.
+- **Ending shape:** `fake-feud`: the fight was the friendship, and the sting is a new lean nobody chose.
 - **Warmth:** an old friendship dressed as a feud.
 - **Sad family reveal?** No.
 
@@ -50,7 +50,7 @@ The batch table is in `stories/ep115-are-we-there/script.md`. This row:
 **L12: "His HEDGE. / Who owns / the SQUIRREL."**
 
 ## Clarity test (cold, two sentences)
-On the narrator's street, the houses of neighbors who are fighting lean toward each other, and his dad's thirty-year feud with Mr. Pruitt has their houses leaning eleven feet together. In a storm he sees the two old men passing coffee between their windows at two a.m., laughing: they're best friends who make up every night and fake a new fight every morning to keep their windows close, and he joins in.
+On the narrator's street, the houses of neighbors who are fighting lean toward each other, and his dad's thirty-year feud with Mr. Pruitt has their houses leaning eleven feet together. In a storm he sees the two old men passing coffee between their windows at two a.m., laughing: they're best friends who make up every night and fake a new fight every morning to keep their windows close, and he keeps their secret, until a house across the street starts leaning toward his.
 
 ## The opening recipe (playbook v1), point by point
 1. Line 1 is a count that's wrong (`count`): eleven feet. 7 words, about 1.9 s.
@@ -72,18 +72,18 @@ On the narrator's street, the houses of neighbors who are fighting lean toward e
 - `dad` (my dad, about 66): a white mustache, a bald top with gray sides, a brown cardigan by day, a maroon robe at night. Faces: `cross` (a mock scowl), `sheepish`, `laugh`, `smile`, `warm`.
 - `pruitt` (Mr. Pruitt next door, about 66): tall, thin, a white side part, thick black glasses, a blue sweater by day, a navy robe at night. Faces: `cross`, `laugh`, `smile`, `warm`.
 - `bakers` (two bakers in a montage wide, small), never in a face line.
-Every word is the narrator's. L35, L39 and L40 are reported.
+Every word is the narrator's. L37 is reported.
 
 ## The strange part (no creature)
 No creature and no creature test. The houses lean, and it's shown through what it does to things, close: the propped table, the rolling marble, the level coffee in a tilted mug, crooked frames, and the windows a foot apart. The scare is a hand at the edge of Mr. Pruitt's dark window (his own, in a navy robe sleeve), reaching across the gap with a mug on its flat palm.
-- **Continuity:** the lean is the same in every shot until L42 (a slow 0.5 s creak closer). The hand at L19, L20 is seen only from the wrist down, at the frame's edge, until L24 shows Mr. Pruitt's face.
+- **Continuity:** our lean is the same in every shot. At L40, L41 the mint house across the street tips an inch toward ours over a slow 0.5 s creak. The hand at L19, L20 is seen only from the wrist down, at the frame's edge, until L24 shows Mr. Pruitt's face.
 
 ## Palette
 - Butter yellow `#ffd86b`, sky blue `#7ec8ff`, hedge green `#3f9e4a`, picket white `#f6f4ee`, Dad's maroon robe `#8a2f3a`, Mr. Pruitt's navy robe `#26365e`, storm blue `#1c2a4a`, lamp gold `#ffcf7a`.
 - **Caption key colour:** shutter blue `#4aa3ff`.
 
 ## Music
-Synthesized in `blocky/sound.py`: our own small-street tune (a bouncy tuba-like bass and a clarinet-like lead of our own, never a known melody). **G mixolydian, 104 BPM**, comic and grumpy for L01 to L15. L16 to L18: rain, the tune down to a low pulse. **Drop** for 0.6 s before L19. L19 to L23: a low drone and creaks. L24 to L27: a soft warm chord as they laugh. L28 to L35: the tune, slow and warm. L36 to L43: the grumpy tune back, brighter, the creak on L42 timed to the downbeat.
+Synthesized in `blocky/sound.py`: our own small-street tune (a bouncy tuba-like bass and a clarinet-like lead of our own, never a known melody). **G mixolydian, 104 BPM**, comic and grumpy for L01 to L15. L16 to L18: rain, the tune down to a low pulse. **Drop** for 0.6 s before L19. L19 to L23: a low drone and creaks. L24 to L27: a soft warm chord as they laugh. L28 to L35: the tune, slow and warm. L36 to L39: the grumpy tune back, brighter. L40 to L43: the tune drops out under a low creak and a thin held note, a cold sting, and the grumpy tune starts again on the loop.
 
 ## Sound
 - L01: a long wooden creak and a low thump on "ELEVEN".
@@ -91,7 +91,7 @@ Synthesized in `blocky/sound.py`: our own small-street tune (a bouncy tuba-like 
 - L17: house creaks and steady rain.
 - L21: a window sliding open.
 - L25: two old men laughing, soft.
-- L42: both houses creaking closer.
+- L40, L41: a slow creak from across the street.
 
 ## The shot plan
 Times are estimates. Every line gets one to three shots with acting in each, and a punch-in on its key word when the line runs over 0.9 s. Nothing is held over 2 s. The tag is in every shot, top-left. Faces sit centre or right, each at least 1/5 of the frame width.
@@ -133,15 +133,15 @@ Times are estimates. Every line gets one to three shots with acting in each, and
 | S32 | L32 | The two windows a foot apart in daylight, Dad's face at ours. |
 | S33 | L33 | Me, close, `stunned` easing to `laugh`. |
 | S34a, S34b | L34 | (a) The fish doodle, close. (b) Mr. Pruitt's face, `smile`, a wink. |
-| S35 | L35 | Dad's face, `sheepish`, a flat finger to his lips. |
-| S36 | L36 | Me, close, `neutral`, thinking. |
-| S37 | L37 | Me, close, `smile`. |
-| S38a, S38b | L38 | (a) Low on the picket gate's iron latch as I push through (lore plant). (b) Me in the side yard, face to camera. |
-| S39 | L39 | Me at Mr. Pruitt's door, face to camera, pointing at his mug. |
-| S40 | L40 | Mr. Pruitt's face, `smile` behind a mock scowl, looking at my sneakers. |
-| S41 | L41 | Dad at our door, face to camera, `cross`, yelling. |
-| S42a, S42b | L42 | (a) The kitchen table sliding another inch on its books, the tag ticking to 12 ft. (b) Dad and Mr. Pruitt, faces to camera, `smile`, as both houses creak. |
-| S43 | L43 | My face, `laugh`, then push in on Dad's face at the kitchen window with his tilted mug (S01a's framing). Loop. |
+| S35 | L35 | The tag, close, the lean at 11 ft. |
+| S36 | L36 | Dad and Mr. Pruitt over the hedge, both faces to camera, `cross`, one of them winking. |
+| S37 | L37 | Dad's face, `sheepish`, a flat finger to his lips. |
+| S38a, S38b | L38 | (a) Low on the picket gate's iron latch as I lean on the gate (lore plant). (b) Me at the gate, face to camera, `smile`, the two men yelling behind me. |
+| S39 | L39 | Me at our sink at night, face to camera, `smile`, two mugs on the drainboard. |
+| S40 | L40 | Morning: my face at our front window, `uneasy`, a creak. |
+| S41a, S41b | L41 | (a) From our porch: the mint house across the street, its roof tipped an inch toward ours (a short wide, 1.2 s). (b) Close: a marble on our porch rolling the other way, toward the street. |
+| S42 | L42 | Dad and me at our front window, both faces to camera, `stunned`. |
+| S43 | L43 | My face, close, `uneasy`, then push in on Dad's face at the kitchen window with his tilted mug (S01a's framing). Loop. |
 
 ## Face and hands beats
 The builder's framing pre-check (`scripts/framing.py`) reads exactly these. At phone size each face is at least 1/5 of the frame width, out of the caption band, and never under the top-left tag.
@@ -151,19 +151,19 @@ The builder's framing pre-check (`scripts/framing.py`) reads exactly these. At p
 4. **S11, S13, S14b, L11 to L14:** Dad's and Mr. Pruitt's faces at the gate and door.
 5. **S20 and S23, L20 and L23:** the hand at the frame's edge, then the mug on its flat palm (no grip).
 6. **S22, S24, S25, S26, L22 to L26:** Dad's face, Mr. Pruitt's face, then both (the reveal).
-7. **S34b, S35, L34, L35:** Mr. Pruitt's wink, Dad's flat finger to his lips.
-8. **S39 to S42b, L39 to L42:** me, Mr. Pruitt, Dad, then both men.
+7. **S34b, S36, S37, L34, L36, L37:** Mr. Pruitt's wink, both men over the hedge, Dad's flat finger to his lips.
+8. **S38b to S43, L38 to L43:** me at the gate and the sink, then Dad and me at the window.
 Hands: no grips. Mugs rest on flat palms, the note is pressed flat on the door, pointing is a flat hand.
 
 ## Lore connection (`stories/lore.md`)
-One plant, a plain tally: two shutter-blue strokes scratched into the iron latch of the picket gate between our yards, two for a gate built for two houses. No extra stroke, no Keeper, no thread touched. Seen in S38a under L38 ("So the next morning, / I joined IN."), low on the latch as I push through, held 1.0 s, not narrated.
+One plant, a plain tally: two shutter-blue strokes scratched into the iron latch of the picket gate between our yards, two for a gate built for two houses. No extra stroke, no Keeper, no thread touched. Seen in S38a under L38 ("So every morning, / I watch them FIGHT."), low on the latch as I lean on the gate, held 1.0 s, not narrated.
 
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
 - L01: Our house leans / ELEVEN feet / toward Mr. Pruitt's.
-- L02: On our street, / that means / we're FIGHTING.
-- L03: Fight your neighbor here, / and your houses LEAN. / Make up, / and they stand back UP.
+- L02: Thirty years / of FIGHTING / did that.
+- L03: Fight your neighbor here, / and your houses LEAN. / Make up, / and they stand back up, SLOWLY.
 - L04: Two bakeries downtown / are kissing / over the STREET.
 - L05: The duplex on the corner / is folded / like a BOOK.
 - L06: My dad and Mr. Pruitt / next door / have fought / for thirty YEARS.
@@ -190,23 +190,23 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L26: Two old men / in their ROBES, / laughing / at two in the MORNING.
 - L27: Dad saw me. / He looked SHEEPISH.
 - L28: They've been best friends / since they were TEN.
-- L29: Make up, / and your houses / stand back UP.
+- L29: Make up, / and your houses / stand back up, SLOWLY.
 - L30: So they make up / every NIGHT,
 - L31: and start a new fight / every MORNING.
 - L32: Just to keep / their windows CLOSE.
 - L33: Thirty years / of FAKE fighting.
 - L34: The fish means / see you at TWO.
-- L35: Dad made me promise / not to tell the STREET.
-- L36: But the rule / only counts / the FIGHT.
-- L37: It never checks / if you MEAN it.
-- L38: So the next morning, / I joined IN.
-- L39: I told Mr. Pruitt / his mug was UGLY.
-- L40: He called my sneakers / a DISGRACE.
-- L41: Dad yelled / about his HEDGE.
-- L42: And both houses / creaked a little / CLOSER.
-- L43: Our windows / are almost TOUCHING now.
+- L35: The rule only / counts the FIGHT.
+- L36: It never checks / if you MEAN it.
+- L37: Dad made me promise / not to tell the STREET.
+- L38: So every morning, / I watch them FIGHT.
+- L39: And every night, / I wash two MUGS.
+- L40: Then this morning, / something CREAKED / across the street.
+- L41: The house across from us / has started leaning / toward OURS.
+- L42: And nobody in our house / is fighting ANYBODY.
+- L43: That I know OF.
 
-(Loop: L43 runs straight into L01: "Our windows are almost touching now. Our house leans eleven feet toward Mr. Pruitt's.")
+(Loop: L43 runs straight into L01: "That I know of. Our house leans eleven feet toward Mr. Pruitt's.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt, and nothing falls: the houses only lean and creak. The storm's frames tilt on their nails, and no light swings.

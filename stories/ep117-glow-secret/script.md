@@ -8,6 +8,7 @@
 - **Word count:** 234 spoken words in 33 lines (L01 to L33), all `narrator`, plus one 0.5 s music drop before L16.
 - **Estimated length:** about 54 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright red-and-cream pizza place on a Friday evening: a red vinyl booth by a big window, a checker floor, fixed round pendant lamps (never swinging), a gumball machine by the door. The one dark scene is the parking lot (L11, L12, L19, L20): deep blue dusk, one steady lot lamp far off, and Mom and Dad lit warm from inside. My own glow comes up slowly from L29.
+- **Revised r1 (standards, 2026-11-05):** flash fixes only (S17a's brighten, the dark lot's bloom and cut lengths, S13 moved into the lot). No line changed. Nothing is voiced yet.
 - **Hold:** scripts only (batch 12). Not built, not voiced.
 
 ## Variety table
@@ -76,7 +77,7 @@ Every word is the narrator's. L18, L24 and L27 are reported.
 
 ## The strange part (no creature)
 No creature and no creature test. People glow, softly, from inside: a warm emission on skin (faces and hands only, never the clothes), with a soft bloom, brighter the longer the secret. It reads as a lamp through a lampshade.
-- **Continuity:** Mom and Dad glow at the same strength in every shot until L17, where Mom flares for one shot and settles back (and Dad the same at L20). My glow starts at L30 and holds to the end. The roommate's and planner's glow is faint. Brightness ramps over at least 0.3 s, never a flash.
+- **Continuity:** Mom and Dad glow at the same strength in every shot until L17, where Mom brightens for one shot and settles back (and Dad, more softly, at L20): 0.5 s up, a 0.6 s hold, 0.6 s down, the emission capped below clipping, and the gumball shadows sell the brightness. My glow starts at L30 and holds to the end. The roommate's and planner's glow is faint. Brightness ramps over at least 0.3 s, never a flash.
 
 ## Palette
 - Booth red `#d8343a`, cream `#f6ecd6`, checker red `#e2463f`, gumball colours, glow gold `#ffd98a`, lot blue `#1f2f5c`, Mom's mustard `#e0a32a`, Dad's plaid green `#3f8a4e`, my blue `#3d74d6`.
@@ -108,12 +109,12 @@ Times are estimates. Every line gets one or two shots with acting in each, and a
 | S10a, S10b | L10 | (a) Close on the pizza: anchovy and pineapple. (b) The last slice, Mom's and Dad's flat hands each nudging it toward the other. Plant 1. |
 | S11 | L11 | The dark lot through the window: two glowing faces walking to the car, bright as headlights. |
 | S12 | L12 | Mom and Dad at the car, faces to camera, moths circling their heads. |
-| S13 | L13 | Me, close, `uneasy`. |
+| S13 | L13 | Me, close, `uneasy`, in the lot by the car (still in the lot's blue, so the light doesn't jump back and forth). |
 | S14a, S14b | L14 | (a) Mom's face, glowing, in shades (a joke insert). (b) Dad's face in sunglasses under a stage spotlight (a joke insert). |
 | S15 | L15 | Me at the booth, close, `neutral`, set. |
 | (drop) | | 0.5 s: voice and room only. The gumball machine by the door. |
 | S16 | L16 | Mom and me by the gumball machine, both faces to camera. |
-| S17a, S17b | L17 | (a) Mom's face flaring bright (a 0.4 s ramp). (b) The gumball machine's shadows stretched long on the wall. |
+| S17a, S17b | L17 | (a) Mom's face brightening: 0.5 s up, a 0.6 s hold, then 0.6 s down (the down finishes over S17b), the emission capped below clipping. (b) The gumball machine's shadows stretched long on the wall. |
 | S18 | L18 | Mom's face close, `sheepish`, a finger to her lips. |
 | S19 | L19 | Dad and me by the station wagon in the dark lot, both faces to camera. |
 | S20 | L20 | Dad's face flaring and settling, a finger to his lips. |
@@ -188,7 +189,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt, and the glow is never frightening.
 - No grips: the takeout box rests on a flat palm, fingers to lips are flat, the slice is nudged with flat hands.
-- The glow ramps over at least 0.3 s whenever it changes (hard rule 7). Mom's flare at S17a is a 0.4 s ramp up and down, never a flash.
+- The glow ramps over at least 0.3 s whenever it changes (hard rule 7). Mom's brighten at S17a is 0.5 s up, a 0.6 s hold and 0.6 s down, capped below clipping, never a flash pair (standards r1).
+- The dark lot (S11, S12, S19, S20): the glowing faces' bloom stays below clipping, and no cut goes bright booth to dark lot and back with a shot under 1 s (S10b, S11, S12, S13 each hold at least 1.0 s, and S12 to S13 stays in the lot's blue, then S13 cuts back inside on my face).
 - Every warm face is `smile` or `warm`, never `grin`.
 - The twist is said in words (L22 to L24), never read off a silhouette or outfit.
 - Title, description, pin and captions checked against hard rule 8.
