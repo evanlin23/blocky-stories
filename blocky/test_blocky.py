@@ -729,3 +729,30 @@ def test_mix_uses_samples_unless_the_story_turns_them_off(tmp_path):
     syn, _ = sound.mix(tl, st_off, vo)
     assert sound.SAMPLES["on"] and np.isfinite(rec).all() and not np.allclose(rec, syn)
     assert np.allclose(sound.mix(tl, st, vo)[0], rec)                  # deterministic, and back on after "false"
+
+
+def test_caption_splitter_keeps_every_spoken_word():
+    """A chunk with more spoken words than caption words keeps them all (ep115 L19: "has said 4:12" is read "has said
+    four twelve"; the generators' copy sliced by caption count and voiced "has said four")."""
+    assert timeline.split_chunk("has said 4:12", "has said four twelve") == [["has said 4:12", "has said four twelve"]]
+    pieces = timeline.split_chunk("It was 9:14 PM, June TWELFTH.", "It was nine fourteen p m, June twelfth.")
+    assert [c for c, _ in pieces] == ["It was 9:14", "PM, June TWELFTH."]
+    assert [s for _, s in pieces] == ["It was nine fourteen", "p m, June twelfth."]
+    for cap, sp in [("a b c d e f g", "a b c d e f g"), ("I owe 12 DOLLARS", "I owe twelve dollars"),
+                    ("x", "one two three"), ("the 1990s went ON", "the nineteen nineties went on")]:
+        got = timeline.split_chunk(cap, sp)
+        assert " ".join(s for _, s in got).split() == sp.split()
+        assert " ".join(c for c, _ in got).split() == cap.split()
+        assert all(len(c.split()) <= 3 for c, _ in got)
+    lines, cmap = timeline.split_lines([{"id": "L1", "chunks": [["one two three four", "one two three four"], ["five", "five"]]},
+                                        {"id": "P1", "pause": 0.5, "chunks": [["THUD", ""]]}])
+    assert lines[0]["chunks"] == [["one two", "one two"], ["three four", "three four"], ["five", "five"]]
+    assert cmap == {"L1": [0, 2]} and lines[1]["chunks"] == [["THUD", ""]]
+
+
+def test_check_finds_spoken_words_story_json_lost():
+    st = {"lines": [{"id": "L19", "chunks": [["has said 4:12", "has said four"]]}]}
+    src = [{"id": "L19", "chunks": [["has said 4:12", "has said four twelve"]]}]
+    assert timeline.lost_words(st, src) and "twelve" in timeline.lost_words(st, src)[0]
+    st["lines"][0]["chunks"] = timeline.split_lines(src)[0][0]["chunks"]
+    assert timeline.lost_words(st, src) == []

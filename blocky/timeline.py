@@ -136,6 +136,102 @@ def _joined(caps: list[dict], min_read: float = MIN_READ) -> list[dict]:
     return out
 
 
+def _norm(w: str) -> str:
+    return re.sub(r"[^a-z0-9']", "", w.lower().replace("’", "'"))
+
+
+def _align(cw: list[str], sw: list[str]) -> list[int]:
+    """How many spoken words go with each caption word (they sum to len(sw), so no spoken word is lost). Words
+    that match (the longest common run of them, ignoring case and punctuation) pair one to one; the spoken words
+    between two matches are shared over the caption words between them in proportion ("9:14 PM," read "nine
+    fourteen p m," gives two each). Spoken words with no caption word between matches join the caption word
+    before them (or after, at the start)."""
+    a, b = [_norm(w) for w in cw], [_norm(w) for w in sw]
+    n, m = len(a), len(b)
+    L = [[0] * (m + 1) for _ in range(n + 1)]
+    for i in range(n - 1, -1, -1):
+        for j in range(m - 1, -1, -1):
+            L[i][j] = L[i + 1][j + 1] + 1 if a[i] and a[i] == b[j] else max(L[i + 1][j], L[i][j + 1])
+    pairs, i, j = [], 0, 0
+    while i < n and j < m:
+        if a[i] and a[i] == b[j]:
+            pairs.append((i, j))
+            i, j = i + 1, j + 1
+        elif L[i + 1][j] >= L[i][j + 1]:
+            i += 1
+        else:
+            j += 1
+    out = [0] * n
+    prev_i, prev_j = -1, -1
+    for ci, sj in pairs + [(n, m)]:
+        gi, gj = list(range(prev_i + 1, ci)), sj - prev_j - 1   # caption words and spoken words between matches
+        if gi:
+            for k, idx in enumerate(gi):
+                out[idx] = round((k + 1) * gj / len(gi)) - round(k * gj / len(gi))
+        elif gj:
+            out[prev_i if prev_i >= 0 else min(ci, n - 1)] += gj
+        if ci < n:
+            out[ci] += 1
+        prev_i, prev_j = ci, sj
+    return out
+
+
+def split_chunk(cap: str, spoken: str, max_words: int = 3) -> list[list[str]]:
+    """Split one [caption, spoken] chunk into captions of two or three words (the house size), keeping every
+    spoken word: each piece's spoken words are the ones its caption words stand for (`_align`), so "has said
+    4:12" / "has said four twelve" keeps "twelve". The copy in each story's generator sliced the spoken words by
+    the caption's word count and dropped any left over (ep115 L19 voiced "has said four", ep96 L11 "p" for
+    "p m"). A chunk with no caption words keeps its spoken words in one piece."""
+    cw, sw = cap.split(), spoken.split()
+    n = len(cw)
+    if n == 0:
+        return [[cap, spoken]]
+    k = 1 if n <= max_words else (2 if n <= 2 * max_words else 3)
+    sizes = [n // k + (1 if i < n % k else 0) for i in range(k)]
+    per = _align(cw, sw)
+    out, i, j = [], 0, 0
+    for sz in sizes:
+        m = sum(per[i:i + sz])
+        out.append([" ".join(cw[i:i + sz]), " ".join(sw[j:j + m])])
+        i, j = i + sz, j + m
+    return out
+
+
+def split_lines(lines: list[dict], max_words: int = 3) -> tuple[list[dict], dict]:
+    """Every line's chunks through `split_chunk`. Returns (lines, chunk map): chunk map[line id][i] is the index
+    of original chunk i's first piece, for remapping "L07.2" references (what each generator's remap() reads)."""
+    out_lines, cmap = [], {}
+    for ln in lines:
+        if "pause" in ln or "chunks" not in ln:
+            out_lines.append(ln)
+            continue
+        out, mp = [], []
+        for cap, spoken in ln["chunks"]:
+            mp.append(len(out))
+            out += split_chunk(cap, spoken, max_words)
+        cmap[ln["id"]] = mp
+        out_lines.append({**ln, "chunks": out})
+    return out_lines, cmap
+
+
+def spoken_words(chunks) -> list[str]:
+    return [w for w in (_norm(x) for c in chunks if len(c) > 1 for x in c[1].split()) if w]
+
+
+def lost_words(st: dict, source: list[dict]) -> list[str]:
+    """Lines whose spoken words in story.json differ from the generator's own lines.json (`source`): a splitter
+    that dropped or added a word, which the narration then reads (ep115 L19)."""
+    have = {ln["id"]: ln for ln in st.get("lines", [])}
+    out = []
+    for ln in source:
+        if not isinstance(ln, dict) or "pause" in ln or ln.get("id") not in have or "chunks" not in ln:
+            continue
+        a, b = spoken_words(ln["chunks"]), spoken_words(have[ln["id"]].get("chunks", []))
+        if a != b:
+            out.append(f"{ln['id']}: lines.json says {' '.join(a)!r}, story.json says {' '.join(b)!r}")
+    return out
+
+
 def build(st: dict, voice: dict, fps: int = FPS) -> dict:
     vl = voice["lines"]
     t = LEAD
