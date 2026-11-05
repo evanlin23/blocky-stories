@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -98,7 +98,7 @@ SH = []
 def put(who, at, pos, yaw=None, **kw):
     p = list(pos)
     acting[who].append({"at": at, "pos": list(last[who])})
-    k = {"at": at, "pos": p, "blend": 0.0, "hidden": False}
+    k = {"at": at, "pos": p, "blend": 0.0, "hidden": False, "lean": 0}
     if yaw is not None:
         k["yaw"] = yaw
     k.update(kw)
@@ -132,8 +132,10 @@ def shot(at, camera, name, step=1, follow=None):
     SH.append((at, camera, step, follow, name))
 
 
-def K(T, az, d, lens, el=3.0, off=0.0):
+def K(T, az, d, lens, el=3.0, off=0.0, up=0.0):
     d = d * 1.3
+    if up:
+        T = (T[0], T[1], T[2] - up * 24.0 / lens * d)     # aim lower: the subject rides up in the frame (above a caption)
     a, e = math.radians(az), math.radians(el)
     pos = [T[0] + d * math.cos(a) * math.cos(e), T[1] + d * math.sin(a) * math.cos(e), T[2] + d * math.sin(e)]
     tgt = list(T)
@@ -147,9 +149,9 @@ def K(T, az, d, lens, el=3.0, off=0.0):
     return [[0, [round(v, 3) for v in pos], [round(v, 3) for v in tgt], lens]]
 
 
-def K2(T0, az0, d0, T1, az1, d1, lens, el=3.0, lens1=None, off=0.0):
-    a = K(T0, az0, d0, lens, el, off)[0]
-    b = K(T1, az1, d1, lens1 or lens, el, off)[0]
+def K2(T0, az0, d0, T1, az1, d1, lens, el=3.0, lens1=None, off=0.0, up=0.0):
+    a = K(T0, az0, d0, lens, el, off, up)[0]
+    b = K(T1, az1, d1, lens1 or lens, el, off, up)[0]
     return [a, [1, b[1], b[2], b[3]]]
 
 
@@ -162,11 +164,18 @@ def P2(p0, t0, p1, t1, lens, lens1=None):
 
 
 # ---------------------------------------------------------------------------------------------- places
+def AIS(d, lens, cx=0.0, z=1.55):
+    """A camera in the aisle, d m in front of me where I stand (facing +y), looking back at my face: no seat back
+    between us."""
+    return [[0, [round(cx, 3), round(G.row_y(3) + d, 3), z], [0.0, G.row_y(3), 1.55], lens]]
+
+
+
 ry = G.row_y
 MEX, MEY = G.ME
 TEX, TEY = G.TED
-MEH = (MEX, MEY, 1.42)           # my head, seated
-TEH = (TEX, TEY, 1.42)
+MEH = (MEX + 0.1, MEY + 0.17, 1.42)   # my head, seated (it sits forward of the hip along my facing)
+TEH = (TEX - 0.1, TEY + 0.17, 1.42)
 S9X, S9Y = G.SEAT9
 D0, D1 = G.DOOR
 DY = (D0 + D1) / 2
@@ -203,7 +212,7 @@ cue(0, "move", v=1.0)
 cue(0, "look", id="day")
 # S01a: my face close, lips shut, the empty seats behind me
 seat_me(0, "neutral")
-shot(0, K(MEH, 78, 3.0, 50, 4, 0.05), "face1")
+shot(0, K(MEH, 78, 3.0, 50, 4, 0.05, up=0.13), "face1")
 # S01b: the sliding door closes, the hush glyph on it
 only("L01.1", ["me"])
 env("L01.1", plat=1.0)
@@ -216,28 +225,31 @@ env("L02", plat=0.0)
 move("L02", 1)
 beat("me", "L02", expr="worried", look=[0.0, 0.0])
 beat("me", "L02.1", expr="worried", look=[0.8, 0.0], head=[25, 0])
-shot("L02", K(MEH, 78, 2.5, 50, 3, 0.05), "face2")
+shot("L02", K(MEH, 78, 2.5, 50, 3, 0.05, up=0.13), "face2")
 # S03a: the empty car from the end door; S03b: the train sliding along
+beat("me", "L02.1+0.3", expr="worried", look=[0.0, 0.0], head=[0, 0])
 only("L03", [])
 shot("L03", P([0.0, 0.45, 1.45], [0.0, 14.0, 1.3], 24), "emptycar")
-shot("L03.1", P2([13.0, 17.0, 2.6], [0.0, 14.0, 1.4], [13.0, 12.0, 2.6], [0.0, 14.0, 1.4], 30), "exterior")
+shot("L03.1", P2([-9.0, 21.0, 5.8], [-2.2, 14.0, 1.4], [-9.0, 16.0, 5.8], [-2.2, 14.0, 1.4], 15), "exterior")
 # S04: seat nine, a flat cap on it; the sneeze
 shot("L04", K((S9X + 0.2, S9Y - 0.5, 1.25), 245, 2.0, 45, 8), "cap")
 shot("L04.2", K((S9X + 0.2, S9Y - 0.5, 1.15), 205, 3.3, 40, 12), "seat9")
 # S05: his wife sets the lunch bag on seat nine, on a flat palm
 cue("L05", "lunch", v=1.0)
+cue("L05", "lift", u=1.0)
+cue("L05.2", "lift", u=0.0, dur=0.7)
 only("L05", ["wife"])
 put("wife", "L05", [0.0, S9Y - 0.1], 90, expr="warm", arms=[70, 70])
 beat("wife", "L05.2", expr="smile", arms=[60, 60], head=[0, 8])
 shot("L05", K((0.0, S9Y - 0.1, 1.5), 2, 2.4, 32, 6, 0.05), "wife")
-shot("L05.2", K((0.35, S9Y - 0.1, 1.2), 5, 2.1, 36, 12), "wife2")
+shot("L05.2", K((0.45, S9Y - 0.1, 0.95), 5, 2.5, 34, 6), "wife2")
 # S06: that evening the bag is crumbs; my face
 only("L06", [])
 cue("L06", "lunch", v=2.0)
 shot("L06", K((S9X, S9Y, 0.55), 215, 1.6, 40, 40), "crumbs")
 only("L06.1", ["me"])
 seat_me("L06.1", "worried")
-shot("L06.1", K(MEH, 78, 2.6, 50, 3, 0.05), "face3")
+shot("L06.1", K(MEH, 78, 2.6, 50, 3, 0.05, up=0.13), "face3")
 # S07: two commuters step the long way round the open door
 only("L07", ["c1", "c2"])
 cue("L07", "lunch", v=0.0)
@@ -252,8 +264,8 @@ put("c2", "L07.1", [3.5, 7.0], 0, expr="neutral")
 go("c2", "L07.1+0.5", [3.5, 3.4])
 go("c2", "L07.1+0.9", [5.2, 1.4])
 go("c2", "L07.2>", [3.5, -2.5])
-shot("L07", P2([6.4, -3.6, 1.5], [3.6, 2.0, 1.3], [6.0, -3.0, 1.5], [3.6, 1.0, 1.3], 28), "commuters")
-shot("L07.2", P([7.0, -2.4, 1.5], [4.0, 0.5, 1.2], 30), "commuters2")
+shot("L07", P2([9.0, -3.2, 1.6], [3.9, 3.6, 1.2], [8.8, -2.4, 1.6], [3.9, 2.6, 1.2], 22), "commuters")
+shot("L07.2", P([9.0, -3.0, 1.6], [4.3, 0.2, 1.2], 22), "commuters2")
 # S08: I step into the quiet car (door open), face to camera
 only("L08", ["me"])
 cue("L08", "sit", who="me", on=False, z=SIT)
@@ -271,7 +283,7 @@ shot("L09.1", P([0.4, 3.0, 1.45], [HALF_ - 0.1, D1 + 0.05, 1.45], 45), "stone")
 # S10: my face, close, neutral
 only("L10", ["me"])
 seat_me("L10", "neutral")
-shot("L10", K(MEH, 78, 2.4, 55, 3, 0.05), "face4")
+shot("L10", K(MEH, 78, 2.4, 55, 3, 0.05, up=0.13), "face4")
 # S11: Teddy at a party; me beside him
 PX, PY = G.PARTY
 only("L11", ["teddy", "me"])
@@ -286,7 +298,7 @@ shot("L11.2", K((PX - 0.5, PY + 2.0, 1.55), 265, 3.3, 30, 2, 0.0), "party2")
 only("L12", ["teddy"])
 put("teddy", "L12", [PX, PY + 2.0], 0, expr="smile", arms=[0, 40])
 shot("L12", K((PX, PY + 2.0, 1.55), 268, 2.8, 48, 2, 0.0), "tedsmile")
-shot("L12.1", P([G.BUS[0], G.BUS[1] - 0.4, 1.65], [G.BUS[0], G.BUS[1] + 1.84, 1.65], 36), "bussmile")
+shot("L12.1", P([G.BUS[0], G.BUS[1] - 0.9, 1.75], [G.BUS[0], G.BUS[1] + 1.94, 1.75], 20), "bussmile")
 # S13: a spring morning through the train window
 only("L13", [])
 cue("L13", "season", s=0.0)
@@ -314,20 +326,25 @@ shot("L16", K(TEH, 118, 2.9, 50, 3, 0.05), "tedlit")
 beat("teddy", "L16.2", expr="smile", head=[-20, 0])
 acting["teddy"].append({"from": "L16.2", "to": "L16.2>", "mouth": [0.3, 0.9], "flap": True})
 shot("L16.2", K(TEH, 125, 2.3, 55, 3, 0.05), "tedmouth")
-# S17: I freeze
+# S17: I freeze (Teddy out of the frame: hidden for this one shot, back at L18)
+only("L17", ["me"])
 beat("me", "L17", expr="scared", head=[0, 0])
-shot("L17", K(MEH, 78, 2.6, 55, 3, 0.05), "freeze")
+shot("L17", K(MEH, 78, 2.6, 55, 3, 0.05, up=0.13), "freeze")
 # S18: two-shot, Teddy's smile fading, the tag at 1513
 cue("L16", "count", n=1513)
-beat("teddy", "L18", expr="neutral", head=[-20, 0])
+seat_ted("L18", "neutral", head=[-20, 0])
 beat("me", "L18", expr="scared")
-shot("L18", P2([0.0, 16.2, 1.95], [0.0, 11.3, 1.45], [0.0, 15.6, 1.9], [0.0, 11.3, 1.45], 21), "twoshot")
+shot("L18", P2([0.05, 20.6, 2.0], [0.0, 11.2, 1.4], [0.05, 19.4, 1.95], [0.0, 11.2, 1.4], 44), "twoshot")
 # the drop: the train goes into the tunnel
 env("P01", tunnel=1.0)
 cue("P01", "look", id="tunnel")
-shot("P01", K((0.6, 11.0, 1.5), 140, 3.0, 28, 4), "tunnelin")
+shot("P01", P([0.55, 8.8, 1.5], [-1.9, 10.3, 1.5], 24), "tunnelin")
+# the count climbs a morning at a time: 1,560 by L32, 1,600 by L42
+for at_, n_, d_ in (("L22", 1522, 1.0), ("L25", 1534, 0.8), ("L28", 1546, 0.8), ("L31", 1560, 0.8), ("L34", 1572, 0.8),
+                    ("L36", 1583, 0.8), ("L39", 1592, 0.8), ("L41", 1600, 0.8), ("L43", 1608, 0.8)):
+    cue(at_, "count", n=n_, dur=d_)
 # S19: the car in the tunnel
-shot("L19", P2([0.0, 6.0, 1.9], [0.0, 13.0, 1.4], [0.0, 6.6, 1.9], [0.0, 13.0, 1.4], 24), "tunnel")
+shot("L19", P2([0.0, 15.2, 1.75], [-0.5, 10.3, 1.4], [0.0, 14.4, 1.75], [-0.5, 10.3, 1.45], 26), "tunnel")
 # S20: out of the tunnel, Teddy's seat empty
 env("L20", tunnel=0.0)
 cue("L20", "look", id="day")
@@ -336,30 +353,31 @@ cue("L20", "cup", v=1.0)
 cue("L20", "warm1", a=1.0, dur=0.6)
 shot("L20", K((TEX, TEY, 0.9), 290, 2.9, 40, 22), "emptyseat")
 # S21: close, his coffee still steaming
-shot("L21", K((TEX + 0.1, TEY + 0.1, 0.75), 200, 1.5, 45, 35, 0.0), "coffee")
+shot("L21", K((TEX + 0.1, TEY + 0.1, 0.8), 215, 1.7, 40, 22, 0.0), "coffee")
 # S22: my face, the empty seat across the aisle
 beat("me", "L22", expr="wide")
 shot("L22", K2(MEH, 60, 3.0, MEH, 70, 2.5, 50, 3, 0.1), "face5")
 # S23: my palm flat on his warm seat
 only("L23", ["me"])
 cue("L23", "sit", who="me", on=False, z=SIT)
-put("me", "L23", [0.0, TEY - 0.2], 90, expr="worried", arms=[62, 62], lean=14)
-shot("L23", K((0.45, TEY - 0.1, 0.8), 155, 1.7, 40, 14), "palm")
+put("me", "L23", [-0.3, TEY + 0.3], 90, expr="worried", arms=[-9, 0], lean=62)
+shot("L23", P2([1.9, TEY - 0.15, 1.6], [0.5, TEY - 0.15, 0.55], [1.75, TEY - 0.15, 1.5], [0.5, TEY - 0.15, 0.55], 22), "palm")
 # S24: close, his window, a small patch of fog
+only("L24", [])
 cue("L24", "patch", a=1.0, dur=0.6)
-shot("L24", P([HALF_ - 1.6, TEY - 1.3, 1.45], [HALF_ - 0.02, TEY, 1.5], 45), "patchfog")
+shot("L24", P([-0.2, TEY, 1.6], [HALF_, TEY, 1.5], 22), "patchfog")
 # S25: the empty car, a heat shimmer over every seat
 cue("L25", "warm", a=1.0, dur=0.6)
 shot("L25", P2([0.0, 5.0, 1.9], [0.0, 13.0, 1.0], [0.0, 5.8, 1.9], [0.0, 13.0, 1.0], 26), "shimmer")
 # S26: a smiley draws itself in the fog from the inside
 cue("L26", "smiley", p=0.0)
 cue("L26+0.4", "smiley", p=6.0, dur=1.3)
-shot("L26", P([HALF_ - 1.5, TEY - 1.1, 1.5], [HALF_ - 0.04, TEY, 1.5], 42), "smiley")
+shot("L26", P2([-0.2, TEY, 1.6], [HALF_, TEY, 1.5], [0.0, TEY, 1.58], [HALF_, TEY, 1.5], 22, 26), "smiley")
 # S27: my small smile
 beat("me", "L27", expr="smile")
 put("me", "L27", [MEX, MEY], 150, expr="smile", arms=[35, 35])
 sit("me", "L27")
-shot("L27", K(MEH, 78, 2.6, 52, 3, 0.05), "face6")
+shot("L27", K(MEH, 78, 2.6, 52, 3, 0.05, up=0.13), "face6")
 # S28: I set a second coffee on his seat with a flat palm
 cue("L28", "cup2", v=1.0)
 cue("L28", "sit", who="me", on=False, z=SIT)
@@ -372,7 +390,7 @@ cue("L29", "cup", v=2.0)
 shot("L29", K((TEX + 0.1, TEY + 0.1, 0.75), 200, 1.5, 45, 35), "emptycup")
 # S30: my face lit by my phone
 seat_me("L30", "worried")
-shot("L30", K(MEH, 78, 2.5, 55, 3, 0.05), "face7")
+shot("L30", K(MEH, 78, 2.5, 55, 3, 0.05, up=0.13), "face7")
 # S31: his phone buzzing on an empty seat
 cue("L31", "phone", v=2.0)
 only("L31", [])
@@ -393,19 +411,19 @@ cue("L34", "maze", p=0.0)
 cue("L34.1", "maze", p=3.0, dur=1.0)
 shot("L34", K((-1.62, MEY + 0.05, 0.58), 120, 1.1, 40, 62), "maze")
 seat_me("L34.3", "wide")
-shot("L34.3", K(MEH, 78, 2.6, 52, 3, 0.05), "face8")
+shot("L34.3", K(MEH, 78, 2.6, 52, 3, 0.05, up=0.13), "face8")
 beat("me", "L34.3+0.5", expr="smile")
 # S35, S36: my face, tight and scared
 beat("me", "L35", expr="worried")
-shot("L35", K(MEH, 78, 2.3, 55, 2, 0.05), "face9")
+shot("L35", K(MEH, 78, 2.3, 55, 2, 0.05, up=0.13), "face9")
 beat("me", "L36", expr="scared")
-shot("L36", K(MEH, 78, 2.0, 58, 2, 0.05), "face10")
+shot("L36", K(MEH, 78, 2.0, 58, 2, 0.05, up=0.13), "face10")
 # S37: Teddy's empty seat, the smiley in the fog
 cue("L37", "smiley", p=6.0)
-shot("L37", K((TEX + 0.4, TEY - 0.2, 1.15), 215, 3.0, 36, 6), "emptyseat2")
+shot("L37", P2([-0.3, TEY - 1.0, 1.6], [HALF_, TEY + 0.05, 1.5], [-0.3, TEY - 0.7, 1.58], [HALF_, TEY + 0.05, 1.5], 24), "emptyseat2")
 # S38: me alone in the car, small
 beat("me", "L38", expr="worried")
-shot("L38", K2((0.0, ry(5.6), 1.4), 100, 5.5, (0.0, ry(5.6), 1.4), 108, 4.7, 28, 6), "alone")
+shot("L38", P2([0.55, TEY + 0.2, 2.3], [-0.8, MEY - 0.1, 0.95], [0.5, TEY - 0.2, 2.2], [-0.8, MEY - 0.1, 0.95], 24), "alone")
 # S39: the empty car from the end door
 only("L39", [])
 shot("L39", P2([0.0, 0.5, 1.5], [0.0, 14.0, 1.3], [0.0, 1.3, 1.5], [0.0, 14.0, 1.3], 24), "emptycar2")
@@ -432,20 +450,21 @@ shot("L42", K((BX, BY + 1.3, 1.45), 270, 2.7, 46, 2), "mirror")
 # S43: back in my seat, morning, glum, mouth shut
 cue("L43", "look", id="day")
 seat_me("L43", "worried")
-shot("L43", K(MEH, 78, 2.5, 52, 3, 0.05), "face11")
+shot("L43", K(MEH, 78, 2.5, 52, 3, 0.05, up=0.13), "face11")
 # S44: seasons through the window; my face beside his fogged window
 cue("L44", "season", s=1.0)
-cue("L44", "count", n=1560)
-cue("L44+0.1", "count", n=1700, dur=1.6)
+cue("L44", "count", n=1700, dur=1.6)
 shot("L44", P([-1.3, 10.0, 1.5], [-6.0, 12.0, 1.0], 36), "summer")
 cue("L44.1", "season", s=2.0)
 shot("L44.1", P([-1.3, 10.6, 1.5], [-6.0, 12.5, 1.0], 36), "fall")
-shot("L44.2", K(MEH, 78, 2.7, 46, 4, -0.05), "face12")
+shot("L44.2", K(MEH, 78, 2.7, 46, 4, -0.05, up=0.13), "face12")
 # S45: determined, mouth opening, the tag at 1724
 cue("L45", "count", n=1724, dur=0.4)
+for at_, n_ in (("L49", 1725), ("L53", 1726), ("L57", 1727)):
+    cue(at_, "count", n=n_, dur=0.3)
 beat("me", "L45", expr="neutral", head=[0, 0])
 acting["me"].append({"from": "L45.2", "to": "L45.2>", "mouth": [0.1, 0.8]})
-shot("L45", K(MEH, 78, 2.2, 55, 2, 0.05), "face13")
+shot("L45", K(MEH, 78, 2.2, 55, 2, 0.05, up=0.13), "face13")
 # the drop: the still car
 shot("P02", P([0.2, ry(2.4), 1.6], [0.0, ry(6), 1.3], 28), "stillcar")
 # S46: every window fogs, front to back
@@ -456,16 +475,15 @@ shot("L46", P([MEX + 0.05, MEY + 0.5, 1.5], [0.0, ry(8), 1.4], 24), "fogsweep")
 cue("L47", "sit", who="me", on=False, z=SIT)
 put("me", "L47", [0.0, MEY], 180, expr="wide", head=[0, 0])
 acting["me"].append({"from": "L47", "to": "L47.1>", "mouth": [0.2, 0.9]})
-shot("L47", P2([0.0, ry(6.4), 1.75], [0.0, MEY, 1.5], [0.0, ry(6.2), 1.75], [0.0, MEY, 1.5], 24), "reveal")
+shot("L47", P2([0.0, MEY + 3.2, 1.3], [0.0, MEY - 1.2, 1.6], [0.0, MEY + 2.6, 1.35], [0.0, MEY - 0.8, 1.6], 14), "reveal")
 # S48: handprints press into the fog
-cue("L48", "prints", p=0.0)
-cue("L48+0.2", "prints", p=2.0, dur=1.0)
-shot("L48", P([-1.1, ry(5) - 1.2, 1.55], [HALF_ - 0.04, ry(6), 1.45], 38), "prints1")
-cue("L48.1", "prints", p=4.0, dur=1.0)
-shot("L48.1", P([1.1, ry(4) - 0.6, 1.55], [-HALF_ + 0.04, ry(5), 1.45], 38), "prints2")
+cue("L48", "prints", p=1.0, dur=0.2)
+shot("L48", P([-0.5, ry(6) + 0.15, 1.6], [HALF_, ry(6) + 0.15, 1.5], 24), "prints1")
+cue("L48.1", "prints", p=4.0, dur=0.5)
+shot("L48.1", P([0.5, ry(5) + 0.15, 1.6], [-HALF_, ry(5) + 0.15, 1.5], 24), "prints2")
 # S49: my face, stunned
 put("me", "L49", [0.0, MEY], 180, expr="wide")
-shot("L49", K((0.0, MEY, 1.55), 140, 2.7, 50, 2, 0.05), "face14")
+shot("L49", AIS(3.3, 38, 0.12), "face14")
 # S50: every seat cushion dipped
 cue("L50", "dip", u=0.0)
 cue("L50+0.1", "dip", u=1.0, dur=0.7)
@@ -474,29 +492,30 @@ shot("L50", P2([0.0, 5.0, 1.8], [0.0, 13.0, 0.8], [0.0, 6.0, 1.8], [0.0, 13.0, 0
 # S51: fogged windows, one after another
 shot("L51", P2([-0.9, ry(2), 1.6], [HALF_ - 0.04, ry(3), 1.5], [-0.9, ry(6), 1.6], [HALF_ - 0.04, ry(7), 1.5], 40), "fogpan")
 # S52: Teddy's seat, the smiley in the fog
-shot("L52", K((TEX + 0.4, TEY - 0.2, 1.15), 210, 3.0, 36, 6), "emptyseat3")
+shot("L52", P2([-0.3, TEY + 1.0, 1.6], [HALF_, TEY - 0.05, 1.5], [-0.3, TEY + 0.7, 1.58], [HALF_, TEY - 0.05, 1.5], 24), "emptyseat3")
 # S53: my face, uneasy
 put("me", "L53", [0.0, MEY], 180, expr="worried")
-shot("L53", K((0.0, MEY, 1.55), 135, 2.2, 55, 2, 0.05), "face15")
+shot("L53", AIS(3.1, 38, -0.12), "face15")
 # S54: me alone in the aisle
 shot("L54", K2((0.0, ry(4.8), 1.2), 95, 4.8, (0.0, ry(4.8), 1.2), 100, 4.2, 28, 6), "aisle")
 # S55: the fogged windows from low, as if leaning in; my face in the foreground
 shot("L55", P([0.25, MEY - 0.9, 0.9], [-0.2, MEY + 3.0, 1.35], 34), "leaning")
 # S56: the tag, close, and me looking at it
 put("me", "L56", [0.0, MEY], 180, expr="worried", head=[-30, -10])
-shot("L56", K((0.0, MEY, 1.55), 150, 2.4, 50, 2, 0.1), "face16")
+shot("L56", AIS(3.2, 38, 0.1), "face16")
 # S57: determined, a small nod
 beat("me", "L57", expr="neutral", head=[0, 0])
 beat("me", "L57.1", expr="neutral", head=[0, 12])
-shot("L57", K((0.0, MEY, 1.55), 140, 2.4, 50, 2, 0.05), "face17")
+shot("L57", AIS(3.0, 38, -0.1), "face17")
 # S58: I stand tall in the aisle
 put("me", "L58", [0.0, MEY], 180, expr="neutral", head=[0, 0])
-shot("L58", K2((0.0, MEY, 1.45), 120, 3.5, (0.0, MEY, 1.55), 135, 2.8, 36, 2), "standup")
+shot("L58", P2([0.1, MEY + 4.2, 1.45], [0.0, MEY, 1.45], [-0.05, MEY + 3.2, 1.55], [0.0, MEY, 1.55], 32), "standup")
 # S59: I say good morning to everybody; the tag stops, its glyph opens
 cue("L59", "glyph", u=0.0)
 cue("L59+0.2", "glyph", u=1.0, dur=0.5)
-acting["me"].append({"from": "L59.1", "to": "L59.2>", "mouth": [0.1, 0.9], "flap": True})
-shot("L59", K((0.0, MEY, 1.55), 142, 2.0, 55, 2, 0.05), "say")
+beat("me", "L59", expr="laugh")
+acting["me"].append({"from": "L59", "to": "L59.2>", "mouth": [0.8, 0.8]})
+shot("L59", AIS(3.0, 40, 0.0), "say")
 # S60: for one second, nothing
 beat("me", "L60", expr="neutral")
 shot("L60", P([0.0, ry(2.2), 1.8], [0.0, ry(6), 1.1], 24), "silent")
@@ -506,7 +525,7 @@ cue("L61+0.1", "swell", s=1.0, dur=0.6)
 cue("L61+0.8", "swell", s=0.0, dur=0.6)
 shot("L61", P2([0.0, ry(2.2), 1.8], [0.0, ry(6), 1.2], [0.0, ry(2.8), 1.8], [0.0, ry(6), 1.2], 24), "swell")
 beat("me", "L61.1", expr="wide", head=[0, -6])
-shot("L61.1", K((0.0, MEY, 1.55), 140, 2.1, 55, 2, 0.05), "face18")
+shot("L61.1", AIS(3.0, 40, 0.1), "face18")
 # S62: the windows clear one by one
 cue("L62", "clear", q=0.0)
 cue("L62+0.1", "clear", q=1.0, dur=1.8)
@@ -514,7 +533,7 @@ shot("L62", P2([0.0, ry(2.2), 1.7], [-HALF_, ry(6), 1.4], [0.0, ry(5), 1.7], [HA
 # S63: my face, laughing
 beat("me", "L63", expr="laugh")
 move("L63>", 0)
-shot("L63", K((0.0, MEY, 1.55), 138, 2.4, 52, 2, 0.05), "face19")
+shot("L63", AIS(3.2, 38, -0.1), "face19")
 # S64: the doors slide open onto the sunny platform
 env("L64", plat=1.0)
 move("L64", 0)
@@ -544,11 +563,11 @@ put("teddy", "L68", [4.2, DY - 0.4], 60, expr="laugh", arms=[85, 85])
 cue("L68.1", "glass", a=1.0, s=0.0, dur=0.6)
 shot("L68", K((4.6, DY, 1.5), 10, 3.2, 40, 4), "hug")
 # S69: a smiley drawn on my fogged glasses
-put("teddy", "L69", [4.3, DY - 0.55], 70, expr="laugh", arms=[0, 85])
-put("me", "L69", [5.0, DY + 0.1], 170, expr="smile")
+put("teddy", "L69", [6.2, DY + 0.05], 0, expr="laugh", side=[0, 80], head=[-35, 0])
+put("me", "L69", [5.0, DY + 0.1], 0, expr="smile")
 cue("L69.1", "glass", a=1.0, s=0.0)
 cue("L69.1+0.2", "glass", a=1.0, s=6.0, dur=1.0)
-shot("L69", K((4.45, DY - 0.3, 1.5), 330, 2.0, 32, 2, 0.0), "glasses")
+shot("L69", P([5.6, DY - 2.9, 1.58], [5.6, DY + 0.1, 1.55], 22), "glasses")
 # S70: Teddy talks with his hands
 put("teddy", "L70", [4.2, DY - 0.5], 0, expr="laugh", arms=[60, 20])
 beat("teddy", "L70+0.5", expr="laugh", arms=[20, 80])
@@ -599,6 +618,7 @@ cue(0, "phone", v=0.0)
 cue(0, "hat", v=0.0)
 cue(0, "cake", v=0.0)
 cue(0, "lunch", v=0.0)
+cue(0, "lift", u=0.0)
 cue(0, "maze", p=0.0)
 cue(0, "season", s=0.0)
 cue(0, "glyph", u=0.0)

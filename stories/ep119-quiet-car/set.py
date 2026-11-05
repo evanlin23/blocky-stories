@@ -86,7 +86,7 @@ def _hide(ob, hide):
         c.hide_render = hide
 
 
-def amat(kit, name, hexc, alpha, rough=0.6):
+def amat(kit, name, hexc, alpha, rough=0.6, emit=0.0):
     """A see-through plastic whose alpha the story animates."""
     m = kit._new(name)
     b = m.node_tree.nodes["Principled BSDF"]
@@ -94,6 +94,9 @@ def amat(kit, name, hexc, alpha, rough=0.6):
     b.inputs["Roughness"].default_value = rough
     b.inputs["Alpha"].default_value = alpha
     kit._fogged(m, b.outputs[0])
+    if emit:
+        b.inputs["Emission Color"].default_value = kit.col(hexc)
+        b.inputs["Emission Strength"].default_value = emit
     return m, b
 
 
@@ -335,29 +338,40 @@ def build_party(kit, M):
     kit.light("party.lamp2", "POINT", (px - 1.5, py + 2.0, 2.6), 160.0, "#ffe0c0", size=0.5, shadow=False)
 
 
-def smiley(kit, nm, loc, mat, parent=None, axis="x", s=1.0):
-    """A smiley wiped in fog: two eyes and a mouth of four pieces. axis "x": the pane faces x (pieces spread in y, z);
-    axis "y": the pane faces y (pieces spread in x, z)."""
+def smiley(kit, nm, loc, mat, parent=None, axis="x", s=1.0, edge=None, grow=0.03, back=0.0075):
+    """A smiley wiped in fog: two eyes and a mouth of four pieces, each with a dark edge behind it (`edge` material,
+    `grow` m bigger all round, `back` m further into the fog). axis "x": the pane faces x (pieces spread in y, z);
+    axis "y": the pane faces y (pieces spread in x, z). Returns [[wipe, edge], ...]; edge is None without a material."""
     parts = [(-0.11, 0.09, 0.05, 0.07), (0.11, 0.09, 0.05, 0.07), (-0.15, -0.03, 0.06, 0.045), (-0.05, -0.09, 0.07, 0.045),
              (0.05, -0.09, 0.07, 0.045), (0.15, -0.03, 0.06, 0.045)]
     obs = []
     for j, (dx, dz, w, h) in enumerate(parts):
-        if axis == "x":
-            ob = kit.box(f"{nm}.p{j}", (0.012, w * s, h * s), (loc[0], loc[1] + dx * s, loc[2] + dz * s), mat, parent)
-        else:
-            ob = kit.box(f"{nm}.p{j}", (w * s, 0.012, h * s), (loc[0] + dx * s, loc[1], loc[2] + dz * s), mat, parent)
-        obs.append(ob)
+        pair = []
+        for k, (m, g, th, bk) in enumerate(((mat, 0.0, 0.012, 0.0), (edge, grow, 0.006, back))):
+            if m is None:
+                pair.append(None)
+                continue
+            if axis == "x":
+                ob = kit.box(f"{nm}.p{j}.{k}", (th, w * s + g, h * s + g),
+                             (loc[0] + bk, loc[1] + dx * s, loc[2] + dz * s), m, parent)
+            else:
+                ob = kit.box(f"{nm}.p{j}.{k}", (w * s + g, th, h * s + g),
+                             (loc[0] + dx * s, loc[1] + bk, loc[2] + dz * s), m, parent)
+            ob.visible_shadow = False
+            pair.append(ob)
+        obs.append(pair)
     return obs
 
 
-def handprint(kit, nm, loc, mat):
-    obs = [kit.box(f"{nm}.palm", (0.012, 0.15, 0.17), loc, mat)]
+def handprint(kit, nm, loc, mat, k=1.7):
+    """A hand wiped in the fog (palm and four fingers and a thumb), k times life-ish size."""
+    obs = [kit.box(f"{nm}.palm", (0.012, 0.15 * k, 0.17 * k), loc, mat)]
     for j, (dy, dz, h, rz) in enumerate([(-0.065, 0.14, 0.12, 10), (-0.022, 0.16, 0.14, 3), (0.022, 0.16, 0.14, -3),
                                           (0.065, 0.14, 0.12, -10)]):
-        ob = kit.box(f"{nm}.f{j}", (0.012, 0.03, h), (loc[0], loc[1] + dy, loc[2] + dz), mat)
+        ob = kit.box(f"{nm}.f{j}", (0.012, 0.035 * k, h * k), (loc[0], loc[1] + dy * k, loc[2] + dz * k), mat)
         ob.rotation_euler = (rz * D2R, 0, 0)
         obs.append(ob)
-    obs.append(kit.box(f"{nm}.th", (0.012, 0.1, 0.035), (loc[0], loc[1] + 0.1, loc[2] + 0.04), mat, rot=(0.5, 0, 0)))
+    obs.append(kit.box(f"{nm}.th", (0.012, 0.1 * k, 0.04 * k), (loc[0], loc[1] + 0.1 * k, loc[2] + 0.04 * k), mat, rot=(0.5, 0, 0)))
     return obs
 
 
@@ -400,27 +414,27 @@ def build(kit, story, tl):
     for side in (-1, 1):
         for i in range(G.ROWS):
             y = G.row_y(i)
-            m, b = amat(kit, f"fogm{side}_{i}", "#e9f2f5", 0.0, 0.9)
+            m, b = amat(kit, f"fogm{side}_{i}", "#f4f9fb", 0.0, 0.9, emit=0.45)
             pane = kit.box(f"fog{side}_{i}", (0.01, 1.38, 1.18), (side * (HALF - 0.01), y, 1.55), m)
             noshadow(pane)
             W["fog"].append((b, side, i, pane))
     # Teddy's window: a small patch of fog (plant 1) and the smiley drawn inside it
     tx, ty = G.TED
-    pm, pb = amat(kit, "patchm", "#f2f8fa", 0.0, 0.9)
+    pm, pb = amat(kit, "patchm", "#f4f9fb", 0.0, 0.9)
     patch = kit.box("patch", (0.01, 0.62, 0.46), (HALF - 0.025, ty, 1.5), pm)
     noshadow(patch)
     W["patch"] = pb
-    wipe = kit.plastic("#7fc8f0", 0.5, spec=0.2)
-    W["smiley"] = smiley(kit, "tsmile", (HALF - 0.045, ty, 1.5), wipe, s=1.0)
-    for ob in W["smiley"]:
-        ob.visible_shadow = False
+    W["patchob"] = patch
+    wipe = kit.plastic("#8fd4f8", 0.5, spec=0.2)
+    edge = kit.plastic("#123a5e", 0.6)
+    W["smiley"] = smiley(kit, "tsmile", (HALF - 0.05, ty, 1.5), wipe, s=2.3, edge=edge, grow=0.045, back=0.0075)
     # handprints on the fog (both sides), wiped clear in pale blue
     W["prints"] = []
     spots = [(1, 6, 1.45), (-1, 5, 1.5), (1, 8, 1.35), (-1, 7, 1.6), (1, 3, 1.5), (-1, 4, 1.4), (1, 9, 1.5), (-1, 2, 1.55)]
     for j, (side, row, z) in enumerate(spots):
         y = G.row_y(row) + 0.15
-        loc = (side * (HALF - 0.032), y, z - 0.1)
-        obs = handprint(kit, f"hp{j}", loc, wipe)
+        loc = (side * (HALF - 0.032), y, z - 0.18)
+        obs = handprint(kit, f"hp{j}", loc, kit.plastic("#5fb4e6", 0.5, spec=0.2))
         for ob in obs:
             ob.visible_shadow = False
         W["prints"].append(obs)
@@ -504,12 +518,19 @@ def build(kit, story, tl):
          (0.06, 0.1, 0.03, 0.1), (0.03, 0.16, 0.06, 0.03)])]
     kit.box("book.pen", (0.02, 0.2, 0.02), (0.22, -0.1, 0.03), pen, book)
     # ------------------------------------------------------------------ the pale stone door frame and the side door
-    stone = kit.texture("concrete", 1.0, tint="#dcc59a")
+    stone = pl("#f0e4c4", 0.95, spec=0.04)
     d0, d1 = G.DOOR
     X0, X1 = HALF - 0.04, HALF + 0.16
     kit.box("frame.j0", (X1 - X0, 0.22, 2.4), ((X0 + X1) / 2, d0 - 0.11, 1.2), stone)
     kit.box("frame.j1", (X1 - X0, 0.22, 2.4), ((X0 + X1) / 2, d1 + 0.11, 1.2), stone)
     kit.box("frame.lt", (X1 - X0, d1 - d0 + 0.44, 0.22), ((X0 + X1) / 2, (d0 + d1) / 2, 2.31), stone)
+    # mortar lines between the stone blocks, standing 1 cm proud so they never z-fight
+    mort = pl("#a89468", 0.95)
+    for k_, zz in enumerate((0.45, 0.9, 1.35, 1.8)):
+        for nm_, yy in (("j0", d0 - 0.11), ("j1", d1 + 0.11)):
+            kit.box(f"frame.m{k_}{nm_}", (X1 - X0 + 0.02, 0.24, 0.02), ((X0 + X1) / 2, yy, zz), mort)
+    for k_, yy in enumerate((d0 + 0.45, (d0 + d1) / 2, d1 - 0.45)):
+        kit.box(f"frame.ml{k_}", (X1 - X0 + 0.02, 0.02, 0.22), ((X0 + X1) / 2, yy, 2.31), mort)
     leaf_m = M["silver"]
     glyph_g, glyph_c = pl("#2fa58f", 0.6), pl("#f3ecd8", 0.7)
     glyph_n, glyph_o = pl("#1d2a44", 0.6), pl("#ff9f43", 0.6)
@@ -527,18 +548,35 @@ def build(kit, story, tl):
         W["door_leaves"].append(leaf)
     # ------------------------------------------------------------------ flashback corners
     build_party(kit, M)
-    # a bus window with a smiley drawn in the fog
+    # a bus window (a real frame, a street outside) with a bold smiley drawn in its fog
     bx, by = G.BUS
-    kit.box("bus.wall", (8, 0.3, 3.4), (bx, by + 2.0, 1.7), pl("#ffe2a8", 0.85))
+    wl = pl("#ffe2a8", 0.85)
+    wy = by + 2.0
+    hw, hh, hz = 0.8, 0.62, 1.75          # the window: half width, half height, centre height
     kit.box("bus.floor", (8, 6, 0.1), (bx, by, -0.05), pl("#b9c4cc", 0.8))
-    kit.box("bus.sill", (2.4, 0.3, 0.1), (bx, by + 1.8, 0.85), pl("#fffaf0", 0.7))
-    kit.plane("bus.sky", (2.2, 1.5), (bx, by + 1.8, 1.65), pl("#5a9ad0", 0.9), rot=(math.pi / 2, 0, 0))
-    bm, bb = amat(kit, "busfog", "#e9f2f5", 0.5, 0.9)
-    pane = kit.box("bus.fog", (2.2, 0.01, 1.5), (bx, by + 1.84, 1.65), bm)
+    kit.box("bus.w.l", (4 - hw, 0.3, 3.4), (bx - (4 + hw) / 2, wy, 1.7), wl)
+    kit.box("bus.w.r", (4 - hw, 0.3, 3.4), (bx + (4 + hw) / 2, wy, 1.7), wl)
+    kit.box("bus.w.lo", (2 * hw, 0.3, hz - hh), (bx, wy, (hz - hh) / 2), wl)
+    kit.box("bus.w.hi", (2 * hw, 0.3, 3.4 - hz - hh), (bx, wy, hz + hh + (3.4 - hz - hh) / 2), wl)
+    fr = pl("#3c4652", 0.5, spec=0.3)
+    ft = 0.09
+    kit.box("bus.fr.l", (ft, 0.34, 2 * hh + 2 * ft), (bx - hw - ft / 2, wy - 0.04, hz), fr)
+    kit.box("bus.fr.r", (ft, 0.34, 2 * hh + 2 * ft), (bx + hw + ft / 2, wy - 0.04, hz), fr)
+    kit.box("bus.fr.t", (2 * hw + 2 * ft, 0.34, ft), (bx, wy - 0.04, hz + hh + ft / 2), fr)
+    kit.box("bus.fr.b", (2 * hw + 2 * ft, 0.34, ft), (bx, wy - 0.04, hz - hh - ft / 2), fr)
+    kit.box("bus.sill", (2 * hw + 0.4, 0.4, 0.07), (bx, wy - 0.05, hz - hh - ft - 0.035), pl("#fffaf0", 0.7))
+    # the street outside: sky, pastel buildings, a road
+    kit.box("bus.o.sky", (30, 0.2, 14), (bx, wy + 14, 5), pl("#8fd3ff", 0.9))
+    for k, (ox, w_, h_, c_) in enumerate([(-3.6, 2.6, 3.2, "#ffd9b8"), (-1.2, 2.2, 2.0, "#c8e6ff"), (1.1, 2.4, 3.6, "#ffc4c4"),
+                                           (3.4, 2.6, 2.4, "#d8f0c8")]):
+        kit.box(f"bus.o.b{k}", (w_, 1.0, h_), (bx + ox, wy + 5.5, h_ / 2 + 0.4), pl(c_, 0.8, spec=0.05))
+        kit.box(f"bus.o.r{k}", (w_ + 0.1, 1.1, 0.12), (bx + ox, wy + 5.5, h_ + 0.46), pl("#e07a5f", 0.7))
+    kit.box("bus.o.road", (30, 6, 0.1), (bx, wy + 3.5, 0.15), pl("#5a5f68", 0.8))
+    bm, bb = amat(kit, "busfog", "#f1f7fa", 0.72, 0.9)
+    pane = kit.box("bus.fog", (2 * hw, 0.01, 2 * hh), (bx, wy - 0.06, hz), bm)
     noshadow(pane)
-    sm2 = smiley(kit, "bussmile", (bx, by + 1.86, 1.65), pl("#2f6fb0", 0.5), axis="y", s=3.2)
-    for ob in sm2:
-        ob.visible_shadow = False
+    W["bussm"] = smiley(kit, "bussmile", (bx, wy - 0.1, hz), pl("#8fd4f8", 0.5, spec=0.2), axis="y", s=3.4,
+                        edge=pl("#123a5e", 0.6), grow=0.07, back=0.012)
     kit.light("bus.lamp", "POINT", (bx, by - 1.0, 2.8), 300.0, "#fff4e0", size=0.8, shadow=False)
     # the bathroom at night
     tx0, ty0 = G.BATH
@@ -575,22 +613,26 @@ def build_tag(kit):
         noshadow(ob)
         return ob
 
-    b("tag.edge", (1.62, 0.84, 0.004), (0, 0, 0.0), edge)
-    b("tag.plate", (1.54, 0.76, 0.004), (0, 0, 0.004), cream)
-    b("tag.g", (0.62, 0.62, 0.004), (-0.54, 0, 0.008), green)
-    b("tag.face", (0.44, 0.48, 0.004), (-0.54, 0.0, 0.012), cream)
+    # the plate is 2.2 x 1.16: a hush glyph 1.5x the first cut (a face with a bold finger over its mouth) and the digits
+    b("tag.edge", (2.26, 1.22, 0.004), (0, 0, 0.0), edge)
+    b("tag.plate", (2.18, 1.14, 0.004), (0, 0, 0.004), cream)
+    GX = -0.55
+    b("tag.g", (0.98, 0.98, 0.004), (GX, 0, 0.008), green)
+    b("tag.face", (0.7, 0.76, 0.004), (GX, 0.0, 0.012), cream)
     for s in (-1, 1):
-        b(f"tag.eye{s}", (0.07, 0.08, 0.004), (-0.54 + s * 0.1, 0.1, 0.016), navy)
-    W["tag_mouth"] = b("tag.mouth", (0.2, 0.045, 0.004), (-0.54, -0.1, 0.016), navy)
-    W["tag_open"] = b("tag.open", (0.14, 0.17, 0.004), (-0.54, -0.1, 0.016), navy)
-    W["tag_finger"] = b("tag.finger", (0.1, 0.4, 0.004), (-0.54, -0.04, 0.02), orange)
+        b(f"tag.eye{s}", (0.12, 0.13, 0.004), (GX + s * 0.16, 0.16, 0.016), navy)
+    W["tag_mouth"] = b("tag.mouth", (0.32, 0.07, 0.004), (GX, -0.17, 0.016), navy)
+    W["tag_open"] = b("tag.open", (0.22, 0.27, 0.004), (GX, -0.17, 0.016), navy)
+    # the finger: a thick orange bar with a navy outline, down over the mouth
+    W["tag_finger_o"] = b("tag.fingero", (0.25, 0.66, 0.004), (GX, -0.04, 0.019), navy)
+    W["tag_finger"] = b("tag.finger", (0.18, 0.6, 0.004), (GX, -0.04, 0.022), orange)
     W["digits"] = []
-    for i, x in enumerate([-0.04, 0.2, 0.43, 0.66]):
-        W["digits"].append(digit_boxes(kit, f"tag.d{i}", "8", 0.17, 0.46, 0.055, navy, root, (x, 0.0), plane="xy", z=0.012))
+    for i, x in enumerate([0.2, 0.44, 0.68, 0.92]):
+        W["digits"].append(digit_boxes(kit, f"tag.d{i}", "8", 0.17, 0.5, 0.06, navy, root, (x, 0.0), plane="xy", z=0.012))
         for ob in W["digits"][-1].values():
             noshadow(ob)
-    b("tag.comma", (0.045, 0.045, 0.004), (0.082, -0.2, 0.012), navy)
-    b("tag.comma2", (0.03, 0.06, 0.004), (0.07, -0.245, 0.012), navy)
+    b("tag.comma", (0.05, 0.05, 0.004), (0.325, -0.22, 0.012), navy)
+    b("tag.comma2", (0.035, 0.065, 0.004), (0.31, -0.27, 0.012), navy)
 
 
 def _first_frame(kit, story):
@@ -644,6 +686,23 @@ def _setfog(b, a):
     b.inputs["Alpha"].default_value = max(0.0, min(1.0, a))
 
 
+_POL = {}
+
+
+def _crop_at(story, tl, t):
+    """(zoom, dx, dy) of the polish pack's crop at t, the same call post.finish makes."""
+    try:
+        from blocky import polish
+        pol = polish.spec(story)
+        key = id(tl)
+        if key not in _POL:
+            _POL.clear()
+            _POL[key] = polish.emph_times(tl, pol)
+        return polish.motion(tl, story, pol, t, _POL[key])
+    except Exception:
+        return 1.25, 0.0, 0.0
+
+
 def animate(kit, story, tl, t, ctx):
     if not W.get("inited"):
         _first_frame(kit, story)
@@ -657,6 +716,18 @@ def animate(kit, story, tl, t, ctx):
     kit.LIGHTS["sun"]["light"].color = look["sun_col"]
     kit.LIGHTS["fill"]["light"].color = look["fill_col"]
     gains["sun"], gains["fill"] = look["sun"], look["fill"]
+    # in the tunnel: the exposure drops hard (blue-black windows) and only the ceiling panel lights the faces; ramped 0.3 s
+    te = [c for c in tl["cues"] if c["name"] == "env" and "tunnel" in c]
+    tun_a, tprev_ = 0.0, 0.0
+    for c in te:
+        if c["t"] > t:
+            break
+        tun_a = max(0.0, min(1.0, tprev_ + (c["tunnel"] - tprev_) * ss((t - c["t"]) / 0.3)))
+        tprev_ = c["tunnel"]
+    bpy.context.scene.view_settings.exposure = 0.25 - 1.15 * tun_a
+    for k_ in range(7):
+        gains[f"q.lamp{k_}"] = 1.0 - 0.45 * tun_a
+        gains[f"L.lamp{k_}"] = 1.0 - 0.45 * tun_a
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (*look["sky"], 1.0)
@@ -695,14 +766,18 @@ def animate(kit, story, tl, t, ctx):
         rank = (G.ROWS - 1 - i) / (G.ROWS - 1)
         a_in = ss((fg - rank * 0.5) / 0.5)
         a_cl = ss((cl - (i / (G.ROWS - 1)) * 0.6) / 0.4)
-        a = 0.6 * a_in * (1.0 - a_cl) * (1.0 + 0.3 * sw)
+        a = min(0.97, 0.88 * a_in * (1.0 - a_cl) * (1.0 + 0.08 * sw))
         _setfog(b, a)
         pane.hide_render = a < 0.01
     pa = sample("patch", tl, t, {"a": 0.0})["a"]
-    _setfog(W["patch"], 0.5 * pa)
+    _setfog(W["patch"], 0.72 * pa)
     sm = sample("smiley", tl, t, {"p": 0.0})["p"]
-    for j, ob in enumerate(W["smiley"]):
-        ob.hide_render = sm < j + 0.5
+    grow = ss(sm / 1.5)
+    W["patchob"].scale = (1.0, 1.0 + 0.6 * grow, 1.0 + 0.7 * grow)
+    for j, pair in enumerate(W["smiley"]):
+        for ob in pair:
+            if ob is not None:
+                ob.hide_render = sm < j + 0.5
     pr = sample("prints", tl, t, {"p": 0.0})["p"]
     for j, obs in enumerate(W["prints"]):
         for ob in obs:
@@ -756,6 +831,13 @@ def animate(kit, story, tl, t, ctx):
     lv = sample("lunch", tl, t, {"v": 0.0})["v"]
     W["bag"].hide_render = lv < 0.5 or lv > 1.5
     W["bagtop"].hide_render = lv < 0.5 or lv > 1.5
+    # on the wife's flat palm until she sets it down on the seat
+    lf = sample("lift", tl, t, {"u": 0.0})["u"]
+    sx9, sy9 = G.SEAT9
+    hand = (sx9 - 0.25, sy9 - 0.1, 1.0)
+    seat_ = (sx9 + 0.1, sy9 + 0.05, 0.5 + 0.17)
+    for ob, dz in ((W["bag"], 0.0), (W["bagtop"], 0.18)):
+        ob.location = tuple(seat_[i] + (hand[i] - seat_[i]) * lf + (dz if i == 2 else 0.0) for i in range(3))
     for cr in W["crumbs"]:
         cr.hide_render = lv < 1.5
     # the maze
@@ -786,8 +868,9 @@ def animate(kit, story, tl, t, ctx):
             ob.hide_render = ga["s"] < j + 0.5
     # the hush glyph opens its mouth
     gy = sample("glyph", tl, t, {"u": 0.0})["u"]
-    W["tag_finger"].scale = (max(0.001, 1 - gy), max(0.001, 1 - gy), 1)
-    W["tag_finger"].hide_render = gy > 0.97
+    for k_ in ("tag_finger", "tag_finger_o"):
+        W[k_].scale = (max(0.001, 1 - gy), max(0.001, 1 - gy), 1)
+        W[k_].hide_render = gy > 0.97
     W["tag_mouth"].scale = (max(0.001, 1 - gy), 1, 1)
     W["tag_open"].scale = (max(0.001, gy), max(0.001, gy), 1)
     W["tag_open"].hide_render = gy < 0.03
@@ -831,11 +914,16 @@ def animate(kit, story, tl, t, ctx):
                     break
             else:
                 lens = keys[-1][3]
-    dist = 1.0
+    dist = 0.3          # close to the lens, so nothing in the set can stand between it and the camera
     h2 = dist * 12.0 / lens
     w2 = h2 * 9.0 / 16.0
-    s = 0.475 * w2
+    # the polish pack crops the drawing (zoom, slide): put the tag in the corner of what is left of it, so it is
+    # never cut off, and shrink it with the crop so it holds one size on the screen
+    zoom, dx, dy = _crop_at(story, tl, t)
+    z = max(zoom, 1.0 + 2 * max(abs(dx), abs(dy)) + 1e-3)
+    cx, cy = 2 * w2 * dx, -2 * h2 * dy
+    s = 0.40 * w2 / z
     tag = W["tag"]
     tag.scale = (s, s, s)
-    tag.location = (-0.92 * w2 + 0.81 * s, 0.88 * h2 - 0.42 * s, -dist)
+    tag.location = (cx - 0.93 * w2 / z + 1.13 * s, cy + 0.90 * h2 / z - 0.61 * s, -dist)
     return gains
