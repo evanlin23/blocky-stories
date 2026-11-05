@@ -681,6 +681,30 @@
     ]
    ]
   },
+  "L27b": {
+   "text": "Dad says the anchovies stare at him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.026
+    ],
+    [
+     1.026,
+     1.741
+    ]
+   ]
+  },
   "L28": {
    "text": "And I promised them both I wouldn't tell.",
    "who": "narrator",
