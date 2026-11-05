@@ -16,7 +16,7 @@ import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
 # shots that are deliberately the glow / the sky itself (S05 "something GLOWS", S35 the sky going dark, S40 the glow sinking)
-FRAMING_OK = ["S05", "S35", "S40", "S60", "S63", "S85"]
+FRAMING_OK = ["S05", "S34", "S39", "S59", "S62"]
 REV = 24
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
