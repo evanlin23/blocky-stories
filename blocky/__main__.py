@@ -349,12 +349,23 @@ def cmd_clipcheck(a):
         lo, hi = (float(x) for x in a.span.split(","))
         times = [t for t in times if lo <= t <= hi]
     out = w / "clip.json"
-    job = {**base_job(a, {"res": [64, 112], "samples": 1}), "out": str(w / "clip"), "clip": times, "clip_out": str(out)}
+    cams = checks.cam_times(tl, story_json(a.story))
+    if a.span:
+        cams = [c for c in cams if lo <= c[0] <= hi]
+    job = {**base_job(a, {"res": [64, 112], "samples": 1}), "out": str(w / "clip"), "clip": times, "clip_out": str(out),
+           "cam": cams}
     blender(job, "clip")
-    probs = checks.clip_problems(json.loads(out.read_text())["hits"], story_json(a.story).get("clip_ok"))
+    res = json.loads(out.read_text())
+    probs = checks.clip_problems(res["hits"], story_json(a.story).get("clip_ok"))
     for p in probs:
         print("BLOCK", p)
-    print(f"clipcheck {a.story}: {len(times)} times, {len(probs)} clip(s)")
+    # the camera inside a mesh or behind a wall at a key of its move (ep120 S67, ep105 S85/S139, moving-day):
+    # report-only, since a shot through glass or a doorway can be meant (story.json cam_ok silences one)
+    cprobs = checks.cam_problems(res.get("cam", []), story_json(a.story).get("cam_ok"))
+    for p in cprobs:
+        print("WARN ", p)
+    print(f"clipcheck {a.story}: {len(times)} times, {len(probs)} clip(s), {len(cams)} camera points, "
+          f"{len(cprobs)} camera finding(s)")
     sys.exit(1 if probs else 0)
 
 
@@ -396,6 +407,7 @@ def cmd_preflight(a):
         r = subprocess.run([sys.executable, "-m", "blocky", "clipcheck", a.story], capture_output=True, text=True)
         lines = [ln[6:] for ln in r.stdout.splitlines() if ln.startswith("BLOCK ")]
         rows += [("clip", ("block", m)) for m in lines]
+        rows += [("camera", ("warn", ln[6:])) for ln in r.stdout.splitlines() if ln.startswith("WARN  ")]
         if r.returncode and not lines:
             rows.append(("clip", ("block", "clipcheck failed: " + (r.stderr.strip().splitlines() or ["?"])[-1])))
     pkg = gate.load_package(a.story)

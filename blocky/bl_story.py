@@ -183,8 +183,95 @@ def clip_check(job, story, tl, setmod, ctx, chars, shots):
                 if trees[h.name].overlap(trees[o.name]):
                     hits.append({"t": round(t, 3), "shot": shot["id"], "who": who.removeprefix("set:"),
                                  "what": o.name})
-    Path(job["clip_out"]).write_text(json.dumps({"times": len(job["clip"]), "hits": hits}, indent=1))
-    print(f"clip check: {len(job['clip'])} times, {len(hits)} head overlap(s) in {time.time() - t0:.0f} s", flush=True)
+    cams = camera_check(job, story, tl, setmod, ctx, chars, shots)
+    Path(job["clip_out"]).write_text(json.dumps({"times": len(job["clip"]), "hits": hits, "cam": cams}, indent=1))
+    print(f"clip check: {len(job['clip'])} times, {len(hits)} head overlap(s), {len(cams)} camera finding(s) in "
+          f"{time.time() - t0:.0f} s", flush=True)
+
+
+_CLEAR: dict = {}
+
+
+def _see_through(ob) -> bool:
+    """Glass, a window pane, anything mostly transparent: a shot through it isn't a blank (warm-shoes' window, ep105's
+    rglass). A Principled material with transmission or alpha, or "glass"/"pane" in the object's or material's name."""
+    if ob.name in _CLEAR:
+        return _CLEAR[ob.name]
+    clear = any(k in ob.name.lower() for k in ("glass", "pane"))
+    for slot in ob.material_slots:
+        m = slot.material
+        if m is None:
+            continue
+        clear = clear or any(k in m.name.lower() for k in ("glass", "pane"))
+        for n in (m.node_tree.nodes if m.use_nodes and m.node_tree else []):
+            if n.type == "BSDF_PRINCIPLED":
+                tr = n.inputs.get("Transmission Weight") or n.inputs.get("Transmission")
+                al = n.inputs.get("Alpha")
+                if (tr is not None and tr.default_value >= 0.5) or (al is not None and al.default_value < 0.5):
+                    clear = True
+    _CLEAR[ob.name] = clear
+    return clear
+
+
+def _cast(sc, dg, origin, d, cam, far):
+    """The first rendered surface along a ray from origin: (distance, object name, its face looks away from the
+    ray) or None. Skips what hangs on the camera (the rule tag), anything hidden from the render, and glass."""
+    from mathutils import Vector
+
+    o, travelled = Vector(origin), 0.0
+    for _ in range(16):
+        ok, loc, nrm, _i, ob, _m = sc.ray_cast(dg, o, d, distance=far - travelled)
+        if not ok:
+            return None
+        top = ob
+        while top.parent is not None and top is not cam:
+            top = top.parent
+        step = (loc - o).length
+        if ob.hide_render or top is cam or _see_through(ob):
+            travelled += step + 1e-4
+            o = loc + d * 1e-4
+            continue
+        return travelled + step, ob.name, nrm.dot(d) > 0
+    return None
+
+
+def camera_check(job, story, tl, setmod, ctx, chars, shots):
+    """At each time in job["cam"] ([t, shot]: every camera key, and each shot's first and last frame): is the
+    lens inside a mesh, or right behind a surface that fills the frame (checks.cam_verdict)? Rays from the lens
+    with scene.ray_cast: six along the axes, and a 7 x 7 grid through the frame."""
+    import bpy
+    from mathutils import Vector
+
+    from blocky import checks
+
+    sc = bpy.context.scene
+    out = []
+    for t, sid in job.get("cam") or []:
+        pose_at(t, story, tl, setmod, ctx, chars, shots)
+        bpy.context.view_layer.update()
+        dg = bpy.context.evaluated_depsgraph_get()
+        cam = sc.camera
+        mw = cam.matrix_world
+        o = mw.translation.copy()
+        axis = []
+        for v in ((1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)):
+            h = _cast(sc, dg, o, Vector(v), cam, 200.0)
+            axis.append((h[1], h[2]) if h else (None, False))
+        fr = cam.data.view_frame(scene=sc)   # the frame's corners in camera space: tr, br, bl, tl
+        tr, br, bl, tl_ = fr[0], fr[1], fr[2], fr[3]
+        n, grid = checks.CAM_GRID, []
+        rot = mw.to_3x3()
+        for i in range(n):
+            for j in range(n):
+                u, w = (i + 0.5) / n, (j + 0.5) / n
+                p = tl_.lerp(tr, u).lerp(bl.lerp(br, u), w)
+                d = (rot @ p).normalized()
+                h = _cast(sc, dg, o, d, cam, 3.0)
+                grid.append(h if h else (None, None, False))
+        v = checks.cam_verdict(axis, grid, cast=list(chars))
+        if v:
+            out.append({"t": t, "shot": sid, **v})
+    return out
 
 
 def main():
