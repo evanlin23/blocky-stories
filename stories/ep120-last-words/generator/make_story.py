@@ -619,7 +619,7 @@ story = {
     "set_moves": [],
     "clip_ok": ["ripple"],
     "framing_ok": [],
-    "asr_forgive": ["it", "eleven", "sixteen", "he's", "i'd", "he'd", "i", "pick", "picked", "place", "play"],
+    "asr_forgive": ["eleven", "sixteen"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

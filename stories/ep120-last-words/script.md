@@ -3,17 +3,18 @@
 - **Slug:** `ep120-last-words` (batch 12, upload order 6 of 7)
 - **Pitch:** 13 in `out/batch12-pitches.md`, blind panel 21/30. Engine: the menace is a message (a haunting by words left behind, then the shape outside proves to be family), unused. Opening shape `must` (the "you can't" form). Lane: core. Length arm: long.
 - **Title:** Dad's Place Still Says My Last WORDS 🔊
-- **Revised r1 (standards, 2026-11-05):** US English: "flat" is now "place" or "apartment" everywhere. Dad's face carries his lines: S08b is a full-frame close on the photo, S09 has Dad's face behind me, and L40 to L49 now play over Dad himself (in his doorway two years ago, at the foot of his stair, asleep on the shop couch, in the lit cab, at my buzzer, with his phone). "I'd told him not to CALL." moved up beside "he couldn't KNOCK" (now L47, L48). Two new lines, L45 (practicing in the cab) and L46 (as far as my buzzer), for about 123 s. The title is now "Dad's Place". Lines changed: L07, L08, L12, L31, L33, L39, L45 to L55 (renumbered), L59, L60, L71. Nothing is voiced yet.
+- **Revised r1 (standards, 2026-11-05):** US English: "flat" is now "place" or "apartment" everywhere. Dad's face carries his lines: S08b is a full-frame close on the photo, S09 has Dad's face behind me, and L40 to L49 now play over Dad himself (in his doorway two years ago, at the foot of his stair, asleep on the shop couch, in the lit cab, at my buzzer, with his phone). "I told him not to CALL." moved up beside "he couldn't KNOCK" (now L47, L48). Two new lines, L45 (practicing in the cab) and L46 (as far as my buzzer), for about 123 s. The title is now "Dad's Place". Lines changed: L07, L08, L12, L31, L33, L39, L45 to L55 (renumbered), L59, L60, L71. Built and voiced after r1.
+- **Revised r2 (critic r1, standards r2, 2026-11-05):** word fixes for ASR and sense. L12 "yelling my words / at him", L42 "He slept", L48 "I told him", L53 "This time,", L71 "Now his apartment says / "See you SUNDAY."". `asr_forgive` cut to number spellings (eleven, sixteen). L27 "With a DENT in it" stays; the builder shows the dent. Re-voice L12, L42, L48, L53, L71.
 - **Changed from the pitch (panel notes):**
   - **Line 1 is shorter and plain:** "In this town, / you can't take back / the last thing you say / in a HOUSE." (15 words), then "It stays there. / Out LOUD." and the rule's release in L03 ("Until somebody / says something NEW.").
   - **The sad lean lands warm.** Dad never slept in the truck: he sleeps on the couch in his own shop downstairs, so his place keeps his last words until he's kept them (L42, L43). The turn is a little funny (the one night he finally goes up to knock, I'm not home, L51, L52), then warm: my words call him up his own stairs (L60, L61), we both say sorry at the same time and laugh until the eggs go cold, and the apartment now says "See you SUNDAY." Every warm face is `smile` or `warm`.
   - The shape in the cab is never fully shown: a dark head-and-shoulders against the windshield, rim-lit by the streetlight from behind, from my window three floors up. The twist rests on the thermos (L27 to L29) and the voice (L36 to L39), never on the silhouette.
 - **Everyone is an adult.** I'm 30, Dad about 62. "When I was SIXTEEN" is a memory, never shown.
 - **Sad family reveal?** Yes, soft (an estranged son and a dad's two years of trying). It's the batch's one in seven.
-- **Word count:** 539 spoken words in 71 lines (L01 to L71), all `narrator`, plus one 0.6 s music drop before L22.
+- **Word count:** 541 spoken words in 71 lines (L01 to L71), all `narrator`, plus one 0.6 s music drop before L22.
 - **Estimated length:** about 123 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. The montage is bright day on a street of painted houses. The middle is night, but lit to read: my apartment building's lot under one steady sodium streetlight, Dad's red pickup, my window three floors up, and Dad's place above his auto shop, lit by a steady streetlight through its window and then by its own ceiling lamp (a fixed fitting, switched on with a 0.5 s ramp at L34). The last beats are warm lamp light at his table and a bright Sunday afternoon. No swinging bulbs, no flicker.
-- **Hold:** scripts only (batch 12). Not built, not voiced.
+- **Hold:** built, awaiting review (batch 12).
 
 ## Variety table
 The batch table is in `stories/ep115-are-we-there/script.md`. This row:
@@ -213,7 +214,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L09: the last thing I said / was "Don't call me AGAIN."
 - L10: And I slammed / the DOOR.
 - L11: He never CALLED.
-- L12: I figured / his place had been / yelling it at him / for two YEARS.
+- L12: I figured / his place had been / yelling my words / at him / for two YEARS.
 - L13: Every time / I drove past his shop, / I turned the radio UP.
 - L14: Then the TRUCK started.
 - L15: Every night / at eleven, / a pickup parks / outside my BUILDING.
@@ -244,18 +245,18 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L39: The voice / in Dad's place / was DAD'S.
 - L40: That night, / after I left, / he said it, / and came out after ME.
 - L41: And he never / went back IN.
-- L42: He's slept / on the couch / in his shop / for two YEARS.
+- L42: He slept / on the couch / in his shop / for two YEARS.
 - L43: He wouldn't say / anything else up there / until he'd DONE it.
 - L44: Every night, / he drove to my building / to get me.
 - L45: He'd sit in that cab / and practice / what he'd SAY.
 - L46: Some nights, / he got as far / as my BUZZER.
 - L47: But every night, / he couldn't KNOCK.
-- L48: I'd told him / not to CALL.
+- L48: I told him / not to CALL.
 - L49: He was scared / I'd send him AWAY / again.
 - L50: Then headlights / hit the WINDOW.
 - L51: His truck / pulled in DOWNSTAIRS.
 - L52: He saw the light on / in his PLACE.
-- L53: Last night, / he'd finally gone up / to my door / to KNOCK.
+- L53: This time, / he'd finally gone up / to my door / to KNOCK.
 - L54: And I wasn't HOME.
 - L55: We'd missed each other / by about / ten MINUTES.
 - L56: You can't take back / your last WORDS.
@@ -273,9 +274,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L68: Until the eggs / got COLD.
 - L69: I come over / every SUNDAY now.
 - L70: And I pick / my last words / CAREFULLY.
-- L71: His place / says / "See you SUNDAY."
+- L71: Now his apartment says / "See you SUNDAY."
 
-(Loop: L71 runs straight into L01: "His place says "See you Sunday." In this town, you can't take back the last thing you say in a house.")
+(Loop: L71 runs straight into L01: "Now his apartment says "See you Sunday." In this town, you can't take back the last thing you say in a house.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt or in peril: the shape is Dad, sitting in his own truck, and the night stays lit to read.
