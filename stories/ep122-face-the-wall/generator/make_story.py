@@ -356,7 +356,9 @@ remap_all(cues)
 
 sfx = [
     {"at": Raw(f"L01.{CM['L01'][0] + 1}"), "kind": "thud", "db": -9},
+    {"at": "L16.1", "kind": "thud", "db": -17},
     {"at": "L17.1", "kind": "thud", "db": -16},
+    {"at": "L26.1", "kind": "thud", "db": -17},
     {"at": "L27.1", "kind": "thud", "db": -16},
     {"at": "L31", "kind": "thud", "db": -16},
     {"at": "L38.0+0.9", "kind": "creak", "db": -14},
