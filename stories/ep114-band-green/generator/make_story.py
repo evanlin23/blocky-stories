@@ -197,7 +197,7 @@ cue("L06", "song", n=3.0)
 teleport("grandpa", "L11", [-2.7, -4.7], yaw=D["grandpa"][2])
 shot("L11", [[0, [-3.6, -3.6, 1.45], [-6.1, -1.85, 1.3], 28], [1, [-3.7, -3.5, 1.45], [-6.1, -1.85, 1.3], 28]], "bench")
 teleport("grandpa", "L12", [D["grandpa"][0], D["grandpa"][1]], yaw=D["grandpa"][2])
-shot("L12", [[0, [-3.4, -2.9, 0.3], [-5.5, -1.75, 0.34], 26], [1, [-3.5, -2.8, 0.3], [-5.5, -1.75, 0.34], 26]], "sneakers2")
+shot("L12", [[0, [-3.4, -2.9, 0.22], [-5.5, -1.75, 0.2], 27], [1, [-3.5, -2.8, 0.22], [-5.5, -1.75, 0.2], 27]], "sneakers2")
 # L13: the photo of me and Benny on my phone, held on my raised hand
 key("me", "L13", arms=[0, 88], head=[0, 8], expr="worried")
 key("me", "L13.2", arms=[0, 88], head=[0, 8])
