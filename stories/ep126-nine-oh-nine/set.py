@@ -566,7 +566,7 @@ def _legs_sit(who, s):
 BUS_SHOTS = {"S01a", "S01b", "S02", "S07", "S44", "S46"}
 KITCHEN_SHOTS = {"S06"}
 # roof shots where the face is held in moon shadow (S21, S22) or lit from below (S23)
-DIMFACE = {"S21": (0.16, 0.2), "S22": (0.2, 0.26), "S23": (0.5, 1.1)}
+DIMFACE = {"S21": (0.1, 0.2), "S22": (0.12, 0.22), "S23": (0.5, 1.1)}
 MOONSHADE = {"S21": 0.3, "S22": 0.3}      # the sun and fill, scaled: one stop and more down on her face
 SKYOV = {"S42": SKY_PALE, "S43": SKY_PALE}
 
