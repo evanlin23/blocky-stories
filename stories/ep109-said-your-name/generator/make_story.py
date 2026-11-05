@@ -213,11 +213,12 @@ vis(0, "cup", True)
 
 # ===== 01 the rule (L01 to L04), our kitchen
 put("me", 0, [ME_K[0], ME_K[1]], 0, expr="smile", arms=[0, 100], head=[0, 8])
-beat("me", "L02", expr="wide", arms=[0, 100], head=[0, 0])
+acting["me"].append({"at": "L01.2", "hidden": True})
+put("me", "L02", [ME_K[0], ME_K[1]], 0, expr="wide", arms=[0, 100], head=[0, 0])
 beat("me", "L03", expr="worried", arms=[0, 86], head=[0, 14])
 beat("me", "L03.2", expr="worried", arms=[0, 86], head=[0, 14])
 shot(0, mv([KX - 0.2, -0.9, 1.95], [KX - 1.3, 2.7, 1.5], 36, [KX - 0.55, -0.2, 1.9], [KX - 1.3, 2.7, 1.5], 36), "face")
-shot("L01.2", mv([KX - 0.9, 0.45, 1.15], [KX - 0.97, 1.9, 0.98], 50, [KX - 0.9, 0.9, 1.15], [KX - 0.97, 1.9, 0.98], 50), "dial")
+shot("L01.2", mv([KX - 0.9, 0.45, 1.3], [KX - 0.97, 1.9, 1.2], 38, [KX - 0.9, 0.9, 1.3], [KX - 0.97, 1.9, 1.2], 38), "dial")
 shot("L02", fc(ME_K, 0, 2.7, 30, h=1.5, tz=1.45, off=-0.36, push=0.1), "stunned")
 shot("L03", mv([KX - 0.7, 0.0, 1.55], [KX - 1.0, 2.6, 1.5], 26, [KX - 0.75, 0.4, 1.55], [KX - 1.0, 2.6, 1.5], 26), "hand")
 shot("L03.2", mv([KX - 1.9, 0.7, 1.15], [KX - 0.97, 2.0, 1.2], 36, [KX - 1.5, 0.9, 1.2], [KX - 0.97, 2.0, 1.25], 36), "hand2")
@@ -282,9 +283,9 @@ shot("L10.2", mv([47.6, 0.2, 1.1], [42.3, 2.7, 0.95], 30, [47.2, 0.4, 1.1], [42.
 # L11 the bakery line steps back, all at once
 LINE = [(54.2, 4.0), (53.1, 4.0), (52.0, 4.0), (50.9, 4.0), (49.8, 4.0), (48.7, 4.0)]
 for i, (lx, ly) in enumerate(LINE):
-    put(f"c{i + 1}", "L11", [lx, ly], 90, expr="smile")
-    beat(f"c{i + 1}", "L11.1-0.05", expr="smile")
-    go(f"c{i + 1}", "L11.1+0.1", [lx + 0.1, 4.4], yaw=-12, expr="worried", blend=0.2)
+    put(f"c{i + 1}", "L11", [lx, ly], -12, expr="smile")
+    beat(f"c{i + 1}", "L11.1-0.05", expr="smile", keep_yaw=True)
+    go(f"c{i + 1}", "L11.1+0.1", [lx + 0.1, 4.4], yaw=-12, keep_yaw=True, expr="worried", blend=0.2)
     beat(f"c{i + 1}", "L11.2", expr="worried", head=[-20, 0])
 shot("L11", mv([52.0, -0.9, 1.6], [51.4, 4.2, 1.5], 30, [51.8, -0.5, 1.6], [51.4, 4.2, 1.5], 30), "line")
 shot("L11.2", mv([49.6, 0.0, 1.55], [45.4, 2.7, 1.5], 38, [49.2, 0.2, 1.55], [45.7, 2.7, 1.5], 38), "meback")
