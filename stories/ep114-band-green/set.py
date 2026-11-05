@@ -870,9 +870,9 @@ def _laugh(who, t):
     s2 = math.sin(6.0 * t + ph + 1.7)
     P = lambda n: bpy.data.objects.get(f"{who}.{n}")
     if P("arm-1"):
-        P("arm-1").rotation_euler = (-(2.5 + 0.45 * s1), 0.7, 0)
+        P("arm-1").rotation_euler = (-(2.5 + 0.45 * s1), 0.35, 0)
     if P("arm1"):
-        P("arm1").rotation_euler = (-(2.5 + 0.45 * s2), -0.7, 0)
+        P("arm1").rotation_euler = (-(2.5 + 0.45 * s2), -0.35, 0)
     if P("leg-1"):
         P("leg-1").rotation_euler = (0.5 * s2, 0, 0)
     if P("leg1"):
