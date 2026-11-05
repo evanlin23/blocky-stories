@@ -498,8 +498,8 @@ def build(kit, story, tl):
 
     simple("lilac", +1, -11.0, "#c8a8f0", "#6a4a9a", "#f2c14e")
     simple("coral", -1, -9.8, "#ff8e72", "#a8453a", "#3f8f6a")
-    simple("green", +1, 6.0, "#9be0a8", "#3a7a4a", "#d7503a")
-    simple("pink", -1, 7.0, "#ffb8d0", "#a8456a", "#2f5fa8")
+    simple("green", +1, 9.4, "#9be0a8", "#3a7a4a", "#d7503a")
+    simple("pink", -1, 10.4, "#ffb8d0", "#a8456a", "#2f5fa8")
     ctx["others"] = others
     # the bakeries and the duplex: far off along the street, not seen from home
     bk_a = simple("bakA", +1, -60.0, "#ffcf9a", "#a8503a", "#8a5a3a")
@@ -518,10 +518,10 @@ def build(kit, story, tl):
     B(None, (0.16, 0.16, 4.6), (-1.2, -11.5, 2.3), P("#2f3440", 0.5, 0.4), "lamppost", 0.01)
     B(None, (0.5, 0.5, 0.4), (-1.2, -11.5, 4.8), P("#fff4c8", 0.5, 0.1), "lamphead", 0.03)
     # a few far houses, trees, bushes
-    for i, (x, y, c) in enumerate(((-24, 0, "#ffd0a8"), (16, 0, "#cfe8ff"), (22, 0, "#ffe08a"), (-17, -16, "#ffc4d6"), (8, -16, "#d9f0c4"))):
+    for i, (x, y, c) in enumerate(((-24, 0, "#ffd0a8"), (20, 0, "#cfe8ff"), (26, 0, "#ffe08a"), (-17, -16, "#ffc4d6"), (34, -16, "#d9f0c4"))):
         hs = House(kit, f"far{i}", 1, x, y, c, "#fffaf0", "#7a5a4a", detail=False)
         hs.fake_windows()
-    for i, (nme, x, y, h) in enumerate((("commontree_1", -16.5, 6, 6.0), ("birchtree_1", 12.5, 7, 7.0), ("commontree_2", 26, 4, 6.5),
+    for i, (nme, x, y, h) in enumerate((("commontree_1", -16.5, 6, 6.0), ("birchtree_1", 12.5, 7, 7.0), ("commontree_2", 29, 4, 6.5),
                                        ("commontree_1", -30, 4, 6.0), ("birchtree_1", 4.5, -21, 7.0), ("commontree_2", -12, -22, 6.0))):
         try:
             kit.prop(nme, (x, y, 0), rot=41 * i, height=h, tint="#9be05a" if "common" in nme else "#c9f0a0")
@@ -583,7 +583,7 @@ def build(kit, story, tl):
     kit._fogged(nm_, bs.outputs[0])
     ctx["note_mat"] = nm_
     ctx["note"] = kit.plane(nm("note"), (0.3, 0.38), (his.sgn * 0 + (-his.sgn * 2.95), 0.0, 1.5), nm_, his.root, rot=(math.pi / 2, 0, 0))
-    ctx["note"].location = (-his.sgn * 2.95, 0.035, 1.25)
+    ctx["note"].location = (-his.sgn * 2.95, 0.035, 1.1)
     no_shadow(ctx["note"])
     ctx["note"].hide_render = True
     # a big copy of the note for the close shot
@@ -684,7 +684,7 @@ def build_kitchen(kit, ours, ctx):
     K_["tbooks"] = []
     bc = ["#d7503a", "#2f5fa8", "#3f8f6a", "#f2c14e", "#8a5a9a", "#ff8e72"]
     for s_ in range(2):
-        K_["tbooks"].append([kit.box(nm("book"), (0.34, 0.26, 0.04), (0, 0, -9), P(bc[(s_ * 3 + j) % 6], 0.6), None, bevel=0.006)
+        K_["tbooks"].append([kit.box(nm("book"), (0.5, 0.38, 0.04), (0, 0, -9), P(bc[(s_ * 3 + j) % 6], 0.6), None, bevel=0.006)
                              for j in range(4)])
     return K_
 
@@ -746,8 +746,8 @@ def late(kit, ctx):
             B(hg, (0.12, 0.13, 0.13), (sx * 0.27, -R - 0.045, -0.17), wh, "mustache", 0.05)
         if nme == "dad":     # the flat finger he lays across his lips (L37)
             sh = E(hg, (0, 0, 0), "shush")
-            B(sh, (0.07, 0.07, 0.3), (0.02, -R - 0.14, -0.2), skin_f, "finger", 0.025)
-            B(sh, (0.2, 0.12, 0.17), (0.1, -R - 0.12, -0.4), skin_f, "fist", 0.04)
+            B(sh, (0.07, 0.07, 0.3), (0.02, -R - 0.14, -0.27), skin_f, "finger", 0.025)
+            B(sh, (0.2, 0.12, 0.17), (0.1, -R - 0.12, -0.47), skin_f, "fist", 0.04)
             hide(sh, True)
             ctx["shush"] = sh
         for sx in (-1, 1):
