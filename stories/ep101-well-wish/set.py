@@ -889,8 +889,10 @@ def animate(kit, story, tl, t, ctx):
                 cp = Vector(a_[1]) * (1 - fr) + Vector(b_[1]) * fr
             dv = cp - hp
             dl = max(0.01, dv.length)
-            dist = min(1.4 if in_car else 1.2, dl * 0.6)
-            kit.LIGHTS["wfill"]["obj"].location = hp + dv / dl * dist
-            fillg = 14.0 if in_car else 1.0
+            dist = min(0.8 if in_car else 1.2, dl * 0.6)
+            kit.LIGHTS["wfill"]["obj"].location = hp + dv / dl * dist + (Vector((0, -0.9, 0.3)) if in_car else Vector((0, 0, 0)))
+            fillg = 8.0 if in_car else 1.0
     gains["wfill"] = fillg
+    if fillg > 5.0:
+        gains["fill"] *= 5.0
     return gains

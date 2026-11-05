@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 6
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -473,7 +473,7 @@ put("me", "L23", [HLX + 2.9, HLY + 1.1, 0], 90, expr="worried", lean=0)
 cue("L23", "wdoor", a=0.0)
 shot("L23", mv([HLX + 0.3, HLY - 2.0, 1.1], [HLX + 3.0, HLY + 1.0, 1.0], 24, [HLX + 0.8, HLY - 1.9, 1.1], [HLX + 3.0, HLY + 1.0, 1.0], 24), name="lightline")
 beat("me", "L23.1+0.2", head=[0, 10], lean=8, expr="worried")
-shot("L23.1+0.2", A((HLX + 2.9, HLY + 1.1, 1.3), 90, 3.0, off=-55, lens=26, push=0.12), name="ear")
+shot("L23.1+0.2", A((HLX + 2.9, HLY + 1.1, 1.3), 0, 2.2, off=-40, lens=26, push=0.12), name="ear")
 only("L24", ["me", "wes"])
 cue("L24-0.6", "wdoor", a=-75.0, dur=0.5)
 put("wes", "L24", [WRX - 2.4, WRY + 0.1, 0], -90, expr="warm", arms=[0, 165])
@@ -528,7 +528,7 @@ beat("me", "L30", arms=[0, 70])
 shot("L30", A((-2.2, 0.0, 1.4), 90, 4.2, off=-35, lens=34, push=0.1), name="standup")
 go("me", "L30.1", [-3.5, -4.0, 0], run=True)
 go("me", "L30.2+0.6", [-3.5, -16.0, 0], run=True)
-shot("L30.1", mv([-3.3, -10.5, 1.5], [-3.5, -4.0, 1.2], 28, [-3.3, -10.5, 1.5], [-3.5, -6.0, 1.2], 28), name="runout")
+shot("L30.1", mv([-0.9, -10.5, 1.5], [-3.5, -4.0, 1.2], 28, [-0.9, -10.5, 1.5], [-3.5, -6.0, 1.2], 28), name="runout")
 shot("L30.1+0.75", A((-3.5, -9.0, 1.3), 0, 7.0, off=165, lens=32, push=0.1), name="runout2")
 
 # ============================================================================================ L31 to L35 (letting go)
@@ -610,7 +610,7 @@ shot("L37.1", A((STX - 4.6, STY - 1.0, 1.55), 180, 3.2, off=-28, lens=38, push=0
 look("L38", "dusk")
 only("L38", ["wes"])
 put("wes", "L38", [SQX - 1.5, SQY + 10.6, 0], 15, expr="soft", arms=[0, 0], head=[-20, 0])
-shot("L38", mv([SQX + 0.9, SQY + 5.6, 1.1], [SQX - 1.5, SQY + 10.6, 1.6], 36, [SQX + 0.4, SQY + 6.4, 1.2], [SQX - 1.5, SQY + 10.6, 1.6], 36), name="awning")
+shot("L38", mv([SQX + 0.9, SQY + 5.6, 1.0], [SQX - 1.5, SQY + 10.6, 1.15], 36, [SQX + 0.4, SQY + 6.4, 1.05], [SQX - 1.5, SQY + 10.6, 1.15], 36), name="awning")
 look("L38.2", "day")
 only("L38.2", ["wes"])
 sit("wes", "L38.2", True, CARZ)
@@ -649,7 +649,7 @@ go("wes", "L40.1+0.1", [STX - 8.4, STY + 0.2, 0.6])
 cue("L40.1", "wbox", v=0.0)
 beat("wes", "L40.1+0.7", arms=[75, 75], expr="warm")
 shot("L40.1", A((STX - 8.9, STY + 0.2, 1.95), 90, 5.2, off=-50, lens=30, push=0.1), name="hug")
-meter("L40.1+0.2", num=600.0, dur=0.6)
+meter("L40.1+0.2", num=600.0, dur=1.0)
 shot("L41", A((MTX, MTY, 3.0), 0, 4.8, off=0, lens=34, push=0.1), name="miles")
 only("L41.1", ["wes", "me"])
 put("me", "L41.1", [STEP[0], STEP[1] - 0.5, 0.4], 90, expr="laugh")
