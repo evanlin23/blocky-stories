@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 9
+REV = 10
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -166,7 +166,8 @@ def move(at, obj, dur=0.0, **kw):
 
 SX, SY_ = G.ROOM
 SY = G.SEAT_Y
-BASE = 0.9                      # Mom's and Dad's steady glow, every shot
+BASE = 0.9                      # Mom's steady glow, every shot
+DBASE = 0.75                    # Dad's steady glow (his skin tone shows)
 MX, DX_, ME_X = -0.45, 0.45, 0.0  # pair seats
 TM, TD, TS = -0.68, 0.68, 0.0   # trio seats: Mom, Dad, me in the middle
 GX, GY = G.GUM
@@ -199,7 +200,7 @@ def trio(at, em="smile", ed="smile", ee="smile", sp=None):
 # initial state
 cue(0, "look", id="room", dur=0.0)
 glow(0, "mom", BASE)
-glow(0, "dad", BASE)
+glow(0, "dad", DBASE)
 glow(0, "me", 0.0)
 glow(0, "oth", 0.0, 0.0)
 bar(0, m=1.0, d=1.0, s=0.0)
@@ -269,7 +270,7 @@ look("L10.1", "roomdim", 0.6)
 cue("L10.1", "pie", v=0.0)
 move("L10.1", "slice", dur=0.5, x=-0.12, y=2.7, z=0.99)
 move("L10.1+0.7", "slice", dur=0.5, x=0.12, y=2.7, z=0.99)
-shot("L10.1", mv([0.0, 1.5, 1.75], [0.0, 2.8, 0.98], 30, [0.0, 1.8, 1.7], [0.0, 2.8, 0.98], 30), "nudge")
+shot("L10.1", mv([0.0, 0.0, 1.3], [0.0, 3.0, 1.15], 26, [0.0, 0.3, 1.28], [0.0, 3.0, 1.15], 26), "nudge")
 
 # ===================================================================== 04 the dark lot (L11 to L15)
 look("L11", "lot")
@@ -279,12 +280,12 @@ put("mom", "L11", [LX - 0.65, CY - 4.6, 0.0], 0, expr="smile")
 put("dad", "L11", [LX + 0.65, CY - 4.6, 0.0], 0, expr="smile")
 go("mom", "L11>", [LX - 0.65, CY - 5.3, 0.0], expr="smile")
 go("dad", "L11>", [LX + 0.65, CY - 5.3, 0.0], expr="smile")
-shot("L11", mv([LX, 6.9, 1.45], [LX, CY - 4.4, 1.25], 26, [LX, 7.2, 1.45], [LX, CY - 4.6, 1.25], 26), "lot11", step=1)
+shot("L11", mv([LX, 6.0, 1.3], [LX + 0.5, CY - 3.0, 1.5], 26, [LX, 6.3, 1.3], [LX + 0.5, CY - 3.0, 1.5], 26), "lot11", step=1)
 only("L12", ["mom", "dad"])
 put("mom", "L12", [LX - 0.65, CY - 5.3, 0.0], 0, expr="warm")
 put("dad", "L12", [LX + 0.65, CY - 5.3, 0.0], 0, expr="warm")
 cue("L12", "moths", v=1.0, dur=0.4)
-shot("L12", mv([LX, 6.9, 1.45], [LX, CY - 5.3, 1.3], 26, [LX, 7.2, 1.45], [LX, CY - 5.3, 1.3], 26), "moth12")
+shot("L12", mv([LX, 6.0, 1.5], [LX, CY - 5.3, 1.7], 26, [LX, 6.4, 1.5], [LX, CY - 5.3, 1.7], 26), "moth12")
 cue("L13-0.1", "moths", v=0.0, dur=0.3)
 only("L13", ["me"])
 put("me", "L13", [LX + 0.1, CY - 2.2, 0.0], 0, expr="worried")
@@ -295,13 +296,13 @@ only("L14", ["mom"])
 seat("mom", "L14", 0.0, "smile")
 cue("L14", "shades", who="mom", v=1.0)
 shot("L14", fr(0.0, SY, 1.15, 3.3, 34, dx=-0.15), "shadesmom")
-look("L14.2", "stage")
-cue("L14.2-0.1", "shades", who="mom", v=0.0)
-cue("L14.2", "shades", who="dad", v=1.0)
-cue("L14.2", "spot", v=1.0, dur=0.5)
-only("L14.2", ["dad"])
-put("dad", "L14.2", [TGX, 3.0, 0.0], 0, expr="smile")
-shot("L14.2", fr(TGX, 3.0, 1.35, 3.3, 34, dx=0.2), "spotdad")
+look("L14.2+0.3", "stage")
+cue("L14.2+0.2", "shades", who="mom", v=0.0)
+cue("L14.2+0.3", "shades", who="dad", v=1.0)
+cue("L14.2+0.3", "spot", v=1.0, dur=0.5)
+only("L14.2+0.3", ["dad"])
+put("dad", "L14.2+0.3", [TGX, 3.0, 0.0], 0, expr="smile")
+shot("L14.2+0.3", fr(TGX, 3.0, 1.35, 3.3, 34, dx=0.2), "spotdad")
 look("L15", "room")
 cue("L15", "spot", v=0.0)
 cue("L15", "shades", who="dad", v=0.0)
@@ -320,9 +321,9 @@ shot("L16", mv([GX - 0.44, 2.45 - 5.4, 1.2], [GX - 0.44, 2.45, 1.2], 34, [GX - 0
 only("L17", ["mom"])
 put("mom", "L17", [GX - 0.55, 2.45, 0.0], 0, expr="sheepish" if False else "sad-smile")
 glow("L17", "mom", 1.8, 1.3)
-glow("L18+0.3", "mom", BASE, 0.9)
+glow("L17.2+0.58", "mom", BASE, 0.8)
 bar("L17", dur=1.3, m=1.2)
-bar("L18+0.3", dur=0.9, m=1.0)
+bar("L17.2+0.58", dur=0.8, m=1.0)
 shot("L17", fr(GX - 0.55, 2.45, 1.3, 3.2, 34, dx=0.15, dz=-0.1), "momflare")
 put("mom", "L17.2+0.45", [GX - 1.65, 2.45, 0.0], 0, expr="sad-smile")
 cue("L17.1", "gshadow", v=1.0, dur=0.5)
@@ -340,9 +341,9 @@ put("dad", "L19", [LX - 0.55, CY - 4.6, 0.0], 0, expr="sad-smile")
 shot("L19", mv([LX, 6.7, 1.3], [LX, CY - 4.6, 1.25], 30, [LX, 7.0, 1.3], [LX, CY - 4.6, 1.25], 30), "dadme19")
 only("L20", ["dad"])
 put("dad", "L20", [LX - 0.9, CY - 4.6, 0.0], 0, expr="sad-smile", arms=[0, 0])
-glow("L20-0.1", "dad", BASE)
+glow("L20-0.1", "dad", DBASE)
 glow("L20", "dad", 1.7, 0.6)
-glow("L20.1+0.2", "dad", BASE, 0.7)
+glow("L20.1+0.2", "dad", DBASE, 0.7)
 beat("dad", "L20.1", arms=[0, 112], side=[0, -28])
 shot("L20", fr(LX - 0.5, CY - 4.6, 1.3, 3.8, 30, dx=0.0, dz=-0.1), "dadflare")
 only("L21", ["me"])
@@ -352,7 +353,7 @@ shot("L21", fr(LX + 0.1, CY - 2.2, 1.3, 3.2, 34, dx=-0.2), "mestun")
 # ===================================================================== 06 the reveal (L22 to L27)
 look("L22", "room")
 only("L22", [])
-shot("L22", mv([3.8, 0.2, 1.5], [2.4, 3.4, 0.9], 34, [3.5, 0.5, 1.45], [2.4, 3.4, 0.9], 34), "emptybooth")
+shot("L22", mv([3.7, 0.4, 1.15], [2.8, 3.4, 0.7], 34, [3.4, 0.9, 1.0], [2.9, 3.4, 0.65], 34), "emptybooth")
 duo("L23", "fish", "fish")
 only("L23", ["mom"])
 seat("mom", "L23", 0.0, "fish")
@@ -444,6 +445,7 @@ sound = {
     "floor": "wood", "steps_db": -26,
     "ambience": [{"kind": "room", "from": 0, "to": "L11", "lufs": -44},
                  {"kind": "crickets", "from": "L11", "to": "L14", "lufs": -44},
+                 {"kind": "room", "from": "L14", "to": "L19", "lufs": -44},
                  {"kind": "crickets", "from": "L19", "to": "L22", "lufs": -44},
                  {"kind": "room", "from": "L22", "to": "end", "lufs": -44}],
     "sfx": sfx,

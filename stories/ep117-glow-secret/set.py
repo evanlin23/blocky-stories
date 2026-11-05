@@ -45,10 +45,10 @@ def _L(**kw):
 LOOKS = {
     "room": _L(sun=1.2, fill=0.7, front=0.9, sky_str=0.7),
     "day": _L(sky="#cfe6ff", sky_str=0.8, sun=1.8, fill=0.8, front=1.0),
-    "roomdim": _L(sun=0.3, fill=0.3, front=0.35, sky_str=0.4, pend=0.12),
+    "roomdim": _L(sun=0.5, fill=0.5, front=0.55, sky_str=0.5, pend=0.25),
     "gum": _L(sun=0.35, fill=0.28, front=0.42, sky_str=0.25, pend=0.3),
-    "lot": _L(sun=0.5, sun_col="#9db4ff", el=35.0, az=200.0, fill=1.1, fill_col="#8aa2f0", sky="#33509a", sky_str=0.8,
-              front=2.1, front_col="#ffe6d2"),
+    "lot": _L(sun=0.3, sun_col="#8aa0f0", el=35.0, az=200.0, fill=0.75, fill_col="#6f86d0", sky="#1f2f5c", sky_str=0.5,
+              front=2.0, front_col="#ffe6d2"),
     "stage": _L(sun=0.0, fill=0.6, fill_col="#c8a8ff", sky="#3a2466", sky_str=0.5, front=1.3, front_col="#e8d8ff"),
 }
 
@@ -130,21 +130,22 @@ def gum_machine(kit, x, y):
 
 
 def wagon(kit, x, y):
-    """The station wagon, nose to the camera (-y): a hood, a windshield, two glowing headlights, wheels down both sides."""
+    """The station wagon, seen three-quarter (turned 35 degrees): hood, windshield, glowing headlights, side windows, wheels."""
     P = kit.plastic
-    body = P("#3fae68", 0.4, spec=0.5)
-    kit.box("car.low", (1.9, 4.7, 0.75), (x, y, 0.62), body, bevel=0.08)
-    kit.box("car.cab", (1.8, 2.9, 0.7), (x, y + 0.35, 1.32), body, bevel=0.08)
-    dark = P("#16213f", 0.2, spec=0.8)
-    kit.box("car.wind", (1.5, 0.02, 0.5), (x, y + 0.35 - 1.46, 1.34), dark)
+    body = P("#2a7048", 0.4, spec=0.5)
+    car = kit.empty("car", (x, y, 0.0), None, rot=(0, 0, math.radians(35)))
+    kit.box("car.low", (1.9, 4.7, 0.75), (0, 0, 0.62), body, car, bevel=0.08)
+    kit.box("car.cab", (1.8, 2.9, 0.7), (0, 0.35, 1.32), body, car, bevel=0.08)
+    dark = P("#0d1430", 0.2, spec=0.8)
+    kit.box("car.wind", (1.5, 0.02, 0.5), (0, 0.35 - 1.46, 1.34), dark, car)
     for s_ in (-1, 1):
-        kit.box(f"car.win{s_}", (0.02, 2.5, 0.46), (x + s_ * 0.905, y + 0.35, 1.36), dark)
+        kit.box(f"car.win{s_}", (0.02, 2.5, 0.46), (s_ * 0.905, 0.35, 1.36), dark, car)
         for wy in (-1.45, 1.45):
-            kit.cyl(f"car.wh{s_}{wy}", 0.34, 0.2, (x + s_ * 0.88, y + wy, 0.34), P("#1a1a1f", 0.7),
+            kit.cyl(f"car.wh{s_}{wy}", 0.34, 0.2, (s_ * 0.88, wy, 0.34), P("#1a1a1f", 0.7), car,
                     rot=(0, math.pi / 2, 0), n=16)
-        kit.box(f"car.hl{s_}", (0.34, 0.04, 0.2), (x + s_ * 0.6, y - 2.37, 0.78), kit.emit("#fff2c8", 6.0, f"hl{s_}"))
-    kit.box("car.grille", (0.7, 0.04, 0.16), (x, y - 2.37, 0.66), P("#2a2a30", 0.4, spec=0.6))
-    kit.box("car.bump", (1.9, 0.1, 0.14), (x, y - 2.4, 0.3), P("#cfd3d8", 0.3, spec=0.8))
+        kit.box(f"car.hl{s_}", (0.34, 0.04, 0.2), (s_ * 0.6, -2.37, 0.78), kit.emit("#fff2c8", 6.0, f"hl{s_}"), car)
+    kit.box("car.grille", (0.7, 0.04, 0.16), (0, -2.37, 0.66), P("#2a2a30", 0.4, spec=0.6), car)
+    kit.box("car.bump", (1.9, 0.1, 0.14), (0, -2.4, 0.3), P("#cfd3d8", 0.3, spec=0.8), car)
 
 
 def tree_ball(kit, name, x, y, z, col):
@@ -245,6 +246,10 @@ def build(kit, story, tl):
     kit.box("slice.pa", (0.07, 0.07, 0.03), (0.04, 0.25, 0.085), pine, sl)
     kit.box("slice.an", (0.16, 0.03, 0.02), (-0.05, 0.32, 0.08), anch, sl, rot=(0, 0, 0.5))
     kit.cyl("slice.tray", 0.4, 0.02, (0.0, 0.18, 0.012), P("#8f2024", 0.5, spec=0.3), sl, n=24)
+    kit.box("slice.pa2", (0.07, 0.07, 0.03), (-0.07, 0.17, 0.085), pine, sl)
+    kit.box("slice.pa3", (0.07, 0.07, 0.03), (0.08, 0.36, 0.085), pine, sl)
+    kit.box("slice.an2", (0.16, 0.03, 0.02), (0.05, 0.14, 0.08), anch, sl, rot=(0, 0, -0.4))
+    sl.scale = (2.0, 2.0, 2.0)
     reg("slice", sl)
     # pendant lamps (fixed)
     for i, px in enumerate((-3.0, 0.0, 3.0)):
@@ -282,11 +287,11 @@ def build(kit, story, tl):
     # the coat hook at the end of the booth, with three pizza-red strokes (a tally, no words)
     chrome = kit.metal("#cfd3d8", 0.25)
     steel = P("#5d636e", 0.35, spec=0.5)
-    kit.box("hook.post", (0.14, 0.1, 0.55), (3.0, 3.6, 0.275), steel)
-    kit.box("hook.arm", (0.06, 0.2, 0.06), (3.0, 3.45, 0.52), steel)
-    kit.box("hook.tip", (0.06, 0.06, 0.12), (3.0, 3.35, 0.55), steel)
-    for k, dx in enumerate((-0.04, 0.0, 0.04)):
-        kit.box(f"hook.t{k}", (0.03, 0.02, 0.26), (3.0 + dx, 3.54, 0.26), P("#ff2a20", 0.5))
+    kit.box("hook.post", (0.5, 0.1, 0.9), (3.0, 3.6, 0.45), P("#9aa1ac", 0.35, spec=0.5))
+    kit.box("hook.arm", (0.06, 0.2, 0.06), (3.0, 3.45, 0.97), steel)
+    kit.box("hook.tip", (0.06, 0.06, 0.12), (3.0, 3.36, 1.0), steel)
+    for k, dx in enumerate((-0.14, 0.0, 0.14)):
+        kit.box(f"hook.t{k}", (0.07, 0.02, 0.6), (3.0 + dx, 3.54, 0.4), P("#ff2a20", 0.5))
     # the waiter's arm (a sleeve, a flat hand and a fresh pie), off screen until L32
     wa = kit.empty("wa", (2.6, 1.4, -60.0))
     kit.box("wa.sleeve", (1.3, 0.3, 0.26), (1.15, 0.0, 0.14), P("#f4f4f2", 0.6), wa, bevel=0.04)
@@ -301,23 +306,23 @@ def build(kit, story, tl):
 
     # ============================================================== the lot
     LX, LY = G.LOT
-    kit.plane("lot.ground", (80, 60), (LX, 20, 0.0), P("#3a4880", 0.9, spec=0.05))
+    kit.plane("lot.ground", (80, 60), (LX, 20, 0.0), P("#1c2850", 0.9, spec=0.05))
     for k in range(-4, 5):
-        kit.box(f"lot.line{k}", (0.12, 4.0, 0.012), (LX + k * 3.0, 7.0, 0.012), P("#a9b6e8", 0.8))
-    kit.box("lot.bld", (60, 1.6, 8.0), (LX, 35, 4.0), P("#23356e", 0.8, spec=0.05))
-    kit.box("lot.bldtop", (60, 1.8, 0.5), (LX, 35, 8.2), P("#1a2a5c", 0.8))
-    wm = kit.emit("#ffd98a", 1.2)
+        kit.box(f"lot.line{k}", (0.12, 4.0, 0.012), (LX + k * 3.0, 7.0, 0.012), P("#6f7cb0", 0.8))
+    kit.box("lot.bld", (60, 1.6, 8.0), (LX, 35, 4.0), P("#16224a", 0.8, spec=0.05))
+    kit.box("lot.bldtop", (60, 1.8, 0.5), (LX, 35, 8.2), P("#121c40", 0.8))
+    wm = kit.emit("#ffd98a", 0.7)
     for k in range(-5, 6):
         kit.box(f"lot.w{k}", (1.6, 0.04, 1.3), (LX + k * 4.6, 34.18, 3.3), wm)
-    kit.cyl("lot.pole", 0.12, 7.0, (LX + 9.0, 26.0, 3.5), P("#1a2548", 0.6), n=8)
-    kit.sphere("lot.lampbulb", 0.4, (LX + 9.0, 26.0, 7.0), kit.emit("#ffe2a8", 2.0), seg=10)
+    kit.cyl("lot.pole", 0.14, 7.0, (LX + 4.6, 25.0, 3.5), P("#0f1636", 0.6), n=8)
+    kit.sphere("lot.lampbulb", 0.5, (LX + 4.6, 25.0, 7.0), kit.emit("#ffe2a8", 2.5), seg=10)
     wagon(kit, G.CAR[0], G.CAR[1])
-    kit.box("lot.curb", (60, 0.4, 0.2), (LX, 2.0, 0.1), P("#6a78b8", 0.8))
+    kit.box("lot.curb", (60, 0.4, 0.2), (LX, 2.0, 0.1), P("#46538a", 0.8))
     # moths: two pale wings each
     W["moths"] = []
     for k in range(6):
         m = kit.empty(f"moth{k}", (0, 0, -80.0))
-        mt = P("#f7efd6", 0.8)
+        mt = kit.emit("#f7efd6", 0.9, f"mothwing{k}")
         kit.box(f"moth{k}.wl", (0.09, 0.07, 0.008), (-0.045, 0, 0), mt, m)
         kit.box(f"moth{k}.wr", (0.09, 0.07, 0.008), (0.045, 0, 0), mt, m)
         kit.box(f"moth{k}.b", (0.02, 0.07, 0.02), (0, 0, 0.0), P("#6a5a48", 0.6), m)
@@ -680,8 +685,8 @@ def animate(kit, story, tl, t, ctx):
             continue
         a = t * (0.9 + 0.12 * k) + k * 1.1
         side = -1.0 if k % 2 == 0 else 1.0      # outward from the pair, never over a face or between the two heads
-        m.location = (hp.x + side * 0.3 + 0.22 * math.sin(a), hp.y - 0.1 + 0.15 * math.sin(a * 0.7),
-                      hp.z + 0.62 + 0.15 * math.sin(a * 1.3 + k))
+        m.location = (hp.x + side * 0.42 + 0.2 * math.sin(a), hp.y - 0.1 + 0.15 * math.sin(a * 0.7),
+                      hp.z + 0.45 + 0.12 * math.sin(a * 1.3 + k))
         m.rotation_euler = (0.3, 0, a)
         m.children[0].rotation_euler = (0, 0.7 * math.sin(t * 22 + k), 0)
         m.children[1].rotation_euler = (0, -0.7 * math.sin(t * 22 + k), 0)
