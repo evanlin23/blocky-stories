@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -232,9 +232,9 @@ plink(0.66)
 coin(0.72, z=-50.0)
 COINCAM = mv([1.5, -1.9, 2.5], [0.0, 0.0, 1.4], 36, [1.2, -1.5, 2.4], [0.0, 0.0, 1.0], 36)
 shot(0, COINCAM, name="coin1")
-put("me", "L01.1-0.05", [ME_W[0], ME_W[1], 0], 90, expr="worried", head=[0, -12])
+put("me", 0.2, [ME_W[0], ME_W[1], 0], 90, expr="worried", head=[0, -12])
 beat("me", "L01.2", head=[0, 0], expr="worried")
-shot("L01.1", A((ME_W[0], ME_W[1], 1.5), 90, 3.0, off=-48, lens=40, push=0.16), name="mewell")
+shot(0.4, A((ME_W[0], ME_W[1], 1.5), 90, 3.0, off=-48, lens=40, push=0.16), name="mewell")
 only("L01.2", ["wes"])
 put("wes", "L01.2", [CORNER[0], CORNER[1], 0], 180, expr="sad-smile", arms=[0, 0])
 cue("L01.2", "duffel", v=0)
@@ -305,7 +305,7 @@ only("L07.2+0.1", ["hobb"])
 put("hobb", "L07.2+0.1", [HBX - 5.0, HBY + 6.2, 0], 0, expr="smile", arms=[0, 0])
 go("hobb", "L07.2+0.9", [HBX - 3.7, HBY + 2.9, 0])
 beat("hobb", "L07.2+1.0", arms=[0, 150], expr="grin")
-shot("L07.2+0.2", mv([HBX - 8.7, HBY + 4.6, 1.5], [HBX - 5.0, HBY + 6.0, 1.1], 26, [HBX - 8.3, HBY + 1.8, 1.5], [HBX - 3.9, HBY + 3.2, 1.1], 26), name="hobbboard")
+shot("L07.2+0.2", mv([HBX - 6.4, HBY + 0.4, 1.5], [HBX - 5.0, HBY + 5.6, 1.4], 26, [HBX - 5.0, HBY - 0.2, 1.5], [HBX - 3.8, HBY + 3.0, 1.4], 26), name="hobbboard")
 
 # ============================================================================================ L08 to L12 (three years ago)
 only("L08", ["wes", "me"])
