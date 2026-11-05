@@ -261,8 +261,8 @@ def build_patio(kit):
     kit.cyl("patio.tableleg", 0.06, 0.7, (mx, ty, 0.35), pl("#8a8e96", 0.5), n=8)
     chair(kit, "patio.chair", mx, my + 1.25, pl)
     kit.cyl("umbrella.pole", 0.03, 2.5, (mx + 0.6, ty, 1.25), pl("#cfd2d6", 0.4, spec=0.7), n=8)
-    kit.cyl("umbrella.canopy", 1.75, 0.5, (mx + 0.6, ty, 2.45), pl("#d93a2f", 0.45, spec=0.2), n=14, r2=0.08)
-    kit.cyl("umbrella.rim", 1.77, 0.07, (mx + 0.6, ty, 2.2), pl("#f4f4f2", 0.5), n=14)
+    kit.cyl("umbrella.canopy", 1.75, 0.5, (mx + 0.6, ty, 2.45), kit.emit("#e02a22", 1.0, "umbrellared"), n=14, r2=0.08)
+    kit.cyl("umbrella.rim", 1.77, 0.07, (mx + 0.6, ty, 2.2), kit.emit("#b3231c", 1.0, "umbrellarim"), n=14)
     for k, (dx, dy) in enumerate([(-1.9, 0.0), (2.0, 0.6), (-0.9, 2.0), (1.1, 2.1)]):
         kit.cyl(f"patio.puddle{k}", 0.38, 0.01, (mx + dx, my + dy, 0.09), pl("#6ab4e8", 0.1, spec=0.9), n=16)
     for k in range(2):

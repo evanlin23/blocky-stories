@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L26
@@ -148,7 +148,7 @@ def dadcam(d=2.4, az=0, lens=36, tz=1.27, tx=1.35, push=None):
 # ----------------------------------------------------------------------------------------------- the cast at rest
 key("me", 0, ME, yaw=0, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0], lean=0)
 key("dad", 0, DAD, yaw=0, expr="smile", head=[0, 0], arms=[56, 56], side=[0, 0], lean=0)
-key("mom", 0, (G.MOM_ROOM[0], G.MOM_ROOM[1] + 1.25), yaw=0, expr="smile", arms=[78, 78], side=[0, 0])
+key("mom", 0, (G.MOM_ROOM[0], G.MOM_ROOM[1] + 1.05), yaw=0, expr="smile", arms=[55, 55], side=[0, 0])
 key("uncle", 0, (G.UNCLE_ROOM[0], G.UNCLE_ROOM[1] + 0.15, 0.12), yaw=0, expr="sheepish", arms=[10, 10], side=[0, 0])
 key("friend", 0, (G.KITCHEN[0] - 0.6, G.KITCHEN[1] + 1.15), yaw=0, expr="laugh", arms=[40, 40], side=[0, 0])
 key("sister", 0, (G.KITCHEN[0] + 0.6, G.KITCHEN[1] + 1.15), yaw=0, expr="laugh", arms=[40, 40], side=[0, 0])
@@ -181,7 +181,7 @@ key("me", "L06", expr="smile", head=[0, 0])
 shot("S06", "L06", cam(-0.6, ME[1], 1.27, 2.2, 0, 36))
 
 # ===== 03 the birthday (L07 to L09)
-shot("S07", "L07", cam(3.0, 2.6, 1.15, 1.7, 8, 34, cz=1.35))
+shot("S07", "L07", cam(3.0, 2.6, 0.86, 1.7, 8, 34, cz=1.35))
 key("dad", "L08", expr="smile")
 mouth("dad", "L08", "L08>", 0.12)
 shot("S08", "L08", dadcam(2.5, 4, 36, push=(2.15, 1.3)))
@@ -190,8 +190,8 @@ shot("S09", "L09", cam(PH[0], PH[1], PH[2], 1.3, -6, 38, cz=1.35))
 
 # ===== 04 the call (L10 to L17)
 cue("L10", "btn", p=1.0, dur=0.12)
-cut("me", "L10", (ME[0] - 0.62, ME[1] - 0.18), yaw=-146, expr="smile", arms=[0, 82], head=[0, 0])
-shot("S10a", "L10", cam(PH[0] + 0.1, PH[1], 1.2, 1.5, 38, 34, cz=1.25))
+cut("me", "L10", (-0.27, 3.1), yaw=-90, expr="smile", arms=[0, 96], head=[0, 0])
+shot("S10a", "L10", cam(PH[0] + 0.3, PH[1], 1.3, 2.0, 0, 40, cz=1.3))
 cut("me", "L10.1", ME, yaw=0, expr="smile", arms=[0, 0], head=[0, 0])
 mouth("me", "L10.1", "L10.1>", 0.5)
 shot("S10b", "L10.1", mecam(2.2, 0, 36, tx=-0.6))
@@ -222,7 +222,7 @@ cut("me", "L22", ME, yaw=18, expr="stunned", head=[0, 0])
 shot("S22", "L22", cam(-0.55, ME[1], 1.27, 2.0, 18, 36))
 key("dad", "L23", expr="laugh", head=[0, -4])
 shot("S23", "L23", dadcam(2.0, -18, 36))
-shot("S24", "L24", cam(PH[0], PH[1], 1.25, 1.1, 10, 38, cz=1.3))
+shot("S24", "L24", cam(PH[0], PH[1], 1.25, 1.1, -30, 38, cz=1.3))
 cut("me", "L25", ME, yaw=0, expr="cry", head=[0, 6])
 shot("S25", "L25", mecam(1.8, 0, 36))
 shot("S25b", "P01", cam(0.4, 0.0, 1.3, 3.0, 180, 26, cz=1.3), _drop=True)
@@ -234,7 +234,7 @@ shot("S26", "L26", mecam(1.5, 0, 36))
 # S27: the camera sits west of me, so Dad is at the bench behind and to the right of me
 key("dad", "L27", yaw=-45, expr="laugh", blend=0.0)
 cut("me", "L27", ME, yaw=-25, expr="stunned", head=[0, 0])
-shot("S27", "L27", [[0, [-1.8, 1.9, 1.45], [0.45, 3.35, 1.4], 22], [1, [-1.65, 2.05, 1.45], [0.45, 3.35, 1.4], 22]])
+shot("S27", "L27", [[0, [-1.8, 1.9, 1.45], [0.35, 3.5, 1.4], 19], [1, [-1.65, 2.05, 1.45], [0.35, 3.5, 1.4], 19]])
 cut("dad", "L28", DAD, yaw=0, expr="laugh", head=[0, -5], arms=[56, 56])
 shot("S28", "L28", dadcam(2.3, -4, 36, tz=1.3))
 cut("me", "L29", ME, yaw=0, expr="sad", head=[0, 10])
@@ -304,6 +304,9 @@ sfx = [
     {"at": "L09.2", "kind": "bell", "db": -17},
     {"at": "L10", "kind": "click", "db": -15},
     {"at": "L38.2", "kind": "click", "db": -14},
+    {"at": "L34", "kind": "creak", "db": -22, "dur": 0.35},
+    {"at": "L34.1", "kind": "thud", "db": -20},
+    {"at": "L17", "kind": "click", "db": -17},
 ]
 music = {
     "root": 52, "mode": "minor", "bpm": 84, "seed": 124,
@@ -365,7 +368,8 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S26", "S35", "S42"],
+    "frames_ok": ["S31"],
+    "framing_ok": ["S10a", "S26", "S35", "S42"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
