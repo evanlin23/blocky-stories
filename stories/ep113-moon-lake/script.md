@@ -9,7 +9,8 @@
 - **Word count:** 539 spoken words in 70 lines (L01 to L70), all `narrator`, plus one 0.7 s music drop before L22.
 - **Estimated length:** about 123.0 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright summer: a blue-green lake ringed with pines, a gray wooden dock, Grandma's red rowboat, a white lake house with a screen porch. The afternoon dark (L23 to L28) is a short, eerie dimming of a bright day, never black. The dusk scenes (L30 to L39, L45 to L64) are deep blue, lit from below by the moon's own glow through the water. The moon's light (its glow in the water, its reflection, its light on faces) is the brightest thing on screen and never clips to pure white. The moon itself is never seen whole.
-- **Hold:** scripts only (batch 11). Not built, not voiced.
+- **Status:** built and voiced (the voice is made, so no spoken line changes without a re-voice). No upload hold.
+- **Revised r1 package (standards, 2026-11-05):** `hold` removed from package.json, `cover_s` 65.2 to 7.0 (story.json S06, 6.2 to 7.87 s: Grandma on the bright dock, the dial, caption "that's the MOON."). No spoken line changed, nothing to re-voice. Picture notes: L36 still says "lit up WHITE", but the picture keeps the lake pale blue-white (never a white frame). L26 "in her ROBE": the robe must be a colour clearly different from her white cover shirt so it reads as a robe. Steam (S02a, S07b) is soft white.
 - **Revised r2 (orchestrator, 2026-11-04, creature-light):** every full creature reveal in batches 9 and 10 failed the phone-size creature test, so batch 11 shows nothing frightening in full. The moon is no longer a full reveal: every shot that showed it whole (S08, S35 to S38, S61 to S64, the lake bed) now shows it by glow, reflection, a partial edge or its effect on people and things. No spoken line changed, so nothing to re-voice; word count and length are the same.
 
 ## Variety table
@@ -149,7 +150,7 @@ Times are estimates at 290 wpm with 0.15 s gaps. Every line gets one to three sh
 | S33 | L33 | Her face as she pushes, lit from below by the glow, `determined` (steady under-glow, no moving caustics on her face). |
 | S34 | L34 | The water around the boat swelling up. |
 | S35 | L35 | Her boat rocking as the water under it heaves up and pours away, the glow brightening from below, light on the hull's underside. |
-| S36 | L36 | Low on the water by the dock posts: water pouring off a pale cratered edge that runs off the top and side of frame, the lake lit pale blue-white over 1 s, never a white frame (the glow is the brightest thing). Cover frame (`cover_s` 65.2): the lit lake, the edge, the dock posts, no oar, never the whole moon. |
+| S36 | L36 | Low on the water by the dock posts: water pouring off a pale cratered edge that runs off the top and side of frame, the lake lit pale blue-white over 1 s, never a white frame (the glow is the brightest thing). Not the cover frame (the cover is now S06 at 7.0 s). Never the whole moon. |
 | S37 | L37 | The reveal picture, held 1.8 s with drift: her tiny red boat on the lit, heaving water, the oar's silver edge catching a pale light that climbs past her and up out of frame; her face lit from below, then from above. Only a sliver of cratered edge at the bottom of frame. |
 | S38 | L38 | Moonlight on the dock boards and its reflection just off the end, the water settling (S08b's framing). |
 | S39 | L39 | Grandma rowing back, her face lit by moonlight, `tired`. |

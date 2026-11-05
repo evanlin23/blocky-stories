@@ -3,9 +3,8 @@
   "description": "Nobody swims my grandma's lake after noon. The water gets warm, and something down there glows. Grandma says it's the moon, sleeping.\n\nI help her at the lake every weekend. One hot Saturday afternoon, while she napped, I jumped in anyway.\n\nIt's made up. A blocky story, built with code and Blender.",
   "pin": "Comment MOON if you'd have jumped in too.",
   "made_for_kids": false,
-  "cover_s": 65.2,
+  "cover_s": 7.0,
   "shape": "inherited-job",
   "opening": "cost",
-  "lane": "core",
-  "hold": "batch 11: scripts only, not built yet"
+  "lane": "core"
 }
