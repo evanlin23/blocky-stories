@@ -208,6 +208,19 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Before fixing a flash fail, find its source frame by frame (`python -m blocky flash` with per-frame luma) and
     name the shot and the light that changes.
 
+36. **The local flash check reads lower than the proof, and it cost three retries.** ep97 (twice), ep107 and ep101 each
+    passed `blocky flash` on their preview (about 4 a second) and then failed the proof (5 to 7 a second, or an
+    extended run over 4 s). The sources were glows, ring stamps and a lit closet: steady-looking lights that flip
+    brightness between frames at full rate.
+    → After the reset, the first infra job: run `blocky flash` on a proof artifact and on the matching preview for the
+    same sha, find why they differ (frame rate, resolution, polish pass, frames held over), and make the local check
+    measure what the proof measures. Until then, a story with a glow or a flipping light needs the proof's numbers
+    at 5 a second or under before reviews spend rounds on it.
+37. **The framing lint still misses heads cut at the frame edge and mouths in the caption band.** ep115 reported 0
+    findings but had five heads cut at the left edge and a mouth inside the caption band; ep112 the same (lesson 34).
+    → Plan step 8's recalibration adds a caption-band check (a mouth inside the bottom 62 to 70 percent of the
+    height) and tests the head box against all four edges on ep112's and ep115's branches.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
