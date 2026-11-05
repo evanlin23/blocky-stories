@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 8
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -243,7 +243,7 @@ shot("L05+1.1", fc([-2.0, 6.7, 0.18], 0, d=3.2, lens=40, aimz=1.4, side=12), "wo
 only("L05", ["neighbor"])
 # L06: the dog
 only("L06", [])
-rip("L06+0.9", LVX + 0.2, LVY + 3.0, 1.3, s=0.8, ax=1.2)
+rip("L06+0.9", LVX + 0.2, LVY + 3.0, 1.3, s=0.8, ax=1.2, k=0.6)
 shot("L06", mv([LVX + 0.5, LVY + 1.0, 1.2], [LVX + 0.2, LVY + 3.8, 0.95], 34, push=0.1), "dog")
 shot("L06+0.9", mv([LVX - 0.4, LVY + 2.0, 0.85], [LVX + 0.2, LVY + 3.8, 0.9], 30, push=0.1), "dogtail")
 # L07: Ray at the door of his old place
@@ -627,6 +627,10 @@ story = {
     "set_moves": [],
     "clip_ok": ["ripple"],
     "framing_ok": [],
+    # frames_ok reasons: S10 = an idle blink on the neighbor's big face 0.13 s in (the pose is right, the lint reads the closed eyes as a pop);
+    # S18 = the door slam: the door shuts on the shot's first beat (cue door v=0, 0.15 s) and is meant; S33 = the camera climbs out from behind
+    # the window ledge at the cut, so the bottom corner brightens as it clears (no light fades in).
+    "frames_ok": ["S10", "S18", "S33"],
     "asr_forgive": ["eleven", "sixteen"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

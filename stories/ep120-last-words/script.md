@@ -272,7 +272,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L66: We both said SORRY. / At the same TIME.
 - L67: Then we both / LAUGHED.
 - L68: Until the eggs / got COLD.
-- L69: I come over / every SUNDAY now.
+- L69: I come by / every SUNDAY now.
 - L70: And I pick / my last words / CAREFULLY.
 - L71: Now his apartment says / "See you SUNDAY."
 

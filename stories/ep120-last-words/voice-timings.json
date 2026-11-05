@@ -1706,22 +1706,22 @@
    ]
   },
   "L69": {
-   "text": "I come over every sunday now.",
+   "text": "I come by every sunday now.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
+   "dur": 1.741,
    "onset": 0.155,
-   "end": 1.569,
+   "end": 1.534,
    "chunks": [
     [
      0.155,
-     0.595
+     0.56
     ],
     [
-     0.595,
-     1.569
+     0.56,
+     1.534
     ]
    ]
   },

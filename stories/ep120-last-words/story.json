@@ -15,7 +15,7 @@
  "tail": 0.75,
  "fade_in": false,
  "fade_out": false,
- "rev": 5,
+ "rev": 8,
  "look": {
   "style": "closer",
   "fog": "#8fa6c8",
@@ -1453,8 +1453,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "I come over",
-     "I come over"
+     "I come by",
+     "I come by"
     ],
     [
      "every SUNDAY now.",
@@ -6359,7 +6359,7 @@
    "s": 0.8,
    "ax": 1.2,
    "yaw": 0.0,
-   "k": 1.0,
+   "k": 0.6,
    "dur": 0.0
   },
   {
@@ -7109,13 +7109,18 @@
     "to": "P01>"
    }
   ],
-  "rev": 5
+  "rev": 8
  },
  "set_moves": [],
  "clip_ok": [
   "ripple"
  ],
  "framing_ok": [],
+ "frames_ok": [
+  "S10",
+  "S18",
+  "S33"
+ ],
  "asr_forgive": [
   "eleven",
   "sixteen"
