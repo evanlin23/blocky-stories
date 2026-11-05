@@ -6,5 +6,6 @@
   "cover_s": 13.0,
   "shape": "fix-it-yourself",
   "opening": "cost",
-  "lane": "core"
+  "lane": "core",
+  "hold": "dropped: proof qa failed after round cap (see HANDOFF.md)"
 }

@@ -1,0 +1,32 @@
+{
+ "stage": "proof",
+ "film": "proof-41984950365",
+ "run": 41984950365,
+ "sha": "18ffb0f48ae31951a3e71e34279fc5c089522d87",
+ "verdict": "fail",
+ "date": "2026-11-05",
+ "checked": [
+  "frames every 2 s",
+  "mid-frame of every shot (68)",
+  "first 3 s every frame",
+  "frame 0 and loop wrap",
+  "S17 15.6-17.2 s",
+  "S55-S56 63.5-65.5 s frame by frame",
+  "pencil marks 51.5-56 s",
+  "L16 dark cut",
+  "L21 light ramp",
+  "S66 doorway",
+  "cover",
+  "loudness",
+  "hf windows",
+  "end of audio",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening tag",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 12.8 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 14.6 | 14.0– | ok |\n| macro.motion_energy_q | 6.52 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 8.81 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.044 | –0.25 | ok |\n| spec.shot_p90_s | 1.78 | –2.5 | ok |\n| macro.longest_still_s | 0.53 | –1.5 | ok |\n| macro.motion_energy_mean | 2.76 | 1.5– | ok |\n| spec.camera_move_share | 0.999 | 0.65– | ok |\n| spec.punch_per_10s | 0.66 | 0.4– | ok |\n| macro.brightness_mean | 0.651 | 0.35– | ok |\n| macro.brightness_first_3s | 0.736 | 0.3– | ok |\n| macro.dark_frame_share | 0.041 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.388 | 0.42– | **warn** |\n| macro.contrast_mean | 0.212 | 0.18– | ok |\n| spec.face_big_share | 0.83 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.003 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.765 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.043 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 73.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.24 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.1 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0379 | –0.08 | ok |\n| sound.hf_jump_max | 0.0073 | –0.04 | ok |",
+ "notes": "FAIL, two fixes. 1) 0.00 s, frame 0 of S01: Grandpa is missing (empty back doorway, no face); frame 1 has him. It's the first frame a stranger sees and a one-frame pop on every loop wrap (only odd frame in the film; suspect the frame-0 pose/sit in set.py animate, root.location.z +=).\n2) S17 15.63-17.17 s (L08 'so customers can see his FACE'): Grandpa's head is cut by the top edge and the tag sits over his eye, on the line about seeing his face. Breaks the script's own rule (whole head in frame, never under the tag). Reframe: pull back/lower so the whole head sits centre-right below the tag.\nSecond one (from frame 1): sunny close of Grandpa's flat face on his crate, hat on the shelf, tag 9'0\"/5'9\" top left, slow push; L01 'Here, every time you say you're PROUD of someone, you grow an INCH.' is the cost rule; the personal mystery (nine feet, never said it to ME) lands at 12-19 s.\nAudio: -14.1 LUFS, TP -1.8 dBTP, LRA 1.2; HF share 0.024-0.040 per 5 s, max jump +0.008; voice clear; riser present; music tails under 'SAY it.' to the end, no cutoff. Polish on.\nFlash: house bar passes (general 1/s, 3f 4/s at 64.7 is the S55-S56 door swing, smooth; red 0). L16 dark cut f861 166->74 luma, one cut; L21 ramp f1090-1104 19->186 over 0.5 s, one rise. Pencil-mark close-ups 51.5-56 s: fast tilt over stripe marks, cuts at f1571/1603/1656/1665, no flicker. clip.json 0 hits; S66 doorway two-shot clean.\nNotes, not fails: tag '5' 10\"' digits squeeze to '1Ⅱ' at phone size from 71.4 s (check on the final); at 55.2 s 'A BIKE.' the roof drawing dominates the frame. Cover 13.0 s (S13 wide, Grandpa towering over me on the crate) reads. Gate OPEN. opening 'cost' matches L01; last upload floor-thirteen is 'if'; if queued after ep99-statue-years (cost), keep them apart (queue note).\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 8.81 (5.5-8.0), macro.saturation_mean 0.388 (0.42-); pace reads brisk, the pastel sunny shop doesn't look washed out, neither loses viewers."
+}
