@@ -7,5 +7,5 @@
   "shape": "all-at-once",
   "opening": "ban",
   "lane": "core",
-  "hold": "batch 12: scripts only, not built yet"
+  "hold": "built, awaiting critic"
 }

@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -33,7 +33,7 @@ for ln in orig_lines:
     CHUNKMAP[ln["id"]] = mp
     lines.append({**ln, "chunks": out})
 # the music drops: 0.6 s before L19, 0.5 s before L46
-for before, pid, dur in (("L19", "P01", 0.6), ("L46", "P02", 0.5)):
+for before, pid, dur in (("L19", "P01", 0.6), ("L46", "P02", 0.5), ("L48", "P03", 0.45)):
     idx = next(i for i, l in enumerate(lines) if l["id"] == before)
     lines.insert(idx, {"id": pid, "pause": dur, "chunks": [["", ""]]})
 
@@ -279,7 +279,7 @@ cue("L09", "door", u=0.0)
 seat_me("L09", "neutral")
 shot("L09", K(MEH, 100, 3.2, 40, 4, 0.06), "inseat")
 only("L09.1", [])
-shot("L09.1", P([0.4, 3.0, 1.45], [HALF_ - 0.1, D1 + 0.05, 1.45], 45), "stone")
+shot("L09.1", P2([-0.9, 4.2, 1.5], [HALF_, D1 + 0.6, 1.3], [-0.9, 4.0, 1.5], [HALF_, D1 + 0.6, 1.3], 36), "stone")
 # S10: my face, close, neutral
 only("L10", ["me"])
 seat_me("L10", "neutral")
@@ -302,7 +302,7 @@ shot("L12.1", P([G.BUS[0], G.BUS[1] - 0.9, 1.75], [G.BUS[0], G.BUS[1] + 1.94, 1.
 # S13: a spring morning through the train window
 only("L13", [])
 cue("L13", "season", s=0.0)
-shot("L13", P2([-1.3, 6.5, 1.5], [-6.0, 9.0, 1.0], [-1.3, 7.5, 1.5], [-6.0, 9.0, 1.0], 36), "spring")
+shot("L13", P2([0.2, 14.5, 1.9], [-6.0, 14.8, 1.2], [0.2, 14.5, 1.9], [-6.0, 15.1, 1.1], 30), "spring")
 # S14: Teddy jumps in as the doors close
 only("L14", ["teddy"])
 cue("L14", "door", u=1.0)
@@ -338,7 +338,7 @@ shot("L18", P2([0.05, 20.6, 2.0], [0.0, 11.2, 1.4], [0.05, 19.4, 1.95], [0.0, 11
 # the drop: the train goes into the tunnel
 env("P01", tunnel=1.0)
 cue("P01", "look", id="tunnel")
-shot("P01", P([0.55, 8.8, 1.5], [-1.9, 10.3, 1.5], 24), "tunnelin")
+shot("P01", P2([-0.3, 15.2, 1.35], [0.8, 12.4, 1.75], [-0.3, 14.6, 1.35], [0.8, 12.4, 1.75], 26), "tunnelin")
 # the count climbs a morning at a time: 1,560 by L32, 1,600 by L42
 for at_, n_, d_ in (("L22", 1522, 1.0), ("L25", 1534, 0.8), ("L28", 1546, 0.8), ("L31", 1560, 0.8), ("L34", 1572, 0.8),
                     ("L36", 1583, 0.8), ("L39", 1592, 0.8), ("L41", 1600, 0.8), ("L43", 1608, 0.8)):
@@ -358,10 +358,11 @@ shot("L21", K((TEX + 0.1, TEY + 0.1, 0.8), 215, 1.7, 40, 22, 0.0), "coffee")
 beat("me", "L22", expr="wide")
 shot("L22", K2(MEH, 60, 3.0, MEH, 70, 2.5, 50, 3, 0.1), "face5")
 # S23: my palm flat on his warm seat
-only("L23", ["me"])
 cue("L23", "sit", who="me", on=False, z=SIT)
-put("me", "L23", [-0.3, TEY + 0.3], 90, expr="worried", arms=[-9, 0], lean=62)
-shot("L23", P2([1.9, TEY - 0.15, 1.6], [0.5, TEY - 0.15, 0.55], [1.75, TEY - 0.15, 1.5], [0.5, TEY - 0.15, 0.55], 22), "palm")
+only("L23", [])
+cue("L23", "hand", v=1.0)
+cue("L24", "hand", v=0.0)
+shot("L23", P2([TEX - 0.1, TEY + 1.0, 1.4], [TEX - 0.1, TEY - 0.02, 0.55], [TEX - 0.1, TEY + 0.85, 1.25], [TEX - 0.1, TEY - 0.02, 0.55], 30), "palm")
 # S24: close, his window, a small patch of fog
 only("L24", [])
 cue("L24", "patch", a=1.0, dur=0.6)
@@ -403,9 +404,9 @@ shot("L32", P([0.9, ry(7.4), 1.2], [-1.9, ry(8) + 0.0, 2.1], 34), "rack")
 shot("L32.3", P2([0.2, ry(7.5), 2.0], [-1.7, ry(8), 2.1], [0.2, ry(7.5), 1.2], [-1.7, ry(8), 0.7], 34), "rackdown")
 # S33: a cake with candles on seat twelve, then out
 cue("L33", "cake", v=1.0)
-shot("L33", K((-1.62, ry(6) + 0.05, 0.75), 20, 1.9, 40, 18), "cake")
+shot("L33", P([-0.3, ry(6) + 1.0, 1.3], [-1.6, ry(6) + 0.05, 0.7], 36), "cake")
 cue("L33.3", "cake", v=2.0)
-shot("L33.3", K((-1.62, ry(6) + 0.05, 0.75), 330, 1.8, 40, 20), "cakeout")
+shot("L33.3", P2([-0.3, ry(6) + 1.0, 1.3], [-1.6, ry(6) + 0.05, 0.7], [-0.4, ry(6) + 0.9, 1.2], [-1.6, ry(6) + 0.05, 0.8], 36), "cakeout")
 # S34: the maze in my puzzle book, half traced in green; my face
 cue("L34", "maze", p=0.0)
 cue("L34.1", "maze", p=3.0, dur=1.0)
@@ -429,9 +430,9 @@ only("L39", [])
 shot("L39", P2([0.0, 0.5, 1.5], [0.0, 14.0, 1.3], [0.0, 1.3, 1.5], [0.0, 14.0, 1.3], 24), "emptycar2")
 # S40: the conductor walks past our car's door window without stopping
 only("L40", ["conductor"])
-put("conductor", "L40", [-0.4, -0.5], 90, expr="neutral", head=[80, 0])
-go("conductor", "L40+1.7", [0.4, -0.5], head=[85, 0])
-shot("L40", P([0.0, 3.2, 1.55], [0.0, -0.5, 1.5], 40), "conductor1")
+put("conductor", "L40", [0.0, -0.55], 180, expr="neutral", head=[60, 0])
+beat("conductor", "L40+0.9", expr="neutral", head=[-60, 0])
+shot("L40", P([0.0, 2.6, 1.62], [0.0, -0.55, 1.62], 50), "conductor1")
 only("L40.3", [])
 shot("L40.3", K2((0.0, ry(4.4), 1.45), 280, 2.3, (0.0, ry(4.4), 1.45), 262, 2.0, 40, 4), "tickets")
 # S41: Teddy's empty seat, the steaming coffee, my face soft behind it
@@ -454,14 +455,12 @@ shot("L43", K(MEH, 78, 2.5, 52, 3, 0.05, up=0.13), "face11")
 # S44: seasons through the window; my face beside his fogged window
 cue("L44", "season", s=1.0)
 cue("L44", "count", n=1700, dur=1.6)
-shot("L44", P([-1.3, 10.0, 1.5], [-6.0, 12.0, 1.0], 36), "summer")
+shot("L44", P2([0.2, 14.5, 1.9], [-6.0, 14.8, 1.2], [0.2, 14.5, 1.9], [-6.0, 15.1, 1.1], 30), "summer")
 cue("L44.1", "season", s=2.0)
-shot("L44.1", P([-1.3, 10.6, 1.5], [-6.0, 12.5, 1.0], 36), "fall")
+shot("L44.1", P2([0.2, 14.5, 1.9], [-6.0, 15.1, 1.1], [0.2, 14.5, 1.9], [-6.0, 15.4, 1.2], 30), "fall")
 shot("L44.2", K(MEH, 78, 2.7, 46, 4, -0.05, up=0.13), "face12")
 # S45: determined, mouth opening, the tag at 1724
 cue("L45", "count", n=1724, dur=0.4)
-for at_, n_ in (("L49", 1725), ("L53", 1726), ("L57", 1727)):
-    cue(at_, "count", n=n_, dur=0.3)
 beat("me", "L45", expr="neutral", head=[0, 0])
 acting["me"].append({"from": "L45.2", "to": "L45.2>", "mouth": [0.1, 0.8]})
 shot("L45", K(MEH, 78, 2.2, 55, 2, 0.05, up=0.13), "face13")
@@ -473,10 +472,14 @@ cue("L46+0.1", "fog", p=1.0, dur=1.2)
 shot("L46", P([MEX + 0.05, MEY + 0.5, 1.5], [0.0, ry(8), 1.4], 24), "fogsweep")
 # S47: the reveal: me standing in the aisle, mouth open, every window fogged
 cue("L47", "sit", who="me", on=False, z=SIT)
-put("me", "L47", [0.0, MEY], 180, expr="wide", head=[0, 0])
+put("me", "L47", [0.15, MEY], 218, expr="wide", head=[0, 0])
 acting["me"].append({"from": "L47", "to": "L47.1>", "mouth": [0.2, 0.9]})
-shot("L47", P2([0.0, MEY + 3.2, 1.3], [0.0, MEY - 1.2, 1.6], [0.0, MEY + 2.6, 1.35], [0.0, MEY - 0.8, 1.6], 14), "reveal")
+shot("L47", P2([-1.35, MEY + 1.8, 1.45], [0.5, MEY - 0.6, 1.5], [-1.35, MEY + 1.5, 1.45], [0.5, MEY - 0.6, 1.5], 17), "reveal")
 # S48: handprints press into the fog
+cue("L48", "fogmax", m=0.62)
+cue("L49", "fogmax", m=0.88)
+cue("L51", "fogmax", m=0.62)
+cue("L52", "fogmax", m=0.88)
 cue("L48", "prints", p=1.0, dur=0.2)
 shot("L48", P([-0.5, ry(6) + 0.15, 1.6], [HALF_, ry(6) + 0.15, 1.5], 24), "prints1")
 cue("L48.1", "prints", p=4.0, dur=0.5)
@@ -499,7 +502,7 @@ shot("L53", AIS(3.1, 38, -0.12), "face15")
 # S54: me alone in the aisle
 shot("L54", K2((0.0, ry(4.8), 1.2), 95, 4.8, (0.0, ry(4.8), 1.2), 100, 4.2, 28, 6), "aisle")
 # S55: the fogged windows from low, as if leaning in; my face in the foreground
-shot("L55", P([0.25, MEY - 0.9, 0.9], [-0.2, MEY + 3.0, 1.35], 34), "leaning")
+shot("L55", P2([0.35, MEY + 2.4, 0.95], [-0.2, MEY - 3.0, 1.95], [0.3, MEY + 2.1, 0.95], [-0.15, MEY - 3.0, 2.0], 26), "leaning")
 # S56: the tag, close, and me looking at it
 put("me", "L56", [0.0, MEY], 180, expr="worried", head=[-30, -10])
 shot("L56", AIS(3.2, 38, 0.1), "face16")
@@ -517,13 +520,13 @@ beat("me", "L59", expr="laugh")
 acting["me"].append({"from": "L59", "to": "L59.2>", "mouth": [0.8, 0.8]})
 shot("L59", AIS(3.0, 40, 0.0), "say")
 # S60: for one second, nothing
-beat("me", "L60", expr="neutral")
-shot("L60", P([0.0, ry(2.2), 1.8], [0.0, ry(6), 1.1], 24), "silent")
+beat("me", "L60", expr="wide")
+shot("L60", P2([0.0, MEY + 3.6, 1.5], [0.0, MEY - 2.5, 1.35], [0.0, MEY + 3.3, 1.5], [0.0, MEY - 2.5, 1.35], 22), "silent")
 # S61: the fog swells once; my hair lifted by the breath of it
 cue("L61", "swell", s=0.0)
 cue("L61+0.1", "swell", s=1.0, dur=0.6)
 cue("L61+0.8", "swell", s=0.0, dur=0.6)
-shot("L61", P2([0.0, ry(2.2), 1.8], [0.0, ry(6), 1.2], [0.0, ry(2.8), 1.8], [0.0, ry(6), 1.2], 24), "swell")
+shot("L61", P2([0.3, MEY + 2.6, 1.1], [-0.1, MEY - 3.0, 1.85], [0.25, MEY + 2.3, 1.1], [-0.1, MEY - 3.0, 1.85], 22), "swell")
 beat("me", "L61.1", expr="wide", head=[0, -6])
 shot("L61.1", AIS(3.0, 40, 0.1), "face18")
 # S62: the windows clear one by one
@@ -548,9 +551,9 @@ put("me", "L65", [HALF_ - 0.3, DY + 0.4], 90, expr="smile")
 shot("L65", P([8.0, DY - 3.4, 1.7], [2.8, DY, 0.9], 30), "shadows")
 # S66: the bearded man steps off with his lunch
 only("L66", ["beard"])
-put("beard", "L66", [2.2, DY - 0.4], 90, expr="smile", arms=[75, 75])
-go("beard", "L66+1.6", [4.6, DY - 0.4])
-shot("L66", K((3.0, DY - 0.4, 1.5), 40, 3.2, 42, 4), "beard")
+put("beard", "L66", [2.4, DY - 0.4], 90, expr="smile", arms=[0, 72])
+go("beard", "L66+1.6", [3.2, DY - 0.4])
+shot("L66", K((2.9, DY - 0.4, 1.4), 28, 3.0, 40, 9), "beard")
 # S67: Teddy steps out into the sun
 only("L67", ["teddy", "me"])
 put("teddy", "L67", [2.2, DY], 90, expr="laugh")
@@ -593,14 +596,16 @@ only("L72", ["conductor"])
 put("conductor", "L72", [0.0, 0.5], 0, expr="neutral", head=[0, 0])
 shot("L72", P([0.0, -3.4, 1.6], [0.0, 0.5, 1.55], 40), "cond2")
 # S73: his finger to his lips
-beat("conductor", "L73", expr="neutral", arms=[0, 150])
+beat("conductor", "L73", expr="neutral")
+cue("L73", "cfing", v=1.0)
 shot("L73", P([0.0, -2.6, 1.6], [0.1, 0.5, 1.55], 52), "cond3")
 # S74: a wink, then my face back in my seat (S01a's framing): the loop
-beat("conductor", "L74", expr="smile", arms=[0, 0])
+beat("conductor", "L74", expr="polite")
+cue("L74", "wink", v=1.0)
 shot("L74", P([0.0, -2.8, 1.6], [0.0, 0.5, 1.58], 55), "cond4")
+cue("L74>", "wink", v=0.0)
+cue("L74>", "cfing", v=0.0)
 only("L74>", ["me"])
-cue("L74>", "count", n=1512)
-cue("L74>", "glyph", u=0.0)
 seat_me("L74>", "neutral")
 shot("L74>", K(MEH, 78, 2.7, 50, 4, 0.05), "loop")
 
@@ -623,6 +628,10 @@ cue(0, "maze", p=0.0)
 cue(0, "season", s=0.0)
 cue(0, "glyph", u=0.0)
 cue(0, "glass", a=0.0, s=0.0)
+cue(0, "hand", v=0.0)
+cue(0, "cfing", v=0.0)
+cue(0, "wink", v=0.0)
+cue(0, "fogmax", m=0.88)
 cue(0, "env", tunnel=0.0, plat=0.0)
 for k_ in acting.values():
     remap_all(k_)
@@ -642,8 +651,8 @@ sfx = [
     {"at": "L01.1+0.4", "kind": "thud", "db": -8},
     {"at": "L01.1+0.4", "kind": "bell", "db": -17, "dur": 0.9},
     {"at": "L16.2", "kind": "thud", "db": -16},
-    {"at": "L19", "kind": "whoosh", "db": -22, "dur": 1.3},
-    {"at": "L46", "kind": "whoosh", "db": -24, "dur": 1.2},
+    {"at": "P01", "kind": "whoosh", "db": -14, "dur": 1.4, "keep": True},
+    {"at": "P02", "kind": "whoosh", "db": -20, "dur": 1.1, "keep": True},
     {"at": "L74+0.2", "kind": "bell", "db": -16, "dur": 0.9},
 ]
 music = {
@@ -663,13 +672,13 @@ sound = {
     "ambience": [{"kind": "hum", "from": 0, "to": "end", "lufs": -42},
                  {"kind": "room", "from": 0, "to": "end", "lufs": -44}],
     "sfx": sfx,
-    "music_drops": [{"from": "P01", "to": "P01>"}, {"from": "P02", "to": "P02>"}],
+    "music_drops": [{"from": "P01", "to": "P01>", "db": -16}, {"from": "P02", "to": "P02>", "db": -16}],
     "rev": REV,
 }
 remap_all(sfx)
 remap_all(music["sections"])
 remap_all(sound["music_drops"])
-polish = {"reveal": [remap("L47")], "twist": remap("L49"),
+polish = {"bed_drop_db": -3.0, "hold": [names["reveal"]], "reveal": [remap("L47")], "twist": remap("L49"),
           "emph": [remap(x) for x in ["L01.1", "L16.2", "L47", "L59.1", "L61.1", "L64"]],
           "quiet": [[remap("L67"), remap("L70")]],
           "sway": [names["freeze"], names["face10"], names["face15"]]}
