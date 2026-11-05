@@ -136,6 +136,17 @@ week of buffer. Steps are ordered by value over effort.
 | 10 | **Section 4 deletes**, one PR per group | small each | Each list above empty | `python -m pytest -q`, `check` on every remaining story, and one proof of a polish story |
 | 11 | **P:** chunk queue and per-shot cache | large | A one-shot fix redraws only that shot | Fix one shot of a drawn story; compare runner-min and frame bytes |
 
+**Step 1, measured 2026-11-05** (proof.yml runs from 20:47 UTC Nov 3 to 20:34 UTC Nov 5, 131 runs, runner-minutes
+summed from job start to end): 54 real proofs, about 7,840 runner-min. 61 plan-only runs cost about 47 min, all of
+them correct no-ops (gate closed, held, already covered), plus 16 WIP runs that cost nothing. 2 duplicates of the
+same sha and story cost 362 min (ep45 dispatched 5 s after its PR run; ep28 dispatched while its PR run drew). One
+more, a dispatch of warm-shoes at the same sha after a failed run, cost 121 min. 3 proofs of stories the PR didn't
+change cost 341 min (dryer-nine on the batch10-scripts and ep83 PRs, warm-shoes on ep58's). That makes 750 to 871
+min of waste, 9.5 to 11%. Already in place: `REQUIRE_PROOF: "true"` (render.yml:15), proofs only once both reviews
+approve (plan_proofs.py `decide`, gate closed), and dedup of PR runs by live artifact (`drawn_sha`). Missing, fixed in
+"Migration step 1": the PR diff was two-dot against main's tip, and dispatches skipped every check. `test` still
+blocks while it waits for a proof; it now says "waiting for proof" instead of a bare failure.
+
 ## 6. Open questions for the owner
 
 **Answered 2026-11-04** (owner: "Go with your recommendations on all six"; RULES.md, "The audit decisions"):
