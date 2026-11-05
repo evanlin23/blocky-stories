@@ -17,7 +17,7 @@ import layout as G  # noqa: E402
 OUT = HERE.parent / "story.json"
 # shots that are deliberately the glow / the sky itself (S05 "something GLOWS", S35 the sky going dark, S40 the glow sinking)
 FRAMING_OK = ["S05", "S35", "S40", "S60", "S63", "S85"]
-REV = 21
+REV = 24
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -419,20 +419,16 @@ shot("L14", mv([tx + 0.9, ty + 3.6, 1.7], [tx - 0.1, ty - 0.9, 1.5], 40, [tx + 0
 sit("grandma", "L15", False)
 only("L15", [])
 dial("L15", 0.68, lit=0.0, dur=0.01)
-zoom("L15", 1.0)
+zoom("L15", 0.5)
 shot("L15", mv([-3.0, -50.0, 1.5], [0.0, -36.0, 1.4], 32, [-1.0, -47.0, 1.6], [0.0, -36.0, 1.4], 32), "shimmer")
 zoom("L15.1", 0.0)
 only("L16", ["grandma"])
 sit("grandma", "L16", True, 0.35)
 put("grandma", "L16", [hx_ - 3.6, G.PORCH_Y + 0.5, 0.25], 180, expr="asleep")
 shot("L16", F([hx_ - 3.6, G.PORCH_Y + 0.5], 180, 4.0, 1.6, 36, tzoff=1.0, base=0.25, off=-18, push=0.1), "nap")
-only("L16.1+0.55", [])
-sit("grandma", "L16.1+0.55", False)
-glow("L16.1+0.55", g=0.8)
-shot("L16.1+0.55", mv([-4.0, -34.0, 1.4], [1.5, -18.0, 0.1], 30, [-2.6, -33.0, 1.5], [1.5, -18.0, 0.1], 30), "flatlake")
 # L17: three o'clock on the dial, then the run and the jump
 dial("L17", 0.78, dur=0.3)
-zoom("L17", 1.0)
+zoom("L17", 0.5)
 zoom("L17.1", 0.0)
 only("L17", ["me"])
 put("me", "L17", [0.3, -38.5, DECK], 180, expr="grin", run=True)
@@ -789,9 +785,8 @@ dial("L64", 0.97, lit=1.0)
 sit("grandma", "L64", False)
 sit("me", "L64", False)
 only("L64", [])
-shot("L64", mv([0.4, -32.0, 1.3], [0.3, -27.5, 0.2], 26, [0.4, -31.6, 1.3], [0.3, -24.0, 4.0], 26), "settle")
 moonc("L64", 40.0)
-shot("L64.1", mv([0.0, -35.0, 1.5], [0.3, -27.8, 0.3], 30, [0.1, -33.6, 1.3], [0.3, -27.8, 0.35], 30), "overdock")
+shot("L64", mv([0.0, -35.0, 1.5], [0.3, -27.8, 0.3], 30, [0.1, -33.6, 1.3], [0.3, -27.8, 0.35], 30), "overdock")
 
 # ===== 10 the warm turn: together, and the loop (L65 to L70)
 cue("L65", "refl", v=0.0)
@@ -921,7 +916,7 @@ remap_all(sound["ambience"])
 polish = {"reveal": [remap("L35.2")], "twist": remap("L39"),
           "emph": [remap(x) for x in ["L01.2", "L05.0", "L20.0", "L21.0", "L35.1", "L37.0", "L57"]],
           "quiet": [[remap("L62"), remap("L63")]], "sway": [names["lean"], names["pushface"], names["againface"]],
-          "hold": [names["dialdark"], names["tick"], names["diallit"]]}
+          "hold": [names["dialdark"], names["tick"], names["diallit"], names["overdock"], names["shimmer"], names["nap"], names["jump"], names["bath"]]}
 story = {
     "slug": "ep113-moon-lake",
     "title": "Grandma's Lake Glows After NOON \U0001F319",

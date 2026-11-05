@@ -427,16 +427,16 @@ def build(kit, story, tl):
     W["glowdisc"] = kit.empty("glowdisc", (G.MID[0], G.MID[1], WZ + 0.1), None)
     for i, (r_, col_, st) in enumerate([(9.0, "#1f8fa0", 0.28), (6.2, "#3a9cba", 0.3), (3.9, "#6ea8cc", 0.32),
                                         (2.0, "#d8f0f8", 0.6)]):
-        ob = kit.cyl(f"gd{i}", r_, 0.02, (0, 0, 0.012 * i), kit.emit(col_, st, f"gdm{i}"), W["glowdisc"], n=40)
+        ob = kit.cyl(f"gd{i}", r_, 0.02, (0, 0, 0.04 * i), kit.emit(col_, st, f"gdm{i}"), W["glowdisc"], n=40)
         noshadow(ob)
     W["gdock"] = kit.empty("gdock", (0.45, -29.2, WZ + 0.1), None)
     for i, (r_, col_, st) in enumerate([(9.0, "#1fa6a0", 0.45), (1.05, "#f6efc8", 0.9)]):
-        ob = kit.cyl(f"gdk{i}", r_, 0.02, (0, 0, 0.012 * i), kit.emit(col_, st, f"gdkm{i}"), W["gdock"], n=32)
+        ob = kit.cyl(f"gdk{i}", r_, 0.02, (0, 0, 0.04 * i), kit.emit(col_, st, f"gdkm{i}"), W["gdock"], n=32)
         noshadow(ob)
     # the lake lit pale blue-white (S51)
     W["lakew"] = kit.empty("lakew", (G.MID[0], G.MID[1], WZ + 0.13), None)
     for i, (r_, col_, st) in enumerate([(34.0, "#8fb8e0", 0.55), (20.0, "#b4d2ee", 0.65), (9.0, "#d4e6f6", 0.72)]):
-        ob = kit.cyl(f"lw{i}", r_, 0.02, (0, 0, 0.012 * i), kit.emit(col_, st, f"lwm{i}"), W["lakew"], n=48)
+        ob = kit.cyl(f"lw{i}", r_, 0.02, (0, 0, 0.04 * i), kit.emit(col_, st, f"lwm{i}"), W["lakew"], n=48)
         noshadow(ob)
     # its reflection off the dock (S08a): a pale disc in strips so ripples break it
     W["refl"] = kit.empty("refl", (0.3, -27.5, WZ + 0.05), None)
@@ -447,9 +447,9 @@ def build(kit, story, tl):
     for i in range(9):
         yy = -1.9 + i * 0.47
         w_ = 2 * math.sqrt(max(0.05, 2.5 ** 2 - yy ** 2)) * (0.8 + 0.25 * rr_.random())
-        kit.box(f"refl.s{i}", (w_, 0.34, 0.02), (rr_.random() * 0.4 - 0.2, yy, 0.02), rm, W["refl"])
+        kit.box(f"refl.s{i}", (w_, 0.34, 0.02), (rr_.random() * 0.4 - 0.2, yy, 0.07), rm, W["refl"])
     for i in range(4):
-        kit.box(f"refl.rip{i}", (1.2 + 2.0 * rr_.random(), 0.05, 0.02), (rr_.random() * 2 - 1, -1.2 + i * 0.8 + rr_.random() * 0.3, 0.035), pl("#24346b", 0.4, spec=0.0), W["refl"])
+        kit.box(f"refl.rip{i}", (1.2 + 2.0 * rr_.random(), 0.05, 0.02), (rr_.random() * 2 - 1, -1.2 + i * 0.8 + rr_.random() * 0.3, 0.12), pl("#24346b", 0.4, spec=0.0), W["refl"])
     noshadow(W["refl"])
 
     # ------------------------------------------------------------------ the rising cap (a big sphere under the lake)
@@ -577,7 +577,7 @@ def animate(kit, story, tl, t, ctx):
         if W["water_cols"][0] is None:
             W["water_cols"] = [tuple(e.color) for e in ramp.color_ramp.elements]
         bsdf = wm.node_tree.nodes["Principled BSDF"]
-        bsdf.inputs["Roughness"].default_value = 0.35 + 0.6 * (1.0 - min(1.0, look["sun"] / 3.4))
+        bsdf.inputs["Roughness"].default_value = 0.6 + 0.35 * (1.0 - min(1.0, look["sun"] / 3.4))
         for sk_ in ("Specular IOR Level", "Specular"):
             if sk_ in bsdf.inputs:
                 bsdf.inputs[sk_].default_value = 0.5 * min(1.0, look["sun"] / 3.4) + 0.0
