@@ -514,6 +514,9 @@ def build(kit, story, tl):
     mint.fake_windows()
     mint.door_slab(1.4, 2.3, P("#f2c14e", 0.5))
     ctx["mint"] = mint
+    # a dead-level lamp post beside the mint house: the vertical the lean is read against
+    B(None, (0.16, 0.16, 4.6), (-1.2, -11.5, 2.3), P("#2f3440", 0.5, 0.4), "lamppost", 0.01)
+    B(None, (0.5, 0.5, 0.4), (-1.2, -11.5, 4.8), P("#fff4c8", 0.5, 0.1), "lamphead", 0.03)
     # a few far houses, trees, bushes
     for i, (x, y, c) in enumerate(((-24, 0, "#ffd0a8"), (16, 0, "#cfe8ff"), (22, 0, "#ffe08a"), (-17, -16, "#ffc4d6"), (8, -16, "#d9f0c4"))):
         hs = House(kit, f"far{i}", 1, x, y, c, "#fffaf0", "#7a5a4a", detail=False)

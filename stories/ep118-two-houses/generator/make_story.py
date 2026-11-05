@@ -330,15 +330,15 @@ show("S40", "L40", cam(add(WIN_K, (0.1, -1.7, 1.45)), add(WIN_K, (0, 0, 1.52)), 
      [("me", WIN_K, 0, "worried", {})], fill=0.6)
 lean("L41", "mint", 8.0, 0.7)
 cue("L41", "tag", v="b")
-S("S41a", "L41", cam([-15.0, -15.6, 1.8], [-2.2, -15.6, 3.4], 30, [-14.2, -15.6, 1.8]), "day", fill=0.1)
+S("S41a", "L41", cam([4.3, -4.6, 1.2], [-0.8, -15.6, 3.1], 21, [3.9, -4.8, 1.2]), "day", fill=0.5)
 cue("L41.2", "marble", mode="step", pos=[-3.75, -0.95, 0.19], dir=[0.0, -1.0], acc=1.6)
 S("S41b", "L41.2", cam([-3.75, -0.2, 0.95], [-3.75, -1.5, 0.1], 32, [-3.75, -0.5, 0.9], [-3.75, -2.5, 0.1]), "day", fill=0.9)
 show("S42", "L42", cam([-0.9 + 1.2, -2.2, 1.6], [-0.9 + 1.2, 0.0, 1.55], 32, [-0.9 + 1.2, -1.9, 1.6]), "day", [])
 # Dad and me at the kitchen window (ground floor front window ux 1.0..2.1)
-w_dad = feet("o", 1.35, 0.3, F1)
-w_me = add(feet("o", 1.8, 0.8, F1), (0, 0, 0.3))
+w_dad = feet("o", 1.1, 0.95, F1)
+w_me = feet("o", 1.77, 0.45, F1)
 cx = (w_dad[0] + w_me[0]) / 2
-shots[-1]["cam"] = cam([cx, -3.0, 1.7], [cx, 0.0, 1.68], 30, [cx, -2.6, 1.7])
+shots[-1]["cam"] = cam([cx, -4.2, 1.55], [cx, 0.0, 1.5], 30, [cx, -3.8, 1.55])
 put("dad", "L42", w_dad, 0, "wide")
 put("me", "L42", w_me, 0, "wide")
 show("S43a", "L43", cam(add(WIN_K, (0.1, -1.9, 1.45)), add(WIN_K, (0, 0, 1.52)), 36, add(WIN_K, (0.1, -1.5, 1.5))), "day",
@@ -426,8 +426,9 @@ if vt.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(e["at"]))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 13
+story["rev"] = 18
 story["clip_ok"] = ["sidehair", "sidehair2"]
-story["framing_ok"] = ["S13", "S03a", "S03b", "S05", "S07", "S16", "S35", "S41a"]
+story["framing_ok"] = ["S13", "S03a", "S03b", "S05", "S07", "S16", "S35", "S20", "S37", "S41a"]
+story["frames_ok"] = ["S01a", "S09a", "S14a", "S43b"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
