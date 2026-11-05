@@ -73,7 +73,7 @@ def pip(kit, name, kind, x, y, z, parent, s=0.016):
         kit.box(name + "b", (s * 0.5, s * 1.1, 0.002), (x, y, z), m, parent, rot=(0, 0, -30 * D2R))
 
 
-def card(kit, name, loc, rotz, face, kind="dia", n=1, w=0.11, l=0.16, back="#3f7fe0"):
+def card(kit, name, loc, rotz, face, kind="dia", n=1, w=0.085, l=0.16, back="#3f7fe0"):
     """A card lying flat; loc is the centre of its underside. Returns the empty that carries it."""
     root = kit.empty(name, loc, rot=(0, 0, rotz * D2R))
     paper = kit.plastic("#fffaf0", 0.55, spec=0.1)
@@ -81,11 +81,11 @@ def card(kit, name, loc, rotz, face, kind="dia", n=1, w=0.11, l=0.16, back="#3f7
     top = 0.003
     if face:
         # corner glyphs plus n big glyphs down the middle
-        pip(kit, f"{name}.c1", kind, -w * 0.32, l * 0.38, top + 0.0005, root, 0.014)
-        pip(kit, f"{name}.c2", kind, w * 0.32, -l * 0.38, top + 0.0005, root, 0.014)
+        pip(kit, f"{name}.c1", kind, -w * 0.32, l * 0.38, top + 0.0005, root, 0.018)
+        pip(kit, f"{name}.c2", kind, w * 0.32, -l * 0.38, top + 0.0005, root, 0.018)
         spots = {1: [(0, 0)], 2: [(0, 0.2 * l), (0, -0.2 * l)], 3: [(0, 0.26 * l), (0, 0), (0, -0.26 * l)]}[min(3, n)]
         for i, (px, py) in enumerate(spots):
-            pip(kit, f"{name}.p{i}", kind, px, py, top + 0.0005, root, 0.03)
+            pip(kit, f"{name}.p{i}", kind, px, py, top + 0.0005, root, 0.04)
     else:
         kit.box(f"{name}.back", (w - 0.014, l - 0.014, 0.001), (0, 0, top + 0.0003), kit.plastic(back, 0.55, spec=0.1), root)
         pip(kit, f"{name}.g", "dia", 0, 0, top + 0.001, root, 0.04)
@@ -150,18 +150,19 @@ def build_tag(kit):
         b(f"tag.rtick{i}", (0.11 if i % 2 == 0 else 0.07, 0.035), (-0.33 + 0.07 - (0.0 if i % 2 == 0 else 0.02), -0.2 + i * 0.1, 0.012),
           cream)
     W["d1"] = seven(kit, root, "tag.d1", 0.2, 0.0, 0.36, 0.5, 0.085, ink)
-    # line two: a person glyph, then 6'0" / 5'11" in three small digits
+    # line two: a person glyph, then 6'0" / 5'11" with big slanted primes
     r2 = kit.empty("tag2", (0, -0.7, 0), root)
     W["tag2"] = r2
     b("tag2.edge", (1.06, 0.56), (0, 0, 0.0), edge, parent=r2)
     b("tag2.plate", (1.0, 0.5), (0, 0, 0.004), cream, parent=r2)
-    b("tag2.head", (0.1, 0.1), (-0.36, 0.14, 0.008), blue, parent=r2)
-    b("tag2.body", (0.17, 0.2), (-0.36, -0.03, 0.008), blue, parent=r2)
-    b("tag2.legs", (0.17, 0.13), (-0.36, -0.2, 0.008), blue, parent=r2)
-    W["d2"] = [seven(kit, r2, f"tag2.d{i}", x, 0.0, 0.17, 0.36, 0.05, ink) for i, x in enumerate((-0.14, 0.14, 0.34))]
-    W["ticks2"] = [b("tag2.foot", (0.04, 0.1), (-0.02, 0.13, 0.008), ink, 20, r2),
-                   b("tag2.in1", (0.04, 0.1), (0.5 - 0.0, 0.13, 0.008), ink, 20, r2)]
-    W["ticks2"].append(b("tag2.in2", (0.04, 0.1), (0.54 - 0.0, 0.13, 0.008), ink, 20, r2))
+    b("tag2.head", (0.09, 0.09), (-0.4, 0.13, 0.008), blue, parent=r2)
+    b("tag2.body", (0.15, 0.18), (-0.4, -0.03, 0.008), blue, parent=r2)
+    b("tag2.legs", (0.15, 0.12), (-0.4, -0.18, 0.008), blue, parent=r2)
+    W["d2"] = [seven(kit, r2, f"tag2.d{i}", x, -0.02, 0.13, 0.32, 0.045, ink) for i, x in enumerate((-0.2, 0.06, 0.2))]
+    W["p1"] = b("tag2.p1", (0.055, 0.17), (-0.085, 0.1, 0.008), ink, -16, r2)
+    W["pp"] = [b("tag2.pp0", (0.055, 0.17), (0.0, 0.1, 0.008), ink, -16, r2),
+               b("tag2.pp1", (0.055, 0.17), (0.0, 0.1, 0.008), ink, -16, r2)]
+    W["ticks2"] = []
     # dummy to keep names unique
     return root
 
@@ -176,11 +177,12 @@ def set_digit(segs, ch):
 def brass_cap(kit):
     """The table's lower-right corner cap (seen from the front): brass with two coral scratches. A plain tally."""
     brass = kit.metal("#c9a23c", 0.35)
-    x, y = 0.47, -0.47
+    x, y = 0.445, -0.445
     W["cap"] = []
-    W["cap"].append(kit.box("cap.plate", (0.09, 0.09, 0.012), (x - 0.0, y, T + 0.002), brass, bevel=0.002))
-    for i, dx in enumerate((-0.012, 0.012)):
-        W["cap"].append(kit.box(f"cap.stroke{i}", (0.006, 0.06, 0.003), (x + dx * 1.8, y, T + 0.0095), kit.plastic("#ff7f6b", 0.5), rot=(0, 0, 12 * D2R * (1 if i else -1))))
+    W["cap"].append(kit.box("cap.plate", (0.11, 0.11, 0.012), (x, y, T + 0.002), brass, bevel=0.002))
+    for i, dx in enumerate((-0.022, 0.022)):
+        W["cap"].append(kit.box(f"cap.stroke{i}", (0.014, 0.08, 0.005), (x + dx, y, T + 0.0105), kit.plastic("#ff6a55", 0.5),
+                                rot=(0, 0, 10 * D2R * (1 if i else -1))))
     for ob in W["cap"]:
         ob["bx"], ob["by"] = ob.location.x, ob.location.y
 
@@ -201,11 +203,11 @@ def build_table(kit):
     # the mug (Mae's height plus an inch), a coffee disc, a handle and the red height stripe
     mx, my = G.MUG
     white = kit.plastic("#fffaf0", 0.35, spec=0.4)
-    kit.cyl("mug.body", 0.045, G.MUG_H, (mx, my, T + G.MUG_H / 2), white, n=24)
-    kit.cyl("mug.coffee", 0.039, 0.003, (mx, my, T + G.MUG_H - 0.0004), kit.plastic("#6a3a1e", 0.4), n=24)
-    kit.cyl("mug.stripe", 0.0465, 0.014, (mx, my, T + G.MAE_H), kit.plastic("#e2463b", 0.5), n=24)
-    kit.box("mug.handle", (0.034, 0.012, 0.09), (mx - 0.058, my, T + 0.095), white, bevel=0.004)
-    kit.box("mug.handle2", (0.012, 0.012, 0.062), (mx - 0.074, my, T + 0.095), white)
+    kit.cyl("mug.body", 0.033, G.MUG_H, (mx, my, T + G.MUG_H / 2), white, n=24)
+    kit.cyl("mug.coffee", 0.028, 0.003, (mx, my, T + G.MUG_H - 0.0004), kit.plastic("#6a3a1e", 0.4), n=24)
+    kit.cyl("mug.stripe", 0.0345, 0.014, (mx, my, T + G.MAE_H), kit.plastic("#e2463b", 0.5), n=24)
+    kit.box("mug.handle", (0.03, 0.01, 0.08), (mx + 0.044, my + 0.012, T + 0.085), white, bevel=0.004, rot=(0, 0, -25 * D2R))
+    kit.box("mug.handle2", (0.01, 0.01, 0.056), (mx + 0.056, my + 0.02, T + 0.085), white, rot=(0, 0, -25 * D2R))
     # a plate of shortbread
     kit.cyl("plate", 0.085, 0.008, (-0.31, -0.28, T + 0.004), kit.plastic("#fffaf0", 0.4, spec=0.3), n=20)
     for i, (dx, dy, r) in enumerate(((-0.02, 0.0, 10), (0.02, 0.01, -15), (0.0, -0.025, 80))):
@@ -222,7 +224,7 @@ def build_table(kit):
     kit.cyl("pad.blue", 0.016, 0.003, (0.055, 0.12, 0.016), kit.plastic("#3f7fe0", 0.6), pad, n=14)
     n = 0
     for g in range(12):
-        gx = -0.085 + (g % 2) * 0.052
+        gx = -0.080 + (g % 2) * 0.050
         gy = 0.082 - (g // 2) * 0.034
         for s in range(4):
             kit.box(f"pad.t{n}", (0.0032, 0.026, 0.002), (gx - 0.016 + s * 0.0105, gy, 0.0158), ink, pad)
@@ -230,8 +232,8 @@ def build_table(kit):
         kit.box(f"pad.t{n}", (0.0032, 0.045, 0.002), (gx, gy, 0.0162), ink, pad, rot=(0, 0, 62 * D2R))
         n += 1
     # the two fans: Mae's winning hand (faces), mine (backs), then my winning hand (faces) for L14 and L15
-    fx, fy = 0.38, -0.395
-    W["maecards"] = fan(kit, "mc", (fx, fy), -85, 24, True, ["dia", "dot", "sq", "tri", "dia"], z0=T)
+    fx, fy = G.MAE[0], G.MAE[1] - 0.005
+    W["maecards"] = fan(kit, "mc", (fx, fy), 0, 9, True, ["dia", "dot", "sq", "tri", "dia"], z0=T, reach=0.12)
     W["minecards"] = fan(kit, "yc", (-0.02, 0.50), 0, 14, False, ["dia"], back="#3f7fe0", z0=T)
     W["wincards"] = fan(kit, "wc", (-0.02, 0.50), 0, 14, True, ["sq", "tri", "dot", "dia", "sq"], z0=T)
     W["wincards_z"] = [c.location.z for c in W["wincards"]]
@@ -361,9 +363,10 @@ def first_frame(kit, story):
             ly = ln.location.y - 0.01
             cx, cz = ln.location.x, ln.location.z
             bpy.data.objects.remove(ln, do_unlink=True)
-            kit.box(f"mae.glr_b{sx}", (0.46, 0.04, 0.05), (cx, ly, cz - 0.16), frame, gp)
+            # rims shorter (the mouth sits clear below them) and casting no shadow (it read as a frown on her cheeks)
+            noshadow(kit.box(f"mae.glr_b{sx}", (0.46, 0.04, 0.05), (cx, ly, cz - 0.105), frame, gp))
             for ex in (-1, 1):
-                kit.box(f"mae.glr_s{sx}{ex}", (0.05, 0.04, 0.34), (cx + ex * 0.205, ly, cz), frame, gp)
+                noshadow(kit.box(f"mae.glr_s{sx}{ex}", (0.05, 0.04, 0.285), (cx + ex * 0.205, ly, cz + 0.035), frame, gp))
         for sx in (-1, 1):
             kit.sphere(f"mae.pearl{sx}", 0.1, (sx * 0.68, -0.05, -0.32), pearl, gp, seg=8)
             kit.box(f"mae.pearlh{sx}", (0.05, 0.05, 0.12), (sx * 0.68, -0.05, -0.22), pearl, gp)
@@ -424,10 +427,12 @@ def animate(kit, story, tl, t, ctx):
     set_digit(d2[0], ("6" if v2 == 0 else "5") if on2 else "")
     set_digit(d2[1], ("0" if v2 == 0 else "1") if on2 else "")
     set_digit(d2[2], ("" if v2 == 0 else "1") if on2 else "")
-    ticks = W["ticks2"]
-    ticks[0].hide_render = t2["on"] < 0.5
-    ticks[1].hide_render = t2["on"] < 0.5 or v2 == 0
-    ticks[2].hide_render = t2["on"] < 0.5 or v2 == 0
+    # primes: after the first digit; the double prime after the last digit
+    W["p1"].hide_render = not on2
+    ppx = 0.15 if v2 == 0 else 0.29
+    for i, ob in enumerate(W["pp"]):
+        ob.hide_render = not on2
+        ob.location = (ppx + i * 0.075, 0.1, 0.008)
     # tag position: top-left on the camera, sized by the lens
     lens = 40.0
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
@@ -474,7 +479,7 @@ def animate(kit, story, tl, t, ctx):
     if sw["on"] >= 0.5:
         # the slap: the hand drops from 6 cm to the cloth in 0.18 s, then settles
         sl = sample("slap", tl, t, {"u": 1.0})
-        lift = 0.06 * (1.0 - min(1.0, sl["u"]) ** 2)
+        lift = 0.16 * (1.0 - min(1.0, sl["u"]) ** 2)
     wp = sample("winpos", tl, t, {"dx": 0.0, "dy": 0.0})
     for c, z, xy in zip(W["wincards"], W["wincards_z"], W["wincards_xy"]):
         _hide(c, sw["on"] < 0.5)

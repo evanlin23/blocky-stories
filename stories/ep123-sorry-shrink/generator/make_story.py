@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 lines = json.loads((HERE / "lines.json").read_text())
 D2R = math.pi / 180
 T = G.T
@@ -46,12 +46,13 @@ cast = {
     # Aunt Mae: 74, a gray perm (set.py adds the curls), red cat-eye glasses, a coral cardigan, pearls, sensible shoes.
     # An evenly scaled R6 rig, 13 cm tall.
     "mae": person("#f0c8a0", "#ff7f6b", "#7a5a8a", "#6a4a30", hair="bun", hair_c="#c4c4d0", pattern="knit",
-                  pattern_c="#e8604a", eyes="lashes", extras=["glasses"], extra_c="#d22f3c", brow_w=1.4,
+                  pattern_c="#e8604a", eyes="lashes", extras=["glasses"], extra_c="#d22f3c", brow_w=1.0,
                   height=G.MAE_H / 1.75, width=0.97),
     # a neighbor, adult, one shot at L03 (a red cap), through the porch glass
     "neighbor": person("#c98f68", "#5cc46a", "#4a5a78", "#2a2a40", hair="cap", hair_c="#2a1d15", pattern="stripes",
                        pattern_c="#fffaf0"),
 }
+cast["mae"]["face"]["cheeks"] = "#ff9a88"   # raised, rosy cheeks: warm and mischievous, never stern
 acting = {n: [] for n in cast}
 cues = []
 SH = []
@@ -106,7 +107,7 @@ cue(0, "capmove", dx=0.0, dy=0.0)
 cue(0, "sit", who="me", on=True)
 
 MAEP = [MX, MY, T]
-pose("mae", 0, MAEP, 0, arms=[0, 0], expr="smirk", head=[0, 0])
+pose("mae", 0, MAEP, 0, arms=[0, 0], expr="warm", head=[0, 0])
 pose("me", 0, [HX, HY, 0.0], 0, arms=[62, 62], expr="neutral", head=[0, 3], hidden=True)
 pose("neighbor", 0, [G.NEIGH[0], G.NEIGH[1], 0.0], 0, arms=[0, 0], expr="smile", hidden=True)
 
@@ -123,6 +124,11 @@ def mae(at, expr, **kw):
     acting["mae"].append({"at": at, "pos": MAEP, "expr": expr, **kw})
 
 
+def SIDE(d, lens, push=0.04, x=0.28):
+    """Both of them, the camera at the stripe's height so depth makes no difference to the stripe against her head."""
+    return mv([x, MY - d, T + 0.13], [x, MY, T + 0.071], lens, [x, MY - d * (1 - push), T + 0.13], [x, MY, T + 0.071], lens)
+
+
 # MAE focus helpers
 def face(d, lens=85, az=0.0, el=0.0, push=0.08, f=1.0, dx=0.0, dz=0.0):
     tgt = (HEAD[0], HEAD[1], T + G.MAE_EYE * f)
@@ -131,12 +137,14 @@ def face(d, lens=85, az=0.0, el=0.0, push=0.08, f=1.0, dx=0.0, dz=0.0):
 
 # ===== 01 the rule (L01, L02): Mae's face at her eye level, a mug rim soft behind her
 shot(0, face(0.46, 85, az=-6, push=0.06, f=0.93), "S01a")                                         # sly, the first frame
-mae("L01.2", "smirk")
+mae("L01.1", "warm", head=[0, -6], blend=0.4)
+mae("L01.2", "warm", head=[0, 3], blend=0.3)
 shot("L01.2", face(0.5, 85, az=-4, push=0.07), "S01b")                                   # punch in on INCH
-mae("L02", "smile")
+mae("L02", "warm")
+mae("L02.1", "warm", head=[0, 7], blend=0.4)
 shot("L02", face(0.66, 85, az=6, push=0.07), "S02a")
 cue("L02.2", "h1", v=5.0)
-shot("L02.2", mv([0.43, MY - 0.40, T + 0.03], [0.455, MY, T + 0.075], 40, [0.44, MY - 0.36, T + 0.03], [0.455, MY, T + 0.075], 40), "S02b")     # scale shot 1: she and the mug
+shot("L02.2", SIDE(0.47, 40), "S02b")     # scale shot 1: she and the whole striped mug side by side
 
 # ===== 02 the rule at work (L03 to L06)
 cue("L03", "bike", on=1.0)
@@ -146,18 +154,19 @@ for i in range(6):
     acting["neighbor"].append({"at": f"L03+{0.15 + i * 0.2:.2f}", "side": [86, 164 if i % 2 == 0 else 138], "blend": 0.12})
 nz = 1.45
 shot("L03", mv([G.NEIGH[0] - 0.1, 0.6, 1.4], [G.NEIGH[0], G.NEIGH[1], nz], 38, [G.NEIGH[0] - 0.05, 0.9, 1.4], [G.NEIGH[0], G.NEIGH[1], nz], 38), "S03")
-mae("L03.2", "smile", head=[0, 4])
+mae("L03.2", "warm", head=[0, 4])
 cue("L03.2", "bike", on=0.0)
 shot("L03.2", face(0.66, 85, az=-5, push=0.06), "S03b")
 hide("neighbor", "L03.2")
 # L04: me across the table, cards fanned flat in front of me
 me_on("L04", "neutral")
-shot("L04", mv([0.5, -1.7, 1.55], [0.02, 0.9, 1.15], 40, [0.4, -1.5, 1.52], [0.02, 0.9, 1.15], 40), "S04")
+shot("L04", mv([0.5, -1.7, 1.62], [0.02, 0.9, 1.33], 38, [0.4, -1.5, 1.6], [0.02, 0.9, 1.33], 38), "S04")
 me_off("L04.1")
-mae("L04.1", "smile")
+mae("L04.1", "warm")
 shot("L04.1", face(0.64, 85, az=4, push=0.07), "S04m")
 shot("L04.2", near((0.0, 0.52, T + 0.02), 0.5, 40, az=-14, el=24, push=0.1), "S04b")      # my fanned cards, close
-mae("L04.3", "smile")
+mae("L04.3", "warm")
+mae("L04.4", "warm", head=[0, 7], blend=0.4)
 shot("L04.3", face(0.66, 85, az=-3, push=0.07), "S04n")
 # L05: the score pad, then my face
 shot("L05", near((G.PAD[0], G.PAD[1] + 0.02, T + 0.02), 0.55, 40, az=0, el=52, push=0.08), "S05a")
@@ -165,7 +174,8 @@ me_on("L05.2", "sad-smile")
 shot("L05.2", mv([0.5, -1.7, 1.75], [HX, HY, 1.42], 42, [0.4, -1.55, 1.72], [HX, HY, 1.42], 42), "S05b")
 # L06: the calendar glyph, three arrows landing
 me_off("L06")
-mae("L06", "smirk")
+mae("L06", "warm")
+mae("L06.1", "warm", head=[0, 8], blend=0.4)
 shot("L06", face(0.62, 85, az=-5, push=0.07), "S06a")
 cue("L06.2", "arrows", n=1.0)
 cue("L06.2+0.35", "arrows", n=2.0)
@@ -173,53 +183,55 @@ cue("L06.2+0.7", "arrows", n=3.0)
 shot("L06.2", mv([G.CAL[0] + 0.02, 0.4, 1.27], [G.CAL[0], 2.55, 1.27], 35, [G.CAL[0] + 0.02, 0.6, 1.27], [G.CAL[0], 2.55, 1.27], 35), "S06b")
 
 # ===== 03 the scare (L07 to L09)
-mae("L07", "smirk", head=[0, 0])
-shot("L07", mv([0.30, MY - 0.50, T + 0.20], [0.38, MY - 0.05, T + 0.06], 36, [0.32, MY - 0.46, T + 0.19], [0.38, MY - 0.05, T + 0.06], 36), "S07")                 # her cards at her feet
+mae("L07", "warm", head=[0, 0])
+REV_T = (0.285, MY - 0.10, T + 0.07)
+shot("L07", near(REV_T, 0.47, 43, az=0, el=18, push=0.04), "S07")                 # her cards at her feet, the mug beside her
 cue("L07+0.2", "nudge", k=1.0, dur=0.6)
-mae("L07.3", "smirk", head=[0, 0])
+mae("L07.3", "warm", head=[0, 0])
 shot("L07.3", face(0.5, 85, az=-3, push=0.1), "S07b")                                      # looks up into the lens
-mae("L08", "smile")
+mae("L08", "warm")
 acting["mae"].append({"from": "L08.1", "to": "L08>", "mouth": [0.35, 0.35], "flap": True})
 shot("L08", face(0.42, 85, az=3, push=0.08, f=0.92), "S08")                                         # her face half the frame
 cue("L09", "shrink", k=1.0, dur=0.8)
 cue("L09.1", "h1", v=4.0)
-mae("L09", "smile")
-shot("L09", mv([0.44, MY - 0.40, T + 0.03], [0.465, MY, T + 0.062], 46, [0.45, MY - 0.36, T + 0.03], [0.465, MY, T + 0.062], 46), "S09")      # scale shot 2
+mae("L09", "warm")
+shot("L09", SIDE(0.47, 45, x=0.286), "S09")      # scale shot 2
 
 # ===== 04 the reveal (L10 to L13)
 me_on("L10", "wide")
 shot("L10", mv([0.4, -1.7, 1.75], [HX, HY, 1.42], 42, [0.35, -1.5, 1.72], [HX, HY, 1.42], 42), "S10")
-me_off("L10.1")
-mae("L10.1", "smirk")
-shot("L10.1", face(0.6, 85, az=3, push=0.07), "S10b")
+acting["me"].append({"at": "L10.1", "pos": [HX, HY, 0.0], "expr": "wide", "arms": [62, 62], "head": [0, -4], "blend": 0.4})
 me_off("L11")
-mae("L11", "smile")
-shot("L11", mv([0.33, MY - 0.62, T + 0.24], [0.385, MY - 0.02, T + 0.052], 52, [0.34, MY - 0.58, T + 0.23], [0.385, MY - 0.02, T + 0.052], 52), "S11")
-mae("L12", "smirk", yaw=0)
+mae("L11", "warm")
+mae("L11+0.35", "warm", head=[0, 9], blend=0.35)         # a small tilt of the head as the fan is shown
+mae("L11+0.8", "warm", head=[0, -3], blend=0.35)
+shot("L11", near(REV_T, 0.47, 45, az=0, el=18, push=0.03), "S11")
+mae("L12", "warm", yaw=0)
+mae("L12.1", "warm", head=[0, -8], blend=0.4)
 shot("L12", face(0.6, 85, az=5, push=0.07, f=0.8), "S12")
-mae("L13", "smile")
+mae("L13", "warm")
 shot("L13", face(0.46, 85, az=-4, push=0.08, f=0.8), "S13")
-mae("L13.1", "smile", head=[0, 18], blend=0.5)          # a little bow of the head
-mae("L13.2", "smile", head=[0, 2], blend=0.4)
+mae("L13.1", "warm", head=[0, 18], blend=0.5)          # a little bow of the head
+mae("L13.2", "warm", head=[0, 2], blend=0.4)
 
 # ===== 05 the turn (L14 to L18)
 cue("L14", "mine", on=0.0)
 cue("L14", "win", on=1.0)
 me_on("L14", "smile")
-shot("L14", mv([0.45, -1.65, 1.55], [0.02, 0.9, 1.15], 40, [0.35, -1.5, 1.52], [0.02, 0.9, 1.15], 40), "S14")
+shot("L14", mv([0.45, -1.65, 1.62], [0.02, 0.9, 1.33], 38, [0.35, -1.5, 1.6], [0.02, 0.9, 1.33], 38), "S14")
 me_off("L15")
-acting["mae"].append({"at": "L14>", "pos": [0.26, -0.46, T], "yaw": 0, "hidden": True, "blend": 0.0})                                       # she steps out of the cut, then stands near-left for the slap
-acting["mae"].append({"at": "L15", "pos": [0.26, -0.46, T], "yaw": 0, "hidden": False, "expr": "wide", "arms": [0, 0], "head": [0, 0]})
-cue("L15", "winpos", dx=0.46, dy=-0.62)
+SX, SY = 0.46, -0.27      # where she stands for the slap: near the table's lower-right corner
+acting["mae"].append({"at": "L14>", "pos": [SX, SY, T], "yaw": 0, "hidden": True, "blend": 0.0})                                       # she steps out of the cut, then stands near the corner for the slap
+acting["mae"].append({"at": "L15", "pos": [SX, SY, T], "yaw": 0, "hidden": False, "expr": "wide", "arms": [0, 0], "head": [0, 0]})
+cue("L15", "winpos", dx=0.40, dy=-0.74)
 cue("L15", "maecards", on=0.0)
-cue("L15", "capmove", dx=-0.10, dy=-0.06)
-cue("L15+0.05", "slap", u=0.0)
-cue("L15+0.12", "slap", u=1.0, dur=0.22)
-shot("L15", mv([0.14, -0.82, T + 0.10], [0.46, -0.08, T + 0.05], 40, [0.15, -0.78, T + 0.10], [0.46, -0.08, T + 0.05], 40), "S15")
-acting["mae"].append({"at": "L15>", "pos": [0.26, -0.46, T], "yaw": 0, "hidden": True})
+cue("L15", "slap", u=0.0)
+cue("L15+0.05", "slap", u=1.0, dur=0.4)
+S15_T = (0.435, -0.36, T + 0.058)
+shot("L15", near(S15_T, 0.40, 40, az=0, el=20, push=0.03), "S15")
+acting["mae"].append({"at": "L15>", "pos": [SX, SY, T], "yaw": 0, "hidden": True})
 cue("L15>", "winpos", dx=0.0, dy=0.0)
 cue("L15>", "maecards", on=1.0)
-cue("L15>", "capmove", dx=0.0, dy=0.0)
 me_on("L16", "sad-smile")
 shot("L16", mv([0.45, -1.65, 1.75], [HX, HY, 1.4], 42, [0.35, -1.5, 1.72], [HX, HY, 1.4], 42), "S16")
 acting["me"].append({"from": "L16.3", "to": "L16>", "mouth": [0.4, 0.4], "flap": True})
@@ -229,8 +241,9 @@ acting["me"].append({"at": "L17", "pos": [HX, HY, 0.0], "expr": "worried", "arms
 acting["me"].append({"at": "L17.2", "pos": [HX, HY - 0.0, -0.05], "blend": 0.5})     # an inch lower in frame
 shot("L17", mv([0.4, -1.6, 1.74], [HX, HY, 1.4], 42, [0.33, -1.45, 1.7], [HX, HY, 1.4], 42), "S17")
 me_off("L18")
-acting["mae"].append({"at": "L18", "pos": MAEP, "expr": "smirk", "head": [0, 0], "hidden": False})
+acting["mae"].append({"at": "L18", "pos": MAEP, "expr": "warm", "head": [0, 0], "hidden": False})
 shot("L18", face(0.40, 85, az=-6, push=0.05, f=0.74), "S18")
+acting["mae"].append({"at": "L18.1", "pos": MAEP, "expr": "warm", "head": [0, 7], "blend": 0.4})
 
 # ---------------------------------------------------------------------------------------------- finish
 shots, names = [], {}
@@ -244,10 +257,12 @@ for i, (at, camera, step, hand, nm) in enumerate(SH):
 sfx = [
     {"at": "L01.2", "kind": "knock", "db": -12, "pattern": [0.0], "tone": "soft"},        # the soft wooden tock on INCH
     {"at": "L04.1", "kind": "click", "db": -22},
+    {"at": "L09.1", "kind": "ding", "db": -18, "dur": 0.7, "pitch": 1900, "fall": 0.7, "lp": 3600},    # the soft slide down an inch
     {"at": "L08.1", "kind": "sting", "db": -14},                                            # the "dun dun" on SORRY
-    {"at": "L15.1", "kind": "thud", "db": -16, "dur": 0.4},                                 # cards slapping on the cloth
+    {"at": "L15+0.42", "kind": "thud", "db": -16, "dur": 0.4},                                 # cards slapping on the cloth
     {"at": "L16.3", "kind": "sting", "db": -14},
-    {"at": "L18>", "kind": "click", "db": -26},                                             # her tiny sip
+    {"at": "L17.2", "kind": "ding", "db": -18, "dur": 0.7, "pitch": 1900, "fall": 0.7, "lp": 3600},   # the same slide, my inch
+    {"at": "L18>", "kind": "ding", "db": -14, "dur": 0.3, "pitch": 1300, "fall": 0.6, "lp": 3200},     # her tiny sip, audible, a short pitch fall
 ]
 sfx = [s for s in sfx if s["at"] != "L04.1"]
 music = {
@@ -263,7 +278,7 @@ sound = {
     "sfx": sfx,
     "rev": REV,
 }
-polish = {"emph": ["L01.2", "L02.2", "L06.2", "L07.4", "L08.1", "L09.1", "L10.1", "L11.1", "L14.1", "L16.3", "L17.2", "L18.2"],
+polish = {"emph": ["L01.2", "L06.2", "L08.1", "L11.1", "L16.3", "L18.2"],
           "reveal": ["L11"], "camera": False, "idle_scale": 0.25, "hold": ["S11"],
           "key_hits": "all", "whoosh_cuts": False}
 story = {
@@ -300,7 +315,7 @@ story = {
     "sound": sound,
     "set_moves": ["S15", "S06b"],
 }
-story["framing_ok"] = ["S18"]   # the tool places Mae at full height; after the shrink her head sits lower, clear of the tag (checked in the still)
+story["framing_ok"] = ["S18", "S10"]   # the tool places Mae at full height; after the shrink her head sits lower, clear of the tag (checked in the still)
 story["frames_ok"] = ["S17", "S07"]   # the second meter line (my height) appears with this shot, on purpose
 story["asr_forgive"] = ["sun", "looked", "mae"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
