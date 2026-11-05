@@ -178,8 +178,8 @@ S("L05.3", C((XL, 3.6, 0.7), 5.0, 0, 3, 28, d2=4.4), note="a line of geese waddl
 scene("L06", me=dict(pos=(0.9, 2.0), yaw=0, expr="smile"), grandpa=dict(pos=(2.3, 2.0), yaw=0, expr="smile"))
 S("L06", C((1.7, 2.3, 1.3), 2.8, 0, 4, 30, d2=2.4), note="Grandpa and me at the pump beside the teal truck; the pump's holster with two gold strokes at the edge")
 S("L06.2", C((1.7, 2.1, 1.2), 2.6, -8, 5, 30, d2=2.2), note="a low look at the pump and the holster tally")
-scene("L06.4", me=dict(pos=(0.9, 2.0), yaw=0, expr="smile"), grandpa=dict(pos=(2.3, 2.0), yaw=0, expr="smile", arms=[0, 0]))
-S("L06.4", C(head(2.3, 2.0, 1.45), 2.4, -12, 4, 32, d2=2.0), note="Grandpa filling up his truck")
+scene("L06.3", me=dict(pos=(0.9, 2.0), yaw=0, expr="smile"), grandpa=dict(pos=(2.3, 2.0), yaw=0, expr="smile", arms=[0, 0]))
+S("L06.3", C(head(2.3, 2.0, 1.45), 2.4, -12, 4, 32, d2=2.0), note="Grandpa filling up his truck")
 scene("L07", grandpa=dict(pos=(2.3, 2.0), yaw=0, expr="warm", arms=ARMS_L))
 cue("L07", "cookie2", on=True, pos=palm(2.3, 2.0, 0), rot=TILT, s=1.6)
 cue("L07", "slip_ck", on=False)
@@ -357,7 +357,7 @@ story = {
     "acting": acting,
     "cues": cues,
     "set_moves": [],
-    "clip_ok": ["must", "mustc"],
+    "clip_ok": [],
     "music": {"root": 55, "mode": "major", "bpm": 116, "seed": 121,
               "sections": [
                   {"at": 0, "voices": ["pluck_hi", "pulse", "bubble"], "energy": 0.6},

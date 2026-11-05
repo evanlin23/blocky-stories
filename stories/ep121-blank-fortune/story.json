@@ -1,6 +1,6 @@
 {
  "slug": "ep121-blank-fortune",
- "title": "My Fortune Cookie Was BLANK 🥠",
+ "title": "My Fortune Cookie Was BLANK \ud83e\udd60",
  "made_for_kids": false,
  "premise": "At the gas station on our highway every fortune cookie comes true by Friday, word for word. A man finds forty dollars in his tire, geese follow a woman for a week. Every Wednesday my grandpa Ike and I fill up his truck and read our fortunes out loud. Last Wednesday mine was blank, and the clerk had only seen one blank before.",
  "twist": "A blank is the one fortune you get to write, and it comes true for whoever you hand it to. The other blank was Grandpa's, fifty years ago: he wrote it for Grandma, 'You will never eat dinner alone', and he has never missed one. I write mine for him, 'You will never fill up your truck alone', and now I fill his tank every week.",
@@ -302,16 +302,12 @@
      "my grandpa ike"
     ],
     [
-     "and I",
-     "and i"
+     "and I fill",
+     "and i fill"
     ],
     [
-     "fill up",
-     "fill up"
-    ],
-    [
-     "his TRUCK.",
-     "his truck."
+     "up his TRUCK.",
+     "up his truck."
     ]
    ]
   },
@@ -328,12 +324,12 @@
      "fortune out loud,"
     ],
     [
-     "like it's",
-     "like it's"
+     "like it's a",
+     "like it's a"
     ],
     [
-     "a PROMISE.",
-     "a promise."
+     "PROMISE.",
+     "promise."
     ]
    ]
   },
@@ -456,12 +452,12 @@
      "the clerk"
     ],
     [
-     "gave me",
-     "gave me"
+     "gave me a",
+     "gave me a"
     ],
     [
-     "a free SODA.",
-     "a free soda."
+     "free SODA.",
+     "free soda."
     ],
     [
      "Just in CASE.",
@@ -835,16 +831,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And I",
-     "and i"
+     "And I wrote",
+     "and i wrote"
     ],
     [
-     "wrote mine",
-     "wrote mine"
-    ],
-    [
-     "for HIM.",
-     "for him."
+     "mine for HIM.",
+     "mine for him."
     ]
    ]
   },
@@ -1512,7 +1504,7 @@
    ],
    "step": 2,
    "hand": 0.006,
-   "at": "L06.4",
+   "at": "L06.3",
    "note": "Grandpa filling up his truck"
   },
   {
@@ -3723,14 +3715,14 @@
     "blink": true
    },
    {
-    "at": "L06.4",
+    "at": "L06.3",
     "pos": [
      0.9,
      2.0
     ]
    },
    {
-    "at": "L06.4",
+    "at": "L06.3",
     "pos": [
      0.9,
      2.0
@@ -4448,14 +4440,14 @@
     "blink": true
    },
    {
-    "at": "L06.4",
+    "at": "L06.3",
     "pos": [
      2.3,
      2.0
     ]
    },
    {
-    "at": "L06.4",
+    "at": "L06.3",
     "pos": [
      2.3,
      2.0
@@ -6631,10 +6623,7 @@
   }
  ],
  "set_moves": [],
- "clip_ok": [
-  "must",
-  "mustc"
- ],
+ "clip_ok": [],
  "music": {
   "root": 55,
   "mode": "major",
@@ -6771,5 +6760,5 @@
    }
   ]
  },
- "rev": 1
+ "rev": 3
 }

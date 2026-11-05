@@ -566,15 +566,15 @@ def build_gkitchen(kit, ctx):
     ctx["flakes"] = flakes
     # the table: a yellow block with a skirt (people sit behind it), two chairs, the lamp above
     B(None, (1.6, 0.95, 0.68), (ox, 1.9, 0.34), P(KY, 0.45), "tabl", 0.02)
-    B(None, (1.7, 1.05, 0.06), (ox, 1.9, 0.71), P("#ffe9a0", 0.4), "tabt", 0.02)
+    B(None, (1.7, 1.05, 0.06), (ox, 1.9, 0.71), P("#e3c06a", 0.5, 0.15), "tabt", 0.02)
     for sx in (-1, 1):
         B(None, (0.12, 0.7, 0.08), (ox + sx * 0.35, 1.9, 0.76), P("#ffb94d", 0.5), "runner", 0.0)
     B(None, (0.7, 0.08, 0.9), (ox, 3.45, 0.55), P("#b87a45", 0.5), "chairb", 0.03)
     B(None, (0.7, 0.7, 0.08), (ox, 3.1, 0.34), P("#b87a45", 0.5), "chairs", 0.03)
     B(None, (0.7, 0.08, 0.9), (ox, 0.6, 0.55), P("#b87a45", 0.5), "chairb2", 0.03)
     CY(None, 0.02, 0.9, (ox, 1.9, 2.45), P("#2a2a2a", 0.5), "cord")
-    CY(None, 0.34, 0.2, (ox, 1.9, 1.95), kit.emit("#ffe3a0", 2.4, name="cshade"), "cshade", r2=0.12)
-    kit.light("kit-lamp", "POINT", (ox, 1.9, 1.7), 150, "#ffe3b0", size=0.4, shadow=False)
+    CY(None, 0.34, 0.2, (ox, 1.9, 1.95), kit.emit("#ffe3a0", 1.3, name="cshade"), "cshade", r2=0.12)
+    kit.light("kit-lamp", "POINT", (ox, 1.9, 1.7), 60, "#ffe3b0", size=0.4, shadow=False)
     # the living room: Grandma's green armchair and the floor lamp
     B(None, (1.0, 0.95, 0.5), (ox + 0.2, 4.85, 0.25), P("#4f8f5a", 0.6), "armch", 0.06)
     B(None, (1.0, 0.22, 0.95), (ox + 0.2, 5.27, 0.7), P("#4f8f5a", 0.6), "armb", 0.06)
@@ -711,6 +711,11 @@ def animate(kit, story, tl, t, ctx):
     if not ctx["extras"]:
         late_extras(kit, ctx)
     sc = bpy.context.scene
+    gp = rig.CHARS.get("grandpa")
+    if gp is not None:
+        for ob in gp.head.children_recursive:
+            if ob.name.startswith("must"):
+                ob.hide_render = gp.root.hide_render
     L, cur = look_at(ctx, tl, t)
     sd = ctx["shots"][cur["id"]]
     ctx["bg"].inputs["Strength"].default_value = L["bg"]
