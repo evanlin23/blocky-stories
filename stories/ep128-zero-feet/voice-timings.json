@@ -1,0 +1,1077 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Zero feet. That's how close my nearest family is.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.19,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.707,
+     1.138
+    ],
+    [
+     1.138,
+     1.5
+    ],
+    [
+     1.5,
+     2.241
+    ]
+   ]
+  },
+  "L02": {
+   "text": "And I live alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.155,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     1.069
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Here, every phone shows how far across you are from your nearest family.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.086,
+   "onset": 0.172,
+   "end": 2.914,
+   "chunks": [
+    [
+     0.172,
+     0.905
+    ],
+    [
+     0.905,
+     1.233
+    ],
+    [
+     1.233,
+     1.69
+    ],
+    [
+     1.69,
+     1.974
+    ],
+    [
+     1.974,
+     2.914
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Grandpa's says three feet. Grandma's in his armchair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.172
+    ],
+    [
+     1.25,
+     1.733
+    ],
+    [
+     1.733,
+     2.517
+    ]
+   ]
+  },
+  "L05": {
+   "text": "The trucker at the diner: nine hundred miles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.931
+    ],
+    [
+     1.008,
+     2.069
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Mine said ten feet my whole life. Mom, down the hall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.19,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.5,
+     0.819
+    ],
+    [
+     0.819,
+     1.448
+    ],
+    [
+     1.526,
+     1.759
+    ],
+    [
+     1.784,
+     2.5
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Then last month, I moved out. Four hundred miles away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.19
+    ],
+    [
+     1.267,
+     1.655
+    ],
+    [
+     1.655,
+     2.414
+    ]
+   ]
+  },
+  "L08": {
+   "text": "My first apartment. One room.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.957,
+     1.638
+    ]
+   ]
+  },
+  "L09": {
+   "text": "And my phone said zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.293
+    ]
+   ]
+  },
+  "L10": {
+   "text": "I shook it. Still zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     1.241
+    ]
+   ]
+  },
+  "L11": {
+   "text": "In the mornings, my fridge was full. I hadn't shopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     0.888
+    ],
+    [
+     0.888,
+     1.328
+    ],
+    [
+     1.397,
+     2.155
+    ]
+   ]
+  },
+  "L12": {
+   "text": "My laundry was folded. I don't fold.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.983
+    ],
+    [
+     1.034,
+     1.776
+    ]
+   ]
+  },
+  "L13": {
+   "text": "And at night, there were footsteps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.526,
+     1.328
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Right over my head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.19,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.5,
+     1.086
+    ]
+   ]
+  },
+  "L15": {
+   "text": "When I walked to the kitchen, they walked to the kitchen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.017
+    ],
+    [
+     1.086,
+     1.397
+    ],
+    [
+     1.397,
+     2.086
+    ]
+   ]
+  },
+  "L16": {
+   "text": "When I stopped, they stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.155,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.595,
+     1.207
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Step for step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L18": {
+   "text": "The apartment upstairs was empty when I moved in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.914
+    ],
+    [
+     0.914,
+     1.285
+    ],
+    [
+     1.285,
+     1.466
+    ],
+    [
+     1.466,
+     2.155
+    ]
+   ]
+  },
+  "L19": {
+   "text": "I've never seen who lives there now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.716
+    ],
+    [
+     0.716,
+     1.0
+    ],
+    [
+     1.0,
+     1.586
+    ]
+   ]
+  },
+  "L20": {
+   "text": "On Friday night, I stood still in the middle of my room.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.155,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.155,
+     0.879
+    ],
+    [
+     0.931,
+     1.422
+    ],
+    [
+     1.422,
+     1.681
+    ],
+    [
+     1.681,
+     2.379
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Above me, the footsteps stood still too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.492,
+     0.905
+    ],
+    [
+     0.905,
+     1.741
+    ]
+   ]
+  },
+  "L22": {
+   "text": "I took one step left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.276
+    ]
+   ]
+  },
+  "L23": {
+   "text": "So did they.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.069,
+   "onset": 0.19,
+   "end": 0.81,
+   "chunks": [
+    [
+     0.19,
+     0.81
+    ]
+   ]
+  },
+  "L24": {
+   "text": "I ran for the stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.207
+    ]
+   ]
+  },
+  "L25": {
+   "text": "The door upstairs was standing open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.716
+    ],
+    [
+     0.716,
+     1.586
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Somebody was frozen mid-step, right over the spot where I'd stood.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.19,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.19,
+     0.879
+    ],
+    [
+     0.879,
+     1.362
+    ],
+    [
+     1.457,
+     1.767
+    ],
+    [
+     1.767,
+     2.06
+    ],
+    [
+     2.06,
+     2.81
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Looking straight at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.103
+    ]
+   ]
+  },
+  "L28": {
+   "text": "It was my mom.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.155,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     1.052
+    ]
+   ]
+  },
+  "L29": {
+   "text": "She moved in upstairs the week I left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.19,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     0.94
+    ],
+    [
+     0.94,
+     1.129
+    ],
+    [
+     1.129,
+     1.724
+    ]
+   ]
+  },
+  "L30": {
+   "text": "She'd been filling my fridge. Of course she had.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.19,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.19,
+     0.595
+    ],
+    [
+     0.595,
+     1.052
+    ],
+    [
+     1.121,
+     1.397
+    ],
+    [
+     1.397,
+     1.966
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Every step I took this month, she took it too, right over my head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.793
+    ],
+    [
+     0.793,
+     1.207
+    ],
+    [
+     1.276,
+     1.492
+    ],
+    [
+     1.492,
+     1.828
+    ],
+    [
+     1.906,
+     2.224
+    ],
+    [
+     2.224,
+     2.81
+    ]
+   ]
+  },
+  "L32": {
+   "text": "So she'd always be right on top of me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.784
+    ],
+    [
+     0.784,
+     1.285
+    ],
+    [
+     1.285,
+     1.724
+    ]
+   ]
+  },
+  "L33": {
+   "text": "And my phone could never tell us apart.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.0
+    ],
+    [
+     1.0,
+     1.259
+    ],
+    [
+     1.259,
+     1.81
+    ]
+   ]
+  },
+  "L34": {
+   "text": "When I was little, I couldn't sleep till I heard her walk the hall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.155,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.707
+    ],
+    [
+     0.732,
+     1.224
+    ],
+    [
+     1.224,
+     1.414
+    ],
+    [
+     1.414,
+     1.672
+    ],
+    [
+     1.672,
+     2.431
+    ]
+   ]
+  },
+  "L35": {
+   "text": "I guess she couldn't either.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     1.224
+    ]
+   ]
+  },
+  "L36": {
+   "text": "She said she'd only stay till I settled in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.966
+    ],
+    [
+     0.966,
+     1.164
+    ],
+    [
+     1.164,
+     1.879
+    ]
+   ]
+  },
+  "L37": {
+   "text": "She said that three weeks ago.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.397
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Now I eat dinner upstairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.698
+    ],
+    [
+     0.698,
+     1.362
+    ]
+   ]
+  },
+  "L39": {
+   "text": "She still does my laundry.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.345
+    ]
+   ]
+  },
+  "L40": {
+   "text": "I've stopped arguing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.155
+    ]
+   ]
+  },
+  "L41": {
+   "text": "At night, when I walk to my kitchen,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.509,
+     0.879
+    ],
+    [
+     0.879,
+     1.621
+    ]
+   ]
+  },
+  "L42": {
+   "text": "I wait to hear her walk to hers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.621
+    ],
+    [
+     0.621,
+     1.431
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Her phone says zero too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     1.328
+    ]
+   ]
+  },
+  "L44": {
+   "text": "And I'm glad mine still says",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.483
+    ]
+   ]
+  }
+ }
+}
