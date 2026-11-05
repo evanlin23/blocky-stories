@@ -1,0 +1,557 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Never wave at my grandpa's scarecrow. It waves back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.19,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.19,
+     0.526
+    ],
+    [
+     0.526,
+     1.069
+    ],
+    [
+     1.069,
+     1.586
+    ],
+    [
+     1.672,
+     2.5
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Mine did. Tuesday, at dusk.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.19,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.578,
+     0.914
+    ],
+    [
+     0.94,
+     1.483
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Every field on our road is black with crows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.0
+    ],
+    [
+     1.0,
+     1.448
+    ],
+    [
+     1.448,
+     2.052
+    ]
+   ]
+  },
+  "L04": {
+   "text": "The neighbor's scarecrow has a crow living in its hat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.931
+    ],
+    [
+     0.931,
+     1.379
+    ],
+    [
+     1.379,
+     1.612
+    ],
+    [
+     1.612,
+     2.172
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Grandpa's patch? Zero crows. Since June.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.776,
+     1.241
+    ],
+    [
+     1.276,
+     1.948
+    ]
+   ]
+  },
+  "L06": {
+   "text": "That's when Grandpa went quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.793
+    ],
+    [
+     0.793,
+     1.448
+    ]
+   ]
+  },
+  "L07": {
+   "text": "He used to wave at everybody. Even the mail truck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
+     0.578
+    ],
+    [
+     0.578,
+     1.103
+    ],
+    [
+     1.199,
+     1.698
+    ],
+    [
+     1.698,
+     2.19
+    ]
+   ]
+  },
+  "L08": {
+   "text": "He won't say a word at dinner.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.768
+    ],
+    [
+     0.768,
+     1.31
+    ]
+   ]
+  },
+  "L09": {
+   "text": "There is straw poking out of his sleeve.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     0.854
+    ],
+    [
+     0.854,
+     1.569
+    ]
+   ]
+  },
+  "L10": {
+   "text": "And every night, Grandma takes the crossword out for the crows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.155,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.724,
+     1.267
+    ],
+    [
+     1.267,
+     1.759
+    ],
+    [
+     1.759,
+     2.5
+    ]
+   ]
+  },
+  "L11": {
+   "text": "So that night, I followed her with a flashlight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.061
+    ],
+    [
+     1.061,
+     1.879
+    ]
+   ]
+  },
+  "L12": {
+   "text": "The scarecrow had on Grandpa's reading glasses.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.155,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.293
+    ],
+    [
+     1.293,
+     2.138
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Then it whispered, Turn that off. If I blink, they'll know.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.586,
+     1.121
+    ],
+    [
+     1.19,
+     1.603
+    ],
+    [
+     1.629,
+     2.224
+    ]
+   ]
+  },
+  "L14": {
+   "text": "That's Grandpa. On that post since June.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.879,
+     1.328
+    ],
+    [
+     1.328,
+     2.0
+    ]
+   ]
+  },
+  "L15": {
+   "text": "The one thing every crow in the county is scared of is him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.026
+    ],
+    [
+     1.026,
+     1.397
+    ],
+    [
+     1.397,
+     1.81
+    ],
+    [
+     1.81,
+     2.379
+    ]
+   ]
+  },
+  "L16": {
+   "text": "The one at dinner is the scarecrow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.647
+    ],
+    [
+     0.647,
+     1.483
+    ]
+   ]
+  },
+  "L17": {
+   "text": "And Grandma has known the whole time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     0.922
+    ],
+    [
+     0.922,
+     1.724
+    ]
+   ]
+  },
+  "L18": {
+   "text": "He's got a lawn chair hidden in the corn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.914
+    ],
+    [
+     0.914,
+     1.112
+    ],
+    [
+     1.112,
+     1.707
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Grandma says it's the best company she's had in years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.052
+    ],
+    [
+     1.052,
+     1.621
+    ],
+    [
+     1.621,
+     2.276
+    ]
+   ]
+  },
+  "L20": {
+   "text": "It never hogs the remote.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.155,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.759,
+     1.379
+    ]
+   ]
+  },
+  "L21": {
+   "text": "And Grandpa still waves at everybody.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.103
+    ],
+    [
+     1.103,
+     1.81
+    ]
+   ]
+  }
+ }
+}
