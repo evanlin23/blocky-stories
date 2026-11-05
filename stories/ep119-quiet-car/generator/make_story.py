@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -346,7 +346,7 @@ for at_, n_, d_ in (("L22", 1522, 1.0), ("L25", 1534, 0.8), ("L28", 1546, 0.8), 
 # S19: the car in the tunnel
 shot("L19", P2([0.0, 15.2, 1.75], [-0.5, 10.3, 1.4], [0.0, 14.4, 1.75], [-0.5, 10.3, 1.45], 26), "tunnel")
 # S20: out of the tunnel, Teddy's seat empty
-env("L20", tunnel=0.0)
+env("L20-0.35", tunnel=0.0)
 cue("L20", "look", id="day")
 only("L20", ["me"])
 cue("L20", "cup", v=1.0)
@@ -418,7 +418,7 @@ beat("me", "L34.3+0.5", expr="smile")
 beat("me", "L35", expr="worried")
 shot("L35", K(MEH, 78, 2.3, 55, 2, 0.05, up=0.13), "face9")
 beat("me", "L36", expr="scared")
-shot("L36", K(MEH, 78, 2.0, 58, 2, 0.05, up=0.13), "face10")
+shot("L36", K(MEH, 78, 2.15, 56, 2, -0.04, up=0.13), "face10")
 # S37: Teddy's empty seat, the smiley in the fog
 cue("L37", "smiley", p=6.0)
 shot("L37", P2([-0.3, TEY - 1.0, 1.6], [HALF_, TEY + 0.05, 1.5], [-0.3, TEY - 0.7, 1.58], [HALF_, TEY + 0.05, 1.5], 24), "emptyseat2")
@@ -529,7 +529,7 @@ beat("me", "L61.1", expr="wide", head=[0, -6])
 shot("L61.1", AIS(3.0, 40, 0.1), "face18")
 # S62: the windows clear one by one
 cue("L62", "clear", q=0.0)
-cue("L62+0.1", "clear", q=1.0, dur=1.8)
+cue("L62+0.1", "clear", q=1.0, dur=3.4)
 shot("L62", P2([0.0, ry(2.2), 1.7], [-HALF_, ry(6), 1.4], [0.0, ry(5), 1.7], [HALF_, ry(7), 1.4], 28), "clearing")
 # S63: my face, laughing
 beat("me", "L63", expr="laugh")
@@ -634,6 +634,12 @@ cue(0, "env", tunnel=0.0, plat=0.0)
 for k_ in acting.values():
     remap_all(k_)
 remap_all(cues)
+# cues and keys landing exactly on a cut can miss the cut's first drawing: apply them a frame early (frames.py pops)
+EARLY = {remap(x) for x in ("L09", "L48", "L48.1", "L71")}
+for k_ in list(acting.values()) + [cues]:
+    for it in k_:
+        if it.get("at") in EARLY and it["at"] == it.get("at"):
+            it["at"] = f"{it['at']}-0.2"
 cues.sort(key=lambda c: (0 if c["at"] == 0 else 1))
 shots, names = [], {}
 for i, (at, camera, step, follow, nm) in enumerate(SH):
@@ -714,7 +720,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": [names["exterior"], names["bussmile"], names["emptyseat2"], names["swell"]],
+    "framing_ok": [names["exterior"], names["bussmile"], names["emptyseat2"], names["swell"], names["loudcar"]],
     "clip_ok": [],
     "asr_forgive": ["nineteen eighty seven", "walk the", "walked a", "1987"],
 }
