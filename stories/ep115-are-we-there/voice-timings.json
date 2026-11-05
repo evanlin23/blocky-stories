@@ -1,0 +1,937 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "If anyone asks are we there yet, the whole drive starts over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.155,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.759,
+     0.931
+    ],
+    [
+     0.931,
+     1.345
+    ],
+    [
+     1.414,
+     1.931
+    ],
+    [
+     1.931,
+     2.69
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Back to mile one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.103
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Right now, we're on lap thirty-seven. Nobody asked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.828
+    ],
+    [
+     0.828,
+     1.328
+    ],
+    [
+     1.406,
+     2.207
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Truckers here keep their lips pressed shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.017
+    ],
+    [
+     1.017,
+     1.707
+    ]
+   ]
+  },
+  "L05": {
+   "text": "A pizza guy asked it once. The pizza showed up a week late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.345
+    ],
+    [
+     1.431,
+     1.767
+    ],
+    [
+     1.767,
+     2.026
+    ],
+    [
+     2.026,
+     2.741
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Road trips here are very quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.483
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Every winter, Mom drives my big sister Jo and me up to a little rented cabin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.741,
+   "onset": 0.172,
+   "end": 3.552,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.784,
+     1.31
+    ],
+    [
+     1.31,
+     1.837
+    ],
+    [
+     1.837,
+     2.259
+    ],
+    [
+     2.259,
+     2.534
+    ],
+    [
+     2.534,
+     3.552
+    ]
+   ]
+  },
+  "L08": {
+   "text": "We're both grown. We live in two different cities now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.81
+    ],
+    [
+     0.879,
+     1.094
+    ],
+    [
+     1.094,
+     1.345
+    ],
+    [
+     1.345,
+     2.276
+    ]
+   ]
+  },
+  "L09": {
+   "text": "It's two hours. Mile one to the cabin door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.819,
+     1.19
+    ],
+    [
+     1.19,
+     1.31
+    ],
+    [
+     1.31,
+     2.069
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Mom packed snacks like we were driving to the moon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.87
+    ],
+    [
+     0.87,
+     1.043
+    ],
+    [
+     1.043,
+     1.397
+    ],
+    [
+     1.397,
+     2.017
+    ]
+   ]
+  },
+  "L11": {
+   "text": "A big snowy pine, a snowplow that honks, and a frozen waterfall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.897
+    ],
+    [
+     0.948,
+     1.371
+    ],
+    [
+     1.371,
+     1.69
+    ],
+    [
+     1.715,
+     1.837
+    ],
+    [
+     1.837,
+     2.828
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Then mile one. again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.819,
+     1.362
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Jo looks at me. I look at Jo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.19,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.5,
+     0.69
+    ],
+    [
+     0.741,
+     0.957
+    ],
+    [
+     0.957,
+     1.5
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Neither of us said a word.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.19,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.569,
+     1.293
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Mom just smiles and says it's the mountain.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.061
+    ],
+    [
+     1.061,
+     1.81
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Same pine. Same honk.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.19,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.19,
+     0.586
+    ],
+    [
+     0.621,
+     1.293
+    ]
+   ]
+  },
+  "L17": {
+   "text": "And Mom slows down at that waterfall every single lap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.905
+    ],
+    [
+     0.905,
+     1.526
+    ],
+    [
+     1.526,
+     2.5
+    ]
+   ]
+  },
+  "L18": {
+   "text": "The gas gauge never moves.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     1.431
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Jo's phone has said four all day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.983
+    ],
+    [
+     0.983,
+     1.569
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Lap forty, the snow starts blowing sideways.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.103
+    ],
+    [
+     1.103,
+     2.069
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Same plow guy. Same little wave.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.19,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ],
+    [
+     0.819,
+     1.638
+    ]
+   ]
+  },
+  "L22": {
+   "text": "And the snacks never run out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.431
+    ]
+   ]
+  },
+  "L23": {
+   "text": "So this lap, I watch Mom.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     1.397
+    ]
+   ]
+  },
+  "L24": {
+   "text": "At the waterfall, she slows down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.724,
+     1.638
+    ]
+   ]
+  },
+  "L25": {
+   "text": "And her lips move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.155,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.017
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Are we there yet? Under her breath.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.707
+    ],
+    [
+     0.759,
+     1.517
+    ]
+   ]
+  },
+  "L27": {
+   "text": "It was her. Every lap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.569,
+     1.241
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Mom says this car is the only place she gets us both at once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.922
+    ],
+    [
+     0.922,
+     1.448
+    ],
+    [
+     1.448,
+     1.698
+    ],
+    [
+     1.698,
+     2.017
+    ],
+    [
+     2.017,
+     2.621
+    ]
+   ]
+  },
+  "L29": {
+   "text": "The trunk has snacks for fifty laps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.776
+    ],
+    [
+     0.776,
+     1.603
+    ]
+   ]
+  },
+  "L30": {
+   "text": "She planned it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.19,
+   "end": 0.914,
+   "chunks": [
+    [
+     0.19,
+     0.914
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Jo laughs so hard she snorts.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.828
+    ],
+    [
+     0.828,
+     1.5
+    ]
+   ]
+  },
+  "L32": {
+   "text": "So we make Mom a deal. One drive a month. All three of us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.647
+    ],
+    [
+     0.647,
+     1.052
+    ],
+    [
+     1.138,
+     1.474
+    ],
+    [
+     1.474,
+     1.724
+    ],
+    [
+     1.759,
+     2.078
+    ],
+    [
+     2.078,
+     2.552
+    ]
+   ]
+  },
+  "L33": {
+   "text": "She smiles the whole next lap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.828
+    ],
+    [
+     0.828,
+     1.483
+    ]
+   ]
+  },
+  "L34": {
+   "text": "And at the waterfall, she doesn't say a thing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.776
+    ],
+    [
+     0.81,
+     1.233
+    ],
+    [
+     1.233,
+     1.776
+    ]
+   ]
+  },
+  "L35": {
+   "text": "The cabin comes up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.138
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Jo looks at me. I look at Jo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.19,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.5,
+     0.69
+    ],
+    [
+     0.741,
+     0.957
+    ],
+    [
+     0.957,
+     1.5
+    ]
+   ]
+  },
+  "L37": {
+   "text": "And we ask it. together.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.672
+    ],
+    [
+     0.724,
+     1.293
+    ]
+   ]
+  }
+ }
+}
