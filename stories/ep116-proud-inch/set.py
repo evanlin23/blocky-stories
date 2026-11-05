@@ -32,11 +32,11 @@ def kit_col(h):
 
 
 LOOKS = {
-    "day": dict(sun=3.0, sun_col="#fff0d8", fill=1.1, fill_col="#fff2e2", front=0.8, front_col="#fff0e0", pts=1.0,
+    "day": dict(sun=3.0, sun_col="#fff0d8", fill=0.6, fill_col="#fff2e2", front=0.45, front_col="#fff0e0", pts=0.6,
                 sky="#9fd8ff", sky_str=1.0, win="#e6f6ff", win_str=3.0),
     # the dark dawn: no overheads, blue light through the window, a blue front light so every face still reads
-    "dark": dict(sun=0.0, sun_col="#8fa6e8", fill=0.5, fill_col="#7f9bf0", front=0.8, front_col="#9db4ff", pts=0.0,
-                 sky="#4a6cc0", sky_str=0.7, win="#5b82da", win_str=2.6),
+    "dark": dict(sun=0.0, sun_col="#8fa6e8", fill=0.9, fill_col="#7f9bf0", front=0.9, front_col="#9db4ff", pts=0.0,
+                 sky="#4a6cc0", sky_str=0.9, win="#5b82da", win_str=2.6),
 }
 
 
@@ -203,8 +203,8 @@ def hide(ob, h):
 def build(kit, story, tl):
     tl["cues"].sort(key=lambda c: c["t"])
     P = kit.plastic
-    cream = P("#f7e2b0", 0.85, spec=0.05)
-    cream2 = P("#fff1d2", 0.8, spec=0.05)
+    cream = P("#9fd6ee", 0.85, spec=0.05)
+    cream2 = P("#fff4dc", 0.8, spec=0.05)
     honey = P("#d9a35a", 0.5, spec=0.25)
     honey2 = P("#e8b66a", 0.45, spec=0.3)
     wood = P("#b9803f", 0.6, spec=0.15)
@@ -225,6 +225,7 @@ def build(kit, story, tl):
     for nm, loc, e in [("pL1", (0.0, 1.0, 3.0), 380.0), ("pL2", (3.0, 0.4, 2.9), 300.0), ("pL3", (-4.0, 2.2, 3.0), 380.0),
                        ("pL4", (-3.0, -3.0, 2.8), 300.0), ("pL5", (2.4, 3.2, 3.0), 240.0), ("pL6", (1.0, -3.5, 2.6), 260.0)]:
         kit.light(nm, "POINT", loc, e, "#ffe8c4", size=0.5, shadow=False)
+    kit.light("dk", "POINT", (-3.6, -1.2, 2.3), 320.0, "#a9c0ff", size=0.5, shadow=False)
     kit.light("stock", "POINT", (2.75, 6.8, 2.4), 150.0, "#fff0d0", size=0.4, shadow=False)
 
     # ---- the shop shell
@@ -301,8 +302,8 @@ def build(kit, story, tl):
     W["hat_shelf"] = Vector((hx, hy, 2.75))
 
     # ---- the counter
-    kit.box("counter", (6.5, 1.0, 1.0), (-1.75, 0.0, 0.5), honey)
-    kit.box("counter.top", (6.7, 1.12, 0.08), (-1.75, 0.0, 1.04), honey2, bevel=0.02)
+    kit.box("counter", (6.2, 1.0, 1.0), (-1.9, 0.0, 0.5), honey)
+    kit.box("counter.top", (6.4, 1.12, 0.08), (-1.9, 0.0, 1.04), honey2, bevel=0.02)
     for i in range(6):
         kit.box(f"counter.panel{i}", (0.95, 0.03, 0.7), (-4.55 + i * 1.07, -0.515, 0.5), P("#c18742", 0.55, spec=0.2))
     # key machine with a brass vise jaw (lore: two pencil-yellow strokes on the jaw)
@@ -323,15 +324,15 @@ def build(kit, story, tl):
         for kseg, ob in sg.items():
             ob.hide_render = kseg not in DIGITS[dv]
     # things on the counter near the end: a bike wheel, a lamp, a hinge
-    cx = 1.15
+    cx = 0.75
     tire = kit.cyl("wheel.tire", 0.33, 0.07, (cx, 0.25, 1.38), P("#2d3036", 0.8), rot=(math.pi / 2, 0, 0), n=20)
     kit.cyl("wheel.rim", 0.25, 0.08, (cx, 0.25, 1.38), P("#c8ced8", 0.3, spec=0.6), rot=(math.pi / 2, 0, 0), n=20)
     kit.cyl("wheel.hub", 0.05, 0.1, (cx, 0.25, 1.38), brass, rot=(math.pi / 2, 0, 0), n=10)
-    lx = 0.35
+    lx = 1.0
     kit.cyl("lamp.base", 0.13, 0.04, (lx, 0.2, 1.1), P("#e8493a", 0.5), n=14)
     kit.cyl("lamp.stem", 0.025, 0.4, (lx, 0.2, 1.3), brass, n=8)
     kit.cyl("lamp.shade", 0.18, 0.22, (lx, 0.2, 1.58), kit.emit("#ffe49a", 1.4, "lampshade"), n=14, r2=0.1)
-    hg = kit.empty("hinge.obj", (0.95, -0.2, 1.1))
+    hg = kit.empty("hinge.obj", (0.95, -0.35, 1.09))
     W["hinge"] = hg
     kit.box("hinge.l1", (0.16, 0.1, 0.012), (-0.08, 0, 0.006), brass, hg)
     kit.box("hinge.l2", (0.16, 0.1, 0.012), (0.08, 0.02, 0.006), brass, hg, rot=(0, 0, 0.5))
@@ -413,10 +414,11 @@ def build(kit, story, tl):
     for i in range(12):
         px = gx - 5.5 + i * 1.0
         for j, py in enumerate((gy - 0.2, gy + 1.3)):
-            kit.cyl(f"tom{i}{j}.st", 0.03, 0.7, (px, py, 0.35), P("#4f8f3a", 0.8), n=6)
-            kit.box(f"tom{i}{j}.lf", (0.4, 0.3, 0.16), (px, py, 0.62), P("#4cae44", 0.8), bevel=0.04)
-            if (i + j) % 2 == 0:
-                kit.sphere(f"tom{i}{j}.fr", 0.09, (px + 0.1, py - 0.12, 0.52), P("#e8493a", 0.4, spec=0.4), seg=10)
+            kit.cyl(f"tom{i}{j}.st", 0.025, 0.5, (px, py, 0.25), P("#4f8f3a", 0.8), n=6)
+            kit.sphere(f"tom{i}{j}.lf", 0.3, (px, py, 0.5), P("#3fae44", 0.8), seg=8).scale = (1.0, 0.9, 0.8)
+            kit.box(f"tom{i}{j}.cage", (0.04, 0.04, 0.9), (px - 0.28, py, 0.45), P("#e8e8f0", 0.5))
+            for q in range(2):
+                kit.sphere(f"tom{i}{j}.fr{q}", 0.08, (px + (0.14 if q else -0.12), py - 0.2, 0.42 + 0.1 * q), P("#e8352a", 0.4, spec=0.4), seg=8)
     # a wedding floor: checker tiles, bunting, a flower arch
     wx, wy = G.WEDDING
     kit.plane("wed.ground", (40, 40), (wx, wy, -0.02), P("#cfe8b0", 0.95, spec=0.02))
@@ -500,8 +502,7 @@ def _first_frame(kit, story):
     import blocky.rig as rig
     gh = bpy.data.objects.get("grandpa.headg")
     if gh is not None:
-        wm = kit.plastic("#f2f2f2", 0.8)
-        kit.box("grandpa.stache", (0.62, 0.09, 0.15), (0, -0.62 - 0.02, -0.22), wm, gh, bevel=0.03)
+        pass
     # Grandpa's trouser legs: shortened, three strips of different cloth sewn on, his shins showing above the boots
     gspec = story["cast"].get("grandpa", {})
     skin = kit.plastic(gspec.get("skin", "#e2b088"), 0.5)
@@ -547,11 +548,11 @@ def _first_frame(kit, story):
         kit.box(f"{h.name}.t1", (0.08, 0.07, 0.16), (0.65, 0, 0.0), m, h)
         kit.box(f"{h.name}.t2", (0.08, 0.07, 0.16), (0.5, 0, 0.0), m, h)
 
-    W["tomato"] = held("mail", "tomato", tomato, (-0.6, -1.9, 3.75))
+    W["tomato"] = held("mail", "tomato", tomato, (1.5, -1.35, 4.26))
     if W["tomato"] is not None:
         W["tomato"].scale = (1.0, 1.0, 1.0)
-    W["faucet"] = held("bloom", "faucet", faucet, (0.0, -1.9, 3.75))
-    W["key"] = held("me", "key", key, (-0.2, -1.8, 3.8))
+    W["faucet"] = held("bloom", "faucet", faucet, (1.5, -1.35, 4.26))
+    W["key"] = held("me", "key", key, (1.3, -1.35, 4.26))
     W["inited"] = True
 
 
@@ -571,6 +572,7 @@ def animate(kit, story, tl, t, ctx):
     gains["sun"], gains["fill"], gains["front"] = look["sun"], look["fill"], look["front"]
     for nm in ("pL1", "pL2", "pL3", "pL4", "pL5", "pL6"):
         gains[nm] = look["pts"]
+    gains["dk"] = 1.0 - min(1.0, look["pts"] / 0.6)
     gains["stock"] = max(look["pts"], 0.25)
     gains["cafel"] = gains["wedl"] = gains["gardl"] = 1.0
     w = bpy.context.scene.world
