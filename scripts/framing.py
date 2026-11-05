@@ -111,7 +111,7 @@ FEMALE = {"mom", "mum", "mother", "ma", "grandma", "gran", "granny", "nana", "na
           "girl", "woman", "lady", "mrs", "ms", "miss", "wife", "daughter", "queen", "niece", "grandmother", "madam"}
 MALE = {"dad", "father", "pa", "grandpa", "gramps", "grandad", "granddad", "uncle", "brother", "bro", "boy", "man",
         "guy", "mr", "husband", "son", "king", "nephew", "grandfather", "sir"}
-SELF = re.compile(r"\b(i|me|my|mine|myself|i'm|i’m|i've|i’ve|i'd|i’d|i'll|i’ll)\b", re.I)
+SELF = re.compile(r"\b(i|me|my|mine|myself|we|us|our|ours|i'm|i’m|i've|i’ve|i'd|i’d|i'll|i’ll)\b", re.I)
 STOP = {"the", "and", "you", "your", "for", "with", "that", "this", "but", "not", "are", "was", "his", "her", "him",
         "she", "they", "them", "our", "out", "off", "all", "one", "two", "who", "what", "when", "then", "there",
         "here", "have", "has", "had", "its", "from", "into", "onto", "over", "under", "just", "still", "every",
@@ -170,7 +170,7 @@ def sex_of(group, cast: dict) -> str | None:
 
 
 def self_lines(st: dict, tl: dict) -> dict[str, frozenset]:
-    """Line id -> the narrator's own character, for a voiced line that says I, me or my and isn't its own: there
+    """Line id -> the narrator's own character, for a voiced line that says I, me, my, we or us and isn't its own: there
     the narrator is the subject when on screen, so the facing test applies (ep109 S52: me in profile on my own
     "I finally said sorry"). Never "missing" or "small": I is in nearly every line."""
     mes = frozenset(k for k, v in st.get("cast", {}).items()
@@ -543,11 +543,13 @@ def lint(st: dict, tl: dict, story_dir: Path | None = None, use_set: bool = True
         for name in cast:
             hit = [e for e, v in ((cut_edge(x[3][name]), x[3][name]) for x in samples) if e and (
                 e == "top" or e.startswith("crop:") or name in subj or v["width"] >= BIG * (1 - BAND))]
+            wide = max((x[3][name]["width"] for x in samples if x[3][name] is not None), default=0.0)
+            why = "subject" if name in subj else f"main face {wide:.2f}"
             crops = [e for e in hit if e.startswith("crop:")]
             if (hit and len(hit) >= SHARE * len(samples)) or len(crops) >= CROP_SHARE * len(samples):
                 e = max(set(crops if len(crops) >= CROP_SHARE * len(samples) else hit), key=hit.count)
                 what = f"a crop of the head fills the frame ({e[5:]} edge)" if e.startswith("crop:") else \
-                    f"head cut by the {e} edge"
+                    f"head cut by the {e} edge ({'anyone' if e == 'top' else why})"
                 rows.append(row(sid, shot["start"], shot["end"], where, "cut", name, what))
 
         for name in cast:   # a face under the rule tag, anyone's, once a shot

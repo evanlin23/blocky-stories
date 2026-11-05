@@ -141,8 +141,10 @@ def lint(frames: dict[int, np.ndarray], tl: dict, ok: set | None = None) -> list
             usual = float(np.median(rest)) if rest else 0.0
             big = float(first.max())
             if big >= POP_MIN and big >= POP_K * max(usual, 0.01):
+                cue = [c["name"] for c in tl.get("cues", []) if fs[0] / fps - 1e-6 <= c.get("t", -1) < fs[1] / fps]
+                note = f"; cue {', '.join(cue)} lands here: if it's meant, list the shot in frames_ok" if cue else ""
                 rows.append(row(sid, fs[0] / fps, fs[1] / fps, "pop", f"frame {fs[0] - shot['f0']} to the next drawing: "
-                                f"a cell changes {big:.2f} (the shot's usual {usual:.2f}): something pops in"))
+                                f"a cell changes {big:.2f} (the shot's usual {usual:.2f}): something pops in{note}"))
     rows.sort(key=lambda r: (r["t0"], r["check"]))
     return rows
 
