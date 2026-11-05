@@ -37,12 +37,23 @@ def _keys_with(keys, attr):
     return [k for k in keys if attr in k]
 
 
+def _first(ks):
+    """The key that holds from the start until the second key time: the LAST of the keys stacked at the first key
+    time. A story often stacks keys at 0 (a generator's "hide everyone", then the shot's own place), and taking
+    the first of them posed frame 0 from the wrong key while frame 1 had the right one (ep116: Grandpa missing on
+    frame 0 of S01, a pop on every loop wrap)."""
+    i = 0
+    while i + 1 < len(ks) and ks[i + 1]["t"] <= ks[0]["t"] + 1e-9:
+        i += 1
+    return ks[i]
+
+
 def _held(keys, attr, t, default):
     ks = _keys_with(keys, attr)
     if not ks:
         return default
     if t <= ks[0]["t"]:
-        return ks[0][attr]
+        return _first(ks)[attr]
     for a, b in zip(ks, ks[1:]):
         if t < b["t"]:
             bl = b.get("blend", BLEND)
@@ -118,7 +129,7 @@ def position(keys, t, ease=False):
     if not ks:
         return (0.0, 0.0, 0.0, None)
     if t <= ks[0]["t"]:
-        return (*_pos3(ks[0]["pos"]), None)
+        return (*_pos3(_first(ks)["pos"]), None)
     for i, (a, b) in enumerate(zip(ks, ks[1:])):
         if t < b["t"]:
             u = _frac(ks, i, t, ease)
