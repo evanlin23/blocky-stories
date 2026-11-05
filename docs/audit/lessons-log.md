@@ -208,6 +208,37 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Before fixing a flash fail, find its source frame by frame (`python -m blocky flash` with per-frame luma) and
     name the shot and the light that changes.
 
+36. **The local flash check reads lower than the proof, and it cost three retries.** ep97 (twice), ep107 and ep101 each
+    passed `blocky flash` on their preview (about 4 a second) and then failed the proof (5 to 7 a second, or an
+    extended run over 4 s). The sources were glows, ring stamps and a lit closet: steady-looking lights that flip
+    brightness between frames at full rate.
+    → After the reset, the first infra job: run `blocky flash` on a proof artifact and on the matching preview for the
+    same sha, find why they differ (frame rate, resolution, polish pass, frames held over), and make the local check
+    measure what the proof measures. Until then, a story with a glow or a flipping light needs the proof's numbers
+    at 5 a second or under before reviews spend rounds on it.
+37. **The framing lint still misses heads cut at the frame edge and mouths in the caption band.** ep115 reported 0
+    findings but had five heads cut at the left edge and a mouth inside the caption band; ep112 the same (lesson 34).
+    → Plan step 8's recalibration adds a caption-band check (a mouth inside the bottom 62 to 70 percent of the
+    height) and tests the head box against all four edges on ep112's and ep115's branches.
+
+38. **Review rounds don't converge: each critic round finds new shot problems.** ep120 fixed all 10 r1 must-fixes, and
+    r2 found 3 new ones. ep117 fixed 7, and r2 found 2 new ones. ep115, ep112 and ep103 show the same pattern. With
+    about 100 shots a story, a reviewer samples different shots each round, and two rounds plus one rescue can't
+    close the gap. Batch 12 so far: 0 merged, 5 dropped.
+    → Proposal for the owner and #1 (it touches critic.md and the round rules): round 1 walks EVERY shot and lists
+    every must-fix it can find. Round 2 checks only those fixes and any regressions. A new, non-severe finding in
+    round 2 becomes a should-fix, not a block. Pair it with the framing lint so mechanical misses never reach a
+    reviewer.
+39. **The same engine defaults keep killing stories** (blocky/, #1's). In the last 24 hours:
+    - the rule tag sits at a fixed 1.0 m from the camera, so it vanishes in close-ups or lands over a face (ep120, ep116, ep111, ep112);
+    - fill lights fade in over 0.3 s after a cut, so the shot opens dark (ep120);
+    - characters pose on frame 1, so frame 0 pops on the loop (ep116);
+    - camera moves can end inside walls, leaving blank frames (ep120, moving-day);
+    - the caption splitter drops spoken words (ep115).
+    → One engine PR per default, for #1 to merge: the tag placed relative to the camera's near plane and clear of
+    faces, cut-aligned light cues with no fade-in at a cut, the pose applied on frame 0, a camera-in-geometry check in
+    preflight, and the caption splitter keeping all words. Each fix removes a whole class of drop.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
