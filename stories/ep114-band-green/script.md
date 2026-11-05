@@ -2,14 +2,13 @@
 
 - **Slug:** `ep114-band-green` (batch 11, upload order 7 of 7)
 - **Pitch:** 13 in the batch 11 pitches file (the orchestrator's list calls it 3, and the slug is the same), blind panel 22.3, a new engine: the dance that won't stop (folk, named only as an engine). Opening shape `must`. Lane: core. Length arm: mid (60 to 90 s).
-- **Title:** Everyone Here Has to DANCE 🎺
+- **Title:** Saturday's Band Makes Everyone DANCE 🎺
 - **Changed from the pitch:** my best friend is Benny (no name clash). The band is never fully shown: five tall players in white jackets whose heads bend under the bandstand roof, hat brims always down, seen in parts and rim-lit from behind. The bandleader tips his brim up an inch once (L25, L26), and under it there's only dark and two small points of light. "Seven months" is now "all summer", so the timeline is one summer of Saturdays. Nobody in town explains anything. The town can't stop until I dance, so my sitting out is what costs them (L33, L34, r1).
 - **Everyone is an adult.** I'm 20, Grandpa about 75, Benny 20, the townspeople adults.
 - **Revised r1 (standards, 2026-11-04):** lines changed: L33 ("Nobody could STOP. / Not until I danced.") and L34 ("Grandpa's knees / were paying / for MY bench."), so the twist is the rule's cost on the town, not the town quietly kind to me. Shots S33, S34, the warmth notes and the caption key (lawn green) changed to match. Not voiced yet, so nothing to re-voice.
 - **Word count:** 360 spoken words in 48 lines (L01 to L48), all `narrator`, plus one 0.6 s music drop before L21.
 - **Estimated length:** about 82.6 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright summer evenings on a green lawn with string lights and a white bandstand, painted shops around the green. The 3 a.m. stretch (L21 to L28) is the one dark scene: the string lights the only light, the bandstand lit from inside so the players are rim-lit silhouettes. Sunrise on the grass at the end is gold.
-- **Hold:** scripts only (batch 11). Not built, not voiced.
 
 ## Variety table
 The batch table is in `stories/ep108-scarecrow-swap/script.md`. This row:
@@ -131,7 +130,7 @@ Times are estimates. Every line gets one to three shots with acting in each, and
 | S24 | L24 | The band from below, rim-lit, horns up, never tiring. |
 | S25 | L25 | The bandleader, low camera at a dancer's chest, his hat against the roof edge, the brim tipping up an inch. |
 | S26 | L26 | Under the brim: darkness and two tiny points of light, toward me. |
-| S27 | L27 | The reveal picture, held 1.6 s with drift: every face on the green turned to my bench, still dancing, the band rim-lit behind, me small on the bench. Cover frame (`cover_s` 46.6). |
+| S27 | L27 | The reveal picture, held 1.6 s with drift: every face on the green turned to my bench, still dancing, the band rim-lit behind, me small on the bench. Cover frame (`cover_s` 47.2). |
 | S28 | L28 | Me, close, `stunned`. |
 | S29 | L29 | The band from behind the crowd. |
 | S30 | L30 | Grandpa's tired feet, still going. |
