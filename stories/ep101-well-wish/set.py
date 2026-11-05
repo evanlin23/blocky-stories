@@ -875,7 +875,7 @@ def animate(kit, story, tl, t, ctx):
         in_car = sample("ride", tl, t, {"v": 0.0})["v"] > 0.5
         dark_hall = cx_ is not None and 425 < cx_ < 450
         if in_car or dark_hall:
-            hp = Vector(wes_o.location) + Vector((0, 0, 1.6 if in_car else 1.5))
+            hp = Vector(wes_o.location) + Vector((0, 0, 1.3 if in_car else 1.5))
             cp = Vector(cam_o.matrix_world.translation)
             if sp_ is not None and sh_ is not None:      # the camera is placed after this runs: use the shot's own path
                 ks = sp_["cam"]
@@ -889,8 +889,8 @@ def animate(kit, story, tl, t, ctx):
                 cp = Vector(a_[1]) * (1 - fr) + Vector(b_[1]) * fr
             dv = cp - hp
             dl = max(0.01, dv.length)
-            dist = min(0.8 if in_car else 1.2, dl * 0.6)
+            dist = min(1.4 if in_car else 1.2, dl * 0.6)
             kit.LIGHTS["wfill"]["obj"].location = hp + dv / dl * dist
-            fillg = 1.0 if in_car else 1.0
+            fillg = 14.0 if in_car else 1.0
     gains["wfill"] = fillg
     return gains

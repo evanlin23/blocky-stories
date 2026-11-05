@@ -1,21 +1,21 @@
-# ep101-well-wish: standards, round 1
+# ep101-well-wish: standards, round 1 (retry build)
 
-Verdict: revise
+Verdict: approve
 
 ## Checks
-1. Fiction: pass. Made-up names (Kemp, Hobb, Wes), glyph-only stop sign and town-line post, numerals only on the meter. No real place, route or claim. The description says "It's made up."
-2. Kids and mature themes: pass. Everyone is adult (22, 27, about 55). "Nineteen" is spoken only and never shown. Nobody hurt, and the car stops softly.
-3. IP: pass. Own faces, flannel, meter. No game name anywhere.
-4. Originality: pass. The well, the leash rule and the wording loophole are new. The second turn ("he knew all along and stayed for me") echoes ep47, ep103 and ep107 (see the queue notes).
-5. Flashing: preflight PASS. Warnings: 3-frame reading 4 flashes/s at 22.1 s (L11, gold ripple glow), 3.43 s busy run from 33.1 s (L18 to L19), under the 4 s bar. Indicative only. See must-fix 1.
-6. Package: pass. Opening `confess` matches L01. Batch: confess 2/7, count 1, ban 1. The next in queue is moving-day (`ban`), so no clash. Title 5 words, one caps word, one emoji, no spoiler. Pin "Comment WELL..." is fine. cover_s 2.6 (Wes, meter on its notch, "one BLOCK away.") is good. Hard rule 8 is clean.
+1. Fiction: pass. Made-up names (Kemp, Hobb, Wes). The stop sign and town-line post carry only glyphs, the meter shows numerals and an "m" box, and the clock has no numbers. The description says "It's made up." I found no real place or route and no sign cropped mid-word.
+2. Kids and mature themes: pass. Everyone on screen is an adult. "Nineteen" is only spoken and never shown. Nobody is hurt, and the car stops softly.
+3. IP: pass. The faces, flannel and meter are ours, and no game name appears anywhere.
+4. Originality: pass. The well, the one-block leash and the wording loophole stand alone. The only overlaps are with ep92-blackout-ben ("my big brother, three years") and ep96-friend-card (a wording loophole). Neither shares a rule, setting or twist, so they only need spacing in the queue.
+5. Flashing: preflight PASS (2289 frames). general_3f peaks at 5 flashes/s at 22.3 s (S29, the gold ripple ring on dark water). The longest extended run is 3.5 s from 33.13 s (L18 to L19), under the 4 s bar. This reading is indicative only. The S29 and S67 ring glows are the stretches to watch on the proof.
+6. Package: pass. The `confess` opening matches L01, and batch 10 has confess at 2 of 7. The queue tail is ep99-statue-years (`cost`), so adding ep101 next causes no clash. The title has 5 words, one caps word and one emoji, with no spoiler. cover_s 2.6 shows Wes, the meter on its notch and "one BLOCK away." There's no `hold`. Hard rule 8 is clean.
 
-## Must-fix
-1. **S92, 70.53 to 71.13 s, L40 "Last Sunday,":** the frame is near-black for the whole 0.6 s (the camera at x 88.3 is inside a wall). The shots on either side are bright, so this is a dark-light-dark drop and a dead picture. Move the camera out of the geometry so it shows the plan's S40a (Wes on the porch steps with a pie box, `grin`), then re-check that still.
-2. **package.json `hold`:** "scripts only, not built yet" is no longer true. Delete it in the commit that gets both reviews' approval.
+## Retry changes judged
+- The warm Wes now reads as warm. S31, S87, S92 and S96 all show open smiles or happy closed eyes, and none looks sinister. S34 shows `angry` on the key-turn, which is a frustrated beat, so that's right.
+- The opening face is in by 0.4 s (S02, me `worried`).
+- The framing_ok marks are honest. S33 (Wes framed through the windshield) and S34 (a deliberate full-face close-up) are fine. S39 and S80 are vehicle-subject shots, the bus and the car at the sign, with no face needed.
 
-## Queue notes
-Keep ep101 at least 2 slots from ep96-friend-card (a wording loophole too) and from ep47 and ep107 (a loved one secretly knew or paid).
-
-## Nice-to-have
-L03 "Not what you MEANT. / What you SAID." comes close to the batch-1 "Not X, Y" cadence. It's acceptable as the rule's definition.
+## Nice-to-have (watch on the proof)
+- S69b, about 52.0 to 52.3 s, L30 "to let go of.": the camera sits inside my hair and hoodie, so the frame is a brown and mustard blur. Pull the camera back before the proof, because qa may fail it.
+- S01, 0.0 to 0.4 s: Mr. Hobb's wristwatch prop pokes into the coin shot.
+- S54, 40.4 to 41.4 s: an empty blue wall under "on the PHONE,".
