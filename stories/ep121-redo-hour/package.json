@@ -1,0 +1,11 @@
+{
+  "title": "Every Hour, One Ten-Second REDO ⏪",
+  "description": "In our town, everyone gets one ten-second redo an hour. You snap back, try again, and nobody else remembers a thing. Proposals here get three tries.\n\nI've used nine thousand of mine, almost all of them at the same corner coffee shop, in front of the same old guy behind the counter. Then he started remembering.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Comment REDO if you'd have used one on \"you too\".",
+  "made_for_kids": false,
+  "cover_s": 19.0,
+  "shape": "everyone-saw",
+  "opening": "count",
+  "lane": "experiment",
+  "hold": "batch 12: scripts only, not built yet"
+}
