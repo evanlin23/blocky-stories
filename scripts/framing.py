@@ -16,14 +16,14 @@ Who a line is about: the character who says it, every cast member the words name
 number, or a spec's "aliases"), and, for a line with he / him / his / she / her and no name, the character named
 in one of the four lines before (a he skips anyone whose key or aliases say grandma, mom, aunt...; a she, grandpa,
 dad, uncle...). The narrator's own character ("me") is the subject of a line that says I, me or my only when it's
-big on screen: then its face has to show (back or side), but it's never "missing" or "small".
+big on screen: then it mustn't be in profile ("side"); its back, a "missing" or a "small" never counts.
 
 The checks, sampled ten times a second over each (shot, line) overlap of 0.3 s or more. Each has to hold for
 half the overlap or more. Calibrated 2026-11-05 against Blender's own head boxes and the reviews that dropped
 ep109, ep112, ep115 and ep116 (docs/audit/lessons-log.md 34 and 37):
   cut      a head 1/12 of the width or bigger, with its hair and hat, 4% or more past an edge while 15% or
            more of it is still in: the top edge for anyone, the other three for the line's subject (the narrator
-           on an I / me / my line too) or any face 0.18 of the width or more; or a head centred outside the frame that still covers 4% of it, or
+           on an I / me / we line too); or a head centred outside the frame that still covers 4% of it, or
            any of it when the head is 60% of the frame wide (a crop of hair at the lens). Once a shot.
   missing  the line is about X, and X's head is never in frame: always for a speaker, and for a character the
            words name when X is in the scene (unhidden, within 10 m of the camera during the line)
@@ -537,19 +537,18 @@ def lint(st: dict, tl: dict, story_dir: Path | None = None, use_set: bool = True
             return False
 
         # cut heads and crops, once a shot: the top edge for anyone; a side or the bottom for the line's subject
-        # (the narrator's own character on an I / me / my line too) or any main face, 0.18 of the width or more
-        # (a passer-by at the edge, or an extra in a crowd, is composition)
+        # (the narrator's own character on an I / me / we line too). A passer-by at the edge, or an extra in a
+        # crowd, is composition: counting every face 0.18 wide or more added 18 rows to ep62's mirror lift, which
+        # passed, and caught one more known miss (ep115 S04)
         subj = {n for l in lids for g in lines_about.get(l, []) + [selves.get(l, frozenset())] for n in g}
         for name in cast:
-            hit = [e for e, v in ((cut_edge(x[3][name]), x[3][name]) for x in samples) if e and (
-                e == "top" or e.startswith("crop:") or name in subj or v["width"] >= BIG * (1 - BAND))]
-            wide = max((x[3][name]["width"] for x in samples if x[3][name] is not None), default=0.0)
-            why = "subject" if name in subj else f"main face {wide:.2f}"
+            hit = [e for e in (cut_edge(x[3][name]) for x in samples) if e and (
+                e == "top" or e.startswith("crop:") or name in subj)]
             crops = [e for e in hit if e.startswith("crop:")]
             if (hit and len(hit) >= SHARE * len(samples)) or len(crops) >= CROP_SHARE * len(samples):
                 e = max(set(crops if len(crops) >= CROP_SHARE * len(samples) else hit), key=hit.count)
                 what = f"a crop of the head fills the frame ({e[5:]} edge)" if e.startswith("crop:") else \
-                    f"head cut by the {e} edge ({'anyone' if e == 'top' else why})"
+                    f"head cut by the {e} edge"
                 rows.append(row(sid, shot["start"], shot["end"], where, "cut", name, what))
 
         for name in cast:   # a face under the rule tag, anyone's, once a shot
@@ -683,9 +682,11 @@ def lint(st: dict, tl: dict, story_dir: Path | None = None, use_set: bool = True
                     continue
                 vs = [x[3][n] for x in shot_samples[sid] if a - 1e-6 <= x[0] < b for n in me if n in x[3]]
                 inside = [v for v in vs if v is not None and in_frame(v) and v["width"] >= BIG * (1 - BAND)]
-                if inside and len(inside) >= SHARE * len(vs) and not any(v["ang"] <= FACE_DEG for v in inside):
-                    ang = min(v["ang"] for v in inside)
-                    rows.append(row(sid, a, b, lid, "back" if ang >= BACK_DEG else "side", "/".join(sorted(me)),
+                ang = min((v["ang"] for v in inside), default=0.0)
+                # a profile only: the narrator's back on their own line is an over-the-shoulder or a walk away
+                # (28 rows on the passed films, none of them a review's note)
+                if inside and len(inside) >= SHARE * len(vs) and FACE_DEG < ang < BACK_DEG:
+                    rows.append(row(sid, a, b, lid, "side", "/".join(sorted(me)),
                                     f"self (I / me / my), face never seen ({ang:.0f} deg or more off it) in its "
                                     f"main shot ({(b - a) / span:.0%} of the line)"))
 
