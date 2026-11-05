@@ -15,7 +15,7 @@
  "tail": 0.75,
  "fade_in": false,
  "fade_out": false,
- "rev": 3,
+ "rev": 4,
  "look": {
   "style": "closer",
   "fog": "#8fa6c8",
@@ -1453,16 +1453,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Now I",
-     "Now I"
+     "I come over",
+     "I come over"
     ],
     [
-     "come over",
-     "come over"
-    ],
-    [
-     "every SUNDAY.",
-     "every sunday."
+     "every SUNDAY now.",
+     "every sunday now."
     ]
    ]
   },
@@ -3881,8 +3877,8 @@
      1,
      [
       597.4,
-      1.1,
-      4.95
+      0.6,
+      5.1
      ],
      [
       599.0,
@@ -6749,7 +6745,7 @@
    "ox": 0.6,
    "oy": -2.2,
    "oz": 2.0,
-   "dur": 0.3
+   "dur": 0.0
   },
   {
    "at": "L50",
@@ -6758,13 +6754,13 @@
    "dur": 0.3
   },
   {
-   "at": "L52-0.05",
+   "at": "L52-0.01",
    "name": "dadfill",
    "v": 1.0,
    "ox": 0.5,
    "oy": -2.0,
    "oz": 1.9,
-   "dur": 0.3
+   "dur": 0.0
   },
   {
    "at": "L53",
@@ -6773,7 +6769,7 @@
    "ox": 0.0,
    "oy": 2.0,
    "oz": 3.0,
-   "dur": 0.3
+   "dur": 0.0
   },
   {
    "at": "L56",
@@ -7166,7 +7162,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 3
+  "rev": 4
  },
  "set_moves": [],
  "clip_ok": [

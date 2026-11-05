@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -423,10 +423,10 @@ put("dad", "L46", [LX + 4.7, LY + 9.0], 10, expr="glum", arms=[30, 0], side=[70,
 shot("L46", mv([LX + 3.4, LY + 4.6, 1.65], [LX + 5.0, LY + 9.0, 1.5], 34, [LX + 3.7, LY + 5.0, 1.65], [LX + 5.0, LY + 9.0, 1.5], 34), "dad_buzzer")
 beat("dad", "L47", expr="glum", arms=[0, 0], side=[0, 0], yaw=-30)
 shot("L47", mv([LX + 3.2, LY + 5.0, 1.65], [LX + 4.7, LY + 9.0, 1.55], 40, [LX + 3.6, LY + 5.4, 1.65], [LX + 4.7, LY + 9.0, 1.55], 40), "dad_turns")
-cue("L46-0.05", "dadfill", v=1.0, ox=0.6, oy=-2.2, oz=2.0, dur=0.3)
+cue("L46-0.05", "dadfill", v=1.0, ox=0.6, oy=-2.2, oz=2.0, dur=0.0)
 cue("L50", "dadfill", v=0.0, dur=0.3)
-cue("L52-0.05", "dadfill", v=1.0, ox=0.5, oy=-2.0, oz=1.9, dur=0.3)
-cue("L53", "dadfill", v=1.0, ox=0.0, oy=2.0, oz=3.0, dur=0.3)
+cue("L52-0.01", "dadfill", v=1.0, ox=0.5, oy=-2.0, oz=1.9, dur=0.0)
+cue("L53", "dadfill", v=1.0, ox=0.0, oy=2.0, oz=3.0, dur=0.0)
 cue("L56", "dadfill", v=0.0, dur=0.3)
 cue("L48", "phone", v=1.0, dur=0.3)
 cue("L49", "phone", v=0.0, dur=0.3)
@@ -443,7 +443,7 @@ shot("L50", mv([NX - 1.4, NY - 6.4, AZ + 1.5], [NX - 2.6, NY + 0.7, AZ + 1.5], 4
 cue("L51", "truck2", x=NX - 1.0, y=NY - 4.5, yaw=0.0, head=1.0, dur=1.4)
 only("L51", [])
 WIN = [NX - 2.6, NY + 0.5, AZ + 2.0]
-shot("L51", mv(WIN, [NX - 1.0, NY - 8.0, 1.0], 30, [NX - 2.6, NY + 1.1, AZ + 1.75], [NX - 1.0, NY - 6.0, 1.2], 34), "pulls_in")
+shot("L51", mv(WIN, [NX - 1.0, NY - 8.0, 1.0], 30, [NX - 2.6, NY + 0.6, AZ + 1.9], [NX - 1.0, NY - 6.0, 1.2], 34), "pulls_in")
 cue("L52", "truck2", head=0.0, dur=0.0)
 put("dad", "L52", [NX - 3.2, NY - 5.2], 0, expr="stunned", head=[0, -6])
 only("L52", ["dad"])

@@ -983,8 +983,12 @@ def animate(kit, story, tl, t, ctx):
     h2 = dist * 12.0 / lens
     w2 = h2 * 9.0 / 16.0
     s = 0.56 * w2
+    td = 0.2
+    th = td * 12.0 / lens
+    tw = th * 9.0 / 16.0
+    s = 0.56 * tw
     W["tag"].scale = (s, s, s)
-    W["tag"].location = (-0.37 * w2, 0.6 * h2, -dist)
+    W["tag"].location = (-0.37 * tw, 0.6 * th, -td)
     bz = sample("bezel", tl, t, {"v": 0.0})
     W["bezel"].scale = (w2, h2, 1.0)
     W["bezel"].location = (0, 0, -0.95)
