@@ -192,6 +192,11 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → An automated check over EVERY shot: face box size, a head cut by the frame, a back-of-head shot on a line about
     that person, and the line's named object in frame. That is plan step 8 (C + N), the most valuable step left.
 
+33. **A rescue fixed the named shot and missed its twin.** ep108's rescue reframed S40 as the critic asked, but S41,
+    the next shot on the same line, kept the same bad framing, so the re-look failed and the story dropped.
+    → A rescue applies the fix to every shot of the same line or beat, not just the one the review names. Put this in
+    docs/briefs/build.md. The framing lint (scripts/framing.py) should catch the twin before the re-look.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".

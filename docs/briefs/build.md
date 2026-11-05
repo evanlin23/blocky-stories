@@ -39,6 +39,7 @@ The builder reads docs/engine.md itself.
      - nothing that reads as the wrong thing at phone size.
 
      The builder fixes what it lists before the preview. This is not a review round, it gives no verdict, and it's done once. Framing and faces at phone size were the most common blockers in batches 7 to 9.
+   - **Framing lint, every shot.** Run `python scripts/framing.py --story stories/__STORY__` (report-only; on main since #284). Have the builder fix every finding: a head cut by the frame, a face under 1/5 of the width on a line about that person, back-of-head, or an empty frame during a line. List a deliberate one in story.json `"framing_ok"`. Run it again before every review round and before the rescue.
    - **Preview.** Render the preview, then finish and mix.
    - **Flash.** Run `python -m blocky flash` at full rate on any shot with bright light changes, and pass with margin (at most about 5 flashes a second, against the cap of 6). A swinging, flickering or switching practical light counts (2026-11-04: ep97 failed its proof at 7 a second from a swinging bulb).
    - **Measure.** Run `python scripts/measure.py --story stories/__STORY__`. The 4 craft blocks must pass:
@@ -51,7 +52,7 @@ The builder reads docs/engine.md itself.
 
 3. **Reviews** (/week step 3). Spawn `critic` and `standards`, each with model "opus".
    - **Rounds:** TWO ROUNDS AT MOST, plus at most ONE single-fix rescue, with no exceptions (RULES, audit decision 3). Round 2 re-runs only the reviewer that said revise.
-   - **The rescue:** only if a review names a single concrete fix. The builder applies just that, and only the reviewer who blocked looks once more.
+   - **The rescue:** only if a review names a single concrete fix. The builder applies just that, and only the reviewer who blocked looks once more. Apply the fix to every shot of the same line or beat, not just the shot the review names (2026-11-04: ep108's rescue fixed S40 and missed S41, its twin).
    - **Must-fixes:** send words, title or package notes to the `writer` agent (model "opus") first. Then send every must-fix to one fresh builder in one call.
    - **Dropping:** if the story isn't approved after that, or a reviewer says kill:
      - commit and push everything;
