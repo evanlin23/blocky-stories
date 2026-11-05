@@ -17,3 +17,9 @@ Read RULES.md "The 2026-11-03 reset" first. length split between 60 to 90 s and 
 Score each reset item. A batch where more than a third end on a sad family reveal, is revise.
 
 **Phone-size pass (2026-11-03 drops):** look at every key still at about 300 px wide. Revise if the picture is murky, the rule marker doesn't read as what it is, a face reads as the wrong person or gender, or a head is cropped.
+
+## Review rounds (owner, 2026-11-05: "yes, do the review change"; RULES.md audit decision 8)
+- **Round 1 is exhaustive.** Walk EVERY shot, not just the key beats. Pull one frame per shot at phone size (about 300 px wide) from the preview: `ffmpeg -ss <shot mid> -i <preview mp4> -frames:v 1 ...`, using the shot list in the timeline. List every must-fix you find in this one pass.
+- **Round 2 and the rescue look only check.** Confirm each must-fix from the last round is fixed, and look for regressions the fixes caused. A NEW finding that wasn't in the last round's list is a **should-fix**: it's listed under "Should-fix (not blocking)" and doesn't stop approval. The one exception is when it's severe.
+- **Severe means any of these:** a hard-rule break; flash or safety; a blank, broken or unreadable frame; or a story beat that no longer reads (the rule, the twist, the payoff, the warm turn).
+- Approve in round 2 when every round-1 must-fix is in, no regression is severe, and the scores clear the bar.

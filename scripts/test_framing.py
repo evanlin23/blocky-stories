@@ -116,3 +116,79 @@ def test_stems_and_tokens():
     assert framing.stem("shelves") == "shelf"
     assert framing.stem("boxes") == "box"
     assert framing.tokens("shelf3.box_lid") == {"shelf", "box", "lid"}
+
+
+# ---------- the 2026-11-05 recalibration (ep109, ep112, ep115, ep116) ----------
+
+def test_slight_cut_at_the_left_edge():
+    # from 4 m the frame is about 1.1 m wide; aimed 0.38 m right of him, his head (and hair) pokes 4%+ past the
+    # left edge: what ep115's critic dropped five times, and the old 25% bar passed
+    st = story([[0, -4.0, HEAD], [0.38, 0, HEAD], 50])
+    rows = run(st)
+    assert any(r["check"] == "cut" and "left" in r["detail"] for r in rows)
+    centred = story([[0, -4.0, HEAD], [0, 0, HEAD], 50])
+    assert not any(r["check"] == "cut" for r in run(centred))
+
+
+def test_caption_over_the_mouth():
+    # the head sits low in the frame, so the caption band (62 to 69% of the height) lands on his mouth
+    st = story([[0, -2.2, HEAD + 0.08], [0, 0, HEAD + 0.08], 50])
+    tl = timeline(st)
+    tl["captions"] = [{"line": "L01", "who": "narrator", "text": "Gus waits at the DOOR.", "start": 0.25,
+                       "end": 2.25, "big": False}]
+    rows, _ = framing.lint(st, tl, None, use_set=False)
+    assert ("caption", "gus") in checks(rows)
+    tl["captions"][0].update(start=5.0, end=6.0)   # no caption up: nothing to cover
+    rows, _ = framing.lint(st, tl, None, use_set=False)
+    assert ("caption", "gus") not in checks(rows)
+
+
+def test_hand_over_the_face():
+    st = story([[0, -2.6, HEAD], [0, 0, HEAD], 50])
+    tl = timeline(st)
+    tl["acting"]["gus"] = [{"at": 0, "t": 0.0, "pos": [0, 0], "yaw": 0, "arms": [0, 160], "side": [0, -35]}]
+    rows, _ = framing.lint(st, tl, None, use_set=False)
+    assert ("hand", "gus") in checks(rows)
+    assert run(st) == []   # arms down: no hand near the face
+
+
+def test_tag_over_an_eye():
+    # 13% of the face under the tag, but over one eye (ep116 S17): covered
+    v = {"x": 0.0, "y": 0.0, "hw": 0.4, "hh": 0.22, "width": 0.4, "ang": 10.0}
+    eye = framing.eye_boxes(v)[0]
+    tag = (eye[0] - 0.05, eye[1] - 0.02, eye[2] + 0.02, 1.0)
+    assert framing.overlap(tag, framing.face_box(v)) < framing.TAG_OVER * framing.area(framing.face_box(v))
+    assert framing.under_tag(v, tag)
+    assert not framing.under_tag(v, (0.5, 0.5, 0.9, 0.9))   # the tag clear of the face
+
+
+def test_the_narrator_in_profile_on_an_i_line():
+    # ep109 S52: me side on, on the narrator's "I finally said sorry": a self line, so the face has to show
+    me = {"me": GUS}
+    side = story([[2.2, 0, HEAD], [0, 0, HEAD], 50], line="I finally said SORRY.", cast=me,
+                 extra={"acting": {"me": [{"at": 0, "pos": [0, 0], "yaw": 0}]}})
+    tl = timeline(side)
+    tl["acting"] = {"me": tl["acting"]["gus"]}
+    tl["talk"] = {"me": []}
+    rows, _ = framing.lint(side, tl, None, use_set=False)
+    assert ("side", "me") in checks(rows)
+    front = story([[0, -2.2, HEAD], [0, 0, HEAD], 50], line="I finally said SORRY.", cast=me)
+    tl = timeline(front)
+    tl["acting"] = {"me": tl["acting"]["gus"]}
+    rows, _ = framing.lint(front, tl, None, use_set=False)
+    assert rows == []
+
+
+def test_back_of_the_only_head_on_a_he():
+    # ep112 S26: "He said nobody ever looks at the guy", over the back of the man it's about, no name to reach him
+    st = story([[0, 2.2, HEAD], [0, 0, HEAD], 50], line="He said NOTHING.")
+    assert ("back", "gus") in checks(run(st))
+
+
+def test_a_he_skips_a_woman():
+    st = {"cast": {"mom": GUS, "dad": GUS}}
+    tl = {"order": ["L1", "L2", "L3"], "lines": {
+        "L1": {"who": "narrator", "text": "Dad came home."},
+        "L2": {"who": "narrator", "text": "Mom came home."},
+        "L3": {"who": "narrator", "text": "He said nothing."}}}
+    assert framing.about(st, tl)["L3"] == [{"dad"}]
