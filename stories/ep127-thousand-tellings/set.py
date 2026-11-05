@@ -34,7 +34,7 @@ def kit_col(h):
 LOOKS = {
     "day": dict(sun=3.4, sun_col="#fff0d8", el=48.0, az=160.0, fill=0.9, fill_col="#fff0e0", sky="#8fd3ff", sky_str=1.0,
                 lamp=0.0, shopday=1.0, night=0.0, moon=0.0),
-    "night": dict(sun=0.9, sun_col="#9fb4ff", el=38.0, az=165.0, fill=0.4, fill_col="#b8c4ff", sky="#1f2f5a", sky_str=0.6,
+    "night": dict(sun=0.9, sun_col="#9fb4ff", el=38.0, az=165.0, fill=0.8, fill_col="#eef0ff", sky="#1f2f5a", sky_str=0.6,
                   lamp=1.0, shopday=0.0, night=1.0, moon=1.0),
 }
 
@@ -104,11 +104,16 @@ class Display:
                     ob = kit.box(f"{name}.s{i}{k}", (sx, thick, sy), (x, 0, y), mat, e)
                 noshadow(ob)
                 segs[k] = ob
-            cm = (0.14, 0.2, thick) if plane == "xy" else (0.14, thick, 0.2)
-            cl = (0.0, -DH / 2 + 0.1, 0) if plane == "xy" else (0.0, 0, -DH / 2 + 0.1)
-            comma = kit.box(f"{name}.s{i}c", cm, cl, mat, e)
-            noshadow(comma)
-            self.slots.append((e, segs, comma))
+            parts = []
+            for k, (cw, ch_, cx_, cy_, ang) in enumerate([(0.17, 0.17, 0.0, -DH / 2 + 0.085, 0.0),
+                                                           (0.09, 0.26, -0.035, -DH / 2 - 0.07, 0.45)]):
+                if plane == "xy":
+                    cb = kit.box(f"{name}.s{i}c{k}", (cw, ch_, thick), (cx_, cy_, 0), mat, e, rot=(0, 0, ang))
+                else:
+                    cb = kit.box(f"{name}.s{i}c{k}", (cw, thick, ch_), (cx_, 0, cy_), mat, e, rot=(0, -ang, 0))
+                noshadow(cb)
+                parts.append(cb)
+            self.slots.append((e, segs, parts))
 
     def show(self, s, scale, cx, avail_w, hmax):
         nd = sum(1 for ch in s if ch.isdigit())
@@ -120,7 +125,8 @@ class Display:
             ch = s[i] if i < len(s) and scale > 0.02 else None
             for k, ob in segs.items():
                 ob.hide_render = not (ch is not None and ch.isdigit() and k in SEG[ch])
-            comma.hide_render = ch != ","
+            for cb in comma:
+                cb.hide_render = ch != ","
             if ch is None:
                 continue
             pitch = (0.66 if ch.isdigit() else 0.3) * H
@@ -254,8 +260,8 @@ def build_shop(kit, P):
     # fishing rods: leaning in the corner until L66, then by the door (cue "rods")
     rods = kit.empty("rods", (-5.6, 1.4, 0))
     for i in range(2):
-        kit.cyl(f"rod{i}", 0.014, 2.3, (0.12 * i, 0.05 * i, 1.15), plastic("#5a3b24", 0.5), rods, n=8)
-        kit.cyl(f"reel{i}", 0.05, 0.05, (0.12 * i, -0.04, 1.0), plastic("#c0c4cc", 0.3, spec=0.6), rods,
+        kit.cyl(f"rod{i}", 0.035, 2.3, (0.14 * i, 0.05 * i, 1.15), plastic("#a8703a", 0.5), rods, n=8)
+        kit.cyl(f"reel{i}", 0.07, 0.07, (0.14 * i, -0.06, 1.0), plastic("#e8503a", 0.4, spec=0.4), rods,
                 rot=(math.pi / 2, 0, 0), n=12)
     W["rods"] = rods
     # the screen door (a leaf hinged on its right jamb), the hook and its eye
@@ -268,13 +274,16 @@ def build_shop(kit, P):
     kit.box("sdoor.mid", (1.04, 0.05, 0.12), (-0.52, 0, 0.85), leafm, hinge)
     kit.box("sdoor.kick", (1.04, 0.05, 0.4), (-0.52, 0, 0.2), leafm, hinge)
     W["door"] = hinge
-    hx, hz = G.DOOR_X - 0.8, 1.6
-    kit.box("hook.block", (0.07, 0.06, 0.07), (hx - 0.03, -5.79, hz), iron)
-    kit.box("eye.stud", (0.03, 0.17, 0.03), (G.DOOR_X - 0.5, -5.885, hz - 0.02), iron)
-    kit.cyl("eye.ring", 0.04, 0.02, (G.DOOR_X - 0.5, -5.8, hz - 0.02), iron, rot=(math.pi / 2, 0, 0), n=14)
-    hk = kit.empty("hook", (hx, -5.79, hz))
-    kit.box("hook.bar", (0.3, 0.025, 0.025), (0.15, 0, 0), iron, hk)
-    kit.box("hook.tip", (0.025, 0.025, 0.07), (0.3, 0, -0.03), iron, hk)
+    hx, hz = G.DOOR_X - 1.0, 1.6
+    brass_ = plastic("#c9a24a", 0.4, spec=0.6)
+    kit.box("hook.plate", (0.16, 0.02, 0.16), (hx - 0.02, -5.735, hz), brass_)
+    kit.box("hook.block", (0.1, 0.05, 0.1), (hx, -5.71, hz), iron)
+    kit.box("eye.plate", (0.14, 0.02, 0.14), (hx + 0.34, -5.735, hz - 0.02), brass_)
+    kit.box("eye.stud", (0.04, 0.05, 0.04), (hx + 0.34, -5.71, hz - 0.02), iron)
+    kit.cyl("eye.ring", 0.05, 0.03, (hx + 0.34, -5.69, hz - 0.02), iron, rot=(math.pi / 2, 0, 0), n=14)
+    hk = kit.empty("hook", (hx, -5.685, hz))
+    kit.box("hook.bar", (0.36, 0.035, 0.04), (0.18, 0, 0), iron, hk)
+    kit.box("hook.tip", (0.04, 0.035, 0.09), (0.34, 0, -0.04), iron, hk)
     W["hook"] = hk
     # the tackle box that props the door open
     W["tbox"] = kit.box("tbox", (0.45, 0.28, 0.24), (G.DOOR_X - 0.1, -7.1, 0.12), plastic("#ff8a3a", 0.5, spec=0.2), bevel=0.03)
@@ -289,12 +298,12 @@ def build_shop(kit, P):
     for k, x in enumerate([-14, -9, 12, 17]):
         tree(kit, f"stree{k}", x, -9 + (k % 2) * 3, 0, 6.5)
     # lights
-    kit.light("lamp", "POINT", (lx - 0.05, ly + 0.02, 0.86), 150.0, "#ffb347", size=0.15)
+    kit.light("lamp", "POINT", (lx - 0.05, ly + 0.02, 0.86), 70.0, "#ffd09a", size=0.15)
     kit.light("shopday", "POINT", (0.0, -2.0, 3.0), 380.0, "#fff0d8", size=0.8, shadow=False)
-    kit.light("shopnight", "POINT", (-0.4, -2.2, 2.6), 90.0, "#ffd9a0", size=0.8, shadow=False)
-    kit.light("doornight", "POINT", (G.DOOR_X, -4.6, 2.0), 70.0, "#ffd9a0", size=0.8, shadow=False)
-    kit.light("outnight", "POINT", (G.DOOR_X, -9.6, 3.2), 60.0, "#cfd8ff", size=1.0, shadow=False)
-    kit.light("cntnight", "POINT", (3.8, -1.2, 2.4), 90.0, "#ffd9a0", size=0.8, shadow=False)
+    kit.light("shopnight", "POINT", (-0.4, -2.2, 2.6), 150.0, "#fff4e6", size=0.8, shadow=False)
+    kit.light("doornight", "POINT", (G.DOOR_X, -4.6, 2.0), 220.0, "#fff4e6", size=0.8, shadow=False)
+    kit.light("outnight", "POINT", (G.DOOR_X, -9.6, 3.2), 170.0, "#f4f6ff", size=1.0, shadow=False)
+    kit.light("cntnight", "POINT", (3.8, -1.2, 2.4), 110.0, "#fff4e6", size=0.8, shadow=False)
 
 
 def tree(kit, name, x, y, z, h=6.0, tint="#cfe8c0"):
@@ -387,8 +396,8 @@ def build_stages(kit):
     kit.box("k.door.l", (0.1, 0.34, 2.2), (kx - 2.0, ky + 3.15, 1.1), trimw)
     kit.box("k.door.r", (0.1, 0.34, 2.2), (kx - 0.8, ky + 3.15, 1.1), trimw)
     kit.box("k.hook", (0.5, 0.05, 0.05), (kx - 3.0, ky + 6.0 - 0.2, 1.7), plastic("#3a3d44", 0.5))
-    kit.box("k.cab", (6.0, 0.7, 0.9), (kx + 3.0, ky + 2.6, 0.45), plastic("#6fc3b5", 0.5, spec=0.2))
-    kit.box("k.cabtop", (6.2, 0.8, 0.06), (kx + 3.0, ky + 2.6, 0.93), plastic("#f6ecd8", 0.5, spec=0.2))
+    kit.box("k.cab", (6.5, 0.7, 0.9), (kx + 2.75, ky + 2.6, 0.45), plastic("#6fc3b5", 0.5, spec=0.2))
+    kit.box("k.cabtop", (6.7, 0.8, 0.06), (kx + 2.75, ky + 2.6, 0.93), plastic("#f6ecd8", 0.5, spec=0.2))
     kit.box("k.upper", (6.0, 0.4, 0.9), (kx + 3.0, ky + 2.85, 2.3), plastic("#6fc3b5", 0.5, spec=0.2))
     px, py = kx + 1.6, ky + 2.55
     kit.box("phone", (0.078, 0.158, 0.012), (px, py, 0.966), plastic("#1c1c20", 0.4, spec=0.4), bevel=0.006)
@@ -398,10 +407,10 @@ def build_stages(kit):
     kit.box("phone.h2", (0.008, 0.03, 0.004), (px - 0.01, py, 0.9805), plastic("#ffffff", 0.4))
     # the keys on the counter by the door
     kk = plastic("#c0c4cc", 0.3, spec=0.6)
-    kit.cyl("keys.ring", 0.035, 0.012, (kx + 0.0, ky + 2.5, 0.965), kk, n=14)
-    for i in range(2):
-        kit.box(f"keys.k{i}", (0.03, 0.09, 0.008), (kx + 0.04 * i - 0.02, ky + 2.42, 0.965), plastic("#e3b04b", 0.3, spec=0.6),
-                rot=(0, 0, 0.3 * (i - 0.5)))
+    kit.cyl("keys.ring", 0.07, 0.02, (kx - 0.12, ky + 2.4, 0.975), kk, n=16)
+    for i in range(3):
+        kit.box(f"keys.k{i}", (0.06, 0.2, 0.02), (kx - 0.12 + 0.08 * (i - 1), ky + 2.23, 0.975), plastic("#f0c040", 0.3, spec=0.6),
+                rot=(0, 0, 0.35 * (i - 1)))
     kit.light("kitlight", "POINT", (kx - 0.5, ky - 1.5, 2.8), 260.0, "#fff0d8", size=0.8, shadow=False)
     # --- the porch (S03, S04)
     ox, oy = G.PORCH
@@ -500,11 +509,33 @@ def build_tag(kit):
 def _first_frame(kit, story):
     gh = bpy.data.objects.get("grandpa.headg")
     if gh is not None:
-        beard = kit.plastic("#f2f2ea", 0.9, spec=0.02)
-        kit.box("gp.chin", (0.8, 0.2, 0.34), (0, -0.55, -0.46), beard, gh, bevel=0.08)
-        kit.box("gp.chin2", (0.5, 0.12, 0.2), (0, -0.62, -0.28), beard, gh, bevel=0.05)
+        beard = kit.plastic("#dcdcd4", 0.9, spec=0.02)
+        # a short beard on the chin only, below a clear mouth line
+        kit.box("gp.chin", (0.66, 0.16, 0.2), (0, -0.53, -0.57), beard, gh, bevel=0.06)
+        # the hat tipped back about 14 degrees so the brim clears his eyes
+        crown, brim = bpy.data.objects.get("grandpa.bcrown"), bpy.data.objects.get("grandpa.bbrim")
+        if crown is not None and brim is not None:
+            piv = kit.empty("gp.hatpiv", (0, 0.5, crown.location.z - 0.1), gh)
+            bpy.context.view_layer.update()
+            for ob in (crown, brim):
+                mw = ob.matrix_world.copy()
+                ob.parent = piv
+                ob.matrix_world = mw
+            piv.rotation_euler = (-14 * D2R, 0, 0)
+    hh = bpy.data.objects.get("husband.headg")
+    if hh is not None:   # thin warm rims, no grey lenses: they read as glasses, not a visor
+        rim = kit.plastic("#d9b36a", 0.5)
         for sx in (-1, 1):
-            kit.box(f"gp.side{sx}", (0.1, 0.4, 0.3), (sx * 0.56, -0.1, -0.38), beard, gh, bevel=0.04)
+            for nm in (f"husband.gl{sx}", f"husband.glf{sx}"):
+                ob = bpy.data.objects.get(nm)
+                if ob is not None:
+                    ob.hide_render = True
+            lens = bpy.data.objects.get(f"husband.gl{sx}")
+            ly_ = lens.location.y if lens is not None else -0.55
+            cx_, cz_ = sx * 0.24, -0.02
+            for k, (w_, h_, ox_, oz_) in enumerate([(0.4, 0.035, 0, 0.15), (0.4, 0.035, 0, -0.15),
+                                                    (0.035, 0.3, -0.19, 0), (0.035, 0.3, 0.19, 0)]):
+                kit.box(f"husband.rim{sx}{k}", (w_, 0.04, h_), (cx_ + ox_, ly_ - 0.02, cz_ + oz_), rim, hh)
     W["inited"] = True
 
 
@@ -562,12 +593,23 @@ def animate(kit, story, tl, t, ctx):
     door_side = bool(rs and rs.get("at_door"))
     rd = W["rods"]
     if door_side:
-        rd.location = (G.DOOR_X - 1.0, -6.3, 0)
+        rd.location = (G.DOOR_X - 0.5, -6.3, 0)
         rd.rotation_euler = (-6 * D2R, 0, 0)
     else:
         rd.location = (-5.6, 1.4, 0)
         rd.rotation_euler = (0, -6 * D2R, 0)
     W["tbox"].hide_render = not (rs and rs.get("box"))
+    # L64: the jacket is half on: my screen-right sleeve is bare skin (a cue "halfon")
+    ho = last_cue(tl, "halfon", t)
+    bare = bool(ho and ho.get("on"))
+    skin_ob = bpy.data.objects.get("me.skinarm1")
+    for nm in ("me.sleeve1",):
+        ob = bpy.data.objects.get(nm)
+        if ob is None or skin_ob is None or not ob.data.materials:
+            continue
+        W.setdefault("sleeve_mat", {})
+        W["sleeve_mat"].setdefault(nm, ob.data.materials[0])
+        ob.data.materials[0] = skin_ob.data.materials[0] if bare else W["sleeve_mat"][nm]
     # the car: where it stands, or wherever "me" is driving it
     cc = last_cue(tl, "car", t)
     car = W["car"]

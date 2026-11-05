@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = timeline.split_lines(orig_lines)
 
@@ -148,6 +148,8 @@ def shot(at, camera, name, step=2):
 
 def face(who, d=3.7, lens=40, dx=0.0, dzc=0.0, tz=0.28, push=0.14, tx=0.0, side=None, dlens=0, dy=0.0):
     s = ST[who]
+    if who == "grandpa":   # eye height: a camera above him sees only the hat brim (framing pre-check)
+        tz, dzc = min(tz, 0.2), min(dzc, 0.1)
     if who == "grandpa" and lens >= 50:
         tz, dzc = min(tz, 0.02), min(dzc, 0.3)
     sd = side or s["side"]
@@ -155,6 +157,12 @@ def face(who, d=3.7, lens=40, dx=0.0, dzc=0.0, tz=0.28, push=0.14, tx=0.0, side=
     tgt = [x + tx, y, hz - tz]
     return mv([x + dx, y + sd * d, hz + dzc], tgt, lens,
               [x + dx * 0.75, y + sd * d * (1 - push), hz + dzc * 0.85], tgt, lens + dlens)
+
+
+def slate_cam(dx=0.0, d0=3.1, d1=2.7, lens=30, dz=0.0):
+    """The whole slate (frame and digits) with margin: 1.2 to 1.4 m of wall across the frame."""
+    cx = sx + dx
+    return mv([cx, sy - d0, sz + dz], [sx, 1.7, sz], lens, [cx, sy - d1, sz + dz], [sx, 1.7, sz], lens)
 
 
 # --- standard setups
@@ -207,9 +215,9 @@ shot(0, face("grandpa", **NIGHT_TELL), "open1")
 shot("L01.1", face("grandpa", d=3.9, lens=48, dx=0.35, dzc=0.45), "open2")
 # L02: the number on the slate, then his face again
 sx, sy, sz = G.SLATE
-shot("L02", mv([sx - 0.1, -0.5, sz], [sx, 1.7, sz - 0.02], 46, [sx, 0.1, sz], [sx, 1.7, sz - 0.02], 46), "slate1")
+shot("L02", slate_cam(-0.1, 3.3, 2.9, 30), "slate1")
 shot("L02.1", face("grandpa", d=3.9, lens=52, dx=0.8, dzc=0.4, tz=0.25), "open3")
-shot("L02.2", mv([sx + 0.05, -0.2, sz + 0.02], [sx, 1.7, sz], 70, [sx - 0.05, 0.6, sz + 0.02], [sx, 1.7, sz], 70), "slate2")
+shot("L02.2", slate_cam(0.05, 2.9, 2.6, 28), "slate2")
 # L03 to L07: the montage, one face each (day)
 look("L03", "day")
 only("L03", ["ortiz"])
@@ -255,13 +263,13 @@ put("me", "L10.2", [G.LOT[0] + G.CAR_DX, G.LOT[1] + G.CAR_DY], 0, expr="smile")
 seat("me", "L10.2", z=0.62)
 cue("L10.2", "car", mode="me", z=0.0)
 go("me", "L10.3+0.6", [G.LOT[0] + G.CAR_DX, G.LOT[1] + G.CAR_DY - 22.0])
-shot("L10.2", mv([G.LOT[0] - 0.3, G.LOT[1] + 3.8, 1.6], [G.LOT[0], G.LOT[1] - 6.0, 1.0], 36,
-                 [G.LOT[0] - 0.3, G.LOT[1] + 3.8, 1.6], [G.LOT[0], G.LOT[1] - 8.0, 1.0], 36), "carleave1")
+shot("L10.2", mv([G.LOT[0] - 2.5, G.LOT[1] + 7.5, 2.0], [G.LOT[0], G.LOT[1] - 5.0, 0.9], 30,
+                 [G.LOT[0] - 2.5, G.LOT[1] + 7.5, 2.0], [G.LOT[0], G.LOT[1] - 9.0, 0.9], 30), "carleave1")
 shot("L10.3", mv([G.LOT[0] + 7.5, G.LOT[1] - 12.0, 1.2], [G.LOT[0], G.LOT[1] - 16.0, 1.0], 38,
                  [G.LOT[0] + 7.5, G.LOT[1] - 12.0, 1.2], [G.LOT[0], G.LOT[1] - 20.0, 1.0], 38), "carleave2")
 only("L11", [])
 stand("me", "L11")
-shot("L11", mv([sx + 0.2, -1.2, sz + 0.05], [sx + 0.9, 1.5, sz - 0.2], 40, [sx + 0.4, -0.6, sz + 0.05], [sx + 0.9, 1.5, sz - 0.2], 40), "slate_day")
+shot("L11", slate_cam(0.05, 3.2, 2.8, 30), "slate_day")
 # L12: the call
 kx, ky = G.KITCHEN
 shot("L12", mv([kx + 1.7, ky + 1.4, 1.7], [kx + 1.6, ky + 2.5, 0.96], 40, [kx + 1.65, ky + 1.7, 1.5], [kx + 1.6, ky + 2.5, 0.96], 40), "phone1")
@@ -303,16 +311,16 @@ only("L16", ["grandpa"])
 grandpa_chair("L16", "shut")
 talk("grandpa", "L16.1", "L18>")
 wx = G.WIN_X
-shot("L16", mv([wx + 0.1, -8.4, 1.15], [wx, GY, 1.3], 66, [wx + 0.1, -8.0, 1.2], [wx, GY, 1.3], 66), "window1")
-shot("L16.1", mv([wx + 0.9, -8.2, 1.3], [wx, GY, 1.3], 70, [wx + 0.7, -7.9, 1.35], [wx, GY, 1.3], 70), "window2")
+shot("L16", mv([wx + 0.1, -8.4, 2.3], [wx, GY, 1.2], 60, [wx + 0.1, -8.0, 2.3], [wx, GY, 1.2], 60), "window1")
+shot("L16.1", mv([wx + 0.9, -8.2, 2.3], [wx, GY, 1.2], 64, [wx + 0.7, -7.9, 2.3], [wx, GY, 1.2], 64), "window2")
 shot("L17", face("grandpa", **NIGHT_TELL), "tell1")
 # L18, L19: the empty chair
-shot("L18", mv([GX + 0.9, GY + 0.9, 1.75], [MX, MY, 0.85], 36, [GX + 0.8, GY + 0.8, 1.7], [MX, MY, 0.85], 36), "emptychair1")
-shot("L18.1", mv([GX + 0.2, GY - 0.8, 1.2], [MX, MY, 0.75], 40, [GX + 0.2, GY - 1.2, 1.1], [MX, MY, 0.75], 40), "emptychair2")
-shot("L19", mv([MX - 1.0, MY + 1.0, 1.1], [MX - 0.5, MY - 0.05, 0.75], 40, [MX - 0.8, MY + 0.8, 1.0], [MX - 0.5, MY - 0.05, 0.75], 40), "chairarm")
+shot("L18", mv([MX + 1.5, GY + 0.5, 2.3], [MX, MY, 0.6], 28, [MX + 1.4, GY + 0.5, 2.25], [MX, MY, 0.6], 28), "emptychair1")
+shot("L18.1", mv([MX - 1.5, MY + 1.8, 1.6], [MX, MY, 0.62], 25, [MX - 1.3, MY + 1.6, 1.55], [MX, MY, 0.62], 25), "emptychair2")
+shot("L19", mv([MX - 1.5, MY + 1.5, 1.15], [MX - 0.7, MY - 0.05, 0.62], 30, [MX - 1.3, MY + 1.3, 1.1], [MX - 0.7, MY - 0.05, 0.62], 30), "chairarm")
 shot("L20", face("grandpa", d=3.9, lens=56, dx=-0.3, dzc=0.45, tz=0.25), "eyes_shut")
-shot("L21", mv([sx - 0.6, -0.8, sz + 0.1], [sx + 0.2, 1.7, sz - 0.1], 38, [sx - 0.3, -0.4, sz + 0.1], [sx + 0.2, 1.7, sz - 0.1], 38), "slate_night1")
-shot("L21.2", mv([sx, 0.0, sz], [sx, 1.7, sz], 80, [sx, 0.5, sz], [sx, 1.7, sz], 80), "slate_night2")
+shot("L21", slate_cam(-0.3, 3.3, 2.9, 30), "slate_night1")
+shot("L21.2", slate_cam(0.0, 2.8, 2.6, 28), "slate_night2")
 # L22: me at the window
 only("L22", ["me"])
 me_outside("L22", "worried", x=wx, y=-7.1)
@@ -320,7 +328,7 @@ shot("L22", mv([wx + 0.2, -4.9, 1.55], [wx, -7.1, 1.3], 30, [wx + 0.1, -5.0, 1.5
 # L23: the lock and sitting down
 only("L23", [])
 cue("L23.1", "hook", u=1.0, dur=0.45)
-shot("L23", mv([G.DOOR_X - 0.5, -4.7, 1.62], [G.DOOR_X - 0.65, -5.8, 1.6], 70, [G.DOOR_X - 0.5, -4.9, 1.62], [G.DOOR_X - 0.65, -5.8, 1.6], 70), "hook")
+shot("L23", mv([G.DOOR_X - 0.7, -4.0, 1.62], [G.DOOR_X - 0.75, -5.75, 1.6], 42, [G.DOOR_X - 0.7, -4.2, 1.62], [G.DOOR_X - 0.75, -5.75, 1.6], 42), "hook")
 only("L23.2", ["grandpa"])
 stand("grandpa", "L23.2")
 put("grandpa", "L23.2", list(GP), 0, expr="neutral")
@@ -364,8 +372,8 @@ me_outside("L32.2", "worried", x=wx, y=-7.1)
 shot("L32.2", mv([wx + 0.2, -4.9, 1.55], [wx, -7.1, 1.3], 30, [wx + 0.1, -5.0, 1.55], [wx, -7.1, 1.3], 30), "uneasy_win")
 count("L33.1", "998", dur=0.6)
 cue("L33.1", "chalkfx")
-shot("L33", mv([sx - 0.1, -0.2, sz], [sx, 1.7, sz], 60, [sx, 0.3, sz], [sx, 1.7, sz], 60), "chalk998")
-shot("L33.1", mv([sx + 0.1, 0.1, sz], [sx, 1.7, sz], 80, [sx, 0.5, sz], [sx, 1.7, sz], 80), "chalk998b")
+shot("L33", slate_cam(-0.1, 3.2, 2.8, 30), "chalk998")
+shot("L33.1", slate_cam(0.1, 2.9, 2.6, 28), "chalk998b")
 only("L34", ["me"])
 me_outside("L34", "scared", x=wx, y=-7.1)
 shot("L34", mv([wx - 0.2, -4.9, 1.55], [wx, -7.1, 1.3], 30, [wx - 0.1, -5.0, 1.55], [wx, -7.1, 1.3], 30), "scared_win")
@@ -388,7 +396,7 @@ shot("L38.1", face("grandpa", d=3.4, lens=50, dx=-0.4, dzc=0.1, tz=0.35), "eyes_
 look("L39", "night")
 count("L39", "999", dur=0.5)
 only("L39", [])
-shot("L39", mv([sx - 0.1, -0.2, sz], [sx, 1.7, sz], 60, [sx, 0.3, sz], [sx, 1.7, sz], 60), "chalk999")
+shot("L39", slate_cam(-0.1, 3.2, 2.8, 30), "chalk999")
 only("L39.1", ["grandpa"])
 grandpa_chair("L39.1", "shut")
 talk("grandpa", "L39.1", "L40>")
@@ -440,7 +448,7 @@ cue("L46.1", "door", a=-75.0, dur=0.7)
 go("me", "L46.1", [G.DOOR_X, -7.4])
 go("me", "L46.2", [G.DOOR_X, -4.4])
 acting["me"][-2]["sfx"] = "door"
-shot("L46", door_cam(d=3.0, lens=36, dx=0.0, push=0.05), "enter1")
+shot("L46", door_cam(d=2.1, lens=54, dx=0.0, push=0.04), "enter1")
 shot("L46.1", mv([G.DOOR_X + 0.3, -1.4, 1.55], [G.DOOR_X, -5.2, 1.4], 38, [G.DOOR_X + 0.3, -1.4, 1.55], [G.DOOR_X, -4.6, 1.4], 38), "enter2")
 
 # ============================================================================================ 06 the reveal (L47 to L54)
@@ -455,8 +463,8 @@ beat("grandpa", "L49+0.35", head=[0, 16])
 beat("grandpa", "L49+0.85", head=[0, 0])
 beat("grandpa", "L49.1+0.1", head=[0, 14])
 beat("grandpa", "L49.1+0.6", head=[0, 0])
-shot("L49", face("grandpa", d=4.4, lens=44, dx=-0.5, dzc=0.5, tz=0.3, push=0.12), "twist")
-shot("L49.2", mv([MX - 1.0, MY + 1.0, 1.1], [MX - 0.1, MY - 0.05, 0.75], 40, [MX - 0.8, MY + 0.8, 1.0], [MX - 0.1, MY - 0.05, 0.75], 40), "mine")
+shot("L49", mv([MX + 1.6, MY - 1.7, 2.6], [MX - 0.3, -2.5, 0.85], 21, [MX + 1.5, MY - 1.55, 2.55], [MX - 0.3, -2.5, 0.85], 21), "twist")
+shot("L49.2", mv([MX - 1.8, MY - 1.5, 2.3], [MX, MY, 0.6], 26, [MX - 1.6, MY - 1.4, 2.25], [MX, MY, 0.6], 26), "mine")
 beat("grandpa", "L50", expr="warm", head=[0, 0])
 shot("L50", face("grandpa", d=3.9, lens=42, dx=0.5, dzc=0.45), "tellers1")
 shot("L50.2", face("grandpa", d=3.9, lens=54, dx=-0.3, dzc=0.45, tz=0.25), "tellers2")
@@ -474,7 +482,7 @@ me_inside("L53", "sad-smile")
 shot("L53", mv([1.55, -0.1, 1.75], [1.5, -3.4, 1.25], 46, [1.5, -0.3, 1.75], [1.5, -3.4, 1.25], 46), "stunned2")
 shot("L53.1", mv([1.7, 0.0, 1.8], [1.5, -3.4, 1.25], 56, [1.6, -0.2, 1.8], [1.5, -3.4, 1.25], 56), "stunned3")
 only("L54", [])
-shot("L54", mv([sx - 0.1, -0.2, sz], [sx, 1.7, sz], 56, [sx, 0.3, sz], [sx, 1.7, sz], 56), "chalk999b")
+shot("L54", slate_cam(-0.1, 3.2, 2.8, 30), "chalk999b")
 only("L54.1", ["me"])
 me_inside("L54.1", "neutral")
 shot("L54.1", mv([1.55, -0.1, 1.75], [1.5, -3.4, 1.25], 44, [1.5, -0.3, 1.75], [1.5, -3.4, 1.25], 44), "resolve")
@@ -509,8 +517,8 @@ shot("L61", face("grandpa", d=3.9, lens=44, dx=-0.4, dzc=0.45), "opens1")
 shot("L61.1", face("grandpa", d=3.9, lens=56, dx=0.3, dzc=0.45, tz=0.25), "opens2")
 only("L62", [])
 count("L62.1", "1,000", dur=0.6)
-shot("L62", mv([sx - 0.1, -0.2, sz], [sx, 1.7, sz], 56, [sx, 0.3, sz], [sx, 1.7, sz], 56), "chalk1000")
-shot("L62.1", mv([sx + 0.1, 0.1, sz], [sx, 1.7, sz], 76, [sx, 0.5, sz], [sx, 1.7, sz], 76), "chalk1000b")
+shot("L62", slate_cam(-0.1, 3.3, 2.9, 28), "chalk1000")
+shot("L62.1", slate_cam(0.1, 3.0, 2.7, 26), "chalk1000b")
 shot("L63", mv([wx - 0.3, -4.9, 1.5], [wx - 6.0, -60.0, 0.8], 36, [wx - 0.2, -5.0, 1.55], [wx - 6.0, -60.0, 0.9], 36), "river_window")
 only("L63.2", ["grandpa"])
 put("grandpa", "L63.2", list(GP), 0, expr="warm")
@@ -526,10 +534,12 @@ look("L64", "day")
 only("L64", ["me"])
 stand("me", "L64")
 kx, ky = G.KITCHEN
-put("me", "L64", [kx - 1.4, ky + 2.4], 0, expr="worried")
-beat("me", "L64", arms=[30, 80])
-shot("L64", mv([kx - 1.2, ky - 0.9, 1.7], [kx - 1.2, ky + 2.4, 1.4], 30, [kx - 1.2, ky - 0.5, 1.7], [kx - 1.2, ky + 2.4, 1.4], 30), "doorway")
-shot("L64.1", face("me", d=3.4, lens=44, dx=0.3, tz=0.28), "doorway2")
+put("me", "L64", [kx - 1.0, ky + 2.4], 0, expr="worried")
+beat("me", "L64", arms=[12, 12])
+cue("L64", "halfon", on=True)
+cue("L65", "halfon", on=False)
+shot("L64", mv([kx - 0.65, ky - 0.4, 1.3], [kx - 0.65, ky + 2.4, 1.15], 27, [kx - 0.65, ky - 0.1, 1.3], [kx - 0.65, ky + 2.4, 1.15], 27), "doorway")
+shot("L64.1", mv([kx - 0.65, ky - 0.4, 1.4], [kx - 0.65, ky + 2.4, 1.3], 30, [kx - 0.65, ky - 0.2, 1.4], [kx - 0.65, ky + 2.4, 1.3], 30), "doorway2")
 cue("L65", "car", mode="me", z=0.0)
 put("me", "L65", [rx + G.CAR_DX, ry + G.CAR_DY], 0, expr="wide")
 seat("me", "L65", z=0.62)
@@ -544,8 +554,8 @@ cue("L66", "rods", at_door=True, box=True)
 cue("L66", "door", a=78.0)
 put("grandpa", "L66", [G.DOOR_X, -6.0], 0, expr="smile", arms=[0, 0])
 stand("grandpa", "L66")
-shot("L66", mv([G.DOOR_X, -12.0, 1.5], [G.DOOR_X, -6.0, 1.35], 50, [G.DOOR_X, -11.0, 1.5], [G.DOOR_X, -6.0, 1.35], 50), "doorway_gp")
-shot("L66.1", mv([G.DOOR_X - 0.9, -9.4, 1.3], [G.DOOR_X - 0.1, -6.0, 1.3], 40, [G.DOOR_X - 0.7, -9.0, 1.3], [G.DOOR_X - 0.1, -6.0, 1.3], 40), "rods_ready")
+shot("L66", mv([G.DOOR_X - 0.3, -9.5, 1.45], [G.DOOR_X - 0.3, -6.0, 1.3], 32, [G.DOOR_X - 0.3, -9.1, 1.45], [G.DOOR_X - 0.3, -6.0, 1.3], 32), "doorway_gp")
+shot("L66.1", mv([G.DOOR_X - 0.9, -9.0, 1.4], [G.DOOR_X - 0.25, -6.0, 1.3], 34, [G.DOOR_X - 0.7, -8.6, 1.4], [G.DOOR_X - 0.25, -6.0, 1.3], 34), "rods_ready")
 look("L67", "night")
 cue("L67", "rods", at_door=True, box=False)
 cue("L67", "door", a=0.0)
@@ -560,12 +570,11 @@ shot("L68", face("grandpa", d=3.9, lens=44, dx=-0.3, dzc=0.45), "oldman1")
 shot("L68.2", face("grandpa", d=3.9, lens=54, dx=0.4, dzc=0.45, tz=0.25), "oldman2")
 count("L69", "9", dur=0.5)
 only("L69", [])
-shot("L69", mv([sx - 0.1, -0.2, sz], [sx, 1.7, sz], 56, [sx, 0.3, sz], [sx, 1.7, sz], 56), "chalk9")
+shot("L69", slate_cam(-0.1, 3.2, 2.8, 30), "chalk9")
 only("L70", ["grandpa"])
 grandpa_chair("L70", "shut")
-beat("grandpa", "L70", expr="smile")
 talk("grandpa", "L70", "L70.2")
-shot("L70", mv([GP[0] - 0.6, GP[1] - 4.7, 1.9], [GP[0], GP[1], 1.08], 36, [GP[0] - 0.5, GP[1] - 3.9, 1.81], [GP[0], GP[1], 1.08], 40), "loop")
+shot("L70", face("grandpa", **NIGHT_TELL), "loop")
 
 # ---------------------------------------------------------------------------------------------- finish
 for k_ in acting.values():
@@ -647,7 +656,7 @@ story = {
     "rev": REV,
     "look": {"style": "closer", "fog": "#cfe6f5", "fog_density": 0.003, "fog_start": 40.0, "sky": "#8fd3ff",
              "sky_strength": 1.0, "exposure": 0.2, "flash_safe": True, "polish": polish},
-    "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.012, -0.02], "saturation": 1.1, "contrast": 1.05,
+    "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.015, 0.006, -0.01], "saturation": 1.1, "contrast": 1.05,
               "vignette": 0.2, "bloom": 0.15, "grain": 0.008},
     "phonemes": {},
     "cast": cast,
@@ -661,7 +670,8 @@ story = {
     "set_moves": [names["street1"], names["street2"], names["hook"], names["enter1"], names["enter2"],
                   names["chalk998"], names["chalk998b"], names["chalk999"], names["chalk1000"], names["chalk1000b"],
                   names["chalk9"]],
-    "framing_ok": ["S12", "S13", "S21", "S23", "S30", "S37", "S38", "S44", "S46"],
+    "framing_ok": ["S12", "S13", "S21", "S23", "S30", "S37", "S38", "S44", "S46", "S90", "S91"],
+    "framing_props": {"hook": [G.DOOR_X - 0.8, -5.7, 1.6]},
     "clip_ok": [],
     "asr_forgive": ["missus", "mister", "nine hundred ninety seven", "nine ninety eight", "nine ninety nine",
                     "nine hundred ninety nine", "one thousand", "he'd", "he's"],
