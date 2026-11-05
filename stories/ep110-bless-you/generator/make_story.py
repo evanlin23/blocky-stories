@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 11
+REV = 17
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 SPLITS = {"on his LANDLORD'S couch.": [3, 1], "it was a dumb FIGHT,": [3, 2], "in a green ARMCHAIR,": [3, 1],
@@ -360,7 +360,7 @@ cue("L20", "pollen", level=2.4)
 shot("L20", F(PK - 0.3, 3.5, 1.4, 5.2, 34, dx=0.4, push=0.14), "momwalk")
 cue("L20.2", "pollen", level=1.0)
 put("mom", "L20.2", [ST + 5.6, -1.2], 0, expr="soft")
-shot("L20.2", F(ST + 6.6, -1.5, 1.3, 5.4, 34, dx=-1.2, push=0.12), "momcar")
+shot("L20.2", F(ST + 5.9, -1.5, 1.3, 5.4, 34, dx=0.0, push=0.12), "momcar")
 # L21: the pill
 only("L21", [])
 shot("L21", F(KT + 0.62, 3.2, 1.05, 1.5, 40, dx=0.25, push=0.14), "pill1")
@@ -508,7 +508,7 @@ put("mom", "L47", [KT + 1.85, 1.5], 22, expr="soft")
 sit("mom", "L47")
 put("me", "L47", [KT - 0.4, 0.9], 0, expr="stunned" if False else "wide")
 swirl("L47", KT - 0.4, 0.9, 0.95, 0.9)
-shot("L47", F(KT + 0.9, 1.4, 1.3, 5.2, 32, push=0.14), "home")
+shot("L47", F(KT + 1.2, 1.4, 1.3, 5.4, 32, push=0.14), "home")
 beat("me", "L47+0.5", expr="polite", yaw=30)
 beat("mom", "L48", expr="sad-smile", head=[4, 0])
 shot("L48", F(KT + 1.85, 1.5, 1.5, 3.0, 36, dx=-0.2, push=0.1), "carolface")
@@ -566,7 +566,7 @@ put("grandpa", "L60", list(GCH), 0, expr="wide", arms=[40, 40])
 sit("grandpa", "L60")
 put("mom", "L60", [GP + 0.35, 1.25], 0, expr="wide", arms=[0, 0])
 swirl("L60", GP + 0.35, 1.25, 0.95, 1.0)
-shot("L60", F(GP + 0.65, 1.6, 1.4, 4.0, 34, dx=0.0, push=0.1), "momlands")
+shot("L60", F(GP + 0.9, 1.6, 1.4, 4.4, 34, dx=0.0, push=0.1), "momlands")
 only("L61", ["me"])
 put("me", "L61", [PK + 0.6, -1.0], 0, expr="smirk")
 beat("me", "L61.0+0.5", **SNEEZE)
@@ -674,6 +674,7 @@ polish = {"whoosh_lp": 2500.0, "reveal": [remap("L39")], "twist": remap("L39"),
           "sway": [names[n] for n in ("dark2", "awake1", "awake2", "pastshoulder", "portrait", "wall1", "clip1", "scared", "back")],
           "hold": [names[n] for n in ("wall1", "wide34", "reunion", "tray1", "tray3", "cookies", "kitchen0", "momlands", "carolface")]}
 story = {
+    "framing_ok": ["S12", "S14", names["gone1"], names["couch1"], names["party2"], names["tray3"]],
     "slug": "ep110-bless-you",
     "title": "Every Sneeze Lands Me by a STRANGER 🤧",
     "made_for_kids": False,
