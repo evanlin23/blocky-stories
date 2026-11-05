@@ -15,7 +15,7 @@
  "tail": 0.0,
  "fade_in": false,
  "fade_out": false,
- "rev": 2,
+ "rev": 3,
  "look": {
   "style": "closer",
   "fog": "#e4f1fb",
@@ -4608,7 +4608,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 2
+  "rev": 3
  },
  "set_moves": [],
  "clip_ok": [],
@@ -4616,7 +4616,8 @@
   "S18",
   "S20",
   "S27",
-  "S49"
+  "S49",
+  "S40"
  ],
  "asr_forgive": []
 }

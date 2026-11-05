@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -498,7 +498,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "clip_ok": [],
-    "framing_ok": [names[n_] for n_ in ("pine1", "falls1", "pine2", "jo31")],
+    "framing_ok": [names[n_] for n_ in ("pine1", "falls1", "pine2", "jo31", "me23")],
     "asr_forgive": [],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

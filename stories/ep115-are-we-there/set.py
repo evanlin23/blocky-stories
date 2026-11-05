@@ -765,7 +765,7 @@ def animate(kit, story, tl, t, ctx):
     fl = sample("flakes", tl, t, {"v": 0.0})
     on = fl["v"] > 0.5
     cam_m = None
-    if on and spec:
+    if on and spec and isinstance(bpy.app.version, tuple):
         try:
             from mathutils import Matrix
             keys = spec["cam"]
