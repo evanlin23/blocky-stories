@@ -671,6 +671,7 @@ def animate(kit, story, tl, t, ctx):
         mk = W["mask"]
         mk.location = (0.0, 0.14 * (1 - u_), MASK_UP * (1 - u_))
         mk.rotation_euler = (MASK_TILT * (1 - u_), 0.0, 0.0)
+        _hide(mk, u_ < 0.6)     # off: gone entirely, never a second face over the brim or crown
     tg = sample("tagbig", tl, t, {"k": 0.0})
     lens = 40.0
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
