@@ -197,6 +197,17 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → A rescue applies the fix to every shot of the same line or beat, not just the one the review names. Put this in
     docs/briefs/build.md. The framing lint (scripts/framing.py) should catch the twin before the re-look.
 
+34. **The framing lint missed ep112's three framing blockers.** scripts/framing.py reported 0 findings, but critic r2
+    dropped ep112 for a raised hand covering a face (S12), a head cut at the left edge (S20) and the back of a head
+    on a line about that person (S26). The second and third are exactly what the lint checks for.
+    → Recalibrate framing.py on ep112's branch (claude/batch11-ep112-hide-and-seek): head bounds against the left and
+    right edges, and the facing test for a character named in the line, not only the speaker. Add a hand-over-face
+    check. This is the first job for plan step 8 after the reset.
+35. **ep97's retry fixed the wrong light.** Holding the closet bulb still didn't change the reading: still 7 a second at
+    45.13 s. The fix was guessed from the review, not measured.
+    → Before fixing a flash fail, find its source frame by frame (`python -m blocky flash` with per-frame luma) and
+    name the shot and the light that changes.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
