@@ -17,7 +17,7 @@ import layout as G  # noqa: E402
 OUT = HERE.parent / "story.json"
 # shots that are deliberately the glow / the sky itself (S05 "something GLOWS", S35 the sky going dark, S40 the glow sinking)
 FRAMING_OK = ["S05", "S35", "S40", "S60", "S63", "S85"]
-REV = 14
+REV = 15
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -93,6 +93,10 @@ cast = {
     "grandma": person("#f0c8a0", "#f5f2ec", "#1f2f6a", "#f5f2ec", hair="mop", hair_c="#f4f4f6", eyes="lashes",
                       sleeves="long", brow_w=1.4, width=0.96, face={"eyes": "lashes", "brows": True, "ink": "#1c120c",
                                                                      "cheeks": "#f2a0a0"}),
+    # S39 "in her ROBE": the same Nell in a plum robe (no visor, her white bun)
+    "grandma_robe": person("#f0c8a0", "#8a3f8f", "#6f2f78", "#d9b8e0", hair="mop", hair_c="#f4f4f6", eyes="lashes",
+                           sleeves="long", brow_w=1.4, width=0.96, aliases=["grandma", "nell"],
+                           face={"eyes": "lashes", "brows": True, "ink": "#1c120c", "cheeks": "#f2a0a0"}),
     "nb1": person("#e6b48c", "#ffb84a", "#f6f0e6", "#e6b48c", hair="long", hair_c="#7a4a2c", eyes="lashes", sleeves="none",
                   brow_w=1.7),
     "nb2": person("#d3a07a", "#3f7a5a", "#7a6a50", "#4a3626", hair="buzz", hair_c="#e8e8ea", hat="bucket",
@@ -166,6 +170,10 @@ def dial(at, v, lit=None, dur=0.0):
     if lit is not None:
         kw["lit"] = lit
     cue(at, "dial", dur=dur, **kw)
+
+
+def skym(at, on=1.0, x=0.0, y=0.9, r=0.35, dur=0.0):
+    cue(at, "skym", on=on, x=x, y=y, r=r, dur=dur)
 
 
 def zoom(at, z, oy=0.0):
@@ -262,6 +270,8 @@ cue(0, "boat", x=G.BOAT_HOME[0], y=G.BOAT_HOME[1], z=WZ, rock=0.0, yaw=0.0)
 cue(0, "oar", a=80.0, b=0.0)
 cue(0, "feet", on=0.0)
 cue(0, "refl", v=0.0)
+cue(0, "skym", on=0.0)
+cue(0, "lakewhite", v=0.0)
 cue(0, "pour", p=0.0)
 cue(0, "tagzoom", z=0.0, oy=0.0)
 cue(0, "steam", lake=0.0, mug=0.0)
@@ -302,6 +312,10 @@ put("s1", "L04", [-5.4, -27.0, -0.7], 150, expr="grin", arms=[0, 0])
 put("s2", "L04", [3.6, -27.5, -0.7], 200, expr="smile")
 put("s3", "L04", [-2.2, -23.0, -0.7], 170, expr="grin")
 go("s1", "L04.2", [-4.6, -26.2, -0.7], yaw=150, keep_yaw=True)
+skym("L04", x=0.35, y=0.9, r=0.2)
+cue("L04", "refl", v=0.8, x=-7.0, y=-31.0)
+cue("L05", "refl", v=0.0, x=0.3, y=-27.5)
+skym("L05", on=0.0)
 shot("L04", mv([0.5, -21.0, 1.3], [-3.5, -26.0, 0.8], 30, [0.2, -21.4, 1.3], [-3.5, -26.0, 0.8], 30), "widelake")
 # L05: the watch at 11:59, then the swimmers climbing out in a line
 only("L05", [])
@@ -440,10 +454,10 @@ put("me", "L19", [UX - 0.6, UY - 2.0, UT + 9.0], 0, expr="wide", lean=60, arms=[
 go("me", "L19>", [UX - 0.6, UY - 2.0, UT + 2.3], yaw=0, keep_yaw=True)
 shot("L19", FL([1.0, -4.4, 0.9], [0.0, 0.0, 0.75], 28, [0.8, -3.8, 0.8], [0.0, 0.0, 0.75]), "dive", follow="me")
 # L20: under my hands the glow got brighter
-put("me", "L20", [UX, UY - 0.2, UT + 0.95], 0, expr="wide", lean=84, arms=[96, 96])
+put("me", "L20", [UX, UY - 0.2, UT + 0.95], 0, expr="wide", lean=84, arms=[96, 96], head=[0, -50])
 ugc("L20", e=60.0)
 ugc("L20+0.6", e=360.0, dur=1.2)
-shot("L20", mv([UX + 1.2, UY - 4.6, UT + 4.4], [UX, UY - 0.9, UT + 0.3], 30, [UX + 0.9, UY - 4.1, UT + 4.0], [UX, UY - 0.9, UT + 0.3], 30), "hands")
+shot("L20", mv([UX + 1.4, UY - 5.4, UT + 0.9], [UX, UY - 0.7, UT + 0.8], 28, [UX + 1.0, UY - 4.8, UT + 0.7], [UX, UY - 0.7, UT + 0.85], 28), "hands")
 # the drop: my face under water, eyes wide
 only("P01", ["me"])
 put("me", "P01", [UX, UY - 0.3, UT + 3.0], 0, expr="terrified", lean=8, arms=[0, 0])
@@ -485,8 +499,8 @@ for k_ in range(9):
 last["me"] = [0.8, -29.4, -0.7]
 shot("L25", mv([0.0, -30.7, 1.3], [1.0, -23.0, 0.6], 40, [0.0, -30.4, 1.25], [0.95, -27.5, 0.6], 40), "swimhard")
 # L26: Grandma on the dock in her robe
-only("L26", ["grandma"])
-put("grandma", "L26", [0.4, -31.2, DECK], 180, expr="worried", arms=[0, 0])
+only("L26", ["grandma_robe"])
+put("grandma_robe", "L26", [0.4, -31.2, DECK], 180, expr="worried", arms=[0, 0])
 shot("L26", F([0.4, -31.2], 180, 4.3, 1.8, 36, tzoff=1.55, off=-12, push=0.1), "robe")
 # L27: the glow sank down and went dim
 only("L27", [])
@@ -555,8 +569,13 @@ boatc("L36", z=4.2, dur=2.0, rock=0.6)
 go("grandma", "L36", inboat(MX, MY, 3.0), yaw=0, keep_yaw=True)
 go("grandma", "L36+2.0", inboat(MX, MY, 4.2), yaw=0, keep_yaw=True)
 glow("L36", g=1.4, e=1100.0, dur=1.2)
+cue("L36", "lakewhite", v=1.0)
 shot("L36", mv([MX + 3.0, MY - 16.0, 0.4], [MX, MY, 3.6], 62, [MX + 2.6, MY - 15.0, 0.5], [MX, MY, 4.0], 62), "pour")
 # L37: it lifted off the end of her oar and floated up into the sky (boat slides off, light climbs)
+cue("L37", "lakewhite", v=0.0)
+skym("L37", x=0.3, y=1.15, r=0.2)
+skym("L37+0.1", x=0.3, y=0.8, r=0.2, dur=1.6)
+cue("L37", "refl", v=0.9, x=10.5, y=-7.0)
 sit("grandma", "L37", True, GRAN_BENCH_Z)
 boatc("L37", x=MX + 8.4, y=MY + 2.2, z=WZ, yaw=14.0, rock=0.4)
 put("grandma", "L37", inboat(MX + 8.4, MY + 2.2, WZ), 0, expr="awe" if False else "wide", keep_yaw=True)
@@ -571,7 +590,9 @@ shot("L37.2", mv([MX + 11.2, MY - 2.8, 1.3], [MX + 8.4, MY + 2.2, 1.4], 36, [MX 
 cue("L38", "pour", p=0.0)
 look("L38", "night", dur=1.0)
 glow("L38", g=0.0, e=0.0, dur=1.0)
-cue("L38", "refl", v=0.8, dur=1.0)
+skym("L38", on=0.0)
+cue("L38", "refl", v=0.0, x=0.3, y=-27.5)
+cue("L38+0.02", "refl", v=0.8, dur=1.0)
 dial("L38", 0.97, lit=1.0, dur=1.0)
 only("L38", [])
 shot("L38", mv([0.0, -34.5, 3.4], [0.3, -27.0, 0.1], 28, [0.1, -33.5, 3.0], [0.3, -27.0, 0.1], 28), "boards2")
@@ -754,12 +775,14 @@ go("grandma", "L63+1.1", [MX - 0.42, MY + 0.25, WZ + 0.18], yaw=0, keep_yaw=True
 go("me", "L63+1.1", [MX + 0.42, MY + 0.25, WZ + 0.18], yaw=0, keep_yaw=True)
 for who in ("grandma", "me"):
     acting[who][-1]["blend"] = 0.5
-shot("L63", mv([MX + 2.5, MY - 16.0, 0.4], [MX - 0.4, MY, 5.0], 62, [MX + 2.2, MY - 15.0, 0.5], [MX - 0.4, MY, 4.0], 62), "slid")
+shot("L63", mv([MX + 2.5, MY - 16.0, 0.4], [MX - 0.4, MY, 6.4], 62, [MX + 2.2, MY - 15.0, 0.5], [MX - 0.4, MY, 5.6], 62), "slid")
 shot("L63.2", F([MX, MY + 0.25], 0, 4.4, 0.9, 32, tzoff=1.1, base=WZ + 0.18, off=-8, push=0.1), "splash")
 # L64: and it went up, right over the dock
 cue("L64", "pour", p=0.0)
 boatc("L64", z=-3.0)
 glow("L64", e=0.0, g=0.0, dur=1.4)
+skym("L64", x=-0.25, y=1.2, r=0.2)
+skym("L64+0.05", x=-0.25, y=0.8, r=0.2, dur=1.6)
 cue("L64", "refl", v=0.3, dur=0.01)
 cue("L64+0.2", "refl", v=1.0, dur=1.4)
 dial("L64", 0.97, lit=1.0)
@@ -772,6 +795,7 @@ shot("L64.1", mv([0.0, -35.0, 1.5], [0.3, -27.8, 0.3], 30, [0.1, -33.6, 1.3], [0
 
 # ===== 10 the warm turn: together, and the loop (L65 to L70)
 cue("L65", "refl", v=0.0)
+skym("L65", on=0.0)
 look("L65", "dusk", dur=0.01)
 dial("L65", 0.93, lit=0.0)
 glow("L65", g=1.0, e=150.0)
@@ -780,13 +804,13 @@ only("L65", ["grandma", "me"])
 boatc("L65", x=bxh, y=byh, z=WZ, rock=0.0)
 sit("grandma", "L65", True, GRAN_BENCH_Z)
 sit("me", "L65", True, GRAN_BENCH_Z)
-put("grandma", "L65", [bxh - 0.42, byh + 0.25, WZ + 0.18], 0, expr="smile", keep_yaw=True)
-put("me", "L65", [bxh + 0.42, byh + 0.25, WZ + 0.18], 0, expr="grin", keep_yaw=True)
+put("grandma", "L65", [bxh - 0.55, byh + 0.25, WZ + 0.18], 0, expr="smile", keep_yaw=True)
+put("me", "L65", [bxh + 0.55, byh + 0.25, WZ + 0.18], 0, expr="grin", keep_yaw=True)
 for tt, ang in [("L65", 0), ("L65+0.8", 25), ("L65+1.6", -20)]:
     oarc(tt, a=70.0, b=ang, dur=0.7)
 boatc("L65+0.1", x=MX + 1.0, y=MY - 8.4, dur=1.1)
-ride("grandma", "L65", 0.1, 1.1, (bxh, byh), (MX + 1.0, MY - 8.4), dx=-0.42, tmax=1.0)
-ride("me", "L65", 0.1, 1.1, (bxh, byh), (MX + 1.0, MY - 8.4), dx=0.42, tmax=1.0)
+ride("grandma", "L65", 0.1, 1.1, (bxh, byh), (MX + 1.0, MY - 8.4), dx=-0.55, tmax=1.0)
+ride("me", "L65", 0.1, 1.1, (bxh, byh), (MX + 1.0, MY - 8.4), dx=0.55, tmax=1.0)
 shot("L65", FL([2.5, -5.4, 1.0], [0.42, 0.0, 1.0], 40, [2.1, -4.8, 1.0]), "together", follow="grandma")
 # L66: she rows, I swim
 only("L66", ["grandma", "me"])
@@ -799,7 +823,7 @@ oarc("L66+1.5", a=70.0, b=-20.0, dur=0.7)
 shot("L66", mv([MX + 1.7, MY - 11.5, 1.5], [MX + 0.9, MY - 4.2, 1.2], 36, [MX + 1.6, MY - 10.8, 1.5], [MX + 0.9, MY - 4.2, 1.2], 36), "sheRows")
 put("me", "L66.1", [MX + 1.5, MY - 6.0, -0.7], 0, expr="grin")
 for k_ in range(6):
-    acting["me"].append({"at": f"L66.1+{0.1 + k_ * 0.22:.2f}", "pos": [MX + 1.5 - 0.05 * k_, MY - 6.0, -0.7], "arms": [150 if k_ % 2 else 20, 20 if k_ % 2 else 150], "blend": 0.1, "yaw": 0})
+    acting["me"].append({"at": f"L66.1+{0.1 + k_ * 0.22:.2f}", "pos": [MX + 1.5 - 0.05 * k_, MY - 6.0, -0.7], "arms": [40 if k_ % 2 else 10, 10 if k_ % 2 else 40], "blend": 0.1, "yaw": 0})
 # L67: the noon tick, close
 only("L67", [])
 look("L67", "day", dur=0.01)
@@ -917,7 +941,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "rev": REV,
-    "look": {"style": "closer", "fog": "#bcd8ee", "fog_density": 0.004, "fog_start": 40.0, "sky": "#5ab8ff",
+    "look": {"style": "closer", "fog": "#a8c8c0", "fog_density": 0.0015, "fog_start": 40.0, "sky": "#5ab8ff",
              "sky_strength": 1.0, "exposure": 0.2, "flash_safe": True, "polish": polish},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.012, -0.02], "saturation": 1.1, "contrast": 1.05,
               "vignette": 0.2, "bloom": 0.25, "grain": 0.008},

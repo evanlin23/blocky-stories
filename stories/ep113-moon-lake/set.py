@@ -33,7 +33,7 @@ def kit_col(h):
 
 def _L(**kw):
     base = dict(sun=3.4, sun_col="#fff0d8", el=45.0, az=-25.0, fill=0.8, fill_col="#fff0e0", front=0.35,
-                front_col="#ffe6c8", rim=0.3, moonl=0.0, moonl_col="#cfe0ff", ufill=0.0, sky="#5ab8ff", sky_str=1.0)
+                front_col="#ffe6c8", rim=0.3, warm=0.0, moonl=0.0, moonl_col="#cfe0ff", ufill=0.0, sky="#5ab8ff", sky_str=1.0)
     base.update(kw)
     return base
 
@@ -43,13 +43,13 @@ LOOKS = {
     # the afternoon goes dark: a dimming to dusk blue, never black
     "dim": _L(rim=0.25, sun=1.1, sun_col="#d4d8ff", el=40.0, fill=1.0, fill_col="#a8b8f0", front=0.5, front_col="#c8d4ff",
               sky="#5d72c4", sky_str=0.85),
-    "dusk": _L(rim=0.6, sun=0.3, sun_col="#8fa0ff", el=6.0, fill=1.4, fill_col="#a8bcf0", front=1.1, front_col="#c8d6ff",
+    "dusk": _L(warm=0.9, rim=0.6, sun=0.3, sun_col="#8fa0ff", el=6.0, fill=1.4, fill_col="#a8bcf0", front=1.1, front_col="#c8d6ff",
                sky="#26397a", sky_str=0.85),
-    "night": _L(rim=0.55, sun=0.0, sun_col="#8fa0ff", el=6.0, fill=1.4, fill_col="#a0b4f0", front=1.1, front_col="#c8d6ff",
+    "night": _L(warm=1.0, rim=0.55, sun=0.0, sun_col="#8fa0ff", el=6.0, fill=1.4, fill_col="#a0b4f0", front=1.1, front_col="#c8d6ff",
                 moonl=1.5, sky="#1e2d66", sky_str=0.8),
     "under": _L(rim=0.6, sun=0.0, fill=0.0, front=1.4, front_col="#ffd0a8", ufill=2.6, sky="#1a7a88", sky_str=0.9),
 }
-LIGHTS = ("sun", "fill", "front", "moonl", "rim")
+LIGHTS = ("sun", "fill", "front", "moonl", "rim", "warm")
 
 
 def look_at(tl, t):
@@ -129,18 +129,14 @@ def cratered(kit, root, name, R, n, theta_max, seed, rmin, rmax, mats):
         placed.append((pos, r))
         nrm = pos.normalized()
         rot = (0, th, ph)
-        kit.cyl(f"{name}.cr{len(placed)}", r * 1.22, 0.05, tuple(nrm * (R + 0.015)), rim, root, rot=rot, n=16)
-        kit.cyl(f"{name}.cf{len(placed)}", r, 0.06, tuple(nrm * (R + 0.04)), floor, root, rot=rot, n=16)
-        # a small bright speck on the near edge so a floor isn't a hole
-        kit.cyl(f"{name}.cs{len(placed)}", r * 0.16, 0.07, tuple(nrm * (R + 0.06) + Vector((0.0, 0.0, 0.0))), body,
-                root, rot=rot, n=8)
+        # a plain grey floor disc, 3 cm proud: no rim, no inner disc, nothing that reads as a target or an eye
+        kit.cyl(f"{name}.cf{len(placed)}", r, 0.05, tuple(nrm * (R + 0.03)), floor, root, rot=rot, n=14)
     return placed
 
 
 def moon_mats(kit):
-    # a cool, darker body (never beige, never white), deep blue crater floors and a pale-blue lip on each crater
-    return (kit.emit("#5d74a6", 0.62, "moonbody"), kit.emit("#2a3a68", 0.5, "moonfloor"),
-            kit.emit("#86aee0", 0.48, "moonrim"))
+    # matte cream body (never white), grey crater floors; shaded by the lights and by the glow from below
+    return (kit.plastic("#d9d4c7", 0.95, "moonbody", spec=0.0), kit.plastic("#8d8f95", 0.95, "moonfloor", spec=0.0), None)
 
 
 # ---------------------------------------------------------------------------------------------- dial (the rule meter)
@@ -219,7 +215,7 @@ def set_dial(store, v, lit):
 
 
 # ---------------------------------------------------------------------------------------------- the build
-def tree(kit, name, x, y, h, tint="#9fcf9a"):
+def tree(kit, name, x, y, h, tint="#3f8f45"):
     try:
         kit.prop("pinetree_1", (x, y, 0.0), height=h, tint=tint, rot=(x * 7 + y * 3) % 360)
     except Exception:
@@ -230,8 +226,8 @@ def tree(kit, name, x, y, h, tint="#9fcf9a"):
 def build(kit, story, tl):
     tl["cues"].sort(key=lambda c: c["t"])
     pl = kit.plastic
-    grass = kit.grime("#8fcf7a", 0.85, 1.4, "grass", 0.95)
-    sand = pl("#efd9a8", 0.9, spec=0.05)
+    grass = kit.grime("#3f9a3a", 0.85, 1.4, "grass", 0.95)
+    sand = pl("#c4a064", 0.9, spec=0.05)
     water = kit.grime("#1fb0a8", 0.8, 0.5, "water", 0.35)
     gray = kit.grime("#a39a90", 0.75, 3.0, "dockgray", 0.85)
     gray2 = pl("#8a8178", 0.85, spec=0.05)
@@ -259,6 +255,10 @@ def build(kit, story, tl):
     ufill = kit.light("ufill", "SUN", (G.U[0] + 4, -6, 30), 1.0, "#a8e6ee", shadow=False)
     ufill.data.angle = 0.6
     kit.aim(ufill, (G.U[0], 0, -8))
+    mu = kit.light("moonup", "SUN", (0, -40, -12), 1.0, "#ffe0b8", shadow=False)
+    mu.data.angle = 0.5
+    kit.aim(mu, (G.MID[0], G.MID[1], 2.0))
+    kit.light("warm", "SUN", (0, 40, 20), 1.0, "#ffd6b0", shadow=False).data.angle = 0.5
     kit.light("glow", "POINT", (G.MID[0], G.MID[1], -1.0), 1.0, "#bfe0ff", size=0.8, shadow=False)
     kit.light("uglow", "POINT", (G.U[0], 0, G.UTOP + 3.0), 1.0, "#cfe6ff", size=0.8, shadow=False)
     kit.light("lamp", "POINT", (0, G.PORCH_Y + 1.0, 3.0), 120.0, "#ffe6c0", size=0.5, shadow=False)
@@ -279,11 +279,11 @@ def build(kit, story, tl):
     for i in range(26):
         a = i / 26 * 2 * math.pi + 0.07
         r = 112 + rng.random() * 30
-        tree(kit, f"pineb{i}", r * math.cos(a), r * math.sin(a), 16 + rng.random() * 8, tint="#8bbf92")
+        tree(kit, f"pineb{i}", r * math.cos(a), r * math.sin(a), 16 + rng.random() * 8, tint="#357f4a")
     # hills on the horizon so the sky has a base
     for i, (a, s) in enumerate([(0.3, 60), (1.5, 80), (2.6, 70), (3.8, 90), (4.9, 64), (5.8, 76)]):
         kit.box(f"hill{i}", (s * 1.6, s * 0.5, s * 0.34), (170 * math.cos(a), 170 * math.sin(a), s * 0.1),
-                pl("#6aa58a", 0.95, spec=0.02), rot=(0, 0, a + 1.0), bevel=0.2)
+                pl("#3f8a55", 0.95, spec=0.02), rot=(0, 0, a + 1.0), bevel=0.2)
 
     # ------------------------------------------------------------------ Grandma's dock, the red boat, the posts
     dx = G.DOCK_X
@@ -300,8 +300,8 @@ def build(kit, story, tl):
     # the end posts, taller, by the boat (the "dock posts" of S36)
     for sx in (-1, 1):
         kit.box(f"endpost{sx}", (0.26, 0.26, 2.2), (dx + sx * 1.15, y1 + 0.1, G.DECK + 0.45), darkw)
-    kit.cyl("endcap1", 0.19, 0.1, (dx - 1.15, y1 + 0.1, G.DECK + 1.6), pl("#c9c2b4", 0.7), n=10)
-    kit.cyl("endcap2", 0.19, 0.1, (dx + 1.15, y1 + 0.1, G.DECK + 1.6), pl("#c9c2b4", 0.7), n=10)
+    kit.cyl("endcap1", 0.19, 0.1, (dx - 1.15, y1 + 0.1, G.DECK + 1.6), pl("#6b4a32", 0.8), n=10)
+    kit.cyl("endcap2", 0.19, 0.1, (dx + 1.15, y1 + 0.1, G.DECK + 1.6), pl("#6b4a32", 0.8), n=10)
     # my bare feet and shins hang off the dock's end in S01a only
     skin = pl("#dca97c", 0.7, spec=0.1)
     W["feet"] = kit.empty("feet", (dx + 0.45, y1 + 0.0, G.DECK), None)
@@ -397,7 +397,7 @@ def build(kit, story, tl):
     kit.cyl("nmug", 0.12, 0.2, (G.NDOCK1[0] - 0.9, G.NDOCK1[1] - 3.0, G.DECK + 1.1), pl("#f2a8a0", 0.5), n=12)
     kit.box("nmugpost", (0.22, 0.22, 1.0), (G.NDOCK1[0] - 0.9, G.NDOCK1[1] - 3.0, G.DECK + 0.45), darkw)
     W["steam"] = []
-    sm = pl("#b9d6e4", 0.9, spec=0.0)
+    sm = kit.emit("#eef2f6", 0.5, "steamm")
     for k in range(4):
         ob = kit.sphere(f"steam{k}", 0.05, (G.NDOCK1[0] - 0.9, G.NDOCK1[1] - 3.0, G.DECK + 1.5), sm, seg=10)
         noshadow(ob)
@@ -430,8 +430,13 @@ def build(kit, story, tl):
         ob = kit.cyl(f"gd{i}", r_, 0.02, (0, 0, 0.012 * i), kit.emit(col_, st, f"gdm{i}"), W["glowdisc"], n=40)
         noshadow(ob)
     W["gdock"] = kit.empty("gdock", (0.45, -28.6, WZ + 0.1), None)
-    for i, (r_, col_, st) in enumerate([(3.2, "#4fb8d0", 0.45), (2.2, "#6fcfe2", 0.55), (1.3, "#9fe0ee", 0.7)]):
+    for i, (r_, col_, st) in enumerate([(3.6, "#2fb8d0", 0.6), (2.5, "#5fdcea", 0.72), (1.5, "#a0f0f2", 0.8)]):
         ob = kit.cyl(f"gdk{i}", r_, 0.02, (0, 0, 0.012 * i), kit.emit(col_, st, f"gdkm{i}"), W["gdock"], n=32)
+        noshadow(ob)
+    # the lake lit pale blue-white (S51)
+    W["lakew"] = kit.empty("lakew", (G.MID[0], G.MID[1], WZ + 0.13), None)
+    for i, (r_, col_, st) in enumerate([(34.0, "#8fb8e0", 0.55), (20.0, "#b4d2ee", 0.65), (9.0, "#d4e6f6", 0.72)]):
+        ob = kit.cyl(f"lw{i}", r_, 0.02, (0, 0, 0.012 * i), kit.emit(col_, st, f"lwm{i}"), W["lakew"], n=48)
         noshadow(ob)
     # its reflection off the dock (S08a): a pale disc in strips so ripples break it
     W["refl"] = kit.empty("refl", (0.3, -27.5, WZ + 0.05), None)
@@ -452,7 +457,7 @@ def build(kit, story, tl):
     R = G.DOME_R
     W["moon"] = kit.empty("moon", (G.MID[0], G.MID[1], -R - 3.0), None)
     ms = kit.sphere("moon.sph", R, (0, 0, 0), mats[0], W["moon"], seg=48)
-    cratered(kit, W["moon"], "moon", R, 40, 70, 11, 0.5, 1.5, mats)
+    cratered(kit, W["moon"], "moon", R, 70, 70, 11, 0.3, 0.95, mats)
     noshadow(W["moon"])
     # water pouring off the cap
     W["pour"] = []
@@ -478,8 +483,9 @@ def build(kit, story, tl):
         kit.cyl(f"uweed{i}", 0.12, 3.0, (ux + 14 * math.cos(a), uy + 14 * math.sin(a), G.UFLOOR + 1.5), pl("#3f9a5a", 0.8), n=6, r2=0.05)
     UR = 40.0
     W["umoon"] = kit.empty("umoon", (ux, uy, G.UTOP - UR), None)
-    kit.sphere("umoon.sph", UR, (0, 0, 0), mats[0], W["umoon"], seg=64)
-    cratered(kit, W["umoon"], "um", UR, 44, 34, 23, 1.2, 3.6, mats)
+    umats = (kit.plastic("#b9b3a2", 0.95, "umoonbody", spec=0.0), mats[1], None)
+    kit.sphere("umoon.sph", UR, (0, 0, 0), umats[0], W["umoon"], seg=64)
+    cratered(kit, W["umoon"], "um", UR, 44, 34, 23, 1.2, 3.0, umats)
     noshadow(W["umoon"])
     # fish for S06
     W["fish"] = []
@@ -515,6 +521,12 @@ def build(kit, story, tl):
     kit.box("wsec", (0.025, 0.55, 0.03), (wx + 0.02, wy - 0.05 + 0.2, 1.82), pl("#e0453a", 0.5), rot=(0, 0, -0.1))
     kit.cyl("wpin", 0.06, 0.05, (wx, wy - 0.05, 1.83), pl("#1a2250", 0.5), n=12)
     kit.light("wlight", "POINT", (wx, wy - 3, 4), 0.0, "#fff4e0", size=1.0, shadow=False)
+
+    # a pale disc of light riding the camera, high in the sky and cut by the top edge (the payoff picture)
+    cam = kit.OBJ["cam"]
+    W["skym"] = kit.sphere("skym", 1.0, (0, 0, -40.0), kit.emit("#dde6f4", 0.66, "skymm"), cam, seg=32)
+    noshadow(W["skym"])
+    W["skyh"] = []
 
     build_tag(kit)
     return {}
@@ -555,6 +567,17 @@ def animate(kit, story, tl, t, ctx):
     gains["sun"], gains["fill"], gains["front"] = look["sun"], look["fill"], look["front"]
     gains["moonl"], gains["ufill"] = look["moonl"], look["ufill"]
     gains["rim"] = look["rim"]
+    gains["warm"] = look["warm"]
+    mtop = sample("moon", tl, t, {"top": -3.0})["top"]
+    gains["moonup"] = 0.8 if WZ + 0.3 < mtop < 30 else 0.0
+    wl = kit.LIGHTS["warm"]["obj"]    # a warm fill that rides the camera, so night faces keep their day skin
+    try:
+        cam_ = kit.OBJ["cam"]
+        fwd = cam_.matrix_world.to_quaternion() @ Vector((0.0, 0.0, -1.0))
+        wl.location = Vector(cam_.matrix_world.translation) - fwd * 40.0
+        kit.aim(wl, tuple(cam_.matrix_world.translation))
+    except AttributeError:   # the framing lint runs this against stand-ins
+        pass
     kit.LIGHTS["rim"]["light"].color = (0.66, 0.75, 1.0)
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
@@ -571,7 +594,10 @@ def animate(kit, story, tl, t, ctx):
     gains["glow"] = gl["e"]
     gdk = sample("gdock", tl, t, {"on": 0.0})
     _hide(W["gdock"], gdk["on"] < 0.5)
-    rf = sample("refl", tl, t, {"v": 0.0})
+    lw = sample("lakewhite", tl, t, {"v": 0.0})
+    _hide(W["lakew"], lw["v"] < 0.5)
+    rf = sample("refl", tl, t, {"v": 0.0, "x": 0.3, "y": -27.5})
+    W["refl"].location = (rf["x"], rf["y"], WZ + 0.05)
     rs = max(0.001, rf["v"])
     W["refl"].scale = (rs, rs, 1.0)
     _hide(W["refl"], rf["v"] < 0.03)
@@ -600,6 +626,11 @@ def animate(kit, story, tl, t, ctx):
     # a: tilt out from the vertical (deg), b: swing about the lock (deg); the shaft hangs from the lock down into the water
     W["oar"].rotation_euler = (oa["b"] * D2R, 0, 0)
     W["oar"].rotation_euler = (oa["b"] * D2R, (180.0 - oa["a"]) * D2R, 0)
+    # the sky disc: x, y as fractions of the frame's half width / half height, r of the half height
+    sm_ = sample("skym", tl, t, {"on": 0.0, "x": 0.0, "y": 0.9, "r": 0.35})
+    _hide(W["skym"], sm_["on"] < 0.5)
+    for ob in W["skyh"]:
+        _hide(ob, sm_["on"] < 0.5)
     # my feet in S01a
     ft = sample("feet", tl, t, {"on": 0.0})
     _hide(W["feet"], ft["on"] < 0.5)
@@ -624,6 +655,14 @@ def animate(kit, story, tl, t, ctx):
     dist = 1.0
     h2 = dist * 12.0 / lens
     w2 = h2 * 9.0 / 16.0
+    if sm_["on"] >= 0.5:
+        d_ = 40.0
+        rr_ = sm_["r"] * h2 * d_
+        W["skym"].scale = (rr_, rr_, rr_)
+        for ob in [W["skym"]] + W["skyh"]:
+            ob.location = (sm_["x"] * w2 * d_, sm_["y"] * h2 * d_, -d_ - (0.0 if ob is W["skym"] else 0.5))
+        for k_, ob in enumerate(W["skyh"]):
+            ob.scale = (rr_ * 1.0, rr_ * 1.0, 1.0)
     tz = sample("tagzoom", tl, t, {"z": 0.0, "oy": 0.0})
     z = tz["z"]
     tag = W["tag"]
