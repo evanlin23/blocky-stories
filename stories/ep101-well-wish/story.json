@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 7,
+ "rev": 8,
  "look": {
   "style": "closer",
   "fog": "#cfe6f5",
@@ -7458,11 +7458,11 @@
    "dur": 1.2
   },
   {
-   "at": "L14.2",
+   "at": "L14.2-0.8",
    "name": "car",
    "x": 98.1,
    "y": 3.0,
-   "dur": 1.1
+   "dur": 1.2
   },
   {
    "at": "L14",
@@ -8360,7 +8360,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 7
+  "rev": 8
  },
  "set_moves": [
   "S01",

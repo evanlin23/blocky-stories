@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 7
+REV = 8
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -370,7 +370,7 @@ shot("L13", mv([LANE - 1.0, STOP_CAR[1] - 3.6, 1.4], [LANE + 0.45, STOP_CAR[1] +
 beat("wes", "L13.1", expr="angry", arms=[0, 0])
 shot("L13.1", A((LANE + 0.45, STOP_CAR[1] + 0.4, 1.25), 0, 2.2, off=-8, lens=50, push=0.1), name="keyturn")
 cue("L14", "car", x=LANE, y=-4.0, dur=1.2)
-cue("L14.1", "car", x=CURB_CAR[0] - 0.0, y=CURB_CAR[1], dur=1.1)
+cue("L14.1-0.8", "car", x=CURB_CAR[0] - 0.0, y=CURB_CAR[1], dur=1.2)
 meter("L14", bar=0.2, red=0.0, dur=1.0)
 beat("wes", "L14", arms=[75, 75], expr="wide", head=[0, -10])
 shot("L14", mv([LANE + 4.6, -12.8, 1.4], [LANE, -11.9, 1.25], 24, [LANE + 4.6, -9.8, 1.4], [LANE, -9.0, 1.25], 24), name="rollback")
