@@ -184,7 +184,7 @@ SHOTS = [
     ("L31", "S36 side-on, the arms coming down toward the quilt", 1,
      move(([0.95, 1.15, 1.05], [-0.45, 2.45, 0.95]), ([0.9, 1.4, 1.1], [-0.45, 2.45, 0.95]), 28, 26)),
     ("L31+0.7", "S36b low at the bed's foot: the arms coming down", 1,
-     move(([-0.2, 0.85, 0.9], [-0.1, 2.4, 0.85]), ([-0.2, 0.3, 1.9], [-0.1, 2.4, 0.85]), 26, 26)),
+     move(([-0.2, 0.85, 0.9], [-0.1, 2.4, 0.85]), ([-0.1, 0.85, 0.9], [-0.1, 2.4, 0.85]), 26, 26)),
     ("L32", "S37 the lamp comes up", 1,
      move(([-0.15, 1.15, 1.45], [-0.55, 0.38, 0.95]), ([-0.3, 0.95, 1.4], [-0.55, 0.38, 0.95]), 26, 30)),
     ("L33", "S38 the box ends resting flat on the patterned quilt", 1,
@@ -377,7 +377,7 @@ cues = [
     {"at": "L26", "name": "boxes", "hidden": True},
     {"at": "L29", "name": "boxes", "pose": "over_bed_hi", "face": "wide"},     # arms still up, reaching
     {"at": "L31", "name": "boxes", "pose": "over_bed_mid", "face": "wide"},
-    {"at": "L31+1.3", "name": "boxes", "pose": "over_bed", "face": "wide"},
+    {"at": "L32", "name": "boxes", "pose": "over_bed", "face": "wide"},
     {"at": "L35", "name": "boxes", "hidden": True},
     {"at": "L46", "name": "boxes", "pose": "head_shelf", "face": "frown"},
     # the stack: six gone (L18), shorter again with the face box's clean square (L26), whole again (L35)
