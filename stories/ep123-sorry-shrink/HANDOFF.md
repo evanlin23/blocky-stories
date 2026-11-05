@@ -10,3 +10,8 @@
   - standards: revise, 4 must-fixes (plus removing "hold").
 - Now: one builder is applying every round 1 must-fix. Next comes round 2 (both reviewers said revise, so both look again).
 - Queue note from standards: keep ep123 (`cost`) away from ep99-statue-years and ep126 (both `cost`).
+- The round 1 fixes are in (rev 5): S11 is split into a wide shot (S11a) and a close-up (S11b), and the S15 camera is closer.
+  - Face widths by the tool's head box: 0.29 in S11b and 0.27 in S15.
+  - preflight, framing and frames show 0 findings each.
+  - measure: 0 blocks, 0 near, 1 warning (cuts per 10 s 9.62 against 5.5 to 8).
+- Next: round 2 of the critic and standards reviews.
