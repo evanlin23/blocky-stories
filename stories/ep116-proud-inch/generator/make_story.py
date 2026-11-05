@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -412,10 +412,10 @@ shot("L43.1", fc((FX, FY, HM), 1.0, 44, fx=0.5, fy=0.46, push=0.16), "mylaugh")
 # L44: Grandpa stooped through the back doorway, me beside him, the new mark
 only("L44", ["grandpa", "me"])
 grandpa_sit("L44", False)
-put("grandpa", "L44", [2.75, 4.3], 0, expr="smile", lean=26, head=[0, -6])
-put("me", "L44", [1.3, 3.0], 0, expr="smile")
+put("grandpa", "L44", [2.55, 4.3], 0, expr="smile", lean=16, head=[0, -6])
+put("me", "L44", [1.5, 2.9], 0, expr="smile")
 cue("L44+0.3", "newmark", v=1.0)
-shot("L44", mv([2.1, -0.4, 1.7], [2.1, 4.0, 1.8], 22, [2.1, 0.1, 1.7], [2.1, 4.0, 1.8], 22), "doorway")
+shot("L44", fc((2.1, 4.0, 2.3), 2.4, 36, fx=0.5, fy=0.5, push=0.05), "doorway")
 only("L45", ["me"])
 put("me", "L45", [MEX, MEY], 0, expr="smile")
 shot("L45", fc((MEX, MEY, HM), 1.1, 40, fx=0.5, fy=0.46, push=0.12), "mylast")

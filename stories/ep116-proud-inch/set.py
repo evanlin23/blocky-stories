@@ -243,6 +243,11 @@ def build(kit, story, tl):
     kit.box("bw.l", (G.POST_X0 - xl, 0.3, CEIL), ((xl + G.POST_X0) / 2, y1 + 0.15, CEIL / 2), cream)
     kit.box("bw.r", (xr - G.DOOR_X1, 0.3, CEIL), ((xr + G.DOOR_X1) / 2, y1 + 0.15, CEIL / 2), cream)
     kit.box("bw.top", (G.DOOR_X1 - G.POST_X0, 0.3, CEIL - G.DOOR_TOP), ((G.POST_X0 + G.DOOR_X1) / 2, y1 + 0.15, (CEIL + G.DOOR_TOP) / 2), cream)
+    # a dark trim round the doorway so the door top edge reads (1 cm proud of the wall face)
+    trim = P("#6b4a2e", 0.7)
+    kit.box("dw.lintel", (G.DOOR_X1 - G.DOOR_X0 + 0.12, 0.02, 0.12), ((G.DOOR_X0 + G.DOOR_X1) / 2, y1 - 0.01, G.DOOR_TOP + 0.06), trim)
+    kit.box("dw.jl", (0.06, 0.02, G.DOOR_TOP), (G.DOOR_X0 - 0.03 + 0.0, y1 - 0.01, G.DOOR_TOP / 2), trim)
+    kit.box("dw.jr", (0.06, 0.02, G.DOOR_TOP), (G.DOOR_X1 + 0.03, y1 - 0.01, G.DOOR_TOP / 2), trim)
     kit.box("bw.mid", (G.DOOR_X1 - G.DOOR_X0, 0.3, 0.02), ((G.DOOR_X0 + G.DOOR_X1) / 2, y1 + 0.15, 0.01), cream)
     # side walls, front wall with window and door
     kit.box("lw", (0.3, y1 - y0, CEIL), (xl - 0.15, (y0 + y1) / 2, CEIL / 2), cream)
