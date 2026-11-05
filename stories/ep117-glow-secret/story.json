@@ -15,7 +15,7 @@
  "tail": 0.2,
  "fade_in": false,
  "fade_out": false,
- "rev": 10,
+ "rev": 11,
  "look": {
   "style": "closer",
   "fog": "#d6e0ff",
@@ -26,6 +26,8 @@
   "exposure": 0.1,
   "flash_safe": true,
   "polish": {
+   "bed_drop_db": 0.0,
+   "bed_lufs": -39.0,
    "reveal": [
     "L24.2"
    ],
@@ -5337,7 +5339,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 10
+  "rev": 11
  },
  "set_moves": [],
  "framing_ok": [
