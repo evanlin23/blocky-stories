@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 7
+REV = 11
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 SPLITS = {"on his LANDLORD'S couch.": [3, 1], "it was a dumb FIGHT,": [3, 2], "in a green ARMCHAIR,": [3, 1],
@@ -283,7 +283,7 @@ shot("L09", F(PK + 0.5, -10.0, 1.4, 3.3, 40, dx=-0.15, push=0.16), "sneeze2")
 only("L10", ["grandpa"])
 put("grandpa", "L10", list(GCH), 0, expr="warm", arms=[40, 40])
 sit("grandpa", "L10")
-shot("L10", F(GCH[0] - 0.5, GCH[1], 1.2, 3.6, 32, dx=-0.2, push=0.1), "room1")
+shot("L10", F(GCH[0] - 0.4, GCH[1], 1.2, 3.6, 32, dx=0.0, push=0.1), "room1")
 beat("grandpa", "L10.2", expr="warm", head=[0, -4])
 shot("L10.2", F(GCH[0], GCH[1], 1.4, 2.7, 40, dx=-0.15, push=0.16), "gp1")
 # L11: top-down tray
@@ -386,8 +386,8 @@ put("mom", "L24", [KT + 1.85, 1.5], 22, expr="polite")
 beat("mom", "L24.1", expr="polite", head=[-8, 0])
 shot("L24", F(KT + 1.85, 1.5, 1.4, 2.7, 40, dx=0.1, push=0.14), "guard")
 put("mom", "L24.2", [KT - 1.3, 2.5], 0, expr="soft")
-go("mom", "L24.2+0.5", [KT - 2.2, 2.6], yaw=125)
-shot("L24.2", F(KT - 1.6, 2.5, 1.4, 3.2, 36, dx=0.3, push=0.1), "turn")
+beat("mom", "L24.2+0.5", expr="polite", head=[-30, 0])
+shot("L24.2", F(KT - 1.3, 2.5, 1.4, 2.9, 38, dx=0.0, push=0.1), "turn")
 # L25: the favourite cookies
 only("L25", [])
 cue("L25", "treat", v=1.0)
@@ -474,7 +474,7 @@ shot("L39", F(GP + 2.2, 2.0, 1.1, 3.5, 21, push=0.1), "reveal")
 shot("L40", mv([GP + 2.4, -2.8, 1.2], [GP + 2.4, 2.0, 1.2], 30, [GP + 2.25, -3.1, 1.25], [GP + 2.25, 2.0, 1.25], 28), "photo")
 beat("grandpa", "L41", expr="sad-smile")
 acting["grandpa"].append({"at": "L41", "pos": list(GCH), "side": [0, 60]})
-shot("L41", F(GCH[0] + 0.5, GCH[1], 1.15, 2.6, 38, dx=0.1, push=0.1), "hand2")
+shot("L41", F(GCH[0] - 0.1, GCH[1], 1.2, 3.1, 38, dx=0.0, push=0.1), "hand2")
 beat("grandpa", "L42", expr="warm", side=[0, 0])
 shot("L42", mv([GP - 3.2, -2.2, 2.0], [GP - 2.0, 3.8, 2.1], 26, [GP + 2.4, -2.2, 2.0], [GP + 1.4, 3.8, 2.1], 26), "wall2")
 # L43: morning, the pill bottle
