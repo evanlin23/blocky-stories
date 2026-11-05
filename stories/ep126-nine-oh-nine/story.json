@@ -15,7 +15,7 @@
  "tail": 0,
  "fade_in": false,
  "fade_out": false,
- "rev": 2,
+ "rev": 3,
  "look": {
   "style": "closer",
   "fog": "#9fb0d8",
@@ -732,8 +732,16 @@
      "made up"
     ],
     [
-     "a RULE.",
-     "a rule."
+     "a RULE,",
+     "a rule,"
+    ],
+    [
+     "so nobody",
+     "so nobody"
+    ],
+    [
+     "would SEE her.",
+     "would see her."
     ]
    ]
   },
@@ -3428,6 +3436,12 @@
   },
   {
    "at": "L07",
+   "name": "time",
+   "hh": 8,
+   "mm": 50
+  },
+  {
+   "at": "L07",
    "name": "sit",
    "who": "me",
    "s": 1.0
@@ -3439,9 +3453,21 @@
   },
   {
    "at": "L08",
+   "name": "time",
+   "hh": 8,
+   "mm": 52
+  },
+  {
+   "at": "L08",
    "name": "sit",
    "who": "me",
    "s": 0.0
+  },
+  {
+   "at": "L09",
+   "name": "time",
+   "hh": 9,
+   "mm": 1
   },
   {
    "at": "L10",
@@ -3668,12 +3694,16 @@
     "from": "L06",
     "to": "end",
     "lufs": -42
-   },
+   }
+  ],
+  "hums": [
    {
-    "kind": "wind",
-    "from": "L21",
-    "to": "end",
-    "lufs": -46
+    "note": "A1",
+    "from": "L07",
+    "to": "L08.1",
+    "lufs": -38,
+    "fade_in": 0.3,
+    "fade_out": 1.4
    }
   ],
   "sfx": [
@@ -3730,7 +3760,7 @@
     ]
    }
   ],
-  "rev": 2
+  "rev": 3
  },
  "set_moves": [],
  "frames_ok": [

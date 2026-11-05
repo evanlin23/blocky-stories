@@ -714,14 +714,14 @@
    ]
   },
   "L32": {
-   "text": "So she made up a rule.",
+   "text": "So she made up a rule, so nobody would see her.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.362,
+   "dur": 2.31,
    "onset": 0.172,
-   "end": 1.172,
+   "end": 2.103,
    "chunks": [
     [
      0.172,
@@ -733,7 +733,15 @@
     ],
     [
      0.578,
-     1.172
+     0.931
+    ],
+    [
+     0.983,
+     1.422
+    ],
+    [
+     1.422,
+     2.103
     ]
    ]
   },

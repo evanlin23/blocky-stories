@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -209,17 +209,20 @@ cue("L06", "sit", who="me", s=0.0)
 shot("S06", "L06", face(KX, KY, hz("me"), 0, 0.34, 34))
 key("me", "L06.2", expr="neutral", head=[0, 6])
 cue("L07", "bus", mode="night")
+cue("L07", "time", hh=8, mm=50)
 cue("L07", "sit", who="me", s=1.0)
 teleport("me", "L07", [BX, BY], yaw=0, expr="worried", head=[0, 0])
 shot("S07", "L07", face(BX, BY, hz("me"), -4, 0.34, 34))
 # the bus stopped on a dark road, me stepping out
 cue("L08", "bus", mode="off")
+cue("L08", "time", hh=8, mm=52)
 cue("L08", "sit", who="me", s=0.0)
 teleport("me", "L08", [RX, RY - 2.0], yaw=0, expr="worried")
 key("me", "L08+0.5", [RX, RY - 2.0], yaw=0)
 key("me", "L08.1", [RX + 0.3, RY - 5.0], yaw=0, expr="worried")
 shot("S08", "L08", cam(RX + 0.2, RY - 3.4, 1.2, 6.2, 12, 30, cz=1.4))
 # running
+cue("L09", "time", hh=9, mm=1)
 teleport("me", "L09", [0.6, -28.5], yaw=180, expr="scared", run=True)
 key("me", "L09+0.1", [0.6, -28.5], yaw=180, run=True)
 key("me", "L10", [0.6, -19.5], yaw=180, run=True, expr="scared")
@@ -398,7 +401,8 @@ music = {
 sound = {
     "floor": "concrete", "steps_db": -24,
     "ambience": [{"kind": "crickets", "from": "L06", "to": "end", "lufs": -42},
-                 {"kind": "wind", "from": "L21", "to": "end", "lufs": -46}],
+                 ],
+    "hums": [{"note": "A1", "from": "L07", "to": "L08.1", "lufs": -38, "fade_in": 0.3, "fade_out": 1.4}],
     "sfx": sfx,
     "music_drops": [{"from": "P01", "to": "P01>", "keep": ["sting"]}],
     "rev": REV,
