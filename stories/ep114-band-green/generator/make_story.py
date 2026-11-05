@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 7
+REV = 8
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -205,7 +205,7 @@ shot("L11", [[0, [-3.6, -3.6, 1.45], [-6.1, -1.85, 1.3], 24], [1, [-3.7, -3.5, 1
 for w_ in BEHIND:
     teleport(w_, "L12", [D[w_][0], D[w_][1]], yaw=D[w_][2])
 teleport("grandpa", "L12", [D["grandpa"][0], D["grandpa"][1]], yaw=D["grandpa"][2])
-shot("L12", [[0, [-3.4, -0.8, 0.7], [-5.8, -1.75, 0.75], 24], [1, [-3.5, -0.8, 0.7], [-5.8, -1.75, 0.75], 24]], "sneakers2")
+shot("L12", [[0, [-3.4, -0.8, 0.75], [-5.8, -1.75, 0.95], 21], [1, [-3.5, -0.8, 0.75], [-5.8, -1.75, 0.95], 21]], "sneakers2")
 # L13: the photo of me and Benny on my phone, held on my raised hand
 key("me", "L13", arms=[0, 88], head=[0, 8], expr="worried")
 key("me", "L13.2", arms=[0, 88], head=[0, 8])
