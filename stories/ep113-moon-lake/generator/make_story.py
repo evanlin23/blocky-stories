@@ -17,7 +17,7 @@ import layout as G  # noqa: E402
 OUT = HERE.parent / "story.json"
 # shots that are deliberately the glow / the sky itself (S05 "something GLOWS", S35 the sky going dark, S40 the glow sinking)
 FRAMING_OK = ["S05", "S35", "S40", "S60", "S63", "S85"]
-REV = 15
+REV = 21
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -694,7 +694,7 @@ put("me", "L53", [UX, UY, UT + 11.0], 0, expr="determined" if False else "squeez
 go("me", "L53>", [UX, UY, UT + 2.0], yaw=0, keep_yaw=True)
 shot("L53", FL([1.0, -4.4, 0.9], [0.0, 0.0, 0.8], 28, [0.8, -3.8, 0.8], [0.0, 0.0, 0.8]), "downglow", follow="me")
 # L54: both hands flat on the moon
-put("me", "L54", [UX, UY - 0.25, UT + 0.6], 0, expr="wide", lean=84, arms=[96, 96], head=[0, -50])
+put("me", "L54", [UX, UY - 0.25, UT + 0.35], 0, expr="wide", lean=84, arms=[96, 96], head=[0, -50])
 ugc("L54", e=260.0)
 shot("L54", mv([UX + 1.2, UY - 5.6, UT + 0.45], [UX, UY - 0.9, UT + 0.75], 28, [UX + 0.9, UY - 5.0, UT + 0.45], [UX, UY - 0.9, UT + 0.75], 28), "handsmoon")
 # L55: warm, breathing
@@ -816,14 +816,15 @@ shot("L65", FL([2.5, -5.4, 1.0], [0.42, 0.0, 1.0], 40, [2.1, -4.8, 1.0]), "toget
 only("L66", ["grandma", "me"])
 boatc("L66", x=MX + 1.0, y=MY - 3.0, z=WZ)
 put("grandma", "L66", [MX + 0.7, MY - 2.75, WZ + 0.18], 0, expr="smile", keep_yaw=True)
+put("me", "L66", [MX + 1.45, MY - 2.75, WZ + 0.18], 0, expr="grin", keep_yaw=True)
 sit("me", "L66.1", False)
 oarc("L66", a=70.0, b=0.0)
 oarc("L66+0.7", a=70.0, b=25.0, dur=0.7)
 oarc("L66+1.5", a=70.0, b=-20.0, dur=0.7)
 shot("L66", mv([MX + 1.7, MY - 11.5, 1.5], [MX + 0.9, MY - 4.2, 1.2], 36, [MX + 1.6, MY - 10.8, 1.5], [MX + 0.9, MY - 4.2, 1.2], 36), "sheRows")
-put("me", "L66.1", [MX + 1.5, MY - 6.0, -0.7], 0, expr="grin")
+put("me", "L66.1", [MX + 1.5, MY - 7.0, -0.7], 35, expr="grin", keep_yaw=True)
 for k_ in range(6):
-    acting["me"].append({"at": f"L66.1+{0.1 + k_ * 0.22:.2f}", "pos": [MX + 1.5 - 0.05 * k_, MY - 6.0, -0.7], "arms": [40 if k_ % 2 else 10, 10 if k_ % 2 else 40], "blend": 0.1, "yaw": 0})
+    acting["me"].append({"at": f"L66.1+{0.1 + k_ * 0.22:.2f}", "pos": [MX + 1.5, MY - 7.0, -0.7], "arms": [12 if k_ % 2 else 0, 0 if k_ % 2 else 12], "blend": 0.1, "yaw": 35, "keep_yaw": True})
 # L67: the noon tick, close
 only("L67", [])
 look("L67", "day", dur=0.01)

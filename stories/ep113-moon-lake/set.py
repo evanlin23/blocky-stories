@@ -425,12 +425,12 @@ def build(kit, story, tl):
 
     # ------------------------------------------------------------------ the glow under the lake (three soft discs)
     W["glowdisc"] = kit.empty("glowdisc", (G.MID[0], G.MID[1], WZ + 0.1), None)
-    for i, (r_, col_, st) in enumerate([(9.0, "#1f8fa0", 0.28), (6.2, "#3fb0c8", 0.38), (3.9, "#6fcfe6", 0.5),
-                                        (2.0, "#a8e4f6", 0.62)]):
+    for i, (r_, col_, st) in enumerate([(9.0, "#1f8fa0", 0.28), (6.2, "#3a9cba", 0.3), (3.9, "#6ea8cc", 0.32),
+                                        (2.0, "#d8f0f8", 0.6)]):
         ob = kit.cyl(f"gd{i}", r_, 0.02, (0, 0, 0.012 * i), kit.emit(col_, st, f"gdm{i}"), W["glowdisc"], n=40)
         noshadow(ob)
-    W["gdock"] = kit.empty("gdock", (0.45, -28.6, WZ + 0.1), None)
-    for i, (r_, col_, st) in enumerate([(3.6, "#2fb8d0", 0.6), (2.5, "#5fdcea", 0.72), (1.5, "#a0f0f2", 0.8)]):
+    W["gdock"] = kit.empty("gdock", (0.45, -29.2, WZ + 0.1), None)
+    for i, (r_, col_, st) in enumerate([(9.0, "#1fa6a0", 0.45), (1.05, "#f6efc8", 0.9)]):
         ob = kit.cyl(f"gdk{i}", r_, 0.02, (0, 0, 0.012 * i), kit.emit(col_, st, f"gdkm{i}"), W["gdock"], n=32)
         noshadow(ob)
     # the lake lit pale blue-white (S51)
@@ -440,7 +440,7 @@ def build(kit, story, tl):
         noshadow(ob)
     # its reflection off the dock (S08a): a pale disc in strips so ripples break it
     W["refl"] = kit.empty("refl", (0.3, -27.5, WZ + 0.05), None)
-    rm = kit.emit("#b9d2f2", 0.55, "reflm")
+    rm = kit.emit("#a8c8e0", 0.3, "reflm")
     rm2 = kit.emit("#6f8fd8", 0.7, "reflm2")
     kit.cyl("refl.halo", 3.4, 0.02, (0, 0, 0), rm2, W["refl"], n=40)
     rr_ = random.Random(8)
@@ -568,6 +568,23 @@ def animate(kit, story, tl, t, ctx):
     gains["moonl"], gains["ufill"] = look["moonl"], look["ufill"]
     gains["rim"] = look["rim"]
     gains["warm"] = look["warm"]
+    # dusk water: never brighter than about #bcd6e8 (only the glow and reflection discs go paler)
+    try:
+        wm = bpy.data.materials["water"]
+        kdim = 0.55 + 0.45 * min(1.0, look["sun"] / 3.4)
+        W.setdefault("water_cols", [None, None])
+        ramp = [n for n in wm.node_tree.nodes if n.type == "VALTORGB"][0]
+        if W["water_cols"][0] is None:
+            W["water_cols"] = [tuple(e.color) for e in ramp.color_ramp.elements]
+        bsdf = wm.node_tree.nodes["Principled BSDF"]
+        bsdf.inputs["Roughness"].default_value = 0.35 + 0.6 * (1.0 - min(1.0, look["sun"] / 3.4))
+        for sk_ in ("Specular IOR Level", "Specular"):
+            if sk_ in bsdf.inputs:
+                bsdf.inputs[sk_].default_value = 0.5 * min(1.0, look["sun"] / 3.4) + 0.0
+        for e_, c_ in zip(ramp.color_ramp.elements, W["water_cols"]):
+            e_.color = (c_[0] * kdim, c_[1] * kdim, c_[2] * kdim, 1.0)
+    except (KeyError, AttributeError, IndexError):
+        pass
     mtop = sample("moon", tl, t, {"top": -3.0})["top"]
     gains["moonup"] = 0.8 if WZ + 0.3 < mtop < 30 else 0.0
     wl = kit.LIGHTS["warm"]["obj"]    # a warm fill that rides the camera, so night faces keep their day skin
