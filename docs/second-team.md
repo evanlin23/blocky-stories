@@ -17,8 +17,8 @@ was told at about 4:20 PM Tuesday to merge the latest main before it judges anyt
 | last-chance round: ep83-free-fries | critic r3 approved; proof queued | no | #265 | proof qa, merge |
 | merged 11:20 AM Wed: ep94-today-again | critic r3 approved, proof qa passed; final next | no | #269 | final qa |
 | dropped 10:39 AM Wed: ep97-prize-bears | critic r3 and standards approved, but the proof failed flash (7 a second at 45.1 s, the swinging closet bulb) | no | #267 closed | folder deleted |
-| batch 10 (ep101 to ep107) | 5 building (ep101, ep102, ep103, ep105, ep107); ep104 and ep106 dropped at the creature test | no | #264 scripts | reviews, proofs |
-| batch 11 (ep108 to ep114) | writer started 10:06 AM Wed | no | none yet | builds after the Thursday 8 AM reset |
+| batch 10 (ep101 to ep107) | ep102 merged 3:01 PM Wed (#278), final next; ep105 building; ep101, ep103, ep104, ep106, ep107 dropped | no | #264 scripts | final qa (ep102) |
+| batch 11 (ep108 to ep114) | 5 builds started 2:18 PM Wed (ep108 to ep111, ep114); ep112 and ep113 after the Thursday reset | no | #272 scripts | reviews, proofs |
 | audit and rewrite plan | open | n/a | #258 | review and merge |
 | QA desk | working | n/a | per film | checks finals as they land |
 | dropped | batch 7: ep81-eleven-steps, ep82-no-door; batch 8: ep85-early-alarm, ep86-aunts-keys, ep88-six-paintings, ep91-ninth-coffee (#225 closed); batch 9: ep93-recipe-card, ep95-corn-maze, ep100-window-bridges | no | none | recorded in stories/ideas.md and each package.json hold |

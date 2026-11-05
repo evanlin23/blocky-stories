@@ -1,0 +1,1017 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Never eat Aunt Clem's peaches, or every road out leads back to her gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.293,
+   "onset": 0.172,
+   "end": 3.103,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.31
+    ],
+    [
+     1.388,
+     1.707
+    ],
+    [
+     1.707,
+     2.034
+    ],
+    [
+     2.034,
+     2.509
+    ],
+    [
+     2.509,
+     3.103
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Twelve summers I've visited. I've never had one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.207
+    ],
+    [
+     1.276,
+     1.603
+    ],
+    [
+     1.603,
+     2.224
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Her mail carrier ate one on his first delivery.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.741,
+     1.094
+    ],
+    [
+     1.094,
+     1.276
+    ],
+    [
+     1.276,
+     2.069
+    ]
+   ]
+  },
+  "L04": {
+   "text": "That was thirty years ago. Every route he drives still ends at her gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.121,
+   "onset": 0.172,
+   "end": 2.931,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.086
+    ],
+    [
+     1.181,
+     1.526
+    ],
+    [
+     1.526,
+     1.931
+    ],
+    [
+     1.931,
+     2.371
+    ],
+    [
+     2.371,
+     2.931
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Two brothers hiking through stopped for one slice of pie.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.052
+    ],
+    [
+     1.052,
+     1.397
+    ],
+    [
+     1.397,
+     1.784
+    ],
+    [
+     1.784,
+     2.397
+    ]
+   ]
+  },
+  "L06": {
+   "text": "They run the gas station now. Every road they take brings them back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.052,
+   "onset": 0.155,
+   "end": 2.845,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     1.276
+    ],
+    [
+     1.371,
+     1.75
+    ],
+    [
+     1.75,
+     2.069
+    ],
+    [
+     2.069,
+     2.845
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Every summer, Aunt Clem, my mom's sister, leaves a peach by my bag.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.207,
+   "onset": 0.172,
+   "end": 3.0,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.017
+    ],
+    [
+     1.043,
+     1.776
+    ],
+    [
+     1.845,
+     2.241
+    ],
+    [
+     2.241,
+     3.0
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Every summer, I leave it on the sill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     0.974
+    ],
+    [
+     0.974,
+     1.603
+    ]
+   ]
+  },
+  "L09": {
+   "text": "But the valley keeps getting farther.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.517
+    ]
+   ]
+  },
+  "L10": {
+   "text": "My first summer, the drive was twelve miles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.716,
+     1.121
+    ],
+    [
+     1.121,
+     1.914
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Then thirty, then ninety.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     1.345
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Last year, it took all day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.759
+    ],
+    [
+     0.759,
+     1.397
+    ]
+   ]
+  },
+  "L13": {
+   "text": "The map says it hasn't moved.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.362
+    ]
+   ]
+  },
+  "L14": {
+   "text": "And Mom hasn't come in five years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.836
+    ],
+    [
+     0.836,
+     1.69
+    ]
+   ]
+  },
+  "L15": {
+   "text": "She says she keeps missing the turn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.922
+    ],
+    [
+     0.922,
+     1.534
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Mom grew up here.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.19,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.534,
+     1.052
+    ]
+   ]
+  },
+  "L17": {
+   "text": "This summer, the drive took two days.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.017
+    ],
+    [
+     1.017,
+     1.707
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Then I looked in my mirror.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     1.259
+    ]
+   ]
+  },
+  "L19": {
+   "text": "The road behind me was gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.828
+    ],
+    [
+     0.828,
+     1.483
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Just grass. Like it had never been there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     0.854
+    ],
+    [
+     0.854,
+     1.138
+    ],
+    [
+     1.138,
+     1.776
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Aunt Clem was at her gate, holding a peach.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.629
+    ],
+    [
+     0.629,
+     0.931
+    ],
+    [
+     0.983,
+     1.81
+    ]
+   ]
+  },
+  "L22": {
+   "text": "She said, you almost didn't make it this time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.19,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.509,
+     1.026
+    ],
+    [
+     1.026,
+     1.207
+    ],
+    [
+     1.207,
+     1.879
+    ]
+   ]
+  },
+  "L23": {
+   "text": "She said, the warning's backwards.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.19,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.509,
+     1.517
+    ]
+   ]
+  },
+  "L24": {
+   "text": "The valley doesn't trap the people who eat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.87
+    ],
+    [
+     0.87,
+     1.147
+    ],
+    [
+     1.147,
+     1.69
+    ]
+   ]
+  },
+  "L25": {
+   "text": "It forgets the ones who don't.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.784
+    ],
+    [
+     0.784,
+     1.397
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Every summer you didn't, the road forgot you a little more.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.052
+    ],
+    [
+     1.121,
+     1.431
+    ],
+    [
+     1.431,
+     1.819
+    ],
+    [
+     1.819,
+     2.448
+    ]
+   ]
+  },
+  "L27": {
+   "text": "The mail carrier goes to the city every tuesday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     0.992
+    ],
+    [
+     0.992,
+     1.31
+    ],
+    [
+     1.31,
+     2.138
+    ]
+   ]
+  },
+  "L28": {
+   "text": "He's home by lunch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.155
+    ]
+   ]
+  },
+  "L29": {
+   "text": "The brothers visit their mom every holiday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.138
+    ],
+    [
+     1.138,
+     2.0
+    ]
+   ]
+  },
+  "L30": {
+   "text": "They always find their way back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.155,
+     0.698
+    ],
+    [
+     0.698,
+     1.379
+    ]
+   ]
+  },
+  "L31": {
+   "text": "That's all the peach does.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.19
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Mom stopped eating them the summer she moved away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     0.905
+    ],
+    [
+     0.905,
+     1.241
+    ],
+    [
+     1.241,
+     2.034
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Now the road can't find her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.31
+    ]
+   ]
+  },
+  "L34": {
+   "text": "So I ate it. On her porch, with Aunt Clem.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.603
+    ],
+    [
+     0.655,
+     1.069
+    ],
+    [
+     1.094,
+     1.81
+    ]
+   ]
+  },
+  "L35": {
+   "text": "Best thing I've ever tasted.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.448
+    ]
+   ]
+  },
+  "L36": {
+   "text": "The next morning, the drive home took twelve minutes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.647,
+     1.138
+    ],
+    [
+     1.138,
+     2.017
+    ]
+   ]
+  },
+  "L37": {
+   "text": "I brought a second peach for Mom.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.879
+    ],
+    [
+     0.879,
+     1.483
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Last Sunday, she found the turn for the first time in five years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.776,
+     1.043
+    ],
+    [
+     1.043,
+     1.328
+    ],
+    [
+     1.328,
+     1.466
+    ],
+    [
+     1.466,
+     1.837
+    ],
+    [
+     1.837,
+     2.724
+    ]
+   ]
+  },
+  "L39": {
+   "text": "So when people ask why I keep going back, I tell them the rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.776
+    ],
+    [
+     0.776,
+     1.121
+    ],
+    [
+     1.121,
+     1.603
+    ],
+    [
+     1.672,
+     2.009
+    ],
+    [
+     2.009,
+     2.621
+    ]
+   ]
+  }
+ }
+}
