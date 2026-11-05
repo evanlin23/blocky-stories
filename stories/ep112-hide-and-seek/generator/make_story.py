@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -159,8 +159,8 @@ ME2 = (TAX - 1.8, TAY + 0.3)                      # where I stand to say it
 PHOTO_AT = (2.2, 1.7)                             # Grandma showing the photo
 PHOTO_W = (PHOTO_AT[0] + 0.47, PHOTO_AT[1] - 0.49, 1.14)   # about where the photo lies, in the world
 GY = -120.0
-BN = (-3.6, 5.6)                                  # the bench Glenn sits on in the shed shot
-BNY = -131.3
+BN = (-4.4, 6.2)                                  # the bench Glenn sits on in the shed shot
+BNY = -88.0
 
 # ===================================================================== 01 the hook (L01 to L03)
 cue(0, "clock", y=31.0, d=204.0)
@@ -231,14 +231,14 @@ only("L06", ["c1", "c3"])
 sit("c1", "L06", False)
 sit("c3", "L06", False)
 px, py = G.PORCH
-put("c1", "L06", [px - 3.0, py - 2.0], 180, expr="worried", lean=14.0, head=[0, 30])
-put("c3", "L06", [px - 1.9, py - 2.0], 180, expr="worried", lean=16.0, head=[0, 26])
-beat("c1", "L06+0.5", lean=16.0, head=[-8, 34])
-shot("L06", mv([px - 4.6, py + 0.5, 1.1], [px - 2.4, py - 2.0, 1.15], 24, [px - 4.4, py + 0.3, 1.1], [px - 2.4, py - 2.0, 1.15], 24), "porch")
+put("c1", "L06", [px - 3.0, py - 2.0], 160, expr="worried", lean=6.0, head=[0, 8])
+put("c3", "L06", [px - 1.9, py - 2.0], 200, expr="worried", lean=6.0, head=[0, 8])
+beat("c1", "L06+0.5", lean=9.0, head=[-6, 12])
+shot("L06", mv([px - 5.0, py + 0.9, 1.25], [px - 2.45, py - 2.0, 1.2], 28, [px - 4.8, py + 0.7, 1.25], [px - 2.45, py - 2.0, 1.2], 28), "porch")
 only("L06.1+0.3", ["me"])
-put("me", "L06.1+0.3", [SHX + 2.6, SHY + 2.2], 66, expr="worried", head=[-20, 8])
+put("me", "L06.1+0.3", [-4.6, 10.9], 100, expr="worried", head=[-20, 8])
 beat("me", "L06.1+0.7", head=[18, 4], expr="worried")
-shot("L06.1+0.3", mv([SHX + 5.0, SHY + 0.6, 1.6], [SHX + 1.4, SHY + 1.6, 1.5], 26, [SHX + 4.7, SHY + 0.8, 1.6], [SHX + 1.4, SHY + 1.6, 1.5], 26), "behindshed")
+shot("L06.1+0.3", mv([-2.2, 12.6, 1.6], [-5.7, 10.4, 1.4], 26, [-2.4, 12.4, 1.6], [-5.7, 10.4, 1.4], 26), "behindshed")
 # L07: Mr. Glenn at the fence
 FX, FY = G.GLENN_FENCE
 only("L07", ["glenn"])
@@ -256,7 +256,7 @@ put("glenn", "L08", GL, GY, expr="smile")
 shot("L08", orb(GL[0], GL[1], 1.32, GY, 3.0, 40, push=0.12), "glennstache")
 move("L08.2-0.05", "bench", vis=1.0)
 put("glenn", "L08.2", list(BN), BNY, expr="smile")
-shot("L08.2", mv([BN[0] - 4.0, BN[1] - 0.2, 1.45], [BN[0] - 1.6, BN[1] + 1.4, 1.35], 20, [BN[0] - 3.8, BN[1] - 0.1, 1.45], [BN[0] - 1.6, BN[1] + 1.4, 1.35], 20), "glennshed")
+shot("L08.2", mv([-7.0, 3.9, 1.5], [-5.1, 6.5, 1.5], 22, [-6.8, 4.0, 1.5], [-5.1, 6.5, 1.5], 22), "glennshed")
 move("L09-0.1", "bench", vis=0.0)
 # L09: the potato salad
 move("L09-0.05", "bowl", x=BOWL[0], y=BOWL[1] - 0.55, z=1.1)
@@ -312,7 +312,7 @@ shot("L13", mv([-3.4, 0.4, 1.7], [-3.2, 4.4, 1.3], 28, [-2.6, 1.0, 1.65], [-1.3,
 acting["me"].append({"at": "L14", "pos": list(ME2), "yaw": 55.0, "expr": "smirk"})
 acting["me"].append({"at": "L14+0.25", "pos": list(ME2), "yaw": 55.0, "arms": [0, 85], "expr": "smirk"})
 beat("glenn", "L14", expr="worried", yaw=-35.0)
-shot("L14", orb(-1.2, 4.6, 1.35, -4, 5.2, 32, push=0.08), "point")
+shot("L14", orb(-1.3, 4.6, 1.35, -4, 4.6, 30, push=0.08), "point")
 cue("L14.2", "eye", v=1.0)
 cue("L14.2", "pulse")
 beat("glenn", "L14.2", expr="wide", yaw=-12.0)
@@ -349,7 +349,7 @@ sit("glenn", "L18", True)
 put("glenn", "L18", GL, 0, expr="smile")
 shot("L18", orb(GL[0], GL[1], 1.35, 0, 3.0, 40, push=0.1), "petegrin")
 beat("glenn", "L18.1", expr="laugh", side=[45, 45], head=[0, 0])
-shot("L18.2", orb(TAX - 1.1, FARA, 0.55, -70, 2.8, 28, dz=0.15, push=0.06), "tally")
+shot("L18.2", mv([-2.6, 6.2, 0.75], [-1.1, 4.95, 0.5], 24, [-2.45, 6.05, 0.75], [-1.1, 4.95, 0.5], 24), "tally")
 beat("glenn", "L18.3", expr="smile", side=[55, 55])
 shot("L18.3", orb(GL[0], GL[1], 1.2, 12, 2.8, 36, dz=0.1), "peteshrug")
 # L19: so now Pete's it
@@ -407,7 +407,6 @@ for i, (at, camera, step, hand, follow, nm) in enumerate(SH):
 sfx = [
     {"at": "L14.2", "kind": "sting", "db": -14},
     {"at": "L15.1+0.6", "kind": "thud", "db": -22},
-    {"at": "L16+0.7", "kind": "click", "db": -20},
     {"at": "L01.3+0.55", "kind": "thud", "db": -24},
 ]
 music = {

@@ -251,7 +251,7 @@ def build(kit, story, tl):
     kit.cyl("flash.h", 0.05, 0.07, (-1.45, G.FENCE_Y - 0.14, 1.32), P("#ffe9a0", 0.3), rot=(math.pi / 2, 0, 0.0), n=10)
 
     # a plain bench by the shed (shown only in the "facing the shed" shot)
-    bn = kit.empty("bench", (-3.6, 5.6, 0.0), None, rot=(0, 0, 0.85))
+    bn = kit.empty("bench", (-4.4, 6.2, 0.0), None, rot=(0, 0, 1.53))
     kit.box("bench.seat", (1.5, 0.32, 0.07), (0, 0, 0.425), wood, bn)
     for sx in (-1, 1):
         kit.box(f"bench.leg{sx}", (0.1, 0.28, 0.4), (sx * 0.62, 0, 0.2), woodd, bn)
