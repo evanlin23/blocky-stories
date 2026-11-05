@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 lines = json.loads((HERE / "lines.json").read_text())
 D2R = math.pi / 180
 T = G.T
@@ -205,7 +205,8 @@ me_off("L11")
 mae("L11", "warm")
 mae("L11+0.35", "warm", head=[0, 9], blend=0.35)         # a small tilt of the head as the fan is shown
 mae("L11+0.8", "warm", head=[0, -3], blend=0.35)
-shot("L11", near(REV_T, 0.47, 45, az=0, el=18, push=0.03), "S11")
+shot("L11", near((0.28, MY - 0.10, T + 0.06), 0.66, 36, az=0, el=34, push=0.03), "S11a")                       # the wide: Mae, the whole mug, her fanned cards
+shot("L11.1", face(0.37, 45, az=0, el=12, push=0.03, f=0.55), "S11b")                      # on "was a GIN": her warm face, the flat fan beside her
 mae("L12", "warm", yaw=0)
 mae("L12.1", "warm", head=[0, -8], blend=0.4)
 shot("L12", face(0.6, 85, az=5, push=0.07, f=0.8), "S12")
@@ -228,7 +229,7 @@ cue("L15", "maecards", on=0.0)
 cue("L15", "slap", u=0.0)
 cue("L15+0.05", "slap", u=1.0, dur=0.4)
 S15_T = (0.435, -0.36, T + 0.058)
-shot("L15", near(S15_T, 0.40, 40, az=0, el=20, push=0.03), "S15")
+shot("L15", near(S15_T, 0.31, 40, az=0, el=20, push=0.03), "S15")
 acting["mae"].append({"at": "L15>", "pos": [SX, SY, T], "yaw": 0, "hidden": True})
 cue("L15>", "winpos", dx=0.0, dy=0.0)
 cue("L15>", "maecards", on=1.0)
@@ -279,7 +280,7 @@ sound = {
     "rev": REV,
 }
 polish = {"emph": ["L01.2", "L06.2", "L08.1", "L11.1", "L16.3", "L18.2"],
-          "reveal": ["L11"], "camera": False, "idle_scale": 0.25, "hold": ["S11"],
+          "reveal": ["L11"], "camera": False, "idle_scale": 0.25, "hold": ["S11a", "S11b"],
           "key_hits": "all", "whoosh_cuts": False}
 story = {
     "slug": "ep123-sorry-shrink",
