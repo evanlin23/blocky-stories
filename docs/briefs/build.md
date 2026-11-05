@@ -41,7 +41,7 @@ The builder reads docs/engine.md itself.
      The builder fixes what it lists before the preview. This is not a review round, it gives no verdict, and it's done once. Framing and faces at phone size were the most common blockers in batches 7 to 9.
    - **Framing lint, every shot.** Run `python scripts/framing.py --story stories/__STORY__` (report-only; on main since #284). Have the builder fix every finding: a head cut by the frame, a face under 1/5 of the width on a line about that person, back-of-head, or an empty frame during a line. List a deliberate one in story.json `"framing_ok"`. Run it again before every review round and before the rescue.
    - **Preview.** Render the preview, then finish and mix.
-   - **Flash.** Run `python -m blocky flash` at full rate on any shot with bright light changes, and pass with margin (at most about 5 flashes a second, against the cap of 6). A swinging, flickering or switching practical light counts (2026-11-04: ep97 failed its proof at 7 a second from a swinging bulb).
+   - **Flash.** Run `python -m blocky flash __STORY__ --like-proof` (every drawing the proof draws, at the meter's size: it reads what the proof reads, 2026-11-05) on any story with bright light changes, glows or flipping lights, and pass with margin (at most about 5 flashes a second, against the cap of 6). A swinging, flickering or switching practical light counts (2026-11-04: ep97 failed its proof at 7 a second from a swinging bulb).
    - **Measure.** Run `python scripts/measure.py --story stories/__STORY__`. The 4 craft blocks must pass:
      - picture changes per 10 s, at 0.5 s and at 0.25 s;
      - motion energy;
