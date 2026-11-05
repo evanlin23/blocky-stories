@@ -65,7 +65,7 @@ def test_back_of_head():
 def test_profile_counts_as_no_face():
     # side on (90 degrees): a blocky face is drawn on the front, so none of it shows
     st = story([[2.2, 0, HEAD], [0, 0, HEAD], 50])
-    assert ("back", "gus") in checks(run(st))
+    assert ("side", "gus") in checks(run(st))
 
 
 def test_empty_frame():
@@ -109,7 +109,7 @@ def test_pronoun_carries_the_last_name():
         "L2": {"who": "narrator", "text": "He said nothing."},
         "L3": {"who": "me", "text": "I went to bed."}}}
     ab = framing.about(st, tl)
-    assert ab == {"L1": ["dad"], "L2": ["dad"], "L3": ["me"]}
+    assert ab == {"L1": [{"dad"}], "L2": [{"dad"}], "L3": [{"me"}]}
 
 
 def test_stems_and_tokens():

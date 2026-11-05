@@ -581,6 +581,24 @@ class SetPlaces:
             return ob
         return prop
 
+    def hud(self, lens: float) -> list[tuple[float, float, float, float]]:
+        """The boxes (x0, y0, x1, y1, in -1..1 across the frame) of what set.py hangs on the camera (a rule tag),
+        as last placed by animate. The camera stand-in never moves, so their places are camera-local: x right,
+        y up, -z ahead, the frame's half height at depth d is d * 12 / lens (Blender: 24 mm sensor, vertical)."""
+        out = []
+        for ob in self.objs:
+            if ob.type != "MESH" or not len(ob.data.verts) or ob.hidden() or not ob.under(self.cam) or ob is self.cam:
+                continue
+            w = ob.world()
+            p = (w @ np.c_[ob.data.verts, np.ones(len(ob.data.verts))].T)[:3].T
+            p = p[p[:, 2] < -1e-4]
+            if not len(p):
+                continue
+            hh = -p[:, 2] * 12.0 / lens
+            xs, ys = p[:, 0] / (hh * 1080 / 1920), p[:, 1] / hh
+            out.append((float(xs.min()), float(ys.min()), float(xs.max()), float(ys.max())))
+        return out
+
     def at(self, t: float) -> dict:
         """Every visible mesh object at time t: name -> (world centre, world half size)."""
         if self.animate_ok:
