@@ -177,9 +177,12 @@ def brass_cap(kit):
     """The table's lower-right corner cap (seen from the front): brass with two coral scratches. A plain tally."""
     brass = kit.metal("#c9a23c", 0.35)
     x, y = 0.47, -0.47
-    kit.box("cap.plate", (0.09, 0.09, 0.012), (x - 0.0, y, T + 0.002), brass, bevel=0.002)
+    W["cap"] = []
+    W["cap"].append(kit.box("cap.plate", (0.09, 0.09, 0.012), (x - 0.0, y, T + 0.002), brass, bevel=0.002))
     for i, dx in enumerate((-0.012, 0.012)):
-        kit.box(f"cap.stroke{i}", (0.006, 0.06, 0.003), (x + dx * 1.8, y, T + 0.0095), kit.plastic("#ff7f6b", 0.5), rot=(0, 0, 12 * D2R * (1 if i else -1)))
+        W["cap"].append(kit.box(f"cap.stroke{i}", (0.006, 0.06, 0.003), (x + dx * 1.8, y, T + 0.0095), kit.plastic("#ff7f6b", 0.5), rot=(0, 0, 12 * D2R * (1 if i else -1))))
+    for ob in W["cap"]:
+        ob["bx"], ob["by"] = ob.location.x, ob.location.y
 
 
 def build_table(kit):
@@ -228,10 +231,11 @@ def build_table(kit):
         n += 1
     # the two fans: Mae's winning hand (faces), mine (backs), then my winning hand (faces) for L14 and L15
     fx, fy = 0.38, -0.395
-    W["maecards"] = fan(kit, "mc", (fx, fy), -85, 14, True, ["dia", "dot", "sq", "tri", "dia"], z0=T)
+    W["maecards"] = fan(kit, "mc", (fx, fy), -85, 24, True, ["dia", "dot", "sq", "tri", "dia"], z0=T)
     W["minecards"] = fan(kit, "yc", (-0.02, 0.50), 0, 14, False, ["dia"], back="#3f7fe0", z0=T)
     W["wincards"] = fan(kit, "wc", (-0.02, 0.50), 0, 14, True, ["sq", "tri", "dot", "dia", "sq"], z0=T)
     W["wincards_z"] = [c.location.z for c in W["wincards"]]
+    W["wincards_xy"] = [(c.location.x, c.location.y) for c in W["wincards"]]
     W["maelast"] = W["maecards"][-1]
     W["maelast_loc"] = tuple(W["maelast"].location)
 
@@ -354,9 +358,9 @@ def first_frame(kit, story):
             ln = bpy.data.objects.get(f"mae.gl{sx}")
             if ln is None:
                 continue
-            ln.hide_render = True
             ly = ln.location.y - 0.01
             cx, cz = ln.location.x, ln.location.z
+            bpy.data.objects.remove(ln, do_unlink=True)
             kit.box(f"mae.glr_b{sx}", (0.46, 0.04, 0.05), (cx, ly, cz - 0.16), frame, gp)
             for ex in (-1, 1):
                 kit.box(f"mae.glr_s{sx}{ex}", (0.05, 0.04, 0.34), (cx + ex * 0.205, ly, cz), frame, gp)
@@ -459,15 +463,22 @@ def animate(kit, story, tl, t, ctx):
     sm = sample("mine", tl, t, {"on": 1.0})
     for c in W["minecards"]:
         _hide(c, sm["on"] < 0.5)
+    cm = sample("capmove", tl, t, {"dx": 0.0, "dy": 0.0})
+    for ob in W["cap"]:
+        ob.location = (ob.get("bx") + cm["dx"], ob.get("by") + cm["dy"], ob.location.z)
+    mcs = sample("maecards", tl, t, {"on": 1.0})
+    for c in W["maecards"]:
+        _hide(c, mcs["on"] < 0.5)
     sw = sample("win", tl, t, {"on": 0.0, "slap": 0.0})
     lift = 0.0
     if sw["on"] >= 0.5:
         # the slap: the hand drops from 6 cm to the cloth in 0.18 s, then settles
         sl = sample("slap", tl, t, {"u": 1.0})
         lift = 0.06 * (1.0 - min(1.0, sl["u"]) ** 2)
-    for c, z in zip(W["wincards"], W["wincards_z"]):
+    wp = sample("winpos", tl, t, {"dx": 0.0, "dy": 0.0})
+    for c, z, xy in zip(W["wincards"], W["wincards_z"], W["wincards_xy"]):
         _hide(c, sw["on"] < 0.5)
-        c.location.z = z + lift
+        c.location = (xy[0] + wp["dx"], xy[1] + wp["dy"], z + lift)
     # the neighbor's bike
     bk = sample("bike", tl, t, {"on": 0.0})
     _hide(W["bike"], bk["on"] < 0.5)

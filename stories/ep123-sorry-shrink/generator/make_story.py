@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 3
 lines = json.loads((HERE / "lines.json").read_text())
 D2R = math.pi / 180
 T = G.T
@@ -97,9 +97,12 @@ cue(0, "mine", on=1.0)
 cue(0, "win", on=0.0)
 cue(0, "shrink", k=0.0)
 cue(0, "arrows", n=0.0)
-cue(0, "nudge", k=1.0)
+cue(0, "nudge", k=0.0)
 cue(0, "bike", on=0.0)
 cue(0, "slap", u=1.0)
+cue(0, "winpos", dx=0.0, dy=0.0)
+cue(0, "maecards", on=1.0)
+cue(0, "capmove", dx=0.0, dy=0.0)
 cue(0, "sit", who="me", on=True)
 
 MAEP = [MX, MY, T]
@@ -127,13 +130,13 @@ def face(d, lens=85, az=0.0, el=0.0, push=0.08, f=1.0, dx=0.0, dz=0.0):
 
 
 # ===== 01 the rule (L01, L02): Mae's face at her eye level, a mug rim soft behind her
-shot(0, face(0.62, 85, az=-6, push=0.07), "S01a")                                         # sly, the first frame
+shot(0, face(0.46, 85, az=-6, push=0.06, f=0.93), "S01a")                                         # sly, the first frame
 mae("L01.2", "smirk")
 shot("L01.2", face(0.5, 85, az=-4, push=0.07), "S01b")                                   # punch in on INCH
 mae("L02", "smile")
 shot("L02", face(0.66, 85, az=6, push=0.07), "S02a")
 cue("L02.2", "h1", v=5.0)
-shot("L02.2", near((MX - 0.06, MY + 0.02, T + 0.13), 0.64, 40, az=4, el=3, push=0.04), "S02b")     # scale shot 1: she and the mug
+shot("L02.2", mv([0.43, MY - 0.40, T + 0.03], [0.455, MY, T + 0.075], 40, [0.44, MY - 0.36, T + 0.03], [0.455, MY, T + 0.075], 40), "S02b")     # scale shot 1: she and the mug
 
 # ===== 02 the rule at work (L03 to L06)
 cue("L03", "bike", on=1.0)
@@ -149,7 +152,7 @@ shot("L03.2", face(0.66, 85, az=-5, push=0.06), "S03b")
 hide("neighbor", "L03.2")
 # L04: me across the table, cards fanned flat in front of me
 me_on("L04", "neutral")
-shot("L04", mv([0.5, -1.7, 1.75], [HX, HY, 1.42], 42, [0.4, -1.5, 1.72], [HX, HY, 1.42], 42), "S04")
+shot("L04", mv([0.5, -1.7, 1.55], [0.02, 0.9, 1.15], 40, [0.4, -1.5, 1.52], [0.02, 0.9, 1.15], 40), "S04")
 me_off("L04.1")
 mae("L04.1", "smile")
 shot("L04.1", face(0.64, 85, az=4, push=0.07), "S04m")
@@ -171,18 +174,17 @@ shot("L06.2", mv([G.CAL[0] + 0.02, 0.4, 1.27], [G.CAL[0], 2.55, 1.27], 35, [G.CA
 
 # ===== 03 the scare (L07 to L09)
 mae("L07", "smirk", head=[0, 0])
-shot("L07", face(0.7, 70, az=-8, el=8, push=0.08, f=0.75, dz=-0.02), "S07")                 # her cards at her feet
-cue("L07+0.1", "nudge", k=0.0)
+shot("L07", mv([0.30, MY - 0.50, T + 0.20], [0.38, MY - 0.05, T + 0.06], 36, [0.32, MY - 0.46, T + 0.19], [0.38, MY - 0.05, T + 0.06], 36), "S07")                 # her cards at her feet
 cue("L07+0.2", "nudge", k=1.0, dur=0.6)
 mae("L07.3", "smirk", head=[0, 0])
 shot("L07.3", face(0.5, 85, az=-3, push=0.1), "S07b")                                      # looks up into the lens
 mae("L08", "smile")
 acting["mae"].append({"from": "L08.1", "to": "L08>", "mouth": [0.35, 0.35], "flap": True})
-shot("L08", face(0.42, 85, az=3, push=0.08), "S08")                                         # her face half the frame
+shot("L08", face(0.42, 85, az=3, push=0.08, f=0.92), "S08")                                         # her face half the frame
 cue("L09", "shrink", k=1.0, dur=0.8)
 cue("L09.1", "h1", v=4.0)
 mae("L09", "smile")
-shot("L09", near((MX - 0.05, MY + 0.02, T + 0.09), 0.9, 55, az=-3, el=3, push=0.04), "S09")      # scale shot 2
+shot("L09", mv([0.44, MY - 0.40, T + 0.03], [0.465, MY, T + 0.062], 46, [0.45, MY - 0.36, T + 0.03], [0.465, MY, T + 0.062], 46), "S09")      # scale shot 2
 
 # ===== 04 the reveal (L10 to L13)
 me_on("L10", "wide")
@@ -192,8 +194,8 @@ mae("L10.1", "smirk")
 shot("L10.1", face(0.6, 85, az=3, push=0.07), "S10b")
 me_off("L11")
 mae("L11", "smile")
-shot("L11", near((MX - 0.05, MY - 0.03, T + 0.07), 0.62, 40, az=8, el=24, push=0.06), "S11")
-mae("L12", "smirk")
+shot("L11", mv([0.33, MY - 0.62, T + 0.24], [0.385, MY - 0.02, T + 0.052], 52, [0.34, MY - 0.58, T + 0.23], [0.385, MY - 0.02, T + 0.052], 52), "S11")
+mae("L12", "smirk", yaw=0)
 shot("L12", face(0.6, 85, az=5, push=0.07, f=0.8), "S12")
 mae("L13", "smile")
 shot("L13", face(0.46, 85, az=-4, push=0.08, f=0.8), "S13")
@@ -204,12 +206,20 @@ mae("L13.2", "smile", head=[0, 2], blend=0.4)
 cue("L14", "mine", on=0.0)
 cue("L14", "win", on=1.0)
 me_on("L14", "smile")
-shot("L14", mv([0.45, -1.65, 1.75], [HX, HY, 1.4], 42, [0.35, -1.5, 1.72], [HX, HY, 1.4], 42), "S14")
+shot("L14", mv([0.45, -1.65, 1.55], [0.02, 0.9, 1.15], 40, [0.35, -1.5, 1.52], [0.02, 0.9, 1.15], 40), "S14")
 me_off("L15")
-mae("L15", "wide")
+acting["mae"].append({"at": "L14>", "pos": [0.26, -0.46, T], "yaw": 0, "hidden": True, "blend": 0.0})                                       # she steps out of the cut, then stands near-left for the slap
+acting["mae"].append({"at": "L15", "pos": [0.26, -0.46, T], "yaw": 0, "hidden": False, "expr": "wide", "arms": [0, 0], "head": [0, 0]})
+cue("L15", "winpos", dx=0.46, dy=-0.62)
+cue("L15", "maecards", on=0.0)
+cue("L15", "capmove", dx=-0.10, dy=-0.06)
 cue("L15+0.05", "slap", u=0.0)
 cue("L15+0.12", "slap", u=1.0, dur=0.22)
-shot("L15", mv([MX - 0.15, MY - 0.49, T + 0.16], [MX + 0.02, MY - 0.05, T + 0.05], 28, [MX - 0.13, MY - 0.45, T + 0.15], [MX + 0.02, MY - 0.05, T + 0.05], 28), "S15")
+shot("L15", mv([0.14, -0.82, T + 0.10], [0.46, -0.08, T + 0.05], 40, [0.15, -0.78, T + 0.10], [0.46, -0.08, T + 0.05], 40), "S15")
+acting["mae"].append({"at": "L15>", "pos": [0.26, -0.46, T], "yaw": 0, "hidden": True})
+cue("L15>", "winpos", dx=0.0, dy=0.0)
+cue("L15>", "maecards", on=1.0)
+cue("L15>", "capmove", dx=0.0, dy=0.0)
 me_on("L16", "sad-smile")
 shot("L16", mv([0.45, -1.65, 1.75], [HX, HY, 1.4], 42, [0.35, -1.5, 1.72], [HX, HY, 1.4], 42), "S16")
 acting["me"].append({"from": "L16.3", "to": "L16>", "mouth": [0.4, 0.4], "flap": True})
@@ -219,8 +229,8 @@ acting["me"].append({"at": "L17", "pos": [HX, HY, 0.0], "expr": "worried", "arms
 acting["me"].append({"at": "L17.2", "pos": [HX, HY - 0.0, -0.05], "blend": 0.5})     # an inch lower in frame
 shot("L17", mv([0.4, -1.6, 1.74], [HX, HY, 1.4], 42, [0.33, -1.45, 1.7], [HX, HY, 1.4], 42), "S17")
 me_off("L18")
-mae("L18", "smirk", head=[0, 0])
-shot("L18", face(0.62, 85, az=-5, push=0.07), "S18")
+acting["mae"].append({"at": "L18", "pos": MAEP, "expr": "smirk", "head": [0, 0], "hidden": False})
+shot("L18", face(0.40, 85, az=-6, push=0.05, f=0.74), "S18")
 
 # ---------------------------------------------------------------------------------------------- finish
 shots, names = [], {}
@@ -290,7 +300,8 @@ story = {
     "sound": sound,
     "set_moves": ["S15", "S06b"],
 }
-story["framing_ok"] = []
+story["framing_ok"] = ["S18"]   # the tool places Mae at full height; after the shrink her head sits lower, clear of the tag (checked in the still)
+story["frames_ok"] = ["S17", "S07"]   # the second meter line (my height) appears with this shot, on purpose
 story["asr_forgive"] = ["sun", "looked", "mae"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
