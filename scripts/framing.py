@@ -14,26 +14,32 @@ The rig (blocky/rig.py): a character `h` tall (spec "height") has its head centr
 
 Who a line is about: the character who says it, every cast member the words name (the cast key without a trailing
 number, or a spec's "aliases"), and, for a line with he / him / his / she / her and no name, the character named
-in one of the two lines before. The narrator's own character ("me") counts only when it speaks: "I" and "me" are
-in nearly every line.
+in one of the four lines before (a he skips anyone whose key or aliases say grandma, mom, aunt...; a she, grandpa,
+dad, uncle...). The narrator's own character ("me") is the subject of a line that says I, me or my only when it's
+big on screen: then its face has to show (back or side), but it's never "missing" or "small".
 
 The checks, sampled ten times a second over each (shot, line) overlap of 0.3 s or more. Each has to hold for
-half the overlap or more:
-  cut      a head with its centre in frame and a quarter or more of it past an edge (heads 1/12 of the width or
-           bigger); or a head centred outside the frame that still covers 4% of it, or any of it when the head
-           is 60% of the frame wide (a crop of hair at the lens). Once a shot.
+half the overlap or more. Calibrated 2026-11-05 against Blender's own head boxes and the reviews that dropped
+ep109, ep112, ep115 and ep116 (docs/audit/lessons-log.md 34 and 37):
+  cut      a head 1/12 of the width or bigger, with its hair and hat, 4% or more past an edge while 15% or
+           more of it is still in: the top edge for anyone, the other three for the line's subject (the narrator
+           on an I / me / my line too) or any face 0.18 of the width or more; or a head centred outside the frame that still covers 4% of it, or
+           any of it when the head is 60% of the frame wide (a crop of hair at the lens). Once a shot.
   missing  the line is about X, and X's head is never in frame: always for a speaker, and for a character the
            words name when X is in the scene (unhidden, within 10 m of the camera during the line)
-  back     X is in frame but the camera never sees X's face: 110 degrees or more off it, the back of the head
-  side     ...80 to 110 degrees off it: a profile (a blocky face is drawn on the front, so it shows none of it).
-           Softer than back: passed films use profiles; so did a dropped one, on the line it was dropped for.
-           A turned-away head under 1/12 of the width counts as small.
+  back     X is in frame but the camera never sees X's face: 110 degrees or more off it, the back of the head;
+           also, once a shot, on a he / she line its names don't reach, when no face is seen and the biggest
+           head in frame (0.18 of the width or more) is turned away and can be that he or she (ep112 S26)
+  side     ...70 to 110 degrees off it: a profile (a blocky face is drawn on the front of a round head, so at 70
+           degrees it's gone: ep109 S52 was 67 to 76). A turned-away head under 1/12 of the width counts as small.
   small    X's face is seen but never 1/5 of the frame width (the owner's bar, less his 10% band: 0.18)
   empty    a voiced line about nobody in the cast, over a frame with no character, no creature (story.json
            "clip_heads"), no prop the words name and nothing prop-sized close by (an object 3 m or smaller,
            within 8 m, covering 3% of the frame): walls, floor and sky only
-  tag      anyone's face (seen, 1/12 of the width or bigger) 30% or more under the rule tag (what set.py
-           hangs on the camera), for half the shot. Once a shot.
+  tag      a seen face with the rule tag (what set.py hangs on the camera) over 30% of it, or over a third of
+           an eye or of the mouth (ep116 S17), for half the shot. Once a shot.
+  caption  a seen face 0.12 of the width or wider with a caption over half its mouth, during a line. Once a shot.
+  hand     a hand (an arm's last block) nearer the camera than a seen face, with 30% of it over the face.
 A shot in story.json "framing_ok": ["S12"] is skipped: a deliberate empty or back shot. A builder can name the
 props the words mean in "framing_props": {"jar": [x, y, z]}, for a set.py this can't read.
 It prints one row per finding and exits 0. Nothing blocks yet: wiring it into `check` or `gate` comes later.
@@ -70,10 +76,22 @@ SHARE = 0.5          # how much of the overlap a problem has to last
 BIG = 0.2            # a face reads at phone size from 1/5 of the frame width (owner's bar, RULES.md)
 BAND = 0.1           # ...with the owner's wiggle room (2026-11-03: "band can be like 10%"): small is under 0.18
 CUT_MIN = 1 / 12     # a head narrower than this is background: cutting it doesn't count
-CUT_OVER = 0.25      # a quarter of the head past an edge is a cut head
+CUT_OVER = 0.04      # 4% of the head (hair and hat included) past any edge is a cut head (ep115, ep116, ep109:
+                     # reviewers drop heads 2 to 20% over the edge; 25% missed every one of them)
+# what sits on top of the head, in its half heights (rig.py's boxes over the head's top, 0.6 units up)
+HAIR_TOP = {"spiky": 0.78, "mop": 0.6, "bun": 0.5, "buzz": 0.05, "bald": 0.0}   # any other hair: 0.17
+HAT_TOP = {"beanie": 0.65, "ballcap": 0.5, "tophat": 1.25, "bucket": 0.6, "hood": 0.3}   # any other hat: 0.5
+HAIR_SIDE = 0.12     # ...and hair, brims and mustaches this much of the half width either side
+CAP_MIN = 0.12       # a face this wide or wider has a mouth to read: the caption band check
+MOUTH = (0.4, 0.3, 0.12)   # the mouth: drawn 0.4 hh under the head's centre (faces.py: 74% down the face box,
+                           # the eyes 0.13 hh over the centre), 0.3 hw either side, 0.12 hh either way
+CAP_OVER = 0.5       # a caption over half the mouth covers it
+EYE_Y, EYE_X, EYE_R = 0.13, 0.32, 0.14   # each eye: 0.13 hh up, 0.32 hw either side, about 0.14 of each across
+HAND_OVER = 0.3      # a hand box this much over a seen face, nearer the camera than the head, covers it
 CROP_COVER = 0.04    # (a crop has to cover a quarter of this, 1% of the frame)
 CROP_NEAR = 1.0      # a head centred outside the frame and wider than it, with any of it in: hair at the lens
-FACE_DEG = 80.0      # the camera within this of the face's direction sees the face
+FACE_DEG = 65.0      # the camera within this of the face's direction sees the face (80 passed ep109's S52, a
+                     # profile at 67 to 76 degrees that its critic dropped: a face drawn on a round head is gone)
 BACK_DEG = 110.0     # ...past this it sees the back of the head; in between, the side
 PROP_MAX = 3.0       # an object this big or smaller (largest side, m) is a prop, not a wall
 PROP_NEAR = 8.0      # ...within this of the camera (m)
@@ -85,6 +103,15 @@ AROUND = 0.0         # ...looking this far either side of the line (s): during t
 MAIN = 0.5           # a shot carrying this much of a line is its main shot: its subject has to be in it too
 TAG_OVER = 0.3       # a face this much under the rule tag (set.py's HUD on the camera) is covered
 PRONOUNS = re.compile(r"\b(he|him|his|she|her|hers)\b", re.I)
+HE = re.compile(r"\b(he|him|his)\b", re.I)
+SHE = re.compile(r"\b(she|her|hers)\b", re.I)
+OTHER = {"m": "f", "f": "m"}
+# who a he or a she can't be: a cast key, or an alias, with one of these words in it
+FEMALE = {"mom", "mum", "mother", "ma", "grandma", "gran", "granny", "nana", "nan", "aunt", "auntie", "sister", "sis",
+          "girl", "woman", "lady", "mrs", "ms", "miss", "wife", "daughter", "queen", "niece", "grandmother", "madam"}
+MALE = {"dad", "father", "pa", "grandpa", "gramps", "grandad", "granddad", "uncle", "brother", "bro", "boy", "man",
+        "guy", "mr", "husband", "son", "king", "nephew", "grandfather", "sir"}
+SELF = re.compile(r"\b(i|me|my|mine|myself|i'm|i’m|i've|i’ve|i'd|i’d|i'll|i’ll)\b", re.I)
 STOP = {"the", "and", "you", "your", "for", "with", "that", "this", "but", "not", "are", "was", "his", "her", "him",
         "she", "they", "them", "our", "out", "off", "all", "one", "two", "who", "what", "when", "then", "there",
         "here", "have", "has", "had", "its", "from", "into", "onto", "over", "under", "just", "still", "every",
@@ -133,6 +160,27 @@ def names_of(cast: dict) -> dict[str, frozenset]:
     return {n: frozenset(ks) for n, ks in out.items()}
 
 
+def sex_of(group, cast: dict) -> str | None:
+    """"f" or "m" when every member's key or aliases say so (grandma, uncle2, "aliases": ["mrs kettle"]), else None."""
+    out = set()
+    for k in group:
+        ws = set(re.findall(r"[a-z]+", " ".join([k.lower(), *[a.lower() for a in cast.get(k, {}).get("aliases", [])]])))
+        out.add("f" if ws & FEMALE and not ws & MALE else "m" if ws & MALE and not ws & FEMALE else None)
+    return out.pop() if len(out) == 1 else None
+
+
+def self_lines(st: dict, tl: dict) -> dict[str, frozenset]:
+    """Line id -> the narrator's own character, for a voiced line that says I, me or my and isn't its own: there
+    the narrator is the subject when on screen, so the facing test applies (ep109 S52: me in profile on my own
+    "I finally said sorry"). Never "missing" or "small": I is in nearly every line."""
+    mes = frozenset(k for k, v in st.get("cast", {}).items()
+                    if re.sub(r"\d+$", "", k.lower()) == "me" and not v.get("offscreen"))
+    if not mes:
+        return {}
+    return {lid: mes for lid in tl["order"] if tl["lines"][lid]["who"] not in ("pause", *mes)
+            and SELF.search(tl["lines"][lid].get("text", ""))}
+
+
 def about(st: dict, tl: dict) -> dict[str, list[frozenset]]:
     """Line id -> who it's about, the speaker first: each one a group of cast members (any of them on screen will
     do), from the speaker, the names in the words, or a he / she that carries a name from the four lines before."""
@@ -150,7 +198,10 @@ def about(st: dict, tl: dict) -> dict[str, list[frozenset]]:
             if n in ws and ks not in named:
                 named.append(ks)
         if not named and PRONOUNS.search(text):
-            named = next((p[:1] for p in reversed(recent[-CARRY:]) if p), [])
+            sex = "f" if SHE.search(text) and not HE.search(text) else "m" if HE.search(text) and not SHE.search(text) \
+                else None
+            fits = [g for p in reversed(recent[-CARRY:]) for g in p if sex is None or sex_of(g, cast) != OTHER[sex]]
+            named = fits[:1]
         who = [frozenset([ln["who"]])] if ln["who"] in cast else []
         out[lid] = who + [g for g in named if not (who and who[0] <= g)]
         recent.append(named)
@@ -184,7 +235,10 @@ def head_view(loc, tgt, lens, s, spec, crop):
     to_cam = np.asarray(loc[:2], float) - c[:2]
     n = float(np.linalg.norm(to_cam))
     ang = 0.0 if n < 1e-6 else math.degrees(math.acos(float(np.clip(face @ to_cam / n, -1, 1))))
+    hat = spec.get("hat", "none")
+    top = HAT_TOP.get(hat, 0.5) if hat not in (None, "none", "") else HAIR_TOP.get(spec.get("hair", "cap"), 0.17)
     return {"x": x, "y": y, "hw": hw, "hh": hh, "width": hw, "ang": ang,
+            "top": hh * (1 + top), "side": hw * (1 + HAIR_SIDE),
             "dist": float(np.linalg.norm(c - np.asarray(loc, float)))}
 
 
@@ -238,18 +292,95 @@ def cut_edge(v) -> str | None:
     if v["width"] < CUT_MIN or c <= 0:
         return None
     seen = c * 4 / (4 * v["hw"] * v["hh"])
-    if 0.15 <= seen <= 1 - CUT_OVER:
-        return max(over, key=lambda k: over[k] / (v["hh"] if k in ("top", "bottom") else v["hw"]))
-    return None
+    if seen < 0.15:   # hardly there: a head leaving the frame, not a framing
+        return None
+    # the head with its hair and hat, against each of the four edges: the share of it past that edge
+    top, side = v.get("top", v["hh"]), v.get("side", v["hw"])
+    past = {"top": (v["y"] + top - 1) / (v["hh"] + top), "bottom": (-1 - (v["y"] - v["hh"])) / (v["hh"] + top),
+            "right": (v["x"] + side - 1) / (2 * side), "left": (-1 - (v["x"] - side)) / (2 * side)}
+    e = max(past, key=past.get)
+    return e if past[e] >= CUT_OVER else None
+
+
+def overlap(a, b) -> float:
+    """The area two boxes (x0, y0, x1, y1) share."""
+    return max(0.0, min(a[2], b[2]) - max(a[0], b[0])) * max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
+
+
+def area(a) -> float:
+    return max(0.0, a[2] - a[0]) * max(0.0, a[3] - a[1])
+
+
+def seen_face(v) -> bool:
+    return v is not None and in_frame(v) and v["ang"] <= FACE_DEG and v["width"] >= CUT_MIN
+
+
+def face_box(v):
+    return (v["x"] - v["hw"], v["y"] - v["hh"], v["x"] + v["hw"], v["y"] + v["hh"])
+
+
+def mouth_box(v):
+    y = v["y"] - MOUTH[0] * v["hh"]
+    return (v["x"] - MOUTH[1] * v["hw"], y - MOUTH[2] * v["hh"], v["x"] + MOUTH[1] * v["hw"], y + MOUTH[2] * v["hh"])
+
+
+def eye_boxes(v):
+    y = v["y"] + EYE_Y * v["hh"]
+    return [(v["x"] + s * EYE_X * v["hw"] - EYE_R * v["hw"] * 2, y - EYE_R * v["hh"] * 2,
+             v["x"] + s * EYE_X * v["hw"] + EYE_R * v["hw"] * 2, y + EYE_R * v["hh"] * 2) for s in (-1, 1)]
 
 
 def under_tag(v, tag) -> bool:
-    """Is TAG_OVER or more of a seen face (a head in frame, facing the camera) under the tag's box?"""
-    if v is None or tag is None or v["ang"] > FACE_DEG or not in_frame(v) or v["width"] < CUT_MIN:
+    """Is a seen face (a head in frame, facing the camera) under the tag's box: TAG_OVER or more of it, or a third
+    of an eye or of the mouth (ep116 S17: the tag over one eye, 13% of the face)?"""
+    if tag is None or not seen_face(v):
         return False
-    w = max(0.0, min(tag[2], v["x"] + v["hw"]) - max(tag[0], v["x"] - v["hw"]))
-    h = max(0.0, min(tag[3], v["y"] + v["hh"]) - max(tag[1], v["y"] - v["hh"]))
-    return w * h >= TAG_OVER * 4 * v["hw"] * v["hh"]
+    if overlap(tag, face_box(v)) >= TAG_OVER * area(face_box(v)):
+        return True
+    return any(overlap(tag, b) >= area(b) / 3 for b in [*eye_boxes(v), mouth_box(v)])
+
+
+def hand_boxes(loc, tgt, lens, s, spec, crop):
+    """Each hand's box in the frame and its distance from the camera: the last block of each arm (rig.py: arms 2
+    long from the shoulder, raised forward by `arms`, out by `side`), a 1-unit cube."""
+    h = float(spec.get("height", 1.0)) * U
+    yaw = s["yaw"]
+    right = np.array([math.cos(yaw), math.sin(yaw), 0.0])
+    fwd = np.array([math.sin(yaw), -math.cos(yaw), 0.0])
+    up = np.array([0, 0, 1.0])
+    base = np.array([s["x"], s["y"], s["z"]])
+    out = []
+    for side, arm, out_ in zip((-1, 1), s["arms"], s.get("arms_side", (0.0, 0.0))):
+        sh = base + up * 3.75 * h + right * side * 1.5 * h
+        d = (fwd * math.sin(arm) - up * math.cos(arm)) * math.cos(out_) + right * side * math.sin(out_)
+        c = sh + d * 1.6 * h
+        p = measure.project(loc, tgt, lens, c)
+        if p is None:
+            continue
+        x, y = to_frame(p, crop)
+        hw = 0.5 * h * p[2] * crop[0] * 2
+        hh = hw * 1080 / 1920
+        out.append(((x - hw, y - hh, x + hw, y + hh), float(np.linalg.norm(c - np.asarray(loc, float)))))
+    return out
+
+
+_CAPS: dict = {}
+
+
+def caption_box(c) -> tuple | None:
+    """A caption's block in the frame (x0, y0, x1, y1 in -1..1, y up), from post.caption_image's own layout."""
+    k = (c["text"], bool(c.get("big")))
+    if k not in _CAPS:
+        try:
+            from blocky import post
+            _, m = post.caption_image(c["text"], c.get("big", False))
+            w, h = m["w"], m["h"]
+            x0, y0 = post.CX - w / 2, post.CY - h / 2
+            pad = 15   # caption_image's 30 px of padding, top and bottom together
+            _CAPS[k] = (x0 / 540 - 1, 1 - 2 * (y0 + h - pad) / 1920, (x0 + w) / 540 - 1, 1 - 2 * (y0 + pad) / 1920)
+        except Exception:   # noqa: BLE001 - no font or PIL: the band the one-line captions use (62 to 69%)
+            _CAPS[k] = (-0.6, -0.38, 0.55, -0.25)
+    return _CAPS[k]
 
 
 def box_view(loc, tgt, lens, c, half, crop):
@@ -333,6 +464,7 @@ def lint(st: dict, tl: dict, story_dir: Path | None = None, use_set: bool = True
     at = T.resolver(tl["lines"], tl["duration"])
     emph = polish.emph_times(tl, pol, at) if pol else []
     lines_about = about(st, tl)
+    selves = self_lines(st, tl)
     places = Places(story_dir if use_set else None, st, tl)
     heads = tuple(st.get("clip_heads", []))
     voiced = [l for l in tl["order"] if tl["lines"][l]["who"] != "pause"]
@@ -364,7 +496,8 @@ def lint(st: dict, tl: dict, story_dir: Path | None = None, use_set: bool = True
                 return True
         return False
 
-    rows, shot_samples, line_shots, tags = [], {}, [], {}
+    rows, shot_samples, line_shots, tags, hands = [], {}, [], {}, {}
+    caps = tl.get("captions", [])
     for shot in tl["shots"]:
         sid = shot["id"]
         spec = specs.get(sid, {})
@@ -384,6 +517,7 @@ def lint(st: dict, tl: dict, story_dir: Path | None = None, use_set: bool = True
                     vs[name] = None
                     continue
                 vs[name] = head_view(loc, tgt, lens, s, cs, cr)
+                hands[(sid, t, name)] = hand_boxes(loc, tgt, lens, s, cs, cr)
                 body = body or in_frame(vs[name]) or cover(vs[name]) > 0 or \
                     any(point_in(loc, tgt, lens, q, cr) for q in body_points(s, cs))
             samples.append((t, (loc, tgt, lens), cr, vs, body))
@@ -393,24 +527,77 @@ def lint(st: dict, tl: dict, story_dir: Path | None = None, use_set: bool = True
 
         shot_samples[sid] = samples
         line_shots += [(lid, sid) for lid in lids]
-        subj_here = {n for l in lids for g in lines_about.get(l, []) for n in g}
-        # cut heads and crops, once a shot: the top edge for anyone; a side or the bottom only for the character
-        # the line is about (a passer-by at the edge, or an over-the-shoulder, is composition)
+        where = ",".join(lids) or "-"
+
+        def once(check, name, bad, what, share=SHARE):
+            """A finding, once a shot, when `bad` holds for `share` or more of its samples."""
+            if bad and len(bad) >= share * len(samples):
+                rows.append(row(sid, shot["start"], shot["end"], where, check, name, what))
+                return True
+            return False
+
+        # cut heads and crops, once a shot: the top edge for anyone; a side or the bottom for the line's subject
+        # (the narrator's own character on an I / me / my line too) or any main face, 0.18 of the width or more
+        # (a passer-by at the edge, or an extra in a crowd, is composition)
+        subj = {n for l in lids for g in lines_about.get(l, []) + [selves.get(l, frozenset())] for n in g}
         for name in cast:
-            hit = [e for e in (cut_edge(v[name]) for *_, v, _ in samples) if e]
-            hit = [e for e in hit if e == "top" or e.startswith("crop:") or name in subj_here]
+            hit = [e for e, v in ((cut_edge(x[3][name]), x[3][name]) for x in samples) if e and (
+                e == "top" or e.startswith("crop:") or name in subj or v["width"] >= BIG * (1 - BAND))]
             crops = [e for e in hit if e.startswith("crop:")]
             if (hit and len(hit) >= SHARE * len(samples)) or len(crops) >= CROP_SHARE * len(samples):
                 e = max(set(crops if len(crops) >= CROP_SHARE * len(samples) else hit), key=hit.count)
                 what = f"a crop of the head fills the frame ({e[5:]} edge)" if e.startswith("crop:") else \
                     f"head cut by the {e} edge"
-                rows.append(row(sid, shot["start"], shot["end"], ",".join(lids) or "-", "cut", name, what))
+                rows.append(row(sid, shot["start"], shot["end"], where, "cut", name, what))
 
         for name in cast:   # a face under the rule tag, anyone's, once a shot
-            under = [x for x in samples if under_tag(x[3].get(name), tags.get((sid, x[0])))]
-            if under and len(under) >= SHARE * len(samples):
-                rows.append(row(sid, shot["start"], shot["end"], ",".join(lids) or "-", "tag", name,
-                                f"face under the tag ({TAG_OVER:.0%} or more of it)"))
+            once("tag", name, [x for x in samples if under_tag(x[3].get(name), tags.get((sid, x[0])))],
+                 f"the tag over an eye, the mouth or {TAG_OVER:.0%} of the face")
+
+        def hand_over(x, name):
+            """Anyone's hand nearer the camera than this seen face, and HAND_OVER of the hand over it."""
+            v = x[3].get(name)
+            if not seen_face(v):
+                return False
+            return any(d < v["dist"] and overlap(b, face_box(v)) >= HAND_OVER * area(b)
+                       for o in cast for b, d in hands.get((sid, x[0], o), []))
+
+        for name in cast:   # a hand in front of a face
+            once("hand", name, [x for x in samples if hand_over(x, name)], "a hand over the face")
+
+        def under_caption(x, name):
+            v = x[3].get(name)
+            if not seen_face(v) or v["width"] < CAP_MIN:
+                return False
+            box = mouth_box(v)
+            return any(c["start"] <= x[0] < c["end"] and overlap(caption_box(c), box) >= CAP_OVER * area(box)
+                       for c in caps)
+
+        if lids:   # a caption over a mouth, while someone speaks
+            for name in cast:
+                once("caption", name, [x for x in samples if under_caption(x, name)],
+                     "mouth in the caption band (the caption over half of it)")
+
+        def only_back(x):
+            """No face seen, and the biggest head in frame is turned away and big: the back of a head is the shot."""
+            vs = [v for v in x[3].values() if v is not None and in_frame(v) and v["width"] >= CUT_MIN]
+            if not vs or any(v["ang"] <= FACE_DEG for v in vs):
+                return False
+            big = max(vs, key=lambda v: v["width"])
+            return big["ang"] >= BACK_DEG and big["width"] >= BIG * (1 - BAND)
+
+        # ...on a he or a she that can be them (ep112 S26, "He said nobody ever looks at the guy": a line the
+        # names don't reach, over the back of the man it's about). A back on a line about someone else, or no one,
+        # is a walk away, a look out of the window: passed films are full of them.
+        hes = [tl["lines"][l].get("text", "") for l in lids if PRONOUNS.search(tl["lines"][l].get("text", ""))]
+        backs = [x for x in samples if only_back(x)] if hes else []
+        if backs:
+            who = max((n for n in cast if backs[0][3].get(n) is not None and in_frame(backs[0][3][n])),
+                      key=lambda n: backs[0][3][n]["width"])
+            sx = sex_of(frozenset([who]), cast)
+            fits = any((HE.search(t) and sx != "f") or (SHE.search(t) and sx != "m") for t in hes)
+            if fits and not any(who in g for l in lids for g in lines_about.get(l, [])):
+                once("back", who, backs, "the only head in frame shows its back, on a he / she")
 
         for lid in lids:
             ln = tl["lines"][lid]
@@ -485,6 +672,21 @@ def lint(st: dict, tl: dict, story_dir: Path | None = None, use_set: bool = True
                 if verdict:   # the line's main shot has to show them too
                     rows.append(row(sid, a, b, lid, verdict[0], name,
                                     f"{role}, {verdict[1]} in its main shot ({(b - a) / span:.0%} of the line)"))
+        me = selves.get(lid)
+        if me and not any(me & g for g in lines_about.get(lid, [])):
+            for sid in shots_:   # the narrator on screen on their own I / me / my line: the face has to show
+                sh = cut_at[sid]
+                a, b = max(sh["start"], ln["onset"]), min(sh["end"], ln["end"])
+                if b - a < MAIN * span:
+                    continue
+                vs = [x[3][n] for x in shot_samples[sid] if a - 1e-6 <= x[0] < b for n in me if n in x[3]]
+                inside = [v for v in vs if v is not None and in_frame(v) and v["width"] >= BIG * (1 - BAND)]
+                if inside and len(inside) >= SHARE * len(vs) and not any(v["ang"] <= FACE_DEG for v in inside):
+                    ang = min(v["ang"] for v in inside)
+                    rows.append(row(sid, a, b, lid, "back" if ang >= BACK_DEG else "side", "/".join(sorted(me)),
+                                    f"self (I / me / my), face never seen ({ang:.0f} deg or more off it) in its "
+                                    f"main shot ({(b - a) / span:.0%} of the line)"))
+
     rows.sort(key=lambda r: (r["t0"], r["check"]))
     info = {"props": "set.py" if places.sp else (places.why if use_set else "off"),
             "animate": (places.sp.error or "ok") if places.sp else None}
