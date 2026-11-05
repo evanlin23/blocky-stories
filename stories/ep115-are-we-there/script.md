@@ -177,13 +177,13 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L13: Jo looks at ME. / I look at JO.
 - L14: Neither of us / said a WORD.
 - L15: Mom just smiles / and says / it's the MOUNTAIN.
-- L16: Same PINE. / Same HONK.
+- L16: Pine AGAIN. / Then the HONK.
 - L17: And Mom slows down / at that waterfall / every single LAP.
 - L18: The gas gauge / never MOVES.
 - L19: Jo's phone / has said 4:12 / all DAY.
 - (music drop, 0.6 s)
 - L20: Lap FORTY, / the snow starts / blowing SIDEWAYS.
-- L21: Same plow guy. / Same little WAVE.
+- L21: That plow guy / WAVES again.
 - L22: And the snacks / never run OUT.
 - L23: So this lap, / I watch MOM.
 - L24: At the waterfall, / she slows DOWN.

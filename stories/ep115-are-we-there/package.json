@@ -6,6 +6,5 @@
   "cover_s": 38.9,
   "shape": "whose-loop",
   "opening": "if",
-  "lane": "core",
-  "hold": "batch 12: scripts only, not built yet"
+  "lane": "core"
 }
