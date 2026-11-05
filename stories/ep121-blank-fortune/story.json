@@ -244,12 +244,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "You get one",
-     "you get one"
+     "Free with",
+     "free with"
     ],
     [
-     "with every FILL-UP.",
-     "with every fill-up."
+     "GAS.",
+     "gas."
     ]
    ]
   },
@@ -310,8 +310,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Every Wednesday,",
-     "every wednesday,"
+     "Wednesdays,",
+     "wednesdays,"
     ],
     [
      "my grandpa Ike",
@@ -340,12 +340,8 @@
      "fortune out loud,"
     ],
     [
-     "like it's a",
-     "like it's a"
-    ],
-    [
-     "PROMISE.",
-     "promise."
+     "like a PROMISE.",
+     "like a promise."
     ]
    ]
   },
@@ -354,12 +350,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Last Wednesday,",
-     "last wednesday,"
+     "Mine was",
+     "mine was"
     ],
     [
-     "mine was BLANK.",
-     "mine was blank."
+     "BLANK.",
+     "blank."
     ]
    ]
   },
@@ -486,8 +482,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "So all week,",
-     "so all week,"
+     "So all Thursday,",
+     "so all thursday,"
     ],
     [
      "I waited",
@@ -1344,28 +1340,28 @@
     [
      0,
      [
-      117.1,
-      1.014,
-      1.772
+      117.0,
+      1.01,
+      1.677
      ],
      [
-      117.1,
+      117.0,
       3.6,
-      1.5
+      1.45
      ],
      18.0
     ],
     [
      1,
      [
-      118.5,
-      1.014,
-      1.772
+      117.45,
+      0.639,
+      1.665
      ],
      [
-      118.5,
-      3.6,
-      1.5
+      117.45,
+      3.1,
+      1.45
      ],
      18.0
     ]
@@ -1373,7 +1369,7 @@
    "step": 2,
    "hand": 0.006,
    "at": "L05",
-   "note": "a woman crossing the lot, close, face three-quarters to camera"
+   "note": "a woman crossing the lot toward us, face three-quarters to camera"
   },
   {
    "id": "S11",
@@ -1381,12 +1377,12 @@
     [
      0,
      [
-      118.2,
+      117.6,
       0.528,
       0.836
      ],
      [
-      118.2,
+      117.6,
       3.9,
       0.6
      ],
@@ -1395,12 +1391,12 @@
     [
      1,
      [
-      118.8,
+      118.2,
       0.788,
       0.818
      ],
      [
-      118.8,
+      118.2,
       3.9,
       0.6
      ],
@@ -4131,39 +4127,6 @@
    },
    {
     "at": "L26",
-    "pos": [
-     279.8,
-     0.6
-    ]
-   },
-   {
-    "at": "L26",
-    "pos": [
-     279.8,
-     0.6
-    ],
-    "blend": 0,
-    "yaw": 0,
-    "expr": "neutral",
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true
-   },
-   {
-    "at": "L27",
     "hidden": true,
     "blend": 0
    },
@@ -6373,10 +6336,10 @@
    {
     "at": "L05.3",
     "pos": [
-     118.6042,
-     3.6
+     117.8021,
+     2.8299840000000005
     ],
-    "yaw": 35
+    "hidden": true
    },
    {
     "at": "L06",
@@ -6386,10 +6349,10 @@
    {
     "at": "L06",
     "pos": [
-     120.2942,
-     3.6
+     118.6471,
+     2.018784
     ],
-    "yaw": 35
+    "hidden": true
    }
   ]
  },
@@ -6476,8 +6439,8 @@
    "at": "L05.3",
    "name": "geese",
    "on": true,
-   "x0": 118.6042,
-   "x1": 120.2942,
+   "x0": 118.3021,
+   "x1": 119.3471,
    "y": 3.9,
    "dur": 1.3000000000000007
   },
@@ -6993,6 +6956,7 @@
  "set_moves": [],
  "clip_ok": [],
  "framing_ok": [
+  "S11",
   "S44",
   "S69"
  ],
@@ -7132,5 +7096,5 @@
    }
   ]
  },
- "rev": 5
+ "rev": 8
 }

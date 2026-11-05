@@ -48,8 +48,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Free with GAS.",
-    "free with gas."
+    "Free with",
+    "free with"
+   ],
+   [
+    "GAS.",
+    "gas."
    ]
   ]
  },
@@ -150,8 +154,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mine was BLANK.",
-    "mine was blank."
+    "Mine was",
+    "mine was"
+   ],
+   [
+    "BLANK.",
+    "blank."
    ]
   ]
  },

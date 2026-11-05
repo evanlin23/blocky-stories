@@ -173,10 +173,10 @@ scene("L04.2", tireman=dict(pos=(XT + 1.5, 2.6), yaw=0, expr="wide", arms=[40, 0
 S("L04.2", C((XT + 1.5, 2.6, 1.5), 1.9, -5, 4, 34, d2=1.5), note="he stares: stunned")
 S("L04.3", C((XT + 0.2, 4.0, 1.15), 1.2, 0, 8, 34, d2=0.85), note="close: forty dollars poking out of the tread")
 # L05: the woman and the geese
-LADY_V = 1.3
+LADY_V = 1.3  # walking speed, split between x and y below
 scene("L05", lady=dict(pos=(XL - 3.0, 3.6), yaw=35, expr="worried"))
-S("L05", C((XL - 2.9, 3.6, 1.5), 2.0, 0, 6, 30, tgt2=(XL - 1.5, 3.6, 1.5), d2=2.0), note="a woman crossing the lot, close, face three-quarters to camera")
-S("L05.3", C((XL - 1.8, 3.9, 0.6), 2.6, 0, 4, 28, d2=2.4, tgt2=(XL - 1.2, 3.9, 0.6)), note="a line of geese waddling after her, close")
+S("L05", C((XL - 3.0, 3.6, 1.45), 2.0, 0, 5, 30, tgt2=(XL - 2.55, 3.1, 1.45), d2=1.9), note="a woman crossing the lot toward us, face three-quarters to camera")
+S("L05.3", C((XL - 2.4, 3.9, 0.6), 2.6, 0, 4, 28, d2=2.4, tgt2=(XL - 1.8, 3.9, 0.6)), note="a line of geese waddling after her, close")
 scene("L06", me=dict(pos=(0.9, 2.0), yaw=0, expr="smile"), grandpa=dict(pos=(2.3, 2.0), yaw=0, expr="smile"))
 S("L06", C((1.7, 2.3, 1.3), 2.4, 0, 4, 30, d2=2.1), note="Grandpa and me at the pump beside the teal truck; the pump's holster with two gold strokes at the edge")
 S("L06.2", C((1.7, 2.1, 1.2), 2.6, -8, 5, 30, d2=2.2), note="a low look at the pump and the holster tally")
@@ -271,7 +271,7 @@ S("L25", C((XG, 1.6, 0.78), 1.15, 0, 80, 32, d2=1.0), **TOP, note="close: my bla
 scene("L25.3", me=dict(pos=(XG - 0.2, 0.6), yaw=0, expr="stunned"), grandpa=dict(GP, expr="warm"),
       grandma=dict(GM, expr="asleep"))
 S("L25.3", C(head(XG - 0.2, 0.6, 1.5), 1.8, 0, 3, 36, d2=1.4), look="night", fill=0.9, note="my face, close, stunned")
-scene("L26", me=dict(pos=(XG - 0.2, 0.6), yaw=0, expr="neutral"), grandpa=dict(GP, expr="smile"),
+scene("L26", grandpa=dict(GP, expr="smile"),
       grandma=dict(GM, expr="asleep"))
 S("L26", C(head(XG, 3.0, 1.3), 1.9, 0, 4, 36, d2=1.5), look="night", fill=0.6, note="Grandpa, smiling, a nod")
 # the two-shot of Grandpa and Grandma: Grandpa left, low; Grandma through the doorway, higher in frame
@@ -381,7 +381,7 @@ story = {
     "cues": cues,
     "set_moves": [],
     "clip_ok": [],
-    "framing_ok": ["S44", "S69"],
+    "framing_ok": ["S11", "S44", "S69"],
     "music": {"root": 55, "mode": "major", "bpm": 116, "seed": 121,
               "sections": [
                   {"at": 0, "voices": ["pluck_hi", "pulse", "bubble"], "energy": 0.6},
@@ -420,15 +420,17 @@ if vt.exists():
     AT = timeline.resolver(_tl0["lines"], _tl0["duration"])
     # the lady walks at a steady pace; the geese join her at L05.3
     t0, t1, t2 = AT("L05"), AT("L05.3"), AT("L06")
-    x1 = XL - 3.0 + LADY_V * (t1 - t0)
-    x2 = XL - 3.0 + LADY_V * (t2 - t0)
-    acting["lady"].append({"at": "L05.3", "pos": [x1, 3.6], "yaw": 35})
-    acting["lady"].append({"at": "L06", "pos": [x2, 3.6], "yaw": 35})
-    cues.append({"at": "L05.3", "name": "geese", "on": True, "x0": x1, "x1": x2, "y": 3.9, "dur": t2 - t1})
+    # she walks diagonally toward the camera and to the right, so her face is three-quarters on
+    vx, vy = LADY_V * 0.5, -LADY_V * 0.48
+    p1 = [XL - 3.0 + vx * (t1 - t0), 3.6 + vy * (t1 - t0)]
+    p2 = [XL - 3.0 + vx * (t2 - t0), 3.6 + vy * (t2 - t0)]
+    acting["lady"].append({"at": "L05.3", "pos": p1, "hidden": True})
+    acting["lady"].append({"at": "L06", "pos": p2, "hidden": True})
+    cues.append({"at": "L05.3", "name": "geese", "on": True, "x0": p1[0] + 0.5, "x1": p2[0] + 0.7, "y": 3.9, "dur": t2 - t1})
     for k in acting:
         acting[k].sort(key=lambda e: AT(e["at"]))
     cues.sort(key=lambda e: AT(e["at"]))
 cues[:] = [c for c in cues if c["name"] != "sfx_mark"]
-story["rev"] = 5
+story["rev"] = 8
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
