@@ -47,7 +47,8 @@
     "Brighter every DAY.",
     "Brighter every day."
    ]
-  ]
+  ],
+  "gap": 0.4
  },
  {
   "id": "L04",
@@ -75,7 +76,8 @@
     "plays POKER.",
     "plays poker."
    ]
-  ]
+  ],
+  "gap": 0.45
  },
  {
   "id": "L06",
@@ -169,7 +171,8 @@
     "Anchovy and PINEAPPLE.",
     "Anchovy and pineapple."
    ]
-  ]
+  ],
+  "gap": 0.5
  },
  {
   "id": "L11",
@@ -201,7 +204,8 @@
     "to the CAR.",
     "to the car."
    ]
-  ]
+  ],
+  "gap": 0.5
  },
  {
   "id": "L13",
@@ -233,7 +237,8 @@
     "FAMOUS?",
     "famous?"
    ]
-  ]
+  ],
+  "gap": 0.5
  },
  {
   "id": "L15",
@@ -247,7 +252,8 @@
     "I had to KNOW.",
     "I had to know."
    ]
-  ]
+  ],
+  "gap": 0.4
  },
  {
   "id": "L16",
@@ -283,7 +289,8 @@
     "cast SHADOWS.",
     "cast shadows."
    ]
-  ]
+  ],
+  "gap": 0.55
  },
  {
   "id": "L18",
@@ -297,7 +304,8 @@
     "not to tell Dad.",
     "not to tell Dad."
    ]
-  ]
+  ],
+  "gap": 0.4
  },
  {
   "id": "L19",
@@ -329,7 +337,8 @@
     "Same PROMISE.",
     "Same promise."
    ]
-  ]
+  ],
+  "gap": 0.5
  },
  {
   "id": "L21",
@@ -343,7 +352,8 @@
     "the SAME secret.",
     "the same secret."
    ]
-  ]
+  ],
+  "gap": 0.5
  },
  {
   "id": "L22",
@@ -357,7 +367,8 @@
     "was at this BOOTH.",
     "was at this booth."
    ]
-  ]
+  ],
+  "gap": 0.45
  },
  {
   "id": "L23",
@@ -371,7 +382,8 @@
     "liked the PIZZA.",
     "liked the pizza."
    ]
-  ]
+  ],
+  "gap": 0.45
  },
  {
   "id": "L24",
@@ -393,7 +405,8 @@
     "wouldn't feel BAD.",
     "wouldn't feel bad."
    ]
-  ]
+  ],
+  "gap": 0.5
  },
  {
   "id": "L25",
@@ -421,7 +434,8 @@
     "For NOBODY.",
     "For nobody."
    ]
-  ]
+  ],
+  "gap": 0.6
  },
  {
   "id": "L27",
@@ -439,7 +453,27 @@
     "eat a SOCK.",
     "eat a sock."
    ]
-  ]
+  ],
+  "gap": 0.45
+ },
+ {
+  "id": "L27b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Dad says",
+    "Dad says"
+   ],
+   [
+    "the anchovies",
+    "the anchovies"
+   ],
+   [
+    "STARE at him.",
+    "stare at him."
+   ]
+  ],
+  "gap": 0.45
  },
  {
   "id": "L28",
@@ -471,7 +505,8 @@
     "in our BOOTH,",
     "in our booth,"
    ]
-  ]
+  ],
+  "gap": 0.4
  },
  {
   "id": "L30",
@@ -485,7 +520,8 @@
     "GLOWING.",
     "glowing."
    ]
-  ]
+  ],
+  "gap": 0.6
  },
  {
   "id": "L31",
@@ -521,7 +557,8 @@
     "the LAMPS.",
     "the lamps."
    ]
-  ]
+  ],
+  "gap": 0.45
  },
  {
   "id": "L33",

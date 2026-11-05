@@ -5,11 +5,12 @@
 - **Title:** My Parents GLOW In The Dark 💡
 - **Changed from the pitch:** my guesses at the big secret are spies and a famous past (nothing that hints at another family). The pizza is named (anchovy and pineapple) so the joke lands. The one tense beat is Mom glowing so bright when I ask her that the gumballs cast shadows (L17), and the dark parking lot (L11, L12) is the one dark scene. The glow is warm and soft, never frightening: it comes from inside their faces and hands like a lamp through a lampshade.
 - **Everyone is an adult.** I'm 27, Mom about 57, Dad about 59, my roommate about 27.
-- **Word count:** 234 spoken words in 33 lines (L01 to L33), all `narrator`, plus one 0.5 s music drop before L16.
-- **Estimated length:** about 54 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
+- **Word count:** 240 spoken words in 34 lines (L01 to L33, plus L27b), all `narrator`, plus one 0.5 s music drop before L16.
+- **Estimated length:** about 63 s (the built cut ran 56 s; the retry adds about 1.7 s for L27b and about 5.9 s of longer holds), inside the short arm (60 to 90 s).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright red-and-cream pizza place on a Friday evening: a red vinyl booth by a big window, a checker floor, fixed round pendant lamps (never swinging), a gumball machine by the door. The one dark scene is the parking lot (L11, L12, L19, L20): deep blue dusk, one steady lot lamp far off, and Mom and Dad lit warm from inside. My own glow comes up slowly from L29.
 - **Revised r1 (standards, 2026-11-05):** flash fixes only (S17a's brighten, the dark lot's bloom and cut lengths, S13 moved into the lot). No line changed. Nothing is voiced yet.
 - **Hold:** scripts only (batch 12). Not built, not voiced.
+- **Revised for the retry, 2026-11-05:** the built film ran 56 s, under the short arm. One new line, L27b ("Dad says / the anchovies / STARE at him."), Dad's answer to Mom's sock line, over a new shot S27b (Dad's face in the booth, steady glow, no glow change). Longer holds (per-line `gap` in `generator/lines.json`, the rest stay 0.15 s): L03 0.4, L05 0.45, L10 0.5, L12 0.5, L14 0.5, L15 0.4, L17 0.55, L18 0.4, L20 0.5, L21 0.5, L22 0.45, L23 0.45, L24 0.5, L26 0.6, L27 0.45, L27b 0.45, L29 0.4, L30 0.6, L32 0.45. Only lines whose last shot stays under 2 s with the hold got one. Hook, twist, warm turn and last line unchanged. Only L27b needs voicing.
 
 ## Variety table
 The batch table is in `stories/ep115-are-we-there/script.md`. This row:
@@ -73,7 +74,7 @@ In this town people glow while they keep a secret, and the narrator's parents ha
 - `dad` (Dad, about 59): a gray mustache, round glasses, a green plaid shirt. Lit the same. Faces: `smile`, `sheepish`, `warm`, `laugh`.
 - `roommate` (my roommate, about 27, one shot): a red cap, a gray tee. Lit faintly at the fridge.
 - `planner` (a party planner, about 40, one shot, behind a door).
-Every word is the narrator's. L18, L24 and L27 are reported.
+Every word is the narrator's. L18, L24, L27 and L27b are reported.
 
 ## The strange part (no creature)
 No creature and no creature test. People glow, softly, from inside: a warm emission on skin (faces and hands only, never the clothes), with a soft bloom, brighter the longer the secret. It reads as a lamp through a lampshade.
@@ -125,6 +126,7 @@ Times are estimates. Every line gets one or two shots with acting in each, and a
 | S25 | L25 | Close on the anchovy and pineapple. |
 | S26 | L26 | Me, close, `laugh`. |
 | S27 | L27 | Mom's face, `sheepish`, glowing. |
+| S27b | L27b | Dad's face in the booth, `sheepish`, glowing steady (no change in glow), S23's framing for Dad. |
 | S28 | L28 | Me between them in the booth, three faces to camera. |
 | S29 | L29 | The booth the next Friday, from the window, three of us. |
 | S30 | L30 | My face, close, starting to glow, `smile`. The tag's third bar filling. Cover frame (`cover_s` 48.6). |
@@ -140,7 +142,7 @@ The builder's framing pre-check (`scripts/framing.py`) reads exactly these. At p
 4. **S16 to S18, L16 to L18:** Mom's face, flaring then `sheepish`.
 5. **S19, S20, L19, L20:** Dad's face in the lot.
 6. **S24, L24:** both faces with the same polite look (the reveal).
-7. **S27, L27:** Mom's face.
+7. **S27, S27b, L27, L27b:** Mom's face, then Dad's.
 8. **S30, S31, L30, L31:** my face glowing, then all three.
 
 ## Lore connection (`stories/lore.md`)
@@ -177,6 +179,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L25: Thirty years / of anchovy / and PINEAPPLE.
 - L26: For NOBODY.
 - L27: Mom says / she'd rather / eat a SOCK.
+- L27b: Dad says / the anchovies / STARE at him.
 - L28: And I promised / them both / I wouldn't TELL.
 - L29: So this Friday, / in our BOOTH,
 - L30: I started / GLOWING.
