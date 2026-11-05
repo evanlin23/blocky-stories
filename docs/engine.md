@@ -52,6 +52,8 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
   "acting": {"me": [{"at": 0, "pos": [0, 4], "yaw": 0, "expr": "worried"}, {"at": "L02", "pos": [0, 4]},
                     {"at": "L03", "pos": [0, 1], "expr": "scared", "run": true}]},
   "cues": [{"at": "L05.2", "name": "lights_out"}],    // read by set.py's animate()
+  "light_cues": ["dadfill", "lamp"],   // optional: cue tracks that drive lights; one on or up to 0.15 s before a cut
+                                      // lands on the cut with no fade, a fade across a cut ends on it ("fade": true keeps it)
   "fx": [{"at": "L06", "kind": "shake|flash|black|static|red|punch", "dur": 0.4, "amp": 1, "fade": 0.2, "zoom": 1.15}],
   "music": {"root": 50, "mode": "minor|phrygian|dorian|harmonic|locrian|major|whole", "bpm": 72, "seed": 3,
             "sections": [{"at": 0, "voices": ["drone", "pad", "musicbox", "piano", "pulse", "choir"], "energy": 0.4}]},

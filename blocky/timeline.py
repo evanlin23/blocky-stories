@@ -136,6 +136,34 @@ def _joined(caps: list[dict], min_read: float = MIN_READ) -> list[dict]:
     return out
 
 
+LIGHT_LAND = 0.15   # a light cue this close before a cut (or on it) is the next shot's light
+
+
+def cut_lights(cues: list[dict], cuts: list[float], names) -> list[dict]:
+    """Light cues at a cut take effect on the cut's first frame. For the cue tracks story.json lists in
+    `"light_cues"` (the ones set.py turns into light gains), a cue from LIGHT_LAND before a cut up to the cut
+    moves onto the cut with no fade, and a fade that runs across a cut ends on it, so the new shot opens with
+    its light at full (ep120: Dad's fill eased in over 0.3 s after each cut, so S62, S68 and S69 opened dark).
+    A cue with `"fade": true` keeps its time and fade. Other tracks (a door, a hatch) are unchanged: their eases
+    after a cut are motion the story means."""
+    names = set(names or [])
+    if not names:
+        return cues
+    out = []
+    for c in cues:
+        if c.get("name") in names and not c.get("fade"):
+            t, dur = c["t"], float(c.get("dur", 0) or 0)
+            land = next((a for a in cuts if a - LIGHT_LAND - 1e-9 <= t <= a + 1e-9), None)
+            if land is not None:
+                c = {**c, "t": land, "dur": 0.0, "at_cut": land}
+            else:
+                cross = next((a for a in cuts if t < a < t + dur), None)
+                if cross is not None:
+                    c = {**c, "dur": round(cross - t, 4), "at_cut": cross}
+        out.append(c)
+    return sorted(out, key=lambda c: c["t"])   # stable: same-time cues keep their order; set.py samplers read in order
+
+
 def build(st: dict, voice: dict, fps: int = FPS) -> dict:
     vl = voice["lines"]
     t = LEAD
@@ -216,6 +244,7 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
         return t
 
     cues = [{**c, "t": snap(at(c["at"]))} for c in st.get("cues", [])]
+    cues = cut_lights(cues, starts[1:], st.get("light_cues", []))
     fx = [{**f, "t": snap(at(f["at"]))} for f in st.get("fx", [])]
     acting = {who: [{**k2, "t": snap(k2["t"])} for k2 in (_key(k, at) for k in keys)]
               for who, keys in st.get("acting", {}).items()}
