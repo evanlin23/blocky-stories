@@ -526,9 +526,9 @@ def build(kit, story, tl):
             pass
     # ---- the yards: hedge, fence, gate with the tally
     hedge = P("#3f9e4a", 0.85, 0.05)
-    B(None, (0.5, 2.9, 1.45), (0, -1.75, 0.725), hedge, "hedge", 0.12)
-    for k in range(3):
-        B(None, (0.58, 0.9, 0.3), (0, -0.6 - k * 1.0, 1.5), P("#4cae56", 0.85, 0.05), "hedgetop", 0.12)
+    B(None, (0.5, 2.3, 1.45), (0, -1.45, 0.725), hedge, "hedge", 0.12)
+    for k in range(2):
+        B(None, (0.58, 0.9, 0.3), (0, -0.7 - k * 1.0, 1.5), P("#4cae56", 0.85, 0.05), "hedgetop", 0.12)
     white = P("#f6f4ee", 0.5)
     for k in range(10):
         y = -3.45 - k * 0.27
@@ -610,7 +610,7 @@ def build(kit, story, tl):
     ctx["kitchen"] = build_kitchen(kit, ours, ctx)
     build_hall_bits(kit, ours, his, ctx)
     # marble
-    ctx["marble"] = kit.sphere(nm("marble"), 0.03, (0, 0, -9), P("#3fa0ff", 0.12, 1.0), None, seg=16)
+    ctx["marble"] = kit.sphere(nm("marble"), 0.045, (0, 0, -9), P("#3fa0ff", 0.12, 1.0), None, seg=16)
     ctx["marble"].hide_render = True
     # ---- the porch lamps (outside), kitchen & hall lamps
     ctx["kl"] = kit.light("kitchenl", "POINT", (-ours.sgn * 1.7, 2.3, 2.45), 300, "#fff0d0", size=0.4, parent=ours.root)
