@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -88,7 +88,7 @@ def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="sol
 cast = {
     "me": person("#d9a67a", "#2f4a7a", "#3f5f8f", "#4a3a2a", hair="cap", hair_c="#120f0e", collar="#aab0bb",
                  extras=["hooddown"], extra_c="#aab0bb", brow_w=1.4),
-    "dad": person("#e0b088", "#c0392b", "#3b6ea8", "#3a2a1a", hair="buzz", hair_c="#8d8d95", pattern="plaid",
+    "dad": person("#e0b088", "#c0392b", "#3b6ea8", "#3a2a1a", hair="cap", hair_c="#8e8e98", pattern="plaid",
                   pattern_c="#7a1f18", collar="#f4f4f2", brow_w=1.6, width=1.06),
     "neighbor": person("#e8b48c", "#7fcfae", "#f1ead8", "#8a6a4a", hair="long", hair_c="#7a4a2c", eyes="lashes",
                        brow_w=1.9, pattern="knit", pattern_c="#5fb494"),
@@ -204,14 +204,18 @@ cue("L33", "door", v=1.0, dur=0.9)
 cue("L60", "dust", v=0.0)
 cue("L20-0.1", "roomlamp", v=0.0, dur=0.4)
 cue("L06", "dog", v=1.0)
+cue("L09", "lamp", v=0.45)
+cue("L10", "lamp", v=1.0, dur=0.4)
+cue("L09", "fill", v=0.3)
+cue("L10", "fill", v=1.0, dur=0.4)
 
 # ---------------------------------------------------------------------------------------- 01 the rule (L01..L07)
 HM = (HALLX + 0.85, HALLY + 3.6)
 put("me", 0, HM, 0, expr="neutral", head=[0, 0])
 rip(0, HALLX + 0.2, HALLY + 2.4, 1.4, s=1.35)
-shot(0, mv([HALLX + 0.1, HALLY + 1.0, 1.55], [HALLX + 0.5, HALLY + 4.4, 1.5], 30, push=0.08), "door1")
+shot(0, mv([HALLX + 0.55, HALLY + 0.8, 1.55], [HALLX + 0.88, HALLY + 4.4, 1.5], 30, push=0.08), "door1")
 shot("L01+1.1", mv([HALLX - 0.2, HALLY - 1.6, 0.85], [HALLX + 0.2, HALLY + 4.4, 1.3], 28, push=0.1), "hallripple")
-shot("L01+2.15", mv([HALLX - 0.9, HALLY + 1.2, 1.4], [HALLX + 0.55, HALLY + 4.4, 1.45], 38, push=0.1), "door2")
+shot("L01+2.15", mv([HALLX + 0.0, HALLY + 1.0, 1.45], [HALLX + 0.85, HALLY + 4.4, 1.45], 36, push=0.1), "door2")
 beat("me", "L01+2.2", expr="worried")
 F("L02", "me", HM, 0, "uneasy", "meface1", d=2.8, lens=38, aimz=1.4)
 rip("L02", HALLX + 0.6, HALLY + 2.6, 1.6, s=0.8)
@@ -260,11 +264,11 @@ cue("L08+0.85", "bezel", v=1.0)
 cue("L09", "bezel", v=0.0)
 shot("L08+0.85", mv([DX, DY - 6.8, 1.6], [DX, DY - 3.6, 1.5], 25, [DX, DY - 6.3, 1.6], [DX, DY - 3.6, 1.5], 25), "photo")
 # L09: me at the door two years ago, Dad behind me
-put("me", "L09", [NX + 0.1, NY - 0.7, AZ], 0, expr="angry", arms=[40, 40])
-put("dad", "L09", [NX + 0.85, NY + 0.9, AZ], 0, expr="glum")
+put("me", "L09", [NX + 0.0, NY - 0.7, AZ], 0, expr="angry", arms=[40, 40])
+put("dad", "L09", [NX + 0.72, NY + 0.5, AZ], 0, expr="glum")
 talk("me", "L09", "L09>", 0.9)
 only("L09", ["me", "dad"])
-shot("L09", mv([NX + 0.5, NY - 4.8, AZ + 1.5], [NX + 0.5, NY - 0.1, AZ + 1.5], 34, [NX + 0.5, NY - 4.3, AZ + 1.5], [NX + 0.5, NY - 0.1, AZ + 1.5], 34), "shout")
+shot("L09", mv([NX + 0.36, NY - 3.7, AZ + 1.5], [NX + 0.36, NY - 0.1, AZ + 1.5], 29, [NX + 0.36, NY - 3.3, AZ + 1.5], [NX + 0.36, NY - 0.1, AZ + 1.5], 29), "shout")
 # L10: the door slams, seen from the stair
 only("L10", [])
 shot("L10", mv([NX - 2.0, NY - 2.6, AZ + 0.8], [NX + 0.5, NY, AZ + 1.2], 30, push=0.12), "slam")
@@ -370,15 +374,15 @@ put("me", "L33", [NX + 0.45, NY - 0.7, AZ], 0, expr="uneasy")
 only("L33", ["me"])
 shot("L33", fc([NX + 0.45, NY - 0.7, AZ], 0, d=3.7, lens=34, aimz=1.45, side=8), "door_opens")
 only("L34", [])
-shot("L34", mv([NX + 0.4, NY + 0.7, AZ + 1.5], [NX + 0.4, NY + 4.0, AZ + 0.9], 28, [NX + 0.35, NY + 1.0, AZ + 1.5], [NX + 0.4, NY + 4.0, AZ + 0.9], 28), "lamp_on")
+shot("L34", mv([NX + 0.6, NY + 1.2, AZ + 1.5], [NX + 1.5, NY + 4.5, AZ + 0.75], 22, [NX + 0.6, NY + 1.5, AZ + 1.5], [NX + 1.5, NY + 4.5, AZ + 0.75], 22), "lamp_on")
 shot("L35", mv([NX - 0.7, NY + 2.2, AZ + 1.3], [NX + 0.3, NY + 3.9, AZ + 0.7], 36, [NX - 0.5, NY + 2.5, AZ + 1.25], [NX + 0.3, NY + 3.9, AZ + 0.7], 36), "table")
 put("me", "L36", [NX + 0.55, NY + 0.55, AZ], 180, expr="uneasy")
 only("L36", ["me"])
 rip("L36", NX + 0.1, NY + 3.4, AZ + 1.6, s=1.3, yaw=0.0)
 shot("L36", mv([NX - 0.3, NY + 5.9, AZ + 1.6], [NX + 0.55, NY + 0.55, AZ + 1.45], 32, push=0.1), "doorway")
-beat("me", "L37", expr="stunned")
-rip("L37", NX + 0.1, NY + 3.4, AZ + 1.6, s=2.6)
-shot("L37", mv([NX - 0.5, NY + 6.2, AZ + 1.7], [NX + 0.5, NY + 0.4, AZ + 1.5], 40, [NX - 0.3, NY + 5.5, AZ + 1.65], [NX + 0.5, NY + 0.4, AZ + 1.5], 40), "reveal", hand=0.0)
+put("me", "L37", [NX + 0.5, NY + 2.2, AZ], 0, expr="stunned")
+rip("L37", NX + 0.5, NY + 3.8, AZ + 1.45, s=1.3)
+shot("L37", mv([NX + 0.55, NY - 1.2, AZ + 1.5], [NX + 0.5, NY + 2.6, AZ + 1.35], 25, [NX + 0.55, NY - 0.8, AZ + 1.5], [NX + 0.5, NY + 2.6, AZ + 1.35], 25), "reveal", hand=0.0)
 rip("L38", NX + 0.3, NY + 4.5, AZ + 0.95, s=0.9, ax=1.3)
 only("L38", [])
 shot("L38", mv([NX - 0.6, NY + 2.2, AZ + 1.5], [NX + 0.3, NY + 4.6, AZ + 0.8], 34, push=0.1), "ripple_chairs")
@@ -396,10 +400,11 @@ shot("L40+1.4", mv([NX + 1.4, NY - 4.3, AZ + 1.5], [NX + 0.3, NY - 0.7, AZ + 1.5
 put("dad", "L41", [NX - 4.9, NY - 0.9, 0], 90, expr="glum", head=[0, -22])
 shot("L41", mv([NX - 1.0, NY - 0.9, 3.9], [NX - 4.9, NY - 0.9, 1.5], 32, [NX - 1.3, NY - 0.9, 3.7], [NX - 4.9, NY - 0.9, 1.5], 32), "dad_stair")
 # L42: asleep on the shop couch (lying on his back, face up)
-put("dad", "L42", [SIX + 1.4, SIY + 4.7, 0.66], 90, expr="asleep", lean=-88, head=[0, 0])
-shot("L42", mv([SIX + 1.3, SIY + 4.7, 1.9], [SIX - 0.17, SIY + 4.7, 0.82], 26, [SIX + 1.15, SIY + 4.7, 1.7], [SIX - 0.17, SIY + 4.7, 0.82], 26), "dad_couch")
+put("dad", "L42", [SIX + 0.0, SIY + 4.78, 0.0], 0, expr="asleep", lean=0, head=[0, 0], arms=[0, 0])
+sit("dad", "L42", z=0.5)
+shot("L42", mv([SIX - 0.1, SIY + 1.2, 1.3], [SIX, SIY + 4.75, 1.25], 27, [SIX - 0.1, SIY + 1.7, 1.3], [SIX, SIY + 4.75, 1.25], 27), "dad_couch")
 beat("dad", "L43", expr="glum")
-shot("L43", mv([SIX + 0.9, SIY + 3.6, 1.45], [SIX - 0.17, SIY + 4.7, 0.82], 30, [SIX + 0.7, SIY + 3.9, 1.3], [SIX - 0.17, SIY + 4.7, 0.82], 30), "dad_couch2")
+shot("L43", mv([SIX - 1.0, SIY + 2.0, 1.4], [SIX, SIY + 4.75, 1.3], 30, [SIX - 0.75, SIY + 2.4, 1.4], [SIX, SIY + 4.75, 1.3], 30), "dad_couch2")
 # L44: in his truck's cab, dome light
 put("dad", "L44", [CBX - 0.45, CBY - 0.2], 180, expr="glum", lean=0, head=[0, 0])
 sit("dad", "L44")
@@ -429,10 +434,10 @@ only("L51", [])
 WIN = [NX - 2.6, NY + 0.5, AZ + 2.0]
 shot("L51", mv(WIN, [NX - 1.0, NY - 8.0, 1.0], 30, [NX - 2.6, NY + 1.1, AZ + 1.75], [NX - 1.0, NY - 6.0, 1.2], 34), "pulls_in")
 cue("L52", "truck2", head=0.0, dur=0.0)
-put("dad", "L52", [NX - 3.2, NY - 5.2], 170, expr="stunned", head=[0, -20])
+put("dad", "L52", [NX - 3.2, NY - 5.2], 0, expr="stunned", head=[0, -6])
 only("L52", ["dad"])
-shot("L52", mv([NX - 2.6, NY + 0.5, AZ + 1.95], [NX - 3.2, NY - 5.2, 1.45], 46, [NX - 2.6, NY + 0.45, AZ + 1.9], [NX - 3.2, NY - 5.2, 1.45], 46), "dad_lot")
-beat("dad", "L53", expr="sheepish")
+shot("L52", mv([NX - 3.0, NY - 8.4, 1.0], [NX - 2.9, NY, 2.3], 22, [NX - 3.0, NY - 8.0, 1.0], [NX - 2.9, NY, 2.3], 22), "dad_lot")
+beat("dad", "L53", expr="sheepish", yaw=170, head=[0, -20])
 shot("L53", mv([NX - 2.6, NY + 0.5, AZ + 1.95], [NX - 3.2, NY - 5.2, 1.5], 68, [NX - 2.7, NY + 0.45, AZ + 1.9], [NX - 3.2, NY - 5.2, 1.5], 72), "dad_lot2")
 put("me", "L54", [NX - 2.6, NY + 0.7, AZ], 0, expr="laugh")
 only("L54", ["me"])
@@ -482,12 +487,16 @@ only("L65", ["me", "dad"])
 shot("L65", mv([NX + 0.3, NY + 0.9, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 30, [NX + 0.3, NY + 1.3, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 30), "table2")
 beat("me", "L66", expr="sheepish")
 beat("dad", "L66", expr="sheepish")
-talk("me", "L66+0.9", "L66>", 0.8)
-talk("dad", "L66+0.9", "L66>", 0.8)
-shot("L66", mv([NX + 0.9, NY + 1.0, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 27, [NX + 0.7, NY + 1.4, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 27), "sorry")
+talk("me", "L66+0.25", "L66>", 0.9)
+talk("dad", "L66+0.25", "L66>", 0.9)
+for _w in ("me", "dad"):   # both open wide on "SORRY", together
+    acting[_w].append({"from": "L66+0.29", "to": "L66+0.7", "mouth": [1.0, 1.0]})
+    beat(_w, "L66+0.27", expr="stunned")
+    beat(_w, "L66+0.72", expr="sheepish")
+shot("L66", mv([NX + 0.3, NY + 0.7, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 22, [NX + 0.3, NY + 1.2, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 22), "sorry")
 beat("me", "L67", expr="laugh")
 beat("dad", "L67", expr="laugh")
-shot("L67", mv([NX - 0.3, NY + 1.0, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 27, [NX - 0.1, NY + 1.4, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 27), "laugh2")
+shot("L67", mv([NX + 0.3, NY + 1.0, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 22, [NX + 0.3, NY + 1.5, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 22), "laugh2")
 cue("L68", "plates", v=1.0)
 cue("L68", "eggs", v=0.0)
 beat("me", "L68", expr="smile")
@@ -533,6 +542,15 @@ sfx = [
     {"at": "L23+0.1", "kind": "creak", "db": -15, "dur": 1.2},
     {"at": "L51+0.9", "kind": "thud", "db": -19},
     {"at": "L64+0.9", "kind": "click", "db": -17},
+    {"at": "L10", "kind": "door", "db": -11},
+    {"at": "L22+1.3", "kind": "latch", "db": -15},
+    {"at": "L33+0.05", "kind": "creak", "db": -17, "dur": 1.0},
+    {"at": "L61", "kind": "knock", "db": -15},
+    {"at": "L46+0.3", "kind": "knock", "db": -16},
+    {"at": "L42", "kind": "creak", "db": -19, "dur": 0.8},
+    {"at": "L69+0.2", "kind": "thud", "db": -16},
+    {"at": "L16", "kind": "click", "db": -18},
+    {"at": "L54", "kind": "thud", "db": -19},
 ]
 music = {
     "root": 52, "mode": "minor", "bpm": 80, "seed": 120,
@@ -600,7 +618,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "clip_ok": ["ripple"],
-    "framing_ok": ["S58", "S59"],
+    "framing_ok": [],
     "asr_forgive": ["it", "eleven", "sixteen", "he's", "i'd", "he'd", "i", "pick", "picked", "place", "play"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

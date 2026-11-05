@@ -383,16 +383,23 @@ def palm(kit, name, loc, yaw, skin, phone=None):
         scr = kit.emit("#bfe3ff", 1.6, f"{name}.screen")
         pbox(kit, f"{name}.phone.screen", ph, "xy", 0, 0, 0.074, 0.15, 0.0125, scr)
         ink = kit.emit("#16202e", 1.0, f"{name}.sink")
-        for i, ch in enumerate(phone):
-            seg_digit(kit, f"{name}.phone.d{i}", ph, "xy", -0.018 + i * 0.036, 0.02, 0.026, 0.055, 0.009, 0.0135, ink)
-        # lit digits fixed at build time
-        for i, ch in enumerate(phone):
-            for k in "abcdefg":
-                ob = bpy.data.objects.get(f"{name}.phone.d{i}.{k}")
-                if ob is not None:
-                    ob.hide_render = k not in SEG[ch]
+        grn = kit.emit("#2fae5f", 1.2, f"{name}.sgreen")
+        wht = kit.emit("#f4fbff", 1.4, f"{name}.swhite")
+        # a call log: a green handset tile and one "0" on top, then plain list rows (a dot and a bar each)
+        pbox(kit, f"{name}.phone.tile", ph, "xy", -0.02, 0.052, 0.036, 0.036, 0.0135, grn)
+        hs = pbox(kit, f"{name}.phone.hs", ph, "xy", -0.02, 0.052, 0.026, 0.008, 0.0145, wht)
+        hs.rotation_euler = (0, 0, 0.8)
+        for sgn in (-1, 1):
+            pbox(kit, f"{name}.phone.hsend{sgn}", ph, "xy", -0.02 + sgn * 0.0095, 0.052 + sgn * 0.0095, 0.011, 0.011, 0.0145, wht)
+        seg_digit(kit, f"{name}.phone.d0", ph, "xy", 0.02, 0.052, 0.022, 0.044, 0.008, 0.0135, ink)
+        for k in "abcdefg":
+            ob = bpy.data.objects.get(f"{name}.phone.d0.{k}")
+            if ob is not None:
+                ob.hide_render = k not in SEG["0"]
         for i in range(3):
-            pbox(kit, f"{name}.phone.bar{i}", ph, "xy", 0, -0.02 - i * 0.03, 0.06, 0.012, 0.0135, ink)
+            pbox(kit, f"{name}.phone.dot{i}", ph, "xy", -0.026, 0.0 - i * 0.03, 0.012, 0.012, 0.0135, ink)
+            pbox(kit, f"{name}.phone.bar{i}", ph, "xy", 0.006 + (0.01 if i == 1 else 0.0), 0.0 - i * 0.03,
+                 0.044 - (0.012 if i == 1 else 0.0), 0.01, 0.0135, ink)
     return root
 
 
@@ -580,7 +587,7 @@ def build_lot(kit, m):
         kit.sphere(f"room.colon{dz}", 0.016, (sx0 + 0.45 + 0.17 + 0.085 + 0.0 + 0.08 * 0, ry + 4.61, rz + 1.1 + dz * 0.5), clk, seg=6)
     # a small table with the phone on my palm
     B(kit, "room.table", ox - 0.4, ox + 0.6, ry + 3.9, ry + 4.6, rz, rz + 0.62, p("#c49a68", 0.7))
-    W["palm1"] = palm(kit, "palm1", (ox + 0.1, ry + 2.0, rz + 0.9), 0, "#d9a67a", phone="000")
+    W["palm1"] = palm(kit, "palm1", (ox + 0.1, ry + 2.0, rz + 0.9), 0, "#d9a67a", phone="0")
     LT(kit, "lot", "roomlamp", "POINT", (ox + 0.2, ry + 1.8, rz + 2.6), 250.0, "#ffe0b0", size=0.4)
     LT(kit, "lot", "roomfill", "AREA", (ox, ry + 0.4, rz + 2.4), 90.0, "#dfe8ff", size=2.0, shadow=False)
     kit.aim(kit.LIGHTS["lot.roomfill"]["obj"], (ox, ry + 3.5, rz + 1.2))
@@ -596,7 +603,7 @@ def build_lot(kit, m):
     LT(kit, "lot", "front", "AREA", (ox + 1.0, oy - 8.0, 3.5), 380.0, "#ffd9a0", size=4.0, shadow=False)
     kit.aim(kit.LIGHTS["lot.front"]["obj"], (ox, oy + 4.0, 1.5))
     # the phone Dad holds at my building (a lit screen on a flat palm)
-    W["palm2"] = palm(kit, "palm2", (ox - 5.55, oy + 5.4, 1.05), 0, "#e0b088", phone="000")
+    W["palm2"] = palm(kit, "palm2", (ox - 5.55, oy + 5.4, 1.05), 0, "#e0b088", phone="0")
     LT(kit, "lot", "phone", "POINT", (ox - 5.55, oy + 5.0, 1.4), 22.0, "#bfe3ff", size=0.1, shadow=False)
     # parked cars, far, dark
     for k, (cx, cy, cc) in enumerate([(-9.5, 3.2, "#445a8a"), (9.5, 2.6, "#3f6f5a"), (-13, -6, "#7a5a8a")]):
@@ -674,7 +681,10 @@ def shop(kit, m, tag, ox, oy, night):
         xa = -4.2 + i * 0.227
         B(kit, f"{T}.sp{i}", X(xa), X(xa + 0.04), Y(-1.38), Y(-1.34), 0.2 * (i + 1), 0.2 * (i + 1) + 0.9, m["white"])
     kit.box(f"{T}.srail", (4.0, 0.04, 0.05), (X(-2.2), Y(-1.36), 1.95), m["white"], rot=(0, -math.atan2(2.8, 3.2), 0))
-    B(kit, f"{T}.dframe2", X(0.0), X(1.2), Y(-0.1), Y(0.2), az, 5.5, m["white"])
+    # the door frame: two jambs and a header (the doorway itself stays open)
+    B(kit, f"{T}.djl", X(0.0), X(0.1), Y(-0.1), Y(0.2), az, 5.5, m["white"])
+    B(kit, f"{T}.djr", X(1.1), X(1.2), Y(-0.1), Y(0.2), az, 5.5, m["white"])
+    B(kit, f"{T}.djh", X(0.0), X(1.2), Y(-0.1), Y(0.2), 5.4, 5.5, m["white"])
     hinge = kit.empty(f"{T}.dhinge", (X(1.1), Y(0.1), az))
     kit.box(f"{T}.door", (1.0, 0.07, 2.1), (-0.5, 0, 1.05), p("#6fc7e8", 0.5, spec=0.3), hinge)
     kit.sphere(f"{T}.dknob", 0.05, (-0.85, -0.06, 1.0), m["chrome"], hinge, seg=8)
@@ -736,22 +746,46 @@ def shop(kit, m, tag, ox, oy, night):
         kit.prop("bookshelf", (X(-1.0), Y(6.55), zz), rot=180, height=1.7, tint="#ffe3c0")
     except Exception:
         pass
-    # dust on everything (hidden when Dad comes in)
-    dust = p("#c9c0ae", 0.95, spec=0.0)
+    # dust on everything (hidden when Dad comes in): a gray film on the table, chairs, couch and floor, with specks
+    dust = p("#8d8982", 0.97, spec=0.0)
+    speck_l = p("#b4b0a8", 0.97, spec=0.0)
+    speck_d = p("#6a665f", 0.97, spec=0.0)
     dl = []
-    dl.append(kit.cyl(f"{T}.dust0", 0.5, 0.012, (X(0.3), Y(3.8), zz + 0.906), dust, n=22))
+    dl.append(kit.cyl(f"{T}.dust0", 0.52, 0.016, (X(0.3), Y(3.8), zz + 0.908), dust, n=22))
     for k, cx in enumerate((-0.15, 0.75)):
-        dl.append(B(kit, f"{T}.dust1{k}", X(cx - 0.22), X(cx + 0.22), Y(4.58), Y(5.0), zz + 0.48, zz + 0.492, dust))
-    dl.append(B(kit, f"{T}.dust2", X(2.1), X(4.2), Y(5.65), Y(6.25), zz + 0.5, zz + 0.512, dust))
-    dl.append(B(kit, f"{T}.dust3", X(-4.4), X(-3.7), Y(3.0), Y(6.55), zz + 0.95, zz + 0.962, dust))
-    dl.append(B(kit, f"{T}.dust4", X(-2.6), X(-0.9), Y(1.4), Y(2.6), zz + 0.01, zz + 0.022, dust))
-    dl.append(B(kit, f"{T}.dust5", X(1.2), X(3.2), Y(2.4), Y(3.6), zz + 0.01, zz + 0.022, dust))
+        dl.append(B(kit, f"{T}.dust1{k}", X(cx - 0.25), X(cx + 0.25), Y(4.55), Y(5.05), zz + 0.48, zz + 0.5, dust))
+        dl.append(B(kit, f"{T}.dust1b{k}", X(cx - 0.25), X(cx + 0.25), Y(5.0), Y(5.06), zz + 0.95, zz + 0.97, dust))
+    dl.append(B(kit, f"{T}.dust2", X(2.0), X(4.3), Y(5.6), Y(6.7), zz + 0.5, zz + 0.52, dust))
+    dl.append(B(kit, f"{T}.dust2b", X(2.0), X(4.3), Y(6.4), Y(6.72), zz + 1.15, zz + 1.17, dust))
+    dl.append(B(kit, f"{T}.dust3", X(-4.5), X(-3.65), Y(3.0), Y(6.6), zz + 0.95, zz + 0.97, dust))
+    dl.append(B(kit, f"{T}.dust4", X(-2.6), X(-0.9), Y(1.4), Y(2.6), zz + 0.01, zz + 0.025, dust))
+    dl.append(B(kit, f"{T}.dust5", X(1.2), X(3.2), Y(2.4), Y(3.6), zz + 0.01, zz + 0.025, dust))
+    # specks and a few drifts, laid on the table top, the seats and the couch (deterministic)
+    rnd = [0.5]
+
+    def r():
+        rnd[0] = (rnd[0] * 9301.0 + 49297.0) % 233280.0
+        return rnd[0] / 233280.0
+    spots = [(0.3, 3.8, zz + 0.925, 0.46, 0.46), (-0.15, 4.8, zz + 0.51, 0.22, 0.22), (0.75, 4.8, zz + 0.51, 0.22, 0.22),
+             (3.15, 6.1, zz + 0.535, 1.0, 0.45), (3.15, 6.5, zz + 1.18, 1.0, 0.1)]
+    n = 0
+    for (cx, cy, cz, hx, hy) in spots:
+        for _ in range(34 if hx > 0.3 else 12):
+            sx_, sy_ = cx + (r() * 2 - 1) * hx, cy + (r() * 2 - 1) * hy
+            sz_ = 0.01 + r() * 0.02
+            dl.append(B(kit, f"{T}.speck{n}", X(sx_ - sz_), X(sx_ + sz_), Y(sy_ - sz_), Y(sy_ + sz_), cz, cz + 0.014,
+                        speck_d if n % 3 == 0 else speck_l))
+            n += 1
     W[f"{T}.dust"] = dl
     # the ceiling lamp: a fixed fitting
     gm = kit.emit("#fff0c8", 4.0, f"{T}.lampmat")
     W[f"{T}.lampmat"] = next(nn for nn in gm.node_tree.nodes if nn.type == "EMISSION")
     kit.cyl(f"{T}.lampcap", 0.18, 0.05, (X(0.3), Y(3.6), top - 0.025), m["white"], n=18)
     kit.sphere(f"{T}.lampglobe", 0.17, (X(0.3), Y(3.6), top - 0.2), gm, seg=12)
+    if night:   # the lit window seen from the lot: a warm lamplit curtain just inside the glass (it follows the lamp)
+        gl = kit.emit("#ffcf80", 1.3, f"{T}.winglowmat")
+        W[f"{T}.winglow"] = next(nn for nn in gl.node_tree.nodes if nn.type == "EMISSION")
+        noshadow(B(kit, f"{T}.winglow", X(-3.45), X(-1.75), Y(0.95), Y(1.0), 4.42, 5.58, gl))
     sky_stage = "shop" if night else "day"
     LT(kit, sky_stage, f"{T}.lamp", "POINT", (X(0.3), Y(3.6), top - 0.3), 330.0, "#ffd98a", size=0.25)
     LT(kit, sky_stage, f"{T}.roomfill", "AREA", (X(0.0), Y(0.6), top - 0.4), 120.0, "#dbe6ff" if night else "#fff6e6", size=3.0, shadow=False)
@@ -796,7 +830,9 @@ def build_shopin(kit, m):
     B(kit, "sin.couchback", ox - 1.6, ox + 1.6, oy + 5.0, oy + 5.3, 0.4, 1.1, couch, bevel=0.07)
     for sx in (-1.7, 1.5):
         B(kit, f"sin.couchar{sx}", ox + sx, ox + sx + 0.2, oy + 4.2, oy + 5.2, 0, 0.7, couch, bevel=0.06)
-    B(kit, "sin.blanket", ox + 0.3, ox + 1.5, oy + 4.15, oy + 5.25, 0.85, 0.95, p("#ff8a73", 0.9), bevel=0.03)
+    bl = p("#ff8a73", 0.9)   # the blanket: over his lap and up to his chin
+    B(kit, "sin.blanket", ox - 0.78, ox + 0.78, oy + 4.42, oy + 4.56, 0.6, 1.14, bl, bevel=0.03)
+    B(kit, "sin.blanket2", ox - 0.78, ox + 0.78, oy + 3.5, oy + 4.56, 0.7, 0.82, bl, bevel=0.03)
     B(kit, "sin.bench", ox + 2.6, ox + 4.3, oy + 5.2, oy + 6.2, 0, 0.95, p("#b98a58", 0.7))
     B(kit, "sin.tire", ox - 4.1, ox - 3.3, oy + 5.5, oy + 6.3, 0, 0.75, m["tire"])
     kit.cyl("sin.tire2", 0.38, 0.28, (ox - 3.7, oy + 5.9, 0.9), m["tire"], n=18)
@@ -830,10 +866,15 @@ def build(kit, story, tl):
 # ---------------------------------------------------------------------------------------------- per frame
 def _first_frame(kit, story):
     p = kit.plastic
+    for sx_ in (-1, 1):
+        sd = bpy.data.objects.get(f"dad.hside{sx_}")
+        if sd is not None:   # gray temples, a little shorter so they read as hair, not ear flaps
+            sd.scale = (1.0, 1.0, 0.8)
+            sd.location.z += 0.05
     dh = bpy.data.objects.get("dad.headg")
     if dh is not None:
         g = p("#9a9aa2", 0.8)
-        kit.box("dad.stache", (0.5, 0.06, 0.08), (0, -0.64, -0.17), g, dh, bevel=0.03)
+        kit.box("dad.stache", (0.5, 0.06, 0.08), (0, -0.64, -0.11), g, dh, bevel=0.03)
     mh = bpy.data.objects.get("me.headg")
     if mh is not None:
         st = p("#2a2623", 0.9)
@@ -892,7 +933,9 @@ def animate(kit, story, tl, t, ctx):
     # the apartment lamp (night copy): a fixed fitting switched on over its own ramp
     lamp = sample("lamp", tl, t, {"v": 1.0})
     gains["shop.shop.lamp"] = lamp["v"]
+    gains["shop.shop.roomfill"] = sample("fill", tl, t, {"v": 1.0})["v"] * (1.0 if stage == "shop" else 0.0)
     W["shop.lampmat"].inputs["Strength"].default_value = 4.0 * lamp["v"]
+    W["shop.winglow"].inputs["Strength"].default_value = 1.3 * lamp["v"]
     # my room lamp
     rl = sample("roomlamp", tl, t, {"v": 1.0})
     gains["lot.roomlamp"] = rl["v"]
