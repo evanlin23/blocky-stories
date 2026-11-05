@@ -216,7 +216,7 @@ def build(kit, story, tl):
     wood = P("#b9803f", 0.6, spec=0.15)
     brass = P("#e3b04b", 0.35, spec=0.6)
     floor_m = kit.planks("#e6c58f", "#d1a96d", 1.0, "X", "floorp", 0.7)
-    ceil_m = P("#f4f2ea", 0.8, spec=0.05)
+    ceil_m = P("#b3ae9f", 0.85, spec=0.03)
     plenum = P("#2d2f36", 0.9, spec=0.0)
 
     # ---- lights (gains set in animate)
@@ -349,7 +349,7 @@ def build(kit, story, tl):
 
     # ---- Grandpa's crate (upturned), cart, cartons
     kit.box("crate", (0.8, 0.7, G.CRATE_H), (G.G_POS[0], G.G_POS[1], G.CRATE_H / 2), P("#d99a4a", 0.65, spec=0.1), bevel=0.02)
-    for i in range(3):
+    for i in range(6):
         kit.box(f"crate.slatL{i}", (0.03, 0.72, 0.06), (G.G_POS[0] - 0.41, G.G_POS[1], 0.08 + i * 0.13), P("#9c6a2c", 0.7))
         kit.box(f"crate.slat{i}", (0.82, 0.03, 0.06), (G.G_POS[0], G.G_POS[1] - 0.36, 0.08 + i * 0.13), P("#9c6a2c", 0.7))
         kit.box(f"crate.slatR{i}", (0.03, 0.72, 0.06), (G.G_POS[0] + 0.41, G.G_POS[1], 0.08 + i * 0.13), P("#9c6a2c", 0.7))
@@ -533,6 +533,15 @@ def _first_frame(kit, story):
         kit.box(f"grandpa.hem2{sx}", (1.03, 1.05, 0.14), (0, 0, -1.26), green, lg, bevel=0.03)
         kit.box(f"grandpa.hem3{sx}", (1.03, 1.05, 0.14), (0, 0, -1.40), plaid, lg, bevel=0.03)
         kit.box(f"grandpa.shin{sx}", (0.6, 0.62, 0.3), (0, 0, -1.62), skin, lg, bevel=0.03)
+    # the bride's dad on his knees: his thighs stand on the floor (the floor hides the rest of the rig leg), the shins
+    # lie folded back along the floor behind him with the shoe soles up (rig units: the floor is at z 1.0 here)
+    bd = bpy.data.objects.get("bridedad")
+    if bd is not None:
+        slacks = kit.plastic("#6a707c", 0.7)
+        shoe = kit.plastic("#2a2a2a", 0.6)
+        for sx in (-1, 1):
+            kit.box(f"bridedad.shin{sx}", (0.98, 1.7, 0.7), (sx * 0.5, 1.0, 1.4), slacks, bd, bevel=0.03)
+            kit.box(f"bridedad.sole{sx}", (0.98, 0.6, 0.62), (sx * 0.5, 2.1, 1.4), shoe, bd, bevel=0.03)
     # things held in front of the chest, on flat palms
     def held(owner, name, build, loc):
         root = bpy.data.objects.get(owner)
@@ -689,7 +698,7 @@ def animate(kit, story, tl, t, ctx):
     # the hat: on its shelf, or in Grandpa's hand
     hu = sample("hat", tl, t, {"u": 0.0})["u"]
     sh = W["hat_shelf"]
-    tgt = Vector((3.55, 0.55, 1.75))
+    tgt = Vector((3.55, 0.55, 1.75 + (G.CRATE_H - 0.4)))
     W["hat"].location = sh.lerp(tgt, ss(hu))
     # held things
     for nm in ("key", "tomato", "faucet", "hinge"):

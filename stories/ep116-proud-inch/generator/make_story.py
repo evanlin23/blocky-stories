@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -156,7 +156,7 @@ FX, FY = G.ME_FRONT
 HM = G.ME_HEAD
 GP = [GX, GY]
 TX, TY = 2.2, 0.3            # where I stand beside Grandpa in a two-shot (close enough that both faces fit)
-TWO = (2.65, 0.65, 1.85)     # the centre of a two-shot
+TWO = (2.65, 0.65, 2.0)     # the centre of a two-shot
 
 
 def grandpa_sit(at, on=True):
@@ -204,13 +204,14 @@ beat("mail", "L04.2", expr="smile", arms=[0, 0])
 cue("L04.2", "item", tomato=0.0)
 shot("L04.2", fc((gx, gy + 1.0, 1.97), 2.1, 30, fx=0.5, fy=0.36, push=0.1, ccz=-0.9), "mail2")
 # L05: the bride's dad dances on his knees
-only("L05", ["bridedad"])
+only("L05", ["bridedad", "cust", "bloom"])
 wx, wy = G.WEDDING
-put("bridedad", "L05", [wx, wy, -0.41], 0, expr="smile", arms=[30, 30])
-beat("bridedad", "L05.1", expr="grin", arms=[40, 40], head=[0, 0], lean=0, yaw=0)
-go("bridedad", "L05>", [wx + 0.2, wy, -0.41])
-shot("L05", fc((wx, wy, 1.5), 1.7, 34, fx=0.5, fy=0.36, push=0.04), "bride")
-shot("L05.1", fc((wx, wy, 1.5), 1.7, 34, fx=0.5, fy=0.36, push=0.04), "bride2")
+put("bridedad", "L05", [wx, wy, -0.41], -28, expr="smile", arms=[30, 30], lean=6)
+beat("bridedad", "L05.1", expr="smile", arms=[60, 60], head=[0, 0], lean=-6, yaw=-28)
+put("cust", "L05", [wx - 1.25, wy + 0.4], 0, expr="smile", arms=[45, 45])
+put("bloom", "L05", [wx + 1.25, wy + 0.4], 0, expr="smile", arms=[45, 45])
+shot("L05", fc((wx, wy, 1.3), 2.5, 34, fx=0.5, fy=0.5, push=0.04, ccx=1.3, ccz=0.2), "bride")
+shot("L05.1", fc((wx, wy, 1.3), 2.5, 34, fx=0.5, fy=0.5, push=0.08, ccx=1.0, ccz=0.4), "bride2")
 
 # ===== 02 Grandpa (L06 to L15)
 only("L06", ["grandpa"])
@@ -218,14 +219,16 @@ put("grandpa", "L06", GP, 0, expr="neutral")
 shot("L06", fc(GHD, 1.7, 36, fx=0.5, fy=0.48, push=0.1), "gpa")
 only("L06.1", ["grandpa", "me"])
 put("grandpa", "L06.1", GP, 0, expr="neutral")
-put("me", "L06.1", [MEX, MEY], 0, expr="neutral")
-shot("L06.1", mv([2.0, -5.0, 1.9], [2.3, 1.2, 1.7], 28, [2.2, -4.3, 1.9], [2.4, 1.2, 1.7], 28), "shopwide")
+put("me", "L06.1", [TX, TY], 0, expr="neutral", head=[-30, -12])
+shot("L06.1", fc((2.65, 0.65, 1.75), 3.0, 24, fx=0.5, fy=0.5, push=0.04, ccx=-0.6, ccz=-0.5), "shopwide")
 # L07: from low and to the side, under the hat shelf (the cover frame)
-only("L07", ["grandpa"])
+only("L07", ["grandpa", "me"])
 put("grandpa", "L07", GP, 0, expr="neutral", head=[-12, 0])
-shot("L07", fc(GHD, 2.5, 32, fx=0.58, fy=0.55, push=0.08, ccx=-1.0, ccz=-0.6), "low")
-shot("L07+0.9", fc(GHD, 2.5, 32, fx=0.6, fy=0.55, push=0.1, ccx=-1.4, ccz=-0.6), "low2")
+beat("me", "L07", expr="neutral", head=[-30, -14])
+shot("L07", fc((2.65, 0.65, 1.75), 3.0, 24, fx=0.5, fy=0.5, push=0.05, ccx=0.5, ccz=-0.7), "low")
+shot("L07+0.9", fc((2.65, 0.65, 1.75), 3.0, 24, fx=0.5, fy=0.5, push=0.07, ccx=-0.9, ccz=-0.7), "low2")
 # L08: the crate, then his face across the counter
+only("L08", ["grandpa"])
 beat("grandpa", "L08", expr="neutral", head=[0, 0])
 shot("L08", fc(GHD, 2.0, 32, fx=0.5, fy=0.34, push=0.05, ccx=-3.2, ccz=-0.3), "crate")
 put("cust", "L08.1", [2.1, -1.1], 180, expr="neutral", lean=0)
@@ -263,7 +266,7 @@ shot("L13", fc(TWO, 2.3, 34, fx=0.5, fy=0.5, push=0.04), "look-up")
 # L14: the hems
 only("L14", ["grandpa"])
 put("grandpa", "L14", GP, 0, expr="neutral")
-shot("L14", mv([1.85, -0.35, 0.8], [2.85, 0.32, 0.62], 28, [1.95, -0.1, 0.75], [2.85, 0.32, 0.62], 28), "hems")
+shot("L14", mv([0.2, -0.6, 1.4], [3.1, 0.35, 0.8], 26, [0.6, -0.5, 1.35], [3.1, 0.35, 0.8], 26), "hems")
 beat("grandpa", "L14.1", expr="polite")
 shot("L14.1", fc(GHD, 1.1, 42, fx=0.5, fy=0.48, push=0.12), "sheepish")
 # L15: the hat comes down; the broken hinge waits on the counter
@@ -409,10 +412,10 @@ shot("L43.1", fc((FX, FY, HM), 1.0, 44, fx=0.5, fy=0.46, push=0.16), "mylaugh")
 # L44: Grandpa stooped through the back doorway, me beside him, the new mark
 only("L44", ["grandpa", "me"])
 grandpa_sit("L44", False)
-put("grandpa", "L44", [2.8, 4.25], 0, expr="smile", lean=38, head=[0, -6])
-put("me", "L44", [1.1, 3.3], 0, expr="smile")
+put("grandpa", "L44", [2.75, 4.3], 0, expr="smile", lean=26, head=[0, -6])
+put("me", "L44", [1.3, 3.0], 0, expr="smile")
 cue("L44+0.3", "newmark", v=1.0)
-shot("L44", fc((2.0, 3.9, 1.9), 3.0, 26, fx=0.5, fy=0.5, push=0.03), "doorway")
+shot("L44", mv([2.1, -0.4, 1.7], [2.1, 4.0, 1.8], 22, [2.1, 0.1, 1.7], [2.1, 4.0, 1.8], 22), "doorway")
 only("L45", ["me"])
 put("me", "L45", [MEX, MEY], 0, expr="smile")
 shot("L45", fc((MEX, MEY, HM), 1.1, 40, fx=0.5, fy=0.46, push=0.12), "mylast")
@@ -469,7 +472,7 @@ remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L33.0"), remap("L41")], "emph": [remap(x) for x in ["L01.3", "L04.2", "L07", "L08", "L19", "L33.0", "L38.1", "L43"]],
           "twist": remap("L33.0"),
-          "hold": [names[n] for n in ["dad", "dad2", "bride", "bride2", "low", "low2", "crate", "meglum", "two", "keyslide",
+          "hold": [names[n] for n in ["dad", "dad2", "bride", "bride2", "low", "low2", "shopwide", "hems", "crate", "meglum", "two", "keyslide",
                                       "look-up", "bloomgpa", "sayback", "doorway", "hat", "door", "bloom3", "roof", "vise",
                                       "tile", "mail", "mail2", "tomato", "pop"]]}
 story = {

@@ -7,7 +7,7 @@ the front window and door are on the front wall. The three montage places are fa
 S = 0.34                       # metres per rig unit
 GH = 1.6                       # Grandpa's height spec
 CEIL = 3.4
-CRATE_H = 0.4
+CRATE_H = 0.8                  # a tall upturned crate: he sits high, knees above the counter top (1.08)
 G_POS = (3.1, 1.0)             # Grandpa's crate (his feet point at -y)
 G_HIP = CRATE_H + 0.27         # his hips when seated
 ME_POS = (-0.5, 0.9)            # me behind the counter
