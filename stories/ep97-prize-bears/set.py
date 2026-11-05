@@ -937,8 +937,9 @@ def animate(kit, story, tl, t, ctx):
         ca = lerp(cd.get("from", 0.0), cd.get("angle", 0.0), ss((t - cd["t"]) / dur))
     ctx["cdoor"].rotation_euler = (0, 0, math.radians(ca))
     # ---- the bulb swings a little
-    ctx["bulbp"].rotation_euler = (0.025 * math.sin(t * 2.1), 0.03 * math.sin(t * 1.7 + 1.0), 0)
-    kit.LIGHTS["bulb"]["obj"].location = (4.1 + 0.025 * math.sin(t * 1.7 + 1.0) * 0.9, 12.8 + 0.025 * math.sin(t * 2.1) * 0.9, 2.6)
+    # held still (flash fix): a swinging bulb crossed the camera light
+    ctx["bulbp"].rotation_euler = (0, 0, 0)
+    kit.LIGHTS["bulb"]["obj"].location = (4.1, 12.8, 2.6)
     # ---- beacon turns slowly; board row 1 breathes
     ctx["beacon"].rotation_euler = (0, 0, t * 0.35)
     NODES[ctx["row1m"].name]["em"].inputs["Strength"].default_value = 1.3 + 0.55 * math.sin(t * 3.4)
