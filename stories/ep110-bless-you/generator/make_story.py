@@ -668,7 +668,7 @@ remap_all(sfx)
 remap_all(music["sections"])
 remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
-polish = {"reveal": [remap("L39")], "twist": remap("L39"),
+polish = {"whoosh_lp": 2500.0, "reveal": [remap("L39")], "twist": remap("L39"),
           "emph": [remap(x) for x in ["L01.2", "L04.2", "L07.3", "L09.1", "L11.1", "L19", "L31", "L34", "L39.0", "L44.2", "L57"]],
           "quiet": [[remap("L64"), remap("L67")]],
           "sway": [names[n] for n in ("dark2", "awake1", "awake2", "pastshoulder", "portrait", "wall1", "clip1", "scared", "back")],
