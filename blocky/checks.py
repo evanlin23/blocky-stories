@@ -354,6 +354,23 @@ def polish_problems(st: dict) -> list[tuple[str, str]]:
 NARRATOR_MISFIT = re.compile(r"\bmy (husband|boyfriend|hubby)\b", re.I)   # the one narrator voice is a man's (ep38)
 
 
+def lost_words(name: str, st: dict) -> list[str]:
+    """Lines whose spoken words in story.json aren't the ones in the story's generator/lines.json (a caption
+    splitter that dropped a word, ep115 L19): the narration reads story.json, so the lost word is never heard.
+    `check` warns (it runs on every old story), `preflight` blocks."""
+    from blocky import timeline
+
+    src = STORIES / name / "generator" / "lines.json"
+    if not src.exists():
+        return []
+    try:
+        lines = json.loads(src.read_text())
+    except ValueError:
+        return []
+    lines = lines.get("lines", []) if isinstance(lines, dict) else lines
+    return timeline.lost_words(st, lines if isinstance(lines, list) else [])
+
+
 def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list[tuple[str, str]]:
     from blocky import voicecheck as sc
 
@@ -371,6 +388,8 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
     out += harsh_sound(st)
     out += library(st, set_py.read_text() if set_py.exists() else "")
     out += polish_problems(st)
+    out += [("warn", f"spoken words differ from generator/lines.json (preflight blocks): {m}")
+            for m in lost_words(name, st)]
     said_all = " ".join(" ".join(c[1] for c in ln.get("chunks", [])) for ln in st.get("lines", []))
     if NARRATOR_MISFIT.search(said_all):
         out.append(("warn", "the narrator says 'my husband/boyfriend', but the narrator voice is a man's (ep38): "

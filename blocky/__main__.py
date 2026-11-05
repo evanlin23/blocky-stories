@@ -26,19 +26,28 @@ QUALITY = {
     "preview": {"res": [270, 480], "samples": 4, "step": 4},
     "proof": {"res": [270, 480], "samples": 4, "step": None},
     "final": {"res": [540, 960], "samples": 6, "step": None},   # 10 -> 6 on 2026-11-03 (docs/research/engine-ab.md: 27% fewer runner-minutes, critic "same")
+    # the local flash check (`flash --like-proof`): the proof's drawings, every one, at the flash meter's own
+    # analysis size (safety.LOW), so it costs about what the preview does. The preview holds every 4th drawing
+    # for 4 frames, and a light that flips brightness every 1 to 3 frames reads at half its rate or not at all
+    # there (ep97, ep101, ep107 passed the preview at 4 a second and failed the proof at 7, 2026-11-05)
+    "flash": {"res": [135, 240], "samples": 4, "step": None},
 }
 
 
 def quality(a) -> str:
-    return "preview" if getattr(a, "preview", False) else "proof" if getattr(a, "proof", False) else "final"
+    for q in ("preview", "proof"):
+        if getattr(a, q, False):
+            return q
+    return "flash" if getattr(a, "like_proof", False) else "final"
 
 
 def frames_dir(story: str, q: str) -> Path:
-    return work(story) / {"preview": "frames-preview", "proof": "frames-proof", "final": "frames"}[q]
+    return work(story) / {"preview": "frames-preview", "proof": "frames-proof", "flash": "frames-flash", "final": "frames"}[q]
 
 
 def picture_path(story: str, q: str) -> Path:
-    return work(story) / {"preview": "picture-preview.mp4", "proof": "picture-proof.mp4", "final": "picture.mp4"}[q]
+    return work(story) / {"preview": "picture-preview.mp4", "proof": "picture-proof.mp4", "flash": "picture-flash.mp4",
+                         "final": "picture.mp4"}[q]
 
 
 def film_path(story: str, slug: str, q: str) -> Path:
@@ -374,7 +383,16 @@ def cmd_flash(a):
 
     w = work(a.story)
     st = story_json(a.story)
-    mp4 = Path(a.file) if a.file else OUT / f"{st.get('slug', a.story)}.mp4"
+    if a.like_proof:   # draw what the proof draws (every drawing, at analysis size), finish it and measure that
+        cmd_timeline(a)
+        if not a.shots:   # a whole redraw: no drawing left over from an earlier set or light
+            shutil.rmtree(frames_dir(a.story, "flash"), ignore_errors=True)
+        cmd_render(argparse.Namespace(story=a.story, like_proof=True, shots=a.shots, only=None, shard=None,
+                                      samples=None, force=True))
+        cmd_finish(argparse.Namespace(story=a.story, like_proof=True))
+        mp4 = picture_path(a.story, "flash")
+    else:
+        mp4 = Path(a.file) if a.file else OUT / f"{st.get('slug', a.story)}.mp4"
     rep = flash.run(mp4, w / "timeline.json")
     sys.exit(0 if rep["house_bar"]["pass"] else 1)
 
@@ -392,8 +410,9 @@ def cmd_gate(a):
 
 def cmd_preflight(a):
     """Every automatic check in one go, so nobody runs them one by one: timeline, check, package lint, the Whisper
-    word check (when the narration is on disk) and a flash reading of the preview (indicative only: the preview
-    holds every 4th drawing). Prints one summary and exits 1 on any block."""
+    word check (when the narration is on disk) and a flash reading: of `flash --like-proof`'s picture when there
+    is one (it reads what the proof reads, so a fail blocks), else of the preview (indicative only: the preview
+    holds every 4th drawing and misses lights that flip faster). Prints one summary and exits 1 on any block."""
     from blocky import checks, gate
 
     cmd_timeline(a)
@@ -403,6 +422,10 @@ def cmd_preflight(a):
     # the pace and the stills the final will have, from the edit alone: blocks here, so a builder fixes them
     # before any render (they're warnings in `check`, which also runs on every old story)
     rows += [("pace", ("block", m)) for m in checks.still_risks(story_json(a.story), tl)]
+    # a word the caption splitter lost is a word the narration never says (ep115 L19): a block before any voice
+    rows += [("words", ("block", f"spoken words differ from generator/lines.json: {m}"))
+             for m in checks.lost_words(a.story, story_json(a.story))]
+    rows = [r for r in rows if not (r[0] == "check" and r[1][1].startswith("spoken words differ"))]
     if os.environ.get("BLOCKY_BPY") or os.environ.get("CLAY_BPY"):
         r = subprocess.run([sys.executable, "-m", "blocky", "clipcheck", a.story], capture_output=True, text=True)
         lines = [ln[6:] for ln in r.stdout.splitlines() if ln.startswith("BLOCK ")]
@@ -418,12 +441,18 @@ def cmd_preflight(a):
         rows.append(("asr", ("pass" if tail.startswith("0 word") else "block", tail)))
     st = story_json(a.story)
     prev = w / f"{st.get('slug', a.story)}-preview.mp4"
-    if prev.exists():
+    like = picture_path(a.story, "flash")
+    if like.exists() or prev.exists():
         from blocky import flash
 
-        rep = flash.run(prev, w / "timeline.json")
-        rows.append(("flash", ("pass" if rep["house_bar"]["pass"] else "warn",
-                               "preview " + ("passes" if rep["house_bar"]["pass"] else "fails") + " the house bar (indicative)")))
+        rep = flash.run(like if like.exists() else prev, w / "timeline.json")
+        ok = rep["house_bar"]["pass"]
+        if like.exists():
+            rows.append(("flash", ("pass" if ok else "block", ("passes" if ok else "fails") + " the house bar like the "
+                                   "proof (flash --like-proof; run it again after any light or set change)")))
+        else:
+            rows.append(("flash", ("pass" if ok else "warn", "preview " + ("passes" if ok else "fails") + " the house bar "
+                                   "(indicative: it misses fast flips; `flash --like-proof` reads what the proof reads)")))
     for v in gate.verdicts(a.story).items():
         rows.append(("review", ("pass" if v[1] and v[1][1] == "approve" else "warn", f"{v[0]}: {v[1] or 'not yet'}")))
     blocks = 0
@@ -461,9 +490,11 @@ def main():
     r.add_argument("--force", action="store_true")
     r.add_argument("--shard", help="k/n: draw only every n-th frame starting at k")
     r.add_argument("--proof", action="store_true", help="the proof: the final's drawings at half size (proof.yml)")
+    r.add_argument("--like-proof", action="store_true", help="the proof's drawings at the flash meter's size")
     f = add("finish")
     f.add_argument("--preview", action="store_true")
     f.add_argument("--proof", action="store_true")
+    f.add_argument("--like-proof", action="store_true")
     m = add("mix")
     m.add_argument("--preview", action="store_true")
     m.add_argument("--proof", action="store_true")
@@ -477,6 +508,9 @@ def main():
     cc.add_argument("--span", help="only these seconds, 'from,to'")
     fl = add("flash")
     fl.add_argument("--file")
+    fl.add_argument("--like-proof", action="store_true",
+                    help="draw every drawing the proof draws at analysis size, finish and measure it (reads what proof.yml reads)")
+    fl.add_argument("--shots", help="with --like-proof: redraw only these shots, keep the other drawings")
     g = add("gate")
     g.add_argument("--merge", action="store_true", help="also need a passed proof check (test.yml on a story PR)")
     g.add_argument("--base", help="the PR's base commit: no film file changed against it means nothing to prove")

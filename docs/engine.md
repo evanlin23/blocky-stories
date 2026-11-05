@@ -69,6 +69,13 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
 
 **Time references** (anywhere an `at` goes): seconds, `"L03"` (the line's first word), `"L03.2"` (chunk 2's first word, 0-based), `"L03>"` (the line's last word ends), `"L03.2>"`, offsets like `"L03+0.4"`, and `"end-1.5"`. A pause beat's id works the same way (`"P02"`, `"P02>"`, `"P02-0.3"`).
 
+**Splitting captions in a generator** (2026-11-05): `timeline.split_lines(lines)` splits every [caption, spoken]
+chunk into two- or three-word captions and returns `(lines, chunk map)` for remapping `"L07.2"` references. Use it
+instead of a copy of the old splitter, which sliced the spoken words by the caption's word count and dropped any
+left over ("has said 4:12" voiced "has said four", ep115 L19). Where the counts match it gives exactly what the
+old copy gave. `check` warns and `preflight` blocks when a line's spoken words in story.json differ from the
+story's `generator/lines.json`.
+
 **Pause beats** show their big words one chunk at a time: at the beat's `times` (seconds into it), or spread evenly. A
 three-knock beat puts one KNOCK on each knock, where three big words wouldn't fit in two lines.
 
@@ -119,6 +126,17 @@ and the pace were invisible until the final. Two checks read them before a frame
   behind a window: 9 cream frames; ep105 S85 and S139; moving-day). It prints `WARN` and `preflight` shows it as a
   warning, not a block, because a shot through a windscreen or a doorway can be meant: `"cam_ok": ["S12"]` (or
   `"S12/<object>"`) in story.json silences one.
+
+## The local flash check (`python -m blocky flash <story> --like-proof`, 2026-11-05)
+
+The preview's flash reading is indicative only. It draws every 4th frame and holds each drawing for 4, so a light
+that flips brightness every 1 to 3 frames (a glow, a ring stamp, a lit closet) reads at half its rate there, or
+not at all when the flip lands on the same phase every time. ep97, ep101 and ep107 passed the preview at about 4
+a second and failed the proof at 7 (or on a 4.9 s extended run). `flash --like-proof` draws the proof's own frame
+list (every drawing) at the meter's analysis size (135 x 240, `safety.LOW`, 4 samples) into `frames-flash/`,
+finishes `picture-flash.mp4` and measures it. On ep107 S49 to S56 it read the proof's numbers second for second,
+for about 1.4 times the preview's drawing time. `--shots S12,S13` redraws only those shots after a fix and keeps the
+rest. `preflight` reads that picture when there is one, and blocks on it.
 
 ## The proof render (`.github/workflows/proof.yml`)
 
