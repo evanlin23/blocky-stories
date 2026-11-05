@@ -12,7 +12,7 @@ Environment: `BLOCKY_BPY` and `BLOCKY_TTS` must point at the venvs. If they don'
 ## Lessons from the first 30 stories (2026-11-02)
 - Caption chunks live in both `lines.json` and `voice-timings.json`: splitting or merging a caption needs a re-voice of that line, or the mix fails on a stale time reference (ep55).
 - `generator/make_story.py` drops `rev`: after regenerating story.json, set `rev` again (bump it) or the changed story won't be redrawn (ep55).
-- A preview that passes flash can still fail on the final, which is drawn at a higher rate: run `python -m blocky flash` at full rate on any shot with glints, mirrors or light changes before merging (mirror-maze, 2026-11-03).
+- A preview that passes flash can still fail on the proof and the final, which draw every drawing: the preview holds every 4th one, and a light that flips every 1 to 3 frames reads at half its rate there or not at all (ep97, ep101, ep107 read 4 a second on the preview and 7 on the proof, 2026-11-05). Run `python -m blocky flash <name> --like-proof` on any story with glints, mirrors, glows or light changes: it draws what the proof draws at the meter's own size (about 1.4 times a preview's time) and reads what the proof reads. After a fix, `--like-proof --shots S12,S13` redraws only those shots.
 - What got stories dropped on 2026-11-03 (ep33, ep37, ep43, ep58, the elevator puzzle), fixed before review, not after:
   - **Murky picture:** fog and dark grades that read as grey mush on a phone. Keep the polish pack's bright grade on, and give every shot a lit subject and a clear value gap against the background. Use fog for depth, never as the whole frame.
   - **The rule marker must read at phone size** (a 1080x1920 frame shown at about 300 px wide). Test it in the 300 px still: a knot that reads as a bow, a dial that reads as a game sticker or numbers that clutter all failed. Make it simple, big, high contrast and close to a face.
@@ -20,7 +20,7 @@ Environment: `BLOCKY_BPY` and `BLOCKY_TTS` must point at the venvs. If they don'
   - **Acting holes:** a missing key that makes someone walk backward, or a spoken letter with no tag on screen. Scrub every shot at full rate before review.
 - After any line edit, regenerate story.json (`generator/make_story.py`) before re-voicing; the voice step reads story.json, so it picks up stale text otherwise (ep48).
 - Set `"flash_safe": true` in story.json's `look`, and ramp every light switch over at least 0.3 s. Strobing flicker and instant blackouts failed the flash bar on most stories and cost a whole fix round each.
-- Run `python -m blocky flash <name> --file <preview mp4>` before anyone reviews the preview, and fix the named seconds first.
+- Run `python -m blocky flash <name> --like-proof` before anyone reviews the preview, and fix the named seconds first (`--file <preview mp4>` is indicative only). `preflight` then blocks on its reading.
 - Seconds 15 to 30 escalate or show the rule at work; nobody explains it (ep11's only retention dip).
 - Never let two surfaces share a plane (a sleeve on a sleeve, a decal on a wall): they z-fight, flipping colour between frames and between machines, so the preview can pass while the 16-shard final fails the flash bar (mirror-maze, 2026-11-02). Stand anything layered at least 1 cm proud.
 - After editing story cues or shots, run `python -m blocky timeline <name>` before the preview, and pass `--force` to `render` for shots you changed: without them the preview silently reuses old frames, and the reviewers see the old cut (ep27 lost two rounds this way).
