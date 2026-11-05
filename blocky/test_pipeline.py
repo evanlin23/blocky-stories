@@ -705,3 +705,49 @@ def test_check_blocks_the_music_box_voice():
     st = {"sound": {"music": {"sections": [{"at": "L01", "voices": ["pad", "musicbox"]}]}}}
     assert any(k == "block" and "music box" in m for k, m in checks.harsh_sound(st))
     assert not any(k == "block" for k, m in checks.harsh_sound({"sound": {"music": {"sections": [{"voices": ["pad"]}]}}}))
+
+
+def test_preview_hold_hides_a_fast_flip(monkeypatch, tmp_path):
+    """Why the preview's flash reading is only indicative (ep97, ep101, ep107, 2026-11-05): a light over 40% of the
+    frame that flips every 2 frames is 7 flashes a second at full rate, a fail. The preview draws every 4th frame
+    and holds it, so it lands on the same phase every time and reads no flashing at all."""
+    film = np.full((90, 135, 240, 3), 40, np.uint8)
+    on = (np.arange(90) // 2) % 2 == 0
+    film[on, :54] = 250
+    monkeypatch.setattr(flash, "decode_low", lambda p: film)
+    full = flash.measure(tmp_path / "x.mp4", None)
+    assert full["general_max_flashes_per_s"] >= 7 and not full["house_bar"]["pass"]
+    held = film[np.arange(90) // 4 * 4]
+    monkeypatch.setattr(flash, "decode_low", lambda p: held)
+    rep = flash.measure(tmp_path / "x.mp4", None)
+    assert rep["general_max_flashes_per_s"] == 0 and rep["house_bar"]["pass"]
+
+
+def test_flash_like_proof_draws_every_proof_drawing(monkeypatch, tmp_path):
+    """`flash --like-proof` draws the proof's frame list (every drawing, ones and twos as the final has them) at
+    the flash meter's own analysis size, so the local check measures what proof.yml measures."""
+    import argparse
+
+    import blocky.__main__ as m
+    from blocky import safety, timeline
+
+    tl = {"fps": 30, "frames": 60, "shots": [{"id": "S1", "f0": 0, "f1": 30, "step": 1},
+                                              {"id": "S2", "f0": 30, "f1": 60, "step": 2}]}
+    monkeypatch.setattr(m, "OUT", tmp_path)
+    (m.work("s") / "timeline.json").write_text(json.dumps(tl))
+    jobs = {}
+
+    def fake_blender(job, tag, workers=1):
+        Path(job["out"]).mkdir(parents=True, exist_ok=True)
+        jobs[tag] = job
+        return 0.0
+
+    monkeypatch.setattr(m, "blender", fake_blender)
+    monkeypatch.setattr(m, "base_job", lambda a, q: {"res": q["res"], "samples": q["samples"]})
+    for flag in ("proof", "like_proof", "preview"):
+        m.cmd_render(argparse.Namespace(story="s", shots=None, only=None, shard=None, samples=None, force=True,
+                                        **{flag: True}))
+    assert jobs["flash"]["frames"] == jobs["proof"]["frames"] == timeline.frame_list(tl) != jobs["preview"]["frames"]
+    assert len(jobs["flash"]["frames"]) == 45
+    assert jobs["flash"]["res"] == [safety.LOW[1], safety.LOW[0]]
+    assert jobs["flash"]["out"].endswith("frames-flash")
