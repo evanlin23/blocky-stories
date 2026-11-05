@@ -239,9 +239,28 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     faces, cut-aligned light cues with no fade-in at a cut, the pose applied on frame 0, a camera-in-geometry check in
     preflight, and the caption splitter keeping all words. Each fix removes a whole class of drop.
 
+40. **Proof qa finds what the critic didn't, and by then no round is left.** ep105 (blank frames at S85 and S139), ep116
+    (frame-0 pop and a head cut) and ep121 (four fixes) all had critic and standards approval, then failed proof qa.
+    Several of the misses are mechanical: blank or near-uniform frames, a character missing on frame 0, a head cut
+    at an edge.
+    → A frame lint over the preview (scripts/, report-only, like framing.py) before reviews: near-uniform frames,
+    frame 0 against frame 1 for a pop, and the head-cut check on the rendered frames, not just the geometry. And the
+    proposal in lesson 38 applies to qa too: the proof qa's checklist runs once on the preview, so the critic sees a
+    clean film.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
 
 ## Creature round 2 (2026-11-03, second orchestrator)
 - Two creature tries each for Hal (ep87) and the Server (ep71), each judged by two Opus critics: best 5/4 and 4/4, neither passed (`docs/research/creature-round-2.md`). Cost: 4 builder runs (the ep71 one about 28 min) and 8 critic reads. Suggested fix: a wide-slab head reads as an appliance whatever the design, so send such creatures back to the writer before any build try; and a builder should self-check the two scale facts (head against a lit ceiling, the reference person's whole head in frame) before reporting.
+
+## From the first orchestrator (2026-11-03)
+- **Usage went in a day.** 74% of a week's limit was gone less than a day after the reset: about 60 sessions in 2 days, up to 15 at once, long orchestrator contexts re-read on every check-in, and redo or fix work on stories that were dropped hours later. Rewrite target: decide keep or drop before any fix, one task per session, short-lived sessions, and check-ins only as often as something can change.
+- **QA came after the expensive step.** Reviews saw a quarter-size preview drawn every 4th frame, so clipping, stills, flash and pace showed up only on the final (moving-day, ep58, ep62, warm-shoes). proof.yml fixed it. Rewrite target: one gate before merge, measured on the real frame rate.
+- **A flash bar copied from another channel blocked transitions.** The ep10 house extras (2 flashes or 5 changes a second) counted fast cuts as flicker and fought the pace rules. The owner watched both "failing" films and saw no flashes. Rewrite target: start from the published standard, and check any stricter rule against what a person sees before it blocks.
+- **The uploader trusted a stale reading and a missing tool.** upload.py fell back silently when ffmpeg wasn't on the runner, and refused a film that passed. Rewrite target: a missing dependency fails loudly, and every workflow's tools are installed in that workflow.
+- **A failed shard still made a film.** run 87 assembled closing-time with every 16th frame copied (a stutter in the hook). Fixed by the complete-shards guard (#178, #194). Rewrite target: every assemble checks that its inputs are complete.
+- **An urgent message read as the owner saying stop.** A `priority: now` send_message interrupted a tool call, and the session took the cancel as the user's "stop" and held for 70 minutes. Rewrite target: use `next` for messages to working sessions, and the session prompt says an interrupt from the orchestrator isn't the owner.
+- **Cancelling a drawing run to jump the queue costs more than waiting** once frames can be reused. Rewrite target: render priority comes from queue.txt, never from cancels.
+- **One upload slot needed four hops.** QA verdict, then my dispatch, then the workflow, then the issue, with reminders in case a message was missed. Rewrite target: upload.yml runs itself when a qa pass lands for the next queued story inside the day's window.
