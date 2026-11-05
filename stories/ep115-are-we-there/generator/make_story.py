@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -99,7 +99,12 @@ cast = {
 }
 def three():
     """The front three-shot from the hood: Mom in front, Jo and me behind, all three heads whole."""
-    return mv([-0.02, -3.4, 1.62], [-0.02, 1.0, 1.52], 31, [-0.02, -3.2, 1.62], [-0.02, 1.0, 1.52], 31)
+    return mv([0.0, -3.1, 1.62], [0.0, 1.0, 1.5], 31, [0.0, -2.9, 1.62], [0.0, 1.0, 1.5], 32)
+
+
+def momf(tx=0.28, d=1.75, lens=26, tz=0.0, push=0.1, dx=-0.5):
+    """Mom from the dash: her whole head under the tag, her lips above the caption band."""
+    return face(G.MOM, d, lens, dx=dx, tx=tx, tz=tz, push=push)
 
 
 PLOW0 = (G.PLOW[0] + 0.5, 0.4)
@@ -201,7 +206,7 @@ move(0, "phone", x=G.JO[0] - 0.02, y=0.7, z=-60.0)
 
 # ===================================================================== 01 the hook (L01 to L02)
 # me, lips shut, the mile post sliding past the window behind me
-beat("me", 0, expr="shut")
+beat("me", 0, expr="worried")
 move(0, "post", x=G.POST_X, y=1.5)
 move(0.02, "post", dur=1.4, lin=True, y=14.0)
 shot(0, face(G.ME, 1.9, 31, dx=0.7, tx=-0.12, push=0.1), "mehook")
@@ -259,7 +264,7 @@ shot("L10.2", mv([-0.45, -0.16, 1.95], [-0.45, -0.1, 0.5], 24, [-0.45, -0.16, 1.
 
 # L11: the three landmarks
 shot("L11", mv([G.PINE[0], -14.0, 3.0], [G.PINE[0], 0.0, 4.8], 26, [G.PINE[0], -13.0, 3.4], [G.PINE[0], 0.0, 4.8], 26), "pine1")
-shot("L11.1", mv([G.PLOW[0] - 0.4, -7.8, 2.2], [G.PLOW[0], 0.0, 2.0], 30, [G.PLOW[0] - 0.3, -7.2, 2.3], [G.PLOW[0], 0.0, 2.0], 30), "plow1")
+shot("L11.1", mv([G.PLOW[0] + 5.2, -8.5, 2.5], [G.PLOW[0] + 0.2, -1.6, 1.7], 28, [G.PLOW[0] + 4.4, -7.8, 2.5], [G.PLOW[0] + 0.2, -1.6, 1.7], 28), "plow1")
 shot("L11.2", mv([G.FALLS[0], -11.0, 3.4], [G.FALLS[0], 4.0, 4.6], 24, [G.FALLS[0], -10.0, 3.6], [G.FALLS[0], 4.0, 4.6], 24), "falls1")
 
 # ===================================================================== 04 the loop shows (L12 to L19)
@@ -289,14 +294,14 @@ beat("mom", "L15.2", expr="warm")
 shot("L15", face(G.MOM, 1.7, 26, dx=-0.5, tx=0.12), "mom15")
 lap("L16", 39)
 shot("L16", mv([G.PINE[0] + 2.0, -13.0, 3.2], [G.PINE[0], 0.0, 4.8], 26, [G.PINE[0] + 1.5, -12.0, 3.5], [G.PINE[0], 0.0, 4.8], 26), "pine2")
-beat("plowman", "L16.1", arms=[0, 150], expr="grin")
-beat("plowman", "L16.1+0.25", arms=[0, 120])
-beat("plowman", "L16.1+0.5", arms=[0, 155])
-shot("L16.1", mv([G.PLOW[0] + 0.6, -5.4, 2.55], [G.PLOW[0] + 0.5, 0.4, 2.45], 36, [G.PLOW[0] + 0.5, -5.0, 2.55], [G.PLOW[0] + 0.5, 0.4, 2.45], 36), "plowwave1")
+beat("plowman", "L16.1", arms=[150, 0], expr="smile")
+beat("plowman", "L16.1+0.25", arms=[120, 0])
+beat("plowman", "L16.1+0.5", arms=[155, 0])
+shot("L16.1", mv([G.PLOW[0] + 0.5, -5.8, 2.9], [G.PLOW[0] + 0.5, 0.4, 2.4], 34, [G.PLOW[0] + 0.5, -5.2, 2.9], [G.PLOW[0] + 0.5, 0.4, 2.4], 34), "plowwave1")
 # L17: Mom slows at the waterfall
 speed("L17+0.8", 1.2, 1.4)
 falls_come("L17", 1.6)
-shot("L17", face(G.MOM, 1.65, 24, dx=-0.55, tx=0.28), "mom17")
+shot("L17", momf(), "mom17")
 shot("L17.2", mv([G.FALLS[0] - 3.0, -9.5, 2.8], [G.FALLS[0], 4.0, 4.2], 26, [G.FALLS[0] - 2.5, -8.5, 3.0], [G.FALLS[0], 4.0, 4.2], 26), "falls2")
 falls_go("L18", -0.2, 3.0)
 speed("L18-0.1", 9.0, 1.0)
@@ -323,31 +328,31 @@ tagbig("L20", s=1.5, x=0.0, y=0.3)
 shot("L20", mv([-2.0, -9.0, 1.6], [0.0, 0.0, 1.3], 34, [-1.6, -8.4, 1.6], [0.0, 0.0, 1.3], 34), "tag40")
 tagbig("L20.1")
 shot("L20.1", mv([2.6, -6.4, 0.6], [-0.1, -2.9, 0.5], 34, [2.3, -5.6, 0.6], [-0.1, -2.9, 0.5], 34), "lights")
-beat("plowman", "L21", arms=[0, 150], expr="grin")
-beat("plowman", "L21+0.3", arms=[0, 120])
-beat("plowman", "L21+0.6", arms=[0, 155])
-shot("L21", mv([G.PLOW[0] + 0.7, -5.4, 2.55], [G.PLOW[0] + 0.5, 0.4, 2.45], 36, [G.PLOW[0] + 0.5, -5.0, 2.55], [G.PLOW[0] + 0.5, 0.4, 2.45], 36), "plowwave2")
+beat("plowman", "L21", arms=[150, 0], expr="smile")
+beat("plowman", "L21+0.3", arms=[120, 0])
+beat("plowman", "L21+0.6", arms=[155, 0])
+shot("L21", mv([G.PLOW[0] + 0.5, -5.8, 2.9], [G.PLOW[0] + 0.5, 0.4, 2.4], 34, [G.PLOW[0] + 0.5, -5.2, 2.9], [G.PLOW[0] + 0.5, 0.4, 2.4], 34), "plowwave2")
 beat("me", "L21.1", expr="worried", head=[-8, 0])
 shot("L21.1", face(G.ME, 1.8, 30, dx=0.5), "me21")
 beat("jo", "L22", expr="neutral", arms=[40, 0])
-shot("L22", mv([-0.2, 0.2, 1.62], [-0.05, 1.35, 1.0], 28, [-0.15, 0.3, 1.58], [-0.05, 1.35, 1.0], 28), "cooler2")
+shot("L22", mv([-0.5, -0.7, 1.75], [-0.1, 1.4, 1.15], 26, [-0.45, -0.4, 1.75], [-0.1, 1.4, 1.15], 26), "cooler2")
 beat("me", "L23", expr="neutral", head=[35, 0])
 shot("L23", face(G.ME, 1.8, 30, dx=0.6, tx=0.1, push=0.1), "me23")
 beat("mom", "L24", expr="neutral")
 speed("L24", 1.0, 1.0)
 falls_come("L24", 0.5, 2.6)
-shot("L24", face(G.MOM, 1.65, 24, dx=-0.55, tx=0.28), "mom24")
+shot("L24", momf(), "mom24")
 beat("mom", "L25.1", expr="neutral")
 cues.append({"at": "L25.1", "name": "noop"})
 acting["mom"].append({"from": "L25.1", "to": "L26>", "mouth": [0.0, 0.35], "flap": True})
-shot("L25", face(G.MOM, 1.5, 30, dx=-0.5, tx=0.22), "mom25")
-shot("L26", face(G.MOM, 1.6, 30, dx=-0.55, tx=0.28, tz=-0.22, push=0.08), "reveal")
+shot("L25", momf(tx=0.2, d=1.6, lens=27), "mom25")
+shot("L26", momf(tx=0.28, d=1.7, lens=26, push=0.06), "reveal")
 
 # ===================================================================== 06 the twist (L27 to L31)
 falls_go("L27", 0.5, 3.0)
 speed("L27", 6.0, 1.2)
 beat("mom", "L27", expr="sad-smile")
-shot("L27", face(G.MOM, 1.6, 28, dx=-0.5, tx=0.12), "mom27")
+shot("L27", momf(tx=0.12), "mom27")
 beat("me", "L27.1", expr="wide", head=[0, 0])
 beat("mom", "L28", expr="warm")
 beat("jo", "L28", head=[0, 0], expr="neutral", arms=[0, 0])
@@ -356,15 +361,16 @@ shot("L28", three(), "three2")
 look("L28.2", "day", 1.0)
 cue("L28.2", "flakes", v=0.0)
 speed("L28.2", 9.0, 1.0)
+shot("L28.3", momf(tx=0.12, d=1.7, lens=26), "mom28")
 # L29: the sliding door handle, then Jo at the open hatch
-shot("L28.3", mv([-3.0, 1.3, 0.85], [-1.36, 1.7, 0.7], 42, [-2.6, 1.4, 0.8], [-1.36, 1.7, 0.7], 42), "handle")
-sit("jo", "L29.1", False)
-put("jo", "L29.2", [-0.6, 3.6], 180, expr="smile", arms=[0, 0], head=[0, 0])
-move("L29.1", "hatch", z=2.6)
-shot("L29.2", mv([-0.5, 6.3, 1.65], [-0.45, 3.2, 1.5], 30, [-0.45, 5.8, 1.65], [-0.45, 3.2, 1.5], 30), "hatchjo")
+shot("L29", mv([-3.0, 1.3, 0.85], [-1.36, 1.7, 0.7], 42, [-2.6, 1.4, 0.8], [-1.36, 1.7, 0.7], 42), "handle")
+sit("jo", "L29.1+0.45", False)
+put("jo", "L29.1+0.5", [-0.75, 3.6], 180, expr="smile", arms=[0, 0], head=[0, 0])
+move("L29.1+0.45", "hatch", z=2.6)
+shot("L29.1+0.5", mv([-0.25, 6.5, 1.6], [-0.25, 3.0, 1.4], 28, [-0.25, 6.0, 1.6], [-0.25, 3.0, 1.4], 28), "hatchjo")
 move("L30+0.3", "hatch", z=0.0)
 beat("mom", "L30", expr="sad-smile")
-shot("L30", face(G.MOM, 1.65, 28, dx=-0.5, tx=0.12), "mom30")
+shot("L30", momf(tx=0.12), "mom30")
 beat("mom", "L30+0.7", expr="smile")
 put("jo", "L31", [G.JO[0], G.JO[1]], 0, expr="laugh", arms=[0, 0], head=[0, 0])
 sit("jo", "L31", True)
@@ -382,16 +388,17 @@ lap("L33", 41)
 beat("mom", "L33", expr="smile")
 beat("jo", "L33", head=[0, 0], expr="smile")
 speed("L33", 9.0)
-shot("L33", face(G.MOM, 1.7, 26, dx=-0.5, tx=0.12), "mom33")
+shot("L33", momf(tx=0.12), "mom33")
 speed("L34", 1.2, 1.2)
 falls_come("L34", 0.4, 2.6)
 beat("mom", "L34", expr="warm")
-shot("L34", face(G.MOM, 1.65, 24, dx=-0.55, tx=0.28), "mom34")
+shot("L34", momf(), "mom34")
 falls_go("L34.1", 0.8, 3.0)
-move("L34.1-0.02", "cabin", x=0.2, y=-80.0, z=-0.45)
-move("L34.1", "cabin", dur=2.4, y=-22.0)
-speed("L34.1", 5.0, 1.0)
-shot("L34.1+0.4", mv([-0.3, 0.8, 1.62], [0.2, -60.0, 3.0], 28, [-0.3, 0.8, 1.62], [0.2, -30.0, 2.6], 28), "cabinup")
+shot("L34.1", momf(tx=0.1, d=1.6, lens=27, push=0.12), "mom34b")
+move("L35-0.02", "cabin", x=0.2, y=-48.0, z=-0.45)
+move("L35", "cabin", dur=1.3, y=-22.0)
+speed("L35", 5.0, 1.0)
+shot("L35", mv([-0.3, 0.8, 1.62], [0.2, -48.0, 3.0], 28, [-0.3, 0.8, 1.62], [0.2, -26.0, 2.6], 28), "cabinup")
 beat("jo", "L35.1", expr="smile")
 beat("me", "L35.1", expr="smile")
 shot("L35.1", mv([-0.3, -1.45, 1.62], [-0.3, 1.45, 1.57], 22, [-0.3, -1.2, 1.62], [-0.3, 1.45, 1.57], 23), "duo35")
@@ -442,12 +449,12 @@ for ref in ("L12", "L16", "L20", "L33"):
 music = {
     "root": 50, "mode": "major", "bpm": 112, "seed": 115,
     "sections": [
-        {"at": 0, "voices": ["musicbox", "pulse", "pad"], "energy": 0.55, "root": 50, "mode": "major"},
-        {"at": "L12", "voices": ["musicbox", "pulse", "pad"], "energy": 0.6, "root": 50, "mode": "major"},
+        {"at": 0, "voices": ["piano", "pulse", "pad"], "energy": 0.55, "root": 50, "mode": "major"},
+        {"at": "L12", "voices": ["piano", "pulse", "pad"], "energy": 0.6, "root": 50, "mode": "major"},
         {"at": "L20", "voices": ["drone", "pad"], "energy": 0.3, "root": 50, "mode": "minor"},
         {"at": "L27", "voices": ["drone", "pad"], "energy": 0.25, "root": 50, "mode": "major"},
-        {"at": "L31.1", "voices": ["musicbox", "pad"], "energy": 0.4, "root": 50, "mode": "major"},
-        {"at": "L32", "voices": ["musicbox", "pulse", "pad"], "energy": 0.62, "root": 50, "mode": "major"},
+        {"at": "L31.1", "voices": ["piano", "pad"], "energy": 0.4, "root": 50, "mode": "major"},
+        {"at": "L32", "voices": ["piano", "pulse", "pad"], "energy": 0.62, "root": 50, "mode": "major"},
     ],
 }
 sound = {
@@ -479,7 +486,7 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff9a2e",
     "gap": 0.15,
-    "tail": 0.0,
+    "tail": 0.25,
     "fade_in": False,
     "fade_out": False,
     "rev": REV,
@@ -499,7 +506,7 @@ story = {
     "set_moves": [],
     "clip_ok": [],
     "framing_ok": [names[n_] for n_ in ("pine1", "falls1", "pine2", "jo31", "me23")],
-    "asr_forgive": [],
+    "asr_forgive": ["packed"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 if __import__("os").environ.get("NAMES"):

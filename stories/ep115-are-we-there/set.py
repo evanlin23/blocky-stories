@@ -403,6 +403,7 @@ def van(kit):
     # light inside the van, from the camera's side, so every face is lit
     kit.light("dome", "POINT", (0.0, 0.2, 1.95), 80.0, "#fff4e2", size=0.6, shadow=False)
     kit.light("dome2", "POINT", (0.0, 1.9, 1.95), 70.0, "#fff4e2", size=0.6, shadow=False)
+    kit.light("hatchlight", "POINT", (-0.2, 5.0, 2.4), 260.0, "#fff0d8", size=0.6, shadow=False)
     kit.light("vkey", "POINT", (-0.2, -2.1, 1.9), 150.0, "#fffaf0", size=0.6, shadow=False)
 
 
@@ -547,6 +548,7 @@ def build_tag(kit):
                       [(2, 1, 0), (3, 4, 5), (0, 1, 4, 3), (1, 2, 5, 4), (2, 0, 3, 5)], ink, root, (-0.055, 0.07, 0.016), (0, 0, 0))
     noshadow(ah)
     W["seg"] = []
+    W["one"] = []
     layout = [("a", 0.0, 0.15, 0.1, 0.05), ("b", 0.055, 0.075, 0.05, 0.1), ("c", 0.055, -0.075, 0.05, 0.1),
               ("d", 0.0, -0.15, 0.1, 0.05), ("e", -0.055, -0.075, 0.05, 0.1), ("f", -0.055, 0.075, 0.05, 0.1),
               ("g", 0.0, 0.0, 0.1, 0.05)]
@@ -556,6 +558,10 @@ def build_tag(kit):
             ob = b(f"tag.d{d}{nm}", (w_, h_, 0.004), (cx + x * 1.0, z, 0.012), ink)
             row.append(ob)
         W["seg"].append(row)
+        # a "1" carries a flag and a base, so it reads as a one and never as an exclamation mark
+        flag = b(f"tag.d{d}flag", (0.07, 0.036, 0.004), (cx + 0.012, 0.112, 0.012), ink, rot=(0, 0, -0.55))
+        base = b(f"tag.d{d}base", (0.13, 0.04, 0.004), (cx + 0.035, -0.15, 0.012), ink)
+        W["one"].append((flag, base))
     rt = kit.empty("tagroot", (0, 0, 0), cam)
     # a stand-in used for placement only
     return root
@@ -615,7 +621,7 @@ def _first_frame(kit, story):
                 kit.box(f"{who}.pedge", (0.84, 0.1, 0.5), (0, -0.7, -0.3), ed, qh, bevel=0.04)
                 kit.box(f"{who}.palm", (0.76, 0.12, 0.42), (0, -0.76, -0.3), pc, qh, bevel=0.04)
                 for fx in (-0.19, 0.0, 0.19):
-                    kit.box(f"{who}.fgap{fx}", (0.02, 0.04, 0.3), (fx, -0.83, -0.2), ed, qh)
+                    kit.box(f"{who}.fgap{fx}", (0.02, 0.04, 0.12), (fx, -0.83, -0.05), ed, qh)
                 kit.box(f"{who}.thumb", (0.14, 0.1, 0.3), (0.42, -0.74, -0.52), pc, qh, bevel=0.03)
                 kit.box(f"{who}.wrist", (0.34, 0.18, 0.5), (0.0, -0.76, -0.75), pc, qh, bevel=0.04)
                 kit.box(f"{who}.sleeve", (0.5, 0.26, 0.6), (0.0, -0.78, -1.2), kit.plastic(sleeve, 0.8), qh, bevel=0.05)
@@ -724,6 +730,10 @@ def animate(kit, story, tl, t, ctx):
     n = max(0, min(99, int(round(lp["n"]))))
     for di, dg in enumerate((n // 10, n % 10)):
         on = DIG[dg]
+        if dg == 1:
+            on = "bc"
+        W["one"][di][0].hide_render = dg != 1
+        W["one"][di][1].hide_render = dg != 1
         for si, nm in enumerate(SEGN):
             W["seg"][di][si].hide_render = nm not in on
     gains["phonelight"] = 7.0 if W["obj"]["phone"].location.z > -10 else 0.0

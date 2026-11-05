@@ -254,30 +254,30 @@
    ]
   },
   "L10": {
-   "text": "Mom packed, snacks like we were driving to the moon.",
+   "text": "Mom packed snacks like we were driving to the moon.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.362,
+   "dur": 2.207,
    "onset": 0.172,
-   "end": 2.172,
+   "end": 2.017,
    "chunks": [
     [
      0.172,
-     1.008
+     0.87
     ],
     [
-     1.008,
-     1.181
+     0.87,
+     1.043
     ],
     [
-     1.181,
-     1.534
+     1.043,
+     1.397
     ],
     [
-     1.534,
-     2.172
+     1.397,
+     2.017
     ]
    ]
   },
@@ -410,22 +410,22 @@
    ]
   },
   "L16": {
-   "text": "Same pine. Same honk.",
+   "text": "Pine again. Then the honk.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.5,
-   "onset": 0.19,
-   "end": 1.293,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
    "chunks": [
     [
-     0.19,
-     0.586
+     0.172,
+     0.534
     ],
     [
-     0.621,
-     1.293
+     0.569,
+     1.224
     ]
    ]
   },
@@ -526,22 +526,22 @@
    ]
   },
   "L21": {
-   "text": "Same plow guy. Same little wave.",
+   "text": "That plow guy waves again.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.845,
-   "onset": 0.19,
-   "end": 1.638,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
    "chunks": [
     [
-     0.19,
-     0.759
+     0.172,
+     0.638
     ],
     [
-     0.819,
-     1.638
+     0.638,
+     1.362
     ]
    ]
   },
