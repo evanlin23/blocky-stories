@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 8
+REV = 10
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -512,12 +512,11 @@ shot("L42.2", mv([KX + 1.4, -0.6, 1.9], [KX - 1.0, 2.4, 1.1], 34, [KX + 0.9, -0.
 clock("L43", 11, 59)
 only("L43", ["me", "dev"])
 vis("L43", "plates", True)
-put("me", "L43", [G.SEAT_ME[0], G.SEAT_ME[1]], 130, expr="laugh")
-put("dev", "L43", [G.SEAT_DEV[0], G.SEAT_DEV[1]], -130, expr="laugh")
+put("me", "L43", [G.SEAT_ME[0], G.SEAT_ME[1]], 130, expr="smile")
+put("dev", "L43", [G.SEAT_DEV[0], G.SEAT_DEV[1]], -130, expr="warm")
 cue("L43", "sit", who="me", on=True, z=0.55)
 cue("L43", "sit", who="dev", on=True, z=0.55)
 shot("L43", fc([G.SEAT_ME[0], 6.6], 130, 2.4, 36, h=1.45, tz=1.3, off=0.06, push=0.15), "laughme")
-shot("L43.1", fc([G.SEAT_DEV[0], 6.6], -140, 2.5, 38, h=1.45, tz=1.3, off=0.06, push=0.12), "laughdev")
 # L44 the next morning, the radio's back
 clock("L44", 7, 0)
 cue("L44", "pair", n=1.0)
