@@ -39,9 +39,10 @@ The builder reads docs/engine.md itself.
      - nothing that reads as the wrong thing at phone size.
 
      The builder fixes what it lists before the preview. This is not a review round, it gives no verdict, and it's done once. Framing and faces at phone size were the most common blockers in batches 7 to 9.
-   - **Framing lint, every shot.** Run `python scripts/framing.py --story stories/__STORY__` (report-only; on main since #284). Have the builder fix every finding: a head cut by the frame, a face under 1/5 of the width on a line about that person, back-of-head, or an empty frame during a line. List a deliberate one in story.json `"framing_ok"`. Run it again before every review round and before the rescue.
+   - **Framing lint, every shot.** Run `python scripts/framing.py --story stories/__STORY__` (report-only; on main since #284). Have the builder fix every finding: a head cut by any frame edge, a face under 1/5 of the width on a line about that person, back-of-head or a profile (the narrator's too, on an I / me / my line), an empty frame during a line, a mouth under the caption, a hand or the rule tag over a face, or a CAPS word's prop never in frame. List a deliberate one in story.json `"framing_ok"`. Run it again before every review round and before the rescue.
    - **Preview.** Render the preview, then finish and mix.
-   - **Flash.** Run `python -m blocky flash` at full rate on any shot with bright light changes, and pass with margin (at most about 5 flashes a second, against the cap of 6). A swinging, flickering or switching practical light counts (2026-11-04: ep97 failed its proof at 7 a second from a swinging bulb).
+   - **Frame lint, on the preview.** Run `python scripts/frames.py --story stories/__STORY__` on the preview's frames before every review round, next to framing.py (report-only, lesson 40). Have the builder fix every finding: blank or near-uniform frames (a camera inside a wall), a pop on a shot's first drawing (a character posed a frame late), or a shot that opens dark and brightens over its first 0.3 s (a light fading in after the cut). List a deliberate one in story.json `"frames_ok"`.
+   - **Flash.** Run `python -m blocky flash __STORY__ --like-proof` (every drawing the proof draws, at the meter's size: it reads what the proof reads, 2026-11-05) on any story with bright light changes, glows or flipping lights, and pass with margin (at most about 5 flashes a second, against the cap of 6). A swinging, flickering or switching practical light counts (2026-11-04: ep97 failed its proof at 7 a second from a swinging bulb).
    - **Measure.** Run `python scripts/measure.py --story stories/__STORY__`. The 4 craft blocks must pass:
      - picture changes per 10 s, at 0.5 s and at 0.25 s;
      - motion energy;
@@ -50,7 +51,7 @@ The builder reads docs/engine.md itself.
      On a pace fail, shorten the quiet span or add motion inside it. Never crop harder.
    - **Sound.** The budget is 2 to 4 events per 10 s, and the score plays under the whole film.
 
-3. **Reviews** (/week step 3). Spawn `critic` and `standards`, each with model "opus".
+3. **Reviews** (/week step 3). Spawn `critic` and `standards`, each with model "opus". Round 1 walks every shot. Round 2 and the rescue look check only the last round's must-fixes and regressions, and new non-severe findings are should-fix (RULES, audit decision 8). Pass this rule to each reviewer in its prompt.
    - **Rounds:** TWO ROUNDS AT MOST, plus at most ONE single-fix rescue, with no exceptions (RULES, audit decision 3). Round 2 re-runs only the reviewer that said revise.
    - **The rescue:** only if a review names a single concrete fix. The builder applies just that, and only the reviewer who blocked looks once more. Apply the fix to every shot of the same line or beat, not just the shot the review names (2026-11-04: ep108's rescue fixed S40 and missed S41, its twin).
    - **Must-fixes:** send words, title or package notes to the `writer` agent (model "opus") first. Then send every must-fix to one fresh builder in one call.
