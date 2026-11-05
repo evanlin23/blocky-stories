@@ -125,9 +125,9 @@ def make_shop(kit, name, side, y0, y1, h, tint, windows, door, awning=None, awn_
     kit.box(f"{name}.body", (depth, L, h), (cx, ym, h / 2), wall)
     kit.box(f"{name}.cap", (depth + 0.2, L + 0.3, 0.45), (cx, ym, h + 0.2), plastic(cap, 0.7, spec=0.1))
     kit.box(f"{name}.cap2", (0.5, L + 0.3, 0.35), (fx + out * 0.2, ym, h - 0.2), plastic("#f4ecd8", 0.7, spec=0.1))
-    glass = kit.emit("#ffd9a0", 1.3, "winglass")
+    glass = kit.emit("#ffb860", 1.5, "winglass")
     frame = plastic("#f6f0e2", 0.7)
-    shade_m = kit.emit("#f3e4bd", 0.85, "shadecream")
+    shade_m = kit.emit("#9fa9d0", 0.75, "shadecream")
     dark = plastic("#3a3f4c", 0.4, spec=0.5)
     for k, wy in enumerate(windows):
         gm = dark if poster else glass
@@ -566,7 +566,8 @@ def _legs_sit(who, s):
 BUS_SHOTS = {"S01a", "S01b", "S02", "S07", "S44", "S46"}
 KITCHEN_SHOTS = {"S06"}
 # roof shots where the face is held in moon shadow (S21, S22) or lit from below (S23)
-DIMFACE = {"S21": (0.35, 0.22), "S22": (0.45, 0.3), "S23": (0.5, 1.1)}
+DIMFACE = {"S21": (0.16, 0.2), "S22": (0.2, 0.26), "S23": (0.5, 1.1)}
+MOONSHADE = {"S21": 0.3, "S22": 0.3}      # the sun and fill, scaled: one stop and more down on her face
 SKYOV = {"S42": SKY_PALE, "S43": SKY_PALE}
 
 
@@ -585,6 +586,9 @@ def animate(kit, story, tl, t, ctx):
     kit.LIGHTS["sun"]["light"].color = look["sun_col"]
     kit.LIGHTS["fill"]["light"].color = look["fill_col"]
     gains["sun"], gains["fill"] = look["sun"], look["fill"]
+    if sid in MOONSHADE:
+        gains["sun"] *= MOONSHADE[sid]
+        gains["fill"] *= MOONSHADE[sid]
     gains["lamp"] = 1.0
     for nm in W["lamps"]:
         gains[nm] = 330.0
