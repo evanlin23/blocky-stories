@@ -648,7 +648,6 @@ def build_kitchen(kit, ours, ctx):
     ours.b(ours.root, (1.46, 3.24), (y0 - 0.04, y1 + 0.04), (0.9, 0.95), top, "islandtop", 0.01)
     ours.b(ours.root, (1.65, 2.3), (y0 + 0.1, y1 - 0.1), (0.945, 0.956), P("#aeb8c4", 0.25, 0.9), "sinkbasin", 0.01)
     ours.b(ours.root, (1.9, 2.05), (y1 - 0.14, y1 - 0.06), (0.95, 1.3), P("#aeb8c4", 0.25, 0.9), "tap", 0.01)
-    ours.b(ours.root, (0.3, 3.3), (D - 0.6, D - 0.2), (1.62, 1.68), cm, "shelf", 0.01)
     ym = (y0 + y1) / 2
     K_["m1"] = mug(kit, ours.root, (-ours.sgn * 1.85, ym, 0.97), "#ff8e72", "sinkmugA", rot=(0, 0.25, 0.0), scale=1.2)
     K_["m2"] = mug(kit, ours.root, (-ours.sgn * 2.12, ym + 0.02, 0.97), "#4aa3ff", "sinkmugB", rot=(0.0, -0.4, 0.6), scale=1.2)

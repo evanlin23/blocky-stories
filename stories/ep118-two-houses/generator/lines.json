@@ -40,20 +40,32 @@
   "who": "narrator",
   "chunks": [
    [
-    "Fight your neighbor here,",
-    "fight your neighbor here,"
+    "Fight your",
+    "fight your"
    ],
    [
-    "and your houses LEAN.",
-    "and your houses lean."
+    "neighbor here,",
+    "neighbor here,"
+   ],
+   [
+    "and your",
+    "and your"
+   ],
+   [
+    "houses LEAN.",
+    "houses lean."
    ],
    [
     "Make up,",
     "make up,"
    ],
    [
-    "and they stand back up, SLOWLY.",
-    "and they stand back up, slowly."
+    "and they stand",
+    "and they stand"
+   ],
+   [
+    "back up, SLOWLY.",
+    "back up, slowly."
    ]
   ]
  },
@@ -80,8 +92,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "The duplex on the corner",
-    "the duplex on the corner"
+    "The duplex on",
+    "the duplex on"
+   ],
+   [
+    "the corner",
+    "the corner"
    ],
    [
     "is folded",
@@ -98,8 +114,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "My dad and Mr. Pruitt",
-    "my dad and mr. pruitt"
+    "My dad and",
+    "my dad and"
+   ],
+   [
+    "Mr. Pruitt",
+    "mr. pruitt"
    ],
    [
     "next door",
@@ -138,8 +158,12 @@
     "our kitchen table"
    ],
    [
-    "sits on a stack",
-    "sits on a stack"
+    "sits on",
+    "sits on"
+   ],
+   [
+    "a stack",
+    "a stack"
    ],
    [
     "of BOOKS.",
@@ -224,8 +248,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Dad sticks an angry note",
-    "dad sticks an angry note"
+    "Dad sticks an",
+    "dad sticks an"
+   ],
+   [
+    "angry note",
+    "angry note"
    ],
    [
     "on his door",
@@ -250,8 +278,12 @@
     "ends with"
    ],
    [
-    "the same little FISH.",
-    "the same little fish."
+    "the same",
+    "the same"
+   ],
+   [
+    "little FISH.",
+    "little fish."
    ]
   ]
  },
@@ -260,8 +292,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "There are two coffee mugs",
-    "there are two coffee mugs"
+    "There are two",
+    "there are two"
+   ],
+   [
+    "coffee mugs",
+    "coffee mugs"
    ],
    [
     "in our sink",
@@ -272,8 +308,12 @@
     "every morning."
    ],
    [
-    "I don't drink COFFEE.",
-    "i don't drink coffee."
+    "I don't",
+    "i don't"
+   ],
+   [
+    "drink COFFEE.",
+    "drink coffee."
    ]
   ]
  },
@@ -318,8 +358,12 @@
     "our upstairs windows"
    ],
    [
-    "were a FOOT apart.",
-    "were a foot apart."
+    "were a",
+    "were a"
+   ],
+   [
+    "FOOT apart.",
+    "foot apart."
    ]
   ]
  },
@@ -337,8 +381,12 @@
     "and out of"
    ],
    [
-    "Mr. Pruitt's dark window,",
-    "mr. pruitt's dark window,"
+    "Mr. Pruitt's",
+    "mr. pruitt's"
+   ],
+   [
+    "dark window,",
+    "dark window,"
    ],
    [
     "something reached OUT.",
@@ -379,8 +427,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "And there was Dad,",
-    "and there was dad,"
+    "And there",
+    "and there"
+   ],
+   [
+    "was Dad,",
+    "was dad,"
    ],
    [
     "in his ROBE.",
@@ -415,8 +467,12 @@
     "mr. pruitt"
    ],
    [
-    "passed Dad a COFFEE",
-    "passed dad a coffee"
+    "passed Dad",
+    "passed dad"
+   ],
+   [
+    "a COFFEE",
+    "a coffee"
    ],
    [
     "across the gap.",
@@ -451,8 +507,12 @@
     "laughing"
    ],
    [
-    "at two in the MORNING.",
-    "at two in the morning."
+    "at two in",
+    "at two in"
+   ],
+   [
+    "the MORNING.",
+    "the morning."
    ]
   ]
  },
@@ -475,12 +535,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "They've been best friends",
-    "they've been best friends"
+    "They've been",
+    "they've been"
    ],
    [
-    "since they were TEN.",
-    "since they were ten."
+    "best friends",
+    "best friends"
+   ],
+   [
+    "since they",
+    "since they"
+   ],
+   [
+    "were TEN.",
+    "were ten."
    ]
   ]
  },
@@ -497,8 +565,12 @@
     "and your houses"
    ],
    [
-    "stand back up, SLOWLY.",
-    "stand back up, slowly."
+    "stand back",
+    "stand back"
+   ],
+   [
+    "up, SLOWLY.",
+    "up, slowly."
    ]
   ]
  },
@@ -507,8 +579,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "So they make up",
-    "so they make up"
+    "So they",
+    "so they"
+   ],
+   [
+    "make up",
+    "make up"
    ],
    [
     "every NIGHT,",
@@ -521,8 +597,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "and start a new fight",
-    "and start a new fight"
+    "and start a",
+    "and start a"
+   ],
+   [
+    "new fight",
+    "new fight"
    ],
    [
     "every MORNING.",
@@ -567,8 +647,12 @@
     "the fish means"
    ],
    [
-    "see you at TWO.",
-    "see you at two."
+    "see you",
+    "see you"
+   ],
+   [
+    "at TWO.",
+    "at two."
    ]
   ]
  },
@@ -595,8 +679,12 @@
     "it never checks"
    ],
    [
-    "if you MEAN it.",
-    "if you mean it."
+    "if you",
+    "if you"
+   ],
+   [
+    "MEAN it.",
+    "mean it."
    ]
   ]
  },
@@ -605,12 +693,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Dad made me promise",
-    "dad made me promise"
+    "Dad made",
+    "dad made"
    ],
    [
-    "not to tell the STREET.",
-    "not to tell the street."
+    "me promise",
+    "me promise"
+   ],
+   [
+    "not to tell",
+    "not to tell"
+   ],
+   [
+    "the STREET.",
+    "the street."
    ]
   ]
  },
@@ -623,8 +719,12 @@
     "so every morning,"
    ],
    [
-    "I watch them FIGHT.",
-    "i watch them fight."
+    "I watch",
+    "i watch"
+   ],
+   [
+    "them FIGHT.",
+    "them fight."
    ]
   ]
  },
@@ -637,8 +737,12 @@
     "and every night,"
    ],
    [
-    "I wash two MUGS.",
-    "i wash two mugs."
+    "I wash",
+    "i wash"
+   ],
+   [
+    "two MUGS.",
+    "two mugs."
    ]
   ]
  },
@@ -665,8 +769,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "The house across from us",
-    "the house across from us"
+    "The house across",
+    "the house across"
+   ],
+   [
+    "from us",
+    "from us"
    ],
    [
     "has started leaning",
@@ -683,8 +791,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "And nobody in our house",
-    "and nobody in our house"
+    "And nobody in",
+    "and nobody in"
+   ],
+   [
+    "our house",
+    "our house"
    ],
    [
     "is fighting ANYBODY.",
@@ -697,8 +809,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "That I know OF.",
-    "that i know of."
+    "That I",
+    "that i"
+   ],
+   [
+    "know OF.",
+    "know of."
    ]
   ]
  }
