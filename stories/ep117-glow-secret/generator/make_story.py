@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 11
+REV = 12
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -458,7 +458,7 @@ remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"bed_drop_db": 0.0, "bed_lufs": -39.0, "reveal": [remap("L24.2")], "twist": remap("L21"),
           "emph": [remap("L01.1"), remap("L17.2"), remap("L24.3"), remap("L27.2"), remap("L30")],
-          "hold": [names[n_] for n_ in ("reveal", "wide9", "trio28", "trio31", "trio32", "emptybooth", "lot11", "hook", "sheep", "duo7", "side8", "moth12", "gum16", "dadme19", "polite1", "side29", "side31", "loop", "nudge", "shadows", "dadflare", "momflare", "momsh", "fridge1", "fridge2", "planner")]}
+          "hold": [names[n_] for n_ in ("reveal", "wide9", "trio31", "trio32", "emptybooth", "lot11", "hook", "sheep", "polite1", "side29", "side31", "loop", "nudge", "shadows", "momflare", "momsh", "fridge1", "fridge2", "planner")]}
 story = {
     "slug": "ep117-glow-secret",
     "title": "My Parents GLOW In The Dark 💡",
