@@ -46,7 +46,7 @@ LOOKS = {
     "room": _L(sun=1.2, fill=0.7, front=0.9, sky_str=0.7),
     "day": _L(sky="#cfe6ff", sky_str=0.8, sun=1.8, fill=0.8, front=1.0),
     "roomdim": _L(sun=0.3, fill=0.3, front=0.35, sky_str=0.4, pend=0.12),
-    "gum": _L(sun=0.45, fill=0.3, front=0.45, sky_str=0.3),
+    "gum": _L(sun=0.35, fill=0.28, front=0.42, sky_str=0.25, pend=0.3),
     "lot": _L(sun=0.5, sun_col="#9db4ff", el=35.0, az=200.0, fill=1.1, fill_col="#8aa2f0", sky="#33509a", sky_str=0.8,
               front=2.1, front_col="#ffe6d2"),
     "stage": _L(sun=0.0, fill=0.6, fill_col="#c8a8ff", sky="#3a2466", sky_str=0.5, front=1.3, front_col="#e8d8ff"),
@@ -176,7 +176,7 @@ def build(kit, story, tl):
     kit.light("glowme", "POINT", (0, 0, 2), 26.0, "#ffd98a", size=0.25, shadow=False)
     kit.light("glowoth", "POINT", (0, 0, 2), 14.0, "#ffd98a", size=0.25, shadow=False)
     kit.light("bglow", "POINT", (0, 1.4, 2.4), 160.0, "#ffcf70", size=0.6, shadow=False)
-    kit.light("fridge", "POINT", (G.FRIDGE[0] - 0.3, 2.7, 1.2), 70.0, "#f0f6ff", size=0.4, shadow=False)
+    kit.light("fridge", "POINT", (G.FRIDGE[0] - 0.3, 2.7, 1.2), 22.0, "#f0f6ff", size=0.4, shadow=False)
     kit.light("lamp", "POINT", (G.LOT[0] + 4.0, 12.5, 5.5), 1100.0, "#ffd9a0", size=0.4, shadow=False)
     sp = kit.light("spot", "SPOT", (G.STAGE[0] + 0.6, -0.5, 5.0), 1400.0, "#fff4e0", size=0.2, spot=34, blend=0.5,
                    shadow=False)
@@ -248,6 +248,8 @@ def build(kit, story, tl):
     reg("slice", sl)
     # pendant lamps (fixed)
     for i, px in enumerate((-3.0, 0.0, 3.0)):
+        if i == 1:   # the middle lamp stays a light only: seen over the parents' heads it read as a pillar (critic r1)
+            continue
         kit.cyl(f"pend{i}.cord", 0.02, 2.0, (px, 2.2, 3.4), P("#2a2a2e", 0.5), n=6)
         kit.sphere(f"pend{i}.shade", 0.3, (px, 2.2, 2.3), kit.emit("#fff0cf", 1.0), seg=14)
     # the gumball machine and a small counter
@@ -257,8 +259,9 @@ def build(kit, story, tl):
     W["gsh"] = []
     Lp = (GX_ - 2.2, 0.8, 1.0)
     dcols_ = ["#b8281c", "#c89400", "#1480b8", "#2f9a2f", "#b83a90", "#8a8a98", "#c05c10", "#6030c0"]
+    shcols_ = ["#8a1e16", "#8a6a00", "#0c5a86", "#1f6a1f", "#8a1e66", "#4a4a58", "#8a3c08", "#40208a"]
     cols_ = ["#ff4b3a", "#ffd23f", "#3fd0ff", "#7be07a", "#ff7ad9", "#ffffff", "#ff9a3a", "#9a6bff"]
-    for k in range(0, 34, 3):
+    for k in range(0, 34, 4):
         a = k * 2.399
         r = 0.05 + 0.24 * ((k * 0.37) % 1.0) ** 0.6
         h = 1.14 + (k % 5) * 0.09 + (0.0 if r < 0.2 else -0.06)
@@ -266,9 +269,13 @@ def build(kit, story, tl):
         by = GY_ + r * math.sin(a)
         sc_ = (3.97 - Lp[1]) / (by - Lp[1])
         wx, wz = Lp[0] + sc_ * (bx - Lp[0]), Lp[2] + sc_ * (bz - Lp[2])
-        mt = kit.emit(dcols_[k % 8], 0.9, f"gshm{k}")
-        d_ = kit.cyl(f"gsh{k}", 0.1, 0.01, (wx, 3.975, wz), mt, rot=(math.pi / 2, 0, 0), n=16)
-        d_.scale = (2.2, 1.0, 1.0)
+        wx = GX_ + 0.6 + (wx - GX_ - 0.6) * 1.7
+        wz = 1.5 + (wz - 1.5) * 1.9
+        # a dark, long ball-shaped shadow in the ball's own colour (each 3 mm apart in depth so none share a plane)
+        mt = kit.plastic(shcols_[k % 8], 0.9, spec=0.0)
+        d_ = kit.cyl(f"gsh{k}", 0.09, 0.01, (wx, 3.972 - 0.003 * (k // 4), wz), mt, rot=(math.pi / 2, 0, 0), n=24)
+        d_.scale = (2.4, 1.0, 1.0)
+        d_.visible_shadow = False
         W["gsh"].append(d_)
     kit.box("counter", (5.0, 0.8, 1.05), (-9.0, 3.4, 0.525), P("#7a3a2a", 0.6))
     kit.box("counter.top", (5.2, 0.9, 0.06), (-9.0, 3.38, 1.08), cream)
@@ -276,11 +283,11 @@ def build(kit, story, tl):
     # the coat hook at the end of the booth, with three pizza-red strokes (a tally, no words)
     chrome = kit.metal("#cfd3d8", 0.25)
     steel = P("#5d636e", 0.35, spec=0.5)
-    kit.box("hook.post", (0.3, 0.2, 1.3), (2.75, 3.45, 0.65), steel)
-    kit.box("hook.arm", (0.12, 0.45, 0.12), (2.75, 3.15, 1.22), steel)
-    kit.box("hook.tip", (0.12, 0.12, 0.28), (2.75, 2.95, 1.3), steel)
-    for k, dx in enumerate((-0.095, 0.0, 0.095)):
-        kit.box(f"hook.t{k}", (0.07, 0.02, 0.6), (2.75 + dx, 3.34, 0.62), P("#ff2a20", 0.5))
+    kit.box("hook.post", (0.14, 0.1, 0.55), (3.0, 3.6, 0.275), steel)
+    kit.box("hook.arm", (0.06, 0.2, 0.06), (3.0, 3.45, 0.52), steel)
+    kit.box("hook.tip", (0.06, 0.06, 0.12), (3.0, 3.35, 0.55), steel)
+    for k, dx in enumerate((-0.04, 0.0, 0.04)):
+        kit.box(f"hook.t{k}", (0.03, 0.02, 0.26), (3.0 + dx, 3.54, 0.26), P("#ff2a20", 0.5))
     # the waiter's arm (a sleeve, a flat hand and a fresh pie), off screen until L32
     wa = kit.empty("wa", (2.6, 1.4, -60.0))
     kit.box("wa.sleeve", (1.3, 0.3, 0.26), (1.15, 0.0, 0.14), P("#f4f4f2", 0.6), wa, bevel=0.04)
@@ -364,7 +371,7 @@ def build(kit, story, tl):
     kit.box("fr.counter", (2.6, 0.7, 0.95), (FX - 2.2, 3.55, 0.475), P("#8a6a4a", 0.6))
     fw = P("#f4f6f8", 0.35, spec=0.5)
     gx, gy = FX - 0.3, 3.0
-    kit.box("fr.back", (1.0, 0.04, 1.85), (gx, gy + 0.46, 0.95), kit.emit("#f0f6ff", 0.9))
+    kit.box("fr.back", (1.0, 0.04, 1.85), (gx, gy + 0.46, 0.95), kit.emit("#e4eefc", 0.55))
     kit.box("fr.l", (0.06, 0.9, 1.9), (gx - 0.53, gy, 0.95), fw)
     kit.box("fr.r", (0.06, 0.9, 1.9), (gx + 0.53, gy, 0.95), fw)
     kit.box("fr.t", (1.12, 0.9, 0.06), (gx, gy, 1.9), fw)
@@ -643,7 +650,7 @@ def animate(kit, story, tl, t, ctx):
             ob.location = (0, 0, -90.0)
             continue
         ob.location = (hp.x, hp.y + 0.45, hp.z - 0.1)
-        r = 0.75 + 0.15 * max(0.0, v - 0.8)
+        r = 0.75 + 0.4 * max(0.0, v - 0.8)
         ob.scale = (r, r, r)
         sq.inputs[1].default_value = HALO * min(v, 1.9)
     # the tag's bars
