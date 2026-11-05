@@ -51,7 +51,7 @@ The builder reads docs/engine.md itself.
      On a pace fail, shorten the quiet span or add motion inside it. Never crop harder.
    - **Sound.** The budget is 2 to 4 events per 10 s, and the score plays under the whole film.
 
-3. **Reviews** (/week step 3). Spawn `critic` and `standards`, each with model "opus".
+3. **Reviews** (/week step 3). Spawn `critic` and `standards`, each with model "opus". Round 1 walks every shot. Round 2 and the rescue look check only the last round's must-fixes and regressions, and new non-severe findings are should-fix (RULES, audit decision 8). Pass this rule to each reviewer in its prompt.
    - **Rounds:** TWO ROUNDS AT MOST, plus at most ONE single-fix rescue, with no exceptions (RULES, audit decision 3). Round 2 re-runs only the reviewer that said revise.
    - **The rescue:** only if a review names a single concrete fix. The builder applies just that, and only the reviewer who blocked looks once more. Apply the fix to every shot of the same line or beat, not just the shot the review names (2026-11-04: ep108's rescue fixed S40 and missed S41, its twin).
    - **Must-fixes:** send words, title or package notes to the `writer` agent (model "opus") first. Then send every must-fix to one fresh builder in one call.
