@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -99,7 +99,7 @@ cast = {
 }
 def three():
     """The front three-shot from the hood: Mom in front, Jo and me behind, all three heads whole."""
-    return mv([0.05, -3.4, 1.62], [0.05, 1.0, 1.52], 27, [0.05, -3.15, 1.62], [0.05, 1.0, 1.52], 27)
+    return mv([-0.02, -3.4, 1.62], [-0.02, 1.0, 1.52], 31, [-0.02, -3.2, 1.62], [-0.02, 1.0, 1.52], 31)
 
 
 PLOW0 = (G.PLOW[0] + 0.5, 0.4)

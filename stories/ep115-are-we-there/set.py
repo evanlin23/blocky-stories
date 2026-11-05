@@ -156,9 +156,9 @@ def falls_rock(kit, name, loc, yaw=0.0, w=14.0, h=9.0):
     ice = [P("#7cc8ee", 0.2, spec=0.9), P("#9ad9f6", 0.2, spec=0.9), P("#b6e6fb", 0.25, spec=0.8)]
     # a sheet of blue ice down the middle, then drips of every length
     top = h + G.ROAD_Z
-    kit.box(f"{name}.sheet", (5.6, 0.35, 6.2), (0.3, -1.65, top - 3.1), ice[1], root, bevel=0.12)
-    drips = [(-2.9, 0.7, 4.9), (-2.1, 0.45, 6.6), (-1.3, 0.9, 7.3), (-0.4, 0.5, 5.6), (0.5, 1.0, 7.9), (1.4, 0.55, 6.1),
-             (2.2, 0.8, 7.0), (3.0, 0.45, 5.2), (3.6, 0.35, 3.9)]
+    kit.box(f"{name}.sheet", (2.6, 0.35, 4.6), (1.0, -1.65, top - 2.3), ice[1], root, bevel=0.12)
+    drips = [(-3.6, 0.5, 2.4), (-2.6, 0.4, 3.6), (-1.7, 0.6, 1.8), (-0.5, 0.45, 3.1), (2.6, 0.7, 6.0), (3.4, 0.4, 3.0),
+             (4.2, 0.5, 4.1), (5.0, 0.35, 2.0)]
     for i, (dx, ww, ln) in enumerate(drips):
         m = ice[i % 3]
         kit.box(f"{name}.ice{i}", (ww, 0.55, ln), (dx, -1.95, top - ln / 2), m, root, bevel=0.14)
@@ -580,7 +580,7 @@ def build(kit, story, tl):
         u = ((i * 37) % 97) / 97.0
         v = ((i * 53) % 89) / 89.0
         d = 1.0 + 5.0 * (((i * 29) % 83) / 83.0)
-        ob = kit.box(f"flake{i}", (0.045, 0.045, 0.045), (0, 0, -d), fm, cam, rot=(0.3 * i, 0.5 * i, 0.2 * i))
+        ob = kit.box(f"flake{i}", (0.03, 0.03, 0.03), (0, 0, -d), fm, cam, rot=(0.3 * i, 0.5 * i, 0.2 * i))
         noshadow(ob)
         ob["d"], ob["u"], ob["v"] = d, u, v
         W["flakes"].append(ob)
@@ -625,6 +625,9 @@ def _first_frame(kit, story):
                 gl = bpy.data.objects.get(f"mom.gl{sx}")
                 if gl is not None:
                     gl.hide_render = True
+                    gl.hide_viewport = True
+                    gl.scale = (0.0001, 0.0001, 0.0001)
+                    gl.location = (0.0, 0.0, -50.0)
                 fr = kit.plastic("#2a1a16", 0.4)
                 x0 = sx * 0.24
                 kit.box(f"mom.flo{sx}", (0.46, 0.04, 0.035), (x0, -0.67, -0.19), fr, mh0)
@@ -780,7 +783,7 @@ def animate(kit, story, tl, t, ctx):
             cam_m = Matrix.Translation(loc_) @ q.to_matrix().to_4x4()
         except Exception:
             cam_m = None
-    boxes = [(-1.5, 1.5, -3.2, 3.0, -0.8, 2.6), (G.PLOW[0] - 2.4, G.PLOW[0] + 3.4, -7.0, 2.2, -0.8, 4.2)]
+    boxes = [(-1.7, 1.7, -3.4, 3.2, -0.8, 2.8), (G.PLOW[0] - 2.6, G.PLOW[0] + 3.6, -7.0, 2.4, -0.8, 4.4)]
     for ob in W["flakes"]:
         ob.hide_render = not on
         if not on:
@@ -790,7 +793,7 @@ def animate(kit, story, tl, t, ctx):
         yr = dd * 0.6
         x = ((ob["u"] * 2 - 1) * xr + 1.6 * t * (0.7 + 0.5 * ob["v"]) + xr) % (2 * xr) - xr
         y = ((ob["v"] * 2 - 1) * yr - 0.5 * t * (0.5 + ob["u"]) + yr) % (2 * yr) - yr
-        sc_ = 0.6 + 0.8 * (dd / 6.0)
+        sc_ = 0.5 + 0.6 * (dd / 6.0)
         ob.location = (x, y, -dd)
         ob.scale = (sc_, sc_, sc_)
         if cam_m is not None:
