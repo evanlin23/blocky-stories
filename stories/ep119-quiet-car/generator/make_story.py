@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -476,10 +476,8 @@ put("me", "L47", [0.15, MEY], 218, expr="wide", head=[0, 0])
 acting["me"].append({"from": "L47", "to": "L47.1>", "mouth": [0.2, 0.9]})
 shot("L47", P2([-1.35, MEY + 1.8, 1.45], [0.5, MEY - 0.6, 1.5], [-1.35, MEY + 1.5, 1.45], [0.5, MEY - 0.6, 1.5], 17), "reveal")
 # S48: handprints press into the fog
-cue("L48", "fogmax", m=0.62)
-cue("L49", "fogmax", m=0.88)
-cue("L51", "fogmax", m=0.62)
-cue("L52", "fogmax", m=0.88)
+cue("L48", "fogmax", m=0.62, dur=0.6)
+cue("L52+0.5", "fogmax", m=0.88, dur=1.2)
 cue("L48", "prints", p=1.0, dur=0.2)
 shot("L48", P([-0.5, ry(6) + 0.15, 1.6], [HALF_, ry(6) + 0.15, 1.5], 24), "prints1")
 cue("L48.1", "prints", p=4.0, dur=0.5)
@@ -493,7 +491,7 @@ cue("L50+0.1", "dip", u=1.0, dur=0.7)
 cue("L50", "prints", p=8.0)
 shot("L50", P2([0.0, 5.0, 1.8], [0.0, 13.0, 0.8], [0.0, 6.0, 1.8], [0.0, 13.0, 0.8], 26), "dipped")
 # S51: fogged windows, one after another
-shot("L51", P2([-0.9, ry(2), 1.6], [HALF_ - 0.04, ry(3), 1.5], [-0.9, ry(6), 1.6], [HALF_ - 0.04, ry(7), 1.5], 40), "fogpan")
+shot("L51", P2([-0.9, ry(3.6), 1.6], [HALF_ - 0.04, ry(4.6), 1.5], [-0.9, ry(4.9), 1.6], [HALF_ - 0.04, ry(5.9), 1.5], 46), "fogpan")
 # S52: Teddy's seat, the smiley in the fog
 shot("L52", P2([-0.3, TEY + 1.0, 1.6], [HALF_, TEY - 0.05, 1.5], [-0.3, TEY + 0.7, 1.58], [HALF_, TEY - 0.05, 1.5], 24), "emptyseat3")
 # S53: my face, uneasy
