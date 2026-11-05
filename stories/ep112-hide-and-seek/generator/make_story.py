@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -334,22 +334,22 @@ beat("glenn", "L16", expr="smile", yaw=0.0)
 move("L16", "fork", x=GR[0] + 0.1, y=TAY + 0.1, z=1.15, yaw=90.0)
 move("L16+0.55", "fork", dur=0.2, x=GR[0] + 0.1, y=TAY + 0.15, z=0.835, yaw=90.0)
 beat("grandma", "L16+0.55", arms=[0, 20])
-shot("L16", mv([GR[0] - 0.1, 1.9, 1.3], [GR[0] + 0.05, 4.5, 0.92], 28, [GR[0] - 0.1, 2.3, 1.3], [GR[0] + 0.05, 4.5, 0.92], 28), "grandfork")
+shot("L16", mv([GR[0] - 0.1, 1.9, 1.3], [GR[0] + 0.05, 4.5, 1.08], 28, [GR[0] - 0.1, 2.3, 1.3], [GR[0] + 0.05, 4.5, 1.08], 28), "grandfork")
 move("L16.1+1.0", "fork", z=-60.0)
 # L17: thirty-one years, he lives next door
 only("L17", ["grandma"])
 put("grandma", "L17", GR, 0, expr="laugh", arms=[0, 0])
 sit("grandma", "L17", True)
 shot("L17", orb(GR[0], GR[1], 1.3, 0, 2.7, 42, dz=0.1), "grandlaugh")
-only("L17.1", [])
-shot("L17.1", mv([0.5, 9.6, 2.0], [-2.4, 18.5, 1.9], 24, [0.1, 10.4, 2.0], [-2.4, 18.5, 1.9], 24), "nhouse")
+only("L17.1", ["grandma"])
+shot("L17.1", mv([0.95, 1.2, 1.2], [0.85, 9.0, 1.75], 30, [0.95, 1.7, 1.25], [0.85, 9.0, 1.75], 30), "nhouse")
 # L18: nobody ever looks at the guy helping you look
 only("L18", ["glenn"])
 sit("glenn", "L18", True)
 put("glenn", "L18", GL, 0, expr="smile")
 shot("L18", orb(GL[0], GL[1], 1.35, 0, 3.0, 40, push=0.1), "petegrin")
 beat("glenn", "L18.1", expr="laugh", side=[45, 45], head=[0, 0])
-shot("L18.2", mv([-2.6, 6.2, 0.75], [-1.1, 4.95, 0.5], 24, [-2.45, 6.05, 0.75], [-1.1, 4.95, 0.5], 24), "tally")
+shot("L18.2", mv([-3.3, 7.3, 0.9], [-1.0, 4.95, 0.85], 24, [-3.1, 7.05, 0.9], [-1.0, 4.95, 0.85], 24), "tally")
 beat("glenn", "L18.3", expr="smile", side=[55, 55])
 shot("L18.3", orb(GL[0], GL[1], 1.2, 12, 2.8, 36, dz=0.1), "peteshrug")
 # L19: so now Pete's it
@@ -392,6 +392,21 @@ shot("L21.3+0.7", orb(GRS[0], GRS[1], 1.38, 0, 3.0, 40, push=0.14), "grancount2"
 for k_ in acting.values():
     remap_all(k_)
 remap_all(cues)
+# fewer, longer cuts (cuts_per_10s): drop these shots; "fwd" ones extend the shot before, "back" ones let the next shot start early
+DROP_FWD = {"sneak2", "tick", "glennscan", "grandlaugh", "tap", "granface"}
+DROP_BACK = {"petecount", "melook"}
+_sh, _carry = [], None
+for _e in SH:
+    if _e[5] in DROP_FWD:
+        continue
+    if _e[5] in DROP_BACK:
+        _carry = _e[0]
+        continue
+    if _carry is not None:
+        _e = (_carry,) + _e[1:]
+        _carry = None
+    _sh.append(_e)
+SH = _sh
 shots, names = [], {}
 for i, (at, camera, step, hand, follow, nm) in enumerate(SH):
     s = {"id": f"S{i + 1:02d}", "cam": camera, "step": step}
@@ -430,7 +445,7 @@ remap_all(music["sections"])
 remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L15.1"), remap("L14.2")],
-          "hold": [names[n_] for n_ in ("reveal", "tally", "photogap")]}
+          "hold": [names[n_] for n_ in ("reveal", "tally", "photogap", "palm1", "grantable", "glennface", "grandfork", "reunion", "walkover", "sneak")]}
 story = {
     "slug": "ep112-hide-and-seek",
     "title": "Our Family Game Never ENDED 🫣",
