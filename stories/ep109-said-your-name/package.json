@@ -6,6 +6,5 @@
   "cover_s": 26.0,
   "shape": "self-fulfilling",
   "opening": "must",
-  "lane": "core",
-  "hold": "batch 11: scripts only, not built yet"
+  "lane": "core"
 }

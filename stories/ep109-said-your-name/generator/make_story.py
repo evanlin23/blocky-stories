@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 11
+REV = 12
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -57,6 +57,7 @@ def remap_all(items):
 
 
 D2R = math.pi / 180
+ME_UP = -45        # head pitch that lifts my face toward the cover camera
 
 
 def mv(p0, t0, l0, p1=None, t1=None, l1=None):
@@ -94,20 +95,20 @@ cast = {
     "coatman": person("#e0a878", "#d9a06a", "#4a4036", "#2a2a2a", hair="buzz", hair_c="#c8c8cc", extras=["coat"], zip_c="#6a4a2a"),
     "greenw": person("#f0c8a0", "#7fd9a0", "#7fd9a0", "#e8e0d0", hair="long", hair_c="#7a4a2c", eyes="lashes", sleeves="short"),
     "hoodie": person("#d3a07a", "#ff6a5a", "#3a4a6a", "#f4f4f2", hair="spiky", hair_c="#2a2a2a", extras=["hooddown"]),
-    "driver": person("#dca97c", "#6cc4ff", "#3a4a6a", "#2a2a2a", hair="buzz", hair_c="#1a1410", hat="ballcap", hat_c="#4f78b8"),
-    "neighbor": person("#e2b088", "#b8a0ff", "#6b5a48", "#4a3626", hair="cap", hair_c="#b4b4ba", extras=["glasses"], extra_c="#3a3a3e"),
+    "driver": person("#dca97c", "#6cc4ff", "#3a4a6a", "#2a2a2a", hair="buzz", hair_c="#1a1410"),
+    "neighbor": person("#e2b088", "#6f8fd8", "#4a4a5a", "#3a2a22", hair="buzz", hair_c="#3a2a22", extras=["coat"], zip_c="#3a4a6a"),
     "seller": person("#d3a07a", "#ff9a1f", "#4a4036", "#2a2a2a", hair="cap", hair_c="#2a1d15", extras=["apron"], extra_c="#fffaf0"),
 }
 _SKIN = ["#dca97c", "#e8b890", "#b98456", "#f0c8a0", "#8a5a3a", "#d3a07a", "#e2b088", "#f0c8a0", "#c58c5a", "#e6b48c", "#a8744a", "#f0c8a0"]
 _SHIRT = ["#ff9ab0", "#9be0ff", "#ffe27a", "#b8a0ff", "#8fe0b0", "#ffb06a", "#ff8a8a", "#7fd0d0", "#d8b0ff", "#a8e87a", "#ffc4e0", "#8fb4ff"]
 _PANTS = ["#4f78b8", "#6a5a8a", "#4a4036", "#3a4a5a", "#7a6a5a", "#5a7a6a", "#8a6a7a", "#3a3a4a", "#6a8aa0", "#5a4a3a", "#4a6a7a", "#7a7a9a"]
 _HAIR = ["cap", "long", "spiky", "swoop", "bun", "buzz", "cap", "long", "swoop", "spiky", "bun", "cap"]
-_HC = ["#2a1d15", "#6a3a22", "#c8a050", "#14110e", "#8a8a96", "#3a2a22", "#a05a2a", "#2a2a2a", "#d8d0c0", "#4a2a1a", "#7a4a2c", "#1a1410"]
+_HC = ["#2a1d15", "#6a3a22", "#c8a050", "#14110e", "#4a2a1a", "#3a2a22", "#a05a2a", "#2a2a2a", "#8a4a2a", "#4a2a1a", "#7a4a2c", "#1a1410"]
 for i in range(12):
     f = _HAIR[i] in ("long", "bun")
     cast[f"c{i + 1}"] = person(_SKIN[i], _SHIRT[i], _PANTS[i], "#4a3a3a" if i % 2 else "#f4f4f2", hair=_HAIR[i], hair_c=_HC[i],
                                eyes="lashes" if f else "round", sleeves="short" if i % 3 == 0 else "long",
-                               hat="ballcap" if i in (4, 9) else "none", hat_c="#ff7a7a")
+                               hat="none", hat_c="#ff7a7a")
 
 acting = {n: [{"at": 0, "hidden": True, "pos": [0, 0]}] for n in cast}
 last = {n: [0, 0] for n in cast}
@@ -263,14 +264,16 @@ vis("L09", "phone", False)
 # ===== 03 my named day (L09 to L16)
 clock("L09", 9, 0)
 only("L09", ["me"])
-put("me", "L09", [-78.5, 2.4], 0, expr="worried", arms=[0, 0], head=[8, 0])
+put("me", "L09", [-77.5, 2.3], 0, expr="worried", arms=[0, 0], head=[8, 0])
 beat("me", "L09.1", expr="worried", head=[-8, 6])
-shot("L09", fc([-78.5, 2.4], 0, 3.0, 40, h=1.6, tz=1.55, off=0.12, push=0.18), "fridgeme")
+shot("L09", mv([-77.15, -1.2, 1.55], [-77.15, 3.3, 1.5], 27, [-77.15, -0.7, 1.55], [-77.15, 3.3, 1.5], 27), "fridgeme")
 vis("L10", "bag", True)
 put("me", "L10", [40.5, 2.6], 90, expr="smile", arms=[0, 0])
 go("me", "L11", [43.6, 2.6], expr="worried")
-go("me", "L12", [46.2, 2.7], expr="worried", head=[0, -55])
-go("me", "L13", [50.0, 2.8], expr="worried", head=[0, 0])
+go("me", "L12", [46.2, 2.7], expr="worried")
+go("me", "L12+0.5", [48.4, 2.76], expr="scared")
+beat("me", "L12+0.6", yaw=6, head=[0, ME_UP], expr="scared", blend=0.4)
+go("me", "L13", [48.4, 2.76], yaw=90, head=[0, 0], blend=0.3)
 go("me", "L14", [53.0, 2.9], expr="worried")
 go("me", "L15", [54.6, 3.0], expr="worried")
 put("me", "L16", [SPOT[0] - 0.3, 3.0], 90, expr="wide", arms=[0, 0])
@@ -286,24 +289,21 @@ for i, (lx, ly) in enumerate(LINE):
     beat(f"c{i + 1}", "L11.2", expr="worried", head=[-20, 0])
 shot("L11", mv([52.0, -0.9, 1.6], [51.4, 4.2, 1.5], 30, [51.8, -0.5, 1.6], [51.4, 4.2, 1.5], 30), "line")
 shot("L11.2", mv([49.6, 0.0, 1.55], [45.4, 2.7, 1.5], 38, [49.2, 0.2, 1.55], [45.7, 2.7, 1.5], 38), "meback")
-# L12 the ring: top-down on the street, everyone packed round an empty circle that follows me
-mepath = [(0.0, (46.2, 2.7)), (0.7, (47.4, 2.74)), (1.5, (49.0, 2.76)), (2.2, (50.0, 2.8))]
-RING12 = [140 + i * 20.5 for i in range(12)]            # the north side is the shop wall
-for i in range(12):
-    nm = f"c{i + 1}"
-    a = RING12[i] * D2R
-    rr = 2.55 if i % 2 == 0 else 3.2
-    for dt, (mx, my) in mepath:
-        px, py = mx + rr * math.cos(a), my + rr * math.sin(a)
-        py = min(4.45, max(-5.0, py))
-        if dt == 0.0:
-            put(nm, "L12", [px, py], yaw_to((px, py), (mx, my)), expr="worried")
-        else:
-            go(nm, f"L12+{dt}", [px, py], expr="worried")
-only("L12", [f"c{i + 1}" for i in range(12)] + ["me"])
+# L12 the ring: a packed crowd round an empty circle, seen from a low back corner, my face turned up to the camera
+RC = (48.4, 2.76)
+RINGERS = [f"c{i + 1}" for i in range(12)] + ["baker", "coatman", "neighbor", "seller"]
+RROWS = [2.05, 2.7, 3.35]
+for i, nm in enumerate(RINGERS):
+    ang = (152 + i * (236.0 / (len(RINGERS) - 1))) * D2R
+    rr = RROWS[i % 3]
+    ex, ey = RC[0] + rr * math.cos(ang), min(4.4, RC[1] + rr * math.sin(ang))
+    sx_, sy_ = RC[0] + (rr + 1.0) * math.cos(ang), min(4.4, RC[1] + (rr + 1.0) * math.sin(ang))
+    put(nm, "L12", [sx_, sy_], yaw_to((sx_, sy_), RC), expr="worried")
+    go(nm, "L12+0.7", [ex, ey], expr="worried", yaw=yaw_to((ex, ey), RC))
+only("L12", RINGERS + ["me"])
 vis("L12", "shroof_off", True)
 vis("L13", "shroof_off", False)
-shot("L12", mv([44.2, -1.6, 8.8], [47.4, 2.75, 0.6], 22, [45.4, -1.8, 8.6], [48.6, 2.78, 0.6], 22), "ring")
+shot("L12", mv([RC[0] + 0.6, -3.9, 4.5], [RC[0], 2.76, 1.55], 23, [RC[0] + 0.3, -3.3, 4.1], [RC[0], 2.76, 1.5], 23), "ring")
 # L13 the bus slows down, sees me, and keeps going
 only("L13", ["me", "driver", "coatman"])
 cue("L07", "bus", x=-30.0)
@@ -313,10 +313,10 @@ cue("L13.2+0.2", "bus", x=95.0, dur=4.0)
 put("driver", "L13", [0, 0, 0], 90, expr="neutral", head=[0, 0])
 cue("L13", "sit", who="driver", on=True)
 put("coatman", "L13", [SHX + 3.6, -4.75], 180, expr="worried")
-beat("driver", "L13.1+0.1", expr="wide", head=[70, 0])
-beat("driver", "L13.2+0.3", expr="neutral", head=[0, 0])
+beat("driver", "L13.1+0.1", expr="wide", head=[80, 0])
+beat("driver", "L13.2+0.3", expr="neutral", head=[80, 0])
 shot("L13", mv([SHX - 7.0, -6.6, 1.9], [SHX - 0.5, -2.6, 1.8], 34, [SHX - 5.0, -6.2, 1.9], [SHX + 1.0, -2.6, 1.8], 34), "busslow")
-shot("L13.1", mv([SHX + 0.7, 2.2, 2.1], [SHX + 0.5, -1.9, 2.0], 32, [SHX + 0.6, 1.9, 2.1], [SHX + 0.5, -1.9, 2.0], 32), "driver")
+shot("L13.1", mv([SHX + 3.2, 0.9, 2.6], [SHX + 0.3, -1.9, 2.55], 32, [SHX + 2.9, 0.6, 2.6], [SHX + 0.3, -1.9, 2.55], 32), "driver")
 # L14 a face in every window
 FACES = [f"c{i + 1}" for i in range(12)]
 WIN14 = [WINS[k] for k in (6, 7, 8, 9, 10, 11, 12, 13)]            # shops 3..6
@@ -326,7 +326,7 @@ PAIR = [(FACES[2 * k + j], wx + (-0.34 if j == 0 else 0.34)) for k, wx in enumer
 for nm, wx in PAIR:
     put(nm, "L14", [wx, 5.35, G.FACE_Z], 0, expr="worried", head=[0, 0])
 cue("L14", "clock", m=9 * 60 + 40.0)
-shot("L14", mv([PWX[0] - 0.6, -3.0, 4.9], [PWX[0], 5.3, 5.0], 40, [PWX[2] - 0.6, -3.0, 4.9], [PWX[2], 5.3, 5.0], 40), "windows")
+shot("L14", mv([PWX[0] + 0.5, -5.4, 3.4], [PWX[0] + 0.8, 5.3, 4.9], 22, [PWX[3] - 0.5, -5.4, 3.4], [PWX[3] - 0.8, 5.3, 4.9], 22), "windows")
 # L15 one face at a curtain
 only("L15", ["c9", "me"])
 put("c9", "L15", [62.0, 5.35, G.FACE_Z], 0, expr="worried", head=[-12, 0])
@@ -360,7 +360,7 @@ beat("me", "L20.1", expr="worried", head=[0, 0], yaw=90)
 only("L21", ["me"])
 put("me", "L21", [-78.0, 1.0], 0, expr="worried")
 cue("L21", "clock", m=9 * 60 + 41.0)
-shot("L21", mv([KX + 3.3, 0.9, 1.5], [KX + 3.6, 3.3, 1.5], 50, [KX + 3.55, 1.5, 1.5], [KX + 3.6, 3.3, 1.5], 50), "photo")
+shot("L21", mv([KX + 3.5, 0.5, 1.5], [KX + 3.6, 3.3, 1.5], 40, [KX + 3.55, 1.0, 1.5], [KX + 3.6, 3.3, 1.5], 40), "photo")
 shot("L21.1", mv([KX - 1.4, 0.3, 1.38], [KX - 0.97, 1.9, 1.34], 40, [KX - 1.2, 0.8, 1.38], [KX - 0.97, 1.9, 1.34], 40), "dial2")
 only("L23", ["me"])
 put("me", "L23", [NB + 10.6, KY], -90, expr="worried", head=[0, 14])
@@ -400,8 +400,8 @@ shot("L28", fc(DEVK, -60, 3.3, 28, h=1.15, tz=0.95, off=-0.3, push=0.1), "devkne
 only("L29", FACES[:8])
 for nm, wx in PAIR:
     put(nm, "L29", [wx, 5.35, G.FACE_Z], 0, expr="wide", head=[0, 0])
-    acting[nm].append({"from": "L29", "to": "L29>", "mouth": [0.55, 0.55]})
-shot("L29", mv([PWX[1] + 0.1, -2.2, 4.8], [PWX[1], 5.3, 5.0], 50, [PWX[1] + 0.1, -1.6, 4.8], [PWX[1], 5.3, 5.0], 56), "gasp")
+    acting[nm].append({"from": "L29", "to": "L29>", "mouth": [0.95, 0.95]})
+shot("L29", mv([PWX[1] + 0.1, -0.2, 4.8], [PWX[1], 5.3, 5.0], 46, [PWX[1] + 0.1, 0.5, 4.8], [PWX[1], 5.3, 5.0], 52), "gasp")
 # L30 and L31
 only("L30", ["me", "dev"])
 put("me", "L30", [SPOT[0], 3.0], 20, expr="scared", head=[0, 0])
@@ -479,7 +479,7 @@ for i, nm in enumerate(CROWD37):
     x, y = BX + rr * math.cos(a), BY + rr * math.sin(a)
     put(nm, "L37", [x, y], yaw_to((x, y), (BX, BY)), expr="worried")
 shot("L37", mv([BX, -17.8, 8.8], [BX + 0.1, -6.6, 1.0], 17, [BX + 0.6, -17.2, 8.2], [BX + 0.1, -6.6, 1.0], 17), "reveal")
-shot("L37.2", mv([WIN37[1] + 0.1, -1.7, 4.8], [WIN37[1], 5.3, 5.0], 44, [WIN37[1] + 0.1, -1.2, 4.8], [WIN37[1], 5.3, 5.0], 52), "reveal2")
+shot("L37.2", mv([BX + 0.4, -12.2, 2.5], [BX + 0.1, -3.0, 2.4], 24, [BX - 0.2, -12.2, 2.5], [BX + 0.1, -2.0, 2.7], 24), "reveal2")
 only("L38", ["me"])
 put("me", "L38", [BX - 0.45, BY], 180, expr="wide")
 cue("L38", "sit", who="me", on=True, z=0.62)
@@ -491,11 +491,13 @@ cue("L39", "sit", who="me", on=True, z=0.55)
 cue("L39", "sit", who="dev", on=True, z=0.55)
 put("me", "L39", [G.SEAT_ME[0], G.SEAT_ME[1]], 150, expr="sad-smile", head=[0, 10])
 put("dev", "L39", [G.SEAT_DEV[0], G.SEAT_DEV[1]], -150, expr="warm")
-shot("L39", fc([G.SEAT_DEV[0], 6.6], -150, 2.6, 34, h=1.45, tz=1.3, off=0.15, push=0.1), "sorry")
+beat("me", "L39.1", expr="crying", head=[0, 6])
+shot("L39", fc([G.SEAT_ME[0], 6.6], 150, 2.0, 38, h=1.45, tz=1.3, off=0.12, push=0.12), "sorry")
 shot("L39.2", mv([TX + 0.05, 10.0, 1.5], [TX + 0.05, 6.6, 1.3], 18, [TX + 0.05, 9.8, 1.5], [TX + 0.05, 6.6, 1.3], 18), "sorry2")
 beat("dev", "L40", expr="smile", head=[0, 0], yaw=-130)
 shot("L40", fc([G.SEAT_DEV[0], 6.6], -140, 2.5, 38, h=1.45, tz=1.3, off=0.06, push=0.12), "devsmile")
 beat("dev", "L40.2", expr="smile", yaw=10, head=[0, 0])
+beat("me", "L40.2", expr="sad-smile", head=[0, 6])
 shot("L40.2", mv([TX + 1.9, 2.4, 1.5], [TX + 1.1, 6.6, 1.3], 40, [TX + 1.7, 2.9, 1.5], [TX + 1.1, 6.6, 1.3], 40), "window")
 vis("L41", "plates", True)
 vis("L41", "cake", True)
@@ -541,7 +543,7 @@ PAIR47 = [(FACES[2 * k + j], wx + (-0.34 if j == 0 else 0.34)) for k, wx in enum
 for nm, wx in PAIR47:
     put(nm, "L47", [wx, -9.35, G.FACE_Z], 180, expr="worried", head=[0, 0])
 shot("L47", mv([OD, 1.0, 4.9], [OD, -9.3, 5.0], 32, [OD, 1.4, 4.9], [OD, -9.3, 5.0], 44), "streetwindows")
-shot("L47.2", mv([PH[1] - 0.2, -2.6, 4.8], [PH[1], -9.3, 5.0], 52, [PH[1] + 0.2, -3.2, 4.8], [PH[1] + 0.1, -9.3, 5.0], 52), "streetface")
+shot("L47.2", mv([OD + 8.0, 3.2, 2.2], [OD - 1.0, -9.3, 4.6], 42, [OD + 7.2, 3.0, 2.3], [OD - 2.2, -9.3, 4.7], 42), "streetface")
 only("L48", ["odell"])
 put("odell", "L48", [OD, 5.6, 0.3], 0, expr="smile")
 shot("L48", mv([OD + 0.3, 1.2, 1.45], [OD, 5.6, 1.4], 38, [OD + 0.1, 1.7, 1.45], [OD, 5.6, 1.4], 38), "odellsmile")

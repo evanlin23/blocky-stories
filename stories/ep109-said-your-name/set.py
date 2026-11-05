@@ -81,8 +81,8 @@ def storey(kit, nm, cx, w, fy, inn, col, roofc, ground=True, wide_curtain=None):
         a, b = edges[k], edges[k + 1]
         kit.box(f"{nm}.p{k}", (b - a, 0.4, z1 - z0), ((a + b) / 2, yc, (z0 + z1) / 2), wall)
     kit.box(f"{nm}.roof", (w + 0.5, 6.2, 0.4), (cx, fy + inn * 3.0, G.UP + 0.2), kit.plastic(roofc, 0.7, spec=0.1))
-    inside = kit.plastic("#fff0d0", 0.9, spec=0.02)
-    cream = kit.plastic("#fff4e0", 0.7, spec=0.1)
+    inside = kit.plastic("#efd9b0", 0.9, spec=0.02)
+    cream = kit.plastic("#ecdcc0", 0.7, spec=0.1)
     for j, x in enumerate(xs):
         kit.box(f"{nm}.back{j}", (1.9, 0.1, 2.0), (x, fy + inn * 0.78, (z0 + z1) / 2), inside)
         for sgn in (-1, 1):
@@ -165,13 +165,13 @@ def build(kit, story, tl):
     kx, ky = G.K
     kit.light("kit", "POINT", (kx - 1.0, ky - 1.0, 3.0), 320.0, "#fff0d8", size=0.6, shadow=False)
     kit.light("kit2", "POINT", (kx - 1.5, ky + 3.6, 2.4), 160.0, "#fff0d8", size=0.5, shadow=False)
-    kit.light("bak", "POINT", (G.BAKERY, 7.0, 3.0), 300.0, "#fff0d0", size=0.6, shadow=False)
-    kit.light("caf", "POINT", (G.CAFE, 8.0, 3.0), 340.0, "#fff0d0", size=0.6, shadow=False)
-    kit.light("caf2", "POINT", (G.TABLE[0], G.TABLE[1] + 1.4, 2.2), 160.0, "#fff4e0", size=0.4, shadow=False)
+    kit.light("bak", "POINT", (G.BAKERY, 7.0, 3.0), 220.0, "#fff0d0", size=0.6, shadow=False)
+    kit.light("caf", "POINT", (G.CAFE, 8.0, 3.0), 200.0, "#fff0d0", size=0.6, shadow=False)
+    kit.light("caf2", "POINT", (G.TABLE[0], G.TABLE[1] + 1.4, 2.2), 80.0, "#fff4e0", size=0.4, shadow=False)
     kit.light("odl", "POINT", (G.OD, 7.5, 2.4), 200.0, "#fff0d0", size=0.5, shadow=False)
     kit.light("odwin", "POINT", (G.OD, -3.2, 6.2), 1500.0, "#fff2dc", size=1.0, shadow=False)
     kit.light("nbl", "POINT", (G.NB_X + 4.0, G.K[1], 2.6), 420.0, "#fff2dc", size=0.6, shadow=False)
-    W["drvl"] = kit.light("drvl", "POINT", (0, 0, 3), 420.0, "#fff4e0", size=0.5, shadow=False)
+    W["drvl"] = kit.light("drvl", "POINT", (0, 0, 3), 700.0, "#fff4e0", size=0.5, shadow=False)
     kit.light("benchkey", "POINT", (G.BENCH[0] - 0.4, -4.6, 2.8), 520.0, "#fff0d8", size=0.6, shadow=False)
     kit.light("woman", "POINT", (G.BENCH[0] - 0.9, -4.2, 2.6), 300.0, "#fff0d8", size=0.6, shadow=False)
 
@@ -179,7 +179,7 @@ def build(kit, story, tl):
     lawn = kit.grime("#9be58f", 0.9, 1.4, "lawn", 0.95)
     road = P("#a9a6d4", 0.9, spec=0.05)
     walk = P("#fbe6cc", 0.85, spec=0.05)
-    cream = P("#fff1d6", 0.7, spec=0.1)
+    cream = P("#ecdcc0", 0.7, spec=0.1)
     wood = P("#c78a58", 0.7, spec=0.1)
 
     kit.plane("ground", (900, 600), (60, 0, 0.0), ground)
@@ -238,11 +238,11 @@ def build(kit, story, tl):
         kit.box(f"cf.fr{sg}", (0.08, 0.12, 2.6), (cx - 1.1 + sg * 2.45, 4.97, 2.2), cream)
     kit.box("cf.frt", (4.9, 0.12, 0.08), (cx - 1.1, 4.97, 3.0), cream)
     kit.box("cf.frb", (4.9, 0.12, 0.08), (cx - 1.1, 4.97, 0.9), cream)
-    room(kit, "cf", cx - 4.0, cx + 4.0, 5.0, 11.0, G.SW, P("#ffe7c4", 0.8, spec=0.1), "#e9fff4")
+    room(kit, "cf", cx - 4.0, cx + 4.0, 5.0, 11.0, G.SW, P("#ffe7c4", 0.8, spec=0.1), "#cfe6da")
     awning(kit, "cfaw", cx, "#ff7a7a", "#fff1d6", n=14)
     glyph_board(kit, "cfbd", cx, 4.88, 3.3, "cup", "#ff7a7a")
     tx, ty = G.TABLE
-    kit.cyl("cf.tbl", 0.5, 0.06, (tx, ty, 0.82), P("#fff1d6", 0.5, spec=0.2), n=20)
+    kit.cyl("cf.tbl", 0.5, 0.06, (tx, ty, 0.82), P("#dcc59c", 0.6, spec=0.1), n=20)
     kit.cyl("cf.tleg", 0.07, 0.8, (tx, ty, 0.4), P("#5a4a7a", 0.5), n=10)
     kit.cyl("cf.tbase", 0.3, 0.04, (tx, ty, 0.04), P("#5a4a7a", 0.5), n=14)
     for nm_, (sx_, sy_) in (("cA", G.SEAT_ME), ("cB", G.SEAT_DEV)):
@@ -257,11 +257,11 @@ def build(kit, story, tl):
     W["stub2"] = kit.sphere("cf.stubflame", 0.022, (tx + 0.1, ty - 0.05, 0.925), kit.emit("#ffcf6e", 4.0), seg=6)
     W["cups"] = []
     for k, (ox_, oy_) in enumerate(((-0.2, 0.0), (0.2, 0.0))):
-        W["cups"].append(kit.cyl(f"cf.cup{k}", 0.07, 0.09, (tx + ox_, ty + oy_, 0.89), P("#ffffff", 0.4, spec=0.3), n=12))
+        W["cups"].append(kit.cyl(f"cf.cup{k}", 0.07, 0.09, (tx + ox_, ty + oy_, 0.89), P("#e8e0d0", 0.5, spec=0.2), n=12))
         W["cups"].append(kit.cyl(f"cf.coffee{k}", 0.055, 0.01, (tx + ox_, ty + oy_, 0.935), P("#6b3a22", 0.4), n=12))
     W["plates"] = []
-    W["plates"].append(kit.cyl("cf.plateA", 0.17, 0.02, (tx - 0.2, ty, 0.865), P("#ffffff", 0.3, spec=0.5), n=16))
-    pdev = kit.cyl("cf.plateB", 0.17, 0.02, (tx + 0.2, ty, 0.865), P("#ffffff", 0.3, spec=0.5), n=16)
+    W["plates"].append(kit.cyl("cf.plateA", 0.17, 0.02, (tx - 0.2, ty, 0.865), P("#ebe4d4", 0.4, spec=0.2), n=16))
+    pdev = kit.cyl("cf.plateB", 0.17, 0.02, (tx + 0.2, ty, 0.865), P("#ebe4d4", 0.4, spec=0.2), n=16)
     kit.box("cf.cake", (0.17, 0.12, 0.1), (0, 0, 0.06), P("#7a3b24", 0.6), pdev, bevel=0.02)
     kit.box("cf.icing", (0.17, 0.12, 0.025), (0, 0, 0.12), P("#e8507f", 0.6), pdev, bevel=0.01)
     W["plates"].append(pdev)
@@ -399,24 +399,38 @@ def build(kit, story, tl):
     kit.box("fr.body", (1.3, 1.1, 2.3), (fx, fy + 0.55, 1.15), P("#e4fff4", 0.4, spec=0.4), bevel=0.04)
     kit.box("fr.seam", (1.28, 0.02, 0.03), (fx, fy - 0.005, 1.55), P("#9ad0b8", 0.6))
     kit.box("fr.handle", (0.05, 0.06, 0.5), (fx + 0.5, fy - 0.05, 1.9), P("#5a4a7a", 0.4))
-    cards = [(-0.38, 1.95, 0.22, 0.3, "#ffd23a"), (0.22, 2.0, 0.26, 0.2, "#ff9ab0"), (-0.4, 0.95, 0.3, 0.22, "#8f7cff"),
-             (0.3, 1.0, 0.2, 0.28, "#6cc4ff")]
+    cards = [(-0.38, 2.08, 0.22, 0.3, "#ffd23a"), (0.3, 2.0, 0.26, 0.2, "#ff9ab0"), (-0.4, 0.8, 0.3, 0.22, "#8f7cff"),
+             (0.3, 0.85, 0.2, 0.28, "#6cc4ff")]
     for k, (cx_, cz_, w_, h_, c_) in enumerate(cards):
         kit.box(f"fr.card{k}", (w_, 0.015, h_), (fx + cx_, fy - 0.013, cz_), P(c_, 0.7))
-    px_, pz_ = fx - 0.05, 1.5          # our photo: Dev and me laughing
-    py_ = fy - 0.016
-    kit.box("ph.card", (0.62, 0.015, 0.48), (px_, py_, pz_), P("#ffffff", 0.7))
-    kit.box("ph.bg", (0.54, 0.015, 0.4), (px_, py_ - 0.008, pz_), P("#8fd3ff", 0.8))
-    for who, ox_, skin, hair, body, glasses in (("me", -0.12, "#dca97c", "#2a1a14", "#ffd23a", False),
-                                                  ("dev", 0.13, "#e8b890", "#14110e", "#2aa6a0", True)):
-        kit.box(f"ph.{who}.body", (0.2, 0.015, 0.14), (px_ + ox_, py_ - 0.018, pz_ - 0.15), P(body, 0.6))
-        kit.box(f"ph.{who}.head", (0.17, 0.015, 0.17), (px_ + ox_, py_ - 0.026, pz_ - 0.02), P(skin, 0.6))
-        kit.box(f"ph.{who}.hair", (0.18, 0.015, 0.06), (px_ + ox_, py_ - 0.034, pz_ + 0.075), P(hair, 0.6))
+    px_, pz_ = fx - 0.05, 1.45         # our photo, framed: Dev (glasses, teal) and me (yellow) smiling
+    py0 = fy - 0.02
+
+    def ly(k):
+        return py0 - 0.012 * k          # each layer 1.2 cm proud of the last, so nothing shares a plane
+
+    kit.box("ph.frame", (0.78, 0.015, 0.62), (px_, ly(0), pz_), P("#7a4a2a", 0.6), bevel=0.01)
+    kit.box("ph.card", (0.7, 0.015, 0.54), (px_, ly(1), pz_), P("#fff6e4", 0.7))
+    kit.box("ph.bg", (0.62, 0.015, 0.46), (px_, ly(2), pz_), P("#8fd3ff", 0.8))
+    skin_m = {}
+    for who, ox_, skin, hair, body in (("me", -0.15, "#dca97c", "#2a1a14", "#ffd23a"),
+                                       ("dev", 0.15, "#e8b890", "#14110e", "#2aa6a0")):
+        kit.box(f"ph.{who}.body", (0.25, 0.015, 0.14), (px_ + ox_, ly(3), pz_ - 0.17), P(body, 0.6))
+        kit.box(f"ph.{who}.head", (0.21, 0.015, 0.21), (px_ + ox_, ly(4), pz_ - 0.02), P(skin, 0.6))
+        kit.box(f"ph.{who}.hair", (0.22, 0.015, 0.07), (px_ + ox_, ly(5), pz_ + 0.1), P(hair, 0.6))
+        if who == "dev":
+            for sg in (-1, 1):                         # round glasses: dark rims with the skin showing through
+                kit.box(f"ph.dev.rim{sg}", (0.085, 0.015, 0.07), (px_ + ox_ + sg * 0.05, ly(5), pz_ + 0.015), P("#14110e", 0.6))
+                kit.box(f"ph.dev.lens{sg}", (0.06, 0.015, 0.046), (px_ + ox_ + sg * 0.05, ly(6), pz_ + 0.015), P("#f4ecdc", 0.6))
+                kit.box(f"ph.dev.eye{sg}", (0.022, 0.015, 0.03), (px_ + ox_ + sg * 0.05, ly(7), pz_ + 0.015), P("#1c120c", 0.6))
+            kit.box("ph.dev.bridge", (0.03, 0.015, 0.012), (px_ + ox_, ly(5), pz_ + 0.025), P("#14110e", 0.6))
+        else:
+            for sg in (-1, 1):
+                kit.box(f"ph.me.eye{sg}", (0.03, 0.015, 0.038), (px_ + ox_ + sg * 0.05, ly(6), pz_ + 0.015), P("#1c120c", 0.6))
+        # a smile: a dark bar with its ends turned up
+        kit.box(f"ph.{who}.mouth", (0.09, 0.015, 0.016), (px_ + ox_, ly(6), pz_ - 0.075), P("#7a2a30", 0.6))
         for sg in (-1, 1):
-            kit.box(f"ph.{who}.eye{sg}", (0.025, 0.015, 0.025), (px_ + ox_ + sg * 0.04, py_ - 0.04, pz_ - 0.005), P("#1c120c", 0.6))
-        kit.box(f"ph.{who}.mouth", (0.09, 0.015, 0.045), (px_ + ox_, py_ - 0.04, pz_ - 0.065), P("#7a2a30", 0.6))
-        if glasses:
-            kit.box(f"ph.{who}.gl", (0.15, 0.015, 0.012), (px_ + ox_, py_ - 0.045, pz_ + 0.0), P("#1c120c", 0.6))
+            kit.box(f"ph.{who}.mc{sg}", (0.016, 0.015, 0.03), (px_ + ox_ + sg * 0.05, ly(7), pz_ - 0.062), P("#7a2a30", 0.6))
     # the neighbor's house across the street, its window and curtains
     nx = G.NB_X
     kit.plane("k.road", (10, 40), (kx - 9.5, ky, 0.02), road)
@@ -623,10 +637,10 @@ def animate(kit, story, tl, t, ctx):
     # the bus
     bs = sample("bus", tl, t, {"x": -30.0})
     W["bus"].location = (bs["x"], G.BUS_Y, 0.0)
-    W["drvl"].location = (bs["x"] + 3.0, G.BUS_Y + 3.0, 2.6)
+    W["drvl"].location = (bs["x"] + 4.6, G.BUS_Y + 3.2, 2.3)
     drv = bpy.data.objects.get("driver")
     if drv is not None:
-        drv.location = (bs["x"] + 3.0, G.BUS_Y + 0.7, 1.18 + 0.45 - 0.68)
+        drv.location = (bs["x"] + 3.3, G.BUS_Y + 0.7, 1.18 + 0.45 - 0.68)
         for sx in (-1, 1):
             leg = bpy.data.objects.get(f"driver.leg{sx}")
             if leg:
@@ -766,7 +780,8 @@ def animate(kit, story, tl, t, ctx):
     s = 0.62 * w2
     tag = W["tag"]
     tag.scale = (s, s, s)
-    tag.location = (-0.9 * w2 + 0.75 * s, 0.88 * h2 - 0.45 * s, -1.0)
+    # the pack's punch-ins and angle cuts crop up to 1.18x about the centre, so the tag's far edges stay inside 0.80
+    tag.location = (-0.80 * w2 + 0.78 * s, 0.80 * h2 - 0.48 * s, -1.0)
     return gains
 
 
