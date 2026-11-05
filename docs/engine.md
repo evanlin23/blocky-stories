@@ -69,6 +69,13 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
 
 **Time references** (anywhere an `at` goes): seconds, `"L03"` (the line's first word), `"L03.2"` (chunk 2's first word, 0-based), `"L03>"` (the line's last word ends), `"L03.2>"`, offsets like `"L03+0.4"`, and `"end-1.5"`. A pause beat's id works the same way (`"P02"`, `"P02>"`, `"P02-0.3"`).
 
+**Splitting captions in a generator** (2026-11-05): `timeline.split_lines(lines)` splits every [caption, spoken]
+chunk into two- or three-word captions and returns `(lines, chunk map)` for remapping `"L07.2"` references. Use it
+instead of a copy of the old splitter, which sliced the spoken words by the caption's word count and dropped any
+left over ("has said 4:12" voiced "has said four", ep115 L19). Where the counts match it gives exactly what the
+old copy gave. `check` warns and `preflight` blocks when a line's spoken words in story.json differ from the
+story's `generator/lines.json`.
+
 **Pause beats** show their big words one chunk at a time: at the beat's `times` (seconds into it), or spread evenly. A
 three-knock beat puts one KNOCK on each knock, where three big words wouldn't fit in two lines.
 

@@ -392,6 +392,10 @@ def cmd_preflight(a):
     # the pace and the stills the final will have, from the edit alone: blocks here, so a builder fixes them
     # before any render (they're warnings in `check`, which also runs on every old story)
     rows += [("pace", ("block", m)) for m in checks.still_risks(story_json(a.story), tl)]
+    # a word the caption splitter lost is a word the narration never says (ep115 L19): a block before any voice
+    rows += [("words", ("block", f"spoken words differ from generator/lines.json: {m}"))
+             for m in checks.lost_words(a.story, story_json(a.story))]
+    rows = [r for r in rows if not (r[0] == "check" and r[1][1].startswith("spoken words differ"))]
     if os.environ.get("BLOCKY_BPY") or os.environ.get("CLAY_BPY"):
         r = subprocess.run([sys.executable, "-m", "blocky", "clipcheck", a.story], capture_output=True, text=True)
         lines = [ln[6:] for ln in r.stdout.splitlines() if ln.startswith("BLOCK ")]
