@@ -1,0 +1,581 @@
+{
+ "S01": {
+  "look": "N",
+  "name": "S01a face",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ]
+ },
+ "S02": {
+  "look": "N",
+  "name": "S01b eyes",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ]
+ },
+ "S03": {
+  "look": "N",
+  "name": "S02 edge",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ]
+ },
+ "S04": {
+  "look": "B",
+  "name": "S03 three beds"
+ },
+ "S05": {
+  "look": "D",
+  "name": "S04 bed",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "quilt": "flat"
+ },
+ "S06": {
+  "look": "E",
+  "name": "S05a Ro",
+  "duffel": true
+ },
+ "S07": {
+  "look": "N",
+  "name": "S05b Ro bed",
+  "quilt": "lump"
+ },
+ "S08": {
+  "look": "D",
+  "name": "S06 tucked",
+  "quilt": "flat"
+ },
+ "S09": {
+  "look": "D",
+  "name": "S07 pennant",
+  "quilt": "flat",
+  "pennant": true
+ },
+ "S10": {
+  "look": "K",
+  "name": "S08 Ezra",
+  "sit": {
+   "ezra": 85
+  },
+  "cake0": false
+ },
+ "S11": {
+  "look": "E",
+  "name": "S09a snow",
+  "flakes": true
+ },
+ "S12": {
+  "look": "D",
+  "name": "S09b tally",
+  "quilt": "flat"
+ },
+ "S13": {
+  "look": "D",
+  "name": "S10 face day",
+  "quilt": "lump"
+ },
+ "S14": {
+  "look": "E",
+  "name": "S11a car",
+  "cargo": true
+ },
+ "S15": {
+  "look": "E",
+  "name": "S11b windshield",
+  "sit": {
+   "me": 85
+  },
+  "cargo": true
+ },
+ "S16": {
+  "look": "D",
+  "name": "S12 sad boxes",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "door_sp": 80
+ },
+ "S17": {
+  "look": "K",
+  "name": "S13a Grandma stove",
+  "glasses": true,
+  "card": true
+ },
+ "S18": {
+  "look": "K",
+  "name": "S13b me",
+  "sit": {
+   "me": 85
+  }
+ },
+ "S19": {
+  "look": "D",
+  "name": "S14 Dad",
+  "hide": [
+   "w_sp_E",
+   "w_sp_W"
+  ],
+  "door_sp": 85
+ },
+ "S20": {
+  "look": "N",
+  "name": "S15 boxes",
+  "quilt": "lump"
+ },
+ "S21": {
+  "look": "N",
+  "name": "S16a roll",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "roll": true
+ },
+ "S22": {
+  "look": "N",
+  "name": "S16b tick",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ]
+ },
+ "S23": {
+  "look": "N",
+  "name": "S17a clock",
+  "quilt": "lump"
+ },
+ "S24": {
+  "look": "N",
+  "name": "S17b dip",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "snap": true
+ },
+ "S25": {
+  "look": "N",
+  "name": "S18 foot",
+  "quilt": "foot",
+  "rim": 0
+ },
+ "S26": {
+  "look": "N",
+  "name": "S19 scared",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ]
+ },
+ "S27": {
+  "look": "N",
+  "name": "S20 wide",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ]
+ },
+ "S28": {
+  "look": "N",
+  "name": "S21 dawn",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "dawn": true
+ },
+ "S29": {
+  "look": "D",
+  "name": "S22 tucked me",
+  "quilt": "lump"
+ },
+ "S30": {
+  "look": "K",
+  "name": "S23 pancake",
+  "glasses": true,
+  "card": true,
+  "cake0": true
+ },
+ "S31": {
+  "look": "K",
+  "name": "S24 me pancake",
+  "sit": {
+   "me": 85
+  },
+  "cake0": true
+ },
+ "S32": {
+  "look": "SD",
+  "name": "S25a slippers",
+  "card": true,
+  "glasses": true
+ },
+ "S33": {
+  "look": "SD",
+  "name": "S25b Grandma stair",
+  "card": true,
+  "glasses": true
+ },
+ "S34": {
+  "look": "N",
+  "name": "S26 roll",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "roll": true
+ },
+ "S35": {
+  "look": "N",
+  "name": "S26b tick",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ]
+ },
+ "S36": {
+  "look": "N",
+  "name": "S27a clock",
+  "quilt": "lump"
+ },
+ "S37": {
+  "look": "N",
+  "name": "S27b knees",
+  "quilt": "knee"
+ },
+ "S38": {
+  "look": "N",
+  "name": "S28 shoulder",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "quilt": "shoulder"
+ },
+ "S39": {
+  "look": "N",
+  "name": "S29 dent",
+  "quilt": "shoulder"
+ },
+ "S40": {
+  "look": "N",
+  "name": "S30 dawn",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "dawn": true
+ },
+ "S41": {
+  "look": "N",
+  "name": "S31 pillow",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "pillow": "dent"
+ },
+ "S42": {
+  "look": "N",
+  "name": "S32 breathing",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "pillow": "dent"
+ },
+ "S43": {
+  "look": "N",
+  "name": "S33 turn",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "pillow": "dent",
+  "turn": true
+ },
+ "S44": {
+  "look": "N",
+  "name": "drop",
+  "quilt": "lump",
+  "pillow": "dent"
+ },
+ "S45": {
+  "look": "N",
+  "name": "S34 face",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "rim": 6000,
+  "fill": 2.4,
+  "sit": {
+   "grandma": 90
+  }
+ },
+ "S46": {
+  "look": "N",
+  "name": "S35 closer",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ],
+  "rim": 6000,
+  "fill": 2.4,
+  "sit": {
+   "grandma": 90
+  }
+ },
+ "S47": {
+  "look": "N",
+  "name": "S36 squeeze",
+  "quilt": "lump"
+ },
+ "S48": {
+  "look": "N",
+  "name": "S37 pat",
+  "quilt": "lump",
+  "sit": {
+   "grandma": 90
+  }
+ },
+ "S49": {
+  "look": "N",
+  "name": "S38 stripe",
+  "quilt": "lump",
+  "door_sp": 14
+ },
+ "S50": {
+  "look": "D",
+  "name": "S39 slippers",
+  "slippers": true,
+  "door_sp": 85,
+  "hide": []
+ },
+ "S51": {
+  "look": "K",
+  "name": "S40 me pancake",
+  "sit": {
+   "me": 85
+  },
+  "cake0": true
+ },
+ "S52": {
+  "look": "N",
+  "name": "S41 awake",
+  "quilt": "lump"
+ },
+ "S53": {
+  "look": "NDAD",
+  "name": "S42 across",
+  "quilt": "lump",
+  "door_sp": 60,
+  "hide": []
+ },
+ "S54": {
+  "look": "NDAD",
+  "name": "S43 Dad back",
+  "door_dd": 85
+ },
+ "S55": {
+  "look": "NDAD",
+  "name": "S44 buttons",
+  "card": true,
+  "sit": {
+   "grandma": 80
+  },
+  "door_dd": 90
+ },
+ "S56": {
+  "look": "NDAD",
+  "name": "S45 reveal",
+  "card": true,
+  "sit": {
+   "grandma": 80
+  },
+  "door_dd": 90
+ },
+ "S57": {
+  "look": "NDAD",
+  "name": "S46 face",
+  "card": true,
+  "sit": {
+   "grandma": 80
+  },
+  "door_dd": 90
+ },
+ "S58": {
+  "look": "NDAD",
+  "name": "S47 me doorway",
+  "hide": [
+   "w_sp_E"
+  ],
+  "door_sp": 85
+ },
+ "S59": {
+  "look": "E",
+  "name": "S48a Ro"
+ },
+ "S60": {
+  "look": "K",
+  "name": "S48b Ezra",
+  "sit": {
+   "ezra": 85
+  }
+ },
+ "S61": {
+  "look": "NDAD",
+  "name": "S48c me",
+  "hide": [
+   "w_sp_E"
+  ],
+  "door_sp": 85
+ },
+ "S62": {
+  "look": "NDAD",
+  "name": "S49 hand",
+  "card": true,
+  "sit": {
+   "grandma": 80
+  },
+  "door_dd": 90
+ },
+ "S63": {
+  "look": "NDAD",
+  "name": "S50 sits",
+  "card": true,
+  "sit": {
+   "grandma": 80
+  },
+  "door_dd": 90
+ },
+ "S64": {
+  "look": "E",
+  "name": "S51 car prints",
+  "cargo": true
+ },
+ "S65": {
+  "look": "SN",
+  "name": "S52 stair",
+  "card": true,
+  "sit": {
+   "grandma": 80
+  },
+  "door_dd": 90
+ },
+ "S66": {
+  "look": "NDAD",
+  "name": "S53 Dad wall",
+  "door_dd": 85
+ },
+ "S67": {
+  "look": "N",
+  "name": "S54 me",
+  "quilt": "lump"
+ },
+ "S68": {
+  "look": "NDAD",
+  "name": "S55 me",
+  "hide": [
+   "w_sp_E"
+  ],
+  "door_sp": 85
+ },
+ "S69": {
+  "look": "N",
+  "name": "S56 socks",
+  "door_sp": 85,
+  "hide": []
+ },
+ "S70": {
+  "look": "NDAD",
+  "name": "S57 me on bed",
+  "sit": {
+   "me": 80
+  },
+  "door_dd": 90
+ },
+ "S71": {
+  "look": "NDAD",
+  "name": "S58 me",
+  "sit": {
+   "me": 80
+  },
+  "door_dd": 90
+ },
+ "S72": {
+  "look": "NDAD",
+  "name": "S59 Dad",
+  "hide": [
+   "w_dd_E"
+  ],
+  "quilt": "lump"
+ },
+ "S73": {
+  "look": "NDAD",
+  "name": "S60 Dad turns",
+  "turn_dad": true
+ },
+ "S74": {
+  "look": "K",
+  "name": "S61 Dad pancake",
+  "sit": {
+   "dad": 85
+  },
+  "cake0": true
+ },
+ "S75": {
+  "look": "K",
+  "name": "S62 me stove"
+ },
+ "S76": {
+  "look": "K",
+  "name": "S63 wink",
+  "sit": {
+   "grandma": 85
+  },
+  "glasses": true,
+  "card": true,
+  "wink": true
+ },
+ "S77": {
+  "look": "E",
+  "name": "S64 car",
+  "cargo": false
+ },
+ "S78": {
+  "look": "N",
+  "name": "S65 door",
+  "door_gr": 14,
+  "door_sp": 85,
+  "hide": []
+ },
+ "S79": {
+  "look": "N",
+  "name": "S66 Grandma wall",
+  "door_gr": 14,
+  "hide": [],
+  "gbed": true
+ },
+ "S80": {
+  "look": "N",
+  "name": "S67 hall me",
+  "door_gr": 14,
+  "hide": []
+ },
+ "S81": {
+  "look": "N",
+  "name": "S68 loop",
+  "hide": [
+   "w_sp_W",
+   "fl_N"
+  ]
+ }
+}
