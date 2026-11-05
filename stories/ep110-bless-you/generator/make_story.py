@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 18
+REV = 19
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 SPLITS = {"on his LANDLORD'S couch.": [3, 1], "it was a dumb FIGHT,": [3, 2], "in a green ARMCHAIR,": [3, 1],
@@ -122,7 +122,10 @@ SH = []
 
 def put(who, at, pos, yaw=None, **kw):
     p = list(pos)
-    acting[who].append({"at": at, "pos": list(last[who])})
+    if at == 0:   # a second key at 0 left frame 0 on the hidden placeholder, off at (0, 0): drop the placeholder
+        acting[who] = [k_ for k_ in acting[who] if not (k_.get("at") == 0 and k_.get("hidden") and k_.get("pos") == [0, 0])]
+    else:
+        acting[who].append({"at": at, "pos": list(last[who])})
     k = {"at": at, "pos": p, "blend": 0.0, "hidden": False}
     if yaw is not None:
         k["yaw"] = yaw
@@ -179,6 +182,7 @@ cue(0, "treat", v=0.0)
 cue(0, "cup3", v=0.0)
 cue(0, "wall", v=0.0)
 cue(0, "pillpos", u=0.0)
+cue(0, "pill0", v=0.0)
 
 PK, ST, OF, MK, DG, PT, LD, GP, KT, BD = (G.PARK, G.STREET, G.OFFICE, G.MKIT, G.DOG, G.PARTY, G.LAND, G.GP, G.KIT, G.BED)
 GCH = (GP + 1.6, 2.15)          # Grandpa's armchair seat (torso position)
@@ -225,7 +229,9 @@ put("me", "L03.2", [KT + 0.15, 2.2], 0, expr="neutral")
 beat("me", "L03.2+0.08", **SNEEZE)
 beat("me", "L03.2+0.4", hidden=True)
 swirl("L03.2+0.4", KT + 0.15, 2.2, 0.95, 0.5, sz=1.0)
-shot("L03.2", F(KT - 0.1, 2.6, 1.3, 4.8, 30, dx=0.0, push=0.06), "kitchen0")
+shot("L03.2", F(KT - 0.5, 2.6, 1.3, 4.8, 22, dx=0.0, push=0.06), "kitchen0")
+cue("L03.2", "pill0", v=1.0)
+cue("L04", "pill0", v=0.0)
 cue("L03", "pollen", level=1.8)
 # L04: the meeting man sneezes at a glass table, lands in a kitchen
 only("L04", ["m1"])
@@ -479,7 +485,7 @@ beat("grandpa", "L42", expr="warm", side=[0, 0])
 shot("L42", mv([GP - 3.2, -2.2, 2.0], [GP - 2.0, 3.8, 2.1], 26, [GP + 2.4, -2.2, 2.0], [GP + 1.4, 3.8, 2.1], 26), "wall2")
 # L43: morning, the pill bottle
 only("L43", [])
-cue("L43", "look", id="day", dur=0)
+cue("L43", "look", id="day", dur=0.6)
 shot("L43", F(KT + 0.62, 3.2, 1.05, 1.9, 38, dx=-0.3, push=0.14), "pill3")
 only("L44", ["mom"])
 put("mom", "L44", [KT - 2.4, 2.45], 0, expr="soft", arms=[40, 0])

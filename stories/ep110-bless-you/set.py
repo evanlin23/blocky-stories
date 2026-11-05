@@ -282,6 +282,12 @@ def kitchen(kit, x0, name, wall, floor, cab, stove_c, mom_house=True, ours=False
         kit.cyl("pill.cap", 0.056, 0.04, (0, 0, 0.15), plastic("#e8a030", 0.4), W["pill"], n=14)
         kit.cyl("pill.band", 0.052, 0.045, (0, 0, 0.06), plastic("#f4a3a3", 0.4), W["pill"], n=14)
         W["pillhome"] = (x0 + 0.62, 3.2, 0.94)
+        # a second bottle on the counter left of Mom, up only for the L03.2 kitchen beat
+        W["pill0"] = kit.empty("pill0", (x0 - 1.72, 3.1, 0.94))
+        kit.cyl("pill0.body", 0.05, 0.13, (0, 0, 0.065), plastic("#ffffff", 0.35, spec=0.4), W["pill0"], n=14)
+        kit.cyl("pill0.cap", 0.056, 0.04, (0, 0, 0.15), plastic("#e8a030", 0.4), W["pill0"], n=14)
+        kit.cyl("pill0.band", 0.052, 0.045, (0, 0, 0.06), plastic("#f4a3a3", 0.4), W["pill0"], n=14)
+        W["pill0"].scale = (2.0, 2.0, 2.0)   # big enough to read at phone size
         W["pillbox"] = (x0 + 1.3, 3.18, 1.02)
         bx_ = x0 + 1.3
         kit.box("breadbox.body", (0.62, 0.42, 0.34), (bx_, 3.35, 1.11), plastic("#c98a4a", 0.6), bevel=0.03)
@@ -819,6 +825,8 @@ def animate(kit, story, tl, t, ctx):
             loc = mid.lerp(e, ss((pb - 0.55) / 0.45))
         W["pill"].location = loc
         _hide(W["pill"], pb >= 0.99)
+    if W.get("pill0") is not None:
+        _hide(W["pill0"], sample("pill0", tl, t, {"v": 0.0})["v"] < 0.5)
     # cups held on a palm
     hold = {}
     for c in tl["cues"]:
