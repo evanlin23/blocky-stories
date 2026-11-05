@@ -1,11 +1,10 @@
 {
-  "title": "When the Band Plays, EVERYONE Dances 🎺",
+  "title": "Saturday's Band Makes Everyone DANCE 🎺",
   "description": "Every Saturday this summer, a band nobody knows has played on our town green, and the second it starts, everybody dances. The bank manager does the robot. My grandpa's knees click on the beat.\n\nEverybody but me. I sit on my bench, and my feet never move. Last Saturday, the band didn't stop.\n\nIt's made up. A blocky story, built with code and Blender.",
   "pin": "Comment DANCE if you'd have stood up.",
   "made_for_kids": false,
-  "cover_s": 46.6,
+  "cover_s": 47.2,
   "shape": "for-me",
   "opening": "must",
-  "lane": "core",
-  "hold": "batch 11: scripts only, not built yet"
+  "lane": "core"
 }

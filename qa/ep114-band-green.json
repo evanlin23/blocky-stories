@@ -1,0 +1,20 @@
+{
+ "stage": "final",
+ "film": "13394686261",
+ "run": 41977459860,
+ "verdict": "pass",
+ "date": "2026-11-05",
+ "checked": [
+  "frames every 2 s at phone and 1920 TV size (all 42)",
+  "first 3 s frame by frame",
+  "full-size crops 44.5, 47.2, 58, 70 s",
+  "61-63 s rule-sign shot",
+  "cover",
+  "loudness, true peak and tail",
+  "craft vs proof",
+  "flash",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.0 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 22.8 | 14.0– | ok |\n| macro.motion_energy_q | 8.83 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 8.92 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.013 | –0.25 | ok |\n| spec.shot_p90_s | 1.63 | –2.5 | ok |\n| macro.longest_still_s | 0.43 | –1.5 | ok |\n| macro.motion_energy_mean | 3.87 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.72 | 0.4– | ok |\n| macro.brightness_mean | 0.464 | 0.35– | ok |\n| macro.brightness_first_3s | 0.637 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.608 | 0.42– | ok |\n| macro.contrast_mean | 0.235 | 0.18– | ok |\n| spec.face_big_share | 0.507 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.004 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.64 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.061 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 103.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.29 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.7 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0394 | –0.08 | ok |\n| sound.hf_jump_max | 0.0123 | –0.04 | ok |",
+ "notes": "Final 82.97 s, 1080x1920, drawn at 6ad2225 (squash of the proof-passed story; proof qa run 41973538225 at 3c5dc29). -14.1 LUFS / -1.8 dBTP; last half second is the music tail at about -29 dB, no cutoff. Flash house bar passes (general 1/s, 3f 3/s, red 0, no extended runs). Gate OPEN.\nSecond one: same as the proof: lit low shot on the green, Grandpa (grey hair, cap) dancing in profile in front of a string-lit crowd, music-note tag top left, camera moving, 'On our town GREEN,'; cut to the wide of the band and dancers at 1.1 s.\nCraft matches the proof within rounding (changes/10s 17.0 vs 17.0, q 22.8 vs 23.0, motion q 8.83 vs 8.87, longest still q 0.27, longest still 0.43 vs 0.4, LUFS and HF the same).\ncraft: 0 block, 0 near, 1 warn: spec.cuts_per_10s 8.92 (5.5-8.0); the same dance-montage cutting the proof watched, reads as energy.\nProof framing fixes hold at full size: feet and bench shots (22, 32 s), crowd faces turned toward the bench (48 s), band close-ups stay silhouettes with hat brims and two glowing points (36-50 s), the stand-up beat with the sneakers (64-66 s), the laughing row on the grass (72-76 s). 61.4-63 s is the in-world rule sign close-up ('The rule says everyone has to DANCE'), intended.\nProof notes still stand, not fails: 59.5-61 s the tag covers the top of Grandpa's head; frame 1 has no face-on close-up.\n6-sample finals: no fireflies, noise or sharpening halo on faces, glowing eyes or captions; only slight smoothing in the dark backstage wall at 70 s, invisible at phone size and fine on TV. Captions inside the safe area; no stray text, logos or real words.\nCover 47.2 s (two lights under the brim, 'looking at ME.') is strong at full size."
+}
