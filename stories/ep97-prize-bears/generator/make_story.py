@@ -506,7 +506,7 @@ hold("tess", "L32+0.6", arms=[1.5, 1.5])
 # ---- S32b L32.2: the prize man carries it to the closet
 obj("bear_tess", "L32.2", hide=True)
 obj("bear_prize", "L32.2", pos=(0, 0, 0))
-S("S32b", "L32.2", C((5.8, 8.4, 1.55), (3.6, 10.2, 1.35), 32, (5.4, 9.0, 1.55), (4.1, 11.0, 1.35), 32))
+S("S32b", "L32.2", C((5.4, 9.0, 1.55), (4.1, 11.0, 1.35), 32, (5.3, 9.2, 1.55), (4.1, 11.2, 1.35), 32))
 scene("L32.2", prize=dict(pos=(3.0, 9.95), yaw=90, expr="neutral", arms=[1.4, 1.4]))
 walk("prize", "L32.2+0.7", (4.1, 10.4))
 walk("prize", "L33", (4.1, 12.4))
@@ -704,7 +704,7 @@ story = {
     "fx": [],
     "music": music,
     "sound": sound,
-    "rev": 5,
+    "rev": 6,
     "framing_ok": ["S42a"],
     "asr_forgive": ["thousand"],
     "clip_ok": ["S03b", "S04a", "S30b", "S38a", "S06c", "S34a"],
