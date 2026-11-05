@@ -348,6 +348,18 @@ def first_frame(kit, story):
     if gp is not None:
         pearl = kit.plastic("#fffaf0", 0.2, spec=0.7)
         gray = kit.plastic("#c4c4d0", 0.85, spec=0.05)
+        # glasses: no lens fill (it read as a bandage), only red rims round each lens
+        frame = kit.plastic("#d22f3c", 0.4)
+        for sx in (-1, 1):
+            ln = bpy.data.objects.get(f"mae.gl{sx}")
+            if ln is None:
+                continue
+            ln.hide_render = True
+            ly = ln.location.y - 0.01
+            cx, cz = ln.location.x, ln.location.z
+            kit.box(f"mae.glr_b{sx}", (0.46, 0.04, 0.05), (cx, ly, cz - 0.16), frame, gp)
+            for ex in (-1, 1):
+                kit.box(f"mae.glr_s{sx}{ex}", (0.05, 0.04, 0.34), (cx + ex * 0.205, ly, cz), frame, gp)
         for sx in (-1, 1):
             kit.sphere(f"mae.pearl{sx}", 0.1, (sx * 0.68, -0.05, -0.32), pearl, gp, seg=8)
             kit.box(f"mae.pearlh{sx}", (0.05, 0.05, 0.12), (sx * 0.68, -0.05, -0.22), pearl, gp)
