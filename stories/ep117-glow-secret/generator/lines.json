@@ -1,0 +1,540 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My parents",
+    "My parents"
+   ],
+   [
+    "GLOW in the dark.",
+    "glow in the dark."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In this town,",
+    "In this town,"
+   ],
+   [
+    "that means",
+    "that means"
+   ],
+   [
+    "they're HIDING something.",
+    "they're hiding something."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Keep a secret here,",
+    "Keep a secret here,"
+   ],
+   [
+    "and you GLOW.",
+    "and you glow."
+   ],
+   [
+    "Brighter every DAY.",
+    "Brighter every day."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Party planners",
+    "Party planners"
+   ],
+   [
+    "light up like LAMPS.",
+    "light up like lamps."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Nobody",
+    "Nobody"
+   ],
+   [
+    "plays POKER.",
+    "plays poker."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My roommate",
+    "My roommate"
+   ],
+   [
+    "ate my leftovers.",
+    "ate my leftovers."
+   ],
+   [
+    "His face lit up",
+    "His face lit up"
+   ],
+   [
+    "the FRIDGE.",
+    "the fridge."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mom and Dad",
+    "Mom and Dad"
+   ],
+   [
+    "have glowed",
+    "have glowed"
+   ],
+   [
+    "since before",
+    "since before"
+   ],
+   [
+    "I was BORN.",
+    "I was born."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Thirty years of it.",
+    "Thirty years of it."
+   ],
+   [
+    "They're basically",
+    "They're basically"
+   ],
+   [
+    "LIGHTHOUSES.",
+    "lighthouses."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every Friday,",
+    "Every Friday,"
+   ],
+   [
+    "we eat here,",
+    "we eat here,"
+   ],
+   [
+    "in the same BOOTH.",
+    "in the same booth."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Same pizza.",
+    "Same pizza."
+   ],
+   [
+    "Anchovy and PINEAPPLE.",
+    "Anchovy and pineapple."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Across the dark lot,",
+    "Across the dark lot,"
+   ],
+   [
+    "they look like",
+    "they look like"
+   ],
+   [
+    "two HEADLIGHTS.",
+    "two headlights."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Moths follow them",
+    "Moths follow them"
+   ],
+   [
+    "to the CAR.",
+    "to the car."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I always figured",
+    "I always figured"
+   ],
+   [
+    "it was something BIG.",
+    "it was something big."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Were they SPIES?",
+    "Were they spies?"
+   ],
+   [
+    "Were they",
+    "Were they"
+   ],
+   [
+    "FAMOUS?",
+    "famous?"
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Last Friday,",
+    "Last Friday,"
+   ],
+   [
+    "I had to KNOW.",
+    "I had to know."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I asked Mom",
+    "I asked Mom"
+   ],
+   [
+    "ALONE,",
+    "alone,"
+   ],
+   [
+    "by the gumball machine.",
+    "by the gumball machine."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She glowed so bright",
+    "She glowed so bright"
+   ],
+   [
+    "the gumballs",
+    "the gumballs"
+   ],
+   [
+    "cast SHADOWS.",
+    "cast shadows."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She made me PROMISE",
+    "She made me promise"
+   ],
+   [
+    "not to tell Dad.",
+    "not to tell Dad."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then I asked Dad",
+    "Then I asked Dad"
+   ],
+   [
+    "ALONE,",
+    "alone,"
+   ],
+   [
+    "out by the car.",
+    "out by the car."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Same glow.",
+    "Same glow."
+   ],
+   [
+    "Same PROMISE.",
+    "Same promise."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And they told me",
+    "And they told me"
+   ],
+   [
+    "the SAME secret.",
+    "the same secret."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Their first date",
+    "Their first date"
+   ],
+   [
+    "was at this BOOTH.",
+    "was at this booth."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Neither of them",
+    "Neither of them"
+   ],
+   [
+    "liked the PIZZA.",
+    "liked the pizza."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "They've ordered it",
+    "They've ordered it"
+   ],
+   [
+    "every Friday since,",
+    "every Friday since,"
+   ],
+   [
+    "so the other one",
+    "so the other one"
+   ],
+   [
+    "wouldn't feel BAD.",
+    "wouldn't feel bad."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Thirty years",
+    "Thirty years"
+   ],
+   [
+    "of anchovy",
+    "of anchovy"
+   ],
+   [
+    "and PINEAPPLE.",
+    "and pineapple."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "For NOBODY.",
+    "For nobody."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mom says",
+    "Mom says"
+   ],
+   [
+    "she'd rather",
+    "she'd rather"
+   ],
+   [
+    "eat a SOCK.",
+    "eat a sock."
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And I promised",
+    "And I promised"
+   ],
+   [
+    "them both",
+    "them both"
+   ],
+   [
+    "I wouldn't TELL.",
+    "I wouldn't tell."
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So this Friday,",
+    "So this Friday,"
+   ],
+   [
+    "in our BOOTH,",
+    "in our booth,"
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I started",
+    "I started"
+   ],
+   [
+    "GLOWING.",
+    "glowing."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Now the three of us",
+    "Now the three of us"
+   ],
+   [
+    "light up",
+    "light up"
+   ],
+   [
+    "the whole PLACE.",
+    "the whole place."
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The waiter",
+    "The waiter"
+   ],
+   [
+    "calls us",
+    "calls us"
+   ],
+   [
+    "the LAMPS.",
+    "the lamps."
+   ]
+  ]
+ },
+ {
+  "id": "L33",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Now I glow",
+    "Now I glow"
+   ],
+   [
+    "in the dark TOO.",
+    "in the dark too."
+   ]
+  ]
+ }
+]
