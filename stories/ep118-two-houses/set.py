@@ -559,14 +559,18 @@ def build(kit, story, tl):
     B(None, (2.7, 3.4, 0.09), (-3.05, -1.7, 0.045), kit.planks("#c8935a", "#a8743f", 1.0, "X"), "porch", 0.01)
     # ---- the squirrel (hidden until it's needed)
     sq = E(None, (0, 0, 0), "squirrel")
-    fur, cream = P("#a8683a", 0.8), P("#f2dcc0", 0.8)
+    fur, cream = P("#6d7078", 0.8), P("#e6e2da", 0.8)
     B(sq, (0.10, 0.2, 0.12), (0, 0, 0.11), fur, "sqbody", 0.03)
     B(sq, (0.09, 0.09, 0.09), (0, -0.12, 0.2), fur, "sqhead", 0.03)
     B(sq, (0.04, 0.02, 0.05), (0, -0.15, 0.15), cream, "sqmuzzle", 0.01)
     for sx in (-1, 1):
         B(sq, (0.02, 0.03, 0.04), (sx * 0.035, -0.11, 0.265), fur, "sqear", 0.006)
         B(sq, (0.016, 0.016, 0.016), (sx * 0.026, -0.168, 0.215), P("#14110e", 0.3), "sqeye", 0.004)
-    B(sq, (0.07, 0.07, 0.26), (0, 0.17, 0.25), P("#c47a44", 0.85), "sqtail", 0.03, rot=(-0.35, 0, 0))
+    tailc = P("#9a9ca4", 0.85)
+    B(sq, (0.08, 0.08, 0.2), (0, 0.15, 0.2), tailc, "sqtail1", 0.03, rot=(-0.25, 0, 0))
+    B(sq, (0.10, 0.10, 0.2), (0, 0.19, 0.38), tailc, "sqtail2", 0.03, rot=(0.1, 0, 0))
+    B(sq, (0.10, 0.18, 0.10), (0, 0.13, 0.52), tailc, "sqtail3", 0.03)
+    B(sq, (0.07, 0.07, 0.10), (0, 0.04, 0.50), P("#3a3c42", 0.85), "sqtailtip", 0.02)
     ctx["squirrel"] = sq
     # ---- the note on the door of his house, the picture frames, kitchen things, the marble, the mugs
     nimg = bpy.data.images.load(note_image(TMP / "note.png"))

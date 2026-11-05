@@ -38,7 +38,7 @@ The batch table is in `stories/ep115-are-we-there/script.md`. This row:
 - **First real scare (L16 to L21, about 31 to 41 s):** the storm, the houses creaking, the windows a foot apart, and a hand reaching out of Mr. Pruitt's dark window toward ours.
 - **The climax turns the rule's own logic:** the rule only counts a fight, it never checks if you mean it (L35, L36), so two best friends can fake one for forty years. No new magic.
 - **Twist and reveal (L22 to L32, about 41 to 59 s):** shown in one picture (S26: two old men in robes, one at each window, a foot apart in the rain, a mug passing from flat palm to flat palm, both laughing, faces to camera), then said plainly (L28 to L32).
-- **How the last 15 seconds turn over the first line:** I keep their secret and wash two mugs every night, then the house across the street starts leaning toward ours, though nobody in our house is fighting anybody, "that I know OF", which runs into L01's rule and L02's eleven feet and makes the lean a question again.
+- **How the last 15 seconds turn over the first line:** I keep their secret and wash two mugs every night, then the house across the street starts leaning toward ours, though nobody in our house is fighting them, "that I know OF", which runs into L01's rule and L02's eleven feet and makes the lean a question again.
 - **The plants a rewatch catches:**
   1. L15: two coffee mugs in our sink every morning, and I don't drink coffee.
   2. L14: every angry note ends with the same fish doodle.
