@@ -30,4 +30,7 @@ Reset: all pass, as in r1.
 ## Must-fix
 1. S36 (L14.2, 26.63 to 27.2 s): put Wes's blue hatchback in frame, easing into or parked at our curb. Either aim the S36 camera at the car's position during L14.2, or place the car at the curb spot the camera already looks at (around x 98, y 3). It's one shot, so it fits in one rescue.
 
-Verdict: revise
+## Rescue
+S36 and S35 were redrawn and checked at 300 px, from 25.3 to 27.9 s. The blue hatchback's tail comes in from the left at 26.65 s and settles by the yellow curb line by 26.8 s, then holds there through 27.2 s, so "and parked itself" plays over the car parking. Wes is in the driver's seat, lit, and reads as Wes. S34 (`angry`, lit) and S14c (me `scared` on "CURB") are unchanged. Nothing is broken. Preflight shows 0 blocks, 0 clip hits and no pace rows. Flash passes with the same warnings as before. The must-fix is closed.
+
+Verdict: approve
