@@ -6,6 +6,5 @@
   "cover_s": 58.9,
   "shape": "tiny-secret",
   "opening": "confess",
-  "lane": "experiment",
-  "hold": "batch 12: scripts only, not built yet"
+  "lane": "experiment"
 }
