@@ -259,22 +259,21 @@ def build(kit, story, tl):
     W["gsh"] = []
     Lp = (GX_ - 2.2, 0.8, 1.0)
     dcols_ = ["#b8281c", "#c89400", "#1480b8", "#2f9a2f", "#b83a90", "#8a8a98", "#c05c10", "#6030c0"]
-    shcols_ = ["#8a1e16", "#8a6a00", "#0c5a86", "#1f6a1f", "#8a1e66", "#4a4a58", "#8a3c08", "#40208a"]
+    shcols_ = ["#4a0e0a", "#4a3500", "#062f48", "#0f3a0f", "#4a0f36", "#26262e", "#4a2004", "#20104a"]
     cols_ = ["#ff4b3a", "#ffd23f", "#3fd0ff", "#7be07a", "#ff7ad9", "#ffffff", "#ff9a3a", "#9a6bff"]
-    for k in range(0, 34, 4):
-        a = k * 2.399
-        r = 0.05 + 0.24 * ((k * 0.37) % 1.0) ** 0.6
-        h = 1.14 + (k % 5) * 0.09 + (0.0 if r < 0.2 else -0.06)
-        bx, bz = GX_ + r * math.cos(a), h
-        by = GY_ + r * math.sin(a)
-        sc_ = (3.97 - Lp[1]) / (by - Lp[1])
-        wx, wz = Lp[0] + sc_ * (bx - Lp[0]), Lp[2] + sc_ * (bz - Lp[2])
-        wx = GX_ + 0.6 + (wx - GX_ - 0.6) * 1.7
-        wz = 1.5 + (wz - 1.5) * 1.9
-        # a dark, long ball-shaped shadow in the ball's own colour (each 3 mm apart in depth so none share a plane)
-        mt = kit.plastic(shcols_[k % 8], 0.9, spec=0.0)
-        d_ = kit.cyl(f"gsh{k}", 0.09, 0.01, (wx, 3.972 - 0.003 * (k // 4), wz), mt, rot=(math.pi / 2, 0, 0), n=24)
-        d_.scale = (2.4, 1.0, 1.0)
+    # light from Mom's side (left): the shadows run right from the base, long, dark and ball-shaped, widening with distance;
+    # a long dark floor shadow of the machine's body goes the same way (each 3 mm apart in depth so none share a plane)
+    fl_ = kit.mesh_obj("gsh.floor", [(GX_ + 0.45, GY_ - 0.35, 0.016), (GX_ + 0.45, GY_ + 0.35, 0.016),
+                                     (GX_ + 3.0, 3.9, 0.016), (GX_ + 2.4, GY_ - 0.2, 0.016)],
+                       [(0, 1, 2, 3)], kit.plastic("#4a2018", 0.9, spec=0.0))
+    W["gsh"].append(fl_)
+    for i in range(10):
+        u_ = i / 9.0
+        wx = GX_ + 0.55 + 0.75 * u_ + 0.08 * ((i * 7) % 3)
+        wz = 0.2 + 0.4 * ((i * 0.618) % 1.0) + 0.25 * u_
+        mt = kit.plastic(shcols_[i % 8], 0.9, spec=0.0)
+        d_ = kit.cyl(f"gsh{i}", 0.09, 0.01, (wx, 3.885 - 0.003 * i, wz), mt, rot=(math.pi / 2, 0, 0), n=24)
+        d_.scale = (3.0 + 2.2 * u_, 1.0, 0.8 + 0.5 * u_)
         d_.visible_shadow = False
         W["gsh"].append(d_)
     kit.box("counter", (5.0, 0.8, 1.05), (-9.0, 3.4, 0.525), P("#7a3a2a", 0.6))
@@ -318,7 +317,7 @@ def build(kit, story, tl):
     W["moths"] = []
     for k in range(6):
         m = kit.empty(f"moth{k}", (0, 0, -80.0))
-        mt = P("#e8d8b0", 0.6)
+        mt = P("#f7efd6", 0.8)
         kit.box(f"moth{k}.wl", (0.09, 0.07, 0.008), (-0.045, 0, 0), mt, m)
         kit.box(f"moth{k}.wr", (0.09, 0.07, 0.008), (0.045, 0, 0), mt, m)
         kit.box(f"moth{k}.b", (0.02, 0.07, 0.02), (0, 0, 0.0), P("#6a5a48", 0.6), m)
@@ -680,12 +679,13 @@ def animate(kit, story, tl, t, ctx):
             m.location = (0, 0, -80)
             continue
         a = t * (0.9 + 0.12 * k) + k * 1.1
-        r = 0.6 + 0.12 * (k % 3)
-        m.location = (hp.x + r * math.cos(a), hp.y - 0.4 + 0.25 * math.sin(a * 0.7), hp.z + 0.05 + 0.4 * math.sin(a * 1.3 + k))
+        side = -1.0 if k % 2 == 0 else 1.0      # outward from the pair, never over a face or between the two heads
+        m.location = (hp.x + side * 0.3 + 0.22 * math.sin(a), hp.y - 0.1 + 0.15 * math.sin(a * 0.7),
+                      hp.z + 0.62 + 0.15 * math.sin(a * 1.3 + k))
         m.rotation_euler = (0.3, 0, a)
         m.children[0].rotation_euler = (0, 0.7 * math.sin(t * 22 + k), 0)
         m.children[1].rotation_euler = (0, -0.7 * math.sin(t * 22 + k), 0)
-        m.scale = (3.4 * mv_,) * 3
+        m.scale = (1.2 * mv_,) * 3
 
     # the tag sits top-left at a fixed angular size, whatever the lens
     lens = 40.0
