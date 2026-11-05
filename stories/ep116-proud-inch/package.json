@@ -6,6 +6,5 @@
   "cover_s": 13.0,
   "shape": "fix-it-yourself",
   "opening": "cost",
-  "lane": "core",
-  "hold": "batch 12: scripts only, not built yet"
+  "lane": "core"
 }
