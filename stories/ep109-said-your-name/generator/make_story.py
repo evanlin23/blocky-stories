@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 10
+REV = 11
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -91,7 +91,7 @@ cast = {
                     pattern_c="#ff9ab8", eyes="lashes", extras=["glasses"], extra_c="#8a8a9a", height=0.93, width=0.95),
     "baker": person("#e6b48c", "#fffaf0", "#7a6a8a", "#5a4a3a", hair="cap", hair_c="#6a4a2a", extras=["apron"], extra_c="#fffaf0",
                     hat="bucket", hat_c="#fffaf0"),
-    "coatman": person("#c58c5a", "#a0724a", "#4a4036", "#2a2a2a", hair="buzz", hair_c="#c8c8cc", extras=["coat"], zip_c="#6a4a2a"),
+    "coatman": person("#e0a878", "#d9a06a", "#4a4036", "#2a2a2a", hair="buzz", hair_c="#c8c8cc", extras=["coat"], zip_c="#6a4a2a"),
     "greenw": person("#f0c8a0", "#7fd9a0", "#7fd9a0", "#e8e0d0", hair="long", hair_c="#7a4a2c", eyes="lashes", sleeves="short"),
     "hoodie": person("#d3a07a", "#ff6a5a", "#3a4a6a", "#f4f4f2", hair="spiky", hair_c="#2a2a2a", extras=["hooddown"]),
     "driver": person("#dca97c", "#6cc4ff", "#3a4a6a", "#2a2a2a", hair="buzz", hair_c="#1a1410", hat="ballcap", hat_c="#4f78b8"),
@@ -217,7 +217,7 @@ beat("me", "L02", expr="wide", arms=[0, 100], head=[0, 0])
 beat("me", "L03", expr="worried", arms=[0, 86], head=[0, 14])
 beat("me", "L03.2", expr="worried", arms=[0, 86], head=[0, 14])
 shot(0, mv([KX - 0.2, -0.9, 1.95], [KX - 1.3, 2.7, 1.5], 36, [KX - 0.55, -0.2, 1.9], [KX - 1.3, 2.7, 1.5], 36), "face")
-shot("L01.2", mv([KX - 0.9, 0.45, 1.3], [KX - 0.97, 1.9, 1.2], 38, [KX - 0.9, 0.9, 1.3], [KX - 0.97, 1.9, 1.2], 38), "dial")
+shot("L01.2", mv([KX - 0.9, 0.45, 1.15], [KX - 0.97, 1.9, 0.98], 50, [KX - 0.9, 0.9, 1.15], [KX - 0.97, 1.9, 0.98], 50), "dial")
 shot("L02", fc(ME_K, 0, 2.7, 30, h=1.5, tz=1.45, off=-0.36, push=0.1), "stunned")
 shot("L03", mv([KX - 0.7, 0.0, 1.55], [KX - 1.0, 2.6, 1.5], 26, [KX - 0.75, 0.4, 1.55], [KX - 1.0, 2.6, 1.5], 26), "hand")
 shot("L03.2", mv([KX - 1.9, 0.7, 1.15], [KX - 0.97, 2.0, 1.2], 36, [KX - 1.5, 0.9, 1.2], [KX - 0.97, 2.0, 1.25], 36), "hand2")
@@ -240,7 +240,7 @@ beat("baker", "L05.2", expr="worried", head=[-12, 0], arms=[0, 0])
 only("L06", ["coatman"])
 put("coatman", "L06", [SHX, -4.75], 180, expr="neutral")
 beat("coatman", "L06.2", expr="worried", head=[22, 0])
-shot("L06", fc([SHX, -4.75], 180, 4.2, 38, h=1.5, tz=1.5, off=0.12, push=0.2), "coatman")
+shot("L06", fc([SHX, -4.75], 180, 2.7, 36, h=1.1, tz=1.65, off=0.1, push=0.15), "coatman")
 cue("L06.2-2.6", "bus", x=26.0)
 cue("L06.2-2.55", "bus", x=62.0, dur=5.0)
 shot("L06.2", mv([SHX + 1.6, 0.9, 1.3], [SHX - 2.0, -3.0, 1.5], 36, [SHX + 1.0, 0.9, 1.3], [SHX - 3.0, -3.0, 1.5], 36), "buspass")
@@ -277,16 +277,16 @@ go("me", "L15", [54.6, 3.0], expr="worried")
 put("me", "L16", [SPOT[0] - 0.3, 3.0], 90, expr="wide", arms=[0, 0])
 go("me", "L16+0.7", [SPOT[0], 3.0], expr="wide")
 only("L10", ["me"])
-shot("L10", mv([46.0, -0.2, 1.7], [41.8, 2.6, 1.5], 38, [45.0, -0.2, 1.7], [42.6, 2.6, 1.5], 38), "step")
+shot("L10", mv([44.8, -0.3, 1.6], [40.9, 2.6, 1.5], 38, [44.2, -0.1, 1.6], [41.3, 2.6, 1.5], 38), "step")
 shot("L10.2", mv([47.6, 0.2, 1.1], [42.3, 2.7, 0.95], 30, [47.2, 0.4, 1.1], [42.8, 2.7, 0.95], 30), "walk")
 # L11 the bakery line steps back, all at once
 LINE = [(54.2, 4.0), (53.1, 4.0), (52.0, 4.0), (50.9, 4.0), (49.8, 4.0), (48.7, 4.0)]
 for i, (lx, ly) in enumerate(LINE):
     put(f"c{i + 1}", "L11", [lx, ly], 90, expr="smile")
     beat(f"c{i + 1}", "L11.1-0.05", expr="smile")
-    go(f"c{i + 1}", "L11.1+0.1", [lx + 0.1, 4.4], yaw=-60, expr="worried", blend=0.2)
+    go(f"c{i + 1}", "L11.1+0.1", [lx + 0.1, 4.4], yaw=-12, expr="worried", blend=0.2)
     beat(f"c{i + 1}", "L11.2", expr="worried", head=[-20, 0])
-shot("L11", mv([57.5, 2.6, 1.55], [51.0, 4.0, 1.5], 34, [57.0, 2.4, 1.55], [50.5, 4.0, 1.5], 34), "line")
+shot("L11", mv([52.0, -0.9, 1.6], [51.4, 4.2, 1.5], 30, [51.8, -0.5, 1.6], [51.4, 4.2, 1.5], 30), "line")
 shot("L11.2", mv([49.6, 0.0, 1.55], [45.4, 2.7, 1.5], 38, [49.2, 0.2, 1.55], [45.7, 2.7, 1.5], 38), "meback")
 # L12 the ring: top-down on the street, everyone packed round an empty circle that follows me
 mepath = [(0.0, (46.2, 2.7)), (0.7, (47.4, 2.74)), (1.5, (49.0, 2.76)), (2.2, (50.0, 2.8))]
@@ -343,7 +343,7 @@ shot("L16", mv([SPOT[0] + 2.2, -1.4, 1.0], [SPOT[0] + 0.3, 3.0, 0.75], 26, [SPOT
 # ===== 04 the oranges (L17 to L26)
 only("P01", ["me"])
 beat("me", "P01", expr="wide", head=[0, 25])
-shot("P01", mv([SPOT[0] + 2.4, 0.3, 0.9], [SPOT[0] + 0.4, 3.0, 0.4], 30, [SPOT[0] + 2.2, 0.4, 0.8], [SPOT[0] + 0.4, 3.0, 0.35], 30), "firstorange")
+shot("P01", mv([SPOT[0] + 1.6, 0.4, 0.35], [SPOT[0] + 0.5, 3.0, 0.12], 30, [SPOT[0] + 1.4, 0.6, 0.3], [SPOT[0] + 0.5, 3.0, 0.1], 30), "firstorange")
 shot("L17", mv([SPOT[0] - 3.2, 0.0, 1.0], [SPOT[0] + 1.5, 3.0, 0.2], 32, [SPOT[0] + 1.6, -0.6, 0.9], [SPOT[0] + 0.2, 3.0, 0.2], 32), "rolling")
 beat("me", "L17", expr="scared", head=[0, 20], yaw=0)
 ROW_A = [(59.2, -0.8), (60.2, -0.9), (61.2, -0.8)]
@@ -409,13 +409,16 @@ shot("L29", mv([PWX[1] + 0.1, -2.2, 4.8], [PWX[1], 5.3, 5.0], 50, [PWX[1] + 0.1,
 # L30 and L31
 only("L30", ["me", "dev"])
 put("me", "L30", [SPOT[0], 3.0], 20, expr="scared", head=[0, 0])
-put("dev", "L30", [DEVK[0], DEVK[1]], -90, expr="warm", arms=[0, 70])
+DK = (SPOT[0] + 1.5, 3.0)
+put("dev", "L30", [DK[0], DK[1]], -35, expr="warm", arms=[0, 70])
 cue("L30", "kneel", who="dev", on=True)
 beat("me", "L30.1", expr="scared", head=[-15, 6])
-shot("L30", fc([SPOT[0], 3.0], 20, 2.5, 40, h=1.5, tz=1.45, off=0.06, push=0.15), "tellhim")
+MX_, MY_ = (SPOT[0] + DK[0]) / 2, 3.0
+shot("L30", mv([MX_ + 0.2, MY_ - 4.2, 1.3], [MX_, MY_, 1.25], 28, [MX_ + 0.1, MY_ - 3.8, 1.3], [MX_, MY_, 1.25], 28), "tellhim")
+only("L31", ["dev"])
 beat("dev", "L31", expr="smirk", yaw=-70, arms=[0, 70])
-shot("L31", fc(DEVK, -70, 2.6, 40, h=1.0, tz=0.95, off=0.08, push=0.15), "wry")
-shot("L31.2", mv([DEVK[0] - 1.9, OY - 1.6, 1.0], [DEVK[0], DEVK[1], 0.95], 36, [DEVK[0] - 1.6, OY - 1.4, 1.0], [DEVK[0], DEVK[1], 0.95], 36), "wry2")
+shot("L31", fc(DK, -70, 3.4, 34, h=1.0, tz=1.0, off=0.4, push=0.1), "wry")
+shot("L31.2", mv([DK[0] - 2.3, 3.0 - 1.9, 1.05], [DK[0] - 0.15, 3.2, 1.0], 28, [DK[0] - 2.0, 3.0 - 1.7, 1.05], [DK[0] - 0.15, 3.2, 1.0], 28), "wry2")
 # L32 and L33 Dev's words: he stands
 only("L32", ["me", "dev"])
 cue("L32", "kneel", who="dev", on=False)
@@ -434,7 +437,7 @@ cue("L34", "pick", on=False)
 clock("L34", 10, 0)
 clock("L34.1", 12, 0)
 clock("L34.1+0.5", 2, 0)
-shot("L34", mv([63.0, -1.5, 1.6], [63.0, 2.9, 1.35], 40, [63.0, -0.9, 1.6], [63.0, 2.9, 1.35], 42), "sidebyside")
+shot("L34", mv([63.0, -2.3, 1.6], [63.0, 2.9, 1.4], 34, [63.0, -1.7, 1.6], [63.0, 2.9, 1.4], 34), "sidebyside")
 # L35 coffee, the bag, the bench
 only("L35", ["me", "dev"])
 vis("L35", "cups", True)
@@ -453,7 +456,7 @@ put("me", "L35.2", [BX - 0.45, BY], 180, expr="smile")
 put("dev", "L35.2", [BX + 0.55, BY], 180, expr="warm")
 cue("L35.2", "sit", who="me", on=True, z=0.62)
 cue("L35.2", "sit", who="dev", on=True, z=0.62)
-shot("L35.2", fc([BX + 0.05, BY], 180, 4.4, 40, h=1.4, tz=1.15, off=0.0, push=0.15), "bench")
+shot("L35.2", fc([BX + 0.05, BY], 180, 5.2, 36, h=1.4, tz=1.15, off=0.0, push=0.1), "bench")
 # L36 walking down the bright street
 clock("L36", 3, 0)
 only("L36", ["me", "dev"])
@@ -492,10 +495,10 @@ clock("L39", 5, 0)
 only("L39", ["me", "dev"])
 cue("L39", "sit", who="me", on=True, z=0.55)
 cue("L39", "sit", who="dev", on=True, z=0.55)
-put("me", "L39", [G.SEAT_ME[0], G.SEAT_ME[1]], 130, expr="sad-smile", head=[0, 10])
-put("dev", "L39", [G.SEAT_DEV[0], G.SEAT_DEV[1]], -130, expr="warm")
-shot("L39", fc([G.SEAT_ME[0], 6.6], 130, 2.4, 36, h=1.45, tz=1.3, off=0.06, push=0.15), "sorry")
-shot("L39.2", fc([G.SEAT_ME[0], 6.6], 150, 2.6, 40, h=1.45, tz=1.3, off=0.06, push=0.12), "sorry2")
+put("me", "L39", [G.SEAT_ME[0], G.SEAT_ME[1]], 150, expr="sad-smile", head=[0, 10])
+put("dev", "L39", [G.SEAT_DEV[0], G.SEAT_DEV[1]], -150, expr="warm")
+shot("L39", fc([G.SEAT_DEV[0], 6.6], -150, 2.6, 34, h=1.45, tz=1.3, off=0.15, push=0.1), "sorry")
+shot("L39.2", mv([TX + 0.05, 10.0, 1.5], [TX + 0.05, 6.6, 1.3], 18, [TX + 0.05, 9.8, 1.5], [TX + 0.05, 6.6, 1.3], 18), "sorry2")
 beat("dev", "L40", expr="smile", head=[0, 0], yaw=-130)
 shot("L40", fc([G.SEAT_DEV[0], 6.6], -140, 2.5, 38, h=1.45, tz=1.3, off=0.06, push=0.12), "devsmile")
 beat("dev", "L40.2", expr="smile", yaw=10, head=[0, 0])
@@ -521,9 +524,9 @@ shot("L43", fc([G.SEAT_ME[0], 6.6], 130, 2.4, 36, h=1.45, tz=1.3, off=0.06, push
 clock("L44", 7, 0)
 cue("L44", "pair", n=1.0)
 only("L44", ["me"])
-put("me", "L44", [-81.2, 1.0], 180, expr="worried", head=[0, 14])
-shot("L44", mv([KX - 1.5, 4.4, 1.6], [KX - 1.2, 1.5, 1.45], 26, [KX - 1.4, 4.0, 1.6], [KX - 1.2, 1.5, 1.45], 26), "radioback")
-shot("L44.1", mv([KX - 1.2, 3.9, 1.42], [KX - 1.2, 1.0, 1.3], 34, [KX - 1.1, 3.4, 1.4], [KX - 1.2, 1.0, 1.3], 34), "radioback2")
+put("me", "L44", [ME_K[0], ME_K[1]], 0, expr="worried", head=[0, 6])
+shot("L44", mv([KX + 1.0, 0.0, 1.7], [KX - 1.2, 3.0, 1.5], 34, [KX + 0.6, 0.3, 1.7], [KX - 1.2, 3.0, 1.5], 36), "radioback")
+shot("L44.1", mv([KX - 2.7, 0.4, 1.65], [KX - 1.3, 3.0, 1.5], 34, [KX - 2.2, 0.6, 1.65], [KX - 1.3, 3.0, 1.5], 36), "radioback2")
 only("L45", ["odell"])
 put("odell", "L45", [OD, 5.6, 0.3], 0, expr="wide")
 beat("odell", "L45.1", expr="smile")
@@ -536,15 +539,15 @@ put("me", "L46", [OD + 3.0, 3.6, 0.3], 0, expr="smile")
 put("odell", "L46", [OD, 5.6, 0.3], 0, expr="smile")
 vis("L46.2", "cups2", True)
 shot("L46", mv([OD + 2.5, -1.0, 1.9], [OD + 2.5, 3.6, 1.7], 27, [OD + 2.5, -0.5, 1.9], [OD + 2.5, 3.6, 1.7], 29), "porch")
-shot("L46.2", mv([OD + 2.4, 1.3, 1.4], [OD + 2.4, 3.6, 0.95], 50, [OD + 2.4, 1.6, 1.3], [OD + 2.4, 3.6, 0.95], 50), "coffees2")
+shot("L46.2", mv([OD + 2.5, -0.8, 1.6], [OD + 2.4, 3.6, 1.25], 24, [OD + 2.5, -0.3, 1.6], [OD + 2.4, 3.6, 1.25], 26), "coffees2")
 HOUSES = [x for i in range(6) for x in G.win_xs(OD - 20 + i * 8.0)]
-only("L47", FACES[:8] + ["me", "dev"])
-PH = HOUSES[3:7]                                                   # four windows, two faces in each
+only("L47", FACES[:4] + ["me", "dev"])
+PH = HOUSES[5:7]                                                   # four windows, two faces in each
 PAIR47 = [(FACES[2 * k + j], wx + (-0.34 if j == 0 else 0.34)) for k, wx in enumerate(PH) for j in (0, 1)]
 for nm, wx in PAIR47:
     put(nm, "L47", [wx, -9.35, G.FACE_Z], 180, expr="worried", head=[0, 0])
-shot("L47", mv([OD, 1.0, 4.9], [OD, -9.3, 5.0], 21, [OD, 1.4, 4.9], [OD, -9.3, 5.0], 24), "streetwindows")
-shot("L47.2", mv([PH[2] - 0.2, -2.6, 4.8], [PH[2], -9.3, 5.0], 52, [PH[2] + 0.2, -3.2, 4.8], [PH[2] + 0.1, -9.3, 5.0], 52), "streetface")
+shot("L47", mv([OD, 1.0, 4.9], [OD, -9.3, 5.0], 32, [OD, 1.4, 4.9], [OD, -9.3, 5.0], 44), "streetwindows")
+shot("L47.2", mv([PH[1] - 0.2, -2.6, 4.8], [PH[1], -9.3, 5.0], 52, [PH[1] + 0.2, -3.2, 4.8], [PH[1] + 0.1, -9.3, 5.0], 52), "streetface")
 only("L48", ["odell"])
 put("odell", "L48", [OD, 5.6, 0.3], 0, expr="smile")
 shot("L48", mv([OD + 0.3, 1.2, 1.45], [OD, 5.6, 1.4], 38, [OD + 0.1, 1.7, 1.45], [OD, 5.6, 1.4], 38), "odellsmile")
@@ -616,7 +619,7 @@ remap_all(sound["ambience"])
 polish = {"reveal": [remap("L38")],
           "emph": [remap(x) for x in ["L01.3", "L12.2", "L16", "L28", "L38"]],
           "twist": remap("L37"),
-          "hold": [names["ring"], names["reveal"], names["photo"], names["cafewindow"]],
+          "hold": [names["ring"], names["reveal"], names["photo"], names["cafewindow"], names["sorry2"], names["sidebyside"], names["bench"], names["tellhim"]],
           "sway": [names["ring"], names["windows"]]}
 story = {
     "slug": "ep109-said-your-name",

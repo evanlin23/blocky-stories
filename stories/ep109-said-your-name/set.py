@@ -168,6 +168,7 @@ def build(kit, story, tl):
     kit.light("odl", "POINT", (G.OD, 7.5, 2.4), 200.0, "#fff0d0", size=0.5, shadow=False)
     kit.light("odwin", "POINT", (G.OD, -3.2, 6.2), 1500.0, "#fff2dc", size=1.0, shadow=False)
     kit.light("nbl", "POINT", (G.NB_X + 4.0, G.K[1], 2.6), 420.0, "#fff2dc", size=0.6, shadow=False)
+    W["drvl"] = kit.light("drvl", "POINT", (0, 0, 3), 260.0, "#fff4e0", size=0.5, shadow=False)
     kit.light("benchkey", "POINT", (G.BENCH[0] - 0.4, -4.6, 2.8), 520.0, "#fff0d8", size=0.6, shadow=False)
     kit.light("woman", "POINT", (G.BENCH[0] - 0.9, -4.2, 2.6), 300.0, "#fff0d8", size=0.6, shadow=False)
 
@@ -619,6 +620,7 @@ def animate(kit, story, tl, t, ctx):
     # the bus
     bs = sample("bus", tl, t, {"x": -30.0})
     W["bus"].location = (bs["x"], G.BUS_Y, 0.0)
+    W["drvl"].location = (bs["x"] + 3.0, G.BUS_Y + 3.0, 2.6)
     drv = bpy.data.objects.get("driver")
     if drv is not None:
         drv.location = (bs["x"] + 3.0, G.BUS_Y + 0.7, 1.18 + 0.45 - 0.68)
