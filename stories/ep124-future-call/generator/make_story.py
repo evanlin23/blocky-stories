@@ -170,7 +170,7 @@ shot("S02", "L02", mecam(2.1, 14, 38))
 
 # ===== 02 the rule at work (L03 to L06)
 MX, MY = G.MOM_ROOM
-shot("S03", "L03", cam(MX + 0.2, MY + 1.0, 1.75, 4.4, 0, 34, cz=1.4))
+shot("S03", "L03", cam(MX + 0.3, MY + 1.0, 1.85, 3.7, 0, 34, cz=1.5))
 UX, UY = G.UNCLE_ROOM
 shot("S04a", "L04", cam(UX, UY + 0.15, 1.15, 3.0, 8, 34, cz=1.3))
 shot("S04b", "L04.4", cam(UX + 0.1, UY - 0.1, 0.15, 1.5, 15, 30, cz=1.25))
@@ -191,7 +191,7 @@ shot("S09", "L09", cam(PH[0], PH[1], PH[2], 1.3, -6, 38, cz=1.35))
 # ===== 04 the call (L10 to L17)
 cue("L10", "btn", p=1.0, dur=0.12)
 cut("me", "L10", (-0.27, 3.1), yaw=-90, expr="smile", arms=[0, 96], head=[0, 0])
-shot("S10a", "L10", cam(PH[0] + 0.25, PH[1], 1.3, 2.3, 0, 38, cz=1.3))
+shot("S10a", "L10", cam(PH[0] + 0.65, PH[1], 1.3, 3.2, 0, 38, cz=1.3))
 cut("me", "L10.1", ME, yaw=0, expr="smile", arms=[0, 0], head=[0, 0])
 mouth("me", "L10.1", "L10.1>", 0.5)
 shot("S10b", "L10.1", mecam(2.2, 0, 36, tx=-0.6))

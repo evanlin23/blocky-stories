@@ -288,7 +288,7 @@ def build_pond(kit):
     for sx in (-1, 1):
         kit.box(f"boat.end{sx}", (0.08, 1.1, 0.36), (ux + sx * 1.42, uy + 0.15, 0.27), g, bevel=0.02)
     kit.box("boat.thwart", (0.32, 1.1, 0.05), (ux, uy + 0.15, 0.47), g)
-    kit.box("boat.water", (1.1, 0.8, 0.03), (ux - 0.75, uy + 0.15, 0.148), pl("#1e90ff", 0.2, spec=0.5))
+    kit.box("boat.water", (2.4, 0.9, 0.03), (ux, uy + 0.15, 0.148), pl("#0a70f0", 0.2, spec=0.5))
     kit.cyl("boat.cup", 0.06, 0.1, (ux - 0.6, uy - 0.05, 0.19), pl("#f2c230", 0.5), n=12)
     kit.box("boat.oar", (2.0, 0.06, 0.03), (ux + 0.2, uy + 0.65, 0.42), pl("#b5733a", 0.6))
 
@@ -386,7 +386,7 @@ def build(kit, story, tl):
     build_kitchen(kit)
     build_tag(kit)
     # a constant soft fill on the uncle's face under his hat (never changes)
-    uf = kit.light("ufill", "AREA", (G.UNCLE_ROOM[0] + 0.4, G.UNCLE_ROOM[1] - 2.2, 1.7), 260, "#fff4e4", size=1.6, shadow=False)
+    uf = kit.light("ufill", "AREA", (G.UNCLE_ROOM[0] + 0.4, G.UNCLE_ROOM[1] - 2.2, 1.7), 110, "#fff4e4", size=1.6, shadow=False)
     kit.aim(uf, (G.UNCLE_ROOM[0], G.UNCLE_ROOM[1] + 0.15, 1.05))
     return {}
 
