@@ -1,11 +1,11 @@
 # ep127-thousand-tellings: the script (writer, 2026-11-05, batch 13)
 
 - **Slug:** `ep127-thousand-tellings` (batch 13, upload order 6 of 7)
-- **Pitch:** 6 in the batch 13 pitch round, picked by the panel. Engine 24, the tall tales were true (unused until now), given a rule and a count. Opening shape `count`. Lane: core. Length arm: long.
+- **Pitch:** 6 in the batch 13 pitch round, picked by the panel. Engine 24, the tall tales were true (unused until now), given a rule and a count. Opening shape `must`. Lane: core. Length arm: long.
 - **Title:** Grandpa Has Told This Story 998 TIMES 📖
 - **Panel notes applied:**
   - **The count holds.** The rule is stated in two lines so the payoff is concrete: a story told a thousand times comes true, and what comes true is how it ends on the thousandth telling (L01, L02). Each telling counts whatever its ending, and Grandpa's 999 never have one: he stops in the middle every time (L26 to L28, L36, L37), because the end was never his to tell. So when I tell the thousandth with my ending, nothing breaks: it's the same story, the thousandth telling, and it's the first one with an end.
-  - **The payoff is concrete:** my ending says the boy drives home every Sunday, and the next Sunday my car takes the river road by itself and Grandpa has two rods ready (L64 to L66).
+  - **The payoff is concrete:** my ending says the boy drives home every Sunday, and now on Sundays, if I'm running late, my car takes the river road by itself and Grandpa has two rods ready (L64 to L66).
   - **Clear of ep121 and ep87:** nothing is written. ep121's fortunes are printed slips and ep87's are review cards. Here it's a spoken story, counted out loud night after night, and the twist is who gets to say the end.
 - **Batch 13 constraints, applied to every shot:** nothing blinks, pulses, flickers or glows: the shop's one low lamp is on and steady whenever we see it at night, and the neon-free window has no sign. No light change at all. At most two faces in a shot, never a profile two-shot, every emotional line on one face to camera. Nothing held near a face: the chalk slate hangs by the till, the rods lean on the counter. One shop on the river, no set moves. No creature.
 - **Everyone is an adult.** I'm 27. Grandpa Otto is 80. Mrs. Ortiz, her husband and Mr. Pike (montage) are adults.
@@ -19,10 +19,10 @@ The batch table is in `stories/ep122-face-the-wall/script.md`. This row:
 
 | Setting | Strange thing | First-line type | Ending shape | Kind of warmth |
 |---|---|---|---|---|
-| Grandpa's tackle shop on the river | Grandpa telling a story to an empty chair, eyes shut | `count`: a count that's going somewhere | `open-ending` | choosing home on my own terms |
+| Grandpa's tackle shop on the river | Grandpa telling a story to an empty chair, eyes shut | `must`: you can't tell a story a thousand times | `open-ending` | choosing home on my own terms |
 
 ## The big idea
-**In a town where any story told a thousand times comes true the way the thousandth ends, Grandpa has told one about me coming home 999 nights and never once finished it, because the end was never his: he was saving the thousandth telling for me.**
+**In a town where any story told a thousand times comes true the way the thousandth ends, Grandpa has told one about me coming home 999 nights and never once finished it, because he was saving the end, and the thousandth telling, for me.**
 
 - **Why it clicks:** he stops in the middle like he always does (L30 to L32), he wouldn't look at me when I asked the end (L37, L38), he sits facing my empty chair (L18, L19), and the leaking roof he called about was dry (L14), so he called me home to hear the last telling.
 - Ten pitched, this one kept. Dropped: he's trapping me (the misdirection only), the story is about Dad (a sad estrangement), the story is about Grandma (a sad reveal), I'm a story that came true (confusing), the stories come true because a Keeper counts them (stand-in), I tell a different story (the count breaks: the panel's note), the river is a story (abstract), he's telling it to forget me (forgetting is crowded), the chair is a Keeper (stand-in), my car is a story (comedy only).
@@ -31,7 +31,7 @@ The batch table is in `stories/ep122-face-the-wall/script.md`. This row:
 
 ## The story
 - **Premise:** In our river town, a story told a thousand times comes true, however it ends on the thousandth. Grandpa Otto calls me home from the city about a leaking roof, and through his shop window at night I see him telling a story to my empty chair, eyes shut, with 997 in chalk on the slate. The story is about me.
-- **Rule / hook (L01, L02, about 3.4 s):** "Here, any story / told a thousand TIMES / comes true." "However it ENDS / on the thousandth."
+- **Rule / hook (L01, L02, about 3.4 s):** "Here, you can't tell a story / a thousand TIMES." "The thousandth / comes TRUE, / however it ENDS."
 - **The relatable want or fight:** moving away from home, and a grandparent who misses you.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream tag top-left with a book glyph and Grandpa's count: 997 from frame 1 (the count he's on), 998 at L33, 999 at L39, 1,000 at L62, then a new count starting at 9 at L69. Numerals and glyphs only. The chalk slate by the till shows the same number on the set.
 - **The 3 to 5 example montage (L03 to L08, about 3 to 13 s):** Mrs. Ortiz telling a story at a porch table, her husband beside her with a smile he can't stop, snow falling on a sunny July street hung with bunting, Mr. Pike's wife giving him a look.
@@ -57,7 +57,7 @@ The batch table is in `stories/ep122-face-the-wall/script.md`. This row:
 In this town a story told a thousand times comes true the way its thousandth telling ends, and the narrator finds his grandpa telling a story about him to his empty chair every night, 998 times, always stopping before the end. He's scared it will keep him home, but his grandpa was saving the thousandth telling for him, so he tells it himself with the ending he wants, coming home every Sunday to fish, and it comes true.
 
 ## The opening recipe (playbook v1), point by point
-1. Line 1 is a count rule (`count`): a thousand tellings, and the tag shows 997 from frame 1. 9 words, about 2.0 s.
+1. Line 1 is the place's rule as a limit (`must`: "you can't"), and the tag shows 997 from frame 1. 9 words, about 2.0 s.
 2. Frame 1 is a close-up of Grandpa's face in his armchair, eyes shut, mid-telling, lit warm from the lamp below, the slate soft behind him with 997, the tag at 997. A face and the count in the first frame. No wide.
 3. A sound hit on "TIMES": a soft chalk tap.
 4. L02 states the clause at once.
@@ -120,12 +120,12 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 | S15 | L15 | Night: me walking up the gravel to the shop, face to camera. |
 | S16 | L16 | Outside, through the shop window: Grandpa in his chair, lamp-lit, the empty chair across from him. |
 | S17 | L17 | Grandpa's face, eyes shut, mouth moving, telling. |
-| S18 | L18 | Over Grandpa's shoulder: my empty red armchair, lamp-lit. Cover frame (`cover_s` 30.6). |
+| S18 | L18 | Over Grandpa's shoulder: my empty red armchair, lamp-lit. |
 | S19 | L19 | Close: my chair's worn arm. |
-| S20 | L20 | Grandpa's face, closer, eyes shut, lit from below. |
+| S20 | L20 | Grandpa's face, closer, eyes shut, lit from below, tag at 997. Cover frame (`cover_s` 33.0). |
 | S21 | L21 | The slate by the till, chalk 997. |
 | S22 | L22 | My face at the window, `uneasy`. |
-| S23 | L23 | Grandpa locking the screen door at nine, then sitting back down, face to camera, `neutral`. |
+| S23a, S23b | L23 | (a) Close cutaway: the screen door's latch hook dropping into its eye on its own swing, no hand in frame. (b) Grandpa sitting back down in his chair, hands on the chair arms, face to camera, `neutral`. |
 | S24 | L24 | The shop from outside, one low lamp on (steady), the river dark. |
 | S25 | L25 | My face at the screen door, `uneasy`, listening. |
 | S26 | L26 | Grandpa's face, eyes shut, telling. |
@@ -169,7 +169,7 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 | S63a, S63b | L63 | (a) The night river through the shop window, moon on it, no faces. (b) Grandpa's face in his chair, `warm`, eyes open, listening. |
 | S64 | L64 | Sunday: my face in my apartment doorway, `uneasy`, my jacket half on (running late), keys on the counter beside me. |
 | S65 | L65 | My face through the windshield, `stunned`, then laughing, the river road outside. |
-| S66 | L66 | The screen door opening on Grandpa holding the door, face to camera, `smile`, two rigged rods leaning beside him. |
+| S66 | L66 | The screen door already propped open with a tackle box, Grandpa in the doorway with his hands at his sides, face to camera, `smile`, two rigged rods leaning beside him. |
 | S67 | L67 | Grandpa in his chair at night, eyes shut, telling, `smile`. |
 | S68 | L68 | Grandpa's face in his chair, `shut`, telling, a wider `smile`. |
 | S69 | L69 | The slate: a new 9. |
@@ -187,8 +187,8 @@ A plain tally: two river-blue strokes scratched into the brass rim of the minnow
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: Here, any story / told a thousand TIMES / comes true.
-- L02: However it ENDS / on the thousandth.
+- L01: Here, you can't tell a story / a thousand TIMES.
+- L02: The thousandth / comes TRUE, / however it ENDS.
 - L03: Mrs. Ortiz / told one / about a man who couldn't stop SMILING.
 - L04: Now her HUSBAND / can't.
 - L05: Old Mr. Pike / told one / about SNOW in July.
@@ -239,8 +239,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L49: He just nodded / at the empty chair. / MINE.
 - L50: He'd told it / nine hundred / ninety-nine TIMES,
 - L51: and never once / told the END.
-- L52: Because the end / was never HIS.
-- L53: He was saving / the thousandth / for ME.
+- L52: He was saving / the END,
+- L53: and the thousandth, / for ME.
 - L54: However I ended it, / it would come TRUE.
 - L55: So I sat DOWN.
 - L56: And I told it. / The whole THING.
@@ -251,15 +251,15 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L61: Grandpa / opened his EYES.
 - L62: The chalk said / one THOUSAND.
 - L63: And for a while, / we just sat there / and listened / to the RIVER.
-- L64: Last Sunday, / I was running LATE.
-- L65: My car / took the river road / by ITSELF.
-- L66: Grandpa had / two rods READY.
+- L64: Now on Sundays, / if I'm running LATE,
+- L65: my car takes / the river road / by ITSELF.
+- L66: Grandpa has / two rods READY.
 - L67: He's started / a NEW one now.
 - L68: About an old man / who catches / the biggest fish / in the RIVER.
 - L69: Nine nights IN.
 - L70: And he says / I get to tell / the END.
 
-(Loop: L70 runs straight into L01: "And he says I get to tell the end. Here, any story told a thousand times comes true.")
+(Loop: L70 runs straight into L01: "And he says I get to tell the end. Here, you can't tell a story a thousand times.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt. Grandpa's leaking roof is a fib to call me home.
@@ -269,3 +269,12 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - The chalk is only ever seen on the slate, never in a hand. The slate shows numerals only.
 - Mrs. Ortiz's husband keeps a wide steady `smile`, never `grin`. Every warm face is `smile` or `warm`.
 - Title, description, pin and captions checked against hard rule 8.
+
+## Fixes (standards r1)
+- L01, L02 and `"opening"`: retagged `must` and said that way. L01 "Here, you can't tell a story / a thousand TIMES." L02 "The thousandth / comes TRUE, / however it ENDS." The batch now runs ban, cost, if, confess, cost, must, count. The loop from L70 still reads.
+- Description: "comes true" is gone ("any story told a thousand times happens, exactly the way the thousandth ends").
+- L64, L65 off the "Last NIGHT," opener: "Now on Sundays, / if I'm running LATE," and "my car takes / the river road / by ITSELF." L66 follows in the present ("Grandpa has / two rods READY.").
+- L52, L53 off the "Not X, it was Y" cadence: "He was saving / the END," and "and the thousandth, / for ME."
+- S23 is a no-hand cutaway of the latch hook dropping into its eye, then Grandpa sitting (S23a, S23b). S66: the door propped open, Grandpa in the doorway, hands at his sides.
+- Nice-to-have taken: `cover_s` moved to S20 (his eyes-shut face lit from below, 997), 33.0 by estimate, and the builder sets S20's real second after the voice.
+- Re-voice: L01, L02, L52, L53, L64, L65, L66.

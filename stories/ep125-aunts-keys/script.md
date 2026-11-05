@@ -11,8 +11,9 @@
   - **New ending (lore and relationships):** we no longer carry the bed across the court. I walk over for dinner every night, awake, and she keeps my old room made up anyway. Lou is named "my aunt Lou" at L09 with her face in frame, and "raised me" says plainly who she is to me.
 - **Batch 13 constraints, applied to every shot:** nothing blinks, pulses, flickers or glows on and off: the carriage lamps on every porch are steady all night, no porch light switches, no camera light, the key ring has plain brass tags (ep86's glowing tags are gone). No light change at all except one slow dawn fade at L48 (1.5 s). At most two faces in a shot, never a profile two-shot, every emotional line on one face to camera. Keys are carried on a ring at her waist, never raised to a face. Sleepwalking me walks with arms at my sides, never raised. One place: Aunt Lou's porch and front hall on the court, with my window across the fountain. No set moves. No creature.
 - **Kept apart from ep122-face-the-wall (both a relative at night):** ep122 is winter, lilac and moon blue, a 2:00 alarm clock, and a comfort passed on to me for Dad. ep125 is a warm summer night, teal and amber, 12:01 timestamps and crickets, and an aunt keeping a home for her grown nephew.
+- **Queue spacing:** ep125 and ep28-lamp-room (both "the one at night was me, sleepwalking") go out at least 7 uploads apart. The first orchestrator spaces them in `queue.txt`. The reveal (S35) is level, warm footage, never ep28's look down a stair rail.
 - **Everyone is an adult.** I'm 23. Aunt Lou is 66 (Mom's older sister, who raised me). Mr. Ames about 70, Mrs. Haddad about 50.
-- **Word count:** 484 spoken words in 69 lines (L01 to L69), all `narrator`, plus one music drop (0.6 s before L35).
+- **Word count:** 487 spoken words in 69 lines (L01 to L69), all `narrator`, plus one music drop (0.6 s before L35).
 - **Estimated length:** about 112 s at 290 wpm with 0.15 s gaps, the drop and the loop tail (the long arm).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A horseshoe court of twelve narrow red-brick houses round a stone fountain, ivy, painted doors in a row of colors, each with a steady brass carriage lamp. Daytime beats are sunny and saturated. The night beats are warm amber pools on teal doors and brick, a deep teal sky with stars, never black.
 - **Hold:** scripts only (batch 13). Not built, not voiced.
@@ -42,7 +43,7 @@ The batch table is in `stories/ep122-face-the-wall/script.md`. This row:
 - **How the narrator is the exception:** mine is the only door besides hers that never clicks.
 - **The loved one at stake:** my aunt Lou, named at L09 ("My aunt LOU / raised me / in number ONE."), her face in frame in her doorway.
 - **First real scare (L31 to L36, about 48 to 53 s, 45%):** at 12:04 somebody walks slowly up her steps in sneakers, eyes shut, and it's me.
-- **The climax turns the logic of her keys:** she can't lock me in (my bolt turns from inside, L47), so she makes hers the only door I can open (L45, L46). Then I turn what I was walking to: not the room, her table (L58 to L60), and I go there awake. No new magic.
+- **The climax turns the logic of her keys:** she can't lock me in (my bolt turns from inside, L47), so she makes hers the only door I can open (L45, L46). Then I work out what I was walking to, her table (L58 to L60), and I go there awake. No new magic.
 - **Twist and reveal (L35 to L43, about 52 to 64 s):** shown in one picture (S35: on the footage, my own face, eyes shut, in the warm lamp on her top step, her teal door behind me) and said plainly (L41, L42).
 - **How the last 15 seconds turn over the first line:** I eat at her table every night, sleep all night, my room is still made up just in case, and she still does her rounds. "So if you ever wonder who's clicking at midnight," runs straight into L01, which now sounds like the kindest thing on the court.
 - **The plants a rewatch catches:**
@@ -84,7 +85,7 @@ The narrator's aunt Lou, the locksmith who raised him, locks almost every house 
 ## The strange part (no creature)
 No creature and no creature test. The frightening thing is me, a person made wrong only by being asleep: eyes shut, face calm, walking slowly with my arms at my sides, trying handles.
 - **Creature playbook section 2, applied to a person:** the wrong silhouette in one line is "a man walking slowly up a lit step with his eyes shut and his arms hanging still", never an object (rule 1). Nothing stretched (rule 2). The scale proof is her door and her shoulder in the same frame (rule 3). Part first (rule 4): sneakers on her bottom step (L33), then my shut eyes (L34), then my whole face (L35). Light from behind and below (rule 5): her carriage lamp beside the door rims my head, and the warm doormat bounce lights my chin from below at L33 and L34. At the reveal (L35) my face is warm-lit and clear, because it's me (the fix). My one lit identity cue is my white sneakers, lit on the step (rule 12).
-- **Continuity:** the camera sits on my sill across the fountain from L21. Lou comes out at 12:01 (L24), goes left round the court (L26, L27), comes back to her porch at 12:03 (L29) with a blue blanket folded over her arm, and stands to the right of her door. I come up her steps at 12:04 (L32 to L34) from the left. Her door is shut but unlocked: I try the handle (L37), it opens (L38), and she steps in behind me and puts the blanket round my shoulders (L39). Before sunrise (L48) she walks me back across the court to number seven. On Thursday's footage (L52 to L57) the same, but I reach Mr. Ames's coral door first, and she sits on his steps after.
+- **Continuity:** the camera sits on my sill across the fountain from L21. Lou comes out at 12:01 (L24), goes left round the court (L26, L27), comes back to her porch at 12:03 (L29) with a blue blanket folded over her arm, and stands to the right of her door. I come up her steps at 12:04 (L32 to L34) from the left. Her door is shut but unlocked: I try the handle (L37), it opens (L38), and she steps in behind me, and at L39 the blanket is already round my shoulders (we never see it go on), her hands out of frame or flat on my back below the shoulders. Before sunrise (L48) she walks me back across the court to number seven. On Thursday's footage (L52 to L57) the same, but I reach Mr. Ames's coral door first, and she sits on his steps after.
 
 ## Palette
 - Brick red `#b8553f`, ivy green `#3f8f4f`, Lou's door teal `#1f8a8a`, my door butter `#ffd86b`, lamp amber `#ffb347`, night teal sky `#1d3f5a` with stars (never black), cobble gray `#8c8c94`, geranium red `#e2463b`, Lou's raincoat yellow `#ffd23f`, the blanket blue `#4f7fd8`, my navy `#26386a`, my sneakers white `#f6f6f6`.
@@ -143,11 +144,11 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 | S33 | L33 | Low: the sneakers on the middle step, the doormat's warm bounce. |
 | S34 | L34 | Close: closed eyes, lamp rim on the hair, face lit from below (the face not yet clear). |
 | (drop) | | 0.6 s: voice and room only, crickets. Her door. |
-| S35 | L35 | The reveal picture, held 1.6 s: my own face on her top step, eyes shut, calm, warm-lit and clear, her teal door and geraniums behind me. |
+| S35 | L35 | The reveal picture, held 1.6 s: the footage from my sill, the camera level and straight on (never looking down, no stair or rail in frame), my own face on her top step, eyes shut, calm, warm-lit and clear, her teal door and geraniums behind me. |
 | S36 | L36 | My face (awake, in my room), `stunned`, the footage's light on me. |
 | S37 | L37 | The footage: my hand on her handle, low in frame. |
 | S38 | L38 | Her door swinging open. |
-| S39 | L39 | Lou putting the blue blanket round my shoulders (her face to camera over my shoulder, `warm`, my eyes shut). |
+| S39 | L39 | The blue blanket already round my shoulders as the shot opens. Lou's face to camera over my shoulder, `warm`, her hands out of frame (or flat on my back below the shoulders), my eyes shut. Nothing between our faces. |
 | S40 | L40 | Her hall: my back going up the stair with the blanket (no face needed: the line is where I go), Lou at the foot, face to camera, `tired`. |
 | S41 | L41 | My face in my room, `stunned`. |
 | S42 | L42 | My face, closer, `sad`. |
@@ -167,8 +168,8 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 | S56 | L56 | Close: Lou's key in his lock, the click. |
 | S57 | L57 | Lou sitting on his steps, face to camera, `tired`, shaking. |
 | S58 | L58 | My face, `sad`. |
-| S59 | L59 | My old room through her hall door, bed made (no face). |
-| S60a, S60b | L60 | (a) Lou's round kitchen table, two chairs, a soup pot. (b) Lou's face at the stove, `smile`. |
+| S59 | L59 | Through her hall door, past the stair: her round kitchen table at the end of the hall, two chairs, the lamp on (no face). |
+| S60a, S60b | L60 | (a) Closer on Lou's kitchen table, two places set, a soup pot on the stove behind. (b) Lou's face at the stove, `smile`. |
 | S61 | L61 | My face, `sad`. |
 | S62 | L62 | Six o'clock sun: me walking across the court to her teal door, face to camera, `smile`. |
 | S63 | L63 | Lou's face, `smile`, ladling soup at table height. |
@@ -184,7 +185,7 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 2. **S05, S06, S16, L05, L06, L16:** each neighbor, one whole head per shot.
 3. **S35, S43, S47b, S54, L35, L43, L47, L54:** my sleeping face, whole head, warm-lit.
 4. **S13, S15a, S17, S18, S20, S36, S41, S42, S52, S58, S61, L13 to L20, L36, L41, L42, L52, L58, L61:** my awake face.
-Hands: keys turn in locks low in frame, my hand on a handle low in frame, the ladle at table height, the blanket goes round shoulders. Nothing near a face, no raised hands. S40 shows my back by intent (the line is where she takes me): list it in `framing_ok`.
+Hands: keys turn in locks low in frame, my hand on a handle low in frame, the ladle at table height, the blanket is already round my shoulders at S39 and Lou's hands stay out of frame or low on my back. Nothing near a face, no raised hands. S40 shows my back by intent (the line is where she takes me): list it in `framing_ok`.
 
 ## Lore connection (`stories/lore.md`)
 A plain tally: two amber strokes scratched into Aunt Lou's brass door plate, just below the numeral 1, two for a house built for two (Lou and me). No extra stroke, no Keeper, no thread touched. Seen in S09b under L09 ("My aunt LOU / raised me / in number ONE."), held 1.2 s, not narrated.
@@ -251,7 +252,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L56: She turned his key / with one second / to SPARE.
 - L57: She sat on his steps / after, / and SHOOK.
 - L58: So I thought / about where / I was walking TO.
-- L59: Not the ROOM.
+- L59: I was walking / to her TABLE.
 - L60: Her TABLE. / Twenty years / of dinners at six.
 - L61: And since I moved out, / I hadn't / been back ONCE.
 - L62: So now, / every night at SIX, / I walk over. / AWAKE.
@@ -272,3 +273,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - The footage is the same warm render as life, never gray or noisy, with the timestamp only in the tag.
 - Every warm face is `smile` or `warm`, never `grin`.
 - Title, description, pin and captions checked against hard rule 8.
+
+## Fixes (standards r1)
+- Queue spacing line added (ep125 and ep28 at least 7 uploads apart), and the same note is in its ideas.md Made row. S35 is pinned as level, warm, straight-on footage with no stair or rail, so it never echoes ep28's stair-rail framing.
+- L59 said straight, off the "Not X, it was Y" cadence: "I was walking / to her TABLE." L60 kept. S59 now shows her kitchen table down the hall, and S60a closes in on it.
+- S39: the blanket is already round my shoulders when the shot opens, Lou's face to camera over my shoulder, her hands out of frame or flat on my back below the shoulders. The continuity and hands notes follow.
+- Re-voice: L59.

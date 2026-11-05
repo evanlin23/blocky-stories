@@ -5,7 +5,7 @@
 - **Title:** Never Face The WALL At Grandma's 🛏️
 - **Batch 13 constraints, applied to every shot:** nothing on screen blinks, pulses, flickers or glows on and off. The hall light under the door is steady all film, and the only light changes are two slow dawn fades (L21 and L30, each 1.5 s). At most two faces in any shot, never a profile two-shot, and every emotional line is one face on a close-up facing camera. Nothing is held near a face and no hand is raised near one. The scare is a face. One house, small still sets, no set moves. No creature.
 - **Everyone is an adult.** I'm 26, Dad 55, Grandma Elsie 81, Aunt Ro and cousin Ezra (montage only) adults.
-- **Word count:** 489 spoken words in 68 lines (L01 to L68), all `narrator`, plus one music drop (0.6 s before L34).
+- **Word count:** 488 spoken words in 68 lines (L01 to L68), all `narrator`, plus one music drop (0.6 s before L34).
 - **Estimated length:** about 112 s at 290 wpm with 0.15 s gaps, the drop and the loop tail (the long arm).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Winter at Grandma's: a bright snowy morning kitchen in butter and mint for every breakfast beat (the bright frame between nights), and the upstairs at night in lilac and moon blue with one gold stripe of hall light under the door. The nights are readable, never murky: the moon fills the window, the quilt is bright rose, and faces get a soft cool fill. Time cue: a round wind-up alarm clock on the nightstand with hands only, reading 2:00, never lit.
 - **Hold:** scripts only (batch 13). Not built, not voiced.
@@ -17,11 +17,11 @@
 | ep123-sorry-shrink | Aunt Mae's sun-porch card table | an aunt the size of a mug | `cost` | `misread` | comedy: a nephew and his ruthless aunt |
 | ep124-future-call | Dad's garage workshop | a caller who only breathes | `if` | `listening` | making a memory on purpose (the batch's one sad reveal, soft) |
 | ep125-aunts-keys | Aunt Lou's porch on a brick court at midnight | me, asleep, eyes shut, at her door | `confess` | `it-was-me` | an aunt keeping a home for a grown nephew |
-| ep126-nine-oh-nine | an empty main street and the feed store roof | two figures dancing on a roof | `cost` | `no-author` | grandparents' sixty-year date |
-| ep127-thousand-tellings | Grandpa's tackle shop on the river | Grandpa telling a story to an empty chair, eyes shut | `count` | `open-ending` | choosing home on my own terms |
+| ep126-nine-oh-nine | an empty main street and the feed store roof | a face in moon shadow on a roof | `cost` | `no-author` | grandparents' sixty-year date |
+| ep127-thousand-tellings | Grandpa's tackle shop on the river | Grandpa telling a story to an empty chair, eyes shut | `must` | `open-ending` | choosing home on my own terms |
 | ep128-zero-feet | my one-room apartment and its stairwell | footsteps overhead in step with mine | `count` | `in-step` | a mom who can't let go, and I'm glad |
 
-Rule types, all different: a sleeping rule (ep122), a price for apologies (ep123), a call from later (ep124), no supernatural rule, only a locksmith's keys (ep125), a curfew nobody made (ep126), stories that come true by count (ep127), a family-distance meter (ep128). Two `cost` and two `count` openings: upload.py keeps them apart (order 2 and 5, 6 and 7 split by the queue). ep122 and ep125 are both a relative at night, so their palettes (lilac and moon blue in winter against teal and amber in summer), their time cues (a 2:00 alarm clock against 12:01 timestamps) and their warmth (a comfort passed on against a home kept) are kept apart.
+Rule types, all different: a sleeping rule (ep122), a price for apologies (ep123), a call from later (ep124), no supernatural rule, only a locksmith's keys (ep125), a curfew nobody made (ep126), stories that come true by count (ep127), a family-distance meter (ep128). Two `cost` openings and one each of `ban`, `if`, `confess`, `must` and `count` (ban, cost, if, confess, cost, must, count after standards r1): upload.py keeps the two `cost` apart (order 2 and 5). ep122 and ep125 are both a relative at night, so their palettes (lilac and moon blue in winter against teal and amber in summer), their time cues (a 2:00 alarm clock against 12:01 timestamps) and their warmth (a comfort passed on against a home kept) are kept apart.
 
 ## The big idea
 **At Grandma's, "never sleep facing the wall or something sits on your bed" sounds like a ghost story, but the something is Grandma: in our family you only turn to the wall when you're sad, so the rule is how she knows whose bed to sit on, and when her knees can't make the stairs, the rule never said who sits.**
@@ -30,7 +30,7 @@ Rule types, all different: a sleeping rule (ep122), a price for apologies (ep123
 - **Why it clicks:** everyone who broke the rule broke it on a sad night (L05, L07), the blanket is always tucked in the morning (L06, L22), the big pancake always goes to whoever had the bad night (L23, L24, L40), the thing is small (L19), the floor creaks as it leaves (L38) and her slippers are by the door (L39).
 - Ten pitched, this one kept. Dropped: the something is a ghost (death words), a Keeper on the bed (stand-in), the dog (warm-shoes' pet), me sleepwalking (ep28, ep86), Grandpa (a sad reveal), the house itself (a place awake, ep95), Dad all along (no reveal), a version of me (ep92), a cover story Grandma made up (ep103's shape, and ep126 in this batch), the rule as a test (abstract).
 - Checked against "Claimed big ideas" and every twist: not ep103 (nobody made the figure up, the figure is real), not ep83 (nobody pays a price), not ep114 (no town around one sad person: one grandma, one bed at a time). Shape `comfort`.
-- **The rule is the clue:** "Something sits on your bed" first reads as a threat. After L46 it's a promise, and the climax uses its own word: something, never who.
+- **The rule is the clue:** "Something sits on your bed" first reads as a threat. After L46 it's a promise, and the climax uses its own word: something, so it could be anybody.
 
 ## The story
 - **Premise:** Every bed in Grandma Elsie's house is pushed against a wall, and the family rule is never to sleep facing it, or something sits on your bed. I've never broken it. This Christmas I drive up with my whole apartment in my car, because I lost my job, and I turn to the wall.
@@ -42,7 +42,7 @@ Rule types, all different: a sleeping rule (ep122), a price for apologies (ep123
 - **How the narrator is the exception:** twenty-six Christmases and I've never once faced the wall (L09 to L11).
 - **The loved ones at stake:** my dad (named "my DAD" at L13, in frame at L14 in his doorway) and Grandma Elsie (named at L09, at the stove at L23).
 - **First real scare (L31 to L38, about 53 to 64 s, 47%):** it sits behind my head, I turn over, and a face is an inch from mine with its eyes wide open.
-- **The climax turns the rule's own logic:** the rule says something sits on your bed, it never says who (L54, L55). With her knees too bad for the stairs, I sit on Dad's. No new magic.
+- **The climax turns the rule's own logic:** the rule says something sits on your bed, and something could be anybody (L54, L55). With her knees too bad for the stairs, I sit on Dad's. No new magic.
 - **Twist and reveal (L42 to L50, about 70 to 85 s):** shown in one picture (S45: through Dad's half-open door, Grandma in her mint cardigan sitting on the edge of his bed, Dad facing the wall) and said plainly (L46, L47).
 - **How the last 15 seconds turn over the first line:** the pancake I made for Dad, Grandma's wink, and on the last night her own door open a crack with her facing the wall, so I go to sit on hers. The last line, "It's the one rule she ever taught us:", runs straight into L01, which now means: come and sit with us.
 - **The plants a rewatch catches:**
@@ -54,7 +54,7 @@ Rule types, all different: a sleeping rule (ep122), a price for apologies (ep123
 - **Sad family reveal?** No. Dad is sad for me, and it's shown warm.
 
 ## Quotable line
-**L55: "It never says / WHO."**
+**L55: "Something. / Could be ANYBODY."**
 
 ## Clarity test (cold, two sentences)
 At the narrator's grandma's house, the rule is never to sleep facing the wall or something sits on your bed, and when he faces it after losing his job, something sits on his bed three nights running. The something is Grandma, who sits with whoever faces the wall because in the family that means they're sad, and when her knees can't make the stairs he sits on his sad dad's bed for her, then on hers.
@@ -85,7 +85,7 @@ Every word is the narrator's. L08 is reported.
 
 ## The strange part (no creature)
 No creature and no creature test. The frightening thing is a person, never fully shown until it's warm: a dent in the mattress behind me, a light weight on my shoulder through the quilt, breathing, and at L34 a face an inch from mine.
-- **Creature playbook section 2, applied to a person:** the wrong silhouette is one line, "something small and still on the edge of a bed, behind a man facing the wall", never an object (rule 1). Nothing stretched (rule 2): it's small, and the scale proof is my own shoulder and the bed edge in the same frame (rule 3). Part first (rule 4): the dent (L17), the weight (L28), the breathing (L32), then the face (L34). Light from behind (rule 5): the steady hall-light stripe from the door behind her rims her curls and the edge of her cheek, her front in cool shadow, two small eye glints the brightest thing (rule 7: her glasses are off). Her one lit identity cue is the mint cardigan's pearl buttons catching the hall light at L44 (rule 12), not at L34, so the scare doesn't give her away. Never "lit warm from the front" until the reveal at L45, where the warm lamp in Dad's room lights her face.
+- **Creature playbook section 2, applied to a person:** the wrong silhouette is one line, "something small and still on the edge of a bed, behind a man facing the wall", never an object (rule 1). Nothing stretched (rule 2): it's small, and the scale proof is my own shoulder and the bed edge in the same frame (rule 3). Part first (rule 4): the dent (L17), the weight (L28), the breathing (L32), then the face (L34). Light from behind (rule 5): the steady hall-light stripe from the door behind her rims her curls gold, and a soft cool moon fill from the window lights her front enough that her drawn eyes, nose line and mouth read at phone size (her glasses are off). No eye glints. Her one lit identity cue is the mint cardigan's pearl buttons catching the hall light at L44 (rule 12), not at L34, so the scare doesn't give her away. Never "lit warm from the front" until the reveal at L45, where the warm lamp in Dad's room lights her face.
 - **Continuity:** nights 1 to 3 (L17 to L38) it sits on the open side of my bed, behind me, between me and the door. Night 1 at my feet (L18), night 2 at my knees with its weight on my shoulder (L27, L28), night 3 at my head (L31). She leaves by the door, and the floor creaks once (L38). Night 4 (L42 to L45) she's on the edge of Dad's bed across the hall, his lamp on low and steady. Night 5 (L52) she's at the bottom of the stair, sitting on the second step (seen once, L52). Night 6 (L65) she's in her own bed facing her wall, her door open a crack.
 
 ## Palette
@@ -144,8 +144,8 @@ Times are estimates. Every line gets one to three shots with acting in each, and
 | S32 | L32 | My face, closer, `scared`, my hair stirring once. |
 | S33 | L33 | My face as I roll over away from the camera (the camera stays at the wall: the back of my head turning). Held 0.8 s. |
 | (drop) | | 0.6 s: voice and room only. Black-blue room. |
-| S34 | L34 | The scare, from behind my shoulder: a face an inch from the camera, lit only from behind by the hall stripe (a gold rim on white curls and the edge of one cheek), the front in moon-blue shadow, two small eye glints. Held 1.3 s with a slow push. Cover frame (`cover_s` 58.2). |
-| S35 | L35 | The two glints, closer. |
+| S34 | L34 | The scare, from behind my shoulder: a face an inch from the camera, facing it, the drawn eyes wide, the nose line and the small closed mouth all readable under a soft cool moon fill from the window side, the white curls rim-lit gold by the hall stripe behind. Still unidentified: an old face in moon light, no cardigan in frame (head and curls only). Held 1.3 s with a slow push. |
+| S35 | L35 | Closer on the same face, the drawn eyes wide open and clearly drawn, the moon fill steady, the gold rim on the curls. |
 | S36 | L36 | My face (camera now at the room side), eyes squeezing shut, `scared`. |
 | S37 | L37 | The quilt over my arm, a small flat palm patting twice (the hand only, at waist height). |
 | S38 | L38 | The gold stripe on the floor, a small shadow crossing it once, the door brushing. |
@@ -185,7 +185,7 @@ The builder's framing pre-check (`scripts/framing.py`) reads exactly these. Each
 1. **S01a, S10, S12, L01, L10, L12:** my face on the pillow or close.
 2. **S13a, S23, S25b, L13, L23, L25:** Grandma's face, whole head in frame, at the stove and on the stair.
 3. **S14, L14:** Dad's face in his doorway, whole head.
-4. **S34, S35, L34, L35:** the scare face, rim-lit from behind (intended dark front, list in `framing_ok`).
+4. **S34, S35, L34, L35:** the scare face, features lit by the cool moon fill, the curls rim-lit (face readable at phone size, no `framing_ok` dark-front exception).
 5. **S45, S46, S49, L45, L46, L49:** Grandma's face, warm-lit, the reveal.
 6. **S57, S59, S60, L57, L59, L60:** me on Dad's bed, then Dad's face.
 7. **S61 to S63, L61 to L63:** Dad, me, Grandma's wink.
@@ -251,8 +251,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L51: Dad had seen / the boxes / in my CAR.
 - L52: The fifth night, / Grandma's knees / wouldn't make the STAIRS.
 - L53: And Dad / faced the wall AGAIN.
-- L54: The rule says / SOMETHING sits on your bed.
-- L55: It never says / WHO.
+- L54: The rule says / SOMETHING / sits on your bed.
+- L55: Something. / Could be ANYBODY.
 - L56: So I crossed the HALL,
 - L57: and sat down / on the edge / of my dad's BED.
 - L58: I didn't say a WORD.
@@ -273,6 +273,12 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt. "Lost my job" is the only hardship, and Dad's sadness is never explained beyond the boxes in my car.
 - The nights are the film's one dark stretch, split by bright breakfast cuts every 8 to 15 s, so the dark never runs over about 12 s at a time. Keep night faces readable: a cool fill on the face, the hall stripe steady, the moon bright. No light switches, no lamp turning on: Dad's lamp is already on low when we see his room.
 - The only light changes are the two dawn fades (S21, S30), each one smooth 1.5 s fade.
-- Grandma's eyes at S34 are two small `kit.emit` glints, never discs. Her `wink` at S63 is a warm face on a warm beat, never `grin`.
+- Grandma's face at S34 and S35 is her own drawn face (eyes wide open, mouth small and still), lit by the moon fill so the features read, never glints in a dark front. Her `wink` at S63 is a warm face on a warm beat, never `grin`.
 - The twist is said in words (L46, L47) and shown in one warm picture (S45). It never rests on her silhouette: the mint cardigan is a cue at S44, and the line names her at L45.
 - Title, description, pin and captions checked against hard rule 8.
+
+## Fixes (standards r1)
+- L54, L55 reworded off the "it never says who" loophole cadence (rule-three, ep54): L54 "The rule says / SOMETHING / sits on your bed." L55 "Something. / Could be ANYBODY." The quotable-line mark moved with it, and the climax notes follow.
+- S34, S35 restaged: the scare face's drawn eyes, nose line and mouth read under a cool moon fill, the curls rim-lit gold, the cardigan out of frame. No eye glints, no dark front, and the `framing_ok` exception for them is gone.
+- Nice-to-have taken: `cover_s` moved from 58.2 (the darkest frame) to 30.0 (S17b, my scared face, tag at 1). The builder sets it to S17b's real second after the voice.
+- Re-voice: L54, L55.

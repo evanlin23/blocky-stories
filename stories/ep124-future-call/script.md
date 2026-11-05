@@ -6,7 +6,7 @@
 - **The batch's one sad family reveal, kept soft:** it's never said why future me needs to hear Dad laugh. No death or illness word anywhere. The feeling lands as a sting, and the story ends warm (every Saturday, a new bad joke).
 - **Batch 13 constraints, applied to every shot:** the phone is a cream wall phone with a speaker grille, fixed to the wall beside the pegboard at chest height. It is never lifted, and no handset ever comes near a face (panel note). I press its speaker button with one flat finger at chest height. Nothing blinks, pulses or glows: the phone has no lights, and the call timer is the on-screen tag, not a display. No light change at all (one sunny noon, the garage door open). At most two faces in a shot, never a profile two-shot, every emotional line on one face to camera. One garage, no set moves. No creature.
 - **Everyone is an adult.** I'm 30 today. Dad (Hank) is 62.
-- **Word count:** 279 spoken words in 44 lines (L01 to L44), all `narrator`, plus one music drop (0.5 s before L26).
+- **Word count:** 276 spoken words in 44 lines (L01 to L44), all `narrator`, plus one music drop (0.5 s before L26).
 - **Estimated length:** about 65 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright two-car garage on a Saturday noon: the roll-up door open on a sunny driveway and a green lawn, a red pickup half inside, a long workbench, a pegboard of outlined tools, an old radio on a shelf, sawdust in the sun.
 - **Hold:** scripts only (batch 13). Not built, not voiced.
@@ -19,7 +19,7 @@ The batch table is in `stories/ep122-face-the-wall/script.md`. This row:
 | Dad's garage workshop on my 30th birthday | a caller who only breathes | `if`: a condition | `listening` | making a memory on purpose (sad, soft) |
 
 ## The big idea
-**On your thirtieth birthday your future self calls you once with advice, and mine said nothing for nine minutes because he didn't call to talk: he called to hear Dad laugh in this garage one more time.**
+**On your thirtieth birthday your future self calls you once with advice, and mine said nothing for nine minutes because he kept quiet on purpose: he called to hear Dad laugh in this garage one more time.**
 
 - **Why it clicks:** everyone else's future self has advice (L03 to L06), the breathing goes quiet whenever I talk (L16, L17), it shakes whenever Dad laughs (L20 to L22), and it goes soft like someone trying not to cry (L24, L25).
 - Ten pitched, this one kept. Dropped: future me warns me about something (a disaster, too dark), future me is Dad (confusing), the caller is a stranger (no turn), the call is from my brother (no rule), I hear my own voice (ep120's house voice, a copy), the call changes the past (engine 27, banned), future me is lost and needs help (a trap), future me only laughs (no reveal), the call never ends (a loop, ep115), I call back (no rule).
@@ -27,16 +27,16 @@ The batch table is in `stories/ep122-face-the-wall/script.md`. This row:
 - **The rule is the clue:** "It's you, calling from later" sounds like a gift of advice. After L27, it's a man reaching back for a sound he can't hear anymore, and the advice is the silence itself.
 
 ## The story
-- **Rule / hook (L01, about 2.8 s):** "If your phone rings / on your thirtieth BIRTHDAY, / it's YOU, / calling from LATER." L02: "You get one call. / That's IT."
+- **Rule / hook (L01, 11 words, about 2.2 s):** "If your phone rings / on your thirtieth, / it's YOU, / from LATER." L02: "You get one call. / That's IT."
 - **The relatable want or fight:** turning thirty and wanting someone to tell you it'll all be okay.
-- **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream tag top-left with a phone glyph and a number: "30" (my birthday) from frame 1, switching at L10 to a call timer counting up (00:00 to 09:12 by L38, where it stops and holds). Numerals and glyphs only.
-- **The 3 to 5 example montage (L03 to L06, about 4 to 13 s):** Mom under a sturdy new umbrella, my uncle bailing a little rowboat with a cup (cheerful), my best friend at a kitchen table with his sister, both laughing.
+- **The marker (the rule meter), on screen by frame 1 and in every shot:** a small cream tag top-left with a phone glyph and a number: "1" (one call, L02's rule) from frame 1, switching at L10 to a call timer counting up (00:00 to 09:12 by L38, where it stops and holds). Numerals and glyphs only.
+- **The 3 to 5 example montage (L03 to L06, about 4 to 13 s):** Mom at a rainy patio table under a big red table umbrella, my uncle bailing a little rowboat with a cup (cheerful), my best friend at a kitchen table with his sister, both laughing.
 - **A concrete mystery by 15 s:** nine minutes of breathing and not one word (L11, L12, about 17 to 19 s).
 - **How the narrator is the exception:** everybody's future self has advice. Mine says nothing.
 - **The loved one at stake:** my dad, named "Dad" at L08 in frame, at his bench.
 - **First real "scare" (L11 to L17, about 17 to 25 s):** breathing on the line that stops whenever I speak, as if someone's listening very hard.
 - **The climax turns the rule's own logic:** you get one call, and it's yours to use (L02). Future me can't talk without wasting it, so I make the call worth it: I stop talking and get Dad laughing for all nine minutes (L30 to L37). No new magic.
-- **Twist and reveal (L26 to L29, about 38 to 43 s):** said plainly ("He didn't call / to TALK. / He called / to LISTEN.") over one picture (S27: my face beside the wall phone, `stunned`, Dad laughing soft-focus behind me at the bench).
+- **Twist and reveal (L26 to L29, about 38 to 43 s):** said plainly ("He kept QUIET / on PURPOSE. / He called / to LISTEN.") over one picture (S27: my face beside the wall phone, `stunned`, Dad laughing soft-focus behind me at the bench).
 - **How the last 15 seconds turn over the first line:** I save up Dad's laughs for a call I'll make one day, and I won't say a word. L01's "it's you, calling from later" is now a promise I'm keeping to myself.
 - **The plants a rewatch catches:**
   1. L16, L17: the breathing goes quiet every time I talk, like he's listening.
@@ -54,7 +54,7 @@ In this town your future self calls you once on your thirtieth birthday with adv
 
 ## The opening recipe (playbook v1), point by point
 1. Line 1 is a condition (`if`). 14 words, about 2.8 s.
-2. Frame 1 is a close-up of my face beside the cream wall phone (the phone at the frame's left edge, my face centre-right), sun on my face, the tag at "30". A face and the rule's object in the first frame. No wide.
+2. Frame 1 is a close-up of my face beside the cream wall phone (the phone at the frame's left edge, my face centre-right), sun on my face, the tag at "1" beside the phone glyph. A face and the rule's object in the first frame. No wide.
 3. A sound hit on "LATER": a soft single ring, low, from the wall phone (the bell sound only, no light).
 4. L02 states the limit at once.
 5. L03 to L06 show the rule at work, one shot per beat.
@@ -62,14 +62,14 @@ In this town your future self calls you once on your thirtieth birthday with adv
 
 ## World
 - **Dad's garage:** a white two-car garage with the roll-up door open, a red pickup nose-in on one side, a long maple workbench, a pegboard with drawn tool outlines, a radio on a shelf (off), a coffee can of bolts, two stools, the cream wall phone with a round speaker grille and one square button, fixed beside the pegboard at chest height. Outside: a sunny driveway, a green lawn, a basketball hoop on the garage (no net text).
-- **Montage rooms (one shot each):** Mom on a rainy sidewalk under a big red umbrella, my uncle in a little green rowboat on a pond, my best friend and his sister at a kitchen table.
+- **Montage rooms (one shot each):** Mom at a rainy patio table under a big red umbrella fixed in the table, my uncle in a little green rowboat on a pond, my best friend and his sister at a kitchen table.
 - **No text anywhere.**
 - **What's true underneath (never said):** the calls are simply how that town is. You only ever get the one.
 
 ## Cast
 - `me` (a man, 30 today, the narrator): short black hair, light brown skin, a gray T-shirt under an open plaid overshirt, jeans, work gloves tucked in a back pocket (never on a hand near the face). Faces: `neutral`, `uneasy`, `stunned`, `sad`, `smile`, `laugh`, `warm`.
 - `dad` (my dad, Hank, 62): a gray mustache, gray hair under a red cap, a navy work shirt with rolled sleeves, the same skin. Faces: `neutral`, `smile`, `laugh`, `warm`. Named "Dad" at L08.
-- `mom` (my mom, adult, one shot at L03): a yellow raincoat, under a red umbrella held at shoulder height (the umbrella pole at her side, the canopy above her head, her face clear).
+- `mom` (my mom, adult, one shot at L03): a yellow raincoat, seated at a patio table under a big red umbrella fixed in the table, hands flat on the tabletop, nothing held, her face clear.
 - `uncle` (my uncle, adult, one shot at L04): a bucket hat, in a rowboat.
 - `friend` and `sister` (my best friend and his sister, adults, one shot at L05).
 
@@ -97,13 +97,13 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 
 | Shots | Lines | Picture |
 |---|---|---|
-| S01a, S01b | L01 | (a) Close: my face beside the cream wall phone, sun on my face, tag at "30". (b) Punch in on "LATER". |
+| S01a, S01b | L01 | (a) Close: my face beside the cream wall phone, sun on my face, tag at the phone glyph and "1". (b) Punch in on "LATER". |
 | S02 | L02 | My face, `neutral`, a small nod. |
-| S03 | L03 | Mom on a rainy sidewalk under a big red umbrella, face to camera, `smile`. |
+| S03 | L03 | Mom seated at a rainy patio table under a big red umbrella fixed in the table, her hands flat on the tabletop, face to camera and clear, `smile`. |
 | S04a, S04b | L04 | (a) My uncle in a little green rowboat, face to camera, `sheepish`. (b) Close: a little water in the boat's bottom. |
 | S05 | L05 | My best friend and his sister at a kitchen table, both faces to camera, `laugh`. |
 | S06 | L06 | My face, `smile`, the phone at the frame's edge. |
-| S07 | L07 | A cake with a "3" and "0" shaped from candy on the workbench (numerals only, no candles lit). |
+| S07 | L07 | A plain frosted cake on the workbench, no numerals, no candles. |
 | S08 | L08 | Dad at the far end of the bench, face to camera, `smile`, the radio in pieces. |
 | S09 | L09 | Close: the wall phone, the ring heard (no light). |
 | S10a, S10b | L10 | (a) My flat finger pressing the speaker button at chest height. (b) My face, `smile`, saying hello. The tag flips to 00:00. |
@@ -156,7 +156,7 @@ A plain tally: two motor-oil-amber strokes scratched into the steel lid of Dad's
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: If your phone rings / on your thirtieth BIRTHDAY, / it's YOU, / calling from LATER.
+- L01: If your phone rings / on your thirtieth, / it's YOU, / from LATER.
 - L02: You get one call. / That's IT.
 - L03: My mom's / told her / to buy a better UMBRELLA.
 - L04: My uncle's / told him / to sell the BOAT. / He didn't. / It LEAKS.
@@ -182,7 +182,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L24: and the line / went SOFT.
 - L25: Like somebody / trying not to CRY.
 - (drop 0.5)
-- L26: He didn't call / to TALK.
+- L26: He kept QUIET / on PURPOSE.
 - L27: He called / to LISTEN.
 - L28: To Dad, / laughing / in this GARAGE.
 - L29: One more TIME.
@@ -202,7 +202,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L43: For a call / I'm going to make / one DAY.
 - L44: I won't say / a WORD.
 
-(Loop: L44 runs straight into L01: "I won't say a word. If your phone rings on your thirtieth birthday, it's you, calling from later.")
+(Loop: L44 runs straight into L01: "I won't say a word. If your phone rings on your thirtieth, it's you, from later.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. No death, illness or loss word anywhere. The sad reveal is only implied by L29 ("One more TIME.") and stays soft.
@@ -210,3 +210,10 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - The breathing is the only strange thing. Keep it soft and low, never a hiss or rasp (no harsh sound).
 - Every warm face is `smile`, `laugh` or `warm`, never `grin`.
 - Title, description, pin and captions checked against hard rule 8.
+
+## Fixes (standards r1)
+- L01 cut to 11 words, about 2.2 s: "If your phone rings / on your thirtieth, / it's YOU, / from LATER." The loop from L44 still reads.
+- No age on screen: the tag opens on the phone glyph with "1" (one call, L02) and flips to the call timer at L10. S07 is a plain cake with no numerals.
+- L26 said straight, off the "Not X, it was Y" cadence: "He kept QUIET / on PURPOSE." L27 kept.
+- S03: Mom sits at a rainy patio table under a big red umbrella fixed in the table, hands flat, face clear. Nothing held.
+- Re-voice: L01, L26.
