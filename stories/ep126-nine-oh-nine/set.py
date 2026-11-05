@@ -257,7 +257,8 @@ def build_street(kit):
     cane = plastic("#6a4a2e", 0.5)
     ce = kit.empty("cane", (G.CANE[0], G.CANE[1] + 0.2, top + 0.5), rot=(-0.28, 0, 0))
     kit.box("cane.shaft", (0.04, 0.04, 1.0), (0, 0, 0.35), cane, ce)
-    kit.box("cane.hook", (0.14, 0.04, 0.04), (0.05, 0, 0.87), cane, ce)
+    kit.box("cane.hook", (0.22, 0.05, 0.05), (0.08, 0, 0.87), cane, ce)
+    kit.box("cane.curl", (0.05, 0.05, 0.14), (0.17, 0, 0.8), cane, ce)
     # ---- the ladder
     iron = kit.metal("#4a4f5c", 0.45)
     lx = G.LADDER_X
@@ -265,16 +266,16 @@ def build_street(kit):
         kit.box(f"lad.rail{sx}", (0.07, 0.07, ZR + 1.0), (lx + sx * 0.28, 9.14, (ZR + 1.0) / 2 - 0.05), iron)
         for z in (1.5, 3.5, 5.7):
             kit.box(f"lad.bk{sx}{z}", (0.08, 0.16, 0.12), (lx + sx * 0.28, 9.06, z), iron)
-    worn = kit.metal("#d4d9e2", 0.25)
+    worn = kit.plastic("#eef1f6", 0.6)
     for i in range(int((ZR + 0.7) / 0.3)):
         z = 0.35 + i * 0.3
         kit.cyl(f"lad.rung{i}", 0.027, 0.56, (lx, 9.14, z), iron, rot=(0, math.pi / 2, 0), n=10)
-        kit.cyl(f"lad.worn{i}", 0.031, 0.26, (lx, 9.14, z), worn, rot=(0, math.pi / 2, 0), n=10)
+        kit.cyl(f"lad.worn{i}", 0.035, 0.3, (lx, 9.14, z), worn, rot=(0, math.pi / 2, 0), n=10)
     # the tally: two lavender strokes scratched into the top rung bracket (1 cm proud)
-    tm = kit.plastic("#b79ce8", 0.5)
-    kit.box("lad.plate", (0.34, 0.03, 0.3), (lx + 0.28, 9.0, 5.7), iron)
+    tm = kit.plastic("#d2bcff", 0.5)
+    kit.box("lad.plate", (0.5, 0.03, 0.34), (lx + 0.15, 9.0, 5.7), kit.metal("#6d7488", 0.45))
     for k in range(2):
-        kit.box(f"lad.tally{k}", (0.03, 0.012, 0.2), (lx + 0.2 + k * 0.1, 8.98, 5.7), tm)
+        kit.box(f"lad.tally{k}", (0.04, 0.012, 0.26), (lx + 0.1 + k * 0.1, 9.032, 5.7), tm)
     # ---- the town notice board under its little roof (glyph notice only)
     bx, by = G.BOARD
     wd = plastic("#8a5a34", 0.7)
