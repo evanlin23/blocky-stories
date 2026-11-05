@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -368,22 +368,22 @@ shot("L13.1", cam(APX - 2.2, 4.9, APZ + 1.4, 1.3, lens=50, push=0.12), name="s13
 # L14: returned days are restocked: Mr. Tulley carries an armful through the door
 only("L14", ["tulley"])
 bdoor("L14-0.1", -100, dur=0.5)
-put("tulley", "L14", [AR, 6.4], 180, expr="polite", arms=[88, 88])
-go("tulley", "L14+0.9", [AR, 9.4])
-go("tulley", "L14.1+0.35", [AR, 12.4])
+put("tulley", "L14", [2.4, 6.4], 180, expr="polite", arms=[88, 88])
+go("tulley", "L14.1+0.1", [2.4, 9.0])
+go("tulley", "L14.2+0.2", [2.4, 10.3])
+go("tulley", "L14.2+0.8", [2.4, 11.9])
 hold("L14", "gb3", "tulley", (0.0, -0.78, 1.2))
 hold("L14", "gb4", "tulley", (0.0, -0.78, 1.46))
 hold("L14", "gb5", "tulley", (0.0, -0.78, 1.72))
 shot("L14", cm([-4.2, 8.7, 1.5], [AR, 8.7, 1.3], [-4.0, 8.7, 1.5], [AR, 8.7, 1.3], 36), name="s14a")
-bdoor("L14.1+0.3", 0, dur=0.6)
-unobj("L14.1+0.6", "gb3")
-unobj("L14.1+0.6", "gb4")
-unobj("L14.1+0.6", "gb5")
-only("L14.1+0.8", [])
-shot("L14.1", cam(AR, 10.0, 1.3, 2.4, lens=40, push=0.1), name="s14b")
+shot("L14.1", cm([0.2, 5.0, 1.7], [2.4, 10.6, 1.35], [0.6, 5.6, 1.7], [2.4, 10.9, 1.35], 34), name="s14b")
+unobj("L14.2+0.85", "gb3")
+unobj("L14.2+0.85", "gb4")
+unobj("L14.2+0.85", "gb5")
+only("L14.2+0.85", [])
 # L15: in the back room they sit on a shelf in little gray boxes
-bdoor("L15-0.1", -22, dur=0.5)
-shot("L15", cm([2.1, 8.6, 1.5], [AR, 15.0, 1.7], [2.35, 9.2, 1.5], [AR, 15.0, 1.7], 45), look="dim", name="s15a")
+bdoor("L15-0.1", -70, dur=0.5)
+shot("L15", cm([1.0, 6.2, 1.6], [AR - 0.1, 12.5, 1.7], [1.5, 7.2, 1.6], [AR - 0.1, 12.5, 1.7], 38), look="dim", name="s15a")
 shot("L15.2", cam(0.85, 16.0, 1.9, 0.9, az=90, lens=50, push=0.12), name="s15b")
 # L16: somebody can buy them, four dollars each
 bdoor("L16", 0, dur=0.6)
@@ -476,14 +476,8 @@ shot("L26", cam(BACKX + 14.0, 0, 1.2, 1.6, lens=40, push=0.2), name="s26")
 # L27: somebody in this town is living my worst days
 put("me", "L27", [APX, 7.0, APZ], 180, expr="scared", arms=[0, 0])
 shot("L27", cam(APX, 6.9, APZ + 1.5, 1.4, az=180, lens=45, push=0.08), name="s27a")
-only("L27.1", ["p1", "p2", "p3"])
-put("p1", "L27.1", [APX - 2.0, 11.6, 0], 90, expr="neutral")
-go("p1", "L27.1>", [APX + 3.0, 11.6, 0])
-put("p2", "L27.1", [APX + 3.0, 12.3, 0], -90, expr="neutral")
-go("p2", "L27.1>", [APX - 2.5, 12.3, 0])
-put("p3", "L27.1", [APX + 0.0, 11.8, 0], 90, expr="neutral")
-go("p3", "L27.1>", [APX + 4.0, 11.8, 0])
-shot("L27.1", cm([APX, 7.4, APZ + 1.5], [APX + 0.5, 12.0, 0.8], [APX + 0.4, 7.4, APZ + 1.5], [APX + 0.8, 12.0, 0.8], 50), name="s27b")
+beat("me", "L27.1", head=[25, 5], expr="scared")
+shot("L27.1", cam(APX, 7.0, APZ + 1.45, 1.0, az=160, el=4, lens=45, push=0.12), name="s27b")
 # L28: forty-seven times
 only("L28", ["me"])
 put("me", "L28", [APX - 1.0, 4.6, APZ], 0, expr="worried", arms=[0, 0], head=[0, 10])
@@ -499,7 +493,7 @@ only("L29", ["me", "tulley"])
 put("me", "L29", [-5.0, 6.2], 90, expr="neutral", arms=[0, 0])
 beat("me", "L29.2", head=[-30, 0], expr="worried")
 put("tulley", "L29", [-0.5, 7.2], 270, expr="polite", arms=[0, 0])
-shot("L29", cam(-4.6, 6.4, 1.2, 3.0, az=-35, lens=40, push=0.1), name="s29a")
+shot("L29", cam(-4.7, 6.2, 1.3, 1.9, az=-6, lens=40, push=0.08), name="s29a")
 unobj("L29.2", "stamp")
 put("tulley", "L29.2", [-3.0, -2.4], 0, expr="polite", arms=[0, 88])
 beat("tulley", "L29.2+0.4", arms=[0, 88])
@@ -692,9 +686,10 @@ talk("me", "L53.2", "L53.3", 0.6)
 shot("L53.2", cam(RAINX, 4.8, 1.4, 1.7, lens=40, push=0.12), look="rain", name="s53b")
 only("L53.3", ["dad"])
 unobj("L53.3", "phone")
-put("dad", "L53.3", [KX + 2.4, 7.6], 180, expr="soft", arms=[0, 125])
+put("dad", "L53.3", [KX + 2.3, 8.2], 0, expr="soft", arms=[0, 125])
+beat("dad", "L53.3+0.9", expr="laugh")
 hold("L53.3", "handset", "dad", EAR)
-shot("L53.3", cam(KX + 2.4, 7.6, 1.45, 1.8, az=180, lens=40, push=0.12), look="day", name="s53c")
+shot("L53.3", cam(KX + 2.3, 8.2, 1.5, 1.6, az=0, lens=40, push=0.12), look="day", name="s53c")
 # L54: the bad days are the only days you ever call
 only("L54", ["dad"])
 unobj("L54", "handset")
@@ -787,8 +782,8 @@ put("dad", "L62", [3.03, 11.2], 0, expr="soft", arms=[0, 0])
 shot("L62", cm([2.4, 6.6, 1.7], [2.57, 11.2, 1.55], [2.5, 6.9, 1.7], [2.57, 11.2, 1.55], 32), look="dim", name="s62a")
 only("L62.2", ["me"])
 beat("me", "L62.2", arms=[88, 88], expr="soft")
-hold("L62.2", "phone", "me", (0.0, -0.45, 1.5))
-shot("L62.2", cam(2.1, 11.2, 1.5, 0.95, az=0, lens=50, push=0.1), name="s62b")
+hold("L62.2", "phone", "me", (0.0, -0.45, 1.05))
+shot("L62.2", cam(2.1, 11.2, 1.4, 1.1, az=0, lens=50, push=0.1), name="s62b")
 bdoor("L63", 0, dur=0.5)
 # L63: but I didn't return it
 only("L63", ["me"])
@@ -847,10 +842,10 @@ talk("me", "L69", "L69>", 0.6)
 shot("L69", cam(APX - 1.0, 4.6, APZ + 1.45, 1.2, lens=45, push=0.12), name="s69a")
 only("L69.0+0.9", ["dad"])
 unobj("L69.0+0.9", "phone")
-put("dad", "L69.0+0.9", [KX + 2.4, 7.6], 180, expr="startled", arms=[0, 125])
+put("dad", "L69.0+0.9", [KX + 2.3, 8.2], 0, expr="startled", arms=[0, 125])
 hold("L69.0+0.9", "handset", "dad", EAR)
 beat("dad", "L69.0+0.95", expr="grin")
-shot("L69.0+0.9", cam(KX + 2.4, 7.6, 1.45, 1.5, az=180, lens=45, push=0.12), name="s69b")
+shot("L69.0+0.9", cam(KX + 2.3, 8.2, 1.5, 1.4, az=0, lens=45, push=0.12), name="s69b")
 # L70: when we walk past Tulley's now
 only("L70", ["dad", "me"])
 unobj("L70", "handset")
@@ -871,7 +866,7 @@ beat("dad", "L71.1", arms=[0, 100])
 beat("dad", "L71.1+0.2", arms=[0, 88])
 beat("dad", "L71.1+0.45", arms=[0, 100])
 beat("dad", "L71.1+0.7", arms=[0, 88])
-shot("L71.1", cam(1.65, -4.15, 1.4, 0.55, az=160, lens=45, push=0.06), name="s71c")
+shot("L71.1", cam(1.7, -4.4, 1.35, 1.0, az=185, lens=45, push=0.06), name="s71c")
 only("L71.2", [])
 world("L71.2", "rcp", [-3.4, 3.2, 1.012], rz=-25)
 cue("L71.2", "ring", v=0.0)
@@ -912,7 +907,7 @@ sfx = [
     {"at": "L31.1", "kind": "creak", "db": -16, "dur": 1.3},
     {"at": "L38+0.3", "kind": "ding", "db": -17, "pitch": 1320, "dur": 1.2, "lp": 3200},
     {"at": "L43", "kind": "whistle", "db": -20, "dur": 1.5, "pitch": 760, "name": True},
-    {"at": "L14.1+0.5", "kind": "door", "db": -20},
+    {"at": "L14", "kind": "door", "db": -20},
     {"at": "L63.1+0.5", "kind": "thud", "db": -24},
 ]
 music = {
@@ -977,10 +972,10 @@ story = {
     "sound": sound,
     "rain_shots": [names["s22"], names["s53b"]],
     "set_moves": [],
-    # deliberate: prop and shelf b-roll under the line (S36, S56, S66, S67, S73, S74, S81, S115), the shop and kitchen
+    # deliberate: prop and shelf b-roll under the line (S36, S66, S67, S73, S74, S81, S115), the shop and kitchen
     # cutaways where the named person is the voice and not the picture (S14, S91, S94, S126, S136, S138, S144), Oduya's
     # drive-by (S20 to S25), Tulley and Dad turned away on purpose (S60, S61, S131), tight Dad crops (S103, S113)
-    "framing_ok": ["S14", "S20", "S21", "S22", "S23", "S24", "S25", "S36", "S56", "S60", "S61", "S66", "S67", "S73",
+    "framing_ok": ["S14", "S20", "S21", "S22", "S23", "S24", "S25", "S36", "S60", "S61", "S66", "S67", "S73",
                    "S74", "S81", "S91", "S94", "S103", "S113", "S115", "S126", "S131", "S136", "S138", "S144"],
     "clip_ok": ["mbx", "van", "S09", "S10", "bk"],
     "asr_forgive": ["mister tulley", "tulley's", "tulley", "mister", "missus", "returned", "dollars", "i've", "we'd", "every", "one", "unhappens"],
