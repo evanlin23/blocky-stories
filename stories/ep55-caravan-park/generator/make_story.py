@@ -584,6 +584,7 @@ fx = []
 
 story = {
     "rev": 7,
+    "frames_ok": ["S68"],   # a blink lands on S68's first drawing as the steady walk starts on the cut (no pose pop)
     "staging_ok": ["S13/me+jory", "S17/me+jory", "S22/me+jory", "S23/me+jory", "S27/me+jory", "S75/me+jory", "S76/me+jory", "S77/me+jory", "S81/me+jory"],
     "clip_ok": ["S01/me", "S01/jory", "S05/train", "S06/train", "S07/flake20", "S07/flake22", "S07/flake47", "S23/me", "S75/jory", "S76/jory", "S77/jory", "S81/flake40", "S81/flake46"],
     "slug": "ep55-caravan-park",

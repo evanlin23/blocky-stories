@@ -1,5 +1,8 @@
 {
  "rev": 7,
+ "frames_ok": [
+  "S68"
+ ],
  "staging_ok": [
   "S13/me+jory",
   "S17/me+jory",
