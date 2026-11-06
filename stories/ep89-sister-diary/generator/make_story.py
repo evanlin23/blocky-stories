@@ -666,7 +666,7 @@ S("L71", MV((-3.2, 3.45, 1.55), (-3.2, 4.38, 1.58), (-3.25, 4.0, 1.6), (-3.25, 4
   look={"cutwall": False},
   note="the framed bookshelf photo on my wall, a sea-green spine among the books")
 S("L72", MV((0.9, 1.1, 1.65), (-1.3, 1.15, 1.55), (0.7, 1.1, 1.65), (-1.3, 1.15, 1.55), 22),
-  who={"me": (X(-0.85, 1.4), 90, "worried", {}), "nina": (X(-1.9, 1.0), 90, "worried", {})},
+  who={"me": (X(-0.85, 1.28), 90, "worried", {}), "nina": (X(-1.9, 0.92), 90, "worried", {})},
   look={"cutwall": True},
   note="me and Nina side by side at my desk, worried")
 write("blue", "L73", "green", dur=1.0, to=1.0, tag="third2")
