@@ -550,6 +550,17 @@ def animate(kit, story, tl, t, ctx):
     bpy.context.view_layer.update()
     if not W.get("inited"):
         _first_frame(kit, story)
+    # the extras (moustache, earrings, sunglasses) follow their owner's visibility on every frame, so a render
+    # process that starts while Mom or Dad is hidden (a shard start) never shows them floating on their own
+    hid = {}
+    for who in ("mom", "dad"):
+        root = bpy.data.objects.get(who)
+        hg = bpy.data.objects.get(f"{who}.headg")
+        hid[who] = (root is not None and root.hide_render) or (hg is not None and hg.hide_render)
+    for nm in ("dad.stache", "dad.stacheL", "dad.stacheR", "mom.ear-1", "mom.ear1"):
+        ob = bpy.data.objects.get(nm)
+        if ob is not None:
+            _hide(ob, hid[nm.split(".")[0]])
     look = look_at(tl, t)
     gains = {}
     az, el = look["az"] * D2R, look["el"] * D2R
@@ -612,7 +623,7 @@ def animate(kit, story, tl, t, ctx):
         sh = W["obj"].get(f"{who}.shades")
         if sh is not None:
             v = sample("shades", tl, t, {"v": 0.0}, key=who)
-            _hide(sh, v["v"] < 0.5)
+            _hide(sh, v["v"] < 0.5 or hid[who])
 
     # glow: levels, emission on the skin, the lamp that follows the head
     oth = None
