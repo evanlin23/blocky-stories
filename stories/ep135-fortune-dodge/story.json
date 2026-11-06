@@ -15,7 +15,7 @@
  "tail": 0.2,
  "fade_in": false,
  "fade_out": false,
- "rev": 11,
+ "rev": 13,
  "look": {
   "style": "closer",
   "fog": "#bfe6ff",
@@ -34,9 +34,7 @@
    "twist": "L38",
    "hold": [
     "S08",
-    "S52",
     "S57",
-    "S60",
     "S11",
     "S61",
     "S40"
@@ -7115,8 +7113,10 @@
     "to": "P01>"
    }
   ],
-  "rev": 11
+  "rev": 13
  },
  "set_moves": [],
- "framing_ok": []
+ "framing_ok": [
+  "S56"
+ ]
 }
