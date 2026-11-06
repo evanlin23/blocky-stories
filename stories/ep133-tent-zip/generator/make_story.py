@@ -1,0 +1,31 @@
+"""Writes ../story.json for ep133-tent-zip. PHASE 1 STUB: only what the creature test still (S29) needs.
+The full cast, shots, lines, music and sound come in the real build."""
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+OUT = HERE.parent / "story.json"
+FACE = {"eyes": "round", "brows": True, "ink": "#24131f"}
+cast = {
+    "me": {"age": "adult", "skin": "#c98f5a", "shirt": "#c8323a", "pattern": "plaid", "pattern_c": "#7a1c24",
+           "pants": "#3b4a6a", "shoes": "#2a2a30", "sleeves": "long", "hair": "cap", "hair_c": "#14110f",
+           "hat": "beanie", "hat_c": "#8a8d92", "body_width": 0.72, "face": dict(FACE)},
+}
+acting = {"me": [{"at": 0, "pos": [-0.55, 0.0, -0.45], "yaw": 180, "expr": "scared", "blend": 0},
+                 {"at": 3.0, "pos": [-0.55, 0.0, -0.45]}]}
+story = {
+    "slug": "ep133-tent-zip", "title": "Your Tent Can't Open After DARK", "made_for_kids": False,
+    "premise": "stub", "twist": "stub", "world": "a tangerine tent at night",
+    "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45}, "key_color": "#9fc4ff", "gap": 0.15,
+    "look": {"style": "closer", "polish": {"hold": ["S29"]}, "flash_safe": True, "fog": "#101830", "fog_density": 0.0,
+             "fog_start": 20, "sky": "#101830"},
+    "grade": {"shadows": [-0.01, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 1.1, "contrast": 1.04,
+              "vignette": 0.2, "bloom": 0.25, "grain": 0.008},
+    "tail": 0.25, "cast": cast,
+    "lines": [{"id": "P1", "pause": 3.0, "chunks": [["", ""]]}],
+    "shots": [{"id": "S29", "cam": [[0, [-0.1, 2.0, 0.85], [-0.1, -0.3, 1.25], 11]]}],
+    "acting": acting, "cues": [],
+    "music": {"root": 52, "mode": "minor", "bpm": 96, "seed": 133, "sections": [{"at": 0, "voices": ["drone"], "energy": 0.3}]},
+    "sound": {"rev": 1, "floor": "grass"},
+}
+OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
