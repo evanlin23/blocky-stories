@@ -313,11 +313,11 @@ def build_radio(kit, top):
     z0 = top + 0.5
     cream = kit.plastic("#f1e6c8", 0.5, spec=0.3)
     dark = kit.plastic("#3a3a44", 0.6)
-    root = kit.empty("radio", (rx, ry, z0))
+    root = kit.empty("radio", (rx, ry, z0), rot=(0, 0, math.pi))   # its face (grille, knob) looks north, to the S30 and S41 cameras
     kit.box("radio.body", (0.36, 0.13, 0.23), (0, 0, 0.115), cream, root, bevel=0.015)
     for i in range(5):
         kit.box(f"radio.grille{i}", (0.2, 0.014, 0.02), (-0.05, -0.07, 0.07 + i * 0.03), dark, root)
-    knob = kit.empty("radio.knobe", (0.12, -0.07, 0.17), root)
+    knob = kit.empty("radio.knobe", (-0.12, -0.07, 0.17), root)
     kit.cyl("radio.knob", 0.035, 0.03, (0, 0, 0), kit.plastic("#c0503a", 0.4), knob, rot=(math.pi / 2, 0, 0), n=14)
     kit.box("radio.mark", (0.01, 0.02, 0.05), (0, -0.016, 0.0), kit.plastic("#fffaf0", 0.5), knob)
     kit.box("radio.handle", (0.28, 0.03, 0.03), (0, 0, 0.26), dark, root)

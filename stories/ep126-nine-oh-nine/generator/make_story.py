@@ -311,7 +311,7 @@ key("grandma", "L33", expr="polite")
 shot("S33", "L33", cam(G.SIT_G[0] + 0.1, G.SIT_G[1], hz("grandma", ZR), 3.1, 188, 30, cz=hz("grandma", ZR) + 0.1,
                        lookz=hz("grandma", ZR) - 0.3))
 shot("S34", "L34", [[0, [G.BOARD[0] - 0.3, -0.6, 1.6], [G.BOARD[0], G.BOARD[1], 1.5], 28]])
-shot("S35", "L35", [[0, [0.0, 2.6, ZR + 1.1], [0.0, -26.0, 2.2], 22]])
+shot("S35", "L35", [[0, [0.0, 0.3, ZR + 2.6], [0.0, -24.0, 1.5], 22]])
 shot("S36", "L36", cam(1.3, 5.0, ZR, 3.0, 8, 26, cz=ZR + 1.3))
 key("grandpa", "L37", yaw=0, expr="warm")
 shot("S37", "L37", face(G.GP_STAND[0], G.GP_STAND[1], hz("grandpa", ZR), 3, 0.34, 30, up=0.04))
@@ -335,10 +335,10 @@ shot("S40b", "L40.1", face(GMA[0], GMA[1], hz("grandma", ZR), 178, 0.42, 30, up=
 cue("L41", "dance", amp=0.0, dur=0.4)
 key("grandma", "L41", GMA[:2], yaw=180, expr="smile", arms=[0, 0])
 key("grandpa", "L41", GPA[:2], yaw=0, arms=[0, 0], lean=0)
-key("grandpa", "L41+0.45", [0.0, 5.4], yaw=-90, expr="smile", arms=[40, 0], lean=38)
-key("grandpa", "L41+1.2", arms=[44, 0])
+key("grandpa", "L41+0.45", [0.1, 5.5], yaw=-90, expr="smile", arms=[0, 40], lean=14)
+key("grandpa", "L41+1.2", arms=[0, 44])
 cue("L41+1.1", "radio", on=1.0, dur=1.0)
-shot("S41", "L41+0.5", cam(G.RADIO[0], G.RADIO[1], ZR + 0.55, 1.3, 170, 30, cz=ZR + 0.7))
+shot("S41", "L41+0.5", cam(G.RADIO[0] - 0.12, G.RADIO[1], ZR + 1.0, 2.3, 175, 30, cz=ZR + 0.85))
 cue("L42", "time", hh=5, mm=50)
 cue("L42", "dance", amp=1.0, dur=0.3)
 cue("L42", "sky", id="pale")
@@ -448,8 +448,8 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "frames_ok": ["S03", "S27a", "S28"],
-    "framing_ok": ["S12b", "S25", "S40b", "S41", "S26", "S26b", "S30", "S35"],
+    "frames_ok": ["S05", "S03", "S27a", "S28"],
+    "framing_ok": ["S12b", "S25", "S41", "S26", "S26b", "S30", "S35"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
