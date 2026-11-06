@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 13
+REV = 14
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -482,11 +482,18 @@ put("dad", "L62", [NX + 0.6, NY + 0.5, AZ], 180, expr="warm")
 shot("L62", mv([NX + 0.6, NY + 4.6, AZ + 1.6], [NX + 0.6, NY + 0.5, AZ + 1.5], 32, [NX + 0.6, NY + 4.0, AZ + 1.6], [NX + 0.6, NY + 0.5, AZ + 1.5], 32), "dad_doorway")
 # ----------------------------------------------------------------------------- 08 eggs, sorry, Sundays (L63..L71)
 cue("L62+0.8", "eggs", v=1.0)
-put("dad", "L63", [NX - 3.4, NY + 4.3, AZ], 30, expr="smile", arms=[0, 0])
-shot("L63", mv([NX - 1.6, NY + 1.6, AZ + 1.9], [NX - 3.7, NY + 4.0, AZ + 1.2], 22, [NX - 1.7, NY + 1.8, AZ + 1.85], [NX - 3.7, NY + 4.0, AZ + 1.2], 22), "dad_stove")
-cue("L64+0.9", "toast", v=1.0, dur=0.12)
-put("dad", "L64", [NX - 3.0, NY + 5.95, AZ], 30, expr="sheepish", arms=[0, 0])
-shot("L64", mv([NX - 1.9, NY + 3.0, AZ + 1.7], [NX - 3.6, NY + 5.95, AZ + 1.2], 17, [NX - 1.7, NY + 3.4, AZ + 1.65], [NX - 3.6, NY + 5.95, AZ + 1.2], 17), "toast")
+# S79: Dad at the stove, turned to the pan, his right hand on its handle, glancing round at me; the camera high over
+# the pan's near side so the pan and its two eggs sit in the bottom of the frame and his face in the top right
+cue("L63-0.01", "dadfill", v=0.3, ox=-0.9, oy=-1.3, oz=2.3, dur=0.0)
+put("dad", "L63", [NX - 3.13, NY + 4.1, AZ], 300, expr="smile", arms=[0, 72], side=[0, 0], head=[30, 6], lean=0)
+shot("L63", mv([NX - 4.05, NY + 2.45, AZ + 2.05], [NX - 3.7, NY + 3.76, AZ + 1.42], 14, [NX - 4.02, NY + 2.55, AZ + 2.02], [NX - 3.7, NY + 3.78, AZ + 1.42], 14), "dad_stove")
+# S80: a low close camera over the toaster from the wall, Dad behind it; the black toast pops on "BURNS"
+cue("L64-0.01", "dadfill", v=0.5, ox=-0.7, oy=-1.2, oz=2.2, dur=0.0)
+cue("L64+1.1", "toast", v=1.0, dur=0.12)
+cue("L65-0.02", "dadfill", v=0.0, dur=0.0)
+put("dad", "L64", [NX - 3.05, NY + 5.06, AZ], 270, expr="sheepish", arms=[0, 0], side=[0, 0], head=[12, 8], look=[0.5, 0.4])
+beat("dad", "L64+1.15", expr="sheepish", head=[18, 13], look=[0.7, 0.5])
+shot("L64", mv([NX - 4.4, NY + 5.24, AZ + 1.52], [NX - 3.2, NY + 5.13, AZ + 1.27], 12, [NX - 4.36, NY + 5.24, AZ + 1.51], [NX - 3.2, NY + 5.13, AZ + 1.275], 12), "toast")
 CH = [NX - 0.15, NX + 0.75]
 put("me", "L65", [CH[0], NY + 4.75, AZ], 0, expr="smile")
 put("dad", "L65", [CH[1], NY + 4.75, AZ], 0, expr="smile")

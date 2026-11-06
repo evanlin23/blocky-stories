@@ -722,17 +722,29 @@ def shop(kit, m, tag, ox, oy, night):
     B(kit, f"{T}.stove", X(-4.45), X(-3.75), Y(3.1), Y(4.0), zz + 0.95, zz + 1.0, m["dark"])
     for k, yy in enumerate((3.35, 3.75)):
         kit.cyl(f"{T}.burner{k}", 0.1, 0.012, (X(-4.1), Y(yy), zz + 1.006), m["black"], n=14)
-    pan = kit.empty(f"{T}.pan", (X(-4.1), Y(3.35), zz + 1.02))
-    kit.cyl(f"{T}.pan.base", 0.15, 0.04, (0, 0, 0.02), m["black"], pan, n=18)
-    kit.box(f"{T}.pan.handle", (0.04, 0.26, 0.025), (0.0, -0.3, 0.03), m["black"], pan)
-    egg = [kit.cyl(f"{T}.egg{k}", 0.065, 0.014, (dx_, dy_, 0.048), m["white"], pan, n=14) for k, (dx_, dy_) in enumerate([(-0.06, 0.03), (0.07, -0.04)])]
-    yolk = [kit.sphere(f"{T}.yolk{k}", 0.028, (dx_, dy_, 0.058), p("#ffc21a", 0.4), pan, seg=8) for k, (dx_, dy_) in enumerate([(-0.06, 0.03), (0.07, -0.04)])]
+    pan = kit.empty(f"{T}.pan", (X(-3.98), Y(3.35), zz + 1.02))
+    # a big pan, its handle out over the counter's edge toward the room (Dad holds it in S79), two fried eggs
+    kit.cyl(f"{T}.pan.base", 0.2, 0.045, (0, 0, 0.022), m["black"], pan, n=24)
+    kit.box(f"{T}.pan.handle", (0.44, 0.05, 0.03), (0.41, 0.0, 0.035), m["black"], pan)
+    eggs_at = [(-0.075, 0.06), (0.07, -0.06)]
+    egg = [kit.cyl(f"{T}.egg{k}", 0.088, 0.016, (dx_, dy_, 0.062), p("#fffdf6", 0.45), pan, n=18) for k, (dx_, dy_) in enumerate(eggs_at)]
+    yolk = [kit.sphere(f"{T}.yolk{k}", 0.04, (dx_, dy_, 0.074), p("#ffb000", 0.35), pan, seg=10) for k, (dx_, dy_) in enumerate(eggs_at)]
     W[f"{T}.eggs"] = egg + yolk
-    tst = kit.empty(f"{T}.toaster", (X(-4.1), Y(5.2), zz + 0.95))
-    kit.box(f"{T}.toaster.body", (0.3, 0.34, 0.2), (0, 0, 0.1), kit.metal("#d5dae0", 0.3), tst, bevel=0.03)
+    tst = kit.empty(f"{T}.toaster", (X(-3.92), Y(5.2), zz + 0.95))
+    # a butter-yellow toaster, big enough to read in S80's close shot; its two slices burnt black
+    kit.box(f"{T}.toaster.body", (0.36, 0.42, 0.25), (0, 0, 0.125), p("#f0b43c", 0.4, spec=0.3), tst, bevel=0.04)
+    kit.box(f"{T}.toaster.lever", (0.06, 0.05, 0.05), (0.2, 0.12, 0.17), m["dark"], tst)
     toast = []
-    for k, dy_ in enumerate((-0.08, 0.08)):
-        ts = kit.box(f"{T}.toast{k}", (0.22, 0.05, 0.16), (0, dy_ * 0.0 + (dy_), 0.18), p("#1c1410", 0.8), tst)
+    crust = p("#6e3f18", 0.85, spec=0.05)
+    burnt = p("#1a0f08", 0.9, spec=0.03)
+    for k, dx_ in enumerate((-0.095, 0.095)):   # slots across, so S80's camera sees a slice face on
+        ts = kit.box(f"{T}.toast{k}", (0.07, 0.26, 0.2), (dx_, 0, 0.2), crust, tst)
+        for j, cy_ in enumerate((-0.065, 0.065)):   # the bread's rounded crown, two lobes on the top edge
+            kit.cyl(f"{T}.toast{k}c{j}", 0.068, 0.07, (0, cy_, 0.1), crust, ts, rot=(0, math.pi / 2, 0), n=16)
+        # the burnt face, a hair proud of the crust on both sides
+        kit.box(f"{T}.toast{k}b", (0.09, 0.2, 0.16), (0, 0, 0.0), burnt, ts)
+        for j, cy_ in enumerate((-0.058, 0.058)):
+            kit.cyl(f"{T}.toast{k}bc{j}", 0.05, 0.09, (0, cy_, 0.09), burnt, ts, rot=(0, math.pi / 2, 0), n=16)
         toast.append(ts)
     W[f"{T}.toast"] = toast
     # jacket hook by the door
@@ -1012,8 +1024,8 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = pl["v"] < 0.5
     ta = sample("toast", tl, t, {"v": 0.0})
     for k, ob in enumerate(W["shop.toast"]):
-        ob.location.z = 0.18 + 0.1 * ta["v"]
-        ob.hide_render = ta["v"] < 0.02
+        ob.location.z = 0.2 + 0.1 * ta["v"]
+        _hide(ob, ta["v"] < 0.02)
     # the dog
     dg = sample("dog", tl, t, {"v": 0.0})
     W["dogtail"].rotation_euler = (0, 0.55 * math.sin(t * 14.0) * dg["v"], 0)
