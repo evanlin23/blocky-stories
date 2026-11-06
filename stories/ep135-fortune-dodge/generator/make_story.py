@@ -235,18 +235,18 @@ shot("S08", "L08", cam_at([CX, CY - 2.4, 1.6], [CX, CY + 0.95, 1.58], 28, [CX, C
 shot("S08b", "L08.2", cam_at([CX, CY - 1.9, 1.6], [CX, CY + 0.95, 1.58], 32, [CX, CY - 1.7, 1.6], [CX, CY + 0.95, 1.58], 32), "day")
 # ===== S09 to S12 the rule
 HIDE("me", "L09")
-TP("ray", "L09", RAYC, 0, "neutral", arms=[0, 40], side=[0, 70])
+TP("ray", "L09", RAYC, 0, "neutral", arms=[0, 0], side=[112, 0])
 cue("L09", "finger", on=True)
 cue("L10", "finger", on=False)
-shot("S09", "L09", cam_face(RAYC, 0, "ray", 4.0, 6, 34, shift=-0.35, d2=3.6), "day")
+shot("S09", "L09", cam_face(RAYC, 0, "ray", 4.2, 6, 34, shift=0.5, d2=3.8), "day")
 TP("ray", "L10", RAYC, 0, "smile")
 shot("S10", "L10", cam_face(RAYC, 0, "ray", 2.9, -10, 34, shift=0.12, d2=2.6), "day")
 shot("S10b", "L10.2", cam_face(RAYC, 0, "ray", 2.3, 16, 34, d2=2.0), "day")
 RAYK = [CX - 2.45, CY - 0.5, -0.2]
 cue("L11", "kneel", on=True)
 cue("L12", "kneel", on=False)
-TP("ray", "L11", RAYK, -45, "neutral", arms=[20, 25], side=[0, 40], head=[35, 0])
-shot("S11", "L11", cam_face(RAYK, -45, "ray", 3.4, 45, 24, shift=-0.2, hdz=-0.45, tdz=-0.55, d2=3.1), "dawn")
+TP("ray", "L11", RAYK, -45, "neutral", arms=[0, 0], side=[0, 35], head=[55, 0])
+shot("S11", "L11", cam_face(RAYK, -45, "ray", 3.4, 65, 24, shift=-0.2, hdz=-0.75, tdz=-0.6, d2=3.1), "dawn")
 TP("ray", "L12", [CX - 0.3, CY + 0.95, 0.0], 0, "smile")
 shot("S12", "L12", cam_at([CX - 0.3, CY - 2.0, 1.6], [CX - 0.3, CY + 1.0, 1.45], 26, [CX - 0.3, CY - 1.6, 1.6],
                           [CX - 0.3, CY + 1.0, 1.45], 26), "day")
@@ -348,7 +348,7 @@ shot("S32b", "L32.3", cam_face(RAYD, 0, "ray", 2.6, -12, 34, shift=-0.12, d2=2.3
 HIDE("ray", "L33")
 cue("L33", "grillhot", on=True)
 cue("L34", "grillhot", on=False)
-shot("S33", "L33", cam_at([CX - 3.4, CY - 3.9, 2.0], [CX - 0.85, CY - 0.05, 1.5], 22, [CX - 3.2, CY - 3.7, 2.0], [CX - 0.85, CY - 0.05, 1.5], 22),
+shot("S33", "L33", cam_at([CX - 2.1 - 0.75, CY - 3.35, 3.0], [CX - 0.75, CY - 0.05, 1.45], 22, [CX - 2.0 - 0.75, CY - 3.2, 3.0], [CX - 0.75, CY - 0.05, 1.45], 22),
      "dusk", face=False, key=3.0, exp=-0.3)
 TP("ray", "L34", RAYC, 0, X("sad"))
 shot("S34", "L34", cam_face(RAYC, 0, "ray", 2.8, 8, 34, d2=2.5), "dusk")
@@ -369,9 +369,9 @@ shot("S38", "L38", cam_at([MACH[0], -0.4, 0.5], [MACH[0], 4.0, 2.0], 24, [MACH[0
 M39 = [MACH[0] - 1.2, 2.2, 0.0]
 TP("me", "L39", M39, 0, X("sad"))
 shot("S39", "L39", cam_face(M39, 0, "me", 2.8, -10, 34, d2=2.5), "dusk")
-M40 = [CX - 1.0, CY - 1.3, -0.3]
-TP("me", "L40", M40, 0, X("sad"), head=[0, 8], lean=8)
-shot("S40", "L40", cam_at([CX + 0.25, CY - 4.4, 1.5], [CX + 0.25, CY, 1.0], 26, [CX + 0.3, CY - 4.2, 1.5], [CX + 0.3, CY, 1.0], 26),
+M40 = [CX - 0.6, CY - 1.3, 0.0]
+TP("me", "L40", M40, 0, X("sad"))
+shot("S40", "L40", cam_at([CX + 0.05, CY - 3.5, 2.8], [CX + 0.0, CY - 0.6, 1.2], 16, [CX + 0.1, CY - 3.3, 2.8], [CX + 0.05, CY - 0.6, 1.2], 16),
      "dusk", cover=True)
 # ===== S41 to S45 the night
 CBN = CB
@@ -455,8 +455,8 @@ HIDE("me", "L61")
 RAYK2 = [CX - 2.45, CY - 0.5, -0.2]
 cue("L61", "kneel", on=True)
 cue("L62", "kneel", on=False)
-TP("ray", "L61", RAYK2, -45, "smile", arms=[20, 25], side=[0, 40], head=[35, 0])
-shot("S61", "L61", cam_face(RAYK2, -45, "ray", 3.4, 45, 24, shift=-0.2, hdz=-0.45, tdz=-0.55, d2=3.1), "day")
+TP("ray", "L61", RAYK2, -45, "smile", arms=[0, 0], side=[0, 35], head=[55, 0])
+shot("S61", "L61", cam_face(RAYK2, -45, "ray", 3.4, 65, 24, shift=-0.2, hdz=-0.75, tdz=-0.6, d2=3.1), "day")
 HIDE("ray", "L62")
 cue("L62.2", "mcard", on=True)
 cue("L63", "mcard", on=False)

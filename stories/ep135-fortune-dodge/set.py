@@ -313,10 +313,10 @@ def build_cart(kit):
         noshadow(o)
     B(None, (1.04, 0.66, 0.05), (gx, gy, 1.175), char, "cart.grill", 0.012)
     for k in range(5):
-        B(None, (0.9, 0.05, 0.05), (gx, gy - 0.24 + k * 0.12, 1.225), char2, "grill.bar", 0.01)
+        B(None, (0.05, 0.5, 0.05), (gx - 0.36 + k * 0.18, gy, 1.225), char2, "grill.bar", 0.01)
     # when hot the bars glow orange-red: slightly fatter shells round the dark ones (cue grillhot), steady
     hot = kit.emit("#e82200", 1.0, name="grillbars")
-    W["grillglow"] += [B(None, (0.92, 0.062, 0.062), (gx, gy - 0.24 + k * 0.12, 1.225), hot, "grillhot.bar", 0.01) for k in range(5)]
+    W["grillglow"] += [B(None, (0.064, 0.52, 0.064), (gx - 0.36 + k * 0.18, gy, 1.225), hot, "grillhot.bar", 0.01) for k in range(5)]
     for o in W["grillglow"][1:]:
         noshadow(o)
     smk = P("#a9a5b6", 1.0, 0.0)
@@ -354,8 +354,8 @@ def build_cart(kit):
     hung_apron(cx - 1.0, old_c, old_pk, "apronold")
     # the second apron (coral, a cream pocket): hung, folded on the counter, or on the porch rail
     W["apron_hook"] = hung_apron(cx + 1.0, cor, pk, "apron.hook")
-    W["apron_counter"] = [B(None, (0.74, 0.55, 0.09), (cx - 0.1, cy - 0.04, 1.115), cor, "apron.counter", 0.02),
-                          B(None, (0.4, 0.28, 0.012), (cx - 0.1, cy - 0.04, 1.166), pk, "apron.counterpocket")]
+    W["apron_counter"] = [B(None, (0.66, 0.5, 0.09), (cx + 0.14, cy - 0.04, 1.115), cor, "apron.counter", 0.02),
+                          B(None, (0.36, 0.26, 0.012), (cx + 0.14, cy - 0.04, 1.166), pk, "apron.counterpocket")]
     # the umbrella: eight stripes round a pole
     ux, uy = cx + 1.4, cy + 0.6
     C(None, 0.04, 2.9, (ux, uy, 2.2), P("#c8ced8", 0.4, 0.6), "cart.umbpole", n=8)
@@ -367,12 +367,14 @@ def build_cart(kit):
     # the face-down card on the counter, and the new one (cues card, card2); stars up
     cardm, matm = P("#fff6dc", 0.6, 0.1), P("#2a1a3a", 0.7, 0.1)
     # each card lies on a dark plum mat 2.6 cm proud of the counter, so cream and gold read against the white top
-    W["card"] = [B(None, (0.98, 0.68, 0.026), (cx + 0.9, cy - 0.12, 1.083), matm, "card.mat", 0.006, rot=(0, 0, 0.2)),
-                 B(None, (0.86, 0.56, 0.014), (cx + 0.9, cy - 0.12, 1.11), cardm, "card.body", 0.003, rot=(0, 0, 0.2)),
-                 star(cx + 0.9, cy - 0.12, 1.123, 0.22, 0.095, P("#e08a00", 0.35, 0.5), "xy", 0.006, "card.star")]
-    W["card2"] = [B(None, (0.98, 0.68, 0.026), (cx - 0.1, cy - 0.22, 1.083), matm, "card2.mat", 0.006, rot=(0, 0, -0.25)),
-                  B(None, (0.86, 0.56, 0.014), (cx - 0.1, cy - 0.22, 1.11), cardm, "card2.body", 0.003, rot=(0, 0, -0.25)),
-                  star(cx - 0.1, cy - 0.22, 1.123, 0.22, 0.095, P("#e08a00", 0.35, 0.5), "xy", 0.006, "card2.star")]
+    W["card"] = [B(None, (0.9, 0.62, 0.026), (cx + 0.95, cy - 0.12, 1.083), matm, "card.mat", 0.006, rot=(0, 0, 0.12)),
+                 B(None, (0.8, 0.52, 0.014), (cx + 0.95, cy - 0.12, 1.11), cardm, "card.body", 0.003, rot=(0, 0, 0.12)),
+                 star(cx + 0.95, cy - 0.12, 1.121, 0.25, 0.108, matm, "xy", 0.004, "card.starline"),
+                 star(cx + 0.95, cy - 0.12, 1.127, 0.2, 0.087, P("#f0a000", 0.35, 0.5), "xy", 0.006, "card.star")]
+    W["card2"] = [B(None, (0.9, 0.62, 0.026), (cx + 0.2, cy - 0.2, 1.083), matm, "card2.mat", 0.006, rot=(0, 0, -0.2)),
+                  B(None, (0.8, 0.52, 0.014), (cx + 0.2, cy - 0.2, 1.11), cardm, "card2.body", 0.003, rot=(0, 0, -0.2)),
+                  star(cx + 0.2, cy - 0.2, 1.121, 0.25, 0.108, matm, "xy", 0.004, "card2.starline"),
+                  star(cx + 0.2, cy - 0.2, 1.127, 0.2, 0.087, P("#f0a000", 0.35, 0.5), "xy", 0.006, "card2.star")]
     # the spatula, on the counter between us (cue spatula)
     W["spatula"] = [B(None, (0.34, 0.035, 0.022), (cx - 0.02, cy + 0.42, 1.085), P("#7a5230", 0.6), "spat.handle", 0.006),
                     B(None, (0.14, 0.11, 0.014), (cx + 0.21, cy + 0.42, 1.085), P("#c8ced8", 0.3, 0.8), "spat.head", 0.004)]
@@ -615,8 +617,8 @@ def build_extras(kit):
           B(None, (0.99, 0.3, 0.9), (-0.5, 2.05, -0.97), shoe, "ray.backshoe", 0.04)]
     for o in kn:
         W["extras"].append((o, "ray.torso", "kneel"))
-    # the raised finger (cue finger): a skin-coloured post on the end of his right arm, kept upright in animate()
-    W["finger"] = [B(None, (0.26, 0.26, 0.95), (0, 0, 0), P(BROWN_SKIN, 0.5, 0.3), "ray.finger", 0.05)]
+    # the raised finger (cue finger): a skin-coloured post on the end of his raised arm (arm-1), kept upright in animate()
+    W["finger"] = [B(None, (0.36, 0.36, 1.3), (0, 0, 0), P(BROWN_SKIN, 0.5, 0.3), "ray.finger", 0.05)]
 
 
 def attach_extras(tl, t):
@@ -742,7 +744,7 @@ def animate(kit, story, tl, t, ctx):
         legf.scale = (1, 1, 1)
         legb.scale = (1, 1, 1)
     # the finger stays vertical whatever the arm does: parent it to the arm, counter-rotate and stand it on the hand
-    arm = bpy.data.objects.get("ray.arm1")
+    arm = bpy.data.objects.get("ray.arm-1")
     on = shown and arm is not None and bool(cue_at(tl, "finger", t).get("on"))
     for o in W["finger"]:
         if arm is not None and o.parent is None:
@@ -753,7 +755,7 @@ def animate(kit, story, tl, t, ctx):
             Rm = arm.rotation_euler.to_matrix()
             Ri = Rm.inverted()
             o.rotation_euler = Ri.to_euler()
-            o.location = V((0, 0, -1.6)) + Ri @ V((0, 0, 0.42))
+            o.location = V((0, 0, -1.5)) + Ri @ V((0, 0, 0.6))
     pi = cue_at(tl, "patch", t).get("i", -1)
     for k, o in enumerate(W["patches"]):
         hide(o, k != pi)
