@@ -449,7 +449,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "frames_ok": ["S05", "S03", "S27a", "S28"],
-    "framing_ok": ["S12b", "S25", "S41", "S26", "S26b", "S30", "S35"],
+    "framing_ok": ["S12b", "S25", "S41", "S40b", "S26", "S26b", "S30", "S35"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
