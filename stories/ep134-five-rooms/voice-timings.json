@@ -1,0 +1,1005 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Our house has nine rooms. There are four of us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.155
+    ],
+    [
+     1.224,
+     1.578
+    ],
+    [
+     1.578,
+     2.052
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Here, your house builds a room for everyone who's ever lived in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.19
+    ],
+    [
+     1.19,
+     1.578
+    ],
+    [
+     1.578,
+     2.121
+    ],
+    [
+     2.121,
+     2.569
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Newlyweds move in to two rooms.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.19,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.19,
+     0.586
+    ],
+    [
+     0.586,
+     0.845
+    ],
+    [
+     0.845,
+     1.638
+    ]
+   ]
+  },
+  "L04": {
+   "text": "The boarding house on the hill is a whole block long.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.061
+    ],
+    [
+     1.061,
+     1.379
+    ],
+    [
+     1.379,
+     2.138
+    ]
+   ]
+  },
+  "L05": {
+   "text": "When my friend Theo got a roommate, a door showed up by morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.155,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.741
+    ],
+    [
+     0.741,
+     1.345
+    ],
+    [
+     1.414,
+     1.681
+    ],
+    [
+     1.681,
+     1.983
+    ],
+    [
+     1.983,
+     2.655
+    ]
+   ]
+  },
+  "L06": {
+   "text": "It's Mom, Dad, my sister June, and me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.534,
+     0.724
+    ],
+    [
+     0.75,
+     1.224
+    ],
+    [
+     1.25,
+     1.741
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Four rooms we open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     1.207
+    ]
+   ]
+  },
+  "L08": {
+   "text": "And five that Mom keeps shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.828
+    ],
+    [
+     0.828,
+     1.483
+    ]
+   ]
+  },
+  "L09": {
+   "text": "She knocks on each one every night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.879
+    ],
+    [
+     0.879,
+     1.552
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Dad calls them the guests.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.259
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Nobody will say whose they are.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.19,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.724,
+     1.483
+    ]
+   ]
+  },
+  "L12": {
+   "text": "I'm thirty. I've moved back home five times.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.655,
+     0.914
+    ],
+    [
+     0.914,
+     1.276
+    ],
+    [
+     1.276,
+     2.069
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Every time, Mom just says, Your room's ready.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     1.155
+    ],
+    [
+     1.224,
+     2.086
+    ]
+   ]
+  },
+  "L14": {
+   "text": "I've always had room four.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.345
+    ]
+   ]
+  },
+  "L15": {
+   "text": "This time, at midnight, door seven was open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.509,
+     0.948
+    ],
+    [
+     1.017,
+     1.431
+    ],
+    [
+     1.431,
+     2.069
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Just an inch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L17": {
+   "text": "I pushed it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.052,
+   "onset": 0.172,
+   "end": 0.862,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ]
+   ]
+  },
+  "L18": {
+   "text": "And a face on the far wall looked back at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.629
+    ],
+    [
+     0.629,
+     1.052
+    ],
+    [
+     1.052,
+     1.414
+    ],
+    [
+     1.414,
+     1.879
+    ]
+   ]
+  },
+  "L19": {
+   "text": "A big framed photo. A guy with a bad beard.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     1.034
+    ],
+    [
+     1.129,
+     1.406
+    ],
+    [
+     1.406,
+     1.517
+    ],
+    [
+     1.517,
+     2.259
+    ]
+   ]
+  },
+  "L20": {
+   "text": "me. At twenty-THREE.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.276
+    ],
+    [
+     0.31,
+     1.086
+    ]
+   ]
+  },
+  "L21": {
+   "text": "I opened door five.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.172
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Band posters. My old guitar.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.724,
+     1.586
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Me, at nineteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.276
+    ],
+    [
+     0.31,
+     1.086
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Door eight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.931,
+   "onset": 0.172,
+   "end": 0.724,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Boxes, still taped. Me, at twenty-SEVEN.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.492,
+     1.017
+    ],
+    [
+     1.094,
+     1.224
+    ],
+    [
+     1.25,
+     2.052
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Six and nine too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.19,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.19,
+     0.698
+    ],
+    [
+     0.698,
+     1.121
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Every one of them was mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.672
+    ],
+    [
+     0.672,
+     1.362
+    ]
+   ]
+  },
+  "L28": {
+   "text": "The house only builds a room for someone new.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.87
+    ],
+    [
+     0.87,
+     1.155
+    ],
+    [
+     1.155,
+     1.897
+    ]
+   ]
+  },
+  "L29": {
+   "text": "And every time I came home, I came back as somebody else.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.155,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     1.172
+    ],
+    [
+     1.241,
+     1.715
+    ],
+    [
+     1.715,
+     2.5
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Five times. Five of me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.698,
+     1.345
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Mom knew. She'd always known.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.517
+    ],
+    [
+     0.552,
+     1.414
+    ]
+   ]
+  },
+  "L32": {
+   "text": "She was standing at the top of the stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     0.905
+    ],
+    [
+     0.905,
+     1.638
+    ]
+   ]
+  },
+  "L33": {
+   "text": "I asked her why she kept them all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.992
+    ],
+    [
+     0.992,
+     1.5
+    ]
+   ]
+  },
+  "L34": {
+   "text": "She said she liked every one of me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.732
+    ],
+    [
+     0.732,
+     1.061
+    ],
+    [
+     1.061,
+     1.517
+    ]
+   ]
+  },
+  "L35": {
+   "text": "Even the beard.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Then she showed me the end of the hall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     0.664
+    ],
+    [
+     0.664,
+     0.922
+    ],
+    [
+     0.922,
+     1.534
+    ]
+   ]
+  },
+  "L37": {
+   "text": "There's a tenth door now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.224
+    ]
+   ]
+  },
+  "L38": {
+   "text": "It's my sixth room.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.155,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     1.155
+    ]
+   ]
+  },
+  "L39": {
+   "text": "For whoever I turn into next.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.784
+    ],
+    [
+     0.784,
+     1.466
+    ]
+   ]
+  },
+  "L40": {
+   "text": "She says she already likes him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.776
+    ],
+    [
+     0.776,
+     1.379
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Mom's already knocked on it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.379
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Because here, your house keeps count.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.543,
+     0.81
+    ],
+    [
+     0.81,
+     1.517
+    ]
+   ]
+  }
+ }
+}
