@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 10
+REV = 12
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L35")
@@ -380,7 +380,7 @@ K("lou", "L26+0.7", hw(1, -0.1, 2.0, 0.0))
 K("lou", "L26>", court(1, -0.6, 3.6))
 _o, _p = hw(1, 0, 0, 0), hw(1, 0, 1, 0)
 _dx, _dy = _p[0] - _o[0], _p[1] - _o[1]
-shot("L26", cam_at([_dx * 2.7, _dy * 2.7, 1.45], [0, 0, 1.25], 34), "night", "hurry", follow="lou", sway=False)
+shot("L26", cam_at([_dx * 4.4, _dy * 4.4, 1.6], [0, 0, 1.2], 34), "night", "hurry", follow="lou", sway=False)
 door("L26+0.4", 1, 80, 0, 0.5)
 
 # ===== 27 the clicks round the court (house 2 sky blue, 12 sky, then the green door 4)
@@ -630,6 +630,12 @@ shots, names = [], {}
 prev_look = None
 for i, (at, camera, look, nm_, kw) in enumerate(SH):
     s = {"id": f"S{i + 1:02d}", "cam": camera, "step": 2, "hand": 0.004}
+    # round 2 pace margin: a slow push on held single-key shots (not the flash span)
+    _push = {29: 0.14, 61: 0.22, 67: 0.22}
+    _push.update({n: 0.22 for n in range(53, 61)})
+    _push.update({n: 0.30 for n in (71, 74, 75, 76, 77, 78, 79, 80, 81)})
+    if len(camera) == 1 and (i + 1) in _push and "follow" not in kw:
+        camera = s["cam"] = push(camera, _push[i + 1])
     kw = dict(kw)
     fade = kw.pop("fade", False)
     sway = kw.pop("sway", None)
