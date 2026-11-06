@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 12
+REV = 13
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -410,6 +410,21 @@ shot("L33.1", mv([0.0, SY - 4.6, 1.28], [0.0, SY, 1.15], 34, [0.0, SY - 4.2, 1.2
 for k_ in acting.values():
     remap_all(k_)
 remap_all(cues)
+
+# ---- extra angle cuts (retry 2026-11-06): a second camera 0.5 m to the side, cut in half way through a long shot
+# (same set, same light), so the picture changes about as often as the proof reads it. Times: film seconds.
+SPLITS = {"L07": 12.7, "L08": 14.8, "L09": 16.8, "L11": 20.9, "L12": 22.9, "L13": 24.6, "L15": 28.1, "L16": 30.3,
+          "L19": 36.6, "L21": 40.1, "L25": 48.5, "L27": 51.6, "L27b": 53.4, "L28": 55.4, "L32": 61.9}
+_out = []
+for _e in SH:
+    _out.append(_e)
+    if _e[0] in SPLITS:
+        _cam = [[k, list(p), list(t), ln] for k, p, t, ln in _e[1]]
+        _dx = -0.5 if _cam[0][1][0] > 1.0 else 0.5
+        for _k in _cam:
+            _k[1][0] += _dx
+        _out.append((SPLITS[_e[0]], _cam, _e[2], _e[3], _e[4], _e[5] + "_b"))
+SH[:] = _out
 shots, names = [], {}
 for i, (at, camera, step, hand, follow, nm) in enumerate(SH):
     s = {"id": f"S{i + 1:02d}", "cam": camera, "step": step}
