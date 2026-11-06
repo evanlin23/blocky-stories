@@ -751,6 +751,47 @@ def test_mix_uses_samples_unless_the_story_turns_them_off(tmp_path):
     assert np.allclose(sound.mix(tl, st, vo)[0], rec)                  # deterministic, and back on after "false"
 
 
+def _sample(tl, name, t, defaults):
+    """The cue sampler stories' set.py use (ep120's, verbatim in effect): fields eased over a cue's own "dur"."""
+    cur, prev = dict(defaults), dict(defaults)
+    for c in [c for c in tl["cues"] if c["name"] == name]:
+        if c["t"] > t:
+            break
+        prev = dict(cur)
+        cur.update({k: v for k, v in c.items() if k in defaults})
+        dur = c.get("dur", 0.0)
+        if dur > 0 and t < c["t"] + dur:
+            u = min(1.0, max(0.0, (t - c["t"]) / dur))
+            u = u * u * (3 - 2 * u)
+            return {k: prev[k] + (cur[k] - prev[k]) * u for k in cur}
+    return cur
+
+
+def test_a_light_cue_at_a_cut_is_at_full_value_on_the_shots_first_frame():
+    """ep120: Dad's fill cue at "L46-0.05" with dur 0.3 eased in after the cut, so the shot opened dark. Listed in
+    light_cues, a cue on or just before a cut lands on the cut with no fade; a fade across a cut ends on it."""
+    cues = [{"at": "L02-0.05", "name": "fill", "v": 1.0, "dur": 0.3},     # just before the cut
+            {"at": "L02+0.3", "name": "fill", "v": 0.2, "dur": 0.3},      # inside the shot: its fade stays
+            {"at": "L02", "name": "door", "v": 1.0, "dur": 0.5}]          # not a light: unchanged
+    base = timeline.build(tiny_story(cues=cues), tiny_voice())
+    cut = base["shots"][1]["start"]
+    f0 = cut
+    assert _sample(base, "fill", f0, {"v": 0.0})["v"] < 0.5          # the bug: the shot opens dark
+    tl = timeline.build(tiny_story(cues=cues, light_cues=["fill"]), tiny_voice())
+    assert _sample(tl, "fill", f0, {"v": 0.0})["v"] == 1.0
+    assert _sample(tl, "fill", f0 - 1 / 30, {"v": 0.0})["v"] == 0.0   # the shot before keeps its light
+    mid = [c for c in tl["cues"] if c["name"] == "fill"][1]
+    assert mid["dur"] == 0.3 and mid["t"] > cut
+    assert [c for c in tl["cues"] if c["name"] == "door"] == [c for c in base["cues"] if c["name"] == "door"]
+    # a fade that runs across the cut ends on it; "fade": true keeps the fade as written
+    across = timeline.build(tiny_story(cues=[{"at": "L02-0.5", "name": "fill", "v": 1.0, "dur": 1.0}],
+                                       light_cues=["fill"]), tiny_voice())
+    assert _sample(across, "fill", cut, {"v": 0.0})["v"] == 1.0
+    keep = timeline.build(tiny_story(cues=[{"at": "L02-0.05", "name": "fill", "v": 1.0, "dur": 0.3, "fade": True}],
+                                     light_cues=["fill"]), tiny_voice())
+    assert _sample(keep, "fill", cut, {"v": 0.0})["v"] < 0.5
+
+
 def test_caption_splitter_keeps_every_spoken_word():
     """A chunk with more spoken words than caption words keeps them all (ep115 L19: "has said 4:12" is read "has said
     four twelve"; the generators' copy sliced by caption count and voiced "has said four")."""
