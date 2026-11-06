@@ -360,20 +360,26 @@ def build_cart(kit):
         return out
 
     def folded_apron(ax, ay, az, m, pm, name, sc=1.0):
-        """A folded apron lying on a surface (top at az): a block, a cream pocket on its face, a neck-loop strap standing
-        up and leaning back off it, and two ties lying out to the sides. Returns one parent empty (hide hides all)."""
+        """A folded apron lying on a surface (top at az): a wide folded block with the narrower bib folded on top, a cream
+        pocket on the bib, a deep-red neck strap as a round loop lying back off the bib, and two deep-red ties curling out
+        from the sides. One parent empty (hide hides all)."""
+        strap = P("#a82a30", 0.6, 0.15)
         root = E(None, (ax, ay, az), name + ".root")
-        B(root, (0.66 * sc, 0.5 * sc, 0.09), (0, 0, 0.045), m, name + ".fold", 0.02)
-        B(root, (0.34 * sc, 0.22 * sc, 0.02), (0, -0.07 * sc, 0.1), pm, name + ".pocket", 0.008)
-        B(root, (0.34 * sc, 0.02 * sc, 0.012), (0, -0.18 * sc, 0.1), pm, name + ".pocketedge", 0.004)
-        loop = E(root, (0, 0.2 * sc, 0.09), name + ".loop", rot=(-1.35, 0, 0))
-        w_, h_, t_ = 0.3 * sc, 0.34 * sc, 0.05 * sc
-        B(loop, (t_, 0.025, h_), (-w_ / 2, 0, h_ / 2), m, name + ".loopl", 0.008)
-        B(loop, (t_, 0.025, h_), (w_ / 2, 0, h_ / 2), m, name + ".loopr", 0.008)
-        B(loop, (w_ + t_, 0.025, t_), (0, 0, h_), m, name + ".looptop", 0.008)
+        B(root, (0.66 * sc, 0.5 * sc, 0.08), (0, 0, 0.04), m, name + ".fold", 0.02)
+        B(root, (0.42 * sc, 0.34 * sc, 0.05), (0, 0.04 * sc, 0.105), m, name + ".bib", 0.015)
+        B(root, (0.26 * sc, 0.17 * sc, 0.02), (0, -0.02 * sc, 0.14), pm, name + ".pocket", 0.008)
+        B(root, (0.26 * sc, 0.025 * sc, 0.03), (0, 0.075 * sc, 0.145), strap, name + ".pockethem", 0.006)
+        loop = E(root, (0, 0.2 * sc, 0.12), name + ".loop", rot=(-1.15, 0, 0))
+        n_, w_, h_, t_ = 14, 0.17 * sc, 0.22 * sc, 0.045 * sc
+        for k in range(n_):
+            a = 2 * math.pi * (k + 0.5) / n_
+            tx_, tz_ = -w_ * math.sin(a), h_ * math.cos(a)
+            seg = 2 * math.pi * (w_ + h_) / 2 / n_ * 1.25
+            B(loop, (seg, 0.03, t_), (w_ * math.cos(a), 0, h_ * (1 + math.sin(a))), strap, name + ".loopseg", 0.008,
+              rot=(0, -math.atan2(tz_, tx_), 0))
         for sx in (-1, 1):
-            B(root, (0.36 * sc, 0.055 * sc, 0.025), (sx * 0.5 * sc, -0.12 * sc, 0.0125), m, name + ".tie", 0.008,
-              rot=(0, 0, -sx * 0.35))
+            B(root, (0.26 * sc, 0.06 * sc, 0.03), (sx * 0.43 * sc, -0.08 * sc, 0.015), strap, name + ".tie", 0.008, rot=(0, 0, -sx * 0.5))
+            B(root, (0.22 * sc, 0.06 * sc, 0.03), (sx * 0.62 * sc, -0.26 * sc, 0.015), strap, name + ".tie", 0.008, rot=(0, 0, sx * 0.4))
         return [root]
 
     hung_apron(cx - 1.0, old_c, old_pk, "apronold")
@@ -422,15 +428,16 @@ def build_stalls(kit):
     C(None, 0.08, 0.052, (px + 0.3, py - 0.08, 1.125), P("#c22a3a", 0.5), "pie.fill", n=3)
     C(None, 0.3, 0.07, (px - 0.4, py + 0.05, 1.12), P("#d9a05b", 0.6), "pie.whole", n=24)
     C(None, 0.2, 0.075, (px - 0.4, py + 0.05, 1.12), P("#c22a3a", 0.5), "pie.wholefill", n=24)
-    # the car keys stuck in the pie: a big gold ring on two blades standing up out of the filling
-    kg, ks = P("#ffcf3a", 0.3, 0.7), P("#d8dde6", 0.3, 0.8)
+    # the car keys stuck in the pie: two big gold keys (a round bow with a dark hole, a shaft, teeth) splayed out of the filling
+    kg, kd = P("#ffcf3a", 0.3, 0.7), P("#3a2a10", 0.6)
     kx, ky = px - 0.4, py - 0.15
-    for (ax_, az_, ww, hh) in ((-0.11, 1.46, 0.035, 0.22), (0.11, 1.46, 0.035, 0.22), (0.0, 1.57, 0.25, 0.035), (0.0, 1.35, 0.25, 0.035)):
-        B(None, (ww, 0.035, hh), (kx + ax_, ky, az_), kg, "keys.ring", 0.01)
-    B(None, (0.07, 0.03, 0.3), (kx - 0.06, ky + 0.03, 1.2), ks, "keys.blade", 0.008, rot=(0, 0.12, 0))
-    B(None, (0.07, 0.03, 0.3), (kx + 0.07, ky + 0.03, 1.2), ks, "keys.blade", 0.008, rot=(0, -0.12, 0))
-    B(None, (0.05, 0.03, 0.05), (kx - 0.1, ky + 0.03, 1.12), ks, "keys.tooth", 0.005)
-    B(None, (0.05, 0.03, 0.05), (kx + 0.11, ky + 0.03, 1.12), ks, "keys.tooth", 0.005)
+    for (dxk, tilt) in ((-0.1, 0.35), (0.12, -0.3)):
+        ke = E(None, (kx + dxk, ky, 1.17), "key.root", rot=(0, tilt, 0))
+        C(ke, 0.12, 0.035, (0, 0, 0.42), kg, "key.bow", rot=(math.pi / 2, 0, 0), n=16)
+        C(ke, 0.055, 0.04, (0, -0.012, 0.42), kd, "key.hole", rot=(math.pi / 2, 0, 0), n=12)
+        B(ke, (0.05, 0.035, 0.34), (0, 0, 0.18), kg, "key.shaft", 0.008)
+        B(ke, (0.1, 0.035, 0.05), (0.06, 0, 0.1), kg, "key.tooth", 0.008)
+        B(ke, (0.08, 0.035, 0.05), (0.05, 0, 0.2), kg, "key.tooth", 0.008)
     # ---- the poster: a big blocky face and a painted pie, no lettering
     qx, qy = POSTER
     for sx in (-1, 1):
@@ -485,8 +492,8 @@ def build_stalls(kit):
     B(None, (3.4, 0.06, 1.2), (lx, ly + 0.55, 1.9), P("#ff9bb5", 0.5), "lemon.back")
     for k in range(3):
         S(0.16, (lx - 1.1 + k * 0.3, ly + 0.1, 1.2), P("#ffe066", 0.4, 0.4), "lemon.fruit")
-    C(None, 0.12, 0.3, (lx + 0.1, ly - 0.3, 1.2), P("#fbfaf6", 0.3, 0.5), "lemon.cup", n=14, r2=0.09)
-    C(None, 0.1, 0.03, (lx + 0.1, ly - 0.3, 1.34), P("#ffe34a", 0.3, 0.3), "lemon.cupfill", n=14)
+    C(None, 0.12, 0.3, (lx - 0.1, ly - 0.3, 1.2), P("#fbfaf6", 0.3, 0.5), "lemon.cup", n=14, r2=0.09)
+    C(None, 0.1, 0.03, (lx - 0.1, ly - 0.3, 1.34), P("#ffe34a", 0.3, 0.3), "lemon.cupfill", n=14)
 
 
 def build_midway(kit):
@@ -579,7 +586,7 @@ def build_room(kit):
         if i == 0:
             B(None, (0.14, 0.5, 0.95), (dx - 2.8, wy - 0.3, 1.2), P(c, 0.9, 0.05), "coat", 0.04)
     # a second lamp, a floor lamp behind the couch's right end: the same warm steady glow when the lamp look is on
-    sx_, sy_ = cx + 1.15, ry + 4.45
+    sx_, sy_ = cx + 0.72, ry + 4.45
     C(None, 0.025, 1.3, (sx_, sy_, 0.65), P("#5a3a22", 0.5), "lampstem2", n=8)
     C(None, 0.12, 0.03, (sx_, sy_, 0.02), P("#5a3a22", 0.5), "lampfoot2", n=12)
     C(None, 0.2, 0.34, (sx_, sy_, 1.55), P("#ffe9a8", 0.6, 0.1), "lampshade2", n=16, r2=0.13)

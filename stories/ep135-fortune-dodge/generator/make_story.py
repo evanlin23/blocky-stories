@@ -222,9 +222,9 @@ shot("S09", "L09", cam_face(RAYC, 0, "ray", 2.9, 6, 34, shift=0.1, d2=2.3), "day
 TP("ray", "L10", RAYC, 0, "smile")
 shot("S10", "L10", cam_face(RAYC, 0, "ray", 2.9, -10, 34, shift=0.12, d2=2.6), "day")
 shot("S10b", "L10.2", cam_face(RAYC, 0, "ray", 2.3, 16, 34, d2=2.0), "day")
-RAYK = [CX - 2.6, CY - 0.45, -0.2]
-KNEEL_CAM = cam_at([RAYK[0] + 0.55, RAYK[1] - 1.75, 1.05], [RAYK[0] + 0.5, RAYK[1], 0.8], 28,
-                   [RAYK[0] + 0.5, RAYK[1] - 1.5, 1.05], [RAYK[0] + 0.5, RAYK[1], 0.8], 28)
+RAYK = [CX - 2.05, CY - 0.4, -0.2]
+KNEEL_CAM = cam_at([RAYK[0] + 0.4, RAYK[1] - 2.5, 1.2], [RAYK[0] + 0.3, RAYK[1], 0.62], 28,
+                   [RAYK[0] + 0.4, RAYK[1] - 2.2, 1.2], [RAYK[0] + 0.3, RAYK[1], 0.62], 28)
 cue("L11", "kneel", on=True)
 cue("L13", "kneel", on=False)
 TP("ray", "L11", RAYK, 75, "neutral", arms=[0, 55], side=[0, 0], head=[-55, 15])
@@ -279,7 +279,7 @@ shot("S22b", "L22.2", cam_face(MEPOST, 0, "me", 2.3, 12, 34, d2=2.05), "day")
 HIDE("me", "L23")
 RAYC2 = [LEMON[0] - 0.6, LEMON[1] - 1.0, 0.0]
 TP("ray", "L23", RAYC2, 0, "smile")
-shot("S23", "L23", cam_face(RAYC2, 0, "ray", 2.8, 8, 34, shift=0.0, d2=2.4), "day")
+shot("S23", "L23", cam_face(RAYC2, 0, "ray", 3.5, 8, 34, shift=-0.1, d2=3.1), "day")
 TP("me", "L24", MEPOST, 0, "scared", lean=8)
 TP("ray", "L24", [POST[0] + 0.95, LEMON[1] + 0.9, 0.0], 0, "smile")
 shot("S24", "L24", cam_face(MEPOST, 0, "me", 3.0, 8, 34, shift=-0.28, d2=2.7), "day")
@@ -330,8 +330,8 @@ M39 = [MACH[0] - 1.2, 2.2, 0.0]
 TP("me", "L39", M39, 0, X("sad"))
 shot("S39", "L39", cam_face(M39, 0, "me", 2.8, -10, 34, d2=2.5), "dusk")
 M40 = [CX + 0.5, CY + 0.95, 0.0]
-TP("me", "L40", M40, 0, "crying")
-shot("S40", "L40", cam_at([CX + 0.55, CY - 2.0, 1.95], [CX + 0.55, CY + 0.4, 1.12], 30, [CX + 0.55, CY - 1.8, 1.95], [CX + 0.55, CY + 0.4, 1.12], 30),
+TP("me", "L40", M40, 0, "crying", lean=25)
+shot("S40", "L40", cam_at([CX + 0.55, CY - 1.7, 1.75], [CX + 0.55, CY + 0.3, 1.18], 30, [CX + 0.55, CY - 1.55, 1.75], [CX + 0.55, CY + 0.3, 1.18], 30),
      "dusk", cover=True)
 # ===== S41 to S45 the night
 CBN = CB
@@ -388,7 +388,7 @@ cue("L56", "spatula", on=True)
 cue("L57", "spatula", on=False)
 TP("ray", "L56", [CX - 0.75, CY + 0.95, 0.05], 0, "smile", arms=[0, 0], side=[85, 0])
 TP("me", "L56", [CX + 1.0, CY + 0.95, 0.0], 0, "neutral")
-shot("S56", "L56", cam_at([CX + 0.1, CY - 2.0, 1.95], [CX + 0.1, CY + 0.35, 1.2], 28, [CX + 0.1, CY - 1.8, 1.95], [CX + 0.1, CY + 0.35, 1.2], 28), "day")
+shot("S56", "L56", cam_at([CX + 0.1, CY - 2.9, 1.8], [CX + 0.1, CY + 0.5, 1.3], 26, [CX + 0.1, CY - 2.6, 1.8], [CX + 0.1, CY + 0.5, 1.3], 26), "day")
 TP("ray", "L57", RAY2, 0, "laugh")
 TP("me", "L57", ME2, 0, "laugh")
 shot("S57", "L57", cam_at([CX, CY - 3.4, 1.62], [CX, CY + 0.95, 1.6], 28, [CX, CY - 3.0, 1.62], [CX, CY + 0.95, 1.6], 28), "day")
