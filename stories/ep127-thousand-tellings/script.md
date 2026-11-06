@@ -197,9 +197,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L08: So people here / are careful / what they REPEAT.
 - L09: My grandpa Otto / runs the tackle shop / on the RIVER.
 - L10: I worked his counter / every summer, / till I moved / to the CITY.
-- L11: Three years AGO.
+- L11: I hadn't fished SINCE.
 - L12: Last month / he called. / Said the shop roof / was LEAKING.
-- L13: So I drove back / for a WEEK.
+- L13: So I drove back / that SATURDAY.
 - L14: It hadn't rained / in a MONTH.
 - L15: The first night, / I came back late / for my JACKET.
 - L16: Through the shop window, / Grandpa was / in his CHAIR,
@@ -244,7 +244,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L54: However I ended it, / it would come TRUE.
 - L55: So I sat DOWN.
 - L56: And I told it. / The whole THING.
-- L57: The counter. / The city. / The CAR.
+- L57: Every word of it, / right up to / my CAR.
 - L58: Then I got / to the END.
 - L59: "And every SUNDAY, / the boy drove home,
 - L60: and fished / with his grandpa / till they were both / OLD."
@@ -263,7 +263,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt. Grandpa's leaking roof is a fib to call me home.
-- The panel's logic note is built in: every telling counts, whatever its ending, and what comes true is how the thousandth ends (L02, L35, L54). Grandpa's 999 never end (L30 to L32, L41), so the thousandth, told by me, is the first with an end, and the count holds. Never let a shot or caption suggest a new story starts at L56: it's the same story, "The counter. The city. The CAR."
+- The panel's logic note is built in: every telling counts, whatever its ending, and what comes true is how the thousandth ends (L02, L35, L54). Grandpa's 999 never end (L30 to L32, L41), so the thousandth, told by me, is the first with an end, and the count holds. Never let a shot or caption suggest a new story starts at L56: it's the same story, "Every word of it, right up to my CAR."
 - No light changes at all. Day and night are separate cuts, and at night the counter lamp is always already on and steady. The minnow tank has no light, only slow bubbles.
 - Grandpa's eyes-shut face is the film's one eerie image: keep it lit from below by the lamp, the whole head and hat in frame, never in profile. The two armchairs face each other, so he and I are always singles shot over the other chair's back.
 - The chalk is only ever seen on the slate, never in a hand. The slate shows numerals only.

@@ -1,0 +1,1681 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Here, you can't tell a story a thousand times.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.983
+    ],
+    [
+     0.983,
+     1.966
+    ]
+   ]
+  },
+  "L02": {
+   "text": "The thousandth comes true, however it ends.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.931
+    ],
+    [
+     0.983,
+     1.741
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Missus Ortiz told one about a man who couldn't stop smiling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     0.974
+    ],
+    [
+     0.974,
+     1.353
+    ],
+    [
+     1.353,
+     1.586
+    ],
+    [
+     1.586,
+     2.466
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Now her husband can't.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.19,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.19,
+     0.716
+    ],
+    [
+     0.716,
+     1.19
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Old Mister Pike told one about snow in July.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     0.974
+    ],
+    [
+     0.974,
+     1.397
+    ],
+    [
+     1.397,
+     2.052
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Every July, it snows for one afternoon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.086
+    ],
+    [
+     1.086,
+     2.0
+    ]
+   ]
+  },
+  "L07": {
+   "text": "His wife has asked him to please stop talking about july.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.155,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.768
+    ],
+    [
+     0.768,
+     1.337
+    ],
+    [
+     1.337,
+     2.379
+    ]
+   ]
+  },
+  "L08": {
+   "text": "So people here are careful what they repeat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.077
+    ],
+    [
+     1.077,
+     1.862
+    ]
+   ]
+  },
+  "L09": {
+   "text": "My grandpa Otto runs the tackle shop on the river.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.974
+    ],
+    [
+     0.974,
+     1.241
+    ],
+    [
+     1.241,
+     1.733
+    ],
+    [
+     1.733,
+     2.362
+    ]
+   ]
+  },
+  "L10": {
+   "text": "I worked his counter every summer, till I moved to the city.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.828
+    ],
+    [
+     0.828,
+     1.397
+    ],
+    [
+     1.466,
+     1.897
+    ],
+    [
+     1.897,
+     2.569
+    ]
+   ]
+  },
+  "L11": {
+   "text": "I hadn't fished since.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     1.138
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Last month he called. Said the shop roof was leaking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.19,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.19,
+     0.543
+    ],
+    [
+     0.543,
+     1.0
+    ],
+    [
+     1.094,
+     1.267
+    ],
+    [
+     1.267,
+     1.664
+    ],
+    [
+     1.664,
+     2.328
+    ]
+   ]
+  },
+  "L13": {
+   "text": "So I drove back that Saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.776
+    ],
+    [
+     0.776,
+     1.552
+    ]
+   ]
+  },
+  "L14": {
+   "text": "It hadn't rained in a month.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.155,
+     0.732
+    ],
+    [
+     0.732,
+     1.31
+    ]
+   ]
+  },
+  "L15": {
+   "text": "The first night, I came back late for my jacket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.707,
+     0.948
+    ],
+    [
+     0.948,
+     1.328
+    ],
+    [
+     1.328,
+     2.086
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Through the shop window, Grandpa was in his chair,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.81
+    ],
+    [
+     0.862,
+     1.293
+    ],
+    [
+     1.293,
+     1.983
+    ]
+   ]
+  },
+  "L17": {
+   "text": "telling a story.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ]
+   ]
+  },
+  "L18": {
+   "text": "To the empty chair across from him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.31,
+     0.776
+    ],
+    [
+     0.776,
+     1.586
+    ]
+   ]
+  },
+  "L19": {
+   "text": "my chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.983,
+   "onset": 0.172,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ]
+   ]
+  },
+  "L20": {
+   "text": "His eyes were shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.103
+    ]
+   ]
+  },
+  "L21": {
+   "text": "On the slate by the till, in chalk, a number.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.914
+    ],
+    [
+     0.948,
+     1.31
+    ],
+    [
+     1.362,
+     1.948
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Nine hundred ninety-seven.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     1.414
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Every night, he locks up at nine, and sits back down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.94
+    ],
+    [
+     0.94,
+     1.224
+    ],
+    [
+     1.25,
+     1.5
+    ],
+    [
+     1.5,
+     2.224
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Alone, with the lights low.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.19,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.457,
+     0.586
+    ],
+    [
+     0.586,
+     1.293
+    ]
+   ]
+  },
+  "L25": {
+   "text": "The next night, I listened at the door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.638,
+     0.992
+    ],
+    [
+     0.992,
+     1.655
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Once there was a boy who worked the counter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.81
+    ],
+    [
+     0.81,
+     1.077
+    ],
+    [
+     1.077,
+     1.707
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Then he left for the city.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.241
+    ]
+   ]
+  },
+  "L28": {
+   "text": "It knew my apartment. My car.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.862
+    ],
+    [
+     0.914,
+     1.534
+    ]
+   ]
+  },
+  "L29": {
+   "text": "It knew what I'd had for lunch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.397,
+     0.776
+    ],
+    [
+     0.776,
+     1.362
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Then, right in the middle, Grandpa stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.345,
+     0.56
+    ],
+    [
+     0.56,
+     0.81
+    ],
+    [
+     0.862,
+     1.759
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Like he always does.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     1.155
+    ]
+   ]
+  },
+  "L32": {
+   "text": "He's never finished a story in his life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.094
+    ],
+    [
+     1.094,
+     1.759
+    ]
+   ]
+  },
+  "L33": {
+   "text": "The chalk said nine ninety-eight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.466
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Two more nights.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.172,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ]
+   ]
+  },
+  "L35": {
+   "text": "And however the last one ends,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.155,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.784
+    ],
+    [
+     0.784,
+     1.379
+    ]
+   ]
+  },
+  "L36": {
+   "text": "that's what happens to me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.259
+    ]
+   ]
+  },
+  "L37": {
+   "text": "The next morning, I asked him how it ends.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.629,
+     1.017
+    ],
+    [
+     1.017,
+     1.707
+    ]
+   ]
+  },
+  "L38": {
+   "text": "He wouldn't look at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.034
+    ]
+   ]
+  },
+  "L39": {
+   "text": "That night, nine ninety-nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.5,
+     1.397
+    ]
+   ]
+  },
+  "L40": {
+   "text": "And the boy came home...",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.155,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.19
+    ]
+   ]
+  },
+  "L41": {
+   "text": "And he stopped again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.155,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.086
+    ]
+   ]
+  },
+  "L42": {
+   "text": "I'd heard enough. He was going to keep me here.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.793,
+     0.94
+    ],
+    [
+     0.94,
+     1.121
+    ],
+    [
+     1.121,
+     1.828
+    ]
+   ]
+  },
+  "L43": {
+   "text": "I packed my car that night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.75
+    ],
+    [
+     0.75,
+     1.328
+    ]
+   ]
+  },
+  "L44": {
+   "text": "I got as far as the bridge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.664
+    ],
+    [
+     0.664,
+     1.345
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Then I thought about his face, and turned around.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.034
+    ],
+    [
+     1.086,
+     2.0
+    ]
+   ]
+  },
+  "L46": {
+   "text": "So on the last night, I went in to stop him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.879
+    ],
+    [
+     0.931,
+     1.199
+    ],
+    [
+     1.199,
+     1.879
+    ]
+   ]
+  },
+  "L47": {
+   "text": "Grandpa was in his chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.362
+    ]
+   ]
+  },
+  "L48": {
+   "text": "But he wasn't telling it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.155,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     1.138
+    ]
+   ]
+  },
+  "L49": {
+   "text": "He just nodded at the empty chair. mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     0.759
+    ],
+    [
+     0.759,
+     1.345
+    ],
+    [
+     1.439,
+     2.0
+    ]
+   ]
+  },
+  "L50": {
+   "text": "He'd told it nine hundred ninety-nine times,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.879
+    ],
+    [
+     0.879,
+     1.897
+    ]
+   ]
+  },
+  "L51": {
+   "text": "and never once told the end.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.379
+    ]
+   ]
+  },
+  "L52": {
+   "text": "He was saving the end,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.138
+    ]
+   ]
+  },
+  "L53": {
+   "text": "and the thousandth, for me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.707,
+     1.207
+    ]
+   ]
+  },
+  "L54": {
+   "text": "However I ended it, it would come true.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.776
+    ],
+    [
+     0.802,
+     0.931
+    ],
+    [
+     0.931,
+     1.621
+    ]
+   ]
+  },
+  "L55": {
+   "text": "So I sat down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     1.052
+    ]
+   ]
+  },
+  "L56": {
+   "text": "And I told it. The whole thing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.655
+    ],
+    [
+     0.707,
+     1.431
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Every word of it, right up to my car.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.69
+    ],
+    [
+     0.724,
+     1.026
+    ],
+    [
+     1.026,
+     1.672
+    ]
+   ]
+  },
+  "L58": {
+   "text": "Then I got to the end.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.207
+    ]
+   ]
+  },
+  "L59": {
+   "text": "And every sunday, the boy drove home,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.716,
+     0.966
+    ],
+    [
+     0.966,
+     1.724
+    ]
+   ]
+  },
+  "L60": {
+   "text": "and fished with his grandpa till they were both old.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.0
+    ],
+    [
+     1.0,
+     1.181
+    ],
+    [
+     1.181,
+     1.474
+    ],
+    [
+     1.474,
+     2.017
+    ]
+   ]
+  },
+  "L61": {
+   "text": "Grandpa opened his eyes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.448
+    ]
+   ]
+  },
+  "L62": {
+   "text": "The chalk said one thousand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.414
+    ]
+   ]
+  },
+  "L63": {
+   "text": "And for a while, we just sat there and listened to the river.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.155,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.603
+    ],
+    [
+     0.629,
+     0.819
+    ],
+    [
+     0.819,
+     1.285
+    ],
+    [
+     1.285,
+     1.638
+    ],
+    [
+     1.638,
+     2.259
+    ]
+   ]
+  },
+  "L64": {
+   "text": "Now on Sundays, if I'm running late,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.862,
+     1.052
+    ],
+    [
+     1.052,
+     1.707
+    ]
+   ]
+  },
+  "L65": {
+   "text": "my car takes the river road by itself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.138
+    ],
+    [
+     1.138,
+     1.845
+    ]
+   ]
+  },
+  "L66": {
+   "text": "Grandpa has two rods ready.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.552
+    ]
+   ]
+  },
+  "L67": {
+   "text": "He's started a new one now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     0.724
+    ],
+    [
+     0.724,
+     1.328
+    ]
+   ]
+  },
+  "L68": {
+   "text": "About an old man who catches the biggest fish in the river.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.845
+    ],
+    [
+     0.845,
+     1.224
+    ],
+    [
+     1.224,
+     1.801
+    ],
+    [
+     1.801,
+     2.414
+    ]
+   ]
+  },
+  "L69": {
+   "text": "Nine nights in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.19,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.19,
+     1.017
+    ]
+   ]
+  },
+  "L70": {
+   "text": "And he says I get to tell the end.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.768
+    ],
+    [
+     0.768,
+     0.992
+    ],
+    [
+     0.992,
+     1.586
+    ]
+   ]
+  }
+ }
+}
