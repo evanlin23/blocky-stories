@@ -12,3 +12,5 @@
 - Margin pass done (rev 12): flash general 1/s (3f 3/s), changes 14.1/15.9, motion 7.03, longest still 0.27 s.
 - Round 2: standards APPROVE. Critic REVISE, avg 7.6, none under 5 (scare 6, lore 6, variety 7, faces 7); one must-fix: two-line tag on Lou's hair at S33/S34.
 - Now: the ONE rescue (that fix only), then the critic alone looks once. If not approved: drop.
+- Rescue: critic r3 APPROVE. Hold removed; check no problems, gate OPEN, pytest 250 passed.
+- Now: PR open, waiting on proof.yml (proof-ep125-aunts-keys), then proof qa, then merge on green test.

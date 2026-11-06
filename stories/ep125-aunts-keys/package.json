@@ -6,6 +6,5 @@
   "cover_s": 40.2,
   "shape": "it-was-me",
   "opening": "confess",
-  "lane": "core",
-  "hold": "batch 13: scripts only, not built yet"
+  "lane": "core"
 }
