@@ -26,3 +26,5 @@
 - The single-fix rescue is in (rev 7): the keys now fire at the L16 cut. S15 is listed in framing_ok, after its whole head was checked in the still.
 - Proof 2 is run 42141264775. The proof qa runs again on it.
 - `test` waits on #325 (the duration floor lowered from 30 to 20 s, the orchestrator's PR). Once it's on main: merge main, push, and merge #324 when test is green.
+- The proof qa passed on proof-42141301190 at a17ac64e (the rescue look). It is committed.
+- Only #325 is left. Once it's on main: merge origin/main, push, and merge #324 when test is green.
