@@ -265,6 +265,93 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → The writer avoids such props (batch 13 note 3). In a fix round, cut or replace a prop that fails to read once,
     rather than refining it: a second try at the same shape rarely lands.
 
+43. **The craft numbers read differently at each stage, and each gap cost a round (calibrated 2026-11-06).** ep126's
+    proof read a longest still of 0.8 s and its final 1.07 s (a block). ep117 passed its local measure and its proof
+    read 12.5 picture changes per 10 s at 0.25 s against 14. Measured on every story with a live `proof-` and
+    `film-` artifact of the same film files and engine (7 pairs; the proof's sha has no film-file and no `blocky/`
+    or `assets/` change before the final's), re-run with `scripts/measure.py`, which matched each proof's own
+    `craft.json`:
+
+    | story | changes/10 s at 0.5 s | at 0.25 s | motion energy | longest still |
+    |---|---|---|---|---|
+    | moving-day | 13.7 / 13.7 | 14.6 / 14.8 | 7.25 / 7.25 | 0.80 / 0.80 |
+    | ep102 | 16.9 / 16.9 | 25.1 / 25.1 | 9.13 / 9.16 | 0.27 / 0.27 |
+    | ep108 | 17.7 / 17.7 | 24.2 / 24.4 | 8.77 / 8.80 | 0.00 / 0.00 |
+    | ep110 | 14.7 / 14.7 | 17.0 / 17.1 | 6.50 / 6.50 | 0.53 / 0.53 |
+    | ep114 | 17.0 / 17.0 | 23.0 / 22.8 | 8.87 / 8.83 | 0.27 / 0.27 |
+    | ep117 | 15.2 / 15.2 | 16.8 / 17.0 | 6.87 / 6.86 | 0.27 / 0.27 |
+    | ep126 | 12.8 / 12.8 | 14.6 / 14.5 | 5.70 / 5.66 | **0.80 / 1.07** |
+    | final − proof | 0.0 (all 7) | +0.03 (−0.2 to +0.2) | 0.00 (−0.04 to +0.03) | 0 on 6, +0.27 on 1 |
+
+    (proof / final.) The proof and the final read the same: resolution, the polish pass, the encoder and
+    measure.py's own downscale add nothing that shows (both are cut to the same 108 x 192 and 18 x 32 grid, and the
+    frame counts match). The one gap is **render noise at the still threshold**: the proof draws 4 samples at
+    270 x 480 and the final 6 at 540 x 960, so a quiet 0.25 s step reads about 0.5e-3 higher on the proof (median;
+    up to 2.5e-3) against the still threshold of 6e-3. ep126's quiet span at 53 s had one step at 6.6e-3 on the proof
+    and 5.5e-3 on the final, so its still was split on the proof and whole on the final. The still moves in 0.27 s
+    steps (8 frames), so one step is the difference between 0.8 s (passes) and 1.07 s (blocks).
+    ep117's gap was a different one: the build brief's `measure.py --story` had **no film**, and with no film the 4
+    craft blocks were silently left out ("0 block"). Its failing proof (9695bc5, 12.0 / 12.5 / 6.09 / 0.53) reads
+    13.0 / 12.5 / 6.09 / 0.53 when held every 4th drawing like the preview (the preview and the proof draw at the
+    same size and samples), so measuring the preview would have caught it.
+    → Done 2026-11-06 (#332): `measure.py --story` measures the preview film when there is one, and the 4 blocks
+    read `unmeasured` (counted as blocked) when there is none. A new warning, `longest_still_q_edge_s` (the still
+    at a 10% looser threshold), reads 1.6 s on both of ep126's films and equals the plain reading on the other 6
+    pairs: over 1.0 s on a proof means the final may block. The build brief's measure step has the margins.
+    → Engine side (for #1, not done here): drawing the proof at the final's 6 samples, or denoising it, would make
+    its quiet steps read like the final's. Until then the edge warning stands in.
+
+44. **A shard start saw a different scene from a continuous run, and only the final showed it (2026-11-06).**
+    ep117's final failed qa: in S02, frames 48 to 63, Dad's moustache and Mom's earring floated in the air while Mom
+    and Dad were hidden. Its set.py made those extras in `_first_frame()` on the first `animate` call of each render
+    process (guarded by `W["inited"]`). Each final shard is fresh processes: `--shard k/32` keeps frames[k::32] and
+    the engine's 2 workers split that again, so the 64 processes start at the first 64 drawn frames. A process that
+    started after the hide made the extras afterwards, visible. The proof's 8 shards never started there. 15 set.py
+    files used the same lazy pattern.
+    → Done 2026-11-06: `scripts/shardcheck.py --story stories/<story>` (report-only) poses every process start two
+    ways through bl_story's own `main()` without drawing (a fresh process at that frame, and one process over the
+    frame list from frame 0) and compares hide_render, world location (1 mm), scale, emission strength and light
+    energy per object. About 30 s a story. The build brief runs it before the proof; fix every difference. The
+    fix in a set.py: make extras in `build()`, or set every object's state from `t` on every call, never only on a
+    change.
+    → Done 2026-11-06 (#351, merged 9 AM Fri): the engine hides any object a story's `animate` creates under a hidden
+    cast root on the frame it's made. Shardcheck failures went from 16 stories to 3 (carried state in ep117, ep48,
+    ep55), and frame-0 floats from 15 stories to 0. A blanket "hide every child of a hidden object" erased parts
+    stories show on purpose (POV gloves, shoes), so the rule is narrow. Of the finals drawn before it, the QA desk
+    viewed frames 0 to 63 of all 14 flagged: only ep102's frame 0 showed it (Clem missing), and it gets a redraw.
+
+45. **One runner in 32 had an empty apt mirror list, and the whole render failed on that shard (2026-11-05/06).**
+    Render runs 42144845576, 42152717471 and 42217922531 each lost one draw shard at the apt step: `E: Unable to
+    locate package libegl1`. The failing runner's `apt-get update` fetched only packages.microsoft.com; a passing
+    runner on the same Ubuntu 26.04 image also fetched azure.archive.ubuntu.com through `/etc/apt/apt-mirrors.txt`.
+    The other lane's story still assembled, but the run read "failure", so the QA desk skipped ep117's good final
+    for hours.
+    → Done 2026-11-06 (#335): every apt step in every workflow retries update and install 3 times, 20 s apart. The
+    QA desk checks a story's final whenever its own assemble job passed, even if the run failed.
+
+46. **Lurches and bodies inside each other got past both reviews and the proof qa, and three merged stories went
+    back for a fix round (2026-11-06).** ep122 S69: a hold key at the walk's start (x -0.35) against a walk to
+    +0.35 slid the legs 0.7 m in 4 frames at 103.8 s (fixed in #358). ep125 S42: an acting key at L32.2+0.3 landed
+    0.067 s after the L32.1+0.5 hold, a 0.6 m jump in 2 frames at 52.2 s. ep132: two people stood 0.85 m apart (and
+    0.56 and 0.65 m in other shots), where a default character is 1.35 m arm to arm, so their arms went through each
+    other and on the cover two read as one block. Each cost a fresh session, a new proof and a full final re-render.
+    The story files alone showed all three: the reviews look at stills and the proof qa at a contact sheet, so a
+    2-frame slide and an arm inside an arm don't show.
+    → Done 2026-11-06: `scripts/staging.py --story stories/<story>` (report-only, no Blender, about 2 s) reads every
+    frame of the edit through `acting.state` and the shot cameras with the polish pack's move. A lurch is 0.25 m or
+    more in 0.15 s, seen at both ends, on a key under 0.4 s from the last (the leg swing opens over 0.15 s at each
+    end of a key, so a shorter one slides the body with its legs still) or on two keys at one time; a cut can move
+    anyone, unless the camera stays put (a jump cut). Too close is two characters on camera in one shot under 1.35 m
+    x their widths apart whose shoulders-and-arms boxes overlap (face to face at 0.8 m is fine: a body is 0.34 m
+    deep). It flags all three cases (ep122 on the commit before #358). The build brief runs it next to framing.py;
+    deliberate contact goes in `"staging_ok"`. Every built story was flagged except ep123: 273 rows (239 close, one per
+    pair per shot, and 34 lurch) on the 15 in queue.txt, and 81 on the 12 merged since ep116. A still of each pair
+    or lurch showed that most close rows are real merged bodies (people side by side at a table, a bench, a counter,
+    a bus stop). The deliberate ones are hugs, dance holds, a packed lift and car seats. ep129, ep130, ep134 and
+    ep135 had no build yet. Limits: walls are unknown (someone behind
+    one still counts), and a lurch is read from the keys, not the picture: a fall or a hop keyed on short keys (ep98
+    S07, S33) is flagged and goes in `staging_ok`.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".

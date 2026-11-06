@@ -1,0 +1,22 @@
+{
+ "stage": "proof",
+ "film": "13536384124",
+ "run": 42273750491,
+ "sha": "84da51b8e5bce8adf4f421449b94e726729314b2",
+ "verdict": "pass",
+ "date": "2026-11-06",
+ "checked": [
+  "staleness vs branch",
+  "frames every 2 s at phone and TV size",
+  "first 3 s every frame",
+  "S42 51.3-52.7 s every frame",
+  "55.8-58.2 s every frame, eyes cropped under ASLEEP",
+  "loudness, true peak, hf windows and tail",
+  "craft",
+  "flash",
+  "clip",
+  "package, opening and gate"
+ ],
+ "craft": "**ep125-aunts-keys**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.4 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 16.4 | 14.0– | ok |\n| macro.motion_energy_q | 7.04 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 7.12 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.061 | –0.25 | ok |\n| spec.shot_p90_s | 1.92 | –2.5 | ok |\n| macro.longest_still_s | 0.13 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.83 | 1.5– | ok |\n| spec.camera_move_share | 0.998 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.437 | 0.35– | ok |\n| macro.brightness_first_3s | 0.559 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.599 | 0.42– | ok |\n| macro.contrast_mean | 0.219 | 0.18– | ok |\n| spec.face_big_share | 0.68 | 0.4– | ok |\n| spec.caption_share | 0.981 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.0 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.695 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.036 | –0.25 | ok |\n| micro.idle_window_share | 0.033 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.99 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.4 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0443 | –0.08 | ok |\n| sound.hf_jump_max | 0.0123 | –0.04 | ok |\n\n0 block, 0 near, 0 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Proof 13536384124 (run 42273750491, sha 84da51b, latest commit touching the story; not stale). 3411 video frames vs 3415 timeline (last 4 frames of S82 as in the final, audio full 113.83 s). -14.1 LUFS / -1.8 dBTP, LRA 1.0; hf max 0.044, jump 0.012; tail no cut. Flash passes (1/s, 3f 3/s, red 0); clip.json 0 hits of 528. verdict.json pass. Gate OPEN; opening confess matches L01.\nFix 1 confirmed frame by frame (51.3-52.7 s, S42 'her front STEPS'): the sneaker legs now step forward steadily over ~16 frames from 51.83 s, no 2-frame lurch.\nFix 2 confirmed (55.8-58.2 s): every frame with 'Fast ASLEEP.' (56.00-56.90 s) shows my doorstep face with eyes shut (cropped and checked each frame); cut to the awake wide-eyed room shot lands at 56.93 s under 'I watched myself'; handle close-up cuts in at 57.67 s on HANDLE.\nShould-fix (known, not blocking): 4-frame auto-blink in the awake room shot ~57.27-57.37 s; fountain behind head S15/S75/S77; lock glyph reads as 8; tag on hairline 76.5 s (S60).\nSecond one: warm amber close-up of Aunt Lou at her teal door, slow push, tag top left; 'My aunt has a key to every house HERE. Including YOURS.' poses the threat. Frames every 2 s and first 3 s at phone and TV size: faces read, captions in safe area, nothing black, frozen or missing; cover strong.\nCraft matches the passed final (changes 14.4/16.4 vs 14.1/16.1, motion 7.04 vs 7.01, longest still q 0.27 s).\ncraft: 0 block, 0 near, 0 warn."
+}

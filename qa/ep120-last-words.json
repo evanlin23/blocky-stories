@@ -1,0 +1,32 @@
+{
+ "stage": "final",
+ "film": "13492594312",
+ "run": 42191103068,
+ "sha": "d249bf1e9daa0f9536fb971d717e13158ffb4528",
+ "verdict": "pass",
+ "date": "2026-11-06",
+ "checked": [
+  "frames every 2 s",
+  "first 3 s every frame",
+  "frames 0-63 contact sheet",
+  "shard-start frames",
+  "every shot first and last frame",
+  "loop seam S88 to frame 0",
+  "TV canvas",
+  "captions vs spoken words",
+  "rule tag position",
+  "light at cuts",
+  "S16 photo",
+  "S77 Dad backlight",
+  "cover",
+  "audio",
+  "craft",
+  "flash",
+  "package",
+  "opening variety",
+  "gate",
+  "frame count vs timeline"
+ ],
+ "craft": "**ep120-last-words**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.6 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 21.6 | 14.0– | ok |\n| macro.motion_energy_q | 7.95 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 7.11 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.102 | –0.25 | ok |\n| spec.shot_p90_s | 2.02 | –2.5 | ok |\n| macro.longest_still_s | 0.3 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.53 | –1.0 | ok |\n| macro.motion_energy_mean | 3.41 | 1.5– | ok |\n| spec.camera_move_share | 0.992 | 0.65– | ok |\n| spec.punch_per_10s | 0.74 | 0.4– | ok |\n| macro.brightness_mean | 0.576 | 0.35– | ok |\n| macro.brightness_first_3s | 0.676 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.421 | 0.42– | ok |\n| macro.contrast_mean | 0.238 | 0.18– | ok |\n| spec.face_big_share | 0.654 | 0.4– | ok |\n| spec.caption_share | 0.978 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.648 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.03 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 138.0 | –120 | **warn** |\n| spec.sound_events_per_10s | 2.29 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 8.3 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0419 | –0.08 | ok |\n| sound.hf_jump_max | 0.0188 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Final film 13492594312 (render run 42191103068, main d249bf1), 1080x1920 30 fps, 122.3 s; video 3669 frames = timeline 3669 frames (88 shots, 209 captions), audio 122.3 s, nothing lost. Frames every 2 s, every frame 0-3 s, frames 0-63 and all 16 shard-start candidates as contact sheets, every shot's first and last frame, phone size and 1920 TV canvas: faces read, no black/frozen frame (luma 62-211, longest still 0.3 s), no floating extras or missing character, no stray text (tag digits, the 11:00 clock numerals and glyphs only).\nSecond one: a lit medium close-up of me (navy jacket) in a pale doorway, 731 tag top left, slow push, soft green-white sound rings sweeping across, a blink on frames 2-4; 'In this town, you can't take back the last thing you say in a HOUSE.' from 0.21 s ('must', matches L01), cut wider at 1.33 s. Loop seam: S88 (121.53-122.3 s) is the empty front door at tag 731, cutting to frame 0 with me in the doorway, as scripted (cut, not a pop).\nCaptions: all 541 spoken words captioned in order (caption text == voice text), no gap over 50 ms, max 4 words, centred in the safe area. Rule tag top left in every shot, clear of every face; in S59/S60 Dad close-ups (76-79 s) it overlaps the top of his hair only. S16 (16.1-17.6 s) black edge is the phone photo of Dad and me (S08b, scripted).\nLight at cuts: no flash spike (no up-then-down >15/255 within 3 frames); non-cut luma moves are the S31 lights-off ramp (36.2-36.3 s, 7/255 per frame) and the toast pop (109.7 s). Flash: house bar pass, general 1/s, 3f 2/s (3f extended 1.97 s from 0), red 0, 8 very-different cuts max 1/s, wrap seam ok, no house warnings.\nAudio: -14.1 LUFS, -1.8 dBTP, LRA 1.9; 4 kHz share max 0.042 per 5 s, jump 0.019, no scratch; only silence is the scripted 0.34 s drop at 39.74 s before L22; tail ends on 'See you SUNDAY.' (caption ends 121.87 s) with music under it at -24 dB RMS, not cut off.\ncraft: 0 block, 0 near, 1 warn: micro.caption_sync_p90_ms 138.0 (-120); captions read in sync on the frames checked, no viewer loss. Matches the proof within 0.03 everywhere (motion_energy_q 7.97 -> 7.95, longest_still 0.27 -> 0.30, held_frame_share 0.0 -> 0.002: scattered single near-duplicate frames, no freeze). Fine detail at full size clean: no texture or sharpening halo problem.\nBorderline, not fails: S77 (103.97-105.87 s) the warm backlight bleaches Dad's grey hair and moustache to cream (moustache present at full size, face reads, plaid keeps him identifiable); S57/S58 blanket slab as noted at proof.\nPackage: title/description/pin match, twist unspoiled, 'It's made up.' present, no 'husband', hard rules 1-4 clean; cover 62.9 s (S50, me in Dad's doorway in the ripple, 'Out LOUD.', tag 0) strong. Opening 'must' vs last upload ep62-six-riders ('count') and queue tail ep99-statue-years ('cost'): no clash. gate OPEN. Verdict: pass, no fixes."
+}

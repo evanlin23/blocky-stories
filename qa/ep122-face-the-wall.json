@@ -1,0 +1,32 @@
+{
+ "stage": "final",
+ "film": "13530390117",
+ "run": 42254762927,
+ "sha": "7720a5d8df910b583c3c7407067929b39962c1f4",
+ "verdict": "pass",
+ "date": "2026-11-06",
+ "checked": [
+  "S69 103.5-104.2 s frame by frame vs old film (leg lurch)",
+  "S70/S71 rule tag frame by frame vs old film",
+  "rule tag over S56-S58, S69-S72, S77-S79",
+  "rule tag at frame edges (top/left, every frame)",
+  "frame diff vs old film 13503906726",
+  "frames 0-63 contact sheet (32 interleaved shard starts)",
+  "odd-frame and shard-residue scan",
+  "cuts and punch in the changed span (no pop, no light spike)",
+  "1-frame luma spikes, frozen frames",
+  "captions in the changed span",
+  "frame count vs timeline",
+  "cover",
+  "loudness",
+  "hf windows",
+  "audio vs old mix",
+  "craft",
+  "flash",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "**ep122-face-the-wall**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.0 | 12.5\u2013 | ok |\n| macro.picture_changes_per_10s_q | 16.1 | 14.0\u2013 | ok |\n| macro.motion_energy_q | 6.79 | 6.0\u2013 | ok |\n| macro.longest_still_q_s | 0.53 | \u20131.0 | ok |\n| spec.cuts_per_10s | 6.5 | 5.5\u20138.0 | ok |\n| spec.shots_over_2s_share | 0.198 | \u20130.25 | ok |\n| spec.shot_p90_s | 2.27 | \u20132.5 | ok |\n| macro.longest_still_s | 0.5 | \u20131.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | \u20131.0 | ok |\n| macro.motion_energy_mean | 2.64 | 1.5\u2013 | ok |\n| spec.camera_move_share | 0.99 | 0.65\u2013 | ok |\n| spec.punch_per_10s | 1.3 | 0.4\u2013 | ok |\n| macro.brightness_mean | 0.539 | 0.35\u2013 | ok |\n| macro.brightness_first_3s | 0.418 | 0.3\u2013 | ok |\n| macro.dark_frame_share | 0.0 | \u20130.08 | ok |\n| macro.black_dips | 0 | \u20131 | ok |\n| macro.saturation_mean | 0.4 | 0.42\u2013 | **warn** |\n| macro.contrast_mean | 0.224 | 0.18\u2013 | ok |\n| spec.face_big_share | 0.39 | 0.4\u2013 | **warn** |\n| spec.caption_share | 0.982 | 0.9\u2013 | ok |\n| spec.caption_words_median | 2.0 | \u20133 | ok |\n| macro.held_frame_share | 0.002 | \u20130.15 | ok |\n| micro.character_motion_shot_share | 0.346 | 0.5\u2013 | **warn** |\n| micro.walk_dead_end_share | 0.0 | \u20130.25 | ok |\n| micro.idle_window_share | 0.069 | \u20130.3 | ok |\n| micro.caption_sync_p90_ms | 60.0 | \u2013120 | ok |\n| spec.sound_events_per_10s | 2.68 | 2.0\u20134.0 | ok |\n| sound.silence_share | 0.0 | \u20130.005 | ok |\n| sound.voice_bed_gap_db | 17.1 | 8.0\u201314.0 | **warn** |\n| sound.lufs | -14.1 | -15.0\u2013-13.0 | ok |\n| sound.true_peak_dbtp | -1.7 | \u2013-1.0 | ok |\n| sound.hf_share_max_5s | 0.0474 | \u20130.08 | ok |\n| sound.hf_jump_max | 0.018 | \u20130.04 | ok |\n\n0 block, 0 near, 4 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Final 1080x1920 redraw, 3691 video frames vs 3694 timeline (3 short at the tail as on the passed final 13503906726; audio full 123.13 s, last caption 'taught us.' shown). Frame diff vs the old film: only 3115-3210 (103.83-107.0 s, S69 end, S70, S71) changed; everything else is identical within encode noise (S72 ~0.7). Audio is the same mix (per-second RMS within 0.13 dB): -14.1 LUFS / -1.7 dBTP, LRA 1.2; hf max 0.047, jump 0.018; no silence. Flash house bar passes (general 1/s, 3f 3/s, red 0). Gate OPEN. Opening 'ban' matches 0-2.2 s; last upload ep92 is 'if'; ep122 is not in queue.txt.\nFix 1 confirmed: S69 (L56) 'So I crossed the HALL', frames 3105-3118: my legs keep stepping screen-right and leave the frame at the right edge; 3116-3118 show the empty hall and the door, with no jump back. The old film whipped them back left over 3115-3117. walk_dead_end_share 0.75 -> 0.0.\nFix 2 confirmed: S70 (103.97 s on) the two-row tag is smaller and higher at top left, clear of my hair. S71 105.87-107.03 s the tag sits small in the corner, well clear of hair and brows, with '3' and '1' readable at phone size (the old film covered my left brow there). S72 107.03 s: the tag sits beside the sideways face, not on it (unchanged). S77-S79 (114.5-119.8 s: car, door, bed): the tag touches no one. S56 83.7-84.6 s: clear of Grandma's hair.\nFrame 0 and frames 0-63 (the 32 interleaved shard starts, twice): only my face on the pillow and tag 0 top left; no floating curls, beard, glasses, beanie or ears, and nobody missing. No odd single frames (mod 32/64 residue 0), no frozen frames, no 1-frame luma spikes; cuts in the changed span (S69>S70 3119, S70>S71 3176, S71>S72 3211) have no pop or light spike, and the punch at 3142 is clean. Captions in the changed span are in order: 'the HALL,' 'and sat down' 'on the edge' 'of my dad's BED.' 'I didn't say' 'a WORD.' 'Neither did HE.'\nSecond one (unchanged): a lilac-lit close-up of my face lying sideways on the pillow, eyes open, wall-tag 0 top left, slow push; 'Never sleep facing the WALL at Grandma's. Something SITS on your bed.' poses the threat to the narrator.\nShould-fix (new with the tagy lift, not a fail; same class as the ep125/ep127 edge-crop should-fixes): during the punch-ins the lifted tag is cropped at the TOP edge, losing its top border and margin, and the pink stack and '3' touch the frame edge. This happens in S70 (L57) at 104.73-105.83 s (frames 3142-3175, 'of my dad's BED.') and in S71 (L58) at 106.57-107.0 s (frames 3197-3210). Likely cause: tagy=0.15 on L57 and 0.24 on L58 plus the punch zoom. Lower tagy to about 0.08 and 0.15, or keep the tag out of the punch crop. Content stays readable.\nCarried should-fix: S47 (L37) 66.9-68.2 s patting palm without an arm (reads as the intended unseen hand). Tag corner overlaps the edge of Grandma's hair in S57 (85 s) and the left tufts of my hair in S58 (86.9-89.1 s); eyes and brows clear (unchanged from the passed final). The S58 86.9-87.7 s edge-still reads 0.8 s (warning only; it drifts and punches at 87.6 s).\ncraft: 0 block, 0 near, 4 warn: macro.saturation_mean 0.4 (0.42-), spec.face_big_share 0.39 (0.4-), micro.character_motion_shot_share 0.346 (0.5-), sound.voice_bed_gap_db 17.1 (8-14). Pace matches the old final and proof: changes 15.0 (12.5), q 16.1 (14.0), motion q 6.79 (6.0), longest still q 0.53 s (1.0), edge 0.8 s."
+}

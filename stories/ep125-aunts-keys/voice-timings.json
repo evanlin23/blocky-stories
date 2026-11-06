@@ -1,0 +1,1697 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "My aunt has a key to every house here. Including yours.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.698
+    ],
+    [
+     0.698,
+     0.983
+    ],
+    [
+     0.983,
+     1.448
+    ],
+    [
+     1.543,
+     2.5
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Our court has twelve houses around one fountain.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     1.069
+    ],
+    [
+     1.069,
+     2.034
+    ]
+   ]
+  },
+  "L03": {
+   "text": "And every night at midnight, you can hear her using them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.155,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     1.103
+    ],
+    [
+     1.172,
+     1.345
+    ],
+    [
+     1.345,
+     1.612
+    ],
+    [
+     1.612,
+     2.328
+    ]
+   ]
+  },
+  "L04": {
+   "text": "click. Click. click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.362,
+     0.534
+    ],
+    [
+     0.569,
+     1.034
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Mister Ames sleeps in his armchair, facing his door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.784
+    ],
+    [
+     0.784,
+     1.31
+    ],
+    [
+     1.345,
+     2.224
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Missus Haddad changed her locks twice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.19
+    ],
+    [
+     1.19,
+     1.741
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Aunt Lou had the new key by Friday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.569
+    ],
+    [
+     0.569,
+     0.897
+    ],
+    [
+     0.897,
+     1.621
+    ]
+   ]
+  },
+  "L08": {
+   "text": "She's been the court's locksmith for forty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.724
+    ],
+    [
+     0.724,
+     1.121
+    ],
+    [
+     1.121,
+     1.948
+    ]
+   ]
+  },
+  "L09": {
+   "text": "My aunt Lou raised me in number one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.008
+    ],
+    [
+     1.008,
+     1.707
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Last month, I moved out, into number seven. My first place.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.828,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.931
+    ],
+    [
+     0.957,
+     1.672
+    ],
+    [
+     1.776,
+     2.621
+    ]
+   ]
+  },
+  "L11": {
+   "text": "I never gave her a key.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.732
+    ],
+    [
+     0.732,
+     1.259
+    ]
+   ]
+  },
+  "L12": {
+   "text": "She has one anyway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.19,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.19,
+     0.586
+    ],
+    [
+     0.586,
+     1.138
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Every midnight, ten locks click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.534
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Mine never does.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.19,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.19,
+     1.052
+    ]
+   ]
+  },
+  "L15": {
+   "text": "But every morning, I wake up in my sneakers. And they're wet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.155,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.664,
+     0.992
+    ],
+    [
+     0.992,
+     1.672
+    ],
+    [
+     1.741,
+     2.448
+    ]
+   ]
+  },
+  "L16": {
+   "text": "The neighbors call her the night landlady.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.732
+    ],
+    [
+     0.732,
+     1.672
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Honestly, so did I.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.517,
+     1.155
+    ]
+   ]
+  },
+  "L18": {
+   "text": "We fought about it. I told her to hand the keys back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.793
+    ],
+    [
+     0.862,
+     1.199
+    ],
+    [
+     1.199,
+     1.483
+    ],
+    [
+     1.483,
+     2.19
+    ]
+   ]
+  },
+  "L19": {
+   "text": "She just said, \"Lock your door before bed.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.19,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.69,
+     1.008
+    ],
+    [
+     1.008,
+     1.741
+    ]
+   ]
+  },
+  "L20": {
+   "text": "I didn't. On purpose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.509,
+     1.241
+    ]
+   ]
+  },
+  "L21": {
+   "text": "So I put a little camera in my window,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.931
+    ],
+    [
+     0.931,
+     1.655
+    ]
+   ]
+  },
+  "L22": {
+   "text": "pointed straight at her door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.276
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Twelve oh-one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Her door opens. There's Aunt Lou in her yellow raincoat,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.948,
+     1.337
+    ],
+    [
+     1.337,
+     1.466
+    ],
+    [
+     1.466,
+     2.345
+    ]
+   ]
+  },
+  "L25": {
+   "text": "with forty years of keys on one ring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     1.026
+    ],
+    [
+     1.026,
+     1.793
+    ]
+   ]
+  },
+  "L26": {
+   "text": "She hurries off her porch, fast.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     0.862
+    ],
+    [
+     0.897,
+     1.414
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Click. Click. Click. All the way round the court.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.345,
+     0.517
+    ],
+    [
+     0.552,
+     0.793
+    ],
+    [
+     0.845,
+     1.155
+    ],
+    [
+     1.155,
+     1.897
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Like she's racing something.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.362
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Twelve oh-three. She's back on her porch,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.724,
+     1.026
+    ],
+    [
+     1.026,
+     1.69
+    ]
+   ]
+  },
+  "L30": {
+   "text": "with a blanket. Waiting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.716,
+     1.259
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Twelve oh-four.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Somebody walks up her front steps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.19,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.19,
+     0.414
+    ],
+    [
+     0.414,
+     0.681
+    ],
+    [
+     0.681,
+     1.466
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Slow. In sneakers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.19,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.19,
+     0.379
+    ],
+    [
+     0.414,
+     1.172
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Eyes shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.983,
+   "onset": 0.19,
+   "end": 0.793,
+   "chunks": [
+    [
+     0.19,
+     0.793
+    ]
+   ]
+  },
+  "L35": {
+   "text": "It's me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.931,
+   "onset": 0.155,
+   "end": 0.707,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Fast asleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.19,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.19,
+     0.931
+    ]
+   ]
+  },
+  "L37": {
+   "text": "I watched myself try her handle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.741,
+     1.552
+    ]
+   ]
+  },
+  "L38": {
+   "text": "It opens.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.069,
+   "onset": 0.172,
+   "end": 0.862,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ]
+   ]
+  },
+  "L39": {
+   "text": "She puts the blanket round my shoulders,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.776
+    ],
+    [
+     0.776,
+     1.707
+    ]
+   ]
+  },
+  "L40": {
+   "text": "and walks me in to my old room.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.672
+    ],
+    [
+     0.672,
+     0.845
+    ],
+    [
+     0.845,
+     1.5
+    ]
+   ]
+  },
+  "L41": {
+   "text": "I'm the thing that walks this court at midnight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.828
+    ],
+    [
+     0.828,
+     1.147
+    ],
+    [
+     1.147,
+     1.759
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Since the night I moved out, I've been sleepwalking home.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.983
+    ],
+    [
+     1.034,
+     1.741
+    ],
+    [
+     1.741,
+     2.276
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Trying every handle I can find.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ],
+    [
+     0.931,
+     1.724
+    ]
+   ]
+  },
+  "L44": {
+   "text": "So every night, Aunt Lou races me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.776,
+     1.034
+    ],
+    [
+     1.034,
+     1.724
+    ]
+   ]
+  },
+  "L45": {
+   "text": "She locks ten doors with their own keys,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.888
+    ],
+    [
+     0.888,
+     1.052
+    ],
+    [
+     1.052,
+     1.776
+    ]
+   ]
+  },
+  "L46": {
+   "text": "so the only one I can open is hers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.629
+    ],
+    [
+     0.629,
+     1.086
+    ],
+    [
+     1.086,
+     1.759
+    ]
+   ]
+  },
+  "L47": {
+   "text": "She can't lock me in. My bolt turns from inside, and asleep, I just turn it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.397,
+   "onset": 0.172,
+   "end": 3.207,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.983
+    ],
+    [
+     1.069,
+     1.603
+    ],
+    [
+     1.603,
+     2.069
+    ],
+    [
+     2.095,
+     2.431
+    ],
+    [
+     2.457,
+     2.655
+    ],
+    [
+     2.655,
+     3.207
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Before sunrise, she walks me back to number seven,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.155,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.155,
+     0.862
+    ],
+    [
+     0.914,
+     1.233
+    ],
+    [
+     1.233,
+     1.5
+    ],
+    [
+     1.5,
+     2.241
+    ]
+   ]
+  },
+  "L49": {
+   "text": "and unlocks the other ten before anyone wakes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.966
+    ],
+    [
+     0.966,
+     2.017
+    ]
+   ]
+  },
+  "L50": {
+   "text": "That's why she has my key.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.793
+    ],
+    [
+     0.793,
+     1.397
+    ]
+   ]
+  },
+  "L51": {
+   "text": "She never told me. She didn't want me scared of my own place.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.19,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     0.828
+    ],
+    [
+     0.914,
+     1.129
+    ],
+    [
+     1.129,
+     1.328
+    ],
+    [
+     1.328,
+     1.543
+    ],
+    [
+     1.543,
+     1.707
+    ],
+    [
+     1.707,
+     2.431
+    ]
+   ]
+  },
+  "L52": {
+   "text": "Thursday's video was the worst.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.845,
+     1.569
+    ]
+   ]
+  },
+  "L53": {
+   "text": "Her knee was bad. She was slow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
+     0.69
+    ],
+    [
+     0.724,
+     1.414
+    ]
+   ]
+  },
+  "L54": {
+   "text": "I got to Mister Ames's door first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.638
+    ],
+    [
+     0.638,
+     1.164
+    ],
+    [
+     1.164,
+     1.672
+    ]
+   ]
+  },
+  "L55": {
+   "text": "I watched my own hand turn his handle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.948
+    ],
+    [
+     0.948,
+     1.759
+    ]
+   ]
+  },
+  "L56": {
+   "text": "She turned his key with one second to spare.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.741
+    ],
+    [
+     0.741,
+     1.25
+    ],
+    [
+     1.25,
+     1.879
+    ]
+   ]
+  },
+  "L57": {
+   "text": "She sat on his steps after, and shook.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.759
+    ],
+    [
+     0.759,
+     1.0
+    ],
+    [
+     1.026,
+     1.569
+    ]
+   ]
+  },
+  "L58": {
+   "text": "So I thought about where I was walking to.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.768
+    ],
+    [
+     0.768,
+     0.931
+    ],
+    [
+     0.931,
+     1.534
+    ]
+   ]
+  },
+  "L59": {
+   "text": "I was walking to her table.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.431
+    ]
+   ]
+  },
+  "L60": {
+   "text": "Her table. Twenty years of dinners at six.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.595,
+     1.008
+    ],
+    [
+     1.008,
+     1.31
+    ],
+    [
+     1.31,
+     1.948
+    ]
+   ]
+  },
+  "L61": {
+   "text": "And since I moved out, I hadn't been back once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.862
+    ],
+    [
+     0.914,
+     1.164
+    ],
+    [
+     1.164,
+     2.034
+    ]
+   ]
+  },
+  "L62": {
+   "text": "So now, every night at six, I walk over. awake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.19,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.19,
+     0.414
+    ],
+    [
+     0.439,
+     0.698
+    ],
+    [
+     0.698,
+     0.948
+    ],
+    [
+     0.974,
+     1.5
+    ],
+    [
+     1.578,
+     2.121
+    ]
+   ]
+  },
+  "L63": {
+   "text": "She still makes too much soup.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.241
+    ]
+   ]
+  },
+  "L64": {
+   "text": "I walk home at ten, and I sleep all night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.759
+    ],
+    [
+     0.784,
+     1.129
+    ],
+    [
+     1.129,
+     1.741
+    ]
+   ]
+  },
+  "L65": {
+   "text": "My sneakers stay dry.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.276
+    ]
+   ]
+  },
+  "L66": {
+   "text": "She keeps my room made up anyway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.81
+    ],
+    [
+     0.81,
+     1.026
+    ],
+    [
+     1.026,
+     1.552
+    ]
+   ]
+  },
+  "L67": {
+   "text": "Just in case.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ]
+   ]
+  },
+  "L68": {
+   "text": "And she still does her rounds. Old habit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     1.086
+    ],
+    [
+     1.155,
+     1.845
+    ]
+   ]
+  },
+  "L69": {
+   "text": "So if you ever wonder who's clicking at midnight,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.948
+    ],
+    [
+     0.948,
+     1.337
+    ],
+    [
+     1.337,
+     1.948
+    ]
+   ]
+  }
+ }
+}

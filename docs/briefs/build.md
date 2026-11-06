@@ -40,13 +40,23 @@ The builder reads docs/engine.md itself.
 
      The builder fixes what it lists before the preview. This is not a review round, it gives no verdict, and it's done once. Framing and faces at phone size were the most common blockers in batches 7 to 9.
    - **Framing lint, every shot.** Run `python scripts/framing.py --story stories/__STORY__` (report-only; on main since #284). Have the builder fix every finding: a head cut by any frame edge, a face under 1/5 of the width on a line about that person, back-of-head or a profile (the narrator's too, on an I / me / my line), an empty frame during a line, a mouth under the caption, a hand or the rule tag over a face, or a CAPS word's prop never in frame. List a deliberate one in story.json `"framing_ok"`. Run it again before every review round and before the rescue.
+   - **Staging lint, every frame.** Run `python scripts/staging.py --story stories/__STORY__`; fix every finding or list a deliberate one in `staging_ok` (report-only, lesson 46). It finds lurches (a character sliding 0.25 m or more in 0.15 s on a key under 0.4 s from the last, or two keys at one time in different places, while on camera) and bodies inside each other (two people on camera whose shoulders-and-arms boxes overlap, side by side under about 1.35 m). A lurch fix: carry the walk's end into the hold (the same pos), or give the move 0.4 s or more. A close fix: space them 1.4 m or more side by side, or turn them face to face. A hug, a hand-hold or a booth goes in story.json `"staging_ok": ["S12/hug"]` (a shot, `shot/note`, `shot/a+b` or `shot/who`). Run it again before every review round.
    - **Preview.** Render the preview, then finish and mix.
    - **Frame lint, on the preview.** Run `python scripts/frames.py --story stories/__STORY__` on the preview's frames before every review round, next to framing.py (report-only, lesson 40). Have the builder fix every finding: blank or near-uniform frames (a camera inside a wall), a pop on a shot's first drawing (a character posed a frame late), or a shot that opens dark and brightens over its first 0.3 s (a light fading in after the cut). List a deliberate one in story.json `"frames_ok"`.
    - **Flash.** Run `python -m blocky flash __STORY__ --like-proof` (every drawing the proof draws, at the meter's size: it reads what the proof reads, 2026-11-05) on any story with bright light changes, glows or flipping lights, and pass with margin (at most about 5 flashes a second, against the cap of 6). The first full `--like-proof` draws every frame and can take over 30 minutes: run it in the background with a 2 h timeout and wait with a Monitor. After a fix, re-check with `--like-proof --shots <the changed shots>`, which keeps the other drawings (lesson 41). A swinging, flickering or switching practical light counts (2026-11-04: ep97 failed its proof at 7 a second from a swinging bulb).
-   - **Measure.** Run `python scripts/measure.py --story stories/__STORY__`. The 4 craft blocks must pass:
-     - picture changes per 10 s, at 0.5 s and at 0.25 s;
-     - motion energy;
-     - longest still ≤1.0 s.
+   - **Measure, on the preview film.** Run `python scripts/measure.py --story stories/__STORY__` after the preview is
+     finished and mixed: it measures `out/work/__STORY__/<slug>-preview.mp4`. With no film the 4 craft blocks read
+     `unmeasured`, which is not a pass (until 2026-11-06 they were silently left out, and ep117 passed "locally" at
+     12.5 against 14; lesson 43). The 4 craft blocks must pass, with these margins for what the proof and the final
+     will read (measured on 8 proofs, 7 of them against their finals):
+     - picture changes per 10 s at 0.5 s: the preview differs from the proof by up to 1.0 either way, so 13.5 or
+       more on the preview; the proof and the final read the same;
+     - picture changes per 10 s at 0.25 s: the preview within about 0.7 of the proof, the final within 0.2 of it,
+       so 15 on the preview;
+     - motion energy: the preview within about 0.4 of the proof, the final within 0.05, so 6.4 on the preview;
+     - longest still ≤1.0 s, and **`longest_still_q_edge_s` ≤1.0 s too**: a still at the threshold's edge reads
+       one 0.27 s step longer on the less noisy final (ep126: 0.8 s on the proof, 1.07 s, a block, on the final).
+       The longest still moves in 0.27 s steps (8 frames), so 0.8 s is the most that passes.
 
      On a pace fail, shorten the quiet span or add motion inside it. Never crop harder.
    - **Sound.** The budget is 2 to 4 events per 10 s, and the score plays under the whole film.
@@ -65,6 +75,7 @@ The builder reads docs/engine.md itself.
 4. **On approval.** Remove `"hold"` from package.json, then run:
    - `python -m blocky check __STORY__`
    - `python -m blocky gate __STORY__`, which must say OPEN
+   - before the proof, run `python scripts/shardcheck.py --story stories/__STORY__`; fix every difference (a shard start must see the scene a continuous run sees, lesson 44)
    - `python -m pytest -q`
 
 5. **Open the PR.** Use the GitHub MCP tools, with the title "__STORY__: build (batch __BATCH__)", not WIP. In the body, add any queue-spacing notes standards gave.

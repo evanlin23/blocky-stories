@@ -1,0 +1,26 @@
+{
+ "stage": "final",
+ "film": 13487605702,
+ "run": 42176173638,
+ "pass": true,
+ "verdict": "pass",
+ "date": "2026-11-06",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "audio",
+  "craft",
+  "flash",
+  "package",
+  "gate",
+  "S48 fix",
+  "captions",
+  "shot first frames",
+  "light cues",
+  "rule tag",
+  "frame count"
+ ],
+ "craft": "**ep128-zero-feet**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.5 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 15.7 | 14.0– | ok |\n| macro.motion_energy_q | 6.84 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 8.25 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.69 | –2.5 | ok |\n| macro.longest_still_s | 0.87 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 2.7 | 1.5– | ok |\n| spec.camera_move_share | 0.996 | 0.65– | ok |\n| spec.punch_per_10s | 0.67 | 0.4– | ok |\n| macro.brightness_mean | 0.688 | 0.35– | ok |\n| macro.brightness_first_3s | 0.75 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.4 | 0.42– | **warn** |\n| macro.contrast_mean | 0.199 | 0.18– | ok |\n| spec.face_big_share | 0.589 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.003 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.603 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.016 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 77.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.8 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.2 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0445 | –0.08 | ok |\n| sound.hf_jump_max | 0.0122 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Final film 13487605702 (run 42176173638, head a7dc8e0; ep128 story files last changed at b6f8f57, the proved S48 rescue), 1080x1920 30 fps, 6 samples. Video 2251 frames / 75.03 s; timeline 2254 frames / 75.133 s; audio 75.133 s. The picture is 3 frames (0.1 s) short, at the end on S63 (every one of the 62 cuts lands on its exact timeline frame). The last word 'SAYS' ends at 74.88 s and its caption is on screen to the last frame; after that only the bed plays, at about -33 dB RMS, into the loop. Nothing is cut off. Duration is in range.\nChecked: frames every 2 s plus every frame of 0-3 s, 10 fps through S48 (53.2-55.2 s) and S63 (73.4-75.03 s), at phone size and on a 1920x1080 TV canvas, plus full-size crops. No noise, fireflies or texture shimmer at 6 samples. Shadows hold on the TV. Nothing black or frozen: no run of identical frames, and the darkest frame has mean 119/255. No stray text and no head through anything.\nProof items hold: S48 (53.33-55.03 s) pushes in during 'right over' and ends on Mom's whole face, with both eyes, both ears, the smile and the hair inside the frame through 'my HEAD.' (54.3-55.0 s). The cut to S49 'So she'd' is clean. Pin: 'Comment ZERO if yours has ever said zero.'\nLOOK HARDER: (1) All 128 caption chunks were cropped at their midpoints and read in script order. None is lost or doubled, P01 is the silent beat at 43 s, and the timeline's lost words are []. (2) Every shot's first frame matches frame 1: frame 0 to frame 1 change is 0.55-4.6, in line with each shot's own move (S35, S44, S59 open on moves already under way), with no pop and no missing character. (3) No light cue flashes at a cut: brightness at frames 0-3 is within 2/255 at every cut. (4) The house/foot/0 rule tag sits top left in every frame, above or beside the faces, never over an eye or a caption.\nSecond one: a lit medium shot of the narrator on his orange sofa with the phone beside him reading 0 and the 0 tag top left, a slow push. 'Zero FEET.' at 0.21 s, then the hook punch-in on 'family is.' (2.3-2.45 s, intended).\nAudio: -14.1 LUFS, -1.8 dBTP, LRA 1.1. Highest 5 s share above 4 kHz is 0.0445 and the biggest jump is 0.0122. The voice sits 12.2 dB over the bed and nothing clips. Flash: house bar pass, general 1/s, general_3f 3/s, red 0; house warning: 7 changes in one second at 52.3 s, the 3-frame count (old bar 6). The longest 2/s run is 1.97 s, from 52.2 s.\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 8.25 (5.5-8.0), macro.saturation_mean 0.4 (0.42-). Longest still at 0.25 s is 0.8 s and the edge still 0.8 s, both under the 1.0 s bar, and the same as the proof, as is every other number. No near band, so there was no slowest-10 s watch. Neither warning loses viewers.\nGate OPEN, with the same two warnings as the proof (the 'hear her' caption and the note 9 label opener). Opening 'count' is unchanged since the proof. Verdict: pass.",
+ "fixes": []
+}
