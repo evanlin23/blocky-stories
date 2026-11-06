@@ -21,3 +21,8 @@
 - BLOCKER: pytest `test_every_story_passes_its_checks[ep123-sorry-shrink]` fails on `assert 30 <= tl["duration"]` (blocky/test_blocky.py:132).
   - The film is 28.07 s; the batch 13 short arm is about 28 s.
   - The fix is an engine/test change (the floor down to about 20 s), which this session may not make. Asked the orchestrator.
+- PR #324 is open.
+- Proof 1 (run 42138026361) drew and passed its own verdict, but qa failed it: the S15 reset keys fired 0.13 s before the cut.
+- The single-fix rescue is in (rev 7): the keys now fire at the L16 cut. S15 is listed in framing_ok, after its whole head was checked in the still.
+- Proof 2 is run 42141264775. The proof qa runs again on it.
+- `test` waits on #325 (the duration floor lowered from 30 to 20 s, the orchestrator's PR). Once it's on main: merge main, push, and merge #324 when test is green.
