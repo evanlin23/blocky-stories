@@ -22,7 +22,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L29")
@@ -71,7 +71,7 @@ APRON = "#2f8a52"
 cast = {
     "me": person("#a9744f", "#8d939e", "#3b4a6b", "#2a2a2e", extras=["apron"], extra_c=APRON),
     "me_young": person("#a9744f", "#5aa0e8", "#3b4a6b", "#2a2a2e"),
-    "gus": person("#e2b088", "#c63a32", "#5a4a3a", "#3a2c24", hair="none", extras=["apron"], extra_c=APRON, height=1.04,
+    "gus": person("#d6945c", "#c63a32", "#5a4a3a", "#3a2c24", hair="none", extras=["apron"], extra_c=APRON, height=1.04,
                   width=1.1, pattern="plaid", pattern_c="#1a1a1a"),
     "stranger_a": person("#f1c9a0", "#ffd23f", "#6b4a2a", "#f6f6f6", hair="bun", hair_c="#3a2418", eyes="lashes", body_width=0.8),
     "stranger_b": person("#c58a5c", "#e0643a", "#3a3a4a", "#f6f6f6", hair="cap", hair_c="#241a16", body_width=0.8),
@@ -121,14 +121,16 @@ def props(at, on=()):
 
 
 # ---------------------------------------------------------------------------------------------------- cameras
-def sub(x, y, H=2.9, tz=1.62, off=8.0, lens=34, sh=0.0, up=0.0):
+def sub(x, y, H=2.9, tz=1.62, off=8.0, lens=34, sh=0.0, up=0.0, pf=0.16):
     """A camera in front of a subject at (x, y): the frame is H metres tall at the subject, looking at height tz, `off`
     degrees round, the subject `sh` metres right of centre (positive moves it right on screen)."""
     d = H * lens / 24.0
     a = math.radians(off)
     cam = [round(x + d * math.sin(a) + 0.0, 3), round(y - d * math.cos(a), 3), round(tz + up, 3)]
     tgt = [round(x - sh * math.cos(a), 3), round(y - sh * math.sin(a) * 0.0, 3), round(tz, 3)]
-    return [[0, cam, tgt, lens]]
+    k = [0, cam, tgt, lens]
+    p2 = [round(a + (b - a) * pf, 3) for a, b in zip(cam, tgt)]
+    return [k, [1, p2, tgt, lens]]
 
 
 def look_at(cam, tgt, lens):
@@ -140,6 +142,12 @@ def ins(center, dist=2.1, elev=52.0, lens=40, off=0.0, dz=0.0):
     e, a = math.radians(elev), math.radians(off)
     cam = [center[0] + dist * math.cos(e) * math.sin(a), center[1] - dist * math.cos(e) * math.cos(a), center[2] + dist * math.sin(e)]
     return look_at(cam, [center[0], center[1], center[2] + dz], lens)
+
+
+def cc(arm, s=1.0, p=35.0):
+    """The middle of a tilted cuff prop's numerals (see set.arm_prop pitch)."""
+    r = math.radians(p)
+    return (arm[0] + 0.05 * s, arm[1] - 0.35 * s * math.sin(r), arm[2] + 0.165 * s * math.sin(r) + 0.35 * s * math.cos(r))
 
 
 def push(cam, f=0.1):
@@ -172,12 +180,13 @@ for w_ in cast:
     TP(w_, 0, FAR, 0, hidden=True)
 
 # ===== L01 the hook: my face, my forearm on the bench in the lower third with the 0
-ME_BENCH = [BENCH_CX + 0.2, 1.15]
+ME_BENCH = [BENCH_CX + 0.2, 1.7]
+CAMY = 1.15
 gus_state(0, "buttoned", None)
 props(0, ["barm"])
 at_("me", 0, *ME_BENCH, expr="neutral")
-shot(0, push(sub(ME_BENCH[0], ME_BENCH[1], H=3.0, tz=1.25, off=6, sh=-0.1, up=1.6), 0.06), "hook")
-shot("L01.1", ins((ARM_BENCH[0] + 0.05, ARM_BENCH[1], ARM_BENCH[2] + 0.35), dist=1.5, elev=55, lens=40), "hookcuff")
+shot(0, push(sub(ME_BENCH[0], CAMY, H=1.95, tz=1.02, off=6, sh=-0.05, up=0.8), 0.05), "hook")
+shot("L01.1", ins(cc(ARM_BENCH, 1.35, 30), dist=1.3, elev=72, lens=40, dz=-0.05), "hookcuff")
 # ===== L02
 ME_SIDE = [BENCH_CX - 1.95, 0.45]
 props("L02", [])
@@ -190,14 +199,14 @@ shot("L03", look_at([BX + 2.4, BY - 1.4, 2.1], [BX + 2.4, BY - 0.15, 0.66], 36),
 SA, SB = [BX - 0.54, BY + 1.1], [BX + 0.54, BY + 1.1]
 at_("stranger_a", "L04", *SA, expr="laugh", z=SIT)
 at_("stranger_b", "L04", *SB, expr="laugh", z=SIT)
-shot("L04", sub(BX, BY + 1.1, H=3.5, tz=1.0, off=0, sh=0, up=0.9), "bus")
+shot("L04", sub(BX - 0.17, BY + 1.1, H=4.0, tz=0.55, off=0, sh=0, up=0.5, pf=0.0), "bus")
 HIDE("stranger_a", "L05")
 HIDE("stranger_b", "L05")
 # ===== L05 Mom and Rita on the yard-sale couch
 MA, MB = [YX - 0.54, YY + 1.2], [YX + 0.54, YY + 1.2]
 at_("mom", "L05", *MA, expr="smile", z=SIT)
 at_("rita", "L05", *MB, expr="smile", z=SIT)
-shot("L05", sub(YX, YY + 1.2, H=3.5, tz=1.0, off=0, up=0.9), "yard")
+shot("L05", sub(YX - 0.17, YY + 1.2, H=4.0, tz=0.55, off=0, up=0.5, pf=0.0), "yard")
 HIDE("mom", "L06")
 HIDE("rita", "L06")
 # ===== L06 the fast walker, then his cuff
@@ -224,8 +233,10 @@ gus_mouth = {"from": "L11", "to": "L11.1", "mouth": [0.7, 0.7], "flap": True}
 K("gus", "L11", GUS_H, expr="angry")
 acting["gus"].append(gus_mouth)
 shot("L11", sub(GUS_H[0], GUS_H[1], H=2.3, tz=1.62, off=-6), "gus2")
-props("L11.1", ["barm"])
-shot("L11.1", ins((ARM_BENCH[0] + 0.05, ARM_BENCH[1], ARM_BENCH[2] + 0.35), dist=1.8, elev=42, lens=40, off=-12), "benchcuff1")
+GUS_HC = [HSX - 1.7, 1.75]
+TP("gus", "L11.1", [GUS_HC[0], GUS_HC[1], 0.0], 0.0, "angry")
+acting["gus"].append({"from": "L11.1", "to": "L12", "mouth": [0.7, 0.7], "flap": True})
+shot("L11.1", sub(HSX - 2.1, 1.75, H=3.1, tz=0.6, off=6), "gushoses")
 props("L12", [])
 HIDE("gus", "L12")
 ME_HOSE = [HSX + 0.0, 0.6]
@@ -250,7 +261,7 @@ shot("L15.1", sub(ME_RAD[0], ME_RAD[1], H=2.9, tz=1.6, off=10), "fern")
 # ===== L16 my cuff, my other hand tapping
 HIDE("me", "L16")
 props("L16", ["barm", "tap"])
-shot("L16", ins((ARM_BENCH[0] - 0.05, ARM_BENCH[1] - 0.1, ARM_BENCH[2] + 0.3), dist=1.2, elev=60, lens=36, off=10), "tapcuff")
+shot("L16", ins(cc(ARM_BENCH, 1.35, 30), dist=1.5, elev=52, lens=36, off=10), "tapcuff")
 # ===== L17 the birthday cactus, L18 the boss
 props("L17", [])
 shot("L17", look_at([BENCH_CX - 0.15, -0.55, 1.4], [BENCH_CX - 0.3, 0.52, 1.25], 40), "cactus")
@@ -260,7 +271,7 @@ shot("L18", sub(ME_BR[0], ME_BR[1], H=2.9, tz=1.6, off=-10), "shrug")
 HIDE("me", "L19")
 # ===== L19 Gus's buttoned flannel cuff on the tank rim
 props("L19", ["rarm"])
-shot("L19", ins((ARM_RIM[0] + 0.1, ARM_RIM[1], ARM_RIM[2] + 0.35), dist=1.7, elev=48, lens=40, off=-8), "flannelcuff")
+shot("L19", ins(tuple(a + b for a, b in zip(cc(ARM_RIM), (0.15, 0, 0))), dist=1.5, elev=50, lens=40, off=-8), "flannelcuff")
 # ===== L20 keys in the koi tank
 props("L20", [])
 ME_TL = [TNK - 2.55, 0.3]
@@ -280,8 +291,8 @@ shot("L22", sub(ME_TL[0], ME_TL[1], H=2.7, tz=1.55, off=12), "tankme2")
 HIDE("me", "L23-0.3")
 gus_state("L23-0.3", "rolled", 1)
 props("L23-0.3", ["rarm"])
-shot("L23-0.3", ins((ARM_RIM[0] + 0.1, ARM_RIM[1], ARM_RIM[2] + 0.35), dist=1.6, elev=50, lens=40, off=8), "cuff1")
-shot("L23.1", ins((ARM_RIM[0] + 0.05, ARM_RIM[1], ARM_RIM[2] + 0.36), dist=0.95, elev=62, lens=40, off=0), "cuff1big")
+shot("L23-0.3", ins(cc(ARM_RIM), dist=1.4, elev=50, lens=40, off=8), "cuff1")
+shot("L23.1", ins(cc(ARM_RIM), dist=1.0, elev=52, lens=40, off=0), "cuff1big")
 props("L24", [])
 at_("me", "L24", ME_TL[0] + 0.4, ME_TL[1], expr="wide", head=[-18, 6])
 shot("L24", sub(ME_TL[0] + 0.4, ME_TL[1], H=2.4, tz=1.6, off=-8), "tankme3")
@@ -329,7 +340,7 @@ props("L33", [])
 at_("gus", "L33", *GUS_TB, expr="neutral", z=SIT)
 shot("L33", push(sub(GUS_TB[0], GUS_TB[1], H=2.3, tz=1.5, off=0), 0.05), "gusface")
 props("L33.1", ["tarm"])
-shot("L33.1", sub(GUS_TB[0], GUS_TB[1], H=2.8, tz=1.1, off=0, sh=0.0, up=0.7), "reveal", exp=0.0)
+shot("L33.1", sub(GUS_TB[0], GUS_TB[1], H=2.5, tz=0.95, off=0, sh=0.0, up=0.6), "reveal", exp=0.0)
 # ===== L34 I'd finally be his
 HIDE("gus", "L34")
 ME_S = [BENCH_CX + 1.9, 0.5]
@@ -340,7 +351,7 @@ K("me", "L34.1", expr="angry")
 # ===== L35 two coffees
 HIDE("me", "L35")
 cue("L35", "cups", on=True)
-shot("L35", look_at([TBX, -1.9, 1.5], [TBX + 0.02, 0.15, 0.85], 30), "cups")
+shot("L35", look_at([TBX, -2.3, 1.6], [TBX + 0.02, 0.15, 0.8], 26), "cups")
 # ===== L36 I sat down at his little table
 at_("me", "L36", *GUS_TB, expr="smile", z=SIT)
 shot("L36", sub(GUS_TB[0], GUS_TB[1], H=2.9, tz=1.4, off=-8), "mesit")
@@ -356,24 +367,25 @@ shot("L38", sub(GUS_TB[0], GUS_TB[1], H=2.4, tz=1.45, off=8), "gusstunned")
 # ===== L39 his sleeve, L40 ZERO
 props("L39", ["tarm"])
 HIDE("gus", "L39")
-shot("L39", ins((ARM_TABLE[0] + 0.1, ARM_TABLE[1], ARM_TABLE[2] + 0.35), dist=1.6, elev=48, lens=40, off=-8), "armtable")
+shot("L39", ins(cc(ARM_TABLE, 1.25), dist=1.6, elev=50, lens=40, off=-8), "armtable")
 gus_state("L40", "rolled", 0)
-shot("L40", [[0, [ARM_TABLE[0] + 0.3, ARM_TABLE[1] - 1.2, ARM_TABLE[2] + 1.4], [ARM_TABLE[0] + 0.1, ARM_TABLE[1], ARM_TABLE[2] + 0.35], 40], [1, [ARM_TABLE[0] + 0.1, ARM_TABLE[1] - 0.6, ARM_TABLE[2] + 1.0], [ARM_TABLE[0] + 0.05, ARM_TABLE[1], ARM_TABLE[2] + 0.36], 40]], "cuff0")
+shot("L40", (lambda c: [[0, [c[0] + 0.3, c[1] - 1.4, c[2] + 1.1], list(c), 40], [1, [c[0] + 0.05, c[1] - 0.95, c[2] + 0.8], list(c), 40]])(cc(ARM_TABLE, 1.25)), "cuff0")
 # ===== L41 late
 props("L41", [])
 at_("gus", "L41", *GUS_TB, expr="smile", z=SIT)
 shot("L41", sub(GUS_TB[0], GUS_TB[1], H=2.4, tz=1.45, off=-8), "gussmile")
 # ===== L42, L43 still fighting (two faces side by side, both to camera)
 HIDE("gus", "L42")
-TWO_ME, TWO_GUS = [HSX + 0.34, 0.2], [HSX - 0.34, 0.75]
-at_("me", "L42", *TWO_ME, expr="angry")
-at_("gus", "L42", *TWO_GUS, expr="angry")
-shot("L42", sub(HSX, 0.5, H=3.5, tz=1.5, off=0, lens=40, sh=-0.25), "two1")
-shot("L43", sub(HSX, 0.5, H=3.5, tz=1.5, off=-6, lens=40, sh=-0.25), "two2")
+TWO_ME, TWO_GUS = [HSX + 0.56, 0.5], [HSX - 0.6, 0.5]
+at_("me", "L42", *TWO_ME, expr="angry", arms=[0, 70])
+at_("gus", "L42", *TWO_GUS, expr="angry", arms=[0, 0])
+shot("L42", sub(HSX, 0.5, H=3.0, tz=1.5, off=0, lens=40, sh=0.03, pf=0.0), "two1")
+shot("L43", push(sub(HSX, 0.5, H=3.0, tz=1.5, off=-5, lens=40, sh=0.03, pf=0.0), 0.06), "two2")
 # ===== L44 lunch together
 HIDE("me", "L44")
 at_("gus", "L44", *GUS_TB, expr="laugh", z=SIT)
-shot("L44", sub(GUS_TB[0], GUS_TB[1], H=2.4, tz=1.42, off=6), "guslaugh")
+cue("L44", "radio2", on=False)
+shot("L44", sub(GUS_TB[0], GUS_TB[1], H=2.6, tz=1.25, off=6, sh=-0.3), "guslaugh")
 # ===== L45 pointing past camera
 HIDE("gus", "L45")
 at_("me", "L45", *ME_BR, expr="smile", side=[0, 22])
@@ -382,7 +394,7 @@ shot("L45", sub(ME_BR[0], ME_BR[1], H=3.0, tz=1.6, off=-8, sh=0.0), "point")
 HIDE("me", "L46")
 props("L46", ["barm"])
 at_("me", "L46", *ME_BENCH, expr="neutral")
-shot("L46", push(sub(ME_BENCH[0], ME_BENCH[1], H=3.0, tz=1.25, off=6, sh=-0.1, up=1.6), 0.1), "loopend")
+shot("L46", push(sub(ME_BENCH[0], CAMY, H=1.95, tz=1.02, off=6, sh=-0.05, up=0.8), 0.1), "loopend")
 
 # ---------------------------------------------------------------------------------------------------- finish
 remap_all(cues)
@@ -391,7 +403,7 @@ for ks in acting.values():
 
 shots, names = [], {}
 for i, (at, camera, nm_, kw) in enumerate(SH):
-    s = {"id": f"S{i + 1:02d}", "cam": camera, "step": 2, "hand": 0.004}
+    s = {"id": f"S{i + 1:02d}", "cam": camera, "step": 2, "hand": 0.008}
     s.update(kw)
     if i:
         s["at"] = remap(at)
@@ -403,6 +415,10 @@ sfx = [
     {"at": "L04", "kind": "bell", "db": -20},
     {"at": "L37.1", "kind": "click", "db": -14},
     {"at": "L40", "kind": "click", "db": -10},
+    {"at": "L19", "kind": "click", "db": -16},
+    {"at": "L21", "kind": "thud", "db": -16},
+    {"at": "L35", "kind": "click", "db": -14},
+    {"at": "L44", "kind": "bell", "db": -18},
 ]
 music = {
     "root": 50, "mode": "major", "bpm": 112, "seed": 130,
@@ -460,7 +476,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": [names[n] for n in ("benchcuff1", "fern", "walkaway", "quiltcuff")],
+    "framing_ok": [names[n] for n in ("fern", "walkaway", "quiltcuff")],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

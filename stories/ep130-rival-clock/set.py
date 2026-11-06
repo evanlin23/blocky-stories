@@ -91,8 +91,11 @@ def make_digits(parent, text, cx, cv, level, w, h, t, depth, plane):
         pos = {"a": (0, h / 2 - t / 2, w, t), "g": (0, 0, w, t), "d": (0, -h / 2 + t / 2, w, t),
                "f": (-w / 2 + t / 2, h / 4, t, h / 2), "b": (w / 2 - t / 2, h / 4, t, h / 2),
                "e": (-w / 2 + t / 2, -h / 4, t, h / 2), "c": (w / 2 - t / 2, -h / 4, t, h / 2)}
-        for k in SEGS[ch]:
-            px, pv, sw, sh = pos[k]
+        items = [(k,) + pos[k] for k in SEGS[ch]]
+        if ch == "1":   # a centred stem, a flag at the top left and a base: a one, not a stick
+            items = [("S", 0, 0, t * 1.15, h), ("A", -w / 4 + t * 0.2, h / 2 - t / 2, w / 2, t),
+                     ("D", 0, -h / 2 + t / 2, w, t)]
+        for k, px, pv, sw, sh in items:
             if plane == "top":
                 out.append(B(parent, (sw, sh, depth), (gx + px, cv + pv, level + depth / 2 - 0.002), mat, "dig"))
             else:
@@ -104,11 +107,13 @@ def make_digits(parent, text, cx, cv, level, w, h, t, depth, plane):
 CUFFS = {"me": "#f2e7c9", "gus": "#e3b32e"}
 
 
-def arm_prop(name, loc, cuff, texts, yaw=0.0, sleeve="#8c93a0", skin="#a8744f", along=0.0, flannel=None, scale=1.0):
+def arm_prop(name, loc, cuff, texts, yaw=0.0, sleeve="#8c93a0", skin="#a8744f", along=0.0, flannel=None, scale=1.0, pitch=0.0):
     """A forearm lying flat (origin on the surface it lies on), elbow toward -x, hand toward +x, a broad cuff of the
     person's colour on its top, blocky numerals 1 cm proud of it. texts: a string, or a dict of state -> string
     (only one state shows at a time, set by animate). Returns the group (hide with `hide`) and a dict of state groups."""
-    g = E(None, loc, name, (0, 0, math.radians(yaw)))
+    p = math.radians(pitch)       # the far end tipped up toward the camera so the numerals face it; the front edge stays on the surface
+    loc = (loc[0], loc[1], loc[2] + 0.165 * scale * math.sin(p))
+    g = E(None, loc, name, (p, 0, math.radians(yaw)))
     g.scale = (scale, scale, scale)
     kit = W["kit"]
     arm = P(skin, 0.5)
@@ -122,11 +127,11 @@ def arm_prop(name, loc, cuff, texts, yaw=0.0, sleeve="#8c93a0", skin="#a8744f", 
         sg = E(g, (0, 0, 0), "state")
         if txt:
             n = len(txt)
-            w = min(0.15, 0.4 / n)
-            make_digits(sg, txt, 0.05, 0.0, 0.35, w, 0.27, 0.05, 0.012, "top")
+            w = min(0.22, 0.5 / (n + 0.28 * (n - 1)))
+            make_digits(sg, txt, 0.05, 0.0, 0.35, w, 0.28, 0.06, 0.012, "top")
         states[k] = sg
     fl = {}
-    if flannel:
+    if flannel is not None:
         # a buttoned flannel sleeve over the whole cuff: plaid, with a cuff-strap and a button
         fm = flannel
         fl["buttoned"] = E(g, (0, 0, 0), "buttoned")
@@ -222,7 +227,7 @@ def build_bench(kit):
     for s in (-1, 1):
         B(None, (0.1, 0.03, 0.06), (cx + s * 0.06, cy - 0.07, top + 0.2), pink, "bow", 0.015, rot=(0, math.radians(s * 25), 0))
     B(None, (0.035, 0.035, 0.035), (cx, cy - 0.075, top + 0.2), pink, "bowknot", 0.01)
-    W["bench_arm"], W["bench_states"], _ = arm_prop("armbench", G.BENCH_ARM, CUFFS["me"], "0", scale=1.4)
+    W["bench_arm"], W["bench_states"], _ = arm_prop("armbench", G.BENCH_ARM, CUFFS["me"], "0", scale=1.35, pitch=30)
     # my other hand, resting near the cuff (cue tap)
     W["tap"] = E(None, (G.BENCH_ARM[0] - 0.12, G.BENCH_ARM[1] - 0.34, top), "taphand")
     B(W["tap"], (0.2, 0.2, 0.1), (0, 0, 0.05), P("#a8744f", 0.5), "taphand", 0.04)
@@ -233,10 +238,10 @@ def build_hoses(kit):
     hx = G.SX["hose"]
     green = P("#2fb85a", 0.45, 0.4)
     dark = P("#1d7a3c", 0.5, 0.3)
-    for sx, rr in ((-2.4, 0.42), (2.6, 0.36)):
-        C(None, rr, 0.34, (hx + sx, 2.3, 0.17), green, "hosecoil", n=28)
-        C(None, rr * 0.55, 0.36, (hx + sx, 2.3, 0.18), dark, "hosehub", n=20)
-        C(None, rr * 0.9, 0.06, (hx + sx, 2.3, 0.37), P("#27a350", 0.45, 0.4), "hosetop", n=28)
+    for sx, rr, hy in ((-2.4, 0.55, 2.3), (2.6, 0.5, 2.3), (-2.55, 0.55, 1.15)):
+        C(None, rr, 0.5, (hx + sx, hy, 0.25), green, "hosecoil", n=28)
+        C(None, rr * 0.55, 0.52, (hx + sx, hy, 0.26), dark, "hosehub", n=20)
+        C(None, rr * 0.9, 0.06, (hx + sx, hy, 0.53), P("#27a350", 0.45, 0.4), "hosetop", n=28)
     # a wall tap and a reel post at the back
     B(None, (0.12, 0.12, 1.0), (hx - 1.0, 2.6, 0.5), P("#8a8f98", 0.4, 0.7), "tappipe")
     B(None, (0.3, 0.12, 0.12), (hx - 0.9, 2.55, 1.0), P("#d9a441", 0.35, 0.8), "tapbody")
@@ -312,7 +317,7 @@ def build_tank(kit):
     for i in range(3):
         B(None, (0.3, 0.3, 0.4), (kx - 1.75 + 0.1 * i, 0.5 - 0.2 * i, 0.2), P(GREENS[i], 0.8, 0.05), "tankplant", 0.1)
     W["rim_arm"], W["rim_states"], W["rim_fl"] = arm_prop("armrim", G.RIM_ARM, CUFFS["gus"], {"": "", "1": "1", "0": "0"},
-                                                          flannel=W["flannel_mat"])
+                                                          flannel=W["flannel_prop"], pitch=35)
 
 
 def build_table(kit):
@@ -342,11 +347,11 @@ def build_table(kit):
         B(W["cups"], (0.05, 0.05, 0.07), (sx * 0.385, 0.2, 0.4), P("#ffffff", 0.9, 0.0), "steam", 0.025)
     W["radio2"] = build_radio(kit, tx, 0.2, G.TABLE_Z, "radio2")
     W["table_arm"], W["table_states"], W["table_fl"] = arm_prop("armtable", G.TABLE_ARM, CUFFS["gus"], {"": "", "1": "1", "0": "0"},
-                                                               flannel=W["flannel_mat"], scale=1.25)
-    # my hand on the dial (cue radio2 shows it)
-    W["dialhand"] = E(None, (tx + 0.13, 0.2 - 0.16, G.TABLE_Z + 0.17 + 0.04), "dialhand")
-    B(W["dialhand"], (0.14, 0.1, 0.07), (0, -0.07, 0.0), P("#a8744f", 0.5), "dialhandbox", 0.025)
-    B(W["dialhand"], (0.18, 0.2, 0.1), (0.02, -0.2, 0.02), P("#8c93a0", 0.8, 0.05), "dialsleeve", 0.03)
+                                                               flannel=W["flannel_prop"], scale=1.25, pitch=35)
+    # my hand on top of the radio beside the dial (cue dialhand); the sleeve runs off to the right, off the dial's face
+    W["dialhand"] = E(None, (tx + 0.2, 0.2 - 0.05, G.TABLE_Z + 0.36), "dialhand")
+    B(W["dialhand"], (0.14, 0.12, 0.07), (0, 0, 0.0), P("#a8744f", 0.5), "dialhandbox", 0.025)
+    B(W["dialhand"], (0.3, 0.14, 0.1), (0.2, 0.02, 0.02), P("#8c93a0", 0.8, 0.05), "dialsleeve", 0.03)
 
 
 # ---------------------------------------------------------------------------------------------------- the other places
@@ -373,12 +378,12 @@ def build_bus(kit):
     # the seat in front: its back is a rail with a padded top at z 1.0 (the arms lie on it)
     B(None, (2.8, 0.45, 0.55), (cx, cy - 0.15, 0.275), P("#e8782a", 0.75, 0.05), "busrail", 0.03)
     B(None, (2.8, 0.5, 0.08), (cx, cy - 0.15, 0.59), P("#f29a4a", 0.7, 0.05), "busrailpad", 0.03)
-    W["bus_arms"] = [arm_prop(f"busarm{i}", (cx + x, cy - 0.15 + dy, 0.63), c, t, yaw=yw, scale=1.35)[0]
-                     for i, (x, dy, c, t, yw) in enumerate(((-0.55, 0.0, "#ff8a7a", "0", 0), (0.55, 0.0, "#7ab8ff", "0", 0)))]
+    W["bus_arms"] = [arm_prop(f"busarm{i}", (cx + x, cy - 0.15 + dy, 0.63), c, t, yaw=yw, scale=1.1, pitch=60)[0]
+                     for i, (x, dy, c, t, yw) in enumerate(((-0.75, 0.0, "#ff8a7a", "0", 0), (0.3, 0.0, "#7ab8ff", "0", 0)))]
     # three more for the montage (S03): a wide padded shelf with three forearms stacked front to back
     B(None, (1.9, 2.3, 0.08), (cx + 2.4, cy - 0.15, 0.59), P("#f29a4a", 0.7, 0.05), "busrailpad")
     B(None, (1.9, 2.3, 0.55), (cx + 2.4, cy - 0.15, 0.275), P("#e8782a", 0.75, 0.05), "busrail", 0.03)
-    W["bus3"] = [arm_prop(f"busthree{i}", (cx + 2.4, cy - 0.15 + (i - 1) * 0.72, 0.63), c, t)[0]
+    W["bus3"] = [arm_prop(f"busthree{i}", (cx + 2.4, cy - 0.15 + (i - 1) * 0.72, 0.63), c, t, scale=1.2, pitch=25)[0]
                  for i, (c, t) in enumerate((("#ff8a7a", "12"), ("#7ab8ff", "3"), ("#9be07a", "47")))]
 
 
@@ -399,8 +404,8 @@ def build_yard(kit):
     B(None, (2.5, 0.8, 0.07), (cx, cy - 0.1, 0.59), P("#ffd86b", 0.8, 0.05), "salecloth", 0.02)
     for i, (x, c) in enumerate(((-1.0, "#7ab8ff"), (1.05, "#9be07a"))):
         B(None, (0.3, 0.3, 0.3), (cx + x, cy - 0.15, 0.78), P(c, 0.6, 0.1), "salebox", 0.03)
-    W["yard_arms"] = [arm_prop(f"yardarm{i}", (cx + x, cy - 0.12, 0.625), c, "0", scale=1.35)[0]
-                      for i, (x, c) in enumerate(((-0.55, "#c9a0ff"), (0.55, "#7fe0b0")))]
+    W["yard_arms"] = [arm_prop(f"yardarm{i}", (cx + x, cy - 0.12, 0.625), c, "0", scale=1.1, pitch=60)[0]
+                      for i, (x, c) in enumerate(((-0.75, "#c9a0ff"), (0.3, "#7fe0b0")))]
 
 
 def build_walk(kit):
@@ -463,6 +468,11 @@ def build(kit, story, tl):
         kit.LIGHTS[nmx]["obj"].visible_camera = False
     from blocky import rig
     W["flannel_mat"] = rig.cloth(story["cast"]["gus"], "shirt")
+    fp = kit._new("cloth prop flannel")      # the same plaid for the forearm props, in the props' own (small) object units
+    fp.node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value = kit.col(story["cast"]["gus"]["shirt"])
+    fp.node_tree.nodes["Principled BSDF"].inputs["Roughness"].default_value = 0.8
+    rig._plaid(fp, story["cast"]["gus"].get("pattern_c", "#202020"), story["cast"]["gus"]["shirt"], 4.0)
+    W["flannel_prop"] = fp
     build_hall(kit)
     build_bench(kit)
     build_hoses(kit)
@@ -474,6 +484,8 @@ def build(kit, story, tl):
     build_yard(kit)
     build_walk(kit)
     build_bed(kit)
+    make_cast(kit, story)
+    build_extras(kit, story)
     try:
         from blocky import polish
         W["camspecs"] = polish.cam_specs(story, tl, polish.spec(story))
@@ -483,6 +495,25 @@ def build(kit, story, tl):
 
 
 # ---------------------------------------------------------------------------------------------------- the cuffs on bodies
+def make_cast(kit, story):
+    """Build every rig here, in build(), so the cuffs and the beard can be made with them (lesson 44). The engine then
+    asks rig.Character for the same names: the factory below hands back the rigs made here."""
+    import tempfile
+    from blocky import rig
+    d = Path(bpy.app.tempdir or tempfile.gettempdir()) / "ep130-faces"
+    d.mkdir(parents=True, exist_ok=True)
+    made = {}
+    real = getattr(rig, "_ep130_real", None) or rig.Character
+    rig._ep130_real = real
+    for name, spec in story.get("cast", {}).items():
+        if not spec.get("offscreen"):
+            made[name] = real(name, spec, d)
+
+    def factory(name, spec, workdir):
+        return made[name] if name in made else real(name, spec, workdir)
+    rig.Character = factory
+
+
 def rig_cuff(kit, name, color, text, arm, states=None):
     """The cloth cuff on a rig's arm1 (rig units): a broad band 1 unit long (about 34 cm) from the wrist up, numerals 0.03
     (about 1 cm) proud of its front. Returns (cuff box, {state: group of numerals})."""
@@ -499,7 +530,7 @@ def rig_cuff(kit, name, color, text, arm, states=None):
     return cuff, groups
 
 
-def late(kit):
+def build_extras(kit, story):
     g = bpy.data.objects.get
     W["late"] = []          # (owner name, object, rule) rule: "always" | "buttoned" | "rolled" | ("n", value)
     plain = {"me": ("#f2e7c9", "0"), "me_young": ("#f2e7c9", "0"), "stranger_a": ("#ff8a7a", "0"), "stranger_b": ("#7ab8ff", "0"),
@@ -531,13 +562,12 @@ def late(kit):
         # the thick gray beard on the head (jaw and chin only; the mouth stays clear)
         hg = g("gus.headg")
         if hg is not None:
-            bm = P("#a3a9b4", 0.9, 0.05)
-            W["late"] += [("gus", kit.box("gus.beardchin", (1.1, 0.6, 0.42), (0, -0.4, -0.5), bm, hg, bevel=0.12), "always"),
-                          ("gus", kit.box("gus.beardl", (0.12, 0.7, 0.38), (-0.6, -0.1, -0.42), bm, hg, bevel=0.07), "always"),
-                          ("gus", kit.box("gus.beardr", (0.12, 0.7, 0.38), (0.6, -0.1, -0.42), bm, hg, bevel=0.07), "always"),
+            bm = P("#3a3b42", 0.9, 0.05)
+            W["late"] += [("gus", kit.box("gus.beardchin", (0.88, 0.5, 0.4), (0, -0.4, -0.45), bm, hg, bevel=0.1), "always"),
+                          ("gus", kit.box("gus.beardl", (0.12, 0.7, 0.4), (-0.54, -0.08, -0.45), bm, hg, bevel=0.05), "always"),
+                          ("gus", kit.box("gus.beardr", (0.12, 0.7, 0.4), (0.54, -0.08, -0.45), bm, hg, bevel=0.05), "always"),
                           ("gus", kit.box("gus.brow", (0.34, 0.06, 0.07), (-0.24, -0.62, 0.2), bm, hg, bevel=0.02), "always"),
                           ("gus", kit.box("gus.brow2", (0.34, 0.06, 0.07), (0.24, -0.62, 0.2), bm, hg, bevel=0.02), "always")]
-    W["inited"] = True
 
 
 def owner_hidden(who):
@@ -546,8 +576,6 @@ def owner_hidden(who):
 
 
 def animate(kit, story, tl, t, ctx):
-    if not W.get("inited"):
-        late(kit)
     gc = cue_at(tl, "gus", t) or {}
     sleeve = gc.get("sleeve", "buttoned")
     n = gc.get("n")

@@ -12,7 +12,7 @@ BED = (0.0, -400.0)
 
 # the bench: top at z 0.9, x -1.2..1.2, y -0.05..0.75
 BENCH_TOP = 0.90
-BENCH_ARM = (0.55, 0.36, BENCH_TOP)          # the forearm prop lying on it (along x)
+BENCH_ARM = (0.3, 0.36, BENCH_TOP)          # the forearm prop lying on it (along x)
 # the koi tank: coping top at 1.12, water at 1.0; Gus stands behind it at y 0.62
 TANK_Y = 0.62
 RIM_ARM = (SX["tank"] - 0.15, -0.72, 1.12)   # the front coping
