@@ -14,3 +14,6 @@
 - Now: the ONE rescue (that fix only), then the critic alone looks once. If not approved: drop.
 - Rescue: critic r3 APPROVE. Hold removed; check no problems, gate OPEN, pytest 250 passed.
 - Now: PR open, waiting on proof.yml (proof-ep125-aunts-keys), then proof qa, then merge on green test.
+- PR #346 opened. First proof (run 42199390652) was on rev 13.
+- shardcheck (#345) found 6 objects differing at shard starts (S01/S02 extras and Lou's glasses). Fixed in set.py (rev 14), shardcheck 0, gate OPEN, pushed 4cd6bb6f.
+- Now: waiting on the proof for 4cd6bb6f, then proof qa (opus), commit qa/ep125-aunts-keys.json, merge on green test.
