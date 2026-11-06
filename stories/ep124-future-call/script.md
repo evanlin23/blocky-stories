@@ -107,7 +107,7 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 | S08 | L08 | Dad at the far end of the bench, face to camera, `smile`, the radio in pieces. |
 | S09 | L09 | Close: the wall phone, the ring heard (no light). |
 | S10a, S10b | L10 | (a) My flat finger pressing the speaker button at chest height. (b) My face, `smile`, saying hello. The tag flips to 00:00. |
-| S11 | L11 | My face, waiting. |
+| S11 | L11 | My face, waiting. Cover frame (`cover_s` 19.3: face, grille, 00:20 tag, caption "NOTHING."). |
 | S12 | L12 | Close: the speaker grille, the hiss, my face soft behind it. |
 | S13 | L13 | My face, `uneasy`, asking. |
 | S14 | L14 | My face, closer. |
@@ -124,7 +124,7 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 | S25 | L25 | My face, `sad`, eyes wet. |
 | (drop) | | 0.5 s: voice and room only. The open garage door, sun on the drive. |
 | S26 | L26 | My face, close, `stunned`. |
-| S27 | L27 | The reveal picture, held 1.6 s with drift: my face beside the wall phone, `stunned`, Dad soft-focus laughing at the bench behind me. Cover frame (`cover_s` 39.4). |
+| S27 | L27 | The reveal picture, held 1.6 s with drift: my face beside the wall phone, `stunned`, Dad soft-focus laughing at the bench behind me. |
 | S28 | L28 | Dad's face, `laugh`, the sun behind him. |
 | S29 | L29 | My face, `sad`, a long breath. |
 | S30 | L30 | My face, `determined`, a small smile. |
