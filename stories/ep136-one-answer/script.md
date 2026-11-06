@@ -1,14 +1,14 @@
-# ep136-canyon-echo: the script (writer, 2026-11-06, batch 15a)
+# ep136-one-answer: the script (writer, 2026-11-06, batch 15a)
 
-- **Slug:** `ep136-canyon-echo` (batch 15a, upload order 1 of 3)
+- **Slug:** `ep136-one-answer` (batch 15a, upload order 1 of 3)
 - **Batch and lane:** batch 15a, lane `interactive` (RULES → The interactive lane: "who do you trust"). Pilot 1 of 3.
-- **Pitch:** P1 in the batch 15a pitch round. Blind panel (3 critics): overall 7.0, message 1 split 62 / 65 / 65. The slug reuses the name of the killed `ep109-canyon-echo` (batch 11). Its rule and twist are new and share nothing with it: that rule answered as "whoever misses you most", which was ep38 turned around. This one is a question rule, it has no twist reveal, and the answer is left open.
+- **Pitch:** P1 in the batch 15a pitch round. Blind panel (3 critics): overall 7.0, message 1 split 62 / 65 / 65. The slug was `ep136-canyon-echo` until standards r1 renamed it away from the killed `ep109-canyon-echo` (batch 11). Its rule and twist are new and share nothing with that one: that rule answered as "whoever misses you most", which was ep38 turned around. This one is a question rule, it has no twist reveal, and the answer is left open.
 - **Opening shape:** `cost` (the place's rule and its price: one question). **Length arm:** 45 to 75 s (the lane's).
 - **Title:** My Echo Answered TWICE 🗣️
 - **Panel must-fixes built in:**
   1. **Message 1 is the guilty-looking one here** (batch note: in at least one pilot). It carries two tells: it came before the count reached one, and it didn't start with my name. Message 2 carries one tell: it's a second answer when you only get one. It has no "or" threat and no wrong name, and nobody smiles.
   2. **"Hollow Point" is gone.** The overlook is just "the Rim", a made-up common noun.
-  3. **My name is said early (L13: "I'm Eli.") and Nate is "my big brother Nate" (L14).** Every "he" after L14 is Nate, and the narration says "Nate" again wherever it could blur.
+  3. **My name is said early (L13: "My name's ELI.") and Nate is "my big brother Nate" (L14).** Every "he" after L14 is Nate, and the narration says "Nate" again wherever it could blur.
   4. **The too-fast clue is visible.** The narrator counts aloud in every vignette (L05, L08, L11), with one cut per number to the same three painted rocks on the canyon wall (marked with a dot, two dots, three dots). On message 1 the count never starts: my face is still mid-shout, mouth wide (`shout`), when the answer's caption lands, and the cut shows only the one-dot rock.
   5. **Kind of warning: who to let in** (a door, a person), not where to go. The batch is a door (here), a path (ep137) and a yes to a friend (ep138).
 - **The lane's staging and build constraints, applied to every shot:**
@@ -20,7 +20,7 @@
   6. Two places in one set: the railing at the Rim, and my pickup parked in the Rim's dirt lot, ten steps away, with the post seen through its windshield.
   7. No creature. Nate is never seen and the knocker is never shown. The creepiness is the contradiction.
 - **Everyone is an adult.** I'm 21 (I turned 21 this morning, which is when you get your question). Nate is 27, never on screen. Mrs. Ruiz (about 50), Kofi (my friend, 22) and Mr. Bell (about 75) are adults.
-- **Word count:** 216 spoken words in 32 lines (L01 to L32), all `narrator`, plus one music drop (0.6 s before L20).
+- **Word count:** 219 spoken words in 32 lines (L01 to L32), all `narrator`, plus one music drop (0.6 s before L20).
 - **Estimated length:** about 53 s at 290 wpm, with 0.15 s gaps, the three spoken counts held at counting pace (about 1 s each), the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A red-gold canyon in hot afternoon sun: a wooden railing, a thick wooden post painted with a huge cream "1", the far canyon wall in banded red and orange, a dirt lot with my teal pickup. Dusk violet for the last third.
 - **Hold:** scripts only (batch 15a). Not built, not voiced.
@@ -29,7 +29,7 @@
 
 | Story | Setting | Messenger | Kind of warning | First-line type | Ending shape | Which message looks guilty |
 |---|---|---|---|---|---|---|
-| ep136-canyon-echo | a red canyon overlook and its dirt lot | my own echo (voice) | who to let in (a door) | `cost` | `open-choice` | message 1 (two tells), message 2 has one |
+| ep136-one-answer | a red canyon overlook and its dirt lot | my own echo (voice) | who to let in (a door) | `cost` | `open-choice` | message 1 (two tells), message 2 has one |
 | ep137-trail-board | a green trailhead at the edge of town | the trail board that paints itself (writing) | where to go (a path) | `must` | `open-choice` | one tell each, plus one witness each way |
 | ep138-tomorrow-mirror | a small bright gym | my reflection, one day ahead (a face) | what to agree to (a friend's ask) | `if` | `open-choice` | one tell each |
 
@@ -44,9 +44,9 @@ No two share a setting, messenger, warning, first line, palette or music mood. T
 
 ## The story (the lane's engine)
 1. **A town rule with a payoff, working for three people (L01 to L12):** one shouted question off the Rim, answered on three in your own voice, starting with your name, never wrong. Mrs. Ruiz's bakery, Kofi's job, Mr. Bell's car.
-2. **My turn (L13 to L22):** I'm Eli. Nate is coming tonight, and he lives alone, but on the phone he said "we". I shout, "Who's coming with Nate?" **Message 1** comes back before I've finished shouting, before the count, with no name first: "Don't open the door tonight. The other one knows your name." The creepy detail is that it names "the other one", someone who shouldn't exist.
+2. **My turn (L13 to L22):** My name's Eli. Nate is coming tonight, and he lives alone, but on the phone he said "we". I shout, "Who's coming with Nate?" **Message 1** comes back before I've finished shouting, before the count, with no name first: "Don't open the door tonight. The other one knows your name." The creepy detail is that it names "the other one", someone who shouldn't exist.
 3. **Message 2, from the same echo (L23 to L26):** waiting in my truck, I whisper, "What do I do?" On three exactly: "ELI. Open the door. Nate's SCARED." It says the opposite and raises the stakes: my brother is frightened, and he needs me to open the door tonight.
-4. **No answer (L27 to L32):** the post says one answer. It's eight, and somebody is knocking on my window and saying my name. "Which one do I trust?"
+4. **No answer (L27 to L32):** the post says one answer. It's eight, and somebody is knocking on my window and saying my name. "The FIRST came too fast. The SECOND shouldn't have come at ALL. Which echo do I trust?"
 - **The marker (the rule meter):** the post at the railing painted with a huge cream "1". It's in frame in every railing shot, and through the windshield in every truck shot.
 - **How the narrator is the exception:** everyone else's echo answered once, on three, with their name. Mine broke the rule both ways.
 - **The loved one at stake:** my big brother Nate.
@@ -139,7 +139,7 @@ Every line gets one or more shots with acting, and a punch-in on its key word wh
 | S28 | L28 | Close: the "1" on the post, dusk rim light from behind. **C1.** |
 | S29 | L29 | From inside the cab: the side window, dark, a still shoulder-high shadow on the glass. **C6.** |
 | S30 | L30 | Close: my face, `scared`, turning to the window, eased over 0.5 s. **C6.** |
-| S31 | L31 | Two quick cuts: the one-dot rock, then the post's "1". |
+| S31a, S31b | L31 | (a) The one-dot rock on "FIRST". (b) The post's "1" through the windshield on "SECOND". |
 | S32 | L32 | Close: my face, `scared`, to camera, beside the post's "1" seen through the windshield. This matches S01a's framing for the loop. |
 
 ## Face and hands beats
@@ -150,7 +150,7 @@ Every line gets one or more shots with acting, and a punch-in on its key word wh
 Hands: nobody holds anything near a face. The loaf is at chest height. No knock or hand is shown.
 
 ## Lore connection (`stories/lore.md`)
-A plain tally: two teal strokes scratched into the truck's steel door sill, two for a cab built for two. No extra stroke, no Keeper, no older thread. Seen in S23b at the bottom edge of the frame, held 1.0 s, not narrated. It's kept off every clue shot, so nobody reads it as a count of answers.
+None, on purpose (standards r1). A two-stroke tally in a one-or-two story would read as a hidden clue, so this story plants nothing.
 
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), and slashes are caption chunks.
@@ -167,7 +167,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), and slashes 
 - L10: Old Mr. Bell asked / where he PARKED.
 - L11: One. Two. Three. / "WALTER. / Turn AROUND."
 - L12: It always says / your NAME first. / Always on THREE.
-- L13: I'm Eli. / I turned twenty-one / this MORNING.
+- L13: Twenty-one today. / My name's ELI.
 - L14: My big brother Nate / is meeting me here / at EIGHT.
 - L15: Nate lives ALONE.
 - L16: But on the phone, / he said, / "WE'LL see you / at eight."
@@ -185,10 +185,10 @@ Every line is `who: narrator`. Caps are key words (caption colour), and slashes 
 - L28: ONE. / Nobody gets TWO.
 - L29: It's eight. / Somebody's knocking / on my WINDOW.
 - L30: And saying / my NAME.
-- L31: One came too FAST. / One came TWICE.
-- L32: Which one / do I TRUST?
+- L31: The FIRST came too fast. / The SECOND shouldn't have come at ALL.
+- L32: Which echo / do I TRUST?
 
-(Loop: "Which one do I trust? At the Rim, your echo answers one question." L32's question runs straight into the rule that only one answer can keep.)
+(Loop: "Which echo do I trust? At the Rim, your echo answers one question." L32's question runs straight into the rule that only one answer can keep.)
 
 ## Notes for the builder and reviewers
 - The counts in L05, L08, L11 and L25 are read at counting pace (about 0.35 s per number). Each number gets its own cut to its dot-rock.

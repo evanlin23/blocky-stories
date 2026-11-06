@@ -4,11 +4,11 @@
 - **Batch and lane:** batch 15a, lane `interactive` (RULES → The interactive lane: "who do you trust"). Pilot 3 of 3.
 - **Pitch:** P4 in the batch 15a pitch round. Blind panel (3 critics): overall 6.7, message 1 split 52 / 65 / 65.
 - **Opening shape:** `if`. **Length arm:** 45 to 75 s (the lane's).
-- **Title:** This Gym Mirror Shows TOMORROW 🪞
+- **Title:** The Gym Where You See TOMORROW 💪
 - **Panel must-fixes built in:**
   1. **The build risk is cut.** No shot has the real me and the reflection together, so nothing has to stay in sync. Each mirror shot is a camera at the mirror looking out into the gym. It shows only tomorrow-me, framed by the mirror's thick chrome edge in the near foreground with a faint cool tint, so it reads as "in the glass". The real me is only ever in his own shots, facing camera with the mirror beside him, or seen as the back of a head in the foreground. Tomorrow-me is the same `me` model in his own shots, posed on his own.
   2. **The mouthed words are also said.** The narrator says each word ("He mouthed it, slow and BIG", L16), and the captions carry them in key colour. Nobody has to lip-read.
-  3. **The date cards, one at a time, each on its own close-up, big.** The date is a big flip-number board on the gym's back wall (two numerals, a hand high). Each date is its own close-up in the glass: "14" for message 1 (S19) and "12" for message 2 (S25). No other date card is ever shown up close. The mirror text problem is explained once (L03: Al hangs the date backward so it reads right in the glass). The real wall's backward numerals are seen only small, in one wide (S03). Every mirror close-up reads plain.
+  3. **The date cards, one at a time, each on its own close-up, big.** The date is a big flip-number board on the gym's back wall (two numerals, a hand high). Each date is its own close-up in the glass: "14" for message 1 (S19) and "12" for message 2 (S25). No other date card is ever shown up close. The mirror text problem is explained once (L03: Wendell hangs the date backward so it reads right in the glass). The real wall's backward numerals are seen only small, in one wide (S03). Every mirror close-up reads plain.
   4. **Distinct from ep62 and mirror-maze.** Nothing lives in the glass and nobody swaps places. The glass shows the next day, and the open question is which day it was really showing.
   5. **Message 2 doesn't carry both "or he's gone" and a smile.** Nobody smiles while warning. Message 2 states a fact ("He's leaving town in the morning, for good"), with no "or" threat, and its one tell is the date. Message 1 also has one tell, its date. This is the batch's evenly balanced pilot.
 - **The lane's staging and build constraints, applied to every shot:**
@@ -19,14 +19,14 @@
   5. Nothing is glued to the camera. The marker is the mirror wall, in the scene.
   6. One set: a small bright gym. The mirror is a view of the same gym, never a second room.
   7. No creature.
-- **Everyone is an adult.** I'm 23. Dre, my best friend, is 23. Big Al is about 60. Mr. Kim is about 45. My cousin Lena is 28.
+- **Everyone is an adult.** I'm 23. Dre, my best friend, is 23. Big Wendell is about 60. Mr. Kim is about 45. My cousin Lena is 28.
 - **Word count:** 215 spoken words in 31 lines (L01 to L31), all `narrator`, plus one music drop (0.6 s before L15).
 - **Estimated length:** about 50 s at 290 wpm, with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A small bright gym: a wall-to-wall mirror with a thick chrome edge, teal walls, orange rubber floor, black racks and benches, a white flip-number date board on the back wall, steady white ceiling panels, afternoon sun through a high window. At closing it's the same light, emptier.
 - **Hold:** scripts only (batch 15a). Not built, not voiced.
 
 ## Variety table
-The batch table is in `stories/ep136-canyon-echo/script.md`. This row:
+The batch table is in `stories/ep136-one-answer/script.md`. This row:
 
 | Setting | Messenger | Kind of warning | First-line type | Ending shape | Which message looks guilty |
 |---|---|---|---|---|---|
@@ -40,14 +40,14 @@ The batch table is in `stories/ep136-canyon-echo/script.md`. This row:
 - Checked against "Claimed big ideas": not ep15 (a reflection left behind), not ep62 (something in the glass), not ep47 (tags on a lie).
 
 ## The story (the lane's engine)
-1. **A town rule with a payoff, working for two people (L01 to L08):** Big Al's mirror shows you tomorrow. Mr. Kim sees himself grinning with a gold house key and signs that night. My cousin Lena sees paint on her face and sells her first painting. "Tomorrow-you never LIES."
-2. **My turn (L09 to L19):** I'm Sam, and it's Friday the twelfth. My best friend Dre wants all my savings for his food truck. "I only ask ONCE. I need it TONIGHT." In the glass, tomorrow-me stops copying me and, against the plant (L14: tomorrow-you never talks), mouths **message 1:** "Don't say yes to DRE." The creepy detail is that behind him Dre's bench is empty, though Dre is sitting right there. And the date in the glass says 14: two days out, not tomorrow.
+1. **A town rule with a payoff, working for two people (L01 to L08):** Big Wendell's mirror shows you tomorrow. Mr. Kim sees himself grinning with a gold house key and signs that night. My cousin Lena sees paint on her face and sells her first painting. "Tomorrow-you never LIES."
+2. **My turn (L09 to L19):** Sam here, and it's Friday the twelfth. My best friend Dre wants all my savings for his food truck. "I only ask ONCE. I need it TONIGHT." In the glass, tomorrow-me looks right at me and, against the plant (L14: tomorrow-you never talks), mouths **message 1:** "Don't say yes to DRE." The creepy detail is that behind him Dre's bench is empty, though Dre is sitting right there. And the date in the glass says 14: two days out, not tomorrow.
 3. **Message 2, from the same mirror (L20 to L26):** at closing I come back alone. Tomorrow-me mouths: "Say yes TONIGHT. He's leaving town in the MORNING. For GOOD." It says the opposite and raises the stakes: lose the savings, or lose Dre. The date in the glass says 12: today, not tomorrow.
-4. **No answer (L27 to L31):** Dre calls: "Last CHANCE, buddy." "Both of them were ME. Which one do I trust?"
+4. **No answer (L27 to L31):** Dre calls: "Last CHANCE, buddy." "Both of them were ME. Which me do I trust?"
 - **The marker (the rule meter):** the mirror wall's chrome edge, in frame in every shot (beside me in my shots, in the near foreground of every glass shot).
 - **How the narrator is the exception:** tomorrow-you never talks. Mine talked twice.
 - **The loved one at stake:** my best friend Dre.
-- **The loop:** L31's question runs back into L01 ("If you look in Big Al's gym MIRROR, you see TOMORROW").
+- **The loop:** L31's question runs back into L01 ("If you look in Big Wendell's gym MIRROR, you see TOMORROW").
 
 ## The clues (every one marked)
 Side 1 means trust message 1 (don't say yes). Side 2 means trust message 2 (say yes tonight). There are 2 for side 1 and 2 for side 2.
@@ -63,10 +63,10 @@ Side 1 means trust message 1 (don't say yes). Side 2 means trust message 2 (say 
 **L08: "Tomorrow-you / never LIES."**
 
 ## Clarity test (cold, two sentences)
-At Big Al's gym the mirror shows you tomorrow, so when Sam's best friend Dre asks for all his savings tonight, Sam looks and his tomorrow self mouths "don't say yes", but the glass shows a date two days ahead. At closing his reflection says the opposite, say yes tonight because Dre is leaving town for good, but this time the date in the glass is today's, so neither one was really showing tomorrow.
+At Big Wendell's gym the mirror shows you tomorrow, so when Sam's best friend Dre asks for all his savings tonight, Sam looks and his tomorrow self mouths "don't say yes", but the glass shows a date two days ahead. At closing his reflection says the opposite, say yes tonight because Dre is leaving town for good, but this time the date in the glass is today's, so neither one was really showing tomorrow.
 
 ## World
-- **Big Al's gym:** one bright room. A mirror wall with a thick chrome edge along one side, teal walls, an orange rubber floor, black racks and two black benches (one by the door, Dre's, 3 m behind my spot), a white flip-number date board on the back wall opposite the mirror (two big black numerals, nothing else), steady white ceiling panels, a high window with afternoon sun.
+- **Big Wendell's gym:** one bright room. A mirror wall with a thick chrome edge along one side, teal walls, an orange rubber floor, black racks and two black benches (one by the door, Dre's, 3 m behind my spot), a white flip-number date board on the back wall opposite the mirror (two big black numerals, nothing else), steady white ceiling panels, a high window with afternoon sun.
 - **The glass:** a camera placed at the mirror looking out into the same gym, with the chrome edge in the near foreground and a faint cool tint. That is all that shows a shot is "in the glass". There's no second room and no real me in those shots. The date board is set to read plain in every glass shot (L03 explains why).
 - **No words anywhere,** only the date numerals.
 - **What's true underneath (never said):** nothing. The lane leaves it open.
@@ -74,7 +74,7 @@ At Big Al's gym the mirror shows you tomorrow, so when Sam's best friend Dre ask
 ## Cast
 - `me` (Sam, the narrator, 23, a young man): short black hair with a fade, light brown skin, a gray tank top over a white tee, black shorts. Faces: `neutral`, `smile`, `uneasy`, `stunned`, `scared`. As tomorrow-me (same model, his own shots): `neutral`, `serious`, `sad`. He never smiles.
 - `dre` (Dre, my best friend, 23): a red hoodie, short twists, a broad build. Faces: `smile`, `serious`, `neutral`.
-- `al` (Big Al, the owner, about 60): bald, a gray mustache, a black polo. Faces: `smile`.
+- `wendell` (Big Wendell, the owner, about 60): bald, a gray mustache, a black polo. Faces: `smile`.
 - `kim` (Mr. Kim, about 45): neat black hair, a blue tracksuit. Faces: `neutral`, `laugh` (in the glass).
 - `lena` (my cousin Lena, 28): short purple hair, a white tee. Faces: `neutral`, `smile` (in the glass, with orange and teal paint on one cheek).
 
@@ -110,7 +110,7 @@ Every line gets one or more shots with acting, and a punch-in on its key word wh
 |---|---|---|
 | S01a, S01b | L01 | (a) Close: my face, `neutral`, the chrome edge at the right. (b) Glass: tomorrow-me, `neutral`, the same framing mirrored, punch in on "TOMORROW". |
 | S02 | L02 | Glass: tomorrow-me lifting a bar to the chest, one smooth rep. |
-| S03 | L03 | Wide (real): Big Al, face to camera, `smile`, beside the back wall's date board, its numerals small and backward. **C1 and C3 plant.** |
+| S03 | L03 | Wide (real): Big Wendell, face to camera, `smile`, beside the back wall's date board, its numerals small and backward. **C1 and C3 plant.** |
 | S04a, S04b | L04 | (a) Mr. Kim facing the mirror, the back of his head in the foreground. (b) Glass: Mr. Kim's face, `laugh`, holding a big gold house key at chest height. |
 | S05 | L05 | Real: Mr. Kim's face, `stunned`, then `smile`. |
 | S06 | L06 | Glass: Lena's face, `smile`, orange and teal paint on one cheek. |
@@ -154,21 +154,21 @@ A plain tally: two teal strokes scratched into the chrome at the mirror's bottom
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), and slashes are caption chunks.
 
-- L01: If you look in Big Al's / gym MIRROR, / you see TOMORROW.
+- L01: If you look in Big Wendell's / gym MIRROR, / you see TOMORROW.
 - L02: Tomorrow's YOU, / one day AHEAD.
-- L03: Al even hangs / the date BACKWARD, / so it reads right / in the GLASS.
+- L03: Wendell even hangs / the date BACKWARD, / so it reads right / in the GLASS.
 - L04: Mr. Kim saw himself / grinning, / holding a gold house KEY.
 - L05: He signed for the house / that NIGHT.
 - L06: My cousin Lena saw / paint on her FACE.
 - L07: She sold her first painting / the next DAY.
 - L08: Tomorrow-you / never LIES.
-- L09: I'm Sam. / It's Friday / the TWELFTH.
+- L09: Sam here. / Friday / the TWELFTH.
 - L10: My best friend Dre / wants my savings / for his food TRUCK.
 - L11: All of it. / Everything I've SAVED.
 - L12: He said, / "I only ask ONCE. / I need it TONIGHT."
 - L13: So I looked / in the MIRROR.
 - L14: Tomorrow-you / never TALKS.
-- L15: But tomorrow-me / stopped copying ME.
+- L15: But tomorrow-me / looked right at ME.
 - L16: He mouthed it, / slow and BIG. / "Don't say yes / to DRE."
 - L17: Behind him, / Dre's bench / was EMPTY.
 - L18: But Dre was sitting / right THERE.
@@ -184,9 +184,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), and slashes 
 - L28: He just called. / "Last CHANCE, / buddy."
 - L29: Both of them / were ME.
 - L30: Both of them / were WRONG about the day.
-- L31: Which one / do I TRUST?
+- L31: Which me / do I TRUST?
 
-(Loop: "Which one do I trust? If you look in Big Al's gym mirror, you see tomorrow.")
+(Loop: "Which me do I trust? If you look in Big Wendell's gym mirror, you see tomorrow.")
 
 ## Notes for the builder and reviewers
 - Glass shots are the gym seen from the mirror, with the chrome edge in the near foreground and a faint cool tint (a plane in front of the camera, set in the scene, never a camera overlay). Only the reflection's subject is in frame. Never put the real me and tomorrow-me in one shot.
