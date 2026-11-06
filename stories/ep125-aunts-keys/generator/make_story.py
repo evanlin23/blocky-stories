@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 15
+REV = 16
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L35")
@@ -443,14 +443,14 @@ TP("me", "L35", ST, YC[1], "asleep")
 shot("L35", cam_face(ST, YC[1], "me", 3.4, 13, 30, tdz=-0.12, hdz=0.0, shift=0.1), "night", "reveal", key=0.9)
 
 # ===== 36 awake, 37 the handle, 38 the door
-HIDE("me", "L36+0.6")
 WNDP = [mx0 - 1.15, my0 + 0.95, 0.0]
-TP("me", "L36+0.6", WNDP, 180, "asleep")
-K("me", "L36+0.88", expr="wide")   # eyes stay shut while ASLEEP is up
-shot("L36+0.6", cam_face(WNDP, 180, "me", 2.9, 10, 34), "night", "stunned")
 HIDE("me", "L37")
-TP("me", "L37", land(1, -0.12, 0.5), YF[1], "asleep", arms=[58, 0])
-shot("L37", cam_at(hw(1, 1.2, 1.6, LAND + 1.45), hw(1, 0.3, 0.2, LAND + 1.2), 30), "night", "handle", face=False)
+TP("me", "L37", WNDP, 180, "asleep")
+K("me", "L37", expr="wide")   # awake face from the first frame of the room shot
+shot("L37", cam_face(WNDP, 180, "me", 2.9, 10, 34), "night", "stunned")
+HIDE("me", "L37+0.74")
+TP("me", "L37+0.74", land(1, -0.12, 0.5), YF[1], "asleep", arms=[58, 0])
+shot("L37+0.74", cam_at(hw(1, 1.2, 1.6, LAND + 1.45), hw(1, 0.3, 0.2, LAND + 1.2), 30), "night", "handle", face=False)
 door("L38", 1, 0, 85, 0.9)
 K("me", "L38", land(1, -0.12, 0.5), yaw=YF[1], arms=[58, 0])
 shot("L38", foot(26, (0.15, 0.3, 1.9), (1.8, 4.0, 2.3)), "night", "dooropen", face=False)
