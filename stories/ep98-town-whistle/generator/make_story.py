@@ -188,7 +188,7 @@ steps("L05.2", 13)
 cue("L05.2", "door", open=1.0)
 cue("L05.2", "lamp", off=True)  # staging fix: the default lamp hung mid-stair where the runners pass
 for i, who in enumerate(("t1", "t2", "t3", "t4")):
-    ln = -0.3 + 0.2 * i
+    ln = -0.12 + 0.19 * i
     t0 = 0.4 * i
     put(who, f"L05.2+{t0:.2f}", (98.2, ln, 0.0), 90, "scared")
     # staging fix: one real run down the stairs (0.95 s) instead of four 0.2 s hops
