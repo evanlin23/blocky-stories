@@ -492,8 +492,8 @@ def build_stalls(kit):
     B(None, (3.4, 0.06, 1.2), (lx, ly + 0.55, 1.9), P("#ff9bb5", 0.5), "lemon.back")
     for k in range(3):
         S(0.16, (lx - 1.1 + k * 0.3, ly + 0.1, 1.2), P("#ffe066", 0.4, 0.4), "lemon.fruit")
-    C(None, 0.15, 0.36, (lx + 0.0, ly - 0.45, 1.2), P("#fbfaf6", 0.3, 0.5), "lemon.cup", n=14, r2=0.09)
-    C(None, 0.13, 0.03, (lx + 0.0, ly - 0.45, 1.38), P("#ffe34a", 0.3, 0.3), "lemon.cupfill", n=14)
+    C(None, 0.15, 0.36, (lx + 0.05, ly - 0.45, 1.2), P("#fbfaf6", 0.3, 0.5), "lemon.cup", n=14, r2=0.09)
+    C(None, 0.13, 0.03, (lx + 0.05, ly - 0.45, 1.38), P("#ffe34a", 0.3, 0.3), "lemon.cupfill", n=14)
 
 
 def build_midway(kit):

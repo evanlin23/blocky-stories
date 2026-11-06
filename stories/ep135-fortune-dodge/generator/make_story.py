@@ -231,11 +231,11 @@ TP("ray", "L11", RAYK, 75, "neutral", arms=[0, 55], side=[0, 0], head=[-55, 15])
 shot("S11", "L11", KNEEL_CAM, "dawn")
 # ===== S13 my card
 HIDE("ray", "L13")
-M13 = [2.95, 2.9, 0.0]
+M13 = [3.45, 2.9, 0.0]
 cue("L13.1", "mcard", on=True)
 cue("L14", "mcard", on=False)
 TP("me", "L13", M13, yaw_to(M13, [3.6, 0.0]), "neutral")
-shot("S13", "L13", cam_at([4.2, 0.0, 1.3], [3.65, 3.5, 1.05], 28, [4.1, 0.4, 1.3], [3.65, 3.5, 1.05], 28), "day")
+shot("S13", "L13", cam_at([4.1, 0.0, 1.3], [3.5, 3.5, 1.05], 28, [4.0, 0.4, 1.3], [3.5, 3.5, 1.05], 28), "day")
 # ===== S14
 TP("me", "L14", ME_MACH, 0, "scared")
 shot("S14a", "L14", cam_face(ME_MACH, 0, "me", 2.8, 10, 34, d2=2.4), "day")
@@ -277,7 +277,7 @@ TP("ray", "L22", RAYL, 0, "smile")
 shot("S22", "L22", cam_face(MEPOST, 0, "me", 2.7, -8, 34, d2=2.4), "day")
 shot("S22b", "L22.2", cam_face(MEPOST, 0, "me", 2.3, 12, 34, d2=2.05), "day")
 HIDE("me", "L23")
-RAYC2 = [LEMON[0] - 0.6, LEMON[1] - 1.0, 0.0]
+RAYC2 = [LEMON[0] - 0.8, LEMON[1] - 1.0, 0.0]
 TP("ray", "L23", RAYC2, 0, "smile")
 shot("S23", "L23", cam_face(RAYC2, 0, "ray", 3.5, 8, 34, shift=-0.35, d2=3.1), "day")
 TP("me", "L24", MEPOST, 0, "scared", lean=8)
@@ -404,9 +404,9 @@ shot("S61", "L61", KNEEL_CAM, "day")
 HIDE("ray", "L62")
 cue("L62.2", "mcard", on=True)
 cue("L63", "mcard", on=False)
-M62 = [2.95, 2.9, 0.0]
+M62 = [3.45, 2.9, 0.0]
 TP("me", "L62", M62, yaw_to(M62, [3.6, 0.0]), X("uneasy"))
-shot("S62", "L62", cam_at([4.2, 0.0, 1.3], [3.65, 3.5, 1.05], 28, [4.1, 0.4, 1.3], [3.65, 3.5, 1.05], 28), "day")
+shot("S62", "L62", cam_at([4.1, 0.0, 1.3], [3.5, 3.5, 1.05], 28, [4.0, 0.4, 1.3], [3.5, 3.5, 1.05], 28), "day")
 HIDE("me", "L63")
 cue("L63", "card2", on=True)
 shot("S63", "L63", cam_at([CX + 0.25, CY - 2.2, 2.3], [CX + 0.25, CY - 0.15, 0.95], 36, [CX + 0.25, CY - 2.0, 2.2], [CX + 0.25, CY - 0.15, 0.95], 36),
