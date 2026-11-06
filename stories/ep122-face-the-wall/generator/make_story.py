@@ -256,9 +256,9 @@ shot("L55", fc((-1.1, G.DOOR_Y, 1.571), 1.0, 0, 0.42, 28, up=0.12, right=0.17), 
 shot("L56", [[0, [0.0, 1.0, 0.22], [0.0, 2.6, 0.08], 30]], "S56 socks", "N",
      {"me": stand((0.35, 2.55), 90, "neutral")}, door_sp=85, hide=[])
 shot("L57", fc((GD[0], GD[1], 1.571 - 0.35), 1.0, 180, 0.34, 32, up=0.0), "S57 me on bed", "NDAD",
-     {"dad": lying("dad", 90, bed="dad"), "me": stand(GD, -90, "warm", z=-0.1)}, sit={"me": 80}, door_dd=90, tagd=0.22)
+     {"dad": lying("dad", 90, bed="dad"), "me": stand(GD, -90, "warm", z=-0.1)}, sit={"me": 80}, door_dd=90, tagd=0.3, tagk=0.7, tagx=-0.05, tagy=0.15)
 shot("L58", fc((GD[0], GD[1], 1.571 - 0.35), 1.0, 175, 0.4, 35, up=0.0), "S58 me", "NDAD",
-     {"dad": lying("dad", 90, bed="dad"), "me": stand(GD, -90, "neutral", z=-0.1)}, sit={"me": 80}, door_dd=90, tagd=0.22)
+     {"dad": lying("dad", 90, bed="dad"), "me": stand(GD, -90, "neutral", z=-0.1)}, sit={"me": 80}, door_dd=90, tagd=0.3, tagk=0.68, tagx=-0.1, tagy=0.2)
 shot("L59", fc(HD, 1.0, 0, 0.44, 35, up=0.1, right=0.12), "S59 Dad", "NDAD", {"dad": lying("dad", 90, "worried", bed="dad")},
    hide=["w_dd_E"], quilt="lump")
 shot("L60", fc(HD, 1.0, 180, 0.44, 35, up=0.1, right=0.12), "S60 Dad turns", "NDAD", {"dad": lying("dad", 90, "worried", bed="dad")}, turn_dad=True)
