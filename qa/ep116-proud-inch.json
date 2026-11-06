@@ -1,0 +1,23 @@
+{
+ "stage": "proof",
+ "film": "proof-42145518991",
+ "run": 42145518991,
+ "sha": "6be78ef7b8b1eb312e880c16ee82a66bac0c76c1",
+ "artifact": 13470944426,
+ "verdict": "pass",
+ "date": "2026-11-06",
+ "checked": [
+  "frames every 2 s at phone and 1920 TV size (all 38)",
+  "first 3 s every frame (90)",
+  "frame 0 and loop wrap frame by frame",
+  "L08 15.3-17.5 s at 15 fps",
+  "ending 62-76 s at 1.5 fps, phone size (tag, L44)",
+  "cover 13.0 s",
+  "loudness, true peak and tail",
+  "craft table",
+  "flash and clip",
+  "package, opening tag, gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 12.7 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 14.2 | 14.0– | ok |\n| macro.motion_energy_q | 6.49 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 8.81 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.044 | –0.25 | ok |\n| spec.shot_p90_s | 1.78 | –2.5 | ok |\n| macro.longest_still_s | 0.53 | –1.5 | ok |\n| macro.motion_energy_mean | 2.79 | 1.5– | ok |\n| spec.camera_move_share | 0.999 | 0.65– | ok |\n| spec.punch_per_10s | 0.66 | 0.4– | ok |\n| macro.brightness_mean | 0.645 | 0.35– | ok |\n| macro.brightness_first_3s | 0.731 | 0.3– | ok |\n| macro.dark_frame_share | 0.041 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.394 | 0.42– | **warn** |\n| macro.contrast_mean | 0.215 | 0.18– | ok |\n| spec.face_big_share | 0.845 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.003 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.779 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.042 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 64.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.24 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.1 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0378 | –0.08 | ok |\n| sound.hf_jump_max | 0.0069 | –0.04 | ok |",
+ "notes": "Second one: lit shop, Grandpa's whole head centre frame on his crate, tag 9.0/5.9 top left, slow push, 'Here, every time / you say you're PROUD'; punch-in on 'an INCH.' at 1.9 s, cut to me under him at 2.8 s. Opening cost matches L01; not ep62's (count).\nRetry fixes confirmed: frame 0 of S01 has Grandpa seated and lit, and the loop wrap (last 4 frames 'SAY it.' to frames 1-2) is the same seated shot, no pop-in. L08 (15.3-17.5 s, every frame at 15 fps): whole head in frame, tag above-left clear of the face, caption on his chest.\nReframing regressions: none. Two-shots and close-ups 0-76 s keep heads whole at the top; captions sit at the chin/chest, below every mouth (closest: 65-66 s 'Grandpa looked / at me for a'); the tag never covers a face.\nTag 5.10 from 71.4 s reads at phone size (360 wide), the 0 thin but legible; fine.\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 8.81 (5.5-8.0), reads as energy; macro.saturation_mean 0.394 (0.42-), warm bright shop, not a fail.\nAudio -14.1 LUFS / -1.8 dBTP, bed gap 11.1 dB, hf jump 0.007, silence 0, tail about -35 dB RMS and loops into L01. Flash passes (general 1/s, red 0); clip.json 0 hits of 363. Polish on.\nNote, not a fail: L44 (about 70-73 s, 'door frame / has a mark / with a tiny DOOR') still shows him seated beside me, the doorway only implied, as last proof.\nCover 13.0 s (Grandpa towering over me, 'hardware STORE.') reads the scale at phone and TV size. Gate OPEN. Title, description and pin spoil nothing; no 'husband'."
+}
