@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 6
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L26
@@ -154,8 +154,8 @@ key("me", 0, ME, yaw=0, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0], l
 key("dad", 0, DAD, yaw=0, expr="smile", head=[0, 0], arms=[56, 56], side=[0, 0], lean=0)
 key("mom", 0, (G.MOM_ROOM[0], G.MOM_ROOM[1] + 1.05), yaw=0, expr="smile", arms=[55, 55], side=[0, 0])
 key("uncle", 0, (G.UNCLE_ROOM[0], G.UNCLE_ROOM[1] + 0.15, 0.12), yaw=0, expr="sheepish", arms=[10, 10], side=[0, 0])
-key("friend", 0, (G.KITCHEN[0] - 0.6, G.KITCHEN[1] + 1.15), yaw=0, expr="laugh", arms=[40, 40], side=[0, 0])
-key("sister", 0, (G.KITCHEN[0] + 0.6, G.KITCHEN[1] + 1.15), yaw=0, expr="laugh", arms=[40, 40], side=[0, 0])
+key("friend", 0, (G.KITCHEN[0] - 0.75, G.KITCHEN[1] + 1.15), yaw=0, expr="laugh", arms=[40, 40], side=[0, 0])
+key("sister", 0, (G.KITCHEN[0] + 0.75, G.KITCHEN[1] + 1.15), yaw=0, expr="laugh", arms=[40, 40], side=[0, 0])
 
 # the timer: the tag shows "1" (mode 0) until L10, then a call timer (mode 1) that steps on each line to 09:12 at L38
 cue(0, "timer", mode=0.0, s=0.0)
@@ -248,27 +248,31 @@ shot("S29", "L29", mecam(1.7, 0, 36))
 key("me", "L30", expr="det", head=[0, 0])
 shot("S30", "L30", mecam(1.9, -6, 36, push=(1.6, 1.27)))
 cut("me", "L31", ME, yaw=90, expr="smile", head=[-70, 0])
-key("me", "L31.1", ME_NEAR := list(G.ME_NEAR_DAD), yaw=90, head=[-70, 0])
+ME_OLD = list(G.ME_NEAR_DAD)  # S36/S37 keep the old place
+ME_NEAR = [0.30, 3.35]  # S31-S34: 1.45 m from Dad
+DAD_N = [1.75, 3.35]
+cut("dad", "L31", DAD_N, yaw=0, expr="smile", head=[0, 0], arms=[56, 56])
+key("me", "L31.1", ME_NEAR, yaw=90, head=[-70, 0])
 key("me", "L31.2", ME_NEAR, yaw=0, head=[0, 0], blend=0.4)
-shot("S31", "L31", cam(0.95, 3.35, 1.25, 2.6, 2, 27, cz=1.4))
+shot("S31", "L31", cam(1.03, 3.35, 1.25, 3.0, 2, 27, cz=1.4))
 key("dad", "L32", expr="laugh", head=[0, -3])
 mouth("dad", "L32", "L32>", 0.4)
-shot("S32", "L32", dadcam(2.1, 6, 36, tx=1.7))
+shot("S32", "L32", dadcam(2.3, 6, 36, tx=1.6))
 key("dad", "L33", expr="laugh")
 mouth("dad", "L33", "L33.2", 0.4)
-shot("S33a", "L33", cam(1.7, DAD[1], 1.05, 2.1, 6, 32, cz=1.25))
+shot("S33a", "L33", cam(1.6, DAD[1], 1.05, 2.4, 6, 32, cz=1.25))
 key("me", "L33.2", expr="laugh")
-shot("S33b", "L33.2", cam(ME_NEAR[0], DAD[1], 1.1, 2.0, -6, 32, cz=1.25))
+shot("S33b", "L33.2", cam(ME_NEAR[0] + 0.1, DAD[1], 1.1, 2.0, -6, 32, cz=1.25))
 key("dad", "L34", expr="laugh", head=[0, -4])
 cue("L34.1", "dsit", s=1.0, dur=0.25)
-key("dad", "L34.1", list(DAD) + [-0.34], expr="laugh", head=[0, -4], arms=[56, 56])
-shot("S34", "L34", cam(DAD[0], DAD[1] + 0.1, 1.15, 2.3, 4, 34, cz=1.5))
+key("dad", "L34.1", list(DAD_N) + [-0.34], expr="laugh", head=[0, -4], arms=[56, 56])
+shot("S34", "L34", cam(DAD_N[0] - 0.1, DAD[1] + 0.1, 1.15, 2.6, 4, 34, cz=1.5))
 shot("S35", "L35", cam(PH[0], PH[1], 1.25, 1.15, -8, 38, cz=1.3, push=(0.95, 1.25)))
 cut("dad", "L36", [DAD[0] + 0.75, DAD[1], 0], yaw=0, expr="laugh", head=[0, -2], arms=[56, 56])
 cue("L36", "dsit", s=0.0, dur=0.0)
-cut("me", "L36", [ME_NEAR[0] + 0.4, ME_NEAR[1]], yaw=0, expr="laugh", head=[0, -2])
+cut("me", "L36", [ME_OLD[0] + 0.4, ME_OLD[1]], yaw=0, expr="laugh", head=[0, -2])
 shot("S36", "L36", cam(1.6, 3.35, 1.45, 6.2, 0, 38, cz=1.5, push=(5.7, 1.45)))
-shot("S37", "L37", mecam(1.8, 6, 36, tx=ME_NEAR[0] + 0.55, ty=ME_NEAR[1]))
+shot("S37", "L37", mecam(1.8, 6, 36, tx=ME_OLD[0] + 0.55, ty=ME_OLD[1]))
 
 # ===== 08 the click (L38 to L44)
 cue("L38", "btn", p=0.0, dur=0.1)
