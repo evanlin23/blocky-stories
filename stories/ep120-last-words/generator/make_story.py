@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 10
+REV = 12
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -327,7 +327,7 @@ shot("L20", mv([LX + 0.55, LY + 5.2, RZ + 1.7], [LX, LY + 10.8, RZ + 1.55], 56, 
 beat("me", "L21", expr="glum")
 shot("L21", mv([LX + 0.3, LY + 7.6, RZ + 1.6], [LX, LY + 10.8, RZ + 1.55], 62, [LX + 0.15, LY + 7.0, RZ + 1.6], [LX, LY + 10.8, RZ + 1.55], 62), "me_dark2")
 only("L20", ["me"])
-shot("P01", mv([LX + 0.1, LY + 10.35, RZ + 1.9], [LX - 1.3, LY + 0.4, 1.4], 30, push=0.1), "drop")
+shot("P01", mv([LX + 0.1, LY + 10.35, RZ + 1.9], [LX - 1.3, LY + 0.4, 1.4], 30, [LX + 0.1, LY + 10.35, RZ + 1.9], [TR[0] - 0.3, TR[1] + 0.3, 1.5], 40), "drop")
 cue("P01", "truck", x=TR[0], y=TR[1], yaw=0.0, head=0.0, tail=0.0, door=0.0, shape=1.0, low=0.0, dur=0.0)
 # ---------------------------------------------------------------------------------- 04 last night (L22..L30)
 only("P01", [])
