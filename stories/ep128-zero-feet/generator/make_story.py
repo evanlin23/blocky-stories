@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = timeline.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L24")
@@ -329,7 +329,7 @@ put("mom", "L31.2", [SN[0] - 0.3, SN[1] + 10.9, MZ], 0, expr="smile", arms=[0, 0
 go("mom", "L31.2+0.15", [SN[0] - 0.3, SN[1] + 10.9, MZ])
 go("mom", "L31.3+0.65", [SN[0] + 0.9, SN[1] + 8.5, MZ], yaw=25)
 shot("L31.2", mv([SN[0] + 0.5, SN[1] + 7.0, MZ + 1.5], [SN[0] + 0.3, SN[1] + 9.8, MZ + 1.35], 24,
-                 [SN[0] + 0.7, SN[1] + 7.0, MZ + 1.5], [SN[0] + 0.7, SN[1] + 9.0, MZ + 1.35], 24), "momwalk")
+                 [SN[0] + 0.75, SN[1] + 7.0, MZ + 1.5], [SN[0] + 1.07, SN[1] + 9.0, MZ + 1.35], 24), "momwalk")
 only("L32", ["mom"])
 put("mom", "L32", [SN[0] - 0.2, SN[1] + 9.5, MZ], 0, expr="warm", arms=[0, 0])
 shot("L32", momcam(1.55, 2.7, 52, tx=-0.2, ty=9.5, dx=0.3, push=0.1), "momwarm")
