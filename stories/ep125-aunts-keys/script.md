@@ -210,7 +210,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L15: But every MORNING, / I wake up / in my SNEAKERS. / And they're WET.
 - L16: The neighbors / call her / the NIGHT landlady.
 - L17: Honestly, / so did I.
-- L18: We FOUGHT about it. / I told her / to give the keys BACK.
+- L18: We FOUGHT about it. / I told her / to hand the keys BACK.
 - L19: She just said, / "Lock your door / before BED."
 - L20: I didn't. / On PURPOSE.
 - L21: So I put / a little CAMERA / in my window,
