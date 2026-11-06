@@ -146,7 +146,7 @@ def shot(at, camera, name, step=2, **extra):
     SH.append((at, camera, step, name, extra))
 
 
-def face(who, d=3.7, lens=40, dx=0.0, dzc=0.0, tz=0.28, push=0.14, tx=0.0, side=None, dlens=0, dy=0.0):
+def face(who, d=3.7, lens=40, dx=0.0, dzc=0.0, tz=0.28, push=0.07, tx=0.0, side=None, dlens=0, dy=0.0):
     s = ST[who]
     if who == "grandpa":   # eye height: a camera above him sees only the hat brim (framing pre-check)
         tz, dzc = min(tz, 0.2), min(dzc, 0.1)
@@ -527,7 +527,7 @@ beat("grandpa", "L61.1", expr="warm")
 shot("L61", face("grandpa", d=3.9, lens=44, dx=-0.4, dzc=0.45), "opens1")
 shot("L61.1", face("grandpa", d=3.9, lens=56, dx=0.3, dzc=0.45, tz=0.25), "opens2")
 only("L62", [])
-count("L62.1", "1,000", dur=0.6)
+count("L62", "1,000", dur=0.4)
 shot("L62", slate_cam(-0.1, 3.3, 2.9, 28), "chalk1000")
 shot("L62.1", slate_cam(0.1, 3.0, 2.7, 26), "chalk1000b")
 shot("L63", mv([wx - 0.3, -4.9, 1.5], [wx - 6.0, -60.0, 0.8], 36, [wx - 0.2, -5.0, 1.55], [wx - 6.0, -60.0, 0.9], 36), "river_window")
@@ -607,7 +607,7 @@ sfx = [
     {"at": "L33.1+0.3", "kind": "click", "db": -20},
     {"at": "L39+0.3", "kind": "click", "db": -20},
     {"at": "L61", "kind": "click", "db": -22},
-    {"at": "L62.1+0.3", "kind": "click", "db": -20},
+    {"at": "L62+0.2", "kind": "click", "db": -20},
 ]
 for s_ in sfx:
     s_["at"] = remap(s_["at"])

@@ -661,7 +661,7 @@ def animate(kit, story, tl, t, ctx):
         span = math.dist(cp, tg)
         if night and span < 8.0:
             fl = kit.LIGHTS["facefill"]["obj"]
-            fl.location = (cp[0] + 0.5 * (tg[0] - cp[0]), cp[1] + 0.5 * (tg[1] - cp[1]), max(0.2, tg[2] - 0.65))
+            fl.location = (cp[0] + 0.4 * (tg[0] - cp[0]), cp[1] + 0.4 * (tg[1] - cp[1]), max(0.2, tg[2] - 0.65))
             gains["facefill"] = 1.0 if span < 6.5 else 1.6
         elif night and spec.get("fill_at"):
             kit.LIGHTS["facefill"]["obj"].location = tuple(spec["fill_at"])
