@@ -178,7 +178,7 @@ class Room:
     """A room behind a left-wall door (side -1: depth runs to -x) or a right-wall door (side +1). d is the depth in
     from the doorway, l along the wall from the door's centre, z up."""
 
-    def __init__(self, kit, pl, side, yc, tag, wall, floor, ceil, lit, light_col="#fff0d8", e=170, deep=3.0, half=0.95):
+    def __init__(self, kit, pl, side, yc, tag, wall, floor, ceil, lit, light_col="#fff0d8", e=170, deep=3.0, half=0.95, glow=None):
         self.kit, self.pl, self.s, self.yc, self.t = kit, pl, side, yc, tag
         self.deep, self.half = deep, half
         x0 = side * (1.7 + 0.2)
@@ -190,6 +190,14 @@ class Room:
         w(f"{tag}.far", (0.2, 2 * half + 0.2, G.HALL_H), (x0 + side * (deep + 0.1), yc, G.HALL_H / 2), wall)
         for sy in (-1, 1):
             w(f"{tag}.side{sy}", (deep + 0.3, 0.1, G.HALL_H), (cx + side * 0.1, yc + sy * (half + 0.05), G.HALL_H / 2), wall)
+        if glow:      # lit panels on the inner faces and a ceiling glow, so a doorway seen from the hall is never black
+            gm = kit.emit(glow, 0.45, f"{tag}.wallglow")
+            xi = x0 + side * (deep - 0.03)
+            w(f"{tag}.gfar", (0.02, 2 * half - 0.02, G.HALL_H - 0.3), (xi, yc, G.HALL_H / 2), gm)
+            for sy in (-1, 1):
+                w(f"{tag}.gside{sy}", (deep - 0.3, 0.02, G.HALL_H - 0.3), (x0 + side * (deep / 2 + 0.1), yc + sy * (half - 0.03), G.HALL_H / 2), gm)
+            w(f"{tag}.gceil", (1.2, 0.8, 0.03), (x0 + side * deep * 0.55, yc, G.HALL_H - 0.03), kit.emit("#fff0c8", 1.4, "ceilglow"))
+        e = e * 3.5     # bright enough to read through the doorway from the hall
         pl.light(f"{tag}.lamp", (x0 + side * deep * 0.55, yc, 2.3), e, light_col, size=0.9)
         pl.light(f"{tag}.lamp2", (x0 + side * 0.9, yc, 1.9), e * 0.5, light_col, size=0.6)
 
@@ -225,7 +233,7 @@ class Room:
 def room5(kit, pl, yc):
     purple = kit.plastic("#9a6ad8", 0.8, spec=0.05)
     r = Room(kit, pl, -1, yc, "r5", purple, kit.planks("#cbb2e8", "#bfa2e0", 1.0), kit.plastic("#e8dcf6", 0.9),
-             True, "#ffe9ff", e=200)
+             True, "#ffe9ff", e=200, glow="#9a6ad8")
     for k, (bg, ink, g) in enumerate([("#ffd95a", "#2b1a4a", 0), ("#ff8fc8", "#2b1a4a", 1), ("#7fe0d0", "#2b1a4a", 2)]):
         r.poster(f"p{k}", -0.65 + 0.65 * k, 1.5, bg, ink, g)
     r.box("bed", (1.9, 0.9, 0.38), 2.2, -0.45, 0.0, kit.plastic("#f4e6ff", 0.8), bevel=0.04)
@@ -249,7 +257,7 @@ def room5(kit, pl, yc):
 def room6(kit, pl, yc):
     mint = kit.plastic("#9fe6c2", 0.8, spec=0.05)
     r = Room(kit, pl, -1, yc, "r6", mint, kit.planks("#e9d3a8", "#dcc596", 1.0), kit.plastic("#f2fff8", 0.9), True,
-             "#f0fff6", e=200)
+             "#f0fff6", e=200, glow="#9fe6c2")
     wood = kit.plastic("#b98a56", 0.6)
     # a bunk bed along the far wall
     for k, (z, c) in enumerate(((0.45, "#ff8fa8"), (1.25, "#6fb4ff"))):
@@ -272,7 +280,7 @@ def room6(kit, pl, yc):
 def room7(kit, pl, yc):
     mus = kit.plastic("#e8b83a", 0.8, spec=0.05)
     r = Room(kit, pl, -1, yc, "r7", mus, kit.planks("#f0d9a0", "#e6cb8c", 1.0), kit.plastic("#fff5d8", 0.9), True,
-             "#fff0c8", e=200)
+             "#fff0c8", e=200, glow="#e8b83a")
     r.box("bed", (1.9, 0.9, 0.38), 1.6, 0.55, 0.0, kit.plastic("#fff6e4", 0.8), bevel=0.04)
     r.box("bedtop", (1.9, 0.9, 0.12), 1.6, 0.55, 0.38, kit.plastic("#2fb8a8", 0.8), bevel=0.04)
     r.box("rug", (1.6, 1.3, 0.02), 1.7, -0.1, 0.0, kit.plastic("#b04a6a", 0.9))
@@ -294,7 +302,7 @@ def room7(kit, pl, yc):
 def room8(kit, pl, yc):
     gray = kit.plastic("#a8aab2", 0.85, spec=0.05)
     r = Room(kit, pl, -1, yc, "r8", gray, kit.planks("#c9c4bc", "#bdb8b0", 1.0), kit.plastic("#eceef2", 0.9), True,
-             "#f4f4ff", e=200)
+             "#f4f4ff", e=200, glow="#a8aab2")
     card = kit.plastic("#d9a86a", 0.85, spec=0.05)
     card2 = kit.plastic("#c99456", 0.85, spec=0.05)
     tape = kit.plastic("#f0d9a0", 0.6)
@@ -312,7 +320,7 @@ def room8(kit, pl, yc):
 def room9(kit, pl, yc):
     white = kit.plastic("#f4f7fa", 0.85, spec=0.05)
     r = Room(kit, pl, -1, yc, "r9", white, kit.planks("#bcd6ee", "#b0cde8", 1.0), kit.plastic("#ffffff", 0.9), True,
-             "#f0f6ff", e=210)
+             "#f0f6ff", e=210, glow="#f4f7fa")
     dk = kit.plastic("#3a4150", 0.5, spec=0.3)
     r.box("tbase", (1.6, 0.6, 0.18), 1.7, 0.4, 0.0, dk, bevel=0.03)
     r.box("belt", (1.5, 0.5, 0.05), 1.7, 0.4, 0.18, kit.plastic("#222630", 0.6), bevel=0.01)
@@ -333,7 +341,7 @@ def room9(kit, pl, yc):
 
 def room_small(kit, pl, side, yc, tag, wall, bed_col, e=140, deep=2.6):
     r = Room(kit, pl, side, yc, tag, kit.plastic(wall, 0.85), kit.planks("#e8cfa6", "#dcc096", 1.0),
-             kit.plastic("#fff8ec", 0.9), True, "#ffe2b0", e=e, deep=deep)
+             kit.plastic("#fff8ec", 0.9), True, "#ffe2b0", e=e, deep=deep, glow=wall)
     r.box("bed", (1.9, 0.9, 0.38), 1.3, 0.4, 0.0, kit.plastic("#fff6e4", 0.8), bevel=0.04)
     r.box("bedtop", (1.9, 0.9, 0.12), 1.3, 0.4, 0.38, kit.plastic(bed_col, 0.8), bevel=0.04)
     r.box("rug", (1.2, 1.0, 0.02), 1.2, -0.3, 0.0, kit.plastic("#fff0c0", 0.9))
@@ -429,7 +437,7 @@ def build_hall(kit, key):
         door(n, y, False, 22 if n < 4 else 78)
         if n == 4:
             r = Room(kit, pl, 1, y, "r4", kit.plastic("#8ec9f2", 0.85), kit.planks("#e8cfa6", "#dcc096", 1.0),
-                     kit.plastic("#f4fbff", 0.9), True, "#f0f8ff", e=190)
+                     kit.plastic("#f4fbff", 0.9), True, "#f0f8ff", e=190, glow="#8ec9f2")
             r.box("bed", (1.9, 0.9, 0.38), 1.3, 0.4, 0.0, kit.plastic("#fff6e4", 0.8), bevel=0.04)
             r.box("bedtop", (1.9, 0.9, 0.12), 1.3, 0.4, 0.38, kit.plastic("#ff7a5c", 0.8), bevel=0.04)
             r.box("rug", (1.2, 1.0, 0.02), 1.2, -0.3, 0.0, kit.plastic("#fff0c0", 0.9))

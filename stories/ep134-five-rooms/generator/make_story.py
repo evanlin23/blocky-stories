@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 16
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = timeline.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L28")
@@ -56,7 +56,7 @@ def A(O, x, y, z=0.0):
     return [O[0] + x, O[1] + y, z]
 
 
-def fc(O, tx, ty, tz, d, lens, dx=0.0, dz=0.0, push=0.1, az=0.0, lens2=None):
+def fc(O, tx, ty, tz, d, lens, dx=0.0, dz=0.0, push=0.28, az=0.0, lens2=None):
     """A camera d metres from the target, on the side az degrees round from -y, with a slow push in."""
     a = az * D2R
     tgt = [O[0] + tx, O[1] + ty, tz]
@@ -143,15 +143,16 @@ def sit(who, at, on=True, z=0.62):
 HO = G.HALL_O
 
 
-def hall_face(K, ref, who, x, y, az, expr, name, d=1.9, lens=24, tz=1.55, ty=0.0, tx=0.0, push=0.1, **kw):
+def hall_face(K, ref, who, x, y, az, expr, name, d=1.9, lens=24, tz=1.55, ty=0.0, tx=0.0, push=0.35, **kw):
     """Someone in hall K facing the camera, which stands d metres off at azimuth az (90: looking at the left wall)."""
     O = HO[K]
     only(ref, [who])
     put(who, ref, A(O, x, y), az, expr=expr, **kw)
     shot(ref, fc(O, x + tx, y + ty, tz, d, lens, az=az, push=push), name)
+    beat(who, f"{ref}+0.55", head=[14, 4])      # a glance, so the face isn't a held picture
 
 
-def knock(K, ref, who, door_y, expr, name, theta=45.0, f=30.0, s=80.0, d=2.3, lens=19, push=0.08, closer=0.0, pan=0.3):
+def knock(K, ref, who, door_y, expr, name, theta=45.0, f=30.0, s=80.0, d=2.3, lens=19, push=0.16, closer=0.0, pan=0.3):
     """Someone with the flat left hand (the one toward the wall) on a left-wall door at chest height, face to camera."""
     O = HO[K]
     L = 0.62
@@ -173,8 +174,8 @@ def knock(K, ref, who, door_y, expr, name, theta=45.0, f=30.0, s=80.0, d=2.3, le
 # ===== 01 the hook, the rule, the montage (L01 to L06)
 HA = HO["A"]
 only(0, ["me"])
-put("me", 0, A(HA, -0.6, 5.8), 90, expr="neutral")
-shot(0, fc(HA, -0.6, 6.5, 1.55, 1.9, 18, push=0.1, az=90), "hook")
+put("me", 0, A(HA, -0.6, 6.12), 90, expr="neutral")
+shot(0, fc(HA, -0.6, 6.45, 1.55, 1.9, 18, push=0.2, az=90), "hook")
 hall_face("A", "L01.1", "me", -0.3, 6.4, 40, "neutral", "hook2", d=2.3)
 only("L02", ["me"])
 put("me", "L02", A(HA, -0.3, 3.4), 30, expr="neutral")
@@ -183,61 +184,67 @@ hall_face("A", "L02.2", "me", -0.55, 8.4, 55, "worried", "lived", d=1.9, lens=26
 only("L03", ["bride", "groom"])
 put("bride", "L03", A(G.HOUSE, -0.4, 0.8), 0, expr="smile")
 put("groom", "L03", A(G.HOUSE, 0.4, 0.8), 0, expr="smile")
-shot("L03", fc(G.HOUSE, 0.0, 0.8, 1.45, 3.4, 34, push=0.08), "newlyweds")
+shot("L03", fc(G.HOUSE, 0.0, 0.8, 1.45, 3.4, 34, push=0.28), "newlyweds")
 only("L04", [])
 shot("L04", mv(A(G.BOARD, -13, -7, 3.0), A(G.BOARD, -8, 8.0, 3.4), 24, A(G.BOARD, -4, -7, 3.0), A(G.BOARD, 1, 8.0, 3.4), 24), "board")
+shot("L04+1.0", mv(A(G.BOARD, 6, -7, 2.6), A(G.BOARD, 2, 8.0, 3.2), 24, A(G.BOARD, 11, -7, 2.6), A(G.BOARD, 7, 8.0, 3.2), 24), "board2")
 only("L05", ["theo"])
 put("theo", "L05", A(G.THEO, -0.1, 2.9), 0, expr="wide")
-shot("L05", fc(G.THEO, 0.15, 2.9, 1.45, 2.9, 30, push=0.08), "theo")
+shot("L05", fc(G.THEO, 0.15, 2.9, 1.45, 2.9, 30, push=0.28), "theo")
+shot("L05+1.2", fc(G.THEO, -0.1, 2.9, 1.5, 2.0, 30, az=8, push=0.28), "theo2")
 only("L06", ["mom"])
 put("mom", "L06", A(HA, 0.0, 1.6), 180, expr="smile")
-shot("L06", fc(HA, 0.0, 1.6, 1.5, 2.6, 32, az=180, push=0.08), "momstairs")
+shot("L06", fc(HA, 0.0, 1.6, 1.5, 2.6, 32, az=180, push=0.28), "momstairs")
 only("L06.2", ["june"])
 put("june", "L06.2", A(G.KIT, 0.0, 2.78), 0, expr="smile")
 sit("june", "L06.2", True, 0.65)
-shot("L06.2", fc(G.KIT, 0.0, 2.78, 1.3, 2.7, 34, dz=0.1, push=0.08), "june")
+shot("L06.2", fc(G.KIT, 0.0, 2.78, 1.3, 2.7, 34, dz=0.1, push=0.28), "june")
 
 # ===== 02 the rooms we know (L07 to L14)
 only("L07", [])
 shot("L07", mv(A(HA, -1.4, 1.0, 1.5), A(HA, 1.7, 7.5, 1.4), 24, A(HA, -1.4, 1.5, 1.5), A(HA, 1.7, 8.0, 1.4), 24), "open4")
 only("L08", [])
 shot("L08", mv(A(HA, 1.4, 0.8, 1.5), A(HA, -1.7, 7.0, 1.4), 22, A(HA, 1.4, 1.2, 1.5), A(HA, -1.7, 7.5, 1.4), 22), "shut5")
-knock("A", "L09", "mom", G.DOORY[6], "warm", "momknock", closer=0.25, pan=0.6)
+knock("A", "L09", "mom", G.DOORY[6], "warm", "momknock", closer=0.25, pan=0.45)
 beat("mom", "L09.1", side=[84, 0])
 beat("mom", "L09.1+0.5", side=[80, 0])
 only("L10", ["dad"])
 put("dad", "L10", A(G.LIV, 0.0, 2.15), 0, expr="smile")
 sit("dad", "L10", True, 0.62)
-shot("L10", fc(G.LIV, 0.0, 2.15, 1.3, 2.7, 34, dz=0.1, push=0.08), "dad")
+shot("L10", fc(G.LIV, 0.0, 2.15, 1.3, 2.7, 34, dz=0.1, push=0.28), "dad")
 hall_face("A", "L11", "me", -0.7, 2.4, 50, "worried", "whose", d=1.9, lens=26)
 only("L12", ["me"])
 put("me", "L12", A(G.PORCH, 0.0, 0.7), 0, expr="sad-smile")
 sit("me", "L12", False)
-shot("L12", fc(G.PORCH, 0.15, 0.7, 1.1, 3.2, 34, push=0.08), "porch")
+shot("L12", fc(G.PORCH, 0.15, 0.7, 0.95, 3.4, 34, push=0.28), "porch")
+shot("L12+0.9", fc(G.PORCH, 0.15, 0.7, 1.45, 2.3, 34, az=-28, push=0.28), "porch2")
 only("L13", ["mom"])
 put("mom", "L13", A(G.PORCH, 0.0, 2.7), 0, expr="smile")
-shot("L13", fc(G.PORCH, 0.0, 2.7, 1.45, 2.5, 34, push=0.08), "momdoor")
+shot("L13", fc(G.PORCH, 0.0, 2.7, 1.45, 2.5, 34, push=0.28), "momdoor")
+shot("L13+0.9", fc(G.PORCH, 0.0, 2.7, 1.5, 1.9, 34, az=22, push=0.28), "momdoor2")
 only("L14", ["me"])
 put("me", "L14", A(HA, 0.75, 10.6), -90, expr="neutral")
-shot("L14", fc(HA, 0.75, 10.6, 1.55, 1.7, 22, az=-90, push=0.08), "room4")
+shot("L14", fc(HA, 0.75, 10.6, 1.55, 1.7, 22, az=-90, push=0.28), "room4")
 
 # ===== 03 the nights (L15 to L27)
 only("L15", [])
 shot("L15", mv(A(HO["B"], 1.2, 4.6, 1.5), A(HO["B"], -1.7, 6.6, 1.4), 22, A(HO["B"], 1.2, 5.0, 1.5), A(HO["B"], -1.7, 6.6, 1.4), 22), "ajar")
+shot("L15+1.0", mv(A(HO["B"], 1.1, 7.6, 1.5), A(HO["B"], -1.7, 6.4, 1.4), 26, A(HO["B"], 1.1, 7.2, 1.5), A(HO["B"], -1.7, 6.4, 1.4), 26), "ajar2")
 hall_face("B", "L16", "me", -0.6, 5.98, 90, "worried", "inch", d=1.9, lens=18, ty=0.2)
 rx, ry = knock("B", "L17", "me", G.DOORY[7], "worried", "push", theta=40, f=25, s=82)
 only("L18", [])
 shot("L18", mv(A(HO["C"], -1.78, 6.4, 1.55), A(HO["C"], -4.85, 6.4, 1.6), 20, A(HO["C"], -2.1, 6.4, 1.55), A(HO["C"], -4.85, 6.4, 1.6), 20), "portrait")
-shot("L19", mv(A(HO["C"], -1.9, 6.4, 1.55), A(HO["C"], -4.85, 6.4, 1.6), 26, A(HO["C"], -2.3, 6.4, 1.55), A(HO["C"], -4.85, 6.4, 1.6), 26), "portrait2")
+shot("L19", mv(A(HO["C"], -1.9, 6.4, 1.4), A(HO["C"], -4.85, 6.4, 1.45), 26, A(HO["C"], -2.3, 6.4, 1.4), A(HO["C"], -4.85, 6.4, 1.45), 26), "portrait2")
 hall_face("C", "L20", "me", -0.6, 5.7, 90, "scared", "meat23", d=1.9, lens=18, ty=0.25)
 beat("me", "L20.1", expr="wide")
 only("L21", [])
 shot("L21", mv(A(HO["D"], -1.78, 2.4, 1.55), A(HO["D"], -4.4, 2.4, 1.3), 20, A(HO["D"], -2.0, 2.4, 1.55), A(HO["D"], -4.4, 2.4, 1.3), 20), "five")
-shot("L22", mv(A(HO["D"], -1.75, 1.6, 1.15), A(HO["D"], -2.8, 2.68, 1.0), 18, A(HO["D"], -1.85, 1.75, 1.15), A(HO["D"], -2.8, 2.68, 1.0), 18), "guitar")
+shot("L22", mv(A(HO["D"], -1.1, 1.5, 1.15), A(HO["D"], -2.8, 2.68, 0.9), 18, A(HO["D"], -1.2, 1.65, 1.15), A(HO["D"], -2.8, 2.68, 1.0), 18), "guitar")
 hall_face("D", "L23", "me", -0.6, 1.9, 90, "wide", "meat19", d=1.9, lens=18, ty=0.25)
 only("L24", [])
 shot("L24", mv(A(HO["E"], -1.78, 8.4, 1.5), A(HO["E"], -4.4, 8.4, 1.2), 20, A(HO["E"], -2.0, 8.4, 1.5), A(HO["E"], -4.4, 8.4, 1.2), 20), "eight")
 shot("L25", mv(A(HO["E"], -2.0, 9.25, 1.3), A(HO["E"], -3.8, 8.2, 0.7), 22, A(HO["E"], -2.2, 9.1, 1.3), A(HO["E"], -3.8, 8.2, 0.7), 22), "boxes")
+shot("L25+1.0", mv(A(HO["E"], -2.0, 7.7, 1.1), A(HO["E"], -3.9, 8.7, 0.8), 22, A(HO["E"], -2.1, 7.9, 1.1), A(HO["E"], -3.9, 8.7, 0.8), 22), "boxes2")
 shot("L26", mv(A(HO["F"], 1.4, 1.2, 1.5), A(HO["F"], -1.7, 8.0, 1.4), 22, A(HO["F"], 1.4, 1.6, 1.5), A(HO["F"], -1.7, 8.4, 1.4), 22), "sixnine")
 hall_face("F", "L27", "me", -0.2, 6.4, 50, "wide", "allmine", d=1.9, lens=24)
 only("P01", [])
@@ -255,14 +262,14 @@ beat("me", "L31.1", expr="warm")
 # ===== 05 the warm turn (L32 to L36)
 only("L32", ["mom"])
 put("mom", "L32", A(HO["F"], 0.0, 1.5), 180, expr="smile")
-shot("L32", fc(HO["F"], 0.0, 1.5, 1.5, 2.6, 30, az=180, push=0.08), "momstairs2")
+shot("L32", fc(HO["F"], 0.0, 1.5, 1.5, 2.6, 30, az=180, push=0.28), "momstairs2")
 hall_face("F", "L33", "me", -0.4, 9.0, 60, "worried", "asked", d=1.9, lens=26)
 only("L34", ["mom"])
 put("mom", "L34", A(HO["F"], 0.1, 1.5), 180, expr="warm")
-shot("L34", fc(HO["F"], 0.1, 1.5, 1.52, 1.9, 26, az=175, push=0.08), "momwarm")
+shot("L34", fc(HO["F"], 0.1, 1.5, 1.52, 1.9, 26, az=175, push=0.28), "momwarm")
 only("L35", ["mom"])
 put("mom", "L35", A(HO["F"], -0.1, 1.5), 180, expr="laugh")
-shot("L35", fc(HO["F"], -0.1, 1.5, 1.52, 1.9, 26, az=185, push=0.08), "momlaugh")
+shot("L35", fc(HO["F"], -0.1, 1.5, 1.52, 1.9, 26, az=185, push=0.28), "momlaugh")
 hall_face("F", "L36", "me", -0.3, 4.2, 55, "laugh", "melaugh", d=1.9, lens=26)
 
 # ===== 06 the tenth door (L37 to L42)
@@ -270,14 +277,14 @@ only("L37", [])
 shot("L37", mv(A(HO["M"], 1.2, 3.0, 1.5), A(HO["M"], -0.6, 12.4, 1.4), 24, A(HO["M"], 1.2, 3.5, 1.5), A(HO["M"], -0.6, 12.4, 1.4), 24), "tenth")
 hall_face("M", "L38", "me", -0.6, 11.98, 90, "wide", "sixth", d=1.9, lens=18, ty=0.2)
 only("L39", [])
-shot("L39", mv(A(HO["M"], 0.1, 12.4, 1.4), A(HO["M"], -1.7, 12.4, 1.3), 24, A(HO["M"], -0.1, 12.4, 1.4), A(HO["M"], -1.7, 12.4, 1.3), 24), "tenth2")
+shot("L39", mv(A(HO["M"], 1.2, 11.3, 1.4), A(HO["M"], -1.7, 12.4, 1.3), 20, A(HO["M"], 0.2, 12.0, 1.4), A(HO["M"], -1.7, 12.4, 1.3), 20), "tenth2")
 hall_face("M", "L40", "mom", -0.6, 11.98, 90, "smile", "likes", d=1.9, lens=18, ty=0.2)
 knock("M", "L41", "mom", G.DOORY[10], "smile", "knocked", closer=0.25)
 beat("mom", "L41.1", side=[84, 0])
 beat("mom", "L41.1+0.5", side=[80, 0])
 only("L42", ["me"])
-put("me", "L42", A(HA, -0.6, 5.8), 90, expr="neutral")
-shot("L42", mv(A(HA, -0.6 + 2.2, 6.5, 1.55), A(HA, -0.6, 6.5, 1.55), 18, A(HA, -0.6 + 1.9, 6.5, 1.55), A(HA, -0.6, 6.5, 1.55), 18), "loop")
+put("me", "L42", A(HA, -0.6, 6.12), 90, expr="neutral")
+shot("L42", mv(A(HA, -0.6 + 2.2, 6.45, 1.55), A(HA, -0.6, 6.45, 1.55), 18, A(HA, -0.6 + 1.9, 6.45, 1.55), A(HA, -0.6, 6.45, 1.55), 18), "loop")
 
 # ---------------------------------------------------------------------------------------------- finish
 for k_ in acting.values():
@@ -299,6 +306,9 @@ sfx = [
     {"at": "L17+0.3", "kind": "creak", "db": -17, "dur": 1.0},
     {"at": "L21", "kind": "creak", "db": -18, "dur": 0.9},
     {"at": "L24", "kind": "creak", "db": -18, "dur": 0.9},
+    {"at": "L09.1", "kind": "knock", "db": -18, "pattern": [0, 0.3], "tone": "hand"},
+    {"at": "L41.1", "kind": "knock", "db": -18, "pattern": [0, 0.3], "tone": "hand"},
+    {"at": "L33", "kind": "thud", "db": -26, "dur": 0.4},
 ]
 music = {
     "root": 48, "mode": "major", "bpm": 100, "seed": 134,
@@ -323,9 +333,8 @@ remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L30")],
           "emph": [remap(x) for x in ["L01.0", "L02.2", "L12", "L18", "L20", "L27", "L35", "L37", "L42"]],
-          "quiet": [[remap("L33"), remap("L36")]], "max_zoom": 1.12,
-          "hold": [names[n] for n in ["wide", "board", "open4", "shut5", "ajar", "portrait", "five", "eight", "sixnine", "drop",
-                                      "reveal", "tenth"]]}
+          "max_zoom": 1.16, "sway": True, "drift": 0.05, "cam_push": 0.12, "cam_arc": 6.0, "punch": 0.08, "punch_rate": 1.0,
+          "hold": [names[n] for n in ["open4", "shut5", "reveal", "tenth"]]}
 story = {
     "slug": "ep134-five-rooms",
     "title": "Our House Has Nine Rooms For FOUR \U0001f5dd️",
