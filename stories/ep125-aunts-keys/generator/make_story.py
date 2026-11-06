@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 9
+REV = 10
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L35")
@@ -211,6 +211,13 @@ def ring_cam(p, yaw, who, d=1.9, lens=24, off=14):
     a = math.radians(yaw + off)
     cam = [p[0] + d * math.sin(a), p[1] - d * math.cos(a), p[2] + 1.32]
     return cam_at(cam, [p[0], p[1], p[2] + 1.2], lens)
+
+
+def push(cam, f=0.1):
+    """A slow push in: a second key a fraction of the way to the target."""
+    k = cam[0]
+    p2 = [round(a + (b - a) * f, 3) for a, b in zip(k[1], k[2])]
+    return [k, [1, p2, k[2], k[3]]]
 
 
 def shot(at, camera, look, name, **kw):
@@ -573,7 +580,7 @@ shot("L60", cam_at([kx0 + 0.9, ky0 - 5.0, 1.8], [kx0, ky0 - 2.3, 0.75], 22, [kx0
      "day", "tableclose", key=1.2, exp=0.15)
 STOVE = [kx0 + 1.8, ky0 - 1.05, 0.0]
 TP("lou", "L60.1", STOVE, 0, "smile")
-shot("L60.1", cam_face(STOVE, 0, "lou", 3.2, 12, 34, tdz=-0.28), "day", "stove")
+shot("L60.1", push(cam_face(STOVE, 0, "lou", 3.2, 12, 34, tdz=-0.28), 0.15), "day", "stove")
 HIDE("lou", "L61")
 MEL = [mx0 + 0.3, my0 + 1.7, 0.0]
 TP("me", "L61", MEL, 180, "worried")
@@ -676,9 +683,7 @@ remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L35")], "twist": remap("L35"),
           "quiet": [[remap("L59"), remap("L68")]],
-          "hold": [names[n] for n in ("footage1201", "footage1203", "footage1204",
-                                       "dropdoor", "dooropen", "plate1", "reveal", "lock2", "lk1", "unlock", "click1", "click56",
-                                       "eyesshut")]}
+          "hold": [names[n] for n in ("reveal",)]}
 story = {
     "slug": "ep125-aunts-keys",
     "title": "My Aunt Has A Key To YOURS",
