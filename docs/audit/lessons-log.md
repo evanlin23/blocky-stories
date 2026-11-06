@@ -251,6 +251,19 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     frame 0 against frame 1 for a pop, and the head-cut check on the rendered frames, not just the geometry. And the
     proposal in lesson 38 applies to qa too: the proof qa's checklist runs once on the preview, so the critic sees a
     clean film.
+    → Done 2026-11-05: scripts/frames.py (#307) and the frame-0 pose fix (#308).
+
+41. **A full `flash --like-proof` can take more than 30 minutes, and a background task with the default timeout is
+    killed before it measures.** ep118's first run drew all 1145 frames and was killed at the 30-minute limit, so it
+    had to be run again (2026-11-05).
+    → Run the first full one in the background with a 2 h timeout. After a fix, re-check only the changed shots with
+    `--like-proof --shots S12,S13`, which keeps the other drawings. The build brief says so.
+
+42. **Small props that must read as a particular shape at phone size keep spending the last round.** ep118's retry
+    passed everything but the S12b squirrel (a fist, then a bent pipe at 300 px), and ep117's discs read as stickers
+    and its moths as blades (2026-11-05). Each was one small object the critic had to be able to name.
+    → The writer avoids such props (batch 13 note 3). In a fix round, cut or replace a prop that fails to read once,
+    rather than refining it: a second try at the same shape rarely lands.
 
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
