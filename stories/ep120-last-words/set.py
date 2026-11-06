@@ -705,7 +705,7 @@ def shop(kit, m, tag, ox, oy, night):
     kit.cyl(f"{T}.tableg", 0.07, 0.85, (X(0.3), Y(3.8), zz + 0.43), wood, n=10)
     kit.cyl(f"{T}.tablefoot", 0.28, 0.04, (X(0.3), Y(3.8), zz + 0.02), wood, n=18)
     chairs = []
-    for k, cx in enumerate((-0.45, 1.05)):
+    for k, cx in enumerate((-0.41, 1.01)):
         B(kit, f"{T}.chs{k}", X(cx - 0.25), X(cx + 0.25), Y(4.55), Y(5.05), zz + 0.42, zz + 0.48, wood, bevel=0.02)
         B(kit, f"{T}.chb{k}", X(cx - 0.25), X(cx + 0.25), Y(5.0), Y(5.06), zz + 0.48, zz + 0.95, wood, bevel=0.02)
         for lx_, ly_ in [(-0.22, 4.58), (0.22, 4.58), (-0.22, 5.02), (0.22, 5.02)]:
@@ -770,7 +770,7 @@ def shop(kit, m, tag, ox, oy, night):
     speck_d = p("#6a665f", 0.97, spec=0.0)
     dl = []
     dl.append(kit.cyl(f"{T}.dust0", 0.52, 0.016, (X(0.3), Y(3.8), zz + 0.908), dust, n=22))
-    for k, cx in enumerate((-0.45, 1.05)):
+    for k, cx in enumerate((-0.41, 1.01)):
         dl.append(B(kit, f"{T}.dust1{k}", X(cx - 0.25), X(cx + 0.25), Y(4.55), Y(5.05), zz + 0.48, zz + 0.5, dust))
         dl.append(B(kit, f"{T}.dust1b{k}", X(cx - 0.25), X(cx + 0.25), Y(5.0), Y(5.06), zz + 0.95, zz + 0.97, dust))
     dl.append(B(kit, f"{T}.dust2", X(2.0), X(4.3), Y(5.6), Y(6.7), zz + 0.5, zz + 0.52, dust))
@@ -784,7 +784,7 @@ def shop(kit, m, tag, ox, oy, night):
     def r():
         rnd[0] = (rnd[0] * 9301.0 + 49297.0) % 233280.0
         return rnd[0] / 233280.0
-    spots = [(0.3, 3.8, zz + 0.925, 0.46, 0.46), (-0.45, 4.8, zz + 0.51, 0.22, 0.22), (1.05, 4.8, zz + 0.51, 0.22, 0.22),
+    spots = [(0.3, 3.8, zz + 0.925, 0.46, 0.46), (-0.41, 4.8, zz + 0.51, 0.22, 0.22), (1.01, 4.8, zz + 0.51, 0.22, 0.22),
              (3.15, 6.1, zz + 0.535, 1.0, 0.45), (3.15, 6.5, zz + 1.18, 1.0, 0.1)]
     n = 0
     for (cx, cy, cz, hx, hy) in spots:
