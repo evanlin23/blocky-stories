@@ -9,3 +9,6 @@
 - Now: margin pass (flash + pace) by a fresh builder. Next: merge main, round 2 (both reviewers), check-only.
 - Package "hold" is removed at approval (brief step 4).
 - Queue note for PR body: at least 7 uploads from ep28-lamp-room; not next to a `confess` opener or a "My ..." title; at least 3 from ep128-zero-feet and ep123-sorry-shrink.
+- Margin pass done (rev 12): flash general 1/s (3f 3/s), changes 14.1/15.9, motion 7.03, longest still 0.27 s.
+- Round 2: standards APPROVE. Critic REVISE, avg 7.6, none under 5 (scare 6, lore 6, variety 7, faces 7); one must-fix: two-line tag on Lou's hair at S33/S34.
+- Now: the ONE rescue (that fix only), then the critic alone looks once. If not approved: drop.
