@@ -1,6 +1,7 @@
 # ep127-thousand-tellings: handoff
 
-- **State:** built, reviewed and approved. The PR is open and waiting for the proof (proof.yml), then the proof qa, then `test`.
+- **State:** approved; proof qa passed (run 42208534584, sha 373d9d51: 0 craft blocks, flash 3/s, true peak -1.8 dBTP, 0 clips). Merging once `test` is green.
+- **Shardcheck (#345):** the husband's glasses rims showed at shard starts in S01 and S02. They now follow his visibility on every frame (373d9d51), the check reports 0 objects differing, and the proof was redrawn.
 - **Reviews:**
   - Round 1: both reviewers said revise (critic 15 must-fixes, standards 4).
   - Round 2: both said revise. The critic left one fix: the car skin fill at L44 and L45. Standards found two severe new problems: the S45 light snapping on, and the S21 camera passing through a tree.
@@ -20,4 +21,4 @@
   - The L10 tally isn't visible.
   - The S31 face brightens as he walks into the fill.
   - 109 s is outside both length arms (batch note).
-- **Next:** the proof, then a qa agent at stage "proof", then commit `qa/ep127-thousand-tellings.json`, then merge once `test` is green.
+- **Next:** after the merge, the final render and the QA desk's final check (not this session).
