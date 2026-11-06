@@ -262,7 +262,7 @@ put("me", "L08+0.85", [DX + 0.75, DY - 3.6], 0, expr="smile", arms=[0, 0])
 only("L08+0.85", ["dad", "me"])
 cue("L08+0.85", "bezel", v=1.0)
 cue("L09", "bezel", v=0.0)
-shot("L08+0.85", mv([DX, DY - 6.8, 1.6], [DX, DY - 3.6, 1.5], 19, [DX, DY - 6.3, 1.6], [DX, DY - 3.6, 1.5], 19), "photo")
+shot("L08+0.85", mv([DX, DY - 6.8, 1.6], [DX, DY - 3.6, 1.5], 17.5, [DX, DY - 6.7, 1.6], [DX, DY - 3.6, 1.5], 17.5), "photo")   # push 0.5 -> 0.1 m: the 1.5 m pair needs the wide framing to the end
 # L09: me at the door two years ago, Dad behind me
 put("me", "L09", [NX + 0.0, NY - 0.7, AZ], 0, expr="angry", arms=[40, 40])
 put("dad", "L09", [NX + 0.72, NY + 0.5, AZ], 0, expr="glum")
