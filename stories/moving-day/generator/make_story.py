@@ -112,7 +112,7 @@ SHOTS = [
      still([O6[0] + 0.55, -3.0, 1.6], [O6[0] + 0.55, 1.9, 1.75], 18)),
     # 2 our house, L05 to L13 (10 to 24 s)
     ("L05", "S07 close in the kitchen: the old house photo in Mom's hands", 2,
-     still([0.85, -3.42, 1.35], [0.85, -2.4, 1.1], 22)),
+     still([0.85, -3.62, 1.35], [0.85, -2.4, 1.3], 22)),
     ("L06", "S08 the small house from outside, morning, no number on the door", 2,
      still([OS[0] + 16.0, -2.2, 1.4], [OS[0] + 16.0, 6.0, 1.2], 22)),
     ("L06.2", "S09 me in my doorway, hair on the ceiling, a pencil mark on the frame at my height", 2,
@@ -120,65 +120,101 @@ SHOTS = [
     ("L07", "S10 Mom in the kitchen doorway, flat-faced and tired", 2,
      still([0.45, -0.45, 1.4], [0.45, -1.75, 1.3], 30)),
     ("L08", "S11 Mom hangs the old house frame at her eye height; its top window is dim", 2,
-     still([-3.0, -2.45, 1.52], [-4.59, -3.0, 1.5], 30)),
+     still([-3.2, -2.6, 1.5], [-4.5, -3.5, 1.5], 28)),
     ("L09", "S12 Mom steps back, no smile, mouth moving under the quote", 2,
      still([-2.15, -4.5, 1.4], [-3.3, -3.1, 1.5], 32)),
     ("L10", "S13 Mom crosses the room head down with her mug, past the stack and the frown", 2,
      move(([-0.9, -2.3, 1.35], [-1.9, -4.5, 1.25]), ([-1.5, -2.3, 1.35], [-2.5, -4.5, 1.25]), 15)),
     ("L11", "S14 the stack by the door (the locked-off wide)", 4, CLOCK),
     ("L11.1", "S15 me on the floor at the face-out box, frowning at it", 2,
-     still([-0.85, -3.5, 0.95], [-1.7, -4.5, 0.95], 26)),
+     still([-2.2, -2.5, 1.05], [-2.25, -4.3, 0.85], 17)),
     ("L12", "S16 close on the box's top corner: tape shining through the gap from inside", 4,
-     still([-1.45, -4.1, 1.62], [-1.62, -4.75, 1.4], 40)),
+     move(([-1.2, -4.0, 1.66], [-1.62, -4.75, 1.4]), ([-1.5, -4.2, 1.6], [-1.62, -4.75, 1.4]), 40, 34)),
+    ("L12+0.8", "S16b the same corner from the other side, lower: the seam and the tape's shine", 4,
+     move(([-2.0, -4.15, 1.3], [-1.66, -4.75, 1.3]), ([-1.9, -4.3, 1.4], [-1.66, -4.75, 1.3]), 36, 32)),
     ("L13", "S17 low beside the face box: its frown toward the hall and Mom's door", 2,
-     still([-0.95, -3.3, 0.55], [-1.75, -4.8, 1.2], 24)),
+     move(([-0.95, -3.3, 0.55], [-1.75, -4.8, 1.2]), ([-1.2, -3.7, 0.5], [-1.75, -4.8, 1.25]), 24, 28)),
+    ("L13+0.8", "S17b the stack from higher up, the frown looking out", 2,
+     move(([-0.6, -3.0, 1.5], [-1.7, -4.8, 1.2]), ([-1.0, -3.5, 1.45], [-1.7, -4.8, 1.2]), 24, 28)),
     # 3 the house grows, L14 to L26 (24 to 46 s)
     ("L14", "S18 me in bed in the dark, eyes open", 2, still([-3.25, 1.6, 1.35], [-4.1, 2.75, 0.72], 26)),
     ("L15", "S19 my doorway again: a hand of air over my head", 2, still([-2.4, -1.36, 1.3], [-2.38, 0.0, 1.35], 14)),
     ("L16", "S20 low up the hall, the ceiling higher", 2, still([-4.35, -0.77, 0.55], [1.0, -0.77, 1.95], 20)),
-    ("L17", "S21 my face, scared, looking up into the gap", 2, still([-1.75, -0.77, 1.5], [-3.0, -0.77, 1.65], 32)),
+    ("L17", "S21 my face, scared, looking up into the gap", 2, still([-1.75, -0.77, 1.5], [-3.0, -0.77, 1.5], 32)),
     ("L18", "S22 the stack: six boxes gone", 4, CLOCK),
     ("L19", "S23 the front room, the walls taller", 2, still([-0.8, -1.95, 1.4], [-4.0, -3.5, 1.7], 14)),
-    ("L20", "S24 the frames high on the wall, the old house among them", 2, still([-2.7, -3.5, 1.1], [-4.5, -3.1, 1.9], 22)),
-    ("L21", "S25 from below, the frames as if hung from above", 2, still([-3.95, -3.0, 0.5], [-4.5, -3.1, 2.05], 16)),
+    ("L20", "S24 the frames high on the wall, the old house among them", 2,
+     move(([-2.7, -3.5, 1.1], [-4.5, -3.1, 1.9]), ([-3.3, -3.3, 1.3], [-4.5, -3.1, 2.0]), 22, 26)),
+    ("L20+0.8", "S24b closer on the frames, rising", 2,
+     move(([-3.4, -2.7, 1.0], [-4.5, -3.1, 2.0]), ([-3.6, -2.9, 1.4], [-4.5, -3.1, 2.2]), 22, 26)),
+    ("L21", "S25 from below, the frames as if hung from above", 2,
+     move(([-3.95, -3.0, 0.5], [-4.5, -3.1, 2.05]), ([-3.5, -3.4, 0.45], [-4.5, -3.1, 2.15]), 16, 18)),
+    ("L21+0.8", "S25b from the other side below, the frames tilted", 2,
+     move(([-3.8, -3.9, 0.5], [-4.5, -3.1, 2.1]), ([-3.5, -3.6, 0.55], [-4.5, -3.1, 2.2]), 16, 18)),
     ("L22", "S26 the kitchen ceiling: a long run of boxes folded along it from the doorway", 2,
-     still([1.85, -3.5, 1.05], [0.5, -1.9, 2.0], 17)),
+     move(([1.85, -3.5, 1.05], [0.5, -1.9, 2.0]), ([1.8, -3.2, 1.1], [0.5, -1.9, 2.0]), 17, 19)),
+    ("L22+1.1", "S26b the run of boxes along the kitchen ceiling, from the counter", 2,
+     move(([1.9, -2.2, 0.9], [0.4, -2.6, 2.0]), ([1.8, -2.5, 1.0], [0.4, -2.6, 2.0]), 17, 19)),
     ("L23", "S27 the face box at the end of the run, hanging, staring down", 2, still([1.9, -1.7, 1.5], [0.7, -2.75, 1.85], 20)),
-    ("L23.3", "S28 Mom's back, small; the face above her at the top of the frame", 2, still([1.9, -1.55, 1.6], [0.85, -3.0, 1.6], 17)),
-    ("L24", "S29 Mom pouring tea, head down, profile", 2, still([1.95, -3.0, 1.35], [1.1, -3.0, 1.2], 17)),
-    ("L25", "S30 close on Mom's lowered face, calm", 2, still([1.3, -3.55, 1.45], [1.1, -3.0, 1.45], 22)),
-    ("L26", "S31 the stack, shorter again, a clean square where the face box stood", 4, CLOCK),
+    ("L23.3", "S28 Mom's back, small; the face above her at the top of the frame", 2, still([1.9, -1.75, 1.6], [0.85, -3.0, 1.6], 17)),
+    ("L24", "S29 Mom pouring tea, head down, profile", 2, still([1.95, -3.55, 1.7], [1.1, -3.0, 1.6], 13)),
+    ("L25", "S30 close on Mom's lowered face, calm", 2,
+     move(([1.75, -3.8, 1.45], [1.1, -3.0, 1.45]), ([1.7, -3.75, 1.47], [1.1, -3.0, 1.45]), 22, 18)),
+    ("L26", "S31 the stack, shorter again, a clean square where the face box stood", 4,
+     move(([-2.8, -1.75, 1.6], [-2.72, -5.1, 0.8]), ([-2.6, -2.2, 1.5], [-2.0, -5.1, 0.9]), 13, 16)),
+    ("L26+1.0", "S31b closer on the stack's clean square", 4,
+     move(([-1.0, -3.0, 1.3], [-1.7, -4.8, 1.0]), ([-1.3, -3.4, 1.25], [-1.7, -4.8, 1.0]), 22, 24)),
     # 4 three a.m., L27 to L34 (46 to 61 s)
     ("L27", "S32 the hall in the nightlight's glow, the ceiling creaking upward", 2,
-     still([-4.5, -0.55, 0.9], [-1.0, -0.6, 1.9], 16)),
-    ("L28", "S33 Mom's door, open, darker inside", 2, still([-0.75, -1.1, 1.65], [-1.15, 1.2, 1.3], 22)),
-    ("L29", "S34 side-on from the doorway: the Boxes bent over her bed, the face box hanging over her", 1, WIDE),
-    ("L30", "S35 the face box from below, wide open", 1, FACE_BELOW),
-    ("L31", "S36 side-on, the arms already down toward the quilt", 1, ARMS_SIDE),
-    ("L32", "S37 the lamp comes up", 1, LAMP),
-    ("L33", "S38 the box ends resting flat on the patterned quilt", 1, HAND_NEAR),
+     move(([-4.5, -0.55, 0.9], [-1.0, -0.6, 1.9]), ([-3.7, -0.6, 1.1], [-1.0, -0.6, 2.1]), 16, 18)),
+    ("L27+0.9", "S32b the hall's ceiling edge rising, from low under it", 2,
+     move(([-2.8, -0.8, 0.4], [-1.6, -0.7, 2.3]), ([-2.4, -0.75, 0.5], [-1.4, -0.7, 2.4]), 17, 19)),
+    ("L28", "S33 Mom's door, open, darker inside", 2,
+     move(([-0.45, -1.2, 1.5], [-1.2, 0.8, 1.25]), ([-0.85, -0.85, 1.5], [-1.2, 0.8, 1.25]), 22, 22)),
+    ("L28+0.9", "S33b low at the open door, the dark inside", 2,
+     move(([-1.45, -1.0, 0.5], [-1.2, 1.0, 1.0]), ([-1.3, -0.7, 0.6], [-1.2, 1.0, 1.05]), 22, 22)),
+    ("L29", "S34 side-on from the doorway: the Boxes bent over her bed, the face box hanging over her", 1,
+     move(([-1.3, -0.25, 1.43], [-0.76, 2.5, 0.95]), ([-1.1, 0.25, 1.4], [-0.76, 2.5, 0.95]), 18, 18)),
+    ("L29+1.0", "S34b the same, closer, from the bed's far side", 1,
+     move(([0.9, 0.5, 1.2], [-0.4, 2.3, 1.2]), ([0.8, 0.9, 1.25], [-0.4, 2.3, 1.2]), 22, 22)),
+    ("L30", "S35 the face box from below, wide open", 1,
+     c([0, [-0.95, 1.0, 0.75], [-0.6, 2.2, 1.95], 24], [1, [-0.8, 1.35, 0.9], [-0.6, 2.2, 1.9], 26])),
+    ("L30+1.2", "S35b the face box from the side, wide open", 1,
+     move(([0.8, 1.2, 1.5], [-0.6, 2.2, 1.85]), ([0.6, 1.4, 1.55], [-0.6, 2.2, 1.85]), 24, 28)),
+    ("L31", "S36 side-on, the arms coming down toward the quilt", 1,
+     move(([0.95, 1.15, 1.05], [-0.45, 2.45, 0.95]), ([0.9, 1.4, 1.1], [-0.45, 2.45, 0.95]), 28, 26)),
+    ("L31+0.7", "S36b low at the bed's foot: the arms coming down", 1,
+     move(([-0.2, 0.85, 0.9], [-0.1, 2.4, 0.85]), ([-0.1, 0.85, 0.9], [-0.1, 2.4, 0.85]), 26, 26)),
+    ("L32", "S37 the lamp comes up", 1,
+     move(([-0.15, 1.15, 1.45], [-0.55, 0.38, 0.95]), ([-0.3, 0.95, 1.4], [-0.55, 0.38, 0.95]), 26, 30)),
+    ("L33", "S38 the box ends resting flat on the patterned quilt", 1,
+     move(([-0.75, 1.15, 1.2], [-0.1, 2.3, 0.72]), ([-0.6, 1.4, 1.1], [-0.1, 2.3, 0.72]), 28, 32)),
     ("L33.3", "S39 high and wide: the quilt laid square and flat, Mom's face calm", 1, HIGH_QUILT),
     ("L34", "S40 Mom asleep in the warm light", 1, MUM_SLEEP),
     # 5 ladder height, L35 to L39 (61 to 71 s)
     ("L35", "S41 Mom's room in morning light, the corner empty, the ceiling high", 2, WIDE),
-    ("L35.2", "S42 the stack, whole again, the face box not among them", 4, CLOCK),
+    ("L35.2", "S42 the stack, whole again, the face box not among them", 4,
+     move(([-2.8, -1.75, 1.6], [-2.72, -5.1, 0.8]), ([-2.78, -2.05, 1.55], [-2.72, -5.1, 0.8]), 13, 14)),  # the clock wide, a slow push so it never sits dead
     ("L36", "S43 Mom in the front room with her mug, her head tilting up", 2, still([-1.0, -2.35, 1.5], [-1.9, -3.6, 1.45], 30)),
     ("L36.1+0.37", "S44 her eyeline: the frames at the top of a tall wall", 2, move(([-2.6, -3.4, 1.3], [-4.5, -3.1, 2.4]), ([-2.6, -3.4, 1.3], [-4.5, -3.1, 3.0]), 17)),
-    ("L37", "S45 Mom still looking up, mouthing the words", 2, still([-1.0, -2.35, 1.5], [-1.9, -3.6, 1.55], 32)),
+    ("L37", "S45 Mom still looking up, mouthing the words", 2, still([-1.0, -2.35, 1.5], [-1.9, -3.6, 1.42], 32)),
     ("P02", "S46 the laugh, held, in low gold sun", 2, still([-1.1, -3.3, 1.52], [-1.6, -4.1, 1.47], 22)),
     ("L38", "S47 Mom sits on a box, still laughing", 2, still([-2.5, -2.8, 1.3], [-1.6, -4.2, 0.95], 17)),
-    ("L39", "S48 a two-shot: me laughing too, the room tall around us", 2, still([-0.8, -2.5, 1.45], [-1.95, -4.0, 1.1], 15)),
+    ("L39", "S48 a two-shot: me laughing too, the room tall around us", 2, still([-0.75, -3.3, 1.35], [-2.0, -4.0, 1.2], 17)),
     # 6 the old house, L40 to L48 (71 to 88 s)
     ("L40", "S49 from below, the old house frame at the top of the wall", 2, still([-3.3, -3.05, 0.55], [-4.5, -3.0, 2.55], 20)),
     ("L41", "S50 close on the photo, a slow push to the top window", 2,
      move(([-3.85, -3.0, 2.55], [-4.55, -3.0, 2.7]), ([-4.05, -3.0, 2.68], [-4.55, -3.0, 2.76]), 38, 46)),
-    ("L42", "S51 Mom below, laughing quietly, the old photo above her", 2, still([-2.6, -2.6, 0.7], [-4.0, -3.1, 2.1], 19)),
-    ("L43", "S52 low and wide: Mom and me small at the foot of a tall wall", 2, still([-0.85, -1.85, 0.4], [-3.6, -3.7, 2.0], 13)),
-    ("L44", "S53 my face, looking up", 2, still([-2.0, -2.5, 1.5], [-3.0, -3.3, 1.8], 32)),
+    ("L42", "S51 Mom below, laughing quietly, the old photo above her", 2, still([-4.3, -2.2, 1.45], [-3.4, -3.0, 1.5], 20)),
+    ("L43", "S52 low and wide: Mom and me small at the foot of a tall wall", 2,
+     move(([-0.85, -1.85, 0.4], [-3.6, -3.7, 2.0]), ([-1.2, -2.1, 0.45], [-3.6, -3.7, 2.1]), 13, 14)),
+    ("L43+1.1", "S52b the tall wall from the side, the two of us small", 2,
+     move(([-4.2, -4.6, 0.55], [-3.25, -3.0, 1.3]), ([-4.0, -4.5, 0.6], [-3.25, -3.0, 1.35]), 15, 16)),
+    ("L44", "S53 my face, looking up", 2, still([-1.8, -2.3, 1.5], [-2.9, -3.3, 1.8], 28)),
     ("L45", "S54 the stack, whole, a clean square where the face box stood", 4, CLOCK),
     ("L45b", "S54b Mom below the old photo, head tipped back to it, eyes wet", 2,
      still([-2.5, -2.7, 1.55], [-3.9, -3.1, 1.8], 20)),
-    ("L46", "S55 the hall: Mom opens the cupboard, head down", 2, still([-0.6, -1.25, 1.5], [1.45, -0.75, 1.15], 20)),
+    ("L46", "S55 the hall: Mom opens the cupboard, head down", 2, still([-0.1, -1.37, 1.4], [0.9, -0.8, 1.3], 13)),
     ("L47", "S56 inside the cupboard: the face box alone on the shelf, frown out", 4,
      move(([0.35, -0.95, 1.5], [1.66, -0.79, 1.42]), ([0.5, -0.9, 1.48], [1.66, -0.79, 1.42]), 22)),
     ("L48", "S57 Mom swings the door shut, head still down", 2, still([-0.6, -1.25, 1.5], [1.5, -0.75, 1.3], 24)),
@@ -258,7 +294,8 @@ put("me", 0, [-4.2, -0.8], yaw=90, head=[0, -12], look=[0, -1], blink=False, exp
 hide("me", "L02")
 put("me", "L06.2", [-2.38, 0.2], yaw=0, expr="worried")                              # S09: in my doorway
 hide("me", "L07")
-put("me", "L11.1", [-1.72, -4.1, -0.51], yaw=0, sit=True, head=[0, 18], expr="worried")   # on the floor at the box
+put("me", "L11.1", [-2.5, -4.2, -0.51], yaw=180, sit=True, head=[-30, 8], expr="worried")
+key("me", "L11.1+0.05", yaw=180, blend=0.02)   # on the floor at the box
 hide("me", "L12")
 put("me", "L14", ME_BED, **ME_IN_BED)                                                # awake in bed in the dark
 hide("me", "L15")
@@ -300,15 +337,15 @@ put("mum", "P02", [-1.6, -4.1], yaw=150, arms=[60, 30], side=[-12, -12], head=[0
 put("mum", "L38", [-1.6, -4.3, -0.085], yaw=180, arms=[50, 25], side=[-10, -10], expr="laugh", tremble=2.0, sit=True)
 put("mum", "L39", [-1.6, -4.3, -0.085], yaw=165, arms=[50, 25], side=[-10, -10], expr="laugh", tremble=1.6, sit=True)
 hide("mum", "L40")
-put("mum", "L42", [-3.7, -3.0], yaw=-90, head=[0, -32], expr="laugh", tremble=1.0)
-put("mum", "L43", [-3.4, -3.5], yaw=yaw_to([-3.4, -3.5], [-0.9, -1.9]), head=[0, -24], expr="laugh", tremble=0.8)
+put("mum", "L42", [-3.4, -3.0], yaw=-90, head=[0, -32], expr="laugh", tremble=1.0)
+put("mum", "L43", [-3.5, -2.55], yaw=yaw_to([-3.5, -2.55], [-0.9, -1.9]), head=[0, -24], expr="laugh", tremble=0.8)
 hide("mum", "L44")
 put("mum", "L45b", [-3.6, -3.0], yaw=135, head=[0, -16], expr="crying")
-put("mum", "L46", [0.2, -0.74], yaw=90, arms=[0, 0], head=[0, 5])                     # the hall cupboard
+put("mum", "L46", [0.2, -0.74], yaw=65, arms=[0, 0], head=[0, 5])                     # the hall cupboard
 key("mum", "L46.1", arms=[0, 18], blend=0.2)
 key("mum", "L46.1+0.7", arms=[0, 4], blend=0.5)
 hide("mum", "L47")
-put("mum", "L48", [0.2, -0.74], yaw=90, arms=[0, 18], head=[0, 5])                    # she swings it shut
+put("mum", "L48", [0.2, -0.74], yaw=65, arms=[0, 18], head=[0, 5])                    # she swings it shut
 key("mum", "L48.2", arms=[0, 6], blend=0.6)
 
 # ---------------------------------------------------------------------------------------------------- cues
@@ -318,7 +355,7 @@ cues = [
     {"at": 0, "name": "time", "set": "day"},
     {"at": 0, "name": "ceil", "h": 2.2},      # S01: a hand of air over my hair
     {"at": "L02", "name": "ceil", "h": 1.72},   # then back on my hair for the stack and the montage
-    {"at": "L03", "name": "time", "set": "street"},
+    {"at": "L03+0.17", "name": "time", "set": "street"},
     {"at": "L05", "name": "time", "set": "day"},
     {"at": "L06", "name": "time", "set": "street"},
     {"at": "L06.2", "name": "time", "set": "day"},
@@ -338,7 +375,9 @@ cues = [
     {"at": 0, "name": "boxes", "pose": "head_stack", "face": "frown"},
     {"at": "L22", "name": "boxes", "pose": "kitchen2", "face": "stare"},
     {"at": "L26", "name": "boxes", "hidden": True},
-    {"at": "L29", "name": "boxes", "pose": "over_bed", "face": "wide"},
+    {"at": "L29", "name": "boxes", "pose": "over_bed_hi", "face": "wide"},     # arms still up, reaching
+    {"at": "L31", "name": "boxes", "pose": "over_bed_mid", "face": "wide"},
+    {"at": "L32", "name": "boxes", "pose": "over_bed", "face": "wide"},
     {"at": "L35", "name": "boxes", "hidden": True},
     {"at": "L46", "name": "boxes", "pose": "head_shelf", "face": "frown"},
     # the stack: six gone (L18), shorter again with the face box's clean square (L26), whole again (L35)
@@ -354,6 +393,7 @@ cues = [
     {"at": 0, "name": "oldhouse", "where": "none", "look": "dim"},
     {"at": "L05", "name": "oldhouse", "where": "hand", "look": "dim"},
     {"at": "L06", "name": "oldhouse", "where": "none", "look": "dim"},
+    {"at": "L08", "name": "oldhouse", "where": "wall", "look": "dim"},
     {"at": "L08+0.8", "name": "oldhouse", "where": "wall", "look": "dim"},
     {"at": "L41", "name": "oldhouse", "where": "wall", "look": "lit"},
     {"at": "L42", "name": "oldhouse", "where": "wall", "look": "dim"},
@@ -392,21 +432,24 @@ cues = [
     # the relights ("xfill": one soft light, placed and aimed per beat, off between)
     {"at": 0, "name": "xfill", "pos": [-2.3, -0.8, 1.0], "aim": [-4.6, -0.8, 1.7], "gain": 0.6, "size": 1.4},
     {"at": "L02", "name": "xfill", "pos": [-1.6, -3.0, 1.7], "aim": [-1.7, -4.5, 1.2], "gain": 1.2},
-    {"at": "L03", "name": "xfill", "gain": 0},
+    {"at": "L03+0.17", "name": "xfill", "gain": 0},
     {"at": "L07", "name": "xfill", "pos": [0.2, -0.5, 1.5], "aim": [0.45, -1.72, 1.4], "gain": 1.1},
     {"at": "L08", "name": "xfill", "gain": 0},
-    {"at": "L11.1", "name": "xfill", "pos": [-0.8, -3.2, 1.3], "aim": [-1.7, -4.5, 1.0], "gain": 1.2},
+    {"at": "L11.1", "name": "xfill", "pos": [-1.3, -3.0, 1.2], "aim": [-2.5, -4.2, 0.9], "gain": 0.6},
     {"at": "L13", "name": "xfill", "pos": [-0.9, -3.4, 0.7], "aim": [-1.7, -4.8, 1.2], "gain": 1.0},
     {"at": "L14", "name": "xfill", "gain": 0},
     {"at": "L35", "name": "xfill", "pos": [0.4, 0.4, 2.6], "aim": [-0.6, 2.0, 0.8], "gain": 4.0},
     {"at": "L35.2", "name": "xfill", "gain": 0},
     {"at": "L40", "name": "xfill", "pos": [-3.0, -3.0, 1.5], "aim": [-4.5, -3.0, 2.5], "gain": 0.8},
     {"at": "L41", "name": "xfill", "pos": [-3.5, -2.7, 2.9], "aim": [-4.55, -3.0, 2.7], "gain": 1.5},
-    {"at": "L42", "name": "xfill", "gain": 0},
+    {"at": "L42", "name": "xfill", "pos": [-4.3, -2.0, 1.9], "aim": [-3.4, -3.0, 1.5], "gain": 2.6},
     {"at": "L45b", "name": "xfill", "pos": [-2.3, -2.3, 1.7], "aim": [-3.6, -3.0, 1.5], "gain": 3.0},
     {"at": "L46", "name": "xfill", "gain": 0},
     {"at": "L27", "name": "xfill", "pos": [-3.6, -0.8, 1.7], "aim": [-1.6, -0.8, 1.1], "gain": 0.22},
-    {"at": "L28", "name": "xfill", "gain": 0},
+    {"at": "L28", "name": "xfill", "pos": [-0.2, -1.0, 1.7], "aim": [-1.2, 0.8, 1.2], "gain": 0.6},
+    {"at": "L29", "name": "xfill", "gain": 0},
+    {"at": "L33", "name": "xfill", "pos": [-0.7, 1.0, 1.7], "aim": [-0.1, 2.3, 0.9], "gain": 2.0, "dur": 0.3},
+    {"at": "L33.3", "name": "xfill", "gain": 0},
     {"at": "L47", "name": "xfill", "pos": [0.3, -1.4, 1.9], "aim": [1.66, -0.79, 1.3], "gain": 1.6},
     {"at": "L48", "name": "xfill", "gain": 0},
 ]
@@ -437,9 +480,11 @@ story = {
     "tail": 0,
     "look": {"fog": "#0d1015", "fog_density": 0.01, "fog_start": 2.5, "sky": "#0b0d11", "sky_strength": 1.0,
              "exposure": 1.0, "flash_safe": True,
-             "polish": {"quiet": [["P02", "L39"]], "marks": False, "emph": ["L01.3"]}},
+             "polish": {"quiet": [["P02", "P02"]], "marks": False, "emph": ["L01.3"]}},
     "grade": {"shadows": [-0.02, 0.0, 0.04], "highlights": [0.0, 0.005, 0.01], "saturation": 0.92, "contrast": 1.08,
               "vignette": 0.35, "bloom": 0.2, "grain": 0.012, "red_line": 0.79},
+    "clip_ok": ["S09/ceiling mine", "S09/head mine", "S19/head mine", "S18/my pillow"]
+               + [f"{sh}/{o}" for sh in ("S33", "S33b", "S34", "S39", "S40", "S41") for o in ("pillow", "quilt")],
     "phonemes": {},
     "cast": cast,
     "lines": lines,
