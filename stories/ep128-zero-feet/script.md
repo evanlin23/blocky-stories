@@ -21,7 +21,7 @@ The batch table is in `stories/ep122-face-the-wall/script.md`. This row:
 ## The big idea
 **In a town where every phone shows how far you are from your nearest family, mine says zero in my new apartment four hundred miles from home, because Mom moved in right above me the week I left and has walked every step I take, step for step, over my head, so the phone can't tell us apart.**
 
-- **Why it clicks:** the full fridge and folded laundry (L11, L12), the footsteps that walk to the kitchen when I do and stop when I stop (L15 to L17), the flat upstairs that was empty when I moved in (L18), and the footsteps that copy one step left (L22, L23). Each one is Mom, matching me.
+- **Why it clicks:** the full fridge and folded laundry (L11, L12), the footsteps that walk to the kitchen when I do and stop when I stop (L15 to L17), the flat upstairs that was empty when I signed my lease (L18), and the footsteps that copy one step left (L22, L23). Each one is Mom, matching me.
 - Ten pitched, this one kept. Dropped: a Keeper upstairs counting me (stand-in), the phone counts me as my own family (about-me, too abstract), a ghost (death words), a twin I never knew (a double), the phone is broken (no reveal), a future me (ep124 in this batch), Dad upstairs after a split (a sad reveal), me sleepwalking upstairs (ep28, ep125), the meter counts who misses you most (ep38, ep110, the killed canyon-echo), a neighbor who adopts me (no stakes).
 - Checked against "Claimed big ideas" and every twist: not ep43 (a number about who knows your name), not ep38 or ep110 (who misses or thinks of you most), not ep125 (no keys, no sleepwalking, nobody locked in), not ep92 (no version swap). The meter is plain distance, and the reveal is a person choosing to stand on it. Shape `in-step`.
 - **The rule is the clue:** "Zero feet. That's how close my nearest family is" sounds like a haunting in a one-room flat. After L33 it's a mom.
@@ -42,7 +42,7 @@ The batch table is in `stories/ep122-face-the-wall/script.md`. This row:
 - **The plants a rewatch catches:**
   1. L11, L12: the full fridge and the folded laundry (Mom things).
   2. L15 to L17 and L21 to L23: the footsteps keep step with mine. On a rewatch, that's her keeping the zero.
-  3. L18: the flat upstairs was empty when I moved in, and filled the same week.
+  3. L18: the flat upstairs was empty when I signed my lease, and filled the week I left.
 - **Ending shape:** `in-step`.
 - **Warmth:** a mom who can't let go, played light, and a son who finds he's glad.
 - **Sad family reveal?** No.
@@ -155,7 +155,7 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 Hands: no hand is shown on a phone, and no hand is raised. The phones lie flat. Car beats are my face through the windshield. S14, S21 and S41b (the ceiling) and S22 (my feet), S25a (her open door) and S25c (her slippers) carry lines by intent: list them in `framing_ok`.
 
 ## Lore connection (`stories/lore.md`)
-A plain tally: two mint strokes scratched into the brass cap of the newel post at the foot of the stairs, two for a stair built for two flats (mine and the one above). No extra stroke, no Keeper, no thread touched. Seen in S18 under L18 ("The apartment upstairs / was empty / when I moved IN."), low at the frame's left edge, held 1.2 s, not narrated.
+A plain tally: two mint strokes scratched into the brass cap of the newel post at the foot of the stairs, two for a stair built for two flats (mine and the one above). No extra stroke, no Keeper, no thread touched. Seen in S18 under L18 ("The apartment upstairs / was empty / when I signed my LEASE."), low at the frame's left edge, held 1.2 s, not narrated.
 
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
@@ -177,7 +177,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L15: When I walked / to the kitchen, / they walked / to the KITCHEN.
 - L16: When I STOPPED, / they stopped.
 - L17: Step for STEP.
-- L18: The apartment upstairs / was empty / when I moved IN.
+- L18: The apartment upstairs / was empty / when I signed my LEASE.
 - L19: I've never SEEN / who lives there NOW.
 - L20: On Friday night, / I stood still / in the middle of my ROOM.
 - L21: Above me, / the footsteps / stood still TOO.
