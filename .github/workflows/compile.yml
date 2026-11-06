@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
-      - run: sudo apt-get update -q && sudo apt-get install -yq ffmpeg
+      - run: for i in 1 2 3; do sudo apt-get update -q && sudo apt-get install -yq ffmpeg && break; [ "$i" = 3 ] && exit 1; echo "apt try $i failed (a runner mirror can miss the Ubuntu lists), retrying"; sleep 20; done
       - run: pip install -r requirements.txt -r requirements-upload.txt
       - name: compile and upload
         env:
