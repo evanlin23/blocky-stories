@@ -323,6 +323,8 @@ def build_shop(kit, P):
     kit.light("outnight", "POINT", (G.DOOR_X, -9.6, 3.2), 20.0, "#dfe6ff", size=1.0, shadow=False)
     kit.light("cntnight", "POINT", (3.8, -1.2, 2.4), 30.0, "#ffe6c8", size=0.8, shadow=False)
     # the steady face light: low and in front of the face, amber; animate() puts it under the camera's line, once per shot
+    # the car's steady dash fill (bridge shots): warm, low, in front of the driver
+    kit.light("carfill", "POINT", (0.0, -4.0, 0.8), 400.0, "#ffc890", size=0.6, shadow=False)
     kit.light("facefill", "POINT", (0.0, -4.0, 0.8), 130.0, "#ffd9b0", size=0.6, shadow=False)
 
 
@@ -618,7 +620,7 @@ def animate(kit, story, tl, t, ctx):
     look = look_at(tl, t)
     gains = {"sun": look["sun"], "fill": look["fill"], "lamp": look["lamp"], "shopday": look["shopday"],
              "shopnight": look["night"], "doornight": look["night"], "outnight": look["night"], "cntnight": look["night"],
-             "facefill": 0.0}
+             "facefill": 0.0, "carfill": 0.0}
     night = look["night"] > 0.5
     W["bpane_day"].hide_render = night
     W["bpane_night"].hide_render = not night
@@ -659,13 +661,21 @@ def animate(kit, story, tl, t, ctx):
         u_ = (t - shot["start"]) / max(1e-6, shot["end"] - shot["start"])
         cp, tg, ln = cam_state(spec, u_)
         span = math.dist(cp, tg)
-        if night and span < 8.0:
+        # gate on the shot's tightest span so the light never switches or steps mid-shot
+        spans = [math.dist(*cam_state(spec, uu)[:2]) for uu in (0.0, 0.5, 1.0)]
+        mspan = min(spans)
+        if night and mspan < 8.0:
             fl = kit.LIGHTS["facefill"]["obj"]
             fl.location = (cp[0] + 0.4 * (tg[0] - cp[0]), cp[1] + 0.4 * (tg[1] - cp[1]), max(0.2, tg[2] - 0.65))
-            gains["facefill"] = 1.0 if span < 6.5 else 1.6
+            gains["facefill"] = 1.0 if mspan < 6.5 else 1.6
         elif night and spec.get("fill_at"):
             kit.LIGHTS["facefill"]["obj"].location = tuple(spec["fill_at"])
             gains["facefill"] = 1.6
+        if spec.get("carfill"):
+            c0, t0_, _l = cam_state(spec, 0.0)
+            cf = kit.LIGHTS["carfill"]["obj"]
+            cf.location = (c0[0] + 0.75 * (t0_[0] - c0[0]), c0[1] + 0.75 * (t0_[1] - c0[1]), max(0.2, t0_[2] - 0.1))
+            gains["carfill"] = 1.0
         wf = bool(spec.get("winframe"))
         for ob in W["wframe_parts"]:
             ob.hide_render = not wf

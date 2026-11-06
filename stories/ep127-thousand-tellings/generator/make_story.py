@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = timeline.split_lines(orig_lines)
 
@@ -263,7 +263,7 @@ put("me", "L10.2", [G.LOT[0] + G.CAR_DX, G.LOT[1] + G.CAR_DY], 0, expr="smile")
 seat("me", "L10.2", z=0.62)
 cue("L10.2", "car", mode="me", z=0.0)
 go("me", "L10.3+0.6", [G.LOT[0] + G.CAR_DX, G.LOT[1] + G.CAR_DY - 22.0])
-shot("L10.2", mv([7.5, 8.5, 1.5], [0.0, 0.0, 0.9], 34, [6.0, 6.8, 1.6], [0.0, 0.0, 0.9], 34), "carleave1", follow="me")
+shot("L10.2", mv([3.6, 8.5, 1.5], [0.0, 0.0, 0.9], 34, [3.0, 6.8, 1.6], [0.0, 0.0, 0.9], 34), "carleave1", follow="me")
 only("L11", [])
 stand("me", "L11")
 shot("L11", mv([MX + 1.9, MY + 2.4, 1.35], [MX - 0.1, MY, 0.31], 30, [MX + 1.7, MY + 2.2, 1.35], [MX - 0.1, MY, 0.31], 30), "chair_day")
@@ -420,10 +420,10 @@ cue("L44", "car", mode="me", z=0.12)
 cue("L44", "bag", on=False)
 put("me", "L44", [bx_ + G.CAR_DX, by_ + G.CAR_DY, 0.12], 0, expr="worried")
 seat("me", "L44", z=0.62)
-shot("L44", face("me", d=4.4, lens=40, dx=-0.2, dzc=0.05, tz=0.2), "bridge1")
-shot("L44.1", face("me", d=4.4, lens=50, dx=0.8, dzc=0.1, tz=0.2), "bridge2")
+shot("L44", face("me", d=4.4, lens=40, dx=-0.2, dzc=0.05, tz=0.2), "bridge1", carfill=True)
+shot("L44.1", face("me", d=4.4, lens=50, dx=0.8, dzc=0.1, tz=0.2), "bridge2", carfill=True)
 beat("me", "L45", expr="warm", head=[0, 4])
-shot("L45", face("me", d=4.2, lens=44, dx=0.0, dzc=0.05, tz=0.2, push=0.2), "bridge3")
+shot("L45", face("me", d=4.2, lens=44, dx=0.0, dzc=0.05, tz=0.2, push=0.2), "bridge3", carfill=True)
 only("L45.1", ["grandpa"])
 stand("me", "L45.1")
 grandpa_chair("L45.1", "worried")
@@ -433,7 +433,7 @@ only("L45.2", ["me"])
 cue("L45.2", "car", mode="me", z=0.12)
 put("me", "L45.2", [bx_ + G.CAR_DX, by_ + G.CAR_DY, 0.12], 0, expr="warm")
 seat("me", "L45.2", z=0.62)
-shot("L45.2", face("me", d=4.0, lens=48, dx=-0.5, dzc=0.05, tz=0.2), "bridge4")
+shot("L45.2", face("me", d=4.0, lens=48, dx=-0.5, dzc=0.05, tz=0.2), "bridge4", carfill=True)
 # L46: I go in
 look("L46", "night")
 cue("L47", "door", a=0.0)
