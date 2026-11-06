@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = timeline.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L28")
@@ -151,7 +151,7 @@ def hall_face(K, ref, who, x, y, az, expr, name, d=1.9, lens=24, tz=1.55, ty=0.0
     shot(ref, fc(O, x + tx, y + ty, tz, d, lens, az=az, push=push), name)
 
 
-def knock(K, ref, who, door_y, expr, name, theta=45.0, f=30.0, s=80.0, d=2.3, lens=19, push=0.08):
+def knock(K, ref, who, door_y, expr, name, theta=45.0, f=30.0, s=80.0, d=2.3, lens=19, push=0.08, closer=0.0, pan=0.3):
     """Someone with the flat left hand (the one toward the wall) on a left-wall door at chest height, face to camera."""
     O = HO[K]
     L = 0.62
@@ -162,18 +162,19 @@ def knock(K, ref, who, door_y, expr, name, theta=45.0, f=30.0, s=80.0, d=2.3, le
     oy = lx * math.sin(th) + ly * math.cos(th)
     tipx = G.LX - 0.01
     rx, ry = tipx - ox, door_y - 0.05 - oy
+    rx += closer * math.cos(th) * 0 - closer * 1.0   # nearer the wall (-x)
     only(ref, [who])
     put(who, ref, A(O, rx, ry), theta, expr=expr, side=[s, 0], arms=[f, 0], head=[0, 0])
     # the camera looks a little toward the door so the hand and the numeral share the frame
-    shot(ref, fc(O, rx - 0.3 * math.cos(th), ry - 0.3 * math.sin(th), 1.45, d, lens, az=theta, push=push), name)
+    shot(ref, fc(O, rx - pan * math.cos(th), ry - pan * math.sin(th), 1.45, d, lens, az=theta, push=push), name)
     return rx, ry
 
 
 # ===== 01 the hook, the rule, the montage (L01 to L06)
 HA = HO["A"]
 only(0, ["me"])
-put("me", 0, A(HA, -0.6, 5.98), 90, expr="neutral")
-shot(0, fc(HA, -0.6, 6.15, 1.55, 1.9, 18, push=0.1, az=90), "hook")
+put("me", 0, A(HA, -0.6, 5.8), 90, expr="neutral")
+shot(0, fc(HA, -0.6, 6.5, 1.55, 1.9, 18, push=0.1, az=90), "hook")
 hall_face("A", "L01.1", "me", -0.3, 6.4, 40, "neutral", "hook2", d=2.3)
 only("L02", ["me"])
 put("me", "L02", A(HA, -0.3, 3.4), 30, expr="neutral")
@@ -201,7 +202,7 @@ only("L07", [])
 shot("L07", mv(A(HA, -1.4, 1.0, 1.5), A(HA, 1.7, 7.5, 1.4), 24, A(HA, -1.4, 1.5, 1.5), A(HA, 1.7, 8.0, 1.4), 24), "open4")
 only("L08", [])
 shot("L08", mv(A(HA, 1.4, 0.8, 1.5), A(HA, -1.7, 7.0, 1.4), 22, A(HA, 1.4, 1.2, 1.5), A(HA, -1.7, 7.5, 1.4), 22), "shut5")
-knock("A", "L09", "mom", G.DOORY[6], "warm", "momknock")
+knock("A", "L09", "mom", G.DOORY[6], "warm", "momknock", closer=0.25, pan=0.6)
 beat("mom", "L09.1", side=[84, 0])
 beat("mom", "L09.1+0.5", side=[80, 0])
 only("L10", ["dad"])
@@ -212,7 +213,7 @@ hall_face("A", "L11", "me", -0.7, 2.4, 50, "worried", "whose", d=1.9, lens=26)
 only("L12", ["me"])
 put("me", "L12", A(G.PORCH, 0.0, 0.7), 0, expr="sad-smile")
 sit("me", "L12", False)
-shot("L12", fc(G.PORCH, 0.15, 0.7, 1.25, 2.8, 34, push=0.08), "porch")
+shot("L12", fc(G.PORCH, 0.15, 0.7, 1.1, 3.2, 34, push=0.08), "porch")
 only("L13", ["mom"])
 put("mom", "L13", A(G.PORCH, 0.0, 2.7), 0, expr="smile")
 shot("L13", fc(G.PORCH, 0.0, 2.7, 1.45, 2.5, 34, push=0.08), "momdoor")
@@ -227,7 +228,7 @@ hall_face("B", "L16", "me", -0.6, 5.98, 90, "worried", "inch", d=1.9, lens=18, t
 rx, ry = knock("B", "L17", "me", G.DOORY[7], "worried", "push", theta=40, f=25, s=82)
 only("L18", [])
 shot("L18", mv(A(HO["C"], -1.78, 6.4, 1.55), A(HO["C"], -4.85, 6.4, 1.6), 20, A(HO["C"], -2.1, 6.4, 1.55), A(HO["C"], -4.85, 6.4, 1.6), 20), "portrait")
-shot("L19", mv(A(HO["C"], -1.9, 6.4, 1.7), A(HO["C"], -4.85, 6.4, 1.75), 26, A(HO["C"], -2.3, 6.4, 1.7), A(HO["C"], -4.85, 6.4, 1.75), 26), "portrait2")
+shot("L19", mv(A(HO["C"], -1.9, 6.4, 1.55), A(HO["C"], -4.85, 6.4, 1.6), 26, A(HO["C"], -2.3, 6.4, 1.55), A(HO["C"], -4.85, 6.4, 1.6), 26), "portrait2")
 hall_face("C", "L20", "me", -0.6, 5.7, 90, "scared", "meat23", d=1.9, lens=18, ty=0.25)
 beat("me", "L20.1", expr="wide")
 only("L21", [])
@@ -271,12 +272,12 @@ hall_face("M", "L38", "me", -0.6, 11.98, 90, "wide", "sixth", d=1.9, lens=18, ty
 only("L39", [])
 shot("L39", mv(A(HO["M"], 0.1, 12.4, 1.4), A(HO["M"], -1.7, 12.4, 1.3), 24, A(HO["M"], -0.1, 12.4, 1.4), A(HO["M"], -1.7, 12.4, 1.3), 24), "tenth2")
 hall_face("M", "L40", "mom", -0.6, 11.98, 90, "smile", "likes", d=1.9, lens=18, ty=0.2)
-knock("M", "L41", "mom", G.DOORY[10], "smile", "knocked")
+knock("M", "L41", "mom", G.DOORY[10], "smile", "knocked", closer=0.25)
 beat("mom", "L41.1", side=[84, 0])
 beat("mom", "L41.1+0.5", side=[80, 0])
 only("L42", ["me"])
-put("me", "L42", A(HA, -0.6, 5.98), 90, expr="neutral")
-shot("L42", mv(A(HA, -0.6 + 2.2, 5.98, 1.55), A(HA, -0.6, 6.15, 1.55), 18, A(HA, -0.6 + 1.9, 5.98, 1.55), A(HA, -0.6, 6.15, 1.55), 18), "loop")
+put("me", "L42", A(HA, -0.6, 5.8), 90, expr="neutral")
+shot("L42", mv(A(HA, -0.6 + 2.2, 6.5, 1.55), A(HA, -0.6, 6.5, 1.55), 18, A(HA, -0.6 + 1.9, 6.5, 1.55), A(HA, -0.6, 6.5, 1.55), 18), "loop")
 
 # ---------------------------------------------------------------------------------------------- finish
 for k_ in acting.values():
