@@ -232,7 +232,6 @@ shot("S07c", "L07.4", cam_face(RAYC, 0, "ray", 2.4, -12, 34, shift=0.12, d2=2.1)
 TP("ray", "L08", RAY2, 0, "smile")
 TP("me", "L08", ME2, 0, "smile")
 shot("S08", "L08", cam_at([CX, CY - 2.4, 1.6], [CX, CY + 0.95, 1.58], 28, [CX, CY - 2.15, 1.6], [CX, CY + 0.95, 1.58], 28), "day")
-shot("S08b", "L08.2", cam_at([CX, CY - 1.9, 1.6], [CX, CY + 0.95, 1.58], 32, [CX, CY - 1.7, 1.6], [CX, CY + 0.95, 1.58], 32), "day")
 # ===== S09 to S12 the rule
 HIDE("me", "L09")
 TP("ray", "L09", RAYC, 0, "neutral", arms=[0, 0], side=[112, 0])
@@ -359,8 +358,6 @@ shot("S35", "L35", cam_at([CX + 0.33, CY - 2.4, 1.9], [CX + 0.33, CY - 0.05, 1.1
 shot("S35b", "L35.2", cam_at([CX + 0.9, CY - 1.5, 2.1], [CX + 0.1, CY - 0.05, 1.1], 34, [CX + 0.75, CY - 1.3, 2.0], [CX + 0.1, CY - 0.05, 1.1], 34),
      "dusk", face=False)
 shot("S36", "L36", cam_at([CX - 0.9, CY - 1.7, 1.5], [CX + 0.15, CY + 0.1, 1.1], 34, [CX - 0.7, CY - 1.4, 1.45], [CX + 0.15, CY + 0.1, 1.1], 34),
-     "dusk", face=False)
-shot("S36b", "L36.2", cam_at([CX + 0.5, CY - 1.2, 1.9], [CX + 0.05, CY, 1.1], 38, [CX + 0.4, CY - 1.0, 1.85], [CX + 0.05, CY, 1.1], 38),
      "dusk", face=False)
 M37 = [CX + 0.8, CY - 1.7, 0.0]
 TP("me", "L37", M37, -15, X("sad"))
@@ -539,7 +536,7 @@ sound = {
 remap_all(sound["music_drops"])
 remap_all(music["sections"])
 polish = {"reveal": [remap("L30"), remap("L38"), remap("L40")], "twist": remap("L38"),
-          "hold": ["S11", "S61", "S40"],
+          "hold": ["S08", "S11", "S61", "S40"],
           "sway": ["S22", "S24", "S29", "S30", "S31", "S34", "S37", "S39", "S41", "S42", "S45", "S53"]}
 story = {
     "slug": "ep135-fortune-dodge",
