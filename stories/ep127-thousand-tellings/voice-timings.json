@@ -270,18 +270,22 @@
    ]
   },
   "L11": {
-   "text": "Three years ago.",
+   "text": "I hadn't fished since.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.259,
-   "onset": 0.19,
-   "end": 1.052,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.138,
    "chunks": [
     [
-     0.19,
-     1.052
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     1.138
     ]
    ]
   },
@@ -318,26 +322,26 @@
    ]
   },
   "L13": {
-   "text": "So I drove back for a week.",
+   "text": "So I drove back that Saturday.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.552,
+   "dur": 1.759,
    "onset": 0.172,
-   "end": 1.362,
+   "end": 1.552,
    "chunks": [
     [
      0.172,
-     0.345
+     0.328
     ],
     [
-     0.345,
-     0.793
+     0.328,
+     0.776
     ],
     [
-     0.793,
-     1.362
+     0.776,
+     1.552
     ]
    ]
   },
@@ -1326,26 +1330,30 @@
    ]
   },
   "L57": {
-   "text": "The counter. The city. The car.",
+   "text": "Every word of it, right up to my car.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.638,
-   "onset": 0.155,
-   "end": 1.431,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
    "chunks": [
     [
-     0.155,
-     0.466
+     0.172,
+     0.543
     ],
     [
-     0.492,
-     0.81
+     0.543,
+     0.69
     ],
     [
-     0.836,
-     1.431
+     0.724,
+     1.026
+    ],
+    [
+     1.026,
+     1.672
     ]
    ]
   },
