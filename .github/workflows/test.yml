@@ -24,10 +24,20 @@ jobs:
       - name: gate every story this PR changes (a story merges only when it's ready to render and its proof passed qa)
         if: github.event_name == 'pull_request' && !startsWith(github.event.pull_request.title, 'WIP')
         env: {BASE: "${{ github.event.pull_request.base.sha }}"}
+        # A story whose only block is its missing or stale proof says "waiting for proof" (still blocking: no story
+        # merges without a passed proof qa, RULES.md 2026-11-03); anything else is a real failure.
         run: |
           bad=0
           for s in $(git diff --name-only "$BASE" HEAD -- 'stories/*/*' | cut -d/ -f2 | sort -u); do
             [ -f "stories/$s/story.json" ] || continue
-            python -m blocky gate "$s" --merge --base "$BASE" || bad=1
+            out=$(python -m blocky gate "$s" --merge --base "$BASE" 2>&1) && { echo "$out"; continue; }
+            echo "$out"; bad=1
+            if ! echo "$out" | grep '^BLOCK' | grep -qv '^BLOCK waiting for proof: '; then
+              echo "::warning title=waiting for proof::$s is ready except its proof: $(echo "$out" | grep -m1 '^BLOCK' | cut -c7-)"
+              echo "- **$s: waiting for proof** (nothing else blocks it)" >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "::error title=gate closed::$s: $(echo "$out" | grep '^BLOCK' | grep -m1 -v '^BLOCK waiting for proof: ' | cut -c7-)"
+              echo "- **$s: gate closed**, see the log" >> "$GITHUB_STEP_SUMMARY"
+            fi
           done
           exit $bad
