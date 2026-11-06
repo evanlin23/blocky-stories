@@ -1,0 +1,27 @@
+{
+ "stage": "proof",
+ "film": "proof-42187526106",
+ "run": 42187526106,
+ "sha": "2422751046b852281b16dcb11afb2cce6246a9ff",
+ "verdict": "fail",
+ "date": "2026-11-06",
+ "checked": [
+  "frames every 2 s",
+  "first 3 s every frame",
+  "S65 95.5-97.93 s frame by frame",
+  "scare 60-70 s",
+  "tag-presence scan at 10 fps",
+  "walks 102-104 s",
+  "cover",
+  "loudness",
+  "hf share",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.0 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 16.5 | 14.0– | ok |\n| macro.motion_energy_q | 6.95 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 6.5 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.198 | –0.25 | ok |\n| spec.shot_p90_s | 2.27 | –2.5 | ok |\n| macro.longest_still_s | 0.33 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.72 | 1.5– | ok |\n| spec.camera_move_share | 0.99 | 0.65– | ok |\n| spec.punch_per_10s | 1.3 | 0.4– | ok |\n| macro.brightness_mean | 0.541 | 0.35– | ok |\n| macro.brightness_first_3s | 0.419 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.398 | 0.42– | **warn** |\n| macro.contrast_mean | 0.223 | 0.18– | ok |\n| spec.face_big_share | 0.39 | 0.4– | **warn** |\n| spec.caption_share | 0.982 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.0 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.346 | 0.5– | **warn** |\n| micro.walk_dead_end_share | 0.75 | –0.25 | **warn** |\n| micro.idle_window_share | 0.069 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 60.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.76 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 17.1 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0471 | –0.08 | ok |\n| sound.hf_jump_max | 0.018 | –0.04 | ok |",
+ "notes": "Proof 123.1 s, 270x480 x4, drawn at 2422751 (latest story commit on claude/batch13-ep122-face-the-wall). -14.1 LUFS / -1.8 dBTP, LRA 1.2; voice always on top, no hf jump (max 0.047, jump 0.018), tail ends on 'taught us.' clean into the loop. Flash passes (general 1/s, 3f 3/s, red 0); clip.json 0 hits of 560. Gate OPEN. Opening 'ban' matches L01; last upload ep62 is 'count', ep122 not yet in queue.txt.\nFIX (must): S65 (L52, Grandma on the second stair) 97.57-97.93 s: the camera's arc (end [120.633, 2.044, 2.2]) slides behind the stairwell wall, so the last 11 frames are a flat slate panel with no face and no tag, under 'the STAIRS.'. Reads as a glitch on phone and TV. Shorten the arc (end x about 120.4) or reverse its direction so the wall never crosses the lens; re-proof.\nSecond one: a lilac-lit close-up of my face lying sideways on the pillow, eyes open, the wall-tag at 0 top left, slow push; 'Never sleep facing the WALL at Grandma's. Something SITS on your bed.' poses the threat to the narrator.\nBatch 13 constraints hold: no blink, pulse or flicker seen; dawn fades are the only light change; max two faces per shot, no profile two-shots; emotional lines on single faces. Scare face 63.7-66.9 s reads clearly under the cool fill.\nNote, not a fail: S47 (L37) 66.9-68.2 s the patting hand on the quilt shows no arm, a floating palm; intended ('hand only') and fits the scare, but an arm edge in frame would read better.\nCover 36.3 s (S17b, my scared face, 'the bed DIPPED.', tag at 1): strong. Captions inside the safe area throughout; no stray text.\ncraft: 0 block, 0 near, 5 warn: macro.saturation_mean 0.398 (0.42-), spec.face_big_share 0.39 (0.4-), micro.character_motion_shot_share 0.346 (0.5-), micro.walk_dead_end_share 0.75 (-0.25), sound.voice_bed_gap_db 17.1 (8-14). Pace margins good: changes 15.0 (12.5, +2.5), q 16.5 (14.0, +2.5), motion q 6.95 (6.0, +0.95), longest still 0.33 s, q 0.27, q_edge 0.27."
+}
