@@ -1,0 +1,23 @@
+# ep127-thousand-tellings: handoff
+
+- **State:** built, reviewed and approved. The PR is open and waiting for the proof (proof.yml), then the proof qa, then `test`.
+- **Reviews:**
+  - Round 1: both reviewers said revise (critic 15 must-fixes, standards 4).
+  - Round 2: both said revise. The critic left one fix: the car skin fill at L44 and L45. Standards found two severe new problems: the S45 light snapping on, and the S21 camera passing through a tree.
+  - Rescue look: both approve. Critic average 7.5, lowest 5 (lore and the length arm).
+- **Rescue scope:** the rescue applied exactly the three fixes the round-2 reviews named (RULES audit decision 3: "applies only the fixes a review named"), and both blocking reviewers looked once.
+- **Local numbers:**
+  - preflight: 0 blocks
+  - framing, frames and clipcheck: 0 findings
+  - flash --like-proof: PASS, 3 a second at peak
+  - measure: 0 blocks, longest still 0.53 s (0.8 s at quarter res)
+  - duration: 109.4 s
+- **Open should-fixes, not blocking:**
+  - L28 has a slogan repeat (check warns).
+  - The "of it," caption runs under 0.2 s.
+  - A slate fragment shows in S121.
+  - S114 should hold 999 until "one THOUSAND".
+  - The L10 tally isn't visible.
+  - The S31 face brightens as he walks into the fill.
+  - 109 s is outside both length arms (batch note).
+- **Next:** the proof, then a qa agent at stage "proof", then commit `qa/ep127-thousand-tellings.json`, then merge once `test` is green.
