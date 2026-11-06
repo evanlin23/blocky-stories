@@ -294,7 +294,7 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     craft blocks were silently left out ("0 block"). Its failing proof (9695bc5, 12.0 / 12.5 / 6.09 / 0.53) reads
     13.0 / 12.5 / 6.09 / 0.53 when held every 4th drawing like the preview (the preview and the proof draw at the
     same size and samples), so measuring the preview would have caught it.
-    → Done 2026-11-06 (#PR): `measure.py --story` measures the preview film when there is one, and the 4 blocks
+    → Done 2026-11-06 (#332): `measure.py --story` measures the preview film when there is one, and the 4 blocks
     read `unmeasured` (counted as blocked) when there is none. A new warning, `longest_still_q_edge_s` (the still
     at a 10% looser threshold), reads 1.6 s on both of ep126's films and equals the plain reading on the other 6
     pairs: over 1.0 s on a proof means the final may block. The build brief's measure step has the margins.
