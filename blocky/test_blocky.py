@@ -752,6 +752,38 @@ def test_mix_uses_samples_unless_the_story_turns_them_off(tmp_path):
     assert np.allclose(sound.mix(tl, st, vo)[0], rec)                  # deterministic, and back on after "false"
 
 
+def test_the_rule_tag_sits_past_the_near_plane_and_off_every_face():
+    """ep120: the tag hung 1.0 m off the camera, so a close-up nearer than that hid it; ep116 S17: it sat over a
+    face. The engine places it at hud.DEPTH_K clip_starts and mirrors it to the other top corner when that covers
+    less face."""
+    from blocky import hud
+
+    h = hud.spec({"hud": {"object": "tag", "at": [-0.37, 0.6], "size": 0.56}})
+    clip_start, aspect = 0.05, 1080 / 1920
+    # a close-up: the subject 0.35 m from the lens is still behind the tag, at the same angular size as before
+    for lens in (18, 40, 85):
+        loc, s = hud.place(h["at"], h["size"], lens, clip_start, aspect)
+        assert -loc[2] < 0.35 and -loc[2] >= clip_start
+        h2 = -loc[2] * 12 / lens
+        assert loc[1] / h2 == pytest.approx(0.6) and s / (h2 * aspect) == pytest.approx(0.56)
+    local = (-0.52, -0.42, 0.52, 0.42)   # ep120's tag plate, its own units
+    box = hud.frame_box(h["at"], h["size"], local, aspect)
+    # a two-shot: one face at the top left under the default corner, the other at the right but lower
+    faces = [(-0.75, 0.35, -0.25, 0.8), (0.2, -0.2, 0.6, 0.25)]
+    pick = hud.choose(box, faces)
+    chosen = hud.mirror(box) if pick else box
+    assert pick == 1 and all(hud.overlap(chosen, f) == 0 for f in faces)
+    # the mirrored origin puts the tag's real box where mirror() says
+    at2 = hud.mirrored_at(h["at"], h["size"], local)
+    assert hud.frame_box(at2, h["size"], local, aspect) == pytest.approx(hud.mirror(box))
+    # no face under the default corner: it stays
+    assert hud.choose(box, [(0.2, -0.2, 0.6, 0.25)]) == 0
+    # a sliver of face under the corner (ep120 S10) isn't worth a jump; a head across the whole top can't be helped
+    assert hud.choose(box, [(-0.1, 0.45, 0.0, 0.5)]) == 0
+    assert hud.choose(box, [(-0.86, 0.14, 0.82, 1.0)]) == 0
+    assert hud.spec({}) is None
+
+
 def _sample(tl, name, t, defaults):
     """The cue sampler stories' set.py use (ep120's, verbatim in effect): fields eased over a cue's own "dur"."""
     cur, prev = dict(defaults), dict(defaults)

@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from blocky import acting, kit, polish, rig  # noqa: E402
+from blocky import acting, hud, kit, polish, rig  # noqa: E402
 
 
 def load_set(story_dir: Path):
@@ -81,7 +81,16 @@ def cam_at(shot_spec, shot, t, chars, tl):
 
 
 def pose_at(t, story, tl, setmod, ctx, chars, shots):
-    """Everything at time t: the cast, the set's own animation, the lights and the camera. Returns the shot."""
+    """Everything at time t: the cast, the set's own animation, the lights, the camera and, when story.json has
+    a "hud", the rule tag (blocky/hud.py: past the near plane, in the corner clear of faces). Returns the shot."""
+    shot = _pose(t, story, tl, setmod, ctx, chars, shots)
+    h = hud.spec(story)
+    if h:
+        hud.apply(h, shot, lambda u: _pose(u, story, tl, setmod, ctx, chars, shots), t, list(chars))
+    return shot
+
+
+def _pose(t, story, tl, setmod, ctx, chars, shots):
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
     for name, (c, seed) in chars.items():
         s = acting.state(tl, name, t, seed)
