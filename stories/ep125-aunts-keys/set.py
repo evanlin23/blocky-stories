@@ -781,6 +781,7 @@ def late(kit):
     """Once the cast exists: Lou's key ring and blanket, my box and wet toes, Mr. Ames's moustache, Mrs. Haddad's ponytail."""
     g = bpy.data.objects.get
     W["late"] = {}
+    W["before_late"] = set(o.name for o in bpy.data.objects)
     lt = g("lou.torso")
     if lt is not None:
         build_waist_ring(kit, lt)
@@ -823,7 +824,6 @@ def late(kit):
     import re as _re
     for o in bpy.data.objects:      # clear lenses: frames only, so her eyes show at phone size
         if _re.match(r"^lou\.gl-?1(\.\d+)?$", o.name):
-            o.hide_render = True
             o.scale = (0.001, 0.001, 0.001)     # the pose re-shows hidden parts, so shrink the lens away too
     if lh is not None:
         pr = P("#f8f4ee", 0.2, 0.9)
@@ -834,11 +834,16 @@ def late(kit):
     if hh is not None:
         B(hh, (0.34, 0.34, 0.6), (0, 0.62, -0.1), P("#241a16", 0.7), "haddadponytail", 0.12)
     W["inited"] = True
+    W["latenew"] = [o for o in bpy.data.objects if o.name not in W["before_late"]]
 
 
 def animate(kit, story, tl, t, ctx):
     if not W.get("inited"):
         late(kit)
+        # the cast was posed (and hidden) before these were made: follow the owner's visibility on this frame too
+        for o in W.get("latenew", []):
+            if o.parent is not None:
+                o.hide_render = o.parent.hide_render
     L = look_at(tl, t)
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
     sd = W["shots"].get(shot["id"], {})
