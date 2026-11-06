@@ -922,6 +922,8 @@ def animate(kit, story, tl, t, ctx):
         ov[f"street{k}"] = L["street"] * sd.get("street", 1.0)
     # ---- camera depth of field per shot: [focus distance m, f-stop]
     dof = sd.get("dof")
+    if cur["id"] in INSET_NO_DOF:
+        dof = None
     cd = cam.data
     if dof:
         cd.dof.use_dof = True
@@ -1085,6 +1087,9 @@ def build_inset(kit, ctx):
 # this, so the shoe, the steam, the door or the cat never covers it.
 INSET_NEAR = {"S02": 0.325, "S04": 0.582, "S05": 0.484, "S06": 0.551, "S16": 0.418, "S37": 0.767, "S39": 0.459,
               "S41": 0.196, "S52": 0.065}
+# Shots whose nearest occluder keeps the panel within ~0.17 m of the lens, where no depth of field leaves the chalk
+# readable: they draw with depth of field off, so the meter reads sharp at its usual 0.15 m.
+INSET_NO_DOF = {"S02", "S41"}
 
 
 def inset_depth(dof, sid):
