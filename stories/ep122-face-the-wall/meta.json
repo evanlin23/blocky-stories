@@ -553,9 +553,9 @@
   },
   "door_dd": 90,
   "tagd": 0.3,
-  "tagk": 0.68,
-  "tagx": -0.1,
-  "tagy": 0.2
+  "tagk": 0.6,
+  "tagx": -0.14,
+  "tagy": 0.24
  },
  "S72": {
   "look": "NDAD",
