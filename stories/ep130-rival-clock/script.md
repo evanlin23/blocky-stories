@@ -1,9 +1,9 @@
 # ep130-rival-clock: the script (writer, 2026-11-06, batch 14)
 
-- **Slug:** `ep130-rival-clock` (batch 14, upload order 2 of 7)
+- **Slug:** `ep130-rival-clock` (batch 14, upload order 1 of 6)
 - **Pitch:** 13 in the batch 14 pitch round, picked by the panel (7.3). Engine: "it already happened", a countdown that ran out unnoticed, plus a double reading of the rule's wording (it counts to someone becoming your best friend, not to meeting them). New to the channel. Opening shape `whatif` (the batch's only one, per the coordinator, so the openings don't pair with ep134's `count`). Lane: experiment (comedy). Length arm: mid (60 to 90 s).
-- **Title:** My Friend Clock Hit ZERO Years Ago ⏳
-- **Panel notes built in:** the clock is a broad cuff from wrist to elbow with big numerals, and it's read in a big insert close-up every time it matters (S01b, S11, S23, S41). The rival-to-friend turn gets one fresh, specific beat: Gus's own cuff reads ONE, so his has been counting down to me for eleven years.
+- **Title:** My Best Friend Countdown Ended 11 YEARS Ago ⏳
+- **Panel notes built in:** the clock is a broad cuff from wrist to elbow with big numerals, and it's read in a big insert close-up every time it matters (S01b, S11, S23, S40). The rival-to-friend turn gets one fresh, specific beat: Gus's own cuff reads ONE, so his has been counting down to me for eleven years.
 - **Batch 14 constraints, applied to every shot:**
   1. Flash-safe by design. The cuffs are painted numerals on cloth that change only between cuts, never blinking digits. The greenhouse is sunny and steady all film, with no light change.
   2. Two faces at most in any shot. Every emotional line goes on a single close-up facing camera, with no profile two-shots. A cuff is read in an insert on an arm laid flat (a bench, a tank rim), never raised to a face. The coffee cups sit on the table, never at a mouth.
@@ -11,8 +11,8 @@
   4. No set moves. One greenhouse, one bench, one tank, one table.
   5. The rule marker lives on the bodies: every person's cuff, in frame on my forearm in every shot of me.
 - **Everyone is an adult.** I'm 32. Gus is 51. The two strangers, Mom and her best friend Rita, and the fast-walking man (montage) are adults.
-- **Word count:** 313 spoken words in 47 lines (L01 to L47), all `narrator`, plus one music drop (0.5 s before L30).
-- **Estimated length:** about 73 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
+- **Word count:** 311 spoken words in 46 lines (L01 to L46), all `narrator`, plus one music drop (0.5 s before L30).
+- **Estimated length:** about 72 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright glass greenhouse at a plant nursery in summer: white frames, tables of green seedlings and red tomatoes, a koi tank of slate stone, sun through the glass, a little old radio on a crate.
 - **Hold:** scripts only (batch 14). Not built, not voiced.
 
@@ -41,8 +41,8 @@ The batch table is in `stories/ep129-gift-box/script.md`. This row:
 - **The loved one at stake:** Gus, my workplace rival of eleven years, named at L10 and seen from L11.
 - **First real "scare" (L20 to L26, about 30 to 41 s):** Gus's cuff, seen for the first time, reads ONE. He's getting a best friend tomorrow, and I'm jealous and can't sleep.
 - **The climax turns the rule's own logic:** the clocks never counted to meeting. They count to becoming. So I can make tomorrow be the day by becoming his: two coffees, his table, his radio station. No new magic.
-- **Twist and reveal (L30 to L35, about 45 to 55 s, said plainly):** "The clocks don't count / to when you MEET them. / They count / to when they BECOME it." and "His clock / had been counting down / to ME." The picture is S34: Gus at his greenhouse table, face to camera, `neutral`, his cuff reading 1 on the table beside him.
-- **How the last 15 seconds turn over the first line:** I point at the guy playing country when people ask whose my zero was. L01 is a question I can finally answer.
+- **Twist and reveal (L30 to L34, about 46 to 54 s, said plainly):** "The clocks count down / to the day / somebody BECOMES / your best friend." and "His clock / had been counting down / to ME." The picture is S33: Gus at his greenhouse table, face to camera, `neutral`, his cuff reading 1 on the table beside him.
+- **How the last 15 seconds turn over the first line:** I point at the guy playing country when people ask who my zero was for. L01 is a question I can finally answer.
 - **The plants a rewatch catches:**
   1. L17, L18: a cactus on my bench every birthday, no card, and I figure it's the boss.
   2. L19: nobody has ever seen Gus's cuff.
@@ -73,29 +73,29 @@ In this town a clock on your sleeve counts down to your best friend, and the nar
 - **What's true underneath (never said):** the cuffs are simply how that town is.
 
 ## Cast
-- `me` (a man, the narrator, 32): short black hair, brown skin, a green nursery apron over a gray T-shirt, the cream cuff with a black "0". Faces: `neutral`, `annoyed`, `stunned`, `jealous`, `uneasy`, `sheepish`, `smile`, `laugh`, `warm`.
-- `gus` (Gus, my coworker, 51): a thick gray beard, a bald head, a red-and-black flannel shirt buttoned at the wrists over his cuff until L21, a green apron. His cuff is mustard yellow with a black "1" (L23), then "0" (L41). Faces: `neutral`, `annoyed`, `stunned`, `smile`, `laugh`, `warm`. Named "Gus" at L10.
+- `me` (a man, the narrator, 32): short black hair, brown skin, a green nursery apron over a gray T-shirt, the cream cuff with a black "0". Faces: `neutral`, `annoyed`, `stunned`, `jealous`, `uneasy`, `sheepish`, `sad`, `determined`, `smile`, `laugh`, `warm`.
+- `gus` (Gus, my coworker, 51): a thick gray beard, a bald head, a red-and-black flannel shirt buttoned at the wrists over his cuff until L21, a green apron. His cuff is mustard yellow with a black "1" (L23), then "0" (L40). Faces: `neutral`, `annoyed`, `stunned`, `smile`, `laugh`, `warm`. Named "Gus" at L10.
 - `stranger_a`, `stranger_b` (two strangers on a bus, adults, one shot at L04): cuffs both "0".
 - `mom` and `rita` (my mom and her best friend Rita, adults, one shot at L05): both cuffs "0", sitting side by side on a yard-sale couch, faces to camera.
-- `walker` (a man in a tracksuit, adult, one shot at L06): his cuff "212".
+- `walker` (a man in a tracksuit, adult, one shot at L06): his cuff "347".
 
 ## The strange part (no creature)
 No creature. The strange thing is the cuffs' numbers.
-- **Continuity:** my cuff reads "0" in every shot. Gus's sleeve is buttoned over his cuff from S10 to S20. At S21 he rolls it up and his arm goes into the koi tank to the elbow (S21, S22), and his cuff reads "1" from S23 to S40 (on the table beside him at S34). It reads "0" from S41 on. The radio is on its crate in every greenhouse shot. From S38 it's on Gus's table between us.
+- **Continuity:** my cuff reads "0" in every shot. Gus's sleeve is buttoned over his cuff from S10 to S20. At S21 he rolls it up and his arm goes into the koi tank to the elbow (S21, S22), and his cuff reads "1" from S23 to S39 (on the table beside him at S33). It reads "0" from S40 on. The radio is on its crate in every greenhouse shot. From S37 it's on Gus's table between us.
 
 ## Palette
 - Glass white `#f4fbff`, frames white `#ffffff`, seedling green `#5cc85a`, tomato red `#e2463a`, slate `#5a6a78`, sky `#9fd8ff`, my cuff cream `#f2e7c9`, Gus's cuff mustard `#e3b32e`, Gus's flannel red `#c63a32`, apron green `#2f8a52`.
 - **Caption key colour:** cuff mustard `#ffcf3a`.
 
 ## Music
-Synthesized in `blocky/sound.py`: a bouncy plucked bass and a whistled-style lead of our own, comic. **D major, 112 BPM** under L01 to L19. It cuts to the bass alone at L20 to L28, sneaky, in **B minor**. **Drop** for 0.5 s before L30. L30 to L35: a slow held chord. L36 to L47: the full figure back in **D major**, plus a twangy synth lead of our own for "country", never a borrowed tune.
+Synthesized in `blocky/sound.py`: a bouncy plucked bass and a whistled-style lead of our own, comic. **D major, 112 BPM** under L01 to L19. It cuts to the bass alone at L20 to L28, sneaky, in **B minor**. **Drop** for 0.5 s before L30. L30 to L34: a slow held chord. L35 to L46: the full figure back in **D major**, plus a twangy synth lead of our own for "country", never a borrowed tune.
 
 ## Sound
 - L01: a soft wooden tick on "FRIEND".
 - L04: a soft bus bell chime, once, low.
 - L21: water sloshing softly.
-- L38: the radio dial's soft click, then our own twangy synth phrase, quiet, under the voice.
-- L41: a soft wooden tick.
+- L37: the radio dial's soft click, then our own twangy synth phrase, quiet, under the voice.
+- L40: a soft wooden tick.
 
 ## The shot plan
 Times are estimates. Every line gets one to three shots with acting, with a punch-in on its key word when the line runs over 0.9 s. Nothing over 2 s. My cuff is in every shot of me. Cuffs are read in inserts with the arm laid flat. Faces are at least 1/5 of the frame width, out of the caption band. Never more than two faces in a shot.
@@ -107,7 +107,7 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 | S03 | L03 | A row of three forearms laid on a bus seat back, three cuffs, three numbers (no faces). |
 | S04 | L04 | Two strangers on a bus, both faces to camera, side by side, `laugh`, their cuffs on the seat back reading "0". |
 | S05 | L05 | Mom and Rita on a yard-sale couch, faces to camera, `smile`, cuffs "0" on their knees. |
-| S06a, S06b | L06 | (a) The tracksuit man speed-walking toward camera, face to camera, `determined`. (b) Insert: his cuff, "212". |
+| S06a, S06b | L06 | (a) The tracksuit man speed-walking toward camera, face to camera, `determined`. (b) Insert: his cuff, "347". |
 | S07 | L07 | My face in the greenhouse, `neutral`. |
 | S08 | L08 | The greenhouse at dawn, sunny, wide, empty but for one figure far off by the hoses. |
 | S09 | L09 | My face, eleven years younger (the same face, no apron), `uneasy`. |
@@ -132,30 +132,29 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 | S28 | L28 | Me in bed, lamp off, moonlight steady, face to camera, `uneasy`, eyes open. |
 | (drop) | | 0.5 s: voice and room only. The greenhouse at night, still. |
 | S29 | L29 | My face, `stunned`. |
-| S30 | L30 | Insert: my cuff, "0", on the quilt. |
-| S31 | L31 | My face, `stunned`, closer. |
-| S32 | L32 | S10 again: Gus by the hoses on my first morning, `annoyed`. |
-| S33 | L33 | The cactus on my bench, close. |
-| S34 | L34 | The reveal picture, held 1.6 s with drift: Gus at his round table, face to camera, `neutral`, his forearm flat on the table with the "1" readable. Cover frame (`cover_s` 51.8). |
-| S35 | L35 | My face, `sad`, then `determined`. |
-| S36 | L36 | Two paper coffee cups on Gus's table, close, steam. |
-| S37 | L37 | Me sitting at Gus's table, face to camera, `smile`, sheepish. |
-| S38 | L38 | Close: the radio on the table between two cups, my flat hand turning its big dial. |
-| S39 | L39 | Gus's face, `stunned`. |
-| S40 | L40 | Gus's forearm going flat on the table, his sleeve rolled. |
-| S41a, S41b | L41 | (a) Insert: the mustard cuff on the table, "0". (b) Punch in. |
-| S42 | L42 | Gus's face, `smile`, gruff. |
-| S43 | L43 | Gus and me at the hoses, both faces to camera, side by side, `annoyed` (play-fight). |
-| S44 | L44 | Close: the tangled hose. |
-| S45 | L45 | Me and Gus at his round table, both faces to camera (the camera at the far door), `laugh`. |
-| S46 | L46 | My face, `smile`, pointing past camera with a flat hand at waist height. |
-| S47 | L47 | Push in on my face with my cuff on the bench (S01a's framing). Loop. |
+| S30a, S30b | L30 | (a) Insert: my cuff, "0", on the quilt. (b) My face, `stunned`, closer. |
+| S31 | L31 | S10 again: Gus by the hoses on my first morning, `annoyed`. |
+| S32 | L32 | The cactus on my bench, close. |
+| S33 | L33 | The reveal picture, held 1.6 s with drift: Gus at his round table, face to camera, `neutral`, his forearm flat on the table with the "1" readable. Cover frame (`cover_s` 51.0). |
+| S34 | L34 | My face, `sad`, then `determined`. |
+| S35 | L35 | Two paper coffee cups on Gus's table, close, steam. |
+| S36 | L36 | Me sitting at Gus's table, face to camera, `smile`, sheepish. |
+| S37 | L37 | Close: the radio on the table between two cups, my flat hand turning its big dial. |
+| S38 | L38 | Gus's face, `stunned`. |
+| S39 | L39 | Gus's forearm going flat on the table, his sleeve rolled. |
+| S40a, S40b | L40 | (a) Insert: the mustard cuff on the table, "0". (b) Punch in. |
+| S41 | L41 | Gus's face, `smile`, gruff. |
+| S42 | L42 | Gus and me at the hoses, both faces to camera, side by side, `annoyed` (play-fight). |
+| S43 | L43 | Gus and me at the hoses, both faces to camera, side by side, `annoyed` (play-fight), the tangled hose between us. |
+| S44 | L44 | Gus's single close-up at his round table, facing camera, `laugh`. |
+| S45 | L45 | My face, `smile`, pointing past camera with a flat hand at waist height. |
+| S46 | L46 | Push in on my face with my cuff on the bench (S01a's framing). Loop. |
 
 ## Face and hands beats
 1. **S01a, L01:** my face and my cuff.
 2. **S10, S11a, S13, L10 to L13:** Gus's face, whole head.
-3. **S34, L34:** the reveal (Gus's face and his "1").
-4. **S43, S45, L43, L45:** two faces side by side, both to camera.
+3. **S33, L33:** the reveal (Gus's face and his "1").
+4. **S42, S44, L42, L44:** two faces side by side, both to camera.
 Hands: cuffs are only ever read with the arm laid flat. The cups stay on the table. Nothing is raised near a face.
 
 ## Lore connection (`stories/lore.md`)
@@ -171,7 +170,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L05: My mom and Rita / hit zero / at a yard SALE, / forty years AGO.
 - L06: One guy / walks super fast / to make his go QUICKER.
 - L07: Mine hit zero / eleven years AGO.
-- L08: My first morning / at the NURSERY.
+- L08: My first morning / at the plant NURSERY.
 - L09: There was only / one other person THERE.
 - L10: GUS.
 - L11: He yelled at me / about the HOSES.
@@ -194,30 +193,29 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L28: I was so JEALOUS / I couldn't SLEEP.
 - (drop 0.5)
 - L29: Then I GOT it.
-- L30: The clocks don't count / to when you MEET them.
-- L31: They count / to when they BECOME it.
-- L32: Gus became mine / on day ONE.
-- L33: The cactus? / GUS.
-- L34: And for eleven years, / his clock / had been counting down / to ME.
-- L35: To the day / I'd finally be HIS.
-- L36: So the next morning, / I brought two COFFEES.
-- L37: I sat down / at his little TABLE.
-- L38: And I put the radio / on COUNTRY.
-- L39: He looked at me / like I'd grown / a second HEAD.
-- L40: Then he rolled up / his SLEEVE.
-- L41: ZERO.
-- L42: He said / I was LATE.
-- L43: We still fight / every DAY.
-- L44: Mostly about / the HOSES.
-- L45: But we eat lunch / TOGETHER.
-- L46: And when anyone asks / whose my zero WAS,
-- L47: I point at the guy / playing COUNTRY.
+- L30: The clocks count down / to the day / somebody BECOMES / your best friend.
+- L31: Gus became mine / on day ONE.
+- L32: The cactus? / GUS.
+- L33: And for eleven years, / his clock / had been counting down / to ME.
+- L34: To the day / I'd finally be HIS.
+- L35: So the next morning, / I brought two COFFEES.
+- L36: I sat down / at his little TABLE.
+- L37: And I put the radio / on COUNTRY.
+- L38: He looked at me / like I'd grown / a second HEAD.
+- L39: Then he rolled up / his SLEEVE.
+- L40: ZERO.
+- L41: He said / I was LATE.
+- L42: We still fight / every DAY.
+- L43: Mostly about / the HOSES.
+- L44: But we eat lunch / TOGETHER.
+- L45: And when anyone asks / who my zero was FOR,
+- L46: I point at the guy / playing COUNTRY.
 
-(Loop: L47 runs straight into L01: "I point at the guy playing country. What if your sleeve counted down to your best friend?")
+(Loop: L46 runs straight into L01: "I point at the guy playing country. What if your sleeve counted down to your best friend?")
 
 ## Notes for the builder and reviewers
-- Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: nothing flagged (L42 says "I was LATE" to keep clear of "took").
-- The cuffs never blink. Numbers change only between cuts (S23 to S41).
+- Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: nothing flagged (L41 says "I was LATE" to keep clear of "took").
+- The cuffs never blink. Numbers change only between cuts (S23 to S40).
 - The koi are soft orange color in the water and never have to read as fish.
 - Gus's "annoyed" face is gruff and funny, never menacing. No `grin`.
 - Title, description, pin and captions checked against hard rule 8.

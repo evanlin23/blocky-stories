@@ -1,8 +1,8 @@
 # ep133-tent-zip: the script (writer, 2026-11-06, batch 14)
 
-- **Slug:** `ep133-tent-zip` (batch 14, upload order 5 of 7)
+- **Slug:** `ep133-tent-zip` (batch 14, upload order 2 of 6)
 - **Pitch:** 8 in the batch 14 pitch round, picked by the panel (7.1). Engine 14: the threat is already inside. Opening shape `must` ("you can't"). Lane: core (creepy). Length arm: mid (60 to 90 s).
-- **Title:** Never UNZIP Your Tent After Dark ⛺
+- **Title:** Your Tent Can't Open After DARK ⛺
 - **The batch's one full creature reveal, and why it's worth it:** the tent roof proves the figure's height in the same frame (playbook rule 3), the electric lantern on the tent floor is a natural light from below (rule 5), and a creepy core story needs its payoff face. The figure is a still person made wrong (Dev's face on a body too tall for the tent), never an effect, and never seen moving. Its creature test still must pass before anything else is built (builder step 1, audit decision 4).
 - **Panel notes built in:** the figure is still and is never a morph. It's tall from its first frame, sitting with its head bent under the roof, and that gets noticed at L28. The lantern is steady all film. The night is bright and readable: a full moon behind the tent fabric gives a cool blue fill and rim, the lantern lights faces warm from below, and every face is readable.
 - **Batch 14 constraints, applied to every shot:**
@@ -27,7 +27,7 @@ The batch table is in `stories/ep129-gift-box/script.md`. This row:
 ## The big idea
 **Once your tent is zipped at dark, you can't unzip it, because whatever's outside sounds like whoever you love. But the Dev begging to be let in was my cousin. The thing that zipped itself in with me at dusk, wearing his face, was the one the rule should have kept out.**
 
-- **Why it clicks:** Dev narrates everything, but the Dev in the tent never says a word (L07, L10), he shakes his head slowly in a way Dev never does (L16, L17), the voice outside knows how the joke ends (L18 to L20), and the Dev inside never lies down, his sleeping bag rolled and dry (L22 to L24). After L31, every one of those is the thing.
+- **Why it clicks:** Dev narrates everything, but the Dev in the tent never says a word (L07, L10), he shakes his head slowly, like his neck was too long (L16, L17), the voice outside knows how the joke ends (L18 to L20), and the Dev inside never lies down, his sleeping bag rolled and dry (L22 to L24). After L31, every one of those is the thing.
 - Ten pitched, this one kept. Dropped: the voice outside is the thing (the obvious reading, no twist), Dev is a ghost (death word, banned tone), I'm the thing (overused), the tent is a loop (ep84), the lake comes in (water flicker), a bear (an animal shape), a copy in a mirror (mirror-maze), the campground is empty (forgetting, crowded), Dev sleepwalks (ep125), the rule was made up (ep103's cover story).
 - Checked against "Claimed big ideas": not ep62 (a copy in elevator glass swapping places with my brother: here nobody swaps and the copy is a still, too-tall figure inside a safe place), not ep98 (the safety ritual called people down to it: here the ritual is right and the threat simply got in first), not ep92 (a kinder version of a brother). Shape `inside-already`.
 - **The rule is the clue:** "you can't unzip it, for anyone" sounds like it keeps you safe. After L31, it kept the right Dev out and the wrong one in.
@@ -46,7 +46,7 @@ The batch table is in `stories/ep129-gift-box/script.md`. This row:
 - **How the last 15 seconds turn over the first line:** before he zips us in now, I make Dev tell me the joke all the way to the end. L01's rule now means checking who's in, not who's out.
 - **The plants a rewatch catches:**
   1. L07: Dev narrates everything (and the Dev inside never speaks).
-  2. L16, L17: he shakes his head slowly, the way Dev never does anything.
+  2. L16, L17: he shakes his head slowly, like his neck was too long.
   3. L22 to L24: he never lies down, and his sleeping bag is still rolled and dry.
 - **Ending shape:** `inside-already`.
 - **Warmth:** a cousin who spent two nights outside trying to reach me, and won't let me go now.
@@ -67,7 +67,7 @@ At this campground, once your tent is zipped at dark you can't open it, because 
 6. The title is the hook, never the reason.
 
 ## World
-- **The campground:** a sunny lake with pines, five dome tents in a loose row on a grassy shore, each with a red stripe across its door flap, a wooden washhouse up a path, a little dock.
+- **The campground:** a sunny lake with pines, five dome tents in a loose row on a grassy shore, each with a red stripe across its door flap, a wooden bathhouse up a path, a little dock.
 - **Our tent:** a tangerine-orange dome for two, its roof at the height of a seated man's head plus a hand. Two sleeping bags (mine open and rumpled, the other rolled and tied). A cream electric lantern on the floor between the bags, steady. A mesh window at the back.
 - **The night:** a full moon behind thin cloud until L25, then clear. The fabric glows a soft blue-orange from the moon. Never murky.
 - **The rule's own law:** zipped at dark, it stays zipped until first light. Whatever's outside after dark sounds like whoever you love.
@@ -115,7 +115,7 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 | S05 | L05 | Two tent doors at dusk, their red stripes lined up and shut. |
 | S06 | L06 | Golden hour: Dev on the dock, face to camera, `laugh`, the lake behind. |
 | S07 | L07 | Dev's face, `laugh`, mid-story. |
-| S08 | L08 | Dev jogging up the path to the washhouse, back to camera, waving over his shoulder. |
+| S08 | L08 | Dev jogging up the path to the bathhouse, back to camera, waving over his shoulder. |
 | S09 | L09 | Dusk: me at our tent, face to camera, `neutral`. The door flap zipped from inside, its stripe lined up. |
 | S10 | L10 | Inside: my face, `uneasy`, the figure beside me cropped by the frame's top edge (shoulders, vest, the beanie's edge). |
 | S11 | L11 | My face, closer, `uneasy`. |
@@ -124,7 +124,7 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 | S14 | L14 | My face, `scared`. |
 | S15 | L15 | My face, closer, `scared`, looking at the door. |
 | S16 | L16 | The figure's half-face beside me in the dark side of frame, turned toward camera, then cut to it turned a little the other way (the shake, two angles). |
-| S17 | L17 | My face, `uneasy`. |
+| S17 | L17 | The figure's shoulder and the side of its neck in the dark upper corner, the neck running on out of frame, still. |
 | S18 | L18 | Night two: my face, `uneasy`, listening. |
 | S19 | L19 | My face, a small `smile` despite myself. |
 | S20 | L20 | My face, `stunned`. |
@@ -179,7 +179,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L05: Nobody opens UP.
 - L06: My cousin Dev and I / camp at the lake / every AUGUST.
 - L07: He's the loudest guy / I KNOW. / He narrates / EVERYTHING.
-- L08: At dusk, / he jogged up / to the WASHHOUSE.
+- L08: At dusk, / he jogged up / to the BATHHOUSE.
 - L09: When I got back / from the dock, / the tent was ZIPPED.
 - L10: Dev was inside. / He didn't say / a WORD.
 - L11: That should have / TOLD me.
@@ -188,7 +188,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L14: And out there, / Dev's voice / said my NAME.
 - L15: He begged me / to let him IN.
 - L16: Beside me, / Dev just / shook his HEAD.
-- L17: Slow. / The way Dev / never does ANYTHING.
+- L17: Slow. / Like his neck / was too LONG.
 - L18: The second night, / the voice outside / told me a JOKE.
 - L19: The one about / the moose / and the CANOE.
 - L20: Only Dev / knows how it ENDS.
@@ -227,6 +227,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 ## Notes for the builder and reviewers
 - **Creature test still first** (audit decision 4, playbook section 2): S29 at phone size, 390 px wide, face covered, then uncovered. It must read as a person too tall for the tent, never a sock puppet or a stretched toy. If it fails three times, the story is dropped before the build.
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: nothing flagged. L40 says "hauled", never "pulled" or "dragged".
+- S29 (standards r1 note): keep Dev's eyes, nose line and beanie lit by the lantern, so the face reads as a face and not as two glints. If the test still reads the neck as a giraffe, tilt the head further and crop the neck rather than stretching it more.
 - The thing never moves on screen. Every change in its pose is a cut. It's tall from its first frame (S10), cropped by the frame's top edge until L28.
 - The lantern never flickers or swings. Exactly two light fades (L25, L38).
-- Title, description, pin and captions checked against hard rule 8. The title is the batch's only "Never".
+- Title, description, pin and captions checked against hard rule 8. No batch 14 title uses "Never" (standards r1).

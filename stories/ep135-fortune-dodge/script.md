@@ -1,6 +1,6 @@
 # ep135-fortune-dodge: the script (writer, 2026-11-06, batch 14)
 
-- **Slug:** `ep135-fortune-dodge` (batch 14, upload order 7 of 7)
+- **Slug:** `ep135-fortune-dodge` (batch 14, upload order 5 of 6)
 - **Pitch:** 11 in the batch 14 pitch round, picked by the coordinator (6.7) over ten-cuppers for the opening and warmth spread. It's the premise bank's E08 (`docs/research/premise-engines.md` section 3), with a new cast, setting and turn. Engine 9: the self-fulfilling prophecy (the dodge is what brings it true). Opening shape `confess`. Lane: core. Length arm: long.
 - **Title:** The Fortune Machine Said SATURDAY 🎡
 - **Panel notes built in:**
@@ -13,7 +13,7 @@
   4. No set moves. The midway is a still set, and the big wheel in the background is stopped.
   5. The rule marker lives in the scene: the fortune machine's tall cabinet (a painted star and a hand-shaped card slot, no text) on the midway, and the face-down card on the cart's counter, in frame in every cart shot from L14.
 - **Everyone is an adult.** I'm 24. Uncle Ray, Mom's brother, is 66. Mom is 55 (one shot). The dunk-tank man and the woman with the pie (montage) are adults.
-- **Word count:** 439 spoken words in 65 lines (L01 to L65), all `narrator`, plus one music drop (0.6 s before L32).
+- **Word count:** 442 spoken words in 65 lines (L01 to L65), all `narrator`, plus one music drop (0.6 s before L32).
 - **Estimated length:** about 102 s at 290 wpm with 0.15 s gaps, the drop and the loop tail (the long arm).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright county fair midway in late summer: candy-striped tents, sawdust, a stopped big wheel against a blue sky, Ray's red-and-white hot dog cart with a striped umbrella, the fortune machine's tall teal cabinet. Sunday dawn in pink and gold.
 - **Hold:** scripts only (batch 14). Not built, not voiced.
@@ -23,18 +23,18 @@ The batch table is in `stories/ep129-gift-box/script.md`. This row:
 
 | Setting | Strange thing | First-line type | Ending shape | Kind of warmth |
 |---|---|---|---|---|
-| a county fair midway and a hot dog cart | a fortune machine that's never wrong | `confess`: I/my | `the-dodge` | an uncle handing something on |
+| a county fair midway and a hot dog cart | a fortune machine that's never wrong | `confess`: I/my | `fixer-comes` | an uncle handing something on |
 
 ## The big idea
-**The fair's fortune machine is never wrong, and mine said I'd break Uncle Ray's heart on Saturday. So I hid from him all week, and the hiding is what broke it: Saturday was the day he'd planned to hand me his cart. Then Ray's own rule, nothing broken stays broken past breakfast, tells me how to fix Sunday.**
+**The fair's fortune machine is never wrong, and mine said I'd break Uncle Ray's heart on Saturday. So I hid from him all week, and the hiding is what broke it: Saturday was the day he'd planned to hand me his cart. Then Ray's own rule, nothing broken stays broken past breakfast, brings him to my door on Sunday at dawn.**
 
 - **Why it clicks:** Ray keeps asking if I'm free Saturday (L18, L19), he gets Mom to ask (L21), and I'm hiding behind the lemonade stand (L22). After L31, every ask was the handover, and every dodge was the break.
 - Ten pitched, this one kept. Dropped: the card lies (no rule), Ray reads the card (confusing), the machine is Ray's (a cover story), I break the cart (a prop beat), the card is for Ray (a swap), the fine-print "unless" (the panel's cheat), Ray's retirement is sad (the sad slot is ep129's), I win the cart in a contest (no feeling), the machine is a person (a creature), Mom wrote the card (no magic).
-- Checked against "Claimed big ideas": not ep109 (a radio naming whom to avoid: here no one is shunned, I dodge on my own), not ep121 (a blank fortune you write), not ep96 (a card read two ways). Shape `the-dodge`.
+- Checked against "Claimed big ideas": not ep109 (a radio naming whom to avoid: here no one is shunned, I dodge on my own), not ep121 (a blank fortune you write), not ep96 (a card read two ways). Shape `fixer-comes`.
 - **The rule is the clue:** "never wrong" makes the card feel like fate to run from. After L40, running was the fate, and fixing it is a choice.
 
 ## The story
-- **Rule / hook (L01, 13 words, about 2.6 s):** "My fair fortune says / I'll break Uncle Ray's HEART / on SATURDAY." L02: "And the machine / at our fair / is never WRONG."
+- **Rule / hook (L01, 13 words, about 2.6 s):** "My fortune CARD says / I'll break Uncle Ray's HEART / on SATURDAY." L02: "And the machine / at our fair / is never WRONG."
 - **The relatable want or fight:** dreading letting down someone who's counting on you, and avoiding them instead.
 - **The marker (the rule meter), in frame by 0 s and in every midway shot:** the fortune machine's tall teal cabinet with its painted star. From L14, the card itself, face down on the cart's counter.
 - **The 3 to 5 example montage (L03 to L06, about 4 to 14 s):** a man told "you'll get wet" in the dunk tank (L03), a woman told "you'll find it" finding her car keys in her pie (L04), and nobody arguing with the machine (L06).
@@ -42,22 +42,22 @@ The batch table is in `stories/ep129-gift-box/script.md`. This row:
 - **How the narrator is the exception:** everyone else's card is a joke. Mine is about someone I love.
 - **The loved one at stake:** Uncle Ray, Mom's brother, named at L07 and seen at his cart in S07.
 - **First real "scare" (L29 to L35, about 47 to 61 s):** Mom tells me Saturday was Ray's last day at the cart, that he was handing it to me, and that he waited all day with a second apron and went home without a word.
-- **The climax turns on character, planted early:** Ray's rule, "nothing broken stays broken past breakfast" (L09 to L11), shown every morning at the wheel. So I'm at the cart before breakfast on Sunday. No new magic and no fine print.
+- **The climax turns on character, planted early:** Ray's rule, "nothing broken stays broken past breakfast" (L09 to L11), shown every morning at the wheel. Ray holds himself to it too: he knocks on our door before breakfast on Sunday with two egg sandwiches and the second apron, because a broken heart counts. No new magic and no fine print.
 - **Twist and reveal (L30 to L40, about 48 to 67 s, said plainly):** "Saturday / was Ray's last day / at the CART." and "I broke his heart / SATURDAY. / By hiding / so I WOULDN'T." The picture is S40: Ray's folded second apron on the shut cart's counter beside the face-down card, sun going down.
-- **How the last 15 seconds turn over the first line:** my new card says I'll break his heart again on his birthday, and this time I'm showing up early. L01 is now something I'm walking toward.
+- **How the last 15 seconds turn over the first line:** my new card says I'll break his heart again next Saturday, so I'm throwing him a surprise party and I'll be there before breakfast. L01 is now something I'm walking toward.
 - **The plants a rewatch catches:**
   1. L09 to L11: Ray's rule, and the wheel he fixes every morning.
   2. L18, L19: Ray asks if I'm free Saturday.
   3. L21: he asks Mom to ask me.
-- **Ending shape:** `the-dodge`.
-- **Warmth:** an uncle handing his life's work to me, and me showing up for it.
+- **Ending shape:** `fixer-comes` (changed after standards r1 so the batch has at most two "he waited, I showed up" endings: here I hide and Ray comes to me, by his own rule).
+- **Warmth:** an uncle who fixes the break himself, and hands me his life's work.
 - **Sad family reveal?** No. The sad beat (L32 to L35) is fixed by L55.
 
 ## Quotable line
 **L54: "He said / it was a terrible SANDWICH."**
 
 ## Clarity test (cold, two sentences)
-The fair's fortune machine is never wrong, and the narrator's card says he'll break his Uncle Ray's heart on Saturday, so he avoids Ray all week, and that's exactly what breaks it, because Saturday was the day Ray meant to hand him his hot dog cart. Remembering Ray's rule that nothing broken stays broken past breakfast, he shows up before breakfast on Sunday, puts on the apron, and the cart becomes his.
+The fair's fortune machine is never wrong, and the narrator's card says he'll break his Uncle Ray's heart on Saturday, so he avoids Ray all week, and that's exactly what breaks it, because Saturday was the day Ray meant to hand him his hot dog cart. Ray lives by the rule that nothing broken stays broken past breakfast, so at dawn on Sunday he knocks on the narrator's door with two sandwiches and the second apron, and the cart becomes the narrator's.
 
 ## The opening recipe (playbook v1), point by point
 1. Line 1 is a confession (`confess`), 13 words, about 2.6 s.
@@ -132,7 +132,7 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 | S26 | L26 | My face, `smile`, smug. |
 | S27 | L27 | My face, `neutral`, on the couch, Saturday sun moving across the wall (a cut, not a fade). |
 | S28 | L28 | The window, late sun. |
-| S29 | L29 | Sunday morning: Mom at the kitchen table, face to camera, `sad`. |
+| S29 | L29 | Saturday night, steady lamp light: Mom at the kitchen table, face to camera, `sad`. |
 | S30 | L30 | Mom's face, `sad`, saying it. |
 | S31 | L31 | My face, `stunned`. |
 | (drop) | | 0.6 s: voice and room only. The shut cart on the empty midway. |
@@ -151,19 +151,19 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 | S44 | L44 | Close: the card face down, the star up. |
 | S45 | L45 | My face, `determined`. |
 | S46 | L46 | Dawn (the 1.5 s fade up): our kitchen, a clock with no numerals, my face, `determined`. |
-| S47 | L47 | Close: two sandwiches on a plate on the counter. |
-| S48 | L48 | The empty midway at dawn, the cart small, me walking toward it, face to camera. |
-| S49 | L49 | Ray kneeling at the wheel at dawn, face to camera, `neutral`. |
-| S50 | L50 | Ray's face, `neutral`, not looking up. |
-| S51 | L51 | Me lifting the second apron off the counter and tying it on at my waist, face to camera, `uneasy`. |
-| S52 | L52 | A sandwich on the counter, set in front of Ray. |
-| S53 | L53 | Ray's face, `neutral`, looking at it. |
+| S47 | L47 | Our front door from the hall at dawn, still (the knock heard, nothing moves). |
+| S48 | L48 | Ray on our porch at dawn, face to camera, `neutral`, a plate of two sandwiches on the porch rail beside him. |
+| S49 | L49 | Ray's face, `warm`, saying it. |
+| S50 | L50 | Close: the folded second apron on the porch rail at waist height. |
+| S51 | L51 | Me tying the apron on at my waist, face to camera, `uneasy`. |
+| S52 | L52 | Me and Ray on the porch steps, both faces to camera, side by side, the plate on the step between us. |
+| S53 | L53 | My face, `sad`, saying it. |
 | S54 | L54 | Ray's face, `smile`, gruff. |
 | S55 | L55 | Ray's face, `laugh`. |
-| S56 | L56 | Close: Ray's hand sliding the spatula across the counter to me, at counter height. |
+| S56 | L56 | At the cart: close, Ray's hand sliding the spatula across the counter to me, at counter height. |
 | S57 | L57 | Me and Ray behind the grill, both faces to camera, side by side, `laugh`, smoke soft (no flame). |
 | S58 | L58 | My face, `warm`, in the apron. |
-| S59 | L59 | The cart at noon, me behind the counter, face to camera, `smile`, a line of customers soft and small. |
+| S59 | L59 | The cart at noon, me behind the counter, face to camera, `smile`, the line of customers cropped to shoulders and arms at the counter with their backs to camera (my face the only face). |
 | S60 | L60 | My face, `smile`. |
 | S61 | L61 | Ray kneeling at the wheel, face to camera, `smile`. |
 | S62 | L62 | Me at the machine, a new card coming out of the hand slot at waist height, face to camera, `uneasy`. |
@@ -184,7 +184,7 @@ The "booth is older than the hotel" thread, its seventh use: the fortune machine
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: My fair fortune says / I'll break Uncle Ray's HEART / on SATURDAY.
+- L01: My fortune CARD says / I'll break Uncle Ray's HEART / on SATURDAY.
 - L02: And the machine / at our fair / is never WRONG.
 - L03: One guy got / "you'll get WET." / Ten minutes later, / the dunk TANK.
 - L04: A lady got / "you'll FIND it." / Her car keys / were in her PIE.
@@ -212,7 +212,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L26: I thought / I was so SMART.
 - L27: Saturday, / I stayed HOME.
 - L28: All DAY.
-- L29: Sunday morning, / Mom sat me DOWN.
+- L29: Saturday NIGHT, / Mom sat me DOWN.
 - L30: Saturday / was Ray's last day / at the CART.
 - L31: Forty years, / and he was handing it / to ME.
 - (drop 0.6)
@@ -225,37 +225,37 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L38: The machine / was RIGHT.
 - L39: I broke his heart / SATURDAY.
 - L40: By hiding / so I WOULDN'T.
-- L41: I sat there / a long TIME.
-- L42: Then I remembered / Ray's RULE.
+- L41: I sat up / all NIGHT.
+- L42: I kept thinking / about Ray's RULE.
 - L43: Nothing broken / stays broken / past BREAKFAST.
 - L44: The card said / SATURDAY.
 - L45: And it was still / Sunday MORNING.
 - L46: Barely. / It was FIVE a.m.
-- L47: I made / two egg SANDWICHES.
-- L48: I drove / to the FAIRGROUND.
-- L49: Ray was there, / like always, / fixing the WHEEL.
-- L50: He didn't / look UP.
-- L51: I put on / the second APRON.
-- L52: I set a sandwich / in front of HIM.
-- L53: He looked at it / a long TIME.
-- L54: He said / it was a terrible SANDWICH.
+- L47: Then somebody / KNOCKED.
+- L48: RAY. / On our porch, / with two egg SANDWICHES.
+- L49: He said / it's his RULE. / It counts for HEARTS too.
+- L50: He set the second apron / on the porch RAIL.
+- L51: I put it ON.
+- L52: We sat / on the STEPS.
+- L53: I said / I was SORRY.
+- L54: He said / he makes a terrible SANDWICH.
 - L55: And then / he LAUGHED.
-- L56: He slid me / the SPATULA.
+- L56: At the cart, / he slid me / the SPATULA.
 - L57: He let me burn / the first BATCH.
 - L58: The cart's MINE now.
 - L59: I'm there / every MORNING.
 - L60: So is RAY.
 - L61: He still fixes / the WHEEL.
 - L62: Last week / I got / a new CARD.
-- L63: It says / I'll break his heart / again, / on his BIRTHDAY.
+- L63: It says / I'll break his heart / again, / next SATURDAY.
 - L64: So I'm throwing him / a surprise PARTY.
 - L65: I'll be there / before BREAKFAST.
 
-(Loop: L65 runs straight into L01: "I'll be there before breakfast. My fair fortune says I'll break Uncle Ray's heart on Saturday.")
+(Loop: L65 runs straight into L01: "I'll be there before breakfast. My fortune card says I'll break Uncle Ray's heart on Saturday.")
 
 ## Notes for the builder and reviewers
 - The card is never read on screen (panel note). Its words are in L01, L14 and L63, and the captions carry them. On screen it lies face down with its painted star up.
-- There's no fine-print clause anywhere (panel note). The turn is Ray's rule, planted at L09 to L11 and paid at L42 to L45.
+- There's no fine-print clause anywhere (panel note). The turn is Ray's rule, planted at L09 to L11 and paid at L42 to L49, when Ray brings it to my door.
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: nothing flagged. "Since I was FIFTEEN" is backstory only.
 - No ride turns in frame, and the string lights are steady. The only fade is dawn at L46.
 - Ray's `sad` beats (S34) are quiet. Every warm face is `smile`, `laugh` or `warm`, never `grin`.

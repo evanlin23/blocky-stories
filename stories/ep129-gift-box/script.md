@@ -1,7 +1,7 @@
 # ep129-gift-box: the script (writer, 2026-11-06, batch 14)
 
-- **Slug:** `ep129-gift-box` (batch 14, upload order 1 of 7)
-- **Pitch:** 12 in the batch 14 pitch round (scratch file, not in the repo), picked by the panel (8.2 average across three blind critics, the top score). Engine: Pandora's box, where hope is what stays inside (myth, new to the channel). Opening shape `ban`. Lane: core. Length arm: long.
+- **Slug:** `ep129-gift-box` (batch 14, upload order 3 of 6)
+- **Pitch:** 12 in the batch 14 pitch round (scratch file, not in the repo), picked by the panel (8.2 average across three blind critics, the top score). Engine: Pandora's box, where hope is what stays inside (myth, new to the channel). Opening shape `ban`. Lane: core. Waltgth arm: long.
 - **Title:** Dad Won't Open My PRESENT 🎁
 - **The batch's one sad family reveal, kept soft (panel note):** a dad and his grown boy who stopped talking properly for twelve years after a dumb fight. No death, illness or loss word anywhere. It ends warm: cake at the counter and a new box on the mantel.
 - **Batch 14 constraints, applied to every shot:**
@@ -10,24 +10,23 @@
   3. The box is a big wrapped cube with a broad ribbon cross, the size of a microwave, so it reads at any size. The scare is my face and the sound, never a small prop.
   4. No set moves. Dad's front room, his porch steps and his kitchen counter are all still sets.
   5. The rule marker lives in the scene: the wrapped box on the mantel, framed in every front-room shot, never in the lens corner.
-- **Everyone is an adult.** I'm 30. Dad (Len) is 60. Mrs. Ortiz, my best friend Sam and the post office man (montage) are adults.
-- **Word count:** 479 spoken words in 67 lines (L01 to L67), all `narrator`, plus one music drop (0.6 s before L39).
-- **Estimated length:** about 110 s at 290 wpm with 0.15 s gaps, the drop and the loop tail (the long arm).
+- **Everyone is an adult.** I'm 30. Dad (Gene) is 60. Mrs. Albee, my best friend Sam and the post office man (montage) are adults.
+- **Word count:** 482 spoken words in 67 lines (L01 to L67), all `narrator`, plus one music drop (0.6 s before L39).
+- **Estimated length:** about 111 s at 290 wpm with 0.15 s gaps, the drop and the loop tail (the long arm).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Dad's bright front room in butter yellow and sky blue on summer afternoons: a white mantel, a big window onto the porch, sun on the floorboards. The box is wrapped in faded red paper with a wide cream ribbon cross and a bow.
 - **Hold:** scripts only (batch 14). Not built, not voiced.
 
 ## Variety table (batch 14)
-| Story | Setting | Strange thing | First-line type | Ending shape | Kind of warmth |
-|---|---|---|---|---|---|
-| ep129-gift-box | Dad's front room and mantel | a wrapped empty box with footsteps inside | `ban` | `empty-box` | a dad and his grown boy (the batch's one soft sad reveal) |
-| ep130-rival-clock | a plant nursery greenhouse | a sleeve clock at zero, and a rival's at one | `whatif` | `counting-to-me` | a workplace rival who was the friend |
-| ep131-take-a-number | a waiting hall of tall chairs facing one door | six years behind the same chair | `if` | `walk-back-in` | an old best friend |
-| ep132-bus-stop | a sunny corner bus shelter | a bus that hasn't come in 41 days | `cost` | `shy-driver` | strangers (comedy) |
-| ep133-tent-zip | a lakeside campground tent on a moonlit night | a cousin too tall for the tent | `must` | `inside-already` | a cousin who wouldn't leave |
-| ep134-five-rooms | Mom's upstairs hall of numbered doors | five shut rooms nobody claims | `count` | `extra-ones-are-me` | a mom who kept every version of me |
-| ep135-fortune-dodge | a county fair midway and a hot dog cart | a fortune machine that's never wrong | `confess` | `the-dodge` | an uncle handing something on |
+| Upload | Story | Setting | Strange thing | First-line type | Ending shape | Kind of warmth |
+|---|---|---|---|---|---|---|
+| 1 | ep130-rival-clock | a plant nursery greenhouse | a sleeve clock at zero, and a rival's at one | `whatif` | `counting-to-me` | a workplace rival who was the friend |
+| 2 | ep133-tent-zip | a lakeside campground tent on a moonlit night | a cousin too tall for the tent | `must` | `inside-already` | a cousin who wouldn't leave |
+| 3 | ep129-gift-box | Dad's front room and mantel | a wrapped empty box with footsteps inside | `ban` | `empty-box` | a dad and his grown boy (the batch's one soft sad reveal) |
+| 4 | ep132-bus-stop | a sunny corner bus shelter | a bus that hasn't come in 41 days | `cost` | `go-first` | strangers, and me going first for the next one (comedy) |
+| 5 | ep135-fortune-dodge | a county fair midway and a hot dog cart | a fortune machine that's never wrong | `confess` | `fixer-comes` | an uncle who fixes the break himself |
+| 6 | ep134-five-rooms | Mom's upstairs hall of numbered doors | five shut rooms nobody claims | `count` | `extra-ones-are-me` | a mom who likes every version of me |
 
-Every setting, strange thing, first-line type, ending shape and kind of warmth differs. Lengths: three long (ep129, ep131, ep135), three mid (ep130, ep133, ep134) and one ultra (ep132). Lanes: four core (ep129, ep131, ep133, ep135) and three experiment (ep130, ep132, ep134). The only full creature reveal is ep133.
+Six stories after standards r1 cut ep131-take-a-number, and the number ep131 stays unused. Every setting, strange thing, first-line type, ending shape and kind of warmth differs. Only ep129 and ep130 end on "he waited for me, and I came" (ep132 and ep135 were changed in r1). Upload order is standards' suggestion. Lengths: two long (ep129, ep135), three mid (ep130, ep133, ep134) and one ultra (ep132). Lanes: three core (ep129, ep133, ep135) and three experiment (ep130, ep132, ep134). The only full creature reveal is ep133.
 
 ## The big idea
 **Wrapped, a present here is whatever you hope it is. The present I gave Dad when I stormed out at eighteen was an empty box, and for twelve years it held the one thing he hoped for: me coming home. So when he finally opens it, it's empty, because what he hoped for is standing in his doorway.**
@@ -41,13 +40,13 @@ Every setting, strange thing, first-line type, ending shape and kind of warmth d
 - **Rule / hook (L01, 11 words, about 2.4 s):** "Never open a PRESENT here. / Wrapped, it's whatever / you HOPE it is." L02 adds the price: "Open it, / and it's only what's INSIDE."
 - **The relatable want or fight:** a fight with your dad that neither of you ever fixed, and wanting to come home without saying sorry first.
 - **The marker (the rule meter), in frame by 0 s and in every front-room shot:** the box on the white mantel, centered under a round mirror-free clock face with no numerals. In the montage, each person's own wrapped box is in frame.
-- **The 3 to 5 example montage (L03 to L10, about 4 to 17 s):** Mrs. Ortiz next door shakes a shoebox and hears accordions (L03, L04). My best friend Sam's box from his sister barks (L05 to L07). The post office man's crate he calls his boat (L08, L09). Nobody opens anything (L10).
+- **The 3 to 5 example montage (L03 to L10, about 4 to 18 s):** Mrs. Albee next door shakes a shoebox and hears a tuba (L03, L04). My best friend Sam's box from his sister barks (L05 to L07). The post office man's crate he calls his boat (L08, L09). Nobody opens anything (L10).
 - **A concrete mystery by 15 s:** a present on Dad's mantel for twelve years that nobody has opened (L11, L12, about 23 s). The hook mystery is the line 1 rule itself, over the box.
 - **How the narrator is the exception:** everybody's box holds something wonderful. I know mine holds nothing, because I wrapped it (L16, L17).
-- **The loved one at stake:** my dad, Len, named "my dad" at L11 and seen dusting the box at L24.
-- **First real scare (L26 to L32, about 42 to 52 s):** I lift the box alone. It's as heavy as a grown man, and something inside walks to one end and back, like someone coming up the front steps.
+- **The loved one at stake:** my dad, Gene, named "my dad" at L11 and seen checking the bow at L24.
+- **First real scare (L26 to L32, about 43 to 53 s):** I lift the box alone. It's as heavy as a grown man, and something inside walks to one end and back, like someone coming up the front steps.
 - **The climax turns the rule's own logic:** wrapped, it's whatever you hope. Opened, it's only what's inside. The hope left the box before it was opened, because it came true at the door. No new magic.
-- **Twist and reveal (L50 to L56, about 80 to 91 s, said plainly):** "EMPTY." and "The box was empty / because what he'd hoped for / was standing / in his DOORWAY." The picture is S56: Dad at the counter with the open empty box at waist height, looking past camera to me in the doorway.
+- **Twist and reveal (L50 to L56, about 81 to 92 s, said plainly):** "EMPTY." and "The box was empty / because what he'd hoped for / was standing / in his DOORWAY." The picture is S56: Dad at the counter with the open empty box at waist height, looking past camera to me in the doorway.
 - **How the last 15 seconds turn over the first line:** I wrap him a new box and tell him never to open it. L01's warning is now something I say to him, about a box with something in it this time.
 - **The plants a rewatch catches:**
   1. L25: he keeps the bow turned to face the front door.
@@ -76,14 +75,14 @@ In this town a wrapped present is whatever you hope it is until it's opened. The
 - **The porch and steps:** five white wooden steps, a blue porch rail, a sunny lawn.
 - **The kitchen counter:** mint cabinets, a plain white frosted cake with no numerals and no candles, two stools.
 - **The moving truck:** a plain white box truck at the curb with no lettering, seen through the window.
-- **Montage spaces (one shot each):** Mrs. Ortiz on her green porch, Sam at his kitchen table, the post office man behind a counter beside a big crate.
+- **Montage spaces (one shot each):** Mrs. Albee on her green porch, Sam at his kitchen table, the post office man behind a counter beside a big crate.
 - **No text anywhere.** The wrapping paper is plain, the truck carries no lettering, and nothing in the town has a name on it.
 - **What's true underneath (never said):** wrapped presents in this town have always worked this way. Nobody says why.
 
 ## Cast
 - `me` (a man, the narrator, 30): short brown curly hair, warm tan skin, a green hoodie over a white T-shirt, jeans. At eighteen (one shot, L13 to L17) the same face younger, with a backpack strap on one shoulder. Faces: `neutral`, `uneasy`, `scared`, `stunned`, `sad`, `smile`, `laugh`, `warm`.
-- `dad` (my dad, Len, 60): gray hair combed back, gray stubble, the same skin, a light blue short-sleeved button shirt, khakis. Faces: `neutral`, `sad`, `smile`, `laugh`, `warm`. Named "my dad" at L11 and "Dad" from L18.
-- `ortiz` (Mrs. Ortiz, our neighbor, adult, montage): silver bun, a red cardigan. She holds her shoebox at waist height.
+- `dad` (my dad, Gene, 60): gray hair combed back, gray stubble, the same skin, a light blue short-sleeved button shirt, khakis. Faces: `neutral`, `sad`, `smile`, `laugh`, `warm`. Named "my dad" at L11 and "Dad" from L18.
+- `albee` (Mrs. Albee, our neighbor, adult, montage): silver bun, a red cardigan. She holds her shoebox at waist height.
 - `sam` (my best friend, adult, montage): a backward cap, a yellow T-shirt, his box on the table in front of him.
 - `postman` (the post office man, adult, montage): a navy vest, a big wooden crate on the floor beside him.
 
@@ -100,7 +99,7 @@ Synthesized in `blocky/sound.py`: a soft plucked figure over a warm pad of our o
 
 ## Sound
 - L01: one soft low thump from inside the box on "HOPE".
-- L04: a faint, soft accordion-like synth phrase from Mrs. Ortiz's shoebox (our own, low).
+- L04: a faint, soft tuba-like synth phrase from Mrs. Albee's shoebox (our own, low).
 - L07: one soft muffled woof-like synth note from Sam's box.
 - L29 to L31: slow soft footsteps from inside the box, low and muffled, from the `assets/audio/` steps, under 4 kHz.
 - L48: soft paper tearing, slow.
@@ -114,7 +113,7 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 |---|---|---|
 | S01a, S01b | L01 | (a) Close: the wrapped box on the mantel, my face beside it at the right, sunlit, `neutral`. (b) Punch in on "HOPE", the box filling the left half. |
 | S02 | L02 | My face, `neutral`, a small shrug. The box is soft at the edge. |
-| S03 | L03 | Mrs. Ortiz on her green porch, face to camera, `smile`, the shoebox at her waist. |
+| S03 | L03 | Mrs. Albee on her green porch, face to camera, `smile`, the shoebox at her waist. |
 | S04 | L04 | Her face, `laugh`, the box shaking gently at waist height. |
 | S05 | L05 | Sam at his kitchen table, face to camera, `smile`, his box on the table. |
 | S06 | L06 | Sam's face, `proud`. |
@@ -123,29 +122,29 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 | S09 | L09 | Close: the crate's corner, a little damp patch on the wood, with his face soft above. |
 | S10 | L10 | My face, `smile`, on the porch steps. |
 | S11 | L11 | The front room, medium: the mantel, the box, Dad's blue armchair. |
-| S12 | L12 | Close: the box, a little dust on the bow. |
+| S12 | L12 | Close: the box, its red paper a little faded. |
 | S13 | L13 | Me at eighteen, face to camera, the backpack strap, by the front door, `uneasy`. |
 | S14 | L14 | My eighteen-year-old face, `angry`. |
 | S15 | L15 | Dad at 48, face to camera, `neutral`, arms folded at his chest, nothing in his hands. |
 | S16 | L16 | Close: an empty open box on the kitchen counter and a roll of red paper (no hands near a face). |
-| S17 | L17 | My eighteen-year-old face, `angry`, then a flicker of `sad` (a face change, no light). |
+| S17 | L17 | My eighteen-year-old face, `angry`, then `sad`. |
 | S18 | L18 | The box on the mantel, wrapped, with the bow fresh. |
 | S19 | L19 | Me now, at the front door, face to camera, `neutral`. |
 | S20 | L20 | Dad in his armchair, face to camera, `neutral`, a small nod. |
 | S21 | L21 | Dad in his armchair and me on the couch, both faces to camera, side by side (the camera at the mantel), `neutral`. |
 | S22 | L22 | My face, listening. |
 | S23a, S23b | L23 | (a) Dad's face, `smile`, saying it. (b) Punch in on "EVERYTHING". |
-| S24 | L24 | Dad at the mantel, a cloth flat on the box at chest height, face to camera, `warm`. |
+| S24 | L24 | Dad at the mantel, his flat hands squaring the bow at chest height, no cloth, face to camera, `warm`. |
 | S25 | L25 | Close: the bow, turned toward the front door, the door soft behind. |
 | S26 | L26 | Me alone at the mantel, face to camera, `uneasy`, lifting the box to waist height. |
 | S27 | L27 | My face, `stunned`. |
-| S28 | L28 | My arms low under the box, straining, my face above it, `uneasy`. |
+| S28 | L28 | My arms low under the box, straining, my face above it, `uneasy`. Cover frame (`cover_s` 46.2) |
 | S29 | L29 | Close: the box at my waist, very still. |
 | S30a, S30b | L30 | (a) My face, `scared`, listening. (b) The box, a tiny shift. |
 | S31 | L31 | The front steps through the window, empty and sunny. |
 | S32 | L32 | The box set down hard on the mantel, the bow bending, my face soft behind, `scared`. |
 | S33 | L33 | Dad at the mantel, both hands flat on the box at chest height, face to camera, `smile`. |
-| S34 | L34 | Close: Dad's two flat hands and the cloth on the box, his face soft above. |
+| S34 | L34 | Close: Dad's two flat hands squaring the heavy box on the mantel, no cloth, his face soft above. |
 | S35 | L35 | Night, steady lamp light: me on the couch under a blanket, face to camera, `scared`, the box on the mantel behind me. |
 | S36 | L36 | Close: the box on the mantel, still, the front door soft behind it. |
 | S37 | L37 | Dad at the kitchen counter, face to camera, `smile`, humming. |
@@ -168,7 +167,7 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 | S53 | L53 | The front room, the bare mantel, sun on it. |
 | S54 | L54 | Dad's face, `warm`. |
 | S55 | L55 | The porch steps, sunny, and my feet on the top step (from S31's framing). |
-| S56 | L56 | The reveal picture, held 1.6 s with drift: Dad at the counter with the open empty box at waist height, looking past camera toward the front door, `warm`, his face whole. Cover frame (`cover_s` 88.7). |
+| S56 | L56 | The reveal picture, held 1.6 s with drift: Dad at the counter with the open empty box at waist height, looking past camera toward the front door, `warm`, his face whole. |
 | S57 | L57 | Dad's face, `laugh`. |
 | S58 | L58 | Dad's face, `warm`, saying it. |
 | S59 | L59 | Dad setting the open empty box back on the mantel. |
@@ -186,7 +185,7 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 2. **S23a, S24, L23, L24:** Dad's face, whole head, the box at chest height.
 3. **S56, L56:** the reveal (Dad's whole face, the box at waist).
 4. **S61, L61:** two faces side by side, both to camera.
-Hands: the box is lifted and held only at waist height (S26 to S32, S44, S51) and opened on the counter (S48 to S50). The dusting cloth lies flat on the box at chest height. Nothing comes near a face.
+Hands: the box is lifted and held only at waist height (S26 to S32, S44, S51) and opened on the counter (S48 to S50). Dad's flat hands square the bow at chest height, with no cloth. Nothing comes near a face.
 
 ## Lore connection (`stories/lore.md`)
 A plain tally: two cream strokes scratched into the brass base of the mantel clock, two for a front room built for two (Dad and me). No extra stroke, no Keeper, no thread touched. Seen in S12 under L12 ("It's been there / TWELVE years."), low in the frame above the box, held 1.2 s, not narrated.
@@ -196,8 +195,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 
 - L01: Never open a PRESENT here. / Wrapped, it's whatever / you HOPE it is.
 - L02: Open it, / and it's only what's INSIDE.
-- L03: Mrs. Ortiz next door / has a shoebox / she calls PARIS.
-- L04: When she shakes it, / you hear ACCORDIONS.
+- L03: Mrs. Albee next door / has a shoebox / she calls the CIRCUS.
+- L04: When she shakes it, / you hear a TUBA.
 - L05: My best friend Sam / has a box / from his SISTER.
 - L06: He swears / it's a PUPPY.
 - L07: Some nights, / it BARKS.
@@ -217,7 +216,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L21: He asks about my JOB. / I say / it's FINE.
 - L22: And when anyone asks him / what's in the box,
 - L23: Dad says, / "EVERYTHING."
-- L24: He dusts it / every MORNING.
+- L24: He checks the bow / every MORNING.
 - L25: He keeps the bow / turned to face / the front DOOR.
 - L26: Last spring, / alone in the front room, / I lifted it.
 - L27: It was HEAVY.
@@ -227,7 +226,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L31: Like somebody / coming up / the front STEPS.
 - L32: I put it down / so fast / the bow BENT.
 - L33: At Thanksgiving, / it was HEAVIER.
-- L34: Dad needed / both hands / just to DUST it.
+- L34: Dad needed / both hands / just to STRAIGHTEN it.
 - L35: That night, / from the couch, / I heard it KNOCK.
 - L36: Three soft knocks. / Like somebody / at the front DOOR.
 - L37: In the morning, / Dad was HUMMING.
@@ -257,8 +256,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L60: Bow to the DOOR.
 - L61: We had cake / at the kitchen COUNTER.
 - L62: We didn't talk / about the weather / ONCE.
-- L63: He asked / if I was still / scared of the BASEMENT.
-- L64: I said / I'd never BEEN.
+- L63: He asked / if I'd stay / for BREAKFAST.
+- L64: I said / I'd stay / for ALL of them.
 - L65: That night, / I wrapped him / a new BOX.
 - L66: There's something in it / this TIME.
 - L67: And I told him / NEVER / to open it.
