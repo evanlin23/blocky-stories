@@ -15,7 +15,7 @@
  "tail": 0.6,
  "fade_in": false,
  "fade_out": false,
- "rev": 22,
+ "rev": 23,
  "look": {
   "style": "closer",
   "fog": "#cfe6f5",
@@ -2712,12 +2712,12 @@
      [
       0.2,
       19.75,
-      1.2
+      1.75
      ],
      [
       -1.7,
       20.8,
-      0.7
+      1.6
      ],
      34
     ]
@@ -6556,7 +6556,7 @@
     "db": -16
    }
   ],
-  "rev": 22
+  "rev": 23
  },
  "set_moves": [],
  "framing_ok": [

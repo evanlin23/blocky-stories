@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 22
+REV = 23
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -402,7 +402,7 @@ cue("L32", "phone", v=0.0)
 move("L32", 0.0)
 move("L33", 1)
 shot("L32", P([0.9, ry(7.4), 1.2], [-1.9, ry(8) + 0.0, 2.1], 34), "rack")
-shot("L32.3", P2([0.2, ry(7.5), 2.0], [-1.7, ry(8), 2.1], [0.2, ry(7.5), 1.2], [-1.7, ry(8), 0.7], 34), "rackdown")
+shot("L32.3", P2([0.2, ry(7.5), 2.0], [-1.7, ry(8), 2.1], [0.2, ry(7.5), 1.75], [-1.7, ry(8), 1.6], 34), "rackdown")
 # S33: a cake with candles on seat twelve, then out
 cue("L33", "cake", v=1.0)
 shot("L33", P([-0.3, ry(6) + 1.0, 1.3], [-1.6, ry(6) + 0.05, 0.7], 36), "cake")
