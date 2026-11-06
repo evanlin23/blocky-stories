@@ -407,8 +407,8 @@ def build_cart(kit):
                   star(cx + 0.2, cy - 0.2, 1.121, 0.25, 0.108, matm, "xy", 0.004, "card2.starline"),
                   star(cx + 0.2, cy - 0.2, 1.127, 0.2, 0.087, P("#f0a000", 0.35, 0.5), "xy", 0.006, "card2.star")]
     # the spatula, on the counter between us (cue spatula)
-    W["spatula"] = [B(None, (0.5, 0.06, 0.035), (cx - 0.1, cy - 0.3, 1.09), P("#5a3418", 0.6), "spat.handle", 0.008),
-                    B(None, (0.26, 0.2, 0.025), (cx + 0.28, cy - 0.3, 1.09), P("#e8ecf2", 0.3, 0.8), "spat.head", 0.008)]
+    W["spatula"] = [B(None, (0.5, 0.06, 0.035), (cx + 0.05, cy + 0.5, 1.09), P("#5a3418", 0.6), "spat.handle", 0.008),
+                    B(None, (0.26, 0.2, 0.025), (cx + 0.38, cy + 0.5, 1.09), P("#e8ecf2", 0.3, 0.8), "spat.head", 0.008)]
     # the wrench on the ground by the wobbly wheel
     B(None, (0.5, 0.06, 0.04), (cx - 1.95, cy - 1.0, 0.03), P("#8a8d96", 0.35, 0.8), "wrench.arm", 0.01, rot=(0, 0, 0.5))
     B(None, (0.14, 0.12, 0.04), (cx - 1.75, cy - 0.88, 0.03), P("#8a8d96", 0.35, 0.8), "wrench.head", 0.01)
@@ -492,8 +492,8 @@ def build_stalls(kit):
     B(None, (3.4, 0.06, 1.2), (lx, ly + 0.55, 1.9), P("#ff9bb5", 0.5), "lemon.back")
     for k in range(3):
         S(0.16, (lx - 1.1 + k * 0.3, ly + 0.1, 1.2), P("#ffe066", 0.4, 0.4), "lemon.fruit")
-    C(None, 0.12, 0.3, (lx - 0.1, ly - 0.3, 1.2), P("#fbfaf6", 0.3, 0.5), "lemon.cup", n=14, r2=0.09)
-    C(None, 0.1, 0.03, (lx - 0.1, ly - 0.3, 1.34), P("#ffe34a", 0.3, 0.3), "lemon.cupfill", n=14)
+    C(None, 0.15, 0.36, (lx + 0.0, ly - 0.45, 1.2), P("#fbfaf6", 0.3, 0.5), "lemon.cup", n=14, r2=0.09)
+    C(None, 0.13, 0.03, (lx + 0.0, ly - 0.45, 1.38), P("#ffe34a", 0.3, 0.3), "lemon.cupfill", n=14)
 
 
 def build_midway(kit):

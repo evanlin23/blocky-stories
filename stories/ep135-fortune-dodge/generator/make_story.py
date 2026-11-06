@@ -179,8 +179,8 @@ for w_ in cast:
 # places
 ME_MACH = [3.1, 2.3, 0.0]
 RAYC = [CX - 0.2, CY + 0.95, 0.0]                 # Ray behind the counter
-RAY2 = [CX - 0.5, CY + 0.95, 0.05]                 # Ray in a two-shot
-ME2 = [CX + 0.55, CY + 0.95, 0.0]                 # me in a two-shot
+RAY2 = [CX - 0.8, CY + 0.95, 0.05]                 # Ray in a two-shot
+ME2 = [CX + 0.8, CY + 0.95, 0.0]                 # me in a two-shot
 cue(0, "apron2", where="hook")
 
 # ===== S01 the hook (L01)
@@ -223,8 +223,8 @@ TP("ray", "L10", RAYC, 0, "smile")
 shot("S10", "L10", cam_face(RAYC, 0, "ray", 2.9, -10, 34, shift=0.12, d2=2.6), "day")
 shot("S10b", "L10.2", cam_face(RAYC, 0, "ray", 2.3, 16, 34, d2=2.0), "day")
 RAYK = [CX - 2.05, CY - 0.4, -0.2]
-KNEEL_CAM = cam_at([RAYK[0] + 0.4, RAYK[1] - 2.5, 1.2], [RAYK[0] + 0.3, RAYK[1], 0.62], 28,
-                   [RAYK[0] + 0.4, RAYK[1] - 2.2, 1.2], [RAYK[0] + 0.3, RAYK[1], 0.62], 28)
+KNEEL_CAM = cam_at([RAYK[0] + 0.4, RAYK[1] - 2.8, 1.3], [RAYK[0] + 0.3, RAYK[1], 0.85], 28,
+                   [RAYK[0] + 0.4, RAYK[1] - 2.5, 1.3], [RAYK[0] + 0.3, RAYK[1], 0.85], 28)
 cue("L11", "kneel", on=True)
 cue("L13", "kneel", on=False)
 TP("ray", "L11", RAYK, 75, "neutral", arms=[0, 55], side=[0, 0], head=[-55, 15])
@@ -279,7 +279,7 @@ shot("S22b", "L22.2", cam_face(MEPOST, 0, "me", 2.3, 12, 34, d2=2.05), "day")
 HIDE("me", "L23")
 RAYC2 = [LEMON[0] - 0.6, LEMON[1] - 1.0, 0.0]
 TP("ray", "L23", RAYC2, 0, "smile")
-shot("S23", "L23", cam_face(RAYC2, 0, "ray", 3.5, 8, 34, shift=-0.1, d2=3.1), "day")
+shot("S23", "L23", cam_face(RAYC2, 0, "ray", 3.5, 8, 34, shift=-0.35, d2=3.1), "day")
 TP("me", "L24", MEPOST, 0, "scared", lean=8)
 TP("ray", "L24", [POST[0] + 0.95, LEMON[1] + 0.9, 0.0], 0, "smile")
 shot("S24", "L24", cam_face(MEPOST, 0, "me", 3.0, 8, 34, shift=-0.28, d2=2.7), "day")
@@ -330,8 +330,8 @@ M39 = [MACH[0] - 1.2, 2.2, 0.0]
 TP("me", "L39", M39, 0, X("sad"))
 shot("S39", "L39", cam_face(M39, 0, "me", 2.8, -10, 34, d2=2.5), "dusk")
 M40 = [CX + 0.5, CY + 0.95, 0.0]
-TP("me", "L40", M40, 0, "crying", lean=25)
-shot("S40", "L40", cam_at([CX + 0.55, CY - 1.7, 1.75], [CX + 0.55, CY + 0.3, 1.18], 30, [CX + 0.55, CY - 1.55, 1.75], [CX + 0.55, CY + 0.3, 1.18], 30),
+TP("me", "L40", M40, 0, "crying")
+shot("S40", "L40", cam_at([CX + 0.55, CY - 1.8, 2.1], [CX + 0.55, CY + 0.35, 1.3], 26, [CX + 0.55, CY - 1.65, 2.1], [CX + 0.55, CY + 0.35, 1.3], 26),
      "dusk", cover=True)
 # ===== S41 to S45 the night
 CBN = CB
@@ -374,8 +374,8 @@ MEP = [PX + 0.3, PY + 4.6, 0.45]
 TP("me", "L51", MEP, 0, X("uneasy"), arms=[22, 22])
 shot("S51", "L51", cam_face(MEP, 0, "me", 2.9, 10, 34, d2=2.5), "dawn")
 # ===== S52 to S55 the steps
-RAYS = [PX - 0.6, PY + 2.25, -0.38]
-MES = [PX + 0.6, PY + 2.25, -0.38]
+RAYS = [PX - 0.8, PY + 2.25, -0.38]
+MES = [PX + 0.8, PY + 2.25, -0.38]
 TP("ray", "L53", RAYS, 0, "neutral")
 TP("me", "L53", MES, 0, X("sad"))
 shot("S53", "L53", cam_face(MES, 0, "me", 2.6, -8, 34, d2=2.3, shift=0.1), "dawn")
@@ -386,12 +386,12 @@ shot("S55", "L55", cam_face(RAYS, 0, "ray", 2.4, -10, 34, d2=2.1), "dawn")
 # ===== S56 to S65 the cart is mine
 cue("L56", "spatula", on=True)
 cue("L57", "spatula", on=False)
-TP("ray", "L56", [CX - 0.75, CY + 0.95, 0.05], 0, "smile", arms=[0, 0], side=[85, 0])
-TP("me", "L56", [CX + 1.0, CY + 0.95, 0.0], 0, "neutral")
-shot("S56", "L56", cam_at([CX + 0.1, CY - 2.9, 1.8], [CX + 0.1, CY + 0.5, 1.3], 26, [CX + 0.1, CY - 2.6, 1.8], [CX + 0.1, CY + 0.5, 1.3], 26), "day")
+HIDE("me", "L56")
+TP("ray", "L56", [CX - 0.5, CY + 0.95, 0.05], 0, "smile", arms=[0, 0], side=[85, 0])
+shot("S56", "L56", cam_at([CX + 0.0, CY - 2.7, 1.75], [CX + 0.0, CY + 0.5, 1.25], 26, [CX + 0.0, CY - 2.4, 1.75], [CX + 0.0, CY + 0.5, 1.25], 26), "day")
 TP("ray", "L57", RAY2, 0, "laugh")
 TP("me", "L57", ME2, 0, "laugh")
-shot("S57", "L57", cam_at([CX, CY - 3.4, 1.62], [CX, CY + 0.95, 1.6], 28, [CX, CY - 3.0, 1.62], [CX, CY + 0.95, 1.6], 28), "day")
+shot("S57", "L57", cam_at([CX, CY - 4.6, 1.62], [CX, CY + 0.95, 1.55], 26, [CX, CY - 4.2, 1.62], [CX, CY + 0.95, 1.55], 26), "day")
 HIDE("ray", "L58")
 TP("me", "L58", [CX + 0.1, CY + 0.95, 0.0], 0, "warm")
 shot("S58", "L58", cam_face([CX + 0.1, CY + 0.95, 0.0], 0, "me", 2.7, -10, 34, d2=2.4), "day")
