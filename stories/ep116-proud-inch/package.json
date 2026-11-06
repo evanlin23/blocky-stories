@@ -6,6 +6,5 @@
   "cover_s": 13.0,
   "shape": "fix-it-yourself",
   "opening": "cost",
-  "lane": "core",
-  "hold": "retry in review (batch 12)"
+  "lane": "core"
 }
