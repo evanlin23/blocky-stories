@@ -654,7 +654,7 @@ def test_plan_proofs_picks_approved_stories_whose_film_changed(monkeypatch):
                                                                 if p.startswith("stories/") and len(p.split("/")) > 2}))
     base = ["stories/a/set.py", "stories/closed-one/story.json", "stories/held-one/set.py",
             "stories/b/package.json", "stories/proved-one/set.py"]
-    monkeypatch.setattr(pp, "changed", lambda a, b="HEAD": base if a == "BASE" else None)
+    monkeypatch.setattr(pp, "pr_changed", lambda a: base if a == "BASE" else None)
 
     class A:
         story, base, before, shards, selftest = "", "BASE", "", 8, "self"
@@ -665,7 +665,7 @@ def test_plan_proofs_picks_approved_stories_whose_film_changed(monkeypatch):
     # the proof workflow itself changed and no story: its own test story proves the change
     class B(A):
         story = ""
-    monkeypatch.setattr(pp, "changed", lambda a, b="HEAD": [".github/workflows/proof.yml"] if a == "BASE" else None)
+    monkeypatch.setattr(pp, "pr_changed", lambda a: [".github/workflows/proof.yml"] if a == "BASE" else None)
     assert pp.plan(B()) == (["self"], True)
 
 
