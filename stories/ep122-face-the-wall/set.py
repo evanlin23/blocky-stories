@@ -967,9 +967,9 @@ def animate(kit, story, tl, t, ctx):
     w2 = h2 * 9.0 / 16.0
     s = 0.60 * w2 / 0.6
     tag = W["tag"]
-    s = 0.56 * w2
+    s = 0.56 * w2 * float(m.get("tagk", 1.0))   # tagk: shrink the tag where it would cover a face; tagy: lift it
     tag.scale = (s, s, s)
-    tag.location = (-0.50 * w2, 0.62 * h2, -dd)
+    tag.location = ((-0.50 + float(m.get("tagx", 0.0))) * w2, (0.62 + float(m.get("tagy", 0.0))) * h2, -dd)
     # Grandma's small hand patting my quilt (hand only), and a slow shadow crossing the hall stripe
     st = t - shot["start"]
     hd = W["hand"]

@@ -1,0 +1,27 @@
+{
+ "stage": "proof",
+ "film": "proof-42266625052",
+ "run": 42266625052,
+ "sha": "75e5643575fa694d468d802c67b256d80c354b2f",
+ "artifact": 13529135408,
+ "verdict": "pass",
+ "date": "2026-11-06",
+ "checked": [
+  "frames every 1 s",
+  "first 3 s at 10 fps",
+  "18-32 s at 2 fps",
+  "cover",
+  "loudness",
+  "silence",
+  "flash",
+  "clip",
+  "craft",
+  "polish",
+  "opening",
+  "batch 14 constraints",
+  "package",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.0 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 21.6 | 14.0– | ok |\n| macro.motion_energy_q | 7.25 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 7.87 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.73 | –2.5 | ok |\n| macro.longest_still_s | 0.17 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.87 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.81 | 0.4– | ok |\n| macro.brightness_mean | 0.626 | 0.35– | ok |\n| macro.brightness_first_3s | 0.571 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.329 | 0.42– | **warn** |\n| macro.contrast_mean | 0.239 | 0.18– | ok |\n| spec.face_big_share | 0.64 | 0.4– | ok |\n| spec.caption_share | 0.977 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.833 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.667 | –0.25 | **warn** |\n| micro.idle_window_share | 0.0 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 64.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.99 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.7 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.6 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0405 | –0.08 | ok |\n| sound.hf_jump_max | 0.0161 | –0.04 | ok |",
+ "notes": "Proof 36.8 s 270x480 at 75e5643 (latest story commit on the branch). -14.1 LUFS / -1.6 dBTP, LRA 1.0, no silence, voice clear over the bed, tail ends clean. Flash passes (1/s, 3f 3/s, red 0); clip.json 0 hits of 181 times. verdict.json pass. Gate OPEN.\nSecond one: sunny bench close-up of me in a blue shirt beside a big chalk '41' with tally strokes on the shelter wall, slow push; 'At our bus stop, the fare is two strangers TALKING.' poses the rule and its price. Opening 'cost' matches; last upload ep92 is 'if' (no match).\nBatch 14: never more than two faces in a shot, the bench and windshield two-shots (12-13 s, 28-29.5 s) are frontal, no profile two-shots; depot door is shut (9 s) then already up (20.5 s), never rolls; the bus only creeps at the depot mouth; nothing held to the camera; chalk is digits, tallies and a sun drawing (35 s), no real words or logos.\nCover 12.7 s: the driver and me side by side on the bench under the big 41, both faces lit and whole, strong.\nNote, not a fail: 15.8-18 s (S11/S12) the driver's head sits on the right edge with its side cropped; glasses, mustache and expression still read at phone size.\nNote, not a fail: 20.5-21.3 s the bus nose at the depot mouth is empty (he is still walking to it), reads as a small pink box van more than a bus; the 26.5-28 s wide makes it plainly a bus.\nQueue note: cost must not sit next to ep99/ep96/ep83/ep54 (all cost) when ep132 joins queue.txt.\ncraft: 0 block, 0 near, 2 warn: macro.saturation_mean 0.329 (0.42-), micro.walk_dead_end_share 0.667 (-0.25); seen, the pastel morning reads bright on a TV and the walk at 19.5-20 s ends at the depot door as scripted, neither loses viewers."
+}
