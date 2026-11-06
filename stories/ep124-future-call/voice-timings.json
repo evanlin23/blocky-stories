@@ -1,0 +1,1033 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "If your phone rings on your 30th, it's you, from later.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.155,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.784
+    ],
+    [
+     0.784,
+     1.379
+    ],
+    [
+     1.448,
+     1.741
+    ],
+    [
+     1.793,
+     2.466
+    ]
+   ]
+  },
+  "L02": {
+   "text": "You get one call. That's it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.707
+    ],
+    [
+     0.741,
+     1.31
+    ]
+   ]
+  },
+  "L03": {
+   "text": "My mom's told her to buy a better umbrella.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.81
+    ],
+    [
+     0.81,
+     1.129
+    ],
+    [
+     1.129,
+     2.0
+    ]
+   ]
+  },
+  "L04": {
+   "text": "My uncle's told him to sell the boat. He didn't. It leaks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.784
+    ],
+    [
+     0.784,
+     1.008
+    ],
+    [
+     1.008,
+     1.379
+    ],
+    [
+     1.448,
+     1.776
+    ],
+    [
+     1.828,
+     2.448
+    ]
+   ]
+  },
+  "L05": {
+   "text": "My best friend's told him to call his sister. He did.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.008
+    ],
+    [
+     1.008,
+     1.215
+    ],
+    [
+     1.215,
+     1.69
+    ],
+    [
+     1.776,
+     2.362
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Everybody's future self has advice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     1.034
+    ],
+    [
+     1.034,
+     1.724
+    ]
+   ]
+  },
+  "L07": {
+   "text": "My birthday was last saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.603
+    ]
+   ]
+  },
+  "L08": {
+   "text": "I was helping Dad in his garage, like every Saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     0.302
+    ],
+    [
+     0.302,
+     0.75
+    ],
+    [
+     0.75,
+     1.379
+    ],
+    [
+     1.448,
+     2.466
+    ]
+   ]
+  },
+  "L09": {
+   "text": "At noon, the old wall phone rang.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.474,
+     0.707
+    ],
+    [
+     0.707,
+     1.155
+    ],
+    [
+     1.155,
+     1.655
+    ]
+   ]
+  },
+  "L10": {
+   "text": "I hit speaker. hello?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.172
+    ]
+   ]
+  },
+  "L11": {
+   "text": "nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.914,
+   "onset": 0.19,
+   "end": 0.707,
+   "chunks": [
+    [
+     0.19,
+     0.707
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Just breathing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L13": {
+   "text": "I asked if I'm happy. Nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.966
+    ],
+    [
+     1.043,
+     1.603
+    ]
+   ]
+  },
+  "L14": {
+   "text": "If I ever move away. Nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.983
+    ],
+    [
+     1.061,
+     1.638
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Who I'll be. Nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.681,
+     1.241
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Every time I talked, the breathing went quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.966
+    ],
+    [
+     1.017,
+     1.328
+    ],
+    [
+     1.328,
+     1.983
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Like he was holding his breath.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.328
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Across the garage, Dad was telling his worst joke.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.948,
+     1.439
+    ],
+    [
+     1.439,
+     2.241
+    ]
+   ]
+  },
+  "L19": {
+   "text": "The one about the two tires.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.397
+    ]
+   ]
+  },
+  "L20": {
+   "text": "And Dad laughed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ]
+   ]
+  },
+  "L21": {
+   "text": "He laughs like a truck that won't start.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.862
+    ],
+    [
+     0.862,
+     1.621
+    ]
+   ]
+  },
+  "L22": {
+   "text": "And on the line, the breathing shook.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
+     0.655
+    ],
+    [
+     0.681,
+     1.008
+    ],
+    [
+     1.008,
+     1.448
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Dad laughed again,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     1.069
+    ]
+   ]
+  },
+  "L24": {
+   "text": "and the line went soft.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.172
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Like somebody trying not to cry.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.931
+    ],
+    [
+     0.931,
+     1.534
+    ]
+   ]
+  },
+  "L26": {
+   "text": "He kept quiet on purpose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     1.328
+    ]
+   ]
+  },
+  "L27": {
+   "text": "He called to listen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.138
+    ]
+   ]
+  },
+  "L28": {
+   "text": "To Dad, laughing in this garage.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     0.802
+    ],
+    [
+     0.802,
+     1.569
+    ]
+   ]
+  },
+  "L29": {
+   "text": "One more time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ]
+   ]
+  },
+  "L30": {
+   "text": "So I stopped talking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     1.155
+    ]
+   ]
+  },
+  "L31": {
+   "text": "I asked Dad for every bad joke he knows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     0.948
+    ],
+    [
+     0.948,
+     1.353
+    ],
+    [
+     1.353,
+     1.948
+    ]
+   ]
+  },
+  "L32": {
+   "text": "He told me all of them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.155,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.19
+    ]
+   ]
+  },
+  "L33": {
+   "text": "The one about the soup. The one about the chicken.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.931
+    ],
+    [
+     1.0,
+     1.353
+    ],
+    [
+     1.353,
+     1.983
+    ]
+   ]
+  },
+  "L34": {
+   "text": "He laughed so hard he had to sit down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.784
+    ],
+    [
+     0.784,
+     1.0
+    ],
+    [
+     1.0,
+     1.638
+    ]
+   ]
+  },
+  "L35": {
+   "text": "And on the line, somebody laughed with him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.655
+    ],
+    [
+     0.716,
+     0.931
+    ],
+    [
+     0.931,
+     1.672
+    ]
+   ]
+  },
+  "L36": {
+   "text": "For nine whole minutes, nobody said anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.931
+    ],
+    [
+     0.983,
+     1.353
+    ],
+    [
+     1.353,
+     1.897
+    ]
+   ]
+  },
+  "L37": {
+   "text": "We just laughed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Then, very quietly, click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.328,
+     0.862
+    ],
+    [
+     0.897,
+     1.328
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Dad asked who it was.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.207
+    ]
+   ]
+  },
+  "L40": {
+   "text": "I said, an old friend.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.474,
+     1.224
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Now every Saturday, I bring Dad a new bad joke.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.888,
+     1.301
+    ],
+    [
+     1.301,
+     1.483
+    ],
+    [
+     1.483,
+     2.207
+    ]
+   ]
+  },
+  "L42": {
+   "text": "I'm saving his laughs up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.293
+    ]
+   ]
+  },
+  "L43": {
+   "text": "For a call I'm going to make one day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.836
+    ],
+    [
+     0.836,
+     1.034
+    ],
+    [
+     1.034,
+     1.672
+    ]
+   ]
+  },
+  "L44": {
+   "text": "I won't say a word.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.121
+    ]
+   ]
+  }
+ }
+}
