@@ -301,6 +301,20 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Engine side (for #1, not done here): drawing the proof at the final's 6 samples, or denoising it, would make
     its quiet steps read like the final's. Until then the edge warning stands in.
 
+44. **A shard start saw a different scene from a continuous run, and only the final showed it (2026-11-06).**
+    ep117's final failed qa: in S02, frames 48 to 63, Dad's moustache and Mom's earring floated in the air while Mom
+    and Dad were hidden. Its set.py made those extras in `_first_frame()` on the first `animate` call of each render
+    process (guarded by `W["inited"]`). Each final shard is fresh processes: `--shard k/32` keeps frames[k::32] and
+    the engine's 2 workers split that again, so the 64 processes start at the first 64 drawn frames. A process that
+    started after the hide made the extras afterwards, visible. The proof's 8 shards never started there. 15 set.py
+    files used the same lazy pattern.
+    → Done 2026-11-06: `scripts/shardcheck.py --story stories/<story>` (report-only) poses every process start two
+    ways through bl_story's own `main()` without drawing (a fresh process at that frame, and one process over the
+    frame list from frame 0) and compares hide_render, world location (1 mm), scale, emission strength and light
+    energy per object. About 30 s a story. The build brief runs it before the proof; fix every difference. The
+    fix in a set.py: make extras in `build()`, or set every object's state from `t` on every call, never only on a
+    change.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
