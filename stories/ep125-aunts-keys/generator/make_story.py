@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 8
+REV = 9
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L35")
@@ -676,9 +676,9 @@ remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L35")], "twist": remap("L35"),
           "quiet": [[remap("L59"), remap("L68")]],
-          "hold": [names[n] for n in ("courtday", "courtnight", "doorfar", "footage1201", "footage1203", "footage1204",
-                                       "dropdoor", "dooropen", "plate1", "reveal", "hersopen", "dooropens", "click1", "lock2", "lk1", "unlock", "click56",
-                                       "eyesshut", "feetmid", "wetfeet", "hall", "boltturn")]}
+          "hold": [names[n] for n in ("footage1201", "footage1203", "footage1204",
+                                       "dropdoor", "dooropen", "plate1", "reveal", "lock2", "lk1", "unlock", "click1", "click56",
+                                       "eyesshut")]}
 story = {
     "slug": "ep125-aunts-keys",
     "title": "My Aunt Has A Key To YOURS",
