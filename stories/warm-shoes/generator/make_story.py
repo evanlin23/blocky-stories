@@ -352,7 +352,8 @@ count("L33c", 12)
 S("L33c", FRAME1, S_, dof=[0.85, 2.4], fill=0.6, note="the pair on the mat is my size")
 put("me", "L34", (0.22, -0.92), 0, "worried")
 S("L34", X((1.8, -2.6, 1.6), (0.5, -0.95, 1.15), 24, (1.5, -2.3, 1.55)), S_, fill=0.8, note="me beside the pair, the same shoe")
-S("L34.2", C((0.55, -1.0, 0.56), 0.45, 200, 30, 30, d2=0.32), S_, dof=[0.4, 1.8], hand=0.003, note="the matching red laces")
+gone("me", "L34.2")
+S("L34.2", C((0.55, -1.0, 0.56), 0.48, 20, 40, 30, d2=0.4), S_, dof=[0.4, 1.8], hand=0.003, note="the matching red laces")
 gone("me", "L35")
 pairs("L35", sneaker=None)
 put("me", "L35", (0.6, -1.9), 180, "smirk")
@@ -631,7 +632,7 @@ AT = timeline.resolver(_tl0["lines"], _tl0["duration"])
 for k in acting:
     acting[k].sort(key=lambda e: AT(e["at"]))
 cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 3
+story["rev"] = 4
 story["clip_ok"] = ["S09/bed_single"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
