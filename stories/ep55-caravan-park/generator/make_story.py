@@ -136,7 +136,7 @@ hide("trainwoman", "L05.2")
 hide("meeter2", "L05.2")
 hide("meeter3", "L05.2")
 hide("meeter1", "L06")
-put("benchman", "L06", [118.85, -0.3, -0.23], 180, expr="neutral", sit=True)
+put("benchman", "L06", [118.65, -0.3, -0.23], 180, expr="neutral", sit=True)
 put("benchwife", "L06", [120.25, -0.3, -0.23], 180, expr="neutral", sit=True, arms=[0, 0])
 set_("benchwife", "L07", arms=[0, 100], blend=0.6)
 hide("benchman", "L08")
@@ -276,7 +276,7 @@ BM_F = face_of(119.1, -0.3, -0.23 + 0.0, sit=False)
 BM_F = [119.1, -0.3, 1.33]
 BW_F = [119.95, -0.3, 1.33]
 # one medium two-shot of the shop bench for L06.1 and L07 (the old S10 is gone; later ids keep their numbers)
-S("L06.1", front([119.55, -0.3, 1.0], 180, 4, 6.4, 0.3, 34, push=0.3))
+S("L06.1", front([119.45, -0.3, 1.0], 180, 4, 6.4, 0.3, 34, push=0.3))
 
 # ---- 02 me and Jory
 ME_G = face_of(0.0, -0.9)
