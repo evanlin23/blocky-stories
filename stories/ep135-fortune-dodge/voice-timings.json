@@ -121,38 +121,6 @@
     ]
    ]
   },
-  "L05": {
-   "text": "My cousin got \"you'll be famous.\" He's on the pie stand's poster.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.914,
-   "onset": 0.172,
-   "end": 2.707,
-   "chunks": [
-    [
-     0.172,
-     0.664
-    ],
-    [
-     0.69,
-     1.293
-    ],
-    [
-     1.379,
-     1.655
-    ],
-    [
-     1.655,
-     2.121
-    ],
-    [
-     2.121,
-     2.707
-    ]
-   ]
-  },
   "L06": {
    "text": "Nobody argues with the machine.",
    "who": "narrator",
@@ -206,38 +174,6 @@
     [
      2.603,
      3.466
-    ]
-   ]
-  },
-  "L08": {
-   "text": "I've worked it with him every summer since I was fifteen.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.397,
-   "onset": 0.172,
-   "end": 2.207,
-   "chunks": [
-    [
-     0.172,
-     0.509
-    ],
-    [
-     0.509,
-     0.732
-    ],
-    [
-     0.732,
-     1.207
-    ],
-    [
-     1.207,
-     1.422
-    ],
-    [
-     1.422,
-     2.207
     ]
    ]
   },
@@ -313,26 +249,6 @@
     ]
    ]
   },
-  "L12": {
-   "text": "He's fixed half the midway.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.155,
-   "end": 1.241,
-   "chunks": [
-    [
-     0.155,
-     0.664
-    ],
-    [
-     0.664,
-     1.241
-    ]
-   ]
-  },
   "L13": {
    "text": "Monday, I got my card.",
    "who": "narrator",
@@ -398,34 +314,6 @@
     [
      0.474,
      1.034
-    ]
-   ]
-  },
-  "L16": {
-   "text": "If I wasn't around, I couldn't break anything.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.224,
-   "onset": 0.155,
-   "end": 2.034,
-   "chunks": [
-    [
-     0.155,
-     0.345
-    ],
-    [
-     0.345,
-     0.914
-    ],
-    [
-     0.966,
-     1.224
-    ],
-    [
-     1.224,
-     2.034
     ]
    ]
   },
@@ -502,30 +390,6 @@
     [
      0.922,
      1.534
-    ]
-   ]
-  },
-  "L20": {
-   "text": "I said I had a thing.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.362,
-   "onset": 0.172,
-   "end": 1.155,
-   "chunks": [
-    [
-     0.172,
-     0.448
-    ],
-    [
-     0.448,
-     0.629
-    ],
-    [
-     0.629,
-     1.155
     ]
    ]
   },
@@ -649,30 +513,6 @@
     ]
    ]
   },
-  "L26": {
-   "text": "I thought I was so smart.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.345,
-   "onset": 0.155,
-   "end": 1.155,
-   "chunks": [
-    [
-     0.155,
-     0.37
-    ],
-    [
-     0.37,
-     0.5
-    ],
-    [
-     0.5,
-     1.155
-    ]
-   ]
-  },
   "L27": {
    "text": "Saturday, I stayed home.",
    "who": "narrator",
@@ -690,22 +530,6 @@
     [
      0.474,
      1.31
-    ]
-   ]
-  },
-  "L28": {
-   "text": "All day.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 0.983,
-   "onset": 0.19,
-   "end": 0.759,
-   "chunks": [
-    [
-     0.19,
-     0.759
     ]
    ]
   },
@@ -925,26 +749,6 @@
     ]
    ]
   },
-  "L37": {
-   "text": "He'd ordered it in may.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.172,
-   "end": 1.259,
-   "chunks": [
-    [
-     0.172,
-     0.672
-    ],
-    [
-     0.672,
-     1.259
-    ]
-   ]
-  },
   "L38": {
    "text": "The machine was right.",
    "who": "narrator",
@@ -1006,26 +810,6 @@
     [
      0.586,
      1.293
-    ]
-   ]
-  },
-  "L41": {
-   "text": "I sat up all night.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.31,
-   "onset": 0.172,
-   "end": 1.121,
-   "chunks": [
-    [
-     0.172,
-     0.543
-    ],
-    [
-     0.543,
-     1.121
     ]
    ]
   },
@@ -1265,26 +1049,6 @@
     ]
    ]
   },
-  "L52": {
-   "text": "We sat on the steps.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.259,
-   "onset": 0.155,
-   "end": 1.069,
-   "chunks": [
-    [
-     0.155,
-     0.423
-    ],
-    [
-     0.423,
-     1.069
-    ]
-   ]
-  },
   "L53": {
    "text": "I said I was sorry.",
    "who": "narrator",
@@ -1414,42 +1178,6 @@
     [
      0.448,
      1.086
-    ]
-   ]
-  },
-  "L59": {
-   "text": "I'm there every morning.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.5,
-   "onset": 0.172,
-   "end": 1.31,
-   "chunks": [
-    [
-     0.172,
-     0.509
-    ],
-    [
-     0.509,
-     1.31
-    ]
-   ]
-  },
-  "L60": {
-   "text": "So is Ray.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.121,
-   "onset": 0.172,
-   "end": 0.897,
-   "chunks": [
-    [
-     0.172,
-     0.897
     ]
    ]
   },

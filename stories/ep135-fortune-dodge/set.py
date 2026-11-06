@@ -137,6 +137,13 @@ def star(cx, cy, cz, r_out, r_in, mat, plane="xz", thick=0.03, name="star"):
     return kit.mesh_obj(nm(name), verts2, faces, mat, None, (cx, cy, cz))
 
 
+def flyer(fx, fy, fz, sc=1.0):
+    """A cream paper flyer with the fortune card's gold star (no text) on a wall: a plum border, a cream sheet, a star."""
+    B(None, (0.62 * sc, 0.02, 0.86 * sc), (fx, fy + 0.012, fz), P("#6a3a7a", 0.7, 0.05), "flyer.edge", 0.006)
+    B(None, (0.54 * sc, 0.02, 0.78 * sc), (fx, fy, fz), P("#fff6dc", 0.7, 0.05), "flyer.sheet", 0.004)
+    star(fx, fy - 0.02, fz, 0.21 * sc, 0.09 * sc, P("#f0a000", 0.35, 0.5), "xz", 0.012, "flyer.star")
+
+
 # ------------------------------------------------------------------------------------------------------------- looks
 LOOKS = {
     "day": dict(sky="#8fd6ff", world=0.9, sun=0.8, suncol="#fff1d8", fill=0.25, exp=-0.05, bulbs=0.0, lamp=0.0,
@@ -146,7 +153,7 @@ LOOKS = {
     "dusk": dict(sky="#ffa88a", world=1.1, sun=0.6, suncol="#ffc090", fill=0.7, exp=0.5, bulbs=1.0, lamp=0.0,
                  win="#ff9f7a", wins=2.0),
     "eve": dict(sky="#3a5a9a", world=0.7, sun=0.0, suncol="#9fc4ff", fill=0.8, exp=0.65, bulbs=0.0, lamp=1.0,
-                win="#2a4a7c", wins=1.2),
+                win="#14286a", wins=0.8),
     "dawn": dict(sky="#ffb8a6", world=0.85, sun=0.55, suncol="#ffd0a0", fill=0.4, exp=0.1, bulbs=0.0, lamp=0.0,
                  win="#ffc8a8", wins=2.5),
 }
@@ -267,7 +274,8 @@ def build_machine(kit):
     teal2 = P("#0f7f7d", 0.45, 0.3)
     gold = P(GOLD, 0.35, 0.6)
     dark = P("#10222a", 0.6, 0.1)
-    B(None, (1.6, 1.2, 0.45), (mx, my, 0.225), stone, "machine.base", 0.03)
+    # the lore plant: a pale, seamless stone base (one block, no joints) the cabinet stands on
+    B(None, (1.95, 1.4, 0.7), (mx, my + 0.05, 0.35), P("#ece6d6", 0.9, 0.03), "machine.base", 0.05)
     B(None, (1.3, 0.9, 2.15), (mx, my, 1.525), teal, "machine.body", 0.05)
     B(None, (1.55, 1.05, 0.2), (mx, my, 2.7), teal2, "machine.crown", 0.04)
     B(None, (1.0, 0.7, 0.28), (mx, my, 2.94), teal, "machine.cap", 0.05)
@@ -287,8 +295,8 @@ def build_machine(kit):
     for sx in (-1, 1):
         B(None, (0.06, 0.03, 1.9), (mx + sx * 0.58, fy - 0.025, 1.5), gold, "machine.edge")
     # a card poking out of the slot (cue mcard), cream with a painted star on top
-    W["mcard"] = [B(None, (0.26, 0.34, 0.014), (mx, fy - 0.16, 0.9), P("#fff6dc", 0.6, 0.1), "mcard.body", 0.004),
-                  star(mx, fy - 0.2, 0.9 + 0.012, 0.075, 0.032, gold, "xy", 0.006, "mcard.star")]
+    W["mcard"] = [B(None, (0.34, 0.03, 0.46), (mx, fy - 0.07, 0.99), P("#fff6dc", 0.6, 0.1), "mcard.body", 0.006),
+                  star(mx, fy - 0.1, 1.02, 0.12, 0.052, P("#f0a000", 0.35, 0.5), "xz", 0.01, "mcard.star")]
 
 
 def build_cart(kit):
@@ -351,11 +359,28 @@ def build_cart(kit):
             out.append(B(None, (0.05, 0.04, 0.4), (ax + sx * 0.37, y, 1.58), m, name + ".tie", 0.01))
         return out
 
+    def folded_apron(ax, ay, az, m, pm, name, sc=1.0):
+        """A folded apron lying on a surface (top at az): a block, a cream pocket on its face, a neck-loop strap standing
+        up and leaning back off it, and two ties lying out to the sides. Returns one parent empty (hide hides all)."""
+        root = E(None, (ax, ay, az), name + ".root")
+        B(root, (0.66 * sc, 0.5 * sc, 0.09), (0, 0, 0.045), m, name + ".fold", 0.02)
+        B(root, (0.34 * sc, 0.22 * sc, 0.02), (0, -0.07 * sc, 0.1), pm, name + ".pocket", 0.008)
+        B(root, (0.34 * sc, 0.02 * sc, 0.012), (0, -0.18 * sc, 0.1), pm, name + ".pocketedge", 0.004)
+        loop = E(root, (0, 0.2 * sc, 0.09), name + ".loop", rot=(-1.35, 0, 0))
+        w_, h_, t_ = 0.3 * sc, 0.34 * sc, 0.05 * sc
+        B(loop, (t_, 0.025, h_), (-w_ / 2, 0, h_ / 2), m, name + ".loopl", 0.008)
+        B(loop, (t_, 0.025, h_), (w_ / 2, 0, h_ / 2), m, name + ".loopr", 0.008)
+        B(loop, (w_ + t_, 0.025, t_), (0, 0, h_), m, name + ".looptop", 0.008)
+        for sx in (-1, 1):
+            B(root, (0.36 * sc, 0.055 * sc, 0.025), (sx * 0.5 * sc, -0.12 * sc, 0.0125), m, name + ".tie", 0.008,
+              rot=(0, 0, -sx * 0.35))
+        return [root]
+
     hung_apron(cx - 1.0, old_c, old_pk, "apronold")
     # the second apron (coral, a cream pocket): hung, folded on the counter, or on the porch rail
     W["apron_hook"] = hung_apron(cx + 1.0, cor, pk, "apron.hook")
-    W["apron_counter"] = [B(None, (0.66, 0.5, 0.09), (cx + 0.14, cy - 0.04, 1.115), cor, "apron.counter", 0.02),
-                          B(None, (0.36, 0.26, 0.012), (cx + 0.14, cy - 0.04, 1.166), pk, "apron.counterpocket")]
+    W["folded_apron"] = folded_apron
+    W["apron_counter"] = folded_apron(cx + 0.14, cy - 0.04, 1.07, cor, pk, "apron.counter")
     # the umbrella: eight stripes round a pole
     ux, uy = cx + 1.4, cy + 0.6
     C(None, 0.04, 2.9, (ux, uy, 2.2), P("#c8ced8", 0.4, 0.6), "cart.umbpole", n=8)
@@ -376,8 +401,8 @@ def build_cart(kit):
                   star(cx + 0.2, cy - 0.2, 1.121, 0.25, 0.108, matm, "xy", 0.004, "card2.starline"),
                   star(cx + 0.2, cy - 0.2, 1.127, 0.2, 0.087, P("#f0a000", 0.35, 0.5), "xy", 0.006, "card2.star")]
     # the spatula, on the counter between us (cue spatula)
-    W["spatula"] = [B(None, (0.34, 0.035, 0.022), (cx - 0.02, cy + 0.42, 1.085), P("#7a5230", 0.6), "spat.handle", 0.006),
-                    B(None, (0.14, 0.11, 0.014), (cx + 0.21, cy + 0.42, 1.085), P("#c8ced8", 0.3, 0.8), "spat.head", 0.004)]
+    W["spatula"] = [B(None, (0.5, 0.06, 0.035), (cx - 0.1, cy - 0.3, 1.09), P("#5a3418", 0.6), "spat.handle", 0.008),
+                    B(None, (0.26, 0.2, 0.025), (cx + 0.28, cy - 0.3, 1.09), P("#e8ecf2", 0.3, 0.8), "spat.head", 0.008)]
     # the wrench on the ground by the wobbly wheel
     B(None, (0.5, 0.06, 0.04), (cx - 1.95, cy - 1.0, 0.03), P("#8a8d96", 0.35, 0.8), "wrench.arm", 0.01, rot=(0, 0, 0.5))
     B(None, (0.14, 0.12, 0.04), (cx - 1.75, cy - 0.88, 0.03), P("#8a8d96", 0.35, 0.8), "wrench.head", 0.01)
@@ -395,8 +420,17 @@ def build_stalls(kit):
     C(None, 0.17, 0.02, (px + 0.3, py - 0.08, 1.08), P("#fbfaf6", 0.4, 0.5), "pie.plate", n=20)
     C(None, 0.13, 0.05, (px + 0.3, py - 0.08, 1.12), P("#d9a05b", 0.6), "pie.slice", n=3)
     C(None, 0.08, 0.052, (px + 0.3, py - 0.08, 1.125), P("#c22a3a", 0.5), "pie.fill", n=3)
-    C(None, 0.3, 0.07, (px - 0.6, py + 0.05, 1.12), P("#d9a05b", 0.6), "pie.whole", n=24)
-    C(None, 0.2, 0.075, (px - 0.6, py + 0.05, 1.12), P("#c22a3a", 0.5), "pie.wholefill", n=24)
+    C(None, 0.3, 0.07, (px - 0.4, py + 0.05, 1.12), P("#d9a05b", 0.6), "pie.whole", n=24)
+    C(None, 0.2, 0.075, (px - 0.4, py + 0.05, 1.12), P("#c22a3a", 0.5), "pie.wholefill", n=24)
+    # the car keys stuck in the pie: a big gold ring on two blades standing up out of the filling
+    kg, ks = P("#ffcf3a", 0.3, 0.7), P("#d8dde6", 0.3, 0.8)
+    kx, ky = px - 0.4, py - 0.15
+    for (ax_, az_, ww, hh) in ((-0.11, 1.46, 0.035, 0.22), (0.11, 1.46, 0.035, 0.22), (0.0, 1.57, 0.25, 0.035), (0.0, 1.35, 0.25, 0.035)):
+        B(None, (ww, 0.035, hh), (kx + ax_, ky, az_), kg, "keys.ring", 0.01)
+    B(None, (0.07, 0.03, 0.3), (kx - 0.06, ky + 0.03, 1.2), ks, "keys.blade", 0.008, rot=(0, 0.12, 0))
+    B(None, (0.07, 0.03, 0.3), (kx + 0.07, ky + 0.03, 1.2), ks, "keys.blade", 0.008, rot=(0, -0.12, 0))
+    B(None, (0.05, 0.03, 0.05), (kx - 0.1, ky + 0.03, 1.12), ks, "keys.tooth", 0.005)
+    B(None, (0.05, 0.03, 0.05), (kx + 0.11, ky + 0.03, 1.12), ks, "keys.tooth", 0.005)
     # ---- the poster: a big blocky face and a painted pie, no lettering
     qx, qy = POSTER
     for sx in (-1, 1):
@@ -428,14 +462,17 @@ def build_stalls(kit):
     C(None, 0.26, 0.055, (dx + 1.45, dy - 0.22, 1.8), P(CREAM, 0.5), "dunk.target2", rot=(math.pi / 2, 0, 0), n=24)
     C(None, 0.12, 0.06, (dx + 1.45, dy - 0.24, 1.8), P(RED, 0.5), "dunk.target3", rot=(math.pi / 2, 0, 0), n=24)
     # spray (cue splash): white blocks round the tank's top
-    spr = P("#ffffff", 0.2, 0.6)
+    spr = P("#cdeaff", 0.35, 0.3)       # soft pale-blue water, not white and not emissive: no flash
     W["splash"] = []
-    for i in range(14):
-        a = 2 * math.pi * i / 14
+    for i in range(22):
         side = 1 if i % 2 == 0 else -1
-        xo = side * (0.7 + 0.2 * (i % 4))
-        W["splash"].append(B(None, (0.2 + 0.05 * (i % 3), 0.2, 0.26), (dx + xo, dy - 0.55 - 0.15 * (i % 3),
-                                                                        1.7 + 0.35 * (i % 4)), spr, "splash", 0.07))
+        k = i // 2
+        xo = side * (0.55 + 0.1 * (k % 5) + 0.05 * k)
+        zo = 1.62 + 0.16 * k + 0.05 * (i % 3)
+        r = 0.2 - 0.008 * k
+        W["splash"].append(S(r, (dx + xo, dy - 0.45 - 0.07 * (k % 3), zo), spr, "splash"))
+    for i in range(7):    # a low front curl of water over the tank's rim
+        W["splash"].append(S(0.17, (dx - 0.9 + 0.3 * i, dy - 0.85, 1.62 + 0.04 * (i % 2)), spr, "splashfront"))
     # ---- the lemonade stand (fat awning posts at the front corners)
     lx, ly = LEMON
     yel = P("#ffe066", 0.5, 0.25)
@@ -448,7 +485,8 @@ def build_stalls(kit):
     B(None, (3.4, 0.06, 1.2), (lx, ly + 0.55, 1.9), P("#ff9bb5", 0.5), "lemon.back")
     for k in range(3):
         S(0.16, (lx - 1.1 + k * 0.3, ly + 0.1, 1.2), P("#ffe066", 0.4, 0.4), "lemon.fruit")
-    C(None, 0.08, 0.2, (lx + 0.5, ly - 0.15, 1.17), P("#fbfaf6", 0.3, 0.5), "lemon.cup", n=14, r2=0.06)
+    C(None, 0.12, 0.3, (lx + 0.1, ly - 0.3, 1.2), P("#fbfaf6", 0.3, 0.5), "lemon.cup", n=14, r2=0.09)
+    C(None, 0.1, 0.03, (lx + 0.1, ly - 0.3, 1.34), P("#ffe34a", 0.3, 0.3), "lemon.cupfill", n=14)
 
 
 def build_midway(kit):
@@ -507,8 +545,9 @@ def build_room(kit):
     kx = rx - 2.6
     C(None, 0.36, 0.05, (kx, wy - 0.15, 2.25), P("#e2463a", 0.4, 0.3), "clock.rim", rot=(math.pi / 2, 0, 0), n=32)
     C(None, 0.31, 0.06, (kx, wy - 0.17, 2.25), P("#fbfaf6", 0.4, 0.2), "clock.face", rot=(math.pi / 2, 0, 0), n=32)
-    B(None, (0.03, 0.03, 0.22), (kx + 0.04, wy - 0.22, 2.32), P("#14101a", 0.5), "clock.long", rot=(0, 0.35, 0))
-    B(None, (0.03, 0.03, 0.16), (kx - 0.07, wy - 0.22, 2.29), P("#14101a", 0.5), "clock.short", rot=(0, -1.1, 0))
+    # 5:00: the long hand straight up, the short hand to the five (150 degrees round)
+    B(None, (0.04, 0.03, 0.26), (kx, wy - 0.22, 2.25 + 0.13), P("#14101a", 0.5), "clock.long")
+    B(None, (0.05, 0.03, 0.19), (kx + 0.0475, wy - 0.235, 2.25 - 0.082), P("#14101a", 0.5), "clock.short", rot=(0, 2.618, 0))
     for (ux, uz) in ((0, 1), (0, -1), (1, 0), (-1, 0)):
         B(None, (0.03, 0.03, 0.06), (kx + ux * 0.25, wy - 0.22, 2.25 + uz * 0.25), P("#14101a", 0.5), "clock.tick")
     # ---- the couch and its window, and the patch of sun on the wall (cue patch)
@@ -539,6 +578,18 @@ def build_room(kit):
     for i, c in enumerate(("#c0504a", "#4a6a9a", "#d9a441")):
         if i == 0:
             B(None, (0.14, 0.5, 0.95), (dx - 2.8, wy - 0.3, 1.2), P(c, 0.9, 0.05), "coat", 0.04)
+    # a second lamp, a floor lamp behind the couch's right end: the same warm steady glow when the lamp look is on
+    sx_, sy_ = cx + 1.15, ry + 4.45
+    C(None, 0.025, 1.3, (sx_, sy_, 0.65), P("#5a3a22", 0.5), "lampstem2", n=8)
+    C(None, 0.12, 0.03, (sx_, sy_, 0.02), P("#5a3a22", 0.5), "lampfoot2", n=12)
+    C(None, 0.2, 0.34, (sx_, sy_, 1.55), P("#ffe9a8", 0.6, 0.1), "lampshade2", n=16, r2=0.13)
+    W["lampglow2"] = B(None, (0.3, 0.3, 0.36), (sx_, sy_, 1.55), kit.emit("#ffd9a0", 2.2, name="lampglow2"), "lampglow2", 0.08)
+    noshadow(W["lampglow2"])
+    # the star fair flyer (the card's gold star on cream, no text): kitchen, couch wall and hall (sits 2.5 cm proud)
+    fl = lambda fx, fz, sc=1.0: flyer(fx, wy - 0.15, fz, sc)
+    fl(rx - 5.7, 1.85, 1.15)
+    fl(cx - 1.75, 1.75, 1.1)
+    fl(dx - 1.5, 1.7, 1.0)
     W["roomlight"] = kit.light("roomlight", "POINT", (rx + 3, ry + 1.0, 3.0), 90, "#ffe9c8", size=0.8, shadow=False)
     # the fixed daylight is the sun and sky; the room light only lifts the interior
     for nmx in ("roomlight", "tablelight"):
@@ -558,6 +609,8 @@ def build_porch(kit):
     B(None, (1.4, 0.12, 2.4), (px, wy - 0.22, 0.45 + 1.2), P("#ffffff", 0.5), "porch.doorframe")
     B(None, (1.1, 0.1, 2.2), (px, wy - 0.3, 0.45 + 1.1), P("#1f8a8a", 0.4, 0.3), "porch.door", 0.01)
     S(0.06, (px + 0.4, wy - 0.4, 0.45 + 1.05), P("#d8a93b", 0.3, 0.9), "porch.knob")
+    flyer(px - 2.2, wy - 0.2, 2.2, 1.15)
+    flyer(px + 2.3, wy - 0.2, 2.2, 1.15)
     # windows either side
     for sx in (-1, 1):
         B(None, (1.4, 0.1, 1.5), (px + sx * 4.2, wy - 0.2, 2.2), P("#ffffff", 0.5), "porch.wframe")
@@ -579,8 +632,7 @@ def build_porch(kit):
         B(None, (0.17, 0.17, 0.035), (sx0 + xo, sy0, sz0 + 0.07), P("#ffe066", 0.5), "sandwich.egg", 0.01)
     # the second apron on the porch rail (cue apron2 where=porch), folded on the rail
     cor, pk = P(CORAL, 0.6, 0.15), P("#fff6dc", 0.6, 0.1)
-    W["apron_porch"] = [B(None, (0.4, 0.3, 0.07), (px - 1.75, py + 3.5, 0.45 + 1.15), cor, "apron.porch", 0.02),
-                        B(None, (0.22, 0.18, 0.012), (px - 1.75, py + 3.5, 0.45 + 1.115), pk, "apron.porchpocket")]
+    W["apron_porch"] = W["folded_apron"](px - 1.75, py + 3.5, 0.45 + 1.1, cor, pk, "apron.porch", 0.9)
     # plate on the step between us at S52: a second plate, always there, on the second step
     stx, sty, stz = px, py + 2.35, 0.15
     C(None, 0.22, 0.02, (stx, sty, stz + 0.01), P("#fbfaf6", 0.4, 0.5), "stepplate", n=24)
@@ -617,8 +669,22 @@ def build_extras(kit):
           B(None, (0.99, 0.3, 0.9), (-0.5, 2.05, -0.97), shoe, "ray.backshoe", 0.04)]
     for o in kn:
         W["extras"].append((o, "ray.torso", "kneel"))
-    # the raised finger (cue finger): a skin-coloured post on the end of his raised arm (arm-1), kept upright in animate()
-    W["finger"] = [B(None, (0.36, 0.36, 1.3), (0, 0, 0), P(BROWN_SKIN, 0.5, 0.3), "ray.finger", 0.05)]
+    # Mom's curls: round auburn curls down both sides and the back of her long hair (to below the shoulders), a few
+    # over the brow; she has no cap, no block hair and no yellow
+    hc = P("#8a3a1e", 0.65)
+    curls = []
+    for k, z in enumerate((0.45, 0.12, -0.2, -0.52, -0.84)):
+        r = 0.2 if k < 4 else 0.22
+        for sx in (-1, 1):
+            curls.append(S(r, (sx * (0.7 - 0.02 * k), 0.12, z), hc, "mom.curl", seg=10))
+        curls.append(S(r + 0.03, (0.0 + 0.0 * k, 0.6, z - 0.04), hc, "mom.curlb", seg=10))
+    for sx in (-1, 1):
+        curls.append(S(0.17, (sx * 0.5, -0.6, 0.45), hc, "mom.curlf", seg=10))
+        curls.append(S(0.16, (sx * 0.2, -0.64, 0.58), hc, "mom.curlf", seg=10))
+    for sx in (-0.7, -0.35, 0.0, 0.35, 0.7):
+        curls.append(S(0.2, (sx, 0.05, 0.68), hc, "mom.curlt", seg=10))
+    for o in curls:
+        W["extras"].append((o, "mom.headg", None))
 
 
 def attach_extras(tl, t):
@@ -690,6 +756,7 @@ def animate(kit, story, tl, t, ctx):
                 nd.inputs["Color"].default_value = (*L["win"], 1.0)
                 nd.inputs["Strength"].default_value = L["wins"]
     hide(W["lampglow"], L["lamp"] < 0.5)
+    hide(W["lampglow2"], L["lamp"] < 0.5)
     # the camera's own soft warm key and fill on faces, scaled by distance so a close-up is not blown out
     f = V(ct) - V(cl)
     dist = max(0.3, f.length)
@@ -722,8 +789,10 @@ def animate(kit, story, tl, t, ctx):
     for o in W["splash"]:
         hide(o, not sp)
     gh = not cue_at(tl, "grillhot", t).get("on")
-    for o in W["grillglow"] + W["smoke"]:
+    for o in W["grillglow"]:
         hide(o, gh)
+    for o in W["smoke"]:
+        hide(o, True)          # no smoke (critic r1): the hot bars alone say "hot"
     where = cue_at(tl, "apron2", t).get("where", "none")
     for key, w in (("apron_hook", "hook"), ("apron_counter", "counter"), ("apron_porch", "porch")):
         for o in W[key]:
@@ -743,19 +812,6 @@ def animate(kit, story, tl, t, ctx):
     elif legf and legb:
         legf.scale = (1, 1, 1)
         legb.scale = (1, 1, 1)
-    # the finger stays vertical whatever the arm does: parent it to the arm, counter-rotate and stand it on the hand
-    arm = bpy.data.objects.get("ray.arm-1")
-    on = shown and arm is not None and bool(cue_at(tl, "finger", t).get("on"))
-    for o in W["finger"]:
-        if arm is not None and o.parent is None:
-            o.parent = arm
-            o.matrix_parent_inverse = Matrix.Identity(4)
-        o.hide_render = not on
-        if on:
-            Rm = arm.rotation_euler.to_matrix()
-            Ri = Rm.inverted()
-            o.rotation_euler = Ri.to_euler()
-            o.location = V((0, 0, -1.5)) + Ri @ V((0, 0, 0.6))
     pi = cue_at(tl, "patch", t).get("i", -1)
     for k, o in enumerate(W["patches"]):
         hide(o, k != pi)
