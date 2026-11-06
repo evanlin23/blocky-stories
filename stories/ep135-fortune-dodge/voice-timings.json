@@ -1,0 +1,1577 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "My fortune card says I'll break Uncle Ray's heart on Saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.707,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.974
+    ],
+    [
+     0.974,
+     1.5
+    ],
+    [
+     1.5,
+     1.923
+    ],
+    [
+     1.923,
+     2.707
+    ]
+   ]
+  },
+  "L02": {
+   "text": "And the machine at our fair is never wrong.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     1.026
+    ],
+    [
+     1.026,
+     1.879
+    ]
+   ]
+  },
+  "L03": {
+   "text": "One guy got \"you'll get wet.\" Ten minutes later, the dunk tank.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.621,
+     1.138
+    ],
+    [
+     1.224,
+     1.776
+    ],
+    [
+     1.801,
+     2.534
+    ]
+   ]
+  },
+  "L04": {
+   "text": "A lady got \"you'll find it.\" Her car keys were in her pie.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.621,
+     1.155
+    ],
+    [
+     1.233,
+     1.733
+    ],
+    [
+     1.733,
+     1.854
+    ],
+    [
+     1.854,
+     2.431
+    ]
+   ]
+  },
+  "L05": {
+   "text": "My cousin got \"you'll be famous.\" He's on the pie stand's poster.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.707,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.69,
+     1.293
+    ],
+    [
+     1.379,
+     1.655
+    ],
+    [
+     1.655,
+     2.121
+    ],
+    [
+     2.121,
+     2.707
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Nobody argues with the machine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.19,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.19,
+     0.784
+    ],
+    [
+     0.784,
+     1.534
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Uncle Ray, my mom's brother, has run the fair's hot dog cart for forty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.655,
+   "onset": 0.172,
+   "end": 3.466,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     1.397
+    ],
+    [
+     1.466,
+     1.698
+    ],
+    [
+     1.698,
+     2.034
+    ],
+    [
+     2.034,
+     2.603
+    ],
+    [
+     2.603,
+     3.466
+    ]
+   ]
+  },
+  "L08": {
+   "text": "I've worked it with him every summer since I was fifteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.732
+    ],
+    [
+     0.732,
+     1.207
+    ],
+    [
+     1.207,
+     1.422
+    ],
+    [
+     1.422,
+     2.207
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Ray has one rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.19,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.19,
+     0.526
+    ],
+    [
+     0.526,
+     1.19
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Nothing broken stays broken past breakfast.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.19,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.655,
+     1.19
+    ],
+    [
+     1.19,
+     2.052
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Every morning, he fixes the cart's wobbly wheel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.008
+    ],
+    [
+     1.008,
+     1.319
+    ],
+    [
+     1.319,
+     2.121
+    ]
+   ]
+  },
+  "L12": {
+   "text": "He's fixed half the midway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.155,
+     0.664
+    ],
+    [
+     0.664,
+     1.241
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Monday, I got my card.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.664
+    ],
+    [
+     0.664,
+     1.31
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Break Uncle Ray's heart. Saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.983
+    ],
+    [
+     1.061,
+     1.655
+    ]
+   ]
+  },
+  "L15": {
+   "text": "So I made a plan.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     1.034
+    ]
+   ]
+  },
+  "L16": {
+   "text": "If I wasn't around, I couldn't break anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.914
+    ],
+    [
+     0.966,
+     1.224
+    ],
+    [
+     1.224,
+     2.034
+    ]
+   ]
+  },
+  "L17": {
+   "text": "I stayed away from the cart.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.259
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Tuesday, Ray waved at me across the midway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.586,
+     1.026
+    ],
+    [
+     1.026,
+     1.155
+    ],
+    [
+     1.155,
+     2.034
+    ]
+   ]
+  },
+  "L19": {
+   "text": "He asked if I was free Saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.647
+    ],
+    [
+     0.647,
+     0.922
+    ],
+    [
+     0.922,
+     1.534
+    ]
+   ]
+  },
+  "L20": {
+   "text": "I said I had a thing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.629
+    ],
+    [
+     0.629,
+     1.155
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Wednesday, he got Mom to ask me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.931
+    ],
+    [
+     0.931,
+     1.621
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Thursday, I hid behind the lemonade stand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     1.112
+    ],
+    [
+     1.112,
+     2.069
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Ray bought a lemonade.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.19,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.19,
+     0.526
+    ],
+    [
+     0.526,
+     1.207
+    ]
+   ]
+  },
+  "L24": {
+   "text": "He stood there drinking it for ten minutes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     0.931
+    ],
+    [
+     0.931,
+     1.759
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Friday, I didn't even go to the fair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.19,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.534,
+     0.75
+    ],
+    [
+     0.75,
+     1.026
+    ],
+    [
+     1.026,
+     1.69
+    ]
+   ]
+  },
+  "L26": {
+   "text": "I thought I was so smart.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.155,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.5
+    ],
+    [
+     0.5,
+     1.155
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Saturday, I stayed home.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.19,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.474,
+     1.31
+    ]
+   ]
+  },
+  "L28": {
+   "text": "All day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.983,
+   "onset": 0.19,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Saturday night, Mom sat me down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     1.008
+    ],
+    [
+     1.008,
+     1.621
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Saturday was Ray's last day at the cart.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.19,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.19,
+     0.457
+    ],
+    [
+     0.457,
+     0.81
+    ],
+    [
+     0.81,
+     1.181
+    ],
+    [
+     1.181,
+     1.776
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Forty years, and he was handing it to me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.19,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.19,
+     0.69
+    ],
+    [
+     0.724,
+     0.948
+    ],
+    [
+     0.948,
+     1.31
+    ],
+    [
+     1.31,
+     1.81
+    ]
+   ]
+  },
+  "L32": {
+   "text": "He'd waited at the cart all day with a second apron.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.81
+    ],
+    [
+     0.81,
+     1.259
+    ],
+    [
+     1.259,
+     1.422
+    ],
+    [
+     1.422,
+     2.207
+    ]
+   ]
+  },
+  "L33": {
+   "text": "He'd kept the grill hot till the fair closed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.879
+    ],
+    [
+     0.879,
+     1.043
+    ],
+    [
+     1.043,
+     1.828
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Mom said he never said a word.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.19,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.534,
+     0.992
+    ],
+    [
+     0.992,
+     1.552
+    ]
+   ]
+  },
+  "L35": {
+   "text": "He just folded the second apron and went home.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     1.241
+    ],
+    [
+     1.241,
+     1.983
+    ]
+   ]
+  },
+  "L36": {
+   "text": "The second apron had my name stitched on the pocket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.69,
+     1.147
+    ],
+    [
+     1.147,
+     1.457
+    ],
+    [
+     1.457,
+     2.086
+    ]
+   ]
+  },
+  "L37": {
+   "text": "He'd ordered it in may.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.259
+    ]
+   ]
+  },
+  "L38": {
+   "text": "The machine was right.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.138
+    ]
+   ]
+  },
+  "L39": {
+   "text": "I broke his heart Saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.716
+    ],
+    [
+     0.716,
+     1.345
+    ]
+   ]
+  },
+  "L40": {
+   "text": "By hiding so I wouldn't.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.293
+    ]
+   ]
+  },
+  "L41": {
+   "text": "I sat up all night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.121
+    ]
+   ]
+  },
+  "L42": {
+   "text": "I kept thinking about Ray's rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     1.569
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Nothing broken stays broken past breakfast.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.19,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.655,
+     1.19
+    ],
+    [
+     1.19,
+     2.052
+    ]
+   ]
+  },
+  "L44": {
+   "text": "The card said Saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     1.276
+    ]
+   ]
+  },
+  "L45": {
+   "text": "And it was still Sunday morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.603
+    ],
+    [
+     0.603,
+     1.466
+    ]
+   ]
+  },
+  "L46": {
+   "text": "Barely. It was five a.m.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.621
+    ],
+    [
+     0.621,
+     1.345
+    ]
+   ]
+  },
+  "L47": {
+   "text": "Then somebody knocked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.121
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Ray. On our porch, with two egg sandwiches.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.19,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.19,
+     0.362
+    ],
+    [
+     0.388,
+     0.793
+    ],
+    [
+     0.819,
+     1.086
+    ],
+    [
+     1.086,
+     1.948
+    ]
+   ]
+  },
+  "L49": {
+   "text": "He said it's his rule. It counts for hearts too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.879
+    ],
+    [
+     0.948,
+     1.362
+    ],
+    [
+     1.362,
+     2.034
+    ]
+   ]
+  },
+  "L50": {
+   "text": "He set the second apron on the porch rail.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.922
+    ],
+    [
+     0.922,
+     1.052
+    ],
+    [
+     1.052,
+     1.793
+    ]
+   ]
+  },
+  "L51": {
+   "text": "I put it on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.172,
+   "end": 0.914,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.914
+    ]
+   ]
+  },
+  "L52": {
+   "text": "We sat on the steps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.155,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     1.069
+    ]
+   ]
+  },
+  "L53": {
+   "text": "I said I was sorry.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     1.121
+    ]
+   ]
+  },
+  "L54": {
+   "text": "He said he makes a terrible sandwich.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.698
+    ],
+    [
+     0.698,
+     1.69
+    ]
+   ]
+  },
+  "L55": {
+   "text": "And then he laughed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.155,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.966
+    ]
+   ]
+  },
+  "L56": {
+   "text": "At the cart, he slid me the spatula.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.569,
+     0.974
+    ],
+    [
+     0.974,
+     1.69
+    ]
+   ]
+  },
+  "L57": {
+   "text": "He let me burn the first batch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.612
+    ],
+    [
+     0.612,
+     1.362
+    ]
+   ]
+  },
+  "L58": {
+   "text": "The cart's mine now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.155,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     1.086
+    ]
+   ]
+  },
+  "L59": {
+   "text": "I'm there every morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.31
+    ]
+   ]
+  },
+  "L60": {
+   "text": "So is Ray.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L61": {
+   "text": "He still fixes the wheel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.776
+    ],
+    [
+     0.776,
+     1.362
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Last week I got a new card.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.75
+    ],
+    [
+     0.75,
+     1.466
+    ]
+   ]
+  },
+  "L63": {
+   "text": "It says I'll break his heart again, next Saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.698
+    ],
+    [
+     0.698,
+     0.922
+    ],
+    [
+     0.922,
+     1.172
+    ],
+    [
+     1.224,
+     2.017
+    ]
+   ]
+  },
+  "L64": {
+   "text": "So I'm throwing him a surprise party.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.716
+    ],
+    [
+     0.716,
+     1.655
+    ]
+   ]
+  },
+  "L65": {
+   "text": "I'll be there before breakfast.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.379
+    ]
+   ]
+  }
+ }
+}
