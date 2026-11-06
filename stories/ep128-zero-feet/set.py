@@ -78,7 +78,7 @@ class Pl:
 
 
 # ----------------------------------------------------------------------------------------------- glyphs and digits
-SEG = {"0": "abcdef", "1": "bc", "3": "abcdg", "9": "abcdfg"}
+SEG = {"0": "abcdef", "1": "bc", "3": "abcdghi", "9": "abcdfg"}
 
 
 def seg7(add, ch, cx, cy, H, w, t):
@@ -87,20 +87,24 @@ def seg7(add, ch, cx, cy, H, w, t):
     hv = H / 2
     pos = {"a": ((w, t), (0, H / 2 - t / 2)), "d": ((w, t), (0, -H / 2 + t / 2)), "g": ((w - 2 * t, t), (0, 0)),
            "b": ((t, hv), (w / 2 - t / 2, H / 4)), "c": ((t, hv), (w / 2 - t / 2, -H / 4)),
-           "f": ((t, hv), (-w / 2 + t / 2, H / 4)), "e": ((t, hv), (-w / 2 + t / 2, -H / 4))}
+           "f": ((t, hv), (-w / 2 + t / 2, H / 4)), "e": ((t, hv), (-w / 2 + t / 2, -H / 4)),
+           # curled ends for the 3 (a short tick down from the top bar, up from the bottom bar), so it never reads as an E
+           "h": ((t, 2 * t), (-w / 2 + t / 2, H / 2 - 1.5 * t)), "i": ((t, 2 * t), (-w / 2 + t / 2, -H / 2 + 1.5 * t))}
     for s in on:
         sz, (x, y) = pos[s]
         add(f"seg{s}", sz, (cx + x, cy + y))
 
 
 def foot(add, cx, cy, s):
-    """A footprint: five toes in an arc over the ball, a narrow arch on one side, a heel."""
-    add("ball", (0.72 * s, 0.4 * s), (cx, cy + 0.22 * s))
-    add("ballr", (0.56 * s, 0.1 * s), (cx + 0.02 * s, cy + 0.45 * s))
-    add("arch", (0.2 * s, 0.34 * s), (cx + 0.27 * s, cy - 0.1 * s))
-    add("heel", (0.42 * s, 0.34 * s), (cx + 0.08 * s, cy - 0.43 * s))
-    for k, (dx, dy, w, h) in enumerate([(-0.3, 0.6, 0.2, 0.18), (-0.06, 0.68, 0.14, 0.16), (0.12, 0.68, 0.13, 0.15),
-                                        (0.29, 0.63, 0.12, 0.14), (0.42, 0.55, 0.1, 0.12)]):
+    """A footprint that reads as a sole: a ball, a narrow arch and a heel in one column, and five separate toe dots over
+    a clear gap (so it never reads as a numeral)."""
+    # a peanut-shaped sole (wide ball, narrow waist on the arch side, round heel) built from stacked bars
+    for k, (dx, dy, w, h) in enumerate([(0.0, 0.3, 0.6, 0.14), (0.0, 0.16, 0.84, 0.16), (0.0, 0.0, 0.84, 0.17),
+                                        (0.1, -0.16, 0.54, 0.16), (0.1, -0.31, 0.5, 0.15), (0.07, -0.46, 0.6, 0.16),
+                                        (0.07, -0.61, 0.5, 0.14)]):
+        add(f"sole{k}", (w * s, h * s), (cx + dx * s, cy + dy * s))
+    for k, (dx, dy, w, h) in enumerate([(-0.3, 0.57, 0.19, 0.17), (-0.08, 0.65, 0.15, 0.15), (0.1, 0.65, 0.14, 0.14),
+                                        (0.25, 0.61, 0.13, 0.13), (0.37, 0.55, 0.11, 0.11)]):
         add(f"toe{k}", (w * s, h * s), (cx + dx * s, cy + dy * s))
 
 
@@ -119,7 +123,7 @@ def road(add, cx, cy, s):
         add(f"d{k}", (0.1 * s, h * s), (cx, cy + yy * s))
 
 
-def make_phone(kit, pl, n, loc, yaw, digits, glyph="foot", scale=1.0):
+def make_phone(kit, pl, n, loc, yaw, digits, glyph="foot", scale=1.0, flip=False):
     """A phone lying flat, screen up, top of the screen toward (-sin yaw, cos yaw). Blocky digits and a glyph only."""
     root = pl.empty(n, loc, (0, 0, yaw * D2R))
     root.scale = (scale, scale, scale)
@@ -140,7 +144,7 @@ def make_phone(kit, pl, n, loc, yaw, digits, glyph="foot", scale=1.0):
     pitch = w * 1.35
     x0 = -pitch * (nd - 1) / 2
     for i, ch in enumerate(digits):
-        seg7(lambda nm, sz, xy, i=i: add(f"d{i}{nm}", sz, xy), ch, x0 + i * pitch, -0.07, H, w, 0.022 if nd < 3 else 0.017)
+        seg7(lambda nm, sz, xy, i=i: add(f"d{i}{nm}", sz, (-xy[0] if flip else xy[0], xy[1])), ch, x0 + i * pitch, -0.07, H, w, 0.022 if nd < 3 else 0.017)
     if glyph == "foot":
         foot(lambda nm, sz, xy, rot=0, dark=False: add(f"g{nm}", sz, xy, rot), -0.01, 0.125, 0.105)
     elif glyph == "road":
@@ -253,9 +257,9 @@ def mom_kitchen(kit, pl, n, x, ya, yb, z0, cab_col, fridge_col, fridge_y):
 # ----------------------------------------------------------------------------------------------- the apartment
 def build_apt(kit, O, tag, night, boxes):
     pl = Pl(kit, O, tag)
-    wall = kit.plastic("#d4c6ee" if night else "#f4ead8", 0.85, spec=0.05)
+    wall = kit.plastic("#f3e3c2" if night else "#f4ead8", 0.85, spec=0.05)
     floor = kit.planks("#c08f62", "#b2835a", 1.0) if night else kit.planks("#d9ab72", "#c99a62", 1.0)
-    ceil = kit.plastic("#aca2cc" if night else "#dcd5e2", 0.9, spec=0.02)
+    ceil = kit.plastic("#eadcbe" if night else "#dcd5e2", 0.9, spec=0.02)
     room_shell(kit, pl, "r", -3.0, 3.0, -1.2, 5.6, 0.0, 2.9, wall, floor, ceil,
                front_holes=[(-1.55, -0.65, 0.0, 2.2)], left_holes=[(1.4, 3.8, 0.9, 2.4)])
     white = kit.plastic("#ffffff", 0.6, spec=0.15)
@@ -293,9 +297,9 @@ def build_apt(kit, O, tag, night, boxes):
     # a plain ceiling fixture and two ceiling beams, so a shot at the ceiling reads as a ceiling
     fx = kit.plastic("#f4f0fa", 0.6, spec=0.1)
     pl.cyl("cfix", 0.36, 0.09, (0.3, 3.0, 2.865), fx, nseg=24)
-    pl.cyl("cdome", 0.24, 0.05, (0.3, 3.0, 2.82), kit.emit("#ffe2bd", 0.9, "cdome") if night else fx, nseg=24)
+    pl.cyl("cdome", 0.24, 0.05, (0.3, 3.0, 2.82), fx, nseg=24)   # a plain fixture, never glowing
     for k, by in enumerate((1.7, 4.3)):
-        pl.box(f"cbeam{k}", (5.9, 0.28, 0.07), (0.0, by, 2.865), kit.plastic("#c9c0e2" if night else "#f2eef8", 0.85))
+        pl.box(f"cbeam{k}", (5.9, 0.28, 0.07), (0.0, by, 2.865), kit.plastic("#dccfae" if night else "#f2eef8", 0.85))
     if boxes:
         card = kit.plastic("#d9a86a", 0.8, spec=0.05)
         tape = kit.plastic("#f0d9a0", 0.6)
@@ -305,8 +309,8 @@ def build_apt(kit, O, tag, night, boxes):
             pl.box(f"cb{k}", (sx, sy, sz), (x, y, z), card, rot=(0, 0, r), bevel=0.01)
             pl.box(f"cbt{k}", (0.1, sy + 0.01, 0.012), (x, y, z + sz / 2 + 0.005), tape, rot=(0, 0, r))
     # steady light. By night: the ceiling lamps are low, a warm key from the front lights my face, the dusk window glows violet
-    warm = "#ffd9a8" if night else "#fff3e0"
-    dm = 0.3 if night else 1.0
+    warm = "#ffcf94" if night else "#fff3e0"
+    dm = 0.55 if night else 1.0
     pl.light("k1", (-1.4, 2.0, 2.25), 520 * dm, warm)
     pl.light("k2", (1.4, 2.0, 2.25), 520 * dm, warm)
     pl.light("k3", (0.0, 4.1, 2.25), 460 * dm, warm)
@@ -314,8 +318,13 @@ def build_apt(kit, O, tag, night, boxes):
     pl.light("f2", (1.8, 0.0, 1.4), 220 * (0.8 if night else 1.0), warm)
     pl.light("f3", (-1.0, -0.6, 1.6), 200 * (0.8 if night else 1.0), warm)
     if night:
-        pl.light("win", (-2.5, 2.6, 1.9), 520, "#9d86ff")
-        pl.light("bwin", (-1.3, 4.6, 2.2), 160, "#a890ff")
+        pl.light("win", (-2.5, 2.6, 1.9), 150, "#9d86ff")      # violet only in the window
+        pl.light("bwin", (-1.3, 4.6, 2.2), 50, "#a890ff")
+        # a steady amber lamp by the couch
+        pl.cyl("lamp.pole", 0.035, 1.3, (0.35, 5.2, 0.65), kit.plastic("#555a66", 0.4, spec=0.5), nseg=8)
+        pl.cyl("lamp.base", 0.16, 0.04, (0.35, 5.2, 0.02), kit.plastic("#555a66", 0.4, spec=0.5), nseg=14)
+        pl.cyl("lamp.shade", 0.24, 0.34, (0.35, 5.2, 1.45), kit.emit("#ffb54d", 0.7, "ambershade"), nseg=16, r2=0.16)
+        pl.light("lamp", (0.2, 4.6, 1.5), 360, "#ffb25c", size=0.5)
     else:
         pl.light("win", (-2.5, 2.6, 1.9), 420, "#fff6e6")
 
@@ -351,9 +360,9 @@ def build_stair(kit, O, tag, night, flat):
     pl.box("rail", (0.07, ln, 0.07), (-1.0, 2.1, (LAND + G.STEP_DZ) / 2 + 0.85), white, rot=(ang, 0, 0))
     # the newel post at the foot, a brass cap with two mint strokes scratched on its front
     pl.box("newel", (0.26, 0.26, 1.05), (-1.0, -0.2, 0.525), white)
-    pl.box("cap", (0.38, 0.38, 0.16), (-1.0, -0.2, 1.13), brass, bevel=0.01)
-    for k in range(2):
-        pl.box(f"cap{k}", (0.035, 0.02, 0.11), (-1.06 + k * 0.12, -0.4, 1.13), kit.plastic("#2fae7a", 0.5))
+    pl.box("cap", (0.4, 0.4, 0.18), (-1.0, -0.2, 1.14), brass, bevel=0.01)
+    for k in range(2):   # two thick dark-green strokes, 3 cm proud of the cap's front
+        pl.box(f"cap{k}", (0.06, 0.03, 0.14), (-1.07 + k * 0.14, -0.415, 1.14), kit.plastic("#0b6b40", 0.5))
     # the landing window and its painted backdrop, the landing light (a fixture, always on)
     window_backdrop(kit, pl, "lw", -2.1, 4.6, 6.0, 3.1, 5.0, night, k=0.55)
     pl.box("lfix", (0.5, 0.5, 0.07), (0, 5.3, top_z - 0.04), kit.emit("#ffc070", 0.9 if not night else 1.1, "landlamp"))
@@ -364,8 +373,17 @@ def build_stair(kit, O, tag, night, flat):
     pl.light("foot", (0, -1.9, 3.0), 600 * (0.85 if night else 1.0), "#fff3df")
     # Mom's door at the top
     hinge = pl.empty("hinge", (-0.55, G.DOOR_Y - 0.0, LAND), (0, 0, (100 if flat else 0) * D2R))
-    pl.box("leaf", (1.1, 0.08, 2.2), (0.55, 0, 1.1), kit.plastic("#d4b8f2", 0.6, spec=0.15), bevel=0.02, parent=hinge)
+    pl.box("leaf", (1.1, 0.08, 2.2), (0.55, 0, 1.1), kit.plastic("#b890e8", 0.6, spec=0.15), bevel=0.02, parent=hinge)
     pl.sph("pknob", 0.05, (0.95, 0.07, 1.05), brass, parent=hinge)
+    pl.sph("pknobF", 0.075, (0.93, -0.1, 1.05), brass, parent=hinge)
+    pl.box("pknobP", (0.12, 0.05, 0.12), (0.93, -0.06, 1.05), brass, bevel=0.01, parent=hinge)
+    panel = kit.plastic("#8f63c4", 0.6, spec=0.1)
+    for nm, zc, hh in (("a", 1.62, 0.8), ("b", 0.55, 0.7)):
+        pl.box(f"ppan{nm}", (0.7, 0.03, hh), (0.5, -0.055, zc), panel, bevel=0.01, parent=hinge)
+    frm = kit.plastic("#6a4328", 0.6, spec=0.1)
+    for sx in (-1, 1):
+        pl.box(f"dfr{sx}", (0.12, 0.1, 2.2), (sx * 0.61, G.DOOR_Y - 0.07, LAND + 1.1), frm, bevel=0.01)
+    pl.box("dfrT", (1.34, 0.1, 0.12), (0, G.DOOR_Y - 0.07, LAND + 2.26), frm, bevel=0.01)
     if not flat:
         pl.wall_x("wb", 6.5, -1.4, 1.4, 0.0, top_z, 0.2, mint)
         return pl
@@ -409,12 +427,12 @@ def build_stair(kit, O, tag, night, flat):
     # floor lamps (steady shades) and the lights that make her room bright
     for k, (lx, ly) in enumerate([(-2.5, 7.4), (2.6, 11.6)]):
         pl.cyl(f"lp{k}", 0.04, 1.4, (lx, ly, z0 + 0.7), kit.plastic("#555a66", 0.4, spec=0.5), nseg=8)
-        pl.cyl(f"ls{k}", 0.22, 0.34, (lx, ly, z0 + 1.55), kit.emit("#fff0c8", 1.4, "lampshade"), nseg=16, r2=0.16)
-    pl.light("fkey", (0.0, 9.6, z0 + 2.3), 420, "#fff0dc")
-    pl.light("ffront", (0.0, 7.0, z0 + 2.0), 380, "#fff4e6")
-    pl.light("ffront2", (-1.2, 7.4, z0 + 1.6), 200, "#fff4e6")
-    pl.light("fback", (0.0, 11.3, z0 + 2.2), 200, "#fff0dc")
-    pl.light("fwin", (-2.5, 9.4, z0 + 1.9), 120, "#c9bcff")
+        pl.cyl(f"ls{k}", 0.22, 0.34, (lx, ly, z0 + 1.55), kit.emit("#ffe9b0", 0.8, "flampshade"), nseg=16, r2=0.16)
+    pl.light("fkey", (0.0, 9.6, z0 + 2.3), 230, "#fff0dc")
+    pl.light("ffront", (0.0, 7.0, z0 + 2.0), 200, "#fff4e6")
+    pl.light("ffront2", (-1.2, 7.4, z0 + 1.6), 100, "#fff4e6")
+    pl.light("fback", (0.0, 11.3, z0 + 2.2), 120, "#fff0dc")
+    pl.light("fwin", (-2.5, 9.4, z0 + 1.9), 100, "#c9bcff")
     return pl
 
 
@@ -683,9 +701,16 @@ def build_tag(kit):
             return b(f"tag.{prefix}.{name}", (size[0], size[1], 0.004), (xy[0], xy[1], 0.008), cream if cutout else ink, rot)
         return add
 
-    house(add_ink("h"), -0.31, 0.0, 0.2)
-    foot(add_ink("f"), -0.01, 0.0, 0.27)
-    seg7(lambda nm, sz, xy: b(f"tag.z.{nm}", (sz[0], sz[1], 0.004), (xy[0], xy[1], 0.008), ink), "0", 0.31, 0.0, 0.33, 0.2, 0.06)
+    house(add_ink("h"), -0.355, 0.0, 0.17)
+    fadd = add_ink("f")
+    fcx, fcy, th = -0.07, 0.0, 14.0
+
+    def frot(name, size, xy, rot=0, cutout=False):   # the print leans, like a real one
+        dx, dy = xy[0] - fcx, xy[1] - fcy
+        c, sn = math.cos(th * D2R), math.sin(th * D2R)
+        return fadd(name, size, (fcx + dx * c - dy * sn, fcy + dx * sn + dy * c), rot + th)
+    foot(frot, fcx, fcy, 0.27)
+    seg7(lambda nm, sz, xy: b(f"tag.z.{nm}", (sz[0], sz[1], 0.004), (xy[0], xy[1], 0.008), ink), "0", 0.355, 0.0, 0.32, 0.18, 0.06)
 
 
 def _first_frame(kit, story):
@@ -731,7 +756,7 @@ def animate(kit, story, tl, t, ctx):
     s = 0.62 * w2
     tag = W["tag"]
     tag.scale = (s, s, s)
-    tag.location = (-0.66 * w2, 0.76 * h2, -dist)
+    tag.location = (-0.52 * w2, 0.76 * h2, -dist)
     # who sits: legs straight out forward, hips on the seat
     sits = {}
     for c in sorted(tl["cues"], key=lambda c: c["t"]):

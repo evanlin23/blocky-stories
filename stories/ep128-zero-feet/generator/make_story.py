@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = timeline.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L24")
@@ -179,6 +179,12 @@ def hookcam(O, push):
     return fc(O, -1.08, CY, 0.95, 3.3, 36, dx=0.0, dz=0.95, push=push)
 
 
+def walkcam(O):
+    """My walk to the kitchen, kept close so my face is over a fifth of the frame all the way, ending with my whole
+    face to camera where I stop at (STX, STY)."""
+    return mv(A(O, 0.1, -0.2, 1.55), A(O, -0.1, 3.8, 1.45), 28, A(O, 1.0, -0.3, 1.55), A(O, 1.38, 2.4, 1.5), 28)
+
+
 def momcam(tz, d, lens, dx=0.0, tx=MOMX, ty=MOMY, **kw):
     return fc(SN, tx, ty, MZ + tz, d, lens, dx=dx, **kw)
 
@@ -252,7 +258,7 @@ shot("L14", mv(A(AN, 0.6, 1.8, 0.45), A(AN, 0.3, 3.0, 2.85), 28, A(AN, 0.5, 2.0,
 put("me", "L15", A(AN, -0.45, 4.2), 40, expr="neutral")
 go("me", "L15+1.1", A(AN, STX, STY), yaw=40)
 beat("me", "L15+1.15", yaw=0, expr="neutral")
-shot("L15", mv(A(AN, 0.5, -0.7, 1.55), A(AN, 0.45, 3.6, 1.25), 22, A(AN, 0.55, -0.3, 1.55), A(AN, 0.6, 3.3, 1.3), 22), "walk")
+shot("L15", walkcam(AN), "walk")
 only("L15.2", [])
 shot("L15.2", mv(A(AN, -0.3, 1.2, 0.4), A(AN, 2.7, 2.4, 2.55), 28, A(AN, -0.2, 1.4, 0.4), A(AN, 2.7, 2.6, 2.65), 28), "ceiling2")
 put("me", "L16", A(AN, STX, STY), 0, expr="worried", head=[0, UP])
@@ -261,7 +267,7 @@ beat("me", "L17", expr="scared", head=[0, UP - 4])
 shot("L17", fc(AN, STX, STY, 1.6, 2.7, 44, dx=0.1, push=0.06), "scared1")
 # L18: the stairwell by day, the tally on the newel post
 only("L18", [])
-shot("L18", mv(A(SD, -0.45, -2.6, 1.6), A(SD, -0.45, 6.4, 2.5), 22, A(SD, -0.4, -2.3, 1.6), A(SD, -0.4, 6.4, 2.55), 22), "stairs")
+shot("L18", mv(A(SD, -0.8, -1.6, 1.55), A(SD, -0.75, 1.0, 1.35), 24, A(SD, -0.8, -1.2, 1.55), A(SD, -0.7, 1.6, 1.5), 24), "stairs")
 shot("L18.2", mv(A(SD, 0.3, 1.8, 1.9), A(SD, 0.0, 6.4, 3.6), 30, A(SD, 0.15, 2.4, 2.4), A(SD, 0.0, 6.4, 3.7), 30), "stairs2")
 put("me", "L19", A(SD, 0.0, -2.55), 180, expr="worried", head=[0, UP + 6])
 sit("me", "L19", False)
@@ -280,23 +286,23 @@ shot("L22", mv(A(AN, 0.1, 0.0, 0.45), A(AN, -0.05, 2.7, 0.2), 25, A(AN, 0.05, 0.
 put("me", "L23", A(AN, -0.3, 2.7), 0, expr="scared", head=[0, UP])
 shot("L23", fc(AN, -0.3, 2.7, 1.55, 2.4, 46, dx=0.1, push=0.1), "scared2")
 only("P01", [])
-shot("P01", mv(A(AN, 1.6, 0.7, 0.4), A(AN, -0.5, 3.0, 2.8), 28, A(AN, 1.5, 0.9, 0.4), A(AN, -0.4, 3.0, 2.8), 28), "ceiling4")
+shot("P01", mv(A(AN, 0.8, 3.9, 0.4), A(AN, -1.5, 1.0, 2.85), 28, A(AN, 0.9, 4.0, 0.4), A(AN, -1.7, 1.2, 2.85), 28), "ceiling4")
 
 # ===== 05 the stairs and the reveal (L24 to L33)
 put("me", "L24", A(SN, 0.0, -2.55), 180, expr="scared")
 go("me", "L24.1", A(SN, 0.0, -2.55), yaw=180)
 go("me", "L24.1+0.9", A(SN, 0.0, 4.0, LAND), yaw=180, run=True)
-shot("L24", mv(A(SN, 0.45, 3.4, 3.3), A(SN, 0.0, -2.5, 1.5), 62, A(SN, 0.3, 1.2, 2.0), A(SN, 0.0, 0.2, 1.7), 40), "run")
+shot("L24", mv(A(SN, 0.8, 5.4, 5.3), A(SN, 0.0, -2.0, 1.5), 22, A(SN, 0.8, 5.3, 5.3), A(SN, 0.0, 0.0, 1.3), 20), "run")
 only("L25", [])
 shot("L25", mv(A(SN, 0.1, 3.9, LAND + 1.5), A(SN, 0.0, 9.6, LAND + 1.35), 22, A(SN, 0.05, 4.3, LAND + 1.5), A(SN, 0.0, 9.6, LAND + 1.35), 22),
      "opendoor")
 only("L26", ["mom"])
-mom_stand("L26", MOMX, MOMY, "sad-smile")
+mom_stand("L26", MOMX, MOMY, "neutral")
 freeze("L26")
 sit("me", "L26", False)
-shot("L26", momcam(1.05, 2.7, 34, push=0.04, az=32), "frozen")
-shot("L26.1", mv([SN[0] + 1.9, SN[1] + MOMY - 1.7, MZ + 0.45], [SN[0] + MOMX - 0.05, SN[1] + MOMY, MZ + 0.25], 24,
-                 [SN[0] + 1.8, SN[1] + MOMY - 1.6, MZ + 0.45], [SN[0] + MOMX - 0.05, SN[1] + MOMY, MZ + 0.25], 24), "slippers")
+shot("L26", momcam(1.25, 2.7, 34, push=0.04, az=8), "frozen")
+shot("L26.1", mv([SN[0] + 1.2, SN[1] + MOMY - 1.3, MZ + 0.3], [SN[0] + MOMX - 0.05, SN[1] + MOMY, MZ + 0.12], 28,
+                 [SN[0] + 1.1, SN[1] + MOMY - 1.25, MZ + 0.3], [SN[0] + MOMX - 0.05, SN[1] + MOMY, MZ + 0.12], 28), "slippers")
 put("me", "L26.2", A(SN, 0.0, 6.55, LAND), 180, expr="scared")
 shot("L26.2", mv(A(SN, 0.5, 9.0, LAND + 1.7), A(SN, 0.0, 6.55, LAND + 1.55), 44, A(SN, 0.4, 8.7, LAND + 1.7), A(SN, 0.0, 6.55, LAND + 1.55), 44),
      "mefreeze")
@@ -304,21 +310,20 @@ only("L27", ["mom"])
 shot("L27", momcam(1.55, 3.3, 52, dx=0.35, push=0.1), "momface")
 beat("mom", "L28", expr="sad-smile")
 shot("L28", momcam(1.55, 2.8, 52, dx=0.3, push=0.08), "momface2")
-beat("mom", "L28+0.5", expr="smile")
 only("L29", ["me"])
 put("me", "L29", A(SN, 0.0, 6.55, LAND), 180, expr="wide")
 shot("L29", mv(A(SN, -0.3, 9.0, LAND + 1.7), A(SN, 0.0, 6.55, LAND + 1.55), 44, A(SN, -0.2, 8.7, LAND + 1.7), A(SN, 0.0, 6.55, LAND + 1.55), 44),
      "mestunned")
 only("L30", ["mom"])
 shot("L30", momcam(1.55, 2.7, 52, dx=0.35, push=0.1), "momsmile")
-mom_stand("L30", MOMX, MOMY, "smile")
+mom_stand("L30", MOMX, MOMY, "sad-smile")
 # L31: I walk to my kitchen on "Every step I took", Mom walks to hers on "she took it TOO"
 freeze("L31", False)
 only("L31", ["me"])
 put("me", "L31", A(AN, -0.45, 4.2), 40, expr="neutral")
 go("me", "L31+0.95", A(AN, STX, STY), yaw=40)
 beat("me", "L31+1.0", yaw=0)
-shot("L31", mv(A(AN, 0.3, 0.7, 1.5), A(AN, 0.3, 3.4, 1.4), 24, A(AN, 0.95, 0.7, 1.5), A(AN, 1.2, 2.6, 1.4), 24), "mewalk")
+shot("L31", walkcam(AN), "mewalk")
 only("L31.2", ["mom"])
 put("mom", "L31.2", [SN[0] - 0.3, SN[1] + 10.9, MZ], 0, expr="smile", arms=[0, 0])
 go("mom", "L31.2+0.15", [SN[0] - 0.3, SN[1] + 10.9, MZ])
@@ -360,7 +365,7 @@ shot("L40", fc(AD, CX, CY, 1.5, 2.5, 42, dx=0.1, push=0.1, az=-10), "givingup")
 me_stand(AN, "L41", -0.45, 4.2, "neutral", yaw=40)
 go("me", "L41+0.7", A(AN, STX, STY), yaw=40)
 beat("me", "L41+0.75", yaw=0)
-shot("L41", mv(A(AN, 0.5, -0.7, 1.55), A(AN, 0.45, 3.6, 1.25), 22, A(AN, 0.55, -0.3, 1.55), A(AN, 0.6, 3.3, 1.3), 22), "nightwalk")
+shot("L41", walkcam(AN), "nightwalk")
 only("L41.2", [])
 shot("L41.2", mv(A(AN, -0.5, 0.8, 0.4), A(AN, 2.7, 2.4, 2.6), 28, A(AN, -0.4, 1.0, 0.4), A(AN, 2.7, 2.6, 2.7), 28), "ceiling5")
 only("L42", ["me"])
@@ -413,7 +418,8 @@ music = {
 }
 sound = {
     "floor": "wood", "steps_db": -26,
-    "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -44}],
+    # the story's own room tone stops at the drop and the polish bed (also room tone, -44 LUFS) carries it through
+    "ambience": [{"kind": "room", "from": 0, "to": "P01", "lufs": -44}, {"kind": "room", "from": "P01>", "to": "end", "lufs": -44}],
     "sfx": sfx,
     "music_drops": [{"from": "P01", "to": "P01>"}],
     "rev": REV,
@@ -424,7 +430,7 @@ remap_all(sound["music_drops"])
 remap_all(sound["ambience"])
 polish = {"reveal": [remap("L27"), remap("L28")], "twist": remap("L28"),
           "emph": [remap(x) for x in ["L01.0", "L03.1", "L12.2", "L17", "L23", "L26.1", "L28", "L32.1", "L44"]],
-          "quiet": [[remap("L35"), remap("L37")]],
+          "quiet": [[remap("L35"), remap("L37")]], "bed_drop_db": 0.0, "max_zoom": 1.12,
           "hold": [names["opendoor"], names["stairs"], names["den"], names["phone900"], names["feet"], names["herlaundry"], names["slippers"], names["walk"], names["mewalk"], names["nightwalk"], names["momwalk"]]}
 story = {
     "slug": "ep128-zero-feet",

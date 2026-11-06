@@ -414,30 +414,30 @@
    ]
   },
   "L18": {
-   "text": "The apartment upstairs was empty when I moved in.",
+   "text": "The apartment upstairs was empty when I signed my lease.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.345,
+   "dur": 2.5,
    "onset": 0.155,
-   "end": 2.155,
+   "end": 2.31,
    "chunks": [
     [
      0.155,
-     0.914
+     0.897
     ],
     [
-     0.914,
-     1.285
+     0.897,
+     1.267
     ],
     [
-     1.285,
-     1.466
+     1.267,
+     1.672
     ],
     [
-     1.466,
-     2.155
+     1.672,
+     2.31
     ]
    ]
   },
