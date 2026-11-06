@@ -473,9 +473,9 @@ S("L39", MV((-1.0, -1.0, 1.5), (-1.4, 0.9, 1.3), (-1.1, -0.7, 1.45), (-1.4, 0.9,
   note="me holding the blue diary to my chest, scared")
 cue("L40", "mydoor", to=80, dur=0.4)
 S("L40", MV((-2.9, -1.7, 1.2), (0.0, -0.5, 1.0), (-2.2, -1.7, 1.2), (0.6, -0.5, 1.0), 32),
-  who={"me": (X(-1.1, -0.85), 0, "scared", {"arms": [70, 70]})},
+  who={"me": (X(-1.1, -0.85), 90, "scared", {"arms": [70, 70]})},
   note="me crossing the hall in socks")
-raw("me", "L40+0.3", pos=[1.0, -0.6], yaw=90, arms=[70, 70])
+raw("me", "L40+1.7", pos=[1.0, -0.6], yaw=90, arms=[70, 70])
 cue("L41", "ndoor", to=40, dur=0.3)
 S("L41", MV((3.2, -1.6, 1.3), (1.6, 0.0, 1.1), (3.0, -1.45, 1.3), (1.6, 0.0, 1.1), 30),
   who={"me": (X(1.0, -0.6), 90, "scared", {"arms": [70, 70]})},
@@ -666,7 +666,7 @@ S("L71", MV((-3.2, 3.45, 1.55), (-3.2, 4.38, 1.58), (-3.25, 4.0, 1.6), (-3.25, 4
   look={"cutwall": False},
   note="the framed bookshelf photo on my wall, a sea-green spine among the books")
 S("L72", MV((0.9, 1.1, 1.65), (-1.3, 1.15, 1.55), (0.7, 1.1, 1.65), (-1.3, 1.15, 1.55), 22),
-  who={"me": (X(-1.3, 1.6), 90, "worried", {}), "nina": (X(-1.3, 0.75), 90, "worried", {})},
+  who={"me": (X(-0.85, 1.4), 90, "worried", {}), "nina": (X(-1.9, 1.0), 90, "worried", {})},
   look={"cutwall": True},
   note="me and Nina side by side at my desk, worried")
 write("blue", "L73", "green", dur=1.0, to=1.0, tag="third2")
@@ -721,7 +721,8 @@ story = {
     "cues": cues,
     "shotlook": SHOTLOOK,
     "fx": [],
-    "rev": 11,
+    "rev": 12,
+    "staging_ok": ["S15/me+nina: both bodies are only edge slivers, keys shot", "S82/me+nina: at an angle, bodies read apart, no arm overlap", "S91/me+nina: face to face sitting talking, no overlap", "S92/me+nina: face to face sitting laughing, no overlap"],
     "music": {"root": 51, "mode": "major", "bpm": 100, "seed": 89, "sections": [
         {"at": 0, "voices": ["bubble", "pulse"], "energy": 0.35},
         {"at": "L21", "voices": ["piano", "drone"], "energy": 0.4, "mode": "minor"},

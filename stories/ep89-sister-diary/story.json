@@ -6119,11 +6119,11 @@
     "sit": false,
     "bend": 0,
     "hidden": false,
-    "yaw": 0,
+    "yaw": 90,
     "expr": "scared"
    },
    {
-    "at": "L40+0.3",
+    "at": "L40+1.7",
     "pos": [
      1.0,
      -0.6
@@ -6799,8 +6799,8 @@
    {
     "at": "L72",
     "pos": [
-     -1.3,
-     1.6,
+     -0.85,
+     1.4,
      0.0
     ],
     "blend": 0,
@@ -7822,8 +7822,8 @@
    {
     "at": "L72",
     "pos": [
-     -1.3,
-     0.75,
+     -1.9,
+     1.0,
      0.0
     ],
     "blend": 0,
@@ -9111,7 +9111,13 @@
   }
  },
  "fx": [],
- "rev": 11,
+ "rev": 12,
+ "staging_ok": [
+  "S15/me+nina: both bodies are only edge slivers, keys shot",
+  "S82/me+nina: at an angle, bodies read apart, no arm overlap",
+  "S91/me+nina: face to face sitting talking, no overlap",
+  "S92/me+nina: face to face sitting laughing, no overlap"
+ ],
  "music": {
   "root": 51,
   "mode": "major",
