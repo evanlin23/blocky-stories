@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 14
+REV = 15
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -257,12 +257,12 @@ shot("L07+1.2", mv([11.6, 1.8, 1.5], [10.0, 7.2, 1.45], 34, push=0.1), "ray_ripp
 only("L08", [])
 shot("L08", mv([DX - 5.0, DY - 8.0, 2.6], [DX - 0.5, DY, 3.2], 24, [DX - 4.2, DY - 7.4, 2.6], [DX - 0.5, DY, 3.2], 24), "shop_day")
 rip_off("L08")
-put("dad", "L08+0.85", [DX - 0.4, DY - 3.6], 0, expr="smile", arms=[0, 0])
-put("me", "L08+0.85", [DX + 0.4, DY - 3.6], 0, expr="smile", arms=[0, 0])
+put("dad", "L08+0.85", [DX - 0.75, DY - 3.6], 0, expr="smile", arms=[0, 0])
+put("me", "L08+0.85", [DX + 0.75, DY - 3.6], 0, expr="smile", arms=[0, 0])
 only("L08+0.85", ["dad", "me"])
 cue("L08+0.85", "bezel", v=1.0)
 cue("L09", "bezel", v=0.0)
-shot("L08+0.85", mv([DX, DY - 6.8, 1.6], [DX, DY - 3.6, 1.5], 25, [DX, DY - 6.3, 1.6], [DX, DY - 3.6, 1.5], 25), "photo")
+shot("L08+0.85", mv([DX, DY - 6.8, 1.6], [DX, DY - 3.6, 1.5], 19, [DX, DY - 6.3, 1.6], [DX, DY - 3.6, 1.5], 19), "photo")
 # L09: me at the door two years ago, Dad behind me
 put("me", "L09", [NX + 0.0, NY - 0.7, AZ], 0, expr="angry", arms=[40, 40])
 put("dad", "L09", [NX + 0.72, NY + 0.5, AZ], 0, expr="glum")
@@ -494,13 +494,13 @@ cue("L65-0.02", "dadfill", v=0.0, dur=0.0)
 put("dad", "L64", [NX - 3.05, NY + 5.06, AZ], 270, expr="sheepish", arms=[0, 0], side=[0, 0], head=[12, 8], look=[0.5, 0.4])
 beat("dad", "L64+1.15", expr="sheepish", head=[18, 13], look=[0.7, 0.5])
 shot("L64", mv([NX - 4.4, NY + 5.24, AZ + 1.52], [NX - 3.2, NY + 5.13, AZ + 1.27], 12, [NX - 4.36, NY + 5.24, AZ + 1.51], [NX - 3.2, NY + 5.13, AZ + 1.275], 12), "toast")
-CH = [NX - 0.15, NX + 0.75]
+CH = [NX - 0.45, NX + 1.05]   # 1.5 m apart (staging: 1.42+ so the arms clear)
 put("me", "L65", [CH[0], NY + 4.75, AZ], 0, expr="smile")
 put("dad", "L65", [CH[1], NY + 4.75, AZ], 0, expr="smile")
 sit("me", "L65")
 sit("dad", "L65")
 only("L65", ["me", "dad"])
-shot("L65", mv([NX + 0.3, NY + 0.9, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 30, [NX + 0.3, NY + 1.3, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 30), "table2")
+shot("L65", mv([NX + 0.3, NY + 0.9, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 22, [NX + 0.3, NY + 1.3, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.3], 22), "table2")
 beat("me", "L66", expr="sheepish")
 beat("dad", "L66", expr="sheepish")
 talk("me", "L66+0.25", "L66>", 0.9)
@@ -517,7 +517,7 @@ cue("L68", "plates", v=1.0)
 cue("L68", "eggs", v=0.0)
 beat("me", "L68", expr="smile")
 beat("dad", "L68", expr="smile")
-shot("L68", mv([NX + 0.3, NY + 0.9, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.55], 28, [NX + 0.3, NY + 1.3, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.5], 28), "cold_eggs")
+shot("L68", mv([NX + 0.3, NY + 0.9, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.55], 22, [NX + 0.3, NY + 1.3, AZ + 1.5], [NX + 0.3, NY + 4.75, AZ + 1.5], 22), "cold_eggs")
 sit("me", "L69", on=False)
 sit("dad", "L69", on=False)
 put("dad", "L69", [DX - 2.2, DY - 0.9, 1.8], 0, expr="smile", arms=[0, 150])
@@ -635,6 +635,8 @@ story = {
     "set_moves": [],
     "clip_ok": ["ripple"],
     "framing_ok": [],
+    # staging_ok: S05 me+neighbor was checked on the final by the QA desk 2026-11-06: reads as two bodies.
+    "staging_ok": ["S05/me+neighbor"],
     # frames_ok reasons: S10 = an idle blink on the neighbor's big face 0.13 s in (the pose is right, the lint reads the closed eyes as a pop);
     # S18 = the door slam: the door shuts on the shot's first beat (cue door v=0, 0.15 s) and is meant; S33 = the camera climbs out from behind
     # the window ledge at the cut, so the bottom corner brightens as it clears (no light fades in).
