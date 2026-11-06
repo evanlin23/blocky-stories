@@ -1,0 +1,1149 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Here, every time you say you're proud of someone, you grow an inch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     0.94
+    ],
+    [
+     0.94,
+     1.233
+    ],
+    [
+     1.233,
+     1.655
+    ],
+    [
+     1.724,
+     1.974
+    ],
+    [
+     1.974,
+     2.552
+    ]
+   ]
+  },
+  "L02": {
+   "text": "So people here are careful who they brag about.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.069
+    ],
+    [
+     1.069,
+     1.25
+    ],
+    [
+     1.25,
+     1.948
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Bragging dads duck under every door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.784
+    ],
+    [
+     0.784,
+     1.086
+    ],
+    [
+     1.086,
+     1.793
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Our mail carrier is proud of her tomatoes. She's seven foot two.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.155,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.155,
+     0.732
+    ],
+    [
+     0.732,
+     1.094
+    ],
+    [
+     1.094,
+     1.672
+    ],
+    [
+     1.75,
+     2.146
+    ],
+    [
+     2.146,
+     2.81
+    ]
+   ]
+  },
+  "L05": {
+   "text": "At weddings, the bride's dad dances on his knees.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.595,
+     1.224
+    ],
+    [
+     1.224,
+     1.578
+    ],
+    [
+     1.578,
+     2.241
+    ]
+   ]
+  },
+  "L06": {
+   "text": "My grandpa, Gil, runs the hardware store.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ],
+    [
+     0.948,
+     1.224
+    ],
+    [
+     1.224,
+     2.052
+    ]
+   ]
+  },
+  "L07": {
+   "text": "He's nine feet tall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.172
+    ]
+   ]
+  },
+  "L08": {
+   "text": "He sits on an upturned crate so customers can see his face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.155,
+   "end": 2.707,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     1.31
+    ],
+    [
+     1.31,
+     1.948
+    ],
+    [
+     1.948,
+     2.707
+    ]
+   ]
+  },
+  "L09": {
+   "text": "He says maybe ten words a day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     1.026
+    ],
+    [
+     1.026,
+     1.586
+    ]
+   ]
+  },
+  "L10": {
+   "text": "And he has never said it to me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
+     0.698
+    ],
+    [
+     0.698,
+     0.931
+    ],
+    [
+     0.931,
+     1.414
+    ]
+   ]
+  },
+  "L11": {
+   "text": "I've worked his counter every Saturday for six years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.862
+    ],
+    [
+     0.862,
+     1.397
+    ],
+    [
+     1.397,
+     2.224
+    ]
+   ]
+  },
+  "L12": {
+   "text": "And I've never said it to anyone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     0.845
+    ],
+    [
+     0.845,
+     1.534
+    ]
+   ]
+  },
+  "L13": {
+   "text": "So he's proud of somebody else.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.431
+    ]
+   ]
+  },
+  "L14": {
+   "text": "He's sewn new cloth on his hems every few months.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.854
+    ],
+    [
+     0.854,
+     1.276
+    ],
+    [
+     1.276,
+     2.103
+    ]
+   ]
+  },
+  "L15": {
+   "text": "His hat lives on the top shelf.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     0.81
+    ],
+    [
+     0.81,
+     1.517
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Then one Saturday, I came in early.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.81
+    ],
+    [
+     0.836,
+     1.077
+    ],
+    [
+     1.077,
+     1.724
+    ]
+   ]
+  },
+  "L17": {
+   "text": "The lights were off.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.017
+    ]
+   ]
+  },
+  "L18": {
+   "text": "And I heard Grandpa talking. In the dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.828
+    ],
+    [
+     0.828,
+     1.207
+    ],
+    [
+     1.285,
+     1.914
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Then the ceiling creaked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.121
+    ]
+   ]
+  },
+  "L20": {
+   "text": "A tile over his crate pushed up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.914
+    ],
+    [
+     0.914,
+     1.5
+    ]
+   ]
+  },
+  "L21": {
+   "text": "I hit the lights. Our neighbor Missus Bloom was at the counter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.81
+    ],
+    [
+     0.879,
+     1.224
+    ],
+    [
+     1.224,
+     1.707
+    ],
+    [
+     1.707,
+     1.87
+    ],
+    [
+     1.87,
+     2.5
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Holding a kitchen faucet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     1.362
+    ]
+   ]
+  },
+  "L23": {
+   "text": "She'd fixed it herself, at five in the morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.19,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.19,
+     0.543
+    ],
+    [
+     0.543,
+     0.914
+    ],
+    [
+     0.94,
+     1.319
+    ],
+    [
+     1.319,
+     1.948
+    ]
+   ]
+  },
+  "L24": {
+   "text": "And Grandpa had just told her he was proud of her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     0.845
+    ],
+    [
+     0.845,
+     1.138
+    ],
+    [
+     1.138,
+     1.594
+    ],
+    [
+     1.594,
+     2.052
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Anyone here who fixes something with their own hands,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.129
+    ],
+    [
+     1.129,
+     1.345
+    ],
+    [
+     1.345,
+     2.103
+    ]
+   ]
+  },
+  "L26": {
+   "text": "he says it to. For fifty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.655
+    ],
+    [
+     0.724,
+     1.586
+    ]
+   ]
+  },
+  "L27": {
+   "text": "That's most of his ten words a day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.094
+    ],
+    [
+     1.094,
+     1.638
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Then Missus Bloom nodded at his back door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.784
+    ],
+    [
+     0.784,
+     1.034
+    ],
+    [
+     1.034,
+     1.19
+    ],
+    [
+     1.19,
+     1.862
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Pencil marks. All the way up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.724,
+     0.897
+    ],
+    [
+     0.897,
+     1.431
+    ]
+   ]
+  },
+  "L30": {
+   "text": "One for every inch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.121
+    ]
+   ]
+  },
+  "L31": {
+   "text": "And next to each one, a tiny drawing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.845
+    ],
+    [
+     0.897,
+     1.793
+    ]
+   ]
+  },
+  "L32": {
+   "text": "A bike. A whole roof.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.466,
+     1.155
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Every inch is somebody in this town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.931
+    ],
+    [
+     0.931,
+     1.672
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Somebody who fixed it themselves.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.19,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.19,
+     0.543
+    ],
+    [
+     0.543,
+     0.793
+    ],
+    [
+     0.793,
+     1.517
+    ]
+   ]
+  },
+  "L35": {
+   "text": "And in six years, I've never fixed a single thing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.862
+    ],
+    [
+     0.914,
+     1.422
+    ],
+    [
+     1.422,
+     2.241
+    ]
+   ]
+  },
+  "L36": {
+   "text": "I just hand it all to him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.741
+    ],
+    [
+     0.741,
+     1.259
+    ]
+   ]
+  },
+  "L37": {
+   "text": "So that afternoon, when the back door stuck,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.784,
+     1.121
+    ],
+    [
+     1.121,
+     1.759
+    ]
+   ]
+  },
+  "L38": {
+   "text": "I fixed it. myself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.155,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.543,
+     1.138
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Grandpa looked at me for a long time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     0.828
+    ],
+    [
+     0.828,
+     0.966
+    ],
+    [
+     0.966,
+     1.759
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Then he said it. Out loud. To me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.603
+    ],
+    [
+     0.655,
+     1.052
+    ],
+    [
+     1.086,
+     1.586
+    ]
+   ]
+  },
+  "L41": {
+   "text": "And that ceiling tile popped right out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     0.845
+    ],
+    [
+     0.845,
+     1.672
+    ]
+   ]
+  },
+  "L42": {
+   "text": "So I said it back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.569
+    ],
+    [
+     0.569,
+     1.0
+    ]
+   ]
+  },
+  "L43": {
+   "text": "And I grew my first inch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.379
+    ]
+   ]
+  },
+  "L44": {
+   "text": "Now his door frame has a mark with a tiny door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.862
+    ],
+    [
+     0.862,
+     1.233
+    ],
+    [
+     1.233,
+     1.371
+    ],
+    [
+     1.371,
+     2.138
+    ]
+   ]
+  },
+  "L45": {
+   "text": "So go on. say it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.612,
+     1.103
+    ]
+   ]
+  }
+ }
+}
