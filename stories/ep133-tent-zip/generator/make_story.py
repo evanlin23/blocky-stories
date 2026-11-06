@@ -11,8 +11,8 @@ cast = {
            "pants": "#3b4a6a", "shoes": "#2a2a30", "sleeves": "long", "hair": "cap", "hair_c": "#14110f",
            "hat": "beanie", "hat_c": "#8a8d92", "body_width": 0.72, "face": dict(FACE)},
 }
-acting = {"me": [{"at": 0, "pos": [-0.55, 0.0, -0.45], "yaw": 180, "expr": "scared", "blend": 0},
-                 {"at": 3.0, "pos": [-0.55, 0.0, -0.45]}]}
+acting = {"me": [{"at": 0, "pos": [-0.55, 0.0, -0.62], "yaw": 180, "expr": "scared", "blend": 0},
+                 {"at": 3.0, "pos": [-0.55, 0.0, -0.62]}]}
 story = {
     "slug": "ep133-tent-zip", "title": "Your Tent Can't Open After DARK", "made_for_kids": False,
     "premise": "stub", "twist": "stub", "world": "a tangerine tent at night",
@@ -23,7 +23,7 @@ story = {
               "vignette": 0.2, "bloom": 0.25, "grain": 0.008},
     "tail": 0.25, "cast": cast,
     "lines": [{"id": "P1", "pause": 3.0, "chunks": [["", ""]]}],
-    "shots": [{"id": "S29", "cam": [[0, [-0.1, 2.0, 0.85], [-0.1, -0.3, 1.25], 11]]}],
+    "shots": [{"id": "S29", "cam": [[0, [-0.15, 1.6, 0.8], [0.1, -0.2, 0.95], 26]]}],
     "acting": acting, "cues": [],
     "music": {"root": 52, "mode": "minor", "bpm": 96, "seed": 133, "sections": [{"at": 0, "voices": ["drone"], "energy": 0.3}]},
     "sound": {"rev": 1, "floor": "grass"},
