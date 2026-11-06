@@ -1,0 +1,11 @@
+{
+  "title": "I've Been Number 212 For Six YEARS 🎟️",
+  "description": "In our town, if your best friend stops talking to you, you take a number and wait in the hall facing the door until they walk in. Never turn around, or you go to the back of the line.\n\nI'm 212. The board has been stuck for six years, on the man in the chair right in front of me.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Comment WALK if you'd have gone in first.",
+  "made_for_kids": false,
+  "cover_s": 75.1,
+  "shape": "walk-back-in",
+  "opening": "if",
+  "lane": "core",
+  "hold": "batch 14: scripts only, not built yet"
+}
