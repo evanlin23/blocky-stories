@@ -10,9 +10,9 @@ TOL = (0.45, BENCH_Y)     # Mr. Tolley, on my left
 WOM = (-0.5, BENCH_Y)    # the woman in the sun hat
 MAN = (-1.3, BENCH_Y)    # the man in the scarf
 NC = (1.7, BENCH_Y)     # the new commuter (S20, S21), me on her left
-ME8 = (1.65, BENCH_Y)    # me, S08 to S13 (slid right so the chalk count fits beside the bench two-shot)
-TOL8 = (0.8, BENCH_Y)   # Mr. Tolley beside me, S08 to S12
-ME_NC = (0.85, BENCH_Y)  # me beside the new commuter (S21)
+ME8 = (1.86, BENCH_Y)    # me, S08 to S13 (slid right so the chalk count fits beside the bench two-shot)
+TOL8 = (1.3, BENCH_Y)   # Mr. Tolley beside me, S08 to S12
+ME_NC = (1.05, BENCH_Y)  # me beside the new commuter (S21)
 BOARD = (2.39, 1.55, 1.6)   # centre of the chalk board (face at y 1.52)
 
 DEPOT_Y = -12.0          # the depot's front face

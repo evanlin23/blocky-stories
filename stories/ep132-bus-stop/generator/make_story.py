@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -196,26 +196,26 @@ cut("me", "L08", [*G.ME8, G.SIT_Z], yaw=0, expr="neutral", head=[0, 0])
 cut("wa", "L08", [*WOM, G.SIT_Z], hidden=True)
 cut("ma", "L08", [*MAN, G.SIT_Z], hidden=True)
 cue("L08", "sit", me=1.0, driver=1.0)
-shot("S08a", "L08", cam(1.75, 1.1, 1.3, 2.7, 0, 36, cz=1.35))
+shot("S08a", "L08", cam(1.96, 1.1, 1.3, 2.18, 0, 36, cz=1.35, push=(2.12, 1.3)))
 key("driver", "L08.3", expr="sad", head=[0, -9])
 key("driver", "L09", expr="neutral", head=[0, 4])
-shot("S08b", "L08.3", cam(1.7, 1.1, 1.3, 2.8, -6, 36, cz=1.35, push=(2.55, 1.3)))
+shot("S08b", "L08.3", cam(1.96, 1.1, 1.3, 2.15, -6, 36, cz=1.35, push=(2.1, 1.3)))
 key("me", "L09", expr="uneasy")
 key("me", "L09.1", expr="smile")
 mouth("me", "L09.1", "L09>", 0.5)
-shot("S09", "L09", cam(1.75, 1.1, 1.3, 1.2, 6, 36, cz=1.35, push=(1.05, 1.3)))
+shot("S09", "L09", cam(1.9, 1.1, 1.3, 1.2, 6, 36, cz=1.35, push=(1.05, 1.3)))
 key("driver", "L10", expr="stunned", head=[0, 0])
-shot("S10a", "L10", cam(0.6, 1.1, 1.3, 1.3, 0, 36, cz=1.35, push=(1.1, 1.3)))
+shot("S10a", "L10", cam(0.95, 1.1, 1.3, 1.3, 0, 36, cz=1.35, push=(1.1, 1.3)))
 key("driver", "L10.2", expr="smile")
-shot("S10b", "L10.2", cam(0.65, 1.1, 1.3, 1.3, -8, 36, cz=1.35, push=(1.15, 1.3)))
+shot("S10b", "L10.2", cam(0.9, 1.1, 1.3, 1.3, -8, 36, cz=1.35, push=(1.15, 1.3)))
 key("driver", "L11", expr="smile")
 mouth("driver", "L11.1", "L11>", 0.5)
-shot("S11", "L11", cam(0.65, 1.1, 1.3, 1.3, 7, 36, cz=1.35, push=(1.0, 1.3)))
+shot("S11", "L11", cam(0.9, 1.1, 1.3, 1.3, 7, 36, cz=1.35, push=(1.0, 1.3)))
 
 # ===== 04 he stands, crosses, the door is up (L12 to L14)
 cue("L12", "sit", driver=0.0, dur=0.35)
 key("driver", "L12", [*G.TOL8, 0.0], yaw=0, expr="smile", head=[0, 0])
-shot("S12", "L12", cam(0.6, 1.1, 1.5, 1.3, 0, 36, cz=1.5, push=(1.2, 1.55)))
+shot("S12", "L12", cam(0.95, 1.1, 1.5, 1.3, 0, 36, cz=1.5, push=(1.2, 1.55)))
 cut("driver", "L13", [0.8, -1.8, 0.0], yaw=0, expr="smile")
 key("driver", "L13.1", [0.8, -3.6, 0.0], yaw=0)
 cut("me", "L13", hidden=True)       # out of the S13a picture (the camera stands where I sit)
@@ -223,7 +223,7 @@ shot("S13a", "L13", camp([0.8, 1.6, 1.7], [0.8, -2.4, 0.9], 16, pos2=[0.8, 1.6, 
 cut("driver", "L13.1", [0.75, -6.0, 0.0], hidden=True)
 cue("L13.1", "door", up=1.0)
 cue("L13.1", "bus", x=G.BUS_IN[0], y=G.BUS_IN[1], yaw=G.BUS_IN[2])
-shot("S13b", "L13.1", camp([0.6, -4.2, 1.6], [0, G.DEPOT_Y, 2.3], 17, pos2=[-0.6, -5.6, 1.6]))
+shot("S13b", "L13.1", camp([0.3, -5.3, 1.7], [0, G.DEPOT_Y, 1.9], 24, pos2=[0.1, -7.3, 1.7]))
 cut("me", "L14", [*ME, G.SIT_Z], yaw=0, expr="stunned", head=[0, 0], hidden=False)
 cue("L14", "sit", me=1.0)
 shot("S14", "L14", cam(1.5, 1.1, 1.3, 1.5, 0, 36, cz=1.35, push=(1.25, 1.3)))
@@ -232,10 +232,12 @@ shot("S14", "L14", cam(1.5, 1.1, 1.3, 1.5, 0, 36, cz=1.35, push=(1.25, 1.3)))
 cut("driver_b", "L15", [*DRV_MOUTH, G.BUS_SEAT_Z], yaw=180, expr="laugh", hidden=False, arms=[0, 40], head=[0, 0])
 cue("L15", "sit", driver_b=1.0)
 cue("L15", "bus", x=G.BUS_MOUTH[0], y=G.BUS_MOUTH[1], yaw=G.BUS_MOUTH[2])
-for i, a in enumerate((70, 35, 70, 35, 70, 35)):
+for i, a in enumerate((60, 30, 60)):
     key("driver_b", f"L15+{0.3 * (i + 1):.2f}", arms=[0, a])
-shot("S15a", "L15", camp([-0.1, -2.9, 2.2], [-0.1, -12.9, 1.9], 30, pos2=[-0.5, -7.8, 2.05], tgt2=[-0.5, -12.9, 1.9]))
-key("driver_b", "L15.2", expr="smile", arms=[0, 40])
+shot("S15a", "L15", camp([-0.4, -6.2, 1.9], [-0.45, -12.9, 1.75], 40, pos2=[-0.5, -8.0, 1.9]))
+key("driver_b", "L15.2", arms=[0, 40])
+for i, a in enumerate((60, 30, 60, 30, 60, 30)):
+    key("driver_b", f"L15.2+{0.28 * (i + 1):.2f}", arms=[0, a])
 shot("S15b", "L15.2", camp([DRV_MOUTH[0], -8.8, 2.0], [DRV_MOUTH[0], DRV_MOUTH[1], 1.95], 40,
                            pos2=[DRV_MOUTH[0], -10.0, 2.0]))
 key("driver_b", "L16", expr="sheepish", head=[0, 8], arms=[0, 0])
@@ -244,12 +246,12 @@ shot("S16", "L16", camp([DRV_MOUTH[0], -10.2, 2.0], [DRV_MOUTH[0], DRV_MOUTH[1],
 
 # ===== 06 the bus at the stop (L17 to L19)
 cue("L17", "bus", x=G.BUS_STOP[0], y=G.BUS_STOP[1], yaw=G.BUS_STOP[2])
-cut("driver_b", "L17", [*DRV_STOP, G.BUS_SEAT_Z], yaw=-90, expr="smile", head=[0, 0], arms=[0, 40])
-cut("me", "L17", [*FRONT_STOP, G.BUS_SEAT_Z], yaw=-90, expr="smile", head=[0, 0])
-shot("S17", "L17", camp([-7.0, 1.6, 1.7], [0.9, -3.2, 1.5], 24, pos2=[-6.0, -0.4, 1.7]))
-shot("S18a", "L18", camp([-5.3, -3.45, 1.9], [0.3, -3.45, 1.85], 36, pos2=[-4.9, -3.45, 1.9]))
+cut("driver_b", "L17", [*DRV_STOP, G.BUS_SEAT_Z], yaw=-40, expr="smile", head=[0, 0], arms=[0, 40])
+cut("me", "L17", [*FRONT_STOP, G.BUS_SEAT_Z], yaw=-40, expr="smile", head=[0, 0])
+shot("S17", "L17", camp([2.0, -14.5, 11.0], [2.3, -1.0, 2.4], 26, pos2=[2.1, -13.0, 10.2]))
+shot("S18a", "L18", camp([-3.9, -8.0, 1.8], [-0.2, -3.0, 1.8], 24, pos2=[-3.6, -7.5, 1.8]))
 key("me", "L18.2", expr="smile", head=[0, 0])
-shot("S18b", "L18.2", camp([-5.2, -3.45, 1.95], [0.3, -3.45, 1.85], 36, pos2=[-5.0, -3.45, 1.95]))
+shot("S18b", "L18.2", camp([-3.8, -7.8, 1.8], [-0.2, -3.0, 1.8], 24, pos2=[-3.5, -7.3, 1.8]))
 cut("driver_b", "L19", [*DRV_STOP, G.BUS_SEAT_Z], yaw=-90, expr="laugh", head=[0, 0], arms=[0, 40])
 mouth("driver_b", "L19", "L19>", 0.45)
 shot("S19", "L19", camp([-4.9, -4.1, 1.95], [0.3, -4.1, 1.9], 36, pos2=[-3.7, -4.1, 1.95]))
@@ -268,7 +270,7 @@ cut("me", "L21", [*G.ME_NC, G.SIT_Z], yaw=0, expr="smile", hidden=False, head=[0
 mouth("me", "L21", "L21>", 0.5)
 key("nc", "L21", expr="uneasy", head=[0, 0])
 key("nc", "L21+0.9", expr="smile")
-shot("S21", "L21", [cam(1.85, 1.1, 1.3, 2.6, 3, 36, cz=1.35)[0], [1, *cam(1.75, 1.1, 1.3, 2.45, 3, 36, cz=1.35)[0][1:]]])
+shot("S21", "L21", [cam(1.9, 1.1, 1.3, 2.35, 3, 36, cz=1.35)[0], [1, *cam(1.9, 1.1, 1.3, 2.3, 3, 36, cz=1.35)[0][1:]]])
 cut("nc", "L22", [*NC, G.SIT_Z], hidden=True)
 cut("me", "L22", [*ME, G.SIT_Z], yaw=0, expr="smile", hidden=False, head=[0, 0])
 key("me", "L22.2", expr="neutral")
@@ -313,7 +315,7 @@ remap_all(sfx)
 remap_all(music["sections"])
 remap_all(sound["ambience"])
 polish = {"reveal": ["L14", "L15"], "twist": "L14", "emph": ["L01.2", "L02.1", "L14"],
-          "quiet": [["L18", "L19>"]], "hold": ["S06", "S07", "S13b", "S17", "S21"]}
+          "quiet": [["L18", "L19>"]], "hold": ["S06", "S07", "S08a", "S13b", "S17", "S21"]}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 story = {
     "slug": "ep132-bus-stop",

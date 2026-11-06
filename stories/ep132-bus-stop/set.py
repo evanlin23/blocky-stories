@@ -100,8 +100,8 @@ def build_depot(kit):
 # ---------------------------------------------------------------------------------------------- the bus
 def build_bus(kit):
     pl = kit.plastic
-    cream = pl("#f5ecd2", 0.5, spec=0.3)
-    red = pl("#d8473a", 0.45, spec=0.3)
+    cream = pl("#e6d198", 0.55, spec=0.2)
+    red = pl("#c63a30", 0.5, spec=0.2)
     roofm = pl("#e3d8b8", 0.6)
     glass = pl("#7fb2dc", 0.15, spec=0.8)
     floor = pl("#6a6a74", 0.7)
@@ -128,13 +128,22 @@ def build_bus(kit):
     for k in range(4):
         b(f"wr.win{k}", (0.04, 1.05, 0.85), (-1.25, -1.6 + 1.4 * k, 2.15), glass)
     b("step", (0.55, 0.95, 0.12), (-1.0, -3.2, 0.3), pl("#9a9aa2", 0.6))
-    # the front: red lower panel, two pillars, a header; the windshield is an open frame (no glass to hide a face)
+    # the front: red lower panel, two cream pillars, a red header band, a dark rim round the open windshield (no glass
+    # to hide a face), two round headlights in chrome rings
+    rim = pl("#3a3a44", 0.6)
     b("front.low", (2.5, 0.12, 0.65), (0, -4.44, 0.775), red)
     b("front.pl", (0.25, 0.12, 1.6), (-1.125, -4.44, 1.9), cream)
     b("front.pr", (0.25, 0.12, 1.6), (1.125, -4.44, 1.9), cream)
-    b("front.head", (2.5, 0.12, 0.3), (0, -4.44, 2.85), cream)
+    b("front.head", (2.5, 0.12, 0.3), (0, -4.44, 2.85), red)
+    b("front.band", (2.5, 0.12, 0.1), (0, -4.44, 1.15), cream)
+    b("rim.t", (2.04, 0.04, 0.06), (0, -4.52, 2.67), rim)
+    b("rim.b", (2.04, 0.04, 0.06), (0, -4.52, 1.17), rim)
     for sx in (-1, 1):
-        b(f"front.light{sx}", (0.4, 0.06, 0.22), (sx * 0.85, -4.52, 0.8), pl("#fff3c8", 0.3))
+        b(f"rim.s{sx}", (0.06, 0.04, 1.56), (sx * 1.0, -4.52, 1.92), rim)
+        kit.cyl(f"bus.ring{sx}", 0.27, 0.05, (sx * 0.85, -4.52, 0.8), pl("#cfd2d6", 0.3, spec=0.8), root,
+                rot=(math.pi / 2, 0, 0), n=16)
+        kit.cyl(f"bus.lamp{sx}", 0.2, 0.05, (sx * 0.85, -4.55, 0.8), pl("#fff3c8", 0.3), root,
+                rot=(math.pi / 2, 0, 0), n=16)
     b("bumper", (2.56, 0.22, 0.18), (0, -4.5, 0.55), pl("#9a9aa2", 0.5, spec=0.5))
     b("rear", (2.5, 0.1, 2.55), (0, 4.45, 1.725), cream)
     b("roof", (2.6, L + 0.2, 0.12), (0, 0, 3.06), roofm, 0.03)
