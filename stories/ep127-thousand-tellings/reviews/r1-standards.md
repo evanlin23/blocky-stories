@@ -1,15 +1,17 @@
-# ep127-thousand-tellings: standards, round 1 (script stage)
+# ep127-thousand-tellings: standards, round 1
 
 Verdict: revise
 
-Fiction, kids, IP, flash (no light change) and the count logic pass.
+All five script-stage fixes are in (L01, L02, description, L64, L52, L53, and no raised hands at S44, S45, S122). Fiction, kids, IP, set text (numerals only) and lint pass. Flash: preflight PASS.
 
 ## Must-fix
-1. **L01, L02 and `"opening"` (opening variety):** "Here, any story told a thousand TIMES comes true." is a rule of the place, not a count that's wrong. It's also the second `count` in a row, before ep128. Retag it as `must` and say it that way. L01 "Here, you can't tell a story / a thousand TIMES." L02 "The thousandth / comes TRUE, / however it ENDS." The batch becomes ban, cost, if, confess, cost, must, count.
-2. **Description (Packaging, banned word):** "comes true" uses "true". Change it to "any story told a thousand times happens, exactly the way the thousandth ends."
-3. **L64 (the batch-1 list, a closing-section opener like "Last NIGHT,"):** "Last Sunday, / I was running LATE." Change it to "Now on Sundays, / if I'm running LATE," with L65 "my car takes / the river road / by ITSELF."
-4. **L52, L53 (the batch-1 list, a "Not X, it was Y" cadence):** "the end was never HIS. / He was saving the thousandth for ME." Change it to L52 "He was saving / the END," L53 "and the thousandth, / for ME."
-5. **S23, S66 (constraint 2, raised hands):** latching the screen door and holding it open both raise his hand to his face. S23: a cutaway of the latch hook dropping into its eye with no hand, then him sitting. S66: the door propped open, Grandpa in the doorway with his hands at his sides.
+1. **L57 [writer] (hard rule 8, three-beat slogan; `check` warns):** "The counter. / The city. / The CAR." Change it to "Every word of it, / right up to / my CAR." It's still the same story.
+2. **L10, L11, L13 [writer] (hard rule 5, against ep47, uploaded 2026-11-05):** "till I moved to the CITY. / Three years AGO." and "drove back for a WEEK" copy ep47's "Two years AGO, I left for a job in the CITY" and "back to help". Keep L10. Change L11 to "I hadn't fished SINCE." and L13 to "So I drove back / that SATURDAY." Re-voice L11 and L13.
+3. **S122, S123, L66 (batch constraint, nothing near a face):** both rods stand in front of Grandpa's shoulder and rise past his cheek to his hat brim. Lean them against the door frame at frame right, at least one head-width from his face, with their tips under his chin line.
+4. **package.json [writer] (Packaging, hold):** "hold": "batch 13: scripts only, not built yet" is out of date, and `upload.py` skips any story that has one. Remove it when this story merges.
 
 ## Nice-to-have
-- `cover_s` 30.6 (S18) is the back of Grandpa's head and an empty chair. S20 (his eyes-shut face, lamp from below, 997) has a face in it.
+- Flash watch: the preview's 3f reading hits 7/s at 99.4 s (S116 to S120, night river to a day apartment to a day car).
+- S70 "He wouldn't look at ME" plays over Grandpa looking into the lens. Turn his eyes down.
+- My face reads dark at night (S43, S60, S80 to S84), light by day.
+- S115: the slate still shows 999 under "one THOUSAND".
