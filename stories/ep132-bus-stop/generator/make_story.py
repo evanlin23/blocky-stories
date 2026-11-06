@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -249,9 +249,11 @@ cue("L17", "bus", x=G.BUS_STOP[0], y=G.BUS_STOP[1], yaw=G.BUS_STOP[2])
 cut("driver_b", "L17", [*DRV_STOP, G.BUS_SEAT_Z], yaw=-40, expr="smile", head=[0, 0], arms=[0, 40])
 cut("me", "L17", [*FRONT_STOP, G.BUS_SEAT_Z], yaw=-40, expr="smile", head=[0, 0])
 shot("S17", "L17", camp([2.0, -14.5, 11.0], [2.3, -1.0, 2.4], 26, pos2=[2.1, -13.0, 10.2]))
-shot("S18a", "L18", camp([-3.9, -8.0, 1.8], [-0.2, -3.0, 1.8], 24, pos2=[-3.6, -7.5, 1.8]))
+cut("driver_b", "L18", [*DRV_STOP, G.BUS_SEAT_Z], yaw=-85, expr="smile", head=[0, 0], arms=[0, 40])
+cut("me", "L18", [*FRONT_STOP, G.BUS_SEAT_Z], yaw=-85, expr="smile", head=[0, 0])
+shot("S18a", "L18", camp([-4.2, -3.45, 1.9], [0.3, -3.45, 1.55], 30, pos2=[-3.9, -3.45, 1.9]))
 key("me", "L18.2", expr="smile", head=[0, 0])
-shot("S18b", "L18.2", camp([-3.8, -7.8, 1.8], [-0.2, -3.0, 1.8], 24, pos2=[-3.5, -7.3, 1.8]))
+shot("S18b", "L18.2", camp([-4.1, -3.45, 1.9], [0.3, -3.45, 1.55], 30, pos2=[-3.8, -3.45, 1.9]))
 cut("driver_b", "L19", [*DRV_STOP, G.BUS_SEAT_Z], yaw=-90, expr="laugh", head=[0, 0], arms=[0, 40])
 mouth("driver_b", "L19", "L19>", 0.45)
 shot("S19", "L19", camp([-4.9, -4.1, 1.95], [0.3, -4.1, 1.9], 36, pos2=[-3.7, -4.1, 1.95]))
