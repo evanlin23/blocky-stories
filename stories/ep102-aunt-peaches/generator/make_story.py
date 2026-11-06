@@ -254,7 +254,7 @@ beat("b4", "L06+0.5", arms=[0, 120])
 shot("L06", mv([GX - 0.3, GY - 9.0, 1.8], [GX - 0.5, GY - 1.6, 1.8], 32, [GX - 0.3, GY - 7.6, 1.8], [GX - 0.5, GY - 1.6, 1.8], 32), "gasst")
 put("b3", "L06.1", [GX - 0.75, GY - 2.0], 0, expr="laugh", arms=[0, 40])
 put("b4", "L06.1", [GX + 0.75, GY - 2.0], 0, expr="laugh", arms=[40, 0])
-shot("L06.1", fr(GX, GY - 2.0, 1.7, 5.9, 36, dx=0.3), "gasfun")
+shot("L06.1", fr(GX, GY - 2.0, 1.7, 6.2, 36, dx=0.3, push=0.05), "gasfun")
 # L07: the guest room
 look("L07", "day")
 only("L07", [])
