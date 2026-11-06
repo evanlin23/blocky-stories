@@ -618,6 +618,12 @@ def animate(kit, story, tl, t, ctx):
     if not W.get("inited"):
         _first_frame(kit, story)
     look = look_at(tl, t)
+    _hh = bpy.data.objects.get("husband.headg")
+    if _hh is not None:   # the glasses rims follow the husband's own visibility on every frame
+        for _ob in _hh.children:
+            if _ob.name.startswith("husband.rim"):
+                _ob.hide_render = _hh.hide_render
+                _ob.hide_viewport = _hh.hide_viewport
     gains = {"sun": look["sun"], "fill": look["fill"], "lamp": look["lamp"], "shopday": look["shopday"],
              "shopnight": look["night"], "doornight": look["night"], "outnight": look["night"], "cntnight": look["night"],
              "facefill": 0.0, "carfill": 0.0}
