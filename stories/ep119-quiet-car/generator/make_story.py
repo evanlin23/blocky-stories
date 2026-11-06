@@ -722,7 +722,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": [names["exterior"], names["bussmile"], names["emptyseat2"], names["swell"], names["loudcar"]],
-    "staging_ok": ["S13/c1+c2 window passengers, checked OK on the final", "S87/hug", "S89/me+teddy side by side in the seats, checked OK on the final"],
+    "staging_ok": ["S24/me+teddy passing in the aisle, 5 frames", "S13/c1+c2 window passengers, checked OK on the final", "S87/hug", "S89/me+teddy side by side in the seats, checked OK on the final"],
     "frames_ok": [],
     "clip_ok": [],
     "asr_forgive": ["nineteen eighty seven", "walk the", "walked a", "1987"],
