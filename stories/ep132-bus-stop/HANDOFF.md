@@ -1,0 +1,15 @@
+# ep132-bus-stop handoff (batch 14)
+
+Branch `claude/batch14-ep132-bus-stop`.
+
+- Built, framing pre-check (once) fixed, preflight 0 blocks, framing.py 0, frames.py 0.
+- Build review round 1: standards approve (r2-standards), critic revise with 4 must-fixes (r2-critic). Fixed in 83cca426.
+- Build review round 2: critic approve (r3-critic, average 7.1, none under 5). Its one should-fix (S18 window cut my face) applied in c79df28f.
+- Preview: changes 17.0 / 21.9 (q) per 10 s, motion 7.24, longest still 0.27 s (q edge 0.27), flash --like-proof pass, -14.1 LUFS, -1.8 dBTP.
+- `hold` removed; check clean, gate OPEN, shardcheck exit 0, pytest 255 passed.
+- PR #362. Proof run 42266625052 drew sha 75e5643 and passed; proof qa passed (qa/ep132-bus-stop.json). Notes only: driver head near the right edge 15.8-18 s, bus nose reads boxy 20.5-21.3 s.
+- Next: merge when `test` is green.
+
+## Spacing fix (final failed qa: arms through each other)
+- Cast `body_width` 0.6 (all six); seated spacing >= 1.0 m (ME 1.55, TOL 0.5, MAN -1.5, NC 1.95, ME8 1.95, TOL8 0.9, ME_NC 0.95); S07 wa 0.7 / me 1.85 (1.15 apart).
+- Cameras reframed: S07 (centre x 1.3), S08a/S08b (centre 1.7, w 2.4), S21 (centre 1.5). Preview redrawn; preflight 0, framing 0, frames 0, shardcheck 0, clipcheck 0, measure pass, pytest 255.
