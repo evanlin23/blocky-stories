@@ -298,31 +298,30 @@ def build_cart(kit):
     B(None, (2.62, 0.03, 0.16), (cx, cy - 0.61, 0.5), white, "cart.stripe")
     B(None, (2.62, 0.03, 0.16), (cx, cy - 0.61, 0.82), white, "cart.stripe")
     tire, hub = P("#26262c", 0.8), P(GOLD, 0.4, 0.5)
-    for (wx, tilt) in ((cx - 1.15, 0.12), (cx + 1.15, 0.0)):
-        C(None, 0.32, 0.12, (wx, cy - 0.38, 0.32), tire, "cart.wheel", rot=(0, math.pi / 2, tilt), n=20)
-        C(None, 0.12, 0.14, (wx, cy - 0.38, 0.32), hub, "cart.hub", rot=(0, math.pi / 2, tilt), n=12)
+    for (wx, tilt) in ((cx - 1.42, 0.12), (cx + 1.42, 0.0)):
+        C(None, 0.34, 0.14, (wx, cy - 0.38, 0.34), tire, "cart.wheel", rot=(0, math.pi / 2, tilt), n=20)
+        C(None, 0.14, 0.16, (wx, cy - 0.38, 0.34), hub, "cart.hub", rot=(0, math.pi / 2, tilt), n=12)
     # the grill: a dark charcoal plate with five raised bars, a steady orange glow in the gaps and under the rim, and soft
     # smoke puffs above it (cue grillhot shows the glow and the smoke; nothing moves or flickers)
     gx, gy = cx - 0.75, cy - 0.05
     char, char2 = P("#1c1c21", 0.8, 0.1), P("#141418", 0.85, 0.05)
-    B(None, (1.0, 0.64, 0.08), (gx, gy, 1.11), char, "cart.grill", 0.015)
-    gm = kit.emit("#ff6a1c", 4.0, name="grillglow")
-    W["grillglow"] = [B(None, (0.9, 0.54, 0.03), (gx, gy, 1.165), gm, "grillglow.bed"),
-                      B(None, (1.02, 0.66, 0.025), (gx, gy, 1.095), gm, "grillglow.rim")]
+    B(None, (0.96, 0.6, 0.04), (gx, gy, 1.09), char2, "cart.grillbox", 0.01)
+    gm = kit.emit("#ff3a00", 1.0, name="grillglow")
+    W["grillglow"] = [B(None, (0.98, 0.62, 0.04), (gx, gy, 1.13), gm, "grillglow.bed")]
     for o in W["grillglow"]:
         noshadow(o)
+    B(None, (1.04, 0.66, 0.05), (gx, gy, 1.175), char, "cart.grill", 0.012)
     for k in range(5):
-        B(None, (0.9, 0.055, 0.07), (gx, gy - 0.22 + k * 0.11, 1.2), char2, "grill.bar", 0.012)
-    for sx in (-1, 1):
-        B(None, (0.05, 0.54, 0.09), (gx + sx * 0.455, gy, 1.19), char, "grill.end", 0.01)
-    smk = P("#cfc8d4", 1.0, 0.0)
+        B(None, (0.9, 0.05, 0.05), (gx, gy - 0.24 + k * 0.12, 1.225), char2, "grill.bar", 0.01)
+    smk = P("#a9a5b6", 1.0, 0.0)
     W["smoke"] = []
-    for (dx, dy, dz, r) in ((0.0, 0.0, 1.42, 0.08), (0.07, 0.02, 1.58, 0.10), (-0.06, 0.0, 1.75, 0.12),
-                            (0.08, -0.02, 1.95, 0.15), (-0.04, 0.02, 2.17, 0.18)):
-        o = S(r, (gx + dx, gy + dy, dz), smk, "smoke")
-        o.scale = (1.0, 1.0, 1.5)
-        noshadow(o)
-        W["smoke"].append(o)
+    # three slim wisps, each a short curl of stretched puffs, leaning away from the bars
+    for (wx, wy, lean) in ((-0.3, -0.12, 0.05), (0.0, 0.05, -0.04), (0.3, -0.05, 0.06)):
+        for j in range(4):
+            o = S(0.03 + 0.006 * j, (gx + wx + lean * j * 1.5 * (1 if j % 2 else -1), gy + wy, 1.36 + j * 0.17), smk, "smoke")
+            o.scale = (1.0, 1.0, 3.2)
+            noshadow(o)
+            W["smoke"].append(o)
     # back frame: two posts, a teal backboard with two hooks, a striped umbrella
     wood = P("#fbfaf6", 0.5)
     for sx in (-1, 1):
@@ -349,8 +348,8 @@ def build_cart(kit):
     hung_apron(cx - 1.0, old_c, old_pk, "apronold")
     # the second apron (coral, a cream pocket): hung, folded on the counter, or on the porch rail
     W["apron_hook"] = hung_apron(cx + 1.0, cor, pk, "apron.hook")
-    W["apron_counter"] = [B(None, (0.5, 0.38, 0.08), (cx + 0.05, cy - 0.04, 1.11), cor, "apron.counter", 0.02),
-                          B(None, (0.28, 0.2, 0.012), (cx + 0.05, cy - 0.04, 1.155), pk, "apron.counterpocket")]
+    W["apron_counter"] = [B(None, (0.62, 0.46, 0.09), (cx + 0.05, cy - 0.04, 1.115), cor, "apron.counter", 0.02),
+                          B(None, (0.34, 0.24, 0.012), (cx + 0.05, cy - 0.04, 1.166), pk, "apron.counterpocket")]
     # the umbrella: eight stripes round a pole
     ux, uy = cx + 1.4, cy + 0.6
     C(None, 0.04, 2.9, (ux, uy, 2.2), P("#c8ced8", 0.4, 0.6), "cart.umbpole", n=8)
@@ -361,16 +360,16 @@ def build_cart(kit):
         kit.mesh_obj(nm("cart.umb"), verts, [(0, 1, 2)], P(RED if i % 2 == 0 else CREAM, 0.7, 0.1), None, (ux, uy, 0))
     # the face-down card on the counter, and the new one (cues card, card2); stars up
     cardm = P("#fff6dc", 0.6, 0.1)
-    W["card"] = [B(None, (0.36, 0.24, 0.012), (cx + 0.62, cy - 0.12, 1.077), cardm, "card.body", 0.003, rot=(0, 0, 0.2)),
-                 star(cx + 0.62, cy - 0.12, 1.087, 0.08, 0.034, P(GOLD, 0.35, 0.6), "xy", 0.006, "card.star")]
-    W["card2"] = [B(None, (0.36, 0.24, 0.012), (cx - 0.1, cy - 0.22, 1.077), cardm, "card2.body", 0.003, rot=(0, 0, -0.25)),
-                  star(cx - 0.1, cy - 0.22, 1.087, 0.08, 0.034, P(GOLD, 0.35, 0.6), "xy", 0.006, "card2.star")]
+    W["card"] = [B(None, (0.44, 0.29, 0.012), (cx + 0.66, cy - 0.12, 1.077), cardm, "card.body", 0.003, rot=(0, 0, 0.2)),
+                 star(cx + 0.66, cy - 0.12, 1.087, 0.1, 0.043, P(GOLD, 0.35, 0.6), "xy", 0.006, "card.star")]
+    W["card2"] = [B(None, (0.44, 0.29, 0.012), (cx - 0.1, cy - 0.22, 1.077), cardm, "card2.body", 0.003, rot=(0, 0, -0.25)),
+                  star(cx - 0.1, cy - 0.22, 1.087, 0.1, 0.043, P(GOLD, 0.35, 0.6), "xy", 0.006, "card2.star")]
     # the spatula, on the counter between us (cue spatula)
     W["spatula"] = [B(None, (0.34, 0.035, 0.022), (cx - 0.02, cy + 0.42, 1.085), P("#7a5230", 0.6), "spat.handle", 0.006),
                     B(None, (0.14, 0.11, 0.014), (cx + 0.21, cy + 0.42, 1.085), P("#c8ced8", 0.3, 0.8), "spat.head", 0.004)]
     # the wrench on the ground by the wobbly wheel
-    B(None, (0.5, 0.06, 0.04), (cx - 0.95, cy - 1.0, 0.03), P("#8a8d96", 0.35, 0.8), "wrench.arm", 0.01, rot=(0, 0, 0.5))
-    B(None, (0.14, 0.12, 0.04), (cx - 0.75, cy - 0.88, 0.03), P("#8a8d96", 0.35, 0.8), "wrench.head", 0.01)
+    B(None, (0.5, 0.06, 0.04), (cx - 1.95, cy - 1.0, 0.03), P("#8a8d96", 0.35, 0.8), "wrench.arm", 0.01, rot=(0, 0, 0.5))
+    B(None, (0.14, 0.12, 0.04), (cx - 1.75, cy - 0.88, 0.03), P("#8a8d96", 0.35, 0.8), "wrench.head", 0.01)
 
 
 def build_stalls(kit):

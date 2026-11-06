@@ -21,7 +21,7 @@ sys.path.insert(0, str(ROOT))
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 10
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L32")
@@ -236,9 +236,9 @@ TP("ray", "L09", RAYC, 0, "neutral", arms=[0, 85], side=[0, 22])
 shot("S09", "L09", cam_face(RAYC, 0, "ray", 2.8, 6, 34, shift=-0.2, d2=2.5), "day")
 TP("ray", "L10", RAYC, 0, "smile")
 shot("S10", "L10", cam_face(RAYC, 0, "ray", 2.9, -10, 34, shift=0.12, d2=2.6), "day")
-RAYK = [CX - 1.7, CY - 1.15, -0.55]
-TP("ray", "L11", RAYK, 0, "neutral", arms=[30, 50], side=[0, 12], lean=10)
-shot("S11", "L11", cam_face(RAYK, 0, "ray", 3.0, 8, 34, shift=-0.3, tdz=0.05, d2=2.7), "dawn")
+RAYK = [CX - 2.45, CY - 0.5, -0.55]
+TP("ray", "L11", RAYK, -45, "neutral", arms=[20, 25], side=[0, 40], lean=10)
+shot("S11", "L11", cam_face(RAYK, -45, "ray", 3.0, 0, 22, shift=-0.45, hdz=0.35, tdz=-0.85, d2=2.7), "dawn")
 TP("ray", "L12", [CX - 0.3, CY + 0.95, 0.0], 0, "smile")
 shot("S12", "L12", cam_at([CX - 0.3, CY - 2.0, 1.6], [CX - 0.3, CY + 1.0, 1.45], 26, [CX - 0.3, CY - 1.6, 1.6],
                           [CX - 0.3, CY + 1.0, 1.45], 26), "day")
@@ -247,8 +247,8 @@ HIDE("ray", "L13")
 M13 = [3.05, 3.0, 0.0]
 cue("L13.1", "mcard", on=True)
 cue("L14", "mcard", on=False)
-TP("me", "L13", M13, yaw_to(M13, [3.9, 0.0]), "neutral")
-shot("S13", "L13", cam_at([3.9, 0.0, 1.35], [3.5, 3.5, 1.2], 28, [3.8, 0.4, 1.35], [3.5, 3.5, 1.2], 28), "day")
+TP("me", "L13", M13, yaw_to(M13, [3.6, 0.0]), "neutral")
+shot("S13", "L13", cam_at([3.6, 0.0, 1.35], [3.2, 3.5, 1.2], 28, [3.5, 0.4, 1.35], [3.2, 3.5, 1.2], 28), "day")
 # ===== S14
 TP("me", "L14", ME_MACH, 0, "scared")
 shot("S14a", "L14", cam_face(ME_MACH, 0, "me", 2.8, 10, 34, d2=2.4), "day")
@@ -264,9 +264,9 @@ M16 = [-0.6, 2.2, 0.0]
 TP("me", "L16", M16, 0, X("sheepish"))
 shot("S16", "L16", cam_face(M16, 0, "me", 2.8, -12, 34, d2=2.4), "day")
 TP("ray", "L17", [CX + 0.4, CY + 0.95, 0.0], 0, "neutral")
-TP("me", "L17", [-0.69, -0.29, 0.0], 27, "neutral")
-K("me", "L17", [-0.69, -0.29, 0.0])
-K("me", "L17>", [-0.5, -0.75, 0.0])
+TP("me", "L17", [-0.3, -0.29, 0.0], 27, "neutral")
+K("me", "L17", [-0.3, -0.29, 0.0])
+K("me", "L17>", [-0.1, -0.75, 0.0])
 shot("S17", "L17", cam_at([1.5, -3.2, 1.55], [-2.2, 4.3, 1.3], 28, [1.4, -3.0, 1.55], [-2.2, 4.3, 1.3], 28), "day")
 # ===== S18 to S21 Ray asks
 HIDE("me", "L18")
@@ -337,7 +337,7 @@ shot("S32b", "L32.3", cam_face(RAYD, 0, "ray", 2.6, -12, 34, shift=-0.12, d2=2.3
 HIDE("ray", "L33")
 cue("L33", "grillhot", on=True)
 cue("L34", "grillhot", on=False)
-shot("S33", "L33", cam_at([CX - 3.0, CY - 2.4, 0.95], [CX - 0.75, CY, 1.55], 30, [CX - 2.8, CY - 2.25, 0.97], [CX - 0.75, CY, 1.55], 30),
+shot("S33", "L33", cam_at([CX - 2.9, CY - 3.0, 1.5], [CX - 0.75, CY - 0.05, 1.3], 18, [CX - 2.75, CY - 2.9, 1.52], [CX - 0.75, CY - 0.05, 1.3], 18),
      "dusk", face=False, key=3.0, exp=0.2)
 TP("ray", "L34", RAYC, 0, X("sad"))
 shot("S34", "L34", cam_face(RAYC, 0, "ray", 2.8, 8, 34, d2=2.5), "dusk")
@@ -354,9 +354,9 @@ shot("S38", "L38", cam_at([MACH[0], -0.4, 0.5], [MACH[0], 4.0, 2.0], 24, [MACH[0
 M39 = [MACH[0] - 1.2, 2.2, 0.0]
 TP("me", "L39", M39, 0, X("sad"))
 shot("S39", "L39", cam_face(M39, 0, "me", 2.8, -10, 34, d2=2.5), "dusk")
-M40 = [CX - 0.65, CY - 1.4, -0.8]
+M40 = [CX - 0.55, CY - 1.2, -0.3]
 TP("me", "L40", M40, 0, X("sad"), head=[0, 8], lean=8)
-shot("S40", "L40", cam_at([CX - 0.15, CY - 3.6, 1.3], [CX - 0.2, CY, 1.07], 24, [CX - 0.03, CY - 3.6, 1.3], [CX - 0.08, CY, 1.07], 24),
+shot("S40", "L40", cam_at([CX - 0.1, CY - 4.2, 1.7], [CX - 0.1, CY, 1.05], 24, [CX + 0.02, CY - 4.2, 1.7], [CX + 0.02, CY, 1.05], 24),
      "dusk", cover=True)
 # ===== S41 to S45 the night
 CBN = CB
@@ -413,9 +413,9 @@ shot("S55", "L55", cam_face(RAYS, 0, "ray", 2.4, -10, 34, d2=2.1), "dawn")
 # ===== S56 to S65 the cart is mine
 cue("L56", "spatula", on=True)
 cue("L57", "spatula", on=False)
-TP("ray", "L56", [CX - 0.78, CY + 0.95, 0.05], 0, "smile", arms=[0, 68], side=[0, 28])
-TP("me", "L56", [CX + 0.55, CY + 0.95, 0.0], 0, "neutral")
-shot("S56", "L56", cam_at([CX + 0.4, CY - 1.9, 1.25], [CX + 0.4, CY + 0.5, 1.2], 32, [CX + 0.4, CY - 1.7, 1.25], [CX + 0.4, CY + 0.5, 1.2], 32), "day")
+TP("ray", "L56", [CX - 1.0, CY + 0.95, 0.05], 0, "smile", arms=[0, 68], side=[0, 50])
+TP("me", "L56", [CX + 0.95, CY + 0.95, 0.0], 0, "neutral")
+shot("S56", "L56", cam_at([CX - 0.05, CY - 1.5, 1.3], [CX - 0.05, CY + 0.3, 1.0], 22, [CX - 0.05, CY - 1.3, 1.3], [CX - 0.05, CY + 0.3, 1.0], 22), "day")
 TP("ray", "L57", RAY2, 0, "laugh")
 TP("me", "L57", ME2, 0, "laugh")
 shot("S57", "L57", cam_at([CX, CY - 3.4, 1.62], [CX, CY + 0.95, 1.6], 28, [CX, CY - 3.0, 1.62], [CX, CY + 0.95, 1.6], 28), "day")
@@ -434,15 +434,15 @@ TP("ray", "L60", [CX - 0.55, CY + 0.95, 0.0], 0, "smile")
 TP("me", "L60", [CX + 0.55, CY + 0.95, 0.0], 0, "smile")
 shot("S60", "L60", cam_at([CX, CY - 2.9, 1.62], [CX, CY + 0.95, 1.6], 28, [CX, CY - 2.6, 1.62], [CX, CY + 0.95, 1.6], 28), "day")
 HIDE("me", "L61")
-RAYK2 = [CX - 1.7, CY - 1.15, -0.55]
-TP("ray", "L61", RAYK2, 0, "smile", arms=[30, 50], side=[0, 12], lean=10)
-shot("S61", "L61", cam_face(RAYK2, 0, "ray", 3.0, 8, 34, shift=-0.3, tdz=0.05, d2=2.7), "day")
+RAYK2 = [CX - 2.45, CY - 0.5, -0.55]
+TP("ray", "L61", RAYK2, -45, "smile", arms=[20, 25], side=[0, 40], lean=10)
+shot("S61", "L61", cam_face(RAYK2, -45, "ray", 3.0, 0, 22, shift=-0.45, hdz=0.35, tdz=-0.85, d2=2.7), "day")
 HIDE("ray", "L62")
 cue("L62.2", "mcard", on=True)
 cue("L63", "mcard", on=False)
 M62 = [3.05, 3.0, 0.0]
-TP("me", "L62", M62, yaw_to(M62, [3.9, 0.0]), X("uneasy"))
-shot("S62", "L62", cam_at([3.9, 0.0, 1.35], [3.5, 3.5, 1.2], 28, [3.8, 0.4, 1.35], [3.5, 3.5, 1.2], 28), "day")
+TP("me", "L62", M62, yaw_to(M62, [3.6, 0.0]), X("uneasy"))
+shot("S62", "L62", cam_at([3.6, 0.0, 1.35], [3.2, 3.5, 1.2], 28, [3.5, 0.4, 1.35], [3.2, 3.5, 1.2], 28), "day")
 HIDE("me", "L63")
 cue("L63", "card2", on=True)
 shot("S63", "L63", cam_at([CX + 0.3, CY - 1.0, 1.7], [CX + 0.25, CY - 0.15, 1.08], 38, [CX + 0.3, CY - 0.75, 1.5], [CX + 0.25, CY - 0.15, 1.08], 38),
@@ -507,7 +507,7 @@ sound = {
 remap_all(sound["music_drops"])
 remap_all(music["sections"])
 polish = {"reveal": [remap("L30"), remap("L38"), remap("L40")], "twist": remap("L38"),
-          "hold": ["S08", "S52", "S57", "S60"]}
+          "hold": ["S08", "S52", "S57", "S60", "S11", "S61", "S40", "S33", "S56", "S17"]}
 story = {
     "slug": "ep135-fortune-dodge",
     "title": "The Fortune Machine Said SATURDAY",
