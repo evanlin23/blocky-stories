@@ -22,7 +22,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 9
+REV = 10
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -299,8 +299,8 @@ talk("dad", "L38.1", "L38>")
 shot("S38b", "P01", ocam("R6", 0.0, 0.6, 1.3, 4.4, 22, el=3, push=0.05), {})
 
 # ============================================================================================ 07 the party
-shot("S39", "L39", fcam("R3", -2.3, 5.0, d=3.0, lens=28, f=0.42, push=0.06), {
-    "dad": ps("R3", -2.3, 5.0, yaw=0, expr="smile", arms=(6, 6))})
+shot("S39", "L39", fcam("R3", -2.3, 5.0, d=2.6, lens=28, f=0.27, push=0.02, arc=0.4), {
+    "dad": ps("R3", -2.3, 5.0, yaw=0, expr="smile", arms=(6, 6))}, hand=0.004)
 ME_WIN = (1.85, 1.95)
 shot("S40", "L40", fcam("R3", *ME_WIN, d=3.2, lens=30, f=0.40, dx=0.15), {
     "me": ps("R3", *ME_WIN, expr="sheepish", head=(0, 0))})
