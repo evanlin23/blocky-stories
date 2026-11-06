@@ -74,6 +74,7 @@ The builder reads docs/engine.md itself.
 4. **On approval.** Remove `"hold"` from package.json, then run:
    - `python -m blocky check __STORY__`
    - `python -m blocky gate __STORY__`, which must say OPEN
+   - before the proof, run `python scripts/shardcheck.py --story stories/__STORY__`; fix every difference (a shard start must see the scene a continuous run sees, lesson 44)
    - `python -m pytest -q`
 
 5. **Open the PR.** Use the GitHub MCP tools, with the title "__STORY__: build (batch __BATCH__)", not WIP. In the body, add any queue-spacing notes standards gave.

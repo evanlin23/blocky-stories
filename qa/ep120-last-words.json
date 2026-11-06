@@ -1,0 +1,30 @@
+{
+ "stage": "proof",
+ "film": "proof-42179783528",
+ "run": 42179783528,
+ "sha": "ee90602513ee76b4ea7d3ad3d3b1a0b9ea5942f7",
+ "verdict": "pass",
+ "date": "2026-11-06",
+ "checked": [
+  "frames every 2 s",
+  "first 3 s every frame",
+  "TV canvas",
+  "opening ripples 0-2.4 s",
+  "S05 clip hit",
+  "thermos S40-S43",
+  "S57/S58 couch",
+  "S62/S68/S69 first frames",
+  "S67 tail",
+  "S79/S80 eggs and toast pop",
+  "cover",
+  "audio",
+  "polish",
+  "craft",
+  "flash",
+  "package",
+  "opening variety",
+  "gate"
+ ],
+ "craft": "**ep120-last-words**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.6 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 21.6 | 14.0– | ok |\n| macro.motion_energy_q | 7.97 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 7.11 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.102 | –0.25 | ok |\n| spec.shot_p90_s | 2.02 | –2.5 | ok |\n| macro.longest_still_s | 0.27 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.53 | –1.0 | ok |\n| macro.motion_energy_mean | 3.41 | 1.5– | ok |\n| spec.camera_move_share | 0.992 | 0.65– | ok |\n| spec.punch_per_10s | 0.74 | 0.4– | ok |\n| macro.brightness_mean | 0.577 | 0.35– | ok |\n| macro.brightness_first_3s | 0.678 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.42 | 0.42– | ok |\n| macro.contrast_mean | 0.238 | 0.18– | ok |\n| spec.face_big_share | 0.654 | 0.4– | ok |\n| spec.caption_share | 0.978 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.0 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.648 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.03 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 136.0 | –120 | **warn** |\n| spec.sound_events_per_10s | 2.29 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 8.3 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.042 | –0.08 | ok |\n| sound.hf_jump_max | 0.0187 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Proof run 42179783528 at ee90602 (HEAD of claude/retry-ep120-last-words and the latest commit touching stories/ep120-last-words), 270x480 x4, 122.3 s, 3669 frames, 88 shots; timeline matches. verdict.json pass. Frames every 2 s plus every frame of 0-3 s at phone size and on a 1920 TV canvas: faces read, captions centred in the safe area, no black or frozen frame (min luma 62/255, every luma jump is on a cut), no stray text (tag digits and glyphs only), shadows hold on TV.\nSecond one: a lit medium close-up of me (navy jacket) in a pale doorway, the 731 tag top left, slow push, soft green-white sound ripples sweeping across the frame; 'In this town, you can't take back the last thing you say in a HOUSE.' from 0.21 s (opening 'must' matches L01), cut to the wider doorway at 1.33 s, back to my face on 'It stays there.' A concrete rule and threat to the narrator at once.\nAsked-for spots: opening ripples 0-2.4 s are soft rings, flash house bar passes (general 1/s, 3f 2/s, 3f extended 1.97 s from 0, red 0, no house warnings). S79 (107.4-108.6 s) eggs in the pan with Dad at the stove, clean; S80 toast pops at 109.70 s (2 frames up, then holds), burnt toast over the yellow toaster, Dad's face above it backlit warm but readable, 'the toast.' caption legible on the dark slice. Thermos S40-S43 (47.4-52.1 s): the 731 tag visible in every frame. S62 (80.9), S68 (89.77) and S69 (92.03) are lit from their first frame; S67 tail (88.2-89.77 s) has no blank frame (luma 125-147 to the cut).\nclip.json: 571 times, 1 hit, 5.0 s S05 neighbor/ripple.ring1: the ripple ring effect passing round her (ripple is in clip_ok); frames 4.2-5.0 show nothing through anything. S57/S58 (71-75 s) Dad behind the coral blanket to his chin on the couch reads as a slab at phone size; note, not a fail. The cab silhouette (31-41 s) reads as a dark rim-lit shape, as scripted.\nAudio: -14.1 LUFS, -1.8 dBTP, LRA 1.9; 4 kHz share max 0.042 per 5 s, jump 0.019, no scratch; voice 8.3 dB over the bed (low end of band, never buried by eye/ear); the 0.57 s drop at 39.5-40.1 s is the scripted music drop P01 before L22 (bed under it, about -57 dB), riser into it; tail ends on 'See you SUNDAY' with music, not cut off. Polish on (reveal/twist L39, sway S28/S29/S34, hold S16/S51).\ncraft: 0 block, 0 near, 1 warn: micro.caption_sync_p90_ms 136.0 (-120). Captions read in sync on the frames checked; no viewer loss.\nPackage: title/description/pin match the film, nothing spoils the twist (the truck is never named as Dad), 'It's made up.' present, no 'husband', hard rules 1-4 clean, made_for_kids false; cover 62.9 s (S50: me in Dad's doorway inside the ripple, 'Out LOUD.', tag 0) is lit and clear. gate OPEN.\nOpening 'must' vs last upload ep62-six-riders ('count') and last in queue.txt ep99-statue-years ('cost'): no clash. Verdict: pass, no fixes."
+}
