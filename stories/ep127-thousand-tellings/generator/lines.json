@@ -184,8 +184,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Three years AGO.",
-    "Three years ago."
+    "I hadn't fished SINCE.",
+    "I hadn't fished since."
    ]
   ]
  },
@@ -220,8 +220,8 @@
     "So I drove back"
    ],
    [
-    "for a WEEK.",
-    "for a week."
+    "that SATURDAY.",
+    "that Saturday."
    ]
   ]
  },
@@ -890,16 +890,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "The counter.",
-    "The counter."
+    "Every word of it,",
+    "Every word of it,"
    ],
    [
-    "The city.",
-    "The city."
+    "right up to",
+    "right up to"
    ],
    [
-    "The CAR.",
-    "The car."
+    "my CAR.",
+    "my car."
    ]
   ]
  },
