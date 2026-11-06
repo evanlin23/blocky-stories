@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 12
+REV = 13
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L35")
@@ -207,10 +207,10 @@ def foot(lens=24, tgt=(0.1, 0.3, 1.5), pos=(1.6, 4.0, 2.3), k=1, pos2=None, tgt2
     return HC(k, pos, tgt, lens, pos2, tgt2, lens2)
 
 
-def ring_cam(p, yaw, who, d=1.9, lens=24, off=14):
+def ring_cam(p, yaw, who, d=1.9, lens=24, off=14, up=0.0):
     a = math.radians(yaw + off)
     cam = [p[0] + d * math.sin(a), p[1] - d * math.cos(a), p[2] + 1.32]
-    return cam_at(cam, [p[0], p[1], p[2] + 1.2], lens)
+    return cam_at(cam, [p[0], p[1], p[2] + 1.2 + up], lens)
 
 
 def push(cam, f=0.1):
@@ -370,8 +370,8 @@ TP("lou", "L24", INLOU, YC[1], "worried")
 K("lou", "L24+0.75", INLOU, expr="worried")
 K("lou", "L24.1", land(1, 0.2, 0.55), expr="worried")
 shot("L24", foot(24, (0.1, 0.3, 1.7)), "night", "dooropens", face=False)
-shot("L24.1", cam_face(land(1, 0.2, 0.55), YC[1], "lou", 2.8, 12, 34), "night", "louraincoat")
-shot("L25", ring_cam(land(1, 0.2, 0.55), YC[1], "lou", 1.7, 22), "night", "ring3")
+shot("L24.1", cam_face(land(1, 0.2, 0.55), YC[1], "lou", 2.8, 12, 34, tdz=0.12), "night", "louraincoat")
+shot("L25", ring_cam(land(1, 0.2, 0.55), YC[1], "lou", 1.7, 22, up=0.3), "night", "ring3")
 
 # ===== 26 she hurries down the steps
 K("lou", "L26", land(1, 0.2, 0.55), expr="worried")
