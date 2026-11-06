@@ -6,8 +6,9 @@
 # the job summary, and the run fails on a craft block, a flash failure, a clip or a hot true peak.
 #
 # It starts by itself on a story PR once both reviews approve (and again when the film files or the reviews change),
-# (the film files differ from main, no passed proof check covers them and no live proof already drew them),
-# or by hand: workflow_dispatch with the story and the branch.
+# for the stories the PR itself changed (base...HEAD), when no passed proof check covers their film files, no live
+# proof already drew them and no older run of the same commit is drawing them; or by hand: workflow_dispatch with
+# the story and the branch, held to the same checks unless `force` is set.
 name: proof
 on:
   pull_request:
@@ -16,6 +17,7 @@ on:
     inputs:
       story: {description: "story folder", required: true}
       ref: {description: "branch or commit to draw (blank = the branch this runs on)", default: ""}
+      force: {description: "draw even if the gate is closed or this commit is already proofed or being proofed", type: boolean, default: false}
 # its own groups: never queues behind or cancels the `render` group. The story isn't known before `plan` on a PR, so
 # the one-proof-per-story rule sits on the jobs that cost something (draw, one group per story and shard; assemble,
 # one per story): a hand dispatch and the PR's run for the same story wait for each other instead of drawing side by
@@ -54,7 +56,8 @@ jobs:
       - id: p
         run: |
           python scripts/plan_proofs.py --story "${{ inputs.story }}" --shards $SHARDS \
-            --base "${{ github.event.pull_request.base.sha }}" --before "${{ github.event.before }}" >> "$GITHUB_OUTPUT"
+            --base "${{ github.event.pull_request.base.sha }}" --before "${{ github.event.before }}" \
+            --force "${{ inputs.force || false }}" >> "$GITHUB_OUTPUT"
 
   voice:   # the narration, made once as render.yml makes it: the picture is drawn to it and the mix uses it
     needs: plan

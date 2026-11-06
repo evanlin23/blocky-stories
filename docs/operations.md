@@ -76,6 +76,7 @@ the hard way.
 - **proof.yml gap (2026-11-03):** a waiting PR proof run that a newer push replaces is planned again for the new push only. If that
   push touched no film files (a main merge, a handoff note), nothing is drawn and the story never gets a proof (ep55 and ep42).
   Check that a proof run has draw jobs, and if it only ran `plan`, dispatch proof.yml with the story and the branch.
+  The plan's reasons are on the run's summary page (2026-11-05).
 
 ## Uploads (YouTube)
 - **API uploads are not locked to private.** YouTube's API team confirmed this on 2026-11-02 and closed our
@@ -136,6 +137,14 @@ the hard way.
 - `test` won't merge a story without `qa/<story>.json` at `"stage": "proof"`, passed, whose `sha` is a commit in
   the branch with no film file changed after it. So the last push before a merge must be the one the proof drew.
 - A proof that fails leaves its artifact anyway (`proof-<story>`, 14 days), so the qa agent can still look.
+- **One proof per commit, for the PR's own stories (2026-11-05, migration step 1).** The PR's stories come from
+  `base...HEAD` (where the branch left main): a two-dot diff against main's tip had proofed stories main changed
+  on other PRs (dryer-nine on two PRs, warm-shoes on ep58's, about 340 runner-min in 48 h). A dispatch now passes
+  the same checks as a PR run: both reviews approve, not held, no passed proof check, no live `proof-<story>` of
+  the same film, and no older run of the same commit drawing it (ep28 and ep45 were drawn twice, about 360
+  runner-min). Such a dispatch only runs `plan` and says why on its summary page; `force` draws it anyway.
+- `test` marks a story whose only block is its proof as **waiting for proof** (a warning and a summary line). It
+  still blocks the merge.
 
 ## Merging
 - `test` gates every story a PR touches, so a story whose reviews say revise can't merge. A `WIP` title skips it.
