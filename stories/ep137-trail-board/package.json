@@ -1,0 +1,11 @@
+{
+  "title": "Our Trail Board Is Never WRONG 🌲",
+  "description": "Every sunrise, the board at our trailhead paints one rule for the day, and you have to obey it. It only paints at sunrise, and it never says why.\n\nThis weekend it painted twice, and the two rules don't agree. My sister is already lacing her boots.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Comment 1 or 2. Which board would you follow?",
+  "made_for_kids": false,
+  "cover_s": 24.3,
+  "shape": "open-choice",
+  "opening": "must",
+  "lane": "interactive",
+  "hold": "batch 15a: scripts only, not built yet"
+}

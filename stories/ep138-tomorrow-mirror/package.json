@@ -1,0 +1,11 @@
+{
+  "title": "This Gym Mirror Shows TOMORROW 🪞",
+  "description": "At Big Al's gym, the mirror shows you tomorrow. People check it before they sign for a house or quit a job, and tomorrow-you never lies.\n\nMy best friend asked for my savings tonight. So I looked, and tomorrow-me told me what to do. Then he told me again.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Comment 1 or 2. Which me would you believe?",
+  "made_for_kids": false,
+  "cover_s": 24.0,
+  "shape": "open-choice",
+  "opening": "if",
+  "lane": "interactive",
+  "hold": "batch 15a: scripts only, not built yet"
+}
