@@ -130,7 +130,7 @@ ME_SEAT = (4.4, 3.45, -0.23)
 OM_SEAT = (5.8, 3.45, -0.23)
 MOM_TABLE = (KM - 2.4, 2.25, -0.23)
 MOM_COUCH = (KM + 0.4, 2.85, -0.23)
-HK_SEATS = {"omar": (HM - 3.15, 2.25, -0.23), "mom": (HM - 2.4, 2.25, -0.23), "me": (HM - 1.65, 2.25, -0.23)}
+HK_SEATS = {"omar": (HM - 3.85, 2.25, -0.23), "mom": (HM - 2.4, 2.25, -0.23), "me": (HM - 0.95, 2.25, -0.23)}
 FIRST_OUT = {"sfx": None}
 
 for k in acting:
@@ -148,8 +148,7 @@ S(0, C((0.45, 3.9, 1.95), 2.5, 0, 4, 30, d2=2.0), hand=0.004,
   note="frame 1: close on the hatch, yellow gloves sliding a gold basket, the sign above, the dark round window beside")
 S("L02", C((1.4, 3.9, 1.6), 1.2, 15, 3, 40, d2=0.9), note="close on the round window, dark, the pink glow on its glass")
 hatch("L03", s0=1.0, s1=1.0, wig=0.0, basket=False)
-scene("L03", me=dict(pos=(2.6, 0.6, 0), yaw=40, expr="smile"))
-raw("me", "L03.1-0.3", pos=[4.4, 2.8, 0])
+scene("L03", me=dict(pos=(3.5, 1.5, 0), yaw=40, expr="smile"))
 raw("me", "L03.1", pos=list(ME_SEAT))
 S("L03", C((3.7, 2.1, 0.9), 3.0, 0, 4, 30, d2=2.6), note="a customer slides into the booth")
 cue("L03.1", "bell")
@@ -265,15 +264,15 @@ S("L34", C((KM + 0.1, 1.95, 1.4), 2.0, 0, 3, 40, d2=1.6), ring=True, note="throu
 cue("L35", "mgloves", on=False)
 scene("L35", mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="smile"), omar=dict(pos=HK_SEATS["omar"], yaw=0, expr="grin"),
       me=dict(pos=HK_SEATS["me"], yaw=0, expr="smile"))
-S("L35", C((HM - 2.4, 2.25, 1.25), 3.1, 0, 5, 30, d2=2.6), note="our kitchen table: Mom, me and Omar at dinner, Omar's plate full")
-scene("L36", omar=dict(pos=(HM - 0.6, 1.95, 0), yaw=0, expr="grin", arms=[75, 75]),
+S("L35", C((HM - 2.4, 2.25, 1.25), 3.2, 0, 5, 30, d2=2.7), note="our kitchen table: Mom, me and Omar at dinner, Omar's plate full")
+scene("L36", omar=dict(pos=(HM - 0.95, 1.95, 0), yaw=0, expr="grin", arms=[75, 75]),
       me=dict(pos=(HM + 0.5, 1.95, 0), yaw=0, expr="smile", arms=[75, 75]),
       mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="laugh"))
 S("L36", C((HM - 2.4, 2.25, 1.3), 1.5, 0, 4, 36, d2=1.2), note="Mom laughing at the table")
-scene("L36+1.0", omar=dict(pos=(HM - 0.6, 1.95, 0), yaw=0, expr="laugh", arms=[75, 75]),
+scene("L36+1.0", omar=dict(pos=(HM - 0.95, 1.95, 0), yaw=0, expr="laugh", arms=[75, 75]),
       me=dict(pos=(HM + 0.5, 1.95, 0), yaw=0, expr="smile", arms=[75, 75]),
       mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="laugh"))
-S("L36+1.0", C((HM - 0.05, 1.95, 1.3), 2.5, 0, 4, 30, d2=2.2), note="Omar and me at the stove")
+S("L36+1.0", C((HM - 0.2, 1.95, 1.3), 2.5, 0, 4, 30, d2=2.2), note="Omar and me at the stove")
 cue("L37", "dish", which="pan")
 scene("L37")
 S("L37", C((HM - 0.2, 0.95, 1.0), 0.9, 15, 40, 36, d2=0.65), note="a pan of noodles")
@@ -293,21 +292,21 @@ S("L40", C((0.2, 2.2, 1.45), 2.4, 0, 4, 32, d2=1.9), note="Mom stretching, reste
 # =========================================================================================== 06 L41-L43 the sting and the loop
 scene("L41", mom=dict(pos=(-1.0, 3.0, 0), yaw=120, expr="smile", arms=[1.5, 0]))
 S("L41", C((-1.0, 3.0, 1.45), 2.2, 55, 3, 36, d2=1.8), note="Mom at the diner counter, pointing at the hatch")
-cue("L41.2", "srbox", x0=SR - 1.0, x1=SR + 0.2, y0=1.3, y1=1.3, dur=1.4)
+cue("L41.2", "srbox", x0=SR - 0.9, x1=SR, y0=1.3, y1=1.3, dur=1.29)
 scene("L41.2", me=dict(pos=(SR - 1.2, 0.9, 0), yaw=90, expr="neutral", arms=[0.9, 0.9]),
       omar=dict(pos=(SR - 0.6, 1.7, 0), yaw=90, expr="neutral", arms=[0.9, 0.9]))
-raw("me", "L41.2+1.4", pos=[SR + 0.2, 0.9, 0])
-raw("omar", "L41.2+1.4", pos=[SR + 0.8, 1.7, 0])
+raw("me", "L42", pos=[SR - 0.6, 1.5, 0])
+raw("omar", "L42", pos=[SR + 0.85, 1.5, 0])
 S("L41.2", C((SR, 1.3, 1.2), 3.4, 0, 5, 30, d2=3.0), note="Omar and me at work in a stockroom, mid-step, carrying a box")
 cue("L42", "srbox", x0=SR, x1=SR, y0=1.3, y1=1.3, dur=0.1)
-scene("L42", me=dict(pos=(SR - 0.95, 1.5, 0), yaw=0, expr="shut", head=[0, 12]), omar=dict(pos=(SR + 0.8, 1.5, 0), yaw=0, expr="shut"))
+scene("L42", me=dict(pos=(SR - 0.6, 1.5, 0), yaw=0, expr="shut", head=[0, 12]), omar=dict(pos=(SR + 0.85, 1.5, 0), yaw=0, expr="shut"))
 S("L42", C((SR, 1.5, 1.2), 3.0, 0, 0, 30, d2=2.8), note="we blink")
 cue("L42.2", "hbask", on=True)
 cue("L42.2", "stove", on=True)
-scene("L42.2", omar=dict(pos=(HM - 0.6, 1.95, 0), yaw=0, expr="wide", arms=[75, 75]),
+scene("L42.2", omar=dict(pos=(HM - 0.95, 1.95, 0), yaw=0, expr="wide", arms=[75, 75]),
       me=dict(pos=(HM + 0.5, 1.95, 0), yaw=0, expr="wide", arms=[70, 70]))
-S("L42.2", C((HM, 1.95, 1.35), 2.7, 0, 5, 30, d2=2.3), note="at our apartment stove side by side, a fry basket in my hands")
-S("L42.3", C((HM - 0.05, 1.95, 1.3), 2.2, 0, 16, 34, d2=1.9), note="both of us whole, the fry basket at the end of my sleeve")
+S("L42.2", C((HM - 0.2, 1.95, 1.35), 2.7, 0, 5, 30, d2=2.3), note="at our apartment stove side by side, a fry basket in my hands")
+S("L42.3", C((HM - 0.2, 1.95, 1.3), 2.5, 0, 16, 34, d2=2.2), note="both of us whole, the fry basket at the end of my sleeve")
 cue("L43", "hbask", on=False)
 cue("L43", "stove", on=False)
 scene("L43")
@@ -386,6 +385,6 @@ if vt.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(e["at"]))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 5
+story["rev"] = 6
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
