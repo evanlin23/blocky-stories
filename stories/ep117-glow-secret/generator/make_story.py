@@ -413,8 +413,8 @@ remap_all(cues)
 
 # ---- extra angle cuts (retry 2026-11-06): a second camera 0.5 m to the side, cut in half way through a long shot
 # (same set, same light), so the picture changes about as often as the proof reads it. Times: film seconds.
-SPLITS = {"L07": 12.7, "L08": 14.8, "L09": 16.8, "L11": 20.9, "L12": 22.9, "L13": 24.6, "L15": 28.1, "L16": 30.3,
-          "L19": 36.6, "L21": 40.1, "L25": 48.5, "L27": 51.6, "L27b": 53.4, "L28": 55.4, "L32": 61.9}
+SPLITS = {"L07": 12.81, "L08": 14.91, "L09": 16.71, "L11": 21.0, "L12": 22.49, "L13": 24.34, "L15": 27.68, "L16": 30.14,
+          "L19": 36.72, "L21": 39.59, "L25": 48.45, "L27": 51.28, "L27b": 53.26, "L28": 55.25, "L32": 61.59}
 _out = []
 for _e in SH:
     _out.append(_e)
@@ -507,8 +507,8 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S14", "S24", "S27", "S29"],
-    "frames_ok": ["S19", "S27"],
+    "framing_ok": [names[n_] for n_ in ("nudge", "shadows", "dadflare", "emptybooth")],
+    "frames_ok": [names[n_] for n_ in ("spotdad", "dadflare")],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print({v: k for k, v in names.items()}) if __import__("os").environ.get("NAMES") else None
