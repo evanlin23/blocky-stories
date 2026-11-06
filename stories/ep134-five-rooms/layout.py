@@ -14,7 +14,7 @@ RDOORY = {1: 3.4, 2: 5.8, 3: 8.2, 4: 10.6}                       # right wall do
 # the hall in its states: which left doors are open, and how far (degrees)
 HALLS = {
     "A": {"o": {}},                              # night, 5 to 9 shut
-    "B": {"o": {7: 7}},                          # door seven open an inch
+    "B": {"o": {7: 12}},                          # door seven open an inch
     "C": {"o": {7: 100}},
     "D": {"o": {7: 100, 5: 100}},
     "E": {"o": {7: 100, 5: 100, 8: 100}},

@@ -178,7 +178,7 @@ class Room:
     """A room behind a left-wall door (side -1: depth runs to -x) or a right-wall door (side +1). d is the depth in
     from the doorway, l along the wall from the door's centre, z up."""
 
-    def __init__(self, kit, pl, side, yc, tag, wall, floor, ceil, lit, light_col="#fff0d8", e=170, deep=3.0, half=0.95, glow=None, lamps=True, gstr=1.1):
+    def __init__(self, kit, pl, side, yc, tag, wall, floor, ceil, lit, light_col="#fff0d8", e=170, deep=3.0, half=0.95, glow=None, lamps=True, gstr=2.0):
         self.kit, self.pl, self.s, self.yc, self.t = kit, pl, side, yc, tag
         self.deep, self.half = deep, half
         x0 = side * (1.7 + 0.2)
@@ -234,7 +234,7 @@ class Room:
 def room5(kit, pl, yc):
     purple = kit.plastic("#9a6ad8", 0.8, spec=0.05)
     r = Room(kit, pl, -1, yc, "r5", purple, kit.planks("#cbb2e8", "#bfa2e0", 1.0), kit.plastic("#e8dcf6", 0.9),
-             True, "#ffe9ff", e=200, glow="#9a6ad8")
+             True, "#ffe9ff", e=100, glow="#9a6ad8", gstr=1.3)
     for k, (bg, ink, g) in enumerate([("#ffd95a", "#2b1a4a", 0), ("#ff8fc8", "#2b1a4a", 1), ("#7fe0d0", "#2b1a4a", 2)]):
         r.poster(f"p{k}", -0.65 + 0.65 * k, 1.5, bg, ink, g)
     r.box("bed", (1.9, 0.9, 0.38), 2.2, -0.45, 0.0, kit.plastic("#f4e6ff", 0.8), bevel=0.04)
@@ -258,7 +258,7 @@ def room5(kit, pl, yc):
 def room6(kit, pl, yc):
     mint = kit.plastic("#9fe6c2", 0.8, spec=0.05)
     r = Room(kit, pl, -1, yc, "r6", mint, kit.planks("#e9d3a8", "#dcc596", 1.0), kit.plastic("#f2fff8", 0.9), True,
-             "#f0fff6", e=200, glow="#9fe6c2")
+             "#f0fff6", e=90, glow="#3fcf90", gstr=1.3)
     wood = kit.plastic("#b98a56", 0.6)
     # a bunk bed along the far wall
     for k, (z, c) in enumerate(((0.45, "#ff8fa8"), (1.25, "#6fb4ff"))):
@@ -282,6 +282,8 @@ def room7(kit, pl, yc, dark=False):
     mus = kit.plastic("#e8b83a", 0.8, spec=0.05)
     r = Room(kit, pl, -1, yc, "r7", mus, kit.planks("#f0d9a0", "#e6cb8c", 1.0), kit.plastic("#fff5d8", 0.9), True,
              "#fff0c8", e=200, glow="#e8b83a")
+    if dark:     # a black backing inside the doorway, so the gap at the latch side reads as a dark slit
+        pl.box("r7.void", (0.04, 1.0, 2.15), (r.x0 - 0.3, yc, 1.075), kit.plastic("#030303", 0.9, spec=0.0))
     r.box("bed", (1.9, 0.9, 0.38), 1.6, 0.55, 0.0, kit.plastic("#fff6e4", 0.8), bevel=0.04)
     r.box("bedtop", (1.9, 0.9, 0.12), 1.6, 0.55, 0.38, kit.plastic("#2fb8a8", 0.8), bevel=0.04)
     r.box("rug", (1.6, 1.3, 0.02), 1.7, -0.1, 0.0, kit.plastic("#b04a6a", 0.9))
@@ -303,7 +305,7 @@ def room7(kit, pl, yc, dark=False):
 def room8(kit, pl, yc):
     gray = kit.plastic("#a8aab2", 0.85, spec=0.05)
     r = Room(kit, pl, -1, yc, "r8", gray, kit.planks("#c9c4bc", "#bdb8b0", 1.0), kit.plastic("#eceef2", 0.9), True,
-             "#f4f4ff", e=200, glow="#a8aab2")
+             "#f4f4ff", e=90, glow="#a0a2b0", gstr=1.0)
     card = kit.plastic("#d9a86a", 0.85, spec=0.05)
     card2 = kit.plastic("#c99456", 0.85, spec=0.05)
     tape = kit.plastic("#4a3320", 0.6)
@@ -322,7 +324,7 @@ def room8(kit, pl, yc):
 def room9(kit, pl, yc):
     white = kit.plastic("#f4f7fa", 0.85, spec=0.05)
     r = Room(kit, pl, -1, yc, "r9", white, kit.planks("#bcd6ee", "#b0cde8", 1.0), kit.plastic("#ffffff", 0.9), True,
-             "#f0f6ff", e=210, glow="#f4f7fa")
+             "#f0f6ff", e=100, glow="#f4f7fa", gstr=1.2)
     dk = kit.plastic("#3a4150", 0.5, spec=0.3)
     r.box("tbase", (1.6, 0.6, 0.18), 1.7, 0.4, 0.0, dk, bevel=0.03)
     r.box("belt", (1.5, 0.5, 0.05), 1.7, 0.4, 0.18, kit.plastic("#222630", 0.6), bevel=0.01)
@@ -386,7 +388,7 @@ def build_hall(kit, key):
     # the end wall with the window
     wx0, wx1 = -0.5, 1.1
     pl.wall_x("we", Y1 + 0.1, -W_ - 0.2, W_ + 0.2, 0, H, 0.2, wall, holes=[(wx0, wx1, 0.8, 2.3)])
-    sky = kit.emit("#ffe6a0", 0.75, "sunsky") if morning else kit.emit("#5b6bb8", 1.0, "nightsky")
+    sky = kit.emit("#ffe6a0", 0.6, "sunsky") if morning else kit.emit("#5b6bb8", 1.0, "nightsky")
     pl.box("sky", (wx1 - wx0 + 0.2, 0.05, 1.6), ((wx0 + wx1) / 2, Y1 + 0.35, 1.55), sky)
     fw = kit.plastic("#ffffff", 0.6, spec=0.1)
     for nm, sz, lc in (("t", (wx1 - wx0 + 0.16, 0.14, 0.08), ((wx0 + wx1) / 2, Y1 - 0.02, 2.31)),
@@ -397,14 +399,14 @@ def build_hall(kit, key):
     # doors: the leaf hangs on a hinge, so an open door is just a different still state
     trim = kit.plastic("#fffdf4", 0.6, spec=0.1)
 
-    def door(n, yc, left, ang, num=True, extra_open=True):
+    def door(n, yc, left, ang, num=True, extra_open=True, lw=0.95):
         xh = G.LX - 0.03 if left else G.RX + 0.03
         yh = yc - 0.475 if left else yc + 0.475
         hinge = pl.empty(f"hinge{n}", (xh, yh, 0.0), rot=(0, 0, ang * D2R))
-        cy = 0.475 if left else -0.475
-        pl.box(f"leaf{n}", (0.05, 0.95, 2.1), (0, cy, 1.05), door_m, bevel=0.012, parent=hinge)
+        cy = lw / 2 if left else -lw / 2
+        pl.box(f"leaf{n}", (0.05, lw, 2.1), (0, cy, 1.05), door_m, bevel=0.012, parent=hinge)
         fx = 0.0475 if left else -0.0475           # local x of the hall face's trim
-        ky = 0.85 if left else -0.85
+        ky = (lw - 0.1) if left else -(lw - 0.1)
         pl.sph(f"knob{n}", 0.05, (fx * 1.6 + (0.02 if left else -0.02), ky, 1.0), brass, parent=hinge)
         if num:
             # digit bars: u runs along the door's face as the viewer reads it left to right
@@ -428,7 +430,11 @@ def build_hall(kit, key):
     rooms = {}
     for n in (5, 6, 7, 8, 9):
         ang = opens.get(n, 0)
-        door(n, G.DOORY[n], True, ang)
+        door(n, G.DOORY[n], True, ang, lw=0.8 if (n == 7 and 0 < ang < 20) else 0.95)      # ajar: a leaf a hand narrower, a dark slit at the latch
+        if ang >= 60:      # an open door hides its numeral, so the same numeral stands on the wall above the frame
+            def addw(name, size, uz, n=n):
+                pl.box(f"pn{n}.{name}", (0.025, size[0], size[1]), (G.LX + 0.0225, G.DOORY[n] + uz[0], uz[1]), teal)
+            seg7(addw, str(n), 0.0, 2.55, 0.34, 0.22, 0.06)
         if ang:
             if n == 7:
                 rooms[n] = room7(kit, pl, G.DOORY[n], dark=ang < 20)      # ajar: a dark room, so the gap reads as a dark slit
@@ -503,7 +509,7 @@ def build_house(kit):
 def build_board(kit):
     pl = Pl(kit, G.BOARD, "bh")
     ground(kit, pl, "#7fcf6a", w=80, d=60, y0=-20)
-    pl.box("hill", (60, 20, 3.0), (0, 14, 1.5), kit.plastic("#6cc45c", 0.9), rot=(-0.12, 0, 0))
+    pl.box("hill", (80, 22, 1.4), (0, 13, 0.7), kit.plastic("#6cc45c", 0.9))      # a flat terrace the house stands on
     wallc = kit.plastic("#f4e2c0", 0.85, spec=0.05)
     pl.box("bld", (34, 3.0, 6.0), (0, 9.0, 4.4), wallc)
     pl.box("bldbase", (34, 3.1, 1.6), (0, 9.0, 0.7), kit.plastic("#b9a58a", 0.9))
