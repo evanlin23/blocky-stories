@@ -329,6 +329,29 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Done 2026-11-06 (#335): every apt step in every workflow retries update and install 3 times, 20 s apart. The
     QA desk checks a story's final whenever its own assemble job passed, even if the run failed.
 
+46. **Lurches and bodies inside each other got past both reviews and the proof qa, and three merged stories went
+    back for a fix round (2026-11-06).** ep122 S69: a hold key at the walk's start (x -0.35) against a walk to
+    +0.35 slid the legs 0.7 m in 4 frames at 103.8 s (fixed in #358). ep125 S42: an acting key at L32.2+0.3 landed
+    0.067 s after the L32.1+0.5 hold, a 0.6 m jump in 2 frames at 52.2 s. ep132: two people stood 0.85 m apart (and
+    0.56 and 0.65 m in other shots), where a default character is 1.35 m arm to arm, so their arms went through each
+    other and on the cover two read as one block. Each cost a fresh session, a new proof and a full final re-render.
+    The story files alone showed all three: the reviews look at stills and the proof qa at a contact sheet, so a
+    2-frame slide and an arm inside an arm don't show.
+    → Done 2026-11-06: `scripts/staging.py --story stories/<story>` (report-only, no Blender, about 2 s) reads every
+    frame of the edit through `acting.state` and the shot cameras with the polish pack's move. A lurch is 0.25 m or
+    more in 0.15 s, seen at both ends, on a key under 0.4 s from the last (the leg swing opens over 0.15 s at each
+    end of a key, so a shorter one slides the body with its legs still) or on two keys at one time; a cut can move
+    anyone, unless the camera stays put (a jump cut). Too close is two characters on camera in one shot under 1.35 m
+    x their widths apart whose shoulders-and-arms boxes overlap (face to face at 0.8 m is fine: a body is 0.34 m
+    deep). It flags all three cases (ep122 on the commit before #358). The build brief runs it next to framing.py;
+    deliberate contact goes in `"staging_ok"`. Every built story was flagged except ep123: 273 rows (239 close, one per
+    pair per shot, and 34 lurch) on the 15 in queue.txt, and 81 on the 12 merged since ep116. A still of each pair
+    or lurch showed that most close rows are real merged bodies (people side by side at a table, a bench, a counter,
+    a bus stop). The deliberate ones are hugs, dance holds, a packed lift and car seats. ep129, ep130, ep134 and
+    ep135 had no build yet. Limits: walls are unknown (someone behind
+    one still counts), and a lurch is read from the keys, not the picture: a fall or a hop keyed on short keys (ep98
+    S07, S33) is flagged and goes in `staging_ok`.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
