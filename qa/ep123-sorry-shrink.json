@@ -1,0 +1,28 @@
+{
+ "stage": "proof",
+ "film": "proof-42141301190",
+ "run": 42141301190,
+ "sha": "a17ac64efcc1da5f7bf083cf3f8da3335516f914",
+ "artifact": 13469507687,
+ "verdict": "pass",
+ "date": "2026-11-06",
+ "checked": [
+  "frames every 2 s",
+  "first 3 s every frame",
+  "S15 22.8-24.6 s frame by frame (fix 1)",
+  "S15/S16 cut frames 720-731",
+  "S16 24.2-28.07 s every 0.25 s",
+  "TV canvas",
+  "cover",
+  "loudness and HF windows",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.3 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 13.3 | 14.0– | **near** |\n| macro.motion_energy_q | 5.78 | 6.0– | **near** |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 9.62 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.47 | –2.5 | ok |\n| macro.longest_still_s | 0.03 | –1.5 | ok |\n| macro.motion_energy_mean | 2.74 | 1.5– | ok |\n| spec.camera_move_share | 0.996 | 0.65– | ok |\n| spec.punch_per_10s | 0.71 | 0.4– | ok |\n| macro.brightness_mean | 0.769 | 0.35– | ok |\n| macro.brightness_first_3s | 0.775 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.271 | 0.42– | **warn** |\n| macro.contrast_mean | 0.186 | 0.18– | ok |\n| spec.face_big_share | 0.872 | 0.4– | ok |\n| spec.caption_share | 0.975 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.607 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.214 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 150.0 | –120 | **warn** |\n| spec.sound_events_per_10s | 3.92 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0412 | –0.08 | ok |\n| sound.hf_jump_max | 0.0078 | –0.04 | ok |",
+ "notes": "FIX 1 from proof-42138026361 CONFIRMED: S15 (22.97-24.17 s, frames 689-725) shows Aunt Mae and both card fans to its last frame; the reset keys now fire at L16 and S16 starts clean at 24.20 s (frame 726), the narrator close-up 'and out of HABIT', with no Mae figure, card or tablecloth leaking in through S16 (24.20-27.30). The S15/S16 cut is a clean hard cut, no flash or stale frame. Minor: the 'cards DOWN,' caption clears 1 frame (24.17 s) before the cut; not visible at speed.\nShould-fix still open (not taken, not a fail): 17.17-17.60 s, S11a, Mae's head about 0.10 of frame width on 'Every inch'; bring the lens closer so her head is >= 0.2 wide.\nRest unchanged from proof 1: frames every 2 s and the first 3 s clean, captions in the safe area, max 2 faces, no stray text, cover_s 2.4 (S02a) strong at phone and TV size. clip.json 0 hits (151 times).\nSecond one: a bright sunny close-up of Aunt Mae at eye level (gray perm, red cat-eye glasses, sly closed smile), the '5' ruler tag top-left, slow push; 'Every SORRY here shrinks you an INCH.' poses the rule and its price.\nAudio: -14.1 LUFS, -1.8 dBTP, LRA 0.9; HF share max 0.041 per 5 s, jump 0.008 (no scratch); voice on top (bed gap 10.6 dB); tail ends on Mae's 'it STARTS.', not cut off. Polish on. Flash house bar passes (1/s, 3f 3/s, red 0).\nnear: macro.picture_changes_per_10s_q 13.3 (14.0-), macro.motion_energy_q 5.78 (6.0-), watched 18-28 s: S12 to S18, every shot 1.6 s or less with a push, a bow, the slap and the drop; nothing drags. Not a fail.\nPackage unchanged since proof 1: matches, no spoiler, hard rules 1-4 fine, male narrator, no 'husband'. opening 'cost' matches L01; last upload is 'count'; queue note: don't slot straight after ep99-statue-years ('cost'). gate OPEN (only the 30 s test floor, PR #325).\ncraft: 0 block, 2 near, 3 warn: spec.cuts_per_10s 9.62 (5.5-8.0), macro.saturation_mean 0.271 (0.42-), micro.caption_sync_p90_ms 150.0 (-120); pastel sunny look by design, captions read in sync by eye."
+}
