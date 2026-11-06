@@ -173,7 +173,11 @@ for i, (who, y0) in enumerate((("n1", 18.0), ("n2", 15.5), ("n3", 13.0))):
 S("L03", X((-1.0, 9.0, 1.3), (-6.5, 15.0, 1.1), 20, (-1.5, 10.0, 1.3), (-6.5, 14.0, 1.1), 20), "day", fill=0.9)
 put("baker", "L04", (-200.0, 0.4), 180, "wide", arms=[40, 40])
 walk("baker", "L04", (-200.0, 0.5), "L04.1", (-200.0, 0.5), 180, "wide", arms=[40, 40])
-raw("baker", "L04.2", pos=[-198.2, -1.5], expr="scared")
+# staging fix: a real turn (180 -> 326 over 0.4 s), then a real walk toward the camera (1.3 m in 0.6 s)
+raw("baker", "L04.1", yaw=180)
+raw("baker", "L04.1+0.4", yaw=326, expr="scared")
+raw("baker", "L04.1+0.4", pos=[-200.0, 0.5])
+raw("baker", "L05-0.05", pos=[-199.4, -0.7])
 gone("baker", "L05-0.05")
 S("L04", PX((-196.6, -4.0, 1.7), (-199.4, 0.5, 1.2), 17, 0.06), "in", fill=0.5, inside=0.8, exp=-0.45)
 for i, who in enumerate(("t1", "t2", "t3", "t4")):
@@ -182,13 +186,14 @@ for i, who in enumerate(("t1", "t2", "t3", "t4")):
 S("L05", PX((7.0, -46.0, 1.5), (0, -62.0, 0.9), 18, 0.10), "day", fill=0.9)
 steps("L05.2", 13)
 cue("L05.2", "door", open=1.0)
+cue("L05.2", "lamp", off=True)  # staging fix: the default lamp hung mid-stair where the runners pass
 for i, who in enumerate(("t1", "t2", "t3", "t4")):
     ln = -0.3 + 0.2 * i
-    t0 = 0.3 * i
+    t0 = 0.4 * i
     put(who, f"L05.2+{t0:.2f}", (98.2, ln, 0.0), 90, "scared")
-    for j, k in enumerate((1, 3, 6, 9)):
-        raw(who, f"L05.2+{t0 + 0.2 * (j + 1):.2f}", pos=[stair(k)[0], ln, stair(k)[1]])
-    gone(who, f"L05.2+{t0 + 0.95:.2f}")
+    # staging fix: one real run down the stairs (0.95 s) instead of four 0.2 s hops
+    raw(who, f"L05.2+{t0 + 0.95:.2f}", pos=[stair(9)[0], ln, stair(9)[1]])
+    gone(who, f"L05.2+{t0 + 1.0:.2f}")
 S("L05.2", PX((97.2, 1.1, 1.8), (102.4, 0.0, -1.2), 17, 0.08), "in", fill=0.9, stairl=1.5)
 walk("mail", "L06", (4.6, -14.0), "L06.2", (9.9, -6.0), expr="scared")
 gone("mail", "L06.2+0.25")
@@ -300,8 +305,8 @@ walk("dad", "L25", (95.6, -2.0), "L25+1.0", (99.0, -0.2), 90, "scared")
 S("L25", X((96.6, 0.8, 1.45), (100.0, 0.58, 1.45), 44, (97.2, 0.75, 1.45), (100.0, 0.58, 1.45), 50), "in", fill=1.1, name="tally")
 gone("dad", "L26-0.05")
 walk("me", "L26", (-9.5, 1.5), "L26+0.5", (-9.5, -0.8, 0.9), 180, "scared")
-raw("me", "L26+0.95", pos=[-9.5, -2.2, 0.0])
-raw("me", "L26.1+0.5", pos=[-9.7, -3.6, 0.9])
+# staging fix: two out-of-order keys (one at ground height 0.0 on a 0.9 ground) made him jump back and forth
+raw("me", "L26+1.7", pos=[-9.7, -3.6, 0.9])
 S("L26", PX((-5.4, 1.2, 1.6), (-9.5, -0.8, 0.8), 20, 0.12), "gold", fill=0.9)
 gone("me", "L27-0.05")
 put("arlo", "L27", (-14.0, -6.0, 0.9), 90, "smirk")
@@ -608,6 +613,11 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
+    "staging_ok": ["S36/me+arlo heads side by side, arms below frame, clear at phone size",
+                   "S37/me+arlo same pair as S36, bodies out of frame",
+                   "S66/me+dad dark stair shot, one body in frame (dad behind me on the stairs), no arm overlap seen",
+                   "S82/me+dad close-up on one shoulder; the other is out of frame",
+                   "S94/dinner table: seated side by side behind the table, arms hidden"],
 }
 from blocky import timeline
 
