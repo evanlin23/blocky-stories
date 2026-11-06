@@ -314,6 +314,20 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     energy per object. About 30 s a story. The build brief runs it before the proof; fix every difference. The
     fix in a set.py: make extras in `build()`, or set every object's state from `t` on every call, never only on a
     change.
+    → Done 2026-11-06 (#351, merged 9 AM Fri): the engine hides any object a story's `animate` creates under a hidden
+    cast root on the frame it's made. Shardcheck failures went from 16 stories to 3 (carried state in ep117, ep48,
+    ep55), and frame-0 floats from 15 stories to 0. A blanket "hide every child of a hidden object" erased parts
+    stories show on purpose (POV gloves, shoes), so the rule is narrow. Of the finals drawn before it, the QA desk
+    viewed frames 0 to 63 of all 14 flagged: only ep102's frame 0 showed it (Clem missing), and it gets a redraw.
+
+45. **One runner in 32 had an empty apt mirror list, and the whole render failed on that shard (2026-11-05/06).**
+    Render runs 42144845576, 42152717471 and 42217922531 each lost one draw shard at the apt step: `E: Unable to
+    locate package libegl1`. The failing runner's `apt-get update` fetched only packages.microsoft.com; a passing
+    runner on the same Ubuntu 26.04 image also fetched azure.archive.ubuntu.com through `/etc/apt/apt-mirrors.txt`.
+    The other lane's story still assembled, but the run read "failure", so the QA desk skipped ep117's good final
+    for hours.
+    → Done 2026-11-06 (#335): every apt step in every workflow retries update and install 3 times, 20 s apart. The
+    QA desk checks a story's final whenever its own assemble job passed, even if the run failed.
 
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
