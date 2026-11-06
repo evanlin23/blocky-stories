@@ -3573,6 +3573,10 @@
  "frames_ok": [
   "S31"
  ],
+ "staging_ok": [
+  "S36/me+dad",
+  "S39/me+dad"
+ ],
  "framing_ok": [
   "S26",
   "S35",

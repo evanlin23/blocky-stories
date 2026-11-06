@@ -387,6 +387,8 @@ story = {
     "sound": sound,
     "set_moves": [],
     "frames_ok": ["S31"],
+    # S36 (1.30 m) and S39 (1.10 m): checked on the final by the QA desk 2026-11-06, the arms read apart
+    "staging_ok": ["S36/me+dad", "S39/me+dad"],
     "framing_ok": ["S26", "S35", "S42"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
