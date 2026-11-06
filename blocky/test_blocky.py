@@ -818,3 +818,53 @@ def test_check_finds_spoken_words_story_json_lost():
     assert timeline.lost_words(st, src) and "twelve" in timeline.lost_words(st, src)[0]
     st["lines"][0]["chunks"] = timeline.split_lines(src)[0][0]["chunks"]
     assert timeline.lost_words(st, src) == []
+
+
+def test_a_hidden_cast_member_hides_parts_the_set_adds_on_its_first_frame(fake_rig, monkeypatch):
+    """ep117 (lesson 44): a set.py that adds a moustache on its first `animate` call adds it after `pose()` hid its
+    owner. The engine hides everything under a hidden cast root after `animate`, on that first frame too."""
+    import importlib
+    import sys
+    import types
+
+    sys.modules.pop("blocky.bl_story", None)
+    bl = importlib.import_module("blocky.bl_story")
+    try:
+        class Ob:
+            def __init__(self):
+                self.hide_render, self.children_recursive = False, []
+
+        class Char:
+            def __init__(self):
+                self.root = Ob()
+                self.root.children_recursive.append(Ob())
+
+            def pose(self, *a):   # like rig.Character.pose: the root and its children take `hidden`
+                self.root.hide_render = a[-1]
+                for ob in self.root.children_recursive:
+                    ob.hide_render = a[-1]
+
+        W = {}
+
+        def animate(kit, story, tl, t, ctx):
+            if not W.get("inited"):   # the lazy extra, made visible on this process's first call
+                W["inited"] = True
+                ctx["stache"] = Ob()
+                ctx["dad"].root.children_recursive.append(ctx["stache"])
+
+        state = {"x": 0, "y": 0, "z": 0, "yaw": 0, "legs": 0, "arms": (0, 0), "arms_side": (0, 0), "head_yaw": 0,
+                 "head_pitch": 0, "lean": 0, "bob": 0, "expr": "neutral", "mouth": 0, "look": (0, 0), "blink": 0}
+        tl = {"shots": [{"id": "S1", "start": 0.0, "end": 9.0}]}
+        monkeypatch.setattr(bl.kit, "update_lights", lambda t, o: None, raising=False)
+        monkeypatch.setattr(bl.kit, "place_camera", lambda *a: None, raising=False)
+        monkeypatch.setattr(bl, "cam_at", lambda *a: ((0, 0, 0), (0, 1, 0), 35, 0))
+        for hidden in (True, False):
+            W.clear()
+            dad = Char()
+            ctx = {"dad": dad}
+            monkeypatch.setattr(bl.acting, "state", lambda tl_, name, t, seed=0: {**state, "hidden": hidden})
+            bl.pose_at(3.0, {}, tl, types.SimpleNamespace(animate=animate), ctx, {"dad": (dad, 0)}, {"S1": {}})
+            assert ctx["stache"].hide_render is hidden
+            assert all(ob.hide_render is hidden for ob in dad.root.children_recursive)
+    finally:
+        sys.modules.pop("blocky.bl_story", None)
