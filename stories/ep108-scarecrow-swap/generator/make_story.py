@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 lines = json.loads((HERE / "lines.json").read_text())
 # the 0.4 s music drop before L12
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L12")
@@ -204,8 +204,8 @@ hide("grandma", "L11")
 cue("L11", "flash", show=1.0, on=0.0, bob=0.0)
 shot("L11", mv([33.0, -14.5, 1.5], [34.4, -9.2, 1.3], 30, [33.2, -13.5, 1.5], [34.4, -9.2, 1.3], 30), "porch")
 put("me", "L11.1", [0.0, -10.0], 180, arms=[0, 78], expr="worried")
-go("me", "L11.1+0.1", [0.0, -10.0])
-go("me", "L11.2", [0.9, -2.6])
+go("me", "L11.2", [0.07, -9.4])
+put("me", "L11.2", [0.9, -2.6], 180, arms=[0, 78], expr="worried")
 cue("L11.1", "flash", on=1.0, bob=1.0, show=1.0, beam=1.0, pow=0.6, dur=0.4)
 shot("L11.1", mv([-0.7, -13.5, 1.75], [0.3, -3.0, 1.0], 24, [-0.5, -12.0, 1.75], [0.3, -3.0, 1.0], 24), "beamrows")
 cue("L11.2+0.3", "flash", bob=0.0, dur=0.5)
@@ -353,6 +353,7 @@ story = {
     "set_moves": [names["jeep"], names["crowflap"], names["everybody"]],
 }
 story["look"]["polish"] = polish
+story["staging_ok"] = ["S32/grandma+straw checked OK on the final", "S38/grandma+straw checked OK on the final", "S39/grandma+straw checked OK on the final", "S40/grandma+straw checked OK on the final", "S41/grandma+straw checked OK on the final"]
 story["framing_ok"] = ["S42", "S16"]   # S16: the straw head is cropped on purpose (the sack face must not show before L16)
 story["clip_ok"] = ["beam.cone", "S20/beam.cone", "S20/beam"]
 story["asr_forgive"] = ["there is", "there's"]
