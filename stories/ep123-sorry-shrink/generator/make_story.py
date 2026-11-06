@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 6
 lines = json.loads((HERE / "lines.json").read_text())
 D2R = math.pi / 180
 T = G.T
@@ -214,6 +214,7 @@ mae("L13", "warm")
 shot("L13", face(0.46, 85, az=-4, push=0.08, f=0.8), "S13")
 mae("L13.1", "warm", head=[0, 18], blend=0.5)          # a little bow of the head
 mae("L13.2", "warm", head=[0, 2], blend=0.4)
+acting["mae"].append({"at": "L14", "pos": MAEP, "hidden": True, "blend": 0.0})          # stay put until the cut (else she walks toward her next mark during S13)
 
 # ===== 05 the turn (L14 to L18)
 cue("L14", "mine", on=0.0)

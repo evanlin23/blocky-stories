@@ -15,7 +15,7 @@
  "tail": 0,
  "fade_in": false,
  "fade_out": false,
- "rev": 5,
+ "rev": 6,
  "look": {
   "style": "closer",
   "fog": "#dff0ff",
@@ -1935,6 +1935,16 @@
     "blend": 0.4
    },
    {
+    "at": "L14",
+    "pos": [
+     0.31,
+     -0.2,
+     0.76
+    ],
+    "hidden": true,
+    "blend": 0.0
+   },
+   {
     "at": "L14>",
     "pos": [
      0.46,
@@ -2350,7 +2360,7 @@
     "lp": 3200
    }
   ],
-  "rev": 5
+  "rev": 6
  },
  "set_moves": [
   "S15",
