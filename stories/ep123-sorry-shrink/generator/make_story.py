@@ -317,7 +317,7 @@ story = {
     "sound": sound,
     "set_moves": ["S15", "S06b"],
 }
-story["framing_ok"] = ["S18", "S10"]   # the tool places Mae at full height; after the shrink her head sits lower, clear of the tag (checked in the still)
+story["framing_ok"] = ["S18", "S10", "S15"]   # the tool places Mae at full height; after the shrink her head sits lower, clear of the tag (checked in the still)
 story["frames_ok"] = ["S17", "S07"]   # the second meter line (my height) appears with this shot, on purpose
 story["asr_forgive"] = ["sun", "looked", "mae"]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
