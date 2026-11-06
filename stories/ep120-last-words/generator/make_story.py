@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 8
+REV = 10
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -243,7 +243,7 @@ shot("L05+1.1", fc([-2.0, 6.7, 0.18], 0, d=3.2, lens=40, aimz=1.4, side=12), "wo
 only("L05", ["neighbor"])
 # L06: the dog
 only("L06", [])
-rip("L06+0.9", LVX + 0.2, LVY + 3.0, 1.3, s=0.8, ax=1.2, k=0.6)
+rip("L06+0.9", LVX + 0.2, LVY + 3.85, 1.15, s=0.5, ax=1.2)
 shot("L06", mv([LVX + 0.5, LVY + 1.0, 1.2], [LVX + 0.2, LVY + 3.8, 0.95], 34, push=0.1), "dog")
 shot("L06+0.9", mv([LVX - 0.4, LVY + 2.0, 0.85], [LVX + 0.2, LVY + 3.8, 0.9], 30, push=0.1), "dogtail")
 # L07: Ray at the door of his old place
