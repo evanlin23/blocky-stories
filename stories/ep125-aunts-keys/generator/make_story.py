@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 7
+REV = 8
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L35")
@@ -319,7 +319,7 @@ FEETP = [mx0 + 0.1, my0 + 3.3, 0.0]
 cue("L15.2", "wet", on=True)
 TP("me", "L15.2", FEETP, 180, "worried")
 shot("L15.2", cam_at([mx0 + 0.9, my0 + 7.6, 0.8], [mx0 + 0.1, my0 + 3.3, 0.25], 52, [mx0 + 0.8, my0 + 7.2, 0.8],
-                     [mx0 + 0.1, my0 + 3.3, 0.25], 52), "day", "wetfeet", key=2.5, exp=0.35)
+                     [mx0 + 0.1, my0 + 3.3, 0.25], 52), "day", "wetfeet", key=4.0, exp=0.35)
 cue("L16", "wet", on=False)
 
 # ===== 16 to 20 the fight
@@ -499,9 +499,9 @@ shot("L46", foot(26, (0.1, 0.3, 1.7), (1.8, 4.0, 2.3)), "night", "hersopen", fac
 # L47: my bolt turns from inside, asleep
 DOORIN = [mx0 + 3.4, my0, 0.0]
 cue("L47", "bolt", a0=0, a1=90, dur=0.8)
-TP("me", "L47", [mx0 + 3.4 - 0.1, my0 + 0.65, 0.0], 0, "asleep", arms=[55, 0])
-K("me", "L47", [mx0 + 3.4 - 0.1, my0 + 0.65, 0.0], yaw=0, arms=[55, 0])
-shot("L47", cam_at([mx0 + 5.6, my0 + 2.8, 1.6], [mx0 + 3.5, my0 + 0.4, 1.4], 28), "night", "boltturn", face=False)
+TP("me", "L47", [mx0 + 3.4 - 0.45, my0 + 0.9, 0.0], 0, "asleep", arms=[80, 0])
+K("me", "L47", [mx0 + 3.4 - 0.45, my0 + 0.9, 0.0], yaw=0, arms=[80, 0])
+shot("L47", cam_at([mx0 + 3.6, my0 + 3.8, 1.8], [mx0 + 3.25, my0 + 0.3, 1.3], 32), "night", "boltturn", face=False)
 _c47 = [mx0 + 2.2, my0 + 2.4, 1.6]
 _p47 = [mx0 + 3.3, my0 + 0.75, 0.0]
 _b47, _h47 = turned(_p47, 0.0, _c47, 0.5)
@@ -716,7 +716,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": [names[n] for n in ("courtnight", "fightme", "round", "footage1203", "feetbottom", "lk1", "boltturn")],
-    "frames_ok": [names[n] for n in ("dawnwalk", "tableend")],     # the dawn brightening and the day look easing in at the cut
+    "frames_ok": [names[n] for n in ("dawnwalk", "tableend", "dropdoor")],     # the dawn brightening and the day look easing in at the cut; dropdoor is the deliberate drop into the footage
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
