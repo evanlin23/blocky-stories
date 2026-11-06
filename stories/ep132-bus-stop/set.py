@@ -7,8 +7,8 @@ numerals ("41", then "42") and tally strokes (then a chalk sun) on the slate boa
 No set moves: the depot door is shut in one shot and already up in the next (a cut, never a roll); the bus is placed
 by cues on cuts (inside the depot, at its mouth, stopped at the shelter) and never drives on screen.
 Cues read by animate(): sit (per character 0..1, eased), door (up 0/1), chalk (two 0/1), bus (x, y, yaw, on a cut).
-Every extra (mustaches, backpack, bus, board, sun) is built here in build(); animate only attaches the mustaches to
-their heads once (the cast exists only after build).
+Every extra (mustaches, backpack, bus, board, sun) is built here in build(); animate attaches the mustaches to
+their heads on every call, idempotently (the cast exists only after build).
 """
 import math
 import sys
@@ -168,7 +168,9 @@ def build_shelter(kit):
     wood = kit.planks("#d9a45b", "#c8934a", 2.0)
     for sx in (-2.5, 1.85):
         for sy in (0.7, 1.75):
-            kit.box(f"shelter.post{sx}{sy}", (0.1, 0.1, 2.5), (sx, sy, 1.25), red)
+            # the front-right post stands out at the wall's end, so it never crosses a face on the bench's right end
+            px = 3.45 if (sx, sy) == (1.85, 0.7) else sx
+            kit.box(f"shelter.post{sx}{sy}", (0.1, 0.1, 2.5), (px, sy, 1.25), red)
     roof = kit.box("shelter.roof", (6.2, 1.9, 0.12), (0.4, 1.35, 2.56), red, bevel=0.02)
     noshadow(roof)
     # glass back (an opaque pale panel), with a red frame
@@ -192,7 +194,7 @@ def build_shelter(kit):
     kit.box("pack.strap", (0.05, 0.03, 0.3), (1.95, 0.585, 0.25), pl("#7a4a14", 0.6))
     # two red tally strokes on the steel foot of the bench (lore, held in the shoe shot): 1 cm proud
     for k in range(2):
-        kit.box(f"bench.tally{k}", (0.025, 0.012, 0.13), (-1.5 + 0.06 * k, 0.9, 0.2), pl("#e03a3a", 0.5))
+        kit.box(f"bench.tally{k}", (0.025, 0.012, 0.13), (-1.5 + 0.06 * k, 0.9, 0.2), pl("#8a1212", 0.5))
 
 
 def build_chalk(kit):
@@ -292,6 +294,8 @@ def build(kit, story, tl):
     kit.aim(di, (0, -16.0, 0.5))
     bf = kit.light("busfill", "AREA", (-7.5, -4.0, 2.8), 700, "#fff4e4", size=3.0, shadow=False)
     kit.aim(bf, (-0.9, -3.45, 1.8))
+    bf2 = kit.light("busfill2", "AREA", (-8.0, 5.0, 3.0), 1500, "#fff4e4", size=3.0, shadow=False)   # the door side
+    kit.aim(bf2, (0.6, -2.3, 1.5))
     return {}
 
 
@@ -302,14 +306,16 @@ def _place_bus(st):
 
 
 def animate(kit, story, tl, t, ctx):
-    if not W.get("attached"):
-        for who, ob, sx in W.get("stache", []):
-            hg = bpy.data.objects.get(f"{who}.headg")
-            if hg is not None:
+    # the mustaches follow their heads on EVERY call (idempotent), so a shard that starts mid-film sees what a
+    # continuous run sees; hidden state follows the head's
+    for who, ob, sx in W.get("stache", []):
+        hg = bpy.data.objects.get(f"{who}.headg")
+        if hg is not None:
+            if ob.parent is not hg:
                 ob.parent = hg
                 ob.location = (sx * 0.17, -0.64, -0.2)
                 ob.rotation_euler = (0, sx * 0.3, 0)
-        W["attached"] = True
+            ob.hide_render = hg.hide_render
     gains = {"sun": 4.2, "fill": 1.2}
     # the bus: placed by cue (on cuts), never driven
     bs = sample("bus", tl, t, {"x": G.BUS_HIDE[0], "y": G.BUS_HIDE[1], "yaw": G.BUS_HIDE[2]})

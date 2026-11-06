@@ -5,11 +5,14 @@ east-west in front of it and the depot is across the street, its front face at y
 SEAT_Z = 0.46            # the bench seat's top
 SIT_Z = -0.05            # a seated character's z (legs level, resting on the seat)
 BENCH_Y = 1.1            # where the seated characters sit (their centre line)
-ME = (1.35, BENCH_Y)      # the bench's right end
+ME = (1.5, BENCH_Y)      # the bench's right end
 TOL = (0.45, BENCH_Y)     # Mr. Tolley, on my left
 WOM = (-0.5, BENCH_Y)    # the woman in the sun hat
 MAN = (-1.3, BENCH_Y)    # the man in the scarf
-NC = (0.45, BENCH_Y)     # the new commuter (S20, S21), me on her right
+NC = (1.7, BENCH_Y)     # the new commuter (S20, S21), me on her left
+ME8 = (1.65, BENCH_Y)    # me, S08 to S13 (slid right so the chalk count fits beside the bench two-shot)
+TOL8 = (0.8, BENCH_Y)   # Mr. Tolley beside me, S08 to S12
+ME_NC = (0.85, BENCH_Y)  # me beside the new commuter (S21)
 BOARD = (2.39, 1.55, 1.6)   # centre of the chalk board (face at y 1.52)
 
 DEPOT_Y = -12.0          # the depot's front face

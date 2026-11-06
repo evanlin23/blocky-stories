@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -166,63 +166,67 @@ cue(0, "chalk", two=0.0)
 cue(0, "bus", x=G.BUS_HIDE[0], y=G.BUS_HIDE[1], yaw=G.BUS_HIDE[2])
 
 # ===== 01 the rule (L01, L02)
-shot("S01a", 0, cam(1.85, 1.3, 1.3, 2.2, 0, 36, cz=1.35))
-shot("S01b", "L01.2", cam(1.85, 1.3, 1.3, 1.9, 0, 36, cz=1.35, push=(1.7, 1.3)))
-shot("S02", "L02", cam(WOM[0], 1.1, 1.3, 1.5, 8, 36, cz=1.35))
+shot("S01a", 0, cam(2.0, 1.3, 1.3, 2.2, 0, 36, cz=1.35, push=(1.9, 1.3)))
+shot("S01b", "L01.2", cam(2.0, 1.3, 1.3, 1.9, 0, 36, cz=1.35, push=(1.8, 1.3)))
+shot("S02", "L02", cam(WOM[0], 1.1, 1.3, 1.25, 0, 36, cz=1.35, push=(1.05, 1.3)))
 key("wa", "L02.1", head=[0, 6])
 
 # ===== 02 the rule at work (L03 to L07)
-shot("S03", "L03", cam(0.55, 0.6, -0.3, 2.1, 0, 36, cz=0.3, push=(1.9, -0.3)))
+# S03: shoe height, three pairs of shoes filling the frame, the bench's steel foot with the lore strokes at the edge
+shot("S03", "L03", camp([-0.45, -3.0, 0.5], [-0.45, 0.55, -0.68], 20, pos2=[-0.45, -2.7, 0.5], tgt2=[-0.45, 0.55, -0.62]))
 shot("S04", "L04", cam(2.52, 1.5, 1.6, 1.5, 5, 36, cz=1.55, push=(1.2, 1.6)))
-shot("S05", "L05", cam(MAN[0], 1.1, 1.3, 1.5, -8, 36, cz=1.35))
-shot("S06", "L06", camp([0, -4.2, 1.6], [0, G.DEPOT_Y, 2.3], 17, pos2=[0, -5.0, 1.6]))
-# S07: she and I stand and walk toward the camera (both faces to camera, he is out of the picture)
+cut("wa", "L05", hidden=True)       # the man alone in S05 (the woman's hat would be cut; the old driver is not in the scene)
+cut("driver", "L05", hidden=True)
+shot("S05", "L05", cam(MAN[0], 1.1, 1.3, 1.5, -8, 36, cz=1.35, push=(1.15, 1.3)))
+shot("S06", "L06", camp([-0.6, -4.2, 1.6], [0, G.DEPOT_Y, 2.3], 17, pos2=[0.6, -5.6, 1.6]))
+# S07: she and I stand and walk toward the camera (both faces to camera, the chalk count beside us, he is out)
 cut("driver", "L07", hidden=True)
-cut("wa", "L07", [0.3, 1.1, G.SIT_Z], yaw=0, expr="bored", head=[0, 0])
-cut("me", "L07", [*ME, G.SIT_Z], yaw=0, expr="bored", head=[0, 0])
+cut("wa", "L07", [0.85, 1.1, G.SIT_Z], yaw=0, expr="bored", head=[0, 0], hidden=False)
+cut("me", "L07", [1.7, 1.1, G.SIT_Z], yaw=0, expr="bored", head=[0, 0])
 cue("L07", "sit", wa=0.0, me=0.0, dur=0.3)
-key("wa", "L07.1", [0.3, 1.1, 0.0], yaw=0)
-key("wa", "L07.2", [0.1, 0.1, 0.0], yaw=0)
-key("me", "L07.1", [*ME, 0.0], yaw=0)
-key("me", "L07.2", [1.05, 0.1, 0.0], yaw=0)
-shot("S07", "L07", cam(0.8, 0.6, 1.2, 1.9, 0, 36, cz=1.3, push=(1.7, 1.2)))
+key("wa", "L07.1", [0.85, 1.1, 0.0], yaw=0)
+key("wa", "L07.2", [0.85, 0.2, 0.0], yaw=0)
+key("me", "L07.1", [1.7, 1.1, 0.0], yaw=0)
+key("me", "L07.2", [1.7, 0.2, 0.0], yaw=0)
+shot("S07", "L07", cam(1.7, 0.6, 1.2, 2.7, 0, 36, cz=1.3, push=(2.55, 1.2)))
 
 # ===== 03 day forty-two (L08 to L11)
-cut("driver", "L08", [*TOL, G.SIT_Z], yaw=0, expr="neutral", head=[0, 0], hidden=False, arms=[0, 0])
-cut("me", "L08", [*ME, G.SIT_Z], yaw=0, expr="neutral", head=[0, 0])
+cut("driver", "L08", [*G.TOL8, G.SIT_Z], yaw=0, expr="neutral", head=[0, 0], hidden=False, arms=[0, 0])
+cut("me", "L08", [*G.ME8, G.SIT_Z], yaw=0, expr="neutral", head=[0, 0])
 cut("wa", "L08", [*WOM, G.SIT_Z], hidden=True)
 cut("ma", "L08", [*MAN, G.SIT_Z], hidden=True)
 cue("L08", "sit", me=1.0, driver=1.0)
-shot("S08a", "L08", cam(0.9, 1.1, 1.3, 1.65, 0, 36, cz=1.35))
+shot("S08a", "L08", cam(1.75, 1.1, 1.3, 2.7, 0, 36, cz=1.35))
 key("driver", "L08.3", expr="sad", head=[0, -9])
 key("driver", "L09", expr="neutral", head=[0, 4])
-shot("S08b", "L08.3", cam(0.9, 1.1, 1.3, 1.55, -6, 36, cz=1.35, push=(1.4, 1.3)))
+shot("S08b", "L08.3", cam(1.7, 1.1, 1.3, 2.8, -6, 36, cz=1.35, push=(2.55, 1.3)))
 key("me", "L09", expr="uneasy")
 key("me", "L09.1", expr="smile")
 mouth("me", "L09.1", "L09>", 0.5)
-shot("S09", "L09", cam(1.3, 1.1, 1.3, 1.5, 6, 36, cz=1.35, push=(1.3, 1.3)))
+shot("S09", "L09", cam(1.75, 1.1, 1.3, 1.2, 6, 36, cz=1.35, push=(1.05, 1.3)))
 key("driver", "L10", expr="stunned", head=[0, 0])
-shot("S10a", "L10", cam(TOL[0], 1.1, 1.3, 1.5, 0, 36, cz=1.35))
+shot("S10a", "L10", cam(0.6, 1.1, 1.3, 1.3, 0, 36, cz=1.35, push=(1.1, 1.3)))
 key("driver", "L10.2", expr="smile")
-shot("S10b", "L10.2", cam(TOL[0], 1.1, 1.3, 1.5, -8, 36, cz=1.35, push=(1.25, 1.3)))
+shot("S10b", "L10.2", cam(0.65, 1.1, 1.3, 1.3, -8, 36, cz=1.35, push=(1.15, 1.3)))
 key("driver", "L11", expr="smile")
 mouth("driver", "L11.1", "L11>", 0.5)
-shot("S11", "L11", cam(TOL[0], 1.1, 1.3, 1.5, 7, 36, cz=1.35, push=(1.3, 1.3)))
+shot("S11", "L11", cam(0.65, 1.1, 1.3, 1.3, 7, 36, cz=1.35, push=(1.0, 1.3)))
 
 # ===== 04 he stands, crosses, the door is up (L12 to L14)
 cue("L12", "sit", driver=0.0, dur=0.35)
-key("driver", "L12", [*TOL, 0.0], yaw=0, expr="smile", head=[0, 0])
-shot("S12", "L12", cam(TOL[0], 1.1, 1.5, 1.7, 0, 36, cz=1.5, push=(1.5, 1.55)))
-cut("driver", "L13", [0.45, -0.3, 0.0], yaw=0, expr="smile")
-key("driver", "L13.1", [0.45, -2.5, 0.0], yaw=0)
-shot("S13a", "L13", camp([-0.2, 1.55, 1.45], [0.5, -2.2, 1.0], 24, pos2=[-0.2, 1.55, 1.45], tgt2=[0.5, -2.8, 1.0]))
-cut("driver", "L13.1", [0.45, -6.0, 0.0], hidden=True)
+key("driver", "L12", [*G.TOL8, 0.0], yaw=0, expr="smile", head=[0, 0])
+shot("S12", "L12", cam(0.6, 1.1, 1.5, 1.3, 0, 36, cz=1.5, push=(1.2, 1.55)))
+cut("driver", "L13", [0.8, -1.8, 0.0], yaw=0, expr="smile")
+key("driver", "L13.1", [0.8, -3.6, 0.0], yaw=0)
+cut("me", "L13", hidden=True)       # out of the S13a picture (the camera stands where I sit)
+shot("S13a", "L13", camp([0.8, 1.6, 1.7], [0.8, -2.4, 0.9], 16, pos2=[0.8, 1.6, 1.7], tgt2=[0.8, -3.2, 0.9]))
+cut("driver", "L13.1", [0.75, -6.0, 0.0], hidden=True)
 cue("L13.1", "door", up=1.0)
 cue("L13.1", "bus", x=G.BUS_IN[0], y=G.BUS_IN[1], yaw=G.BUS_IN[2])
-shot("S13b", "L13.1", camp([0, -4.2, 1.6], [0, G.DEPOT_Y, 2.3], 17, pos2=[0, -5.0, 1.6]))
-cut("me", "L14", [*ME, G.SIT_Z], yaw=0, expr="stunned", head=[0, 0])
+shot("S13b", "L13.1", camp([0.6, -4.2, 1.6], [0, G.DEPOT_Y, 2.3], 17, pos2=[-0.6, -5.6, 1.6]))
+cut("me", "L14", [*ME, G.SIT_Z], yaw=0, expr="stunned", head=[0, 0], hidden=False)
 cue("L14", "sit", me=1.0)
-shot("S14", "L14", cam(1.3, 1.1, 1.3, 1.5, 0, 36, cz=1.35, push=(1.25, 1.3)))
+shot("S14", "L14", cam(1.5, 1.1, 1.3, 1.5, 0, 36, cz=1.35, push=(1.25, 1.3)))
 
 # ===== 05 the reveal (L15, L16)
 cut("driver_b", "L15", [*DRV_MOUTH, G.BUS_SEAT_Z], yaw=180, expr="laugh", hidden=False, arms=[0, 40], head=[0, 0])
@@ -230,47 +234,46 @@ cue("L15", "sit", driver_b=1.0)
 cue("L15", "bus", x=G.BUS_MOUTH[0], y=G.BUS_MOUTH[1], yaw=G.BUS_MOUTH[2])
 for i, a in enumerate((70, 35, 70, 35, 70, 35)):
     key("driver_b", f"L15+{0.3 * (i + 1):.2f}", arms=[0, a])
-shot("S15a", "L15", camp([DRV_MOUTH[0], -7.9, 2.0], [DRV_MOUTH[0], DRV_MOUTH[1], 1.9], 40,
-                         pos2=[DRV_MOUTH[0], -8.4, 2.0]))
+shot("S15a", "L15", camp([-0.1, -2.9, 2.2], [-0.1, -12.9, 1.9], 30, pos2=[-0.5, -7.8, 2.05], tgt2=[-0.5, -12.9, 1.9]))
 key("driver_b", "L15.2", expr="smile", arms=[0, 40])
-shot("S15b", "L15.2", camp([DRV_MOUTH[0], -9.0, 2.0], [DRV_MOUTH[0], DRV_MOUTH[1], 1.95], 40,
-                           pos2=[DRV_MOUTH[0], -9.5, 2.0]))
+shot("S15b", "L15.2", camp([DRV_MOUTH[0], -8.8, 2.0], [DRV_MOUTH[0], DRV_MOUTH[1], 1.95], 40,
+                           pos2=[DRV_MOUTH[0], -10.0, 2.0]))
 key("driver_b", "L16", expr="sheepish", head=[0, 8], arms=[0, 0])
-shot("S16", "L16", camp([DRV_MOUTH[0], -9.3, 2.0], [DRV_MOUTH[0], DRV_MOUTH[1], 1.95], 40,
-                        pos2=[DRV_MOUTH[0], -8.7, 2.0]))
+shot("S16", "L16", camp([DRV_MOUTH[0], -10.2, 2.0], [DRV_MOUTH[0], DRV_MOUTH[1], 1.95], 40,
+                        pos2=[DRV_MOUTH[0], -9.0, 2.0]))
 
 # ===== 06 the bus at the stop (L17 to L19)
 cue("L17", "bus", x=G.BUS_STOP[0], y=G.BUS_STOP[1], yaw=G.BUS_STOP[2])
 cut("driver_b", "L17", [*DRV_STOP, G.BUS_SEAT_Z], yaw=-90, expr="smile", head=[0, 0], arms=[0, 40])
 cut("me", "L17", [*FRONT_STOP, G.BUS_SEAT_Z], yaw=-90, expr="smile", head=[0, 0])
-shot("S17", "L17", camp([-2.2, 1.6, 1.7], [0.4, -2.3, 1.8], 24, pos2=[-1.8, 1.4, 1.7]))
-shot("S18a", "L18", camp([-4.8, -3.45, 1.9], [0.3, -3.45, 1.85], 36, pos2=[-4.3, -3.45, 1.9]))
+shot("S17", "L17", camp([-7.0, 1.6, 1.7], [0.9, -3.2, 1.5], 24, pos2=[-6.0, -0.4, 1.7]))
+shot("S18a", "L18", camp([-5.3, -3.45, 1.9], [0.3, -3.45, 1.85], 36, pos2=[-4.9, -3.45, 1.9]))
 key("me", "L18.2", expr="smile", head=[0, 0])
-shot("S18b", "L18.2", camp([-4.6, -3.2, 1.95], [0.3, -3.4, 1.85], 36, pos2=[-4.0, -3.3, 1.95]))
+shot("S18b", "L18.2", camp([-5.2, -3.45, 1.95], [0.3, -3.45, 1.85], 36, pos2=[-5.0, -3.45, 1.95]))
 cut("driver_b", "L19", [*DRV_STOP, G.BUS_SEAT_Z], yaw=-90, expr="laugh", head=[0, 0], arms=[0, 40])
 mouth("driver_b", "L19", "L19>", 0.45)
-shot("S19", "L19", camp([-4.4, -4.1, 1.95], [0.3, -4.1, 1.9], 36, pos2=[-3.8, -4.1, 1.95]))
+shot("S19", "L19", camp([-4.9, -4.1, 1.95], [0.3, -4.1, 1.9], 36, pos2=[-3.7, -4.1, 1.95]))
 
 # ===== 07 somebody new, so I go first (L20 to L22)
 cut("driver_b", "L20", [*DRV_STOP, G.BUS_SEAT_Z], hidden=True)
 cut("me", "L20", [*TOL, G.SIT_Z], yaw=0, expr="neutral", hidden=True)
-cut("nc", "L20", [*ME, G.SIT_Z], yaw=0, expr="uneasy", hidden=False, head=[0, 0])
+cut("nc", "L20", [*NC, G.SIT_Z], yaw=0, expr="uneasy", hidden=False, head=[0, 0])
 cue("L20", "sit", nc=1.0, me=1.0)
 cue("L20", "chalk", two=1.0)
 cue("L20", "bus", x=G.BUS_HIDE[0], y=G.BUS_HIDE[1], yaw=G.BUS_HIDE[2])
-shot("S20a", "L20", cam(1.85, 1.3, 1.3, 2.2, 0, 36, cz=1.35))
+shot("S20a", "L20", cam(2.0, 1.3, 1.3, 2.2, 0, 36, cz=1.35))
 key("nc", "L20.2", expr="uneasy", head=[0, 6])
-shot("S20b", "L20.2", cam(1.7, 1.3, 1.3, 1.7, -8, 36, cz=1.35, push=(1.45, 1.3)))
-cut("me", "L21", [*TOL, G.SIT_Z], yaw=0, expr="smile", hidden=False, head=[0, 0])
+shot("S20b", "L20.2", cam(2.0, 1.3, 1.3, 1.9, -8, 36, cz=1.35, push=(1.85, 1.3)))
+cut("me", "L21", [*G.ME_NC, G.SIT_Z], yaw=0, expr="smile", hidden=False, head=[0, 0])
 mouth("me", "L21", "L21>", 0.5)
 key("nc", "L21", expr="uneasy", head=[0, 0])
 key("nc", "L21+0.9", expr="smile")
-shot("S21", "L21", cam(1.0, 1.1, 1.3, 1.9, 3, 36, cz=1.35, push=(1.7, 1.3)))
-cut("nc", "L22", [*ME, G.SIT_Z], hidden=True)
+shot("S21", "L21", [cam(1.85, 1.1, 1.3, 2.6, 3, 36, cz=1.35)[0], [1, *cam(1.75, 1.1, 1.3, 2.45, 3, 36, cz=1.35)[0][1:]]])
+cut("nc", "L22", [*NC, G.SIT_Z], hidden=True)
 cut("me", "L22", [*ME, G.SIT_Z], yaw=0, expr="smile", hidden=False, head=[0, 0])
 key("me", "L22.2", expr="neutral")
-shot("S22a", "L22", cam(1.85, 1.3, 1.3, 2.2, 0, 36, cz=1.35))
-shot("S22b", "L22.2", cam(1.75, 1.3, 1.3, 1.6, 0, 36, cz=1.35, push=(1.35, 1.3)))
+shot("S22a", "L22", cam(2.0, 1.3, 1.3, 2.2, 0, 36, cz=1.35))
+shot("S22b", "L22.2", cam(2.0, 1.3, 1.3, 1.9, 0, 36, cz=1.35, push=(1.7, 1.3)))
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)
@@ -309,8 +312,8 @@ sound = {
 remap_all(sfx)
 remap_all(music["sections"])
 remap_all(sound["ambience"])
-polish = {"reveal": ["L14", "L15"], "twist": "L14", "emph": ["L01.2", "L02.1", "L14", "L21"],
-          "quiet": [["L18", "L19>"]], "hold": ["S06", "S13b", "S17"]}
+polish = {"reveal": ["L14", "L15"], "twist": "L14", "emph": ["L01.2", "L02.1", "L14"],
+          "quiet": [["L18", "L19>"]], "hold": ["S06", "S07", "S13b", "S17", "S21"]}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 story = {
     "slug": "ep132-bus-stop",
@@ -343,7 +346,8 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S03", "S05"],
+    "framing_ok": [],
+    "frames_ok": ["S07", "S12"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
