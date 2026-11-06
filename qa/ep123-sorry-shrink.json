@@ -1,0 +1,30 @@
+{
+ "stage": "proof",
+ "film": "proof-42138026361",
+ "run": 42138026361,
+ "sha": "5b43accd9d8068a21d1033092d5002cd84dbaaa6",
+ "artifact": 13467656223,
+ "verdict": "fail",
+ "date": "2026-11-06",
+ "checked": [
+  "frames every 2 s",
+  "first 3 s every frame",
+  "every 0.25 s",
+  "S13 19.5-21.5 s frame by frame",
+  "16.2-17.1 s frame by frame",
+  "S11 17.0-17.7 s",
+  "S15 22.85-24.4 s frame by frame",
+  "TV canvas",
+  "cover",
+  "loudness and HF windows",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.3 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 13.3 | 14.0– | **near** |\n| macro.motion_energy_q | 5.78 | 6.0– | **near** |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 9.62 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.47 | –2.5 | ok |\n| macro.longest_still_s | 0.03 | –1.5 | ok |\n| macro.motion_energy_mean | 2.77 | 1.5– | ok |\n| spec.camera_move_share | 0.996 | 0.65– | ok |\n| spec.punch_per_10s | 0.71 | 0.4– | ok |\n| macro.brightness_mean | 0.769 | 0.35– | ok |\n| macro.brightness_first_3s | 0.775 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.271 | 0.42– | **warn** |\n| macro.contrast_mean | 0.186 | 0.18– | ok |\n| spec.face_big_share | 0.868 | 0.4– | ok |\n| spec.caption_share | 0.975 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.607 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.214 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 150.0 | –120 | **warn** |\n| spec.sound_events_per_10s | 3.92 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0408 | –0.08 | ok |\n| sound.hf_jump_max | 0.0076 | –0.04 | ok |",
+ "notes": "FIX 1 (fail), 24.07-24.20 s, S15 tail (4 frames before the cut to S16): Aunt Mae and both card fans vanish and an empty tablecloth shows. The three story.json keys at \"L15>\" (Mae's acting key hidden:true, cues winpos back to 0 and maecards on) fire at the end of L15's voice, 0.13 s before S15 cuts at L16. Move them to \"L16\" (S16's start) and redraw the proof.\nFIX 2 (should-fix), 17.17-17.60 s, S11a: the high wide makes Mae's head about 0.10 of the frame width on 'Every inch' (under the 1/5 bar for her lines; her face doesn't read at phone size). Bring the S11a lens down/closer so her head is >= 0.2 wide with the fan still longer than she is tall.\nConfirmed: S13 19.90-21.40 s she stays centred, faces the lens through her little bow, no slide or profile (rev 6 fix holds). 16.20-17.10 s every frame clean, no stale frames. S15 22.97-23.30 the darkening on Mae is the falling cards' own shadow, not a light change. Nothing blinks or pulses, no light change, max 2 faces, no profile two-shot. clip.json 0 hits (152 times). No stray text.\nSecond one: a bright sunny close-up of Aunt Mae at her eye level (gray perm, red cat-eye glasses, sly closed smile), mug rim soft behind, the '5' ruler tag top-left, slow push; 'Every SORRY here shrinks you an INCH.' poses the rule and its price. cover_s 2.4 (S02a, her smiling face, mug behind) reads at phone and TV size.\nAudio: -14.1 LUFS, -1.8 dBTP, LRA 0.9; HF share max 0.041 per 5 s, jump 0.008 (no scratch); voice on top (bed gap 10.6 dB); the tail ends on the sip, not cut off. Polish on (punches on key words, whoosh soft, no silence). Flash house bar passes (1/s, 3f 3/s, red 0).\nnear: macro.picture_changes_per_10s_q 13.3 (14.0-), macro.motion_energy_q 5.78 (6.0-), watched 18-28 s: S12 to S18, every shot 1.6 s or less with a push, a bow, the slap and my drop; nothing drags. Not a fail.\nPackage: title, description and pin match and don't spoil; hard rules 1-4 fine; male narrator, no 'husband'. opening 'cost' matches L01; last upload ep62 is 'count'; queue note: queue.txt ends on ep99-statue-years ('cost'), so don't slot ep123 straight after it. gate OPEN (only the 30 s test floor, PR #325).\ncraft: 0 block, 2 near, 3 warn: spec.cuts_per_10s 9.62 (5.5-8.0), macro.saturation_mean 0.271 (0.42-), micro.caption_sync_p90_ms 150.0 (-120); pastel sunny look by design, captions read in sync by eye."
+}
