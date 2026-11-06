@@ -6,6 +6,5 @@
   "cover_s": 36.3,
   "shape": "comfort",
   "opening": "ban",
-  "lane": "core",
-  "hold": "batch 13: scripts only, not built yet"
+  "lane": "core"
 }

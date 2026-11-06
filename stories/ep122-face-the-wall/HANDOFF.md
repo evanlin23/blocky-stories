@@ -1,8 +1,8 @@
 # ep122-face-the-wall: handoff (build session, batch 13)
 
-STATUS: working (fix round 1). Branch `claude/batch13-ep122-face-the-wall`.
+STATUS: working (PR open, waiting on the proof). Branch `claude/batch13-ep122-face-the-wall`.
 
-- Done: story files, set, voice (phase 1, preflight 0 blocks, framing.py 0 findings); framing pre-check (12 fixes listed).
-- In progress: phase 2, applying the framing fixes, preview, frames lint, `flash --like-proof`, measure. A container restart killed the first phase 2 builder; a fresh one resumed it.
-- Next: critic + standards round 1, then the PR and proof.
-- Build round 1 (r2-critic, r2-standards): both revise. Critic 11 must-fixes (S49 blank, tag/caption over faces, Dad missing at reveal S55/S56, scare room too bright, S60 too short, tag glyphs, S48 pat, length 113 s -> re-voice at rate 1.32 for >=120 s, cover_s). Standards 3 (S49, S39 washed out, S78 floating slab). Fix round 1 running; cover_s goes to the writer once the re-voiced S24 time is known. Round 2 re-runs both (both said revise).
+- Build round 1 (r2-critic, r2-standards): both revise, 14 must-fixes. Fix round 1 applied them all and re-voiced at rate 1.32 (113 s -> 123.1 s).
+- Build round 2 (r3-critic, r3-standards): both approve. Critic scores 6 to 9 (variety 6, the lowest). Should-fixes (not blocking): S55/S56 Dad's shoulder dark, tag divider touches the first "1" (S81 cramped), S69 socks read as grey slabs.
+- Checks: check no problems, gate OPEN, pytest 245 passed, preflight 0 blocks, framing 0, frames 0, clipcheck 0, flash --like-proof max 3/s, measure 0 blocks (14.9/12.5, 16.3/14.0, motion 6.94/6.0, longest still 0.27 s, edge 0.53 s).
+- Next: the proof on the PR, then proof qa, then merge on a green `test`. The single-fix rescue is still unused.
