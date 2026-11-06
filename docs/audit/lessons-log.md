@@ -259,6 +259,12 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Run the first full one in the background with a 2 h timeout. After a fix, re-check only the changed shots with
     `--like-proof --shots S12,S13`, which keeps the other drawings. The build brief says so.
 
+42. **Small props that must read as a particular shape at phone size keep spending the last round.** ep118's retry
+    passed everything but the S12b squirrel (a fist, then a bent pipe at 300 px), and ep117's discs read as stickers
+    and its moths as blades (2026-11-05). Each was one small object the critic had to be able to name.
+    → The writer avoids such props (batch 13 note 3). In a fix round, cut or replace a prop that fails to read once,
+    rather than refining it: a second try at the same shape rarely lands.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
