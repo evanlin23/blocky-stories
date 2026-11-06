@@ -22,7 +22,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 6
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -144,7 +144,7 @@ def cam(tx, ty, tz, d, lens, az=0.0, el=0.0, push=0.07, arc=2.5, to=None):
                 round(tz + dd * math.sin(e), 3)]
     tgt = [tx, ty, tz]
     t1 = list(to) if to else tgt
-    push, arc = push * 2.6, arc * 4.0   # batch 14 pace: a livelier camera on every shot
+    push, arc = push * 3.0, arc * 5.5   # batch 14 pace: a livelier camera on every shot
     return [[0, at(d, az), tgt, lens], [1, at(d * (1 - push), az + arc), t1, lens]]
 
 
@@ -162,7 +162,7 @@ def ocam(st, x, y, z, d, lens, **kw):
     return cam(G.ST[st] + x, y, z, d, lens, **kw)
 
 
-def shot(id_, at, camera, who=None, hand=0.02, step=2):
+def shot(id_, at, camera, who=None, hand=0.03, step=2):
     who = who or {}
     for n in CAST:
         if n in who:
@@ -245,7 +245,7 @@ shot("S20", "L20", fcam("R1", *G.DAD_SEAT, z=0.0, d=3.5, lens=30, f=0.38, dx=0.3
 chg("dad", "L20.1", blend=0.4, head=(0, 8))
 chg("dad", "L20.1+0.5", blend=0.4, head=(0, -2))
 D21, M21 = (-0.35, 1.25), (0.55, 1.25)
-shot("S21", "L21", ocam("R1", 0.1, 1.6, 1.4, 3.5, 30, push=0.03), {
+shot("S21", "L21", ocam("R1", 0.05, 1.6, 1.4, 3.5, 30, push=0.03, arc=0.6), {
     "dad": ps("R1", *D21, expr="neutral", **SIT),
     "me": ps("R1", *M21, expr="neutral", **SIT)})
 shot("S22", "L22", fcam("R1", *G.ME_SEAT, d=3.3, lens=30, f=0.38, dx=-0.25, push=0.07), {
