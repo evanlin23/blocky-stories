@@ -15,3 +15,9 @@
   - preflight, framing and frames show 0 findings each.
   - measure: 0 blocks, 0 near, 1 warning (cuts per 10 s 9.62 against 5.5 to 8).
 - Next: round 2 of the critic and standards reviews.
+- Round 2: critic approve (average 7.3, lowest 6), standards approve.
+- The S13 should-fix is in (rev 6): Mae no longer slides to profile. The preview was redrawn from clean frames.
+- "hold" is removed. check: no problems. gate: OPEN.
+- BLOCKER: pytest `test_every_story_passes_its_checks[ep123-sorry-shrink]` fails on `assert 30 <= tl["duration"]` (blocky/test_blocky.py:132).
+  - The film is 28.07 s; the batch 13 short arm is about 28 s.
+  - The fix is an engine/test change (the floor down to about 20 s), which this session may not make. Asked the orchestrator.
