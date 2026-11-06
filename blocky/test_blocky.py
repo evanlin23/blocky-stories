@@ -54,6 +54,26 @@ def test_captions_follow_the_voice(tl):
     assert all(a["end"] <= b["start"] + 1e-6 for a, b in zip(caps, caps[1:]))
 
 
+def test_frame_zero_takes_the_last_of_the_keys_stacked_at_zero():
+    """Keys stacked at 0 (a generator's "hide everyone" at the origin, then the shot's own place): frame 0 poses from
+    the last of them, as frame 1 does, so nothing pops on frame 0 or on a loop wrap (ep116: Grandpa missing on
+    frame 0 of S01, there on frame 1)."""
+    st = tiny_story(acting={"me": [{"at": 0, "pos": [0, 0], "hidden": True}, {"at": 0, "pos": [0, 0]},
+                                   {"at": 0, "pos": [3.1, 1.0], "blend": 0.0, "hidden": False, "yaw": 90,
+                                    "arms": [20, 0], "head": [10, 0], "lean": 3, "expr": "worried"},
+                                   {"at": "L02", "pos": [3.1, 1.0]}]})
+    tl = timeline.build(st, tiny_voice())
+    f0, f1 = acting.state(tl, "me", 0.0), acting.state(tl, "me", 1 / 30)
+    for k in ("x", "y", "z", "yaw", "arms", "head_yaw", "lean", "expr", "hidden"):
+        assert f0[k] == pytest.approx(f1[k]) if not isinstance(f0[k], str) else f0[k] == f1[k], k
+    assert (f0["x"], f0["y"], f0["hidden"]) == (3.1, 1.0, False)
+    # before a first key that isn't at 0, the character holds that key's place (unchanged)
+    st2 = tiny_story(acting={"me": [{"at": "L01.1", "pos": [1, 2]}, {"at": "L01.1", "pos": [4, 5]},
+                                    {"at": "L02", "pos": [4, 5]}]})
+    tl2 = timeline.build(st2, tiny_voice())
+    assert acting.position(tl2["acting"]["me"], 0.0)[:2] == (4, 5)
+
+
 def test_only_characters_move_their_mouths(tl):
     assert tl["talk"]["me"] and all(a >= tl["lines"]["L02"]["onset"] - 1e-6 for a, _ in tl["talk"]["me"])
 
@@ -729,3 +749,30 @@ def test_mix_uses_samples_unless_the_story_turns_them_off(tmp_path):
     syn, _ = sound.mix(tl, st_off, vo)
     assert sound.SAMPLES["on"] and np.isfinite(rec).all() and not np.allclose(rec, syn)
     assert np.allclose(sound.mix(tl, st, vo)[0], rec)                  # deterministic, and back on after "false"
+
+
+def test_caption_splitter_keeps_every_spoken_word():
+    """A chunk with more spoken words than caption words keeps them all (ep115 L19: "has said 4:12" is read "has said
+    four twelve"; the generators' copy sliced by caption count and voiced "has said four")."""
+    assert timeline.split_chunk("has said 4:12", "has said four twelve") == [["has said 4:12", "has said four twelve"]]
+    pieces = timeline.split_chunk("It was 9:14 PM, June TWELFTH.", "It was nine fourteen p m, June twelfth.")
+    assert [c for c, _ in pieces] == ["It was 9:14", "PM, June TWELFTH."]
+    assert [s for _, s in pieces] == ["It was nine fourteen", "p m, June twelfth."]
+    for cap, sp in [("a b c d e f g", "a b c d e f g"), ("I owe 12 DOLLARS", "I owe twelve dollars"),
+                    ("x", "one two three"), ("the 1990s went ON", "the nineteen nineties went on")]:
+        got = timeline.split_chunk(cap, sp)
+        assert " ".join(s for _, s in got).split() == sp.split()
+        assert " ".join(c for c, _ in got).split() == cap.split()
+        assert all(len(c.split()) <= 3 for c, _ in got)
+    lines, cmap = timeline.split_lines([{"id": "L1", "chunks": [["one two three four", "one two three four"], ["five", "five"]]},
+                                        {"id": "P1", "pause": 0.5, "chunks": [["THUD", ""]]}])
+    assert lines[0]["chunks"] == [["one two", "one two"], ["three four", "three four"], ["five", "five"]]
+    assert cmap == {"L1": [0, 2]} and lines[1]["chunks"] == [["THUD", ""]]
+
+
+def test_check_finds_spoken_words_story_json_lost():
+    st = {"lines": [{"id": "L19", "chunks": [["has said 4:12", "has said four"]]}]}
+    src = [{"id": "L19", "chunks": [["has said 4:12", "has said four twelve"]]}]
+    assert timeline.lost_words(st, src) and "twelve" in timeline.lost_words(st, src)[0]
+    st["lines"][0]["chunks"] = timeline.split_lines(src)[0][0]["chunks"]
+    assert timeline.lost_words(st, src) == []
