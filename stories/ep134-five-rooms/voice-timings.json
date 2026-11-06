@@ -890,22 +890,22 @@
    ]
   },
   "L38": {
-   "text": "It's my sixth room.",
+   "text": "It's my seventh room.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.345,
+   "dur": 1.414,
    "onset": 0.155,
-   "end": 1.155,
+   "end": 1.224,
    "chunks": [
     [
      0.155,
-     0.457
+     0.466
     ],
     [
-     0.457,
-     1.155
+     0.466,
+     1.224
     ]
    ]
   },

@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 16,
+ "rev": 17,
  "look": {
   "style": "closer",
   "fog": "#f4e6d6",
@@ -910,8 +910,8 @@
      "It's my"
     ],
     [
-     "sixth ROOM.",
-     "sixth room."
+     "seventh ROOM.",
+     "seventh room."
     ]
    ]
   },
@@ -4073,7 +4073,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 16
+  "rev": 17
  },
  "framing_ok": [
   "S11"
