@@ -22,7 +22,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 6
+REV = 8
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 for _l in lines:       # L11 and L38: the splitter cut "He looked / at me" and left "at me" up for under 0.2 s; keep every caption at 3 words or fewer and 0.2 s or more
@@ -329,7 +329,7 @@ shot("P01", push(look_at([14.0, -5.5, 2.4], [30.0, 3.0, 1.2], 20), 0.12), "dropw
 # ===== L29 I got it
 TP("me", "L29", BED_POS, 0.0, "wide", lean=-90.0)
 props("L29", ["bedarm"])
-shot("L29", look_at([DX + 0.2, DY - 1.6, 2.6], [DX, DY + 1.25, 0.9], 34), "bed2")
+shot("L29", look_at([DX + 0.2, DY - 1.0, 2.7], [DX, DY + 1.3, 1.25], 34), "bed2")
 # ===== L30 the clocks count down to when someone BECOMES your best friend
 props("L30", ["bedarm"])
 shot("L30", ins((DX + 0.0, DY + 0.15, 1.14 + 0.35), dist=1.5, elev=55, lens=40), "quiltcuff")
@@ -485,7 +485,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": [names[n] for n in ("fern", "walkaway", "quiltcuff")],
+    "framing_ok": [names[n] for n in ("fern", "walkaway", "quiltcuff", "bed2")],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
