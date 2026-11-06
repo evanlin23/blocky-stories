@@ -46,6 +46,7 @@ LEMON = (11.5, 5.5)
 
 RED, CREAM = "#e2463a", "#f6ecd6"
 TEAL, GOLD = "#1fa3a0", "#ffc93a"
+BROWN_SKIN = "#b07a50"
 CORAL = "#ff7a5c"
 
 
@@ -313,6 +314,11 @@ def build_cart(kit):
     B(None, (1.04, 0.66, 0.05), (gx, gy, 1.175), char, "cart.grill", 0.012)
     for k in range(5):
         B(None, (0.9, 0.05, 0.05), (gx, gy - 0.24 + k * 0.12, 1.225), char2, "grill.bar", 0.01)
+    # when hot the bars glow orange-red: slightly fatter shells round the dark ones (cue grillhot), steady
+    hot = kit.emit("#e82200", 1.0, name="grillbars")
+    W["grillglow"] += [B(None, (0.92, 0.062, 0.062), (gx, gy - 0.24 + k * 0.12, 1.225), hot, "grillhot.bar", 0.01) for k in range(5)]
+    for o in W["grillglow"][1:]:
+        noshadow(o)
     smk = P("#a9a5b6", 1.0, 0.0)
     W["smoke"] = []
     # three slim wisps, each a short curl of stretched puffs, leaning away from the bars
@@ -348,8 +354,8 @@ def build_cart(kit):
     hung_apron(cx - 1.0, old_c, old_pk, "apronold")
     # the second apron (coral, a cream pocket): hung, folded on the counter, or on the porch rail
     W["apron_hook"] = hung_apron(cx + 1.0, cor, pk, "apron.hook")
-    W["apron_counter"] = [B(None, (0.62, 0.46, 0.09), (cx + 0.05, cy - 0.04, 1.115), cor, "apron.counter", 0.02),
-                          B(None, (0.34, 0.24, 0.012), (cx + 0.05, cy - 0.04, 1.166), pk, "apron.counterpocket")]
+    W["apron_counter"] = [B(None, (0.74, 0.55, 0.09), (cx - 0.1, cy - 0.04, 1.115), cor, "apron.counter", 0.02),
+                          B(None, (0.4, 0.28, 0.012), (cx - 0.1, cy - 0.04, 1.166), pk, "apron.counterpocket")]
     # the umbrella: eight stripes round a pole
     ux, uy = cx + 1.4, cy + 0.6
     C(None, 0.04, 2.9, (ux, uy, 2.2), P("#c8ced8", 0.4, 0.6), "cart.umbpole", n=8)
@@ -359,11 +365,14 @@ def build_cart(kit):
         verts = [(0, 0, ap), (rim_r * math.cos(a0), rim_r * math.sin(a0), rz), (rim_r * math.cos(a1), rim_r * math.sin(a1), rz)]
         kit.mesh_obj(nm("cart.umb"), verts, [(0, 1, 2)], P(RED if i % 2 == 0 else CREAM, 0.7, 0.1), None, (ux, uy, 0))
     # the face-down card on the counter, and the new one (cues card, card2); stars up
-    cardm = P("#fff6dc", 0.6, 0.1)
-    W["card"] = [B(None, (0.44, 0.29, 0.012), (cx + 0.66, cy - 0.12, 1.077), cardm, "card.body", 0.003, rot=(0, 0, 0.2)),
-                 star(cx + 0.66, cy - 0.12, 1.087, 0.1, 0.043, P(GOLD, 0.35, 0.6), "xy", 0.006, "card.star")]
-    W["card2"] = [B(None, (0.44, 0.29, 0.012), (cx - 0.1, cy - 0.22, 1.077), cardm, "card2.body", 0.003, rot=(0, 0, -0.25)),
-                  star(cx - 0.1, cy - 0.22, 1.087, 0.1, 0.043, P(GOLD, 0.35, 0.6), "xy", 0.006, "card2.star")]
+    cardm, matm = P("#fff6dc", 0.6, 0.1), P("#2a1a3a", 0.7, 0.1)
+    # each card lies on a dark plum mat 2.6 cm proud of the counter, so cream and gold read against the white top
+    W["card"] = [B(None, (0.98, 0.68, 0.026), (cx + 0.9, cy - 0.12, 1.083), matm, "card.mat", 0.006, rot=(0, 0, 0.2)),
+                 B(None, (0.86, 0.56, 0.014), (cx + 0.9, cy - 0.12, 1.11), cardm, "card.body", 0.003, rot=(0, 0, 0.2)),
+                 star(cx + 0.9, cy - 0.12, 1.123, 0.22, 0.095, P("#e08a00", 0.35, 0.5), "xy", 0.006, "card.star")]
+    W["card2"] = [B(None, (0.98, 0.68, 0.026), (cx - 0.1, cy - 0.22, 1.083), matm, "card2.mat", 0.006, rot=(0, 0, -0.25)),
+                  B(None, (0.86, 0.56, 0.014), (cx - 0.1, cy - 0.22, 1.11), cardm, "card2.body", 0.003, rot=(0, 0, -0.25)),
+                  star(cx - 0.1, cy - 0.22, 1.123, 0.22, 0.095, P("#e08a00", 0.35, 0.5), "xy", 0.006, "card2.star")]
     # the spatula, on the counter between us (cue spatula)
     W["spatula"] = [B(None, (0.34, 0.035, 0.022), (cx - 0.02, cy + 0.42, 1.085), P("#7a5230", 0.6), "spat.handle", 0.006),
                     B(None, (0.14, 0.11, 0.014), (cx + 0.21, cy + 0.42, 1.085), P("#c8ced8", 0.3, 0.8), "spat.head", 0.004)]
@@ -596,6 +605,18 @@ def build_extras(kit):
           B(None, (2.06, 1.06, 0.14), (0, 0, -0.1), cor, "me.apron2tie", 0.03)]
     for o in ap:
         W["extras"].append((o, "me.torso", "meapron"))
+    # Ray kneeling (cue kneel): his rig legs are shortened to thighs in animate(); these boxes are the rest of the legs, in
+    # the torso's frame (origin at the hips, 1.4 units over the ground, y forward is -y). The front thigh is the rig's leg1
+    # swung forward, so the shin drops from its knee; the back thigh is leg-1 upright, the shin lies behind it.
+    pants, shoe = P("#4a4a52", 0.7, 0.2), P("#3a2c24", 0.6)
+    kn = [B(None, (0.98, 1.0, 0.9), (0.5, -0.72, -0.95), pants, "ray.frontshin", 0.04),
+          B(None, (0.99, 1.15, 0.3), (0.5, -1.0, -1.25), shoe, "ray.frontshoe", 0.04),
+          B(None, (0.98, 1.4, 1.0), (-0.5, 1.2, -0.92), pants, "ray.backshin", 0.04),
+          B(None, (0.99, 0.3, 0.9), (-0.5, 2.05, -0.97), shoe, "ray.backshoe", 0.04)]
+    for o in kn:
+        W["extras"].append((o, "ray.torso", "kneel"))
+    # the raised finger (cue finger): a skin-coloured post on the end of his right arm, kept upright in animate()
+    W["finger"] = [B(None, (0.26, 0.26, 0.95), (0, 0, 0), P(BROWN_SKIN, 0.5, 0.3), "ray.finger", 0.05)]
 
 
 def attach_extras(tl, t):
@@ -705,6 +726,34 @@ def animate(kit, story, tl, t, ctx):
     for key, w in (("apron_hook", "hook"), ("apron_counter", "counter"), ("apron_porch", "porch")):
         for o in W[key]:
             hide(o, where != w)
+    # Ray's kneel: the rig's legs go to thighs (the knee-down one upright, the other forward), the extras above are the shins
+    ray_up = bpy.data.objects.get("ray.torso")
+    shown = ray_up is not None and not ray_up.hide_render
+    legf, legb = bpy.data.objects.get("ray.leg1"), bpy.data.objects.get("ray.leg-1")
+    if shown and cue_at(tl, "kneel", t).get("on") and legf and legb:
+        legf.rotation_euler = (-math.pi / 2, 0, 0)
+        legf.scale = (1, 1, 0.81)
+        legb.rotation_euler = (0, 0, 0)
+        legb.scale = (1, 1, 0.81)
+        for o in bpy.data.objects:
+            if o.name.startswith(("ray.shoe1", "ray.shoe-1")):
+                o.hide_render = True
+    elif legf and legb:
+        legf.scale = (1, 1, 1)
+        legb.scale = (1, 1, 1)
+    # the finger stays vertical whatever the arm does: parent it to the arm, counter-rotate and stand it on the hand
+    arm = bpy.data.objects.get("ray.arm1")
+    on = shown and arm is not None and bool(cue_at(tl, "finger", t).get("on"))
+    for o in W["finger"]:
+        if arm is not None and o.parent is None:
+            o.parent = arm
+            o.matrix_parent_inverse = Matrix.Identity(4)
+        o.hide_render = not on
+        if on:
+            Rm = arm.rotation_euler.to_matrix()
+            Ri = Rm.inverted()
+            o.rotation_euler = Ri.to_euler()
+            o.location = V((0, 0, -1.6)) + Ri @ V((0, 0, 0.42))
     pi = cue_at(tl, "patch", t).get("i", -1)
     for k, o in enumerate(W["patches"]):
         hide(o, k != pi)
