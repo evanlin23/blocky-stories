@@ -1,7 +1,7 @@
 # ep129-gift-box: the script (writer, 2026-11-06, batch 14)
 
 - **Slug:** `ep129-gift-box` (batch 14, upload order 3 of 6)
-- **Pitch:** 12 in the batch 14 pitch round (scratch file, not in the repo), picked by the panel (8.2 average across three blind critics, the top score). Engine: Pandora's box, where hope is what stays inside (myth, new to the channel). Opening shape `ban`. Lane: core. Waltgth arm: long.
+- **Pitch:** 12 in the batch 14 pitch round (scratch file, not in the repo), picked by the panel (8.2 average across three blind critics, the top score). Engine: Pandora's box, where hope is what stays inside (myth, new to the channel). Opening shape `ban`. Lane: core. Length arm: long.
 - **Title:** Dad Won't Open My PRESENT 🎁
 - **The batch's one sad family reveal, kept soft (panel note):** a dad and his grown boy who stopped talking properly for twelve years after a dumb fight. No death, illness or loss word anywhere. It ends warm: cake at the counter and a new box on the mantel.
 - **Batch 14 constraints, applied to every shot:**
