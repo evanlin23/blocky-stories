@@ -407,9 +407,9 @@ def kitchen(kit, name, state, night=False):
         S.cyl("stool", 0.2, 0.05, (sx * 0.95, 0.15, 0.62), "#e8c9a0", 0.7, 0.05, n=16)
         S.cyl("stoolleg", 0.05, 0.6, (sx * 0.95, 0.15, 0.3), "#b88a52", 0.7, 0.05, n=8)
     if night:
-        S.cyl("lampbase", 0.07, 0.04, (-1.2, 1.05, top + 0.02), "#c9a23c", 0.4, 0.4)
-        S.cyl("lamppole", 0.025, 0.24, (-1.2, 1.05, top + 0.16), "#c9a23c", 0.4, 0.4)
-        S.cyl("lampshade", 0.15, 0.24, (-1.2, 1.05, top + 0.38), kit.emit("#ffd9a0", 1.1, "lampshade"), r2=0.1, n=16)
+        S.cyl("lampbase", 0.07, 0.04, (-1.1, 1.05, top + 0.02), "#c9a23c", 0.4, 0.4)
+        S.cyl("lamppole", 0.025, 0.24, (-1.1, 1.05, top + 0.16), "#c9a23c", 0.4, 0.4)
+        S.cyl("lampshade", 0.15, 0.24, (-1.1, 1.05, top + 0.38), kit.emit("#ffd9a0", 1.1, "lampshade"), r2=0.1, n=16)
     mug = mat(kit, "#fffaf0", 0.35, 0.3)
     if state == "KA":    # twelve years ago: an empty open box and a roll of red paper on the island
         open_box(S, (-0.45, iy, top + G.BOX / 2 + 0.01))
@@ -459,7 +459,7 @@ def kitchen(kit, name, state, night=False):
             S.cyl("plate", 0.13, 0.012, (sx * 0.55, iy - 0.1, top + 0.006), mug, n=20)
             S.box("fork", (0.02, 0.15, 0.01), (sx * 0.55 + 0.17, iy - 0.1, top + 0.005), "#c9ccd2", 0.3, 0.6)
     elif state == "KH":  # night: the small blue box on the island
-        wrapped_box(S, (0, iy, top + 0.17), size=0.34, paper=NEWBLUE, bow="straight")
+        wrapped_box(S, (-0.4, iy, top + 0.17), size=0.34, paper=NEWBLUE, bow="straight")
 
 
 # ---------------------------------------------------------------------------------------------- the montage rooms
@@ -517,7 +517,7 @@ def sam_kitchen(kit):
         for sy in (-1, 1):
             S.box("chleg", (0.05, 0.05, 0.42), (sx * 0.23, 2.45 + sy * 0.2, 0.21), wood)
     # the box from his sister: card, a green ribbon cross, a bow
-    wrapped_box(S, (0.0, 1.6, 0.765 + 0.17), size=0.34, paper="#c9a26a", ribbon="#4cae5e", bow="straight", dark="#3a8f4a")
+    wrapped_box(S, (0.45, 1.6, 0.765 + 0.17), size=0.34, paper="#c9a26a", ribbon="#4cae5e", bow="straight", dark="#3a8f4a")
 
 
 def post_office(kit):
@@ -529,13 +529,13 @@ def post_office(kit):
         for c in range(6):
             S.box("cubby", (0.46, 0.04, 0.38), (-1.4 + c * 0.56, 3.24, 1.0 + r * 0.46), "#4a5a78", 0.9, 0.02)
     brown = mat(kit, "#a8703c", 0.6, 0.1)
-    S.box("counter", (3.2, 0.8, 1.05), (0, 0.95, 0.525), brown, bevel=0.012)
-    S.box("countertop", (3.3, 0.9, 0.05), (0, 0.95, 1.075), "#c9965a", 0.5, 0.15)
-    S.box("scale", (0.4, 0.35, 0.1), (-0.9, 0.95, 1.15), "#8d9097", 0.4, 0.4, bevel=0.01)
-    S.box("stamp", (0.12, 0.12, 0.1), (0.7, 0.9, 1.15), "#2a2a40", 0.5, 0.2, bevel=0.01)
+    S.box("counter", (3.0, 0.8, 1.05), (-0.9, 0.95, 0.525), brown, bevel=0.012)
+    S.box("countertop", (3.1, 0.9, 0.05), (-0.9, 0.95, 1.075), "#c9965a", 0.5, 0.15)
+    S.box("scale", (0.4, 0.35, 0.1), (-1.5, 0.95, 1.15), "#8d9097", 0.4, 0.4, bevel=0.01)
+    S.box("stamp", (0.12, 0.12, 0.1), (0.2, 0.9, 1.15), "#2a2a40", 0.5, 0.2, bevel=0.01)
     # the crate beside him: slatted wood, a darker wet patch on one corner, a puddle on the floor
     crate = mat(kit, "#b9824a", 0.8, 0.03)
-    cx, cy = 1.2, 1.9
+    cx, cy = 1.0, 1.9
     S.box("crate", (0.62, 0.62, 0.62), (cx, cy, 0.31), crate, bevel=0.008)
     for z in (0.08, 0.31, 0.54):
         for sx in (-1, 1):
