@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 6
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L35")
@@ -142,6 +142,13 @@ def lock(at, k, a0=0, a1=70, dur=0.5, lz=0.78, hand=True):
     cue(at, "key", on=True, k=k, lx=0.38, lz=lz, a0=a0, a1=a1, dur=dur, hand=hand)
 
 
+def lockcam(k, lp, lens, lt=(0.38, 0.0, 0.78), lp2=None):
+    """A held close-up of the key in house k's lock: a camera in house-local (lx, d, z above the landing), at least 0.7 m
+    from the door so the tag (0.4 m in front of the lens) is never behind it."""
+    return HC(k, (lp[0], lp[1], LAND + lp[2]), (lt[0], lt[1], LAND + lt[2]), lens,
+              (lp2[0], lp2[1], LAND + lp2[2]) if lp2 else None)
+
+
 def unlock(at):
     cue(at, "key", on=False)
 
@@ -235,13 +242,16 @@ shot("L03.2", HC(8, (1.3, 2.3, LAND + 2.5), (1.0, 0, LAND + 2.5), 30, (1.1, 1.9,
      "lampclose", face=False)
 
 # ===== the clicks (L04)
-lock("L04", 2, 0, 70, 0.4)
-shot("L04", HC(2, (0.6, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "night", "click1", face=False)
-lock("L04.1", 4, 0, 70, 0.4)
-shot("L04.1", HC(4, (0.6, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "night", "click2", face=False)
-lock("L04.2", 6, 0, 70, 0.4)
-shot("L04.2", HC(6, (0.6, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "night", "click3", face=False)
+# one held close-up for the three clicks: the key in house 4's green lock, the tag counting 1, 2, 3
+tagc("L04", 1)
+lock("L04", 4, 0, 70, 0.25)
+lock("L04.1", 4, 70, 0, 0.2)
+tagc("L04.1", 2)
+lock("L04.2", 4, 0, 70, 0.25)
+tagc("L04.2", 3)
+shot("L04", lockcam(4, (-0.3, 0.85, 0.66), 44, lp2=(-0.2, 0.8, 0.68)), "night", "click1", key=5.0, fill=2.0)
 unlock("L05")
+tagc("L05", 0)
 
 # ===== 05 Mr. Ames, 06 Mrs. Haddad
 WX, WY = G.WIN
@@ -308,8 +318,8 @@ shot("L15", cam_face(MEBED, 180, "me", 3.0, -10, 34), "day", "wake")
 FEETP = [mx0 + 0.1, my0 + 3.3, 0.0]
 cue("L15.2", "wet", on=True)
 TP("me", "L15.2", FEETP, 180, "worried")
-shot("L15.2", cam_at([mx0 + 0.6, my0 + 4.4, 0.55], [mx0 + 0.1, my0 + 3.3, 0.2], 30, [mx0 + 0.5, my0 + 4.2, 0.5],
-                     [mx0 + 0.1, my0 + 3.3, 0.2], 30), "day", "wetfeet")
+shot("L15.2", cam_at([mx0 + 0.9, my0 + 7.6, 0.8], [mx0 + 0.1, my0 + 3.3, 0.25], 52, [mx0 + 0.8, my0 + 7.2, 0.8],
+                     [mx0 + 0.1, my0 + 3.3, 0.25], 52), "day", "wetfeet", key=2.5, exp=0.35)
 cue("L16", "wet", on=False)
 
 # ===== 16 to 20 the fight
@@ -339,7 +349,7 @@ shot("L20", cam_face(KME, 0, "me", 2.9, -10, 34, tdz=-0.28), "day", "shrug")
 cue("L21", "mycam", on=True)
 SILLP = [mx0 - 1.15 + 0.5, my0 + 0.85, 0.0]
 TP("me", "L21", SILLP, 180, "neutral", arms=[40, 0])
-shot("L21", cam_at([mx0 - 0.9, my0 + 3.3, 1.55], [mx0 - 0.9, my0 + 0.5, 1.3], 30), "night", "sillcam")
+shot("L21", cam_at([mx0 - 1.15, my0 + 2.1, 1.5], [mx0 - 1.45, my0 + 0.3, 1.15], 32), "night", "sillcam")
 HIDE("me", "L22")
 tagc("L22", 0, 0)
 shot("L22", foot(26, (0.1, 0.3, 1.7), (2.3, 6.0, 2.5)), "night", "doorfar", face=False)
@@ -348,9 +358,9 @@ shot("L23", foot(24, (0.1, 0.3, 1.7)), "night", "footage1201", face=False)
 
 # ===== 24 she comes out
 INLOU = hw(1, 0.35, -0.8, LAND)
-door("L24", 1, 0, 80, 0.8)
+door("L24", 1, 0, 80, 0.5)
 TP("lou", "L24", INLOU, YC[1], "worried")
-K("lou", "L24+0.5", INLOU, expr="worried")
+K("lou", "L24+0.75", INLOU, expr="worried")
 K("lou", "L24.1", land(1, 0.2, 0.55), expr="worried")
 shot("L24", foot(24, (0.1, 0.3, 1.7)), "night", "dooropens", face=False)
 shot("L24.1", cam_face(land(1, 0.2, 0.55), YC[1], "lou", 2.8, 12, 34), "night", "louraincoat")
@@ -368,15 +378,13 @@ door("L26+0.4", 1, 80, 0, 0.5)
 
 # ===== 27 the clicks round the court (house 2 sky blue, 12 sky, then the green door 4)
 tagc("L27", 2)
-TP("lou", "L27", hw(2, 1.0, 0.85, LAND), YF[2], "worried", arms=[55, 0])
-lock("L27", 2, 0, 70, 0.4)
-shot("L27", HC(2, (0.65, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "night", "lock2", face=False)
+TP("lou", "L27", hw(9, 1.0, 0.85, LAND), YF[9], "worried", arms=[55, 0])
+lock("L27", 9, 0, 70, 0.25)
+lock("L27.1", 9, 70, 0, 0.2)
 tagc("L27.1", 4)
-lock("L27.1", 4, 0, 70, 0.4)
-shot("L27.1", HC(4, (0.65, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "night", "lock4", face=False)
+lock("L27.2", 9, 0, 70, 0.25)
 tagc("L27.2", 6)
-lock("L27.2", 9, 0, 70, 0.4)
-shot("L27.2", HC(9, (0.65, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "night", "lock9", face=False)
+shot("L27", lockcam(9, (-0.55, 1.35, 0.72), 58), "night", "lock2", key=5.0, fill=2.0)
 unlock("L27.3")
 tagc("L27.3", 8)
 tagc("L27.3+0.7", 10)
@@ -396,10 +404,10 @@ shot("L28", cam_face(BREATH, YC[8], "lou", 3.0, 12, 34), "night", "breath")
 BLP = land(1, 0.9, 0.5)
 cue("L29", "blanket", where="arm")
 tagc("L29", 10, 1203)
-TP("lou", "L29", court(1, 2.8, 2.6), G.yaw_to(court(1, 2.8, 2.6), land(1, 0.9, 0.5)), "worried", arms=[0, 62])
-K("lou", "L29+0.1", court(1, 2.8, 2.6), arms=[0, 62])
+TP("lou", "L29", court(1, 1.9, 2.4), G.yaw_to(court(1, 1.9, 2.4), land(1, 0.9, 0.5)), "worried", arms=[0, 62])
+K("lou", "L29+0.1", court(1, 1.9, 2.4), arms=[0, 62])
 K("lou", "L29>", BLP, yaw=YC[1], arms=[0, 62], expr="worried")
-shot("L29", foot(24, (0.1, 0.3, 1.7), (1.8, 4.0, 2.3)), "night", "footage1203", face=False)
+shot("L29", foot(24, (0.6, 0.3, 1.5), (1.2, 4.0, 2.3)), "night", "footage1203", face=False)
 K("lou", "L30", BLP, yaw=YC[1], arms=[0, 62], expr="worried")
 shot("L30", cam_face(BLP, YC[1], "lou", 3.0, -12, 34), "night", "wait")
 tagc("L31", 10, 1204)
@@ -417,8 +425,8 @@ K("me", "L32.1+0.5", S1, expr="asleep", yaw=YF[1])
 K("me", "L32.2+0.3", SB, expr="asleep")
 shot("L32", cam_at(hw(1, 0.5, 0.25, LAND + 0.25), hw(1, 0.0, 1.9, 0.12), 28), "night", "feetbottom", face=False)
 K("me", "L33+0.3", SM, expr="asleep")
-shot("L33", cam_at(hw(1, -0.8, 0.5, LAND + 0.22), hw(1, 0.0, 1.2, 0.34), 30), "night", "feetmid", face=False)
-shot("L34", cam_at(hw(1, 0.45, 0.15, LAND + 1.7), hw(1, 0.0, 1.1, 1.85), 13), "night", "eyesshut", key=0.8)
+shot("L33", cam_at(hw(1, 0.9, 3.6, 0.5), hw(1, 0.0, 0.9, 0.34), 26), "night", "feetmid", key=2.0)
+shot("L34", cam_at(hw(1, 0.35, 0.3, 2.05), hw(1, 0.0, 1.1, 1.86), 27), "night", "eyesshut", key=0.8)
 K("me", "L34>", SM, expr="asleep", yaw=YF[1])
 K("me", "P01+0.35", ST, expr="asleep", yaw=YF[1])
 shot("P01", foot(32, (0.2, 0.3, 2.2), (1.8, 4.0, 2.3)), "night", "dropdoor", face=False)
@@ -446,13 +454,13 @@ TP("lou", "L39", land(1, 0.62, 0.4), YC[1], "warm")
 mid39 = [(land(1, -0.15, 0.75)[0] + land(1, 0.62, 0.4)[0]) / 2, (land(1, -0.15, 0.75)[1] + land(1, 0.62, 0.4)[1]) / 2, LAND]
 shot("L39", cam_face(mid39, YC[1], "me", 3.4, 4, 30, shift=-0.02, hdz=-0.1, tdz=-0.14), "night", "blanket")
 hx, hy = G.STAGE["hall"]
-FOOT = [hx - 4.0, hy - 2.7, 0.0]
+FOOT = [hx - 4.1, hy - 2.8, 0.0]
 cue("L40", "blanket", where="shoulders")
 TP("lou", "L40", FOOT, G.yaw_to(FOOT, [hx - 5.6, hy - 5.0]), "sad-smile")
 TP("me", "L40", [hx - 0.65, hy - 2.0, 0.44], 0, "asleep")
 K("me", "L40", [hx - 0.65, hy - 2.0, 0.44], yaw=180)
-K("me", "L40>", [hx - 0.65, hy + 0.4, 1.32], yaw=180)
-shot("L40", cam_at([hx - 5.4, hy - 5.1, 1.6], [hx - 2.6, hy - 1.9, 1.3], 27), "night", "hall")
+K("me", "L40>", [hx - 0.65, hy - 0.3, 1.32], yaw=180)
+shot("L40", cam_at([hx - 5.4, hy - 5.1, 1.7], [hx - 3.0, hy - 1.9, 1.5], 27), "night", "hall")
 
 # ===== 41 to 44 the twist said plainly
 cue("L41", "blanket", where="none")
@@ -463,7 +471,7 @@ shot("L41", cam_face(WNDP, 180, "me", 2.8, -10, 34), "night", "twist1")
 K("me", "L42", WNDP, expr="worried")
 shot("L42", cam_face(WNDP, 180, "me", 2.2, 8, 34, tdz=-0.3), "night", "twist2")
 # L43: a coral door, my sleeping face, three-quarter (the neighbors' doorbell footage)
-tagc("L43", 10, 1200)
+tagc("L43", 10, 1204)
 CORAL = land(3, -0.12, 0.5)
 CCAM = hw(3, 1.5, 1.7, LAND + 1.95)
 _by, _hy = turned(CORAL, YF[3], CCAM, 0.45)
@@ -479,14 +487,12 @@ shot("L44", cam_face(RACE, YC[5], "lou", 3.0, 10, 34), "night", "races")
 
 # ===== 45 to 48 the logic of her keys
 tagc("L45", 2)
-lock("L45", 6, 0, 70, 0.3)
-shot("L45", HC(6, (0.65, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "night", "lk1", face=False)
+lock("L45", 8, 0, 70, 0.25)
+lock("L45.1", 8, 70, 0, 0.2)
 tagc("L45.1", 6)
-lock("L45.1", 8, 0, 70, 0.3)
-shot("L45.1", HC(8, (0.65, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "night", "lk2", face=False)
+lock("L45.2", 8, 0, 70, 0.25)
 tagc("L45.2", 10)
-lock("L45.2", 10, 0, 70, 0.3)
-shot("L45.2", HC(10, (0.65, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "night", "lk3", face=False)
+shot("L45", lockcam(8, (0.26, 0.9, 0.86), 46), "night", "lk1", key=5.0, fill=2.0)
 unlock("L46")
 HIDE("lou", "L46")
 shot("L46", foot(26, (0.1, 0.3, 1.7), (1.8, 4.0, 2.3)), "night", "hersopen", face=False)
@@ -495,7 +501,7 @@ DOORIN = [mx0 + 3.4, my0, 0.0]
 cue("L47", "bolt", a0=0, a1=90, dur=0.8)
 TP("me", "L47", [mx0 + 3.4 - 0.1, my0 + 0.65, 0.0], 0, "asleep", arms=[55, 0])
 K("me", "L47", [mx0 + 3.4 - 0.1, my0 + 0.65, 0.0], yaw=0, arms=[55, 0])
-shot("L47", cam_at([mx0 + 2.0, my0 + 2.0, 1.5], [mx0 + 3.55, my0 + 0.1, 1.2], 30), "night", "boltturn", face=False)
+shot("L47", cam_at([mx0 + 5.6, my0 + 2.8, 1.6], [mx0 + 3.5, my0 + 0.4, 1.4], 28), "night", "boltturn", face=False)
 _c47 = [mx0 + 2.2, my0 + 2.4, 1.6]
 _p47 = [mx0 + 3.3, my0 + 0.75, 0.0]
 _b47, _h47 = turned(_p47, 0.0, _c47, 0.5)
@@ -520,7 +526,7 @@ tagc("L49", 6)
 tagc("L49.1", 3)
 tagc("L49.2", 0)
 lock("L49", 5, 70, 0, 0.5)
-shot("L49", HC(5, (0.65, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "dawn", "unlock", face=False)
+shot("L49", lockcam(5, (0.0, 0.95, 1.25), 42), "dawn", "unlock", key=4.0, fill=1.5)
 unlock("L50")
 TP("lou", "L50", LOUP, YC[1], "neutral")
 shot("L50", ring_cam(LOUP, YC[1], "lou", 1.5, 22, -14), "dawn", "ring4")
@@ -547,7 +553,7 @@ tagc("L56", 10)
 TP("lou", "L56", land(3, 0.9, 0.7), YF[3], "worried", arms=[55, 0])
 lock("L56", 3, 0, 80, 0.3)
 HIDE("me", "L56")
-shot("L56", HC(3, (0.65, 0.7, LAND + 0.95), (0.38, 0, LAND + 0.78), 38), "night", "click56", face=False)
+shot("L56", lockcam(3, (0.12, 0.8, 0.52), 40, lp2=(0.2, 0.75, 0.56)), "night", "click56", key=5.0, fill=2.0)
 unlock("L57")
 SIT = hw(3, 0.3, 1.1, 0.30 - 0.55)
 TP("lou", "L57", SIT, YC[3], "sad-smile", lean=8, head=[0, 10])
@@ -557,7 +563,7 @@ shot("L57", cam_face(SIT, YC[3], "lou", 3.0, 12, 34, tdz=-0.28), "night", "shook
 # ===== 58 to 61 where I was walking to
 tagc("L58", 0, 0)
 HIDE("lou", "L58")
-TP("me", "L58", MEMID, 180, "sad-smile")
+TP("me", "L58", MEMID, 180, "worried")
 shot("L58", cam_face(MEMID, 180, "me", 2.8, 10, 34), "night", "walkingto")
 # the hall door, past the stair, to the kitchen table
 K("me", "L59", MEMID)
@@ -569,8 +575,9 @@ STOVE = [kx0 + 1.8, ky0 - 1.05, 0.0]
 TP("lou", "L60.1", STOVE, 0, "smile")
 shot("L60.1", cam_face(STOVE, 0, "lou", 3.2, 12, 34, tdz=-0.28), "day", "stove")
 HIDE("lou", "L61")
-TP("me", "L61", MEMID, 180, "sad-smile")
-shot("L61", cam_face(MEMID, 180, "me", 2.8, -10, 34), "day", "notback")
+MEL = [mx0 + 0.3, my0 + 1.7, 0.0]
+TP("me", "L61", MEL, 180, "worried")
+shot("L61", cam_face(MEL, 180, "me", 2.8, -10, 34), "day", "notback")
 
 # ===== 62 to 65 the warm turn
 APP = court(1, 0.0, 8.0)
@@ -670,7 +677,8 @@ remap_all(sound["ambience"])
 polish = {"reveal": [remap("L35")], "twist": remap("L35"),
           "quiet": [[remap("L59"), remap("L68")]],
           "hold": [names[n] for n in ("courtday", "courtnight", "doorfar", "footage1201", "footage1203", "footage1204",
-                                       "dropdoor", "dooropen", "plate1", "reveal", "hersopen", "dooropens")]}
+                                       "dropdoor", "dooropen", "plate1", "reveal", "hersopen", "dooropens", "click1", "lock2", "lk1", "unlock", "click56",
+                                       "eyesshut", "feetmid", "wetfeet", "hall", "boltturn")]}
 story = {
     "slug": "ep125-aunts-keys",
     "title": "My Aunt Has A Key To YOURS",
@@ -707,7 +715,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": [names[n] for n in ("courtnight", "fightme", "round", "footage1203", "feetbottom", "lk1", "lk2", "lk3", "boltturn")],
+    "framing_ok": [names[n] for n in ("courtnight", "fightme", "round", "footage1203", "feetbottom", "lk1", "boltturn")],
     "frames_ok": [names[n] for n in ("dawnwalk", "tableend")],     # the dawn brightening and the day look easing in at the cut
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

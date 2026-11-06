@@ -426,14 +426,14 @@
    ]
   },
   "L18": {
-   "text": "We fought about it. I told her to give the keys back.",
+   "text": "We fought about it. I told her to hand the keys back.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.328,
+   "dur": 2.397,
    "onset": 0.155,
-   "end": 2.121,
+   "end": 2.19,
    "chunks": [
     [
      0.155,
@@ -445,15 +445,15 @@
     ],
     [
      0.862,
-     1.215
+     1.199
     ],
     [
-     1.215,
-     1.414
+     1.199,
+     1.483
     ],
     [
-     1.414,
-     2.121
+     1.483,
+     2.19
     ]
    ]
   },

@@ -412,6 +412,7 @@ def build_key(kit):
     B(root, (0.46, 0.15, 0.15), (0.35, by - 0.015, 0.07), mus, "keysleeve", 0.02)
     B(root, (0.045, 0.125, 0.125), (0.105, by - 0.015, 0.07), P("#4a9a5a", 0.8), "keycuff", 0.01)
     B(root, (0.07, 0.09, 0.075), (0.055, by - 0.012, 0.045), P("#f1c9a0", 0.5), "keyhand", 0.015)
+    root.scale = (2.0, 2.0, 2.0)       # a stylised, legible key and hand
     W["key"] = (root, keyg)
 
 
@@ -533,6 +534,7 @@ def build_room(kit):
     B(None, (1.35, 0.16, 0.05), (wx, my0 + 0.09, 1.7), P("#ffffff", 0.5), "windowtransom")
     B(None, (1.9, 0.38, 0.07), (wx, my0 + 0.3, 0.98), P("#ffffff", 0.5), "windowsill")
     cam = E(None, (wx, my0 + 0.3, 1.06), "mycam")
+    cam.scale = (1.8, 1.8, 1.8)
     W["mycam"] = cam
     B(cam, (0.18, 0.1, 0.12), (0, 0, 0.06), P("#f4f6f8", 0.3, 0.6), "camerabody", 0.012)
     C(cam, 0.035, 0.05, (0, 0.07, 0.06), P("#15131a", 0.2, 0.5), "cameralens", rot=(math.pi / 2, 0, 0), n=14)
@@ -558,6 +560,7 @@ def build_room(kit):
     C(g, 0.06, 0.03, (0.3, 0.16, 1.15), brass, "tbase", rot=(math.pi / 2, 0, 0), n=18)
     th = E(g, (0.3, 0.18, 1.15), "thumb")
     W["thumb"] = th
+    th.scale = (1.8, 1.8, 1.8)
     B(th, (0.22, 0.04, 0.06), (0, 0, 0), brass, "tbar", 0.015)
     kit.sphere(nm("indoorknob"), 0.05, (0.3, 0.16, 0.96), brass, g, seg=12)
     # wet marks and leaves on the floor, shown on the mornings (cue wet)
@@ -665,19 +668,20 @@ def build_tag(kit):
     b("tag.plate", (1.56, 0.8, 0.006), (0, 0, 0.007), plate)
     z = 0.016
     # the key glyph: a ring bow, a shaft and two teeth
-    bow = kit.cyl("tag.bow", 0.105, 0.006, (-0.6, 0.0, z), gold, root, n=18)
+    bow = kit.cyl("tag.bow", 0.105, 0.006, (-0.68, 0.0, z), gold, root, n=18)
     noshadow(bow)
-    hole = kit.cyl("tag.bowhole", 0.04, 0.006, (-0.6, 0.0, z + 0.002), plate, root, n=14)
+    hole = kit.cyl("tag.bowhole", 0.04, 0.006, (-0.68, 0.0, z + 0.002), plate, root, n=14)
     noshadow(hole)
-    b("tag.shaft", (0.34, 0.07, 0.006), (-0.41, 0.0, z), gold)
-    b("tag.tooth1", (0.06, 0.12, 0.006), (-0.34, -0.08, z), gold)
-    b("tag.tooth2", (0.06, 0.09, 0.006), (-0.44, -0.065, z), gold)
+    b("tag.shaft", (0.28, 0.07, 0.006), (-0.51, 0.0, z), gold)
+    b("tag.tooth1", (0.06, 0.12, 0.006), (-0.40, -0.08, z), gold)
+    b("tag.tooth2", (0.06, 0.09, 0.006), (-0.50, -0.065, z), gold)
     # the padlock glyph
-    b("tag.lockbody", (0.24, 0.2, 0.006), (0.26, -0.07, z), ink)
-    b("tag.shackleL", (0.04, 0.17, 0.006), (0.18, 0.1, z), ink)
-    b("tag.shackleR", (0.04, 0.17, 0.006), (0.34, 0.1, z), ink)
-    b("tag.shackleT", (0.2, 0.04, 0.006), (0.26, 0.175, z), ink)
-    b("tag.lockhole", (0.04, 0.07, 0.006), (0.26, -0.07, z + 0.002), plate)
+    b("tag.divider", (0.015, 0.5, 0.006), (0.075, 0.0, z), gold)
+    b("tag.lockbody", (0.2, 0.18, 0.006), (0.27, -0.07, z), ink)
+    b("tag.shackleL", (0.04, 0.17, 0.006), (0.205, 0.1, z), ink)
+    b("tag.shackleR", (0.04, 0.17, 0.006), (0.335, 0.1, z), ink)
+    b("tag.shackleT", (0.17, 0.04, 0.006), (0.27, 0.175, z), ink)
+    b("tag.lockhole", (0.04, 0.07, 0.006), (0.27, -0.07, z + 0.002), plate)
     W["digits"] = {}
 
     def digit_set(label, cx, cy, dw=0.15, dh=0.48, t=0.055):
@@ -689,8 +693,8 @@ def build_tag(kit):
             d[k] = b(f"tag.{label}{k}", (sw, sh, 0.006), (cx + px, cy + py, z), ink)
         return d
 
-    W["digits"]["keys"] = [digit_set("k0", -0.17, 0.0), digit_set("k1", 0.0, 0.0)]
-    W["digits"]["locks"] = [digit_set("l0", 0.5, 0.0), digit_set("l1", 0.67, 0.0)]
+    W["digits"]["keys"] = [digit_set("k0", -0.22, 0.0), digit_set("k1", -0.04, 0.0)]
+    W["digits"]["locks"] = [digit_set("l0", 0.54, 0.0), digit_set("l1", 0.685, 0.0)]
     # the clock row (the footage): a second plate under the first, with 12:01
     W["clockrow"] = []
     p2 = b("tag.edge2", (1.62, 0.7, 0.006), (0, -0.74, 0.0), edge)
@@ -724,7 +728,7 @@ def set_tag(tl, t, lens):
     vals = [hh // 10, hh % 10, mm // 10, mm % 10]
     for d, v in zip(W["digits"]["clock"], vals):
         _digit(d, v if on else None)
-    dist = 1.0
+    dist = 0.4      # closer than any surface a close-up camera can reach (the tag is never behind a door)
     h2 = dist * 12.0 / lens
     w2 = h2 * 9.0 / 16.0
     s = 0.37 * w2
