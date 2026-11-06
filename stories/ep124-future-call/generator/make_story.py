@@ -18,12 +18,16 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L26
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L26")
 lines.insert(idx, {"id": "P01", "pause": 0.5, "chunks": [["", ""]]})
+# breath pauses on the phone line: a clear 0.45 s after these lines, with a breath sitting in each
+for lid in ("L35", "L24", "L22", "L15", "L14", "L13", "L12"):
+    i_ = next(i for i, l in enumerate(lines) if l["id"] == lid)
+    lines.insert(i_ + 1, {"id": "P" + lid[1:], "pause": 0.45, "chunks": [["", ""]]})
 
 
 def remap(ref):
@@ -197,11 +201,11 @@ mouth("me", "L10.1", "L10.1>", 0.5)
 shot("S10b", "L10.1", mecam(2.2, 0, 36, tx=-0.6))
 key("me", "L11", expr="neutral")
 shot("S11", "L11", mecam(2.1, 10, 36, tx=-0.55))
-shot("S12", "L12", cam(PH[0] - 0.12, PH[1], 1.28, 1.15, -28, 46, cz=1.3))
+shot("S12", "L12", cam(PH[0] - 0.12, PH[1], 1.28, 1.15, -28, 46, cz=1.3, push=(0.95, 1.28)))
 key("me", "L13", expr="uneasy")
-shot("S13", "L13", mecam(2.0, -8, 36))
-shot("S14", "L14", mecam(1.7, 8, 36))
-shot("S15", "L15", mecam(1.45, -5, 36))
+shot("S13", "L13", mecam(2.0, -8, 36, push=(1.8, 1.27)))
+shot("S14", "L14", mecam(1.7, 8, 36, push=(1.5, 1.27)))
+shot("S15", "L15", mecam(1.45, -5, 36, push=(1.25, 1.27)))
 cut("me", "L16", ME, yaw=0, expr="neutral", head=[-28, 0])
 shot("S16", "L16", mecam(1.7, 12, 36, tx=-0.35))
 cue("L17", "btn", p=1.0)
@@ -219,10 +223,10 @@ shot("S20", "L20", dadcam(2.1, -8, 36))
 key("dad", "L21", expr="laugh", head=[0, -3])
 shot("S21", "L21", dadcam(1.8, 6, 36, tz=1.3))
 cut("me", "L22", ME, yaw=18, expr="stunned", head=[0, 0])
-shot("S22", "L22", cam(-0.55, ME[1], 1.27, 2.0, 18, 36))
+shot("S22", "L22", cam(-0.55, ME[1], 1.27, 2.0, 18, 36, push=(1.7, 1.27)))
 key("dad", "L23", expr="laugh", head=[0, -4])
 shot("S23", "L23", dadcam(2.0, -18, 36))
-shot("S24", "L24", cam(PH[0], PH[1], 1.25, 1.1, -30, 38, cz=1.3))
+shot("S24", "L24", cam(PH[0], PH[1], 1.25, 1.1, -30, 38, cz=1.3, push=(0.9, 1.25)))
 cut("me", "L25", ME, yaw=0, expr="cry", head=[0, 6])
 shot("S25", "L25", mecam(1.8, 0, 36))
 shot("S25b", "P01", cam(0.4, 0.0, 1.3, 3.0, 180, 26, cz=1.3), _drop=True)
@@ -259,7 +263,7 @@ key("dad", "L34", expr="laugh", head=[0, -4])
 cue("L34.1", "dsit", s=1.0, dur=0.25)
 key("dad", "L34.1", list(DAD) + [-0.34], expr="laugh", head=[0, -4], arms=[56, 56])
 shot("S34", "L34", cam(DAD[0], DAD[1] + 0.1, 1.15, 2.3, 4, 34, cz=1.5))
-shot("S35", "L35", cam(PH[0], PH[1], 1.25, 1.15, -8, 38, cz=1.3))
+shot("S35", "L35", cam(PH[0], PH[1], 1.25, 1.15, -8, 38, cz=1.3, push=(0.95, 1.25)))
 cut("dad", "L36", [DAD[0] + 0.75, DAD[1], 0], yaw=0, expr="laugh", head=[0, -2], arms=[56, 56])
 cue("L36", "dsit", s=0.0, dur=0.0)
 cut("me", "L36", [ME_NEAR[0] + 0.4, ME_NEAR[1]], yaw=0, expr="laugh", head=[0, -2])
@@ -309,16 +313,14 @@ sfx = [
     {"at": "L17", "kind": "click", "db": -17},
     # soft breaths on the line (low band noise, nothing above 4 kHz): slow in L12 to L15, held while I talk (L16, L17),
     # a shaky pair at L22, a fading one at L24 and L25, a laugh-like triple at L35, gone after the click
-    {"at": "L12", "kind": "breath", "db": -22, "dur": 1.6},
-    {"at": "L13.2", "kind": "breath", "db": -23, "dur": 1.5},
-    {"at": "L14.2", "kind": "breath", "db": -23, "dur": 1.5},
-    {"at": "L15.1", "kind": "breath", "db": -24, "dur": 1.4},
-    {"at": "L22.1", "kind": "breath", "db": -23, "dur": 0.45},
-    {"at": "L22.2", "kind": "breath", "db": -23, "dur": 0.45},
-    {"at": "L24.1", "kind": "breath", "db": -24, "dur": 1.6},
-    {"at": "L25.1", "kind": "breath", "db": -27, "dur": 1.4},
-    {"at": "L35.1", "kind": "breath", "db": -23, "dur": 0.35},
-    {"at": "L35.2", "kind": "breath", "db": -23, "dur": 0.35},
+    {"at": "P12", "kind": "breath", "db": -11, "dur": 0.42},
+    {"at": "P13", "kind": "breath", "db": -11, "dur": 0.42},
+    {"at": "P14", "kind": "breath", "db": -11, "dur": 0.42},
+    {"at": "P15", "kind": "breath", "db": -11, "dur": 0.42},
+    {"at": "P22", "kind": "breath", "db": -11, "dur": 0.4},
+    {"at": "P24", "kind": "breath", "db": -11, "dur": 0.42},
+    {"at": "P01", "kind": "breath", "db": -11, "dur": 0.45},
+    {"at": "P35", "kind": "breath", "db": -11, "dur": 0.4},
 ]
 music = {
     "root": 52, "mode": "minor", "bpm": 84, "seed": 124,
@@ -335,7 +337,7 @@ music = {
 sound = {
     "floor": "concrete", "steps_db": -26,
     "sfx": sfx,
-    "music_drops": [{"from": "P01", "to": "P01>"}],
+    "music_drops": [{"from": "L12", "to": "P15>", "keep": ["breath"]}, {"from": "P01", "to": "P01>", "keep": ["breath"]}],
     "rev": REV,
 }
 remap_all(sfx)
