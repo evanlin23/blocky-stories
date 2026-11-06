@@ -8,7 +8,7 @@ runs:
   steps:
   - uses: actions/setup-python@v5
     with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
-  - run: sudo apt-get update -q && sudo apt-get install -yq ffmpeg espeak-ng
+  - run: for i in 1 2 3; do sudo apt-get update -q && sudo apt-get install -yq ffmpeg espeak-ng && break; [ "$i" = 3 ] && exit 1; echo "apt try $i failed (a runner mirror can miss the Ubuntu lists), retrying"; sleep 20; done
     shell: bash
   - run: pip install -r requirements.txt -r requirements-tts.txt --extra-index-url https://download.pytorch.org/whl/cpu
     shell: bash
