@@ -852,6 +852,8 @@ def _first_frame(kit, story):
         for sx in (-1, 1):
             kit.box(f"dad.rl{sx}", (0.36, 0.05, 0.26), (sx * 0.26, -0.54, 0.4), kit.glass("#dde6ea"), dh, bevel=0.03)
     # Ro: a duffel is a prop by her feet when she is shown (placed in meta); Ezra's jersey number is a glyph only
+    W["extras"] = [(ob, ob.parent) for ob in bpy.data.objects if ob.parent is not None and ob.parent.name in ("grandma.headg", "dad.headg")
+                   and ob.name.split(".")[1].startswith(("curl", "nose", "beard", "ear", "rd", "rl"))]
     W["inited"] = True
 
 
@@ -987,6 +989,8 @@ def animate(kit, story, tl, t, ctx):
         for ob in bpy.data.objects:
             if ob.name.startswith(pre):
                 ob.hide_render = True
+    for ob, par in W.get("extras", []):   # head extras follow their owner on every frame (shard starts)
+        ob.hide_render = bool(par.hide_render)
     _apply_cast_pose(m)
     return gains
 
