@@ -1,0 +1,37 @@
+{
+ "stage": "proof",
+ "film": "proof-42160171115",
+ "run": 42160171115,
+ "sha": "ab8cc24b8bddb99f61c141e76d99c315dd11b147",
+ "pass": false,
+ "verdict": "fail",
+ "date": "2026-11-06",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "opening recipe",
+  "audio",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "gate",
+  "opening variety",
+  "batch 13 constraints"
+ ],
+ "craft": "**ep128-zero-feet**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.5 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 15.7 | 14.0– | ok |\n| macro.motion_energy_q | 6.81 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 8.25 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.69 | –2.5 | ok |\n| macro.longest_still_s | 0.83 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 2.71 | 1.5– | ok |\n| spec.camera_move_share | 0.996 | 0.65– | ok |\n| spec.punch_per_10s | 0.67 | 0.4– | ok |\n| macro.brightness_mean | 0.691 | 0.35– | ok |\n| macro.brightness_first_3s | 0.753 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.396 | 0.42– | **warn** |\n| macro.contrast_mean | 0.198 | 0.18– | ok |\n| spec.face_big_share | 0.588 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.603 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.016 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 77.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.8 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.2 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0444 | –0.08 | ok |\n| sound.hf_jump_max | 0.0119 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Proof run 42160171115 at ab8cc24 (latest commit touching stories/ep128-zero-feet, so current), 270x480 x4, 75.1 s, 2254 frames, 63 shots. Frames every 2 s plus every frame of 0-3 s at phone size and on a 1920-wide TV canvas, 4-10 fps through 38-46 s and 52-58 s, 15 fps caption strip 68.5-71.5 s. Faces read, captions in the safe area, nothing black, frozen or z-fighting; clip.json 356 times, 0 hits; no real words (numerals and glyphs only). Cover 29.9 s: lit scared close-up, 'Step for STEP.', strong.\nSecond one: me on the coral couch, lit bright, uneasy, phone flat on the cushion at 0 and the tag at 0, slow push in; 'Zero FEET. / That's how close / my nearest family is.' from frame 1 (opening 'count' matches L01).\nFIX 1 (must): S48, 54.2-55.0 s ('my HEAD.'): the move ends with Mom's face past the right edge, right eye cut, held about 0.6 s on the line that explains the twist (batch 13: faces whole). Stop the move about 10% earlier or end the target on her face so it sits whole, at least 10% in from the edge.\nFIX 2 (must, package only): the pin 'Comment ZERO if your mom would do this too.' names Mom and gives away the twist to anyone opening comments mid-watch. Use a pin that doesn't say who, e.g. 'Comment ZERO if yours has ever said zero.'\nCritic should-fixes judged: S38 (41.9-42.0 s) is me running up past the camera, face at the edge for 2 frames on the exit, reads as a run-past, fine. Stairwell light pools S38-S39: soft, steady, no pale discs that read at phone or TV size, fine. 'hear her' (69.7-69.9 s) up 0.2 s, in sync with the voice (sync p90 77 ms), reads, note only.\nBatch 13: nothing blinks, flickers or switches (flash: general 1/s, 3f 3/s at 43.5 s within bar, red 0); landing light and dusk window steady; at most two faces (S04 montage, both to camera), no profile two-shots; phones flat, glyph-only, clear of faces; faces at least 1/5 width except the S48 cut. Audio: -14.1 LUFS, -1.8 dBTP, LRA 1.1; 4 kHz windows clean (max 0.044, jump 0.012); voice 12.2 dB over the bed; no silence; L44 decays clean into the loop. Polish on (punch-ins on key words, soft hits, riser into the 40.4 s drop).\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 8.25 (5.5-8.0), macro.saturation_mean 0.396 (0.42-); looked at: busy but clear cutting and a pastel palette, neither loses viewers.\nPackage: title, description and cover match, no 'husband', hard rules 1-4 clean, gate OPEN (warns: 'hear her' caption, note 9 label opener). Opening 'count' matches last upload ep62-six-riders 'count': queue note, upload.py reorders. Verdict: fail on fixes 1 and 2.",
+ "fixes": [
+  {
+   "shot": "S48",
+   "s": "54.2-55.0",
+   "fix": "end the camera move about 10% earlier so Mom's whole face stays in frame, at least 10% in from the right edge"
+  },
+  {
+   "shot": "package",
+   "s": null,
+   "fix": "pin names Mom and spoils the twist; use one that doesn't say who"
+  }
+ ]
+}
