@@ -712,14 +712,15 @@ cue("L53", "clouds", on=False)
 look("L53+0.3", "night", 0.45)
 shot("S53", "L53", C([-3.9, -3.1, 1.5], [1.0, 2.0, 1.2], 24, [-3.6, -3.0, 1.5], [1.0, 2.0, 1.2], 24))
 # L54: Ben walks me to my room
-put("ben", "L54", [8.8, 0.2], 90, expr="soft", arms=[85, 0])
+put("ben", "L54", [9.6, 0.2], 90, expr="soft", arms=[85, 0])
 fl("ben", "L54", 1.0)
-put("me", "L54", [7.4, -0.2], 90, expr="uneasy")
-go("ben", "L55", [11.0, 0.2])   # one steady walk over L54 and L54.2 (no sprint, no dead stop)
-go("me", "L55", [9.6, -0.2])
+put("me", "L54", [8.5, -0.2], 90, expr="uneasy")
+# one steady walk (1.7 m/s) over all of S54a, 3 m+ from the camera, stopping on the S54b cut at the old marks
+go("ben", "L54.2", [11.0, 0.2])
+go("me", "L54.2", [9.9, -0.2])
 shot("S54a", "L54", C([5.2, -0.1, 1.55], [9.5, 0.0, 1.3], 24, [5.6, -0.1, 1.55], [10.0, 0.0, 1.3], 24))
-acting["ben"].append({"at": "L54.2", "yaw": 60})   # turn without a pos key: the walk carries on
-shot("S54b", "L54.2", C([8.3, -0.9, 0.85], [11.5, -0.2, 0.7], 24, [8.6, -0.9, 0.8], [11.8, -0.2, 0.65], 24))
+pose("ben", "L54.2", yaw=60)
+shot("S54b", "L54.2", C([10.0, -0.55, 0.85], [12.0, -0.5, 0.6], 24, [10.3, -0.5, 0.8], [12.0, -0.5, 0.55], 24))
 # L55: Ben, close, in his own beam
 hide("me", "L55")
 hide("ben", "L55")
