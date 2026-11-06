@@ -310,7 +310,7 @@ put("me", "L29", A(SN, 0.0, 6.55, LAND), 180, expr="wide")
 shot("L29", mv(A(SN, -0.3, 9.0, LAND + 1.7), A(SN, 0.0, 6.55, LAND + 1.55), 44, A(SN, -0.2, 8.7, LAND + 1.7), A(SN, 0.0, 6.55, LAND + 1.55), 44),
      "mestunned")
 only("L30", ["mom"])
-shot("L30", momcam(1.55, 2.6, 52, dx=-0.3, push=0.1), "momsmile")
+shot("L30", momcam(1.55, 2.7, 52, dx=0.35, push=0.1), "momsmile")
 mom_stand("L30", MOMX, MOMY, "smile")
 # L31: I walk to my kitchen on "Every step I took", Mom walks to hers on "she took it TOO"
 freeze("L31", False)
@@ -460,6 +460,7 @@ story = {
                                       "phone1", "stairs2", "phone900", "oldphone", "phone0", "still0", "phone0b", "mom0",
                                       "tablefortwo", "laundry", "fridge", "boxes", "oneroom",
                                       "hallmom", "hallnight", "den2"]],
+    "frames_ok": [names["feet"]],
     "asr_forgive": ["grandpa's", "i'd", "walk", "too"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
