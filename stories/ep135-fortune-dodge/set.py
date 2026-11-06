@@ -407,8 +407,8 @@ def build_cart(kit):
                   star(cx + 0.2, cy - 0.2, 1.121, 0.25, 0.108, matm, "xy", 0.004, "card2.starline"),
                   star(cx + 0.2, cy - 0.2, 1.127, 0.2, 0.087, P("#f0a000", 0.35, 0.5), "xy", 0.006, "card2.star")]
     # the spatula, on the counter between us (cue spatula)
-    W["spatula"] = [B(None, (0.5, 0.06, 0.035), (cx + 0.05, cy + 0.5, 1.09), P("#5a3418", 0.6), "spat.handle", 0.008),
-                    B(None, (0.26, 0.2, 0.025), (cx + 0.38, cy + 0.5, 1.09), P("#e8ecf2", 0.3, 0.8), "spat.head", 0.008)]
+    W["spatula"] = [B(None, (0.5, 0.12, 0.08), (cx - 0.05, cy - 0.15, 1.13), P("#4a4f58", 0.3, 0.9), "spat.handle", 0.012),
+                    B(None, (0.5, 0.5, 0.06), (cx + 0.4, cy - 0.15, 1.14), P("#b8c0cc", 0.2, 0.9), "spat.head", 0.012)]
     # the wrench on the ground by the wobbly wheel
     B(None, (0.5, 0.06, 0.04), (cx - 1.95, cy - 1.0, 0.03), P("#8a8d96", 0.35, 0.8), "wrench.arm", 0.01, rot=(0, 0, 0.5))
     B(None, (0.14, 0.12, 0.04), (cx - 1.75, cy - 0.88, 0.03), P("#8a8d96", 0.35, 0.8), "wrench.head", 0.01)
@@ -597,6 +597,9 @@ def build_room(kit):
     fl(rx - 5.7, 1.85, 1.15)
     fl(cx - 1.75, 1.75, 1.1)
     fl(dx - 1.5, 1.7, 1.0)
+    # more flyers where the home shots look: taped on the couch window (5 cm proud of its mullion) and beside the S46 kitchen head
+    flyer(cx + 0.3, wy - 0.3, 1.95, 1.25)
+    flyer(rx - 1.7, wy - 0.15, 1.75, 0.95)
     W["roomlight"] = kit.light("roomlight", "POINT", (rx + 3, ry + 1.0, 3.0), 90, "#ffe9c8", size=0.8, shadow=False)
     # the fixed daylight is the sun and sky; the room light only lifts the interior
     for nmx in ("roomlight", "tablelight"):

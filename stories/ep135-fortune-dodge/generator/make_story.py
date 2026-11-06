@@ -21,7 +21,7 @@ sys.path.insert(0, str(ROOT))
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 16
+REV = 22
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L32")
@@ -231,11 +231,11 @@ TP("ray", "L11", RAYK, 75, "neutral", arms=[0, 55], side=[0, 0], head=[-55, 15])
 shot("S11", "L11", KNEEL_CAM, "dawn")
 # ===== S13 my card
 HIDE("ray", "L13")
-M13 = [3.45, 2.9, 0.0]
+M13 = [3.35, 2.7, 0.0]
 cue("L13.1", "mcard", on=True)
 cue("L14", "mcard", on=False)
 TP("me", "L13", M13, yaw_to(M13, [3.6, 0.0]), "neutral")
-shot("S13", "L13", cam_at([4.1, 0.0, 1.3], [3.5, 3.5, 1.05], 28, [4.0, 0.4, 1.3], [3.5, 3.5, 1.05], 28), "day")
+shot("S13", "L13", cam_at([4.15, -0.6, 1.2], [3.6, 3.5, 0.85], 24, [4.1, -0.2, 1.2], [3.6, 3.5, 0.85], 24), "day")
 # ===== S14
 TP("me", "L14", ME_MACH, 0, "scared")
 shot("S14a", "L14", cam_face(ME_MACH, 0, "me", 2.8, 10, 34, d2=2.4), "day")
@@ -387,7 +387,7 @@ shot("S55", "L55", cam_face(RAYS, 0, "ray", 2.4, -10, 34, d2=2.1), "dawn")
 cue("L56", "spatula", on=True)
 cue("L57", "spatula", on=False)
 HIDE("me", "L56")
-TP("ray", "L56", [CX - 0.5, CY + 0.95, 0.05], 0, "smile", arms=[0, 0], side=[85, 0])
+TP("ray", "L56", [CX - 0.25, CY + 0.55, 0.05], 0, "smile", arms=[0, 85], side=[0, 0])
 shot("S56", "L56", cam_at([CX + 0.0, CY - 2.7, 1.75], [CX + 0.0, CY + 0.5, 1.25], 26, [CX + 0.0, CY - 2.4, 1.75], [CX + 0.0, CY + 0.5, 1.25], 26), "day")
 TP("ray", "L57", RAY2, 0, "laugh")
 TP("me", "L57", ME2, 0, "laugh")
@@ -404,9 +404,9 @@ shot("S61", "L61", KNEEL_CAM, "day")
 HIDE("ray", "L62")
 cue("L62.2", "mcard", on=True)
 cue("L63", "mcard", on=False)
-M62 = [3.45, 2.9, 0.0]
+M62 = [3.35, 2.7, 0.0]
 TP("me", "L62", M62, yaw_to(M62, [3.6, 0.0]), X("uneasy"))
-shot("S62", "L62", cam_at([4.1, 0.0, 1.3], [3.5, 3.5, 1.05], 28, [4.0, 0.4, 1.3], [3.5, 3.5, 1.05], 28), "day")
+shot("S62", "L62", cam_at([4.15, -0.6, 1.2], [3.6, 3.5, 0.85], 24, [4.1, -0.2, 1.2], [3.6, 3.5, 0.85], 24), "day")
 HIDE("me", "L63")
 cue("L63", "card2", on=True)
 shot("S63", "L63", cam_at([CX + 0.25, CY - 2.2, 2.3], [CX + 0.25, CY - 0.15, 0.95], 36, [CX + 0.25, CY - 2.0, 2.2], [CX + 0.25, CY - 0.15, 0.95], 36),
