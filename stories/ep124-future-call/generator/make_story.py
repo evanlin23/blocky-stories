@@ -180,7 +180,7 @@ shot("S04a", "L04", cam(UX, UY + 0.15, 1.15, 3.0, 8, 34, cz=1.3))
 shot("S04b", "L04.4", cam(UX + 0.1, UY - 0.1, 0.15, 1.5, 15, 30, cz=1.25))
 KX, KY = G.KITCHEN
 shot("S05", "L05", cam(KX, KY + 1.15, 1.25, 3.0, 0, 30, cz=1.45))
-shot("S05b", "L05.3", cam(KX, KY + 1.15, 1.3, 2.6, 0, 27, cz=1.4))
+shot("S05b", "L05.3", cam(KX, KY + 1.15, 1.3, 3.25, 0, 27, cz=1.4))   # 3.25 m (was 2.6): the 1.50 m spread cut both faces at 2.6
 key("me", "L06", expr="smile", head=[0, 0])
 shot("S06", "L06", cam(-0.6, ME[1], 1.27, 2.2, 0, 36))
 
