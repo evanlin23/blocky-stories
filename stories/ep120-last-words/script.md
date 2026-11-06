@@ -5,6 +5,7 @@
 - **Title:** Dad's Place Still Says My Last WORDS 🔊
 - **Revised r1 (standards, 2026-11-05):** US English: "flat" is now "place" or "apartment" everywhere. Dad's face carries his lines: S08b is a full-frame close on the photo, S09 has Dad's face behind me, and L40 to L49 now play over Dad himself (in his doorway two years ago, at the foot of his stair, asleep on the shop couch, in the lit cab, at my buzzer, with his phone). "I told him not to CALL." moved up beside "he couldn't KNOCK" (now L47, L48). Two new lines, L45 (practicing in the cab) and L46 (as far as my buzzer), for about 123 s. The title is now "Dad's Place". Lines changed: L07, L08, L12, L31, L33, L39, L45 to L55 (renumbered), L59, L60, L71. Built and voiced after r1.
 - **Revised r2 (critic r1, standards r2, 2026-11-05):** word fixes for ASR and sense. L12 "yelling my words / at him", L42 "He slept", L48 "I told him", L53 "This time,", L71 "Now his apartment says / "See you SUNDAY."". `asr_forgive` cut to number spellings (eleven, sixteen). L27 "With a DENT in it" stays; the builder shows the dent. Re-voice L12, L42, L48, L53, L71.
+- **Revised r3 (standards r1, 2026-11-06):** L22 "Last night," is now "One night," (the banned closing-section opener, and it clashed with L69 "every SUNDAY now"). Re-voice L22. Package `cover_s` 36.8 is now 62.9 (S50: my face in Dad's doorway inside the ripple, "Out LOUD.", tag at 0).
 - **Changed from the pitch (panel notes):**
   - **Line 1 is shorter and plain:** "In this town, / you can't take back / the last thing you say / in a HOUSE." (15 words), then "It stays there. / Out LOUD." and the rule's release in L03 ("Until somebody / says something NEW.").
   - **The sad lean lands warm.** Dad never slept in the truck: he sleeps on the couch in his own shop downstairs, so his place keeps his last words until he's kept them (L42, L43). The turn is a little funny (the one night he finally goes up to knock, I'm not home, L51, L52), then warm: my words call him up his own stairs (L60, L61), we both say sorry at the same time and laugh until the eggs go cold, and the apartment now says "See you SUNDAY." Every warm face is `smile` or `warm`.
@@ -127,7 +128,7 @@ Times are estimates. Every line gets one to three shots with acting in each, and
 | S17 | L17 | The cab from three floors up: a dark head-and-shoulders behind the windshield, rim-lit from behind by the streetlight. |
 | S18 | L18 | The shape's head lowering onto the wheel (hands out of frame). |
 | S19 | L19 | The truck pulling away, tail lights in the dark. |
-| S20 | L20 | My face in my dark window, `scared`, watching, the tag at 731. Cover frame (`cover_s` 36.8). |
+| S20 | L20 | My face in my dark window, `scared`, watching, the tag at 731. Not the cover frame (now S50, `cover_s` 62.9). |
 | S21 | L21 | My face in the dark window, close, `glum` more than scared. |
 | (drop) | | 0.6 s: voice and room only. The truck in the lot. |
 | S22 | L22 | From my window: the truck at eleven, lights off. |
@@ -225,7 +226,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L20: I'd watch / from my window, / with my lights / off TOO.
 - L21: Part of me / didn't want it / to STOP.
 - (music drop, 0.6 s)
-- L22: Last night, / it was there / at eleven. / Like ALWAYS.
+- L22: One night, / it was there / at eleven. / Like ALWAYS.
 - L23: But the cab door / was OPEN.
 - L24: And the cab / was EMPTY.
 - L25: So I went / DOWN there.
