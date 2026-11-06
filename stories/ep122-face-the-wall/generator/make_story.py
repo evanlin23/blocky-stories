@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 11
 orig = json.loads((HERE / "lines.json").read_text())
 lines, CM = T.split_lines(orig)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L34")
@@ -221,7 +221,7 @@ shot("L37", [[0, [-2.2, 1.5, 1.75], [-3.5, 2.5, 1.1], 34]], "S37 pat", "N",
      {"me": lying("me", 90, "squeeze")}, quilt="lump", hand=True)
 shot("L38", [[0, [-2.4, 2.2, 0.2], [-1.1, 2.62, -0.1], 30]], "S38 stripe", "N",
      {}, quilt="lump", door_sp=14, shadow=True, hide=[], fill=0.5)
-shot("L39", [[0, [-0.2, 2.35, 0.78], [-0.21, 3.4, 0.05], 36]], "S39 slippers", "D", {}, slippers=True, door_sp=85, hide=[])
+shot("L39", [[0, [-0.2, 2.2, 0.8], [-0.21, 3.4, 0.05], 36], [1.0, [-0.2, 2.75, 0.6], [-0.21, 3.4, 0.05], 36]], "S39 slippers", "D", {}, slippers=True, door_sp=85, hide=[])
 shot("L40", fc((KX + 3.0, 3.95, 1.35), 1.0, 270, 0.4, 35), "S40 me pancake", "K",
      {"me": sit((KX + 3.0, 3.95), 0, "worried", z=-0.22)}, sit={"me": 85}, cake0=True)
 # ---------------------------------------------------------------------------------------------- night four (L41 to L50)
@@ -275,6 +275,36 @@ shot("L66", fc((1.2, 8.95, 0.9), 0.72, 180, 0.34, 35, dz=0.6, up=0.05, right=0.1
      {"grandma": grandma_in_bed()}, door_gr=20, hide=[], gbed=True)
 shot("L67", fc((0.0, 5.3, 1.571), 1.0, 270, 0.42, 33, up=-0.06, dz=0.3), "S67 hall me", "N", {"me": stand((0.0, 5.3), 0, "warm")}, door_gr=20, hide=[], crack=True)
 shot("L68", fc(HS, 1.0, 180, 0.46, 30, up=0.0), "S68 loop", "N", {"me": lying("me", -90)}, hide=HIDE_SPW)
+
+# ---------------------------------------------------------------------------------------------- camera arcs
+# Every shot over 1.2 s whose camera would hold still gets its own slow arc round its target (the fraction-of-the-shot
+# key time 1.0), alternating sides, so the picture itself moves (craft meter: changes per 0.25 s) and the pack's push
+# is replaced rather than stacked. Not near a hall wall, a door look or a prop that the tag sits against.
+try:
+    _dur = {s_["id"]: s_["end"] - s_["start"] for s_ in json.loads((HERE.parent.parent.parent / "out" / "work" /
+                                                                   "ep122-face-the-wall" / "timeline.json").read_text())["shots"]}
+except Exception:   # noqa: BLE001 - first run, no timeline yet
+    _dur = {}
+_side = 1
+for i, s_ in enumerate(SH):
+    d_ = _dur.get(f"S{i + 1:02d}", 0.0)
+    m_ = s_["meta"]
+    if len(s_["cam"]) != 1 or d_ < 1.2 or any(k in m_ for k in ("tagd", "shadow", "crack", "hand", "roll", "flakes")):
+        continue
+    if s_["look"] == "NDAD" and "dad" in s_["cast"] or s_["name"].startswith(("S43", "S53")):
+        continue   # Dad's blue checker quilt in a moving camera read 6 flashes a second on the flash meter (82.8 s)
+    c0 = s_["cam"][0]
+    px, py, pz = c0[1]
+    tx, ty, tz = c0[2]
+    if -0.9 < px < 0.9 and 0.0 < py < 6.7 or -0.9 < tx < 0.9 and 0.0 < ty < 6.7:   # the hall: too narrow to swing in
+        continue
+    th = math.radians(min(18.0, 7.0 * d_)) * _side
+    _side = -_side
+    dx, dy = px - tx, py - ty
+    nx = tx + dx * math.cos(th) - dy * math.sin(th)
+    ny = ty + dx * math.sin(th) + dy * math.cos(th)
+    k = 0.95   # and a slight push-in
+    s_["cam"] = [c0, [1.0, [round(tx + (nx - tx) * k, 3), round(ty + (ny - ty) * k, 3), round(pz, 3)], c0[2], c0[3]]]
 
 # ---------------------------------------------------------------------------------------------- finish: ids, acting, cues
 shots, meta_out = [], {}
@@ -398,7 +428,7 @@ remap_all(sound["music_drops"])
 polish = {"reveal": [remap("L45")], "twist": remap("L34"),
           "emph": [remap(x) for x in ["L01.1", "L02", "L19", "L34", "L38", "L45", "L55"]],
           "quiet": [[remap("L46"), remap("L50")]],
-          "hold": [sid_of("S45")], "reframe_every": 0.65, "reframe_min": 1.3, "reframe_zoom": 1.16, "max_zoom": 1.2, "push": 0.14}
+          "hold": [sid_of("S45")], "reframe_every": 0.5, "reframe_min": 1.0, "reframe_zoom": 1.18, "max_zoom": 1.2, "push": 0.14, "punch": 0.08, "punch_rate": 1.3, "punch_gap": 1.3, "drift": 0.05}
 story = {
     "slug": "ep122-face-the-wall",
     "title": "Never Face The WALL At Grandma's",
