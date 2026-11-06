@@ -1,0 +1,849 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "My parents glow in the dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.819
+    ],
+    [
+     0.819,
+     1.362
+    ]
+   ]
+  },
+  "L02": {
+   "text": "In this town, that means they're hiding something.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.19,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.69,
+     1.017
+    ],
+    [
+     1.017,
+     2.017
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Keep a secret here, and you glow. Brighter every day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.741
+    ],
+    [
+     0.768,
+     1.276
+    ],
+    [
+     1.371,
+     2.31
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Party planners light up like lamps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     0.957
+    ],
+    [
+     0.957,
+     1.621
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Nobody plays poker.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.19,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.448,
+     1.241
+    ]
+   ]
+  },
+  "L06": {
+   "text": "My roommate ate my leftovers. His face lit up the fridge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.293
+    ],
+    [
+     1.362,
+     1.733
+    ],
+    [
+     1.733,
+     1.906
+    ],
+    [
+     1.906,
+     2.534
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Mom and Dad have glowed since before I was born.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     0.914
+    ],
+    [
+     0.914,
+     1.301
+    ],
+    [
+     1.301,
+     2.034
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Thirty years of it. They're basically lighthouses.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     0.845
+    ],
+    [
+     0.897,
+     1.397
+    ],
+    [
+     1.397,
+     2.172
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Every Friday, we eat here, in the same booth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     1.017
+    ],
+    [
+     1.043,
+     1.155
+    ],
+    [
+     1.155,
+     1.845
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Same pizza. Anchovy and pineapple.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.19,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.802,
+     1.897
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Across the dark lot, they look like two headlights.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.879
+    ],
+    [
+     0.914,
+     1.301
+    ],
+    [
+     1.301,
+     2.069
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Moths follow them to the car.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.431
+    ]
+   ]
+  },
+  "L13": {
+   "text": "I always figured it was something big.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.836
+    ],
+    [
+     0.836,
+     0.966
+    ],
+    [
+     0.966,
+     1.724
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Were they spies? Were they famous?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.681,
+     0.87
+    ],
+    [
+     0.87,
+     1.466
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Last Friday, I had to know.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     0.862
+    ],
+    [
+     0.862,
+     1.379
+    ]
+   ]
+  },
+  "L16": {
+   "text": "I asked Mom alone, by the gumball machine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     0.966
+    ],
+    [
+     1.017,
+     1.172
+    ],
+    [
+     1.172,
+     2.034
+    ]
+   ]
+  },
+  "L17": {
+   "text": "She glowed so bright the gumballs cast shadows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.75
+    ],
+    [
+     0.75,
+     1.138
+    ],
+    [
+     1.138,
+     1.983
+    ]
+   ]
+  },
+  "L18": {
+   "text": "She made me promise not to tell Dad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.793
+    ],
+    [
+     0.793,
+     1.034
+    ],
+    [
+     1.034,
+     1.707
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Then I asked Dad alone, out by the car.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.681
+    ],
+    [
+     0.681,
+     0.948
+    ],
+    [
+     1.0,
+     1.267
+    ],
+    [
+     1.267,
+     1.845
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Same glow. Same promise.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.603,
+     1.397
+    ]
+   ]
+  },
+  "L21": {
+   "text": "And they told me the same secret.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
+     0.595
+    ],
+    [
+     0.595,
+     1.483
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Their first date was at this booth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.664
+    ],
+    [
+     0.664,
+     0.828
+    ],
+    [
+     0.828,
+     1.483
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Neither of them liked the pizza.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     1.379
+    ]
+   ]
+  },
+  "L24": {
+   "text": "They've ordered it every Friday since, so the other one wouldn't feel bad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.431
+    ],
+    [
+     1.5,
+     1.69
+    ],
+    [
+     1.69,
+     1.966
+    ],
+    [
+     1.966,
+     2.81
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Thirty years of anchovy and pineapple.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.086
+    ],
+    [
+     1.086,
+     1.828
+    ]
+   ]
+  },
+  "L26": {
+   "text": "For nobody.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.172,
+   "end": 0.914,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Mom says she'd rather eat a sock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.776
+    ],
+    [
+     0.776,
+     1.448
+    ]
+   ]
+  },
+  "L27b": {
+   "text": "Dad says the anchovies stare at him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.026
+    ],
+    [
+     1.026,
+     1.741
+    ]
+   ]
+  },
+  "L28": {
+   "text": "And I promised them both I wouldn't tell.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     0.983
+    ],
+    [
+     0.983,
+     1.741
+    ]
+   ]
+  },
+  "L29": {
+   "text": "So this Friday, in our booth,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.716,
+     1.276
+    ]
+   ]
+  },
+  "L30": {
+   "text": "I started glowing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.155
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Now the three of us light up the whole place.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.75
+    ],
+    [
+     0.75,
+     0.974
+    ],
+    [
+     0.974,
+     1.741
+    ]
+   ]
+  },
+  "L32": {
+   "text": "The waiter calls us the lamps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.155,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.776
+    ],
+    [
+     0.776,
+     1.379
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Now I glow in the dark too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.19,
+     0.612
+    ],
+    [
+     0.612,
+     0.724
+    ],
+    [
+     0.724,
+     1.397
+    ]
+   ]
+  }
+ }
+}
