@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig = json.loads((HERE / "lines.json").read_text())
 lines, CM = T.split_lines(orig)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L34")
@@ -398,7 +398,7 @@ remap_all(sound["music_drops"])
 polish = {"reveal": [remap("L45")], "twist": remap("L34"),
           "emph": [remap(x) for x in ["L01.1", "L02", "L19", "L34", "L38", "L45", "L55"]],
           "quiet": [[remap("L46"), remap("L50")]],
-          "hold": [sid_of("S45")]}
+          "hold": [sid_of("S45")], "reframe_every": 0.65, "reframe_min": 1.3, "reframe_zoom": 1.16, "max_zoom": 1.2, "push": 0.14}
 story = {
     "slug": "ep122-face-the-wall",
     "title": "Never Face The WALL At Grandma's",
