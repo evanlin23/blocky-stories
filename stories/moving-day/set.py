@@ -205,6 +205,9 @@ POSES = {
                  # not as a black hair-piece (the critic's round 1)
                  "body_key": [1.1, 0.7, 1.7], "body_aim": [-0.45, 2.4, 2.0], "body_gain": 1.3},
 }
+# the arms coming down over L31 (S36): the same pose with the hands higher, swapped on the cuts
+POSES["over_bed_hi"] = {**POSES["over_bed"], "hands": {"-1": [-0.3, 2.05, 1.35], "1": [0.35, 2.15, 1.3]}}
+POSES["over_bed_mid"] = {**POSES["over_bed"], "hands": {"-1": [-0.2, 2.2, 1.0], "1": [0.28, 2.3, 0.95]}}
 
 
 def _ss(x):
@@ -1776,7 +1779,7 @@ TIME_LIGHTS = {   # light: gain, per time of day. Every light not listed is off
     "night3": {"body key": 1.0, "nightlight": 1.0, "nightlight kick": 1.0, "nightlight rim": 1.0, "window": 1.0, "window ceiling": 1.0,
                "window rake": 1.0, "window edge": 1.0, "mum fill": 1.0, "pillow fill": 1.0, "arm fill": 1.0, "door glow": 1.0, "lamp": 1.0, "night mine": 1.0, "me fill": 1.0,
                "night front": 1.0},
-    "sun": {"sun": 1.0, "sun ceiling": 1.0, "face key": 0.9, "body key": 0.6, "dawn front": 0.6, "dawn kitchen": 0.8, "dawn mum": 0.7, "dawn mine": 0.7,
+    "sun": {"day mum": 1.0, "sun": 1.0, "sun ceiling": 1.0, "face key": 0.9, "body key": 0.6, "dawn front": 0.6, "dawn kitchen": 0.8, "dawn mum": 0.7, "dawn mine": 0.7,
             "spill kitchen": 0.8, "spill front": 0.5, "spill sun": 1.0, "hall fill": 1.2, "fill mum": 0.8, "fill mine": 0.8,
             "fill hall": 1.0, "fill front": 1.8, "fill kitchen": 1.0},
     "end": {"dawn front": 0.9, "dawn kitchen": 0.9, "dawn mum": 0.8, "dawn mine": 0.8, "spill kitchen": 1.0,
