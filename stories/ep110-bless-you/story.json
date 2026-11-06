@@ -1,4 +1,12 @@
 {
+ "staging_ok": [
+  "S06/me+mom walking-close, side by side, no overlap",
+  "S77/me+mom walk together, deliberate contact",
+  "S78/me+mom walk together, deliberate contact",
+  "S79/me+mom walk together, deliberate contact",
+  "S87/reunion: grandpa in his armchair, mom beside, me landing",
+  "S93/me+grandpa seated grandpa, me beside, no overlap"
+ ],
  "framing_ok": [
   "S12",
   "S14",

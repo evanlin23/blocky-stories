@@ -683,6 +683,12 @@ polish = {"whoosh_lp": 2500.0, "reveal": [remap("L39")], "twist": remap("L39"),
           "sway": [names[n] for n in ("dark2", "awake1", "awake2", "pastshoulder", "portrait", "wall1", "clip1", "scared", "back")],
           "hold": [names[n] for n in ("wall1", "wide34", "reunion", "tray1", "tray3", "cookies", "kitchen0", "momlands", "carolface")]}
 story = {
+    "staging_ok": [names["kitchen0"] + "/me+mom walking-close, side by side, no overlap",
+                   names["walkin"] + "/me+mom walk together, deliberate contact",
+                   names["grass1"] + "/me+mom walk together, deliberate contact",
+                   names["grass2"] + "/me+mom walk together, deliberate contact",
+                   names["reunion"] + "/reunion: grandpa in his armchair, mom beside, me landing",
+                   names["hum3"] + "/me+grandpa seated grandpa, me beside, no overlap"],
     "framing_ok": ["S12", "S14", names["gone1"], names["couch1"], names["party2"], names["tray3"]],
     "slug": "ep110-bless-you",
     "title": "Every Sneeze Lands Me by a STRANGER 🤧",
