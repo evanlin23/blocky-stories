@@ -539,12 +539,10 @@ beat("me", "L64", arms=[12, 12])
 cue("L64", "halfon", on=True)
 cue("L65", "halfon", on=False)
 shot("L64", mv([kx - 0.65, ky - 0.4, 1.3], [kx - 0.65, ky + 2.4, 1.15], 27, [kx - 0.65, ky - 0.1, 1.3], [kx - 0.65, ky + 2.4, 1.15], 27), "doorway")
-shot("L64.1", mv([kx - 0.65, ky - 0.4, 1.4], [kx - 0.65, ky + 2.4, 1.3], 30, [kx - 0.65, ky - 0.2, 1.4], [kx - 0.65, ky + 2.4, 1.3], 30), "doorway2")
 cue("L65", "car", mode="me", z=0.0)
 put("me", "L65", [rx + G.CAR_DX, ry + G.CAR_DY], 0, expr="wide")
 seat("me", "L65", z=0.62)
 shot("L65", face("me", d=4.4, lens=40, dx=-0.3, dzc=0.05, tz=0.2), "auto1")
-shot("L65.1", mv([rx + 9.0, ry - 8.0, 1.6], [rx, ry - 1.0, 1.0], 36, [rx + 8.0, ry - 6.0, 1.6], [rx, ry - 1.0, 1.0], 36), "auto2")
 beat("me", "L65.2", expr="laugh")
 shot("L65.2", face("me", d=4.2, lens=52, dx=0.5, dzc=0.1, tz=0.2), "auto3")
 only("L66", ["grandpa"])
@@ -634,7 +632,7 @@ polish = {
     "twist": remap("L49"),
     "emph": [remap(x) for x in ["L01.1", "L02.1", "L22", "L32.2", "L49.2", "L53", "L62.1"]],
     "quiet": [[remap("L63"), remap("L64")]],
-    "hold": [names["me_counter"], names["twist"]],
+    "hold": [names["me_counter"], names["twist"], names["doorway"], names["auto1"]],
 }
 story = {
     "slug": "ep127-thousand-tellings",
