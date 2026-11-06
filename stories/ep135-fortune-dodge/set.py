@@ -142,9 +142,9 @@ LOOKS = {
                 win="#cfeeff", wins=2.5),
     "late": dict(sky="#ffc890", world=0.8, sun=0.55, suncol="#ffc080", fill=0.35, exp=0.05, bulbs=0.0, lamp=0.0,
                  win="#ffb070", wins=2.5),
-    "dusk": dict(sky="#ff9f7a", world=0.75, sun=0.45, suncol="#ffb070", fill=0.4, exp=0.12, bulbs=1.0, lamp=0.0,
+    "dusk": dict(sky="#ffa88a", world=1.1, sun=0.6, suncol="#ffc090", fill=0.7, exp=0.5, bulbs=1.0, lamp=0.0,
                  win="#ff9f7a", wins=2.0),
-    "eve": dict(sky="#26386a", world=0.4, sun=0.0, suncol="#9fc4ff", fill=0.55, exp=0.3, bulbs=0.0, lamp=1.0,
+    "eve": dict(sky="#3a5a9a", world=0.7, sun=0.0, suncol="#9fc4ff", fill=0.8, exp=0.65, bulbs=0.0, lamp=1.0,
                 win="#2a4a7c", wins=1.2),
     "dawn": dict(sky="#ffb8a6", world=0.85, sun=0.55, suncol="#ffd0a0", fill=0.4, exp=0.1, bulbs=0.0, lamp=0.0,
                  win="#ffc8a8", wins=2.5),
@@ -371,7 +371,7 @@ def build_stalls(kit):
     for sx in (-1, 1):
         B(None, (0.1, 0.05, 0.14), (fx + sx * 0.2, qy - 0.1, fz + 0.1), P("#14101a", 0.5), "poster.eye")
     for i, u in enumerate((-0.27, -0.14, 0.0, 0.14, 0.27)):
-        B(None, (0.14, 0.05, 0.07), (fx + u, qy - 0.1, fz - 0.22 - 0.09 * (1 - (u / 0.27) ** 2) * -1), P("#14101a", 0.5), "poster.smile")
+        B(None, (0.14, 0.05, 0.07), (fx + u, qy - 0.1, fz - 0.2 - 0.09 * (1 - (u / 0.27) ** 2)), P("#14101a", 0.5), "poster.smile")
     C(None, 0.4, 0.05, (qx + 0.6, qy - 0.08, 2.1), P("#d9a05b", 0.6), "poster.pie", rot=(math.pi / 2, 0, 0), n=28)
     C(None, 0.28, 0.06, (qx + 0.6, qy - 0.11, 2.1), P("#c22a3a", 0.5), "poster.piefill", rot=(math.pi / 2, 0, 0), n=28)
     for k in range(3):

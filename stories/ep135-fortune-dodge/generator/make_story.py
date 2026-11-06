@@ -337,15 +337,15 @@ shot("S32b", "L32.3", cam_face(RAYD, 0, "ray", 2.6, -12, 34, shift=-0.12, d2=2.3
 HIDE("ray", "L33")
 cue("L33", "grillhot", on=True)
 cue("L34", "grillhot", on=False)
-shot("S33", "L33", cam_at([CX - 0.75, CY - 1.7, 1.9], [CX - 0.75, CY, 1.1], 34, [CX - 0.75, CY - 1.4, 1.8], [CX - 0.75, CY, 1.1], 34),
-     "dusk", face=False)
+shot("S33", "L33", cam_at([CX - 0.6, CY - 2.0, 2.9], [CX - 0.6, CY + 0.0, 1.1], 30, [CX - 0.6, CY - 1.7, 2.7], [CX - 0.6, CY + 0.0, 1.1], 30),
+     "dusk", face=False, key=3.0, exp=0.2)
 TP("ray", "L34", RAYC, 0, X("sad"))
 shot("S34", "L34", cam_face(RAYC, 0, "ray", 2.8, 8, 34, d2=2.5), "dusk")
 HIDE("ray", "L35")
 cue("L35", "apron2", where="counter")
-shot("S35", "L35", cam_at([CX + 0.45, CY - 1.0, 1.7], [CX + 0.35, CY + 0.05, 1.08], 36, [CX + 0.4, CY - 0.7, 1.5], [CX + 0.35, CY + 0.05, 1.08], 36),
+shot("S35", "L35", cam_at([CX + 0.35, CY - 1.8, 1.8], [CX + 0.3, CY + 0.1, 1.1], 32, [CX + 0.35, CY - 1.5, 1.7], [CX + 0.3, CY + 0.1, 1.1], 32),
      "dusk", face=False)
-shot("S36", "L36", cam_at([CX - 0.5, CY - 0.9, 1.5], [CX + 0.05, CY + 0.12, 1.1], 40, [CX - 0.35, CY - 0.7, 1.4], [CX + 0.05, CY + 0.12, 1.1], 40),
+shot("S36", "L36", cam_at([CX - 0.4, CY - 1.7, 1.7], [CX + 0.15, CY + 0.1, 1.1], 34, [CX - 0.25, CY - 1.4, 1.6], [CX + 0.15, CY + 0.1, 1.1], 34),
      "dusk", face=False)
 M37 = [CX + 0.8, CY - 1.7, 0.0]
 TP("me", "L37", M37, -15, X("sad"))
@@ -354,9 +354,9 @@ shot("S38", "L38", cam_at([MACH[0], -0.4, 0.5], [MACH[0], 4.0, 2.0], 24, [MACH[0
 M39 = [MACH[0] - 1.2, 2.2, 0.0]
 TP("me", "L39", M39, 0, X("sad"))
 shot("S39", "L39", cam_face(M39, 0, "me", 2.8, -10, 34, d2=2.5), "dusk")
-M40 = [CX - 0.2, CY - 1.55, 0.0]
+M40 = [CX - 0.65, CY - 1.9, 0.0]
 TP("me", "L40", M40, 30, X("sad"), head=[-14, 8])
-shot("S40", "L40", cam_at([CX + 0.7, CY - 5.3, 1.5], [CX + 0.0, CY - 0.1, 1.35], 26, [CX + 0.45, CY - 4.7, 1.5], [CX - 0.05, CY - 0.1, 1.3], 26),
+shot("S40", "L40", cam_at([CX + 0.2, CY - 5.2, 2.5], [CX - 0.1, CY, 1.2], 22, [CX + 0.1, CY - 4.7, 2.4], [CX - 0.1, CY, 1.2], 22),
      "dusk", cover=True)
 # ===== S41 to S45 the night
 CBN = CB
@@ -379,7 +379,7 @@ cue("L46", "apron2", where="none")
 K46 = [RX - 1.9, RY + 2.9, 0.0]
 HIDE("me", "L46")
 TP("me", "L46", K46, 0, X("determined"))
-shot("S46", "L46", cam_at([RX - 2.3, RY + 0.2, 1.8], [RX - 2.3, RY + 4.4, 1.85], 30, [RX - 2.3, RY + 0.7, 1.82], [RX - 2.3, RY + 4.4, 1.85], 30),
+shot("S46", "L46", cam_at([RX - 2.0, RY + 0.2, 1.7], [RX - 2.0, RY + 4.4, 1.4], 28, [RX - 2.0, RY + 0.7, 1.7], [RX - 2.0, RY + 4.4, 1.4], 28),
      "dawn", fade=True)
 HIDE("me", "L47")
 shot("S47", "L47", cam_at([RX + 10.5, RY + 0.4, 1.35], [RX + 10.5, RY + 4.6, 1.2], 28, [RX + 10.5, RY + 1.0, 1.35], [RX + 10.5, RY + 4.6, 1.2], 28),
@@ -391,7 +391,7 @@ shot("S48", "L48", cam_face(RAYP, 0, "ray", 3.0, 10, 34, shift=-0.1, d2=2.7), "d
 TP("ray", "L49", RAYP, 0, "warm")
 shot("S49", "L49", cam_face(RAYP, 0, "ray", 2.7, -10, 34, shift=-0.1, d2=2.4), "dawn")
 HIDE("ray", "L50")
-shot("S50", "L50", cam_at([PX - 1.8, PY + 1.6, 1.9], [PX - 1.75, PY + 3.5, 1.6], 36, [PX - 1.8, PY + 2.0, 1.85], [PX - 1.75, PY + 3.5, 1.6], 36),
+shot("S50", "L50", cam_at([PX - 1.9, PY + 1.2, 2.0], [PX - 1.9, PY + 3.5, 1.35], 36, [PX - 1.9, PY + 1.7, 1.95], [PX - 1.9, PY + 3.5, 1.35], 36),
      "dawn", face=False)
 cue("L51", "apron2", where="none")
 cue("L51", "meapron", on=True)
