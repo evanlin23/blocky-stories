@@ -942,7 +942,7 @@ def animate(kit, story, tl, t, ctx):
         im.colorspace_settings.name = "sRGB"
         H["digit_imgs"][cnt] = im
     H["digit_tex"].image = H["digit_imgs"][cnt]
-    place_inset(kit, ctx, cnt, cl_lens)
+    place_inset(kit, ctx, cnt, cl_lens, inset_depth(dof, cur["id"]))
     # ---- named pairs and steam
     pc = cue_at(tl, "pairs", t)
     steam_sites = []
@@ -1080,18 +1080,31 @@ def build_inset(kit, ctx):
     ctx["inset_imgs"] = {}
 
 
-def place_inset(kit, ctx, cnt, lens):
+# Nearest thing that can stand in front of the panel on a depth-of-field shot (ray cast from the camera through the
+# panel, every 2nd frame): the panel sits at the focus distance so the chalk stays sharp, but no deeper than 85% of
+# this, so the shoe, the steam, the door or the cat never covers it.
+INSET_NEAR = {"S02": 0.325, "S04": 0.582, "S05": 0.484, "S06": 0.551, "S16": 0.418, "S37": 0.767, "S39": 0.459,
+              "S41": 0.196, "S52": 0.065}
+
+
+def inset_depth(dof, sid):
+    """How far in front of the camera the panel sits: 0.15 m with no depth of field, else the focus distance."""
+    if not dof:
+        return 0.15
+    return max(0.15, min(float(dof[0]), 0.85 * INSET_NEAR.get(sid, 9.0)))
+
+
+def place_inset(kit, ctx, cnt, lens, d=0.15):
     pl, fr, tex = ctx["inset"]
     if cnt not in ctx["inset_imgs"]:
         im = bpy.data.images.load(digit_image(cnt, kit))
         im.colorspace_settings.name = "sRGB"
         ctx["inset_imgs"][cnt] = im
     tex.image = ctx["inset_imgs"][cnt]
-    d = 0.15
     unit = d / lens                       # metres per mm of sensor at the panel's distance
     pw = 0.17 * 13.5 * unit
     ph = pw * 340 / 280
     x = -0.70 * 6.75 * unit
     y = 0.74 * 12.0 * unit
     pl.location, pl.scale = (x, y, -d), (pw, ph, 1)
-    fr.location, fr.scale = (x, y, -d - 0.0015), (pw * 1.1, ph * 1.08, 1)
+    fr.location, fr.scale = (x, y, -d * 1.01), (pw * 1.1, ph * 1.08, 1)
