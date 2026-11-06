@@ -178,7 +178,7 @@ class Room:
     """A room behind a left-wall door (side -1: depth runs to -x) or a right-wall door (side +1). d is the depth in
     from the doorway, l along the wall from the door's centre, z up."""
 
-    def __init__(self, kit, pl, side, yc, tag, wall, floor, ceil, lit, light_col="#fff0d8", e=170, deep=3.0, half=0.95, glow=None):
+    def __init__(self, kit, pl, side, yc, tag, wall, floor, ceil, lit, light_col="#fff0d8", e=170, deep=3.0, half=0.95, glow=None, lamps=True, gstr=1.1):
         self.kit, self.pl, self.s, self.yc, self.t = kit, pl, side, yc, tag
         self.deep, self.half = deep, half
         x0 = side * (1.7 + 0.2)
@@ -191,15 +191,16 @@ class Room:
         for sy in (-1, 1):
             w(f"{tag}.side{sy}", (deep + 0.3, 0.1, G.HALL_H), (cx + side * 0.1, yc + sy * (half + 0.05), G.HALL_H / 2), wall)
         if glow:      # lit panels on the inner faces and a ceiling glow, so a doorway seen from the hall is never black
-            gm = kit.emit(glow, 0.45, f"{tag}.wallglow")
+            gm = kit.emit(glow, gstr, f"{tag}.wallglow")
             xi = x0 + side * (deep - 0.03)
             w(f"{tag}.gfar", (0.02, 2 * half - 0.02, G.HALL_H - 0.3), (xi, yc, G.HALL_H / 2), gm)
             for sy in (-1, 1):
                 w(f"{tag}.gside{sy}", (deep - 0.3, 0.02, G.HALL_H - 0.3), (x0 + side * (deep / 2 + 0.1), yc + sy * (half - 0.03), G.HALL_H / 2), gm)
             w(f"{tag}.gceil", (1.2, 0.8, 0.03), (x0 + side * deep * 0.55, yc, G.HALL_H - 0.03), kit.emit("#fff0c8", 1.4, "ceilglow"))
         e = e * 3.5     # bright enough to read through the doorway from the hall
-        pl.light(f"{tag}.lamp", (x0 + side * deep * 0.55, yc, 2.3), e, light_col, size=0.9)
-        pl.light(f"{tag}.lamp2", (x0 + side * 0.9, yc, 1.9), e * 0.5, light_col, size=0.6)
+        if lamps:
+            pl.light(f"{tag}.lamp", (x0 + side * deep * 0.55, yc, 2.3), e, light_col, size=0.9)
+            pl.light(f"{tag}.lamp2", (x0 + side * 0.9, yc, 1.9), e * 0.5, light_col, size=0.6)
 
     def at(self, d, l, z=0.0):
         return (self.x0 + self.s * d, self.yc + l, z)
@@ -277,7 +278,7 @@ def room6(kit, pl, yc):
     return r
 
 
-def room7(kit, pl, yc):
+def room7(kit, pl, yc, dark=False):
     mus = kit.plastic("#e8b83a", 0.8, spec=0.05)
     r = Room(kit, pl, -1, yc, "r7", mus, kit.planks("#f0d9a0", "#e6cb8c", 1.0), kit.plastic("#fff5d8", 0.9), True,
              "#fff0c8", e=200, glow="#e8b83a")
@@ -305,14 +306,15 @@ def room8(kit, pl, yc):
              "#f4f4ff", e=200, glow="#a8aab2")
     card = kit.plastic("#d9a86a", 0.85, spec=0.05)
     card2 = kit.plastic("#c99456", 0.85, spec=0.05)
-    tape = kit.plastic("#f0d9a0", 0.6)
+    tape = kit.plastic("#4a3320", 0.6)
     k = 0
     for (dd, dl, z, sz, rot) in ((0.7, 0.55, 0.0, 0.62, 0.05), (0.75, -0.4, 0.0, 0.7, -0.04), (0.7, 0.55, 0.62, 0.55, -0.06),
                                  (0.75, -0.4, 0.7, 0.5, 0.05), (1.7, 0.5, 0.0, 0.7, 0.03), (1.65, 0.5, 0.7, 0.6, -0.04),
                                  (1.7, -0.5, 0.0, 0.65, -0.03), (2.5, 0.3, 0.0, 0.8, 0.0), (2.5, -0.5, 0.0, 0.7, 0.04),
                                  (2.45, 0.3, 0.8, 0.6, 0.03), (1.7, -0.5, 0.65, 0.5, 0.06)):
         r.box(f"bx{k}", (sz, sz, sz), dd, dl, z, card if k % 2 else card2, bevel=0.012, rot=(0, 0, rot))
-        r.box(f"bt{k}", (sz + 0.02, 0.1, sz + 0.02), dd, dl, z - 0.01, tape, rot=(0, 0, rot))
+        r.box(f"bt{k}", (sz + 0.05, 0.1, sz + 0.05), dd, dl, z - 0.025, tape, rot=(0, 0, rot))
+        r.box(f"bu{k}", (sz + 0.05, sz + 0.05, 0.03), dd, dl, z + sz, tape, rot=(0, 0, rot))      # a strip along the top too
         k += 1
     return r
 
@@ -384,7 +386,7 @@ def build_hall(kit, key):
     # the end wall with the window
     wx0, wx1 = -0.5, 1.1
     pl.wall_x("we", Y1 + 0.1, -W_ - 0.2, W_ + 0.2, 0, H, 0.2, wall, holes=[(wx0, wx1, 0.8, 2.3)])
-    sky = kit.emit("#fff0b8", 1.6, "sunsky") if morning else kit.emit("#5b6bb8", 1.0, "nightsky")
+    sky = kit.emit("#ffe6a0", 0.75, "sunsky") if morning else kit.emit("#5b6bb8", 1.0, "nightsky")
     pl.box("sky", (wx1 - wx0 + 0.2, 0.05, 1.6), ((wx0 + wx1) / 2, Y1 + 0.35, 1.55), sky)
     fw = kit.plastic("#ffffff", 0.6, spec=0.1)
     for nm, sz, lc in (("t", (wx1 - wx0 + 0.16, 0.14, 0.08), ((wx0 + wx1) / 2, Y1 - 0.02, 2.31)),
@@ -428,7 +430,10 @@ def build_hall(kit, key):
         ang = opens.get(n, 0)
         door(n, G.DOORY[n], True, ang)
         if ang:
-            rooms[n] = {5: room5, 6: room6, 7: room7, 8: room8, 9: room9}[n](kit, pl, G.DOORY[n])
+            if n == 7:
+                rooms[n] = room7(kit, pl, G.DOORY[n], dark=ang < 20)      # ajar: a dark room, so the gap reads as a dark slit
+            else:
+                rooms[n] = {5: room5, 6: room6, 8: room8, 9: room9}[n](kit, pl, G.DOORY[n])
     if morning:
         door(10, G.DOORY[10], True, 0, num=False)
     # the right-hand doors: 1 to 3 open a crack on warm rooms, 4 open on the sky blue one
@@ -453,8 +458,8 @@ def build_hall(kit, key):
     pl.light("f3", (0.5, 9.6, 2.0), 150, "#fff0d8", size=1.0)
     pl.light("stair", (0, -1.5, 2.3), 160, "#ffe3a8", size=0.9)
     if morning:
-        pl.light("sun", (0.3, G.HALL_L - 0.5, 1.9), 900, "#fff0b8", size=0.9)
-        pl.light("sun2", (0.3, G.HALL_L - 2.5, 2.1), 260, "#fff0b8", size=0.9)
+        pl.light("sun", (0.3, G.HALL_L - 0.5, 1.9), 420, "#fff0b8", size=0.9)
+        pl.light("sun2", (0.3, G.HALL_L - 2.5, 2.1), 220, "#fff0b8", size=0.9)
     else:
         pl.light("win", (0.3, G.HALL_L - 0.6, 1.8), 70, "#9db0ff", size=0.8)
     return pl
@@ -501,6 +506,7 @@ def build_board(kit):
     pl.box("hill", (60, 20, 3.0), (0, 14, 1.5), kit.plastic("#6cc45c", 0.9), rot=(-0.12, 0, 0))
     wallc = kit.plastic("#f4e2c0", 0.85, spec=0.05)
     pl.box("bld", (34, 3.0, 6.0), (0, 9.0, 4.4), wallc)
+    pl.box("bldbase", (34, 3.1, 1.6), (0, 9.0, 0.7), kit.plastic("#b9a58a", 0.9))
     pl.box("bld2", (34, 3.2, 0.4), (0, 9.0, 7.5), kit.plastic("#c8503c", 0.8))
     pl.box("tower", (4.0, 3.2, 3.6), (-3.0, 9.0, 9.1), wallc)
     pl.box("towerroof", (4.6, 3.6, 0.5), (-3.0, 9.0, 11.1), kit.plastic("#c8503c", 0.8))
@@ -622,16 +628,18 @@ def build_porch(kit):
     for k, col in enumerate(("#ff7a5c", "#f6c453", "#2fb8a8")):
         pl.box(f"rpic{k}", (0.5, 0.04, 0.7), (-0.6 + 0.6 * k, 5.88, 1.8), kit.plastic(col, 0.7))
     pl.light("room", (0.0, 4.2, 2.4), 420, "#ffd9a0", size=1.0)
-    # the duffel bag at my feet: a long dark-green bag with a flap, two handles and a strap
-    bag = kit.plastic("#3f6b4a", 0.7, spec=0.1)
-    bagd = kit.plastic("#2b4a34", 0.7)
-    pl.box("bag", (0.8, 0.38, 0.38), (0.55, 0.6, 0.39), bag, bevel=0.07)
-    pl.box("bagflap", (0.82, 0.4, 0.1), (0.55, 0.6, 0.59), bagd, bevel=0.03)
-    pl.box("bagend1", (0.06, 0.4, 0.34), (0.15, 0.6, 0.39), bagd, bevel=0.02)
-    pl.box("bagend2", (0.06, 0.4, 0.34), (0.95, 0.6, 0.39), bagd, bevel=0.02)
-    for dx in (-0.12, 0.12):
-        pl.box(f"baghand{dx}", (0.04, 0.04, 0.2), (0.55 + dx, 0.6, 0.66), bagd, rot=(0, 0, 0))
-    pl.box("bagstrap", (0.5, 0.05, 0.05), (0.55, 0.6, 0.72), bagd)
+    # the duffel bag at my feet: a short rust canvas barrel on its side, a dark band, an arched handle and a strap
+    bag = kit.plastic("#c4632c", 0.7, spec=0.1)
+    bagd = kit.plastic("#3a2a22", 0.7)
+    bx, by, bz = 0.55, 0.3, 0.39
+    pl.cyl("bag", 0.17, 0.62, (bx, by, bz), bag, rot=(0, math.pi / 2, 0), nseg=16)
+    pl.cyl("bagband", 0.18, 0.07, (bx, by, bz), bagd, rot=(0, math.pi / 2, 0), nseg=16)
+    pl.cyl("bagcapl", 0.175, 0.04, (bx - 0.32, by, bz), bagd, rot=(0, math.pi / 2, 0), nseg=16)
+    pl.cyl("bagcapr", 0.175, 0.04, (bx + 0.32, by, bz), bagd, rot=(0, math.pi / 2, 0), nseg=16)
+    for dx in (-0.11, 0.11):
+        pl.box(f"baghand{dx}", (0.035, 0.035, 0.12), (bx + dx, by, bz + 0.21), bagd)
+    pl.box("baggrip", (0.28, 0.045, 0.045), (bx, by, bz + 0.29), bagd, bevel=0.01)
+    pl.box("bagstrap", (0.05, 0.04, 0.37), (bx - 0.2, by - 0.15, bz + 0.03), bagd, rot=(0.5, 0, 0))
     pl.light("sun", (-3.0, -4.0, 5.0), 1000, "#fff3d8", size=1.5)
     pl.light("face", (0.0, -2.0, 1.9), 300, "#fff3e0", size=1.0)
     pl.light("fill", (2.5, -2.0, 2.0), 220, "#fff3e0", size=1.0)
