@@ -293,6 +293,9 @@ for i, s_ in enumerate(SH):
         continue
     if s_["look"] == "NDAD" and "dad" in s_["cast"] or s_["name"].startswith(("S43", "S53")):
         continue   # Dad's blue checker quilt in a moving camera read 6 flashes a second on the flash meter (82.8 s)
+    if s_["name"].startswith("S55"):   # hall doorway: the arc ends against the hall wall; keep the side alternation
+        _side = -_side
+        continue
     c0 = s_["cam"][0]
     px, py, pz = c0[1]
     tx, ty, tz = c0[2]
