@@ -129,7 +129,8 @@ def test_every_story_passes_its_checks(name, tmp_path):
     assert vt.exists(), f"{name}: run `python -m blocky voice {name}`"
     p = tmp_path / "tl.json"
     tl = timeline.write(name, vt, p)
-    assert 30 <= tl["duration"] <= 180
+    # 20 s floor: the writer's ultra-short arm runs 20 to 45 s (.claude/agents/writer.md, RULES length test)
+    assert 20 <= tl["duration"] <= 180
     blocks = [m for lvl, m in checks.run(name, p) if lvl == "block"]
     assert blocks == []
 
