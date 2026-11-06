@@ -1,0 +1,30 @@
+# ep123-sorry-shrink: handoff (build session, batch 13)
+
+- Branch: claude/batch13-ep123-sorry-shrink. No PR yet.
+- Done: story files, set, voice (28.07 s, 28 shots), the framing pre-check (9 fixes applied, rev 3), and the preview.
+- Preview checks: preflight 0 blocks, framing.py 0, frames.py 0, clipcheck 0, flash --like-proof at most 1 a second.
+- measure: 0 blocks, 1 near (motion energy 5.44 against 6.0).
+- Now: round 1 of the critic and standards reviews.
+- Round 1 verdicts:
+  - critic: revise (average 6.7, lowest 4, lore), 10 must-fixes;
+  - standards: revise, 4 must-fixes (plus removing "hold").
+- Now: one builder is applying every round 1 must-fix. Next comes round 2 (both reviewers said revise, so both look again).
+- Queue note from standards: keep ep123 (`cost`) away from ep99-statue-years and ep126 (both `cost`).
+- The round 1 fixes are in (rev 5): S11 is split into a wide shot (S11a) and a close-up (S11b), and the S15 camera is closer.
+  - Face widths by the tool's head box: 0.29 in S11b and 0.27 in S15.
+  - preflight, framing and frames show 0 findings each.
+  - measure: 0 blocks, 0 near, 1 warning (cuts per 10 s 9.62 against 5.5 to 8).
+- Next: round 2 of the critic and standards reviews.
+- Round 2: critic approve (average 7.3, lowest 6), standards approve.
+- The S13 should-fix is in (rev 6): Mae no longer slides to profile. The preview was redrawn from clean frames.
+- "hold" is removed. check: no problems. gate: OPEN.
+- BLOCKER: pytest `test_every_story_passes_its_checks[ep123-sorry-shrink]` fails on `assert 30 <= tl["duration"]` (blocky/test_blocky.py:132).
+  - The film is 28.07 s; the batch 13 short arm is about 28 s.
+  - The fix is an engine/test change (the floor down to about 20 s), which this session may not make. Asked the orchestrator.
+- PR #324 is open.
+- Proof 1 (run 42138026361) drew and passed its own verdict, but qa failed it: the S15 reset keys fired 0.13 s before the cut.
+- The single-fix rescue is in (rev 7): the keys now fire at the L16 cut. S15 is listed in framing_ok, after its whole head was checked in the still.
+- Proof 2 is run 42141264775. The proof qa runs again on it.
+- `test` waits on #325 (the duration floor lowered from 30 to 20 s, the orchestrator's PR). Once it's on main: merge main, push, and merge #324 when test is green.
+- The proof qa passed on proof-42141301190 at a17ac64e (the rescue look). It is committed.
+- Only #325 is left. Once it's on main: merge origin/main, push, and merge #324 when test is green.

@@ -87,7 +87,8 @@ def test_edit_metrics_from_a_tiny_story(tmp_path):
     assert sp["face_big_share"] > 0                    # S2 is a close-up at 1.2 m
     assert sp["camera_move_share"] > 0                 # S2 pushes in
     assert sp["sound_events_per_10s"] > 0
-    assert res["checks"] and all(c["status"] in ("ok", "warn") for c in res["checks"])
+    assert res["checks"] and all(c["status"] in ("ok", "warn") for c in res["checks"]
+                                 if c["metric"] not in measure.CRAFT_BLOCKS)   # those need a film (lesson 43)
     assert "| metric |" in measure.table(res)
 
 
@@ -150,3 +151,51 @@ def test_a_near_row_passes_the_proof_verdict():
     ok, why = pr.verdict(craft, {"house_bar": {"pass": True}}, {"file": {"lufs": -14.1, "true_peak_dbtp": -1.7}},
                          {"hits": []})
     assert ok and why == []
+
+
+def test_no_film_leaves_the_craft_blocks_unmeasured_not_passed(tmp_path, monkeypatch):
+    # lesson 43: ep117's builder ran `measure.py --story` with no film, read "0 block", and the proof then read
+    # 12.5 picture changes per 10 s at 0.25 s against 14. With no film the four blocks must say so.
+    monkeypatch.setattr(measure, "ROOT", tmp_path)          # no out/work/<story>/<slug>-preview.mp4 here
+    d = tiny_story(tmp_path / "stories" / "tiny")
+    assert measure.preview_film(d) is None
+    res = measure.measure(None, d)
+    st = {c["metric"]: c["status"] for c in res["checks"]}
+    assert all(st[k] == "unmeasured" for k in measure.CRAFT_BLOCKS)
+    assert len(measure.blocked(res)) == 4
+    assert "were not measured" in measure.table(res)
+
+
+@need_ffmpeg
+def test_story_alone_measures_its_preview_film(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr(measure, "ROOT", tmp_path)
+    d = tiny_story(tmp_path / "stories" / "tiny")
+    prev = tmp_path / "out" / "work" / "tiny" / "tiny-preview.mp4"
+    prev.parent.mkdir(parents=True)
+    make_clip(prev)
+    assert measure.preview_film(d) == prev
+    out = tmp_path / "o.json"
+    measure.main(["--story", str(d), "--json", str(out)])
+    res = json.loads(out.read_text())
+    assert res["film_kind"] == "preview" and res["film"] == str(prev)
+    st = {c["metric"]: c["status"] for c in res["checks"]}
+    assert all(st[k] in ("ok", "near", "block") for k in measure.CRAFT_BLOCKS)
+    assert "Measured on the preview" in capsys.readouterr().out
+
+
+def test_longest_still_edge_reads_a_still_just_over_the_threshold():
+    # ep126 (2026-11-05): the proof read a still of 0.8 s and its final 1.07 s, because one 0.25 s step sat at 6.6e-3
+    # on the noisier proof and 5.5e-3 on the final. The edge reading (10% looser) catches it on either.
+    fps, n = 30, 30 * 3
+    base = np.tile(np.linspace(40, 200, measure.PW).astype(np.uint8), (measure.PH, 1))
+    frames = np.zeros((n, measure.PH, measure.PW, 3), np.uint8)
+    for i in range(n):
+        f = base.copy()
+        if (i // 8) % 2:                                      # every other 0.25 s step: +2 levels on 26 of 32 rows
+            f[:26 * 6] += 2                                   # a mean grid change of 26/32 * 2/255 = 6.4e-3
+        frames[i] = f[..., None]
+    m = measure.picture(frames, fps)
+    assert m["longest_still_q_s"] == 0.0
+    assert m["longest_still_q_edge_s"] >= 2.5
+    st = {c["metric"]: c["status"] for c in measure.check({"macro": m})}
+    assert st["macro.longest_still_q_s"] == "ok" and st["macro.longest_still_q_edge_s"] == "warn"
