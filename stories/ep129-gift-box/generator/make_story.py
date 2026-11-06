@@ -22,7 +22,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 5
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -144,6 +144,7 @@ def cam(tx, ty, tz, d, lens, az=0.0, el=0.0, push=0.07, arc=2.5, to=None):
                 round(tz + dd * math.sin(e), 3)]
     tgt = [tx, ty, tz]
     t1 = list(to) if to else tgt
+    push, arc = push * 2.6, arc * 4.0   # batch 14 pace: a livelier camera on every shot
     return [[0, at(d, az), tgt, lens], [1, at(d * (1 - push), az + arc), t1, lens]]
 
 
@@ -161,7 +162,7 @@ def ocam(st, x, y, z, d, lens, **kw):
     return cam(G.ST[st] + x, y, z, d, lens, **kw)
 
 
-def shot(id_, at, camera, who=None, hand=0.003, step=2):
+def shot(id_, at, camera, who=None, hand=0.02, step=2):
     who = who or {}
     for n in CAST:
         if n in who:
@@ -308,9 +309,9 @@ shot("S41", "L41", fcam("R3", *ME_WIN, d=2.8, lens=30, f=0.40, dx=0.1, az=3, pus
 shot("S42", "L42", fcam("R3", *ME_WIN, d=2.5, lens=30, f=0.40, dx=0.1, az=-3, push=0.08), {
     "me": ps("R3", *ME_WIN, expr="uneasy", head=(0, 4))})
 DAD_WIN = (0.85, 1.9)
-shot("S43a", "L43", fcam("R3", *DAD_WIN, d=3.2, lens=30, f=0.40, dx=-0.35), {
+shot("S43a", "L43", fcam("R3", *DAD_WIN, d=3.2, lens=30, f=0.40, dx=-0.2), {
     "dad": ps("R3", *DAD_WIN, expr="stunned", look=(0.9, 0), head=(-20, 0))})
-shot("S43b", "L43.1", fcam("R3", *DAD_WIN, d=2.7, lens=30, f=0.40, dx=-0.3, az=3, push=0.08), {
+shot("S43b", "L43.1", fcam("R3", *DAD_WIN, d=2.7, lens=30, f=0.40, dx=-0.12, az=3, push=0.08), {
     "dad": ps("R3", *DAD_WIN, expr="neutral", head=(0, 0))})
 chg("dad", "L43.1", blend=0.4, head=(0, 0), look=(0, 0))
 
@@ -400,6 +401,10 @@ sfx = [
     {"at": "L30.2", "kind": "knock", "db": -17, "pattern": [0.0, 0.7], "tone": "below"},
     {"at": "L32.2", "kind": "thud", "db": -13, "dur": 0.4},                                    # set down hard
     {"at": "L36", "kind": "knock", "db": -15, "pattern": [0.0, 0.5, 1.0], "tone": "soft"},   # three soft knocks
+    {"at": "L12.1", "kind": "thud", "db": -18, "dur": 0.4},
+    {"at": "L49", "kind": "creak", "db": -18, "dur": 0.9, "tone": "cardboard"},
+    {"at": "L55", "kind": "knock", "db": -17, "pattern": [0.0, 0.5], "tone": "soft"},
+    {"at": "L40", "kind": "thud", "db": -19, "dur": 0.4},
     {"at": "L48.1", "kind": "creak", "db": -16, "dur": 1.5, "tone": "cardboard"},            # paper coming off, slow
 ]
 for s_ in sfx:
@@ -426,8 +431,8 @@ sound = {
 }
 polish = {"emph": [remap(r) for r in ("L01.2", "L12.1", "L25.2", "L28.1", "L29.1", "L50", "L56.3")],
           "reveal": ["L50", "L56"], "twist": "L50", "camera": False,
-          "hold": ["S11", "S21", "S61", "S53"], "quiet": [["L57", "L67"]],
-          "sway": ["S26", "S27", "S28", "S29", "S30a", "S30b"], "whoosh_cuts": False}
+          "hold": ["S11", "S21", "S61", "S53"], "quiet": [["L65", "L67"]], "reframe_every": 0.7, "sway_amp": 0.012,
+          "sway": True, "whoosh_cuts": False}
 story = {
     "slug": "ep129-gift-box",
     "title": "Dad Won't Open My PRESENT \U0001F381",
