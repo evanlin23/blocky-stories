@@ -22,8 +22,26 @@ from blocky import faces, rig
 TMP = Path(tempfile.mkdtemp(prefix="tentzip-"))
 _n = [0]
 
-TA, TB, TC = 1.15, 2.6, 1.28          # tent half-width (x), half-depth (y), height at the middle
-FX, FY = 0.02, -0.15                 # the figure's seat (hips), world
+TA, TB, TC = 1.25, 2.6, 1.95          # tent half-width (x), half-depth (y), height at the middle
+FX, FY = 0.12, -0.15
+HC = (FX + 0.15, FY + 0.2 + 0.03, 0.06 + 0.04 + 1.65 + 0.2)      # the head's centre (see build_figure)
+HDIR = (0.94, 0.0, 0.34)                                         # its top, tilted into the roof
+
+
+def dent(x, y):
+    """The fabric pushed out and draped over the head and beanie: the roof is what stops it."""
+    best = 0.0
+    for off, r in ((0.0, 0.8), (0.5, 0.65)):
+        cx, cz = HC[0] + HDIR[0] * off, HC[2] + HDIR[2] * off - 0.1
+        d2 = (x - cx) ** 2 + (y - HC[1]) ** 2
+        if d2 < r * r:
+            best = max(best, cz + math.sqrt(r * r - d2) - 0.0)
+    return best
+
+
+def roofd(x, y):
+    z = roof(x, y)
+    return max(z, dent(x, y)) if z > 0 else 0.0                 # the figure's seat (hips), world
 HIP = 0.06                            # the seat height
 S = 0.34                              # rig metres per unit
 
@@ -76,18 +94,32 @@ def build(kit, story, tl):
         y = -TB + 2 * TB * i / ny
         for j in range(nx + 1):
             x = -TA + 2 * TA * (0.5 - 0.5 * math.cos(math.pi * j / nx))
-            verts.append((x, y, roof(x, y)))
+            verts.append((x, y, roofd(x, y)))
     for i in range(ny):
         for j in range(nx):
             a_ = i * (nx + 1) + j
             fcs.append((a_, a_ + 1, a_ + nx + 2, a_ + nx + 1))
-    tent_mat = P("#c0601a", 0.9, 0.02)
-    try:    # the fabric glows a little from the moon behind it: a cool violet emission under the orange
-        bsdf = tent_mat.node_tree.nodes["Principled BSDF"]
-        bsdf.inputs["Emission Color"].default_value = (0.55, 0.27, 0.12, 1)
-        bsdf.inputs["Emission Strength"].default_value = 0.22
-    except Exception:
-        pass
+    tent_mat = P("#b8561a", 0.9, 0.02)
+    try:    # the full moon outside shines blue through the fabric: emission rises with height and toward the back
+        nt = tent_mat.node_tree
+        bsdf = nt.nodes["Principled BSDF"]
+        geo = nt.nodes.new("ShaderNodeNewGeometry")
+        sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+        nt.links.new(geo.outputs["Position"], sep.inputs[0])
+        dist = nt.nodes.new("ShaderNodeVectorMath")
+        dist.operation = "DISTANCE"
+        dist.inputs[1].default_value = (HC[0] + 0.1, HC[1], 1.55)
+        nt.links.new(geo.outputs["Position"], dist.inputs[0])
+        ramp = nt.nodes.new("ShaderNodeMapRange")
+        ramp.inputs["From Min"].default_value = 0.4
+        ramp.inputs["From Max"].default_value = 2.2
+        ramp.inputs["To Min"].default_value = 1.05
+        ramp.inputs["To Max"].default_value = 0.08
+        nt.links.new(dist.outputs["Value"], ramp.inputs["Value"])
+        bsdf.inputs["Emission Color"].default_value = (0.1, 0.3, 1.0, 1)
+        nt.links.new(ramp.outputs["Result"], bsdf.inputs["Emission Strength"])
+    except Exception as e:
+        print("tent mat failed", e)
     shell = kit.mesh_obj("tentshell", verts, fcs, tent_mat, None, smooth=True)
     ctx["shell"] = shell
     # the groundsheet and the two sleeping bags
@@ -99,17 +131,23 @@ def build(kit, story, tl):
     for dx in (-0.2, 0.2):
         kit.cyl(nm("strap"), 0.088, 0.04, (FX + dx, FY, 0.08), P("#e7d9a8", 0.8, 0.05), None, (0, math.pi / 2, 0), n=24)
 
-    # two crossing tent poles pressed on the roof, meeting at a steel hub at the top (scale, and the tally's place)
-    steel = P("#2c2e36", 0.4, 0.5)
-    for ang in (0.0,):
-        pts_ = []
-        for k in range(0, 49):
-            u = -1 + 2 * k / 48
-            x, y = TA * 0.97 * u * math.cos(ang), TB * 0.97 * u * math.sin(ang)
-            pts_.append(V((x, y, roof(x, y) - 0.03)))
+    # panel seams running front to back along the roof (stitched dark lines): they show the fabric is a roof
+    seam = P("#3a4f86", 0.8, 0.05)
+    for sx_ in (-0.85, -0.45, 0.0, 0.95):
+        pts_ = [V((sx_, y_, roofd(sx_, y_) - 0.015)) for y_ in [-2.4 + 0.1 * k for k in range(49)] if roof(sx_, y_) > 0.05]
         for a_, b_ in zip(pts_, pts_[1:]):
-            bar(kit, "pole", a_, b_, 0.045, 0.045, steel, bevel=0.012)
-    kit.cyl("hub", 0.09, 0.07, (0, 0, roof(0, 0) - 0.07), steel, n=16)
+            bar(kit, "seam", a_, b_, 0.02, 0.008, seam, bevel=0.0)
+
+    # stress creases in the fabric, fanning out from the pressed head
+    for k in range(9):
+        ang_ = math.radians(-70 + k * 20)
+        pts_ = []
+        for rr in [0.45 + 0.08 * i for i in range(10)]:
+            x_, y_ = HC[0] + 0.25 + rr * math.cos(ang_), HC[1] + rr * math.sin(ang_) * 0.8
+            if roof(x_, y_) > 0.05:
+                pts_.append(V((x_, y_, roofd(x_, y_) - 0.012)))
+        for a_, b_ in zip(pts_, pts_[1:]):
+            bar(kit, "crease", a_, b_, 0.018, 0.008, seam, bevel=0.0)
 
     # ---- the door flap on the right wall, with the fat red stripe across it
     dp, dn = surf(-0.35, -1.5)
@@ -134,12 +172,12 @@ def build(kit, story, tl):
     ctx["lights_late"] = True
     # ---- the moon through the fabric: cool blue fill from above-behind, rim from behind the figure
     kit.light("moonfill", "AREA", (0.0, 0.5, 1.2), 25, "#7fa8ff", size=1.8, rot=(0, 0, 0), shadow=False)
-    rim = kit.light("moonrim", "SPOT", (1.4, -0.45, 1.0), 450, "#7fa8ff", size=0.15, spot=55, blend=0.3, shadow=False)
-    kit.aim(rim, (0.7, -0.15, 0.95))
-    rim2 = kit.light("moonrim2", "SPOT", (-0.15, -0.75, 1.15), 450, "#7fa8ff", size=0.15, spot=55, blend=0.3, shadow=False)
-    kit.aim(rim2, (0.05, -0.15, 1.0))
-    rim3 = kit.light("moonrim3", "SPOT", (0.2, -0.9, 0.5), 200, "#7fa8ff", size=0.15, spot=60, blend=0.3, shadow=False)
-    kit.aim(rim3, (0.3, -0.15, 0.8))
+    rim = kit.light("moonrim", "SPOT", (1.5, -0.6, 1.6), 700, "#7fa8ff", size=0.15, spot=55, blend=0.3, shadow=False)
+    kit.aim(rim, (0.5, -0.15, 1.4))
+    rim2 = kit.light("moonrim2", "SPOT", (-0.5, -1.0, 1.9), 700, "#7fa8ff", size=0.15, spot=55, blend=0.3, shadow=False)
+    kit.aim(rim2, (0.2, -0.15, 1.4))
+    rim3 = kit.light("moonrim3", "SPOT", (0.3, -1.0, 1.2), 400, "#7fa8ff", size=0.15, spot=60, blend=0.3, shadow=False)
+    kit.aim(rim3, (0.3, -0.15, 1.3))
 
     build_figure(kit, ctx)
     return ctx
@@ -173,7 +211,7 @@ def tube(kit, name, pts, radii, mat, sides=14):
     return kit.mesh_obj(nm(name), verts, fcs, mat, None, smooth=True)
 
 
-def rimify(mat, strength=14.0, blend=0.5, color=(0.30, 0.55, 1.0, 1)):
+def rimify(mat, strength=40.0, blend=0.5, color=(0.30, 0.55, 1.0, 1)):
     """A hard cool-blue moon rim on a material's silhouette edges (a Layer Weight fresnel into the emission)."""
     try:
         nt = mat.node_tree
@@ -203,58 +241,56 @@ def build_figure(kit, ctx):
     R, H = faces.HEAD_R, faces.HEAD_H
     P = lambda c, r=0.6, s=0.25: kit.plastic(c, r, spec=s)
     skin = P("#b0713f", 0.55, 0.3)
-    hoodie = P("#e8bf2e", 0.8, 0.1)
+    hoodie = P("#c9a22a", 0.8, 0.1)
     vest = P("#2f9a45", 0.7, 0.25)
     jeans = P("#2a3550", 0.8, 0.05)
     shoes = P("#222228", 0.6)
     for m_ in (skin, hoodie, vest, jeans, shoes):
         rimify(m_)
-    TORSO = 0.82                # 1.6x the cast's torso
-    NECK = 0.2 * 1.8                  # about 1.8x the neck (a short one on the cast)
+    TORSO = 1.65                # about 1.6x the cast's torso, and broad
+    LEAN = 0.2                 # hunched: the shoulders roll forward toward the camera
     # legs folded, ordinary: thighs forward and up, shins down, feet flat
     for sx in (-1, 1):
-        hip = W(sx * 0.17, 0.0, HIP + 0.12)
-        knee = W(sx * 0.19, -0.36, HIP + 0.5)
-        foot = W(sx * 0.19, -0.44, 0.1)
-        bar(kit, "thigh", hip, knee, 0.3, 0.3, jeans)
-        bar(kit, "shin", knee, foot, 0.26, 0.26, jeans)
-        kit.box(nm("shoe"), (0.24, 0.4, 0.14), tuple(W(sx * 0.19, -0.56, 0.07)), shoes, None, (0, 0, 0), 0.04)
-    # the torso: hoodie, with the puffer vest over it in two quilted bands (horizontal ribs)
+        hip = W(sx * 0.2, 0.0, HIP + 0.12)
+        knee = W(sx * 0.22, -0.4, HIP + 0.5)
+        foot = W(sx * 0.22, -0.48, 0.1)
+        bar(kit, "thigh", hip, knee, 0.32, 0.32, jeans)
+        bar(kit, "shin", knee, foot, 0.28, 0.28, jeans)
+        kit.box(nm("shoe"), (0.26, 0.42, 0.14), tuple(W(sx * 0.22, -0.6, 0.07)), shoes, None, (0, 0, 0), 0.04)
     base = HIP + 0.04
-    kit.box(nm("torso"), (0.5, 0.32, TORSO), tuple(W(0, 0, base + TORSO / 2)), hoodie, None, (0, 0, 0), 0.06)
+    # the torso leans toward the camera: built as bars from the hips to the shoulders
+    hipc = W(0, 0.0, base)
+    shc = W(0, -LEAN, base + TORSO)
+    bar(kit, "torso", hipc, shc, 0.56, 0.36, hoodie, bevel=0.07)
     vh = TORSO * 0.9
     for sx in (-1, 1):                      # vest panels either side of a hoodie front
-        kit.box(nm("vest"), (0.21, 0.355, vh), tuple(W(sx * 0.165, -0.005, base + vh / 2 + 0.03)), vest, None, (0, 0, 0), 0.07)
-    for k in range(5):                      # quilting ribs
-        z = base + 0.12 + k * (vh - 0.15) / 4
-        for sx in (-1, 1):
-            kit.box(nm("rib"), (0.21, 0.38, 0.035), tuple(W(sx * 0.165, -0.005, z)), P("#237a36", 0.8), None, (0, 0, 0), 0.015)
-    sh_z = base + TORSO - 0.1
-    # long arms: sleeves (hoodie yellow under the vest) down to the knees, hands flat on them
+        a_ = W(sx * 0.2, -0.02, base + 0.03)
+        b_ = W(sx * 0.2, -LEAN * 0.9 - 0.02, base + vh)
+        bar(kit, "vest", a_, b_, 0.25, 0.4, vest, bevel=0.07)
+        for k in range(6):                  # quilting ribs
+            u = 0.1 + k * 0.15
+            c = a_ + (b_ - a_) * u
+            kit.box(nm("rib"), (0.25, 0.43, 0.035), tuple(c), P("#237a36", 0.8), None, (0, 0, 0), 0.015)
+    sh_z = base + TORSO - 0.12
+    # long arms: sleeves down to the knees, hands flat on them
     for sx in (-1, 1):
-        shoulder = W(sx * 0.34, 0.0, sh_z)
-        elbow = W(sx * 0.38, 0.05, base + 0.25)
-        wrist = W(sx * 0.27, -0.38, HIP + 0.55)
-        bar(kit, "uarm", shoulder, elbow, 0.2, 0.2, hoodie, bevel=0.05)
-        bar(kit, "farm", elbow, wrist, 0.17, 0.17, hoodie, bevel=0.05)
-        kit.box(nm("hand"), (0.15, 0.22, 0.07), tuple(W(sx * 0.21, -0.44, HIP + 0.6)), skin, None, (0, 0, 0), 0.025)
-    # the neck: blocky, in shadow: straight up, then bent over toward frame left; the head lies against the sloping roof
-    n0 = W(0, 0.0, base + TORSO - 0.02)
-    hc = V((n0.x + 0.62, n0.y + 0.02, n0.z + 0.0))
-    attach = hc + V((-0.2, 0.0, 0.06))
-    p1 = V((n0.x, n0.y + 0.02, n0.z + 0.3))
-    p2 = V((n0.x + 0.22, n0.y + 0.02, n0.z + 0.28))
-    neckmat = P("#8a5530", 0.6, 0.2)
+        shoulder = W(sx * 0.4, -LEAN, sh_z)
+        elbow = W(sx * 0.46, -LEAN * 0.2, base + 0.3)
+        wrist = W(sx * 0.3, -0.4, HIP + 0.56)
+        bar(kit, "uarm", shoulder, elbow, 0.22, 0.22, hoodie, bevel=0.05)
+        bar(kit, "farm", elbow, wrist, 0.18, 0.18, hoodie, bevel=0.05)
+        kit.box(nm("hand"), (0.17, 0.24, 0.07), tuple(W(sx * 0.24, -0.46, HIP + 0.62)), skin, None, (0, 0, 0), 0.025)
+    # the neck: a short dark stub between two raised shoulders; the head is jammed sideways into the roof
+    n0 = W(0, -LEAN, base + TORSO)
+    hc = V(HC)
+    neckmat = P("#2a1a12", 0.6, 0.2)
     hood = P("#b8921c", 0.85, 0.05)
     rimify(neckmat, 18.0, 0.5)
     rimify(hood)
-    kit.box(nm("hoodcollar"), (0.46, 0.34, 0.2), tuple(n0 + V((0, 0.02, -0.02))), hood, None, (0, 0, 0), 0.08)
-    kit.box(nm("hoodbunch"), (0.46, 0.2, 0.3), tuple(n0 + V((0, -0.17, -0.03))), hood, None, (0.2, 0, 0), 0.09)
-    for sx in (-1, 1):   # hunched shoulders, shrugged up toward the neck
-        bar(kit, "shrug", n0 + V((sx * 0.32, 0.0, -0.1)), n0 + V((sx * 0.13, 0.04, 0.08)), 0.22, 0.3, hoodie, bevel=0.06)
-    bar(kit, "neck1", n0 + V((0, 0.02, 0.05)), p1, 0.2, 0.2, neckmat, bevel=0.04)
-    bar(kit, "neck2", p1 + V((0, 0, -0.1)), p2, 0.2, 0.2, neckmat, bevel=0.04)
-    bar(kit, "neck3", p2, attach, 0.2, 0.2, neckmat, bevel=0.04)
+    kit.box(nm("hoodcollar"), (0.5, 0.36, 0.16), tuple(n0 + V((0, 0.0, -0.04))), hood, None, (0, 0, 0), 0.07)
+    for sx in (-1, 1):   # shoulders shrugged up to the ears
+        bar(kit, "shrug", n0 + V((sx * 0.38, 0.0, -0.18)), n0 + V((sx * 0.2, 0.0, 0.08)), 0.26, 0.34, hoodie, bevel=0.07)
+    bar(kit, "neck", n0 + V((0, 0.0, -0.04)), n0 + V((0.12, 0.0, 0.2)), 0.2, 0.2, neckmat, bevel=0.04)
 
     # head: Dev's face on the rig's head mesh, scaled to the cast's head, then rolled sideways
     face = {"eyes": "hollow", "brows": True, "mouth": "none", "ink": "#2a1a14", "eye_scale": 0.55}
@@ -266,12 +302,12 @@ def build_figure(kit, ctx):
     mat, tex = rig.head_material("figure", "#b0713f")
     tex.image = img
     rimify(mat)
-    scale = S * 1.15
+    scale = S * 1.45
     head = kit.empty("chead", tuple(hc))
     head.scale = (scale, scale, scale)
     head.rotation_mode = "QUATERNION"
     # local top (+z) -> world -x (rolled), face (-y local) stays toward +y (the camera); a little extra tilt
-    m = Matrix.Rotation(math.radians(80), 3, "Y") @ Matrix.Rotation(math.pi, 3, "Z")
+    m = Matrix.Rotation(math.radians(76), 3, "Y") @ Matrix.Rotation(math.pi, 3, "Z")
     m = Matrix.Rotation(math.radians(-10), 3, "X") @ m
     head.rotation_quaternion = m.to_quaternion()
     hg = kit.empty("cheadg", (0, 0, 0), head)
@@ -297,12 +333,12 @@ def build_figure(kit, ctx):
     # two dark sockets over the hollow eyes (the glints sit in them), so the face is half in shadow
     sock = kit.plastic("#120b08", 0.9, spec=0.02)
     for sx in (-1, 1):
-        kit.box(nm("socket"), (0.24, 0.03, 0.13), (sx * 0.232, -R - 0.005, 0.08), sock, hg, (0, 0, 0), 0.03)
+        kit.box(nm("socket"), (0.19, 0.03, 0.1), (sx * 0.232, -R - 0.005, 0.08), sock, hg, (0, 0, 0), 0.03)
     # the lantern's own glow on the underside of the head: a narrow warm spot from the floor, aimed at the head
-    k = kit.light("headkey", "SPOT", (0.1, 0.75, 0.35), 55, "#ffe3b0", size=0.12, spot=34, blend=0.9, shadow=False)
+    k = kit.light("headkey", "SPOT", (0.1, 0.75, 0.35), 180, "#ffe3b0", size=0.12, spot=34, blend=0.9, shadow=False)
     kit.aim(k, tuple(hc))
-    k2 = kit.light("mekey", "SPOT", (-0.1, 0.75, 0.3), 14, "#ffe3b0", size=0.12, spot=40, blend=0.9, shadow=False)
-    kit.aim(k2, (-0.55, 0.0, 1.05))
+    k2 = kit.light("mekey", "SPOT", (-0.1, 0.75, 0.3), 40, "#ffe3b0", size=0.12, spot=40, blend=0.9, shadow=False)
+    kit.aim(k2, (-0.45, 0.0, 0.8))
     ctx["head"] = head
 
 
@@ -311,7 +347,7 @@ def animate(kit, story, tl, t, ctx):
     ch = rig.CHARS.get("me")
     if ch is not None:
         # seated: legs straight out toward the camera (front is local -y, so the legs swing -90 degrees)
-        ch.root.location.z = -0.86
+        ch.root.location.z = -0.92
         ch.P["leg-1"].rotation_euler = (-math.pi / 2, 0, 0)
         ch.P["leg1"].rotation_euler = (-math.pi / 2, 0, 0)
         ch.P["arm-1"].rotation_euler = (-0.5, 0.1, 0)
