@@ -683,6 +683,8 @@ story = {
                   names["chalk9"]],
     "framing_ok": [names[k] for k in ("street1", "ceiling", "emptychair1", "emptychair2", "hook", "outside_night")],
     "framing_props": {"hook": [G.DOOR_X - 0.8, -5.7, 1.6]},
+    # cuts that land inside a short telling shot, where the next framing is tighter (no light changes in any shot)
+    "frames_ok": ["S73", "S75", "S87", "S95", "S104", "S107", "S109"],
     "clip_ok": [],
     "asr_forgive": ["missus", "mister", "nine hundred ninety seven", "nine ninety eight", "nine ninety nine",
                     "nine hundred ninety nine", "one thousand", "he'd", "he's"],
