@@ -531,11 +531,7 @@ shot("L63", mv([wx - 0.3, -4.9, 1.5], [wx - 6.0, -60.0, 0.8], 36, [wx - 0.2, -5.
 only("L63.2", ["grandpa"])
 put("grandpa", "L63.2", list(GP), 0, expr="warm")
 seat("grandpa", "L63.2")
-shot("L63.2", face("grandpa", d=3.9, lens=42, dx=0.5, dzc=0.45), "listening")
-only("L63.3", ["me"])
-put("me", "L63.3", list(MP), 180, expr="warm")
-seat("me", "L63.3")
-shot("L63.3", face("me", d=4.1, lens=46, dx=-0.5, dzc=0.5, tz=0.3), "listening_me")
+shot("L63.2", face("grandpa", d=3.9, lens=42, dx=0.5, dzc=0.45, push=0.16), "listening")
 
 # ============================================================================================ 08 Sundays (L64 to L70)
 look("L64", "day")
