@@ -6,6 +6,5 @@
   "cover_s": 2.4,
   "shape": "misread",
   "opening": "cost",
-  "lane": "experiment",
-  "hold": "batch 13: scripts only, not built yet"
+  "lane": "experiment"
 }

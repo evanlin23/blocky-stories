@@ -42,6 +42,8 @@ REQUIRED = ("title", "description", "pin")
 ROOT = Path(__file__).resolve().parent.parent
 # files in a story folder that don't change the film (scripts/stories.py keeps the same list for re-renders)
 NOT_FILM = ("package.json", "reviews", "notes", "*.md")
+# the start of a proof block that only means "the proof hasn't landed yet" (test.yml reports it as waiting, not broken)
+WAITING = "waiting for proof: "
 
 
 def load_package(story: str) -> dict | None:
@@ -119,18 +121,19 @@ def proof_problems(story: str, qa: dict | None, changed_since_proof: list[str] |
     """Why the proof check doesn't cover this story's film yet ([] when it does). `changed_since_proof` is the
     film files changed since the proof's commit (None: that commit isn't in this history)."""
     fix = "run proof.yml on this branch and the qa agent on its proof-<story> artifact"
+    wait = WAITING   # nothing is wrong with the story yet: its proof (or the proof's qa) hasn't landed
     if not qa:
-        return [("block", f"no qa/{story}.json: {fix}")]
+        return [("block", f"{wait}no qa/{story}.json: {fix}")]
     if qa.get("stage") != "proof":
-        return [("block", f"qa/{story}.json is a {qa.get('stage', 'final')} check, not a proof check: {fix}")]
+        return [("block", f"{wait}qa/{story}.json is a {qa.get('stage', 'final')} check, not a proof check: {fix}")]
     if qa.get("verdict") != "pass":
         return [("block", f"the proof check failed (qa/{story}.json): fix what it lists, then {fix}")]
     if not qa.get("sha"):
         return [("block", f"qa/{story}.json has no sha (the commit its proof was drawn from)")]
     if changed_since_proof is None:
-        return [("block", f"the proof's commit {qa['sha'][:9]} isn't in this branch's history: {fix}")]
+        return [("block", f"{wait}the proof's commit {qa['sha'][:9]} isn't in this branch's history: {fix}")]
     if changed_since_proof:
-        return [("block", f"{len(changed_since_proof)} film file(s) changed after the proof was drawn "
+        return [("block", f"{wait}{len(changed_since_proof)} film file(s) changed after the proof was drawn "
                           f"({', '.join(changed_since_proof[:3])}): {fix}")]
     return []
 

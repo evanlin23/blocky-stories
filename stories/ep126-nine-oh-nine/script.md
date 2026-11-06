@@ -192,7 +192,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L29: She was seventeen / in nineteen sixty-FIVE.
 - L30: Grandpa was / the boy / with the RADIO.
 - L31: Her father said / she had to be home / by NINE.
-- L32: So she made up / a RULE.
+- L32: So she made up / a RULE, / so nobody / would SEE her.
 - L33: She pinned it / on the town board / HERSELF.
 - L34: "Inside / by nine oh-NINE."
 - L35: And everybody / just FOLLOWED it.
@@ -226,3 +226,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L01 cut to 9 words: "Out past nine oh-NINE here, / nobody lets you IN." L02: "Not till dawn. / Nobody knows WHY." Still `cost`. The loop from L46 still reads.
 - Nice-to-have taken: streetlamps cream `#ffe9b0`, off ep125's amber.
 - Re-voice: L01, L02.
+
+## Fixes (critic build r1)
+- L32 now says why she made the rule: "So she made up / a RULE, / so nobody / would SEE her."
+- Re-voice: L32.
