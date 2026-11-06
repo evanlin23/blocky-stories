@@ -6,6 +6,5 @@
  "cover_s": 48.75,
  "shape": "came-with",
  "old_title": "In This Town Every House Grows To Fit The TALLEST",
- "opening": "ban",
- "hold": "dropped 2026-11-04: final qa failed pace; the last-chance fix passed pace on the preview but critic r12 still said revise on S36b; the build is on branch claude/moving-day-pace"
+ "opening": "ban"
 }
