@@ -22,9 +22,16 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
+for _l in lines:       # L11 and L38: the splitter cut "He looked / at me" and left "at me" up for under 0.2 s; keep every caption at 3 words or fewer and 0.2 s or more
+    if _l["id"] == "L11":
+        _l["chunks"] = [["He yelled", "he yelled"], ["at me about", "at me about"], ["the HOSES.", "the hoses."]]
+        CHUNKMAP["L11"] = [0, 2]
+    if _l["id"] == "L38":
+        CHUNKMAP["L38"] = [0, 2, 3]
+        _l["chunks"] = [["He looked", "he looked"], ["at me like", "at me like"], ["I'd grown", "I'd grown"], ["a second HEAD.", "a second head."]]
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L29")
 lines.insert(idx, {"id": "P01", "pause": 0.5, "chunks": [["", ""]]})     # the 0.5 s music drop before L29
 
@@ -194,7 +201,7 @@ at_("me", "L02", *ME_SIDE, expr="smile")
 shot("L02", sub(ME_SIDE[0], ME_SIDE[1], H=2.9, tz=1.6, off=-10), "here")
 # ===== L03 three forearms on a bus rail (a stack), 3 cuffs, 3 numbers
 HIDE("me", "L03")
-shot("L03", look_at([BX + 2.4, BY - 1.4, 2.1], [BX + 2.4, BY - 0.15, 0.66], 36), "threearms")
+shot("L03", look_at([BX + 2.4, BY - 3.1, 2.5], [BX + 2.4, BY - 1.0, 0.62], 24), "threearms")
 # ===== L04 two strangers on the bus
 SA, SB = [BX - 0.54, BY + 1.1], [BX + 0.54, BY + 1.1]
 at_("stranger_a", "L04", *SA, expr="laugh", z=SIT)
@@ -236,7 +243,7 @@ shot("L11", sub(GUS_H[0], GUS_H[1], H=2.3, tz=1.62, off=-6), "gus2")
 GUS_HC = [HSX - 1.7, 1.75]
 TP("gus", "L11.1", [GUS_HC[0], GUS_HC[1], 0.0], 0.0, "angry")
 acting["gus"].append({"from": "L11.1", "to": "L12", "mouth": [0.7, 0.7], "flap": True})
-shot("L11.1", sub(HSX - 2.1, 1.75, H=3.1, tz=0.6, off=6), "gushoses")
+shot("L11.1", sub(HSX - 2.1, 1.75, H=3.5, tz=0.85, off=6), "gushoses")
 props("L12", [])
 HIDE("gus", "L12")
 ME_HOSE = [HSX + 0.0, 0.6]
@@ -291,8 +298,8 @@ shot("L22", sub(ME_TL[0], ME_TL[1], H=2.7, tz=1.55, off=12), "tankme2")
 HIDE("me", "L23-0.3")
 gus_state("L23-0.3", "rolled", 1)
 props("L23-0.3", ["rarm"])
-shot("L23-0.3", ins(cc(ARM_RIM), dist=1.4, elev=50, lens=40, off=8), "cuff1")
-shot("L23.1", ins(cc(ARM_RIM), dist=1.0, elev=52, lens=40, off=0), "cuff1big")
+shot("L23-0.3", ins(cc(ARM_RIM), dist=1.4, elev=50, lens=40, off=8, dz=-0.1), "cuff1")
+shot("L23.1", ins(cc(ARM_RIM), dist=1.15, elev=52, lens=40, off=0, dz=-0.18), "cuff1big")
 props("L24", [])
 at_("me", "L24", ME_TL[0] + 0.4, ME_TL[1], expr="wide", head=[-18, 6])
 shot("L24", sub(ME_TL[0] + 0.4, ME_TL[1], H=2.4, tz=1.6, off=-8), "tankme3")
@@ -321,10 +328,11 @@ HIDE("me", "P01")
 shot("P01", push(look_at([14.0, -5.5, 2.4], [30.0, 3.0, 1.2], 20), 0.12), "dropwide")
 # ===== L29 I got it
 TP("me", "L29", BED_POS, 0.0, "wide", lean=-90.0)
-shot("L29", look_at([DX + 0.25, DY - 0.5, 2.0], [DX, DY + 1.2, 0.9], 36), "bed2")
+props("L29", ["bedarm"])
+shot("L29", look_at([DX + 0.2, DY - 1.6, 2.6], [DX, DY + 1.25, 0.9], 34), "bed2")
 # ===== L30 the clocks count down to when someone BECOMES your best friend
 props("L30", ["bedarm"])
-shot("L30", ins((DX + 0.0, DY + 0.35, 1.14 + 0.35), dist=1.5, elev=55, lens=40), "quiltcuff")
+shot("L30", ins((DX + 0.0, DY + 0.15, 1.14 + 0.35), dist=1.5, elev=55, lens=40), "quiltcuff")
 shot("L30.2", look_at([DX + 0.3, DY - 1.3, 2.4], [DX, DY + 1.5, 0.9], 34), "bed3")
 # ===== L31 day one again
 props("L31", [])
@@ -337,10 +345,11 @@ gus_state("L32", "rolled", 1)
 shot("L32", look_at([BENCH_CX - 0.5, -0.6, 1.5], [BENCH_CX - 0.3, 0.52, 1.2], 40), "cactus2")
 # ===== L33 his clock had been counting down to ME (the reveal)
 props("L33", [])
-at_("gus", "L33", *GUS_TB, expr="neutral", z=SIT)
-shot("L33", push(sub(GUS_TB[0], GUS_TB[1], H=2.3, tz=1.5, off=0), 0.05), "gusface")
-props("L33.1", ["tarm"])
-shot("L33.1", sub(GUS_TB[0], GUS_TB[1], H=2.5, tz=0.95, off=0, sh=0.0, up=0.6), "reveal", exp=0.0)
+at_("gus", "L33", *GUS_TB, expr="neutral", z=SIT, arms=[0, 35])
+shot("L33", push(sub(GUS_TB[0], GUS_TB[1], H=2.9, tz=1.3, off=0, sh=-0.2), 0.03), "gusface")
+props("L33.1", ["rev"])
+K("gus", "L33.1", arms=[0, 0])
+shot("L33.1", sub(GUS_TB[0], GUS_TB[1], H=2.9, tz=0.8, off=0, sh=0.0, up=1.7, pf=0.08), "reveal", exp=0.0)
 # ===== L34 I'd finally be his
 HIDE("gus", "L34")
 ME_S = [BENCH_CX + 1.9, 0.5]
@@ -376,11 +385,11 @@ at_("gus", "L41", *GUS_TB, expr="smile", z=SIT)
 shot("L41", sub(GUS_TB[0], GUS_TB[1], H=2.4, tz=1.45, off=-8), "gussmile")
 # ===== L42, L43 still fighting (two faces side by side, both to camera)
 HIDE("gus", "L42")
-TWO_ME, TWO_GUS = [HSX + 0.56, 0.5], [HSX - 0.6, 0.5]
-at_("me", "L42", *TWO_ME, expr="angry", arms=[0, 70])
+TWO_ME, TWO_GUS = [HSX + 0.56, 0.5], [HSX - 0.5, 0.5]
+at_("me", "L42", *TWO_ME, expr="angry", arms=[0, 0])
 at_("gus", "L42", *TWO_GUS, expr="angry", arms=[0, 0])
-shot("L42", sub(HSX, 0.5, H=3.0, tz=1.5, off=0, lens=40, sh=0.03, pf=0.0), "two1")
-shot("L43", push(sub(HSX, 0.5, H=3.0, tz=1.5, off=-5, lens=40, sh=0.03, pf=0.0), 0.06), "two2")
+shot("L42", sub(HSX, 0.5, H=4.5, tz=1.1, off=0, lens=40, sh=-0.02, pf=0.0), "two1")
+shot("L43", push(sub(HSX, 0.5, H=4.5, tz=1.1, off=-5, lens=40, sh=-0.03, pf=0.0), 0.06), "two2")
 # ===== L44 lunch together
 HIDE("me", "L44")
 at_("gus", "L44", *GUS_TB, expr="laugh", z=SIT)
@@ -445,7 +454,7 @@ polish = {"reveal": [remap("L33.1") if False else "L33"], "twist": remap("L30"),
           "hold": [names[n] for n in ("reveal",)]}
 story = {
     "slug": "ep130-rival-clock",
-    "title": "My Best Friend Countdown Ended 11 YEARS Ago",
+    "title": "Best Friend Countdown Ended 11 YEARS Ago",
     "made_for_kids": False,
     "premise": ("Everyone's cuff counts down the days to their best friend, and mine hit zero eleven years ago on my first morning "
                 "at a plant nursery, when the only other person there was Gus, the coworker I have fought with ever since."),

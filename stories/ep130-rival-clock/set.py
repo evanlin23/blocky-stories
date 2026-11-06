@@ -348,6 +348,8 @@ def build_table(kit):
     W["radio2"] = build_radio(kit, tx, 0.2, G.TABLE_Z, "radio2")
     W["table_arm"], W["table_states"], W["table_fl"] = arm_prop("armtable", G.TABLE_ARM, CUFFS["gus"], {"": "", "1": "1", "0": "0"},
                                                                flannel=W["flannel_prop"], scale=1.25, pitch=35)
+    W["rev_arm"], W["rev_states"], W["rev_fl"] = arm_prop("armrev", (tx - 0.02, -0.02, G.TABLE_Z), CUFFS["gus"], {"": "", "1": "1", "0": "0"},
+                                                          flannel=W["flannel_prop"], scale=1.2, pitch=20)
     # my hand on top of the radio beside the dial (cue dialhand); the sleeve runs off to the right, off the dial's face
     W["dialhand"] = E(None, (tx + 0.2, 0.2 - 0.05, G.TABLE_Z + 0.36), "dialhand")
     B(W["dialhand"], (0.14, 0.12, 0.07), (0, 0, 0.0), P("#a8744f", 0.5), "dialhandbox", 0.025)
@@ -383,8 +385,8 @@ def build_bus(kit):
     # three more for the montage (S03): a wide padded shelf with three forearms stacked front to back
     B(None, (1.9, 2.3, 0.08), (cx + 2.4, cy - 0.15, 0.59), P("#f29a4a", 0.7, 0.05), "busrailpad")
     B(None, (1.9, 2.3, 0.55), (cx + 2.4, cy - 0.15, 0.275), P("#e8782a", 0.75, 0.05), "busrail", 0.03)
-    W["bus3"] = [arm_prop(f"busthree{i}", (cx + 2.4, cy - 0.15 + (i - 1) * 0.72, 0.63), c, t, scale=1.2, pitch=25)[0]
-                 for i, (c, t) in enumerate((("#ff8a7a", "12"), ("#7ab8ff", "3"), ("#9be07a", "47")))]
+    W["bus3"] = [arm_prop(f"busthree{i}", (cx + 2.4, cy - 0.15 + (i - 1) * 0.78, 0.63), c, t, scale=1.25, pitch=40)[0]
+                 for i, (c, t) in enumerate((("#ff8a7a", "3"), ("#7ab8ff", "58"), ("#9be07a", "900")))]
 
 
 def build_yard(kit):
@@ -445,7 +447,7 @@ def build_bed(kit):
     # the lamp on the night stand, off (dark shade, no light)
     B(None, (0.5, 0.5, 0.5), (cx + 1.5, cy + 1.9, 0.25), P("#9a6a3c", 0.6), "nightstand")
     C(None, 0.16, 0.26, (cx + 1.5, cy + 1.9, 0.65), P("#e9dcc0", 0.8, 0.05), "lampshade", n=16, r2=0.1)
-    W["bed_arm"], _, _ = arm_prop("armbed", (cx, cy + 0.35, 1.14), CUFFS["me"], "0")
+    W["bed_arm"], _, _ = arm_prop("armbed", (cx, cy + 0.15, 1.14), CUFFS["me"], "0")
 
 
 # ---------------------------------------------------------------------------------------------------- build
@@ -597,8 +599,9 @@ def animate(kit, story, tl, t, ctx):
     hide(W["rim_arm"], "rarm" not in on)
     hide(W["table_arm"], "tarm" not in on)
     hide(W["bed_arm"], "bedarm" not in on)
+    hide(W["rev_arm"], "rev" not in on)
     # props that follow Gus's sleeve and numeral
-    for key, flag in (("rim", "rarm"), ("table", "tarm")):
+    for key, flag in (("rim", "rarm"), ("table", "tarm"), ("rev", "rev")):
         off = flag not in on
         for st, grp in W[f"{key}_states"].items():
             hide(grp, off or not (st and sleeve == "rolled" and st == n))
