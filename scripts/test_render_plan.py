@@ -15,6 +15,13 @@ def test_skip_without_qa():
     assert "no qa/s.json" in skip_reason("s", None, None)
 
 
+def test_unproofed_story_is_waiting_for_proof_not_failed():
+    # a merged story with no proof yet is held back from a final and says it's waiting; a failed proof says failed
+    assert skip_reason("s", None, None).startswith("waiting for proof: ")
+    assert skip_reason("s", PASS, ["stories/s/set.py"]).startswith("waiting for proof: ")
+    assert not skip_reason("s", {**PASS, "verdict": "fail"}, []).startswith("waiting")
+
+
 def test_skip_failed_proof():
     assert "failed" in skip_reason("s", {**PASS, "verdict": "fail"}, [])
 

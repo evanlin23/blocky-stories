@@ -43,10 +43,19 @@ The builder reads docs/engine.md itself.
    - **Preview.** Render the preview, then finish and mix.
    - **Frame lint, on the preview.** Run `python scripts/frames.py --story stories/__STORY__` on the preview's frames before every review round, next to framing.py (report-only, lesson 40). Have the builder fix every finding: blank or near-uniform frames (a camera inside a wall), a pop on a shot's first drawing (a character posed a frame late), or a shot that opens dark and brightens over its first 0.3 s (a light fading in after the cut). List a deliberate one in story.json `"frames_ok"`.
    - **Flash.** Run `python -m blocky flash __STORY__ --like-proof` (every drawing the proof draws, at the meter's size: it reads what the proof reads, 2026-11-05) on any story with bright light changes, glows or flipping lights, and pass with margin (at most about 5 flashes a second, against the cap of 6). The first full `--like-proof` draws every frame and can take over 30 minutes: run it in the background with a 2 h timeout and wait with a Monitor. After a fix, re-check with `--like-proof --shots <the changed shots>`, which keeps the other drawings (lesson 41). A swinging, flickering or switching practical light counts (2026-11-04: ep97 failed its proof at 7 a second from a swinging bulb).
-   - **Measure.** Run `python scripts/measure.py --story stories/__STORY__`. The 4 craft blocks must pass:
-     - picture changes per 10 s, at 0.5 s and at 0.25 s;
-     - motion energy;
-     - longest still ≤1.0 s.
+   - **Measure, on the preview film.** Run `python scripts/measure.py --story stories/__STORY__` after the preview is
+     finished and mixed: it measures `out/work/__STORY__/<slug>-preview.mp4`. With no film the 4 craft blocks read
+     `unmeasured`, which is not a pass (until 2026-11-06 they were silently left out, and ep117 passed "locally" at
+     12.5 against 14; lesson 43). The 4 craft blocks must pass, with these margins for what the proof and the final
+     will read (measured on 8 proofs, 7 of them against their finals):
+     - picture changes per 10 s at 0.5 s: the preview differs from the proof by up to 1.0 either way, so 13.5 or
+       more on the preview; the proof and the final read the same;
+     - picture changes per 10 s at 0.25 s: the preview within about 0.7 of the proof, the final within 0.2 of it,
+       so 15 on the preview;
+     - motion energy: the preview within about 0.4 of the proof, the final within 0.05, so 6.4 on the preview;
+     - longest still ≤1.0 s, and **`longest_still_q_edge_s` ≤1.0 s too**: a still at the threshold's edge reads
+       one 0.27 s step longer on the less noisy final (ep126: 0.8 s on the proof, 1.07 s, a block, on the final).
+       The longest still moves in 0.27 s steps (8 frames), so 0.8 s is the most that passes.
 
      On a pace fail, shorten the quiet span or add motion inside it. Never crop harder.
    - **Sound.** The budget is 2 to 4 events per 10 s, and the score plays under the whole film.

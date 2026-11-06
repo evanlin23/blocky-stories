@@ -265,6 +265,42 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → The writer avoids such props (batch 13 note 3). In a fix round, cut or replace a prop that fails to read once,
     rather than refining it: a second try at the same shape rarely lands.
 
+43. **The craft numbers read differently at each stage, and each gap cost a round (calibrated 2026-11-06).** ep126's
+    proof read a longest still of 0.8 s and its final 1.07 s (a block). ep117 passed its local measure and its proof
+    read 12.5 picture changes per 10 s at 0.25 s against 14. Measured on every story with a live `proof-` and
+    `film-` artifact of the same film files and engine (7 pairs; the proof's sha has no film-file and no `blocky/`
+    or `assets/` change before the final's), re-run with `scripts/measure.py`, which matched each proof's own
+    `craft.json`:
+
+    | story | changes/10 s at 0.5 s | at 0.25 s | motion energy | longest still |
+    |---|---|---|---|---|
+    | moving-day | 13.7 / 13.7 | 14.6 / 14.8 | 7.25 / 7.25 | 0.80 / 0.80 |
+    | ep102 | 16.9 / 16.9 | 25.1 / 25.1 | 9.13 / 9.16 | 0.27 / 0.27 |
+    | ep108 | 17.7 / 17.7 | 24.2 / 24.4 | 8.77 / 8.80 | 0.00 / 0.00 |
+    | ep110 | 14.7 / 14.7 | 17.0 / 17.1 | 6.50 / 6.50 | 0.53 / 0.53 |
+    | ep114 | 17.0 / 17.0 | 23.0 / 22.8 | 8.87 / 8.83 | 0.27 / 0.27 |
+    | ep117 | 15.2 / 15.2 | 16.8 / 17.0 | 6.87 / 6.86 | 0.27 / 0.27 |
+    | ep126 | 12.8 / 12.8 | 14.6 / 14.5 | 5.70 / 5.66 | **0.80 / 1.07** |
+    | final − proof | 0.0 (all 7) | +0.03 (−0.2 to +0.2) | 0.00 (−0.04 to +0.03) | 0 on 6, +0.27 on 1 |
+
+    (proof / final.) The proof and the final read the same: resolution, the polish pass, the encoder and
+    measure.py's own downscale add nothing that shows (both are cut to the same 108 x 192 and 18 x 32 grid, and the
+    frame counts match). The one gap is **render noise at the still threshold**: the proof draws 4 samples at
+    270 x 480 and the final 6 at 540 x 960, so a quiet 0.25 s step reads about 0.5e-3 higher on the proof (median;
+    up to 2.5e-3) against the still threshold of 6e-3. ep126's quiet span at 53 s had one step at 6.6e-3 on the proof
+    and 5.5e-3 on the final, so its still was split on the proof and whole on the final. The still moves in 0.27 s
+    steps (8 frames), so one step is the difference between 0.8 s (passes) and 1.07 s (blocks).
+    ep117's gap was a different one: the build brief's `measure.py --story` had **no film**, and with no film the 4
+    craft blocks were silently left out ("0 block"). Its failing proof (9695bc5, 12.0 / 12.5 / 6.09 / 0.53) reads
+    13.0 / 12.5 / 6.09 / 0.53 when held every 4th drawing like the preview (the preview and the proof draw at the
+    same size and samples), so measuring the preview would have caught it.
+    → Done 2026-11-06 (#332): `measure.py --story` measures the preview film when there is one, and the 4 blocks
+    read `unmeasured` (counted as blocked) when there is none. A new warning, `longest_still_q_edge_s` (the still
+    at a 10% looser threshold), reads 1.6 s on both of ep126's films and equals the plain reading on the other 6
+    pairs: over 1.0 s on a proof means the final may block. The build brief's measure step has the margins.
+    → Engine side (for #1, not done here): drawing the proof at the final's 6 samples, or denoising it, would make
+    its quiet steps read like the final's. Until then the edge warning stands in.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".

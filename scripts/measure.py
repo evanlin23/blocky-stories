@@ -1,7 +1,7 @@
 """Craft metrics for one of our films: the numbers behind "does it look and sound high quality".
 
     python scripts/measure.py out/ep38-drive-in.mp4 --story stories/ep38-drive-in [--mix mix.json] [--json o.json]
-    python scripts/measure.py --story stories/back-row            # no film: the spec metrics only
+    python scripts/measure.py --story stories/back-row            # no film: the story's preview film, if drawn
 
 The methods are in docs/research/craft-metrics.md, and the targets are in TARGETS below (warnings for now). Free
 tools only: ffmpeg and numpy. OpenCV is used for optical flow when it's installed and skipped when it isn't.
@@ -12,6 +12,9 @@ What it reads:
   effects, acting and camera keys, so cuts, face size and character motion come from the edit itself;
 - the mix report (`mix.json` from the film artifact) for the stems' loudness, when it's there.
 It prints a markdown table, and `--json` writes every number.
+
+With `--story` and no film it measures the story's preview film (`out/work/<story>/<slug>-preview.mp4`) when one is
+there. The four craft blocks need a film: with none, they read `unmeasured` (never a silent pass; lesson 43).
 """
 
 from __future__ import annotations
@@ -32,6 +35,9 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 PW, PH = 108, 192          # the picture is measured at 1/10 size (9:16)
+STILL_Q = 0.006            # longest_still_q_s: a 0.25 s step whose mean grid change is under this is still
+CRAFT_BLOCKS = ("macro.picture_changes_per_10s", "macro.picture_changes_per_10s_q", "macro.motion_energy_q",
+                "macro.longest_still_q_s")
 SR = 48000
 
 # Provisional targets: (low, high), either end None. From back-row (our one hit) against ep20, ep38 and knock-back
@@ -60,6 +66,10 @@ TARGETS = {
     "spec.shots_over_2s_share": (None, 0.25),        # back-row 0.22; the flops 0.27-0.59
     "spec.shot_p90_s": (None, 2.5),
     "macro.longest_still_s": (None, 1.5),            # the polish pack's own bar
+    # longest still at a 10% looser threshold: a 4-sample proof reads quiet samples about 0.5e-3 noisier than its
+    # final, so a still at the threshold's edge can read 0.8 s on the proof and 1.07 s (a block) on the final
+    # (ep126, 2026-11-05). Over 1.0 here warns that the final may block (lesson 43).
+    "macro.longest_still_q_edge_s": (None, 1.0),
     "macro.motion_energy_mean": (1.5, None),
     "spec.camera_move_share": (0.65, None),          # back-row 0.71; the flops 0.32-0.66
     "spec.punch_per_10s": (0.4, None),               # back-row 0.44; the flops 0.15-0.29
@@ -208,7 +218,8 @@ def picture(frames: np.ndarray, fps: float) -> dict:
     idx4 = np.arange(0, n, step4)
     dq = np.abs(np.diff(g[idx4], axis=0)).mean(axis=(1, 2))
     ch4 = dq > 0.04
-    still_q = max([l for _, l in runs(dq < 0.006)], default=0) * step4 / fps
+    still_q = max([l for _, l in runs(dq < STILL_Q)], default=0) * step4 / fps
+    still_edge = max([l for _, l in runs(dq < STILL_Q * 1.1)], default=0) * step4 / fps
 
     # camera motion: the global shift between frames two apart (skips the repeated frames of a 15 fps shot)
     shift = np.zeros(n)
@@ -262,6 +273,7 @@ def picture(frames: np.ndarray, fps: float) -> dict:
         "picture_changes_per_10s_q": round(float(ch4.sum() / max(1e-9, (len(idx4) - 1) * 0.25) * 10), 1),
         "motion_energy_q": round(float(dq.mean()) * 100, 2),
         "longest_still_q_s": round(still_q, 2),
+        "longest_still_q_edge_s": round(still_edge, 2),
         "camera_motion_share": round(float(moving.mean()), 3),
         "camera_shift_px_per_frame": round(float(np.median(shift[moving])) * 10, 2) if moving.any() else 0.0,
         "flow_mean_px_per_frame": None if flow is None else round(flow, 2),
@@ -706,6 +718,8 @@ def check(res: dict) -> list[dict]:
     for key, (lo, hi, *level) in TARGETS.items():
         v = value(res, key)
         if v is None:
+            if key in CRAFT_BLOCKS and "macro" not in res:
+                out.append({"metric": key, "value": None, "low": lo, "high": hi, "status": "unmeasured"})
             continue
         ok = (lo is None or v >= lo) and (hi is None or v <= hi)
         status = "ok" if ok else (level[0] if level else "warn")
@@ -727,12 +741,19 @@ def table(res: dict) -> str:
     rows.append(f"\n{blocks} block, {nears} near, {warns} warn, of {len(res['checks'])} (blocks are confirmed by the hit "
                 f"data; near is within {NEAR:.0%} of a pace bar, and qa watches the slowest 10 s; warnings are "
                 f"provisional).")
+    unm = sum(c["status"] == "unmeasured" for c in res["checks"])
+    if unm:
+        rows.append(f"\n**The {unm} craft blocks were not measured: there is no film.** Draw the preview (it is "
+                    "measured here when it exists), or pass a film. A table without them is not a pass.")
+    elif res.get("film_kind") == "preview":
+        rows.append(f"\nMeasured on the preview ({res['film']}): it reads like the proof within about 1 picture "
+                    "change per 10 s and 0.4 motion energy. Pass with the margins in docs/briefs/build.md (lesson 43).")
     return "\n".join(rows)
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("film", nargs="?", type=Path, help="the mp4 (omit for the spec metrics only)")
+    ap.add_argument("film", nargs="?", type=Path, help="the mp4 (omit: the story's preview film, else the spec metrics only)")
     ap.add_argument("--story", type=Path, help="stories/<name> (story.json + voice-timings.json)")
     ap.add_argument("--timeline", type=Path, help="a timeline.json, instead of building one from --story")
     ap.add_argument("--mix", type=Path, help="mix.json from the film artifact (stem loudness)")
@@ -741,9 +762,12 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     if not a.film and not a.story:
         ap.error("give a film, a story, or both")
-    if a.film and not shutil.which("ffmpeg"):
+    film = a.film or (preview_film(a.story) if a.story else None)
+    if film and not shutil.which("ffmpeg"):
         ap.error("ffmpeg isn't installed")
-    res = measure(a.film, a.story, a.timeline, a.mix)
+    res = measure(film, a.story, a.timeline, a.mix)
+    if film and not a.film:
+        res["film_kind"] = "preview"
     if a.json:
         a.json.parent.mkdir(parents=True, exist_ok=True)
         a.json.write_text(json.dumps(res, indent=1))
@@ -752,8 +776,18 @@ def main(argv=None) -> int:
 
 
 def blocked(res: dict) -> list[dict]:
-    """The block metrics that fail (the four the hit data confirmed)."""
-    return [c for c in res.get("checks", []) if c["status"] == "block"]
+    """The block metrics that fail (the four the hit data confirmed), or that couldn't be measured."""
+    return [c for c in res.get("checks", []) if c["status"] in ("block", "unmeasured")]
+
+
+def preview_film(story: Path) -> Path | None:
+    """The story's mixed preview, out/work/<story>/<slug>-preview.mp4, when it has been drawn."""
+    try:
+        slug = json.loads((story / "story.json").read_text()).get("slug", story.name)
+    except (OSError, ValueError):
+        return None
+    f = ROOT / "out" / "work" / story.name / f"{slug}-preview.mp4"
+    return f if f.exists() else None
 
 
 if __name__ == "__main__":
