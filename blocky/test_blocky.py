@@ -822,7 +822,8 @@ def test_check_finds_spoken_words_story_json_lost():
 
 def test_a_hidden_cast_member_hides_parts_the_set_adds_on_its_first_frame(fake_rig, monkeypatch):
     """ep117 (lesson 44): a set.py that adds a moustache on its first `animate` call adds it after `pose()` hid its
-    owner. The engine hides everything under a hidden cast root after `animate`, on that first frame too."""
+    owner. The engine hides parts made during `animate` under a hidden cast root, on that first frame too; a part
+    that already existed and that the story shows on purpose under a hidden owner (ep54's gloves) stays shown."""
     import importlib
     import sys
     import types
@@ -830,9 +831,11 @@ def test_a_hidden_cast_member_hides_parts_the_set_adds_on_its_first_frame(fake_r
     sys.modules.pop("blocky.bl_story", None)
     bl = importlib.import_module("blocky.bl_story")
     try:
+        made = iter(range(10 ** 6))
+
         class Ob:
             def __init__(self):
-                self.hide_render, self.children_recursive = False, []
+                self.name, self.hide_render, self.children_recursive = f"ob{next(made)}", False, []
 
         class Char:
             def __init__(self):
@@ -851,6 +854,7 @@ def test_a_hidden_cast_member_hides_parts_the_set_adds_on_its_first_frame(fake_r
                 W["inited"] = True
                 ctx["stache"] = Ob()
                 ctx["dad"].root.children_recursive.append(ctx["stache"])
+            ctx["glove"].hide_render = False   # shown on purpose, every frame, even while its owner is hidden
 
         state = {"x": 0, "y": 0, "z": 0, "yaw": 0, "legs": 0, "arms": (0, 0), "arms_side": (0, 0), "head_yaw": 0,
                  "head_pitch": 0, "lean": 0, "bob": 0, "expr": "neutral", "mouth": 0, "look": (0, 0), "blink": 0}
@@ -861,10 +865,14 @@ def test_a_hidden_cast_member_hides_parts_the_set_adds_on_its_first_frame(fake_r
         for hidden in (True, False):
             W.clear()
             dad = Char()
-            ctx = {"dad": dad}
+            glove = Ob()
+            dad.root.children_recursive.append(glove)
+            ctx = {"dad": dad, "glove": glove}
             monkeypatch.setattr(bl.acting, "state", lambda tl_, name, t, seed=0: {**state, "hidden": hidden})
-            bl.pose_at(3.0, {}, tl, types.SimpleNamespace(animate=animate), ctx, {"dad": (dad, 0)}, {"S1": {}})
-            assert ctx["stache"].hide_render is hidden
-            assert all(ob.hide_render is hidden for ob in dad.root.children_recursive)
+            for t in (3.0, 3.1):   # the first frame of a process, then the next
+                bl.pose_at(t, {}, tl, types.SimpleNamespace(animate=animate), ctx, {"dad": (dad, 0)}, {"S1": {}})
+                assert ctx["stache"].hide_render is hidden
+                assert dad.root.children_recursive[0].hide_render is hidden
+                assert glove.hide_render is False
     finally:
         sys.modules.pop("blocky.bl_story", None)
