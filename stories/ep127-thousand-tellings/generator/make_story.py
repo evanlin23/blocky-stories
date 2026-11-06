@@ -263,10 +263,7 @@ put("me", "L10.2", [G.LOT[0] + G.CAR_DX, G.LOT[1] + G.CAR_DY], 0, expr="smile")
 seat("me", "L10.2", z=0.62)
 cue("L10.2", "car", mode="me", z=0.0)
 go("me", "L10.3+0.6", [G.LOT[0] + G.CAR_DX, G.LOT[1] + G.CAR_DY - 22.0])
-shot("L10.2", mv([G.LOT[0] - 2.5, G.LOT[1] + 7.5, 2.0], [G.LOT[0], G.LOT[1] - 5.0, 0.9], 30,
-                 [G.LOT[0] - 2.5, G.LOT[1] + 7.5, 2.0], [G.LOT[0], G.LOT[1] - 9.0, 0.9], 30), "carleave1")
-shot("L10.3", mv([G.LOT[0] + 7.5, G.LOT[1] - 12.0, 1.2], [G.LOT[0], G.LOT[1] - 16.0, 1.0], 38,
-                 [G.LOT[0] + 7.5, G.LOT[1] - 12.0, 1.2], [G.LOT[0], G.LOT[1] - 20.0, 1.0], 38), "carleave2")
+shot("L10.2", mv([7.5, 8.5, 1.5], [0.0, 0.0, 0.9], 34, [6.0, 6.8, 1.6], [0.0, 0.0, 0.9], 34), "carleave1", follow="me")
 only("L11", [])
 stand("me", "L11")
 shot("L11", mv([MX + 1.9, MY + 2.4, 1.35], [MX - 0.1, MY, 0.31], 30, [MX + 1.7, MY + 2.2, 1.35], [MX - 0.1, MY, 0.31], 30), "chair_day")
@@ -684,7 +681,7 @@ story = {
     "framing_ok": [names[k] for k in ("street1", "ceiling", "emptychair1", "emptychair2", "hook", "outside_night")],
     "framing_props": {"hook": [G.DOOR_X - 0.8, -5.7, 1.6]},
     # cuts that land inside a short telling shot, where the next framing is tighter (no light changes in any shot)
-    "frames_ok": ["S73", "S75", "S87", "S95", "S104", "S107", "S109"],
+    "frames_ok": ["S72", "S74", "S86", "S94", "S103", "S106", "S108"],
     "clip_ok": [],
     "asr_forgive": ["missus", "mister", "nine hundred ninety seven", "nine ninety eight", "nine ninety nine",
                     "nine hundred ninety nine", "one thousand", "he'd", "he's"],
