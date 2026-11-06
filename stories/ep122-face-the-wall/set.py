@@ -298,24 +298,28 @@ def build_tag(kit):
     for k, (px, py, sw, sh) in pos.items():
         d[k] = b(f"tag.d{k}", (sw, sh, 0.006), (cx + px, py, z), ink)
     W["digits"].append(d)
-    # second row: appears at L56 (a bed across a hall: two walls and a bed between) and L66 (a bed behind a door)
-    b("tag.row.edge", (1.2, 0.44, 0.006), (0, -0.585, 0), edge, "row")
-    b("tag.row.plate", (1.14, 0.38, 0.006), (0, -0.585, 0.03), plate, "row")
+    # second row: appears at L56 (cell 2: a bed with the gold hall stripe under it) and L66 (cell 3: a dark door with a gold
+    # crack beside a bed). Big, simple shapes: each cell reads at 300 px as a bed, a hall, a bed, then my digit 1.
+    RY = -0.655
+    b("tag.row.edge", (1.2, 0.56, 0.006), (0, RY, 0), edge, "row")
+    b("tag.row.plate", (1.14, 0.5, 0.006), (0, RY, 0.03), plate, "row")
     z2 = 0.06
-    # cell 2 at x -0.3: two hall walls, a bed between them, my digit 1 at its right
-    for sx in (-1, 1):
-        b(f"tag.h2w{sx}", (0.05, 0.3, 0.006), (-0.5 + (sx + 1) * 0.12, -0.585, z2), rose, "cell2")
-    b("tag.h2bed", (0.14, 0.09, 0.006), (-0.38, -0.62, z2), blue, "cell2")
-    b("tag.h2pil", (0.05, 0.07, 0.006), (-0.43, -0.6, z2 + 0.03), cream, "cell2")
-    b("tag.h2one", (0.05, 0.22, 0.006), (-0.18, -0.585, z2), ink, "cell2")
-    b("tag.h2flag", (0.09, 0.05, 0.006), (-0.215, -0.5, z2), ink, "cell2")
-    # cell 3 at x +0.28: a door at the end of a hall with a gold crack, a bed, digit 1
-    b("tag.h3door", (0.12, 0.3, 0.006), (0.14, -0.585, z2), ink, "cell3")
-    b("tag.h3crack", (0.025, 0.28, 0.006), (0.115, -0.585, z2 + 0.03), gold, "cell3")
-    b("tag.h3bed", (0.14, 0.09, 0.006), (0.3, -0.62, z2), blue, "cell3")
-    b("tag.h3pil", (0.05, 0.07, 0.006), (0.35, -0.6, z2 + 0.03), cream, "cell3")
-    b("tag.h3one", (0.05, 0.22, 0.006), (0.46, -0.585, z2), ink, "cell3")
-    b("tag.h3flag", (0.09, 0.05, 0.006), (0.425, -0.5, z2), ink, "cell3")
+    for cell, cx in (("cell2", -0.285), ("cell3", 0.285)):
+        if cell == "cell2":
+            bx = cx - 0.07
+            b(f"tag.{cell}.hall", (0.52, 0.07, 0.006), (cx, RY - 0.19, z2), gold, cell)
+        else:
+            bx = cx - 0.01
+            b(f"tag.{cell}.door", (0.11, 0.38, 0.006), (cx - 0.21, RY, z2), ink, cell)
+            b(f"tag.{cell}.crack", (0.03, 0.36, 0.006), (cx - 0.145, RY, z2 + 0.03), gold, cell)
+        b(f"tag.{cell}.bed", (0.3, 0.15, 0.006), (bx, RY - 0.04, z2), blue, cell)
+        b(f"tag.{cell}.bleg", (0.3, 0.035, 0.006), (bx, RY - 0.13, z2), ink, cell)
+        b(f"tag.{cell}.pil", (0.11, 0.11, 0.006), (bx - 0.09, RY + 0.0, z2 + 0.03), cream, cell)
+        ob = kit.cyl(f"tag.{cell}.head", 0.058, 0.006, (bx - 0.085, RY + 0.075, z2 + 0.06), skin, root, n=14)
+        noshadow(ob)
+        grp(cell, ob)
+        b(f"tag.{cell}.one", (0.07, 0.36, 0.006), (cx + 0.2, RY, z2), ink, cell)
+        b(f"tag.{cell}.flag", (0.11, 0.06, 0.006), (cx + 0.165, RY + 0.15, z2), ink, cell)
 
 
 DIGIT = {0: "abcdef", 1: "bc", 2: "abdeg", 3: "abcdg", 4: "bcfg", 5: "acdfg"}
@@ -358,13 +362,13 @@ def build_upstairs(kit):
         grp("w_sp_N", kit.box(f"win.{nm}", sz, loc, trim))
     kit.box("win.sill", (1.9, 0.22, 0.05), (wx, 3.74, 0.93), trim)
     pane_m = kit.emit("#6f8fe0", 1.0, "winpane")
-    W["pane"] = kit.box("win.pane", (3.2, 0.04, 2.2), (wx, 4.25, 1.5), pane_m)
+    W["pane"] = kit.box("win.pane", (2.6, 0.04, 2.2), (wx - 0.3, 4.25, 1.5), pane_m)
     W["pane"].visible_shadow = False
     moon = kit.cyl("win.moon", 0.3, 0.02, (wx + 0.35, 4.2, 1.75), kit.emit("#fff6d8", 1.4, "moondisc"), rot=(math.pi / 2, 0, 0), n=24)
     moon.visible_shadow = False
     W["moon"] = moon
     snow = plastic("#f4f7ff", 0.9, spec=0.05)
-    for k, (rx, rw, rh) in enumerate(((-4.6, 1.8, 0.35), (-3.3, 1.6, 0.5), (-1.7, 1.8, 0.4), (-0.4, 1.6, 0.55), (0.8, 1.4, 0.3))):
+    for k, (rx, rw, rh) in enumerate(((-4.6, 1.8, 0.35), (-3.3, 1.6, 0.5), (-1.9, 1.2, 0.4))):
         kit.box(f"win.roof{k}", (rw, 0.4, rh), (rx + 0.6, 4.15, 0.95 + rh / 2 - 0.1), snow, bevel=0.03)
     # ---- Dad's room (mirror): east wall, north, south, the hall wall with its door
     wall(kit, "ddE", "w_dd_E", (4.25, 0), (4.25, 3.8), 0.1, H, sky)
@@ -399,7 +403,7 @@ def build_upstairs(kit):
     # two lilac tally strokes on the headboard's east corner post, 1.5 cm proud
     tally = plastic("#b78be0", 0.5)
     for k in range(2):
-        kit.box(f"tally{k}", (0.014, 0.012, 0.12), (G.BX + 0.48 - 0.013 + k * 0.026, 3.57 - 0.03 - 0.006, 0.93), tally, rot=(0, 0.25 * (1 if k else -1), 0))
+        kit.box(f"tally{k}", (0.016, 0.012, 0.14), (G.BX + 0.48 - 0.03 + k * 0.045, 3.57 - 0.03 - 0.006, 0.93), tally)
     W["quilt"] = {
         "flat": make_quilt(kit, "quilt.flat", rose, G.BX, 1.6, 3.0, tucked=True),
         "lump": make_quilt(kit, "quilt.lump", rose, G.BX, 1.6, 2.92),
@@ -480,6 +484,21 @@ def build_upstairs(kit):
     grp("pennant", pen)
     grp("pennant", kit.cyl("pennant.star", 0.07, 0.012, (-2.35, 0.9, 0.024), plastic("#ffd36b", 0.5), n=5))
     grp("pennant", kit.box("pennant.stick", (1.3, 0.025, 0.025), (-2.5, 0.9, 0.03), plastic("#b07c4a", 0.6)))
+    # Grandma's hand (a small skin block with a wrist), a soft shadow for the stripe, and the gold line at her door's edge
+    skin_h = plastic("#9a6a48", 0.5)
+    hroot = kit.empty("ghand", (-3.52, 2.45, 1.15))
+    hobs = [kit.box("ghand.palm", (0.11, 0.13, 0.035), (0, 0, 0), skin_h, hroot, bevel=0.012),
+            kit.box("ghand.wrist", (0.18, 0.07, 0.05), (0.14, 0, 0.0), skin_h, hroot, bevel=0.01),
+            kit.box("ghand.thumb", (0.05, 0.07, 0.03), (-0.01, -0.09, 0.0), skin_h, hroot, bevel=0.01)]
+    hobs += [kit.box(f"ghand.f{k}", (0.07, 0.025, 0.03), (-0.085, -0.045 + 0.03 * k, 0.0), skin_h, hroot, bevel=0.008) for k in range(4)]
+    W["hand"] = {"root": hroot, "objs": hobs}
+    W["shadow"] = kit.box("hallshadow", (0.24, 0.36, 0.004), (-1.75, 2.0, 0.0), plastic("#8f87a6", 0.9, spec=0.0))
+    W["shadow"].location = (-1.75, 2.0, 0.017)
+    W["shadow"].visible_shadow = False
+    W["crack"] = [kit.box("gr.crack", (0.035, 0.05, 2.0), (0.425, 6.57, 1.0), gold),
+                  kit.mesh_obj("gr.crackfloor", [(0.38, 6.56, 0.013), (0.47, 6.56, 0.013), (0.47, 5.0, 0.013), (0.38, 5.0, 0.013)], [(0, 1, 2, 3)], gold)]
+    for ob in W["crack"]:
+        ob.visible_shadow = False
     # a hall rug and the mint slippers outside my door (morning)
     kit.box("hall.rug", (0.7, 1.4, 0.015), (0.0, 4.6, 0.008), plastic("#e8869e", 0.9, spec=0.03))
     cream_s = plastic("#f7edd3", 0.8)
@@ -857,7 +876,7 @@ def animate(kit, story, tl, t, ctx):
         gains[nm] = look["g"].get(nm, 0.0) * m.get("gmul", 1.0) if nm != "sun" else 0.0
     gains["sun"] = look["sun"] * 1.0
     gains["rim"] = m.get("rim", 0.0)
-    gains["lamp"] = look["g"].get("lamp", 0.0)
+    gains["lamp"] = m.get("lampg", look["g"].get("lamp", 0.0))
     # world and the sun's direction
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
@@ -921,11 +940,11 @@ def animate(kit, story, tl, t, ctx):
     _group("boxes", True)
     W["car"].hide_render = False
     if W.get("gskirt") is not None:
-        W["gskirt"].hide_render = bool(m.get("noskirt", False))
+        W["gskirt"].hide_render = bool(m.get("noskirt", False)) or not m.get("has_grandma")   # a child with its own flag still draws when its owner is hidden
     for ob in W.get("wink", []):
-        ob.hide_render = not m.get("wink", False)
+        ob.hide_render = not (m.get("wink", False) and m.get("has_grandma"))
     for ob in W.get("gcard", []):
-        ob.hide_render = not m.get("card", False)
+        ob.hide_render = not (m.get("card", False) and m.get("has_grandma"))
     # glasses: Grandma's rig extras on by day only
     for nm in ("grandma.gl-1", "grandma.gl1", "grandma.glf-1", "grandma.glf1", "grandma.glb"):
         ob = bpy.data.objects.get(nm)
@@ -941,7 +960,7 @@ def animate(kit, story, tl, t, ctx):
     _group("cell2", tg["h"] >= 0.5)
     _group("cell3", tg["h"] >= 1.5)
     # the tag sits top-left, scaled to the lens
-    dd = 1.0
+    dd = float(m.get("tagd", 1.0))   # nearer than 1 m when a prop sits closer than that to the lens
     h2 = dd * 12.0 / lens
     w2 = h2 * 9.0 / 16.0
     s = 0.60 * w2 / 0.6
@@ -949,6 +968,25 @@ def animate(kit, story, tl, t, ctx):
     s = 0.56 * w2
     tag.scale = (s, s, s)
     tag.location = (-0.50 * w2, 0.62 * h2, -dd)
+    # Grandma's small hand patting my quilt (hand only), and a slow shadow crossing the hall stripe
+    st = t - shot["start"]
+    hd = W["hand"]
+    for ob in hd["objs"]:
+        ob.hide_render = not m.get("hand")
+    if m.get("hand"):
+        lift = 0.085 * (0.5 + 0.5 * math.cos(2 * math.pi * st / 0.72 + 0.4))
+        hd["root"].location = (-3.52, 2.45, 1.15 + lift)
+    sh_ = W["shadow"]
+    sh_.hide_render = not m.get("shadow")
+    if m.get("shadow"):
+        u = min(1.0, max(0.0, st / max(0.1, shot["end"] - shot["start"])))
+        sh_.location = (-1.75, 1.95 + 1.3 * ss(u * 0.9 + 0.05), 0.0)
+    for ob in W["crack"]:
+        ob.hide_render = not m.get("crack")
+    for pre in m.get("hideobj", ()):
+        for ob in bpy.data.objects:
+            if ob.name.startswith(pre):
+                ob.hide_render = True
     _apply_cast_pose(m)
     return gains
 

@@ -73,7 +73,8 @@
  "S12": {
   "look": "D",
   "name": "S09b tally",
-  "quilt": "flat"
+  "quilt": "flat",
+  "tagd": 0.3
  },
  "S13": {
   "look": "D",
@@ -106,7 +107,8 @@
   "look": "K",
   "name": "S13a Grandma stove",
   "glasses": true,
-  "card": true
+  "card": true,
+  "has_grandma": true
  },
  "S18": {
   "look": "K",
@@ -202,7 +204,8 @@
   "name": "S23 pancake",
   "glasses": true,
   "card": true,
-  "cake0": true
+  "cake0": true,
+  "has_grandma": true
  },
  "S31": {
   "look": "K",
@@ -220,13 +223,15 @@
   "hide": [
    "s_E"
   ],
-  "noskirt": true
+  "noskirt": true,
+  "has_grandma": true
  },
  "S33": {
   "look": "SD",
   "name": "S25b Grandma stair",
   "card": true,
-  "glasses": true
+  "glasses": true,
+  "has_grandma": true
  },
  "S34": {
   "look": "N",
@@ -267,7 +272,10 @@
  "S39": {
   "look": "N",
   "name": "S29 dent",
-  "quilt": "shoulder"
+  "quilt": "shoulder",
+  "fill": 0.2,
+  "gmul": 0.45,
+  "wmul": 0.5
  },
  "S40": {
   "look": "N",
@@ -321,10 +329,12 @@
   ],
   "rim": 1500,
   "fill": 1.8,
-  "gmul": 0.5,
+  "gmul": 0.1,
+  "wmul": 0.25,
   "sit": {
    "grandma": 90
-  }
+  },
+  "has_grandma": true
  },
  "S46": {
   "look": "N",
@@ -335,10 +345,12 @@
   ],
   "rim": 1500,
   "fill": 1.8,
-  "gmul": 0.5,
+  "gmul": 0.1,
+  "wmul": 0.25,
   "sit": {
    "grandma": 90
-  }
+  },
+  "has_grandma": true
  },
  "S47": {
   "look": "N",
@@ -349,15 +361,16 @@
   "look": "N",
   "name": "S37 pat",
   "quilt": "lump",
-  "sit": {
-   "grandma": 90
-  }
+  "hand": true
  },
  "S49": {
   "look": "N",
   "name": "S38 stripe",
   "quilt": "lump",
-  "door_sp": 14
+  "door_sp": 14,
+  "shadow": true,
+  "hide": [],
+  "fill": 0.5
  },
  "S50": {
   "look": "D",
@@ -399,10 +412,12 @@
    "grandma": 80
   },
   "door_dd": 90,
+  "lampg": 90,
   "hide": [
    "w_dd_W",
    "w_dd_N"
-  ]
+  ],
+  "has_grandma": true
  },
  "S56": {
   "look": "NDAD",
@@ -412,10 +427,12 @@
    "grandma": 80
   },
   "door_dd": 90,
+  "lampg": 90,
   "hide": [
    "w_dd_W",
    "w_dd_N"
-  ]
+  ],
+  "has_grandma": true
  },
  "S57": {
   "look": "NDAD",
@@ -424,7 +441,8 @@
   "sit": {
    "grandma": 80
   },
-  "door_dd": 90
+  "door_dd": 90,
+  "has_grandma": true
  },
  "S58": {
   "look": "NDAD",
@@ -462,7 +480,8 @@
   "sit": {
    "grandma": 80
   },
-  "door_dd": 90
+  "door_dd": 90,
+  "has_grandma": true
  },
  "S63": {
   "look": "NDAD",
@@ -471,7 +490,8 @@
   "sit": {
    "grandma": 80
   },
-  "door_dd": 90
+  "door_dd": 90,
+  "has_grandma": true
  },
  "S64": {
   "look": "E",
@@ -485,7 +505,8 @@
   "sit": {
    "grandma": 80
   },
-  "door_dd": 90
+  "door_dd": 90,
+  "has_grandma": true
  },
  "S66": {
   "look": "NDAD",
@@ -518,7 +539,8 @@
   "sit": {
    "me": 80
   },
-  "door_dd": 90
+  "door_dd": 90,
+  "tagd": 0.3
  },
  "S71": {
   "look": "NDAD",
@@ -526,7 +548,8 @@
   "sit": {
    "me": 80
   },
-  "door_dd": 90
+  "door_dd": 90,
+  "tagd": 0.3
  },
  "S72": {
   "look": "NDAD",
@@ -561,7 +584,8 @@
   },
   "glasses": true,
   "card": true,
-  "wink": true
+  "wink": true,
+  "has_grandma": true
  },
  "S77": {
   "look": "E",
@@ -571,22 +595,25 @@
  "S78": {
   "look": "N",
   "name": "S65 door",
-  "door_gr": 14,
+  "door_gr": 20,
   "door_sp": 85,
-  "hide": []
+  "hide": [],
+  "crack": true
  },
  "S79": {
   "look": "N",
   "name": "S66 Grandma wall",
-  "door_gr": 14,
+  "door_gr": 20,
   "hide": [],
-  "gbed": true
+  "gbed": true,
+  "has_grandma": true
  },
  "S80": {
   "look": "N",
   "name": "S67 hall me",
-  "door_gr": 14,
-  "hide": []
+  "door_gr": 20,
+  "hide": [],
+  "crack": true
  },
  "S81": {
   "look": "N",

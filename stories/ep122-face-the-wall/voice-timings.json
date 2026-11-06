@@ -1,7 +1,7 @@
 {
  "voice": "am_adam",
  "tempo": 1.03,
- "rate": 1.45,
+ "rate": 1.32,
  "sr": 24000,
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
@@ -9,23 +9,23 @@
    "text": "Never sleep facing the wall at Grandma's.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.086,
-   "onset": 0.172,
-   "end": 1.879,
+   "dur": 2.292,
+   "onset": 0.189,
+   "end": 2.064,
    "chunks": [
     [
-     0.172,
-     0.854
+     0.189,
+     0.938
     ],
     [
-     0.854,
-     1.112
+     0.938,
+     1.222
     ],
     [
-     1.112,
-     1.879
+     1.222,
+     2.064
     ]
    ]
   },
@@ -33,19 +33,19 @@
    "text": "Something sits on your bed.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.172,
-   "end": 1.259,
+   "dur": 1.61,
+   "onset": 0.189,
+   "end": 1.383,
    "chunks": [
     [
-     0.172,
-     0.647
+     0.189,
+     0.711
     ],
     [
-     0.647,
-     1.259
+     0.711,
+     1.383
     ]
    ]
   },
@@ -53,27 +53,27 @@
    "text": "Every bed in her house is pushed against a wall,",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.241,
-   "onset": 0.172,
-   "end": 2.052,
+   "dur": 2.462,
+   "onset": 0.189,
+   "end": 2.254,
    "chunks": [
     [
-     0.172,
-     0.56
+     0.189,
+     0.615
     ],
     [
-     0.56,
-     0.897
+     0.615,
+     0.985
     ],
     [
-     0.897,
-     1.439
+     0.985,
+     1.581
     ],
     [
-     1.439,
-     2.052
+     1.581,
+     2.254
     ]
    ]
   },
@@ -81,19 +81,19 @@
    "text": "so everybody sleeps facing the room.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.862,
-   "onset": 0.172,
-   "end": 1.672,
+   "dur": 2.045,
+   "onset": 0.189,
+   "end": 1.837,
    "chunks": [
     [
-     0.172,
-     0.845
+     0.189,
+     0.928
     ],
     [
-     0.845,
-     1.672
+     0.928,
+     1.837
     ]
    ]
   },
@@ -101,31 +101,31 @@
    "text": "My aunt Ro faced the wall once, the night before she moved away.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.845,
-   "onset": 0.172,
-   "end": 2.655,
+   "dur": 3.125,
+   "onset": 0.189,
+   "end": 2.917,
    "chunks": [
     [
-     0.172,
-     0.578
+     0.189,
+     0.635
     ],
     [
-     0.578,
-     0.845
+     0.635,
+     0.928
     ],
     [
-     0.845,
-     1.379
+     0.928,
+     1.515
     ],
     [
-     1.448,
-     1.845
+     1.591,
+     2.027
     ],
     [
-     1.845,
-     2.655
+     2.027,
+     2.917
     ]
    ]
   },
@@ -133,27 +133,27 @@
    "text": "In the morning, her blanket was tucked in tight.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.052,
-   "onset": 0.172,
-   "end": 1.862,
+   "dur": 2.254,
+   "onset": 0.189,
+   "end": 2.045,
    "chunks": [
     [
-     0.172,
-     0.569
+     0.189,
+     0.625
     ],
     [
-     0.595,
-     0.94
+     0.654,
+     1.033
     ],
     [
-     0.94,
-     1.25
+     1.033,
+     1.373
     ],
     [
-     1.25,
-     1.862
+     1.373,
+     2.045
     ]
    ]
   },
@@ -161,27 +161,27 @@
    "text": "My cousin Ezra faced it the night his team lost.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.328,
-   "onset": 0.172,
-   "end": 2.121,
+   "dur": 2.557,
+   "onset": 0.189,
+   "end": 2.33,
    "chunks": [
     [
-     0.172,
-     0.768
+     0.189,
+     0.843
     ],
     [
-     0.768,
-     1.026
+     0.843,
+     1.127
     ],
     [
-     1.026,
-     1.371
+     1.127,
+     1.506
     ],
     [
-     1.371,
-     2.121
+     1.506,
+     2.33
     ]
    ]
   },
@@ -189,27 +189,27 @@
    "text": "He swears something sat on his bed till dawn.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.121,
-   "onset": 0.155,
-   "end": 1.931,
+   "dur": 2.33,
+   "onset": 0.17,
+   "end": 2.121,
    "chunks": [
     [
-     0.155,
-     0.483
+     0.17,
+     0.53
     ],
     [
-     0.483,
-     0.974
+     0.53,
+     1.07
     ],
     [
-     0.974,
-     1.276
+     1.07,
+     1.402
     ],
     [
-     1.276,
-     1.931
+     1.402,
+     2.121
     ]
    ]
   },
@@ -217,27 +217,27 @@
    "text": "I've slept at Grandma Elsie's every Christmas for twenty-six years.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 3.034,
-   "onset": 0.172,
-   "end": 2.845,
+   "dur": 3.333,
+   "onset": 0.189,
+   "end": 3.125,
    "chunks": [
     [
-     0.172,
-     0.569
+     0.189,
+     0.625
     ],
     [
-     0.569,
-     1.301
+     0.625,
+     1.43
     ],
     [
-     1.301,
-     1.845
+     1.43,
+     2.027
     ],
     [
-     1.845,
-     2.845
+     2.027,
+     3.125
     ]
    ]
   },
@@ -245,23 +245,23 @@
    "text": "And I've never faced the wall. Not once.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.069,
-   "onset": 0.155,
-   "end": 1.862,
+   "dur": 2.273,
+   "onset": 0.17,
+   "end": 2.045,
    "chunks": [
     [
-     0.155,
-     0.543
+     0.17,
+     0.596
     ],
     [
-     0.543,
-     1.103
+     0.596,
+     1.212
     ],
     [
-     1.172,
-     1.862
+     1.288,
+     2.045
     ]
    ]
   },
@@ -269,31 +269,31 @@
    "text": "This Christmas, I drove up with my whole apartment in my car.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.724,
-   "onset": 0.172,
-   "end": 2.534,
+   "dur": 2.992,
+   "onset": 0.189,
+   "end": 2.784,
    "chunks": [
     [
-     0.172,
-     0.69
+     0.189,
+     0.758
     ],
     [
-     0.741,
-     1.147
+     0.814,
+     1.26
     ],
     [
-     1.147,
-     1.328
+     1.26,
+     1.458
     ],
     [
-     1.328,
-     1.819
+     1.458,
+     1.998
     ],
     [
-     1.819,
-     2.534
+     1.998,
+     2.784
     ]
    ]
   },
@@ -301,19 +301,19 @@
    "text": "I'd lost my job.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.362,
-   "onset": 0.172,
-   "end": 1.155,
+   "dur": 1.496,
+   "onset": 0.189,
+   "end": 1.269,
    "chunks": [
     [
-     0.172,
-     0.517
+     0.189,
+     0.568
     ],
     [
-     0.517,
-     1.155
+     0.568,
+     1.269
     ]
    ]
   },
@@ -321,27 +321,27 @@
    "text": "I hadn't told anybody. Not Grandma. Not my Dad.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.655,
-   "onset": 0.172,
-   "end": 2.448,
+   "dur": 2.917,
+   "onset": 0.189,
+   "end": 2.689,
    "chunks": [
     [
-     0.172,
-     0.414
+     0.189,
+     0.455
     ],
     [
-     0.414,
-     1.103
+     0.455,
+     1.212
     ],
     [
-     1.19,
-     1.672
+     1.307,
+     1.837
     ],
     [
-     1.698,
-     2.448
+     1.865,
+     2.689
     ]
    ]
   },
@@ -349,27 +349,27 @@
    "text": "Dad's here too, in his old room across the hall.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.379,
-   "onset": 0.172,
-   "end": 2.19,
+   "dur": 2.614,
+   "onset": 0.189,
+   "end": 2.405,
    "chunks": [
     [
-     0.172,
-     0.828
+     0.189,
+     0.909
     ],
     [
-     0.897,
-     1.052
+     0.985,
+     1.155
     ],
     [
-     1.052,
-     1.388
+     1.155,
+     1.525
     ],
     [
-     1.388,
-     2.19
+     1.525,
+     2.405
     ]
    ]
   },
@@ -377,27 +377,27 @@
    "text": "That first night, I lay there looking at my boxes.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.483,
-   "onset": 0.172,
-   "end": 2.293,
+   "dur": 2.727,
+   "onset": 0.189,
+   "end": 2.519,
    "chunks": [
     [
-     0.172,
-     0.81
+     0.189,
+     0.89
     ],
     [
-     0.862,
-     1.259
+     0.947,
+     1.383
     ],
     [
-     1.259,
-     1.492
+     1.383,
+     1.639
     ],
     [
-     1.492,
-     2.293
+     1.639,
+     2.519
     ]
    ]
   },
@@ -405,27 +405,27 @@
    "text": "And I turned over to face the wall.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.81,
-   "onset": 0.155,
-   "end": 1.621,
+   "dur": 1.989,
+   "onset": 0.17,
+   "end": 1.78,
    "chunks": [
     [
-     0.155,
-     0.353
+     0.17,
+     0.388
     ],
     [
-     0.353,
-     0.741
+     0.388,
+     0.814
     ],
     [
-     0.741,
-     1.034
+     0.814,
+     1.136
     ],
     [
-     1.034,
-     1.621
+     1.136,
+     1.78
     ]
    ]
   },
@@ -433,23 +433,23 @@
    "text": "At two in the morning, the bed dipped.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.759,
-   "onset": 0.155,
-   "end": 1.569,
+   "dur": 1.932,
+   "onset": 0.17,
+   "end": 1.723,
    "chunks": [
     [
-     0.155,
-     0.474
+     0.17,
+     0.521
     ],
     [
-     0.474,
-     0.793
+     0.521,
+     0.871
     ],
     [
-     0.819,
-     1.569
+     0.9,
+     1.723
     ]
    ]
   },
@@ -457,19 +457,19 @@
    "text": "Down by my feet.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.259,
-   "onset": 0.172,
-   "end": 1.069,
+   "dur": 1.383,
+   "onset": 0.189,
+   "end": 1.174,
    "chunks": [
     [
-     0.172,
-     0.448
+     0.189,
+     0.492
     ],
     [
-     0.448,
-     1.069
+     0.492,
+     1.174
     ]
    ]
   },
@@ -477,19 +477,19 @@
    "text": "Something small sat down.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.569,
-   "onset": 0.172,
-   "end": 1.362,
+   "dur": 1.724,
+   "onset": 0.189,
+   "end": 1.496,
    "chunks": [
     [
-     0.172,
-     0.681
+     0.189,
+     0.748
     ],
     [
-     0.681,
-     1.362
+     0.748,
+     1.496
     ]
    ]
   },
@@ -497,15 +497,15 @@
    "text": "I didn't move.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.155,
-   "onset": 0.172,
-   "end": 0.948,
+   "dur": 1.269,
+   "onset": 0.189,
+   "end": 1.042,
    "chunks": [
     [
-     0.172,
-     0.948
+     0.189,
+     1.042
     ]
    ]
   },
@@ -513,23 +513,23 @@
    "text": "It sat there till the window went gray.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.81,
-   "onset": 0.155,
-   "end": 1.603,
+   "dur": 1.989,
+   "onset": 0.17,
+   "end": 1.761,
    "chunks": [
     [
-     0.155,
-     0.586
+     0.17,
+     0.644
     ],
     [
-     0.586,
-     0.983
+     0.644,
+     1.08
     ],
     [
-     0.983,
-     1.603
+     1.08,
+     1.761
     ]
    ]
   },
@@ -537,27 +537,27 @@
    "text": "In the morning, my blanket was tucked in tight.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.052,
-   "onset": 0.172,
-   "end": 1.862,
+   "dur": 2.254,
+   "onset": 0.189,
+   "end": 2.045,
    "chunks": [
     [
-     0.172,
-     0.552
+     0.189,
+     0.606
     ],
     [
-     0.578,
-     0.94
+     0.635,
+     1.033
     ],
     [
-     0.94,
-     1.25
+     1.033,
+     1.373
     ],
     [
-     1.25,
-     1.862
+     1.373,
+     2.045
     ]
    ]
   },
@@ -565,23 +565,23 @@
    "text": "And Grandma slid me the big pancake.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.155,
-   "end": 1.776,
+   "dur": 2.178,
+   "onset": 0.17,
+   "end": 1.951,
    "chunks": [
     [
-     0.155,
-     0.621
+     0.17,
+     0.682
     ],
     [
-     0.621,
-     0.922
+     0.682,
+     1.013
     ],
     [
-     0.922,
-     1.776
+     1.013,
+     1.951
     ]
    ]
   },
@@ -589,23 +589,23 @@
    "text": "She always knows who gets the big pancake.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.086,
-   "onset": 0.19,
-   "end": 1.879,
+   "dur": 2.292,
+   "onset": 0.208,
+   "end": 2.064,
    "chunks": [
     [
-     0.19,
-     0.784
+     0.208,
+     0.861
     ],
     [
-     0.784,
-     1.034
+     0.861,
+     1.136
     ],
     [
-     1.034,
-     1.879
+     1.136,
+     2.064
     ]
    ]
   },
@@ -613,27 +613,27 @@
    "text": "Her knees click on every stair now. She's eighty-ONE.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.448,
-   "onset": 0.172,
-   "end": 2.259,
+   "dur": 2.689,
+   "onset": 0.189,
+   "end": 2.481,
    "chunks": [
     [
-     0.172,
-     0.629
+     0.189,
+     0.691
     ],
     [
-     0.629,
-     0.931
+     0.691,
+     1.023
     ],
     [
-     0.931,
-     1.414
+     1.023,
+     1.553
     ],
     [
-     1.509,
-     2.259
+     1.658,
+     2.481
     ]
    ]
   },
@@ -641,23 +641,23 @@
    "text": "The second night, I faced the wall again.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.914,
-   "onset": 0.155,
-   "end": 1.724,
+   "dur": 2.102,
+   "onset": 0.17,
+   "end": 1.894,
    "chunks": [
     [
-     0.155,
-     0.621
+     0.17,
+     0.682
     ],
     [
-     0.647,
-     1.017
+     0.711,
+     1.117
     ],
     [
-     1.017,
-     1.724
+     1.117,
+     1.894
     ]
    ]
   },
@@ -665,27 +665,27 @@
    "text": "Two A.M. The dip came up by my knees.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.0,
-   "onset": 0.172,
-   "end": 1.81,
+   "dur": 2.197,
+   "onset": 0.189,
+   "end": 1.989,
    "chunks": [
     [
-     0.172,
-     0.612
+     0.189,
+     0.672
     ],
     [
-     0.612,
-     0.957
+     0.672,
+     1.051
     ],
     [
-     0.957,
-     1.155
+     1.051,
+     1.269
     ],
     [
-     1.155,
-     1.81
+     1.269,
+     1.989
     ]
    ]
   },
@@ -693,19 +693,19 @@
    "text": "Then something rested on my shoulder.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.793,
-   "onset": 0.155,
-   "end": 1.586,
+   "dur": 1.97,
+   "onset": 0.17,
+   "end": 1.742,
    "chunks": [
     [
-     0.155,
-     0.836
+     0.17,
+     0.918
     ],
     [
-     0.836,
-     1.586
+     0.918,
+     1.742
     ]
    ]
   },
@@ -713,19 +713,19 @@
    "text": "Light. Like a hand.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.241,
-   "onset": 0.19,
-   "end": 1.034,
+   "dur": 1.364,
+   "onset": 0.208,
+   "end": 1.136,
    "chunks": [
     [
-     0.19,
-     0.345
+     0.208,
+     0.379
     ],
     [
-     0.37,
-     1.034
+     0.407,
+     1.136
     ]
    ]
   },
@@ -733,23 +733,23 @@
    "text": "It stayed till the window went gray.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.155,
-   "end": 1.569,
+   "dur": 1.951,
+   "onset": 0.17,
+   "end": 1.723,
    "chunks": [
     [
-     0.155,
-     0.534
+     0.17,
+     0.587
     ],
     [
-     0.534,
-     0.948
+     0.587,
+     1.042
     ],
     [
-     0.948,
-     1.569
+     1.042,
+     1.723
     ]
    ]
   },
@@ -757,27 +757,27 @@
    "text": "The third night, it sat right behind my head.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.086,
-   "onset": 0.155,
-   "end": 1.879,
+   "dur": 2.292,
+   "onset": 0.17,
+   "end": 2.064,
    "chunks": [
     [
-     0.155,
-     0.603
+     0.17,
+     0.663
     ],
     [
-     0.629,
-     0.879
+     0.691,
+     0.966
     ],
     [
-     0.879,
-     1.301
+     0.966,
+     1.43
     ],
     [
-     1.301,
-     1.879
+     1.43,
+     2.064
     ]
    ]
   },
@@ -785,23 +785,23 @@
    "text": "I could hear it breathing.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.345,
-   "onset": 0.172,
-   "end": 1.155,
+   "dur": 1.477,
+   "onset": 0.189,
+   "end": 1.269,
    "chunks": [
     [
-     0.172,
-     0.397
+     0.189,
+     0.436
     ],
     [
-     0.397,
-     0.586
+     0.436,
+     0.644
     ],
     [
-     0.586,
-     1.155
+     0.644,
+     1.269
     ]
    ]
   },
@@ -809,19 +809,19 @@
    "text": "So I turned over.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.31,
-   "onset": 0.172,
-   "end": 1.103,
+   "dur": 1.439,
+   "onset": 0.189,
+   "end": 1.212,
    "chunks": [
     [
-     0.172,
-     0.37
+     0.189,
+     0.407
     ],
     [
-     0.37,
-     1.103
+     0.407,
+     1.212
     ]
    ]
   },
@@ -829,23 +829,23 @@
    "text": "A face. An inch from mine.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.172,
-   "end": 1.397,
+   "dur": 1.761,
+   "onset": 0.189,
+   "end": 1.534,
    "chunks": [
     [
-     0.172,
-     0.466
+     0.189,
+     0.511
     ],
     [
-     0.492,
-     0.759
+     0.54,
+     0.833
     ],
     [
-     0.759,
-     1.397
+     0.833,
+     1.534
     ]
    ]
   },
@@ -853,23 +853,23 @@
    "text": "Two eyes, wide open, in the dark.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.793,
-   "onset": 0.172,
-   "end": 1.586,
+   "dur": 1.97,
+   "onset": 0.189,
+   "end": 1.742,
    "chunks": [
     [
-     0.172,
-     0.552
+     0.189,
+     0.606
     ],
     [
-     0.586,
-     0.966
+     0.644,
+     1.061
     ],
     [
-     0.992,
-     1.586
+     1.089,
+     1.742
     ]
    ]
   },
@@ -877,19 +877,19 @@
    "text": "I shut mine so fast.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.483,
-   "onset": 0.172,
-   "end": 1.276,
+   "dur": 1.629,
+   "onset": 0.189,
+   "end": 1.402,
    "chunks": [
     [
-     0.172,
-     0.621
+     0.189,
+     0.682
     ],
     [
-     0.621,
-     1.276
+     0.682,
+     1.402
     ]
    ]
   },
@@ -897,23 +897,23 @@
    "text": "It patted my blanket, twice.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.638,
-   "onset": 0.155,
-   "end": 1.431,
+   "dur": 1.799,
+   "onset": 0.17,
+   "end": 1.572,
    "chunks": [
     [
-     0.155,
-     0.474
+     0.17,
+     0.521
     ],
     [
-     0.474,
-     0.862
+     0.521,
+     0.947
     ],
     [
-     0.897,
-     1.431
+     0.985,
+     1.572
     ]
    ]
   },
@@ -921,27 +921,27 @@
    "text": "Then the floor creaked, and it was gone.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.828,
-   "onset": 0.172,
-   "end": 1.638,
+   "dur": 2.008,
+   "onset": 0.189,
+   "end": 1.799,
    "chunks": [
     [
-     0.172,
-     0.31
+     0.189,
+     0.341
     ],
     [
-     0.31,
-     0.81
+     0.341,
+     0.89
     ],
     [
-     0.862,
-     0.992
+     0.947,
+     1.089
     ],
     [
-     0.992,
-     1.638
+     1.089,
+     1.799
     ]
    ]
   },
@@ -949,27 +949,27 @@
    "text": "In the morning, Grandma's slippers were outside my door.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.586,
-   "onset": 0.172,
-   "end": 2.397,
+   "dur": 2.841,
+   "onset": 0.189,
+   "end": 2.633,
    "chunks": [
     [
-     0.172,
-     0.569
+     0.189,
+     0.625
     ],
     [
-     0.603,
-     1.25
+     0.663,
+     1.373
     ],
     [
-     1.25,
-     1.776
+     1.373,
+     1.951
     ],
     [
-     1.776,
-     2.397
+     1.951,
+     2.633
     ]
    ]
   },
@@ -977,23 +977,23 @@
    "text": "And I got the big pancake. again.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.155,
-   "end": 1.776,
+   "dur": 2.178,
+   "onset": 0.17,
+   "end": 1.951,
    "chunks": [
     [
-     0.155,
-     0.457
+     0.17,
+     0.502
     ],
     [
-     0.457,
-     1.121
+     0.502,
+     1.231
     ],
     [
-     1.199,
-     1.776
+     1.317,
+     1.951
     ]
    ]
   },
@@ -1001,19 +1001,19 @@
    "text": "The fourth night, I didn't sleep.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.155,
-   "end": 1.397,
+   "dur": 1.761,
+   "onset": 0.17,
+   "end": 1.534,
    "chunks": [
     [
-     0.155,
-     0.638
+     0.17,
+     0.701
     ],
     [
-     0.664,
-     1.397
+     0.73,
+     1.534
     ]
    ]
   },
@@ -1021,27 +1021,27 @@
    "text": "At two, across the hall, Dad's door creaked.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.086,
-   "onset": 0.155,
-   "end": 1.897,
+   "dur": 2.292,
+   "onset": 0.17,
+   "end": 2.083,
    "chunks": [
     [
-     0.155,
-     0.414
+     0.17,
+     0.455
     ],
     [
-     0.439,
-     0.931
+     0.483,
+     1.023
     ],
     [
-     0.966,
-     1.371
+     1.061,
+     1.506
     ],
     [
-     1.371,
-     1.897
+     1.506,
+     2.083
     ]
    ]
   },
@@ -1049,19 +1049,19 @@
    "text": "Dad was lying facing the wall.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.69,
-   "onset": 0.172,
-   "end": 1.5,
+   "dur": 1.856,
+   "onset": 0.189,
+   "end": 1.648,
    "chunks": [
     [
-     0.172,
-     0.681
+     0.189,
+     0.748
     ],
     [
-     0.681,
-     1.5
+     0.748,
+     1.648
     ]
    ]
   },
@@ -1069,31 +1069,31 @@
    "text": "And sitting on the edge of his bed, in her mint cardigan,",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.483,
-   "onset": 0.155,
-   "end": 2.293,
+   "dur": 2.727,
+   "onset": 0.17,
+   "end": 2.519,
    "chunks": [
     [
-     0.155,
-     0.474
+     0.17,
+     0.521
     ],
     [
-     0.474,
-     0.819
+     0.521,
+     0.9
     ],
     [
-     0.819,
-     1.31
+     0.9,
+     1.439
     ],
     [
-     1.362,
-     1.5
+     1.496,
+     1.648
     ],
     [
-     1.5,
-     2.293
+     1.648,
+     2.519
     ]
    ]
   },
@@ -1101,15 +1101,15 @@
    "text": "was Grandma.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.155,
-   "onset": 0.172,
-   "end": 0.931,
+   "dur": 1.269,
+   "onset": 0.189,
+   "end": 1.023,
    "chunks": [
     [
-     0.172,
-     0.931
+     0.189,
+     1.023
     ]
    ]
   },
@@ -1117,27 +1117,27 @@
    "text": "The something that sits on your bed is Grandma.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.224,
-   "onset": 0.155,
-   "end": 2.017,
+   "dur": 2.443,
+   "onset": 0.17,
+   "end": 2.216,
    "chunks": [
     [
-     0.155,
-     0.457
+     0.17,
+     0.502
     ],
     [
-     0.457,
-     0.836
+     0.502,
+     0.918
     ],
     [
-     0.836,
-     1.233
+     0.918,
+     1.355
     ],
     [
-     1.233,
-     2.017
+     1.355,
+     2.216
     ]
    ]
   },
@@ -1145,27 +1145,27 @@
    "text": "In our family, you only face the wall when you're sad.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.483,
-   "onset": 0.172,
-   "end": 2.276,
+   "dur": 2.727,
+   "onset": 0.189,
+   "end": 2.5,
    "chunks": [
     [
-     0.172,
-     0.69
+     0.189,
+     0.758
     ],
     [
-     0.741,
-     1.259
+     0.814,
+     1.383
     ],
     [
-     1.259,
-     1.578
+     1.383,
+     1.733
     ],
     [
-     1.578,
-     2.276
+     1.733,
+     2.5
     ]
    ]
   },
@@ -1173,23 +1173,23 @@
    "text": "Aunt Ro. Ezra. me.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.172,
-   "end": 1.259,
+   "dur": 1.61,
+   "onset": 0.189,
+   "end": 1.383,
    "chunks": [
     [
-     0.172,
-     0.552
+     0.189,
+     0.606
     ],
     [
-     0.586,
-     0.81
+     0.644,
+     0.89
     ],
     [
-     0.845,
-     1.259
+     0.928,
+     1.383
     ]
    ]
   },
@@ -1197,23 +1197,23 @@
    "text": "The rule is how she knows.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.534,
-   "onset": 0.172,
-   "end": 1.328,
+   "dur": 1.686,
+   "onset": 0.189,
+   "end": 1.458,
    "chunks": [
     [
-     0.172,
-     0.448
+     0.189,
+     0.492
     ],
     [
-     0.448,
-     0.69
+     0.492,
+     0.758
     ],
     [
-     0.69,
-     1.328
+     0.758,
+     1.458
     ]
    ]
   },
@@ -1221,23 +1221,23 @@
    "text": "She never asks why. She just sits.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.19,
-   "end": 1.586,
+   "dur": 1.951,
+   "onset": 0.208,
+   "end": 1.742,
    "chunks": [
     [
-     0.19,
-     0.397
+     0.208,
+     0.436
     ],
     [
-     0.397,
-     0.828
+     0.436,
+     0.909
     ],
     [
-     0.879,
-     1.586
+     0.966,
+     1.742
     ]
    ]
   },
@@ -1245,23 +1245,23 @@
    "text": "Dad had seen the boxes in my car.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.862,
-   "onset": 0.172,
-   "end": 1.672,
+   "dur": 2.045,
+   "onset": 0.189,
+   "end": 1.837,
    "chunks": [
     [
-     0.172,
-     0.56
+     0.189,
+     0.615
     ],
     [
-     0.56,
-     0.974
+     0.615,
+     1.07
     ],
     [
-     0.974,
-     1.672
+     1.07,
+     1.837
     ]
    ]
   },
@@ -1269,27 +1269,27 @@
    "text": "The fifth night, Grandma's knees wouldn't make the stairs.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.431,
-   "onset": 0.155,
-   "end": 2.241,
+   "dur": 2.67,
+   "onset": 0.17,
+   "end": 2.462,
    "chunks": [
     [
-     0.155,
-     0.586
+     0.17,
+     0.644
     ],
     [
-     0.621,
-     1.276
+     0.682,
+     1.402
     ],
     [
-     1.276,
-     1.561
+     1.402,
+     1.714
     ],
     [
-     1.561,
-     2.241
+     1.714,
+     2.462
     ]
    ]
   },
@@ -1297,23 +1297,23 @@
    "text": "And Dad faced the wall again.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.672,
-   "onset": 0.155,
-   "end": 1.483,
+   "dur": 1.837,
+   "onset": 0.17,
+   "end": 1.629,
    "chunks": [
     [
-     0.155,
-     0.492
+     0.17,
+     0.54
     ],
     [
-     0.492,
-     0.776
+     0.54,
+     0.852
     ],
     [
-     0.776,
-     1.483
+     0.852,
+     1.629
     ]
    ]
   },
@@ -1321,27 +1321,27 @@
    "text": "The rule says something sits on your bed.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.862,
-   "onset": 0.155,
-   "end": 1.655,
+   "dur": 2.045,
+   "onset": 0.17,
+   "end": 1.818,
    "chunks": [
     [
-     0.155,
-     0.569
+     0.17,
+     0.625
     ],
     [
-     0.569,
-     0.828
+     0.625,
+     0.909
     ],
     [
-     0.828,
-     1.112
+     0.909,
+     1.222
     ],
     [
-     1.112,
-     1.655
+     1.222,
+     1.818
     ]
    ]
   },
@@ -1349,19 +1349,19 @@
    "text": "Something. Could be anybody.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.586,
-   "onset": 0.19,
-   "end": 1.397,
+   "dur": 1.742,
+   "onset": 0.208,
+   "end": 1.534,
    "chunks": [
     [
-     0.19,
-     0.483
+     0.208,
+     0.53
     ],
     [
-     0.517,
-     1.397
+     0.568,
+     1.534
     ]
    ]
   },
@@ -1369,19 +1369,19 @@
    "text": "So I crossed the hall,",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.293,
-   "onset": 0.172,
-   "end": 1.103,
+   "dur": 1.42,
+   "onset": 0.189,
+   "end": 1.212,
    "chunks": [
     [
-     0.172,
-     0.578
+     0.189,
+     0.635
     ],
     [
-     0.578,
-     1.103
+     0.635,
+     1.212
     ]
    ]
   },
@@ -1389,27 +1389,27 @@
    "text": "and sat down on the edge of my dad's bed.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.0,
-   "onset": 0.172,
-   "end": 1.793,
+   "dur": 2.197,
+   "onset": 0.189,
+   "end": 1.97,
    "chunks": [
     [
-     0.172,
-     0.595
+     0.189,
+     0.654
     ],
     [
-     0.595,
-     0.905
+     0.654,
+     0.994
     ],
     [
-     0.905,
-     1.069
+     0.994,
+     1.174
     ],
     [
-     1.069,
-     1.793
+     1.174,
+     1.97
     ]
    ]
   },
@@ -1417,19 +1417,19 @@
    "text": "I didn't say a word.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.31,
-   "onset": 0.172,
-   "end": 1.103,
+   "dur": 1.439,
+   "onset": 0.189,
+   "end": 1.212,
    "chunks": [
     [
-     0.172,
-     0.534
+     0.189,
+     0.587
     ],
     [
-     0.534,
-     1.103
+     0.587,
+     1.212
     ]
    ]
   },
@@ -1437,15 +1437,15 @@
    "text": "Neither did he.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.138,
-   "onset": 0.19,
-   "end": 0.862,
+   "dur": 1.25,
+   "onset": 0.208,
+   "end": 0.947,
    "chunks": [
     [
-     0.19,
-     0.862
+     0.208,
+     0.947
     ]
    ]
   },
@@ -1453,31 +1453,31 @@
    "text": "But after a while, he turned over to face the room.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.31,
-   "onset": 0.155,
-   "end": 2.121,
+   "dur": 2.538,
+   "onset": 0.17,
+   "end": 2.33,
    "chunks": [
     [
-     0.155,
-     0.423
+     0.17,
+     0.464
     ],
     [
-     0.423,
-     0.724
+     0.464,
+     0.795
     ],
     [
-     0.759,
-     1.224
+     0.833,
+     1.345
     ],
     [
-     1.224,
-     1.517
+     1.345,
+     1.667
     ],
     [
-     1.517,
-     2.121
+     1.667,
+     2.33
     ]
    ]
   },
@@ -1485,23 +1485,23 @@
    "text": "In the morning, Dad got the big pancake.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.966,
-   "onset": 0.172,
-   "end": 1.759,
+   "dur": 2.159,
+   "onset": 0.189,
+   "end": 1.932,
    "chunks": [
     [
-     0.172,
-     0.569
+     0.189,
+     0.625
     ],
     [
-     0.603,
-     0.922
+     0.663,
+     1.013
     ],
     [
-     0.922,
-     1.759
+     1.013,
+     1.932
     ]
    ]
   },
@@ -1509,19 +1509,19 @@
    "text": "I made it myself.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.293,
-   "onset": 0.172,
-   "end": 1.103,
+   "dur": 1.42,
+   "onset": 0.189,
+   "end": 1.212,
    "chunks": [
     [
-     0.172,
-     0.406
+     0.189,
+     0.445
     ],
     [
-     0.406,
-     1.103
+     0.445,
+     1.212
     ]
    ]
   },
@@ -1529,15 +1529,15 @@
    "text": "Grandma just winked.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.379,
-   "onset": 0.172,
-   "end": 1.19,
+   "dur": 1.515,
+   "onset": 0.189,
+   "end": 1.307,
    "chunks": [
     [
-     0.172,
-     1.19
+     0.189,
+     1.307
     ]
    ]
   },
@@ -1545,27 +1545,27 @@
    "text": "Tonight's the last night before we all drive home.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 2.293,
-   "onset": 0.172,
-   "end": 2.103,
+   "dur": 2.519,
+   "onset": 0.189,
+   "end": 2.311,
    "chunks": [
     [
-     0.172,
-     0.483
+     0.189,
+     0.53
     ],
     [
-     0.483,
-     0.879
+     0.53,
+     0.966
     ],
     [
-     0.879,
-     1.328
+     0.966,
+     1.458
     ],
     [
-     1.328,
-     2.103
+     1.458,
+     2.311
     ]
    ]
   },
@@ -1573,23 +1573,23 @@
    "text": "Grandma's door is open a crack.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.793,
-   "onset": 0.172,
-   "end": 1.586,
+   "dur": 1.97,
+   "onset": 0.189,
+   "end": 1.742,
    "chunks": [
     [
-     0.172,
-     0.776
+     0.189,
+     0.852
     ],
     [
-     0.776,
-     1.043
+     0.852,
+     1.145
     ],
     [
-     1.043,
-     1.586
+     1.145,
+     1.742
     ]
    ]
   },
@@ -1597,19 +1597,19 @@
    "text": "And she's facing the wall.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.448,
-   "onset": 0.155,
-   "end": 1.259,
+   "dur": 1.591,
+   "onset": 0.17,
+   "end": 1.383,
    "chunks": [
     [
-     0.155,
-     0.716
+     0.17,
+     0.786
     ],
     [
-     0.716,
-     1.259
+     0.786,
+     1.383
     ]
    ]
   },
@@ -1617,23 +1617,23 @@
    "text": "So I'm going to sit on hers.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.569,
-   "onset": 0.172,
-   "end": 1.362,
+   "dur": 1.724,
+   "onset": 0.189,
+   "end": 1.496,
    "chunks": [
     [
-     0.172,
-     0.474
+     0.189,
+     0.521
     ],
     [
-     0.474,
-     0.698
+     0.521,
+     0.767
     ],
     [
-     0.698,
-     1.362
+     0.767,
+     1.496
     ]
    ]
   },
@@ -1641,27 +1641,27 @@
    "text": "It's the one rule she ever taught us.",
    "who": "narrator",
    "voice": "am_adam",
-   "rate": 1.45,
+   "rate": 1.32,
    "tempo": 1.03,
-   "dur": 1.793,
-   "onset": 0.155,
-   "end": 1.603,
+   "dur": 1.97,
+   "onset": 0.17,
+   "end": 1.761,
    "chunks": [
     [
-     0.155,
-     0.379
+     0.17,
+     0.417
     ],
     [
-     0.379,
-     0.759
+     0.417,
+     0.833
     ],
     [
-     0.759,
-     1.017
+     0.833,
+     1.117
     ],
     [
-     1.017,
-     1.603
+     1.117,
+     1.761
     ]
    ]
   }
