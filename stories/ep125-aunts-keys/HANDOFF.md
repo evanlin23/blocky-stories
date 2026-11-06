@@ -17,3 +17,4 @@
 - PR #346 opened. First proof (run 42199390652) was on rev 13.
 - shardcheck (#345) found 6 objects differing at shard starts (S01/S02 extras and Lou's glasses). Fixed in set.py (rev 14), shardcheck 0, gate OPEN, pushed 4cd6bb6f.
 - Now: waiting on the proof for 4cd6bb6f, then proof qa (opus), commit qa/ep125-aunts-keys.json, merge on green test.
+- Proof run 42203949810 (rev 14) passed; proof qa PASS (qa/ep125-aunts-keys.json). Next: merge on green test.

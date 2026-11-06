@@ -1,0 +1,25 @@
+{
+ "stage": "proof",
+ "film": "proof-42203949810",
+ "run": 42203949810,
+ "sha": "482a7d50da15cd0dd01da45d2325a24caa0cbaca",
+ "verdict": "pass",
+ "date": "2026-11-06",
+ "checked": [
+  "frames every 2 s",
+  "first 3 s every frame",
+  "S01-S02 extras (glasses, hair, moustache)",
+  "reveal 46-58 s at 2 fps",
+  "two-shots 59-61 s and 76 s",
+  "92 s, 104.5 s",
+  "cover 40.2 s",
+  "loudness and tail",
+  "craft",
+  "flash",
+  "clip",
+  "package and opening",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.2 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 16.3 | 14.0– | ok |\n| macro.motion_energy_q | 7.03 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 7.12 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.061 | –0.25 | ok |\n| spec.shot_p90_s | 1.92 | –2.5 | ok |\n| macro.longest_still_s | 0.13 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.83 | 1.5– | ok |\n| spec.camera_move_share | 0.998 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.437 | 0.35– | ok |\n| macro.brightness_first_3s | 0.559 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.599 | 0.42– | ok |\n| macro.contrast_mean | 0.219 | 0.18– | ok |\n| spec.face_big_share | 0.673 | 0.4– | ok |\n| spec.caption_share | 0.981 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.695 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.077 | –0.25 | ok |\n| micro.idle_window_share | 0.022 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.99 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.4 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0444 | –0.08 | ok |\n| sound.hf_jump_max | 0.0127 | –0.04 | ok |",
+ "notes": "Proof 113.8 s, 270x480 4 samples, drawn at 482a7d50 (last film-file change 4cd6bb6f, rev 14 shard fix; 482a7d50 adds HANDOFF.md only). verdict.json pass. -14.1 LUFS / -1.8 dBTP, LRA 1.1; tail ends on L69 running into L01, no cut. Flash passes (1/s, 3f 3/s, red 0); clip.json 0 hits of 528 times. Gate OPEN. Opening confess matches L01 'My aunt has a key...'; last upload ep62 is count, no clash.\nSecond one: warm amber close-up of Aunt Lou (glasses, white hair, yellow raincoat, key ring at her waist) at her teal door with brass knocker and the '1' plate, slow push; the tag (key 12, locks 0) top left; 'My aunt has a key to every house HERE. Including YOURS.' poses the threat to the viewer.\nShard fix holds: S01-S02 Lou keeps her glasses and her hair piece sits on her head; Mr. Ames's moustache stays on his face (8 s). No floating extras seen anywhere.\nBatch 13: no blink, pulse or flicker seen (lamps steady); max 2 faces, two-shots (59-61 s blanket, 76 s) are frontal, not profile; night faces warm and readable; footage full warm color. Reveal S35 (55.5-56.5 s, 'It's ME.') is level warm footage on her top step, eyes shut, teal door behind.\nPolish on: punch-ins 0.7/10 s on key words, no still over 0.27 s, captions clean and inside the safe area, no dead silence, hf jump 0.013. Cover 40.2 s (Lou in her doorway in the raincoat, lamp-lit) is strong.\nShould-fix, not blocking (known): 'Fast ASLEEP' over my awake eyes-open face at 56.7 s (S37); plant behind my head at ~104.5 s (S73 fountain); the lock glyph in the tag reads as an 8. Also minor: at 76.5 s the tag sits on my hairline.\ncraft: 0 block, 0 near, 0 warn."
+}
