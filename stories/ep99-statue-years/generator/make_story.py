@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -222,9 +222,9 @@ beat("dad", "L10.1", expr="laugh", arms=[0, 155], head=[0, 6])
 shot("L10", mv([SX - 0.5, SY - 3.4, 1.7], [SX, SY - 0.5, 1.7], 44, [SX - 0.3, SY - 2.8, 1.72], [SX, SY - 0.5, 1.7], 44), name="dadlaugh")
 # L11: a stranger at the counter looks from Dad to Mom
 only("L11", ["dad", "mom", "c2"])
-put("c2", "L11", [CX + 1.6, CY - 0.9], 0, expr="polite", head=[0, 0])
+put("c2", "L11", [CX + 1.75, CY - 0.9], 0, expr="polite", head=[0, 0])
 put("dad", "L11", [CX + 0.3, CY - 0.9], 0, expr="smile")
-put("mom", "L11", [CX - 1.0, CY - 0.9], 0, expr="polite", side=[0, 125])
+put("mom", "L11", [CX - 1.15, CY - 0.9], 0, expr="polite", side=[0, 125])
 beat("c2", "L11+0.5", head=[-35, 0])
 beat("c2", "L11+1.0", head=[35, 0])
 shot("L11", mv([CX + 0.6, CY + 2.9, 1.85], [CX + 0.2, CY - 0.9, 1.6], 34, [CX + 0.3, CY + 2.4, 1.8], [CX + 0.2, CY - 0.9, 1.6], 34), name="stranger")
@@ -257,7 +257,7 @@ shot("L16", mv([7.0, -25.0, Z0 + 5.0], [0.0, 0.0, ZB + 5.5], 30, [5.5, -23.0, Z0
 shot("L16.1", mv([-3.8, -8.6, ZB + 3.6], [0.0, -1.0, ZB + 5.6], 36, [-3.2, -8.4, ZB + 4.4], [0.0, -1.0, ZB + 5.8], 36), name="beardchest2")
 # L17: the town at its mirrors
 only("L17", ["c3", "c4", "c5"])
-for who, xo, e in [("c3", -1.3, "worried"), ("c4", 0.0, "worried"), ("c5", 1.3, "wide")]:
+for who, xo, e in [("c3", -1.45, "worried"), ("c4", 0.0, "worried"), ("c5", 1.45, "wide")]:
     put(who, "L17", [MX + xo, MY + 0.9], 180, expr=e)
 beat("c4", "L17+0.5", head=[0, 10], expr="wide")
 shot("L17", mv([MX - 0.8, MY - 4.0, 1.7], [MX, MY + 1.5, 1.8], 26, [MX + 0.6, MY - 3.6, 1.7], [MX, MY + 1.5, 1.8], 26), name="mirrors")
@@ -297,9 +297,8 @@ shot("L22.1", mv([HX - 1.5, HY - 0.1, 1.65], [HX - 1.5, HY + 2.4, 1.6], 45, [HX 
 only("L23", ["mom"])
 cue("L23", "look", id="dawn0", dur=0)
 put("mom", "L23", [OX, OY + 3.3], 0, expr="soft")
-go("mom", "L23+0.2", [OX, OY + 3.3])
-go("mom", "L23.1-0.1", [OX, OY - 2.6])
-acting["mom"][-3]["sfx"] = "door"
+go("mom", "L23.1", [OX, OY + 2.0])
+acting["mom"][-2]["sfx"] = "door"
 shot("L23", mv([OX + 3.4, OY - 5.8, 1.3], [OX, OY + 1.0, 1.4], 34, [OX + 2.6, OY - 5.4, 1.3], [OX, OY + 0.4, 1.4], 34), name="doorway")
 put("mom", "L23.1", [OX + 0.5, OY - 3.0], -90, expr="soft")
 go("mom", "L23>", [OX - 3.5, OY - 3.0])
@@ -364,8 +363,8 @@ cue("L32", "look", id="day", dur=0)
 only("L32", ["mom", "dad"])
 put("dad", "L32", [SX - 0.7, SY + 1.4], 0, expr="smile", arms=[0, 40])
 put("mom", "L32", [SX + 0.7, SY + 1.4], 0, expr="laugh", arms=[40, 0])
-go("dad", "L32+0.4", [SX - 0.7, SY - 3.4])
-go("mom", "L32+0.4", [SX + 0.7, SY - 3.4])
+go("dad", "L32.1", [SX - 0.7, SY + 0.4])
+go("mom", "L32.1", [SX + 0.7, SY + 0.4])
 shot("L32", mv([SX, SY - 9.0, 1.5], [SX, SY - 0.4, 1.6], 34, [SX, SY - 8.4, 1.5], [SX, SY - 0.8, 1.6], 34), name="armarm")
 put("dad", "L32.1", [SX - 0.7, SY + 0.0], 0, expr="smile", arms=[0, 40])
 put("mom", "L32.1", [SX + 0.7, SY + 0.0], 0, expr="smile", arms=[40, 0])
