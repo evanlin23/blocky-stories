@@ -304,6 +304,12 @@ for i, s_ in enumerate(SH):
     nx = tx + dx * math.cos(th) - dy * math.sin(th)
     ny = ty + dx * math.sin(th) + dy * math.cos(th)
     k = 0.95   # and a slight push-in
+    if 119.0 < px < 121.0:   # the stair: its walls stand at x 119.35 / 120.65, so the camera stays inside them
+        nx = tx + (nx - tx) * k
+        nx = min(120.42, max(119.58, nx))
+        ny = ty + (ny - ty) * k
+        s_["cam"] = [c0, [1.0, [round(nx, 3), round(ny, 3), round(pz, 3)], c0[2], c0[3]]]
+        continue
     s_["cam"] = [c0, [1.0, [round(tx + (nx - tx) * k, 3), round(ty + (ny - ty) * k, 3), round(pz, 3)], c0[2], c0[3]]]
 
 # ---------------------------------------------------------------------------------------------- finish: ids, acting, cues
