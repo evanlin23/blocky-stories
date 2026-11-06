@@ -21,7 +21,7 @@ sys.path.insert(0, str(ROOT))
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 13
+REV = 14
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L32")
@@ -519,7 +519,8 @@ sound = {
 remap_all(sound["music_drops"])
 remap_all(music["sections"])
 polish = {"reveal": [remap("L30"), remap("L38"), remap("L40")], "twist": remap("L38"),
-          "hold": ["S08", "S57", "S11", "S61", "S40"]}
+          "hold": ["S08", "S57", "S11", "S61", "S40"],
+          "sway": ["S22", "S24", "S29", "S30", "S31", "S34", "S37", "S39", "S41", "S42", "S45", "S53"]}
 story = {
     "slug": "ep135-fortune-dodge",
     "title": "The Fortune Machine Said SATURDAY",

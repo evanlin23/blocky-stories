@@ -15,7 +15,7 @@
  "tail": 0.2,
  "fade_in": false,
  "fade_out": false,
- "rev": 13,
+ "rev": 14,
  "look": {
   "style": "closer",
   "fog": "#bfe6ff",
@@ -38,6 +38,20 @@
     "S11",
     "S61",
     "S40"
+   ],
+   "sway": [
+    "S22",
+    "S24",
+    "S29",
+    "S30",
+    "S31",
+    "S34",
+    "S37",
+    "S39",
+    "S41",
+    "S42",
+    "S45",
+    "S53"
    ]
   }
  },
@@ -7113,7 +7127,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 13
+  "rev": 14
  },
  "set_moves": [],
  "framing_ok": [
