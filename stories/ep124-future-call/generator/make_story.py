@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L26
@@ -337,7 +337,9 @@ music = {
 sound = {
     "floor": "concrete", "steps_db": -26,
     "sfx": sfx,
-    "music_drops": [{"from": "L12", "to": "P15>", "keep": ["breath"]}, {"from": "P01", "to": "P01>", "keep": ["breath"]}],
+    "music_drops": [{"from": "L12", "to": "P15>", "keep": ["breath"]}, {"from": "P01", "to": "P01>", "keep": ["breath"]},
+                    {"from": "P22", "to": "P22>", "keep": ["breath"]}, {"from": "P24", "to": "P24>", "keep": ["breath"]},
+                    {"from": "P35", "to": "P35>", "keep": ["breath"]}],
     "rev": REV,
 }
 remap_all(sfx)

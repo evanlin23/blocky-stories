@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 5,
+ "rev": 6,
  "look": {
   "style": "closer",
   "fog": "#dfe8f4",
@@ -3518,9 +3518,30 @@
     "keep": [
      "breath"
     ]
+   },
+   {
+    "from": "P22",
+    "to": "P22>",
+    "keep": [
+     "breath"
+    ]
+   },
+   {
+    "from": "P24",
+    "to": "P24>",
+    "keep": [
+     "breath"
+    ]
+   },
+   {
+    "from": "P35",
+    "to": "P35>",
+    "keep": [
+     "breath"
+    ]
    }
   ],
-  "rev": 5
+  "rev": 6
  },
  "set_moves": [],
  "frames_ok": [
