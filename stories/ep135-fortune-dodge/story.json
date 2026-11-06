@@ -15,7 +15,7 @@
  "tail": 0.2,
  "fade_in": false,
  "fade_out": false,
- "rev": 10,
+ "rev": 11,
  "look": {
   "style": "closer",
   "fog": "#bfe6ff",
@@ -39,10 +39,7 @@
     "S60",
     "S11",
     "S61",
-    "S40",
-    "S33",
-    "S56",
-    "S17"
+    "S40"
    ]
   }
  },
@@ -7050,6 +7047,66 @@
     ],
     "tone": "hand",
     "db": -8
+   },
+   {
+    "at": "L13.1",
+    "kind": "click",
+    "db": -17
+   },
+   {
+    "at": "L14.2",
+    "kind": "thud",
+    "db": -16
+   },
+   {
+    "at": "L21",
+    "kind": "click",
+    "db": -18
+   },
+   {
+    "at": "L27",
+    "kind": "thud",
+    "db": -16
+   },
+   {
+    "at": "L35",
+    "kind": "thud",
+    "db": -17
+   },
+   {
+    "at": "L44",
+    "kind": "click",
+    "db": -18
+   },
+   {
+    "at": "L48",
+    "kind": "latch",
+    "db": -16
+   },
+   {
+    "at": "L50",
+    "kind": "thud",
+    "db": -17
+   },
+   {
+    "at": "L56",
+    "kind": "click",
+    "db": -17
+   },
+   {
+    "at": "L61",
+    "kind": "click",
+    "db": -16
+   },
+   {
+    "at": "L62.2",
+    "kind": "click",
+    "db": -17
+   },
+   {
+    "at": "L63",
+    "kind": "thud",
+    "db": -16
    }
   ],
   "music_drops": [
@@ -7058,7 +7115,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 10
+  "rev": 11
  },
  "set_moves": [],
  "framing_ok": []

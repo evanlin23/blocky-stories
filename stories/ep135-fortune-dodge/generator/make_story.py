@@ -21,7 +21,7 @@ sys.path.insert(0, str(ROOT))
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 10
+REV = 11
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L32")
@@ -484,6 +484,18 @@ sfx = [
     {"at": remap("L03.3"), "kind": "whoosh", "db": -15},
     {"at": remap("L11.2"), "kind": "click", "db": -16},
     {"at": remap("L47.1"), "kind": "knock", "pattern": [0, 0.3, 0.6], "tone": "hand", "db": -8},
+    {"at": remap("L13.1"), "kind": "click", "db": -17},
+    {"at": remap("L14.1"), "kind": "thud", "db": -16},
+    {"at": remap("L21"), "kind": "click", "db": -18},
+    {"at": remap("L27"), "kind": "thud", "db": -16},
+    {"at": remap("L35"), "kind": "thud", "db": -17},
+    {"at": remap("L44"), "kind": "click", "db": -18},
+    {"at": remap("L48"), "kind": "latch", "db": -16},
+    {"at": remap("L50"), "kind": "thud", "db": -17},
+    {"at": remap("L56"), "kind": "click", "db": -17},
+    {"at": remap("L61"), "kind": "click", "db": -16},
+    {"at": remap("L62.2"), "kind": "click", "db": -17},
+    {"at": remap("L63"), "kind": "thud", "db": -16},
 ]
 music = {
     "root": 43, "mode": "major", "bpm": 108, "seed": 135,
@@ -507,7 +519,7 @@ sound = {
 remap_all(sound["music_drops"])
 remap_all(music["sections"])
 polish = {"reveal": [remap("L30"), remap("L38"), remap("L40")], "twist": remap("L38"),
-          "hold": ["S08", "S52", "S57", "S60", "S11", "S61", "S40", "S33", "S56", "S17"]}
+          "hold": ["S08", "S52", "S57", "S60", "S11", "S61", "S40"]}
 story = {
     "slug": "ep135-fortune-dodge",
     "title": "The Fortune Machine Said SATURDAY",
