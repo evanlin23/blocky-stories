@@ -264,7 +264,7 @@ S("L34", C((KM + 0.1, 1.95, 1.4), 2.0, 0, 3, 40, d2=1.6), ring=True, note="throu
 cue("L35", "mgloves", on=False)
 scene("L35", mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="smile"), omar=dict(pos=HK_SEATS["omar"], yaw=0, expr="grin"),
       me=dict(pos=HK_SEATS["me"], yaw=0, expr="smile"))
-S("L35", C((HM - 2.4, 2.25, 1.25), 3.2, 0, 5, 30, d2=2.7), note="our kitchen table: Mom, me and Omar at dinner, Omar's plate full")
+S("L35", C((HM - 2.4, 2.25, 1.2), 4.6, 0, 6, 30, d2=4.3), note="our kitchen table: Mom, me and Omar at dinner, Omar's plate full")
 scene("L36", omar=dict(pos=(HM - 0.95, 1.95, 0), yaw=0, expr="grin", arms=[75, 75]),
       me=dict(pos=(HM + 0.5, 1.95, 0), yaw=0, expr="smile", arms=[75, 75]),
       mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="laugh"))
@@ -306,7 +306,7 @@ cue("L42.2", "stove", on=True)
 scene("L42.2", omar=dict(pos=(HM - 0.95, 1.95, 0), yaw=0, expr="wide", arms=[75, 75]),
       me=dict(pos=(HM + 0.5, 1.95, 0), yaw=0, expr="wide", arms=[70, 70]))
 S("L42.2", C((HM - 0.2, 1.95, 1.35), 2.7, 0, 5, 30, d2=2.3), note="at our apartment stove side by side, a fry basket in my hands")
-S("L42.3", C((HM - 0.2, 1.95, 1.3), 2.5, 0, 16, 34, d2=2.2), note="both of us whole, the fry basket at the end of my sleeve")
+S("L42.3", C((HM - 0.22, 1.95, 1.3), 3.0, 0, 16, 34, d2=2.75), note="both of us whole, the fry basket at the end of my sleeve")
 cue("L43", "hbask", on=False)
 cue("L43", "stove", on=False)
 scene("L43")
