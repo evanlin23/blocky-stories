@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from blocky import acting, kit, polish, rig  # noqa: E402
+from blocky import acting, hud, kit, polish, rig  # noqa: E402
 
 
 def load_set(story_dir: Path):
@@ -81,7 +81,16 @@ def cam_at(shot_spec, shot, t, chars, tl):
 
 
 def pose_at(t, story, tl, setmod, ctx, chars, shots):
-    """Everything at time t: the cast, the set's own animation, the lights and the camera. Returns the shot."""
+    """Everything at time t: the cast, the set's own animation, the lights, the camera and, when story.json has
+    a "hud", the rule tag (blocky/hud.py: past the near plane, in the corner clear of faces). Returns the shot."""
+    shot = _pose(t, story, tl, setmod, ctx, chars, shots)
+    h = hud.spec(story)
+    if h:
+        hud.apply(h, shot, lambda u: _pose(u, story, tl, setmod, ctx, chars, shots), t, list(chars))
+    return shot
+
+
+def _pose(t, story, tl, setmod, ctx, chars, shots):
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
     for name, (c, seed) in chars.items():
         s = acting.state(tl, name, t, seed)
@@ -89,11 +98,32 @@ def pose_at(t, story, tl, setmod, ctx, chars, shots):
                s["head_pitch"], s["lean"], s["bob"], s["expr"], s["mouth"], s["look"], s["blink"], s["hidden"])
     overrides = {}
     if hasattr(setmod, "animate"):
+        before = cast_parts(chars)
         overrides = setmod.animate(kit, story, tl, t, ctx) or {}
+        hide_new_parts_of_hidden_cast(chars, before)
     kit.update_lights(t, overrides)
     loc, tgt, lens, roll = cam_at(shots[shot["id"]], shot, t, chars, tl)
     kit.place_camera(loc, tgt, lens, roll)
     return shot
+
+
+def cast_parts(chars) -> set:
+    """The names of every object under each cast member's root, before the set's `animate` runs."""
+    return {ob.name for c, _ in chars.values() for ob in c.root.children_recursive}
+
+
+def hide_new_parts_of_hidden_cast(chars, before: set):
+    """Parts the set's `animate` adds under a hidden cast member are hidden on the frame they are made (lesson 44).
+    `pose()` hides a hidden character's children, but a set.py that adds parts on its first `animate` call (a
+    moustache, an earring) adds them after that, visible: they floated on frame 0 and on every render process's
+    first frame, and only the final's 64 shard starts showed it (ep117 S02). On the next frame `pose()` hides them,
+    so this makes a shard start draw what a continuous run draws. Parts that already existed keep whatever the
+    story set: some stories show a part of a hidden character on purpose (ep54's gloves, warm-shoes' shoes)."""
+    for c, _ in chars.values():
+        if c.root.hide_render:
+            for ob in c.root.children_recursive:
+                if ob.name not in before:
+                    ob.hide_render = True
 
 
 def _owner(ob, names):
