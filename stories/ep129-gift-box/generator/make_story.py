@@ -22,7 +22,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 6
+REV = 7
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -144,7 +144,7 @@ def cam(tx, ty, tz, d, lens, az=0.0, el=0.0, push=0.07, arc=2.5, to=None):
                 round(tz + dd * math.sin(e), 3)]
     tgt = [tx, ty, tz]
     t1 = list(to) if to else tgt
-    push, arc = push * 3.0, arc * 5.5   # batch 14 pace: a livelier camera on every shot
+    push, arc = push * 3.0, arc * 6.0   # batch 14 pace: a livelier camera on every shot
     return [[0, at(d, az), tgt, lens], [1, at(d * (1 - push), az + arc), t1, lens]]
 
 
@@ -162,7 +162,7 @@ def ocam(st, x, y, z, d, lens, **kw):
     return cam(G.ST[st] + x, y, z, d, lens, **kw)
 
 
-def shot(id_, at, camera, who=None, hand=0.03, step=2):
+def shot(id_, at, camera, who=None, hand=0.045, step=2):
     who = who or {}
     for n in CAST:
         if n in who:
@@ -431,7 +431,7 @@ sound = {
 }
 polish = {"emph": [remap(r) for r in ("L01.2", "L12.1", "L25.2", "L28.1", "L29.1", "L50", "L56.3")],
           "reveal": ["L50", "L56"], "twist": "L50", "camera": False,
-          "hold": ["S11", "S21", "S61", "S53"], "quiet": [["L65", "L67"]], "reframe_every": 0.7, "sway_amp": 0.012,
+          "hold": ["S11", "S21", "S61", "S53"], "quiet": [["L65", "L67"]], "reframe_every": 0.7, "sway_amp": 0.014, "punch": 0.075, "punch_rate": 0.9,
           "sway": True, "whoosh_cuts": False}
 story = {
     "slug": "ep129-gift-box",
