@@ -15,7 +15,7 @@
  "tail": 0,
  "fade_in": false,
  "fade_out": false,
- "rev": 6,
+ "rev": 7,
  "look": {
   "style": "closer",
   "fog": "#dff0ff",
@@ -1975,7 +1975,7 @@
     ]
    },
    {
-    "at": "L15>",
+    "at": "L16",
     "pos": [
      0.46,
      -0.27,
@@ -2255,13 +2255,13 @@
    "dur": 0.4
   },
   {
-   "at": "L15>",
+   "at": "L16",
    "name": "winpos",
    "dx": 0.0,
    "dy": 0.0
   },
   {
-   "at": "L15>",
+   "at": "L16",
    "name": "maecards",
    "on": 1.0
   },
@@ -2360,7 +2360,7 @@
     "lp": 3200
    }
   ],
-  "rev": 6
+  "rev": 7
  },
  "set_moves": [
   "S15",

@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 6
+REV = 7
 lines = json.loads((HERE / "lines.json").read_text())
 D2R = math.pi / 180
 T = G.T
@@ -231,9 +231,9 @@ cue("L15", "slap", u=0.0)
 cue("L15+0.05", "slap", u=1.0, dur=0.4)
 S15_T = (0.435, -0.36, T + 0.058)
 shot("L15", near(S15_T, 0.31, 40, az=0, el=20, push=0.03), "S15")
-acting["mae"].append({"at": "L15>", "pos": [SX, SY, T], "yaw": 0, "hidden": True})
-cue("L15>", "winpos", dx=0.0, dy=0.0)
-cue("L15>", "maecards", on=1.0)
+acting["mae"].append({"at": "L16", "pos": [SX, SY, T], "yaw": 0, "hidden": True})
+cue("L16", "winpos", dx=0.0, dy=0.0)
+cue("L16", "maecards", on=1.0)
 me_on("L16", "sad-smile")
 shot("L16", mv([0.45, -1.65, 1.75], [HX, HY, 1.4], 42, [0.35, -1.5, 1.72], [HX, HY, 1.4], 42), "S16")
 acting["me"].append({"from": "L16.3", "to": "L16>", "mouth": [0.4, 0.4], "flap": True})
