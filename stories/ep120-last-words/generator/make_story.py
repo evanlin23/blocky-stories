@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 12
+REV = 13
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -332,8 +332,8 @@ cue("P01", "truck", x=TR[0], y=TR[1], yaw=0.0, head=0.0, tail=0.0, door=0.0, sha
 # ---------------------------------------------------------------------------------- 04 last night (L22..L30)
 only("P01", [])
 shot("L22", mv(FROM_WIN, [TR[0] - 0.3, TR[1] + 0.3, 1.5], 40, [LX + 0.0, LY + 10.35, RZ + 1.9], [TR[0] - 0.3, TR[1] + 0.3, 1.5], 46), "eleven")
-cue("L22+1.2", "truck", shape=0.0, dur=0.0)
-cue("L22+1.2", "truck", door=1.0, dur=0.8)
+cue("L23", "truck", shape=0.0, dur=0.0)
+cue("L23", "truck", door=1.0, dur=0.8)
 shot("L23", mv([LX - 4.6, LY - 2.4, 1.6], [LX - 2.6, LY + 1.2, 0.95], 30, [LX - 4.5, LY + 3.9, 1.35], [LX - 3.1, LY + 1.4, 0.9], 34), "handle")
 put("me", "L23+1.2", [LX, LY + 10.8, RZ], 0, expr="scared")
 only("L23+1.2", ["me"])
@@ -347,7 +347,7 @@ shot("L25", mv([LX + 2.4, LY + 0.6, 1.6], [LX + 2.2, LY + 6.0, 1.5], 42, [LX + 2
 only("L26", [])
 shot("L26", mv([CBX + 0.3, CBY + 0.55, 1.2], [CBX + 0.05, CBY - 0.1, 0.6], 30, push=0.12), "palm_seat")
 shot("L27", mv([CBX + 0.9, CBY + 0.4, 1.15], [CBX + 0.4, CBY - 0.15, 0.7], 34, [CBX + 0.75, CBY + 0.3, 1.0], [CBX + 0.4, CBY - 0.15, 0.7], 34), "thermos")
-shot("L27+1.1", mv([CBX + 0.5, CBY + 0.35, 0.82], [CBX + 0.4, CBY - 0.15, 0.7], 50, [CBX + 0.5, CBY + 0.2, 0.8], [CBX + 0.4, CBY - 0.15, 0.7], 50), "dent")
+shot("L27+1.1", mv([CBX + 0.5, CBY + 0.35, 0.82], [CBX + 0.4, CBY - 0.15, 0.7], 35, [CBX + 0.5, CBY + 0.2, 0.8], [CBX + 0.4, CBY - 0.15, 0.7], 35), "dent")
 put("me", "L28", [CBX - 0.45, CBY - 0.2], 180, expr="stunned")
 sit("me", "L28")
 only("L28", ["me"])
@@ -423,7 +423,8 @@ shot("L47", mv([LX + 3.2, LY + 5.0, 1.65], [LX + 4.7, LY + 9.0, 1.55], 40, [LX +
 cue("L46-0.05", "dadfill", v=1.0, ox=0.6, oy=-2.2, oz=2.0, dur=0.0)
 cue("L50", "dadfill", v=0.0, dur=0.3)
 cue("L52-0.01", "dadfill", v=1.0, ox=0.5, oy=-2.0, oz=1.9, dur=0.0)
-cue("L53", "dadfill", v=1.0, ox=0.0, oy=2.0, oz=3.0, dur=0.0)
+cue("L53", "dadfill", v=1.0, ox=0.6, oy=-2.2, oz=2.0, dur=0.0)
+cue("L55", "dadfill", v=1.0, ox=0.0, oy=2.0, oz=3.0, dur=0.0)
 cue("L56", "dadfill", v=0.0, dur=0.3)
 cue("L48", "phone", v=1.0, dur=0.3)
 cue("L49", "phone", v=0.0, dur=0.3)
@@ -445,12 +446,12 @@ cue("L52", "truck2", head=0.0, dur=0.0)
 put("dad", "L52", [NX - 3.2, NY - 5.2], 0, expr="stunned", head=[0, -6])
 only("L52", ["dad"])
 shot("L52", mv([NX - 3.0, NY - 8.4, 1.0], [NX - 2.9, NY, 2.3], 22, [NX - 3.0, NY - 8.0, 1.0], [NX - 2.9, NY, 2.3], 22), "dad_lot")
-beat("dad", "L53", expr="sheepish", yaw=170, head=[0, -20])
-shot("L53", mv([NX - 2.6, NY + 0.5, AZ + 1.95], [NX - 3.2, NY - 5.2, 1.5], 68, [NX - 2.7, NY + 0.45, AZ + 1.9], [NX - 3.2, NY - 5.2, 1.5], 72), "dad_lot2")
+put("dad", "L53", [LX + 4.7, LY + 9.0], 10, expr="sheepish", arms=[45, 0], side=[0, 0], lean=0, head=[0, 0])
+shot("L53", mv([LX + 3.9, LY + 5.6, 1.65], [LX + 4.9, LY + 9.0, 1.55], 40, [LX + 4.1, LY + 5.9, 1.65], [LX + 4.9, LY + 9.0, 1.55], 40), "dad_lot2")
 put("me", "L54", [NX - 2.6, NY + 0.7, AZ], 0, expr="laugh")
 only("L54", ["me"])
 shot("L54", mv([NX - 2.2, NY - 4.4, AZ + 1.3], [NX - 2.6, NY + 0.7, AZ + 1.55], 46, push=0.08), "me_laugh")
-put("dad", "L55", [NX - 3.2, NY - 5.2], 170, expr="sheepish", head=[0, -20])
+put("dad", "L55", [NX - 3.2, NY - 5.2], 170, expr="sheepish", head=[0, -20], arms=[0, 0], side=[0, 0])
 only("L55", ["dad"])
 shot("L55", mv([NX - 2.6, NY + 0.5, AZ + 1.95], [NX - 3.2, NY - 5.2, 1.5], 62, [NX - 2.7, NY + 0.45, AZ + 1.9], [NX - 3.2, NY - 5.2, 1.5], 66), "dad_lot3")
 put("me", "L55+1.1", [NX - 2.6, NY + 0.7, AZ], 0, expr="smile")
@@ -481,11 +482,11 @@ put("dad", "L62", [NX + 0.6, NY + 0.5, AZ], 180, expr="warm")
 shot("L62", mv([NX + 0.6, NY + 4.6, AZ + 1.6], [NX + 0.6, NY + 0.5, AZ + 1.5], 32, [NX + 0.6, NY + 4.0, AZ + 1.6], [NX + 0.6, NY + 0.5, AZ + 1.5], 32), "dad_doorway")
 # ----------------------------------------------------------------------------- 08 eggs, sorry, Sundays (L63..L71)
 cue("L62+0.8", "eggs", v=1.0)
-put("dad", "L63", [NX - 3.2, NY + 3.6, AZ], 43, expr="smile", arms=[60, 0])
-shot("L63", mv([NX - 1.2, NY + 1.2, AZ + 1.55], [NX - 3.2, NY + 3.6, AZ + 1.45], 34, [NX - 1.5, NY + 1.5, AZ + 1.5], [NX - 3.2, NY + 3.6, AZ + 1.45], 34), "dad_stove")
+put("dad", "L63", [NX - 3.1, NY + 4.0, AZ], 20, expr="smile", arms=[60, 0])
+shot("L63", mv([NX - 1.4, NY + 1.6, AZ + 1.5], [NX - 3.5, NY + 3.75, AZ + 1.2], 34, [NX - 1.6, NY + 1.9, AZ + 1.5], [NX - 3.5, NY + 3.75, AZ + 1.2], 34), "dad_stove")
 cue("L64+0.9", "toast", v=1.0, dur=0.12)
-put("dad", "L64", [NX - 3.2, NY + 4.3, AZ], 40, expr="sheepish", arms=[0, 0])
-shot("L64", mv([NX - 0.8, NY + 1.8, AZ + 1.5], [NX - 3.6, NY + 4.8, AZ + 1.25], 32, [NX - 1.0, NY + 2.0, AZ + 1.5], [NX - 3.6, NY + 4.8, AZ + 1.25], 32), "toast")
+put("dad", "L64", [NX - 2.9, NY + 5.9, AZ], -30, expr="sheepish", arms=[0, 0])
+shot("L64", mv([NX - 1.2, NY + 4.2, AZ + 1.2], [NX - 3.5, NY + 5.4, AZ + 1.2], 40, [NX - 1.3, NY + 4.3, AZ + 1.2], [NX - 3.5, NY + 5.4, AZ + 1.2], 40), "toast")
 CH = [NX - 0.15, NX + 0.75]
 put("me", "L65", [CH[0], NY + 4.75, AZ], 0, expr="smile")
 put("dad", "L65", [CH[1], NY + 4.75, AZ], 0, expr="smile")
@@ -551,7 +552,7 @@ sfx = [
     {"at": "L51+0.9", "kind": "thud", "db": -19},
     {"at": "L64+0.9", "kind": "click", "db": -17},
     {"at": "L10", "kind": "door", "db": -11},
-    {"at": "L22+1.3", "kind": "latch", "db": -15},
+    {"at": "L23+0.1", "kind": "latch", "db": -15},
     {"at": "L33+0.05", "kind": "creak", "db": -17, "dur": 1.0},
     {"at": "L61", "kind": "knock", "db": -15},
     {"at": "L46+0.3", "kind": "knock", "db": -16},

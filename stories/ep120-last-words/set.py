@@ -366,7 +366,7 @@ def cab_interior(kit, m, ox, oy):
     dn = kit.sphere("cab.thermos.dent", 0.034, (0.0425, 0.0495, 0.16), p("#1b5530", 0.4, spec=0.1), th, seg=18)
     dn.scale = (1.3, 0.3, 1.7)
     dn.rotation_euler = (0, 0, -40.5 * D2R)
-    dr_ = kit.sphere("cab.thermos.dentlip", 0.036, (0.0445, 0.0522, 0.118), kit.metal("#d8f2de", 0.3), th, seg=18)
+    dr_ = kit.sphere("cab.thermos.dentlip", 0.036, (0.0445, 0.0522, 0.118), p("#6fd88a", 0.8, spec=0.05), th, seg=18)
     dr_.scale = (1.2, 0.2, 0.4)
     dr_.rotation_euler = (0, 0, -40.5 * D2R)
     W["thermos"] = th
@@ -514,7 +514,7 @@ def build_hall(kit, m):
     kit.box("dog.nose", (0.09, 0.05, 0.06), (0, -0.31, -0.01), blk, head, bevel=0.02)
     for sx in (-1, 1):
         kit.box(f"dog.eye{sx}", (0.055, 0.03, 0.07), (sx * 0.1, -0.17, 0.07), blk, head)
-        kit.box(f"dog.ear{sx}", (0.1, 0.1, 0.3), (sx * 0.19, 0.0, 0.26), brown, head, rot=(0, sx * 0.15, 0), bevel=0.03)
+        kit.box(f"dog.ear{sx}", (0.07, 0.15, 0.2), (sx * 0.215, 0.0, 0.1), p("#6e4020", 0.8, spec=0.05), head, rot=(0, sx * 0.25, 0), bevel=0.03)
     tailp = kit.empty("dog.tailp", (0, 0.45, 0.3), dog)
     W["dogtail"] = tailp
     kit.box("dog.tail", (0.1, 0.1, 0.4), (0, 0.0, 0.18), brown, tailp, bevel=0.04)

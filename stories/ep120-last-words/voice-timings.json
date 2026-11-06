@@ -550,30 +550,30 @@
    ]
   },
   "L22": {
-   "text": "Last night, it was there at eleven. Like always.",
+   "text": "One night, it was there at eleven. Like always.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.414,
+   "dur": 2.345,
    "onset": 0.172,
-   "end": 2.207,
+   "end": 2.138,
    "chunks": [
     [
      0.172,
-     0.5
+     0.483
     ],
     [
-     0.526,
-     0.862
+     0.509,
+     0.845
     ],
     [
-     0.862,
-     1.345
+     0.845,
+     1.293
     ],
     [
-     1.414,
-     2.207
+     1.362,
+     2.138
     ]
    ]
   },
