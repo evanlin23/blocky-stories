@@ -15,7 +15,7 @@
  "tail": 0.0,
  "fade_in": false,
  "fade_out": false,
- "rev": 2,
+ "rev": 3,
  "look": {
   "style": "closer",
   "fog": "#e4eef4",
@@ -390,6 +390,18 @@
     [
      "never LIES.",
      "never lies."
+    ],
+    [
+     "So why",
+     "So why"
+    ],
+    [
+     "did mine",
+     "did mine"
+    ],
+    [
+     "say TWO things?",
+     "say two things?"
     ]
    ]
   },
@@ -614,12 +626,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "That's not tomorrow.",
-     "That's not tomorrow."
+     "Tomorrow's the THIRTEENTH.",
+     "Tomorrow's the thirteenth."
     ],
     [
-     "That's TWO",
-     "That's two"
+     "That was TWO",
+     "That was two"
     ],
     [
      "days out.",
@@ -710,12 +722,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "That's not tomorrow.",
-     "That's not tomorrow."
+     "And twelve",
+     "And twelve"
     ],
     [
-     "That's TODAY.",
-     "That's today."
+     "was TODAY.",
+     "was today."
     ]
    ]
   },
@@ -800,8 +812,8 @@
      "Which me"
     ],
     [
-     "do I TRUST?",
-     "do I trust?"
+     "do I BELIEVE?",
+     "do I believe?"
     ]
    ]
   }
@@ -5192,7 +5204,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 2
+  "rev": 3
  },
  "set_moves": [],
  "framing_ok": [
