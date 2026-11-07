@@ -86,12 +86,12 @@ def build_room(kit):
 def build_mirror(kit):
     pl = kit.plastic
     chrome = pl("#8f9ba9", 0.35, spec=0.25)
-    glass = pl("#8cc4e0", 0.3, spec=0.25)
+    glass = pl("#6a9fbc", 0.3, spec=0.25)
     y0, y1 = G.MIR_Y0, G.MIR_Y1
     cy, ln = (y0 + y1) / 2, y1 - y0
     kit.box("mirror.plate", (0.03, ln, 2.5), (4.985, cy, 1.55), glass)
     # faint sheen bands, 1.2 cm proud of the plate
-    sheen = pl("#e6f4fb", 0.3, spec=0.2)
+    sheen = pl("#a6cfe3", 0.3, spec=0.2)
     for k, yy in enumerate((-0.4, -2.0, -3.6)):
         kit.box(f"mirror.sheen{k}", (0.02, 0.18, 2.3), (4.96, yy, 1.55), sheen)
     # top and bottom rails, thick
@@ -162,27 +162,32 @@ def build_board(kit):
 
 
 def build_glass(kit):
-    """The glass's marker: a chrome pillar and a faint cool pane, both moved by the `glass` cue."""
+    """The glass's marker: a chrome pillar and a faint cool pane, both placed on the camera by the `glass` cue (also the real mirror's edge bar and cool strip)."""
     pl = kit.plastic
-    chrome = pl("#8f9ba9", 0.35, spec=0.25)
-    W["post"] = kit.box("glass.post", (0.12, 0.5, 4.0), (0, 0, -20), chrome, bevel=0.02)
-    m = bpy.data.materials.new("glass.tint")
-    m.use_nodes = True
-    nt = m.node_tree
-    for n in list(nt.nodes):
-        nt.nodes.remove(n)
-    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
-    df = nt.nodes.new("ShaderNodeBsdfDiffuse")
-    df.inputs["Color"].default_value = kit.col("#8fcfee")
-    mx = nt.nodes.new("ShaderNodeMixShader")
-    mx.inputs["Fac"].default_value = 0.13
-    out = nt.nodes.new("ShaderNodeOutputMaterial")
-    nt.links.new(tr.outputs[0], mx.inputs[1])
-    nt.links.new(df.outputs[0], mx.inputs[2])
-    nt.links.new(mx.outputs[0], out.inputs[0])
-    W["pane"] = kit.box("glass.pane", (0.01, 8.0, 8.0), (0, 0, -20), m)
-    for o in (W["pane"],):
-        o.visible_shadow = False
+    W["post"] = kit.box("glass.post", (0.12, 0.5, 4.0), (0, 0, -20), pl("#4a535e", 0.35, spec=0.25), bevel=0.02)
+    W["ebar"] = kit.box("edge.bar", (0.12, 0.5, 4.0), (0, 0, -20), pl("#4a535e", 0.35, spec=0.25), bevel=0.02)
+
+    def tint(name, fac):
+        m = bpy.data.materials.new(name)
+        m.use_nodes = True
+        nt = m.node_tree
+        for n in list(nt.nodes):
+            nt.nodes.remove(n)
+        tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+        df = nt.nodes.new("ShaderNodeBsdfDiffuse")
+        df.inputs["Color"].default_value = kit.col("#8fcfee")
+        mx = nt.nodes.new("ShaderNodeMixShader")
+        mx.inputs["Fac"].default_value = fac
+        out = nt.nodes.new("ShaderNodeOutputMaterial")
+        nt.links.new(tr.outputs[0], mx.inputs[1])
+        nt.links.new(df.outputs[0], mx.inputs[2])
+        nt.links.new(mx.outputs[0], out.inputs[0])
+        return m
+
+    W["estrip"] = kit.box("edge.strip", (0.01, 0.5, 4.0), (0, 0, -20), tint("edge.tint", 0.5))
+    W["estrip"].visible_shadow = False
+    W["pane"] = kit.box("glass.pane", (0.01, 8.0, 8.0), (0, 0, -20), tint("glass.tint", 0.2))
+    W["pane"].visible_shadow = False
 
 
 def build_props(kit):
@@ -233,6 +238,26 @@ def build(kit, story, tl):
     fs = kit.light("faceS", "AREA", (3.0, -5.8, 2.2), 280, "#fff6ec", size=3.0, shadow=False)
     kit.aim(fs, (3.0, 0.0, 1.4))
     return {}
+
+
+def cam_now(story, tl, t):
+    """The camera (location, target, lens) at t, as the engine places it (the pack's move included, hand shake left out)."""
+    from blocky import polish
+    if "specs" not in W:
+        W["specs"] = polish.cam_specs(story, tl, polish.spec(story))
+    shot = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1])
+    keys = W["specs"][shot["id"]]["cam"]
+    u = (t - shot["start"]) / max(1e-6, shot["end"] - shot["start"])
+    if u <= keys[0][0] or len(keys) == 1:
+        k = keys[0]
+        return k[1], k[2], k[3]
+    for a, b in zip(keys, keys[1:]):
+        if u <= b[0]:
+            v = ss((u - a[0]) / max(1e-6, b[0] - a[0]))
+            lerp = lambda p, q: [p[i] + (q[i] - p[i]) * v for i in range(3)]
+            return lerp(a[1], b[1]), lerp(a[2], b[2]), a[3] + (b[3] - a[3]) * v
+    k = keys[-1]
+    return k[1], k[2], k[3]
 
 
 def hand(who, sx):
@@ -299,17 +324,40 @@ def animate(kit, story, tl, t, ctx):
                 lit[(slot, MIRROR_SEG[k] if flip else k)] = True
     for key_, ob in W["bd"].items():
         ob.hide_render = not lit[key_]
-    # the glass: the pillar and the pane in front of the camera, placed by cue on the cut
-    g = sample("glass", tl, t, {"on": 0.0, "px": 0.0, "py": 0.0, "pz": 1.5, "yaw": 0.0, "qx": 0.0, "qy": 0.0, "pw": 0.5})
-    on = g["on"] > 0.5
-    for ob in (W["post"], W["pane"]):
-        ob.hide_render = not on
-    if on:
-        W["post"].scale = (1.0, g["pw"] / 0.5, 1.0)
-        W["post"].location = (g["px"], g["py"], g["pz"])
-        W["post"].rotation_euler = (0, 0, g["yaw"])
-        W["pane"].location = (g["qx"], g["qy"], g["pz"])
-        W["pane"].rotation_euler = (0, 0, g["yaw"])
+    # the glass (mode 1: a dark chrome bar and a cool pane over the frame) and the real mirror's edge (mode 2: the bar
+    # and a strip of cool glass at the right of the frame): both ride on the camera, so they hold through its moves
+    g = sample("glass", tl, t, {"on": 0.0, "fr": 0.45, "dp": 1.0})
+    mode = int(round(g["on"]))
+    for ob in (W["post"], W["pane"], W["ebar"], W["estrip"]):
+        ob.hide_render = True
+    if mode:
+        loc, tgt, lens = cam_now(story, tl, t)
+        fx, fy = tgt[0] - loc[0], tgt[1] - loc[1]
+        n = math.hypot(fx, fy)
+        fx, fy = fx / n, fy / n
+        rx, ry = fy, -fx
+        yaw = math.atan2(fy, fx)
+        dp = g["dp"]
+        hw = 6.75 * dp / lens
+
+        def put(ob, d, lat, width):
+            ob.hide_render = False
+            ob.scale = (1.0, width / 0.5, 1.0)
+            ob.location = (loc[0] + fx * d + rx * lat, loc[1] + fy * d + ry * lat, loc[2])
+            ob.rotation_euler = (0, 0, yaw)
+
+        if mode == 1:
+            pw = max(0.5, 2.0 * hw)
+            put(W["post"], dp, g["fr"] * hw + pw / 2, pw)
+            W["pane"].hide_render = False
+            W["pane"].location = (loc[0] + fx * 0.45, loc[1] + fy * 0.45, loc[2])
+            W["pane"].rotation_euler = (0, 0, yaw)
+        else:
+            inner = 0.78 * hw
+            wd = hw - inner + 0.5
+            put(W["ebar"], dp, inner + wd / 2, wd)
+            hs = 6.75 * (dp + 0.1) / lens
+            put(W["estrip"], dp + 0.1, 0.46 * hs + (0.74 * hs - 0.46 * hs) / 2, 0.74 * hs - 0.46 * hs)
     # seated: legs level while Dre sits
     sit = sample("sit", tl, t, {n: 0.0 for n in SEATED})
     for who in SEATED:

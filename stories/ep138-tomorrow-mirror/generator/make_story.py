@@ -154,37 +154,23 @@ def camp(pos, tgt, lens, pos2=None, tgt2=None):
     return keys
 
 
-GLASS_ON = [False]
 GL = {}
 
 
-def shot(sid, at, camera, glass=None, **kw):
-    """`glass`: a dict(lens, pos, tgt, dist) when the camera is the mirror's: the chrome pillar and the cool pane go in
-    front of it by cue, on the cut; every real shot turns them off."""
-    SH.append((sid, at, camera, kw))
+def shot(sid, at, camera, glass=None, edge=True, **kw):
+    """`glass`: a dict(lens, pos, tgt, dist, fr) when the camera is the mirror's: a dark chrome bar and the cool pane
+    ride on that camera (set.py, the `glass` cue, mode 1). A real shot gets the mirror's edge instead (mode 2: the
+    bar and a strip of cool glass at the right of the frame) unless edge=False."""
+    SH.append((sid, at, camera, dict(kw, _edge=edge)))
     GL[sid] = glass
-    glass_cue(at, glass)
+    glass_cue(at, glass, edge)
 
 
-def glass_cue(at, glass):
-    """Turn the chrome pillar and the pane on in front of a glass camera (or off again after one) on the cut."""
+def glass_cue(at, glass, edge=True):
     if glass:
-        pos, tgt, lens = glass["pos"], glass["tgt"], glass["lens"]
-        fx, fy = tgt[0] - pos[0], tgt[1] - pos[1]
-        n = math.hypot(fx, fy)
-        fx, fy = fx / n, fy / n
-        dp = glass.get("dist", 1.0)
-        hw = 6.75 * dp / lens
-        pw = max(0.5, 2.0 * hw)
-        lat = glass.get("fr", 0.45) * hw + pw / 2
-        rx, ry = fy, -fx
-        cue(at, "glass", on=1.0, px=round(pos[0] + fx * dp + rx * lat, 3), py=round(pos[1] + fy * dp + ry * lat, 3),
-            pz=pos[2], yaw=round(math.atan2(fy, fx), 4), qx=round(pos[0] + fx * 0.45, 3),
-            qy=round(pos[1] + fy * 0.45, 3), pw=round(pw, 3))
-        GLASS_ON[0] = True
-    elif GLASS_ON[0]:
-        cue(at, "glass", on=0.0)
-        GLASS_ON[0] = False
+        cue(at, "glass", on=1.0, fr=glass.get("fr", 0.45), dp=glass.get("dist", 1.0))
+    else:
+        cue(at, "glass", on=2.0 if edge else 0.0, fr=0.45, dp=1.2)
 
 
 def glass_cam(tgt, lens, push=0.28, dy=0.0, cz=1.5, **kw):
@@ -255,17 +241,17 @@ key("me2", "L02+0.25", yaw=90, arms=[88, 88], blend=0.9)
 cue("L02", "props", bar=1.0, bar_who="me2")
 gshot("S02", "L02", [TX, TY, 1.1], 21, push=0.28)
 show("L03", "wendell")
-cut("wendell", "L03", [*G.WEN, 0.0], yaw=90, expr="smile", head=[0, 0], arms=[0, 0], side=[0, 0])
+cut("wendell", "L03", [-2.9, -0.55, 0.0], yaw=90, expr="smile", head=[0, 0], arms=[0, 0], side=[0, 0])
 cue("L03", "props", bar=0.0)
-cue("L03", "board", v=13.0, flip=1.0)
-shot("S03", "L03", camp([3.0, -1.4, 1.55], [-4.6, 0.6, 1.4], 24, pos2=[2.6, -1.3, 1.55]))
+cue("L03", "board", v=12.0, flip=1.0)
+shot("S03", "L03", camp([-0.2, -0.9, 1.5], [-4.97, 0.74, 1.4], 15))
 key("wendell", "L03.2", yaw=90, expr="smile", head=[0, 5])
 
 # ===== 02 the rule at work (L04 to L08)
 cue("L04", "board", v=0.0, flip=0.0)
 show("L04", "kim")
 cut("kim", "L04", [K[0], K[1], 0.0], yaw=90, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0])
-shot("S04a", "L04", camp([0.7, -0.6, 1.6], [4.9, -1.0, 1.5], 28, pos2=[1.0, -0.65, 1.6]))
+shot("S04a", "L04", camp([1.2, -3.6, 1.55], [3.6, -0.9, 1.4], 20, pos2=[1.5, -3.3, 1.55]))
 show("L04.1", "kim")
 glass_at("L04.1", "kim", expr="laugh", arms=[82, 6])
 cue("L04.1", "props", key=1.0, key_who="kim")
@@ -284,7 +270,11 @@ me_at("L07", "lena", yaw=-90, expr="smile")
 cue("L07", "props", paint=0.0)
 shot("S07", "L07", cam(ME[0], ME[1], 1.3, 1.5, -92, 36, cz=1.35, push=(1.3, 1.3)))
 show("L08")
-shot("S08", "L08", camp([2.0, 1.3, 0.95], [4.7, 0.0, 0.7], 24, pos2=[2.4, 1.1, 0.9], tgt2=[4.7, 0.0, 0.65]))
+shot("S08", "L08", camp([2.0, 1.3, 0.95], [4.7, 0.0, 0.7], 24, pos2=[2.4, 1.1, 0.9], tgt2=[4.7, 0.0, 0.65]), edge=False)
+show("L08.2", "me")
+me_at("L08.2", "me", yaw=-90, expr="uneasy")
+mouth("me", "L08.2", "L08>", 0.4)
+shot("S08b", "L08.2", cam(ME[0], ME[1], 1.3, 1.45, -78, 36, cz=1.35, push=(1.3, 1.3)))
 
 # ===== 03 my turn (L09 to L12)
 show("L09", "me")
@@ -326,14 +316,14 @@ big_mouth("me2", "L16.1", 5, 0.42)
 gshot("S16a", "L16", [TX, TY, 1.38], 26, push=0.28)
 shot_t = "L16.3"
 gshot("S16b", shot_t, [TX, TY, 1.4], 36, push=0.28, dy=0.04)
-glass_at("L17", "me2", expr="serious", pos=(3.2, G.GY - 1.4))
-gshot("S17", "L17", [BX, G.GY - 0.9, 1.0], 11, push=0.0, dy=-0.9, hold=True, fr=0.93)
+glass_at("L17", "me2", expr="serious", pos=(2.4, G.GY - 0.75), arms=[0, 0])
+gshot("S17", "L17", [BX, G.GY, 1.05], 17, push=0.0, dy=-0.4, cz=1.75, hold=True, fr=0.85)
 show("L18", "dre")
 dre_at("L18", 90, "neutral")
-shot("S18", "L18", camp([4.4, G.GY, 1.5], [BX, BY, 1.05], 30, pos2=[4.2, G.GY, 1.5]), hold=True)
+shot("S18", "L18", camp([G.GCAM[0], G.GY - 0.4, 1.75], [BX, G.GY, 1.05], 21), hold=True)
 show("L19", "none")
 cue("L19", "board", v=14.0, flip=0.0)
-gshot("S19", "L19", [-4.9, G.BOARD[1] + 0.35, 1.1], 44, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.9)
+gshot("S19", "L19", [-4.9, G.BOARD[1] + 0.35, 1.1], 44, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.62)
 show("L20", "me")
 cue("L20", "board", v=0.0, flip=0.0)
 me_at("L20", "me", yaw=-90, expr="stunned")
@@ -343,7 +333,7 @@ shot("S20", "L20", cam(ME[0], ME[1], 1.3, 1.5, -88, 36, cz=1.35, push=(1.3, 1.3)
 # ===== 05 the second message (L21 to L26)
 show("L21", "me")
 cut("me", "L21", [4.0, G.GY, 0.0], yaw=90, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0])
-shot("S21", "L21", camp([-2.6, G.GY, 1.7], [4.0, G.GY, 1.35], 20, pos2=[-2.1, G.GY, 1.7]))
+shot("S21", "L21", camp([2.4, -5.0, 1.65], [4.0, -2.0, 1.25], 18, pos2=[2.6, -4.6, 1.65]))
 show("L22", "me2")
 glass_at("L22", "me2", expr="neutral")
 gshot("S22", "L22", [TX, TY, 1.35], 26, dy=-0.08)
@@ -357,7 +347,7 @@ big_mouth("me2", "L24", 2, 0.4)
 gshot("S24", "L24", [TX, TY, 1.38], 30, push=0.28, dy=0.06)
 cue("L25", "board", v=12.0, flip=0.0)
 show("L25", "none")
-gshot("S25", "L25", [-4.9, G.BOARD[1] + 0.35, 1.1], 44, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.9)
+gshot("S25", "L25", [-4.9, G.BOARD[1] + 0.35, 1.1], 44, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.62)
 show("L26", "me")
 cue("L26", "board", v=0.0, flip=0.0)
 me_at("L26", "me", yaw=-90, expr="scared", blink=False)
@@ -366,9 +356,9 @@ shot("S26", "L26", cam(ME[0], ME[1], 1.3, 1.45, -92, 36, cz=1.35, push=(1.25, 1.
 
 # ===== 06 no answer (L27 to L31)
 show("L27", "me")
-cut("me", "L27", [2.6, -0.6, 0.0], **_pose(165, "uneasy", {"blink": False}))
+cut("me", "L27", [2.9, -1.95, 0.0], **_pose(105, "uneasy", {"blink": False}))
 mouth("me", "L27", "L27>", 0.4)
-shot("S27", "L27", camp([3.4, 2.3, 1.45], [1.81, -1.37, 1.0], 20, pos2=[3.3, 2.1, 1.45]))
+shot("S27", "L27", camp([4.7, -1.45, 1.65], [2.9, -1.45, 1.0], 14))
 me_at("L28", "me", yaw=-90, expr="uneasy")
 key("me", "L28.1", [ME[0], ME[1], 0.0], yaw=-90, expr="uneasy", head=[0, 4])
 mouth("me", "L28", "L28>", 0.4)
@@ -423,8 +413,7 @@ for sid, at, camera, kw in SH:
         keys, g = variant(sid, flip)
         flip = -flip
         new_sh.append((sid + "b", SPLITS[sid], keys, {k: v for k, v in kw.items() if k != "hold"}))
-        if g:
-            glass_cue(SPLITS[sid], g)
+        glass_cue(SPLITS[sid], g, kw.get("_edge", True))
 SH[:] = new_sh
 
 # ----------------------------------------------------------------------------------------------- finish
@@ -456,7 +445,8 @@ music = {
 }
 sound = {
     "floor": "wood", "steps_db": -24,
-    "ambience": [{"kind": "room", "from": 0, "to": "L20>", "lufs": -40},
+    "ambience": [{"kind": "room", "from": 0, "to": "L14>", "lufs": -40},
+                 {"kind": "room", "from": "P01>", "to": "L20>", "lufs": -40},
                  {"kind": "hum", "from": "L15", "to": "L16>", "lufs": -38},
                  {"kind": "hum", "from": "L22", "to": "L24>", "lufs": -38}],
     "sfx": sfx,
@@ -469,7 +459,7 @@ remap_all(sound["ambience"])
 remap_all(sound["music_drops"])
 polish = {"reveal": ["L17.2", "L19", "L25"], "twist": "L25", "emph": ["L01.2", "L17.2", "L19.2", "L25"],
           "quiet": [], "hold": sorted(set(hold)), "sway": [x["id"] for x in shots if x["id"] not in set(hold)], "sway_amp": 0.005, "idle_scale": 2.0,
-          "reframe_every": 0.5, "reframe_min": 0.9}
+          "bed_drop_db": -1.0, "reframe_every": 0.5, "reframe_min": 0.9}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
 polish["twist"] = remap(polish["twist"])
@@ -504,10 +494,10 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": ["S12a", "S03", "S03b"],
-    "frames_ok": [],
+    "frames_ok": ["S11b"],
     "staging_ok": [],
     "phonemes": {"Dre": "dɹˈA"},
-    "homophones": {"12th": "twelfth"},
+    "homophones": {"12th": "twelfth", "13th": "thirteenth"},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

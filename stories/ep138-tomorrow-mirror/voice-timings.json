@@ -194,22 +194,34 @@
    ]
   },
   "L08": {
-   "text": "Tomorrow-you never lies.",
+   "text": "Tomorrow-you never lies. So, why did mine say two things?",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.534,
+   "dur": 2.759,
    "onset": 0.172,
-   "end": 1.345,
+   "end": 2.552,
    "chunks": [
     [
      0.172,
-     0.56
+     0.5
     ],
     [
-     0.56,
-     1.345
+     0.5,
+     1.086
+    ],
+    [
+     1.164,
+     1.431
+    ],
+    [
+     1.431,
+     1.69
+    ],
+    [
+     1.69,
+     2.552
     ]
    ]
   },
@@ -486,26 +498,26 @@
    ]
   },
   "L20": {
-   "text": "That's not tomorrow. That's two days out.",
+   "text": "Tomorrow's the thirteenth. That was two days out.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
+   "dur": 2.345,
    "onset": 0.172,
-   "end": 1.845,
+   "end": 2.138,
    "chunks": [
     [
      0.172,
-     0.828
+     1.069
     ],
     [
-     0.897,
-     1.241
+     1.138,
+     1.517
     ],
     [
-     1.241,
-     1.845
+     1.517,
+     2.138
     ]
    ]
   },
@@ -618,22 +630,22 @@
    ]
   },
   "L26": {
-   "text": "That's not tomorrow. That's today.",
+   "text": "And twelve was today.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.81,
-   "onset": 0.172,
-   "end": 1.586,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.259,
    "chunks": [
     [
-     0.172,
-     0.828
+     0.155,
+     0.586
     ],
     [
-     0.879,
-     1.586
+     0.586,
+     1.259
     ]
    ]
   },
@@ -734,22 +746,22 @@
    ]
   },
   "L31": {
-   "text": "Which me do I trust?",
+   "text": "Which me do I believe?",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.345,
+   "dur": 1.431,
    "onset": 0.172,
-   "end": 1.138,
+   "end": 1.224,
    "chunks": [
     [
      0.172,
-     0.431
+     0.414
     ],
     [
-     0.431,
-     1.138
+     0.414,
+     1.224
     ]
    ]
   }
