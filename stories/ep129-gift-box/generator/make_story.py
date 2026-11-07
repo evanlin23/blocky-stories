@@ -233,7 +233,7 @@ shot("S14", "L14", fcam("R1", *YG, d=2.7, lens=30, f=0.40, az=3, push=0.08), {
 D48 = (-0.55, 1.9)
 shot("S15", "L15", fcam("R1", *D48, d=3.2, lens=30, f=0.40, dx=0.3), {
     "dad48": ps("R1", *D48, expr="neutral", arms=(20, 20), side=(8, 8))})
-shot("S16", "L16", ocam("KA", 0.1, 1.1, 1.1, 3.2, 30, az=0, el=22, push=0.08), {})
+shot("S16", "L16", ocam("KA", 0.1, 1.1, 1.1, 3.2, 30, az=0, el=22, push=0.14), {})
 YK = (0.6, G.STAND_Y)
 shot("S17", "L17", fcam("KA", *YK, d=2.9, lens=30, f=0.40, dx=-0.15, push=0.04, arc=1.0), {
     "young": ps("KA", *YK, expr="angry", head=(0, 2))})
@@ -299,7 +299,7 @@ shot("S36", "L36", ocam("R3N", -0.1, 2.55, 1.6, 3.0, 30, az=62, el=4, push=0.12,
 shot("S37", "L37", fcam("KB", 0.0, G.STAND_Y, d=3.2, lens=30, f=0.40), {
     "dad": ps("KB", 0.0, G.STAND_Y, expr="smile", arms=(40, 40), side=(-6, -6))})
 chg("dad", "L37.1", blend=0.4, head=(0, 6))
-shot("S38", "L38", fcam("KB", 0.0, G.STAND_Y, d=2.8, lens=30, f=0.40, az=3, push=0.07), {
+shot("S38", "L38", fcam("KB", 0.0, G.STAND_Y, d=2.8, lens=30, f=0.40, az=3, push=0.11), {
     "dad": ps("KB", 0.0, G.STAND_Y, expr="warm", arms=(40, 40), side=(-6, -6))})
 talk("dad", "L38.1", "L38>")
 shot("S38b", "P01", ocam("R3", 0.0, 1.5, 1.3, 3.6, 22, el=3, push=0.05), {})
@@ -314,7 +314,7 @@ chg("me", "L40.1", blend=0.4, head=(-8, 4))
 shot("S41", "L41", fcam("R3", *ME_WIN, d=3.8, lens=30, f=0.40, dx=-0.1, az=3, push=0.06, arc=1.0, to=[G.ST["R3"] + 0.42, 1.95, 1.29]), {
     "me": ps("R3", *ME_WIN, expr="smile")})
 chg("me", "L41.1", blend=0.4, head=(8, 4))
-shot("S42", "L42", fcam("R3", *ME_WIN, d=3.3, lens=30, f=0.40, dx=-0.15, az=-3, push=0.06, arc=1.0, to=[G.ST["R3"] + 0.36, 1.95, 1.32]), {
+shot("S42", "L42", fcam("R3", *ME_WIN, d=3.3, lens=30, f=0.40, dx=-0.15, az=-3, push=0.09, arc=1.0, to=[G.ST["R3"] + 0.3, 1.95, 1.32]), {
     "me": ps("R3", *ME_WIN, expr="uneasy", head=(0, 4))})
 chg("me", "L42.1", blend=0.4, head=(-8, 8))
 DAD_WIN = (0.85, 1.9)
@@ -349,7 +349,7 @@ chg("me", "L52.1", blend=0.4, head=(-8, 6))
 
 # ============================================================================================ 09 the reveal
 shot("S53", "L53", ocam("R6", 0.0, 1.9, 1.45, 4.6, 26, el=3, push=0.06), {})
-shot("S54", "L54", fcam("R6", -0.7, 1.9, d=3.2, lens=30, f=0.40, dx=0.15), {
+shot("S54", "L54", fcam("R6", -0.7, 1.9, d=3.2, lens=30, f=0.40, dx=0.15, push=0.12), {
     "dad": ps("R6", -0.7, 1.9, expr="warm", head=(0, 3))})
 chg("dad", "L54.1", blend=0.5, head=(8, 8))
 shot("S55", "L55", ocam("R1", -2.3, 5.2, 0.8, 4.2, 30, az=168, el=30, push=0.07), {
@@ -362,7 +362,7 @@ shot("S56b", "L56.2", fcam("R1", -2.3, 2.7, d=3.5, lens=30, f=0.37, az=7, el=-2,
 # ============================================================================================ 10 the warm turn
 shot("S57", "L57", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, az=3, push=0.07), {
     "dad": ps("KF", *G.KF_DAD, expr="laugh", head=(0, 8), **KF_ARMS)})
-shot("S58", "L58", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, az=-3, push=0.07), {
+shot("S58", "L58", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, az=-3, push=0.11), {
     "dad": ps("KF", *G.KF_DAD, expr="warm", **KF_ARMS)})
 talk("dad", "L58.1", "L58>")
 chg("dad", "L58.1", blend=0.5, head=(8, 8))
@@ -372,7 +372,7 @@ chg("dad", "L59.1", blend=0.5, head=(8, 10))
 shot("S60", "L60", ocam("R4", -0.15, 2.55, 1.62, 2.4, 30, az=72, el=8, push=0.12, arc=2.5), {})
 SIDE_L, SIDE_R = (-0.6, G.STAND_Y), (0.6, G.STAND_Y)
 CAKE_ARMS = dict(arms=(48, 48), side=(-6, -6))
-shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 4.8, 30, el=7, push=0.05, arc=1.0), {
+shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 4.8, 30, el=7, push=0.09, arc=1.0), {
     "me": ps("KG", *SIDE_L, expr="smile", **CAKE_ARMS), "dad": ps("KG", *SIDE_R, expr="smile", **CAKE_ARMS)})
 chg("me", "L61.1", blend=0.4, head=(10, 4))
 chg("dad", "L61.1", blend=0.4, head=(-10, 4))
@@ -451,7 +451,7 @@ HOLDS = ["S11", "S21", "S61", "S53"]
 SWAYABLE = [{"id": n_} for (_a, _c, _s, _h, n_) in SH if n_ not in HOLDS]
 polish = {"emph": [remap(r) for r in ("L01.2", "L12.1", "L25.2", "L28.1", "L29.1", "L50", "L56.3")],
           "reveal": ["L50", "L56"], "twist": "L50", "camera": False,
-          "bed_kind": "room", "bed_drop_db": -3.0, "hold": HOLDS, "quiet": [["L65", "L67"]], "reframe_every": 0.7, "sway_amp": 0.010, "punch": 0.075, "punch_rate": 0.9,
+          "bed_kind": "room", "bed_drop_db": -3.0, "hold": HOLDS, "quiet": [["L65", "L67"]], "reframe_every": 0.7, "sway_amp": 0.006, "punch": 0.075, "punch_rate": 0.9,
           "sway": [sh["id"] for sh in SWAYABLE], "whoosh_cuts": False}
 story = {
     "slug": "ep129-gift-box",
