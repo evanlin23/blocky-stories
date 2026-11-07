@@ -199,7 +199,7 @@ def build_bench(kit):
     for k in range(2):
         kit.cyl(f"tires.{k}", 0.31, 0.2, (2.4, 3.55, 0.1 + 0.2 * k), tire, n=18)
         kit.cyl(f"tires.hub{k}", 0.15, 0.205, (2.4, 3.55, 0.1 + 0.2 * k), pl("#a8acb2", 0.4, spec=0.6), n=12)
-    kit.box("stool", (0.5, 0.5, 0.34), (G.DAD[0], G.DAD[1] + 0.1, 0.17), pl("#8a5a34", 0.7))
+    kit.box("stool", (0.5, 0.5, 0.34), (G.DAD[0] + 0.25, G.DAD[1] + 0.1, 0.17), pl("#8a5a34", 0.7))
 
 
 def build_shelves(kit):

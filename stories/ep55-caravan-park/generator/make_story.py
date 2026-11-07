@@ -136,8 +136,8 @@ hide("trainwoman", "L05.2")
 hide("meeter2", "L05.2")
 hide("meeter3", "L05.2")
 hide("meeter1", "L06")
-put("benchman", "L06", [118.95, -0.3, -0.23], 180, expr="neutral", sit=True)
-put("benchwife", "L06", [120.15, -0.3, -0.23], 180, expr="neutral", sit=True, arms=[0, 0])
+put("benchman", "L06", [118.65, -0.3, -0.23], 180, expr="neutral", sit=True)
+put("benchwife", "L06", [120.25, -0.3, -0.23], 180, expr="neutral", sit=True, arms=[0, 0])
 set_("benchwife", "L07", arms=[0, 100], blend=0.6)
 hide("benchman", "L08")
 hide("benchwife", "L08")
@@ -165,8 +165,7 @@ hide("me", "L15")
 set_("jory", "L16", expr="neutral")
 
 # ---- 03 going green
-put("me", "L18", [0.0, 0.6, 0.0], 0, expr="smirk")
-walk("me", "L18.1", [0.05, -0.8, 0.0])
+put("me", "L18", [0.05, -0.8, 0.0], 0, expr="smirk")
 put("jory", "L18", [CH_JO[0], CH_JO[1], 0.0], 180, expr="soft", sit=False, head=[0, 0])
 walk("me", "L18>", [0.0, -0.9, 0.0])
 put("me", "L19", [0.1, -1.2, 0.0], 0, expr="worried")
@@ -202,9 +201,10 @@ put("me", "L48", [-1.7, -1.0, 0.0], 0, expr="scared")
 set_("me", "L49", expr="neutral", head=[0, 0])
 set_("me", "L50", hidden=True)
 put("me", "L51", ME_STAND, 0, expr="neutral")
-put("me", "L52", [0.0, 0.8, 0.0], 0, expr="neutral")
-walk("me", "L52.1", [0.0, -0.8, 0.0])
-walk("me", "L52.2", [0.0, 1.0, 0.0])
+put("me", "L52", [0.0, 0.3, 0.0], 0, expr="neutral")
+walk("me", "L52.2", [0.0, -0.4, 0.0])
+walk("me", "L52.3", [0.0, -0.4, 0.0], yaw=180, blend=0.5)   # turn over 0.5 s before walking off
+walk("me", "L52>", [0.0, 0.2, 0.0])   # stop short of the gate leaf (y 0.55-0.6)
 set_("me", "L53", hidden=True)
 put("me", "L55", [-0.2, -0.2, 0.0], 180, expr="neutral")
 walk("me", "L55>", [0.3, 3.5, 0.0])
@@ -276,7 +276,7 @@ BM_F = face_of(119.1, -0.3, -0.23 + 0.0, sit=False)
 BM_F = [119.1, -0.3, 1.33]
 BW_F = [119.95, -0.3, 1.33]
 # one medium two-shot of the shop bench for L06.1 and L07 (the old S10 is gone; later ids keep their numbers)
-S("L06.1", front([119.55, -0.3, 1.0], 180, 4, 6.4, 0.3, 34, push=0.3))
+S("L06.1", front([119.45, -0.3, 1.0], 180, 4, 6.4, 0.3, 34, push=0.3))
 
 # ---- 02 me and Jory
 ME_G = face_of(0.0, -0.9)
@@ -583,7 +583,9 @@ sound = {"floor": "grass", "steps_db": -26,
 fx = []
 
 story = {
-    "rev": 5,
+    "rev": 7,
+    "frames_ok": ["S68"],   # a blink lands on S68's first drawing as the steady walk starts on the cut (no pose pop)
+    "staging_ok": ["S13/me+jory", "S17/me+jory", "S22/me+jory", "S23/me+jory", "S27/me+jory", "S75/me+jory", "S76/me+jory", "S77/me+jory", "S81/me+jory"],
     "clip_ok": ["S01/me", "S01/jory", "S05/train", "S06/train", "S07/flake20", "S07/flake22", "S07/flake47", "S23/me", "S75/jory", "S76/jory", "S77/jory", "S81/flake40", "S81/flake46"],
     "slug": "ep55-caravan-park",
     "title": "In this town, moss grows on you while you wait",
