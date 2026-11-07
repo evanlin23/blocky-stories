@@ -1,17 +1,31 @@
 {
- "stage": "final",
- "film": "13341332968",
- "run": 41857738617,
+ "stage": "proof",
+ "film": 13553613442,
+ "run": 42320317174,
+ "sha": "5ea278c73e26e747e444c3bfd7537b1f84bb39b1",
  "verdict": "pass",
- "date": "2026-11-04",
+ "date": "2026-11-07",
  "checked": [
-  "frames",
+  "S43-S45 frame by frame",
+  "S61-S63 frame by frame",
+  "S20/S21 frame by frame",
+  "S32 frame by frame",
+  "diff vs old final",
+  "frames every 2 s",
   "first 3 s",
+  "TV canvas",
+  "cover",
+  "clip.json 49.27 s",
   "loudness",
-  "craft",
+  "hf windows",
+  "tail",
+  "polish",
   "flash",
-  "verdict"
+  "craft",
+  "opening",
+  "package",
+  "gate"
  ],
- "craft": "**ep99-statue-years**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.6 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 23.9 | 14.0– | ok |\n| macro.motion_energy_q | 8.65 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 10.8 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.31 | –2.5 | ok |\n| macro.longest_still_s | 0.7 | –1.5 | ok |\n| macro.motion_energy_mean | 3.69 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.71 | 0.4– | ok |\n| macro.brightness_mean | 0.616 | 0.35– | ok |\n| macro.brightness_first_3s | 0.636 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.36 | 0.42– | **warn** |\n| macro.contrast_mean | 0.198 | 0.18– | ok |\n| spec.face_big_share | 0.409 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.004 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.61 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.143 | –0.25 | ok |\n| micro.idle_window_share | 0.037 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.84 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0406 | –0.08 | ok |\n| sound.hf_jump_max | 0.0187 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 32 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
- "notes": "craft: 0 block, 0 near, 2 warn: cuts_per_10s 10.8 (5.5-8.0), saturation_mean 0.36 (0.42-); same as proof (pace 17.6/23.9/8.65 vs 17.7/23.6/8.65), no near band to watch.\nLongest still 0.70 s (proof 0.53, bar 1.5) and q-still 0.53 s unchanged: within a little, no drag.\nFirst second: lit centred close-up of the statue's stone face pushing in, Buhkeeper tag top-left, caption 'Nobody here' -> 'gets OLDER.' (cost opening, unchanged from proof).\nFrames every 4 s + first 3 s at phone size, full-res crops at 25.5 s (cover), 33 s, 49.3 s: 6-sample finals are clean, no noise, fireflies, blotchy texture or sharpening halo; faces and captions read, nothing black/frozen/stray.\n49.3 s S55: the designed crack line across Mom's face, as signed off at proof; no head through anything.\nAudio: -14.1 LUFS, true peak -1.8 dBTP; HF max 0.041 per 5 s, jump 0.019; voice 10.6 dB over bed, no silence.\nFlash: house bar pass (general 2/s, 3f extended 1.9 s < 4 s, red 0, red frames ok).\nStory files unchanged since proof sha 368797d except HANDOFF.md."
+ "craft": "**ep99-statue-years**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.7 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 23.6 | 14.0– | ok |\n| macro.motion_energy_q | 8.6 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 10.8 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.31 | –2.5 | ok |\n| macro.longest_still_s | 0.53 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.53 | –1.0 | ok |\n| macro.motion_energy_mean | 3.66 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.71 | 0.4– | ok |\n| macro.brightness_mean | 0.616 | 0.35– | ok |\n| macro.brightness_first_3s | 0.636 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.359 | 0.42– | **warn** |\n| macro.contrast_mean | 0.197 | 0.18– | ok |\n| spec.face_big_share | 0.406 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.61 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.25 | –0.25 | ok |\n| micro.idle_window_share | 0.037 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.84 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0407 | –0.08 | ok |\n| sound.hf_jump_max | 0.0191 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Staging-fix proof of the shipped story, drawn from 5ea278c (PR #392 head, the latest commit touching the story). A frame-by-frame diff against the old final 13341332968 changes only at 19.5-22 s, 29.5-30.5 s, 39-40.5 s and 56-59 s, which are the fixed windows; nothing else moved.\nFixes confirmed at phone size, every frame: S43-S45 37.8-40.6 s: Mom smiles in close-up, then stands and turns at the door, and the street shot opens empty at 39.1 s before she steps in from the right and walks off left with even strides. No dash. S61-S63 54.8-57.9 s: in S62 (56.17-56.63, all 14 frames) the pair holds the same size with only a gentle drift; the cut into S63 is a clean punch-in and S63 pushes in smoothly to the arms on 'arm in ARM'. No pop, no growth, no jump. S20/S21 19.8-21.6 s: Dad stands a step behind (smaller than in the old film), and Mom's raised arm reaches his shoulder and the edge of his hair without passing through his body. Mom and the stranger sit at the frame edges exactly as in the old final. S32 29.8-30.3 s: three in a row with visible gaps between the arms (the old film had the purple sleeve through the centre man's arm).\nFirst second: a lit, centred close-up of the statue's stone face pushing in, with the Buhkeeper tag top-left and the caption 'Nobody here' -> 'gets OLDER.'. Opening 'cost' matches; the last upload ep92-blackout-ben is 'if' and the queue neighbour ep94 is 'count', so no clash. Cover 25.5 s ('got YOUNGER.' statue face) holds on a 1920 TV canvas.\nFrames every 2 s plus the first 3 s: faces read, captions sit in the safe area, and nothing is black, frozen or stray. clip.json 49.27 s S55 is the designed crack line onto Mom's face, unchanged and signed off before. The S19 pop at 18.2 s is known and also on main.\nSound: -14.1 LUFS, -1.8 dBTP, LRA 1.2; hf max 0.041 and jump 0.019 per 5 s; voice 10.6 dB over the bed; no silence; the tail holds about -18 dB RMS to the end. Polish on. Flash house bar passes (general 2/s, red 0); verdict.json passes. Gate OPEN (1 caption warn, 'you give' under 0.2 s).\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 10.8 (5.5-8.0), macro.saturation_mean 0.359 (0.42-). Same as the old proof and final; busy but clean, the warm palette is bright (0.616). Neither loses viewers.\nShould-fix (not a fail): S63 57.2-57.9 s, the push-in to the arms crops both faces half out of frame. It is meant for 'arm in ARM' and lasts 0.7 s. Verdict: pass."
 }
