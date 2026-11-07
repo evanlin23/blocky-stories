@@ -4117,6 +4117,9 @@
  "set_moves": [],
  "framing_ok": [
   "S02",
+  "S03b",
+  "S03c",
+  "S12b",
   "S05a",
   "S05b",
   "S05c",

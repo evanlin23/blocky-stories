@@ -444,7 +444,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S02", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S25a", "S25b", "S25c", "S28", "S29", "S31a"],   # the clue rocks and the far wall: no person on purpose
+    "framing_ok": ["S02", "S03b", "S03c", "S12b", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S25a", "S25b", "S25c", "S28", "S29", "S31a"],   # the clue rocks and the far wall: no person on purpose
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
