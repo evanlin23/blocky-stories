@@ -382,12 +382,13 @@ def build_kitchen(kit, ox, home, ctx):
         hide(b, True)
     ctx.setdefault("burn", {})[ox] = burn
     # table with a bench, plates
-    B(None, (2.6, 0.9, 0.05), (ox - 2.4, 1.4, 0.76), P("#e9c9b0", 0.45), "ktable", 0.01)
+    tw, tcx = (3.7, ox - 2.6) if home else (2.6, ox - 2.4)      # ours is wider so three seats sit 1.45 m apart
+    B(None, (tw, 0.9, 0.05), (tcx, 1.4, 0.76), P("#e9c9b0", 0.45), "ktable", 0.01)
     for sx in (-1, 1):
-        B(None, (0.08, 0.7, 0.74), (ox - 2.4 + sx * 1.2, 1.4, 0.37), P("#c98d4d", 0.6), "tleg", 0.01)
-    B(None, (2.8, 0.5, 0.45), (ox - 2.4, 2.25, 0.225), P("#c98d4d" if not home else "#ff9ccf", 0.6), "kbench", 0.03)
+        B(None, (0.08, 0.7, 0.74), (tcx + sx * (tw / 2 - 0.1), 1.4, 0.37), P("#c98d4d", 0.6), "tleg", 0.01)
+    B(None, (4.4 if home else 2.8, 0.5, 0.45), (ox - 2.4, 2.25, 0.225), P("#c98d4d" if not home else "#ff9ccf", 0.6), "kbench", 0.03)
     for i, c in enumerate(("#fbfbf8", "#8de3c4", "#fbfbf8")):
-        CY(None, 0.13, 0.015, (ox - 3.15 + 0.75 * i, 1.35, 0.79), P(c, 0.4), "plate")
+        CY(None, 0.13, 0.015, (ox - 2.4 + (1.45 if home else 0.75) * (i - 1), 1.35, 0.79), P(c, 0.4), "plate")
     # couch against the back wall
     cc = P("#ff8fa3", 0.65, 0.15)
     B(None, (1.8, 0.8, 0.45), (ox + 0.4, 3.0, 0.225), cc, "couch", 0.05)

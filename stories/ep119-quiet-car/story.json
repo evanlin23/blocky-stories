@@ -5033,14 +5033,14 @@
     "yaw": 180
    },
    {
-    "at": "L15>",
+    "at": "L16",
     "pos": [
      0.25,
      12.200000000000001
     ]
    },
    {
-    "at": "L15>",
+    "at": "L16",
     "pos": [
      0.8,
      12.4
@@ -5903,7 +5903,7 @@
    "dur": 0.8
   },
   {
-   "at": "L15>",
+   "at": "L16",
    "name": "sit",
    "who": "teddy",
    "on": true,
@@ -6565,6 +6565,12 @@
   "S50",
   "S79",
   "S90"
+ ],
+ "staging_ok": [
+  "S24/me+teddy passing in the aisle, 5 frames",
+  "S13/c1+c2 window passengers, checked OK on the final",
+  "S87/hug",
+  "S89/me+teddy side by side in the seats, checked OK on the final"
  ],
  "frames_ok": [],
  "clip_ok": [],

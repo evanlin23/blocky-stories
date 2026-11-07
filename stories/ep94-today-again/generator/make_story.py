@@ -268,19 +268,19 @@ S("L12.1", ((-1.2, 2.2, 1.5), (DOOR, -1.4, 1.45), 30, (-1.6, 1.8, 1.5), (DOOR, -
 walk("pearl", "L12.1+0.1", X(DOOR, -2.2))
 walk("pearl", "L12.3", X(DOOR, -0.9))
 cue("L12.1", "fdoor", v=[85], dur=0.0)
-S("L12.3", ((0.2, 2.6, 1.45), (DOOR, 0.3, 1.3), 30, (-0.2, 2.5, 1.45), (DOOR, 0.5, 1.3), 30),
+S("L12.3", ((0.2, 2.6, 1.45), (DOOR + 0.5, 0.3, 1.3), 30, (-0.2, 2.5, 1.45), (DOOR + 0.5, 0.5, 1.3), 30),
   who={"pearl": (X(DOOR, -0.9), 180, "grin", {})}, note="she comes in, the bell jingles")
 walk("pearl", "L12.3", X(DOOR, -0.9))
-walk("pearl", "L12>", X(DOOR + 0.3, 1.6))
+walk("pearl", "L12>", X(DOOR, -0.5))
 cue("L12.3", "bell")
 # the first today: she trips
 cue("L13", "glit", n=1)
 S("L13", ((-0.4, 2.7, 1.3), (DOOR, 0.5, 1.0), 28, (-0.7, 2.4, 1.3), (DOOR, 0.5, 1.0), 28),
-  who={"pearl": (X(DOOR, -0.9), 180, "grin", {"arms": [10, 10]})},
+  who={"pearl": (X(DOOR, -0.5), 180, "grin", {"arms": [10, 10]})},
   note="Pearl catching her toe on the mat and grabbing the door frame, letters fanning out")
-walk("pearl", "L13", X(DOOR, -0.9))
-walk("pearl", "L13.1-0.2", X(DOOR, 0.7))
+walk("pearl", "L13", X(DOOR, -0.5))
 raw("pearl", "L13.1-0.2", lean=0, arms=[10, 10])
+walk("pearl", "L13.1+0.1", X(DOOR, 0.7))
 raw("pearl", "L13.1+0.1", lean=28, arms=[100, 60], expr="scared", blend=0.18)
 raw("pearl", "L13.1+0.5", lean=6, arms=[40, 30], expr="worried", blend=0.4)
 cue("L13.1+0.1", "letters")
@@ -319,7 +319,7 @@ S("L16", ((1.0, 5.6, 1.7), (-1.3, 1.0, 1.5), 28, (0.7, 5.4, 1.7), (-1.0, 1.8, 1.
   note="the bell jingles; my mom comes in, face to camera")
 cue("L16", "bell")
 walk("mom", "L16", X(-2.4, 0.2))
-walk("mom", "L16.1-0.1", X(*MOMC))
+walk("mom", "L16.1-0.1", X(-1.2, 0.9))   # the cut to S35 puts her at the counter; this path stays in front of the stand-up tables
 raw("mom", "L16.1-0.1", yaw=180, blend=0.3)
 S("L16.1", ((-1.9, 6.4, 1.7), (-0.4, 3.3, 1.55), 36, (-1.7, 6.2, 1.7), (-0.4, 3.3, 1.55), 36),
   who={"mom": (X(*MOMC), 180, "smile", {"arms": [70, 10]}), "me": ((1.6, 5.4), 0, "hopeful", {})},
@@ -436,11 +436,9 @@ S("L26.2", ((-0.8, 2.8, 2.6), (-0.8, 0, 2.5), 36, (-0.8, 2.1, 2.5), (-0.8, 0, 2.
 S("L26.3", ((1.2, 3.4, 1.5), (3.0, 7.2, 1.2), 26, (1.5, 3.8, 1.5), (3.0, 7.2, 1.2), 26),
   who={"me": ((2.2, 5.9), 180, "worried", {})}, note="me slipping out the back door into a bright alley")
 walk("me", "L26.3", (2.2, 5.9))
-walk("me", "L26.3+0.25", (3.0, 6.0))
-walk("me", "L26.3+0.5", (3.0, 7.8))
-walk("me", "L26>", (3.0, 9.2))
+walk("me", "L26>", (3.0, 7.0))
 cue("L26.3", "bdoor", v=[0], dur=0)
-cue("L26.3+0.3", "bdoor", v=[95], dur=0.5)
+cue("L26.3+0.3", "bdoor", v=[-95], dur=0.5)   # swings out into the alley, away from me walking up to it
 S("L27", ((2.0, -4.2, 2.5), (3.85, -0.9, 3.7), 32, (2.3, -3.8, 2.6), (3.85, -0.9, 3.75), 32),
   who={"oka": (X(3.85, -0.95, 2.9), -28, "grin", {"arms": [15, 25], "side": [0, 75], "head": [12, 0]})},
   note="low angle up the bakery wall: Mr. Okafor on a tall ladder, focused")
@@ -601,9 +599,10 @@ S("L42.3", ((-0.8, 2.6, 2.5), (-0.8, 0, 2.45), 36, (-0.8, 2.0, 2.4), (-0.8, 0, 2
 cue("L42.3+0.15", "clock", v=[9, 0], dur=0.9)
 cue("L43", "alarm", v=[7, 0])
 S("L43", ((BR + 0.3, 0.6, 1.5), (BR + 2.6, 3.4, 1.0), 30, (BR + 0.8, 1.6, 1.5), (BR + 2.9, 4.2, 1.0), 40),
-  who={"mom": (X(BR + 0.9, 1.0), -20, "neutral", {"arms": [10, 10]})}, note="Mom tiptoeing past my bed to my alarm clock, turning it back")
-walk("mom", "L43", X(BR + 0.9, 1.0))
-walk("mom", "L43.1", X(BR + 2.3, 3.4))
+  who={"mom": (X(BR + 2.0, 2.9), -20, "neutral", {"arms": [10, 10]})}, note="Mom tiptoeing past my bed to my alarm clock, turning it back")
+walk("mom", "L43", X(BR + 2.0, 2.9))
+walk("mom", "L43+0.45", X(BR + 2.3, 3.4), yaw=150)   # a short tiptoe to the clock, still facing it
+raw("mom", "L43+0.9", yaw=-20, blend=0.45)   # then turns round over 0.45 s, the clock in hand (no snap)
 cue("L43.1+0.2", "alarm", v=[7, 0])
 cue("L43.1+0.3", "alarm", v=[6, 0], dur=0.7)
 NN = 180.0
@@ -613,12 +612,12 @@ S("L43.3", ((NN - 0.9, 0.8, 1.7), (NN, 2.9, 0.95), 34, (NN - 0.6, 1.0, 1.55), (N
 # =========================================================================================== 14 the loop, L44 to L48
 cue("L44", "clock", v=[9, 0])
 S("L44", ((3.0, 5.0, 1.55), (3.0, 9.5, 1.3), 26, (3.0, 5.4, 1.55), (3.0, 9.0, 1.3), 26),
-  who={"me": (X(3.0, 10.8), 0, "worried", {"head": [-30, 0]})},
+  who={"me": (X(3.0, 10.2), 0, "worried", {"head": [-30, 0]})},
   note="the bright alley: me tiptoeing back in through the back door")
 cue("L44-0.5", "bdoor", v=[0])
 cue("L44-0.45", "bdoor", v=[95], dur=0.2)
-walk("me", "L44", X(3.0, 10.8))
-walk("me", "L44.1", X(3.0, 7.6))
+walk("me", "L44", X(3.0, 10.2))
+walk("me", "L44.3", X(3.0, 8.2))
 S("L44.3", ((1.2, 3.4, 1.5), (3.0, 6.4, 1.3), 30, (1.6, 3.6, 1.5), (3.0, 6.4, 1.3), 30),
   who={"me": (X(3.0, 7.6), 0, "worried", {"head": [25, 0], "arms": [20, 20]})}, note="in through the back door, tiptoe")
 walk("me", "L44.3", X(3.0, 7.6))
@@ -678,7 +677,14 @@ story = {
     "tail": LOOP,
     "fade_in": False,
     "fade_out": False,
-    "rev": 8,
+    "rev": 9,
+    "staging_ok": ["S09/background crowd at the frame edges behind Lund, out of focus, nobody touches",
+                   "S11/background crowd at the frame edges behind Lund, out of focus, nobody touches",
+                   "S14/two neighbours cross on the sidewalk for 3 frames, passing in opposite directions",
+                   "S47/Mom and a seated customer at separate table heights, a counter between, read as two at phone size",
+                   "S48/Mom and a seated customer at separate table heights, a counter between, read as two at phone size",
+                   "S50/Mom and a seated customer at separate table heights, a counter between, read as two at phone size",
+                   "S75/background crowd at the frame edges behind Lund, out of focus, nobody touches"],
     "look": {"style": "closer", "fog": "#d8ecf8", "fog_density": 0.004, "fog_start": 16.0, "sky": "#8fd3ff", "sky_strength": 1.0,
              "exposure": 0.15, "hdri": "kloppenheim_06_puresky", "hdri_strength": 0.5, "hdri_rotation": 40, "flash_safe": True,
              "polish": {"emph": ["L01", "L03", "L11", "L21", "L24", "L36", "L37"], "reveal": ["L37"], "twist": "L37",
