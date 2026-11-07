@@ -1,29 +1,42 @@
 {
- "stage": "proof",
- "film": "proof-42323977959",
- "run": 42323977959,
- "sha": "170192d3f4329774a27ba5dd962cea78ade5544d",
- "artifact": 13554964310,
+ "stage": "final",
+ "film": "13569578372",
+ "run": 42359494747,
+ "sha": "7196776f2d74ad7b005bee70d99aaa351c50fcaa",
  "verdict": "pass",
  "date": "2026-11-07",
  "checked": [
-  "frames every 2 s",
+  "staging.py",
+  "every-frame black/flat/blank scan (absolute and mod 64)",
+  "neighbour jump scans",
+  "frames every 2 s, phone and 1920 TV canvas",
   "first 3 s every 3rd frame",
-  "every frame 65.0-68.5 s (S52-S55 cuts, S53/S54 staging)",
-  "frame diff cut scan 65-68.5 s",
-  "phone size and 1920 TV canvas",
+  "65.0-68.5 s S52-S55 every 3rd frame and full size",
+  "S53/S54 positions vs story.json",
   "cover",
-  "loudness",
+  "loudness and true peak",
   "4 kHz windows",
-  "tail level",
-  "polish",
+  "tail",
+  "cut list vs timeline",
   "craft",
   "flash",
-  "clip",
   "package",
   "opening",
   "gate"
  ],
- "craft": "**ep130-rival-clock**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.2 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 16.8 | 14.0– | ok |\n| macro.motion_energy_q | 7.09 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 7.69 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.07 | –0.25 | ok |\n| spec.shot_p90_s | 1.83 | –2.5 | ok |\n| macro.longest_still_s | 0.5 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 2.85 | 1.5– | ok |\n| spec.camera_move_share | 0.991 | 0.65– | ok |\n| spec.punch_per_10s | 0.69 | 0.4– | ok |\n| macro.brightness_mean | 0.64 | 0.35– | ok |\n| macro.brightness_first_3s | 0.674 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.358 | 0.42– | **warn** |\n| macro.contrast_mean | 0.232 | 0.18– | ok |\n| spec.face_big_share | 0.583 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.667 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.051 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 63.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.2 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0361 | –0.08 | ok |\n| sound.hf_jump_max | 0.0115 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
- "notes": "Proof 72.8 s at 170192d (half size, 4 samples, 2185 frames, 57 shots). -14.1 LUFS / -1.8 dBTP, LRA 1.3; 4 kHz max 0.036, jump 0.012; voice 10.6 dB over the bed; the end runs at level into the loop, no cut-off. Flash passes (1/s, 3f 3/s, red 0). Clip: 337 times, 0 hits. Polish on (reveal L33, twist L30). Gate OPEN (note-9 lint warn on L14, not a block).\nPlay-fight fix, every frame 65.0-68.5 s: cuts at 65.467 (S52 close-up to S53), 66.833 (S53 to S54) and 68.100 (S54 to S55 lunch close-up), no pop or flash. S53/S54 now show two distinct people with daylight between them: Gus (bald, plaid, mustard '0' cuff) camera-left and further back, me (cap hair, grey sleeves) camera-right and nearer, fists raised toward each other at chest height with a clear gap. No limb through a body, both angry faces read uncropped at phone size and on a 1920 canvas. Arms ease between L42 and L43 poses, no snap.\nShould-fix, not a fail: S53 to S54 (66.83 s) is a near-identical reframe (camera slides 0.65 m sideways, same lens and distance), so it reads as a small jump cut; already there on the earlier passed proof. A wider or closer S54 would cut more cleanly. Note r4-critic swaps who is who (calls the plaid figure 'me'); the staging itself matches story.json.\nPackage matches, no spoiler, no 'husband', made_for_kids false. Opening 'whatif' matches L01 ('What if your sleeve counted down to your best FRIEND?', 0.17-1.98 s); last upload ep92 is 'if', queue tail ep99 is 'cost' (ep130 not in queue.txt yet).\nSecond one: sunlit close-up of me in the greenhouse, face upper third, my forearm on the bench with the big black '0' cuff filling the lower half, slow push; at 0.9 s the insert of the cuff '0'. A rule hook (whatif lane); the concrete mystery (my zero is 11 years old, only Gus there) lands by 12-18 s.\nCover 53.4 s: Gus at his round table, face to camera, mustard cuff '1' big in front of him. Strong. Frames every 2 s and every 3rd frame of 0-3 s: no black, frozen, intersecting or stray text; rest of the film is unchanged from the earlier passed proof (only S53/S54 acting changed).\ncraft: 0 block, 0 near, 1 warn: macro.saturation_mean 0.358 (0.42-). Watched: pastel greenhouse greens, mustard and red read clearly on phone and TV; not a viewer loss. Longest still q 0.8 s and q-edge 0.8 s, both under the 1.0 s bar (at the preview's value, not over)."
+ "craft": "**ep130-rival-clock**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.2 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 16.9 | 14.0– | ok |\n| macro.motion_energy_q | 7.08 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 7.69 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.07 | –0.25 | ok |\n| spec.shot_p90_s | 1.83 | –2.5 | ok |\n| macro.longest_still_s | 0.57 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 2.85 | 1.5– | ok |\n| spec.camera_move_share | 0.991 | 0.65– | ok |\n| spec.punch_per_10s | 0.69 | 0.4– | ok |\n| macro.brightness_mean | 0.639 | 0.35– | ok |\n| macro.brightness_first_3s | 0.673 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.358 | 0.42– | **warn** |\n| macro.contrast_mean | 0.233 | 0.18– | ok |\n| spec.face_big_share | 0.583 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.004 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.667 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.051 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 63.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.2 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0362 | –0.08 | ok |\n| sound.hf_jump_max | 0.0117 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Final 1080x1920, 2181 frames (72.70 s; audio 72.83 s). The render's own narration ends L46 'playing COUNTRY.' a hair earlier than the local voice-timings (timeline 2185 frames), so the picture is 4 frames shorter; all 56 cuts land on the same frames as the timeline, the last caption holds to the final frame and the last 0.13 s of audio is the quiet tail. measure.py gave no length warning.\nS52-S55 every 3rd frame 65.0-68.5 s and full size at 65.83/66.80/66.83/67.67 s: cuts at 65.47, 66.83, 68.10 s, no pop. S53/S54 Gus (bald, beard, plaid, mustard '0' cuff) camera-left at x7.2 y0.7, me (black hair, grey sleeves) camera-right at x8.85 y0.2: 1.65 m apart in x, me 0.5 m nearer camera; fists raised toward each other with a clear gap, no limb through a body, both angry faces read. Should-fix kept: 66.83 s S53->S54 is still a near-same reframe (camera slides 0.65 m, same lens), reads as a small jump cut.\nstaging.py: 57 shots, 0 findings. Every-frame scan (2181 frames): no black or blank frame, no black dips; lowest luma std 38.0 (f110, mod64 46, S04 yard-sale couch, reads); largest same-tone flat region 24% (f1426, mod64 18, S39 bed close-up, the white cuff, reads); no flat jumps. Neighbour hits looked at: f34 S02 cuff insert, f431 S10, f1172-1182 S33 Gus walking off (cuff swings into shade), f1411 S39 and f1699 S46 / f1781 S48 (1-frame caption gaps): all fine. S08 11.0-12.1 s '347' insert: the green upper half is the shaded sidewalk hedge behind the wall, reads. S25 29.6-31.5 s: plaid sleeve strap and button close-up, reads.\nSecond one: sunlit greenhouse close-up of me, face in the upper third, forearm on the white bench with the big black '0' cuff in the lower half, slow push and a blink; 'What if / your sleeve' from 0.3 s; at 0.8 s the insert of the cuff '0', 'counted down / to your best FRIEND?'; me again at 2.2 s 'Here, it DOES.' Opening 'whatif' matches L01; last upload ep92 is 'if'; ep130 not in queue.txt.\nFrames every 2 s at phone size and on a 1920 TV canvas: faces read, captions in the safe area, no stray text or logo, nothing frozen or intersecting; shadows hold on TV. Cover 53.4 s: Gus behind his round table, face to camera, mustard '1' cuff big in front, 'had been counting down'. Strong.\nAudio: -14.1 LUFS, true peak -1.8 dBTP, LRA 1.3; 4 kHz max 0.036, jump 0.012; voice 10.6 dB over the bed, no silence, end runs at level into the loop. Flash: house bar pass (general 1/s, 3f 3/s at 18.17 s, red 0, bright cuts ok).\ncraft: 0 block, 0 near, 1 warn: macro.saturation_mean 0.358 (0.42-), pastel greenhouse by design, reads on phone and TV. Vs proof 42323977959 every number within 0.1 (changes 15.2=15.2, q 16.8->16.9, motion_q 7.09->7.08, longest_still_q 0.8=0.8, longest_still 0.5->0.57).\nPackage matches the film, no spoiler, no 'husband', made_for_kids false. Gate OPEN (note-9 lint warn only). Verdict: pass; one should-fix (S53/S54 jump cut) and one minor (S10 wide floor) for a later redraw, neither loses viewers.",
+ "fixes": [],
+ "should_fix": [
+  {
+   "second": 66.83,
+   "shot": "S53->S54",
+   "what": "near-identical reframe (camera slides 0.65 m sideways, same 40 mm lens and distance) reads as a small jump cut; make S54 clearly wider or closer"
+  },
+  {
+   "second": 14.0,
+   "shot": "S10",
+   "what": "wide establishing shot: dark aisle floor fills about half the frame and the right side opens onto empty floor and sky; reads as floor, but a lower or tighter frame would show more greenhouse"
+  }
+ ]
 }
