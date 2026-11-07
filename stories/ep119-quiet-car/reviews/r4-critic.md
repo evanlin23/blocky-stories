@@ -1,0 +1,5 @@
+# ep119-quiet-car, critic r4 (lens fix, S32 only)
+
+Checked S32 (37.8 to 38.4 s, "ever SINCE.") on the phone-size stills sheet at 37.5, 37.8, 38.0, 38.2, 38.35 and 38.6 s, plus the story.json diff. Both S32 keys now hold 50 mm (the end key was 0.1); the 0.1 is a sideways offset, which moves the camera about 0.1 m and nothing else. The fisheye tunnel and the near-white frames are gone: 38.2 and 38.35 s (frames 1146 and 1150, inside the old 1148 to 1151 bad run) show the same lit close-up as 37.8 s, with the windows, seats and caption all normal. The hush tag stays put top-left in every frame and reads 1522. My face, with glasses, brows and wide eyes, fills about half the frame width and reads at phone size through the whole line, with no crop on the head. The camera moves from about 4.0 m to 3.3 m from the face over 0.6 s, which reads as a slow, gentle push, not a zoom. The shots on either side are unchanged and still read: S31 at 37.5 s ("in that car", tag 1521) and S33 at 38.6 s ("His seat", the palm on the seat). Their cuts into and out of S32 are clean.
+
+Verdict: approve

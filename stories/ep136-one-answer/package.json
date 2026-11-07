@@ -3,9 +3,8 @@
   "description": "At the Rim, you shout one question off the edge, and three seconds later your own voice answers. It always says your name first, and it's never wrong.\n\nMy brother lives alone. On the phone he said \"we\". So I asked the canyon who was coming with him, and I got two answers.\n\nIt's made up. A blocky story, built with code and Blender.",
   "pin": "Comment 1 or 2. Which echo would you trust?",
   "made_for_kids": false,
-  "cover_s": 28.5,
+  "cover_s": 36.4,
   "shape": "open-choice",
   "opening": "cost",
-  "lane": "interactive",
-  "hold": "batch 15a: scripts only, not built yet"
+  "lane": "interactive"
 }

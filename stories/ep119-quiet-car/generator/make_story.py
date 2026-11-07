@@ -355,7 +355,7 @@ shot("L20", K((TEX, TEY, 0.9), 290, 2.9, 40, 22), "emptyseat")
 shot("L21", K((TEX + 0.1, TEY + 0.1, 0.8), 215, 1.7, 40, 22, 0.0), "coffee")
 # S22: my face, the empty seat across the aisle
 beat("me", "L22", expr="wide")
-shot("L22", K2(MEH, 60, 3.0, MEH, 70, 2.5, 50, 3, 0.1), "face5")
+shot("L22", K2(MEH, 60, 3.0, MEH, 70, 2.5, 50, 3, off=0.1), "face5")   # off, not lens1: 0.1 landed in lens1 and zoomed to 0.1 mm
 # S23: my palm flat on his warm seat
 cue("L23", "sit", who="me", on=False, z=SIT)
 only("L23", [])

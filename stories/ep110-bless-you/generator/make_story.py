@@ -362,7 +362,7 @@ shot("L19.2", F(KT - 2.4, 2.45, 1.4, 2.9, 40, dx=0.1, push=0.16), "hum2")
 # L20: Mom never sneezes, not even in May
 only("L20", ["mom"])
 put("mom", "L20", [PK - 0.4, 8.0], 0, expr="smile")
-go("mom", "L20.2-0.1", [PK - 0.4, -1.5])
+go("mom", "L20.2-0.1", [PK - 0.4, 2.4])   # stops 3.4 m short of the camera (it ends at y -0.97): she walked into the lens (S32 frames 1111-1115)
 cue("L20", "pollen", level=2.4)
 shot("L20", F(PK - 0.3, 3.5, 1.4, 5.2, 34, dx=0.4, push=0.14), "momwalk")
 cue("L20.2", "pollen", level=1.0)
