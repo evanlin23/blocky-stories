@@ -15,7 +15,7 @@
  "tail": 0,
  "fade_in": false,
  "fade_out": false,
- "rev": 4,
+ "rev": 5,
  "look": {
   "style": "closer",
   "fog": "#cfe6f5",
@@ -2233,10 +2233,17 @@
     "expr": "worried"
    },
    {
-    "at": "L11.1+0.1",
+    "at": "L11.2",
     "pos": [
-     0.0,
-     -10.0
+     0.07,
+     -9.4
+    ]
+   },
+   {
+    "at": "L11.2",
+    "pos": [
+     0.07,
+     -9.4
     ]
    },
    {
@@ -2244,7 +2251,15 @@
     "pos": [
      0.9,
      -2.6
-    ]
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "yaw": 180,
+    "arms": [
+     0,
+     78
+    ],
+    "expr": "worried"
    },
    {
     "at": "P01",
@@ -3289,12 +3304,19 @@
     "to": "P01>"
    }
   ],
-  "rev": 4
+  "rev": 5
  },
  "set_moves": [
   "S12",
   "S30",
   "S42"
+ ],
+ "staging_ok": [
+  "S32/grandma+straw checked OK on the final",
+  "S38/grandma+straw checked OK on the final",
+  "S39/grandma+straw checked OK on the final",
+  "S40/grandma+straw checked OK on the final",
+  "S41/grandma+straw checked OK on the final"
  ],
  "framing_ok": [
   "S42",

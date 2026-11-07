@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 8
+REV = 9
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -228,8 +228,8 @@ beat("carrier", "L04+0.5", arms=[0, 120])
 beat("carrier", "L04+0.9", arms=[0, 155])
 shot("L04", fr(MX + 1.0, 1.7, 1.55, 4.6, 36, dx=0.4), "cargray")
 go("carrier", "L04.1", [MX + 1.0, 1.7], arms=[0, 0])
-go("carrier", "L04.1>", [MX - 6.0, 1.9], arms=[0, 0])
-shot("L04.1", mv([MX + 1.5, -5.0, 1.7], [MX - 1.0, 1.8, 1.4], 34, [MX - 2.0, -5.0, 1.7], [MX - 4.0, 1.8, 1.4], 34), "carroute")
+go("carrier", "L04.2-0.05", [MX - 0.3, 1.8], arms=[0, 0])
+shot("L04.1", mv([MX + 1.8, -5.0, 1.7], [MX + 0.8, 1.8, 1.4], 34, [MX + 0.8, -5.0, 1.7], [MX - 0.2, 1.8, 1.4], 34), "carroute")
 put("carrier", "L04.2", [MX - 6.0, 1.9], 0, expr="smile", arms=[0, 140])
 beat("carrier", "L04.2+0.5", arms=[0, 165])
 shot("L04.2", fr(MX - 6.0, 1.9, 1.7, 3.6, 46, dx=-0.3), "cartip")
@@ -252,9 +252,9 @@ put("b3", "L06", [GX + 0.2, GY - 1.6], 0, expr="smile", arms=[0, 40])
 put("b4", "L06", [GX - 1.6, GY - 1.6], 0, expr="grin", arms=[0, 150])
 beat("b4", "L06+0.5", arms=[0, 120])
 shot("L06", mv([GX - 0.3, GY - 9.0, 1.8], [GX - 0.5, GY - 1.6, 1.8], 32, [GX - 0.3, GY - 7.6, 1.8], [GX - 0.5, GY - 1.6, 1.8], 32), "gasst")
-put("b3", "L06.1", [GX - 0.6, GY - 2.0], 0, expr="laugh", arms=[0, 40])
-put("b4", "L06.1", [GX + 0.6, GY - 2.0], 0, expr="laugh", arms=[40, 0])
-shot("L06.1", fr(GX, GY - 2.0, 1.7, 4.6, 36, dx=0.3), "gasfun")
+put("b3", "L06.1", [GX - 0.75, GY - 2.0], 0, expr="laugh", arms=[0, 40])
+put("b4", "L06.1", [GX + 0.75, GY - 2.0], 0, expr="laugh", arms=[40, 0])
+shot("L06.1", fr(GX, GY - 2.0, 1.7, 6.2, 36, dx=0.3, push=0.05), "gasfun")
 # L07: the guest room
 look("L07", "day")
 only("L07", [])
@@ -378,8 +378,8 @@ put("clem", "L21", [0.0, -8.7, 0.0], 0, expr="smile", arms=[0, 80])
 shot("L21", mv([0.3, -12.2, 1.7], [0.2, -8.7, 1.55], 32, [0.3, -11.6, 1.7], [0.2, -8.7, 1.55], 32), "gateclem")
 shot("L21.2", mv([0.3, -11.9, 1.65], [0.2, -8.9, 1.55], 36, [0.3, -11.3, 1.65], [0.2, -8.9, 1.55], 36), "palmclose")
 only("L21.2+0.5", ["me", "clem"])
-put("me", "L21.2+0.5", [1.8, -12.0, 0.0], 180, expr="worried")
-go("me", "L21.2>", [1.6, -10.0, 0.0], expr="worried", arms=[0, 0])
+put("me", "L21.2+0.5", [1.65, -10.8, 0.0], 180, expr="worried")
+go("me", "L22-0.03", [1.6, -10.0, 0.0], expr="worried", arms=[0, 0])
 shot("L21.2+0.5", mv([5.0, -14.0, 1.9], [1.0, -11.2, 1.3], 36, [4.6, -13.0, 1.9], [1.2, -10.4, 1.3], 36), "stumble")
 put("clem", "L21.2+0.5", [0.0, -8.7, 0.0], 0, expr="relieved" if False else "warm", arms=[0, 80])
 put("me", "L22", [1.6, -10.0, 0.0], 180, expr="worried", arms=[60, 0])
@@ -548,13 +548,13 @@ shot("L38", mv([QX - 9.0, G.POST_Y - 5.5, 1.6], [QX - 3.0, G.POST_Y + 9.0, 1.0],
 move("L38.2-0.05", "gateleaf", yaw=82.0)
 only("L38.2", ["clem", "mom"])
 move("L38.2", "gateleaf", yaw=82.0)
-put("clem", "L38.2", [-0.4, -8.9, 0.0], 0, expr="laugh", run=True)
-go("clem", "L38.2+0.45", [-0.4, -10.0, 0.0], expr="laugh", run=True)
-put("mom", "L38.2", [-0.4, -11.9, 0.0], 180, expr="smile")
-go("mom", "L38.2+0.45", [-0.4, -10.8, 0.0], expr="smile")
-beat("clem", "L38.3-0.1", arms=[90, 90], yaw=0, expr="laugh")
-beat("mom", "L38.3-0.1", arms=[90, 90], yaw=180, expr="sad-smile")
-shot("L38.2", mv([6.8, -10.4, 1.75], [-0.4, -10.2, 1.4], 32, [6.2, -10.4, 1.75], [-0.4, -10.3, 1.4], 32), "hug")
+put("clem", "L38.2", [-0.2, -8.9, 0.0], 0, expr="laugh", run=True)
+go("clem", "L38.2+0.45", [-0.2, -10.0, 0.0], expr="laugh", run=True)
+put("mom", "L38.2", [0.2, -11.9, 0.0], 180, expr="smile")
+go("mom", "L38.2+0.45", [0.2, -11.0, 0.0], expr="smile")
+beat("clem", "L38.3-0.1", arms=[85, 85], yaw=40, expr="laugh")
+beat("mom", "L38.3-0.1", arms=[85, 85], yaw=140, expr="sad-smile")
+shot("L38.2", mv([5.6, -10.4, 1.75], [0.0, -10.3, 1.45], 32, [5.0, -10.4, 1.75], [0.0, -10.5, 1.45], 32), "hug")
 # L39: the rule, loop
 look("L39", "dusk", 0.6)
 cue("L39", "rock", a=6.0)
@@ -660,6 +660,7 @@ story = {
     "fx": [],
     "music": music,
     "sound": sound,
+    "staging_ok": ["S70/me+clem", "S71/me+clem", "S72/me+clem", "S80/me+mom", "S80/me+clem", "S79/hug"],
     "set_moves": [],
     "asr_forgive": ["i've"],
 }
