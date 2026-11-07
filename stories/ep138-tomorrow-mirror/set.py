@@ -85,8 +85,8 @@ def build_room(kit):
 
 def build_mirror(kit):
     pl = kit.plastic
-    chrome = pl("#d8dee6", 0.3, spec=0.7)
-    glass = pl("#cfe6f2", 0.3, spec=0.25)
+    chrome = pl("#8f9ba9", 0.35, spec=0.25)
+    glass = pl("#8cc4e0", 0.3, spec=0.25)
     y0, y1 = G.MIR_Y0, G.MIR_Y1
     cy, ln = (y0 + y1) / 2, y1 - y0
     kit.box("mirror.plate", (0.03, ln, 2.5), (4.985, cy, 1.55), glass)
@@ -115,9 +115,9 @@ def build_gear(kit):
     pad = pl("#1c1c20", 0.7, spec=0.1)
     # Dre's bench: a black pad on two steel feet, long side north-south
     bx, by = G.BENCH
-    kit.box("bench.pad", (0.46, 1.7, 0.1), (bx, by, 0.4), pad, bevel=0.03)
-    for sy in (-0.65, 0.65):
-        kit.box(f"bench.leg{sy}", (0.4, 0.08, 0.35), (bx, by + sy, 0.175), steel)
+    kit.box("bench.pad", (0.6, 2.3, 0.12), (bx, by, 0.4), pad, bevel=0.03)
+    for sy in (-0.95, 0.95):
+        kit.box(f"bench.leg{sy}", (0.5, 0.08, 0.35), (bx, by + sy, 0.175), steel)
     # a second bench near the north wall
     kit.box("bench2.pad", (0.46, 1.7, 0.1), (0.5, 3.3, 0.4), pad, bevel=0.03)
     for sy in (-0.65, 0.65):
@@ -164,7 +164,7 @@ def build_board(kit):
 def build_glass(kit):
     """The glass's marker: a chrome pillar and a faint cool pane, both moved by the `glass` cue."""
     pl = kit.plastic
-    chrome = pl("#dfe5ec", 0.25, spec=0.8)
+    chrome = pl("#8f9ba9", 0.35, spec=0.25)
     W["post"] = kit.box("glass.post", (0.12, 0.5, 4.0), (0, 0, -20), chrome, bevel=0.02)
     m = bpy.data.materials.new("glass.tint")
     m.use_nodes = True
@@ -224,13 +224,13 @@ def build(kit, story, tl):
     build_props(kit)
     # constant soft fills from the ceiling, and a face fill from each end of the room
     for i, (x, y) in enumerate(((-2.5, -4.0), (2.5, -4.0), (-2.5, 0.0), (2.5, 0.0), (0.0, 2.5))):
-        a = kit.light(f"ceil{i}", "AREA", (x, y, 3.0), 520, "#fff6ec", size=3.0, shadow=False)
+        a = kit.light(f"ceil{i}", "AREA", (x, y, 3.0), 230, "#fff6ec", size=3.0, shadow=False)
         kit.aim(a, (x, y, 0.0))
-    fw = kit.light("faceW", "AREA", (-4.6, -1.0, 2.0), 700, "#fff6ec", size=3.0, shadow=False)
+    fw = kit.light("faceW", "AREA", (-4.6, -3.0, 2.0), 330, "#fff6ec", size=3.0, shadow=False)
     kit.aim(fw, (2.5, -0.5, 1.4))
-    fe = kit.light("faceE", "AREA", (4.4, 1.5, 2.2), 700, "#fff6ec", size=3.0, shadow=False)
+    fe = kit.light("faceE", "AREA", (4.4, 1.5, 2.2), 330, "#fff6ec", size=3.0, shadow=False)
     kit.aim(fe, (-1.0, -1.8, 1.4))
-    fs = kit.light("faceS", "AREA", (3.0, -5.8, 2.2), 600, "#fff6ec", size=3.0, shadow=False)
+    fs = kit.light("faceS", "AREA", (3.0, -5.8, 2.2), 280, "#fff6ec", size=3.0, shadow=False)
     kit.aim(fs, (3.0, 0.0, 1.4))
     return {}
 
@@ -280,7 +280,7 @@ def animate(kit, story, tl, t, ctx):
     for c in W["key"].children:
         c.hide_render = not key_on
     if key_on:
-        h = hand(paint["key_who"], 1)
+        h = hand(paint["key_who"], -1)
         if h is not None:
             W["key"].location = h + Vector((0.0, 0.0, 0.1))
             W["key"].rotation_euler = (0, 0, 0)
@@ -319,4 +319,4 @@ def animate(kit, story, tl, t, ctx):
                 leg = bpy.data.objects.get(f"{who}.leg{sx}")
                 if leg:
                     leg.rotation_euler = (leg.rotation_euler.x * (1 - s) + SIT * s, 0, 0)
-    return {"sun": 3.0}
+    return {"sun": 2.0}

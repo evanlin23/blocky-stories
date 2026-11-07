@@ -70,7 +70,7 @@ cast = {
     "dre": person("#7a4a2e", "#d83a3a", "#2a2a30", "#f2f2f2", hair="spiky", hair_c="#111114", extras=["hooddown"],
                   brow_w=1.3, width=1.12, sleeves="long"),
     # Big Wendell: about 60, bald, a gray mustache (built in set.py), a black polo
-    "wendell": person("#e2b48c", "#1c1c20", "#4a4a52", "#2a2a30", hair="none", brow_w=1.4, width=1.1, sleeves="short"),
+    "wendell": person("#c99870", "#1c1c20", "#4a4a52", "#2a2a30", hair="none", brow_w=1.4, width=1.1, sleeves="short"),
     # Mr. Kim: neat black hair, a blue tracksuit
     "kim": person("#ecc9a0", "#2a5fb0", "#24508f", "#f2f2f2", hair="swoop", hair_c="#15151a", sleeves="long",
                   collar="#e8eefc"),
@@ -168,7 +168,7 @@ def shot(sid, at, camera, glass=None, **kw):
         dp = glass.get("dist", 1.0)
         hw = 6.75 * dp / lens
         pw = max(0.5, 2.0 * hw)
-        lat = glass.get("fr", 0.5) * hw + pw / 2
+        lat = glass.get("fr", 0.6) * hw + pw / 2
         rx, ry = fy, -fx
         cue(at, "glass", on=1.0, px=round(pos[0] + fx * dp + rx * lat, 3), py=round(pos[1] + fy * dp + ry * lat, 3),
             pz=pos[2], yaw=round(math.atan2(fy, fx), 4), qx=round(pos[0] + fx * 0.45, 3),
@@ -204,7 +204,10 @@ K = (3.5, -0.9)                  # Mr. Kim facing the mirror (S04a)
 
 # ----------------------------------------------------------------------------------------------- the cast at rest
 for who in cast:
+    if who == "me":
+        continue
     key(who, 0, [0, 0, 0], yaw=0, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0], hidden=True)
+last["me"] = [ME[0], ME[1], 0.0]
 cue(0, "board", v=0.0, flip=0.0)
 cue(0, "glass", on=0.0)
 cue(0, "sit", dre=1.0)
@@ -247,18 +250,18 @@ show("L03", "wendell")
 cut("wendell", "L03", [*G.WEN, 0.0], yaw=90, expr="smile", head=[0, 0], arms=[0, 0], side=[0, 0])
 cue("L03", "props", bar=0.0)
 cue("L03", "board", v=13.0, flip=1.0)
-shot("S03", "L03", camp([2.6, -1.4, 1.55], [-4.3, 0.5, 1.5], 20, pos2=[2.3, -1.3, 1.55]))
+shot("S03", "L03", camp([0.6, -1.0, 1.55], [-4.3, 0.4, 1.4], 27, pos2=[0.3, -0.9, 1.55]))
 key("wendell", "L03.2", yaw=90, expr="smile", head=[0, 5])
 
 # ===== 02 the rule at work (L04 to L08)
 cue("L04", "board", v=0.0, flip=0.0)
 show("L04", "kim")
 cut("kim", "L04", [K[0], K[1], 0.0], yaw=90, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0])
-shot("S04a", "L04", camp([1.9, -0.7, 1.6], [4.9, -1.0, 1.5], 30, pos2=[2.2, -0.75, 1.6]))
+shot("S04a", "L04", camp([0.7, -0.6, 1.6], [4.9, -1.0, 1.5], 28, pos2=[1.0, -0.65, 1.6]))
 show("L04.1", "kim")
-glass_at("L04.1", "kim", expr="laugh", arms=[6, 82])
+glass_at("L04.1", "kim", expr="laugh", arms=[82, 6])
 cue("L04.1", "props", key=1.0, key_who="kim")
-gshot("S04b", "L04.1", [TX, TY, 1.3], 24)
+gshot("S04b", "L04.1", [TX, TY - 0.28, 1.3], 24)
 show("L05", "kim")
 me_at("L05", "kim", yaw=-90, expr="stunned")
 cue("L05", "props", key=0.0)
@@ -273,7 +276,7 @@ me_at("L07", "lena", yaw=-90, expr="smile")
 cue("L07", "props", paint=0.0)
 shot("S07", "L07", cam(ME[0], ME[1], 1.3, 1.5, -92, 36, cz=1.35, push=(1.3, 1.3)))
 show("L08")
-shot("S08", "L08", camp([1.9, 0.75, 0.95], [4.6, 0.25, 0.55], 24, pos2=[2.3, 0.6, 0.85], tgt2=[4.6, 0.25, 0.5]))
+shot("S08", "L08", camp([2.0, 1.3, 0.95], [4.7, 0.0, 0.7], 24, pos2=[2.4, 1.1, 0.9], tgt2=[4.7, 0.0, 0.65]))
 
 # ===== 03 my turn (L09 to L12)
 show("L09", "me")
@@ -289,12 +292,12 @@ me_at("L11", "me", yaw=-90, expr="uneasy")
 mouth("me", "L11", "L11>", 0.4)
 shot("S11", "L11", cam(ME[0], ME[1], 1.3, 1.4, -94, 36, cz=1.35, push=(1.2, 1.3)))
 show("L12", "me", "dre")
-cut("me", "L12", [3.3, -1.95, 0.0], yaw=-90, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0])
+cut("me", "L12", [3.0, -1.0, 0.0], yaw=-90, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0])
 dre_at("L12", 90, "smile")
-shot("S12a", "L12", camp([4.5, -1.3, 1.55], [BX, BY - 0.1, 1.05], 30, pos2=[4.3, -1.3, 1.55]), hold=True)
+shot("S12a", "L12", camp([4.7, -0.8, 1.6], [BX, BY - 0.1, 1.05], 22, pos2=[4.5, -0.8, 1.6]), hold=True)
 show("L12.1", "dre")
 dre_at("L12.1", -90, "serious")
-shot("S12b", "L12.1", cam(BX, BY, 1.0, 1.1, -90, 33, cz=1.1, push=(0.95, 1.0)))
+shot("S12b", "L12.1", cam(BX, BY, 1.0, 1.7, -90, 33, cz=1.2, push=(1.5, 1.0)))
 
 # ===== 04 the first message (L13 to L20)
 show("L13", "me")
@@ -315,14 +318,14 @@ big_mouth("me2", "L16.1", 5, 0.42)
 gshot("S16a", "L16", [TX, TY, 1.38], 26, push=0.1)
 shot_t = "L16.3"
 gshot("S16b", shot_t, [TX, TY, 1.4], 36, push=0.16, dy=0.04)
-glass_at("L17", "me2", expr="serious", pos=(TX, G.GY - 0.4))
-gshot("S17", "L17", [BX, G.GY, 1.1], 22, push=0.0, hold=True)
+glass_at("L17", "me2", expr="serious", pos=(TX, G.GY - 0.7))
+gshot("S17", "L17", [BX, G.GY, 1.0], 18, push=0.0, hold=True, fr=0.8)
 show("L18", "dre")
 dre_at("L18", 90, "neutral")
 shot("S18", "L18", camp([4.4, G.GY, 1.5], [BX, BY, 1.05], 30, pos2=[4.2, G.GY, 1.5]), hold=True)
 show("L19", "none")
 cue("L19", "board", v=14.0, flip=0.0)
-gshot("S19", "L19", [-4.9, G.BOARD[1], 1.75], 52, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True)
+gshot("S19", "L19", [-4.9, G.BOARD[1] + 0.35, 1.75], 44, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.9)
 show("L20", "me")
 cue("L20", "board", v=0.0, flip=0.0)
 me_at("L20", "me", yaw=-90, expr="stunned")
@@ -346,7 +349,7 @@ big_mouth("me2", "L24", 2, 0.4)
 gshot("S24", "L24", [TX, TY, 1.38], 30, push=0.12, dy=0.06)
 cue("L25", "board", v=12.0, flip=0.0)
 show("L25", "none")
-gshot("S25", "L25", [-4.9, G.BOARD[1], 1.75], 52, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True)
+gshot("S25", "L25", [-4.9, G.BOARD[1] + 0.35, 1.75], 44, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.9)
 show("L26", "me")
 cue("L26", "board", v=0.0, flip=0.0)
 me_at("L26", "me", yaw=-90, expr="scared")
@@ -447,10 +450,11 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": [],
+    "framing_ok": ["S12a"],
     "frames_ok": [],
     "staging_ok": [],
     "phonemes": {"Dre": "dɹˈA"},
+    "homophones": {"12th": "twelfth"},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
