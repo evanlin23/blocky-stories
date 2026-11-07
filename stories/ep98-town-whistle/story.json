@@ -4754,29 +4754,29 @@
      0,
      [
       100.98,
-      0.0,
+      -0.15,
       0.6549999999999963
      ],
      [
       102.94,
-      0.0,
+      -0.15,
       -2.17
      ],
-     18
+     17
     ],
     [
      1,
      [
       101.176,
-      0.0,
+      -0.15,
       0.3724999999999966
      ],
      [
       102.94,
-      0.0,
+      -0.15,
       -2.17
      ],
-     18
+     17
     ]
    ],
    "look": "in",
@@ -6036,9 +6036,9 @@
    {
     "at": "L62.1+0.2",
     "pos": [
-     101.36,
+     102.19999999999999,
      -0.5,
-     -1.35
+     -2.16
     ]
    },
    {
@@ -6049,9 +6049,9 @@
    {
     "at": "L64",
     "pos": [
-     101.36,
+     102.19999999999999,
      -0.5,
-     -1.35
+     -2.16
     ]
    },
    {
@@ -6704,9 +6704,9 @@
    {
     "at": "L62",
     "pos": [
-     103.78,
+     104.9,
      0.5,
-     -3.7800000000000002
+     -4.86
     ],
     "blend": 0,
     "yaw": 270,
@@ -6731,9 +6731,9 @@
    {
     "at": "L62.1+0.2",
     "pos": [
-     101.26,
+     103.22,
      0.5,
-     -1.35
+     -3.24
     ]
    },
    {
@@ -6744,9 +6744,9 @@
    {
     "at": "L71",
     "pos": [
-     101.26,
+     103.22,
      0.5,
-     -1.35
+     -3.24
     ]
    },
    {
@@ -8102,7 +8102,7 @@
     ]
    },
    {
-    "at": "L05-0.05",
+    "at": "L05",
     "hidden": true,
     "blend": 0
    }
@@ -9814,7 +9814,6 @@
   "S36/me+arlo heads side by side, arms below frame, clear at phone size",
   "S37/me+arlo same pair as S36, bodies out of frame",
   "S66/me+dad dark stair shot, one body in frame (dad behind me on the stairs), no arm overlap seen",
-  "S82/me+dad close-up on one shoulder; the other is out of frame",
   "S94/dinner table: seated side by side behind the table, arms hidden"
  ]
 }

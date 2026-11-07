@@ -178,7 +178,7 @@ raw("baker", "L04.1", yaw=180)
 raw("baker", "L04.1+0.4", yaw=326, expr="scared")
 raw("baker", "L04.1+0.4", pos=[-200.0, 0.5])
 raw("baker", "L05-0.05", pos=[-199.4, -0.7])
-gone("baker", "L05-0.05")
+gone("baker", "L05")
 S("L04", PX((-196.6, -4.0, 1.7), (-199.4, 0.5, 1.2), 17, 0.06), "in", fill=0.5, inside=0.8, exp=-0.45)
 for i, who in enumerate(("t1", "t2", "t3", "t4")):
     walk(who, "L05", (-3.0 + 2.0 * i, -62.0 + (i % 2) * 1.2), "L05.2-0.1", (-3.0 + 2.0 * i + 1.0, -52.0 - i * 0.6), expr="scared")
@@ -465,13 +465,13 @@ S("L61", PX((-6.6, -6.0, 2.5), (-12.4, -6.0, 2.45), 28, 0.10), "dawn", fill=0.5,
 # --- 12 the climb and the blow, L62 to L69
 gone("arlo", "L62-0.05")
 steps("L62", 28)
-put("dad", "L62", (stair(14)[0], 0.5, stair(14)[1]), 270, "worried", lean=8)
+put("dad", "L62", (stair(18)[0], 0.5, stair(18)[1]), 270, "worried", lean=8)
 put("me", "L62", (stair(14)[0] + 0.1, -0.5, stair(14)[1]), 270, "worried", arms=[0, 0])
-raw("dad", "L62.1+0.2", pos=[stair(5)[0], 0.5, stair(5)[1]])
-raw("me", "L62.1+0.2", pos=[stair(5)[0] + 0.1, -0.5, stair(5)[1]])
+raw("dad", "L62.1+0.2", pos=[stair(12)[0], 0.5, stair(12)[1]])
+raw("me", "L62.1+0.2", pos=[stair(8)[0] + 0.1, -0.5, stair(8)[1]])
 cue("L62", "dust", who=["dad"])
 cue("L62", "lamp", pos=[stair(2)[0], 0.0, stair(2)[1] + 1.4])
-S("L62", PX((stair(4)[0] - 0.0, 0.0, ab(stair(4)[0], 1.6)), (stair(11)[0], 0.0, stair(11)[1] + 0.8), 18, 0.10), "in", fill=1.0, stairl=1.6, lamp=1.0)
+S("L62", PX((stair(4)[0] - 0.0, -0.15, ab(stair(4)[0], 1.6)), (stair(11)[0], -0.15, stair(11)[1] + 0.8), 17, 0.10), "in", fill=1.0, stairl=1.6, lamp=1.0)
 gone("dad", "L63-0.05")
 gone("me", "L63-0.05")
 cue("L63", "dust", who=[])
@@ -616,7 +616,6 @@ story = {
     "staging_ok": ["S36/me+arlo heads side by side, arms below frame, clear at phone size",
                    "S37/me+arlo same pair as S36, bodies out of frame",
                    "S66/me+dad dark stair shot, one body in frame (dad behind me on the stairs), no arm overlap seen",
-                   "S82/me+dad close-up on one shoulder; the other is out of frame",
                    "S94/dinner table: seated side by side behind the table, arms hidden"],
 }
 from blocky import timeline
