@@ -16,6 +16,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import layout as G  # noqa: E402
 
 D2R = math.pi / 180.0
+GBOOST = [1.0]    # set per hall: the last states glow harder so the doorways read in colour
+LEAFCOL = {5: "#9a6ad8", 6: "#6fd9a8", 7: "#e8b83a", 8: "#a8aab2", 9: "#f4f7fa"}
 LIGHT = 0.3       # one knob for how bright every steady practical light is
 
 
@@ -191,7 +193,7 @@ class Room:
         for sy in (-1, 1):
             w(f"{tag}.side{sy}", (deep + 0.3, 0.1, G.HALL_H), (cx + side * 0.1, yc + sy * (half + 0.05), G.HALL_H / 2), wall)
         if glow:      # lit panels on the inner faces and a ceiling glow, so a doorway seen from the hall is never black
-            gm = kit.emit(glow, gstr, f"{tag}.wallglow")
+            gm = kit.emit(glow, gstr * GBOOST[0], f"{tag}.wallglow")
             xi = x0 + side * (deep - 0.03)
             w(f"{tag}.gfar", (0.02, 2 * half - 0.02, G.HALL_H - 0.3), (xi, yc, G.HALL_H / 2), gm)
             for sy in (-1, 1):
@@ -358,6 +360,7 @@ def build_hall(kit, key):
     O = G.HALL_O[key]
     pl = Pl(kit, O, f"h{key}")
     morning = bool(spec.get("morning"))
+    GBOOST[0] = 1.7 if key in ("F", "M") else 1.0
     opens = spec["o"]
     W_ = G.HALL_W / 2
     Y0, Y1, H = -3.0, G.HALL_L, G.HALL_H
@@ -399,7 +402,7 @@ def build_hall(kit, key):
     # doors: the leaf hangs on a hinge, so an open door is just a different still state
     trim = kit.plastic("#fffdf4", 0.6, spec=0.1)
 
-    def door(n, yc, left, ang, num=True, extra_open=True, lw=0.95):
+    def door(n, yc, left, ang, num=True, extra_open=True, lw=0.95, tint=None):
         xh = G.LX - 0.03 if left else G.RX + 0.03
         yh = yc - 0.475 if left else yc + 0.475
         hinge = pl.empty(f"hinge{n}", (xh, yh, 0.0), rot=(0, 0, ang * D2R))
@@ -408,6 +411,8 @@ def build_hall(kit, key):
         fx = 0.0475 if left else -0.0475           # local x of the hall face's trim
         ky = (lw - 0.1) if left else -(lw - 0.1)
         pl.sph(f"knob{n}", 0.05, (fx * 1.6 + (0.02 if left else -0.02), ky, 1.0), brass, parent=hinge)
+        if tint:       # an open door's room face is painted in its room's colour, so it reads from down the hall
+            pl.box(f"paint{n}", (0.01, lw, 2.1), (-0.04 if left else 0.04, cy, 1.05), kit.plastic(tint, 0.8, spec=0.05), parent=hinge)
         if num:
             # digit bars: u runs along the door's face as the viewer reads it left to right
             def add(name, size, uz):
@@ -430,16 +435,22 @@ def build_hall(kit, key):
     rooms = {}
     for n in (5, 6, 7, 8, 9):
         ang = opens.get(n, 0)
-        door(n, G.DOORY[n], True, ang, lw=0.8 if (n == 7 and 0 < ang < 20) else 0.95)      # ajar: a leaf a hand narrower, a dark slit at the latch
+        door(n, G.DOORY[n], True, ang, lw=0.84 if (n == 7 and 0 < ang < 30) else 0.95,
+             tint=None)      # ajar: a leaf a hand narrower, a dark slit at the latch
         if ang >= 60:      # an open door hides its numeral, so the same numeral stands on the wall above the frame
             def addw(name, size, uz, n=n):
                 pl.box(f"pn{n}.{name}", (0.025, size[0], size[1]), (G.LX + 0.0225, G.DOORY[n] + uz[0], uz[1]), teal)
             seg7(addw, str(n), 0.0, 2.55, 0.34, 0.22, 0.06)
+        if ang >= 60 and key in ("F", "M"):      # a pool of the room's light on the hall floor, steady, 1 cm proud
+            pl.box(f"pool{n}", (1.0, 1.0, 0.012), (G.LX + 0.55, G.DOORY[n], 0.006), kit.emit(LEAFCOL[n], 0.9, f"pool{n}"))
         if ang:
             if n == 7:
-                rooms[n] = room7(kit, pl, G.DOORY[n], dark=ang < 20)      # ajar: a dark room, so the gap reads as a dark slit
+                rooms[n] = room7(kit, pl, G.DOORY[n], dark=ang < 30)      # ajar: a dark room, so the gap reads as a dark slit
             else:
                 rooms[n] = {5: room5, 6: room6, 8: room8, 9: room9}[n](kit, pl, G.DOORY[n])
+    if 0 < opens.get(7, 0) < 30:      # door seven ajar: a steady mustard spill on the hall floor from the gap (1 cm proud)
+        pl.box("spill", (0.9, 0.32, 0.012), (G.LX + 0.55, G.DOORY[7] + 0.42, 0.006), kit.emit("#e8b83a", 1.1, "spill"))
+        pl.box("spill2", (0.5, 0.16, 0.012), (G.LX + 1.2, G.DOORY[7] + 0.42, 0.006), kit.emit("#e8b83a", 0.6, "spill2"))
     if morning:
         door(10, G.DOORY[10], True, 0, num=False)
     # the right-hand doors: 1 to 3 open a crack on warm rooms, 4 open on the sky blue one

@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 17
+REV = 18
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = timeline.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L28")
@@ -236,8 +236,8 @@ shot("L14", fc(HA, 0.75, 10.6, 1.55, 1.7, 22, az=-90, push=0.28), "room4")
 
 # ===== 03 the nights (L15 to L27)
 only("L15", [])
-shot("L15", mv(A(HO["B"], 0.9, 9.4, 1.45), A(HO["B"], -1.7, 6.5, 1.35), 22, A(HO["B"], 0.9, 8.9, 1.45), A(HO["B"], -1.7, 6.5, 1.35), 22), "ajar")
-shot("L15+1.0", mv(A(HO["B"], 0.6, 8.1, 1.45), A(HO["B"], -1.7, 6.4, 1.35), 26, A(HO["B"], 0.7, 7.8, 1.45), A(HO["B"], -1.7, 6.4, 1.35), 26), "ajar2")
+shot("L15", mv(A(HO["B"], 0.9, 3.7, 1.4), A(HO["B"], -1.7, 6.7, 1.3), 20, A(HO["B"], 0.9, 4.1, 1.4), A(HO["B"], -1.7, 6.7, 1.3), 20), "ajar")
+shot("L15+1.0", mv(A(HO["B"], 0.2, 4.7, 1.4), A(HO["B"], -1.7, 6.7, 1.3), 24, A(HO["B"], 0.3, 4.95, 1.4), A(HO["B"], -1.7, 6.7, 1.3), 24), "ajar2")
 hall_face("B", "L16", "me", -0.5, 5.6, 125, "worried", "inch", d=1.9, lens=16, ty=1.0, arms=[0, 0], side=[0, 0])
 only("L17", ["me"])
 put("me", "L17", A(HO["B"], -0.85, 5.63), -40, expr="worried", arms=[0, 0], side=[0, 0], head=[40, 0])
@@ -268,8 +268,8 @@ only("L29", [])
 shot("L29", mv(A(HO["F"], -2.2, 3.1, 1.6), A(HO["F"], -2.21, 1.89, 1.62), 28, A(HO["F"], -2.2, 2.9, 1.6), A(HO["F"], -2.21, 1.89, 1.62), 28), "num5")
 shot("L29.2", mv(A(HO["F"], -2.2, 11.1, 1.6), A(HO["F"], -2.21, 9.89, 1.62), 28, A(HO["F"], -2.2, 10.9, 1.6), A(HO["F"], -2.21, 9.89, 1.62), 28), "num9")
 only("L30", ["me"])
-put("me", "L30", A(HO["F"], -0.2, 4.6), 16, expr="wide", arms=[0, 0], side=[0, 0], head=[0, 0])
-shot("L30", mv(A(HO["F"], 1.45, 0.6, 1.5), A(HO["F"], -1.0, 6.8, 1.45), 17, A(HO["F"], 1.45, 0.9, 1.5), A(HO["F"], -1.0, 6.8, 1.45), 17), "reveal")
+put("me", "L30", A(HO["F"], 0.15, 4.2), 0, expr="wide", arms=[0, 0], side=[0, 0], head=[0, 0])
+shot("L30", mv(A(HO["F"], -0.4, 0.9, 1.1), A(HO["F"], -0.3, 6.5, 1.3), 15, A(HO["F"], -0.35, 1.15, 1.1), A(HO["F"], -0.3, 6.5, 1.3), 15), "reveal")
 hall_face("F", "L31", "me", -0.5, 7.0, 70, "sad-smile", "knew", d=1.9, lens=26)
 beat("me", "L31.1", expr="warm")
 
