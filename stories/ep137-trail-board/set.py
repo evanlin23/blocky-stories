@@ -130,7 +130,7 @@ def glyph(parent, seed, cx, cz, w, h, th, mat):
     elif k == 1:  # three dots going down
         bars = [(d_ * 0.8, d_ * 0.8, 0, d_ * 1.15, 0), (d_ * 0.8, d_ * 0.8, 0, 0, 0), (d_ * 0.8, d_ * 0.8, 0, -d_ * 1.15, 0)]
     elif k == 2:  # one big and one small dot side by side
-        bars = [(d_ * 1.8, d_ * 1.8, -hw * 0.3, 0, 0), (d_ * 0.8, d_ * 0.8, hw * 0.55, -hh * 0.3, 0)]
+        bars = [(d_ * 1.8, d_ * 1.8, -hw * 0.7, 0, 0), (d_ * 0.8, d_ * 0.8, hw * 0.8, -hh * 0.3, 0)]
     elif k == 3:  # a fat square block
         bars = [(w * 0.8, w * 0.8, 0, 0, 0)]
     elif k == 4:  # a triangle of three dots
