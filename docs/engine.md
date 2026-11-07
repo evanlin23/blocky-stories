@@ -124,6 +124,13 @@ and the pace were invisible until the final. Two checks read them before a frame
   An overlap the story means to have (a cat through its own flap, a face against the glass) goes in
   `"clip_ok": ["flap", "S58/pane", "S97"]`: an object name, a shot, or a shot and an object. Anything else blocks.
   `preflight` runs it when `BLOCKY_BPY` is set, and the proof workflow runs it on the PR.
+- **The camera in the set** (also `clipcheck`, 2026-11-05, report-only). At each shot's first and last frame and every
+  key of its camera move, rays from the lens (`scene.ray_cast`, skipping what hangs on the camera and anything hidden)
+  test whether the camera is inside a closed mesh (five of six axis rays hit its back) or right behind a surface that
+  fills the frame (70% of a 7 x 7 grid stops within 0.25 m, or one flat non-character surface covers 95% of it within 3 m; rays pass through glass). Either makes blank frames (ep120 S67's pull-in ended
+  behind a window: 9 cream frames; ep105 S85 and S139; moving-day). It prints `WARN` and `preflight` shows it as a
+  warning, not a block, because a shot through a windscreen or a doorway can be meant: `"cam_ok": ["S12"]` (or
+  `"S12/<object>"`) in story.json silences one.
 
 ## The local flash check (`python -m blocky flash <story> --like-proof`, 2026-11-05)
 

@@ -154,8 +154,10 @@ def _meter_val(cs: list, t: float, key: str) -> float:
 
 def draw_meter(img: Image.Image, t: float, tl: dict) -> None:
     """Opt-in (ep28): cues named "meter" ({"me": 7, "ines": 4, "dur": 0.4}, in stair turns) draw a small tower glyph
-    top-left, outside the caption band, with seven ticks and a sea-glass dot (me) and a blue dot (Ines) on them."""
-    cs = [c for c in tl.get("cues", []) if c["name"] == "meter"]
+    top-left, outside the caption band, with seven ticks and a sea-glass dot (me) and a blue dot (Ines) on them.
+    Only cues that carry a me or ines value count, so another story's own "meter" cue can't switch the panel on
+    (warm-shoes' chalk override drew it over its slate, 2026-11-06)."""
+    cs = [c for c in tl.get("cues", []) if c["name"] == "meter" and ("me" in c or "ines" in c)]
     if not cs:
         return
     k = 3
