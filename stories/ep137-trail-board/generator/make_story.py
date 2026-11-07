@@ -130,6 +130,7 @@ gone("me", "L01.3")
 cue("L01.3", "board", g="one0")
 S("L01.3", C((0.1, 0, 1.7), 1.7, el=2, w2=1.45), M_, note="S01b punch in on the glyph line on HAVE")
 S("L02", C((0.3, 2, 1.9), 4.3, az=-10, el=4, lens=30, w2=3.9), M_, sun2=[0.5, 70.0, 20.0, 3.5], note="S02 wide: the trailhead, the board in the middle")
+S("L02.3", C((0.6, 2, 1.9), 3.4, az=-16, el=4, lens=30, w2=3.0), M_, sun2=[0.5, 70.0, 20.0, 3.5], note="S02b closer on the board, the sun still in sight")
 cue("L03", "board", g="one1")
 S("L03", C((0, 0, 1.7), 2.9, el=2, lens=40, w2=2.6), M_, note="S03 the board, one glyph line, fills the frame")
 put("dot", "L04", DOT_LOT, 0, "laugh", arms=[45, 45])
@@ -159,6 +160,7 @@ S("L07", C((0, 0, 1.7), 3.0, el=2, lens=40, w2=2.4), M_, note="S07 the board's o
 put("me", "L08", (0.1, -0.9), 0, "smile")
 cue("L08", "board", g="one0")
 S("L08", C((-0.2, 0, 1.45), 2.0, el=2, w2=1.9), M_, tally=True, note="S08 my face, smile; the post foot with its tally at the frame bottom")
+S("L08.3", C((-0.1, 0, 1.5), 1.7, az=-12, el=3, w2=1.5), M_, note="S08b my face again from a new angle")
 gone("me", "L09")
 put("june", "L09", BEN, 0, "delighted", arms=[30, 30])
 acting["june"][-1]["pos"] = [BEN[0], BEN[1], BENCH_Z]
@@ -166,6 +168,7 @@ acting["june"][-2]["pos"] = [BEN[0], BEN[1], BENCH_Z]
 cue("L09", "gear", on=True)
 talk("june", "L09", "L09>", 0.45)
 S("L09", C((5.0, 1.15, 1.3), 2.1, el=3, w2=1.9), M_, note="S09 June on the bench, smile, talking (same gold, Saturday)")
+S("L09.3", C((5.0, 1.15, 1.3), 1.6, az=8, el=3, w2=1.45), M_, note="S09b June tighter, still talking")
 gone("june", "L10")
 cue("L10", "gear", on=False)
 put("me", "L10", THEO, 0, "worried")
@@ -212,6 +215,7 @@ cue("L19", "gear", on=False)
 cue("L19", "board", g="full")
 S("L19", C((0, 0, 1.7), 2.9, el=2, lens=40, w2=2.55), M_, note="S19 the board filled with four lines of glyphs")
 S("L19.3", C((0, 0, 1.85), 2.6, el=2, lens=40, w2=2.2), M_, note="S19b push on the four lines as the message is read")
+S("L19.5", C((0.4, 0, 1.55), 1.9, el=2, lens=40, w2=1.6), M_, note="S19c push on the bottom two lines")
 put("me", "L20", THEO, 0, "scared")
 S("L20", C((0.12, 0, 1.45), 2.0, el=2, w2=1.9), M_, note="S20 my face, scared")
 gone("me", "L21")
@@ -246,8 +250,8 @@ S("L27", C((0.12, 0, 1.45), 2.0, el=2, w2=1.9), M_, note="S27 my face, scared, t
 # shot ids in order
 for i, s in enumerate(shots):
     s["id"] = ""
-IDS = ["S01a", "S01b", "S02", "S03", "S04a", "S04b", "S05", "S06a", "S06b", "S06c", "S07", "S08", "S09", "S10", "S11",
-       "S12", "S13", "S14a", "S14b", "S15", "S16a", "S16b", "S17", "S18", "S19", "S19b", "S20", "S21", "S22", "S23a",
+IDS = ["S01a", "S01b", "S02", "S02b", "S03", "S04a", "S04b", "S05", "S06a", "S06b", "S06c", "S07", "S08", "S08b", "S09", "S09b", "S10", "S11",
+       "S12", "S13", "S14a", "S14b", "S15", "S16a", "S16b", "S17", "S18", "S19", "S19b", "S19c", "S20", "S21", "S22", "S23a",
        "S23b", "S24", "S25", "S26", "S27"]
 assert len(IDS) == len(shots), (len(IDS), len(shots))
 for s, i in zip(shots, IDS):
@@ -256,7 +260,7 @@ for s, i in zip(shots, IDS):
 # ---------------------------------------------------------------------------------------------------- story
 look = {"fog": "#fff2cf", "fog_density": 0.002, "fog_start": 28.0, "sky": "#ffe79a", "exposure": 0.0,
         "flash_safe": True, "style": "closer",
-        "polish": {"hold": ["S02", "S11", "S15", "S22"]}}
+        "polish": {"hold": ["S11", "S15"]}}
 story = {
     "slug": "ep137-trail-board",
     "title": "The Trail Board Painted at DUSK \U0001F332",
@@ -320,6 +324,6 @@ if vf.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(key(e)))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 3
+story["rev"] = 5
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
