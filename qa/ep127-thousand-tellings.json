@@ -1,37 +1,33 @@
 {
- "stage": "final",
- "film": "13566572728",
- "run": "42349159678",
- "sha": "a538b64d9da1708d39a9b3c9267e4348623deb2e",
- "pass": false,
- "verdict": "fail",
+ "stage": "proof",
+ "film": 13570310528,
+ "run": 42358192388,
+ "sha": "084a1342a0f0fd3ba621e6377fbdf43df67545f2",
+ "pass": true,
+ "verdict": "pass",
  "date": "2026-11-07",
  "checked": [
-  "S84-S86 door fix every frame 71.0-73.4 s vs old film, phone and full size",
-  "frame diff vs old film, every frame",
-  "audio envelope vs old mix",
-  "staging.py",
-  "every-frame flat/blank/black and neighbour scans",
-  "snow flake distance to lens S12/S13",
-  "frames every 2 s, phone and TV",
-  "first 3 s",
-  "cover",
-  "loudness and true peak",
-  "tail",
+  "S12-S13 9.4-11.37 s every frame, phone and full size",
+  "diff vs previous proof 13555526236 every frame and audio",
+  "S84-S86 71.1-73.4 s unchanged",
+  "frames every 2 s",
+  "first 3 s every frame",
+  "TV canvas",
+  "captions",
+  "audio",
+  "polish",
   "craft",
   "flash",
+  "clip",
   "package",
-  "opening",
+  "opening variety",
   "gate"
  ],
- "craft": "**ep127-thousand-tellings**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.8 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 22.1 | 14.0– | ok |\n| macro.motion_energy_q | 9.24 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 11.7 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.23 | –2.5 | ok |\n| macro.longest_still_s | 0.53 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 3.69 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.73 | 0.4– | ok |\n| macro.brightness_mean | 0.49 | 0.35– | ok |\n| macro.brightness_first_3s | 0.393 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.525 | 0.42– | ok |\n| macro.contrast_mean | 0.216 | 0.18– | ok |\n| spec.face_big_share | 0.754 | 0.4– | ok |\n| spec.caption_share | 0.981 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.009 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.744 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.02 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 65.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.47 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 19.0 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.9 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0474 | –0.08 | ok |\n| sound.hf_jump_max | 0.0171 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
- "notes": "Staging fix confirmed frame by frame vs old film 13506812598 (same 129 shot bounds): S84 the screen door swings 71.37-71.67 s and lies flat to the left wall by f2150 (71.67 s), before he steps at the S85 cut (71.87 s); he walks in with striding legs (no slide), turns side-on from about 72.1 s, back shoulder just meets the left jamb's inner edge at 72.37-72.43 s and the near arm passes in front of the jamb; facing the room again by 72.8 s. Nothing passes through the glass, jamb or leaf; caption and face clear. S86 Grandpa from 72.93 s unchanged.\nFrame diff (PSNR<35 dB, median 49.0): changed only f2134-2187 (71.13-72.93 s, S84-S85). All 127 other shots 47-51 dB min (render noise): unchanged. Audio envelope vs old mix corr 0.9999; changes 71.1-72.8 s (door thump now 71.1-71.7 s, old 72.1 s hit gone; steps stem -34.0 -> -34.6 LUFS), elsewhere within 1 dB except 6.2 s (-1.5 dB at -36 dB, quiet gap); voice stem identical (-16.0), no word or beat lost, tail not cut.\nFAIL S13 10.67-10.97 s (f320-329, mod64 0-9; worst f325-327, mod64 5-7): snow flake0 (0.13 m cube, set.py W['snow']) drifts 0.4-0.7 m from the S13 lens and sweeps across the lower left as a giant flat grey and pale-blue slab covering up to about 40% of the frame; it doesn't read as one of the small white snow cubes, it reads as the camera against geometry. Same in the old film and the proof (unchanged), now failed under the flat-region policy.\nstaging.py: 129 shots, 0 findings. Flat/blank scan every frame: lowest luma std 26.7 (f652, mod64 12, S23 top-down phone on the table, reads); largest same-tone flat 43% (S33/S35 navy shop wall around the lit window, reads); no black dips. Neighbour scans hit S13 (above), S84 door swing, S31 27.0 s walk-in, S81 69.3 s, S18, S43 latch, S68, S109: all looked at, faces and bodies whole.\nSecond one (unchanged): warm lit close-up of Grandpa in his armchair, eyes shut mid-telling, navy window and moon, 997 tag, slow push; 'Here, you can't tell a story a thousand TIMES.' from 0.21 s (opening 'must' matches; last upload ep92 is 'if'; ep127 not in queue.txt). Frames every 2 s at phone and TV size: faces read, captions safe, no stray text; cover 33.8 s unchanged and strong.\nAudio: -14.1 LUFS, true peak -1.9 dBTP, LRA 1.1. Flash: house bar pass (general 1/s, 3f 3/s at 24.87 s, red 0).\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 11.7 (5.5-8.0), sound.voice_bed_gap_db 19.0 (8.0-14.0); vs proof 13555526236 every number within 0.3 (changes 17.9->17.8, q 22.4->22.1, motion_q 9.27->9.24, longest_still 0.57->0.53).\nPackage unchanged: no spoiler, no 'husband'. Gate OPEN (2 warnings: note 9 slogan repeat, 'of it,' under 0.2 s). Verdict: fail, one fix (S13 flake at the lens); the door fix itself passes.",
- "fixes": [
-  "10.67-10.97 s S13 (f320-329): snow flake0 passes 0.4-0.7 m from the lens and fills up to ~40% of the frame with a flat grey/blue slab; in set.py keep every flake at least ~2 m from the camera (hide or push flakes inside that radius each frame), then redraw S13"
- ],
+ "craft": "**ep127-thousand-tellings**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.9 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 22.2 | 14.0– | ok |\n| macro.motion_energy_q | 9.25 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 11.7 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.23 | –2.5 | ok |\n| macro.longest_still_s | 0.53 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 3.7 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.73 | 0.4– | ok |\n| macro.brightness_mean | 0.49 | 0.35– | ok |\n| macro.brightness_first_3s | 0.393 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.523 | 0.42– | ok |\n| macro.contrast_mean | 0.215 | 0.18– | ok |\n| spec.face_big_share | 0.754 | 0.4– | ok |\n| spec.caption_share | 0.981 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.009 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.744 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.02 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 65.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.47 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 19.0 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0477 | –0.08 | ok |\n| sound.hf_jump_max | 0.0168 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Proof 13570310528 (run 42358192388, 084a1342 = head of PR #428 and the latest commit touching the story). 270x480 drawn, 1080x1920 30 fps, 109.4 s, 3282 frames = timeline, audio 109.4 s. Compared frame by frame with the previous proof 13555526236 (8e49429e, passed): the picture differs only at frames 282-330 (9.40-11.00 s, S12-S13); every other frame is the same, including S84-S86 71.1-73.4 s (the passed door fix), which is unchanged. Audio levels match the previous proof within 0.3 dB in every 0.5 s window.\nS12-S13 every frame at phone and full size: the dark slab that swept the lower left at 10.67-10.97 s (frames 320-329) is gone. Those frames now show the yellow shop, the door and the caption clear. The only near flakes are small white cubes at the right and bottom edges (under ~6% of the frame), lit, never dark or flat. Dark-pixel share stays 1.4-3.3% across both shots. Snow still reads clearly in both shots: dense falling cubes under the bunting in S12 and around the shop in S13. No flake pops in or out mid-shot (hiding is decided per shot; frame-to-frame changes are smooth, peak 11.5 luma at 10.80 s as an edge flake leaves the frame).\nSecond one (unchanged): a warm, lit close-up of Grandpa in his armchair, eyes shut mid-telling, the 997 tag top left, a slow push. 'Here, you can't tell a story a thousand TIMES.' from 0.17 s ('must', matches the tag). Frames every 2 s and the first 3 s are the same as the passed proof: faces read, captions safe, nothing black or frozen, no stray text; cover_s 33.8 is unchanged and strong.\nAudio: -14.1 LUFS, -1.8 dBTP, LRA 1.0; 4 kHz share max 0.0477, jump 0.0168; voice never buried; the end isn't cut off. Flash: house bar pass (general 1/s, 3f 3/s at 24.87 s, red 0). clip.json: 513 times, 0 hits. verdict.json pass.\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 11.7 (5.5-8.0), sound.voice_bed_gap_db 19.0 (8.0-14.0). Same as the passed proof and the shipped final: brisk, not choppy, and the quiet bed never buries the voice.\nPackage unchanged: no spoiler, no 'husband', opening 'must' vs last upload ep92-blackout-ben ('if'), no clash; ep127 is not in queue.txt. Gate OPEN, with 2 warnings (note 9 slogan repeat, 'of it,' under 0.2 s). The should-fixes carried from before stand, not fails.\nVerdict: pass, no fixes.",
+ "fixes": [],
  "should_fix": [
   "108.53-109.4 s S129 (also 46.6 s S52, ~66.7 s S78): rule tag cropped at the left edge by the punch-in/drift crop; draw the tag after the crop or widen its margin",
-  "58.0-58.6 s P01/S65: 0.5 s at about -60 dBFS between 'to ME.' and 'The next morning'; lift the bed or start the L37 music section at P01",
-  "72.37-72.43 s S85: back shoulder grazes the left jamb's inner edge during the side-on squeeze; reads as a squeeze, optional 5 cm more clearance"
+  "58.0-58.6 s P01/S65: 0.5 s at about -60 dBFS between 'to ME.' and 'The next morning'; lift the bed or start the L37 music section at P01"
  ]
 }
