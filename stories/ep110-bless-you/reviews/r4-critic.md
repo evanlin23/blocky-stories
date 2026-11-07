@@ -1,0 +1,5 @@
+Verdict: approve
+
+Changed-shots look only (render fix on a merged story); the scores aren't redone and no words change.
+1. The sit is fixed. I stepped through every frame of the preview from 25.3 to 27.3 s at 270x480. In S23 "sit1" me stands through "By sneeze TWENTY," and his eyes close on the swirl. At 26.13 s the edit cuts straight to S24 "sit2", a face-and-chest close-up, under "I sat down." No frame shows the 0.75 m drop or the legs swapping. The cut is a clear change of size (wide standing to tight face), so it doesn't read as a jump cut. There's no pop, the swirl carries through the cut, and the head turn (yaw -20) plays cleanly inside S24. Stills post-00776 to post-00790 agree.
+2. S87 "Two people / not talking" (110.77 to 112.20 s) reads fine. Mom and grandpa are big and in front, at the left and right edges. Me is smaller, set back behind the armchair arm, and plainly the wide-eyed watcher who just landed after the "Green armchair." landing shot. At about 300 px the two adults are clearly the subject. The extra face sets up "THREE cups" (S88) rather than contradicting the line. No reframe is needed.
