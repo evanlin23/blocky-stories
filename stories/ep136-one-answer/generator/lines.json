@@ -94,7 +94,14 @@
    [
     "Three.",
     "three..."
-   ],
+   ]
+  ],
+  "tempo": 0.64
+ },
+ {
+  "id": "L05b",
+  "who": "narrator",
+  "chunks": [
    [
     "\"ROSA.",
     "rosa."
@@ -152,7 +159,14 @@
    [
     "Three.",
     "three..."
-   ],
+   ]
+  ],
+  "tempo": 0.64
+ },
+ {
+  "id": "L08b",
+  "who": "narrator",
+  "chunks": [
    [
     "\"KOFI.",
     "kofi."
@@ -206,7 +220,14 @@
    [
     "Three.",
     "three..."
-   ],
+   ]
+  ],
+  "tempo": 0.64
+ },
+ {
+  "id": "L11b",
+  "who": "narrator",
+  "chunks": [
    [
     "\"WALTER.",
     "walter."
@@ -291,7 +312,7 @@
    ],
    [
     "\"WE'LL",
-    "we'll"
+    "we'll..."
    ],
    [
     "see you",
@@ -440,7 +461,8 @@
     "THREE.",
     "three..."
    ]
-  ]
+  ],
+  "tempo": 0.7
  },
  {
   "id": "L26",

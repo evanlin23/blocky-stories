@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -148,7 +148,7 @@ def rock_cam(n, w=11.0, push=True):
     lens = 36
     d = w * lens / 13.5
     pos = (x, G.WALL_Y + d, 1.6)
-    return camp(pos, tgt, lens, pos2=(x, G.WALL_Y + d * 0.93, 1.7) if push else None)
+    return camp(pos, tgt, lens, pos2=(x, G.WALL_Y + d * 0.86, 1.8) if push else None)
 
 
 def hidden_all(at, but=()):
@@ -192,9 +192,9 @@ key("ruiz", "L05", expr="neutral")
 shot("S05a", "L05", rock_cam(1))
 shot("S05b", "L05.1", rock_cam(2))
 shot("S05c", "L05.2", rock_cam(3))
-shot("S05d", "L05.2>", rock_cam(3, 9.0))
-key("ruiz", "L05.3", expr="laugh")
-shot("S05e", "L05.3", cam(0.0, ST[1], 1.6, 1.6, -5, 36, cz=1.62, push=(1.45, 1.62)))
+shot("S05d", "L05.2+0.45", rock_cam(3, 9.0))
+key("ruiz", "L05b", expr="laugh")
+shot("S05e", "L05b", cam(0.0, ST[1], 1.6, 1.6, -5, 36, cz=1.62, push=(1.45, 1.62)))
 cue("L06", "show", loaf=1.0)
 key("ruiz", "L06", expr="laugh", arms=[62, 62])
 shot("S06", "L06", cam(0.0, ST[1], 1.35, 1.9, 5, 36, cz=1.4, push=(1.7, 1.4)))
@@ -209,9 +209,9 @@ key("kofi", "L08", expr="neutral")
 shot("S08a", "L08", rock_cam(1))
 shot("S08b", "L08.1", rock_cam(2))
 shot("S08c", "L08.2", rock_cam(3))
-shot("S08d", "L08.2>", rock_cam(3, 9.0))
-key("kofi", "L08.3", expr="smile")
-shot("S08e", "L08.3", cam(0.0, ST[1], 1.6, 1.6, 4, 36, cz=1.62, push=(1.45, 1.62)))
+shot("S08d", "L08.2+0.45", rock_cam(3, 9.0))
+key("kofi", "L08b", expr="smile")
+shot("S08e", "L08b", cam(0.0, ST[1], 1.6, 1.6, 4, 36, cz=1.62, push=(1.45, 1.62)))
 key("kofi", "L09", expr="smile", head=[0, 9])
 key("kofi", "L09.1", head=[0, -4], blend=0.5)
 shot("S09", "L09", cam(0.0, ST[1], 1.6, 1.7, -3, 36, cz=1.62, push=(1.55, 1.62)))
@@ -225,14 +225,16 @@ key("bell", "L11", expr="neutral")
 shot("S11a", "L11", rock_cam(1))
 shot("S11b", "L11.1", rock_cam(2))
 shot("S11c", "L11.2", rock_cam(3))
-shot("S11d", "L11.2>", rock_cam(3, 9.0))
+shot("S11d", "L11.2+0.45", rock_cam(3, 9.0))
 # the cut to the lot side: his back to the camera, then he turns (0.6 s) to the big red car behind him
-cut("bell", "L11.3", ST, yaw=0, expr="neutral", head=[0, 0])
-cue("L11.3", "show", car=1.0)
-key("bell", "L11.3+0.25", ST, yaw=180, expr="wide", blend=0.65)
-key("bell", "L11.4", expr="laugh", blend=0.3)
-shot("S11e", "L11.3", camp([0.7, 9.6, 3.8], [0.0, ST[1], 1.25], 70, pos2=[0.6, 9.0, 3.8], tgt2=[0.0, ST[1], 1.3]))
+cut("bell", "L11b", ST, yaw=0, expr="neutral", head=[0, 0])
+cue("L11b", "show", car=1.0)
+cue("L11b", "post", x=-3.0, y=G.POST_RAIL[1])      # the post steps out of the frame, on the cut
+key("bell", "L11b+0.25", ST, yaw=22, expr="wide", head=[68, 0], blend=0.65)
+key("bell", "L11b.1", expr="laugh", blend=0.3)
+shot("S11e", "L11b", camp([0.4, -3.55, 1.3], [0.0, ST[1], 1.5], 36, pos2=[0.3, -3.15, 1.3], tgt2=[0.0, ST[1], 1.5]))
 cue("L12", "show", car=0.0)
+cue("L12", "post", x=G.POST_RAIL[0], y=G.POST_RAIL[1])
 shot("S12", "L12", rock_cam(3, 8.0))
 
 # ===== 03 my turn (L13 to L22)
@@ -242,7 +244,7 @@ shot("S13", "L13", cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.65, 1.62
 key("me", "L14", expr="neutral")
 shot("S14", "L14", cam(0.72, ST[1], 1.5, 2.2, 0, 36, cz=1.6, push=(2.05, 1.55)))
 key("me", "L15", expr="uneasy")
-shot("S15", "L15", cam(0.32, ST[1], 1.62, 1.5, -3, 36, cz=1.62, push=(1.35, 1.62)))
+shot("S15", "L15", cam(0.32, ST[1], 1.62, 1.5, 6, 36, cz=1.62, push=(1.35, 1.62)))
 key("me", "L16", expr="uneasy")
 key("me", "L16.2", expr="stunned")
 shot("S16", "L16", cam(0.32, ST[1], 1.62, 1.5, 3, 36, cz=1.62, push=(1.35, 1.62)))
@@ -255,12 +257,13 @@ shot("S18", "L18", rock_cam(1, 11.0))
 key("me", "L19", expr="shout")
 cue("L19", "shout", me=1.0)
 cue("L20", "shout", me=0.0)
-shot("S19", "L19", cam(0.0, ST[1], 1.62, 1.1, 0, 36, cz=1.62, push=(1.0, 1.62)))
+shot("S19", "L19", cam(0.0, ST[1], 1.3, 1.1, 0, 36, cz=1.3, push=(1.0, 1.3)))
 shot("S19b", "P1", camp([-2.6, 3.5, 2.4], [0, G.WALL_Y, 6.0], 24, pos2=[-1.6, 2.0, 2.5]))
 key("me", "L20", expr="scared")
 shot("S20", "L20", cam(0.0, ST[1], 1.62, 1.3, 0, 36, cz=1.62, push=(1.15, 1.62)))
-shot("S21", "L21", camp([-3.0, 6.0, 3.0], [0, G.WALL_Y, 7.0], 24, pos2=[-2.0, 3.0, 2.8], tgt2=[0, G.WALL_Y, 7.0]))
-key("me", "L22", expr="uneasy")
+shot("S21", "L21", camp([-1.5, 6.0, 3.0], [0, G.WALL_Y, 7.0], 18, pos2=[-1.0, 3.0, 2.8], tgt2=[0, G.WALL_Y, 7.0]))
+cut("me", "L21", ST, hidden=True)
+cut("me", "L22", ST, yaw=0, expr="uneasy", hidden=False, head=[0, 0])
 shot("S22", "L22", cam(0.32, ST[1], 1.62, 1.5, 2, 36, cz=1.62, push=(1.35, 1.62)))
 
 # ===== 04 the truck (L23 to L26): I have walked to the truck on the cut; dusk comes in over 1.5 s on the wide
@@ -277,9 +280,37 @@ shot("S24", "L24", cam(SX[0], G.YT, 1.35, 1.15, 0, 36, cz=1.6, push=(1.05, 1.4))
 # three rocks at dusk, seen from the cab
 def cab_rock(n):
     x = ROCKS[n - 1]
-    return camp([G.XT + 0.35, SX[1] + 0.4, 1.75], [x, G.WALL_Y, ZR - 2.6], 36, pos2=[G.XT + 0.35, SX[1] + 0.2, 1.75])
+    return camp([G.XT + 0.35, SX[1] + 0.4, 1.75], [x, G.WALL_Y, ZR - 1.6], 50)
 
 
+def win_cue(at, n, lens=50, d=0.7):
+    """The window edge for rock n's cab shot: a bar down the left side and a lip along the bottom, d metres ahead of
+    the camera's first key (world objects, placed just inside the truck window)."""
+    p, t_ = cab_rock(n)[0][1], cab_rock(n)[0][2]
+    f = [t_[i] - p[i] for i in range(3)]
+    ln = math.sqrt(sum(c * c for c in f))
+    f = [c / ln for c in f]
+    right = [f[1], -f[0], 0.0]
+    rn = math.hypot(right[0], right[1])
+    right = [c / rn for c in right]
+    up = [right[1] * f[2] - right[2] * f[1], right[2] * f[0] - right[0] * f[2], right[0] * f[1] - right[1] * f[0]]
+    hw = d * 13.5 / lens / 2
+    hh = hw * 16 / 9
+    pc = [p[i] + f[i] * d - right[i] * (hw - 0.0075) + up[i] * 0.0 for i in range(3)]
+    qc = [p[i] + f[i] * d - up[i] * (hh - 0.012) for i in range(3)]
+    cue(at, "win", on=1.0, px=round(pc[0], 3), py=round(pc[1], 3), pz=round(pc[2], 3), qx=round(qc[0], 3),
+        qy=round(qc[1], 3), qz=round(qc[2], 3), fx=round(f[0], 4), fy=round(f[1], 4), fz=round(f[2], 4))
+
+
+
+cue("L25", "rocks", r1=1.0, r2=0.0, r3=0.0)
+cue("L25.1", "rocks", r1=0.0, r2=1.0, r3=0.0)
+cue("L25.2", "rocks", r1=0.0, r2=0.0, r3=1.0)
+cue("L26", "rocks", r1=1.0, r2=1.0, r3=1.0)
+win_cue("L25", 1)
+win_cue("L25.1", 2)
+win_cue("L25.2", 3)
+cue("L26", "win", on=0.0)
 shot("S25a", "L25", cab_rock(1))
 shot("S25b", "L25.1", cab_rock(2))
 shot("S25c", "L25.2", cab_rock(3))
@@ -292,15 +323,16 @@ cue("L27", "show", rim=1.0)
 cut("me", "L27", [*SX], hidden=True)       # out of the cab view (the camera sits where I sit)
 shot("S27", "L27", camp([SX[0] + 0.4, SX[1] + 0.6, 1.62], [G.POST_AHEAD[0], G.POST_AHEAD[1], 1.9], 36,
                         pos2=[SX[0] + 0.4, SX[1] - 0.2, 1.64]))
-shot("S28", "L28", camp([G.POST_AHEAD[0] + 0.1, G.POST_AHEAD[1] + 2.6, 1.85], [G.POST_AHEAD[0], G.POST_AHEAD[1], 2.0],
-                        36, pos2=[G.POST_AHEAD[0] + 0.1, G.POST_AHEAD[1] + 2.2, 1.9]))
+shot("S28", "L28", camp([G.POST_AHEAD[0] + 0.1, G.POST_AHEAD[1] + 4.6, 2.15], [G.POST_AHEAD[0], G.POST_AHEAD[1], 1.95],
+                        36, pos2=[G.POST_AHEAD[0] + 0.1, G.POST_AHEAD[1] + 4.2, 2.15]))
 cue("L29", "show", pane=1.0)
-shot("S29", "L29", camp([G.XT + 0.8, G.YT - 0.1, 1.5], [G.XT - 1.0, G.YT - 0.1, 1.5], 14,
+shot("S29", "L29", camp([G.XT + 0.8, G.YT - 0.1, 1.5], [G.XT - 1.0, G.YT - 0.1, 1.5], 11,
                         pos2=[G.XT + 0.7, G.YT - 0.1, 1.5]))
-cue("L30", "show", pane=0.0)
+cue("L30", "panepos", x=-1.0, y=0.5, rz=-90.0, s=0.7)
 cut("me", "L30", [*SX], yaw=0, expr="scared", head=[0, 0], hidden=False)
 key("me", "L30.0+0.2", expr="scared", head=[-62, 0], blend=0.6)
-shot("S30", "L30", cam(SX[0], G.YT, 1.35, 1.15, 0, 36, cz=1.6, push=(1.05, 1.4)))
+shot("S30", "L30", cam(SX[0] - 0.4, G.YT, 1.4, 1.55, 0, 36, cz=1.55, push=(1.45, 1.42)))
+cue("L31", "show", pane=0.0)
 cue("L31", "post", x=G.POST_AHEAD[0], y=G.POST_AHEAD[1])
 cut("me", "L31", [*SX], hidden=True)
 shot("S31a", "L31", rock_cam(1, 11.0))
@@ -335,7 +367,10 @@ music = {
 sound = {
     "floor": "gravel", "steps_db": -26,
     "ambience": [{"kind": "wind", "from": 0, "to": "end", "lufs": -42}],
-    "sfx": [{"at": "L29.1", "kind": "knock", "pattern": [0, 0.45, 0.9], "tone": "glass_soft", "db": -14}],
+    "sfx": [{"at": "L29.1", "kind": "knock", "pattern": [0, 0.45, 0.9], "tone": "glass_soft", "db": -14},
+            {"at": "L01.2", "kind": "hit", "db": -14}, {"at": "L12.2", "kind": "hit", "db": -14},
+            {"at": "L23.1", "kind": "door", "db": -16}, {"at": "L31.1", "kind": "hit", "db": -14}, {"at": "L26", "kind": "hit", "db": -14},
+            {"at": "L16.2", "kind": "thud", "db": -16}],
     "music_drops": [["L19>", "L20"]],
     "rev": REV,
 }
@@ -344,7 +379,7 @@ remap_all(sound["ambience"])
 remap_all(music["sections"])
 sound["music_drops"] = [[remap(a), remap(b)] for a, b in sound["music_drops"]]
 polish = {"emph": ["L01.2", "L12.2", "L16.2", "L28.1", "L31.1", "L32.1"], "reveal": ["L19"],
-          "twist": "L20", "sway": [], "hold": ["S11e", "S23a", "S29"]}
+          "twist": "L20", "sway": ["S03a", "S04", "S07", "S10", "S13", "S14", "S15", "S16", "S17", "S19", "S20", "S22", "S24", "S26", "S30", "S32", "S02", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S31a"], "hold": ["S11e", "S23a", "S29", "S28", "S25a", "S25b", "S25c"]}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
 polish["twist"] = remap(polish["twist"])
@@ -363,6 +398,8 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ffc93a",
     "gap": 0.15,
+    "asr_ignore_tail_repeat": True,
+    "homophones": {"opened": "open"},
     "tail": 0.25,
     "fade_in": False,
     "fade_out": False,
@@ -380,7 +417,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S02", "S05c", "S12", "S18", "S21", "S31a"],   # the clue rocks and the far wall: no person on purpose
+    "framing_ok": ["S02", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S25a", "S25b", "S25c", "S28", "S29", "S31a"],   # the clue rocks and the far wall: no person on purpose
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

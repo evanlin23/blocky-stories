@@ -13,4 +13,4 @@ XT, YT = 2.6, 8.0          # the pickup (nose toward the canyon, -y)
 SEAT = (XT - 0.45, YT + 0.15, 0.11)   # Eli's seat in the cab (x, y, z)
 POST_BEHIND = (XT + 0.45, YT + 3.7)   # the post when seen behind the truck
 POST_AHEAD = (XT - 0.1, YT - 3.9)     # the post when seen ahead through the windshield
-CAR = (0.0, 4.9)           # Mr. Bell's red car, nose to the railing
+CAR = (0.0, 4.4)           # Mr. Bell's red car, nose just behind him

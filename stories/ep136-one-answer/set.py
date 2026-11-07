@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 
 import bpy
+from mathutils import Vector
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import layout as G  # noqa: E402
@@ -20,10 +21,10 @@ import layout as G  # noqa: E402
 W = {}
 SIT = -math.pi / 2 * 0.97
 SEATED = ("me",)
-MOUTH_Z = -0.4
-GOLD_KEY, DUSK_KEY = "#ffd9a0", "#c898d8"
-GOLD_FACE, DUSK_FACE = "#fff0dc", "#d8c8ff"
-GOLD_SKY, DUSK_SKY = "#c8dcf0", "#8a7cc8"
+MOUTH_Z = -0.46
+GOLD_KEY, DUSK_KEY = "#ffd9a0", "#ff7a58"
+GOLD_FACE, DUSK_FACE = "#fff0dc", "#ffc4b4"
+GOLD_SKY, DUSK_SKY = "#c8dcf0", "#6a3cf0"
 
 
 def ss(x):
@@ -100,7 +101,7 @@ def build_post(kit):
     root = kit.empty("post", (G.POST_RAIL[0], G.POST_RAIL[1], 0))
     W["post"] = root
     wood = pl("#5e3a1e", 0.85, spec=0.04)
-    cream = pl("#e8d29a", 0.7, spec=0.05)
+    cream = kit.emit("#e8d29a", 0.8)             # the numeral stays cream in the gold and at dusk alike
     kit.box("post.body", (0.8, 0.8, 2.7), (0, 0, 1.35), wood, root)
     kit.box("post.cap", (0.9, 0.9, 0.1), (0, 0, 2.75), pl("#7a5332", 0.8), root)
     for face in (-1, 1):                       # -1: the south face (seen from the canyon side), +1: the north face
@@ -117,14 +118,15 @@ def build_post(kit):
 def build_rocks(kit):
     pl = kit.plastic
     slab = pl("#6e2a22", 0.9, spec=0.03)
-    dot = pl("#fff2d0", 0.7, spec=0.05)
+    dot = kit.emit("#fff2d0", 0.85)      # cream in the gold and at dusk alike (continuity)
     pos = {1: [(0.0, 0.0)], 2: [(-1.5, 0.0), (1.5, 0.0)], 3: [(-1.5, 1.6), (1.5, 1.6), (0.0, -1.7)]}
+    W["rocks"] = {1: [], 2: [], 3: []}
     for n, x in enumerate(G.ROCK_X, start=1):
-        kit.box(f"rock{n}", (6.6, 1.5, 7.6), (x, G.WALL_Y + 0.75, G.ROCK_Z), slab, bevel=0.08)
+        W["rocks"][n].append(kit.box(f"rock{n}", (6.6, 1.5, 7.6), (x, G.WALL_Y + 0.75, G.ROCK_Z), slab, bevel=0.08))
         for k, (dx, dz) in enumerate(pos[n]):
             # a flat cream disc, 3 cm proud of the slab face (y = WALL_Y + 1.5)
-            kit.cyl(f"rock{n}.dot{k}", 1.25, 0.1, (x + dx, G.WALL_Y + 1.5 + 0.02, G.ROCK_Z + dz), dot,
-                    rot=(math.pi / 2, 0, 0), n=28)
+            W["rocks"][n].append(kit.cyl(f"rock{n}.dot{k}", 1.25, 0.1, (x + dx, G.WALL_Y + 1.5 + 0.02, G.ROCK_Z + dz),
+                                         dot, rot=(math.pi / 2, 0, 0), n=28))
 
 
 # ---------------------------------------------------------------------------------------------- the truck
@@ -143,11 +145,12 @@ def build_truck(kit):
         return kit.box(f"truck.{n}", size, loc, m, root, bevel=bev, rot=rot)
 
     b("chassis", (2.0, 5.2, 0.45), (0, 0, 0.6), dteal)
-    b("hood", (1.95, 1.7, 0.55), (0, -1.85, 0.95), teal, 0.03)
-    b("grille", (1.9, 0.1, 0.5), (0, -2.74, 0.78), pl("#c8ccd0", 0.4, spec=0.7))
-    b("bumper", (2.1, 0.2, 0.2), (0, -2.8, 0.52), pl("#c8ccd0", 0.4, spec=0.7))
+    hood_c = pl("#14544f", 0.65, spec=0.08)       # dashboard teal, not the bright cab paint
+    b("hood", (1.95, 1.7, 0.55), (0, -1.85, 0.95), hood_c, 0.03)
+    b("grille", (1.9, 0.1, 0.5), (0, -2.74, 0.78), pl("#33363e", 0.5, spec=0.2))
+    b("bumper", (2.1, 0.2, 0.2), (0, -2.8, 0.52), pl("#33363e", 0.5, spec=0.2))
     for sx in (-1, 1):
-        kit.cyl(f"truck.lamp{sx}", 0.17, 0.08, (sx * 0.7, -2.76, 0.98), pl("#f4ecd0", 0.6), root,
+        kit.cyl(f"truck.lamp{sx}", 0.17, 0.08, (sx * 0.7, -2.76, 0.98), pl("#7a7a82", 0.6), root,
                 rot=(math.pi / 2, 0, 0), n=16)
     # cab: door panels below the belt line, A and C pillars, roof, the floor and a dash
     b("floor", (1.96, 2.0, 0.08), (0, -0.1, 0.5), pl("#4a4a54", 0.8))
@@ -155,7 +158,17 @@ def build_truck(kit):
         b(f"door{sx}", (0.08, 2.0, 0.7), (sx * 0.99, -0.1, 0.85), teal, 0.02)
         b(f"apil{sx}", (0.12, 0.14, 0.9), (sx * 0.95, -1.05, 1.6), teal)
         b(f"cpil{sx}", (0.12, 0.14, 0.9), (sx * 0.95, 0.85, 1.6), teal)
-    b("dash", (1.9, 0.4, 0.2), (0, -0.8, 1.05), dark, 0.03)
+    b("dash", (1.9, 0.5, 0.34), (0, -0.78, 1.12), dark, 0.03)
+    b("dash.lip", (1.9, 0.07, 0.05), (0, -1.04, 1.3), pl("#8d8d9c", 0.5, spec=0.2))
+    # the steering-wheel rim in front of the driver's seat: a ring of twelve short bars, tilted back a little
+    rimc = pl("#15151a", 0.6)
+    wx, wy, wz, wr = -0.45, -0.38, 1.1, 0.16
+    for k in range(12):
+        a = k * math.tau / 12
+        b(f"wheel.seg{k}", (0.17, 0.06, 0.06), (wx + wr * math.cos(a), wy, wz + wr * math.sin(a)), rimc, 0.01,
+          rot=(0, -a - math.pi / 2, 0))
+    b("wheel.hub", (0.12, 0.06, 0.12), (wx, wy, wz), rimc, 0.01)
+    b("wheel.column", (0.08, 0.3, 0.08), (wx, wy - 0.18, wz - 0.1), rimc)
     b("cabback", (1.9, 0.12, 0.8), (0, 0.85, 0.95), teal)
     # seats: a cushion and a low back each (the back stays below the shoulders so the post shows past a head)
     for sx in (-0.45, 0.45):
@@ -171,15 +184,35 @@ def build_truck(kit):
             kit.cyl(f"truck.wheel{sx}{ly}", 0.44, 0.3, (sx * 1.0, ly, 0.44), dark, root, rot=(0, math.pi / 2, 0), n=18)
             kit.cyl(f"truck.hub{sx}{ly}", 0.2, 0.32, (sx * 1.0, ly, 0.44), pl("#cfd2d6", 0.3, spec=0.8), root,
                     rot=(0, math.pi / 2, 0), n=12)
-    # the knock window: a pale violet pane in the west door and a dark shoulder-high shape outside it, both hidden
-    # until the cue "show" pane=1 (they are on a cut, never flashed)
-    pane = kit.box("truck.pane", (0.03, 1.55, 0.95), (-0.99, -0.1, 1.64), kit.emit("#a89ae0", 0.6), root)
-    sh = pl("#0b0916", 0.9, spec=0.0)
-    xs = -0.955   # on the room side of the pane, 3.5 cm proud, so the cab camera sees it
-    parts = [kit.box("truck.shadow.torso", (0.04, 1.1, 0.5), (xs, -0.1, 1.4), sh, root),
-             kit.box("truck.shadow.sh", (0.04, 0.76, 0.14), (xs, -0.1, 1.71), sh, root),
-             kit.box("truck.shadow.neck", (0.04, 0.24, 0.2), (xs, -0.1, 1.86), sh, root)]
-    W["pane"] = [pane] + parts
+    # the knock window: a window frame (dark bars), a pale violet pane in it and a soft grey head-and-shoulders
+    # shadow on it, all hidden until the cue "show" pane=1 (they are on a cut, never flashed). The shadow is made of
+    # rounded ellipsoids in two tones (a wide pale halo under a darker core) so its edge is soft, never stepped; it
+    # is drawn on both faces of the pane so the cab camera and the outside camera both see it.
+    pg = kit.empty("truck.paneg", (-0.985, -0.1, 0), root)
+    W["paneg"] = pg
+    PX = -0.985   # the group's own origin; children are placed relative to it
+
+    def pb(n, size, loc, m):
+        return kit.box(f"truck.{n}", size, (loc[0] - PX, loc[1] + 0.1, loc[2]), m, pg)
+
+    pane = pb("pane", (0.03, 1.55, 0.95), (-0.99, -0.1, 1.64), kit.emit("#9a8ed0", 0.6))
+    fr = pl("#1b2230", 0.7)
+    bars = [pane,
+            pb("pane.l", (0.07, 0.1, 1.15), (-0.985, -0.1 - 0.825, 1.64), fr),
+            pb("pane.r", (0.07, 0.1, 1.15), (-0.985, -0.1 + 0.825, 1.64), fr),
+            pb("pane.t", (0.07, 1.75, 0.1), (-0.985, -0.1, 2.165), fr),
+            pb("pane.b", (0.07, 1.75, 0.1), (-0.985, -0.1, 1.115), fr)]
+    halo = kit.emit("#7a70ad", 0.6)
+    core = kit.emit("#5d5590", 0.6)
+    for side, xs in (("in", -0.945), ("out", -1.035)):
+        sgn = 1 if side == "in" else -1
+        for tag, mat, dx, k in (("halo", halo, 0.0, 1.22), ("core", core, 0.012 * sgn, 1.0)):
+            hd = kit.sphere(f"truck.shadow.{side}.head.{tag}", 1.0, (xs + dx - PX, 0.0, 1.86), mat, pg, seg=20)
+            hd.scale = (0.012, 0.2 * k, 0.24 * k)
+            sh = kit.sphere(f"truck.shadow.{side}.sh.{tag}", 1.0, (xs + dx - PX, 0.0, 1.33), mat, pg, seg=20)
+            sh.scale = (0.012, 0.58 * k, 0.4 * k)
+            bars += [hd, sh]
+    W["pane"] = bars
 
 
 def build_car(kit):
@@ -210,14 +243,33 @@ def build_car(kit):
 
 
 def build_mouths(kit):
-    """An open shouting mouth for each head: a dark red oval, a little proud of the face. It is parented to the head
-    on the first animate (the cast exists only after build) and shown by the cue "shout" (per character, on cuts)."""
-    m = kit.plastic("#3a0c14", 0.8, spec=0.0)
+    """An open shouting mouth for each head: a tall dark-red oval with a pale teeth edge on top and a pink tongue
+    below, a little proud of the face. Parented to the head on the first animate (the cast exists only after build)
+    and shown by the cue "shout" (per character, on cuts)."""
+    pl = kit.plastic
+    ins = pl("#5a0d18", 0.8, spec=0.0)
+    teeth = pl("#f6f0e4", 0.6, spec=0.0)
+    tongue = pl("#d4586c", 0.7, spec=0.0)
     W["mouth"] = {}
     for who in ("me", "ruiz", "kofi", "bell"):
-        ob = kit.sphere(f"mouth.{who}", 1.0, (0, 0, -200), m, seg=14)
-        ob.scale = (0.3, 0.06, 0.22)
-        W["mouth"][who] = ob
+        parts = []
+        for tag, mat, sc, dy, dz in (("in", ins, (0.2, 0.06, 0.3), 0.0, 0.0),
+                                     ("teeth", teeth, (0.17, 0.05, 0.065), -0.03, 0.2),
+                                     ("tongue", tongue, (0.11, 0.05, 0.1), -0.035, -0.15)):
+            ob = kit.sphere(f"mouth.{who}.{tag}", 1.0, (0, 0, -200), mat, seg=14)
+            ob.scale = sc
+            parts.append((ob, dy, dz))
+        W["mouth"][who] = parts
+
+
+def build_win(kit):
+    """The window edge seen from the cab in the three rock shots: a dark-teal side bar and a lip along the bottom,
+    placed in the world just inside the truck window (not on the camera) by the cue "win"."""
+    m = kit.plastic("#1b5f5a", 0.6, spec=0.1)
+    W["win"] = [kit.box("win.bar", (0.015, 0.04, 0.6), (0, 0, -200), m),
+                kit.box("win.lip", (0.6, 0.04, 0.03), (0, 0, -200), m)]
+    for ob in W["win"]:
+        ob.rotation_mode = "QUATERNION"
 
 
 def build_loaf(kit):
@@ -245,6 +297,7 @@ def build(kit, story, tl):
     build_car(kit)
     build_loaf(kit)
     build_mouths(kit)
+    build_win(kit)
     return {}
 
 
@@ -255,6 +308,8 @@ def animate(kit, story, tl, t, ctx):
         kit.LIGHTS[name]["light"].color = mix(a, b_, d, kit)
     wd = bpy.context.scene.world
     if wd is not None and wd.node_tree is not None and "Background" in wd.node_tree.nodes:
+        wd.node_tree.nodes["Background"].inputs["Strength"].default_value = 1.0 - 0.3 * d
+    if wd is not None and wd.node_tree is not None and "Background" in wd.node_tree.nodes:
         wd.node_tree.nodes["Background"].inputs["Color"].default_value = (*mix(GOLD_SKY, DUSK_SKY, d, kit), 1.0)
     gains = {"key": 1.0 - 0.25 * d, "face": 1.0 - 0.05 * d}
     # the post: placed by cue, on cuts
@@ -262,7 +317,21 @@ def animate(kit, story, tl, t, ctx):
     W["post"].location = (ps["x"], ps["y"], 0.0)
     sh = sample("show", tl, t, {"car": 0.0, "loaf": 0.0, "pane": 0.0, "rim": 0.0})
     W["car"].location = (G.CAR[0], G.CAR[1], 0.0 if sh["car"] > 0.5 else -200.0)
-    W["loaf"].location = (0.0, 0.9, 1.12 if sh["loaf"] > 0.5 else -200.0)
+    W["loaf"].location = (0.0, 0.9, 0.88 if sh["loaf"] > 0.5 else -200.0)
+    rk = sample("rocks", tl, t, {"r1": 1.0, "r2": 1.0, "r3": 1.0})
+    for n in (1, 2, 3):
+        for ob in W["rocks"][n]:
+            ob.hide_render = rk[f"r{n}"] < 0.5
+    wn = sample("win", tl, t, {"on": 0.0, "px": 0.0, "py": 0.0, "pz": 0.0, "qx": 0.0, "qy": 0.0, "qz": 0.0,
+                               "fx": 0.0, "fy": -1.0, "fz": 0.0})
+    quat = Vector((wn["fx"], wn["fy"], wn["fz"])).to_track_quat("-Y", "Z")
+    for ob, key_ in zip(W["win"], ("p", "q")):
+        ob.location = (wn[key_ + "x"], wn[key_ + "y"], wn[key_ + "z"] if wn["on"] > 0.5 else -200.0)
+        ob.rotation_quaternion = quat
+    pp = sample("panepos", tl, t, {"x": -0.985, "y": -0.1, "rz": 0.0, "s": 1.0})
+    W["paneg"].scale = (pp["s"], pp["s"], pp["s"])
+    W["paneg"].location = (pp["x"], pp["y"], 0.0)
+    W["paneg"].rotation_euler = (0.0, 0.0, math.radians(pp["rz"]))
     for ob in W["pane"]:
         ob.hide_render = sh["pane"] < 0.5
     for ob in W["rim"]:
@@ -272,10 +341,11 @@ def animate(kit, story, tl, t, ctx):
     for who, ob in W["mouth"].items():
         hg = bpy.data.objects.get(f"{who}.headg")
         if hg is not None:
-            if ob.parent is not hg:
-                ob.parent = hg
-                ob.location = (0, -0.6, MOUTH_Z)
-            ob.hide_render = hg.hide_render or shout[who] < 0.5
+            for part, dy, dz in ob:
+                if part.parent is not hg:
+                    part.parent = hg
+                    part.location = (0, -0.6 + dy, MOUTH_Z + dz)
+                part.hide_render = hg.hide_render or shout[who] < 0.5
     # seated: legs level while the character sits (eased over a cue's own dur)
     sit = sample("sit", tl, t, {n: 0.0 for n in SEATED})
     for who in SEATED:
