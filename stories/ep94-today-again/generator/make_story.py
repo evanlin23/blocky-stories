@@ -268,7 +268,7 @@ S("L12.1", ((-1.2, 2.2, 1.5), (DOOR, -1.4, 1.45), 30, (-1.6, 1.8, 1.5), (DOOR, -
 walk("pearl", "L12.1+0.1", X(DOOR, -2.2))
 walk("pearl", "L12.3", X(DOOR, -0.9))
 cue("L12.1", "fdoor", v=[85], dur=0.0)
-S("L12.3", ((0.2, 2.6, 1.45), (DOOR, 0.3, 1.3), 30, (-0.2, 2.5, 1.45), (DOOR, 0.5, 1.3), 30),
+S("L12.3", ((0.2, 2.6, 1.45), (DOOR + 0.5, 0.3, 1.3), 30, (-0.2, 2.5, 1.45), (DOOR + 0.5, 0.5, 1.3), 30),
   who={"pearl": (X(DOOR, -0.9), 180, "grin", {})}, note="she comes in, the bell jingles")
 walk("pearl", "L12.3", X(DOOR, -0.9))
 walk("pearl", "L12>", X(DOOR, -0.5))
@@ -438,7 +438,7 @@ S("L26.3", ((1.2, 3.4, 1.5), (3.0, 7.2, 1.2), 26, (1.5, 3.8, 1.5), (3.0, 7.2, 1.
 walk("me", "L26.3", (2.2, 5.9))
 walk("me", "L26>", (3.0, 7.0))
 cue("L26.3", "bdoor", v=[0], dur=0)
-cue("L26.3+0.3", "bdoor", v=[95], dur=0.5)
+cue("L26.3+0.3", "bdoor", v=[-95], dur=0.5)   # swings out into the alley, away from me walking up to it
 S("L27", ((2.0, -4.2, 2.5), (3.85, -0.9, 3.7), 32, (2.3, -3.8, 2.6), (3.85, -0.9, 3.75), 32),
   who={"oka": (X(3.85, -0.95, 2.9), -28, "grin", {"arms": [15, 25], "side": [0, 75], "head": [12, 0]})},
   note="low angle up the bakery wall: Mr. Okafor on a tall ladder, focused")
