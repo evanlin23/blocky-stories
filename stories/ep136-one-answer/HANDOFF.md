@@ -1,9 +1,12 @@
 # ep136-one-answer: handoff (build session, batch 15a)
 
-STATUS: working, build round 1 fixes.
+STATUS: working. Approved, PR open, waiting on the proof.
 
-- Build reviews: r2-critic revise (avg 7.0; C3 and C6 didn't read), r2-standards revise (renames, cover).
-- Writer fixes are in (Mrs. Avila, Jonah, the mystery by 12 s, message 1 mid-shout, three added lines for 60 s+).
-- Builder fixes are in story.json, set.py and make_story.py and the lines are re-voiced. The preview, flash --like-proof, measure and lints are still to run (the container restarted twice mid-render).
-- Echo: the engine has no reverb option (engine edits are out of scope), so the echo lines run at tempo 0.88.
-- Next: finish the preview and checks, then round 2 (r3) for both critic and standards, check-only.
+- Reviews:
+  - r2: critic revise (7.0) and standards revise.
+  - r3: standards approve; critic revise (7.4) on one fix.
+  - r4 (rescue): critic approve.
+- All 6 clues read at phone size (critic r3).
+- Preview: 62.2 s, motion_energy_q 6.54, changes 16.3 and 18.3, longest still 0.27 s; flash --like-proof passes. Check, gate (OPEN), shardcheck and pytest are clean.
+- Echo: tempo 0.88 plus the `space` voice filter (the engine has no echo tap).
+- Next: the proof on the PR, then proof qa, a green `test` and the merge.

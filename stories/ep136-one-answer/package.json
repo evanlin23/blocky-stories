@@ -6,6 +6,5 @@
   "cover_s": 36.4,
   "shape": "open-choice",
   "opening": "cost",
-  "lane": "interactive",
-  "hold": "batch 15a: scripts only, not built yet"
+  "lane": "interactive"
 }
