@@ -14,7 +14,7 @@
 - **Word count:** 482 spoken words in 67 lines (L01 to L67), all `narrator`, plus one music drop (0.6 s before L39).
 - **Estimated length:** about 111 s at 290 wpm with 0.15 s gaps, the drop and the loop tail (the long arm).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Dad's bright front room in butter yellow and sky blue on summer afternoons: a white mantel, a big window onto the porch, sun on the floorboards. The box is wrapped in faded red paper with a wide cream ribbon cross and a bow.
-- **Hold:** scripts only (batch 14). Not built, not voiced.
+- **Hold:** built and voiced (batch 14, build round 1 and the r2 fix round); `package.json` still carries its `hold` until critic and standards approve.
 
 ## Variety table (batch 14)
 | Upload | Story | Setting | Strange thing | First-line type | Ending shape | Kind of warmth |

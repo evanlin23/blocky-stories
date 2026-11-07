@@ -22,7 +22,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 10
+REV = 11
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -73,9 +73,9 @@ cast = {
     # Dad (Gene), 60: gray hair combed back, a gray goatee, a light blue short-sleeved button shirt, khakis
     "dad": person(SKIN, "#a9cdea", "#c9b48a", "#6a4a30", hair="cap", hair_c="#b8b8c0", collar="#e8f0f8", sleeves="short",
                   goatee="#a8a8b0", brow_w=1.2),
-    # Dad at 48: dark hair, no goatee, the same shirt
-    "dad48": person(SKIN, "#a9cdea", "#c9b48a", "#6a4a30", hair="cap", hair_c="#4a3a2c", collar="#e8f0f8", sleeves="short",
-                    brow_w=1.2),
+    # Dad at 48: salt-and-pepper hair and gray stubble (so he can't read as me), the same shirt
+    "dad48": person(SKIN, "#a9cdea", "#c9b48a", "#6a4a30", hair="cap", hair_c="#8e8a86", collar="#e8f0f8", sleeves="short",
+                    brow_w=1.2, stubble="#79757a"),
     # Mrs. Albee: a silver bun, round glasses, a red cardigan
     "albee": person("#f0c8a0", "#c0392b", "#6a5a8a", "#6a4a30", hair="bun", hair_c="#c9c9d3", pattern="knit",
                     pattern_c="#e8604a", eyes="lashes", extras=["glasses"], extra_c="#8a2a22"),
@@ -181,7 +181,10 @@ def ps(st, x, y, **kw):
 
 
 HOLD_ARMS = dict(arms=(66, 66), side=(-20, -20))
-BOX_ARMS = dict(arms=(52, 52), side=(-20, -20))
+BOX_ARMS = dict(arms=(45, 45), side=(-20, -20))      # both hands on the box's sides at waist height
+KF_ARMS = dict(arms=(52, 52), side=(-12, -12))       # Dad's hands under the open box, low
+CON_ARMS = dict(arms=(60, 60), side=(-10, -10))      # Dad's flat hands on the box on the bench in front of him
+ALB_ARMS = dict(arms=(50, 50), side=(-22, -22))
 SIT = dict(seat=True, arms=(18, 18), side=(4, 4))
 
 # ============================================================================================ 01 the rule
@@ -189,7 +192,7 @@ ME0 = (1.05, 1.95)
 ME1 = (0.6, 1.95)
 shot("S01a", 0, fcam("R1", *ME1, d=3.9, lens=30, dx=-0.3, f=0.40), {
     "me": ps("R1", *ME1, expr="neutral", head=(-22, 0), look=(-0.5, 0))})
-shot("S01b", "L01.2", fcam("R1", *ME1, d=2.8, lens=30, dx=-0.1, f=0.40, push=0.08, to=[0.2, 1.95, 1.346]), {
+shot("S01b", "L01.2", fcam("R1", *ME1, d=3.2, lens=30, dx=-0.32, f=0.38, push=0.02, arc=0.6), {
     "me": ps("R1", *ME1, expr="neutral", head=(-20, 0), look=(-0.5, 0))})
 shot("S02", "L02", fcam("R1", *ME1, d=3.6, lens=30, dx=-0.3, f=0.40, az=-4), {
     "me": ps("R1", *ME1, expr="neutral", arms=(8, 8), side=(14, 14), head=(0, 3))})
@@ -197,11 +200,11 @@ shot("S02", "L02", fcam("R1", *ME1, d=3.6, lens=30, dx=-0.3, f=0.40, az=-4), {
 # ============================================================================================ 02 the rule at work
 ALB = (0.0, 1.5)
 shot("S03", "L03", fcam("MA", *ALB, d=3.1, lens=30, f=0.31, push=0.06), {
-    "albee": ps("MA", *ALB, expr="smile", **HOLD_ARMS)})
+    "albee": ps("MA", *ALB, expr="smile", **ALB_ARMS)})
 shot("S04", "L04", fcam("MA", *ALB, d=3.0, lens=30, f=0.31, az=4, push=0.06), {
-    "albee": ps("MA", *ALB, expr="laugh", **HOLD_ARMS)})
-chg("albee", "L04.0+0.4", blend=0.12, arms=(60, 60))
-chg("albee", "L04.1", blend=0.12, arms=(70, 70))
+    "albee": ps("MA", *ALB, expr="laugh", **ALB_ARMS)})
+chg("albee", "L04.0+0.4", blend=0.12, arms=(54, 54))
+chg("albee", "L04.1", blend=0.12, arms=(50, 50))
 SAM = (0.0, 2.45)
 shot("S05", "L05", fcam("MS", *SAM, z=-G.SEAT, d=3.1, lens=30, f=0.40, dx=0.25), {
     "sam": ps("MS", *SAM, expr="smile", seat=True, arms=(72, 72), side=(-14, -14))})
@@ -219,7 +222,8 @@ shot("S10", "L10", fcam("R1", ME_STEP[0], ME_STEP[1], z=-0.36, d=3.4, lens=30, f
     "me": ps("R1", *ME_STEP, z=-0.36, yaw=0, expr="smile")})
 
 # ============================================================================================ 03 the present on the mantel
-shot("S11", "L11", ocam("R1", 0.0, 1.9, 1.45, 5.3, 24, el=2, push=0.06), {})
+shot("S11", "L11", ocam("R1", -0.1, 1.9, 1.3, 4.0, 24, el=2, push=0.05), {
+    "dad": ps("R1", *G.DAD_SEAT, expr="neutral", **SIT)})
 shot("S12", "L12", ocam("R1", 0.0, 2.55, 1.62, 1.8, 30, az=-6, push=0.1), {})
 YG = (-2.3, 2.62)
 shot("S13", "L13", fcam("R1", *YG, d=3.0, lens=30, f=0.40), {
@@ -231,7 +235,7 @@ shot("S15", "L15", fcam("R1", *D48, d=3.2, lens=30, f=0.40, dx=0.3), {
     "dad48": ps("R1", *D48, expr="neutral", arms=(20, 20), side=(8, 8))})
 shot("S16", "L16", ocam("KA", 0.1, 1.1, 1.1, 3.2, 30, az=0, el=22, push=0.08), {})
 YK = (0.6, G.STAND_Y)
-shot("S17", "L17", fcam("KA", *YK, d=2.9, lens=30, f=0.40, dx=-0.4), {
+shot("S17", "L17", fcam("KA", *YK, d=2.9, lens=30, f=0.40, dx=-0.15, push=0.04, arc=1.0), {
     "young": ps("KA", *YK, expr="angry", head=(0, 2))})
 chg("young", "L17.2", blend=0.4, expr="sad", head=(0, 10))
 shot("S18", "L18", ocam("R1", 0.0, 2.55, 1.62, 1.9, 30, az=4, push=0.08), {})
@@ -253,60 +257,57 @@ shot("S22", "L22", fcam("R1", *G.ME_SEAT, d=3.3, lens=30, f=0.38, dx=-0.25, push
 shot("S23a", "L23", fcam("R1", -0.85, 1.9, d=3.6, lens=30, f=0.38, dx=0.3), {
     "dad": ps("R1", -0.85, 1.9, expr="smile", arms=(8, 8))})
 talk("dad", "L23.1", "L23>")
-shot("S23b", "L23.1", fcam("R1", -0.85, 1.9, d=2.7, lens=30, f=0.38, dx=0.3, push=0.06), {
+shot("S23b", "L23.1", fcam("R1", -0.85, 1.9, d=2.9, lens=30, f=0.38, dx=0.1, push=0.04, arc=1.0), {
     "dad": ps("R1", -0.85, 1.9, expr="smile", arms=(8, 8))})
-DAD_MANTEL = (-0.1, 1.72)
-FLAT = dict(arms=(84, 84), side=(-8, -8))
-shot("S24", "L24", fcam("R1", *DAD_MANTEL, d=3.6, lens=30, f=0.40, az=30, dx=0.26), {
-    "dad": ps("R1", *DAD_MANTEL, expr="warm", head=(10, 0), **FLAT)})
-shot("S25", "L25", ocam("R1", -0.05, 2.55, 1.7, 2.4, 30, az=50, push=0.08, arc=-3), {})
+shot("S24", "L24", fcam("R7", *G.DAD_CON, d=3.0, lens=30, f=0.30, az=0, push=0.04, arc=0.0), {
+    "dad": ps("R7", *G.DAD_CON, expr="warm", head=(6, 0), **CON_ARMS)})
+shot("S25", "L25", ocam("R1", -0.15, 2.55, 1.7, 2.6, 30, az=72, el=6, push=0.05, arc=1.0), {})
 
 # ============================================================================================ 05 the scare
 HOLDER = G.HOLD
 shot("S26", "L26", fcam("R2", *HOLDER, d=3.3, lens=30, f=0.40, el=4), {
     "me": ps("R2", *HOLDER, expr="uneasy", **BOX_ARMS)})
-shot("S27", "L27", fcam("R2", *HOLDER, d=2.9, lens=30, f=0.40, el=5, az=3, push=0.08), {
+shot("S27", "L27", fcam("R2", *HOLDER, d=1.8, lens=30, f=0.42, el=3, az=3, push=0.06, arc=1.0), {
     "me": ps("R2", *HOLDER, expr="stunned", **BOX_ARMS)})
 shot("S28", "L28", fcam("R2", *HOLDER, d=2.9, lens=30, f=0.40, az=-4, el=6, push=0.08), {
-    "me": ps("R2", *HOLDER, expr="uneasy", arms=(60, 60), side=(-22, -22), lean=4, head=(0, 6))})
+    "me": ps("R2", *HOLDER, expr="uneasy", arms=(40, 40), side=(-22, -22), lean=4, head=(0, 6))})
 chg("me", "L28.1", blend=0.5, lean=8, head=(0, 10))
-shot("S29", "L29", fcam("R2", *HOLDER, d=2.7, lens=28, f=0.40, el=8, push=0.06), {
+shot("S29", "L29", ocam("R2", 0.0, 0.83, 0.62, 1.6, 30, el=-6, push=0.06, arc=1.0), {
     "me": ps("R2", *HOLDER, expr="uneasy", **BOX_ARMS)})
 shot("S30a", "L30", fcam("R2", *HOLDER, d=2.9, lens=30, f=0.40, el=5, az=-3, push=0.07), {
     "me": ps("R2", *HOLDER, expr="scared", **BOX_ARMS)})
-shot("S30b", "L30.2", fcam("R2", *HOLDER, d=2.7, lens=28, f=0.40, el=7, az=-8, push=0.07), {
+shot("S30b", "L30.2", ocam("R2", 0.0, 0.83, 0.72, 1.5, 30, az=68, el=6, push=0.06, arc=1.0), {
     "me": ps("R2", *HOLDER, expr="scared", **BOX_ARMS)})
 shot("S31", "L31", ocam("R1", -2.3, 6.2, 0.1, 6.0, 24, az=180, el=3, push=0.06), {})
-shot("S32", "L32", fcam("R3", -0.45, 1.95, d=3.4, lens=30, f=0.40, dx=0.25), {
-    "me": ps("R3", -0.45, 1.95, expr="scared", arms=(30, 30), side=(-6, -6), head=(14, 0))})
+shot("S32", "L32", fcam("R3", -0.58, 1.95, d=2.9, lens=30, f=0.42, dx=0.36, push=0.03, arc=0.8), {
+    "me": ps("R3", -0.58, 1.95, expr="scared", arms=(10, 10), side=(-4, -4), head=(10, 0))})
 
 # ============================================================================================ 06 thanksgiving
-DAD_HANDS = (-0.12, 1.72)
-shot("S33", "L33", fcam("R3", *DAD_HANDS, d=3.6, lens=30, f=0.40, az=30, dx=0.26), {
-    "dad": ps("R3", *DAD_HANDS, expr="smile", head=(10, 0), **FLAT)})
-shot("S34", "L34", ocam("R3", -0.05, 2.1, 1.38, 2.4, 30, az=-10, el=4, push=0.08), {
-    "dad": ps("R3", *DAD_HANDS, expr="warm", head=(8, 6), **FLAT)})
-MN = (1.5, 1.25)
-shot("S35", "L35", fcam("R3N", *MN, z=-G.SEAT, d=4.4, lens=30, f=0.40, dx=0.42, push=0.05), {
-    "me": ps("R3N", *MN, expr="scared", seat=True, arms=(70, 70), side=(-30, -30))})
-shot("S36", "L36", ocam("R3N", 0.25, 2.55, 1.55, 3.2, 30, az=-72, push=0.06, arc=-2), {})
+shot("S33", "L33", fcam("R7B", *G.DAD_CON, d=2.7, lens=30, f=0.28, az=0, push=0.04, arc=0.0), {
+    "dad": ps("R7B", *G.DAD_CON, expr="smile", head=(-6, 0), **CON_ARMS)})
+shot("S34", "L34", ocam("R7B", 0.0, 1.9, 0.95, 2.6, 30, az=0, el=3, push=0.05, arc=0.0), {
+    "dad": ps("R7B", *G.DAD_CON, expr="warm", head=(8, 6), **CON_ARMS)})
+MN = G.ME_SEAT
+shot("S35", "L35", fcam("R3N", *MN, z=-G.SEAT, d=4.4, lens=30, f=0.40, dx=-0.4, push=0.03, arc=0.8), {
+    "me": ps("R3N", *MN, expr="scared", seat=True, arms=(15, 15), side=(-6, -6))})
+shot("S36", "L36", ocam("R3N", -0.1, 2.55, 1.6, 3.0, 30, az=62, el=4, push=0.05, arc=1.0), {})
 shot("S37", "L37", fcam("KB", 0.0, G.STAND_Y, d=3.2, lens=30, f=0.40), {
     "dad": ps("KB", 0.0, G.STAND_Y, expr="smile", arms=(40, 40), side=(-6, -6))})
 chg("dad", "L37.1", blend=0.4, head=(0, 6))
 shot("S38", "L38", fcam("KB", 0.0, G.STAND_Y, d=2.8, lens=30, f=0.40, az=3, push=0.07), {
     "dad": ps("KB", 0.0, G.STAND_Y, expr="warm", arms=(40, 40), side=(-6, -6))})
 talk("dad", "L38.1", "L38>")
-shot("S38b", "P01", ocam("R6", 0.0, 0.6, 1.3, 4.4, 22, el=3, push=0.05), {})
+shot("S38b", "P01", ocam("R3", 0.0, 1.5, 1.3, 3.6, 22, el=3, push=0.05), {})
 
 # ============================================================================================ 07 the party
-shot("S39", "L39", fcam("R3", -2.3, 5.0, d=2.6, lens=28, f=0.27, push=0.02, arc=0.4), {
+shot("S39", "L39", fcam("R3", -2.3, 5.0, d=2.6, lens=28, f=0.42, push=0.02, arc=0.4), {
     "dad": ps("R3", -2.3, 5.0, yaw=0, expr="smile", arms=(6, 6))}, hand=0.004)
-ME_WIN = (1.85, 1.95)
-shot("S40", "L40", fcam("R3", *ME_WIN, d=3.2, lens=30, f=0.40, dx=0.15), {
+ME_WIN = (0.6, 1.95)    # between the mantel box (left) and the window with the truck (right)
+shot("S40", "L40", fcam("R3", *ME_WIN, d=5.4, lens=30, f=0.40, dx=0.35, push=0.02, arc=0.6), {
     "me": ps("R3", *ME_WIN, expr="sheepish", head=(0, 0))})
-shot("S41", "L41", fcam("R3", *ME_WIN, d=2.8, lens=30, f=0.40, dx=0.1, az=3, push=0.08), {
+shot("S41", "L41", fcam("R3", *ME_WIN, d=3.8, lens=30, f=0.40, dx=-0.1, az=3, push=0.03, arc=0.8), {
     "me": ps("R3", *ME_WIN, expr="smile")})
-shot("S42", "L42", fcam("R3", *ME_WIN, d=2.5, lens=30, f=0.40, dx=0.1, az=-3, push=0.08), {
+shot("S42", "L42", fcam("R3", *ME_WIN, d=3.3, lens=30, f=0.40, dx=-0.15, az=-3, push=0.03, arc=0.8), {
     "me": ps("R3", *ME_WIN, expr="uneasy", head=(0, 4))})
 DAD_WIN = (0.85, 1.9)
 shot("S43a", "L43", fcam("R3", *DAD_WIN, d=3.2, lens=30, f=0.40, dx=-0.2), {
@@ -328,10 +329,10 @@ shot("S46", "L46", fcam("R6", *ME_B, d=3.4, lens=30, f=0.40, dx=-0.35), {
 shot("S47", "L47", fcam("R6", *ME_B, d=3.2, lens=30, f=0.40, dx=0.0, az=-3, push=0.09), {
     "me": ps("R6", *ME_B, expr="sad", head=(0, 8))})
 shot("S48", "L48", ocam("KC", 0.0, 1.1, 1.2, 1.6, 30, az=0, el=22, push=0.08), {})
-shot("S49", "L49", ocam("KD", 0.0, 1.1, 1.3, 1.5, 30, az=-6, el=34, push=0.08), {})
+shot("S49", "L49", ocam("KD", 0.0, 1.1, 1.2, 1.5, 30, az=-6, el=10, push=0.08), {})
 shot("S50", "L50", ocam("KE", 0.0, 1.1, 1.0, 1.4, 30, az=0, el=70, push=0.06), {})
-shot("S51", "L51", fcam("KF", 0.0, G.STAND_Y, d=3.2, lens=30, f=0.40, el=24, push=0.07), {
-    "dad": ps("KF", 0.0, G.STAND_Y, expr="warm", head=(0, 6), **HOLD_ARMS)})
+shot("S51", "L51", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, push=0.07), {
+    "dad": ps("KF", *G.KF_DAD, expr="warm", head=(0, 6), **KF_ARMS)})
 shot("S52", "L52", fcam("R6", *ME_B, d=3.0, lens=30, f=0.40, dx=-0.3), {
     "me": ps("R6", *ME_B, expr="stunned")})
 
@@ -339,24 +340,25 @@ shot("S52", "L52", fcam("R6", *ME_B, d=3.0, lens=30, f=0.40, dx=-0.3), {
 shot("S53", "L53", ocam("R6", 0.0, 1.9, 1.45, 4.6, 26, el=3, push=0.06), {})
 shot("S54", "L54", fcam("R6", -0.7, 1.9, d=3.2, lens=30, f=0.40, dx=0.15), {
     "dad": ps("R6", -0.7, 1.9, expr="warm", head=(0, 3))})
-shot("S55", "L55", ocam("R1", -2.3, 5.2, 0.55, 4.2, 30, az=180, el=-2, push=0.07), {
+shot("S55", "L55", ocam("R1", -2.3, 5.2, 0.8, 4.2, 30, az=168, el=30, push=0.07), {
     "me": ps("R1", -2.3, 5.4, z=-0.18, yaw=0, expr="neutral")})
-shot("S56", "L56", fcam("KF", 0.0, G.STAND_Y, d=3.2, lens=30, f=0.40, el=24, push=0.05), {
-    "dad": ps("KF", 0.0, G.STAND_Y, expr="warm", head=(24, 0), look=(-0.7, 0), **HOLD_ARMS)})
+shot("S56", "L56", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, push=0.05), {
+    "dad": ps("KF", *G.KF_DAD, expr="warm", head=(24, 0), look=(-0.7, 0), **KF_ARMS)})
+shot("S56b", "L56.2", fcam("R1", -2.3, 2.7, d=3.5, lens=30, f=0.37, az=7, el=-2, push=0.06), {
+    "me": ps("R1", -2.3, 2.7, expr="warm", arms=(8, 8), side=(6, 6))})
 
 # ============================================================================================ 10 the warm turn
-shot("S57", "L57", fcam("KF", 0.0, G.STAND_Y, d=3.2, lens=30, f=0.40, el=24, az=3, push=0.07), {
-    "dad": ps("KF", 0.0, G.STAND_Y, expr="laugh", head=(0, 8), **HOLD_ARMS)})
-shot("S58", "L58", fcam("KF", 0.0, G.STAND_Y, d=3.2, lens=30, f=0.40, el=24, az=-3, push=0.07), {
-    "dad": ps("KF", 0.0, G.STAND_Y, expr="warm", **HOLD_ARMS)})
+shot("S57", "L57", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, az=3, push=0.07), {
+    "dad": ps("KF", *G.KF_DAD, expr="laugh", head=(0, 8), **KF_ARMS)})
+shot("S58", "L58", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, az=-3, push=0.07), {
+    "dad": ps("KF", *G.KF_DAD, expr="warm", **KF_ARMS)})
 talk("dad", "L58.1", "L58>")
-DAD_SET = (-0.55, 1.7)
-shot("S59", "L59", fcam("R4", *DAD_SET, d=3.2, lens=30, f=0.40, dx=0.2), {
-    "dad": ps("R4", *DAD_SET, expr="warm", arms=(8, 80), side=(0, -6), head=(0, 4))})
-shot("S60", "L60", ocam("R4", -0.62, 2.55, 1.3, 1.8, 30, az=40, el=18, push=0.08, arc=-3), {})
-SIDE_L, SIDE_R = (-0.55, G.STAND_Y), (0.55, G.STAND_Y)
+shot("S59", "L59", fcam("R7O", *G.DAD_CON, d=3.0, lens=30, f=0.30, az=0, push=0.04, arc=0.0), {
+    "dad": ps("R7O", *G.DAD_CON, expr="warm", head=(0, 4), **CON_ARMS)})
+shot("S60", "L60", ocam("R4", -0.15, 2.55, 1.62, 2.4, 30, az=72, el=8, push=0.05, arc=1.0), {})
+SIDE_L, SIDE_R = (-0.6, G.STAND_Y), (0.6, G.STAND_Y)
 CAKE_ARMS = dict(arms=(48, 48), side=(-6, -6))
-shot("S61", "L61", ocam("KG", -0.12, 1.85, 0.85, 4.0, 30, el=9, push=0.04), {
+shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 4.8, 30, el=7, push=0.0, arc=0.5), {
     "me": ps("KG", *SIDE_L, expr="smile", **CAKE_ARMS), "dad": ps("KG", *SIDE_R, expr="smile", **CAKE_ARMS)})
 shot("S62", "L62", fcam("KG", *SIDE_L, d=2.9, lens=30, f=0.40, dx=0.2), {
     "me": ps("KG", *SIDE_L, expr="laugh", **CAKE_ARMS)})
@@ -424,7 +426,7 @@ for sec in music["sections"]:
     sec["at"] = remap(sec["at"])
 sound = {
     "floor": "wood", "steps_db": -26,
-    "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -44}],
+    "ambience": [],      # the polish room bed is the room tone, so the drop only dips it (it stayed at -65 dBFS before)
     "sfx": sfx,
     "music_drops": [{"from": "P01", "to": "P01>"}],
     "rev": REV,
@@ -433,7 +435,7 @@ HOLDS = ["S11", "S21", "S61", "S53"]
 SWAYABLE = [{"id": n_} for (_a, _c, _s, _h, n_) in SH if n_ not in HOLDS]
 polish = {"emph": [remap(r) for r in ("L01.2", "L12.1", "L25.2", "L28.1", "L29.1", "L50", "L56.3")],
           "reveal": ["L50", "L56"], "twist": "L50", "camera": False,
-          "hold": HOLDS, "quiet": [["L65", "L67"]], "reframe_every": 0.7, "sway_amp": 0.006, "punch": 0.075, "punch_rate": 0.9,
+          "bed_kind": "room", "bed_drop_db": -3.0, "hold": HOLDS, "quiet": [["L65", "L67"]], "reframe_every": 0.7, "sway_amp": 0.006, "punch": 0.075, "punch_rate": 0.9,
           "sway": [sh["id"] for sh in SWAYABLE], "whoosh_cuts": False}
 story = {
     "slug": "ep129-gift-box",

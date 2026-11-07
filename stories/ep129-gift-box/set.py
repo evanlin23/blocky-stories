@@ -203,18 +203,40 @@ def mantel(S, state):
         wrapped_box(S, (0, by, G.BOX_Z), bow="bent")
     elif state in ("open", "open_blue"):
         open_box(S, (0, by, G.BOX_Z))
-        # the cream bow and ribbon lie on the shelf at its west end, bent, tails toward the door
-        cr = mat(S.kit, CREAM, 0.6, 0.05)
-        S.box("knot", (0.11, 0.11, 0.07), (-0.56, by + 0.02, G.SHELF_Z + 0.035), cr, rot=(0, 0, 24 * D2R), bevel=0.01)
-        S.box("loop", (0.22, 0.08, 0.13), (-0.72, by + 0.02, G.SHELF_Z + 0.07), cr, rot=(0, 24 * D2R, 10 * D2R), bevel=0.012)
-        S.box("loop", (0.2, 0.08, 0.12), (-0.4, by + 0.03, G.SHELF_Z + 0.05), cr, rot=(0, -30 * D2R, -8 * D2R), bevel=0.012)
-        S.box("tail", (0.26, 0.07, 0.012), (-0.82, by - 0.06, G.SHELF_Z + 0.006), cr, rot=(0, 0, 22 * D2R))
-        S.box("tail", (0.22, 0.07, 0.012), (-0.78, by + 0.12, G.SHELF_Z + 0.006), cr, rot=(0, 0, -30 * D2R))
+        lying_bow(S, -0.2, by, G.BOX_Z + G.BOX / 2)   # the bent cream bow lies on the box's west rim, tails to the door
         if state == "open_blue":
             wrapped_box(S, (0.62, by + 0.04, G.SHELF_Z + 0.16), size=0.32, paper=NEWBLUE, bow="straight")
 
 
-def room(kit, name, state="wrapped", held=False, night=False, truck=False, streamers=False):
+def lying_bow(S, x, y, rim):
+    """The bent cream bow resting on an open box's west rim, its two tails hanging over the outside toward the door."""
+    cr = mat(S.kit, CREAM, 0.6, 0.05)
+    S.box("knot", (0.11, 0.11, 0.07), (x, y, rim + 0.04), cr, rot=(0, 0, 24 * D2R), bevel=0.01)
+    S.box("loop", (0.22, 0.08, 0.13), (x - 0.15, y + 0.01, rim + 0.08), cr, rot=(0, 24 * D2R, 10 * D2R), bevel=0.012)
+    S.box("loop", (0.2, 0.08, 0.12), (x + 0.15, y + 0.02, rim + 0.07), cr, rot=(0, -50 * D2R, -8 * D2R), bevel=0.012)
+    for sy in (-1, 1):   # the tails slip over the west wall (1.5 cm proud of it)
+        S.box("tail", (0.012, 0.07, 0.24), (-G.BOX / 2 - 0.016, y + sy * 0.06, rim - 0.1), cr, rot=(0, 0, 0))
+    S.box("tailtop", (0.12, 0.07, 0.012), (-G.BOX / 2 + 0.0, y - 0.06, rim + 0.012), cr, rot=(0, 0, 0))
+    S.box("tailtop", (0.12, 0.07, 0.012), (-G.BOX / 2 + 0.0, y + 0.06, rim + 0.012), cr, rot=(0, 0, 0))
+
+
+def bench(S, state):
+    """Dad's low white bench (R7): the box sits on it in front of him, at chest height, the clock on the wall above."""
+    white = mat(S.kit, WHITE, 0.5, 0.1)
+    cy, top = G.CON_Y, G.CON_TOP
+    S.box("conbase", (1.5, 0.56, top - 0.05), (0, cy, (top - 0.05) / 2), white, bevel=0.012)
+    S.box("contop", (1.66, 0.68, 0.05), (0, cy, top - 0.025), white, bevel=0.012)
+    S.box("conkick", (1.56, 0.6, 0.06), (0, cy, 0.03), "#c9c4b8", 0.8, 0.05)
+    clock(S, 0.0, 2.4)
+    bz = top + G.BOX / 2
+    if state == "open":
+        open_box(S, (0, cy, bz))
+        lying_bow(S, -0.2, cy, bz + G.BOX / 2)
+    else:
+        wrapped_box(S, (0, cy, bz), bow=state)
+
+
+def room(kit, name, state="wrapped", held=False, night=False, truck=False, streamers=False, console=None):
     S = Stage(kit, name)
     H = 2.8
     planks = G_PLANKS(kit)
@@ -251,8 +273,11 @@ def room(kit, name, state="wrapped", held=False, night=False, truck=False, strea
     S.box("wmh", (ww, 0.06, 0.05), (wx, 2.99, 1.5), WHITE, 0.5, 0.1)
     if night:
         S.box("pane", (ww, 0.03, 1.2), (wx, 3.04, 1.5), "#27345a", 0.4, 0.3)
-    # mantel and what is on it
-    mantel(S, state)
+    # mantel and what is on it (R7: a low bench in front of Dad instead, nothing behind him to walk into)
+    if console:
+        bench(S, console)
+    else:
+        mantel(S, state)
     if held:   # a wrapped box held at waist height in front of whoever stands at HOLD
         wrapped_box(S, G.HOLD_BOX, bow="straight")
     # seating: Dad's armchair and the couch, both turned to face south, and a rug
@@ -347,7 +372,7 @@ def string_streamers(S):
 
 def moving_truck(S):
     """A plain white box truck at the curb, side to the house, no lettering anywhere."""
-    x0, y0, z0 = 1.8, 14.2, -0.9
+    x0, y0, z0 = 6.35, 13.8, -0.9
     white = mat(S.kit, "#f4f4f2", 0.55, 0.15)
     S.box("cargo", (6.0, 2.5, 2.6), (x0 + 0.0, y0, z0 + 0.55 + 1.3), white, bevel=0.04)
     S.box("cab", (1.9, 2.4, 2.0), (x0 - 3.95, y0, z0 + 0.55 + 1.0), white, bevel=0.06)
@@ -359,6 +384,7 @@ def moving_truck(S):
         for sy in (-1, 1):
             S.cyl("wheel", 0.48, 0.3, (x0 + wx, y0 + sy * 1.1, z0 + 0.48), "#2a2a32", 0.8, 0.05, rot=(math.pi / 2, 0, 0), n=18)
             S.cyl("hub", 0.22, 0.32, (x0 + wx, y0 + sy * 1.1, z0 + 0.48), "#a8abb2", 0.4, 0.4, rot=(math.pi / 2, 0, 0), n=12)
+    S.box("stripe", (6.0, 0.02, 0.26), (x0, y0 - 1.27, z0 + 0.55 + 0.75), NEWBLUE, 0.6, 0.05)   # a plain blue band, no lettering
     S.box("seam", (0.03, 0.02, 2.4), (x0 + 1.0, y0 - 1.26, z0 + 0.55 + 1.3), "#c9ccd2", 0.6, 0.05)
     S.box("seam", (5.6, 0.02, 0.03), (x0 + 0.0, y0 - 1.26, z0 + 0.55 + 0.5), "#c9ccd2", 0.6, 0.05)
 
@@ -432,22 +458,22 @@ def kitchen(kit, name, state, night=False):
         S.box("pl", (t, b, b), (-h + t / 2 + 0.002, iy, cz), rr)
         S.box("pr", (t, b, b), (h - t / 2 - 0.002, iy, cz), rr)
         S.box("pb", (b, t, b), (0, iy + h - t / 2 - 0.002, cz), rr)
-        fp = S.empty("pfront", (0, iy - h - 0.02, top + 0.02), rot=(-78 * D2R, 0, 0))   # hinged at its bottom edge, folded out
-        S.box("pf", (b, t, b), (0, 0, b / 2), rr, parent=fp)
-        tp = S.empty("ptop", (0, iy + h, cz + h), rot=(-40 * D2R, 0, 0))                  # hinged at the back, curling up
+        fp = S.empty("pfront", (0, iy - h - 0.012, cz + h), rot=(-24 * D2R, 0, 0))   # hinged at its top edge, the foot peeling out
+        S.box("pf", (b, t, b), (0, 0, -b / 2), rr, parent=fp)
+        tp = S.empty("ptop", (0, iy + h, cz + h), rot=(-14 * D2R, 0, 0))                  # hinged at the back, its front edge lifting
         S.box("pt", (b, b, t), (0, -b / 2, 0), rr, parent=tp)
         cr = mat(kit, CREAM, 0.6, 0.05)
         S.box("cut", (0.5, 0.07, 0.01), (0.8, iy - 0.05, top + 0.006), cr, rot=(0, 0, 14 * D2R))
         S.box("cut", (0.4, 0.07, 0.01), (-0.9, iy + 0.1, top + 0.006), cr, rot=(0, 0, -30 * D2R))
         S.box("bowflat", (0.2, 0.14, 0.06), (0.95, iy - 0.2, top + 0.03), cr, rot=(0, 0, 20 * D2R), bevel=0.01)
-    elif state == "KD":  # the lid tilting up
-        open_box(S, (0, iy, top + G.BOX / 2 + 0.01), lid=("tilt", 52))
+    elif state == "KD":  # the lid half up
+        open_box(S, (0, iy, top + G.BOX / 2 + 0.01), lid=("tilt", -34))
         paper_heap(S, -1.0, iy, top)
     elif state == "KE":  # the lid off, the box empty, seen from above
         open_box(S, (0, iy, top + G.BOX / 2 + 0.01), lid=("flat", (1.0, iy - 0.05, top + 0.017)))
         paper_heap(S, -1.0, iy, top)
-    elif state == "KF":  # Dad holds the open empty box an inch above the island; its lid leans on the back counter
-        open_box(S, (0, iy + 0.2, top + 0.04 + G.BOX / 2))
+    elif state == "KF":  # Dad holds the open empty box at waist height in front of the island; its lid lies on the island
+        open_box(S, G.KF_BOX)
         paper_heap(S, -1.1, iy, top)
         S.box("lid", (0.54, 0.54, 0.03), (1.1, iy - 0.05, top + 0.017), CARD, 0.9, 0.02, rot=(0, 0, 18 * D2R))
     elif state == "KG":  # a plain white frosted cake, no candles, no numerals, and two plates
@@ -485,11 +511,11 @@ def albee_porch(kit):
         S.cyl("pot", 0.22, 0.3, (sx * 2.7, 2.5, 0.15), "#d8704a", 0.7, 0.05, n=14)
         S.cyl("fl", 0.28, 0.25, (sx * 2.7, 2.5, 0.45), "#ff9fc0", 0.8, 0.02, n=10)
     # the shoebox: orange card, a white lid, red and white circus stripes, held at her waist
-    sx0, sy0, sz0 = 0.0, 0.88, 1.0
-    S.box("sbox", (0.38, 0.24, 0.12), (sx0, sy0, sz0 - 0.03), "#e8a05a", 0.8, 0.03, bevel=0.01)
-    S.box("slid", (0.4, 0.26, 0.05), (sx0, sy0, sz0 + 0.05), WHITE, 0.6, 0.05, bevel=0.01)
+    sx0, sy0, sz0 = 0.0, 0.84, 0.9
+    S.box("sbox", (0.46, 0.24, 0.12), (sx0, sy0, sz0 - 0.03), SKY_BLUE, 0.8, 0.03, bevel=0.01)
+    S.box("slid", (0.48, 0.26, 0.05), (sx0, sy0, sz0 + 0.05), WHITE, 0.6, 0.05, bevel=0.01)
     for i in range(4):
-        S.box("sstripe", (0.045, 0.264, 0.056), (sx0 - 0.15 + i * 0.1, sy0, sz0 + 0.05), "#d2443a", 0.6, 0.05)
+        S.box("sstripe", (0.045, 0.264, 0.056), (sx0 - 0.18 + i * 0.12, sy0, sz0 + 0.05), "#d2443a", 0.6, 0.05)
     kit.prop("houseplant_1", (-3.0 + S.ox, 2.5, 0.0), rot=0, height=1.1)
     # a green house post outside on the right, and the lawn behind the railing
     S.plane("lawn", (30, 20), (0, -11.0, -0.4), kit.grime(LAWN, 0.8, 1.6, "lawn129b", 0.95))
@@ -555,6 +581,9 @@ def _extras(self, hg, spec, kit, faces):
     if spec.get("goatee"):   # Dad: a gray goatee and sideburns, clear of the mouth
         gc = kit.plastic(spec["goatee"], 0.9, spec=0.02)
         kit.box(f"{n}.chin", (0.66, 0.16, 0.2), (0, -0.53, -0.57), gc, hg, bevel=0.06)
+    if spec.get("stubble"):   # Dad at 48: gray stubble along the jaw, clear of the mouth
+        sc_ = kit.plastic(spec["stubble"], 0.95, spec=0.02)
+        kit.box(f"{n}.stub", (0.78, 0.1, 0.2), (0, -0.52, -0.52), sc_, hg, bevel=0.04)
     if spec.get("backcap"):   # Sam: a cap worn backward, brim at the back
         cc = kit.plastic(spec["backcap"], 0.6)
         kit.box(f"{n}.capc", (2 * R + 0.12, 2 * R + 0.12, 0.42), (0, 0.0, top + 0.08), cc, hg, bevel=0.18)
@@ -595,6 +624,15 @@ def build(kit, story, tl):
     d = Vector((math.sin(az) * math.cos(el), math.cos(az) * math.cos(el), math.sin(el)))
     sun.location = d * 60
     kit.aim(sun, (0, 0, 0))
+    # three narrow spot fills, steady: they light the shaded east face of the box for S25, S30b, S36 and S60, and the back
+    # of my head on the steps for S55 (the sun is behind the house, so those faces would otherwise render nearly black)
+    for nm, ox, loc, tgt, w, cone in (("fillR1", 0.0, (3.2, 2.0, 1.7), (0.0, 2.55, 1.5), 700.0, 30),
+                                       ("fillR2", 60.0, (3.2, 0.83, 0.9), (0.0, 0.83, 0.65), 500.0, 30),
+                                       ("fillR3N", 180.0, (3.2, 2.0, 1.7), (0.0, 2.55, 1.5), 700.0, 30),
+                                       ("fillR4", 240.0, (3.2, 2.0, 1.7), (0.0, 2.55, 1.5), 700.0, 30),
+                                       ("fillSteps", 0.0, (-2.3, 11.0, 4.0), (-2.3, 5.4, 0.9), 900.0, 24)):
+        sp = kit.light(nm, "SPOT", (loc[0] + ox, loc[1], loc[2]), w, "#fff4e0", spot=cone, blend=0.7, size=0.4, shadow=False)
+        kit.aim(sp, (tgt[0] + ox, tgt[1], tgt[2]))
     room(kit, "R1", "wrapped")
     room(kit, "R2", "none", held=True)
     room(kit, "R3", "bent", truck=True, streamers=True)
@@ -602,6 +640,9 @@ def build(kit, story, tl):
     room(kit, "R4", "open")
     room(kit, "R5", "open_blue")
     room(kit, "R6", "none")
+    room(kit, "R7", "none", console="straight")
+    room(kit, "R7B", "none", console="bent")
+    room(kit, "R7O", "none", console="open")
     for nm in ("KA", "KB", "KC", "KD", "KE", "KF", "KG", "KH"):
         kitchen(kit, nm, nm, night=(nm == "KH"))
     albee_porch(kit)

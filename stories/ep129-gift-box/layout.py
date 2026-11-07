@@ -24,6 +24,9 @@ ST = {
     "MA": 940.0,    # Mrs. Albee's green porch
     "MS": 1000.0,   # Sam's kitchen table
     "MP": 1060.0,   # the post office counter
+    "R7": 1120.0,   # Dad's low white mantel bench: the wrapped box on it, bow straight, Dad behind it facing camera
+    "R7B": 1180.0,  # the same with the bow bent
+    "R7O": 1240.0,  # the same with the open empty box and the cream bow lying on its rim
 }
 
 BOX = 0.5                        # the box is a 0.5 m cube
@@ -31,7 +34,7 @@ MANTEL_Y = 2.55                  # the box's centre depth on the mantel
 SHELF_Z = 1.2                    # top of the mantel shelf
 BOX_Z = SHELF_Z + BOX / 2        # centre of the box on the shelf
 DOOR_X = -2.3                    # the front door in the north wall (centre)
-WIN_X0, WIN_X1 = 1.5, 3.0        # the window in the north wall
+WIN_X0, WIN_X1 = 1.05, 2.45       # the window in the north wall
 ARM = (-0.5, 1.25)               # Dad's armchair (faces south)
 COUCH_X0 = 0.1                   # the couch's west end (it is 2.0 wide)
 COUCH = (1.1, 1.25)              # its centre
@@ -39,7 +42,12 @@ SEAT = 0.42                      # a seated person is lowered by this
 DAD_SEAT = (-0.5, 1.25)
 ME_SEAT = (0.75, 1.25)
 HOLD = (0.0, 1.45)               # where the holder stands in R2 (box centre 0.62 m in front, z 1.0)
-HOLD_BOX = (0.0, 0.8, 0.88)
+HOLD_BOX = (0.0, 0.83, 0.64)     # waist height: the box's top (and bow) sit well under the chin
 ISLE_Y = 1.1                     # the kitchen island's centre depth
 ISLE_Z = 0.82                    # its top
 STAND_Y = 1.85                   # where people stand behind the island
+KF_DAD = (0.0, 0.2)              # in the KF kitchen Dad stands in front of the island, the open box low in his hands
+KF_BOX = (0.0, -0.44, 0.86)      # that box's centre
+CON_TOP = 0.62                   # the top of the low white bench in R7 (the box sits on it, in front of Dad)
+CON_Y = 1.7                      # its centre depth
+DAD_CON = (0.0, 2.38)            # where Dad stands behind it (faces -y)
