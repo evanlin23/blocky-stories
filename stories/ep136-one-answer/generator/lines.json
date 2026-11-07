@@ -62,12 +62,94 @@
   ]
  },
  {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Twenty-one today.",
+    "twenty-one today."
+   ],
+   [
+    "My name's ELI.",
+    "my name's eli."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My big brother Jonah",
+    "my big brother jonah"
+   ],
+   [
+    "is meeting me here",
+    "is meeting me here"
+   ],
+   [
+    "at EIGHT.",
+    "at eight."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Jonah lives ALONE.",
+    "jonah lives alone."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "But on the phone,",
+    "but on the phone,"
+   ],
+   [
+    "he said,",
+    "he said,"
+   ],
+   [
+    "\"WE'LL",
+    "we'll..."
+   ],
+   [
+    "see you",
+    "see you"
+   ],
+   [
+    "at eight.\"",
+    "at eight."
+   ]
+  ]
+ },
+ {
+  "id": "L03b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I'd ask the echo.",
+    "so i'd ask the echo."
+   ],
+   [
+    "I've seen it WORK.",
+    "i've seen it work."
+   ]
+  ]
+ },
+ {
   "id": "L04",
   "who": "narrator",
   "chunks": [
    [
-    "Mrs. Ruiz asked",
-    "missus ruiz asked"
+    "Mrs. Avila asked",
+    "missus avila asked"
    ],
    [
     "if her bakery",
@@ -110,7 +192,8 @@
     "Open on SUNDAYS.\"",
     "open on sundays."
    ]
-  ]
+  ],
+  "tempo": 0.88
  },
  {
   "id": "L06",
@@ -175,7 +258,8 @@
     "Take IT.\"",
     "take it."
    ]
-  ]
+  ],
+  "tempo": 0.88
  },
  {
   "id": "L09",
@@ -236,7 +320,8 @@
     "Turn AROUND.\"",
     "turn around."
    ]
-  ]
+  ],
+  "tempo": 0.88
  },
  {
   "id": "L12",
@@ -257,70 +342,16 @@
   ]
  },
  {
-  "id": "L13",
+  "id": "L12b",
   "who": "narrator",
   "chunks": [
    [
-    "Twenty-one today.",
-    "twenty-one today."
+    "Then it was",
+    "then it was"
    ],
    [
-    "My name's ELI.",
-    "my name's eli."
-   ]
-  ]
- },
- {
-  "id": "L14",
-  "who": "narrator",
-  "chunks": [
-   [
-    "My big brother Nate",
-    "my big brother nate"
-   ],
-   [
-    "is meeting me here",
-    "is meeting me here"
-   ],
-   [
-    "at EIGHT.",
-    "at eight."
-   ]
-  ]
- },
- {
-  "id": "L15",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Nate lives ALONE.",
-    "nate lives alone."
-   ]
-  ]
- },
- {
-  "id": "L16",
-  "who": "narrator",
-  "chunks": [
-   [
-    "But on the phone,",
-    "but on the phone,"
-   ],
-   [
-    "he said,",
-    "he said,"
-   ],
-   [
-    "\"WE'LL",
-    "we'll..."
-   ],
-   [
-    "see you",
-    "see you"
-   ],
-   [
-    "at eight.\"",
-    "at eight."
+    "my TURN.",
+    "my turn."
    ]
   ]
  },
@@ -337,10 +368,45 @@
     "who's coming"
    ],
    [
-    "with NATE?\"",
-    "with nate?"
+    "with JONAH?\"",
+    "with jonah?"
    ]
   ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "\"Don't open the DOOR",
+    "don't open the door"
+   ],
+   [
+    "tonight.",
+    "tonight."
+   ]
+  ],
+  "tempo": 0.88
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The other one",
+    "the other one"
+   ],
+   [
+    "knows your NAME.\"",
+    "knows your name."
+   ]
+  ],
+  "tempo": 0.88
+ },
+ {
+  "id": "P1",
+  "pause": 0.6,
+  "chunks": []
  },
  {
   "id": "L18",
@@ -371,39 +437,6 @@
   ]
  },
  {
-  "id": "P1",
-  "pause": 0.6,
-  "chunks": []
- },
- {
-  "id": "L20",
-  "who": "narrator",
-  "chunks": [
-   [
-    "\"Don't open the DOOR",
-    "don't open the door"
-   ],
-   [
-    "tonight.",
-    "tonight."
-   ]
-  ]
- },
- {
-  "id": "L21",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The other one",
-    "the other one"
-   ],
-   [
-    "knows your NAME.\"",
-    "knows your name."
-   ]
-  ]
- },
- {
   "id": "L22",
   "who": "narrator",
   "chunks": [
@@ -428,6 +461,20 @@
    [
     "in my TRUCK.",
     "in my truck."
+   ]
+  ]
+ },
+ {
+  "id": "L23b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At dusk,",
+    "at dusk,"
+   ],
+   [
+    "the canyon went QUIET.",
+    "the canyon went quiet."
    ]
   ]
  },
@@ -477,10 +524,11 @@
     "open the door."
    ],
    [
-    "Nate's SCARED.\"",
-    "nate's scared."
+    "Jonah's SCARED.\"",
+    "jonah's scared."
    ]
-  ]
+  ],
+  "tempo": 0.88
  },
  {
   "id": "L27",
