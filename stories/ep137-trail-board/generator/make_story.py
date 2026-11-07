@@ -28,7 +28,7 @@ cast = {
              "shoes": "#6a4a2a", "sleeves": "long", "hair": "long", "hair_c": "#7a2a1a", "face": dict(LASH)},
     "dot": {"age": "adult", "skin": "#e8b891", "shirt": "#f3e9d0", "pattern": "solid", "pants": "#6b6a4a",
             "shoes": "#4a3a2a", "sleeves": "long", "hair": "bun", "hair_c": "#f2f2f2", "height": 0.92,
-            "extras": ["apron", "glasses"], "extra_c": "#2f7a45", "glasses_c": "#6a5a4a",
+            "extras": ["apron"], "extra_c": "#2f7a45",
             "face": {**LASH, "bags": True}},
     "marcus": {"age": "adult", "skin": "#c98f62", "shirt": "#b8322a", "pattern": "plaid", "pattern_c": "#2a2a2a",
                "pants": "#3a4a6a", "shoes": "#3a2a1a", "sleeves": "long", "hair": "buzz", "hair_c": "#3a2616",
@@ -129,13 +129,13 @@ S(0, C((0.12, 0, 1.45), 2.0, az=0, el=2, lens=45, w2=1.9), M_, note="S01a frame 
 gone("me", "L01.3")
 cue("L01.3", "board", g="one0")
 S("L01.3", C((0.1, 0, 1.7), 1.7, el=2, w2=1.45), M_, note="S01b punch in on the glyph line on HAVE")
-S("L02", C((0.3, 2, 1.9), 5.2, az=-10, el=4, lens=30, w2=4.7), M_, note="S02 wide: the trailhead, the board in the middle")
+S("L02", C((0.3, 2, 1.9), 4.3, az=-10, el=4, lens=30, w2=3.9), M_, sun2=[0.5, 70.0, 20.0, 3.5], note="S02 wide: the trailhead, the board in the middle")
 cue("L03", "board", g="one1")
 S("L03", C((0, 0, 1.7), 2.9, el=2, lens=40, w2=2.6), M_, note="S03 the board, one glyph line, fills the frame")
 put("dot", "L04", DOT_LOT, 0, "laugh", arms=[45, 45])
-cue("L04", "mush", on=True, pos=[DOT_LOT[0], DOT_LOT[1] - 0.6, 0.45])
+cue("L04", "mush", on=True, pos=[DOT_LOT[0], DOT_LOT[1] - 0.7, 0.42], scale=1.5)
 S("L04", C((DOT_LOT[0], DOT_LOT[1], 1.2), 2.2, az=12, el=3, w2=2.0), M_, note="S04a Dot alone on the gravel with the giant mushroom")
-S("L04.3", C((DOT_LOT[0], DOT_LOT[1], 1.3), 1.5, az=12, el=3, w2=1.3), M_, note="S04b punch in on her face")
+S("L04.3", C((DOT_LOT[0], DOT_LOT[1], 1.5), 1.5, az=12, el=3, w2=1.3), M_, note="S04b punch in on her face")
 gone("dot", "L05")
 cue("L05", "mush", on=False)
 cue("L05", "board", g="one2")
@@ -145,8 +145,8 @@ acting["marcus"][-1]["pos"] = [BEN[0], BEN[1], BENCH_Z]
 acting["marcus"][-2]["pos"] = [BEN[0], BEN[1], BENCH_Z]
 acting["marcus"][-1]["arms"] = [30, 30]
 S("L06", C((5.0, 1.15, 1.25), 2.1, az=0, el=3, w2=1.9), M_, note="S06a Marcus on the bench")
-cue("L06.2", "canoe", on=True, **{"from": [8.45, 3.7], "to": [8.05, 2.5], "dur": 2.4, "yaw0": 6, "yaw1": -8})
-S("L06.2", C((6.5, 2.4, 0.8), 5.4, az=-4, el=5, lens=35, w2=5.0), M_, note="S06b the red canoe drifts to the bank by the bench")
+cue("L06.2", "canoe", on=True, **{"from": [9.9, 3.7], "to": [9.1, 2.5], "dur": 2.4, "yaw0": 6, "yaw1": -8})
+S("L06.2", C((9.6, 2.9, 0.4), 3.5, az=-28, el=14, lens=35, w2=3.1), M_, note="S06b the red canoe drifts to the bank by the bench")
 raw("marcus", "L06.5", expr="wide", blend=0.3)
 raw("marcus", "L06.5+1.0", expr="laugh", blend=0.3)
 S("L06.5", C((5.0, 1.15, 1.25), 1.5, az=0, el=3, w2=1.35), M_, note="S06c Marcus stunned, then laughs")
@@ -158,9 +158,9 @@ S("L07", C((0, 0, 1.7), 3.0, el=2, lens=40, w2=2.4), M_, note="S07 the board's o
 # =========================================================================================== L08 to L10 my turn
 put("me", "L08", (0.1, -0.9), 0, "smile")
 cue("L08", "board", g="one0")
-S("L08", C((-0.42, 0, 1.45), 2.0, el=2, w2=1.9), M_, tally=True, note="S08 my face, smile; the post foot with its tally at the frame bottom")
+S("L08", C((-0.2, 0, 1.45), 2.0, el=2, w2=1.9), M_, tally=True, note="S08 my face, smile; the post foot with its tally at the frame bottom")
 gone("me", "L09")
-put("june", "L09", BEN, 0, "smile", arms=[30, 30])
+put("june", "L09", BEN, 0, "delighted", arms=[30, 30])
 acting["june"][-1]["pos"] = [BEN[0], BEN[1], BENCH_Z]
 acting["june"][-2]["pos"] = [BEN[0], BEN[1], BENCH_Z]
 cue("L09", "gear", on=True)
@@ -181,10 +181,10 @@ put("me", "L13", THEO, 0, "wide")
 S("L13", C((0.12, 0, 1.45), 2.0, el=2, w2=1.9), D_, note="S13 my face, stunned, lit orange")
 gone("me", "L14")
 put("dot", "L14", DOT_HUT, 0, "worried")
-S("L14", C((DOT_HUT[0], DOT_HUT[1], 1.25), 2.0, az=0, el=3, w2=1.8), D_, note="S14a Dot alone at the hut's white door, orange light")
+S("L14", C((DOT_HUT[0], DOT_HUT[1], 1.2), 1.7, az=0, el=3, w2=1.5), D_, fill=2.2, note="S14a Dot alone at the hut's white door, orange light")
 put("dot", "L14.4", (-0.45, -1.0), 0, "angry")
 talk("dot", "L14.4", "L14>", 0.5)
-S("L14.4", C((-0.2, 0, 1.35), 1.5, az=0, el=2, w2=1.35), D_, note="S14b Dot's face, angry, the board behind her in orange light")
+S("L14.4", C((-0.2, 0, 1.5), 1.5, az=0, el=2, w2=1.35), D_, fill=1.5, note="S14b Dot's face, angry, the board behind her in orange light")
 gone("dot", "L15")
 
 # =========================================================================================== L15 the fade, L16 the path
@@ -199,13 +199,13 @@ S("L16.2", X((7.2, -3.0, 1.3), (7.0, 14.0, 1.1), 30, (7.1, 2.0, 1.25), (7.0, 16.
   note="S16b a slow push down the path")
 
 # =========================================================================================== L17 to L22 sunrise, the board
-put("june", "L17", BEN, 0, "smile", arms=[30, 30])
+put("june", "L17", BEN, 0, "delighted", arms=[30, 30])
 acting["june"][-1]["pos"] = [BEN[0], BEN[1], BENCH_Z]
 acting["june"][-2]["pos"] = [BEN[0], BEN[1], BENCH_Z]
-raw("june", "L17+0.3", lean=14, arms=[55, 55], blend=0.7)
+raw("june", "L17+0.3", lean=40, arms=[25, 25], head=[0, 25], blend=0.8)
 cue("L17", "gear", on=True)
-S("L17", C((4.7, 1.15, 1.2), 2.3, el=3, w2=2.1), M_, note="S17 June on the bench, lacing her boots, the pack beside her")
-raw("june", "L18", lean=0, arms=[30, 30], blend=0.5)
+S("L17", C((4.6, 1.15, 0.15), 2.5, el=3, w2=2.3), M_, note="S17 June on the bench, lacing her boots, the pack beside her")
+raw("june", "L18", lean=0, arms=[30, 30], head=[0, 0], blend=0.5)
 S("L18", C((5.0, 1.15, 1.3), 1.4, el=3, w2=1.25), M_, note="S18 June's face, smile")
 gone("june", "L19")
 cue("L19", "gear", on=False)
@@ -216,10 +216,10 @@ put("me", "L20", THEO, 0, "scared")
 S("L20", C((0.12, 0, 1.45), 2.0, el=2, w2=1.9), M_, note="S20 my face, scared")
 gone("me", "L21")
 S("L21", C((0, 0, 2.05), 1.9, el=2, lens=45, w2=1.6), M_, note="S21 the top two lines, punch in on WHY")
-S("L22", C((0, 0, 1.7), 3.7, el=2, lens=40, w2=3.3), M_, note="S22 wide: the whole board, four full lines")
+S("L22", C((0, 0, 1.7), 3.2, el=2, lens=40, w2=2.9), M_, note="S22 wide: the whole board, four full lines")
 
 # =========================================================================================== L23 to L27 no answer
-put("dot", "L23", (6.9, 0.7), 180, "worried", side=[0, 0])
+put("dot", "L23", (6.9, 0.7), 70, "worried", side=[0, 0])
 S("L23", X((9.8, -4.4, 1.5), (6.4, 1.4, 1.15), 36, (9.4, -4.0, 1.5), (6.4, 1.6, 1.15), 36), M_, note="S23a the new path, Dot alone at its mouth, back to us")
 put("dot", "L23.3", (6.6, 0.4), 0, "scared", head=[-62, 0])
 talk("dot", "L23.3", "L23>", 0.45)
@@ -232,8 +232,8 @@ raw("june", "L24", side=[0, 105], blend=0.4)
 raw("june", "L24+0.4", side=[0, 135], blend=0.35)
 raw("june", "L24+0.8", side=[0, 105], blend=0.35)
 raw("june", "L24+1.2", side=[0, 135], blend=0.35)
-put("me", "L24", (3.3, -2.0), 180, "neutral")
-S("L24", X((3.0, -5.2, 1.3), (5.0, 1.2, 1.25), 38, (3.15, -5.0, 1.3), None, 38), M_, dof=[6.9, 2.4],
+put("me", "L24", (3.55, -1.2), 180, "neutral")
+S("L24", X((4.1, -3.0, 1.3), (5.0, 1.2, 1.25), 38, (4.2, -2.8, 1.3), None, 38), M_, dof=[4.3, 2.4],
   note="S24 June at the bench, laughing, waving; my shoulder soft 3 m in front of her")
 gone("me", "L25")
 gone("june", "L25")
@@ -276,7 +276,7 @@ story = {
     "fade_out": False,
     "look": look,
     "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.03, 0.01, -0.02], "saturation": 1.1, "contrast": 1.05,
-              "vignette": 0.15, "bloom": 0.2, "grain": 0.008, "red_line": 0.7},
+              "vignette": 0.15, "bloom": 0.2, "grain": 0.008, "red_line": 0.7, "red_lift_blue": 0.42},
     "cast": cast,
     "lines": lines,
     "shots": shots,
@@ -315,6 +315,6 @@ if vf.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(key(e)))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 1
+story["rev"] = 2
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")

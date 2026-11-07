@@ -77,7 +77,7 @@ def hide(ob, h=True):
 # --------------------------------------------------------------------------------------------------- the looks
 LOOKS = {
     # pale morning gold; the sun is behind the trees (no disc)
-    "m": {"sky": ["#fff3c4", "#ffe79a", "#cfe6ff", "#8cc6f6"], "world": 1.0, "sun": (35, 30, 5.0, "#fff0c0"),
+    "m": {"sky": ["#ffe9a8", "#ffdf80", "#ffd890", "#ffd8a0"], "world": 1.0, "sun": (35, 30, 5.0, "#fff0c0"),
           "fill": 0.8, "exp": 0.0, "disc_z": -60.0},
     # dusk: a huge low orange sun in a pink-orange sky
     "d": {"sky": ["#ffa24a", "#ff8a3c", "#f6a0a8", "#d48ad0"], "world": 0.9, "sun": (165, 10, 4.5, "#ff9a50"),
@@ -124,22 +124,21 @@ def glyph(parent, seed, cx, cz, w, h, th, mat):
     k = seed % 7
     hw, hh = w / 2, h / 2
     r = math.radians
-    if k == 0:    # two slanted strokes
-        bars = [(th, h, -hw * 0.45, 0, r(24)), (th, h, hw * 0.45, 0, r(24))]
+    d_ = th * 1.7
+    if k == 0:    # a 2 x 2 block of chunky dots
+        bars = [(d_, d_, sx_ * d_ * 0.7, sz_ * d_ * 0.7, 0) for sx_ in (-1, 1) for sz_ in (-1, 1)]
     elif k == 1:  # three dots going down
-        d_ = th * 1.5
-        bars = [(d_, d_, 0, hh - d_ / 2, 0), (d_, d_, 0, 0, 0), (d_, d_, 0, -hh + d_ / 2, 0)]
-    elif k == 2:  # a dot over a long slash
-        bars = [(th * 1.5, th * 1.5, hw * 0.5, hh - th * 0.75, 0), (th, h * 0.8, -hw * 0.1, -h * 0.1, r(-30))]
-    elif k == 3:  # an arrowhead
-        bars = [(th, h * 0.62, 0, hh * 0.35, r(52)), (th, h * 0.62, 0, -hh * 0.35, r(-52))]
-    elif k == 4:  # a stem with two side ticks
-        bars = [(th, h, 0, 0, 0), (w * 0.45, th, -hw * 0.5, hh * 0.35, 0), (w * 0.45, th, hw * 0.5, -hh * 0.35, 0)]
-    elif k == 5:  # two bars and a dot
-        bars = [(w, th, 0, hh * 0.45, 0), (w, th, 0, -hh * 0.1, 0), (th * 1.5, th * 1.5, 0, -hh + th * 0.75, 0)]
-    else:         # a diamond
-        bars = [(th, h * 0.62, -hw * 0.4, hh * 0.3, r(40)), (th, h * 0.62, hw * 0.4, hh * 0.3, r(-40)),
-                (th, h * 0.62, -hw * 0.4, -hh * 0.3, r(-40)), (th, h * 0.62, hw * 0.4, -hh * 0.3, r(40))]
+        bars = [(d_ * 0.8, d_ * 0.8, 0, d_ * 1.15, 0), (d_ * 0.8, d_ * 0.8, 0, 0, 0), (d_ * 0.8, d_ * 0.8, 0, -d_ * 1.15, 0)]
+    elif k == 2:  # one big and one small dot side by side
+        bars = [(d_ * 1.8, d_ * 1.8, -hw * 0.3, 0, 0), (d_ * 0.8, d_ * 0.8, hw * 0.55, -hh * 0.3, 0)]
+    elif k == 3:  # a fat square block
+        bars = [(w * 0.8, w * 0.8, 0, 0, 0)]
+    elif k == 4:  # a triangle of three dots
+        bars = [(d_, d_, 0, hh * 0.45, 0), (d_, d_, -hw * 0.5, -hh * 0.4, 0), (d_, d_, hw * 0.5, -hh * 0.4, 0)]
+    elif k == 5:  # a row of three dots
+        bars = [(d_, d_, -hw * 0.7, 0, 0), (d_, d_, 0, 0, 0), (d_, d_, hw * 0.7, 0, 0)]
+    else:         # a diamond block
+        bars = [(w * 0.95, w * 0.42, 0, 0, 0)]
     for sx, sz, x, z, rot in bars:
         B(parent, (sx, 0.06, sz), (cx + x, y, cz + z), mat, "glyph", 0.0, rot=(0, rot, 0))
 
@@ -211,7 +210,7 @@ def build_fence(kit):
 
 def build_canoe(kit):
     root = E(None, (8.4, 3.5, 0.0), "canoe")
-    red, dk = P("#ee3a26", 0.5, 0.3), P("#8a2a20", 0.6, 0.2)
+    red, dk = K.kit.emit("#e00c18", 0.35), P("#7a1a14", 0.6, 0.2)
     B(root, (0.9, 3.0, 0.14), (0, 0, 0.12), red, "keel", 0.05)
     for sx in (-1, 1):
         B(root, (0.1, 3.0, 0.38), (sx * 0.45, 0, 0.33), red, "side", 0.04, rot=(0, -sx * 0.12, 0))
@@ -258,8 +257,8 @@ def build_world(kit):
     path = B(None, (1.0, 19.0, 0.05), (7.0, 9.5, 0.0), P("#b88a58", 0.9, 0.05), "path", 0.0)
     hide(path, True)
     # hills and pines
-    for i, (x, y, r, h, c) in enumerate(((-30, 78, 38, 13, "#4f9e56"), (28, 82, 42, 15, "#5aa860"), (-2, 92, 46, 30, "#6ab26a"),
-                                         (-62, 70, 30, 10, "#5aa860"), (60, 72, 30, 11, "#4f9e56"))):
+    for i, (x, y, r, h, c) in enumerate(((-30, 78, 38, 5, "#4f9e56"), (28, 82, 42, 5, "#5aa860"), (-2, 92, 46, 7, "#6ab26a"),
+                                         (-62, 70, 30, 4, "#5aa860"), (60, 72, 30, 4, "#4f9e56"))):
         kit.cyl(nm("hill"), r, h, (x, y, h / 2 - 0.2), P(c, 0.9, 0.05), None, n=24, r2=r * 0.35)
     trees = []
     for x in (-18, -15.5, -13, -10.5, -8, -5.8, -4.2):
@@ -318,6 +317,11 @@ def build(kit, story, tl):
         ctx["disc"].visible_shadow = False
     except Exception:
         pass
+    ctx["disc2"] = kit.sphere("sundisc2", 1.0, (0.5, 70.0, -60.0), kit.emit("#ffe27a", 1.6), None, seg=24)
+    try:
+        ctx["disc2"].visible_shadow = False
+    except Exception:
+        pass
     build_world_ = build_world(kit)
     ctx.update(build_world_)
     build_bench(kit)
@@ -347,6 +351,13 @@ def animate(kit, story, tl, t, ctx):
     dz = L["disc_z"]
     ctx["disc"].location = (1.0, 95.0, dz)
     ctx["disc"].hide_render = dz < -20
+    s2 = sd.get("sun2")      # a small gold sun just over the pines: [x, y, z, radius]
+    if s2:
+        ctx["disc2"].location = (s2[0], s2[1], s2[2])
+        ctx["disc2"].scale = (s2[3], s2[3], s2[3])
+        ctx["disc2"].hide_render = False
+    else:
+        ctx["disc2"].hide_render = True
     cl, _, _, _ = bl_story.cam_at(sd, cur, t, {}, tl)
     ctx["fill"].location = (cl[0], cl[1], cl[2])
     sc.view_settings.exposure = L["exp"] + sd.get("exp", 0.0)
@@ -382,6 +393,8 @@ def animate(kit, story, tl, t, ctx):
     if m.get("on"):
         hide(ctx["mush"], False)
         ctx["mush"].location = tuple(m["pos"])
+        ms = m.get("scale", 1.0)
+        ctx["mush"].scale = (ms, ms, ms)
     else:
         hide(ctx["mush"], True)
     hide(ctx["gear"], not cue_at(tl, "gear", t).get("on"))
