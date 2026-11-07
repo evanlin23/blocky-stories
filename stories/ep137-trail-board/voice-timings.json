@@ -626,22 +626,26 @@
    ]
   },
   "L24": {
-   "text": "june's waving me over.",
+   "text": "june's going, with or without me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.534,
+   "dur": 1.741,
    "onset": 0.19,
-   "end": 1.328,
+   "end": 1.534,
    "chunks": [
     [
      0.19,
-     0.716
+     0.707
     ],
     [
-     0.716,
-     1.328
+     0.732,
+     0.922
+    ],
+    [
+     0.922,
+     1.534
     ]
    ]
   },
@@ -686,22 +690,22 @@
    ]
   },
   "L27": {
-   "text": "which board do i trust?",
+   "text": "which board do i follow?",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.466,
    "onset": 0.172,
-   "end": 1.259,
+   "end": 1.276,
    "chunks": [
     [
      0.172,
-     0.552
+     0.569
     ],
     [
-     0.552,
-     1.259
+     0.569,
+     1.276
     ]
    ]
   }

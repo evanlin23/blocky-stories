@@ -24,6 +24,7 @@ from mathutils import Vector as V
 from blocky import bl_story  # noqa: F401  (cam_at)
 
 BOARD_Y = 0.0
+BX = 2.0       # the bench x (close to the board so its right edge stays in frame with June)
 PANEL_Z0, PANEL_Z1 = 0.9, 2.5
 _n = [0]
 
@@ -181,13 +182,13 @@ def build_board(kit):
 def build_bench(kit):
     w = P("#c89a5c", 0.7, 0.1)
     d = P("#a87a42", 0.7, 0.1)
-    B(None, (1.8, 0.5, 0.07), (5.0, 1.2, 0.45), w, "seat", 0.012)
-    B(None, (1.7, 0.05, 0.34), (5.0, 0.93, 0.28), d, "apron", 0.01)
+    B(None, (1.8, 0.5, 0.07), (BX, 1.2, 0.45), w, "seat", 0.012)
+    B(None, (1.7, 0.05, 0.34), (BX, 0.93, 0.28), d, "apron", 0.01)
     for sx in (-0.8, 0.8):
-        B(None, (0.1, 0.5, 0.45), (5.0 + sx, 1.2, 0.225), d, "bleg", 0.01)
-    B(None, (1.8, 0.06, 0.45), (5.0, 1.46, 0.85), w, "back", 0.012)
+        B(None, (0.1, 0.5, 0.45), (BX + sx, 1.2, 0.225), d, "bleg", 0.01)
+    B(None, (1.8, 0.06, 0.45), (BX, 1.46, 0.85), w, "back", 0.012)
     for sx in (-0.8, 0.8):
-        B(None, (0.08, 0.08, 0.5), (5.0 + sx, 1.46, 0.7), d, "bpost", 0.01)
+        B(None, (0.08, 0.08, 0.5), (BX + sx, 1.46, 0.7), d, "bpost", 0.01)
 
 
 def build_hut(kit):
@@ -238,10 +239,22 @@ def build_mushroom(kit):
 
 def build_gear(kit):
     root = E(None, (0, 0, 0), "gear")
-    B(root, (0.5, 0.32, 0.62), (3.95, 1.2, 0.8), P("#f08a24", 0.6, 0.15), "pack", 0.05)
-    B(root, (0.36, 0.06, 0.22), (3.95, 1.03, 0.78), P("#c96a12", 0.6, 0.15), "packflap", 0.02)
-    K.kit.cyl(nm("stick"), 0.025, 1.3, (3.62, 1.4, 0.62), P("#8a6238", 0.7, 0.1), root, rot=(0.0, 0.18, 0.0), n=10)
+    B(root, (0.5, 0.32, 0.62), (BX - 1.05, 1.2, 0.8), P("#f08a24", 0.6, 0.15), "pack", 0.05)
+    B(root, (0.36, 0.06, 0.22), (BX - 1.05, 1.03, 0.78), P("#c96a12", 0.6, 0.15), "packflap", 0.02)
+    K.kit.cyl(nm("stick"), 0.025, 1.3, (BX - 1.38, 1.4, 0.62), P("#8a6238", 0.7, 0.1), root, rot=(0.0, 0.18, 0.0), n=10)
     hide(root, True)
+    return root
+
+
+def build_marker(kit):
+    """A small blank trail marker (same green panel, cream trim, no glyphs) at the creek path's mouth."""
+    root = E(None, (6.0, 1.0, 0), "marker")
+    green, cream, wood = P("#1f5a3a", 0.55, 0.2), P("#fff4d6", 0.5, 0.3), P("#8a6238", 0.7, 0.1)
+    B(root, (0.8, 0.07, 0.6), (0, 0, 1.25), green, "mpanel", 0.015)
+    for sx in (-1, 1):
+        B(root, (0.1, 0.1, 1.55), (sx * 0.34, 0.06, 0.775), wood, "mpost", 0.015)
+    B(root, (0.8, 0.03, 0.05), (0, -0.05, 1.53), cream, "mtrim", 0.005)
+    B(root, (0.8, 0.03, 0.05), (0, -0.05, 0.97), cream, "mtrim", 0.005)
     return root
 
 
@@ -325,6 +338,7 @@ def build(kit, story, tl):
     build_world_ = build_world(kit)
     ctx.update(build_world_)
     build_bench(kit)
+    build_marker(kit)
     build_hut(kit)
     build_fence(kit)
     ctx["groups"] = build_board(kit)
