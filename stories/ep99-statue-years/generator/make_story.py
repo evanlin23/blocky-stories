@@ -222,9 +222,9 @@ beat("dad", "L10.1", expr="laugh", arms=[0, 155], head=[0, 6])
 shot("L10", mv([SX - 0.5, SY - 3.4, 1.7], [SX, SY - 0.5, 1.7], 44, [SX - 0.3, SY - 2.8, 1.72], [SX, SY - 0.5, 1.7], 44), name="dadlaugh")
 # L11: a stranger at the counter looks from Dad to Mom
 only("L11", ["dad", "mom", "c2"])
-put("c2", "L11", [CX + 1.75, CY - 0.9], 0, expr="polite", head=[0, 0])
-put("dad", "L11", [CX + 0.3, CY - 0.9], 0, expr="smile")
-put("mom", "L11", [CX - 1.15, CY - 0.9], 0, expr="polite", side=[0, 125])
+put("c2", "L11", [CX + 1.6, CY - 0.9], 0, expr="polite", head=[0, 0])
+put("dad", "L11", [CX + 0.3, CY - 1.45], 0, expr="smile")   # a step behind the two beside him, so arms never cross
+put("mom", "L11", [CX - 1.0, CY - 0.9], 0, expr="polite", side=[0, 125])
 beat("c2", "L11+0.5", head=[-35, 0])
 beat("c2", "L11+1.0", head=[35, 0])
 shot("L11", mv([CX + 0.6, CY + 2.9, 1.85], [CX + 0.2, CY - 0.9, 1.6], 34, [CX + 0.3, CY + 2.4, 1.8], [CX + 0.2, CY - 0.9, 1.6], 34), name="stranger")
