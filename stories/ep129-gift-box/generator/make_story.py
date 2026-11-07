@@ -22,7 +22,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 13
+REV = 15
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -250,7 +250,7 @@ chg("dad", "L20.1", blend=0.4, head=(0, 8))
 chg("dad", "L20.1+0.5", blend=0.4, head=(0, -2))
 SIT21 = dict(seat=True, arms=(12, 12), side=(-4, -4))   # near arms in at the sides
 D21, M21 = tuple(G.DAD_SEAT), (G.ME_SEAT[0] + 0.15, G.ME_SEAT[1])   # armchair seat and the couch's right end, 1.4 m apart
-shot("S21", "L21", ocam("R1", 0.2, 1.6, 1.4, 4.8, 30, push=0.03, arc=0.0), {
+shot("S21", "L21", ocam("R1", 0.2, 1.6, 1.4, 4.8, 30, push=0.0, arc=0.0), {
     "dad": ps("R1", *D21, expr="neutral", **SIT21),
     "me": ps("R1", *M21, expr="neutral", **SIT21)})
 shot("S22", "L22", fcam("R1", *G.ME_SEAT, d=3.3, lens=30, f=0.38, dx=-0.25, push=0.07), {
@@ -374,7 +374,7 @@ shot("S60", "L60", ocam("R4", -0.15, 2.55, 1.62, 2.4, 30, az=72, el=8, push=0.12
 SIDE_L, SIDE_R = (-0.6, G.STAND_Y), (0.6, G.STAND_Y)
 CAKE_ARMS = dict(arms=(48, 48), side=(-6, -6))
 CAKE61 = dict(arms=(30, 30), side=(4, 4))   # arms down and out of each other
-shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 4.8, 30, el=7, push=0.09, arc=1.0), {
+shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 5.8, 30, el=7, push=0.03, arc=1.0), {
     "me": ps("KG", -0.7, G.STAND_Y, expr="smile", **CAKE61), "dad": ps("KG", 0.7, G.STAND_Y, expr="smile", **CAKE61)})
 chg("me", "L61.1", blend=0.4, head=(10, 4))
 chg("dad", "L61.1", blend=0.4, head=(-10, 4))
