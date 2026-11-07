@@ -3,10 +3,10 @@
 Branch `claude/batch15a-ep138-tomorrow-mirror` (batch 15a, interactive-lane pilot 3 of 3).
 
 ## Where it stands
-- Built and previewed; framing pre-check fixes applied.
-- Round 1: standards **revise** (L20/L26 cadence, L31 to "BELIEVE"); critic **revise**, avg 6.8 (C4 empty-bench clue didn't read in S17/S18; S03 board value 13 broke the logic; date close-ups not glass-like; the meter read as a pillar; blank mirror in S04a/S21; S27 too wide; 0.6 s dead silence at the drop; L08 mystery hook).
-- Word fixes are in (writer). Round 1 picture and sound fixes are with a fresh builder.
-- Next: round 2 re-runs both reviewers (both said revise), checking only round 1 must-fixes and regressions. Then at most one single-fix rescue, then drop.
+- Round 1: standards revise, critic revise (6.8). All must-fixes applied; the mirror marker was rebuilt as world-fixed scene geometry (it had ridden on the camera).
+- Round 2: standards **approve**, critic **approve** (avg 7.2, all four clues read at phone size).
+- Hold removed; check, gate (OPEN), shardcheck, staging and pytest pass. PR open; waiting on the proof, then proof qa, then merge.
+- Should-fixes (not blocking): S03's backward 12 can read as "51"; S04a/S21 mirror still a bit like window panes; S27 could push in; L08 and L20 both key "TWO".
 
 ## Queue spacing (standards r1)
 - Keep the three pilots (ep136, ep137, ep138) at least 2 apart.
