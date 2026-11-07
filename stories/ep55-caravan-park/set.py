@@ -554,8 +554,8 @@ def build_town(kit, ctx, M):
     kit.cyl("kettle spout", 0.05, 0.4, (sx0 + 1.3, -0.62, 2.8), M["kettle"], rot=(0, 0.9, 0), n=8, r2=0.03)
     kit.box("kettle handle", (0.5, 0.05, 0.05), (sx0 + 1.7, -0.62, 3.13), M["kettle"], bevel=0.02)
     wbox(kit, "sign arm", (sx0 + 1.25, -1.0, 3.0), (sx0 + 2.2, -0.9, 3.06), M["dark"])
-    wbox(kit, "shop bench seat", (sx0 - 1.3, -0.55, 0.42), (sx0 + 0.3, -0.1, 0.48), M["wood"], bevel=0.015)
-    wbox(kit, "shop bench back", (sx0 - 1.3, -0.56, 0.62), (sx0 + 0.3, -0.5, 1.0), M["wood"], bevel=0.015)
+    wbox(kit, "shop bench seat", (sx0 - 1.55, -0.55, 0.42), (sx0 + 0.55, -0.1, 0.48), M["wood"], bevel=0.015)
+    wbox(kit, "shop bench back", (sx0 - 1.55, -0.56, 0.62), (sx0 + 0.55, -0.5, 1.0), M["wood"], bevel=0.015)
     for sx in (-1, 1):
         wbox(kit, f"shop bench leg{sx}", (sx0 - 0.5 + sx * 0.7 - 0.04, -0.54, 0.0), (sx0 - 0.5 + sx * 0.7 + 0.04, -0.12, 0.42), M["wood"])
     # the station: a platform, a lamp, a glyph board, a carriage

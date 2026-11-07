@@ -280,8 +280,8 @@ put("lod", "L03", [SX + 10.0, SY + 6.4, 0.0], yaw=0, expr="neutral", side=[0, 4]
 walk("lod", "L03+0.1", [SX + 10.0, SY + 6.4, 0.0], side=[0, 4])
 walk("lod", "L03+1.3", [SX + 10.0, SY + 2.6, 0.0], side=[0, 4])
 hide("lod", "L03+1.35")
-put("w1", "L03+1.35", [O5[0] - 0.45, O5[1] + 2.55, -0.09], yaw=0, sit=True, head=[0, -28], expr="worried")
-put("w2", "L03+1.35", [O5[0] + 0.45, O5[1] + 2.55, -0.09], yaw=0, sit=True, head=[0, -28], expr="worried")
+put("w1", "L03+1.35", [O5[0] - 0.63, O5[1] + 2.55, -0.09], yaw=0, sit=True, head=[0, -28], expr="worried")
+put("w2", "L03+1.35", [O5[0] + 0.63, O5[1] + 2.55, -0.09], yaw=0, sit=True, head=[0, -28], expr="worried")
 hide("w1", "L04")
 hide("w2", "L04")
 put("host", "L04", [O6[0] - 1.38, O6[1] + 1.9, -0.055], yaw=40, sit=True, expr="angry")
@@ -483,6 +483,8 @@ story = {
              "polish": {"quiet": [["P02", "P02"]], "marks": False, "emph": ["L01.3"]}},
     "grade": {"shadows": [-0.02, 0.0, 0.04], "highlights": [0.0, 0.005, 0.01], "saturation": 0.92, "contrast": 1.08,
               "vignette": 0.35, "bloom": 0.2, "grain": 0.012, "red_line": 0.79},
+    # checked on the final by the QA desk 2026-11-06: reads as two bodies
+    "staging_ok": ["S48/me+mum", "S52/me+mum", "S52b/me+mum"],
     "clip_ok": ["S09/ceiling mine", "S09/head mine", "S19/head mine", "S18/my pillow"]
                + [f"{sh}/{o}" for sh in ("S33", "S33b", "S34", "S39", "S40", "S41") for o in ("pillow", "quilt")],
     "phonemes": {},

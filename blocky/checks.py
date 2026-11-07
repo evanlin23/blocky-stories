@@ -184,6 +184,74 @@ def clip_times(tl: dict, st: dict | None = None, every: float = 0.25) -> list[fl
     return [round(f / fps, 4) for f in frames]
 
 
+CAM_NEAR = 0.25   # metres: a surface this close to the lens, over CAM_FILL of the frame, is a wall in front of it
+CAM_FILL = 0.7    # share of the frame (a 7 x 7 grid of rays through it)
+CAM_GRID = 7
+CAM_FLAT = 0.95   # one flat surface (not a character) over this share of the frame, within CAM_FLAT_FAR: a blank
+CAM_FLAT_FAR = 3.0
+
+
+def cam_times(tl: dict, st: dict) -> list[tuple[float, str]]:
+    """When `clipcheck` tests where the camera is: each shot's first and last frame and every key of its camera
+    move (ep120 S67's pull-in ended behind a window: 9 blank cream frames). On frames, in order."""
+    fps = tl["fps"]
+    specs = {s["id"]: s for s in st.get("shots", [])}
+    out = set()
+    for sh in tl["shots"]:
+        f0, f1 = sh["f0"], max(sh["f0"], sh["f1"] - 1)
+        fs = {f0, f1}
+        for k in specs.get(sh["id"], {}).get("cam", []):
+            fs.add(min(f1, max(f0, int(round((sh["start"] + k[0] * (sh["end"] - sh["start"])) * fps)))))
+        out |= {(f / fps, sh["id"]) for f in fs}   # exact: a rounded t can fall before its own shot's start
+    return sorted(out)
+
+
+def cam_verdict(axis: list, grid: list, near: float = CAM_NEAR, fill: float = CAM_FILL, cast=()) -> dict | None:
+    """Is the camera inside something, or right behind a surface that fills the frame?
+    `axis`: for six rays from the lens along +-x, +-y, +-z, (object name or None, the hit face looks away from
+    the lens). `grid`: for rays through the frame, (distance or None, object name, ...). Inside: five of the six
+    axis rays hit the back of one object (a house with no floor is open below: ep105 S139). Seeing the back of
+    something across the frame isn't enough on its own: that's also a shot through a window pane. A wall: `fill` or more of the frame stops within `near` metres (a
+    face fills the frame from 0.3 m and further, so a close-up passes). Flat: one surface that isn't one of the
+    `cast` covers CAM_FLAT of the frame within CAM_FLAT_FAR, all at about one distance.
+    Returns {"kind": "inside"|"wall", "what": name, "share": s} or None."""
+    backs = [a for a, b in axis if a is not None and b]
+    if backs:
+        top = max(set(backs), key=backs.count)
+        if backs.count(top) >= 5:
+            return {"kind": "inside", "what": top, "share": round(backs.count(top) / 6, 2)}
+    close = [g[1] for g in grid if g[0] is not None and g[0] < near]
+    if grid and len(close) >= fill * len(grid):
+        what = max(set(close), key=close.count)
+        return {"kind": "wall", "what": what, "share": round(len(close) / len(grid), 2)}
+    hit = [g for g in grid if g[0] is not None and g[0] < CAM_FLAT_FAR]
+    if grid and hit:
+        top = max({g[1] for g in hit}, key=lambda n: sum(g[1] == n for g in hit))
+        ds = [g[0] for g in hit if g[1] == top]
+        mine = any(top == c or top.startswith(c + ".") for c in cast)
+        if not mine and len(ds) >= CAM_FLAT * len(grid) and max(ds) < 1.5 * min(ds):
+            # the back of a room's wall from outside it (ep105 S85: one wall 2 m off over the whole frame)
+            return {"kind": "flat", "what": top, "share": round(len(ds) / len(grid), 2)}
+    return None
+
+
+def cam_problems(hits: list[dict], allow: list[str] | None = None) -> list[str]:
+    """clipcheck's camera findings, one line per shot: story.json `cam_ok` (shot ids, or `<shot>/<object>`)
+    leaves out a framing the story means (a shot through a car's own windscreen)."""
+    by = {}
+    for h in hits:
+        if _allowed({"shot": h["shot"], "what": h["what"]}, allow):
+            continue
+        by.setdefault((h["shot"], h["kind"], h["what"].split(".")[0]), []).append(h["t"])
+    out = []
+    for (shot, kind, what), ts in by.items():
+        when = f"{min(ts):.2f}-{max(ts):.2f} s" if len(ts) > 1 else f"{ts[0]:.2f} s"
+        msg = {"inside": f"the camera is inside {what}", "wall": f"{what} fills the frame right in front of the lens",
+               "flat": f"{what}, one flat surface, fills the whole frame"}[kind]
+        out.append((min(ts), f"{shot} {when}: {msg} (blank frames: move the camera key)"))
+    return [m for _, m in sorted(out)]
+
+
 def _allowed(h: dict, allow) -> bool:
     """story.json `clip_ok`: entries are `<object>` (its name up to the first dot: "flap"), `<shot>` ("S36") or
     `<shot>/<object>`. An overlap the story means to have (a cat through its own flap, a face against the glass)."""
