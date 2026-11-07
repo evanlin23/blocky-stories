@@ -441,9 +441,11 @@ only("L46", ["me"])
 stand("me", "L46")
 cue("L46", "car", mode="fix", x=G.LOT[0], y=G.LOT[1], yaw=0.0)
 put("me", "L46", [G.DOOR_X, -7.4], 180, expr="neutral")
-cue("L46", "door", a=-75.0, dur=0.7)  # door fully open before the body reaches it
+cue("L46", "door", a=-105.0, dur=0.7)  # door swung past flat before the body reaches it, clear of the opening
 acting["me"][-1]["sfx"] = "door"
-go("me", "L46.1", [G.DOOR_X, -7.4])
+go("me", "L46.1", [G.DOOR_X, -7.4], yaw=180, keep_yaw=True)
+acting["me"].append({"at": "L46.1+0.33", "yaw": 125, "blend": 0.25})   # side-on through the 1.1 m doorway
+acting["me"].append({"at": "L46.1+0.95", "yaw": 180, "blend": 0.25})   # through, facing the room again
 go("me", "L47", [G.DOOR_X, -4.4])
 shot("L46", door_cam(d=3.2, lens=36, dx=0.0, push=0.05, tz=0.3), "enter1")
 shot("L46.1", mv([G.DOOR_X + 0.3, -1.4, 1.55], [G.DOOR_X, -5.2, 1.4], 38, [G.DOOR_X + 0.3, -1.4, 1.55], [G.DOOR_X, -4.6, 1.4], 38), "enter2")
