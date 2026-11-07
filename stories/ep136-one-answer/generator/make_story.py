@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 ECHO = {"L05b", "L08b", "L11b", "L20", "L21", "L26"}
@@ -200,6 +200,7 @@ key("me", "L03.3", expr="neutral")
 
 # ===== 02 my turn, part one (L13 to L16): my name, Jonah, and the "we"
 shot("S13", "L13", cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.65, 1.62)))
+shot("S13b", "L13+0.78", cam(0.47, ST[1], 1.62, 1.5, -16, 36, cz=1.62, push=(1.4, 1.62)))
 key("me", "L13", expr="smile")
 key("me", "L14", expr="neutral")
 shot("S14", "L14", cam(0.72, ST[1], 1.5, 2.2, 0, 36, cz=1.6, push=(2.05, 1.55)))
@@ -209,6 +210,7 @@ shot("S15", "L15", cam(0.32, ST[1], 1.62, 1.5, 6, 36, cz=1.62, push=(1.35, 1.62)
 key("me", "L16", expr="uneasy")
 key("me", "L16.2", expr="stunned")
 shot("S16", "L16", cam(0.32, ST[1], 1.62, 1.5, 3, 36, cz=1.62, push=(1.35, 1.62)))
+shot("S16b", "L16+0.75", cam(0.32, ST[1], 1.62, 1.25, -18, 36, cz=1.62, push=(1.15, 1.62)))
 # L03b: so I'd ask the echo: my face, uneasy, the post beside me, turning to look out (head, eased over 0.5 s)
 key("me", "L03b", expr="uneasy", head=[0, 0])
 key("me", "L03b+0.75", expr="uneasy", head=[-38, 0], blend=0.5)
@@ -221,6 +223,7 @@ cut("ruiz", "L04", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
 cue("L04", "shout", ruiz=1.0)
 cue("L05", "shout", ruiz=0.0)
 shot("S04", "L04", rail(4, 2.1, 2.0))
+shot("S04b", "L04+0.85", rail(-16, 2.1, 2.0, cz=1.5, tz2=1.6))
 key("ruiz", "L05", expr="neutral")
 shot("S05a", "L05", rock_cam(1))
 shot("S05b", "L05.1", rock_cam(2))
@@ -251,6 +254,7 @@ shot("S08c", "L08.2", rock_cam(3))
 shot("S08d", "L08.2+0.45", rock_cam(3, 9.0))
 key("kofi", "L08b", expr="smile")
 shot("S08e", "L08b", rail(4, 2.1, 2.0))
+shot("S08f", "L08b+0.55", rail(17, 2.1, 2.0, cz=1.5, tz2=1.6))
 key("kofi", "L09", expr="smile", head=[0, 9])
 key("kofi", "L09.1", head=[0, -4], blend=0.5)
 shot("S09", "L09", rail(-3, 2.1, 2.0))
@@ -261,6 +265,7 @@ cut("bell", "L10", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
 cue("L10", "shout", bell=1.0)
 cue("L11", "shout", bell=0.0)
 shot("S10", "L10", rail(3, 2.1, 2.0))
+shot("S10b", "L10+0.8", rail(-16, 2.1, 2.0, cz=1.5, tz2=1.6))
 key("bell", "L11", expr="neutral")
 shot("S11a", "L11", rock_cam(1))
 shot("S11b", "L11.1", rock_cam(2))
@@ -291,11 +296,13 @@ shot("S12b", "L12b", rail(-4, 2.1, 2.0))
 key("me", "L17", expr="shout")
 cue("L17", "shout", me=1.0)
 shot("S17", "L17", rail(0, 1.9, 1.8, cx=0.3))
+shot("S17b", "L17+0.87", rail(16, 1.9, 1.75, cx=0.3, cz=1.55, tz2=1.62))
 # L20 lands on the face still mid-shout: the open mouth holds into S20 (0.45 s), then closes on a scared face
 key("me", "L20+0.45", expr="scared")
 cue("L20+0.45", "shout", me=0.0)
 shot("S20", "L20", cam(0.0, ST[1], 1.62, 1.3, 0, 36, cz=1.62, push=(1.15, 1.62)))
-shot("S21", "L21", camp([-1.5, 6.0, 3.0], [0, G.WALL_Y, 7.0], 18, pos2=[-1.0, 3.0, 2.8], tgt2=[0, G.WALL_Y, 7.0]))
+shot("S21", "L21", camp([-1.5, 6.0, 3.0], [0, G.WALL_Y, 7.0], 18, pos2=[-1.3, 5.2, 2.9], tgt2=[0, G.WALL_Y, 7.0]))
+shot("S21c", "L21+0.47", camp([3.2, 5.0, 2.0], [0, G.WALL_Y, 6.0], 22, pos2=[2.8, 4.2, 2.3], tgt2=[0, G.WALL_Y, 6.4]))
 cut("me", "L21", ST, hidden=True)
 shot("S21b", "P1", camp([-2.6, 3.5, 2.4], [0, G.WALL_Y, 6.0], 24, pos2=[-1.6, 2.0, 2.5]))
 shot("S18", "L18", rock_cam(1, 11.0))
@@ -377,6 +384,8 @@ shot("S28b", "L28+0.6", camp([G.POST_AHEAD[0] + 0.8, G.POST_AHEAD[1] + 3.7, 1.6]
 cue("L29", "show", pane=1.0)
 shot("S29", "L29", camp([G.XT + 0.8, G.YT - 0.1, 1.5], [G.XT - 1.0, G.YT - 0.1, 1.5], 11,
                         pos2=[G.XT + 0.7, G.YT - 0.1, 1.5]))
+shot("S29a", "L29+0.32", camp([G.XT + 0.8, G.YT - 0.55, 1.75], [G.XT - 1.0, G.YT - 0.1, 1.5], 14,
+                             pos2=[G.XT + 0.7, G.YT - 0.45, 1.7]))
 shot("S29b", "L29+0.9", camp([G.XT + 0.7, G.YT + 0.45, 1.45], [G.XT - 1.0, G.YT - 0.1, 1.6], 14,
                              pos2=[G.XT + 0.6, G.YT + 0.3, 1.5]))
 cue("L30", "panepos", x=-1.3, y=0.5, rz=-90.0, s=0.7)
@@ -392,7 +401,8 @@ shot("S31b", "L31.1", camp([SX[0] + 0.4, SX[1] + 0.6, 1.62], [G.POST_AHEAD[0], G
 cue("L32", "post", x=G.POST_BEHIND[0], y=G.POST_BEHIND[1])
 cue("L32", "show", rim=0.0)
 cut("me", "L32", [*SX], yaw=0, expr="scared", head=[0, 0], hidden=False)
-shot("S32", "L32", cam(G.XT - 0.1, G.YT, 1.35, 1.45, 0, 36, cz=1.65, push=(1.35, 1.4)))
+shot("S32a", "L32", cam(G.XT - 0.1, G.YT, 1.35, 1.6, -17, 36, cz=1.5, push=(1.5, 1.4)))
+shot("S32", "L32+0.36", cam(G.XT - 0.1, G.YT, 1.35, 1.45, 0, 36, cz=1.65, push=(1.35, 1.4)))
 
 # ------------------------------------------------------------------------------------------------ finish
 remap_all(cues)
@@ -431,7 +441,7 @@ remap_all(sound["ambience"])
 remap_all(music["sections"])
 sound["music_drops"] = [[remap(a), remap(b)] for a, b in sound["music_drops"]]
 polish = {"sway_amp": 0.006, "emph": ["L01.2", "L12.2", "L16.2", "L28.1", "L31.1", "L32.1", "L12b.1", "L19.1", "L22.1", "L26.2"], "reveal": ["L20"],
-          "twist": "L20", "sway": True, "hold": ["S03c", "S04", "S05e", "S05f", "S06", "S07", "S07b", "S08e", "S09", "S09b", "S10", "S11e", "S11f", "S12b", "S17", "S23a", "S30"]}
+          "twist": "L20", "sway": True, "hold": ["S03c", "S04", "S05e", "S05f", "S06", "S07", "S07b", "S08e", "S09", "S09b", "S10", "S10b", "S04b", "S08f", "S17b", "S11e", "S11f", "S12b", "S17", "S23a", "S30"]}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
 polish["twist"] = remap(polish["twist"])
@@ -469,7 +479,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S02", "S03b", "S03d", "S12c", "S21b", "S23c", "S27", "S31b", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S25a", "S25b", "S25c", "S28", "S29", "S31a"],   # the clue rocks and the far wall: no person on purpose
+    "framing_ok": ["S02", "S03b", "S03d", "S12c", "S21b", "S23c", "S27", "S31b", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S25a", "S25b", "S25c", "S28", "S29", "S29a", "S21c", "S31a"],   # the clue rocks and the far wall: no person on purpose
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
