@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 10
+REV = 11
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -457,8 +457,8 @@ shot("L29", mv([GX - 3.0, GY - 9.5, 1.8], [GX - 7.0, GY - 4.4, 1.3], 36, [GX - 3
 only("L29.2", [])
 move("L29.2", "gift0", z=-60.0)
 move("L29.2", "gift1", z=-60.0)
-move("L29.2-0.05", "brocar", x=QX - 1.7, y=26.0, z=0.0, yaw=0.0)
-move("L29.2", "brocar", dur=2.6, lin=True, y=-14.0)
+move("L29.2-0.05", "brocar", x=QX - 1.7, y=15.0, z=0.0, yaw=0.0)
+move("L29.2", "brocar", dur=1.1, lin=True, y=-4.0)
 shot("L29.2", mv([QX + 6.0, 6.0, 1.6], [QX - 1.7, 6.0, 1.0], 34, [QX + 5.5, 4.0, 1.6], [QX - 1.7, 4.0, 1.0], 34), "carrolls")
 move("L30-0.05", "brocar", x=GX - 32.0, y=GY - 5.0, z=0.0, yaw=90.0)
 move("L30", "brocar", dur=1.0, x=GX - 9.0, y=GY - 5.0)
