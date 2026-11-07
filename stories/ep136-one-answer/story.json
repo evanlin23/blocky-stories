@@ -21,7 +21,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 6,
+ "rev": 7,
  "look": {
   "style": "closer",
   "fog": "#e8d8c0",
@@ -3720,7 +3720,7 @@
     "expr": "neutral"
    },
    {
-    "at": "L20+0.45",
+    "at": "L21",
     "pos": [
      0.0,
      1.35
@@ -4456,7 +4456,7 @@
    "me": 1.0
   },
   {
-   "at": "L20+0.45",
+   "at": "L21",
    "name": "shout",
    "me": 0.0
   },
@@ -4718,7 +4718,7 @@
     "L18"
    ]
   ],
-  "rev": 5
+  "rev": 6
  },
  "set_moves": [],
  "framing_ok": [

@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 ECHO = {"L05b", "L08b", "L11b", "L20", "L21", "L26"}
@@ -297,9 +297,9 @@ key("me", "L17", expr="shout")
 cue("L17", "shout", me=1.0)
 shot("S17", "L17", rail(0, 1.9, 1.8, cx=0.3))
 shot("S17b", "L17+0.87", rail(16, 1.9, 1.75, cx=0.3, cz=1.55, tz2=1.62))
-# L20 lands on the face still mid-shout: the open mouth holds into S20 (0.45 s), then closes on a scared face
-key("me", "L20+0.45", expr="scared")
-cue("L20+0.45", "shout", me=0.0)
+# L20 lands on the face still mid-shout: the open mouth holds through all of L20 ("tonight."), closing on L21
+key("me", "L21", expr="scared")
+cue("L21", "shout", me=0.0)
 shot("S20", "L20", cam(0.0, ST[1], 1.62, 1.3, 0, 36, cz=1.62, push=(1.15, 1.62)))
 shot("S21", "L21", camp([-1.5, 6.0, 3.0], [0, G.WALL_Y, 7.0], 18, pos2=[-1.3, 5.2, 2.9], tgt2=[0, G.WALL_Y, 7.0]))
 shot("S21c", "L21+0.47", camp([3.2, 5.0, 2.0], [0, G.WALL_Y, 6.0], 22, pos2=[2.8, 4.2, 2.3], tgt2=[0, G.WALL_Y, 6.4]))
