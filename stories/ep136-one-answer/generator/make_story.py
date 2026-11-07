@@ -430,8 +430,8 @@ remap_all(sound["sfx"])
 remap_all(sound["ambience"])
 remap_all(music["sections"])
 sound["music_drops"] = [[remap(a), remap(b)] for a, b in sound["music_drops"]]
-polish = {"emph": ["L01.2", "L12.2", "L16.2", "L28.1", "L31.1", "L32.1"], "reveal": ["L20"],
-          "twist": "L20", "sway": ["S03a", "S13", "S14", "S15", "S16", "S17", "S19", "S20", "S22", "S24", "S26", "S30", "S32", "S02", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S31a"], "hold": ["S03c", "S04", "S05e", "S05f", "S06", "S07", "S07b", "S08e", "S09", "S09b", "S10", "S11e", "S11f", "S12b", "S17", "S23a", "S23c", "S29", "S28", "S25a", "S25b", "S25c", "S30"]}
+polish = {"sway_amp": 0.009, "emph": ["L01.2", "L12.2", "L16.2", "L28.1", "L31.1", "L32.1"], "reveal": ["L20"],
+          "twist": "L20", "sway": True, "hold": ["S03c", "S04", "S05e", "S05f", "S06", "S07", "S07b", "S08e", "S09", "S09b", "S10", "S11e", "S11f", "S12b", "S17", "S23a", "S30"]}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
 polish["twist"] = remap(polish["twist"])

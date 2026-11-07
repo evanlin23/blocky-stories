@@ -85,226 +85,6 @@
     ]
    ]
   },
-  "L04": {
-   "text": "missus avila asked if her bakery would make it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.31,
-   "onset": 0.172,
-   "end": 2.121,
-   "chunks": [
-    [
-     0.172,
-     1.017
-    ],
-    [
-     1.017,
-     1.5
-    ],
-    [
-     1.5,
-     2.121
-    ]
-   ]
-  },
-  "L05": {
-   "text": "one... two... three...",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.6592,
-   "dur": 2.19,
-   "onset": 0.31,
-   "end": 1.828,
-   "chunks": [
-    [
-     0.31,
-     0.569
-    ],
-    [
-     0.698,
-     0.948
-    ],
-    [
-     1.086,
-     1.828
-    ]
-   ]
-  },
-  "L06": {
-   "text": "now there's a line around the block.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.724,
-   "onset": 0.19,
-   "end": 1.517,
-   "chunks": [
-    [
-     0.19,
-     0.439
-    ],
-    [
-     0.439,
-     0.741
-    ],
-    [
-     0.741,
-     1.517
-    ]
-   ]
-  },
-  "L07": {
-   "text": "my buddy kofi asked about the job up north.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.19,
-   "onset": 0.172,
-   "end": 1.983,
-   "chunks": [
-    [
-     0.172,
-     0.448
-    ],
-    [
-     0.448,
-     0.957
-    ],
-    [
-     0.957,
-     1.371
-    ],
-    [
-     1.371,
-     1.983
-    ]
-   ]
-  },
-  "L08": {
-   "text": "one... two... three...",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.6592,
-   "dur": 2.19,
-   "onset": 0.31,
-   "end": 1.828,
-   "chunks": [
-    [
-     0.31,
-     0.569
-    ],
-    [
-     0.698,
-     0.948
-    ],
-    [
-     1.086,
-     1.828
-    ]
-   ]
-  },
-  "L09": {
-   "text": "he calls me from his corner office.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.172,
-   "end": 1.586,
-   "chunks": [
-    [
-     0.172,
-     0.552
-    ],
-    [
-     0.552,
-     0.759
-    ],
-    [
-     0.759,
-     1.586
-    ]
-   ]
-  },
-  "L10": {
-   "text": "old mister bell asked where he parked.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.845,
-   "onset": 0.172,
-   "end": 1.655,
-   "chunks": [
-    [
-     0.172,
-     0.483
-    ],
-    [
-     0.483,
-     0.974
-    ],
-    [
-     0.974,
-     1.655
-    ]
-   ]
-  },
-  "L11": {
-   "text": "one... two... three...",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.6592,
-   "dur": 2.19,
-   "onset": 0.31,
-   "end": 1.828,
-   "chunks": [
-    [
-     0.31,
-     0.569
-    ],
-    [
-     0.698,
-     0.948
-    ],
-    [
-     1.086,
-     1.828
-    ]
-   ]
-  },
-  "L12": {
-   "text": "it always says your name first. always on three.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.466,
-   "onset": 0.172,
-   "end": 2.259,
-   "chunks": [
-    [
-     0.172,
-     0.629
-    ],
-    [
-     0.629,
-     1.224
-    ],
-    [
-     1.319,
-     2.259
-    ]
-   ]
-  },
   "L13": {
    "text": "twenty-one today. my name's eli.",
    "who": "narrator",
@@ -409,6 +189,334 @@
     ]
    ]
   },
+  "L03b": {
+   "text": "so i'd ask the echo. i've seen it work.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.897
+    ],
+    [
+     0.948,
+     1.199
+    ],
+    [
+     1.199,
+     1.69
+    ]
+   ]
+  },
+  "L04": {
+   "text": "missus avila asked if her bakery would make it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ],
+    [
+     1.017,
+     1.5
+    ],
+    [
+     1.5,
+     2.121
+    ]
+   ]
+  },
+  "L05": {
+   "text": "one... two... three...",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.6592,
+   "dur": 2.19,
+   "onset": 0.31,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.31,
+     0.569
+    ],
+    [
+     0.698,
+     0.948
+    ],
+    [
+     1.086,
+     1.828
+    ]
+   ]
+  },
+  "L05b": {
+   "text": "rosa. open on sundays.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9064,
+   "dur": 1.879,
+   "onset": 0.207,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.207,
+     0.517
+    ],
+    [
+     0.569,
+     1.655
+    ]
+   ]
+  },
+  "L06": {
+   "text": "now there's a line around the block.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.19,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.19,
+     0.439
+    ],
+    [
+     0.439,
+     0.741
+    ],
+    [
+     0.741,
+     1.517
+    ]
+   ]
+  },
+  "L07": {
+   "text": "my buddy kofi asked about the job up north.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.957
+    ],
+    [
+     0.957,
+     1.371
+    ],
+    [
+     1.371,
+     1.983
+    ]
+   ]
+  },
+  "L08": {
+   "text": "one... two... three...",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.6592,
+   "dur": 2.19,
+   "onset": 0.31,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.31,
+     0.569
+    ],
+    [
+     0.698,
+     0.948
+    ],
+    [
+     1.086,
+     1.828
+    ]
+   ]
+  },
+  "L08b": {
+   "text": "kofi. take it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9064,
+   "dur": 1.293,
+   "onset": 0.207,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.207,
+     0.483
+    ],
+    [
+     0.517,
+     1.086
+    ]
+   ]
+  },
+  "L09": {
+   "text": "he calls me from his corner office.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.759
+    ],
+    [
+     0.759,
+     1.586
+    ]
+   ]
+  },
+  "L10": {
+   "text": "old mister bell asked where he parked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.974
+    ],
+    [
+     0.974,
+     1.655
+    ]
+   ]
+  },
+  "L11": {
+   "text": "one... two... three...",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.6592,
+   "dur": 2.19,
+   "onset": 0.31,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.31,
+     0.569
+    ],
+    [
+     0.698,
+     0.948
+    ],
+    [
+     1.086,
+     1.828
+    ]
+   ]
+  },
+  "L11b": {
+   "text": "walter. turn around.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9064,
+   "dur": 1.552,
+   "onset": 0.207,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.207,
+     0.5
+    ],
+    [
+     0.534,
+     1.328
+    ]
+   ]
+  },
+  "L12": {
+   "text": "it always says your name first. always on three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.224
+    ],
+    [
+     1.319,
+     2.259
+    ]
+   ]
+  },
+  "L12b": {
+   "text": "then it was my turn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.138
+    ]
+   ]
+  },
   "L17": {
    "text": "so i shouted, who's coming with jonah?",
    "who": "narrator",
@@ -430,50 +538,6 @@
     [
      1.061,
      1.724
-    ]
-   ]
-  },
-  "L18": {
-   "text": "i hadn't even counted to one.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.741,
-   "onset": 0.19,
-   "end": 1.552,
-   "chunks": [
-    [
-     0.19,
-     0.716
-    ],
-    [
-     0.716,
-     1.552
-    ]
-   ]
-  },
-  "L19": {
-   "text": "i was still shouting when it answered.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.172,
-   "end": 1.569,
-   "chunks": [
-    [
-     0.172,
-     0.353
-    ],
-    [
-     0.353,
-     0.836
-    ],
-    [
-     0.836,
-     1.569
     ]
    ]
   },
@@ -521,6 +585,50 @@
     ]
    ]
   },
+  "L18": {
+   "text": "i hadn't even counted to one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.19,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.19,
+     0.716
+    ],
+    [
+     0.716,
+     1.552
+    ]
+   ]
+  },
+  "L19": {
+   "text": "i was still shouting when it answered.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.836
+    ],
+    [
+     0.836,
+     1.569
+    ]
+   ]
+  },
   "L22": {
    "text": "it didn't say my name first.",
    "who": "narrator",
@@ -558,6 +666,30 @@
     [
      0.578,
      1.224
+    ]
+   ]
+  },
+  "L23b": {
+   "text": "at dusk, the canyon went quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.862
+    ],
+    [
+     0.862,
+     1.517
     ]
    ]
   },
@@ -770,138 +902,6 @@
     [
      0.534,
      1.241
-    ]
-   ]
-  },
-  "L05b": {
-   "text": "rosa. open on sundays.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9064,
-   "dur": 1.879,
-   "onset": 0.207,
-   "end": 1.655,
-   "chunks": [
-    [
-     0.207,
-     0.517
-    ],
-    [
-     0.569,
-     1.655
-    ]
-   ]
-  },
-  "L08b": {
-   "text": "kofi. take it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9064,
-   "dur": 1.293,
-   "onset": 0.207,
-   "end": 1.086,
-   "chunks": [
-    [
-     0.207,
-     0.483
-    ],
-    [
-     0.517,
-     1.086
-    ]
-   ]
-  },
-  "L11b": {
-   "text": "walter. turn around.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9064,
-   "dur": 1.552,
-   "onset": 0.207,
-   "end": 1.328,
-   "chunks": [
-    [
-     0.207,
-     0.5
-    ],
-    [
-     0.534,
-     1.328
-    ]
-   ]
-  },
-  "L03b": {
-   "text": "so i'd ask the echo. i've seen it work.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.897,
-   "onset": 0.172,
-   "end": 1.69,
-   "chunks": [
-    [
-     0.172,
-     0.509
-    ],
-    [
-     0.509,
-     0.897
-    ],
-    [
-     0.948,
-     1.199
-    ],
-    [
-     1.199,
-     1.69
-    ]
-   ]
-  },
-  "L12b": {
-   "text": "then it was my turn.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.345,
-   "onset": 0.172,
-   "end": 1.138,
-   "chunks": [
-    [
-     0.172,
-     0.448
-    ],
-    [
-     0.448,
-     1.138
-    ]
-   ]
-  },
-  "L23b": {
-   "text": "at dusk, the canyon went quiet.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.172,
-   "end": 1.517,
-   "chunks": [
-    [
-     0.172,
-     0.5
-    ],
-    [
-     0.526,
-     0.862
-    ],
-    [
-     0.862,
-     1.517
     ]
    ]
   }
