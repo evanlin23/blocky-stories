@@ -6,5 +6,6 @@
   "cover_s": 24.0,
   "shape": "open-choice",
   "opening": "if",
-  "lane": "interactive"
+  "lane": "interactive",
+  "hold": "batch 15a: in review"
 }
