@@ -16,7 +16,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -218,13 +218,12 @@ cue("L08", "bus", mode="off")
 cue("L08", "time", hh=8, mm=52)
 cue("L08", "sit", who="me", s=0.0)
 teleport("me", "L08", [RX, RY - 2.0], yaw=0, expr="worried")
-key("me", "L08+0.5", [RX, RY - 2.0], yaw=0)
-key("me", "L08.1", [RX + 0.3, RY - 5.0], yaw=0, expr="worried")
+key("me", "L08+0.3", [RX, RY - 2.0], yaw=0)
+key("me", "L09", [RX + 0.3, RY - 5.0], yaw=0, expr="worried")
 shot("S08", "L08", cam(RX + 0.2, RY - 3.4, 1.2, 6.2, 12, 30, cz=1.4))
 # running
 cue("L09", "time", hh=9, mm=1)
 teleport("me", "L09", [0.6, -28.5], yaw=180, expr="scared", run=True)
-key("me", "L09+0.1", [0.6, -28.5], yaw=180, run=True)
 key("me", "L10", [0.6, -19.5], yaw=180, run=True, expr="scared")
 shot("S09", "L09", [[0, [1.0, -23.6, 1.4], [0.6, -28.5, 1.35], 30], [1, [1.0, -14.6, 1.4], [0.6, -19.5, 1.35], 30]])
 # the green door, shut; then me at it, knocking
@@ -449,6 +448,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "frames_ok": ["S05", "S03", "S27a", "S28"],
+    "staging_ok": ["S28/grandma+grandpa"],
     "framing_ok": ["S12b", "S25", "S41", "S40b", "S26", "S26b", "S30", "S35"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

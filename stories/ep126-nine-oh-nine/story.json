@@ -15,7 +15,7 @@
  "tail": 0,
  "fade_in": false,
  "fade_out": false,
- "rev": 4,
+ "rev": 5,
  "look": {
   "style": "closer",
   "fog": "#9fb0d8",
@@ -2351,7 +2351,7 @@
     "expr": "worried"
    },
    {
-    "at": "L08+0.5",
+    "at": "L08+0.3",
     "pos": [
      300.0,
      98.0,
@@ -2360,7 +2360,7 @@
     "yaw": 0
    },
    {
-    "at": "L08.2",
+    "at": "L09",
     "pos": [
      300.3,
      95.0,
@@ -2388,16 +2388,6 @@
     "blend": 0.0,
     "yaw": 180,
     "expr": "scared",
-    "run": true
-   },
-   {
-    "at": "L09+0.1",
-    "pos": [
-     0.6,
-     -28.5,
-     0.0
-    ],
-    "yaw": 180,
     "run": true
    },
    {
@@ -3788,7 +3778,7 @@
     ]
    }
   ],
-  "rev": 3
+  "rev": 5
  },
  "set_moves": [],
  "frames_ok": [
@@ -3797,11 +3787,14 @@
   "S27a",
   "S28"
  ],
+ "staging_ok": [
+  "S28/grandma+grandpa"
+ ],
  "framing_ok": [
   "S12b",
   "S25",
-  "S40b",
   "S41",
+  "S40b",
   "S26",
   "S26b",
   "S30",
