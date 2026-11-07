@@ -6042,7 +6042,7 @@
     ]
    },
    {
-    "at": "L63-0.05",
+    "at": "L63",
     "hidden": true,
     "blend": 0
    },
@@ -6173,17 +6173,17 @@
     "lean": 2
    },
    {
+    "at": "L72-0.05",
+    "hidden": true,
+    "blend": 0
+   },
+   {
     "at": "L71+1.60",
     "head": [
      0,
      -6
     ],
     "lean": -2
-   },
-   {
-    "at": "L72.2",
-    "hidden": true,
-    "blend": 0
    }
   ],
   "dad": [
@@ -6737,7 +6737,7 @@
     ]
    },
    {
-    "at": "L63-0.05",
+    "at": "L63",
     "hidden": true,
     "blend": 0
    },
@@ -6837,6 +6837,11 @@
     ]
    },
    {
+    "at": "L72-0.05",
+    "hidden": true,
+    "blend": 0
+   },
+   {
     "at": "L71+1.60",
     "head": [
      6,
@@ -6847,11 +6852,6 @@
      10,
      10
     ]
-   },
-   {
-    "at": "L72.2",
-    "hidden": true,
-    "blend": 0
    },
    {
     "at": "L74",
@@ -7591,7 +7591,7 @@
     "blink": true
    },
    {
-    "at": "L62-0.05",
+    "at": "L62",
     "hidden": true,
     "blend": 0
    },
@@ -7786,7 +7786,7 @@
     ]
    },
    {
-    "at": "L72",
+    "at": "L72-0.05",
     "hidden": true,
     "blend": 0
    },
@@ -9675,7 +9675,7 @@
   ]
  },
  "sound": {
-  "rev": 4,
+  "rev": 3,
   "floor": "grass",
   "steps_db": -22,
   "floor_spans": [
