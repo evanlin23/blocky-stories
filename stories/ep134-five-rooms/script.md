@@ -3,7 +3,7 @@
 - **Slug:** `ep134-five-rooms` (batch 14, upload order 6 of 6)
 - **Pitch:** 14 in the batch 14 pitch round, picked by the panel (7.4). It's also the backlog's `spare-room` (batch 13 list), with its twist found fresh. Engine: the lore shape "the count is too high, and the extra ones are us" (`stories/lore.md` → Other things a count can do), never yet a main twist, with no Keeper. Opening shape `count`. Lane: experiment (comedy and eerie). Length arm: mid (60 to 90 s).
 - **Title:** Our House Has Nine Rooms For FOUR 🗝️
-- **Panel notes built in:** every room is a still doorway. Nothing grows, morphs or appears on screen. The house builds its rooms off screen, and we only ever see doors that are already there. The ending is said plainly (L37 to L40): "There's a TENTH door now." / "It's my sixth ROOM." / "For whoever / I turn into NEXT." / "She says / she already LIKES him." (standards r1: the warmth stays on Mom liking every me)
+- **Panel notes built in:** every room is a still doorway. Nothing grows, morphs or appears on screen. The house builds its rooms off screen, and we only ever see doors that are already there. The ending is said plainly (L37 to L40): "There's a TENTH door now." / "It's my seventh ROOM." / "For whoever / I turn into NEXT." / "She says / she already LIKES him." (standards r1: the warmth stays on Mom liking every me)
 - **Batch 14 constraints, applied to every shot:**
   1. Flash-safe by design. The hall light is on and steady all film (warm ceiling glow, never switched), with morning sun at the end. No light changes on screen. Night and morning are separate scenes, joined by a cut.
   2. Two faces at most in any shot. Every emotional line goes on a single close-up facing camera, with no profile two-shots. Nothing is held near a face.
@@ -42,7 +42,7 @@ The batch table is in `stories/ep129-gift-box/script.md`. This row:
 - **First real scare (L15 to L20, about 25 to 33 s):** at midnight, door seven is open an inch, and a face on the far wall looks back at me.
 - **The climax turns the rule's own logic:** a room for everyone who's ever lived there, and I lived there as five different people. No new magic.
 - **Twist and reveal (L21 to L31, about 34 to 48 s, said plainly):** "Every one of them / was MINE." and "And every time / I came home, / I came back / as somebody ELSE." The picture is S30: the hall of doors 5 to 9 standing open in a row, each room in its own color, with me in the middle of the hall, face to camera.
-- **How the last 15 seconds turn over the first line:** there's a tenth door now, my sixth room, for whoever I turn into next, and Mom already likes him. L01's nine rooms are now ten, and the count will keep going.
+- **How the last 15 seconds turn over the first line:** there's a tenth door now, my seventh room, for whoever I turn into next, and Mom already likes him. L01's nine rooms are now ten, and the count will keep going.
 - **The plants a rewatch catches:**
   1. L10: Dad calls the five rooms "the guests".
   2. L12: I've moved back home five times.
@@ -55,7 +55,7 @@ The batch table is in `stories/ep129-gift-box/script.md`. This row:
 **L35: "Even the BEARD."**
 
 ## Clarity test (cold, two sentences)
-In this town a house builds a room for everyone who has ever lived in it, and the narrator's family of four has nine rooms, five of them always shut. He finds that all five extra rooms are his: each time he moved back home he had become a different person, so the house built a new room for each, his mom kept them all, and now a sixth one has appeared for whoever he turns into next.
+In this town a house builds a room for everyone who has ever lived in it, and the narrator's family of four has nine rooms, five of them always shut. He finds that all five extra rooms are his: each time he moved back home he had become a different person, so the house built a new room for each, his mom kept them all, and now a tenth door, his seventh room, has appeared for whoever he turns into next.
 
 ## The opening recipe (playbook v1), point by point
 1. Line 1 is a count that doesn't add up (`count`), 10 words, about 2.1 s, and L02 states the rule at once.
@@ -206,7 +206,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L35: Even the BEARD.
 - L36: Then she showed me / the end / of the HALL.
 - L37: There's a TENTH door now.
-- L38: It's my sixth ROOM.
+- L38: It's my seventh ROOM.
 - L39: For whoever / I turn into NEXT.
 - L40: She says / she already LIKES him.
 - L41: Mom's already / KNOCKED on it.
@@ -217,5 +217,5 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: nothing flagged.
 - The tenth door is never seen being built. It's there, shut, in S37 (panel note).
-- "Five of ME" is the plain count. Doors 5 to 9 are five rooms, plus my room 4, which makes six of mine with the tenth door. L38 says it.
+- "Five of ME" is the plain count. Doors 5 to 9 are five rooms, plus my room 4, which makes six of mine, so the tenth door is my seventh room. L38 says it (standards r2).
 - Title, description, pin and captions checked against hard rule 8.
