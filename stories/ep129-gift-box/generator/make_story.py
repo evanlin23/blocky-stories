@@ -22,7 +22,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 11
+REV = 17
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -248,10 +248,11 @@ shot("S20", "L20", fcam("R1", *G.DAD_SEAT, z=0.0, d=3.5, lens=30, f=0.38, dx=0.3
     "dad": ps("R1", *G.DAD_SEAT, expr="neutral", **SIT)})
 chg("dad", "L20.1", blend=0.4, head=(0, 8))
 chg("dad", "L20.1+0.5", blend=0.4, head=(0, -2))
-D21, M21 = (-0.35, 1.25), (0.55, 1.25)
-shot("S21", "L21", ocam("R1", 0.08, 1.6, 1.4, 3.8, 30, push=0.03, arc=0.0), {
-    "dad": ps("R1", *D21, expr="neutral", **SIT),
-    "me": ps("R1", *M21, expr="neutral", **SIT)})
+SIT21 = dict(seat=True, arms=(12, 12), side=(-4, -4))   # near arms in at the sides
+D21, M21 = tuple(G.DAD_SEAT), (G.ME_SEAT[0] + 0.15, G.ME_SEAT[1])   # armchair seat and the couch's right end, 1.4 m apart
+shot("S21", "L21", ocam("R1", 0.2, 1.6, 1.4, 5.6, 30, push=0.0, arc=0.0), {
+    "dad": ps("R1", *D21, expr="neutral", **SIT21),
+    "me": ps("R1", *M21, expr="neutral", **SIT21)})
 shot("S22", "L22", fcam("R1", *G.ME_SEAT, d=3.3, lens=30, f=0.38, dx=-0.25, push=0.07), {
     "me": ps("R1", *G.ME_SEAT, expr="listen", **SIT)})
 shot("S23a", "L23", fcam("R1", -0.85, 1.9, d=3.6, lens=30, f=0.38, dx=0.3), {
@@ -372,8 +373,9 @@ chg("dad", "L59.1", blend=0.5, head=(8, 10))
 shot("S60", "L60", ocam("R4", -0.15, 2.55, 1.62, 2.4, 30, az=72, el=8, push=0.12, arc=2.5), {})
 SIDE_L, SIDE_R = (-0.6, G.STAND_Y), (0.6, G.STAND_Y)
 CAKE_ARMS = dict(arms=(48, 48), side=(-6, -6))
-shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 4.8, 30, el=7, push=0.09, arc=1.0), {
-    "me": ps("KG", *SIDE_L, expr="smile", **CAKE_ARMS), "dad": ps("KG", *SIDE_R, expr="smile", **CAKE_ARMS)})
+CAKE61 = dict(arms=(30, 30), side=(4, 4))   # arms down and out of each other
+shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 5.8, 30, el=7, push=0.03, arc=1.0), {
+    "me": ps("KG", -0.7, G.STAND_Y, expr="smile", **CAKE61), "dad": ps("KG", 0.7, G.STAND_Y, expr="smile", **CAKE61)})
 chg("me", "L61.1", blend=0.4, head=(10, 4))
 chg("dad", "L61.1", blend=0.4, head=(-10, 4))
 shot("S62", "L62", fcam("KG", *SIDE_L, d=2.9, lens=30, f=0.40, dx=0.2), {
