@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -151,6 +151,9 @@ def rock_cam(n, w=11.0, push=True):
     return camp(pos, tgt, lens, pos2=(x, G.WALL_Y + d * 0.86, 1.8) if push else None)
 
 
+BELL_CAM = ([2.6, 6.4, 1.5], [-0.4, 1.35, 1.58], 32, [2.4, 6.0, 1.5])
+
+
 def hidden_all(at, but=()):
     for n in ("me", "ruiz", "kofi", "bell"):
         if n not in but:
@@ -168,7 +171,10 @@ cue(0, "show", car=0.0, loaf=0.0, pane=0.0, rim=0.0)
 cue(0, "shout", me=0.0, ruiz=0.0, kofi=0.0, bell=0.0)
 
 # ===== 01 the rule (L01, L02)
-shot("S01a", 0, cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.65, 1.62)))
+shot("S01a", 0, cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.6, 1.62)))
+key("me", 0.62, head=[0, 0])
+key("me", 0.95, head=[-10, 0], blend=0.3)
+shot("S01a2", 0.62, cam(0.4, ST[1], 1.62, 1.4, -15, 36, cz=1.62, push=(1.25, 1.62)))
 shot("S01b", "L01.2", cam(G.POST_RAIL[0], G.POST_RAIL[1], 1.6, 1.7, 0, 36, cz=1.6, push=(1.45, 1.6)))
 key("me", "L01.2", expr="neutral")
 shot("S02", "L02", camp([-4.0, 4.5, 2.4], [0, G.WALL_Y, 6.5], 24, pos2=[-1.5, 4.5, 2.6], tgt2=[0, G.WALL_Y, 7.0]))
@@ -176,7 +182,8 @@ shot("S03a", "L03", cam(0.38, ST[1], 1.62, 1.9, 0, 36, cz=1.62, push=(1.7, 1.62)
 cue("L03", "shout", me=1.0)
 cue("L03.3", "shout", me=0.0)
 key("me", "L03", expr="shout")
-shot("S03b", "L03.3", camp([0.0, 5.5, 4.4], [0, G.WALL_Y, 5.0], 20, pos2=[0.0, 4.5, 4.4]))
+shot("S03b", "L03.3", camp([0.0, 5.5, 4.4], [0, G.WALL_Y, 5.0], 20, pos2=[-1.5, 5.0, 4.0]))
+shot("S03c", "L03.3+0.7", camp([6.0, 4.0, 2.4], [-1.0, G.WALL_Y, 5.2], 24, pos2=[3.5, 3.6, 2.8]))
 key("me", "L03.3", expr="neutral")
 
 # ===== 02 the rule at work (L04 to L12): three people, each alone at the railing
@@ -194,7 +201,10 @@ shot("S05b", "L05.1", rock_cam(2))
 shot("S05c", "L05.2", rock_cam(3))
 shot("S05d", "L05.2+0.45", rock_cam(3, 9.0))
 key("ruiz", "L05b", expr="laugh")
-shot("S05e", "L05b", cam(0.0, ST[1], 1.6, 1.6, -5, 36, cz=1.62, push=(1.45, 1.62)))
+shot("S05e", "L05b", cam(0.0, ST[1], 1.6, 1.6, -5, 36, cz=1.62, push=(1.5, 1.62)))
+key("ruiz", "L05b+0.4", head=[0, 0])
+key("ruiz", "L05b+0.75", head=[12, 4], blend=0.35)
+shot("S05f", "L05b+0.7", cam(0.0, ST[1], 1.6, 1.4, 16, 36, cz=1.55, push=(1.25, 1.6)))
 cue("L06", "show", loaf=1.0)
 key("ruiz", "L06", expr="laugh", arms=[62, 62])
 shot("S06", "L06", cam(0.0, ST[1], 1.35, 1.9, 5, 36, cz=1.4, push=(1.7, 1.4)))
@@ -205,6 +215,9 @@ cut("kofi", "L07", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
 cue("L07", "shout", kofi=1.0)
 cue("L08", "shout", kofi=0.0)
 shot("S07", "L07", cam(0.0, ST[1], 1.6, 1.75, -4, 36, cz=1.62, push=(1.6, 1.62)))
+key("kofi", "L07+0.8", head=[0, 0])
+key("kofi", "L07+1.3", head=[-14, 3], blend=0.5)
+shot("S07b", "L07+0.92", cam(0.0, ST[1], 1.62, 1.45, 17, 36, cz=1.5, push=(1.3, 1.62)))
 key("kofi", "L08", expr="neutral")
 shot("S08a", "L08", rock_cam(1))
 shot("S08b", "L08.1", rock_cam(2))
@@ -215,6 +228,7 @@ shot("S08e", "L08b", cam(0.0, ST[1], 1.6, 1.6, 4, 36, cz=1.62, push=(1.45, 1.62)
 key("kofi", "L09", expr="smile", head=[0, 9])
 key("kofi", "L09.1", head=[0, -4], blend=0.5)
 shot("S09", "L09", cam(0.0, ST[1], 1.6, 1.7, -3, 36, cz=1.62, push=(1.55, 1.62)))
+shot("S09b", "L09+0.78", cam(0.0, ST[1], 1.6, 1.45, 16, 36, cz=1.7, push=(1.3, 1.6)))
 # Mr. Bell
 cut("kofi", "L10", ST, hidden=True)
 cut("bell", "L10", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
@@ -226,16 +240,21 @@ shot("S11a", "L11", rock_cam(1))
 shot("S11b", "L11.1", rock_cam(2))
 shot("S11c", "L11.2", rock_cam(3))
 shot("S11d", "L11.2+0.45", rock_cam(3, 9.0))
-# the cut to the lot side: his back to the camera, then he turns (0.6 s) to the big red car behind him
-cut("bell", "L11b", ST, yaw=0, expr="neutral", head=[0, 0])
+# the cut to the lot side: his face, stunned, as "WALTER." lands (camera on the canyon side, the red car behind him),
+# then he turns (0.5 s, eased) to the car, and a CUT to the reverse angle from beyond the car: his face, laughing
+cut("bell", "L11b", ST, yaw=0, expr="wide", head=[0, 0])
 cue("L11b", "show", car=1.0)
 cue("L11b", "post", x=-3.0, y=G.POST_RAIL[1])      # the post steps out of the frame, on the cut
-key("bell", "L11b+0.25", ST, yaw=22, expr="wide", head=[68, 0], blend=0.65)
-key("bell", "L11b.1", expr="laugh", blend=0.3)
-shot("S11e", "L11b", camp([0.4, -3.55, 1.3], [0.0, ST[1], 1.5], 36, pos2=[0.3, -3.15, 1.3], tgt2=[0.0, ST[1], 1.5]))
+key("bell", "L11b+0.66", ST, yaw=180, expr="wide", head=[0, 0], blend=0.5)     # the turn: 22.45 to 22.95, eased
+key("bell", "L11b+0.68", expr="laugh", blend=0.0)
+shot("S11e", "L11b", camp([0.4, -3.6, 1.05], [0.0, 1.5, 1.58], 30, pos2=[0.3, -3.25, 1.1], tgt2=[0.0, 1.5, 1.58]))
+shot("S11f", "L11b+0.68", camp(BELL_CAM[0], BELL_CAM[1], BELL_CAM[2], pos2=BELL_CAM[3]))
 cue("L12", "show", car=0.0)
 cue("L12", "post", x=G.POST_RAIL[0], y=G.POST_RAIL[1])
 shot("S12", "L12", rock_cam(3, 8.0))
+x3 = ROCKS[2]
+shot("S12b", "L12.2", camp([x3 + 5.0, G.WALL_Y + 19.0, 1.4], [x3, G.WALL_Y, ZR - 2.6], 36,
+                           pos2=[x3 + 3.2, G.WALL_Y + 17.0, 1.9]))
 
 # ===== 03 my turn (L13 to L22)
 cut("bell", "L12", ST, hidden=True)
@@ -243,6 +262,7 @@ cut("me", "L13", ST, yaw=0, expr="smile", hidden=False, head=[0, 0])
 shot("S13", "L13", cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.65, 1.62)))
 key("me", "L14", expr="neutral")
 shot("S14", "L14", cam(0.72, ST[1], 1.5, 2.2, 0, 36, cz=1.6, push=(2.05, 1.55)))
+shot("S14b", "L14+0.95", cam(0.6, ST[1], 1.5, 1.9, -15, 36, cz=1.45, push=(1.7, 1.55)))
 key("me", "L15", expr="uneasy")
 shot("S15", "L15", cam(0.32, ST[1], 1.62, 1.5, 6, 36, cz=1.62, push=(1.35, 1.62)))
 key("me", "L16", expr="uneasy")
@@ -258,6 +278,7 @@ key("me", "L19", expr="shout")
 cue("L19", "shout", me=1.0)
 cue("L20", "shout", me=0.0)
 shot("S19", "L19", cam(0.0, ST[1], 1.3, 1.1, 0, 36, cz=1.3, push=(1.0, 1.3)))
+shot("S19c", "L19+0.8", cam(0.0, ST[1], 1.3, 1.25, 17, 36, cz=1.25, push=(1.1, 1.3)))
 shot("S19b", "P1", camp([-2.6, 3.5, 2.4], [0, G.WALL_Y, 6.0], 24, pos2=[-1.6, 2.0, 2.5]))
 key("me", "L20", expr="scared")
 shot("S20", "L20", cam(0.0, ST[1], 1.62, 1.3, 0, 36, cz=1.62, push=(1.15, 1.62)))
@@ -316,6 +337,7 @@ shot("S25b", "L25.1", cab_rock(2))
 shot("S25c", "L25.2", cab_rock(3))
 key("me", "L26", expr="stunned")
 shot("S26", "L26", cam(G.XT - 0.1, G.YT, 1.35, 1.45, 0, 36, cz=1.65, push=(1.35, 1.4)))
+shot("S26b", "L26+0.8", cam(G.XT - 0.1, G.YT, 1.35, 1.45, 16, 36, cz=1.5, push=(1.3, 1.4)))
 
 # ===== 05 no answer (L27 to L32)
 cue("L27", "post", x=G.POST_AHEAD[0], y=G.POST_AHEAD[1])
@@ -325,9 +347,14 @@ shot("S27", "L27", camp([SX[0] + 0.4, SX[1] + 0.6, 1.62], [G.POST_AHEAD[0], G.PO
                         pos2=[SX[0] + 0.4, SX[1] - 0.2, 1.64]))
 shot("S28", "L28", camp([G.POST_AHEAD[0] + 0.1, G.POST_AHEAD[1] + 4.6, 2.15], [G.POST_AHEAD[0], G.POST_AHEAD[1], 1.95],
                         36, pos2=[G.POST_AHEAD[0] + 0.1, G.POST_AHEAD[1] + 4.2, 2.15]))
+shot("S28b", "L28+0.6", camp([G.POST_AHEAD[0] + 0.8, G.POST_AHEAD[1] + 3.7, 1.6],
+                             [G.POST_AHEAD[0], G.POST_AHEAD[1], 1.9], 36,
+                             pos2=[G.POST_AHEAD[0] + 0.4, G.POST_AHEAD[1] + 3.3, 1.75]))
 cue("L29", "show", pane=1.0)
 shot("S29", "L29", camp([G.XT + 0.8, G.YT - 0.1, 1.5], [G.XT - 1.0, G.YT - 0.1, 1.5], 11,
                         pos2=[G.XT + 0.7, G.YT - 0.1, 1.5]))
+shot("S29b", "L29+0.9", camp([G.XT + 0.7, G.YT + 0.45, 1.45], [G.XT - 1.0, G.YT - 0.1, 1.6], 14,
+                             pos2=[G.XT + 0.6, G.YT + 0.3, 1.5]))
 cue("L30", "panepos", x=-1.0, y=0.5, rz=-90.0, s=0.7)
 cut("me", "L30", [*SX], yaw=0, expr="scared", head=[0, 0], hidden=False)
 key("me", "L30.0+0.2", expr="scared", head=[-62, 0], blend=0.6)
@@ -379,7 +406,7 @@ remap_all(sound["ambience"])
 remap_all(music["sections"])
 sound["music_drops"] = [[remap(a), remap(b)] for a, b in sound["music_drops"]]
 polish = {"emph": ["L01.2", "L12.2", "L16.2", "L28.1", "L31.1", "L32.1"], "reveal": ["L19"],
-          "twist": "L20", "sway": ["S03a", "S04", "S07", "S10", "S13", "S14", "S15", "S16", "S17", "S19", "S20", "S22", "S24", "S26", "S30", "S32", "S02", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S31a"], "hold": ["S11e", "S23a", "S29", "S28", "S25a", "S25b", "S25c"]}
+          "twist": "L20", "sway": ["S03a", "S04", "S07", "S10", "S13", "S14", "S15", "S16", "S17", "S19", "S20", "S22", "S24", "S26", "S30", "S32", "S02", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S31a"], "hold": ["S11e", "S11f", "S23a", "S29", "S28", "S25a", "S25b", "S25c"]}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
 polish["twist"] = remap(polish["twist"])
