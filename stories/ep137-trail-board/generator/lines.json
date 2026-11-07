@@ -1,0 +1,537 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every sunrise,",
+    "every sunrise,"
+   ],
+   [
+    "our trail board",
+    "our trail board"
+   ],
+   [
+    "paints a rule",
+    "paints a rule"
+   ],
+   [
+    "you HAVE",
+    "you have"
+   ],
+   [
+    "to obey.",
+    "to obey."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It only paints",
+    "it only paints"
+   ],
+   [
+    "at SUNRISE.",
+    "at sunrise."
+   ],
+   [
+    "Never any",
+    "never any"
+   ],
+   [
+    "other time.",
+    "other time."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Today,",
+    "today,"
+   ],
+   [
+    "Dot hikes",
+    "dot hikes"
+   ],
+   [
+    "the east LOOP.",
+    "the east loop."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She came back",
+    "she came back"
+   ],
+   [
+    "with a mushroom",
+    "with a mushroom"
+   ],
+   [
+    "the size of",
+    "the size of"
+   ],
+   [
+    "her HEAD.",
+    "her head."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Today,",
+    "today,"
+   ],
+   [
+    "Marcus sits",
+    "marcus sits"
+   ],
+   [
+    "on the BENCH.",
+    "on the bench."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He sat,",
+    "he sat,"
+   ],
+   [
+    "and his canoe,",
+    "and his canoe,"
+   ],
+   [
+    "gone since SPRING,",
+    "gone since spring,"
+   ],
+   [
+    "floated down",
+    "floated down"
+   ],
+   [
+    "the creek",
+    "the creek"
+   ],
+   [
+    "right to him.",
+    "right to him."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It never says WHY.",
+    "it never says why."
+   ],
+   [
+    "Just one LINE.",
+    "just one line."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My big sister",
+    "my big sister"
+   ],
+   [
+    "June hikes here",
+    "june hikes here"
+   ],
+   [
+    "every SUNDAY,",
+    "every sunday,"
+   ],
+   [
+    "and drags me,",
+    "and drags me,"
+   ],
+   [
+    "THEO, along.",
+    "theo, along."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Saturday,",
+    "saturday,"
+   ],
+   [
+    "she said",
+    "she said"
+   ],
+   [
+    "she's doing",
+    "she's doing"
+   ],
+   [
+    "the creek path",
+    "the creek path"
+   ],
+   [
+    "at DAWN.",
+    "at dawn."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "There's no",
+    "there's no"
+   ],
+   [
+    "creek PATH.",
+    "creek path."
+   ],
+   [
+    "Not on",
+    "not on"
+   ],
+   [
+    "any MAP.",
+    "any map."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then, at DUSK,",
+    "then, at dusk,"
+   ],
+   [
+    "the board PAINTED.",
+    "the board painted."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "TOMORROW,",
+    "tomorrow,"
+   ],
+   [
+    "Theo doesn't walk",
+    "theo doesn't walk"
+   ],
+   [
+    "the creek PATH.",
+    "the creek path."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It's never said",
+    "it's never said"
+   ],
+   [
+    "TOMORROW before.",
+    "tomorrow before."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Dot locks up",
+    "dot locks up"
+   ],
+   [
+    "at dusk.",
+    "at dusk."
+   ],
+   [
+    "She saw it",
+    "she saw it"
+   ],
+   [
+    "and said,",
+    "and said,"
+   ],
+   [
+    "Somebody's been",
+    "somebody's been"
+   ],
+   [
+    "at my BOARD.",
+    "at my board."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I came back",
+    "i came back"
+   ],
+   [
+    "at SUNRISE.",
+    "at sunrise."
+   ]
+  ]
+ },
+ {
+  "id": "P1",
+  "pause": 0.5,
+  "chunks": []
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And there it was.",
+    "and there it was."
+   ],
+   [
+    "A path",
+    "a path"
+   ],
+   [
+    "along the CREEK.",
+    "along the creek."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "June was already",
+    "june was already"
+   ],
+   [
+    "lacing her BOOTS.",
+    "lacing her boots."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She said",
+    "she said"
+   ],
+   [
+    "she'd DREAMED it",
+    "she'd dreamed it"
+   ],
+   [
+    "all WEEK.",
+    "all week."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And the board",
+    "and the board"
+   ],
+   [
+    "had painted",
+    "had painted"
+   ],
+   [
+    "over ITSELF.",
+    "over itself."
+   ],
+   [
+    "Today,",
+    "today,"
+   ],
+   [
+    "Theo walks",
+    "theo walks"
+   ],
+   [
+    "the creek path",
+    "the creek path"
+   ],
+   [
+    "with June,",
+    "with june,"
+   ],
+   [
+    "so she",
+    "so she"
+   ],
+   [
+    "comes HOME.",
+    "comes home."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "As if,",
+    "as if,"
+   ],
+   [
+    "without me,",
+    "without me,"
+   ],
+   [
+    "she DOESN'T.",
+    "she doesn't."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It's never said",
+    "it's never said"
+   ],
+   [
+    "WHY before.",
+    "why before."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It filled",
+    "it filled"
+   ],
+   [
+    "the whole BOARD.",
+    "the whole board."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Dot looked once",
+    "dot looked once"
+   ],
+   [
+    "at that path",
+    "at that path"
+   ],
+   [
+    "and said,",
+    "and said,"
+   ],
+   [
+    "That isn't OURS.",
+    "that isn't ours."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "June's waving",
+    "june's waving"
+   ],
+   [
+    "me OVER.",
+    "me over."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Last night's board,",
+    "last night's board,"
+   ],
+   [
+    "or this MORNING'S.",
+    "or this morning's."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Both are",
+    "both are"
+   ],
+   [
+    "its WRITING.",
+    "its writing."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Which board",
+    "which board"
+   ],
+   [
+    "do I TRUST?",
+    "do i trust?"
+   ]
+  ]
+ }
+]
