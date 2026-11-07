@@ -1,0 +1,27 @@
+{
+ "stage": "proof",
+ "film": "proof-42346838910",
+ "run": 42346838910,
+ "sha": "05c8518645be4e0d46a511b0fca11a1869b80246",
+ "verdict": "pass",
+ "date": "2026-11-07",
+ "checked": [
+  "proof.json sha = branch head touching the story",
+  "frames every 2 s and every frame 0-3 s at phone and TV size",
+  "clue shots S03, S09, S12b, S17, S18, S19, S20, S25, S26, S28 frame by frame",
+  "glass marker placement in set.py (placed per shot, not on the camera)",
+  "first 3 s",
+  "loudness and 4 kHz windows",
+  "end of film audio",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening",
+  "gate",
+  "cover"
+ ],
+ "craft": "**ep138-tomorrow-mirror**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.4 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 23.4 | 14.0– | ok |\n| macro.motion_energy_q | 7.45 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 10.34 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.48 | –2.5 | ok |\n| macro.longest_still_s | 0.83 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 2.9 | 1.5– | ok |\n| spec.camera_move_share | 0.992 | 0.65– | ok |\n| spec.punch_per_10s | 0.74 | 0.4– | ok |\n| macro.brightness_mean | 0.669 | 0.35– | ok |\n| macro.brightness_first_3s | 0.639 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.264 | 0.42– | **warn** |\n| macro.contrast_mean | 0.212 | 0.18– | ok |\n| spec.face_big_share | 0.819 | 0.4– | ok |\n| spec.caption_share | 0.978 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.014 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.947 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.019 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 75.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.22 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.8 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0414 | –0.08 | ok |\n| sound.hf_jump_max | 0.0178 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Second one: bright teal gym, Sam (gray tee) in a lit close-up facing camera beside the mirror edge, slow push, blinks; \"If you look in Big Wendell's gym MIRROR, you see TOMORROW.\" At 2.0 s tomorrow-me in the glass behind the dark chrome post. Opening if matches L01; same tag as the last upload ep92 (if): queue note, not a fail. Queue tail ep99 is cost.\nClues all read at phone size: C1 S03 backward 12 (reads as a mirrored 12 beside Wendell, BACKWARD captioned), S09 TWELFTH, S25 a huge plain 12, S26 TODAY; C2 S12b Dre close-up TONIGHT, S28 He just called / Last CHANCE; C3 S19 a huge plain 14 with the post at right throughout, S20 TWO days out; C4 S17 tomorrow-me left and the bench plainly empty, S18 same bench with Dre on it.\nNo shot holds the real me and the reflection together; the mirror plate is matte, so no camera shows in it; the glass post and pane are placed once per shot in the room (set.py animate), and the post shows parallax on the dollies, not glued to the camera. clip.json: 0 hits, 0 cam.\nShould-fix (not a fail): S25 44.3-45.5 s the punch-in pushes the chrome post out of frame, so for about 1 s the 12 has no glass marker; the caption (in the glass said TWELVE) and the plain (not backward) numerals still carry it. Moving the post inward (glass fr) would keep it in.\nMinor: S21b 38.7-39.9 s high three-quarter back view of Sam, head reads low between the shoulders; short and it reads. Cover 24.0 s (S12bb Dre serious, two white knee blocks in front) reads but S19 14 or S17 empty bench would be stronger.\nSound: -14.1 LUFS, -1.8 dBTP, LRA 1.1; 4 kHz max 0.041, jump 0.018; voice 11.8 dB over the bed; no silence. Tail 0 (a loop): BELIEVE ends about 53.85 s, 0.3 s before the 54.17 s cut, music runs through; nothing cut off. Polish on (risers, punch-ins on key words, reframes); nothing still over 0.83 s.\nFlash passes (1/s, 3f 3/s, red 0); proof verdict pass. Package clean: no spoiler of the dates, no husband, no real words in picture (numerals only), no creature. Gate OPEN.\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 10.34 (5.5-8.0), macro.saturation_mean 0.264 (0.42-). Fast cuts read as clean reframes, the pale gym is the set look; neither loses viewers. Longest still 0.83 s, longest_still_q 0.8 s, q_edge 0.8 s (limit 1.0)."
+}

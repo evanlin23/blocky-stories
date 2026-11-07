@@ -1,0 +1,506 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "If you look in Big Wendell's",
+    "If you look in Big Wendell's"
+   ],
+   [
+    "gym MIRROR,",
+    "gym mirror,"
+   ],
+   [
+    "you see TOMORROW.",
+    "you see tomorrow."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Tomorrow's YOU,",
+    "Tomorrow's you,"
+   ],
+   [
+    "one day AHEAD.",
+    "one day ahead."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Wendell even hangs",
+    "Wendell even hangs"
+   ],
+   [
+    "the date BACKWARD,",
+    "the date backward,"
+   ],
+   [
+    "so it reads right",
+    "so it reads right"
+   ],
+   [
+    "in the GLASS.",
+    "in the glass."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mr. Kim saw himself",
+    "Mr. Kim saw himself"
+   ],
+   [
+    "grinning,",
+    "grinning,"
+   ],
+   [
+    "holding a gold house KEY.",
+    "holding a gold house key."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He signed for the house",
+    "He signed for the house"
+   ],
+   [
+    "that NIGHT.",
+    "that night."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My cousin Lena saw",
+    "My cousin Lena saw"
+   ],
+   [
+    "paint on her FACE.",
+    "paint on her face."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She sold her first painting",
+    "She sold her first painting"
+   ],
+   [
+    "the next DAY.",
+    "the next day."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Tomorrow-you",
+    "Tomorrow-you"
+   ],
+   [
+    "never LIES.",
+    "never lies."
+   ],
+   [
+    "So why did mine",
+    "So, why did mine"
+   ],
+   [
+    "say TWO things?",
+    "say two things?"
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Sam here.",
+    "Sam here."
+   ],
+   [
+    "Friday",
+    "Friday"
+   ],
+   [
+    "the TWELFTH.",
+    "the twelfth."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My best friend Dre",
+    "My best friend Dre"
+   ],
+   [
+    "wants my savings",
+    "wants my savings"
+   ],
+   [
+    "for his food TRUCK.",
+    "for his food truck."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "All of it.",
+    "All of it."
+   ],
+   [
+    "Everything I've SAVED.",
+    "Everything I've saved."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He said,",
+    "He said,"
+   ],
+   [
+    "\"I only ask ONCE.",
+    "\"I only ask once."
+   ],
+   [
+    "I need it TONIGHT.\"",
+    "I need it tonight.\""
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I looked",
+    "So I looked"
+   ],
+   [
+    "in the MIRROR.",
+    "in the mirror."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Tomorrow-you",
+    "Tomorrow-you"
+   ],
+   [
+    "never TALKS.",
+    "never talks."
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 0.6,
+  "chunks": [
+   [
+    "",
+    ""
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "But tomorrow-me",
+    "But tomorrow-me"
+   ],
+   [
+    "looked right at ME.",
+    "looked right at me."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He mouthed it,",
+    "He mouthed it,"
+   ],
+   [
+    "slow and BIG.",
+    "slow and big."
+   ],
+   [
+    "\"Don't say yes",
+    "\"Don't say yes"
+   ],
+   [
+    "to DRE.\"",
+    "to Dre.\""
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Behind him,",
+    "Behind him,"
+   ],
+   [
+    "Dre's bench",
+    "Dre's bench"
+   ],
+   [
+    "was EMPTY.",
+    "was empty."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "But Dre was sitting",
+    "But Dre was sitting"
+   ],
+   [
+    "right THERE.",
+    "right there."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And the date",
+    "And the date"
+   ],
+   [
+    "in the glass",
+    "in the glass"
+   ],
+   [
+    "said FOURTEEN.",
+    "said fourteen."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Tomorrow's the THIRTEENTH.",
+    "Tomorrow's the thirteenth."
+   ],
+   [
+    "That was TWO days out.",
+    "That was two days out."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At closing,",
+    "At closing,"
+   ],
+   [
+    "I came back ALONE.",
+    "I came back alone."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Tomorrow-me",
+    "Tomorrow-me"
+   ],
+   [
+    "was WAITING.",
+    "was waiting."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "\"Say yes TONIGHT.",
+    "\"Say yes tonight."
+   ],
+   [
+    "He's leaving town",
+    "He's leaving town"
+   ],
+   [
+    "in the MORNING.",
+    "in the morning."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "For GOOD.\"",
+    "For good.\""
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The date",
+    "The date"
+   ],
+   [
+    "in the glass",
+    "in the glass"
+   ],
+   [
+    "said TWELVE.",
+    "said twelve."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And twelve",
+    "And twelve"
+   ],
+   [
+    "was TODAY.",
+    "was today."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Dre's been my best friend",
+    "Dre's been my best friend"
+   ],
+   [
+    "since we were TEN.",
+    "since we were ten."
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He just called.",
+    "He just called."
+   ],
+   [
+    "\"Last CHANCE,",
+    "\"Last chance,"
+   ],
+   [
+    "buddy.\"",
+    "buddy.\""
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Both of them",
+    "Both of them"
+   ],
+   [
+    "were ME.",
+    "were me."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Both of them",
+    "Both of them"
+   ],
+   [
+    "were WRONG about the day.",
+    "were wrong about the day."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Which me",
+    "Which me"
+   ],
+   [
+    "do I BELIEVE?",
+    "do I believe?"
+   ]
+  ]
+ }
+]
