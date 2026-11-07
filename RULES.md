@@ -69,6 +69,18 @@ The owner: "this niche might be oversaturated, but I think I'd like to keep this
   - **US English in titles, lines and pins** (Mom, neighbor, gas station). 62% of our views are US.
   - **Examples in these rules never use a live hit's premise** (a check of the 2026-11-03 deep scan found one).
 
+## The interactive lane: "who do you trust" (owner, 2026-11-06)
+The owner, after watching a Short (relayed by the first orchestrator on #177, Fri 2026-11-06, 3:00 PM Central): "I think this sort of interactive is good. And the clues are in all different directions so its ambiguous."
+- **The engine (borrow it, never the plot):**
+  1. A town rule with a payoff, shown working for 2 or 3 people in quick vignettes.
+  2. The narrator's turn. A message warns about something specific, and a creepy detail lands: someone reacts wrong, or the warning names something that doesn't exist.
+  3. A **second, contradicting message** from the same trusted source says the opposite and raises the stakes.
+  4. **No answer at the end.** The narrator asks the viewer "which one do I trust?", and the pin asks "Comment 1 or 2". Each side gets at least 2 clues, findable on a rewatch, so it's genuinely ambiguous and the comments argue.
+- **Never recreate the Short the owner saw.** Use a new rule, a new messenger and a new setting: not a call from yourself at 13, not a basement, not parents. Messenger ideas: a voicemail from yourself, a note in your own handwriting, your reflection mouthing words, a neighbor who's lived this day before, two versions of the town's rulebook.
+- **No children in the cast.** Any age trigger is 18 or older (e.g. "the night you turn 21").
+- **The usual gates all apply**: two review rounds, the proof, flash, staging. For this lane only, the critic's twist check is "ambiguous, and both sides clued (2+ each, findable on a rewatch)", in place of "the ending turns the first line over".
+- **Measure it:** `"lane": "interactive"` in package.json. Monday's review compares its comment rate and rewatch (average % viewed over 100) against the core lane. The first batch is 3 pilots (ep136 to ep138), with an Opus writer and critic.
+
 ## What we make
 A crazy, strange, made-up story, as long as its big idea needs and no longer (shorter is better, 3:00 at most), told in first person by a fast, sped-up synthetic narrator over blocky characters we build in Blender, with big punchy captions. One story a day goes to **Buhtown** and no other channel (note 21).
 - Owner: "it should be like creepy roblox shorts and the characters should look more like roblox. also the voice should be like the sped up roblox voice... it should not be educational, it should be like crazy stories" (note 18).

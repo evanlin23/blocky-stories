@@ -2,7 +2,7 @@
 
 - **Slug:** `ep130-rival-clock` (batch 14, upload order 1 of 6)
 - **Pitch:** 13 in the batch 14 pitch round, picked by the panel (7.3). Engine: "it already happened", a countdown that ran out unnoticed, plus a double reading of the rule's wording (it counts to someone becoming your best friend, not to meeting them). New to the channel. Opening shape `whatif` (the batch's only one, per the coordinator, so the openings don't pair with ep134's `count`). Lane: experiment (comedy). Length arm: mid (60 to 90 s).
-- **Title:** My Best Friend Countdown Ended 11 YEARS Ago ⏳
+- **Title:** Best Friend Countdown Ended 11 YEARS Ago ⏳
 - **Panel notes built in:** the clock is a broad cuff from wrist to elbow with big numerals, and it's read in a big insert close-up every time it matters (S01b, S11, S23, S40). The rival-to-friend turn gets one fresh, specific beat: Gus's own cuff reads ONE, so his has been counting down to me for eleven years.
 - **Batch 14 constraints, applied to every shot:**
   1. Flash-safe by design. The cuffs are painted numerals on cloth that change only between cuts, never blinking digits. The greenhouse is sunny and steady all film, with no light change.

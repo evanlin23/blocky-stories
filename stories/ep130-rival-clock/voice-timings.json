@@ -1,0 +1,1125 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "what if your sleeve counted down to your best friend?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.707
+    ],
+    [
+     0.707,
+     1.103
+    ],
+    [
+     1.103,
+     1.241
+    ],
+    [
+     1.241,
+     1.983
+    ]
+   ]
+  },
+  "L02": {
+   "text": "here, it does.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.172,
+   "end": 0.914,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.37,
+     0.914
+    ]
+   ]
+  },
+  "L03": {
+   "text": "everybody's cuff counts the days.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.586
+    ]
+   ]
+  },
+  "L04": {
+   "text": "two strangers hit zero on the bus, and couldn't stop laughing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.008
+    ],
+    [
+     1.008,
+     1.448
+    ],
+    [
+     1.474,
+     1.707
+    ],
+    [
+     1.707,
+     2.517
+    ]
+   ]
+  },
+  "L05": {
+   "text": "my mom and Rita hit zero at a yard sale, forty years ago.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.69
+    ],
+    [
+     0.69,
+     1.103
+    ],
+    [
+     1.103,
+     1.207
+    ],
+    [
+     1.207,
+     1.776
+    ],
+    [
+     1.854,
+     2.776
+    ]
+   ]
+  },
+  "L06": {
+   "text": "one guy walks super fast to make his go quicker.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.224
+    ],
+    [
+     1.224,
+     1.517
+    ],
+    [
+     1.517,
+     2.19
+    ]
+   ]
+  },
+  "L07": {
+   "text": "mine hit zero eleven years ago.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.724
+    ]
+   ]
+  },
+  "L08": {
+   "text": "my first morning at the plant nursery.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.793,
+     0.914
+    ],
+    [
+     0.914,
+     1.741
+    ]
+   ]
+  },
+  "L09": {
+   "text": "there was only one other person there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.81
+    ],
+    [
+     0.81,
+     1.569
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Gus.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.793,
+   "onset": 0.172,
+   "end": 0.586,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ]
+   ]
+  },
+  "L11": {
+   "text": "he yelled at me about the hoses.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.784
+    ],
+    [
+     0.784,
+     1.448
+    ]
+   ]
+  },
+  "L12": {
+   "text": "that's how we met.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.017
+    ]
+   ]
+  },
+  "L13": {
+   "text": "we've fought every day since.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.905
+    ],
+    [
+     0.905,
+     1.414
+    ]
+   ]
+  },
+  "L14": {
+   "text": "the tomatoes. the radio.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.345
+    ]
+   ]
+  },
+  "L15": {
+   "text": "he likes country. I'd rather eat a fern.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.845,
+     1.103
+    ],
+    [
+     1.103,
+     1.81
+    ]
+   ]
+  },
+  "L16": {
+   "text": "so my clock was broken.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.293
+    ]
+   ]
+  },
+  "L17": {
+   "text": "every birthday, a cactus shows up on my bench.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.776,
+     1.181
+    ],
+    [
+     1.181,
+     1.474
+    ],
+    [
+     1.474,
+     2.172
+    ]
+   ]
+  },
+  "L18": {
+   "text": "no card. I figured it was the boss.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.19,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.638,
+     0.974
+    ],
+    [
+     0.974,
+     1.112
+    ],
+    [
+     1.112,
+     1.69
+    ]
+   ]
+  },
+  "L19": {
+   "text": "and nobody had ever seen Gus's cuff.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.034
+    ],
+    [
+     1.034,
+     1.845
+    ]
+   ]
+  },
+  "L20": {
+   "text": "then last week, I dropped my keys in the koi tank.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.759,
+     1.052
+    ],
+    [
+     1.052,
+     1.422
+    ],
+    [
+     1.422,
+     1.534
+    ],
+    [
+     1.534,
+     2.207
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Gus rolled up his sleeve and went in to the elbow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.138
+    ],
+    [
+     1.138,
+     1.397
+    ],
+    [
+     1.397,
+     2.155
+    ]
+   ]
+  },
+  "L22": {
+   "text": "and I saw it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.086,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.897
+    ]
+   ]
+  },
+  "L23": {
+   "text": "his cuff said one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.121
+    ]
+   ]
+  },
+  "L24": {
+   "text": "one day left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.931
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Gus, who's never said a nice word to anyone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.19,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.457,
+     0.888
+    ],
+    [
+     0.888,
+     1.328
+    ],
+    [
+     1.328,
+     1.983
+    ]
+   ]
+  },
+  "L26": {
+   "text": "who eats lunch alone in the greenhouse.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.87
+    ],
+    [
+     0.87,
+     1.638
+    ]
+   ]
+  },
+  "L27": {
+   "text": "he was getting a best friend tomorrow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.966
+    ],
+    [
+     0.966,
+     1.534
+    ]
+   ]
+  },
+  "L28": {
+   "text": "I was so jealous I couldn't sleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.759
+    ],
+    [
+     0.759,
+     1.534
+    ]
+   ]
+  },
+  "L29": {
+   "text": "then I got it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.983
+    ]
+   ]
+  },
+  "L30": {
+   "text": "the clocks count down to the day somebody becomes your best friend.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.155,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.862
+    ],
+    [
+     0.862,
+     1.181
+    ],
+    [
+     1.181,
+     1.715
+    ],
+    [
+     1.715,
+     2.552
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Gus became mine on day one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     1.586
+    ]
+   ]
+  },
+  "L32": {
+   "text": "the cactus? Gus.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     1.121
+    ]
+   ]
+  },
+  "L33": {
+   "text": "and for eleven years, his clock had been counting down to me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.931
+    ],
+    [
+     0.983,
+     1.337
+    ],
+    [
+     1.337,
+     1.534
+    ],
+    [
+     1.534,
+     1.983
+    ],
+    [
+     1.983,
+     2.448
+    ]
+   ]
+  },
+  "L34": {
+   "text": "to the day I'd finally be his.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.948
+    ],
+    [
+     0.948,
+     1.534
+    ]
+   ]
+  },
+  "L35": {
+   "text": "so the next morning, I brought two coffees.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.302
+    ],
+    [
+     0.302,
+     0.69
+    ],
+    [
+     0.716,
+     0.957
+    ],
+    [
+     0.957,
+     1.741
+    ]
+   ]
+  },
+  "L36": {
+   "text": "I sat down at his little table.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.724,
+     0.879
+    ],
+    [
+     0.879,
+     1.569
+    ]
+   ]
+  },
+  "L37": {
+   "text": "and I put the radio on country.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.793
+    ],
+    [
+     0.793,
+     1.517
+    ]
+   ]
+  },
+  "L38": {
+   "text": "he looked at me like I'd grown a second head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.724
+    ],
+    [
+     0.724,
+     1.061
+    ],
+    [
+     1.061,
+     1.845
+    ]
+   ]
+  },
+  "L39": {
+   "text": "then he rolled up his sleeve.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.647
+    ],
+    [
+     0.647,
+     1.31
+    ]
+   ]
+  },
+  "L40": {
+   "text": "zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.828,
+   "onset": 0.19,
+   "end": 0.603,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ]
+   ]
+  },
+  "L41": {
+   "text": "he said I was late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.138
+    ]
+   ]
+  },
+  "L42": {
+   "text": "we still fight every day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.379
+    ]
+   ]
+  },
+  "L43": {
+   "text": "mostly about the hoses.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.31
+    ]
+   ]
+  },
+  "L44": {
+   "text": "but we eat lunch together.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
+     0.724
+    ],
+    [
+     0.724,
+     1.276
+    ]
+   ]
+  },
+  "L45": {
+   "text": "and when anyone asks who my zero was for,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.732
+    ],
+    [
+     0.732,
+     1.207
+    ],
+    [
+     1.207,
+     1.828
+    ]
+   ]
+  },
+  "L46": {
+   "text": "I point at the guy playing country.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.776
+    ],
+    [
+     0.776,
+     1.586
+    ]
+   ]
+  }
+ }
+}

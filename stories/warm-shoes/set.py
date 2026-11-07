@@ -935,7 +935,7 @@ def animate(kit, story, tl, t, ctx):
     cnt = cue_at(tl, "count", t).get("n", 8)
     for i, pr in enumerate(ctx["rail"]):
         hide(pr, i >= cnt)
-    mo = cue_at(tl, "meter", t).get("n", -1)               # a meter override: the rail keeps its pairs, the chalk says this
+    mo = cue_at(tl, "chalk", t).get("n", -1)               # a meter override: the rail keeps its pairs, the chalk says this
     if mo >= 0:
         cnt = mo
     H = ctx["house"]
