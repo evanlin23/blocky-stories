@@ -313,7 +313,7 @@ def build(kit, story, tl):
     ctx["sun"].data.angle = 0.06
     ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 60, "#ffe9cf", size=0.6, shadow=False)
     # the low sun: a big emissive disc far behind the board, below the horizon (hidden) in every look but dusk
-    ctx["disc"] = kit.sphere("sundisc", 15.0, (1.0, 95.0, -60.0), kit.emit("#ff7a22", 3.2), None, seg=32)
+    ctx["disc"] = kit.sphere("sundisc", 15.0, (1.0, 95.0, -60.0), kit.emit("#ff4a08", 1.3), None, seg=32)
     try:
         ctx["disc"].visible_shadow = False
     except Exception:

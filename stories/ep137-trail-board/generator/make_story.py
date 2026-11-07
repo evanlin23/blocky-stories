@@ -146,7 +146,7 @@ acting["marcus"][-2]["pos"] = [BEN[0], BEN[1], BENCH_Z]
 acting["marcus"][-1]["arms"] = [30, 30]
 S("L06", C((5.0, 1.15, 1.25), 2.1, az=0, el=3, w2=1.9), M_, note="S06a Marcus on the bench")
 cue("L06.2", "canoe", on=True, **{"from": [8.45, 3.7], "to": [8.05, 2.5], "dur": 2.4, "yaw0": 6, "yaw1": -8})
-S("L06.2", C((6.9, 2.4, 0.8), 5.0, az=-4, el=5, lens=35, w2=4.6), M_, note="S06b the red canoe drifts to the bank by the bench")
+S("L06.2", C((6.5, 2.4, 0.8), 5.4, az=-4, el=5, lens=35, w2=5.0), M_, note="S06b the red canoe drifts to the bank by the bench")
 raw("marcus", "L06.5", expr="wide", blend=0.3)
 raw("marcus", "L06.5+1.0", expr="laugh", blend=0.3)
 S("L06.5", C((5.0, 1.15, 1.25), 1.5, az=0, el=3, w2=1.35), M_, note="S06c Marcus stunned, then laughs")
@@ -283,6 +283,7 @@ story = {
     "acting": acting,
     "cues": cues,
     "set_moves": ["S06b", "S15"],
+    "framing_ok": ["S02", "S07", "S15", "S22", "S25", "S23a"],
     "music": {"root": 45, "mode": "dorian", "bpm": 104, "seed": 137,
               "sections": [
                   {"at": 0, "voices": ["bubble", "pulse", "pluck_hi"], "energy": 0.5},
