@@ -1,0 +1,801 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "at the rim, your echo answers one question.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     1.19
+    ],
+    [
+     1.19,
+     1.948
+    ]
+   ]
+  },
+  "L02": {
+   "text": "and it's never wrong.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.138
+    ]
+   ]
+  },
+  "L03": {
+   "text": "you shout it off the edge, and three seconds later, your own voice answers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.155,
+   "onset": 0.172,
+   "end": 2.966,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.017
+    ],
+    [
+     1.086,
+     1.638
+    ],
+    [
+     1.638,
+     1.845
+    ],
+    [
+     1.87,
+     2.345
+    ],
+    [
+     2.345,
+     2.966
+    ]
+   ]
+  },
+  "L04": {
+   "text": "missus ruiz asked if her bakery would make it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ],
+    [
+     0.966,
+     1.439
+    ],
+    [
+     1.439,
+     2.052
+    ]
+   ]
+  },
+  "L05": {
+   "text": "one. two. three. rosa. open on sundays.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.345,
+     0.5
+    ],
+    [
+     0.543,
+     0.741
+    ],
+    [
+     0.793,
+     1.052
+    ],
+    [
+     1.103,
+     2.121
+    ]
+   ]
+  },
+  "L06": {
+   "text": "now there's a line around the block.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.19,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.19,
+     0.439
+    ],
+    [
+     0.439,
+     0.741
+    ],
+    [
+     0.741,
+     1.517
+    ]
+   ]
+  },
+  "L07": {
+   "text": "my buddy kofi asked about the job up north.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.957
+    ],
+    [
+     0.957,
+     1.371
+    ],
+    [
+     1.371,
+     1.983
+    ]
+   ]
+  },
+  "L08": {
+   "text": "one. two. three. kofi. take it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.328,
+     0.466
+    ],
+    [
+     0.509,
+     0.69
+    ],
+    [
+     0.724,
+     0.966
+    ],
+    [
+     1.0,
+     1.552
+    ]
+   ]
+  },
+  "L09": {
+   "text": "he calls me from his corner office.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.759
+    ],
+    [
+     0.759,
+     1.586
+    ]
+   ]
+  },
+  "L10": {
+   "text": "old mister bell asked where he parked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.974
+    ],
+    [
+     0.974,
+     1.655
+    ]
+   ]
+  },
+  "L11": {
+   "text": "one. two. three. walter. turn around.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.328,
+     0.483
+    ],
+    [
+     0.526,
+     0.759
+    ],
+    [
+     0.81,
+     1.069
+    ],
+    [
+     1.103,
+     1.793
+    ]
+   ]
+  },
+  "L12": {
+   "text": "it always says your name first. always on three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.224
+    ],
+    [
+     1.319,
+     2.259
+    ]
+   ]
+  },
+  "L13": {
+   "text": "twenty-one today. my name's eli.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.948,
+     1.897
+    ]
+   ]
+  },
+  "L14": {
+   "text": "my big brother nate is meeting me here at eight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.862
+    ],
+    [
+     0.862,
+     1.172
+    ],
+    [
+     1.172,
+     1.422
+    ],
+    [
+     1.422,
+     1.931
+    ]
+   ]
+  },
+  "L15": {
+   "text": "nate lives alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.19,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.19,
+     1.103
+    ]
+   ]
+  },
+  "L16": {
+   "text": "but on the phone, he said, we'll see you at eight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.586
+    ],
+    [
+     0.612,
+     0.931
+    ],
+    [
+     0.983,
+     1.112
+    ],
+    [
+     1.112,
+     1.345
+    ],
+    [
+     1.345,
+     1.862
+    ]
+   ]
+  },
+  "L17": {
+   "text": "so i shouted, who's coming with nate?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.19,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.75,
+     1.094
+    ],
+    [
+     1.094,
+     1.69
+    ]
+   ]
+  },
+  "L18": {
+   "text": "i hadn't even counted to one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.19,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.19,
+     0.716
+    ],
+    [
+     0.716,
+     1.552
+    ]
+   ]
+  },
+  "L19": {
+   "text": "i was still shouting when it answered.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.836
+    ],
+    [
+     0.836,
+     1.569
+    ]
+   ]
+  },
+  "L20": {
+   "text": "don't open the door tonight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.793
+    ],
+    [
+     0.793,
+     1.276
+    ]
+   ]
+  },
+  "L21": {
+   "text": "the other one knows your name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.431
+    ]
+   ]
+  },
+  "L22": {
+   "text": "it didn't say my name first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.397
+    ]
+   ]
+  },
+  "L23": {
+   "text": "i waited in my truck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.19,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.19,
+     0.578
+    ],
+    [
+     0.578,
+     1.224
+    ]
+   ]
+  },
+  "L24": {
+   "text": "and i whispered, what do i do?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     0.845
+    ],
+    [
+     0.845,
+     1.414
+    ]
+   ]
+  },
+  "L25": {
+   "text": "one. two. three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.37,
+     0.534
+    ],
+    [
+     0.578,
+     1.069
+    ]
+   ]
+  },
+  "L26": {
+   "text": "eli. open the door. nate's scared.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.431,
+     0.862
+    ],
+    [
+     0.914,
+     1.655
+    ]
+   ]
+  },
+  "L27": {
+   "text": "but the post says it right there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.741
+    ],
+    [
+     0.741,
+     1.397
+    ]
+   ]
+  },
+  "L28": {
+   "text": "one. nobody gets two.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.362,
+     1.241
+    ]
+   ]
+  },
+  "L29": {
+   "text": "it's eight. somebody's knocking on my window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.492,
+     1.077
+    ],
+    [
+     1.077,
+     1.793
+    ]
+   ]
+  },
+  "L30": {
+   "text": "and saying my name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.138
+    ]
+   ]
+  },
+  "L31": {
+   "text": "the first came too fast. the second shouldn't have come at all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.155,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.19
+    ],
+    [
+     1.259,
+     1.784
+    ],
+    [
+     1.784,
+     2.009
+    ],
+    [
+     2.009,
+     2.552
+    ]
+   ]
+  },
+  "L32": {
+   "text": "which echo do i trust?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.241
+    ]
+   ]
+  }
+ }
+}
