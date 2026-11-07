@@ -1,0 +1,5 @@
+# ep127-thousand-tellings, critic r6 (snow fix, S12-S13 only)
+
+Checked S12 (9.4-10.33 s) and S13 (10.33-11.37 s) on phone-size stills at 9.6, 10.4, 10.6, 10.7, 10.75, 10.8, 10.9, 10.95, 11.0 and 11.3 s. The dark grey-blue slab that swept the lower left of S13 (10.67-10.97 s) is gone: the nearest flakes now sit as small-to-mid white cubes at the frame edge, none larger than about 8% of the frame and none dark. The snow still reads as falling July snow: 25 to 40 flakes per frame across sky, bunting and wall at three depths, with large near flakes giving depth, so it doesn't look sparse (11.3 s is slightly thinner but fine). The hide is decided once per shot from five sampled camera positions in set.py animate(), so a flake is hidden or shown for the whole shot and can only change at the S12/S13 cut, where a pop can't be seen. Nothing else changed: the 997 meter, bunting, house, caption "for one AFTERNOON." and the lighting match the earlier frames. The qa desk's proof pass should still confirm frames 320-329 at full drawing rate.
+
+Verdict: approve
