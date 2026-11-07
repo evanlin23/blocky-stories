@@ -204,7 +204,7 @@ put("me", "L51", ME_STAND, 0, expr="neutral")
 put("me", "L52", [0.0, 0.3, 0.0], 0, expr="neutral")
 walk("me", "L52.2", [0.0, -0.4, 0.0])
 walk("me", "L52.3", [0.0, -0.4, 0.0], yaw=180, blend=0.5)   # turn over 0.5 s before walking off
-walk("me", "L52>", [0.0, 1.0, 0.0])
+walk("me", "L52>", [0.0, 0.2, 0.0])   # stop short of the gate leaf (y 0.55-0.6)
 set_("me", "L53", hidden=True)
 put("me", "L55", [-0.2, -0.2, 0.0], 180, expr="neutral")
 walk("me", "L55>", [0.3, 3.5, 0.0])
