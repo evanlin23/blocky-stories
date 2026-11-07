@@ -599,9 +599,10 @@ S("L42.3", ((-0.8, 2.6, 2.5), (-0.8, 0, 2.45), 36, (-0.8, 2.0, 2.4), (-0.8, 0, 2
 cue("L42.3+0.15", "clock", v=[9, 0], dur=0.9)
 cue("L43", "alarm", v=[7, 0])
 S("L43", ((BR + 0.3, 0.6, 1.5), (BR + 2.6, 3.4, 1.0), 30, (BR + 0.8, 1.6, 1.5), (BR + 2.9, 4.2, 1.0), 40),
-  who={"mom": (X(BR + 1.6, 2.2), -20, "neutral", {"arms": [10, 10]})}, note="Mom tiptoeing past my bed to my alarm clock, turning it back")
-walk("mom", "L43", X(BR + 1.6, 2.2))
-walk("mom", "L43.2", X(BR + 2.3, 3.4))
+  who={"mom": (X(BR + 2.0, 2.9), -20, "neutral", {"arms": [10, 10]})}, note="Mom tiptoeing past my bed to my alarm clock, turning it back")
+walk("mom", "L43", X(BR + 2.0, 2.9))
+walk("mom", "L43+0.45", X(BR + 2.3, 3.4), yaw=150)   # a short tiptoe to the clock, still facing it
+raw("mom", "L43+0.9", yaw=-20, blend=0.45)   # then turns round over 0.45 s, the clock in hand (no snap)
 cue("L43.1+0.2", "alarm", v=[7, 0])
 cue("L43.1+0.3", "alarm", v=[6, 0], dur=0.7)
 NN = 180.0
