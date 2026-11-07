@@ -1,0 +1,1657 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "never open a present here. wrapped, it's whatever you hope it is.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.19,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     1.138
+    ],
+    [
+     1.233,
+     1.793
+    ],
+    [
+     1.793,
+     2.078
+    ],
+    [
+     2.078,
+     2.621
+    ]
+   ]
+  },
+  "L02": {
+   "text": "open it, and it's only what's inside.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.517,
+     0.879
+    ],
+    [
+     0.879,
+     1.672
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Mrs. Albee next door has a shoebox she calls the circus.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.983
+    ],
+    [
+     0.983,
+     1.517
+    ],
+    [
+     1.517,
+     1.819
+    ],
+    [
+     1.819,
+     2.5
+    ]
+   ]
+  },
+  "L04": {
+   "text": "when she shakes it, you hear a tuba.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.655
+    ],
+    [
+     0.69,
+     0.905
+    ],
+    [
+     0.905,
+     1.517
+    ]
+   ]
+  },
+  "L05": {
+   "text": "my best friend Sam has a box from his sister.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.879
+    ],
+    [
+     0.879,
+     1.276
+    ],
+    [
+     1.276,
+     2.017
+    ]
+   ]
+  },
+  "L06": {
+   "text": "he swears it's a puppy.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.172
+    ]
+   ]
+  },
+  "L07": {
+   "text": "some nights, it barks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.19,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.19,
+     0.517
+    ],
+    [
+     0.543,
+     1.138
+    ]
+   ]
+  },
+  "L08": {
+   "text": "the man at the post office has a crate he calls his boat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.069
+    ],
+    [
+     1.069,
+     1.5
+    ],
+    [
+     1.5,
+     1.784
+    ],
+    [
+     1.784,
+     2.379
+    ]
+   ]
+  },
+  "L09": {
+   "text": "it's always a little wet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.172
+    ]
+   ]
+  },
+  "L10": {
+   "text": "nobody here opens anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.19,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.19,
+     0.629
+    ],
+    [
+     0.629,
+     1.517
+    ]
+   ]
+  },
+  "L11": {
+   "text": "on my dad's mantel there's a present from me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     1.069
+    ],
+    [
+     1.069,
+     1.5
+    ],
+    [
+     1.5,
+     2.034
+    ]
+   ]
+  },
+  "L12": {
+   "text": "it's been there twelve years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.328
+    ]
+   ]
+  },
+  "L13": {
+   "text": "I gave it to him the night I moved out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.672
+    ],
+    [
+     0.672,
+     0.948
+    ],
+    [
+     0.948,
+     1.69
+    ]
+   ]
+  },
+  "L14": {
+   "text": "we'd had a dumb fight about the city.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.836
+    ],
+    [
+     0.836,
+     1.621
+    ]
+   ]
+  },
+  "L15": {
+   "text": "he said I'd be back in a month.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.802
+    ],
+    [
+     0.802,
+     1.379
+    ]
+   ]
+  },
+  "L16": {
+   "text": "so I wrapped an empty box.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.397
+    ]
+   ]
+  },
+  "L17": {
+   "text": "that's what he'd get from me now. nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.638
+    ],
+    [
+     0.638,
+     0.828
+    ],
+    [
+     0.828,
+     1.793
+    ]
+   ]
+  },
+  "L18": {
+   "text": "he never opened it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.138
+    ]
+   ]
+  },
+  "L19": {
+   "text": "I come home twice a year, one night each.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.931
+    ],
+    [
+     0.966,
+     1.724
+    ]
+   ]
+  },
+  "L20": {
+   "text": "we talk about the weather.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.207
+    ]
+   ]
+  },
+  "L21": {
+   "text": "he asks about my job. I say it's fine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.983
+    ],
+    [
+     1.034,
+     1.267
+    ],
+    [
+     1.267,
+     1.897
+    ]
+   ]
+  },
+  "L22": {
+   "text": "and when anyone asks him what's in the box,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     0.914
+    ],
+    [
+     0.914,
+     1.094
+    ],
+    [
+     1.094,
+     1.69
+    ]
+   ]
+  },
+  "L23": {
+   "text": "dad says, \"everything.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.621,
+     1.241
+    ]
+   ]
+  },
+  "L24": {
+   "text": "he checks the bow every morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.81
+    ],
+    [
+     0.81,
+     1.534
+    ]
+   ]
+  },
+  "L25": {
+   "text": "he keeps the bow turned to face the front door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.724
+    ],
+    [
+     0.724,
+     1.19
+    ],
+    [
+     1.19,
+     1.931
+    ]
+   ]
+  },
+  "L26": {
+   "text": "last spring, alone in the front room, I lifted it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.017
+    ],
+    [
+     1.017,
+     1.362
+    ],
+    [
+     1.388,
+     2.069
+    ]
+   ]
+  },
+  "L27": {
+   "text": "it was heavy.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L28": {
+   "text": "heavy as a grown man.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.276
+    ]
+   ]
+  },
+  "L29": {
+   "text": "and inside it, something walked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     1.397
+    ]
+   ]
+  },
+  "L30": {
+   "text": "footsteps, to one end and back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     0.888
+    ],
+    [
+     0.888,
+     1.414
+    ]
+   ]
+  },
+  "L31": {
+   "text": "like somebody coming up the front steps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     0.836
+    ],
+    [
+     0.836,
+     1.603
+    ]
+   ]
+  },
+  "L32": {
+   "text": "I put it down so fast the bow bent.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.578
+    ],
+    [
+     0.578,
+     0.992
+    ],
+    [
+     0.992,
+     1.724
+    ]
+   ]
+  },
+  "L33": {
+   "text": "at thanksgiving, it was heavier.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.784,
+     1.5
+    ]
+   ]
+  },
+  "L34": {
+   "text": "dad needed both hands just to straighten it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.0
+    ],
+    [
+     1.0,
+     1.259
+    ],
+    [
+     1.259,
+     1.914
+    ]
+   ]
+  },
+  "L35": {
+   "text": "that night, from the couch, I heard it knock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.439,
+     0.862
+    ],
+    [
+     0.897,
+     1.129
+    ],
+    [
+     1.129,
+     1.69
+    ]
+   ]
+  },
+  "L36": {
+   "text": "three soft knocks. like somebody at the front door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.19,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.19,
+     0.966
+    ],
+    [
+     1.034,
+     1.457
+    ],
+    [
+     1.457,
+     1.569
+    ],
+    [
+     1.569,
+     2.241
+    ]
+   ]
+  },
+  "L37": {
+   "text": "in the morning, dad was humming.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     1.431
+    ]
+   ]
+  },
+  "L38": {
+   "text": "he said he'd slept like a rock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.768
+    ],
+    [
+     0.768,
+     1.414
+    ]
+   ]
+  },
+  "L39": {
+   "text": "dad turned sixty this summer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.466
+    ]
+   ]
+  },
+  "L40": {
+   "text": "I came home for the party with a moving truck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.052
+    ],
+    [
+     1.052,
+     1.207
+    ],
+    [
+     1.207,
+     1.966
+    ]
+   ]
+  },
+  "L41": {
+   "text": "I'd found a job two streets over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.768
+    ],
+    [
+     0.768,
+     1.655
+    ]
+   ]
+  },
+  "L42": {
+   "text": "I hadn't told him I was staying.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.681
+    ],
+    [
+     0.681,
+     1.431
+    ]
+   ]
+  },
+  "L43": {
+   "text": "he looked at the truck. then at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.81
+    ],
+    [
+     0.879,
+     1.586
+    ]
+   ]
+  },
+  "L44": {
+   "text": "then he lifted the box off the mantel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     0.845
+    ],
+    [
+     0.845,
+     1.603
+    ]
+   ]
+  },
+  "L45": {
+   "text": "he said it was time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     1.121
+    ]
+   ]
+  },
+  "L46": {
+   "text": "my stomach turned over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.293
+    ]
+   ]
+  },
+  "L47": {
+   "text": "twelve years of hoping, and I'd given him nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.966
+    ],
+    [
+     1.017,
+     1.241
+    ],
+    [
+     1.241,
+     1.534
+    ],
+    [
+     1.534,
+     2.069
+    ]
+   ]
+  },
+  "L48": {
+   "text": "he peeled the paper off it, slow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.724
+    ],
+    [
+     0.724,
+     0.948
+    ],
+    [
+     0.992,
+     1.5
+    ]
+   ]
+  },
+  "L49": {
+   "text": "he opened the lid.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.052
+    ]
+   ]
+  },
+  "L50": {
+   "text": "empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.914,
+   "onset": 0.19,
+   "end": 0.69,
+   "chunks": [
+    [
+     0.19,
+     0.69
+    ]
+   ]
+  },
+  "L51": {
+   "text": "light as air.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.19,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.19,
+     0.948
+    ]
+   ]
+  },
+  "L52": {
+   "text": "the footsteps were gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     1.224
+    ]
+   ]
+  },
+  "L53": {
+   "text": "wrapped, a present is whatever you hope it is.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.406,
+     0.741
+    ],
+    [
+     0.741,
+     1.086
+    ],
+    [
+     1.086,
+     1.353
+    ],
+    [
+     1.353,
+     1.862
+    ]
+   ]
+  },
+  "L54": {
+   "text": "and for twelve years, dad had hoped for one thing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.793
+    ],
+    [
+     0.845,
+     1.276
+    ],
+    [
+     1.276,
+     2.0
+    ]
+   ]
+  },
+  "L55": {
+   "text": "that I'd walk up those steps and stay.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.586
+    ],
+    [
+     0.586,
+     0.983
+    ],
+    [
+     0.983,
+     1.586
+    ]
+   ]
+  },
+  "L56": {
+   "text": "the box was empty because what he'd hoped for was standing in his doorway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.172,
+   "end": 2.793,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.966
+    ],
+    [
+     0.966,
+     1.345
+    ],
+    [
+     1.345,
+     1.664
+    ],
+    [
+     1.664,
+     2.043
+    ],
+    [
+     2.043,
+     2.793
+    ]
+   ]
+  },
+  "L57": {
+   "text": "dad looked into the box and laughed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     0.966
+    ],
+    [
+     0.966,
+     1.569
+    ]
+   ]
+  },
+  "L58": {
+   "text": "he said it was the best present I ever gave him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.638
+    ],
+    [
+     0.638,
+     1.103
+    ],
+    [
+     1.103,
+     1.379
+    ],
+    [
+     1.379,
+     2.0
+    ]
+   ]
+  },
+  "L59": {
+   "text": "he put the empty box back on the mantel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.931
+    ],
+    [
+     0.931,
+     1.164
+    ],
+    [
+     1.164,
+     1.793
+    ]
+   ]
+  },
+  "L60": {
+   "text": "bow to the door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.966
+    ]
+   ]
+  },
+  "L61": {
+   "text": "we had cake at the kitchen counter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.69
+    ],
+    [
+     0.69,
+     1.517
+    ]
+   ]
+  },
+  "L62": {
+   "text": "we didn't talk about the weather once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.052
+    ],
+    [
+     1.052,
+     1.569
+    ]
+   ]
+  },
+  "L63": {
+   "text": "he asked if I'd stay for breakfast.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.879
+    ],
+    [
+     0.879,
+     1.569
+    ]
+   ]
+  },
+  "L64": {
+   "text": "I said I'd stay for all of them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.724
+    ],
+    [
+     0.724,
+     0.94
+    ],
+    [
+     0.94,
+     1.414
+    ]
+   ]
+  },
+  "L65": {
+   "text": "that night, I wrapped him a new box.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.836
+    ],
+    [
+     0.836,
+     1.534
+    ]
+   ]
+  },
+  "L66": {
+   "text": "there's something in it this time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     0.793
+    ],
+    [
+     0.793,
+     1.483
+    ]
+   ]
+  },
+  "L67": {
+   "text": "and I told him never to open it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.681
+    ],
+    [
+     0.681,
+     0.862
+    ],
+    [
+     0.862,
+     1.517
+    ]
+   ]
+  }
+ }
+}
