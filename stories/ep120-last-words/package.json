@@ -6,5 +6,6 @@
   "cover_s": 62.9,
   "shape": "his-words",
   "opening": "must",
-  "lane": "core"
+  "lane": "core",
+  "hold": "held for good 2026-11-06: visible staging flaws in the final (S16 merged bodies, S81-S84 arm into Dad); the fix needed a second pass past the one-rescue cap (#383 closed, HANDOFF-staging.md on its branch)"
 }
