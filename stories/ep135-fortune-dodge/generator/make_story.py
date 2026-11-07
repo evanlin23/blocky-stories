@@ -21,7 +21,7 @@ sys.path.insert(0, str(ROOT))
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 22
+REV = 23
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L32")
@@ -380,7 +380,7 @@ TP("ray", "L53", RAYS, 0, "neutral")
 TP("me", "L53", MES, 0, X("sad"))
 shot("S53", "L53", cam_face(MES, 0, "me", 2.6, -8, 34, d2=2.3, shift=0.1), "dawn")
 TP("ray", "L54", RAYS, 0, "smile")
-shot("S54", "L54", cam_face(RAYS, 0, "ray", 2.6, 8, 34, d2=2.3), "dawn")
+shot("S54", "L54", cam_face(RAYS, 0, "ray", 2.6, 8, 34, d2=2.3, shift=-0.25), "dawn")
 TP("ray", "L55", RAYS, 0, "laugh")
 shot("S55", "L55", cam_face(RAYS, 0, "ray", 2.4, -10, 34, d2=2.1), "dawn")
 # ===== S56 to S65 the cart is mine
