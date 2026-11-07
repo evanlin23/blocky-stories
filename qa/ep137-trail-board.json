@@ -1,0 +1,22 @@
+{
+ "stage": "proof",
+ "film": "proof-42337737980",
+ "run": 42337737980,
+ "sha": "91c057208f1713a5833879edc7915e7fb448670a",
+ "verdict": "pass",
+ "date": "2026-11-07",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "audio",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening variety",
+  "interactive clues"
+ ],
+ "craft": "**ep137-trail-board**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.8 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 15.9 | 14.0– | ok |\n| macro.motion_energy_q | 6.94 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 7.23 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.75 | –2.5 | ok |\n| macro.longest_still_s | 0.23 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.66 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.76 | 0.4– | ok |\n| macro.brightness_mean | 0.543 | 0.35– | ok |\n| macro.brightness_first_3s | 0.566 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.539 | 0.42– | ok |\n| macro.contrast_mean | 0.274 | 0.18– | ok |\n| spec.face_big_share | 0.5 | 0.4– | ok |\n| spec.caption_share | 0.974 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.538 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.054 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 79.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.28 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0048 | –0.005 | ok |\n| sound.voice_bed_gap_db | 3.5 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.037 | –0.08 | ok |\n| sound.hf_jump_max | 0.0229 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Second one: Theo's face (neutral) on the left third against the forest-green board, one line of cream glyph blocks beside him, pale morning gold, slow push; 'Every sunrise, our trail board paints a rule you HAVE to obey.' (opening 'must', matches the tag; last upload ep92 'if', queue neighbour 'cost'). Frame 1 lit (0.566), face plus the marker, moving.\nProof 52.5 s, 39 shots, sha 91c05720 = latest story commit. Frames every 2 s plus every frame of the first 3 s, phone and 1920 canvas: faces read, captions in the safe area, nothing black/frozen/intersecting, no real words, no creature; clip.json no hits; Theo's head at 40-42 s sits in front of the board, not through it. Cover 26.3 s: Theo stunned in dusk orange, 'TOMORROW before.', strong.\nInteractive clues at phone size: C1 one glyph line (3-15 s) vs four full edge-to-edge lines (36-52 s) reads at a glance; C3 the 22-28 s dusk shots are pink-orange sky with a huge low sun, every other board shot pale gold with the sun hidden; C4 Dot angry close-up 28 s and C2 Dot scared on 'OURS' 46.1-46.8 s both read; C5 June smile 34-37 s reads. Glyphs are block clusters (squares, bars, stacks), never letters.\nAudio: -14.1 LUFS, -1.8 dBTP, 4 kHz share max 0.037, jump 0.023, longest silence 0.25 s, loop tail clean after 'FOLLOW?'. Polish on: punch-ins on key words, nothing still over 0.23 s, soft hits, no dead silence.\ncraft: 0 block, 0 near, 1 warn: voice_bed_gap_db 3.5 (8.0-14.0). Checked: the gap is bass from the music; in the 300-4000 Hz speech band the voice sits 9.4-15.2 dB (median 12.4) over everything else on every line, so the voice is never buried. No fix; the engine's auto duck could go deeper than 6 dB for marimba-pulse beds.\nFlash: house bar passes (general 1/s, 3-frame 2/s, red 0); verdict.json pass.\nPackage: title/description/pin match, nothing spoils the open choice, sister not husband, 'It's made up.' present; gate OPEN."
+}
