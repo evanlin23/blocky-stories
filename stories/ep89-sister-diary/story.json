@@ -6092,8 +6092,8 @@
    {
     "at": "L40",
     "pos": [
-     -1.1,
-     -0.85,
+     -0.4,
+     -0.7,
      0.0
     ],
     "blend": 0,
@@ -9111,7 +9111,7 @@
   }
  },
  "fx": [],
- "rev": 12,
+ "rev": 13,
  "staging_ok": [
   "S15/me+nina: both bodies are only edge slivers, keys shot",
   "S82/me+nina: at an angle, bodies read apart, no arm overlap",
@@ -9193,7 +9193,7 @@
  "sound": {
   "floor": "wood",
   "steps_db": -26,
-  "rev": 12,
+  "rev": 13,
   "ambience": [
    {
     "kind": "room",

@@ -473,7 +473,7 @@ S("L39", MV((-1.0, -1.0, 1.5), (-1.4, 0.9, 1.3), (-1.1, -0.7, 1.45), (-1.4, 0.9,
   note="me holding the blue diary to my chest, scared")
 cue("L40", "mydoor", to=80, dur=0.4)
 S("L40", MV((-2.9, -1.7, 1.2), (0.0, -0.5, 1.0), (-2.2, -1.7, 1.2), (0.6, -0.5, 1.0), 32),
-  who={"me": (X(-1.1, -0.85), 90, "scared", {"arms": [70, 70]})},
+  who={"me": (X(-0.4, -0.7), 90, "scared", {"arms": [70, 70]})},
   note="me crossing the hall in socks")
 raw("me", "L40+1.7", pos=[1.0, -0.6], yaw=90, arms=[70, 70])
 cue("L41", "ndoor", to=40, dur=0.3)
@@ -721,7 +721,7 @@ story = {
     "cues": cues,
     "shotlook": SHOTLOOK,
     "fx": [],
-    "rev": 12,
+    "rev": 13,
     "staging_ok": ["S15/me+nina: both bodies are only edge slivers, keys shot", "S82/me+nina: at an angle, bodies read apart, no arm overlap", "S91/me+nina: face to face sitting talking, no overlap", "S92/me+nina: face to face sitting laughing, no overlap"],
     "music": {"root": 51, "mode": "major", "bpm": 100, "seed": 89, "sections": [
         {"at": 0, "voices": ["bubble", "pulse"], "energy": 0.35},
@@ -732,7 +732,7 @@ story = {
         {"at": "L49", "voices": ["pad", "piano", "bubble"], "energy": 0.55, "mode": "major"},
         {"at": "L69", "voices": ["drone"], "energy": 0.4, "mode": "minor"}]},
     "sound": {
-        "floor": "wood", "steps_db": -26, "rev": 12,
+        "floor": "wood", "steps_db": -26, "rev": 13,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -40},
                      {"kind": "crickets", "from": "L21", "to": "L48", "lufs": -46}],
         "sfx": [{"at": "L01.4+0.05", "kind": "hit", "db": -7},
