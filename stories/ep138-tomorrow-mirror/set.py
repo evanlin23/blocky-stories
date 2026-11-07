@@ -108,6 +108,15 @@ def build_mirror(kit):
         kit.box(f"tally{k}", (0.03, 0.025, 0.2), (px, G.MULL[0] + dy, 0.38), tealk)
 
 
+def build_wall_edge(kit):
+    """The real mirror's marker, fixed in the room: a dark chrome bar standing proud of the north pillar and a strip of
+    cool, non-reflective glass on the mirror beside it (2.5 cm in front of the sheen, never on one plane)."""
+    pl = kit.plastic
+    kit.box("wall.edge.bar", (0.08, 0.14, 2.9), (4.66, 0.2, 1.5), pl("#4a535e", 0.35, spec=0.25), bevel=0.02)
+    W["wallstrip"] = kit.box("wall.edge.strip", (0.01, 0.9, 2.3), (4.915, -0.4, 1.55), W["tint"]("wall.tint", 0.5))
+    W["wallstrip"].visible_shadow = False
+
+
 def build_gear(kit):
     pl = kit.plastic
     black = pl("#2a2a30", 0.5, spec=0.3)
@@ -184,6 +193,7 @@ def build_glass(kit):
         nt.links.new(mx.outputs[0], out.inputs[0])
         return m
 
+    W["tint"] = tint
     W["estrip"] = kit.box("edge.strip", (0.01, 0.5, 4.0), (0, 0, -20), tint("edge.tint", 0.5))
     W["estrip"].visible_shadow = False
     W["pane"] = kit.box("glass.pane", (0.01, 8.0, 8.0), (0, 0, -20), tint("glass.tint", 0.2))
@@ -226,6 +236,7 @@ def build(kit, story, tl):
     build_gear(kit)
     build_board(kit)
     build_glass(kit)
+    build_wall_edge(kit)
     build_props(kit)
     # constant soft fills from the ceiling, and a face fill from each end of the room
     for i, (x, y) in enumerate(((-2.5, -4.0), (2.5, -4.0), (-2.5, 0.0), (2.5, 0.0), (0.0, 2.5))):
@@ -324,14 +335,19 @@ def animate(kit, story, tl, t, ctx):
                 lit[(slot, MIRROR_SEG[k] if flip else k)] = True
     for key_, ob in W["bd"].items():
         ob.hide_render = not lit[key_]
-    # the glass (mode 1: a dark chrome bar and a cool pane over the frame) and the real mirror's edge (mode 2: the bar
-    # and a strip of cool glass at the right of the frame): both ride on the camera, so they hold through its moves
+    # the glass (mode 1: a dark chrome post and a cool pane standing in the gym in front of the mirror's camera) and,
+    # for a real shot whose camera is at the mirror and cannot see the wall's own edge (mode 2), a dark chrome column
+    # with a cool strip beside it. All of it is world-fixed: placed once per shot (on the cut, from the camera's
+    # position at the shot's start) and then left alone, so the camera's own moves give ordinary parallax.
     g = sample("glass", tl, t, {"on": 0.0, "fr": 0.45, "dp": 1.0})
     mode = int(round(g["on"]))
     for ob in (W["post"], W["pane"], W["ebar"], W["estrip"]):
         ob.hide_render = True
+    shot = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1])
+    loc, tgt, lens = cam_now(story, tl, shot["start"] + 1e-4)
+    if mode == 2 and loc[0] < 4.3:
+        mode = 0                      # the wall's own chrome edge and cool strip are in this frame
     if mode:
-        loc, tgt, lens = cam_now(story, tl, t)
         fx, fy = tgt[0] - loc[0], tgt[1] - loc[1]
         n = math.hypot(fx, fy)
         fx, fy = fx / n, fy / n
@@ -353,11 +369,9 @@ def animate(kit, story, tl, t, ctx):
             W["pane"].location = (loc[0] + fx * 0.45, loc[1] + fy * 0.45, loc[2])
             W["pane"].rotation_euler = (0, 0, yaw)
         else:
-            inner = 0.78 * hw
-            wd = hw - inner + 0.5
-            put(W["ebar"], dp, inner + wd / 2, wd)
+            put(W["ebar"], dp, 0.80 * hw + 0.1, 0.2)
             hs = 6.75 * (dp + 0.1) / lens
-            put(W["estrip"], dp + 0.1, 0.46 * hs + (0.74 * hs - 0.46 * hs) / 2, 0.74 * hs - 0.46 * hs)
+            put(W["estrip"], dp + 0.1, 0.52 * hs + (0.78 * hs - 0.52 * hs) / 2, 0.78 * hs - 0.52 * hs)
     # seated: legs level while Dre sits
     sit = sample("sit", tl, t, {n: 0.0 for n in SEATED})
     for who in SEATED:
