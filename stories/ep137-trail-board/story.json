@@ -29,8 +29,7 @@
     "S11",
     "S15",
     "S22"
-   ],
-   "ones": "walk"
+   ]
   }
  },
  "grade": {
@@ -2979,6 +2978,9 @@
   "S06b",
   "S15"
  ],
+ "frames_ok": [
+  "S17"
+ ],
  "framing_ok": [
   "S02",
   "S07",
@@ -3048,6 +3050,39 @@
      0
     ],
     "tone": "hand"
+   },
+   {
+    "at": "L04+0.3",
+    "kind": "thud",
+    "db": -22,
+    "pattern": [
+     0
+    ]
+   },
+   {
+    "at": "L14+0.2",
+    "kind": "latch",
+    "db": -20,
+    "pattern": [
+     0
+    ]
+   },
+   {
+    "at": "L17+0.5",
+    "kind": "creak",
+    "db": -24,
+    "pattern": [
+     0
+    ]
+   },
+   {
+    "at": "L19+0.1",
+    "kind": "knock",
+    "db": -20,
+    "pattern": [
+     0
+    ],
+    "tone": "hand"
    }
   ],
   "music_drops": [
@@ -3057,5 +3092,5 @@
    ]
   ]
  },
- "rev": 2
+ "rev": 3
 }

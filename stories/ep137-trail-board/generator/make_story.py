@@ -256,7 +256,7 @@ for s, i in zip(shots, IDS):
 # ---------------------------------------------------------------------------------------------------- story
 look = {"fog": "#fff2cf", "fog_density": 0.002, "fog_start": 28.0, "sky": "#ffe79a", "exposure": 0.0,
         "flash_safe": True, "style": "closer",
-        "polish": {"hold": ["S02", "S11", "S15", "S22"], "ones": "walk"}}
+        "polish": {"hold": ["S02", "S11", "S15", "S22"]}}
 story = {
     "slug": "ep137-trail-board",
     "title": "The Trail Board Painted at DUSK \U0001F332",
@@ -283,6 +283,7 @@ story = {
     "acting": acting,
     "cues": cues,
     "set_moves": ["S06b", "S15"],
+    "frames_ok": ["S17"],
     "framing_ok": ["S02", "S07", "S15", "S22", "S25", "S23a"],
     "music": {"root": 45, "mode": "dorian", "bpm": 104, "seed": 137,
               "sections": [
@@ -294,7 +295,11 @@ story = {
         "rev": 1, "floor": "gravel", "steps_db": -22,
         "ambience": [{"kind": "water", "from": 0, "to": "end", "lufs": -42},
                      {"kind": "wind", "from": "L11", "to": "L15", "lufs": -44}],
-        "sfx": [{"at": "L06.5-0.15", "kind": "knock", "db": -18, "pattern": [0], "tone": "hand"}],
+        "sfx": [{"at": "L06.5-0.15", "kind": "knock", "db": -18, "pattern": [0], "tone": "hand"},
+                {"at": "L04+0.3", "kind": "thud", "db": -22, "pattern": [0]},
+                {"at": "L14+0.2", "kind": "latch", "db": -20, "pattern": [0]},
+                {"at": "L17+0.5", "kind": "creak", "db": -24, "pattern": [0]},
+                {"at": "L19+0.1", "kind": "knock", "db": -20, "pattern": [0], "tone": "hand"}],
         "music_drops": [["P1", "P1>"]],
     },
 }
@@ -315,6 +320,6 @@ if vf.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(key(e)))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 2
+story["rev"] = 3
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
