@@ -24,7 +24,7 @@
 - **Line order (build round 2):** L01, L02, L03, L13, L14, L15, L16, L03b, L04, L05, L05b, L06, L07, L08, L08b, L09, L10, L11, L11b, L12, L12b, L17, L20, L21, (drop), L18, L19, L22, L23, L23b, L24 to L32. The ids are kept from round 1, so they no longer run in number order.
 - **Estimated length:** about 62 s (round 1 built at 56.9 s, plus 19 words and the slower echo reads), with 0.15 s gaps, the three spoken counts held at counting pace (about 1 s each), the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A red-gold canyon in hot afternoon sun: a wooden railing, a thick wooden post painted with a huge cream "1", the far canyon wall in banded red and orange, a dirt lot with my teal pickup. Dusk violet for the last third.
-- **Hold:** scripts only (batch 15a). Not built, not voiced.
+- **Hold:** built and voiced (batch 15a build), reviews in progress.
 
 ## Variety table (batch 15a)
 
@@ -96,7 +96,7 @@ At a canyon overlook your echo answers one question, always after three seconds 
 Synthesized in `blocky/sound.py`: a plucked open-string figure and a soft hand drum of our own, **D minor, 96 BPM**. It's sunny and loose under the vignettes. One beat of silence after each spoken "Three." A low drone comes in at L20 and holds to the end. A 0.6 s drop after L21 (before L18), and the last line is over the drone alone.
 
 ## Sound
-- Each echo answer would get a soft canyon reverb tail, but the engine has no echo or reverb voice effect yet, so for now the echo lines are read at `tempo` 0.88 (Notes below).
+- Each echo answer is read at `tempo` 0.88 with the `space` voice filter in story.json (a lowpass and a short room tail), so the echo sounds apart from the narration.
 - At L29: three soft knocks on glass (low, no click).
 
 ## The opening recipe (playbook v1)
@@ -204,7 +204,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), and slashes 
 
 ## Notes for the builder and reviewers
 - The counts in L05, L08, L11 and L25 are read at counting pace (about 0.35 s per number). Each number gets its own cut to its dot-rock.
-- The echo answers (L05b, L08b, L11b, L20, L21, L26) are the narrator's own voice, read at `tempo` 0.88 in lines.json for a slightly slower, distinct delivery. The engine has no echo or reverb voice effect (critic r2 note 6), so the canyon tail in Sound waits on an engine change. Nobody else gets a voice (RULES → Telling).
+- The echo answers (L05b, L08b, L11b, L20, L21, L26) are the narrator's own voice, read at `tempo` 0.88 in lines.json for a slightly slower, distinct delivery. They also carry the `space` voice filter (a lowpass and a short room tail) in story.json, which the critic accepted in r3 in place of an echo tap. Nobody else gets a voice (RULES → Telling).
 - No phone appears anywhere. Jonah's call is only reported (L16).
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: nothing flagged.
 - The title, description, pin and captions are checked against hard rule 8. No dashes or semicolons, and one emoji.
