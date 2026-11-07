@@ -385,9 +385,11 @@ at_("gus", "L41", *GUS_TB, expr="smile", z=SIT)
 shot("L41", sub(GUS_TB[0], GUS_TB[1], H=2.4, tz=1.45, off=-8), "gussmile")
 # ===== L42, L43 still fighting (two faces side by side, both to camera)
 HIDE("gus", "L42")
-TWO_ME, TWO_GUS = [HSX + 0.56, 0.5], [HSX - 0.5, 0.5]
-at_("me", "L42", *TWO_ME, expr="angry", arms=[0, 0])
-at_("gus", "L42", *TWO_GUS, expr="angry", arms=[0, 0])
+TWO_ME, TWO_GUS = [HSX + 0.85, 0.2], [HSX - 0.8, 0.7]
+at_("me", "L42", *TWO_ME, expr="angry", arms=[45, 0])
+K("me", "L43", arms=[20, 30])
+at_("gus", "L42", *TWO_GUS, expr="angry", arms=[0, 45])
+K("gus", "L43", arms=[30, 20])
 shot("L42", sub(HSX, 0.5, H=4.5, tz=1.1, off=0, lens=40, sh=-0.02, pf=0.0), "two1")
 shot("L43", push(sub(HSX, 0.5, H=4.5, tz=1.1, off=-5, lens=40, sh=-0.03, pf=0.0), 0.06), "two2")
 # ===== L44 lunch together

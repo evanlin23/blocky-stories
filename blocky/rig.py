@@ -21,6 +21,7 @@ Front is -y. Pivots: hips at z = 2, shoulders at z = 3.75, neck at z = 4.
 from __future__ import annotations
 
 import math
+import os
 
 import bpy
 
@@ -240,6 +241,17 @@ def head_slice_mesh(name, mat, capmat, parent, k, nk=4, n=48):
         for li in poly.loop_indices:
             uv.data[li].uv = uvs[ob.data.loops[li].vertex_index]
     return ob
+
+
+def save_whole(pil, path):
+    """Write a face PNG so no reader ever sees part of it: to a temporary name, then renamed into place. A final
+    shard runs 2 Blender processes on one runner that share faces/, and each writes a face it is the first to need
+    when the file isn't there yet. Saved in place, the other process could open it half-written: Blender read it
+    as a black face (ep125 S81/S82, frames 3304 and 3368, 2026-11-06), and Cycles re-reads textures from disk on
+    every frame, so any frame can catch it."""
+    tmp = path.with_name(f".{path.name}.{os.getpid()}.tmp")
+    pil.save(tmp, format="PNG")
+    os.replace(tmp, path)
 
 
 def head_material(name, skin):
@@ -609,7 +621,7 @@ class Character:
             pil = faces.face_image(self.face, self.spec["skin"], expr, open_, look, blink)
             path = self.workdir / f"face-{self.name}-{key}.png"
             if not path.exists():
-                pil.save(path)
+                save_whole(pil, path)
             img = bpy.data.images.load(str(path))
             img.colorspace_settings.name = "sRGB"
             self.images[key] = img
