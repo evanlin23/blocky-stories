@@ -4,7 +4,7 @@ board on the west wall). No light ever changes: nothing blinks, glows or flicker
 
 "The glass" is a camera at the mirror looking west out into the same gym. Its marker is the chrome edge: a chrome
 pillar standing in the room about a metre in front of that camera, at the right of the frame, plus a faint cool-tinted
-pane in front of it, both placed by the `glass` cue (position and yaw, on the cut) and hidden in every real shot.
+pane in front of it, both placed once per shot, on the cut, and left fixed in the room; real shots show the wall's own bars or a fixed mirror stand.
 The date board is one object set: cue `board` gives the number (v) and whether it is hung backward (flip). Held
 things (the bar, the key) follow a character's hands; the paint and the moustache follow heads. Every extra is made
 in build(); animate only moves, shows and hides them.
@@ -109,12 +109,49 @@ def build_mirror(kit):
 
 
 def build_wall_edge(kit):
-    """The real mirror's marker, fixed in the room: a dark chrome bar standing proud of the north pillar and a strip of
-    cool, non-reflective glass on the mirror beside it (2.5 cm in front of the sheen, never on one plane)."""
+    """The real mirror's marker, fixed in the room: dark chrome bars standing proud of the mullions (north end and
+    the south third) and a strip of cool, non-reflective glass 8 cm in front of the plate beside each."""
     pl = kit.plastic
-    kit.box("wall.edge.bar", (0.08, 0.14, 2.9), (4.66, 0.2, 1.5), pl("#4a535e", 0.35, spec=0.25), bevel=0.02)
-    W["wallstrip"] = kit.box("wall.edge.strip", (0.01, 0.9, 2.3), (4.915, -0.4, 1.55), W["tint"]("wall.tint", 0.5))
-    W["wallstrip"].visible_shadow = False
+    bar = pl("#3a424c", 0.4, spec=0.15)
+    for k, (by, sy0, sy1) in enumerate(((0.5, -0.1, 0.5), (-2.6, -2.55, -2.0))):
+        kit.box(f"wall.edge.bar{k}", (0.16, 0.3, 2.9), (4.62, by, 1.5), bar, bevel=0.02)
+        ob = kit.box(f"wall.edge.strip{k}", (0.01, sy1 - sy0, 2.3), (4.91, (sy0 + sy1) / 2, 1.55),
+                     W["tint"](f"wall.tint{k}", 0.5))
+        ob.visible_shadow = False
+
+
+# real shots whose camera looks west, away from the mirror wall: a freestanding mirror stand (dark chrome post and a
+# cool strip beside it), fixed in the room where that shot's frame has its right edge, hidden in every other shot
+STAND_SHOTS = {"S03": 2.3, "S03b": 2.3, "S12a": 1.0, "S18": 1.0, "S27": 1.0, "S27b": 1.0}
+
+
+def build_stands(kit, story, tl):
+    pl = kit.plastic
+    bar = pl("#4a535e", 0.35, spec=0.25)
+    W["stands"] = {}
+    for sid, d in STAND_SHOTS.items():
+        shot = next(x for x in tl["shots"] if x["id"] == sid)
+        loc, tgt, lens = cam_now(story, tl, shot["start"] + 1e-4)
+        fx, fy = tgt[0] - loc[0], tgt[1] - loc[1]
+        n = math.hypot(fx, fy)
+        fx, fy = fx / n, fy / n
+        rx, ry = fy, -fx
+        yaw = math.atan2(fy, fx)
+        hw = 6.75 * d / lens
+        w1 = max(0.12, 0.22 * hw)
+        l1 = 0.88 * hw
+        w2 = 0.3 * hw
+        l2 = l1 - w1 / 2 - w2 / 2 + 0.03
+        b = kit.box(f"stand.{sid}.bar", (0.1, w1, 3.4), (loc[0] + fx * d + rx * l1, loc[1] + fy * d + ry * l1, 1.5), bar,
+                    bevel=0.02)
+        st = kit.box(f"stand.{sid}.strip", (0.01, w2, 2.6),
+                     (loc[0] + fx * (d + 0.1) + rx * l2, loc[1] + fy * (d + 0.1) + ry * l2, 1.55),
+                     W["tint"](f"stand.tint.{sid}", 0.45))
+        st.visible_shadow = False
+        for ob in (b, st):
+            ob.rotation_euler = (0, 0, yaw)
+            ob.hide_render = True
+        W["stands"][sid] = (b, st)
 
 
 def build_gear(kit):
@@ -174,7 +211,6 @@ def build_glass(kit):
     """The glass's marker: a chrome pillar and a faint cool pane, both placed on the camera by the `glass` cue (also the real mirror's edge bar and cool strip)."""
     pl = kit.plastic
     W["post"] = kit.box("glass.post", (0.12, 0.5, 4.0), (0, 0, -20), pl("#4a535e", 0.35, spec=0.25), bevel=0.02)
-    W["ebar"] = kit.box("edge.bar", (0.12, 0.5, 4.0), (0, 0, -20), pl("#4a535e", 0.35, spec=0.25), bevel=0.02)
 
     def tint(name, fac):
         m = bpy.data.materials.new(name)
@@ -194,8 +230,6 @@ def build_glass(kit):
         return m
 
     W["tint"] = tint
-    W["estrip"] = kit.box("edge.strip", (0.01, 0.5, 4.0), (0, 0, -20), tint("edge.tint", 0.5))
-    W["estrip"].visible_shadow = False
     W["pane"] = kit.box("glass.pane", (0.01, 8.0, 8.0), (0, 0, -20), tint("glass.tint", 0.2))
     W["pane"].visible_shadow = False
 
@@ -237,6 +271,7 @@ def build(kit, story, tl):
     build_board(kit)
     build_glass(kit)
     build_wall_edge(kit)
+    build_stands(kit, story, tl)
     build_props(kit)
     # constant soft fills from the ceiling, and a face fill from each end of the room
     for i, (x, y) in enumerate(((-2.5, -4.0), (2.5, -4.0), (-2.5, 0.0), (2.5, 0.0), (0.0, 2.5))):
@@ -335,19 +370,19 @@ def animate(kit, story, tl, t, ctx):
                 lit[(slot, MIRROR_SEG[k] if flip else k)] = True
     for key_, ob in W["bd"].items():
         ob.hide_render = not lit[key_]
-    # the glass (mode 1: a dark chrome post and a cool pane standing in the gym in front of the mirror's camera) and,
-    # for a real shot whose camera is at the mirror and cannot see the wall's own edge (mode 2), a dark chrome column
-    # with a cool strip beside it. All of it is world-fixed: placed once per shot (on the cut, from the camera's
-    # position at the shot's start) and then left alone, so the camera's own moves give ordinary parallax.
+    # the glass: a dark chrome post and a cool pane standing in the gym in front of the mirror's camera. Placed once per
+    # shot (on the cut, from the camera's position at the shot's start) and then left alone, so the camera's own moves
+    # give ordinary parallax. Real shots: the mirror wall's own bars and strips, or the shot's fixed mirror stand.
     g = sample("glass", tl, t, {"on": 0.0, "fr": 0.45, "dp": 1.0})
     mode = int(round(g["on"]))
-    for ob in (W["post"], W["pane"], W["ebar"], W["estrip"]):
+    for ob in (W["post"], W["pane"]):
         ob.hide_render = True
     shot = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1])
-    loc, tgt, lens = cam_now(story, tl, shot["start"] + 1e-4)
-    if mode == 2 and loc[0] < 4.3:
-        mode = 0                      # the wall's own chrome edge and cool strip are in this frame
-    if mode:
+    for sid, pair in W["stands"].items():
+        for ob in pair:
+            ob.hide_render = sid != shot["id"]
+    if mode == 1:
+        loc, tgt, lens = cam_now(story, tl, shot["start"] + 1e-4)
         fx, fy = tgt[0] - loc[0], tgt[1] - loc[1]
         n = math.hypot(fx, fy)
         fx, fy = fx / n, fy / n
@@ -355,23 +390,16 @@ def animate(kit, story, tl, t, ctx):
         yaw = math.atan2(fy, fx)
         dp = g["dp"]
         hw = 6.75 * dp / lens
-
-        def put(ob, d, lat, width):
-            ob.hide_render = False
-            ob.scale = (1.0, width / 0.5, 1.0)
-            ob.location = (loc[0] + fx * d + rx * lat, loc[1] + fy * d + ry * lat, loc[2])
-            ob.rotation_euler = (0, 0, yaw)
-
-        if mode == 1:
-            pw = max(0.5, 2.0 * hw)
-            put(W["post"], dp, g["fr"] * hw + pw / 2, pw)
-            W["pane"].hide_render = False
-            W["pane"].location = (loc[0] + fx * 0.45, loc[1] + fy * 0.45, loc[2])
-            W["pane"].rotation_euler = (0, 0, yaw)
-        else:
-            put(W["ebar"], dp, 0.80 * hw + 0.1, 0.2)
-            hs = 6.75 * (dp + 0.1) / lens
-            put(W["estrip"], dp + 0.1, 0.52 * hs + (0.78 * hs - 0.52 * hs) / 2, 0.78 * hs - 0.52 * hs)
+        pw = max(0.5, 2.0 * hw)
+        ob = W["post"]
+        ob.hide_render = False
+        ob.scale = (1.0, pw / 0.5, 1.0)
+        lat = g["fr"] * hw + pw / 2
+        ob.location = (loc[0] + fx * dp + rx * lat, loc[1] + fy * dp + ry * lat, loc[2])
+        ob.rotation_euler = (0, 0, yaw)
+        W["pane"].hide_render = False
+        W["pane"].location = (loc[0] + fx * 0.45, loc[1] + fy * 0.45, loc[2])
+        W["pane"].rotation_euler = (0, 0, yaw)
     # seated: legs level while Dre sits
     sit = sample("sit", tl, t, {n: 0.0 for n in SEATED})
     for who in SEATED:

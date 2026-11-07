@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -356,9 +356,9 @@ shot("S26", "L26", cam(ME[0], ME[1], 1.3, 1.45, -92, 36, cz=1.35, push=(1.25, 1.
 
 # ===== 06 no answer (L27 to L31)
 show("L27", "me")
-cut("me", "L27", [2.9, -1.95, 0.0], **_pose(105, "uneasy", {"blink": False}))
+cut("me", "L27", [2.9, -2.5, 0.0], **_pose(105, "uneasy", {"blink": False}))
 mouth("me", "L27", "L27>", 0.4)
-shot("S27", "L27", camp([4.7, -1.45, 1.65], [2.9, -1.45, 1.0], 14))
+shot("S27", "L27", camp([4.5, -0.9, 1.65], [2.9, -1.9, 1.0], 14))
 me_at("L28", "me", yaw=-90, expr="uneasy")
 key("me", "L28.1", [ME[0], ME[1], 0.0], yaw=-90, expr="uneasy", head=[0, 4])
 mouth("me", "L28", "L28>", 0.4)
