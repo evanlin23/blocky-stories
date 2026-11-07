@@ -998,3 +998,23 @@ def test_a_hidden_cast_member_hides_parts_the_set_adds_on_its_first_frame(fake_r
                 assert glove.hide_render is False
     finally:
         sys.modules.pop("blocky.bl_story", None)
+
+
+def test_a_face_png_is_never_seen_half_written(fake_rig, tmp_path):
+    """ep125 (2026-11-06): a shard's 2 Blender processes share faces/, and one read a face PNG the other was
+    still writing, so her face drew black. The file appears under its own name only once it is whole."""
+    rig, _ = fake_rig
+    path = tmp_path / "face-lou-smile.png"
+    seen = []
+
+    class Pil:
+        def save(self, p, format=None):
+            with open(p, "wb") as f:
+                f.write(b"half")
+                seen.append(path.exists())   # what another process sees while this one writes
+                f.write(b" and the rest")
+
+    rig.save_whole(Pil(), path)
+    assert seen == [False]
+    assert path.read_bytes() == b"half and the rest"
+    assert [p.name for p in tmp_path.iterdir()] == [path.name]
