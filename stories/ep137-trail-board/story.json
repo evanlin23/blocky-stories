@@ -1,0 +1,3256 @@
+{
+ "slug": "ep137-trail-board",
+ "title": "The Trail Board Painted at DUSK 🌲",
+ "made_for_kids": false,
+ "premise": "Every sunrise the trail board at our trailhead paints one short rule for the day, and obeying it pays off. This weekend it painted at dusk, which it never does, telling me not to walk a creek path that is on no map, and at sunrise it repainted itself in four lines to say the opposite: walk it with my sister June so she comes home.",
+ "twist": "Nothing is explained. The path is there, June has already seen it, the warden says it isn't theirs and the board has written two rules for the same morning, so the viewer has to pick which board to trust.",
+ "world": "a green trailhead at the edge of town: a gravel lot where a street ends, a white picket fence, a forest-green board on two posts, a small green warden's hut, a pine bench, tall pines and a shallow blue creek",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#7dff6a",
+ "gap": 0.15,
+ "tail": 0.25,
+ "fade_in": false,
+ "fade_out": false,
+ "look": {
+  "fog": "#fff2cf",
+  "fog_density": 0.002,
+  "fog_start": 28.0,
+  "sky": "#ffe79a",
+  "exposure": 0.0,
+  "flash_safe": true,
+  "style": "closer",
+  "polish": {
+   "hold": [
+    "S11",
+    "S15"
+   ]
+  }
+ },
+ "grade": {
+  "shadows": [
+   -0.01,
+   0.0,
+   0.03
+  ],
+  "highlights": [
+   0.03,
+   0.01,
+   -0.02
+  ],
+  "saturation": 1.1,
+  "contrast": 1.05,
+  "vignette": 0.15,
+  "bloom": 0.2,
+  "grain": 0.008,
+  "red_line": 0.7,
+  "red_lift_blue": 0.42
+ },
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#2a3e6a",
+   "pattern": "solid",
+   "pants": "#b59f78",
+   "shoes": "#5a3b22",
+   "sleeves": "long",
+   "hair": "swoop",
+   "hair_c": "#c9a46a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "june": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#ffd23a",
+   "pattern": "solid",
+   "pants": "#4a4258",
+   "shoes": "#6a4a2a",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#7a2a1a",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "dot": {
+   "age": "adult",
+   "skin": "#e8b891",
+   "shirt": "#f3e9d0",
+   "pattern": "solid",
+   "pants": "#6b6a4a",
+   "shoes": "#4a3a2a",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#f2f2f2",
+   "height": 0.92,
+   "extras": [
+    "apron"
+   ],
+   "extra_c": "#2f7a45",
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#24131f",
+    "bags": true
+   }
+  },
+  "marcus": {
+   "age": "adult",
+   "skin": "#c98f62",
+   "shirt": "#b8322a",
+   "pattern": "plaid",
+   "pattern_c": "#2a2a2a",
+   "pants": "#3a4a6a",
+   "shoes": "#3a2a1a",
+   "sleeves": "long",
+   "hair": "buzz",
+   "hair_c": "#3a2616",
+   "hat": "beanie",
+   "hat_c": "#2a2a30",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every sunrise,",
+     "every sunrise,"
+    ],
+    [
+     "our trail board",
+     "our trail board"
+    ],
+    [
+     "paints a rule",
+     "paints a rule"
+    ],
+    [
+     "you HAVE",
+     "you have"
+    ],
+    [
+     "to obey.",
+     "to obey."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It only paints",
+     "it only paints"
+    ],
+    [
+     "at SUNRISE.",
+     "at sunrise."
+    ],
+    [
+     "Never any",
+     "never any"
+    ],
+    [
+     "other time.",
+     "other time."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Today,",
+     "today,"
+    ],
+    [
+     "Dot hikes",
+     "dot hikes"
+    ],
+    [
+     "the east LOOP.",
+     "the east loop."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She came back",
+     "she came back"
+    ],
+    [
+     "with a mushroom",
+     "with a mushroom"
+    ],
+    [
+     "the size of",
+     "the size of"
+    ],
+    [
+     "her HEAD.",
+     "her head."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Today,",
+     "today,"
+    ],
+    [
+     "Marcus sits",
+     "marcus sits"
+    ],
+    [
+     "on the BENCH.",
+     "on the bench."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He sat,",
+     "he sat."
+    ],
+    [
+     "and his canoe,",
+     "and his canoe,"
+    ],
+    [
+     "gone since SPRING,",
+     "gone since spring,"
+    ],
+    [
+     "floated down",
+     "floated down"
+    ],
+    [
+     "the creek",
+     "the creek"
+    ],
+    [
+     "right to him.",
+     "right to him."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It never",
+     "it never"
+    ],
+    [
+     "says WHY.",
+     "says why."
+    ],
+    [
+     "Just one LINE.",
+     "just one line."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My big sister",
+     "my big sister"
+    ],
+    [
+     "June hikes here",
+     "june hikes here"
+    ],
+    [
+     "every SUNDAY,",
+     "every sunday,"
+    ],
+    [
+     "and drags me,",
+     "and drags me,"
+    ],
+    [
+     "THEO, along.",
+     "theo, along."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Saturday,",
+     "saturday,"
+    ],
+    [
+     "she said",
+     "she said"
+    ],
+    [
+     "she's doing",
+     "she's doing"
+    ],
+    [
+     "the creek path",
+     "the creek path"
+    ],
+    [
+     "at DAWN.",
+     "at dawn."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There's no",
+     "there's no"
+    ],
+    [
+     "creek PATH.",
+     "creek path."
+    ],
+    [
+     "Not on",
+     "not on"
+    ],
+    [
+     "any MAP.",
+     "any map."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then, at DUSK,",
+     "then, at dusk,"
+    ],
+    [
+     "the board PAINTED.",
+     "the board painted."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "TOMORROW,",
+     "tomorrow,"
+    ],
+    [
+     "Theo doesn't walk",
+     "theo doesn't walk"
+    ],
+    [
+     "the creek PATH.",
+     "the creek path."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It's never said",
+     "it's never said"
+    ],
+    [
+     "TOMORROW before.",
+     "tomorrow before."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dot locks up",
+     "dot locks up"
+    ],
+    [
+     "at dusk.",
+     "at dusk."
+    ],
+    [
+     "She saw it",
+     "she saw it"
+    ],
+    [
+     "and said,",
+     "and said,"
+    ],
+    [
+     "Somebody's been",
+     "somebody's been"
+    ],
+    [
+     "at my BOARD.",
+     "at my board."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I came back",
+     "i came back"
+    ],
+    [
+     "at SUNRISE.",
+     "at sunrise."
+    ]
+   ]
+  },
+  {
+   "id": "P1",
+   "pause": 0.5,
+   "chunks": []
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And there",
+     "and there"
+    ],
+    [
+     "it was.",
+     "it was."
+    ],
+    [
+     "A path",
+     "a path"
+    ],
+    [
+     "along the CREEK.",
+     "along the creek."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "June was already",
+     "june was already"
+    ],
+    [
+     "lacing her BOOTS.",
+     "lacing her boots."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She said",
+     "she said"
+    ],
+    [
+     "she'd DREAMED it",
+     "she'd dreamed it"
+    ],
+    [
+     "all WEEK.",
+     "all week."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the board",
+     "and the board"
+    ],
+    [
+     "had painted",
+     "had painted"
+    ],
+    [
+     "over ITSELF.",
+     "over itself."
+    ],
+    [
+     "Today,",
+     "today,"
+    ],
+    [
+     "Theo walks",
+     "theo walks"
+    ],
+    [
+     "the creek path",
+     "the creek path"
+    ],
+    [
+     "with June,",
+     "with june,"
+    ],
+    [
+     "so she",
+     "so she"
+    ],
+    [
+     "comes HOME.",
+     "comes home."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "As if,",
+     "as if,"
+    ],
+    [
+     "without me,",
+     "without me,"
+    ],
+    [
+     "she DOESN'T.",
+     "she doesn't."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It's never said",
+     "it's never said"
+    ],
+    [
+     "WHY before.",
+     "why before."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It filled",
+     "it filled"
+    ],
+    [
+     "the whole BOARD.",
+     "the whole board."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dot looked once",
+     "dot looked once"
+    ],
+    [
+     "at that path",
+     "at that path"
+    ],
+    [
+     "and said,",
+     "and said,"
+    ],
+    [
+     "That isn't OURS.",
+     "that isn't ours."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "June's going,",
+     "june's going,"
+    ],
+    [
+     "with or",
+     "with or"
+    ],
+    [
+     "without ME.",
+     "without me."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Last night's board,",
+     "last night's board,"
+    ],
+    [
+     "or this MORNING'S.",
+     "or this morning's."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Both are",
+     "both are"
+    ],
+    [
+     "its WRITING.",
+     "its writing."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Which board",
+     "which board"
+    ],
+    [
+     "do I FOLLOW?",
+     "do i follow?"
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01a",
+   "cam": [
+    [
+     0,
+     [
+      0.12,
+      -6.663,
+      1.683
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      0.12,
+      -6.329,
+      1.671
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "note": "S01a frame 1: my face on the left, the board's one glyph line right"
+  },
+  {
+   "id": "S01b",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      -5.663,
+      1.898
+     ],
+     [
+      0.1,
+      0,
+      1.7
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      0.1,
+      -4.83,
+      1.869
+     ],
+     [
+      0.1,
+      0,
+      1.7
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L01.3",
+   "note": "S01b punch in on the glyph line on HAVE"
+  },
+  {
+   "id": "S02",
+   "cam": [
+    [
+     0,
+     [
+      -1.355,
+      -7.387,
+      2.567
+     ],
+     [
+      0.3,
+      2,
+      1.9
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -1.201,
+      -6.514,
+      2.505
+     ],
+     [
+      0.3,
+      2,
+      1.9
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L02",
+   "sun2": [
+    0.5,
+    70.0,
+    20.0,
+    3.5
+   ],
+   "note": "S02 wide: the trailhead, the board in the middle"
+  },
+  {
+   "id": "S02b",
+   "cam": [
+    [
+     0,
+     [
+      -1.478,
+      -5.245,
+      2.427
+     ],
+     [
+      0.6,
+      2,
+      1.9
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -1.233,
+      -4.393,
+      2.365
+     ],
+     [
+      0.6,
+      2,
+      1.9
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L02.3",
+   "sun2": [
+    0.5,
+    70.0,
+    20.0,
+    3.5
+   ],
+   "note": "S02b closer on the board, the sun still in sight"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -8.587,
+      2.0
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.0,
+      -7.699,
+      1.969
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L03",
+   "note": "S03 the board, one glyph line, fills the frame"
+  },
+  {
+   "id": "S04a",
+   "cam": [
+    [
+     0,
+     [
+      -0.566,
+      -8.112,
+      1.549
+     ],
+     [
+      -1.9499999999999997,
+      -1.6,
+      1.2
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.67,
+      -7.624,
+      1.523
+     ],
+     [
+      -1.9499999999999997,
+      -1.6,
+      1.2
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L04",
+   "note": "S04a Dot alone on the gravel with the giant mushroom"
+  },
+  {
+   "id": "S04b",
+   "cam": [
+    [
+     0,
+     [
+      -0.843,
+      -6.81,
+      1.779
+     ],
+     [
+      -1.9499999999999997,
+      -1.6,
+      1.5
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.946,
+      -6.321,
+      1.753
+     ],
+     [
+      -1.9499999999999997,
+      -1.6,
+      1.5
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L04.3",
+   "note": "S04b punch in on her face"
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -8.587,
+      2.0
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -0.805,
+      -7.657,
+      1.969
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L05",
+   "note": "S05 the board, a different single glyph line"
+  },
+  {
+   "id": "S06a",
+   "cam": [
+    [
+     0,
+     [
+      1.5,
+      -6.173,
+      1.634
+     ],
+     [
+      1.5,
+      1.15,
+      1.25
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      1.5,
+      -5.508,
+      1.599
+     ],
+     [
+      1.5,
+      1.15,
+      1.25
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L06",
+   "note": "S06a Marcus on the bench"
+  },
+  {
+   "id": "S06b",
+   "cam": [
+    [
+     0,
+     [
+      5.467,
+      -4.874,
+      2.595
+     ],
+     [
+      9.6,
+      2.9,
+      0.4
+     ],
+     35
+    ],
+    [
+     1,
+     [
+      5.939,
+      -3.985,
+      2.344
+     ],
+     [
+      9.6,
+      2.9,
+      0.4
+     ],
+     35
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L06.2",
+   "note": "S06b the red canoe drifts to the bank by the bench"
+  },
+  {
+   "id": "S06c",
+   "cam": [
+    [
+     0,
+     [
+      1.6,
+      -4.176,
+      1.529
+     ],
+     [
+      1.6,
+      1.15,
+      1.25
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      1.6,
+      -3.677,
+      1.503
+     ],
+     [
+      1.6,
+      1.15,
+      1.25
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L06.5",
+   "note": "S06c Marcus stunned, then laughs"
+  },
+  {
+   "id": "S07",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -8.883,
+      2.01
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.0,
+      -7.107,
+      1.948
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L07",
+   "note": "S07 the board's one line, slow push in"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      -0.2,
+      -6.663,
+      1.683
+     ],
+     [
+      -0.2,
+      0,
+      1.45
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.2,
+      -6.329,
+      1.671
+     ],
+     [
+      -0.2,
+      0,
+      1.45
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L08",
+   "tally": true,
+   "note": "S08 my face, smile; the post foot with its tally at the frame bottom"
+  },
+  {
+   "id": "S08b",
+   "cam": [
+    [
+     0,
+     [
+      -1.277,
+      -5.535,
+      1.797
+     ],
+     [
+      -0.1,
+      0,
+      1.5
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -1.138,
+      -4.884,
+      1.762
+     ],
+     [
+      -0.1,
+      0,
+      1.5
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L08.3",
+   "note": "S08b my face again from a new angle"
+  },
+  {
+   "id": "S09",
+   "cam": [
+    [
+     0,
+     [
+      1.5,
+      -6.173,
+      1.684
+     ],
+     [
+      1.5,
+      1.15,
+      1.3
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      1.5,
+      -5.508,
+      1.649
+     ],
+     [
+      1.5,
+      1.15,
+      1.3
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L09",
+   "note": "S09 June on the bench, smile, talking (same gold, Saturday)"
+  },
+  {
+   "id": "S09b",
+   "cam": [
+    [
+     0,
+     [
+      2.338,
+      -4.454,
+      1.597
+     ],
+     [
+      1.55,
+      1.15,
+      1.3
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      2.268,
+      -3.959,
+      1.57
+     ],
+     [
+      1.55,
+      1.15,
+      1.3
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L09.3",
+   "note": "S09b June tighter, still talking"
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      0.12,
+      -6.663,
+      1.683
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      0.12,
+      -6.329,
+      1.671
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L10",
+   "note": "S10 my face, uneasy"
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      -5.0,
+      0.9
+     ],
+     [
+      0.0,
+      0.0,
+      3.3
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.3,
+      -4.4,
+      0.9
+     ],
+     [
+      0.0,
+      0.0,
+      3.4
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "d",
+   "at": "L11",
+   "note": "S11 the board under a huge low orange sun in a pink-orange sky"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -6.996,
+      1.944
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      0.0,
+      -5.996,
+      1.909
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "d",
+   "at": "L12",
+   "note": "S12 close on the new glyph line in the orange light"
+  },
+  {
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      0.12,
+      -6.663,
+      1.683
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      0.12,
+      -6.329,
+      1.671
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "d",
+   "at": "L13",
+   "note": "S13 my face, stunned, lit orange"
+  },
+  {
+   "id": "S14a",
+   "cam": [
+    [
+     0,
+     [
+      -5.5,
+      -1.459,
+      1.497
+     ],
+     [
+      -5.5,
+      4.2,
+      1.2
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -5.5,
+      -0.793,
+      1.462
+     ],
+     [
+      -5.5,
+      4.2,
+      1.2
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "d",
+   "at": "L14",
+   "fill": 2.2,
+   "note": "S14a Dot alone at the hut's white door, orange light"
+  },
+  {
+   "id": "S14b",
+   "cam": [
+    [
+     0,
+     [
+      -0.2,
+      -4.997,
+      1.674
+     ],
+     [
+      -0.2,
+      0,
+      1.5
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.2,
+      -4.497,
+      1.657
+     ],
+     [
+      -0.2,
+      0,
+      1.5
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "d",
+   "at": "L14.4",
+   "fill": 1.5,
+   "note": "S14b Dot's face, angry, the board behind her in orange light"
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      1.0,
+      -5.0,
+      1.6
+     ],
+     [
+      9.0,
+      14.0,
+      3.2
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      1.2,
+      -4.4,
+      1.6
+     ],
+     [
+      9.0,
+      14.0,
+      3.4
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "d",
+   "at": "L15",
+   "fade": [
+    "d",
+    "m"
+   ],
+   "note": "S15 held wide of the pines and creek bank, board out of frame: dusk fades to sunrise over the whole shot"
+  },
+  {
+   "id": "S16a",
+   "cam": [
+    [
+     0,
+     [
+      9.6,
+      -5.0,
+      3.0
+     ],
+     [
+      7.0,
+      8.0,
+      0.7
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      9.2,
+      -4.4,
+      2.8
+     ],
+     [
+      7.0,
+      8.5,
+      0.7
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L16",
+   "note": "S16a the creek bank: a clear earth path now runs along the creek into the trees"
+  },
+  {
+   "id": "S16b",
+   "cam": [
+    [
+     0,
+     [
+      7.2,
+      -3.0,
+      1.3
+     ],
+     [
+      7.0,
+      14.0,
+      1.1
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      7.1,
+      2.0,
+      1.25
+     ],
+     [
+      7.0,
+      16.0,
+      1.1
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L16.2",
+   "note": "S16b a slow push down the path"
+  },
+  {
+   "id": "S17",
+   "cam": [
+    [
+     0,
+     [
+      1.45,
+      -5.84,
+      1.266
+     ],
+     [
+      1.45,
+      1.15,
+      0.9
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      1.45,
+      -5.341,
+      1.24
+     ],
+     [
+      1.45,
+      1.15,
+      0.9
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L17",
+   "note": "S17 June on the bench, lacing her boots (hip lean 18 deg, face and boots in frame), board edge left"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      1.55,
+      -4.176,
+      1.579
+     ],
+     [
+      1.55,
+      1.15,
+      1.3
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      1.55,
+      -3.677,
+      1.553
+     ],
+     [
+      1.55,
+      1.15,
+      1.3
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L18",
+   "note": "S18 June's face, smile"
+  },
+  {
+   "id": "S19",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -8.587,
+      2.0
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.0,
+      -7.551,
+      1.964
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L19",
+   "note": "S19 the board filled with four lines of glyphs"
+  },
+  {
+   "id": "S19b",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -7.699,
+      2.119
+     ],
+     [
+      0,
+      0,
+      1.85
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.0,
+      -6.515,
+      2.077
+     ],
+     [
+      0,
+      0,
+      1.85
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L19.3",
+   "note": "S19b push on the four lines as the message is read"
+  },
+  {
+   "id": "S19c",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      -5.626,
+      1.746
+     ],
+     [
+      0.4,
+      0,
+      1.55
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.4,
+      -4.738,
+      1.715
+     ],
+     [
+      0.4,
+      0,
+      1.55
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L19.5",
+   "note": "S19c push on the bottom two lines"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      0.12,
+      -6.663,
+      1.683
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      0.12,
+      -6.329,
+      1.671
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L20",
+   "note": "S20 my face, scared"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -6.329,
+      2.271
+     ],
+     [
+      0,
+      0,
+      2.05
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      0.0,
+      -5.33,
+      2.236
+     ],
+     [
+      0,
+      0,
+      2.05
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L21",
+   "note": "S21 the top two lines, punch in on WHY"
+  },
+  {
+   "id": "S22",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -9.476,
+      2.031
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.0,
+      -8.587,
+      2.0
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L22",
+   "note": "S22 wide: the whole board, four full lines"
+  },
+  {
+   "id": "S23a",
+   "cam": [
+    [
+     0,
+     [
+      9.8,
+      -4.4,
+      1.5
+     ],
+     [
+      6.4,
+      1.4,
+      1.15
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      9.4,
+      -4.0,
+      1.5
+     ],
+     [
+      6.4,
+      1.6,
+      1.15
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L23",
+   "note": "S23a the new path, Dot alone at its mouth, back to us"
+  },
+  {
+   "id": "S23b",
+   "cam": [
+    [
+     0,
+     [
+      4.891,
+      -4.296,
+      1.474
+     ],
+     [
+      6.6,
+      0.4,
+      1.3
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      5.119,
+      -3.67,
+      1.451
+     ],
+     [
+      6.6,
+      0.4,
+      1.3
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L23.3",
+   "note": "S23b Dot's face, scared, on OURS; the path behind"
+  },
+  {
+   "id": "S24",
+   "cam": [
+    [
+     0,
+     [
+      2.0,
+      -3.6,
+      1.3
+     ],
+     [
+      1.55,
+      1.2,
+      1.25
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      2.1,
+      -3.4,
+      1.3
+     ],
+     [
+      1.55,
+      1.2,
+      1.25
+     ],
+     32
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L24",
+   "dof": [
+    4.3,
+    2.4
+   ],
+   "note": "S24 June at the bench, laughing, waving; my shoulder soft 3 m in front of her"
+  },
+  {
+   "id": "S25",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -8.587,
+      2.0
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.0,
+      -7.403,
+      1.959
+     ],
+     [
+      0,
+      0,
+      1.7
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L25",
+   "note": "S25 the four-line board"
+  },
+  {
+   "id": "S26",
+   "cam": [
+    [
+     0,
+     [
+      0.12,
+      -6.663,
+      1.683
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      0.12,
+      -6.329,
+      1.671
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L26",
+   "note": "S26 my face, uneasy, the board's edge behind me"
+  },
+  {
+   "id": "S27",
+   "cam": [
+    [
+     0,
+     [
+      0.12,
+      -6.663,
+      1.683
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      0.12,
+      -6.329,
+      1.671
+     ],
+     [
+      0.12,
+      0,
+      1.45
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "m",
+   "at": "L27",
+   "note": "S27 my face, scared, to camera: S01a's framing for the loop"
+  }
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     -0.35,
+     -0.9
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L01.3",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L08",
+    "pos": [
+     -0.35,
+     -0.9
+    ]
+   },
+   {
+    "at": "L08",
+    "pos": [
+     0.1,
+     -0.9
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L09",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L10",
+    "pos": [
+     0.1,
+     -0.9
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -0.35,
+     -0.9
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L11",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -0.35,
+     -0.9
+    ]
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -0.35,
+     -0.9
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "wide",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L14",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L20",
+    "pos": [
+     -0.35,
+     -0.9
+    ]
+   },
+   {
+    "at": "L20",
+    "pos": [
+     -0.35,
+     -0.9
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "scared",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L21",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L24",
+    "pos": [
+     -0.35,
+     -0.9
+    ]
+   },
+   {
+    "at": "L24",
+    "pos": [
+     0.8,
+     -1.3
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L25",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L26",
+    "pos": [
+     0.8,
+     -1.3
+    ]
+   },
+   {
+    "at": "L26",
+    "pos": [
+     -0.35,
+     -0.9
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L27",
+    "pos": [
+     -0.35,
+     -0.9
+    ]
+   },
+   {
+    "at": "L27",
+    "pos": [
+     -0.35,
+     -0.9
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "scared",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   }
+  ],
+  "june": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L09",
+    "pos": [
+     2.0,
+     1.15,
+     -0.19
+    ]
+   },
+   {
+    "at": "L09",
+    "pos": [
+     2.0,
+     1.15,
+     -0.19
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "delighted",
+    "hidden": false,
+    "arms": [
+     30,
+     30
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "from": "L09",
+    "to": "L09>",
+    "mouth": [
+     0.45,
+     0.45
+    ],
+    "flap": true
+   },
+   {
+    "at": "L10",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L17",
+    "pos": [
+     2.0,
+     1.15,
+     -0.19
+    ]
+   },
+   {
+    "at": "L17",
+    "pos": [
+     2.0,
+     1.15,
+     -0.19
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "delighted",
+    "hidden": false,
+    "arms": [
+     30,
+     30
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L17+0.3",
+    "lean": 18,
+    "arms": [
+     25,
+     25
+    ],
+    "head": [
+     0,
+     15
+    ],
+    "blend": 0.8
+   },
+   {
+    "at": "L18",
+    "lean": 0,
+    "arms": [
+     30,
+     30
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.5
+   },
+   {
+    "at": "L19",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L24",
+    "pos": [
+     2.0,
+     1.15,
+     -0.19
+    ]
+   },
+   {
+    "at": "L24",
+    "pos": [
+     2.0,
+     1.15,
+     -0.19
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     30,
+     30
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L24",
+    "side": [
+     0,
+     105
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L24+0.4",
+    "side": [
+     0,
+     135
+    ],
+    "blend": 0.35
+   },
+   {
+    "at": "L24+0.8",
+    "side": [
+     0,
+     105
+    ],
+    "blend": 0.35
+   },
+   {
+    "at": "L24+1.2",
+    "side": [
+     0,
+     135
+    ],
+    "blend": 0.35
+   },
+   {
+    "at": "L25",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "dot": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L04",
+    "pos": [
+     0,
+     30,
+     0
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     -2.3,
+     -1.6
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     45,
+     45
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L05",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L14",
+    "pos": [
+     -2.3,
+     -1.6
+    ]
+   },
+   {
+    "at": "L14",
+    "pos": [
+     -5.5,
+     4.2
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L14.4",
+    "pos": [
+     -5.5,
+     4.2
+    ]
+   },
+   {
+    "at": "L14.4",
+    "pos": [
+     -0.45,
+     -1.0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "angry",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "from": "L14.4",
+    "to": "L14>",
+    "mouth": [
+     0.5,
+     0.5
+    ],
+    "flap": true
+   },
+   {
+    "at": "L15",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L23",
+    "pos": [
+     -0.45,
+     -1.0
+    ]
+   },
+   {
+    "at": "L23",
+    "pos": [
+     6.9,
+     0.7
+    ],
+    "blend": 0,
+    "yaw": 160,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     40,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L23.3",
+    "pos": [
+     6.9,
+     0.7
+    ]
+   },
+   {
+    "at": "L23.3",
+    "pos": [
+     6.6,
+     0.4
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "scared",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     -62,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "from": "L23.3",
+    "to": "L23>",
+    "mouth": [
+     0.45,
+     0.45
+    ],
+    "flap": true
+   },
+   {
+    "at": "L24",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "marcus": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L06",
+    "pos": [
+     2.0,
+     1.15,
+     -0.19
+    ]
+   },
+   {
+    "at": "L06",
+    "pos": [
+     2.0,
+     1.15,
+     -0.19
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     30,
+     30
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L06.5",
+    "expr": "wide",
+    "blend": 0.3
+   },
+   {
+    "at": "L07",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L06.5+1.0",
+    "expr": "laugh",
+    "blend": 0.3
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "board",
+   "g": "one0"
+  },
+  {
+   "at": "L01.3",
+   "name": "board",
+   "g": "one0"
+  },
+  {
+   "at": "L03",
+   "name": "board",
+   "g": "one1"
+  },
+  {
+   "at": "L04",
+   "name": "mush",
+   "on": true,
+   "pos": [
+    -2.3,
+    -2.3,
+    0.42
+   ],
+   "scale": 1.5
+  },
+  {
+   "at": "L05",
+   "name": "mush",
+   "on": false
+  },
+  {
+   "at": "L05",
+   "name": "board",
+   "g": "one2"
+  },
+  {
+   "at": "L06.2",
+   "name": "canoe",
+   "on": true,
+   "from": [
+    9.9,
+    3.7
+   ],
+   "to": [
+    9.1,
+    2.5
+   ],
+   "dur": 2.4,
+   "yaw0": 6,
+   "yaw1": -8
+  },
+  {
+   "at": "L07",
+   "name": "canoe",
+   "on": false
+  },
+  {
+   "at": "L07",
+   "name": "board",
+   "g": "one3"
+  },
+  {
+   "at": "L08",
+   "name": "board",
+   "g": "one0"
+  },
+  {
+   "at": "L09",
+   "name": "gear",
+   "on": true
+  },
+  {
+   "at": "L10",
+   "name": "gear",
+   "on": false
+  },
+  {
+   "at": "L11",
+   "name": "board",
+   "g": "one4"
+  },
+  {
+   "at": "L15",
+   "name": "board",
+   "g": "one4"
+  },
+  {
+   "at": "L16",
+   "name": "path",
+   "on": true
+  },
+  {
+   "at": "L16",
+   "name": "board",
+   "g": "full"
+  },
+  {
+   "at": "L17",
+   "name": "gear",
+   "on": true
+  },
+  {
+   "at": "L19",
+   "name": "gear",
+   "on": false
+  },
+  {
+   "at": "L19",
+   "name": "board",
+   "g": "full"
+  }
+ ],
+ "set_moves": [
+  "S06b",
+  "S15"
+ ],
+ "frames_ok": [
+  "S17"
+ ],
+ "framing_ok": [
+  "S02",
+  "S07",
+  "S15",
+  "S22",
+  "S25",
+  "S23a"
+ ],
+ "music": {
+  "root": 45,
+  "mode": "dorian",
+  "bpm": 104,
+  "seed": 137,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "bubble",
+     "pulse",
+     "pluck_hi"
+    ],
+    "energy": 0.5
+   },
+   {
+    "at": "L11",
+    "voices": [
+     "pad",
+     "pluck"
+    ],
+    "energy": 0.25
+   },
+   {
+    "at": "L16",
+    "voices": [
+     "drone",
+     "pad",
+     "pluck"
+    ],
+    "energy": 0.4
+   }
+  ]
+ },
+ "sound": {
+  "rev": 1,
+  "floor": "gravel",
+  "steps_db": -22,
+  "ambience": [
+   {
+    "kind": "water",
+    "from": 0,
+    "to": "end",
+    "lufs": -42
+   },
+   {
+    "kind": "wind",
+    "from": "L11",
+    "to": "L15",
+    "lufs": -44
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L06.5-0.15",
+    "kind": "knock",
+    "db": -18,
+    "pattern": [
+     0
+    ],
+    "tone": "hand"
+   },
+   {
+    "at": "L04+0.3",
+    "kind": "thud",
+    "db": -22,
+    "pattern": [
+     0
+    ]
+   },
+   {
+    "at": "L14+0.2",
+    "kind": "latch",
+    "db": -20,
+    "pattern": [
+     0
+    ]
+   },
+   {
+    "at": "L17+0.5",
+    "kind": "creak",
+    "db": -24,
+    "pattern": [
+     0
+    ]
+   },
+   {
+    "at": "L19+0.1",
+    "kind": "knock",
+    "db": -20,
+    "pattern": [
+     0
+    ],
+    "tone": "hand"
+   }
+  ],
+  "music_drops": [
+   [
+    "P1",
+    "P1>"
+   ]
+  ]
+ },
+ "rev": 6
+}
