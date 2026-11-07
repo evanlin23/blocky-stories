@@ -50,14 +50,14 @@
    ]
   },
   "L03": {
-   "text": "you shout it off the edge, and three seconds later, your own voice answers.",
+   "text": "you send it off the edge, and three seconds later, your own voice answers.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.155,
+   "dur": 3.103,
    "onset": 0.172,
-   "end": 2.966,
+   "end": 2.914,
    "chunks": [
     [
      0.172,
@@ -69,19 +69,19 @@
     ],
     [
      1.086,
-     1.638
+     1.603
     ],
     [
-     1.638,
-     1.845
+     1.603,
+     1.793
     ],
     [
-     1.87,
-     2.345
+     1.819,
+     2.293
     ],
     [
-     2.345,
-     2.966
+     2.293,
+     2.914
     ]
    ]
   },
@@ -110,34 +110,34 @@
    ]
   },
   "L05": {
-   "text": "one. two. three. rosa. open on sundays.",
+   "text": "one... two... three... rosa. open on sundays.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.328,
+   "dur": 2.534,
    "onset": 0.172,
-   "end": 2.121,
+   "end": 2.328,
    "chunks": [
     [
      0.172,
      0.31
     ],
     [
-     0.345,
-     0.5
+     0.379,
+     0.534
     ],
     [
-     0.543,
-     0.741
+     0.629,
+     0.914
     ],
     [
-     0.793,
-     1.052
+     1.017,
+     1.276
     ],
     [
-     1.103,
-     2.121
+     1.31,
+     2.328
     ]
    ]
   },
@@ -194,34 +194,34 @@
    ]
   },
   "L08": {
-   "text": "one. two. three. kofi. take it.",
+   "text": "one... two... three... kofi. take it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
+   "dur": 1.948,
    "onset": 0.172,
-   "end": 1.552,
+   "end": 1.759,
    "chunks": [
     [
      0.172,
-     0.293
+     0.31
     ],
     [
-     0.328,
-     0.466
+     0.379,
+     0.534
     ],
     [
-     0.509,
-     0.69
+     0.612,
+     0.845
     ],
     [
-     0.724,
-     0.966
+     0.931,
+     1.172
     ],
     [
-     1.0,
-     1.552
+     1.207,
+     1.759
     ]
    ]
   },
@@ -274,34 +274,34 @@
    ]
   },
   "L11": {
-   "text": "one. two. three. walter. turn around.",
+   "text": "one... two... three... walter. turn around.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.0,
+   "dur": 2.19,
    "onset": 0.172,
-   "end": 1.793,
+   "end": 1.983,
    "chunks": [
     [
      0.172,
-     0.293
+     0.31
     ],
     [
-     0.328,
-     0.483
+     0.379,
+     0.534
     ],
     [
-     0.526,
-     0.759
+     0.612,
+     0.862
     ],
     [
-     0.81,
-     1.069
+     0.966,
+     1.224
     ],
     [
-     1.103,
-     1.793
+     1.259,
+     1.983
     ]
    ]
   },
@@ -610,26 +610,26 @@
    ]
   },
   "L25": {
-   "text": "one. two. three.",
+   "text": "one... two... three...",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.276,
+   "dur": 1.431,
    "onset": 0.172,
-   "end": 1.069,
+   "end": 1.19,
    "chunks": [
     [
      0.172,
-     0.328
+     0.362
     ],
     [
-     0.37,
-     0.534
+     0.431,
+     0.603
     ],
     [
-     0.578,
-     1.069
+     0.698,
+     1.19
     ]
    ]
   },

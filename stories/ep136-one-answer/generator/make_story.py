@@ -144,11 +144,11 @@ ZR = G.ROCK_Z
 def rock_cam(n, w=11.0, push=True):
     """Looks south at rock n from over the lot, framing it w metres wide."""
     x = ROCKS[n - 1]
-    tgt = (x, G.WALL_Y, ZR)
+    tgt = (x, G.WALL_Y, ZR - 2.6)
     lens = 36
     d = w * lens / 13.5
-    pos = (x, G.WALL_Y + d, 2.2)
-    return camp(pos, tgt, lens, pos2=(x, G.WALL_Y + d * 0.93, 2.3) if push else None)
+    pos = (x, G.WALL_Y + d, 1.6)
+    return camp(pos, tgt, lens, pos2=(x, G.WALL_Y + d * 0.93, 1.7) if push else None)
 
 
 def hidden_all(at, but=()):
@@ -165,16 +165,18 @@ cue(0, "sit", me=0.0)
 cue(0, "post", x=G.POST_RAIL[0], y=G.POST_RAIL[1])
 cue(0, "dusk", v=0.0)
 cue(0, "show", car=0.0, loaf=0.0, pane=0.0, rim=0.0)
+cue(0, "shout", me=0.0, ruiz=0.0, kofi=0.0, bell=0.0)
 
 # ===== 01 the rule (L01, L02)
-shot("S01a", 0, cam(0.38, ST[1], 1.62, 1.9, 0, 36, cz=1.62, push=(1.75, 1.62)))
-shot("S01b", "L01.2", cam(G.POST_RAIL[0], G.POST_RAIL[1], 1.95, 1.6, 0, 36, cz=1.95, push=(1.35, 1.95)))
+shot("S01a", 0, cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.65, 1.62)))
+shot("S01b", "L01.2", cam(G.POST_RAIL[0], G.POST_RAIL[1], 1.6, 1.7, 0, 36, cz=1.6, push=(1.45, 1.6)))
 key("me", "L01.2", expr="neutral")
-shot("S02", "L02", camp([-3.0, 4.5, 2.4], [0, G.WALL_Y, 6.5], 24, pos2=[3.0, 4.5, 2.6], tgt2=[0, G.WALL_Y, 7.0]))
+shot("S02", "L02", camp([-4.0, 4.5, 2.4], [0, G.WALL_Y, 6.5], 24, pos2=[-1.5, 4.5, 2.6], tgt2=[0, G.WALL_Y, 7.0]))
 shot("S03a", "L03", cam(0.38, ST[1], 1.62, 1.9, 0, 36, cz=1.62, push=(1.7, 1.62)))
-mouth("me", "L03", "L03.3", 0.9)
+cue("L03", "shout", me=1.0)
+cue("L03.3", "shout", me=0.0)
 key("me", "L03", expr="shout")
-shot("S03b", "L03.3", camp([0.0, 12.0, 2.2], [0, G.WALL_Y, 6.0], 22, pos2=[0.0, 10.5, 2.3]))
+shot("S03b", "L03.3", camp([0.0, 5.5, 4.4], [0, G.WALL_Y, 5.0], 20, pos2=[0.0, 4.5, 4.4]))
 key("me", "L03.3", expr="neutral")
 
 # ===== 02 the rule at work (L04 to L12): three people, each alone at the railing
@@ -183,7 +185,8 @@ key("me", "L03.3", expr="neutral")
 # Mrs. Ruiz
 cut("me", "L04", ST, hidden=True)
 cut("ruiz", "L04", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
-mouth("ruiz", "L04", "L04>", 0.85)
+cue("L04", "shout", ruiz=1.0)
+cue("L05", "shout", ruiz=0.0)
 shot("S04", "L04", cam(0.0, ST[1], 1.6, 1.75, 4, 36, cz=1.62, push=(1.6, 1.62)))
 key("ruiz", "L05", expr="neutral")
 shot("S05a", "L05", rock_cam(1))
@@ -199,7 +202,8 @@ cue("L07", "show", loaf=0.0)
 # Kofi
 cut("ruiz", "L07", ST, hidden=True, arms=[0, 0])
 cut("kofi", "L07", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
-mouth("kofi", "L07", "L07>", 0.85)
+cue("L07", "shout", kofi=1.0)
+cue("L08", "shout", kofi=0.0)
 shot("S07", "L07", cam(0.0, ST[1], 1.6, 1.75, -4, 36, cz=1.62, push=(1.6, 1.62)))
 key("kofi", "L08", expr="neutral")
 shot("S08a", "L08", rock_cam(1))
@@ -214,7 +218,8 @@ shot("S09", "L09", cam(0.0, ST[1], 1.6, 1.7, -3, 36, cz=1.62, push=(1.55, 1.62))
 # Mr. Bell
 cut("kofi", "L10", ST, hidden=True)
 cut("bell", "L10", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
-mouth("bell", "L10", "L10>", 0.85)
+cue("L10", "shout", bell=1.0)
+cue("L11", "shout", bell=0.0)
 shot("S10", "L10", cam(0.0, ST[1], 1.6, 1.75, 3, 36, cz=1.62, push=(1.6, 1.62)))
 key("bell", "L11", expr="neutral")
 shot("S11a", "L11", rock_cam(1))
@@ -226,33 +231,35 @@ cut("bell", "L11.3", ST, yaw=0, expr="neutral", head=[0, 0])
 cue("L11.3", "show", car=1.0)
 key("bell", "L11.3+0.25", ST, yaw=180, expr="wide", blend=0.65)
 key("bell", "L11.4", expr="laugh", blend=0.3)
-shot("S11e", "L11.3", camp([0.9, 9.6, 2.7], [0.0, ST[1], 1.5], 36, pos2=[0.7, 8.8, 2.6], tgt2=[0.0, ST[1], 1.55]))
+shot("S11e", "L11.3", camp([0.7, 9.6, 3.8], [0.0, ST[1], 1.25], 70, pos2=[0.6, 9.0, 3.8], tgt2=[0.0, ST[1], 1.3]))
 cue("L12", "show", car=0.0)
 shot("S12", "L12", rock_cam(3, 8.0))
 
 # ===== 03 my turn (L13 to L22)
 cut("bell", "L12", ST, hidden=True)
 cut("me", "L13", ST, yaw=0, expr="smile", hidden=False, head=[0, 0])
-shot("S13", "L13", cam(0.38, ST[1], 1.62, 1.9, 0, 36, cz=1.62, push=(1.75, 1.62)))
+shot("S13", "L13", cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.65, 1.62)))
 key("me", "L14", expr="neutral")
-shot("S14", "L14", cam(1.0, ST[1], 1.45, 3.6, 0, 36, cz=1.5, push=(3.3, 1.5)))
+shot("S14", "L14", cam(0.72, ST[1], 1.5, 2.2, 0, 36, cz=1.6, push=(2.05, 1.55)))
 key("me", "L15", expr="uneasy")
 shot("S15", "L15", cam(0.32, ST[1], 1.62, 1.5, -3, 36, cz=1.62, push=(1.35, 1.62)))
 key("me", "L16", expr="uneasy")
 key("me", "L16.2", expr="stunned")
 shot("S16", "L16", cam(0.32, ST[1], 1.62, 1.5, 3, 36, cz=1.62, push=(1.35, 1.62)))
 key("me", "L17", expr="shout")
-mouth("me", "L17", "L17>", 0.9)
-shot("S17", "L17", cam(0.38, ST[1], 1.62, 1.9, 0, 36, cz=1.62, push=(1.75, 1.62)))
+cue("L17", "shout", me=1.0)
+cue("L18", "shout", me=0.0)
+shot("S17", "L17", cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.65, 1.62)))
 key("me", "L18", expr="neutral")
 shot("S18", "L18", rock_cam(1, 11.0))
 key("me", "L19", expr="shout")
-mouth("me", "L19", "P1>", 1.0, flap=False)
+cue("L19", "shout", me=1.0)
+cue("L20", "shout", me=0.0)
 shot("S19", "L19", cam(0.0, ST[1], 1.62, 1.1, 0, 36, cz=1.62, push=(1.0, 1.62)))
-shot("S19b", "P1", camp([0.0, 3.0, 2.4], [0, G.WALL_Y, 7.0], 26, pos2=[0.0, 1.0, 2.5]))
+shot("S19b", "P1", camp([-2.6, 3.5, 2.4], [0, G.WALL_Y, 6.0], 24, pos2=[-1.6, 2.0, 2.5]))
 key("me", "L20", expr="scared")
 shot("S20", "L20", cam(0.0, ST[1], 1.62, 1.3, 0, 36, cz=1.62, push=(1.15, 1.62)))
-shot("S21", "L21", camp([2.0, 6.0, 3.0], [0, G.WALL_Y, 8.0], 24, pos2=[1.0, 2.0, 2.8], tgt2=[0, G.WALL_Y, 8.0]))
+shot("S21", "L21", camp([-3.0, 6.0, 3.0], [0, G.WALL_Y, 7.0], 24, pos2=[-2.0, 3.0, 2.8], tgt2=[0, G.WALL_Y, 7.0]))
 key("me", "L22", expr="uneasy")
 shot("S22", "L22", cam(0.32, ST[1], 1.62, 1.5, 2, 36, cz=1.62, push=(1.35, 1.62)))
 
@@ -260,24 +267,24 @@ shot("S22", "L22", cam(0.32, ST[1], 1.62, 1.5, 2, 36, cz=1.62, push=(1.35, 1.62)
 cut("me", "L23", [SX[0], SX[1], SX[2]], yaw=0, expr="uneasy", head=[0, 0])
 cue("L23", "sit", me=1.0)
 cue("L23", "dusk", v=1.0, dur=1.5)
-shot("S23a", "L23", camp([6.5, -2.2, 4.2], [G.XT - 0.3, 5.6, 1.3], 22, pos2=[6.2, -1.4, 4.1]))
+shot("S23a", "L23", camp([-2.2, -2.6, 3.2], [G.XT - 0.9, 4.6, 1.2], 20, pos2=[-1.9, -2.0, 3.1]))
 key("me", "L23.1", expr="uneasy")
 cue("L23.1", "post", x=G.POST_BEHIND[0], y=G.POST_BEHIND[1])
-shot("S23b", "L23.1", cam(G.XT - 0.2, G.YT, 1.4, 2.5, 0, 36, cz=1.6, push=(2.3, 1.45)))
+shot("S23b", "L23.1", cam(G.XT - 0.2, G.YT, 1.2, 2.0, 0, 36, cz=1.6, push=(1.85, 1.25)))
 key("me", "L24", expr="scared")
 mouth("me", "L24", "L24>", 0.35)
-shot("S24", "L24", cam(SX[0], G.YT, 1.55, 1.1, 0, 36, cz=1.55, push=(1.0, 1.55)))
+shot("S24", "L24", cam(SX[0], G.YT, 1.35, 1.15, 0, 36, cz=1.6, push=(1.05, 1.4)))
 # three rocks at dusk, seen from the cab
 def cab_rock(n):
     x = ROCKS[n - 1]
-    return camp([SX[0], SX[1] + 0.3, 1.7], [x, G.WALL_Y, ZR - 0.5], 36, pos2=[SX[0], SX[1] + 0.1, 1.7])
+    return camp([G.XT + 0.35, SX[1] + 0.4, 1.75], [x, G.WALL_Y, ZR - 2.6], 36, pos2=[G.XT + 0.35, SX[1] + 0.2, 1.75])
 
 
 shot("S25a", "L25", cab_rock(1))
 shot("S25b", "L25.1", cab_rock(2))
 shot("S25c", "L25.2", cab_rock(3))
 key("me", "L26", expr="stunned")
-shot("S26", "L26", cam(G.XT - 0.05, G.YT, 1.55, 1.85, 0, 36, cz=1.55, push=(1.7, 1.55)))
+shot("S26", "L26", cam(G.XT - 0.1, G.YT, 1.35, 1.45, 0, 36, cz=1.65, push=(1.35, 1.4)))
 
 # ===== 05 no answer (L27 to L32)
 cue("L27", "post", x=G.POST_AHEAD[0], y=G.POST_AHEAD[1])
@@ -288,12 +295,12 @@ shot("S27", "L27", camp([SX[0] + 0.4, SX[1] + 0.6, 1.62], [G.POST_AHEAD[0], G.PO
 shot("S28", "L28", camp([G.POST_AHEAD[0] + 0.1, G.POST_AHEAD[1] + 2.6, 1.85], [G.POST_AHEAD[0], G.POST_AHEAD[1], 2.0],
                         36, pos2=[G.POST_AHEAD[0] + 0.1, G.POST_AHEAD[1] + 2.2, 1.9]))
 cue("L29", "show", pane=1.0)
-shot("S29", "L29", camp([G.XT + 0.7, G.YT - 0.1, 1.66], [G.XT - 1.0, G.YT - 0.1, 1.66], 20,
-                        pos2=[G.XT + 0.6, G.YT - 0.1, 1.66]))
+shot("S29", "L29", camp([G.XT + 0.8, G.YT - 0.1, 1.5], [G.XT - 1.0, G.YT - 0.1, 1.5], 14,
+                        pos2=[G.XT + 0.7, G.YT - 0.1, 1.5]))
 cue("L30", "show", pane=0.0)
 cut("me", "L30", [*SX], yaw=0, expr="scared", head=[0, 0], hidden=False)
 key("me", "L30.0+0.2", expr="scared", head=[-62, 0], blend=0.6)
-shot("S30", "L30", cam(SX[0], G.YT, 1.55, 1.1, 0, 36, cz=1.55, push=(1.0, 1.55)))
+shot("S30", "L30", cam(SX[0], G.YT, 1.35, 1.15, 0, 36, cz=1.6, push=(1.05, 1.4)))
 cue("L31", "post", x=G.POST_AHEAD[0], y=G.POST_AHEAD[1])
 cut("me", "L31", [*SX], hidden=True)
 shot("S31a", "L31", rock_cam(1, 11.0))
@@ -302,7 +309,7 @@ shot("S31b", "L31.1", camp([SX[0] + 0.4, SX[1] + 0.6, 1.62], [G.POST_AHEAD[0], G
 cue("L32", "post", x=G.POST_BEHIND[0], y=G.POST_BEHIND[1])
 cue("L32", "show", rim=0.0)
 cut("me", "L32", [*SX], yaw=0, expr="scared", head=[0, 0], hidden=False)
-shot("S32", "L32", cam(G.XT - 0.05 + 0.0, G.YT, 1.55, 1.85, 0, 36, cz=1.55, push=(1.7, 1.55)))
+shot("S32", "L32", cam(G.XT - 0.1, G.YT, 1.35, 1.45, 0, 36, cz=1.65, push=(1.35, 1.4)))
 
 # ------------------------------------------------------------------------------------------------ finish
 remap_all(cues)
@@ -360,7 +367,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "rev": REV + 1,
-    "look": {"style": "closer", "fog": "#e8d8c0", "fog_density": 0.0008, "fog_start": 60.0, "sky": "#8fd0ff",
+    "look": {"style": "closer", "fog": "#e8d8c0", "fog_density": 0.0008, "fog_start": 60.0, "sky": "#c8dcf0",
              "sky_strength": 1.0, "exposure": 0.05, "flash_safe": True, "polish": polish},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.012, -0.02], "saturation": 1.06, "contrast": 1.04,
               "vignette": 0.15, "bloom": 0.15, "grain": 0.008},
@@ -373,7 +380,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": [],
+    "framing_ok": ["S02", "S05c", "S12", "S18", "S21", "S31a"],   # the clue rocks and the far wall: no person on purpose
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

@@ -20,9 +20,10 @@ import layout as G  # noqa: E402
 W = {}
 SIT = -math.pi / 2 * 0.97
 SEATED = ("me",)
-GOLD_KEY, DUSK_KEY = "#ffd9a0", "#9a82e8"
-GOLD_FACE, DUSK_FACE = "#fff0dc", "#c0b0f8"
-GOLD_SKY, DUSK_SKY = "#8fd0ff", "#7a6cc0"
+MOUTH_Z = -0.4
+GOLD_KEY, DUSK_KEY = "#ffd9a0", "#c898d8"
+GOLD_FACE, DUSK_FACE = "#fff0dc", "#d8c8ff"
+GOLD_SKY, DUSK_SKY = "#c8dcf0", "#8a7cc8"
 
 
 def ss(x):
@@ -99,18 +100,17 @@ def build_post(kit):
     root = kit.empty("post", (G.POST_RAIL[0], G.POST_RAIL[1], 0))
     W["post"] = root
     wood = pl("#5e3a1e", 0.85, spec=0.04)
-    cream = pl("#fff2d0", 0.7, spec=0.05)
-    kit.box("post.body", (0.8, 0.8, 3.1), (0, 0, 1.55), wood, root)
-    kit.box("post.cap", (0.9, 0.9, 0.1), (0, 0, 3.15), pl("#7a5332", 0.8), root)
+    cream = pl("#e8d29a", 0.7, spec=0.05)
+    kit.box("post.body", (0.8, 0.8, 2.7), (0, 0, 1.35), wood, root)
+    kit.box("post.cap", (0.9, 0.9, 0.1), (0, 0, 2.75), pl("#7a5332", 0.8), root)
     for face in (-1, 1):                       # -1: the south face (seen from the canyon side), +1: the north face
         yy = face * 0.425
         m = -face                              # a viewer on the south side has +x to the right; on the north, -x
-        kit.box(f"post.one{face}.stem", (0.24, 0.07, 1.62), (m * 0.03, yy, 2.0), cream, root)
-        kit.box(f"post.one{face}.flag", (0.4, 0.07, 0.19), (m * -0.17, yy, 2.66), cream, root,
-                rot=(0, m * 0.62, 0))
-        kit.box(f"post.one{face}.base", (0.66, 0.07, 0.16), (0, yy, 1.28), cream, root)
+        kit.box(f"post.one{face}.stem", (0.22, 0.07, 1.4), (m * 0.03, face * 0.425, 1.58), cream, root)
+        kit.box(f"post.one{face}.flag", (0.38, 0.07, 0.17), (m * -0.17, face * 0.44, 2.17), cream, root, rot=(0, m * 0.62, 0))
+        kit.box(f"post.one{face}.base", (0.56, 0.07, 0.15), (0, face * 0.44, 0.9), cream, root)
     rim = pl("#ffd9a0", 0.6)
-    W["rim"] = [kit.box(f"post.rim{sx}{sy}", (0.06, 0.06, 3.0), (sx * 0.42, sy * 0.42, 1.55), rim, root)
+    W["rim"] = [kit.box(f"post.rim{sx}{sy}", (0.06, 0.06, 2.6), (sx * 0.42, sy * 0.42, 1.35), rim, root)
                 for sx in (-1, 1) for sy in (-1, 1)]
 
 
@@ -153,12 +153,10 @@ def build_truck(kit):
     b("floor", (1.96, 2.0, 0.08), (0, -0.1, 0.5), pl("#4a4a54", 0.8))
     for sx in (-1, 1):
         b(f"door{sx}", (0.08, 2.0, 0.7), (sx * 0.99, -0.1, 0.85), teal, 0.02)
-        b(f"apil{sx}", (0.12, 0.14, 1.1), (sx * 0.95, -1.05, 1.7), teal)
-        b(f"cpil{sx}", (0.12, 0.14, 1.1), (sx * 0.95, 0.85, 1.7), teal)
-    b("roof", (2.1, 2.2, 0.12), (0, -0.1, 2.26), teal, 0.03)
+        b(f"apil{sx}", (0.12, 0.14, 0.9), (sx * 0.95, -1.05, 1.6), teal)
+        b(f"cpil{sx}", (0.12, 0.14, 0.9), (sx * 0.95, 0.85, 1.6), teal)
     b("dash", (1.9, 0.4, 0.2), (0, -0.8, 1.05), dark, 0.03)
     b("cabback", (1.9, 0.12, 0.8), (0, 0.85, 0.95), teal)
-    kit.cyl("truck.wheel.steer", 0.19, 0.04, (G.SEAT[0] - G.XT, -0.52, 1.28), dark, root, rot=(0.95, 0, 0), n=18)
     # seats: a cushion and a low back each (the back stays below the shoulders so the post shows past a head)
     for sx in (-0.45, 0.45):
         b(f"seat{sx}", (0.72, 0.62, 0.22), (sx, 0.15, 0.51), seatc, 0.03)
@@ -175,12 +173,12 @@ def build_truck(kit):
                     rot=(0, math.pi / 2, 0), n=12)
     # the knock window: a pale violet pane in the west door and a dark shoulder-high shape outside it, both hidden
     # until the cue "show" pane=1 (they are on a cut, never flashed)
-    pane = kit.box("truck.pane", (0.03, 1.55, 0.95), (-0.99, -0.1, 1.64), kit.emit("#8f84d8", 0.55), root)
+    pane = kit.box("truck.pane", (0.03, 1.55, 0.95), (-0.99, -0.1, 1.64), kit.emit("#a89ae0", 0.6), root)
     sh = pl("#0b0916", 0.9, spec=0.0)
-    parts = [kit.box("truck.shadow.torso", (0.06, 0.78, 0.5), (-1.06, -0.1, 1.38), sh, root),
-             kit.box("truck.shadow.shL", (0.06, 0.36, 0.2), (-1.06, -0.43, 1.53), sh, root, rot=(0.5, 0, 0)),
-             kit.box("truck.shadow.shR", (0.06, 0.36, 0.2), (-1.06, 0.23, 1.53), sh, root, rot=(-0.5, 0, 0)),
-             kit.box("truck.shadow.neck", (0.06, 0.2, 0.22), (-1.06, -0.1, 1.72), sh, root)]
+    xs = -0.955   # on the room side of the pane, 3.5 cm proud, so the cab camera sees it
+    parts = [kit.box("truck.shadow.torso", (0.04, 1.1, 0.5), (xs, -0.1, 1.4), sh, root),
+             kit.box("truck.shadow.sh", (0.04, 0.76, 0.14), (xs, -0.1, 1.71), sh, root),
+             kit.box("truck.shadow.neck", (0.04, 0.24, 0.2), (xs, -0.1, 1.86), sh, root)]
     W["pane"] = [pane] + parts
 
 
@@ -211,8 +209,19 @@ def build_car(kit):
     b("grille", (1.2, 0.1, 0.3), (0, -2.62, 0.82), chrome)
 
 
+def build_mouths(kit):
+    """An open shouting mouth for each head: a dark red oval, a little proud of the face. It is parented to the head
+    on the first animate (the cast exists only after build) and shown by the cue "shout" (per character, on cuts)."""
+    m = kit.plastic("#3a0c14", 0.8, spec=0.0)
+    W["mouth"] = {}
+    for who in ("me", "ruiz", "kofi", "bell"):
+        ob = kit.sphere(f"mouth.{who}", 1.0, (0, 0, -200), m, seg=14)
+        ob.scale = (0.3, 0.06, 0.22)
+        W["mouth"][who] = ob
+
+
 def build_loaf(kit):
-    loaf = kit.sphere("loaf", 0.34, (0, 0.92, -200), kit.plastic("#d9a05a", 0.8, spec=0.05), seg=18)
+    loaf = kit.sphere("loaf", 0.4, (0, 0.9, -200), kit.plastic("#eab870", 0.8, spec=0.05), seg=18)
     loaf.scale = (1.0, 0.95, 0.75)
     W["loaf"] = loaf
 
@@ -222,7 +231,7 @@ def build(kit, story, tl):
     tl["cues"].sort(key=lambda c: c["t"])
     # afternoon gold: a key from the north-west (lights the far wall, the rocks, the ground) and a no-shadow fill from
     # the south (lights faces and the bluff, which look the other way)
-    key = kit.light("key", "SUN", (-25, 22, 36), 4.3, GOLD_KEY, size=0.06)
+    key = kit.light("key", "SUN", (-14, 14, 46), 4.3, GOLD_KEY, size=0.06)
     key.data.angle = 0.06
     kit.aim(key, (0, 0, 0))
     face = kit.light("face", "SUN", (3, -20, 25), 2.4, GOLD_FACE, shadow=False)
@@ -235,6 +244,7 @@ def build(kit, story, tl):
     build_truck(kit)
     build_car(kit)
     build_loaf(kit)
+    build_mouths(kit)
     return {}
 
 
@@ -246,17 +256,26 @@ def animate(kit, story, tl, t, ctx):
     wd = bpy.context.scene.world
     if wd is not None and wd.node_tree is not None and "Background" in wd.node_tree.nodes:
         wd.node_tree.nodes["Background"].inputs["Color"].default_value = (*mix(GOLD_SKY, DUSK_SKY, d, kit), 1.0)
-    gains = {"key": 1.0 - 0.45 * d, "face": 1.0 - 0.2 * d}
+    gains = {"key": 1.0 - 0.25 * d, "face": 1.0 - 0.05 * d}
     # the post: placed by cue, on cuts
     ps = sample("post", tl, t, {"x": G.POST_RAIL[0], "y": G.POST_RAIL[1]})
     W["post"].location = (ps["x"], ps["y"], 0.0)
     sh = sample("show", tl, t, {"car": 0.0, "loaf": 0.0, "pane": 0.0, "rim": 0.0})
     W["car"].location = (G.CAR[0], G.CAR[1], 0.0 if sh["car"] > 0.5 else -200.0)
-    W["loaf"].location = (0.0, 0.92, 1.0 if sh["loaf"] > 0.5 else -200.0)
+    W["loaf"].location = (0.0, 0.9, 1.12 if sh["loaf"] > 0.5 else -200.0)
     for ob in W["pane"]:
         ob.hide_render = sh["pane"] < 0.5
     for ob in W["rim"]:
         ob.hide_render = sh["rim"] < 0.5
+    # shouting mouths: attached to their heads on every call (idempotent) and shown by cue
+    shout = sample("shout", tl, t, {n: 0.0 for n in W["mouth"]})
+    for who, ob in W["mouth"].items():
+        hg = bpy.data.objects.get(f"{who}.headg")
+        if hg is not None:
+            if ob.parent is not hg:
+                ob.parent = hg
+                ob.location = (0, -0.6, MOUTH_Z)
+            ob.hide_render = hg.hide_render or shout[who] < 0.5
     # seated: legs level while the character sits (eased over a cue's own dur)
     sit = sample("sit", tl, t, {n: 0.0 for n in SEATED})
     for who in SEATED:

@@ -36,8 +36,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "You shout it",
-    "you shout it"
+    "You send it",
+    "you send it"
    ],
    [
     "off the edge,",
@@ -85,15 +85,15 @@
   "chunks": [
    [
     "One.",
-    "one."
+    "one..."
    ],
    [
     "Two.",
-    "two."
+    "two..."
    ],
    [
     "Three.",
-    "three."
+    "three..."
    ],
    [
     "\"ROSA.",
@@ -143,15 +143,15 @@
   "chunks": [
    [
     "One.",
-    "one."
+    "one..."
    ],
    [
     "Two.",
-    "two."
+    "two..."
    ],
    [
     "Three.",
-    "three."
+    "three..."
    ],
    [
     "\"KOFI.",
@@ -197,15 +197,15 @@
   "chunks": [
    [
     "One.",
-    "one."
+    "one..."
    ],
    [
     "Two.",
-    "two."
+    "two..."
    ],
    [
     "Three.",
-    "three."
+    "three..."
    ],
    [
     "\"WALTER.",
@@ -430,15 +430,15 @@
   "chunks": [
    [
     "One.",
-    "one."
+    "one..."
    ],
    [
     "Two.",
-    "two."
+    "two..."
    ],
    [
     "THREE.",
-    "three."
+    "three..."
    ]
   ]
  },

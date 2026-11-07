@@ -5,11 +5,11 @@ hang over the gap; the bluff behind the lot is their backdrop."""
 
 RAIL_Y = 0.35
 ST = (0.0, 1.35)           # where Eli and every vignette person stands, behind the railing, facing the canyon (-y)
-POST_RAIL = (0.8, 0.45)    # the post at the railing, beside the person
+POST_RAIL = (0.95, 1.3)    # the post at the railing, beside the person
 WALL_Y = -34.0             # the far wall's face plane
-ROCK_X = (-8.0, 0.0, 8.0)  # the one-, two- and three-dot rocks
+ROCK_X = (8.0, 0.0, -8.0)  # the one-, two- and three-dot rocks (east is the left of a camera looking south)
 ROCK_Z = 6.2               # rock centre height
-XT, YT = 1.8, 8.0          # the pickup (nose toward the canyon, -y)
+XT, YT = 2.6, 8.0          # the pickup (nose toward the canyon, -y)
 SEAT = (XT - 0.45, YT + 0.15, 0.11)   # Eli's seat in the cab (x, y, z)
 POST_BEHIND = (XT + 0.45, YT + 3.7)   # the post when seen behind the truck
 POST_AHEAD = (XT - 0.1, YT - 3.9)     # the post when seen ahead through the windshield
