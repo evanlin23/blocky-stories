@@ -5,7 +5,7 @@ Branch `claude/batch15a-ep138-tomorrow-mirror` (batch 15a, interactive-lane pilo
 ## Where it stands
 - Round 1: standards revise, critic revise (6.8). All must-fixes applied; the mirror marker was rebuilt as world-fixed scene geometry (it had ridden on the camera).
 - Round 2: standards **approve**, critic **approve** (avg 7.2, all four clues read at phone size).
-- Hold removed; check, gate (OPEN), shardcheck, staging and pytest pass. PR open; waiting on the proof, then proof qa, then merge.
+- Hold removed; check, gate (OPEN), shardcheck, staging and pytest pass. PR #416. Proof run 42346838910 passed; proof qa PASS (qa/ep138-tomorrow-mirror.json). Merge once `test` is green. Proof qa should-fix: S25 punch-in pushes the chrome post out of frame for about 1 s.
 - Should-fixes (not blocking): S03's backward 12 can read as "51"; S04a/S21 mirror still a bit like window panes; S27 could push in; L08 and L20 both key "TWO".
 
 ## Queue spacing (standards r1)
