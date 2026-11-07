@@ -259,9 +259,10 @@ shot("S23a", "L23", fcam("R1", -0.85, 1.9, d=3.6, lens=30, f=0.38, dx=0.3), {
 talk("dad", "L23.1", "L23>")
 shot("S23b", "L23.1", fcam("R1", -0.85, 1.9, d=2.9, lens=30, f=0.38, dx=0.1, push=0.04, arc=1.0), {
     "dad": ps("R1", -0.85, 1.9, expr="smile", arms=(8, 8))})
-shot("S24", "L24", fcam("R7", *G.DAD_CON, d=3.0, lens=30, f=0.30, az=0, push=0.04, arc=0.0), {
+shot("S24", "L24", fcam("R7", *G.DAD_CON, d=3.0, lens=30, f=0.30, az=0, push=0.09, arc=0.0), {
     "dad": ps("R7", *G.DAD_CON, expr="warm", head=(6, 0), **CON_ARMS)})
-shot("S25", "L25", ocam("R1", -0.15, 2.55, 1.7, 2.6, 30, az=72, el=6, push=0.05, arc=1.0), {})
+chg("dad", "L24.1", blend=0.5, head=(-6, 8))
+shot("S25", "L25", ocam("R1", -0.15, 2.55, 1.7, 2.6, 30, az=72, el=6, push=0.12, arc=2.5), {})
 
 # ============================================================================================ 05 the scare
 HOLDER = G.HOLD
@@ -279,18 +280,22 @@ shot("S30a", "L30", fcam("R2", *HOLDER, d=2.9, lens=30, f=0.40, el=5, az=-3, pus
 shot("S30b", "L30.2", ocam("R2", 0.0, 0.83, 0.72, 1.5, 30, az=68, el=6, push=0.06, arc=1.0), {
     "me": ps("R2", *HOLDER, expr="scared", **BOX_ARMS)})
 shot("S31", "L31", ocam("R1", -2.3, 6.2, 0.1, 6.0, 24, az=180, el=3, push=0.06), {})
-shot("S32", "L32", fcam("R3", -0.58, 1.95, d=3.1, lens=30, f=0.42, dx=0.26, push=0.03, arc=0.8), {
+shot("S32", "L32", fcam("R3", -0.58, 1.95, d=3.1, lens=30, f=0.42, dx=0.26, push=0.06, arc=0.8, to=[G.ST["R3"] - 0.25, 1.95, 1.37]), {
     "me": ps("R3", -0.58, 1.95, expr="scared", arms=(10, 10), side=(-4, -4), head=(10, 0))})
+chg("me", "L32.1", blend=0.4, head=(-6, 6))
 
 # ============================================================================================ 06 thanksgiving
-shot("S33", "L33", fcam("R7B", *G.DAD_CON, d=2.7, lens=30, f=0.28, az=0, push=0.04, arc=0.0), {
+shot("S33", "L33", fcam("R7B", *G.DAD_CON, d=2.7, lens=30, f=0.28, az=0, push=0.07, arc=0.0), {
     "dad": ps("R7B", *G.DAD_CON, expr="smile", head=(-6, 0), **CON_ARMS)})
-shot("S34", "L34", ocam("R7B", 0.0, 1.9, 0.95, 2.6, 30, az=0, el=3, push=0.05, arc=0.0), {
+chg("dad", "L33.1", blend=0.5, head=(6, 8))
+shot("S34", "L34", ocam("R7B", 0.0, 1.9, 0.95, 2.6, 30, az=0, el=3, push=0.08, arc=0.0, to=[G.ST["R7B"], 1.9, 1.12]), {
     "dad": ps("R7B", *G.DAD_CON, expr="warm", head=(8, 6), **CON_ARMS)})
+chg("dad", "L34.1", blend=0.5, head=(-6, 10))
 MN = G.ME_SEAT
-shot("S35", "L35", fcam("R3N", *MN, z=-G.SEAT, d=4.4, lens=30, f=0.40, dx=-0.4, push=0.03, arc=0.8), {
+shot("S35", "L35", fcam("R3N", *MN, z=-G.SEAT, d=4.4, lens=30, f=0.40, dx=-0.4, push=0.06, arc=0.8), {
     "me": ps("R3N", *MN, expr="scared", seat=True, arms=(15, 15), side=(-6, -6))})
-shot("S36", "L36", ocam("R3N", -0.1, 2.55, 1.6, 3.0, 30, az=62, el=4, push=0.05, arc=1.0), {})
+chg("me", "L35.1", blend=0.4, head=(-8, 4))
+shot("S36", "L36", ocam("R3N", -0.1, 2.55, 1.6, 3.0, 30, az=62, el=4, push=0.12, arc=2.5), {})
 shot("S37", "L37", fcam("KB", 0.0, G.STAND_Y, d=3.2, lens=30, f=0.40), {
     "dad": ps("KB", 0.0, G.STAND_Y, expr="smile", arms=(40, 40), side=(-6, -6))})
 chg("dad", "L37.1", blend=0.4, head=(0, 6))
@@ -303,12 +308,15 @@ shot("S38b", "P01", ocam("R3", 0.0, 1.5, 1.3, 3.6, 22, el=3, push=0.05), {})
 shot("S39", "L39", fcam("R3", -2.3, 5.0, d=2.6, lens=28, f=0.42, push=0.02, arc=0.4), {
     "dad": ps("R3", -2.3, 5.0, yaw=0, expr="smile", arms=(6, 6))}, hand=0.004)
 ME_WIN = (0.6, 1.95)    # between the mantel box (left) and the window with the truck (right)
-shot("S40", "L40", fcam("R3", *ME_WIN, d=5.4, lens=30, f=0.40, dx=0.35, push=0.02, arc=0.6), {
+shot("S40", "L40", fcam("R3", *ME_WIN, d=5.4, lens=30, f=0.40, dx=0.35, push=0.05, arc=1.0, to=[G.ST["R3"] + 0.7, 1.95, 1.14]), {
     "me": ps("R3", *ME_WIN, expr="sheepish", head=(0, 0))})
-shot("S41", "L41", fcam("R3", *ME_WIN, d=3.8, lens=30, f=0.40, dx=-0.1, az=3, push=0.03, arc=0.8), {
+chg("me", "L40.1", blend=0.4, head=(-8, 4))
+shot("S41", "L41", fcam("R3", *ME_WIN, d=3.8, lens=30, f=0.40, dx=-0.1, az=3, push=0.06, arc=1.0, to=[G.ST["R3"] + 0.42, 1.95, 1.29]), {
     "me": ps("R3", *ME_WIN, expr="smile")})
-shot("S42", "L42", fcam("R3", *ME_WIN, d=3.3, lens=30, f=0.40, dx=-0.15, az=-3, push=0.03, arc=0.8), {
+chg("me", "L41.1", blend=0.4, head=(8, 4))
+shot("S42", "L42", fcam("R3", *ME_WIN, d=3.3, lens=30, f=0.40, dx=-0.15, az=-3, push=0.06, arc=1.0, to=[G.ST["R3"] + 0.36, 1.95, 1.32]), {
     "me": ps("R3", *ME_WIN, expr="uneasy", head=(0, 4))})
+chg("me", "L42.1", blend=0.4, head=(-8, 8))
 DAD_WIN = (0.85, 1.9)
 shot("S43a", "L43", fcam("R3", *DAD_WIN, d=3.2, lens=30, f=0.40, dx=-0.2), {
     "dad": ps("R3", *DAD_WIN, expr="stunned", look=(0.9, 0), head=(-20, 0))})
@@ -326,20 +334,24 @@ chg("dad", "L45.1", blend=0.3, head=(0, 8))
 ME_B = (0.9, 1.95)
 shot("S46", "L46", fcam("R6", *ME_B, d=3.4, lens=30, f=0.40, dx=-0.35), {
     "me": ps("R6", *ME_B, expr="scared", head=(0, 2))})
+chg("me", "L46.1", blend=0.4, head=(-8, 8))
 shot("S47", "L47", fcam("R6", *ME_B, d=3.2, lens=30, f=0.40, dx=0.0, az=-3, push=0.09), {
     "me": ps("R6", *ME_B, expr="sad", head=(0, 8))})
-shot("S48", "L48", ocam("KC", 0.0, 1.1, 1.2, 1.6, 30, az=0, el=22, push=0.08), {})
-shot("S49", "L49", ocam("KD", 0.0, 1.1, 1.2, 1.5, 30, az=-6, el=10, push=0.08), {})
+chg("me", "L47.2", blend=0.5, head=(8, 12))
+shot("S48", "L48", ocam("KC", 0.0, 1.1, 1.2, 1.6, 30, az=0, el=22, push=0.14, arc=3.0), {})
+shot("S49", "L49", ocam("KD", 0.0, 1.1, 1.2, 1.5, 30, az=-6, el=10, push=0.14, arc=3.0), {})
 shot("S50", "L50", ocam("KE", 0.0, 1.1, 1.0, 1.4, 30, az=0, el=70, push=0.06), {})
 shot("S51", "L51", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, push=0.07), {
     "dad": ps("KF", *G.KF_DAD, expr="warm", head=(0, 6), **KF_ARMS)})
 shot("S52", "L52", fcam("R6", *ME_B, d=3.0, lens=30, f=0.40, dx=-0.3), {
     "me": ps("R6", *ME_B, expr="stunned")})
+chg("me", "L52.1", blend=0.4, head=(-8, 6))
 
 # ============================================================================================ 09 the reveal
 shot("S53", "L53", ocam("R6", 0.0, 1.9, 1.45, 4.6, 26, el=3, push=0.06), {})
 shot("S54", "L54", fcam("R6", -0.7, 1.9, d=3.2, lens=30, f=0.40, dx=0.15), {
     "dad": ps("R6", -0.7, 1.9, expr="warm", head=(0, 3))})
+chg("dad", "L54.1", blend=0.5, head=(8, 8))
 shot("S55", "L55", ocam("R1", -2.3, 5.2, 0.8, 4.2, 30, az=168, el=30, push=0.07), {
     "me": ps("R1", -2.3, 5.4, z=-0.18, yaw=0, expr="neutral")})
 shot("S56", "L56", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, push=0.05), {
@@ -353,13 +365,17 @@ shot("S57", "L57", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, az=3, pu
 shot("S58", "L58", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, az=-3, push=0.07), {
     "dad": ps("KF", *G.KF_DAD, expr="warm", **KF_ARMS)})
 talk("dad", "L58.1", "L58>")
-shot("S59", "L59", fcam("R7O", *G.DAD_CON, d=3.0, lens=30, f=0.30, az=0, push=0.04, arc=0.0), {
+chg("dad", "L58.1", blend=0.5, head=(8, 8))
+shot("S59", "L59", fcam("R7O", *G.DAD_CON, d=3.0, lens=30, f=0.30, az=0, push=0.09, arc=0.0), {
     "dad": ps("R7O", *G.DAD_CON, expr="warm", head=(0, 4), **CON_ARMS)})
-shot("S60", "L60", ocam("R4", -0.15, 2.55, 1.62, 2.4, 30, az=72, el=8, push=0.05, arc=1.0), {})
+chg("dad", "L59.1", blend=0.5, head=(8, 10))
+shot("S60", "L60", ocam("R4", -0.15, 2.55, 1.62, 2.4, 30, az=72, el=8, push=0.12, arc=2.5), {})
 SIDE_L, SIDE_R = (-0.6, G.STAND_Y), (0.6, G.STAND_Y)
 CAKE_ARMS = dict(arms=(48, 48), side=(-6, -6))
-shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 4.8, 30, el=7, push=0.0, arc=0.5), {
+shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 4.8, 30, el=7, push=0.05, arc=1.0), {
     "me": ps("KG", *SIDE_L, expr="smile", **CAKE_ARMS), "dad": ps("KG", *SIDE_R, expr="smile", **CAKE_ARMS)})
+chg("me", "L61.1", blend=0.4, head=(10, 4))
+chg("dad", "L61.1", blend=0.4, head=(-10, 4))
 shot("S62", "L62", fcam("KG", *SIDE_L, d=2.9, lens=30, f=0.40, dx=0.2), {
     "me": ps("KG", *SIDE_L, expr="laugh", **CAKE_ARMS)})
 shot("S63", "L63", fcam("KG", *SIDE_R, d=2.9, lens=30, f=0.40, dx=-0.2, az=3), {
@@ -435,7 +451,7 @@ HOLDS = ["S11", "S21", "S61", "S53"]
 SWAYABLE = [{"id": n_} for (_a, _c, _s, _h, n_) in SH if n_ not in HOLDS]
 polish = {"emph": [remap(r) for r in ("L01.2", "L12.1", "L25.2", "L28.1", "L29.1", "L50", "L56.3")],
           "reveal": ["L50", "L56"], "twist": "L50", "camera": False,
-          "bed_kind": "room", "bed_drop_db": -3.0, "hold": HOLDS, "quiet": [["L65", "L67"]], "reframe_every": 0.7, "sway_amp": 0.006, "punch": 0.075, "punch_rate": 0.9,
+          "bed_kind": "room", "bed_drop_db": -3.0, "hold": HOLDS, "quiet": [["L65", "L67"]], "reframe_every": 0.7, "sway_amp": 0.010, "punch": 0.075, "punch_rate": 0.9,
           "sway": [sh["id"] for sh in SWAYABLE], "whoosh_cuts": False}
 story = {
     "slug": "ep129-gift-box",
