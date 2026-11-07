@@ -752,6 +752,96 @@ def test_mix_uses_samples_unless_the_story_turns_them_off(tmp_path):
     assert np.allclose(sound.mix(tl, st, vo)[0], rec)                  # deterministic, and back on after "false"
 
 
+def _ray_box(o, d, lo, hi):
+    """(distance, the face hit looks away from the ray) for a ray against an axis-aligned box, or None."""
+    t0, t1, n0, n1 = -math.inf, math.inf, None, None
+    for i in range(3):
+        if abs(d[i]) < 1e-12:
+            if not lo[i] <= o[i] <= hi[i]:
+                return None
+            continue
+        a, b = (lo[i] - o[i]) / d[i], (hi[i] - o[i]) / d[i]
+        na, nb = (i, -1), (i, 1)
+        if a > b:
+            a, b, na, nb = b, a, nb, na
+        if a > t0:
+            t0, n0 = a, na
+        if b < t1:
+            t1, n1 = b, nb
+    if t0 > t1 or t1 < 0:
+        return None
+    t, (ax, sgn) = (t0, n0) if t0 >= 0 else (t1, n1)
+    return t, sgn * d[ax] > 0
+
+
+def _rays(boxes, cam, target, lens=30.0, n=7):
+    """checks.cam_verdict's inputs for a synthetic set of boxes {name: (lo, hi)}: six axis rays and an n x n grid
+    through a 9:16 frame (24 mm sensor, vertical)."""
+    def cast(o, d, far=200.0):
+        hits = [(h[0], name, h[1]) for name, (lo, hi) in boxes.items() if (h := _ray_box(o, d, lo, hi)) and h[0] <= far]
+        return min(hits) if hits else None
+    axis = []
+    for v in ((1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)):
+        h = cast(cam, v)
+        axis.append((h[1], h[2]) if h else (None, False))
+    f = [t - c for t, c in zip(target, cam)]
+    fl = math.sqrt(sum(x * x for x in f))
+    f = [x / fl for x in f]
+    r = [f[1], -f[0], 0.0]
+    rl = math.sqrt(sum(x * x for x in r)) or 1.0
+    r = [x / rl for x in r]
+    u = [r[1] * f[2] - r[2] * f[1], r[2] * f[0] - r[0] * f[2], r[0] * f[1] - r[1] * f[0]]
+    hh = 12.0 / lens
+    hw = hh * 9 / 16
+    grid = []
+    for i in range(n):
+        for j in range(n):
+            x, y = ((i + 0.5) / n * 2 - 1) * hw, ((j + 0.5) / n * 2 - 1) * hh
+            d = [f[k] + x * r[k] + y * u[k] for k in range(3)]
+            dl = math.sqrt(sum(q * q for q in d))
+            h = cast(cam, [q / dl for q in d], 3.0)
+            grid.append(h if h else (None, None, False))
+    return axis, grid
+
+
+def test_camera_inside_a_mesh_or_behind_a_near_wall_is_found():
+    """A synthetic set: a closed cabinet, a thin wall with a window frame, a head. The check finds a camera inside
+    the cabinet and one parked 0.1 m behind the wall looking at it (ep120 S67: 9 blank cream frames), and passes a
+    normal shot and a face close-up from 0.35 m."""
+    boxes = {"cabinet": ((-1, -1, 0), (1, 1, 2)), "wall": ((-5, 4.0, 0), (5, 4.1, 3)),
+             "head": ((2.85, -0.15, 1.4), (3.15, 0.15, 1.7))}
+    inside = checks.cam_verdict(*_rays(boxes, (0, 0, 1), (0, 3, 1)))
+    assert inside and inside["kind"] == "inside" and inside["what"] == "cabinet"
+    # a house with no floor: from inside, the ray down leaves through the open bottom (ep105 S139)
+    house = {"house": ((-3, -3, 0), (3, 3, 3))}
+    axis, grid = _rays(house, (0, 0, 1.5), (0, 3, 1.5))
+    axis[5] = ("lawn", False)
+    assert checks.cam_verdict(axis, grid)["kind"] == "inside"
+    wall = checks.cam_verdict(*_rays(boxes, (0, 3.9, 1.5), (0, 8, 1.5)))
+    assert wall and wall["kind"] == "wall" and wall["what"] == "wall" and wall["share"] >= checks.CAM_FILL
+    assert checks.cam_verdict(*_rays(boxes, (0, -4, 1.5), (0, 0, 1.5))) is None          # a wide of the cabinet
+    # outside a room, facing the back of its wall 2 m off (ep105 S85): one flat surface over the whole frame
+    flat = checks.cam_verdict(*_rays(boxes, (0, 6.1, 1.5), (0, 4.0, 1.5), lens=42))
+    assert flat and flat["kind"] == "flat" and flat["what"] == "wall"
+    # the same framing on a character's body is a close-up, not a blank
+    assert checks.cam_verdict(*_rays(boxes, (0, 6.1, 1.5), (0, 4.0, 1.5), lens=42), cast=["wall"]) is None
+    assert checks.cam_verdict(*_rays(boxes, (3, -0.5, 1.55), (3, 0, 1.55), lens=40), cast=["head"]) is None   # a face close-up
+    # where the check looks: each shot's first and last frame and its camera keys, on exact frame times
+    tl = timeline.build(tiny_story(shots=[{"id": "S1", "cam": [[0, [0, -3, 1.5], [0, 0, 1.5], 30], [0.5, [0, -2, 1.5], [0, 0, 1.5], 30],
+                                                           [1, [0, -1, 1.5], [0, 0, 1.5], 30]]},
+                                          {"id": "S2", "at": "L02", "cam": [[0, [0, -2, 1.5], [0, 0, 1.5], 40]]}]), tiny_voice())
+    ts = checks.cam_times(tl, tiny_story(shots=[{"id": "S1", "cam": [[0], [0.5], [1]]}, {"id": "S2", "cam": [[0]]}]))
+    s1, s2 = tl["shots"]
+    assert [t for t, s in ts if s == "S1"] == [s1["f0"] / 30, round((s1["start"] + 0.5 * (s1["end"] - s1["start"])) * 30) / 30,
+                                               (s1["f1"] - 1) / 30]
+    assert all(timeline.shot_at(tl, t)["id"] == s for t, s in ts)
+    # report lines, and story.json cam_ok
+    hits = [{"t": 88.3, "shot": "S67", "kind": "wall", "what": "shop.winglow", "share": 1.0}]
+    assert checks.cam_problems(hits) == ["S67 88.30 s: shop fills the frame right in front of the lens (blank frames: "
+                                         "move the camera key)"]
+    assert checks.cam_problems(hits, ["S67"]) == [] and checks.cam_problems(hits, ["S67/shop"]) == []
+
+
 def test_the_rule_tag_sits_past_the_near_plane_and_off_every_face():
     """ep120: the tag hung 1.0 m off the camera, so a close-up nearer than that hid it; ep116 S17: it sat over a
     face. The engine places it at hud.DEPTH_K clip_starts and mirrors it to the other top corner when that covers
