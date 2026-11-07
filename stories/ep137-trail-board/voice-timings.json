@@ -1,0 +1,713 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "every sunrise, our trail board paints a rule you have to obey.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.888,
+     1.483
+    ],
+    [
+     1.483,
+     1.931
+    ],
+    [
+     1.931,
+     2.155
+    ],
+    [
+     2.155,
+     2.776
+    ]
+   ]
+  },
+  "L02": {
+   "text": "it only paints at sunrise. never any other time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.207
+    ],
+    [
+     1.285,
+     1.594
+    ],
+    [
+     1.594,
+     2.31
+    ]
+   ]
+  },
+  "L03": {
+   "text": "today, dot hikes the east loop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.414,
+     0.768
+    ],
+    [
+     0.768,
+     1.5
+    ]
+   ]
+  },
+  "L04": {
+   "text": "she came back with a mushroom the size of her head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.147
+    ],
+    [
+     1.147,
+     1.526
+    ],
+    [
+     1.526,
+     2.069
+    ]
+   ]
+  },
+  "L05": {
+   "text": "today, marcus sits on the bench.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.448,
+     0.87
+    ],
+    [
+     0.87,
+     1.517
+    ]
+   ]
+  },
+  "L06": {
+   "text": "he sat. and his canoe, gone since spring, floated down the creek right to him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.379,
+   "onset": 0.172,
+   "end": 3.19,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     1.017
+    ],
+    [
+     1.052,
+     1.776
+    ],
+    [
+     1.854,
+     2.268
+    ],
+    [
+     2.268,
+     2.534
+    ],
+    [
+     2.534,
+     3.19
+    ]
+   ]
+  },
+  "L07": {
+   "text": "it never says why. just one line.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.81
+    ],
+    [
+     0.862,
+     1.724
+    ]
+   ]
+  },
+  "L08": {
+   "text": "my big sister june hikes here every sunday, and drags me, theo, along.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.379,
+   "onset": 0.172,
+   "end": 3.19,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.172
+    ],
+    [
+     1.172,
+     1.793
+    ],
+    [
+     1.862,
+     2.345
+    ],
+    [
+     2.379,
+     3.19
+    ]
+   ]
+  },
+  "L09": {
+   "text": "saturday, she said she's doing the creek path at dawn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.5,
+     0.741
+    ],
+    [
+     0.741,
+     1.061
+    ],
+    [
+     1.061,
+     1.509
+    ],
+    [
+     1.509,
+     2.086
+    ]
+   ]
+  },
+  "L10": {
+   "text": "there's no creek path. not on any map.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.914
+    ],
+    [
+     0.966,
+     1.147
+    ],
+    [
+     1.147,
+     1.741
+    ]
+   ]
+  },
+  "L11": {
+   "text": "then, at dusk, the board painted.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.534
+    ]
+   ]
+  },
+  "L12": {
+   "text": "tomorrow, theo doesn't walk the creek path.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.526,
+     1.147
+    ],
+    [
+     1.147,
+     1.879
+    ]
+   ]
+  },
+  "L13": {
+   "text": "it's never said tomorrow before.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.552
+    ]
+   ]
+  },
+  "L14": {
+   "text": "dot locks up at dusk. she saw it and said, somebody's been at my board.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.259,
+   "onset": 0.172,
+   "end": 3.052,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.103
+    ],
+    [
+     1.199,
+     1.543
+    ],
+    [
+     1.543,
+     1.828
+    ],
+    [
+     1.87,
+     2.301
+    ],
+    [
+     2.301,
+     3.052
+    ]
+   ]
+  },
+  "L15": {
+   "text": "i came back at sunrise.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.19,
+     0.629
+    ],
+    [
+     0.629,
+     1.345
+    ]
+   ]
+  },
+  "L16": {
+   "text": "and there it was. a path along the creek.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.672
+    ],
+    [
+     0.724,
+     1.008
+    ],
+    [
+     1.008,
+     1.759
+    ]
+   ]
+  },
+  "L17": {
+   "text": "june was already lacing her boots.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.19,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ],
+    [
+     0.759,
+     1.621
+    ]
+   ]
+  },
+  "L18": {
+   "text": "she said she'd dreamed it all week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.828
+    ],
+    [
+     0.828,
+     1.431
+    ]
+   ]
+  },
+  "L19": {
+   "text": "and the board had painted over itself. today, theo walks the creek path with june, so she comes home.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 4.259,
+   "onset": 0.172,
+   "end": 4.069,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.75
+    ],
+    [
+     0.75,
+     1.414
+    ],
+    [
+     1.492,
+     1.741
+    ],
+    [
+     1.793,
+     2.224
+    ],
+    [
+     2.224,
+     2.699
+    ],
+    [
+     2.699,
+     3.069
+    ],
+    [
+     3.103,
+     3.328
+    ],
+    [
+     3.328,
+     4.069
+    ]
+   ]
+  },
+  "L20": {
+   "text": "as if, without me, she doesn't.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.19,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.19,
+     0.414
+    ],
+    [
+     0.439,
+     0.793
+    ],
+    [
+     0.845,
+     1.466
+    ]
+   ]
+  },
+  "L21": {
+   "text": "it's never said why before.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.448
+    ]
+   ]
+  },
+  "L22": {
+   "text": "it filled the whole board.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.224
+    ]
+   ]
+  },
+  "L23": {
+   "text": "dot looked once at that path and said, that isn't ours.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.008
+    ],
+    [
+     1.008,
+     1.328
+    ],
+    [
+     1.397,
+     2.276
+    ]
+   ]
+  },
+  "L24": {
+   "text": "june's going, with or without me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.19,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.19,
+     0.707
+    ],
+    [
+     0.732,
+     0.922
+    ],
+    [
+     0.922,
+     1.534
+    ]
+   ]
+  },
+  "L25": {
+   "text": "last night's board, or this morning's.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.802,
+     1.621
+    ]
+   ]
+  },
+  "L26": {
+   "text": "both are its writing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     1.138
+    ]
+   ]
+  },
+  "L27": {
+   "text": "which board do i follow?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.276
+    ]
+   ]
+  }
+ }
+}
