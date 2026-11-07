@@ -1,0 +1,31 @@
+{
+ "stage": "proof",
+ "film": "proof-42349961633",
+ "run": 42349961633,
+ "sha": "a23ac42c52df16dbd91373f0d4447cb1a8ee1d7d",
+ "artifact": 13565698846,
+ "verdict": "pass",
+ "date": "2026-11-07",
+ "checked": [
+  "frames every 2 s at phone size",
+  "every frame 0-3 s",
+  "TV canvas 1920 wide",
+  "clue shots C1-C6",
+  "short shots under 0.5 s",
+  "clip.json",
+  "cover 36.4 s",
+  "first 3 s",
+  "loudness",
+  "4 kHz windows",
+  "drop and tail",
+  "polish",
+  "craft",
+  "flash",
+  "package",
+  "opening",
+  "gate",
+  "interactive lane: ending, pin, clues"
+ ],
+ "craft": "**ep136-one-answer**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 16.1 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 19.0 | 14.0– | ok |\n| macro.motion_energy_q | 6.81 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 11.89 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.39 | –2.5 | ok |\n| macro.longest_still_s | 0.3 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.43 | 1.5– | ok |\n| spec.camera_move_share | 0.998 | 0.65– | ok |\n| spec.punch_per_10s | 0.64 | 0.4– | ok |\n| macro.brightness_mean | 0.462 | 0.35– | ok |\n| macro.brightness_first_3s | 0.474 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.646 | 0.42– | ok |\n| macro.contrast_mean | 0.209 | 0.18– | ok |\n| spec.face_big_share | 0.535 | 0.4– | ok |\n| spec.caption_share | 0.975 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.533 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.021 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 86.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.09 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0401 | –0.08 | ok |\n| sound.hf_jump_max | 0.024 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Proof 270x480, 62.23 s, 1867 frames = timeline; sha a23ac42 is the branch head. Frames every 2 s, every frame of 0-3 s, every clue shot and every sub-0.5 s shot at phone size, plus TV canvas (38.6, 56.0 s): faces read, captions inside the safe band, nothing black, frozen, missing or intersecting; clip.json 0 hits; no stray text (only the post's 1 and the dots); no creature (the knocker is a still head-and-shoulders shadow on the glass, 55.5-60 s, reads creepy, not silly).\nSecond one: lit afternoon close-up, Eli (neutral) left third at the railing, the post's big cream 1 right, red-orange canyon behind, slow push into the 1 on 'ONE question.' (gold). Line 1 is the rule (cost), not a threat; the threat lands by 12 s ('WE'LL', alone in gold). Cover 36.4 s: Eli mid-shout at the railing beside the 1, 'Who's coming'. OK.\nClues at phone size: C1 the 1 fills the frame in S27/S28 (53-55.5 s) with 'ONE. Nobody gets TWO.' in gold; C2 'WE'LL' alone in gold 11.87-12.19 s over stunned Eli; C3 one cut per number to the 1/2/3-dot rocks in all three vignettes (17.0/17.45/17.85 s etc.), and L20 lands on Eli's face mouth-wide mid-shout (37.4-38.9 s), then the one-dot rock alone (41-42.5 s); C4 'ROSA.' 'KOFI.' 'WALTER.' each alone in gold, then 'MY name first.' 44.6 s; C5 dusk dot-rocks 49.5-51 s then 'ELI.' alone 50.99-51.25 s; C6 knock shadow + 'my NAME.' 57-58.3 s. All read.\nEnding: no answer; L31 'The FIRST came too fast. The SECOND shouldn't have come at ALL.' then 'Which echo do I TRUST?' on Eli to camera with the 1 through the windshield (loops to frame 1). Pin 'Comment 1 or 2. Which echo would you trust?'.\nAudio: -14.1 LUFS, -1.8 dBTP, LRA 1.4; 4 kHz share per 5 s 0.013-0.040, largest jump 0.024; voice 10.6 dB over the bed; the planned 0.6 s drop 40.3-41.0 s sits at -56 dB (bed held, not dead silent); L32 ends 61.96 s, nothing cut. Polish on: punch-ins on key words (ONE, WE'LL, THREE, TWO, TRUST), longest still 0.3 s, captions pop clean, shadows hold at dusk; the twist riser leads into L20 (the drop sits 3 s after, inside riser_gap, so it gets none; fine).\nFlash passes the house bar (general 1/s, 3f 2/s, red 0); verdict.json pass. Gate OPEN. Package: no spoiler, fiction note, no husband, made_for_kids false, lane interactive. Opening 'cost' matches L01; last upload ep92 is 'if'; ep136 isn't in queue.txt yet (batch 15a neighbours ep137 'must', ep138 'if').\nMinor (not a fail): the cab's steering wheel reads as a big pale disc low in S23b-S23c and S31b-S32 (47-48 s, 60-62 s); the truck sits right beside the post in S23a (46 s) rather than ten steps back.\ncraft: 0 block, 0 near, 1 warn: spec.cuts_per_10s 11.89 (5.5-8.0). Looked at the fast stretches (the counts 17-18.5, 23.5-25.2, 29.5-31.1, 49.5-51 s; S29 55.5 s; S32a 61 s): the cuts land on the spoken numbers and line chunks, clean, not jarring."
+}

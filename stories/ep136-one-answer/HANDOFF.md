@@ -1,6 +1,6 @@
 # ep136-one-answer: handoff (build session, batch 15a)
 
-STATUS: working. Approved, PR open, waiting on the proof.
+STATUS: proof qa passed (proof-42349961633). Merge once `test` is green.
 
 - Reviews:
   - r2: critic revise (7.0) and standards revise.
