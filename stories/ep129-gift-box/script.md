@@ -1,7 +1,7 @@
 # ep129-gift-box: the script (writer, 2026-11-06, batch 14)
 
 - **Slug:** `ep129-gift-box` (batch 14, upload order 3 of 6)
-- **Pitch:** 12 in the batch 14 pitch round (scratch file, not in the repo), picked by the panel (8.2 average across three blind critics, the top score). Engine: Pandora's box, where hope is what stays inside (myth, new to the channel). Opening shape `ban`. Lane: core. Waltgth arm: long.
+- **Pitch:** 12 in the batch 14 pitch round (scratch file, not in the repo), picked by the panel (8.2 average across three blind critics, the top score). Engine: Pandora's box, where hope is what stays inside (myth, new to the channel). Opening shape `ban`. Lane: core. Length arm: long.
 - **Title:** Dad Won't Open My PRESENT 🎁
 - **The batch's one sad family reveal, kept soft (panel note):** a dad and his grown boy who stopped talking properly for twelve years after a dumb fight. No death, illness or loss word anywhere. It ends warm: cake at the counter and a new box on the mantel.
 - **Batch 14 constraints, applied to every shot:**
@@ -14,7 +14,7 @@
 - **Word count:** 482 spoken words in 67 lines (L01 to L67), all `narrator`, plus one music drop (0.6 s before L39).
 - **Estimated length:** about 111 s at 290 wpm with 0.15 s gaps, the drop and the loop tail (the long arm).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Dad's bright front room in butter yellow and sky blue on summer afternoons: a white mantel, a big window onto the porch, sun on the floorboards. The box is wrapped in faded red paper with a wide cream ribbon cross and a bow.
-- **Hold:** scripts only (batch 14). Not built, not voiced.
+- **Hold:** none. Built, voiced and approved (critic and standards r3, batch 14).
 
 ## Variety table (batch 14)
 | Upload | Story | Setting | Strange thing | First-line type | Ending shape | Kind of warmth |
