@@ -1,21 +1,27 @@
 {
- "stage": "final",
- "film": 13310269956,
- "run": 41790680090,
+ "stage": "proof",
+ "film": "proof-42330520670",
+ "artifact": 13558866215,
+ "run": 42330520670,
+ "sha": "bd8c4b29420c43651847a3544e841247ede8d24f",
  "pass": true,
  "verdict": "pass",
- "date": "2026-11-04",
+ "date": "2026-11-07",
  "checked": [
   "frames",
+  "fixed shots S58 S99 S15 S82 S91/S92 (consecutive frames)",
   "first 3 s",
-  "fine detail (6 samples)",
   "loudness",
-  "music voices (no musicbox)",
+  "hf energy",
+  "polish",
   "craft",
   "flash",
-  "proof comparison"
+  "clip",
+  "package",
+  "opening",
+  "gate"
  ],
- "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 18.0 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 24.2 | 14.0– | ok |\n| macro.motion_energy_q | 9.42 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 8.09 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.04 | –0.25 | ok |\n| spec.shot_p90_s | 1.84 | –2.5 | ok |\n| macro.longest_still_s | 0.4 | –1.5 | ok |\n| macro.motion_energy_mean | 3.6 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.74 | 0.4– | ok |\n| macro.brightness_mean | 0.557 | 0.35– | ok |\n| macro.brightness_first_3s | 0.603 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.44 | 0.42– | ok |\n| macro.contrast_mean | 0.224 | 0.18– | ok |\n| spec.face_big_share | 0.449 | 0.4– | ok |\n| spec.caption_share | 0.978 | 0.9– | ok |\n| spec.caption_words_median | 2.5 | –3 | ok |\n| macro.held_frame_share | 0.005 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.43 | 0.5– | **warn** |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.041 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 62.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.53 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.1 | 8.0–14.0 | ok |\n| sound.lufs | -14.2 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.7 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0439 | –0.08 | ok |\n| sound.hf_jump_max | 0.0178 | –0.04 | ok |",
- "notes": "Final confirm on film-ep89-sister-diary 13310269956 (run 41790680090, sha 8d3f646, drawn 2026-11-04T09:38Z, 6 samples), 1080x1920, 122.4 s. Story files unchanged since the passed proof (sha 92a5e40) except HANDOFF.md.\nFrames every 4 s plus 0-3 s at 8 fps, phone size, and full-res crops at 12/71/100 s: picture matches the proof shot for shot; fine detail clean (no noise, banding, sharpening halo or texture shimmer on faces, diary, sweaters, captions); nothing black, frozen or intersecting.\nSecond one: lit lilac bedroom desk under a lamp, blue diary open, camera pushing in as lilac ink crawls, 'You can't READ / my sister's diary.' (unchanged from proof). Cover 71 s, Nina TERRIFIED, sharp and lit.\nAudio: -14.2 LUFS, true peak -1.7 dBTP (ebur128). Score voices in story.json: bubble only, no musicbox; >4 kHz share max 0.044, jump 0.018, same as proof (0.043/0.018), so the bubble mix is what the proof passed.\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 8.09 (5.5-8.0), micro.character_motion_shot_share 0.43 (0.5-). Matches the proof within a little (longest_still_s 0.40 vs 0.27, pc_q 24.2 vs 24.1, lufs -14.2 vs -14.1); the four blocks all ok.\nFlash: flash.json pass (general 2/s at 17.4 s, 3f 3/s at 105.9 s, red 0), same as proof.\nVerdict: pass. No fixes.",
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 18.0 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 24.2 | 14.0– | ok |\n| macro.motion_energy_q | 9.42 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 8.09 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.04 | –0.25 | ok |\n| spec.shot_p90_s | 1.84 | –2.5 | ok |\n| macro.longest_still_s | 0.27 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 3.58 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.74 | 0.4– | ok |\n| macro.brightness_mean | 0.557 | 0.35– | ok |\n| macro.brightness_first_3s | 0.604 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.441 | 0.42– | ok |\n| macro.contrast_mean | 0.224 | 0.18– | ok |\n| spec.face_big_share | 0.449 | 0.4– | ok |\n| spec.caption_share | 0.978 | 0.9– | ok |\n| spec.caption_words_median | 2.5 | –3 | ok |\n| macro.held_frame_share | 0.004 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.43 | 0.5– | **warn** |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.041 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 62.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.53 | 2.0–4.0 | ok |\n| sound.silence_share | 0.002 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.1 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0436 | –0.08 | ok |\n| sound.hf_jump_max | 0.0176 | –0.04 | ok |",
+ "notes": "Proof of the staging fix, proof-42330520670 (artifact 13558866215, sha bd8c4b2; last story commit f294d7e is in it, not stale), 270x480 4 samples, 122.4 s, 100 shots. clip.json: 0 hits of 552 times; verdict.json pass.\nFixed shots at 10 fps: S58 63.9-66.2 s walk is smooth from 64.2 s, back of the whole head in frame from the first drawing, hallway lit, no dark frames. S99 119.3-121.0 s me in front, Nina behind and apart, both faces whole. S15 18.4-19.0 s (car key on the shelf), S82 98.5-100.2 s (me and Nina at the door) and S91/S92 110.3-112.7 s (side by side from behind, desk gap between heads): no visible overlap.\nFrames every 2 s and 0-3 s: nothing black, frozen, intersecting or z-fighting; no real words (glyph handwriting only); captions in the safe area. Cover 71 s, Nina TERRIFIED, lit and sharp.\nSecond one: lit lilac bedroom desk under a lamp, the blue diary flips open (1-frame snap closed to open at frame 2, as in the passed proof), camera pushing in, 'You can't READ / my sister's diary.' Opening 'must' matches; neighbours ep92 (last upload) and ep98 (queue before) are 'if'.\nAudio: -14.1 LUFS, true peak -1.8 dBTP (ebur128); >4 kHz share max 0.044, jump 0.018; final line 'So careful what you write.' ends before 122.4 s, nothing cut. Polish on.\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 8.09 (5.5-8.0), micro.character_motion_shot_share 0.43 (0.5-). Same as the passed final.\nFlash: general 2/s at 17.4 s, 3f 3/s at 105.9 s, red 0: pass. Gate OPEN (warns: note 9 line said twice, 3 short captions).\nVerdict: pass. No fixes.",
  "fixes": []
 }

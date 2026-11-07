@@ -3,9 +3,8 @@
   "description": "In our town, a wrapped present is whatever you hope it is. Mrs. Albee next door says her shoebox is the circus, and you can hear a tuba when she shakes it. Nobody opens anything.\n\nThere's a present on my dad's mantel from me. It's been there twelve years. I know exactly what's in it.\n\nIt's made up. A blocky story, built with code and Blender.",
   "pin": "Comment HOME if you'd have hoped for the same thing.",
   "made_for_kids": false,
-  "cover_s": 46.2,
+  "cover_s": 44.6,
   "shape": "empty-box",
   "opening": "ban",
-  "lane": "core",
-  "hold": "batch 14: scripts only, not built yet"
+  "lane": "core"
 }
