@@ -7,7 +7,7 @@
 - **Title:** The Trail Board Painted at DUSK 🌲
 - **Panel must-fixes built in:**
   1. **The logic.** Message 1 is painted at dusk and says "TOMORROW, Theo doesn't walk the creek path". Message 2 is painted at sunrise, which is that same tomorrow, and says "Today, Theo walks the creek path with June". They're real opposites for the same day.
-  2. **June hasn't gone yet.** At sunrise she's on the bench by the board, lacing her boots, waving me over (L17, L24). Her stick and pack are beside her on the bench, never at the path. Message 2 says to walk it *with* her, so the order is never in question.
+  2. **June hasn't gone yet.** At sunrise she's on the bench by the board, lacing her boots, waving me over (L17, S24), and she's going with or without me (L24). Her stick and pack are beside her on the bench, never at the path. Message 2 says to walk it *with* her, so the order is never in question.
   3. **The stakes are concrete:** "so she comes HOME" (L19), then said plainly in L20: "As if, without me, she DOESN'T." June is an adult and is never shown in danger. The stake is only spoken.
   4. **The dawn-only clue is loud** on three channels. It's said aloud and planted (L02: "It only paints at SUNRISE. Never any other time."). It's in the picture: message 1's board shot is under a huge low orange sun in a pink-orange sky, and every other board shot is under pale morning gold with the sun behind the trees. And it's in the words: message 1 starts "TOMORROW", and L13 says out loud that it never has before.
   5. **Dot's two reactions each point one way.** At dusk (L14) she says, "Somebody's been at my BOARD." That points to side 2: someone else painted message 1. At sunrise (L23) she says, "That isn't OURS," about the path. That points to side 1. She's never shown unsure.
@@ -22,7 +22,7 @@
   6. One set: the trailhead, seen at dusk and at sunrise.
   7. No creature.
 - **Everyone is an adult.** I'm 22. My big sister June is 26. Dot, the trail warden, is about 70. Marcus is about 40.
-- **Word count:** 222 spoken words in 27 lines (L01 to L27), all `narrator`, plus one music drop (0.6 s before L16).
+- **Word count:** 224 spoken words in 27 lines (L01 to L27), all `narrator`, plus one music drop (0.6 s before L16).
 - **Estimated length:** about 51 s at 290 wpm, with 0.15 s gaps, the fade (1.6 s under L15), the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright green trailhead: a pale gravel lot, a white picket fence, a forest-green board on two posts with cream glyph lettering, a small green hut with a white door, a pine bench, tall pines, a shallow blue creek, green hills beyond.
 - **Hold:** scripts only (batch 15a). Not built, not voiced.
@@ -45,7 +45,7 @@ The batch table is in `stories/ep136-one-answer/script.md`. This row:
 1. **A town rule with a payoff, working for two people (L01 to L07):** every sunrise the board paints one rule, and obeying it pays off. Dot gets a mushroom the size of her head. Marcus gets his lost canoe back.
 2. **My turn (L08 to L14):** I'm Theo, and on Saturday my big sister June says she's doing "the creek path" at dawn. There's no creek path (the creepy detail: the warning names something that doesn't exist, and June named it first). At **dusk**, which it never does, the board paints **message 1:** "TOMORROW, Theo doesn't walk the creek path." Dot, locking up, says, "Somebody's been at my BOARD."
 3. **Message 2, from the same board (L15 to L22):** at sunrise there's a path along the creek. June is lacing her boots. The board has painted over itself: "Today, Theo walks the creek path with June, so she comes HOME." It says the opposite and raises the stakes: without me, she doesn't come home. It gives a reason, which it never does, and it fills the whole board.
-4. **No answer (L23 to L27):** Dot says the path "isn't OURS." June waves me over. "Which board do I trust?"
+4. **No answer (L23 to L27):** Dot says the path "isn't OURS." June's going, with or without me. "Which board do I follow?"
 - **The marker (the rule meter):** the big forest-green board, in frame in every shot except the fade wide and two face close-ups (where its edge stays in frame).
 - **How the narrator is the exception:** the board has never painted twice for one person, or at dusk.
 - **The loved one at stake:** my big sister June.
@@ -177,12 +177,12 @@ Every line is `who: narrator`. Caps are key words (caption colour), and slashes 
 - L21: It's never said / WHY before.
 - L22: It filled / the whole BOARD.
 - L23: Dot looked once / at that path / and said, / "That isn't OURS."
-- L24: June's waving me OVER.
+- L24: June's going, / with or without ME.
 - L25: Last night's board, / or this MORNING'S.
 - L26: Both are its WRITING.
-- L27: Which board / do I TRUST?
+- L27: Which board / do I FOLLOW?
 
-(Loop: "Which board do I trust? Every sunrise, our trail board paints a rule you have to obey.")
+(Loop: "Which board do I follow? Every sunrise, our trail board paints a rule you have to obey.")
 
 ## Notes for the builder and reviewers
 - The board's words never appear as real letters in the set. They're glyph lines of our own, and the captions carry the words (hard rule 1). Message 1 is one line, like every normal rule. Message 2 is four lines.
