@@ -380,7 +380,7 @@ TP("ray", "L53", RAYS, 0, "neutral")
 TP("me", "L53", MES, 0, X("sad"))
 shot("S53", "L53", cam_face(MES, 0, "me", 2.6, -8, 34, d2=2.3, shift=0.1), "dawn")
 TP("ray", "L54", RAYS, 0, "smile")
-shot("S54", "L54", cam_face(RAYS, 0, "ray", 2.6, 8, 34, d2=2.3, shift=-0.25), "dawn")
+shot("S54", "L54", cam_face(RAYS, 0, "ray", 2.6, 8, 34, d2=2.3, shift=-0.25, tdz=-0.12), "dawn")
 TP("ray", "L55", RAYS, 0, "laugh")
 shot("S55", "L55", cam_face(RAYS, 0, "ray", 2.4, -10, 34, d2=2.1), "dawn")
 # ===== S56 to S65 the cart is mine
