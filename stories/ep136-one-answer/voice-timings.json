@@ -86,26 +86,26 @@
    ]
   },
   "L04": {
-   "text": "missus ruiz asked if her bakery would make it.",
+   "text": "missus avila asked if her bakery would make it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
+   "dur": 2.31,
    "onset": 0.172,
-   "end": 2.052,
+   "end": 2.121,
    "chunks": [
     [
      0.172,
-     0.966
+     1.017
     ],
     [
-     0.966,
-     1.439
+     1.017,
+     1.5
     ],
     [
-     1.439,
-     2.052
+     1.5,
+     2.121
     ]
    ]
   },
@@ -326,14 +326,14 @@
    ]
   },
   "L14": {
-   "text": "my big brother nate is meeting me here at eight.",
+   "text": "my big brother jonah is meeting me here at eight.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.121,
+   "dur": 2.224,
    "onset": 0.172,
-   "end": 1.931,
+   "end": 2.034,
    "chunks": [
     [
      0.172,
@@ -341,35 +341,35 @@
     ],
     [
      0.431,
-     0.862
+     0.974
     ],
     [
-     0.862,
-     1.172
+     0.974,
+     1.285
     ],
     [
-     1.172,
-     1.422
+     1.285,
+     1.526
     ],
     [
-     1.422,
-     1.931
+     1.526,
+     2.034
     ]
    ]
   },
   "L15": {
-   "text": "nate lives alone.",
+   "text": "jonah lives alone.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.293,
+   "dur": 1.328,
    "onset": 0.19,
-   "end": 1.103,
+   "end": 1.138,
    "chunks": [
     [
      0.19,
-     1.103
+     1.138
     ]
    ]
   },
@@ -410,26 +410,26 @@
    ]
   },
   "L17": {
-   "text": "so i shouted, who's coming with nate?",
+   "text": "so i shouted, who's coming with jonah?",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
+   "dur": 1.948,
    "onset": 0.19,
-   "end": 1.69,
+   "end": 1.724,
    "chunks": [
     [
      0.19,
-     0.724
+     0.707
     ],
     [
-     0.75,
-     1.094
+     0.732,
+     1.061
     ],
     [
-     1.094,
-     1.69
+     1.061,
+     1.724
     ]
    ]
   },
@@ -482,22 +482,22 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.172,
-   "end": 1.276,
+   "tempo": 0.9064,
+   "dur": 1.724,
+   "onset": 0.207,
+   "end": 1.517,
    "chunks": [
     [
-     0.172,
-     0.543
+     0.207,
+     0.655
     ],
     [
-     0.543,
-     0.793
+     0.655,
+     0.931
     ],
     [
-     0.793,
-     1.276
+     0.931,
+     1.517
     ]
    ]
   },
@@ -506,18 +506,18 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.621,
-   "onset": 0.172,
-   "end": 1.431,
+   "tempo": 0.9064,
+   "dur": 1.759,
+   "onset": 0.19,
+   "end": 1.552,
    "chunks": [
     [
-     0.172,
-     0.621
+     0.19,
+     0.664
     ],
     [
-     0.621,
-     1.431
+     0.664,
+     1.552
     ]
    ]
   },
@@ -610,26 +610,26 @@
    ]
   },
   "L26": {
-   "text": "eli. open the door. nate's scared.",
+   "text": "eli. open the door. jonah's scared.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.862,
-   "onset": 0.172,
-   "end": 1.655,
+   "tempo": 0.9064,
+   "dur": 2.103,
+   "onset": 0.207,
+   "end": 1.879,
    "chunks": [
     [
-     0.172,
-     0.397
+     0.207,
+     0.448
     ],
     [
-     0.431,
-     0.862
+     0.483,
+     0.948
     ],
     [
-     0.914,
-     1.655
+     1.008,
+     1.879
     ]
    ]
   },
@@ -778,18 +778,18 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.19,
-   "end": 1.5,
+   "tempo": 0.9064,
+   "dur": 1.879,
+   "onset": 0.207,
+   "end": 1.655,
    "chunks": [
     [
-     0.19,
-     0.466
+     0.207,
+     0.517
     ],
     [
-     0.5,
-     1.5
+     0.569,
+     1.655
     ]
    ]
   },
@@ -798,18 +798,18 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.19,
-   "onset": 0.172,
-   "end": 1.0,
+   "tempo": 0.9064,
+   "dur": 1.293,
+   "onset": 0.207,
+   "end": 1.086,
    "chunks": [
     [
-     0.172,
-     0.431
+     0.207,
+     0.483
     ],
     [
-     0.466,
-     1.0
+     0.517,
+     1.086
     ]
    ]
   },
@@ -818,18 +818,90 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
+   "tempo": 0.9064,
+   "dur": 1.552,
+   "onset": 0.207,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.207,
+     0.5
+    ],
+    [
+     0.534,
+     1.328
+    ]
+   ]
+  },
+  "L03b": {
+   "text": "so i'd ask the echo. i've seen it work.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.379,
+   "dur": 1.897,
    "onset": 0.172,
-   "end": 1.172,
+   "end": 1.69,
    "chunks": [
     [
      0.172,
-     0.466
+     0.509
     ],
     [
-     0.5,
-     1.172
+     0.509,
+     0.897
+    ],
+    [
+     0.948,
+     1.199
+    ],
+    [
+     1.199,
+     1.69
+    ]
+   ]
+  },
+  "L12b": {
+   "text": "then it was my turn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.138
+    ]
+   ]
+  },
+  "L23b": {
+   "text": "at dusk, the canyon went quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.862
+    ],
+    [
+     0.862,
+     1.517
     ]
    ]
   }

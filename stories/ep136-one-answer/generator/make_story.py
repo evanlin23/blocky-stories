@@ -20,9 +20,15 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
+ECHO = {"L05b", "L08b", "L11b", "L20", "L21", "L26"}
+for _ln in lines:
+    if _ln.get("id") in ECHO:
+        # the echo answers are heard from across the canyon: darker, a touch quieter, with a long room tail
+        # (the engine's per-line `space`, mixed in sound.narration; the voice itself is unchanged)
+        _ln["space"] = {"chunks": list(range(len(_ln["chunks"]))), "lowpass": 2800, "verb": 0.85, "gain_db": -2}
 
 
 def remap(ref):
@@ -67,7 +73,7 @@ cast = {
     # Eli: short black curly hair, brown skin, a mustard work shirt over a white tee, jeans
     "me": person("#9a6a44", "#e0b23a", "#3d5a8c", "#3a2a20", hair="cap", hair_c="#15100c", collar="#fafaf5",
                  brow_w=1.3),
-    # Mrs. Ruiz: a flour-dusted white apron over a red dress, dark hair in a bun
+    # Mrs. Avila (cast id ruiz): a flour-dusted white apron over a red dress, dark hair in a bun
     "ruiz": person("#d9a47a", "#c8302a", "#7a2a2a", "#4a2a1a", hair="bun", hair_c="#2a1a14", eyes="lashes",
                    extras=["apron"], extra_c="#f4f0e6"),
     # Kofi: a green hoodie, short hair
@@ -171,6 +177,12 @@ cue(0, "show", car=0.0, loaf=0.0, pane=0.0, rim=0.0)
 cue(0, "shout", me=0.0, ruiz=0.0, kofi=0.0, bell=0.0)
 
 # ===== 01 the rule (L01, L02)
+def rail(az, w, w2, cz=1.62, tz=1.62, cx=0.2, tz2=None):
+    """A railing shot: the person at the railing and the whole cream "1" of the post in the right third (the post
+    is at POST_RAIL, 0.95 m east of the person; frame w metres wide, centred cx)."""
+    return cam(cx, ST[1], tz, w, az, 36, cz=cz, push=(w2, tz if tz2 is None else tz2))
+
+
 shot("S01a", 0, cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.6, 1.62)))
 key("me", 0.62, head=[0, 0])
 key("me", 0.95, head=[-10, 0], blend=0.3)
@@ -183,83 +195,12 @@ cue("L03", "shout", me=1.0)
 cue("L03.3", "shout", me=0.0)
 key("me", "L03", expr="shout")
 shot("S03b", "L03.3", camp([0.0, 5.5, 4.4], [0, G.WALL_Y, 5.0], 20, pos2=[-1.5, 5.0, 4.0]))
-shot("S03c", "L03.3+0.7", camp([6.0, 4.0, 2.4], [-1.0, G.WALL_Y, 5.2], 24, pos2=[3.5, 3.6, 2.8]))
+shot("S03d", "L03.3+0.7", camp([6.0, 4.0, 2.4], [-1.0, G.WALL_Y, 5.2], 24, pos2=[3.5, 3.6, 2.8]))
 key("me", "L03.3", expr="neutral")
 
-# ===== 02 the rule at work (L04 to L12): three people, each alone at the railing
-
-
-# Mrs. Ruiz
-cut("me", "L04", ST, hidden=True)
-cut("ruiz", "L04", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
-cue("L04", "shout", ruiz=1.0)
-cue("L05", "shout", ruiz=0.0)
-shot("S04", "L04", cam(0.0, ST[1], 1.6, 1.75, 4, 36, cz=1.62, push=(1.6, 1.62)))
-key("ruiz", "L05", expr="neutral")
-shot("S05a", "L05", rock_cam(1))
-shot("S05b", "L05.1", rock_cam(2))
-shot("S05c", "L05.2", rock_cam(3))
-shot("S05d", "L05.2+0.45", rock_cam(3, 9.0))
-key("ruiz", "L05b", expr="laugh")
-shot("S05e", "L05b", cam(0.0, ST[1], 1.6, 1.6, -5, 36, cz=1.62, push=(1.5, 1.62)))
-key("ruiz", "L05b+0.4", head=[0, 0])
-key("ruiz", "L05b+0.75", head=[12, 4], blend=0.35)
-shot("S05f", "L05b+0.7", cam(0.0, ST[1], 1.6, 1.4, 16, 36, cz=1.55, push=(1.25, 1.6)))
-cue("L06", "show", loaf=1.0)
-key("ruiz", "L06", expr="laugh", arms=[62, 62])
-shot("S06", "L06", cam(0.0, ST[1], 1.35, 1.9, 5, 36, cz=1.4, push=(1.7, 1.4)))
-cue("L07", "show", loaf=0.0)
-# Kofi
-cut("ruiz", "L07", ST, hidden=True, arms=[0, 0])
-cut("kofi", "L07", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
-cue("L07", "shout", kofi=1.0)
-cue("L08", "shout", kofi=0.0)
-shot("S07", "L07", cam(0.0, ST[1], 1.6, 1.75, -4, 36, cz=1.62, push=(1.6, 1.62)))
-key("kofi", "L07+0.8", head=[0, 0])
-key("kofi", "L07+1.3", head=[-14, 3], blend=0.5)
-shot("S07b", "L07+0.92", cam(0.0, ST[1], 1.62, 1.45, 17, 36, cz=1.5, push=(1.3, 1.62)))
-key("kofi", "L08", expr="neutral")
-shot("S08a", "L08", rock_cam(1))
-shot("S08b", "L08.1", rock_cam(2))
-shot("S08c", "L08.2", rock_cam(3))
-shot("S08d", "L08.2+0.45", rock_cam(3, 9.0))
-key("kofi", "L08b", expr="smile")
-shot("S08e", "L08b", cam(0.0, ST[1], 1.6, 1.6, 4, 36, cz=1.62, push=(1.45, 1.62)))
-key("kofi", "L09", expr="smile", head=[0, 9])
-key("kofi", "L09.1", head=[0, -4], blend=0.5)
-shot("S09", "L09", cam(0.0, ST[1], 1.6, 1.7, -3, 36, cz=1.62, push=(1.55, 1.62)))
-shot("S09b", "L09+0.78", cam(0.0, ST[1], 1.6, 1.45, 16, 36, cz=1.7, push=(1.3, 1.6)))
-# Mr. Bell
-cut("kofi", "L10", ST, hidden=True)
-cut("bell", "L10", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
-cue("L10", "shout", bell=1.0)
-cue("L11", "shout", bell=0.0)
-shot("S10", "L10", cam(0.0, ST[1], 1.6, 1.75, 3, 36, cz=1.62, push=(1.6, 1.62)))
-key("bell", "L11", expr="neutral")
-shot("S11a", "L11", rock_cam(1))
-shot("S11b", "L11.1", rock_cam(2))
-shot("S11c", "L11.2", rock_cam(3))
-shot("S11d", "L11.2+0.45", rock_cam(3, 9.0))
-# the cut to the lot side: his face, stunned, as "WALTER." lands (camera on the canyon side, the red car behind him),
-# then he turns (0.5 s, eased) to the car, and a CUT to the reverse angle from beyond the car: his face, laughing
-cut("bell", "L11b", ST, yaw=0, expr="wide", head=[0, 0])
-cue("L11b", "show", car=1.0)
-cue("L11b", "post", x=-3.0, y=G.POST_RAIL[1])      # the post steps out of the frame, on the cut
-key("bell", "L11b+0.66", ST, yaw=180, expr="wide", head=[0, 0], blend=0.5)     # the turn: 22.45 to 22.95, eased
-key("bell", "L11b+0.68", expr="laugh", blend=0.0)
-shot("S11e", "L11b", camp([0.4, -3.6, 1.05], [0.0, 1.5, 1.58], 30, pos2=[0.3, -3.25, 1.1], tgt2=[0.0, 1.5, 1.58]))
-shot("S11f", "L11b+0.68", camp(BELL_CAM[0], BELL_CAM[1], BELL_CAM[2], pos2=BELL_CAM[3]))
-cue("L12", "show", car=0.0)
-cue("L12", "post", x=G.POST_RAIL[0], y=G.POST_RAIL[1])
-shot("S12", "L12", rock_cam(3, 8.0))
-x3 = ROCKS[2]
-shot("S12b", "L12.2", camp([x3 + 5.0, G.WALL_Y + 19.0, 1.4], [x3, G.WALL_Y, ZR - 2.6], 36,
-                           pos2=[x3 + 3.2, G.WALL_Y + 17.0, 1.9]))
-
-# ===== 03 my turn (L13 to L22)
-cut("bell", "L12", ST, hidden=True)
-cut("me", "L13", ST, yaw=0, expr="smile", hidden=False, head=[0, 0])
+# ===== 02 my turn, part one (L13 to L16): my name, Jonah, and the "we"
 shot("S13", "L13", cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.65, 1.62)))
+key("me", "L13", expr="smile")
 key("me", "L14", expr="neutral")
 shot("S14", "L14", cam(0.72, ST[1], 1.5, 2.2, 0, 36, cz=1.6, push=(2.05, 1.55)))
 shot("S14b", "L14+0.95", cam(0.6, ST[1], 1.5, 1.9, -15, 36, cz=1.45, push=(1.7, 1.55)))
@@ -268,34 +209,117 @@ shot("S15", "L15", cam(0.32, ST[1], 1.62, 1.5, 6, 36, cz=1.62, push=(1.35, 1.62)
 key("me", "L16", expr="uneasy")
 key("me", "L16.2", expr="stunned")
 shot("S16", "L16", cam(0.32, ST[1], 1.62, 1.5, 3, 36, cz=1.62, push=(1.35, 1.62)))
+# L03b: so I'd ask the echo: my face, uneasy, the post beside me, turning to look out (head, eased over 0.5 s)
+key("me", "L03b", expr="uneasy", head=[0, 0])
+key("me", "L03b+0.75", expr="uneasy", head=[-38, 0], blend=0.5)
+shot("S03c", "L03b", rail(5, 2.1, 2.0))
+
+# ===== 03 the rule at work (L04 to L12): three people, each alone at the railing
+# Mrs. Avila (cast id ruiz)
+cut("me", "L04", ST, hidden=True)
+cut("ruiz", "L04", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
+cue("L04", "shout", ruiz=1.0)
+cue("L05", "shout", ruiz=0.0)
+shot("S04", "L04", rail(4, 2.1, 2.0))
+key("ruiz", "L05", expr="neutral")
+shot("S05a", "L05", rock_cam(1))
+shot("S05b", "L05.1", rock_cam(2))
+shot("S05c", "L05.2", rock_cam(3))
+shot("S05d", "L05.2+0.45", rock_cam(3, 9.0))
+key("ruiz", "L05b", expr="laugh")
+shot("S05e", "L05b", rail(-5, 2.1, 2.0))
+key("ruiz", "L05b+0.4", head=[0, 0])
+key("ruiz", "L05b+0.75", head=[12, 4], blend=0.35)
+shot("S05f", "L05b+0.7", rail(12, 2.1, 2.0, cz=1.55, tz2=1.6))
+cue("L06", "show", loaf=1.0)
+key("ruiz", "L06", expr="laugh", arms=[62, 62])
+shot("S06", "L06", rail(5, 2.2, 2.05, cz=1.4, tz=1.4))
+cue("L07", "show", loaf=0.0)
+# Kofi
+cut("ruiz", "L07", ST, hidden=True, arms=[0, 0])
+cut("kofi", "L07", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
+cue("L07", "shout", kofi=1.0)
+cue("L08", "shout", kofi=0.0)
+shot("S07", "L07", rail(-4, 2.1, 2.0))
+key("kofi", "L07+0.8", head=[0, 0])
+key("kofi", "L07+1.3", head=[-14, 3], blend=0.5)
+shot("S07b", "L07+0.92", rail(14, 2.1, 2.0, cz=1.5, tz2=1.62))
+key("kofi", "L08", expr="neutral")
+shot("S08a", "L08", rock_cam(1))
+shot("S08b", "L08.1", rock_cam(2))
+shot("S08c", "L08.2", rock_cam(3))
+shot("S08d", "L08.2+0.45", rock_cam(3, 9.0))
+key("kofi", "L08b", expr="smile")
+shot("S08e", "L08b", rail(4, 2.1, 2.0))
+key("kofi", "L09", expr="smile", head=[0, 9])
+key("kofi", "L09.1", head=[0, -4], blend=0.5)
+shot("S09", "L09", rail(-3, 2.1, 2.0))
+shot("S09b", "L09+0.78", rail(14, 2.1, 2.0, cz=1.7, tz2=1.6))
+# Mr. Bell
+cut("kofi", "L10", ST, hidden=True)
+cut("bell", "L10", ST, yaw=0, expr="shout", hidden=False, head=[0, 0])
+cue("L10", "shout", bell=1.0)
+cue("L11", "shout", bell=0.0)
+shot("S10", "L10", rail(3, 2.1, 2.0))
+key("bell", "L11", expr="neutral")
+shot("S11a", "L11", rock_cam(1))
+shot("S11b", "L11.1", rock_cam(2))
+shot("S11c", "L11.2", rock_cam(3))
+shot("S11d", "L11.2+0.45", rock_cam(3, 9.0))
+# the cut to the lot side: his face, stunned, as "WALTER." lands (camera on the canyon side, the red car behind him,
+# the post stays at the railing in the right third), then he turns (0.5 s, eased) to the car, and a CUT to the reverse
+# angle from beyond the car: his face, laughing, the post (moved on the cut to his other side) in the right third
+cut("bell", "L11b", ST, yaw=0, expr="wide", head=[0, 0])
+cue("L11b", "show", car=1.0)
+key("bell", "L11b+0.35", head=[0, 0])
+key("bell", "L11b+0.7", expr="laugh", blend=0.0)
+key("bell", "L11b+0.85", head=[34, 0], blend=0.5)          # he glances back at the car over his shoulder, eased over 0.5 s
+shot("S11e", "L11b", camp([0.6, -3.6, 1.05], [0.2, 1.5, 1.58], 30, pos2=[0.5, -3.25, 1.1], tgt2=[0.2, 1.5, 1.58]))
+shot("S11f", "L11b+0.7", camp([1.5, -3.5, 1.1], [0.25, 1.5, 1.58], 30, pos2=[1.35, -3.2, 1.12], tgt2=[0.25, 1.5, 1.58]))
+cue("L12", "show", car=0.0)
+cue("L12", "post", x=G.POST_RAIL[0], y=G.POST_RAIL[1])
+shot("S12", "L12", rock_cam(3, 8.0))
+x3 = ROCKS[2]
+shot("S12c", "L12.2", camp([x3 + 5.0, G.WALL_Y + 19.0, 1.4], [x3, G.WALL_Y, ZR - 2.6], 36,
+                           pos2=[x3 + 3.2, G.WALL_Y + 17.0, 1.9]))
+
+# ===== 04 my turn (L12b, L17, L20, L21, drop, L18, L19, L22)
+cut("bell", "L12", ST, hidden=True)
+cut("me", "L12b", [ST[0], ST[1] + 0.65], yaw=0, expr="neutral", hidden=False, head=[0, 0])
+key("me", "L12b+0.7", [*ST], blend=0.6)     # steps up to the railing, eased over 0.6 s
+shot("S12b", "L12b", rail(-4, 2.1, 2.0))
 key("me", "L17", expr="shout")
 cue("L17", "shout", me=1.0)
-cue("L18", "shout", me=0.0)
-shot("S17", "L17", cam(0.47, ST[1], 1.62, 1.75, 0, 36, cz=1.62, push=(1.65, 1.62)))
-key("me", "L18", expr="neutral")
-shot("S18", "L18", rock_cam(1, 11.0))
-key("me", "L19", expr="shout")
-cue("L19", "shout", me=1.0)
-cue("L20", "shout", me=0.0)
-shot("S19", "L19", cam(0.0, ST[1], 1.3, 1.1, 0, 36, cz=1.3, push=(1.0, 1.3)))
-shot("S19c", "L19+0.8", cam(0.0, ST[1], 1.3, 1.25, 17, 36, cz=1.25, push=(1.1, 1.3)))
-shot("S19b", "P1", camp([-2.6, 3.5, 2.4], [0, G.WALL_Y, 6.0], 24, pos2=[-1.6, 2.0, 2.5]))
-key("me", "L20", expr="scared")
+shot("S17", "L17", rail(0, 1.9, 1.8, cx=0.3))
+# L20 lands on the face still mid-shout: the open mouth holds into S20 (0.45 s), then closes on a scared face
+key("me", "L20+0.45", expr="scared")
+cue("L20+0.45", "shout", me=0.0)
 shot("S20", "L20", cam(0.0, ST[1], 1.62, 1.3, 0, 36, cz=1.62, push=(1.15, 1.62)))
 shot("S21", "L21", camp([-1.5, 6.0, 3.0], [0, G.WALL_Y, 7.0], 18, pos2=[-1.0, 3.0, 2.8], tgt2=[0, G.WALL_Y, 7.0]))
 cut("me", "L21", ST, hidden=True)
-cut("me", "L22", ST, yaw=0, expr="uneasy", hidden=False, head=[0, 0])
+shot("S21b", "P1", camp([-2.6, 3.5, 2.4], [0, G.WALL_Y, 6.0], 24, pos2=[-1.6, 2.0, 2.5]))
+shot("S18", "L18", rock_cam(1, 11.0))
+cut("me", "L19", ST, yaw=0, expr="stunned", hidden=False, head=[0, 0])
+shot("S19", "L19", cam(0.0, ST[1], 1.3, 1.1, 0, 36, cz=1.3, push=(1.0, 1.3)))
+shot("S19c", "L19+0.8", cam(0.0, ST[1], 1.3, 1.25, 17, 36, cz=1.25, push=(1.1, 1.3)))
+key("me", "L22", expr="uneasy")
 shot("S22", "L22", cam(0.32, ST[1], 1.62, 1.5, 2, 36, cz=1.62, push=(1.35, 1.62)))
 
 # ===== 04 the truck (L23 to L26): I have walked to the truck on the cut; dusk comes in over 1.5 s on the wide
 cut("me", "L23", [SX[0], SX[1], SX[2]], yaw=0, expr="uneasy", head=[0, 0])
 cue("L23", "sit", me=1.0)
 cue("L23", "dusk", v=1.0, dur=1.5)
+cue("L23", "post", x=G.POST_AHEAD[0], y=G.POST_AHEAD[1])      # the post is ahead of the truck from here to L31 (as in S27)
+# the dusk fade (1.5 s) plays on this one held wide, never across a cut
 shot("S23a", "L23", camp([-2.2, -2.6, 3.2], [G.XT - 0.9, 4.6, 1.2], 20, pos2=[-1.9, -2.0, 3.1]))
-key("me", "L23.1", expr="uneasy")
-cue("L23.1", "post", x=G.POST_BEHIND[0], y=G.POST_BEHIND[1])
-shot("S23b", "L23.1", cam(G.XT - 0.2, G.YT, 1.2, 2.0, 0, 36, cz=1.6, push=(1.85, 1.25)))
-key("me", "L24", expr="scared")
+key("me", "L23+1.55", expr="uneasy")
+shot("S23b", "L23+1.55", cam(G.XT - 0.2, G.YT, 1.2, 2.0, 20, 36, cz=1.6, push=(1.85, 1.25)))
+# L23b: the cab's view through the windshield at dusk: the post's "1" and the far wall (the camera sits where I sit)
+cut("me", "L23b.2+0.1", [*SX], hidden=True)
+shot("S23c", "L23b.2+0.1", camp([SX[0] + 0.4, SX[1] + 0.6, 1.62], [G.POST_AHEAD[0], G.POST_AHEAD[1], 1.9], 36,
+                              pos2=[SX[0] + 0.4, SX[1] + 0.35, 1.63]))
+cut("me", "L24", [*SX], yaw=0, expr="scared", hidden=False, head=[0, 0])
+cue("L24", "post", x=G.POST_BEHIND[0], y=G.POST_BEHIND[1])     # on the cut: the close shots look back at me from ahead
 mouth("me", "L24", "L24>", 0.35)
 shot("S24", "L24", cam(SX[0], G.YT, 1.35, 1.15, 0, 36, cz=1.6, push=(1.05, 1.4)))
 # three rocks at dusk, seen from the cab
@@ -355,10 +379,10 @@ shot("S29", "L29", camp([G.XT + 0.8, G.YT - 0.1, 1.5], [G.XT - 1.0, G.YT - 0.1, 
                         pos2=[G.XT + 0.7, G.YT - 0.1, 1.5]))
 shot("S29b", "L29+0.9", camp([G.XT + 0.7, G.YT + 0.45, 1.45], [G.XT - 1.0, G.YT - 0.1, 1.6], 14,
                              pos2=[G.XT + 0.6, G.YT + 0.3, 1.5]))
-cue("L30", "panepos", x=-1.0, y=0.5, rz=-90.0, s=0.7)
+cue("L30", "panepos", x=-1.3, y=0.5, rz=-90.0, s=0.7)
 cut("me", "L30", [*SX], yaw=0, expr="scared", head=[0, 0], hidden=False)
-key("me", "L30.0+0.2", expr="scared", head=[-62, 0], blend=0.6)
-shot("S30", "L30", cam(SX[0] - 0.4, G.YT, 1.4, 1.55, 0, 36, cz=1.55, push=(1.45, 1.42)))
+key("me", "L30+0.75", expr="scared", head=[-50, 0], blend=0.5)     # turns toward the window over 0.5 s
+shot("S30", "L30", cam(SX[0] - 0.4, G.YT, 1.4, 2.2, 0, 36, cz=1.55, push=(2.05, 1.42)))
 cue("L31", "show", pane=0.0)
 cue("L31", "post", x=G.POST_AHEAD[0], y=G.POST_AHEAD[1])
 cut("me", "L31", [*SX], hidden=True)
@@ -387,7 +411,7 @@ music = {
     "sections": [
         {"at": 0, "voices": ["pluck", "pulse"], "energy": 0.35},
         {"at": "L13", "voices": ["pluck", "pulse", "pad"], "energy": 0.4},
-        {"at": "L18", "voices": ["drone", "pad"], "energy": 0.45},
+        {"at": "L20", "voices": ["drone", "pad"], "energy": 0.45},
         {"at": "L23", "voices": ["drone", "pad", "pulse"], "energy": 0.5},
     ],
 }
@@ -396,17 +420,18 @@ sound = {
     "ambience": [{"kind": "wind", "from": 0, "to": "end", "lufs": -42}],
     "sfx": [{"at": "L29.1", "kind": "knock", "pattern": [0, 0.45, 0.9], "tone": "glass_soft", "db": -14},
             {"at": "L01.2", "kind": "hit", "db": -14}, {"at": "L12.2", "kind": "hit", "db": -14},
-            {"at": "L23.1", "kind": "door", "db": -16}, {"at": "L31.1", "kind": "hit", "db": -14}, {"at": "L26", "kind": "hit", "db": -14},
-            {"at": "L16.2", "kind": "thud", "db": -16}],
-    "music_drops": [["L19>", "L20"]],
+            {"at": "L23", "kind": "door", "db": -16}, {"at": "L31.1", "kind": "hit", "db": -14}, {"at": "L26", "kind": "hit", "db": -14},
+            {"at": "L16.2", "kind": "thud", "db": -16},
+            {"at": "L20", "kind": "hit", "db": -12}, {"at": "L30+0.2", "kind": "thud", "db": -16}],
+    "music_drops": [["L21>", "L18"]],
     "rev": REV,
 }
 remap_all(sound["sfx"])
 remap_all(sound["ambience"])
 remap_all(music["sections"])
 sound["music_drops"] = [[remap(a), remap(b)] for a, b in sound["music_drops"]]
-polish = {"emph": ["L01.2", "L12.2", "L16.2", "L28.1", "L31.1", "L32.1"], "reveal": ["L19"],
-          "twist": "L20", "sway": ["S03a", "S04", "S07", "S10", "S13", "S14", "S15", "S16", "S17", "S19", "S20", "S22", "S24", "S26", "S30", "S32", "S02", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S31a"], "hold": ["S11e", "S11f", "S23a", "S29", "S28", "S25a", "S25b", "S25c"]}
+polish = {"emph": ["L01.2", "L12.2", "L16.2", "L28.1", "L31.1", "L32.1"], "reveal": ["L20"],
+          "twist": "L20", "sway": ["S03a", "S13", "S14", "S15", "S16", "S17", "S19", "S20", "S22", "S24", "S26", "S30", "S32", "S02", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S31a"], "hold": ["S03c", "S04", "S05e", "S05f", "S06", "S07", "S07b", "S08e", "S09", "S09b", "S10", "S11e", "S11f", "S12b", "S17", "S23a", "S23c", "S29", "S28", "S25a", "S25b", "S25c", "S30"]}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
 polish["twist"] = remap(polish["twist"])
@@ -417,7 +442,7 @@ story = {
     "premise": ("At a canyon overlook your echo answers one question, on three, starting with your name; I ask who is "
                 "coming with my brother, who lives alone but said we, and it answers twice."),
     "twist": ("The first answer came too fast and without my name, saying don't open the door; the second kept the "
-              "rule's timing and my name, which should not happen, saying open it because Nate is scared; someone is "
+              "rule's timing and my name, which should not happen, saying open it because Jonah is scared; someone is "
               "knocking, saying my name. The ending leaves it open: which echo do I trust?"),
     "world": ("A red-gold canyon overlook: a wooden railing, a thick post painted with a huge cream numeral one, a far "
               "wall in bands with three painted rocks marked with one, two and three dots, and a dirt lot with a teal "
@@ -426,7 +451,7 @@ story = {
     "key_color": "#ffc93a",
     "gap": 0.15,
     "asr_ignore_tail_repeat": True,
-    "homophones": {"opened": "open"},
+    "homophones": {"opened": "open", "asked": "ask", "mr": "oldmister"},
     "tail": 0.25,
     "fade_in": False,
     "fade_out": False,
@@ -444,7 +469,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S02", "S03b", "S03c", "S12b", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S25a", "S25b", "S25c", "S28", "S29", "S31a"],   # the clue rocks and the far wall: no person on purpose
+    "framing_ok": ["S02", "S03b", "S03d", "S12c", "S21b", "S23c", "S27", "S31b", "S05a", "S05b", "S05c", "S05d", "S08a", "S08b", "S08c", "S08d", "S11a", "S11b", "S11c", "S11d", "S12", "S18", "S21", "S25a", "S25b", "S25c", "S28", "S29", "S31a"],   # the clue rocks and the far wall: no person on purpose
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
