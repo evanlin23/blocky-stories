@@ -326,8 +326,8 @@ big_mouth("me2", "L16.1", 5, 0.42)
 gshot("S16a", "L16", [TX, TY, 1.38], 26, push=0.28)
 shot_t = "L16.3"
 gshot("S16b", shot_t, [TX, TY, 1.4], 36, push=0.28, dy=0.04)
-glass_at("L17", "me2", expr="serious", pos=(TX, G.GY - 1.15))
-gshot("S17", "L17", [BX, G.GY - 0.6, 1.0], 14, push=0.0, dy=-0.6, hold=True, fr=0.9)
+glass_at("L17", "me2", expr="serious", pos=(3.2, G.GY - 1.4))
+gshot("S17", "L17", [BX, G.GY - 0.9, 1.0], 11, push=0.0, dy=-0.9, hold=True, fr=0.93)
 show("L18", "dre")
 dre_at("L18", 90, "neutral")
 shot("S18", "L18", camp([4.4, G.GY, 1.5], [BX, BY, 1.05], 30, pos2=[4.2, G.GY, 1.5]), hold=True)
@@ -366,9 +366,9 @@ shot("S26", "L26", cam(ME[0], ME[1], 1.3, 1.45, -92, 36, cz=1.35, push=(1.25, 1.
 
 # ===== 06 no answer (L27 to L31)
 show("L27", "me")
-cut("me", "L27", [2.6, -0.6, 0.0], **_pose(125, "uneasy", {"blink": False}))
+cut("me", "L27", [2.6, -0.6, 0.0], **_pose(165, "uneasy", {"blink": False}))
 mouth("me", "L27", "L27>", 0.4)
-shot("S27", "L27", camp([4.56, 0.79, 1.45], [2.6, -0.6, 1.3], 30, pos2=[4.4, 0.67, 1.45]))
+shot("S27", "L27", camp([3.4, 2.3, 1.45], [1.81, -1.37, 1.0], 20, pos2=[3.3, 2.1, 1.45]))
 me_at("L28", "me", yaw=-90, expr="uneasy")
 key("me", "L28.1", [ME[0], ME[1], 0.0], yaw=-90, expr="uneasy", head=[0, 4])
 mouth("me", "L28", "L28>", 0.4)
@@ -503,7 +503,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S12a"],
+    "framing_ok": ["S12a", "S03", "S03b"],
     "frames_ok": [],
     "staging_ok": [],
     "phonemes": {"Dre": "dɹˈA"},
