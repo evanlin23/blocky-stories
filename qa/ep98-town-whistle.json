@@ -1,19 +1,21 @@
 {
  "stage": "proof",
- "film": "proof-42355384128",
- "artifact": 13568992100,
- "run": 42355384128,
- "sha": "f0c5e3acf484abdc4311a24408060853a72ff6d5",
- "verdict": "fail",
+ "film": "proof-42360254197",
+ "artifact": 13570546443,
+ "run": 42360254197,
+ "sha": "23533ef9e81dfd3452e5b5d89f0a30ccfb8a1db3",
+ "verdict": "pass",
  "date": "2026-11-07",
  "checked": [
   "frames every 2 s, phone and TV",
   "first 3 s every frame",
-  "the 15 fixed cuts, consecutive frames (f-2..f+2)",
+  "the 3 fixed cuts (7.63, 81.57, 122.53 s), consecutive frames",
+  "whole-film one-frame outlier scan",
   "every cut with a pre-cut spike, consecutive frames",
+  "frame-by-frame compare with the third proof (proof-42355384128)",
+  "the 15 cuts fixed last time",
   "S15 21.0-22.4 s consecutive frames",
   "S05 S07 S33 S82 consecutive frames",
-  "whole-film one-frame outlier scan",
   "clip.json",
   "cover on TV canvas",
   "loudness and 4 kHz",
@@ -22,11 +24,6 @@
   "package gate",
   "opening tag"
  ],
- "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.1 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 17.9 | 14.0– | ok |\n| macro.motion_energy_q | 8.53 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 7.74 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.06 | –0.25 | ok |\n| spec.shot_p90_s | 1.84 | –2.5 | ok |\n| macro.longest_still_s | 0.63 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 3.29 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.542 | 0.35– | ok |\n| macro.brightness_first_3s | 0.694 | 0.3– | ok |\n| macro.dark_frame_share | 0.023 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.486 | 0.42– | ok |\n| macro.contrast_mean | 0.229 | 0.18– | ok |\n| spec.face_big_share | 0.299 | 0.4– | **warn** |\n| spec.caption_share | 0.975 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.51 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.095 | –0.25 | ok |\n| micro.idle_window_share | 0.0 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 3.91 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0039 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.7 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0417 | –0.08 | ok |\n| sound.hf_jump_max | 0.0158 | –0.04 | ok |",
- "notes": "Proof 270x480 x4 upscaled to 1080x1920, 127.9 s, 30 fps, run 42355384128, sha f0c5e3a (PR head and last story commit, not stale). -14.1 LUFS / -1.8 dBTP, LRA 1.1; 4 kHz max 0.042, jump 0.016; voice to 127.3 s, tail clean. Flash passes (general 3/s, 3f 6/s, red 0). clip.json 0 hits, 0 camera. Gate OPEN; opening 'if' matches L01; same as ep92 (last upload): queue note; ep48 before it is 'confess'.\nSecond one: sunny push on the brass whistle on its green pole, steam, '26' sign top right; 'When the town' by 0.23 s, first face (me) at 1.4-1.7 s. Cover 93.4 s: the Under's glowing eyes and brass mouth, strong.\nFixed: all 15 cuts (19.10 ... 111.07 s) hold their characters to the last outgoing frame; the only change on that frame is the next caption arriving one frame early. 39.73 s (L21): dad close-up, then dad asleep on step 26, nobody extra. 72.73 s (L41): dadg at the basement door, then dadg and Grandpa at the table; 76.10 s both gone with the cut. Clean.\nKept: S15 21.0-22.4 s no white frame (Y 172-193; film max 212). S07 runners past the lens, S33 one walk off left, S82 me and dad up the stairs, two people: same as before.\nFIX (fail): the same scan finds 3 more one-frame pops before cuts: 81.57 s (f2447) S59 corridor, me already gone from gone('me','L46.3-0.05'); 122.53 s (f3676) S94 dinner table, all three chairs empty from gone(dad/arlo/me,'L72-0.05'); 7.63 s (f229) S05 last frame, the baker snaps from walking at camera to side-on for one frame (walk ends at raw pos 'L05-0.05', so he stops and turns to yaw 326 before the cut).\nMinor, not a fail: one-frame caption blanks before the cuts at 91.57 s and 114.00 s.\ncraft: 0 block, 0 near, 1 warn: spec.face_big_share 0.299 (0.4-), same as every earlier proof, not a fail.",
- "fixes": [
-  "81.57 s S59 (L46 corridor): gone('me','L46.3-0.05') -> 'L46.3'.",
-  "122.53 s S94 (L71 dinner table): gone dad, arlo, me at 'L72-0.05' -> 'L72'.",
-  "7.63 s S05 (L04 baker): last frame before the cut to S06 pops the baker side-on; end the walk on the cut (raw pos at 'L05', not 'L05-0.05') or key yaw to his walk heading there."
- ]
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.1 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 17.9 | 14.0– | ok |\n| macro.motion_energy_q | 8.53 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 7.74 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.06 | –0.25 | ok |\n| spec.shot_p90_s | 1.84 | –2.5 | ok |\n| macro.longest_still_s | 0.63 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 3.29 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.542 | 0.35– | ok |\n| macro.brightness_first_3s | 0.694 | 0.3– | ok |\n| macro.dark_frame_share | 0.023 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.486 | 0.42– | ok |\n| macro.contrast_mean | 0.229 | 0.18– | ok |\n| spec.face_big_share | 0.299 | 0.4– | **warn** |\n| spec.caption_share | 0.975 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.51 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.095 | –0.25 | ok |\n| micro.idle_window_share | 0.0 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 68.0 | –120 | ok |\n| spec.sound_events_per_10s | 3.91 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0039 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.7 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0417 | –0.08 | ok |\n| sound.hf_jump_max | 0.0157 | –0.04 | ok |",
+ "notes": "Proof 270x480 x4 upscaled to 1080x1920, 127.9 s, 30 fps, run 42360254197, sha 23533ef (PR head and last story commit, not stale). -14.1 LUFS / -1.8 dBTP, LRA 1.1; 4 kHz max 0.042, jump 0.016; tail clean. Flash passes (general 3/s, 3f 6/s, red 0). clip.json 0 hits, 0 camera. Gate OPEN; opening 'if' matches L01; same as ep92 (last upload): queue note; ep48 before it is 'confess'.\nSecond one: sunny push on the brass whistle on its green pole, steam, '26' sign top right; 'When the town' by 0.23 s, first face (me) at 1.4-1.7 s. Cover 93.4 s: the Under's glowing eyes and brass mouth, strong.\nFixed: 7.63 s (f229) the baker is still walking at the lens on the last S05 frame, then the cut to S06; 81.57 s (f2447) me still on the S59 corridor stairs to the last frame; 122.53 s (f3676) dad, arlo and me all at the S94 table to the last frame (the next caption arrives one frame early, as at every cut). The one-frame scan finds no outliers and no new pre-cut spikes; the cut list matches the third proof minus those three.\nKept: compared frame by frame with the third proof, the only frames that changed are 7.27-7.63 s, 81.57 s and 122.53 s (elsewhere mean diff 0.4/255, p99 0.9). So the 15 cuts fixed last time, S15 21.0-22.4 s (no white frame, Y 172-193, film max 212), S07, S33 and S82 are the same frames that passed before. S05 6.7-7.63 s: a readable turn, then a walk toward the lens that ends on the cut.\nMinor, not a fail: one-frame caption blanks before the cuts at 91.57 s and 114.00 s (unchanged).\ncraft: 0 block, 0 near, 1 warn: spec.face_big_share 0.299 (0.4-), same as every earlier proof, not a fail."
 }
