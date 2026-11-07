@@ -124,6 +124,14 @@
    [
     "never LIES.",
     "never lies."
+   ],
+   [
+    "So why did mine",
+    "So why did mine"
+   ],
+   [
+    "say TWO things?",
+    "say two things?"
    ]
   ]
  },
@@ -324,12 +332,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "That's not tomorrow.",
-    "That's not tomorrow."
+    "Tomorrow's the THIRTEENTH.",
+    "Tomorrow's the thirteenth."
    ],
    [
-    "That's TWO days out.",
-    "That's two days out."
+    "That was TWO days out.",
+    "That was two days out."
    ]
   ]
  },
@@ -412,12 +420,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "That's not tomorrow.",
-    "That's not tomorrow."
+    "And twelve",
+    "And twelve"
    ],
    [
-    "That's TODAY.",
-    "That's today."
+    "was TODAY.",
+    "was today."
    ]
   ]
  },
@@ -490,8 +498,8 @@
     "Which me"
    ],
    [
-    "do I TRUST?",
-    "do I trust?"
+    "do I BELIEVE?",
+    "do I believe?"
    ]
   ]
  }
