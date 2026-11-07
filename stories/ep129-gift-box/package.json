@@ -6,5 +6,6 @@
   "cover_s": 44.6,
   "shape": "empty-box",
   "opening": "ban",
-  "lane": "core"
+  "lane": "core",
+  "hold": "final fails QA (2026-11-07): Dad's body through the gift box (S24, S33, S34 z-fight; S59 legs through the open box) and a flat frame in S49; the staging fix for S21/S61 is ready on #414"
 }
