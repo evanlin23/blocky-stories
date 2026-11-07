@@ -272,14 +272,14 @@ shot("S27", "L27", fcam("R2", *HOLDER, d=1.8, lens=30, f=0.42, el=3, az=3, push=
 shot("S28", "L28", fcam("R2", *HOLDER, d=2.9, lens=30, f=0.40, az=-4, el=6, push=0.08), {
     "me": ps("R2", *HOLDER, expr="uneasy", arms=(40, 40), side=(-22, -22), lean=4, head=(0, 6))})
 chg("me", "L28.1", blend=0.5, lean=8, head=(0, 10))
-shot("S29", "L29", ocam("R2", 0.0, 0.83, 0.62, 1.6, 30, el=-6, push=0.06, arc=1.0), {
+shot("S29", "L29", ocam("R2", 0.0, 0.83, 0.5, 1.6, 30, el=-4, push=0.04, arc=1.0), {
     "me": ps("R2", *HOLDER, expr="uneasy", **BOX_ARMS)})
 shot("S30a", "L30", fcam("R2", *HOLDER, d=2.9, lens=30, f=0.40, el=5, az=-3, push=0.07), {
     "me": ps("R2", *HOLDER, expr="scared", **BOX_ARMS)})
 shot("S30b", "L30.2", ocam("R2", 0.0, 0.83, 0.72, 1.5, 30, az=68, el=6, push=0.06, arc=1.0), {
     "me": ps("R2", *HOLDER, expr="scared", **BOX_ARMS)})
 shot("S31", "L31", ocam("R1", -2.3, 6.2, 0.1, 6.0, 24, az=180, el=3, push=0.06), {})
-shot("S32", "L32", fcam("R3", -0.58, 1.95, d=2.9, lens=30, f=0.42, dx=0.36, push=0.03, arc=0.8), {
+shot("S32", "L32", fcam("R3", -0.58, 1.95, d=3.1, lens=30, f=0.42, dx=0.26, push=0.03, arc=0.8), {
     "me": ps("R3", -0.58, 1.95, expr="scared", arms=(10, 10), side=(-4, -4), head=(10, 0))})
 
 # ============================================================================================ 06 thanksgiving
