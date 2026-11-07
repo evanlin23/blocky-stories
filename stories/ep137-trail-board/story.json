@@ -241,7 +241,7 @@
    "chunks": [
     [
      "He sat,",
-     "he sat,"
+     "he sat."
     ],
     [
      "and his canoe,",
@@ -270,8 +270,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It never says WHY.",
-     "it never says why."
+     "It never",
+     "it never"
+    ],
+    [
+     "says WHY.",
+     "says why."
     ],
     [
      "Just one LINE.",
@@ -453,8 +457,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And there it was.",
-     "and there it was."
+     "And there",
+     "and there"
+    ],
+    [
+     "it was.",
+     "it was."
     ],
     [
      "A path",
@@ -1503,7 +1511,7 @@
    "step": 2,
    "hand": 0.004,
    "look": "m",
-   "at": "L16.1",
+   "at": "L16.2",
    "note": "S16b a slow push down the path"
   },
   {
