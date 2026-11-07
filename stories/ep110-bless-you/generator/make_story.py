@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 19
+REV = 20
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 SPLITS = {"on his LANDLORD'S couch.": [3, 1], "it was a dumb FIGHT,": [3, 2], "in a green ARMCHAIR,": [3, 1],
@@ -319,6 +319,7 @@ swirl("L14", GP - 1.2, 1.0, 0.95, 0.9)
 shot("L14", F(GP - 1.2, 1.4, 1.3, 4.2, 34, dx=0.4, push=0.14), "sit1")
 put("me", "L14.1", [GP - 1.2, 1.75], 20, expr="worried", arms=[0, 0])
 sit("me", "L14.1")
+shot("L14.1", F(GP - 1.2, 1.75, 1.3, 2.3, 44, dx=0.6, push=0.12), "sit2")
 beat("me", "L14.1+0.5", expr="polite", yaw=-20)
 # L15: forty, drinking the tea
 hold("me", "L15")
@@ -682,6 +683,12 @@ polish = {"whoosh_lp": 2500.0, "reveal": [remap("L39")], "twist": remap("L39"),
           "sway": [names[n] for n in ("dark2", "awake1", "awake2", "pastshoulder", "portrait", "wall1", "clip1", "scared", "back")],
           "hold": [names[n] for n in ("wall1", "wide34", "reunion", "tray1", "tray3", "cookies", "kitchen0", "momlands", "carolface")]}
 story = {
+    "staging_ok": [names["kitchen0"] + "/me+mom walking-close, side by side, no overlap",
+                   names["walkin"] + "/me+mom walk together, deliberate contact",
+                   names["grass1"] + "/me+mom walk together, deliberate contact",
+                   names["grass2"] + "/me+mom walk together, deliberate contact",
+                   names["reunion"] + "/reunion: grandpa in his armchair, mom beside, me landing",
+                   names["hum3"] + "/me+grandpa seated grandpa, me beside, no overlap"],
     "framing_ok": ["S12", "S14", names["gone1"], names["couch1"], names["party2"], names["tray3"]],
     "slug": "ep110-bless-you",
     "title": "Every Sneeze Lands Me by a STRANGER 🤧",

@@ -1,0 +1,29 @@
+{
+ "stage": "proof",
+ "film": "proof-42309635014",
+ "run": 42309635014,
+ "sha": "df1cd67b4387d44165b68a81a69663850280369e",
+ "artifact": 13549012038,
+ "verdict": "pass",
+ "date": "2026-11-06",
+ "checked": [
+  "frames every 1 s",
+  "first 3 s every 3rd frame",
+  "2.5 fps 8-16, 36-44, 52-73 s",
+  "S39/S40 cut frame by frame (63-65 s)",
+  "phone size and 1920 TV canvas",
+  "cover",
+  "loudness",
+  "4 kHz windows",
+  "drop and tail levels",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.2 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 16.8 | 14.0– | ok |\n| macro.motion_energy_q | 7.1 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 7.69 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.07 | –0.25 | ok |\n| spec.shot_p90_s | 1.83 | –2.5 | ok |\n| macro.longest_still_s | 0.5 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 2.86 | 1.5– | ok |\n| spec.camera_move_share | 0.991 | 0.65– | ok |\n| spec.punch_per_10s | 0.69 | 0.4– | ok |\n| macro.brightness_mean | 0.64 | 0.35– | ok |\n| macro.brightness_first_3s | 0.674 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.357 | 0.42– | **warn** |\n| macro.contrast_mean | 0.232 | 0.18– | ok |\n| spec.face_big_share | 0.583 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.002 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.667 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.051 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 63.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.2 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0357 | –0.08 | ok |\n| sound.hf_jump_max | 0.0116 | –0.04 | ok |",
+ "notes": "Proof 72.8 s at df1cd67 (half size, 4 samples, 57 shots). -14.1 LUFS / -1.8 dBTP, LRA 1.3; 4 kHz max 0.036, jump 0.012; voice 10.6 dB over the bed; the 0.5 s drop before L29/L30 (45.3-45.8 s) is voice and room only; the end runs at full level into the loop, L46 not cut. Flash passes (1/s, 3f 3/s, red 0). Clip: 336 times, 0 hits. Polish on (reveal L33, twist L30). Gate OPEN (note-9 lint warn on L14 'The tomatoes. The RADIO.', not a block).\nPackage matches, no spoiler, no 'husband', made_for_kids false. Opening 'whatif' matches L01 (0.17-1.98 s); last upload ep92 is 'if', queue tail ep99 is 'cost' (ep130 not yet in queue.txt).\nSecond one: sunlit close-up of me in the greenhouse, face upper third, my forearm on the bench with the big black '0' cuff filling the lower half, slow push; at 0.9 s the insert of the cuff '0'. 'What if your sleeve counted down to your best FRIEND?' is a rule hook (whatif lane); the concrete mystery (my zero is 11 years old, only Gus there) lands by 12-18 s.\nCuff continuity right: mine '0' every shot, Gus buttoned to S20, '1' S23-S39 (36.5 s inserts, 53 s on the table), '0' at L40 63.8 s. One frame (1914) shows the 'ZERO.' caption over the '1' before the cut, 33 ms, invisible.\nCover 53.4 s: Gus at his round table, face to camera, mustard cuff '1' big in front of him. Faces read, reads at phone size and on a 1920 canvas. Strong.\nLooked at every 1 s, every 3rd frame 0-3 s, 2.5 fps 8-16, 36-44, 52-73 s, 10 fps 63-65 s. No black, frozen, intersecting or stray text; S37 (59 s) my hand rests on the radio top, not the dial, reads fine. S06 walker (10.3 s): the sidewalk below is near-black asphalt, reads as ground.\ncraft: 0 block, 0 near, 1 warn: macro.saturation_mean 0.357 (0.42-). Watched: the pastel greenhouse greens, mustard and red read clearly on phone and TV; not a viewer loss."
+}

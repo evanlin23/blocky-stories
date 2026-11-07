@@ -47,7 +47,7 @@ X = {"neutral": "neutral", "bored": "blank", "uneasy": "worried", "stunned": "wi
 
 def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="solid", pattern_c=None, hat="none",
            hat_c="#333333", extras=(), eyes="round", sleeves="long", brow_w=1.0, extra_c=None, **kw):
-    d = {"age": "adult", "skin": skin, "shirt": shirt, "pattern": pattern, "pants": pants, "shoes": shoes,
+    d = {"age": "adult", "body_width": 0.6, "skin": skin, "shirt": shirt, "pattern": pattern, "pants": pants, "shoes": shoes,
          "sleeves": sleeves, "hair": hair, "hair_c": hair_c, "hat": hat, "hat_c": hat_c,
          "face": {"eyes": eyes, "brows": True, "ink": "#1c120c"}}
     if brow_w != 1.0:
@@ -181,14 +181,14 @@ shot("S05", "L05", cam(MAN[0], 1.1, 1.3, 1.5, -8, 36, cz=1.35, push=(1.15, 1.3))
 shot("S06", "L06", camp([-0.6, -4.2, 1.6], [0, G.DEPOT_Y, 2.3], 17, pos2=[0.6, -5.6, 1.6]))
 # S07: she and I stand and walk toward the camera (both faces to camera, the chalk count beside us, he is out)
 cut("driver", "L07", hidden=True)
-cut("wa", "L07", [0.85, 1.1, G.SIT_Z], yaw=0, expr="bored", head=[0, 0], hidden=False)
-cut("me", "L07", [1.7, 1.1, G.SIT_Z], yaw=0, expr="bored", head=[0, 0])
+cut("wa", "L07", [0.7, 1.1, G.SIT_Z], yaw=0, expr="bored", head=[0, 0], hidden=False)
+cut("me", "L07", [1.85, 1.1, G.SIT_Z], yaw=0, expr="bored", head=[0, 0])
 cue("L07", "sit", wa=0.0, me=0.0, dur=0.3)
-key("wa", "L07.1", [0.85, 1.1, 0.0], yaw=0)
-key("wa", "L07.2", [0.85, 0.2, 0.0], yaw=0)
-key("me", "L07.1", [1.7, 1.1, 0.0], yaw=0)
-key("me", "L07.2", [1.7, 0.2, 0.0], yaw=0)
-shot("S07", "L07", cam(1.7, 0.6, 1.2, 2.7, 0, 36, cz=1.3, push=(2.55, 1.2)))
+key("wa", "L07.1", [0.7, 1.1, 0.0], yaw=0)
+key("wa", "L07.2", [0.7, 0.2, 0.0], yaw=0)
+key("me", "L07.1", [1.85, 1.1, 0.0], yaw=0)
+key("me", "L07.2", [1.85, 0.2, 0.0], yaw=0)
+shot("S07", "L07", cam(1.3, 0.6, 1.2, 2.7, 0, 36, cz=1.3, push=(2.55, 1.2)))
 
 # ===== 03 day forty-two (L08 to L11)
 cut("driver", "L08", [*G.TOL8, G.SIT_Z], yaw=0, expr="neutral", head=[0, 0], hidden=False, arms=[0, 0])
@@ -196,10 +196,10 @@ cut("me", "L08", [*G.ME8, G.SIT_Z], yaw=0, expr="neutral", head=[0, 0])
 cut("wa", "L08", [*WOM, G.SIT_Z], hidden=True)
 cut("ma", "L08", [*MAN, G.SIT_Z], hidden=True)
 cue("L08", "sit", me=1.0, driver=1.0)
-shot("S08a", "L08", cam(1.96, 1.1, 1.3, 2.18, 0, 36, cz=1.35, push=(2.12, 1.3)))
+shot("S08a", "L08", cam(1.7, 1.1, 1.3, 2.4, 0, 36, cz=1.35, push=(2.3, 1.3)))
 key("driver", "L08.3", expr="sad", head=[0, -9])
 key("driver", "L09", expr="neutral", head=[0, 4])
-shot("S08b", "L08.3", cam(1.96, 1.1, 1.3, 2.15, -6, 36, cz=1.35, push=(2.1, 1.3)))
+shot("S08b", "L08.3", cam(1.7, 1.1, 1.3, 2.4, -6, 36, cz=1.35, push=(2.3, 1.3)))
 key("me", "L09", expr="uneasy")
 key("me", "L09.1", expr="smile")
 mouth("me", "L09.1", "L09>", 0.5)
@@ -272,7 +272,7 @@ cut("me", "L21", [*G.ME_NC, G.SIT_Z], yaw=0, expr="smile", hidden=False, head=[0
 mouth("me", "L21", "L21>", 0.5)
 key("nc", "L21", expr="uneasy", head=[0, 0])
 key("nc", "L21+0.9", expr="smile")
-shot("S21", "L21", [cam(1.9, 1.1, 1.3, 2.35, 3, 36, cz=1.35)[0], [1, *cam(1.9, 1.1, 1.3, 2.3, 3, 36, cz=1.35)[0][1:]]])
+shot("S21", "L21", [cam(1.5, 1.1, 1.3, 2.35, 3, 36, cz=1.35)[0], [1, *cam(1.5, 1.1, 1.3, 2.3, 3, 36, cz=1.35)[0][1:]]])
 cut("nc", "L22", [*NC, G.SIT_Z], hidden=True)
 cut("me", "L22", [*ME, G.SIT_Z], yaw=0, expr="smile", hidden=False, head=[0, 0])
 key("me", "L22.2", expr="neutral")
@@ -336,7 +336,7 @@ story = {
     "tail": 0.25,
     "fade_in": False,
     "fade_out": False,
-    "rev": REV,
+    "rev": REV + 1,   # 6: characters spread so limbs do not intersect
     "look": {"style": "closer", "fog": "#dfe8f4", "fog_density": 0.001, "fog_start": 60.0, "sky": "#8fd6ff",
              "sky_strength": 1.0, "exposure": 0.05, "flash_safe": True, "polish": polish},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.012, -0.02], "saturation": 1.08, "contrast": 1.04,

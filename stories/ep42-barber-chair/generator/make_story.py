@@ -233,7 +233,7 @@ shot("L49", "shop", C([0.8, 6.8, 1.45], [-0.2, 7.8, 1.0], 34), {}, {"rows": [0, 
 shot("L49.3", "shop", C([-0.9, 7.0, 0.5], [-1.4, 8.4, 0.2], 28), {}, {"rows": [0, 0, 1], "no_props": True})
 shot("L50", "shop", front(1.1, 2.9, 180, 1.5, 15, 0.0, 34), {"me": at(1.1, 2.9, 180, expr="neutral", head=[0, -10])}, {"rows": [0, 0, 1]})
 shot("L51", "shop", C([0.5, 2.6, 1.5], [-0.2, 7.8, 1.2], 30),
-     {"me": [at(1.0, 3.7, 180, expr="neutral", arms=[0, 0]), {"at": "L51.3-0.05", "pos": [1.0, 5.2], "yaw": 180}]}, {"rows": [0, 0, 1]}, step=1)
+     {"me": [at(1.0, 3.7, 180, expr="neutral", arms=[0, 0]), {"at": "L51.3-0.05", "pos": [0.9, 5.7], "yaw": 180}]}, {"rows": [0, 0, 1]}, step=1)
 shot("L51.3", "shop", C([0.5, 2.6, 1.5], [-0.2, 7.8, 1.2], 30),
      {"me": [at(0.9, 5.7, 180, expr="neutral"), {"at": "L52-0.05", "pos": [0.8, 6.9], "yaw": 180}]}, {"rows": [0, 0, 1]}, step=1)
 
@@ -337,7 +337,6 @@ acting["me"] += [{"at": "L13", "pos": [-1.2, 1.0]}, {"at": "L14-0.1", "pos": [1.
                  {"at": "L29.4", "pos": [-0.3, 1.0], "yaw": 180, "keep_yaw": True},
                  {"at": "L29.4+0.6", "pos": [-0.3, 0.45], "yaw": 180, "keep_yaw": True, "head": [0, 0]},
                  {"at": "L43", "pos": [1.1, 2.7]}, {"at": "L43+0.5", "pos": [1.1, 2.45], "yaw": 180, "keep_yaw": True},
-                 {"at": "L51", "pos": [1.0, 4.4]}, {"at": "L51.3", "pos": [0.8, 6.0]}, {"at": "L52", "pos": [0.8, 7.0]},
                  {"at": "L66", "pos": [CHX, 7.8, 0.04], "yaw": -90}]     # the walk keys come after the shots' own, so end on the chair
 for k, a in enumerate(acting["me"]):
     pass
