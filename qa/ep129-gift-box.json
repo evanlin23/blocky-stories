@@ -1,0 +1,31 @@
+{
+ "stage": "proof",
+ "film": "proof-42331832292",
+ "run": 42331832292,
+ "sha": "b084d1b73692b44deb7043a3665ddb324ec84d32",
+ "verdict": "pass",
+ "date": "2026-11-07",
+ "checked": [
+  "frames every 2 s at phone size",
+  "every frame 0-3 s",
+  "TV 1920 canvas",
+  "S56b 87.9-89.8 s every frame",
+  "S40 63.2-65.6 s",
+  "S29-S31 45.9-48.3 s every frame (3f flash)",
+  "90.5-94.1 s and 66.6-69 s (head near box and mantel)",
+  "end 100-106 s",
+  "clip.json",
+  "loudness",
+  "4 kHz windows",
+  "end of audio",
+  "craft",
+  "flash",
+  "polish",
+  "package",
+  "opening",
+  "gate",
+  "cover"
+ ],
+ "craft": "**ep129-gift-box**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.8 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 22.1 | 14.0– | ok |\n| macro.motion_energy_q | 6.48 | 6.0– | ok |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 6.89 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.081 | –0.25 | ok |\n| spec.shot_p90_s | 1.99 | –2.5 | ok |\n| macro.longest_still_s | 0.1 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.75 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.94 | 0.4– | ok |\n| macro.brightness_mean | 0.752 | 0.35– | ok |\n| macro.brightness_first_3s | 0.75 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.289 | 0.42– | **warn** |\n| macro.contrast_mean | 0.184 | 0.18– | ok |\n| spec.face_big_share | 0.808 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.0 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.784 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.042 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 70.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.36 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 15.5 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.7 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0449 | –0.08 | ok |\n| sound.hf_jump_max | 0.0183 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Proof 270x480, 106.0 s, 3180 frames = timeline (74 shots). -14.1 LUFS / -1.7 dBTP, LRA 1.1; 4 kHz max 0.045, jump 0.018; voice 15.5 dB over the bed, never buried; no silence; L67 'never to open it' ends 105.5 s and fades to -35 dB by 106 s, no cut-off. Flash passes (general 1/s, 3f 3/s at 47.1 s, red 0); clip.json 0 hits of 503. Gate OPEN. Package clean, no spoiler, no 'husband'. Opening 'ban' matches L01 'Never open a PRESENT here'; last upload ep92 ('if') and queue neighbour ep99 ('cost') differ. Polish on.\nSecond one: bright butter-yellow front room, me (green sweater) close and lit, the red-and-cream wrapped box on the white mantel under the big blue clock, slow push; caption 'Never open a' at 0.2 s, 'PRESENT here.' at 0.7 s. Rule and mystery posed in 2.6 s.\nS56b 87.9-89.4 s, every frame: me in the doorway, smiling, on 'was standing / in his DOORWAY'; no stale S56 Dad frames. 'Dad looked into' appears on the last S56b frame only (89.37 s, 1 frame) before S57 cuts to Dad; doesn't hurt.\nS29-S31 45.9-48.3 s, every frame: mid-tone cuts (box close -> me holding it -> low box close -> porch steps at 47.98 s), no bright jump; the 3f count of 3/s is the cut rate, at the bar, not over. OK.\nShould-fix (not a fail): S40 64.2-65.3 s 'with a moving TRUCK' - the truck in the right window is a small white/blue block that doesn't read at phone size; the caption carries it. Minor: 93.0-93.6 s ('back on the MANTEL') the mantel's gold bar sits right on Dad's head.\nFaces read; no black, frozen, intersecting or z-fighting frames in 2 s sheets, 0-3 s every frame, S40, S56b, S29-S31, 90.5-94.1 s or the end; box held at chest, bow below chin (42-47 s); no stray text. TV canvas (88.5 s) clean, shadows kept. Cover 44.6 s: me wide-eyed, wavy mouth, holding the wrapped box under the clock, 'a grown MAN.' Strong.\ncraft: 0 block, 0 near, 2 warn: macro.saturation_mean 0.289 (0.42-), sound.voice_bed_gap_db 15.5 (8.0-14.0). Saturation is the pastel daylight look by design and reads fine on phone and TV; the gap only means a thin bed, voice clear. Neither loses viewers."
+}

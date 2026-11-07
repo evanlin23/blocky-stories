@@ -456,3 +456,15 @@ def test_held_shots_keep_their_frame_and_short_shots_push_gently():
     tl2 = {**tl, "shots": [short]}
     zs = [polish.motion(tl2, st, {**p, "punch": 0}, k / 30, [])[0] for k in range(12)]
     assert max(zs) - min(zs) <= 0.045                       # about 4% at most on a 0.4 s shot (critic)
+
+
+def test_meter_panel_needs_me_or_ines():
+    """A "meter" cue with no me/ines keys (another story's own cue name) never draws ep28's tower panel."""
+    from PIL import Image
+    blank = Image.new("RGBA", (1080, 1920), (0, 0, 0, 0))
+    other = blank.copy()
+    post.draw_meter(other, 1.0, {"cues": [{"name": "meter", "t": 0.0, "n": 0}]})
+    assert other.tobytes() == blank.tobytes()
+    ep28 = blank.copy()
+    post.draw_meter(ep28, 1.0, {"cues": [{"name": "meter", "t": 0.0, "me": 7, "ines": 4, "dur": 0.0}]})
+    assert ep28.tobytes() != blank.tobytes()

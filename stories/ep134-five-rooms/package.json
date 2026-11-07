@@ -3,9 +3,8 @@
   "description": "Here, your house builds a room for everyone who's ever lived in it. Newlyweds move into two rooms. The boarding house on the hill is a whole block long.\n\nOurs has nine rooms, and there are four of us. Mom keeps five of them shut, and nobody will say whose they are.\n\nIt's made up. A blocky story, built with code and Blender.",
   "pin": "Comment ROOM if your house would need a few more.",
   "made_for_kids": false,
-  "cover_s": 46.7,
+  "cover_s": 48.8,
   "shape": "extra-ones-are-me",
   "opening": "count",
-  "lane": "experiment",
-  "hold": "batch 14: scripts only, not built yet"
+  "lane": "experiment"
 }

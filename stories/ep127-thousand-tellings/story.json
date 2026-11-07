@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 4,
+ "rev": 5,
  "look": {
   "style": "closer",
   "fog": "#cfe6f5",
@@ -6400,7 +6400,8 @@
     "hidden": false,
     "yaw": 180,
     "blink": false,
-    "expr": "neutral"
+    "expr": "neutral",
+    "sfx": "door"
    },
    {
     "at": "L46.2",
@@ -6408,10 +6409,21 @@
      2.9,
      -7.4
     ],
-    "sfx": "door"
+    "yaw": 180,
+    "keep_yaw": true
    },
    {
-    "at": "L46.3",
+    "at": "L46.2+0.33",
+    "yaw": 125,
+    "blend": 0.25
+   },
+   {
+    "at": "L46.2+0.95",
+    "yaw": 180,
+    "blend": 0.25
+   },
+   {
+    "at": "L47",
     "pos": [
      2.9,
      -4.4
@@ -7809,9 +7821,9 @@
    "yaw": 0.0
   },
   {
-   "at": "L46.2",
+   "at": "L46",
    "name": "door",
-   "a": -75.0,
+   "a": -105.0,
    "dur": 0.7
   },
   {
@@ -8176,7 +8188,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 4
+  "rev": 5
  },
  "set_moves": [
   "S12",
