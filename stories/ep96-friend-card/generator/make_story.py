@@ -328,7 +328,7 @@ cue("L48", "ring", p=1.0)
 cue("L49.3", "ring", p=0.25)
 S("L08", "S08a", "hand", HC(0.0, 0.052, -10, 0.15, 50, push=0.12, tx2=0.02, tz2=0.062), None)
 hand_cues("L08", "me", "mine", "9:11")
-S("L08.1", "S08b", "curb", C("curb", (0.7, 3.2, 1.15), -6, 3.3, 40, 3.0, push=0.12),
+S("L08.1", "S08b", "curb", C("curb", (0.7, 3.2, 1.15), -6, 4.1, 40, 3.0, push=0.12),
   {"maya": {"pos": (0.0, 3.2), "yaw": -6, "expr": "laugh", "sit": 0.43},
    "me_d": {"pos": (1.4, 3.2), "yaw": -20, "expr": "smile", "sit": 0.43}})
 S("L09", "S09a", "curb", C("curb", (0.4, 3.2, 1.0), 4, 4.0, 32, 3.0, push=0.14),
@@ -343,7 +343,7 @@ S("L10", "S10a", "curb", C("curb", (0.4, 3.2, 0.95), -8, 3.9, 36, 6.0, push=0.14
    "me_d": {"pos": (1.1, 3.2), "yaw": -22, "expr": "angry", "sit": 0.43, "arms": [20, 55]}})
 M("maya", "L10.0+0.25", "curb", arms=[75, 20])
 M("me_d", "L10.0+0.25", "curb", arms=[20, 75])
-S("L10.1", "S10b", "curb", C("curb", (0.4, 3.2, 1.0), 6, 4.0, 32, 3.0, push=0.14),
+S("L10.1", "S10b", "curb", C("curb", (0.4, 3.2, 1.0), 6, 4.3, 32, 3.0, push=0.14),
   {"maya": {"pos": (-0.3, 3.2), "yaw": 8, "expr": "laugh", "sit": 0.43, "arms": [20, 20]},
    "me_d": {"pos": (1.1, 3.2), "yaw": -8, "expr": "laugh", "sit": 0.43, "arms": [20, 20]}})
 cue("L10.1", "show", id="lastfry", on=False)
@@ -576,7 +576,7 @@ S("L40", "S40", "roof", C("roof", (0.0, 11.0, 1.25), 0, 4.9, 34, 3.0, push=0.14)
    "me": {"pos": (1.0, 11.0), "yaw": -4, "expr": "soft", "side": [12, 0]}})
 S("L41", "S41a", "roof", C("roof", (0.55, 10.9, 1.5), -10, 1.1, 50, 2.0, push=0.12),
   {"me": {"pos": (0.55, 10.9), "yaw": -10, "expr": "soft"}})
-S("L41.1", "S41b", "roof", C("roof", (0.05, 10.9, 1.4), 0, 3.9, 40, 2.0, push=0.12),
+S("L41.1", "S41b", "roof", C("roof", (0.05, 10.9, 1.4), 0, 4.6, 40, 2.0, push=0.12),
   {"me": {"pos": (0.75, 10.9), "yaw": -8, "expr": "laugh"},
    "maya_w": {"pos": (-0.65, 10.9), "yaw": 8, "expr": "laugh", "side": [0, 55]}})
 S("L42", "S42a", "roof", C("roof", (-0.3, 10.9, 1.35), 4, 1.7, 45, 2.0, push=0.12),
@@ -681,7 +681,7 @@ music = {
     ],
 }
 story = {
-    "rev": 8,
+    "rev": 9,
     "staging_ok": ["S35a/vows face to face, arms down", "S37a/the group hug (Maya pulls me in)", "S37b/the group hug", "S37c/the group hug", "S40/family photo, arms around shoulders"],
     "slug": "ep96-friend-card",
     "title": "My Card Says We Stop Being FRIENDS",
