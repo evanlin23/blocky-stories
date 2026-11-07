@@ -712,11 +712,12 @@ cue("L53", "clouds", on=False)
 look("L53+0.3", "night", 0.45)
 shot("S53", "L53", C([-3.9, -3.1, 1.5], [1.0, 2.0, 1.2], 24, [-3.6, -3.0, 1.5], [1.0, 2.0, 1.2], 24))
 # L54: Ben walks me to my room
-put("ben", "L54", [6.6, 0.2], 90, expr="soft", arms=[85, 0])
+put("ben", "L54", [9.6, 0.2], 90, expr="soft", arms=[85, 0])
 fl("ben", "L54", 1.0)
-put("me", "L54", [5.6, -0.2], 90, expr="uneasy")
-go("ben", "L54.1", [11.0, 0.2])
-go("me", "L54.1", [9.9, -0.2])
+put("me", "L54", [8.5, -0.2], 90, expr="uneasy")
+# one steady walk (1.7 m/s) over all of S54a, 3 m+ from the camera, stopping on the S54b cut at the old marks
+go("ben", "L54.2", [11.0, 0.2])
+go("me", "L54.2", [9.9, -0.2])
 shot("S54a", "L54", C([5.2, -0.1, 1.55], [9.5, 0.0, 1.3], 24, [5.6, -0.1, 1.55], [10.0, 0.0, 1.3], 24))
 pose("ben", "L54.2", yaw=60)
 shot("S54b", "L54.2", C([10.0, -0.55, 0.85], [12.0, -0.5, 0.6], 24, [10.3, -0.5, 0.8], [12.0, -0.5, 0.55], 24))
@@ -869,6 +870,9 @@ story = {
               "vignette": 0.2, "bloom": 0.25, "grain": 0.009, "red_line": 0.7},
     "phonemes": {"varga": "vˈɑɹɡɑ", "wrist": "ɹˈɪst"},
     "clip_ok": ["tblfl", "fl"],
+    # QA-checked deliberate close pairs (cast standing close in a corridor/clump, arms clear): kept as shot/pair
+    "staging_ok": ["S06a/f1+f3", "S06a/f2+f3", "S09/dale+f1", "S09/dale+f2", "S09/dale+f3", "S09/f1+f3", "S09/f2+f3",
+                   "S27/me+ben", "S27b/me+ben", "S27c/me+ben", "S28/me+ben", "S29b/me+ben"],
     "rain_shots": ["S52"],
     "set_moves": ["S03", "S26", "S45a", "S45b", "S52"],
     "cast": cast,
@@ -879,7 +883,7 @@ story = {
     "fx": [],
     "music": music,
     "sound": sound,
-    "rev": 3,
+    "rev": 4,
 }
 remap_all(sfx)
 remap_all(music["sections"])
