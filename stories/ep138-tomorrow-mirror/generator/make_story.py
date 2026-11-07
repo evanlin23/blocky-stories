@@ -141,7 +141,8 @@ def cam(tx, ty, tz, w, az, lens, cz=None, push=None):
     p, t_ = at_(w, tz, cz)
     keys = [[0, p, t_, lens]]
     if push:
-        p2, t2 = at_(push[0], push[1], None if cz is None else cz + (push[1] - tz))
+        w2 = w - (w - push[0]) * 2.2
+        p2, t2 = at_(w2, push[1], None if cz is None else cz + (push[1] - tz))
         keys.append([1, p2, t2, lens])
     return keys
 
@@ -154,12 +155,19 @@ def camp(pos, tgt, lens, pos2=None, tgt2=None):
 
 
 GLASS_ON = [False]
+GL = {}
 
 
 def shot(sid, at, camera, glass=None, **kw):
     """`glass`: a dict(lens, pos, tgt, dist) when the camera is the mirror's: the chrome pillar and the cool pane go in
     front of it by cue, on the cut; every real shot turns them off."""
     SH.append((sid, at, camera, kw))
+    GL[sid] = glass
+    glass_cue(at, glass)
+
+
+def glass_cue(at, glass):
+    """Turn the chrome pillar and the pane on in front of a glass camera (or off again after one) on the cut."""
     if glass:
         pos, tgt, lens = glass["pos"], glass["tgt"], glass["lens"]
         fx, fy = tgt[0] - pos[0], tgt[1] - pos[1]
@@ -168,7 +176,7 @@ def shot(sid, at, camera, glass=None, **kw):
         dp = glass.get("dist", 1.0)
         hw = 6.75 * dp / lens
         pw = max(0.5, 2.0 * hw)
-        lat = glass.get("fr", 0.6) * hw + pw / 2
+        lat = glass.get("fr", 0.45) * hw + pw / 2
         rx, ry = fy, -fx
         cue(at, "glass", on=1.0, px=round(pos[0] + fx * dp + rx * lat, 3), py=round(pos[1] + fy * dp + ry * lat, 3),
             pz=pos[2], yaw=round(math.atan2(fy, fx), 4), qx=round(pos[0] + fx * 0.45, 3),
@@ -179,7 +187,7 @@ def shot(sid, at, camera, glass=None, **kw):
         GLASS_ON[0] = False
 
 
-def glass_cam(tgt, lens, push=0.12, dy=0.0, cz=1.5, **kw):
+def glass_cam(tgt, lens, push=0.28, dy=0.0, cz=1.5, **kw):
     """The mirror's camera at (GCAM.x, GCAM.y + dy) looking at tgt, pushed in `push` m over the shot."""
     pos = [G.GCAM[0], G.GCAM[1] + dy, cz]
     keys = [[0, pos, list(tgt), lens]]
@@ -192,7 +200,7 @@ def glass_cam(tgt, lens, push=0.12, dy=0.0, cz=1.5, **kw):
     return keys, glass
 
 
-def gshot(sid, at, tgt, lens, push=0.12, dy=0.0, cz=1.5, hold=False, **kw):
+def gshot(sid, at, tgt, lens, push=0.28, dy=0.0, cz=1.5, hold=False, **kw):
     keys, glass = glass_cam(tgt, lens, push, dy, cz, **kw)
     shot(sid, at, keys, glass=glass, hold=hold)
 
@@ -245,7 +253,7 @@ show("L02", "me2")
 key("me2", "L02", [TX, TY, 0], yaw=90, arms=[12, 12])
 key("me2", "L02+0.25", yaw=90, arms=[88, 88], blend=0.9)
 cue("L02", "props", bar=1.0, bar_who="me2")
-gshot("S02", "L02", [TX, TY, 1.1], 21, push=0.15)
+gshot("S02", "L02", [TX, TY, 1.1], 21, push=0.28)
 show("L03", "wendell")
 cut("wendell", "L03", [*G.WEN, 0.0], yaw=90, expr="smile", head=[0, 0], arms=[0, 0], side=[0, 0])
 cue("L03", "props", bar=0.0)
@@ -294,7 +302,7 @@ shot("S11", "L11", cam(ME[0], ME[1], 1.3, 1.4, -94, 36, cz=1.35, push=(1.2, 1.3)
 show("L12", "me", "dre")
 cut("me", "L12", [3.0, -1.0, 0.0], yaw=-90, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0])
 dre_at("L12", 90, "smile")
-shot("S12a", "L12", camp([4.7, -0.8, 1.6], [BX, BY - 0.1, 1.05], 22, pos2=[4.5, -0.8, 1.6]), hold=True)
+shot("S12a", "L12", camp([4.7, -0.8, 1.6], [BX, BY - 0.1, 1.05], 22, pos2=[4.5, -0.8, 1.6]))
 show("L12.1", "dre")
 dre_at("L12.1", -90, "serious")
 shot("S12b", "L12.1", cam(BX, BY, 1.0, 1.7, -90, 33, cz=1.2, push=(1.5, 1.0)))
@@ -312,12 +320,12 @@ show("P01", "me2")
 show("L15", "me2")
 key("me2", "L15", [TX, TY, 0], yaw=90, expr="serious", head=[0, 0])
 key("me2", "L15.1", yaw=90, head=[0, -9], blend=0.6)
-gshot("S15", "L15", [TX, TY, 1.4], 26, dy=0.05, push=0.14)
+gshot("S15", "L15", [TX, TY, 1.4], 26, dy=0.05, push=0.28)
 key("me2", "L16", yaw=90, head=[0, 0], expr="serious", blend=0.4)
 big_mouth("me2", "L16.1", 5, 0.42)
-gshot("S16a", "L16", [TX, TY, 1.38], 26, push=0.1)
+gshot("S16a", "L16", [TX, TY, 1.38], 26, push=0.28)
 shot_t = "L16.3"
-gshot("S16b", shot_t, [TX, TY, 1.4], 36, push=0.16, dy=0.04)
+gshot("S16b", shot_t, [TX, TY, 1.4], 36, push=0.28, dy=0.04)
 glass_at("L17", "me2", expr="serious", pos=(TX, G.GY - 0.7))
 gshot("S17", "L17", [BX, G.GY, 1.0], 18, push=0.0, hold=True, fr=0.8)
 show("L18", "dre")
@@ -335,18 +343,18 @@ shot("S20", "L20", cam(ME[0], ME[1], 1.3, 1.5, -88, 36, cz=1.35, push=(1.3, 1.3)
 # ===== 05 the second message (L21 to L26)
 show("L21", "me")
 cut("me", "L21", [4.0, G.GY, 0.0], yaw=90, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0])
-shot("S21", "L21", camp([-2.6, G.GY, 1.7], [4.0, G.GY, 1.35], 20, pos2=[-2.1, G.GY, 1.7]), hold=True)
+shot("S21", "L21", camp([-2.6, G.GY, 1.7], [4.0, G.GY, 1.35], 20, pos2=[-2.1, G.GY, 1.7]))
 show("L22", "me2")
 glass_at("L22", "me2", expr="neutral")
 gshot("S22", "L22", [TX, TY, 1.35], 26, dy=-0.08)
 key("me2", "L23", [TX, TY, 0], yaw=90, expr="sad", head=[0, 0], blend=0.5)
 big_mouth("me2", "L23", 4, 0.4)
-gshot("S23a", "L23", [TX, TY, 1.38], 26, push=0.1)
+gshot("S23a", "L23", [TX, TY, 1.38], 26, push=0.28)
 big_mouth("me2", "L23.1", 6, 0.4)
-gshot("S23b", "L23.1", [TX, TY, 1.4], 36, push=0.16, dy=0.04)
+gshot("S23b", "L23.1", [TX, TY, 1.4], 36, push=0.28, dy=0.04)
 key("me2", "L24", yaw=90, expr="sad", head=[0, 0])
 big_mouth("me2", "L24", 2, 0.4)
-gshot("S24", "L24", [TX, TY, 1.38], 30, push=0.12, dy=0.06)
+gshot("S24", "L24", [TX, TY, 1.38], 30, push=0.28, dy=0.06)
 cue("L25", "board", v=12.0, flip=0.0)
 show("L25", "none")
 gshot("S25", "L25", [-4.9, G.BOARD[1] + 0.35, 1.75], 44, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.9)
@@ -375,6 +383,49 @@ mouth("me", "L31", "L31>", 0.4)
 shot("S31", "L31", cam(ME[0], ME[1], 1.3, 1.5, -90, 36, cz=1.35, push=(1.35, 1.3)))
 key("me", "L31", [ME[0], ME[1], 0.0], yaw=-90, expr="scared")
 
+# ----------------------------------------------------------------------------------------------- angle cuts
+# A second angle of the same moment, from the middle of a shot: a real camera swings 10 degrees round its target, the
+# mirror's camera slides 0.18 m along the glass (its pillar and pane are placed again for the new camera).
+SPLITS = {"S01a": "L01.1", "S02": "L02.1", "S03": "L03.2", "S04b": "L04.2", "S05": "L05.1", "S06": "L06.1",
+          "S07": "L07.1", "S09": "L09.2", "S10": "L10.1", "S11": "L11.1", "S12b": "L12.2", "S14": "P01",
+          "S15": "L15.1", "S16a": "L16.2", "S20": "L20.1", "S21": "L21.1", "S26": "L26.1", "S27": "L27.1",
+          "S28": "L28.2", "S30": "L30.1"}
+
+
+def variant(sid, sign):
+    sid0, at0, cam0, kw0 = next(x for x in SH if x[0] == sid)
+    g = GL.get(sid)
+    if g:
+        dy = sign * 0.18
+        pos = [g["pos"][0], round(g["pos"][1] + dy, 3), g["pos"][2]]
+        tgt = [g["tgt"][0], g["tgt"][1], g["tgt"][2]]
+        keys = [[0, pos, tgt, g["lens"]]]
+        if len(cam0) > 1:
+            fx, fy = tgt[0] - pos[0], tgt[1] - pos[1]
+            n = math.hypot(fx, fy)
+            keys.append([1, [round(pos[0] + fx / n * 0.28, 3), round(pos[1] + fy / n * 0.28, 3), pos[2]], tgt, g["lens"]])
+        return keys, dict(g, pos=pos)
+    out = []
+    for k in cam0:
+        t_ = k[2]
+        a = sign * 10 * D2R
+        dx_, dy_ = k[1][0] - t_[0], k[1][1] - t_[1]
+        out.append([k[0], [round(t_[0] + dx_ * math.cos(a) - dy_ * math.sin(a), 3),
+                           round(t_[1] + dx_ * math.sin(a) + dy_ * math.cos(a), 3), k[1][2]], t_, k[3]])
+    return out, None
+
+
+new_sh, flip = [], 1
+for sid, at, camera, kw in SH:
+    new_sh.append((sid, at, camera, kw))
+    if sid in SPLITS:
+        keys, g = variant(sid, flip)
+        flip = -flip
+        new_sh.append((sid + "b", SPLITS[sid], keys, {k: v for k, v in kw.items() if k != "hold"}))
+        if g:
+            glass_cue(SPLITS[sid], g)
+SH[:] = new_sh
+
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)
 for k_ in acting.values():
@@ -386,7 +437,7 @@ for i, (sid, at, camera, kw) in enumerate(SH):
         s["at"] = remap(at)
     s.update({k: v for k, v in kw.items() if not k.startswith("_") and k != "hold"})
     shots.append(s)
-hold = [sid for sid, at, camera, kw in SH if kw.get("hold")] + ["S03", "S19", "S25"]
+hold = [sid for sid, at, camera, kw in SH if kw.get("hold")] + ["S19", "S25"]
 
 sfx = [
     {"at": "L04.1", "kind": "thud", "db": -24},          # a soft clank of plates
@@ -416,7 +467,8 @@ remap_all(music["sections"])
 remap_all(sound["ambience"])
 remap_all(sound["music_drops"])
 polish = {"reveal": ["L17.2", "L19", "L25"], "twist": "L25", "emph": ["L01.2", "L17.2", "L19.2", "L25"],
-          "quiet": [], "hold": sorted(set(hold)), "sway": ["S14", "S15", "S22", "S29"]}
+          "quiet": [], "hold": sorted(set(hold)), "sway": [x["id"] for x in shots if x["id"] not in set(hold)], "sway_amp": 0.005, "idle_scale": 2.0,
+          "reframe_every": 0.5, "reframe_min": 0.9}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
 polish["twist"] = remap(polish["twist"])
