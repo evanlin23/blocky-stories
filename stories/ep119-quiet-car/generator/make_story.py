@@ -315,8 +315,8 @@ shot("L14", P([-1.6, 1.0, 1.5], [1.6, DY, 1.4], 36), "jump")
 put("teddy", "L15", [0.25, ry(2)], 0, expr="smile")
 go("teddy", "L15+0.9", [0.25, TEY - 0.2])
 acting["teddy"][-1]["yaw"] = 180
-put("teddy", "L15>", [TEX, TEY], 210, expr="smile", arms=[35, 35])
-sit("teddy", "L15>")
+put("teddy", "L16", [TEX, TEY], 210, expr="smile", arms=[35, 35])
+sit("teddy", "L16")
 only("L15", ["teddy", "me"])
 seat_me("L15", "neutral")
 shot("L15", K2((0.0, ry(2.5), 1.4), 100, 3.8, (0.4, ry(3.9), 1.4), 115, 3.2, 38), "slideseat")
@@ -722,6 +722,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": [names["exterior"], names["bussmile"], names["emptyseat2"], names["swell"], names["loudcar"]],
+    "staging_ok": ["S24/me+teddy passing in the aisle, 5 frames", "S13/c1+c2 window passengers, checked OK on the final", "S87/hug", "S89/me+teddy side by side in the seats, checked OK on the final"],
     "frames_ok": [],
     "clip_ok": [],
     "asr_forgive": ["nineteen eighty seven", "walk the", "walked a", "1987"],
