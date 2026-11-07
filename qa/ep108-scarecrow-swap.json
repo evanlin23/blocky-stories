@@ -1,25 +1,27 @@
 {
- "stage": "final",
- "film": "13400687320",
- "run": 41994000975,
+ "stage": "proof",
+ "film": "proof-42304348669",
+ "run": 42304348669,
+ "sha": "910eec421065234d39872cd6e90e735f76d32645",
  "verdict": "pass",
- "date": "2026-11-05",
+ "date": "2026-11-06",
  "checked": [
+  "S20-S21 staging fix 18.9-21.2 s every frame",
   "frames every 2 s",
   "first 3 s every frame",
   "phone and 1920 TV canvas",
-  "full-size crops 20-26 s, 24 s, 32 s, 38 s, 39.4 s",
-  "mask fix 20.8-26.0 s at 10 fps",
-  "S40-S43 tail 33.6-39.77 s at 5 fps",
+  "31-39.7 s at 3 fps (staging_ok shots)",
   "cover 39.4 s",
   "loudness and true peak",
   "HF windows",
   "tail",
-  "craft vs proof",
+  "polish",
+  "craft",
   "flash",
+  "clip",
   "gate",
   "opening"
  ],
- "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.7 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 24.4 | 14.0– | ok |\n| macro.motion_energy_q | 8.8 | 6.0– | ok |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 10.56 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.36 | –2.5 | ok |\n| macro.longest_still_s | 0.1 | –1.5 | ok |\n| macro.motion_energy_mean | 3.81 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.75 | 0.4– | ok |\n| macro.brightness_mean | 0.573 | 0.35– | ok |\n| macro.brightness_first_3s | 0.644 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.501 | 0.42– | ok |\n| macro.contrast_mean | 0.22 | 0.18– | ok |\n| spec.face_big_share | 0.633 | 0.4– | ok |\n| spec.caption_share | 0.977 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.674 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.091 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 98.0 | –120 | ok |\n| spec.sound_events_per_10s | 3.02 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0405 | –0.08 | ok |\n| sound.hf_jump_max | 0.0114 | –0.04 | ok |",
- "notes": "Confirm of the passed proof (run 41990575341): 39.77 s, 1193 frames, timeline 39.7667 s matches; audio 39.765 s, tail at -17.7 dB mean to the end, nothing cut off (57 MB is just a short film at 10.9 Mb/s).\nMask fix holds: sack lifts at 21.2 s (S23) and is gone from 21.3 s; 21.3-25.5 s (S23-S28) show only Grandpa's face, glasses and the sack hat. S40 (wide field, 'still waves') and S41 (sack close, 'at EVERYBODY', cover 39.4 s) are framed clean, nothing through anything.\nSecond one, same as proof: bright close-up of the stitched sack face waving, crow tag; 'Never wave at my grandpa's SCARECROW. It waves BACK.'\nFull-size and TV: faces read, captions in the safe band, no black, frozen or intersecting frames, no stray text; 6-sample finals show no noise or texture crawl, faces smooth; shadows hold on the TV canvas. Clip hit 19.83 s (S20) is the beam cone, light only.\nSound: -14.1 LUFS, -1.8 dBTP, LRA 1.3; HF max 0.0405 per 5 s, jump 0.0114; voice 12.6 dB over bed; no silence.\nFlash house bar passes (general 1/s, 3f 3/s, red 0; strobe-only bar ok). Gate OPEN. Opening ban vs last upload floor-thirteen 'if': no clash; not in queue.txt yet (tail ep99 is 'cost', no clash).\ncraft: 0 block, 0 near, 1 warn: spec.cuts_per_10s 10.56 (5.5-8.0); every number within 0.2 of the proof (changes_q 24.2->24.4, longest still 0.03->0.1 s, peak -1.9->-1.8)."
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.7 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 24.2 | 14.0– | ok |\n| macro.motion_energy_q | 8.75 | 6.0– | ok |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 10.56 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.36 | –2.5 | ok |\n| macro.longest_still_s | 0.03 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.0 | –1.0 | ok |\n| macro.motion_energy_mean | 3.8 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.75 | 0.4– | ok |\n| macro.brightness_mean | 0.573 | 0.35– | ok |\n| macro.brightness_first_3s | 0.645 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.501 | 0.42– | ok |\n| macro.contrast_mean | 0.218 | 0.18– | ok |\n| spec.face_big_share | 0.641 | 0.4– | ok |\n| spec.caption_share | 0.977 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.674 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.167 | –0.25 | ok |\n| micro.idle_window_share | 0.091 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 98.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.77 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0405 | –0.08 | ok |\n| sound.hf_jump_max | 0.0113 | –0.04 | ok |",
+ "notes": "Staging fix check, 18.9-21.2 s stepped all 69 frames: S20 (19.43-19.83 s, beamrows) holds me from behind at a steady size, centred, taking a short step toward the rows as the beam comes up; no shrink, slide or zoom-away. Cut into S21 (19.83 s, torch) is a clean scale change to the close back shot: no pop, double image or crop; S22 sack close at 20.76 s clean.\nSecond one, unchanged: bright close-up of the stitched sack face waving, crow tag; \"Never wave at my grandpa's SCARECROW. It waves BACK.\" Cover 39.4 s (sack close, at EVERYBODY) strong.\nFrames every 2 s, first 3 s every frame, 31-39.7 s at 3 fps (staging_ok S32, S38-S41 grandma+straw): faces read, captions in the safe band, nothing black, frozen or through anything, no stray text. clip.json: 197 times, 0 hits.\nSound: -14.1 LUFS, -1.8 dBTP, LRA 1.3; HF max 0.0405 per 5 s, jump 0.0113; voice 12.6 dB over bed; no silence; audio 39.765 s, tail -17.4 dB mean, nothing cut off. Polish on.\nFlash house bar passes (general 1/s, 3f 3/s, red 0). verdict.json pass. Gate OPEN. Opening ban (\"Never wave\" at 0.3 s) vs last upload ep92 if and queue tail ep99 cost: no clash.\ncraft: 0 block, 0 near, 1 warn: spec.cuts_per_10s 10.56 (5.5-8.0), same as the passed final; walk_dead_end_share 0.0->0.167 from the short S20 step, still under 0.25."
 }
