@@ -1,8 +1,9 @@
 # ep134-five-rooms: handoff (build session, batch 14)
 
-Branch `claude/batch14-ep134-five-rooms`. No PR yet.
+Branch `claude/batch14-ep134-five-rooms`.
 
-- Done: build, framing pre-check fixes, preview (66 s, 53 shots), round 1 reviews in reviews/r2-*.md.
-- Round 1 (build): critic revise (11 must-fixes), standards revise (3). Writer changed L38 to "It's my seventh ROOM."
-- Now: round 1 fixes done and checked; a last builder pass is fixing door 7's inch gap (L15–L16) and the reveal's coloured doorways (L30). Then round 2.
-- Rounds left: round 2, then at most one single-fix rescue.
+- Round 1 (reviews/r2-*): both revise. All 14 must-fixes applied, and L38 is now "It's my seventh ROOM."
+- Round 2 (reviews/r3-*): critic approve (avg 7.5, nothing under 5), standards approve. The should-fixes are not applied: S25 face near the left edge, S26 hand short of door 7, S18 dark strip at the bottom, S08 hair touching the top edge, S47-S49 doorways beige.
+- check: no problems. gate: OPEN. shardcheck: 0 differ. pytest: 264 passed.
+- Next: PR, proof.yml, proof qa, merge.
+- Queue spacing (standards): keep 3 or more uploads from ep128 (also a count opening with Mom), away from ep42 and ep94 (count) and warm-shoes and ep98 (titles start "Our").

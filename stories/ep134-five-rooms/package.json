@@ -6,6 +6,5 @@
   "cover_s": 48.8,
   "shape": "extra-ones-are-me",
   "opening": "count",
-  "lane": "experiment",
-  "hold": "batch 14: scripts only, not built yet"
+  "lane": "experiment"
 }
