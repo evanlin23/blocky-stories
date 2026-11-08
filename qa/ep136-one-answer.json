@@ -1,0 +1,30 @@
+{
+ "stage": "final",
+ "film": "13571134821",
+ "run": 42363228733,
+ "sha": "8c225f21985b5c75c0383f534925880600ede0a9",
+ "verdict": "pass",
+ "date": "2026-11-07",
+ "checked": [
+  "staging.py",
+  "every frame: black, flat, frozen, pops, dark blocks (index and mod 64)",
+  "largest flat region per frame",
+  "cuts vs timeline",
+  "frames every 2 s at phone size",
+  "every frame 0-3 s",
+  "TV canvas 1920 wide",
+  "cover 36.4 s",
+  "first 3 s",
+  "loudness",
+  "4 kHz windows",
+  "drop and tail",
+  "craft vs proof",
+  "flash",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "**ep136-one-answer**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 16.1 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 19.0 | 14.0– | ok |\n| macro.motion_energy_q | 6.81 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 11.89 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.39 | –2.5 | ok |\n| macro.longest_still_s | 0.33 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.42 | 1.5– | ok |\n| spec.camera_move_share | 0.998 | 0.65– | ok |\n| spec.punch_per_10s | 0.64 | 0.4– | ok |\n| macro.brightness_mean | 0.462 | 0.35– | ok |\n| macro.brightness_first_3s | 0.473 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.646 | 0.42– | ok |\n| macro.contrast_mean | 0.209 | 0.18– | ok |\n| spec.face_big_share | 0.535 | 0.4– | ok |\n| spec.caption_share | 0.975 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.004 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.533 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.021 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 82.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.09 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.6 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.9 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0403 | –0.08 | ok |\n| sound.hf_jump_max | 0.0245 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "fixes": [],
+ "notes": "Final 1080x1920 30 fps, 1864 frames / 62.13 s vs timeline 1867 / 62.23 s: the picture is 3 frames short at the very end (S32, after L32 ends 61.96 s); every one of the 71 detected cuts lands on its timeline frame (offset 0), so nothing is lost mid-film; audio runs the full 62.23 s. Story folder at 8c225f2 differs from the proof sha a23ac42 only in HANDOFF.md, and matches origin/main. staging.py: 75 shots, 0 findings.\nFrame scan (all 1864, index and mod 64): no black, flat, frozen or 1-2 frame pop, no block going dark; min mean luma 69/255 (59.4 s dusk). Largest same-tone region 35% (f1584 mod64 48, 52.8 s S26b; also S24 48.1-49.5, S26 51.0-51.8, S32 61.3-62.1): the truck hood and dash lip in front of Eli, a real foreground object, reads as his truck with his hands on the dash, not a camera-in-geometry wipe. Pass, but it is a plain dark slab: next truck story should give the hood an edge or a highlight.\nFrames every 2 s and every frame of 0-3 s at phone size, TV canvas (51.4 s): faces read, captions in the safe band, no stray text (only the post 1 and the dots), no creature (the knocker is a still shadow on the pane 55.5-58.3 s, creepy, not silly). S30 57.2-58.3 s frames Eli smaller than its script (upper right, face about 0.28 of the width, over the 1/5 bar) with the truck headlamp as a big pale disc below; reads as the truck front, not a fix. Cover 36.4 s: Eli mid-shout at the railing, strong.\nSecond one: lit afternoon close, Eli (neutral) left third at the railing, the cream 1 on the post right, slow push; At the Rim, your echo answers ONE question (gold ONE) by 1.3 s, then the 1/2/3 dot rocks on never WRONG. Rule plus its price; the threat lands at 12 s (WE LL).\nAudio: -14.1 LUFS, -1.9 dBTP, LRA 1.4; 4 kHz share max 0.040 per 5 s, largest jump 0.025; voice 10.6 dB over the bed; the drop 40.3-41.0 s at -53 to -59 dB with the bed held, then the L20 hit; L32 ends 61.96 s, the bed runs to the loop at about -20 dB, nothing cut. Polish on, same as the proof.\nFlash: pass (general 1/s, 3f 2/s, red 0). Gate OPEN. Package: title, description, pin and cover match the film, no spoiler, fiction note, no husband, made_for_kids false. Opening cost matches L01; last upload ep92 is if; ep136 is not in queue.txt yet.\nCraft matches the proof within 0.03 on every row (longest still 0.33 vs 0.30, true peak -1.9 vs -1.8).\ncraft: 0 block, 0 near, 1 warn: spec.cuts_per_10s 11.89 (5.5-8.0); the fast cuts land on the spoken numbers and line chunks, as on the proof."
+}

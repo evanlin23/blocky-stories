@@ -20,7 +20,7 @@
   6. One set: a small bright gym. The mirror is a view of the same gym, never a second room.
   7. No creature.
 - **Everyone is an adult.** I'm 23. Dre, my best friend, is 23. Big Wendell is about 60. Mr. Kim is about 45. My cousin Lena is 28.
-- **Word count:** 215 spoken words in 31 lines (L01 to L31), all `narrator`, plus one music drop (0.6 s before L15).
+- **Word count:** 222 spoken words in 31 lines (L01 to L31), all `narrator`, plus one music drop (0.6 s before L15).
 - **Estimated length:** about 50 s at 290 wpm, with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A small bright gym: a wall-to-wall mirror with a thick chrome edge, teal walls, orange rubber floor, black racks and benches, a white flip-number date board on the back wall, steady white ceiling panels, afternoon sun through a high window. At closing it's the same light, emptier.
 - **Hold:** scripts only (batch 15a). Not built, not voiced.
@@ -40,10 +40,10 @@ The batch table is in `stories/ep136-one-answer/script.md`. This row:
 - Checked against "Claimed big ideas": not ep15 (a reflection left behind), not ep62 (something in the glass), not ep47 (tags on a lie).
 
 ## The story (the lane's engine)
-1. **A town rule with a payoff, working for two people (L01 to L08):** Big Wendell's mirror shows you tomorrow. Mr. Kim sees himself grinning with a gold house key and signs that night. My cousin Lena sees paint on her face and sells her first painting. "Tomorrow-you never LIES."
+1. **A town rule with a payoff, working for two people (L01 to L08):** Big Wendell's mirror shows you tomorrow. Mr. Kim sees himself grinning with a gold house key and signs that night. My cousin Lena sees paint on her face and sells her first painting. "Tomorrow-you never LIES. So why did mine say TWO things?"
 2. **My turn (L09 to L19):** Sam here, and it's Friday the twelfth. My best friend Dre wants all my savings for his food truck. "I only ask ONCE. I need it TONIGHT." In the glass, tomorrow-me looks right at me and, against the plant (L14: tomorrow-you never talks), mouths **message 1:** "Don't say yes to DRE." The creepy detail is that behind him Dre's bench is empty, though Dre is sitting right there. And the date in the glass says 14: two days out, not tomorrow.
 3. **Message 2, from the same mirror (L20 to L26):** at closing I come back alone. Tomorrow-me mouths: "Say yes TONIGHT. He's leaving town in the MORNING. For GOOD." It says the opposite and raises the stakes: lose the savings, or lose Dre. The date in the glass says 12: today, not tomorrow.
-4. **No answer (L27 to L31):** Dre calls: "Last CHANCE, buddy." "Both of them were ME. Which me do I trust?"
+4. **No answer (L27 to L31):** Dre calls: "Last CHANCE, buddy." "Both of them were ME. Which me do I believe?"
 - **The marker (the rule meter):** the mirror wall's chrome edge, in frame in every shot (beside me in my shots, in the near foreground of every glass shot).
 - **How the narrator is the exception:** tomorrow-you never talks. Mine talked twice.
 - **The loved one at stake:** my best friend Dre.
@@ -161,7 +161,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), and slashes 
 - L05: He signed for the house / that NIGHT.
 - L06: My cousin Lena saw / paint on her FACE.
 - L07: She sold her first painting / the next DAY.
-- L08: Tomorrow-you / never LIES.
+- L08: Tomorrow-you / never LIES. / So why did mine / say TWO things?
 - L09: Sam here. / Friday / the TWELFTH.
 - L10: My best friend Dre / wants my savings / for his food TRUCK.
 - L11: All of it. / Everything I've SAVED.
@@ -173,20 +173,20 @@ Every line is `who: narrator`. Caps are key words (caption colour), and slashes 
 - L17: Behind him, / Dre's bench / was EMPTY.
 - L18: But Dre was sitting / right THERE.
 - L19: And the date / in the glass / said FOURTEEN.
-- L20: That's not tomorrow. / That's TWO days out.
+- L20: Tomorrow's the THIRTEENTH. / That was TWO days out.
 - L21: At closing, / I came back ALONE.
 - L22: Tomorrow-me / was WAITING.
 - L23: "Say yes TONIGHT. / He's leaving town / in the MORNING.
 - L24: For GOOD."
 - L25: The date / in the glass / said TWELVE.
-- L26: That's not tomorrow. / That's TODAY.
+- L26: And twelve / was TODAY.
 - L27: Dre's been my best friend / since we were TEN.
 - L28: He just called. / "Last CHANCE, / buddy."
 - L29: Both of them / were ME.
 - L30: Both of them / were WRONG about the day.
-- L31: Which me / do I TRUST?
+- L31: Which me / do I BELIEVE?
 
-(Loop: "Which me do I trust? If you look in Big Wendell's gym mirror, you see tomorrow.")
+(Loop: "Which me do I believe? If you look in Big Wendell's gym mirror, you see tomorrow.")
 
 ## Notes for the builder and reviewers
 - Glass shots are the gym seen from the mirror, with the chrome edge in the near foreground and a faint cool tint (a plane in front of the camera, set in the scene, never a camera overlay). Only the reflection's subject is in frame. Never put the real me and tomorrow-me in one shot.
