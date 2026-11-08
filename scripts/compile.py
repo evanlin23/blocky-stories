@@ -188,9 +188,13 @@ def main() -> None:
             yt.thumbnails().set(videoId=vid, media_body=MediaFileUpload(str(thumb), mimetype="image/jpeg")).execute()
         except Exception as e:  # noqa: BLE001
             print(f"thumbnail not set: {e}")
+        import playlists
+        playlists.add(yt, vid, ["compilations"])   # never raises
         comps[dt.date.today().isoformat()] = {"video_id": vid, "title": title, "stories": chosen, "publish_at": when}
         COMPILATIONS.write_text(json.dumps(comps, indent=1) + "\n")
         subprocess.run(["git", "-C", str(ROOT), "add", "compilations.json"], check=True)
+        if playlists.FILE.exists():
+            subprocess.run(["git", "-C", str(ROOT), "add", str(playlists.FILE)], check=True)
         subprocess.run(["git", "-C", str(ROOT), "commit", "-m", f"compilation: {len(chosen)} stories"], check=True)
         push()
         print(f"compilation uploaded: https://studio.youtube.com/video/{vid}/edit (public at {when})")

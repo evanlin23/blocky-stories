@@ -12,6 +12,10 @@ Reviews are markdown files named `r<round>-<reviewer>.md`, with the verdict on a
 shapes the film, `qa/<story>.json` must hold a passed **proof** check (`"stage": "proof"`, proof.yml's film,
 `.claude/agents/qa.md`) drawn from a commit whose film files match this one. RULES.md, 2026-11-03: no story
 merges without a passed proof qa.
+
+On a merge that changes a film file, `scripts/staging.py` must also find nothing that isn't listed in story.json
+`staging_ok`: no lurch and no two bodies inside each other (RULES.md, audit decision 11, owner 2026-11-07). Only on
+`--merge`: a plain `gate` (the planner and upload.py) doesn't run it, so stories already merged keep uploading.
 """
 
 from __future__ import annotations
@@ -20,6 +24,7 @@ import fnmatch
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 from blocky.timeline import story_dir
@@ -150,6 +155,31 @@ def merge_problems(story: str, base: str | None) -> list[tuple[str, str]]:
     return proof_problems(story, qa, since)
 
 
+def staging_rows(stdout: str) -> list[str]:
+    """The findings table rows `scripts/staging.py` prints (header and rule lines skipped)."""
+    return [ln for ln in stdout.splitlines() if ln.startswith("| ") and not ln.startswith(("| frame", "|---"))]
+
+
+def staging_problems(story: str, base: str | None) -> list[tuple[str, str]]:
+    """Decision 11: a merge that changes a film file blocks on any staging.py finding not in `staging_ok`."""
+    if base and _changed(base, "HEAD", story) == []:
+        return []
+    script = ROOT / "scripts" / "staging.py"
+    if not script.exists():
+        return []
+    r = subprocess.run([sys.executable, str(script), "--story", str(story_dir(story))], cwd=ROOT,
+                       capture_output=True, text=True)
+    rows = staging_rows(r.stdout)
+    if rows:
+        return [("block", f"staging: {len(rows)} finding(s) not listed in story.json staging_ok (RULES decision 11), "
+                          f"first: {rows[0]}. Fix them, or list a deliberate one: python scripts/staging.py --story "
+                          f"stories/{story}")]
+    if r.returncode != 0:
+        tail = (r.stderr or r.stdout).strip().splitlines()[-1:] or ["no output"]
+        return [("warn", f"staging.py didn't finish ({tail[0]}); run it by hand before merging")]
+    return []
+
+
 def run(story: str, timeline: Path | None = None, merge: bool = False,
         base: str | None = None) -> tuple[bool, list[tuple[str, str]]]:
     from blocky import checks
@@ -157,6 +187,7 @@ def run(story: str, timeline: Path | None = None, merge: bool = False,
     problems = [p for p in checks.run(story, timeline)]
     if merge:
         problems += merge_problems(story, base)
+        problems += staging_problems(story, base)
     problems += lint_package(load_package(story))
     for who, v in verdicts(story).items():
         if v is None:
