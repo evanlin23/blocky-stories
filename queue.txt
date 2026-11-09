@@ -10,18 +10,26 @@
 # 2026-11-04 12:30 AM: final-qa passes first (ep47, rule-three, floor-thirteen, ep55, ep42, ep48, ep62); the sad reveals (ep55, ep42, ep48) 3 apart; moving-day and warm-shoes after their fixes pass
 # 2026-11-04 2:30 PM: + ep83, ep94, ep99 at the end (ep83 away from ep54 and ep96, cost never next to cost); moving-day dropped
 # 2026-11-04 8:40 AM: the 12 final-qa passes for Thu to Mon, shapes never twice in a row, cost never next to cost, sad reveals (ep55, ep42, ep48) 3+ apart; rule-three and floor-thirteen uploaded; dryer-nine, ep51, ep45, ep49 dropped; moving-day last, only if its last fix round passes
-ep47-fitting-room
-ep62-six-riders
-ep55-caravan-park
-ep92-blackout-ben
-ep54-dance-hall
-ep42-barber-chair
-ep28-lamp-room
-warm-shoes
-ep96-friend-card
-ep48-crazy-golf
-ep98-town-whistle
-ep89-sister-diary
-ep83-free-fries
+# 2026-11-09 review: fact titles, count/if/cost openings, short puzzles and the interactive lane first (they held 65%+ viewed); ban openings last; ep98 and ep28 wait on fixes
+ep128-zero-feet
+ep136-one-answer
+ep124-future-call
+ep134-five-rooms
+ep116-proud-inch
+ep137-trail-board
 ep94-today-again
+ep123-sorry-shrink
+ep130-rival-clock
 ep99-statue-years
+ep135-fortune-dodge
+ep126-nine-oh-nine
+ep127-thousand-tellings
+ep132-bus-stop
+ep117-glow-secret
+ep83-free-fries
+ep114-band-green
+ep102-aunt-peaches
+ep119-quiet-car
+ep108-scarecrow-swap
+ep122-face-the-wall
+moving-day
