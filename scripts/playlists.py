@@ -17,6 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 FILE = ROOT / "playlists.json"
 COMPILATIONS = ROOT / "compilations.json"
+RETRY_S = 10   # wait before the one retry of a playlist add
 
 PLAYLISTS = {
     "all": ("Every Buhtown Story", "Every creepy blocky story from Buhtown, in the order they came out."),
@@ -50,14 +51,21 @@ def ensure(yt, key: str) -> str:
 
 def add(yt, video_id: str, keys: list[str]) -> list[str]:
     """Add the video to each playlist; returns the keys that failed. Never raises: a playlist mustn't stop an upload."""
+    import time
+
     failed = []
     for k in keys:
-        try:
-            yt.playlistItems().insert(part="snippet", body={"snippet": {
-                "playlistId": ensure(yt, k), "resourceId": {"kind": "youtube#video", "videoId": video_id}}}).execute()
-        except Exception as e:  # noqa: BLE001
-            print(f"playlist {k}: not added ({type(e).__name__}: {e})")
-            failed.append(k)
+        for attempt in range(2):   # a playlist made a moment ago can refuse its first item (ep48, 2026-11-09)
+            try:
+                yt.playlistItems().insert(part="snippet", body={"snippet": {
+                    "playlistId": ensure(yt, k), "resourceId": {"kind": "youtube#video", "videoId": video_id}}}).execute()
+                break
+            except Exception as e:  # noqa: BLE001
+                print(f"playlist {k}: not added on try {attempt + 1} ({type(e).__name__}: {e})")
+                if attempt:
+                    failed.append(k)
+                else:
+                    time.sleep(RETRY_S)
     return failed
 
 

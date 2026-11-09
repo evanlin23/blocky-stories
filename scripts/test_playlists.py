@@ -61,6 +61,7 @@ def test_add_makes_each_playlist_once(tmp_path, monkeypatch):
 
 def test_add_never_raises_and_reports(tmp_path, monkeypatch):
     monkeypatch.setattr(pl, "FILE", tmp_path / "playlists.json")
+    monkeypatch.setattr(pl, "RETRY_S", 0)
     assert pl.add(FakeYT(fail_items=True), "v1", ["all"]) == ["all"]
 
 
@@ -72,3 +73,18 @@ def test_owner_steps_names_newest_compilation(tmp_path, monkeypatch):
     assert "watch?v=new" in steps and "Related video" in steps and pl.PLAYLISTS["interactive"][0] in steps
     monkeypatch.setattr(pl, "COMPILATIONS", tmp_path / "none.json")
     assert pl.owner_steps([]) == ""
+
+
+def test_add_retries_once(tmp_path, monkeypatch):
+    monkeypatch.setattr(pl, "FILE", tmp_path / "playlists.json")
+    monkeypatch.setattr(pl, "RETRY_S", 0)
+    yt = FakeYT()
+    calls = {"n": 0}
+    real = yt.playlistItems
+
+    def flaky():
+        calls["n"] += 1
+        return FakeYT(fail_items=True).playlistItems() if calls["n"] == 1 else real()
+    yt.playlistItems = flaky
+    assert pl.add(yt, "v1", ["all"]) == []
+    assert yt.items == [("PL1", "v1")]
