@@ -3106,8 +3106,12 @@
    "grain": 0.02
   }
  },
- "framing_ok": [],
- "staging_ok": [],
+ "framing_ok": [
+  "S08a"
+ ],
+ "staging_ok": [
+  "S10/me+dex flashback: two pointing, 1.1 m apart, no overlap, no touch"
+ ],
  "asr_forgive": [
   "hel",
   "percent",

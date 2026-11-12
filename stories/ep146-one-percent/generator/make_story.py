@@ -311,8 +311,8 @@ story = {
     "sound": sound,
     "shot_grades": {"S10": {"saturation": 0.62, "contrast": 0.96, "shadows": [0.07, 0.04, 0.0], "highlights": [0.09, 0.05, -0.04],
                             "vignette": 0.38, "bloom": 0.2, "grain": 0.02}},   # the flashback: faded, warm, soft edges
-    "framing_ok": [],
-    "staging_ok": [],
+    "framing_ok": ["S08a"],   # I walk toward Dex far down the dock on purpose; he is named in the line but the shot is about the walk
+    "staging_ok": ["S10/me+dex flashback: two pointing, 1.1 m apart, no overlap, no touch"],
     "asr_forgive": ["hel", "percent", "percent it's"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
