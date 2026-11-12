@@ -26,6 +26,8 @@ HEAD3_W, HEAD3_H, HEAD3_D = 2.8, 2.3, 2.1
 EYE_RX, EYE_RY, EYE_GAP, EYE_Y = 0.145, 0.185, 0.4, 0.5
 TEX3_W = 1024
 TEX3_H = int(round(TEX3_W * HEAD3_H / HEAD3_W))
+# bump when the drawing changes: the key carries it, so a cached texture from an older drawing is never reused
+FACE3_VERSION = 2
 HAIRLINE = 0.13   # the top of the face box a fringe may cover: nothing is drawn above it
 SS = 2   # drawn at twice the size, then halved: smooth edges without any blur or shading
 
@@ -457,7 +459,7 @@ def face3_key(face: dict, skin: str, expr: str, open_: float, look, blink: float
     q = lambda x, n: round(x * n) / n
     style = "".join(f"{k}{face[k]}-" for k in ("eye_scale", "eye_gap", "eye_y", "brow_w", "line", "ink", "pupil", "mustache", "freckles", "mouth_low")
                     if k in face).replace("#", "")
-    return f"v3-{style}{resolve(expr)}-{q(open_, 3)}-{q(look[0], 2)}-{q(look[1], 2)}-{int(blink > 0.5)}-{q(pop, 3)}"
+    return f"v3.{FACE3_VERSION}-{style}{resolve(expr)}-{q(open_, 3)}-{q(look[0], 2)}-{q(look[1], 2)}-{int(blink > 0.5)}-{q(pop, 3)}"
 
 
 def check_original3(face: dict) -> list[str]:

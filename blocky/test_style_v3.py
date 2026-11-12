@@ -50,7 +50,7 @@ def test_talking_opens_the_mouth_and_pop_and_blink_change_it():
 def test_keys_are_quantised_and_style_aware():
     k1 = F.face3_key({}, "#e9b48a", "neutral", 0.31, (0.1, 0), 0.0)
     k2 = F.face3_key({}, "#e9b48a", "neutral", 0.33, (0.12, 0), 0.0)
-    assert k1 == k2 and k1.startswith("v3-")
+    assert k1 == k2 and k1.startswith(f"v3.{F.FACE3_VERSION}-")
     assert F.face3_key({"mustache": "#d8622a"}, "#e9b48a", "neutral", 0, (0, 0), 0) != k1
     assert F.face3_key({}, "#e9b48a", "smile", 0, (0, 0), 0) == F.face3_key({}, "#e9b48a", "neutral", 0, (0, 0), 0)
 
