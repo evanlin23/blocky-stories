@@ -2,14 +2,12 @@
 
 Every agent reads this file, and only this file, for the rules. The owner's words outrank everything here. Note numbers (9, 18, 21) are the showrunner notes these came from in `evanlin23/content`. When the owner gives new feedback, add it here as a dated quote and change the rule it touches.
 
-## Feel-good first (owner, 2026-11-12; outranks every creepy-story rule below)
-The owner, on ep124 ("Future Me Called And Said NOTHING"): "I really like the one where on your 13th birthday, they called and he said nothing. It's really feel good happy. So let's like play a little bit more into that if possible." Then: "Maybe we can just abandon the creepy stuff. I think the feel good stuff is so much better."
-- **Every new story ends warm and happy.** Keep the uncanny rule and the mystery as the hook (a strange fact in the title, stakes at 3 to 9 s). The reveal recasts it as love, kindness or something wonderful, said plainly. ep124 is the model.
-- **No horror, no creatures or monsters, no dread as the payoff, no dark sets, no ending that leaves the viewer scared.** Where a rule below asks for a scare, a creature or a threat, read it as "the mystery".
-- **A bittersweet ending that is never stated and ends warm** (ep124) counts as warm, not as a sad family reveal.
-- The puzzle and interactive lanes continue, made warm.
-- Stories already past their proof ship as they are. Unbuilt scripts are re-pitched warm or dropped.
-- How it's doing is judged in the Monday reviews, against the creepy uploads' numbers (RULES, "Our own numbers so far").
+## Eerie and mystery, fewer monsters, more warm endings (owner, 2026-11-12)
+The owner liked ep124 ("Future Me Called And Said NOTHING"): "It's really feel good happy. So let's like play a little bit more into that if possible." Then, softening a first reaction ("Maybe we can just abandon the creepy stuff"): "Wait we don't need to go too drastic, it's just that it feels like the creepy monsters don't always land. I think eerie/mystery is fine. Idk don't take my word for it let's just keep posting and then think further."
+- **Eerie and mystery stay.** The uncanny rule and an unexplained thing are the hook.
+- **Fewer creatures and monsters.** They often read silly (see the creature playbook and its drops). Use one only when it passes both creature critics, and prefer a person or an object made wrong.
+- **More warm and wonderful reveals, ep124's kind:** creepy at first, then recast as love or kindness. Aim for about half of each batch, beside eerie ones that keep their chill.
+- **Nothing else changes yet.** Keep posting; the Monday reviews compare the warm reveals with the eerie ones and decide the mix.
 
 ## The 30-day run (from 2026-11-02)
 The owner, 2026-11-02: "I kinda want to just let you go by yourself and upload for the next like 30 days all autonomously and iterate and see what works and what doesnt. The main goal is to get monetized. I am already down 200 dollars so i guess that can be one of the first milesotnes."
