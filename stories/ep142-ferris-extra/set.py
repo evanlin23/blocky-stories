@@ -40,6 +40,7 @@ ROW_X = {"a": -2.4, "b": -1.2, "c": 0.0, "d": 1.2, "e": 2.4}
 SHADOW = "#4d5a78"
 CAB_COLS = ["#ff6f61", "#7ff0c8", "#ffd23f", "#b79bff"]     # coral, mint, yellow, lilac
 GATE_X = 5.0
+CONE_S = 1.35
 W = {}
 
 
@@ -225,8 +226,10 @@ def build(kit, story, tl):
     # the A-frames
     for sy in (-1, 1):
         for sx in (-1, 1):
-            beam(kit, f"leg{sy}{sx}", (HX, HY + sy * 1.3, HZ), (HX + sx * 3.8, HY + sy * 2.4, -0.4), 0.26, white)
+            lg = beam(kit, f"leg{sy}{sx}", (HX, HY + sy * 1.3, HZ), (HX + sx * 3.8, HY + sy * 2.4, -0.4), 0.26, white)
             kit.box(f"foot{sy}{sx}", (0.9, 0.9, 0.12), (HX + sx * 3.8, HY + sy * 2.4, 0.06), iron)
+            if sy == -1:
+                ctx.setdefault("frontlegs", []).append(lg)
         if sy == 1:
             beam(kit, f"tie{sy}", (HX - 3.0, HY + sy * 2.1, 1.4), (HX + 3.0, HY + sy * 2.1, 1.4), 0.14, pale)
     # the cabins: round-ish buckets from a pivot, open on the camera (-y) side
@@ -254,19 +257,25 @@ def build(kit, story, tl):
         kit.cyl(f"cab{k}.rod", 0.05, 0.3, (0, 0, z0 + 2.17), iron, g, n=8)
         kit.box(f"cab{k}.bench", (1.0, 0.4, 0.1), (0, 0.45, z0 + 0.42), cm2, g, bevel=0.02)
         ctx["cabs"].append(g)
+        if k == KD:         # a door hinged at the left of the open front; it swings out (open) and shuts
+            hg = kit.empty("door.hinge", (-0.58, -0.76, z0), g)
+            kit.box("door.leaf", (1.16, 0.06, 0.95), (0.58, 0.0, 0.5), P("#fff6e4", 0.4, spec=0.2), hg, bevel=0.02)
+            kit.box("door.bar", (1.0, 0.07, 0.08), (0.58, 0.0, 0.82), P("#ff6f61", 0.4, spec=0.3), hg, bevel=0.02)
+            ctx["door"] = hg
 
     # ---- the fake shadows: the cast casts no real shadow; each one is a shape on the boards
-    shm = P(SHADOW, 0.95, spec=0.0)
+    shm = kit.emit(SHADOW, 0.95, name="shadowm")
     cast = story["cast"]
-    shadow_spec = [("a", 0.85, 0.9, 1.55), ("b", 0.85, 0.9, 1.55), ("c", 0.85, 0.9, 1.55), ("e", 0.85, 0.9, 1.55),
-                   ("d", -0.9, -0.55, 2.1), ("man", 0.85, 0.9, 1.4)]
+    shadow_spec = [("a", 0.6, -0.6, 1.55), ("b", 0.6, -0.6, 1.55), ("c", 0.6, -0.6, 1.55), ("e", 0.6, -0.6, 1.55),
+                   ("d", -0.6, -0.6, 1.55), ("man", 0.6, -0.6, 1.4)]
     for k, dx, dy, ctop in shadow_spec:
         h = cast[k].get("height", 1.0) / 1.25
         cx, cy = (ROW_X[k], 0.0) if k in ROW_X else (5.75, -1.3)
         parts = [(-0.28, 0.28, -0.2, 0.2, 0.0, 0.78 * h), (-0.34, 0.34, -0.2, 0.2, 0.78 * h, 1.42 * h),
                  (-0.26, 0.26, -0.25, 0.25, 1.42 * h, 1.85 * h)]
-        if k in ROW_X:
-            parts.append((0.22, 0.78, -0.65, -0.2, 0.95 * h, ctop * h))
+        if k in ROW_X:      # the raised arm and the cone: a bar beside the body, higher up
+            sg = 1.0 if k != "d" else -1.0
+            parts.append((0.22 * sg if sg > 0 else -0.78, 0.78 if sg > 0 else -0.22, -0.65, -0.2, 0.95 * h, ctop * h))
         pts = []
         for x0, x1, y0, y1, z0_, z1_ in parts:
             ph = []
@@ -277,7 +286,11 @@ def build(kit, story, tl):
             pts += [hull(ph)]
         for i, poly in enumerate(pts):
             if len(poly) >= 3:
-                kit.mesh_obj(f"shadow.{k}.{i}", [(p[0], p[1], 0.012) for p in poly], [tuple(range(len(poly)))], shm)
+                area = sum(poly[j][0] * poly[(j + 1) % len(poly)][1] - poly[(j + 1) % len(poly)][0] * poly[j][1] for j in range(len(poly)))
+                if area < 0:
+                    poly = poly[::-1]            # always face up, so no patch drawn dark
+                sh_ = kit.mesh_obj(f"shadow.{k}.{i}", [(p[0], p[1], 0.012 + 0.004 * i) for p in poly], [tuple(range(len(poly)))], shm)
+                noshadow(sh_)
 
     # ---- the iron gate and fence (screen right), the gate man's spot is just beyond it
     for y in (-2.2, -0.4):
@@ -439,6 +452,8 @@ def first_frame(kit, story, ctx):
         build_cone(kit, root, "swirl" if k == "d" else "melt", flav.get(k, "#ffffff"))
         if k != "d":
             build_wrist(kit, arm, f"{k}.cone", flav[k])
+        root.scale = (CONE_S, CONE_S, CONE_S)
+        noshadow(root)
         ctx["cones"][k] = (root, arm)
     for ch in rig.CHARS.values():
         noshadow(ch.root)
@@ -460,12 +475,19 @@ def animate(kit, story, tl, t, ctx):
     d = rig.CHARS.get("d")
     t_s02 = next((s["start"] for s in tl["shots"] if s["id"] == "S02"), 2.0)
     t_ride = cue_t(tl, "ride", 26.0) - 0.3
+    shot_now = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1])["id"]
     if d is not None and not d.root.hide_render:
-        k = KD if t < t_s02 else (KM if t >= t_ride else None)
+        k = KD if (t < t_s02 or shot_now == "S16") else (KM if t >= t_ride else None)
         if k is not None:
             x, y, z = cab_pos(k, a)
             d.root.location = (x, y + 0.02, z + CAB_Z0 - 0.85)
             d.root.rotation_euler = (0, 0, 0)
+    # the door of D's first gondola: swung out until the cue, then it shuts over 0.7 s
+    ts_ = cue_t(tl, "doorshut", 24.2)
+    ctx["door"].rotation_euler = (0, 0, math.radians(-105) * (1.0 - ss((t - ts_) / 0.7)))
+    # the near A-frame legs would cross the close shots that look at the mint gondola
+    for ob in ctx["frontlegs"]:
+        ob.hide_render = shot_now in ("S21", "S23")
     # cones stay upright in the raised hand
     for k, (root, arm) in ctx["cones"].items():
         root.rotation_euler = (-arm.rotation_euler.x, 0, 0)

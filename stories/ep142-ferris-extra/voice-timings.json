@@ -6,46 +6,46 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "four of us got on the ferris wheel.",
+   "text": "four tickets for the ferris wheel.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.19,
-   "end": 1.517,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
    "chunks": [
     [
-     0.19,
-     0.534
+     0.172,
+     0.655
     ],
     [
-     0.534,
-     0.732
+     0.655,
+     0.802
     ],
     [
-     0.732,
-     1.517
+     0.802,
+     1.552
     ]
    ]
   },
   "L02": {
-   "text": "five got off.",
+   "text": "five riders stepped off.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.172,
+   "dur": 1.517,
    "onset": 0.19,
-   "end": 0.983,
+   "end": 1.328,
    "chunks": [
     [
      0.19,
-     0.397
+     0.69
     ],
     [
-     0.397,
-     0.983
+     0.69,
+     1.328
     ]
    ]
   },
@@ -150,26 +150,26 @@
    ]
   },
   "L05": {
-   "text": "i'm bee. three are my cousins.",
+   "text": "bee is me. three are my cousins.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.655,
+   "dur": 1.776,
    "onset": 0.172,
-   "end": 1.448,
+   "end": 1.569,
    "chunks": [
     [
      0.172,
-     0.466
+     0.569
     ],
     [
-     0.509,
-     0.732
+     0.629,
+     0.854
     ],
     [
-     0.732,
-     1.448
+     0.854,
+     1.569
     ]
    ]
   },
@@ -218,22 +218,26 @@
    ]
   },
   "L08": {
-   "text": "you've got one turn.",
+   "text": "pick one before the wheel comes round.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.345,
-   "onset": 0.172,
-   "end": 1.138,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.707,
    "chunks": [
     [
-     0.172,
-     0.448
+     0.155,
+     0.534
     ],
     [
-     0.448,
-     1.138
+     0.534,
+     0.983
+    ],
+    [
+     0.983,
+     1.707
     ]
    ]
   },
@@ -254,18 +258,26 @@
    ]
   },
   "L10": {
-   "text": "it's dee.",
+   "text": "it's dee. the cone proved it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 0.948,
+   "dur": 1.603,
    "onset": 0.172,
-   "end": 0.724,
+   "end": 1.414,
    "chunks": [
     [
      0.172,
-     0.724
+     0.483
+    ],
+    [
+     0.517,
+     0.819
+    ],
+    [
+     0.819,
+     1.414
     ]
    ]
   },
@@ -358,42 +370,50 @@
    ]
   },
   "L15": {
-   "text": "dee got on at the top.",
+   "text": "dee is the wheel's own rider.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.362,
+   "dur": 1.707,
    "onset": 0.172,
-   "end": 1.155,
+   "end": 1.5,
    "chunks": [
     [
      0.172,
-     0.56
+     0.439
     ],
     [
-     0.56,
-     1.155
+     0.439,
+     0.81
+    ],
+    [
+     0.81,
+     1.5
     ]
    ]
   },
   "L16": {
-   "text": "nobody gets on at the top.",
+   "text": "it gets on at the top, where nobody can.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.552,
-   "onset": 0.19,
-   "end": 1.345,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
    "chunks": [
     [
-     0.19,
-     0.75
+     0.172,
+     0.492
     ],
     [
-     0.75,
-     1.345
+     0.492,
+     0.862
+    ],
+    [
+     0.888,
+     1.724
     ]
    ]
   },

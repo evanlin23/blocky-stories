@@ -4,16 +4,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Four of us",
-    "four of us"
+    "Four TICKETS",
+    "four tickets"
    ],
    [
-    "got on",
-    "got on"
+    "for the",
+    "for the"
    ],
    [
-    "the Ferris WHEEL.",
-    "the ferris wheel."
+    "Ferris wheel.",
+    "ferris wheel."
    ]
   ]
  },
@@ -22,12 +22,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "FIVE",
-    "five"
+    "FIVE riders",
+    "five riders"
    ],
    [
-    "got off.",
-    "got off."
+    "stepped OFF.",
+    "stepped off."
    ]
   ]
  },
@@ -125,8 +125,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "I'm B.",
-    "i'm bee."
+    "B is ME.",
+    "bee is me."
    ],
    [
     "Three are my COUSINS.",
@@ -171,22 +171,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "You've got",
-    "you've got"
+    "Pick ONE",
+    "pick one"
    ],
    [
-    "one TURN.",
-    "one turn."
-   ]
-  ]
- },
- {
-  "id": "L09",
-  "who": "narrator",
-  "chunks": [
+    "before the wheel",
+    "before the wheel"
+   ],
    [
-    "Which ONE?",
-    "which one?"
+    "comes ROUND.",
+    "comes round."
    ]
   ]
  },
@@ -202,6 +196,10 @@
    [
     "It's D.",
     "it's dee."
+   ],
+   [
+    "The CONE proved it.",
+    "the cone proved it."
    ]
   ]
  },
@@ -274,12 +272,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "D got on",
-    "dee got on"
+    "D is the WHEEL'S",
+    "dee is the wheel's"
    ],
    [
-    "at the TOP.",
-    "at the top."
+    "own rider.",
+    "own rider."
    ]
   ]
  },
@@ -288,76 +286,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Nobody gets on",
-    "nobody gets on"
+    "It gets on",
+    "it gets on"
    ],
    [
-    "at the top.",
-    "at the top."
-   ]
-  ]
- },
- {
-  "id": "L17",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The man at the gate",
-    "the man at the gate"
+    "at the TOP,",
+    "at the top,"
    ],
    [
-    "tips his HAT",
-    "tips his hat"
-   ],
-   [
-    "to D.",
-    "to dee."
-   ]
-  ]
- },
- {
-  "id": "L18",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Like he does",
-    "like he does"
-   ],
-   [
-    "every DAY.",
-    "every day."
-   ]
-  ]
- },
- {
-  "id": "L19",
-  "who": "narrator",
-  "chunks": [
-   [
-    "D walks",
-    "dee walks"
-   ],
-   [
-    "back through",
-    "back through"
-   ],
-   [
-    "the GATE.",
-    "the gate."
-   ]
-  ]
- },
- {
-  "id": "L20",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And gets on",
-    "and gets on"
-   ],
-   [
-    "ALONE.",
-    "alone."
+    "where nobody CAN.",
+    "where nobody can."
    ]
   ]
  },
