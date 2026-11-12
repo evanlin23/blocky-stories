@@ -1,0 +1,430 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "If your key goes WARM,",
+    "If your key goes warm,"
+   ],
+   [
+    "somebody's waiting",
+    "somebody's waiting"
+   ],
+   [
+    "behind its DOOR.",
+    "behind its door."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My key",
+    "My key"
+   ],
+   [
+    "to the house",
+    "to the house"
+   ],
+   [
+    "we sold",
+    "we sold"
+   ],
+   [
+    "NINE years ago",
+    "nine years ago"
+   ],
+   [
+    "is warm.",
+    "is warm."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The pizza guy's keys",
+    "The pizza guy's keys"
+   ],
+   [
+    "are ALWAYS warm.",
+    "are always warm."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My buddy's",
+    "My buddy's"
+   ],
+   [
+    "gym locker key",
+    "gym locker key"
+   ],
+   [
+    "has never been warm",
+    "has never been warm"
+   ],
+   [
+    "ONCE.",
+    "once."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mine hangs",
+    "Mine hangs"
+   ],
+   [
+    "on a silly green DINOSAUR.",
+    "on a silly green dinosaur."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My big sister JESS",
+    "My big sister Jess"
+   ],
+   [
+    "gave me THAT.",
+    "gave me that."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Strangers live",
+    "Strangers live"
+   ],
+   [
+    "in our old BLUE house",
+    "in our old blue house"
+   ],
+   [
+    "on the HILL.",
+    "on the hill."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "But Monday,",
+    "But Monday,"
+   ],
+   [
+    "the key",
+    "the key"
+   ],
+   [
+    "was WARM.",
+    "was warm."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Jess texted,",
+    "Jess texted,"
+   ],
+   [
+    "\"Notice ANYTHING?\"",
+    "\"Notice anything?\""
+   ],
+   [
+    "I said, NOPE.",
+    "I said, nope."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Tuesday,",
+    "Tuesday,"
+   ],
+   [
+    "it was HOT.",
+    "it was hot."
+   ],
+   [
+    "\"Notice anything?\"",
+    "\"Notice anything?\""
+   ],
+   [
+    "NOPE.",
+    "nope."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Wednesday,",
+    "Wednesday,"
+   ],
+   [
+    "I had to hold it",
+    "I had to hold it"
+   ],
+   [
+    "with an OVEN mitt.",
+    "with an oven mitt."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Up the HILL,",
+    "Up the hill,"
+   ],
+   [
+    "the lights",
+    "the lights"
+   ],
+   [
+    "were ON.",
+    "were on."
+   ],
+   [
+    "A curtain",
+    "A curtain"
+   ],
+   [
+    "MOVED.",
+    "moved."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Somebody",
+    "Somebody"
+   ],
+   [
+    "was home",
+    "was home"
+   ],
+   [
+    "in OUR house.",
+    "in our house."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And on the door,",
+    "And on the door,"
+   ],
+   [
+    "right where",
+    "right where"
+   ],
+   [
+    "my old sticker USED to be,",
+    "my old sticker used to be,"
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "was a brand-new one.",
+    "was a brand-new one."
+   ],
+   [
+    "A green DINOSAUR.",
+    "A green dinosaur."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Just like",
+    "Just like"
+   ],
+   [
+    "the one",
+    "the one"
+   ],
+   [
+    "on my KEY.",
+    "on my key."
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 0.5,
+  "chunks": [
+   [
+    "",
+    ""
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I put the key",
+    "I put the key"
+   ],
+   [
+    "in the LOCK.",
+    "in the lock."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Nine years later,",
+    "Nine years later,"
+   ],
+   [
+    "it still FIT.",
+    "it still fit."
+   ],
+   [
+    "My hands",
+    "My hands"
+   ],
+   [
+    "were SHAKING.",
+    "were shaking."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "\"Click.\"",
+    "\"Click.\""
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And there was Mom,",
+    "And there was Mom,"
+   ],
+   [
+    "Dad,",
+    "Dad,"
+   ],
+   [
+    "and Jess,",
+    "and Jess,"
+   ],
+   [
+    "with a CAKE.",
+    "with a cake."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "\"Notice ANYTHING?\"",
+    "\"Notice anything?\""
+   ],
+   [
+    "she said.",
+    "she said."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Jess bought",
+    "Jess bought"
+   ],
+   [
+    "our house BACK,",
+    "our house back,"
+   ],
+   [
+    "and never changed",
+    "and never changed"
+   ],
+   [
+    "the LOCK.",
+    "the lock."
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And it's warm",
+    "And it's warm"
+   ],
+   [
+    "every time",
+    "every time"
+   ],
+   [
+    "I'm on my WAY.",
+    "I'm on my way."
+   ]
+  ]
+ }
+]
