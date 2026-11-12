@@ -48,10 +48,13 @@ DEFAULTS = {
     "push": 0.12, "reframe_every": 0.8, "reframe_min": 1.6, "reframe_zoom": 1.14, "max_zoom": 1.18,
     "punch": 0.06, "punch_gap": 2.4, "punch_rate": 0.7, "fill": 0.0, "hit_gap": 4.0, "drift": 0.03,
     "ones": "all", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
+    "overlap": False, "turn_cap": 0,   # opt-in (anim audit 2026-11-12): heads lead and arms follow; turns capped (deg/s)
     # picture
     "grade": "bright",
+    "sharpen": 0.0, "bloom_thresh": None,   # opt-in (anim audit 2026-11-12): 0.4 and 0.85 lift edge acuity ~6-8%
     # builder marks
     "emph": None, "auto": True, "reveal": [], "twist": None, "quiet": [], "hold": [],
+    "punch_max": 0,      # opt-in (anim audit 2026-11-12): at most this many punch-ins a film; the hook's always kept
     "punch_cap": {},     # opt-in: {shot id: most the punch-in may zoom there} (a head that must stay in frame)
 }
 GRADES = {
@@ -154,8 +157,23 @@ def emph_times(tl: dict, p: dict, at=None) -> list[float]:
     rate = p.get("punch_rate")
     cap = max(1, int(rate * tl["duration"] / 10 + 0.5)) if rate else None
     gap = max(p["punch_gap"], 5.0 / rate) if rate else p["punch_gap"]
-    out = _spaced(key_times(tl, p, at), gap, cap)
-    if p.get("fill"):
+    cands = key_times(tl, p, at)
+    out = _spaced(cands, gap, cap)
+    pm = int(p.get("punch_max") or 0)
+    if pm and len(out) > pm:
+        # opt-in (animation audit 2026-11-12, the Buh leads: big post punch-ins at most 4 a film, on punch lines):
+        # the hook's own punch-in is kept as it is (the owner's swoosh), then the twist line, then the rest of
+        # today's punch-ins by their usual priority
+        caps_ = tl["captions"]
+        hook = out[0] if out[0] < 3.0 or not caps_ else on_key(tl, caps_[0]["start"] + 0.04)
+        lead = [(-2, hook)]
+        if p.get("twist"):
+            tw = on_key(tl, at(p["twist"]))
+            if not _in(tw, quiet):
+                lead.append((-1, tw))
+        kept = set(out)
+        out = _spaced(lead + [c for c in cands if c[1] in kept], gap, pm)
+    if p.get("fill") and not pm:
         caps = tl["captions"]
         for s in tl["shots"]:
             if s["end"] - s["start"] < p["fill"] or any(s["start"] <= t < s["end"] for t in out):

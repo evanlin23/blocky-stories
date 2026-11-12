@@ -205,6 +205,13 @@ def bloom(img: np.ndarray, amount: float = 0.35, thresh: float = 0.6) -> np.ndar
     return img + amount * up
 
 
+def sharpen(img: np.ndarray, amount: float) -> np.ndarray:
+    """An unsharp mask (radius 1 px at 1080 x 1920, `amount` 0.4 = 40%, no threshold) on a float frame."""
+    im8 = Image.fromarray(np.clip(img * 255 + 0.5, 0, 255).astype(np.uint8))
+    return np.asarray(im8.filter(ImageFilter.UnsharpMask(radius=1.0, percent=int(round(amount * 100)), threshold=0))
+                      ).astype(np.float32) / 255
+
+
 @lru_cache(maxsize=4)
 def _vignette(h: int, w: int, amount: float) -> np.ndarray:
     yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
@@ -377,8 +384,10 @@ def finish(tl: dict, st: dict, f: int, raw: Path, rain: Rain | None = None, grai
         g = {**g, **st["shot_grades"][sid]}
     if pol:
         g = polish.grade(g, pol)
-    img = bloom(img, g.get("bloom", 0.35))
+    img = bloom(img, g.get("bloom", 0.35), float(pol.get("bloom_thresh") or 0.6) if pol else 0.6)
     img = grade(img, g)
+    if pol and pol.get("sharpen"):   # opt-in (animation audit 2026-11-12): an unsharp mask after the grade, before grain
+        img = sharpen(img, float(pol["sharpen"]))
     if rain is not None and sid in set(st.get("rain_shots", [])):
         img = 1 - (1 - img) * (1 - rain.draw(t, st.get("rain_gain", 1.0)))
     if fx["red"]:
