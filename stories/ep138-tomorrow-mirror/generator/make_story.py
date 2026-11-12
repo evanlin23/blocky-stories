@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 8
+REV = 9
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -347,7 +347,7 @@ big_mouth("me2", "L24", 2, 0.4)
 gshot("S24", "L24", [TX, TY, 1.38], 30, push=0.28, dy=0.06)
 cue("L25", "board", v=12.0, flip=0.0)
 show("L25", "none")
-gshot("S25", "L25", [-4.9, G.BOARD[1] + 0.35, 1.1], 44, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.4)
+gshot("S25", "L25", [-4.9, G.BOARD[1] + 0.35, 1.1], 44, push=0.25, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.4)
 show("L26", "me")
 cue("L26", "board", v=0.0, flip=0.0)
 me_at("L26", "me", yaw=-90, expr="scared", blink=False)
