@@ -24,7 +24,7 @@ D2R = math.pi / 180.0
 W = {}
 _M = {}
 
-WATER_A, WATER_B = "#0fb0d6", "#0aa2cc"
+WATER_A, WATER_B = "#0aa8dc", "#0580b8"
 DECK_A, DECK_B = "#f3ede0", "#e9dfca"
 CREAM = "#f6e7c8"
 TERRA = "#c8603a"
@@ -139,7 +139,7 @@ def emitmat(kit, hexc, strength, name):
 # ------------------------------------------------------------------------------------------------ foam
 def build_foam(kit, nm, n=11, r0=0.22, seed=0):
     root = kit.empty(nm, (0, 0, -5))
-    wm = kit.emit("#eefaff", 1.0, "foamwhite")
+    wm = kit.emit("#ffffff", 2.6, "foamwhite")
     kids = []
     for i in range(n):
         a = 2 * math.pi * (i + 0.37 * seed) / n
@@ -150,11 +150,11 @@ def build_foam(kit, nm, n=11, r0=0.22, seed=0):
         noshadow(o)
         kids.append((o, rad * math.cos(a), rad * math.sin(a), sz, i))
     drops = []
-    for i in range(4):
-        a = 2 * math.pi * (i + 0.2 * seed) / 4
-        o = kit.sphere(f"{nm}.d{i}", 0.03 * (r0 / 0.22), (0, 0, 0.3), wm, root, seg=8)
+    for i in range(6):
+        a = 2 * math.pi * (i + 0.2 * seed) / 6
+        o = kit.sphere(f"{nm}.d{i}", 0.055 * (r0 / 0.22), (0, 0, 0.3), wm, root, seg=8)
         noshadow(o)
-        drops.append((o, 0.14 * math.cos(a) * (r0 / 0.22), 0.14 * math.sin(a) * (r0 / 0.22), i))
+        drops.append((o, 0.2 * math.cos(a) * (r0 / 0.22), 0.2 * math.sin(a) * (r0 / 0.22), i))
     W.setdefault("foam", {})[nm] = (root, kids, drops, seed)
 
 
@@ -174,8 +174,8 @@ def foam_pose(nm, x, y, v, s, t):
         sc = 1.0 + 0.18 * math.sin(2 * math.pi * 1.1 * t + ph)
         o.scale = (sc, sc, 0.35 * sc)
     for o, bx, by, i in drops:
-        u = (t * 1.2 + i / 4.0 + seed * 0.13) % 1.0
-        o.location = (bx * (0.6 + u), by * (0.6 + u), 0.05 + 0.3 * 4 * u * (1 - u))
+        u = (t * 1.2 + i / 6.0 + seed * 0.13) % 1.0
+        o.location = (bx * (0.8 + 1.6 * u), by * (0.8 + 1.6 * u), 0.05 + 0.7 * 4 * u * (1 - u))
 
 
 # ------------------------------------------------------------------------------------------------ world
@@ -286,7 +286,11 @@ def build(kit, story, tl):
     for j, zz in enumerate((1.62, 1.88)):
         kit.sphere(f"sign.h{j}", 0.075, (sx + 0.25, yf + 0.03, zz), navy, seg=10)
         kit.box(f"sign.b{j}", (0.42, 0.02, 0.1), (sx - 0.06, yf + 0.03, zz - 0.02), navy, bevel=0.03)
-        kit.box(f"sign.a{j}", (0.2, 0.02, 0.05), (sx + 0.14, yf + 0.03, zz + 0.08), navy, rot=(0, 0.4, 0), bevel=0.02)
+        kit.box(f"sign.a{j}", (0.36, 0.02, 0.07), (sx + 0.2, yf + 0.03, zz + 0.11), navy, rot=(0, 0.5, 0), bevel=0.02)
+        kit.box(f"sign.l{j}", (0.22, 0.02, 0.06), (sx - 0.34, yf + 0.03, zz - 0.07), navy, rot=(0, -0.35, 0), bevel=0.02)
+        for k in range(5):     # a wave line under each swimmer
+            kit.box(f"sign.w{j}{k}", (0.12, 0.016, 0.035), (sx - 0.36 + k * 0.17, yf + 0.016, zz - 0.17 + (0.03 if k % 2 else 0.0)),
+                    mat(kit, "#ffffff", 0.5), rot=(0, 0.35 if k % 2 else -0.35, 0))
     # (the sign's glyph is the rule's picture: two swimmers, one lane)
     W["sign_pos"] = (sx, sy)
 
@@ -329,18 +333,41 @@ def build(kit, story, tl):
     # the duck towel on lane four's block: yellow, an orange beak mark, soaked (darker, hanging over the edge, dripping)
     bx, by = G.BLOCK
     top = G.DECK + G.BLOCK_H + 0.03
-    yel = mat(kit, "#ffd23f", 0.5, 0.2)
+    yel = mat(kit, "#f2b81f", 0.3, 0.45)
     W["towel"] = kit.empty("towel", (bx, by, 0))
     kit.box("towel.a", (0.52, 0.4, 0.13), (0, -0.04, top + 0.065), yel, W["towel"], bevel=0.03)
     kit.box("towel.f", (0.52, 0.03, 0.22), (0, 0.205, top - 0.04), mat(kit, "#e8b222", 0.4, 0.3), W["towel"], bevel=0.01)
-    kit.box("towel.beak", (0.18, 0.11, 0.014), (0.0, -0.0, top + 0.137), mat(kit, "#ff8a1f", 0.5), W["towel"], bevel=0.01)
-    kit.box("towel.eye", (0.045, 0.045, 0.014), (-0.11, -0.1, top + 0.137), mat(kit, "#3a2a1a", 0.5), W["towel"])
+    kit.box("towel.beak", (0.3, 0.17, 0.02), (0.0, 0.04, top + 0.14), mat(kit, "#ff6a10", 0.4, 0.3), W["towel"], bevel=0.01)
+    kit.box("towel.beak2", (0.3, 0.05, 0.022), (0.0, 0.0, top + 0.145), mat(kit, "#c84a08", 0.4, 0.3), W["towel"])
+    for i, (wx, wy, ww) in enumerate(((-0.17, 0.1, 0.12), (0.18, -0.08, 0.14), (-0.05, -0.14, 0.1))):    # dark wet patches
+        kit.box(f"towel.wet{i}", (ww, ww * 0.8, 0.012), (wx, wy, top + 0.136), mat(kit, "#8a6410", 0.2, 0.6), W["towel"])
+    for i, dx_ in enumerate((-0.18, 0.0, 0.18)):    # water runs down the front
+        kit.box(f"towel.run{i}", (0.035, 0.012, 0.2), (dx_, 0.222, top - 0.06), mat(kit, "#6fd8ec", 0.15, 0.6), W["towel"])
+    kit.box("towel.eye", (0.06, 0.06, 0.016), (-0.14, -0.12, top + 0.142), mat(kit, "#2a1a0e", 0.5), W["towel"])
+    kit.box("towel.eye2", (0.06, 0.06, 0.016), (0.14, -0.12, top + 0.142), mat(kit, "#2a1a0e", 0.5), W["towel"])
     kit.box("puddle", (0.9, 0.55, 0.012), (bx, by + 0.62, G.DECK + 0.008), mat(kit, "#7fdcee", 0.2, 0.4))
     W["drip"] = kit.sphere("drip", 0.03, (bx + 0.1, by + 0.24, top - 0.1), mat(kit, "#6fd8ec", 0.2, 0.4), seg=8)
     W["dripx"] = (bx + 0.1, by + 0.26, top - 0.14)
     W["towel_objs"] = [o for o in bpy.data.objects if o.name.startswith(("towel.", "puddle"))]
     for i in range(4):
         build_foam(kit, f"f{i}", n=8, r0=(0.42 if i == 0 else 0.32 if i == 1 else 0.2 if i == 2 else 0.22), seed=i)
+    # fading rings where a splash stood (cue "rg" u 0..1 grows and sinks them), pinned at the far wall's splash
+    rm = kit.emit("#ffffff", 2.0, "ringwhite")
+    W["rings"] = []
+    for i in range(3):
+        bpy.ops.mesh.primitive_torus_add(major_radius=1.0, minor_radius=0.05, major_segments=28, minor_segments=6,
+                                         location=(G.L4 + 0.1, 13.2, -5.0))
+        ob = bpy.context.active_object
+        ob.name = f"ring{i}"
+        ob.data.materials.append(rm)
+        ob.scale = (1.0, 1.0, 0.25)
+        noshadow(ob)
+        W["rings"].append(ob)
+    # a few steady sun glints on the open water (steady: no flicker)
+    gm = kit.emit("#fffbe8", 2.4, "glint")
+    for i, (gx, gy) in enumerate(((-1.7, 6.6), (-0.3, 8.3), (-1.2, 10.1), (0.2, 5.1), (-2.5, 9.0))):
+        o = kit.box(f"glint{i}", (0.34, 0.05, 0.012), (gx, gy, 0.012), gm)
+        noshadow(o)
     _install_extras()
     return {}
 
@@ -398,7 +425,7 @@ def animate(kit, story, tl, t, ctx):
     set_board(round(bn["a"]), round(bn["b"]), b2["v2"])
     # foam
     me = bpy.data.objects.get("me")
-    f0 = sample("f0", tl, t, {"mode": "off", "x": 0.0, "y": 0.0, "v": 0.0, "D": 7.0})
+    f0 = sample("f0", tl, t, {"mode": "off", "x": 0.0, "y": 0.0, "v": 0.0, "D": 7.0, "s": 1.0})
     x, y, v = f0["x"], f0["y"], f0["v"]
     if f0["mode"] == "chase" and me is not None:
         yaw = me.rotation_euler.z
@@ -407,7 +434,7 @@ def animate(kit, story, tl, t, ctx):
         x = me.location.x
     elif f0["mode"] == "off":
         v = 0.0
-    foam_pose("f0", x, y, v, 1.0, t)
+    foam_pose("f0", x, y, v, f0["s"], t)
     for nm in ("f1", "f2", "f3"):
         c = sample(nm, tl, t, {"x": 0.0, "y": 0.0, "v": 0.0, "s": 1.0, "w": 0.0})
         cx_, cy_ = c["x"], c["y"]
@@ -416,6 +443,20 @@ def animate(kit, story, tl, t, ctx):
             if lou is not None:
                 cx_, cy_ = lou.location.x + c["x"], lou.location.y + c["y"]
         foam_pose(nm, cx_, cy_, c["v"], c["s"], t)
+    rg = sample("rg", tl, t, {"u": 0.0})["u"]
+    for i, ob in enumerate(W["rings"]):
+        u = rg - 0.18 * i
+        if rg <= 0.001 or u <= 0.0 or u >= 0.98:
+            ob.location = (G.L4 + 0.1, 13.2, -5.0)
+        else:
+            r = 0.35 + 1.5 * u
+            ob.location = (G.L4 + 0.1, 13.2, 0.02 - 0.05 * u)
+            ob.scale = (r, r, 0.25)
+    # no corner tag on the towel's close-ups (the board itself is in frame)
+    for sh in tl["shots"]:
+        if sh["id"] in ("S23a", "S23b") and sh["start"] - 1e-6 <= t < sh["end"]:
+            for ob in W["tag_root"].children_recursive:
+                ob.hide_render = True
     # the duck towel, its puddle and its drip exist from the cue "tw" (it is lost until L23)
     tw = sample("tw", tl, t, {"v": 0.0})["v"] > 0.5
     for ob in W["towel_objs"]:
