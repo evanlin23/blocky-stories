@@ -1,0 +1,11 @@
+{
+  "title": "The LOST Poster Has My Face 📌",
+  "description": "On our corner there's a board of lost posters. If one shows your face, you've got one week. Mr. Park's showed his umbrella. My cousin's showed his car keys.\n\nOn Monday, one went up with mine. Mom wouldn't let me out of her sight, and Grandma kept asking about Saturday.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Did Grandma know all week? Find the moment she gives it away.",
+  "made_for_kids": false,
+  "cover_s": 1.6,
+  "shape": "double-reading",
+  "opening": "if",
+  "lane": "warm",
+  "hold": "batch 15: scripts only, not built yet"
+}
