@@ -29,7 +29,7 @@ All adults, apart from Jax (17): nothing kid-coded.
 | Gus | a ginger buzz with block sideburns | a giant walrus mustache, most of his face wide |
 | Dot | a bun as big as her head, on top | big red square glasses |
 | Jax | five electric-blue blades with lime tips | the spikes add half his head again |
-| Brick | bald, with a big square block beard | a tiny head on giant arms |
+| Brick | a red block mohawk with a mustard front fin | a tiny head on giant arms |
 
 ## What changed, and why
 
@@ -86,7 +86,7 @@ Not measured: a whole real story in v3. That waits for the engine PR and the own
   vocabulary and kid-coded, and a creepy channel needs eerie faces.
 - **The revision (one round):** stickers removed; hollow and toowide added; smug (one brow flies up), deadpan
   (flat lids, pin pupils) and scheming (knitted brows, toothy grin) pulled apart; Gus's mustache rebuilt as a walrus
-  bar between eyes and mouth; Brick bald with a block beard; the bob, curtains and flat-top given real volume.
+  bar between eyes and mouth; Brick in a red mohawk (a block beard read as a neck brace on his tiny head); the bob, curtains and flat-top given real volume.
 - Round 2 verdicts: CRITICS2_PLACEHOLDER
 
 About the acting test: both sides use the same camera; the v3 head is bigger, which is the change.
