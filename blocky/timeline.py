@@ -355,7 +355,9 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
     if out["motion"]:   # the polish pack: shots with a walk on ones; reveal shots calm
         from blocky import polish
         p = polish.spec(st)
-        if out["motion"].get("ones") == "walk":
+        if out["motion"].get("ones") == "all":
+            polish.ones_for_all(out)
+        elif out["motion"].get("ones") == "walk":
             polish.ones_for_walks(out, st)
         elif out["motion"].get("ones") == "moving":
             polish.ones_for_moving(out, st, p)
