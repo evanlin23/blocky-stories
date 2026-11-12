@@ -1,0 +1,11 @@
+{
+  "title": "The Ice Cream Truck Knows Who's LEAVING 🚚",
+  "description": "In our town, if the ice cream truck stops at your house, someone inside is moving out. It stopped for Mrs. Lee next door the day before she left.\n\nThis week it stopped at ours every day at 3:15. Nobody in my family is moving. Mom thinks it's me, and she's been crying into my laundry.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Did Dad know about the attic all along? He's the one who said the coat came with the house.",
+  "made_for_kids": false,
+  "cover_s": 19.5,
+  "shape": "lodger",
+  "opening": "if",
+  "lane": "eerie",
+  "hold": "batch 15: scripts only, not built yet"
+}
