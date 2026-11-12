@@ -261,7 +261,13 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   that doesn't carry on into another a trapezoid of speed (0.25 s to get going and to stop, longer for a run:
   speed / 4 m/s²), same keys and timing, with the footsteps on the eased distance; `idle` gives anyone standing slow
   breathing (6 mm), a weight shift (about 1°), a turn of the body (2°) and a drifting head (5° and 2.5°), from sines
-  at periods that never line up, added on top of their keys. `ones: "moving"` (the default since 2026-11-03, the lead's call)
+  at periods that never line up, added on top of their keys. Two opt-ins (animation audit, 2026-11-12, off by default
+  so proofed films keep their look): `overlap: true` staggers each blend, with the head 0.05 s ahead of the body and the
+  arms 0.07 s behind and 30% slower, so a move reads as a body and not one block; `turn_cap: 220` (degrees per second)
+  lengthens any body or head turn until its eased peak is under the cap, turns a keyed yaw the short way round, and
+  eases a walk into its direction and back instead of snapping (ep54 had a 2,856°/s one-frame snap at 131.0 s; capped:
+  291). Keys too close for the cap keep their timing, and a key with `blend: 0` (a re-staging on a cut) is never moved.
+  `ones: "moving"` (the default since 2026-11-03, the lead's call)
   draws every shot whose camera moves, or where someone walks, on every frame, so the pack's camera moves don't
   judder at 15 drawings a second. With the pack that's nearly every shot: 1.87 to 1.98 times the drawing, about
   30 min more on Actions for a 140 s story. `ones: "walk"` is the opt-out for a long story whose render would run
