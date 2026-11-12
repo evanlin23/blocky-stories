@@ -1,0 +1,11 @@
+{
+  "title": "Our Dog Barked ONCE, Then Twice 🐶",
+  "description": "In our town a dog barks once if a stranger means well, and twice if he doesn't. Our dog Pickles has never been wrong.\n\nMy big sister brought her fiancé to our barbecue. Pickles barked once at the gate. Then, alone with him at the grill, twice.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Which bark do I trust about Grant, the one at the gate or the two at the grill? Comment 1 or 2.",
+  "made_for_kids": false,
+  "cover_s": 22.0,
+  "shape": "open-choice",
+  "opening": "if",
+  "lane": "interactive",
+  "hold": "batch 15: scripts only, not built yet"
+}
