@@ -4,9 +4,9 @@
 - **Pitch:** P21 in the batch 15 pitch round. Engine: the threat is already inside, played comedy-eerie (a lodger who came with the house), shown only by what it leaves behind and one arm.
 - **Lane:** eerie. **Opening shape:** `if`. **Length arm:** 45 to 90 s.
 - **Title:** The Ice Cream Truck Knows Who's LEAVING 🚚
-- **Everyone is an adult.** I'm 19 and live at home. Mom and Dad are in their fifties. Mrs. Lee and my cousin are adults.
-- **Word count:** 271 spoken words in 33 lines (L01 to L33), all `narrator`, plus one music drop (0.6 s before L21).
-- **Estimated length:** about 64 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
+- **Everyone is an adult.** I'm 19 and live at home. Mom and Dad are in their fifties. Mrs. Lee and the ice cream man are adults.
+- **Word count:** 205 spoken words in 25 lines (L01 to L33 with L04, L13, L15, L24, L28, L29, L31 and L32 cut on 2026-11-12 under the owner's no-filler rule, ids kept), all `narrator`, plus one music drop (0.6 s before L21).
+- **Estimated length:** about 48 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. The reveal (L27) lands at about 40 s, about 8 s from the end, with only the button (L30) and the loop line (L33) after it.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. One bright suburban street in summer afternoon sun all through: our pale-blue house with a white garage and a small gable attic window over the garage, green lawns, a mint-and-white ice cream truck, our sunny front hall and kitchen. The only dark is the attic window's pocket.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
 
@@ -19,7 +19,7 @@
 ## The big idea
 **The ice cream truck stops at any house where someone's moving out, and it stopped at ours all week because someone has lived in our attic longer than we have, and on Saturday a gray sleeve twice the length of Dad's arm reached out of the attic window, took an orange ice pop, and moved in next door.**
 
-- **Why it clicks:** the coat nobody owns has sleeves to the floor (L10, L11), the sleeve that comes out of the window is exactly that long (L22). Dad says the coat "came with the house" (L12), and it did (L27). The orange ice pop drawn on Mom's list (L14) is what it buys (L25). Mrs. Lee next door moved out (L03), so her house is empty, and that's where it goes (L30, L31).
+- **Why it clicks:** the coat nobody owns has sleeves to the floor (L10, L11), the sleeve that comes out of the window is exactly that long (L22). Dad says the coat "came with the house" (L12), and the lodger did too (L27). The orange ice pop drawn on Mom's list (L14) is what it buys (L25), the first thing anyone has bought from the truck (L09). Mrs. Lee next door moved out (L03), so her house is empty, and that's where it goes (L30).
 - **Ten pitched, this one kept.** Dropped: the truck is for me and I'm leaving without knowing (sad, ep55's kind), the truck is for Dad leaving Mom (splits the audience), the truck driver is the thing (a mascot risk), it's my future self moving out (time, ep138), the truck stops for the house itself (no person), the attic is full of past owners (a catalogue), it's a ghost of Mrs. Lee (death-adjacent), the dog is leaving (no pet stakes in this batch), it's a burglar (no lore), the truck counts the coats (too quiet).
 - **Checked against "Claimed big ideas":** not ep17 moving-day (something tall that came with us in a box: ours was already there, and it leaves), not ep98 or ep133 (the threat inside stays and threatens: ours just moves out), not ep147 (a man kept in a closet by a card), not ep134 (extra rooms that are me), not killed ep151 (we aren't the extra one). Shape `lodger`.
 - **The rule is the clue:** "someone inside is moving out" sounds like one of us. It was always true. We just didn't know how many of us there were.
@@ -28,19 +28,19 @@
 - **Rule / hook (L01, 13 words, about 2.6 s):** "If the ice cream truck / stops at your HOUSE, / someone inside / is moving OUT."
 - **Stakes beat (L02, about 3 to 5 s):** "Monday, / it stopped at OURS. / Nobody's MOVING."
 - **The relatable want or fight:** a mom sure her grown son is about to leave home, and a son who swears he isn't.
-- **The marker (the rule meter), on screen by frame 1 and in every shot:** a cream tag top-left with a little truck glyph and a stop count, "1" from frame 1 (Monday), "2" at L08 (Tuesday), "3" at L13 (Wednesday), "4" at L16 (Thursday), "5" at L17 (Friday), "6" at L19 (Saturday), holding 6 to the end. Numerals and glyphs only.
-- **Examples (L03, L04, about 5 to 10 s), two small payoffs:** Mrs. Lee next door moved out the next morning (her empty house with a glyph-only sign on the lawn, the plant for L30); my cousin finally moved out at thirty-one and his mom cried more than he did (comic).
-- **Stakes-raising beat at about 8 to 12 s (L05 to L07):** Mom thinks it's me, and she's crying into my laundry. I can't even do my laundry. Played for a laugh.
+- **The marker (the rule meter), on screen by frame 1 and in every shot:** a cream tag top-left with a little truck glyph and a stop count, "1" from frame 1 (Monday), "2" at L08 (Tuesday), "3" at L14 (Wednesday), "4" at L16 (Thursday), "5" at L17 (Friday), "6" at L19 (Saturday), holding 6 to the end. Numerals and glyphs only.
+- **Example (L03, about 5 to 7 s), one payoff:** Mrs. Lee next door moved out the next morning (her empty house with a glyph-only sign on the lawn, the plant for L30). One example only: the cousin example (old L04) was cut as filler.
+- **Stakes-raising beat at about 7 to 12 s (L05 to L07):** Mom thinks it's me, and she's crying into my laundry. I can't even do my laundry. Played for a laugh.
 - **A concrete mystery by 15 s:** a truck stopping at a house where nobody's leaving, every day at 3:15, and nobody buying anything (L08, L09).
 - **How the narrator is the exception:** the truck stops for the one who's leaving, and I'm the only one in the house who isn't suspected of anything except leaving.
 - **The loved one at stake:** my mom, named at L05 ("Now Mom thinks / it's ME."), on screen in that beat with my laundry basket.
-- **The eerie middle (L10 to L17), what it leaves behind:** a long gray coat nobody owns on our hooks, sleeves to the floor; a little orange ice pop drawn on Mom's grocery list in a hand none of us has; the attic ladder down two mornings running; then the coat gone.
+- **The eerie middle (L10 to L17), what it leaves behind:** a long gray coat nobody owns on our hooks, sleeves to the floor; a little orange ice pop drawn on Mom's grocery list; the attic ladder down; then the coat gone.
 - **The climax turns the rule's own logic:** the truck stops where someone's moving out, so I wait on the lawn to see who comes out of the door. Nobody does. The rule never said "out the front door".
-- **Twist and reveal (L21 to L28, about 42 to 52 s), said plainly:** "Somebody's lived / in our ATTIC / longer than WE have." "The coat / really did come / with the HOUSE." over one picture (S27: the low reveal shot, the sleeve from the attic window down to the truck's hatch).
+- **Twist and reveal (L21 to L27, about 31 to 42 s), said plainly:** the build (L21 to L26) shows the sleeve over one picture (S27: the low reveal shot, the sleeve from the attic window down to the truck's hatch), and the recasting line lands last, at about 40 s: "Somebody's lived / in our ATTIC / longer than WE have." Then only the button (L30, Mrs. Lee's attic window open next door) and the loop line (L33). No explaining after it.
 - **How the last 15 seconds turn over the first line:** "someone inside is moving out" was a threat to my family. It was a promise to the one in the attic, and the next house it's inside is Mrs. Lee's. The last line hands the rule to the viewer: if it stops at yours and nobody's moving, check the attic.
 - **The plants a rewatch catches:**
   1. L10 to L12: the coat's sleeves touch the floor, and Dad says it came with the house.
-  2. L14: the orange ice pop drawn on Mom's list.
+  2. L09 and L14: nobody ever buys anything, and the orange ice pop is drawn on Mom's list.
   3. L03, S03: Mrs. Lee's empty house next door, its attic window dark.
   4. S01: four coats on four hooks for three of us (the pin's argument about Dad).
 - **Ending shape:** `lodger`.
@@ -59,7 +59,7 @@ In this town the ice cream truck stops at any house where someone is about to mo
 2. Frame 1 is a close-up: my face at the front window, the mint ice cream truck pulled up at the curb behind me through the glass, the tag at "1". A face and the rule's object in the first frame. No wide.
 3. A sound hit on "OUT": the truck's soft two-note bell, low.
 4. L02 makes it mine by 0:05: "it stopped at OURS."
-5. Two examples only (L03, L04), each a small payoff, then straight back to my house.
+5. One example only (L03), a small payoff and the plant for the button, then straight back to my house.
 6. The title is the hook, never the reveal.
 
 ## World
@@ -70,7 +70,6 @@ In this town the ice cream truck stops at any house where someone is about to mo
 - **Our front hall:** a sunny hall with a ceiling, a wooden coat-hook rail with four hooks by the front door, a mat, the stairs.
 - **The upstairs hall:** a ceiling with a square attic hatch and a fold-down wooden ladder. The camera never goes up the ladder or into the hatch (no unlit volume).
 - **The kitchen:** bright, a fridge with a grocery list under a magnet: scribble lines and one little drawn orange ice pop (no letters).
-- **Montage spot (one shot):** my aunt's front step, sunny.
 - **No text anywhere.**
 
 ## Cast
@@ -78,7 +77,6 @@ In this town the ice cream truck stops at any house where someone is about to mo
 - `mom` (my mom, fifties): short curly black hair, the same skin, a lilac cardigan. Faces: `sad` (comic, eyes wet), `worried`, `stunned`. Named "Mom" at L05.
 - `dad` (my dad, fifties): bald with a big gray mustache, a striped green polo. Faces: `neutral`, `sheepish`, `stunned`. Named "Dad" at L12.
 - `mrslee` (our neighbor Mrs. Lee, adult, one shot at L03): a white bun, a red jacket, a rolling suitcase standing beside her, waving.
-- `cousin` (my cousin, 31, one shot at L04) and `aunt` (his mom, my aunt, adult): he's `smile` with a box at his feet, she's `sad`, comic.
 - `icecream` (the ice cream man, adult): a white paper cap, a mint jacket, a calm sleepy face, always at the hatch. Faces: `neutral`, `smile`.
 
 ## The creature (the batch's only one, never fully shown)
@@ -95,29 +93,29 @@ The attic lodger. **Creature-light by design:** we only ever see the coat it han
 - **Continuity (where it is in each beat):**
   - L01 to L09: not seen. The coat is not on the hooks yet. (S01's hall is behind me, out of focus: four hooks, three of our jackets and one empty hook.)
   - L10 to L16: the long charcoal coat hangs on the fourth hook, its sleeves lying on the floor mat in a heap (S10 to S12, S16b).
-  - L14, L15: the orange ice pop drawing on the fridge list.
+  - L14: the orange ice pop drawing on the fridge list.
   - L17: the fourth hook empty, the coat gone.
   - L21: the attic window opens (a cut from shut to open, the dark pocket and bulb behind).
   - L22: the sleeve out of the window, as far as the gutter (S23).
   - L23: the whole sleeve down to the truck's hatch (S24a, b).
   - L25: the ice pop laid on the flat palm by the ice cream man (S26 insert, the cuff and its button in sun).
-  - L26 to L29: the sleeve at full length in the reveal frame (S27), then gone and the window open and empty (S29).
-  - L30: our fourth hook bare, the attic ladder up.
-  - L31, L32: Mrs. Lee's attic window open, the dark pocket, and the tip of one charcoal sleeve resting on her sill.
+  - L26: the sleeve at full length in the reveal frame (S27).
+  - L27: gone, our attic window open and empty (S29b).
+  - L30: Mrs. Lee's attic window open, the dark pocket, and the tip of one charcoal sleeve resting on her sill (S31b, S32).
 
 ## Palette
 - Sky `#8fd0ff`, lawn green `#62c45a`, our house pale blue `#9cc8ec`, garage white `#efeae0` (graded under 70% luminance), Mrs. Lee's house pale yellow `#f4dc8a`, truck mint `#9fe6c8` and white, awning stripes mint and cherry `#e8445a`, the ice pop orange `#ff9a2a`, coat charcoal `#34343c`, the button brass `#d8a83a`, my mustard `#e0b030`, Mom's lilac `#b49ae0`.
 - **Caption key colour:** grape purple `#b46cff`.
 
 ## Music
-Synthesized in `blocky/sound.py`: a bouncy plucked bass and a light toy-like synth figure of our own (no music box, no borrowed tune). **F minor, 120 BPM**, playful under L01 to L09, thinning to a ticking pulse under the coat and the list (L10 to L17), one held low note under the Saturday wait (L18 to L20). **Drop** for 0.6 s before L21. L21 to L28: a low drone enters and holds. L29 to L33: the drone with the bouncy figure back on top, quieter and off by a half step, into the loop.
+Synthesized in `blocky/sound.py`: a bouncy plucked bass and a light toy-like synth figure of our own (no music box, no borrowed tune). **F minor, 120 BPM**, playful under L01 to L09, thinning to a ticking pulse under the coat and the list (L10 to L17), one held low note under the Saturday wait (L18 to L20). **Drop** for 0.6 s before L21. L21 to L27: a low drone enters and holds. L30 to L33: the drone with the bouncy figure back on top, quieter and off by a half step, into the loop.
 
 ## Sound
 - At L01, the truck's bell on "OUT", two soft notes, low, our own.
-- At L08, L13, L19, "Ding-DING." the same two-note bell, spoken and captioned, a running gag.
+- At L08 and L19, "Ding-DING." the same two-note bell, spoken and captioned, a running gag.
 - At L21, a soft wooden creak as the attic window opens (low, under 4 kHz).
 - At L25, a tiny paper rustle (the ice pop wrapper), soft.
-- At L28 or after, the truck's engine starting, soft and low.
+- At L30, the truck's engine starting, soft and low.
 
 ## Build rules (batch 15, every shot)
 - Characters stand 1.4 m apart or more unless touching on purpose. Nobody touches in this story. Mom holds the laundry basket against her hip (no grip shown) 1.6 m from me.
@@ -136,7 +134,6 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 | S01a, S01b | L01 | (a) Close: my face at our sunny front window, `uneasy`, the mint ice cream truck at the curb behind me through the glass, tag at "1". The hall behind me soft: four hooks, three jackets, one empty hook. (b) Punch in on "OUT", the two-note bell. |
 | S02a, S02b | L02 | (a) The truck at our curb, its hatch open, the ice cream man leaning out, `neutral`, our blue house behind. (b) My face, `stunned`, "Nobody's MOVING." |
 | S03a, S03b | L03 | (a) Mrs. Lee on her lawn next door, waving, `smile`, a rolling suitcase standing beside her, the truck at her curb. (b) Her empty pale-yellow house, the lawn sign with the house glyph, its small attic window dark over the garage. |
-| S04a, S04b | L04 | (a) My cousin on my aunt's sunny front step, `smile`, a box at his feet. (b) My aunt beside him, 1.4 m away, `sad`, crying big comic tears. |
 | S05 | L05 | Our hall: Mom with a laundry basket on her hip, `worried`, looking at me (face to camera). |
 | S06 | L06 | Mom's face, `sad`, eyes wet, a sock on the basket's rim. |
 | S07a, S07b | L07 | (a) My face, `sheepish`, hands up flat. (b) Close: the basket, a shirt in it inside out. |
@@ -145,11 +142,9 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 | S10a, S10b | L10 | (a) The hall: the coat-hook rail, a long charcoal coat on the fourth hook, my face at the frame's edge, `stunned`. (b) Punch in on the brass button on its cuff. |
 | S11 | L11 | Close: the sleeves lying in a heap on the floor mat, my sneakers beside them for scale. |
 | S12a, S12b | L12 | (a) Dad in the hall, `sheepish`, shrugging, the coat at the frame's side. (b) The end of the hook rail (the lore plant, 1 s). |
-| S13 | L13 | The truck at the curb again, the tag to "3". "Ding-DING." |
-| S14a, S14b | L14 | (a) The fridge: Mom's list under a magnet, scribble lines, Mom's face beside the fridge, `stunned`. (b) Close: the little drawn orange ice pop, a quarter of the frame. |
-| S15 | L15 | Me, Mom and Dad in the kitchen, only two faces in frame at a time: Mom and Dad 1.6 m apart, both `uneasy`, looking at each other, then at me (cut to my face, `sheepish`). |
+| S14a, S14b, S14c | L14 | (a) The truck at the curb again, the tag to "3" (0.8 s). (b) The fridge: Mom's list under a magnet, scribble lines, Mom's face beside the fridge, `stunned`. (c) Close: the little drawn orange ice pop, a quarter of the frame. |
 | S16a, S16b | L16 | (a) The upstairs hall: the attic ladder folded down from its hatch in the ceiling, morning sun, the tag to "4". (b) My face at the bottom of the ladder, `scared`, looking up (the hatch out of frame above). |
-| S17a, S17b | L17 | (a) The ladder down again, tag to "5". (b) The hall hooks: the fourth hook bare. |
+| S17 | L17 | The hall hooks, tag to "5": the fourth hook bare, my face at the edge, `uneasy`. |
 | S18 | L18 | Me on our front lawn, `determined`, arms folded, the street behind, the tag to "6" on "3:14". |
 | S19 | L19 | The truck turning into our driveway and stopping right under the garage's attic window. "Ding-DING." |
 | S20 | L20 | Our front door, shut, the porch in sun. My face at the frame's edge, waiting. |
@@ -158,22 +153,17 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 | S22 | L21 | My face, `scared`, eased turn up, a slow push that stops with the window still small at the top of the frame. |
 | S23 | L22 | Looking up from the lawn: a charcoal sleeve out of the window, as far as the gutter, rim-lit along its top, its camera side in shadow. |
 | S24a, S24b | L23 | (a) The sleeve bending over the gutter and down, longer. (b) The bottom of it at the truck's hatch: the cuff and brass button in sun, the long flat hand palm up, the ice cream man's face beside it, `neutral`. |
-| S25 | L24 | The ice cream man's face, `neutral`, not even blinking. |
 | S26 | L25 | Insert: one orange ice pop laid on the long flat palm, big at phone size, the cuff and button in the frame. Paper rustle. |
 | S27 | L26 | **The reveal picture, held 1.6 s with drift:** the low medium shot from the lawn at my chest height: the attic window frame at the top, the sleeve's whole length over the gutter and down to the hatch, the ice cream man's head and the truck at the bottom, the cuff in sun. The ice cream man `smile`, saying it. Cover frame option 2. |
-| S28 | L27 | My face, `stunned`, very close, the house behind. |
-| S29a, S29b | L28 | (a) The hall hook rail, the fourth hook bare (a remember-cut). (b) The attic window from the lawn, open and empty, the bulb behind. The truck's engine starts. |
-| S30a, S30b | L29 | (a) Sunday morning: the hall, the fourth hook bare, my face at the edge, `uneasy`. (b) The upstairs hall: the hatch shut, the ladder up. |
-| S31a, S31b | L30 | (a) From our lawn: Mrs. Lee's empty yellow house next door, the lawn sign. (b) Her small attic window, open, the dark pocket, a bare bulb far back, and for 0.8 s a dark shape inside with its head bent sideways under the roof's slope (black on the bulb, no face). |
-| S32 | L31 | Close up from her driveway: the tip of one charcoal sleeve resting on her attic sill, the brass button catching sun. |
-| S33a, S33b | L32 | (a) My face, `uneasy`, to camera. (b) The truck pulling away down the sunny street. |
-| S34 | L33 | Push in on my face at our front window, the street behind the glass (S01a's framing). Loop. |
+| S28, S29b | L27 | (S28) My face, `stunned`, very close, the house behind. (S29b) The attic window from the lawn, open and empty, the bulb behind. |
+| S31b, S32 | L30 | (S31b) Mrs. Lee's small attic window next door, open, the dark pocket, a bare bulb far back, and for 0.8 s a dark shape inside with its head bent sideways under the roof's slope (black on the bulb, no face). The truck's engine starts. (S32) Close up from her driveway: the tip of one charcoal sleeve resting on her attic sill, the brass button catching sun. |
+| S34 | L33 | Push in on my face at our front window, the street behind the glass (S01a's framing), `uneasy`. Loop. |
 
 ## Face and hands beats
-1. **S01a, S02b, S07a, S08b, S16b, S18, S22, S28, S30a, S33a, S34:** my face, whole head, quiff included.
-2. **S05, S06, S14a:** Mom's face, whole head.
-3. **S12a:** Dad's face. **S15:** Mom and Dad, 1.6 m apart, faces clear.
-4. **S24b, S25, S27:** the ice cream man's face at the hatch.
+1. **S01a, S02b, S07a, S08b, S16b, S17, S18, S22, S28, S34:** my face, whole head, quiff included.
+2. **S05, S06, S14b:** Mom's face, whole head.
+3. **S12a:** Dad's face.
+4. **S24b, S27:** the ice cream man's face at the hatch.
 5. **S27:** the reveal (the sleeve, the window, the hatch and the ice cream man in one frame).
 Hands: the long hand only lies palm up, and the ice pop is laid on it. The ice cream man's hand is cut away. Nobody grips anything. The creature never has a face on screen.
 
@@ -186,7 +176,6 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L01: If the ice cream truck / stops at your HOUSE, / someone inside / is moving OUT.
 - L02: Monday, / it stopped at OURS. / Nobody's MOVING.
 - L03: It stopped for Mrs. Lee / next DOOR. / She moved out / the next MORNING.
-- L04: It stopped for my cousin / at THIRTY-ONE. / His mom cried / more than HE did.
 - L05: Now Mom thinks / it's ME.
 - L06: She's been crying / into my LAUNDRY.
 - L07: I'm not moving OUT. / I can't even / do my LAUNDRY. **(quotable)**
@@ -195,11 +184,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L10: And on our hooks / was a long gray COAT / nobody OWNS.
 - L11: Its sleeves / lay on the FLOOR.
 - L12: Dad says / it came / with the HOUSE.
-- L13: Wednesday, / 3:15. / "Ding-DING."
-- L14: Somebody drew / on Mom's grocery LIST. / One little / orange ICE POP.
-- L15: None of us / draws like THAT.
+- L14: Wednesday, / somebody drew / on Mom's grocery LIST: / one little / orange ICE POP.
 - L16: Thursday, / the attic ladder / was DOWN.
-- L17: Friday, / it was down AGAIN, / and the coat / was GONE.
+- L17: Friday, / the coat / was GONE.
 - L18: Saturday, / 3:14. / I waited / on the LAWN.
 - L19: 3:15. / "Ding-DING." / It pulled into / our DRIVEWAY.
 - L20: Our front door / stayed SHUT.
@@ -207,18 +194,13 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L21: Then, / above me, / the attic window / OPENED.
 - L22: A gray sleeve / came out, / and kept COMING.
 - L23: Over the GUTTER, / all the way down / to the truck's WINDOW.
-- L24: The ice cream man / didn't even BLINK.
 - L25: He laid one / orange ICE POP / in its HAND,
 - L26: and said, / "Good luck / with the MOVE."
-- L27: Somebody's lived / in our ATTIC / longer than WE have.
-- L28: The coat / really did come / with the HOUSE.
-- L29: Sunday, / the hooks were BARE. / The ladder stayed UP.
-- L30: But next door, / in Mrs. Lee's / empty HOUSE,
-- L31: the attic window / was OPEN.
-- L32: So if the truck / ever stops / at YOUR house, / and nobody's MOVING,
-- L33: check the ATTIC.
+- L27: Somebody's lived / in our ATTIC / longer than WE have. **(the reveal, about 8 s from the end)**
+- L30: And next door, / Mrs. Lee's attic window / was OPEN.
+- L33: So if it stops at YOURS, / and nobody's MOVING, / check the ATTIC.
 
-(Loop: L33 runs straight into L01: "Check the attic. If the ice cream truck stops at your house, someone inside is moving out.")
+(Loop: L33 runs straight into L01: "...check the attic. If the ice cream truck stops at your house, someone inside is moving out.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. No death, illness or harm word. Nobody is hurt or threatened: the lodger only leaves.
