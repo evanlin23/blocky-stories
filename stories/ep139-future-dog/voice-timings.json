@@ -1,0 +1,1145 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "on your thirtieth, it's you on the phone, from later. mine only asked for my dog.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.466,
+   "onset": 0.155,
+   "end": 3.259,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.681,
+     0.854
+    ],
+    [
+     0.854,
+     1.207
+    ],
+    [
+     1.241,
+     1.759
+    ],
+    [
+     1.854,
+     2.534
+    ],
+    [
+     2.534,
+     3.259
+    ]
+   ]
+  },
+  "L02": {
+   "text": "you get one call. ever.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.759
+    ],
+    [
+     0.81,
+     1.276
+    ]
+   ]
+  },
+  "L03": {
+   "text": "my neighbor's told her to stop cutting her own bangs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.793
+    ],
+    [
+     0.793,
+     1.319
+    ],
+    [
+     1.319,
+     2.138
+    ]
+   ]
+  },
+  "L04": {
+   "text": "my buddy sam's said, don't buy the red car. he did. it's a lemon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     0.81
+    ],
+    [
+     0.845,
+     1.129
+    ],
+    [
+     1.129,
+     1.655
+    ],
+    [
+     1.724,
+     2.0
+    ],
+    [
+     2.026,
+     2.741
+    ]
+   ]
+  },
+  "L05": {
+   "text": "mine rang on my patio,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.293
+    ]
+   ]
+  },
+  "L06": {
+   "text": "at seven.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.0,
+   "onset": 0.19,
+   "end": 0.793,
+   "chunks": [
+    [
+     0.19,
+     0.793
+    ]
+   ]
+  },
+  "L07": {
+   "text": "achoo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.983,
+   "onset": 0.19,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ]
+   ]
+  },
+  "L08": {
+   "text": "that's noodle, my old beagle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.448
+    ]
+   ]
+  },
+  "L09": {
+   "text": "he sneezes every time anyone says seven.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     1.069
+    ],
+    [
+     1.069,
+     2.069
+    ]
+   ]
+  },
+  "L10": {
+   "text": "my big brother theo taught him that.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.879
+    ],
+    [
+     0.879,
+     1.603
+    ]
+   ]
+  },
+  "L11": {
+   "text": "theo's lived across the ocean for five years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.224
+    ],
+    [
+     1.224,
+     2.069
+    ]
+   ]
+  },
+  "L12": {
+   "text": "we text. mostly about the dog.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.578,
+     0.87
+    ],
+    [
+     0.87,
+     1.603
+    ]
+   ]
+  },
+  "L13": {
+   "text": "i answered, and future me didn't even say hi.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.052
+    ],
+    [
+     1.052,
+     1.371
+    ],
+    [
+     1.371,
+     2.052
+    ]
+   ]
+  },
+  "L14": {
+   "text": "he said, put me on speaker. is noodle there?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.439,
+     0.595
+    ],
+    [
+     0.595,
+     1.138
+    ],
+    [
+     1.215,
+     2.052
+    ]
+   ]
+  },
+  "L15": {
+   "text": "just the dog.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.086,
+   "onset": 0.172,
+   "end": 0.879,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ]
+   ]
+  },
+  "L16": {
+   "text": "so noodle hopped up by the phone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.862
+    ],
+    [
+     0.862,
+     1.586
+    ]
+   ]
+  },
+  "L17": {
+   "text": "and future me said two words, really slowly.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.121
+    ],
+    [
+     1.172,
+     1.966
+    ]
+   ]
+  },
+  "L18": {
+   "text": "gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.724,
+   "onset": 0.19,
+   "end": 0.534,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ]
+   ]
+  },
+  "L19": {
+   "text": "seven forty. achoo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.19,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.19,
+     0.707
+    ],
+    [
+     0.768,
+     1.379
+    ]
+   ]
+  },
+  "L20": {
+   "text": "over and over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.19,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.19,
+     1.052
+    ]
+   ]
+  },
+  "L21": {
+   "text": "gate. seven forty. achoo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.362,
+     0.81
+    ],
+    [
+     0.87,
+     1.483
+    ]
+   ]
+  },
+  "L22": {
+   "text": "for six whole minutes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.121
+    ]
+   ]
+  },
+  "L23": {
+   "text": "then, click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.0,
+   "onset": 0.172,
+   "end": 0.793,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.345,
+     0.793
+    ]
+   ]
+  },
+  "L24": {
+   "text": "i asked noodle what it meant.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.819
+    ],
+    [
+     0.819,
+     1.431
+    ]
+   ]
+  },
+  "L25": {
+   "text": "he just turned and looked at the gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     0.922
+    ],
+    [
+     0.922,
+     1.517
+    ]
+   ]
+  },
+  "L26": {
+   "text": "all night, he lay right by it,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.492,
+     0.69
+    ],
+    [
+     0.69,
+     1.345
+    ]
+   ]
+  },
+  "L27": {
+   "text": "watching the latch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ]
+   ]
+  },
+  "L28": {
+   "text": "at seven thirty-eight the next morning, he was whining.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.362
+    ],
+    [
+     1.414,
+     2.19
+    ]
+   ]
+  },
+  "L29": {
+   "text": "at seven thirty-nine, he nosed the latch open. achoo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.828,
+     1.164
+    ],
+    [
+     1.164,
+     1.793
+    ],
+    [
+     1.897,
+     2.552
+    ]
+   ]
+  },
+  "L30": {
+   "text": "at seven forty, he ran.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.802,
+     1.379
+    ]
+   ]
+  },
+  "L31": {
+   "text": "me behind him, on the leash, in my socks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     0.966
+    ],
+    [
+     0.992,
+     1.724
+    ]
+   ]
+  },
+  "L32": {
+   "text": "three streets to a moving van.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.707
+    ],
+    [
+     0.707,
+     1.466
+    ]
+   ]
+  },
+  "L33": {
+   "text": "and a man by the ramp turned around and said my name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.793
+    ],
+    [
+     0.793,
+     1.276
+    ],
+    [
+     1.276,
+     1.509
+    ],
+    [
+     1.509,
+     2.138
+    ]
+   ]
+  },
+  "L34": {
+   "text": "it was theo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L35": {
+   "text": "he'd been back a whole week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.31
+    ]
+   ]
+  },
+  "L36": {
+   "text": "three streets from my door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.293
+    ]
+   ]
+  },
+  "L37": {
+   "text": "every night he'd texted me and deleted it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.224
+    ],
+    [
+     1.224,
+     1.983
+    ]
+   ]
+  },
+  "L38": {
+   "text": "achoo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.983,
+   "onset": 0.19,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ]
+   ]
+  },
+  "L39": {
+   "text": "he didn't know what to say after five years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.931
+    ],
+    [
+     0.931,
+     1.897
+    ]
+   ]
+  },
+  "L40": {
+   "text": "then noodle jumped into his arms.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     0.974
+    ],
+    [
+     0.974,
+     1.621
+    ]
+   ]
+  },
+  "L41": {
+   "text": "and theo whispered, seven.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.819,
+     1.345
+    ]
+   ]
+  },
+  "L42": {
+   "text": "achoo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.983,
+   "onset": 0.19,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ]
+   ]
+  },
+  "L43": {
+   "text": "and we both laughed, like nobody had ever been away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.879
+    ],
+    [
+     0.931,
+     1.353
+    ],
+    [
+     1.353,
+     1.586
+    ],
+    [
+     1.586,
+     2.259
+    ]
+   ]
+  },
+  "L44": {
+   "text": "future me knew i'd overthink it for a week. so he told the one of us who never does.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.655,
+   "onset": 0.172,
+   "end": 3.448,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.224
+    ],
+    [
+     1.224,
+     1.759
+    ],
+    [
+     1.854,
+     2.25
+    ],
+    [
+     2.25,
+     2.405
+    ],
+    [
+     2.405,
+     2.577
+    ],
+    [
+     2.577,
+     3.448
+    ]
+   ]
+  },
+  "L45": {
+   "text": "theo's yellow house is my favorite walk now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.879,
+     1.094
+    ],
+    [
+     1.094,
+     1.534
+    ],
+    [
+     1.534,
+     2.0
+    ]
+   ]
+  },
+  "L46": {
+   "text": "every morning at seven forty,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.517
+    ]
+   ]
+  },
+  "L47": {
+   "text": "we walk over for coffee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.241
+    ]
+   ]
+  },
+  "L48": {
+   "text": "achoo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.983,
+   "onset": 0.19,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ]
+   ]
+  },
+  "L49": {
+   "text": "and i already know who i'll ask for when it's my call.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.862
+    ],
+    [
+     0.862,
+     1.069
+    ],
+    [
+     1.069,
+     1.353
+    ],
+    [
+     1.353,
+     1.552
+    ],
+    [
+     1.552,
+     2.207
+    ]
+   ]
+  }
+ }
+}
