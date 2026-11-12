@@ -26,12 +26,16 @@
     "My key"
    ],
    [
-    "to a house",
-    "to a house"
+    "to the house",
+    "to the house"
    ],
    [
-    "we SOLD",
+    "we sold",
     "we sold"
+   ],
+   [
+    "NINE years ago",
+    "nine years ago"
    ],
    [
     "is warm.",
@@ -95,39 +99,11 @@
   "chunks": [
    [
     "My big sister JESS",
-    "My big sister jess"
+    "My big sister Jess"
    ],
    [
-    "gave me that",
-    "gave me that"
-   ],
-   [
-    "when we moved OUT.",
-    "when we moved out."
-   ]
-  ]
- },
- {
-  "id": "L07",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Out of the blue house",
-    "Out of the blue house"
-   ],
-   [
-    "on the HILL.",
-    "on the hill."
-   ]
-  ]
- },
- {
-  "id": "L08",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Nine years AGO.",
-    "Nine years ago."
+    "gave me THAT.",
+    "gave me that."
    ]
   ]
  },
@@ -136,20 +112,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Somebody else",
-    "Somebody else"
+    "Strangers live",
+    "Strangers live"
    ],
    [
-    "lives there NOW.",
-    "lives there now."
+    "in our old BLUE house",
+    "in our old blue house"
    ],
    [
-    "I've never",
-    "I've never"
-   ],
-   [
-    "even MET them.",
-    "even met them."
+    "on the HILL.",
+    "on the hill."
    ]
   ]
  },
@@ -230,26 +202,16 @@
   ]
  },
  {
-  "id": "L14",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So I walked up",
-    "So I walked up"
-   ],
-   [
-    "the HILL.",
-    "the hill."
-   ]
-  ]
- },
- {
   "id": "L15",
   "who": "narrator",
   "chunks": [
    [
-    "The lights",
-    "The lights"
+    "Up the HILL,",
+    "Up the hill,"
+   ],
+   [
+    "the lights",
+    "the lights"
    ],
    [
     "were ON.",
@@ -412,52 +374,6 @@
   ]
  },
  {
-  "id": "L24",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Jess bought",
-    "Jess bought"
-   ],
-   [
-    "the house BACK.",
-    "the house back."
-   ]
-  ]
- },
- {
-  "id": "L25",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She'd been inside",
-    "She'd been inside"
-   ],
-   [
-    "since MONDAY,",
-    "since monday,"
-   ]
-  ]
- },
- {
-  "id": "L26",
-  "who": "narrator",
-  "chunks": [
-   [
-    "waiting",
-    "waiting"
-   ],
-   [
-    "for me",
-    "for me"
-   ],
-   [
-    "to NOTICE.",
-    "to notice."
-   ]
-  ]
- },
- {
   "id": "L27",
   "who": "narrator",
   "chunks": [
@@ -472,90 +388,24 @@
   ]
  },
  {
-  "id": "L28",
+  "id": "L24",
   "who": "narrator",
   "chunks": [
    [
-    "She never",
-    "She never"
+    "Jess bought",
+    "Jess bought"
    ],
    [
-    "changed the LOCK.",
-    "changed the lock."
+    "our house BACK,",
+    "our house back,"
    ],
    [
-    "So my key",
-    "So my key"
+    "and never changed",
+    "and never changed"
    ],
    [
-    "would still WORK.",
-    "would still work."
-   ]
-  ]
- },
- {
-  "id": "L29",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She hugged me",
-    "She hugged me"
-   ],
-   [
-    "so hard",
-    "so hard"
-   ],
-   [
-    "my windbreaker SQUEAKED.",
-    "my windbreaker squeaked."
-   ]
-  ]
- },
- {
-  "id": "L30",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She says",
-    "She says"
-   ],
-   [
-    "the key was warm",
-    "the key was warm"
-   ],
-   [
-    "way before MONDAY.",
-    "way before monday."
-   ],
-   [
-    "I just never",
-    "I just never"
-   ],
-   [
-    "held it long enough",
-    "held it long enough"
-   ],
-   [
-    "to NOTICE.",
-    "to notice."
-   ]
-  ]
- },
- {
-  "id": "L31",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Now it hangs",
-    "Now it hangs"
-   ],
-   [
-    "by the blue door",
-    "by the blue door"
-   ],
-   [
-    "on the HILL.",
-    "on the hill."
+    "the LOCK.",
+    "the lock."
    ]
   ]
  },
