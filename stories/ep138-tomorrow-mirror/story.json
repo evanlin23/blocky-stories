@@ -15,7 +15,7 @@
  "tail": 0.0,
  "fade_in": false,
  "fade_out": false,
- "rev": 7,
+ "rev": 8,
  "look": {
   "style": "closer",
   "fog": "#e4eef4",
@@ -4970,7 +4970,7 @@
    "at": "L19",
    "name": "glass",
    "on": 1.0,
-   "fr": 0.62,
+   "fr": 0.4,
    "dp": 1.2
   },
   {
@@ -5031,7 +5031,7 @@
    "at": "L25",
    "name": "glass",
    "on": 1.0,
-   "fr": 0.62,
+   "fr": 0.4,
    "dp": 1.2
   },
   {
@@ -5318,7 +5318,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 7
+  "rev": 8
  },
  "set_moves": [],
  "framing_ok": [

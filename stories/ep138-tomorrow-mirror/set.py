@@ -205,6 +205,13 @@ def build_board(kit):
             ob = kit.box(f"bd.{slot}{k}", (0.03, sw, sh), (x, cy + off + u, cz + v), ink)
             ob.hide_render = True
             W["bd"][(slot, k)] = ob
+        if slot == "R":
+            # a flag and a foot on the backward 1, so the pair reads as a mirrored 12 and not as 51
+            for k, (u, v, sw, sh) in {"flag": (-dw / 2 + t + 0.17, dh / 2 - t / 2, 0.34, t),
+                                      "foot": (0, -dh / 2 + t / 2, dw, t)}.items():
+                ob = kit.box(f"bd.{slot}{k}", (0.03, sw, sh), (x, cy + off + u, cz + v), ink)
+                ob.hide_render = True
+                W["bd"][(slot, k)] = ob
 
 
 def build_glass(kit):
@@ -351,15 +358,19 @@ def animate(kit, story, tl, t, ctx):
     for c in W["key"].children:
         c.hide_render = not key_on
     if key_on:
-        h = hand(paint["key_who"], -1)
-        if h is not None:
-            W["key"].location = h + Vector((0.0, 0.0, 0.1))
+        hs = [x for x in (hand(paint["key_who"], -1), hand(paint["key_who"], 1)) if x is not None]
+        if hs:
+            h = max(hs, key=lambda p: p.z)          # the raised hand
+            # held up at chest height on the camera side (+x, the mirror's camera), clear of the arm
+            W["key"].location = Vector((h.x + 0.32, h.y, max(1.2, min(h.z, 1.35))))
             W["key"].rotation_euler = (0, 0, 0)
+            W["key"].scale = (1.0, 1.5, 1.5)
     # the date board: v (two digits, 0 hides it), hung backward when flip
     bd = sample("board", tl, t, {"v": 0.0, "flip": 0.0})
     v, flip = int(round(bd["v"])), bd["flip"] > 0.5
     lit = {("L", k): False for k in "abcdefg"}
     lit.update({("R", k): False for k in "abcdefg"})
+    lit[("R", "flag")] = lit[("R", "foot")] = False
     if v:
         tens, ones = v // 10, v % 10
         slots = [("L", tens), ("R", ones)]
@@ -368,6 +379,8 @@ def animate(kit, story, tl, t, ctx):
         for slot, d in slots:
             for k in SEG[d]:
                 lit[(slot, MIRROR_SEG[k] if flip else k)] = True
+        if flip and tens == 1:
+            lit[("R", "flag")] = lit[("R", "foot")] = True
     for key_, ob in W["bd"].items():
         ob.hide_render = not lit[key_]
     # the glass: a dark chrome post and a cool pane standing in the gym in front of the mirror's camera. Placed once per
