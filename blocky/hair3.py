@@ -96,22 +96,23 @@ def curls():          # a cloud of stacked cubes, wider than the shoulders
     return out
 
 
-def braids():         # two long braids of stacked cubes down to the chest
+def braids():         # two thick braids of stacked cubes hanging forward over the shoulders, tied off in a colour
     out = _cap(0.6) + _fringe(0.2, 0.18)
     for sx in (-1, 1):
         for k in range(6):
-            out.append(_b(f"braid{sx}{k}", (0.36 - 0.02 * k, 0.36 - 0.02 * k, 0.34), (sx * (W / 2 + 0.12), 0.05, TOP - 0.55 - 0.32 * k),
-                          rot=(0, 0, 0.785), bevel=0.08))
-        out.append(_b(f"btie{sx}", (0.3, 0.3, 0.12), (sx * (W / 2 + 0.12), 0.05, TOP - 0.55 - 0.32 * 5.7), bevel=0.03, mat="hair2"))
+            sz = 0.62 - 0.04 * k
+            out.append(_b(f"braid{sx}{k}", (sz, sz, 0.5), (sx * (W / 2 + 0.05), FRONT + 0.55, TOP - 0.75 - 0.46 * k),
+                          rot=(0, 0, 0.785), bevel=0.14))
+        out.append(_b(f"btie{sx}", (0.5, 0.5, 0.2), (sx * (W / 2 + 0.05), FRONT + 0.55, TOP - 0.75 - 0.46 * 5.75), bevel=0.05, mat="hair2"))
     return out
 
 
-def mohawk():         # a tall fin of blocks front to back over a buzz
+def mohawk():         # a tall, wide fin of blocks front to back over a buzz, the front block in a second colour
     out = [_b("mbuzz", (W + 0.03, D + 0.03, 0.1), (0, 0, TOP), bevel=0.04)]
     for k in range(5):
-        y = FRONT + 0.2 + k * (D - 0.3) / 4
-        h = 0.95 - 0.12 * k
-        out.append(_b(f"fin{k}", (0.36, 0.36, h), (0, y, TOP + h / 2), rot=(-0.25, 0, 0), bevel=0.06, mat="hair2" if k == 0 else "hair"))
+        y = FRONT + 0.25 + k * (D - 0.4) / 4
+        h = 1.5 - 0.16 * k
+        out.append(_b(f"fin{k}", (0.62, 0.5, h), (0, y, TOP + h / 2 - 0.05), rot=(-0.3, 0, 0), bevel=0.08, mat="hair2" if k == 0 else "hair"))
     return out
 
 
@@ -120,10 +121,12 @@ def flattop():        # a tall flat-topped block, squared off like a hedge
             _b("flatback", (W + 0.06, 0.12, H * 0.45), (0, BACK, TOP - H * 0.22), bevel=0.04)]
 
 
-def mullet():         # short on top, a long slab down the back to the shoulders
+def mullet():         # short on top, a long wide slab down the back past the shoulders, flicked out at the end
     return _cap(0.45, 0.8) + _fringe(0.2, 0.2) + [
-        _b("mull", (W - 0.1, 0.36, H * 1.0), (0, BACK + 0.05, TOP - H * 0.85), bevel=0.1),
-        _b("mulltip", (W - 0.3, 0.4, 0.3), (0, BACK + 0.12, TOP - H * 1.38), rot=(0.3, 0, 0), bevel=0.08)]
+        _b("mull", (W + 0.2, 0.5, H * 1.05), (0, BACK + 0.08, TOP - H * 0.85), bevel=0.12),
+        _b("mulls-1", (0.3, D * 0.5, H * 0.9), (-(W / 2 + 0.1), D * 0.22, TOP - H * 0.7), bevel=0.08),
+        _b("mulls1", (0.3, D * 0.5, H * 0.9), (W / 2 + 0.1, D * 0.22, TOP - H * 0.7), bevel=0.08),
+        _b("mulltip", (W + 0.4, 0.55, 0.36), (0, BACK + 0.25, TOP - H * 1.4), rot=(0.4, 0, 0), bevel=0.1)]
 
 
 def puffs():          # two round puffs high on the head
@@ -141,11 +144,11 @@ def swoop():          # a big wall swept hard to one side, overhanging the ear
         _b("sw2", (W * 0.7, 0.3, 0.32), (0.2, FRONT + 0.0, TOP - 0.05), rot=(0, 0.25, 0), bevel=0.08)]
 
 
-def topknot():        # shaved sides, a small high knot tied off
+def topknot():        # shaved sides, a big knot high on the crown, tied off in a colour
     return [_b("tkbuzz", (W + 0.02, D + 0.02, 0.1), (0, 0, TOP), bevel=0.04),
-            _b("tktop", (W * 0.55, D * 0.8, 0.22), (0, 0.05, TOP + 0.12), bevel=0.06),
-            _b("tie", (0.36, 0.36, 0.14), (0, 0.18, TOP + 0.3), bevel=0.04, mat="hair2"),
-            _b("knot", (0.62, 0.6, 0.55), (0, 0.18, TOP + 0.62), rot=(0.3, 0, 0.4), bevel=0.18)]
+            _b("tktop", (W * 0.6, D * 0.8, 0.3), (0, 0.05, TOP + 0.15), bevel=0.08),
+            _b("tie", (0.55, 0.55, 0.22), (0, 0.15, TOP + 0.4), bevel=0.05, mat="hair2"),
+            _b("knot", (1.0, 0.95, 0.85), (0, 0.15, TOP + 0.9), rot=(0.25, 0, 0.5), bevel=0.3)]
 
 
 def curtains():       # a middle part, two slabs framing the face down to the shoulders
