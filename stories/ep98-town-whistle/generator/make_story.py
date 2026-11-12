@@ -175,13 +175,14 @@ put("baker", "L04", (-200.0, 0.4), 180, "wide", arms=[40, 40])
 walk("baker", "L04", (-200.0, 0.5), "L04.1", (-200.0, 0.5), 180, "wide", arms=[40, 40])
 # staging fix: a real turn (180 -> 326 over 0.4 s), then a real walk toward the camera (1.3 m in 0.6 s)
 raw("baker", "L04.1", yaw=180)
-raw("baker", "L04.1+0.4", yaw=326, expr="scared")
+raw("baker", "L04.1+0.4", yaw=27, blend=0.4, expr="scared")  # yaw fix: turn straight to the walk heading
 raw("baker", "L04.1+0.4", pos=[-200.0, 0.5])
 raw("baker", "L05", pos=[-199.4, -0.7])
 gone("baker", "L05")
 S("L04", PX((-196.6, -4.0, 1.7), (-199.4, 0.5, 1.2), 17, 0.06), "in", fill=0.5, inside=0.8, exp=-0.45)
 for i, who in enumerate(("t1", "t2", "t3", "t4")):
-    walk(who, "L05", (-3.0 + 2.0 * i, -62.0 + (i % 2) * 1.2), "L05.2-0.1", (-3.0 + 2.0 * i + 1.0, -52.0 - i * 0.6), expr="scared")
+    _y0, _y1 = -62.0 + (i % 2) * 1.2, -52.0 - i * 0.6
+    walk(who, "L05", (-3.0 + 2.0 * i, _y0), "L05.2-0.1", (-3.0 + 2.0 * i + 1.0, _y1), 180 - math.degrees(math.atan2(1.0, _y1 - _y0)), expr="scared")  # yaw fix: face the heading
     gone(who, "L05.2")
 S("L05", PX((7.0, -46.0, 1.5), (0, -62.0, 0.9), 18, 0.10), "day", fill=0.9)
 steps("L05.2", 13)
@@ -195,7 +196,7 @@ for i, who in enumerate(("t1", "t2", "t3", "t4")):
     raw(who, f"L05.2+{t0 + 0.95:.2f}", pos=[stair(9)[0], ln, stair(9)[1]])
     gone(who, f"L05.2+{t0 + 1.0:.2f}")
 S("L05.2", PX((97.2, 1.1, 1.8), (102.4, 0.0, -1.2), 17, 0.08), "in", fill=0.9, stairl=1.5)
-walk("mail", "L06", (4.6, -14.0), "L06.2", (9.9, -6.0), expr="scared")
+walk("mail", "L06", (4.6, -14.0), "L06.2", (9.9, -6.0), 180 - math.degrees(math.atan2(5.3, 8.0)), expr="scared")  # yaw fix
 gone("mail", "L06.2+0.25")
 S("L06", PX((3.2, -16.0, 1.5), (8.6, -8.0, 1.1), 20, 0.12), "day", fill=0.9)
 cue("L05.2", "puff", whistle=0.0)
@@ -425,7 +426,7 @@ S("L51", PX((LX + 0.6, -1.1, LZ + 0.4), (LX + 1.45, 0.0, LZ + 0.08), 28, 0.10), 
 cue("L52", "puff", shoulder=None)
 put("me", "L52", (stair(27)[0], 0.0, stair(27)[1]), 90, "scared", arms=[0, 70])
 cue("L52", "lamp", pos=[stair(27)[0] + 0.5, 0.6, stair(27)[1] + 0.6], to=[LX + 1.2, 0.5, LZ + 0.25], dur=1.4)
-S("L52", PX((LX + 0.8, -1.5, LZ + 1.2), (stair(27)[0] + 0.6, 0.0, LZ + 0.8), 20, 0.10), "night", fill=0.9, lamp=1.0, stairl=0.6, inside=0.8)
+S("L52", PX((LX + 0.8, -1.5, LZ + 1.2), (stair(27)[0] + 0.6, 0.0, LZ + 0.8), 20, 0.10), "night", fill=0.7, lamp=0.5, stairl=0.6, inside=0.8)
 gone("me", "L52+0.9")
 gone("dad", "L52+0.9")
 cue("L52+0.9", "lamp", pos=[LX + 1.2, 0.0, LZ + 0.25], off=True)
@@ -500,7 +501,7 @@ cue("L68", "puff", wells=0.0)
 cue("L68", "cut", ext=3, gaze=1.0, gone=True)
 gone("arlo", "L68+0.8")
 S("L68", PX((0.0, 176.0, -20.0), (0.0, 200.0, -30.0), 18, 0.10), "day", fill=0.0, exp=0.2)
-S("L69", X((0.0, 172.0, -26.0), (0.0, 200.0, -38.0), 20, (0.8, 182.0, -31.5), (0.0, 200.0, -38.0), 22), "day", fill=0.0, exp=0.2)
+S("L69", X((0.0, 172.0, -26.0), (0.0, 200.0, -38.0), 20, (0.8, 182.0, -29.0), (0.0, 200.0, -38.0), 22), "day", fill=0.0, exp=0.2)
 
 # --- 13 warm, then cold, L70 to L74
 steps("L70", 13)
