@@ -82,22 +82,30 @@
    ]
   },
   "L03b": {
-   "text": "This is Moose. Our dog.",
+   "text": "This is Moose. Our dog. Today he met my sister's fiance.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.534,
+   "dur": 2.793,
    "onset": 0.172,
-   "end": 1.328,
+   "end": 2.586,
    "chunks": [
     [
      0.172,
      0.655
     ],
     [
-     0.707,
-     1.328
+     0.69,
+     1.138
+    ],
+    [
+     1.207,
+     1.543
+    ],
+    [
+     1.543,
+     2.586
     ]
    ]
   },
@@ -222,38 +230,26 @@
    ]
   },
   "L09": {
-   "text": "Sunday, my big sister Mia brought her fiance, Grant, to our barbecue.",
+   "text": "Sunday, Mia brought Grant to our barbecue.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.259,
-   "onset": 0.172,
-   "end": 3.034,
+   "dur": 2.155,
+   "onset": 0.19,
+   "end": 1.931,
    "chunks": [
     [
-     0.172,
-     0.431
+     0.19,
+     0.672
     ],
     [
-     0.457,
-     0.707
+     0.672,
+     1.121
     ],
     [
-     0.707,
-     1.069
-    ],
-    [
-     1.069,
-     1.301
-    ],
-    [
-     1.301,
-     2.121
-    ],
-    [
-     2.19,
-     3.034
+     1.121,
+     1.931
     ]
    ]
   },

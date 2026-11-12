@@ -72,6 +72,7 @@ def build_ground(kit):
 def build_fence(kit):
     white = kit.plastic("#fbfbf6", 0.5, spec=0.1)
     rail = kit.plastic("#eceae0", 0.55, spec=0.08)
+    blue = kit.plastic("#2f7fd8", 0.45, spec=0.12)          # the gate leaf: painted blue so an open gate reads
     gx0, gx1 = G.GATE[0] - G.GATE_W / 2, G.GATE[0] + G.GATE_W / 2
 
     def run_x(name, x0, x1, y):
@@ -101,12 +102,14 @@ def build_fence(kit):
     gw = G.GATE_W - 0.16
     n = 8
     for i in range(n):
-        kit.box(f"gate.p{i}", (0.11, 0.04, 1.0), (-0.05 - (i + 0.5) * gw / n, 0, 0.55), white, hinge, bevel=0.01)
+        kit.box(f"gate.p{i}", (0.11, 0.04, 1.0), (-0.05 - (i + 0.5) * gw / n, 0, 0.55), blue, hinge, bevel=0.01)
     for z in (0.3, 0.8):
-        kit.box(f"gate.r{z}", (gw, 0.05, 0.08), (-0.05 - gw / 2, 0.04, z), rail, hinge)
-    kit.box("gate.brace", (gw * 0.9, 0.04, 0.07), (-0.05 - gw / 2, -0.03, 0.55), rail, hinge, rot=(0, 0.5, 0))
+        kit.box(f"gate.r{z}", (gw, 0.05, 0.08), (-0.05 - gw / 2, 0.04, z), blue, hinge)
+    kit.box("gate.brace", (gw * 0.9, 0.04, 0.07), (-0.05 - gw / 2, -0.03, 0.55), blue, hinge, rot=(0, 0.5, 0))
     # a latch block on the gate post
-    kit.box("gate.latch", (0.06, 0.1, 0.1), (gx0 + 0.05, G.FY0 + 0.03, 0.9), kit.plastic("#3a3a40", 0.4))
+    kit.box("gate.latch", (0.12, 0.16, 0.14), (gx0 + 0.08, G.FY0 + 0.05, 0.9), kit.plastic("#2b2b32", 0.4))
+    kit.box("gate.latchbar", (0.3, 0.05, 0.06), (gx0 + 0.24, G.FY0 + 0.1, 0.96), kit.plastic("#f2c230", 0.3, spec=0.6),
+            rot=(0, -0.5, 0.0))
 
 
 def build_house(kit):
@@ -193,8 +196,11 @@ def build_neighbour(kit):
     for name, a, b in (("h.gut.s", -3.0, gap0), ("h.gut.n", gap1, 9.0)):
         kit.box(name, (0.16, b - a, 0.14), (xe + 0.17, (a + b) / 2, 3.12), gut, bevel=0.03)
     kit.box("h.clean", (0.05, gap1 - gap0, 0.3), (xe + 0.16, (gap0 + gap1) / 2, 3.3), pl("#ffffff", 0.5))
-    for yy in (gap0 + 0.15, gap1 - 0.15):
-        kit.box(f"h.bracket{yy}", (0.2, 0.05, 0.05), (xe + 0.2, yy, 3.1), gut)
+    dark = pl("#2e2e38", 0.5, spec=0.2)
+    for k in range(6):                       # empty brackets, big enough to read from the yard
+        yy = gap0 + 0.15 + k * (gap1 - gap0 - 0.3) / 5
+        kit.box(f"h.bracket{k}", (0.34, 0.09, 0.09), (xe + 0.3, yy, 3.13), dark, bevel=0.01)
+        kit.box(f"h.bracketv{k}", (0.09, 0.09, 0.3), (xe + 0.17, yy, 3.27), dark, bevel=0.01)
     # his lawn bush and a flower bed
     kit.sphere("h.bush1", 0.6, (xe + 1.0, -1.2, 0.5), pl("#3f9a4a", 0.8), seg=10)
     kit.sphere("h.bush2", 0.5, (xe + 1.0, 7.5, 0.4), pl("#3f9a4a", 0.8), seg=10)
@@ -268,7 +274,7 @@ def build_table(kit):
         for sx in (-0.5, 0.5):
             kit.box(f"bench.{nm}.leg{sx}", (0.07, 0.25, 0.43), (tx + 0.6 + sx, ty + sy, 0.215), dark)
     # the folded napkin that goes under the east-south leg (shown by cue)
-    W["napkin"] = kit.box("napkin", (0.22, 0.22, 0.05), (tx + 1.0, ty - 0.3, 0.015), pl("#ffffff", 0.9), None, bevel=0.005)
+    W["napkin"] = kit.box("napkin", (0.3, 0.3, 0.06), (tx + 1.0, ty - 0.3, 0.03), pl("#ffffff", 0.9), None, bevel=0.005)
     W["napkin"].hide_render = True
 
 
@@ -401,6 +407,7 @@ def build_props(kit):
     kit.box("ring.base", (0.3, 0.22, 0.1), (0, 0, 0.0), pl("#c4183c", 0.9, spec=0.02), rb, bevel=0.025)
     kit.box("ring.lid", (0.3, 0.2, 0.08), (0, 0.03, 0.09), pl("#cf2046", 0.9, spec=0.02), rb, rot=(-0.5, 0, 0), bevel=0.025)
     kit.box("ring.clasp", (0.06, 0.03, 0.05), (0, -0.115, 0.03), pl("#f2c230", 0.3, spec=0.7), rb)
+    rb.scale = (1.35, 1.35, 1.35)
     W["ring"] = rb
     # the squeaky carrot: bright orange cone with a green leafy top
     ca = kit.empty("carrot", (0, 0, -20))
@@ -418,7 +425,13 @@ def build_props(kit):
                   (kit.box("mring.stone1", (0.4, 0.4, 0.4), (0, 0, -20), pl("#ffffff", 0.1, spec=1.0), None, bevel=0.05),
                    (0.0, 0.62, -1.5))]
     # a biscuit
-    W["biscuit"] = kit.box("biscuit", (0.12, 0.12, 0.03), (0, 0, -20), pl("#e0b070", 0.7), None, bevel=0.01)
+    bone = pl("#b3621c", 0.6, spec=0.1)
+    bk = kit.empty("biscuit", (0, 0, -20))
+    kit.box("biscuit.shaft", (0.26, 0.08, 0.06), (0, 0, 0), bone, bk, bevel=0.015)
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            kit.sphere(f"biscuit.knob{sx}{sy}", 0.05, (sx * 0.14, sy * 0.045, 0), bone, bk, seg=8)
+    W["biscuit"] = bk
     # the inspector's clipboard (a board, a white sheet, a clip): no marks on the sheet
     cb = kit.empty("clip", (0, 0, -20))
     kit.box("clip.board", (0.34, 0.03, 0.44), (0, 0, 0), pl("#8a6238", 0.7), cb, bevel=0.01)
@@ -588,8 +601,15 @@ def animate(kit, story, tl, t, ctx):
     # ---- the table rocks while the `rock` cue is on, and stops when the napkin is under its leg
     rk = sample("rock", tl, t, {"amp": 0.0, "dur": 0.0})
     W["table"].rotation_euler = (0.018 * rk["amp"] * math.sin(t * 11.0), 0, 0)
-    nap = sample("napkin", tl, t, {"on": 0.0})
-    W["napkin"].hide_render = nap["on"] < 0.5
+    nap = sample("napkin", tl, t, {"on": 0.0, "hand": 0.0})
+    W["napkin"].hide_render = nap["on"] < 0.5 and nap["hand"] < 0.5
+    tx_, ty_ = G.TABLE
+    if nap["hand"] >= 0.5:
+        hh = hand("grant", 1)
+        if hh is not None:
+            W["napkin"].location = hh + Vector((0.0, 0.0, 0.05))
+    else:
+        W["napkin"].location = (tx_ + 1.0, ty_ - 0.3, 0.03)
     # ---- the ring box: on the sill (0), in Grant's right hand (1), pocketed (2)
     rg = sample("ring", tl, t, {"mode": 0.0})
     rm = int(round(rg["mode"]))
@@ -599,9 +619,9 @@ def animate(kit, story, tl, t, ctx):
         W["ring"].location = G.RING
         W["ring"].rotation_euler = (0, 0, 0)
     elif rm == 1:
-        h = hand("grant", 1)
+        h = hand("grant", -1)
         if h is not None:
-            W["ring"].location = h + Vector((0.0, -0.12, 0.08))
+            W["ring"].location = h + Vector((0.0, 0.12, 0.12))
             W["ring"].rotation_euler = (0, 0, 0)
     # ---- the carrot toy: placed (`at`), or in Moose's mouth (`carry` 1)
     ct_ = sample("carrot", tl, t, {"on": 0.0, "x": 0.0, "y": 0.0, "z": 0.0, "yaw": 0.0, "carry": 0.0, "dur": 0.0})
@@ -615,11 +635,17 @@ def animate(kit, story, tl, t, ctx):
         ca.location = (ct_["x"], ct_["y"], ct_["z"] + 0.07)
         ca.rotation_euler = (0, 0, ct_["yaw"] * D2R)
     # ---- the biscuit: from the carrier's hand (cue gives both ends) into Moose's mouth
-    bs = sample("biscuit", tl, t, {"on": 0.0})
-    W["biscuit"].hide_render = bs["on"] < 0.5
+    bs = sample("biscuit", tl, t, {"on": 0.0, "mouth": 0.0, "dur": 0.0})
+    hide(W["biscuit"], bs["on"] < 0.5)
     h = hand("mail", 1)
     if h is not None and bs["on"] >= 0.5:
-        W["biscuit"].location = h + Vector((0.0, 0.0, 0.0))
+        mouth_p = W["m_head"].matrix_world @ Vector((0, -0.42, -0.07))
+        d_ = mouth_p - h
+        d_.z = 0
+        held = h + (d_.normalized() * 0.1 if d_.length > 1e-4 else Vector((0, 0, 0))) + Vector((0, 0, 0.04))
+        k_ = bs["mouth"]
+        W["biscuit"].location = held + (mouth_p - held) * k_
+        W["biscuit"].rotation_euler = (0, 0, math.atan2(d_.y, d_.x) + math.pi / 2)
     # ---- the clipboard (inspector's left hand) and the spatula (Grant's right hand)
     cp = sample("clip", tl, t, {"on": 0.0})
     hide(W["clip"], cp["on"] < 0.5)

@@ -60,6 +60,14 @@
    [
     "Our dog.",
     "Our dog."
+   ],
+   [
+    "Today he met",
+    "Today he met"
+   ],
+   [
+    "my sister's FIANCÉ.",
+    "my sister's fiance."
    ]
   ]
  },
@@ -136,30 +144,12 @@
   ]
  },
  {
-  "id": "L08",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Not once.",
-    "Not once."
-   ]
-  ]
- },
- {
   "id": "L09",
   "who": "narrator",
   "chunks": [
    [
-    "Sunday,",
-    "Sunday,"
-   ],
-   [
-    "my big sister Mia",
-    "my big sister Mia"
-   ],
-   [
-    "brought her fiancé, GRANT,",
-    "brought her fiance, Grant,"
+    "Sunday, Mia brought GRANT",
+    "Sunday, Mia brought Grant"
    ],
    [
     "to our barbecue.",
@@ -304,16 +294,6 @@
    [
     "his MIND.",
     "his mind."
-   ]
-  ]
- },
- {
-  "id": "L17",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So I watched him.",
-    "So I watched him."
    ]
   ]
  },
