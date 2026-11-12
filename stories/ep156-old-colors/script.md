@@ -118,7 +118,7 @@ Times are estimates. Every line gets one to three shots with acting, with a punc
 | S02a, S02b | L02 | (a) The kitchen, moving boxes, Mom at the window, `sad`. (b) Mom's face, close, `sad`, "it isn't HOME yet." |
 | S03a, S03b | L03 | (a) An old photo on the table: a sky-blue house with yellow stripes (no text). (b) My face, `uneasy`, looking at Mom's hands again. |
 | S04 | L04 | Over the fence: Mr. Pratt on his porch, `smile`, waving. |
-| S05 | L05 | Mr. Pratt full-figure: teal from head to toe, a darker waterline across his middle, `laugh`. |
+| S05 | L05 | Mr. Pratt full-figure: teal from head to toe, a darker waterline across his middle, `laugh`; he glances at his own teal hand, sees nothing odd, and shrugs (the changed one can't see it). |
 | S06a, S06b | L06 | (a) A street cut: a woman on a bench in terracotta and white checks, matching her own old house behind a memory-soft wash, leaving a checked print on the bench, `smile`. (b) Her face, `smile`, in a scarf on a hot day. |
 | S07 | L07 | A sunny front path: a man in plaid green colors stepping into his grown daughter's hug, the plaid washing out of him, both faces clear. |
 | S08a, S08b | L08 | (a) Calendar "3". Mom's single, arms opening, `smile`. (b) My single, stepping back, `sheepish`. Whoosh. |

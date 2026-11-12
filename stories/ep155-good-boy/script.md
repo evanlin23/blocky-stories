@@ -26,7 +26,7 @@ No two columns match. Neither repeats a Made row: ep139 and ep145 have dogs as m
 - **The misdirect is love:** the day is spent getting ready for Pepper (his bowl, his blanket, his photo on the door), so every kind thing I do for the Dales is recast as a dog coming home.
 - **Ten pitched, this one kept.** Dropped: a lost cat (the rule reads less warmly), the dog comes home as Grandpa (confusing, and a death read), the family knows and hides it (no reveal), the dog can talk (silly), the dog is a Keeper (canon), a dog that left on purpose (sad), a stray picks the house (no "his owners"), the man is a burglar the dog sent (eerie, off lane), the dog is a puppy (a young one in peril), the dog stays a man forever (loss).
 - **Checked against "Claimed big ideas":** not ep139 (future me speaks to my beagle, a different dog in a different look), not ep145 (a dog judges a stranger), not ep108 (a grandpa swaps in for a scarecrow), not ep52's lost things hopping home. The narrator is the lost pet, never told. Shape `about-me`.
-- **The rule is the clue:** "until someone calls its name" sounds like the danger (say it on the street and it's lost again). It's the welcome home.
+- **The rule is the clue:** "you can't call its NAME until it's HOME" sounds like the danger (call it too soon and he's lost again). It's the welcome home.
 
 ## The story
 - **Rule / hook (L01, 16 words, about 3 s, a `must` opening, standards r1):** "You can't call a lost dog's NAME / until it's HOME. / It walks back / as a PERSON." The price is in the sentence: the name turns it back into a dog, so nobody says it until the dog is home.
@@ -44,7 +44,7 @@ No two columns match. Neither repeats a Made row: ep139 and ep145 have dogs as m
 - **The loved one at stake:** Mr. Dale, named "Mr. Dale" at L08 in frame, and his son Rory (named at L08), and their lost dog.
 - **The reveal (L20, L21, in the last 5 to 7 s):** Mr. Dale kneels in front of me and says, "You're HOME, Pepper. Good BOY." The name is the rule's ending condition, so the line is also the change: the next shot is a black and white spaniel on the step.
 - **After the reveal (one button, L22):** "Thump. Thump." My tail on the porch boards. Then the loop.
-- **How the end turns over the first line:** "until someone calls its name" was the warning. It's what home sounds like.
+- **How the end turns over the first line:** "you can't call its NAME until it's HOME" was the warning. It's what home sounds like.
 - **The plants a rewatch catches (the reveal rests on all of them):**
   1. L07, L08: "I don't know how I know the Dales. I just do."
   2. L09, L10: "Ding-dong." I'm at the window first, and Rory says Pepper hated the mail carrier too.
@@ -84,7 +84,7 @@ Each line out in turn:
 
 ## The strange part (no creature)
 No creature. The strange thing is me: a lost dog walking around as a man, not knowing it. A person made wrong only in how I behave (eager, too quick to the window, eating off the porch). I'm never shot as scary.
-- **My continuity:** on the top step at the door by Pepper's peg at L01 and L02; at the gate and street at L03 (looking down the road with the Dales); on the step beside Rory at L08; at the front window at L09 (inside the open door, nose near the glass, never pressed); on the step at L10 to L12 with Pepper's photo beside my head; on the porch rail at L13 (pulling my feet up as Mr. Dale vacuums the porch rug); on the step at L14 to L16 with the bowl and the empty sausage plate; on the top step on the red-check blanket at L17 to L20; gone at L21, where the beagle sits on that blanket.
+- **My continuity:** on the top step at the door by Pepper's peg at L01 and L02; at the gate and street at L03 (looking down the road with the Dales); on the step beside Rory at L08; at the front window at L09 (inside the open door, nose near the glass, never pressed); on the step at L10 to L12 with Pepper's photo beside my head; on the porch rail at L13 (pulling my feet up as Mr. Dale vacuums the porch rug); on the step at L14 to L16 with the bowl and the empty sausage plate; on the top step on the red-check blanket at L17 to L20; gone at L21, where the spaniel sits on that blanket.
 - **The change at L21:** no transform effect, no flash, no morph. A cut on the name: S21a is Mr. Dale's face saying it, S21b is the spaniel on the blanket, at the same spot and the same eye line I had, his tail up.
 
 ## Palette
