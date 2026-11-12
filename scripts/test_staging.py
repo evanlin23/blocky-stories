@@ -36,7 +36,7 @@ def test_lurch():
     st, tl = film({"ann": [{"t": 0, "pos": [-1.5, 0], "yaw": 0}, {"t": 1.0, "pos": [-1.5, 0]},
                            {"t": 1.067, "pos": [-0.9, 0]}],
                    "bo": [{"t": 0, "pos": [1.5, 0], "yaw": 0}]})
-    rows = staging.lint(st, tl)
+    rows = [r for r in staging.lint(st, tl) if r["check"] != "yaw"]   # the slide also snaps her to face +x
     assert [(r["check"], r["who"], r["shot"]) for r in rows] == [("lurch", "ann", "S01")]
     assert abs(rows[0]["t"] - 1.0) < 0.1
 
@@ -47,8 +47,9 @@ def test_two_keys_at_one_time_jump():
 
 
 def test_walk_is_not_a_lurch():
-    # 2 m in 1.2 s: a brisk walk with its legs swinging
-    st, tl = film({"ann": [{"t": 0, "pos": [-1.5, 0]}, {"t": 0.8, "pos": [-1.5, 0]}, {"t": 2.0, "pos": [0.5, 0]}]})
+    # 2 m in 1.2 s: a brisk walk with its legs swinging (already facing the way she walks: no flip)
+    st, tl = film({"ann": [{"t": 0, "pos": [-1.5, 0], "yaw": 90}, {"t": 0.8, "pos": [-1.5, 0]},
+                           {"t": 2.0, "pos": [0.5, 0]}]})
     assert found(st, tl) == set()
 
 
@@ -93,3 +94,34 @@ def test_off_camera_pair_and_cut():
     st, tl = film({"ann": [{"t": 0, "pos": [-1.5, 0]}, {"t": 1.5, "pos": [-1.5, 0]}, {"t": 1.5, "pos": [1.5, 0]}]},
                   shots=shots)
     assert found(st, tl) == {("lurch", "ann")}
+
+
+def test_yaw_flip():
+    # Ann flips 150 degrees in one frame (ep125 S39): two keys a frame apart
+    st, tl = film({"ann": [{"t": 0, "pos": [-1.5, 0], "yaw": 0}, {"t": 1.0, "yaw": 0}, {"t": 1.033, "yaw": 150}]})
+    rows = [r for r in staging.lint(st, tl) if r["check"] == "yaw"]
+    assert [(r["who"], r["shot"]) for r in rows] == [("ann", "S01")]
+    assert abs(rows[0]["t"] - 1.0) < 0.1
+
+
+def test_yaw_spin_the_long_way():
+    # 305 where -55 was meant (ep125 S42): a 300-degree spin over 0.2 s, 50 degrees a frame
+    st, tl = film({"ann": [{"t": 0, "pos": [-1.5, 0], "yaw": 5}, {"t": 1.0, "yaw": 5}, {"t": 1.2, "yaw": 305}]})
+    assert ("yaw", "ann") in found(st, tl)
+    # the same turn written -55 is 60 degrees over 0.2 s: a turn, not a spin
+    st, tl = film({"ann": [{"t": 0, "pos": [-1.5, 0], "yaw": 5}, {"t": 1.0, "yaw": 5}, {"t": 1.2, "yaw": -55}]})
+    assert found(st, tl) == set()
+
+
+def test_yaw_ok_off_camera_and_cut():
+    flip = [{"t": 0, "pos": [-1.5, 0], "yaw": 0}, {"t": 1.0, "yaw": 0}, {"t": 1.033, "yaw": 150}]
+    st, tl = film({"ann": flip}, extra={"staging_ok": ["S01/ann"]})
+    assert found(st, tl) == set()
+    st, tl = film({"ann": [dict(k, pos=[0, -9]) if "pos" in k else k for k in flip]})   # behind the camera
+    assert found(st, tl) == set()
+    # a flip exactly on a cut is the cut's
+    shots = [{"id": "S01", "start": 0.0, "end": 1.0, "f0": 0, "f1": 30, "step": 1},
+             {"id": "S02", "start": 1.0, "end": 3.0, "f0": 30, "f1": 90, "step": 1}]
+    st, tl = film({"ann": [{"t": 0, "pos": [-1.5, 0], "yaw": 0}, {"t": 1.0, "yaw": 0}, {"t": 1.0, "yaw": 150}]},
+                  shots=shots)
+    assert found(st, tl) == set()

@@ -1,4 +1,4 @@
-"""Staging lint: lurches and bodies standing inside each other (lesson 46). Report-only.
+"""Staging lint: lurches, bodies standing inside each other (lesson 46) and body flips. Report-only.
 
     python scripts/staging.py --story stories/<name> [--timeline t.json] [--json out.json]
 
@@ -24,6 +24,10 @@ polish pack's move (polish.cam_specs, checks._cam_at), as `check`'s still spans 
           side of the root along the shoulders and HALF_D (0.17 m, half the torso) front and back, plus what a
           raised or outstretched arm reaches. Side by side under 1.35 m their arms pass through each other, and at
           phone size two read as one block (ep132); face to face at 0.8 m nobody touches (a body is 0.34 m deep).
+  yaw     a character's body yaw turns more than YAW_DEG (45 degrees) within YAW_F (2) frames inside one shot, seen
+          on both frames: a flip or a spin, not a turn (ep125 S39, Lou 153 degrees in one frame; S42, the legs
+          spinning 300 degrees from a key written 305 instead of -55). The turn is measured as drawn: each frame's
+          step taken the short way round (a key 360 degrees from the last doesn't count), then summed.
 
 On camera: the head or any of the torso, hips, shoulders or hands (scripts/framing.py's body points) inside the
 frame, the body at least MIN_SIZE (5%) of the frame's width (not a speck 100 m off), not hidden, and not an
@@ -63,6 +67,8 @@ HALF_W = 0.68       # half of that: the shoulder line with the arms down, either
 HALF_D = 0.17       # half the torso's depth (1 unit), front to back
 ARM = 0.68          # an arm's length (2 units): how far a raised arm reaches forward, or out to the side
 FOOT_PAD = 0.02     # a touch isn't a hit: the boxes have to overlap by more than this, all round
+YAW_DEG = 45.0      # a body turning more than this many degrees...
+YAW_F = 2           # ...within this many frames is a flip, not a turn
 
 
 def width(spec: dict) -> float:
@@ -308,9 +314,52 @@ def _layout(pa, ya, pb, yb) -> str:
     return "at an angle"
 
 
+def _wrap(d):
+    return (np.asarray(d, float) + math.pi) % (2 * math.pi) - math.pi
+
+
+def yaws(film: Film) -> list[dict]:
+    """A body turning more than YAW_DEG within YAW_F frames, inside one shot and on camera at both ends."""
+    allow = film.st.get("staging_ok", [])
+    lim = math.radians(YAW_DEG)
+    out = []
+    for w in film.cast:
+        Y, V = film.yaw[w], film.vis[w]
+        step = _wrap(np.diff(Y))   # each frame's turn, the short way round
+        hits = []   # (frame, radians, frames taken)
+        for f in range(film.n - 1):
+            if not V[f]:
+                continue
+            best = None
+            for j in range(1, YAW_F + 1):
+                g = f + j
+                if g >= film.n or film.shot[g] != film.shot[f]:
+                    break
+                d = abs(float(step[f:g].sum()))
+                if d > lim and V[g] and (best is None or d > best[1]):
+                    best = (f, d, j)
+            if best:
+                hits.append(best)
+        groups = []
+        for h in hits:
+            if groups and h[0] <= groups[-1][-1][0] + YAW_F:
+                groups[-1].append(h)
+            else:
+                groups.append([h])
+        for gr in groups:
+            a, d, nf = max(gr, key=lambda h: (h[1], -h[2]))
+            sh = film.shot[a]
+            if _allowed(allow, sh, (w,), film.cast):
+                continue
+            out.append({"check": "yaw", "frame": a, "t": film.t(a), "shot": sh, "who": w,
+                        "detail": f"turns {math.degrees(d):.0f} deg in {nf} frame{'s' if nf > 1 else ''} "
+                                  f"({math.degrees(Y[a]):.0f} to {math.degrees(Y[a + nf]):.0f} deg), on camera"})
+    return out
+
+
 def lint(st: dict, tl: dict) -> list[dict]:
     film = Film(st, tl)
-    rows = lurches(film) + closes(film)
+    rows = lurches(film) + closes(film) + yaws(film)
     rows.sort(key=lambda r: (r["frame"], r["check"]))
     return rows
 
