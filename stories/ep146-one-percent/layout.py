@@ -7,7 +7,7 @@ RAIL_Y = 4.2                       # the houseboat's south rail
 ROOM = (100.0, 0.0)                # Grandma's living room (local x, y added to these)
 GRANDMA = (ROOM[0] + 0.3, 2.6)
 FLIP = (ROOM[0] - 0.55, 1.6, 0.74)
-FLASH_ME = (-0.55, 5.5, DECK_Z)     # the bet on the deck, three years ago
-FLASH_DEX = (0.55, 5.5, DECK_Z)
+FLASH_ME = (-0.7, 5.5, DECK_Z)      # the bet on the deck, three years ago
+FLASH_DEX = (0.7, 5.5, DECK_Z)
 
 RAILPH = (0.45, RAIL_Y - 0.03, DECK_Z + 1.34)   # Dex's phone propped upright on the rail top, to the right of his face (S01a)

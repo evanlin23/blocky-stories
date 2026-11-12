@@ -275,10 +275,14 @@ def houseboat(kit):
         box(kit, f"gprail{sx}", (0.07, ln, 0.07), (sx * 0.62, (gp0[1] + gp1[1]) / 2, (gp0[2] + gp1[2]) / 2 + 0.75), RAIL_C, 0.5, 0.1,
             rot=(ang, 0, 0))
         box(kit, f"gpp{sx}", (0.08, 0.08, 0.8), (sx * 0.62, 2.0, 0.4), RAIL_C, 0.5, 0.1)
-    # the tally post: two short teal strokes scratched at hip height (a clear centimetre proud of the post)
-    box(kit, "tallypost", (0.34, 0.34, 1.1), (-0.62, 1.4, 0.55), "#5b4a38", 0.8, 0.05)
-    for k, dx in enumerate((-0.05, 0.05)):
-        box(kit, f"tally{k}", (0.09, 0.016, 0.8), (-0.62 + dx * 2.2, 1.4 - 0.178, 0.58), "#fff1cf", 0.6, 0.05, rot=(0, 0, 0))
+    # the tally post: two short teal strokes scratched at hip height, lit, 1.6 cm proud of the post's +y face. It
+    # stands where TALLY puts it (set by shot in animate: beside my sneakers in S09, else by the gangplank's foot)
+    tp = kit.empty("tally", TALLY["home"][0], None, (0, 0, TALLY["home"][1] * D2R))
+    box(kit, "tallypost", (0.3, 0.3, 1.1), (0, 0, 0.55), "#7a5e44", 0.8, 0.05, parent=tp)
+    glow = kit.emit("#1fc4b2", 1.5, "tallyglow")
+    for k, dx in enumerate((-0.065, 0.065)):
+        box(kit, f"tally{k}", (0.065, 0.024, 0.3), (dx, 0.154, 0.72), glow, parent=tp)
+    W["tally"] = tp
     # deck dressing: two deck chairs, potted plants, a little table
     for x, yaw in ((-2.6, 12), (2.7, -14)):
         chair = kit.empty(f"chair{x}", (x, 5.4, G.DECK_Z), None, (0, 0, yaw * D2R))
@@ -418,6 +422,8 @@ def ss(x):
 PH = {}
 CH_X = 0.0   # the charger rests on the palm of the raised hand (x offset from Dex)
 TAG = {}
+# the tally post: shot id -> (place, yaw degrees); its strokes are on the post's local +y face
+TALLY = {"home": ((-0.62, 1.4, 0.0), 180.0), "S09": ((-0.68, 0.5, 0.0), 0.0)}
 CAMF = {}   # shot id -> first camera position, from story.json (the phones face it)
 
 DEX_P = (G.DEX[0], G.DEX[1], G.DEX[2])
@@ -462,6 +468,9 @@ def animate(kit, story, tl, t, ctx):
     for who in ("dex", "me"):
         _place(W[who], who, row.get(who, (None, "held", 0, 0, 0, 1.0)), t, shot, camp)
     W["tag"].show(TAG.get(sid, "low"))
+    tl_at, tl_yaw = TALLY.get(sid, TALLY["home"])
+    W["tally"].location = tl_at
+    W["tally"].rotation_euler = (0, 0, tl_yaw * D2R)
     if sid == "S20":
         # the charger rests on the flat palm of Dex's raised hand (his right arm held out level)
         bpy.context.view_layer.update()

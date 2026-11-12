@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -201,11 +201,16 @@ shot("S08a", "L08", [[0, [0.35, -4.6, 1.3], [0.35, 1.6, 1.15], 28], [1, [0.35, -
       "dex": dict(pos=(0.5, G.DEX[1], G.DECK_Z), yaw=0.0, expr="neutral", arms=(8, 8), side=(4, 4))})
 walk("me", "L08.2", (0.0, ME[1], 0.0))
 shot("S08b", "L08.2", fcam(ME, d=2.3, lens=30, f=0.38, az=MEF, push=0.06), me("determined", **DOWN))
-shot("S09", "L09", [[0, [-0.35, -0.8, 0.3], [-0.35, 1.2, 0.4], 20], [1, [-0.35, -0.55, 0.3], [-0.35, 1.2, 0.4], 20]],
-     me("uneasy", **DOWN))
+# a low close from the gangplank's foot: both sneakers whole in the middle third, the tally post beside them (its
+# two lit strokes at hip height), my arms up at the phone above the frame so no hand shows
+shot("S09", "L09", [[0, [-0.26, 2.95, 0.45], [-0.26, 0.9, -0.1], 19], [1, [-0.26, 2.84, 0.44], [-0.26, 0.9, -0.1], 19]],
+     me("uneasy", arms=(85, 85), side=(-6, -6)))
 shot("S10", "L10", cam(0.0, 5.5, 1.62, 4.6, 28, push=0.0, arc=0.0), {
-    "me": dict(pos=G.FLASH_ME, yaw=0.0, expr="sly", arms=(80, 30), side=(-70, -8), head=(-18, 0)),
-    "dex": dict(pos=G.FLASH_DEX, yaw=0.0, expr="sly", arms=(30, 80), side=(-8, -70), head=(18, 0))})
+    # 1.4 m apart, turned a little toward each other; each points the near hand, mine up at his face and his
+    # low at my chest, so the two hands pass at different heights, short of the middle, and neither crosses the
+    # other's body (arm 0 is the right arm)
+    "me": dict(pos=G.FLASH_ME, yaw=30.0, expr="sly", arms=(6, 130), side=(4, 36), head=(0, 0)),
+    "dex": dict(pos=G.FLASH_DEX, yaw=-30.0, expr="sly", arms=(50, 6), side=(-15, 4), head=(0, 0))})
 shot("S11", "L11", fcam(ME, d=2.9, lens=30, f=0.36, az=MEF, dx=0.15, push=0.04, arc=1.5), me("sheepish", **DOWN))
 shot("S12", "L12", fcam(ME, d=2.4, lens=30, f=0.38, az=MEF, push=0.06), me("uneasy", **DOWN))
 chg("me", "L12.2", blend=0.4, expr="soft")
@@ -312,7 +317,6 @@ story = {
     "shot_grades": {"S10": {"saturation": 0.62, "contrast": 0.96, "shadows": [0.07, 0.04, 0.0], "highlights": [0.09, 0.05, -0.04],
                             "vignette": 0.38, "bloom": 0.2, "grain": 0.02}},   # the flashback: faded, warm, soft edges
     "framing_ok": ["S08a"],   # I walk toward Dex far down the dock on purpose; he is named in the line but the shot is about the walk
-    "staging_ok": ["S10/me+dex flashback: two pointing, 1.1 m apart, no overlap, no touch"],
     "asr_forgive": ["hel", "percent", "percent it's"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
