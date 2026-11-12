@@ -31,7 +31,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 20,
+ "rev": 21,
  "look": {
   "style": "closer",
   "fog": "#e6f2ff",
@@ -184,7 +184,7 @@
   "m1": {
    "age": "adult",
    "skin": "#c98f68",
-   "shirt": "#ffffff",
+   "shirt": "#d98a2b",
    "pattern": "solid",
    "pants": "#3a4a6a",
    "shoes": "#2a2a2a",
@@ -201,7 +201,7 @@
    "extras": [
     "tie"
    ],
-   "extra_c": "#e8493a"
+   "extra_c": "#2a3a5a"
   },
   "m1mom": {
    "age": "adult",
@@ -5325,7 +5325,15 @@
     ]
    },
    {
-    "at": "L12.2",
+    "at": "L12.1+0.05",
+    "pos": [
+     309.9,
+     0.7
+    ],
+    "yaw": -87
+   },
+   {
+    "at": "L13",
     "pos": [
      304.2,
      0.4
@@ -8635,7 +8643,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 20
+  "rev": 21
  },
  "set_moves": [],
  "clip_ok": [],

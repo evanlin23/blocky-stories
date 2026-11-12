@@ -473,3 +473,21 @@ def test_meter_panel_needs_me_or_ines():
 def test_ones_all_draws_every_frame():
     st, tl = story()
     assert all(s["step"] == 1 for s in tl["shots"])
+
+
+def test_punch_max_keeps_the_hook_and_the_twist():
+    # animation audit 2026-11-12: at most `punch_max` post punch-ins a film; the hook's own stays as it was
+    st, tl = story()
+    p = {**polish.spec(st), "punch_rate": None, "punch_gap": 0.5}
+    at = timeline.resolver(tl["lines"], tl["duration"])
+    full = polish.emph_times(tl, p, at)
+    assert len(full) > 3
+    capped = polish.emph_times(tl, {**p, "punch_max": 2, "twist": "L05"}, at)
+    assert len(capped) == 2
+    assert capped[0] == full[0]                                         # the hook punch-in is untouched
+    assert polish.on_key(tl, at("L05")) in capped                       # the twist line gets the other
+    assert polish.emph_times(tl, {**p, "punch_max": 0}, at) == full     # off by default
+    assert polish.DEFAULTS["punch_max"] == 0
+    # the whoosh follows the punch-ins, so the hook's whoosh stays too
+    ev = polish.sound_events(tl, st, {**p, "punch_max": 2, "twist": "L05"}, at)
+    assert any(e["kind"] == "whoosh" and abs(e["t"] - (capped[0] - 0.12)) < 0.2 for e in ev)
