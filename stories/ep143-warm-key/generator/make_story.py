@@ -296,7 +296,7 @@ shot("S16", "L16", cam(60.3, 30.4, ZH + 1.45, 1.4, 0, 34, cz=ZH + 1.2))
 # S17: on the porch, 1 m from the door, the door at the frame's left
 P17 = (HX - 0.95, HY - 0.8, ZP)
 place("L17", "me", P17, 0, "worried", arms=[0, 0])
-cue("L17", "sticker", v=1.0)
+cue("L17-0.1", "sticker", v=1.0)
 mouth("me", "L17", "L17>", 0.3)
 shot("S17", "L17", cam(HX - 0.4, HY, ZP + 1.35, 2.5, -10, 34, cz=ZP + 1.4, push=(2.2, ZP + 1.35)))
 # S18: the sticker at chest height, my face beside it
@@ -361,10 +361,10 @@ place("L24", "dad", (HX - 0.95, 39.0, ZP), 0, "laugh", arms=[0, 0])
 cue("L24", "key", mode="jess", who="jess")
 mouth("jess", "L24", "L24.2", 0.4)
 shot("S26", "L24", cam(HX - 0.12, HY + 0.7, ZP + 1.25, 1.6, 0, 34, cz=ZP + 1.3))
-cue("L24.2", "lock", v=1.0)
-cue("L24.2", "key", mode="lock", who="me")
-show("L24.2")
-shot("S28a", "L24.2", camp([INS[0] + 1.3, INS[1] - 2.8, 1.2], [INS[0] + 0.38, INS[1], 1.05], 36,
+cue("L24.3", "lock", v=1.0)
+cue("L24.3", "key", mode="lock", who="me")
+show("L24.3")
+shot("S28a", "L24.3", camp([INS[0] + 1.3, INS[1] - 2.8, 1.2], [INS[0] + 0.38, INS[1], 1.05], 36,
                          pos2=[INS[0] + 1.0, INS[1] - 2.4, 1.15]))
 
 # ===== 08 the loop line (L32)

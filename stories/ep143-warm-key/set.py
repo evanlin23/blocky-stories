@@ -813,6 +813,15 @@ def _animate(kit, story, tl, t, ctx):
         chain.hide_render = mode != "jess"
     if mode == "jess":
         W["glow"].hide_render = True       # her keychain is a plain one: no warmth
+    bm = kit.plastic("#c98a18", 0.3, spec=0.7)        # her brass is deeper and richer than the lit key's
+    c = (0.38, 0.13, 0.0, 1.0) if mode == "jess" else (0.58, 0.25, 0.012, 1.0)
+    bm.node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value = c
+    bsdf = bm.node_tree.nodes["Principled BSDF"]
+    bsdf.inputs["Roughness"].default_value = 0.8 if mode == "jess" else 0.3
+    for k_ in ("Specular IOR Level", "Specular"):
+        if k_ in bsdf.inputs:
+            bsdf.inputs[k_].default_value = 0.05 if mode == "jess" else 0.7
+            break
     sc = 1.0       # her keychain is held up big
     key.scale = (KS * sc,) * 3
     W["dino"].scale = (DS * sc,) * 3
