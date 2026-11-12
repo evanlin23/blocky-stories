@@ -201,6 +201,24 @@ def blink(t, seed):
     return 1.0 if ph < 0.11 else 0.0
 
 
+def blink_natural(t, seed):
+    """A blink that doesn't tick like a clock (opt-in `talk`): gaps of 2 to 5 s drawn from a seeded sequence, the eyes
+    shut for 2 to 3 frames, and about one blink in eight doubled. 1.0 while shut. The faces cache only open or shut,
+    so the shape stays a clean cut; the timing is what reads as alive."""
+    t0 = _hash(seed * 31 + 7) * 2.0   # each character starts at its own point
+    k = 0
+    while t0 <= t:
+        r = _hash(seed * 131 + k * 17 + 3)
+        shut = 0.07 + 0.03 * r
+        if t < t0 + shut:
+            return 1.0
+        if r > 0.875 and t0 + shut + 0.12 <= t < t0 + 2 * shut + 0.12:   # the double
+            return 1.0
+        t0 += 2.0 + 3.0 * _hash(seed * 977 + k * 29 + 11)
+        k += 1
+    return 0.0
+
+
 def mouth(flaps, t):
     for a, d in flaps:
         if a <= t < a + d:
@@ -288,7 +306,8 @@ def state(tl, who, t, seed=0):
     out = {"x": x, "y": y, "z": z, "yaw": yaw, "legs": legs, "arms": tuple(arms), "arms_side": tuple(side),
             "head_yaw": head[0], "head_pitch": head[1], "lean": lean, "bob": bob,
             "expr": _switch(keys, "expr", t, "neutral"), "look": tuple(held("look", [0, 0])),
-            "blink": blink(t, seed) if _switch(keys, "blink", t, True) else 0.0,
+            "blink": ((blink_natural if mo.get("talk") else blink)(t, seed + sum(map(ord, who)) * bool(mo.get("talk")))
+                      if _switch(keys, "blink", t, True) else 0.0),
             "mouth": max(mouth(tl["talk"].get(who, []), t), mouth_track(keys, t)),
             "hidden": bool(_switch(keys, "hidden", t, False)), "speed": speed}
     if mo.get("idle") and abs(legs) < 1e-6 and not out["hidden"]:   # the polish pack: nobody stands like a statue
