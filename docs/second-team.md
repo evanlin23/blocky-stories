@@ -3,25 +3,22 @@
 Status only, one line per item. The second orchestrator keeps it. Messages between the orchestrators go in issue
 #177 ("Orchestrator channel"). Times are US Central.
 
-**Last updated:** Fri 2026-11-06, 7:25 PM Central. The second team is build capacity (RULES, audit decision 1): the
-first orchestrator alone owns queue.txt, uploads and dispatching renders. Its usage limit resets Thursdays 8:00 AM
-Central.
+**Last updated:** Thu 2026-11-12, 8:45 AM Central. The second team is build capacity (RULES, audit decision 1): the
+first orchestrator alone owns queue.txt, uploads, dispatching renders, blocky/ and .github/. The second's usage limit
+resets Thursdays 8:00 AM Central.
 
 | Item | Status | Ready for queue | PR | Next |
 |---|---|---|---|---|
-| clean and ready (final qa plus a staging look) | ep54, ep42, ep48, ep117, ep128, ep123, ep116, ep122, ep114, ep132, warm-shoes (11) | **yes** | per story | #1 queues them |
-| staging fixes merged, finals pending qa | ep102 (failed final qa on S69 camera inside grass: fix 2 running), ep108 #375, ep110 #381, ep124 #371, moving-day #385, ep83 #387, ep119 #388 | no | per story | final qa |
-| staging fixes in progress | worker A: ep96 #395, ep98, ep89, ep126; worker B: ep94, ep99 #392, ep127; worker D: ep130 | no | per story | proof, merge, final qa |
-| held for good | ep120: its staging fix needed a second pass after the one rescue (#383 closed), and the old final keeps visible merges. Not uploading | no | none | none |
-| held, #1's | ep28: visible pop and merge at S68; we asked #1 whether to fix it | ask | none | #1 decides |
-| uploaded with staging flaws | ep55 and ep92 (Fri): drop-in fixes #384 and #377 made; a re-upload is the owner's call and #1's dispatch. Public, not fixing: ep47, ep62, closing-time, rule-three, floor-thirteen, mirror-maze | n/a | #377, #384 | owner decides |
-| ep125 | fixes confirmed; the final has 2 black-face frames from a render race (fix #380, for #1). Redraw after #380 | no | #380 | #1 merges, redraws |
-| batch 15a (interactive pilots, owner 2026-11-06) | scripts #389; building ep136-one-answer, ep137-trail-board, ep138-tomorrow-mirror | no | #389 | builds |
-| batch 14 (ep129 to ep135) | ep132 ready; ep130 merged (#378), staging fix running; ep134 #391 and ep135 #390 in proof (ep135 on its decision-7 retry); ep129 building; ep133 dropped | no | #356 | builds |
-| engine PRs for #1 | #380 (face-PNG race, urgent), #373 (draw_meter only for me/ines cues), #313 (camera inside the set) | n/a | per PR | #1 merges |
-| lints (report-only, scripts/) | framing, frames (#307), measure (#332), shardcheck (#345), staging (#366) | n/a | per PR | every build and fix runs all five |
-| QA desk | each new final gets qa, staging.py plus a look, and a black-frame scan | n/a | per film | checks finals as they land |
+| ready, not yet uploaded | 16 in queue.txt (ep94, ep123, ep130, ep99, ep135, ep126, ep127, ep132, ep117, ep83, ep114, ep102, ep119, ep108, ep122, moving-day): about 8 days at 2 a day, to about Fri Nov 20 | **yes** | per story | uploads |
+| animation audit | measuring ep124, ep136, ep54; A/B 60 fps, EEVEE, eased acting, turn cap, 3D camera paths, sharpen and crf, fewer punch-ins (ones: all is in, #457) | n/a | to come, for #1 | results table on #177 |
+| style v3 sheet | 6 characters x 6 expressions plus a 5 s acting test, for the owner's approval; engine behind `look.style: "v3"` | n/a | to come | #1 takes the sheet to the owner |
+| fix worker | yaw check in scripts/staging.py, then ep125 (yaw snaps), ep129 (box through Dad, S49 flat; #414), ep138 (key never shows), ep110 (no ceiling), ep98 (S92 black, S66 white). Each a new fix job with one rescue | no | per story | final qa, then ready |
+| batch 15 (ep139 to ep154) | writer started 8:32 AM Thu: 16 scripts to land 14, about half warm (2 in ep124's world), 2 puzzles (one "find the extra one" #2), 2 interactive; bar is #463 | no | to come | builds Fri to Tue, finals by Wed Nov 18 |
+| held for good | ep120 (staging fix needed a second pass after the one rescue) | no | none | none |
+| held, #1's | ep28 (visible pop and merge at S68) | ask | #419 | #1 decides |
+| uploaded with flaws | ep55 and ep92: drop-in fixes #384 and #377 merged; a re-upload is the owner's call | n/a | #377, #384 | owner decides |
+| lints (scripts/) | framing, frames, measure, shardcheck, staging (staging blocks `gate --merge`, decision 11) | n/a | per PR | every build and fix runs all five |
 | dropped | every drop has a killed line in stories/ideas.md, and its folder is deleted on main (audit decision 6) | no | none | none |
 
 "Ready for queue: yes" means the story merged with a passed proof qa and its final passed qa, plus a staging look
-(lesson 46) since Fri Nov 6, so the first orchestrator can queue it.
+(lesson 46), so the first orchestrator can queue it.
