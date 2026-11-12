@@ -290,7 +290,7 @@ key("mia", "L13+0.7", yaw=180, arms=[10, 10], expr="smile", blend=0.5)
 cue("L13+0.4", "rock", amp=1.0, dur=0.3)
 cue("L13+1.5", "rock", amp=0.0, dur=0.4)
 number("L13", 1, 0.01)
-shot("S12", "L13", cam(0.0, 3.4, 1.3, 2.6, 140, 26, cz=1.55, push=(2.3, 1.3)))
+shot("S12", "L13", cam(0.0, 3.4, 1.3, 2.2, 140, 26, cz=1.55, push=(2.0, 1.3)))
 show("L14", "me", "grant")
 moose_at("L14", 4.2, 0.6, G.yaw_to((4.2, 0.6), (1.3, 4.5)), 0)
 moose_at("L14+0.2", 1.3, 4.5, G.yaw_to((4.2, 0.6), (1.3, 4.5)), 0, 2.2)
@@ -304,7 +304,7 @@ bark("L15", "L15.1")
 number("L15.1", 2)
 show("L15b", "grant")
 cue("L15b", "gate", ang=88.0)
-shot("S15", "L15b", camp([1.0, 5.5, 0.65], [0.75, 3.0, 0.9], 18),
+shot("S15", "L15b", camp([1.0, 5.5, 0.65], [0.75, 3.0, 0.9], 18, pos2=[1.0, 5.2, 0.65]),
      moose=True, hold=True)
 # the drop: the badge says 2, still, the grill smoke drifting
 shot("SD", "P01", cam(0.0, 4.2, 1.3, 1.9, 25, 32, cz=1.3, push=(1.6, 1.3)), moose=False)
@@ -386,7 +386,7 @@ put("grant", "L26", GR_G, YGR, "neutral")
 moose_at("L26", 1.3, 4.5, -24.0, 0)
 cue("L26", "mlook", yaw=0.0, pitch=0.0)
 bark("L26.1", "L26.1+0.5")
-shot("S25", "L26", camp([1.0, 5.5, 0.65], [0.75, 3.0, 0.9], 18),
+shot("S25", "L26", camp([1.0, 5.5, 0.65], [0.75, 3.0, 0.9], 18, pos2=[1.0, 5.2, 0.65]),
      moose=True, hold=True)
 show("L28")
 shot("S26", "L28", cam(GT[0] + 0.5, GT[1] + 0.2, 0.9, 2.0, 150, 28, cz=1.1, push=(1.7, 0.9)))
@@ -407,7 +407,7 @@ shot("S28", "L30", cam(2.1, 4.7, 1.2, 2.2, 25, 28, cz=1.3, push=(2.0, 1.2)))
 show("L31", "me")
 put("me", "L31", ME_G, G.yaw_to(ME_G, (ME_G[0] - 1, ME_G[1] - 4)), "worried")
 mouth("me", "L31", "L31>", 0.4)
-shot("S29", "L31", cam(ME_G[0], ME_G[1], 1.55, 1.15, 5, 40, cz=1.5), hold=True)
+shot("S29", "L31", cam(ME_G[0], ME_G[1], 1.55, 1.15, 5, 40, cz=1.5, push=(1.0, 1.55)), hold=True)
 fx = [{"at": "L31>+0.3", "kind": "punch", "dur": 1.5, "zoom": 1.05},
       {"at": "P02+1.8", "kind": "punch", "dur": 1.5, "zoom": 1.05}]
 
@@ -485,7 +485,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": ["S03", "S05", "S11b", "S19", "S20", "S22", "S22b"],
-    "frames_ok": [],
+    "frames_ok": ["S02", "S06", "S15", "S19b", "S24", "S27", "S28"],
     "staging_ok": ["S11b/me+grant"],
     "phonemes": {},
     "homophones": {},
