@@ -1,0 +1,729 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "If the lost poster on the corner has your face, you've got one week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.052,
+   "onset": 0.155,
+   "end": 2.862,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.888
+    ],
+    [
+     0.888,
+     1.276
+    ],
+    [
+     1.276,
+     1.879
+    ],
+    [
+     1.948,
+     2.224
+    ],
+    [
+     2.224,
+     2.862
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Sunday, it had mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.19,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ],
+    [
+     0.492,
+     1.155
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Mister Park's had his umbrella. Gone by tuesday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.259
+    ],
+    [
+     1.345,
+     2.345
+    ]
+   ]
+  },
+  "L04": {
+   "text": "My cousin's had his car keys. Nobody's seen them since.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.759
+    ],
+    [
+     0.759,
+     1.31
+    ],
+    [
+     1.406,
+     1.759
+    ],
+    [
+     1.759,
+     2.534
+    ]
+   ]
+  },
+  "L05": {
+   "text": "All week, Mom wouldn't let me out of her sight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     0.914
+    ],
+    [
+     0.914,
+     1.121
+    ],
+    [
+     1.121,
+     1.301
+    ],
+    [
+     1.301,
+     1.879
+    ]
+   ]
+  },
+  "L06": {
+   "text": "She walked me to the mailbox.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.19,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.569,
+     1.397
+    ]
+   ]
+  },
+  "L07": {
+   "text": "My buddies let me win at cards. My aunt knitted me a goodbye scarf.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.086,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.819
+    ],
+    [
+     0.819,
+     1.31
+    ],
+    [
+     1.379,
+     1.638
+    ],
+    [
+     1.638,
+     1.87
+    ],
+    [
+     1.87,
+     2.879
+    ]
+   ]
+  },
+  "L08": {
+   "text": "And grandma asked me the same thing every day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     0.957
+    ],
+    [
+     0.957,
+     1.345
+    ],
+    [
+     1.345,
+     2.017
+    ]
+   ]
+  },
+  "L09": {
+   "text": "What pie are you making saturday?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.905
+    ],
+    [
+     0.905,
+     1.483
+    ]
+   ]
+  },
+  "L10": {
+   "text": "I've won the town pie contest six years running.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.586
+    ],
+    [
+     0.586,
+     1.172
+    ],
+    [
+     1.172,
+     2.086
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Grandma's come second six years running.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     1.026
+    ],
+    [
+     1.026,
+     1.948
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Tuesday, she asked again. Wednesday, she asked what time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.517,
+     1.172
+    ],
+    [
+     1.259,
+     1.552
+    ],
+    [
+     1.586,
+     1.931
+    ],
+    [
+     1.931,
+     2.603
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Thursday, she had flour up to her elbows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     0.992
+    ],
+    [
+     0.992,
+     1.147
+    ],
+    [
+     1.147,
+     1.879
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Friday, she asked if I was ready to lose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.517,
+     0.862
+    ],
+    [
+     0.862,
+     1.026
+    ],
+    [
+     1.026,
+     1.293
+    ],
+    [
+     1.293,
+     1.914
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Saturday. The pie tent. ten fifty-eight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.19,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.526,
+     1.069
+    ],
+    [
+     1.147,
+     1.983
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Mom held my arm so tight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.768
+    ],
+    [
+     0.768,
+     1.397
+    ]
+   ]
+  },
+  "L17": {
+   "text": "ten fifty-nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     1.052
+    ]
+   ]
+  },
+  "L18": {
+   "text": "The judges tasted mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.379
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Then grandma's. And Grandma just watched me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.897,
+     1.31
+    ],
+    [
+     1.31,
+     2.138
+    ]
+   ]
+  },
+  "L20": {
+   "text": "eleven o'clock. ding.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.802,
+     1.31
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Grandma won. By two points.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.517
+    ]
+   ]
+  },
+  "L22": {
+   "text": "The poster was right. I lost.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.776
+    ],
+    [
+     0.81,
+     1.431
+    ]
+   ]
+  },
+  "L23": {
+   "text": "To grandma.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L24": {
+   "text": "She'd painted a victory banner.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.517
+    ]
+   ]
+  },
+  "L25": {
+   "text": "On sunday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Mom laughed so hard she let go of my arm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.879
+    ],
+    [
+     0.879,
+     1.199
+    ],
+    [
+     1.199,
+     1.897
+    ]
+   ]
+  },
+  "L27": {
+   "text": "I've never been so happy to lose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.017
+    ],
+    [
+     1.017,
+     1.621
+    ]
+   ]
+  },
+  "L28": {
+   "text": "This Sunday, there's a new poster on the corner.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.759,
+     0.948
+    ],
+    [
+     0.948,
+     1.388
+    ],
+    [
+     1.388,
+     2.069
+    ]
+   ]
+  },
+  "L29": {
+   "text": "It's Grandma's face. And I'm already baking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     1.017
+    ],
+    [
+     1.086,
+     1.267
+    ],
+    [
+     1.267,
+     2.103
+    ]
+   ]
+  }
+ }
+}
