@@ -142,7 +142,7 @@ def pic_face(kit, key, x, z, who="me"):
     pl = kit.plastic
     skin = pl("#f1c9a0", 0.6)
     ink = pl("#2a1a14", 0.7)
-    layer(kit, f"poster.{key}.bg", (0.76, 0.84), x, z - 0.04, 2, pl("#7fb8e8", 0.7))
+    layer(kit, f"poster.{key}.bg", (0.76, 0.84), x, z - 0.04, 2, pl("#2f6fc8", 0.7))
     if who == "me":
         hair = pl("#b4532c", 0.6)
         layer(kit, f"poster.{key}.shirt", (0.5, 0.16), x, z - 0.27, 3, pl("#4f86d8", 0.6))
@@ -157,15 +157,18 @@ def pic_face(kit, key, x, z, who="me"):
         for i, (dx, dz) in enumerate(((-0.13, -0.03), (-0.09, -0.05), (0.09, -0.05), (0.13, -0.03))):
             layer(kit, f"poster.{key}.fr{i}", (0.02, 0.02), x + dx, z + dz, 4, pl("#b9714a", 0.7))
     else:
-        white = pl("#e8e4ee", 0.8)
+        white = pl("#fbf8ff", 0.8)
+        curl = pl("#b8aed0", 0.8)
         layer(kit, f"poster.{key}.shirt", (0.5, 0.16), x, z - 0.27, 3, pl("#a98ad8", 0.6))
-        layer(kit, f"poster.{key}.puff", (0.6, 0.34), x, z + 0.17, 3, white)
+        layer(kit, f"poster.{key}.puff", (0.66, 0.4), x, z + 0.16, 3, white)
+        for ci, cdx in enumerate((-0.27, -0.09, 0.09, 0.27)):
+            layer(kit, f"poster.{key}.curl{ci}", (0.05, 0.05), x + cdx, z + 0.3, 4, curl)
         layer(kit, f"poster.{key}.puff2", (0.5, 0.14), x, z + 0.37, 3, white)
         layer(kit, f"poster.{key}.head", (0.38, 0.4), x, z - 0.04, 4, skin)
         layer(kit, f"poster.{key}.fringe", (0.38, 0.08), x, z + 0.16, 5, white)
         for i, dx in enumerate((-0.09, 0.09)):
-            layer(kit, f"poster.{key}.gl{i}", (0.12, 0.1), x + dx, z + 0.02, 5, pl("#3a2a3a", 0.5))
-            layer(kit, f"poster.{key}.eye{i}", (0.07, 0.06), x + dx, z + 0.02, 6, skin)
+            layer(kit, f"poster.{key}.gl{i}", (0.15, 0.13), x + dx, z + 0.02, 5, pl("#2a1a2a", 0.5))
+            layer(kit, f"poster.{key}.eye{i}", (0.1, 0.085), x + dx, z + 0.02, 6, skin)
             layer(kit, f"poster.{key}.pupil{i}", (0.035, 0.04), x + dx, z + 0.02, 7, ink)
         layer(kit, f"poster.{key}.mouth", (0.16, 0.025), x, z - 0.11, 5, ink)
         layer(kit, f"poster.{key}.mouthL", (0.03, 0.04), x - 0.09, z - 0.095, 5, ink)
@@ -194,7 +197,7 @@ def build_board(kit):
     W["gposter"] = [o for o in bpy.data.objects if o.name not in before]
     # the lore tally: two short red strokes on the board's top corner (not narrated), seen in S28
     red = pl("#a01818", 0.5)
-    W["tally"] = [kit.box(f"board.tally{k}", (0.05, 0.02, 0.2), (2.15 + 0.13 * k, G.BOARD_Y - 0.065, 2.38), red) for k in range(2)]
+    W["tally"] = [kit.box(f"board.tally{k}", (0.05, 0.02, 0.2), (1.9 + 0.16 * k, G.BOARD_Y - 0.065, 2.42), red) for k in range(2)]
     # the sidewalk's big tree and a lamp post for depth
     kit.prop("commontree_1", (-6.5, 7.5, 0), rot=20, height=6.5, tint="#d4f0c4")
     kit.prop("bush_1", (4.2, 5.2, 0), height=1.3)
@@ -398,14 +401,14 @@ def build_card(kit):
     window(kit, "card.win", cx - 3.0, cy + H, 1.7, 1.6, 1.2, curtain="#f2c44c")
     ribbons(kit, "gold", cx + 2.5, cy + H - 0.02, 1.9, "#e8b830", "#d89a20")
     # the card table: green felt, chips and cards, three chairs (mine centre far side, one friend's near side)
-    kit.box("card.tbl", (2.3, 1.3, 0.06), (cx - 1.5, cy + 0.8, 0.72), pl("#2f8a56", 0.9, spec=0.02), bevel=0.02)
-    kit.box("card.tblrim", (2.4, 1.4, 0.05), (cx - 1.5, cy + 0.8, 0.68), pl("#7a5230", 0.6))
+    kit.box("card.tbl", (3.2, 1.3, 0.06), (cx - 1.6, cy + 0.8, 0.72), pl("#2f8a56", 0.9, spec=0.02), bevel=0.02)
+    kit.box("card.tblrim", (3.3, 1.4, 0.05), (cx - 1.6, cy + 0.8, 0.68), pl("#7a5230", 0.6))
     for sx in (-1, 1):
         for sy in (-1, 1):
-            kit.box(f"card.tleg{sx}{sy}", (0.08, 0.08, 0.7), (cx - 1.5 + sx * 1.05, cy + 0.8 + sy * 0.55, 0.35), pl("#7a5230", 0.6))
-    chair(kit, "card.chMe", cx - 1.4, cy + 1.75, 180, "#d8573a")
-    chair(kit, "card.chB1", cx - 2.6, cy + 1.75, 180, "#3a9aa0")
-    chair(kit, "card.chB2", cx - 0.2, cy + 0.2, 90, "#f2c44c")
+            kit.box(f"card.tleg{sx}{sy}", (0.08, 0.08, 0.7), (cx - 1.6 + sx * 1.5, cy + 0.8 + sy * 0.55, 0.35), pl("#7a5230", 0.6))
+    chair(kit, "card.chMe", cx - 1.6, cy + 1.75, 180, "#d8573a")
+    chair(kit, "card.chB1", cx - 2.5, cy + 1.75, 180, "#3a9aa0")
+    chair(kit, "card.chB2", cx - 0.7, cy + 1.75, 180, "#f2c44c")
     chipc = ["#d8322f", "#2f6fd0", "#f2c230", "#2f8a56"]
     for k in range(10):
         kit.cyl(f"card.chip{k}", 0.05, 0.02, (cx - 1.3 + 0.12 * (k % 5), cy + 0.5 + 0.12 * (k // 5), 0.76 + 0.02 * (k % 3)), pl(chipc[k % 4], 0.4, spec=0.5), n=10)
@@ -491,7 +494,7 @@ def build_tent(kit):
     kit.sphere("tent.bell", 0.12, (cx + 0.5, cy + 2.35, 0.9), brass, seg=14)
     kit.sphere("tent.bellknob", 0.03, (cx + 0.5, cy + 2.35, 1.03), brass, seg=8)
     # a second small table for the banner
-    kit.box("tent.tbl2", (2.4, 0.9, 0.8), (cx - 3.6, cy + 2.0, 0.4), pl("#d9a050", 0.7), bevel=0.02)
+    kit.box("tent.tbl2", (2.4, 0.9, 1.0), (cx - 3.6, cy + 2.0, 0.5), pl("#d9a050", 0.7), bevel=0.02)
     # folding chairs along the right wall
     for k in range(4):
         chair(kit, f"tent.ch{k}", cx + 5.4, cy - 2.0 + 1.1 * k, 90, "#d8d4cc" if False else "#7d9ad0")
@@ -508,16 +511,17 @@ def build_tent(kit):
     # the banner (a painted picture, no letters) hung over the front of the second table
     bn = kit.empty("banner", (cx - 3.6, cy + 1.53, 0))
     W["banner"] = bn
-    kit.box("banner.cloth", (1.9, 0.02, 0.8), (0, 0, 0.4), pl("#8ac8f0", 0.9, spec=0.02), bn)
+    kit.box("banner.cloth", (1.9, 0.02, 0.8), (0, 0, 0.4), pl("#3f78d0", 0.9, spec=0.02), bn)
     kit.box("banner.hem", (1.94, 0.03, 0.05), (0, -0.005, 0.03), pl("#e8587a", 0.8), bn)
     kit.box("banner.hem2", (1.94, 0.03, 0.05), (0, -0.005, 0.77), pl("#e8587a", 0.8), bn)
     kit.box("banner.grass", (1.9, 0.03, 0.12), (0, -0.01, 0.1), pl("#74c860", 0.9), bn)
     # the painted Grandma holding up a cup: lavender body, face, white puff, gold cup
     kit.box("banner.body", (0.5, 0.03, 0.34), (0, -0.02, 0.28), pl("#a98ad8", 0.8), bn)
-    kit.box("banner.puff", (0.52, 0.03, 0.3), (0, -0.02, 0.62), pl("#f4f0fa", 0.8), bn)
+    kit.box("banner.puff", (0.6, 0.03, 0.34), (0, -0.02, 0.62), pl("#fbf8ff", 0.8), bn)
     kit.box("banner.head", (0.34, 0.03, 0.26), (0, -0.03, 0.55), pl("#f1c9a0", 0.8), bn)
     for sx in (-1, 1):
-        kit.box(f"banner.eye{sx}", (0.05, 0.03, 0.06), (sx * 0.08, -0.05, 0.57), pl("#2a1a14", 0.7), bn)
+        kit.box(f"banner.gl{sx}", (0.13, 0.03, 0.11), (sx * 0.08, -0.045, 0.57), pl("#2a1a14", 0.7), bn)
+        kit.box(f"banner.eye{sx}", (0.07, 0.03, 0.07), (sx * 0.08, -0.06, 0.57), pl("#f1c9a0", 0.7), bn)
         kit.box(f"banner.arm{sx}", (0.1, 0.03, 0.34), (sx * 0.34, -0.02, 0.42), pl("#a98ad8", 0.8), bn, rot=(0, sx * 0.35, 0))
         kit.box(f"banner.star{sx}", (0.16, 0.03, 0.16), (sx * 0.75, -0.02, 0.5), pl("#f2c230", 0.6), bn, rot=(0, 0.785, 0))
         kit.box(f"banner.star2{sx}", (0.1, 0.03, 0.1), (sx * 0.55, -0.02, 0.68), pl("#e8587a", 0.6), bn, rot=(0, 0.785, 0))
@@ -690,8 +694,8 @@ def late(kit):
             W["flour"].append(kit.box(f"grandma.flour{sx}", (0.74, 1.06, 1.1), (0, 0, -1.25), pl("#ece6d8", 0.95, spec=0.02), arm, bevel=0.06))
     arm = g("grandma.arm1")
     if arm is not None:
-        W["watch"] = [kit.box("grandma.watchband", (0.74, 1.04, 0.2), (0, 0, -1.7), pl("#8a5a34", 0.6), arm),
-                      kit.box("grandma.watchface", (0.4, 0.1, 0.4), (0, -0.54, -1.7), pl("#f6f1e6", 0.4, spec=0.7), arm)]
+        W["watch"] = [kit.box("grandma.watchband", (0.78, 1.1, 0.3), (0, 0, -1.5), pl("#d8a93b", 0.4, spec=0.7), arm),
+                      kit.box("grandma.watchface", (0.62, 0.1, 0.6), (0, -0.58, -1.5), pl("#fbf6e6", 0.4, spec=0.7), arm)]
     mh = g("mom.headg")
     if mh is not None:
         dark = pl("#2a1a1a", 0.65)
@@ -746,7 +750,7 @@ def animate(kit, story, tl, t, ctx):
     W["scarf"].location = (sc["x"], sc["y"], sc["z"] if sc["on"] > 0.5 else -30.0)
     hide(W["gpie"], sample("pie", tl, t, {"on": 0.0})["on"] < 0.5)
     ba = sample("banner", tl, t, {"on": 0.0})["on"] > 0.5
-    W["banner"].location = (G.TENT[0] - 3.6, G.TENT[1] + 1.53, 0.0) if ba else (0, 0, -30)
+    W["banner"].location = (G.TENT[0] - 3.6, G.TENT[1] + 1.53, 0.2) if ba else (0, 0, -30)
     gp = sample("gposter", tl, t, {"on": 0.0})["on"] > 0.5
     for o in W["gposter"]:
         o.hide_render = not gp
