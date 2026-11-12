@@ -468,7 +468,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "frames_ok": ["S25", "S40", "S44b"],
+    "frames_ok": ["S25", "S40", "S44b", "S07", "S18", "S43"],
     "staging_ok": ["S43/me+theo touch on purpose (my hand to his shoulder)", "S44a/me+theo touch on purpose", "S46/me+theo stand close on purpose (coffee on the porch)", "S48/me+theo stand close on purpose (same pose, Noodle close-up)"],
     "framing_ok": ["S04b", "S07", "S08", "S10b", "S14b", "S17", "S31b", "S35", "S38", "S48", "S14a", "S10a"],
     "clip_ok": ["photo"],
