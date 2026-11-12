@@ -397,6 +397,7 @@ story = {
 }
 story["framing_ok"] = ["S11b", "S20a"]   # deliberate: the far wall, flat water where the splash was / is about to be
 story["staging_ok"] = []
+story["frames_ok"] = ["S09"]   # deliberate: the board lights its second row (a 0.4 s fade) on the shot's first beat
 story["asr_forgive"] = ["it", "kicked"]   # Whisper hears "at seven" and "I kick"
 story["clip_ok"] = ["water"]   # a swimmer's head dips under the opaque water slab on purpose
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

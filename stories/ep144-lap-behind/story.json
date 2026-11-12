@@ -3176,6 +3176,9 @@
   "S20a"
  ],
  "staging_ok": [],
+ "frames_ok": [
+  "S09"
+ ],
  "asr_forgive": [
   "it",
   "kicked"
