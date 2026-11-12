@@ -126,16 +126,20 @@ def pic_umbrella(kit, key, x, z):
 
 
 def pic_keys(kit, key, x, z):
+    """The cousin's lost poster: one striped sock (the slot is still called "keys")."""
     pl = kit.plastic
-    gold = pl("#c99a24", 0.4, spec=0.5)
-    steel = pl("#7d8794", 0.4, spec=0.5)
-    ring = kit.cyl(f"poster.{key}.ring", 0.13, 0.01, (x, G.BOARD_Y - 0.05 - 0.012 * 3, z + 0.2), steel, rot=(math.pi / 2, 0, 0), n=18)
-    kit.cyl(f"poster.{key}.hole", 0.08, 0.01, (x, G.BOARD_Y - 0.05 - 0.012 * 4, z + 0.2), pl("#f3e8cc", 0.8), rot=(math.pi / 2, 0, 0), n=16)
-    for i, (dx, mat) in enumerate(((-0.1, gold), (0.1, steel))):
-        layer(kit, f"poster.{key}.sh{i}", (0.05, 0.4), x + dx, z - 0.08, 5, mat)
-        layer(kit, f"poster.{key}.bow{i}", (0.15, 0.12), x + dx, z + 0.06, 5, mat)
-        layer(kit, f"poster.{key}.t{i}", (0.1, 0.05), x + dx + 0.06, z - 0.22, 5, mat)
-        layer(kit, f"poster.{key}.t{i}b", (0.08, 0.04), x + dx + 0.05, z - 0.14, 5, mat)
+    base = pl("#2fa0a8", 0.7)
+    stripe = pl("#f2c230", 0.7)
+    cuff = pl("#d8322f", 0.7)
+    layer(kit, f"poster.{key}.leg", (0.24, 0.46), x - 0.06, z + 0.06, 3, base)
+    layer(kit, f"poster.{key}.foot", (0.46, 0.2), x + 0.05, z - 0.27, 3, base)
+    layer(kit, f"poster.{key}.heel", (0.18, 0.2), x - 0.14, z - 0.12, 3, base)
+    layer(kit, f"poster.{key}.toe", (0.14, 0.2), x + 0.3, z - 0.27, 3, cuff)
+    layer(kit, f"poster.{key}.cuff", (0.28, 0.1), x - 0.06, z + 0.34, 4, cuff)
+    for i, dz in enumerate((0.2, 0.06, -0.08)):
+        layer(kit, f"poster.{key}.st{i}", (0.24, 0.05), x - 0.06, z + dz, 4, stripe)
+    layer(kit, f"poster.{key}.fst", (0.05, 0.2), x + 0.12, z - 0.27, 4, stripe)
+    layer(kit, f"poster.{key}.fst2", (0.05, 0.2), x + 0.22, z - 0.27, 4, stripe)
 
 
 def pic_face(kit, key, x, z, who="me"):
@@ -161,8 +165,6 @@ def pic_face(kit, key, x, z, who="me"):
         curl = pl("#b8aed0", 0.8)
         layer(kit, f"poster.{key}.shirt", (0.5, 0.16), x, z - 0.27, 3, pl("#a98ad8", 0.6))
         layer(kit, f"poster.{key}.puff", (0.66, 0.4), x, z + 0.16, 3, white)
-        for ci, cdx in enumerate((-0.27, -0.09, 0.09, 0.27)):
-            layer(kit, f"poster.{key}.curl{ci}", (0.05, 0.05), x + cdx, z + 0.3, 4, curl)
         layer(kit, f"poster.{key}.puff2", (0.5, 0.14), x, z + 0.37, 3, white)
         layer(kit, f"poster.{key}.head", (0.38, 0.4), x, z - 0.04, 4, skin)
         layer(kit, f"poster.{key}.fringe", (0.38, 0.08), x, z + 0.16, 5, white)
@@ -493,8 +495,6 @@ def build_tent(kit):
     kit.cyl("tent.bellbase", 0.15, 0.04, (cx + 0.5, cy + 2.35, 0.89), brass, n=16)
     kit.sphere("tent.bell", 0.12, (cx + 0.5, cy + 2.35, 0.9), brass, seg=14)
     kit.sphere("tent.bellknob", 0.03, (cx + 0.5, cy + 2.35, 1.03), brass, seg=8)
-    # a second small table for the banner
-    kit.box("tent.tbl2", (2.4, 0.9, 1.0), (cx - 3.6, cy + 2.0, 0.5), pl("#d9a050", 0.7), bevel=0.02)
     # folding chairs along the right wall
     for k in range(4):
         chair(kit, f"tent.ch{k}", cx + 5.4, cy - 2.0 + 1.1 * k, 90, "#d8d4cc" if False else "#7d9ad0")
@@ -508,27 +508,43 @@ def build_tent(kit):
         kit.box(f"trophy.h{sx}", (0.04, 0.03, 0.12), (sx * 0.19, 0, 0.38), gold, tr)
         kit.box(f"trophy.h2{sx}", (0.1, 0.03, 0.03), (sx * 0.15, 0, 0.44), gold, tr)
     W["trophy"] = tr
-    # the banner (a painted picture, no letters) hung over the front of the second table
+    # the judge's flat palm, slapped over the bell (cue "palm")
+    W["palm"] = kit.empty("palm", (0, 0, -30))
+    kit.box("palm.hand", (0.2, 0.2, 0.045), (0, 0, 0), pl("#b88a62", 0.6), W["palm"], bevel=0.015)
+    for k in range(4):
+        kit.box(f"palm.f{k}", (0.04, 0.12, 0.04), (-0.07 + 0.047 * k, -0.15, 0.0), pl("#b88a62", 0.6), W["palm"], bevel=0.012)
+    kit.box("palm.thumb", (0.1, 0.04, 0.04), (0.13, -0.05, 0.0), pl("#b88a62", 0.6), W["palm"], rot=(0, 0, 0.6), bevel=0.012)
+    # the banner (a painted picture, no letters): an upright 1.1 x 1.0 m cloth Grandma holds square to the camera.
+    # A big painted Grandma (white puff, glasses) on the left, a big gold trophy on the right.
     bn = kit.empty("banner", (cx - 3.6, cy + 1.53, 0))
     W["banner"] = bn
-    kit.box("banner.cloth", (1.9, 0.02, 0.8), (0, 0, 0.4), pl("#3f78d0", 0.9, spec=0.02), bn)
-    kit.box("banner.hem", (1.94, 0.03, 0.05), (0, -0.005, 0.03), pl("#e8587a", 0.8), bn)
-    kit.box("banner.hem2", (1.94, 0.03, 0.05), (0, -0.005, 0.77), pl("#e8587a", 0.8), bn)
-    kit.box("banner.grass", (1.9, 0.03, 0.12), (0, -0.01, 0.1), pl("#74c860", 0.9), bn)
-    # the painted Grandma holding up a cup: lavender body, face, white puff, gold cup
-    kit.box("banner.body", (0.5, 0.03, 0.34), (0, -0.02, 0.28), pl("#a98ad8", 0.8), bn)
-    kit.box("banner.puff", (0.6, 0.03, 0.34), (0, -0.02, 0.62), pl("#fbf8ff", 0.8), bn)
-    kit.box("banner.head", (0.34, 0.03, 0.26), (0, -0.03, 0.55), pl("#f1c9a0", 0.8), bn)
+    def bb(name, size, loc, col, rough=0.8, spec=0.05, rot=(0, 0, 0)):
+        return kit.box(name, size, loc, pl(col, rough, spec=spec), bn, rot=rot)
+    bb("banner.cloth", (1.1, 0.02, 1.0), (0, 0, 0.5), "#3f78d0", 0.9, 0.02)
+    bb("banner.pole", (1.3, 0.05, 0.05), (0, 0.0, 1.03), "#7a5230", 0.6)
+    bb("banner.pole2", (1.3, 0.05, 0.05), (0, 0.0, -0.02), "#7a5230", 0.6)
+    bb("banner.hem", (1.1, 0.03, 0.05), (0, -0.015, 0.96), "#f2c230", 0.7)
+    bb("banner.hem2", (1.1, 0.03, 0.05), (0, -0.015, 0.04), "#f2c230", 0.7)
+    gx = -0.2
+    bb("banner.body", (0.46, 0.03, 0.3), (gx, -0.03, 0.2), "#a98ad8")
+    bb("banner.puff", (0.58, 0.03, 0.36), (gx, -0.035, 0.76), "#fbf8ff")
+    bb("banner.puffs", (0.7, 0.03, 0.16), (gx, -0.036, 0.6), "#fbf8ff")
+    bb("banner.head", (0.4, 0.03, 0.34), (gx, -0.045, 0.44), "#f1c9a0")
+    bb("banner.fringe", (0.4, 0.03, 0.07), (gx, -0.05, 0.6), "#fbf8ff")
     for sx in (-1, 1):
-        kit.box(f"banner.gl{sx}", (0.13, 0.03, 0.11), (sx * 0.08, -0.045, 0.57), pl("#2a1a14", 0.7), bn)
-        kit.box(f"banner.eye{sx}", (0.07, 0.03, 0.07), (sx * 0.08, -0.06, 0.57), pl("#f1c9a0", 0.7), bn)
-        kit.box(f"banner.arm{sx}", (0.1, 0.03, 0.34), (sx * 0.34, -0.02, 0.42), pl("#a98ad8", 0.8), bn, rot=(0, sx * 0.35, 0))
-        kit.box(f"banner.star{sx}", (0.16, 0.03, 0.16), (sx * 0.75, -0.02, 0.5), pl("#f2c230", 0.6), bn, rot=(0, 0.785, 0))
-        kit.box(f"banner.star2{sx}", (0.1, 0.03, 0.1), (sx * 0.55, -0.02, 0.68), pl("#e8587a", 0.6), bn, rot=(0, 0.785, 0))
-    kit.box("banner.mouth", (0.14, 0.03, 0.03), (0, -0.05, 0.48), pl("#2a1a14", 0.7), bn)
-    kit.cyl("banner.cup", 0.07, 0.16, (0.0, -0.035, 0.74), pl("#e8b830", 0.3, spec=0.8), bn, rot=(math.pi / 2, 0, 0), n=12, r2=0.1)
-    for sx in (-1, 1):
-        kit.box(f"banner.rope{sx}", (0.05, 0.05, 0.1), (sx * 0.8, 0.0, 0.82), pl("#4a3a2e", 0.7), bn)
+        bb(f"banner.gl{sx}", (0.17, 0.03, 0.14), (gx + sx * 0.1, -0.06, 0.47), "#2a1a14", 0.7)
+        bb(f"banner.eye{sx}", (0.1, 0.03, 0.09), (gx + sx * 0.1, -0.075, 0.47), "#f1c9a0", 0.7)
+        bb(f"banner.pu{sx}", (0.04, 0.03, 0.05), (gx + sx * 0.1, -0.09, 0.47), "#2a1a14", 0.7)
+    bb("banner.mouth", (0.16, 0.03, 0.035), (gx, -0.06, 0.35), "#2a1a14", 0.7)
+    bb("banner.cheeks", (0.3, 0.03, 0.04), (gx, -0.055, 0.395), "#f0a590", 0.7)
+    gold = "#f2c230"
+    bb("banner.tbase", (0.3, 0.03, 0.1), (0.3, -0.03, 0.2), "#b8801c", 0.4, 0.5)
+    bb("banner.tstem", (0.1, 0.03, 0.2), (0.3, -0.035, 0.35), gold, 0.3, 0.8)
+    bb("banner.tcup", (0.34, 0.03, 0.3), (0.3, -0.04, 0.6), gold, 0.3, 0.8)
+    bb("banner.tcup2", (0.26, 0.03, 0.12), (0.3, -0.04, 0.42), gold, 0.3, 0.8)
+    bb("banner.thL", (0.08, 0.03, 0.2), (0.12, -0.035, 0.62), gold, 0.3, 0.8)
+    bb("banner.thR", (0.08, 0.03, 0.2), (0.48, -0.035, 0.62), gold, 0.3, 0.8)
+    bb("banner.tshine", (0.05, 0.03, 0.18), (0.22, -0.055, 0.62), "#fff4b8", 0.3, 0.8)
     # a pie on a plate in front of judge A (Grandma's), shown by the pie cue
     pp = kit.empty("tent.gpie", (cx - 0.9, cy + 1.85, 0.87))
     pie(kit, "tent.gpie.p", 0, 0, 0, 0.2, "#c98a3a", pp)
@@ -696,6 +712,15 @@ def late(kit):
     if arm is not None:
         W["watch"] = [kit.box("grandma.watchband", (0.78, 1.1, 0.3), (0, 0, -1.5), pl("#d8a93b", 0.4, spec=0.7), arm),
                       kit.box("grandma.watchface", (0.62, 0.1, 0.6), (0, -0.58, -1.5), pl("#fbf6e6", 0.4, spec=0.7), arm)]
+    cl = g("cousin.leg-1")
+    cr = g("cousin.leg1")
+    if cl is not None:
+        kit.box("cousin.bare", (0.73, 1.05, 0.32), (0, 0, -1.85), pl("#c98f64", 0.6), cl, bevel=0.06)
+    if cr is not None:
+        kit.box("cousin.sock", (0.73, 1.05, 0.62), (0, 0, -1.72), pl("#2fa0a8", 0.8), cr, bevel=0.06)
+        for k, dz in enumerate((-1.55, -1.75, -1.95)):
+            kit.box(f"cousin.sockst{k}", (0.745, 1.07, 0.07), (0, 0, dz), pl("#f2c230", 0.8), cr)
+        kit.box("cousin.sockcuff", (0.745, 1.07, 0.08), (0, 0, -1.44), pl("#d8322f", 0.8), cr)
     mh = g("mom.headg")
     if mh is not None:
         dark = pl("#2a1a1a", 0.65)
@@ -746,11 +771,13 @@ def animate(kit, story, tl, t, ctx):
     tr = sample("trophy", tl, t, {"on": 0.0, "x": G.TENT[0], "y": G.TENT[1] + 2.4, "z": 0.9})
     W["trophy"].location = (tr["x"], tr["y"], tr["z"])
     W["trophy"].scale = (0.75, 0.75, 0.75)
+    pm = sample("palm", tl, t, {"on": 0.0, "z": 1.5})
+    W["palm"].location = (G.TENT[0] + 0.5, G.TENT[1] + 2.38, pm["z"] if pm["on"] > 0.5 else -30.0)
     sc = sample("scarf", tl, t, {"on": 0.0, "x": 0.0, "y": 0.0, "z": -30.0})
     W["scarf"].location = (sc["x"], sc["y"], sc["z"] if sc["on"] > 0.5 else -30.0)
     hide(W["gpie"], sample("pie", tl, t, {"on": 0.0})["on"] < 0.5)
     ba = sample("banner", tl, t, {"on": 0.0})["on"] > 0.5
-    W["banner"].location = (G.TENT[0] - 3.6, G.TENT[1] + 1.53, 0.2) if ba else (0, 0, -30)
+    W["banner"].location = (G.TENT[0] - 4.3, G.TENT[1] + 2.15, 0.1) if ba else (0, 0, -30)
     gp = sample("gposter", tl, t, {"on": 0.0})["on"] > 0.5
     for o in W["gposter"]:
         o.hide_render = not gp

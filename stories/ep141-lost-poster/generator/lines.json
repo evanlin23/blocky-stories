@@ -66,16 +66,16 @@
     "My cousin's"
    ],
    [
-    "had his car KEYS.",
-    "had his car keys."
+    "had his lucky SOCK.",
+    "had his lucky sock."
    ],
    [
     "Nobody's",
     "Nobody's"
    ],
    [
-    "seen them SINCE.",
-    "seen them since."
+    "seen it SINCE.",
+    "seen it since."
    ]
   ]
  },
@@ -115,18 +115,6 @@
   "id": "L07",
   "who": "narrator",
   "chunks": [
-   [
-    "My buddies",
-    "My buddies"
-   ],
-   [
-    "let me win",
-    "let me win"
-   ],
-   [
-    "at CARDS.",
-    "at cards."
-   ],
    [
     "My aunt knitted me",
     "My aunt knitted me"
@@ -209,14 +197,6 @@
   "id": "L12",
   "who": "narrator",
   "chunks": [
-   [
-    "Tuesday,",
-    "Tuesday,"
-   ],
-   [
-    "she asked AGAIN.",
-    "she asked again."
-   ],
    [
     "Wednesday,",
     "Wednesday,"
@@ -362,10 +342,6 @@
    [
     "Grandma WON.",
     "Grandma won."
-   ],
-   [
-    "By two POINTS.",
-    "By two points."
    ]
   ]
  },
@@ -388,40 +364,6 @@
   ]
  },
  {
-  "id": "L23",
-  "who": "narrator",
-  "chunks": [
-   [
-    "To GRANDMA.",
-    "To grandma."
-   ]
-  ]
- },
- {
-  "id": "L24",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She'd painted",
-    "She'd painted"
-   ],
-   [
-    "a victory BANNER.",
-    "a victory banner."
-   ]
-  ]
- },
- {
-  "id": "L25",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On SUNDAY.",
-    "On sunday."
-   ]
-  ]
- },
- {
   "id": "L26",
   "who": "narrator",
   "chunks": [
@@ -440,20 +382,20 @@
   ]
  },
  {
-  "id": "L27",
+  "id": "L25",
   "who": "narrator",
   "chunks": [
    [
-    "I've never been",
-    "I've never been"
+    "Grandma painted",
+    "Grandma painted"
    ],
    [
-    "so happy",
-    "so happy"
+    "her victory banner",
+    "her victory banner"
    ],
    [
-    "to LOSE.",
-    "to lose."
+    "on SUNDAY.",
+    "on sunday."
    ]
   ]
  },
@@ -462,30 +404,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "This Sunday,",
-    "This Sunday,"
+    "This Sunday's poster",
+    "This Sunday's poster"
    ],
    [
-    "there's a new poster",
-    "there's a new poster"
+    "has Grandma's FACE.",
+    "has Grandma's face."
    ],
    [
-    "on the CORNER.",
-    "on the corner."
-   ]
-  ]
- },
- {
-  "id": "L29",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It's Grandma's FACE.",
-    "It's Grandma's face."
+    "And the county contest",
+    "And the county contest"
    ],
    [
-    "And I'm already BAKING.",
-    "And I'm already baking."
+    "is SATURDAY.",
+    "is saturday."
    ]
   ]
  }

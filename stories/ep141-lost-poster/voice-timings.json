@@ -86,7 +86,7 @@
    ]
   },
   "L04": {
-   "text": "My cousin's had his car keys. Nobody's seen them since.",
+   "text": "My cousin's had his lucky sock. Nobody's seen it since.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -101,18 +101,18 @@
     ],
     [
      0.569,
-     0.759
+     0.776
     ],
     [
-     0.759,
-     1.31
+     0.776,
+     1.362
     ],
     [
-     1.406,
-     1.759
+     1.457,
+     1.81
     ],
     [
-     1.759,
+     1.81,
      2.534
     ]
    ]
@@ -170,38 +170,26 @@
    ]
   },
   "L07": {
-   "text": "My buddies let me win at cards. My aunt knitted me a goodbye scarf.",
+   "text": "My aunt knitted me a goodbye scarf.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.086,
+   "dur": 1.828,
    "onset": 0.172,
-   "end": 2.879,
+   "end": 1.638,
    "chunks": [
     [
      0.172,
-     0.552
+     0.431
     ],
     [
-     0.552,
-     0.819
+     0.431,
+     0.664
     ],
     [
-     0.819,
-     1.31
-    ],
-    [
-     1.379,
+     0.664,
      1.638
-    ],
-    [
-     1.638,
-     1.87
-    ],
-    [
-     1.87,
-     2.879
     ]
    ]
   },
@@ -306,14 +294,14 @@
    ]
   },
   "L12": {
-   "text": "Tuesday, she asked again. Wednesday, she asked what time.",
+   "text": "Wednesday, she asked what time.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.81,
+   "dur": 1.724,
    "onset": 0.172,
-   "end": 2.603,
+   "end": 1.517,
    "chunks": [
     [
      0.172,
@@ -321,19 +309,11 @@
     ],
     [
      0.517,
-     1.172
+     0.879
     ],
     [
-     1.259,
-     1.552
-    ],
-    [
-     1.586,
-     1.931
-    ],
-    [
-     1.931,
-     2.603
+     0.879,
+     1.517
     ]
    ]
   },
@@ -526,22 +506,18 @@
    ]
   },
   "L21": {
-   "text": "Grandma won. By two points.",
+   "text": "Grandma won.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.707,
+   "dur": 1.172,
    "onset": 0.172,
-   "end": 1.517,
+   "end": 0.966,
    "chunks": [
     [
      0.172,
-     0.655
-    ],
-    [
-     0.69,
-     1.517
+     0.966
     ]
    ]
   },
@@ -606,18 +582,26 @@
    ]
   },
   "L25": {
-   "text": "On sunday.",
+   "text": "Grandma painted her victory banner on sunday.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.121,
+   "dur": 2.31,
    "onset": 0.172,
-   "end": 0.897,
+   "end": 2.103,
    "chunks": [
     [
      0.172,
-     0.897
+     0.732
+    ],
+    [
+     0.732,
+     1.345
+    ],
+    [
+     1.345,
+     2.103
     ]
    ]
   },
@@ -674,30 +658,34 @@
    ]
   },
   "L28": {
-   "text": "This Sunday, there's a new poster on the corner.",
+   "text": "This Sunday's poster has Grandma's face. And the county contest is saturday.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.276,
+   "dur": 3.638,
    "onset": 0.172,
-   "end": 2.069,
+   "end": 3.431,
    "chunks": [
     [
      0.172,
-     0.707
+     0.914
     ],
     [
-     0.759,
-     0.948
+     0.914,
+     1.845
     ],
     [
-     0.948,
-     1.388
-    ],
-    [
-     1.388,
+     1.914,
      2.069
+    ],
+    [
+     2.069,
+     2.69
+    ],
+    [
+     2.69,
+     3.431
     ]
    ]
   },

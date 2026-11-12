@@ -2,7 +2,7 @@
 
 The words are in lines.json (the script's narration). Places are in ../layout.py (shared with set.py). A character facing -y
 has yaw 0, +x 90, +y 180, -x -90; a camera `az` degrees round from the south looks at a character facing it with yaw = az.
-Time references use the script's chunk numbers (L24.1 is the second slash-chunk of L24); timeline.split_lines cuts long
+Time references use the script's chunk numbers (L25.1 is the second slash-chunk of L25); timeline.split_lines cuts long
 captions into two or three words and the references are remapped.
 
 One bright sunny day look all the way through: no look cues, no light changes, nothing blinks or flickers.
@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 9
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L21")
@@ -82,14 +82,9 @@ cast = {
     # my aunt: a plum cardigan, a bun
     "aunt": person("#e2b088", "#9a6ac0", "#4a4a60", "#4a3a2a", hair="bun", hair_c="#7a5a4a", eyes="lashes",
                    face={"cheeks": "#f0a590"}),
-    # a card buddy: a mustard shirt, spiky black hair
-    "bud1": person("#a8744c", "#e8b840", "#2f3a52", "#3a2a1a", hair="spiky", hair_c="#1a1410", sleeves="short",
-                   face={"brow_w": 1.3}),
-    "bud2": person("#e2b088", "#d8573a", "#3a3a4a", "#3a2a1a", hair="buzz", hair_c="#6a4a2a", sleeves="short",
-                   face={"brow_w": 1.2}),
     # the judges: a green blazer and a red tie; a plum blouse and a bun
-    "judgeA": person("#e2b088", "#3a8a5a", "#3a3a4a", "#2a2a2a", hair="cap", hair_c="#cfcfd4", extras=["glasses", "tie"],
-                     extra_c="#d8322f", glasses_c="#5a4a3a", face={"brow_w": 1.2}),
+    "judgeA": person("#e2b088", "#3a8a5a", "#3a3a4a", "#2a2a2a", hair="cap", hair_c="#2a1d15", extras=["tie"],
+                     extra_c="#d8322f", face={"brow_w": 1.2}),
     "judgeB": person("#b88a62", "#7a5aa8", "#3a3a4a", "#2a2a2a", hair="bun", hair_c="#241a16", eyes="lashes",
                      face={"cheeks": "#e89a80"}),
 }
@@ -197,7 +192,7 @@ scene(0, me=dict(pos=ME1, yaw=0, expr="stunned"))
 shot("S01a", 0, cam(0.3, 2.2, 1.2, 2.1, 0, L36, cz=1.4, push=(1.9, 1.2)))
 shot("S01b", "L01.3", cam(0.22, 2.4, 1.4, 1.7, 0, L36, cz=1.45, push=(1.45, 1.4)))
 K("me", "L02", ME1, yaw=0, expr="scared", blend=0.1)
-K("me", "L02.1", ME1, yaw=50, expr="scared", head=[-20, 0], blend=0.7)
+K("me", "L02.1", ME1, yaw=10, expr="scared", head=[-14, 0], arms=[0, 0], side=[20, -20], blend=0.7)
 shot("S02", "L02", cam(fr(ME1[0], 1.4), 1.3, 1.25, 1.4, 0, L36, cz=1.45, push=(1.2, 1.25)))
 
 # ================================================================================================== 02 two small payoffs
@@ -208,7 +203,7 @@ shot("S03b", "L03.2", cam(-1.1, 1.9, 1.3, 1.7, 8, L36, cz=1.4, push=(1.45, 1.3))
 COUS = P(CAR, -0.4, 1.3)
 scene("L04", cousin=dict(pos=COUS, yaw=0, expr="uneasy"))
 for i in range(5):
-    K("cousin", f"L04+{0.28 * i:.2f}", COUS, yaw=0, expr="uneasy", arms=[40, 0] if i % 2 == 0 else [0, 40], blend=0.12)
+    K("cousin", f"L04+{0.28 * i:.2f}", COUS, yaw=0, expr="uneasy", head=[18, 8 if i % 2 == 0 else -8], blend=0.2)
 shot("S04a", "L04", cam(CAR[0] - 0.1, 2.0, 1.0, 2.1, 0, L36, cz=1.2, push=(1.9, 1.0)))
 scene("L04.2")
 shot("S04b", "L04.2", cam(-0.45, 2.9, 1.6, 2.3, 0, L36, cz=1.6, push=(2.0, 1.6)))
@@ -222,21 +217,10 @@ MOMM, MEM = P(MAIL, -0.55, 1.2), P(MAIL, 0.5, 1.7)
 scene("L06", mom=dict(pos=MOMM, yaw=0, expr="uneasy"), me=dict(pos=MEM, yaw=0, expr="sheepish"))
 shot("S06", "L06", cam(MAIL[0] - 0.02, 1.8, 1.2, 2.3, 0, L36, cz=1.4, push=(2.05, 1.2)))
 tag("L07", 5)
-SEAT_ME, SEAT_B, SEAT_B2 = P(CD, -1.6, 1.75), P(CD, -2.5, 1.75), P(CD, -0.7, 1.75)
-for q in (SEAT_ME, SEAT_B, SEAT_B2):
-    q[2] = G.SIT_Z
-cue("L07", "sit", me=1.0, bud1=1.0, bud2=1.0)
-scene("L07", me=dict(pos=SEAT_ME, yaw=0, expr="sheepish"), bud1=dict(pos=SEAT_B, yaw=0, expr="smile"),
-      bud2=dict(pos=SEAT_B2, yaw=0, expr="smile"))
-for i, ref in enumerate(("L07", "L07+0.5", "L07+1.0")):
-    K("bud1", ref, SEAT_B, yaw=0, expr="smile", side=[0, 55] if i % 2 == 0 else [0, 30], blend=0.25)
-    K("bud2", ref, SEAT_B2, yaw=0, expr="smile", side=[55, 0] if i % 2 else [30, 0], blend=0.25)
-shot("S07a", "L07", cam(CD[0] - 1.6, CD[1] + 1.2, 1.1, 2.4, 0, 26, cz=1.55, push=(2.15, 1.1)))
 AUNT, MEA = P(AD, -0.55, 1.7), P(AD, 0.45, 2.15)
-cue("L07.3", "sit", me=0.0, bud1=0.0, bud2=0.0)
-scene("L07.3", aunt=dict(pos=AUNT, yaw=0, expr="uneasy", arms=[80, 80]), me=dict(pos=MEA, yaw=0, expr="sheepish"))
-cue("L07.3", "scarf", on=1.0, x=AUNT[0], y=AUNT[1] - 0.62, z=1.17)
-shot("S07b", "L07.3", cam(AD[0] - 0.05, 2.0, 1.2, 1.9, 0, L36, cz=1.4, push=(1.7, 1.2)))
+scene("L07", aunt=dict(pos=AUNT, yaw=0, expr="uneasy", arms=[80, 80]), me=dict(pos=MEA, yaw=0, expr="sheepish"))
+cue("L07", "scarf", on=1.0, x=AUNT[0], y=AUNT[1] - 0.62, z=1.17)
+shot("S07b", "L07", cam(AD[0] - 0.05, 2.0, 1.2, 1.9, 0, L36, cz=1.4, push=(1.7, 1.2)))
 cue("L08", "scarf", on=0.0)
 
 # ================================================================================================== 04 Grandma (L08 to L14)
@@ -254,17 +238,15 @@ GRB = P(GK, -2.4, 3.3)
 scene("L11", grandma=dict(pos=GRB, yaw=0, expr="smile"))
 shot("S11a", "L11", cam(GK[0] - 2.6, GK[1] + 3.8, 1.6, 2.1, 0, 26, cz=1.7, push=(1.9, 1.6)))
 shot("S11b", "L11.1", cam(GK[0] - 2.5, GK[1] + 3.8, 1.5, 1.6, -6, 26, cz=1.65, push=(1.4, 1.5)))
-tag("L12", 5)
+tag("L12", 4)
 scene("L12", grandma=dict(pos=GRA, yaw=0, expr="sly"))
-shot("S12a", "L12", cam(GD[0] + 0.3, 2.4, 1.2, 1.7, -6, L36, cz=1.4, push=(1.5, 1.2)))
-tag("L12.2", 4)
-cue("L12.2", "watch", on=1.0)
-K("grandma", "L12.2", GRA, yaw=0, expr="sly", arms=[55, 82], side=[-22, 0], blend=0.4)
+cue("L12", "watch", on=1.0)
+K("grandma", "L12", GRA, yaw=0, expr="sly", arms=[55, 82], side=[-22, 0], blend=0.4)
 for i in range(4):
-    K("grandma", f"L12.2+{0.4 + 0.3 * i:.2f}", GRA, yaw=0, expr="sly", arms=[55 if i % 2 else 66, 82], side=[-22, 0], blend=0.12)
-shot("S12b", "L12.2", cam(GRA[0] - 0.05, 2.2, 1.15, 1.5, 0, L36, cz=1.35, push=(1.3, 1.15)))
+    K("grandma", f"L12+{0.4 + 0.3 * i:.2f}", GRA, yaw=0, expr="sly", arms=[55 if i % 2 else 66, 82], side=[-22, 0], blend=0.12)
+shot("S12b", "L12", cam(GRA[0] - 0.05, 2.2, 1.15, 1.5, 0, L36, cz=1.35, push=(1.3, 1.15)))
 tag("L13", 3)
-cue("L12.2>", "watch", on=0.0)
+cue("L12>", "watch", on=0.0)
 GRC = P(GK, 1.7, 2.3)
 cue("L13", "flour", on=1.0)
 scene("L13", grandma=dict(pos=GRC, yaw=0, expr="smile"))
@@ -312,58 +294,52 @@ scene("L20", judgeB=dict(pos=JB, yaw=0, expr="neutral", arms=[72, 0]))
 K("judgeB", "L20.1", JB, yaw=0, expr="neutral", arms=[62, 0], blend=0.1)
 K("judgeB", "L20.1+0.3", JB, yaw=0, expr="neutral", arms=[72, 0], blend=0.2)
 K("judgeB", "L20.1+0.6", JB, yaw=0, expr="neutral", arms=[62, 0], blend=0.1)
-shot("S20", "L20", cam(BELL[0] + 0.15, BELL[1], 1.05, 0.9, 0, L36, cz=1.15, push=(0.8, 1.05)))
+cue("L20", "palm", on=1.0, z=1.6)
+cue("L20.1", "palm", on=1.0, z=1.2)
+cue("L20.1+0.3", "palm", on=1.0, z=1.08)
+cue("P01", "palm", on=0.0, z=1.08)
+shot("S20", "L20", cam(BELL[0] + 0.05, BELL[1], 0.95, 0.75, 0, L36, cz=1.0, push=(0.65, 0.95)))
 cue("P01", "pie", on=0.0)
 scene("P01")
 shot("S20b", "P01", camp([TN[0] + 3.6, TN[1] - 3.2, 1.7], [TN[0] - 4.0, TN[1] + 1.0, 1.4], 24,
                          pos2=[TN[0] + 3.4, TN[1] - 3.0, 1.7]))
 
-# ================================================================================================== 06 the twist (L21 to L23)
+# ================================================================================================== 06 the twist (L21, L22)
 GW = P(TN, 0.7, 1.0)
 cue("L21", "trophy", on=1.0, x=GW[0], y=GW[1] - 0.5, z=0.8)
 scene("L21", grandma=dict(pos=GW, yaw=0, expr="laugh", arms=[50, 50]))
 shot("S21a", "L21", cam(fr(GW[0], 1.6), GW[1] - 0.1, 1.05, 1.6, 0, L36, cz=1.3, push=(1.4, 1.05)))
-shot("S21b", "L21.1", cam(fr(GW[0], 1.15), GW[1] - 0.4, 1.15, 1.15, 0, L36, cz=1.3, push=(1.0, 1.15)))
 MED = P(TN, -0.6, 0.9)
 scene("L22", me_b=dict(pos=MED, yaw=0, expr="stunned"))
 shot("S22", "L22", cam(fr(MED[0], 1.35), MED[1], 1.2, 1.35, 0, L36, cz=1.4, push=(1.15, 1.2)))
-GW2, MEBEH = P(TN, 0.2, 0.5), P(TN, -0.9, 1.9)
-cue("L23", "trophy", on=1.0, x=GW2[0], y=GW2[1] - 0.5, z=0.8)
-scene("L23", grandma=dict(pos=GW2, yaw=0, expr="laugh", arms=[50, 50]), me_b=dict(pos=MEBEH, yaw=0, expr="stunned"))
-shot("S23", "L23", cam(TN[0] - 0.3, TN[1] + 1.2, 1.25, 1.9, 0, 28, cz=1.4, push=(1.8, 1.25)))
-cue("L24", "trophy", on=0.0, x=TN[0], y=TN[1] + 2.4, z=0.9)
+cue("L26", "trophy", on=0.0, x=TN[0], y=TN[1] + 2.4, z=0.9)
 
-# ================================================================================================== 07 the banner and the warm turn (L24 to L27)
-cue("L24", "banner", on=1.0)
-GBN = P(TN, -2.9, 3.0)
-scene("L24", grandma=dict(pos=GBN, yaw=0, expr="proud", arms=[70, 70]))
-shot("S24", "L24", cam(TN[0] - 3.1, TN[1] + 2.3, 1.1, 1.9, 0, 28, cz=1.7, push=(1.7, 1.1)))
-shot("S25", "L25", cam(TN[0] - 3.35, TN[1] + 1.5, 0.95, 1.45, 0, L36, cz=1.1, push=(1.3, 0.95)))
-cue("L26", "banner", on=0.0)
+# ================================================================================================== 07 Mom lets go, then the banner: the recast (L26, L25)
 MEF, MOMF = P(TN, -0.5, 0.9), P(TN, 0.4, 0.9)
 scene("L26", me_b=dict(pos=MEF, yaw=0, expr="laugh"), mom=dict(pos=MOMF, yaw=0, expr="laugh", **MOMHAND))
-shot("S26a", "L26", cam(fr(MOMF[0], 1.6), MOMF[1], 1.2, 1.6, 0, L36, cz=1.4, push=(1.4, 1.2)))
+shot("S26a", "L26", cam(fr((MEF[0] + MOMF[0]) / 2, 2.0, 0.55), MOMF[1], 1.2, 2.0, 0, L36, cz=1.4, push=(1.8, 1.2)))
 K("mom", "L26.1", MOMF, yaw=0, expr="laugh", **MOMHAND, blend=0.01)
 K("mom", "L26.1+0.35", MOMF, yaw=0, expr="laugh", arms=[0, 0], side=[0, 0], blend=0.4)
-shot("S26b", "L26.1", cam(fr(MOMF[0], 1.4), MOMF[1], 1.2, 1.4, 6, L36, cz=1.4, push=(1.25, 1.2)))
-ME27, GR27 = P(TN, -0.4, 0.9), P(TN, 0.6, 1.4)
-scene("L27", me_b=dict(pos=ME27, yaw=0, expr="laugh"), grandma=dict(pos=GR27, yaw=0, expr="warm", arms=[0, 0], side=[0, 0]))
-K("grandma", "L27.1", GR27, yaw=0, expr="warm", arms=[80, 0], side=[-35, 0], blend=0.5)
-shot("S27a", "L27", cam(fr(ME27[0], 1.3), ME27[1], 1.2, 1.3, 0, L36, cz=1.4, push=(1.1, 1.2)))
-shot("S27b", "L27.2", cam(fr(ME27[0] + 0.5, 2.0), TN[1] + 1.0, 1.15, 2.0, 0, 28, cz=1.4, push=(1.75, 1.15)))
+shot("S26b", "L26.1", cam(fr((MEF[0] + MOMF[0]) / 2, 1.9, 0.55), MOMF[1], 1.2, 1.9, 6, L36, cz=1.4, push=(1.7, 1.2)))
+cue("L25", "banner", on=1.0)
+GBN = P(TN, -4.3, 2.7)
+scene("L25", grandma=dict(pos=GBN, yaw=0, expr="proud", arms=[70, 70]))
+shot("S24", "L25", cam(GBN[0] - 0.25, GBN[1] - 0.3, 1.0, 2.0, 0, 28, cz=1.5, push=(1.7, 1.0)))
+shot("S25", "L25.2", cam(GBN[0] - 0.25, GBN[1] - 0.3, 1.0, 1.5, 0, L36, cz=1.3, push=(1.3, 1.0)))
+cue("L28", "banner", on=0.0)
 
-# ================================================================================================== 08 Sunday again (L28, L29)
+# ================================================================================================== 08 Sunday again (L28, the button and loop)
 tag("L28", 7, 0)
 cue("L28", "gposter", on=1.0)
 cue("L28", "tally", on=1.0)
 scene("L28")
 shot("S28a", "L28", cam(0.8, 2.9, 1.8, 3.4, 0, L36, cz=1.5, push=(3.1, 1.8)))
-shot("S28b", "L28.2", cam(1.5, 2.9, 2.0, 2.0, 0, L36, cz=1.7, push=(1.7, 2.0)))
+shot("S28b", "L28.1", cam(1.5, 2.9, 2.0, 2.0, 0, L36, cz=1.7, push=(1.7, 2.0)))
 ME29 = P(C, 0.85, 1.7)
-scene("L29", me_b=dict(pos=ME29, yaw=0, expr="smile"))
-shot("S29a", "L29", cam(1.25, 2.4, 1.3, 2.0, 0, L36, cz=1.5, push=(1.75, 1.3)))
-K("me_b", "L29.1", ME29, yaw=0, expr="warm", blend=0.3)
-shot("S29b", "L29.1", cam(1.2, 2.3, 1.25, 1.7, 0, L36, cz=1.5, push=(1.45, 1.25)))
+scene("L28.2", me_b=dict(pos=ME29, yaw=0, expr="smile"))
+shot("S29a", "L28.2", cam(1.25, 2.4, 1.3, 2.0, 0, L36, cz=1.5, push=(1.75, 1.3)))
+K("me_b", "L28.3", ME29, yaw=0, expr="warm", blend=0.3)
+shot("S29b", "L28.3", cam(1.2, 2.3, 1.25, 1.7, 0, L36, cz=1.5, push=(1.45, 1.25)))
 
 # ================================================================================================== finish
 remap_all(cues)
@@ -385,8 +361,8 @@ for i, (sid, at, camera, kw) in enumerate(SH):
 sfx = [
     {"at": "L20.1", "kind": "bell", "db": -14},
     {"at": "L21", "kind": "sting", "db": -14, "keep": True},
-    {"at": "L12.2+0.4", "kind": "click", "db": -22},
-    {"at": "L12.2+1.0", "kind": "click", "db": -22},
+    {"at": "L12+0.4", "kind": "click", "db": -22},
+    {"at": "L12+1.0", "kind": "click", "db": -22},
     {"at": "L15.2", "kind": "click", "db": -20},
     {"at": "L17", "kind": "click", "db": -20},
 ]
@@ -411,7 +387,7 @@ sound = {
 remap_all(sfx)
 remap_all(music["sections"])
 remap_all(sound["music_drops"])
-polish = {"push": 0.16, "sway": True, "sway_amp": 0.005, "reveal": ["L21", "L23"], "twist": "L21", "hold": ["S15a", "S23", "S28a"]}
+polish = {"push": 0.16, "sway": True, "sway_amp": 0.005, "reveal": ["L21", "L25"], "twist": "L21", "hold": ["S15a", "S25", "S28a"]}
 story = {
     "slug": "ep141-lost-poster",
     "title": "The LOST Poster Has My Face",
@@ -419,9 +395,9 @@ story = {
     "premise": ("In our town, if the LOST poster on the corner shows your face you've got one week, and when mine went up "
                 "my whole family treated me like I was about to go missing."),
     "twist": ("'Lost' was about the town pie contest: on Saturday at eleven I lose to Grandma for the first time in six years "
-              "by two points, and she'd painted her victory banner on the very Sunday my poster went up."),
+              "and she'd painted her victory banner on the very Sunday my poster went up."),
     "world": ("A sunny town: a wooden notice board on a street corner with cream LOST posters carrying a red question mark "
-              "and a drawing, Mom's kitchen, a card room, Grandma's kitchen and a white-and-red striped pie tent on the green."),
+              "and a drawing, Mom's kitchen, Grandma's kitchen and a white-and-red striped pie tent on the green."),
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff5a4f",
     "gap": 0.15,
@@ -431,9 +407,10 @@ story = {
     "rev": REV,
     "look": {"style": "closer", "fog": "#dfe8f4", "fog_density": 0.001, "fog_start": 80.0, "sky": "#8fd0ff",
              "sky_strength": 1.0, "exposure": 0.05, "flash_safe": True, "polish": polish},
-    "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.012, -0.02], "saturation": 1.08, "contrast": 1.04,
+    "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.012, -0.02], "saturation": 1.9, "contrast": 1.04,
               "vignette": 0.15, "bloom": 0.15, "grain": 0.008},
     "hud": {"object": "tag", "at": [-0.39, 0.61], "size": 0.37},
+    "framing_ok": ["S20"],
     "phonemes": {},
     "asr_ignore_tail_repeat": True,
     "homophones": {"1058": "tenfiftyeight", "1059": "tenfiftynine", "arms": "arm", "i": "ive"},
@@ -446,8 +423,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "staging_ok": ["S16/mom+me_b", "S17/mom+me_b", "S19c/mom+me_b", "S26a/mom+me_b", "S26b/mom+me_b", "S27b/grandma+me_b", "S07a/seated row"],
-    "framing_ok": [],
+    "staging_ok": ["S16/mom+me_b", "S17/mom+me_b", "S19c/mom+me_b", "S26a/mom+me_b", "S26b/mom+me_b"],
     "frames_ok": [],
 }
 if rain:
