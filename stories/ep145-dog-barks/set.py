@@ -263,12 +263,12 @@ def build_table(kit):
     kit.box("pitcher.handle", (0.03, 0.12, 0.18), (-0.8, 0.14, 0.95), pl("#fff0a0", 0.3), root)
     kit.cyl("pitcher.lid", 0.105, 0.03, (-0.8, 0, 1.095), pl("#e8503c", 0.4), root, n=14)
     # two short benches, not under the west end (Mia stands there)
-    for sy, nm in ((-0.8, "s"), (0.8, "n")):
+    for sy, nm in ((0.8, "n"),):          # one bench (north): the south side stays open for the napkin shot
         kit.box(f"bench.{nm}", (1.3, 0.3, 0.07), (tx + 0.6, ty + sy, 0.46), wood, None, bevel=0.015)
         for sx in (-0.5, 0.5):
             kit.box(f"bench.{nm}.leg{sx}", (0.07, 0.25, 0.43), (tx + 0.6 + sx, ty + sy, 0.215), dark)
     # the folded napkin that goes under the east-south leg (shown by cue)
-    W["napkin"] = kit.box("napkin", (0.12, 0.12, 0.03), (tx + 1.0, ty - 0.3, 0.015), pl("#ffffff", 0.9), None, bevel=0.005)
+    W["napkin"] = kit.box("napkin", (0.22, 0.22, 0.05), (tx + 1.0, ty - 0.3, 0.015), pl("#ffffff", 0.9), None, bevel=0.005)
     W["napkin"].hide_render = True
 
 
@@ -409,6 +409,14 @@ def build_props(kit):
         kit.box(f"carrot.leaf{i}", (0.16, 0.035, 0.05), (-0.25, 0.04 * a * 3, 0.0), pl("#3fb04a", 0.6), ca, rot=(a, 0, 0.0),
                 bevel=0.01)
     W["carrot"] = ca
+    # Mia's engagement ring: a gold band round her wrist-end with a bright white stone each side (set on her arm in
+    # animate; sizes are in the arm's own units, 1 wide)
+    gold = pl("#ffcc33", 0.2, spec=0.8)
+    W["mring"] = [(kit.box("mring.band", (1.12, 1.12, 0.2), (0, 0, -20), gold, None, bevel=0.03), (0.0, 0.0, -1.5)),
+                  (kit.box("mring.stone0", (0.4, 0.4, 0.4), (0, 0, -20), pl("#ffffff", 0.1, spec=1.0), None, bevel=0.05),
+                   (0.0, -0.62, -1.5)),
+                  (kit.box("mring.stone1", (0.4, 0.4, 0.4), (0, 0, -20), pl("#ffffff", 0.1, spec=1.0), None, bevel=0.05),
+                   (0.0, 0.62, -1.5))]
     # a biscuit
     W["biscuit"] = kit.box("biscuit", (0.12, 0.12, 0.03), (0, 0, -20), pl("#e0b070", 0.7), None, bevel=0.01)
     # the inspector's clipboard (a board, a white sheet, a clip): no marks on the sheet
@@ -548,12 +556,16 @@ def animate(kit, story, tl, t, ctx):
         cur = int(round(c.get("n", cur if cur is not None else 1)))
     pop = 1.0 + 0.22 * math.sin(math.pi * min(1.0, max(0.0, (t - last_change) / 0.25))) if t - last_change < 0.25 else 1.0
     wb, tag = W["wb"], W["tag"]
-    hide(wb["root"], mode != 1)
+    hide(wb["root"], mode != 1)      # hide first: hide() also sets every child, so the digit goes on after
     hide(tag["root"], mode != 2)
-    set_digit(wb, n)
-    set_digit(tag, n)
+    if mode == 1:
+        set_digit(wb, n)
+    if mode == 2:
+        set_digit(tag, n)
     wr = wb["root"]
-    head_w = Vector((mx, my, 0.0)) + Vector((0, 0, 1.2 - 0.25 * sitk - 0.3 * liek))
+    toward = (cl - Vector((mx, my, 0.0)))
+    kf = max(1.0, min(2.2, toward.length / 2.5))
+    head_w = Vector((mx + 0.3 * math.sin(yaw * D2R), my - 0.3 * math.cos(yaw * D2R), 0.0)) + Vector((0, 0, 0.85 + 0.38 * kf - 0.25 * sitk - 0.3 * liek))
     toward = (cl - head_w)
     wr.location = head_w
     wr.rotation_euler = toward.to_track_quat("Z", "Y").to_euler()
@@ -623,6 +635,13 @@ def animate(kit, story, tl, t, ctx):
         if h is not None:
             W["spat"].location = h + Vector((0.0, -0.1, 0.0))
             W["spat"].rotation_euler = (-1.2, 0, 0)
+    # ---- Mia's ring: a gold band with a white stone on her ring hand (the one the camera sees)
+    marm = bpy.data.objects.get("mia.arm1")
+    for ob, off in W["mring"]:
+        if marm is not None and ob.parent is not marm:
+            ob.parent = marm
+        ob.location = off
+        ob.hide_render = marm is None or marm.hide_render
     # ---- Grant's beard follows his head
     hg = bpy.data.objects.get("grant.headg")
     for ob, loc in zip(W["beard"], W["beard_loc"]):

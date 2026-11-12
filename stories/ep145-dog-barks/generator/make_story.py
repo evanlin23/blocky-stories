@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -174,8 +174,8 @@ GRILL = G.GRILL
 ME_G, GR_G = G.ME_G, G.GR_G
 YME = G.yaw_to(ME_G, GRILL)
 YGR = G.yaw_to(GR_G, GRILL)
-CARRIER = (GT[0] - 0.55, GT[1])                    # the visitor in the open gateway (west half)
-MOOSE_GATE = (GT[0] + 0.05, GT[1] + 1.1)           # Moose, nose to the visitor's hand
+CARRIER = (GT[0] + 0.9, GT[1] + 1.9)               # the visitor, a step inside the gate (south-west of Moose)
+MOOSE_GATE = (GT[0] + 0.05, GT[1] + 3.0)           # Moose, nose to the visitor's hand
 MIA_T = (2.9, 4.5)                                 # Mia at the table's west end, her back to us
 
 # ----------------------------------------------------------------------------------------------- the cast at rest
@@ -196,70 +196,73 @@ cue(0, "mlook", yaw=0.0, pitch=0.0)
 
 # ===== 01 the rule, shown at once (L01, L02): Moose's face, badge 1, a biscuit offered at the edge
 show(0, "mail")
-put("mail", 0, CARRIER, G.yaw_to(CARRIER, MOOSE_GATE), "smile", arms=[0, 66])
+put("mail", 0, CARRIER, G.yaw_to(CARRIER, MOOSE_GATE), "smile", arms=[0, 40])
 cue(0, "gate", ang=90.0)
 cue(0, "biscuit", on=1.0)
-shot("S01a", 0, camp([-0.4, -4.8, 1.05], [-1.65, -1.8, 0.85], 50, pos2=[-0.5, -4.4, 1.05]), moose=True)
-shot("S01b", "L01.1", camp([-0.9, -4.6, 1.15], [-1.65, -1.6, 1.1], 55, pos2=[-0.9, -4.2, 1.15]), moose=True)
+# the camera stands on the lawn inside the fence, west of Moose, a metre and a bit from his face; the carrier's hand
+# (the biscuit) comes in at the right edge, his body is out of frame (south of the right edge)
+shot("S01a", 0, camp([-1.79, -1.73, 0.8], [-1.1, 0.2, 0.85], 22, pos2=[-1.72, -1.6, 0.8]), moose=True)
+shot("S01b", "L01.1", camp([-1.72, -1.17, 1.0], [-1.2, 0.26, 1.2], 24, pos2=[-1.65, -1.05, 1.0]), moose=True)
 # TWICE: the badge flips to 2 and straight back to 1 (a joke-quick demo)
-shot("S02", "L02", camp([-0.3, -4.7, 1.0], [-1.65, -1.8, 0.9], 48, pos2=[-0.4, -4.3, 1.0]), moose=True)
+shot("S02", "L02", camp([-1.72, -1.17, 1.0], [-1.2, 0.26, 1.2], 24, pos2=[-1.68, -1.1, 1.0]), moose=True)
 number("L02", 2)
 number("L02.1", 1)
 
 # ===== 02 the rule at work (L03 to L06)
-shot("S03", "L03", cam(GT[0] + 0.1, GT[1] + 0.3, 1.0, 2.3, 150, 30, cz=1.2, push=(2.0, 1.0)), moose=True)
+shot("S03", "L03", cam(-1.1, -0.1, 1.0, 2.8, -75, 30, cz=0.8, push=(2.5, 1.0)), moose=True)
 bark("L03.2")
 cue("L03", "biscuit", on=1.0)
 # the squeaky carrot, which only family may share: Moose lies on it, chin on it, watching the visitor sideways
-moose_at("L03b", MOOSE_GATE[0] + 0.5, MOOSE_GATE[1] + 0.2, G.yaw_to((MOOSE_GATE[0] + 0.5, MOOSE_GATE[1] + 0.2), CARRIER), 2, 0.0)
-cue("L03b", "carrot", on=1.0, x=MOOSE_GATE[0] + 0.25, y=MOOSE_GATE[1] - 0.45, z=0.0, yaw=75.0, carry=0.0)
+MX3 = (MOOSE_GATE[0] - 0.1, MOOSE_GATE[1] + 0.2)
+moose_at("L03b", *MX3, G.yaw_to(MX3, CARRIER), 2, 0.0)
+cue("L03b", "carrot", on=1.0, x=MX3[0] - 0.25, y=MX3[1] - 0.65, z=0.0, yaw=75.0, carry=0.0)
 cue("L03b", "mlook", yaw=0.0, pitch=8.0)
-shot("S04", "L03b", camp([-1.5, -4.7, 0.8], [MOOSE_GATE[0] + 0.4, MOOSE_GATE[1] - 0.1, 0.4], 45, pos2=[-1.5, -4.3, 0.8]),
+shot("S04", "L03b", camp([-4.3, -0.1, 0.5], [MX3[0] - 0.1, MX3[1] - 0.3, 0.35], 36, pos2=[-4.1, -0.05, 0.5]),
      moose=True)
-shot("S04b", "L03b.1", camp([-1.4, -4.6, 0.7], [MOOSE_GATE[0] + 0.4, MOOSE_GATE[1] - 0.3, 0.45], 55, pos2=[-1.3, -4.2, 0.7]),
+shot("S04b", "L03b.1", camp([-4.1, -0.3, 0.5], [MX3[0] - 0.1, MX3[1] - 0.4, 0.4], 42, pos2=[-3.9, -0.25, 0.5]),
      moose=True)
 # the biscuit goes into his mouth
 moose_at("L04", *MOOSE_GATE, G.yaw_to(MOOSE_GATE, CARRIER), 0, 0.0)
 cue("L04", "carrot", on=0.0)
 cue("L04", "mlook", yaw=0.0, pitch=-12.0)
-put("mail", "L04", CARRIER, G.yaw_to(CARRIER, MOOSE_GATE), "smile", arms=[0, 62])
-key("mail", "L04+0.3", yaw=G.yaw_to(CARRIER, MOOSE_GATE), arms=[0, 62], expr="smile")
-key("mail", "L04.1+0.4", yaw=G.yaw_to(CARRIER, MOOSE_GATE), arms=[0, 34], expr="smile", blend=0.8)
+put("mail", "L04", CARRIER, G.yaw_to(CARRIER, MOOSE_GATE), "smile", arms=[0, 48])
+key("mail", "L04+0.3", yaw=G.yaw_to(CARRIER, MOOSE_GATE), arms=[0, 48], expr="smile")
+key("mail", "L04.1+0.4", yaw=G.yaw_to(CARRIER, MOOSE_GATE), arms=[0, 30], expr="smile", blend=0.8)
 cue("L04.2", "biscuit", on=0.0)
-shot("S05", "L04", camp([-0.4, -4.6, 1.0], [-1.45, -1.8, 0.75], 50, pos2=[-0.5, -4.2, 0.95]), moose=True)
+shot("S05", "L04", camp([-1.7, -1.2, 0.6], [-1.0, -0.1, 0.7], 20, pos2=[-1.65, -1.1, 0.62]), moose=True)
 # the roof inspector: two barks, and the badge goes to 2
 show("L05", "inspector")
 put("inspector", "L05", CARRIER, G.yaw_to(CARRIER, MOOSE_GATE), "smile", arms=[70, 0])
 cue("L05", "mlook", yaw=0.0, pitch=0.0)
 cue("L05", "clip", on=1.0)
 number("L05", 2)
-shot("S06", "L05", cam(GT[0] + 0.1, GT[1] + 0.3, 1.05, 2.3, 150, 30, cz=1.25, push=(2.0, 1.05)), moose=True)
+shot("S06", "L05", cam(-1.1, -0.1, 1.05, 2.8, -75, 30, cz=0.85, push=(2.5, 1.05)), moose=True)
 bark("L05.2", "L05.2+0.5")
 # Mr. Hale and the clean strip where his gutter was
 show("L06", "hale")
 put("hale", "L06", G.HALE, G.yaw_to(G.HALE, (-4.0, 0.2)), "stunned", head=[0, 0])
 cue("L06", "clip", on=0.0)
 cue("L06", "gate", ang=0.0)
-shot("S07", "L06", camp([-4.0, 0.2, 1.6], [-9.5, 2.7, 2.4], 22, pos2=[-4.6, 0.5, 1.6]))
+shot("S07", "L06", camp([-3.9, 1.5, 1.5], [-7.0, 2.6, 2.05], 28, pos2=[-4.4, 1.75, 1.5]))
 
 # ===== 03 the town's dog, never wrong; the yard (L07, L08)
 show("L07")
 moose_at("L07", 3.9, -0.6, G.yaw_to((3.9, -0.6), (2.6, 1.6)), 0)
 moose_at("L07+0.2", 2.6, 1.6, G.yaw_to((3.9, -0.6), (2.6, 1.6)), 0, 2.2)
 number("L07", 2)
-shot("S08", "L07", camp([4.8, 0.3, 1.5], [1.2, 6.0, 1.5], 26, pos2=[4.4, 0.9, 1.5], tgt2=[1.3, 6.0, 1.45]))
+shot("S08", "L07", camp([4.6, 2.4, 1.4], [1.1, 6.8, 1.3], 34, pos2=[4.3, 2.9, 1.4], tgt2=[1.1, 6.8, 1.3]))
 
 # ===== 04 Mia and Grant at the gate (L09 to L12b)
 show("L09", "mia", "grant")
-put("mia", "L09", (GT[0] - 0.75, GT[1] + 0.65), 180, "smile", arms=[0, 0])
-put("grant", "L09", (GT[0] + 0.15, GT[1] + 0.65), 180, "smile", arms=[0, 0])
+put("mia", "L09", (GT[0] - 0.8, GT[1] + 0.65), 180, "smile", arms=[0, 0])
+put("grant", "L09", (GT[0] + 0.62, GT[1] + 0.65), 180, "smile", arms=[0, 0])
 cue("L09", "gate", ang=90.0)
 number("L09", 1, 0.01)
-shot("S09", "L09", cam(GT[0] - 0.3, GT[1] + 0.65, 1.2, 3.2, 160, 30, cz=1.35, push=(2.9, 1.2)))
+shot("S09", "L09", cam(GT[0] - 0.1, GT[1] + 0.65, 1.2, 3.0, 160, 30, cz=1.35, push=(2.7, 1.2)))
 show("L10")
 moose_at("L10", MOOSE_GATE[0] + 0.1, MOOSE_GATE[1] + 0.05, G.yaw_to(MOOSE_GATE, (GT[0], GT[1])), 0)
 cue("L10", "mlook", yaw=0.0, pitch=0.0)
-shot("S10", "L10", camp([-0.4, -4.7, 1.0], [-1.4, -1.5, 0.85], 48, pos2=[-0.5, -4.3, 1.0]), moose=True)
+shot("S10", "L10", camp([-2.2, -4.7, 1.0], [-1.4, 0.15, 0.85], 48, pos2=[-2.2, -4.3, 1.0]), moose=True)
 bark("L11")
 # Mia's little dance, Grant beside her saying Moose's name, then the handshake
 show("L12", "mia", "grant")
@@ -287,20 +290,21 @@ key("mia", "L13+0.7", yaw=180, arms=[10, 10], expr="smile", blend=0.5)
 cue("L13+0.4", "rock", amp=1.0, dur=0.3)
 cue("L13+1.5", "rock", amp=0.0, dur=0.4)
 number("L13", 1, 0.01)
-shot("S12", "L13", cam(0.5, 4.0, 1.25, 4.8, -32, 24, cz=1.35, push=(4.4, 1.25)))
+shot("S12", "L13", cam(0.0, 3.4, 1.3, 2.6, 140, 26, cz=1.55, push=(2.3, 1.3)))
 show("L14", "me", "grant")
-moose_at("L14", 4.2, 0.6, G.yaw_to((4.2, 0.6), (1.5, 4.3)), 0)
-moose_at("L14+0.2", 1.5, 4.3, G.yaw_to((4.2, 0.6), (1.5, 4.3)), 0, 2.2)
+moose_at("L14", 4.2, 0.6, G.yaw_to((4.2, 0.6), (1.3, 4.5)), 0)
+moose_at("L14+0.2", 1.3, 4.5, G.yaw_to((4.2, 0.6), (1.3, 4.5)), 0, 2.2)
 put("me", "L14", ME_G, YME, "neutral")
 put("grant", "L14", GR_G, YGR, "smile")
-shot("S13", "L14", cam(2.6, 2.4, 0.7, 3.0, -40, 28, cz=0.9, push=(2.5, 0.7)), moose=True)
+shot("S13", "L14", camp([1.2, 6.0, 0.8], [2.9, 2.4, 0.5], 28, pos2=[1.3, 5.6, 0.8]), moose=True)
 show("L15", "me", "grant")
-moose_at("L15", 1.5, 4.3, -24.0, 0)
+moose_at("L15", 1.3, 4.5, -24.0, 0)
 shot("S14", "L15", cam(1.5, 4.0, 0.75, 1.1, 20, 36, cz=0.8, push=(0.95, 0.75)), moose=True)
 bark("L15", "L15.1")
 number("L15.1", 2)
+show("L15b", "grant")
 cue("L15b", "gate", ang=88.0)
-shot("S15", "L15b", camp([2.7, 6.3, 1.05], [-1.0, -1.4, 0.7], 30, pos2=[2.6, 6.0, 1.0], tgt2=[-1.0, -1.4, 0.7]),
+shot("S15", "L15b", camp([1.0, 5.5, 0.65], [0.75, 3.0, 0.9], 18),
      moose=True, hold=True)
 # the drop: the badge says 2, still, the grill smoke drifting
 shot("SD", "P01", cam(0.0, 4.2, 1.3, 1.9, 25, 32, cz=1.3, push=(1.6, 1.3)), moose=False)
@@ -324,10 +328,9 @@ number("L18", 2, 0.01)
 shot("S18", "L18", cam(GR_G[0], GR_G[1], 1.55, 1.1, -25, 40, cz=1.5, push=(0.95, 1.55)))
 # 2b: Mia goes in for ketchup, and Grant lifts Grandma's ring box off the sill
 show("L19", "mia")
-put("mia", "L19", (-0.6, 5.0), -90, "smile")
-key("mia", "L19+0.1", [-3.0, 6.3], expr="smile", blend=0.0)
-key("mia", "L19>", [-3.0, 7.6], expr="smile", blend=0.0)
-key("mia", "L19>+0.1", [-3.0, 7.6], hidden=True)
+put("mia", "L19", (-1.9, 5.3), -135, "smile")
+key("mia", "L19>", [-3.0, 7.3], expr="smile")
+key("mia", "L19>+0.1", [-3.0, 7.3], hidden=True)
 cue("L19", "door", ang=100.0)
 shot("S19", "L19", cam(-2.0, 6.0, 1.4, 4.0, -8, 26, cz=1.45, push=(3.4, 1.4)))
 RGX = G.RING[0]
@@ -338,12 +341,12 @@ key("grant", "L20.2", yaw=180, arms=[0, 92], expr="neutral")
 key("grant", "L20.3", yaw=180, arms=[0, 10], expr="neutral", blend=0.5)
 cue("L20.2", "ring", mode=1.0)
 cue("L20.3+0.5", "ring", mode=2.0)
-shot("S19b", "L20", cam(RGX - 0.35, 6.5, 1.25, 1.6, 20, 30, cz=1.35, push=(1.4, 1.25)))
+shot("S19b", "L20", camp([-0.6, 6.6, 1.4], [0.9, 6.5, 1.3], 16, pos2=[-0.5, 6.55, 1.4]))
 show("L21", "me", "grant")
 put("me", "L21", ME_G, 90, "worried")
 put("grant", "L21", GR_G, -90, "smile")
 mouth("grant", "L21", "L21>", 0.5)
-shot("S20", "L21", cam(0.0, 3.4, 1.35, 3.6, -35, 24, cz=1.4, push=(3.2, 1.35)))
+shot("S20", "L21", cam(-0.15, 3.4, 1.35, 2.4, 15, 26, cz=1.4, push=(2.1, 1.35)))
 show("L21b", "me")
 put("me", "L21b", ME_G, 35, "worried", head=[-8, 0])
 mouth("me", "L21b", "L21b>", 0.4)
@@ -353,36 +356,37 @@ shot("S21", "L21b", cam(ME_G[0], ME_G[1], 1.55, 1.1, 35, 40, cz=1.5, push=(0.95,
 GRANT_FEET = (GR_G[0] + 0.1, GR_G[1] - 0.7)
 show("L22", "grant")
 put("grant", "L22", GR_G, YGR, "smile")
-moose_at("L22", 3.4, 1.2, G.yaw_to((3.4, 1.2), (3.4, 1.4)), 0)
+moose_at("L22", 2.6, 1.9, G.yaw_to((2.6, 1.9), (2.5, 2.2)), 0)
 cue("L22", "carrot", on=1.0, carry=1.0)
 MG = (GR_G[0] + 0.7, GR_G[1] - 0.9)
-moose_at("L23", 3.4, 1.4, G.yaw_to((3.4, 1.4), MG), 0)
-moose_at("L23+0.1", MG[0], MG[1], G.yaw_to((3.4, 1.4), MG), 0, 1.7)
+moose_at("L23", 2.6, 1.9, G.yaw_to((2.6, 1.9), MG), 0)
+moose_at("L23+0.1", MG[0], MG[1], G.yaw_to((2.6, 1.9), MG), 0, 1.7)
 cue("L23.2", "carrot", on=1.0, x=GRANT_FEET[0] + 0.1, y=GRANT_FEET[1] - 0.25, z=0.0, yaw=70.0, carry=0.0)
 number("L22", 2, 0.01)
-shot("S22", "L22", cam(2.2, 2.0, 0.6, 2.0, -50, 26, cz=0.8, push=(1.8, 0.6)), moose=True)
+shot("S22", "L22", camp([-0.4, 2.4, 0.5], [1.75, 2.35, 0.4], 20, pos2=[-0.25, 2.4, 0.5]), moose=True)
 shot("S22b", "L23.3", cam(GRANT_FEET[0] + 0.1, GRANT_FEET[1] - 0.25, 0.1, 0.9, -20, 36, cz=0.4, push=(0.75, 0.1)),
      moose=False)
 cue("L23.3", "mlook", yaw=0.0, pitch=0.0)
 moose_at("L24", GR_G[0] + 0.55, GR_G[1] - 1.2, 80.0, 0)
 cue("L24", "mlook", yaw=0.0, pitch=-18.0)
 put("grant", "L24", GR_G, G.yaw_to(GR_G, (GR_G[0] + 0.55, GR_G[1] - 1.2)), "smile")
-shot("S23", "L24", cam(GR_G[0] + 0.5, GR_G[1] - 1.1, 0.8, 1.8, -60, 30, cz=0.95, push=(1.5, 0.8)), moose=True)
+shot("S23", "L24", cam(1.0, 2.9, 1.0, 2.6, 80, 28, cz=0.9, push=(2.3, 1.0)), moose=True)
 # 1b: Grant, bent to the picnic table's short leg, a folded napkin under it
 show("L25", "grant")
-put("grant", "L25", (4.8, 4.2), 180, "smile", lean=0.0)
-key("grant", "L25+0.2", yaw=180, lean=38, arms=[40, 40], expr="smile", blend=0.5)
+put("grant", "L25", (4.9, 4.45), 194, "smile", lean=0.0)
+key("grant", "L25+0.2", yaw=194, lean=18, arms=[30, 30], expr="smile", blend=0.5)
+key("grant", "L25+0.8", [4.9, 4.45, -0.42], yaw=194, lean=18, arms=[40, 40], expr="smile", blend=0.5)
 cue("L25", "rock", amp=1.0, dur=0.1)
 cue("L25.1", "napkin", on=1.0)
 cue("L25.1", "rock", amp=0.0, dur=0.3)
-shot("S24", "L25", cam(4.7, 4.9, 0.6, 2.6, -35, 28, cz=0.9, push=(2.2, 0.6)))
+shot("S24", "L25", camp([6.4, 6.6, 0.7], [4.85, 4.9, 0.6], 16, pos2=[6.2, 6.4, 0.7]))
 # 1c: the S15 framing again, and the open gate
 show("L26", "grant")
 put("grant", "L26", GR_G, YGR, "neutral")
-moose_at("L26", 1.5, 4.3, -24.0, 0)
+moose_at("L26", 1.3, 4.5, -24.0, 0)
 cue("L26", "mlook", yaw=0.0, pitch=0.0)
 bark("L26.1", "L26.1+0.5")
-shot("S25", "L26", camp([2.7, 6.3, 1.05], [-1.0, -1.4, 0.7], 30, pos2=[2.6, 6.0, 1.0], tgt2=[-1.0, -1.4, 0.7]),
+shot("S25", "L26", camp([1.0, 5.5, 0.65], [0.75, 3.0, 0.9], 18),
      moose=True, hold=True)
 show("L28")
 shot("S26", "L28", cam(GT[0] + 0.5, GT[1] + 0.2, 0.9, 2.0, 150, 28, cz=1.1, push=(1.7, 0.9)))
@@ -390,16 +394,16 @@ shot("S26b", "L28b", camp([-4.0, 0.2, 1.6], [-9.5, 2.7, 2.4], 22, pos2=[-4.6, 0.
 
 # ===== 08 no answer (L29 to L31)
 show("L29")
-moose_at("L29", 0.4, 1.8, -50.0, 0)
+moose_at("L29", 0.4, 1.8, -24.0, 0)
 cue("L29", "mlook", yaw=0.0, pitch=-8.0)
 cue("L29", "gate", ang=88.0)
-shot("S27", "L29", cam(0.4, 1.7, 0.7, 1.1, 25, 36, cz=0.75, push=(0.9, 0.7)), moose=True)
+shot("S27", "L29", camp([0.69, -0.21, 0.75], [0.23, 1.42, 0.75], 22, pos2=[0.62, -0.05, 0.75]), moose=True)
 show("L30", "mia", "grant")
-put("mia", "L30", (1.6, 4.7), -15, "laugh", arms=[0, 0])
-put("grant", "L30", (2.75, 4.7), 20, "laugh", arms=[0, 0])
-key("mia", "L30+0.4", yaw=-15, arms=[0, 70], expr="laugh", blend=0.5)
+put("mia", "L30", (1.6, 4.7), -15, "laugh", arms=[0, 75])
+put("grant", "L30", (3.1, 4.7), 20, "laugh", arms=[0, 0])
+key("mia", "L30+0.4", yaw=-15, arms=[0, 75], expr="laugh", blend=0.5)
 number("L30", 2, 0.01)
-shot("S28", "L30", cam(2.2, 4.7, 1.3, 2.6, -25, 28, cz=1.4, push=(2.2, 1.3)))
+shot("S28", "L30", cam(2.1, 4.7, 1.2, 2.2, 25, 28, cz=1.3, push=(2.0, 1.2)))
 show("L31", "me")
 put("me", "L31", ME_G, G.yaw_to(ME_G, (ME_G[0] - 1, ME_G[1] - 4)), "worried")
 mouth("me", "L31", "L31>", 0.4)
@@ -480,9 +484,9 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": [],
+    "framing_ok": ["S03", "S05", "S11b", "S19", "S20", "S22", "S22b"],
     "frames_ok": [],
-    "staging_ok": [],
+    "staging_ok": ["S11b/me+grant"],
     "phonemes": {},
     "homophones": {},
 }

@@ -11,14 +11,14 @@ HOUSE_Y = 7.0                            # the back wall's outer face
 GATE = (-1.5, FY0)                       # the side gate's centre in the south fence (opening 1.6 m wide)
 GATE_W = 1.6
 GRILL = (0.0, 4.4)
-ME_G = (-0.95, 3.4)                      # me at the grill
-GR_G = (0.95, 3.4)                       # Grant at the grill (1.9 m from me)
+ME_G = (-0.75, 3.4)                      # me at the grill
+GR_G = (0.75, 3.4)                       # Grant at the grill (1.9 m from me)
 TABLE = (3.7, 5.5)                       # the picnic table's centre (long side along x)
 WIN = (1.5, 1.15, 2.35)                  # kitchen window: centre x, sill z, head z
 RING = (1.1, 6.78, 1.27)                 # the ring box on the sill (centre)
 DOOR_X = -3.0                            # the back door
 HALE_HOUSE_X = -10.6                     # the neighbour's east wall
-HALE = (-8.4, 2.6)
+HALE = (-7.0, 2.6)
 
 
 def yaw_to(a, b):
