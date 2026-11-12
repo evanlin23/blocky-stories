@@ -2,7 +2,7 @@
 
 Verdict: revise
 
-Preflight is clean (0 blocks, flash PASS, 40.03 s). Reveal L19 lands at 34.3 of 40.0, in the window. The pin is a real question.
+Re-checked against picture-flash.mp4 (23:19, the current set: tally post moved, charger on palm), not only the 22:59 preview. The findings are the same. Preflight is clean (0 blocks, flash PASS, 40.03 s). Reveal L19 lands at 34.3 of 40.0, in the window. The pin is a real question.
 
 ## Round-1 must-fixes
 1. Phone plants (S01b 1.9 s, S05 11.3, S11 21.9, S13a 24.7): **fixed.** The phone sits low-left at the bottom edge, away from the face, and the 1% is legible. It's still about 1/4 of the width (should-fix below).
