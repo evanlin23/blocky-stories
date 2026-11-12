@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 15
+REV = 16
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -278,7 +278,7 @@ shot("L08", mv([RX + 3.6, RY - 1.2, 1.9], [RX + 0.2, RY + 2.5, 1.2], 36, [RX + 3
 move("L08.2-0.1", "pc2", z=-60.0)
 cue("L08.2-0.1", "sill", n=1.0)
 cue("L08.2", "sill", n=12.0, dur=1.4)
-shot("L08.2", mv([RX + 0.9, RY - 0.4, 1.7], [RX + 0.1, RY + 3.2, 1.1], 42, [RX + 0.4, RY + 0.4, 1.4], [RX + 0.1, RY + 3.2, 1.1], 42), "sillrow")
+shot("L08.2", mv([RX + 1.8, RY - 0.2, 2.4], [RX + 0.15, RY + 3.2, 1.0], 22, [RX + 1.5, RY + 0.6, 2.2], [RX + 0.15, RY + 3.2, 1.0], 22), "sillrow")
 
 # ===================================================================== 03 the drive grows (L09 to L17)
 look("L09", "day")
