@@ -23,5 +23,5 @@ CURT_X0, CURT_X1 = 1.5, 2.8  # the yellow curtain (B)
 CURT_Y = 2.22                # its centre depth
 IVY0 = (2.12, 2.6)      # Ivy behind it (toes poke out under the hem)
 CHAIR6 = (0.0, -0.38)    # Ivy's empty sixth chair at the foot of the table, pulled in
-IVY_OUT = (1.0, 2.45)        # where she stops after stepping out, facing us
-IVY_HUG = (0.72, 2.55)        # she leans in beside Grandpa and hugs him
+IVY_OUT = (1.15, 2.45)        # where she stops after stepping out, facing us
+IVY_HUG = (0.95, 2.55)        # she leans in beside Grandpa and hugs him

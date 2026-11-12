@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 5
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -201,18 +201,18 @@ shot("S06", "L05", cam(*MASTER, 5.6, 15, el=26, push=0.03, arc=1.0))
 shot("S08", "L07", cam(*MASTER, 5.5, 15, el=26, az=-4, push=0.03, arc=1.0))
 shot("S09", "L08", cam(-0.1, 2.0, 1.2, 2.9, 30, el=12, az=-10, push=0.05, arc=1.0))
 # P01: the 4.0 s hold on the question
-shot("S11a", "P01", cam(*MASTER, 5.6, 15, el=26, push=0.0, arc=0.0))
-shot("S11b", "P01+1.4", cam(0.7, 0.8, 1.0, 5.0, 15, el=27, push=0.0, arc=0.0))
-shot("S11c", "P01+2.7", cam(0.85, 1.3, 1.2, 4.3, 15, el=33, push=0.0, arc=0.0))
+shot("S11a", "P01", cam(*MASTER, 5.6, 15, el=26, push=0.03, arc=1.0))
+shot("S11b", "P01+1.4", cam(0.7, 0.8, 1.0, 5.0, 15, el=27, push=0.03, arc=1.0))
+shot("S11c", "P01+2.7", cam(0.85, 1.3, 1.2, 4.3, 15, el=33, push=0.03, arc=1.0))
 # 05 the answer
 shot("S12", "L10", cam(2.0, 2.3, 1.45, 6.0, 30, el=21, az=6, push=0.06, arc=1.0))
 shot("S13", "L11", cam(1.85, 2.2, 0.28, 1.7, 30, el=6, az=10, push=0.05, arc=1.0))
 shot("S14a", "L11b", cam(-0.15, 1.25, 0.9, 1.2, 30, el=68, az=-20, push=0.0, arc=0.0))
 shot("S14b", "L11b+0.7", cam(1.45, 2.15, 1.0, 2.6, 40, el=40, az=-35, push=0.0, arc=0.0))
 # 06 the reveal
-shot("S15", "L12-0.5", cam(1.2, 2.4, 1.45, 4.6, 55, el=20, az=-30, push=0.0, arc=0.0, to=[0.85, 2.3, 1.45]))
-shot("S16", "L12.1", fcam(G.ME[0], G.ME[1], 2.2, f=0.40, z=SEATZ, push=0.04, arc=1.0, dx=-0.2))
-shot("S19", "L22", cam(0.3, 2.4, 1.15, 3.0, 30, el=4, push=0.04, arc=1.5))
+shot("S15", "L12-0.5", cam(1.2, 2.4, 1.45, 4.6, 55, el=20, az=-30, push=0.0, arc=0.0, to=[1.1, 2.3, 1.45]))
+shot("S16", "L12.1", cam(1.0, 1.2, 1.05, 4.2, 28, el=8, az=-16, push=0.04, arc=0.5))
+shot("S19", "L22", cam(0.5, 2.4, 1.2, 3.4, 24, el=5, az=-10, push=0.04, arc=1.0))
 shot("S24", "L23", cam(0.0, 2.4, 1.1, 5.6, 34, el=3, push=0.04, arc=0.5))
 
 shots, names = [], {}
@@ -234,13 +234,11 @@ for lst in list(acting.values()) + [cues]:
     fix(lst)
 # the acting keys with the same time must stay in order; the timeline sorts by time
 sfx = [
-    {"at": "L01", "kind": "click", "db": -17, "dur": 0.2},
 ] + [{"at": f"L04.{i}", "kind": "ding", "db": -22, "dur": 0.35, "pitch": 440 if i % 2 == 0 else 330, "fall": 0.7, "lp": 1200}
      for i in range(6)] + [
     {"at": "P01+0.9", "kind": "click", "db": -27, "dur": 0.1},
     {"at": "P01+1.9", "kind": "click", "db": -27, "dur": 0.1},
     {"at": "P01+2.9", "kind": "click", "db": -27, "dur": 0.1},
-    {"at": "L12", "kind": "thud", "db": -20, "dur": 0.3},
 ]
 for s_ in sfx:
     s_["at"] = remap(s_["at"])

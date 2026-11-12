@@ -204,7 +204,7 @@ def build_decor(kit):
         kit.box(f"bstr{i}", (5.2 / n + 0.02, 0.01, 0.015), (x, G.WALL_N - 0.065, zc + 0.005), M(kit, "#7a4a28"))
     # balloon bunches (east foreground and by the west wall), on strings
     bal = ["#e8402e", "#ffcc33", "#ff7fb0", "#1f9f8a", "#6fb4ea", "#e8402e"]
-    for bx, by, bz0 in ((2.55, -1.6, 1.9), (-2.35, 1.0, 2.5)):
+    for bx, by, bz0 in ((-2.45, -1.9, 1.9), (-2.35, 1.0, 2.5)):
         kit.cyl("bstring", 0.008, bz0, (bx, by, bz0 / 2), M(kit, "#fffaf0"), None, (0, 0, 0), n=6)
         for k in range(6):
             a = k * 1.05
@@ -272,7 +272,7 @@ def build_curtain(kit):
     # they go when she steps out (cue "toes_off")
     tr = kit.empty("toes", (0, 0, 0))
     W["toes"] = tr
-    red = kit.emit("#ff0070", 0.42, "toeemit")
+    red = kit.emit("#ff0048", 0.38, "toeemit")
     wh = M(kit, "#fafafa", 0.6, 0.1)
     for sx in (-1, 1):
         tx = G.IVY0[0] + sx * 0.17
@@ -533,7 +533,7 @@ def _extras(self, hg, spec, kit, faces):
             kit.box(f"{n}.crpt{k}", (0.17, 0.12, 0.3), ((R + 0.03) * math.sin(a), (R + 0.03) * math.cos(a), top + 0.26), cc, hg,
                     rot=(0, 0, -a), bevel=0.02)
     if spec.get("sneakers"):  # Ivy's bright red sneakers: a long toe, a white sole and stripe, laces, on both feet
-        sc = kit.emit("#ff0070", 0.42, "sneakemit")
+        sc = kit.emit("#ff0048", 0.38, "sneakemit")
         so = kit.plastic("#fafafa", 0.6, spec=0.1)
         for sx in (-1, 1):
             leg = _b.data.objects.get(f"{n}.leg{sx}")
