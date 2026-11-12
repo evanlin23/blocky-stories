@@ -22,7 +22,7 @@ PRETZEL = (0.25, round(rim_y(0.25, 2.5), 3))   # on its napkin, on the front of 
 ME_STAND = (-0.7, 3.9)
 LEO_STAND = (0.9, 3.9)
 # Leo hides behind the spray column, steps out to LEO_OUT
-LEO_HIDE = (0.0, 9.15)
+LEO_HIDE = (0.0, 9.75)
 LEO_OUT = (0.85, 7.1)
 # the montage rooms, far off along x
 KITCHEN = (40.0, 0.0)

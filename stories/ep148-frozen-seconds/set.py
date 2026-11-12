@@ -160,7 +160,7 @@ def build_drops(kit, tl):
     for a in range(DROP_ARCS):
         for k in range(DROP_PER):
             x, y, z = drop_pos(a, k, gf)
-            if any(math.hypot(x - px, y - py) < 0.62 and z < 2.4 for px, py in keep_out):
+            if any(math.hypot(x - px, y - py) < 0.3 and z < 2.4 for px, py in keep_out):
                 continue
             ob = kit.sphere(f"drop.{a}.{k}", 0.042, (x, y, z), m, seg=8)
             noshadow(ob)
@@ -224,7 +224,7 @@ def build_pigeon(kit, name, loc, scale=1.0):
     kit.box(f"{name}.tail", (0.14 * scale, 0.14 * scale, 0.025), (0, 0.24 * scale, 0.0), dk, root)
     for s_ in (-1, 1):
         kit.box(f"{name}.wing{s_}", (0.34 * scale, 0.26 * scale, 0.025), (s_ * 0.2 * scale, 0.02, 0.1 * scale), pl("#b8bdc8", 0.7), root,
-                rot=(0, s_ * math.radians(-52), 0), bevel=0.01)
+                rot=(0, s_ * math.radians(-68), 0), bevel=0.01)
     return root
 
 
@@ -269,13 +269,14 @@ def build_kitchen(kit):
             kit.box(f"kitchen.tleg{sx}{sy}", (0.06, 0.06, 0.7), (kx - 2.4 + sx * 0.88, ky + 1.6 + sy * 0.42, 0.38), pl("#8a5a34", 0.7))
     kit.cyl("kitchen.mug", 0.055, 0.1, (kx - 2.7, ky + 1.55, 0.84), pl("#4a8ad9", 0.5), n=12)
     # the cake an inch from the floor: a plate, a frosted cake with dots, held in the air
-    cakex, cakey, cz = kx + 0.55, ky + 0.35, 0.115
-    kit.cyl("cake.plate", 0.3, 0.015, (cakex, cakey, cz), pl("#f4f4f2", 0.4), n=20)
-    kit.cyl("cake.base", 0.22, 0.12, (cakex, cakey, cz + 0.07), pl("#f2a0b8", 0.6), n=20)
-    kit.cyl("cake.top", 0.21, 0.09, (cakex, cakey, cz + 0.175), pl("#fff1d8", 0.6), n=20)
+    cakex, cakey, cz = kx + 0.55, ky + 0.35, 0.2
+    croot = kit.empty("cake", (cakex, cakey, cz), rot=(math.radians(10), 0, 0))
+    kit.cyl("cake.plate", 0.3, 0.015, (0, 0, 0), pl("#f4f4f2", 0.4), croot, n=20)
+    kit.cyl("cake.base", 0.22, 0.12, (0, 0, 0.07), pl("#f2a0b8", 0.6), croot, n=20)
+    kit.cyl("cake.top", 0.21, 0.09, (0, 0, 0.175), pl("#fff1d8", 0.6), croot, n=20)
     for k in range(8):
         a = k * math.pi / 4
-        kit.sphere(f"cake.dot{k}", 0.028, (cakex + 0.17 * math.cos(a), cakey + 0.17 * math.sin(a), cz + 0.225), pl("#f2a0b8", 0.5), seg=8)
+        kit.sphere(f"cake.dot{k}", 0.028, (0.17 * math.cos(a), 0.17 * math.sin(a), 0.225), pl("#f2a0b8", 0.5), croot, seg=8)
 
 
 def build_front(kit):
@@ -350,8 +351,11 @@ def build(kit, story, tl):
     # the pigeons and the leaves held in the air (shown only while the world is stopped, or in the neighbour's shot)
     W["pigeon"] = build_pigeon(kit, "pigeon", (-3.4, 6.2, 2.5), 2.0)
     W["pigeon"].rotation_euler = (math.radians(10), 0, math.radians(-25))
-    W["pigeon2"] = build_pigeon(kit, "pigeon2", (G.FRONT[0] - 0.1, G.FRONT[1] + 0.2, 1.9), 1.3)
+    W["pigeon2"] = build_pigeon(kit, "pigeon2", (G.FRONT[0] - 0.12, G.FRONT[1] + 0.05, 2.2), 1.3)
+    W["pigeon2"].rotation_euler = (math.radians(-18), 0, 0)
     rnd = random.Random(7)
+    W["fleck"] = kit.box("fleck", (0.03, 0.02, 0.03), (0, 0, -60), kit.plastic("#fffdf4", 0.5))
+    noshadow(W["fleck"])
     W["leaves"] = []
     lm = [kit.plastic(c, 0.8) for c in ("#e8c040", "#7ac04a", "#d98a30")]
     for i in range(14):
@@ -395,11 +399,14 @@ def animate(kit, story, tl, t, ctx):
     tm = sample("tag", tl, t, {"mode": 0.0, "s": 1461.0})
     secs = int(round(tm["s"]))
     mm, ss_ = secs // 60, secs % 60
-    cd = tm["mode"] > 0.5
+    cd = 0.5 < tm["mode"] < 1.5
     digs = (mm // 10, mm % 10, ss_ // 10, ss_ % 10) if cd else (1, 4, 6, 1)
+    if tm["mode"] > 1.5:
+        cd = False
+        digs = (None, None, None, 1)
     for d, n in zip(W["digits"], digs):
         for k, ob in d.items():
-            ob.hide_render = k not in DIGIT_SEGS[n]
+            ob.hide_render = n is None or k not in DIGIT_SEGS[n]
     for ob in W["colon"]:
         ob.hide_render = not cd
     shot = cur
@@ -430,10 +437,24 @@ def animate(kit, story, tl, t, ctx):
             leg = bpy.data.objects.get(f"{who}.leg{sx}")
             if leg and sv > 0.001:
                 leg.rotation_euler = (leg.rotation_euler.x * (1 - sv) + SIT * sv, 0, 0)
-    for who in ("uncle", "walker", "jogger"):
-        pass
+    for who, sg in (("walker", 1), ("jogger", -1)):   # the two on the lawn are held mid-stride
+        if fr:
+            for sx in (-1, 1):
+                leg = bpy.data.objects.get(f"{who}.leg{sx}")
+                arm = bpy.data.objects.get(f"{who}.arm{sx}")
+                if leg:
+                    leg.rotation_euler = (sx * sg * 0.5, 0, 0)
+                if arm:
+                    arm.rotation_euler = (-sx * sg * 0.45, 0, 0)
+    fl = W["fleck"]
+    lh = bpy.data.objects.get("leo.headg")
+    on = lh is not None and cur["id"] in ("S26", "S27", "S28", "S29") and bite
+    fl.hide_render = not on
+    if on:
+        hp = lh.matrix_world.translation
+        fl.location = (hp.x + 0.05, hp.y - 0.15, hp.z - 0.1)
     # the notes follow the holder's head
-    for who, off in (("me", (-0.5, -0.6, -0.45)), ("leo", (-0.5, -0.6, -0.45))):
+    for who, off in (("me", (-0.3, -0.6, -0.45)), ("leo", (-0.3, -0.6, -0.45))):
         nm = sample(f"note_{who}", tl, t, {"m": 0.0})["m"]
         root = W["notes"][who]
         gh = bpy.data.objects.get(f"{who}.headg")
@@ -442,6 +463,6 @@ def animate(kit, story, tl, t, ctx):
             continue
         hp = gh.matrix_world.translation
         u = min(1.0, max(0.0, 2.0 - nm))     # 0 on the palm, 1 in the pocket
-        root.location = (hp.x + off[0] + 0.05 * u, hp.y + off[1] + 0.1 * u, hp.z + off[2] - 0.5 * u)
+        root.location = (hp.x + off[0] + 0.05 * u, hp.y + off[1] + 0.1 * u, hp.z + off[2] - 0.3 * u)
         root.rotation_euler = (math.radians(-12), 0, 0)
     return gains
