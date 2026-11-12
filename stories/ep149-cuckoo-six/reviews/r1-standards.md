@@ -2,7 +2,7 @@
 
 Verdict: revise
 
-All 25 shots walked at 300 px. Pass: fiction, kids (all adults), IP, hard rule 8, reveal (L12 at 20.5 of 24.8 s, then the button), and a 4.0 s hold with the guess in the story.
+All 25 shots walked. Pass: fiction, kids, IP, rule 8, reveal timing, 4.0 s hold.
 
 ## Must-fix: words, title, package
 1. **Title** copies ep134's "Nine Rooms For FOUR" shape (uploaded Nov 11) and opens on "Grandpa" like ep116 (Nov 12). Change it to "This Cuckoo Clock Counts PEOPLE 🕰️" in package.json and story.json.
@@ -15,7 +15,7 @@ All 25 shots walked at 300 px. Pass: fiction, kids (all adults), IP, hard rule 8
 6. **S02 (2.2 to 5.1 s):** the counter tag is cut off at the top edge. Drop the punch-in or draw the tag after it.
 
 ## Flash
-PASS, 0 blocks. The 4/s warning at about 5.9 s is the S03 to S04f run of 0.25 s cuts. It's under 6/s, not sustained and not red, so it's safe. Re-read it on the final.
+PASS, 0 blocks. The 4/s warning at about 5.9 s is the S03 to S04f run of 0.25 s cuts. Under 6/s, not sustained, not red: safe.
 
 ## Nice-to-have
 - Cut to S15 on "IVY." (20.5 s), not at 20.0 s.
