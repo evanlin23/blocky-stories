@@ -1,26 +1,22 @@
 {
- "stage": "proof",
- "film": "proof-43239867841",
- "run": 43239867841,
- "sha": "78d85898924114abbf425e4e044aa53c73246a8b",
+ "stage": "final",
+ "film": "13962974625",
+ "run": 43250217446,
+ "sha": "ae947895f11fa4074d0c0e0a5e31b5750cc1c35b",
  "verdict": "pass",
  "date": "2026-11-12",
  "checked": [
-  "proof artifact 13957540512, sha = latest film-files commit on the PR branch (d5ffda8 adds only a review)",
-  "frames every 2 s at phone size",
+  "film-ep125-aunts-keys artifact 13962974625 (run 43250217446, merge ae94789); story film files unchanged since proof sha 78d8589",
+  "frames every 4 s at phone size",
   "first 3 s every frame",
-  "TV canvas 1920 wide (0.5, 40.2, 66, 92 s)",
-  "S39 47.9-49.5 s every frame (Lou's turn)",
-  "S42 51.2-52.7 s every frame (legs)",
-  "S45 54.6-55.5 s every frame",
-  "S32 38.8-39.7 s and S35 42.95-44.45 s every frame (lurches)",
-  "S43, S50 every 3rd frame; S60 76.5-78.8 s every frame and 540 px stills",
+  "S39 47.9-49.5 s, S42 51.1-52.7 s, S45 54.6-55.6 s, S32 38.5-40.0 s, S35 42.9-44.5 s every frame",
+  "full-size detail at 40.2 and 100 s",
   "cover 40.2 s",
-  "loudness, true peak, hf 5 s windows, tail",
-  "craft",
-  "flash and clip.json",
-  "package, opening and gate"
+  "loudness and true peak",
+  "craft vs proof",
+  "flash",
+  "gate"
  ],
- "craft": "**ep125-aunts-keys**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.4 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 16.4 | 14.0– | ok |\n| macro.motion_energy_q | 7.04 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 7.12 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.061 | –0.25 | ok |\n| spec.shot_p90_s | 1.92 | –2.5 | ok |\n| macro.longest_still_s | 0.13 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.84 | 1.5– | ok |\n| spec.camera_move_share | 0.998 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.437 | 0.35– | ok |\n| macro.brightness_first_3s | 0.559 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.599 | 0.42– | ok |\n| macro.contrast_mean | 0.219 | 0.18– | ok |\n| spec.face_big_share | 0.68 | 0.4– | ok |\n| spec.caption_share | 0.981 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.0 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.695 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.038 | –0.25 | ok |\n| micro.idle_window_share | 0.033 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.9 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.4 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.7 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0441 | –0.08 | ok |\n| sound.hf_jump_max | 0.0126 | –0.04 | ok |\n\n0 block, 0 near, 0 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
- "notes": "PASS. Both old fails fixed: S39 Lou now turns from back to front over about 5 frames (48.83-49.00 s) holding the blanket, a brisk turn, no one-frame flip; S42 legs stand still then step forward from about 51.8 s, no spin. S45 (55.1 s) is a back-of-head shot with no visible twist. S32 door opening and S35 run to camera (stops square at 44.07 s) read smooth. S43 and S50 side by side are clean.\nS60 critic points, judged not a fail: my hand passes in front of Lou's coat at 77.3 s with no intersection. The push-in crops both faces to half at the frame edges for 78.0-78.8 s (mine left, Lou's right, the fountain centre). That's 0.8 s, both eyes still read, then a cut. Optional fix if S60 is ever touched: stop the push at about 1.8 s or end on 1.75 m.\nNo black, frozen, missing or z-fighting frame; clip.json 0 hits of 528 times; no stray text (only the tag numerals and the door 1). No creature. Faces read at phone and TV size, captions inside the safe area.\nFirst second: Aunt Lou, warm-lit, face to camera in her teal doorway with her key ring, 12-key tag top left, slow push-in, smiling; 'My aunt has a key to every house HERE. Including YOURS.' A concrete threat to the viewer.\n-14.1 LUFS / -1.7 dBTP, LRA 1.0; hf 5 s max 0.038, jump 0.011; voice-bed gap 11.4 dB; tail loops into frame 0. Polish on (reveal L35, quiet L59-L68, hold S46): silence share 0, punches 0.7/10 s.\nFlash house bar passes (3f max 3/s at 43.4 s, extended 1.1 s); verdict.json pass. Cover 40.2 s strong (Lou in her doorway, 12:01).\nPackage ok: no spoiler, nephew narrator, no 'husband'. Opening confess matches 'My aunt has...'; last upload ep137 is must, so no neighbour repeat (ep125 not yet in queue.txt). Gate OPEN.\ncraft: 0 block, 0 near, 0 warn (matches the old final within 0.3; longest still q 0.27 s, down from 0.53)."
+ "craft": "**ep125-aunts-keys**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.3 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 16.1 | 14.0– | ok |\n| macro.motion_energy_q | 7.01 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 7.12 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.061 | –0.25 | ok |\n| spec.shot_p90_s | 1.92 | –2.5 | ok |\n| macro.longest_still_s | 0.27 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.53 | –1.0 | ok |\n| macro.motion_energy_mean | 2.81 | 1.5– | ok |\n| spec.camera_move_share | 0.998 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.437 | 0.35– | ok |\n| macro.brightness_first_3s | 0.558 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.601 | 0.42– | ok |\n| macro.contrast_mean | 0.219 | 0.18– | ok |\n| spec.face_big_share | 0.68 | 0.4– | ok |\n| spec.caption_share | 0.981 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.0 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.695 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.038 | –0.25 | ok |\n| micro.idle_window_share | 0.033 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.9 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.4 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0441 | –0.08 | ok |\n| sound.hf_jump_max | 0.0126 | –0.04 | ok |\n\n0 block, 0 near, 0 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "PASS. Fix round holds on the final: S39 Lou turns back to front over about 6 frames (48.8-49.0 s) holding the blanket, no flip; S42 the legs stand then step up the steps from about 51.8 s, no spin; S45 (55.1 s) back-of-head at the door then a clean cut to me, no twist. S32 door opens smoothly to Aunt Lou; S35 her hurry off the porch and run to camera stop square, no lurch.\nFine detail at 1080x1920 (40.2, 100 s): clean textures, no sharpening halo, captions crisp. Faces read at phone size; captions in the safe area; no black, frozen or missing frame; no stray text.\nFirst second: Aunt Lou, warm-lit, face to camera in her teal doorway, key ring up, 12-key tag top left, slow push-in; 'My aunt has a key to every house HERE. Including YOURS.' Same as the proof.\n-14.1 LUFS / -1.8 dBTP, LRA 1.1 (proof -14.1 / -1.7); hf 5 s max 0.044, jump 0.013; tail -17 dB mean, no cut-off.\nFlash house bar passes (3f max 3/s at 43.4 s, extended 1.1 s). Cover 40.2 s strong (Lou in her doorway, 12:01).\nGate OPEN. Opening confess; last upload ep137 is must, no neighbour repeat (ep125 not in queue.txt).\ncraft: 0 block, 0 near, 0 warn. Matches the proof within 0.3 (longest still q 0.53 s vs 0.27 on the proof, the same as the earlier final, well under 1.0)."
 }
