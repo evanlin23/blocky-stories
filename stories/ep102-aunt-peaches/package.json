@@ -6,6 +6,5 @@
   "cover_s": 35.0,
   "shape": "backwards-warning",
   "opening": "ban",
-  "lane": "core",
-  "hold": "staging yaw (2026-11-12): the carrier turns about 90 deg in 1 to 2 frames at S06 6.07 s, S07 7.40 s and S09 9.30 s; fix job, then a new final qa"
+  "lane": "core"
 }
