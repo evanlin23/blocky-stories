@@ -104,16 +104,6 @@
     "mine rang"
    ],
    [
-    "on my PATIO,",
-    "on my patio,"
-   ]
-  ]
- },
- {
-  "id": "L06",
-  "who": "narrator",
-  "chunks": [
-   [
     "at SEVEN.",
     "at seven."
    ]
@@ -248,16 +238,6 @@
   ]
  },
  {
-  "id": "L15",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Just the DOG.",
-    "just the dog."
-   ]
-  ]
- },
- {
   "id": "L16",
   "who": "narrator",
   "chunks": [
@@ -310,16 +290,6 @@
    [
     "\"ACHOO.\"",
     "achoo."
-   ]
-  ]
- },
- {
-  "id": "L20",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Over and OVER.",
-    "over and over."
    ]
   ]
  },
@@ -420,8 +390,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "WATCHING the latch.",
-    "watching the latch."
+    "SNIFFING",
+    "sniffing"
+   ],
+   [
+    "under the GATE.",
+    "under the gate."
    ]
   ]
  },
@@ -558,26 +532,12 @@
   ]
  },
  {
-  "id": "L36",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Three streets",
-    "three streets"
-   ],
-   [
-    "from my DOOR.",
-    "from my door."
-   ]
-  ]
- },
- {
   "id": "L37",
   "who": "narrator",
   "chunks": [
    [
-    "Every night",
-    "every night"
+    "SEVEN nights,",
+    "seven nights,"
    ],
    [
     "he'd texted me",
@@ -596,24 +556,6 @@
    [
     "\"ACHOO.\"",
     "achoo."
-   ]
-  ]
- },
- {
-  "id": "L39",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He didn't know",
-    "he didn't know"
-   ],
-   [
-    "what to SAY",
-    "what to say"
-   ],
-   [
-    "after five years.",
-    "after five years."
    ]
   ]
  },
@@ -674,6 +616,38 @@
   ]
  },
  {
+  "id": "L46",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Now every morning",
+    "now every morning"
+   ],
+   [
+    "at seven-forty,",
+    "at seven forty,"
+   ],
+   [
+    "we walk to Theo's",
+    "we walk to theo's"
+   ],
+   [
+    "for COFFEE.",
+    "for coffee."
+   ]
+  ]
+ },
+ {
+  "id": "L48",
+  "who": "narrator",
+  "chunks": [
+   [
+    "\"ACHOO.\"",
+    "achoo."
+   ]
+  ]
+ },
+ {
   "id": "L44",
   "who": "narrator",
   "chunks": [
@@ -700,62 +674,6 @@
    [
     "who never DOES.",
     "who never does."
-   ]
-  ]
- },
- {
-  "id": "L45",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Theo's yellow house",
-    "theo's yellow house"
-   ],
-   [
-    "is my favorite walk",
-    "is my favorite walk"
-   ],
-   [
-    "NOW.",
-    "now."
-   ]
-  ]
- },
- {
-  "id": "L46",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every morning",
-    "every morning"
-   ],
-   [
-    "at seven-FORTY,",
-    "at seven forty,"
-   ]
-  ]
- },
- {
-  "id": "L47",
-  "who": "narrator",
-  "chunks": [
-   [
-    "we walk over",
-    "we walk over"
-   ],
-   [
-    "for COFFEE.",
-    "for coffee."
-   ]
-  ]
- },
- {
-  "id": "L48",
-  "who": "narrator",
-  "chunks": [
-   [
-    "\"ACHOO.\"",
-    "achoo."
    ]
   ]
  },
