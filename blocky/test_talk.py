@@ -38,6 +38,12 @@ def test_talk_flaps_the_narrators_first_person_lines():
     assert len(tl["talk"]["me"]) >= 5
     a, d = tl["talk"]["me"][0]
     assert acting.mouth(tl["talk"]["me"], a + d / 2) > 0.9
+    assert tl["talk_amp"] == {"me": timeline.NARRATED_OPEN}          # narration opens the mouth to 70%
+    s = acting.state(tl, "me", a + d / 2)
+    assert 0.6 < s["mouth"] <= timeline.NARRATED_OPEN + 1e-9
+    a_last, d_last = tl["talk"]["me"][-1]
+    end = max(c[1] for ln in tl["lines"].values() for c in ln["chunks"])
+    assert a_last + d_last <= end - 0.1                               # the last flap ends well before the chunk does
     st, v = _narrated(True, "You get one call.")   # not the narrator speaking as themself
     assert timeline.build(st, v)["talk"]["me"] == []
 

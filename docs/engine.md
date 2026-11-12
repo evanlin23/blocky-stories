@@ -278,6 +278,8 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   cast member `talk_as` (default "me") on every syllable, so the face on screen isn't a still decal under its own
   story, and swaps everyone's blink for one on natural time: gaps of 2 to 5 s, shut 2 to 3 frames, about one in
   eight doubled. A key with `"blink": false` still holds the eyes open. Lines a cast member says already flap.
+  Narrated flaps fit in the first 85% of each chunk (its timing runs on into the voice's fade) and, for a character
+  who only narrates, open to 70% (`timeline.NARRATED_OPEN`).
   `ones: "moving"` (the default since 2026-11-03, the lead's call)
   draws every shot whose camera moves, or where someone walks, on every frame, so the pack's camera moves don't
   judder at 15 drawings a second. With the pack that's nearly every shot: 1.87 to 1.98 times the drawing, about

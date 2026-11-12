@@ -307,6 +307,7 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
     from blocky import polish as _pol
     pk = _pol.spec(st) or {}
     talk_as = pk.get("talk_as", "me") if pk.get("talk") else None
+    told, said = set(), set()
     for l in order:
         p = placed[l]
         spoken = next(ln for ln in st["lines"] if ln["id"] == l)["chunks"]
@@ -317,9 +318,16 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
             who = talk_as
         if who not in talk:
             continue
+        narrated = who != p["who"]
+        if narrated:
+            told.add(who)
+        else:
+            said.add(who)
         for (a, b, _), (_, sp) in zip(p["chunks"], spoken):
             n = syllables(sp)
-            step = (b - a) / n
+            # a narrated chunk's timing runs on through the voice's fade: its flaps fit in the first 85%, so the last
+            # syllable isn't late (critic, ep124 S16: 100-150 ms after the voice, into the silence)
+            step = (b - a) * (0.85 if narrated else 1.0) / n
             for k in range(n):
                 talk[who].append([round(a + k * step, 3), round(min(step * 0.85, 0.2), 3)])
 
@@ -358,6 +366,7 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
             "fade_in": st.get("fade_in", True),
             "voice": {k: voice.get(k) for k in ("voice", "rate", "tempo", "model")},
             "lines": placed, "order": order, "captions": caps, "talk": talk, "shots": shots,
+            **({"talk_amp": {w: NARRATED_OPEN for w in told - said}} if told - said else {}),
             "cues": cues, "fx": fx, "acting": acting, "motion": _motion(st),
             **({"homophones": st["homophones"]} if st.get("homophones") else {})}
     if out["motion"]:   # the polish pack: shots with a walk on ones; reveal shots calm
@@ -375,6 +384,7 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
     return out
 
 
+NARRATED_OPEN = 0.7   # how far a mouth opens under narration only (a full open reads as shouting; critic 2026-11-12)
 _FIRST = re.compile(r"\b(I|I'm|I'd|I'll|I've)\b|\b(me|my|mine|myself)\b", re.IGNORECASE)
 
 

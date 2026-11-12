@@ -308,7 +308,8 @@ def state(tl, who, t, seed=0):
             "expr": _switch(keys, "expr", t, "neutral"), "look": tuple(held("look", [0, 0])),
             "blink": ((blink_natural if mo.get("talk") else blink)(t, seed + sum(map(ord, who)) * bool(mo.get("talk")))
                       if _switch(keys, "blink", t, True) else 0.0),
-            "mouth": max(mouth(tl["talk"].get(who, []), t), mouth_track(keys, t)),
+            "mouth": max(mouth(tl["talk"].get(who, []), t) * (tl.get("talk_amp") or {}).get(who, 1.0),
+                         mouth_track(keys, t)),
             "hidden": bool(_switch(keys, "hidden", t, False)), "speed": speed}
     if mo.get("idle") and abs(legs) < 1e-6 and not out["hidden"]:   # the polish pack: nobody stands like a statue
         sc = float(mo.get("idle_scale", 1.0))
