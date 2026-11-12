@@ -274,6 +274,10 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   lengthens any body or head turn until its eased peak is under the cap, turns a keyed yaw the short way round, and
   eases a walk into its direction and back instead of snapping (ep54 had a 2,856°/s one-frame snap at 131.0 s; capped:
   291). Keys too close for the cap keep their timing, and a key with `blend: 0` (a re-staging on a cut) is never moved.
+  `talk: true` (opt-in, 2026-11-12) makes the narrator's own lines (any with I, me, my or mine) flap the mouth of the
+  cast member `talk_as` (default "me") on every syllable, so the face on screen isn't a still decal under its own
+  story, and swaps everyone's blink for one on natural time: gaps of 2 to 5 s, shut 2 to 3 frames, about one in
+  eight doubled. A key with `"blink": false` still holds the eyes open. Lines a cast member says already flap.
   `ones: "moving"` (the default since 2026-11-03, the lead's call)
   draws every shot whose camera moves, or where someone walks, on every frame, so the pack's camera moves don't
   judder at 15 drawings a second. With the pack that's nearly every shot: 1.87 to 1.98 times the drawing, about
