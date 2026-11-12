@@ -8,6 +8,7 @@
 - **Word count:** 189 spoken words in 22 lines (ids kept from the first draft, so there are gaps), all `narrator`, plus one music drop (0.5 s before L20).
 - **Estimated length:** about 45 s at 290 wpm with 0.15 s gaps, the drop, the 1 s spatula beat and the loop tail. The reveal line (L25) lands at about 37 to 39 s, the last 6 to 8 s.
 - **No-filler pass (owner, 2026-11-12):** cut L05, L11 (folded into L10), L13, L15, L16, L24b (folded into L24), L25b, L25c, L26, L28 to L31. The waking-up, "he never opened it" restatements, the explaining after the reveal and the lunch epilogue are gone. After the reveal: one button (L27, the kitchen knock) and the loop line (L32).
+- **Plants check (2026-11-12, after the cut):** the reveal rests on L02 ("my STEPDAD'S"), L06 (my two knocks and "DAD?", the exact sound in his dream), L10 (Dad smiling on the stairs) and L18 ("Don't. I like this PART."). The big idea isn't carried by one line, so no line was restored. The pin now asks why Dad never opens the door, which L18 and L25 let viewers argue (he doesn't want that moment to end); the old pin asked about a door-opening scene the cut removed.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Two bright sets: Dad's sunny guest room (morning light, a striped quilt, a window on a green yard), and the dream: Dad's own front hall in warm sunset gold, a staircase, a white front door. The dream is brighter and warmer than the waking room, never dark.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
 
