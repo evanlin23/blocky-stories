@@ -5,8 +5,8 @@
 - **Lane:** warm. **Opening shape:** `cost`. **Length arm:** 45 to 90 s.
 - **Title:** Dad's Empty Car Leaves Every DAWN 🚗
 - **Everyone is an adult.** I'm 20 and live at home. Mom and Dad are in their fifties. The guy at the wall is about 20, a cook. Mr. Fenn and his boss are adults.
-- **Word count:** 270 spoken words in 36 lines (L01 to L36), all `narrator`, plus one music drop (0.5 s before L21).
-- **Estimated length:** about 65 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
+- **Word count:** 310 spoken words in 36 lines (L01 to L36), all `narrator`, plus one music drop (0.5 s before L21).
+- **Estimated length:** about 72 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright sunrise all through, never dim: a pink-and-gold sky, low warm sun, long soft shadows. Our mint-green bungalow at the top of a hill street, Dad's teal hatchback in the driveway, a long hill road down through green fields, a low stone wall at the bottom, a cherry-red diner. One sunny noon beach lot for the example. A bright yellow kitchen at 6:30.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
 

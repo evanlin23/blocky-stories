@@ -5,8 +5,8 @@
 - **Lane:** eerie. **Opening shape:** `if`. **Length arm:** 45 to 90 s.
 - **Title:** The Ice Cream Truck Knows Who's LEAVING 🚚
 - **Everyone is an adult.** I'm 19 and live at home. Mom and Dad are in their fifties. Mrs. Lee and my cousin are adults.
-- **Word count:** 245 spoken words in 33 lines (L01 to L33), all `narrator`, plus one music drop (0.6 s before L21).
-- **Estimated length:** about 60 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
+- **Word count:** 271 spoken words in 33 lines (L01 to L33), all `narrator`, plus one music drop (0.6 s before L21).
+- **Estimated length:** about 64 s at 290 wpm with 0.15 s gaps, the drop and the loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. One bright suburban street in summer afternoon sun all through: our pale-blue house with a white garage and a small gable attic window over the garage, green lawns, a mint-and-white ice cream truck, our sunny front hall and kitchen. The only dark is the attic window's pocket.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
 

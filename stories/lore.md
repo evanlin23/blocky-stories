@@ -212,6 +212,8 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | `ep147-motel-reviews` (batch 15, P19) | a plain tally: two motel-pink strokes scratched into Room Six's diamond key fob, two for a room built for two. No extra stroke | S23, as the key lands, about 1 s, not narrated |
 | `ep149-cuckoo-six` (batch 15, P28) | none, on purpose: in a puzzle a tally would read as a clue | |
 | `ep153-pier-box` (batch 15, P29) | none, on purpose: in a one-or-two story a tally would read as a clue | |
+| `ep151-truck-attic` (batch 15, P21) | "leaving breaks the count": four charcoal strokes on the coat-hook rail, four for a rail built for four, and we are three. No Keeper | S12b, under L12 ("Dad says / it came / with the HOUSE."), 1 s, not narrated |
+| `ep154-dawn-car` (batch 15, P12) | a plain tally: two cream strokes on the passenger seat rail, two for a front row built for two. No extra stroke | S19b, under L19, 1 s, not narrated |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
 
