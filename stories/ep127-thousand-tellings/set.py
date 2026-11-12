@@ -749,9 +749,13 @@ def animate(kit, story, tl, t, ctx):
     W["bag"].hide_render = not (bg_ and bg_.get("on"))
     # the July snow falls and drifts
     sx0, sy0 = G.STREET
+    # a flake whose fall column passes near the camera's path this shot stays hidden for the whole shot: one 0.6 m
+    # from the lens filled 40% of S13 (QA desk, 2026-11-07). Decided per shot, so nothing pops mid-shot.
+    cams = [cam_state(spec, uu)[0] for uu in (0.0, 0.25, 0.5, 0.75, 1.0)] if spec is not None else []
     for (ob, x0, y0, z0, sp, ph) in W["snow"]:
         z = (z0 - sp * t) % 7.0
         ob.location = (sx0 + x0 + 0.35 * math.sin(0.7 * t + ph), sy0 + y0 + 0.2 * math.cos(0.5 * t + ph), z)
+        ob.hide_render = any(math.hypot(sx0 + x0 - c[0], sy0 + y0 - c[1]) < 2.4 for c in cams)
     # who sits: legs straight out forward, hips on the seat (eased over the cue's dur)
     sits = {}
     for c in tl["cues"]:

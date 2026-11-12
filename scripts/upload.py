@@ -234,6 +234,8 @@ def record(story: str, entry: dict) -> None:
     done[story] = entry
     UPLOADS.write_text(json.dumps(done, indent=1) + "\n")
     subprocess.run(["git", "-C", str(ROOT), "add", "uploads.json"], check=True)
+    if (ROOT / "playlists.json").exists():   # a playlist made on this upload (scripts/playlists.py)
+        subprocess.run(["git", "-C", str(ROOT), "add", "playlists.json"], check=True)
     subprocess.run(["git", "-C", str(ROOT), "commit", "-m", f"uploads: {story}"], check=True)
     push()
 
@@ -311,6 +313,8 @@ def main() -> None:
                 print(f"{story}: already on the channel as {dup}; recorded it, no new upload")
                 return
             vid = upload(yt, mp4, title, desc, when)
+            import playlists
+            failed = playlists.add(yt, vid, playlists.keys_for(pkg))   # never raises
             record(story, {"video_id": vid, "uploaded": today, "title": title, "publish_at": when})
             from zoneinfo import ZoneInfo
             local = (dt.datetime.strptime(when, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
@@ -321,8 +325,9 @@ def main() -> None:
                      f"1. Watch it: https://studio.youtube.com/video/{vid}/edit\n"
                      f"2. Set visibility to Public (or schedule it).\n"
                      f"3. Pin this comment:\n\n> {pin}\n\n")
+            extra = playlists.owner_steps(failed)
             issue(f"{'Going public' if when else 'Ready to publish'}: {title}",
-                  f"**{s}** is uploaded to Buhtown.\n\n" + steps +
+                  f"**{s}** is uploaded to Buhtown.\n\n" + steps + (f"Also:\n{extra}\n" if extra else "") +
                   f"If Studio shows it as *locked* private, API uploads aren't allowed after all: download the film "
                   f"from {rel}, upload it by hand with the text below, and tell Claude.\n\n"
                   f"<details><summary>Title and description</summary>\n\n```\n{title}\n\n{desc}```\n</details>\n\n"

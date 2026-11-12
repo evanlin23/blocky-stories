@@ -374,7 +374,7 @@ def test_ones_moving_draws_camera_moves_on_every_frame():
 
 def test_ones_moving_is_the_default():
     """Lead, 2026-11-03: the camera moves 96% of the time with the pack, so moves are drawn on every frame."""
-    assert polish.DEFAULTS["ones"] == "moving"
+    assert polish.DEFAULTS["ones"] == "all"
 
 
 def test_bright_grade_lift_never_turns_near_black_red():
@@ -468,3 +468,8 @@ def test_meter_panel_needs_me_or_ines():
     ep28 = blank.copy()
     post.draw_meter(ep28, 1.0, {"cues": [{"name": "meter", "t": 0.0, "me": 7, "ines": 4, "dur": 0.0}]})
     assert ep28.tobytes() != blank.tobytes()
+
+
+def test_ones_all_draws_every_frame():
+    st, tl = story()
+    assert all(s["step"] == 1 for s in tl["shots"])

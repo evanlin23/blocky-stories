@@ -1,26 +1,56 @@
 {
- "stage": "proof",
- "film": "proof-42310787966",
- "run": 42310787966,
- "sha": "7e54c4c9d02f67fbac94a26d4452f3388c6ccea4",
- "verdict": "pass",
+ "stage": "final",
+ "film": "13568778291",
+ "run": 42353933800,
+ "sha": "ac9ece1114cd7d1c35dfcfd0ec4eeeaab1f45bc2",
+ "verdict": "fail",
  "date": "2026-11-07",
  "checked": [
-  "frames every 2 s",
-  "first 3 s",
-  "TV-size canvas",
-  "frame by frame 25.3-27.3 s (new S24 sit2 cut)",
-  "armchair 110.5-112.5 s",
+  "S32 frame by frame 1085-1130",
+  "every frame scanned for black/flat/clipped (per shot)",
+  "staging.py",
+  "frames every 4 s and first 3 s at phone size",
   "cover",
   "loudness and tail",
   "hf windows",
-  "craft",
+  "craft vs proof",
   "flash",
-  "clip",
-  "polish",
+  "package",
   "opening",
   "gate"
  ],
- "craft": "**ep110-bless-you**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.7 | 12.5\u2013 | ok |\n| macro.picture_changes_per_10s_q | 16.7 | 14.0\u2013 | ok |\n| macro.motion_energy_q | 6.52 | 6.0\u2013 | ok |\n| macro.longest_still_q_s | 0.53 | \u20131.0 | ok |\n| spec.cuts_per_10s | 7.69 | 5.5\u20138.0 | ok |\n| spec.shots_over_2s_share | 0.072 | \u20130.25 | ok |\n| spec.shot_p90_s | 1.88 | \u20132.5 | ok |\n| macro.longest_still_s | 0.5 | \u20131.5 | ok |\n| macro.longest_still_q_edge_s | 0.53 | \u20131.0 | ok |\n| macro.motion_energy_mean | 2.83 | 1.5\u2013 | ok |\n| spec.camera_move_share | 0.995 | 0.65\u2013 | ok |\n| spec.punch_per_10s | 0.72 | 0.4\u2013 | ok |\n| macro.brightness_mean | 0.728 | 0.35\u2013 | ok |\n| macro.brightness_first_3s | 0.753 | 0.3\u2013 | ok |\n| macro.dark_frame_share | 0.0 | \u20130.08 | ok |\n| macro.black_dips | 0 | \u20131 | ok |\n| macro.saturation_mean | 0.295 | 0.42\u2013 | **warn** |\n| macro.contrast_mean | 0.207 | 0.18\u2013 | ok |\n| spec.face_big_share | 0.697 | 0.4\u2013 | ok |\n| spec.caption_share | 0.981 | 0.9\u2013 | ok |\n| spec.caption_words_median | 2.5 | \u20133 | ok |\n| macro.held_frame_share | 0.003 | \u20130.15 | ok |\n| micro.character_motion_shot_share | 0.763 | 0.5\u2013 | ok |\n| micro.walk_dead_end_share | 0.0 | \u20130.25 | ok |\n| micro.idle_window_share | 0.0 | \u20130.3 | ok |\n| micro.caption_sync_p90_ms | 59.0 | \u2013120 | ok |\n| spec.sound_events_per_10s | 2.08 | 2.0\u20134.0 | ok |\n| sound.silence_share | 0.0 | \u20130.005 | ok |\n| sound.voice_bed_gap_db | 11.9 | 8.0\u201314.0 | ok |\n| sound.lufs | -14.1 | -15.0\u2013-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | \u2013-1.0 | ok |\n| sound.hf_share_max_5s | 0.0471 | \u20130.08 | ok |\n| sound.hf_jump_max | 0.0238 | \u20130.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
- "notes": "Staging-fix proof, 270x480 at 4 samples, 124.8 s, 97 shots, from 7e54c4c (branch head, last commit touching the story). -14.1 LUFS / -1.8 dBTP, LRA 1.3; loop tail with music, no cut-off. HF max 0.047, jump 0.024. Flash house bar passes (2/s, 3f 3/s, red 0); clip.json 0 hits of 615 times; verdict.json pass.\nSecond one: unchanged from the final. A lit close-up of me, eyes squeezed in a sneeze build-up, pastel houses behind, the 63 tag top left, a slow push in, 'If you sneeze HERE,' then a pollen-gold burst near 2 s.\nThe fix, frame by frame 25.3-27.3 s: S23 holds me standing, eyes wide in the pollen, through 26.10 s ('I sat down.' caption lands one frame before the cut). At 26.13 s it cuts to S24, a face-and-chest close-up (eyes closed, then open, head turning), and at about 27.1 s to the seated shot on 'By FORTY,'. No snap or teleport is visible inside any shot; the sit happens behind the cut. Flash's 7 changes/s at 26.13 s (3f) is the cut itself, a warning only, and the bar passes.\n110.5-112.5 s ('Green armchair. / Two people / not talking.'): Mom left, me small in the middle, Grandpa right on the green armchair, me blinking. I agree with the critic: it reads as the narrator who just landed between them. Not flagged.\nFrames every 2 s at phone and TV size otherwise match the passed final: faces read, captions centred and inside the safe area, no real words, nothing frozen or intersecting. Cover 4.5 s unchanged. Old notes still hold (2 a.m. scene faces fairly lit, tag flush left, pastel saturation).\nPolish on (whoosh_lp 2500, riser, quiet L64-L67); silence share 0. Opening 'if' matches L01 'If you sneeze HERE'. Queue note: the last upload, ep92-blackout-ben, also opens 'if' (upload.py reorders; not a fail).\nGate OPEN (warning only: 2 captions up under 0.2 s).\ncraft: 0 block, 0 near, 1 warn: macro.saturation_mean 0.295 (0.42-)."
+ "craft": "**ep110-bless-you**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.9 | 12.5\u2013 | ok |\n| macro.picture_changes_per_10s_q | 16.4 | 14.0\u2013 | ok |\n| macro.motion_energy_q | 6.45 | 6.0\u2013 | ok |\n| macro.longest_still_q_s | 0.53 | \u20131.0 | ok |\n| spec.cuts_per_10s | 7.69 | 5.5\u20138.0 | ok |\n| spec.shots_over_2s_share | 0.072 | \u20130.25 | ok |\n| spec.shot_p90_s | 1.88 | \u20132.5 | ok |\n| macro.longest_still_s | 0.7 | \u20131.5 | ok |\n| macro.longest_still_q_edge_s | 0.53 | \u20131.0 | ok |\n| macro.motion_energy_mean | 2.78 | 1.5\u2013 | ok |\n| spec.camera_move_share | 0.995 | 0.65\u2013 | ok |\n| spec.punch_per_10s | 0.72 | 0.4\u2013 | ok |\n| macro.brightness_mean | 0.727 | 0.35\u2013 | ok |\n| macro.brightness_first_3s | 0.752 | 0.3\u2013 | ok |\n| macro.dark_frame_share | 0.0 | \u20130.08 | ok |\n| macro.black_dips | 0 | \u20131 | ok |\n| macro.saturation_mean | 0.299 | 0.42\u2013 | **warn** |\n| macro.contrast_mean | 0.21 | 0.18\u2013 | ok |\n| spec.face_big_share | 0.699 | 0.4\u2013 | ok |\n| spec.caption_share | 0.981 | 0.9\u2013 | ok |\n| spec.caption_words_median | 2.5 | \u20133 | ok |\n| macro.held_frame_share | 0.008 | \u20130.15 | ok |\n| micro.character_motion_shot_share | 0.763 | 0.5\u2013 | ok |\n| micro.walk_dead_end_share | 0.0 | \u20130.25 | ok |\n| micro.idle_window_share | 0.0 | \u20130.3 | ok |\n| micro.caption_sync_p90_ms | 60.0 | \u2013120 | ok |\n| spec.sound_events_per_10s | 2.08 | 2.0\u20134.0 | ok |\n| sound.silence_share | 0.0 | \u20130.005 | ok |\n| sound.voice_bed_gap_db | 11.9 | 8.0\u201314.0 | ok |\n| sound.lufs | -14.1 | -15.0\u2013-13.0 | ok |\n| sound.true_peak_dbtp | -1.7 | \u2013-1.0 | ok |\n| sound.hf_share_max_5s | 0.0471 | \u20130.08 | ok |\n| sound.hf_jump_max | 0.0242 | \u20130.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "fixes": [
+  {
+   "second": "53.6-55.4",
+   "shot": "S44",
+   "what": "Grandpa's room (gp, x 310): top ~27% of the frame is a flat black void above the 3.5 m back wall (room has no ceiling); 17 mm lens from y -5.6 sees over the wall. Frames 1607-1660, every frame. Fix: add a ceiling to the gp room (or raise its walls to ~6 m), or frame below the wall top."
+  },
+  {
+   "second": "57.1-58.1",
+   "shot": "S47",
+   "what": "Same gp void: up to 21% flat black at the upper right as the camera tilts up to z 2.0 (frames 1713-1743). Same fix."
+  },
+  {
+   "second": "59.3-60.2",
+   "shot": "S49",
+   "what": "Same gp void: ~28% flat black above the photo wall (cam z 2.0, frames 1780-1806). Same fix."
+  },
+  {
+   "second": "63.4-65.4",
+   "shot": "S54",
+   "what": "Same gp void, worst case: top ~35% flat black over the photo-wall reveal (the twist beat; 20 mm wide, frames 1901-1961). Same fix."
+  },
+  {
+   "second": "71.1-71.2",
+   "shot": "S59",
+   "what": "Same gp void: up to 17% black for 5 frames (2132-2136). Same fix."
+  },
+  {
+   "second": "7.6-8.8",
+   "shot": "S07",
+   "what": "Office meeting close-up: ~72% of the frame clipped white (luma >250). The pale-blue glass wall (#dff1fb), white table (#ffffff) and white shirt blow out into one flat white, and the bottom ~25% (the table) is pure 255 with nothing recognisable (frames 229-264). Fix: lower lt_office, or grey the table and walls (e.g. #cfd8e2) and give the guy a coloured shirt."
+  }
+ ],
+ "notes": "Redraw after the S32 fix (#418), 1080x1920, 3741 frames (timeline 3745; no measure.py length warning, same as the proof), from ac9ece1; story folder unchanged on main since.\nS32 confirmed frame by frame 1085-1130: Mom walks up the pollen street and stops about 1117, push carries through 1122; no flat white or brown frame (luma sd 41+), 63 tag top left throughout, face whole hair to chin, 37.0-37.2 s clean; cut to S33 at 1123.\nFAIL on the flat-frame policy (pre-existing, missed by the proof and the earlier final): Grandpa's room has no ceiling and a 3.5 m wall, so S44/S47/S49/S54/S59 show a flat black void over 17-35% of the frame (S54, the twist reveal, worst). S07 office is ~72% clipped white with the table as a featureless white field. No fully black, frozen or missing frame; no near-black dip (darkest frame mean 76 at 1607).\nSecond one: a lit, close, slow-pushing face of me, eyes squeezed in a sneeze build-up, pastel houses behind, 63 tag top left, 'If you sneeze HERE,', pollen-gold burst near 2 s. Strong.\nAudio -14.1 LUFS / -1.7 dBTP, LRA 1.3; HF max 0.047, jump 0.022; loop tail, no cut-off. Flash house bar passes (1/s, 3f 3/s, red 0). staging.py 0 findings. Cover 4.5 s strong.\nPackage matches, no spoiler, no husband; opening 'if' matches L01. Queue note: last upload ep92-blackout-ben also opens 'if' (not a fail). Gate OPEN (warn: 2 captions under 0.2 s).\ncraft matches the proof within a little (picture changes 14.9 vs 14.7, longest still 0.7 vs 0.5).\ncraft: 0 block, 0 near, 1 warn: macro.saturation_mean 0.299 (0.42-)."
 }

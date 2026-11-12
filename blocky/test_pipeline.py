@@ -751,3 +751,12 @@ def test_flash_like_proof_draws_every_proof_drawing(monkeypatch, tmp_path):
     assert len(jobs["flash"]["frames"]) == 45
     assert jobs["flash"]["res"] == [safety.LOW[1], safety.LOW[0]]
     assert jobs["flash"]["out"].endswith("frames-flash")
+
+
+def test_staging_gate_rows_and_skip(monkeypatch):
+    out = ("# staging: x: 3 shots, 1 findings\n| frame | time | shot | check | who | detail |\n|---|---|---|---|---|---|\n"
+           "| 12 | 0.40 | S02 | close | a+b | 0.80 m apart |\n")
+    assert gate.staging_rows(out) == ["| 12 | 0.40 | S02 | close | a+b | 0.80 m apart |"]
+    assert gate.staging_rows("# staging: x: 3 shots, 0 findings\n") == []
+    monkeypatch.setattr(gate, "_changed", lambda a, b, s: [])   # no film file changed: staging isn't run
+    assert gate.staging_problems("w", "abc") == []

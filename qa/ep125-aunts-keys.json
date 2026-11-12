@@ -1,27 +1,41 @@
 {
  "stage": "final",
- "film": "13546611908",
- "run": 42286406810,
- "sha": "6255237fbcfb15526dec35370c500273966a5984",
+ "film": "13635698333",
+ "run": 42522769671,
+ "sha": "9b8ddfdf39b5e7df9c6c0ed8b97bf6cf784f7483",
  "verdict": "fail",
- "date": "2026-11-06",
+ "date": "2026-11-08",
  "checked": [
-  "S42 51.0-52.7 s every frame vs old film",
-  "55.8-58.6 s every frame, eyes cropped at full size under ASLEEP",
-  "S47 room shot 56.93-57.67 s",
-  "frame diff new vs old film, every frame",
-  "odd-frame scan, every frame (single-frame render faults)",
-  "all 53 frames of process 40 (mod 64)",
-  "frames 0-63 (all process starts) and frame 0",
+  "frames 3296-3375 every frame, Aunt Lou's face (crop)",
+  "3304 and 3368 new vs old film 13546611908",
+  "every frame vs old film (mean and 12 px block diff)",
+  "single-frame dark-block scan, every frame, new and old",
+  "flat, black, clipped-white share per frame",
+  "shard seams (multiples of 64) and residue 40",
+  "S42 51.0-52.7 s every frame",
+  "55.8-57.7 s every frame (ASLEEP eyes, cuts 56.93 and 57.67 s)",
   "frames every 2 s at phone size",
-  "cuts at 56.93 and 57.67 s",
+  "first 3 s every frame",
+  "cover 40.2 s",
+  "every cast member's yaw per frame from the timeline (on camera)",
   "5 staging-lint rows",
-  "loudness, true peak, hf windows and tail",
+  "loudness, true peak, hf windows, tail, audio envelope vs old",
   "craft",
   "flash",
-  "package, opening and gate",
-  "video vs timeline frame count"
+  "package, opening and gate"
  ],
- "craft": "**ep125-aunts-keys**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.3 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 16.2 | 14.0– | ok |\n| macro.motion_energy_q | 7.03 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 7.12 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.061 | –0.25 | ok |\n| spec.shot_p90_s | 1.92 | –2.5 | ok |\n| macro.longest_still_s | 0.27 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.53 | –1.0 | ok |\n| macro.motion_energy_mean | 2.81 | 1.5– | ok |\n| spec.camera_move_share | 0.998 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.437 | 0.35– | ok |\n| macro.brightness_first_3s | 0.558 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.601 | 0.42– | ok |\n| macro.contrast_mean | 0.219 | 0.18– | ok |\n| spec.face_big_share | 0.68 | 0.4– | ok |\n| spec.caption_share | 0.981 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.695 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.036 | –0.25 | ok |\n| micro.idle_window_share | 0.033 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.99 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.4 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.7 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0444 | –0.08 | ok |\n| sound.hf_jump_max | 0.0126 | –0.04 | ok |\n\n0 block, 0 near, 0 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
- "notes": "FAIL. Fix: 110.13 s (frame 3304, S81, 'And she still') and 112.27 s (frame 3368, S82, 'ever wonder'): Aunt Lou's face draws solid black for 1 frame each (hair, glasses and earrings fine). Both frames are residue 40 mod 64, so one render process lost her face late in its run; neither is in the old film 13518631796 or the proof, and the story change doesn't touch S81/S82. Redraw (at least those frames) and re-check.\nFix 1 confirmed (S42, 'her front STEPS'): legs come in at 51.50-51.67 s and step forward smoothly over 51.83-52.23 s; the biggest frame change at 52.20 s is 1.6 (old 13.8), no 2-frame jump.\nFix 2 confirmed: eyes shut on every frame 55.80-56.90 s (cropped at full size) while 'Fast ASLEEP.' shows; cut to the wide-eyed room shot at 56.93 s on 'I watched myself'; handle shot cuts in at 57.67 s on HANDLE. Fix 3 (S47): wide eyes from the first frame of the room shot; only the known 4-frame blink at 57.27-57.37 s. Nothing at 70-72 s (S56/S57, door close-ups, no narrator).\nDiff vs old film: changed 51.47-52.20 s (S42), 55.70-56.30 s (S46, slight), 56.63-58.43 s (S46-S48), plus the two black-face frames; the rest matches within encode noise. Frames 0-63 and frame 0 are clean (Lou present, no floaters). Staging rows: S32 39.57 s and S35 43.17 s OK (Lou stepping out and running), S43 OK (only my legs on screen), S50 VISIBLE as meant (the blanket, no overlap), S60 OK (walking side by side, no overlap).\n3411 video frames vs 3415 timeline (last 4 of S82 dropped, audio full 113.83 s, no word lost). -14.1 LUFS / -1.7 dBTP, LRA 1.1; hf max 0.044, jump 0.013; tail fades into the loop. Flash house bar passes. Gate OPEN; opening confess (last upload ep92 is if).\nLongest still q 0.53 s (was 0.27): the shut-eyed hold on S46 at 56.27-56.80 s, meant and under the bar. Known, left alone: fountain or plant behind my head (S15, S75, S77), lock glyph reads as 8, tag on my hairline at 76.5 s (S60), blink at 57.33 s.\ncraft: 0 block, 0 near, 0 warn."
+ "fixes": [
+  {
+   "second": 49.07,
+   "shot": "S39",
+   "what": "Aunt Lou flips 153 degrees in one frame (frame 1472, 'on her porch,'): back to camera with the blanket on frames 1466-1471, square to camera on 1472. Her walk to the porch ends at L29> with the walk facing -27 and the key's yaw 125 lands at once. Arrive about 0.35 s earlier (pos key at 'L29>-0.35') and turn to 125 over a blend, or end the walk facing the camera."
+  },
+  {
+   "second": 51.43,
+   "shot": "S42",
+   "what": "My legs spin about 300 degrees in place over frames 1543-1551 (51.43-51.70 s, 'Somebody walks up') before stepping: the L32.1+0.05 key says yaw 305 after a key at yaw 0, so it turns the long way. Write -55 (not 305) there and at P01+0.35."
+  }
+ ],
+ "craft": "**ep125-aunts-keys**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.3 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 16.1 | 14.0– | ok |\n| macro.motion_energy_q | 7.01 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 7.12 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.061 | –0.25 | ok |\n| spec.shot_p90_s | 1.92 | –2.5 | ok |\n| macro.longest_still_s | 0.23 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.53 | –1.0 | ok |\n| macro.motion_energy_mean | 2.81 | 1.5– | ok |\n| spec.camera_move_share | 0.998 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.437 | 0.35– | ok |\n| macro.brightness_first_3s | 0.558 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.601 | 0.42– | ok |\n| macro.contrast_mean | 0.219 | 0.18– | ok |\n| spec.face_big_share | 0.68 | 0.4– | ok |\n| spec.caption_share | 0.981 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.695 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.036 | –0.25 | ok |\n| micro.idle_window_share | 0.033 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 69.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.99 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.4 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.044 | –0.08 | ok |\n| sound.hf_jump_max | 0.0126 | –0.04 | ok |\n\n0 block, 0 near, 0 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "FAIL on two turn faults the story files hold (both also in the old film 13546611908, missed by its qa); the render fault is fixed. Fix #380 holds: frames 3300-3372 all show Aunt Lou's face normally; 3304 (110.13 s, S81) and 3368 (112.27 s, S82) now read smiling with glasses, and they are the only frames that differ from the old film (12 px block diff 214/229 there, 10 or less everywhere else). No black-face frame anywhere: the dark-block scan finds only pupils, blinks and edges (22 frames, all looked at). No flat or black frame: the flattest frames (7.7 s green door with bolt, 24.6 s yellow door with handle, 36.0-36.6 s window camera) are real objects. Black share max 0.15 (9.3 s, Mr. Ames at his window at night), white share max 0.12. Seams at 1472, 2176, 3136 are a cut or Lou's flip.\nS42 step holds apart from the spin (legs step forward smoothly from 51.83 s). ASLEEP: eyes shut every frame 55.80-56.90 s, cut to wide eyes at 56.93 s, HANDLE at 57.67 s, known blink 57.27-57.33 s.\nMinor, left alone: my shoulders twist 26 degrees in one frame at 55.10 s (S45, frame 1653, yaw -32 to -58; fix with the same pass if easy); Lou stops her run square at 44.2 s (S35, the known staging row). Staging rows as before (S32, S35 lurch; S43, S50, S60 close, all OK).\nFirst second: Aunt Lou, warm-lit, face to camera in her teal doorway with her key ring, the 12-key tag top left, a slow push-in; 'My aunt has a key to every house HERE. Including YOURS.'\n-14.1 LUFS / -1.8 dBTP, LRA 1.0; hf max 0.044, jump 0.013; envelope per second matches the old film; tail loops into frame 0. Flash house bar passes (3f extended 1.1 s). Cover 40.2 s strong (Lou in the doorway, 12:01). Package ok, no spoiler, nephew narrator. Opening confess (matches 'My aunt has...'). Gate OPEN.\ncraft: 0 block, 0 near, 0 warn (matches the old final within 0.1)."
 }

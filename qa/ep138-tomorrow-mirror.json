@@ -1,0 +1,43 @@
+{
+ "stage": "final",
+ "film": "13574134439",
+ "run": 42371665084,
+ "sha": "dfc1f1dce21f608be34ca014bade56f7137247de",
+ "verdict": "fail",
+ "date": "2026-11-07",
+ "checked": [
+  "story unchanged since proof (only HANDOFF.md between 05c8518 and dfc1f1d)",
+  "every frame scanned for black, flat and one-colour regions, near-black dips and clipped-white planes (1625 frames)",
+  "staging.py (57 shots, 0 findings)",
+  "frames every 0.5 s and every frame 0-3 s at phone size, TV canvas",
+  "prop beats (S02 bar, S04b key, S06 paint, S12 bench, S17 bench)",
+  "first 3 s",
+  "loudness, true peak, 4 kHz windows, tail",
+  "polish",
+  "craft vs proof",
+  "flash",
+  "package",
+  "opening",
+  "gate",
+  "cover"
+ ],
+ "fixes": [
+  {
+   "second": "8.0-9.5",
+   "shot": "S04b, S04bb",
+   "what": "Mr. Kim's gold house key is missing. The props cue turns the key on, but it sits at his lowered hand behind the arm and never shows (no gold pixels in any frame). L04 says 'holding a gold house KEY' with KEY in key colour over a grinning man with empty hands. Pose Kim with the key raised at chest height on the camera side, as the shot plan says, so it reads big at phone size."
+  },
+  {
+   "second": "3.9-6.7",
+   "shot": "S03, S03b",
+   "what": "Should-fix: in this segment font a backward 12 reads as a plain '51', and the board fills about half the frame (the plan says small). Strangers will see 51, not a reversed 12. Keep it small in the wide, or skip the backward board and let L03 carry it."
+  },
+  {
+   "second": "44.3-45.5",
+   "shot": "S25",
+   "what": "Should-fix (carried from proof): the punch-in pushes the chrome post out of frame, so the 12 loses its glass marker for about 1 s. Move the post inward (glass fr)."
+  }
+ ],
+ "craft": "**ep138-tomorrow-mirror**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.4 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 23.4 | 14.0– | ok |\n| macro.motion_energy_q | 7.44 | 6.0– | ok |\n| macro.longest_still_q_s | 0.8 | –1.0 | ok |\n| spec.cuts_per_10s | 10.34 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.48 | –2.5 | ok |\n| macro.longest_still_s | 0.83 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 2.88 | 1.5– | ok |\n| spec.camera_move_share | 0.992 | 0.65– | ok |\n| spec.punch_per_10s | 0.74 | 0.4– | ok |\n| macro.brightness_mean | 0.667 | 0.35– | ok |\n| macro.brightness_first_3s | 0.638 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.265 | 0.42– | **warn** |\n| macro.contrast_mean | 0.213 | 0.18– | ok |\n| spec.face_big_share | 0.819 | 0.4– | ok |\n| spec.caption_share | 0.978 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.018 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.947 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.019 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 75.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.22 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.8 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.7 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0418 | –0.08 | ok |\n| sound.hf_jump_max | 0.0174 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Fail: the house key in S04b/S04bb (8.0-9.5 s) is never seen though L04 names it in key colour; the proof qa missed it, same picture. Everything else is clean and matches the proof.\nSecond one: bright teal gym, Sam (light tee) in a lit close-up facing camera, the chrome post at right, slow push, a blink at frame 1-2; 'If you look in Big Wendell's gym MIRROR, you see TOMORROW.' Cut to tomorrow-me in the glass at 1.7 s. Opening if matches L01; same tag as the last upload ep92 (if): queue note, not a fail.\nFrames: no black or flat frame (lowest mean 130/255 at frame 108, biggest one-colour flat region 22%, no dark dips); largest clipped white 29% at frame 413 (S07 Lena's white tee, a real object). staging 0 findings. Clues 14 (S19) and 12 (S25) read big; S17 bench plainly empty; bar (S02) and paint (S06) show. S21b back view and S17 head at the frame edge are short and read.\nSound: -14.1 LUFS, -1.7 dBTP, LRA 1.1; 4 kHz max 0.042, jump 0.017; voice 11.8 dB over the bed; BELIEVE ends about 53.8 s, music runs to the 54.17 s loop cut. Polish on.\nFlash: house bar pass (1/s, 3f 3/s, red 0, no bright cuts). Package clean (no spoiler, no husband, numerals only, no creature); cover 24.0 s Dre serious reads; gate OPEN.\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 10.34 (5.5-8.0), macro.saturation_mean 0.265 (0.42-). Same as the proof within 0.02; neither loses viewers."
+}
