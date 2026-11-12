@@ -490,7 +490,7 @@ def build_house(kit):
     fd = kit.light("hall.door", "AREA", (HXc, 36.8, ZP + 2.0), 330, "#ffe8c0", size=2.5, shadow=False)
     kit.aim(fd, (HXc, 39.5, ZP + 1.0))
     # porch fill: gold light under the roof so the porch faces read; and a soft face light toward the steps
-    jl = kit.light("jess.door", "AREA", (HXc, 37.2, ZP + 2.4), 450, "#ffe6c8", size=2.0, shadow=False)
+    jl = kit.light("jess.door", "AREA", (HXc + 0.2, 34.2, ZP + 1.9), 1100, "#ffe6c8", size=2.0, shadow=False)
     kit.aim(jl, (HXc, HY + 0.7, ZP + 1.5))
     pf = kit.light("porch.fill", "AREA", (HXc, HY - 3.6, ZP + 2.3), 520, "#ffe0a8", size=3.5, shadow=False)
     kit.aim(pf, (HXc, HY - 0.8, ZP + 1.0))
@@ -585,7 +585,7 @@ def build_insert(kit):
     kit.box("in.wall", (7, 0.3, 4.2), (ix, iy + 0.15, 2.1), pl("#4a8fd8", 0.7, spec=0.04))
     kit.box("in.ceil", (7, 4, 0.2), (ix, iy - 2.0, 3.3), kit.emit("#fff1dc", 0.7, "inceil"))
     kit.box("in.wall.l", (0.3, 4, 3.4), (ix - 3.5, iy - 2.0, 1.7), pl("#4a8fd8", 0.7))
-    kit.box("in.door", (1.3, 0.07, 2.15), (ix, iy - 0.04, 1.1), pl("#d4cebd", 0.6, spec=0.06), bevel=0.01)
+    kit.box("in.door", (1.3, 0.07, 2.15), (ix, iy - 0.04, 1.1), pl("#b3ab96", 0.6, spec=0.06), bevel=0.01)
     for k, (zz, hh) in enumerate(((0.45, 0.8), (1.55, 0.8))):
         kit.box(f"in.door.panel{k}", (0.8, 0.02, hh), (ix, iy - 0.085, zz + hh / 2), pl("#c2bcab", 0.6))
     trim = pl("#ddd8c9", 0.7)
@@ -755,7 +755,8 @@ def animate(kit, story, tl, t, ctx):
     """The face light on the hill is on for S14 only (it would wash the porch shots out), cut with the shot."""
     _animate(kit, story, tl, t, ctx)
     sid = next((x["id"] for x in tl["shots"] if x["start"] <= t < x["end"]), "")
-    return {"hill.face": 1.0 if sid == "S14" else 0.0}
+    return {"hill.face": 1.0 if sid == "S14" else 0.0,
+            "jess.door": 1.0 if sid in ("S25", "S26", "S27", "S28b") else 0.0}
 
 
 def _animate(kit, story, tl, t, ctx):

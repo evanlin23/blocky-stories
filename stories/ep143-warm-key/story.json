@@ -15,7 +15,7 @@
  "tail": 0.0,
  "fade_in": false,
  "fade_out": false,
- "rev": 10,
+ "rev": 11,
  "look": {
   "style": "closer",
   "fog": "#e8f3ff",
@@ -5188,7 +5188,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 10
+  "rev": 11
  },
  "set_moves": [
   "S05",
@@ -5200,7 +5200,9 @@
   "S04b",
   "S23b"
  ],
- "frames_ok": [],
+ "frames_ok": [
+  "S29"
+ ],
  "staging_ok": [
   "S29/hug"
  ],
