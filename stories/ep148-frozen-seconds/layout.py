@@ -15,8 +15,8 @@ def rim_y(x, r=R_OUT):
 
 
 SIT_Z = -0.18              # pos z of a sitter (hip on the rim top)
-ME_SIT = (-0.8, round(rim_y(-0.8) + 0.05, 3))
-LEO_SIT = (0.8, round(rim_y(0.8) + 0.05, 3))
+ME_SIT = (-0.7, round(rim_y(-0.7) + 0.05, 3))
+LEO_SIT = (0.7, round(rim_y(0.7) + 0.05, 3))
 PRETZEL = (0.25, round(rim_y(0.25, 2.5), 3))   # on its napkin, on the front of the rim top, between us
 # standing places on the plaza before we sit
 ME_STAND = (-0.7, 3.9)

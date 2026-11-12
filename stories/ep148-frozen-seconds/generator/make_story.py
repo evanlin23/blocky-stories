@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L22
@@ -43,9 +43,9 @@ def remap_all(items):
 
 
 D2R = math.pi / 180
-X = {"neutral": "neutral", "uneasy": "worried", "stunned": "wide", "sad": "worried", "cry": "crying",
-     "smile": "smile", "laugh": "laugh", "warm": "warm", "det": "hopeful", "sheepish": "sad-smile", "scared": "scared",
-     "shut": "shut"}
+X = {"neutral": "neutral", "uneasy": "nervous", "stunned": "shocked", "sad": "heartbroken", "cry": "heartbroken",
+     "smile": "delighted", "laugh": "crylaugh", "warm": "delighted", "det": "determined", "sheepish": "nervous",
+     "scared": "terrified", "shut": "delighted"}
 
 
 def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="solid", hat="none", hat_c="#333333",
@@ -65,15 +65,15 @@ def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="sol
 
 cast = {
     # me: a tall wavy brown mop, light tan skin, a green bomber, jeans
-    "me": person("#e0b184", "#3f8a4e", "#3d5a85", "#e8e4dc", hair="mop", hair_c="#6a4630", brow_w=1.5),
+    "me": person("#e0b184", "#3f8a4e", "#3d5a85", "#e8e4dc", hair="quiff", hair_c="#6a4630", brow_w=1.5, outline=0.06),
     # Leo: an orange beanie over short black hair, warm brown skin, a purple hoodie, chunky lime sneakers
-    "leo": person("#a8744a", "#7a4ad8", "#2f3a52", "#b8f04a", hair="cap", hair_c="#15110f", hat="beanie", hat_c="#f28a2a",
-                  extras=["hooddown"], brow_w=1.3),
-    "uncle": person("#d9a47a", "#e8e4dc", "#3a4a5a", "#5a4a3a", hair="cap", hair_c="#3a2a1a", extras=["apron"],
-                    extra_c="#f4f4f2", brow_w=1.5, sleeves="short"),
-    "neighbor": person("#e8b890", "#e0708a", "#5a6a8a", "#8a5a3a", hair="long", hair_c="#a8a8a8", eyes="lashes", hat="bucket", hat_c="#ecd58a"),
-    "walker": person("#c48a5e", "#2f6aa0", "#4a4a5a", "#2a2a30", hair="bun", hair_c="#2a1a12", eyes="lashes"),
-    "jogger": person("#f1c9a0", "#d9483a", "#2a2a38", "#f4f4f2", hair="spiky", hair_c="#4a2f1a", sleeves="short"),
+    "leo": person("#a8744a", "#7a4ad8", "#2f3a52", "#b8f04a", hair="buzz", hair_c="#15110f", hat="beanie", hat_c="#f28a2a",
+                  extras=["hooddown"], brow_w=1.3, outline=0.06),
+    "uncle": person("#d9a47a", "#e8e4dc", "#3a4a5a", "#5a4a3a", hair="bald", hair_c="#3a2a1a", extras=["apron"],
+                    extra_c="#f4f4f2", brow_w=1.5, sleeves="short", features=["mustache"], outline=0.06),
+    "neighbor": person("#e8b890", "#e0708a", "#5a6a8a", "#8a5a3a", hair="curtains", hair_c="#a8a8a8", eyes="lashes", hat="bucket", hat_c="#ecd58a", features=["glasses"], outline=0.06),
+    "walker": person("#c48a5e", "#2f6aa0", "#4a4a5a", "#2a2a30", hair="bigbun", hair_c="#2a1a12", eyes="lashes", outline=0.06),
+    "jogger": person("#f1c9a0", "#d9483a", "#2a2a38", "#f4f4f2", hair="spikes", hair_c="#4a2f1a", hair_c2="#f4d03a", sleeves="short", outline=0.06),
 }
 acting = {n: [] for n in cast}
 last = {n: [0, 0] for n in cast}
@@ -185,7 +185,7 @@ key("uncle", "L05.1", (KX + 0.55, KY + 1.55), yaw=0, expr="stunned", lean=38, ar
 shot("S05", "L05", cam(KX + 0.55, KY + 1.1, 0.95, 3.9, -32, 34, cz=1.25), _raw=True)
 cut("neighbor", "L06", (FX_, FY_ + 0.6), yaw=0, expr="sheepish")
 key("neighbor", "L06.1", (FX_, FY_ + 0.6), yaw=0, expr="sheepish", lean=12, head=[-10, 0], blend=0.3)
-shot("S06", "L06", cam(FX_ - 0.1, FY_ + 0.3, 1.6, 3.2, 10, 30), _raw=True)
+shot("S06", "L06", cam(FX_ - 0.1, FY_ + 0.3, 1.7, 4.8, 10, 30), _raw=True)
 
 # ===== 03 the count and the move (L07, L08, L09)
 cut("me", "L07", ME0, yaw=0, expr="neutral", head=[0, 0])
@@ -230,9 +230,9 @@ key("me", "L16.1", (MS[0], MS[1], SZ), yaw=0, keep_yaw=True, blend=0.9)
 key("leo", "L16.1", (LS[0], LS[1], SZ), yaw=0, keep_yaw=True, blend=0.9)
 cue("L16.1", "sit_me", s=1.0, dur=0.8)
 cue("L16.1", "sit_leo", s=1.0, dur=0.8)
-shot("S16a", "L16", ck((0, (0.0, -0.1, 1.6), (0.0, 5.55, 1.0), 30), (1, (0.0, 0.2, 1.6), (0.0, 5.55, 1.0), 30)), _raw=True)
+shot("S16a", "L16", ck((0, (0.0, -0.1, 1.7), (0.0, 5.55, 1.15), 27), (1, (0.0, 0.2, 1.7), (0.0, 5.55, 1.15), 27)), _raw=True)
 key("leo", "L16.3", expr="smile")
-shot("S16b", "L16.3", ck((0, (-0.35, 4.4, 1.4), (0.4, 5.5, 0.95), 18), (1, (-0.3, 4.45, 1.4), (0.4, 5.5, 0.95), 18)), _raw=True)
+shot("S16b", "L16.3", ck((0, (-0.9, 3.0, 1.35), (0.45, 5.5, 0.95), 24), (1, (-0.85, 3.05, 1.35), (0.45, 5.5, 0.95), 24)), _raw=True)
 
 # ===== 08 the freeze (L17, L18)
 cut("me", "L17", (MS[0], MS[1], SZ), yaw=0, expr="shut", head=[0, 0])
@@ -252,7 +252,7 @@ key("jogger", "L17.2", (7.0, 7.4), yaw=0)
 # ===== 09 Leo sits still (L20)
 cue("L20", "tag", mode=1.0, s=1230.0, dur=1.0)
 key("leo", "L20", expr="smile", head=[0, 0])
-shot("S20", "L20", ck((0, (0.55, 3.2, 0.5), (0.55, 5.5, 1.1), 24), (1, (0.55, 3.3, 0.5), (0.55, 5.5, 1.1), 24)), _raw=True)
+shot("S20", "L20", ck((0, (0.5, 2.8, 0.55), (0.5, 5.5, 1.4), 22), (1, (0.5, 2.9, 0.55), (0.5, 5.5, 1.4), 22)), _raw=True)
 
 # ===== 10 I turn (L21, L22)
 cue("L21", "tag", mode=1.0, s=1100.0, dur=1.0)
@@ -273,7 +273,7 @@ cue("L22", "tag", mode=1.0, s=950.0, dur=1.0)
 key("me", "L22", expr="smile", arms=[0, 70], head=[0, 15])
 key("me", "L22+0.15", expr="worried", yaw=22, head=[62, 0], arms=[0, 0], blend=0.75)
 cue("L22+0.15", "note_me", m=0.0)
-shot("S22a", "L22", cam(0.0, MS[1], 1.1, 6.6, 0, 36), _raw=True)
+shot("S22a", "L22", cam(-0.3, MS[1], 1.3, 6.6, 0, 36), _raw=True)
 shot("S22b", "L22.2", cam(-0.3, 8.0, 3.0, 8.0, 0, 34, cz=1.5), _raw=True)
 cue("L23", "tag", mode=1.0, s=800.0, dur=1.0)
 key("me", "L23", expr="scared", yaw=18, head=[40, 0])
@@ -284,7 +284,7 @@ cue("L24", "tag", mode=1.0, s=650.0, dur=1.0)
 cue("L24", "bite", b=1.0)
 key("me", "L24", expr="stunned", yaw=0, head=[0, 5])
 shot("S24", "L24", [[0, [PZ[0] - 0.05, PZ[1] - 1.25, 1.05], [PZ[0] - 0.05, PZ[1], 0.62], 40],
-                    [1, [-0.2, PZ[1] - 3.7, 1.3], [-0.2, PZ[1], 1.25], 36]], _raw=True)
+                    [1, [-0.35, PZ[1] - 4.4, 1.35], [-0.35, PZ[1], 1.3], 26]], _raw=True)
 cue("L25", "tag", mode=1.0, s=520.0, dur=1.0)
 cut("leo", "L25", (0.62, 8.7, 0.3), yaw=0, expr="neutral", arms=[0, 0])
 shot("S25", "L25", ck((0, (1.4, 7.1, 0.42), (0.4, 8.7, 0.5), 30), (1, (1.35, 7.15, 0.42), (0.4, 8.7, 0.5), 30)), _raw=True)
@@ -338,6 +338,21 @@ remap_all(cues)
 for k_ in acting.values():
     remap_all(k_)
 shots, names = [], {}
+V3_SKIP = {"S11a", "S15b", "S25", "S16a", "S16b", "S20", "S06", "S24", "S05", "S08a", "S22a", "S22b", "S17b", "S18a", "S18b"}
+V3_WIDE = {"S32a": 1.14, "S32b": 1.14, "S37a": 1.1, "S24": 1.0}
+V3_MORE = {"S21a": 1.4, "S21b": 1.15, "S26": 1.3, "S27": 1.2, "S28": 1.25, "S29": 1.3, "S37b": 1.25, "S30": 1.1}
+for sid, at, camera, kw in SH:   # v3 heads are about 40% bigger: back off and lift the aim a little
+    if sid in V3_SKIP:
+        continue
+    f = V3_WIDE.get(sid, 1.28) * V3_MORE.get(sid, 1.0)
+    for k in camera:
+        p, t_ = k[1], k[2]
+        if math.dist(p, t_) < 6.5 and sid not in V3_WIDE:
+            if 1.2 <= t_[2] <= 1.6:
+                t_[2] = round(t_[2] + 0.12, 3)
+                p[2] = round(p[2] + 0.12, 3)
+        for i_ in range(3):
+            p[i_] = round(t_[i_] + (p[i_] - t_[i_]) * f, 3)
 for i, (sid, at, camera, kw) in enumerate(SH):
     s = {"id": sid, "cam": camera, "step": 2}
     if i:
@@ -390,7 +405,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "rev": REV,
-    "look": {"style": "closer", "fog": "#dfe8f4", "fog_density": 0.001, "fog_start": 60.0, "sky": "#6fb4f0",
+    "look": {"style": "v3", "fog": "#dfe8f4", "fog_density": 0.001, "fog_start": 60.0, "sky": "#6fb4f0",
              "sky_strength": 1.0, "exposure": 0.05, "flash_safe": True, "polish": polish},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.012, -0.02], "saturation": 1.08, "contrast": 1.04,
               "vignette": 0.15, "bloom": 0.12, "grain": 0.008},
@@ -405,6 +420,10 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
+    "framing_ok": ["S08a", "S08b", "S09a", "S15a", "S15b", "S21a", "S21b", "S22a", "S22b"],
+    "staging_ok": ["S22a/leo", "S21b/leo", "S21a/leo"],
+    "clip_ok": ["fleck"],
+    "frames_ok": ["S05"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

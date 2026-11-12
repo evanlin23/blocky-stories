@@ -370,7 +370,20 @@ def build(kit, story, tl):
 
 
 def _first_frame(kit, story):
+    """v3 draws no hats, so Leo's orange beanie and the neighbour's bucket hat are built here on their heads."""
     W["inited"] = True
+    top = 1.15   # faces_v3.HEAD3_H / 2
+    lh = bpy.data.objects.get("leo.headg")
+    if lh is not None:
+        c = kit.plastic("#f28a2a", 0.7)
+        kit.box("leo.beanie", (2.92, 2.22, 0.78), (0, 0.0, top + 0.09), c, lh, bevel=0.22)
+        kit.box("leo.beaniecuff", (3.0, 2.3, 0.3), (0, 0.0, top - 0.14), kit.plastic("#e07a1a", 0.7), lh, bevel=0.06)
+        kit.box("leo.beaniepom", (0.6, 0.6, 0.4), (0, 0.2, top + 0.6), kit.plastic("#fff1d8", 0.8), lh, bevel=0.2)
+    nh = bpy.data.objects.get("neighbor.headg")
+    if nh is not None:
+        c = kit.plastic("#ecd58a", 0.9)
+        kit.cyl("nb.crown", 1.5, 0.6, (0, 0.0, top + 0.2), c, nh, n=24, r2=1.35)
+        kit.cyl("nb.brim", 2.2, 0.08, (0, -0.1, top - 0.08), c, nh, n=28)
 
 
 def animate(kit, story, tl, t, ctx):
@@ -454,7 +467,7 @@ def animate(kit, story, tl, t, ctx):
         hp = lh.matrix_world.translation
         fl.location = (hp.x + 0.05, hp.y - 0.15, hp.z - 0.1)
     # the notes follow the holder's head
-    for who, off in (("me", (-0.3, -0.6, -0.45)), ("leo", (-0.3, -0.6, -0.45))):
+    for who, off in (("me", (-0.45, -0.6, -0.8)), ("leo", (-0.45, -0.6, -0.8))):
         nm = sample(f"note_{who}", tl, t, {"m": 0.0})["m"]
         root = W["notes"][who]
         gh = bpy.data.objects.get(f"{who}.headg")
