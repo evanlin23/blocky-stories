@@ -494,7 +494,7 @@ def build(kit, story, tl):
     for j in range(6):
         tree(kit, f"rt{j}", qx - 12 - j * 5.0, G.POST_Y + 8 + (j % 2) * 3, 5.0, "#d4f0b8", fruit=3, rng=j)
     for j in range(8):
-        tree(kit, f"ra{j}", qx - 9 - (j % 2) * 5, -40 + j * 16, 5.0, "#d4f0b8", fruit=2, rng=j)
+        tree(kit, f"ra{j}", qx - 9 - (j % 2) * 5, -40 + j * 16 - (4.5 if j == 4 else 0), 5.0, "#d4f0b8", fruit=2, rng=j)
         tree(kit, f"rb{j}", qx + 9 + (j % 2) * 5, -36 + j * 16, 5.0, "#c8e8a8", fruit=2, rng=j)
     for j, (x, y, r, c) in enumerate([(-60, 10, 40, "#7cc464"), (60, 30, 50, "#6fb85a"), (-30, 70, 45, "#86c870"),
                                       (30, 100, 50, "#9ad07e"), (-10, 135, 55, "#a8d88c"), (0, -90, 70, "#7cc464"),
