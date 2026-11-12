@@ -6,6 +6,5 @@
   "cover_s": 6.0,
   "shape": "hidden-guest",
   "opening": "count",
-  "lane": "puzzle",
-  "hold": "batch 15: scripts only, not built yet"
+  "lane": "puzzle"
 }
