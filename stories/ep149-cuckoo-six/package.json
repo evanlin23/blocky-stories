@@ -1,0 +1,11 @@
+{
+  "title": "Grandpa's Clock Cuckooed SIX Times For Five 🕰️",
+  "description": "Grandpa's cuckoo clock counts the people in the house. On his birthday there were five of us, and it went six times.\n\nFour places to hide. You've got until Grandpa cuts the cake to find the sixth.\n\nIt's made up. A blocky puzzle, built with code and Blender.",
+  "pin": "Would C, the closet, have been a fair guess? What would you have needed to see?",
+  "made_for_kids": false,
+  "cover_s": 6.0,
+  "shape": "hidden-guest",
+  "opening": "count",
+  "lane": "puzzle",
+  "hold": "batch 15: scripts only, not built yet"
+}
