@@ -287,6 +287,9 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   red (`red_line` 0.78), because the tighter crops enlarge red areas.
 - **Punch-ins** (v2): key words only (the builder's `emph`, the hook, big words, all-caps captions, a key word that
   ends its line), at most `punch_rate` (0.7) per 10 s, evenly spread. Hits keep their own 4 s spacing.
+  `punch_max: 4` (opt-in, animation audit 2026-11-12) keeps at most that many a film: the hook's own punch-in exactly as
+  it was (the owner's swoosh, with its whoosh), then the `twist` line, then the rest by their usual priority (ep54:
+  10 → 4). `fill` is off with it.
 - **Picture:** the `bright` grade raises exposure to at least 1.12 (v2.3) and saturation to 1.1, caps contrast at 1.05,
   the vignette at 0.2 and grain at 0.009, and adds a toe that lifts the darkest tones instead of crushing them (by scaling each pixel with its
   luma's lift, so colours keep their saturation). The
