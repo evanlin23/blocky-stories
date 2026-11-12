@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 20
+REV = 21
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 SPLITS = {"on his LANDLORD'S couch.": [3, 1], "it was a dumb FIGHT,": [3, 2], "in a green ARMCHAIR,": [3, 1],
@@ -98,7 +98,7 @@ cast = {
                   pattern_c="#7a9ab8", eyes="lashes", brow_w=1.9, extras=["apron"], extra_c="#ffc94a", width=0.96),
     "grandpa": person("#e8b890", "#2f6b4a", "#5a5048", "#4a3626", hair="cap", hair_c="#f4f4f0", collar="#f2e6c8",
                       extras=["glasses"], extra_c="#6a6a70", width=1.02),
-    "m1": person("#c98f68", "#ffffff", "#3a4a6a", "#2a2a2a", hair="cap", hair_c="#1a1410", extras=["tie"], extra_c="#e8493a"),
+    "m1": person("#c98f68", "#d98a2b", "#3a4a6a", "#2a2a2a", hair="cap", hair_c="#1a1410", extras=["tie"], extra_c="#2a3a5a"),
     "m1mom": person("#e6b48c", "#e8845a", "#6a5a4a", "#7a5a3a", hair="bun", hair_c="#cfcfd4", eyes="lashes", extras=["apron"],
                     extra_c="#fffaf0", width=0.96),
     "walker": person("#b98456", "#7fb070", "#4a4036", "#2a2a2a", hair="buzz", hair_c="#1a1410", hat="ballcap", hat_c="#c0543a",
@@ -301,7 +301,8 @@ sit("grandpa", "L12")
 put("me", "L12", list(GRUG), 0, expr="worried", arms=[30, 30])
 swirl("L12", GRUG[0], GRUG[1], 0.95, 0.9)
 beat("me", "L12.1", expr="worried", arms=[70, 70], head=[0, -5])
-go("me", "L12.2", [GP - 5.8, 0.4], run=True, expr="scared")
+beat("me", "L12.1+0.05", yaw=-87)
+go("me", "L13", [GP - 5.8, 0.4], run=True, expr="scared")
 shot("L12", F(GP - 0.1, 1.2, 1.35, 4.6, 36, dx=0.2, push=0.14), "sorry1")
 shot("L12.2", F(GP - 2.0, 0.7, 1.2, 5.0, 32, dx=1.5, push=0.12), "ran1")
 # L13: "Bless YOU."

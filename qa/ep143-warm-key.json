@@ -1,0 +1,32 @@
+{
+ "stage": "proof",
+ "film": "proof-43312133162",
+ "run": 43312133162,
+ "sha": "a23a30edc6cbd6ead5c22c9b4a3a233a3de0961f",
+ "verdict": "pass",
+ "date": "2026-11-12",
+ "checked": [
+  "artifact sha vs branch head",
+  "every frame: flat-colour, dark, bright, black, frozen scan",
+  "frames every 0.5 s at phone size",
+  "frames 0-89 (first 3 s)",
+  "darkest and brightest frames",
+  "mid-shot jumps (punch-ins vs snaps)",
+  "staging: S14 walk, S23a, S26, S28a",
+  "TV-size canvas (cover)",
+  "captions vs spoken words",
+  "frame count vs timeline",
+  "loudness and true peak",
+  "4 kHz 5 s windows",
+  "end tail and loop",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening",
+  "gate",
+  "cover"
+ ],
+ "craft": "**ep143-warm-key**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.6 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 22.8 | 14.0– | ok |\n| macro.motion_energy_q | 7.76 | 6.0– | ok |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 8.62 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.053 | –0.25 | ok |\n| spec.shot_p90_s | 1.88 | –2.5 | ok |\n| macro.longest_still_s | 0.07 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.0 | –1.0 | ok |\n| macro.motion_energy_mean | 3.23 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.7 | 0.4– | ok |\n| macro.brightness_mean | 0.597 | 0.35– | ok |\n| macro.brightness_first_3s | 0.653 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.391 | 0.42– | **warn** |\n| macro.contrast_mean | 0.238 | 0.18– | ok |\n| spec.face_big_share | 0.737 | 0.4– | ok |\n| spec.caption_share | 0.977 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.711 | 0.5– | ok |\n| micro.walk_dead_end_share | 1.0 | –0.25 | **warn** |\n| micro.idle_window_share | 0.0 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 55.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.8 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 14.8 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0389 | –0.08 | ok |\n| sound.hf_jump_max | 0.0122 | –0.04 | ok |\n\n0 block, 0 near, 4 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Proof 270x480 x4 upscaled to 1080x1920, 1287 frames = timeline (42.9 s, 38 shots); sha a23a30ed is the branch head and the last commit touching the story. Scanned every frame: no frame mostly one flat colour (max modal-colour share 0.32: S07 13.4 s, S22 35.2 s door, S25 37.9 s), darkest frame 0.37 luma (S32 42.8 s, warm orange hall), brightest 0.77 (S05 9.5 s, sunny wall, not clipped), no black, frozen or missing frames. All mid-shot jumps are punch-ins on key words (S02 3.37 s NINE, S03 5.87 s ALWAYS, S05 10.23 s DINOSAUR, S13 21.3 s OVEN, S14 22.8 s, S32 42.1 s WAY), none jar.\nStaging: S14 walk 22.3-23.0 s reads as a stride, key swings with the hand, no snap; S23a Mom and Dad stand arm to arm (touching, not merged); S26 Jess holds her matching keychain up by her shoulder, hand and ring read; no limbs through bodies, no teleports, no turn snaps. clip.json: 0 hits over 204 times. Flash: house bar passes (general 1/s, 3f extended 2.2 s, red 0).\nSecond one: a sunny cream apartment entry, me (uneasy, face big) beside the brass key on a green dinosaur keychain on its hook, the key-tag marker top left with one orange pip lit, slow push. 'If your key goes WARM, somebody's waiting behind its DOOR.' Rule by 0:01, stakes (L02 'the house we sold NINE years ago is warm') 2.7-4.9 s, about me by 0:03, no backstory before 0:15. Cover 21.3 s (S13): stunned me holding the key in an oven mitt, five pips; strong on phone and TV.\nAudio: -14.1 LUFS, true peak -1.8 dBTP, LRA 1.2; 4 kHz share 0.023-0.043 in every 5 s window, no jumps; voice 14.8 dB over the bed, never buried; captions in sync (p90 55 ms), the cuts land on the words (S22 'Click' 35.23 s). The 0.4 s music drop (P01, 31.3-31.7 s) is the designed beat before 'I put the key in the lock'. 'my WAY' finishes at 42.55 s with 0.35 s of bed after it, then loops cleanly into frame 0.\nPolish on: punch-ins on emphasis words, longest still 0.07 s, caption pop clean, shadows hold on a TV canvas, soft hits. Reveal L24 at 39.0-41.1 s (last 4 s), one loop line after it, resting on the keychain (L06), the texts (L11/L12) and the sticker (L17-L19) plants.\nPackage: title, description and pin match the film (the pin's 'one pip lit in the first shot' is true at frame 0); nothing spoils the twist, no 'husband'. Opening 'if' matches L01; last upload ep137 ('must') and the queue tail ep129 ('ban') differ. Gate: everything passes but the proof qa file (this file).\ncraft: 0 block, 0 near, 4 warn: spec.cuts_per_10s 8.62 (5.5-8.0), macro.saturation_mean 0.391 (0.42-), micro.walk_dead_end_share 1.0 (-0.25), sound.voice_bed_gap_db 14.8 (8.0-14.0). Looked at each: fast cuts read clean, pastel sunny palette reads bright, the only walk (S14) cuts away mid-stride on purpose, the voice gap just keeps the words clear. None would lose viewers.\nVerdict pass. Should-fix only (not a fail): none."
+}
