@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 11
+REV = 12
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -230,15 +230,10 @@ me_a("L06.1", "smile")
 mouth("me", "L06.1", "L06>", 0.4)
 shot("S06b", "L06.1", cam(0.3, 2.6, 1.55, 1.0, 0, 36, cz=1.5))
 
-# ===== 03 the old house (L07 to L09)
-show("L07")
-shot("S07", "L07", camp([60.0, 8.0, 0.07 * 8 + 1.7], [60.0, 36.0, ZP + 2.6], 24, pos2=[60.0, 10.0, 0.07 * 10 + 1.7]))
-show("L08", "me")
-me_a("L08", "warm")
-mouth("me", "L08", "L08>", 0.3)
-shot("S08", "L08", cam(0.3, 2.6, 1.5, 1.05, -12, 36, cz=1.5))
+# ===== 03 the old house (L09; L07 and L08 are cut)
 show("L09")
-shot("S09a", "L09", camp([61.6, 23.5, ZH + 1.6], [59.6, 35.0, ZP + 1.4], 24, pos2=[61.2, 24.5, ZH + 1.6]))
+shot("S07", "L09", camp([60.0, 8.0, 0.07 * 8 + 1.7], [60.0, 36.0, ZP + 2.6], 24, pos2=[60.0, 10.0, 0.07 * 10 + 1.7]))
+shot("S09a", "L09.1", camp([61.6, 23.5, ZH + 1.6], [59.6, 35.0, ZP + 1.4], 24, pos2=[61.2, 24.5, ZH + 1.6]))
 show("L09.2", "me")
 me_a("L09.2", "worried")
 mouth("me", "L09.2", "L09>", 0.4)
@@ -279,18 +274,18 @@ cue("L13", "key", mode="hand", who="me")
 me_a("L13", "wide", arms=(0, 86))
 mouth("me", "L13", "L13>", 0.4)
 shot("S13", "L13", cam(0.55, 2.35, 1.5, 1.5, 0, 36, cz=1.5))
-cue("L14", "mitt", v=0.0)
+cue("L15", "mitt", v=0.0)
 
-# ===== 05 the hill (L14 to L19)
-show("L14", "me")
-place("L14", "me", (60.15, 17.6, 0.07 * 17.6), 180, "worried", arms=[0, 86])
-key("me", "L14>", [60.15, 20.4, 0.07 * 20.4], yaw=180, expr="worried", arms=[0, 86], blend=0.25)
-shot("S14", "L14", camp([60.2, 25.6, 0.07 * 25.6 + 1.6], [60.15, 19.0, 0.07 * 19 + 1.25], 36))
-show("L15")
-cue("L15", "key", mode="none", who="me")
-shot("S15a", "L15", camp([58.4, 25.0, ZH + 1.6], [60.0, 36.0, ZP + 2.3], 26, pos2=[58.8, 26.0, ZH + 1.6]))
-cue("L15.2", "curtain", v=1.0, dur=0.6)
-shot("S15b", "L15.2", camp([60.0, 22.5, ZH + 1.6], [60.0, 36.0, ZP + 3.9], 40, pos2=[60.0, 23.5, ZH + 1.7]))
+# ===== 05 the hill (L15 to L19; L14 is merged into L15)
+show("L15", "me")
+place("L15", "me", (60.15, 17.6, 0.07 * 17.6), 180, "worried", arms=[0, 86])
+key("me", "L15.2", [60.15, 20.4, 0.07 * 20.4], yaw=180, expr="worried", arms=[0, 86], blend=0.25)
+shot("S14", "L15", camp([60.2, 25.6, 0.07 * 25.6 + 1.6], [60.15, 19.0, 0.07 * 19 + 1.25], 36))
+show("L15.2")
+cue("L15.2", "key", mode="none", who="me")
+shot("S15a", "L15.2", camp([58.4, 25.0, ZH + 1.6], [60.0, 36.0, ZP + 2.3], 26, pos2=[58.8, 26.0, ZH + 1.6]))
+cue("L15.3", "curtain", v=1.0, dur=0.6)
+shot("S15b", "L15.3", camp([60.0, 22.5, ZH + 1.6], [60.0, 36.0, ZP + 3.9], 40, pos2=[60.0, 23.5, ZH + 1.7]))
 cue("L16", "curtain", v=0.0, dur=0.6)
 show("L16", "me")
 place("L16", "me", (60.3, 30.4, ZH), 0, "scared", arms=[0, 0])
@@ -340,7 +335,7 @@ cue("L22", "key", mode="none", who="me")
 show("L22")
 shot("S22", "L22", camp([HX + 0.9, HY - 2.9, ZP + 1.5], [HX + 0.2, HY + 1.5, ZP + 1.3], 28, pos2=[HX + 0.6, HY - 2.3, ZP + 1.5]))
 
-# ===== 07 the reveal (L23 to L27)
+# ===== 07 the reveal (L23, L27, L24, L32)
 MOM, DAD = (HX + 0.5, 38.5, ZP), (HX - 0.7, 39.0, ZP)
 show("L23", "mom", "dad")
 place("L23", "mom", MOM, 0, "laugh", arms=[0, 0])
@@ -350,60 +345,32 @@ JESS_F = (HX + 0.45, 37.2, ZP)
 show("L23.2", "jess")
 place("L23.2", "jess", JESS_F, 0, "laugh", arms=[0, 0])
 shot("S23b", "L23.2", cam(HX - 0.05, 37.2, ZP + 1.05, 1.7, 0, 34, cz=ZP + 1.1))
-show("L24", "me")
-place("L24", "me", (HX - 0.2, HY - 1.0, ZP), 0, "wide", arms=[0, 0])
-mouth("me", "L24", "L24>", 0.3)
-shot("S24", "L24", cam(HX - 0.2, HY - 1.0, ZP + 1.5, 0.95, 4, 36, cz=ZP + 1.45))
-show("L25", "jess")
-place("L25", "jess", (HX + 0.0, HY + 0.7, ZP), 0, "sly", arms=[0, 0])
-mouth("jess", "L25", "L25>", 0.35)
-shot("S25", "L25", cam(HX + 0.0, HY + 0.7, ZP + 1.5, 1.0, -6, 34, cz=ZP + 1.45))
-# S26: the reveal picture
-show("L26", "jess", "mom", "dad")
-place("L26", "jess", (HX + 0.0, HY + 0.7, ZP), 0, "laugh", arms=[0, 86])
-place("L26", "mom", (HX + 0.5, 38.6, ZP), 0, "laugh", arms=[0, 0])
-place("L26", "dad", (HX - 0.95, 39.0, ZP), 0, "laugh", arms=[0, 0])
-cue("L26", "key", mode="jess", who="jess")
-shot("S26", "L26", cam(HX + 0.22, HY + 0.7, ZP + 1.4, 1.45, 0, 34, cz=ZP + 1.4))
+# L27: Jess asks one last time
 show("L27", "jess")
-place("L27", "jess", (HX + 0.0, HY + 0.7, ZP), 0, "laugh", arms=[0, 0])
-cue("L27", "key", mode="none", who="me")
-mouth("jess", "L27", "L27>", 0.5)
-shot("S27", "L27", cam(HX + 0.0, HY + 0.7, ZP + 1.6, 0.8, 8, 40, cz=ZP + 1.55))
-
-# ===== 08 why it worked (L28 to L32)
-cue("L28", "lock", v=1.0)
-cue("L28", "key", mode="lock", who="me")
-show("L28")
-shot("S28a", "L28", camp([INS[0] + 1.3, INS[1] - 2.8, 1.2], [INS[0] + 0.38, INS[1], 1.05], 36,
+place("L27", "jess", (HX + 0.0, HY + 0.7, ZP), 0, "sly", arms=[0, 0])
+mouth("jess", "L27", "L27.1", 0.35)
+shot("S25", "L27", cam(HX + 0.0, HY + 0.7, ZP + 1.5, 1.0, -6, 34, cz=ZP + 1.45))
+show("L27.1", "me")
+place("L27.1", "me", (HX - 0.2, HY - 1.0, ZP), 0, "wide", arms=[0, 0])
+shot("S24", "L27.1", cam(HX - 0.2, HY - 1.0, ZP + 1.5, 0.95, 4, 36, cz=ZP + 1.45))
+# L24: the reveal picture, then the old lock
+show("L24", "jess", "mom", "dad")
+place("L24", "jess", (HX + 0.0, HY + 0.7, ZP), 0, "laugh", arms=[0, 86])
+place("L24", "mom", (HX + 0.5, 38.6, ZP), 0, "laugh", arms=[0, 0])
+place("L24", "dad", (HX - 0.95, 39.0, ZP), 0, "laugh", arms=[0, 0])
+cue("L24", "key", mode="jess", who="jess")
+mouth("jess", "L24", "L24.2", 0.4)
+shot("S26", "L24", cam(HX + 0.22, HY + 0.7, ZP + 1.4, 1.45, 0, 34, cz=ZP + 1.4))
+cue("L24.2", "lock", v=1.0)
+cue("L24.2", "key", mode="lock", who="me")
+show("L24.2")
+shot("S28a", "L24.2", camp([INS[0] + 1.3, INS[1] - 2.8, 1.2], [INS[0] + 0.38, INS[1], 1.05], 36,
                          pos2=[INS[0] + 1.0, INS[1] - 2.4, 1.15]))
-cue("L28.2", "lock", v=0.0)
-show("L28.2", "jess")
-place("L28.2", "jess", (HX + 0.0, HY + 0.7, ZP), 0, "warm", arms=[0, 0])
-mouth("jess", "L28.2", "L28>", 0.35)
-shot("S28b", "L28.2", cam(HX + 0.0, HY + 0.7, ZP + 1.55, 0.9, -6, 38, cz=ZP + 1.5))
-cue("L29", "key", mode="none", who="me")
-show("L29", "jess", "me")
-JH, MH = (HX - 0.45, HY + 2.0, ZP), (HX + 0.45, HY + 2.0, ZP)
-place("L29", "me", MH, 0, "laugh", arms=[0, 0])
-place("L29", "jess", (HX - 1.1, HY + 2.0, ZP), 0, "laugh", arms=[0, 0])
-key("jess", "L29+0.2", list(JH), yaw=0, expr="laugh", arms=[0, 75], side=[0, 0], blend=0.4)
-key("me", "L29+0.2", list(MH), yaw=0, expr="laugh", arms=[75, 0], side=[0, 0], blend=0.4)
-shot("S29", "L29", cam(HX + 0.0, HY + 2.0, ZP + 1.4, 2.0, 0, 34, cz=ZP + 1.4))
-show("L30", "jess")
-place("L30", "jess", (HX + 0.0, HY + 1.5, ZP), 0, "sly", arms=[0, 0])
-mouth("jess", "L30", "L30.3", 0.35)
-shot("S30a", "L30", cam(HX + 0.0, HY + 1.5, ZP + 1.55, 0.9, 6, 38, cz=ZP + 1.5))
-show("L30.3", "me")
-place("L30.3", "me", (HX + 0.0, HY + 1.5, ZP), 0, "polite", arms=[0, 0])
-key("me", "L30.5", yaw=0, expr="warm", blend=0.4)
-mouth("me", "L30.3", "L30>", 0.35)
-shot("S30b", "L30.3", cam(HX + 0.0, HY + 1.5, ZP + 1.55, 0.9, -8, 38, cz=ZP + 1.5))
-show("L31")
-cue("L31", "key", mode="hook2", who="me", drop=1.0)
-cue("L31+0.3", "key", mode="hook2", who="me", drop=0.0, dur=0.7)
-cue("L31", "heat", v=5.0)
-shot("S31", "L31", camp([HX + 0.2, HY + 4.0, ZP + 1.6], [HX + 1.0, HY + 0.4, ZP + 1.4], 30, pos2=[HX + 0.5, HY + 3.2, ZP + 1.6]))
+
+# ===== 08 the loop line (L32)
+cue("L32", "lock", v=0.0)
+cue("L32", "key", mode="hook2", who="me", drop=0.0)
+cue("L32", "heat", v=5.0)
 show("L32", "me")
 place("L32", "me", (HX + 0.7, HY + 0.9, ZP), 180, "warm", arms=[0, 0])
 mouth("me", "L32", "L32>", 0.35)
@@ -436,7 +403,7 @@ music = {
     "root": 55, "mode": "minor", "bpm": 96, "seed": 143,
     "sections": [
         {"at": 0, "voices": ["musicbox", "pad"], "energy": 0.45},
-        {"at": "L14", "voices": ["pulse", "drone"], "energy": 0.35},
+        {"at": "L15", "voices": ["pulse", "drone"], "energy": 0.35},
         {"at": "L16", "voices": ["drone"], "energy": 0.25},
         {"at": "L20", "voices": ["drone", "pad", "choir"], "energy": 0.45},
         {"at": "L23", "mode": "major", "voices": ["musicbox", "piano", "pad", "choir"], "energy": 0.75},
@@ -446,8 +413,8 @@ music = {
 sound = {
     "floor": "wood", "steps_db": -22,
     "ambience": [{"kind": "hum", "from": "L01.1", "to": "L01>", "lufs": -38},
-                 {"kind": "wind", "from": "L07", "to": "L07>", "lufs": -44},
-                 {"kind": "wind", "from": "L14", "to": "L19>", "lufs": -42}],
+                 {"kind": "wind", "from": "L09", "to": "L09>", "lufs": -44},
+                 {"kind": "wind", "from": "L15", "to": "L19>", "lufs": -42}],
     "sfx": sfx,
     "music_drops": [{"from": "P01", "to": "P01>"}],
     "rev": REV,
@@ -457,7 +424,7 @@ remap_all(music["sections"])
 remap_all(sound["ambience"])
 remap_all(sound["music_drops"])
 SWAY = ["S15a", "S15b", "S16", "S17", "S18", "S19", "S19b", "S21a", "S21b"]
-polish = {"reveal": ["L22", "L24"], "twist": "L23", "emph": ["L01.2", "L02.2", "L23.3", "L24.1", "L26.2"],
+polish = {"reveal": ["L22", "L24"], "twist": "L23", "emph": ["L01.2", "L02.3", "L23.3", "L24.1"],
           "quiet": [], "hold": ["S17", "S18", "S19", "S19b"], "sway": True}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
@@ -492,10 +459,10 @@ story = {
     "fx": [],
     "music": music,
     "sound": sound,
-    "set_moves": ["S05", "S15b", "S22", "S31"],
+    "set_moves": ["S05", "S15b", "S22"],
     "framing_ok": ["S04b", "S23b"],
-    "frames_ok": ["S29"],
-    "staging_ok": ["S29/hug"],
+    "frames_ok": [],
+    "staging_ok": [],
     "phonemes": {"Jess": "ʤˈɛs", "jess": "ʤˈɛs"},
     "homophones": {"just": "jess"},
 }
