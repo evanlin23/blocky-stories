@@ -58,7 +58,7 @@ cast = {
     # me: a man of 27, short spiky black crop, light olive skin, navy windbreaker, khakis
     "me": person(SKIN, "#26386a", "#c9b58a", "#f2f2f2", hair="spiky", collar="#1c2a52"),
     # Jess, 31: long black hair (a ponytail in set.py), the same skin, a red sweater, round earrings (set.py)
-    "jess": person(SKIN, "#d8322f", "#3a4a6a", "#f2f2f2", hair="long", eyes="lashes", collar="#f4e6dc"),
+    "jess": person(SKIN, "#c01e2a", "#3a4a6a", "#f2f2f2", hair="long", eyes="lashes", collar="#f4e6dc"),
     # Mom: short gray hair, a yellow cardigan
     "mom": person("#e6c19a", "#f2c84a", "#6a5a8a", "#f2f2f2", hair="cap", hair_c="#b9b9c2", eyes="lashes",
                   collar="#fff6d8"),
@@ -355,12 +355,12 @@ place("L27.1", "me", (HX - 0.2, HY - 1.0, ZP), 0, "wide", arms=[0, 0])
 shot("S24", "L27.1", cam(HX - 0.2, HY - 1.0, ZP + 1.5, 0.95, 4, 36, cz=ZP + 1.45))
 # L24: the reveal picture, then the old lock
 show("L24", "jess", "mom", "dad")
-place("L24", "jess", (HX + 0.0, HY + 0.7, ZP), 0, "laugh", arms=[0, 86])
-place("L24", "mom", (HX + 0.5, 38.6, ZP), 0, "laugh", arms=[0, 0])
+place("L24", "jess", (HX - 0.35, HY + 0.7, ZP), 0, "laugh", arms=[0, 86])
+place("L24", "mom", (HX + 0.8, 38.6, ZP), 0, "laugh", arms=[0, 0])
 place("L24", "dad", (HX - 0.95, 39.0, ZP), 0, "laugh", arms=[0, 0])
 cue("L24", "key", mode="jess", who="jess")
 mouth("jess", "L24", "L24.2", 0.4)
-shot("S26", "L24", cam(HX + 0.22, HY + 0.7, ZP + 1.4, 1.45, 0, 34, cz=ZP + 1.4))
+shot("S26", "L24", cam(HX - 0.12, HY + 0.7, ZP + 1.25, 1.6, 0, 34, cz=ZP + 1.3))
 cue("L24.2", "lock", v=1.0)
 cue("L24.2", "key", mode="lock", who="me")
 show("L24.2")

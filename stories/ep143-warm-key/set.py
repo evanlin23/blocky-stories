@@ -121,7 +121,7 @@ def _photo_image():
         ink = "#2a1a12"
         # me (left): navy jacket, spiky hair; Jess (right): red sweater, long black hair with a side ponytail
         d.rectangle([90, 250, 290, 480], fill=hx("#26386a"))
-        d.rectangle([350, 250, 550, 480], fill=hx("#a8101c"))
+        d.rectangle([350, 250, 550, 480], fill=hx("#c01e2a"))
         d.rectangle([420, 250, 480, 275], fill=hx("#fff6e8"))             # her white collar
         _face(d, 190, 175, 95, "#d9b48a", ink)
         d.polygon([(95, 110), (120, 40), (150, 100), (180, 30), (210, 100), (250, 40), (285, 110)], fill=hx("#15151a"))
@@ -223,7 +223,7 @@ def build_apt(kit):
     board = pl("#a8703a", 0.6)
     bx, by, bz = G.HOOK
     kit.box("apt.hookboard", (1.25, 0.05, 0.2), (bx, G.AY1 - 0.025, bz + 0.1), board, bevel=0.01)
-    brass = pl("#d8a83a", 0.3, spec=0.7)
+    brass = pl("#c98a18", 0.3, spec=0.7)
     steel = pl("#c9ced6", 0.3, spec=0.7)
     for k, x in enumerate([bx + d_ for d_ in (-0.5, -0.25, 0.0, 0.25, 0.5)]):
         kit.box(f"apt.hook{k}", (0.03, 0.09, 0.03), (x, G.AY1 - 0.09, bz + 0.07), brass)
@@ -482,12 +482,12 @@ def build_house(kit):
     kit.box("hall.casing.t", (G.DOOR_W + 0.4, 0.03, 0.2), (HXc, y0h + 0.055, ZP + G.DOOR_H + 0.1), cb)
     # lights: warm ceiling fills inside, fill at the door, golden porch fill
     for i, (x, y) in enumerate(((HXc - 1.8, 37.8), (HXc + 1.8, 37.8), (HXc - 1.5, 40.0), (HXc + 1.0, 40.0), (HXc, 38.8))):
-        a = kit.light(f"hall.fill{i}", "AREA", (x, y, ZP + G.HALL_H - 0.15), 300, "#ffe2b0", size=2.5, shadow=False)
+        a = kit.light(f"hall.fill{i}", "AREA", (x, y, ZP + G.HALL_H - 0.15), 50, "#ffe2b0", size=2.5, shadow=False)
         kit.aim(a, (x, y, ZP))
-    lamp = kit.emit("#fff0cc", 2.5, "halllamp")
+    lamp = kit.emit("#fff0cc", 1.3, "halllamp")
     for i, (x, y) in enumerate(((HXc - 1.8, 37.8), (HXc + 1.8, 37.8), (HXc - 1.0, 40.2), (HXc + 1.0, 40.2))):
         noshadow(kit.box(f"hall.lamp{i}", (0.7, 0.5, 0.02), (x, y, ZP + G.HALL_H - 0.012), lamp))
-    fd = kit.light("hall.door", "AREA", (HXc, 36.8, ZP + 2.0), 330, "#ffe8c0", size=2.5, shadow=False)
+    fd = kit.light("hall.door", "AREA", (HXc, 36.8, ZP + 2.0), 60, "#ffe8c0", size=2.5, shadow=False)
     kit.aim(fd, (HXc, 39.5, ZP + 1.0))
     # porch fill: gold light under the roof so the porch faces read; and a soft face light toward the steps
     jl = kit.light("jess.door", "AREA", (HXc + 0.2, 34.2, ZP + 1.9), 1100, "#ffe6c8", size=2.0, shadow=False)
@@ -597,7 +597,7 @@ def build_insert(kit):
     for k, dz in enumerate((-0.1, 0.0, 0.1, 0.2)):
         kit.box(f"in.tally{k}", (0.12, 0.02, 0.022), (ix + 0.72, iy - 0.07, 1.0 + dz), pencil)
     # the lock: a brass plate, a keyhole and a deadbolt knob, on the door's east edge
-    brass = pl("#d8a83a", 0.3, spec=0.7)
+    brass = pl("#c98a18", 0.3, spec=0.7)
     lx, lz = ix + 0.42, 1.3
     kit.cyl("in.lockplate", 0.085, 0.03, (lx, iy - 0.09, lz), brass, rot=(math.pi / 2, 0, 0), n=20)
     kit.cyl("in.lockface", 0.05, 0.03, (lx, iy - 0.1, lz), pl("#b8861c", 0.35, spec=0.7), rot=(math.pi / 2, 0, 0), n=20)
@@ -614,7 +614,7 @@ def build_insert(kit):
 # ---------------------------------------------------------------------------------------------- the key and its dinosaur
 def build_key(kit):
     pl = kit.plastic
-    brass = pl("#d8a83a", 0.3, spec=0.7)
+    brass = pl("#c98a18", 0.3, spec=0.7)
     dark = pl("#2a2a30", 0.7)
     steel = pl("#c9ced6", 0.3, spec=0.7)
     W["glowmat"] = kit.emit(ORANGE, 2.0, "keyglow")
@@ -745,6 +745,10 @@ def attach_extras(kit):
     kit.box("jess.tie", (0.2, 0.2, 0.12), (0, 0.66, 0.2), pl("#d8322f", 0.6), jh, bevel=0.04)
     kit.box("jess.tail1", (0.26, 0.24, 0.6), (0, 0.8, 0.0), hair, jh, bevel=0.08)
     kit.box("jess.tail2", (0.22, 0.2, 0.5), (0, 0.84, -0.5), hair, jh, bevel=0.08)
+    # the side ponytail of her photo (S06a), seen from the front
+    kit.box("jess.stie", (0.14, 0.2, 0.14), (0.95, 0.2, 0.2), pl("#ffd84a", 0.5), jh, bevel=0.03)
+    kit.box("jess.stail1", (0.24, 0.24, 0.5), (1.03, 0.2, -0.15), hair, jh, bevel=0.06)
+    kit.box("jess.stail2", (0.2, 0.2, 0.4), (1.05, 0.2, -0.58), hair, jh, bevel=0.06)
     gold = pl("#f2c230", 0.3, spec=0.7)
     for sx in (-1, 1):
         kit.cyl(f"jess.ear{sx}", 0.1, 0.05, (sx * 0.6, -0.12, -0.3), gold, jh, rot=(0, math.pi / 2, 0), n=14)
@@ -756,7 +760,7 @@ def animate(kit, story, tl, t, ctx):
     _animate(kit, story, tl, t, ctx)
     sid = next((x["id"] for x in tl["shots"] if x["start"] <= t < x["end"]), "")
     return {"hill.face": 1.0 if sid == "S14" else 0.0,
-            "jess.door": 1.0 if sid in ("S25", "S26", "S27", "S28b") else 0.0}
+            "jess.door": 0.06 if sid in ("S25", "S26") else 0.0}
 
 
 def _animate(kit, story, tl, t, ctx):
@@ -801,16 +805,17 @@ def _animate(kit, story, tl, t, ctx):
     key, ring, dp, chain, mitt = W["key"], W["ring"], W["dinopivot"], W["chain"], W["mitt"]
     show_key = mode in ("hang", "hand", "lock", "hook2")
     for ob in [key, ring, dp, chain] + list(key.children) + list(ring.children) + list(W["dino"].children):
-        ob.hide_render = not (show_key or (mode == "jess" and ob in [dp, chain] + list(W["dino"].children)))
+        ob.hide_render = not (show_key or mode == "jess")
     if mode in ("hand", "jess"):
         ring.hide_render = True
         for c in ring.children:
             c.hide_render = True
         chain.hide_render = mode != "jess"
     if mode == "jess":
-        key.hide_render = True
-        for c in key.children:
-            c.hide_render = True
+        W["glow"].hide_render = True       # her keychain is a plain one: no warmth
+    sc = 1.0       # her keychain is held up big
+    key.scale = (KS * sc,) * 3
+    W["dino"].scale = (DS * sc,) * 3
     mitt.hide_render = not (mt and mode == "hand")
     for c in mitt.children:
         c.hide_render = mitt.hide_render
@@ -849,14 +854,10 @@ def _animate(kit, story, tl, t, ctx):
         px, py, pz = hnd.x, hnd.y, hnd.z + lift
         ph = math.atan2(cy - py, cx - px)
         rx, ry = math.cos(ph + math.pi / 2), math.sin(ph + math.pi / 2)
-        if mode == "hand":
-            key.location = (px - rx * 0.06, py - ry * 0.06, pz + 0.31 * KS)
-            key.rotation_euler = (0, 0, ph)
-            dp.location = (px + rx * 0.1, py + ry * 0.1, pz + 0.2 * DS)
-            dp.rotation_euler = (0, 0, ph)
-        else:
-            dp.location = (px, py, pz + 0.2 * DS + 0.07)
-            dp.rotation_euler = (0, 0, ph)
+        key.location = (px - rx * 0.06 * sc, py - ry * 0.06 * sc, pz + 0.31 * KS * sc)
+        key.rotation_euler = (0, 0, ph)
+        dp.location = (px + rx * 0.1 * sc, py + ry * 0.1 * sc, pz + 0.2 * DS * sc)
+        dp.rotation_euler = (0, 0, ph)
         mitt.location = (hnd.x, hnd.y, hnd.z + 0.04)
         mitt.rotation_euler = (0, 0, ph)
     elif mode == "lock":
