@@ -5,8 +5,8 @@
 - **Title:** The Pool Sign Says NOBODY Swims Alone 🏊
 - **Shape:** `self-echo` (new tag): the company the rule promises is yourself, from the last time you swam.
 - **Everyone is an adult.** I'm 22. My grandpa Lou is about 75.
-- **Word count:** 151 spoken words in 23 lines, all `narrator`, plus one 0.6 s drop (before L22). No-filler pass (owner, 2026-11-12): cut L02, L05, L07, L21, L26b (folded into L26), L27, L28, L29 (folded into L30).
-- **Estimated length:** about 35 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. The reveal (L25 to L26) starts at about 29 s and "yesterday's ME" lands about 4.5 s from the end; only L30 (button) and L31 (loop) follow.
+- **Word count:** 152 spoken words in 23 lines, all `narrator`, plus one 0.6 s drop (before L22). No-filler pass (owner, 2026-11-12): cut L02, L05, L07, L21, L26b (folded into L26), L27, L28, L29 (folded into L30).
+- **Estimated length:** about 35 s (152 words) at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. The reveal (L25 to L26) starts at about 29 s and "yesterday's ME" lands about 4.5 s from the end; only L30 (button) and L31 (loop) follow.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright outdoor town pool at sunrise: turquoise water, white lane ropes with red and blue floats, a peach and gold sky, a low cream changing house with a tiled roof, palm-like shade trees in our own shapes. The sun is up from the first frame (6:00 AM sunrise light, warm and bright, no dark scene).
 - **Hold:** scripts only (batch 15). Not built, not voiced.
 
@@ -32,7 +32,7 @@ The table for my eight is in `stories/ep140-town-photo/script.md`. This row: an 
 - **Plant 2:** my lost duck towel. L22: I lost it yesterday after twelve laps. L23: it's on the starting block, soaking wet.
 - **Escalation:** it stops when I stop, swims when I swim, always one lap behind (L11 to L14), then copies my kick (L20). It's never seen: only splashes and the board.
 - **The climax turns the rule's own logic:** the rule says someone always swims with you when you're alone. Yesterday I was alone, at six, in lane four, twelve laps. So someone was with me then too, and the one with me today is the last one in my lane.
-- **Reveal (L25 to L26, plain, in the last 6 s):** "It sends / whoever swam / your lane LAST." "That's yesterday's ME. / And Grandpa's buddy / is GRANDPA." Over the board's "12 / 11", then Grandpa's ripple. After it only the button (L30) and the loop line (L31), no explaining.
+- **Reveal (L25 to L26, plain, in the last 6 s):** "The pool sends / whoever swam / your lane LAST." "That's yesterday's ME. / And Grandpa's buddy / is GRANDPA." Over the board's "12 / 11", then Grandpa's ripple. After it only the button (L30) and the loop line (L31), no explaining.
 - **How the last 15 seconds turn over the first line:** "someone always swims with you" was a comfort and then a threat. On the loop it's a promise I'm about to keep: tomorrow at six, I'm the one behind.
 - **Ending shape:** `self-echo`. Ends eerie.
 - **Warmth:** Grandpa's morning swim, and the small joke that he's never once swum alone.
@@ -137,7 +137,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - (drop, 0.6 s)
 - L22: Yesterday, / I swam twelve laps / here, alone, / and lost my DUCK towel.
 - L23: It's on / the starting block. / SOAKING wet.
-- L25: It sends / whoever swam / your lane LAST.
+- L25: The pool sends / whoever swam / your lane LAST.
 - L26: That's yesterday's ME. / And Grandpa's buddy / is GRANDPA. **(the reveal, about 4.5 s from the end)**
 - L30: Tomorrow at six, / I'm the one BEHIND.
 - L31: Nobody swims / ALONE.
@@ -148,3 +148,4 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - "Six A.M." is spoken "six ay em". "SPLASH-splash" is spoken "splash splash", the first louder.
 - Hard rule 2: nobody is in the water in any danger. The follower is only foam and a number. No drowning or harm words: checked against `checks.GRAPHIC`, `HARM` and `CHILD` ("lost" in L22 has no child word).
 - Hard rule 8 checked on every caption, the title, description and pin.
+- Plants check (2026-11-12): the reveal rests on three plants a cold viewer catches: Grandpa's ripple buddy (L03, L04), the double kick only I do (L15 to L17, echoed by L20), and yesterday's twelve laps plus the lost towel (L22, L23, against L18's twelve and the board's 12 / 11). L25 now names "The pool" so the subject of the reveal isn't a loose "It".
