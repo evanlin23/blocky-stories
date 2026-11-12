@@ -1,6 +1,6 @@
 {
  "slug": "ep149-cuckoo-six",
- "title": "Grandpa's Clock Cuckooed SIX Times For Five 🕰️",
+ "title": "This Cuckoo Clock Counts PEOPLE 🕰️",
  "made_for_kids": false,
  "premise": "Grandpa's cuckoo clock cuckoos once for every person in the house. On his eightieth birthday there are five of us and it goes six times, so someone else is in the room, and the viewer has to find the sixth among four hiding places before Grandpa cuts the cake.",
  "twist": "The sixth is my big sister Ivy, who swore she had to work all weekend, hiding behind the yellow curtain to surprise Grandpa, given away by her red sneakers and frosting on her thumb.",
@@ -353,7 +353,11 @@
    "pause": 4.0,
    "chunks": [
     [
-     "A,B,C or D?",
+     "A, B,",
+     ""
+    ],
+    [
+     "C or D?",
      ""
     ]
    ]

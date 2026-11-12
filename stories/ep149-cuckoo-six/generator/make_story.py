@@ -1,4 +1,4 @@
-"""Writes ../story.json for ep149 "Grandpa's Clock Cuckooed SIX Times For Five" (script.md, batch 15). Run:
+"""Writes ../story.json for ep149 "This Cuckoo Clock Counts PEOPLE" (script.md, batch 15). Run:
     python stories/ep149-cuckoo-six/generator/make_story.py
 
 Words are in lines.json (the script's slash chunks; captions split to three words here, references remapped).
@@ -263,7 +263,7 @@ for ln in lines:
 
 story = {
     "slug": "ep149-cuckoo-six",
-    "title": "Grandpa's Clock Cuckooed SIX Times For Five \U0001F570️",
+    "title": "This Cuckoo Clock Counts PEOPLE \U0001F570️",
     "made_for_kids": False,
     "premise": ("Grandpa's cuckoo clock cuckoos once for every person in the house. On his eightieth birthday there are "
                 "five of us and it goes six times, so someone else is in the room, and the viewer has to find the sixth "

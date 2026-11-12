@@ -2,7 +2,8 @@
 
 - **Slug:** `ep149-cuckoo-six` (batch 15, upload order 11 of 16)
 - **Pitch:** P28 in the batch 15 pitch round (blind panel 7.0). Lane `puzzle`. It can start a second numbered format, **"Find the hidden one" #1**: a count one too high in a family room, four lettered hiding spots, one countdown, a 4.0 s hold, a warm answer. Opening `count`. Length arm: ultra-short puzzle, about 26 s after the no-filler revise.
-- **Title:** Grandpa's Clock Cuckooed SIX Times For Five 🕰️
+- **Title:** This Cuckoo Clock Counts PEOPLE 🕰️
+- **Pin:** What gave Ivy away first for you, the sneakers or the frosting? **Cover:** 8.5 s (S05: Grandpa, "SIX.", the counter).
 - **Shape:** `hidden-guest` (new tag): the extra in the count is someone who loves us, hiding to surprise us.
 - **Everyone is an adult or a teen.** I'm 18. Mom and Dad are in their 50s, Grandma and Grandpa about 80 (it's Grandpa's eightieth). My big sister Ivy is 24.
 - **Word count:** 81 spoken words in 14 lines (L01, L02, L03, L04, L04b, L05, L07, L08, L10, L11, L11b, L12, L22, L23), all `narrator`, plus one 4.0 s hold (P01). No-filler revise (owner, 2026-11-12): cut L06 (repeats L01's "five of us" over S02), L09 (repeats L05; the hold's caption asks it), L14 and L15 (after the reveal; L15 repeats L11b), L16 to L21 (epilogue after the reveal); L13 folded into L12; L22 reworded to carry "six" without L19 to L21. L02 restored in the plant revise (writer check, 2026-11-12): the Ivy reveal had no plant, so L02 says over S02 that my big sister Ivy had to work, and S02 shows her empty sixth chair; L12 shortened to a callback.
@@ -32,7 +33,7 @@ The table for my eight is in `stories/ep140-town-photo/script.md`. This row: Gra
   1. **The sneakers:** red sneaker toes poke out under the yellow curtain's hem (B).
   2. **The frosting:** a thumb-sized scoop is missing from the cake's corner, and a pink frosting smudge is on the curtain's edge at hand height (B).
   3. **Red herrings:** the closet door is ajar (C) and the tablecloth reaches the floor (D), so both look possible. The armchair (A) is too close to the wall to hide anyone.
-- **The hold (P01, 4.0 s):** the master of the room with all four letters, the curtain, the cake, the closet and the table in frame. Caption "A, B, C or D?" in the top third. Quiz-clock ticks.
+- **The hold (P01, 4.0 s):** the master of the room with all four letters, the curtain, the cake, the closet and the table in frame. Caption "A, B, C or D?" in the top third, as two chunks ("A, B," then "C or D?", the 3-word caption limit). Quiz-clock ticks.
 - **The answer (L10 to L11b):** B, behind the curtain: red sneakers under the hem, a scoop out of the frosting.
 - **The reveal (L12, the last 5.5 s):** "IVY. She SWORE she had to WORK." A callback to L02, not a repeat; the reveal rests on L02, the sneakers and the frosting.
 - **The button (L22, L23):** Grandpa says six is the best number it's ever counted. Nothing after it but the loop.
@@ -97,7 +98,7 @@ Build rules for every shot: people stand 1.4 m apart unless seated at the table 
 | S06 | L05 | The master: the room from the far corner, the table, the clock, all four spots in frame. |
 | S08 | L07 | The master: letters pop over the four spots (A armchair, B curtain, C closet, D table), eased 0.15 s each. |
 | S09 | L08 | Grandpa reaching the cake server toward the cake at chest height, `smile`, slowly. |
-| P01 | | 4.0 s hold on the question: S11a (1.4 s, the master), S11b (1.3 s, punch in 6%), S11c (1.3 s, punch in another 6%). All four spots, the curtain hem, the cake's corner. Caption "A, B, C or D?". |
+| P01 | | 4.0 s hold on the question: S11a (1.4 s, the master), S11b (1.3 s, punch in 6%), S11c (1.3 s, punch in another 6%). All four spots, the curtain hem, the cake's corner. Caption "A, B," / "C or D?". |
 | S12 | L10 | Punch in on curtain B, a yellow ring easing round it (0.3 s). |
 | S13 | L11 | Low close: the red sneaker toes under the hem. |
 | S14 | L11b | Close: the cake's corner with a thumb-sized scoop missing, then a tilt to the pink smudge on the curtain's edge. |

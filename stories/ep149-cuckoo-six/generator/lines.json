@@ -7,7 +7,7 @@
  {"id":"L05","who":"narrator","chunks":[["Find the SIXTH.","find the sixth."]]},
  {"id":"L07","who":"narrator","chunks":[["Four places","four places"],["to HIDE.","to hide."]]},
  {"id":"L08","who":"narrator","chunks":[["You've got","you've got"],["till Grandpa","till grandpa"],["cuts the CAKE.","cuts the cake."]]},
- {"id":"P01","pause":4.0,"chunks":[["A,B,C or D?",""]]},
+ {"id":"P01","pause":4.0,"chunks":[["A, B,",""],["C or D?",""]]},
  {"id":"L10","who":"narrator","chunks":[["B.","bee."],["The CURTAIN.","the curtain."]]},
  {"id":"L11","who":"narrator","chunks":[["Red sneakers","red sneakers"],["under the HEM.","under the hem."]]},
  {"id":"L11b","who":"narrator","chunks":[["And a thumb-sized","and a thumb-sized"],["SCOOP out of","scoop out of"],["the frosting.","the frosting."]]},
