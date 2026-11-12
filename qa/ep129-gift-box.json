@@ -1,21 +1,19 @@
 {
- "stage": "final",
- "film": "13566567328",
- "run": "42349159678",
- "sha": "a538b64d9da1708d39a9b3c9267e4348623deb2e",
- "verdict": "fail",
- "date": "2026-11-07",
+ "stage": "proof",
+ "film": "proof-43254582589",
+ "run": "43254582589",
+ "sha": "6a3a75ba31a2600579b21ef2f5e5b423bf0cfc33",
+ "verdict": "pass",
+ "date": "2026-11-12",
  "checked": [
-  "frames every 2 s and every 1 s at phone size",
+  "frames every 2 s at phone size",
   "frames 0-89 (first 3 s) every frame",
-  "TV 1920-wide canvas (0, 38.3, 78.3, 93 s, cover)",
-  "flat/black/uniform-region scan all 3180 frames (abs index and mod 64)",
-  "neighbour regional pop scan all frames",
-  "staging rows S21, S61 (frames)",
-  "box-and-body contact in S24, S26-S31, S33, S34, S44-S47, S56-S59",
-  "cropped faces",
+  "TV 1920-wide canvas (cover 44.6 s)",
+  "fix shots frame by frame: S15, S21, S24, S33, S34, S48, S49, S59, S61",
+  "box-and-body contact and z-fight in S24/S33/S34/S59",
+  "Dad's headroom in S24/S33/S34/S59",
+  "clip.json (no hits)",
   "captions vs spoken words",
-  "frame count vs timeline",
   "loudness",
   "4 kHz windows",
   "ending not cut",
@@ -27,14 +25,15 @@
   "gate",
   "cover"
  ],
- "craft": "**ep129-gift-box**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.9 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 22.1 | 14.0– | ok |\n| macro.motion_energy_q | 6.49 | 6.0– | ok |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 6.89 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.081 | –0.25 | ok |\n| spec.shot_p90_s | 1.99 | –2.5 | ok |\n| macro.longest_still_s | 0.1 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.78 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.94 | 0.4– | ok |\n| macro.brightness_mean | 0.751 | 0.35– | ok |\n| macro.brightness_first_3s | 0.749 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.29 | 0.42– | **warn** |\n| macro.contrast_mean | 0.185 | 0.18– | ok |\n| spec.face_big_share | 0.808 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.784 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.042 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 70.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.36 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 15.5 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.045 | –0.08 | ok |\n| sound.hf_jump_max | 0.0179 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
- "notes": "FAIL. Film 106.0 s, 3180 frames = timeline (74 shots); captions match the spoken text on all 67 lines. -14.1 LUFS / -1.8 dBTP, LRA 1.1; 4 kHz max 0.045, jump 0.018; no silence; last word ends ~105.65 s, the tail decays to -36 dB, not cut (tail 0, tight). Flash passes (general 1/s, 3f 3/s, red 0, house bar pass). Gate OPEN.\nSecond one: sunny butter-yellow front room, me (green sweater) at frame right beside the faded red box with the cream ribbon cross on the white mantel under the round blue clock, slow push; 'Never open a PRESENT here. Wrapped, it's whatever you HOPE it is.' Lit, a face, the rule object, moving. Cover 44.6 s (S28): me holding the box, 'a grown MAN', strong.\nKnown staging rows confirmed by frames: S21 32.87-34.70 s and S61 95.67-97.13 s, arms in each other (fixes 1-2). New: dad's body through the box in S24, S33, S34 and S59 (fixes 3-4); S49 77.87-78.47 s flat two-tone frames on the twist (fix 5); S48 flat red half-frame (fix 6).\nFlat/black scan, all 3180 frames: no black dips (min mean luma 127/255, min std 24); large flat regions only in S48 (f2278-2323) and S49 (f2336-2353); 1-frame regional pops are all caption-row gaps between chunks (checked 60.1 s, 80.0 s). No face or body goes black, missing or pops.\nShould-fix (not fails alone): S16 25.70-27.07 s the empty box slides out to a lone teal slab by 26.67 s; S15 25.33-25.70 s dad's face cut by the left edge; dad's hair cut by the top in S33/S34/S59; pin 'Comment HOME' hints the twist mildly.\ncraft: 0 block, 0 near, 2 warn: macro.saturation_mean 0.29 (0.42-), sound.voice_bed_gap_db 15.5 (8.0-14.0). Pastel look reads fine on phone and TV; the voice is never buried. Matches the proof (proof-42331832292) within a little: picture changes 17.9 vs 17.8, the rest equal.\nPolish on: punch-ins on key words, longest still 0.1 s, caption pop clean, riser before the 61.34 s drop, no dead silence. Package matches the film (circus, tuba, twelve years), no spoiler in title/description, no 'husband', hard rules 1-4 clean.\nOpening 'ban' matches L01 ('Never open a PRESENT here') in the first 2.2 s; differs from the last upload ep92 ('if'). ep129 isn't in queue.txt at this sha; the proof qa named queue neighbour ep99 ('cost'), which also differs.",
- "fixes": [
-  "32.87-34.70 s, S21 (f986-1041, mod 26-17): me and dad side by side on the couch, 0.90 m apart; my green sleeve and arm pass into dad's light-blue arm and chest (staging 'close' row; known, worker D fix not in this film)",
-  "95.67-97.13 s, S61 (f2870-2914, mod 54-34): at the kitchen counter, 1.20 m apart; my raised green arm passes into dad's arm and chest (staging 'close' row; known, worker D fix not in this film)",
-  "37.63-39.13 s S24, 51.30-52.77 s S33 and 52.77-54.67 s S34 (f1129-1173, f1539-1640): dad holding the wrapped box at the mantel; his light-blue hips and legs come through the lower half of the box front, and the lower-right red panel z-fights with them (red hatching on blue). Move the box forward or dad back so the box sits clear of his body",
-  "92.93-94.73 s, S59 (f2788-2841, mod 36-25): 'He put the box back on the mantel': dad's legs pass through the open cream box (its lower half shows his light-blue legs with only a cream T left) and the loose lid flaps sit inside his chest. Same fix as S24/S33/S34",
-  "77.87-78.47 s, S49 (f2336-2353, mod 32-49): the push-in ends against the box; about 87% of the frame is flat cream (box front, 57%) and flat dark green (lid underside, 30%) with nothing recognisable, under 'the LID.' and the twist word 'EMPTY.' (the caption leads S50 by 2 frames on this flat picture). Flat-frame policy fail: stop the push short so the lid and rim read",
-  "75.93-77.43 s, S48 (f2278-2323, mod 38-19): 'He peeled the paper off it, SLOW': 52% of the frame is the untextured flat red box face and the peeled paper reads as a red slab sliding off the top. Borderline (the rim and kitchen stay visible) but fix with S49: pull back so the box, hands and paper read"
+ "craft": "**ep129-gift-box**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.5 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 21.9 | 14.0– | ok |\n| macro.motion_energy_q | 6.37 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 6.89 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.081 | –0.25 | ok |\n| spec.shot_p90_s | 1.99 | –2.5 | ok |\n| macro.longest_still_s | 0.63 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.8 | –1.0 | ok |\n| macro.motion_energy_mean | 2.72 | 1.5– | ok |\n| spec.camera_move_share | 0.987 | 0.65– | ok |\n| spec.punch_per_10s | 0.94 | 0.4– | ok |\n| macro.brightness_mean | 0.756 | 0.35– | ok |\n| macro.brightness_first_3s | 0.75 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.285 | 0.42– | **warn** |\n| macro.contrast_mean | 0.182 | 0.18– | ok |\n| spec.face_big_share | 0.777 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.784 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.042 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 70.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.36 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 15.5 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0452 | –0.08 | ok |\n| sound.hf_jump_max | 0.0184 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": [
+  "PASS. Proof 270x480 at sha 6a3a75b (latest story commit on the branch), 106.0 s, 3180 frames = timeline (74 shots). verdict.json pass; clip.json 0 hits; flash house bar passes (general 1/s, 3f 3/s, red 0). Gate OPEN.",
+  "Second one: sunny butter-yellow front room, me (green sweater) on the right by the red box with the cream bow under the round blue clock, slow push; 'Never open a PRESENT here. Wrapped, it's whatever you HOPE it is.' Lit, a face, the rule object, moving. Cover 44.6 s (S28, 'a grown MAN', me holding the box) strong on phone and TV.",
+  "Fixes confirmed in motion: S24/S33/S34/S59 the couch and chair are gone, the box sits clean in front of Dad with no z-fight, and his hair stays inside the top edge through each push; S49 ends on the open box (lid up) with no flat frame through 78.43 s; S48 pulled back, the whole red box in frame; S15 24.33-25.70 s Dad's face whole; S21 and S61 Dad and me apart, no arms crossing.",
+  "Audio: -14.1 LUFS, -1.8 dBTP, LRA 1.0; 4 kHz share max 0.046, biggest jump 0.019; no silence (quietest 0.5 s -28 dB); the last word decays to -33 dB by 106.0 s, not cut. The voice is never buried.",
+  "craft: 0 block, 0 near, 2 warn: macro.saturation_mean 0.285 (0.42-), sound.voice_bed_gap_db 15.5 (8.0-14.0). The pastel look reads fine on phone and TV and the voice sits clearly over the bed, so neither loses viewers. Longest still 0.63 s (0.53 s at 0.25 s).",
+  "Polish on: punch-ins on key words, no picture still over 1.5 s, caption pop clean, shadows hold on TV, quiet ending L65-L67 is still not silent.",
+  "Package matches the film (circus, tuba, twelve years); title/description don't spoil the empty box; no 'husband'; hard rules 1-4 clean. Pin 'Comment HOME' hints the twist only mildly (carried from the earlier qa).",
+  "Opening 'ban' matches L01 ('Never open a PRESENT here') in the first 2.2 s; differs from the last upload ep137 ('must'). ep129 isn't in queue.txt at this sha or on main."
  ]
 }
