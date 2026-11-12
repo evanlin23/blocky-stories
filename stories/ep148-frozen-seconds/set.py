@@ -156,7 +156,7 @@ def build_drops(kit, tl):
     fz = [c for c in tl["cues"] if c["name"] == "freeze"]
     tf = next((c["t"] for c in fz if c.get("f", 0) > 0.5), 1e9)
     gf = clock(tl, tf + 0.5) if tf < 1e8 else 0.0
-    keep_out = [G.LEO_OUT, G.LEO_HIDE, (0.6, 7.0), (1.35, 7.4), (1.35, 8.0), (1.15, 8.6), (0.95, 9.0), (0.7, 9.35), (0.45, 9.55), (0.25, 9.65), (0.12, 9.7)] + [(sx * 0.7, 6.6 + 0.3 * k) for sx in (-1, 1) for k in range(8)] + [(0.8 + 0.01 * k, 8.8 - 0.3 * k) for k in range(6)] + [(sx * 0.8, yy) for sx in (-1, 1) for yy in (6.4, 6.7, 7.0, 7.3)]
+    keep_out = [G.LEO_OUT, G.LEO_HIDE, (0.6, 7.0), (1.35, 7.4), (1.35, 8.0), (1.15, 8.6), (0.95, 9.0), (0.7, 9.35), (0.45, 9.55), (0.25, 9.65), (0.12, 9.7)] + [(sx * 1.1, 6.6 + 0.3 * k) for sx in (-1, 1) for k in range(8)] + [(1.1 - 0.05 * k, 8.6 - 0.3 * k) for k in range(6)] + [(sx * 0.8, yy) for sx in (-1, 1) for yy in (6.4, 6.7, 7.0, 7.3)]
     for a in range(DROP_ARCS):
         for k in range(DROP_PER):
             x, y, z = drop_pos(a, k, gf)
