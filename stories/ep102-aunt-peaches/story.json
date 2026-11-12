@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 11,
+ "rev": 14,
  "look": {
   "style": "closer",
   "fog": "#d6ecff",
@@ -5104,7 +5104,10 @@
     "arms": [
      0,
      0
-    ]
+    ],
+    "yaw": -90,
+    "blend": 0.4,
+    "keep_yaw": true
    },
    {
     "at": "L04.4-0.05",
@@ -5115,7 +5118,9 @@
     "arms": [
      0,
      0
-    ]
+    ],
+    "yaw": 0,
+    "blend": 0.4
    },
    {
     "at": "L04.4",
@@ -5282,19 +5287,24 @@
     "arms": [
      0,
      128
-    ]
+    ],
+    "yaw": 0,
+    "keep_yaw": true
    },
    {
     "at": "L03.2",
     "pos": [
-     196.2,
+     196.0,
      1.5
     ],
     "expr": "smile",
     "arms": [
      0,
      0
-    ]
+    ],
+    "yaw": 90,
+    "blend": 0.0,
+    "keep_yaw": true
    },
    {
     "at": "L03.2+0.95",
@@ -5306,7 +5316,9 @@
     "arms": [
      0,
      0
-    ]
+    ],
+    "yaw": 90,
+    "keep_yaw": true
    },
    {
     "at": "L04",
@@ -6941,7 +6953,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 11
+  "rev": 14
  },
  "staging_ok": [
   "S70/me+clem",

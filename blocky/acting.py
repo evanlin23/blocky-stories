@@ -26,6 +26,10 @@ import math
 STRIDE = 0.62   # metres per step
 FLAP = 0.11     # seconds per mouth flap, for a mouth key with "flap": true
 BLEND = 0.25
+# `motion.overlap` (opt-in, the polish pack's "overlap"): per channel (lag s, blend stretch). The head turns first,
+# the body on the key, the arms after it and a little slower, so a move reads as a body rather than one block.
+OVERLAP = {"head": (-0.05, 1.0), "look": (-0.05, 1.0), "yaw": (0.0, 1.0), "lean": (0.03, 1.2), "arms": (0.07, 1.3),
+           "side": (0.09, 1.35)}
 
 
 def _ease(u):
@@ -48,17 +52,33 @@ def _first(ks):
     return ks[i]
 
 
-def _held(keys, attr, t, default):
+def _held(keys, attr, t, default, lag=0.0, stretch=1.0, cap=None, short=False):
+    """`attr` at t: held from each key until the next, eased into it over that key's `blend`.
+    The motion options (all off unless the story asks): `lag` shifts this channel's blends later (or earlier, when
+    negative) so a head leads and arms follow; `stretch` lengthens the blend; `cap` (degrees per second) lengthens a
+    blend until the eased move's peak speed is at most cap (unless the keys are too close for it: their timing wins);
+    `short` turns a number in degrees the short way round (180 to -90 is 90 degrees, not 270). None of them touch a
+    key with blend 0 (a re-staging on a cut must land on its frame)."""
     ks = _keys_with(keys, attr)
     if not ks:
         return default
     if t <= ks[0]["t"]:
         return _first(ks)[attr]
     for a, b in zip(ks, ks[1:]):
-        if t < b["t"]:
-            bl = b.get("blend", BLEND)
-            u = _ease((t - (b["t"] - bl)) / bl) if bl > 0 else float(t >= b["t"])
+        bl = b.get("blend", BLEND)
+        sh = lag if bl > 0 else 0.0
+        if t < b["t"] + sh:
             va, vb = a[attr], b[attr]
+            if short and not isinstance(va, (list, tuple)):
+                vb = va + (vb - va + 180.0) % 360.0 - 180.0
+            if bl > 0:
+                bl *= stretch
+                if cap:
+                    big = max(abs(y - x) for x, y in zip(va, vb)) if isinstance(va, (list, tuple)) else abs(vb - va)
+                    bl = max(bl, 1.5 * big / cap)   # smoothstep peaks at 1.5x its mean speed
+                if sh or stretch != 1.0 or cap:   # (off, the old timing stays exactly as it was)
+                    bl = min(bl, max(1e-6, b["t"] + sh - a["t"]))   # never starts before the key it leaves
+            u = _ease((t - (b["t"] + sh - bl)) / bl) if bl > 0 else float(t >= b["t"])
             if isinstance(va, (list, tuple)):
                 return [x + (y - x) * u for x, y in zip(va, vb)]
             return va + (vb - va) * u
@@ -165,6 +185,11 @@ def idle(t, seed, scale=1.0):
     return bob, lean, yaw, head_yaw, head_pitch
 
 
+def _wrap(a):
+    """An angle difference in radians, the short way round (-pi..pi)."""
+    return (a + math.pi) % (2 * math.pi) - math.pi
+
+
 def _hash(x):
     x = (int(x) * 2654435761) & 0xFFFFFFFF
     return ((x >> 7) % 1000) / 1000
@@ -230,22 +255,39 @@ def state(tl, who, t, seed=0):
             legs = amp * math.sin(ph)
             bob = abs(math.sin(ph)) * (0.06 if run else 0.025)
             travel_yaw = math.atan2(dx, -dy)
+    ov = mo.get("overlap")
+    cap = float(mo.get("turn_cap") or 0) or None   # degrees per second, on body and head turns
+
+    def held(attr, default):
+        lag, k = OVERLAP.get(attr, (0.0, 1.0)) if ov else (0.0, 1.0)
+        return _held(keys, attr, t, default, lag, k, cap if attr in ("yaw", "head") else None, bool(cap) and attr == "yaw")
+
     yk = _keys_with(keys, "yaw")
+    keyed = math.radians(held("yaw", 0.0)) if yk else None
     if travel_yaw is not None and not (seg and "yaw" in seg[0] and seg[0].get("keep_yaw")):
         yaw = travel_yaw
+        if cap and keyed is not None:
+            # a walk turns toward where it goes, and back to its keyed facing when it stops, at the capped speed
+            # (uncapped, the body snapped to the walk's direction on its first frame)
+            a, b = seg
+            ramp = [max(0.12, 1.5 * math.degrees(abs(_wrap(travel_yaw - math.radians(
+                _held(keys, "yaw", te, 0.0, *(OVERLAP["yaw"] if ov else (0.0, 1.0)), cap, True))))) / cap)
+                for te in (a["t"], b["t"])]   # fixed per walk, from the gap at its two ends
+            w = _ease((t - a["t"]) / ramp[0]) * _ease((b["t"] - t) / ramp[1])
+            yaw = keyed + _wrap(travel_yaw - keyed) * w
     else:
-        yaw = math.radians(_held(keys, "yaw", t, 0.0)) if yk else (travel_yaw or 0.0)
-    arms = [math.radians(v) for v in _held(keys, "arms", t, [0, 0])]
+        yaw = keyed if yk else (travel_yaw or 0.0)
+    arms = [math.radians(v) for v in held("arms", [0, 0])]
     if run:
         arms = [max(a, 0.35) for a in arms]
-    side = [math.radians(v) for v in _held(keys, "side", t, [0, 0])]
-    head = [math.radians(v) for v in _held(keys, "head", t, [0, 0])]
+    side = [math.radians(v) for v in held("side", [0, 0])]
+    head = [math.radians(v) for v in held("head", [0, 0])]
     ty, tp = tremble(keys, t)
     head = [head[0] + ty, head[1] + tp]
-    lean = math.radians(_held(keys, "lean", t, 0.0)) + (0.12 if run else 0.0)
+    lean = math.radians(held("lean", 0.0)) + (0.12 if run else 0.0)
     out = {"x": x, "y": y, "z": z, "yaw": yaw, "legs": legs, "arms": tuple(arms), "arms_side": tuple(side),
             "head_yaw": head[0], "head_pitch": head[1], "lean": lean, "bob": bob,
-            "expr": _switch(keys, "expr", t, "neutral"), "look": tuple(_held(keys, "look", t, [0, 0])),
+            "expr": _switch(keys, "expr", t, "neutral"), "look": tuple(held("look", [0, 0])),
             "blink": blink(t, seed) if _switch(keys, "blink", t, True) else 0.0,
             "mouth": max(mouth(tl["talk"].get(who, []), t), mouth_track(keys, t)),
             "hidden": bool(_switch(keys, "hidden", t, False)), "speed": speed}
