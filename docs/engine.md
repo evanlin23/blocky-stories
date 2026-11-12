@@ -294,4 +294,8 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   the vignette at 0.2 and grain at 0.009, and adds a toe that lifts the darkest tones instead of crushing them (by scaling each pixel with its
   luma's lift, so colours keep their saturation). The
   story's own tints and shot grades stay.
+- **Sharpen** (opt-in, animation audit 2026-11-12): `sharpen: 0.4` adds an unsharp mask (radius 1 px, 40%) after the
+  grade and before grain; `bloom_thresh: 0.85` keeps the glow to the brights (today 0.6). Together on ep124/ep54 clips:
+  edge acuity (p99 gradient) +5 to 7%, Laplacian sharpness +8 to 9%, post only, no render cost. Opus critic: "slight" at
+  TV size, no halos, captions clean; a faint grain lift in flat areas (use 0.3 if it shows).
 - `check` blocks an unknown setting, a `sway` shot that doesn't exist, a punch over 8% and a bed with no recording.

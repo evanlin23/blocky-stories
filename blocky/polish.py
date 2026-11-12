@@ -51,6 +51,7 @@ DEFAULTS = {
     "overlap": False, "turn_cap": 0,   # opt-in (anim audit 2026-11-12): heads lead and arms follow; turns capped (deg/s)
     # picture
     "grade": "bright",
+    "sharpen": 0.0, "bloom_thresh": None,   # opt-in (anim audit 2026-11-12): 0.4 and 0.85 lift edge acuity ~6-8%
     # builder marks
     "emph": None, "auto": True, "reveal": [], "twist": None, "quiet": [], "hold": [],
     "punch_max": 0,      # opt-in (anim audit 2026-11-12): at most this many punch-ins a film; the hook's always kept
