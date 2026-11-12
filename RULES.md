@@ -2,6 +2,13 @@
 
 Every agent reads this file, and only this file, for the rules. The owner's words outrank everything here. Note numbers (9, 18, 21) are the showrunner notes these came from in `evanlin23/content`. When the owner gives new feedback, add it here as a dated quote and change the rule it touches.
 
+## Optimize for viewer satisfaction (owner, 2026-11-12)
+The owner: "We should be optimizing for viewer satisfaction." Views and the stop rate get a Short seen; satisfaction is whether the viewer is glad they watched. It's what YouTube rewards over time, and what makes people follow the channel.
+- **What counts as satisfaction**, per Short (the Monday review reports it): likes per 1,000 views, subscribers per 1,000 views, shares, comments that engage with the story (guesses, arguments, feelings, not confusion), average % viewed, and how many stay to the end.
+- **The title and first second promise one thing, and the ending pays it off plainly.** No bait the story doesn't deliver, and no reveal that leaves people asking "wait, what?" (the Card/FRIENDS comments asked where "lemonade" went).
+- **The best like rate so far:** "Everyone's Born With HALF a Mark", about 49 likes per 1,000 views against 15 to 25 for the rest. Study it: a premise people can poke at, a clear rule, and a reveal that recasts it.
+- **The reviewer and critic ask, of every story: "Would a viewer be glad they watched, and want the next one?"**
+
 ## Eerie and mystery, fewer monsters, more warm endings (owner, 2026-11-12)
 The owner liked ep124 ("Future Me Called And Said NOTHING"): "It's really feel good happy. So let's like play a little bit more into that if possible." Then, softening a first reaction ("Maybe we can just abandon the creepy stuff"): "Wait we don't need to go too drastic, it's just that it feels like the creepy monsters don't always land. I think eerie/mystery is fine. Idk don't take my word for it let's just keep posting and then think further."
 - **Eerie and mystery stay.** The uncanny rule and an unexplained thing are the hook.
