@@ -64,8 +64,7 @@ SLEEVE = "#5d5d6a"
 SLEEVE2 = "#4a4a56"
 HAND = "#b9a2d4"
 BRASS = "#8c7438"
-PATH = [(2.5, 1.2, 3.55), (2.5, -0.6, 3.5), (2.47, -1.0, 3.05), (2.3, -1.7, 2.55), (2.12, -2.6, 2.2),
-        (2.02, -3.55, 2.02), (2.02, -3.7, 1.8)]
+PATH = [(2.5, 0.4, 3.62), (2.5, -0.5, 3.7), (2.3, -3.2, 1.75), (2.62, -3.2, 1.72)]
 
 
 def oct_seg(p, q, t, mat, name, bevel=0.06, ext=0.0):
@@ -93,40 +92,25 @@ def finger(base, dirs, lens, th, mat):
 
 def build_arm(kit):
     wool = kit.plastic(SLEEVE, 0.95, spec=0.03)
-    wool2 = kit.plastic(SLEEVE2, 0.95, spec=0.03)
-    band = kit.plastic("#8d8a9c", 0.9, spec=0.03)
     skin = kit.plastic(HAND, 0.6, spec=0.15)
     brass = kit.plastic(BRASS, 0.8, spec=0.1)
     t = 0.3
+    # smooth charcoal wool, one thickness all the way: out of the window, the elbow over the gutter, the long drop
     for a, b in zip(PATH, PATH[1:]):
-        oct_seg(a, b, t, wool, "sleeve", 0.07, ext=t * 0.4)
-    # creases: thin, slightly fatter rings across the sleeve, turned about the axis, darker wool
-    for i, (a, b) in enumerate(zip(PATH[:-1], PATH[1:])):
-        A, Bv = V(a), V(b)
-        d = (Bv - A).normalized()
-        n = max(2, int((Bv - A).length / 0.5))
-        for k in range(1, n):
-            c = A + (Bv - A) * (k / n)
-            oct_seg(c - d * 0.035, c + d * 0.035, t + 0.03, wool2, "fold", 0.04)
-    # the elbow where it bends over the gutter: a fat knuckle of cloth
-    e = V(PATH[2])
-    oct_seg(e + V((0, 0.12, 0.12)), e + V((0, -0.1, -0.1)), t + 0.1, wool, "elbow", 0.1)
-    # the soft turned-back cuff band at the wrist (round-ish, lighter), and the dark sleeve mouth under it
+        oct_seg(a, b, t, wool, "sleeve", 0.12, ext=t * 0.45)
+    # the cuff: the same cloth, a slightly fuller short band, one small button on the camera side
     w = V(PATH[-1])
-    oct_seg(w + V((0, 0, 0.1)), w + V((0, 0, -0.05)), 0.4, band, "cuff", 0.09)
-    oct_seg(w + V((0, 0, -0.05)), w + V((0, 0, -0.12)), 0.31, wool2, "mouth", 0.05)
-    # a small matte button on the cuff's camera side
-    kit.cyl(nm("button"), 0.04, 0.03, (w.x - 0.2, w.y - 0.02, w.z + 0.04), brass, None, (0, math.radians(90), 0), n=14)
-    # the hand: pale dusky lilac, hanging limp from the wrist, palm toward us, four long separate fingers + thumb
-    hx, hy = w.x - 0.02, w.y
-    top = w.z - 0.12
-    B(None, (0.12, 0.3, 0.3), (hx, hy, top - 0.15), skin, "palm", 0.03)
+    oct_seg(w + V((0.0, 0, 0)), w + V((0.14, 0, 0)), 0.34, wool, "cuff", 0.1)
+    kit.cyl(nm("button"), 0.035, 0.03, (w.x + 0.07, w.y - 0.17, w.z + 0.03), brass, None, (math.radians(90), 0, 0), n=14)
+    # the hand, inside the hatch, palm up, reaching toward the vendor, fingers jointed and curled (taking something)
+    hx = w.x + 0.14
+    hy, hz = w.y, w.z - 0.02
+    B(None, (0.24, 0.3, 0.1), (hx + 0.12, hy, hz), skin, "palm", 0.03)
     for i in range(4):
-        fy = hy + 0.115 - i * 0.077
-        ln = (0.26, 0.3, 0.28, 0.2)[i]
-        finger((hx - 0.01, fy, top - 0.28),
-               [(-0.05 * (i - 1.5), -0.1, -1.0), (0.0, -0.45, -0.9), (0.0, -0.85, -0.5)], (ln, 0.2, 0.16), 0.06, skin)
-    finger((hx - 0.01, hy + 0.17, top - 0.12), [(0.0, 0.8, -0.35), (0.0, 0.9, -0.4)], (0.17, 0.15), 0.07, skin)
+        fy = hy + 0.095 - i * 0.063
+        ln = (0.16, 0.18, 0.17, 0.13)[i]
+        finger((hx + 0.2, fy, hz + 0.01), [(1.0, 0.0, 0.25), (0.55, 0.0, 0.85), (-0.3, 0.0, 0.95)], (ln, 0.1, 0.08), 0.07, skin)
+    finger((hx + 0.04, hy + 0.15, hz + 0.03), [(0.7, 0.5, 0.3), (0.8, -0.1, 0.5)], (0.13, 0.13), 0.08, skin)
 
 
 # ------------------------------------------------------------------------------------------------ the house
@@ -175,6 +159,7 @@ def build_house(kit):
     for size, loc in (((1.0, 0.1, 1.0), (2.5, 2.7, 3.6)), ((0.1, 2.5, 1.0), (1.96, 1.45, 3.6)), ((0.1, 2.5, 1.0), (3.04, 1.45, 3.6)),
                       ((1.2, 2.5, 0.1), (2.5, 1.45, 4.1)), ((1.2, 2.5, 0.1), (2.5, 1.45, 3.1))):
         B(None, size, loc, dark, "pocket")
+    B(None, (1.04, 2.6, 0.94), (2.5, 1.45, 3.6), dark, "blackfill")
     # (no bulb: the pocket is pitch black)
     # kit.cyl(nm("cord"), 0.01, 0.5, (2.5, 2.2, 3.85), dark, None, n=6)
     return None
@@ -217,7 +202,7 @@ def build_truck_side(kit, x0):
     part(-4.4, -3.0, 2.5, 3.1)
     B(None, (0.5, 1.5, 0.06), (x0 - 0.2, -3.7, 1.3), P("#e8e8e0", 0.4), "counter")
     red, white = P("#e8445a", 0.6), P("#f2f2ee", 0.6)
-    for i in range(6):
+    for i in range(2):
         y = -4.45 + i * 0.3
         B(None, (0.8, 0.3, 0.05), (x0 - 0.45, y + 0.15, 2.75 - 0.18), red if i % 2 else white, "awn", 0.0,
           rot=(0, math.radians(-25), 0))
