@@ -196,13 +196,19 @@ def build_phone(kit):
     fx, fy = G.PHOTO
     fr = kit.empty("photo", (fx, fy, G.TABLE_Z))
     W["photo"] = fr
-    kit.box("photo.frame", (0.6, 0.03, 0.58), (0, 0, 0.3), pl("#f4efe2", 0.5), fr, bevel=0.012)
-    kit.box("photo.back", (0.55, 0.02, 0.53), (0, -0.012, 0.3), pl("#8fc7ea", 0.6), fr)
-    kit.box("photo.grass", (0.55, 0.02, 0.06), (0, -0.0125, 0.06), pl("#6cc15e", 0.7), fr)
-    kit.box("photo.stand", (0.05, 0.14, 0.02), (0, 0.07, 0.01), pl("#d8d0be", 0.6), fr)
+    # a dark wooden frame (four bars, standing proud of the picture) on a slanted stand, so it reads as a printed photo
+    darkw = pl("#2a1c14", 0.55, spec=0.1)
+    kit.box("photo.frame", (0.62, 0.05, 0.60), (0, 0.016, 0.3), pl("#1f1610", 0.6), fr, bevel=0.01)   # the back board
+    kit.box("photo.back", (0.54, 0.02, 0.52), (0, -0.016, 0.3), pl("#8fc7ea", 0.6), fr)
+    kit.box("photo.grass", (0.54, 0.02, 0.07), (0, -0.0175, 0.065), pl("#6cc15e", 0.7), fr)
+    for nm, sz, loc in (("t", (0.62, 0.05, 0.05), (0, -0.03, 0.575)), ("b", (0.62, 0.05, 0.05), (0, -0.03, 0.025)),
+                        ("l", (0.05, 0.05, 0.6), (-0.285, -0.03, 0.3)), ("r", (0.05, 0.05, 0.6), (0.285, -0.03, 0.3))):
+        kit.box(f"photo.bar{nm}", sz, loc, darkw, fr, bevel=0.008)
+    kit.box("photo.stand", (0.05, 0.22, 0.03), (0, 0.11, 0.03), darkw, fr, rot=(0.0, 0, 0))
+    kit.box("photo.easel", (0.05, 0.03, 0.42), (0, 0.1, 0.2), darkw, fr, rot=(-0.4, 0, 0))
     pd = build_dog(kit, "pdog", fr)
     W["pdog"] = pd
-    pd["root"].location = (0.2, -0.04, 0.03)
+    pd["root"].location = (0.2, -0.045, 0.03)
     pd["root"].scale = (0.52, 0.52, 0.52)
     pd["tail"].rotation_euler = (-0.5, 0, 0)
 
@@ -647,6 +653,14 @@ def hexcol(h):
 def animate(kit, story, tl, t, ctx):
     if not W.get("inited"):
         _first_frame(kit, story)
+    pto = bpy.data.objects.get("photo_theo")
+    if pto is not None:
+        W.setdefault("pto0", tuple(pto.scale))
+        o = W["pto0"]
+        pto.scale = (o[0], o[1] * 0.22, o[2])       # a printed picture: no depth
+    ppd = W.get("pdog")
+    if ppd is not None:
+        ppd["root"].scale = (0.52, 0.16, 0.52)
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
     sid = shot["id"]
     spec = next((s for s in story["shots"] if s["id"] == sid), None)

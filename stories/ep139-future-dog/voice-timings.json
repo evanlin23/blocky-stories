@@ -130,22 +130,22 @@
    ]
   },
   "L05": {
-   "text": "mine rang on my patio,",
+   "text": "mine rang at seven.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.5,
-   "onset": 0.172,
-   "end": 1.293,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.19,
    "chunks": [
     [
-     0.172,
-     0.543
+     0.19,
+     0.569
     ],
     [
-     0.543,
-     1.293
+     0.569,
+     1.19
     ]
    ]
   },
@@ -602,18 +602,22 @@
    ]
   },
   "L27": {
-   "text": "watching the latch.",
+   "text": "sniffing under the gate.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.19,
-   "onset": 0.172,
-   "end": 0.983,
+   "dur": 1.293,
+   "onset": 0.19,
+   "end": 1.103,
    "chunks": [
     [
-     0.172,
-     0.983
+     0.19,
+     0.457
+    ],
+    [
+     0.457,
+     1.103
     ]
    ]
   },
@@ -826,26 +830,26 @@
    ]
   },
   "L37": {
-   "text": "every night he'd texted me and deleted it.",
+   "text": "seven nights, he'd texted me and deleted it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.172,
-   "onset": 0.172,
-   "end": 1.983,
+   "dur": 2.19,
+   "onset": 0.19,
+   "end": 2.0,
    "chunks": [
     [
-     0.172,
-     0.543
+     0.19,
+     0.603
     ],
     [
-     0.543,
-     1.224
+     0.629,
+     1.233
     ],
     [
-     1.224,
-     1.983
+     1.233,
+     2.0
     ]
    ]
   },
@@ -1050,22 +1054,34 @@
    ]
   },
   "L46": {
-   "text": "every morning at seven forty,",
+   "text": "now every morning at seven forty, we walk to theo's for coffee.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.707,
+   "dur": 2.966,
    "onset": 0.172,
-   "end": 1.517,
+   "end": 2.776,
    "chunks": [
     [
      0.172,
-     0.603
+     0.681
     ],
     [
-     0.603,
-     1.517
+     0.681,
+     1.362
+    ],
+    [
+     1.431,
+     1.707
+    ],
+    [
+     1.707,
+     2.103
+    ],
+    [
+     2.103,
+     2.776
     ]
    ]
   },
