@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L28
@@ -68,12 +68,12 @@ cast = {
     "me": person("#c98f64", "#e0a826", "#8a8f98", "#f4f4ee", hair="spiky", hair_c="#4a2f1c", brow_w=1.4),
     "theo": person("#c98f64", "#3f8a4e", "#3a4a63", "#5a4030", hair="cap", hair_c="#2a1b12", pattern="plaid",
                    pattern_c="#2d6a3a", sleeves="long", brow_w=1.6, width=1.06),
-    "neighbor": person("#e2b088", "#4a78b8", "#4a4a5a", "#2a2a30", hair="swoop", hair_c="#3a2418", eyes="lashes",
+    "neighbor": person("#e2b088", "#4a78b8", "#4a4a5a", "#2a2a30", hair="long", hair_c="#3a2418", eyes="lashes",
                        sleeves="long", fringe="hard"),
     "sam": person("#b98456", "#f4f4f0", "#2f3a52", "#e8e4dc", hair="cap", hair_c="#1a1410", hat="ballcap",
                   hat_c="#2f5fb0"),
     "photo_theo": person("#c98f64", "#3f8a4e", "#3a4a63", "#5a4030", hair="cap", hair_c="#2a1b12", pattern="plaid",
-                         pattern_c="#2d6a3a", sleeves="long", height=0.17),
+                         pattern_c="#2d6a3a", sleeves="long", height=0.3),
 }
 acting = {n: [] for n in cast}
 last = {n: [0, 0] for n in cast}
@@ -162,11 +162,14 @@ cue(0, "sit_me", s=1.0)
 key("theo", 0, (G.THEO_AT[0] + G.ST * 0 + 0, G.THEO_AT[1]), yaw=0, expr="nervous", arms=[0, 0], side=[0, 0], head=[0, 0])
 key("neighbor", 0, (G.NEIGH[0], G.NEIGH[1] + 2.95, 0.18), yaw=0, expr="sheepish", arms=[0, 0], side=[0, 0])
 key("sam", 0, (G.SAM[0] - 0.4, G.SAM[1] + 1.0), yaw=0, expr="sheepish", arms=[10, 10], side=[0, 0])
-key("photo_theo", 0, (G.PHOTO[0] - 0.09, G.PHOTO[1] - 0.11, G.TABLE_Z + 0.02), yaw=0, expr="smile", arms=[0, 0], side=[0, 0])
+key("photo_theo", 0, (G.PHOTO[0] - 0.14, G.PHOTO[1] - 0.11, G.TABLE_Z + 0.02), yaw=0, expr="smile", arms=[0, 0], side=[0, 0])
 
 # the rule meter: "1" at once; the timer from L14 (05:40 at L21, 06:00 at L22); the big digit comes back as "0" at L23
 cue(0, "timer", mode=0.0, s=0.0, big=1.0)
 cue("L14", "timer", mode=1.0, s=0.0)
+cue("L13.2", "tap", p=0.0)
+cue("L13.2+0.9", "tap", p=1.0, dur=0.25)
+cue("L14.1", "tap", p=0.0, dur=0.3)
 for ln, sec in (("L15", 40), ("L16", 95), ("L17", 150), ("L18", 200), ("L19", 245), ("L20", 295), ("L21", 340), ("L22", 360)):
     cue(ln, "timer", mode=1.0, s=float(sec), dur=0.5)
 cue("L23", "timer", mode=0.0, s=360.0, big=0.0)
@@ -184,14 +187,15 @@ cue("L23", "phone", mode=0.0, buzz=0.0)
 cue(0, "gate", open=0.0, latch=0.0)
 cue(0, "leash", on=0.0)
 cue(0, "steam", on=0.0)
+cue(0, "tap", p=0.0)
 for sn in ("L07", "L19.1", "L21.2", "L29.3", "L38", "L42", "L48"):
     cue(sn, "achoo")
 
 # --------------------------------------------------------------------------------------------- 01 the rule (L01, L02)
 dog(0, x=G.CHAIR2[0], y=G.CHAIR2[1], z=G.SEAT_H, yaw=0, sit=1.0, hy=30.0, tongue=0.0)
-shot("S01a", 0, mecam(2.5, 0, 34, dx=-0.15, tz=1.1, cz=1.9))
+shot("S01a", 0, [[0, [-0.45, -0.1, 0.95], [-0.35, 2.4, 1.12], 34], [1, [-0.42, 0.2, 0.95], [-0.35, 2.4, 1.14], 34]])
 mouth("me", 0, "L01.2", 0.35)
-shot("S01b", "L01.2", mecam(1.45, 0, 34, dx=-0.3, tz=1.25, cz=1.6))
+shot("S01b", "L01.2", [[0, [-0.35, 0.8, 0.95], [-0.2, 2.4, 1.22], 34], [1, [-0.32, 0.95, 0.97], [-0.2, 2.4, 1.25], 34]])
 mouth("me", "L01.2", "L01.4", 0.35)
 shot("S01c", "L01.4", C(G.CHAIR2[0] + 0.3, G.CHAIR2[1], 0.8, 1.5, 0, 34, cz=1.0))
 key("me", "L02", head=[0, 10], expr="uneasy", blend=0.6)
@@ -203,7 +207,7 @@ NX, NY = G.NEIGH
 shot("S03", "L03", C(NX, NY + 2.95, 1.6, 1.9, 8, 32, cz=1.7))
 key("neighbor", "L03", expr="sheepish", arms=[0, 150], blend=0.5)
 SX, SY = G.SAM
-shot("S04a", "L04", C(SX + 0.7, SY + 1.5, 1.2, 3.4, -10, 30, cz=1.4))
+shot("S04a", "L04", C(SX + 0.15, SY + 1.3, 1.2, 2.5, -10, 30, cz=1.4, push=(2.1, 1.2)))
 key("sam", "L04", expr="sheepish", arms=[10, 10])
 cue("L04.3", "steam", on=1.0)
 shot("S04b", "L04.4", C(SX + 1.7, SY + 0.9, 1.1, 3.2, -35, 30, cz=1.4))
@@ -223,74 +227,78 @@ mouth("me", "L09", "L09>", 0.35)
 shot("S09", "L09", mecam(1.45, 0, 34, dx=-0.25, tz=1.27, cz=1.5))
 dog("L09.2", tongue=0.0)
 mouth("me", "L10", "L10>", 0.3)
-shot("S10a", "L10", C(G.PHOTO[0], G.PHOTO[1], 0.95, 0.75, 0, 34, cz=1.0))
+shot("S10a", "L10", C(G.PHOTO[0], G.PHOTO[1] - 0.1, 0.97, 1.0, 0, 34, cz=1.0, push=(0.6, 0.97)))
 key("me", "L10.1", expr="warm", head=[10, 12], blend=0.5)
 shot("S10b", "L10.1", mecam(1.35, 0, 34, dx=-0.25, tz=1.27, cz=1.5))
-shot("S11", "L11", C(G.PHOTO[0] - 0.03, G.PHOTO[1], 0.97, 0.7, 0, 34, cz=1.0, push=(0.38, 0.99)))
+shot("S11", "L11", C(G.PHOTO[0], G.PHOTO[1] - 0.1, 0.97, 1.0, 0, 34, cz=1.0, push=(0.66, 0.97)))
 key("me", "L11", expr="warm")
 
 # --------------------------------------------------------------------------------------------- 04 texting, the call (L12 to L15)
-shot("S12a", "L12", phonecam(0.62, 0, 34, dx=0.0, dy=0.0, cz=1.35, tz=0.75, push=(0.5, 0.75)))
+dog("L12.2", x=G.NOODLE_UNDER[0], y=G.NOODLE_UNDER[1], z=0.0, sit=0.0, yaw=0)
+dog("L12.2+0.4", glide=True, x=-0.8, y=1.2, z=0.3, sit=0.0, yaw=-60)
+dog("L13", glide=True, x=G.CHAIR2[0], y=G.CHAIR2[1], z=G.SEAT_H, sit=1.0, yaw=90, hy=0.0)
+shot("S12a", "L12", phonecam(0.32, 0, 34, dx=0.0, dy=0.0, cz=0.95, tz=0.74, push=(0.26, 0.74)))
 key("me", "L12.2", expr="sheepish", head=[0, 8])
 shot("S12b", "L12.2", mecam(1.45, 0, 34, dx=-0.25, tz=1.27, cz=1.5))
-shot("S13a", "L13", phonecam(0.6, 0, 34, dx=0.0, dy=0.0, cz=1.3, tz=0.76))
+shot("S13a", "L13", P2((0.75, 1.3, 1.0), (-0.8, 1.5, 0.92), 34))
 key("me", "L13.2", expr="stunned", head=[0, 0])
 shot("S13b", "L13.2", mecam(1.4, 0, 34, dx=-0.25, tz=1.27, cz=1.5))
 key("me", "L14", pos=ME, arms=[35, 78], lean=14, blend=0.4)
 key("me", "L14.1", arms=[35, 35], lean=0, blend=0.5)
-shot("S14a", "L14", phonecam(0.42, 0, 34, dx=0.0, dy=0.0, cz=1.2, tz=0.78))
+shot("S14a", "L14", P2((0.1, 1.4, 0.9), (-0.45, 1.7, 0.78), 34))
 key("me", "L14.1", expr="neutral")
 shot("S14b", "L14.1", mecam(1.4, 0, 34, dx=-0.25, tz=1.27, cz=1.5))
 key("me", "L15", expr="uneasy")
 shot("S15", "L15", mecam(1.4, -6, 34, dx=-0.3, tz=1.25, cz=1.5))
 
 # --------------------------------------------------------------------------------------------- 05 Noodle and the phone (L16 to L22)
-dog("L16", x=G.NOODLE_UNDER[0], y=G.NOODLE_UNDER[1], z=0.0, sit=0.0, yaw=0)
-dog("L16+0.28", glide=True, x=-0.45, y=1.0, z=0.3, sit=0.0, yaw=-60)
-dog("L16+0.6", glide=True, x=G.CHAIR2[0], y=G.CHAIR2[1], z=G.SEAT_H, sit=1.0, yaw=0, hy=28.0)
+dog("L16", dur=0.5, yaw=90, hy=0.0)
 shot("S16", "L16", C(-0.5, 1.5, 0.45, 2.4, 6, 32, cz=0.95))
 dog("L17", hy=34.0, hp=14.0, dur=0.6)
 shot("S17", "L17", C(G.CHAIR2[0] + 0.25, G.CHAIR2[1], 0.85, 1.4, 0, 34, cz=1.0, push=(1.2, 0.85)))
 dog("L17.2", hy=24.0, hp=-8.0, dur=0.8)
-shot("S18", "L18", phonecam(0.62, -8, 34, dx=-0.05, dy=0.0, cz=1.0, tz=0.7))
-shot("S19", "L19", C(G.CHAIR2[0] + 0.1, G.CHAIR2[1], 0.85, 1.4, 12, 34, cz=1.0))
+shot("S18", "L18", P2((0.75, 1.3, 1.0), (-0.8, 1.5, 0.92), 34))
+dog("L19", dur=0.5, yaw=0, hy=28.0, hp=0.0)
+shot("S19", "L19", C(G.CHAIR2[0] + 0.15, G.CHAIR2[1], 1.05, 1.4, 12, 34, cz=1.05))
 key("me", "L20", expr="stunned")
 shot("S20", "L20", mecam(1.4, 0, 34, dx=-0.3, tz=1.27, cz=1.55))
-shot("S21a", "L21", C(G.CHAIR2[0] + 0.2, G.CHAIR2[1], 0.85, 1.4, -12, 34, cz=1.0))
-shot("S21b", "L21.2", C(G.CHAIR2[0] + 0.1, G.CHAIR2[1], 0.85, 1.3, 6, 34, cz=1.0))
+shot("S21a", "L21", C(G.CHAIR2[0] + 0.15, G.CHAIR2[1], 1.05, 1.4, -12, 34, cz=1.05))
+shot("S21b", "L21.2", C(G.CHAIR2[0] + 0.1, G.CHAIR2[1], 1.05, 1.3, 6, 34, cz=1.05))
 key("me", "L22", expr="neutral", head=[-14, 4], blend=1.0)
 shot("S22", "L22", mecam(1.5, 8, 34, dx=-0.2, tz=1.25, cz=1.45, push=(1.3, 1.25)))
 
 # --------------------------------------------------------------------------------------------- 06 the click, the gate (L23 to L27)
-dog("L23", hy=30.0, hp=6.0)
-shot("S23", "L23", phonecam(0.65, -10, 34, dx=-0.15, dy=0.0, cz=1.0, tz=0.74))
+dog("L23", dur=0.4, yaw=90, hy=0.0, hp=4.0)
+shot("S23", "L23", P2((0.6, 1.25, 0.95), (-0.85, 1.55, 0.92), 34))
 key("me", "L24", expr="uneasy", head=[0, 0], blend=0.5)
 mouth("me", "L24", "L24>", 0.35)
 shot("S24", "L24", mecam(1.35, 0, 34, dx=-0.25, tz=1.27, cz=1.5))
-dog("L25", dur=0.4, hy=62.0, hp=0.0)
-shot("S25", "L25", C(G.CHAIR2[0] + 0.1, G.CHAIR2[1], 0.85, 1.5, 14, 34, cz=1.0))
+dog("L25", dur=0.4, yaw=0, hy=62.0, hp=0.0)
+shot("S25", "L25", C(G.CHAIR2[0] + 0.15, G.CHAIR2[1], 1.05, 1.5, 14, 34, cz=1.05))
 GX, GY = G.NOODLE_LIE
-dog("L26", x=GX, y=GY, z=0.0, yaw=60, sit=0.0, lie=1.0, hy=0.0, hp=0.0)
-shot("S26", "L26", C(GX + 0.3, GY, 0.5, 2.4, -35, 30, cz=1.0))
+dog("L26", x=GX, y=GY - 0.1, z=0.0, yaw=10, sit=0.0, lie=1.0, hy=55.0, hp=0.0)
+shot("S26", "L26", C(2.6, 0.8, 0.4, 1.5, -40, 34, cz=0.45))
 dog("L27", hp=-10.0, dur=0.5)
-shot("S27", "L27", C(GX + 0.35, GY, 0.4, 1.4, -35, 34, cz=0.8))
+shot("S27", "L27", C(2.85, 0.88, 0.42, 0.85, -40, 34, cz=0.42))
 shot("S27d", "P28", C(G.GATE_X - 0.1, 0.9, 0.7, 1.9, -78, 32, cz=1.0))
 
 # --------------------------------------------------------------------------------------------- 07 the morning, the run (L28 to L32)
 dog("L28", x=2.35, y=0.95, z=0.0, yaw=55, sit=0.0, lie=0.0, hy=0.0, hp=-6.0)
-shot("S28a", "L28", C(2.35, 0.95, 0.38, 1.1, -10, 34, cz=0.7))
+shot("S28a", "L28", C(2.55, 0.95, 0.38, 1.5, -10, 34, cz=0.7))
 cut("me", "L28.1", (G.DOOR_ME[0], G.DOOR_ME[1]), yaw=0, expr="uneasy", head=[0, 6], arms=[0, 0])
 cue("L28.1", "sit_me", s=0.0)
 shot("S28b", "L28.1", C(G.DOOR_ME[0], G.DOOR_ME[1], 1.35, 1.6, 0, 34, cz=1.55))
 dog("L29", x=2.32, y=0.52, z=0.0, yaw=90, hp=-16.0, hy=0.0)
 cue("L29.2", "gate", latch=0.0)
 cue("L29.2+0.2", "gate", latch=1.0, dur=0.35)
-shot("S29a", "L29", C(2.65, 0.52, 0.5, 1.3, -18, 34, cz=0.7))
-shot("S29b", "L29.3", C(2.4, 0.6, 0.4, 1.0, -15, 34, cz=0.7))
+shot("S29a", "L29", C(2.5, 0.52, 0.5, 1.6, -18, 34, cz=0.7))
+shot("S29b", "L29.3", C(2.5, 0.6, 0.42, 1.35, -15, 34, cz=0.7))
 dog("L30", x=2.32, y=0.52, z=0.0, yaw=90, hp=-16.0, hy=0.0)
 cue("L30+0.1", "gate", open=1.0, latch=1.0, dur=1.0)
-cue("L30+0.1", "leash", on=0.0)
-shot("S30a", "L30", C(2.2, 0.6, 0.5, 1.1, -20, 34, cz=0.7))
+cue("L30", "leash", on=1.0, arm=60.0)
+cut("me", "L30", (1.1, 0.9), yaw=90, expr="uneasy", head=[0, 0], arms=[0, 60])
+cue("L30", "sit_me", s=0.0)
+shot("S30a", "L30", P2((2.95, -0.55, 0.75), (2.55, 0.55, 0.45), 34))
 dog("L30+0.45", glide=True, x=2.7, y=0.9, yaw=90, hp=0.0)
 dog("L30+1.5", glide=True, x=5.6, y=0.9, yaw=90, hp=0.0)
 shot("S30b", "L30+0.4", C(3.6, 0.9, 0.5, 2.8, -40, 34, cz=0.9))
@@ -303,8 +311,8 @@ cue("L31", "sit_me", s=0.0)
 key("me", "L31.2", (74.5, 0.2), yaw=90, expr="stunned")
 dog("L31", x=71.8, y=0.2, z=0.0, yaw=90, sit=0.0, lie=0.0, hy=0.0, hp=0.0, tongue=1.0, wag=1.0)
 dog("L31.2", glide=True, x=76.3, y=0.2, yaw=90)
-shot("S31a", "L31", C(72.5, 0.2, 1.2, 3.2, 90, 32, cz=1.3))
-shot("S31b", "L31.2", C(75.0, 0.2, 0.4, 2.6, 62, 34, cz=0.5))
+shot("S31a", "L31", C(72.3, 0.2, 1.25, 1.85, 90, 32, cz=1.3))
+shot("S31b", "L31.2", C(75.6, 0.2, 0.2, 1.7, 62, 34, cz=0.35))
 key("me", "L32", (77.0, 0.2), yaw=90)
 key("me", "L32.1", (80.8, 0.2), yaw=90)
 dog("L32", x=79.5, y=0.2, yaw=90)
@@ -343,21 +351,22 @@ shot("S40", "L40", C(TX - 0.1, TY - 0.4, 0.85, 1.9, 0, 34, cz=1.0))
 key("theo", "L41", expr="smile")
 mouth("theo", "L41", "L41>", 0.25)
 shot("S41", "L41", C(TX, TY, 0.95, 1.35, 4, 34, cz=1.05))
-shot("S42", "L42", C(TX, TY - 0.4, 0.8, 1.2, -6, 34, cz=0.95))
+shot("S42", "L42", C(TX - 0.35, TY - 0.4, 0.85, 1.5, -6, 34, cz=1.0))
 cue("L43", "squat_theo", s=0.0, dur=0.6)
 cut("theo", "L43", (TX, TY), yaw=0, expr="laugh", arms=[55, 55], side=[0, 0], head=[0, 0])
 dog("L43", x=TX, y=TY - 0.8, z=0.2, up=1.0, yaw=0)
-cut("me", "L43", (TX - 1.2, TY), yaw=0, expr="laugh", head=[0, 0], arms=[0, 0], side=[0, 0])
-key("me", "L43.2", (TX - 1.2, TY), expr="laugh", side=[62, 0], blend=0.6)
-shot("S43", "L43", C(TX - 0.7, TY, 1.2, 2.5, 0, 34, cz=1.4))
+cut("me", "L43", (TX - 0.95, TY), yaw=0, expr="laugh", head=[0, 0], arms=[0, 0], side=[0, 0])
+key("me", "L43.2", (TX - 0.95, TY), expr="laugh", side=[62, 0], blend=0.6)
+shot("S43", "L43", C(TX - 0.45, TY, 1.3, 1.7, 0, 34, cz=1.45))
 key("me", "L44", expr="warm", side=[0, 0], arms=[0, 0], blend=0.5)
-shot("S44a", "L44", C(TX - 1.2, TY, 1.3, 1.45, 0, 34, cz=1.45))
+shot("S44a", "L44", C(TX - 0.45, TY, 1.3, 1.7, 0, 34, cz=1.45))
 cue("L44.2", "squat_theo", s=1.0, dur=0.1)
 cut("theo", "L44.2", (TX + 0.5, TY - 0.2, -0.32), yaw=0, expr="laugh", arms=[62, 62], head=[0, 6])
 dog("L44.2", x=TX + 0.5, y=TY - 0.95, z=0.05, up=1.0, yaw=0, tongue=1.0)
-cut("me", "L44.2", (TX - 0.5, TY + 1.0), yaw=0, expr="warm", head=[0, 0], arms=[0, 0], side=[0, 0])
-shot("S44b", "L44.2", C(TX + 0.1, TY - 0.3, 1.0, 1.8, 0, 34, cz=1.2))
-shot("S44c", "L44.5", C(TX + 0.5, TY - 0.7, 0.7, 0.95, 4, 34, cz=0.85))
+cut("me", "L44.2", (TX + 0.95, TY + 0.9), yaw=0, expr="warm", head=[0, 0], arms=[0, 0], side=[0, 0])
+shot("S44b", "L44.2", C(TX + 0.35, TY - 0.3, 1.0, 1.4, 0, 34, cz=1.1))
+cut("me", "L44.5", (TX + 2.2, TY + 0.9), yaw=0, expr="warm", head=[0, 0], arms=[0, 0], side=[0, 0])
+shot("S44c", "L44.5", C(TX + 0.2, TY - 0.7, 0.8, 1.5, 4, 34, cz=0.95))
 
 # --------------------------------------------------------------------------------------------- 10 the walk now (L45 to L49)
 HX, HY = G.HOUSE
@@ -371,15 +380,15 @@ cue("L46", "leash", on=1.0, arm=70.0)
 dog("L46", x=HX - 0.1, y=0.15, z=0.0, sit=1.0, yaw=0, tongue=1.0)
 shot("S46", "L46", C(HX - 1.0, 0.2, 1.1, 2.6, 0, 34, cz=1.3))
 cue("L47", "leash", on=0.0)
-cut("me", "L47", (HX - 0.7, G.PORCH_Y, 0.3), yaw=0, expr="smile", arms=[0, 0])
-cut("theo", "L47", (HX + 0.7, G.PORCH_Y, 0.3), yaw=0, expr="smile")
-shot("S47", "L47", C(HX, G.PORCH_Y, 1.5, 3.0, 0, 32, cz=1.6))
+cut("me", "L47", (HX - 0.55, G.PORCH_Y, 0.3), yaw=0, expr="smile", arms=[0, 0])
+cut("theo", "L47", (HX + 0.55, G.PORCH_Y, 0.3), yaw=0, expr="smile")
+shot("S47", "L47", C(HX, G.PORCH_Y, 1.4, 1.9, 0, 32, cz=1.5))
 dog("L48", x=HX, y=G.PORCH_Y - 1.1, z=0.26, sit=1.0, yaw=0)
-shot("S48", "L48", C(HX, G.PORCH_Y - 1.1, 0.45, 1.0, 0, 34, cz=0.7))
+shot("S48", "L48", C(HX - 0.25, G.PORCH_Y - 1.1, 0.75, 1.2, 0, 34, cz=0.75))
 cue("L49", "sit_me", s=1.0)
 cut("me", "L49", ME, yaw=0, expr="warm", head=[0, 0], arms=[35, 35], side=[0, 0], lean=0)
 dog("L49", x=G.CHAIR2[0], y=G.CHAIR2[1], z=G.SEAT_H, sit=1.0, hy=30.0)
-shot("S49", "L49", mecam(1.9, 0, 34, dx=-0.15, tz=1.22, cz=1.7, push=(1.5, 1.25)))
+shot("S49", "L49", [[0, [-0.45, -0.1, 0.95], [-0.35, 2.4, 1.12], 34], [1, [-0.42, 0.2, 0.95], [-0.35, 2.4, 1.14], 34]])
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)
@@ -433,7 +442,7 @@ sound["ambience"][0]["to"] = "P28"
 polish = {"reveal": [remap("L44.2")], "twist": remap("L44.2"),
           "emph": [remap(x) for x in ["L01.3", "L01.5", "L13.2", "L23.1", "L30", "L34", "L44.4"]],
           "quiet": [[remap("L41"), remap("L43")]],
-          "hold": ["S44b"], "ones": "all"}
+          "hold": ["S44b", "S01a", "S10a", "S11", "S12a", "S13a", "S49"], "ones": "all"}
 story = {
     "slug": "ep139-future-dog",
     "title": "Future Me Called And Only Asked For The DOG",
@@ -468,8 +477,8 @@ story = {
     "sound": sound,
     "set_moves": [],
     "frames_ok": [],
-    "staging_ok": ["S43/me+theo touch on purpose (my hand to his shoulder)", "S44a/me+theo touch on purpose"],
-    "framing_ok": ["S04a", "S04b", "S07", "S08", "S10a", "S10b", "S13a", "S14b", "S17", "S18", "S23", "S35", "S38", "S44c", "S45"],
+    "staging_ok": ["S43/me+theo touch on purpose (my hand to his shoulder)", "S44a/me+theo touch on purpose", "S47/me+theo stand close on purpose (coffee on the porch table)", "S48/me+theo stand close on purpose (same pose, Noodle close-up)"],
+    "framing_ok": ["S04b", "S07", "S08", "S10b", "S14b", "S17", "S31b", "S35", "S38", "S45", "S48"],
     "clip_ok": ["photo.back", "photo.frame"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

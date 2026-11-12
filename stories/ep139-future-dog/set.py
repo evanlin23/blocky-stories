@@ -64,15 +64,15 @@ def sample(name, tl, t, defaults):
 def build_patio(kit):
     pl = kit.plastic
     kit.plane("lawn", (500, 500), (100, 0, -0.04), pl("#62c45a", 0.9, spec=0.05))
-    kit.box("patio.slab", (9.0, 6.4, 0.1), (0, 1.3, -0.05), pl("#e3d3b0", 0.85, spec=0.05))
+    kit.box("patio.slab", (9.0, 6.4, 0.1), (0, 1.3, -0.05), kit.texture("brick", 1.2, tint="#f2dcc0"))
     for i in range(-4, 5):
-        kit.box(f"patio.joint{i}", (0.02, 6.4, 0.006), (i * 1.0, 1.3, 0.001), pl("#c9b88f", 0.9))
+        pass
     # the brick wall behind, a high soffit overhanging the whole back half (a ceiling behind every low angle)
     kit.box("patio.wall", (9.2, 0.3, 3.6), (0, 3.95, 1.8), kit.texture("brick", 1.0, tint="#e8b79c"))
     for sx in (-1, 1):
         kit.box(f"patio.wallside{sx}", (0.3, 4.4, 3.6), (sx * 4.55, 2.0, 1.8), kit.texture("brick", 1.0, tint="#e8b79c"))
-    kit.box("patio.soffit", (9.2, 2.3, 0.12), (0, 2.85, 2.74), pl("#efe6d2", 0.8, spec=0.05))
-    kit.box("patio.fascia", (9.2, 0.08, 0.34), (0, 1.74, 2.62), pl("#f2ead6", 0.7, spec=0.05))
+    kit.box("patio.soffit", (9.2, 2.3, 0.12), (0, 2.85, 2.74), pl("#d7c3a0", 0.8, spec=0.05))
+    kit.box("patio.fascia", (9.2, 0.08, 0.34), (0, 1.74, 2.62), pl("#c9b08a", 0.7, spec=0.05))
     # the sliding door (glass, half open) and a window
     white = pl("#efe9da", 0.6)
     glass = pl("#a9d6e8", 0.15, spec=0.8)
@@ -116,7 +116,9 @@ def build_patio(kit):
     # the lore tally: three short chalk strokes on the inside of the lower rail, at Noodle's eye level
     chalk = pl("#f3f0e6", 0.9)
     for k in range(3):
-        kit.box(f"gate.tally{k}", (0.012, 0.016, 0.1), (-0.062, -0.42 - k * 0.07, 0.4), chalk, hinge)
+        kit.box(f"gate.tally{k}", (0.012, 0.025, 0.16), (-0.062, -0.4 - k * 0.1, 0.4), chalk, hinge)
+    kit.box("gate.mat", (0.9, 1.3, 0.025), (2.35, 0.9, 0.012), pl("#8a5a3a", 0.9))
+    kit.box("gate.mat2", (0.78, 1.18, 0.028), (2.35, 0.9, 0.014), pl("#b07a4e", 0.9))
     # the latch: a thumb bar pivoting on a bolt near the free end, lifted by Noodle's nose
     lp = kit.empty("gate.latchpiv", (-0.06, -0.88, 0.55), hinge)
     W["latch"] = lp
@@ -162,7 +164,7 @@ def build_phone(kit):
     px, py, pz = G.PHONE
     root = kit.empty("phone", (px, py, pz))
     W["phone"] = root
-    root.scale = (1.5, 1.5, 1.5)
+    root.scale = (2.2, 2.2, 2.2)
     kit.box("phone.body", (0.085, 0.172, 0.011), (0, 0, -0.0045), pl("#2a2a30", 0.35, spec=0.5), root, bevel=0.006)
     kit.box("phone.cam", (0.016, 0.016, 0.004), (0.0, 0.07, -0.0105), pl("#111114", 0.3), root)
     # the home screen: a speech bubble and a paw on deep blue
@@ -185,18 +187,23 @@ def build_phone(kit):
     kit.box("phone.hs2", (0.018, 0.012, 0.002), (0.006, 0.018, 0.0035), wh, call, bevel=0.003)
     kit.box("phone.hs3", (0.018, 0.012, 0.002), (0.006, -0.018, 0.0035), wh, call, bevel=0.003)
     W["home"], W["call"] = home, call
+    sk = pl("#c98f64", 0.6)
+    fg = kit.empty("finger", (0, -80, 0))
+    W["finger"] = fg
+    kit.box("finger.tip", (0.034, 0.12, 0.028), (0, -0.06, 0.0), sk, fg, bevel=0.012)
+    kit.box("finger.hand", (0.1, 0.16, 0.04), (0.02, -0.2, 0.02), sk, fg, bevel=0.02)
     # the framed photo on the table: a standing frame, a blue backdrop, Theo (a tiny cast member) and a tiny Noodle
     fx, fy = G.PHOTO
     fr = kit.empty("photo", (fx, fy, G.TABLE_Z))
     W["photo"] = fr
-    kit.box("photo.frame", (0.40, 0.03, 0.36), (0, 0, 0.19), pl("#f4efe2", 0.5), fr, bevel=0.012)
-    kit.box("photo.back", (0.35, 0.02, 0.31), (0, -0.012, 0.19), pl("#8fc7ea", 0.6), fr)
-    kit.box("photo.grass", (0.35, 0.02, 0.07), (0, -0.0125, 0.075), pl("#6cc15e", 0.7), fr)
+    kit.box("photo.frame", (0.6, 0.03, 0.58), (0, 0, 0.3), pl("#f4efe2", 0.5), fr, bevel=0.012)
+    kit.box("photo.back", (0.55, 0.02, 0.53), (0, -0.012, 0.3), pl("#8fc7ea", 0.6), fr)
+    kit.box("photo.grass", (0.55, 0.02, 0.06), (0, -0.0125, 0.06), pl("#6cc15e", 0.7), fr)
     kit.box("photo.stand", (0.05, 0.14, 0.02), (0, 0.07, 0.01), pl("#d8d0be", 0.6), fr)
     pd = build_dog(kit, "pdog", fr)
     W["pdog"] = pd
-    pd["root"].location = (0.09, -0.04, 0.02)
-    pd["root"].scale = (0.36, 0.36, 0.36)
+    pd["root"].location = (0.2, -0.04, 0.03)
+    pd["root"].scale = (0.52, 0.52, 0.52)
     pd["tail"].rotation_euler = (-0.5, 0, 0)
 
 
@@ -226,6 +233,7 @@ def build_dog(kit, name, parent=None):
     B("saddle", (0.23, 0.3, 0.05), (0, 0.06, 0.435), brown, bevel=0.02)
     B("chest", (0.2, 0.14, 0.22), (0, -0.2, 0.34), white, bevel=0.05)
     B("collar", (0.235, 0.05, 0.25), (0, -0.28, 0.35), red, bevel=0.015)
+    B("clip", (0.08, 0.06, 0.1), (0, -0.30, 0.485), pl("#cfd2d6", 0.25, spec=0.9), bevel=0.01)
     # the tail pivots at the rump; the white tip
     tail = kit.empty(f"{name}.tail", (0, 0.28 - PV[1], 0.4 - PV[2]), bg)
     kit.box(f"{name}.tailb", (0.045, 0.045, 0.24), (0, 0.0, 0.1), tan2, tail, bevel=0.012)
@@ -301,7 +309,7 @@ def pose_dog(d, st, t, sneeze_u, moving):
     root.location = (st["x"], st["y"], st["z"])
     root.rotation_euler = (0, 0, st["yaw"] * D2R)
     sit, lie, up = st["sit"], st["lie"], st["up"]
-    pitch = -0.55 * sit - 1.15 * up
+    pitch = -0.78 * sit - 1.15 * up
     bg.rotation_euler = (pitch, 0, 0)
     bg.location = (d["PV"][0], d["PV"][1], d["PV"][2] - 0.12 * lie)
     hs = d["haunch"]
@@ -334,7 +342,7 @@ def pose_dog(d, st, t, sneeze_u, moving):
         fold = -1.45 * lie
         lg.rotation_euler = (sw + counter + fold - 0.7 * up, 0, 0)
         sc = 1.0 + (zf / 0.2 - 1.0) * sit * (1 - lie)
-        lg.scale = (1, 1, max(0.4, sc) * (1 - 0.45 * lie))
+        lg.scale = (1, 1, max(0.3, sc * (1 - 0.3 * sit)) * (1 - 0.45 * lie))
     for i, lg in enumerate((hl, hr)):
         sw = swing * math.sin(ph + (0.0 if i else math.pi))
         lg.rotation_euler = (sw - 1.35 * sit - 1.1 * lie + 0.5 * up, 0, 0)
@@ -370,10 +378,10 @@ def build_street(kit):
         kit.box(f"th.roof{sg}", (8.0, 3.7, 0.2), (hx, hy + sg * 1.55, 3.55), pl("#8a4a3a", 0.7), rot=(sg * 0.5, 0, 0))
     kit.box("th.gable", (7.0, 4.6, 0.8), (hx, hy, 3.5), yellow)
     py = G.PORCH_Y
-    kit.box("th.deck", (4.4, 1.9, 0.3), (hx, py - 0.05, 0.15), pl("#c9a26a", 0.7), bevel=0.01)
-    kit.box("th.step1", (1.8, 0.4, 0.17), (hx, py - 1.2, 0.085), pl("#d4d0c4", 0.8))
-    kit.box("th.step2", (1.8, 0.4, 0.26), (hx, py - 1.0, 0.13), pl("#c9c4b6", 0.8))
-    kit.box("th.path", (1.8, 3.5, 0.03), (hx, 3.2, 0.015), pl("#dcd6c8", 0.8))
+    kit.box("th.deck", (4.4, 1.9, 0.3), (hx, py - 0.05, 0.15), kit.texture("wood", 1.0, tint="#d9a870"), bevel=0.01)
+    kit.box("th.step1", (1.8, 0.4, 0.17), (hx, py - 1.2, 0.085), pl("#b8a688", 0.8))
+    kit.box("th.step2", (1.8, 0.4, 0.26), (hx, py - 1.0, 0.13), pl("#a89878", 0.8))
+    kit.box("th.path", (1.8, 3.5, 0.03), (hx, 3.2, 0.015), pl("#b8a688", 0.8))
     kit.box("th.door", (1.0, 0.08, 2.0), (hx, hy - 3.0 - 0.04, 1.3), pl("#3f7f5a", 0.55))
     kit.box("th.doorknob", (0.06, 0.06, 0.06), (hx + 0.34, hy - 3.1, 1.25), pl("#d8b24a", 0.3, spec=0.8))
     for sx in (-1, 1):
@@ -388,7 +396,15 @@ def build_street(kit):
             kit.box(f"th.bal{sx}{k}", (0.04, 0.04, 0.82), (hx + sx * 2.1, py - 0.8 + k * 0.4, 0.76), trim)
     kit.box("th.ledge", (3.0, 0.14, 0.07), (hx, hy - 3.0 - 0.1, 1.1), trim)
     for i, c in enumerate(("#f4f4ee", "#e0a826")):
-        kit.cyl(f"th.mug{i}", 0.05, 0.1, (hx - 0.35 + 0.7 * i, hy - 3.0 - 0.1, 1.185), pl(c, 0.45), n=14)
+        kit.cyl(f"th.mug{i}", 0.075, 0.14, (hx - 0.17 + 0.34 * i, hy - 3.0 - 0.1, 1.205), pl(c, 0.45), n=14)
+    # a small porch table between us, with the two plain mugs
+    wd = pl("#8a5a3a", 0.6)
+    kit.box("th.ptable", (0.62, 0.4, 0.05), (hx, py - 0.45, 0.8), wd, bevel=0.01)
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            kit.box(f"th.ptleg{sx}{sy}", (0.05, 0.05, 0.55), (hx + sx * 0.26, py - 0.45 + sy * 0.15, 0.5), wd)
+    for i, c in enumerate(("#f4f4ee", "#e0a826")):
+        kit.cyl(f"th.pmug{i}", 0.07, 0.13, (hx - 0.14 + 0.28 * i, py - 0.45, 0.905), pl(c, 0.45), n=14)
     # neighbouring houses and trees
     kit.prop("sub_building_type_a", (66.0, 10.5, 0), rot=0, tint="#f0e2d0")
     kit.prop("sub_building_type_c", (96.0, 10.5, 0), rot=0, tint="#dfe9ee")
@@ -443,7 +459,7 @@ def build_neighbor(kit):
     nx, ny = G.NEIGH
     kit.box("nb.walk", (9.0, 3.0, 0.1), (nx, ny - 0.5, -0.05), kit.texture("concrete", 1.0, tint="#e4dccb"))
     kit.box("nb.wall", (9.0, 0.3, 3.4), (nx, ny + 3.7, 1.7), pl("#f0c9a8", 0.8, spec=0.05))
-    kit.box("nb.door", (1.1, 0.08, 2.2), (nx, ny + 3.51, 1.2), pl("#3a6fb0", 0.55))
+    kit.box("nb.door", (1.1, 0.08, 2.2), (nx, ny + 3.51, 1.2), pl("#c8503a", 0.55))
     kit.box("nb.doorknob", (0.07, 0.07, 0.07), (nx + 0.38, ny + 3.45, 1.15), pl("#d8b24a", 0.3, spec=0.8))
     kit.box("nb.stoop", (1.9, 0.9, 0.18), (nx, ny + 2.95, 0.09), pl("#d8d0c0", 0.8))
     kit.box("nb.roofover", (9.2, 1.0, 0.14), (nx, ny + 3.3, 2.9), pl("#8a6a5a", 0.7))
@@ -592,9 +608,21 @@ def _first_frame(kit, story):
         kit.box("theo.beard", (0.5, 0.12, 0.2), (0, -0.56, -0.47), dk, th, bevel=0.05)
         kit.box("theo.beardL", (0.07, 0.3, 0.3), (-0.265, -0.4, -0.2), dk, th, bevel=0.025)
         kit.box("theo.beardR", (0.07, 0.3, 0.3), (0.265, -0.4, -0.2), dk, th, bevel=0.025)
+    pt = get("photo_theo.headg")
+    if pt is not None:
+        dk = kit.plastic("#2a1b12", 0.8)
+        kit.box("ptheo.beard", (0.5, 0.12, 0.2), (0, -0.56, -0.47), dk, pt, bevel=0.05)
+        kit.box("ptheo.beardL", (0.07, 0.3, 0.3), (-0.265, -0.4, -0.2), dk, pt, bevel=0.025)
+        kit.box("ptheo.beardR", (0.07, 0.3, 0.3), (0.265, -0.4, -0.2), dk, pt, bevel=0.025)
     nb = get("neighbor.headg")
     if nb is not None:
-        kit.box("neighbor.bang", (0.2, 0.05, 0.16), (-0.14, -0.6, 0.3), kit.plastic("#3a2418", 0.7), nb, rot=(0, 0.45, 0), bevel=0.02)
+        hc = kit.plastic("#3a2418", 0.7)
+        kit.box("neighbor.bang", (0.55, 0.06, 0.2), (-0.1, -0.6, 0.3), hc, nb, rot=(0, 0.35, 0), bevel=0.02)
+        kit.box("neighbor.bang2", (0.22, 0.06, 0.3), (0.2, -0.61, 0.2), hc, nb, rot=(0, -0.5, 0), bevel=0.02)
+        gold = kit.plastic("#f0c040", 0.3, spec=0.8)
+        for sx in (-1, 1):
+            kit.sphere(f"neighbor.ear{sx}", 0.09, (sx * 0.56, -0.1, -0.4), gold, nb, seg=10)
+            kit.box(f"neighbor.bobside{sx}", (0.14, 0.6, 0.9), (sx * 0.52, 0.0, -0.1), hc, nb, bevel=0.05)
     W["inited"] = True
 
 
@@ -687,6 +715,14 @@ def animate(kit, story, tl, t, ctx):
     bz = ph["buzz"]
     px, py, pz = G.PHONE
     W["phone"].location = (px + 0.0012 * bz * math.sin(t * 38.0), py + 0.001 * bz * math.sin(t * 31.0), pz)
+    tp = sample("tap", tl, t, {"p": 0.0})["p"]
+    fg = W["finger"]
+    if tp < 0.02:
+        fg.location = (0, -80, 0)
+    else:
+        u = ss(tp)
+        fg.location = (px + 0.0 + 0.16 * (1 - u), py + 0.04 + 0.16 * (1 - u), pz + 0.02 + 0.08 * (1 - u))
+        fg.rotation_euler = (-0.25 * (1 - u), 0, math.pi + 0.3)
     # ---- the gate and its latch
     gt = sample("gate", tl, t, {"open": 0.0, "latch": 0.0})
     W["hinge"].rotation_euler = (0, 0, 1.45 * ss(gt["open"]))
@@ -721,7 +757,7 @@ def animate(kit, story, tl, t, ctx):
         hand = Vector(me.location) + rgt * 0.34 + fwd * 0.68 * math.sin(a) + Vector((0, 0, 1.275 - 0.68 * math.cos(a)))
         dyaw = st["yaw"] * D2R
         dfwd = Vector((math.sin(dyaw), -math.cos(dyaw), 0))
-        end = Vector((st["x"], st["y"], st["z"])) + dfwd * 0.2 + Vector((0, 0, 0.4))
+        end = Vector((st["x"], st["y"], st["z"])) + dfwd * 0.28 + Vector((0, 0, 0.5))
         dv = end - hand
         lash.location = (hand + end) / 2
         lash.scale = (max(0.05, dv.length), 1, 1)

@@ -15,7 +15,7 @@ GATE_X = 3.0                 # the side gate in the east fence, leaf between y 0
 GATE_Y0, GATE_Y1 = 0.4, 1.4
 DOOR_ME = (1.8, 3.35)        # me in the sliding door at sunrise
 NOODLE_UNDER = (0.45, 1.5)
-NOODLE_LIE = (2.35, 0.9)     # lying by the gate, facing east
+NOODLE_LIE = (2.15, 0.9)     # lying by the gate, facing east
 
 # ---- the street (sidewalk y -1.4..1.4, road south of it, houses north)
 ST = 60.0
