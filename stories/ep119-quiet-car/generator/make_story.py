@@ -15,7 +15,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 24
+REV = 25
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -258,10 +258,10 @@ move("L07", 0)
 cue("L07", "door", u=1.0)
 put("c1", "L07", [3.3, 6.5], 0, expr="polite")
 go("c1", "L07+0.5", [3.3, 3.4])
-go("c1", "L07+0.9", [4.3, 2.4])
-go("c1", "L07+1.3", [5.0, 1.2])
-go("c1", "L07+1.7", [4.6, 0.0])
-go("c1", "L07>", [3.3, -2.0])
+go("c1", "L07+0.7", [4.0, 2.6])
+go("c1", "L07+0.95", [4.9, 1.5])
+go("c1", "L07+1.15", [5.0, 0.1])
+go("c1", "L07>", [5.2, -2.6])
 put("c2", "L07.1", [3.5, 7.0], 0, expr="neutral")
 go("c2", "L07.1+0.5", [3.5, 3.4])
 go("c2", "L07.1+0.9", [5.2, 1.4])
