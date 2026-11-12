@@ -5,8 +5,8 @@
 - **Title:** Grandpa's Clock Cuckooed SIX Times For Five 🕰️
 - **Shape:** `hidden-guest` (new tag): the extra in the count is someone who loves us, hiding to surprise us.
 - **Everyone is an adult or a teen.** I'm 18. Mom and Dad are in their 50s, Grandma and Grandpa about 80 (it's Grandpa's eightieth). My big sister Ivy is 24.
-- **Word count:** 79 spoken words in 13 lines (L01, L03, L04, L04b, L05, L07, L08, L10, L11, L11b, L12, L22, L23), all `narrator`, plus one 4.0 s hold (P01). No-filler revise (owner, 2026-11-12): cut L06 (repeats L01's "five of us" over S02), L09 (repeats L05; the hold's caption asks it), L14 and L15 (after the reveal; L15 repeats L11b), L16 to L21 (epilogue after the reveal); L13 folded into L12; L22 reworded to carry "six" without L19 to L21. No L02 (folded into L01 in the standards revise).
-- **Estimated length:** 79 words at about 290 wpm is 16 s of speech. The six cuckoos at counting pace (about 0.4 s each), 12 gaps of 0.25 s, P01 4.0 s, a 0.25 s loop tail: about 26 s. Shorter than the old 30 to 45 s ultra-short arm, on purpose: the no-filler rule says shorter is fine. Timeline: L04b "SIX" at about 7.6 s, the job (L05) at 8.4 s, P01 12.0 to 16.0 s, the answer (L10) at 16.3 s, **the reveal (L12, Ivy) at about 20.6 s, 5.5 s from the end**, then only the button (L22, L23).
+- **Word count:** 81 spoken words in 14 lines (L01, L02, L03, L04, L04b, L05, L07, L08, L10, L11, L11b, L12, L22, L23), all `narrator`, plus one 4.0 s hold (P01). No-filler revise (owner, 2026-11-12): cut L06 (repeats L01's "five of us" over S02), L09 (repeats L05; the hold's caption asks it), L14 and L15 (after the reveal; L15 repeats L11b), L16 to L21 (epilogue after the reveal); L13 folded into L12; L22 reworded to carry "six" without L19 to L21. L02 restored in the plant revise (writer check, 2026-11-12): the Ivy reveal had no plant, so L02 says over S02 that my big sister Ivy had to work, and S02 shows her empty sixth chair; L12 shortened to a callback.
+- **Estimated length:** 81 words at about 290 wpm is 16 s of speech. The six cuckoos at counting pace (about 0.4 s each), 12 gaps of 0.25 s, P01 4.0 s, a 0.25 s loop tail: about 26 s. Shorter than the old 30 to 45 s ultra-short arm, on purpose: the no-filler rule says shorter is fine. Timeline: L04b "SIX" at about 7.6 s, the job (L05) at 8.4 s, P01 12.0 to 16.0 s, the answer (L10) at 16.3 s, **the reveal (L12, Ivy) at about 20.6 s, 5.5 s from the end**, then only the button (L22, L23).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Grandpa's bright living room on a sunny evening (summer, 7 PM sun through big windows): green patterned wallpaper in our own pattern, a long table with a birthday cake (no candles, a sugar "80" in numerals on top), a big carved wood cuckoo clock on the wall, long sunflower-yellow curtains to the floor, a plump red armchair, a hall closet door, a tablecloth that reaches the floor. A full ceiling, the windows bright.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
 
@@ -26,6 +26,7 @@ The table for my eight is in `stories/ep140-town-photo/script.md`. This row: Gra
 - **The wrong count (L03 to L04b):** Seven o'clock: six cuckoos, spoken and captioned. "SIX."
 - **The job (L05):** "Find the SIXTH." Four spots pop with letters (L07): A the red armchair, B the yellow curtains, C the hall closet, D under the long tablecloth.
 - **About me and mine by 0:05:** the clock is Grandpa's, and L01 says "five of us" over S02, the five of us at the table (by about 2.5 s).
+- **The plant (L02, over S02):** "My big sister IVY had to WORK." S02 shows an empty sixth chair at the table. A rewatch catches it: the empty chair is hers, and she's already in the room.
 - **The countdown and meter, on screen the whole time:** a corner cuckoo counter (top-right, a wood-brown tile with a small bird glyph and a number): "5" at frame 1 (people), then each cuckoo adds a tick mark beside it up to six, so it reads "5 · 6". During L08 and P01, a small cake-slice glyph (a pink wedge, nothing sharp) beside the cake fills in toward a whole slice as the countdown: "till Grandpa cuts the CAKE".
 - **The clues in the room (shown, never pointed at before the hold):**
   1. **The sneakers:** red sneaker toes poke out under the yellow curtain's hem (B).
@@ -33,7 +34,7 @@ The table for my eight is in `stories/ep140-town-photo/script.md`. This row: Gra
   3. **Red herrings:** the closet door is ajar (C) and the tablecloth reaches the floor (D), so both look possible. The armchair (A) is too close to the wall to hide anyone.
 - **The hold (P01, 4.0 s):** the master of the room with all four letters, the curtain, the cake, the closet and the table in frame. Caption "A, B, C or D?" in the top third. Quiz-clock ticks.
 - **The answer (L10 to L11b):** B, behind the curtain: red sneakers under the hem, a scoop out of the frosting.
-- **The reveal (L12, the last 5.5 s):** my big sister Ivy, who swore she had to work all weekend.
+- **The reveal (L12, the last 5.5 s):** "IVY. She SWORE she had to WORK." A callback to L02, not a repeat; the reveal rests on L02, the sneakers and the frosting.
 - **The button (L22, L23):** Grandpa says six is the best number it's ever counted. Nothing after it but the loop.
 - **How the last 15 seconds turn over the first line:** "once for every person in the house" was an eerie count. On the loop it's a family count, and it's one bigger tonight.
 - **Ending shape:** a puzzle answered, then a warm loop.
@@ -63,7 +64,7 @@ Grandpa's cuckoo clock cuckoos once per person in the house, and on his birthday
 ## The hidden one (continuity)
 | Beat | Ivy |
 |---|---|
-| L01 to P01 | behind curtain B: only the red sneaker toes under the hem, and the curtain's slight bulge, in the master and S07 |
+| L01 to P01 | behind curtain B: only the red sneaker toes under the hem, and the curtain's slight bulge, in the master shots S06, S08; her chair at the table (S02) empty |
 | L10, L11 | the toes and the frosting smudge, in close-ups |
 | L12 | stepping out from behind the curtain (eased 0.6 s), `laugh`, frosting on her thumb at chest height |
 | L22 | hugging Grandpa from behind his chair (touching on purpose) |
@@ -89,7 +90,7 @@ Build rules for every shot: people stand 1.4 m apart unless seated at the table 
 | Shots | Lines | Picture |
 |---|---|---|
 | S01a, S01b | L01 | (a) Close: the clock's door opening, the bird out, Grandpa below, `smile`. (b) Punch in on the bird on "PEOPLE". |
-| S02 | L01 ("Tonight, there are FIVE of us") | The table: Mom, Dad, Grandma, Grandpa and me around the cake, all `smile`. |
+| S02 | L01 ("Tonight, there are FIVE of us"), L02 | The table: Mom, Dad, Grandma, Grandpa and me around the cake, all `smile`, and an empty sixth chair (Ivy's) on the camera side, pulled in, a plate set at it. |
 | S03 | L03 | Close: the clock's face at seven (hands only, numerals our own). |
 | S04a to S04f | L04 | One cut per cuckoo, about 0.4 s each: the bird, Mom's face, the bird, Dad's face, the bird, my face (`stunned` on the sixth). The corner counter ticks to six. |
 | S05 | L04b | Close: the counter "5 · 6", punch in. |
@@ -100,8 +101,8 @@ Build rules for every shot: people stand 1.4 m apart unless seated at the table 
 | S12 | L10 | Punch in on curtain B, a yellow ring easing round it (0.3 s). |
 | S13 | L11 | Low close: the red sneaker toes under the hem. |
 | S14 | L11b | Close: the cake's corner with a thumb-sized scoop missing, then a tilt to the pink smudge on the curtain's edge. |
-| S15 | L12 ("My big sister IVY") | Ivy stepping out from behind the curtain (eased 0.6 s), `laugh`, holding up her frosted thumb at chest height. |
-| S16 | L12 ("who SWORE ... all WEEKEND") | Me, `stunned`, then `laugh`, Ivy soft behind me. |
+| S15 | L12 ("IVY.") | Ivy stepping out from behind the curtain (eased 0.6 s), `laugh`, holding up her frosted thumb at chest height. |
+| S16 | L12 ("She SWORE she had to WORK.") | Me, `stunned`, then `laugh`, Ivy soft behind me. |
 | S19 | L22 | Ivy hugging Grandpa from behind his chair (touching on purpose), Grandpa `laugh` with happy tears (drawn tear drops, flat). The corner counter settles from "5 · 6" to "6". |
 | S24 | L23 | Close: Grandpa, `smile`, the clock above him, framed like S01 for the loop. Counter "6". |
 
@@ -114,6 +115,7 @@ None, on purpose. In a puzzle, a tally would read as a clue.
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
 - L01: Grandpa's cuckoo clock / counts the PEOPLE / in the house. / Tonight, / there are FIVE of us.
+- L02: My big sister / IVY / had to WORK.
 - L03: At seven o'CLOCK, / it went:
 - L04: Cuckoo. / Cuckoo. / Cuckoo. / Cuckoo. / Cuckoo. / CUCKOO.
 - L04b: SIX.
@@ -124,13 +126,13 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L10: B. / The CURTAIN.
 - L11: Red sneakers / under the HEM.
 - L11b: And a thumb-sized SCOOP / out of the frosting.
-- L12: My big sister / IVY, / who SWORE she had to work / all WEEKEND.
+- L12: IVY. / She SWORE she / had to WORK.
 - L22: Grandpa says / SIX is the best NUMBER
 - L23: it's ever counted. **(quotable)**
 
-(Loop: "Six is the best number it's ever counted. Grandpa's cuckoo clock counts the people in the house. Tonight, there are five of us." On the loop, five is the count that's wrong.)
+(Loop: "Six is the best number it's ever counted. Grandpa's cuckoo clock counts the people in the house. Tonight, there are five of us. My big sister Ivy had to work." On the loop, five is the count that's wrong.)
 
 ## Notes for the builder and reviewers
-- "B" in L10 is spoken "bee". The six cuckoos in L04 are read at counting pace, about 0.4 s each, the last one louder. L12 is one breath with a small lift on "IVY".
+- "B" in L10 is spoken "bee". The six cuckoos in L04 are read at counting pace, about 0.4 s each, the last one louder. L12 lifts on "IVY.", then "She swore she had to work" is one breath, echoing L02. Re-voice only L02 (new) and L12.
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: none flagged ("cried" went with L16).
 - Hard rule 8 checked on every caption, the title, description and pin.
