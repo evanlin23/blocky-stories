@@ -21,7 +21,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 16
+REV = 17
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L35")
@@ -368,14 +368,13 @@ INLOU = hw(1, 0.35, -0.8, LAND)
 door("L24", 1, 0, 80, 0.5)
 TP("lou", "L24", INLOU, YC[1], "worried")
 K("lou", "L24+0.75", INLOU, expr="worried")
-K("lou", "L24.1", land(1, 0.2, 0.55), expr="worried")
+TP("lou", "L24.1", land(1, 0.2, 0.55), YC[1], "worried")
 shot("L24", foot(24, (0.1, 0.3, 1.7)), "night", "dooropens", face=False)
 shot("L24.1", cam_face(land(1, 0.2, 0.55), YC[1], "lou", 2.8, 12, 34, tdz=0.12), "night", "louraincoat")
 shot("L25", ring_cam(land(1, 0.2, 0.55), YC[1], "lou", 1.7, 22, up=0.3), "night", "ring3")
 
 # ===== 26 she hurries down the steps
 K("lou", "L26", land(1, 0.2, 0.55), expr="worried")
-K("lou", "L26+0.35", hw(1, 0.1, 1.3, 0.3))
 K("lou", "L26+0.7", hw(1, -0.1, 2.0, 0.0))
 K("lou", "L26>", court(1, -0.6, 3.6))
 _o, _p = hw(1, 0, 0, 0), hw(1, 0, 1, 0)
@@ -413,7 +412,8 @@ cue("L29", "blanket", where="arm")
 tagc("L29", 10, 1203)
 TP("lou", "L29", court(1, 1.9, 2.4), G.yaw_to(court(1, 1.9, 2.4), land(1, 0.9, 0.5)), "worried", arms=[0, 62])
 K("lou", "L29+0.1", court(1, 1.9, 2.4), arms=[0, 62])
-K("lou", "L29>", BLP, yaw=YC[1], arms=[0, 62], expr="worried")
+K("lou", "L29>-0.35", BLP, arms=[0, 62], expr="worried")
+K("lou", "L29>", BLP, yaw=YC[1], arms=[0, 62], expr="worried", blend=0.35)
 shot("L29", foot(24, (0.6, 0.3, 1.5), (1.2, 4.0, 2.3)), "night", "footage1203", face=False)
 K("lou", "L30", BLP, yaw=YC[1], arms=[0, 62], expr="worried")
 shot("L30", cam_face(BLP, YC[1], "lou", 3.0, -12, 34), "night", "wait")
@@ -428,14 +428,14 @@ SM = hw(1, 0.0, 1.1, 0.30)
 ST = hw(1, -0.2, 0.62, LAND)
 TP("me", "L31", S0, 0, "asleep")
 K("me", "L32", S1, expr="asleep")
-K("me", "L32.1+0.05", S1, expr="asleep", yaw=YF[1])
+K("me", "L32.1+0.05", S1, expr="asleep", yaw=YF[1] - 360)
 K("me", "L32.2+0.3", SB, expr="asleep")
 shot("L32", cam_at(hw(1, 0.5, 0.25, LAND + 0.25), hw(1, 0.0, 1.9, 0.12), 28), "night", "feetbottom", face=False)
 K("me", "L33+0.3", SM, expr="asleep")
 shot("L33", cam_at(hw(1, 0.9, 3.6, 0.5), hw(1, 0.0, 0.9, 0.34), 26), "night", "feetmid", key=2.0)
 shot("L34", cam_at(hw(1, 0.35, 0.3, 2.05), hw(1, 0.0, 1.1, 1.86), 27), "night", "eyesshut", key=0.8)
-K("me", "L34>", SM, expr="asleep", yaw=YF[1])
-K("me", "P01+0.35", ST, expr="asleep", yaw=YF[1])
+K("me", "L34>", SM, expr="asleep", yaw=YF[1] - 360, keep_yaw=True)
+K("me", "P01+0.35", ST, expr="asleep", yaw=YF[1] - 360)
 shot("P01", foot(32, (0.2, 0.3, 2.2), (1.8, 4.0, 2.3)), "night", "dropdoor", face=False)
 HIDE("lou", "P01")     # nobody else in the reveal footage
 cue("P01+0.5", "blanket", where="arm")
@@ -727,6 +727,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
+    "staging_ok": ["S43/me+lou", "S50/me+lou", "S60/me+lou"],   # walking side by side, judged fine by qa
     "framing_ok": [names[n] for n in ("courtnight", "fightme", "round", "footage1203", "feetbottom", "lk1", "boltturn")],
     "frames_ok": [names[n] for n in ("dawnwalk", "tableend", "dropdoor")],     # the dawn brightening and the day look easing in at the cut; dropdoor is the deliberate drop into the footage
 }
