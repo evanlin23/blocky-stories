@@ -178,11 +178,11 @@ STYLES = {f.__name__: f for f in (quiff, bigbun, spikes, bob, buzz, curls, braid
 
 # loud features: extra blocks a side character can carry on top of any hair
 def mustache():       # a giant handlebar, wider than the face, curling up past the cheeks
-    z = TOP - 0.76 * H
-    out = [_b("stache", (W * 0.55, 0.3, 0.42), (0, FRONT - 0.14, z), bevel=0.14)]
+    z = TOP - 0.72 * H
+    out = [_b("stache", (W * 0.55, 0.3, 0.3), (0, FRONT - 0.14, z), bevel=0.14)]
     for sx in (-1, 1):
-        out.append(_b(f"stache{sx}", (W * 0.36, 0.28, 0.34), (sx * W * 0.4, FRONT - 0.12, z + 0.1), rot=(0, sx * -0.5, 0), bevel=0.12))
-        out.append(_b(f"stachet{sx}", (0.28, 0.26, 0.48), (sx * W * 0.58, FRONT - 0.1, z + 0.3), rot=(0, sx * -0.25, 0), bevel=0.1))
+        out.append(_b(f"stache{sx}", (W * 0.36, 0.28, 0.26), (sx * W * 0.4, FRONT - 0.12, z + 0.05), rot=(0, sx * -0.5, 0), bevel=0.12))
+        out.append(_b(f"stachet{sx}", (0.26, 0.24, 0.36), (sx * W * 0.6, FRONT - 0.1, z + 0.14), rot=(0, sx * -0.6, 0), bevel=0.1))
     return out
 
 

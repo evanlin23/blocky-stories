@@ -420,7 +420,7 @@ def face3_image(face: dict, skin: str, expr: str = "neutral", open_: float = 0.0
             for fx, fy in ((0.5, 0.64), (0.58, 0.62), (0.54, 0.7)):
                 p.ellipse(p.X(side * fx), p.Y(fy), p.W * 0.009, p.W * 0.009, tuple(int(c * 0.7) for c in skin_c), outline=False)
     stache = face.get("mustache")
-    _mouth(p, f.mouth, open_, p.X(0), p.Y(0.8 + (0.05 if face.get("mouth_low") or stache else 0.0)))
+    _mouth(p, f.mouth, open_, p.X(0), p.Y(0.8 + (0.08 if face.get("mouth_low") or stache else 0.0)))
     if stache:   # a drawn mustache over the mouth (a modelled one lives on the head: rig hair "mustache")
         sc = hexrgb(stache)
         for side in (-1, 1):
