@@ -1,7 +1,6 @@
-# ep139-future-dog: critic r1
 Verdict: revise
 
-Hits: 1-9 yes (rule 0:00, tag 0:00, 2 jokes 4.8-9.4, exception 3.0, Theo 15.8, loophole, loop, phone-readable, 13.7 cuts/10 s).
+Hits: 1-9 yes (0:00 to 15.8).
 
 Scores: hook 8, back-row 7, narrator 9, appeal 9, relationships 5 (photo cut-out reads as a live Theo), feeling 7, big idea 7, eerie 5 (broken dog at the gate), twist 7, lore 4 (tally unseen), warm turn 6 (hug pose), variety 6, faces 7, sound 7, captions 8. Reset: length 9, want 8, sad 10, close-up 9, meter 10, cuts 8, bright 9, loop 9, title 4 (9 words), pin 8. Satisfaction 7, first 8 s 7, ending 6.
 
