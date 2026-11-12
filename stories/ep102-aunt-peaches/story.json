@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 12,
+ "rev": 13,
  "look": {
   "style": "closer",
   "fog": "#d6ecff",
@@ -5303,7 +5303,7 @@
      0
     ],
     "yaw": 90,
-    "blend": 0.5,
+    "blend": 0.33,
     "keep_yaw": true
    },
    {
@@ -5318,7 +5318,7 @@
      0
     ],
     "yaw": 0,
-    "blend": 0.5
+    "blend": 0.3
    },
    {
     "at": "L04",
@@ -6953,7 +6953,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 12
+  "rev": 13
  },
  "staging_ok": [
   "S70/me+clem",
