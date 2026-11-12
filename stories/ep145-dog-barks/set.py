@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 
 D2R = math.pi / 180.0
 W = {}
-SEG = {"1": "bc", "2": "abged"}
+SEG = {"1": "", "2": "abged"}
 
 
 def ss(x):
@@ -340,10 +340,10 @@ def build_moose(kit):
         kit.sphere(f"moose.glint{sx}", 0.011, (sx * 0.095 + 0.008, -0.298, 0.142), white, head, seg=6)
         kit.box(f"moose.brow{sx}", (0.07, 0.015, 0.012), (sx * 0.095, -0.272, 0.19), dtan, head, rot=(0, sx * 0.25, 0))
     # ears: one tan, one white (the white one is on his left, +x)
-    el = kit.empty("moose.earL", (-0.18, -0.06, 0.2), head)
-    kit.box("moose.earL.b", (0.07, 0.15, 0.24), (-0.02, 0.0, -0.1), dtan, el, rot=(0, 0.35, 0), bevel=0.02)
-    er = kit.empty("moose.earR", (0.18, -0.06, 0.2), head)
-    kit.box("moose.earR.b", (0.07, 0.15, 0.24), (0.02, 0.0, -0.1), white, er, rot=(0, -0.35, 0), bevel=0.02)
+    el = kit.empty("moose.earL", (-0.17, -0.02, 0.17), head)
+    kit.box("moose.earL.b", (0.06, 0.1, 0.17), (-0.02, 0.0, -0.07), dtan, el, rot=(0, 0.35, 0), bevel=0.02)
+    er = kit.empty("moose.earR", (0.17, -0.02, 0.17), head)
+    kit.box("moose.earR.b", (0.06, 0.1, 0.17), (0.02, 0.0, -0.07), white, er, rot=(0, -0.35, 0), bevel=0.02)
     W["m_ears"] = (el, er)
     tail = kit.empty("moose.tail", (0, 0.1, 0.28), bg)
     W["m_tail"] = tail
@@ -381,9 +381,7 @@ def build_badge(kit, parent, nm, size):
         ob = kit.box(f"{nm}.d.{s}", (sx, sy, 0.004), (cx + dx, cy + dy, 0.008), ink, root)
         noshadow(ob)
         segs[s] = ob
-    # a serif foot on the 1 so it can't read as a bar: a small base and a flag
-    one = [noshadow(kit.box(nm + ".one.base", (0.3, 0.07, 0.004), (0, cy - hh + 0.035, 0.008), ink, root)),
-           noshadow(kit.box(nm + ".one.flag", (0.14, 0.07, 0.004), (-0.1, cy + hh - 0.06, 0.008), ink, root, rot=(0, 0, 0.5)))]
+    one = [noshadow(kit.box(nm + ".one.bar", (0.12, h, 0.004), (0, cy, 0.008), ink, root))]
     root.scale = (size, size, size)
     return {"root": root, "segs": segs, "one": one}
 
@@ -572,7 +570,7 @@ def animate(kit, story, tl, t, ctx):
     for k, s_ in enumerate(W["smoke"]):
         u = ((t * 0.28) + k / 4.0) % 1.0
         s_.location = (gx + 0.08 * math.sin(t * 0.7 + k) + 0.25 * u, gy + 0.05 * k * 0.2, 1.2 + 1.1 * u)
-        r = 0.45 + 1.3 * u
+        r = 0.25 + 0.6 * u
         sc = r * (1.0 - u * u)
         s_.scale = (sc, sc, sc)
     # ---- the table rocks while the `rock` cue is on, and stops when the napkin is under its leg
