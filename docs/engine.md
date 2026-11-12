@@ -18,6 +18,13 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
 | `polish.py` | the polish pack (`look.polish`): cut whooshes, key-word and reveal hits, risers, the room bed, punch-ins, drift, sway, the bright grade, the caption pop |
 | `checks.py` | the checks behind `check`, `preflight` and the tests: the rules, the pace and the stills the edit already holds, and the clip report |
 
+## Drawing size (`look.render_res`, opt-in, 2026-11-12)
+
+The final draws at 540 x 960 and post scales it to 1080 x 1920. A story with `"look": {"render_res": "720"}` draws its
+final at 720 x 1280 instead ("1080" is allowed but untested); the proof, preview and flash sizes stay as they are.
+Animation audit (`docs/research/2026-11-12-animation-audit.md`): 1.56x the drawing time, so about +200 runner-minutes
+for a 60 s film; the Opus critic saw crisper eyes, brows and bevels at TV size and nothing at phone size.
+
 ## story.json
 
 ```jsonc
