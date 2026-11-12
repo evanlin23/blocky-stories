@@ -181,7 +181,7 @@ def build_pretzel(kit):
         a = 2 * math.pi * i / n
         ob = kit.box(f"pretzel.seg{i}", (0.1, 0.075, 0.085), (R * math.cos(a), 0, R * math.sin(a)), brown, root,
                      rot=(0, -a + math.pi / 2, 0), bevel=0.02)
-        if i in (2, 3, 4):
+        if i in (2, 3, 4, 5, 6):
             W["bitepieces"].append(ob)
     for s in (-1, 1):   # the twist: two crossing straps
         ob = kit.box(f"pretzel.strap{s}", (0.3, 0.075, 0.075), (0, 0, -0.05), brown, root, rot=(0, s * math.radians(38), 0), bevel=0.02)
@@ -193,12 +193,12 @@ def build_pretzel(kit):
         ob = kit.box(f"pretzel.salt{i}", (0.02, 0.02, 0.02), (r * math.cos(a), -0.047, r * math.sin(a)), salt, root, rot=(0, rnd.uniform(0, 3), 0))
         if 2.2 < a / (2 * math.pi) * n < 5.2 and False:
             pass
-        W["bitepieces"].append(ob) if (2 * math.pi * 1.6 / n < a < 2 * math.pi * 5.0 / n) else None
+        W["bitepieces"].append(ob) if (2 * math.pi * 1.5 / n < a < 2 * math.pi * 6.5 / n) else None
     W["pretzel_all"] = [o for o in bpy.data.objects if o.name.startswith("pretzel.") or o.name == "napkin"]
     # the tally: two short pale-blue strokes scratched into the rim, 1.5 cm proud
     blue = pl("#9fd8ff", 0.6)
     for k in range(2):
-        kit.box(f"tally{k}", (0.025, 0.16, 0.015), (px - 0.33 + 0.07 * k, py, G.RIM_Z + 0.0075), blue)
+        kit.box(f"tally{k}", (0.04, 0.24, 0.016), (px - 0.36 + 0.09 * k, py, G.RIM_Z + 0.008), blue)
 
 
 def build_notes(kit):
