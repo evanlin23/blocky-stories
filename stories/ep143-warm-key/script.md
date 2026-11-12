@@ -17,7 +17,7 @@
 | a sunny hill street and the porch of the house we sold | the key to a house strangers own goes warm | `if` | `welcome-home` | a sister buying back our childhood home | warm |
 
 ## The big idea
-**If your key goes warm someone's waiting for you behind its door, and my key to the house we sold twelve years ago went warm because my big sister Jess bought it back and has been waiting inside with the whole family for me to notice, with a green dinosaur sticker on the door to match my keychain.**
+**If your key goes warm someone's waiting for you behind its door, and my key to the house we sold nine years ago went warm because my big sister Jess bought it back and has been waiting inside with the whole family for me to notice, with a green dinosaur sticker on the door to match my keychain.**
 
 - **Why it clicks:** the key is on the silly green dinosaur keychain Jess gave me when we moved out (L05, L06). Jess texts "Notice ANYTHING?" every day (L11, L12). A dinosaur sticker appears on the door (L17, L18). She kept the old lock so my key would work (L28).
 - **Ten pitched, this one kept.** Dropped: the key is warm because the new owners are lonely (sad, strangers), it's my younger self waiting (time travel), it's a burglar (eerie only), the house wants me back (a haunted house, no person), the key opens a different house (no warmth), Dad bought it back (Jess is the better plant), my old dog is inside (implies an age problem), the key burns as a warning (a ban lane), every key in town is warm (no exception), the key goes cold (sad).
@@ -32,7 +32,7 @@
 - **Examples (L03, L04, about 3 to 8 s), two jokes:** the pizza guy's keys are always warm (him at a door, juggling boxes on flat palms, `smile`), my buddy's gym locker key has never been warm once (him at a locker, `sad`, comic).
 - **The silly plant (L05, L06):** the key hangs on a silly green dinosaur keychain my big sister Jess gave me when we moved out.
 - **A concrete mystery by 15 s:** a house strangers own, and my key to it is warm (L02, L09, L10).
-- **How the narrator is the exception:** people's keys are warm for the doors they live behind. Mine is warm for a door I haven't opened in twelve years.
+- **How the narrator is the exception:** people's keys are warm for the doors they live behind. Mine is warm for a door I haven't opened in nine years.
 - **The loved one at stake:** my big sister Jess, named at L06 ("My big sister JESS / gave me that"), seen in a photo on my wall at L06 and in the doorway at L23.
 - **The eerie middle (L14 to L19):** the walk up the hill, the lights on in our old house, someone home, and a sticker on the door that wasn't there before, matching my keychain.
 - **The climax turns the rule's own logic:** a warm key means someone's waiting behind its door. The only way to find out who is to use it, and a key for a sold house shouldn't turn. It turns. No new magic.
@@ -50,7 +50,7 @@
 **L13: "I had to hold it / with an OVEN mitt."**
 
 ## Clarity test (cold, two sentences)
-In this town a key goes warm when someone's waiting for you behind its door, and the narrator's key to his family's old house, sold twelve years ago, went warm. He let himself in and found his big sister Jess had bought the house back and was waiting inside with the family, and she'd kept the old lock so his key would still work.
+In this town a key goes warm when someone's waiting for you behind its door, and the narrator's key to his family's old house, sold nine years ago, went warm. He let himself in and found his big sister Jess had bought the house back and was waiting inside with the family, and she'd kept the old lock so his key would still work.
 
 ## World
 - **My apartment entry:** a bright hallway with a row of key hooks at chest height by the door, a framed photo of me and Jess as grown-ups by the hooks (both faces clear), a sunny window, a ceiling.
@@ -152,7 +152,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L05: Mine hangs / on a silly green DINOSAUR.
 - L06: My big sister JESS / gave me that / when we moved OUT.
 - L07: Out of the blue house / on the HILL.
-- L08: Twelve years AGO.
+- L08: Nine years AGO.
 - L09: Somebody else / lives there NOW. / I've never / even MET them.
 - L10: But Monday, / the key / was WARM.
 - L11: Jess texted, / "Notice ANYTHING?" / I said, NOPE.
@@ -166,7 +166,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L19: Just like / the one / on my KEY.
 - (drop 0.5)
 - L20: I put the key / in the LOCK.
-- L21: Twelve years later, / it still FIT. / My hands / were SHAKING.
+- L21: Nine years later, / it still FIT. / My hands / were SHAKING.
 - L22: "Click."
 - L23: And there was Mom, / Dad, / and Jess, / with a CAKE.
 - L24: Jess bought / the house BACK.
@@ -177,9 +177,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L29: She hugged me / so hard / my windbreaker SQUEAKED.
 - L30: She says / the key was warm / way before MONDAY. / I just never / held it long enough / to NOTICE.
 - L31: Now it hangs / by the blue door / on the HILL.
-- L32: And it's warm / every time / I come HOME.
+- L32: And it's warm / every time / I'm on my WAY.
 
-(Loop: L32 runs straight into L01: "And it's warm every time I come home. If your key goes warm, somebody's waiting behind its door.")
+(Loop: L32 runs straight into L01: "And it's warm every time I'm on my way. If your key goes warm, somebody's waiting behind its door.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. No death, illness or loss word.

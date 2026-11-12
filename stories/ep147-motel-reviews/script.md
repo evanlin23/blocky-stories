@@ -5,7 +5,7 @@
 - **Title:** Room Six Came With a Man in the CLOSET 🛎️
 - **Shape:** `words-make` (reused from ep87's family, a new twist): a review written about a guest is what keeps him in the room, and the last card is about us.
 - **Everyone is an adult.** I'm 21. My dad is about 52. The closet man looks about 40. The desk clerk is about 60.
-- **Word count:** 273 spoken words in 35 lines (L01 to L33 with L08b and L21b), all `narrator`, plus one 0.6 s drop (before L25).
+- **Word count:** 267 spoken words in 34 lines (L01 to L33 with L08b and L21b, no L18: cut in the standards revise), all `narrator`, plus one 0.6 s drop (before L25).
 - **Estimated length:** about 63 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright roadside motel in the desert-edge sun: one long single-story row of mint doors with numbers (numerals only), a pink stucco office with a desk bell, a turquoise pool the size of a bucket (literally a bucket on the patio, the joke), an ice machine, palm shapes, a big blue sky. Room Six inside: two beds with orange spreads, a wood dresser with a drawer of review cards, a closet with louvered doors, a window with sun through the blinds (ramped, never switched). Every room has a ceiling.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
@@ -30,12 +30,12 @@ The table for my eight is in `stories/ep140-town-photo/script.md`. This row: a r
 - **Countdown (clock times aloud):** "Ten P.M." (L11), "At six A.M." (L22).
 - **The silly plant that becomes the key:** overnight he folds our shirts into perfect little squares (L13) and irons Dad's socks (L14). At the end Dad is folding my shirt into a perfect little square (L33).
 - **Plant 1:** the clerk says Room Six's other key never came back (L10). At L23, the closet man sets that key on the desk.
-- **Plant 2:** the old card in the drawer (L15, L16): "Room Six: the man in this room is very quiet. He never LEFT." He was the last guest (L17, L18).
+- **Plant 2:** the old card in the drawer (L15, L16): "Room Six: the man in this room is very quiet. He never LEFT." He was the last guest (L19).
 - **The climax turns the rule's own logic:** a card comes true, so I write one: "The man in the closet checked out before breakfast." He does, politely.
 - **Reveal and sting (L26 to L33, plain):** under the key, one more card in handwriting we don't know: "Room Six: the father and son were very quiet. They never LEFT." Our car won't start. Dad is folding my shirt into a perfect little square.
 - **How the last 15 seconds turn over the first line:** "you get whatever the last guest wrote" was the joke. On the loop, the last guest wrote about us.
 - **Ending shape:** `words-make`. Ends eerie. Nobody is hurt, nobody is taken: Dad is folding a shirt.
-- **Warmth:** a dad and his grown son on the last night of a road trip, laughing at a bucket.
+- **Warmth:** a dad and his grown son on the last stop of a road trip, laughing at a bucket.
 
 ## Quotable line
 **L04: "A one-star card says, / "The pool's the size / of a BUCKET." / It's a bucket."**
@@ -105,8 +105,7 @@ Build rules for every shot: characters 1.4 m apart or more unless touching on pu
 | S15 | L15 | The closet man's back, unchanged. |
 | S16 | L16 | Night two: me at the dresser, pulling an old yellowed card from the back of the drawer. |
 | S17a, S17b | L17 | (a) Close: the old card at chest height, one star, the handwritten line. (b) My face over it, `scared`. |
-| S18 | L18 | The man's back in the closet, the card in my hand soft in the foreground. |
-| S19 | L19 | Close: my face, `stunned`, turned toward the closet. |
+| S19a, S19b | L19 | (a) The man's back in the closet, the card in my hand soft in the foreground. (b) Close: my face, `stunned`, turned toward the closet. |
 | S20 | L20 | Me at the dresser with a fresh card and a motel pen, writing (hand on the card on a cut, no grip shown). |
 | S21 | L21, L21b | Close: the new card, my handwriting, five stars filled. |
 | S22 | L22 | Dawn through the blinds. The closet doors swing open (eased 0.8 s). "Click." |
@@ -133,7 +132,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L02: And you get / whatever the last guest / WROTE.
 - L03: A five-star card says, / "The ice machine SINGS." / It does. Opera.
 - L04: A one-star card says, / "The pool's the size / of a BUCKET." / It's a bucket. **(quotable)**
-- L05: My dad and I / got Room SIX, / the last night / of our road trip.
+- L05: My dad and I / got Room SIX, / the last STOP / of our road trip.
 - L06: Our card said, / "The man in the closet / is very POLITE."
 - L07: Dad laughed / and opened / the CLOSET.
 - L08: A man / in a pressed gray suit, / facing the WALL.
@@ -147,7 +146,6 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L15: The man / hadn't MOVED.
 - L16: Night two, / I found an old card / in the back / of the drawer.
 - L17: "Room Six: / the man in this room / is very quiet. / He never LEFT."
-- L18: He wasn't / the motel's / closet man.
 - L19: He was / the last GUEST.
 - L20: So I wrote / a card / of my OWN.
 - L21: "The man in the closet / checked out / before BREAKFAST."

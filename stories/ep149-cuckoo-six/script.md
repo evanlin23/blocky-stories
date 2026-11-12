@@ -5,7 +5,7 @@
 - **Title:** Grandpa's Clock Cuckooed SIX Times For Five 🕰️
 - **Shape:** `hidden-guest` (new tag): the extra in the count is someone who loves us, hiding to surprise us.
 - **Everyone is an adult or a teen.** I'm 18. Mom and Dad are in their 50s, Grandma and Grandpa about 80 (it's Grandpa's eightieth). My big sister Ivy is 24.
-- **Word count:** 129 spoken words in 25 lines (L01 to L23 with L04b and L11b), all `narrator`, plus one 3.5 s hold (P01).
+- **Word count:** 129 spoken words in 24 lines (L01 and L03 to L23 with L04b and L11b, no L02: folded into L01 in the standards revise), all `narrator`, plus one 3.5 s hold (P01).
 - **Estimated length:** 129 words at about 290 wpm is 27 s of speech. The six cuckoos at counting pace (about 0.4 s each), gaps about 3.5 s, P01 3.5 s, a 0.25 s loop tail: about 35 to 38 s. Under 32 s: stretch P01 to 4.0 s. Over 45 s: cut L18.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Grandpa's bright living room on a sunny evening (summer, 7 PM sun through big windows): green patterned wallpaper in our own pattern, a long table with a birthday cake (no candles, a sugar "80" in numerals on top), a big carved wood cuckoo clock on the wall, long sunflower-yellow curtains to the floor, a plump red armchair, a hall closet door, a tablecloth that reaches the floor. A full ceiling, the windows bright.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
@@ -22,17 +22,17 @@ The table for my eight is in `stories/ep140-town-photo/script.md`. This row: Gra
 - Checked against "Claimed big ideas": not ep94 (a staged surprise party on a repeated day) or ep134 (a house counting me). A clock that counts, a sister who hides.
 
 ## The story
-- **Rule / hook (L01, 13 words, about 2.6 s):** "Grandpa's cuckoo clock / cuckoos once / for every PERSON / in the house."
-- **The count (L02 to L04b):** "There are FIVE of us." Seven o'clock: six cuckoos, spoken and captioned. "SIX."
+- **Rule and count / hook (L01, 15 words, about 3 s):** "Grandpa's cuckoo clock / counts the PEOPLE / in the house. / Tonight, / there are FIVE of us." The count is in line 1, so the `count` tag is true.
+- **The wrong count (L03 to L04b):** Seven o'clock: six cuckoos, spoken and captioned. "SIX."
 - **The job (L05):** "Find the SIXTH." Four spots pop with letters (L07): A the red armchair, B the yellow curtains, C the hall closet, D under the long tablecloth.
 - **About me and mine by 0:05:** the clock is Grandpa's, and L06 counts us: Mom, Dad, Grandma, Grandpa and me.
-- **The countdown and meter, on screen the whole time:** a corner cuckoo counter (top-right, a wood-brown tile with a small bird glyph and a number): "5" at frame 1 (people), then each cuckoo adds a tick mark beside it up to six, so it reads "5 · 6". During L08 and P01, a small knife glyph beside the cake (no blade detail, a plain cake server shape) slides toward the cake as the countdown: "till Grandpa cuts the CAKE".
+- **The countdown and meter, on screen the whole time:** a corner cuckoo counter (top-right, a wood-brown tile with a small bird glyph and a number): "5" at frame 1 (people), then each cuckoo adds a tick mark beside it up to six, so it reads "5 · 6". During L08 and P01, a small cake-slice glyph (a pink wedge, nothing sharp) beside the cake fills in toward a whole slice as the countdown: "till Grandpa cuts the CAKE".
 - **The clues in the room (shown, never pointed at before the hold):**
   1. **The sneakers:** red sneaker toes poke out under the yellow curtain's hem (B).
   2. **The frosting:** a thumb-sized scoop is missing from the cake's corner, and a pink frosting smudge is on the curtain's edge at hand height (B).
   3. **Red herrings:** the closet door is ajar (C) and the tablecloth reaches the floor (D), so both look possible. The armchair (A) is too close to the wall to hide anyone.
 - **The hold (P01, 3.5 s):** the master of the room with all four letters, the curtain, the cake, the closet and the table in frame. Caption "A, B, C or D?" in the top third. Quiz-clock ticks.
-- **The answer (L10 to L13):** B, behind the curtain: red sneakers under the hem, a scoop out of the frosting. My big sister Ivy, home from overseas, who said she couldn't come.
+- **The answer (L10 to L13):** B, behind the curtain: red sneakers under the hem, a scoop out of the frosting. My big sister Ivy, who swore she had to work all weekend.
 - **The callback (L15):** she's been behind that curtain since six-forty. Clock time said aloud.
 - **The warm close (L16 to L23):** Grandpa laughs so hard he cries into the cake. At eight o'clock the clock goes six times again, and Grandpa says that's the best number it's ever counted.
 - **How the last 15 seconds turn over the first line:** "once for every person in the house" was an eerie count. On the loop it's a family count, and it's one bigger tonight.
@@ -42,7 +42,7 @@ The table for my eight is in `stories/ep140-town-photo/script.md`. This row: Gra
 **L23: "the best NUMBER / it's ever counted."**
 
 ## Clarity test (cold, two sentences)
-Grandpa's cuckoo clock cuckoos once per person in the house, and on his birthday it cuckoos six times when only five family members are there, so the viewer has to find the sixth among four hiding spots. It's the narrator's big sister Ivy behind the curtain, home early from overseas to surprise Grandpa, given away by her red sneakers and frosting on her thumb.
+Grandpa's cuckoo clock cuckoos once per person in the house, and on his birthday it cuckoos six times when only five family members are there, so the viewer has to find the sixth among four hiding spots. It's the narrator's big sister Ivy behind the curtain, who said she had to work all weekend and came to surprise Grandpa, given away by her red sneakers and frosting on her thumb.
 
 ## World
 - One family's house, one clock that has always counted people instead of hours. The family treats it as normal.
@@ -88,8 +88,8 @@ Build rules for every shot: people stand 1.4 m apart unless seated at the table 
 
 | Shots | Lines | Picture |
 |---|---|---|
-| S01a, S01b | L01 | (a) Close: the clock's door opening, the bird out, Grandpa below, `smile`. (b) Punch in on the bird on "PERSON". |
-| S02 | L02 | The table: Mom, Dad, Grandma, Grandpa and me around the cake, all `smile`. |
+| S01a, S01b | L01 | (a) Close: the clock's door opening, the bird out, Grandpa below, `smile`. (b) Punch in on the bird on "PEOPLE". |
+| S02 | L01 ("Tonight, there are FIVE of us") | The table: Mom, Dad, Grandma, Grandpa and me around the cake, all `smile`. |
 | S03 | L03 | Close: the clock's face at seven (hands only, numerals our own). |
 | S04a to S04f | L04 | One cut per cuckoo, about 0.4 s each: the bird, Mom's face, the bird, Dad's face, the bird, my face (`stunned` on the sixth). The corner counter ticks to six. |
 | S05 | L04b | Close: the counter "5 · 6", punch in. |
@@ -119,8 +119,7 @@ None, on purpose. In a puzzle, a tally would read as a clue.
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: Grandpa's cuckoo clock / cuckoos once / for every PERSON / in the house.
-- L02: There are FIVE of us.
+- L01: Grandpa's cuckoo clock / counts the PEOPLE / in the house. / Tonight, / there are FIVE of us.
 - L03: At seven o'CLOCK, / it went:
 - L04: Cuckoo. / Cuckoo. / Cuckoo. / Cuckoo. / Cuckoo. / CUCKOO.
 - L04b: SIX.
@@ -134,7 +133,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L11: Red sneakers / under the HEM.
 - L11b: And a thumb-sized SCOOP / out of the frosting.
 - L12: My big sister / IVY.
-- L13: She lives overseas. / She SWORE / she couldn't come.
+- L13: She SWORE / she had to work / all WEEKEND.
 - L14: She's been / behind that curtain / since six-FORTY.
 - L15: With frosting / on her THUMB.
 - L16: Grandpa laughed / so hard / he CRIED.
@@ -146,7 +145,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L22: Grandpa says / that's the best NUMBER
 - L23: it's ever counted. **(quotable)**
 
-(Loop: "That's the best number it's ever counted. Grandpa's cuckoo clock cuckoos once for every person in the house.")
+(Loop: "That's the best number it's ever counted. Grandpa's cuckoo clock counts the people in the house. Tonight, there are five of us." On the loop, five is the count that's wrong.)
 
 ## Notes for the builder and reviewers
 - "B" in L10 is spoken "bee". The six cuckoos in L04 are read at counting pace, about 0.4 s each, the last one louder. In L21 they're quicker and lighter (about 0.25 s each).

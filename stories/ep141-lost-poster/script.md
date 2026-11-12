@@ -22,13 +22,13 @@
 - **Why it clicks:** the poster's other faces were things that went missing (L03, L04), so a face reads like the scariest thing. Grandma asks every day what pie I'm entering (L08, L09), practices (L13) and asks if I'm ready to lose (L14). She read the poster right the first day.
 - **Ten pitched, this one kept.** Dropped: the poster means I lose my keys (too small), I lose my voice (no warmth), I lose my temper (no turn), I lose weight (narrows), I lose a bet to Dad (weaker than a contest), the poster means someone loses ME (a stand-in), I'm "lost" in a corn maze (ep95), the poster is a prank by my friends (no rule), I lose my best friend (sad), Grandma made the poster (breaks the rule).
 - **Checked against "Claimed big ideas":** not ep96 (a card's double reading about friendship), not ep102 (a reversed warning), not ep109 (a self-fulfilling radio name). The double reading is a single word on a poster, played for laughs. Shape `double-reading`.
-- **The rule is the clue:** "LOST" and "one week" sound like going missing. They were a deadline: the contest is a week from Monday.
+- **The rule is the clue:** "LOST" and "one week" sound like going missing. They were a deadline: the contest is the Saturday after the Sunday it went up, the seventh day.
 
 ## The story
 - **Rule / hook (L01):** "If the LOST poster / on the corner / has YOUR face, / you've got / one WEEK."
-- **Stakes beat (L02, about 3 s):** "Monday, / it had MINE."
+- **Stakes beat (L02, about 3 s):** "Sunday, / it had MINE."
 - **The relatable want or fight:** a family that worries too much, and a grandma who's tired of coming second.
-- **The marker (the rule meter), on screen by frame 1 and in every shot:** a cream tag top-left with a poster glyph and a day count, "7" on Monday, counting down a day per scene (6, 5, 4, 3, 2, 1), then a clock readout on Saturday (10:58, 10:59, 11:00). Numerals and glyphs only.
+- **The marker (the rule meter), on screen by frame 1 and in every shot:** a cream tag top-left with a poster glyph and a day count, "7" on Sunday, counting down a day per scene (Monday 6, Tuesday 5, Wednesday 4, Thursday 3, Friday 2, Saturday 1), then a clock readout on Saturday (10:58, 10:59, 11:00). Numerals and glyphs only.
 - **The poster (the rule's picture):** a wooden notice board on the corner. Each poster is a cream sheet with a big red "?" glyph at the top and a drawn picture under it (an umbrella, car keys, my face). No letters.
 - **Examples (L03, L04, about 4 to 8 s), two small payoffs:** Mr. Park's poster showed his umbrella, gone by Tuesday (Mr. Park in the rain, no umbrella, `sheepish`), my cousin's showed his car keys, still gone (my cousin patting his pockets, `uneasy`).
 - **The silly plant (L08 to L11):** Grandma asks every day what pie I'm entering on Saturday. I've won six years running. She's come second six years running.
@@ -38,12 +38,13 @@
 - **The countdown, said aloud:** 10:58, 10:59, 11:00, "DING." (the judges' table bell).
 - **The climax turns the rule's own logic:** the poster says I'll be lost in a week. I lose: the contest, by two points. No new magic.
 - **Twist and reveal (L21 to L23, about 34 to 38 s), said plainly:** "Grandma WON. / By two POINTS." "The poster / was RIGHT. / I LOST." "To GRANDMA." over one picture (S23: Grandma holding the trophy at chest height on the camera side, `laugh`, my face `stunned` behind at 1.4 m).
-- **How the last 15 seconds turn over the first line:** "you've got one week" was never a threat. Next Monday the poster has Grandma's face, and she's already baking to lose to me.
+- **How the last 15 seconds turn over the first line:** "you've got one week" was never a threat. Next Sunday the poster has Grandma's face, and she's already baking to lose to me.
 - **The plants a rewatch catches:**
   1. L09: Grandma's daily question about Saturday.
   2. L13: flour up to her elbows on Thursday.
   3. L14: "ready to LOSE?" on Friday. (The pin asks viewers to find the moment.)
-  4. L19: Grandma watches me, never the judges, because she already knows.
+  4. L19: Grandma just watches me, because she already knows.
+  5. L25: the banner was painted on Sunday, the day my poster went up.
 - **Ending shape:** `double-reading`.
 - **Warmth:** being glad to lose to someone you love.
 - **Sad family reveal?** No.
@@ -105,12 +106,12 @@ Every line gets one to three shots with acting, a punch-in on its key word when 
 | S04a, S04b | L04 | (a) My cousin patting his pockets (flat hands), `uneasy`. (b) Close: the keys poster on the board. |
 | S05 | L05 | Mom's face in her kitchen, `scared`, tag "6". |
 | S06 | L06 | Mom and me at the mailbox, 1.4 m apart, both faces to camera, Mom `uneasy`, me `sheepish`. |
-| S07a, S07b | L07 | (a) Me and two buddies at a card table, faces to camera, the buddies pushing chips my way (flat hands), tag "5". (b) My aunt at my door with a covered dish on her flat palms at chest height, `sad`, me `sheepish`, 1.4 m apart. |
+| S07a, S07b | L07 | (a) Me and two buddies at a card table, faces to camera, the buddies pushing chips my way (flat hands), tag "5". (b) My aunt at my door with a folded striped scarf on her flat palms at chest height, `uneasy`, me `sheepish`, 1.4 m apart. |
 | S08 | L08 | Grandma's face, `smile`, at her door. |
 | S09 | L09 | Grandma's face, close, `sly`. |
 | S10 | L10 | A shelf of six plain gold ribbons (no text), my face beside it, `sheepish`. |
 | S11 | L11 | Grandma's face, `smile`, beside a shelf of six plain silver ribbons. |
-| S12a, S12b | L12 | (a) Grandma at her door again, `sly`, tag "4". (b) Grandma's face, close, tapping her wristwatch with one flat finger, `sly`. |
+| S12a, S12b | L12 | (a) Grandma at her door again, `sly`, tag "5" (Tuesday). (b) Grandma's face, close, tapping her wristwatch with one flat finger, `sly`, tag "4" (Wednesday). |
 | S13 | L13 | Grandma at her counter, flour up to her elbows, six pies cooling behind her, `smile`, tag "3". |
 | S14 | L14 | Grandma's face, close, `sly`, tag "2". |
 | S15 | L15 | The pie tent from inside, the judges' table, sun at the open front. Tag "1", then 10:58. |
@@ -127,7 +128,7 @@ Every line gets one to three shots with acting, a punch-in on its key word when 
 | S25 | L25 | Close: the banner's picture, Grandma's face at the frame's edge. |
 | S26 | L26 | Mom's face, `laugh`, her hand leaving my arm (eased). |
 | S27 | L27 | My face, `laugh`, Grandma's hand on my shoulder (eased). |
-| S28 | L28 | The corner board, Monday sun, a new poster beside mine. Tag "7". |
+| S28 | L28 | The corner board, Sunday sun, a new poster beside mine. Tag "7". |
 | S29 | L29 | Close: the new poster with Grandma's drawn face, my face beside it, `smile`. Loop. |
 
 ## Face and hands beats
@@ -144,12 +145,12 @@ A plain tally: two short red strokes painted on the notice board's top corner, f
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks. The "DING." is spoken and captioned. Clock times are said aloud.
 
 - L01: If the LOST poster / on the corner / has YOUR face, / you've got / one WEEK.
-- L02: Monday, / it had MINE.
+- L02: Sunday, / it had MINE.
 - L03: Mr. Park's / had his UMBRELLA. / Gone by TUESDAY.
 - L04: My cousin's / had his car KEYS. / Nobody's / seen them SINCE.
 - L05: All week, / Mom wouldn't let me / out of her SIGHT.
 - L06: She walked me / to the MAILBOX.
-- L07: My buddies / let me win / at CARDS. / My aunt brought / a goodbye CASSEROLE.
+- L07: My buddies / let me win / at CARDS. / My aunt knitted me / a GOODBYE scarf.
 - L08: And GRANDMA / asked me the same thing / every DAY.
 - L09: "What pie / are you making / SATURDAY?"
 - L10: I've won / the town pie contest / six years RUNNING.
@@ -161,16 +162,16 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L16: Mom held my arm / so TIGHT.
 - L17: 10:59.
 - L18: The judges / tasted MINE.
-- L19: Then GRANDMA'S. / Grandma wasn't watching / the JUDGES. / She was watching ME.
+- L19: Then GRANDMA'S. / And Grandma / just watched ME.
 - L20: 11:00. / "DING."
 - L21: Grandma WON. / By two POINTS.
 - L22: The poster / was RIGHT. / I LOST.
 - L23: To GRANDMA.
 - L24: She'd painted / a victory BANNER.
-- L25: On MONDAY.
+- L25: On SUNDAY.
 - L26: Mom laughed so hard / she let go / of my ARM.
 - L27: I've never been / so happy / to LOSE.
-- L28: This Monday, / there's a new poster / on the CORNER.
+- L28: This Sunday, / there's a new poster / on the CORNER.
 - L29: It's Grandma's FACE. / And I'm already BAKING.
 
 (Loop: L29 runs straight into L01: "And I'm already baking. If the lost poster on the corner has your face, you've got one week.")
@@ -180,4 +181,4 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - S18 never shows a fork at a face: cut to the judge's nodding face.
 - Every warm face is `smile`, `laugh` or `warm`, never `grin`.
 - Title, description, pin and captions checked against hard rule 8.
-- Queue spacing: never next to ep154 (grandparents) or another "if" opening.
+- Queue spacing: never next to ep149 (grandparents) or another "if" opening.

@@ -2,7 +2,7 @@
 
 - **Slug:** `ep152-future-late` (batch 15, upload order 14 of 16)
 - **Pitch:** P04 in the batch 15 pitch round (panel 6.7). **Format series:** the future call, in ep124's world, #2 of this batch (ep139 is #1). Same rule, a new person's call, the same kind of twist (the call isn't really advice, it tells me someone I love is still loving me later).
-- **Lane:** warm. **Opening shape:** `count` (the count that's wrong is the clock: "At 11:57, mine still HADN'T"). **Length arm:** 60 to 90 s.
+- **Lane:** warm. **Opening shape:** `confess` (line 1 is the rule, then mine: "At 11:57, mine still HADN'T"). **Length arm:** 60 to 90 s.
 - **Title:** Future Me Called Two Minutes Before MIDNIGHT 🕛
 - **Everyone is an adult.** I'm 30 today. My mom is 61.
 - **Word count:** 256 written words (about 270 spoken, with the clock times said in full) in 40 lines (L01 to L40), all `narrator`, plus one music drop (0.5 s before L21).
@@ -14,12 +14,12 @@
 
 | Setting | Strange thing | First-line type | Ending shape | Kind of warmth | Ends |
 |---|---|---|---|---|---|
-| Mom's kitchen of fourteen clocks, my birthday night | my future call hasn't come by 11:57 | `count` | `wrong-clock` | a mother's small lifelong care, still going later | warm |
+| Mom's kitchen of fourteen clocks, my birthday night | my future call hasn't come by 11:57 | `confess` | `wrong-clock` | a mother's small lifelong care, still going later | warm |
 
 ## The big idea
 **On your thirtieth your future self calls once, mine rang at 11:58 on Mom's kitchen clock, breathless and sorry for being late, and his only advice was "never tell Mom you know about the clocks", because he was calling from her kitchen, where every clock is still ten minutes fast, still set for me.**
 
-- **Why it clicks:** I've been late my whole life (L11), so Mom keeps every clock ten minutes fast (L10) and swears they're right (L12). All night the dread runs on her clocks, so it was really ten minutes earlier than we feared (L33). And "still ten minutes fast" in the future means Mom is still there, still doing it, which is the warm thing he called to say without saying it.
+- **Why it clicks:** I've been late my whole life (L11), so Mom keeps every clock ten minutes fast (L10) and swears they're right (L12). All night the dread runs on her clocks, so it was really ten minutes earlier than we feared, and the call at 11:58 on her clocks came at 11:48, twelve minutes before midnight (L33). And "still ten minutes fast" in the future means Mom is still there, still doing it, which is the warm thing he called to say without saying it.
 - **Ten pitched, this one kept.** Dropped: no call ever comes (too sad, implies the worst), future me calls collect (a joke with no reveal), the call comes for Mom (that's P03's lane), future me is late because he's stuck in traffic (no reveal), the clocks run backward (magic on magic), Mom made the call herself (breaks the rule), future me calls from the moon (silly), he calls twice (breaks the rule), I call him (no rule), the call is a wrong number (ep124 nearby, no warmth).
 - **Checked against "Claimed big ideas":** not ep124 (a silent call made to listen to Dad), not ep139 (a call to my dog), not ep130 (a countdown already run out), not ep94 (a staged day). The wrong count is a fast clock kept out of love. Shape `wrong-clock`.
 - **The rule is the clue:** "You get one call" makes a missing call frightening. The call that finally comes says the scariest-looking thing, "I'm in Mom's kitchen", is the best news there is.
@@ -163,7 +163,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L11: Because I've been late / my whole LIFE.
 - L12: She swears / they're RIGHT.
 - L13: All day, / everybody / was way too NICE to me.
-- L14: Nobody said / what no call / MEANS.
+- L14: Nobody said / what a LATE call / MEANS.
 - L15: Mom made / my favorite PIE / and didn't touch HERS.
 - L16: 11:52. / "Tick."
 - L17: Mom stopped / pretending to READ.
@@ -183,7 +183,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L30: And her kitchen clock / said 11:58 / THERE, too.
 - L31: Still ten minutes FAST. / Still set / for ME.
 - L32: Mom still / has no idea / I KNOW.
-- L33: By real time, / he had ten whole minutes / to SPARE.
+- L33: By real time, / he had TWELVE whole minutes / to SPARE.
 - L34: First time / in my LIFE.
 - L35: Then, / CLICK.
 - L36: Mom asked / what he SAID.
@@ -195,7 +195,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 (Loop: L40 runs straight into L01: "When it's my turn to call, I'm using her clock. On your thirtieth, it's you on the phone, from later.")
 
 ## Notes for the builder and reviewers
-- Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. No death, illness or loss word. L14 never says what no call means, and L29 to L32 make plain that Mom is still there later.
+- Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. No death, illness or loss word. L14 only says nobody named what a late call means, and L29 to L32 make plain that Mom is still there later.
 - The clocks never blink or flash. The stove display changes numerals with an eased fade.
 - Every warm face is `smile`, `laugh` or `warm`, never `grin`.
 - Title, description, pin and captions checked against hard rule 8.

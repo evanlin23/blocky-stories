@@ -10,17 +10,16 @@
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright town square on a sunny Saturday morning: white wooden bleachers in five rows, a red-brick town hall behind, bunting in our own plain colors (no lettering), blue sky, trimmed grass. One indoor set: the town hall's long hallway of framed photos, with a full ceiling and windows.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
 
-## Variety table (my eight of batch 15)
+## Variety table (my eight of batch 15, seven after ep151-cabin-eight was killed)
 | Slug | Setting | Strange thing | First line | Ending shape | Warmth | Ends |
 |---|---|---|---|---|---|---|
 | ep140-town-photo | town square bleachers, photo day | a photo with a gap where I stand | `count` | behind-camera | a town that shows up every year | eerie |
 | ep142-ferris-extra | park Ferris wheel exit, 4 PM | a fifth rider nobody saw get on | `count` | puzzle, the extra rides again | cousins' day out | eerie |
-| ep144-lap-behind | outdoor town pool at sunrise | a swimmer one lap behind, never seen | `if` | self-echo | Grandpa's morning laps | eerie |
+| ep144-lap-behind | outdoor town pool at sunrise | a swimmer one lap behind, never seen | `must` | self-echo | Grandpa's morning laps | eerie |
 | ep145-dog-barks | our backyard barbecue | a dog that barks once and then twice | `if` | open-choice | a sister's fiancé, maybe family | open |
 | ep147-motel-reviews | roadside motel, Room Six | a man standing in the closet | `cost` | words-make | a dad-and-son road trip | eerie |
 | ep149-cuckoo-six | Grandpa's living room | a clock that counts one too many | `count` | puzzle, hidden guest | a sister home for a birthday | warm |
-| ep151-cabin-eight | ring of snowy A-frame cabins | a rule about the guest in Cabin Eight | `ban` | extra-is-us | a mom-and-son weekend | eerie |
-| ep153-pier-box | sunny fishing pier | a lock-box answering in my handwriting | `cost` | open-choice | a best friend before a move | open |
+| ep153-pier-box | sunny fishing pier | a lock-box answering in my handwriting | `cost` | open-choice | a best friend and a surprise built for a year | open |
 
 ## The big idea
 **Our town photo only shows people who'll still be here next year, and I'm missing because from now on I'm the one who takes it: the old photographer has held the camera for eighty years without getting any older, and today he handed it to me.**
@@ -31,8 +30,8 @@
 - **The rule is the clue:** "shows people who'll still be here" is about who's in front of the lens. It never promised to count the one behind it.
 
 ## The story
-- **Rule / hook (L01, 14 words, about 2.6 s):** "Our town photo / only shows people / who'll still be HERE / next year."
-- **The count (L02, L03):** 212 posed, 211 faces, the missing one is me. Stakes in the same breath: missing means not here next year.
+- **Count / hook (L01, 15 words, about 3 s):** "Two hundred twelve / of us posed / for the town PHOTO. / Two hundred ELEVEN / faces came out." The wrong count is line 1, so the `count` tag is true.
+- **The rule and stakes (L02, L03):** "It only shows people / who'll still be HERE / next year." Then the missing one is me: missing means not here next year.
 - **The marker (the rule meter), on screen from frame 1 and in every shot:** the town's wooden headcount board, a green chalkboard on an easel beside the bleachers with two chalk numbers, "212" over "211", our own plain numerals. In close shots it rides as a small corner copy (top-left, chalk-green tile, white numerals). It changes once: at L27 the bottom number is wiped and rewritten "212".
 - **Examples (L04 to L07, 2 jokes, about 4 to 10 s):** Uncle Benny's blank spot last year (he sells kites on the coast now), and Mrs. Pell, who retires every year and is in every photo.
 - **Stakes-raising beat (L08, L09, about 9 to 12 s):** my mom, Dana, counted the proof nine times, then stopped letting go of my hand.
@@ -43,7 +42,7 @@
 - **Plant 2 (L22, L23):** his hands shake too much to hold it still. He looks straight at me and holds it out, as if he'd always known it would be me.
 - **The climax turns the rule's own logic:** I stand behind the camera, so I'm not in the photo, and the count comes out whole (212, with Mr. Okafor in the front row). No new magic: the photo was counting right all week.
 - **Reveal (L31 to L35, said plainly over one picture):** for the first time in eighty years, Mr. Okafor is in the print. My grandma says he looked exactly this old when she was a girl. He pats my shoulder: "Every year now. Your TURN."
-- **How the last 15 seconds turn over the first line:** "only shows people who'll still be here next year" first reads as a threat to me. On the loop, it's my job description: I'll be here every year, just never in it.
+- **How the last 15 seconds turn over the first line:** the count (L01) and the rule (L02): "only shows people who'll still be here next year" first reads as a threat to me. On the loop, it's my job description: I'll be here every year, just never in it.
 - **Ending shape:** `behind-camera`. Ends eerie: relief, then the sting that the job doesn't end.
 - **Warmth:** a town that turns out every year for its photo, and Mom's hand.
 
@@ -91,8 +90,8 @@ Sky `#7cc8ff`, grass `#5bd16a`, bleachers white `#f6f3ea`, town hall brick `#c85
 - **Effects:** the hit on "ME" (L03), a soft paper slide for each print, the camera's shutter click (soft, under 4 kHz), a crowd's cheer on L28, low and warm.
 
 ## The opening recipe
-1. Line 1 is the rule with its stakes (who'll still be here next year), 14 words.
-2. Frame 1: a close-up of the proof print held at chest height by Mom's hands, the bleachers in it, the pale gap in the third row ringed in pickle green, and my face soft above it. The headcount board's "212 / 211" corner tile is on from frame 1.
+1. Line 1 is the wrong count (212 posed, 211 faces), 15 words, and line 2 is the rule with its stakes (who'll still be here next year), by about 4.5 s.
+2. Frame 1: the headcount board close on "212", tilting to "211" by 0:02, the proof print's corner in Mom's hands at the frame edge. The "212 / 211" corner tile is on from frame 1. At L02 the proof print fills the frame, the pale gap in the third row ringed in pickle green, my face soft above it.
 3. By 0:05 it's me (L03 "The missing one / is ME.").
 4. A stakes beat at 9 to 12 s (Mom's nine counts, her hand).
 
@@ -101,8 +100,8 @@ Build rules for every shot: characters stand 1.4 m apart or more unless touching
 
 | Shots | Lines | Picture |
 |---|---|---|
-| S01a, S01b | L01 | (a) Close: the proof print in Mom's hands at chest height, the gap ringed, my face soft behind, `uneasy`. (b) Punch in 6% on the gap on "HERE". |
-| S02a, S02b | L02 | (a) The headcount board close, chalk "212". (b) Tilt down to "211", punch in on "ELEVEN". |
+| S01a, S01b | L01 | (a) The headcount board close, chalk "212", the proof print's corner in Mom's hands at the frame edge. (b) Tilt down to "211", punch in on "ELEVEN". |
+| S02a, S02b | L02 | (a) Close: the proof print in Mom's hands at chest height, the gap ringed, my face soft behind, `uneasy`. (b) Punch in 6% on the gap on "HERE". |
 | S03 | L03 | Close: my face, `scared`, the print's edge in the bottom of frame. Hit on "ME". |
 | S04 | L04 | Last year's print on the board's ledge, close, a gap in row two, a green ring. |
 | S05 | L05 | Uncle Benny at a beach kite stall, `laugh`, holding a big plain diamond kite at chest height. |
@@ -137,7 +136,7 @@ Build rules for every shot: characters stand 1.4 m apart or more unless touching
 | S33 | L34 | Mr. Okafor beside me at the camera (1.4 m apart, then one step in to pat my shoulder, the touch on purpose), `smile`. |
 | S34 | L35 | Close: his face, `smile`, eyes on me. |
 | S35 | L36 | Close: the print held up beside the camera, everyone in it, nobody behind. |
-| S36 | L37 | Close: my face at the camera's side, `uneasy`, the "212 / 212" tile in the corner. Matches S01's framing for the loop (face high, a print-height prop low). |
+| S36 | L37 | Close: my face at the camera's side, `uneasy`, the "212 / 212" tile in the corner, the headcount board behind my shoulder. Cuts on the loop to S01a's board close (the board in both). |
 
 ## Lore connection (`stories/lore.md`)
 A plain tally of one stroke, chalk-white, scratched on the camera tripod's brass leg collar: the camera is a place built for one. Shown in S25 at the frame's lower edge, about 1 s, never narrated. No extra stroke.
@@ -145,8 +144,8 @@ A plain tally of one stroke, chalk-white, scratched on the camera tripod's brass
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: Our town photo / only shows people / who'll still be HERE / next year.
-- L02: Two hundred twelve / of us posed. / Two hundred ELEVEN / faces came out.
+- L01: Two hundred twelve / of us posed / for the town PHOTO. / Two hundred ELEVEN / faces came out.
+- L02: It only shows people / who'll still be HERE / next year.
 - L03: The missing one / is ME.
 - L04: Last year, / Uncle Benny's spot / was BLANK.
 - L05: He sells KITES / on the coast now.
@@ -184,7 +183,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L36: The photo / wasn't WRONG.
 - L37: I'll be here / every year. / Just never IN it.
 
-(Loop: "I'll be here every year, just never in it. Our town photo only shows people who'll still be here next year." The last line runs straight into the rule, which now describes my job.)
+(Loop: "I'll be here every year, just never in it. Two hundred twelve of us posed for the town photo." The last line runs into the count, which on the loop includes me behind the lens, and L02's rule now describes my job.)
 
 ## Notes for the builder and reviewers
 - "Two hundred twelve" and "Two hundred eleven" are spoken as words. The chalkboard shows numerals.

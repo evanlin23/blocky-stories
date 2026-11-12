@@ -3,7 +3,7 @@
 - **Slug:** `ep142-ferris-extra` (batch 15, upload order 4 of 16)
 - **Pitch:** P25 in the batch 15 pitch round (blind panel 7.3). Lane `puzzle`, the **"Find the extra one" series, #2** (format #1 is ep62-six-riders, "The Elevator Mirror Shows FIVE": 34 s, 108% viewed, 17.8k views, 11 guessing comments). New place, new cast, same job for the viewer: a count that's one too high, letters over everyone, one countdown, a 3.5 s hold on the question, then the answer and a sting.
 - **Opening:** `count`. **Length arm:** ultra-short puzzle, 30 to 45 s.
-- **Title:** Four Got On. FIVE Got Off 🎡
+- **Title:** Four Got On. FIVE Got Off 🍦
 - **Shape:** `regular` (new tag): the extra one isn't a copy or a swap. It's the wheel's own rider, who gets off with every group and gets back on alone.
 - **Everyone is an adult.** I'm 20. My three cousins (Jada 22, Marco 21, Lu 23) are adults. The extra looks about 25. The gate man is about 60.
 - **Word count:** 117 spoken words in 22 lines (L01 to L22), all `narrator`, plus one 3.5 s hold (P01).
@@ -18,7 +18,7 @@ The table for my eight is in `stories/ep140-town-photo/script.md`. This row: a p
 **Four of us got on the Ferris wheel and five got off, and the extra one isn't a copy of any of us: it's the wheel's own rider, who gets on at the top where nobody can, steps off with every group, and the gate man has been tipping his hat to it for years.**
 
 - **Wait, what:** the viewer solves "who's extra", and the answer turns out to be ordinary to everyone who works there. It does this every ride, all day.
-- **Different from #1 (ep62):** no mirror, no swap, nobody I love is replaced. The sting is that the extra is a regular, and it's waiting for the next four. Ten pitched for the #2 slot; dropped ones include a copy of a cousin (ep62's swap again), the narrator is the extra (cabin-eight's shape in this batch), a ghost rider from long ago (death read), an extra cone in the photo (too small at phone size) and a sixth seat in the gondola (needs a wide that hides faces).
+- **Different from #1 (ep62):** no mirror, no swap, nobody I love is replaced. The sting is that the extra is a regular, and it's waiting for the next four. Ten pitched for the #2 slot; dropped ones include a copy of a cousin (ep62's swap again), the narrator is the extra, a ghost rider from long ago (death read), an extra cone in the photo (too small at phone size) and a sixth seat in the gondola (needs a wide that hides faces).
 - **The rule is the clue:** "Four got on, five got off" is a count. The tells are things that can't happen in the sun: a cone that won't melt, a shadow pointing the wrong way.
 
 ## The story
