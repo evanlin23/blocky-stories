@@ -276,9 +276,9 @@ def houseboat(kit):
             rot=(ang, 0, 0))
         box(kit, f"gpp{sx}", (0.08, 0.08, 0.8), (sx * 0.62, 2.0, 0.4), RAIL_C, 0.5, 0.1)
     # the tally post: two short teal strokes scratched at hip height (a clear centimetre proud of the post)
-    box(kit, "tallypost", (0.4, 0.4, 1.1), (0.55, 1.4, 0.55), "#5b4a38", 0.8, 0.05)
+    box(kit, "tallypost", (0.34, 0.34, 1.1), (-0.62, 1.4, 0.55), "#5b4a38", 0.8, 0.05)
     for k, dx in enumerate((-0.05, 0.05)):
-        box(kit, f"tally{k}", (0.1, 0.016, 0.8), (0.55 + dx * 2.2, 1.4 - 0.208, 0.58), "#fff1cf", 0.6, 0.05, rot=(0, 0, 0))
+        box(kit, f"tally{k}", (0.09, 0.016, 0.8), (-0.62 + dx * 2.2, 1.4 - 0.178, 0.58), "#fff1cf", 0.6, 0.05, rot=(0, 0, 0))
     # deck dressing: two deck chairs, potted plants, a little table
     for x, yaw in ((-2.6, 12), (2.7, -14)):
         chair = kit.empty(f"chair{x}", (x, 5.4, G.DECK_Z), None, (0, 0, yaw * D2R))
@@ -465,10 +465,12 @@ def animate(kit, story, tl, t, ctx):
     if sid == "S20":
         # the charger rests on the flat palm of Dex's raised hand (his right arm held out level)
         bpy.context.view_layer.update()
-        hand = bpy.data.objects.get("dex.hand1")
-        if hand is not None:
-            hp = hand.matrix_world.translation
-            loc = (hp.x, hp.y, hp.z + 0.22)
+        arm = bpy.data.objects.get("dex.arm1")
+        if arm is not None:
+            M = arm.matrix_world
+            hp = M @ Vector((0, 0, -1.5))
+            u = M.to_scale().x
+            loc = (hp.x, hp.y, hp.z + 0.6 * u + 0.1)
         else:
             loc = (G.DEX[0] + 0.34, G.DEX[1] - 0.62, G.DEX[2] + 1.55)
         W["charger"].location = loc

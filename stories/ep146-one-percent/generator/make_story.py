@@ -201,7 +201,7 @@ shot("S08a", "L08", [[0, [0.35, -4.6, 1.3], [0.35, 1.6, 1.15], 28], [1, [0.35, -
       "dex": dict(pos=(0.5, G.DEX[1], G.DECK_Z), yaw=0.0, expr="neutral", arms=(8, 8), side=(4, 4))})
 walk("me", "L08.2", (0.0, ME[1], 0.0))
 shot("S08b", "L08.2", fcam(ME, d=2.3, lens=30, f=0.38, az=MEF, push=0.06), me("determined", **DOWN))
-shot("S09", "L09", [[0, [0.3, -0.8, 0.3], [0.3, 1.2, 0.4], 20], [1, [0.3, -0.55, 0.3], [0.3, 1.2, 0.4], 20]],
+shot("S09", "L09", [[0, [-0.35, -0.8, 0.3], [-0.35, 1.2, 0.4], 20], [1, [-0.35, -0.55, 0.3], [-0.35, 1.2, 0.4], 20]],
      me("uneasy", **DOWN))
 shot("S10", "L10", cam(0.0, 5.5, 1.62, 4.6, 28, push=0.0, arc=0.0), {
     "me": dict(pos=G.FLASH_ME, yaw=0.0, expr="sly", arms=(80, 30), side=(-70, -8), head=(-18, 0)),
@@ -228,7 +228,7 @@ shot("S18", "L18", cam(ME[0], ME[1] + 0.2, 1.4, 2.3, 30, az=MEF, push=0.06, arc=
 shot("S19a", "L19", fcam(ME, d=2.4, lens=30, f=0.38, az=MEF, push=0.06), me("sheepish", **DOWN))
 shot("S19b", "L19.2", fcam(DEX, d=2.6, lens=30, f=0.38, push=0.06), dex("stunned", **DOWN))
 chg("dex", "L19.3", blend=0.5, expr="warm")
-shot("S20", "L20", fcam(DEX, d=2.5, lens=30, f=0.26, dx=0.22, push=0.06), dex("laugh", arms=(8, 82), side=(4, 4)))
+shot("S20", "L20", fcam(DEX, d=3.0, lens=30, f=0.28, dx=0.25, push=0.06), dex("laugh", arms=(8, 82), side=(4, 4)))
 shot("S21", "L21", fcam(ME, d=2.6, lens=30, f=0.36, az=MEF, push=0.08, arc=1.5), me("warm", **LOWHOLD))
 
 # ---------------------------------------------------------------------------------------------- finish
