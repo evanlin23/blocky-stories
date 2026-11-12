@@ -83,14 +83,14 @@ FACES3: dict[str, Face3] = {
     "shocked": Face3((E(sx=1.08, sy=1.28, pupil=0.5), E(sx=1.08, sy=1.28, pupil=0.5)),
                      (B(-0.12, 0.1, 0.4), B(-0.12, 0.1, 0.4)), M("o", 1.0, 1.75)),
     "delighted": Face3((E("happy", 1.05, 1.0), E("happy", 1.05, 1.0)), (B(-0.08, 0.0, 0.5), B(-0.08, 0.0, 0.5)),
-                       M("grin", 1.35, 1.25), ("blush", "sparkle")),
+                       M("grin", 1.35, 1.25)),
     "smug": Face3((E(lid=0.52, lower=0.1, pupil=0.85),
                    E(lid=0.4, lower=0.1, pupil=0.85)),
-                  (B(0.02, -0.25, 0.1), B(-0.09, 0.15, 0.55)), M("smirk", 0.95, 0.9, tilt=0.6, dx=0.08)),
+                  (B(0.04, -0.3, 0.1), B(-0.16, 0.1, 0.7)), M("smirk", 1.1, 1.0, tilt=0.9, dx=0.1)),
     "terrified": Face3((E(sx=1.12, sy=1.42, pupil=0.32, dy=-0.02), E(sx=1.12, sy=1.42, pupil=0.32, dy=-0.02)),
                        (B(-0.16, 0.9, -0.2), B(-0.16, 0.9, -0.2)), M("scream", 1.0, 1.3), ("sweat", "shake")),
     "crylaugh": Face3((E("squeeze", 1.1, 1.0), E("squeeze", 1.1, 1.0)), (B(-0.1, 0.55, 0.2), B(-0.1, 0.55, 0.2)),
-                      M("grin", 1.5, 1.45), ("tears", "blush")),
+                      M("grin", 1.5, 1.45), ("tears",)),
     "suspicious": Face3((E(lid=0.58, lower=0.2, pupil=0.8), E(sx=1.05, sy=1.15, pupil=0.55)),
                         (B(0.03, -0.55, 0.0), B(-0.1, 0.2, 0.5)), M("flat", 0.6, 1.0, tilt=-0.35, dx=-0.06)),
     "heartbroken": Face3((E(sy=0.95, lid=0.25, lid_tilt=-0.5, pupil=1.25), E(sy=0.95, lid=0.25, lid_tilt=-0.5, pupil=1.25)),
@@ -98,26 +98,29 @@ FACES3: dict[str, Face3] = {
     "determined": Face3((E(sy=0.9, lid=0.32, lid_tilt=0.55, pupil=0.85), E(sy=0.9, lid=0.32, lid_tilt=0.55, pupil=0.85)),
                         (B(0.04, -0.75, 0.0, 1.1), B(0.04, -0.75, 0.0, 1.1)), M("teeth", 1.0, 1.25)),
     "furious": Face3((E(sy=0.85, lid=0.42, lid_tilt=0.9, pupil=0.45), E(sy=0.85, lid=0.42, lid_tilt=0.9, pupil=0.45)),
-                     (B(0.06, -1.1, 0.0, 1.15), B(0.06, -1.1, 0.0, 1.15)), M("scream", 1.25, 1.0), ("anger",)),
+                     (B(0.06, -1.1, 0.0, 1.15), B(0.06, -1.1, 0.0, 1.15)), M("scream", 1.25, 1.0), ("shake",)),
     "nervous": Face3((E(sy=1.05, pupil=0.6), E(sy=1.05, pupil=0.6)), (B(-0.05, 0.7, 0.0), B(-0.05, 0.7, 0.0)),
                      M("wobble", 1.0, 1.0), ("sweat",)),
     "disgusted": Face3((E(lid=0.55, lower=0.35, pupil=0.75), E("squeeze", 0.95, 0.85)),
                        (B(0.05, -0.4, 0.0), B(0.07, -0.6, 0.0)), M("blep", 1.0, 1.0, tilt=-0.4), ("gloom",)),
-    "deadpan": Face3((E(lid=0.5, pupil=0.6), E(lid=0.5, pupil=0.6)), (B(0.03, 0.0, 0.0), B(0.03, 0.0, 0.0)),
-                     M("flat", 0.75, 1.0)),
-    "awe": Face3((E("star", 1.15, 1.2), E("star", 1.15, 1.2)), (B(-0.13, 0.25, 0.5), B(-0.13, 0.25, 0.5)),
-                 M("o", 0.55, 0.85), ("blush", "sparkle")),
-    "lovestruck": Face3((E("heart", 1.1, 1.1), E("heart", 1.1, 1.1)), (B(-0.09, 0.35, 0.4), B(-0.09, 0.35, 0.4)),
-                        M("cat", 0.9, 1.0), ("blush",)),
-    "scheming": Face3((E(lid=0.45, lid_tilt=0.5, lower=0.15, pupil=0.6), E(lid=0.45, lid_tilt=0.5, lower=0.15, pupil=0.6)),
-                      (B(0.0, -0.8, 0.3), B(0.0, -0.8, 0.3)), M("grin", 1.25, 0.6, tilt=0.15)),
+    "deadpan": Face3((E(sx=1.1, sy=0.8, lid=0.55, pupil=0.35), E(sx=1.1, sy=0.8, lid=0.55, pupil=0.35)),
+                     (B(0.06, 0.0, -0.05), B(0.06, 0.0, -0.05)), M("flat", 0.4, 1.0)),
+    "awe": Face3((E(sx=1.12, sy=1.3, pupil=1.2), E(sx=1.12, sy=1.3, pupil=1.2)), (B(-0.13, 0.25, 0.5), B(-0.13, 0.25, 0.5)),
+                 M("o", 0.55, 0.85)),
+    # the eerie two, for a creepy channel: a hollow stare (black eyes, pin lights) and a smile far too wide
+    "hollow": Face3((E("hollow", 1.05, 1.1), E("hollow", 1.05, 1.1)), (B(0.02, 0.0, 0.0, hide=True), B(0.02, 0.0, 0.0, hide=True)),
+                    M("flat", 0.45, 1.0)),
+    "toowide": Face3((E(sx=1.05, sy=1.12, pupil=0.28), E(sx=1.05, sy=1.12, pupil=0.28)), (B(-0.06, 0.0, 0.5), B(-0.06, 0.0, 0.5)),
+                     M("crescent", 2.1, 1.7)),
+    "scheming": Face3((E(lid=0.45, lid_tilt=0.75, pupil=0.5), E(lid=0.45, lid_tilt=0.75, pupil=0.5)),
+                      (B(0.02, -0.95, 0.3, 1.1), B(0.02, -0.95, 0.3, 1.1)), M("teethgrin", 1.5, 1.0, tilt=0.25)),
 }
 EXPRESSIONS3 = tuple(FACES3)
 # a story's v2 expression names still work under v3: each maps to its nearest v3 face
 ALIASES3 = {"worried": "nervous", "scared": "terrified", "crying": "heartbroken", "angry": "furious",
             "smirk": "smug", "blank": "deadpan", "wide": "shocked", "shut": "delighted", "grin": "delighted",
             "squeeze": "terrified", "soft": "delighted", "asleep": "deadpan", "fish": "suspicious", "laugh": "crylaugh",
-            "smile": "neutral", "hopeful": "awe", "polite": "neutral", "sad-smile": "heartbroken", "warm": "delighted"}
+            "smile": "neutral", "hopeful": "awe", "lovestruck": "delighted", "polite": "neutral", "sad-smile": "heartbroken", "warm": "delighted"}
 
 
 def resolve(expr: str) -> str:
@@ -175,7 +178,7 @@ def _arc(cx, cy, w, bend, n=20, tilt=0.0):
 def _eye(p: _Pen, e: Eye, cx, cy, side, look, blink, pupil_c, base_rx, base_ry, skin):
     rx, ry = base_rx * e.sx, base_ry * e.sy
     cy += e.dy * p.H
-    shape = "shut" if blink > 0.5 and e.shape in ("oval", "star", "heart") else e.shape
+    shape = "shut" if blink > 0.5 and e.shape in ("oval", "star", "heart", "hollow") else e.shape
     if shape == "happy":
         p.line(_arc(cx, cy + ry * 0.1, rx * 1.9, -ry * 0.75), p.th * 1.15)
         return
@@ -195,11 +198,13 @@ def _eye(p: _Pen, e: Eye, cx, cy, side, look, blink, pupil_c, base_rx, base_ry, 
     q.W, q.H, q.ink, q.th = p.W, p.H, p.ink, p.th
     q.im = Image.new("RGBA", (p.W, p.H), (0, 0, 0, 0))
     q.d = ImageDraw.Draw(q.im)
-    q.ellipse(cx, cy, rx, ry, WHITE)
+    q.ellipse(cx, cy, rx, ry, (8, 6, 10) if shape == "hollow" else WHITE)
     lx, ly = look
     pr = rx * 0.5 * e.pupil
     px, py = cx + lx * (rx - pr) * 0.75, cy + ly * (ry - pr) * 0.6 + ry * 0.05
-    if shape == "star":
+    if shape == "hollow":   # black to the edge, one pin of light that follows the gaze
+        q.ellipse(px, py, max(4, rx * 0.09), max(4, rx * 0.09), WHITE, outline=False)
+    elif shape == "star":
         st = [(px + (pr * 1.5 if k % 2 == 0 else pr * 0.6) * math.cos(-math.pi / 2 + k * math.pi / 5),
                py + (pr * 1.5 if k % 2 == 0 else pr * 0.6) * math.sin(-math.pi / 2 + k * math.pi / 5)) for k in range(10)]
         q.poly(st, (255, 206, 60), th=p.th * 0.55)
@@ -294,6 +299,23 @@ def _mouth(p: _Pen, m: Mouth, open_: float, cx, cy):
     elif sh == "cat":   # a w-shaped closed smile
         pts = [(cx - W / 2 + W * i / 40, cy + H * 0.45 * abs(math.sin(i / 40 * math.pi * 2))) for i in range(41)]
         p.line(pts, p.th)
+    elif sh in ("crescent", "teethgrin"):
+        # crescent: a thin smile nearly ear to ear, packed with teeth; teethgrin: a wide toothy D, lopsided
+        n = 30
+        if sh == "crescent":
+            top = [(cx - W / 2 + W * i / n, cy - H * 0.15 + H * 0.55 * math.sin(math.pi * i / n) ** 1.2 - H * 0.35 * (1 - math.sin(math.pi * i / n))) for i in range(n + 1)]
+            bot = [(x, y + H * 0.42 * math.sin(math.pi * i / n) ** 0.8) for i, (x, y) in enumerate(top)][::-1]
+        else:
+            top = [(cx - W / 2 + W * i / n, cy - H * 0.3 - m.tilt * (2 * i / n - 1) * H * 0.35) for i in range(n + 1)]
+            bot = [(cx + W / 2 - W * i / n, cy - H * 0.3 + H * 0.9 * math.sin(math.pi * i / n) ** 0.8) for i in range(n + 1)]
+        pts = top + bot
+        p.poly(pts, WHITE, th=p.th * 1.0)
+        for k in range(1, 12 if sh == "crescent" else 7):   # the gaps between teeth
+            i = int(round(k * n / (12 if sh == "crescent" else 7)))
+            (x0, y0), (x1, y1) = top[i], bot[n - i]
+            p.line([(x0, y0), (x1, y1)], p.th * 0.5)
+        p.line(top + [bot[0]], p.th)
+        return
     elif sh in ("grin", "o", "scream", "wail", "teeth", "blep"):
         if sh == "grin":    # a D: flat top, big round bottom
             top = [(cx - W / 2 + W * i / 20, cy - H * 0.35 - m.tilt * (2 * i / 20 - 1) * H * 0.3) for i in range(21)]

@@ -67,10 +67,10 @@ def spikes():         # tall blades in a fan, the front ones raking forward
 
 
 def bob():            # a blunt helmet bob to the jaw with a ruler-straight fringe
-    return [_b("shell", (W + 0.3, D * 0.8, H * 0.78), (0, 0.3, TOP - H * 0.39 + 0.12), bevel=0.2),
-            _b("shelltop", (W + 0.3, D + 0.2, 0.4), (0, 0.05, TOP + 0.05), bevel=0.16),
-            _b("bobside-1", (0.3, D * 0.75, H * 0.95), (-(W / 2 + 0.1), 0.12, TOP - H * 0.5), bevel=0.12),
-            _b("bobside1", (0.3, D * 0.75, H * 0.95), (W / 2 + 0.1, 0.12, TOP - H * 0.5), bevel=0.12),
+    return [_b("shell", (W + 0.6, D * 0.85, H * 0.85), (0, 0.32, TOP - H * 0.4 + 0.2), bevel=0.25),
+            _b("shelltop", (W + 0.6, D + 0.3, 0.6), (0, 0.05, TOP + 0.15), bevel=0.2),
+            _b("bobside-1", (0.45, D * 0.8, H * 1.0), (-(W / 2 + 0.2), 0.12, TOP - H * 0.5), bevel=0.14),
+            _b("bobside1", (0.45, D * 0.8, H * 1.0), (W / 2 + 0.2, 0.12, TOP - H * 0.5), bevel=0.14),
             _b("bobfringe", (W + 0.26, 0.26, 0.48), (0, FRONT - 0.04, TOP - 0.15), bevel=0.08)]
 
 
@@ -117,7 +117,7 @@ def mohawk():         # a tall, wide fin of blocks front to back over a buzz, th
 
 
 def flattop():        # a tall flat-topped block, squared off like a hedge
-    return [_b("flat", (W + 0.08, D + 0.06, 0.95), (0, 0.02, TOP + 0.4), bevel=0.06),
+    return [_b("flat", (W + 0.08, D + 0.06, 1.4), (0, 0.02, TOP + 0.62), bevel=0.06),
             _b("flatback", (W + 0.06, 0.12, H * 0.45), (0, BACK, TOP - H * 0.22), bevel=0.04)]
 
 
@@ -155,7 +155,7 @@ def curtains():       # a middle part, two slabs framing the face down to the sh
     out = _cap(0.6, 1.2)
     for sx in (-1, 1):
         out.append(_b(f"cur{sx}", (W * 0.52, 0.28, 0.4), (sx * W * 0.27, FRONT + 0.02, TOP - 0.05), rot=(0, sx * 0.3, 0), bevel=0.08))
-        out.append(_b(f"curl{sx}", (0.3, D * 0.8, H * 1.15), (sx * (W / 2 + 0.1), 0.15, TOP - H * 0.58), bevel=0.1))
+        out.append(_b(f"curs{sx}", (0.55, D * 0.85, H * 1.2), (sx * (W / 2 + 0.22), 0.15, TOP - H * 0.6), bevel=0.14))
     return out
 
 
@@ -177,17 +177,16 @@ STYLES = {f.__name__: f for f in (quiff, bigbun, spikes, bob, buzz, curls, braid
 
 
 # loud features: extra blocks a side character can carry on top of any hair
-def mustache():       # a giant handlebar, wider than the face, curling up past the cheeks
-    z = TOP - 0.72 * H
-    out = [_b("stache", (W * 0.55, 0.3, 0.3), (0, FRONT - 0.14, z), bevel=0.14)]
+def mustache():       # a giant walrus mustache: one wide block bar with heavy ends drooping past the mouth corners
+    z = TOP - 0.7 * H
+    out = [_b("stache", (W * 0.72, 0.32, 0.3), (0, FRONT - 0.14, z), bevel=0.14)]
     for sx in (-1, 1):
-        out.append(_b(f"stache{sx}", (W * 0.36, 0.28, 0.26), (sx * W * 0.4, FRONT - 0.12, z + 0.05), rot=(0, sx * -0.5, 0), bevel=0.12))
-        out.append(_b(f"stachet{sx}", (0.26, 0.24, 0.36), (sx * W * 0.6, FRONT - 0.1, z + 0.14), rot=(0, sx * -0.6, 0), bevel=0.1))
+        out.append(_b(f"stache{sx}", (W * 0.2, 0.3, 0.5), (sx * W * 0.38, FRONT - 0.12, z - 0.16), rot=(0, sx * 0.15, 0), bevel=0.12))
     return out
 
 
 def beard():          # a squared block beard under the mouth
-    return [_b("beard", (W * 0.86, 0.5, 0.5), (0, FRONT + 0.12, -TOP - 0.12), bevel=0.14),
+    return [_b("beard", (W * 0.9, 0.7, 0.8), (0, FRONT + 0.2, -TOP - 0.2), bevel=0.2),
             _b("beardl", (0.24, D * 0.5, 0.7), (-(W / 2 - 0.05), FRONT + 0.4, -TOP + 0.15), bevel=0.06),
             _b("beardr", (0.24, D * 0.5, 0.7), ((W / 2 - 0.05), FRONT + 0.4, -TOP + 0.15), bevel=0.06)]
 
