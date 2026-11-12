@@ -5,8 +5,8 @@
 - **Lane:** warm. **Opening shape:** `if`. **Length arm:** 60 to 90 s.
 - **Title:** My Stepdad's Pillow Dreams Of Someone KNOCKING 🛏️
 - **Everyone is an adult.** I'm 26. My stepdad is 58 (he married my mom when I was 16, and I've called him Dad for ten years).
-- **Word count:** 175 spoken words in 22 lines (ids kept from the first draft, so there are gaps), all `narrator`, plus one music drop (0.5 s before L20).
-- **Estimated length:** about 43 s at 290 wpm with 0.15 s gaps, the drop, the 1 s spatula beat and the loop tail. The reveal line (L25) lands at about 35 to 37 s, the last 6 to 8 s.
+- **Word count:** 189 spoken words in 22 lines (ids kept from the first draft, so there are gaps), all `narrator`, plus one music drop (0.5 s before L20).
+- **Estimated length:** about 45 s at 290 wpm with 0.15 s gaps, the drop, the 1 s spatula beat and the loop tail. The reveal line (L25) lands at about 37 to 39 s, the last 6 to 8 s.
 - **No-filler pass (owner, 2026-11-12):** cut L05, L11 (folded into L10), L13, L15, L16, L24b (folded into L24), L25b, L25c, L26, L28 to L31. The waking-up, "he never opened it" restatements, the explaining after the reveal and the lunch epilogue are gone. After the reveal: one button (L27, the kitchen knock) and the loop line (L32).
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Two bright sets: Dad's sunny guest room (morning light, a striped quilt, a window on a green yard), and the dream: Dad's own front hall in warm sunset gold, a staircase, a white front door. The dream is brighter and warmer than the waking room, never dark.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
@@ -38,7 +38,7 @@
 - **The loved one at stake:** my stepdad, named plainly at L02 ("my STEPDAD'S"). From L06 I call him Dad, as I have for ten years.
 - **The eerie middle (L14 to L19):** the same hall, the same knocks, three nights in a row. On the third night I walk to the door myself, Dad, on the stairs, tells me not to, and the knock comes right through the door.
 - **The climax turns the rule's own logic:** you dream their dream. I don't open his door in the dream. I give him the knock awake, on purpose (L27, the button). No new magic.
-- **Twist and reveal (L20 to L25, about 29 to 37 s), said plainly:** "And I knew / the VOICE." "It was MINE. / At SIXTEEN." "My first week / in his house, / I got locked OUT." "I'd only ever / called him / by his NAME." "So I knocked twice / and yelled, / "DAD?"" Then the recasting line, last: "Every night, / he dreams / the first time / I called him DAD." over one picture (S25: the dream hall, Dad on the stairs `warm`, eyes shut, smiling, the white door glowing gold behind me). Nothing explains it after: the button is the kitchen knock (L27, Dad drops the spatula, laughing, on picture only) and the loop line (L32).
+- **Twist and reveal (L20 to L25, about 30 to 39 s), said plainly:** "And I knew / the VOICE." "It was MINE. / At SIXTEEN." "My first week / in his house, / I got locked OUT." "I'd only ever / called him / by his NAME." "So I knocked twice / and yelled, / "DAD?"" Then the recasting line, last: "Every night, / he dreams / the first time / I called him DAD." over one picture (S25: the dream hall, Dad on the stairs `warm`, eyes shut, smiling, the white door glowing gold behind me). Nothing explains it after: the button is the kitchen knock (L27, Dad drops the spatula, laughing, on picture only) and the loop line (L32).
 - **How the last 15 seconds turn over the first line:** "you dream their dream" was a creepy thing that happened to me. Now I borrow his pillow on purpose, tonight, because I know what I'll find.
 - **The plants a rewatch catches:**
   1. L02: "my STEPDAD'S", said plainly once.
