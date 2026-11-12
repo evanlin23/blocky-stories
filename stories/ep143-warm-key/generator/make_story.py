@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 8
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -65,7 +65,7 @@ cast = {
     # Dad: a gray beard (set.py), a green polo
     "dad": person("#d9b48a", "#3f9a5a", "#b9a47a", "#f2f2f2", hair="buzz", hair_c="#a9a9b2", sleeves="short",
                   collar="#2f7a46", width=1.05),
-    "pizza": person("#c58e64", "#f08a3a", "#2a2a34", "#2a2a30", hair="cap", hat="ballcap", hat_c="#d8322f",
+    "pizza": person("#c58e64", "#7a1f2e", "#2a2a34", "#2a2a30", hair="cap", hat="ballcap", hat_c="#d8322f",
                     sleeves="short"),
     "buddy": person("#a96f4a", "#8a8f99", "#3a3a48", "#f2f2f2", hair="buzz", hair_c="#15151a", sleeves="none"),
 }
@@ -165,7 +165,7 @@ def keycue(at, mode, who="me", dur=0.0, **kw):
 for who in cast:
     key(who, 0, [0, 0, 0], yaw=0, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0], hidden=True)
 cue(0, "pips", n=1)
-cue(0, "heat", v=0.8)
+cue(0, "heat", v=1.6)
 cue(0, "key", mode="hang", who="me")
 cue(0, "door", v=0.0)
 cue(0, "sticker", v=0.0)
@@ -182,7 +182,7 @@ ZH = G.ZH
 HX, HY = G.HOUSE
 ME_A = G.ME_A
 # the face + key frame used at S01a and again at S32
-APT_TGT = (0.2, 2.7, 1.42)
+APT_TGT = (0.0, 2.7, 1.5)
 
 
 def me_a(at, expr="neutral", arms=(0, 0), yaw=0, **kw):
@@ -198,37 +198,37 @@ show(0, "me")
 me_a(0, "neutral")
 mouth("me", 0, "L01>", 0.35)
 shot("S01a", 0, cam(*APT_TGT, 1.7, 0, 36, cz=1.5))
-shot("S01b", "L01.2", cam(0.35, 2.7, 1.5, 1.9, 8, 36, cz=1.5))
+shot("S01b", "L01.2", cam(0.0, 2.7, 1.5, 1.5, 8, 36, cz=1.5))
 # S02: stakes, the key in my flat palm
 me_a("L02", "wide", arms=(0, 86))
 cue("L02", "key", mode="hand", who="me")
 cue("L02", "heat", v=1.1, dur=0.5)
 mouth("me", "L02", "L02>", 0.35)
-shot("S02", "L02", cam(1.0, 2.35, 1.5, 1.5, 0, 36, cz=1.5))
+shot("S02", "L02", cam(0.55, 2.35, 1.5, 1.5, 0, 36, cz=1.5))
 
 # ===== 02 the rule at work (L03 to L06)
 show("L03", "pizza")
 place("L03", "pizza", (-60.0, 2.7, 0.0), 0, "smile", arms=[88, 88])
 cue("L03", "boxes", v=1.0)
-shot("S03", "L03", cam(-60.0, 2.7, 1.2, 1.7, 0, 30, cz=1.45))
+shot("S03", "L03", cam(-59.85, 2.7, 1.1, 1.5, 0, 30, cz=1.4))
 cue("L04", "boxes", v=0.0)
 show("L04", "buddy")
 place("L04", "buddy", (-60.8, 31.9, 0.0), 0, "worried", arms=[0, 0])
 shot("S04a", "L04", cam(-60.6, 31.9, 1.3, 1.5, 0, 30, cz=1.45))
 show("L04.2")
-shot("S04b", "L04.2", camp([-60.0, 30.4, 1.4], [-60.25, 33.3, 1.3], 34))
+shot("S04b", "L04.2", camp([-60.1, 30.6, 1.2], [-60.25, 33.3, 1.15], 34))
 # S05: the dinosaur swinging under the key (back in the apartment)
 show("L05", "me")
 me_a("L05", "smile")
 cue("L05", "key", mode="hang", who="me")
 cue("L05", "swing", v=1.0)
 mouth("me", "L05", "L05>", 0.35)
-shot("S05", "L05", cam(-0.4, 3.3, 1.0, 0.85, -20, 36, cz=1.1))
+shot("S05", "L05", cam(-0.6, 3.3, 1.3, 1.05, -20, 36, cz=1.3))
 cue("L06", "swing", v=0.0)
 shot("S06a", "L06", camp([-1.55, 1.9, 1.5], [-1.55, 3.45, 1.45], 30))
 me_a("L06.1", "smile")
 mouth("me", "L06.1", "L06>", 0.4)
-shot("S06b", "L06.1", cam(0.75, 2.6, 1.55, 1.0, 0, 36, cz=1.5))
+shot("S06b", "L06.1", cam(0.3, 2.6, 1.55, 1.0, 0, 36, cz=1.5))
 
 # ===== 03 the old house (L07 to L09)
 show("L07")
@@ -236,22 +236,22 @@ shot("S07", "L07", camp([60.0, 8.0, 0.07 * 8 + 1.7], [60.0, 36.0, ZP + 2.6], 24,
 show("L08", "me")
 me_a("L08", "warm")
 mouth("me", "L08", "L08>", 0.3)
-shot("S08", "L08", cam(0.75, 2.6, 1.5, 1.05, -12, 36, cz=1.5))
+shot("S08", "L08", cam(0.3, 2.6, 1.5, 1.05, -12, 36, cz=1.5))
 show("L09")
 shot("S09a", "L09", camp([61.6, 23.5, ZH + 1.6], [59.6, 35.0, ZP + 1.4], 24, pos2=[61.2, 24.5, ZH + 1.6]))
 show("L09.2", "me")
 me_a("L09.2", "worried")
 mouth("me", "L09.2", "L09>", 0.4)
-shot("S09b", "L09.2", cam(0.75, 2.5, 1.55, 1.0, 8, 36, cz=1.5))
+shot("S09b", "L09.2", cam(0.3, 2.5, 1.55, 1.0, 8, 36, cz=1.5))
 
 # ===== 04 Monday, Tuesday, Wednesday (L10 to L13)
 cue("L10", "pips", n=2)
 cue("L10", "heat", v=2.2, dur=0.6)
 me_a("L10", "worried", arms=(0, 86))
 cue("L10", "key", mode="hand", who="me")
-shot("S10a", "L10", cam(1.0, 2.35, 1.5, 1.5, 0, 36, cz=1.5))
+shot("S10a", "L10", cam(0.55, 2.35, 1.5, 1.5, 0, 36, cz=1.5))
 mouth("me", "L10.2", "L10>", 0.4)
-shot("S10b", "L10.2", cam(0.75, 2.5, 1.55, 1.0, -8, 36, cz=1.5))
+shot("S10b", "L10.2", cam(0.3, 2.5, 1.55, 1.0, -8, 36, cz=1.5))
 cue("L11", "phone", v=1.0)
 show("L11")
 cue("L11", "key", mode="hang", who="me")
@@ -267,7 +267,7 @@ cue("L12", "pips", n=4)
 cue("L12", "heat", v=3.8, dur=0.6)
 me_a("L12", "polite", arms=(0, 86))
 cue("L12", "key", mode="hand", who="me")
-shot("S12a", "L12", cam(1.0, 2.35, 1.5, 1.5, 0, 36, cz=1.5))
+shot("S12a", "L12", cam(0.55, 2.35, 1.5, 1.5, 0, 36, cz=1.5))
 place("L12.2", "me", (G.ME_T[0], G.ME_T[1], 0.0), 0, "polite", arms=[0, 0])
 cue("L12.2", "key", mode="hang", who="me")
 mouth("me", "L12.2", "L12>", 0.35)
@@ -278,7 +278,7 @@ cue("L13", "mitt", v=1.0)
 cue("L13", "key", mode="hand", who="me")
 me_a("L13", "wide", arms=(0, 86))
 mouth("me", "L13", "L13>", 0.4)
-shot("S13", "L13", cam(1.0, 2.35, 1.5, 1.5, 0, 36, cz=1.5))
+shot("S13", "L13", cam(0.55, 2.35, 1.5, 1.5, 0, 36, cz=1.5))
 cue("L14", "mitt", v=0.0)
 
 # ===== 05 the hill (L14 to L19)
@@ -299,25 +299,25 @@ key("me", "L16", yaw=0, expr="scared", arms=[0, 86])
 mouth("me", "L16", "L16>", 0.35)
 shot("S16", "L16", cam(60.3, 30.4, ZH + 1.45, 1.4, 0, 34, cz=ZH + 1.2))
 # S17: on the porch, 1 m from the door, the door at the frame's left
-P17 = (HX + 0.3, HY - 1.0, ZP)
-place("L17", "me", P17, faceyaw(P17, (HX - 1.7, HY - 3.1)), "worried", arms=[0, 0])
+P17 = (HX - 0.95, HY - 0.8, ZP)
+place("L17", "me", P17, 0, "worried", arms=[0, 0])
 cue("L17", "sticker", v=1.0)
 mouth("me", "L17", "L17>", 0.3)
-shot("S17", "L17", camp([HX - 1.9, HY - 3.1, ZP + 1.5], [HX + 0.2, HY - 1.0, ZP + 1.35], 24))
+shot("S17", "L17", cam(HX - 0.4, HY, ZP + 1.35, 2.5, -10, 34, cz=ZP + 1.4, push=(2.2, ZP + 1.35)))
 # S18: the sticker at chest height, my face beside it
-P18 = (HX - 1.0, HY - 0.6, ZP)
+P18 = (HX - 0.95, HY - 0.6, ZP)
 place("L18", "me", P18, 0, "worried", arms=[0, 0])
 mouth("me", "L18", "L18>", 0.35)
-shot("S18", "L18", cam(HX - 0.4, HY, ZP + 1.35, 2.0, 0, 34, cz=ZP + 1.4))
+shot("S18", "L18", cam(HX - 0.4, HY, ZP + 1.35, 2.3, 6, 34, cz=ZP + 1.4, push=(2.1, ZP + 1.35)))
 # S19: the keychain dinosaur beside the sticker
-P19 = (HX - 0.8, HY - 0.5, ZP)
+P19 = (HX - 0.9, HY - 0.6, ZP)
 place("L19", "me", P19, 0, "wide", arms=[0, 90])
 cue("L19", "key", mode="hand", who="me")
 mouth("me", "L19", "L19>", 0.35)
-shot("S19", "L19", cam(HX - 0.3, HY, ZP + 1.35, 2.2, 0, 34, cz=ZP + 1.4))
+shot("S19", "L19", cam(HX - 0.4, HY, ZP + 1.35, 2.4, -6, 34, cz=ZP + 1.4, push=(2.2, ZP + 1.35)))
 # the drop: the door, gold light on it, my face at the edge
 key("me", "P01", P19, yaw=0, expr="scared", arms=[0, 0])
-shot("S19b", "P01", cam(HX - 0.25, HY, ZP + 1.3, 2.1, -6, 32, cz=ZP + 1.35))
+shot("S19b", "P01", cam(HX - 0.4, HY, ZP + 1.3, 2.4, -8, 32, cz=ZP + 1.35, push=(2.2, ZP + 1.3)))
 
 # ===== 06 the lock (L20 to L22)
 INS = G.INS
@@ -335,21 +335,21 @@ shot("S21a", "L21", cam(HX - 0.2, HY - 0.9, ZP + 1.5, 0.9, 0, 40, cz=ZP + 1.45))
 key("me", "L21.2", yaw=0, expr="scared", arms=[0, 86], head=[0, 4], blend=0.4)
 mouth("me", "L21.2", "L21>", 0.3)
 shot("S21b", "L21.2", cam(HX - 0.2, HY - 0.9, ZP + 1.5, 0.85, 6, 40, cz=ZP + 1.45))
-cue("L22", "door", v=1.0, dur=0.9)
+cue("L22", "door", v=1.0, dur=0.5)
 cue("L22", "key", mode="none", who="me")
 show("L22")
-shot("S22", "L22", camp([HX - 1.2, HY - 2.9, ZP + 1.5], [HX + 0.1, HY + 1.5, ZP + 1.25], 28, pos2=[HX - 0.9, HY - 2.4, ZP + 1.5]))
+shot("S22", "L22", camp([HX + 0.9, HY - 2.9, ZP + 1.5], [HX + 0.2, HY + 1.5, ZP + 1.3], 28, pos2=[HX + 0.6, HY - 2.3, ZP + 1.5]))
 
 # ===== 07 the reveal (L23 to L27)
-MOM, DAD = (HX + 0.75, 38.3, ZP), (HX - 0.55, 39.0, ZP)
+MOM, DAD = (HX + 0.5, 38.5, ZP), (HX - 0.7, 39.0, ZP)
 show("L23", "mom", "dad")
 place("L23", "mom", MOM, 0, "laugh", arms=[0, 0])
 place("L23", "dad", DAD, 0, "laugh", arms=[0, 0])
-shot("S23a", "L23", camp([HX + 0.1, HY - 2.3, ZP + 1.45], [HX + 0.1, 38.7, ZP + 1.3], 31))
-JESS_F = (HX + 0.1, 37.2, ZP)
+shot("S23a", "L23", camp([HX - 0.05, HY - 2.3, ZP + 1.45], [HX - 0.05, 38.7, ZP + 1.25], 33))
+JESS_F = (HX + 0.45, 37.2, ZP)
 show("L23.2", "jess")
 place("L23.2", "jess", JESS_F, 0, "laugh", arms=[0, 0])
-shot("S23b", "L23.2", cam(HX + 0.1, 37.2, ZP + 1.45, 1.3, 0, 34, cz=ZP + 1.4))
+shot("S23b", "L23.2", cam(HX - 0.05, 37.2, ZP + 1.05, 1.7, 0, 34, cz=ZP + 1.1))
 show("L24", "me")
 place("L24", "me", (HX - 0.2, HY - 1.0, ZP), 0, "wide", arms=[0, 0])
 mouth("me", "L24", "L24>", 0.3)
@@ -361,10 +361,10 @@ shot("S25", "L25", cam(HX + 0.0, HY + 0.7, ZP + 1.5, 1.0, -6, 34, cz=ZP + 1.45))
 # S26: the reveal picture
 show("L26", "jess", "mom", "dad")
 place("L26", "jess", (HX + 0.0, HY + 0.7, ZP), 0, "laugh", arms=[0, 86])
-place("L26", "mom", (HX + 0.85, 38.2, ZP), 0, "laugh", arms=[0, 0])
-place("L26", "dad", (HX - 0.75, 38.7, ZP), 0, "laugh", arms=[0, 0])
+place("L26", "mom", (HX + 0.5, 38.6, ZP), 0, "laugh", arms=[0, 0])
+place("L26", "dad", (HX - 0.95, 39.0, ZP), 0, "laugh", arms=[0, 0])
 cue("L26", "key", mode="jess", who="jess")
-shot("S26", "L26", cam(HX + 0.25, HY + 0.7, ZP + 1.35, 2.0, 0, 34, cz=ZP + 1.4))
+shot("S26", "L26", cam(HX + 0.22, HY + 0.7, ZP + 1.4, 1.45, 0, 34, cz=ZP + 1.4))
 show("L27", "jess")
 place("L27", "jess", (HX + 0.0, HY + 0.7, ZP), 0, "laugh", arms=[0, 0])
 cue("L27", "key", mode="none", who="me")
@@ -375,8 +375,8 @@ shot("S27", "L27", cam(HX + 0.0, HY + 0.7, ZP + 1.6, 0.8, 8, 40, cz=ZP + 1.55))
 cue("L28", "lock", v=1.0)
 cue("L28", "key", mode="lock", who="me")
 show("L28")
-shot("S28a", "L28", camp([INS[0] - 0.4, INS[1] - 2.1, 1.45], [INS[0] + 0.5, INS[1], 1.3], 34,
-                         pos2=[INS[0] - 0.1, INS[1] - 1.8, 1.4]))
+shot("S28a", "L28", camp([INS[0] + 1.3, INS[1] - 2.8, 1.2], [INS[0] + 0.38, INS[1], 1.05], 36,
+                         pos2=[INS[0] + 1.0, INS[1] - 2.4, 1.15]))
 cue("L28.2", "lock", v=0.0)
 show("L28.2", "jess")
 place("L28.2", "jess", (HX + 0.0, HY + 0.7, ZP), 0, "warm", arms=[0, 0])
@@ -403,11 +403,11 @@ show("L31")
 cue("L31", "key", mode="hook2", who="me", drop=1.0)
 cue("L31+0.3", "key", mode="hook2", who="me", drop=0.0, dur=0.7)
 cue("L31", "heat", v=5.0)
-shot("S31", "L31", camp([HX + 0.5, HY + 2.6, ZP + 1.5], [HX + 1.45, HY + 0.4, ZP + 1.3], 36, pos2=[HX + 0.8, HY + 1.9, ZP + 1.45]))
+shot("S31", "L31", camp([HX + 0.2, HY + 4.0, ZP + 1.6], [HX + 1.0, HY + 0.4, ZP + 1.4], 30, pos2=[HX + 0.5, HY + 3.2, ZP + 1.6]))
 show("L32", "me")
-place("L32", "me", (HX + 0.3, HY + 0.9, ZP), 180, "warm", arms=[0, 0])
+place("L32", "me", (HX + 0.7, HY + 0.9, ZP), 180, "warm", arms=[0, 0])
 mouth("me", "L32", "L32>", 0.35)
-shot("S32", "L32", cam(HX + 0.75, HY + 0.9, ZP + 1.42, 2.0, 180, 28, cz=ZP + 1.5))
+shot("S32", "L32", cam(HX + 0.95, HY + 0.9, ZP + 1.45, 1.55, 180, 28, cz=ZP + 1.5))
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)
@@ -455,7 +455,7 @@ remap_all(sound["ambience"])
 remap_all(sound["music_drops"])
 SWAY = ["S15a", "S15b", "S16", "S17", "S18", "S19", "S19b", "S21a", "S21b"]
 polish = {"reveal": ["L22", "L24"], "twist": "L23", "emph": ["L01.2", "L02.2", "L23.3", "L24.1", "L26.2"],
-          "quiet": [], "hold": [], "sway": SWAY}
+          "quiet": [], "hold": ["S17", "S18", "S19", "S19b"], "sway": SWAY}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
 polish["twist"] = remap(polish["twist"])

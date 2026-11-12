@@ -119,15 +119,25 @@ def _photo_image():
         d.rectangle([0, 330, Wd, Ht], fill=hx("#6fcf62"))
         d.ellipse([480, 30, 570, 120], fill=hx("#ffe58a"))
         ink = "#2a1a12"
-        # me (left): navy jacket, spiky hair; Jess (right): red sweater, long hair
+        # me (left): navy jacket, spiky hair; Jess (right): red sweater, long black hair with a side ponytail
         d.rectangle([90, 250, 290, 480], fill=hx("#26386a"))
-        d.rectangle([350, 250, 550, 480], fill=hx("#d8322f"))
-        d.rectangle([330, 150, 570, 380], fill=hx("#15151a"))        # her hair behind the head
+        d.rectangle([350, 250, 550, 480], fill=hx("#a8101c"))
+        d.rectangle([420, 250, 480, 275], fill=hx("#fff6e8"))             # her white collar
         _face(d, 190, 175, 95, "#d9b48a", ink)
         d.polygon([(95, 110), (120, 40), (150, 100), (180, 30), (210, 100), (250, 40), (285, 110)], fill=hx("#15151a"))
         d.rectangle([98, 70, 282, 112], fill=hx("#15151a"))
+        hair = hx("#15151a")
+        d.rounded_rectangle([340, 90, 360, 330], 8, fill=hair)            # long hair down her left side
+        d.polygon([(380, 70), (450, 40), (530, 70), (545, 150), (540, 110), (400, 125), (355, 150)], fill=hair)
         _face(d, 450, 175, 95, "#d9b48a", ink)
-        d.rectangle([358, 68, 542, 118], fill=hx("#15151a"))
+        d.rounded_rectangle([356, 66, 544, 126], 22, fill=hair)           # her fringe and crown
+        d.ellipse([540, 130, 610, 200], fill=hair)                         # the ponytail, to the side
+        d.polygon([(560, 190), (620, 190), (632, 360), (590, 400), (565, 300)], fill=hair)
+        d.rectangle([538, 132, 568, 160], fill=hx("#ffd84a"))             # the hair tie
+        for sx in (-1, 1):
+            d.line([(450 + sx * 55, 160), (450 + sx * 70, 150)], fill=hx(ink), width=5)   # lashes
+            d.ellipse([450 + sx * 98 - 12, 205, 450 + sx * 98 + 12, 235], fill=hx("#f2c230"))   # earrings
+        d.arc([415, 195, 485, 255], 15, 165, fill=hx("#d8322f"), width=9)  # red lips
         im.save(p)
     return str(p)
 
@@ -301,6 +311,8 @@ def build_hill(kit):
     sun.data.angle = 0.06
     kit.aim(sun, (G.HX + 0.5, 35, 2.0))
     W["sun"] = sun
+    fl = kit.light("hill.face", "AREA", (G.HX + 0.2, 25.0, 0.07 * 22 + 2.6), 1800, "#fff0d8", size=3.0, shadow=False)
+    kit.aim(fl, (G.HX + 0.1, 19.0, 0.07 * 19 + 1.3))
 
 
 # ---------------------------------------------------------------------------------------------- the old blue house
@@ -380,13 +392,14 @@ def build_house(kit):
         kit.box(f"p.lantern.cap{sx}", (0.2, 0.2, 0.05), (HXc + sx * 1.05, HY - 0.16, ZP + 2.12), pl("#3a3a42", 0.5))
     # the door: a pivot at the west hinge; the door is its child; the sticker rides on the door
     pv = kit.empty("h.doorpivot", (G.DOOR_X0, HY + 0.15, ZP))
-    dm = pl("#d4cebd", 0.6, spec=0.06)
+    dm = pl("#c4bda8", 0.6, spec=0.06)
     kit.box("h.door", (G.DOOR_W, 0.07, G.DOOR_H), (G.DOOR_W / 2, 0.0, G.DOOR_H / 2), dm, pv, bevel=0.01)
     for k, (zz, hh) in enumerate(((0.45, 0.8), (1.55, 0.8))):
         kit.box(f"h.door.panel{k}", (0.8, 0.02, hh), (G.DOOR_W / 2, -0.045, zz + hh / 2 + 0.0), pl("#c2bcab", 0.6), pv)
     kit.cyl("h.knob", 0.05, 0.05, (G.DOOR_W - 0.14, -0.07, 1.05), pl("#d8a83a", 0.3, spec=0.7), pv, rot=(math.pi / 2, 0, 0), n=14)
+    kit.box("h.door.inside", (G.DOOR_W - 0.1, 0.02, G.DOOR_H - 0.1), (G.DOOR_W / 2, 0.045, G.DOOR_H / 2), blue, pv)
     sm, _ = imat(kit, "sticker", _dino_image(), 1.0)
-    st = kit.plane("h.sticker", (0.34, 0.34), (G.DOOR_W / 2 + 0.12, -0.05, 1.3 - 0.0), sm, pv, rot=(math.pi / 2, 0, 0))
+    st = kit.plane("h.sticker", (0.5, 0.5), (G.DOOR_W / 2 + 0.12, -0.05, 1.3 - 0.0), sm, pv, rot=(math.pi / 2, 0, 0))
     noshadow(st)
     W["doorpivot"], W["sticker"] = pv, st
     kit.box("h.jamb.l", (0.1, 0.2, G.DOOR_H + 0.1), (dx0 - 0.05, HY - 0.0, ZP + G.DOOR_H / 2 + 0.05), trim)
@@ -403,7 +416,7 @@ def build_house(kit):
     kit.box("bike.post", (0.05, 0.05, 0.5), (bx, by + 0.42, ZP + 0.6), bm)
     # --- the hall: warm cream walls, wood floor, ceiling, stairs, the cake, streamers
     x0h, x1h, y0h, y1h = G.HALL
-    cream = pl("#f6dcb0", 0.85, spec=0.03)
+    cream = pl("#e3a67c", 0.85, spec=0.03)
     kit.box("hall.floor", (x1h - x0h, y1h - y0h, 0.1), ((x0h + x1h) / 2, (y0h + y1h) / 2, ZP - 0.05),
             kit.texture("wood", 0.8, tint="#e8c48a"))
     kit.box("hall.ceil", (x1h - x0h, y1h - y0h, 0.25), ((x0h + x1h) / 2, (y0h + y1h) / 2, ZP + G.HALL_H + 0.125), kit.emit("#ffeed0", 1.6, "hallceil"))
@@ -427,18 +440,19 @@ def build_house(kit):
     kit.box("hall.rail", (0.08, 3.4, 0.08), (x1h - 1.5, 39.9, ZP + 1.1), pl("#8a5a2a", 0.6), rot=(0.55, 0, 0))
     # the side table with a cake (no lettering), against the back wall
     table = pl("#b97f45", 0.6)
-    kit.box("hall.table.top", (1.2, 0.6, 0.06), (HXc + 0.1, 41.0, ZP + 1.0), table, bevel=0.01)
+    CKX, CKY = HXc - 0.25, 40.8
+    kit.box("hall.table.top", (1.2, 0.6, 0.06), (CKX, CKY, ZP + 1.0), table, bevel=0.01)
     for sx in (-0.5, 0.5):
         for sy in (-0.2, 0.2):
-            kit.box(f"hall.table.leg{sx}{sy}", (0.06, 0.06, 1.0), (HXc + 0.1 + sx, 41.0 + sy, ZP + 0.5), table)
+            kit.box(f"hall.table.leg{sx}{sy}", (0.06, 0.06, 1.0), (CKX + sx, CKY + sy, ZP + 0.5), table)
     cakey = pl("#fff0f0", 0.6)
-    kit.cyl("cake.l1", 0.32, 0.18, (HXc + 0.1, 41.0, ZP + 1.12), pl("#f8c8d8", 0.6), n=24)
-    kit.cyl("cake.l2", 0.22, 0.16, (HXc + 0.1, 41.0, ZP + 1.3), cakey, n=24)
+    kit.cyl("cake.l1", 0.32, 0.18, (CKX, CKY, ZP + 1.12), pl("#f8c8d8", 0.6), n=24)
+    kit.cyl("cake.l2", 0.22, 0.16, (CKX, CKY, ZP + 1.3), cakey, n=24)
     for k in range(5):
         ang = k * 2 * math.pi / 5
-        kit.box(f"cake.candle{k}", (0.025, 0.025, 0.12), (HXc + 0.1 + 0.12 * math.cos(ang), 41.0 + 0.12 * math.sin(ang), ZP + 1.44),
+        kit.box(f"cake.candle{k}", (0.025, 0.025, 0.12), (CKX + 0.12 * math.cos(ang), CKY + 0.12 * math.sin(ang), ZP + 1.44),
                 pl(["#ff6a6a", "#6a9aff", "#ffd84a", "#6adf8a", "#d98aff"][k], 0.5))
-        noshadow(kit.sphere(f"cake.flame{k}", 0.02, (HXc + 0.1 + 0.12 * math.cos(ang), 41.0 + 0.12 * math.sin(ang), ZP + 1.52),
+        noshadow(kit.sphere(f"cake.flame{k}", 0.02, (CKX + 0.12 * math.cos(ang), CKY + 0.12 * math.sin(ang), ZP + 1.52),
                             kit.emit(ORANGE, 3.0, "flame")))
     # a plant, a coat rack by the door, a picture frame or two (plain colour fields)
     kit.prop("houseplant_1", (x0h + 0.6, 40.8, ZP), scale=2.6)
@@ -457,13 +471,18 @@ def build_house(kit):
         kit.sphere(f"balloon{k}", 0.24, (bx2, by2, ZP + 2.0), pl(c, 0.3, spec=0.6))
     # the hook by the door, inside, where the key finally hangs
     hb = pl("#a8703a", 0.6)
-    hxp = HXc + 1.45
-    kit.box("hall.hookboard", (0.5, 0.05, 0.2), (hxp, y0h + 0.065, ZP + 1.4), hb, bevel=0.01)
-    kit.box("hall.hook", (0.03, 0.1, 0.03), (hxp, y0h + 0.14, ZP + 1.45), pl("#d8a83a", 0.3, spec=0.7))
-    W["hook2"] = (hxp, y0h + 0.16, ZP + 1.45)
+    hxp = HXc + 1.15
+    kit.box("hall.hookboard", (0.5, 0.05, 0.2), (hxp, y0h + 0.065, ZP + 1.7), hb, bevel=0.01)
+    kit.box("hall.hook", (0.03, 0.1, 0.03), (hxp, y0h + 0.14, ZP + 1.75), pl("#d8a83a", 0.3, spec=0.7))
+    W["hook2"] = (hxp, y0h + 0.16, ZP + 1.75)
+    # the blue casing round the doorway on the hall side (the blue door seen from inside), 1.5 cm proud of the wall
+    cb = pl("#4a8fd8", 0.7, spec=0.04)
+    for sx in (-1, 1):
+        kit.box(f"hall.casing{sx}", (0.2, 0.03, G.DOOR_H + 0.2), (HXc + sx * (G.DOOR_W / 2 + 0.1), y0h + 0.055, ZP + (G.DOOR_H + 0.2) / 2), cb)
+    kit.box("hall.casing.t", (G.DOOR_W + 0.4, 0.03, 0.2), (HXc, y0h + 0.055, ZP + G.DOOR_H + 0.1), cb)
     # lights: warm ceiling fills inside, fill at the door, golden porch fill
     for i, (x, y) in enumerate(((HXc - 1.8, 37.8), (HXc + 1.8, 37.8), (HXc - 1.5, 40.0), (HXc + 1.0, 40.0), (HXc, 38.8))):
-        a = kit.light(f"hall.fill{i}", "AREA", (x, y, ZP + G.HALL_H - 0.15), 380, "#ffe2b0", size=2.5, shadow=False)
+        a = kit.light(f"hall.fill{i}", "AREA", (x, y, ZP + G.HALL_H - 0.15), 300, "#ffe2b0", size=2.5, shadow=False)
         kit.aim(a, (x, y, ZP))
     lamp = kit.emit("#fff0cc", 2.5, "halllamp")
     for i, (x, y) in enumerate(((HXc - 1.8, 37.8), (HXc + 1.8, 37.8), (HXc - 1.0, 40.2), (HXc + 1.0, 40.2))):
@@ -471,6 +490,8 @@ def build_house(kit):
     fd = kit.light("hall.door", "AREA", (HXc, 36.8, ZP + 2.0), 330, "#ffe8c0", size=2.5, shadow=False)
     kit.aim(fd, (HXc, 39.5, ZP + 1.0))
     # porch fill: gold light under the roof so the porch faces read; and a soft face light toward the steps
+    jl = kit.light("jess.door", "AREA", (HXc, 37.2, ZP + 2.4), 450, "#ffe6c8", size=2.0, shadow=False)
+    kit.aim(jl, (HXc, HY + 0.7, ZP + 1.5))
     pf = kit.light("porch.fill", "AREA", (HXc, HY - 3.6, ZP + 2.3), 520, "#ffe0a8", size=3.5, shadow=False)
     kit.aim(pf, (HXc, HY - 0.8, ZP + 1.0))
     pf2 = kit.light("porch.door", "AREA", (HXc - 1.2, HY - 2.4, ZP + 2.5), 320, "#ffe6bc", size=3.0, shadow=False)
@@ -507,11 +528,12 @@ def build_pizza(kit):
             kit.box(f"pz.box{sx}{k}", (0.44, 0.44, 0.07), (0, 0, k * 0.075), box_m, root, bevel=0.01)
             kit.box(f"pz.boxs{sx}{k}", (0.12, 0.45, 0.075), (0, 0, k * 0.075), stripe, root)
         W["boxes"].append((root, sx))
-    gm = kit.emit(ORANGE, 5.0, "pzglow")
+    gm = kit.emit(ORANGE, 2.2, "pzglow")
     W["pzkeys"] = []
-    kit.cyl("pz.belt.ring", 0.05, 0.015, (px + 0.4, 2.55, 0.92), pl("#c9ced6", 0.3, spec=0.7), rot=(math.pi / 2, 0, 0), n=14)
-    kit.box("pz.belt.key", (0.03, 0.012, 0.16), (px + 0.4, 2.52, 0.8), pl("#d8a83a", 0.3, spec=0.7))
-    noshadow(kit.sphere("pz.belt.glow", 0.075, (px + 0.4, 2.5, 0.82), gm))
+    kit.cyl("pz.belt.ring", 0.09, 0.02, (px - 0.12, 2.52, 1.2), pl("#c9ced6", 0.3, spec=0.7), rot=(math.pi / 2, 0, 0), n=16)
+    kit.box("pz.belt.key", (0.06, 0.02, 0.3), (px - 0.12, 2.5, 1.0), pl("#d8a83a", 0.3, spec=0.7))
+    kit.box("pz.belt.tooth", (0.12, 0.02, 0.06), (px - 0.07, 2.5, 0.88), pl("#d8a83a", 0.3, spec=0.7))
+    noshadow(kit.sphere("pz.belt.glow", 0.06, (px - 0.12, 2.46, 0.9), gm))
     for i, (x, y) in enumerate(((px, py - 1.5), (px - 2.5, py - 3.0), (px + 2.5, py - 3.0))):
         a = kit.light(f"pz.fill{i}", "AREA", (x, y, 3.4), 520, "#fff3e0", size=3.0, shadow=False)
         kit.aim(a, (x, y, 0))
@@ -533,14 +555,20 @@ def build_gym(kit):
         lx = bx - 3.25 + k * 0.5
         kit.box(f"gy.locker{k}", (0.48, 0.45, 2.0), (lx, by - 0.225, 1.0), pl(cols[k % 4], 0.5, spec=0.12), bevel=0.01)
         kit.box(f"gy.vent{k}", (0.3, 0.02, 0.05), (lx, by - 0.46, 1.75), pl("#2a2a30", 0.6))
-        kit.box(f"gy.handle{k}", (0.04, 0.04, 0.16), (lx + 0.14, by - 0.47, 1.28), pl("#c9ced6", 0.3, spec=0.7))
+        if k != 6:
+            kit.box(f"gy.handle{k}", (0.04, 0.04, 0.16), (lx + 0.14, by - 0.47, 1.28), pl("#c9ced6", 0.3, spec=0.7))
     kit.box("gy.bench", (0.4, 3.0, 0.45), (bx + 2.5, by - 3.0, 0.22), pl("#b97f45", 0.6))
-    # the buddy's locker key: plain, gray, on a gray band, in the lock of the locker at x = bx
-    gray = pl("#9a9fa8", 0.4, spec=0.5)
-    kit.cyl("gy.lockplate", 0.06, 0.02, (bx - 0.25, by - 0.47, 1.4), pl("#c9ced6", 0.3, spec=0.7), rot=(math.pi / 2, 0, 0), n=16)
-    kit.cyl("gy.keybow", 0.08, 0.02, (bx - 0.25, by - 0.56, 1.36), gray, rot=(math.pi / 2, 0, 0), n=16)
-    kit.box("gy.keyshaft", (0.05, 0.02, 0.22), (bx - 0.25, by - 0.56, 1.2), gray)
-    kit.box("gy.keyband", (0.02, 0.012, 0.3), (bx - 0.19, by - 0.575, 1.18), pl("#4a8fd8", 0.7))
+    # the buddy's locker key: plain, gray, hanging from the lock of the locker at x = bx - 0.25, bow, shaft and teeth
+    gray = pl("#9aa0ac", 0.4, spec=0.5)
+    dkm = pl("#2a2a34", 0.6)
+    lx = bx - 0.25
+    kit.cyl("gy.lockplate", 0.1, 0.02, (lx, by - 0.47, 1.45), pl("#3a3f4a", 0.5, spec=0.3), rot=(math.pi / 2, 0, 0), n=20)
+    kit.cyl("gy.keybow", 0.11, 0.03, (lx, by - 0.5, 1.4), gray, rot=(math.pi / 2, 0, 0), n=20)
+    kit.cyl("gy.keyhole", 0.05, 0.035, (lx, by - 0.51, 1.4), dkm, rot=(math.pi / 2, 0, 0), n=14)
+    kit.box("gy.keyshaft", (0.07, 0.03, 0.34), (lx, by - 0.5, 1.12), gray)
+    kit.box("gy.keytooth1", (0.1, 0.03, 0.07), (lx + 0.07, by - 0.5, 0.99), gray)
+    kit.box("gy.keytooth2", (0.08, 0.03, 0.06), (lx + 0.06, by - 0.5, 1.1), gray)
+    kit.box("gy.keyband", (0.04, 0.02, 0.2), (lx + 0.17, by - 0.52, 1.3), pl("#4a8fd8", 0.7))
     for i, (x, y) in enumerate(((bx - 1.5, by - 2.0), (bx + 1.5, by - 2.0), (bx, by - 4.5))):
         a = kit.light(f"gy.fill{i}", "AREA", (x, y, 3.2), 420, "#fff6ec", size=3.0, shadow=False)
         kit.aim(a, (x, y, 0))
@@ -565,9 +593,9 @@ def build_insert(kit):
         kit.box(f"in.jamb{k}", (0.14, 0.06, 2.3), (ix + sx * 0.72, iy - 0.03, 1.15), trim)
     kit.box("in.jamb.t", (1.58, 0.06, 0.14), (ix, iy - 0.03, 2.2), trim)
     # four pencil strokes on the east jamb at chest height, one stroke each (1.1 cm proud of the trim)
-    pencil = pl("#555a62", 0.9, spec=0.02)
-    for k, dz in enumerate((-0.08, 0.0, 0.08, 0.16)):
-        kit.box(f"in.tally{k}", (0.075, 0.02, 0.012), (ix + 0.72, iy - 0.07, 1.04 + dz + k * 0.0), pencil)
+    pencil = pl("#23272e", 0.9, spec=0.02)
+    for k, dz in enumerate((-0.1, 0.0, 0.1, 0.2)):
+        kit.box(f"in.tally{k}", (0.12, 0.02, 0.022), (ix + 0.72, iy - 0.07, 1.0 + dz), pencil)
     # the lock: a brass plate, a keyhole and a deadbolt knob, on the door's east edge
     brass = pl("#d8a83a", 0.3, spec=0.7)
     lx, lz = ix + 0.42, 1.3
@@ -724,6 +752,13 @@ def attach_extras(kit):
 
 
 def animate(kit, story, tl, t, ctx):
+    """The face light on the hill is on for S14 only (it would wash the porch shots out), cut with the shot."""
+    _animate(kit, story, tl, t, ctx)
+    sid = next((x["id"] for x in tl["shots"] if x["start"] <= t < x["end"]), "")
+    return {"hill.face": 1.0 if sid == "S14" else 0.0}
+
+
+def _animate(kit, story, tl, t, ctx):
     attach_extras(kit)
     bpy.context.view_layer.update()
     camloc, _, _ = cam_now(story, tl, t)

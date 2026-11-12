@@ -8,8 +8,8 @@ A character facing -y has yaw 0, +x 90, +y 180, -x -90. Stages sit far apart so 
 
 # ---- apartment
 AX0, AX1, AY0, AY1, AH = -3.0, 3.0, -2.6, 3.5, 2.9
-HOOK = (-0.4, 3.38, 1.32)       # the key's hook
-ME_A = (0.75, 2.35)              # me beside the hooks
+HOOK = (-0.4, 3.38, 1.9)       # the key's hook
+ME_A = (0.3, 2.35)              # me beside the hooks
 PHOTO = (-1.55, 3.45, 1.45)
 TABLE = (1.75, 2.75)
 ME_T = (1.75, 3.2)               # me standing behind the hall table
