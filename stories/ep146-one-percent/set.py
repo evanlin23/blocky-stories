@@ -94,7 +94,7 @@ class Phone:
         kit.box(f"{name}.body", (self.BW, self.BT, self.BH), (0, 0, 0), body, self.root, bevel=0.012)
         kit.box(f"{name}.dark", (self.SW, 0.01, self.SH), (0, -0.0155, 0.0), kit.plastic("#0b0c10", 0.3, spec=0.5), self.root)
         self.groups = {}
-        self.add_state("A", "#e6eef5", 0.9, lambda P: (battery(P, 0, 0.05, 0.17, 0.10, "low"), one_percent(P, 0, -0.1, 0.07)))
+        self.add_state("A", "#e6eef5", 0.9, lambda P: (battery(P, 0, 0.10, 0.16, 0.085, "low"), one_percent(P, 0.01, -0.06, 0.10)))
         self.add_state("dim", "#2c3138", 0.6, lambda P: battery(P, 0, 0.05, 0.17, 0.10, "dim"))
         self.add_state("D", "#bfe6ff", 0.9, self._duck)
         self.add_state("P", "#2e9a50", 0.85, self._call)
@@ -125,10 +125,16 @@ class Phone:
         P("dw", -0.01, -0.03, 0.07, 0.04, "#e9b800", 3, 0)
 
     @staticmethod
-    def _call(P):
-        P("h1", 0, 0, 0.14, 0.05, "#ffffff", 2, 40)
-        P("h2", -0.065, -0.05, 0.05, 0.075, "#ffffff", 2, 40)
-        P("h3", 0.065, 0.05, 0.05, 0.075, "#ffffff", 2, 40)
+    def _call(P):   # a handset like the phone icon: a bar with an earpiece and a mouthpiece at its ends, tilted
+        import math as m
+        f = 35 * D2R
+        c, sn = m.cos(f), m.sin(f)
+
+        def R(x, z, w, h):
+            P("hs", x * c - z * sn, x * sn + z * c, w, h, "#ffffff", 2, 35)
+        R(-0.045, 0.0, 0.05, 0.20)
+        R(-0.0, 0.095, 0.085, 0.055)
+        R(-0.0, -0.095, 0.085, 0.055)
 
     def show(self, state):
         for s, objs in self.groups.items():
@@ -270,9 +276,9 @@ def houseboat(kit):
             rot=(ang, 0, 0))
         box(kit, f"gpp{sx}", (0.08, 0.08, 0.8), (sx * 0.62, 2.0, 0.4), RAIL_C, 0.5, 0.1)
     # the tally post: two short teal strokes scratched at hip height (a clear centimetre proud of the post)
-    box(kit, "tallypost", (0.2, 0.2, 1.1), (0.95, 1.55, 0.55), "#d9d1bc", 0.8, 0.05)
-    for k, dx in enumerate((-0.04, 0.04)):
-        box(kit, f"tally{k}", (0.05, 0.012, 0.45), (0.95 + dx * 1.9, 1.55 - 0.106, 0.62), TEAL_D, 0.6, 0.05, rot=(0, 0.2 * (1 if k else -1), 0))
+    box(kit, "tallypost", (0.4, 0.4, 1.1), (0.55, 1.4, 0.55), "#5b4a38", 0.8, 0.05)
+    for k, dx in enumerate((-0.05, 0.05)):
+        box(kit, f"tally{k}", (0.1, 0.016, 0.8), (0.55 + dx * 2.2, 1.4 - 0.208, 0.58), "#fff1cf", 0.6, 0.05, rot=(0, 0, 0))
     # deck dressing: two deck chairs, potted plants, a little table
     for x, yaw in ((-2.6, 12), (2.7, -14)):
         chair = kit.empty(f"chair{x}", (x, 5.4, G.DECK_Z), None, (0, 0, yaw * D2R))
@@ -396,8 +402,6 @@ def build(kit, story, tl):
     box(kit, "charger.brick", (0.2, 0.12, 0.2), (0, 0, 0), "#e2dfd2", 0.5, 0.2, bevel=0.025, parent=ch)
     for sx in (-1, 1):
         box(kit, f"charger.prong{sx}", (0.03, 0.07, 0.1), (sx * 0.05, 0.09, 0.0), "#9aa0a8", 0.3, 0.6, parent=ch)
-    for k, (x, z) in enumerate(((0.0, -0.17), (0.07, -0.26), (0.18, -0.3), (0.3, -0.27))):
-        box(kit, f"charger.cab{k}", (0.09, 0.04, 0.05), (x, -0.02, z), "#f2efe6", 0.5, 0.1, rot=(0, 0.5 * k, 0), parent=ch)
     W["charger"] = ch
     W["cur"] = {}
     return {}
@@ -412,6 +416,7 @@ def ss(x):
 # the person's chest at height z (`side` to their right as the camera sees it); mode "at": at the world point `a`.
 # A state may be a list [(u, state), ...] changing at that share of the shot (an eased fade through "dim").
 PH = {}
+CH_X = 0.0   # the charger rests on the palm of the raised hand (x offset from Dex)
 TAG = {}
 CAMF = {}   # shot id -> first camera position, from story.json (the phones face it)
 
@@ -458,8 +463,16 @@ def animate(kit, story, tl, t, ctx):
         _place(W[who], who, row.get(who, (None, "held", 0, 0, 0, 1.0)), t, shot, camp)
     W["tag"].show(TAG.get(sid, "low"))
     if sid == "S20":
-        W["charger"].location = (G.DEX[0], G.DEX[1] - 0.55, G.DEX[2] + 1.08)
-        W["charger"].rotation_euler = (0, 0, math.atan2(camp[0] - G.DEX[0], -(camp[1] - G.DEX[1])))
+        # the charger rests on the flat palm of Dex's raised hand (his right arm held out level)
+        bpy.context.view_layer.update()
+        hand = bpy.data.objects.get("dex.hand1")
+        if hand is not None:
+            hp = hand.matrix_world.translation
+            loc = (hp.x, hp.y, hp.z + 0.22)
+        else:
+            loc = (G.DEX[0] + 0.34, G.DEX[1] - 0.62, G.DEX[2] + 1.55)
+        W["charger"].location = loc
+        W["charger"].rotation_euler = (0, 0, math.atan2(camp[0] - loc[0], -(camp[1] - loc[1])))
         W["charger"].scale = (1.3, 1.3, 1.3)
     else:
         W["charger"].location = (0, -40, -5)
@@ -469,7 +482,7 @@ def animate(kit, story, tl, t, ctx):
 # --- the tables (read by animate) ---------------------------------------------------------------------------------
 def _tables():
     A, D, P, B = "A", "D", "P", "B"
-    low_me = lambda *_: (A, "held", 0.35, 1.5, 0.34, 1.0)
+    low_me = lambda *_: (A, "held", 0.25, 0.7, 0.3, 1.2)
     PH.update({
         "S01a": {"dex": (A, "at", G.RAILPH, 0, 0, 1.0)},
         "S01a2": {"dex": (A, "at", G.RAILPH, 0, 0, 1.0)},
@@ -484,12 +497,13 @@ def _tables():
         "S07b": {"dex": (A, "held", 0.5, 1.0, 0.0, 1.0)},
         "S11": {"me": low_me()},
         "S13a": {"me": low_me()},
+        "S13c": {},
         "S13b": {"me": (P, "held", 0.45, 1.22, 0.12, 1.3)},
         "S14a": {"dex": (D, "held", 0.5, 1.08, 0.0, 1.2)},
         "S14b": {"dex": (D, "held", 0.5, 1.0, 0.0, 1.0)},
         "S15": {"dex": ([(0, A), (0.45, "dim"), (0.7, "off")], "held", 0.5, 1.08, 0.0, 1.2)},
         "S16": {"me": ([(0, A), (0.35, "dim"), (0.6, "off")], "held", 0.5, 1.15, 0.0, 1.7)},
-        "S17": {"me": (A, "held", 0.5, 0.95, 0.0, 1.4)},
+        "S17": {"me": (A, "held", 0.5, 0.95, 0.0, 1.9)},
         "S18": {"me": (A, "held", 0.55, 0.98, 0.0, 1.35)},
         "S21": {"me": (B, "held", 0.5, 0.95, 0.0, 1.1)},
     })

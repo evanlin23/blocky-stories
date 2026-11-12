@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -69,9 +69,6 @@ cast = {
     # Grandma, 80: white hair in a bun, a blue knit cardigan, lashes
     "grandma": person("#e6a878", "#4a78c8", "#6a5a8a", "#6a4a30", hair="bun", hair_c="#f6f6f8", pattern="knit",
                       pattern_c="#6f98e0", eyes="lashes", height=0.93),
-    # Grandpa, 82: a white captain's cap (no badge), a big gray moustache, a red cardigan
-    "grandpa": person("#e8b890", "#c0392b", "#4a4a5a", "#3a3028", hair="none", hat="ballcap", hat_c="#f4f1ea",
-                      pattern="knit", pattern_c="#d9594b", stache="#b9b9c0", height=0.97),
 }
 CAST = list(cast)
 acting = {n: [] for n in cast}
@@ -175,7 +172,7 @@ def dex(expr="neutral", pos=DEX, **kw):
 shot("S01a", 0, cam(0.2, G.RAIL_Y, 1.8, 2.0, 28, push=0.05, arc=1.5),
      dex("neutral", head=(0, 10), look=(0.3, -0.4), **DOWN))
 shot("S01a2", "L01.1", cam(0.34, G.RAIL_Y, 1.9, 1.6, 28, push=0.06, arc=1.5), dex("neutral", head=(0, 10), **DOWN))
-shot("S01b", "L01.2", cam(ME[0], ME[1], 1.28, 2.6, 28, az=MEF, push=0.04, arc=1.5), me("neutral", **LOWHOLD))
+shot("S01b", "L01.2", cam(ME[0], ME[1], 1.28, 2.6, 28, az=MEF, push=0.04, arc=1.5), me("neutral", **DOWN))
 shot("S01c", "L01.3", fcam(DEX, d=2.8, lens=30, f=0.38, push=0.05), dex("neutral", head=(0, 6), **DOWN))
 
 # ============================================================================================ 02 the cost
@@ -193,30 +190,29 @@ shot("S04b", "L04.2", cam(GM[0] - 0.5, GM[1], 1.15, 3.4, 28, push=0.04, arc=1.5)
     "grandma": dict(pos=(GM[0], GM[1], 0.0), yaw=0.0, expr="sly", arms=(30, 30), side=(-6, -6))})
 
 # ============================================================================================ 05 the duck
-shot("S05", "L05", fcam(ME, d=2.9, lens=30, f=0.36, az=MEF, dx=0.15, push=0.04, arc=1.5), me("smile", **LOWHOLD))
+shot("S05", "L05", fcam(ME, d=2.9, lens=30, f=0.36, az=MEF, dx=0.15, push=0.04, arc=1.5), me("smile", **DOWN))
 shot("S06", "L06", cam(DEX[0], DEX[1] - 0.2, 1.75, 1.7, 30, push=0.06, arc=2), dex("neutral", head=(0, 8), **HOLD))
 shot("S07a", "L07", fcam(DEX, d=2.5, lens=30, f=0.36, push=0.05), dex("sad", head=(0, 10), **HOLD))
 shot("S07b", "L07.2", fcam(DEX, d=2.0, lens=30, f=0.38, push=0.08), dex("sad", arms=(80, 80), side=(28, 28)))
 
 # ============================================================================================ 06 the walk
-shot("S08a", "L08", [[0, [-1.7, -4.4, 1.3], [0.0, 1.6, 1.2], 28], [1, [-1.6, -4.1, 1.3], [0.0, 1.6, 1.2], 28]],
+shot("S08a", "L08", [[0, [0.35, -4.6, 1.3], [0.35, 1.6, 1.15], 28], [1, [0.35, -4.3, 1.3], [0.35, 1.6, 1.15], 28]],
      {"me": dict(pos=(0.0, -1.5, 0.0), yaw=180.0, expr="determined", arms=(10, 10), head=(-70, 0)),
       "dex": dict(pos=(0.5, G.DEX[1], G.DECK_Z), yaw=0.0, expr="neutral", arms=(8, 8), side=(4, 4))})
 walk("me", "L08.2", (0.0, ME[1], 0.0))
 shot("S08b", "L08.2", fcam(ME, d=2.3, lens=30, f=0.38, az=MEF, push=0.06), me("determined", **DOWN))
-shot("S09", "L09", cam(0.35, 1.2, 0.75, 4.1, 28, az=0, el=-6, push=0.03, arc=1.0), me("uneasy", **DOWN))
-G_FL = [G.FLASH_ME, G.FLASH_DEX, G.FLASH_GPA]
-shot("S10", "L10", cam(0.0, 5.9, 1.75, 5.2, 28, push=0.0, arc=0.0), {
-    "me": dict(pos=G.FLASH_ME, yaw=0.0, expr="sly", arms=(30, 30), side=(-60, -8), head=(-18, 0)),
-    "dex": dict(pos=G.FLASH_DEX, yaw=0.0, expr="sly", arms=(30, 30), side=(-8, -60), head=(18, 0)),
-    "grandpa": dict(pos=G.FLASH_GPA, yaw=0.0, expr="soft", arms=(8, 8), side=(4, 4))})
-shot("S11", "L11", fcam(ME, d=2.9, lens=30, f=0.36, az=MEF, dx=0.15, push=0.04, arc=1.5), me("sheepish", **LOWHOLD))
+shot("S09", "L09", [[0, [0.3, -0.8, 0.3], [0.3, 1.2, 0.4], 20], [1, [0.3, -0.55, 0.3], [0.3, 1.2, 0.4], 20]],
+     me("uneasy", **DOWN))
+shot("S10", "L10", cam(0.0, 5.5, 1.62, 4.6, 28, push=0.0, arc=0.0), {
+    "me": dict(pos=G.FLASH_ME, yaw=0.0, expr="sly", arms=(80, 30), side=(-70, -8), head=(-18, 0)),
+    "dex": dict(pos=G.FLASH_DEX, yaw=0.0, expr="sly", arms=(30, 80), side=(-8, -70), head=(18, 0))})
+shot("S11", "L11", fcam(ME, d=2.9, lens=30, f=0.36, az=MEF, dx=0.15, push=0.04, arc=1.5), me("sheepish", **DOWN))
 shot("S12", "L12", fcam(ME, d=2.4, lens=30, f=0.38, az=MEF, push=0.06), me("uneasy", **DOWN))
 chg("me", "L12.2", blend=0.4, expr="soft")
-shot("S13a", "L13", fcam(ME, d=2.9, lens=30, f=0.36, az=MEF, dx=0.15, push=0.04, arc=1.5), me("neutral", **LOWHOLD))
+shot("S13a", "L13", fcam(ME, d=2.9, lens=30, f=0.36, az=MEF, dx=0.15, push=0.04, arc=1.5), me("neutral", **DOWN))
 shot("S13b", "L13.1", fcam(ME, d=2.2, lens=30, f=0.38, az=MEF, push=0.06), me("determined", **HOLD))
 # the drop: nobody speaks; the water between us and the boat beyond
-shot("S13c", "P01", [[0, [0.9, -1.5, 1.7], [0.0, 4.9, 2.05], 70], [1, [0.9, -1.4, 1.7], [0.0, 4.9, 2.05], 70]],
+shot("S13c", "P01", [[0, [1.15, -1.6, 1.9], [0.25, 3.0, 1.2], 24], [1, [1.1, -1.45, 1.9], [0.25, 3.0, 1.2], 24]],
      {**me("determined", pos=(0.2, 0.9, 0.0), **HOLD), **dex("neutral", **DOWN)})
 
 # ============================================================================================ 07 the call
@@ -226,12 +222,13 @@ shot("S15", "L15.2", cam(DEX[0], DEX[1] - 0.3, 1.8, 1.9, 30, push=0.05, arc=2), 
 shot("S16", "L16", cam(ME[0], ME[1] - 0.05, 1.45, 2.0, 30, az=MEF, push=0.05, arc=2), me("stunned", **HOLD))
 
 # ============================================================================================ 08 the reveal
-shot("S17", "L17", cam(ME[0], ME[1] + 0.2, 1.45, 1.6, 30, az=MEF, push=0.03, arc=1.0), me("stunned", **HOLD))
+shot("S17", "L17", [[0, [0.0, ME[1] + 2.25, 1.0], [0.0, ME[1] + 0.5, 0.97], 28], [1, [0.0, ME[1] + 2.0, 1.0], [0.0, ME[1] + 0.5, 0.97], 28]],
+     me("stunned", **HOLD))
 shot("S18", "L18", cam(ME[0], ME[1] + 0.2, 1.4, 2.3, 30, az=MEF, push=0.06, arc=1.0), me("stunned", arms=(62, 62), side=(-6, -6)))
 shot("S19a", "L19", fcam(ME, d=2.4, lens=30, f=0.38, az=MEF, push=0.06), me("sheepish", **DOWN))
 shot("S19b", "L19.2", fcam(DEX, d=2.6, lens=30, f=0.38, push=0.06), dex("stunned", **DOWN))
 chg("dex", "L19.3", blend=0.5, expr="warm")
-shot("S20", "L20", fcam(DEX, d=2.5, lens=30, f=0.3, push=0.06), dex("laugh", **HOLD))
+shot("S20", "L20", fcam(DEX, d=2.5, lens=30, f=0.26, dx=0.22, push=0.06), dex("laugh", arms=(8, 82), side=(4, 4)))
 shot("S21", "L21", fcam(ME, d=2.6, lens=30, f=0.36, az=MEF, push=0.08, arc=1.5), me("warm", **LOWHOLD))
 
 # ---------------------------------------------------------------------------------------------- finish
@@ -253,8 +250,10 @@ for items in (acting.values(), [cues]):
         remap_all(lst)
 
 sfx = [
-    {"at": "L06", "kind": "ding", "db": -13, "dur": 0.32, "pitch": 330, "fall": 0.4, "lp": 2800},     # the duck
-    {"at": "L14", "kind": "ding", "db": -13, "dur": 0.32, "pitch": 330, "fall": 0.4, "lp": 2800},
+    {"at": "L06", "kind": "squeak", "db": -12, "dur": 0.16},     # the duck: a nasal quack-quack
+    {"at": "L06+0.17", "kind": "squeak", "db": -14, "dur": 0.13},
+    {"at": "L14", "kind": "squeak", "db": -12, "dur": 0.16},
+    {"at": "L14+0.17", "kind": "squeak", "db": -14, "dur": 0.13},
     {"at": "L15.3", "kind": "ding", "db": -17, "dur": 0.45, "pitch": 520, "fall": 0.5, "lp": 2400},   # a phone runs out
     {"at": "L16.1", "kind": "ding", "db": -17, "dur": 0.45, "pitch": 440, "fall": 0.5, "lp": 2400},
 ]
@@ -310,7 +309,9 @@ story = {
     "fx": [],
     "music": music,
     "sound": sound,
-    "framing_ok": ["S09"],   # sneakers close-up at the plank: the line is about my feet, my head is cut on purpose
+    "shot_grades": {"S10": {"saturation": 0.62, "contrast": 0.96, "shadows": [0.07, 0.04, 0.0], "highlights": [0.09, 0.05, -0.04],
+                            "vignette": 0.38, "bloom": 0.2, "grain": 0.02}},   # the flashback: faded, warm, soft edges
+    "framing_ok": [],
     "staging_ok": [],
     "asr_forgive": ["hel", "percent", "percent it's"],
 }
