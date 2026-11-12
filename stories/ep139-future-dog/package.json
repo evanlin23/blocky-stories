@@ -1,12 +1,11 @@
 {
-  "title": "Future Me Called And Only Asked For The DOG 🐕",
+  "title": "Future Me Only Called My DOG 🐕",
   "description": "On your thirtieth birthday, your phone rings once, and it's you, calling from later. My neighbor's future self told her to stop cutting her own bangs. My buddy's told him not to buy the red car.\n\nMine didn't even say hi. He asked for my beagle, Noodle, and said two words to him for six minutes.\n\nIt's made up. A blocky story, built with code and Blender.",
-  "pin": "Would I really have overthought it for a WEEK, or did future me just know Theo would never knock first?",
+  "pin": "Who do you think I'll ask for when it's MY call?",
   "made_for_kids": false,
-  "cover_s": 22.0,
+  "cover_s": 2.7,
   "shape": "go-between",
-  "opening": "confess",
+  "opening": "cost",
   "lane": "warm",
-  "series": "future-call",
-  "hold": "batch 15: scripts only, not built yet"
+  "series": "future-call"
 }
