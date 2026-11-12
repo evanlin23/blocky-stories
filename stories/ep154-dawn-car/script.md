@@ -5,8 +5,8 @@
 - **Lane:** warm. **Opening shape:** `cost`. **Length arm:** 45 to 90 s.
 - **Title:** Dad's Empty Car Leaves Every DAWN 🚗
 - **Everyone is an adult.** I'm 20 and live at home. Mom and Dad are in their fifties. The guy at the wall is about 20, a cook. Mr. Fenn and his boss are adults.
-- **Word count:** 226 spoken words in 26 lines (L01 to L26), all `narrator`, plus one music drop (0.5 s after L17).
-- **Estimated length:** about 52 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. The reveal (L24) lands at about 45.3 to 47.8 s, in the last 5 s or so.
+- **Word count:** 238 spoken words in 26 lines (L01 to L26), all `narrator`, plus one music drop (0.5 s after L17).
+- **Estimated length:** about 54 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. The reveal (L24) lands at about 47 to 50 s, in the last 5 to 7 s.
 - **No-filler pass (owner, 2026-11-12):** cut to 26 lines. Old ids → new: L01-L08 same; old L09 merged into L08; old L10-L14 → L09-L13; old L15 cut; old L16 → L14; old L17 cut (merged into L15); old L18 → L15; old L19, L20 → L16, L17; old L21, L22 cut; old L23, L24 → L18, L19; old L25, L27, L28, L30, L34 cut; old L31, L32, L33 → L20, L21, L22; old L26 rewritten as L23 (moved after the Monday meeting); old L29 → L24 (moved, the reveal); old L35, L36 → L25, L26. Every line re-voices.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright sunrise all through, never dim: a pink-and-gold sky, low warm sun, long soft shadows. Our mint-green bungalow at the top of a hill street, Dad's teal hatchback in the driveway, a long hill road down through green fields, a low stone wall at the bottom, a cherry-red diner. One sunny noon beach lot for the example. A bright yellow kitchen at 6:30.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
@@ -39,7 +39,7 @@
 - **The loved one at stake:** my dad, named at L02 ("Dad's leaves"), on screen in the driveway with his coffee in that beat, and Mom at L05.
 - **The eerie middle (L12 to L19):** hiding in the back seat; the car starting itself; a stop at a wall at the bottom of the hill; a tall stranger getting in like he's done it a hundred times and saying "Morning, sir" to an empty seat; "Thanks for stopping. See you Monday."
 - **The climax turns the rule's own logic:** the car goes where Dad would rather be. It doesn't need Dad in it, but nothing says he can't be. On Monday I put Dad in the driver's seat at 5:40, and the car takes him to the same wall (L20 to L22). No new magic.
-- **Twist and reveal, at the very end (L23, L24, about 42 to 48 s), said plainly:** "Dad went RED. / Last spring, / he drove past this guy / in the RAIN / and didn't STOP." "Every morning since, / his car / has gone back / to stop FOR him." The recasting line L24 lands in the last 5 s or so, over the reveal picture (S24a: the empty driver's seat in sunrise light, the cook in the passenger seat, `smile`, the muffin on the dash). Then only the button and the loop line (L25, L26). No explaining after.
+- **Twist and reveal, at the very end (L23, L24, about 44 to 50 s), said plainly:** "Dad went RED. / Last spring, / he drove past this guy / in the RAIN / and didn't STOP." "Every morning since, / his car / has gone back / to stop FOR him." The recasting line L24 lands in the last 5 s or so, over the reveal picture (S24a: the empty driver's seat in sunrise light, the cook in the passenger seat, `smile`, the muffin on the dash). Then only the button and the loop line (L25, L26). No explaining after.
 - **How the last 15 seconds turn over the first line:** "everyone sees where you'd rather be" was the fear. It was a wish to have been kinder, and now Mom's car goes too, for a muffin.
 - **The plants a rewatch catches:**
   1. L08: the heater on high, and Dad hates the heater (it was raining that day; the cook was cold).
@@ -196,6 +196,6 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - The wheel turns only slowly and eased. No hand ever touches it.
 - Every warm face is `smile`, `laugh` or `warm`, never `grin`.
 - Mom's question at L05 is played light: she's `sly`, never hurt, and her car's muffin trip at L25, L26 answers it.
-- The reveal sits at the very end (owner, 2026-11-12): L24 lands at about 45.3 to 47.8 s of about 52 s, and only the button (L25) and the loop line (L26) follow it. Don't add a line after L24 that explains it.
+- The reveal sits at the very end (owner, 2026-11-12): L24 lands at about 47 to 50 s of about 54 s, and only the button (L25) and the loop line (L26) follow it. Don't add a line after L24 that explains it.
 - Title, description, pin and captions checked against hard rule 8. No dashes or semicolons.
 - Queue spacing: keep it away from ep146 (cost, a phone that waits) and ep147 (cost).
