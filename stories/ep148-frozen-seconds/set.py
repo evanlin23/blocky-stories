@@ -344,6 +344,8 @@ def build(kit, story, tl):
     build_drops(kit, tl)
     build_pretzel(kit)
     build_notes(kit)
+    W["pocket"] = kit.box("pocket", (0.3, 0.05, 0.06), (0, 0, -60), kit.plastic("#16381f", 0.8))
+    noshadow(W["pocket"])
     build_car(kit)
     build_kitchen(kit)
     build_front(kit)
@@ -467,7 +469,13 @@ def animate(kit, story, tl, t, ctx):
         hp = lh.matrix_world.translation
         fl.location = (hp.x + 0.05, hp.y - 0.15, hp.z - 0.1)
     # the notes follow the holder's head
-    for who, off in (("me", (-0.45, -0.6, -0.8)), ("leo", (-0.45, -0.6, -0.8))):
+    pk = sample("pocket", tl, t, {"p": 0.0})["p"] > 0.5
+    W["pocket"].hide_render = not pk
+    gm = bpy.data.objects.get("me.headg")
+    if gm is not None:
+        hp = gm.matrix_world.translation
+        W["pocket"].location = (hp.x - 0.2, hp.y - 0.195, hp.z - 0.84)
+    for who in ("me", "leo"):
         nm = sample(f"note_{who}", tl, t, {"m": 0.0})["m"]
         root = W["notes"][who]
         gh = bpy.data.objects.get(f"{who}.headg")
@@ -476,6 +484,9 @@ def animate(kit, story, tl, t, ctx):
             continue
         hp = gh.matrix_world.translation
         u = min(1.0, max(0.0, 2.0 - nm))     # 0 on the palm, 1 in the pocket
-        root.location = (hp.x + off[0] + 0.05 * u, hp.y + off[1] + 0.1 * u, hp.z + off[2] - 0.3 * u)
-        root.rotation_euler = (math.radians(-12), 0, 0)
+        a0, a1 = (-0.45, -0.55, -0.75), (-0.2, -0.25, -0.78)
+        root.location = tuple(hp[i] + a0[i] + (a1[i] - a0[i]) * u for i in range(3))
+        sc = 1.0 - 0.3 * u
+        root.scale = (sc, sc, sc)
+        root.rotation_euler = (math.radians(-12 * (1 - u)), 0, 0)
     return gains

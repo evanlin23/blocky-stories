@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 6
+REV = 9
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L22
@@ -182,7 +182,7 @@ cut("leo", "L03", LEO0, yaw=0, expr="smile", head=[0, 0])
 shot("S03", "L03", cam(LEO0[0], LEO0[1], 1.5, 2.6, 0, 36))
 cut("uncle", "L05", (KX + 0.55, KY + 1.9), yaw=0, expr="stunned")
 key("uncle", "L05.1", (KX + 0.55, KY + 1.55), yaw=0, expr="stunned", lean=38, arms=[75, 75], blend=0.35)
-shot("S05", "L05", cam(KX + 0.75, KY + 1.25, 1.0, 4.9, -32, 34, cz=1.3), _raw=True)
+shot("S05", "L05", cam(KX + 0.95, KY + 1.35, 0.95, 6.4, -32, 34, cz=1.3), _raw=True)
 cut("neighbor", "L06", (FX_, FY_ + 0.6), yaw=0, expr="sheepish")
 key("neighbor", "L06.1", (FX_, FY_ + 0.6), yaw=0, expr="sheepish", lean=12, head=[-10, 0], blend=0.3)
 shot("S06", "L06", cam(FX_ - 0.1, FY_ + 0.3, 1.85, 4.8, 10, 30), _raw=True)
@@ -203,7 +203,7 @@ shot("S09b", "L09.2", cam(LEO0[0], LEO0[1], 1.45, 2.6, -6, 36))
 # ===== 04 the sneakers (L11)
 cut("leo", "L11", (0.8, 3.6), yaw=0, expr="smile", arms=[0, 0])
 key("leo", "L11.2", (0.8, 3.1))
-shot("S11a", "L11", ck((0, (0.8, 0.6, 0.34), (0.8, 3.4, 0.2), 22), (1, (0.8, 0.6, 0.34), (0.8, 3.0, 0.2), 22)), _raw=True)
+shot("S11a", "L11", ck((0, (0.8, 1.9, 0.55), (0.8, 3.3, 0.0), 20), (1, (0.8, 1.9, 0.5), (0.8, 3.0, 0.0), 20)), _raw=True)
 cut("leo", "L11.2", LEO0, yaw=0, expr="laugh")
 shot("S11b", "L11.2", cam(LEO0[0], LEO0[1], 1.5, 2.5, 4, 36))
 
@@ -218,9 +218,11 @@ cut("me", "L15", ME0, yaw=0, expr="det", head=[0, 0])
 shot("S15a", "L15", face(ME0, 2.3, 0, 36))
 cue("L15.2", "note_me", m=2.0)
 cue("L15.3", "note_me", m=1.0, dur=0.7)
+cue("L15.2", "pocket", p=1.0)
+cue("L15.3+1.2", "pocket", p=0.0)
 key("me", "L15.2", expr="det", arms=[0, 70], blend=0.3)
 key("me", "L15.3", arms=[0, 20], blend=0.5)
-shot("S15b", "L15.2", cam(ME0[0] - 0.3, ME0[1] - 0.3, 0.95, 2.6, 0, 30), _raw=True)
+shot("S15b", "L15.2", cam(ME0[0] - 0.2, ME0[1] - 0.2, 0.85, 1.5, 0, 30, push=(1.3, 0.85)), _raw=True)
 
 # ===== 07 we sit, the pretzel (L16)
 cue("L16.2", "pretz", p=1.0)
@@ -232,13 +234,13 @@ cue("L16.1", "sit_me", s=1.0, dur=0.8)
 cue("L16.1", "sit_leo", s=1.0, dur=0.8)
 shot("S16a", "L16", ck((0, (0.0, -0.1, 1.7), (0.0, 5.55, 1.15), 27), (1, (0.0, 0.2, 1.7), (0.0, 5.55, 1.15), 27)), _raw=True)
 key("leo", "L16.3", expr="smile")
-shot("S16b", "L16.3", ck((0, (0.1, 4.3, 1.45), (0.15, 5.5, 0.75), 28), (1, (0.1, 4.45, 1.4), (0.15, 5.5, 0.75), 28)), _raw=True)
+shot("S16b", "L16.3", ck((0, (0.0, 3.9, 1.45), (0.0, 5.5, 0.45), 24), (1, (0.0, 4.0, 1.4), (0.0, 5.5, 0.45), 24)), _raw=True)
 
 # ===== 08 the freeze (L17, L18)
 cut("me", "L17", (MS[0], MS[1], SZ), yaw=0, expr="det", head=[0, 0])
 shot("S17a", "L17", face((MS[0], MS[1]), 2.4, 8, 36, tz=1.35))
 cue("L17.2", "freeze", f=1.0)
-shot("S17b", "L17.2", cam(0.0, 8.0, 3.5, 8.5, 0, 34, cz=3.3), _raw=True)
+shot("S17b", "L17.2", cam(0.0, 8.0, 3.9, 8.5, 0, 55, cz=3.9), _raw=True)
 key("me", "L17.2", expr="neutral")
 cue("L17", "tag", mode=1.0, s=1461.0, dur=0.0)
 shot("S18a", "L18", cam(0.0, 8.0, 3.0, 7.0, 80, 34, cz=1.4, push=(5.6, 3.2)), _raw=True)
@@ -251,8 +253,9 @@ key("jogger", "L17.2", (7.0, 7.4), yaw=0)
 
 # ===== 09 Leo sits still (L20)
 cue("L20", "tag", mode=1.0, s=1230.0, dur=1.0)
-key("leo", "L20", expr="neutral", head=[-20, 0])
-shot("S20", "L20", ck((0, (0.0, 2.0, 1.2), (0.45, 5.5, 1.05), 28), (1, (0.0, 2.2, 1.2), (0.45, 5.5, 1.05), 28)), _raw=True)
+key("leo", "L20", expr="neutral", head=[0, 0], look=[-0.8, 0])
+shot("S20a", "L20", cam(LS[0], LS[1], 1.78, 2.4, 0, 36))
+shot("S20b", "L20+0.6", ck((0, (-1.1, 3.6, 1.1), (0.1, 5.5, 0.62), 36), (1, (-1.0, 3.7, 1.1), (0.1, 5.5, 0.62), 36)), _raw=True)
 
 # ===== 10 I turn (L21, L22)
 cue("L21", "tag", mode=1.0, s=1100.0, dur=1.0)
@@ -273,7 +276,7 @@ cue("L22", "tag", mode=1.0, s=950.0, dur=1.0)
 key("me", "L22", expr="smile", arms=[0, 70], head=[0, 15])
 key("me", "L22+0.15", expr="worried", yaw=22, head=[62, 0], arms=[0, 0], blend=0.75)
 cue("L22+0.15", "note_me", m=0.0)
-shot("S22a", "L22", ck((0, (-0.2, 3.9, 1.0), (0.3, 5.5, 0.85), 28), (1, (-0.1, 4.0, 1.0), (0.3, 5.5, 0.85), 28)), _raw=True)
+shot("S22a", "L22", ck((0, (-0.3, 3.9, 0.9), (0.2, 5.5, 0.62), 28), (1, (-0.2, 4.0, 0.9), (0.2, 5.5, 0.62), 28)), _raw=True)
 shot("S22b", "L22.2", ck((0, (0.0, 3.0, 2.2), (0.0, 8.0, 3.2), 32), (1, (0.0, 3.4, 2.3), (0.0, 8.0, 3.3), 32)), _raw=True)
 cue("L23", "tag", mode=1.0, s=800.0, dur=1.0)
 key("me", "L23", expr="scared", yaw=18, head=[40, 0])
@@ -286,12 +289,12 @@ key("me", "L24", expr="stunned", yaw=0, head=[0, 5])
 shot("S24", "L24", [[0, [PZ[0] - 0.05, PZ[1] - 1.25, 1.05], [PZ[0] - 0.05, PZ[1], 0.62], 40],
                     [1, [-0.35, PZ[1] - 4.4, 1.35], [-0.35, PZ[1], 1.3], 26]], _raw=True)
 cue("L25", "tag", mode=1.0, s=520.0, dur=1.0)
-cut("leo", "L25", (1.1, 8.6, 0.3), yaw=0, expr="neutral", arms=[0, 0])
-shot("S25", "L25", ck((0, (1.0, 5.0, 1.3), (0.6, 9.0, 0.45), 30), (1, (1.0, 5.2, 1.2), (0.6, 9.0, 0.45), 30)), _raw=True)
+cut("leo", "L25", (0.95, 9.1, 0.3), yaw=0, expr="neutral", arms=[0, 0])
+shot("S25", "L25", ck((0, (0.4, 5.8, 0.65), (0.95, 9.0, 0.5), 38), (1, (0.45, 6.0, 0.6), (0.95, 9.0, 0.5), 38)), _raw=True)
 
 # ===== 12 it was Leo (L26 to L29)
 cue("L26", "tag", mode=1.0, s=400.0, dur=1.0)
-key("leo", "L25+0.3", (1.1, 8.6, 0.3), yaw=0, expr="neutral", head=[0, 8])
+key("leo", "L26", (1.1, 8.6, 0.3), yaw=0, expr="neutral", head=[0, 8])
 key("leo", "L27+0.4", (0.85, 7.1, 0.3), yaw=0)
 shot("S26", "L26", ck((0, (0.8, 5.2, 1.55), (0.8, 8.4, 1.5), 36), (1, (0.8, 4.9, 1.55), (0.82, 8.0, 1.5), 36)), _raw=True)
 cue("L27", "tag", mode=1.0, s=330.0, dur=1.0)
@@ -336,7 +339,7 @@ remap_all(cues)
 for k_ in acting.values():
     remap_all(k_)
 shots, names = [], {}
-V3_SKIP = {"S11a", "S15b", "S25", "S16a", "S16b", "S20", "S06", "S24", "S05", "S08a", "S22a", "S22b", "S17b", "S18a", "S18b"}
+V3_SKIP = {"S11a", "S15b", "S25", "S16a", "S16b", "S20b", "S06", "S24", "S05", "S08a", "S22a", "S22b", "S17b", "S18a", "S18b"}
 V3_WIDE = {"S32a": 1.14, "S32b": 1.14, "S37a": 1.1, "S24": 1.0}
 V3_MORE = {"S21a": 1.4, "S21b": 1.15, "S26": 1.3, "S27": 1.2, "S28": 1.25, "S29": 1.3, "S37b": 1.25, "S30": 1.1}
 for sid, at, camera, kw in SH:   # v3 heads are about 40% bigger: back off and lift the aim a little
@@ -385,7 +388,8 @@ remap_all(sound["music_drops"])
 polish = {"reveal": [remap("L26")], "twist": remap("L26"),
           "emph": [remap(x) for x in ["L01.2", "L02.1", "L03.1", "L07.1", "L09.2", "L26", "L29.1"]],
           "quiet": [[remap("L32"), remap("L32")]],
-          "hold": ["S29", "S32a", "S32b", "S37a"]}
+          "hold": ["S29", "S32a", "S32b", "S37a", "S11a", "S15b", "S16b", "S20b", "S22a", "S22b", "S25"],
+          "overlap": True, "turn_cap": 220, "punch_max": 4, "sharpen": 0.4, "bloom_thresh": 0.85}
 story = {
     "slug": "ep148-frozen-seconds",
     "title": "I Saved FOUR Years Of Frozen Seconds ⏸️",
