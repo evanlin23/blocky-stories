@@ -14,7 +14,7 @@ proofed keeps its look. The engine code is a separate draft PR (`claude/style-v3
 | `lineup-tv.jpg`, `lineup-phone.jpg` | the six v3 characters side by side (TV size and 300 px wide) |
 | `before-after-tv.jpg`, `before-after-phone.jpg` | the same six in today's look (top) and in v3 (bottom) |
 | `<name>-tv.jpg`, `<name>-phone.jpg` | each character in 6 expressions (TV size; and each still 300 px wide) |
-| `faces.png` | all 16 expressions, flat, at phone size |
+| `faces.png` | all 17 expressions, flat |
 | `hair.jpg` | the hair library: 15 styles (and bald, for a mustache to carry) |
 | `acting-test.mp4` | the same 5 s acting beat in today's look (left) and v3 (right), keyed identically: calm, a snap to shock, a suspicious glance, then terror. Silent, 24 fps |
 
@@ -26,10 +26,10 @@ All adults, apart from Jax (17): nothing kid-coded.
 |---|---|---|
 | Rocco | a tall quiff rolling forward off the forehead | the quiff is as tall as his face |
 | Mara | a cloud of stacked pink cubes, wider than her shoulders | hot pink hair |
-| Gus | a ginger buzz with block sideburns | a giant handlebar mustache, wider than his face |
+| Gus | a ginger buzz with block sideburns | a giant walrus mustache, most of his face wide |
 | Dot | a bun as big as her head, on top | big red square glasses |
 | Jax | five electric-blue blades with lime tips | the spikes add half his head again |
-| Brick | a flat-top like a hedge | a tiny head on giant arms |
+| Brick | bald, with a big square block beard | a tiny head on giant arms |
 
 ## What changed, and why
 
@@ -42,10 +42,12 @@ All adults, apart from Jax (17): nothing kid-coded.
    single step away from it.
 3. **Faces drawn big, flat and exaggerated.** The face is a flat decal on the head's front, so it can be drawn
    large. Each eye squashes and stretches on its own (so faces go lopsided: smug, suspicious), brows are thick bars
-   that fly up or knit hard, mouths open wide onto teeth and a tongue. 16 expressions: neutral, shocked, delighted,
+   that fly up or knit hard, mouths open wide onto teeth and a tongue. 17 expressions: neutral, shocked, delighted,
    smug, terrified, cry-laughing, suspicious, heartbroken, determined, furious, nervous, disgusted, deadpan, awe,
-   lovestruck, scheming. Cartoon accents: tear streams, flying tears, sweat drops, an anger cross, gloom lines,
-   blush hatching, sparkles, tremble marks. **No shading on faces** (PurpleHat's shaded close-ups were called
+   scheming, and two eerie ones for a creepy channel: **hollow** (black eyes, a pin of light) and **toowide** (a
+   grin nearly ear to ear, packed with teeth, over pinprick pupils). Cartoon accents: tear streams, flying tears,
+   sweat drops, gloom lines, tremble marks. No blush, sparkles, star or heart eyes: both critics read those as
+   kid-app stickers (hard rule 3), so they're out. **No shading on faces** (PurpleHat's shaded close-ups were called
    "creepy"): every face pixel is one flat colour, and the face material is matte so the ink never washes out.
 4. **A snap on each new face.** When the expression changes, the eyes and brows stretch 15% past the pose in two
    frames and ease back over a quarter second, so the key line lands and holds (`faces_v3.pop_at`). Today the
@@ -73,6 +75,18 @@ Measured here on the same 4-core CPU, Cycles, same lights and samples:
 
 Not measured: a whole real story in v3. That waits for the engine PR and the owner's approval.
 
-## The critics
+## The critics (two fresh reviews, then one revision)
 
-CRITICS_PLACEHOLDER
+- **Phone scroller, round 1: "Stands out: yes."** Clearly stops the thumb more than today's look; most expressions
+  read in one glance. Asked to cut the blush, sparkle, heart and star stickers (kid-app), and flagged that smug,
+  deadpan and scheming blurred together, Gus's mustache hid his mouth, and Rocco and Brick both had a dark flat
+  block on top.
+- **Against the stock avatar look, round 1: "Stands out: not yet."** The big head, the ink line and the faces
+  carry it and nothing is copied, but some hair styles were still thin caps, the sticker accents are generic anime
+  vocabulary and kid-coded, and a creepy channel needs eerie faces.
+- **The revision (one round):** stickers removed; hollow and toowide added; smug (one brow flies up), deadpan
+  (flat lids, pin pupils) and scheming (knitted brows, toothy grin) pulled apart; Gus's mustache rebuilt as a walrus
+  bar between eyes and mouth; Brick bald with a block beard; the bob, curtains and flat-top given real volume.
+- Round 2 verdicts: CRITICS2_PLACEHOLDER
+
+About the acting test: both sides use the same camera; the v3 head is bigger, which is the change.
