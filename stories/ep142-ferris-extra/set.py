@@ -33,10 +33,10 @@ FONT = HERE.parent.parent / "blocky" / "fonts" / "SchibstedGrotesk-Black.ttf"
 
 HX, HY, HZ, R = -1.3, 8.0, 7.1, 5.2
 NG = 16
-KB, KD, KM = 1, 9, 9              # bottom cabin at t = 0, D's first cabin, the mint cabin
+KB, KD, KM = 1, 3, 9              # bottom cabin at t = 0, D's first cabin, the mint cabin
 CAB_Z0 = -1.7                      # a cabin's floor below its pivot
 MINT = "#3fd6b0"
-ROW_X = {"a": -2.6, "b": -1.3, "c": 0.0, "d": 1.3, "e": 2.6}
+ROW_X = {"a": -2.4, "b": -1.2, "c": 0.0, "d": 1.2, "e": 2.4}
 SHADOW = "#4d5a78"
 CAB_COLS = ["#ff6f61", "#7ff0c8", "#ffd23f", "#b79bff"]     # coral, mint, yellow, lilac
 GATE_X = 5.0
@@ -182,7 +182,7 @@ def build(kit, story, tl):
     wheel_mats = [white, pale]
 
     # ---- lights: a low gold sun on the screen left (shadows point +x, a little away), a soft fill from the camera side
-    sun_dir = V((-0.85, -0.4, 1.0)).normalized()
+    sun_dir = V((-0.85, -0.9, 1.0)).normalized()
     sun = kit.light("sun", "SUN", tuple(sun_dir * 60), 3.4, "#fff0d4", size=0.06)
     sun.data.angle = 0.06
     kit.aim(sun, (0, 0, 0))
@@ -205,7 +205,7 @@ def build(kit, story, tl):
     wg = kit.empty("wheelgrp", (HX, HY, HZ))
     ctx["wheel"] = wg
     rimm = white
-    for sy in (-1, 1):
+    for sy in (1,):          # one rim plane (the far one): a front ring would cross every cabin and rider
         y = sy * 1.0
         for i in range(32):
             a0, a1 = 2 * math.pi * i / 32, 2 * math.pi * (i + 1) / 32
@@ -227,7 +227,8 @@ def build(kit, story, tl):
         for sx in (-1, 1):
             beam(kit, f"leg{sy}{sx}", (HX, HY + sy * 1.3, HZ), (HX + sx * 3.8, HY + sy * 2.4, -0.4), 0.26, white)
             kit.box(f"foot{sy}{sx}", (0.9, 0.9, 0.12), (HX + sx * 3.8, HY + sy * 2.4, 0.06), iron)
-        beam(kit, f"tie{sy}", (HX - 3.0, HY + sy * 2.1, 1.4), (HX + 3.0, HY + sy * 2.1, 1.4), 0.14, pale)
+        if sy == 1:
+            beam(kit, f"tie{sy}", (HX - 3.0, HY + sy * 2.1, 1.4), (HX + 3.0, HY + sy * 2.1, 1.4), 0.14, pale)
     # the cabins: round-ish buckets from a pivot, open on the camera (-y) side
     ctx["cabs"] = []
     for k in range(NG):
@@ -235,7 +236,7 @@ def build(kit, story, tl):
         cm = P(CAB_COLS[k % 4], 0.35, spec=0.4)
         cm2 = P("#ffffff", 0.4, spec=0.2)
         z0 = CAB_Z0
-        annulus(kit, f"cab{k}.floor", 0.9, 0.9, 0.22, cm, (0, 0, z0 - 0.05), n=16, parent=g).rotation_euler = (math.pi / 2, 0, 0)
+        kit.cyl(f"cab{k}.floor", 0.9, 0.1, (0, 0, z0 - 0.05), cm, g, n=16)
         for j in range(8):
             th = math.radians(45 * j)
             if j == 6:
@@ -244,6 +245,8 @@ def build(kit, story, tl):
             kit.box(f"cab{k}.pan{j}", (0.62, 0.07, 0.9), (ap * math.cos(th), ap * math.sin(th), z0 + 0.45), cm, g,
                     rot=(0, 0, th + math.pi / 2), bevel=0.02)
         for j in range(8):
+            if j in (5, 6):
+                continue                        # no post across the open front
             th = math.radians(45 * j + 22.5)
             kit.box(f"cab{k}.post{j}", (0.08, 0.08, 1.75), (0.8 * math.cos(th), 0.8 * math.sin(th), z0 + 0.875), cm2, g, bevel=0.02)
         kit.box(f"cab{k}.rail", (0.9, 0.06, 0.06), (0, -0.7, z0 + 0.78), cm2, g, bevel=0.02)
@@ -255,22 +258,22 @@ def build(kit, story, tl):
     # ---- the fake shadows: the cast casts no real shadow; each one is a shape on the boards
     shm = P(SHADOW, 0.95, spec=0.0)
     cast = story["cast"]
-    shadow_spec = [("a", 0.85, 0.4, 1.55), ("b", 0.85, 0.4, 1.55), ("c", 0.85, 0.4, 1.55), ("e", 0.85, 0.4, 1.55),
-                   ("d", -0.9, -0.25, 2.1), ("man", 0.85, 0.4, 1.4)]
+    shadow_spec = [("a", 0.85, 0.9, 1.55), ("b", 0.85, 0.9, 1.55), ("c", 0.85, 0.9, 1.55), ("e", 0.85, 0.9, 1.55),
+                   ("d", -0.9, -0.55, 2.1), ("man", 0.85, 0.9, 1.4)]
     for k, dx, dy, ctop in shadow_spec:
-        h = cast[k].get("height", 1.0)
+        h = cast[k].get("height", 1.0) / 1.25
         cx, cy = (ROW_X[k], 0.0) if k in ROW_X else (5.75, -1.3)
-        parts = [(-0.3, 0.3, -0.12, 0.12, 0.0, 0.78 * h), (-0.36, 0.36, -0.15, 0.15, 0.78 * h, 1.42 * h),
-                 (-0.22, 0.22, -0.2, 0.2, 1.42 * h, 1.85 * h)]
+        parts = [(-0.28, 0.28, -0.2, 0.2, 0.0, 0.78 * h), (-0.34, 0.34, -0.2, 0.2, 0.78 * h, 1.42 * h),
+                 (-0.26, 0.26, -0.25, 0.25, 1.42 * h, 1.85 * h)]
         if k in ROW_X:
-            parts.append((0.27, 0.75, -0.62, -0.2, 0.9 * h, ctop * h))
+            parts.append((0.22, 0.78, -0.65, -0.2, 0.95 * h, ctop * h))
         pts = []
         for x0, x1, y0, y1, z0_, z1_ in parts:
             ph = []
             for x in (x0, x1):
                 for y in (y0, y1):
                     for z in (z0_, z1_):
-                        ph.append((round(cx + x + dx * z, 4), round(cy + y + dy * z, 4)))
+                        ph.append((round(cx + x + dx * z * 1.25, 4), round(cy + y + dy * z * 1.25, 4)))
             pts += [hull(ph)]
         for i, poly in enumerate(pts):
             if len(poly) >= 3:
@@ -347,12 +350,12 @@ def build(kit, story, tl):
         tag_png(p, L_)
         m = img_mat(kit, f"tag {L_}", p, 1.4)
         x = ROW_X[L_.lower()]
-        t = kit.plane(f"tag{L_}", (0.8, 0.8), (x, 0.0, 2.55), m, rot=(math.pi / 2, 0, 0))
+        t = kit.plane(f"tag{L_}", (0.74, 0.74), (x, 0.0, 2.9), m, rot=(math.pi / 2, 0, 0))
         t.hide_render = True
         noshadow(t)
         ctx["tags"][L_] = t
     # ---- the mint ring behind D
-    ring = annulus(kit, "ring", 0.85, 1.2, 0.1, kit.emit(MINT, 2.6, name="ring"), (ROW_X["d"], 0.5, 1.0))
+    ring = annulus(kit, "ring", 1.05, 1.5, 0.11, kit.emit(MINT, 2.6, name="ring"), (ROW_X["d"], 0.55, 1.25))
     ring.hide_render = True
     noshadow(ring)
     ctx["ring"] = ring
@@ -388,6 +391,18 @@ def build_icon(kit, ctx):
     for i in range(8):
         th = i * math.pi / 4
         b(f"ic.g{i}", (0.07, 0.07, 0.004), (0.36 * math.cos(th), 0.36 * math.sin(th), 0.016), wh)
+    # the count: four white rider pips under the plate; a fifth, red, pops in on FIVE
+    b("ic.strip", (1.0, 0.34, 0.004), (0, -0.7, 0.0), edge)
+    b("ic.strip2", (0.94, 0.28, 0.004), (0, -0.7, 0.004), plate)
+    ctx["pips"] = []
+    for i in range(5):
+        x = -0.36 + i * 0.18
+        mat = red if i == 4 else wh
+        hd = kit.cyl(f"ic.pip{i}h", 0.045, 0.004, (x, -0.65, 0.01), mat, root, n=12)
+        bd = b(f"ic.pip{i}b", (0.1, 0.1, 0.004), (x, -0.76, 0.01), mat)
+        noshadow(hd)
+        if i == 4:
+            ctx["pips"] = [hd, bd]
     dot = kit.cyl("ic.dot", 0.085, 0.006, (0, -0.36, 0.024), red, root, rot=(0, 0, 0), n=16)
     noshadow(dot)
     ctx["dot"] = dot
@@ -420,7 +435,7 @@ def first_frame(kit, story, ctx):
             continue
         arm = ch.P["arm1"]
         root = kit.empty(f"{k}.cone", (0, 0, -1.55), arm)
-        root.scale = (1.2, 1.2, 1.2)
+        root.scale = (1.0, 1.0, 1.0)
         build_cone(kit, root, "swirl" if k == "d" else "melt", flav.get(k, "#ffffff"))
         if k != "d":
             build_wrist(kit, arm, f"{k}.cone", flav[k])
@@ -449,7 +464,7 @@ def animate(kit, story, tl, t, ctx):
         k = KD if t < t_s02 else (KM if t >= t_ride else None)
         if k is not None:
             x, y, z = cab_pos(k, a)
-            d.root.location = (x, y + 0.02, z + CAB_Z0 - 0.5)
+            d.root.location = (x, y + 0.02, z + CAB_Z0 - 0.85)
             d.root.rotation_euler = (0, 0, 0)
     # cones stay upright in the raised hand
     for k, (root, arm) in ctx["cones"].items():
@@ -491,7 +506,12 @@ def animate(kit, story, tl, t, ctx):
         prev = hc[-2]["up"] if len(hc) > 1 else 0.0
         up = prev + (hc[-1]["up"] - prev) * u
     for ob, base in ctx["hat"]:
-        ob.location = (base.x + 1.3 * up, base.y - 0.15 * up, base.z + 0.95 * up)
+        ob.location = (base.x - 0.6 * up, base.y - 0.1 * up, base.z + 0.45 * up)
+    p5 = cue_t(tl, "pip5", 1.7)
+    u5 = ss((t - p5) / 0.2)
+    for ob in ctx["pips"]:
+        ob.hide_render = u5 <= 0.001
+        ob.scale = (0.4 + 0.6 * u5, 0.4 + 0.6 * u5, 1)
     # the corner meter's red dot: once round between the on and off cues
     ts = cue_list(tl, "turn")
     t0 = ts[0]["t"] if ts else 8.0

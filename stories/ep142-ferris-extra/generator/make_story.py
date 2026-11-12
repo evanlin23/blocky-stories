@@ -34,13 +34,15 @@ lines = lines + [{"id": "P03", "pause": LOOP, "chunks": []}]
 
 # ------------------------------------------------------------------------------------------------ cast
 FACE = {"eyes": "round", "brows": True}
+BW = 0.8
+SC = 1.25          # the cast is drawn a quarter bigger than the rig default so five fit a 9:16 frame
 
 
 def person(skin, shirt, pants, hair, hair_c, height, sleeves="short", hat="none", hat_c="#333333", face=None,
            extras=None, extra_c=None, collar=None, shoes="#2b2d33"):
     d = {"age": "adult", "skin": skin, "shirt": shirt, "pattern": "solid", "pants": pants, "shoes": shoes,
-         "sleeves": sleeves, "hair": hair, "hair_c": hair_c, "hat": hat, "hat_c": hat_c, "height": height,
-         "face": face or dict(FACE)}
+         "sleeves": sleeves, "hair": hair, "hair_c": hair_c, "hat": hat, "hat_c": hat_c, "height": round(height * SC, 3),
+         "body_width": BW, "face": face or dict(FACE)}
     if extras:
         d["extras"] = extras
     if extra_c:
@@ -61,22 +63,24 @@ cast = {
     "man": person("#e8b890", "#d9453b", "#4a4036", "buzz", "#d8d8d8", 1.0, "long", "fedora", "#e6cf8a", collar="#ffffff"),
 }
 cast["man"]["band_c"] = "#c0392b"
-X = {"a": -2.6, "b": -1.3, "c": 0.0, "d": 1.3, "e": 2.6}
+X = {"a": -2.4, "b": -1.2, "c": 0.0, "d": 1.2, "e": 2.4}
 GATE_X, MAN = 5.0, (5.75, -1.3)
 ARM = 62          # degrees the right arm is raised: a cone at chest height
 
 acting = {k: [] for k in cast}
 for k, x in X.items():
     acting[k].append({"at": 0, "pos": [x, 0], "yaw": 0, "arms": [0, ARM], "expr": "smile", "blend": 0})
-# the extra: smiles all film and never blinks
 acting["d"][0]["blink"] = False
+for k in "ace":      # S01a stands close to the lens: the other three step in on the cut
+    acting[k][0]["hidden"] = True
+    acting[k].append({"at": "L02", "hidden": False, "blend": 0})
 
-# B stands at a gondola door for S01a, then steps into the row on the cut
-acting["b"][0] = {"at": 0, "pos": [-1.3, 4.9], "yaw": 0, "arms": [0, ARM], "expr": "smile", "blend": 0}
-acting["b"].append({"at": "L01.1-0.04", "pos": [-1.3, 4.9]})
-acting["b"].append({"at": "L01.1", "pos": [-1.3, 0], "hidden": True, "blend": 0})
-acting["b"].append({"at": "L02", "pos": [-1.3, 0], "hidden": False, "blend": 0})
-# L05: the cousins are uneasy
+# B stands close to the lens for S01a, then steps into the row on the cut
+BS = [-0.6, 1.8]
+acting["b"][0] = {"at": 0, "pos": BS, "yaw": 0, "arms": [0, ARM], "expr": "smile", "blend": 0}
+acting["b"].append({"at": "L01.2-0.04", "pos": BS, "hidden": True, "blend": 0})
+acting["b"].append({"at": "L01.2", "pos": [-1.2, 0], "hidden": True, "blend": 0})
+acting["b"].append({"at": "L02", "pos": [-1.2, 0], "hidden": False, "blend": 0})
 acting["b"].append({"at": "L05", "expr": "worried", "blend": 0})
 acting["a"].append({"at": "L05.1", "expr": "worried", "blend": 0})
 acting["c"].append({"at": "L05.1", "expr": "neutral", "blend": 0})
@@ -85,25 +89,54 @@ acting["a"].append({"at": "L06", "expr": "neutral", "blend": 0})
 acting["e"].append({"at": "L06", "expr": "neutral", "blend": 0})
 acting["b"].append({"at": "L16", "expr": "wide", "blend": 0})
 acting["b"].append({"at": "L18", "expr": "worried", "blend": 0})
+# the cousins look up at the wheel as D rises
+for k in "abce":
+    acting[k].append({"at": "L21", "head": [0, -30], "blend": 0.4})
 # D: turns its head to the gate man (0.5 s), then walks out in front of E and through the gate
 d = acting["d"]
-d.append({"at": "L14", "pos": [1.3, 0]})
-d.append({"at": "L15", "head": [0, 0], "blend": 0.3})
-d.append({"at": "L15+0.8", "head": [0, 0]})
-d.append({"at": "L18", "head": [-55, 0], "blend": 0.5})
-d.append({"at": "L18+0.55", "head": [-55, 0], "pos": [1.3, 0]})
-d.append({"at": "L18+0.7", "pos": [1.3, 0], "head": [0, 0], "blend": 0.3})
-d.append({"at": "L19+0.15", "pos": [1.5, -1.3], "arms": [0, ARM], "blend": 0.3})
-d.append({"at": "L19+1.35", "pos": [4.35, -1.3], "yaw": 90, "sfx": "latch", "sfx_db": -20})
-d.append({"at": "L19+1.7", "pos": [4.35, -1.3], "yaw": 90})
+d.append({"at": "L14", "pos": [1.2, 0]})
+d.append({"at": "L18-0.1", "head": [55, 0], "blend": 0.4})
+d.append({"at": "L18+0.55", "head": [0, 0], "pos": [1.2, 0], "blend": 0.25})
+d.append({"at": "L18+1.2", "pos": [1.5, -1.3], "yaw": 13, "keep_yaw": True})
+d.append({"at": "L19+1.2", "pos": [4.3, -1.3], "yaw": 50, "blend": 1.2, "sfx": "latch", "sfx_db": -20})
+d.append({"at": "L19+1.3", "pos": [4.3, -1.3], "yaw": 50})
 # the gate man: looks up at the wheel (S03), tips his hat to D (S18)
 m = acting["man"]
 m.append({"at": 0, "pos": list(MAN), "yaw": -25, "head": [0, -28], "arms": [0, 0], "expr": "smile", "blend": 0})
-m.append({"at": "L03+1.2", "yaw": -25, "head": [0, -28]})
 m.append({"at": "L16+0.4", "yaw": -25, "head": [0, -28], "arms": [0, 0]})
-m.append({"at": "L17", "yaw": -75, "head": [0, 0], "arms": [0, 165], "blend": 0.4})
-m.append({"at": "L17+0.9", "yaw": -75, "head": [0, 0], "arms": [0, 165]})
+m.append({"at": "L17", "yaw": -75, "head": [0, 0], "arms": [125, 0], "blend": 0.4})
+m.append({"at": "L17+0.9", "yaw": -75, "head": [0, 0], "arms": [125, 0]})
 m.append({"at": "L18", "yaw": -75, "head": [0, 0], "arms": [0, 0], "blend": 0.4})
+
+
+# ------------------------------------------------------------------------------------------------ the wheel (set.py's maths)
+def _ride_times():
+    """The seconds of the ride cue and S21..S23, from the last voiced timeline (these shots are keyed to the mint cabin)."""
+    f = ROOT / "out" / "work" / "ep142-ferris-extra" / "timeline.json"
+    if f.exists():
+        tl = json.loads(f.read_text())
+        return tl["lines"]["L20"]["onset"] + 0.3, tl["duration"]
+    return 29.8, 32.8
+
+
+T_RIDE, T_END = _ride_times()
+
+
+def wheel_angle(t):
+    rate = 180.0 / T_RIDE
+    if t <= T_RIDE:
+        return rate * t
+    tau = t - T_RIDE
+    g = tau ** 3 - tau ** 4 / 2 if tau <= 1 else 0.5 + (tau - 1)
+    return 180.0 + rate * tau + 48.0 * g
+
+
+def mint_head(t):
+    """Where D's head is when he sits in the mint cabin (cabin 9, hung from the rim; set.py: floor 1.7 under the pivot)."""
+    import math
+    psi = math.radians(180.0 + wheel_angle(t))
+    x, z = -1.3 + 5.2 * math.sin(psi), 7.1 - 5.2 * math.cos(psi)
+    return x, 8.0, z - 1.7 - 0.85 + 1.99
 
 
 # ------------------------------------------------------------------------------------------------ cameras
@@ -115,41 +148,53 @@ def move(a, b, la, lb=None):
     return [[0, a[0], a[1], la], [1, b[0], b[1], lb or la]]
 
 
-MC = [0.1, -11.5, 5.8]
-MT = [0.1, 0.0, 2.6]
+MC = [0.2, -11.4, 2.8]
+MT = [0.2, 0.0, 5.4]
 ML = 23.0
 MASTER = still(MC, MT, ML)
+
+
+def mint_cam(t, dist, lift=0.0):
+    x, y, z = mint_head(t)
+    return [x, y - dist, z + lift], [x, y, z - 0.1]
+
+
+c21a, c21b = mint_cam(29.7, 4.4), mint_cam(30.4, 4.0)
+c23a, c23b = mint_cam(31.6, 4.2), mint_cam(T_END - 0.05, 3.8)
 SHOTS = [
-    (0, "S01a", "close: my face at the gondola door, my cone up, the wheel above, D tiny in the cabin above",
-     move(([-1.0, 2.2, 1.1], [-1.3, 8.0, 5.0]), ([-1.0, 2.5, 1.1], [-1.3, 8.0, 5.6]), 17, 18)),
-    ("L01.1", "S01b", "punch in on the wheel's hub turning", move(([-1.3, 1.0, 5.0], [-1.3, 8.0, 7.1]), ([-1.3, 3.0, 6.1], [-1.3, 8.0, 7.1]), 30, 38)),
+    (0, "S01a", "close: my face, the lilac gondola up right with D in it, the wheel above",
+     move(([-0.7, -1.2, 2.6], [0.9, 8.0, 3.0]), ([-0.6, -0.9, 2.6], [1.0, 8.0, 3.0]), 18, 19)),
+    ("L01.2", "S01b", "punch in on the gondola above: D in his white shirt", move(([0.2, 1.0, 1.8], [2.5, 8.0, 3.1]), ([1.3, 3.5, 2.8], [2.95, 8.0, 3.6]), 20, 36)),
     ("L02", "S02", "the master: the five on the platform, cones up, long shadows right", MASTER),
-    ("L03", "S03", "the gate man at the gate, looking up at the wheel", move(([9.0, -8.0, 1.7], [5.7, -1.3, 1.9]), ([8.6, -7.4, 1.7], [5.7, -1.3, 1.95]), 24, 26)),
-    ("L04", "S04", "the master again: a tag pops on each letter", MASTER),
-    ("L05", "S05a", "close: me, uneasy, my melting cone", move(([-0.4, -3.2, 1.7], [-1.3, 0, 1.45]), ([-0.6, -2.8, 1.7], [-1.3, 0, 1.45]), 26, 28)),
-    ("L05.2", "S05b", "quick pan across A, C and E", move(([-2.6, -4.5, 1.7], [-2.6, 0, 1.4]), ([2.6, -4.5, 1.7], [2.6, 0, 1.4]), 24, 24)),
+    ("L03", "S03", "the gate man, face a quarter of the width, looking up at the wheel", move(([3.4, -5.0, 2.4], [5.75, -1.3, 1.5]), ([3.5, -4.6, 2.45], [5.75, -1.3, 1.55]), 30, 32)),
+    ("L04", "S04a", "the master again: a tag pops on each letter", MASTER),
+    ("L04c", "S04b", "the master, tighter and to the right: C, D, E tags", move(([0.9, -10.2, 2.8], [0.9, 0, 5.4]), ([0.7, -9.9, 2.8], [0.7, 0, 5.4]), 24, 25)),
+    ("L04e", "S04c", "the whole row, the last tag lands", move(([0.2, -11.8, 2.8], [0.2, 0, 5.4]), ([0.2, -11.6, 2.8], [0.2, 0, 5.4]), 22, 22.5)),
+    ("L05", "S05a", "close: me, uneasy, my melting cone", move(([-0.9, -3.2, 2.1], [-0.9, 0, 1.8]), ([-0.9, -2.9, 2.1], [-0.9, 0, 1.85]), 26, 28)),
+    ("L05.2+0.2", "S05b", "quick pan across A, C and E", move(([-2.4, -4.6, 2.0], [-2.4, 0, 1.8]), ([2.4, -4.6, 2.0], [2.4, 0, 1.8]), 24, 24)),
     ("L06", "S06", "the ice cream cart at the platform's end", move(([-4.2, -4.8, 1.7], [-6.2, -0.4, 1.4]), ([-4.6, -4.2, 1.7], [-6.2, -0.4, 1.5]), 28, 30)),
-    ("L07", "S07", "close: my cone dripping down my wrist, my face above", move(([-2.3, -2.8, 1.55], [-1.0, 0, 1.25]), ([-2.1, -2.4, 1.55], [-1.0, 0, 1.3]), 30, 32)),
-    ("L08", "S08", "the wheel icon, punch in: the red dot starts its turn", move(([-6.0, -10.0, 3.0], [-1.0, 4.0, 4.5]), ([-5.0, -8.5, 3.0], [-1.0, 4.0, 4.5]), 18, 20)),
-    ("L09", "S09", "the master, slow 4 percent push", move((MC, MT), ([0.1, -11.0, 5.6], MT), ML, ML * 1.04)),
+    ("L07", "S07", "close: my cone dripping down my wrist, my face above", move(([-2.4, -3.0, 1.8], [-0.95, 0, 1.5]), ([-2.2, -2.6, 1.8], [-0.95, 0, 1.55]), 30, 32)),
+    ("L08", "S08", "the wheel icon starts its turn: the five whole, a slow push", move(([0.2, -11.6, 2.8], [0.2, 0, 5.4]), ([0.2, -11.4, 2.8], [0.2, 0, 5.4]), 21, 22.2)),
+    ("L09", "S09", "the master, slow 4 percent push", move((MC, MT), ([0.2, -11.0, 2.8], MT), ML, ML * 1.04)),
     ("P01", "S10a", "hold: the lineup, all five faces, cones and shadows", move((MC, MT), (MC, MT), ML)),
     ("P01+1.2", "S10b", "hold: punch in 6 percent", move((MC, MT), (MC, MT), ML * 1.06)),
     ("P01+2.4", "S10c", "hold: punch in another 6 percent", move((MC, MT), (MC, MT), ML * 1.12)),
-    ("L10", "S11", "punch in on D, the mint ring", move(([1.3, -4.2, 1.75], [1.3, 0, 1.35]), ([1.3, -3.6, 1.75], [1.3, 0, 1.4]), 26, 30)),
-    ("L11", "S12a", "low and close along the row: A's, my and C's cones dripping", move(([-3.6, -3.6, 0.9], [-1.0, 0, 1.2]), ([-2.8, -3.4, 0.95], [-0.6, 0, 1.2]), 22, 24)),
-    (rm("L11.2"), "S12b", "E's cone dripping", move(([1.6, -3.2, 0.95], [2.9, 0, 1.2]), ([2.0, -3.0, 0.95], [3.0, 0, 1.2]), 24, 27)),
-    ("L12", "S13", "close: D's cone, tall and frosty, D's face above it", move(([2.0, -3.0, 1.4], [1.5, 0, 1.45]), ([1.8, -2.5, 1.45], [1.5, 0, 1.5]), 30, 32)),
-    ("L13", "S14", "low wide along the platform: four long shadows lying to the right", move(([-5.5, -5.0, 0.8], [0.3, 0.4, 0.3]), ([-5.0, -4.8, 0.8], [0.6, 0.4, 0.3]), 22, 23)),
-    ("L14", "S15a", "D's shadow lying to the left, toward the low sun", move(([2.4, -4.2, 2.2], [0.7, 0.2, 0.5]), ([2.2, -3.8, 2.2], [0.7, 0.2, 0.55]), 24, 26)),
-    (rm("L14.1"), "S15b", "punch in on D's feet and the shadow, D's face at the top", move(([2.4, -3.0, 1.9], [0.8, 0.1, 0.9]), ([2.2, -2.6, 1.9], [0.8, 0.1, 1.0]), 28, 32)),
+    ("L10", "S11", "punch in on D, the mint ring", move(([1.45, -5.0, 2.0], [1.45, 0, 1.7]), ([1.45, -4.4, 2.0], [1.45, 0, 1.75]), 26, 30)),
+    ("L11", "S12a", "low and close along the row: A's, my and C's cones dripping", move(([-3.4, -3.8, 1.2], [-1.2, 0, 1.4]), ([-2.6, -3.6, 1.25], [-0.8, 0, 1.4]), 22, 24)),
+    (rm("L11.2"), "S12b", "E's cone dripping", move(([1.9, -3.2, 1.2], [2.5, 0, 1.4]), ([2.3, -3.0, 1.25], [2.6, 0, 1.4]), 24, 27)),
+    ("L12", "S13", "close: D's cone, tall and frosty, D's face above it", move(([1.9, -3.4, 1.9], [1.5, 0, 1.7]), ([1.8, -3.0, 1.95], [1.5, 0, 1.75]), 28, 30)),
+    ("L13", "S14a", "low wide along the platform: four long shadows lying to the right", move(([-4.6, -4.6, 1.7], [0.0, 0.3, 0.3]), ([-4.2, -4.4, 1.7], [0.2, 0.3, 0.3]), 20, 21)),
+    ("L13.1+0.15", "S14b", "from the right, high: the same four shadows and the sun side", move(([4.8, -5.2, 2.4], [-0.6, 0.4, 0.2]), ([4.4, -4.9, 2.4], [-0.4, 0.4, 0.2]), 20, 21)),
+    ("L14", "S15a", "tilted down to D's feet and the shadow lying left, D's face at the top", move(([0.9, -4.4, 2.7], [0.9, 0, 1.3]), ([0.9, -4.1, 2.7], [0.9, 0, 1.35]), 17, 18)),
+    ("L14.1+0.15", "S15b", "punch in on D's feet and the shadow, D's face at the top", move(([1.0, -3.4, 2.5], [0.8, 0, 1.3]), ([1.0, -3.1, 2.5], [0.8, 0, 1.35]), 22, 25)),
     ("L15", "S16", "up at the top of the wheel, a gondola there, its door just closing", move(([-1.3, 0.0, 3.5], [-1.3, 8.0, 12.0]), ([-1.3, 1.0, 3.8], [-1.3, 8.0, 12.2]), 20, 22)),
-    ("L16", "S17", "my face, stunned", move(([-0.4, -2.8, 1.65], [-1.3, 0, 1.55]), ([-0.6, -2.4, 1.65], [-1.3, 0, 1.58]), 28, 30)),
-    ("L17", "S18", "the gate man raising his hat", move(([4.4, -4.4, 1.6], [5.75, -1.3, 1.7]), ([4.6, -4.0, 1.6], [5.75, -1.3, 1.75]), 34, 36)),
-    ("L18", "S19", "D turning its head to him", move(([0.9, -3.4, 1.7], [1.3, 0, 1.55]), ([1.0, -3.0, 1.7], [1.3, 0, 1.6]), 28, 30)),
-    ("L19", "S20", "D at the gate, the gate swinging open", move(([2.4, -6.4, 1.7], [4.6, -1.3, 1.2]), ([3.2, -6.0, 1.7], [4.8, -1.3, 1.25]), 22, 24)),
-    ("L20", "S21", "D seated alone in an empty mint gondola, cone in hand", move(([-1.3, 3.2, 1.3], [-1.3, 8.0, 1.6]), ([-1.3, 3.6, 1.3], [-1.3, 8.0, 1.7]), 20, 22)),
+    ("L16", "S17", "my face, stunned", move(([-0.7, -2.9, 2.0], [-0.9, 0, 1.9]), ([-0.8, -2.6, 2.0], [-0.9, 0, 1.95]), 28, 30)),
+    ("L17", "S18", "the gate man raising his hat", move(([3.3, -4.4, 2.5], [5.7, -1.3, 1.6]), ([3.5, -4.1, 2.5], [5.7, -1.3, 1.65]), 30, 32)),
+    ("L18", "S19", "D turning its head toward the gate", move(([0.5, -3.6, 2.0], [1.2, 0, 1.9]), ([0.6, -3.3, 2.0], [1.25, 0, 1.95]), 28, 30)),
+    ("L19", "S20", "D beside the gate, the gate swinging open", move(([2.2, -5.3, 2.4], [4.5, -1.3, 2.2]), ([2.4, -5.0, 2.4], [4.55, -1.3, 2.25]), 34, 36)),
+    ("L20", "S21", "D seated alone in the empty mint gondola, cone in hand", [[0, c21a[0], c21a[1], 26], [1, c21b[0], c21b[1], 28]]),
     ("L21", "S22", "wide: the wheel turning, the mint gondola rising; us small at the bottom", move(([-1.3, -17.0, 3.0], [-1.3, 8.0, 5.6]), ([-1.3, -17.0, 3.0], [-1.3, 8.0, 7.2]), 18, 18)),
-    ("L22", "S23", "close at the top: D in the gondola, looking down at us", move(([-1.3, 3.0, 8.0], [-1.3, 8.0, 10.8]), ([-1.3, 3.6, 8.2], [-1.3, 8.0, 10.9]), 26, 28)),
+    ("L22", "S23", "close at the top: D in the gondola, looking down at us", [[0, c23a[0], c23a[1], 26], [1, c23b[0], c23b[1], 28]]),
 ]
 shots = []
 for i, (at, sid, what, cam) in enumerate(SHOTS):
@@ -165,6 +210,7 @@ cues = [
     {"at": "L10", "name": "ring", "on": True},
     {"at": "L11", "name": "ring", "on": False},
     {"at": "L19", "name": "gate", "open": 1.0, "dur": 1.5},
+    {"at": "L02", "name": "pip5"},
     {"at": "L20+0.3", "name": "ride"},
     {"at": "L17", "name": "hat", "up": 1.0, "dur": 0.4},
     {"at": "L18", "name": "hat", "up": 0.0, "dur": 0.4},
@@ -178,7 +224,6 @@ sfx = [
     {"at": "P01", "kind": "click", "db": -17, "dur": 0.1},
     {"at": "P01+1", "kind": "click", "db": -17, "dur": 0.1},
     {"at": "P01+2", "kind": "click", "db": -17, "dur": 0.1},
-    {"at": "P01+3", "kind": "click", "db": -17, "dur": 0.1},
     {"at": "L20+0.15", "kind": "door", "db": -18},
 ]
 story = {
@@ -198,19 +243,21 @@ story = {
     "look": {"style": "closer", "fog": "#bfe6ff", "fog_density": 0, "fog_start": 60.0, "sky": "#8fd3ff", "sky_strength": 1.1,
              "exposure": 0.0, "flash_safe": True,
              "polish": {"emph": ["L01", "L02", "L12", "L14", "L15"], "reveal": ["L10", "L15"], "twist": "L15",
-                        "hold": ["S02", "S04", "S09", "S10a", "S10b", "S10c", "S14", "S15a"]}},
+                        "hold": ["S10a", "S10b", "S10c"]}},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.02, 0.01, -0.01], "saturation": 1.08, "contrast": 1.04,
               "vignette": 0.15, "bloom": 0.12, "grain": 0.008},
     "hud": {"object": "tag", "at": [0.66, 0.8], "size": 0.5},
     "asr_forgive": ["ay bee see dee ee", "ferris", "dee", "ee", "bee", "dee's is", "dee's"],
     "phonemes": {"ay": "ˈAː", "bee": "bˈi", "see": "sˈi", "dee": "dˈi", "ee": "ˈiː", "dee's": "dˈiz", "ferris": "fˈɛɹɪs"},
-    "notags": ["S01a", "S01b", "S03", "S05a", "S05b", "S06", "S07", "S08", "S11", "S12a", "S12b", "S13", "S15a", "S15b", "S16", "S17", "S18", "S19", "S20", "S21", "S22", "S23"],
+    "notags": ["S01a", "S01b", "S03", "S05a", "S05b", "S06", "S07", "S11", "S12a", "S12b", "S13", "S14a", "S14b", "S15a", "S15b", "S16", "S17", "S18", "S19", "S20", "S21", "S22", "S23"],
     "cast": cast,
     "lines": lines,
     "shots": shots,
     "acting": acting,
     "cues": cues,
     "fx": [],
+    "framing_ok": ["S19", "S01b", "S06", "S16", "S21", "S23"],
+    "staging_ok": ["S02", "S04a", "S04b", "S04c", "S05a", "S05b", "S07", "S08", "S09", "S10a", "S10b", "S10c", "S11", "S12a", "S12b", "S13", "S14a", "S14b", "S15a", "S15b", "S17", "S19/c+d", "S19/d+e", "S22/a+b", "S22/b+c"],
     "music": {"root": 57, "mode": "dorian", "bpm": 120, "seed": 142,
               "sections": [
                   {"at": 0, "voices": ["pulse"], "energy": 0.3},
