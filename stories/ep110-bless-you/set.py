@@ -322,7 +322,8 @@ def build(kit, story, tl):
     front = kit.light("front", "SUN", (-10, -30, 20), 1.0, "#ffe6c0", shadow=False)
     front.data.angle = 0.4
     kit.aim(front, (0, 0, 0))
-    for nm, x in (("lt_office", G.OFFICE), ("lt_mkit", G.MKIT), ("lt_dog", G.DOG), ("lt_land", G.LAND), ("lt_kit", G.KIT)):
+    kit.light("lt_office", "POINT", (G.OFFICE, -0.5, 3.2), 300.0, "#fff0d8", size=0.5, shadow=False)
+    for nm, x in (("lt_mkit", G.MKIT), ("lt_dog", G.DOG), ("lt_land", G.LAND), ("lt_kit", G.KIT)):
         kit.light(nm, "POINT", (x, -0.5, 3.2), 520.0, "#fff0d8", size=0.5, shadow=False)
     kit.light("lt_party", "POINT", (G.PARTY, -2.5, 3.5), 300.0, "#fff4dc", size=0.5, shadow=False)
     # Grandpa's room: day, the TV (steady), the streetlight, a cold face fill
@@ -393,11 +394,11 @@ def build(kit, story, tl):
 
     # ------------------------------------------------------------------ the office: glass, a long white table
     ox = G.OFFICE
-    room(kit, ox, kit.plastic("#dff1fb", 0.2, spec=0.7), kit.plastic("#cfd6e0", 0.5, spec=0.3), "office")
+    room(kit, ox, kit.plastic("#b4c7d6", 0.35, spec=0.4), kit.plastic("#aab4c0", 0.5, spec=0.3), "office")
     for k in range(5):
         kit.box(f"office.mull{k}", (0.12, 0.1, 3.5), (ox - 4 + k * 2.0, 3.8, 1.75), plastic("#ffffff", 0.5))
     kit.box("office.rail", (10, 0.1, 0.12), (ox, 3.8, 2.2), plastic("#ffffff", 0.5))
-    kit.box("office.table", (3.6, 1.3, 0.08), (ox, 1.0, 0.78), plastic("#ffffff", 0.3, spec=0.5), bevel=0.02)
+    kit.box("office.table", (3.6, 1.3, 0.08), (ox, 1.0, 0.78), plastic("#b8c0ca", 0.4, spec=0.3), bevel=0.02)
     for tx in (-1, 1):
         kit.box(f"office.tleg{tx}", (0.1, 1.1, 0.74), (ox + tx * 1.6, 1.0, 0.37), plastic("#c9d2dc", 0.4))
     kit.box("office.laptop", (0.5, 0.35, 0.03), (ox - 0.8, 0.9, 0.84), plastic("#4a4f5a", 0.4))
@@ -471,6 +472,8 @@ def build(kit, story, tl):
     # ------------------------------------------------------------------ Grandpa's front room: deep green and cream
     gx = G.GP
     room(kit, gx, plastic("#f2e6c8", 0.9, spec=0.04), kit.planks("#8a5a32", "#74482a", 1.0), "gp", wide=10.0, hgt=3.5)
+    # ceiling (was open: cameras tilting up saw a black void); sits on the wall tops, reaches back past the lens
+    kit.box("gp.ceiling", (10.3, 16.0, 0.1), (gx, -3.0, 3.55), plastic("#efe3c4", 0.95, spec=0.04))
     wain = plastic("#2f6b4a", 0.8, spec=0.08)
     kit.box("gp.wain", (10.0, 0.06, 0.9), (gx, G.WALL_Y - 0.17, 0.5), wain)
     kit.box("gp.wainrail", (10.0, 0.08, 0.06), (gx, G.WALL_Y - 0.17, 0.97), plastic("#e9dcb0", 0.7))
