@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE.parent))
 import layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 13
+REV = 14
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = [], {}
 for ln in orig_lines:
@@ -217,8 +217,8 @@ put("carrier0", "L03", [MX - 4.0, 1.5], 0, expr="grin", arms=[0, 128])
 move("L03", "pc2", x=MX - 3.75, y=1.0, z=1.55)
 beat("carrier0", "L03.1", expr="smile", arms=[0, 128], yaw=0, keep_yaw=True)
 shot("L03", mv([MX - 3.2, -2.6, 1.85], [MX - 4.0, 1.5, 1.6], 42, [MX - 3.4, -1.9, 1.8], [MX - 4.0, 1.5, 1.6], 42), "carbite")
-go("carrier0", "L03.2", [MX - 3.8, 1.5], expr="smile", arms=[0, 0], yaw=90, blend=0.33, keep_yaw=True)
-go("carrier0", "L03.2+0.95", [MX + 1.2, 1.5], expr="smile", arms=[0, 0], yaw=0, blend=0.3)
+go("carrier0", "L03.2", [MX - 4.0, 1.5], expr="smile", arms=[0, 0], yaw=90, blend=0.0, keep_yaw=True)
+go("carrier0", "L03.2+0.95", [MX + 1.2, 1.5], expr="smile", arms=[0, 0], yaw=90, keep_yaw=True)
 move("L03.2", "pc2", z=-60.0)
 shot("L03.2", mv([MX - 3.2, -4.6, 1.5], [MX - 3.2, 1.5, 1.3], 34, [MX + 1.2, -4.6, 1.5], [MX + 1.2, 1.5, 1.3], 34), "carwalk")
 # L04
