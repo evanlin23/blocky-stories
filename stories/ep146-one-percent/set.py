@@ -98,6 +98,7 @@ class Phone:
         self.add_state("dim", "#2c3138", 0.6, lambda P: battery(P, 0, 0.05, 0.17, 0.10, "dim"))
         self.add_state("D", "#bfe6ff", 0.9, self._duck)
         self.add_state("P", "#2e9a50", 0.85, self._call)
+        self.add_state("off", "#0b0c10", 0.15, lambda P: None)
         self.add_state("B", "#0b0c10", 0.2, lambda P: battery(P, 0, 0.0, 0.17, 0.10, "bolt"))
         self.show(None)
 
@@ -269,9 +270,9 @@ def houseboat(kit):
             rot=(ang, 0, 0))
         box(kit, f"gpp{sx}", (0.08, 0.08, 0.8), (sx * 0.62, 2.0, 0.4), RAIL_C, 0.5, 0.1)
     # the tally post: two short teal strokes scratched at hip height (a clear centimetre proud of the post)
-    box(kit, "tallypost", (0.2, 0.2, 1.1), (0.95, 1.55, 0.55), "#8f8470", 0.8, 0.05)
+    box(kit, "tallypost", (0.2, 0.2, 1.1), (0.95, 1.55, 0.55), "#d9d1bc", 0.8, 0.05)
     for k, dx in enumerate((-0.04, 0.04)):
-        box(kit, f"tally{k}", (0.025, 0.012, 0.2), (0.95 + dx, 1.55 - 0.106, 0.62), TEAL, 0.6, 0.05, rot=(0, 0.2 * (1 if k else -1), 0))
+        box(kit, f"tally{k}", (0.05, 0.012, 0.45), (0.95 + dx * 1.9, 1.55 - 0.106, 0.62), TEAL_D, 0.6, 0.05, rot=(0, 0.2 * (1 if k else -1), 0))
     # deck dressing: two deck chairs, potted plants, a little table
     for x, yaw in ((-2.6, 12), (2.7, -14)):
         chair = kit.empty(f"chair{x}", (x, 5.4, G.DECK_Z), None, (0, 0, yaw * D2R))
@@ -315,6 +316,7 @@ def grandma_room(kit):
     box(kit, "gr.rug", (3.0, 2.2, 0.02), (ox, 2.2, 0.01), "#d6453a", 0.9, 0.02)
     fx, fy, fz = G.FLIP
     flip = kit.empty("flip", (fx, fy, fz), None, (0, 0, -12 * D2R))
+    flip.scale = (1.8, 1.8, 1.8)
     box(kit, "flip.base", (0.22, 0.34, 0.04), (0, 0, 0.02), "#3b4048", 0.4, 0.3, parent=flip)
     lid = kit.empty("flip.lid", (0, 0.17, 0.04), flip, (80 * D2R, 0, 0))
     box(kit, "flip.lidb", (0.22, 0.34, 0.04), (0, 0.17, 0), "#3b4048", 0.4, 0.3, parent=lid)
@@ -456,9 +458,9 @@ def animate(kit, story, tl, t, ctx):
         _place(W[who], who, row.get(who, (None, "held", 0, 0, 0, 1.0)), t, shot, camp)
     W["tag"].show(TAG.get(sid, "low"))
     if sid == "S20":
-        W["charger"].location = (G.DEX[0], G.DEX[1] - 0.55, G.DEX[2] + 1.22)
+        W["charger"].location = (G.DEX[0], G.DEX[1] - 0.55, G.DEX[2] + 1.08)
         W["charger"].rotation_euler = (0, 0, math.atan2(camp[0] - G.DEX[0], -(camp[1] - G.DEX[1])))
-        W["charger"].scale = (1.5, 1.5, 1.5)
+        W["charger"].scale = (1.3, 1.3, 1.3)
     else:
         W["charger"].location = (0, -40, -5)
     return {}
@@ -467,7 +469,7 @@ def animate(kit, story, tl, t, ctx):
 # --- the tables (read by animate) ---------------------------------------------------------------------------------
 def _tables():
     A, D, P, B = "A", "D", "P", "B"
-    low_me = lambda *_: (A, "held", 0.35, 1.5, 0.3, 0.95)
+    low_me = lambda *_: (A, "held", 0.35, 1.5, 0.34, 1.0)
     PH.update({
         "S01a": {"dex": (A, "at", G.RAILPH, 0, 0, 1.0)},
         "S01a2": {"dex": (A, "at", G.RAILPH, 0, 0, 1.0)},
@@ -482,12 +484,12 @@ def _tables():
         "S07b": {"dex": (A, "held", 0.5, 1.0, 0.0, 1.0)},
         "S11": {"me": low_me()},
         "S13a": {"me": low_me()},
-        "S13b": {"me": (P, "held", 0.35, 1.5, 0.3, 0.95)},
+        "S13b": {"me": (P, "held", 0.45, 1.22, 0.12, 1.3)},
         "S14a": {"dex": (D, "held", 0.5, 1.08, 0.0, 1.2)},
         "S14b": {"dex": (D, "held", 0.5, 1.0, 0.0, 1.0)},
-        "S15": {"dex": ([(0, A), (0.45, "dim"), (0.7, None)], "held", 0.5, 1.08, 0.0, 1.2)},
-        "S16": {"me": ([(0, A), (0.35, "dim"), (0.6, None)], "held", 0.5, 1.08, 0.0, 1.2)},
-        "S17": {"me": (A, "held", 0.5, 1.12, 0.0, 1.5)},
+        "S15": {"dex": ([(0, A), (0.45, "dim"), (0.7, "off")], "held", 0.5, 1.08, 0.0, 1.2)},
+        "S16": {"me": ([(0, A), (0.35, "dim"), (0.6, "off")], "held", 0.5, 1.15, 0.0, 1.7)},
+        "S17": {"me": (A, "held", 0.5, 0.95, 0.0, 1.4)},
         "S18": {"me": (A, "held", 0.55, 0.98, 0.0, 1.35)},
         "S21": {"me": (B, "held", 0.5, 0.95, 0.0, 1.1)},
     })
