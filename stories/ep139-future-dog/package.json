@@ -7,6 +7,5 @@
   "shape": "go-between",
   "opening": "cost",
   "lane": "warm",
-  "series": "future-call",
-  "hold": "round-1 fixes in (words 2026-11-12): re-voice changed lines, re-time, then round-2 critic and standards. Remove only after both approve."
+  "series": "future-call"
 }
