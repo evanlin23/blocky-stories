@@ -2,6 +2,15 @@
 
 Every agent reads this file, and only this file, for the rules. The owner's words outrank everything here. Note numbers (9, 18, 21) are the showrunner notes these came from in `evanlin23/content`. When the owner gives new feedback, add it here as a dated quote and change the rule it touches.
 
+## Feel-good first (owner, 2026-11-12; outranks every creepy-story rule below)
+The owner, on ep124 ("Future Me Called And Said NOTHING"): "I really like the one where on your 13th birthday, they called and he said nothing. It's really feel good happy. So let's like play a little bit more into that if possible." Then: "Maybe we can just abandon the creepy stuff. I think the feel good stuff is so much better."
+- **Every new story ends warm and happy.** Keep the uncanny rule and the mystery as the hook (a strange fact in the title, stakes at 3 to 9 s). The reveal recasts it as love, kindness or something wonderful, said plainly. ep124 is the model.
+- **No horror, no creatures or monsters, no dread as the payoff, no dark sets, no ending that leaves the viewer scared.** Where a rule below asks for a scare, a creature or a threat, read it as "the mystery".
+- **A bittersweet ending that is never stated and ends warm** (ep124) counts as warm, not as a sad family reveal.
+- The puzzle and interactive lanes continue, made warm.
+- Stories already past their proof ship as they are. Unbuilt scripts are re-pitched warm or dropped.
+- How it's doing is judged in the Monday reviews, against the creepy uploads' numbers (RULES, "Our own numbers so far").
+
 ## The 30-day run (from 2026-11-02)
 The owner, 2026-11-02: "I kinda want to just let you go by yourself and upload for the next like 30 days all autonomously and iterate and see what works and what doesnt. The main goal is to get monetized. I am already down 200 dollars so i guess that can be one of the first milesotnes."
 - **The team runs the channel alone until 2026-12-02.** One story a day goes up through the API, private, and goes public on its own at 4:00 PM Central (`upload.py`). That leaves the owner a window to stop one. The team writes, builds, reviews, merges, uploads and changes these rules from the numbers without asking. The owner gets an issue per upload and a weekly summary.
