@@ -1,0 +1,533 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "four of us got on the ferris wheel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.19,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.534,
+     0.732
+    ],
+    [
+     0.732,
+     1.517
+    ]
+   ]
+  },
+  "L02": {
+   "text": "five got off.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.19,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.19,
+     0.397
+    ],
+    [
+     0.397,
+     0.983
+    ]
+   ]
+  },
+  "L03": {
+   "text": "find the extra one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.155
+    ]
+   ]
+  },
+  "L04": {
+   "text": "ay,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.741,
+   "onset": 0.172,
+   "end": 0.466,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ]
+   ]
+  },
+  "L04b": {
+   "text": "bee,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.724,
+   "onset": 0.172,
+   "end": 0.466,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ]
+   ]
+  },
+  "L04c": {
+   "text": "see,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.707,
+   "onset": 0.19,
+   "end": 0.483,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ]
+   ]
+  },
+  "L04d": {
+   "text": "dee,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.741,
+   "onset": 0.172,
+   "end": 0.448,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ]
+   ]
+  },
+  "L04e": {
+   "text": "ee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.759,
+   "onset": 0.19,
+   "end": 0.552,
+   "chunks": [
+    [
+     0.19,
+     0.552
+    ]
+   ]
+  },
+  "L05": {
+   "text": "i'm bee. three are my cousins.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.509,
+     0.732
+    ],
+    [
+     0.732,
+     1.448
+    ]
+   ]
+  },
+  "L06": {
+   "text": "we bought cones at four o'clock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     1.397
+    ]
+   ]
+  },
+  "L07": {
+   "text": "in this heat, they melt in two minutes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.862
+    ],
+    [
+     0.862,
+     1.621
+    ]
+   ]
+  },
+  "L08": {
+   "text": "you've got one turn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.138
+    ]
+   ]
+  },
+  "L09": {
+   "text": "which one?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.983,
+   "onset": 0.172,
+   "end": 0.776,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ]
+   ]
+  },
+  "L10": {
+   "text": "it's dee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.948,
+   "onset": 0.172,
+   "end": 0.724,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ]
+   ]
+  },
+  "L11": {
+   "text": "four cones are dripping down four wrists.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.879
+    ],
+    [
+     0.879,
+     1.81
+    ]
+   ]
+  },
+  "L12": {
+   "text": "dee's is still frosty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.31
+    ]
+   ]
+  },
+  "L13": {
+   "text": "every shadow points away from the sun.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.069
+    ],
+    [
+     1.069,
+     1.724
+    ]
+   ]
+  },
+  "L14": {
+   "text": "dee's points right at it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.19
+    ]
+   ]
+  },
+  "L15": {
+   "text": "dee got on at the top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.155
+    ]
+   ]
+  },
+  "L16": {
+   "text": "nobody gets on at the top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.19,
+     0.75
+    ],
+    [
+     0.75,
+     1.345
+    ]
+   ]
+  },
+  "L17": {
+   "text": "the man at the gate tips his hat to dee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.707
+    ],
+    [
+     0.707,
+     1.138
+    ],
+    [
+     1.138,
+     1.655
+    ]
+   ]
+  },
+  "L18": {
+   "text": "like he does every day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.328
+    ]
+   ]
+  },
+  "L19": {
+   "text": "dee walks back through the gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.836
+    ],
+    [
+     0.836,
+     1.362
+    ]
+   ]
+  },
+  "L20": {
+   "text": "and gets on alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.086
+    ]
+   ]
+  },
+  "L21": {
+   "text": "at the top, dee waits",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     1.121
+    ]
+   ]
+  },
+  "L22": {
+   "text": "for the next four.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.284
+    ],
+    [
+     0.284,
+     1.0
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,392 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Four of us",
+    "four of us"
+   ],
+   [
+    "got on",
+    "got on"
+   ],
+   [
+    "the Ferris WHEEL.",
+    "the ferris wheel."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "FIVE",
+    "five"
+   ],
+   [
+    "got off.",
+    "got off."
+   ]
+  ]
+ },
+ {
+  "id": "P02",
+  "pause": 0.3,
+  "chunks": []
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Find the",
+    "find the"
+   ],
+   [
+    "EXTRA one.",
+    "extra one."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A.",
+    "ay,"
+   ]
+  ]
+ },
+ {
+  "id": "P04a",
+  "pause": 0.15,
+  "chunks": []
+ },
+ {
+  "id": "L04b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "B.",
+    "bee,"
+   ]
+  ]
+ },
+ {
+  "id": "P04b",
+  "pause": 0.15,
+  "chunks": []
+ },
+ {
+  "id": "L04c",
+  "who": "narrator",
+  "chunks": [
+   [
+    "C.",
+    "see,"
+   ]
+  ]
+ },
+ {
+  "id": "P04c",
+  "pause": 0.15,
+  "chunks": []
+ },
+ {
+  "id": "L04d",
+  "who": "narrator",
+  "chunks": [
+   [
+    "D.",
+    "dee,"
+   ]
+  ]
+ },
+ {
+  "id": "P04d",
+  "pause": 0.15,
+  "chunks": []
+ },
+ {
+  "id": "L04e",
+  "who": "narrator",
+  "chunks": [
+   [
+    "E.",
+    "ee."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I'm B.",
+    "i'm bee."
+   ],
+   [
+    "Three are my COUSINS.",
+    "three are my cousins."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "We bought cones",
+    "we bought cones"
+   ],
+   [
+    "at four o'CLOCK.",
+    "at four o'clock."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In this heat,",
+    "in this heat,"
+   ],
+   [
+    "they melt",
+    "they melt"
+   ],
+   [
+    "in two MINUTES.",
+    "in two minutes."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "You've got",
+    "you've got"
+   ],
+   [
+    "one TURN.",
+    "one turn."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Which ONE?",
+    "which one?"
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 3.5,
+  "chunks": []
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It's D.",
+    "it's dee."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Four cones",
+    "four cones"
+   ],
+   [
+    "are dripping",
+    "are dripping"
+   ],
+   [
+    "down four WRISTS.",
+    "down four wrists."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "D's is still",
+    "dee's is still"
+   ],
+   [
+    "FROSTY.",
+    "frosty."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every shadow",
+    "every shadow"
+   ],
+   [
+    "points AWAY",
+    "points away"
+   ],
+   [
+    "from the sun.",
+    "from the sun."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "D's points",
+    "dee's points"
+   ],
+   [
+    "right AT it.",
+    "right at it."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "D got on",
+    "dee got on"
+   ],
+   [
+    "at the TOP.",
+    "at the top."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Nobody gets on",
+    "nobody gets on"
+   ],
+   [
+    "at the top.",
+    "at the top."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The man at the gate",
+    "the man at the gate"
+   ],
+   [
+    "tips his HAT",
+    "tips his hat"
+   ],
+   [
+    "to D.",
+    "to dee."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Like he does",
+    "like he does"
+   ],
+   [
+    "every DAY.",
+    "every day."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "D walks",
+    "dee walks"
+   ],
+   [
+    "back through",
+    "back through"
+   ],
+   [
+    "the GATE.",
+    "the gate."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And gets on",
+    "and gets on"
+   ],
+   [
+    "ALONE.",
+    "alone."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At the top,",
+    "at the top,"
+   ],
+   [
+    "D waits",
+    "dee waits"
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "for the",
+    "for the"
+   ],
+   [
+    "next FOUR.",
+    "next four."
+   ]
+  ]
+ }
+]
