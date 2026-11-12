@@ -87,6 +87,12 @@ Not measured: a whole real story in v3. That waits for the engine PR and the own
 - **The revision (one round):** stickers removed; hollow and toowide added; smug (one brow flies up), deadpan
   (flat lids, pin pupils) and scheming (knitted brows, toothy grin) pulled apart; Gus's mustache rebuilt as a walrus
   bar between eyes and mouth; Brick in a red mohawk (a block beard read as a neck brace on his tiny head); the bob, curtains and flat-top given real volume.
-- Round 2 verdicts: CRITICS2_PLACEHOLDER
+- **Round 2: both "Stands out: yes."** The phone scroller now tells all six apart by hair alone, reads the faces as
+  teen and up, and finds hollow and toowide "creepy in the good way". The stock-look reviewer says five of six read
+  as an ownable look in one frame.
+- **Left open for the owner or the engine PR** (not fixed here, as the brief allows one revision): Gus's mustache
+  still crowds his open mouths; Dot's glasses crowd her eyes and her disgusted face is weak; nervous is close to
+  neutral at 300 px; Brick's small head reads closest to the stock look (his tiny head is his one loud feature, so
+  that's a call for the owner); a few library styles (buzz, top knot, curtains) are still slim next to the rest.
 
 About the acting test: both sides use the same camera; the v3 head is bigger, which is the change.
