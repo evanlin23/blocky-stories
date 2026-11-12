@@ -205,16 +205,16 @@ shot("S03", "L03", ocam(L2 + 0.15, 6.6, 0.55, 5.0, 30, az=0, el=6, push=0.03, ar
 move("lou", "L03>", L2, 5.6, blend=0.3)
 for i in range(4):
     chg("lou", f"L03+{0.3 + i * 0.7:.2f}", blend=0.35, arms=(75, 75) if i % 2 == 0 else (110, 110))
-cue("L03", "f3", x=0.62, y=-0.4, v=1.0, w=1.0, s=1.3)
+cue("L03", "f3", x=0.9, y=-0.4, v=1.0, w=1.0, s=1.3)
 shot("S04", "L04", fcam(L2, 0.7, z=G.STAND_Z, d=3.8, lens=30, f=0.46, dx=0.45, az=180, push=0.04), {
     "lou": ps(L2, 0.7, **WALL, yaw=180, expr="laugh", arms=(0, 0), head=(0, 0))})
 chg("lou", "L04.1", blend=0.3, arms=(150, 0))
 chg("lou", "L04.1+0.5", blend=0.3, arms=(100, 0))
 chg("lou", "L04.1+1.0", blend=0.3, arms=(150, 0))
-cue("L04", "f3", x=0.8, y=0.7, v=1.0, w=1.0, s=1.5)
+cue("L04", "f3", x=0.85, y=0.7, v=1.0, w=1.0, s=1.0)
 cue("L04>", "f3", v=0.0, dur=0.4)
 shot("S06", "L06", fcam(L4, G.BLOCK[1], z=BLOCK_TOP, d=3.6, lens=30, f=0.46, az=48, el=8, push=0.05, arc=1.0), {
-    "me": ps(L4, G.BLOCK[1], z=BLOCK_TOP, yaw=235, expr="neutral", arms=(8, 8), head=(0, 0))})
+    "me": ps(L4, G.BLOCK[1], z=BLOCK_TOP, yaw=55, expr="neutral", arms=(8, 8), head=(0, 0))})
 
 # ============================================================================================ 03 the splash
 shot("S08a", "L08", ocam(L4, 4.8, 0.5, 4.0, 30, az=0, el=5, push=0.04, arc=1.5), {
@@ -223,7 +223,7 @@ move("me", "L08.2", L4, 4.4, blend=0.5)
 for i in range(2):
     chg("me", f"L08+{0.3 + i * 0.6:.2f}", blend=0.35, arms=(75, 75) if i % 2 == 0 else (110, 110))
 shot("S08b", "L08.2", FARCAM, {})
-cue("L08.2", "f0", mode="pin", x=L4 + 0.1, y=13.2, v=1.0, s=2.0)
+cue("L08.2", "f0", mode="pin", x=L4 + 0.1, y=13.2, v=1.0, s=1.35)
 shot("S09", "L09", ocam(G.BOARD[0], G.BOARD[1], 1.7, 3.5, 24, az=180, el=2, push=0.05, arc=1.5), {})
 cue("L09", "bn", a=1, b=0)
 cue("L09", "b2", v2=1.0, dur=0.4)
@@ -235,11 +235,11 @@ shot("S11a", "L11", fcam(L4, 0.7, z=G.STAND_Z, d=3.0, lens=30, f=0.36, az=180, p
 shot("S11b", "L11.2", FARCAM, {})
 cue("L11.2", "f0", v=0.0, dur=0.35)
 cue("L11.2", "rg", u=1.0, dur=1.2)
-shot("S12", "L12", ocam(L4, 6.4, 0.0, 8.8, 28, az=0, el=52, push=0.03, arc=1.0), {
+shot("S12", "L12", ocam(L4, 6.8, 0.0, 7.4, 28, az=0, el=52, push=0.03, arc=1.0), {
     "me": ps(L4, 6.0, **SW, yaw=180)})
 move("me", "L12>", L4, 9.4, blend=0.4)
 stroke("me", "L12", 3, dt=0.6)
-cue("L12", "f0", mode="chase", D=3.2, v=1.0, s=1.3, dur=0.3)
+cue("L12", "f0", mode="chase", D=2.6, v=1.0, s=0.9, dur=0.3)
 cue("L12", "bn", a=2, b=1)
 shot("S13", "L13", [[0, [2.6, -6.0, 3.3], [-0.9, 6.5, 0.2], 28], [1, [2.5, -5.6, 3.2], [-0.9, 6.5, 0.2], 28]], {
     "me": ps(L4, 1.4, **SW, yaw=180),
@@ -264,9 +264,9 @@ cue("L15.2+0.3", "f2", x=L4 - 0.8, y=1.0, v=1.0, s=1.0, dur=0.12)
 cue("L15.2+0.9", "f2", v=0.0, dur=0.3)
 shot("S16", "L16", ocam(L4, 0.9, 0.45, 3.0, 30, az=180, el=14, push=0.04, arc=1.0), {
     "me": ps(L4, 0.8, **WALL, yaw=180, expr="neutral", head=(0, 0), lean=0)})
-cue("L16", "f1", x=L4 + 0.55, y=0.95, v=1.0, s=1.3, dur=0.12)
+cue("L16", "f1", x=L4 + 0.75, y=0.95, v=1.0, s=1.3, dur=0.12)
 cue("L16+0.55", "f1", v=0.0, dur=0.3)
-cue("L16+0.25", "f2", x=L4 - 0.55, y=1.0, v=1.0, s=1.3, dur=0.12)
+cue("L16+0.25", "f2", x=L4 - 0.75, y=1.0, v=1.0, s=1.3, dur=0.12)
 cue("L16+0.75", "f2", v=0.0, dur=0.3)
 shot("S17", "L17", fcam(L2, -1.4, z=DK, d=3.6, lens=30, f=0.46, dx=0.35, az=180, push=0.05), {
     "lout": ps(L2, -1.4, z=DK, yaw=190, expr="laugh", arms=(35, 0), side=(78, 0), head=(-14, 0))})

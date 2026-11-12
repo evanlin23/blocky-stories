@@ -152,7 +152,7 @@ def build_foam(kit, nm, n=11, r0=0.22, seed=0):
     drops = []
     for i in range(6):
         a = 2 * math.pi * (i + 0.2 * seed) / 6
-        o = kit.sphere(f"{nm}.d{i}", 0.055 * (r0 / 0.22), (0, 0, 0.3), wm, root, seg=8)
+        o = kit.sphere(f"{nm}.d{i}", 0.03 * (r0 / 0.22), (0, 0, 0.3), wm, root, seg=8)
         noshadow(o)
         drops.append((o, 0.2 * math.cos(a) * (r0 / 0.22), 0.2 * math.sin(a) * (r0 / 0.22), i))
     W.setdefault("foam", {})[nm] = (root, kids, drops, seed)
@@ -175,7 +175,7 @@ def foam_pose(nm, x, y, v, s, t):
         o.scale = (sc, sc, 0.35 * sc)
     for o, bx, by, i in drops:
         u = (t * 1.2 + i / 6.0 + seed * 0.13) % 1.0
-        o.location = (bx * (0.8 + 1.6 * u), by * (0.8 + 1.6 * u), 0.05 + 0.7 * 4 * u * (1 - u))
+        o.location = (bx * (0.8 + 0.8 * u), by * (0.8 + 0.8 * u), 0.05 + 0.4 * 4 * u * (1 - u))
 
 
 # ------------------------------------------------------------------------------------------------ world
@@ -290,7 +290,7 @@ def build(kit, story, tl):
         kit.box(f"sign.l{j}", (0.22, 0.02, 0.06), (sx - 0.34, yf + 0.03, zz - 0.07), navy, rot=(0, -0.35, 0), bevel=0.02)
         for k in range(5):     # a wave line under each swimmer
             kit.box(f"sign.w{j}{k}", (0.12, 0.016, 0.035), (sx - 0.36 + k * 0.17, yf + 0.016, zz - 0.17 + (0.03 if k % 2 else 0.0)),
-                    mat(kit, "#ffffff", 0.5), rot=(0, 0.35 if k % 2 else -0.35, 0))
+                    kit.emit("#ffffff", 1.0, "signwave"), rot=(0, 0.35 if k % 2 else -0.35, 0))
     # (the sign's glyph is the rule's picture: two swimmers, one lane)
     W["sign_pos"] = (sx, sy)
 
@@ -333,7 +333,7 @@ def build(kit, story, tl):
     # the duck towel on lane four's block: yellow, an orange beak mark, soaked (darker, hanging over the edge, dripping)
     bx, by = G.BLOCK
     top = G.DECK + G.BLOCK_H + 0.03
-    yel = mat(kit, "#f2b81f", 0.3, 0.45)
+    yel = mat(kit, "#f7d02a", 0.3, 0.45)
     W["towel"] = kit.empty("towel", (bx, by, 0))
     kit.box("towel.a", (0.52, 0.4, 0.13), (0, -0.04, top + 0.065), yel, W["towel"], bevel=0.03)
     kit.box("towel.f", (0.52, 0.03, 0.22), (0, 0.205, top - 0.04), mat(kit, "#e8b222", 0.4, 0.3), W["towel"], bevel=0.01)
@@ -452,11 +452,16 @@ def animate(kit, story, tl, t, ctx):
             r = 0.35 + 1.5 * u
             ob.location = (G.L4 + 0.1, 13.2, 0.02 - 0.05 * u)
             ob.scale = (r, r, 0.25)
+    hide_tag = False
     # no corner tag on the towel's close-ups (the board itself is in frame)
     for sh in tl["shots"]:
         if sh["id"] in ("S23a", "S23b") and sh["start"] - 1e-6 <= t < sh["end"]:
-            for ob in W["tag_root"].children_recursive:
-                ob.hide_render = True
+            hide_tag = True
+    for ob in W["tag_root"].children_recursive:
+        if hide_tag:
+            ob.hide_render = True
+        elif ob.name in ("tag.edge", "tag.plate"):
+            ob.hide_render = False
     # the duck towel, its puddle and its drip exist from the cue "tw" (it is lost until L23)
     tw = sample("tw", tl, t, {"v": 0.0})["v"] > 0.5
     for ob in W["towel_objs"]:
