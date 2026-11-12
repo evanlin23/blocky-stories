@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L28
@@ -104,7 +104,7 @@ def cue(at, name, **kw):
     cues.append({"at": at, "name": name, **kw})
 
 
-DOG = dict(x=0.0, y=-80.0, z=0.0, yaw=0.0, sit=0.0, lie=0.0, up=0.0, hy=0.0, hp=0.0, tongue=0.0, wag=0.0)
+DOG = dict(x=0.0, y=-80.0, z=0.0, yaw=0.0, sit=0.0, lie=0.0, up=0.0, hy=0.0, hp=0.0, tongue=0.0, wag=0.0, lean=0.0)
 
 
 def dog(at, glide=False, dur=0.0, **kw):
@@ -341,10 +341,10 @@ key("theo", "L37.2", expr="nervous", arms=[0, 0], side=[20, 20], head=[0, 0], bl
 HUG = (TX, TY - 0.62)
 cue("L40", "squat_theo", s=1.0, dur=0.6)
 key("theo", "L40", (TX, TY, -0.32), yaw=0, expr="smile", arms=[34, 34], side=[0, 0], head=[0, 8], blend=0.6)
-key("theo", "L40+0.8", arms=[70, 70], side=[-50, -50], expr="smile", blend=0.4)
+key("theo", "L40+0.8", arms=[42, 42], side=[-40, -40], expr="smile", blend=0.4)
 dog("L40", glide=False, x=TX - 0.6, y=TY - 0.8, z=0.0, sit=1.0, yaw=0)
 dog("L40+0.2", glide=True, x=TX - 0.3, y=TY - 0.95, z=0.4, sit=0.0, up=0.0, yaw=0, hp=-8.0)
-dog("L40+0.65", glide=True, x=HUG[0], y=HUG[1], z=0.0, sit=1.0, up=0.0, yaw=0, hp=0.0, tongue=1.0, wag=1.0)
+dog("L40+0.65", glide=True, x=HUG[0], y=HUG[1], z=0.0, sit=1.0, up=0.0, yaw=0, hp=0.0, tongue=1.0, wag=1.0, lean=-15.0)
 shot("S40", "L40", C(TX - 0.2, TY - 0.4, 0.85, 2.0, 0, 34, cz=1.0))
 key("theo", "L41", expr="smile")
 mouth("theo", "L41", "L41>", 0.25)
@@ -360,15 +360,15 @@ HX, HY = G.HOUSE
 cue("L46", "squat_theo", s=0.0)
 cut("theo", "L46", (HX + 0.55, G.PORCH_Y, 0.3), yaw=0, expr="smile", arms=[0, 0], side=[0, 0], head=[0, 0])
 cut("me", "L46", (HX - 0.55, G.PORCH_Y, 0.3), yaw=0, expr="smile", arms=[0, 0], side=[0, 0], head=[0, 0])
-dog("L46", glide=False, x=HX, y=G.PORCH_Y - 1.1, z=0.26, sit=1.0, up=0.0, yaw=0, hp=0.0, tongue=1.0, wag=1.0)
+dog("L46", glide=False, x=HX, y=G.PORCH_Y - 1.1, z=0.26, sit=1.0, up=0.0, yaw=0, hp=0.0, tongue=1.0, wag=1.0, lean=0.0)
 cue("L46", "leash", on=0.0)
 shot("S46", "L46", C(HX, G.PORCH_Y, 1.55, 2.0, 0, 32, cz=1.55))
 shot("S48", "L48", C(HX - 0.25, G.PORCH_Y - 1.1, 0.75, 1.2, 0, 34, cz=0.75))
 
 # --------------------------------------------------------------------------------------------- 11 the reveal (L44)
 cue("L44", "squat_theo", s=1.0, dur=0.1)
-cut("theo", "L44", (TX, TY, -0.32), yaw=0, expr="laugh", arms=[70, 70], side=[-50, -50], head=[0, 6])
-dog("L44", glide=False, x=HUG[0], y=HUG[1], z=0.0, sit=1.0, up=0.0, yaw=0, hp=0.0, tongue=1.0, wag=1.0)
+cut("theo", "L44", (TX, TY, -0.32), yaw=0, expr="laugh", arms=[42, 42], side=[-40, -40], head=[0, 6])
+dog("L44", glide=False, x=HUG[0], y=HUG[1], z=0.0, sit=1.0, up=0.0, yaw=0, hp=0.0, tongue=1.0, wag=1.0, lean=-15.0)
 cut("me", "L44", (TX - 0.95, TY), yaw=0, expr="warm", head=[0, 0], arms=[0, 0], side=[0, 0])
 shot("S44a", "L44", C(TX - 0.35, TY - 0.2, 1.1, 1.9, 0, 34, cz=1.3))
 cut("me", "L44.2", (TX + 0.95, TY + 0.9), yaw=0, expr="warm", head=[0, 0], arms=[0, 0], side=[0, 0])
@@ -379,7 +379,7 @@ shot("S44c", "L44.5", C(TX + 0.2, TY - 0.7, 0.8, 1.5, 4, 34, cz=0.95))
 # --------------------------------------------------------------------------------------------- 12 home (L49)
 cue("L49", "sit_me", s=1.0)
 cut("me", "L49", ME, yaw=0, expr="warm", head=[0, 0], arms=[35, 35], side=[0, 0], lean=0)
-dog("L49", x=G.CHAIR2[0], y=G.CHAIR2[1], z=G.SEAT_H, sit=1.0, hy=30.0, wag=0.0, tongue=0.0)
+dog("L49", x=G.CHAIR2[0], y=G.CHAIR2[1], z=G.SEAT_H, sit=1.0, hy=30.0, wag=0.0, tongue=0.0, lean=0.0)
 shot("S49", "L49", [[0, [-0.45, -0.1, 0.95], [-0.35, 2.4, 1.12], 34], [1, [-0.42, 0.2, 0.95], [-0.35, 2.4, 1.14], 34]])
 
 # ----------------------------------------------------------------------------------------------- finish

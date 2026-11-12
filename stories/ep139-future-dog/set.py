@@ -278,7 +278,7 @@ def build_dog(kit, name, parent=None):
 
 
 DOGKEYS = {"x": 0.0, "y": -80.0, "z": 0.0, "yaw": 0.0, "sit": 0.0, "lie": 0.0, "up": 0.0, "hy": 0.0, "hp": 0.0,
-           "tongue": 0.0, "wag": 0.0}
+           "tongue": 0.0, "wag": 0.0, "lean": 0.0}
 
 
 def dog_state(tl, t):
@@ -313,7 +313,7 @@ def dog_state(tl, t):
 def pose_dog(d, st, t, sneeze_u, moving):
     root, bg = d["root"], d["bodyg"]
     root.location = (st["x"], st["y"], st["z"])
-    root.rotation_euler = (0, 0, st["yaw"] * D2R)
+    root.rotation_euler = (st.get("lean", 0.0) * D2R, 0, st["yaw"] * D2R)
     sit, lie, up = st["sit"], st["lie"], st["up"]
     pitch = -0.78 * sit - 1.15 * up
     bg.rotation_euler = (pitch, 0, 0)
