@@ -1,0 +1,641 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "If you sleep on someone else's pillow, you dream their dream.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.155,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.768
+    ],
+    [
+     0.768,
+     1.397
+    ],
+    [
+     1.483,
+     1.81
+    ],
+    [
+     1.81,
+     2.534
+    ]
+   ]
+  },
+  "L02": {
+   "text": "I grabbed my stepdad's by mistake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     1.0
+    ],
+    [
+     1.0,
+     1.707
+    ]
+   ]
+  },
+  "L03": {
+   "text": "My cousin borrowed Grandma's and dreamed crosswords all night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.293
+    ],
+    [
+     1.293,
+     2.069
+    ],
+    [
+     2.069,
+     2.69
+    ]
+   ]
+  },
+  "L04": {
+   "text": "My buddy napped on his dog's bed. squirrels. For a week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     0.879
+    ],
+    [
+     0.879,
+     1.466
+    ],
+    [
+     1.561,
+     1.914
+    ],
+    [
+     1.948,
+     2.552
+    ]
+   ]
+  },
+  "L06": {
+   "text": "When I got to his place, I did my thing. Knock. Knock. dad? The door was wide open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.603,
+   "onset": 0.155,
+   "end": 3.414,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.776
+    ],
+    [
+     0.802,
+     0.974
+    ],
+    [
+     0.974,
+     1.448
+    ],
+    [
+     1.517,
+     2.069
+    ],
+    [
+     2.112,
+     2.362
+    ],
+    [
+     2.388,
+     2.612
+    ],
+    [
+     2.612,
+     3.414
+    ]
+   ]
+  },
+  "L07": {
+   "text": "He says it's the dumbest thing I do.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.647
+    ],
+    [
+     0.647,
+     1.069
+    ],
+    [
+     1.069,
+     1.586
+    ]
+   ]
+  },
+  "L08": {
+   "text": "That night, his dream was his front hall. Knock. Knock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.439,
+     0.768
+    ],
+    [
+     0.768,
+     0.948
+    ],
+    [
+     0.948,
+     1.431
+    ],
+    [
+     1.526,
+     2.31
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Somebody outside yelled, dad?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.19,
+     0.707
+    ],
+    [
+     0.707,
+     0.897
+    ],
+    [
+     0.922,
+     1.379
+    ]
+   ]
+  },
+  "L10": {
+   "text": "And Dad just sat on the stairs, smiling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.397,
+     0.664
+    ],
+    [
+     0.664,
+     1.069
+    ],
+    [
+     1.112,
+     1.759
+    ]
+   ]
+  },
+  "L12": {
+   "text": "He didn't open it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.069
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Next night, the same hall. Knock. Knock. dad? He didn't move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     1.052
+    ],
+    [
+     1.121,
+     1.534
+    ],
+    [
+     1.569,
+     1.793
+    ],
+    [
+     1.819,
+     2.034
+    ],
+    [
+     2.034,
+     2.569
+    ]
+   ]
+  },
+  "L17": {
+   "text": "The third night, I walked to the door myself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.629,
+     0.922
+    ],
+    [
+     0.922,
+     1.172
+    ],
+    [
+     1.172,
+     1.81
+    ]
+   ]
+  },
+  "L18": {
+   "text": "And Dad said, Don't. I like this part.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.603
+    ],
+    [
+     0.638,
+     0.879
+    ],
+    [
+     0.931,
+     1.172
+    ],
+    [
+     1.172,
+     1.776
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Right through the door: Knock. Knock. dad?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.707
+    ],
+    [
+     0.759,
+     1.172
+    ],
+    [
+     1.207,
+     1.707
+    ]
+   ]
+  },
+  "L20": {
+   "text": "And I knew the voice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.155,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.103
+    ]
+   ]
+  },
+  "L21": {
+   "text": "It was mine. At sixteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.638,
+     1.431
+    ]
+   ]
+  },
+  "L22": {
+   "text": "My first week in his house, I got locked out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.052
+    ],
+    [
+     1.103,
+     1.345
+    ],
+    [
+     1.345,
+     2.017
+    ]
+   ]
+  },
+  "L23": {
+   "text": "I'd only ever called him by his name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     0.983
+    ],
+    [
+     0.983,
+     1.724
+    ]
+   ]
+  },
+  "L24": {
+   "text": "So I knocked twice and yelled, dad?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.776
+    ],
+    [
+     0.776,
+     1.052
+    ],
+    [
+     1.077,
+     1.534
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Every night, he dreams the first time I called him dad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     1.008
+    ],
+    [
+     1.008,
+     1.457
+    ],
+    [
+     1.457,
+     1.715
+    ],
+    [
+     1.715,
+     2.345
+    ]
+   ]
+  },
+  "L27": {
+   "text": "So this morning, I knocked on the kitchen door. Knock. Knock. dad?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     0.905
+    ],
+    [
+     0.905,
+     1.034
+    ],
+    [
+     1.034,
+     1.621
+    ],
+    [
+     1.715,
+     2.19
+    ],
+    [
+     2.224,
+     2.741
+    ]
+   ]
+  },
+  "L32": {
+   "text": "And tonight, I'm borrowing his pillow again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.56,
+     1.008
+    ],
+    [
+     1.008,
+     1.345
+    ],
+    [
+     1.345,
+     1.845
+    ]
+   ]
+  }
+ }
+}
