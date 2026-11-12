@@ -13,8 +13,13 @@ You judge whether this story will hold a viewer for two minutes and make them co
 Write `stories/<name>/reviews/r<round>-critic.md`, in under 350 words: a line `Verdict: approve`, `Verdict: revise` or `Verdict: kill`, the scores, the panel, then numbered must-fixes with line id, shot or time and the exact change. Approve at an average of 7 or more with no score under 5 and nothing that must change. Kill only when the creature or the story can't be saved in one round. Scratch files go in the scratchpad, never the repo.
 
 ## The 2026-11-03 reset (RULES.md)
-Read RULES.md "The 2026-11-03 reset" first. length split between 60 to 90 s and 120 to 150 s (a test), a relatable want or fight with a creepy or fun rule, at most one sad family reveal in three, rule spoken over a close-up in the first second, the rule meter on screen the whole time, a cut every 1 to 2 s, a bright look, a loop ending, a 3 to 7 word title with one emoji, and a one-word comment pin.
+Read RULES.md "The 2026-11-03 reset" first. length split between 60 to 90 s and 120 to 150 s (a test), a relatable want or fight with a creepy or fun rule, at most one sad family reveal in three, rule spoken over a close-up in the first second, the rule meter on screen the whole time, a cut every 1 to 2 s, a bright look, a loop ending, a 3 to 7 word title with one emoji, and a pin that asks a real question about the twist (since 2026-11-12).
 Score each reset item. A batch where more than a third end on a sad family reveal, is revise.
+
+**The 2026-11-12 bar (RULES.md: "Optimize for viewer satisfaction", "The first 8 seconds and the pin", "Eerie and mystery, fewer monsters, more warm endings"):** score three more lines.
+- **Satisfaction:** would a viewer be glad they watched, and want the next one? Does the ending pay off what the title and first second promised, plainly? Under 6 means revise.
+- **The first 8 seconds:** by 0:05 is it about me/mine, or does the viewer have a job? A catalogue of strangers or backstory before 0:15, or no stakes beat by 0:09, is a must-fix.
+- **The ending:** for a warm reveal, does it land as love or kindness and end warm (score it in place of the scare)? For an eerie one, does it keep its chill? A pin that's a keyword ("Comment WORD if…") rather than a real question about the twist is a must-fix.
 
 **Phone-size pass (2026-11-03 drops):** look at every key still at about 300 px wide. Revise if the picture is murky, the rule marker doesn't read as what it is, a face reads as the wrong person or gender, or a head is cropped.
 

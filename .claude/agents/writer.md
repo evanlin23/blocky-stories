@@ -36,4 +36,14 @@ Apply the named notes to `script.md` and `package.json` only, and say which line
 Report: the variety table, each story's slug, title and word count, and anything you weren't sure about. Keep the report under 300 words. Scratch files go in the scratchpad, never the repo.
 
 ## The 2026-11-03 reset (RULES.md)
-Read RULES.md "The 2026-11-03 reset" first. length split between 60 to 90 s and 120 to 150 s (a test), a relatable want or fight with a creepy or fun rule, at most one sad family reveal in three, rule spoken over a close-up in the first second, the rule meter on screen the whole time, a cut every 1 to 2 s, a bright look, a loop ending, a 3 to 7 word title with one emoji, and a one-word comment pin.
+Read RULES.md "The 2026-11-03 reset" first. length split between 60 to 90 s and 120 to 150 s (a test), a relatable want or fight with a creepy or fun rule, at most one sad family reveal in three, rule spoken over a close-up in the first second, the rule meter on screen the whole time, a cut every 1 to 2 s, a bright look, a loop ending, a 3 to 7 word title with one emoji, and a pin that asks a real question about the twist (since 2026-11-12, below).
+
+## The 2026-11-12 bar (RULES.md: "Optimize for viewer satisfaction", "Eerie and mystery, fewer monsters, more warm endings", "The first 8 seconds and the pin")
+These outrank older lines above where they differ.
+- **The mix:** about half the batch ends on a warm reveal, ep124's kind (creepy at first, recast as love or kindness, plainly said, ending warm, nothing stated as death or illness); the rest stay eerie and keep their chill. At most one creature in the batch, and only when it passes both creature critics; prefer a person or an object made wrong. Add a column to the variety table: "ends warm or eerie".
+- **Lanes to fill:** one or two ultra-short puzzles (30 to 45 s, a countable or checkable answer, loopable, ep62's shape), the interactive lane (RULES → The interactive lane; both answers may be kind), and at least one repeatable format the next batch can number (#2, #3).
+- **The first 8 seconds:** the rule is sentence one with its stakes; a picture of the rule by 0:02; by 0:05 it's about me/mine or the viewer has a job (find, count, choose); at most 2 or 3 examples, each a joke or small payoff; no backstory or catalogue of strangers before 0:15; a stakes-raising beat at 3 to 9 s.
+- **The engine of the warm ones:** a small, slightly silly detail planted early that becomes the key at the end, and clock times said aloud on a countdown. Sound words ("Tick." "Ding.") are spoken and captioned.
+- **The title** states one strange fact ("Future Me Called And Only Asked For The DOG"). At most one ban or warning title or opening in six.
+- **The pin** is a real question about the twist, with one answer someone could argue for. Puzzle and interactive stories hold 3 to 4 s on the question in the shot plan.
+- **Ask of every script:** would a viewer be glad they watched, and want the next one? The title and first second promise one thing, and the ending pays it off plainly.

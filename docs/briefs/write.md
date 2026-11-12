@@ -21,6 +21,7 @@ The owner: "We shouldn't upload anything that isnt good." Sunk cost never counts
    - Movie-level premises from proven engines, never a specific work.
    - **Creature-light by default** (audit decision 4): a person made wrong, or a creature never fully shown. At most one full creature reveal in the batch, and its card names why it's worth it.
    - Plan every beat so faces and hands read at phone size: framing and faces were the most common blockers in batches 7 to 9.
+   - **The 2026-11-12 bar** (writer.md, its last section): about half warm reveals (ep124's kind) beside eerie ones; one or two ultra-short puzzles at 30 to 45 s; the interactive lane; one repeatable format; by 0:05 me/mine or a job for the viewer; no backstory before 0:15; fact titles; a real-question pin.
 3. **Panel.** Run a blind panel of fresh `critic` agents (model "opus") on the pitches' first lines and premises, as batch 10 did. Keep the best __N__. The batch rules in writer.md apply: no two share a setting, creature, first-line type, ending shape or kind of warmth, and the openings are spread across shapes.
 4. **Script.** Have the writer script, plan and package each one. Each package.json has `"hold": "batch __BATCH__: scripts only, not built yet"`. Every title has exactly one CAPS word and one emoji at the end. Use US English.
 5. **Check.** Run one `standards` agent (model "opus") over the batch for originality against every earlier story, fiction, IP and kids. Apply its must-fixes through the writer once.
