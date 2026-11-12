@@ -6,6 +6,5 @@
   "cover_s": 37.4,
   "shape": "rehearsal",
   "opening": "count",
-  "lane": "experiment",
-  "hold": "staging yaw (2026-11-12): Mom flips 58 deg in 1 frame at S34 28.37 s, me 126 deg in 2 frames at S57 45.07 s; fix job, then a new final qa"
+  "lane": "experiment"
 }

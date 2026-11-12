@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 9,
+ "rev": 10,
  "staging_ok": [
   "S09/background crowd at the frame edges behind Lund, out of focus, nobody touches",
   "S11/background crowd at the frame edges behind Lund, out of focus, nobody touches",
@@ -5253,11 +5253,18 @@
     "expr": "worried"
    },
    {
+    "at": "L26+0.05",
+    "yaw": 127,
+    "blend": 0.25
+   },
+   {
     "at": "L26+0.3",
     "pos": [
      1.4,
      5.3
-    ]
+    ],
+    "yaw": 127,
+    "keep_yaw": true
    },
    {
     "at": "L26.2",
@@ -5301,7 +5308,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "yaw": 180,
+    "yaw": 144,
     "expr": "worried"
    },
    {
@@ -5752,7 +5759,9 @@
      -2.4,
      0.2,
      0.0
-    ]
+    ],
+    "yaw": 150,
+    "keep_yaw": true
    },
    {
     "at": "L16.1-0.1",
