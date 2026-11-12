@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 9
+REV = 10
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -320,10 +320,10 @@ glass_at("L17", "me2", expr="serious", pos=(2.4, G.GY - 0.75), arms=[0, 0])
 gshot("S17", "L17", [BX, G.GY, 1.05], 17, push=0.0, dy=-0.4, cz=1.75, hold=True, fr=0.85)
 show("L18", "dre")
 dre_at("L18", 90, "neutral")
-shot("S18", "L18", camp([G.GCAM[0], G.GY - 0.4, 1.75], [BX, G.GY, 1.05], 21), hold=True)
+shot("S18", "L18", camp([G.GCAM[0], G.GY - 0.4, 1.75], [BX, G.GY, 1.05], 21, pos2=[G.GCAM[0] - 0.12, G.GY - 0.4, 1.75]), hold=True)
 show("L19", "none")
 cue("L19", "board", v=14.0, flip=0.0)
-gshot("S19", "L19", [-4.9, G.BOARD[1] + 0.35, 1.1], 44, push=0.0, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.4)
+gshot("S19", "L19", [-4.9, G.BOARD[1] + 0.35, 1.1], 44, push=0.25, dy=0.0, cz=1.75, dist=1.2, hold=True, fr=0.4)
 show("L20", "me")
 cue("L20", "board", v=0.0, flip=0.0)
 me_at("L20", "me", yaw=-90, expr="stunned")
