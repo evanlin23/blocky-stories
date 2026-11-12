@@ -5,9 +5,9 @@
 - **Lane:** warm. **Opening shape:** `cost`. **Length arm:** 45 to 90 s.
 - **Title:** Dad's Empty Car Leaves Every DAWN 🚗
 - **Everyone is an adult.** I'm 20 and live at home. Mom and Dad are in their fifties. The guy at the wall is about 20, a cook. Mr. Fenn and his boss are adults.
-- **Word count:** 238 spoken words in 26 lines (L01 to L26), all `narrator`, plus one music drop (0.5 s after L17).
-- **Estimated length:** about 54 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. The reveal (L24) lands at about 47 to 50 s, in the last 5 to 7 s.
-- **No-filler pass (owner, 2026-11-12):** cut to 26 lines. Old ids → new: L01-L08 same; old L09 merged into L08; old L10-L14 → L09-L13; old L15 cut; old L16 → L14; old L17 cut (merged into L15); old L18 → L15; old L19, L20 → L16, L17; old L21, L22 cut; old L23, L24 → L18, L19; old L25, L27, L28, L30, L34 cut; old L31, L32, L33 → L20, L21, L22; old L26 rewritten as L23 (moved after the Monday meeting); old L29 → L24 (moved, the reveal); old L35, L36 → L25, L26. Every line re-voices.
+- **Word count:** 243 spoken words in 26 lines (L01 to L26), all `narrator`, plus one music drop (0.5 s after L17).
+- **Estimated length:** about 55 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. The reveal (L24) lands at about 48 to 51 s, in the last 5 to 7 s.
+- **No-filler pass (owner, 2026-11-12):** cut to 26 lines. Old ids → new: L01-L08 same; old L09 merged into L08; old L10-L14 → L09-L13; old L15 cut; old L16 → L14; old L17 cut (merged into L15); old L18 → L15; old L19, L20 → L16, L17; old L21, L22 cut; old L23, L24 → L18, L19; old L25, L27, L28, L30, L34 cut; old L31, L32, L33 → L20, L21, L22; old L26 rewritten as L23 (moved after the Monday meeting); old L29 → L24 (moved, the reveal); old L35, L36 → L25, L26. Every line re-voices. Plants check (2026-11-12): old L28's "wished he HAD" restored into L23 (the regret is the wish the rule follows), and L20 now opens "I told Dad." so a cold viewer knows why Dad rides along.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright sunrise all through, never dim: a pink-and-gold sky, low warm sun, long soft shadows. Our mint-green bungalow at the top of a hill street, Dad's teal hatchback in the driveway, a long hill road down through green fields, a low stone wall at the bottom, a cherry-red diner. One sunny noon beach lot for the example. A bright yellow kitchen at 6:30.
 - **Hold:** scripts only (batch 15). Not built, not voiced.
 
@@ -38,15 +38,15 @@
 - **How the narrator is the exception:** everyone's car shows where they'd rather be. Only I go along to see why.
 - **The loved one at stake:** my dad, named at L02 ("Dad's leaves"), on screen in the driveway with his coffee in that beat, and Mom at L05.
 - **The eerie middle (L12 to L19):** hiding in the back seat; the car starting itself; a stop at a wall at the bottom of the hill; a tall stranger getting in like he's done it a hundred times and saying "Morning, sir" to an empty seat; "Thanks for stopping. See you Monday."
-- **The climax turns the rule's own logic:** the car goes where Dad would rather be. It doesn't need Dad in it, but nothing says he can't be. On Monday I put Dad in the driver's seat at 5:40, and the car takes him to the same wall (L20 to L22). No new magic.
-- **Twist and reveal, at the very end (L23, L24, about 44 to 50 s), said plainly:** "Dad went RED. / Last spring, / he drove past this guy / in the RAIN / and didn't STOP." "Every morning since, / his car / has gone back / to stop FOR him." The recasting line L24 lands in the last 5 s or so, over the reveal picture (S24a: the empty driver's seat in sunrise light, the cook in the passenger seat, `smile`, the muffin on the dash). Then only the button and the loop line (L25, L26). No explaining after.
+- **The climax turns the rule's own logic:** the car goes where Dad would rather be. It doesn't need Dad in it, but nothing says he can't be. I tell Dad what I saw, so on Monday he rides in the driver's seat at 5:40, and the car takes him to the same wall (L20 to L22). No new magic.
+- **Twist and reveal, at the very end (L23, L24, about 45 to 51 s), said plainly:** "Dad went RED. / Last spring, / he drove past this guy / in the RAIN, / didn't STOP, / and wished he HAD." "Every morning since, / his car / has gone back / to stop FOR him." The recasting line L24 lands in the last 5 s or so, over the reveal picture (S24a: the empty driver's seat in sunrise light, the cook in the passenger seat, `smile`, the muffin on the dash). Then only the button and the loop line (L25, L26). No explaining after.
 - **How the last 15 seconds turn over the first line:** "everyone sees where you'd rather be" was the fear. It was a wish to have been kinder, and now Mom's car goes too, for a muffin.
 - **The plants a rewatch catches:**
   1. L08: the heater on high, and Dad hates the heater (it was raining that day; the cook was cold).
   2. L09: the passenger seat pushed all the way back (the cook is tall), paid at L16.
   3. L10, L11: the muffin, and Dad eats it with a `sheepish` face (the pin's argument: did Dad know?).
   4. L06: "Right HERE." He meant it.
-  5. L19: "Thanks for STOPPING." Said to a car that never needed to stop for anyone.
+  5. L19: "Thanks for STOPPING." Said to a car that never needed to stop for anyone. Paid at L23 ("didn't STOP, and wished he HAD") and L24 ("to stop FOR him").
 - **Ending shape:** `kind-wish`.
 - **Warmth:** a dad's quiet kindness to a stranger, and the family catching it.
 - **Sad family reveal?** No.
@@ -138,17 +138,17 @@ Times are estimates. Every line gets one to three shots with acting, a punch-in 
 | S17a, S17b, S17c | L17 + drop | (a) The cook's face, `smile`, turned to the empty driver's seat, "Morning, SIR." (b) My face behind the empty seat, `stunned`, 1.2 m back on the diagonal. (c) The drop, 0.5 s, voice and room only: the empty driver's seat, sunrise across it, the wheel turning slowly by itself. |
 | S18a, S18b | L18 | (a) The diner's gravel lot, the cherry diner lit warm, tag "6:00". (b) Close: a blueberry muffin set on the dash (an insert, no hand shown). Door bell. |
 | S19a, S19b | L19 | (a) The cook at the open passenger door, leaning down, face to camera, `warm`, "Thanks for STOPPING." (b) Punch in on "MONDAY", his wave. |
-| S20a, S20b | L20 | (a) Monday, the driveway, tag "5:40": me on the porch, `sly`. (b) Dad in the driver's seat for once, face to camera, `neutral`, his hands low on his lap. |
+| S20a, S20b, S20c | L20 | (a) "I told Dad.": the kitchen, me across the round table from Dad, 1.5 m apart, me `sly`, Dad `sheepish`. (b) Monday, the driveway, tag "5:40": me on the porch, `sly`. (c) Dad in the driver's seat for once, face to camera, `neutral`, his hands low on his lap. |
 | S21a, S21b | L21 | (a) The stone wall, tag "5:52". "Beep." The cook stepping to the car. (b) Through the windshield from the hood: Dad and the cook side by side in the front seats, the cook turning to Dad (eased), `stunned`. |
 | S22 | L22 | The cook's face, `laugh`, "You're REAL." |
-| S23a, S23b | L23 | (a) Dad's face, `sheepish`, going red, on "RED". (b) A remember-cut, bright and soft at the edges: last spring, a gray rainy morning on the hill road, the cook walking on the grass verge, Dad's teal car passing him, Dad's face through the window, `neutral`. |
+| S23a, S23b, S23c | L23 | (a) Dad's face, `sheepish`, going red, on "RED". (b) A remember-cut, bright and soft at the edges: last spring, a gray rainy morning on the hill road, the cook walking on the grass verge, Dad's teal car passing him, Dad's face through the window, `neutral`. (c) On "wished he HAD": the same cut, Dad's face through the rainy rear window looking back at the cook, `sheepish`. |
 | S24a, S24b | L24 | **The reveal, held with drift (1.4 s each):** (a) Friday, inside the car from the dash: the empty driver's seat in sunrise light, the muffin on the dash in the foreground, the cook in the passenger seat, `smile`, talking to it. (b) Monday: a muffin set on Dad's dash at chest height on the camera side, Dad and the cook side by side behind it, both `laugh`. Cover frame (b). |
 | S25a, S25b | L25 | (a) This morning, tag "5:40": Mom in her pink robe on the porch, `sly`, a mug on a flat palm. (b) Her yellow car backing out of the driveway, empty. |
 | S26 | L26 | Push in on my face by Dad's car window (S01a's framing), `laugh`. Loop. |
 
 ## Face and hands beats
-1. **S01a, S09, S12b, S15b, S17b, S20a, S26:** my face, whole head, curls included.
-2. **S02a, S06, S08c, S11a, S20b, S23a, S23b:** Dad's face, whole head, glasses included.
+1. **S01a, S09, S12b, S15b, S17b, S20a, S20b, S26:** my face, whole head, curls included.
+2. **S02a, S06, S08c, S11a, S20a, S20c, S23a, S23b, S23c:** Dad's face, whole head, glasses included.
 3. **S05, S07b, S11b, S25a:** Mom's face.
 4. **S15a, S16a, S17a, S19a, S22, S24a:** the cook's face, whole head.
 5. **S21b, S24b:** Dad and the cook, side by side, both faces clear.
@@ -180,10 +180,10 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - (drop 0.5)
 - L18: 6:00. / The DINER. / He left a muffin / on the DASH. [pays L10, L11]
 - L19: "Thanks for STOPPING," / he said. / "See you MONDAY." [clue, sets up the climax]
-- L20: So Monday, / 5:40, / I put Dad / in the driver's SEAT. [the loophole: Dad can ride too]
+- L20: I told Dad. / So Monday, / 5:40, / he rode / in the driver's SEAT. [why Dad comes; the loophole: Dad can ride too]
 - L21: 5:52. / "Beep." / The guy got IN / and looked at Dad, [countdown, callback]
 - L22: and said, / "Oh. / You're REAL." **(quotable)** [payoff of L17]
-- L23: Dad went RED. / Last spring, / he drove past this guy / in the RAIN / and didn't STOP. [the twist; pays L08]
+- L23: Dad went RED. / Last spring, / he drove past this guy / in the RAIN, / didn't STOP, / and wished he HAD. [the twist: the regret is the wish; pays L08, L19]
 - L24: Every morning since, / his car / has gone back / to stop FOR him. [THE REVEAL: recasts the rule, L06, L19]
 - L25: And this morning, / at 5:40, / Mom's car / left TOO. [button]
 - L26: She wants / a MUFFIN. [loop line]
@@ -192,10 +192,10 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. No death, illness or harm word. Nobody is in danger: the cook rides to work, and I hide in my own dad's car.
-- The remember-cut (S23b) is one quick memory, bright and soft-edged, never a flashback opening. The rain there is soft and gray, never dark.
+- The remember-cut (S23b, S23c) is one quick memory, bright and soft-edged, never a flashback opening. The rain there is soft and gray, never dark.
 - The wheel turns only slowly and eased. No hand ever touches it.
 - Every warm face is `smile`, `laugh` or `warm`, never `grin`.
 - Mom's question at L05 is played light: she's `sly`, never hurt, and her car's muffin trip at L25, L26 answers it.
-- The reveal sits at the very end (owner, 2026-11-12): L24 lands at about 47 to 50 s of about 54 s, and only the button (L25) and the loop line (L26) follow it. Don't add a line after L24 that explains it.
+- The reveal sits at the very end (owner, 2026-11-12): L24 lands at about 48 to 51 s of about 55 s, and only the button (L25) and the loop line (L26) follow it. Don't add a line after L24 that explains it.
 - Title, description, pin and captions checked against hard rule 8. No dashes or semicolons.
 - Queue spacing: keep it away from ep146 (cost, a phone that waits) and ep147 (cost).
