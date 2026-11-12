@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L22
@@ -171,8 +171,8 @@ cue(0, "pretz", p=0.0)
 
 # ===== 01 the rule (L01, L02)
 cut("me", 0, ME0, yaw=0, expr="neutral")
-shot("S01a", 0, cam(ME0[0] + 0.3, ME0[1], 1.5, 2.6, 0, 36))
-shot("S01b", "L01.2", cam(ME0[0] + 0.2, ME0[1], 1.5, 2.1, 0, 36))
+shot("S01a", 0, cam(ME0[0] + 0.05, ME0[1], 1.5, 2.6, 0, 36))
+shot("S01b", "L01.2", cam(ME0[0] + 0.05, ME0[1], 1.5, 2.1, 0, 36))
 key("me", "L02", head=[0, 9], expr="det")
 key("me", "L02.1", head=[0, 0])
 shot("S02", "L02", face(ME0, 2.3, 8, 36))
@@ -185,7 +185,7 @@ key("uncle", "L05.1", (KX + 0.55, KY + 1.55), yaw=0, expr="stunned", lean=38, ar
 shot("S05", "L05", cam(KX + 0.55, KY + 1.1, 0.95, 3.9, -32, 34, cz=1.25), _raw=True)
 cut("neighbor", "L06", (FX_, FY_ + 0.6), yaw=0, expr="sheepish")
 key("neighbor", "L06.1", (FX_, FY_ + 0.6), yaw=0, expr="sheepish", lean=12, head=[-10, 0], blend=0.3)
-shot("S06", "L06", cam(FX_ - 0.1, FY_ + 0.3, 1.7, 4.8, 10, 30), _raw=True)
+shot("S06", "L06", cam(FX_ - 0.1, FY_ + 0.3, 1.85, 4.8, 10, 30), _raw=True)
 
 # ===== 03 the count and the move (L07, L08, L09)
 cut("me", "L07", ME0, yaw=0, expr="neutral", head=[0, 0])
@@ -423,7 +423,7 @@ story = {
     "framing_ok": ["S08a", "S08b", "S09a", "S15a", "S15b", "S21a", "S21b", "S22a", "S22b"],
     "staging_ok": ["S22a/leo", "S21b/leo", "S21a/leo"],
     "clip_ok": ["fleck"],
-    "frames_ok": ["S05"],
+    "frames_ok": ["S05", "S21b"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
