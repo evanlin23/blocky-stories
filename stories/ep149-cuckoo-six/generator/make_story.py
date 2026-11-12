@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 9
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -60,7 +60,7 @@ cast = {
     "grandma": person("#f0c8a0", "#b79bdb", "#6a5a8a", "#4a3a30", hair="bun", hair_c="#f2f2f4", pattern="knit",
                       pattern_c="#c8b0ea", eyes="lashes", extras=["glasses"], extra_c="#8a6a9a"),
     "grandpa": person("#e8bd98", "#e0a526", "#5a4a38", "#4a3a30", hair="buzz", hair_c="#f2f2f4", pattern="knit",
-                      pattern_c="#c98f1c", wbeard="#f5f5f7", crown="#e8b92a"),
+                      pattern_c="#c98f1c", wbeard="#f5f5f7", crown="#e8b92a", tears=True),
     "ivy": person("#c98d5c", "#6fb4ea", "#3a4a7a", "#ff2a2a", hair="long", hair_c="#15100c", eyes="lashes",
                   sneakers="#ff2a2a", frosting="#ff9cc0", curls=True),
 }
@@ -123,9 +123,8 @@ key("dad", "L12.0+0.15", *G.DAD, expr="laugh", blend=0.3, **SITE)
 key("mom", "L12.0+0.15", *G.MOM, expr="laugh", blend=0.3, **SITW)
 key("grandpa", "L12", *G.GRANDPA, expr="delighted", blend=0.3, **SIT)
 # she shuffles the last 0.6 m facing us (keep_yaw), thumb still up, then her arms come round Grandpa's shoulders
-key("ivy", "L12.1+0.2", *G.IVY_OUT, yaw=0, expr="laugh", arms=(8, 80), side=(6, -6), keep_yaw=True)
-key("ivy", "L22-0.6", *G.IVY_HUG, yaw=0, expr="laugh", arms=(8, 80), side=(6, -6), keep_yaw=True, lean=12, z=-0.25)
-key("ivy", "L22+0.5", *G.IVY_HUG, yaw=0, expr="laugh", arms=(10, 40), side=(-4, -22), blend=0.5, lean=12, z=-0.25)
+key("ivy", "L22-0.3", *G.IVY_HUG, yaw=0, expr="laugh", arms=(8, 80), side=(6, -6), keep_yaw=True, lean=12, z=-0.25)
+key("ivy", "L22+0.3", *G.IVY_HUG, yaw=0, expr="laugh", arms=(65, 65), side=(10, -4), blend=0.5, lean=20, z=-0.25)
 key("grandpa", "L22", *G.GRANDPA, expr="laugh", blend=0.4, **SIT)
 key("grandma", "L22", *G.GRANDMA, expr="warm", blend=0.4, **SITW)
 key("grandpa", "L23", *G.GRANDPA, expr="smile", blend=0.5, **SIT)
@@ -146,7 +145,7 @@ cue("L10", "ring")
 cue("L10-0.05", "ltr_off")
 cue("L12-0.6", "ring_off")
 cue("L12-0.5", "toes_off")
-cue("L12-0.5", "server_off")
+cue("P01", "server_off")
 
 
 # ---------------------------------------------------------------------------------------------- cameras
@@ -185,6 +184,7 @@ MASTER = (0.0, 0.8, 0.9)   # the dollhouse target
 shot("S01a", 0, cam(0.0, 2.4, 1.1, 5.6, 34, el=3, push=0.04, arc=0.5))
 shot("S01b", "L01.1", cam(0.0, 2.45, 2.2, 2.9, 34, el=0, push=0.04, arc=0.5))
 shot("S02", "L01.3", cam(0.0, 0.8, 0.95, 4.6, 14, el=12, push=0.08, arc=1.0))
+shot("S02b", "L02.1", cam(0.1, 0.8, 0.95, 4.6, 14, el=14, az=-8, push=0.05, arc=1.0))
 # 02 seven o'clock
 shot("S03", "L03", cam(0.0, 2.6, G.CLOCK_Z - 0.12, 1.3, 30, el=3, push=0.08))
 # 03 six cuckoos, one cut each
@@ -199,20 +199,21 @@ shot("S05", "L04b", fcam(GF[0], GF[1], 2.4, f=0.40, z=SEATZ, push=0.06))
 MASTER = (0.1, 0.4, 0.9)
 shot("S06", "L05", cam(*MASTER, 5.6, 15, el=26, push=0.03, arc=1.0))
 shot("S08", "L07", cam(*MASTER, 5.5, 15, el=26, az=-4, push=0.03, arc=1.0))
-shot("S09", "L08", cam(-0.1, 2.0, 1.2, 2.9, 30, el=12, az=-10, push=0.05, arc=1.0))
+shot("S09", "L08", cam(0.1, 1.8, 0.95, 2.7, 30, el=22, az=-28, push=0.04, arc=1.0))
 # P01: the 4.0 s hold on the question
 shot("S11a", "P01", cam(*MASTER, 5.6, 15, el=26, push=0.03, arc=1.0))
-shot("S11b", "P01+1.4", cam(0.7, 0.8, 1.0, 5.0, 15, el=27, push=0.03, arc=1.0))
-shot("S11c", "P01+2.7", cam(0.85, 1.3, 1.2, 4.3, 15, el=33, push=0.03, arc=1.0))
+shot("S11b", "P01+1.4", cam(MASTER[0] + 0.1, MASTER[1], 0.9, 5.6, 15, el=26, az=3, push=0.03, arc=1.0))
+shot("S11c", "P01+2.7", cam(MASTER[0] + 0.2, MASTER[1] + 0.1, 0.9, 5.5, 15, el=26, az=-3, push=0.03, arc=1.0))
 # 05 the answer
 shot("S12", "L10", cam(2.0, 2.3, 1.45, 6.0, 30, el=21, az=6, push=0.06, arc=1.0))
 shot("S13", "L11", cam(1.85, 2.2, 0.28, 1.7, 30, el=6, az=10, push=0.05, arc=1.0))
 shot("S14a", "L11b", cam(-0.15, 1.25, 0.9, 1.2, 30, el=68, az=-20, push=0.0, arc=0.0))
 shot("S14b", "L11b+0.7", cam(1.45, 2.15, 1.0, 2.6, 40, el=40, az=-35, push=0.0, arc=0.0))
 # 06 the reveal
-shot("S15", "L12-0.5", cam(1.2, 2.4, 1.45, 4.6, 55, el=20, az=-30, push=0.0, arc=0.0, to=[1.1, 2.3, 1.45]))
+shot("S15", "L12", cam(1.2, 2.4, 1.45, 4.6, 55, el=20, az=-30, push=0.0, arc=0.0, to=[1.1, 2.3, 1.45]))
 shot("S16", "L12.1", cam(1.0, 1.2, 1.05, 4.2, 28, el=8, az=-16, push=0.04, arc=0.5))
-shot("S19", "L22", cam(0.5, 2.4, 1.2, 3.4, 24, el=5, az=-10, push=0.04, arc=1.0))
+shot("S19", "L22", cam(0.2, 2.3, 1.05, 3.0, 24, el=18, az=0, push=0.03, arc=0.5))
+shot("S19b", "L22+0.8", cam(0.3, 2.3, 1.1, 2.6, 24, el=12, az=8, push=0.03, arc=0.5))
 shot("S24", "L23", cam(0.0, 2.4, 1.1, 5.6, 34, el=3, push=0.04, arc=0.5))
 
 shots, names = [], {}
@@ -235,10 +236,7 @@ for lst in list(acting.values()) + [cues]:
 # the acting keys with the same time must stay in order; the timeline sorts by time
 sfx = [
 ] + [{"at": f"L04.{i}", "kind": "ding", "db": -22, "dur": 0.35, "pitch": 440 if i % 2 == 0 else 330, "fall": 0.7, "lp": 1200}
-     for i in range(6)] + [
-    {"at": "P01+0.9", "kind": "click", "db": -27, "dur": 0.1},
-    {"at": "P01+1.9", "kind": "click", "db": -27, "dur": 0.1},
-    {"at": "P01+2.9", "kind": "click", "db": -27, "dur": 0.1},
+     for i in (0, 2, 4, 5)] + [
 ]
 for s_ in sfx:
     s_["at"] = remap(s_["at"])
@@ -253,9 +251,9 @@ music = {
 for sec in music["sections"]:
     sec["at"] = remap(sec["at"])
 
-HOLDS = ["S11a", "S11b", "S11c", "S06", "S08", "S12"]
+HOLDS = ["S02", "S02b", "S11a", "S11b", "S11c", "S06", "S08", "S12"]
 polish = {"emph": [remap(r) for r in ("L01.1", "L01.4", "L04b", "L10.1", "L12.0", "L22.1")],
-          "reveal": ["L12"], "twist": "L12", "hold": HOLDS, "quiet": [["L22", "L23"]], "ones": "all"}
+          "reveal": ["L12"], "twist": "L12", "hold": HOLDS, "whoosh": False, "quiet": [["L22", "L23"]], "ones": "all"}
 
 lines_out = []
 for ln in lines:
@@ -292,8 +290,9 @@ story = {
     "fx": [],
     "music": music,
     "sound": {"floor": "wood", "steps_db": -26, "ambience": [], "sfx": sfx, "rev": REV},
-    "framing_ok": ["S02", "S14b"],   # L02 names Ivy, who is hidden on purpose; her empty chair is the plant
-    "staging_ok": ["S15/grandpa+ivy", "S16/dad+ivy", "S16/grandpa+ivy", "S19/grandpa+ivy", "S24/grandpa+ivy"],   # Ivy stepping out past Dad and Grandpa, then the hug (touching on purpose); no limb through a body  # Ivy steps out at Grandpa's shoulder and hugs him from behind (touching on purpose, L12 to L23)
+    "frames_ok": ["S19"],   # the counter settles to 6 and the happy tears start at L22 (cue six)
+    "framing_ok": ["S02", "S02b", "S14b"],   # L02 names Ivy, who is hidden on purpose; her empty chair is the plant
+    "staging_ok": ["S15/grandpa+ivy", "S16/dad+ivy", "S16/grandpa+ivy", "S19/grandpa+ivy", "S19b/grandpa+ivy", "S24/grandpa+ivy"],   # Ivy stepping out past Dad and Grandpa, then the hug (touching on purpose); no limb through a body  # Ivy steps out at Grandpa's shoulder and hugs him from behind (touching on purpose, L12 to L23)
     "asr_forgive": ["bee", "cuckoo", "o'clock", "that"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

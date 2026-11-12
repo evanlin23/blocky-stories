@@ -272,11 +272,11 @@ def build_curtain(kit):
     # they go when she steps out (cue "toes_off")
     tr = kit.empty("toes", (0, 0, 0))
     W["toes"] = tr
-    red = kit.emit("#ff0048", 0.38, "toeemit")
+    red = M(kit, "#cc0030", 0.55, 0.1)
     wh = M(kit, "#fafafa", 0.6, 0.1)
     for sx in (-1, 1):
         tx = G.IVY0[0] + sx * 0.17
-        kit.box("toe", (0.24, 0.42, 0.15), (tx, 2.0 + 0.04, 0.105), red, tr, (0, 0, 0), 0.05)
+        kit.box("toe", (0.26, 0.42, 0.18), (tx, 2.0 + 0.04, 0.115), red, tr, (0, 0, 0), 0.05)
         kit.box("toesole", (0.25, 0.44, 0.03), (tx, 2.0 + 0.04, 0.015), wh, tr, (0, 0, 0), 0.01)
         kit.box("toecap", (0.2, 0.1, 0.08), (tx, 1.84, 0.085), wh, tr, (0, 0, 0), 0.03)
         kit.box("toestripe", (0.245, 0.12, 0.025), (tx, 2.1, 0.13), wh, tr, (0, 0, 0), 0.01)
@@ -430,7 +430,7 @@ def build_cake(kit):
                 if v == "1":
                     kit.box(f"sug{i}{r}{q}", (px, px, 0.016), (bx + (q - 1) * px, cy + 0.02 + (2 - r) * px, zt + 0.048), sugar)
     # the cake server on the cloth, cream handle
-    W["server"] = kit.box("server", (0.05, 0.28, 0.012), (cx + 0.22, cy + 0.3, G.TABLE_Z + 0.036), M(kit, "#d8d8dc", 0.3, 0.6), None, (0, 0, 0.1), 0.003)
+    W["server"] = kit.box("server", (0.1, 0.3, 0.02), (cx + 0.22, cy + 0.3, G.TABLE_Z + 0.036), M(kit, "#d8d8dc", 0.3, 0.6), None, (0, 0, 0.1), 0.003)
 
 
 # ---------------------------------------------------------------------------------------------- the tag and letters
@@ -462,7 +462,9 @@ def build_tag(kit):
     W["d5"] = kit.empty("tag.d5", (-0.06, 0.12, 0.012), root)
     text3d(kit, "tag.t5", "5", 0.5, (0, 0, 0), ink, W["d5"], ext=0.002, bevel=0.002, rot=(0, 0, 0))
     W["dot"] = kit.empty("tag.dot", (0.14, 0.1, 0.012), root)
-    b("tag.dotb", (0.05, 0.05, 0.004), (0, 0, 0), ink, W["dot"])
+    b("tag.dotb", (0.1, 0.035, 0.004), (0, 0, 0), ink, W["dot"])
+    for sg in (-1, 1):
+        noshadow(kit.box(f"tag.dotah{sg}", (0.06, 0.035, 0.004), (0.03, sg * 0.022, 0), ink, W["dot"], (0, 0, -sg * 0.75), 0.0))
     W["d6"] = kit.empty("tag.d6", (0.3, 0.12, 0.012), root)
     text3d(kit, "tag.t6", "6", 0.5, (0, 0, 0), redm, W["d6"], ext=0.002, bevel=0.002, rot=(0, 0, 0))
     # row 2: six tally marks, dim until each cuckoo
@@ -476,9 +478,9 @@ def build_tag(kit):
     # row 3: a cake glyph (white slab, pink top) and a pink fill bar
     b("tag.ck1", (0.14, 0.04, 0.004), (-0.38, -0.25, 0.008), wh)
     b("tag.ck2", (0.14, 0.03, 0.004), (-0.38, -0.215, 0.012), pinkm)
-    b("tag.trk", (0.66, 0.06, 0.004), (0.13, -0.245, 0.008), dim)
+    b("tag.trk", (0.66, 0.085, 0.004), (0.13, -0.245, 0.008), dim)
     piv = kit.empty("tag.cakefill", (-0.2, -0.245, 0.012), root)
-    b("tag.cf", (0.66, 0.06, 0.004), (0.33, 0.0, 0.0), pinkm, piv)
+    b("tag.cf", (0.66, 0.085, 0.004), (0.33, 0.0, 0.0), pinkm, piv)
     W["cake"] = piv
 
 
@@ -533,7 +535,7 @@ def _extras(self, hg, spec, kit, faces):
             kit.box(f"{n}.crpt{k}", (0.17, 0.12, 0.3), ((R + 0.03) * math.sin(a), (R + 0.03) * math.cos(a), top + 0.26), cc, hg,
                     rot=(0, 0, -a), bevel=0.02)
     if spec.get("sneakers"):  # Ivy's bright red sneakers: a long toe, a white sole and stripe, laces, on both feet
-        sc = kit.emit("#ff0048", 0.38, "sneakemit")
+        sc = kit.emit("#ff0030", 0.6, "sneakemit")
         so = kit.plastic("#fafafa", 0.6, spec=0.1)
         for sx in (-1, 1):
             leg = _b.data.objects.get(f"{n}.leg{sx}")
@@ -549,6 +551,12 @@ def _extras(self, hg, spec, kit, faces):
             arm = _b.data.objects.get(f"{n}.arm{sx}")
             if arm is not None:
                 kit.box(f"{n}.dab{sx}", (0.4, 0.4, 0.6), (0.0, -0.52, -1.7), fc, arm, bevel=0.1)
+                kit.box(f"{n}.dabt{sx}", (0.46, 0.46, 0.3), (0.0, 0.0, -2.0), fc, arm, bevel=0.1)
+    if spec.get("tears"):    # happy tears: blue drops on the cheeks, shown from the cue "six" (L22)
+        tc = kit.emit("#6ec3ff", 1.2, "tearemit")
+        for sx in (-1, 1):
+            for k, z in enumerate((-0.36, -0.58)):
+                kit.box(f"{n}.tear{sx}{k}", (0.1, 0.05, 0.17 if k == 0 else 0.12), (sx * 0.26, -R - 0.06, z), tc, hg, bevel=0.03)
     if spec.get("curls"):    # long black curls round the face and down to the shoulders (she reads as a sister)
         cc = kit.plastic(spec.get("hair_c", "#15100c"), 0.55, spec=0.15)
         for k in range(8):
@@ -625,10 +633,17 @@ def animate(kit, story, tl, t, ctx):
     W["toes"].hide_render = off_t is not None and t >= off_t
     for c_ in W["toes"].children:
         c_.hide_render = W["toes"].hide_render
+    t6 = ct(tl, "six")
+    import bpy as _bp
+    for sx in (-1, 1):
+        for k in (0, 1):
+            ob = _bp.data.objects.get(f"grandpa.tear{sx}{k}")
+            if ob is not None:
+                ob.hide_render = t6 is None or t < t6 + 0.1 + 0.15 * k
     sv0, sv1 = ct(tl, "cake_on"), ct(tl, "server_off")
     if sv0 is not None and sv1 is not None and sv0 <= t < sv1:
-        W["server"].location = (0.0, 1.62, 0.99)
-        W["server"].rotation_euler = (0.15, 0, 0)
+        W["server"].location = (-0.1, 1.76, 0.84)
+        W["server"].rotation_euler = (0.2, 0, 0)
     else:
         W["server"].location = (G.CAKE[0] + 0.22, G.CAKE[1] + 0.3, G.TABLE_Z + 0.036)
         W["server"].rotation_euler = (0, 0, 0.1)
