@@ -12,6 +12,7 @@
 # 2026-11-04 8:40 AM: the 12 final-qa passes for Thu to Mon, shapes never twice in a row, cost never next to cost, sad reveals (ep55, ep42, ep48) 3+ apart; rule-three and floor-thirteen uploaded; dryer-nine, ep51, ep45, ep49 dropped; moving-day last, only if its last fix round passes
 # 2026-11-09 review: fact titles, count/if/cost openings, short puzzles and the interactive lane first (they held 65%+ viewed); ban openings last; ep28 waits on fixes
 # 2026-11-12: + ep110 (if, fixed final passed) early, + ep125 (confess, fixed final passed) to break up the ban run; ep98 and ep138 dropped (#479, #473). Batch 15: ep142 and ep151 apart (both ice cream); space the phone stories ep139, ep146, ep152
+# 2026-11-12 3 PM: + ep129 (ban, fixed final passed) last: 7+ from ep127, never next to ep130/ep134/ep135. ep94, ep102, ep119 held for yaw fixes (#484), upload skips them until a new final passes. Batch 15 ep142 and ep151 dropped (#488)
 ep128-zero-feet
 ep136-one-answer
 ep124-future-call
@@ -36,3 +37,4 @@ ep119-quiet-car
 ep108-scarecrow-swap
 ep122-face-the-wall
 moving-day
+ep129-gift-box
