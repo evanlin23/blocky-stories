@@ -14,6 +14,21 @@ The owner: "Can we ensure there is no filler? Like every line needs to earn it's
 - **Every line earns its place.** Each narration line does at least one job: it states the rule, raises the stakes, plants a clue or callback, escalates, or pays off. A line that only restates something already said or shown, describes the scenery, recaps, or warms up is cut. **The cut test:** take the line out, and if the story loses nothing, it stays out. A line that plants or supports the reveal always passes: the reveal keeps at least two plants (ep142's cut left its big idea on one line, and it dropped). The same goes for shots: a shot that only covers a line with nothing new to see gets cut or made to show something. Shorter is fine: a 40 s story with no filler beats a 60 s one with some.
 - **The reveal comes at the very end.** The line that recasts everything lands in about the last 5 to 10 seconds (the last 10 to 15% of the film), with at most one or two short lines after it (the button and the loop line), then the end. Nothing is explained after the reveal, and no epilogue follows it. Everything before it builds toward it. On the timing, the owner: "5 to 10 sounds good, don't need to be too strict". It's a guide: a reveal a few seconds outside the window is fine. What matters is that it comes at the end, with nothing explained after it.
 
+## The rule's fine print is the twist (owner, 2026-11-12)
+The owner, on a story Short they heard (someone else's, so never remade): "In this world, whenever somebody dies, they get one more day. We call it the visit... they can't see themselves in mirrors... they never remember that they died. And if they find out that they died, then they disappear early." The family spends the day preparing for the little sister's visit, then she says "you saved me": the narrator pushed her out of the ice, and it was his visit. The owner: "that was the reveal, and that was like really heart touching actually."
+
+The engine we take from it, never its story, rule, characters or scenes:
+- **Every quirk in the rule is a clue.** The fine print (what the subject can't do, what they never know, what ends it early) is stated up front as world-building, then turns out to describe the narrator. That's no filler by design: each rule line pays off.
+- **The misdirect is love.** The day is spent caring for the person we assume the rule is about, so the reveal recasts that care.
+- **The loved one says the reveal plainly** (a thank-you, a "you saved me"), in one line.
+- **The rule's own ending condition makes the reveal the ending.** If finding out ends it, the reveal line is also the last beat, so it lands at the very end.
+- **It ends on love, not loss.** A sacrifice that saved someone, recast as the kindest thing.
+
+Our rules still hold:
+- no children in peril (cast adults or teens, and nobody young in danger);
+- the cold-viewer test (said plainly, never confusing; RULES → premise engines #16, "narrator is the X", has been used by floor-thirteen and mirror-maze);
+- at most one sad family reveal in three (a reveal like this that ends on gratitude counts as warm).
+
 ## Eerie and mystery, fewer monsters, more warm endings (owner, 2026-11-12)
 The owner liked ep124 ("Future Me Called And Said NOTHING"): "It's really feel good happy. So let's like play a little bit more into that if possible." Then, softening a first reaction ("Maybe we can just abandon the creepy stuff"): "Wait we don't need to go too drastic, it's just that it feels like the creepy monsters don't always land. I think eerie/mystery is fine. Idk don't take my word for it let's just keep posting and then think further."
 - **Eerie and mystery stay.** The uncanny rule and an unexplained thing are the hook.
