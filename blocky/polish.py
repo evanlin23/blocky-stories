@@ -50,6 +50,7 @@ DEFAULTS = {
     "ones": "all", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
     # picture
     "grade": "bright",
+    "sharpen": 0.0, "bloom_thresh": None,   # opt-in (anim audit 2026-11-12): 0.4 and 0.85 lift edge acuity ~6-8%
     # builder marks
     "emph": None, "auto": True, "reveal": [], "twist": None, "quiet": [], "hold": [],
     "punch_cap": {},     # opt-in: {shot id: most the punch-in may zoom there} (a head that must stay in frame)
