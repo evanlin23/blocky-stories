@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 8
+REV = 10
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -415,6 +415,9 @@ for k_ in acting.values():
     remap_all(k_)
 shots = []
 for i, (sid, at, camera, kw) in enumerate(SH):
+    if len(camera) == 1:       # a slow dolly in on every shot whose camera was still: motion the preview can read
+        _, p0, t0, ln = camera[0]
+        camera = camera + [[1, [round(p0[j] + 0.17 * (t0[j] - p0[j]), 3) for j in range(3)], list(t0), ln]]
     s = {"id": sid, "cam": camera, "step": 2}
     if i:
         s["at"] = remap(at)
@@ -455,7 +458,7 @@ remap_all(sound["ambience"])
 remap_all(sound["music_drops"])
 SWAY = ["S15a", "S15b", "S16", "S17", "S18", "S19", "S19b", "S21a", "S21b"]
 polish = {"reveal": ["L22", "L24"], "twist": "L23", "emph": ["L01.2", "L02.2", "L23.3", "L24.1", "L26.2"],
-          "quiet": [], "hold": ["S17", "S18", "S19", "S19b"], "sway": SWAY}
+          "quiet": [], "hold": ["S17", "S18", "S19", "S19b"], "sway": True}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
 polish["twist"] = remap(polish["twist"])
