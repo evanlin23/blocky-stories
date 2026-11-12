@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 3
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -61,8 +61,8 @@ cast = {
                       pattern_c="#c8b0ea", eyes="lashes", extras=["glasses"], extra_c="#8a6a9a"),
     "grandpa": person("#e8bd98", "#e0a526", "#5a4a38", "#4a3a30", hair="buzz", hair_c="#f2f2f4", pattern="knit",
                       pattern_c="#c98f1c", wbeard="#f5f5f7", crown="#e8b92a"),
-    "ivy": person("#c98d5c", "#6fb4ea", "#3a4a7a", "#d3161c", hair="mop", hair_c="#15100c", eyes="lashes",
-                  sneakers="#d3161c", frosting="#ff9cc0"),
+    "ivy": person("#c98d5c", "#6fb4ea", "#3a4a7a", "#ff2a2a", hair="long", hair_c="#15100c", eyes="lashes",
+                  sneakers="#ff2a2a", frosting="#ff9cc0", curls=True),
 }
 CAST = list(cast)
 acting = {n: [] for n in cast}
@@ -111,22 +111,21 @@ key("dad", "L05", *G.DAD, expr="uneasy", **SITE)
 key("grandpa", "L08", *G.GRANDPA, expr="smile", blend=0.3, arms=(78, 78), side=(2, 2), seat=True)
 # ---- the answer
 key("me", "L10", *G.ME, expr="smile", blend=0.4, **SITE)
-# ---- the reveal: Ivy steps out from behind the curtain (0.8 s), laughs with her frosted thumb up
-IVY_MID = (0.6, G.IVY0[1])   # the walk ends here (facing west, arms down: clear of Grandpa)
-key("ivy", "L12-1.1", *G.IVY0, yaw=-90, expr="smile", arms=(0, 0), side=(6, 6), blend=0.4)   # turns west behind the curtain
-key("ivy", "L12-0.5", *G.IVY0, yaw=-90, expr="smile", arms=(0, 0), side=(6, 6))
-key("ivy", "L12+0.4", *IVY_MID, yaw=-90, expr="laugh", arms=(0, 0), side=(6, 6), blend=0.3)
-key("ivy", "L12+1.0", *IVY_MID, yaw=0, expr="laugh", arms=(8, 100), side=(6, -6), blend=0.4)
+# ---- the reveal: Ivy steps out from behind the curtain's west edge (0.9 s, facing us), thumb up, laughing
+IVY_EDGE = (1.3, 2.55)        # just clear of the curtain's left edge
+key("ivy", "L12-0.6", *G.IVY0, yaw=0, expr="smile", arms=(0, 0), side=(6, 6), blend=0.3, keep_yaw=True)
+key("ivy", "L12-0.05", *IVY_EDGE, yaw=0, expr="laugh", arms=(8, 80), side=(6, -6), blend=0.3, keep_yaw=True)
+key("ivy", "L12+0.4", *G.IVY_OUT, yaw=0, expr="laugh", arms=(8, 80), side=(6, -6), blend=0.3, keep_yaw=True)
 key("me", "L12", *G.ME, expr="stunned", blend=0.3, **SITE)
-key("me", "L12.2", *G.ME, expr="laugh", blend=0.4, **SITE)
-key("grandma", "L12.1", *G.GRANDMA, expr="laugh", blend=0.3, **SITW)
-key("dad", "L12.1", *G.DAD, expr="laugh", blend=0.3, **SITE)
-key("mom", "L12.1", *G.MOM, expr="laugh", blend=0.3, **SITW)
+key("me", "L12.1", *G.ME, expr="laugh", blend=0.4, **SITE)
+key("grandma", "L12.0+0.15", *G.GRANDMA, expr="laugh", blend=0.3, **SITW)
+key("dad", "L12.0+0.15", *G.DAD, expr="laugh", blend=0.3, **SITE)
+key("mom", "L12.0+0.15", *G.MOM, expr="laugh", blend=0.3, **SITW)
 key("grandpa", "L12", *G.GRANDPA, expr="delighted", blend=0.3, **SIT)
 # she shuffles the last 0.6 m facing us (keep_yaw), thumb still up, then her arms come round Grandpa's shoulders
-key("ivy", "L12.2+0.2", *IVY_MID, yaw=0, expr="laugh", arms=(8, 100), side=(6, -6), keep_yaw=True)
-key("ivy", "L22-0.3", *G.IVY_HUG, yaw=0, expr="laugh", arms=(8, 100), side=(6, -6))
-key("ivy", "L22+0.8", *G.IVY_HUG, yaw=0, expr="laugh", arms=(34, 34), side=(10, 10), blend=0.5)
+key("ivy", "L12.1+0.2", *G.IVY_OUT, yaw=0, expr="laugh", arms=(8, 80), side=(6, -6), keep_yaw=True)
+key("ivy", "L22-0.6", *G.IVY_HUG, yaw=0, expr="laugh", arms=(8, 80), side=(6, -6), keep_yaw=True, lean=12, z=-0.25)
+key("ivy", "L22+0.5", *G.IVY_HUG, yaw=0, expr="laugh", arms=(10, 40), side=(-4, -22), blend=0.5, lean=12, z=-0.25)
 key("grandpa", "L22", *G.GRANDPA, expr="laugh", blend=0.4, **SIT)
 key("grandma", "L22", *G.GRANDMA, expr="warm", blend=0.4, **SITW)
 key("grandpa", "L23", *G.GRANDPA, expr="smile", blend=0.5, **SIT)
@@ -135,6 +134,7 @@ key("grandpa", "L23", *G.GRANDPA, expr="smile", blend=0.5, **SIT)
 for i in range(6):
     cue(f"L04.{i}", f"ck{i}")
 cue("L01.2+0.9", "bird_off")
+cue("L04.5", "sixshow")
 cue("L22", "six")
 cue("L07", "ltrA")
 cue("L07+0.25", "ltrB")
@@ -144,7 +144,9 @@ cue("L08", "cake_on")
 cue("P01>", "cake_off")
 cue("L10", "ring")
 cue("L10-0.05", "ltr_off")
-cue("L12-0.1", "ring_off")
+cue("L12-0.6", "ring_off")
+cue("L12-0.5", "toes_off")
+cue("L12-0.5", "server_off")
 
 
 # ---------------------------------------------------------------------------------------------- cameras
@@ -179,10 +181,10 @@ GF, DD = G.GRANDPA, G.DAD
 SEATZ = -G.SEAT
 MASTER = (0.0, 0.8, 0.9)   # the dollhouse target
 
-# 01 the rule (0 - ~5 s)
-shot("S01a", 0, cam(0.0, 2.4, 1.3, 4.5, 34, el=5, push=0.04, arc=0.5))
-shot("S01b", "L01.1", cam(0.0, 2.5, 1.7, 2.9, 28, el=0, push=0.05, arc=0.5))
-shot("S02", "L01.3", cam(0.0, 1.0, 0.9, 4.6, 17, el=34, push=0.04, arc=1.0))
+# 01 the rule (0 - ~5 s): the whole clock (bird and door clear of the tag) with Grandpa's face above the caption band
+shot("S01a", 0, cam(0.0, 2.4, 1.1, 5.6, 34, el=3, push=0.04, arc=0.5))
+shot("S01b", "L01.1", cam(0.0, 2.45, 2.2, 2.9, 34, el=0, push=0.04, arc=0.5))
+shot("S02", "L01.3", cam(0.0, 0.8, 0.95, 4.6, 14, el=12, push=0.08, arc=1.0))
 # 02 seven o'clock
 shot("S03", "L03", cam(0.0, 2.6, G.CLOCK_Z - 0.12, 1.3, 30, el=3, push=0.08))
 # 03 six cuckoos, one cut each
@@ -193,23 +195,25 @@ shot("S04d", "L04.3-0.05", fcam(DD[0], DD[1], 2.2, f=0.40, z=SEATZ, push=0.0, ar
 shot("S04e", "L04.4-0.05", cam(0.0, 2.6, G.CLOCK_Z + 0.25, 1.3, 30, el=8, az=-3, push=0.0, arc=0.0))
 shot("S04f", "L04.5-0.05", fcam(G.ME[0], G.ME[1], 1.8, f=0.40, z=SEATZ, push=0.06, arc=0.0))
 shot("S05", "L04b", fcam(GF[0], GF[1], 2.4, f=0.40, z=SEATZ, push=0.06))
-# 04 the job
-shot("S06", "L05", cam(*MASTER, 4.6, 12, el=34, push=0.03, arc=1.0))
-shot("S08", "L07", cam(*MASTER, 4.4, 12, el=36, az=-6, push=0.03, arc=1.0))
-shot("S09", "L08", fcam(GF[0], GF[1], 2.5, f=0.40, z=SEATZ, push=0.05))
+# 04 the job: the dollhouse master, people high in the frame, the rug and the sixth chair under the caption band
+MASTER = (0.1, 0.4, 0.9)
+shot("S06", "L05", cam(*MASTER, 5.6, 15, el=26, push=0.03, arc=1.0))
+shot("S08", "L07", cam(*MASTER, 5.5, 15, el=26, az=-4, push=0.03, arc=1.0))
+shot("S09", "L08", cam(-0.1, 2.0, 1.2, 2.9, 30, el=12, az=-10, push=0.05, arc=1.0))
 # P01: the 4.0 s hold on the question
-shot("S11a", "P01", cam(*MASTER, 4.8, 12, el=34, push=0.0, arc=0.0))
-shot("S11b", "P01+1.4", cam(*MASTER, 4.6, 12, el=34, push=0.0, arc=0.0))
-shot("S11c", "P01+2.7", cam(*MASTER, 4.4, 12, el=34, push=0.0, arc=0.0))
+shot("S11a", "P01", cam(*MASTER, 5.6, 15, el=26, push=0.0, arc=0.0))
+shot("S11b", "P01+1.4", cam(0.7, 0.8, 1.0, 5.0, 15, el=27, push=0.0, arc=0.0))
+shot("S11c", "P01+2.7", cam(0.85, 1.3, 1.2, 4.3, 15, el=33, push=0.0, arc=0.0))
 # 05 the answer
-shot("S12", "L10", cam(2.0, 2.4, 1.1, 5.2, 30, el=4, push=0.04, arc=1.0))
-shot("S13", "L11", cam(1.5, 2.6, 0.2, 1.7, 30, el=5, az=10, push=0.05, arc=1.0))
-shot("S14", "L11b", cam(-0.1, 1.35, 0.95, 1.3, 30, el=40, az=-15, push=0.0, arc=0.0, to=[1.05, 2.4, 1.0]))
+shot("S12", "L10", cam(2.0, 2.3, 1.45, 6.0, 30, el=21, az=6, push=0.06, arc=1.0))
+shot("S13", "L11", cam(1.85, 2.2, 0.28, 1.7, 30, el=6, az=10, push=0.05, arc=1.0))
+shot("S14a", "L11b", cam(-0.15, 1.25, 0.9, 1.2, 30, el=68, az=-20, push=0.0, arc=0.0))
+shot("S14b", "L11b+0.7", cam(1.45, 2.15, 1.0, 2.6, 40, el=40, az=-35, push=0.0, arc=0.0))
 # 06 the reveal
-shot("S15", "L12", fcam(0.3, G.IVY_OUT[1], 5.0, lens=40, f=0.30, push=0.04, arc=1.0, el=14, az=0))
-shot("S16", "L12.2", fcam(G.ME[0], G.ME[1], 2.2, f=0.40, z=SEATZ, push=0.04, arc=1.0, dx=-0.2))
-shot("S19", "L22", cam(0.0, 2.35, 1.3, 3.4, 30, el=4, push=0.04, arc=1.5))
-shot("S24", "L23", cam(0.0, 2.4, 1.3, 4.5, 34, el=5, push=0.04, arc=0.5))
+shot("S15", "L12-0.5", cam(1.2, 2.4, 1.45, 4.6, 55, el=20, az=-30, push=0.0, arc=0.0, to=[0.85, 2.3, 1.45]))
+shot("S16", "L12.1", fcam(G.ME[0], G.ME[1], 2.2, f=0.40, z=SEATZ, push=0.04, arc=1.0, dx=-0.2))
+shot("S19", "L22", cam(0.3, 2.4, 1.15, 3.0, 30, el=4, push=0.04, arc=1.5))
+shot("S24", "L23", cam(0.0, 2.4, 1.1, 5.6, 34, el=3, push=0.04, arc=0.5))
 
 shots, names = [], {}
 for i, (at, camera, step, hand, nm) in enumerate(SH):
@@ -251,8 +255,8 @@ music = {
 for sec in music["sections"]:
     sec["at"] = remap(sec["at"])
 
-HOLDS = ["S11a", "S11b", "S11c", "S06", "S08"]
-polish = {"emph": [remap(r) for r in ("L01.1", "L01.4", "L04b", "L10.1", "L12.1", "L22.1")],
+HOLDS = ["S11a", "S11b", "S11c", "S06", "S08", "S12"]
+polish = {"emph": [remap(r) for r in ("L01.1", "L01.4", "L04b", "L10.1", "L12.0", "L22.1")],
           "reveal": ["L12"], "twist": "L12", "hold": HOLDS, "quiet": [["L22", "L23"]], "ones": "all"}
 
 lines_out = []
@@ -277,7 +281,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "rev": REV,
-    "look": {"style": "closer", "fog": "#f4e9d0", "fog_density": 0.002, "fog_start": 60.0, "sky": "#cfe6f8",
+    "look": {"style": "closer", "fog": "#f4e9d0", "fog_density": 0.002, "fog_start": 60.0, "sky": "#a9d6a0",
              "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True, "polish": polish},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.012, -0.02], "saturation": 1.05, "contrast": 1.03,
               "vignette": 0.12, "bloom": 0.06, "grain": 0.006},
@@ -290,8 +294,8 @@ story = {
     "fx": [],
     "music": music,
     "sound": {"floor": "wood", "steps_db": -26, "ambience": [], "sfx": sfx, "rev": REV},
-    "framing_ok": [],
-    "staging_ok": ["S14/grandpa+ivy", "S15/grandpa+ivy", "S16/grandpa+ivy", "S19/grandpa+ivy", "S24/grandpa+ivy"],  # Ivy steps out at Grandpa's shoulder and hugs him from behind (touching on purpose, L12 to L23)
+    "framing_ok": ["S02", "S14b"],   # L02 names Ivy, who is hidden on purpose; her empty chair is the plant
+    "staging_ok": ["S15/grandpa+ivy", "S16/dad+ivy", "S16/grandpa+ivy", "S19/grandpa+ivy", "S24/grandpa+ivy"],   # Ivy stepping out past Dad and Grandpa, then the hug (touching on purpose); no limb through a body  # Ivy steps out at Grandpa's shoulder and hugs him from behind (touching on purpose, L12 to L23)
     "asr_forgive": ["bee", "cuckoo", "o'clock", "that"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

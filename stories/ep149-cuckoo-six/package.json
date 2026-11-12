@@ -6,5 +6,6 @@
   "cover_s": 6.0,
   "shape": "hidden-guest",
   "opening": "count",
-  "lane": "puzzle"
+  "lane": "puzzle",
+  "hold": "reviews pending (batch 15)"
 }

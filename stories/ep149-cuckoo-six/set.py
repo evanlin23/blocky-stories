@@ -21,9 +21,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import layout as G  # noqa: E402
 
 D2R = math.pi / 180.0
+FONT_PATH = Path(__file__).resolve().parents[2] / "blocky" / "fonts" / "SchibstedGrotesk-Black.ttf"   # the caption font
 W = {}
 _M = {}
-MASTERS = {"S02", "S06", "S08", "S11a", "S11b", "S11c", "S14"}   # dollhouse shots: the ceiling is lifted away
+MASTERS = {"S06", "S08", "S11a", "S11b", "S11c"}   # dollhouse shots: the ceiling is lifted away
 
 WALL_G = "#5aa85a"
 WALL_G2 = "#4f9d4f"
@@ -37,10 +38,26 @@ PINK = "#ff9cc0"
 FLOOR_A, FLOOR_B = "#d2a164", "#c4914f"
 
 FONT = {
-    "A": ("010", "101", "111", "101", "101"), "B": ("110", "101", "110", "101", "110"),
-    "C": ("011", "100", "100", "100", "011"), "D": ("110", "101", "101", "101", "110"),
     "8": ("111", "101", "111", "101", "111"), "0": ("111", "101", "101", "101", "111"),
 }
+_FONT_OBJ = []
+
+
+def text3d(kit, name, s, size, loc, m, parent=None, ext=0.02, bevel=0.0, rot=(math.pi / 2, 0, 0)):
+    """A text object in the caption font, centred on loc (rot (pi/2, 0, 0) faces -y; (0, 0, 0) faces +z)."""
+    import bpy as _b
+    if not _FONT_OBJ:
+        _FONT_OBJ.append(_b.data.fonts.load(str(FONT_PATH)))
+    cu = _b.data.curves.new(name, "FONT")
+    cu.body, cu.font, cu.size = s, _FONT_OBJ[0], size
+    cu.align_x, cu.align_y = "CENTER", "CENTER"
+    cu.extrude, cu.bevel_depth = ext, bevel
+    cu.materials.append(m)
+    ob = _b.data.objects.new(name, cu)
+    ob.location, ob.rotation_euler = loc, rot
+    kit.link(ob, parent)
+    ob.visible_shadow = False
+    return ob
 
 
 def mat(kit, hexc, rough=0.6, spec=0.15):
@@ -163,6 +180,43 @@ def build_room(kit):
     cyl(kit, "lamppole", 0.025, 1.45, (-2.55, 2.1, 0.75), "#c9a23c", 0.4, 0.4)
     cyl(kit, "lampshade", 0.24, 0.3, (-2.55, 2.1, 1.6), "#fbeccc", 0.8, 0.02, r2=0.17, n=16)
     kit.prop("houseplant_1", (-2.5, -0.5, 0.0), rot=20, height=1.3)
+    build_decor(kit)
+
+
+def build_decor(kit):
+    """The birthday: bunting along the north wall, balloons, presents, a longer rug; they fill the dollhouse frame."""
+    # the rug runs south under the sixth chair
+    box(kit, "rugs", (3.4, 1.6, 0.02), (0, -1.4, 0.011), "#e7d3a6", 0.95, 0.02, bevel=0.01)
+    box(kit, "rugsb", (3.15, 1.5, 0.025), (0, -1.4, 0.013), "#d96b5a", 0.95, 0.02, bevel=0.01)
+    box(kit, "rugsc", (2.95, 1.3, 0.03), (0, -1.4, 0.015), "#f1e2bd", 0.95, 0.02, bevel=0.01)
+    # a picture rail and bunting (plain flags, no letters) sagging between the side walls
+    box(kit, "rail", (2 * G.ROOM_X, 0.05, 0.06), (0, G.WALL_N - 0.03, G.UPPER + 0.5), "#fffaf0", 0.6, 0.05)
+    cols = ["#e8402e", "#ffcc33", "#ff7fb0", "#1f9f8a", "#6fb4ea"]
+    n = 22
+    for i in range(n):
+        u = (i + 0.5) / n
+        x = -2.6 + 5.2 * u
+        sag = 0.45 * 4 * u * (1 - u)
+        zc = G.UPPER + 0.35 - sag
+        pm = M(kit, cols[i % 5], 0.8, 0.02)
+        kit.mesh_obj(f"flag{i}", [(x - 0.12, G.WALL_N - 0.06, zc), (x + 0.12, G.WALL_N - 0.06, zc), (x, G.WALL_N - 0.06, zc - 0.3)],
+                     [(0, 1, 2)], pm)
+        kit.box(f"bstr{i}", (5.2 / n + 0.02, 0.01, 0.015), (x, G.WALL_N - 0.065, zc + 0.005), M(kit, "#7a4a28"))
+    # balloon bunches (east foreground and by the west wall), on strings
+    bal = ["#e8402e", "#ffcc33", "#ff7fb0", "#1f9f8a", "#6fb4ea", "#e8402e"]
+    for bx, by, bz0 in ((2.55, -1.6, 1.9), (-2.35, 1.0, 2.5)):
+        kit.cyl("bstring", 0.008, bz0, (bx, by, bz0 / 2), M(kit, "#fffaf0"), None, (0, 0, 0), n=6)
+        for k in range(6):
+            a = k * 1.05
+            kit.sphere("balloon", 0.2, (bx + 0.2 * math.sin(a), by + 0.14 * math.cos(a), bz0 + 0.18 + 0.12 * (k % 3)),
+                       M(kit, bal[k], 0.3, 0.5), None, 14)
+    # presents on the floor in the west foreground
+    for nm, sz, loc, c, rb in (("pr1", (0.5, 0.4, 0.3), (-1.9, -0.9, 0.15), "#6fb4ea", "#e8402e"),
+                               ("pr2", (0.36, 0.36, 0.4), (-1.45, -1.15, 0.2), "#ff9cc0", "#ffcc33"),
+                               ("pr3", (0.4, 0.3, 0.24), (-1.7, -1.4, 0.12), "#1f9f8a", "#fffaf0")):
+        box(kit, nm, sz, loc, c, 0.6, 0.1, bevel=0.01)
+        box(kit, nm + "r1", (sz[0] + 0.02, 0.05, sz[2] + 0.02), loc, rb, 0.6, 0.1)
+        box(kit, nm + "r2", (0.05, sz[1] + 0.02, sz[2] + 0.02), loc, rb, 0.6, 0.1)
 
 
 def pic(kit, x, y, z, w, h):
@@ -201,20 +255,36 @@ def build_curtain(kit):
     cd = mat(kit, "#f0b422", 0.85, 0.04)
     n = 9
     wd = (x1 - x0) / n
+    top, bot = G.CURT_TOP, G.CURT_BOT
     for i in range(n):
         x = x0 + wd * (i + 0.5)
         fwd = 0.07 if i % 2 else 0.0
-        if i in (2, 3, 4):   # Ivy's bulge: three folds pushed forward round her shoulders
+        if i in (3, 4, 5):   # Ivy's bulge: three folds pushed forward round her shoulders
             fwd += 0.09
-        kit.box(f"fold{i}", (wd * 1.04, 0.1, G.H - 0.5 - 0.24), (x, y - fwd, (G.H - 0.5 - 0.24) / 2 + 0.24), cm if i % 2 else cd,
+        # every fold runs back to one plane, so nothing behind the curtain shows between the folds
+        kit.box(f"fold{i}", (wd * 1.04, 0.1 + fwd, top - bot), (x, y - fwd / 2, (top + bot) / 2), cm if i % 2 else cd,
                 None, (0, 0, 0), 0.02)
-    # the gathered tie-back is NOT used: both edges hang straight. A brass rod with finials near the ceiling
-    box(kit, "rod", (x1 - x0 + 0.3, 0.04, 0.04), ((x0 + x1) / 2, y, G.H - 0.28), "#c9a23c", 0.35, 0.5)
+    # a brass rod with finials above it; the gathered tie-back is NOT used: both edges hang straight
+    box(kit, "rod", (x1 - x0 + 0.3, 0.04, 0.04), ((x0 + x1) / 2, y, top + 0.06), "#c9a23c", 0.35, 0.5)
     for sx in (x0 - 0.17, x1 + 0.17):
-        kit.sphere("fin", 0.05, (sx, y, G.H - 0.28), M(kit, "#c9a23c", 0.35, 0.5))
-    # the frosting smudge on the curtain's free edge at hand height (the second clue), 1.5 cm proud of the fold
-    kit.box("smudge", (0.07, 0.02, 0.1), (x0 + 0.05, y - 0.065, 1.0), M(kit, PINK, 0.65, 0.05), None, (0, 0, 0.3), 0.01)
-    kit.box("smudge2", (0.045, 0.02, 0.045), (x0 + 0.085, y - 0.067, 0.92), M(kit, PINK, 0.65, 0.05), None, (0, 0, 0.3), 0.01)
+        kit.sphere("fin", 0.05, (sx, y, top + 0.06), M(kit, "#c9a23c", 0.35, 0.5))
+    # Ivy's red sneaker toes poking out under the hem (the first clue): a pair of shoes, white soles, laces, stripe;
+    # they go when she steps out (cue "toes_off")
+    tr = kit.empty("toes", (0, 0, 0))
+    W["toes"] = tr
+    red = kit.emit("#ff0070", 0.42, "toeemit")
+    wh = M(kit, "#fafafa", 0.6, 0.1)
+    for sx in (-1, 1):
+        tx = G.IVY0[0] + sx * 0.17
+        kit.box("toe", (0.24, 0.42, 0.15), (tx, 2.0 + 0.04, 0.105), red, tr, (0, 0, 0), 0.05)
+        kit.box("toesole", (0.25, 0.44, 0.03), (tx, 2.0 + 0.04, 0.015), wh, tr, (0, 0, 0), 0.01)
+        kit.box("toecap", (0.2, 0.1, 0.08), (tx, 1.84, 0.085), wh, tr, (0, 0, 0), 0.03)
+        kit.box("toestripe", (0.245, 0.12, 0.025), (tx, 2.1, 0.13), wh, tr, (0, 0, 0), 0.01)
+    # the frosting smudge on the curtain's free edge at hand height (the second clue), 2.5 cm proud of the fold,
+    # a big hot-pink thumb smear with a drag below it
+    pk = M(kit, "#ff5fa8", 0.6, 0.05)
+    kit.box("smudge", (0.12, 0.02, 0.17), (x0 + 0.072, y - 0.075, 1.05), pk, None, (0, 0, 0.25), 0.01)
+    kit.box("smudge2", (0.07, 0.02, 0.07), (x0 + 0.1, y - 0.077, 0.88), pk, None, (0, 0, 0.3), 0.01)
 
 
 def build_armchair(kit):
@@ -248,14 +318,17 @@ def build_clock(kit):
     kit.box("clk_dleaf", (0.23, 0.025, 0.28), (0.115, -0.0, 0.0), M(kit, "#f0d9a0", 0.6, 0.1), hinge)
     kit.box("clk_dknob", (0.035, 0.03, 0.035), (0.19, -0.02, 0.0), M(kit, WOOD_D), hinge)
     W["dhinge"] = hinge
-    # the bird: a red body, yellow beak, white wing, a dark eye dot; on a slide out of the recess
-    slide = kit.empty("clk_bird", (cx, yb - 0.1, cz + 0.28), None)
-    kit.box("bd_body", (0.11, 0.17, 0.13), (0, 0, -0.03), M(kit, RED, 0.5, 0.1), slide, bevel=0.03)
-    kit.box("bd_head", (0.08, 0.08, 0.08), (0, -0.07, 0.04), M(kit, RED, 0.5, 0.1), slide, bevel=0.025)
-    kit.box("bd_beak", (0.035, 0.07, 0.03), (0, -0.14, 0.035), M(kit, "#ffc21e", 0.5, 0.1), slide, bevel=0.01)
-    kit.box("bd_tail", (0.04, 0.1, 0.05), (0, 0.11, 0.0), M(kit, "#a02a20", 0.5, 0.1), slide, rot=(0.4, 0, 0))
-    kit.box("bd_wing", (0.02, 0.1, 0.08), (0.06, 0.0, -0.03), M(kit, "#fff4e0", 0.5, 0.1), slide, bevel=0.01)
-    kit.box("bd_wing2", (0.02, 0.1, 0.08), (-0.06, 0.0, -0.03), M(kit, "#fff4e0", 0.5, 0.1), slide, bevel=0.01)
+    # the bird: a red body, a yellow beak, spread white wings, black eyes, turned three-quarters so it reads as a bird
+    slide = kit.empty("clk_bird", (cx, yb - 0.1, cz + 0.28), None, (0, 0, 0.6))
+    kit.box("bd_body", (0.13, 0.19, 0.15), (0, 0, -0.03), M(kit, "#e01c18", 0.5, 0.1), slide, bevel=0.035)
+    kit.box("bd_head", (0.1, 0.1, 0.1), (0, -0.09, 0.05), M(kit, "#e01c18", 0.5, 0.1), slide, bevel=0.03)
+    kit.box("bd_beak", (0.05, 0.1, 0.04), (0, -0.2, 0.045), M(kit, "#ffc21e", 0.5, 0.1), slide, bevel=0.012)
+    kit.box("bd_beak2", (0.035, 0.07, 0.025), (0, -0.27, 0.04), M(kit, "#ff9a14", 0.5, 0.1), slide, bevel=0.008)
+    kit.box("bd_tail", (0.05, 0.14, 0.05), (0, 0.15, 0.0), M(kit, "#a02a20", 0.5, 0.1), slide, rot=(0.4, 0, 0))
+    for sx in (-1, 1):
+        kit.box(f"bd_wing{sx}", (0.17, 0.12, 0.025), (sx * 0.13, 0.0, 0.03), M(kit, "#fff4e0", 0.5, 0.1), slide,
+                rot=(0, -sx * 0.75, 0), bevel=0.008)
+        kit.box(f"bd_eye{sx}", (0.02, 0.02, 0.02), (sx * 0.052, -0.12, 0.075), M(kit, "#1a1008", 0.4, 0.2), slide)
     W["bird"] = slide
     W["bird0"] = (cx, yb - 0.1, cz + 0.28)
     # the face: cream disc in a dark ring, dots at the hours, hands at SEVEN (hour hand to 7, minute hand to 12)
@@ -308,6 +381,21 @@ def build_table(kit):
         for sx in (-1, 1):
             for sy in (-1, 1):
                 kit.box("chleg", (0.05, 0.05, 0.42), (px + o * 0.05 + sx * 0.21, py + sy * 0.21, 0.21), wd)
+    # Ivy's empty sixth chair at the foot, pulled in under the cloth's edge, and a plate set at it
+    cx6, cy6 = G.CHAIR6
+    r6 = kit.empty("chair6", (0, 0, 0))
+    W["chair6"] = r6
+    kit.box("seat6", (0.5, 0.5, 0.05), (cx6, cy6, 0.44), wd, r6, bevel=0.01) if False else kit.box("seat6", (0.5, 0.5, 0.05), (cx6, cy6, 0.44), wd, r6, (0, 0, 0), 0.01)
+    kit.box("chback6", (0.5, 0.05, 0.55), (cx6, cy6 - 0.3, 0.74), wd, r6, (0, 0, 0), 0.01)
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            kit.box("chleg6", (0.05, 0.05, 0.42), (cx6 + sx * 0.21, cy6 + sy * 0.21, 0.21), wd, r6)
+    kit.cyl("plate6", 0.2, 0.014, (0.0, 0.14, G.TABLE_Z + 0.027), M(kit, "#fffdf8", 0.3, 0.3), None, (0, 0, 0), n=28)
+    kit.box("fork6", (0.025, 0.17, 0.008), (-0.27, 0.14, G.TABLE_Z + 0.025), M(kit, "#d8d8dc", 0.3, 0.6))
+    kit.box("nap6", (0.15, 0.15, 0.008), (0.27, 0.14, G.TABLE_Z + 0.025), M(kit, "#e86a5a", 0.8, 0.02), None, (0, 0, 0.3))
+    for (px, py) in (G.GRANDMA, G.MOM, G.DAD, G.ME):
+        o = -1 if px < 0 else 1
+        kit.cyl("plate", 0.14, 0.014, (o * 0.36, py, G.TABLE_Z + 0.027), M(kit, "#fffdf8", 0.3, 0.3), None, (0, 0, 0), n=24)
     gx, gy = G.GRANDPA
     kit.box("stool", (0.5, 0.5, 0.06), (gx, gy, 0.44), M(kit, RED, 0.7, 0.1), bevel=0.02)
     for sx in (-1, 1):
@@ -326,7 +414,10 @@ def build_cake(kit):
     zt = z + 0.185 + 0.0
     kit.box("frost_a", (0.52, 0.29, 0.04), (cx, cy + 0.055, zt + 0.02), frost, bevel=0.012)
     kit.box("frost_b", (0.37, 0.11, 0.04), (cx + 0.075, cy - 0.145, zt + 0.02), frost, bevel=0.012)
-    kit.box("scoop", (0.15, 0.11, 0.012), (cx - 0.185, cy - 0.145, zt + 0.006), sponge)
+    kit.box("scoop", (0.15, 0.11, 0.012), (cx - 0.185, cy - 0.145, zt + 0.006), M(kit, "#6a3a1c", 0.8, 0.02))
+    kit.box("scoopw", (0.15, 0.012, 0.04), (cx - 0.185, cy - 0.09, zt + 0.02), M(kit, "#8a5226", 0.8, 0.02))
+    kit.box("scoopd", (0.012, 0.11, 0.04), (cx - 0.11, cy - 0.145, zt + 0.02), M(kit, "#8a5226", 0.8, 0.02))
+    kit.box("scoopcrumb", (0.07, 0.05, 0.02), (cx - 0.3, cy - 0.27, z + 0.024), frost, None, (0, 0, 0.4), 0.008)
     # a frosting border along the sides (1 cm proud), and the sugar "80" in cream numerals on top
     kit.box("frost_side", (0.54, 0.02, 0.035), (cx, cy + 0.205, z + 0.16), frost)
     kit.box("frost_side2", (0.02, 0.4, 0.035), (cx + 0.27, cy, z + 0.16), frost)
@@ -339,7 +430,7 @@ def build_cake(kit):
                 if v == "1":
                     kit.box(f"sug{i}{r}{q}", (px, px, 0.016), (bx + (q - 1) * px, cy + 0.02 + (2 - r) * px, zt + 0.048), sugar)
     # the cake server on the cloth, cream handle
-    kit.box("server", (0.05, 0.28, 0.012), (cx + 0.5, cy - 0.1, G.TABLE_Z + 0.036), M(kit, "#d8d8dc", 0.3, 0.6), None, (0, 0, 0.25), 0.003)
+    W["server"] = kit.box("server", (0.05, 0.28, 0.012), (cx + 0.22, cy + 0.3, G.TABLE_Z + 0.036), M(kit, "#d8d8dc", 0.3, 0.6), None, (0, 0, 0.1), 0.003)
 
 
 # ---------------------------------------------------------------------------------------------- the tag and letters
@@ -352,7 +443,6 @@ def build_tag(kit):
     ink = kit.emit("#2a1a0e", 0.5, "tagink")
     dim = kit.emit("#d8c9a8", 0.8, "tagdim")
     gold = kit.emit("#ffb400", 1.7, "taggold")
-    teal = kit.emit("#1f9f8a", 1.0, "tagteal")
     pinkm = kit.emit("#ff7fb0", 1.3, "tagpink")
     redm = kit.emit("#e8402e", 1.2, "tagred")
     wh = kit.emit("#ffffff", 1.0, "tagwhite")
@@ -363,53 +453,52 @@ def build_tag(kit):
         return ob
     b("tag.edge", (1.04, 0.66, 0.004), (0, 0, 0.0), edge)
     b("tag.plate", (0.98, 0.6, 0.004), (0, 0, 0.004), plate)
-    # row 1: the bird glyph, then five people (head + body) in teal; the sixth appears at the end in gold
-    b("tag.bbody", (0.12, 0.09, 0.004), (-0.38, 0.17, 0.008), redm)
-    b("tag.bhead", (0.06, 0.06, 0.004), (-0.43, 0.22, 0.012), redm)
-    b("tag.bbeak", (0.04, 0.025, 0.004), (-0.48, 0.22, 0.012), gold)
-    b("tag.btail", (0.06, 0.03, 0.004), (-0.32, 0.15, 0.012), ink)
-    W["pips"] = []
-    for i in range(6):
-        x = -0.17 + i * 0.12
-        c = teal if i < 5 else gold
-        piv = kit.empty(f"tag.pip{i}", (x, 0.17, 0.01), root)
-        b(f"tag.pipo{i}", (0.095, 0.2, 0.002), (0, 0, -0.002), edge, piv)
-        b(f"tag.pipb{i}", (0.07, 0.07, 0.004), (0, -0.04, 0.0), c, piv)
-        b(f"tag.piph{i}", (0.055, 0.055, 0.004), (0, 0.03, 0.0), c, piv)
-        W["pips"].append(piv)
-    # row 2: six cuckoo ticks, dim until each cuckoo
+    # row 1: the bird glyph, then the count as big digits: "5" from frame 1, a "6" beside it from the sixth cuckoo
+    # ("5 . 6"), and at the end the "6" alone
+    b("tag.bbody", (0.12, 0.09, 0.004), (-0.38, 0.14, 0.008), redm)
+    b("tag.bhead", (0.06, 0.06, 0.004), (-0.43, 0.19, 0.012), redm)
+    b("tag.bbeak", (0.04, 0.025, 0.004), (-0.48, 0.19, 0.012), gold)
+    b("tag.btail", (0.06, 0.03, 0.004), (-0.32, 0.12, 0.012), ink)
+    W["d5"] = kit.empty("tag.d5", (-0.06, 0.12, 0.012), root)
+    text3d(kit, "tag.t5", "5", 0.5, (0, 0, 0), ink, W["d5"], ext=0.002, bevel=0.002, rot=(0, 0, 0))
+    W["dot"] = kit.empty("tag.dot", (0.14, 0.1, 0.012), root)
+    b("tag.dotb", (0.05, 0.05, 0.004), (0, 0, 0), ink, W["dot"])
+    W["d6"] = kit.empty("tag.d6", (0.3, 0.12, 0.012), root)
+    text3d(kit, "tag.t6", "6", 0.5, (0, 0, 0), redm, W["d6"], ext=0.002, bevel=0.002, rot=(0, 0, 0))
+    # row 2: six tally marks, dim until each cuckoo
     W["ticks"] = []
-    b("tag.cuc", (0.1, 0.06, 0.004), (-0.38, -0.02, 0.008), edge)
     for i in range(6):
-        x = -0.17 + i * 0.12
-        b(f"tag.tkd{i}", (0.06, 0.16, 0.004), (x, -0.02, 0.008), dim)
-        piv = kit.empty(f"tag.tk{i}", (x, -0.02, 0.012), root)
-        b(f"tag.tkl{i}", (0.06, 0.16, 0.004), (0, 0, 0), gold, piv)
+        x = -0.34 + i * 0.136
+        b(f"tag.tkd{i}", (0.05, 0.14, 0.004), (x, -0.13, 0.008), dim)
+        piv = kit.empty(f"tag.tk{i}", (x, -0.13, 0.012), root)
+        b(f"tag.tkl{i}", (0.05, 0.14, 0.004), (0, 0, 0), gold, piv)
         W["ticks"].append(piv)
     # row 3: a cake glyph (white slab, pink top) and a pink fill bar
-    b("tag.ck1", (0.14, 0.05, 0.004), (-0.38, -0.2, 0.008), wh)
-    b("tag.ck2", (0.14, 0.04, 0.004), (-0.38, -0.155, 0.012), pinkm)
-    b("tag.trk", (0.66, 0.08, 0.004), (0.13, -0.19, 0.008), dim)
-    piv = kit.empty("tag.cakefill", (-0.2, -0.19, 0.012), root)
-    b("tag.cf", (0.66, 0.08, 0.004), (0.33, 0.0, 0.0), pinkm, piv)
+    b("tag.ck1", (0.14, 0.04, 0.004), (-0.38, -0.25, 0.008), wh)
+    b("tag.ck2", (0.14, 0.03, 0.004), (-0.38, -0.215, 0.012), pinkm)
+    b("tag.trk", (0.66, 0.06, 0.004), (0.13, -0.245, 0.008), dim)
+    piv = kit.empty("tag.cakefill", (-0.2, -0.245, 0.012), root)
+    b("tag.cf", (0.66, 0.06, 0.004), (0.33, 0.0, 0.0), pinkm, piv)
     W["cake"] = piv
 
 
 def build_letters(kit):
     W["letters"] = {}
-    spots = {"A": (G.ARM[0] + 0.75, G.ARM[1] - 0.2, 1.55), "B": (1.6, 1.95, 2.35), "C": (G.CLOSET_X, 2.55, 2.45), "D": (0.0, 0.2, 1.5)}
-    face = kit.emit("#fff6c0", 1.5, "ltrface")
+    # A over the armchair, B on the curtain's top, C over the closet door, D on the tablecloth skirt
+    spots = {"A": (-1.75, 0.75, 1.65), "B": ((G.CURT_X0 + G.CURT_X1) / 2, 1.85, 3.2), "C": (G.CLOSET_X, 2.55, 2.75),
+             "D": (0.0, -0.05, 1.0)}
+    face = kit.emit("#fff3d0", 1.2, "ltrface")
     rim = kit.emit("#2a1a0e", 0.5, "ltrrim")
-    inkm = kit.emit("#2a1a0e", 0.5, "ltrink")
+    inkm = kit.emit("#0b0b0b", 1.0, "ltrink")
     for k, (x, y, z) in spots.items():
         root = kit.empty(f"ltr.{k}", (x, y, z), None)
-        kit.cyl(f"ltr.{k}.rim", 0.3, 0.02, (0, 0.0, 0), rim, root, (math.pi / 2, 0, 0), n=28)
-        kit.cyl(f"ltr.{k}.face", 0.27, 0.02, (0, -0.012, 0), face, root, (math.pi / 2, 0, 0), n=28)
-        pixel_text(kit, f"ltr.{k}.t", k, 0, -0.026, 0, 0.06, inkm, root, depth=0.012)
+        kit.cyl(f"ltr.{k}.rim", 0.4, 0.02, (0, 0.0, 0), rim, root, (math.pi / 2, 0, 0), n=32)
+        kit.cyl(f"ltr.{k}.face", 0.36, 0.02, (0, -0.012, 0), face, root, (math.pi / 2, 0, 0), n=32)
+        text3d(kit, f"ltr.{k}.t", k, 0.62, (0, -0.03, -0.0), inkm, root, ext=0.012, bevel=0.01)
         noshadow(root)
         W["letters"][k] = (root, (x, y, z))
     # the ring round the curtain
-    ring = kit.empty("ring", (1.6, 2.3, 1.55), None)
+    ring = kit.empty("ring", (1.6, 2.3, 1.5), None)
     rm = kit.emit("#fffdf0", 1.8, "ringglow")
     rd = kit.emit("#4a2a10", 0.6, "ringdark")
     cx = (G.CURT_X0 + G.CURT_X1) / 2
@@ -421,7 +510,7 @@ def build_letters(kit):
                 (loc[0], loc[1] + 0.025, loc[2]), rd, ring)
     noshadow(ring)
     W["ring"] = ring
-    W["ring0"] = (cx, 2.3, 1.55)
+    W["ring0"] = (cx, 2.0, 1.5)
 
 
 # ---------------------------------------------------------------------------------------------- the cast's extras
@@ -443,23 +532,43 @@ def _extras(self, hg, spec, kit, faces):
             a = k * 2 * math.pi / 5
             kit.box(f"{n}.crpt{k}", (0.17, 0.12, 0.3), ((R + 0.03) * math.sin(a), (R + 0.03) * math.cos(a), top + 0.26), cc, hg,
                     rot=(0, 0, -a), bevel=0.02)
-    if spec.get("sneakers"):  # Ivy's bright red sneakers: a long toe and a white sole, on both feet
-        sc = kit.plastic(spec["sneakers"], 0.5, spec=0.25)
+    if spec.get("sneakers"):  # Ivy's bright red sneakers: a long toe, a white sole and stripe, laces, on both feet
+        sc = kit.emit("#ff0070", 0.42, "sneakemit")
         so = kit.plastic("#fafafa", 0.6, spec=0.1)
         for sx in (-1, 1):
             leg = _b.data.objects.get(f"{n}.leg{sx}")
             if leg is None:
                 continue
-            kit.box(f"{n}.sneak{sx}", (0.84, 1.5, 0.5), (0, -0.2, -1.78), sc, leg, bevel=0.1)
-            kit.box(f"{n}.sole{sx}", (0.88, 1.56, 0.14), (0, -0.2, -2.0), so, leg, bevel=0.04)
-            kit.box(f"{n}.toecap{sx}", (0.7, 0.4, 0.3), (0, -0.88, -1.86), so, leg, bevel=0.08)
-            kit.box(f"{n}.lace{sx}", (0.4, 0.5, 0.06), (0, -0.1, -1.5), so, leg, bevel=0.02)
+            kit.box(f"{n}.sneak{sx}", (0.9, 1.7, 0.6), (0, -0.28, -1.76), sc, leg, bevel=0.1)
+            kit.box(f"{n}.sole{sx}", (0.94, 1.76, 0.14), (0, -0.28, -2.04), so, leg, bevel=0.04)
+            kit.box(f"{n}.stripe{sx}", (1.0, 0.8, 0.1), (0, -0.2, -1.8), so, leg, bevel=0.02)
+            kit.box(f"{n}.lace{sx}", (0.5, 0.6, 0.06), (0, -0.1, -1.44), so, leg, bevel=0.02)
     if spec.get("frosting"):  # Ivy's thumbs: a dab of pink frosting on the front of each hand
         fc = kit.plastic(spec["frosting"], 0.6, spec=0.05)
         for sx in (-1, 1):
             arm = _b.data.objects.get(f"{n}.arm{sx}")
             if arm is not None:
-                kit.box(f"{n}.dab{sx}", (0.34, 0.34, 0.5), (0.0, -0.52, -1.7), fc, arm, bevel=0.1)
+                kit.box(f"{n}.dab{sx}", (0.4, 0.4, 0.6), (0.0, -0.52, -1.7), fc, arm, bevel=0.1)
+    if spec.get("curls"):    # long black curls round the face and down to the shoulders (she reads as a sister)
+        cc = kit.plastic(spec.get("hair_c", "#15100c"), 0.55, spec=0.15)
+        for k in range(8):
+            a = k * math.pi / 4
+            y = 0.48 * math.cos(a)
+            if y < -0.3:
+                y = -0.3
+            kit.sphere(f"{n}.curl{k}", 0.24, (0.52 * math.sin(a), y + 0.05, top + 0.04), cc, hg, seg=10)
+        for sx in (-1, 1):
+            for k in range(5):
+                kit.sphere(f"{n}.curls{sx}{k}", 0.26, (sx * (R + 0.14), 0.0 + 0.04 * k, 0.4 - 0.36 * k), cc, hg, seg=10)
+    if "glasses" in spec.get("extras", []):   # no glossy lens (it threw a white glare): open frames instead
+        gc = kit.plastic(spec.get("extra_c", "#222222"), 0.5, spec=0.05)
+        for sx in (-1, 1):
+            lens = _b.data.objects.get(f"{n}.gl{sx}")
+            if lens is not None:
+                lens.hide_render = True
+            kit.box(f"{n}.glo{sx}", (0.46, 0.04, 0.05), (sx * 0.24, -R - 0.05, -0.17), gc, hg)
+            for sx2 in (-1, 1):
+                kit.box(f"{n}.gls{sx}{sx2}", (0.05, 0.04, 0.32), (sx * 0.24 + sx2 * 0.21, -R - 0.05, -0.01), gc, hg)
 
 
 def _install_extras():
@@ -509,6 +618,20 @@ def animate(kit, story, tl, t, ctx):
     sid = next((sh["id"] for sh in tl["shots"] if sh["start"] <= t < sh["end"]), tl["shots"][-1]["id"])
     W["ceiling"].hide_render = sid in MASTERS
     W["south"].hide_render = True
+    sh_hold = sid in ("S02", "S06", "S08", "S11a", "S11b", "S11c", "S12")
+    for c_ in [W["chair6"]] + list(W["chair6"].children):
+        c_.hide_render = not sh_hold
+    off_t = ct(tl, "toes_off")
+    W["toes"].hide_render = off_t is not None and t >= off_t
+    for c_ in W["toes"].children:
+        c_.hide_render = W["toes"].hide_render
+    sv0, sv1 = ct(tl, "cake_on"), ct(tl, "server_off")
+    if sv0 is not None and sv1 is not None and sv0 <= t < sv1:
+        W["server"].location = (0.0, 1.62, 0.99)
+        W["server"].rotation_euler = (0.15, 0, 0)
+    else:
+        W["server"].location = (G.CAKE[0] + 0.22, G.CAKE[1] + 0.3, G.TABLE_Z + 0.036)
+        W["server"].rotation_euler = (0, 0, 0.1)
     # the clock: the bird out for the opening and at each cuckoo
     ext = trap(t, 0.0, 0.25, 1.0, 0.2)
     t0 = ct(tl, "bird_off")
@@ -521,19 +644,20 @@ def animate(kit, story, tl, t, ctx):
     x, y, z = W["bird0"]
     W["bird"].location = (x, y - 0.22 * ext + 0.06, z)
     W["dhinge"].rotation_euler = (0, 0, -ext * 1.5)
-    # the counter tag
-    on = 0
+    # the counter tag: "5" from frame 1, a tally mark per cuckoo, "6" beside it at the sixth ("5 . 6"), the "6" alone at the end
     for i, piv in enumerate(W["ticks"]):
         c = ct(tl, f"ck{i}")
         lit = c is not None and t >= c
         piv.scale = (1, 1 if lit else 0.001, 1)
-    s6 = ct(tl, "six")
-    for i, piv in enumerate(W["pips"]):
-        if i < 5:
-            piv.scale = (1, 1, 1)
-        else:
-            u = 0.0 if s6 is None else kit.ss((t - s6) / 0.3)
-            piv.scale = (max(0.001, u), max(0.001, u), 1)
+    s6, s6b = ct(tl, "six"), ct(tl, "sixshow")
+    u6 = 0.0 if s6b is None else kit.ss((t - s6b) / 0.25)
+    uz = 0.0 if s6 is None else kit.ss((t - s6) / 0.4)       # the settle: the 5 and the dot leave, the 6 slides to the middle
+    sc6 = max(0.001, u6) * (1.0 + 0.25 * math.sin(min(1.0, (t - (s6b or 0)) / 0.25) * math.pi) if s6b is not None and t >= s6b else 1.0)
+    W["d6"].scale = (sc6, sc6, 1)
+    W["d6"].location = (0.3 - 0.2 * uz, 0.12, 0.012)
+    k5 = max(0.001, 1 - uz)
+    W["d5"].scale = (k5, k5, 1)
+    W["dot"].scale = (max(0.001, u6 * (1 - uz)), max(0.001, u6 * (1 - uz)), 1)
     c0, c1 = ct(tl, "cake_on"), ct(tl, "cake_off")
     if c0 is not None and c1 is not None:
         u = min(1.0, max(0.0, (t - c0) / max(0.1, c1 - c0)))
@@ -545,7 +669,7 @@ def animate(kit, story, tl, t, ctx):
     for k in "ABCD":
         root, loc = W["letters"][k]
         c = ct(tl, f"ltr{k}")
-        if c is None or t < c or (off is not None and t >= off):
+        if c is None or t < c or (off is not None and t >= off) or (k == "D" and sid == "S09"):
             root.location = (loc[0], loc[1], -60.0)
             continue
         u = (t - c) / 0.15

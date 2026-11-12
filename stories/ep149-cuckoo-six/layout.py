@@ -1,6 +1,9 @@
 """Places shared by set.py and generator/make_story.py (x east, y north; the camera looks north from the south).
 A character facing -y (the camera) has yaw 0; yaw 90 faces east (+x)."""
-H = 3.4                      # room height
+H = 5.8                      # room height (tall walls: the dollhouse shots see no sky)
+CURT_TOP = 3.0               # the curtain's rod height
+CURT_BOT = 0.03              # its hem
+UPPER = 3.5                  # the picture-rail height
 WALL_N = 2.9                 # inside face of the north wall
 ROOM_X = 2.9                 # side walls at +-2.9
 ROOM_S = -7.0                # the (hidden) south wall
@@ -16,8 +19,9 @@ DAD = (1.0, 1.1)           # east side
 ME = (1.0, 0.1)
 ARM = (-2.45, 1.0)           # the red armchair (A): its back flush against the west wall, facing east
 CLOSET_X = -1.9              # the hall closet's door (C)
-CURT_X0, CURT_X1 = 1.0, 2.2  # the yellow curtain (B)
+CURT_X0, CURT_X1 = 1.5, 2.8  # the yellow curtain (B)
 CURT_Y = 2.22                # its centre depth
-IVY0 = (1.5, 2.62)       # Ivy behind it (her head stays 3 cm off the wall)
-IVY_OUT = (0.0, 2.62)        # directly behind Grandpa, arms wide of his shoulders
-IVY_HUG = IVY_OUT            # she hugs him from there (no second walk)
+IVY0 = (2.12, 2.6)      # Ivy behind it (toes poke out under the hem)
+CHAIR6 = (0.0, -0.38)    # Ivy's empty sixth chair at the foot of the table, pulled in
+IVY_OUT = (1.0, 2.45)        # where she stops after stepping out, facing us
+IVY_HUG = (0.72, 2.55)        # she leans in beside Grandpa and hugs him

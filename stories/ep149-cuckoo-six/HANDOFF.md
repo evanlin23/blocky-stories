@@ -1,0 +1,2 @@
+# ep149 handoff (builder)
+- Caption position: the script wants "A, B, C or D?" in the top third, but `blocky/post.py` draws every caption at the fixed CY (about 66% down) and has no per-caption position. Not changed (engine). The master is framed so the caption sits over the rug and the sixth chair, not faces. An opt-in `cap_y` on a pause line (timeline.build passes it, post.draw_captions uses it) would fix it.

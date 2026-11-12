@@ -238,34 +238,26 @@
    ]
   },
   "L12": {
-   "text": "my big sister ivy, who swore she had to work all weekend.",
+   "text": "ivy. she swore she had to work.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.845,
-   "onset": 0.172,
-   "end": 2.638,
+   "dur": 1.672,
+   "onset": 0.19,
+   "end": 1.466,
    "chunks": [
     [
-     0.172,
-     0.672
+     0.19,
+     0.414
     ],
     [
-     0.672,
-     1.017
+     0.448,
+     0.87
     ],
     [
-     1.086,
-     1.5
-    ],
-    [
-     1.5,
-     1.862
-    ],
-    [
-     1.862,
-     2.638
+     0.87,
+     1.466
     ]
    ]
   },
@@ -306,6 +298,30 @@
     [
      0.172,
      1.086
+    ]
+   ]
+  },
+  "L02": {
+   "text": "my big sister ivy had to work.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     0.966
+    ],
+    [
+     0.966,
+     1.638
     ]
    ]
   }
