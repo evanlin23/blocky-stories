@@ -318,7 +318,7 @@ S("L16", ((1.0, 5.6, 1.7), (-1.3, 1.0, 1.5), 28, (0.7, 5.4, 1.7), (-1.0, 1.8, 1.
   who={"mom": (X(-2.4, 0.2), 150, "smile", {"arms": [10, 10]})},
   note="the bell jingles; my mom comes in, face to camera")
 cue("L16", "bell")
-walk("mom", "L16", X(-2.4, 0.2))
+walk("mom", "L16", X(-2.4, 0.2), yaw=150, keep_yaw=True)
 walk("mom", "L16.1-0.1", X(-1.2, 0.9))   # the cut to S35 puts her at the counter; this path stays in front of the stand-up tables
 raw("mom", "L16.1-0.1", yaw=180, blend=0.3)
 S("L16.1", ((-1.9, 6.4, 1.7), (-0.4, 3.3, 1.55), 36, (-1.7, 6.2, 1.7), (-0.4, 3.3, 1.55), 36),
@@ -430,11 +430,12 @@ cue("L26", "ladder1", on=True)
 cue("L26", "pour", on=False)
 S("L26", ((3.2, 1.5, 1.5), (1.4, 5.3, 1.45), 30, (2.8, 1.8, 1.5), (1.2, 5.3, 1.45), 30),
   who={"me": ((1.4, 5.3), 0, "worried", {"head": [-25, 0], "arms": [25, 25]})}, note="me looking around, then slipping off")
-walk("me", "L26+0.3", (1.4, 5.3))
+raw("me", "L26+0.05", yaw=127, blend=0.25)
+walk("me", "L26+0.3", (1.4, 5.3), yaw=127, keep_yaw=True)
 walk("me", "L26.2", (2.2, 5.9))
 S("L26.2", ((-0.8, 2.8, 2.6), (-0.8, 0, 2.5), 36, (-0.8, 2.1, 2.5), (-0.8, 0, 2.5), 36), note="the wall clock at 9:01, the inset x5")
 S("L26.3", ((1.2, 3.4, 1.5), (3.0, 7.2, 1.2), 26, (1.5, 3.8, 1.5), (3.0, 7.2, 1.2), 26),
-  who={"me": ((2.2, 5.9), 180, "worried", {})}, note="me slipping out the back door into a bright alley")
+  who={"me": ((2.2, 5.9), 144, "worried", {})}, note="me slipping out the back door into a bright alley")
 walk("me", "L26.3", (2.2, 5.9))
 walk("me", "L26>", (3.0, 7.0))
 cue("L26.3", "bdoor", v=[0], dur=0)
@@ -677,7 +678,7 @@ story = {
     "tail": LOOP,
     "fade_in": False,
     "fade_out": False,
-    "rev": 9,
+    "rev": 10,
     "staging_ok": ["S09/background crowd at the frame edges behind Lund, out of focus, nobody touches",
                    "S11/background crowd at the frame edges behind Lund, out of focus, nobody touches",
                    "S14/two neighbours cross on the sidewalk for 3 frames, passing in opposite directions",

@@ -373,7 +373,8 @@ def _motion(st: dict) -> dict:
     p = polish.spec(st)
     if not p:
         return {}
-    return {"ease": bool(p["ease"]), "idle": bool(p["idle"]), "idle_scale": float(p["idle_scale"]), "ones": p["ones"]}
+    return {"ease": bool(p["ease"]), "idle": bool(p["idle"]), "idle_scale": float(p["idle_scale"]), "ones": p["ones"],
+            "overlap": bool(p.get("overlap")), "turn_cap": float(p.get("turn_cap") or 0)}
 
 
 def _key(k: dict, at) -> dict:

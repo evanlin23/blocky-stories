@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from blocky import acting, hud, kit, polish, rig  # noqa: E402
+from blocky import acting, faces_v3, hud, kit, polish, rig  # noqa: E402
 
 
 def load_set(story_dir: Path):
@@ -90,10 +90,25 @@ def pose_at(t, story, tl, setmod, ctx, chars, shots):
     return shot
 
 
+def v3_pop(tl, name, t, seed, expr):
+    """The v3 snap on a new expression (faces_v3.pop_at), found without state: how long ago, looking back a frame at
+    a time over the snap's length, the expression was last something else. Shards draw frames out of order, so
+    nothing may be remembered between frames."""
+    fps = tl.get("fps", 24)
+    for k in range(1, int((faces_v3.POP_IN + faces_v3.POP_OUT) * fps) + 2):
+        if t - k / fps < 0:
+            return 0.0
+        if acting.state(tl, name, t - k / fps, seed)["expr"] != expr:
+            return faces_v3.pop_at((k - 0.5) / fps)
+    return 0.0
+
+
 def _pose(t, story, tl, setmod, ctx, chars, shots):
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
     for name, (c, seed) in chars.items():
         s = acting.state(tl, name, t, seed)
+        if getattr(c, "v3", False):
+            c.pop = v3_pop(tl, name, t, seed, s["expr"])
         c.pose(s["x"], s["y"], s["z"], s["yaw"], s["legs"], s["arms"], s["arms_side"], s["head_yaw"],
                s["head_pitch"], s["lean"], s["bob"], s["expr"], s["mouth"], s["look"], s["blink"], s["hidden"])
     overrides = {}
@@ -332,6 +347,8 @@ def main():
     for i, (name, spec) in enumerate(story.get("cast", {}).items()):
         if spec.get("offscreen"):
             continue
+        if look.get("style") == "v3":   # the v3 look (docs/research/style-v3/): opt-in per story, so proofed films keep theirs
+            spec = {**spec, "style": "v3"}
         chars[name] = (rig.Character(name, spec, faces_dir), i)
     pol = polish.spec(story)   # the polish pack's camera moves on shots whose own camera holds still
     shots = polish.cam_specs(story, tl, pol)
