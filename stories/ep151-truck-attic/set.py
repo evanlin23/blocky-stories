@@ -60,32 +60,73 @@ def wall_with_hole(x0, x1, z0, z1, hx0, hx1, hz0, hz1, y, th, mat, name):
 
 
 # ------------------------------------------------------------------------------------------------ the arm
-SLEEVE = "#34343c"
-HAND = "#6b5a63"
-BRASS = "#d8a83a"
-PATH = [(2.5, 1.2, 3.62), (2.5, -0.55, 3.56), (2.46, -0.95, 3.0), (2.28, -1.65, 2.5), (2.1, -2.55, 2.02),
-        (2.02, -3.6, 1.78)]
+SLEEVE = "#5d5d6a"
+SLEEVE2 = "#4a4a56"
+HAND = "#b9a2d4"
+BRASS = "#8c7438"
+PATH = [(2.5, 1.2, 3.55), (2.5, -0.6, 3.5), (2.47, -1.0, 3.05), (2.3, -1.7, 2.55), (2.12, -2.6, 2.2),
+        (2.02, -3.55, 2.02), (2.02, -3.7, 1.8)]
+
+
+def oct_seg(p, q, t, mat, name, bevel=0.06, ext=0.0):
+    """A rounder limb: the same box drawn twice, turned 45 degrees about its axis (an octagon section)."""
+    from mathutils import Quaternion
+    a, b = V(p), V(q)
+    d = b - a
+    q0 = d.to_track_quat("Z", "Y")
+    for roll in (0.0, math.radians(45)):
+        ob = K.kit.box(nm(name), (t, t, d.length + 2 * ext), (a + b) / 2, mat, None, (0, 0, 0), bevel)
+        ob.rotation_euler = (q0 @ Quaternion((0, 0, 1), roll)).to_euler()
+
+
+def finger(base, dirs, lens, th, mat):
+    """A finger of several joints: each joint a box along its direction, bending as dirs says."""
+    pt = V(base)
+    for d, ln in zip(dirs, lens):
+        d = V(d).normalized()
+        e = pt + d * ln
+        seg(pt, e, th, mat, "finger", 0.02, ext=th * 0.4)
+        pt = e
+        th *= 0.9
+    return pt
 
 
 def build_arm(kit):
-    wool = kit.plastic(SLEEVE, 0.92, spec=0.05)
-    skin = kit.plastic(HAND, 0.7, spec=0.1)
-    brass = kit.plastic(BRASS, 0.3, spec=0.8)
-    t = 0.34
+    wool = kit.plastic(SLEEVE, 0.95, spec=0.03)
+    wool2 = kit.plastic(SLEEVE2, 0.95, spec=0.03)
+    band = kit.plastic("#8d8a9c", 0.9, spec=0.03)
+    skin = kit.plastic(HAND, 0.6, spec=0.15)
+    brass = kit.plastic(BRASS, 0.8, spec=0.1)
+    t = 0.3
     for a, b in zip(PATH, PATH[1:]):
-        seg(a, b, t, wool, "sleeve", 0.04, ext=t * 0.5)
+        oct_seg(a, b, t, wool, "sleeve", 0.07, ext=t * 0.4)
+    # creases: thin, slightly fatter rings across the sleeve, turned about the axis, darker wool
+    for i, (a, b) in enumerate(zip(PATH[:-1], PATH[1:])):
+        A, Bv = V(a), V(b)
+        d = (Bv - A).normalized()
+        n = max(2, int((Bv - A).length / 0.5))
+        for k in range(1, n):
+            c = A + (Bv - A) * (k / n)
+            oct_seg(c - d * 0.035, c + d * 0.035, t + 0.03, wool2, "fold", 0.04)
+    # the elbow where it bends over the gutter: a fat knuckle of cloth
+    e = V(PATH[2])
+    oct_seg(e + V((0, 0.12, 0.12)), e + V((0, -0.1, -0.1)), t + 0.1, wool, "elbow", 0.1)
+    # the soft turned-back cuff band at the wrist (round-ish, lighter), and the dark sleeve mouth under it
     w = V(PATH[-1])
-    # the wide cuff: a fatter, shorter box on the sleeve's end, hanging a little past the wrist
-    seg(w + V((0.0, 0.1, 0.0)), w + V((-0.05, -0.28, -0.06)), 0.44, wool, "cuff", 0.05, thick2=0.44)
-    # the one big brass button, on the cuff's camera side, 1 cm proud
-    bt = kit.cyl(nm("button"), 0.075, 0.05, (w.x - 0.235, w.y - 0.1, w.z - 0.02), brass, None, (0, math.radians(90), 0), n=18)
-    # the long flat hand, palm up, resting out toward the camera side: palm then four long flat fingers
-    px, py, pz = w.x - 0.1, w.y - 0.45, w.z - 0.2
-    B(None, (0.32, 0.5, 0.09), (px, py, pz), skin, "palm", 0.02)
+    oct_seg(w + V((0, 0, 0.1)), w + V((0, 0, -0.05)), 0.4, band, "cuff", 0.09)
+    oct_seg(w + V((0, 0, -0.05)), w + V((0, 0, -0.12)), 0.31, wool2, "mouth", 0.05)
+    # a small matte button on the cuff's camera side
+    kit.cyl(nm("button"), 0.04, 0.03, (w.x - 0.2, w.y - 0.02, w.z + 0.04), brass, None, (0, math.radians(90), 0), n=14)
+    # the hand: pale dusky lilac, hanging limp from the wrist, palm toward us, four long separate fingers + thumb
+    hx, hy = w.x - 0.02, w.y
+    top = w.z - 0.12
+    B(None, (0.12, 0.3, 0.3), (hx, hy, top - 0.15), skin, "palm", 0.03)
     for i in range(4):
-        fx = px - 0.12 + i * 0.08
-        B(None, (0.065, 0.62, 0.07), (fx, py - 0.5, pz - 0.005 - 0.004 * (i % 2)), skin, "finger", 0.015)
-    B(None, (0.1, 0.4, 0.075), (px + 0.2, py - 0.2, pz - 0.0), skin, "thumb", 0.015, rot=(0, 0, math.radians(-25)))
+        fy = hy + 0.115 - i * 0.077
+        ln = (0.26, 0.3, 0.28, 0.2)[i]
+        finger((hx - 0.01, fy, top - 0.28),
+               [(-0.05 * (i - 1.5), -0.1, -1.0), (0.0, -0.45, -0.9), (0.0, -0.85, -0.5)], (ln, 0.2, 0.16), 0.06, skin)
+    finger((hx - 0.01, hy + 0.17, top - 0.12), [(0.0, 0.8, -0.35), (0.0, 0.9, -0.4)], (0.17, 0.15), 0.07, skin)
 
 
 # ------------------------------------------------------------------------------------------------ the house
@@ -93,7 +134,7 @@ def build_house(kit):
     blue, blue2 = P("#9cc8ec", 0.7, 0.1), P("#86b6de", 0.7, 0.1)
     white = P("#d6d1c4", 0.6, 0.1)
     roof = P("#5b5560", 0.8, 0.05)
-    dark = P("#120f14", 1.0, 0.0)
+    dark = P("#000000", 1.0, 0.0)
     # main block (two storeys) left of the garage
     B(None, (7.05, 8.0, 5.6), (-3.5, 4.0, 2.8), blue, "main")
     B(None, (7.6, 8.6, 0.35), (-3.5, 4.0, 5.75), roof, "mainroof")
@@ -134,8 +175,8 @@ def build_house(kit):
     for size, loc in (((1.0, 0.1, 1.0), (2.5, 2.7, 3.6)), ((0.1, 2.5, 1.0), (1.96, 1.45, 3.6)), ((0.1, 2.5, 1.0), (3.04, 1.45, 3.6)),
                       ((1.2, 2.5, 0.1), (2.5, 1.45, 4.1)), ((1.2, 2.5, 0.1), (2.5, 1.45, 3.1))):
         B(None, size, loc, dark, "pocket")
-    kit.cyl(nm("cord"), 0.01, 0.5, (2.5, 2.2, 3.85), dark, None, n=6)
-    B(None, (0.1, 0.1, 0.14), (2.5, 2.2, 3.58), kit.emit("#ffe27a", 9.0, name="bulb"), "bulb")
+    # (no bulb: the pocket is pitch black)
+    # kit.cyl(nm("cord"), 0.01, 0.5, (2.5, 2.2, 3.85), dark, None, n=6)
     return None
 
 
@@ -213,12 +254,11 @@ def build(kit, story, tl):
     to_sun = V((math.sin(az) * math.cos(el), math.cos(az) * math.cos(el), math.sin(el)))
     sun.rotation_euler = (-to_sun).to_track_quat("-Z", "Y").to_euler()
     # the cuff in sun: a narrow warm spot from the front, only on the cuff and button
-    cuff = V(PATH[-1])
+    cuff = V(PATH[-1]) + V((0, 0, -0.35))
     spot = kit.light("cuffsun", "SPOT", (-3.0, -8.0, 6.5), 4200, "#fff0d0", size=0.3, spot=9, blend=0.5)
     kit.aim(spot, (cuff.x - 0.05, cuff.y - 0.1, cuff.z - 0.05))
     kit.light("truckin", "POINT", (3.9, -3.7, 2.7), 90, "#fff2dc", size=0.3, shadow=False)
     # the bulb's glow on the arm root inside the window
-    kit.light("bulbglow", "POINT", (2.5, 1.9, 3.7), 12, "#ffd86a", size=0.1)
     # sky fill so the shaded house front stays bright
     fill = kit.light("skyfill", "AREA", (-6.0, -14.0, 8.0), 900, "#dff0ff", size=12.0, shadow=False)
     kit.aim(fill, (2.5, 0.0, 2.5))

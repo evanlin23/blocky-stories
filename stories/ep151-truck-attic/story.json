@@ -1,6 +1,6 @@
 {
  "slug": "ep151-truck-attic",
- "title": "The Ice Cream Truck Knows Who's LEAVING 🚚",
+ "title": "The Ice Cream Truck Knows Who's LEAVING \ud83d\ude9a",
  "made_for_kids": false,
  "premise": "In this town the ice cream truck stops at any house where someone is about to move out, and it stops at ours every day while nobody is moving.",
  "twist": "Someone has lived in our attic longer than we have, and on Saturday a gray sleeve reached out of the attic window for an ice pop and moved in next door.",
@@ -571,30 +571,30 @@
     [
      0,
      [
-      -3.6,
-      -9.4,
-      1.2
+      -1.6,
+      -8.2,
+      1.7
      ],
      [
-      2.2,
-      -2.4,
-      2.45
+      3.0,
+      -2.6,
+      2.6
      ],
-     21
+     27
     ],
     [
      1,
      [
-      -3.4,
-      -9.0,
-      1.2
+      -1.5,
+      -7.9,
+      1.7
      ],
      [
-      2.2,
-      -2.4,
-      2.45
+      3.0,
+      -2.6,
+      2.6
      ],
-     22
+     28
     ]
    ],
    "step": 2,
@@ -627,7 +627,11 @@
      0.45
     ],
     "yaw": -90,
-    "expr": "neutral"
+    "expr": "scared",
+    "head": [
+     -15,
+     0
+    ]
    }
   ]
  },
