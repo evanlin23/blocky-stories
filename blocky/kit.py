@@ -87,6 +87,53 @@ def box(name, size, loc=(0, 0, 0), mat=None, parent=None, rot=(0, 0, 0), bevel=0
     return ob
 
 
+def outline_mat(hexc="#17121a"):
+    """The v3 ink line: black where the inverted hull shows round a part's silhouette, see-through where it's in
+    front of the part. Flat, unlit, never shaded."""
+    name = f"outline {hexc}"
+    if name in MATS:
+        return MATS[name]
+    m = _new(name)
+    nt = m.node_tree
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    for n in list(nt.nodes):
+        if n.type != "OUTPUT_MATERIAL":
+            nt.nodes.remove(n)
+    geo = nt.nodes.new("ShaderNodeNewGeometry")
+    lp = nt.nodes.new("ShaderNodeLightPath")
+    # the shell's normals point in, so the camera sees its front (ink) only round the silhouette; seen from behind
+    # (in front of the part) it's clear, and it's clear to every ray but the camera's, so it casts no shadow
+    notcam = nt.nodes.new("ShaderNodeMath"); notcam.operation = "SUBTRACT"
+    notcam.inputs[0].default_value = 1.0
+    nt.links.new(lp.outputs["Is Camera Ray"], notcam.inputs[1])
+    fac = nt.nodes.new("ShaderNodeMath"); fac.operation = "MAXIMUM"
+    nt.links.new(geo.outputs["Backfacing"], fac.inputs[0])
+    nt.links.new(notcam.outputs[0], fac.inputs[1])
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Color"].default_value = col(hexc)
+    em.inputs["Strength"].default_value = 1.0
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    mix = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(fac.outputs[0], mix.inputs[0])
+    nt.links.new(em.outputs[0], mix.inputs[1])
+    nt.links.new(tr.outputs[0], mix.inputs[2])
+    nt.links.new(mix.outputs[0], out.inputs["Surface"])
+    return m
+
+
+def outline(ob, th=0.045, hexc="#17121a"):
+    """An inverted-hull ink outline round one part (v3): a shell th thick just outside it, in outline_mat. In the
+    object's own units, so a character's root scale scales it with the character."""
+    ob.data.materials.append(outline_mat(hexc))
+    m = ob.modifiers.new("outline", "SOLIDIFY")
+    m.thickness = -th          # with offset -1 and flipped normals the part stays put and the shell is outside it
+    m.offset = -1.0
+    m.use_flip_normals = True
+    m.use_rim = False
+    m.material_offset = len(ob.data.materials) - 1
+    return m
+
+
 def cyl(name, r, h, loc=(0, 0, 0), mat=None, parent=None, rot=(0, 0, 0), n=20, r2=None):
     r2 = r if r2 is None else r2
     verts, faces = [], []
