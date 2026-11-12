@@ -1,0 +1,621 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "If the ice cream truck stops at your house, someone inside is moving out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.241,
+   "onset": 0.155,
+   "end": 3.052,
+   "chunks": [
+    [
+     0.155,
+     0.879
+    ],
+    [
+     0.879,
+     1.621
+    ],
+    [
+     1.715,
+     2.301
+    ],
+    [
+     2.301,
+     3.052
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Monday, it stopped at ours. Nobody's moving.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.19,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.474,
+     1.241
+    ],
+    [
+     1.319,
+     2.224
+    ]
+   ]
+  },
+  "L03": {
+   "text": "It stopped for Mrs. Lee next door. She moved out the next morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.983,
+   "onset": 0.155,
+   "end": 2.793,
+   "chunks": [
+    [
+     0.155,
+     0.914
+    ],
+    [
+     0.914,
+     1.466
+    ],
+    [
+     1.561,
+     1.974
+    ],
+    [
+     1.974,
+     2.793
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Now Mom thinks it's me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.19,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.19,
+     0.75
+    ],
+    [
+     0.75,
+     1.31
+    ]
+   ]
+  },
+  "L06": {
+   "text": "She's been crying into my laundry.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.517
+    ]
+   ]
+  },
+  "L07": {
+   "text": "I'm not moving out. I can't even do my laundry.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.948,
+     1.379
+    ],
+    [
+     1.379,
+     2.224
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Tuesday, 3:15. \"Ding-ding.\" It stopped again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.483,
+     0.983
+    ],
+    [
+     1.103,
+     1.431
+    ],
+    [
+     1.474,
+     2.293
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Nobody came out. Nobody bought anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.19,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.19,
+     0.81
+    ],
+    [
+     0.888,
+     1.879
+    ]
+   ]
+  },
+  "L10": {
+   "text": "And on our hooks was a long gray coat nobody owns.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.466
+    ],
+    [
+     1.466,
+     2.276
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Its sleeves lay on the floor.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.431
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Dad says it came with the house.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.732
+    ],
+    [
+     0.732,
+     1.397
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Wednesday, somebody drew on Mom's grocery list: one little orange ice pop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.483,
+   "onset": 0.172,
+   "end": 3.276,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.517,
+     0.879
+    ],
+    [
+     0.879,
+     1.948
+    ],
+    [
+     2.043,
+     2.362
+    ],
+    [
+     2.362,
+     3.276
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Thursday, the attic ladder was down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.112
+    ],
+    [
+     1.112,
+     1.759
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Friday, the coat was gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.509,
+     0.732
+    ],
+    [
+     0.732,
+     1.362
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Saturday, 3:14. I waited on the lawn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.19,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ],
+    [
+     0.5,
+     1.103
+    ],
+    [
+     1.19,
+     1.492
+    ],
+    [
+     1.492,
+     2.155
+    ]
+   ]
+  },
+  "L19": {
+   "text": "3:15. \"Ding-ding.\" It pulled into our driveway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.19,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.19,
+     0.69
+    ],
+    [
+     0.793,
+     1.241
+    ],
+    [
+     1.345,
+     1.767
+    ],
+    [
+     1.767,
+     2.483
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Our front door stayed shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     1.293
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Then, above me, the attic window opened.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.319,
+     0.672
+    ],
+    [
+     0.716,
+     1.31
+    ],
+    [
+     1.31,
+     1.862
+    ]
+   ]
+  },
+  "L22": {
+   "text": "A gray sleeve came out, and kept coming.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     0.983
+    ],
+    [
+     1.008,
+     1.81
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Over the gutter, all the way down to the truck's window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.69,
+     1.241
+    ],
+    [
+     1.241,
+     2.138
+    ]
+   ]
+  },
+  "L25": {
+   "text": "He laid one orange ice pop in its hand,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     1.164
+    ],
+    [
+     1.164,
+     1.81
+    ]
+   ]
+  },
+  "L26": {
+   "text": "and said, \"Good luck with the move.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.483,
+     0.768
+    ],
+    [
+     0.768,
+     1.448
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Somebody's lived in our attic longer than we have.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.19,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.19,
+     0.75
+    ],
+    [
+     0.75,
+     1.155
+    ],
+    [
+     1.155,
+     2.086
+    ]
+   ]
+  },
+  "L30": {
+   "text": "And next door, Mrs. Lee's attic window was open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.707,
+     1.621
+    ],
+    [
+     1.621,
+     2.276
+    ]
+   ]
+  },
+  "L33": {
+   "text": "So if it stops at yours, and nobody's moving, check the attic.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.172,
+   "end": 2.638,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ],
+    [
+     0.992,
+     1.776
+    ],
+    [
+     1.854,
+     2.638
+    ]
+   ]
+  }
+ }
+}

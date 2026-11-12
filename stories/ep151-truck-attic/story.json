@@ -1,0 +1,636 @@
+{
+ "slug": "ep151-truck-attic",
+ "title": "The Ice Cream Truck Knows Who's LEAVING 🚚",
+ "made_for_kids": false,
+ "premise": "In this town the ice cream truck stops at any house where someone is about to move out, and it stops at ours every day while nobody is moving.",
+ "twist": "Someone has lived in our attic longer than we have, and on Saturday a gray sleeve reached out of the attic window for an ice pop and moved in next door.",
+ "world": "a bright summer suburban street, our pale blue house with a white garage and a small attic window over it, a mint ice cream truck",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#b46cff",
+ "gap": 0.15,
+ "tail": 0.25,
+ "min_read": 0.15,
+ "fade_in": false,
+ "fade_out": false,
+ "look": {
+  "sky": "#8fd0ff",
+  "fog": "#cfe8ff",
+  "fog_density": 0.002,
+  "fog_start": 40.0,
+  "exposure": 0.0,
+  "flash_safe": true,
+  "style": "closer",
+  "polish": true
+ },
+ "grade": {
+  "shadows": [
+   -0.01,
+   0.0,
+   0.03
+  ],
+  "highlights": [
+   0.03,
+   0.01,
+   -0.02
+  ],
+  "saturation": 1.12,
+  "contrast": 1.05,
+  "vignette": 0.15,
+  "bloom": 0.15,
+  "grain": 0.008
+ },
+ "cast": {
+  "me": {
+   "age": "teen",
+   "skin": "#c89868",
+   "shirt": "#e0b030",
+   "pattern": "solid",
+   "pants": "#6e727a",
+   "shoes": "#f4f4f2",
+   "sleeves": "short",
+   "hair": "swoop",
+   "hair_c": "#5a3a22",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#2b1d1a"
+   }
+  },
+  "icecream": {
+   "age": "adult",
+   "skin": "#e0b890",
+   "shirt": "#9fe6c8",
+   "pattern": "solid",
+   "pants": "#f2f2ee",
+   "shoes": "#f4f4f2",
+   "sleeves": "long",
+   "hair": "none",
+   "hat": "ballcap",
+   "hat_c": "#f6f6f2",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#2b1d1a"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "If the ice cream truck",
+     "If the ice cream truck"
+    ],
+    [
+     "stops at your HOUSE,",
+     "stops at your house,"
+    ],
+    [
+     "someone inside",
+     "someone inside"
+    ],
+    [
+     "is moving OUT.",
+     "is moving out."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Monday,",
+     "Monday,"
+    ],
+    [
+     "it stopped at OURS.",
+     "it stopped at ours."
+    ],
+    [
+     "Nobody's MOVING.",
+     "Nobody's moving."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It stopped for Mrs. Lee",
+     "It stopped for Mrs. Lee"
+    ],
+    [
+     "next DOOR.",
+     "next door."
+    ],
+    [
+     "She moved out",
+     "She moved out"
+    ],
+    [
+     "the next MORNING.",
+     "the next morning."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Now Mom thinks",
+     "Now Mom thinks"
+    ],
+    [
+     "it's ME.",
+     "it's me."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She's been crying",
+     "She's been crying"
+    ],
+    [
+     "into my LAUNDRY.",
+     "into my laundry."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I'm not moving OUT.",
+     "I'm not moving out."
+    ],
+    [
+     "I can't even",
+     "I can't even"
+    ],
+    [
+     "do my LAUNDRY.",
+     "do my laundry."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Tuesday,",
+     "Tuesday,"
+    ],
+    [
+     "3:15.",
+     "3:15."
+    ],
+    [
+     "\"Ding-DING.\"",
+     "\"Ding-ding.\""
+    ],
+    [
+     "It stopped AGAIN.",
+     "It stopped again."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody came OUT.",
+     "Nobody came out."
+    ],
+    [
+     "Nobody bought ANYTHING.",
+     "Nobody bought anything."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And on our hooks",
+     "And on our hooks"
+    ],
+    [
+     "was a long gray COAT",
+     "was a long gray coat"
+    ],
+    [
+     "nobody OWNS.",
+     "nobody owns."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its sleeves",
+     "Its sleeves"
+    ],
+    [
+     "lay on the FLOOR.",
+     "lay on the floor."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad says",
+     "Dad says"
+    ],
+    [
+     "it came",
+     "it came"
+    ],
+    [
+     "with the HOUSE.",
+     "with the house."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Wednesday,",
+     "Wednesday,"
+    ],
+    [
+     "somebody drew",
+     "somebody drew"
+    ],
+    [
+     "on Mom's grocery LIST:",
+     "on Mom's grocery list:"
+    ],
+    [
+     "one little",
+     "one little"
+    ],
+    [
+     "orange ICE POP.",
+     "orange ice pop."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Thursday,",
+     "Thursday,"
+    ],
+    [
+     "the attic ladder",
+     "the attic ladder"
+    ],
+    [
+     "was DOWN.",
+     "was down."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Friday,",
+     "Friday,"
+    ],
+    [
+     "the coat",
+     "the coat"
+    ],
+    [
+     "was GONE.",
+     "was gone."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Saturday,",
+     "Saturday,"
+    ],
+    [
+     "3:14.",
+     "3:14."
+    ],
+    [
+     "I waited",
+     "I waited"
+    ],
+    [
+     "on the LAWN.",
+     "on the lawn."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "3:15.",
+     "3:15."
+    ],
+    [
+     "\"Ding-DING.\"",
+     "\"Ding-ding.\""
+    ],
+    [
+     "It pulled into",
+     "It pulled into"
+    ],
+    [
+     "our DRIVEWAY.",
+     "our driveway."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Our front door",
+     "Our front door"
+    ],
+    [
+     "stayed SHUT.",
+     "stayed shut."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then,",
+     "Then,"
+    ],
+    [
+     "above me,",
+     "above me,"
+    ],
+    [
+     "the attic window",
+     "the attic window"
+    ],
+    [
+     "OPENED.",
+     "opened."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A gray sleeve",
+     "A gray sleeve"
+    ],
+    [
+     "came out,",
+     "came out,"
+    ],
+    [
+     "and kept COMING.",
+     "and kept coming."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Over the GUTTER,",
+     "Over the gutter,"
+    ],
+    [
+     "all the way down",
+     "all the way down"
+    ],
+    [
+     "to the truck's WINDOW.",
+     "to the truck's window."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He laid one",
+     "He laid one"
+    ],
+    [
+     "orange ICE POP",
+     "orange ice pop"
+    ],
+    [
+     "in its HAND,",
+     "in its hand,"
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "and said,",
+     "and said,"
+    ],
+    [
+     "\"Good luck",
+     "\"Good luck"
+    ],
+    [
+     "with the MOVE.\"",
+     "with the move.\""
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Somebody's lived",
+     "Somebody's lived"
+    ],
+    [
+     "in our ATTIC",
+     "in our attic"
+    ],
+    [
+     "longer than WE have.",
+     "longer than we have."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And next door,",
+     "And next door,"
+    ],
+    [
+     "Mrs. Lee's attic window",
+     "Mrs. Lee's attic window"
+    ],
+    [
+     "was OPEN.",
+     "was open."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So if it stops at YOURS,",
+     "So if it stops at yours,"
+    ],
+    [
+     "and nobody's MOVING,",
+     "and nobody's moving,"
+    ],
+    [
+     "check the ATTIC.",
+     "check the attic."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      -3.6,
+      -9.4,
+      1.2
+     ],
+     [
+      2.2,
+      -2.4,
+      2.45
+     ],
+     21
+    ]
+   ],
+   "step": 2,
+   "look": "day"
+  },
+  {
+   "id": "S27",
+   "at": "L26",
+   "cam": [
+    [
+     0,
+     [
+      -3.6,
+      -9.4,
+      1.2
+     ],
+     [
+      2.2,
+      -2.4,
+      2.45
+     ],
+     21
+    ],
+    [
+     1,
+     [
+      -3.4,
+      -9.0,
+      1.2
+     ],
+     [
+      2.2,
+      -2.4,
+      2.45
+     ],
+     22
+    ]
+   ],
+   "step": 2,
+   "look": "day",
+   "note": "the reveal: window, sleeve over the gutter, down to the hatch, the ice cream man, the cuff in sun"
+  }
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "pos": [
+     0.0,
+     30.0
+    ],
+    "yaw": 150,
+    "expr": "scared",
+    "head": [
+     0,
+     0
+    ]
+   }
+  ],
+  "icecream": [
+   {
+    "at": 0,
+    "pos": [
+     3.15,
+     -3.7,
+     0.45
+    ],
+    "yaw": -90,
+    "expr": "neutral"
+   }
+  ]
+ },
+ "cues": [],
+ "rev": 1
+}
