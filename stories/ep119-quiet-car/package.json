@@ -6,5 +6,6 @@
   "cover_s": 30.6,
   "shape": "all-at-once",
   "opening": "ban",
-  "lane": "core"
+  "lane": "core",
+  "hold": "staging yaw (2026-11-12): c1 flips 68 deg in 1 frame at S12 13.30 s; fix job, then a new final qa"
 }

@@ -16,6 +16,12 @@ where two people have to sit side by side without their arms meeting (ep20's pho
 
 The rig's units: the torso is 2 wide. `S` scales a unit to metres, so a default character is about 1.75 m.
 Front is -y. Pivots: hips at z = 2, shoulders at z = 3.75, neck at z = 4.
+
+v3 (`"style": "v3"`, set for the whole cast by a story's `look.style`; docs/research/style-v3/): a bigger rounded
+block head (faces_v3.HEAD3_*) with the face as a flat decal on its front (faces_v3), the hair from the v3 library
+(`"hair"`: one of hair3.STYLES, `"hair_c"`, `"hair_c2"`, `"features"`: hair3.FEATURES), chunky mitt hands, an ink
+outline round every part (`"outline"`: thickness in rig units, 0 for none), and per character `"head_scale"` and
+`"arm_scale"` for one loud proportion. Everything else in the spec means what it does in v2.
 """
 
 from __future__ import annotations
@@ -25,7 +31,7 @@ import os
 
 import bpy
 
-from blocky import faces, kit
+from blocky import faces, faces_v3, hair3, kit
 
 S = 0.34  # metres per rig unit
 CHARS: dict = {}   # name -> Character, so a story's set.py can reach a rig (ep31: set_seams)
@@ -254,6 +260,45 @@ def save_whole(pil, path):
     os.replace(tmp, path)
 
 
+def head_material_v3(name, skin):
+    """v3: the skin with the face decal over the front only. The decal is mapped flat from the front (object x and
+    z) and masked to the faces that look forward, so it never smears round the sides or the back."""
+    m = kit._new(f"head3 {name}")
+    nt = m.node_tree
+    b = nt.nodes["Principled BSDF"]
+    b.inputs["Roughness"].default_value = 0.8
+    for k in ("Specular IOR Level", "Specular"):   # a matte face, so the ink never washes out under a sheen
+        if k in b.inputs:
+            b.inputs[k].default_value = 0.15
+            break
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(tc.outputs["Object"], sep.inputs[0])
+    u = nt.nodes.new("ShaderNodeMath"); u.operation = "MULTIPLY_ADD"
+    nt.links.new(sep.outputs["X"], u.inputs[0]); u.inputs[1].default_value = 1 / faces_v3.HEAD3_W; u.inputs[2].default_value = 0.5
+    v = nt.nodes.new("ShaderNodeMath"); v.operation = "MULTIPLY_ADD"
+    nt.links.new(sep.outputs["Z"], v.inputs[0]); v.inputs[1].default_value = 1 / faces_v3.HEAD3_H; v.inputs[2].default_value = 0.5
+    comb = nt.nodes.new("ShaderNodeCombineXYZ")
+    nt.links.new(u.outputs[0], comb.inputs["X"]); nt.links.new(v.outputs[0], comb.inputs["Y"])
+    tex = nt.nodes.new("ShaderNodeTexImage")
+    tex.interpolation = "Linear"
+    tex.extension = "CLIP"
+    nt.links.new(comb.outputs[0], tex.inputs["Vector"])
+    nsep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(tc.outputs["Normal"], nsep.inputs[0])
+    front = nt.nodes.new("ShaderNodeMath"); front.operation = "LESS_THAN"
+    nt.links.new(nsep.outputs["Y"], front.inputs[0]); front.inputs[1].default_value = -0.55
+    fac = nt.nodes.new("ShaderNodeMath"); fac.operation = "MULTIPLY"
+    nt.links.new(tex.outputs["Alpha"], fac.inputs[0]); nt.links.new(front.outputs[0], fac.inputs[1])
+    mix = nt.nodes.new("ShaderNodeMix"); mix.data_type = "RGBA"
+    nt.links.new(fac.outputs[0], mix.inputs["Factor"])
+    mix.inputs[6].default_value = kit.col(skin)
+    nt.links.new(tex.outputs["Color"], mix.inputs[7])
+    nt.links.new(mix.outputs[2], b.inputs["Base Color"])
+    kit._fogged(m, b.outputs[0])
+    return m, tex
+
+
 def head_material(name, skin):
     """Skin with the face texture on top; the rig swaps the image as the expression changes."""
     m = kit._new(f"head {name}")
@@ -306,12 +351,13 @@ class Character:
     def __init__(self, name, spec, workdir):
         self.name, self.spec, self.workdir = name, spec, workdir
         self.face = spec.get("face", {})
+        self.v3 = spec.get("style") == "v3"
         self.images: dict = {}
         sc = spec.get("height", 1.0) * S
         wd = spec.get("width", 1.0)
         self.root = kit.empty(name, (0, 0, 0))
         self.root.scale = (sc * wd, sc, sc)
-        sm = bool(spec.get("seams"))          # opt-in (ep31): every limb in three blocks, the torso in two, the head in four
+        sm = bool(spec.get("seams")) and not self.v3          # opt-in (ep31): every limb in three blocks, the torso in two, the head in four
         self.sm = sm
         self.unit = 0.01 / (S * spec.get("height", 1.0))   # rig units per centimetre
         self.stacks, self.caps = [], []
@@ -352,8 +398,10 @@ class Character:
             cm = kit.plastic(spec["collar"], 0.6)
             kit.box(f"{name}.collar", (1.2 * bw, 1.04, 0.22), (0, 0, 1.93), cm, self.upper, bevel=0.06)
         sleeve = {"short": 0.7, "long": 1.75, "none": 0.0}[spec.get("sleeves", "long")]
+        am = float(spec.get("arm_scale", 1.0)) if self.v3 else 1.0
         for sx in (-1, 1):
-            arm = kit.empty(f"{name}.arm{sx}", (sx * 1.5 * bw, 0, 1.75), self.upper)
+            arm = kit.empty(f"{name}.arm{sx}", (sx * (1.0 + 0.5 * am) * bw, 0, 1.75), self.upper)
+            arm.scale = (am, am, 1.0 + 0.15 * (am - 1.0))
             if sm:
                 if sleeve >= 1.0:
                     segs = [(sleeve / 2, shirt, 0.98 * bw, 1.0), (sleeve / 2, shirt, 0.98 * bw, 1.0),
@@ -368,6 +416,8 @@ class Character:
                     kit.box(f"{name}.sleeve{sx}", (0.98 * bw, 1.0, sleeve), (0, 0, 0.25 - sleeve / 2), shirt, arm, bevel=bev)
                 kit.box(f"{name}.skinarm{sx}", (0.96 * bw, 0.98, 2.0 - sleeve), (0, 0, 0.25 - sleeve - (2.0 - sleeve) / 2),
                         skin, arm, bevel=bev)
+            if self.v3:   # a chunky mitt over the end of the arm, a touch wider than the sleeve
+                kit.box(f"{name}.hand{sx}", (1.2 * bw, 1.2, 0.66), (0, 0, -1.47), skin, arm, bevel=0.2, seg=3)
             P[f"arm{sx}"] = arm
         ex = spec.get("extras", [])
         self.coat = []
@@ -384,10 +434,19 @@ class Character:
             kit.box(f"{name}.hooddown", (1.56, 0.5, 0.44), (0, 0.66, 1.98), shirt, self.torso, bevel=0.18)
         self.neck = kit.empty(f"{name}.neck", (0, 0, 2.0), self.upper)
         self.head = kit.empty(f"{name}.head", (0, 0, 0), self.neck)
-        self.head_mat, self.face_tex = head_material(name, spec["skin"])
-        headg = kit.empty(f"{name}.headg", (0, 0, faces.HEAD_H / 2 + 0.02), self.head)
         self.slices = []
-        if sm:
+        if self.v3:
+            hs = float(spec.get("head_scale", 1.0))
+            self.head_mat, self.face_tex = head_material_v3(name, spec["skin"])
+            headg = kit.empty(f"{name}.headg", (0, 0, (faces_v3.HEAD3_H / 2 + 0.02) * hs), self.head)
+            headg.scale = (hs, hs, hs)
+            kit.box(f"{name}.headm", (faces_v3.HEAD3_W, faces_v3.HEAD3_D, faces_v3.HEAD3_H), (0, 0, 0), self.head_mat,
+                    headg, bevel=0.48, seg=4)
+            self._hair_v3(headg, spec)
+        else:
+            self.head_mat, self.face_tex = head_material(name, spec["skin"])
+            headg = kit.empty(f"{name}.headg", (0, 0, faces.HEAD_H / 2 + 0.02), self.head)
+        if sm and not self.v3:
             capm = kit.plastic("#08070a", 0.9, spec=0.05)
             for k in range(4):
                 se = kit.empty(f"{name}.slice{k}", (0, 0, 0), headg)
@@ -395,7 +454,8 @@ class Character:
                 self.slices.append(se)
         else:
             head_mesh(f"{name}.headm", self.head_mat, headg)
-        self._accessories(headg, spec)
+        if not self.v3:
+            self._accessories(headg, spec)
         if sm:    # each accessory rides the slice its centre is in
             for o in list(headg.children):
                 if o in self.slices:
@@ -404,9 +464,24 @@ class Character:
                 o.parent = self.slices[kz]
         self.P = P
         self.state = {}
+        self.pop = 0.0   # v3: the snap on a new expression (faces_v3.pop_at), set by the driver before pose()
+        if self.v3 and float(spec.get("outline", 0.11)) > 0:
+            for ob in self.root.children_recursive:
+                if ob.type == "MESH" and min(ob.dimensions) >= 0.2:   # thin bits (frames, ties) stay unlined
+                    kit.outline(ob, float(spec.get("outline", 0.11)), spec.get("outline_c", "#17121a"))
         self.set_face("neutral", 0.0, (0, 0), 0.0)
         if sm:
             self.set_seams(spec.get("seam", 0.5))
+
+    def _hair_v3(self, hg, spec):
+        self.hp = {"ears": [], "neck": []}
+        mats = {"hair": kit.plastic(spec.get("hair_c", "#2a1d15"), 0.6),
+                "hair2": kit.plastic(spec.get("hair_c2", spec.get("hair_c", "#2a1d15")), 0.5),
+                "skin": kit.plastic(spec["skin"], 0.5)}
+        style = spec.get("hair", "buzz")
+        style = style if style in hair3.STYLES else "buzz"   # a v2 hair name falls back to a plain buzz
+        for part, size, loc, rot, bev, mk in hair3.parts(style, spec.get("features", [])):
+            kit.box(f"{self.name}.h3{part}", size, loc, mats[mk], hg, rot=rot, bevel=bev)
 
     def _accessories(self, hg, spec):
         n, R, H = self.name, faces.HEAD_R, faces.HEAD_H
@@ -613,6 +688,8 @@ class Character:
     # ------------------------------------------------------------------------------------------------ pose
 
     def set_face(self, expr, open_, look, blink):
+        if self.v3:
+            return self._set_face_v3(expr, open_, look, blink)
         key = faces.face_key(self.face, self.spec["skin"], expr, open_, look, blink)
         if self.state.get("face") == key:
             return
@@ -624,6 +701,22 @@ class Character:
                 save_whole(pil, path)
             img = bpy.data.images.load(str(path))
             img.colorspace_settings.name = "sRGB"
+            self.images[key] = img
+        self.face_tex.image = img
+        self.state["face"] = key
+
+    def _set_face_v3(self, expr, open_, look, blink):
+        key = faces_v3.face3_key(self.face, self.spec["skin"], expr, open_, look, blink, self.pop)
+        if self.state.get("face") == key:
+            return
+        img = self.images.get(key)
+        if img is None:
+            path = self.workdir / f"face-{self.name}-{key}.png"
+            if not path.exists():
+                save_whole(faces_v3.face3_image(self.face, self.spec["skin"], expr, open_, look, blink, self.pop), path)
+            img = bpy.data.images.load(str(path))
+            img.colorspace_settings.name = "sRGB"
+            img.alpha_mode = "STRAIGHT"
             self.images[key] = img
         self.face_tex.image = img
         self.state["face"] = key
