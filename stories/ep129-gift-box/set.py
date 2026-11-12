@@ -282,19 +282,20 @@ def room(kit, name, state="wrapped", held=False, night=False, truck=False, strea
         wrapped_box(S, G.HOLD_BOX, bow="straight")
     # seating: Dad's armchair and the couch, both turned to face south, and a rug
     S.box("rug", (3.6, 2.4, 0.02), (0.2, 0.9, 0.01), "#bcdcf0", 0.95, 0.02)
-    ax, ay = G.ARM
-    chair_blue, chair_lt = mat(kit, SKY_BLUE, 0.7, 0.08), mat(kit, "#a9d8f5", 0.8, 0.05)
-    S.box("armbase", (1.04, 0.8, 0.25), (ax, ay, 0.175), chair_blue, bevel=0.03)
-    S.box("armcush", (0.7, 0.6, 0.15), (ax, ay - 0.06, 0.375), chair_lt, bevel=0.04)
-    S.box("armback", (1.04, 0.2, 0.9), (ax, ay + 0.3, 0.475), chair_blue, bevel=0.03)
-    for sx in (-1, 1):
-        S.box("armarm", (0.18, 0.8, 0.58), (ax + sx * 0.43, ay, 0.34), chair_blue, bevel=0.03)
-    cx, cy = G.COUCH
-    S.box("couchbase", (2.0, 0.8, 0.25), (cx, cy, 0.175), chair_blue, bevel=0.03)
-    S.box("couchcush", (1.64, 0.6, 0.15), (cx, cy - 0.06, 0.375), chair_lt, bevel=0.04)
-    S.box("couchback", (2.0, 0.2, 0.9), (cx, cy + 0.3, 0.475), chair_blue, bevel=0.03)
-    for sx in (-1, 1):
-        S.box("couchend", (0.18, 0.8, 0.58), (cx + sx * 0.91, cy, 0.34), chair_blue, bevel=0.03)
+    if not console:   # R7 has no seating: the couch and chair backs would cut through the bench box
+        ax, ay = G.ARM
+        chair_blue, chair_lt = mat(kit, SKY_BLUE, 0.7, 0.08), mat(kit, "#a9d8f5", 0.8, 0.05)
+        S.box("armbase", (1.04, 0.8, 0.25), (ax, ay, 0.175), chair_blue, bevel=0.03)
+        S.box("armcush", (0.7, 0.6, 0.15), (ax, ay - 0.06, 0.375), chair_lt, bevel=0.04)
+        S.box("armback", (1.04, 0.2, 0.9), (ax, ay + 0.3, 0.475), chair_blue, bevel=0.03)
+        for sx in (-1, 1):
+            S.box("armarm", (0.18, 0.8, 0.58), (ax + sx * 0.43, ay, 0.34), chair_blue, bevel=0.03)
+        cx, cy = G.COUCH
+        S.box("couchbase", (2.0, 0.8, 0.25), (cx, cy, 0.175), chair_blue, bevel=0.03)
+        S.box("couchcush", (1.64, 0.6, 0.15), (cx, cy - 0.06, 0.375), chair_lt, bevel=0.04)
+        S.box("couchback", (2.0, 0.2, 0.9), (cx, cy + 0.3, 0.475), chair_blue, bevel=0.03)
+        for sx in (-1, 1):
+            S.box("couchend", (0.18, 0.8, 0.58), (cx + sx * 0.91, cy, 0.34), chair_blue, bevel=0.03)
     # a side table and lamp at the couch's east end
     S.box("sidetab", (0.5, 0.5, 0.55), (2.75, 1.5, 0.275), "#e8c9a0", 0.7, 0.05, bevel=0.02)
     S.cyl("lampbase", 0.07, 0.22, (2.75, 1.5, 0.66), "#c9a23c", 0.4, 0.4)
