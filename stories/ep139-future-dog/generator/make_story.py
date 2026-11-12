@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L28
@@ -240,7 +240,7 @@ dog("L13", glide=True, x=G.CHAIR2[0], y=G.CHAIR2[1], z=G.SEAT_H, sit=1.0, yaw=90
 shot("S12a", "L12", phonecam(0.32, 0, 34, dx=0.0, dy=0.0, cz=0.95, tz=0.74, push=(0.26, 0.74)))
 key("me", "L12.2", expr="sheepish", head=[0, 8])
 shot("S12b", "L12.2", mecam(1.45, 0, 34, dx=-0.25, tz=1.27, cz=1.5))
-shot("S13a", "L13", P2((0.75, 1.3, 1.0), (-0.8, 1.5, 0.92), 34))
+shot("S13a", "L13", P2((0.75, 1.3, 1.05), (-0.85, 1.5, 1.1), 34))
 key("me", "L13.2", expr="stunned", head=[0, 0])
 shot("S13b", "L13.2", mecam(1.4, 0, 34, dx=-0.25, tz=1.27, cz=1.5))
 key("me", "L14", pos=ME, arms=[35, 78], lean=14, blend=0.4)
@@ -257,7 +257,7 @@ shot("S16", "L16", C(-0.5, 1.5, 0.45, 2.4, 6, 32, cz=0.95))
 dog("L17", hy=34.0, hp=14.0, dur=0.6)
 shot("S17", "L17", C(G.CHAIR2[0] + 0.25, G.CHAIR2[1], 0.85, 1.4, 0, 34, cz=1.0, push=(1.2, 0.85)))
 dog("L17.2", hy=24.0, hp=-8.0, dur=0.8)
-shot("S18", "L18", P2((0.75, 1.3, 1.0), (-0.8, 1.5, 0.92), 34))
+shot("S18", "L18", P2((0.75, 1.3, 1.05), (-0.85, 1.5, 1.1), 34))
 dog("L19", dur=0.5, yaw=0, hy=28.0, hp=0.0)
 shot("S19", "L19", C(G.CHAIR2[0] + 0.15, G.CHAIR2[1], 1.05, 1.4, 12, 34, cz=1.05))
 key("me", "L20", expr="stunned")
@@ -269,7 +269,7 @@ shot("S22", "L22", mecam(1.5, 8, 34, dx=-0.2, tz=1.25, cz=1.45, push=(1.3, 1.25)
 
 # --------------------------------------------------------------------------------------------- 06 the click, the gate (L23 to L27)
 dog("L23", dur=0.4, yaw=90, hy=0.0, hp=4.0)
-shot("S23", "L23", P2((0.6, 1.25, 0.95), (-0.85, 1.55, 0.92), 34))
+shot("S23", "L23", P2((0.6, 1.25, 1.0), (-0.9, 1.55, 1.08), 34))
 key("me", "L24", expr="uneasy", head=[0, 0], blend=0.5)
 mouth("me", "L24", "L24>", 0.35)
 shot("S24", "L24", mecam(1.35, 0, 34, dx=-0.25, tz=1.27, cz=1.5))
@@ -442,7 +442,7 @@ sound["ambience"][0]["to"] = "P28"
 polish = {"reveal": [remap("L44.2")], "twist": remap("L44.2"),
           "emph": [remap(x) for x in ["L01.3", "L01.5", "L13.2", "L23.1", "L30", "L34", "L44.4"]],
           "quiet": [[remap("L41"), remap("L43")]],
-          "hold": ["S44b", "S01a", "S10a", "S11", "S12a", "S13a", "S49"], "ones": "all"}
+          "hold": ["S44b", "S01a", "S10a", "S11", "S49"], "ones": "all"}
 story = {
     "slug": "ep139-future-dog",
     "title": "Future Me Called And Only Asked For The DOG",
@@ -476,7 +476,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "frames_ok": [],
+    "frames_ok": ["S25", "S40", "S44b"],
     "staging_ok": ["S43/me+theo touch on purpose (my hand to his shoulder)", "S44a/me+theo touch on purpose", "S47/me+theo stand close on purpose (coffee on the porch table)", "S48/me+theo stand close on purpose (same pose, Noodle close-up)"],
     "framing_ok": ["S04b", "S07", "S08", "S10b", "S14b", "S17", "S31b", "S35", "S38", "S45", "S48"],
     "clip_ok": ["photo.back", "photo.frame"],
