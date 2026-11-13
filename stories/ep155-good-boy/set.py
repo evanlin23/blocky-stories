@@ -424,6 +424,9 @@ def build_house(kit):
     noshadow(kit.box("p.lantern", (0.18, 0.18, 0.32), (HX - 1.1, FY - 0.14, DECK + 1.95), lant, bevel=0.03))
     kit.box("p.lantern.cap", (0.22, 0.22, 0.05), (HX - 1.1, FY - 0.14, DECK + 2.14), pl("#3a3a42", 0.5))
     kit.box("p.lantern.arm", (0.04, 0.16, 0.04), (HX - 1.1, FY - 0.05, DECK + 1.96), pl("#3a3a42", 0.5))
+    noshadow(kit.box("p.lantern2", (0.18, 0.18, 0.32), (61.05, FY - 0.14, DECK + 1.95), lant, bevel=0.03))
+    kit.box("p.lantern2.cap", (0.22, 0.22, 0.05), (61.05, FY - 0.14, DECK + 2.14), pl("#3a3a42", 0.5))
+    kit.box("p.lantern2.arm", (0.04, 0.16, 0.04), (61.05, FY - 0.05, DECK + 1.96), pl("#3a3a42", 0.5))
     kit.prop("houseplant_1", (G.DECK_X1 - 0.8, 11.3, DECK), scale=2.4)
     kit.prop("houseplant_1", (G.DECK_X0 + 0.8, 11.3, DECK), scale=2.0)
     # Pepper's teal bowl with the paw glyph, and the plate (the sausage lies on it)
@@ -473,6 +476,8 @@ def build_house(kit):
     kit.aim(df, (G.HX, 11.0, 1.2))
     dk = kit.light("dusk.key", "AREA", (G.HX - 2.2, 6.0, 2.8), 1500, "#ffe9cc", size=3.0, shadow=False)
     kit.aim(dk, (G.HX - 0.7, 10.4, 1.4))
+    dk2 = kit.light("dusk.key2", "AREA", (G.HX - 0.2, 11.2, 3.0), 1300, "#fff4e4", size=2.0, shadow=False)
+    kit.aim(dk2, (G.HX - 0.7, 9.3, 1.3))
 
 
 def build_room(kit):
@@ -559,11 +564,11 @@ def build_corner(kit):
     kit.prop("commontree_1", (cx - 3.4, cy - 1.5, 0), scale=1.2)
     kit.prop("commontree_1", (cx + 5.0, cy - 3.0, 0), scale=1.1)
     # the sign: a grey post and a plain white board with a dull border and nothing on it
-    sx_, sy_ = cx + 1.3, cy + 0.9
+    sx_, sy_ = cx + 1.0, cy + 0.9
     kit.box("c.post", (0.1, 0.1, 2.9), (sx_, sy_ + 0.1, 1.45), pl("#8a8f9a", 0.4, spec=0.5))
-    kit.box("c.board.b", (1.7, 0.06, 1.14), (sx_, sy_ + 0.06, 2.35), pl("#2f6aa8", 0.5))
+    kit.box("c.board.b", (1.5, 0.06, 1.0), (sx_, sy_ + 0.06, 2.35), pl("#2f6aa8", 0.5))
     sm_, _ = imat(kit, "sign", _sign_image(), 0.9)
-    sg = kit.plane("c.board.face", (1.7, 1.14), (sx_, sy_ + 0.02, 2.35), sm_, rot=(math.pi / 2, 0, 0))
+    sg = kit.plane("c.board.face", (1.5, 1.0), (sx_, sy_ + 0.02, 2.35), sm_, rot=(math.pi / 2, 0, 0))
     noshadow(sg)
     kit.box("c.lamp", (0.1, 0.1, 3.4), (cx - 3.0, cy + 1.2, 1.7), pl("#3a3a42", 0.5))
     kit.box("c.lamphead", (0.5, 0.3, 0.2), (cx - 3.0, cy + 1.2, 3.45), pl("#3a3a42", 0.5))
@@ -933,7 +938,9 @@ def animate(kit, story, tl, t, ctx):
         pose_dog(W["dog"], dg, t, th)
     else:
         W["dog"]["root"].location = (0, -80, 0)
+    kb = sample("keyb", tl, t, {"v": 0.0})["v"]
     # ---- the lights by time of day
     lights = {"sun": tod["sg"], "yard.face": tod["face"], "porch.fill": tod["face"], "porch.door": tod["face"],
-              "wall.fill": tod["wall"], "dusk.lamp": tod["lamp"], "dusk.fill": tod["dfill"], "dusk.key": tod["key"]}
+              "wall.fill": tod["wall"], "dusk.lamp": tod["lamp"], "dusk.fill": tod["dfill"], "dusk.key": tod["key"] * (1 - 0.7 * kb),
+              "dusk.key2": tod["key"] * kb}
     return lights
