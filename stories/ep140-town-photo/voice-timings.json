@@ -1,0 +1,745 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "our town photo only shows people who'll still be in it next year.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.155,
+   "end": 2.707,
+   "chunks": [
+    [
+     0.155,
+     0.793
+    ],
+    [
+     0.793,
+     1.457
+    ],
+    [
+     1.457,
+     1.776
+    ],
+    [
+     1.776,
+     2.034
+    ],
+    [
+     2.034,
+     2.707
+    ]
+   ]
+  },
+  "L02": {
+   "text": "two hundred twelve posed. two hundred eleven came out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.155
+    ],
+    [
+     1.25,
+     1.81
+    ],
+    [
+     1.81,
+     2.431
+    ]
+   ]
+  },
+  "L03": {
+   "text": "the missing one is me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.103
+    ]
+   ]
+  },
+  "L04": {
+   "text": "last year, uncle benny's spot was blank.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     1.25
+    ],
+    [
+     1.25,
+     1.897
+    ]
+   ]
+  },
+  "L05": {
+   "text": "he sells kites on the coast now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     1.086
+    ],
+    [
+     1.086,
+     1.534
+    ]
+   ]
+  },
+  "L08": {
+   "text": "my mom, dana, counted the proof nine times.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.776,
+     1.241
+    ],
+    [
+     1.241,
+     2.017
+    ]
+   ]
+  },
+  "L09": {
+   "text": "then she stopped letting go of my hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     0.94
+    ],
+    [
+     0.94,
+     1.672
+    ]
+   ]
+  },
+  "L10": {
+   "text": "the real photo is saturday. nine ay em",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.224
+    ],
+    [
+     1.319,
+     2.155
+    ]
+   ]
+  },
+  "L11": {
+   "text": "old mister okafor takes it, like he always has.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ],
+    [
+     0.914,
+     1.293
+    ],
+    [
+     1.362,
+     1.552
+    ],
+    [
+     1.552,
+     2.379
+    ]
+   ]
+  },
+  "L12": {
+   "text": "every year he yells, say pickles!",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.828
+    ],
+    [
+     0.862,
+     1.603
+    ]
+   ]
+  },
+  "L13": {
+   "text": "and the whole town yells pickles! back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.845
+    ],
+    [
+     0.845,
+     1.155
+    ],
+    [
+     1.207,
+     1.672
+    ]
+   ]
+  },
+  "L16": {
+   "text": "at the test shot on thursday, i held mom's hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.207
+    ],
+    [
+     1.293,
+     1.603
+    ],
+    [
+     1.603,
+     2.397
+    ]
+   ]
+  },
+  "L17": {
+   "text": "in the print, her hand holds nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.931
+    ],
+    [
+     0.931,
+     1.707
+    ]
+   ]
+  },
+  "L18": {
+   "text": "the town hall wall has eighty years of town photos.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.155,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.086
+    ],
+    [
+     1.086,
+     1.345
+    ],
+    [
+     1.345,
+     2.224
+    ]
+   ]
+  },
+  "L19": {
+   "text": "mister okafor isn't in a single one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.077
+    ],
+    [
+     1.077,
+     1.828
+    ]
+   ]
+  },
+  "L20": {
+   "text": "obviously. he's always behind the camera.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.19,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.69,
+     1.069
+    ],
+    [
+     1.069,
+     1.948
+    ]
+   ]
+  },
+  "L21": {
+   "text": "saturday. eight fifty nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.534,
+     1.414
+    ]
+   ]
+  },
+  "L22": {
+   "text": "his hands shake too much to squeeze the bulb.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.914
+    ],
+    [
+     0.914,
+     1.25
+    ],
+    [
+     1.25,
+     1.81
+    ]
+   ]
+  },
+  "L23": {
+   "text": "he looks straight at me and holds it out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.81
+    ],
+    [
+     0.81,
+     1.094
+    ],
+    [
+     1.094,
+     1.586
+    ]
+   ]
+  },
+  "L24": {
+   "text": "then he sits in the front row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     0.724
+    ],
+    [
+     0.724,
+     1.379
+    ]
+   ]
+  },
+  "L25": {
+   "text": "so i'm behind the camera.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.293
+    ]
+   ]
+  },
+  "L26": {
+   "text": "through the lens, i count. two hundred twelve.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.086
+    ],
+    [
+     1.164,
+     2.017
+    ]
+   ]
+  },
+  "L28": {
+   "text": "i hear myself say, say pickles!",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.81
+    ],
+    [
+     0.845,
+     1.569
+    ]
+   ]
+  },
+  "L29": {
+   "text": "click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.759,
+   "onset": 0.172,
+   "end": 0.552,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ]
+   ]
+  },
+  "L31": {
+   "text": "for the first time in eighty years,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.724
+    ],
+    [
+     0.724,
+     1.431
+    ]
+   ]
+  },
+  "L32": {
+   "text": "mister okafor is in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.397
+    ]
+   ]
+  },
+  "L33": {
+   "text": "my grandma says he looked exactly this old when she was a girl.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ],
+    [
+     0.914,
+     1.155
+    ],
+    [
+     1.155,
+     1.923
+    ],
+    [
+     1.923,
+     2.199
+    ],
+    [
+     2.199,
+     2.81
+    ]
+   ]
+  },
+  "L34": {
+   "text": "he pats my shoulder and says,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.431
+    ]
+   ]
+  },
+  "L35": {
+   "text": "every year now. your turn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.362
+    ]
+   ]
+  },
+  "L37": {
+   "text": "i'll be here every year. just never in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.983
+    ],
+    [
+     1.052,
+     1.466
+    ],
+    [
+     1.466,
+     1.897
+    ]
+   ]
+  }
+ }
+}
