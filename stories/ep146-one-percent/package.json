@@ -6,6 +6,5 @@
   "cover_s": 4.9,
   "shape": "both-waiting",
   "opening": "cost",
-  "lane": "warm",
-  "hold": "batch 15: scripts only, not built yet"
+  "lane": "warm"
 }
