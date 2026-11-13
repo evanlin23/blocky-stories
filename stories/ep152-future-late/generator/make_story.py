@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L16")
@@ -225,7 +225,7 @@ shot("S13", "L13", P2((1.2, -0.3, 1.9), (-0.4, 1.9, 1.25), 22, pos2=(1.1, -0.1, 
 key("mom", "L14", expr="uneasy", head=[0, 0], arms=[12, 12], side=[0, 0])
 key("me", "L14", expr="uneasy")
 shot("S14a", "L14", momcam(1.7, 0, dx=0.2, push=(1.5, 1.3)))
-shot("S14b", "L14.1", P2((0.3, 1.0, 1.75), (0.3, 1.78, 0.78), 24, pos2=(0.3, 1.1, 1.6), tgt2=(0.3, 1.78, 0.78)))
+shot("S14b", "L14.1", P2((0.04, 1.04, 1.72), (0.04, 1.5, 0.78), 24, pos2=(0.04, 1.11, 1.59), tgt2=(0.04, 1.5, 0.78)))
 key("mom", "L15", expr="uneasy", blend=0.5)
 key("me", "L15", expr="scared", blend=0.5)
 shot("S15", "L15", mecam(1.3, 0, dx=-0.05, push=(1.1, 1.3)))

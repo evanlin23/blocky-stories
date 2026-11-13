@@ -317,15 +317,49 @@ def build_phone(kit):
     hh = kit.empty("handins", (0, -80, 0))
     W["handins"] = hh
     skin = pl("#7a5238", 0.6)
-    kit.box("hi.mycuff", (0.3, 0.22, 0.13), (0.55, 0.0, 0.065), pl("#f08a2a", 0.6), hh, bevel=0.03)
-    kit.box("hi.myhand", (0.22, 0.2, 0.07), (0.28, 0.0, 0.035), skin, hh, bevel=0.03)
+    skin2 = pl("#8a6040", 0.6)
+    # my hand (underneath, right): orange cuff, palm, fingers pointing left, a thumb toward the camera
+    kit.box("hi.mycuff", (0.1, 0.14, 0.05), (0.2, 0.0, 0.025), pl("#f08a2a", 0.6), hh, bevel=0.012)
+    kit.box("hi.mycuffband", (0.014, 0.145, 0.052), (0.155, 0.0, 0.026), pl("#f8d9a0", 0.6), hh, bevel=0.004)
+    kit.box("hi.myhand", (0.1, 0.11, 0.03), (0.1, -0.005, 0.015), skin, hh, bevel=0.008)
+    for k in range(4):
+        kit.box(f"hi.myfinger{k}", (0.07, 0.021, 0.024), (0.01, -0.035 + k * 0.025 + 0.012, 0.012), skin, hh, bevel=0.008)
+    kit.box("hi.mythumb", (0.05, 0.026, 0.026), (0.095, -0.075, 0.013), skin, hh, rot=(0, 0, 0.5), bevel=0.01)
+    # Mom's hand (on top, left): teal cuff, palm, four finger blocks over mine, a thumb toward the camera
     mg = kit.empty("hi.mom", (0, 0, 0), hh)
     W["hi.mom"] = mg
-    kit.box("hi.momcuff", (0.3, 0.24, 0.12), (-0.32, 0.0, 0.0), pl("#2f8f8a", 0.6), mg, bevel=0.03)
-    kit.box("hi.momknit", (0.06, 0.25, 0.125), (-0.15, 0.0, 0.0), pl("#256f6b", 0.6), mg, bevel=0.02)
-    kit.box("hi.momhand", (0.3, 0.22, 0.05), (0.07, 0.0, 0.0), skin, mg, bevel=0.025)
+    kit.box("hi.momcuff", (0.1, 0.14, 0.058), (-0.16, 0.0, 0.05), pl("#2f8f8a", 0.6), mg, bevel=0.012)
+    kit.box("hi.momband", (0.014, 0.145, 0.06), (-0.112, 0.0, 0.05), pl("#bfe8e2", 0.6), mg, bevel=0.004)
+    kit.box("hi.momhand", (0.1, 0.11, 0.03), (-0.06, 0.0, 0.052), skin2, mg, bevel=0.008)
     for k in range(4):
-        kit.box(f"hi.momfinger{k}", (0.15, 0.05, 0.045), (0.3, -0.085 + k * 0.057, -0.002), skin, mg, bevel=0.02)
+        kit.box(f"hi.momfinger{k}", (0.075, 0.021, 0.026), (0.028, -0.039 + k * 0.026, 0.05), skin2, mg, bevel=0.009)
+        kit.box(f"hi.momnail{k}", (0.014, 0.015, 0.004), (0.058, -0.039 + k * 0.026, 0.0645), pl("#f4d8c0", 0.5), mg)
+    for k in range(3):   # knuckle creases between the fingers' roots
+        kit.box(f"hi.momknuck{k}", (0.004, 0.012, 0.004), (-0.012, -0.026 + k * 0.026, 0.0675), pl("#5a3a26", 0.6), mg)
+    kit.box("hi.momthumb", (0.055, 0.027, 0.027), (-0.025, -0.075, 0.05), skin2, mg, rot=(0, 0, -0.65), bevel=0.01)
+    # my watch for the S21a close: orange sleeve, wrist and fist, a dark strap, a big white dial reading 11:48.
+    # animate() hangs it in the frame like the reveal clock; it faces -y like the wall clocks
+    cw = kit.empty("cw", (0, -80, 0))
+    W["closewatch"] = cw
+    ink = kit.emit("#16110d", 1.0, "cwink")
+    kit.box("cw.sleeve", (1.5, 0.8, 0.45), (0, 0.0, -1.12), kit.emit("#e87a1c", 0.75, "cworange"), cw, bevel=0.08)
+    kit.box("cw.sleeveband", (1.54, 0.84, 0.08), (0, 0.0, -0.88), kit.emit("#f0cf98", 0.7, "cwcream"), cw, bevel=0.03)
+    kit.box("cw.wrist", (1.0, 0.6, 1.0), (0, 0.05, -0.3), kit.emit("#7a5238", 0.7, "cwskin"), cw, bevel=0.1)
+    kit.box("cw.strap", (1.14, 0.7, 0.62), (0, 0.04, -0.3), kit.emit("#241a14", 0.8, "cwstrap"), cw, bevel=0.06)
+    kit.cyl("cw.rim", 0.62, 0.12, (0, -0.36, -0.3), kit.emit("#b88f30", 0.8, "cwrim"), cw, rot=(math.pi / 2, 0, 0), n=28)
+    kit.cyl("cw.face", 0.54, 0.06, (0, -0.43, -0.3), kit.emit("#f4f1e6", 0.85, "cwface"), cw, rot=(math.pi / 2, 0, 0), n=28)
+    for i in range(12):
+        a_ = i * 30 * D2R
+        big = i % 3 == 0
+        ln, wd = 0.54 * (0.26 if big else 0.14), 0.54 * (0.14 if big else 0.07)
+        rr = 0.54 * 0.9 - ln / 2
+        kit.box(f"cw.t{i}", (wd, 0.03, ln), (rr * math.sin(a_), -0.47, -0.3 + rr * math.cos(a_)), ink, cw, rot=(0, a_, 0))
+    # 11:48: hour hand just short of 12 (354 degrees), minute hand on 48 (288 degrees)
+    for nm, ang, ln, wd, yy in (("h", 354.0, 0.32, 0.17, -0.49), ("m", 288.0, 0.5, 0.11, -0.51)):
+        pv = kit.empty(f"cw.{nm}p", (0, yy, -0.3), cw)
+        pv.rotation_euler = (0, ang * D2R, 0)
+        kit.box(f"cw.{nm}", (wd, 0.03, ln), (0, 0, ln / 2 - 0.03), ink, pv, bevel=0.01)
+    kit.cyl("cw.cap", 0.07, 0.04, (0, -0.53, -0.3), kit.emit("#d94a3a", 0.9, "cwcap"), cw, rot=(math.pi / 2, 0, 0), n=10)
 
 
 # ------------------------------------------------------------------------------------------------ the rule meter
@@ -456,7 +490,7 @@ def build_watch(kit):
 
 
 # shot id -> (x, y of the clock's centre as a fraction of the frame, its width as a fraction of the frame's)
-REV_CLOCK = {"S08": (0.27, 0.40, 0.42), "S21a": (0.25, 0.40, 0.40), "S24": (0.25, 0.40, 0.40), "S25": (0.24, 0.40, 0.42)}
+REV_CLOCK = {"S08": (0.27, 0.40, 0.42), "S21a": (0.23, 0.375, 0.30), "S24": (0.25, 0.40, 0.40), "S25": (0.24, 0.40, 0.42)}
 INDOOR_FROM = 0
 OUTDOOR = ("S05a", "S05b", "S06a", "S06b")
 
@@ -531,7 +565,7 @@ def animate(kit, story, tl, t, ctx):
         hp.rotation_euler = (0, hour_a, 0)
         mp.rotation_euler = (0, min_a, 0)
         if sp is not None:
-            sp.rotation_euler = (0, ((t * 36.0) % 360.0) * D2R, 0)
+            sp.rotation_euler = (0, (0.0 if sid == "S21a" else (t * 36.0) % 360.0) * D2R, 0)
     # ---- the phone
     ph = sample("phone", tl, t, {"mode": 0.0, "buzz": 0.0})
     W["home"].hide_render = ph["mode"] > 0.5
@@ -580,14 +614,34 @@ def animate(kit, story, tl, t, ctx):
         rc.scale = (k, k, k)
     else:
         rc.location = (0, -80, 0)
+    # ---- the close watch (S21a), hung in the frame like the reveal clock; the old arm watch is hidden there
+    cw = W["closewatch"]
+    for ob in bpy.data.objects:
+        if ob.name.startswith("wt."):
+            ob.hide_render = (sid == "S21a")
+    if sid == "S21a" and spec:
+        c0 = spec["cam"][0]
+        loc, tgt, lens = Vector(c0[1]), Vector(c0[2]), c0[3]
+        fwd = (tgt - loc).normalized()
+        right = fwd.cross(Vector((0, 0, 1))).normalized()
+        up = right.cross(fwd).normalized()
+        D = 1.9
+        wd = D * 13.5 / lens
+        hd = wd * 16.0 / 9.0
+        k = 0.26 * wd / 1.24
+        cw.location = loc + fwd * D + right * ((0.23 - 0.5) * wd) + up * ((0.5 - 0.53) * hd)
+        cw.rotation_euler = (0, 0, math.atan2(-fwd.x, fwd.y))
+        cw.scale = (k, k, k)
+    else:
+        cw.location = (0, -80, 0)
     # ---- the hand-hold close (S14b): Mom's hand comes in from the left and settles on my cuff
     hi = W["handins"]
     if sid == "S14b":
-        u = ss((t - shot["start"]) / 0.45)
-        hi.location = (0.0, 1.75, G.TABLE_Z + 0.02)
+        u = ss((t - shot["start"]) / 0.35)
+        hi.location = (0.0, 1.5, G.TABLE_Z + 0.004)
         mg = W["hi.mom"]
-        mg.location = (0.35 - 0.45 * (1 - u), 0.0, 0.16 + 0.2 * (1 - u))
-        mg.rotation_euler = (0, 0.25 * (1 - u), 0)
+        mg.location = (-0.12 * (1 - u), 0.0, 0.07 * (1 - u))
+        mg.rotation_euler = (0, 0.2 * (1 - u), 0)
     else:
         hi.location = (0, -80, 0)
     # ---- seated
