@@ -312,8 +312,14 @@ def build_hall(kit):
     W["doorgold"] = bpy.data.objects["door.glow"]
     # two pencil strokes on the dream door's frame at shoulder height (lore), 1.5 cm proud, only in the dream
     gr = pl("#24242c", 0.6)
-    gs = kit.emit("#ff7a00", 0.9, "doorstrip")     # saturated and modest, so the grade keeps it gold, not cream
+    gs = kit.emit("#ff8c00", 1.0, "doorstrip")     # saturated and modest, so the grade keeps it gold, not cream
     W["strips"] = []
+    # a soft gold halo on the wall round the casing (1 cm proud of the wall, clear of the casing), so the edge reads lit
+    gh = kit.emit("#ffaa00", 1.3, "doorhalo")
+    for sx in (-1, 1):
+        W["strips"].append(kit.box(f"door.halo{sx}", (0.12, 0.004, G.DOOR_H + 0.26),
+                                   (G.HX + sx * (G.DOOR_W / 2 + 0.2), y1 - 0.012, (G.DOOR_H + 0.26) / 2), gh))
+    W["strips"].append(kit.box("door.halo.t", (G.DOOR_W + 0.52, 0.004, 0.12), (G.HX, y1 - 0.012, G.DOOR_H + 0.2), gh))
     for sx in (-1, 1):
         W["strips"].append(kit.box(f"door.strip{sx}", (0.11, 0.012, G.DOOR_H), (G.HX + sx * (G.DOOR_W / 2 + 0.055), y1 - 0.056,
                                    G.DOOR_H / 2), gs))
