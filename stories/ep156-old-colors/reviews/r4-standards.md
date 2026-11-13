@@ -1,3 +1,4 @@
+<!-- r4 = round 1 of the decision-7 near-miss retry (orchestrator #2, 2026-11-13) -->
 # ep156-old-colors: standards, retry round 1 (2026-11-13)
 
 Checked story.json rev 6, package.json, script.md and the preview (07:30 UTC, 44.97 s). All 33 shots at 300 px, plus S17b at 42.35, 42.6, 43.0, 43.5 and 43.85 s.

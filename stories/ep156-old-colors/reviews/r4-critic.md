@@ -1,3 +1,4 @@
+<!-- r4 = round 1 of the decision-7 near-miss retry (orchestrator #2, 2026-11-13) -->
 # ep156-old-colors: critic, retry round 1 (preview 44.97 s)
 
 I pulled one frame per shot at 300 px wide (0.3 to 44.9 s), with extra frames at 40.7, 41.8, 42.4, 42.9, 43.5, 43.8, 44.3 and 44.9 s. Preflight: 0 blocks, no `pace` or `clip` rows, and flash PASS on 1349 frames.
