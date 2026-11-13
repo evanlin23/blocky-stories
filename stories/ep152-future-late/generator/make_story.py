@@ -134,7 +134,7 @@ def momcam(w=1.5, az=0, lens=34, dx=0.0, tz=1.3, cz=1.45, push=None):
     return C(OX + dx, OY, tz, w, az, lens, cz=cz, push=push)
 
 
-def clkcam(w=1.7, tx=0.26, az=0, lens=34, tz=1.5, cz=1.5, push=None):
+def clkcam(w=1.7, tx=0.26, az=0, lens=34, tz=1.7, cz=1.5, push=None):
     """The big kitchen clock at the frame's left, my face beside it."""
     return C(tx, 3.0, tz, w, az, lens, cz=cz, push=push)
 
@@ -223,11 +223,11 @@ key("me", "L11", expr="uneasy", head=[-6, -10], blend=0.5)
 # --------------------------------------------------------------------------------------------- 04 the wait (L12 to L15)
 shot("S12", "L12", clkcam(1.75, tx=0.4, push=(1.55, 1.5)))
 key("me", "L12", expr="uneasy", head=[0, 0])
-shot("S13", "L13", P2((1.2, -0.3, 1.9), (-0.4, 1.9, 1.1), 22, pos2=(1.1, -0.1, 1.88), tgt2=(-0.4, 1.9, 1.1)))
+shot("S13", "L13", P2((1.2, -0.3, 1.9), (-0.4, 1.9, 1.25), 22, pos2=(1.1, -0.1, 1.88), tgt2=(-0.4, 1.9, 1.25)))
 key("mom", "L14", expr="uneasy", head=[0, 0], arms=[12, 12], side=[0, 0])
 key("mom", "L14", arms=[12, 55], side=[0, 35], blend=0.6)
 key("me", "L14", arms=[55, 12], side=[35, 0], expr="uneasy", blend=0.6)
-shot("S14", "L14", C(0.0, 2.62, 1.0, 2.0, 0, 26, cz=1.8, push=(1.85, 1.0)))
+shot("S14", "L14", C(0.0, 2.62, 1.0, 2.25, 0, 26, cz=1.8, push=(2.05, 1.0)))
 key("mom", "L15", arms=[12, 12], side=[0, 0], blend=0.5)
 key("me", "L15", arms=[12, 12], side=[0, 0], expr="scared", blend=0.5)
 shot("S15", "L15", mecam(1.3, 0, dx=-0.05, push=(1.1, 1.3)))
@@ -257,12 +257,12 @@ mouth("me", "L22", "L22>", 0.4)
 shot("S22", "L22", mecam(1.3, 6, dx=-0.1, push=(1.1, 1.3)))
 
 # --------------------------------------------------------------------------------------------- 06 the advice and the reveal (L23 to L26)
-shot("S23a", "L23", P2((1.2, -0.3, 1.9), (-0.4, 1.9, 1.1), 22, pos2=(1.1, -0.1, 1.88), tgt2=(-0.4, 1.9, 1.1)))
+shot("S23a", "L23", P2((1.2, -0.3, 1.9), (-0.4, 1.9, 1.25), 22, pos2=(1.1, -0.1, 1.88), tgt2=(-0.4, 1.9, 1.25)))
 shot("S23b", "L23.3", momcam(1.35, 4, dx=0.1, push=(1.15, 1.3)))
 key("mom", "L23.3", expr="warm", head=[0, 0])
 key("me", "L24", expr="stunned", head=[0, 0], blend=0.5)
-shot("S24", "L24", C(0.35, 3.0, 1.5, 2.4, 0, 24, cz=1.5, push=(2.1, 1.5)))
-shot("S25", "L25", C(0.35, 3.0, 1.5, 2.1, 0, 24, cz=1.5, push=(1.9, 1.5)))
+shot("S24", "L24", C(0.0, 3.0, 1.7, 2.7, 0, 24, cz=1.5, push=(2.4, 1.7)))
+shot("S25", "L25", C(0.0, 3.0, 1.7, 2.4, 0, 24, cz=1.5, push=(2.1, 1.7)))
 key("me", "L25.3", expr="warm", blend=0.4)
 shot("S25b", "L25.3", mecam(1.2, 0, dx=-0.1, push=(1.0, 1.3)))
 mouth("me", "L25.3", "L25>", 0.3)
@@ -351,7 +351,7 @@ story = {
     "set_moves": [],
     "frames_ok": [],
     "staging_ok": [],
-    "framing_ok": [],
+    "framing_ok": ["S07b"],
     "clip_ok": [],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

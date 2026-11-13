@@ -164,10 +164,10 @@ def build_kitchen(kit):
         kit.sphere(f"k.fruit{i}", 0.07, (1.9 + (i - 1) * 0.1, ty - 0.02 + (0.03 if i == 1 else -0.02), 1.06), pl(c, 0.5), seg=10)
     kit.box("k.toaster", (0.3, 0.17, 0.2), (2.55, ty, 1.02), pl("#c9ccd2", 0.3, spec=0.7), bevel=0.03)
     # the fourteen clocks
-    clock(kit, "ck.big", 0.0, 1.66, 0.48, "#d94a3a", second=True)
+    clock(kit, "ck.big", 0.0, 1.95, 0.7, "#d94a3a", second=True)
     spots = [(-1.3, 1.75, 0.16, "#2fa39a"), (-2.0, 1.6, 0.18, "#d94a3a"), (-2.7, 1.8, 0.15, "#2fa39a"),
              (1.45, 1.75, 0.16, "#d94a3a"), (2.05, 1.75, 0.16, "#d94a3a"), (2.7, 1.55, 0.18, "#2fa39a"),
-             (-0.8, 2.45, 0.12, "#d94a3a"), (0.8, 2.45, 0.12, "#2fa39a")]
+             (-1.2, 2.45, 0.12, "#d94a3a"), (1.2, 2.45, 0.12, "#2fa39a")]
     for i, (x, z, r, c) in enumerate(spots):
         clock(kit, f"ck.n{i}", x, z, r, c)
     for i, (y, z, r, c) in enumerate([(2.9, 1.7, 0.27, "#2fa39a"), (1.9, 1.7, 0.26, "#d94a3a"), (0.9, 1.75, 0.16, "#2fa39a")]):
