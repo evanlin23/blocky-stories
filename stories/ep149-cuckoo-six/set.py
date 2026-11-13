@@ -430,7 +430,7 @@ def build_cake(kit):
                 if v == "1":
                     kit.box(f"sug{i}{r}{q}", (px, px, 0.016), (bx + (q - 1) * px, cy + 0.02 + (2 - r) * px, zt + 0.048), sugar)
     # the cake server on the cloth, cream handle
-    W["server"] = kit.box("server", (0.1, 0.3, 0.02), (cx + 0.22, cy + 0.3, G.TABLE_Z + 0.036), M(kit, "#d8d8dc", 0.3, 0.6), None, (0, 0, 0.1), 0.003)
+    W["server"] = kit.box("server", (0.1, 0.3, 0.02), (cx + 0.22, cy + 0.3, G.TABLE_Z + 0.036), M(kit, "#7d8794", 0.3, 0.6), None, (0, 0, 0.1), 0.003)
 
 
 # ---------------------------------------------------------------------------------------------- the tag and letters
@@ -642,9 +642,11 @@ def animate(kit, story, tl, t, ctx):
                 ob.hide_render = t6 is None or t < t6 + 0.1 + 0.15 * k
     sv0, sv1 = ct(tl, "cake_on"), ct(tl, "server_off")
     if sv0 is not None and sv1 is not None and sv0 <= t < sv1:
-        W["server"].location = (-0.1, 1.76, 0.84)
-        W["server"].rotation_euler = (0.2, 0, 0)
+        W["server"].location = (0.0, 1.43, 0.93)   # a long silver blade held across in both hands
+        W["server"].rotation_euler = (0.0, 0, 1.5708)
+        W["server"].scale = (1.6, 2.6, 2.2)
     else:
+        W["server"].scale = (1, 1, 1)
         W["server"].location = (G.CAKE[0] + 0.22, G.CAKE[1] + 0.3, G.TABLE_Z + 0.036)
         W["server"].rotation_euler = (0, 0, 0.1)
     # the clock: the bird out for the opening and at each cuckoo
