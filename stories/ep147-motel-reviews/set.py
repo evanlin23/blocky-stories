@@ -33,8 +33,8 @@ def _neat():
     it reads as a neat head and not a grey box."""
     b, T, F, K, Wd, D, H = hair3._b, hair3.TOP, hair3.FRONT, hair3.BACK, hair3.W, hair3.D, hair3.H
     out = [b("cap", (Wd + 0.04, D + 0.06, 0.3), (0, 0, T - 0.08), bevel=0.12),
-           b("back", (Wd * 0.8, 0.24, H * 0.4), (0, K - 0.07, T - H * 0.2), bevel=0.08),
-           b("backtop", (Wd + 0.06, 0.24, H * 0.2), (0, K - 0.07, T - H * 0.1), bevel=0.08),
+           b("back", (Wd * 0.7, 0.24, H * 0.62), (0, K - 0.07, T - H * 0.31), bevel=0.08),
+           b("backtop", (Wd + 0.06, 0.24, H * 0.3), (0, K - 0.07, T - H * 0.15), bevel=0.08),
            b("sweep", (Wd * 0.62, 0.2, 0.34), (Wd * 0.14, F + 0.02, T - 0.12), bevel=0.07)]
     for sx in (-1, 1):
         out.append(b(f"side{sx}", (0.2, D * 0.85, H * 0.34), (sx * (Wd / 2 + 0.02), 0.06, T - H * 0.17), bevel=0.06))
@@ -516,9 +516,9 @@ def build_props(kit):
     W["shirts"] = st
     # the one folded teal square Dad holds
     sh = kit.empty("shirt", (0, 0, -40))
-    kit.box("shirt.body", (0.88, 0.07, 0.8), (0, 0, 0), pl("#2ec4b6", 0.8), sh, bevel=0.025)
-    kit.box("shirt.fold", (0.88, 0.012, 0.8), (0, -0.04, 0), pl("#1b8f84", 0.8), sh)
-    kit.box("shirt.collar", (0.3, 0.014, 0.1), (0, -0.046, 0.34), pl("#f4ecd8", 0.8), sh)
+    kit.box("shirt.body", (0.6, 0.05, 0.56), (0, 0, 0), pl("#2ec4b6", 0.8), sh, bevel=0.025)
+    kit.box("shirt.fold", (0.6, 0.012, 0.1), (0, -0.03, -0.23), pl("#1b8f84", 0.8), sh)
+    kit.box("shirt.collar", (0.22, 0.014, 0.08), (0, -0.032, 0.24), pl("#f4ecd8", 0.8), sh)
     W["shirt"] = sh
 
 
@@ -585,6 +585,10 @@ def animate(kit, story, tl, t, ctx):
 
 
 def _animate(kit, story, tl, t, ctx):
+    if "mancollar" not in W:
+        up = bpy.data.objects.get("man.upper")
+        if up is not None:      # a white shirt collar, wider than the suit's, so the back of his neck reads
+            W["mancollar"] = kit.box("man.collar2", (1.5, 1.12, 0.3), (0, 0, 1.97), kit.plastic("#f6f6f6", 0.6), up, bevel=0.06)
     bpy.context.view_layer.update()
     camloc, _, _ = cam_now(story, tl, t)
     # ---- the rule card on the camera
@@ -632,7 +636,14 @@ def _animate(kit, story, tl, t, ctx):
     pc = sample("pen", tl, t, {"mode": "none", "who": "me"})
     pen = W["pen"]
     h = hand(pc["who"], -1) if pc["mode"] == "hand" else None
-    if h is not None:
+    if h is not None and cd["mode"] == "hand" and card.location.z > -10:
+        # the pen scribbles on the card face: it rides the card, in front of it, sweeping along the writing lines
+        ph = math.atan2(cy - card.location.y, cx - card.location.x)
+        sw, dn = 0.14 * math.sin(t * 11.0), 0.06 * math.sin(t * 5.3)
+        pen.location = (card.location.x + 0.1 * math.cos(ph) + sw * math.cos(ph + math.pi / 2),
+                        card.location.y + 0.1 * math.sin(ph) + sw * math.sin(ph + math.pi / 2), card.location.z - 0.02 + dn)
+        pen.rotation_euler = (math.radians(-25), 0, ph + math.pi / 2 + math.radians(20))
+    elif h is not None:
         pen.location = (h.x, h.y - 0.03, h.z + 0.07)
         pen.rotation_euler = (math.radians(-25), 0, math.radians(20))
     else:
@@ -652,13 +663,13 @@ def _animate(kit, story, tl, t, ctx):
     if sc["mode"] == "hand" and ha is not None and hb is not None:
         mid = (ha + hb) / 2
         ph = math.atan2(cy - mid.y, cx - mid.x)
-        sh.location = (mid.x + 0.1 * math.cos(ph), mid.y + 0.1 * math.sin(ph), mid.z + 0.02)
+        sh.location = (mid.x + 0.1 * math.cos(ph), mid.y + 0.1 * math.sin(ph), mid.z - 0.12)
         sh.rotation_euler = (0, 0, ph + math.pi / 2)
-        sh.scale = (1.5 * fs[0], 1.5 * fs[1], 1.5 * fs[2])
+        sh.scale = (1.25 * fs[0], 1.25 * fs[1], 1.25 * fs[2])
     elif sc["mode"] == "desk":
-        sh.location = (G.DESK[0] + 0.15, G.DESK[1] + 0.3, G.DESK_TOP + 0.3)
+        sh.location = (G.DESK[0] + 0.15, G.DESK[1] + 0.3, G.DESK_TOP + 0.22)
         sh.rotation_euler = (0, 0, math.radians(-6))
-        sh.scale = (1.5 * fs[0], 1.5 * fs[1], 1.5 * fs[2])
+        sh.scale = (1.7 * fs[0], 1.7 * fs[1], 1.7 * fs[2])
     else:
         sh.location = (0, 0, -40)
     return {}

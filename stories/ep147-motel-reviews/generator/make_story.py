@@ -236,8 +236,9 @@ shot("S08b", "L08.2", cam(CLX, 3.1, 1.95, 1.9, 6, 34, cz=1.95))
 # ===== 04 the clerk (L10)
 show("L10", "clerk")
 place("L10", "clerk", (G.CLERK[0] + 1.1, G.CLERK[1], 0.0), 0, "suspicious", arms=[0, 70])
-shot("S10a", "L10", cam(G.OX + 0.8, 1.6, 1.4, 3.3, 0, 30, cz=1.4))
-shot("S10b", "L10.2", cam(G.OX + 1.5, 1.6, 1.55, 2.2, 0, 34, cz=1.55))
+shot("S10a", "L10", cam(G.OX + 0.3, 1.6, 1.4, 3.0, 0, 30, cz=1.4))
+place("L10.2", "clerk", (G.OX + 1.1, G.CLERK[1], 0.0), 0, "suspicious", arms=[0, 70])
+shot("S10b", "L10.2", cam(G.OX + 1.6, 1.6, 1.5, 2.7, 0, 32, cz=1.5))
 
 # ===== 05 the morning (L13, L15)
 cue("L13", "shirts", v=1.0)
@@ -281,9 +282,9 @@ cue("L21", "pen", mode="none", who="me")
 cue("L21", "pen", mode="hand", who="me")
 place("L21", "me", (MX, MY, 0.0), 0, "determined", arms=[70, 86])
 for k_, dt in enumerate((0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0)):
-    key("me", f"L21+{dt}", [MX, MY, 0.0], yaw=0, expr="determined", arms=[56 if k_ % 2 == 0 else 74, 86],
+    key("me", f"L21+{dt}", [MX, MY, 0.0], yaw=0, expr="determined", arms=[70, 86],
         head=[10, 4 if k_ % 2 else -4], blend=0.3)
-shot("S21", "L21", cam(MX + 0.45, MY - 0.1, 1.2, 1.0, -8, 34, cz=1.2))
+shot("S21", "L21", cam(MX + 0.25, MY - 0.1, 1.2, 1.9, -8, 32, cz=1.2))
 
 # ===== 08 the doors open (L22, L23, L24)
 cue("L22", "win", v=0.55, dur=0.4)
@@ -301,14 +302,14 @@ key("man", "L23.1", [G.MAN_DESK[0] - 0.2, 1.5, 0.0], yaw=-90, expr="hollow", arm
 key("man", "L23.2", [G.MAN_DESK[0] - 0.2, 1.55, 0.0], yaw=180, expr="hollow", arms=[80, 80], blend=0.45)
 shot("S23a", "L23", camp((0.2, -4.0, 1.4), (0.2, 1.9, 1.4), 30, (-0.8, -4.0, 1.4), (-0.8, 1.9, 1.4)))
 cue("L23.2", "key", mode="desk", dur=0.1)
-shot("S23b", "L23.2", cam(-0.4, 1.9, 1.15, 1.7, 0, 34, cz=1.15))
+shot("S23b", "L23.2", cam(-0.2, 1.9, 1.15, 2.0, 0, 34, cz=1.15))
 # L24: he turns, nods, walks to the door
 MD = [G.MAN_DESK[0] - 0.2, 1.55, 0.0]
 key("man", "L24-0.3", MD, yaw=180, expr="hollow", arms=[0, 0], blend=0.2)
-key("man", "L24+0.4", MD, yaw=0, expr="deadpan", arms=[0, 0], head=[0, 0], blend=0.7)
-key("man", "L24.1-0.2", MD, yaw=0, expr="deadpan", arms=[0, 0], head=[0, 22], blend=0.25)
-key("man", "L24.1+0.2", MD, yaw=0, expr="deadpan", arms=[0, 0], head=[0, 0], blend=0.25)
-key("man", "P01-0.1", [1.5, 1.5, 0.0], yaw=90, expr="deadpan", arms=[0, 0], blend=0.75)
+key("man", "L24+0.4", MD, yaw=0, expr="hollow", arms=[0, 0], head=[0, 0], blend=0.7)
+key("man", "L24.1-0.2", MD, yaw=0, expr="hollow", arms=[0, 0], head=[0, 22], blend=0.25)
+key("man", "L24.1+0.2", MD, yaw=0, expr="hollow", arms=[0, 0], head=[0, 0], blend=0.25)
+key("man", "P01-0.1", [1.5, 1.5, 0.0], yaw=90, expr="hollow", arms=[0, 0], blend=0.75)
 shot("S24a", "L24", cam(MD[0], 1.55, 1.5, 1.8, 0, 34, cz=1.5))
 show("L24.2", "me", "dad", "man")
 place("L24.2", "me", (0.65, 0.2, 0.0), 0, "shocked", arms=[0, 0])
