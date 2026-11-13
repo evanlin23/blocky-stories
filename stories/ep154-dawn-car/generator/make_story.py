@@ -401,7 +401,7 @@ shot("S17c", "P01", ccam(WALL, (0.2, -0.95, 1.7), (-0.72, 0.7, 1.15), 26, lp2=(0
 cue("L18", "clock", s="6:00")
 show("L18")
 car("L18", "dad", (G.CAR_DINER[0] + 9.0, G.CAR_DINER[1], 0, 90))
-car("L18+0.02", "dad", G.CAR_DINER, dur=1.3)
+car("L18+0.02", "dad", G.CAR_DINER, dur=0.95)   # parked before S18b, whose camera rides the car
 cue("L18", "wheel", a=0.0)
 shot("S18a", "L18", camp([G.DX - 6.0, G.DY - 11.0, 2.0], [G.DX - 0.5, G.DY + 2.0, 1.6], 26,
                          pos2=[G.DX - 5.6, G.DY - 10.5, 1.95]))
@@ -626,7 +626,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": ["S02b", "S11a", "S14a", "S25b"],
-    "frames_ok": [],
+    "frames_ok": ["S16a"],
     "staging_ok": ["S24b"],
     "clip_ok": [],
     "phonemes": {},
