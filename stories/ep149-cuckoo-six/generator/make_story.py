@@ -292,7 +292,7 @@ story = {
     "sound": {"floor": "wood", "steps_db": -26, "ambience": [], "sfx": sfx, "rev": REV},
     "frames_ok": ["S19"],   # the counter settles to 6 and the happy tears start at L22 (cue six)
     "framing_ok": ["S02", "S02b", "S14b"],   # L02 names Ivy, who is hidden on purpose; her empty chair is the plant
-    "staging_ok": ["S15/grandpa+ivy", "S16/dad+ivy", "S16/grandpa+ivy", "S19/grandpa+ivy", "S19b/grandpa+ivy", "S24/grandpa+ivy"],   # Ivy stepping out past Dad and Grandpa, then the hug (touching on purpose); no limb through a body  # Ivy steps out at Grandpa's shoulder and hugs him from behind (touching on purpose, L12 to L23)
+    "staging_ok": ["S15/grandpa+ivy", "S16/dad+ivy", "S16/grandpa+ivy", "S19/grandpa+ivy", "S19b/grandpa+ivy", "S24/grandpa+ivy", "S19/dad+ivy", "S19b/dad+ivy", "S24/dad+ivy"],   # Ivy stepping out past Dad and Grandpa, then the hug (touching on purpose); no limb through a body  # Ivy steps out at Grandpa's shoulder and hugs him from behind (touching on purpose, L12 to L23)
     "clip_ok": ["S19/ivy", "S19b/ivy", "S24/ivy", "S24/grandpa", "S16/ivy"],   # the hug: Ivy's sky-blue arm lies across Grandpa's chest in front of the beard (critic r2), head to head
     "asr_forgive": ["bee", "cuckoo", "o'clock", "that"],
 }
