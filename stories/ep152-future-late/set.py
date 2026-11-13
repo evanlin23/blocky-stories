@@ -170,7 +170,7 @@ def build_kitchen(kit):
              (-0.8, 2.45, 0.12, "#d94a3a"), (0.8, 2.45, 0.12, "#2fa39a")]
     for i, (x, z, r, c) in enumerate(spots):
         clock(kit, f"ck.n{i}", x, z, r, c)
-    for i, (y, z, r, c) in enumerate([(2.9, 1.7, 0.17, "#2fa39a"), (1.9, 1.55, 0.15, "#d94a3a"), (0.9, 1.75, 0.16, "#2fa39a")]):
+    for i, (y, z, r, c) in enumerate([(2.9, 1.7, 0.27, "#2fa39a"), (1.9, 1.7, 0.26, "#d94a3a"), (0.9, 1.75, 0.16, "#2fa39a")]):
         clock(kit, f"ck.w{i}", 0, z, r, c, yaw=90, side=(-X + 0.0, y, z))
     clock(kit, "ck.e0", 0, 1.7, 0.17, "#d94a3a", yaw=-90, side=(X - 0.0, 2.2, 1.7))
     # the one window on the west wall, curtains drawn (no black glass); the prop is dressing only
@@ -506,13 +506,10 @@ def animate(kit, story, tl, t, ctx):
         fg.rotation_euler = (-0.25 * (1 - u), 0, math.pi + 0.3)
     # ---- my watch, lying face up on the cloth beside the phone for S21a (the real-time watch next to the fast clock)
     wt = W["watch"]
-    if sid == "S21a":   # held up in my raised hand: just in front of the mitt, the face to the camera, big enough to read
-        bpy.context.view_layer.update()
-        hd = bpy.data.objects.get("me.hand-1")
-        base = hd.matrix_world.translation if hd is not None else Vector((0.3, 2.2, 1.4))
-        wt.location = (base.x - 0.02, base.y - 0.16, base.z + 0.2)
+    if sid == "S21a":   # my watch standing on its band beside the pie, big, the face to the camera: 11:48 plain
+        wt.location = (0.15, 1.75, G.TABLE_Z + 0.2 * 3.4 + 0.01)
         wt.rotation_euler = (0, 0, 0)
-        wt.scale = (2.4, 2.4, 2.4)
+        wt.scale = (3.4, 3.4, 3.4)
     else:
         wt.location = (0, -80, 0)
     # ---- seated
