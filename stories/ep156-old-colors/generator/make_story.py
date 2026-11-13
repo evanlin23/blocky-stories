@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -427,7 +427,7 @@ shot_mom("S17a", "L16.3-0.1", w=1.7)
 show("L17.1", "meb")
 place("L17.1", "meb", (LX2, LY), 90, "wide", arms=[0, 0])
 key("meb", "L17.1+0.2", (LX2, LY), yaw=90, expr="wide", arms=[0, 0], head=[0, -4], blend=0.5)
-shot("S17b", "L17.1", camp([-0.1, -2.5, 2.7], [-0.15, 0.35, 1.15], 25, pos2=[-0.15, -2.3, 2.55], tgt2=[-0.2, 0.35, 1.15]))
+shot("S17b", "L17.1", camp([MX2 + 0.9, MY - 0.5, 2.9], [LX2 + 0.35, LY - 0.05, 0.9], 16, pos2=[MX2 + 0.8, MY - 0.45, 2.8]))
 
 # ===== 18 the hug washes it out (L18): one shot, both faces, the blue goes out in three steps 0.3 s apart
 cue("L18", "day", n=41)
