@@ -68,7 +68,7 @@ cast = {
                  brow_w=1.3),
     "mom": person("#7a5238", "#2f8f8a", "#5a4a6a", "#4a3a30", hair="bun", hair_c="#b9b9c2", pattern="knit", pattern_c="#256f6b",
                   eyes="lashes", extras=["glasses"], extra_c="#8a6a3a", cheeks="#e8907c", height=0.93, brow_w=1.4),
-    "cousin": person("#d9604a", "#f4f4f0", "#2f9fd0", "#e8d8b8", hair="cap", hair_c="#2a1b12", hat="bucket", hat_c="#f0d070",
+    "cousin": person("#d4483a", "#f4f4f0", "#2f9fd0", "#e8d8b8", hair="cap", hair_c="#2a1b12", hat="bucket", hat_c="#f0d070",
                      sleeves="none", brow_w=1.4),
     "friend": person("#b98456", "#4a8a5a", "#3a4a63", "#5a4030", hair="cap", hair_c="#1a1410", hat="ballcap", hat_c="#d93a2a",
                      sleeves="short", brow_w=1.3),
@@ -137,7 +137,7 @@ def momcam(w=1.5, az=0, lens=34, dx=0.0, tz=1.3, cz=1.45, push=None):
     return C(OX + dx, OY, tz, w, az, lens, cz=cz, push=push)
 
 
-def clkcam(w=1.5, tx=0.32, az=0, lens=34, tz=1.5, cz=1.5, push=None):
+def clkcam(w=1.7, tx=0.26, az=0, lens=34, tz=1.5, cz=1.5, push=None):
     """The big kitchen clock at the frame's left, my face beside it."""
     return C(tx, 3.0, tz, w, az, lens, cz=cz, push=push)
 
@@ -150,7 +150,7 @@ def phonecam(w=0.6, az=0, dx=0.0, cz=1.25, tz=0.8, lens=34, push=None):
 key("me", 0, ME, yaw=0, expr="neutral", head=[0, 0], arms=[12, 12], side=[0, 0], lean=0)
 key("mom", 0, MOM, yaw=0, expr="uneasy", head=[0, 0], arms=[12, 12], side=[0, 0], lean=0)
 key("cousin", 0, (G.COUSIN[0], G.COUSIN[1]), yaw=0, expr="sheepish", arms=[0, 0], side=[0, 0])
-key("friend", 0, (G.FRIEND[0] - 0.3, G.FRIEND[1]), yaw=0, expr="laugh", arms=[0, 0], side=[0, 0])
+key("friend", 0, (G.FRIEND[0] - 0.3, G.FRIEND[1], 0.3), yaw=0, expr="laugh", arms=[0, 0], side=[0, 0])
 cue(0, "sit", who="me", s=1.0)
 cue(0, "sit", who="mom", s=1.0)
 # the rule meter: "1" at once (the call still owed); the call timer from the tap; the big digit "0" when the call ends
@@ -176,15 +176,15 @@ cue("L17+0.7", "tap", p=1.0, dur=0.3)
 cue("L17+1.2", "tap", p=0.0, dur=0.3)
 
 # --------------------------------------------------------------------------------------------- 01 the rule (L01, L02)
-shot("S01a", 0, P2((0.35, -0.55, 1.5), (0.25, 2.2, 1.0), 28, pos2=(0.35, -0.2, 1.45)))
+shot("S01a", 0, P2((0.0, -1.4, 1.8), (0.0, 2.2, 1.05), 24, pos2=(0.0, -1.1, 1.75)))
 key("me", 0, expr="uneasy", head=[0, 6])
 mouth("me", 0, "L01.2", 0.35)
-shot("S01b", "L01.2", phonecam(0.62, 0, dx=0.0, cz=1.3, tz=0.85, push=(0.5, 0.8)))
+shot("S01b", "L01.2", P2((0.0, 0.2, 1.5), (0.0, 1.0, 0.55), 34, pos2=(0.0, 0.4, 1.35)))
 mouth("me", "L01.2", "L01.4", 0.35)
-shot("S01c", "L01.4", clkcam(1.9, tx=0.34, push=(1.6, 1.5)))
+shot("S01c", "L01.4", clkcam(1.9, tx=0.26, push=(1.7, 1.5)))
 shot("S01d", "L01.5", mecam(1.35, 0, dx=-0.1, push=(1.15, 1.3)))
 mouth("me", "L01.4", "L01>", 0.35)
-shot("S02", "L02", clkcam(1.25, tx=0.28, push=(1.05, 1.5)))
+shot("S02", "L02", clkcam(1.6, tx=0.36, push=(1.45, 1.5)))
 mouth("me", "L02", "L02>", 0.3)
 # L03 "Tick."
 shot("S03", "L03", momcam(1.45, 8, dx=0.0, push=(1.3, 1.3)))
@@ -197,21 +197,21 @@ mouth("me", "L04", "L04>", 0.35)
 CXD, CYD = G.COUSIN
 key("cousin", "L05", expr="sheepish")
 shot("S05a", "L05", C(CXD, CYD, 1.35, 1.9, 8, 32, cz=1.5, push=(1.6, 1.35)))
-shot("S05b", "L05.3", C(CXD + 0.05, CYD, 1.55, 0.75, 4, 34, cz=1.55))
-FXD, FYD = G.FRIEND[0] - 0.3, G.FRIEND[1]
+shot("S05b", "L05.3", C(CXD + 0.05, CYD, 1.5, 0.95, 4, 34, cz=1.5))
+FXD, FYD = G.FRIEND[0] - 0.3, G.FRIEND[1] + 0.0
 key("friend", "L06", expr="laugh")
-shot("S06a", "L06", C(FXD, FYD, 1.35, 1.9, -8, 32, cz=1.5, push=(1.6, 1.35)))
+shot("S06a", "L06", C(FXD, FYD, 1.65, 1.9, -8, 32, cz=1.8, push=(1.6, 1.65)))
 key("friend", "L06.3", arms=[0, 0], side=[0, 0])
-shot("S06b", "L06.3", C(FXD + 0.4, FYD, 1.25, 1.6, -14, 34, cz=1.4))
+shot("S06b", "L06.3", C(FXD + 0.4, FYD, 1.55, 1.6, -14, 34, cz=1.7))
 key("friend", "L06.3+0.3", arms=[8, 55], blend=0.35, expr="laugh")
 key("friend", "L06.3+0.9", arms=[0, 0], side=[0, 0], blend=0.4)
 
 # --------------------------------------------------------------------------------------------- 03 Mom's kitchen of clocks (L07 to L10)
 key("mom", "L07", expr="smile", head=[0, 0])
 shot("S07a", "L07", momcam(1.55, 6, dx=0.2, push=(1.35, 1.3)))
-shot("S07b", "L07.1", P2((-2.4, 0.2, 1.6), (-1.7, 3.7, 1.6), 30, pos2=(2.0, 0.2, 1.6), tgt2=(2.4, 3.7, 1.6)))
+shot("S07b", "L07.1", P2((-2.4, 0.2, 2.0), (-1.7, 3.7, 1.8), 30, pos2=(2.0, 0.2, 2.0), tgt2=(2.4, 3.7, 1.8)))
 key("me", "L08", expr="neutral", head=[0, -4])
-shot("S08", "L08", C(1.35, 3.4, 1.55, 1.75, -4, 34, cz=1.5, push=(1.55, 1.55)))
+shot("S08", "L08", C(1.3, 3.4, 1.5, 2.0, -4, 34, cz=1.5, push=(1.8, 1.5)))
 key("me", "L09", expr="sheepish", head=[0, 6], arms=[12, 12], side=[0, 0])
 key("me", "L09.1", arms=[12, 62], side=[0, 22], blend=0.35)
 key("me", "L09.1+0.7", arms=[12, 12], side=[0, 0], blend=0.4)
@@ -224,23 +224,23 @@ shot("S11", "L11", momcam(1.4, -6, dx=0.2, push=(1.2, 1.3)))
 key("me", "L11", expr="uneasy", head=[-6, -10], blend=0.5)
 
 # --------------------------------------------------------------------------------------------- 04 the wait (L12 to L15)
-shot("S12", "L12", clkcam(1.5, tx=0.32, push=(1.25, 1.5)))
+shot("S12", "L12", clkcam(1.75, tx=0.4, push=(1.55, 1.5)))
 key("me", "L12", expr="uneasy", head=[0, 0])
-shot("S13", "L13", P2((0.55, 0.15, 1.15), (-0.2, 1.1, 0.85), 34, pos2=(0.5, 0.45, 1.1)))
+shot("S13", "L13", P2((0.46, -0.1, 1.35), (-0.28, 1.28, 1.1), 28, pos2=(0.4, 0.15, 1.3), tgt2=(-0.28, 1.4, 1.1)))
 key("mom", "L14", expr="uneasy", head=[0, 0], arms=[12, 12], side=[0, 0])
-key("mom", "L14", arms=[24, 24], side=[44, 0], blend=0.6)
-key("me", "L14", arms=[12, 20], side=[0, 38], expr="uneasy", blend=0.6)
-shot("S14", "L14", C(0.0, 2.62, 1.0, 2.5, 0, 34, cz=1.5, push=(2.3, 1.0)))
+key("mom", "L14", arms=[12, 55], side=[0, 35], blend=0.6)
+key("me", "L14", arms=[55, 12], side=[35, 0], expr="uneasy", blend=0.6)
+shot("S14", "L14", C(0.0, 2.62, 1.0, 2.0, 0, 26, cz=1.8, push=(1.85, 1.0)))
 key("mom", "L15", arms=[12, 12], side=[0, 0], blend=0.5)
 key("me", "L15", arms=[12, 12], side=[0, 0], expr="scared", blend=0.5)
 shot("S15", "L15", mecam(1.3, 0, dx=-0.05, push=(1.1, 1.3)))
-shot("S15d", "P16", clkcam(1.5, tx=0.3, push=(1.3, 1.5)))
+shot("S15d", "P16", clkcam(1.7, tx=0.26, push=(1.5, 1.5)))
 
 # --------------------------------------------------------------------------------------------- 05 the call (L16 to L22)
-shot("S16a", "L16", phonecam(0.7, 0, dx=0.0, cz=1.35, tz=0.82))
+shot("S16a", "L16", P2((0.0, 0.3, 1.5), (0.0, 1.0, 0.6), 34))
 key("me", "L16.1+0.3", expr="stunned", head=[0, 0])
 shot("S16b", "L16.1+0.3", mecam(1.3, 0, dx=-0.05, push=(1.1, 1.3)))
-shot("S17", "L17", P2((0.5, 0.05, 1.15), (0.0, 1.0, 0.8), 34, pos2=(0.35, 0.3, 1.05)))
+shot("S17", "L17", P2((0.4, 0.2, 1.35), (0.0, 1.0, 0.6), 34, pos2=(0.3, 0.4, 1.3)))
 key("me", "L18", expr="stunned", head=[0, 6])
 mouth("me", "L18", "L18>", 0.35)
 shot("S18", "L18", P2((0.2, 0.3, 1.5), (0.45, 2.3, 1.1), 30))
@@ -251,26 +251,26 @@ key("me", "L20", expr="laugh", head=[0, -6])
 mouth("me", "L20", "L20>", 0.4)
 key("mom", "L20", arms=[12, 12], side=[0, 0], expr="smile", blend=0.5)
 shot("S20", "L20", mecam(1.4, -8, dx=-0.1, push=(1.2, 1.3)))
-key("me", "L21", expr="stunned", head=[0, 0], arms=[12, 85], side=[0, 0], blend=0.4)
-shot("S21a", "L21", P2((0.05, 0.3, 1.45), (0.55, 2.55, 1.25), 30))
-key("me", "L21.2", expr="stunned", arms=[12, 12], blend=0.5)
+key("me", "L21", expr="stunned", head=[0, 0])
+shot("S21a", "L21", P2((0.15, -0.9, 1.25), (0.15, 1.6, 1.05), 34, pos2=(0.15, -0.6, 1.22)))
+key("me", "L21.2", expr="stunned")
 shot("S21b", "L21.2", mecam(1.2, 0, dx=-0.05, push=(1.0, 1.3)))
 key("me", "L22", expr="laugh", head=[0, -8], blend=0.6)
 mouth("me", "L22", "L22>", 0.4)
 shot("S22", "L22", mecam(1.3, 6, dx=-0.1, push=(1.1, 1.3)))
 
 # --------------------------------------------------------------------------------------------- 06 the advice and the reveal (L23 to L26)
-shot("S23a", "L23", phonecam(0.9, 0, dx=0.1, cz=1.3, tz=0.85, push=(0.75, 0.82)))
+shot("S23a", "L23", P2((0.46, -0.1, 1.35), (-0.28, 1.28, 1.1), 28, pos2=(0.4, 0.15, 1.3), tgt2=(-0.28, 1.4, 1.1)))
 shot("S23b", "L23.3", momcam(1.35, 4, dx=0.1, push=(1.15, 1.3)))
 key("mom", "L23.3", expr="warm", head=[0, 0])
 key("me", "L24", expr="stunned", head=[0, 0], blend=0.5)
-shot("S24", "L24", clkcam(1.55, tx=0.3, push=(1.3, 1.5)))
-shot("S25", "L25", clkcam(1.5, tx=0.32, push=(1.4, 1.5)))
+shot("S24", "L24", C(0.0, 3.0, 1.4, 2.5, 0, 24, cz=1.5, push=(2.25, 1.4)))
+shot("S25", "L25", C(0.0, 3.0, 1.4, 2.35, 0, 24, cz=1.5, push=(2.05, 1.4)))
 key("me", "L25.3", expr="warm", blend=0.4)
 shot("S25b", "L25.3", mecam(1.2, 0, dx=-0.1, push=(1.0, 1.3)))
 mouth("me", "L25.3", "L25>", 0.3)
 key("me", "L26", expr="smile", head=[0, 0], blend=0.5)
-shot("S26", "L26", P2((0.35, -0.55, 1.5), (0.25, 2.2, 1.0), 28, pos2=(0.35, -0.2, 1.45)))
+shot("S26", "L26", P2((0.0, -1.4, 1.8), (0.0, 2.2, 1.05), 24, pos2=(0.0, -1.1, 1.75)))
 cue("L26", "timer", mode=0.0, s=57.0, big=0.0)
 
 # ----------------------------------------------------------------------------------------------- finish
