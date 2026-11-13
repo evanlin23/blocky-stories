@@ -3,7 +3,7 @@
 - **Slug:** `ep150-dad-pillow` (batch 15, upload order 12 of 16)
 - **Pitch:** P08 in the batch 15 pitch round (panel 7.3). Engine: a borrowed point of view (you live inside someone else's dream), and an eerie sound recast as love, ep124's kind.
 - **Lane:** warm. **Opening shape:** `if`. **Length arm:** 60 to 90 s.
-- **Title:** My Stepdad's Pillow Dreams Of Someone KNOCKING 🛏️
+- **Title:** Someone KNOCKS In My Stepdad's Dream 🛏️
 - **Everyone is an adult.** I'm 26. My stepdad is 58 (he married my mom when I was 16, and I've called him Dad for ten years).
 - **Word count:** 189 spoken words in 22 lines (ids kept from the first draft, so there are gaps), all `narrator`, plus one music drop (0.5 s before L20).
 - **Estimated length:** about 45 s at 290 wpm with 0.15 s gaps, the drop, the 1 s spatula beat and the loop tail. The reveal line (L25) lands at about 37 to 39 s, the last 6 to 8 s.
@@ -148,7 +148,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L14: Next night, / the same HALL. / "Knock. KNOCK." / "DAD?" / He didn't / MOVE.
 - L17: The third night, / I walked / to the door / MYSELF.
 - L18: And Dad / said, / "Don't. / I like / this PART."
-- L19: Right through / the DOOR: / "Knock. KNOCK." / "DAD?"
+- L19: Then right through / the DOOR, / "Knock. KNOCK." / "DAD?"
 - (drop 0.5)
 - L20: And I knew / the VOICE.
 - L21: It was MINE. / At SIXTEEN.
