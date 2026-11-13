@@ -3,9 +3,8 @@
   "description": "Everyone here can freeze the world for one second a day. My uncle uses his on falling cakes. The lady next door uses hers on the same pigeon every morning.\n\nI saved mine for four years, for the day my best friend Leo moves away. Then I froze the park at noon, and something else was still moving.\n\nIt's made up. A blocky story, built with code and Blender.",
   "pin": "When did Leo start moving in the frozen world? Watch his pretzel.",
   "made_for_kids": false,
-  "cover_s": 29.0,
+  "cover_s": 11.5,
   "shape": "crossed-gift",
   "opening": "cost",
-  "lane": "warm",
-  "hold": "batch 15: scripts only, not built yet"
+  "lane": "warm"
 }
