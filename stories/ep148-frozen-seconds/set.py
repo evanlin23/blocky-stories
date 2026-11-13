@@ -485,9 +485,21 @@ def animate(kit, story, tl, t, ctx):
             continue
         hp = gh.matrix_world.translation
         u = min(1.0, max(0.0, 2.0 - nm))     # 0 on the palm, 1 in the pocket
-        a0, a1 = (-0.45, -0.55, -0.75), (-0.2, -0.2, -0.8)
-        root.location = tuple(hp[i] + a0[i] + (a1[i] - a0[i]) * u for i in range(3))
-        sc = 1.0 - 0.3 * u
+        # phase 1 (u 0..0.5): slide over to just above the pocket mouth, held in front of the jacket.
+        # phase 2 (u 0.5..1): sink straight down INTO the pocket, always behind its front face (y inside the
+        # pocket volume), so the front face covers the lower part and the note is never in front of it.
+        a0, a1 = (-0.45, -0.55, -0.88), (-0.2, -0.2, -0.66)
+        w = min(1.0, u / 0.5)
+        w = w * w * (3 - 2 * w)
+        d = max(0.0, (u - 0.5) / 0.5)
+        d = d * d * (3 - 2 * d)
+        px = a0[0] + (a1[0] - a0[0]) * w
+        pz = a0[2] + (a1[2] - a0[2]) * w
+        py = a0[1] + (a1[1] - a0[1]) * w
+        if d > 0:
+            pz = a1[2] + (-0.86 - a1[2]) * d
+        root.location = (hp[0] + px, hp[1] + py, hp[2] + pz)
+        sc = 1.0 - 0.5 * u
         root.scale = (sc, sc, sc)
-        root.rotation_euler = (math.radians(-12 * (1 - u)), 0, 0)
+        root.rotation_euler = (math.radians(-12 * (1 - w)), 0, 0)
     return gains
