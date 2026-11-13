@@ -403,7 +403,7 @@ story = {
     "set_moves": ["S23a", "S23b"],
 }
 story["tag_hide"] = ["S04", "S06", "S09", "S10", "S14", "S15", "S16", "S18", "S19", "S20b", "S23a", "S23b", "S25b", "S26a", "S29"]
-story["framing_ok"] = ["S11b", "S20a"]   # deliberate: the far wall, flat water where the splash was / is about to be
+story["framing_ok"] = ["S11b", "S20a", "S15", "S16", "S19"]   # deliberate: the far wall, flat water where the splash was / is about to be; S15, S16, S19: a swimmer leaning 66 degrees, whose head the lint puts upright above the hips (the stills show the head and body in frame)
 story["staging_ok"] = []
 story["frames_ok"] = ["S09"]   # deliberate: the board lights its second row (a 0.4 s fade) on the shot's first beat
 story["asr_forgive"] = ["it", "kicked"]   # Whisper hears "at seven" and "I kick"

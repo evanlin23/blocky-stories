@@ -3289,7 +3289,10 @@
  ],
  "framing_ok": [
   "S11b",
-  "S20a"
+  "S20a",
+  "S15",
+  "S16",
+  "S19"
  ],
  "staging_ok": [],
  "frames_ok": [
