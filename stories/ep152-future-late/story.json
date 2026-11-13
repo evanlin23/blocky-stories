@@ -15,7 +15,7 @@
  "tail": 0.0,
  "fade_in": false,
  "fade_out": false,
- "rev": 6,
+ "rev": 7,
  "look": {
   "style": "v3",
   "fog": "#f4e8d4",
@@ -152,7 +152,7 @@
   "cousin": {
    "age": "adult",
    "skin": "#d4483a",
-   "shirt": "#d8d0c0",
+   "shirt": "#b0a490",
    "pants": "#2f9fd0",
    "shoes": "#e8d8b8",
    "sleeves": "none",
@@ -2879,7 +2879,7 @@
     "lufs": -44
    }
   ],
-  "rev": 6
+  "rev": 7
  },
  "set_moves": [],
  "frames_ok": [
