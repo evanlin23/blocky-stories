@@ -298,8 +298,8 @@ cue("L33", "pr_final", on=False)
 S("L33", "S32", C((-1.0, 3.0, 1.45), 1.3, az=0, el=2, w2=1.15), note="S32 Grandma, stunned, then smiling")
 raw("grandma", "L33", expr="wide", blend=0.3)
 raw("grandma", "L33.3", expr="smile", blend=0.4)
-put("okafor", "L34", [-1.5, -5.5, 0.0], 180, "smile", side=[0, 0])
-raw("okafor", "L34+0.5", side=[103, 0], blend=0.4)
+put("okafor", "L34", [-1.62, -5.5, 0.0], 180, "smile", side=[0, 0])
+raw("okafor", "L34+0.5", side=[97, 0], blend=0.4)
 put("me", "L34", ME_C, 180, "smile")
 S("L34", "S33", C((-1.0, -5.5, 1.5), 1.9, az=-165, el=8, w2=1.7), fill=1.6, back=True, note="S33 Mr. Okafor beside me at the camera, one step in to pat my shoulder")
 raw("okafor", "L35", expr="smile", blend=0.3)
@@ -386,6 +386,6 @@ if vf.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(key(e)))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 7
+story["rev"] = 8
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
