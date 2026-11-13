@@ -299,6 +299,11 @@ def build_phone(kit):
     W["finger"] = fg
     kit.box("finger.tip", (0.034, 0.12, 0.028), (0, -0.06, 0.0), sk, fg, bevel=0.012)
     kit.box("finger.hand", (0.1, 0.16, 0.04), (0.02, -0.2, 0.02), sk, fg, bevel=0.02)
+    # the reveal clock: a big kitchen clock the camera frames beside a face (the real big one hides behind our heads);
+    # animate() hangs it at a fixed spot in the frame on the shots listed in REV_CLOCK
+    rc = clock(kit, "ck.rev", 0.0, 0.0, 0.5, "#d94a3a", second=True, wall_y=0.0)
+    rc.location = (0, -80, 0)
+    W["revclock"] = rc
     # ring cue: bright strokes either side of the phone, shown while it buzzes
     rg = kit.empty("phone.ring", (0, 0, 0.004), root)
     ringm = kit.emit("#ffd23a", 1.4, "ringglow")
@@ -320,7 +325,7 @@ def build_phone(kit):
     kit.box("hi.momknit", (0.06, 0.25, 0.125), (-0.15, 0.0, 0.0), pl("#256f6b", 0.6), mg, bevel=0.02)
     kit.box("hi.momhand", (0.3, 0.22, 0.05), (0.07, 0.0, 0.0), skin, mg, bevel=0.025)
     for k in range(4):
-        kit.box(f"hi.momfinger{k}", (0.1, 0.045, 0.04), (0.27, -0.085 + k * 0.057, -0.002), skin, mg, bevel=0.02)
+        kit.box(f"hi.momfinger{k}", (0.15, 0.05, 0.045), (0.3, -0.085 + k * 0.057, -0.002), skin, mg, bevel=0.02)
 
 
 # ------------------------------------------------------------------------------------------------ the rule meter
@@ -433,7 +438,7 @@ def build_watch(kit):
     strap = pl("#3b2a20", 0.6)
     kit.box("wt.strap", (1.06, 1.06, 0.34), (0, 0, -1.0), strap, arm, bevel=0.05)
     root = kit.empty("wt.root", (0, -0.53, -1.0), arm)
-    r = 0.52
+    r = 0.68
     kit.cyl("wt.rim", r * 1.18, 0.14, (0, -0.04, 0), pl("#c9a24a", 0.35, spec=0.6), root, rot=(math.pi / 2, 0, 0), n=24)
     kit.cyl("wt.face", r, 0.06, (0, -0.12, 0), face, root, rot=(math.pi / 2, 0, 0), n=24)
     for i in range(12):
@@ -450,6 +455,8 @@ def build_watch(kit):
     W["wt"] = (hp, mp)
 
 
+# shot id -> (x, y of the clock's centre as a fraction of the frame, its width as a fraction of the frame's)
+REV_CLOCK = {"S08": (0.27, 0.40, 0.42), "S21a": (0.25, 0.40, 0.40), "S24": (0.25, 0.40, 0.40), "S25": (0.24, 0.40, 0.42)}
 INDOOR_FROM = 0
 OUTDOOR = ("S05a", "S05b", "S06a", "S06b")
 
@@ -555,6 +562,24 @@ def animate(kit, story, tl, t, ctx):
         sx = -1 if k < 3 else 1
         j = k % 3
         ob.location.x = sx * (0.068 + 0.026 * j + 0.004 * math.sin(t * 20.0 + j))
+    # ---- the reveal clock, hung in the frame on its shots
+    rc = W["revclock"]
+    rv = REV_CLOCK.get(sid)
+    if rv and spec:
+        c0 = spec["cam"][0]
+        loc, tgt, lens = Vector(c0[1]), Vector(c0[2]), c0[3]
+        fwd = (tgt - loc).normalized()
+        right = fwd.cross(Vector((0, 0, 1))).normalized()
+        up = right.cross(fwd).normalized()
+        D = 2.0
+        wd = D * 13.5 / lens
+        hd = wd * 16.0 / 9.0
+        rc.location = loc + fwd * D + right * ((rv[0] - 0.5) * wd) + up * ((0.5 - rv[1]) * hd)
+        rc.rotation_euler = (0, 0, math.atan2(-fwd.x, fwd.y))
+        k = rv[2] * wd / 1.14
+        rc.scale = (k, k, k)
+    else:
+        rc.location = (0, -80, 0)
     # ---- the hand-hold close (S14b): Mom's hand comes in from the left and settles on my cuff
     hi = W["handins"]
     if sid == "S14b":
