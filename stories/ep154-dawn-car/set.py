@@ -719,6 +719,11 @@ def attach_extras(kit):
         g = kit.empty(f"{who}.beltg", (0, 0, 0), to)
         kit.box(f"{who}.belt", (0.34, 0.08, 2.5), (0, -0.66, 1.0), belt, g, rot=(0, 0.72, 0), bevel=0.02)
         kit.box(f"{who}.buckle", (0.36, 0.1, 0.22), (-0.62, -0.68, 0.32), pl("#b9bec6", 0.4, spec=0.3), g, bevel=0.03)
+        if who == "dad":
+            # the strap carried on over his shoulder and down his back, so it reads from behind and above a seat back
+            # (S23b/S23c, where the seat and the cook hide his chest): 1 cm proud of the shirt, clear of the collar
+            kit.box(f"{who}.beltsh", (0.34, 1.29, 0.08), (0.8, -0.055, 2.05), belt, g, bevel=0.02)
+            kit.box(f"{who}.beltbk", (0.34, 0.08, 0.5), (0.8, 0.55, 1.8), belt, g, bevel=0.02)
         W["belts"][who] = g
     W["extras_done"] = True
 

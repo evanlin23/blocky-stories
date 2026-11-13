@@ -15,7 +15,7 @@
  "tail": 0.0,
  "fade_in": false,
  "fade_out": false,
- "rev": 3,
+ "rev": 4,
  "look": {
   "style": "closer",
   "fog": "#ffe6d2",
@@ -5591,7 +5591,7 @@
    "at": "L08",
    "name": "car_dad",
    "x": 5.0,
-   "y": -6.5,
+   "y": -5.0,
    "yaw": 180,
    "dur": 0.0
   },
@@ -5601,7 +5601,7 @@
    "x": 5.0,
    "y": 3.0,
    "yaw": 180.0,
-   "dur": 1.4
+   "dur": 0.82
   },
   {
    "at": "L08",
@@ -6151,7 +6151,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 3
+  "rev": 4
  },
  "set_moves": [],
  "framing_ok": [

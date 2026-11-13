@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -288,8 +288,8 @@ shot("S07b", "L07.2", cam(MKH[0] + 0.1, MKH[1], MKH[2] - 0.06, 0.92, 52, 24))
 # ===== 04 the clues (L08 to L11)
 cue("L08", "clock", s="6:30")
 show("L08")
-car("L08", "dad", (5.0, -6.5, 0, 180))
-car("L08+0.02", "dad", G.CAR_HOME, dur=1.4)
+car("L08", "dad", (5.0, -5.0, 0, 180))
+car("L08+0.02", "dad", G.CAR_HOME, dur=0.82)   # parked before S08b cuts inside the car (qa: flat frame)
 cue("L08", "pseat", v=1.0)
 cue("L08", "heater", v=1.0)
 cue("L08", "muffin", v=1.0, where="dash", drop=0.0)
