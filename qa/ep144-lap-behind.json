@@ -1,0 +1,30 @@
+{
+ "stage": "proof",
+ "film": "proof-43352994765",
+ "run": "43352994765",
+ "sha": "2f612aaa4070adbacf39a24ea28cda16b1a1aff4",
+ "verdict": "pass",
+ "date": "2026-11-13",
+ "checked": [
+  "proof sha vs branch head",
+  "every frame: flat, black, clipped-white, frozen scan",
+  "frames every 2 s at phone size",
+  "frames 0-89 (first 3 s)",
+  "clip.json seconds (S11b-S19) at 540x960",
+  "S19 25.9-27.3 s lane rope",
+  "S13 lifeguard",
+  "S23a/S23b duck towel",
+  "540x960 enlargements (TV stand-in)",
+  "loudness and true peak",
+  "4 kHz 5 s windows",
+  "end tail",
+  "craft",
+  "flash",
+  "package and pin",
+  "opening",
+  "cover",
+  "gate --merge"
+ ],
+ "craft": "**ep144-lap-behind**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 16.1 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 18.2 | 14.0– | ok |\n| macro.motion_energy_q | 7.45 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 7.66 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.061 | –0.25 | ok |\n| spec.shot_p90_s | 1.89 | –2.5 | ok |\n| macro.longest_still_s | 0.13 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.83 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.72 | 0.4– | ok |\n| macro.brightness_mean | 0.592 | 0.35– | ok |\n| macro.brightness_first_3s | 0.549 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.453 | 0.42– | ok |\n| macro.contrast_mean | 0.243 | 0.18– | ok |\n| spec.face_big_share | 0.459 | 0.4– | ok |\n| spec.caption_share | 0.979 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.545 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.062 | –0.25 | ok |\n| micro.idle_window_share | 0.031 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 93.0 | –120 | ok |\n| spec.sound_events_per_10s | 4.07 | 2.0–4.0 | **warn** |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.3 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0393 | –0.08 | ok |\n| sound.hf_jump_max | 0.0135 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Proof 270x480 (shown 1080x1920), 1253 frames, 41.77 s, 33 shots = timeline; proof sha 2f612aaa is the branch head and the latest commit touching stories/ep144-lap-behind. Every frame scanned: no frozen frames, max one-tone share 0.30 (32.6 s duck towel), near-white peak 13% at 15.9 s = the S12 splash, dark peak 30% at 40.6 s = the black lap board; no flat, black or clipped-white frames.\nSecond one: warm-lit pool deck, me (goggles, face big) beside the NOBODY-SWIMS-ALONE sign with its two swimmers, lap-board marker top right, slow push; 'At our town pool, you can't swim ALONE.' Rule pictured from frame 0, grandpa Lou by 3 s, ripple beside him 4.5 s, 'Behind me, a SPLASH' 9.5 s; no backstory. Reveal L26 at 36.5-38.6 s, two short lines after.\nS19 (25.9-27.3 s): the near lane rope runs unbroken in front of the swimmer at the waterline, body behind it and partly under water; at phone size and enlarged it reads as swimming against the rope, not through it. Not a staging fault. clip.json hits (S11b-S19) are all me-in-water, the swim itself, listed in clip_ok.\nS13 (16.7-18 s): lifeguard on the high chair, upright and watching, face reads; good water-safety staging. Small kicking foot reads slightly detached from the half-submerged swimmer at 17.2 s; minor, not must-fix. S23a/b (32.5-34.3 s): duck towel draped on the starting block, dripping into a puddle, duck face reads at phone size.\nAudio: -14.1 LUFS, true peak -1.8 dBTP, LRA 1.0; 4 kHz share max 0.039, jump max 0.0135; voice clear over bed (10.3 dB), tail ends on 'ALONE' cleanly. Flash passes (general 1/s, 3f 3/s, red 0). Polish on.\nPackage: title, description, pin ('Mine swims a lap BEHIND. Why?') match, no spoiler, no 'husband'; pin is a real question. Opening 'must' matches L01 ('you can't swim ALONE'); queue note: last upload ep137 is also 'must' (upload.py reorders); queue tail ep129 is 'ban'. Cover 11.5 s is the lap board 1/0 without a face; stronger option 28.5 s (shocked me by the 12/11 board), should-fix only. Gate --merge: only block is this qa file.\ncraft: 0 block, 0 near, 1 warn: spec.sound_events_per_10s 4.07 (2.0-4.0) (0.07 over); the extra events sit on the SPLASH-splash beats (S16, S19, S20), which are the story's clue; not a fail.\nVerdict pass. No blocking fixes."
+}
