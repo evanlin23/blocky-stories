@@ -1,11 +1,11 @@
 {
-  "title": "Room Six Came With a Man in the CLOSET 🛎️",
-  "description": "At this motel, whatever the last guest's review card says is what you get. The pool is a bucket.\n\nMy dad and I got Room Six. Our card said the man in the closet is very polite.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "title": "Room Six Came With a Polite STRANGER 🛎️",
+  "description": "My dad and I got Room Six at a motel where the last guest's review card comes true. The pool is a bucket.\n\nOur card said the man in the closet is very polite.\n\nIt's made up. A blocky story, built with code and Blender.",
   "pin": "Who wrote the last card about us, the closet man or the motel?",
   "made_for_kids": false,
-  "cover_s": 12.0,
+  "cover_s": 12.8,
   "shape": "words-make",
-  "opening": "cost",
+  "opening": "confess",
   "lane": "eerie",
-  "hold": "batch 15: scripts only, not built yet"
+  "hold": "batch 15: built; round-1 fixes"
 }

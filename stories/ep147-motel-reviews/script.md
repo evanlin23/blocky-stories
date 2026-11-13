@@ -1,17 +1,17 @@
 # ep147-motel-reviews: the script (writer, 2026-11-12, batch 15)
 
 - **Slug:** `ep147-motel-reviews` (batch 15, upload order 9 of 16)
-- **Pitch:** P19 in the batch 15 pitch round (blind panel 7.3). A re-imagined retry of the idea behind killed ep87-motel-rooms (its eight-foot clerk failed the creature still; not a hard rule, never uploaded). New rule wording, new cast, new room, new twist, and **no creature**: the strange one is a person made wrong, too still and too neat. Lane `eerie`. Opening `cost` (the place's rule and its price: you get whatever the last guest wrote). Length arm: 60 to 70 s at first; cut to about 43 s in the no-filler revise (owner, 2026-11-12: every line earns its place, the reveal near the end).
-- **Title:** Room Six Came With a Man in the CLOSET 🛎️
+- **Pitch:** P19 in the batch 15 pitch round (blind panel 7.3). A re-imagined retry of the idea behind killed ep87-motel-rooms (its eight-foot clerk failed the creature still; not a hard rule, never uploaded). New rule wording, new cast, new room, new twist, and **no creature**: the strange one is a person made wrong, too still and too neat. Lane `eerie`. Opening `confess` (round 1: batch 15 had 7 of 16 `cost`; L01 now starts "My dad and I"). Length arm: 60 to 70 s at first; cut to about 43 s in the no-filler revise (owner, 2026-11-12: every line earns its place, the reveal near the end).
+- **Title:** Room Six Came With a Polite STRANGER 🛎️ (round 1: the old title was 9 words and "in the CLOSET" invited the idiom)
 - **Shape:** `words-make` (reused from ep87's family, a new twist): a review written about a guest is what keeps him in the room, and the last card is about us.
 - **Everyone is an adult.** I'm 21. My dad is about 52. The closet man looks about 40. The desk clerk is about 60.
-- **Word count:** 191 spoken words in 22 lines, all `narrator`, plus one 0.6 s drop (before L26). Spoken order: L01, L02, L05, L04, L06, L07, L08, L10, L13, L15, L16, L17, L19, L20, L21, L22, L23, L24, L26, L28, L29, L33. No-filler revise (2026-11-12) cut L03, L08b, L09, L11, L12, L14, L21b, L25, L27, L30, L31, L32 (L18 was cut earlier) and moved L05 ahead of L04.
+- **Word count:** 187 spoken words in 21 lines, all `narrator`, plus one 0.6 s drop (before L26). Spoken order: L01, L02, L04, L06, L07, L08, L10, L13, L15, L16, L17, L19, L20, L21, L22, L23, L24, L26, L28, L29, L33. No-filler revise (2026-11-12) cut L03, L08b, L09, L11, L12, L14, L21b, L25, L27, L30, L31, L32 (L18 was cut earlier) and moved L05 ahead of L04. Round 1 (2026-11-13) folded L05 into a new L01 (the `confess` opening), cut L05, and rewrote the two "Room Six:" card lines (L17, L28) in a plainer human hand.
 - **Estimated length:** about 43 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. The reveal (L28, L29) starts at about 38 s, about 5 s from the end, and only L33 (the button and loop line) follows it.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright roadside motel in the desert-edge sun: one long single-story row of mint doors with numbers (numerals only), a pink stucco office with a desk bell, a turquoise pool the size of a bucket (literally a bucket on the patio, the joke), an ice machine, palm shapes, a big blue sky. Room Six inside: two beds with orange spreads, a wood dresser with a drawer of review cards, a closet with louvered doors, a window with sun through the blinds (ramped, never switched). Every room has a ceiling.
-- **Hold:** scripts only (batch 15). Not built, not voiced.
+- **Hold:** batch 15: built; round-1 fixes. Removed only after both reviews approve.
 
 ## Variety table
-The table for my eight is in `stories/ep140-town-photo/script.md`. This row: a roadside motel's Room Six, a man standing in the closet, `cost`, ends eerie, warmth: a dad and his grown son laughing at a bucket.
+The table for my eight is in `stories/ep140-town-photo/script.md`. This row: a roadside motel's Room Six, a man standing in the closet, `confess`, ends eerie, warmth: a dad and his grown son laughing at a bucket.
 
 ## The big idea
 **At this motel every review card comes true, and the polite man in our closet was never the motel's: he was the last guest, kept in Room Six by a card that said he never left, and when I write him out, the card he leaves behind is about my dad and me.**
@@ -22,17 +22,17 @@ The table for my eight is in `stories/ep140-town-photo/script.md`. This row: a r
 - **The rule is the clue:** "you get whatever the last guest wrote" is said as a joke in L02. It's the whole mechanism.
 
 ## The story
-- **Rule / hook (L01, L02, 13 words, about 2.8 s):** "At this motel, / every review card / comes TRUE." "And you get / whatever the last guest / WROTE."
-- **About me by 0:05:** L05 (Dad and I, Room Six) starts at about 3.4 s, straight after the rule. One example joke (L04, about 3 s) proves the rule, then L06, our card about the man in the closet, at about 8 s.
+- **Rule / hook (L01, L02, 22 words, about 5 s):** "My dad / and I got / Room SIX, / where the last / guest's review card / comes TRUE." "And you get / whatever the last guest / WROTE." The rule and its stakes (it's us) are in sentence one.
+- **About me by 0:05:** L01 itself is about Dad and me in Room Six, from frame 1. One example joke (L04, about 3 s) proves the rule, then L06, our card about the man in the closet, at about 8 s.
 - **The marker (the rule meter), on screen from frame 1:** Room Six's review card, a cream card with five printed stars (our own glyph, no words) and a handwritten line. The card is in frame or in a corner copy (top-left, cream tile with five stars) in every shot. Its filled stars change as cards change: our first card shows 5 stars; the card about us at the end shows 1.
 - **Example (L04, 1 joke):** one star, the pool's the size of a bucket (it's a bucket).
 - **Stakes-raising beat (L06 to L08, about 8 to 13 s):** our card says the man in the closet is very polite. Dad laughs and opens the closet. A man in a pressed gray suit, facing the wall.
 - **Clock time aloud:** "At six A.M." (L22), the checkout the card set.
 - **The silly plant that becomes the key:** overnight our shirts are folded into perfect little squares (L13) while the man hasn't moved (L15). At the end Dad is folding my shirt into a perfect little square (L33).
 - **Plant 1:** the clerk says Room Six's other key never came back (L10). At L23, the closet man sets that key on the desk.
-- **Plant 2:** the old card in the drawer (L15, L16): "Room Six: the man in this room is very quiet. He never LEFT." He was the last guest (L19).
+- **Plant 2:** the old card in the drawer (L16, L17): "Guy in Six is real quiet. He never LEFT." He was the last guest (L19).
 - **The climax turns the rule's own logic:** a card comes true, so I write one: "The man in the closet checked out before breakfast." He does, politely.
-- **Reveal and sting (L26 to L33, plain, the last 5 to 8 s):** under the key, one more card: "Room Six: the father and son were very quiet. They never LEFT." The only line after it: Dad is folding my shirt into a perfect little square. No explaining after the card.
+- **Reveal and sting (L26 to L33, plain, the last 5 to 8 s):** under the key, one more card in the same plain hand: "Dad and son in Six. Real QUIET. They never LEFT." The only line after it: Dad is folding my shirt into a perfect little square. No explaining after the card.
 - **How the last 15 seconds turn over the first line:** "you get whatever the last guest wrote" was the joke. On the loop, the last guest wrote about us.
 - **Ending shape:** `words-make`. Ends eerie. Nobody is hurt, nobody is taken: Dad is folding a shirt.
 - **Warmth:** a dad and his grown son on a motel trip, laughing at a bucket.
@@ -51,7 +51,7 @@ At this motel every review card comes true, and the card in the narrator's room 
 | Who | Look | Notes |
 |---|---|---|
 | **Me**, 21, the narrator | teal road-trip T-shirt `#2ec4b6`, brown block hair, a cap with no logo | |
-| **My dad**, about 52 | a Hawaiian-style shirt in our own pineapple pattern, a block moustache, sunglasses pushed up | named at L05 ("My dad and I") in the same shot |
+| **My dad**, about 52 | a Hawaiian-style shirt in our own pineapple pattern, a block moustache, sunglasses pushed up | named at L01 ("My dad and I") in the same shot |
 | **The closet man**, looks about 40 | a pressed charcoal-gray suit `#5b6170`, a white shirt, a gray tie, very neat parted black hair, polished shoes, `neutral` the whole time, standing perfectly straight | a person made wrong: too still, too neat. Never seen moving except his walk out at L23 |
 | **The desk clerk**, about 60 | a mint motel shirt with no lettering, reading glasses on a cord | L10 only |
 
@@ -77,9 +77,9 @@ Sky `#7fd0ff`, motel stucco pink `#ffb3c1`, doors mint `#7fe0c4`, room walls cre
 - **Effects:** the desk bell, the closet's louvered doors, the door closing behind him in the drop.
 
 ## The opening recipe
-1. Line 1 is the rule; line 2 is its price, both by 2.8 s.
+1. Line 1 is us and the rule (`confess`); line 2 is its price, both by about 5 s.
 2. Frame 1: close on Room Six's cream review card held at chest height in my hand, five stars and a handwritten line, my face soft above it (`smile`). The card's corner copy is on from frame 1.
-3. By 0:05 it's Dad and me at Room Six (L05 at about 3.4 s), then the one bucket joke. At about 8 s it's our card and our closet.
+3. By 0:05 it's Dad and me at Room Six (L01, S05 on "Room SIX"), then the one bucket joke. At about 8 s it's our card and our closet.
 4. The stakes beat at 8 to 13 s: Dad opens the closet. No backstory before 0:15.
 
 ## The shot plan
@@ -87,9 +87,9 @@ Build rules for every shot: characters 1.4 m apart or more unless touching on pu
 
 | Shots | Lines | Picture |
 |---|---|---|
-| S01a, S01b | L01 | (a) Close: the review card in my hand, five stars, a scrawled line, my face above, `smile`. (b) Punch in on the stars on "TRUE". |
+| S01a, S01b | L01 | (a) Close: the review card in my hand, five stars, a scrawled line, my face above, `smile`. (b) Punch in on the stars on "TRUE", after S05. |
 | S02 | L02 | A stack of cards in the dresser drawer, pulled open, slow drift. |
-| S05 | L05 | Me and Dad at the mint door of Room Six (1.4 m apart), the "6" numeral on the door, bags in hand, `smile`. |
+| S05 | L01 (on "Room SIX") | Me and Dad at the mint door of Room Six (1.4 m apart), the "6" numeral on the door, bags in hand, `smile`. |
 | S04a, S04b | L04 | (a) The motel "pool": a turquoise bucket of water on a patio with a tiny diving board. (b) My dad, `laugh`, looking down at it. |
 | S06 | L06 | Close: our card in my hand at chest height, five stars, my face reading, `uneasy`. |
 | S07 | L07 | Dad, `laugh`, crossing to the closet (eased), reaching for the louvered doors. |
@@ -118,9 +118,8 @@ A plain tally of two strokes, motel pink, scratched into the diamond key fob of 
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks.
 
-- L01: At this motel, / every review card / comes TRUE.
+- L01: My dad / and I got / Room SIX, / where the last / guest's review card / comes TRUE.
 - L02: And you get / whatever the last guest / WROTE.
-- L05: My dad and I / got Room SIX.
 - L04: A one-star card says, / "The pool's the size / of a BUCKET." / It's a bucket. **(quotable)**
 - L06: Our card said, / "The man in the closet / is very POLITE."
 - L07: Dad laughed / and opened / the CLOSET.
@@ -129,7 +128,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L13: In the morning, / our shirts were folded / into perfect / little SQUARES.
 - L15: The man / hadn't MOVED.
 - L16: That night, / I found an old card / in the drawer.
-- L17: "Room Six: / the man in this room / is very quiet. / He never LEFT."
+- L17: "Guy in Six / is real quiet. / He never LEFT."
 - L19: He was / the last GUEST.
 - L20: So I wrote / a card / of my OWN.
 - L21: "The man in the closet / checked out / before BREAKFAST."
@@ -138,14 +137,14 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L24: Then he nodded / at us. / Very POLITE.
 - (drop, 0.6 s)
 - L26: Under the key / was one more CARD.
-- L28: "Room Six: / the father and son / were very QUIET.
+- L28: "Dad and son / in Six. / Real QUIET.
 - L29: They never LEFT."
 - L33: And Dad / is folding my shirt / into a perfect / little SQUARE.
 
-(Loop: "And Dad is folding my shirt into a perfect little square. At this motel, every review card comes true." The ending's picture is the rule coming true.)
+(Loop: "And Dad is folding my shirt into a perfect little square. My dad and I got Room Six, where the last guest's review card comes true." The ending's picture is the rule coming true.)
 
 ## Notes for the builder and reviewers
 - "Six A.M." is spoken "six ay em".
 - The handwriting on cards is drawn as scribble strokes, never readable words (hard rule 1). The captions carry the words.
-- Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: L28 says "son" with no harm word in the line ("left" and "quiet" aren't harm words). Nothing flagged.
+- Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`: L28 says "Dad and son" with no harm word in the line ("left" and "quiet" aren't harm words). Nothing flagged.
 - Hard rule 8 checked on every caption, the title, description and pin.
