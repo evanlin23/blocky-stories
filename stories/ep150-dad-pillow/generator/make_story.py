@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 13
+REV = 14
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -188,7 +188,7 @@ cue("L02", "bed", v=0.0)
 cue("L02", "pillow", v=1.0)
 me_guest("L02", "sheepish", arms=(56, 56))
 mouth("me", "L02", "L02>", 0.3)
-shot("S02", "L02", cam(G.ME_G[0], G.ME_G[1], 1.2, 1.7, 0, 30, cz=1.3))
+shot("S02", "L02", cam(G.ME_G[0], G.ME_G[1], 1.2, 1.7, 0, 30, cz=1.3, push=(1.58, 1.25)))
 
 # ===== 02 the rule at work (L03, L04)
 cue("L03", "pillow", v=0.0)
@@ -241,12 +241,12 @@ place("L08", "me", (G.ME_H[0], G.ME_H[1], 0.0), 0, "worried", arms=[0, 0])
 # looking round the dream hall: left, then right
 key("me", "L08.1", (G.ME_H[0], G.ME_H[1], 0.0), yaw=0, expr="worried", head=[-38, 0], blend=0.35)
 key("me", "L08.2", (G.ME_H[0], G.ME_H[1], 0.0), yaw=0, expr="worried", head=[34, 0], blend=0.4)
-shot("S08a", "L08", camp([HX, -1.14, 1.4], [HX, 3.1, 1.3], 22, pos2=[HX - 0.15, -0.45, 1.4], tgt2=[HX, 3.1, 1.32]))
+shot("S08a", "L08", camp([HX, -1.14, 1.4], [HX, 3.1, 1.3], 22, pos2=[HX - 0.35, 0.0, 1.42], tgt2=[HX, 3.1, 1.32]))
 place("L08.3", "me", (HX + 0.35, 3.8, 0.0), 0, "worried", arms=[0, 0])
 shot("S08b", "L08.3", cam(HX - 0.1, 5.0, 1.4, 2.2, 0, 28, cz=1.4))
 place("L09", "me", (G.ME_H[0], 3.2, 0.0), 0, "worried", arms=[0, 0])
 mouth("me", "L09", "L09>", 0.3)
-shot("S09", "L09", cam(HX, 3.2, 1.5, 1.0, 0, 36, cz=1.5))
+shot("S09", "L09", cam(HX, 3.2, 1.5, 1.0, 0, 36, cz=1.5, push=(0.9, 1.5)))
 # Dad on the third stair, sitting still, smiling
 cue("L10", "seat", v=1.0)
 SEAT_Z = -0.14
@@ -260,7 +260,7 @@ key("me", "L12", (G.ME_H[0], 3.2, 0.0), yaw=0, expr="worried", head=[0, 0], blen
 key("me", "L12.0+0.2", (G.ME_H[0], 3.2, 0.0), yaw=0, expr="worried", head=[-50, 0], blend=0.6)
 mouth("me", "L12", "L12>", 0.25)
 # S12: the wide: Dad smiling on the stair, me glancing at him, the shut door right there
-shot("S12", "L12", camp([58.95, -1.35, 1.45], [58.9, 2.6, 1.3], 14, pos2=[59.1, -1.3, 1.45], tgt2=[59.0, 2.6, 1.32]))
+shot("S12", "L12", camp([58.95, -1.35, 1.45], [58.9, 2.6, 1.3], 14, pos2=[59.3, -1.25, 1.45], tgt2=[59.05, 2.6, 1.32]))
 
 # ===== 05 the second and third night (L14 to L19)
 cue("L14", "night", n=2)
@@ -269,7 +269,7 @@ MS14 = (59.55, 1.15, 0.0)
 place("L14", "me", (60.2, 2.6, 0.0), -23, "worried", arms=[0, 0])
 key("me", "L14.2", MS14, yaw=-23, expr="worried", arms=[0, 0])
 key("me", "L14.2+0.45", MS14, yaw=-148, expr="worried", arms=[0, 0], blend=0.4)
-shot("S14a", "L14", camp([58.55, -1.4, 1.5], [58.95, 1.8, 1.3], 14, pos2=[58.65, -1.35, 1.5], tgt2=[59.0, 1.8, 1.3]))
+shot("S14a", "L14", camp([58.55, -1.4, 1.5], [58.95, 1.8, 1.3], 14, pos2=[58.8, -1.3, 1.5], tgt2=[59.05, 1.8, 1.3]))
 # S14b: over my right shoulder, Dad on the stair, eyes shut, smiling, still
 shot("S14b", "L14.4", camp([61.5, -0.3, 1.75], [58.4, 1.35, 1.2], 34, pos2=[61.4, -0.22, 1.73], tgt2=[58.4, 1.37, 1.2]))
 cue("L17", "night", n=3)
@@ -288,7 +288,7 @@ place("L19", "me", (HX + 0.25, 4.1, 0.0), 90, "stunned", arms=[0, 0])
 mouth("me", "L19", "L19>", 0.3)
 shot("S19", "L19", camp([61.5, 3.4, 1.5], [60.42, 4.45, 1.45], 16, pos2=[61.42, 3.47, 1.5], tgt2=[60.42, 4.47, 1.45]))
 # S19c: the knock comes through; the wide: Dad smiling on the stair, me with my ear at his door
-shot("S19c", "L19.2", camp([59.1, -1.35, 1.5], [59.0, 2.8, 1.4], 14, pos2=[58.95, -1.3, 1.5], tgt2=[58.95, 2.8, 1.42]))
+shot("S19c", "L19.2", camp([59.1, -1.35, 1.5], [59.0, 2.8, 1.4], 14, pos2=[58.8, -1.25, 1.5], tgt2=[58.9, 2.8, 1.42]))
 # the drop: the door's gold edges, my face at the frame's edge
 cut("me", "P01", (HX + 0.45, 3.9, 0.0), yaw=0, expr="stunned")
 shot("S19b", "P01", cam(HX + 0.1, 5.0, 1.45, 2.4, 0, 30, cz=1.45))
@@ -331,7 +331,7 @@ place("L25", "me", ME25, 0, "warm", arms=[0, 0])
 place("L25", "dad", (G.DAD_X, G.DAD_Y, SEAT_Z), 0, "sleep", arms=[0, 0], blink=False)
 key("dad", "L25.3", (G.DAD_X, G.DAD_Y, SEAT_Z), yaw=0, expr="warm", arms=[0, 0], blink=False, blend=0.3)
 # the reveal: the wide (Dad, the gold-edged door between us, me), then a slow push in to Dad's smile on "DAD"
-shot("S25", "L25", [[0, [58.9, -0.35, 1.72], [58.9, 1.85, 1.42], 12.3], [0.5, [58.84, -0.25, 1.72], [58.84, 1.85, 1.42], 12.3],
+shot("S25", "L25", [[0, [58.9, -0.35, 1.72], [58.9, 1.85, 1.42], 12.3], [0.5, [58.8, -0.2, 1.7], [58.82, 1.85, 1.42], 12.3],
                     [1, [58.3, 0.2, 1.5], [58.25, 1.85, 1.42], 22]])
 # my small smile toward Dad as the line lands
 key("me", "L25.2", ME25, yaw=0, expr="warm", head=[-14, 6], blend=0.6)
@@ -351,7 +351,7 @@ key("me", "L27.3+0.2", KP, yaw=180, expr="laugh", arms=[0, 66], side=[0, 8], ble
 key("me", "L27.3+0.35", KP, yaw=180, expr="laugh", arms=[0, 76], side=[0, 8], blend=0.1)
 key("me", "L27.4", KP, yaw=180, expr="laugh", arms=[0, 0], side=[0, 0], blend=0.3)
 mouth("me", "L27", "L27>", 0.35)
-shot("S27a", "L27", camp([KX + 0.05, 3.48, 1.45], [KX + 0.05, -0.3, 1.3], 30, pos2=[KX - 0.1, 2.8, 1.43], tgt2=[KX + 0.05, -0.3, 1.32]))
+shot("S27a", "L27", camp([KX + 0.05, 3.48, 1.45], [KX + 0.05, -0.3, 1.3], 30, pos2=[KX - 0.25, 2.45, 1.43], tgt2=[KX + 0.05, -0.3, 1.32]))
 cue("L27>", "spat", v=1.0)
 cue("L27>+0.35", "spat", v=2.0)
 show("L27>", "dad")
@@ -422,7 +422,7 @@ remap_all(music["sections"])
 remap_all(sound["ambience"])
 remap_all(sound["music_drops"])
 polish = {"reveal": ["L20", "L25"], "emph": ["L01.3", "L02.1", "L18.4", "L25.3"],
-          "quiet": [], "hold": ["S06d", "S19", "S25"], "sway": [], "punch_cap": {"S25": 0.0}}
+          "quiet": [], "push": 0.14, "hold": ["S06d", "S19", "S25"], "sway": [], "punch_cap": {"S25": 0.0}}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 story = {
     "slug": "ep150-dad-pillow",
@@ -443,7 +443,7 @@ story = {
     "rev": REV,
     "look": {"style": "closer", "fog": "#e8f3ff", "fog_density": 0.0008, "fog_start": 80.0, "sky": "#8fd0ff",
              "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True, "polish": polish},
-    "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.025, 0.012, -0.015], "saturation": 1.12,
+    "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.025, 0.012, -0.015], "saturation": 1.25,
               "contrast": 1.03, "vignette": 0.1, "bloom": 0.1, "grain": 0.008},
     "hud": {"object": "tag", "at": [-0.4, 0.62], "size": 0.58},
     "cast": cast,
@@ -457,7 +457,7 @@ story = {
     "set_moves": [],
     "clip_ok": ["pillow"],
     "framing_ok": ["S12", "S14a", "S19c", "S19"],   # two-shots: Dad whole on the stair and me at the door (his close-ups are S10b, S14b, S18); S19: "DAD?" is the voice through the door, on me
-    "frames_ok": [],
+    "frames_ok": ["S32b"],   # the fast push in on me falling asleep at the loop: meant
     "staging_ok": ["S24b/yaw"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
