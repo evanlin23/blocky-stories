@@ -10,7 +10,7 @@
 
 The cars are one model (build_car) in four colours. Dad's has the full cabin the story lives in: cream seats, a
 dash with one dial and a heater slider, a steering wheel that turns only slowly, the passenger seat on two steel
-rails (two cream strokes on the inner rail: the lore tally), a door lock knob, and the plaid blanket on the back
+rails (two cream strokes on the outer rail: the lore tally), a door lock knob, and the plaid blanket on the back
 seat. There is no glass anywhere, so nothing glints. The rule meter is a cream tag on the camera: a teal car glyph
 over a clock, swapped by the `clock` cue. Nothing blinks or flickers; every light holds steady or eases.
 
@@ -246,8 +246,10 @@ def build_car(kit, name, body_hex, cabin=True):
     kit.light(f"{name}.cabin", "POINT", (0, -0.4, 1.3), 80, "#fff0dc", size=0.9, parent=root, shadow=False)
     # a soft warm fill on the dash face, so the dial and the heater slider read (S08b)
     kit.light(f"{name}.dashfill", "POINT", (-0.2, 0.45, 1.45), 30, "#fff0dc", size=0.6, parent=root, shadow=False)
+    # a fill on the passenger seat's rails from the open door: only in S16b (animate)
+    kit.light(f"{name}.railfill", "POINT", (1.5, 0.3, 1.2), 160, "#fff0dc", size=0.5, parent=root, shadow=False)
     # a gold pool on the empty driver's seat: only in S24a (animate)
-    sg = kit.light(f"{name}.seatglow", "SPOT", (-0.72, 0.9, 1.85), 420, "#ffc870", size=0.4, parent=root,
+    sg = kit.light(f"{name}.seatglow", "SPOT", (-0.72, 0.9, 1.85), 2200, "#ff7a10", size=0.4, parent=root,
                    shadow=False, spot=60)
     sg.rotation_euler = Vector((0.0, -0.95, -1.2)).to_track_quat("-Z", "Y").to_euler()
     b("dash", (G.CAR_W - 0.22, 0.42, 0.5), (0, 1.15, 0.97), pl("#7d8c96", 0.7, spec=0.08), bevel=0.05)
@@ -287,7 +289,7 @@ def build_car(kit, name, body_hex, cabin=True):
     def seat(n, x, y, parent=root, w=0.95):
         g = kit.empty(f"{name}.{n}", (x, y, 0), parent)
         kit.box(f"{name}.{n}.cush", (w, 0.62, 0.14), (0, 0.06, G.CUSH - 0.07), cream, g, bevel=0.05)
-        kit.box(f"{name}.{n}.base", (w - 0.2, 0.5, 0.1), (0, 0.06, G.CUSH - 0.19), dark, g, bevel=0.01)
+        kit.box(f"{name}.{n}.base", (w - 0.2, 0.5, 0.1), (0, 0.06, G.CUSH - 0.19), pl("#6a707a", 0.6), g, bevel=0.01)
         kit.box(f"{name}.{n}.back", (w, 0.16, 0.86), (0, -0.28, G.CUSH + 0.42), cream, g, rot=(-0.12, 0, 0), bevel=0.05)
         kit.box(f"{name}.{n}.rest", (w * 0.55, 0.14, 0.26), (0, -0.33, G.CUSH + 1.0), cream, g, bevel=0.05)
         for sx in (-1, 1):
@@ -305,12 +307,12 @@ def build_car(kit, name, body_hex, cabin=True):
     plaid = kit.checker("#c8322f", "#2f5a3c", 9.0, name=f"{name}.plaid")
     kit.box(f"{name}.blanket", (0.9, 0.5, 0.05), (0.62, 0.08, G.CUSH + 0.025), plaid, rb, bevel=0.02)
     kit.box(f"{name}.blanket2", (0.9, 0.06, 0.4), (0.62, -0.21, G.CUSH + 0.22), plaid, rb, rot=(-0.12, 0, 0), bevel=0.02)
-    # the passenger seat's rails, and two cream strokes on the inner rail (stood 1 cm proud of it)
+    # the passenger seat's rails, and two cream strokes on the outer rail (stood 1 cm proud of it)
     steel = pl("#9aa0aa", 0.35, spec=0.4)
     for k, dx in enumerate((-0.32, 0.32)):
         b(f"rail{k}", (0.06, 1.25, 0.05), (sp[0] + dx, 0.02, 0.43), steel, bevel=0.01)
-    for k, dy in enumerate((0.3, 0.4)):   # across the rail's top, 6 mm proud; the slide back uncovers them
-        b(f"tally{k}", (0.075, 0.022, 0.012), (sp[0] - 0.32, dy, 0.464), pl("#f2e6c8", 0.7), bevel=0.0)
+    for k, dy in enumerate((0.3, 0.4)):   # across the outer rail's top, 6 mm proud; the slide back uncovers them
+        b(f"tally{k}", (0.075, 0.022, 0.012), (sp[0] + 0.32, dy, 0.464), pl("#f2e6c8", 0.7), bevel=0.0)
     # the lock knob on the driver's door sill, behind the window
     P["lock"] = b("lockknob", (0.05, 0.05, 0.1), (-(hw - 0.09), -0.35, 1.06), pl("#d8d2c0", 0.5), bevel=0.015)
     return P
@@ -397,6 +399,12 @@ def build_home(kit):
     # the neighbors across the street, low and pastel, far enough to stay soft
     for k, (nm, x, c) in enumerate((("sub_building_type_a", -18, "#ffd0b0"), ("sub_building_type_f", 18, "#c8d8ff"))):
         kit.prop(nm, (x, 9, 0), rot=180, tint=c)
+    # across the street: a lawn terrace with two pastel houses and trees, so the view south never ends in a void (S07a)
+    kit.box("home.across", (60, 10, 0.2), (0, -19.0, -0.1), grass)
+    for k, (nm, x, c) in enumerate((("sub_building_type_a", 2.0, "#ffe0a8"), ("sub_building_type_f", 13.0, "#bfe0d0"))):
+        kit.prop(nm, (x, -19.5, 0), rot=0, tint=c)
+    for k, x in enumerate((-4.0, 7.5, 18.5)):
+        kit.prop("commontree_1", (x, -16.5, 0), rot=60 * k, scale=1.1)
     # the kitchen window frame (S07a looks through it): a cream frame, two blue curtains and a sill
     kw = kit.empty("kwin", (0, 0, 0))
     fr = pl("#f2ead8", 0.6)
@@ -819,4 +827,5 @@ def animate(kit, story, tl, t, ctx):
         gain = 0.12
     elif sid.startswith("S03") or sid.startswith("S04"):
         gain = 1.4
-    return {"sun": gain, "car.seatglow": 1.0 if sid == "S24a" else 0.0, "momcar.seatglow": 0.0}
+    return {"sun": gain, "car.seatglow": 1.6 if sid == "S24a" else 0.0, "momcar.seatglow": 0.0,
+            "car.railfill": 1.0 if sid == "S16b" else 0.0, "momcar.railfill": 0.0}
