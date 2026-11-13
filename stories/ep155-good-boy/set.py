@@ -196,6 +196,32 @@ def _squiggle_image():
     return str(p)
 
 
+def _sign_image():
+    """A street sign: a blue border, a big arrow glyph and two rows of made-up squiggles. Never letters."""
+    import random
+
+    from PIL import Image, ImageDraw
+    p = TMP / "sign.png"
+    if not p.exists():
+        Wd, Ht = 600, 400
+        im = Image.new("RGB", (Wd, Ht), hx("#2f6aa8"))
+        d = ImageDraw.Draw(im)
+        d.rounded_rectangle([22, 22, Wd - 23, Ht - 23], 26, fill=hx("#fbf8ee"))
+        d.polygon([(70, 110), (230, 110), (230, 60), (360, 150), (230, 240), (230, 190), (70, 190)], fill=hx("#1d4f8a"))
+        rnd = random.Random(11)
+        for row, y0 in enumerate((290, 346)):
+            x = 70
+            while x < Wd - 120:
+                wl = rnd.randint(50, 100)
+                pts = [(x + i, y0 + 11 * math.sin(i / wl * rnd.uniform(5, 9) * math.pi + row)) for i in range(wl)]
+                d.line(pts, fill=hx("#2a2a30"), width=8, joint="curve")
+                x += wl + rnd.randint(18, 30)
+        d.rectangle([400, 90, 530, 130], fill=hx("#d8503a"))
+        d.rectangle([400, 150, 500, 190], fill=hx("#d8503a"))
+        im.save(p)
+    return str(p)
+
+
 def _blanket_image():
     from PIL import Image, ImageDraw
     p = TMP / "blanket.png"
@@ -299,6 +325,7 @@ def build_house(kit):
     kit.mesh_obj("h.roof", verts, faces, pl("#b8604a", 0.8, spec=0.03))
     # windows: the ground-floor front window (cream pane, bars), three upstairs
     pane = kit.emit("#dff0ff", 1.3, "winpane")
+    W["pane_mat"] = pane
 
     def window(name, wx, wz, w, h, sill=True):
         kit.box(f"{name}.frame", (w + 0.24, 0.05, h + 0.24), (wx, FY - 0.025, wz), trim)
@@ -328,8 +355,8 @@ def build_house(kit):
     # the deck, two steps, rails
     wood = kit.texture("wood", 0.8, tint="#d9c9a8")
     kit.box("p.deck", (G.DECK_X1 - G.DECK_X0, FY - G.DECK_Y0, DECK + 0.1), ((G.DECK_X0 + G.DECK_X1) / 2, (FY + G.DECK_Y0) / 2, (DECK - 0.1) / 2), wood)
-    kit.box("p.step2", (5.0, 0.6, 0.3), (HX - 0.6, G.DECK_Y0 - 0.3, 0.15), wood)
-    kit.box("p.step3", (5.0, 0.6, 0.15), (HX - 0.6, G.DECK_Y0 - 0.9, 0.075), wood)
+    kit.box("p.step2", (5.0, 1.2, 0.3), (HX - 0.6, G.DECK_Y0 - 0.6, 0.15), wood)
+    kit.box("p.step3", (5.0, 0.6, 0.15), (HX - 0.6, G.DECK_Y0 - 1.5, 0.075), wood)
     for sx, xx in ((-1, G.DECK_X0 + 0.1), (1, G.DECK_X1 - 0.1)):
         kit.box(f"p.rail{sx}", (0.08, 1.9, 0.08), (xx, 11.0, DECK + 0.9), trim)
         kit.box(f"p.railb{sx}", (0.08, 1.9, 0.06), (xx, 11.0, DECK + 0.15), trim)
@@ -341,7 +368,7 @@ def build_house(kit):
     kit.box("p.rug", (1.9, 1.1, 0.02), (HX + 0.2, 10.95, DECK + 0.011), pl("#7aa8e8", 0.9, spec=0.02))
     kit.box("p.rug.in", (1.6, 0.8, 0.012), (HX + 0.2, 10.95, DECK + 0.025), pl("#fff0c8", 0.9, spec=0.02))
     bm, _ = imat(kit, "blanket", _blanket_image(), 0.85)
-    bl = kit.box("p.blanket", (1.3, 1.0, 0.025), (G.SEAT_ME[0], G.SEAT_ME[1] + 0.03, DECK + 0.0125 + 0.012), bm)
+    bl = kit.box("p.blanket", (1.3, 0.72, 0.025), (G.SEAT_ME[0], G.SEAT_ME[1] + 0.2, DECK + 0.0125 + 0.012), bm)
     noshadow(bl)
     # the door: a pivot at the west hinge, opening inward
     pv = kit.empty("h.doorpivot", (dx0, FY + 0.15, DECK))
@@ -377,9 +404,10 @@ def build_house(kit):
     pm, _ = imat(kit, "pawwall", _paw_image(), 0.9)
     pw = kit.plane("peg.paw", (0.34, 0.34), (G.PEG_X, FY - 0.012, G.PEG_Z + 0.43), pm, rot=(math.pi / 2, 0, 0))
     noshadow(pw)
-    cream = pl("#fff0c8", 0.6)
+    cream = pl("#fff6d8", 0.5)
+    kit.box("peg.tallyboard", (0.36, 0.02, 0.34), (G.PEG_X + 0.32, FY - 0.02, G.PEG_Z - 0.4), pl("#6a3f1c", 0.6), bevel=0.005)
     for k in range(3):
-        kit.box(f"peg.tally{k}", (0.022, 0.012, 0.11), (G.PEG_X - 0.09 + k * 0.09, FY - 0.011, G.PEG_Z - 0.3), cream)
+        kit.box(f"peg.tally{k}", (0.045, 0.014, 0.24), (G.PEG_X + 0.2 + k * 0.12, FY - 0.04, G.PEG_Z - 0.4), cream, bevel=0.006)
     # the blue leash on the peg: a strap down from the peg and a handle loop (hidden when the `leash` cue is 0)
     blue = pl("#3a6fd8", 0.5)
     ls = [kit.box("leash.strap", (0.04, 0.012, 0.85), (G.PEG_X, FY - 0.14, G.PEG_Z - 0.46), blue, bevel=0.004)]
@@ -443,6 +471,8 @@ def build_house(kit):
     kit.light("dusk.lamp", "POINT", (G.HX - 1.1, G.FY - 0.8, G.DECK + 2.0), 120, "#ffd27a", size=0.3, shadow=False)
     df = kit.light("dusk.fill", "AREA", (G.HX, 4.0, 3.5), 900, "#a8bfff", size=5.0, shadow=False)
     kit.aim(df, (G.HX, 11.0, 1.2))
+    dk = kit.light("dusk.key", "AREA", (G.HX - 2.2, 6.0, 2.8), 1500, "#ffe9cc", size=3.0, shadow=False)
+    kit.aim(dk, (G.HX - 0.7, 10.4, 1.4))
 
 
 def build_room(kit):
@@ -529,9 +559,12 @@ def build_corner(kit):
     kit.prop("commontree_1", (cx - 3.4, cy - 1.5, 0), scale=1.2)
     kit.prop("commontree_1", (cx + 5.0, cy - 3.0, 0), scale=1.1)
     # the sign: a grey post and a plain white board with a dull border and nothing on it
-    kit.box("c.post", (0.1, 0.1, 2.9), (cx + 0.1, cy + 1.2, 1.45), pl("#8a8f9a", 0.4, spec=0.5))
-    kit.box("c.board.b", (1.3, 0.06, 0.9), (cx + 0.1, cy + 1.14, 2.55), pl("#2f6aa8", 0.5))
-    kit.box("c.board", (1.18, 0.05, 0.78), (cx + 0.1, cy + 1.1, 2.55), pl("#f4f0e6", 0.5))
+    sx_, sy_ = cx + 1.3, cy + 0.9
+    kit.box("c.post", (0.1, 0.1, 2.9), (sx_, sy_ + 0.1, 1.45), pl("#8a8f9a", 0.4, spec=0.5))
+    kit.box("c.board.b", (1.7, 0.06, 1.14), (sx_, sy_ + 0.06, 2.35), pl("#2f6aa8", 0.5))
+    sm_, _ = imat(kit, "sign", _sign_image(), 0.9)
+    sg = kit.plane("c.board.face", (1.7, 1.14), (sx_, sy_ + 0.02, 2.35), sm_, rot=(math.pi / 2, 0, 0))
+    noshadow(sg)
     kit.box("c.lamp", (0.1, 0.1, 3.4), (cx - 3.0, cy + 1.2, 1.7), pl("#3a3a42", 0.5))
     kit.box("c.lamphead", (0.5, 0.3, 0.2), (cx - 3.0, cy + 1.2, 3.45), pl("#3a3a42", 0.5))
     for i, (x, y) in enumerate(((cx, cy - 2.0), (cx - 3, cy - 4), (cx + 4, cy - 4))):
@@ -678,6 +711,19 @@ def attach_extras(kit):
             for ex_ in (-1, 1):
                 kit.box(f"{nm}.gs{sx}{ex_}", (0.035, 0.03, 0.25), (cx_ + ex_ * 0.2, -R - 0.04, -0.01), fm, hd)
         kit.box(f"{nm}.gbridge", (0.1, 0.03, 0.035), (0, -R - 0.04, 0.06), fm, hd)
+    for who_ in ("me", "rory", "dale", "poodleman"):
+        root = bpy.data.objects.get(who_)
+        lm = bpy.data.objects.get(f"{who_}.legm1")
+        sh = bpy.data.objects.get(f"{who_}.shoe1")
+        if root is None or lm is None or sh is None:
+            continue
+        pm_, sm2 = lm.active_material, sh.active_material
+        sdim = (lm.dimensions.x, 1.0, 0.62)
+        W.setdefault("shins", {})[who_] = []
+        for sx in (-1, 1):
+            a = kit.box(f"{who_}.shin{sx}", sdim, (0, 0, -60), pm_, root, bevel=0.08)
+            b = kit.box(f"{who_}.shinfoot{sx}", (sdim[0], 1.01, 0.3), (0, 0, -60), sm2, root, bevel=0.08)
+            W["shins"][who_].append((sx, a, b))
     kit.box("rory.flat", (2 * R + 0.02, 2 * R + 0.0, 0.36), (0, 0.0, top + 0.12), pl("#15151a", 0.65), rh, bevel=0.06)
     fur = pl("#f4efe2", 0.9, spec=0.02)
     fur2 = pl("#ebe4d4", 0.9, spec=0.02)
@@ -718,9 +764,12 @@ def build(kit, story, tl):
 
 TOD = {
     # sky colour, sky strength, sun colour, sun gain, face gains, lantern emission, dusk lamp gain, dusk fill gain, sun aim
-    "day": dict(sky="#8fd0ff", ss=1.0, sun="#ffd89a", sg=1.0, face=1.0, lant=0.8, lamp=0.0, dfill=0.0, pos=(46, -8, 22)),
-    "gold": dict(sky="#ffcf94", ss=0.9, sun="#ffb064", sg=0.9, face=1.0, lant=0.8, lamp=0.0, dfill=0.0, pos=(40, -12, 6)),
-    "dusk": dict(sky="#7f9ae0", ss=0.75, sun="#ffb890", sg=0.15, face=0.6, lant=4.0, lamp=1.0, dfill=1.0, pos=(40, -12, 4)),
+    "day": dict(sky="#8fd0ff", ss=1.0, sun="#ffd89a", sg=1.0, face=1.0, lant=0.8, lamp=0.0, dfill=0.0, key=0.0, wall=1.0,
+                pane=("#dff0ff", 1.3), pos=(46, -8, 22)),
+    "gold": dict(sky="#ffcf94", ss=0.9, sun="#ffb064", sg=0.9, face=1.0, lant=0.8, lamp=0.0, dfill=0.0, key=0.0, wall=1.0,
+                 pane=("#dff0ff", 1.3), pos=(40, -12, 6)),
+    "dusk": dict(sky="#6a86d8", ss=0.8, sun="#ffb890", sg=0.1, face=0.2, lant=4.0, lamp=1.0, dfill=0.8, key=1.0, wall=0.16,
+                 pane=("#5f7fd6", 0.9), pos=(40, -12, 4)),
 }
 
 
@@ -767,6 +816,9 @@ def animate(kit, story, tl, t, ctx):
     W["sun"].location = tod["pos"]
     kit.aim(W["sun"], (G.HX + 0.5, 11, 2.0))
     W["lantern_mat"].node_tree.nodes["Emission"].inputs["Strength"].default_value = tod["lant"]
+    pe = W["pane_mat"].node_tree.nodes["Emission"]
+    pe.inputs["Color"].default_value = kit.col(tod["pane"][0])
+    pe.inputs["Strength"].default_value = tod["pane"][1]
     # ---- the door, the photo, the squiggles, the leash on its peg, the curtain
     dr = sample("door", tl, t, {"v": 0.0})["v"]
     W["doorpivot"].rotation_euler = (0, 0, math.radians(100) * dr)
@@ -787,19 +839,38 @@ def animate(kit, story, tl, t, ctx):
     for i, ob in enumerate(W["curtain"]):
         sx = (-1, 1)[i]
         ob.location.x = G.WIN_X + sx * 0.62 - sx * 0.12 * cv + 0.12 * math.sin(t * 3.0 + i) * cv
-    # ---- who sits, who kneels
+    # ---- who sits, who kneels: a two-part leg (a thigh, then a shin that hangs down or lies back)
     for who in ("me", "rory", "dale", "poodleman"):
         root = bpy.data.objects.get(who)
         if root is None:
             continue
-        ps = sample("pose", tl, t, {"sit": 0.0, "kneel": 0.0}, who)
-        s_, k_ = ps["sit"], ps["kneel"]
+        ps = sample("pose", tl, t, {"sit": 0.0, "kneel": 0.0, "up": 0.0}, who)
+        s_, k_, up_ = ps["sit"], ps["kneel"], ps["up"]
+        f = root.scale.z
+        shins = W.get("shins", {}).get(who, [])
+        bent = (s_ > 0 or k_ > 0) and bool(shins)
         if s_ > 0 or k_ > 0:
-            root.location.z += (s_ + k_) * (G.HIP - 0.68)
-            for sx in (-1, 1):
-                leg = bpy.data.objects.get(f"{who}.leg{sx}")
-                if leg:
-                    leg.rotation_euler = (-0.95 * s_ + math.pi / 2 * 0.97 * k_, 0, 0)
+            root.location.z += f * (s_ * (0.5 - 2.0) + k_ * (1.43 - 2.0))
+        for sx, a, b in shins:
+            leg = bpy.data.objects.get(f"{who}.leg{sx}")
+            shoe = bpy.data.objects.get(f"{who}.shoe{sx}")
+            if not bent:
+                leg.scale = (1, 1, 1)
+                a.location = b.location = (0, 0, -60)
+                continue
+            a1 = -math.acos(min(1.0, max(0.0, (1.1 - 1.1 * s_) / 0.93))) if s_ > 0 else 0.0
+            a2 = 0.9 * up_ * s_ + (math.pi / 2) * k_
+            T = 0.93
+            leg.rotation_euler = (a1, 0, 0)
+            leg.scale = (1, 1, T / 1.72)
+            shoe.hide_render = True
+            hx_ = leg.location.x
+            d1 = Vector((0, math.sin(a1), -math.cos(a1)))
+            d2 = Vector((0, math.sin(a2), -math.cos(a2)))
+            K = Vector((hx_, 0, 2.0)) + d1 * T
+            a.location = K + d2 * 0.31
+            b.location = K + d2 * 0.77
+            a.rotation_euler = b.rotation_euler = (a2, 0, 0)
     # ---- the vacuum
     vv = sample("vac", tl, t, {"v": 0.0})["v"] > 0.5
     vroot, wand, noz, hose = W["vacroot"], W["wand"], W["nozzle"], W["hose"]
@@ -864,5 +935,5 @@ def animate(kit, story, tl, t, ctx):
         W["dog"]["root"].location = (0, -80, 0)
     # ---- the lights by time of day
     lights = {"sun": tod["sg"], "yard.face": tod["face"], "porch.fill": tod["face"], "porch.door": tod["face"],
-              "wall.fill": 1.0 if tod["lamp"] == 0 else 0.45, "dusk.lamp": tod["lamp"], "dusk.fill": tod["dfill"]}
+              "wall.fill": tod["wall"], "dusk.lamp": tod["lamp"], "dusk.fill": tod["dfill"], "dusk.key": tod["key"]}
     return lights
