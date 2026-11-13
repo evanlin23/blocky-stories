@@ -1,0 +1,737 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "The lock-box on our pier answers anything you ask, in your own handwriting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.379,
+   "onset": 0.172,
+   "end": 3.19,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.0
+    ],
+    [
+     1.0,
+     1.534
+    ],
+    [
+     1.534,
+     2.034
+    ],
+    [
+     2.121,
+     2.31
+    ],
+    [
+     2.31,
+     3.19
+    ]
+   ]
+  },
+  "L02": {
+   "text": "It's never once sent two cards.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.517
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Mine sent a second.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.19,
+     0.595
+    ],
+    [
+     0.595,
+     1.19
+    ]
+   ]
+  },
+  "L04": {
+   "text": "I've spent a year building my best friend, Ty, a bike.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.569
+    ],
+    [
+     0.569,
+     1.086
+    ],
+    [
+     1.086,
+     1.672
+    ],
+    [
+     1.724,
+     2.276
+    ]
+   ]
+  },
+  "L05": {
+   "text": "He gets it Friday morning at nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.992
+    ],
+    [
+     0.992,
+     1.569
+    ]
+   ]
+  },
+  "L06": {
+   "text": "And Ty hates surprises.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     1.362
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Old Hal asked where the fish were.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.784
+    ],
+    [
+     0.784,
+     0.94
+    ],
+    [
+     0.94,
+     1.552
+    ]
+   ]
+  },
+  "L08": {
+   "text": "\"Left of the post.\" Six fish.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.19,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.19,
+     0.406
+    ],
+    [
+     0.406,
+     0.793
+    ],
+    [
+     0.879,
+     1.552
+    ]
+   ]
+  },
+  "L09": {
+   "text": "My neighbor Bea asked about her new job.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.854
+    ],
+    [
+     0.854,
+     1.086
+    ],
+    [
+     1.086,
+     1.759
+    ]
+   ]
+  },
+  "L10": {
+   "text": "\"You'll love Mondays.\" Monday is donuts.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.19,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.19,
+     0.948
+    ],
+    [
+     1.034,
+     1.983
+    ]
+   ]
+  },
+  "L11": {
+   "text": "So I asked it, \"Do I tell Ty before Friday?\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.707
+    ],
+    [
+     0.776,
+     0.931
+    ],
+    [
+     0.931,
+     1.259
+    ],
+    [
+     1.259,
+     2.121
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Wednesday morning. Click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.87,
+     1.31
+    ]
+   ]
+  },
+  "L12b": {
+   "text": "\"Tell him tonight.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.19,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.448,
+     0.983
+    ]
+   ]
+  },
+  "L14": {
+   "text": "In my blue pen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     1.069
+    ]
+   ]
+  },
+  "L15": {
+   "text": "And it called him Tiny.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.155,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.629
+    ],
+    [
+     0.629,
+     1.207
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Ty's six foot five. Only I call him Tiny.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.017
+    ],
+    [
+     1.086,
+     1.362
+    ],
+    [
+     1.362,
+     2.155
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Thursday morning. Click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.836,
+     1.276
+    ]
+   ]
+  },
+  "L17b": {
+   "text": "A second card.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ]
+   ]
+  },
+  "L19": {
+   "text": "\"Don't. He already knows.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.19,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.19,
+     0.362
+    ],
+    [
+     0.388,
+     1.224
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Same handwriting, slanted hard right.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.19,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.19,
+     0.793
+    ],
+    [
+     0.836,
+     1.793
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Mine only does that when I'm upset.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.19,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     0.888
+    ],
+    [
+     0.888,
+     1.672
+    ]
+   ]
+  },
+  "L21b": {
+   "text": "And Wednesday night, I was.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.784,
+     1.379
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Ty's been dodging my garage.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     1.466
+    ]
+   ]
+  },
+  "L23": {
+   "text": "He asked where his old helmet went.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     0.828
+    ],
+    [
+     0.828,
+     1.552
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Ty hasn't ridden in ten years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.5
+    ]
+   ]
+  },
+  "L24b": {
+   "text": "Nothing fits him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.19,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.19,
+     1.086
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Thursday, nine pee em. twelve hours to go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.517,
+     1.121
+    ],
+    [
+     1.207,
+     1.69
+    ],
+    [
+     1.69,
+     2.207
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Ty's at my garage with a pizza.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.888
+    ],
+    [
+     0.888,
+     1.552
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Ty knows I call him Tiny.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.784
+    ],
+    [
+     0.784,
+     1.414
+    ]
+   ]
+  },
+  "L26": {
+   "text": "And Ty knows my handwriting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.741,
+     1.569
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Card one, or card two?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     1.259
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Which one do I trust?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.224
+    ]
+   ]
+  }
+ }
+}
