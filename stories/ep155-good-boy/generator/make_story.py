@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 12
+REV = 13
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the reveal picture is held 1.6 s: a silent beat after "Good BOY." and a closing beat after the last thump
@@ -398,7 +398,7 @@ cue("L20", "keyb", v=1.0, dur=0.4)
 cue("L21.1", "keyb", v=0.0, dur=0.4)
 cue("L20", "pose", who="dale", sit=0.0, kneel=0.0, dur=0.0)
 cue("L20+0.1", "pose", who="dale", sit=0.0, kneel=1.0, dur=0.5)
-shot("S20a", "L20", camp([ME19[0] - 2.1, 9.0, DECK + 0.9], [ME19[0], 9.6, DECK + 0.8], 17, pos2=[ME19[0] - 1.9, 9.1, DECK + 0.9]))
+shot("S20a", "L20", camp([ME19[0] + 1.3, 6.4, DECK + 1.0], [ME19[0] - 0.1, 9.7, DECK + 0.9], 24, pos2=[ME19[0] + 1.1, 6.7, DECK + 1.0]))
 show("L20.2", "dale")
 place("L20.2", "dale", (ME19[0], KY, 0.30), 180, "warm", arms=[0, 0])
 cue("L20.2", "pose", who="dale", sit=0.0, kneel=1.0, dur=0.0)
