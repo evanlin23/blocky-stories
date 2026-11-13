@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 17
+REV = 18
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -293,6 +293,7 @@ story = {
     "frames_ok": ["S19"],   # the counter settles to 6 and the happy tears start at L22 (cue six)
     "framing_ok": ["S02", "S02b", "S14b"],   # L02 names Ivy, who is hidden on purpose; her empty chair is the plant
     "staging_ok": ["S15/grandpa+ivy", "S16/dad+ivy", "S16/grandpa+ivy", "S19/grandpa+ivy", "S19b/grandpa+ivy", "S24/grandpa+ivy"],   # Ivy stepping out past Dad and Grandpa, then the hug (touching on purpose); no limb through a body  # Ivy steps out at Grandpa's shoulder and hugs him from behind (touching on purpose, L12 to L23)
+    "clip_ok": ["S19/ivy", "S19b/ivy", "S24/ivy", "S24/grandpa", "S16/ivy"],   # the hug: Ivy's sky-blue arm lies across Grandpa's chest in front of the beard (critic r2), head to head
     "asr_forgive": ["bee", "cuckoo", "o'clock", "that"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

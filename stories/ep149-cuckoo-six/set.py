@@ -434,7 +434,7 @@ def build_cake(kit):
     sk = M(kit, "#c98a5a", 0.6, 0.1)
     for sx, nm in ((-1, "L"), (1, "R")):   # Grandpa's two hands and forearms on the server (shown in animate)
         W["hand" + nm] = kit.box("hand" + nm, (0.2, 0.2, 0.2), (sx * 0.2, 1.5, 0.99), sk, None, (0, 0, 0), 0.01)
-        W["arm" + nm] = kit.box("farm" + nm, (0.15, 0.5, 0.15), (sx * 0.24, 1.8, 1.04), sk, None, (0.15, 0, 0), 0.01)
+        W["arm" + nm] = kit.box("farm" + nm, (0.15, 0.5, 0.15), (sx * 0.34, 1.75, 1.0), sk, None, (0, 0, 0), 0.01)
 
 
 # ---------------------------------------------------------------------------------------------- the tag and letters
