@@ -506,10 +506,13 @@ def animate(kit, story, tl, t, ctx):
         fg.rotation_euler = (-0.25 * (1 - u), 0, math.pi + 0.3)
     # ---- my watch, lying face up on the cloth beside the phone for S21a (the real-time watch next to the fast clock)
     wt = W["watch"]
-    if sid == "S21a":
-        wt.location = (0.3, 0.95, G.PHONE[2] + 0.17)
+    if sid == "S21a":   # held up in my raised hand: just in front of the mitt, the face to the camera, big enough to read
+        bpy.context.view_layer.update()
+        hd = bpy.data.objects.get("me.hand-1")
+        base = hd.matrix_world.translation if hd is not None else Vector((0.3, 2.2, 1.4))
+        wt.location = (base.x - 0.02, base.y - 0.16, base.z + 0.2)
         wt.rotation_euler = (0, 0, 0)
-        wt.scale = (2.3, 2.3, 2.3)
+        wt.scale = (2.4, 2.4, 2.4)
     else:
         wt.location = (0, -80, 0)
     # ---- seated
