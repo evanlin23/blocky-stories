@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 10
+REV = 11
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L22
@@ -222,7 +222,7 @@ cue("L15.2", "pocket", p=1.0)
 cue("L15.3+1.2", "pocket", p=0.0)
 key("me", "L15.2", expr="det", arms=[0, 70], blend=0.3)
 key("me", "L15.3", arms=[0, 20], blend=0.5)
-shot("S15b", "L15.2", cam(ME0[0] - 0.2, ME0[1] - 0.2, 0.85, 1.5, 0, 30, push=(1.3, 0.85)), _raw=True)
+shot("S15b", "L15.2", cam(ME0[0] - 0.2, ME0[1] - 0.22, 0.9, 1.3, 0, 30, push=(1.15, 0.9)), _raw=True)
 
 # ===== 07 we sit, the pretzel (L16)
 cue("L16.2", "pretz", p=1.0)
@@ -234,7 +234,7 @@ cue("L16.1", "sit_me", s=1.0, dur=0.8)
 cue("L16.1", "sit_leo", s=1.0, dur=0.8)
 shot("S16a", "L16", ck((0, (0.0, -0.1, 1.7), (0.0, 5.55, 1.15), 27), (1, (0.0, 0.2, 1.7), (0.0, 5.55, 1.15), 27)), _raw=True)
 key("leo", "L16.3", expr="smile")
-shot("S16b", "L16.3", ck((0, (0.0, 3.9, 1.45), (0.0, 5.5, 0.45), 24), (1, (0.0, 4.0, 1.4), (0.0, 5.5, 0.45), 24)), _raw=True)
+shot("S16b", "L16.3", ck((0, (-0.03, 4.95, 2.7), (-0.03, 5.5, 0.5), 28), (1, (-0.03, 5.0, 2.55), (-0.03, 5.5, 0.5), 28)), _raw=True)
 
 # ===== 08 the freeze (L17, L18)
 cut("me", "L17", (MS[0], MS[1], SZ), yaw=0, expr="det", head=[0, 0])

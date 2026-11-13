@@ -196,9 +196,9 @@ def build_pretzel(kit):
         W["bitepieces"].append(ob) if (2 * math.pi * 1.5 / n < a < 2 * math.pi * 6.5 / n) else None
     W["pretzel_all"] = [o for o in bpy.data.objects if o.name.startswith("pretzel.") or o.name == "napkin"]
     # the tally: two short pale-blue strokes scratched into the rim, 1.5 cm proud
-    blue = pl("#9fd8ff", 0.6)
+    blue = pl("#38a6ff", 0.6)
     for k in range(2):
-        kit.box(f"tally{k}", (0.04, 0.24, 0.016), (px - 0.36 + 0.09 * k, py, G.RIM_Z + 0.008), blue)
+        kit.box(f"tally{k}", (0.05, 0.22, 0.016), (px - 0.07 + 0.14 * k, py - 0.3, G.RIM_Z + 0.008), blue)
 
 
 def build_notes(kit):
@@ -344,7 +344,7 @@ def build(kit, story, tl):
     build_drops(kit, tl)
     build_pretzel(kit)
     build_notes(kit)
-    W["pocket"] = kit.box("pocket", (0.3, 0.05, 0.06), (0, 0, -60), kit.plastic("#16381f", 0.8))
+    W["pocket"] = kit.box("pocket", (0.3, 0.05, 0.14), (0, 0, -60), kit.plastic("#16381f", 0.8))
     noshadow(W["pocket"])
     build_car(kit)
     build_kitchen(kit)
@@ -471,10 +471,11 @@ def animate(kit, story, tl, t, ctx):
     # the notes follow the holder's head
     pk = sample("pocket", tl, t, {"p": 0.0})["p"] > 0.5
     W["pocket"].hide_render = not pk
+    bpy.context.view_layer.update()
     gm = bpy.data.objects.get("me.headg")
     if gm is not None:
         hp = gm.matrix_world.translation
-        W["pocket"].location = (hp.x - 0.2, hp.y - 0.195, hp.z - 0.84)
+        W["pocket"].location = (hp.x - 0.2, hp.y - 0.195, hp.z - 0.87)
     for who in ("me", "leo"):
         nm = sample(f"note_{who}", tl, t, {"m": 0.0})["m"]
         root = W["notes"][who]
@@ -484,7 +485,7 @@ def animate(kit, story, tl, t, ctx):
             continue
         hp = gh.matrix_world.translation
         u = min(1.0, max(0.0, 2.0 - nm))     # 0 on the palm, 1 in the pocket
-        a0, a1 = (-0.45, -0.55, -0.75), (-0.2, -0.25, -0.78)
+        a0, a1 = (-0.45, -0.55, -0.75), (-0.2, -0.2, -0.8)
         root.location = tuple(hp[i] + a0[i] + (a1[i] - a0[i]) * u for i in range(3))
         sc = 1.0 - 0.3 * u
         root.scale = (sc, sc, sc)

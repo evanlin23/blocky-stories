@@ -6,6 +6,5 @@
   "cover_s": 11.5,
   "shape": "crossed-gift",
   "opening": "cost",
-  "lane": "warm",
-  "hold": "batch 15: scripts only, not built yet"
+  "lane": "warm"
 }
