@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 8
+REV = 10
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -286,9 +286,9 @@ S23 = [G.MAN[0], 1.5, 0.0]
 key("man", "L23", S23, yaw=0, expr="hollow", arms=[0, 0], blend=0.25)
 key("man", "L23.1", [G.MAN_DESK[0] - 0.2, 1.5, 0.0], yaw=-90, expr="hollow", arms=[0, 0], blend=0.4)
 key("man", "L23.2", [G.MAN_DESK[0] - 0.2, 1.55, 0.0], yaw=180, expr="hollow", arms=[80, 80], blend=0.45)
-shot("S23a", "L23", camp((0.8, -4.0, 1.4), (0.8, 1.9, 1.4), 30, (-0.7, -4.0, 1.4), (-0.7, 1.9, 1.4)))
+shot("S23a", "L23", camp((0.2, -4.0, 1.4), (0.2, 1.9, 1.4), 30, (-0.8, -4.0, 1.4), (-0.8, 1.9, 1.4)))
 cue("L23.2", "key", mode="desk", dur=0.1)
-shot("S23b", "L23.2", cam(-0.5, 1.9, 1.3, 1.8, 0, 34, cz=1.3))
+shot("S23b", "L23.2", cam(-0.55, 1.9, 1.3, 2.0, 0, 34, cz=1.3))
 # L24: he turns, nods, walks to the door
 MD = [G.MAN_DESK[0] - 0.2, 1.55, 0.0]
 key("man", "L24-0.3", MD, yaw=180, expr="hollow", arms=[0, 0], blend=0.2)
