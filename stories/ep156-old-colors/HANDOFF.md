@@ -1,0 +1,1 @@
+Decision-7 near-miss retry granted by orchestrator #2 on 2026-11-13: dropped after round 3 critic (S17b regression from the rescue); retry applied only the S17b camera fix; fresh round-1 reviews follow. Last try.

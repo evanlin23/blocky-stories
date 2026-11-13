@@ -3,7 +3,7 @@
 - **Slug:** `ep156-old-colors` (batch 15b, upload slot 2 of 2, after ep155). Renamed from `ep156-homesick-inch` at standards r1, because the price is no longer size.
 - **Pitch:** E in the batch 15b pitch round (5 pitched, blind panel 9 / 8 / 8), with its price changed at standards r1 from shrinking to turning the old home's colors. Engine: "the rule's fine print is the twist" (RULES, 2026-11-12). Every quirk of the rule, stated up front as world-building, turns out to describe me. The misdirect is love (a summer spent putting the old house back so Mom won't turn its colors), the loved one says the reveal in one line, and the rule's own ending condition (a hug from home) is the last beat.
 - **Lane:** warm (comic, then tender). **Opening shape:** `if`. **Length arm:** 45 to 75 s.
-- **Title:** Miss Your Old House And You Turn Its COLORS 🏠
+- **Title:** Miss Your Old House, Turn Its COLORS 🏠
 - **Everyone is an adult or a teen, and nobody is in danger.** I'm 17. My mom, Nell, is in her forties. Mr. Pratt next door is in his sixties.
 - **Word count:** 198 spoken words in 18 lines (L01 to L18), all `narrator`. No music drop.
 - **Estimated length:** about 50 s at 290 wpm with 0.15 s gaps, the slash beats and the loop tail.
@@ -26,7 +26,7 @@ The batch table is in `stories/ep155-good-boy/script.md`. This row, updated for 
 ## Not ep155 (standards r1)
 - L01 is an `if` opening with no "until someone" ending. The title opens "Miss Your Old House", not "[Noun] Here".
 - The reveal's form is "Leo. / It's YOU / who misses it.", not a "You're home, [name]." line.
-- Its own score (a 3/4 marimba waltz with no minor pad), its own palette (none of ep155's hexes) and its own meter (a tear-off fridge calendar in the set, numerals only, with no cream tag).
+- Its own score (a piano and pad score with no minor), its own palette (none of ep155's hexes) and its own meter (a tear-off fridge calendar in the set, numerals only, with no cream tag).
 
 ## The story
 - **Rule / hook (L01, 15 words, about 3 s):** "If you miss your old HOUSE, / you turn its COLORS, / and never see it / YOURSELF." The price is in the sentence.
@@ -89,7 +89,7 @@ No creature. The strange thing is a person made wrong in color only: Mr. Pratt i
 - **Caption key colour:** plum `#b06ad8`.
 
 ## Music (its own score)
-Synthesized in `blocky/sound.py`: **a 3/4 marimba waltz in A-flat major, 132 BPM**, light and lilting, with a soft reed-organ line of our own on the off-beats. No minor pad anywhere. Under each day number one bar of the waltz drops out to just the marimba's root, a small hiccup gag. At L15 the waltz slows to half time, marimba alone. At L17 it stops for the line (voice and room only, 1 bar). On L18 the full waltz comes back in, reed and marimba, and plays soft into the loop.
+Synthesized in `blocky/sound.py`: **a light piano and pad score in A-flat major, 132 BPM**, no minor. A soft pulse joins from L08. At L15 it thins to piano alone. At L17 only the pad stays under the line (voice and room only). On L18 piano, pad and a soft bubble line come back and play into the loop, with one soft rinse as the colours wash out.
 
 ## Sound
 - At L01, a soft brush-stroke swish on "COLORS".
