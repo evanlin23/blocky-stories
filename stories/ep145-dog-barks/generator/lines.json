@@ -1,0 +1,586 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In our town,",
+    "In our town,"
+   ],
+   [
+    "a dog barks ONCE",
+    "a dog barks once"
+   ],
+   [
+    "if a stranger means well,",
+    "if a stranger means well,"
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "and TWICE",
+    "and twice"
+   ],
+   [
+    "if he doesn't.",
+    "if he doesn't."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The mail carrier",
+    "The mail carrier"
+   ],
+   [
+    "gets one.",
+    "gets one."
+   ],
+   [
+    "Woof.",
+    "Woof."
+   ]
+  ]
+ },
+ {
+  "id": "L03b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "This is MOOSE.",
+    "This is Moose."
+   ],
+   [
+    "Our dog.",
+    "Our dog."
+   ],
+   [
+    "Today he met",
+    "Today he met"
+   ],
+   [
+    "my sister's FIANCÉ.",
+    "my sister's fiance."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The mail carrier",
+    "The mail carrier"
+   ],
+   [
+    "also gets",
+    "also gets"
+   ],
+   [
+    "a BISCUIT.",
+    "a biscuit."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A \"roof inspector\"",
+    "A \"roof inspector\""
+   ],
+   [
+    "got two.",
+    "got two."
+   ],
+   [
+    "Woof. Woof.",
+    "Woof. Woof."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He was gone by noon.",
+    "He was gone by noon."
+   ],
+   [
+    "So was Mr. Hale's",
+    "So was Mr. Hale's"
+   ],
+   [
+    "GUTTER.",
+    "gutter."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Moose",
+    "Moose"
+   ],
+   [
+    "has never",
+    "has never"
+   ],
+   [
+    "been WRONG.",
+    "been wrong."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Sunday, Mia brought GRANT",
+    "Sunday, Mia brought Grant"
+   ],
+   [
+    "to our barbecue.",
+    "to our barbecue."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At the gate,",
+    "At the gate,"
+   ],
+   [
+    "Moose barked",
+    "Moose barked"
+   ],
+   [
+    "ONCE.",
+    "once."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Woof.",
+    "Woof."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mia did",
+    "Mia did"
+   ],
+   [
+    "a little DANCE.",
+    "a little dance."
+   ]
+  ]
+ },
+ {
+  "id": "L12b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Grant shook my hand",
+    "Grant shook my hand"
+   ],
+   [
+    "like he MEANT it.",
+    "like he meant it."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At four-fifteen,",
+    "At four-fifteen,"
+   ],
+   [
+    "it was just Grant",
+    "it was just Grant"
+   ],
+   [
+    "and me",
+    "and me"
+   ],
+   [
+    "at the GRILL.",
+    "at the grill."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Moose walked up",
+    "Moose walked up"
+   ],
+   [
+    "and barked AGAIN.",
+    "and barked again."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Woof.",
+    "Woof."
+   ],
+   [
+    "WOOF.",
+    "woof."
+   ]
+  ]
+ },
+ {
+  "id": "L15b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "TWICE.",
+    "twice."
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 0.6,
+  "chunks": [
+   [
+    "",
+    ""
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Moose had changed",
+    "Moose had changed"
+   ],
+   [
+    "his MIND.",
+    "his mind."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Grant knew",
+    "Grant knew"
+   ],
+   [
+    "Moose's NAME",
+    "Moose's name"
+   ],
+   [
+    "before anyone said it.",
+    "before anyone said it."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "When Mia went in",
+    "When Mia went in"
+   ],
+   [
+    "for ketchup,",
+    "for ketchup,"
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "he slipped Grandma's",
+    "he slipped Grandma's"
+   ],
+   [
+    "old RING box",
+    "old ring box"
+   ],
+   [
+    "off the windowsill",
+    "off the windowsill"
+   ],
+   [
+    "and into his pocket.",
+    "and into his pocket."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then he asked me",
+    "Then he asked me"
+   ],
+   [
+    "what Mia's ring SIZE is.",
+    "what Mia's ring size is."
+   ]
+  ]
+ },
+ {
+  "id": "L21b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Why would",
+    "Why would"
+   ],
+   [
+    "he NEED that?",
+    "he need that?"
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "But.",
+    "But."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Moose dropped",
+    "Moose dropped"
+   ],
+   [
+    "his squeaky CARROT",
+    "his squeaky carrot"
+   ],
+   [
+    "at Grant's feet.",
+    "at Grant's feet."
+   ],
+   [
+    "Squeak.",
+    "Squeak."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He only shares that",
+    "He only shares that"
+   ],
+   [
+    "with FAMILY.",
+    "with family."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Grant quietly fixed",
+    "Grant quietly fixed"
+   ],
+   [
+    "our wobbly TABLE",
+    "our wobbly table"
+   ],
+   [
+    "with a folded napkin.",
+    "with a folded napkin."
+   ]
+  ]
+ },
+ {
+  "id": "L25b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Nobody else",
+    "Nobody else"
+   ],
+   [
+    "ever NOTICED it.",
+    "ever noticed it."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And when Moose",
+    "And when Moose"
+   ],
+   [
+    "barked twice,",
+    "barked twice,"
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "his eyes were",
+    "his eyes were"
+   ],
+   [
+    "PAST Grant,",
+    "past Grant,"
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "on the GATE.",
+    "on the gate."
+   ],
+   [
+    "It was open.",
+    "It was open."
+   ]
+  ]
+ },
+ {
+  "id": "L28b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And Mr. Hale's",
+    "And Mr. Hale's"
+   ],
+   [
+    "gutter guy",
+    "gutter guy"
+   ],
+   [
+    "was never CAUGHT.",
+    "was never caught."
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Once at the gate.",
+    "Once at the gate."
+   ],
+   [
+    "Twice at the GRILL.",
+    "Twice at the grill."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The wedding's",
+    "The wedding's"
+   ],
+   [
+    "in JUNE.",
+    "in June."
+   ]
+  ]
+ },
+ {
+  "id": "L30b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mia's never",
+    "Mia's never"
+   ],
+   [
+    "been HAPPIER.",
+    "been happier."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Which bark",
+    "Which bark"
+   ],
+   [
+    "do I TRUST?",
+    "do I trust?"
+   ]
+  ]
+ },
+ {
+  "id": "P02",
+  "pause": 3.5,
+  "chunks": [
+   [
+    "1 or 2?",
+    ""
+   ]
+  ]
+ }
+]
