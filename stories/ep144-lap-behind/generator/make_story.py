@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -70,7 +70,7 @@ cast = {
     "lout": person(LSKIN, "#2f5bea", "#1f2f5c", LSKIN, hat="beanie", hat_c="#f4f4f0", pattern="stripes", pattern_c="#ffffff",
                    moustache="#f2f2ee", brow_w=1.2, extras=["scarf"], extra_c="#2aa6a0"),
     # the lifeguard, about 30: a red visor, a white tee, a whistle
-    "guard": person("#c58a5c", "#f7f7f2", "#e8433a", "#c58a5c", hat="ballcap", hat_c="#e8433a", hair="buzz", hair_c="#2a1d15"),
+    "guard": person("#c58a5c", "#ffffff", "#d81e1e", "#c58a5c", hat="ballcap", hat_c="#d81e1e", hair="buzz", hair_c="#2a1d15"),
 }
 CAST = list(cast)
 acting = {n: [] for n in cast}
@@ -208,13 +208,15 @@ for i in range(4):
 cue("L03", "f3", x=0.9, y=-0.4, v=1.0, w=1.0, s=1.3)
 shot("S04", "L04", fcam(L2, 0.7, z=G.STAND_Z, d=3.8, lens=30, f=0.46, dx=0.45, az=180, push=0.04), {
     "lou": ps(L2, 0.7, **WALL, yaw=180, expr="laugh", arms=(0, 0), head=(0, 0))})
-chg("lou", "L04.1", blend=0.3, arms=(150, 0))
-chg("lou", "L04.1+0.5", blend=0.3, arms=(100, 0))
-chg("lou", "L04.1+1.0", blend=0.3, arms=(150, 0))
+chg("lou", "L04.1", blend=0.3, arms=(0, 150))
+chg("lou", "L04.1+0.5", blend=0.3, arms=(0, 110))
+chg("lou", "L04.1+1.0", blend=0.3, arms=(0, 150))
 cue("L04", "f3", x=0.85, y=0.7, v=1.0, w=1.0, s=1.0)
 cue("L04>", "f3", v=0.0, dur=0.4)
-shot("S06", "L06", fcam(L4, G.BLOCK[1], z=BLOCK_TOP, d=3.6, lens=30, f=0.46, az=48, el=8, push=0.05, arc=1.0), {
-    "me": ps(L4, G.BLOCK[1], z=BLOCK_TOP, yaw=55, expr="neutral", arms=(8, 8), head=(0, 0))})
+shot("S06", "L06", ocam(-1.05, -2.1, 1.35, 6.2, 20, az=192, el=8, push=0.05, arc=1.5), {
+    "me": ps(L4, G.BLOCK[1] - 0.05, z=BLOCK_TOP, yaw=180, expr="smile", arms=(8, 8), head=(0, 0))})
+chg("me", "L06.1", blend=0.4, arms=(8, 8), side=(30, 30), head=(-18, 0))
+chg("me", "L06.2", blend=0.4, side=(10, 10), head=(0, 0))
 
 # ============================================================================================ 03 the splash
 shot("S08a", "L08", ocam(L4, 4.8, 0.5, 4.0, 30, az=0, el=5, push=0.04, arc=1.5), {
@@ -241,10 +243,10 @@ move("me", "L12>", L4, 9.4, blend=0.4)
 stroke("me", "L12", 3, dt=0.6)
 cue("L12", "f0", mode="chase", D=2.6, v=1.0, s=0.9, dur=0.3)
 cue("L12", "bn", a=2, b=1)
-shot("S13", "L13", [[0, [2.6, -6.0, 3.3], [-0.9, 6.5, 0.2], 28], [1, [2.5, -5.6, 3.2], [-0.9, 6.5, 0.2], 28]], {
-    "me": ps(L4, 1.4, **SW, yaw=180),
-    "guard": ps(G.CHAIR[0], G.CHAIR[1], z=1.55 - 0.68, yaw=180, expr="neutral", arms=(10, 10))})
-move("me", "L13>", L4, 3.0, blend=0.4)
+shot("S13", "L13", [[0, [-2.2, 6.9, 2.2], [1.3, -2.2, 0.15], 26], [1, [-2.12, 6.5, 2.15], [1.3, -2.2, 0.15], 26]], {
+    "me": ps(L4, 2.4, **SW, yaw=180),
+    "guard": ps(G.CHAIR[0], G.CHAIR[1], z=G.SEAT_TOP - 0.68, yaw=G.CHAIR_YAW, expr="neutral", arms=(40, 40), head=(30, -8))})
+move("me", "L13>", L4, 3.7, blend=0.4)
 stroke("me", "L13", 2, dt=0.6)
 cue("L13", "f0", mode="chase", D=13.0, v=1.0, s=1.0)
 cue("L13.1", "bn", a=4, b=3)
@@ -253,53 +255,58 @@ cue("L14", "bn", a=6, b=5)
 cue("L14.1", "bn", a=8, b=7)
 
 # ============================================================================================ 05 the double kick
-KICK = (L4, 0.95)
-shot("S15", "L15", fcam(L4, 0.8, z=G.STAND_Z, d=3.4, lens=30, f=0.46, az=180, el=4, push=0.05, arc=1.0), {
-    "me": ps(L4, 0.8, **WALL, yaw=180, expr="neutral", head=(0, 0), lean=0)})
-chg("me", "L15.2", blend=0.4, lean=14, arms=(40, 40))
-chg("me", "L15.2+0.9", blend=0.4, lean=0, arms=(0, 0))
-cue("L15.2", "f1", x=L4 + 0.8, y=0.9, v=1.0, s=1.0, dur=0.3)
-cue("L15.2+0.6", "f1", v=0.0, dur=0.3)
-cue("L15.2+0.3", "f2", x=L4 - 0.8, y=1.0, v=1.0, s=1.0, dur=0.3)
-cue("L15.2+0.9", "f2", v=0.0, dur=0.3)
-shot("S16", "L16", ocam(L4, 0.9, 0.45, 3.0, 30, az=180, el=14, push=0.04, arc=1.0), {
-    "me": ps(L4, 0.8, **WALL, yaw=180, expr="neutral", head=(0, 0), lean=0)})
-cue("L16", "f1", x=L4 + 0.75, y=0.95, v=1.0, s=1.3, dur=0.3)
-cue("L16+0.55", "f1", v=0.0, dur=0.3)
-cue("L16+0.25", "f2", x=L4 - 0.75, y=1.0, v=1.0, s=1.3, dur=0.3)
-cue("L16+0.75", "f2", v=0.0, dur=0.3)
+
+
+def kicks(ref, off=0.0, gap=0.38):
+    """My double kick at ref+off: the right foot breaks the surface with a big splash, the left a small one after it."""
+    def at(d):
+        return f"{ref}+{off + d:.2f}"
+    cue(at(0), "kk", side=1, h=0.3)
+    cue(at(gap), "kk", side=-1, h=0.2)
+    cue(at(0.07), "f1", m=1.0, x=0.11, y=0.08, v=1.0, s=0.62, dur=0.3)
+    cue(at(0.55), "f1", v=0.0, dur=0.3)
+    cue(at(gap + 0.07), "f2", m=1.0, x=-0.11, y=0.08, v=1.0, s=0.32, dur=0.3)
+    cue(at(gap + 0.5), "f2", v=0.0, dur=0.3)
+
+
+shot("S15", "L15", [[0, [L4 - 0.4, 0.15, 0.36], [L4, 2.6, 0.08], 28], [1, [L4 - 0.36, 0.7, 0.34], [L4, 3.3, 0.08], 28]], {
+    "me": ps(L4, 2.1, **SW, yaw=180)})
+move("me", "L15>", L4, 3.3, blend=0.5)
+stroke("me", "L15", 3, dt=0.62)
+kicks("L15.2", 0.4)
+shot("S16", "L16", ocam(L4, 3.3, 0.0, 3.6, 30, az=0, el=42, push=0.04, arc=1.0), {"me": None})
+move("me", "L16>", L4, 3.4, blend=0.4)
+stroke("me", "L16", 2, dt=0.55)
+kicks("L16", 0.08)
 shot("S17", "L17", fcam(L2, -1.4, z=DK, d=3.6, lens=30, f=0.46, dx=0.35, az=180, push=0.05), {
     "lout": ps(L2, -1.4, z=DK, yaw=190, expr="laugh", arms=(35, 0), side=(78, 0), head=(-14, 0))})
 shot("S18", "L18", ocam(G.BOARD[0], G.BOARD[1], 1.7, 3.6, 24, az=184, el=2, push=0.05, arc=1.5), {})
 cue("L18.1", "bn", a=12, b=11)
-shot("S19", "L19", fcam(L4, 0.8, z=G.STAND_Z, d=3.4, lens=30, f=0.46, az=190, el=4, push=0.05, arc=1.0), {
-    "me": ps(L4, 0.8, **WALL, yaw=180, expr="neutral", head=(0, 0), lean=0)})
-chg("me", "L19.1", blend=0.4, lean=14, arms=(40, 40))
-chg("me", "L19.1+0.9", blend=0.4, lean=0, arms=(0, 0))
-cue("L19.1", "f1", x=L4 + 0.8, y=0.9, v=1.0, s=1.0, dur=0.3)
-cue("L19.1+0.6", "f1", v=0.0, dur=0.3)
-cue("L19.1+0.3", "f2", x=L4 - 0.8, y=1.0, v=1.0, s=1.0, dur=0.3)
-cue("L19.1+0.9", "f2", v=0.0, dur=0.3)
+shot("S19", "L19", [[0, [L4 + 3.4, 3.0, 0.85], [L4, 3.2, 0.0], 26], [1, [L4 + 3.25, 3.9, 0.8], [L4, 4.1, 0.0], 26]], {
+    "me": ps(L4, 1.9, **SW, yaw=180)})
+move("me", "L19>", L4, 3.0, blend=0.5)
+stroke("me", "L19", 2, dt=0.62)
+kicks("L19.1", 0.03)
 shot("S20a", "L20.1", FARCAM, {})
-cue("L20.2", "f1", x=L4 + 0.45, y=13.0, v=1.0, s=2.6, dur=0.3)
-cue("L20.2+0.6", "f1", v=0.0, dur=0.3)
-cue("L20.2+0.3", "f2", x=L4 - 0.9, y=13.2, v=1.0, s=1.8, dur=0.3)
-cue("L20.2+0.9", "f2", v=0.0, dur=0.3)
-shot("S20b", "L20.2+0.55", fcam(L4, 0.7, z=G.STAND_Z, d=2.9, lens=30, f=0.36, az=180, push=0.07), {
+cue("L20.2-0.2", "f1", m=0.0, x=L4 + 0.45, y=13.0, v=1.0, s=2.6, dur=0.3)
+cue("L20.2+0.4", "f1", v=0.0, dur=0.3)
+cue("L20.2+0.1", "f2", m=0.0, x=L4 - 0.9, y=13.2, v=1.0, s=1.8, dur=0.3)
+cue("L20.2+0.7", "f2", v=0.0, dur=0.3)
+shot("S20b", "L20.2+0.25", fcam(L4, 0.7, z=G.STAND_Z, d=2.9, lens=30, f=0.36, az=180, push=0.07), {
     "me": ps(L4, 0.7, **WALL, yaw=180, expr="scared", head=(14, 0))})
 cue("L20.2+0.9", "f0", v=0.0, dur=0.3)
 shot("SDROP", "P01", ocam(L4, 5.0, 0.7, 7.0, 30, az=0, el=7, push=0.0, arc=0.0), {})
 
 # ============================================================================================ 06 yesterday
-shot("S21", "L22", ocam(-0.3, -0.1, 1.0, 3.4, 30, az=28, el=2, push=0.04, arc=1.0), {
+shot("S21", "L22", ocam(-0.3, -0.25, 1.3, 4.4, 30, az=28, el=3, push=0.03, arc=1.0), {
     "me": ps(-0.3, 0.55, z=G.STAND_Z, yaw=0, expr="uneasy", head=(0, 4))})
 move("me", "L22+0.45", -0.3, 0.1, z=0.2, blend=0.45)
 move("me", "L22+1.1", -0.3, -0.7, z=DK, blend=0.5)
 shot("S22", "L22.2", fcam(-0.4, -1.3, z=DK, d=2.7, lens=30, f=0.38, az=180, push=0.06), {
     "me": ps(-0.4, -1.3, z=DK, yaw=180, expr="worried", head=(32, 0))})
 cue("L23", "tw", v=1.0)
-shot("S23a", "L23", ocam(G.BLOCK[0], G.BLOCK[1], 0.78, 2.1, 30, az=180, el=8, push=0.05, arc=2.0), {})
-shot("S23b", "L23.2", ocam(G.BLOCK[0] + 0.1, G.BLOCK[1] + 0.2, 0.62, 1.05, 30, az=180, el=4, push=0.08, arc=1.0), {})
+shot("S23a", "L23", ocam(G.BLOCK[0], G.BLOCK[1] + 0.1, 0.6, 2.0, 30, az=184, el=9, push=0.05, arc=2.0), {})
+shot("S23b", "L23.2", ocam(G.BLOCK[0] + 0.03, G.BLOCK[1] + 0.33, 0.42, 1.2, 30, az=176, el=10, push=0.08, arc=1.0), {})
 
 # ============================================================================================ 07 the reveal
 ME25 = (-3.3, -0.7)
@@ -358,7 +365,7 @@ sound = {
     "music_drops": [{"from": "P01", "to": "P01>"}],
     "rev": REV,
 }
-HOLDS = ["S01b", "S09", "S10", "S14", "S18", "S25b", "S29", "S30b"]
+HOLDS = ["S01b", "S06", "S13", "S09", "S10", "S14", "S18", "S25b", "S29", "S30b"]
 polish = {"emph": [remap(r) for r in ("L01.3", "L08.2", "L10.2", "L11.2", "L15.2", "L20.1", "L26.1")],
           "reveal": ["L26"], "twist": "L25", "hold": HOLDS, "bed_kind": "water", "bed_drop_db": -6.0,
           "whoosh_cuts": False, "punch_rate": 0.8,
@@ -395,6 +402,7 @@ story = {
     "sound": sound,
     "set_moves": ["S23a", "S23b"],
 }
+story["tag_hide"] = ["S04", "S06", "S09", "S10", "S14", "S15", "S16", "S18", "S19", "S20b", "S23a", "S23b", "S25b", "S26a", "S29"]
 story["framing_ok"] = ["S11b", "S20a"]   # deliberate: the far wall, flat water where the splash was / is about to be
 story["staging_ok"] = []
 story["frames_ok"] = ["S09"]   # deliberate: the board lights its second row (a 0.4 s fade) on the shot's first beat

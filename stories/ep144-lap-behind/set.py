@@ -233,11 +233,11 @@ def build(kit, story, tl):
         bx = G.lane_x(k)
         kit.box(f"block{k}", (0.7, 0.6, G.BLOCK_H), (bx, -0.55, G.DECK + G.BLOCK_H / 2), bl, bevel=0.03)
         kit.box(f"block{k}.top", (0.7, 0.6, 0.03), (bx, -0.7, G.DECK + G.BLOCK_H + 0.015), mat(kit, "#9fb4c4", 0.5), rot=(0.12, 0, 0))
-    # lane four's block: the tally of two strokes (lore), blue, on the pool-facing side
+    # lane four's block: the tally of two strokes (lore), small and low on the pool-facing side, below the towel
     bx, by = G.BLOCK
     st = mat(kit, "#2f7fe0", 0.5)
-    for dx in (-0.08, 0.08):
-        kit.box(f"block4.tally{dx}", (0.04, 0.012, 0.22), (bx + dx, by + 0.306, G.DECK + 0.3), st)
+    for dx in (-0.31, -0.275):
+        kit.box(f"block4.tally{dx}", (0.016, 0.012, 0.07), (bx + dx, by + 0.312, G.DECK + 0.075), st)
     # the ladder at lane four's corner
     steel = mat(kit, "#c9d3da", 0.3, 0.5)
     for lx in (-0.5, -0.1):
@@ -324,31 +324,102 @@ def build(kit, story, tl):
         noshadow(ob)
     W["tag_root"] = tag
 
-    # lifeguard's tower on the east deck: a solid seat, so a seated guard's legs are inside it
+    # the lifeguard's tall chair (white legs, a solid seat so a seated guard's legs are inside it, a red rescue tube,
+    # a red and white sunshade): built round an empty turned like the guard (local -y is the chair's front)
     cx, cy = G.CHAIR
-    kit.box("tower", (1.1, 1.1, 1.0), (cx, cy, 1.05), mat(kit, "#f2f2ea", 0.6, 0.1), bevel=0.03)
-    kit.box("tower.base", (1.4, 1.4, 0.55), (cx, cy, 0.27), mat(kit, RED, 0.6), bevel=0.03)
-    kit.box("tower.back", (1.1, 0.12, 0.7), (cx, cy - 0.5, 1.9), mat(kit, "#f2f2ea", 0.6, 0.1))
+    ch = kit.empty("chair", (cx, cy, 0.0), rot=(0, 0, G.CHAIR_YAW * D2R))
+    wht, red = mat(kit, "#f4f4ee", 0.5, 0.1), mat(kit, RED, 0.5, 0.15)
+    for lx in (-0.42, 0.42):
+        for ly in (-0.42, 0.42):
+            kit.box(f"chair.leg{lx}{ly}", (0.09, 0.09, 1.68), (lx * 1.12, ly * 1.12, 0.84), wht, ch, rot=(-ly * 0.12, lx * 0.12, 0))
+    kit.box("chair.seat", (0.9, 0.9, 0.72), (0, 0, G.SEAT_TOP - 0.36), wht, ch, bevel=0.03)
+    kit.box("chair.stripe", (0.92, 0.92, 0.12), (0, 0, G.SEAT_TOP - 0.62), red, ch)
+    kit.box("chair.back", (0.9, 0.1, 0.7), (0, 0.5, G.SEAT_TOP + 0.35), wht, ch, bevel=0.02)
+    for j in range(4):
+        kit.box(f"chair.rung{j}", (0.8, 0.07, 0.06), (0, -0.52, 0.3 + j * 0.34), wht, ch)
+    kit.box("chair.foot", (0.8, 0.3, 0.06), (0, -0.62, G.SEAT_TOP - 0.95), wht, ch)
+    tube = kit.box("chair.tube", (0.16, 0.12, 0.85), (0.56, -0.1, G.SEAT_TOP - 0.45), red, ch, bevel=0.05)
+    kit.cyl("chair.pole", 0.03, 1.9, (0, 0.5, G.SEAT_TOP + 0.95), wht, ch, n=8)
+    for i in range(8):
+        a = i * math.pi / 4
+        kit.box(f"chair.shade{i}", (0.95, 0.46, 0.04), (0.47 * math.cos(a), 0.5 + 0.47 * math.sin(a), G.SEAT_TOP + 1.82),
+                red if i % 2 else wht, ch, rot=(0, -0.25, a), bevel=0.01)
 
-    # the duck towel on lane four's block: yellow, an orange beak mark, soaked (darker, hanging over the edge, dripping)
+    # a soft steady fill on the guard's front (he faces up lane four, out of the low east sun), so his tee reads white
+    kit.light("lgfill", "POINT", (cx - 0.9, cy + 1.6, 3.3), 45.0, "#ffffff", size=0.8, shadow=False)
+
+    # the duck towel: a thin yellow towel lying on lane four's block and hanging over its pool-facing edge, a big
+    # orange duck print on the hanging flap with its face and beak to the pool (and the camera), soaked: darker wet
+    # patches, water running down, beads, drips falling into a puddle on the deck
     bx, by = G.BLOCK
-    top = G.DECK + G.BLOCK_H + 0.03
-    yel = mat(kit, "#f7d02a", 0.3, 0.45)
-    W["towel"] = kit.empty("towel", (bx, by, 0))
-    kit.box("towel.a", (0.52, 0.4, 0.13), (0, -0.04, top + 0.065), yel, W["towel"], bevel=0.03)
-    kit.box("towel.f", (0.52, 0.03, 0.22), (0, 0.205, top - 0.04), mat(kit, "#e8b222", 0.4, 0.3), W["towel"], bevel=0.01)
-    kit.box("towel.beak", (0.3, 0.17, 0.02), (0.0, 0.04, top + 0.14), mat(kit, "#ff6a10", 0.4, 0.3), W["towel"], bevel=0.01)
-    kit.box("towel.beak2", (0.3, 0.05, 0.022), (0.0, 0.0, top + 0.145), mat(kit, "#c84a08", 0.4, 0.3), W["towel"])
-    for i, (wx, wy, ww) in enumerate(((-0.17, 0.1, 0.12), (0.18, -0.08, 0.14), (-0.05, -0.14, 0.1))):    # dark wet patches
-        kit.box(f"towel.wet{i}", (ww, ww * 0.8, 0.012), (wx, wy, top + 0.136), mat(kit, "#8a6410", 0.2, 0.6), W["towel"])
-    for i, dx_ in enumerate((-0.18, 0.0, 0.18)):    # water runs down the front
-        kit.box(f"towel.run{i}", (0.035, 0.012, 0.2), (dx_, 0.222, top - 0.06), mat(kit, "#6fd8ec", 0.15, 0.6), W["towel"])
-    kit.box("towel.eye", (0.06, 0.06, 0.016), (-0.14, -0.12, top + 0.142), mat(kit, "#2a1a0e", 0.5), W["towel"])
-    kit.box("towel.eye2", (0.06, 0.06, 0.016), (0.14, -0.12, top + 0.142), mat(kit, "#2a1a0e", 0.5), W["towel"])
-    kit.box("puddle", (0.9, 0.55, 0.012), (bx, by + 0.62, G.DECK + 0.008), mat(kit, "#7fdcee", 0.2, 0.4))
-    W["drip"] = kit.sphere("drip", 0.03, (bx + 0.1, by + 0.24, top - 0.1), mat(kit, "#6fd8ec", 0.2, 0.4), seg=8)
-    W["dripx"] = (bx + 0.1, by + 0.26, top - 0.14)
-    W["towel_objs"] = [o for o in bpy.data.objects if o.name.startswith(("towel.", "puddle"))]
+    W["towel"] = tw = kit.empty("towel", (bx, 0, 0))
+    dry = mat(kit, "#ffd23f", 0.55, 0.2)
+    wet = mat(kit, "#b07a12", 0.15, 0.6)
+    run = mat(kit, "#8fe4f2", 0.08, 0.8)
+    fy = by + 0.3 + 0.0225          # the flap's centre (its back 1 cm proud of the block's face)
+    ff = fy + 0.0125                # the flap's front face
+    th = 0.12
+    kit.box("towel.sheet", (0.66, 0.42, 0.022), (0, by - 0.0735, 0.695), dry, tw, rot=(th, 0, 0))
+    kit.box("towel.bridge", (0.66, 0.19, 0.022), (0, by + 0.215, 0.69), dry, tw, rot=(-0.33, 0, 0))
+    kit.cyl("towel.fold", 0.026, 0.66, (0, fy, 0.655), dry, tw, rot=(0, math.pi / 2, 0), n=12)
+    kit.box("towel.flap", (0.66, 0.025, 0.40), (0, fy, 0.46), dry, tw)
+    for i, (tx, tw_, tz) in enumerate(((-0.12, 0.22, 0.25), (0.17, 0.2, 0.245))):   # the soggy hem hangs lower in two tongues
+        kit.box(f"towel.tongue{i}", (tw_, 0.025, 0.07), (tx, fy, tz), wet, tw)
+    kit.box("towel.hem", (0.66, 0.03, 0.08), (0, fy + 0.003, 0.30), wet, tw)        # the soaked band along the bottom
+    for i, (wx, wz, ww, wh) in enumerate(((-0.25, 0.47, 0.11, 0.16), (0.26, 0.55, 0.1, 0.12), (0.24, 0.40, 0.08, 0.1),
+                                          (-0.27, 0.62, 0.08, 0.06))):
+        kit.box(f"towel.wet{i}", (ww, 0.02, wh), (wx, ff - 0.0, wz), wet, tw)
+    for i, (wx, wy, ww) in enumerate(((-0.18, by - 0.15, 0.16), (0.15, by - 0.02, 0.18))):
+        kit.box(f"towel.wets{i}", (ww, ww * 0.7, 0.02), (wx, wy, 0.712 + (wy - by + 0.0735) * th), wet, tw, rot=(th, 0, 0))
+    # the duck print: an orange body and head, a front-on beak, two dark eyes, a tuft (all stand proud of the flap)
+    org = mat(kit, "#ff7a1a", 0.4, 0.25)
+    org_w = mat(kit, "#c4520c", 0.2, 0.5)
+    beak = mat(kit, "#d9400a", 0.4, 0.3)
+    body = kit.cyl("towel.duckbody", 0.12, 0.03, (0, ff + 0.0, 0.40), org, tw, rot=(math.pi / 2, 0, 0), n=24)
+    body.scale = (1.4, 1.0, 1.0)
+    kit.cyl("towel.duckhead", 0.092, 0.03, (0, ff + 0.003, 0.565), org, tw, rot=(math.pi / 2, 0, 0), n=22)
+    for sx in (-1, 1):
+        kit.box(f"towel.wing{sx}", (0.1, 0.03, 0.055), (sx * 0.135, ff + 0.004, 0.42), org_w, tw, rot=(0, sx * 0.5, 0))
+        kit.box(f"towel.eye{sx}", (0.03, 0.02, 0.036), (sx * 0.042, ff + 0.022, 0.595), mat(kit, "#22160c", 0.5), tw)
+        kit.box(f"towel.foot{sx}", (0.07, 0.03, 0.03), (sx * 0.06, ff + 0.004, 0.28), beak, tw)
+    kit.box("towel.beak", (0.12, 0.03, 0.04), (0, ff + 0.012, 0.545), beak, tw, bevel=0.008)
+    kit.box("towel.bill", (0.09, 0.03, 0.026), (0, ff + 0.01, 0.515), mat(kit, "#a8340a", 0.4, 0.3), tw, bevel=0.006)
+    kit.box("towel.tuft", (0.05, 0.03, 0.04), (0, ff + 0.0, 0.665), org, tw, rot=(0, 0.4, 0))
+    kit.box("towel.duckwet", (0.2, 0.03, 0.07), (-0.05, ff + 0.006, 0.33), org_w, tw)
+    # water running down the flap and the block's face below it, and beads on the cloth
+    for i, (rx, rz, rh) in enumerate(((-0.29, 0.38, 0.22), (0.3, 0.33, 0.16), (-0.02, 0.27, 0.09), (0.12, 0.6, 0.12))):
+        kit.box(f"towel.run{i}", (0.016, 0.03, rh), (rx, ff + 0.01, rz), run, tw)
+    for i, (rx, rz) in enumerate(((-0.12, 0.2), (0.17, 0.195), (0.0, 0.18))):
+        kit.box(f"towel.brun{i}", (0.014, 0.012, 0.07), (rx, by + 0.312, rz), run, tw)
+    for i, (rx, rz) in enumerate(((-0.2, 0.55), (0.21, 0.47), (0.09, 0.64), (-0.08, 0.43), (0.28, 0.62))):
+        kit.sphere(f"towel.bead{i}", 0.014, (rx, ff + 0.01, rz), run, tw, seg=8)
+    # a soft steady white fill on the towel's pool-facing flap (in the block's shade at sunrise it read orange)
+    kit.light("towel.fill", "POINT", (bx + 0.3, by + 1.6, 0.9), 30.0, "#fffbf2", size=0.6, shadow=False)
+    # the puddle on the deck in front of the block
+    pm = mat(kit, "#86d6ea", 0.06, 0.8)
+    pd = kit.cyl("puddle", 0.3, 0.01, (bx + 0.02, by + 0.43, G.DECK + 0.006), pm, n=24)
+    pd.scale = (1.45, 0.42, 1.0)
+    pd2 = kit.cyl("puddle2", 0.13, 0.012, (bx + 0.34, by + 0.5, G.DECK + 0.007), pm, n=18)
+    pd2.scale = (1.0, 0.6, 1.0)
+    # drips falling from the hem into the puddle (set.py's animate), a few at once on different phases
+    W["drips"] = []
+    for i, (dx_, ph) in enumerate(((-0.12, 0.0), (0.17, 0.37), (-0.25, 0.7), (0.05, 0.55))):
+        o = kit.sphere(f"drip{i}", 0.022, (bx + dx_, ff + 0.0, 0.2), run, seg=8)
+        o.scale = (0.85, 0.85, 1.5)
+        noshadow(o)
+        W["drips"].append((o, bx + dx_, ff, 0.215 if i < 2 else 0.26, ph))
+    W["towel_objs"] = [o for o in bpy.data.objects if o.name.startswith(("towel.", "puddle", "block4.tally"))]
+    W["towel_objs"] = [o for o in W["towel_objs"] if not o.name.startswith("block4.tally")]
+    # my kicking feet (shown by cue "kk"): two bare feet that rise out of the water behind a swimming "me"
+    skin = mat(kit, "#e0a878", 0.55, 0.15)
+    W["feet"] = []
+    for sx in (-1, 1):
+        f = kit.empty(f"kfoot{sx}", (0, 0, -3))
+        # a pointed foot breaking the surface heel first: the foot (toes back, sole up) and the ankle under it
+        kit.box(f"kfoot{sx}.sole", (0.12, 0.22, 0.08), (0, -0.07, 0.03), skin, f, bevel=0.03)
+        kit.box(f"kfoot{sx}.heel", (0.11, 0.09, 0.1), (0, 0.03, -0.01), skin, f, bevel=0.03)
+        kit.box(f"kfoot{sx}.shin", (0.1, 0.1, 0.3), (0, 0.06, -0.18), skin, f, bevel=0.03)
+        W["feet"].append((f, sx))
     for i in range(4):
         build_foam(kit, f"f{i}", n=8, r0=(0.42 if i == 0 else 0.32 if i == 1 else 0.2 if i == 2 else 0.22), seed=i)
     # fading rings where a splash stood (cue "rg" u 0..1 grows and sinks them), pinned at the far wall's splash
@@ -436,8 +507,10 @@ def animate(kit, story, tl, t, ctx):
         v = 0.0
     foam_pose("f0", x, y, v, f0["s"], t)
     for nm in ("f1", "f2", "f3"):
-        c = sample(nm, tl, t, {"x": 0.0, "y": 0.0, "v": 0.0, "s": 1.0, "w": 0.0})
+        c = sample(nm, tl, t, {"x": 0.0, "y": 0.0, "v": 0.0, "s": 1.0, "w": 0.0, "m": 0.0})
         cx_, cy_ = c["x"], c["y"]
+        if c["m"] > 0.5 and me is not None:    # riding with me (my kick's splash behind my feet)
+            cx_, cy_ = me.location.x + c["x"], me.location.y + c["y"]
         if c["w"] > 0.5:     # ripple riding beside Grandpa
             lou = bpy.data.objects.get("lou")
             if lou is not None:
@@ -452,22 +525,41 @@ def animate(kit, story, tl, t, ctx):
             r = 0.35 + 1.5 * u
             ob.location = (G.L4 + 0.1, 13.2, 0.02 - 0.05 * u)
             ob.scale = (r, r, 0.25)
+    # no corner tag on any shot where the real lap board is in frame (story.json "tag_hide"), so the numbers never
+    # read twice
     hide_tag = False
-    # no corner tag on the towel's close-ups (the board itself is in frame)
     for sh in tl["shots"]:
-        if sh["id"] in ("S23a", "S23b") and sh["start"] - 1e-6 <= t < sh["end"]:
+        if sh["id"] in story.get("tag_hide", ()) and sh["start"] - 1e-6 <= t < sh["end"]:
             hide_tag = True
     for ob in W["tag_root"].children_recursive:
         if hide_tag:
             ob.hide_render = True
         elif ob.name in ("tag.edge", "tag.plate"):
             ob.hide_render = False
-    # the duck towel, its puddle and its drip exist from the cue "tw" (it is lost until L23)
+    # the duck towel, its puddle and its drips exist from the cue "tw" (it is lost until L23)
     tw = sample("tw", tl, t, {"v": 0.0})["v"] > 0.5
     for ob in W["towel_objs"]:
         ob.hide_render = not tw
-    # the duck towel's drip, a slow fall on the block's pool side
-    dx, dy, dz = W["dripx"]
-    u = (t * 0.9) % 1.0
-    W["drip"].location = (dx, dy, dz - 0.55 * u * u) if (u < 0.85 and tw) else (dx, dy, -5.0)
+    for o, dx, dy, z0, ph in W["drips"]:
+        u = (t * 1.6 + ph) % 1.0
+        if tw and u < 0.8:
+            uu = u / 0.8
+            o.location = (dx, dy + 0.01, z0 - (z0 - G.DECK - 0.02) * uu * uu)
+        else:
+            o.location = (dx, dy, -5.0)
+    # my kicking feet: each "kk" cue {"side": -1|1, "h"} lifts one foot out of the water and back (0.12 s up, 0.3 s down)
+    lift = {-1: 0.0, 1: 0.0}
+    hmax = {-1: 0.0, 1: 0.0}
+    for c in tl["cues"]:
+        if c["name"] == "kk" and c["t"] - 0.01 <= t < c["t"] + 0.6:
+            b_ = kit.bump(t, c["t"], 0.14, 0.32)
+            sd = int(c.get("side", 1))
+            if b_ > lift[sd]:
+                lift[sd], hmax[sd] = b_, c.get("h", 0.3)
+    for f, sx in W["feet"]:
+        if me is not None and lift[sx] > 0.001:
+            f.location = (me.location.x + sx * 0.11, me.location.y - 0.12, -0.3 + (0.3 + hmax[sx] - 0.07) * lift[sx])
+            f.rotation_euler = (0.35 - 0.6 * lift[sx], 0, me.rotation_euler.z - math.pi)
+        else:
+            f.location = (0, 0, -3.0)
     return {}
