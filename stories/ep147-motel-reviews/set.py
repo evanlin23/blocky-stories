@@ -617,6 +617,7 @@ def _animate(kit, story, tl, t, ctx):
     # ---- the held card, the pen, the key on the desk, the shirts, the shirt in Dad's hands
     cd = sample("card", tl, t, {"mode": "none", "who": "me", "kind": "ours"})
     card = W["card"]
+    card.scale = (1.3, 1.3, 1.3)  # every mode: a shard start must see what a continuous run carries (shardcheck)
     cx, cy = camloc[0], camloc[1]
     if cd["mode"] == "hand":
         h = hand(cd["who"], 1)
@@ -628,12 +629,14 @@ def _animate(kit, story, tl, t, ctx):
             _card_pic(cd["kind"])
         else:
             card.location = (0, 0, -40)
+            card.rotation_euler = (0, 0, 0)
     elif cd["mode"] == "desk":
         card.location = (G.DESK[0] + 0.12, G.DESK[1] + 0.2, G.DESK_TOP + 0.008)
         card.rotation_euler = (-math.pi / 2, 0, math.radians(14))
         _card_pic(cd["kind"])
     else:
         card.location = (0, 0, -40)
+        card.rotation_euler = (0, 0, 0)  # hidden: a fixed pose, so a shard start matches a continuous run
     pc = sample("pen", tl, t, {"mode": "none", "who": "me"})
     pen = W["pen"]
     h = hand(pc["who"], -1) if pc["mode"] == "hand" else None
