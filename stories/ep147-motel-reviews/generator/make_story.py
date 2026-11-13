@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 13
+REV = 14
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -213,6 +213,7 @@ me_c("L06", "nervous")
 cue("L06", "card", mode="hand", who="me", kind="ours")
 mouth("me", "L06", "L06>", 0.35)
 shot("S06", "L06", cam(*ME_FACE, 2.2, -8, 30, cz=1.55))
+shot("S06b", "L06.2", cam(MX + 0.15, MY, 1.65, 2.3, 8, 30, cz=1.65))
 cue("L07", "card", mode="none", who="me", kind="ours")
 show("L07", "dad")
 place("L07", "dad", (0.55, 0.75, 0.0), 120, "crylaugh", arms=[0, 0], head=[-40, 0])
@@ -275,6 +276,7 @@ cue("L21", "pen", mode="none", who="me")
 me_c("L21", "determined", arms=[0, 86])
 mouth("me", "L21", "L21>", 0.35)
 shot("S21", "L21", cam(MX + 0.15, MY, 1.7, 2.4, 8, 30, cz=1.7))
+shot("S21b", "L21.2", cam(MX + 0.15, MY, 1.65, 2.2, -8, 30, cz=1.65))
 
 # ===== 08 the doors open (L22, L23, L24)
 cue("L22", "win", v=0.55, dur=0.4)
