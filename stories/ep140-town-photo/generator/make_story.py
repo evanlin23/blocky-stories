@@ -151,7 +151,7 @@ cue(0, "tag", g="a")
 cue(0, "cheer", on=False)
 
 # ================================================================================================ L01 to L03 the count, the rule
-S(0, "S01a", C((BOARDX + 0.35, 0.6, 1.3), 2.0, az=0, el=1, lens=40, w2=1.8, tgt2=(BOARDX + 0.4, 0.6, 1.3)),
+S(0, "S01a", C((BOARDX + 0.5, 0.6, 1.3), 2.0, az=0, el=1, lens=40, w2=1.85, tgt2=(BOARDX + 0.58, 0.6, 1.3)),
   note="S01a frame 1: the board (212 over 211) with me beside it holding Mom's proof, a face by 0:02")
 S("L01.3", "S01b", C((BOARDX + 0.95, 0.1, 1.38), 1.25, az=0, el=1, lens=40, w2=1.0, tgt2=(BOARDX + 0.97, 0.1, 1.42)),
   note="S01b push in on my uneasy face and the proof on BE IN IT")
@@ -190,11 +190,11 @@ cue("L10", "board", g="a900")
 S("L10", "S10", C((BOARDX + 0.1, 1.0, 1.05), 1.75, az=0, el=2, w2=1.6), note="S10 the board with a chalk clock at 9:00")
 put("okafor", "L11", OK_C, 180, "neutral")
 cue("L11", "board", g="a")
-S("L11", "S11", C((-0.5, -5.5, 1.5), 1.45, az=-150, el=3, w2=1.3), back=True, note="S11 Mr. Okafor at the box camera, very straight")
+S("L11", "S11", C((-0.5, -5.5, 1.5), 1.45, az=-150, el=3, w2=1.3), fill=1.5, back=True, note="S11 Mr. Okafor at the box camera, very straight")
 raw("okafor", "L12.2", expr="laugh", arms=[0, 170], blend=0.35)
 talk("okafor", "L12.2", "L12>", 0.8)
 raw("okafor", "L12", head=[-10, 0], blend=0.3)
-S("L12", "S12", C((-0.5, -5.5, 1.55), 1.15, az=-165, el=3, w2=1.0), back=True, note="S12 cap raised, mouth wide on PICKLES")
+S("L12", "S12", C((-0.5, -5.5, 1.55), 1.15, az=-165, el=3, w2=1.0), fill=1.5, back=True, note="S12 cap raised, mouth wide on PICKLES")
 gone("okafor", "L13")
 put("grandma", "L13", GM_S, 0, "laugh", arms=[165, 165])
 gone("grandma", "L13.2")
@@ -241,9 +241,9 @@ put("okafor", "L22", OK_H, 180, "worried", arms=[58, 58], side=[-26, -26])
 cue("L22", "bulb", on=True, pos=[-0.5, -4.95, 1.2], shake=0.012, big=2.2)
 for i, dt in enumerate((0.3, 0.55, 0.8, 1.05, 1.3, 1.55, 1.8)):
     raw("okafor", f"L22+{dt}", arms=[58 + (3 if i % 2 else -3), 58 - (3 if i % 2 else -3)], side=[-26, -26], blend=0.2, tremble=1.2)
-S("L22", "S22a", C((-0.5, -4.95, 1.3), 1.25, az=-140, el=4, w2=1.1), back=True, note="S22a his hands on the shutter bulb, shaking")
+S("L22", "S22a", C((-0.5, -4.95, 1.3), 1.25, az=-140, el=4, w2=1.1), fill=1.5, back=True, note="S22a his hands on the shutter bulb, shaking")
 raw("okafor", "L22.2", head=[0, 0], blend=0.2)
-S("L22.2", "S22b", C((-0.5, -5.5, 1.5), 1.1, az=-160, el=3, w2=1.0), back=True, note="S22b his face, worried")
+S("L22.2", "S22b", C((-0.5, -5.5, 1.5), 1.1, az=-160, el=3, w2=1.0), fill=1.5, back=True, note="S22b his face, worried")
 raw("okafor", "L23", head=[-34, 0], expr="neutral", arms=[58, 58], side=[-26, -26], blend=0.5)
 S("L23", "S23a", C((-0.5, -5.3, 1.35), 1.15, az=-165, el=3, w2=1.05), fill=1.6, back=True, note="S23a Mr. Okafor turns to look straight at me")
 cue("L23.2", "bulb", on=True, pos=[-0.5, -4.95, 1.3], to=[-0.9, -4.3, 1.2], dur=0.6, big=2.4)
@@ -260,7 +260,7 @@ put("mom", "L24", MOM_S, 0, "smile")
 cue("L24", "cheer", on=False)
 S("L24", "S24", C((-0.4, 3.0, 1.5), 1.75, az=0, el=2, w2=1.55), note="S24 Mr. Okafor sits in the front row beside Grandma, smiling")
 put("me", "L25", ME_C, 180, "neutral", arms=[0, 0], head=[0, 0])
-S("L25", "S25", C((-0.3, -5.4, 1.5), 1.5, az=-150, el=3, w2=1.35), back=True, note="S25 me behind the camera, my eye at the viewfinder")
+S("L25", "S25", C((-0.3, -5.4, 1.5), 1.5, az=-150, el=3, w2=1.35), fill=1.5, back=True, note="S25 me behind the camera, my eye at the viewfinder")
 cue("L26", "vf", on=True)
 S("L26", "S26a", X((0.1, -3.9, 1.6), (-0.3, 4.6, 1.5), 40, (0.1, -3.6, 1.6), (-0.3, 4.6, 1.5), 40), fill=0.2,
   note="S26a through the viewfinder: a thin frame line over the bleachers, every face filled")
@@ -304,7 +304,7 @@ put("me", "L34", ME_C, 180, "smile")
 S("L34", "S33", C((-0.8, -5.5, 1.45), 1.6, az=-160, el=3, w2=1.4), fill=1.6, back=True, note="S33 Mr. Okafor beside me at the camera, one step in to pat my shoulder")
 raw("okafor", "L35", expr="smile", blend=0.3)
 talk("okafor", "L35", "L35>", 0.5)
-S("L35", "S34", C((-1.1, -5.5, 1.5), 1.1, az=-170, el=3, w2=1.0), back=True, note="S34 his face, smiling, eyes on me")
+S("L35", "S34", C((-1.1, -5.5, 1.5), 1.1, az=-170, el=3, w2=1.0), fill=1.5, back=True, note="S34 his face, smiling, eyes on me")
 
 # ================================================================================================ L37 the loop
 gone("okafor", "L37")
@@ -360,10 +360,10 @@ story = {
                   {"at": "L31", "voices": ["drone", "pad", "pluck"], "energy": 0.3},
               ]},
     "sound": {
-        "rev": 1, "floor": "wood", "steps_db": -22,
+        "rev": 2, "floor": "wood", "steps_db": -22,
         "ambience": [{"kind": "wind", "from": 0, "to": "end", "lufs": -46}],
         "sfx": [{"at": "L29+0.02", "kind": "click", "db": -10},
-                {"at": "P1+0.05", "kind": "whoosh", "db": -22},
+                {"at": "P1+0.02", "kind": "whoosh", "db": -17, "dur": 0.6, "keep": True},
                 {"at": "L24+0.9", "kind": "thud", "db": -18},
                 {"at": "L09+0.1", "kind": "click", "db": -20}],
         "music_drops": [["P1", "P1>"]],
