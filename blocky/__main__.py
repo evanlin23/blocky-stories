@@ -34,6 +34,21 @@ QUALITY = {
 }
 
 
+HD_RES = {"720": [720, 1280], "1080": [1080, 1920]}
+
+
+def final_res(q: dict, qn: str, st: dict) -> dict:
+    """The final's drawing size, from story.json `look.render_res` ("720" or "1080"; opt-in, animation audit
+    2026-11-12: 720 x 1280 costs about 1.56x the runner-minutes of 540 x 960, and the Opus critic saw crisper eyes,
+    brows and bevels at TV size). The proof, preview and flash sizes never change."""
+    r = (st.get("look") or {}).get("render_res")
+    if qn != "final" or not r:
+        return q
+    if str(r) not in HD_RES:
+        raise SystemExit(f"look.render_res {r!r}: use one of {sorted(HD_RES)}")
+    return {**q, "res": HD_RES[str(r)]}
+
+
 def quality(a) -> str:
     for q in ("preview", "proof"):
         if getattr(a, q, False):
@@ -168,7 +183,7 @@ def cmd_render(a):
     from blocky import timeline
 
     qn = quality(a)
-    q = QUALITY[qn]
+    q = final_res(QUALITY[qn], qn, story_json(a.story) if qn == "final" else {})
     w = work(a.story)
     tl = json.loads((w / "timeline.json").read_text())
     frames = timeline.frame_list(tl, q["step"])

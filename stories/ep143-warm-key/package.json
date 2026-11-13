@@ -1,11 +1,10 @@
 {
   "title": "My Old House Key Went WARM 🔑",
   "description": "In our town, a key goes warm when somebody's waiting for you behind its door. The pizza guy's keys are always warm.\n\nI still have the key to the blue house on the hill, the one we sold nine years ago. On Monday it went warm. By Wednesday I needed an oven mitt.\n\nIt's made up. A blocky story, built with code and Blender.",
-  "pin": "How long was the key warm before I noticed? Look at the very first shot.",
+  "pin": "The very first shot already shows one pip lit, before Monday. So how long had Jess been waiting for me to notice?",
   "made_for_kids": false,
-  "cover_s": 34.0,
+  "cover_s": 21.3,
   "shape": "welcome-home",
   "opening": "if",
-  "lane": "warm",
-  "hold": "batch 15: scripts only, not built yet"
+  "lane": "warm"
 }

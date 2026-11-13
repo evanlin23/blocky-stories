@@ -18,6 +18,13 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
 | `polish.py` | the polish pack (`look.polish`): cut whooshes, key-word and reveal hits, risers, the room bed, punch-ins, drift, sway, the bright grade, the caption pop |
 | `checks.py` | the checks behind `check`, `preflight` and the tests: the rules, the pace and the stills the edit already holds, and the clip report |
 
+## Drawing size (`look.render_res`, opt-in, 2026-11-12)
+
+The final draws at 540 x 960 and post scales it to 1080 x 1920. A story with `"look": {"render_res": "720"}` draws its
+final at 720 x 1280 instead ("1080" is allowed but untested); the proof, preview and flash sizes stay as they are.
+Animation audit (`docs/research/2026-11-12-animation-audit.md`): 1.56x the drawing time, so about +200 runner-minutes
+for a 60 s film; the Opus critic saw crisper eyes, brows and bevels at TV size and nothing at phone size.
+
 ## story.json
 
 ```jsonc
@@ -261,7 +268,13 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   that doesn't carry on into another a trapezoid of speed (0.25 s to get going and to stop, longer for a run:
   speed / 4 m/s²), same keys and timing, with the footsteps on the eased distance; `idle` gives anyone standing slow
   breathing (6 mm), a weight shift (about 1°), a turn of the body (2°) and a drifting head (5° and 2.5°), from sines
-  at periods that never line up, added on top of their keys. `ones: "moving"` (the default since 2026-11-03, the lead's call)
+  at periods that never line up, added on top of their keys. Two opt-ins (animation audit, 2026-11-12, off by default
+  so proofed films keep their look): `overlap: true` staggers each blend, with the head 0.05 s ahead of the body and the
+  arms 0.07 s behind and 30% slower, so a move reads as a body and not one block; `turn_cap: 220` (degrees per second)
+  lengthens any body or head turn until its eased peak is under the cap, turns a keyed yaw the short way round, and
+  eases a walk into its direction and back instead of snapping (ep54 had a 2,856°/s one-frame snap at 131.0 s; capped:
+  291). Keys too close for the cap keep their timing, and a key with `blend: 0` (a re-staging on a cut) is never moved.
+  `ones: "moving"` (the default since 2026-11-03, the lead's call)
   draws every shot whose camera moves, or where someone walks, on every frame, so the pack's camera moves don't
   judder at 15 drawings a second. With the pack that's nearly every shot: 1.87 to 1.98 times the drawing, about
   30 min more on Actions for a 140 s story. `ones: "walk"` is the opt-out for a long story whose render would run
@@ -281,8 +294,15 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   red (`red_line` 0.78), because the tighter crops enlarge red areas.
 - **Punch-ins** (v2): key words only (the builder's `emph`, the hook, big words, all-caps captions, a key word that
   ends its line), at most `punch_rate` (0.7) per 10 s, evenly spread. Hits keep their own 4 s spacing.
+  `punch_max: 4` (opt-in, animation audit 2026-11-12) keeps at most that many a film: the hook's own punch-in exactly as
+  it was (the owner's swoosh, with its whoosh), then the `twist` line, then the rest by their usual priority (ep54:
+  10 → 4). `fill` is off with it.
 - **Picture:** the `bright` grade raises exposure to at least 1.12 (v2.3) and saturation to 1.1, caps contrast at 1.05,
   the vignette at 0.2 and grain at 0.009, and adds a toe that lifts the darkest tones instead of crushing them (by scaling each pixel with its
   luma's lift, so colours keep their saturation). The
   story's own tints and shot grades stay.
+- **Sharpen** (opt-in, animation audit 2026-11-12): `sharpen: 0.4` adds an unsharp mask (radius 1 px, 40%) after the
+  grade and before grain; `bloom_thresh: 0.85` keeps the glow to the brights (today 0.6). Together on ep124/ep54 clips:
+  edge acuity (p99 gradient) +5 to 7%, Laplacian sharpness +8 to 9%, post only, no render cost. Opus critic: "slight" at
+  TV size, no halos, captions clean; a faint grain lift in flat areas (use 0.3 if it shows).
 - `check` blocks an unknown setting, a `sway` shot that doesn't exist, a punch over 8% and a bed with no recording.

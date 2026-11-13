@@ -22,7 +22,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 11
+REV = 18
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -231,7 +231,7 @@ shot("S13", "L13", fcam("R1", *YG, d=3.0, lens=30, f=0.40), {
 shot("S14", "L14", fcam("R1", *YG, d=2.7, lens=30, f=0.40, az=3, push=0.08), {
     "young": ps("R1", *YG, expr="angry", head=(0, 3))})
 D48 = (-0.55, 1.9)
-shot("S15", "L15", fcam("R1", *D48, d=3.2, lens=30, f=0.40, dx=0.3), {
+shot("S15", "L15", fcam("R1", *D48, d=3.2, lens=30, f=0.40, dx=0.1), {
     "dad48": ps("R1", *D48, expr="neutral", arms=(20, 20), side=(8, 8))})
 shot("S16", "L16", ocam("KA", 0.1, 1.1, 1.1, 3.2, 30, az=0, el=22, push=0.14), {})
 YK = (0.6, G.STAND_Y)
@@ -248,10 +248,11 @@ shot("S20", "L20", fcam("R1", *G.DAD_SEAT, z=0.0, d=3.5, lens=30, f=0.38, dx=0.3
     "dad": ps("R1", *G.DAD_SEAT, expr="neutral", **SIT)})
 chg("dad", "L20.1", blend=0.4, head=(0, 8))
 chg("dad", "L20.1+0.5", blend=0.4, head=(0, -2))
-D21, M21 = (-0.35, 1.25), (0.55, 1.25)
-shot("S21", "L21", ocam("R1", 0.08, 1.6, 1.4, 3.8, 30, push=0.03, arc=0.0), {
-    "dad": ps("R1", *D21, expr="neutral", **SIT),
-    "me": ps("R1", *M21, expr="neutral", **SIT)})
+SIT21 = dict(seat=True, arms=(12, 12), side=(-4, -4))   # near arms in at the sides
+D21, M21 = tuple(G.DAD_SEAT), (G.ME_SEAT[0] + 0.15, G.ME_SEAT[1])   # armchair seat and the couch's right end, 1.4 m apart
+shot("S21", "L21", ocam("R1", 0.2, 1.6, 1.4, 5.6, 30, push=0.0, arc=0.0), {
+    "dad": ps("R1", *D21, expr="neutral", **SIT21),
+    "me": ps("R1", *M21, expr="neutral", **SIT21)})
 shot("S22", "L22", fcam("R1", *G.ME_SEAT, d=3.3, lens=30, f=0.38, dx=-0.25, push=0.07), {
     "me": ps("R1", *G.ME_SEAT, expr="listen", **SIT)})
 shot("S23a", "L23", fcam("R1", -0.85, 1.9, d=3.6, lens=30, f=0.38, dx=0.3), {
@@ -259,7 +260,7 @@ shot("S23a", "L23", fcam("R1", -0.85, 1.9, d=3.6, lens=30, f=0.38, dx=0.3), {
 talk("dad", "L23.1", "L23>")
 shot("S23b", "L23.1", fcam("R1", -0.85, 1.9, d=2.9, lens=30, f=0.38, dx=0.1, push=0.04, arc=1.0), {
     "dad": ps("R1", -0.85, 1.9, expr="smile", arms=(8, 8))})
-shot("S24", "L24", fcam("R7", *G.DAD_CON, d=3.0, lens=30, f=0.30, az=0, push=0.09, arc=0.0), {
+shot("S24", "L24", fcam("R7", *G.DAD_CON, d=3.0, lens=30, f=0.36, az=0, push=0.09, arc=0.0), {
     "dad": ps("R7", *G.DAD_CON, expr="warm", head=(6, 0), **CON_ARMS)})
 chg("dad", "L24.1", blend=0.5, head=(-6, 8))
 shot("S25", "L25", ocam("R1", -0.15, 2.55, 1.7, 2.6, 30, az=72, el=6, push=0.12, arc=2.5), {})
@@ -285,10 +286,10 @@ shot("S32", "L32", fcam("R3", -0.58, 1.95, d=3.1, lens=30, f=0.42, dx=0.26, push
 chg("me", "L32.1", blend=0.4, head=(-6, 6))
 
 # ============================================================================================ 06 thanksgiving
-shot("S33", "L33", fcam("R7B", *G.DAD_CON, d=2.7, lens=30, f=0.28, az=0, push=0.07, arc=0.0), {
+shot("S33", "L33", fcam("R7B", *G.DAD_CON, d=2.7, lens=30, f=0.36, az=0, push=0.07, arc=0.0), {
     "dad": ps("R7B", *G.DAD_CON, expr="smile", head=(-6, 0), **CON_ARMS)})
 chg("dad", "L33.1", blend=0.5, head=(6, 8))
-shot("S34", "L34", ocam("R7B", 0.0, 1.9, 0.95, 2.6, 30, az=0, el=3, push=0.08, arc=0.0, to=[G.ST["R7B"], 1.9, 1.12]), {
+shot("S34", "L34", ocam("R7B", 0.0, 1.9, 1.05, 2.6, 30, az=0, el=3, push=0.08, arc=0.0, to=[G.ST["R7B"], 1.9, 1.22]), {
     "dad": ps("R7B", *G.DAD_CON, expr="warm", head=(8, 6), **CON_ARMS)})
 chg("dad", "L34.1", blend=0.5, head=(-6, 10))
 MN = G.ME_SEAT
@@ -338,8 +339,8 @@ chg("me", "L46.1", blend=0.4, head=(-8, 8))
 shot("S47", "L47", fcam("R6", *ME_B, d=3.2, lens=30, f=0.40, dx=0.0, az=-3, push=0.09), {
     "me": ps("R6", *ME_B, expr="sad", head=(0, 8))})
 chg("me", "L47.2", blend=0.5, head=(8, 12))
-shot("S48", "L48", ocam("KC", 0.0, 1.1, 1.2, 1.6, 30, az=0, el=22, push=0.14, arc=3.0), {})
-shot("S49", "L49", ocam("KD", 0.0, 1.1, 1.2, 1.5, 30, az=-6, el=10, push=0.14, arc=3.0), {})
+shot("S48", "L48", ocam("KC", 0.0, 1.1, 1.1, 2.7, 30, az=0, el=20, push=0.05, arc=3.0), {})
+shot("S49", "L49", ocam("KD", 0.0, 1.1, 1.3, 2.5, 30, az=-6, el=10, push=0.04, arc=3.0), {})
 shot("S50", "L50", ocam("KE", 0.0, 1.1, 1.0, 1.4, 30, az=0, el=70, push=0.06), {})
 shot("S51", "L51", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, push=0.07), {
     "dad": ps("KF", *G.KF_DAD, expr="warm", head=(0, 6), **KF_ARMS)})
@@ -366,14 +367,15 @@ shot("S58", "L58", fcam("KF", *G.KF_DAD, d=3.2, lens=30, f=0.40, el=24, az=-3, p
     "dad": ps("KF", *G.KF_DAD, expr="warm", **KF_ARMS)})
 talk("dad", "L58.1", "L58>")
 chg("dad", "L58.1", blend=0.5, head=(8, 8))
-shot("S59", "L59", fcam("R7O", *G.DAD_CON, d=3.0, lens=30, f=0.30, az=0, push=0.09, arc=0.0), {
+shot("S59", "L59", fcam("R7O", *G.DAD_CON, d=3.0, lens=30, f=0.36, az=0, push=0.09, arc=0.0), {
     "dad": ps("R7O", *G.DAD_CON, expr="warm", head=(0, 4), **CON_ARMS)})
 chg("dad", "L59.1", blend=0.5, head=(8, 10))
 shot("S60", "L60", ocam("R4", -0.15, 2.55, 1.62, 2.4, 30, az=72, el=8, push=0.12, arc=2.5), {})
 SIDE_L, SIDE_R = (-0.6, G.STAND_Y), (0.6, G.STAND_Y)
 CAKE_ARMS = dict(arms=(48, 48), side=(-6, -6))
-shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 4.8, 30, el=7, push=0.09, arc=1.0), {
-    "me": ps("KG", *SIDE_L, expr="smile", **CAKE_ARMS), "dad": ps("KG", *SIDE_R, expr="smile", **CAKE_ARMS)})
+CAKE61 = dict(arms=(30, 30), side=(4, 4))   # arms down and out of each other
+shot("S61", "L61", ocam("KG", 0.0, 1.85, 0.95, 5.8, 30, el=7, push=0.03, arc=1.0), {
+    "me": ps("KG", -0.7, G.STAND_Y, expr="smile", **CAKE61), "dad": ps("KG", 0.7, G.STAND_Y, expr="smile", **CAKE61)})
 chg("me", "L61.1", blend=0.4, head=(10, 4))
 chg("dad", "L61.1", blend=0.4, head=(-10, 4))
 shot("S62", "L62", fcam("KG", *SIDE_L, d=2.9, lens=30, f=0.40, dx=0.2), {

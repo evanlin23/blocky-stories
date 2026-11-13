@@ -22,7 +22,7 @@ import json
 import re
 from pathlib import Path
 
-from blocky import faces
+from blocky import faces, faces_v3, hair3
 from blocky.timeline import STORIES, load_story
 
 TRUE_CLAIM = re.compile(r"\b(true story|truly happened|really happened|actually happened|this happened to me|"
@@ -418,6 +418,14 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
             out.append(("block", f"cast {who}: age must be one of {AGES} (no child characters in peril)"))
         for p in faces.check_original(spec.get("face", {})):
             out.append(("block", f"cast {who}: {p}"))
+        if (st.get("look") or {}).get("style") == "v3":   # the v3 look: its own hair library and faces
+            for p in faces_v3.check_original3(spec.get("face", {})):
+                out.append(("block", f"cast {who}: {p}"))
+            if spec.get("hair", "buzz") not in hair3.STYLES:
+                out.append(("warn", f"cast {who}: hair {spec.get('hair')!r} isn't a v3 style ({', '.join(hair3.STYLES)}): it falls back to a buzz"))
+            for f in spec.get("features", []):
+                if f not in hair3.FEATURES:
+                    out.append(("block", f"cast {who}: feature {f!r} isn't one of {', '.join(hair3.FEATURES)}"))
     whos = set(st.get("cast", {})) | {"narrator", "pause"}
     for ln in st["lines"]:
         if ln.get("who", "narrator") not in whos:
