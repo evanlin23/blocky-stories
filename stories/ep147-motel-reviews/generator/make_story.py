@@ -194,7 +194,7 @@ SOFF = 2.0
 place("L05", "me", (G.EX - 0.72, G.EXT_WALK_Y, 0.0), 0, "delighted", arms=[0, 0])
 place("L05", "dad", (G.EX + 0.72, G.EXT_WALK_Y, 0.0), 0, "delighted", arms=[0, 0])
 mouth("me", "L05", "L05>", 0.35)
-shot("S05", "L05", cam(G.EX, G.EXT_WALK_Y, 1.5, 3.0, 0, 30, cz=1.45))
+shot("S05", "L05", cam(G.EX, G.EXT_WALK_Y, 1.5, 2.6, 0, 30, cz=1.45))
 cue("L04", "stars", n=1)
 show("L04")
 shot("S04a", "L04", cam(*G.EXT_POOL, 0.5, 1.5, 8, 30, cz=0.7))
