@@ -33,11 +33,11 @@ def _neat():
     it reads as a neat head and not a grey box."""
     b, T, F, K, Wd, D, H = hair3._b, hair3.TOP, hair3.FRONT, hair3.BACK, hair3.W, hair3.D, hair3.H
     out = [b("cap", (Wd + 0.04, D + 0.06, 0.3), (0, 0, T - 0.08), bevel=0.12),
-           b("back", (Wd + 0.06, 0.24, H * 0.68), (0, K - 0.07, T - H * 0.34), bevel=0.08),
-           b("part", (0.07, D * 0.5, 0.05), (-Wd * 0.2, F + D * 0.3, T + 0.1), bevel=0.01, mat="hair2"),
+           b("back", (Wd * 0.8, 0.24, H * 0.8), (0, K - 0.07, T - H * 0.4), bevel=0.08),
+           b("backtop", (Wd + 0.06, 0.24, H * 0.34), (0, K - 0.07, T - H * 0.17), bevel=0.08),
            b("sweep", (Wd * 0.62, 0.2, 0.34), (Wd * 0.14, F + 0.02, T - 0.12), bevel=0.07)]
     for sx in (-1, 1):
-        out.append(b(f"side{sx}", (0.2, D * 0.85, H * 0.5), (sx * (Wd / 2 + 0.02), 0.06, T - H * 0.25), bevel=0.06))
+        out.append(b(f"side{sx}", (0.2, D * 0.85, H * 0.34), (sx * (Wd / 2 + 0.02), 0.06, T - H * 0.17), bevel=0.06))
         out.append(b(f"ear{sx}", (0.22, 0.34, 0.5), (sx * (Wd / 2 + 0.13), 0.1, T - H * 0.56), bevel=0.04, mat="hair2"))
     return out
 
@@ -615,9 +615,9 @@ def _animate(kit, story, tl, t, ctx):
     else:
         pen.location = (0, 0, -40)
     kc = sample("key", tl, t, {"mode": "none"})
-    W["key"].location = (G.DESK[0] + 0.62, G.DESK[1] + 0.38, G.DESK_TOP + 0.14) if kc["mode"] == "desk" else (0, 0, -40)
+    W["key"].location = (G.DESK[0] + 0.62, G.DESK[1] + 0.45, G.DESK_TOP + 0.14) if kc["mode"] == "desk" else (0, 0, -40)
     W["key"].rotation_euler = (1.0, 0, math.radians(8))     # the fob leans back against the wall, facing the room
-    W["key"].scale = (1.4, 1.4, 1.4)
+    W["key"].scale = (2.0, 2.0, 2.0)
     W["lead"].location = (0, 0.05, G.DESK_TOP - 0.03 if sample("drawer", tl, t, {"v": 0.0})["v"] > 0.5 else -40)
     W["shirts"].location = (G.DESK[0] - 0.05, G.DESK[1] + 0.3, G.DESK_TOP) if sample("shirts", tl, t, {"v": 0.0})["v"] > 0.5 else (0, 0, -40)
     sc = sample("shirt", tl, t, {"mode": "none", "who": "dad"})

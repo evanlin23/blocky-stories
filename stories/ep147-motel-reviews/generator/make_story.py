@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 6
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -63,7 +63,7 @@ cast = {
                   pattern="stripes", pattern_c="#ff7a2e", head_scale=1.04, width=1.04),
     # the closet man, looks about 40: very neat black hair with a side part, ears and a nape (set.py swaps the "buzz"
     # silhouette for it in this story), a charcoal suit, gray tie
-    "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "buzz", "#1a1923", hair_c2="#e8c8a8", sleeves="long",
+    "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "buzz", "#232230", hair_c2="#e8c8a8", sleeves="long",
                   extras=["tie"], extra_c="#8d93a3", collar="#f4f4f4", body_width=0.94),
     # the clerk, about 60: bald, big red reading-glasses frames, a mint motel shirt
     "clerk": person("#e8c4a0", "#7fe0c4", "#8a7c66", "#8a6a48", "bald", "#e8573a", features=["glasses"],
@@ -288,7 +288,7 @@ key("man", "L23.1", [G.MAN_DESK[0] - 0.2, 1.5, 0.0], yaw=-90, expr="hollow", arm
 key("man", "L23.2", [G.MAN_DESK[0] - 0.2, 1.55, 0.0], yaw=180, expr="hollow", arms=[80, 80], blend=0.45)
 shot("S23a", "L23", camp((0.8, -5.2, 1.4), (0.8, 1.9, 1.4), 30, (-0.7, -5.2, 1.4), (-0.7, 1.9, 1.4)))
 cue("L23.2", "key", mode="desk", dur=0.1)
-shot("S23b", "L23.2", cam(-0.65, 1.9, 1.3, 2.4, 0, 34, cz=1.3))
+shot("S23b", "L23.2", cam(-0.5, 1.9, 1.3, 2.2, 0, 34, cz=1.3))
 # L24: he turns, nods, walks to the door
 MD = [G.MAN_DESK[0] - 0.2, 1.55, 0.0]
 key("man", "L24-0.3", MD, yaw=180, expr="hollow", arms=[0, 0], blend=0.2)
