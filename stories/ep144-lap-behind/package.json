@@ -6,6 +6,5 @@
   "cover_s": 11.5,
   "shape": "self-echo",
   "opening": "must",
-  "lane": "eerie",
-  "hold": "batch 15: scripts only, not built yet"
+  "lane": "eerie"
 }
