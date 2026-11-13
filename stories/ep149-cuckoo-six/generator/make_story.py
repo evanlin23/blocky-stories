@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 12
+REV = 17
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())
@@ -108,7 +108,7 @@ key("grandpa", "L04b", *G.GRANDPA, expr="warm", blend=0.3, **SIT)
 key("mom", "L04b", *G.MOM, expr="worried", **SITW)
 key("me", "L05", *G.ME, expr="uneasy", blend=0.4, **SITE)
 key("dad", "L05", *G.DAD, expr="uneasy", **SITE)
-key("grandpa", "L08", *G.GRANDPA, expr="smile", blend=0.3, arms=(78, 78), side=(2, 2), seat=True)
+key("grandpa", "L08", *G.GRANDPA, expr="smile", blend=0.3, arms=(95, 95), side=(2, 2), seat=True)
 # ---- the answer
 key("me", "L10", *G.ME, expr="smile", blend=0.4, **SITE)
 # ---- the reveal: Ivy steps out from behind the curtain's west edge (0.9 s, facing us), thumb up, laughing
@@ -123,8 +123,8 @@ key("dad", "L12.0+0.15", *G.DAD, expr="laugh", blend=0.3, **SITE)
 key("mom", "L12.0+0.15", *G.MOM, expr="laugh", blend=0.3, **SITW)
 key("grandpa", "L12", *G.GRANDPA, expr="delighted", blend=0.3, **SIT)
 # she shuffles the last 0.6 m facing us (keep_yaw), thumb still up, then her arms come round Grandpa's shoulders
-key("ivy", "L22-0.3", *G.IVY_HUG, yaw=0, expr="laugh", arms=(8, 8), side=(6, 6), keep_yaw=True, lean=0, z=-0.25)
-key("ivy", "L22+0.3", *G.IVY_HUG, yaw=0, expr="laugh", arms=(45, 45), side=(-20, -20), blend=0.5, lean=0, z=-0.25)
+key("ivy", "L22-0.3", *G.IVY_HUG, yaw=0, expr="laugh", arms=(8, 8), side=(6, 6), keep_yaw=True, lean=0, z=-0.42)
+key("ivy", "L22+0.3", *G.IVY_HUG, yaw=0, expr="laugh", arms=(80, 10), side=(-35, 6), blend=0.5, lean=0, z=-0.42)
 key("grandpa", "L22", *G.GRANDPA, expr="laugh", blend=0.4, **SIT)
 key("grandma", "L22", *G.GRANDMA, expr="warm", blend=0.4, **SITW)
 key("grandpa", "L23", *G.GRANDPA, expr="smile", blend=0.5, **SIT)
@@ -199,7 +199,7 @@ shot("S05", "L04b", fcam(GF[0], GF[1], 2.4, f=0.40, z=SEATZ, push=0.06))
 MASTER = (0.1, 0.4, 0.9)
 shot("S06", "L05", cam(*MASTER, 5.6, 15, el=26, push=0.03, arc=1.0))
 shot("S08", "L07", cam(*MASTER, 5.5, 15, el=26, az=-4, push=0.03, arc=1.0))
-shot("S09", "L08", cam(0.0, 1.85, 0.8, 2.7, 30, el=30, az=0, push=0.03, arc=0.5))
+shot("S09", "L08", cam(0.0, 1.85, 1.0, 2.4, 30, el=14, az=0, push=0.03, arc=0.5))
 # P01: the 4.0 s hold on the question
 shot("S11a", "P01", cam(*MASTER, 5.6, 15, el=26, push=0.03, arc=1.0))
 shot("S11b", "P01+1.4", cam(MASTER[0] + 0.1, MASTER[1], 0.9, 5.6, 15, el=26, az=3, push=0.03, arc=1.0))
@@ -212,8 +212,8 @@ shot("S14b", "L11b+0.7", cam(1.45, 2.15, 1.0, 2.6, 40, el=40, az=-35, push=0.0, 
 # 06 the reveal
 shot("S15", "L12", cam(1.2, 2.4, 1.45, 4.6, 55, el=20, az=-30, push=0.0, arc=0.0, to=[1.1, 2.3, 1.45]))
 shot("S16", "L12.1", cam(1.0, 1.2, 1.05, 4.2, 28, el=8, az=-16, push=0.04, arc=0.5))
-shot("S19", "L22", cam(0.4, 2.2, 1.15, 3.2, 24, el=18, az=0, push=0.02, arc=0.3))
-shot("S19b", "L22+0.8", cam(0.4, 2.2, 1.15, 3.0, 24, el=16, az=4, push=0.02, arc=0.3))
+shot("S19", "L22", cam(0.3, 2.2, 1.0, 3.0, 26, el=34, az=0, push=0.02, arc=0.3))
+shot("S19b", "L22+0.8", cam(0.3, 2.2, 1.0, 2.8, 26, el=32, az=4, push=0.02, arc=0.3))
 shot("S24", "L23", cam(0.0, 2.4, 1.1, 5.6, 34, el=3, push=0.04, arc=0.5))
 
 shots, names = [], {}
