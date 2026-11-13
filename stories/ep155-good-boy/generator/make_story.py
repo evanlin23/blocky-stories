@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the reveal picture is held 1.6 s: a silent beat after "Good BOY." and a closing beat after the last thump
@@ -266,7 +266,7 @@ place("L08.3", "me", (SM[0], SM[1], DECK), 0, "smile", head=[0, 0])
 place("L08.3", "rory", (SR[0], SR[1], DECK), 0, "smile", head=[8, 0])
 place("L08.3", "dale", (HX - 0.2, FY + 0.55, DECK), 0, "smile")
 cue("L08.3", "door", v=1.0)
-shot("S08a", "L08.3", fc(58.55, SM[1], DECK + HZ["mesit"], 2.9, -9, 30, up=0.10))
+shot("S08a", "L08.3", fc(58.3, SM[1], DECK + HZ["mesit"], 2.9, 0, 30, up=0.10))
 show("L08.5", "rory")
 place("L08.5", "rory", (SR[0], SR[1], DECK), 0, "laugh", head=[0, 0])
 cue("L08.5", "door", v=0.0)
@@ -324,7 +324,7 @@ cue("L13", "vac", v=1.0)
 show("L13", "dale")
 sit("L13", "me", 0.0)
 place("L13", "dale", (HX + 0.1, 11.75, DECK), 0, "smile", arms=[62, 62])
-shot("S13a", "L13", camp([HX + 1.5, 8.7, DECK + 1.9], [HX + 0.45, 11.1, DECK + 0.0], 30, pos2=[HX + 1.3, 9.0, DECK + 1.8]))
+shot("S13a", "L13", camp([HX + 1.9, 8.3, DECK + 1.5], [HX + 0.4, 11.0, DECK + 0.05], 30, pos2=[HX + 1.6, 8.8, DECK + 1.45]))
 cue("L13.3", "vac", v=0.0)
 show("L13.3", "me")
 sit("L13.3", "me", 1.0)
@@ -378,11 +378,11 @@ place("L18.2", "me", (SM[0], SM[1], DECK), 0, "warm", head=[0, 0])
 shot("S18b", "L18.2", fc(SM[0] + 0.4, SM[1], DECK + HZ["mesit"], 2.3, -33, 34))
 
 # ----------------------------------------------------------------------------------------------- 19 the nudge
-ME19 = (SD[0] - 0.78, SM[1])
+ME19 = (SD[0] - 0.95, SM[1])
 show("L19", "me", "dale")
 place("L19", "dale", (SD[0], SD[1], DECK), 0, "sad", arms=[62, 62], head=[-20, 14])
 place("L19", "me", (SD[0] - 1.0, ME19[1], DECK), 0, "warm", head=[0, 0])
-key("me", "L19+0.3", ME19 + (DECK,), yaw=0, expr="warm", head=[30, 14], lean=14, blend=0.7)
+key("me", "L19+0.3", ME19 + (DECK,), yaw=0, expr="warm", head=[30, 14], lean=10, blend=0.7)
 shot("S19a", "L19", fc((ME19[0] + SD[0]) / 2, SM[1], DECK + 1.44, 2.4, -12, 34))
 key("me", "L19.2", yaw=0, expr="stunned", head=[0, 0], lean=0, blend=0.3)
 show("L19.2", "me")
@@ -403,7 +403,7 @@ show("L20.2", "dale")
 place("L20.2", "dale", (ME19[0], KY, 0.30), 180, "warm", arms=[0, 0])
 cue("L20.2", "pose", who="dale", sit=0.0, kneel=1.0, dur=0.0)
 mouth("dale", "L21", "L21.1", 0.4)
-shot("S20b", "L20.2", camp([ME19[0] + 0.5, 11.7, DECK + 0.95], [ME19[0], KY, DECK + 0.95], 17, pos2=[ME19[0] + 0.35, 11.5, DECK + 0.95]))
+shot("S20b", "L20.2", camp([ME19[0] + 0.5, 11.7, DECK + 1.1], [ME19[0], KY, DECK + 1.1], 17, pos2=[ME19[0] + 0.35, 11.5, DECK + 1.1]))
 
 # ----------------------------------------------------------------------------------------------- 21 the reveal
 show("L21.1")
@@ -415,12 +415,12 @@ shot("S21b", "L21.1", camp([SM[0] - 2.1, 7.6, DECK + 0.9], [SM[0] + 0.5, 11.2, D
 cue("L22", "thump")
 cue("L22.1", "thump")
 cue("L22", "dog", v=1.0, x=SM[0], y=SM[1] + 0.1, z=DECK + 0.03, yaw=0.0, sit=1.0, wag=0.0, tongue=1.0)
-shot("S22a", "L22", cam(SM[0], SM[1] + 0.25, DECK + 0.35, 1.3, -80, 34, cz=DECK + 0.3, push=(1.0, DECK + 0.35)))
+shot("S22a", "L22", cam(SM[0], SM[1] + 0.25, DECK + 0.45, 2.2, -80, 34, cz=DECK + 0.4, push=(1.9, DECK + 0.45)))
 show("P02", "rory")
 sit("P02", "rory", 1.0)
 place("P02", "rory", (SR[0], SR[1], DECK), 0, "laugh", head=[22, 0])
 cue("P02", "dog", v=1.0, x=SM[0], y=SM[1] + 0.1, z=DECK + 0.03, yaw=-40, sit=1.0, wag=1.0, tongue=1.0)
-shot("S22b", "P02", cam(58.2, SM[1], DECK + 0.85, 2.6, -4, 30, cz=DECK + 0.85))
+shot("S22b", "P02", cam(58.2, SM[1], DECK + 0.8, 2.3, -4, 30, cz=DECK + 0.8))
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)

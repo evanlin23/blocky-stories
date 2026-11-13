@@ -773,7 +773,7 @@ TOD = {
                 pane=("#dff0ff", 1.3), pos=(46, -8, 22)),
     "gold": dict(sky="#ffcf94", ss=0.9, sun="#ffb064", sg=0.9, face=1.0, lant=0.8, lamp=0.0, dfill=0.0, key=0.0, wall=1.0,
                  pane=("#dff0ff", 1.3), pos=(40, -12, 6)),
-    "dusk": dict(sky="#6a86d8", ss=0.8, sun="#ffb890", sg=0.1, face=0.2, lant=4.0, lamp=1.0, dfill=0.8, key=1.0, wall=0.16,
+    "dusk": dict(sky="#5a74c8", ss=0.3, sun="#ffb890", sg=0.1, face=0.2, lant=4.0, lamp=0.6, dfill=0.45, key=1.0, wall=0.16,
                  pane=("#5f7fd6", 0.9), pos=(40, -12, 4)),
 }
 
@@ -912,10 +912,12 @@ def animate(kit, story, tl, t, ctx):
     sv2 = sample("strap", tl, t, {"v": 0.0})["v"] > 0.5
     hl, hr = hand("dale", -1), hand("dale", 1)
     if sv2 and hl is not None and hr is not None:
-        mid = (hl + hr) / 2 + Vector((0, 0, -0.07))
+        ly = (hl.y + hr.y) / 2 - 0.1
+        pl_, pr_ = Vector((hl.x, ly, G.DECK + 0.64)), Vector((hr.x, ly, G.DECK + 0.64))
+        mid = (pl_ + pr_) / 2 + Vector((0, -0.05, -0.05))
         W["strap"].hide_render = W["strap2"].hide_render = False
-        place_seg(W["strap"], hl + Vector((0, 0, 0.02)), mid)
-        place_seg(W["strap2"], mid, hr + Vector((0, 0, 0.02)))
+        place_seg(W["strap"], pl_, mid)
+        place_seg(W["strap2"], mid, pr_)
     else:
         W["strap"].hide_render = W["strap2"].hide_render = True
         W["strap"].location = W["strap2"].location = (0, 0, -40)
