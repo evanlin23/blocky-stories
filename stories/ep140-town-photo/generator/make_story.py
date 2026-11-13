@@ -163,8 +163,8 @@ raw("me", "L03", expr="scared", blend=0.2)
 raw("me", "L03+1.6", expr="worried", blend=0.2)
 
 # ================================================================================================ L04, L05 the example
-cue("L04", "pr_last", on=True, pos=[BOARDX + 0.6, 0.82, 1.35], rot=[0, -9], s=1.5)
-S("L04", "S04", C((BOARDX + 0.3, 0.9, 1.5), 1.9, az=-3, el=3, w2=1.75), note="S04 last year's print on the board's ledge, a gap in row two, ringed")
+cue("L04", "pr_last", on=True, pos=[BOARDX + 0.62, 0.82, 1.4], rot=[0, -7], s=2.0)
+S("L04", "S04", C((BOARDX + 0.7, 0.9, 1.4), 1.3, az=-3, el=3, w2=1.15), note="S04 last year's print on the board's ledge, a gap in row two, ringed")
 put("benny", "L05", [BEACHX, 0.2, 0.0], 0, "laugh", arms=[40, 40])
 cue("L05", "pr_last", on=False)
 S("L05", "S05", C((BEACHX, 0.0, 1.35), 1.9, az=0, el=3, w2=1.75), note="S05 Uncle Benny at his kite stall, laughing, a big plain diamond kite at chest height")
@@ -253,6 +253,7 @@ gone("me", "L24")
 gone("okafor", "L24")
 sit("okafor", "L24", OK_S, "smile", rise=0.4)
 put("grandma", "L24", GM_S, 0, "smile")
+put("mom", "L24", MOM_S, 0, "smile")
 cue("L24", "cheer", on=False)
 S("L24", "S24", C((-0.4, 3.0, 1.5), 1.75, az=0, el=2, w2=1.55), note="S24 Mr. Okafor sits in the front row beside Grandma, smiling")
 put("me", "L25", ME_C, 180, "neutral", arms=[0, 0], head=[0, 0])
@@ -263,7 +264,7 @@ S("L26", "S26a", X((0.1, -3.9, 1.6), (-0.3, 4.6, 1.5), 40, (0.1, -3.6, 1.6), (-0
 cue("L26.2", "vf", on=False)
 raw("mom", "L26.2", expr="smile", arms=[0, 0], side=[0, 0], blend=0.4)
 raw("grandma", "L26.2", expr="smile", blend=0.4)
-S("L26.2", "S26b", C((-0.4, 4.8, 2.2), 1.7, az=0, el=18, lens=70, w2=1.5), clear=True, note="S26b Mom smiling, the empty seat beside her")
+S("L26.2", "S26b", C((-0.7, 4.8, 1.85), 1.35, az=0, el=12, lens=70, w2=1.2), clear=True, note="S26b Mom smiling, the empty seat beside her")
 cue("L26.2+0.45", "board", g="smudge")
 cue("L26.2+0.66", "board", g="b859")
 cue("L26.2+0.66", "tag", g="b")
@@ -287,7 +288,8 @@ S("P1", "S30", C((-0.4, -4.95, 1.2), 1.0, az=-150, el=4, w2=0.9), back=True, not
 cue("L31", "pr_final", on=True, pos=[-0.5, -4.85, 1.5], rot=[180, 0], s=1.5)
 cue("L31", "cheer", on=False)
 S("L31", "S31a", C((-0.5, -4.85, 1.2), 1.0, az=-150, el=4, w2=0.9), back=True, note="S31a the print: Mr. Okafor in the front row, smiling")
-S("L32", "S31b", C((-0.5, -4.85, 1.31), 0.42, az=-150, el=3, w2=0.34), back=True, note="S31b punch in on his face in the print")
+S("L32", "S31o", C((0.0, 3.0, 1.18), 0.9, az=0, el=2, w2=0.8), note="S31o Mr. Okafor himself in the front row, smiling (the print's face, seen for real)")
+S("L32.1", "S31b", C((-0.5, -4.85, 1.31), 0.42, az=-150, el=3, w2=0.34), back=True, note="S31b punch in on his face in the print")
 cue("L33", "pr_final", on=False)
 S("L33", "S32", C((-1.0, 3.0, 1.45), 1.3, az=0, el=2, w2=1.15), note="S32 Grandma, stunned, then smiling")
 raw("grandma", "L33", expr="wide", blend=0.3)
@@ -341,7 +343,7 @@ story = {
     "cues": cues,
     "set_moves": [],
     "frames_ok": [],
-    "framing_ok": ["S31b"],
+    "framing_ok": [],
     "framing_props": {"photo": [-4.6, 1.0, 1.5], "twelve": [-4.6, 1.0, 1.5], "eight": [-4.6, 1.0, 1.5], "fifty": [-4.6, 1.0, 1.5],
                       "nine": [-4.6, 1.0, 1.5], "it": [-0.5, -4.85, 1.4]},
     "staging_ok": ["S33/me+okafor close on purpose: he steps in and pats my shoulder, no overlap",
