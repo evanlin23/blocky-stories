@@ -6,6 +6,5 @@
   "cover_s": 26.0,
   "shape": "it-was-me",
   "opening": "if",
-  "lane": "warm",
-  "hold": "batch 15: scripts only, not built yet"
+  "lane": "warm"
 }
