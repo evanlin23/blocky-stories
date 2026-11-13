@@ -298,13 +298,13 @@ place("L22.2", "man", MAN0, 180, "hollow", arms=[0, 0])
 # L23: he steps out toward us, along the closet front, to the desk
 S23 = [G.MAN[0], 1.5, 0.0]
 key("man", "L23", S23, yaw=0, expr="hollow", arms=[0, 0], blend=0.25)
-key("man", "L23.1", [-0.4, 1.5, 0.0], yaw=-90, expr="hollow", arms=[0, 0], blend=0.4)
-key("man", "L23.2", [-0.4, 1.55, 0.0], yaw=180, expr="hollow", arms=[80, 80], blend=0.45)
-shot("S23a", "L23", camp((1.0, -1.6, 1.4), (1.1, 1.9, 1.4), 30, (-0.2, -1.6, 1.4), (-0.3, 1.9, 1.4)))
+key("man", "L23.1", [-1.0, 1.5, 0.0], yaw=-90, expr="hollow", arms=[0, 0], blend=0.4)
+key("man", "L23.2", [-1.0, 1.55, 0.0], yaw=180, expr="hollow", arms=[80, 80], blend=0.45)
+shot("S23a", "L23", camp((1.85, -3.0, 1.4), (1.85, 1.9, 1.4), 30, (-0.5, -2.6, 1.4), (-0.7, 1.9, 1.4)))
 cue("L23.2", "key", mode="desk", dur=0.1)
-shot("S23b", "L23.2", cam(-0.62, 1.9, 1.15, 1.7, 0, 34, cz=1.15))
+shot("S23b", "L23.2", cam(-0.1, 1.9, 1.2, 1.5, 0, 34, cz=1.2))
 # L24: he turns, nods, walks to the door
-MD = [-0.4, 1.55, 0.0]
+MD = [-1.0, 1.55, 0.0]
 key("man", "L24-0.3", MD, yaw=180, expr="hollow", arms=[0, 0], blend=0.2)
 key("man", "L24+0.4", MD, yaw=0, expr="hollow", arms=[0, 0], head=[0, 0], blend=0.7)
 key("man", "L24.1-0.2", MD, yaw=0, expr="hollow", arms=[0, 0], head=[0, 22], blend=0.25)
@@ -429,7 +429,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": ["S02", "S22"],
-    "framing_ok": ["S08", "S08b", "S15", "S19b", "S01b", "S24b"],  # the closet man faces the wall on purpose (the script: back only until L22)
+    "framing_ok": ["S08", "S08b", "S15", "S19b", "S01b", "S24b", "S23b"],  # the closet man faces the wall on purpose (the script: back only until L22)
     "frames_ok": [],
     "staging_ok": [],
     "phonemes": {},
