@@ -1,0 +1,22 @@
+{
+ "stage": "final",
+ "film": "14024494030",
+ "run": "43396984821",
+ "sha": "40ed89fa791ca99c42b0ccf40558c51b276a872c",
+ "verdict": "pass",
+ "date": "2026-11-13",
+ "checked": [
+  "story files unchanged since proof sha 543a2f3f (empty diff)",
+  "every frame scanned numerically: black, flat, clipped-white",
+  "frames every 2 s + every 0.2 s of first 3 s, phone + TV 1920 canvas",
+  "first 3 s and the rule",
+  "cover frame (26.0 s)",
+  "staging.py (yaw) 0 findings; frames.py 0 findings",
+  "loudness, true peak, 4 kHz windows, tail",
+  "flash report",
+  "craft vs proof",
+  "package and gate"
+ ],
+ "craft": "**ep150-dad-pillow**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.1 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 18.2 | 14.0– | ok |\n| macro.motion_energy_q | 6.43 | 6.0– | ok |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 8.01 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.081 | –0.25 | ok |\n| spec.shot_p90_s | 1.84 | –2.5 | ok |\n| macro.longest_still_s | 0.13 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.0 | –1.0 | ok |\n| macro.motion_energy_mean | 2.75 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.67 | 0.4– | ok |\n| macro.brightness_mean | 0.686 | 0.35– | ok |\n| macro.brightness_first_3s | 0.683 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.431 | 0.42– | ok |\n| macro.contrast_mean | 0.219 | 0.18– | ok |\n| spec.face_big_share | 0.709 | 0.4– | ok |\n| spec.caption_share | 0.976 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.865 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.0 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 52.0 | –120 | ok |\n| spec.sound_events_per_10s | 3.78 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 14.3 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.9 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0383 | –0.08 | ok |\n| sound.hf_jump_max | 0.0126 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Final film 1080x1920, 1344 frames, 44.93 s, sha 40ed89fa. Story picture/sound files unchanged since proof sha 543a2f3f (empty git diff), so this confirms the passed proof. Craft matches the proof within noise: same 2 warns (spec.cuts_per_10s 8.01 vs 5.5-8.0, sound.voice_bed_gap_db 14.3 vs 8.0-14.0), both a hair over the band, no block, no near; all other metrics ok.\nEvery frame scanned numerically (fps 5): luma mean 0.61-0.77, no black, no flat region (largest quantized single-colour share 0.33 at the hall walls); true clipped-white (all 3 ch >0.98) at most 1.8% of a frame in the sunny guest room (3.8-5.6 s), same as proof, no voids. frames.py and staging.py (yaw) both 0 findings.\nFirst second: me asleep face-down-sideways on the blue pillow in the sunny guest room, rule card (pillow + moon) top left, slow push; 'If you sleep on someone else's PILLOW, you dream THEIR dream.' Rule pictured from frame 1, stakes 'my stepdad's by mistake' land by ~3 s, about me by 0:05. Concrete hook.\nFrames at phone and TV (1920) size: faces read, captions inside the safe area and readable, rule meter (night count 1/2/3) always on screen. Booth and stair sits show separate legs, no merge or limb-through-body; the dog (buddy's bed) reads as a dog, not silly. No stray text/logo/real word. No sharpening halo or texture artifact visible at full res.\nCover (26.0 s, matches cover_s and cover.txt): Dad close-up, mustache, worried, caption 'said, \"Don't.' - strong face, reads at thumbnail size, no twist spoiled.\nAudio: -14.1 LUFS, true peak -1.9 dBTP, LRA 1.2; 4 kHz share max 0.038 per 5 s window, largest jump 0.0126; no silence; voice never buried; tail peak clean, no cut-off.\nFlash: house bar pass (general <=6, general_3f extended <4s, red 0, bright cuts 0). Package: title/description/pin/cover match the film, narrator male, no 'husband', opening 'if' tag matches L01; python -m blocky gate: OPEN."
+}

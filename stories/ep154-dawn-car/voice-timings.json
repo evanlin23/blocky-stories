@@ -1,0 +1,773 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In our town, you can't hide where you'd rather be. Your car drives itself there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.362,
+   "onset": 0.172,
+   "end": 3.172,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     1.008
+    ],
+    [
+     1.008,
+     1.19
+    ],
+    [
+     1.19,
+     1.741
+    ],
+    [
+     1.845,
+     2.44
+    ],
+    [
+     2.44,
+     3.172
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Dad's leaves at five forty every morning. Empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.069
+    ],
+    [
+     1.069,
+     1.603
+    ],
+    [
+     1.698,
+     2.276
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Mister Fenn's car goes to the beach every lunch break.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.026
+    ],
+    [
+     1.026,
+     1.371
+    ],
+    [
+     1.371,
+     2.328
+    ]
+   ]
+  },
+  "L04": {
+   "text": "His boss's car parks right behind it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.741,
+     1.138
+    ],
+    [
+     1.138,
+     1.776
+    ]
+   ]
+  },
+  "L05": {
+   "text": "So when Mom asked Dad where he'd rather be,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.026
+    ],
+    [
+     1.026,
+     1.241
+    ],
+    [
+     1.241,
+     1.862
+    ]
+   ]
+  },
+  "L06": {
+   "text": "he said, \"Right here.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.517,
+     1.086
+    ]
+   ]
+  },
+  "L07": {
+   "text": "At five forty, his car said otherwise.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.732,
+     1.034
+    ],
+    [
+     1.034,
+     1.828
+    ]
+   ]
+  },
+  "L08": {
+   "text": "It comes back at six thirty with the heater on high. Dad hates the heater.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.241,
+   "onset": 0.155,
+   "end": 3.034,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     1.077
+    ],
+    [
+     1.077,
+     1.414
+    ],
+    [
+     1.414,
+     1.897
+    ],
+    [
+     2.009,
+     2.466
+    ],
+    [
+     2.466,
+     3.034
+    ]
+   ]
+  },
+  "L09": {
+   "text": "The passenger seat is pushed all the way back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.768
+    ],
+    [
+     0.768,
+     1.086
+    ],
+    [
+     1.086,
+     1.259
+    ],
+    [
+     1.259,
+     1.879
+    ]
+   ]
+  },
+  "L10": {
+   "text": "And on the dashboard, every morning, one blueberry muffin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.155,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.759
+    ],
+    [
+     0.784,
+     1.31
+    ],
+    [
+     1.388,
+     2.466
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Dad eats it. He thinks Mom leaves it. Mom thinks he buys it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     0.845
+    ],
+    [
+     0.845,
+     1.466
+    ],
+    [
+     1.543,
+     1.87
+    ],
+    [
+     1.87,
+     2.552
+    ]
+   ]
+  },
+  "L12": {
+   "text": "So Friday, five thirty-nine, I hid in the back seat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     1.293
+    ],
+    [
+     1.362,
+     1.612
+    ],
+    [
+     1.612,
+     1.724
+    ],
+    [
+     1.724,
+     2.379
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Five forty. \"Click.\" The car started by itself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.707,
+     0.983
+    ],
+    [
+     1.069,
+     1.328
+    ],
+    [
+     1.328,
+     2.259
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Five fifty-two. \"Beep.\" It stopped by the stone wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.845,
+     1.103
+    ],
+    [
+     1.164,
+     1.5
+    ],
+    [
+     1.5,
+     1.655
+    ],
+    [
+     1.655,
+     2.397
+    ]
+   ]
+  },
+  "L15": {
+   "text": "A tall guy in a cook's apron was waiting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     0.741
+    ],
+    [
+     0.741,
+     1.207
+    ],
+    [
+     1.207,
+     1.879
+    ]
+   ]
+  },
+  "L16": {
+   "text": "He got in the front seat, pushed it all the way back,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.931
+    ],
+    [
+     1.0,
+     1.233
+    ],
+    [
+     1.233,
+     1.397
+    ],
+    [
+     1.397,
+     2.017
+    ]
+   ]
+  },
+  "L17": {
+   "text": "and said, \"Morning, sir,\" to nobody.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.466,
+     0.966
+    ],
+    [
+     1.069,
+     1.759
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Six o'clock. The diner. He left a muffin on the dash.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.19,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.698,
+     1.172
+    ],
+    [
+     1.259,
+     1.509
+    ],
+    [
+     1.509,
+     1.801
+    ],
+    [
+     1.801,
+     2.466
+    ]
+   ]
+  },
+  "L19": {
+   "text": "\"Thanks for stopping,\" he said. \"See you Monday.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.19,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.19,
+     0.741
+    ],
+    [
+     0.784,
+     1.155
+    ],
+    [
+     1.293,
+     1.983
+    ]
+   ]
+  },
+  "L20": {
+   "text": "I told Dad. So Monday, five forty, he rode in the driver's seat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.207,
+   "onset": 0.155,
+   "end": 3.017,
+   "chunks": [
+    [
+     0.155,
+     0.828
+    ],
+    [
+     0.922,
+     1.328
+    ],
+    [
+     1.362,
+     1.793
+    ],
+    [
+     1.828,
+     2.112
+    ],
+    [
+     2.112,
+     2.224
+    ],
+    [
+     2.224,
+     3.017
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Five fifty-two. \"Beep.\" The guy got in and looked at Dad,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.879,
+     1.172
+    ],
+    [
+     1.259,
+     1.5
+    ],
+    [
+     1.5,
+     1.733
+    ],
+    [
+     1.733,
+     1.957
+    ],
+    [
+     1.957,
+     2.483
+    ]
+   ]
+  },
+  "L22": {
+   "text": "and said, \"Oh. You're real.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.5,
+     0.586
+    ],
+    [
+     0.621,
+     1.241
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Dad went red. Last spring, he drove past this guy in the rain, didn't stop, and wished he had.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 4.0,
+   "onset": 0.172,
+   "end": 3.793,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.922,
+     1.328
+    ],
+    [
+     1.353,
+     1.923
+    ],
+    [
+     1.923,
+     2.181
+    ],
+    [
+     2.181,
+     2.552
+    ],
+    [
+     2.577,
+     2.948
+    ],
+    [
+     2.974,
+     3.215
+    ],
+    [
+     3.215,
+     3.793
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Every morning since, his car has gone back to stop for him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ],
+    [
+     0.983,
+     1.285
+    ],
+    [
+     1.285,
+     1.759
+    ],
+    [
+     1.759,
+     2.069
+    ],
+    [
+     2.069,
+     2.603
+    ]
+   ]
+  },
+  "L25": {
+   "text": "And this morning, at five forty, Mom's car left too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.56,
+     1.138
+    ],
+    [
+     1.19,
+     1.603
+    ],
+    [
+     1.603,
+     2.259
+    ]
+   ]
+  },
+  "L26": {
+   "text": "She wants a muffin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.19,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.19,
+     0.492
+    ],
+    [
+     0.492,
+     1.103
+    ]
+   ]
+  }
+ }
+}
