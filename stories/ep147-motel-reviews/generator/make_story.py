@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -63,7 +63,7 @@ cast = {
                   pattern="stripes", pattern_c="#ff7a2e", head_scale=1.04, width=1.04),
     # the closet man, looks about 40: very neat black hair with a side part, ears and a nape (set.py swaps the "buzz"
     # silhouette for it in this story), a charcoal suit, gray tie
-    "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "buzz", "#0c0b12", hair_c2="#e8c8a8", sleeves="long",
+    "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "buzz", "#1a1923", hair_c2="#e8c8a8", sleeves="long",
                   extras=["tie"], extra_c="#8d93a3", collar="#f4f4f4", body_width=0.94),
     # the clerk, about 60: bald, big red reading-glasses frames, a mint motel shirt
     "clerk": person("#e8c4a0", "#7fe0c4", "#8a7c66", "#8a6a48", "bald", "#e8573a", features=["glasses"],
@@ -213,8 +213,8 @@ shot("S06", "L06", cam(*ME_FACE, 2.2, -8, 30, cz=1.55))
 cue("L07", "card", mode="none", who="me", kind="ours")
 show("L07", "dad")
 place("L07", "dad", (0.55, 0.75, 0.0), 120, "crylaugh", arms=[0, 0], head=[-40, 0])
-key("dad", "L07.2", [1.15, 1.7, 0.0], yaw=150, expr="crylaugh", arms=[0, 0], head=[-45, 0], blend=0.35)
-key("dad", "L07.2+0.45", [1.15, 1.7, 0.0], yaw=150, expr="crylaugh", arms=[0, 78], head=[-45, 0], blend=0.35)
+key("dad", "L07.2", [1.4, 1.8, 0.0], yaw=160, expr="crylaugh", arms=[0, 0], head=[-50, 0], blend=0.35)
+key("dad", "L07.2+0.45", [1.4, 1.8, 0.0], yaw=160, expr="crylaugh", arms=[0, 52], head=[-50, 0], blend=0.35)
 shot("S07", "L07", cam(1.4, 1.9, 1.5, 2.6, 28, 30, cz=1.5))
 cue("L08", "closet", v=1.0, dur=0.6)
 show("L08", "man")
@@ -286,7 +286,7 @@ S23 = [G.MAN[0], 1.5, 0.0]
 key("man", "L23", S23, yaw=0, expr="hollow", arms=[0, 0], blend=0.25)
 key("man", "L23.1", [G.MAN_DESK[0] - 0.2, 1.5, 0.0], yaw=-90, expr="hollow", arms=[0, 0], blend=0.4)
 key("man", "L23.2", [G.MAN_DESK[0] - 0.2, 1.55, 0.0], yaw=180, expr="hollow", arms=[80, 80], blend=0.45)
-shot("S23a", "L23", camp((1.0, -4.3, 1.4), (1.0, 1.9, 1.4), 30, (-0.5, -4.3, 1.4), (-0.5, 1.9, 1.4)))
+shot("S23a", "L23", camp((0.8, -5.2, 1.4), (0.8, 1.9, 1.4), 30, (-0.7, -5.2, 1.4), (-0.7, 1.9, 1.4)))
 cue("L23.2", "key", mode="desk", dur=0.1)
 shot("S23b", "L23.2", cam(-0.65, 1.9, 1.3, 2.4, 0, 34, cz=1.3))
 # L24: he turns, nods, walks to the door
@@ -310,7 +310,7 @@ shot("S25", "P01", cam(CLX, 3.1, 1.35, 2.6, -10, 30, cz=1.35))
 cue("L26", "card", mode="hand", who="me", kind="last")
 cue("L26", "key", mode="desk")
 show("L26", "me")
-place("L26", "me", (-1.0, 1.15, 0.0), 15, "nervous", arms=[0, 86])
+place("L26", "me", (-1.3, 1.15, 0.0), 15, "nervous", arms=[0, 86])
 shot("S26", "L26", cam(-0.65, 1.5, 1.45, 3.0, 4, 30, cz=1.45))
 cue("L28", "stars", n=1)
 show("L28", "me")

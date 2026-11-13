@@ -32,13 +32,13 @@ def _neat():
     black block cut close with a skin-coloured side part, a swept fringe, clean ear blocks and a bare nape, so from behind
     it reads as a neat head and not a grey box."""
     b, T, F, K, Wd, D, H = hair3._b, hair3.TOP, hair3.FRONT, hair3.BACK, hair3.W, hair3.D, hair3.H
-    out = [b("cap", (Wd + 0.1, D + 0.1, 0.3), (0, 0, T - 0.08), bevel=0.1),
-           b("back", (Wd + 0.1, 0.24, H * 0.84), (0, K - 0.07, T - H * 0.42), bevel=0.08),
-           b("part", (0.07, D + 0.14, 0.05), (-Wd * 0.2, 0, T + 0.1), bevel=0.01, mat="hair2"),
+    out = [b("cap", (Wd + 0.04, D + 0.06, 0.3), (0, 0, T - 0.08), bevel=0.12),
+           b("back", (Wd + 0.06, 0.24, H * 0.68), (0, K - 0.07, T - H * 0.34), bevel=0.08),
+           b("part", (0.07, D * 0.5, 0.05), (-Wd * 0.2, F + D * 0.3, T + 0.1), bevel=0.01, mat="hair2"),
            b("sweep", (Wd * 0.62, 0.2, 0.34), (Wd * 0.14, F + 0.02, T - 0.12), bevel=0.07)]
     for sx in (-1, 1):
         out.append(b(f"side{sx}", (0.2, D * 0.85, H * 0.5), (sx * (Wd / 2 + 0.02), 0.06, T - H * 0.25), bevel=0.06))
-        out.append(b(f"ear{sx}", (0.12, 0.3, 0.42), (sx * (Wd / 2 + 0.08), 0.1, T - H * 0.56), bevel=0.04, mat="hair2"))
+        out.append(b(f"ear{sx}", (0.22, 0.34, 0.5), (sx * (Wd / 2 + 0.13), 0.1, T - H * 0.56), bevel=0.04, mat="hair2"))
     return out
 
 
@@ -217,13 +217,14 @@ def build_room(kit):
     kit.box("room.band.br", (X1 - G.CL1, 0.03, 0.9), ((G.CL1 + X1) / 2, Y1 - 0.015, 0.45), mint)
     kit.box("room.band.bm", (G.CL0 - wx1, 0.03, 0.9), ((wx1 + G.CL0) / 2, Y1 - 0.015, 0.45), mint)
     # the window: a glowing pane well behind the wall plane, blinds 2 cm proud of it
+    blindm = pl("#d9c9a8", 0.6)     # beige slats: white ones clipped
     wm = kit.emit("#9ccdf0", 0.7, "roomwin")
     W["winmat"] = wm
     pane = kit.box("room.win.pane", (wx1 - wx0, 0.02, wz1 - wz0), ((wx0 + wx1) / 2, Y1 + 0.2, (wz0 + wz1) / 2), wm)
     noshadow(pane)
     for k in range(13):
         z = wz0 + 0.06 + k * (wz1 - wz0 - 0.1) / 12
-        kit.box(f"room.blind{k}", (wx1 - wx0 - 0.06, 0.04, 0.055), ((wx0 + wx1) / 2, Y1 - 0.02, z), trim, rot=(0.35, 0, 0))
+        kit.box(f"room.blind{k}", (wx1 - wx0 - 0.06, 0.04, 0.055), ((wx0 + wx1) / 2, Y1 - 0.02, z), blindm, rot=(0.35, 0, 0))
     for nm, size, loc in (("t", (wx1 - wx0 + 0.12, 0.06, 0.07), ((wx0 + wx1) / 2, Y1 - 0.03, wz1 + 0.03)),
                           ("b", (wx1 - wx0 + 0.12, 0.08, 0.07), ((wx0 + wx1) / 2, Y1 - 0.04, wz0 - 0.03)),
                           ("l", (0.07, 0.06, wz1 - wz0 + 0.1), (wx0 - 0.03, Y1 - 0.03, (wz0 + wz1) / 2)),
@@ -614,7 +615,7 @@ def _animate(kit, story, tl, t, ctx):
     else:
         pen.location = (0, 0, -40)
     kc = sample("key", tl, t, {"mode": "none"})
-    W["key"].location = (G.DESK[0] + 0.35, G.DESK[1] + 0.38, G.DESK_TOP + 0.14) if kc["mode"] == "desk" else (0, 0, -40)
+    W["key"].location = (G.DESK[0] + 0.62, G.DESK[1] + 0.38, G.DESK_TOP + 0.14) if kc["mode"] == "desk" else (0, 0, -40)
     W["key"].rotation_euler = (1.0, 0, math.radians(8))     # the fob leans back against the wall, facing the room
     W["key"].scale = (1.4, 1.4, 1.4)
     W["lead"].location = (0, 0.05, G.DESK_TOP - 0.03 if sample("drawer", tl, t, {"v": 0.0})["v"] > 0.5 else -40)
