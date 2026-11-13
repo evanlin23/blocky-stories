@@ -304,7 +304,7 @@ put("me", "L34", ME_C, 180, "smile")
 S("L34", "S33", C((-1.0, -5.5, 1.5), 1.9, az=-165, el=8, w2=1.7), fill=1.6, back=True, note="S33 Mr. Okafor beside me at the camera, one step in to pat my shoulder")
 raw("okafor", "L35", expr="smile", blend=0.3)
 talk("okafor", "L35", "L35>", 0.5)
-S("L35", "S34", C((-1.1, -5.5, 1.5), 1.1, az=-170, el=3, w2=1.0), fill=1.5, back=True, note="S34 his face, smiling, eyes on me")
+S("L35", "S34", C((-1.55, -5.5, 1.5), 1.1, az=-170, el=3, w2=1.0), fill=1.5, back=True, note="S34 his face, smiling, eyes on me")
 
 # ================================================================================================ L37 the loop
 gone("okafor", "L37")
@@ -386,6 +386,6 @@ if vf.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(key(e)))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 8
+story["rev"] = 9
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")

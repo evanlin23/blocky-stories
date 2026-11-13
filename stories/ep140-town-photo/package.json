@@ -6,6 +6,5 @@
   "cover_s": 3.5,
   "shape": "behind-camera",
   "opening": "cost",
-  "lane": "eerie",
-  "hold": "batch 15: built and voiced; round-1 fixes in (L01, L02, L22 re-voice); waiting on round-2 reviews"
+  "lane": "eerie"
 }
