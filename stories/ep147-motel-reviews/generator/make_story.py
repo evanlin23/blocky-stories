@@ -433,6 +433,7 @@ story = {
     "frames_ok": [],
     "staging_ok": [],
     "phonemes": {},
+    "asr_forgive": ["six's", "six is"],   # Whisper writes "Six's" and "Six is" as "6's"
     "homophones": {"ay": "i", "em": "am"},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
