@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 6
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -63,7 +63,7 @@ cast = {
                   pattern="stripes", pattern_c="#ff7a2e", head_scale=1.04, width=1.04),
     # the closet man, looks about 40: very neat black hair with a side part, ears and a nape (set.py swaps the "buzz"
     # silhouette for it in this story), a charcoal suit, gray tie
-    "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "buzz", "#232230", hair_c2="#e8c8a8", sleeves="long",
+    "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "buzz", "#0f0e16", hair_c2="#e8c8a8", sleeves="long",
                   extras=["tie"], extra_c="#8d93a3", collar="#f4f4f4", body_width=0.94),
     # the clerk, about 60: bald, big red reading-glasses frames, a mint motel shirt
     "clerk": person("#e8c4a0", "#7fe0c4", "#8a7c66", "#8a6a48", "bald", "#e8573a", features=["glasses"],

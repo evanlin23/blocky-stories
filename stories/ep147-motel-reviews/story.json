@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 6,
+ "rev": 7,
  "look": {
   "style": "v3",
   "fog": "#e8f3ff",
@@ -122,7 +122,7 @@
    "shoes": "#15151a",
    "sleeves": "long",
    "hair": "buzz",
-   "hair_c": "#232230",
+   "hair_c": "#0f0e16",
    "hat": "none",
    "face": {
     "eyes": "round",
@@ -3823,7 +3823,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 6
+  "rev": 7
  },
  "set_moves": [
   "S02",
