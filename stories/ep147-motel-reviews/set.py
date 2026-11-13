@@ -33,16 +33,39 @@ def _neat():
     it reads as a neat head and not a grey box."""
     b, T, F, K, Wd, D, H = hair3._b, hair3.TOP, hair3.FRONT, hair3.BACK, hair3.W, hair3.D, hair3.H
     out = [b("cap", (Wd + 0.04, D + 0.06, 0.3), (0, 0, T - 0.08), bevel=0.12),
-           b("back", (Wd * 0.8, 0.24, H * 0.8), (0, K - 0.07, T - H * 0.4), bevel=0.08),
-           b("backtop", (Wd + 0.06, 0.24, H * 0.34), (0, K - 0.07, T - H * 0.17), bevel=0.08),
+           b("back", (Wd * 0.8, 0.24, H * 0.4), (0, K - 0.07, T - H * 0.2), bevel=0.08),
+           b("backtop", (Wd + 0.06, 0.24, H * 0.2), (0, K - 0.07, T - H * 0.1), bevel=0.08),
            b("sweep", (Wd * 0.62, 0.2, 0.34), (Wd * 0.14, F + 0.02, T - 0.12), bevel=0.07)]
     for sx in (-1, 1):
         out.append(b(f"side{sx}", (0.2, D * 0.85, H * 0.34), (sx * (Wd / 2 + 0.02), 0.06, T - H * 0.17), bevel=0.06))
-        out.append(b(f"ear{sx}", (0.22, 0.34, 0.5), (sx * (Wd / 2 + 0.13), 0.1, T - H * 0.56), bevel=0.04, mat="hair2"))
+        out.append(b(f"ear{sx}", (0.3, 0.4, 0.62), (sx * (Wd / 2 + 0.17), 0.1, T - H * 0.56), bevel=0.05, mat="hair2"))
     return out
 
 
 hair3.STYLES["buzz"] = _neat
+
+
+def _dadstache():
+    """Dad's mustache, up under the nose so the drawn mouth shows below it: a thin bar with two drooping tips."""
+    b, T, F, Wd, H = hair3._b, hair3.TOP, hair3.FRONT, hair3.W, hair3.H
+    z = T - 0.6 * H
+    out = [b("dstache", (Wd * 0.62, 0.3, 0.17), (0, F - 0.13, z), bevel=0.07)]
+    for sx in (-1, 1):
+        out.append(b(f"dstache{sx}", (0.26, 0.28, 0.4), (sx * Wd * 0.3, F - 0.11, z - 0.12), rot=(0, sx * 0.15, 0), bevel=0.09))
+    return out
+
+
+def _shades():
+    """Sunglasses pushed up on the hair: two dark lenses and a bridge, standing on the front of the head's top."""
+    b, T, F, Wd = hair3._b, hair3.TOP, hair3.FRONT, hair3.W
+    out = [b("shbridge", (0.5, 0.16, 0.12), (0, F + 0.3, T + 0.42), bevel=0.03, mat="hair2")]
+    for sx in (-1, 1):
+        out.append(b(f"shlens{sx}", (0.95, 0.18, 0.55), (sx * 0.62, F + 0.3, T + 0.42), bevel=0.08, mat="hair2"))
+    return out
+
+
+hair3.FEATURES["dadstache"] = _dadstache
+hair3.FEATURES["shades"] = _shades
 
 TMP = Path(tempfile.mkdtemp(prefix="room6-"))
 W = {}
@@ -438,7 +461,7 @@ def build_office(kit):
     kit.box("board.inset", (1.1, 0.02, 0.85), (bxx, byy - 0.03, 1.55), pl("#a8703a", 0.6))
     steel = pl("#c9ced6", 0.3, spec=0.7)
     fobm = pl("#ff9f43", 0.5)
-    for ci, (ch, n_keys) in enumerate((("5", 2), ("6", 1), ("7", 2))):
+    for ci, (ch, n_keys) in enumerate((("5", 2), ("6", 0), ("7", 2))):
         cxx = bxx + (ci - 1) * 0.36
         numeral(kit, f"board.num{ch}", ch, 0.2, (cxx, byy - 0.045, 1.88), "#ffffff", "#2a7a66")
         for hi in range(2):
@@ -493,9 +516,9 @@ def build_props(kit):
     W["shirts"] = st
     # the one folded teal square Dad holds
     sh = kit.empty("shirt", (0, 0, -40))
-    kit.box("shirt.body", (0.44, 0.14, 0.4), (0, 0, 0), pl("#2ec4b6", 0.8), sh, bevel=0.025)
-    kit.box("shirt.fold", (0.44, 0.012, 0.4), (0, -0.075, 0), pl("#1b8f84", 0.8), sh)
-    kit.box("shirt.collar", (0.16, 0.014, 0.05), (0, -0.082, 0.17), pl("#f4ecd8", 0.8), sh)
+    kit.box("shirt.body", (0.88, 0.07, 0.8), (0, 0, 0), pl("#2ec4b6", 0.8), sh, bevel=0.025)
+    kit.box("shirt.fold", (0.88, 0.012, 0.8), (0, -0.04, 0), pl("#1b8f84", 0.8), sh)
+    kit.box("shirt.collar", (0.3, 0.014, 0.1), (0, -0.046, 0.34), pl("#f4ecd8", 0.8), sh)
     W["shirt"] = sh
 
 
@@ -615,12 +638,15 @@ def _animate(kit, story, tl, t, ctx):
     else:
         pen.location = (0, 0, -40)
     kc = sample("key", tl, t, {"mode": "none"})
-    W["key"].location = (G.DESK[0] + 0.62, G.DESK[1] + 0.45, G.DESK_TOP + 0.14) if kc["mode"] == "desk" else (0, 0, -40)
-    W["key"].rotation_euler = (1.0, 0, math.radians(8))     # the fob leans back against the wall, facing the room
-    W["key"].scale = (2.0, 2.0, 2.0)
+    W["key"].location = (G.DESK[0] + 0.5, G.DESK[1] + 0.3, G.DESK_TOP + 0.12) if kc["mode"] == "desk" else (0, 0, -40)
+    W["key"].rotation_euler = (1.05, 0, math.radians(6))    # the fob leans back against the wall, facing the room
+    W["key"].scale = (2.6, 2.6, 2.6)
     W["lead"].location = (0, 0.05, G.DESK_TOP - 0.03 if sample("drawer", tl, t, {"v": 0.0})["v"] > 0.5 else -40)
     W["shirts"].location = (G.DESK[0] - 0.05, G.DESK[1] + 0.3, G.DESK_TOP) if sample("shirts", tl, t, {"v": 0.0})["v"] > 0.5 else (0, 0, -40)
-    sc = sample("shirt", tl, t, {"mode": "none", "who": "dad"})
+    sc = sample("shirt", tl, t, {"mode": "none", "who": "dad", "f": 0.0})
+    f = sc["f"]
+    f1, f2 = min(1.0, max(0.0, f)), min(1.0, max(0.0, f - 1.0))
+    fs = (1 - 0.5 * f1, 1 + f1 * 1.0 + f2 * 2.0, 1 - 0.5 * f2)      # two folds: half the width, then half the height
     sh = W["shirt"]
     ha, hb = hand(sc["who"], 1), hand(sc["who"], -1)
     if sc["mode"] == "hand" and ha is not None and hb is not None:
@@ -628,7 +654,11 @@ def _animate(kit, story, tl, t, ctx):
         ph = math.atan2(cy - mid.y, cx - mid.x)
         sh.location = (mid.x + 0.1 * math.cos(ph), mid.y + 0.1 * math.sin(ph), mid.z + 0.02)
         sh.rotation_euler = (0, 0, ph + math.pi / 2)
-        sh.scale = (1.5, 1.5, 1.5)
+        sh.scale = (1.5 * fs[0], 1.5 * fs[1], 1.5 * fs[2])
+    elif sc["mode"] == "desk":
+        sh.location = (G.DESK[0] + 0.15, G.DESK[1] + 0.3, G.DESK_TOP + 0.3)
+        sh.rotation_euler = (0, 0, math.radians(-6))
+        sh.scale = (1.5 * fs[0], 1.5 * fs[1], 1.5 * fs[2])
     else:
         sh.location = (0, 0, -40)
     return {}
