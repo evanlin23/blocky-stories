@@ -1,0 +1,33 @@
+{
+ "stage": "proof",
+ "film": "proof-43344373847",
+ "run": "43344373847",
+ "sha": "2a5fac5c8b6904ce523f6c7a21ca49b2f9d67b7a",
+ "verdict": "fail",
+ "date": "2026-11-13",
+ "checked": [
+  "artifact 14000734377, sha = latest film-file commit",
+  "frames every 1 s",
+  "every frame of first 3 s",
+  "phone canvas",
+  "hold P01 at phone size and full res",
+  "clip.json vs clip_ok",
+  "frame-diff smoothness",
+  "cover 8.5 s",
+  "loudness and true peak",
+  "HF windows",
+  "tail",
+  "polish",
+  "craft",
+  "flash",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "**ep149-cuckoo-six**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.7 | 12.5\u2013 | ok |\n| macro.picture_changes_per_10s_q | 19.1 | 14.0\u2013 | ok |\n| macro.motion_energy_q | 6.91 | 6.0\u2013 | ok |\n| macro.longest_still_q_s | 0.0 | \u20131.0 | ok |\n| spec.cuts_per_10s | 10.47 | 5.5\u20138.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | \u20130.25 | ok |\n| spec.shot_p90_s | 1.36 | \u20132.5 | ok |\n| macro.longest_still_s | 0.07 | \u20131.5 | ok |\n| macro.longest_still_q_edge_s | 0.0 | \u20131.0 | ok |\n| macro.motion_energy_mean | 3.26 | 1.5\u2013 | ok |\n| spec.camera_move_share | 1.0 | 0.65\u2013 | ok |\n| spec.punch_per_10s | 0.81 | 0.4\u2013 | ok |\n| macro.brightness_mean | 0.722 | 0.35\u2013 | ok |\n| macro.brightness_first_3s | 0.738 | 0.3\u2013 | ok |\n| macro.dark_frame_share | 0.0 | \u20130.08 | ok |\n| macro.black_dips | 0 | \u20131 | ok |\n| macro.saturation_mean | 0.403 | 0.42\u2013 | **warn** |\n| macro.contrast_mean | 0.18 | 0.18\u2013 | ok |\n| spec.face_big_share | 0.373 | 0.4\u2013 | **warn** |\n| spec.caption_share | 0.976 | 0.9\u2013 | ok |\n| spec.caption_words_median | 2.0 | \u20133 | ok |\n| macro.held_frame_share | 0.003 | \u20130.15 | ok |\n| micro.character_motion_shot_share | 0.704 | 0.5\u2013 | ok |\n| micro.walk_dead_end_share | 0.0 | \u20130.25 | ok |\n| micro.idle_window_share | 0.091 | \u20130.3 | ok |\n| micro.caption_sync_p90_ms | 50.0 | \u2013120 | ok |\n| spec.sound_events_per_10s | 3.62 | 2.0\u20134.0 | ok |\n| sound.silence_share | 0.0 | \u20130.005 | ok |\n| sound.voice_bed_gap_db | 10.9 | 8.0\u201314.0 | ok |\n| sound.lufs | -14.1 | -15.0\u2013-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | \u2013-1.0 | ok |\n| sound.hf_share_max_5s | 0.0376 | \u20130.08 | ok |\n| sound.hf_jump_max | 0.0114 | \u20130.04 | ok |\n\n0 block, 0 near, 3 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Proof 14000734377 (run 43344373847, sha 2a5fac5c = branch head, latest film-file commit), 270x480 drawn, 24.8 s, 743 frames; not stale. verdict.json passes.\nSecond one: Grandpa in his gold crown at the table under the cuckoo clock, lit, counter '5' top right, camera moving; 'Grandpa's cuckoo clock counts the PEOPLE in the house.' Opening count, true; last upload ep137 is must. First 8 s: rule in sentence one, five of us + Ivy's empty chair by 0:05, six cuckoos with the counter ticking, a new shot every ~1 s.\nHold P01 (S11a-c, 12.4-16.4 s): A, B, C, D badges and 'Which one: A-D?' read at phone size; the red sneakers under curtain B read. FAIL: the frosting clue doesn't. The cake (with its scoop) is hidden behind the D badge and Mom, and the pink smudge on the curtain edge is a speck about 12x40 px of 1080 (about 4 pt on a phone). S09 (10.9-12.4 s) shows the cake from the front only, so the scoop is first seen at the answer (S14a, 18.2 s). The pin asks 'the sneakers or the frosting?', so both have to be findable in the hold.\nMotion: no repeated frames, every frame-diff spike sits on a cut; no pops. clip.json: 21 hits, all grandpa/ivy sleeves in the S19/S19b/S24 hug, listed in clip_ok; the hug looks clean.\nAudio -14.1 LUFS, true peak -1.8 dBTP, LRA 2.1, HF max 0.038, jump 0.011; voice on top, no silence; polish pack on. Flash house bar passes (bar_ep10 3f is false, informational). Package matches, no spoiler, no 'husband'; gate OPEN (warn 196 wpm). ep149 isn't in queue.txt yet.\ncraft: 0 block, 0 near, 3 warn: spec.cuts_per_10s 10.47 (5.5-8.0), macro.saturation_mean 0.403 (0.42-), spec.face_big_share 0.373 (0.4-).\nShould-fix: S16 21.6 s the counter shows a stray dot before '6' as it changes.",
+ "fixes": [
+  "S11a-c 12.4-16.4 s (P01 hold): make the frosting clue readable at phone size: move the D badge off the cake so its scooped corner shows (or put the scoop on the camera side), and make the pink smudge on curtain B's edge about 3x bigger",
+  "or S09 10.9-12.4 s: raise the cake shot so the missing thumb-sized scoop is visible before the hold"
+ ]
+}
