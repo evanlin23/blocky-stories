@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 11
+REV = 12
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -375,7 +375,7 @@ remap_all(sound["music_drops"])
 polish = {"overlap": True, "turn_cap": 220, "punch_max": 4, "sharpen": 0.4, "bloom_thresh": 0.85,
           "reveal": [remap("L08"), remap("L22.2")], "twist": remap("L28"),
           "emph": [remap(x) for x in ("L01.2", "L08", "L17.3", "L29")],
-          "hold": ["S05", "S10a", "S24b"], "sway": True, "sway_amp": 0.008}
+          "hold": ["S05", "S10a", "S24b"], "cam_push": 0.11}
 story = {
     "slug": "ep147-motel-reviews",
     "title": "Room Six Came With a Man in the CLOSET \U0001F6CE️",
