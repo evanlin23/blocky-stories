@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -308,8 +308,8 @@ number("L15.1", 2)
 show("L15b", "grant")
 GR_S = (0.3, 3.4)                     # Grant a step west of the grill's south side, so the gate shows beside his legs
 put("grant", "L15b", GR_S, G.yaw_to(GR_S, GRILL), "neutral")
-cue("L15b", "gate", ang=45.0)
-SEE_GATE = camp([2.2, 6.4, 1.5], [-0.4, 1.0, 0.9], 28, pos2=[2.0, 6.1, 1.45])
+cue("L15b", "gate", ang=65.0)
+SEE_GATE = camp([2.2, 6.4, 1.5], [-0.75, 1.0, 0.9], 28, pos2=[2.0, 6.1, 1.45])
 shot("S15", "L15b", SEE_GATE, moose=False, hold=True)
 # the drop: the badge says 2, still, the grill smoke drifting
 shot("SD", "P01", cam(0.3, 3.5, 1.55, 2.2, 170, 22, cz=1.55, push=(2.0, 1.55)), moose=False)
@@ -336,15 +336,16 @@ RGX = G.RING[0]
 show("L20", "grant")
 GRX = (RGX - 0.3, 6.05)               # his right hand (east side, facing the house) is over the box
 put("grant", "L20", GRX, 180, "neutral", arms=[0, 0])
-key("grant", "L20+0.2", yaw=180, arms=[92, 0], expr="neutral", blend=0.6)
-key("grant", "L20.1+0.4", yaw=180, arms=[70, 0], expr="neutral", blend=0.5)
-key("grant", "L20.3", yaw=180, arms=[70, 0], expr="neutral")
+key("grant", "L20+0.2", yaw=180, arms=[92, 0], head=[-75, 0], expr="neutral", blend=0.6)
+key("grant", "L20.1+0.4", yaw=180, arms=[70, 0], expr="neutral", blend=0.6)
+key("grant", "L20.3", yaw=180, arms=[70, 0], head=[0, 0], expr="neutral", blend=0.15)
 key("grant", "L20.3+0.3", yaw=180, arms=[8, 0], expr="neutral", blend=0.4)
 cue("L20.1", "ring", mode=1.0)
 cue("L20.3+0.62", "ring", mode=2.0)
 # the red box, big, through the kitchen window; then the pocket from his right side
-shot("S19b", "L20", camp([RGX - 0.1, 8.3, 1.45], [RGX - 0.1, 6.0, 1.5], 24, pos2=[RGX - 0.1, 8.05, 1.45]))
-shot("S19c", "L20.3", camp([2.3, 5.2, 1.1], [RGX - 0.3, 6.1, 1.1], 14, pos2=[2.1, 5.3, 1.1]))
+shot("S19b", "L20", camp([3.2, 4.7, 1.4], [RGX + 0.2, 6.4, 1.25], 24, pos2=[3.0, 4.8, 1.4]))
+shot("S19c", "L20.3", camp([2.3, 7.8, 1.6], [RGX - 0.05, 6.1, 1.3], 22, pos2=[2.1, 7.7, 1.6]))
+cue("L21", "ring", mode=3.0)
 show("L21", "me", "grant")
 put("me", "L21", ME_G, 90, "worried")
 put("grant", "L21", GR_G, -90, "smile")
@@ -375,23 +376,26 @@ put("grant", "L24", GR_G, G.yaw_to(GR_G, (GR_G[0] + 0.55, GR_G[1] - 1.2)), "smil
 shot("S23", "L24", cam(1.0, 2.9, 1.0, 2.6, 80, 28, cz=0.9, push=(2.3, 1.0)), moose=True)
 # 1b: Grant, bent to the picnic table's short leg, a folded napkin under it
 show("L25", "grant")
-put("grant", "L25", (5.35, 5.0), -107, "smile", lean=0.0)
-cue("L25", "napkin", on=0.0, hand=1.0)
-key("grant", "L25+0.3", yaw=-107, lean=14, arms=[50, 50], expr="smile", blend=0.5)
-key("grant", "L25+0.9", [5.35, 5.0, -0.3], yaw=-107, lean=16, arms=[62, 62], expr="smile", blend=0.5)
-cue("L25", "rock", amp=1.0, dur=0.1)
-cue("L25.1+0.3", "napkin", on=1.0, hand=0.0)
-cue("L25.1+0.3", "rock", amp=0.0, dur=0.3)
-shot("S24", "L25", camp([3.3, 2.3, 0.8], [4.9, 5.1, 0.45], 20, pos2=[3.8, 2.9, 0.75]))
+KN = (4.85, 3.7)                      # Grant kneels south of the table's near (south-east) leg, head under the tabletop line
+put("grant", "L25", KN, 180, "smile", lean=0.0)
+key("grant", "L25+0.2", yaw=180, lean=0, arms=[20, 20], expr="smile", blend=0.4)
+key("grant", "L25+0.9", [KN[0], KN[1], -0.5], yaw=180, lean=50, arms=[70, 70], expr="smile", blend=0.7)
+cue("L25+0.9", "napkin", on=0.0, hand=1.0)
+cue("L25+2.2", "napkin", on=1.0, hand=0.0)
+cue("L25+2.2", "rock", amp=1.0, dur=0.05)
+cue("L25+2.5", "rock", amp=0.0, dur=0.15)
+shot("S24", "L25", camp([7.0, 4.6, 0.5], [4.75, 5.0, 0.35], 22, pos2=[6.7, 4.6, 0.5]))
 # 1c: the S15 framing again, and the open gate
 show("L26", "grant")
 put("grant", "L26", GR_S, G.yaw_to(GR_S, GRILL), "neutral")
-cue("L26", "gate", ang=45.0)
+cue("L26", "gate", ang=65.0)
 moose_at("L26", 1.3, 4.5, -24.0, 0)
 cue("L26", "mlook", yaw=0.0, pitch=0.0)
 bark("L26.1", "L26.1+0.5")
 shot("S25", "L26", SEE_GATE, moose=False, hold=True)
 show("L28")
+key("mia", "L28", [3.0, 4.78], yaw=-85, hidden=True, blend=0.0)        # turned while hidden: the turn cap would slow it on camera
+key("grant", "L28", [2.2, 4.7], yaw=85, hidden=True, blend=0.0)
 shot("S26", "L28", camp([-2.2, 0.2, 1.0], [-1.5, -2.5, 0.8], 18, pos2=[-2.1, -0.1, 1.0]), hold=True)
 shot("S26b", "L28b", cam(-10.45, 2.7, 3.3, 3.0, 55, 16, cz=2.3, push=(2.7, 3.3)))
 
@@ -402,9 +406,10 @@ cue("L29", "mlook", yaw=0.0, pitch=-8.0)
 cue("L29", "gate", ang=60.0)
 shot("S27", "L29", camp([0.69, -0.21, 0.75], [0.23, 1.42, 0.75], 22, pos2=[0.62, -0.05, 0.75]), moose=True)
 show("L30", "mia", "grant")
-put("mia", "L30", (3.0, 4.7), -40, "laugh", arms=[0, 50])       # facing west: her ring hand (left) is the south one
-put("grant", "L30", (2.2, 4.7), 40, "laugh", arms=[0, 0])
-key("mia", "L30+0.4", yaw=-40, arms=[0, 58], expr="laugh", blend=0.5)
+put("mia", "L30", (3.0, 4.78), -85, "laugh", arms=[0, 0])       # facing west: her ring hand (left) is the south one
+put("grant", "L30", (2.2, 4.7), 85, "laugh", arms=[0, 0])
+key("mia", "L30+0.4", yaw=-85, arms=[0, 34], expr="laugh", blend=0.5)
+key("grant", "L30+0.4", yaw=85, arms=[22, 0], expr="laugh", blend=0.5)
 number("L30", 2, 0.01)
 shot("S28", "L30", cam(2.6, 4.7, 1.3, 2.6, 20, 28, cz=1.3, push=(2.4, 1.3)))
 show("L31", "me")
@@ -486,8 +491,8 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S04", "S04b", "S05", "S07b", "S11b", "S12", "S19", "S19c", "S22", "S22b", "S24"],
-    "frames_ok": ["S02", "S27"],
+    "framing_ok": ["S28", "S04", "S04b", "S05", "S07b", "S11b", "S12", "S19", "S19c", "S22", "S22b", "S24"],
+    "frames_ok": ["S02", "S27", "S05", "S06", "S10", "S15", "S28"],
     "staging_ok": ["S11b/me+grant", "S28/mia+grant"],
     "phonemes": {},
     "homophones": {},

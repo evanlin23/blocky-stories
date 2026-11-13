@@ -274,7 +274,7 @@ def build_table(kit):
         for sx in (-0.5, 0.5):
             kit.box(f"bench.{nm}.leg{sx}", (0.07, 0.25, 0.43), (tx + 0.6 + sx, ty + sy, 0.215), dark)
     # the folded napkin that goes under the east-south leg (shown by cue)
-    W["napkin"] = kit.box("napkin", (0.3, 0.3, 0.06), (tx + 1.0, ty - 0.3, 0.03), pl("#ffffff", 0.9), None, bevel=0.005)
+    W["napkin"] = kit.box("napkin", (0.7, 0.7, 0.05), (tx + 1.0, ty - 0.3, 0.09), pl("#ffffff", 0.9), None, bevel=0.005)
     W["napkin"].hide_render = True
 
 
@@ -420,9 +420,9 @@ def build_props(kit):
     # animate; sizes are in the arm's own units, 1 wide)
     gold = pl("#ffcc33", 0.2, spec=0.8)
     W["mring"] = [(kit.box("mring.band", (1.12, 1.12, 0.2), (0, 0, -20), gold, None, bevel=0.03), (0.0, 0.0, -1.5)),
-                  (kit.box("mring.stone0", (0.4, 0.4, 0.4), (0, 0, -20), pl("#ffffff", 0.1, spec=1.0), None, bevel=0.05),
+                  (kit.box("mring.stone0", (0.5, 0.5, 0.5), (0, 0, -20), kit.emit("#ffffff", 2.0, "mringglint"), None, bevel=0.05),
                    (0.0, -0.62, -1.5)),
-                  (kit.box("mring.stone1", (0.4, 0.4, 0.4), (0, 0, -20), pl("#ffffff", 0.1, spec=1.0), None, bevel=0.05),
+                  (kit.box("mring.stone1", (0.3, 0.3, 0.3), (0, 0, -20), gold, None, bevel=0.05),
                    (0.0, 0.62, -1.5))]
     # a biscuit
     bone = pl("#b3621c", 0.6, spec=0.1)
@@ -600,7 +600,7 @@ def animate(kit, story, tl, t, ctx):
         s_.scale = (sc, sc, sc)
     # ---- the table rocks while the `rock` cue is on, and stops when the napkin is under its leg
     rk = sample("rock", tl, t, {"amp": 0.0, "dur": 0.0})
-    W["table"].rotation_euler = (0.018 * rk["amp"] * math.sin(t * 11.0), 0, 0)
+    W["table"].rotation_euler = (0.012 * rk["amp"] * math.sin(t * 11.0), 0.05 * rk["amp"] * math.sin(t * 11.0 + 1.2), 0)
     nap = sample("napkin", tl, t, {"on": 0.0, "hand": 0.0})
     W["napkin"].hide_render = nap["on"] < 0.5 and nap["hand"] < 0.5
     tx_, ty_ = G.TABLE
@@ -609,15 +609,23 @@ def animate(kit, story, tl, t, ctx):
         if hh is not None:
             W["napkin"].location = hh + Vector((0.0, 0.0, 0.05))
     else:
-        W["napkin"].location = (tx_ + 1.0, ty_ - 0.3, 0.03)
+        W["napkin"].location = (tx_ + 1.0, ty_ - 0.3, 0.09)
     # ---- the ring box: on the sill (0), in Grant's right hand (1), pocketed (2)
     rg = sample("ring", tl, t, {"mode": 0.0})
     rm = int(round(rg["mode"]))
     W["ring"].location = (0, 0, -20)
-    hide(W["ring"], rm == 2)
+    W["ring"].scale = (1.35, 1.35, 1.35)
+    hide(W["ring"], rm >= 3)
     if rm == 0:
         W["ring"].location = G.RING
         W["ring"].rotation_euler = (0, 0, 0)
+    elif rm == 2:
+        # pocketed: sticking out of the shirt pocket on his right chest, lid and clasp turned to the front
+        tor = bpy.data.objects.get("grant.torso")
+        if tor is not None:
+            W["ring"].location = tor.matrix_world @ Vector((0.55, -0.62, 1.35))
+            W["ring"].rotation_euler = (0, 0, tor.matrix_world.to_euler().z)
+            W["ring"].scale = (0.75, 0.75, 0.75)
     elif rm == 1:
         h = hand("grant", -1)
         if h is not None:
