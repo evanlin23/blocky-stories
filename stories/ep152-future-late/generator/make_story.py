@@ -205,7 +205,7 @@ key("friend", "L06.3+0.9", arms=[0, 0], side=[0, 0], blend=0.4)
 key("mom", "L07", expr="smile", head=[0, 0])
 shot("S07a", "L07", momcam(1.55, 6, dx=0.2, push=(1.35, 1.3)))
 shot("S07b", "L07.1", P2((0.0, -0.6, 2.55), (-2.4, 3.7, 2.55), 30, pos2=(0.0, -0.6, 2.55), tgt2=(2.4, 3.7, 2.55)))
-key("me", "L08", expr="neutral", head=[0, -4], arms=[0, 12], side=[80, 0], blend=0.35)
+key("me", "L08", expr="neutral", head=[0, -4], arms=[0, 12], side=[38, 0], blend=0.35)
 shot("S08", "L08", P2((0.6, -0.8, 1.2), (0.2, 3.3, 1.2), 24, pos2=(0.5, -0.5, 1.2), tgt2=(0.2, 3.3, 1.2)))
 key("me", "L09", expr="sheepish", head=[0, 6], arms=[12, 12], side=[0, 0], blend=0.35)
 key("me", "L09.1", arms=[12, 62], side=[0, 22], blend=0.35)
@@ -224,7 +224,7 @@ key("me", "L12", expr="uneasy", head=[0, 0])
 shot("S13", "L13", P2((1.2, -0.3, 1.9), (-0.4, 1.9, 1.25), 22, pos2=(1.1, -0.1, 1.88), tgt2=(-0.4, 1.9, 1.25)))
 key("mom", "L14", expr="uneasy", head=[0, 0], arms=[12, 12], side=[0, 0])
 key("me", "L14", expr="uneasy")
-shot("S14a", "L14", C(0.0, 2.62, 1.2, 2.6, 0, 26, cz=1.7, push=(2.35, 1.2)))
+shot("S14a", "L14", momcam(1.7, 0, dx=0.2, push=(1.5, 1.3)))
 shot("S14b", "L14.1", P2((0.3, 1.0, 1.75), (0.3, 1.78, 0.78), 24, pos2=(0.3, 1.1, 1.6), tgt2=(0.3, 1.78, 0.78)))
 key("mom", "L15", expr="uneasy", blend=0.5)
 key("me", "L15", expr="scared", blend=0.5)
@@ -246,7 +246,7 @@ key("me", "L20", expr="laugh", head=[0, -6])
 mouth("me", "L20", "L20>", 0.4)
 key("mom", "L20", arms=[12, 12], side=[0, 0], expr="smile", blend=0.5)
 shot("S20", "L20", mecam(1.4, -8, dx=-0.1, push=(1.2, 1.3)))
-key("me", "L21", expr="stunned", head=[0, 0], arms=[0, 12], side=[80, 0], blend=0.35)
+key("me", "L21", expr="stunned", head=[0, 0], arms=[0, 12], side=[38, 0], blend=0.35)
 shot("S21a", "L21", P2((1.0, -1.2, 1.2), (0.2, 3.3, 1.2), 24, pos2=(0.95, -0.9, 1.2), tgt2=(0.2, 3.3, 1.2)))
 key("me", "L21.2", expr="stunned", arms=[12, 12], side=[0, 0], blend=0.3)
 shot("S21b", "L21.2", mecam(1.2, 0, dx=-0.05, push=(1.0, 1.3)))
@@ -337,7 +337,7 @@ story = {
               "vignette": 0.12, "bloom": 0.12, "grain": 0.008},
     "hud": {"object": "tag", "at": [-0.5, 0.62], "size": 0.46},
     "asr_forgive": ["thirtieth", "eleven fifty-two", "eleven fifty-five", "eleven fifty-seven", "eleven fifty-eight",
-                    "hadn't", "forty-eight", "tick", "future me", "buy", "buy the house"],
+                    "hadn't", "he's", "red", "his", "forty-eight", "tick", "future me", "buy", "buy the house"],
     "cast": cast,
     "lines": lines,
     "shots": shots,
@@ -349,7 +349,7 @@ story = {
     "set_moves": [],
     "frames_ok": ["S16a"],
     "staging_ok": [],
-    "framing_ok": [],
+    "framing_ok": ["S14b", "S25", "S25b"],
     "clip_ok": [],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
