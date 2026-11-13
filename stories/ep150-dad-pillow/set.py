@@ -337,7 +337,7 @@ def build_hall(kit):
         kit.box(f"side.f{sx}", (0.55, 0.02, 1.6), (G.HX + sx * 1.65, y1 - 0.025, 1.5), wh)
     # the porch beyond the door, and the lawn
     deck = pl("#d9b27c", 0.8, spec=0.03)
-    kit.box("porch.deck", (6.4, 4.0, 0.12), (G.HX, 7.4, -0.06), deck)
+    kit.box("porch.deck", (6.4, 4.0, 0.12), (G.HX, 7.4, -0.064), deck)   # 4 mm under the hall floor it overlaps: no coplanar black strip
     for k in range(3):
         kit.box(f"porch.step{k}", (2.2, 0.35, 0.12), (G.HX, 9.55 + k * 0.33, -0.12 - k * 0.12), deck)
     kit.box("porch.duffel", (0.62, 0.3, 0.32), (G.HX + 0.75, 5.95, 0.17), pl("#355a8a", 0.7), bevel=0.06)
@@ -437,6 +437,7 @@ def build_kitchen(kit):
     # the kitchen room y 0.3..4.6 with a doorway in the south wall; a corridor y -3..0 beyond
     room(kit, "kit", x - 2.4, x + 2.4, 0.3, 4.6, 2.7, wall, wood, ceil, south_gaps=[(x - 0.55, x + 0.55, 2.1)])
     room(kit, "cor", x - 2.4, x + 2.4, -3.0, -0.1, 2.7, pl("#dcc090", 0.85), wood, ceil, north=False)
+    bpy.data.objects["cor.floor"].location.z -= 0.004   # under the kitchen floor where they overlap (no coplanar black)
     for sx in (-1, 1):
         kit.box(f"kit.case{sx}", (0.14, 0.04, 2.2), (x + sx * 0.62, 0.02, 1.1), wh)
     kit.box("kit.case.t", (1.38, 0.04, 0.14), (x, 0.02, 2.17), wh)
