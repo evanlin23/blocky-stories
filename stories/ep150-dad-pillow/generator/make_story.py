@@ -199,8 +199,8 @@ show("L04", "buddy")
 place("L04", "buddy", (G.BDX - 0.5, G.BDY + 0.8, -0.55), 0, "sheepish", arms=[0, 0])
 shot("S04a", "L04", cam(G.BDX - 0.2, G.BDY + 0.8, 1.05, 2.5, 0, 30, cz=1.2))
 cue("L04.2", "ear", v=1.0)
-shot("S04b", "L04.2", camp([G.BDX + 0.75, G.BDY - 1.25, 0.78], [G.BDX + 0.45, G.BDY + 0.05, 0.45], 34,
-                            pos2=[G.BDX + 0.72, G.BDY - 1.1, 0.76], tgt2=[G.BDX + 0.45, G.BDY + 0.05, 0.45]))
+shot("S04b", "L04.2", camp([G.BDX + 0.95, G.BDY - 1.75, 0.85], [G.BDX + 0.45, G.BDY + 0.1, 0.45], 30,
+                            pos2=[G.BDX + 0.9, G.BDY - 1.55, 0.83], tgt2=[G.BDX + 0.45, G.BDY + 0.1, 0.45]))
 cue("L04>", "ear", v=0.0)
 
 # ===== 03 the silly habit (L06, L07)
@@ -265,7 +265,7 @@ key("me", "L14.2", MS14, yaw=-23, expr="worried", arms=[0, 0])
 key("me", "L14.2+0.45", MS14, yaw=-148, expr="worried", arms=[0, 0], blend=0.4)
 shot("S14a", "L14", camp([58.0, -1.2, 1.5], [58.95, 1.62, 1.3], 18, pos2=[58.05, -0.95, 1.5], tgt2=[58.97, 1.62, 1.3]))
 # S14b: over my right shoulder, Dad on the stair, eyes shut, smiling, still
-shot("S14b", "L14.4", camp([61.0, -0.67, 1.72], [58.55, 1.45, 1.2], 30, pos2=[60.9, -0.56, 1.7], tgt2=[58.55, 1.47, 1.2]))
+shot("S14b", "L14.4", camp([61.5, -0.3, 1.75], [58.4, 1.35, 1.2], 34, pos2=[61.4, -0.22, 1.73], tgt2=[58.4, 1.37, 1.2]))
 cue("L17", "night", n=3)
 # night three: I walk from by the stair to the door myself, glancing back
 place("L17", "me", (59.7, 1.8, 0.0), 173, "worried", arms=[0, 0], head=[-50, 0])

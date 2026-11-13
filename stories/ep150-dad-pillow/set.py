@@ -371,8 +371,8 @@ def build_hall(kit):
 # ---------------------------------------------------------------------------------------------- the memory porch
 def build_mem(kit):
     pl = kit.plastic
-    wall = pl("#f0dcae", 0.85, spec=0.03)
-    wh = pl("#c4bfb2", 0.7, spec=0.04)
+    wall = pl("#d6b282", 0.85, spec=0.03)
+    wh = pl("#a8a294", 0.7, spec=0.04)
     x, y = G.MX, G.MY
     deck = pl("#d9b27c", 0.8, spec=0.03)
     kit.box("mem.deck", (7, 4.6, 0.12), (x, y - 2.3, -0.06), deck)
@@ -392,8 +392,8 @@ def build_mem(kit):
         kit.box(f"mem.case{sx}", (0.14, 0.04, 2.25), (x + sx * 0.67, y - 0.02, 1.125), wh)
     kit.box("mem.case.t", (1.48, 0.04, 0.14), (x, y - 0.02, 2.2), wh)
     kit.box("mem.door", (1.2, 0.07, 2.12), (x, y - 0.0, 1.06), wh, bevel=0.01)
-    kit.box("mem.panel1", (0.84, 0.02, 0.8), (x, y - 0.05, 1.5), pl("#d8d3c4", 0.7))
-    kit.box("mem.panel2", (0.84, 0.02, 0.8), (x, y - 0.05, 0.55), pl("#d8d3c4", 0.7))
+    kit.box("mem.panel1", (0.84, 0.02, 0.8), (x, y - 0.05, 1.5), pl("#b8b2a4", 0.7))
+    kit.box("mem.panel2", (0.84, 0.02, 0.8), (x, y - 0.05, 0.55), pl("#b8b2a4", 0.7))
     kit.sphere("mem.knob", 0.05, (x + 0.45, y - 0.08, 1.0), pl("#e0b040", 0.3, spec=0.7))
     for sx in (-1, 1):
         kit.box(f"mem.wcase{sx}", (0.05, 0.04, 1.3), (x + 0.95 + sx * 0.475, y - 0.02, 1.5), wh)
