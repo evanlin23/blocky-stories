@@ -273,13 +273,13 @@ def build_kit(kit):
     pm = pl(BLUE, 0.5)
     W["prints"] = []
     for i, (px, pz) in enumerate(G.PRINTS):
-        ob = kit.cyl(f"kit.print{i}", 0.05, 0.012, (px, G.FRIDGE_FACE - 0.009, pz), pm, rot=(math.pi / 2, 0, 0.0), n=20)
-        ob.scale = (1.0, 1.0, 1.0)
+        ob = kit.cyl(f"kit.print{i}", 0.07, 0.012, (px, G.FRIDGE_FACE - 0.009, pz), pm, rot=(math.pi / 2, 0, 0.0), n=20)
+        ob.scale = (1.0, 1.4, 1.0)
         ob.hide_render = True
         W["prints"].append(ob)
     # the tally: two short pencil strokes low on the fridge's west side
     for i in range(2):
-        kit.box(f"kit.tally{i}", (0.006, 0.014, 0.16), (fx - 0.478, fy - 0.12 - 0.05 * i, 0.4), pl("#4a4a50", 0.8))
+        kit.box(f"kit.tally{i}", (0.012, 0.02, 0.2), (fx - 0.481, fy - 0.1 - 0.07 * i, 0.95), pl("#3a3a40", 0.8))
     # the table, its two chairs, and the old house's photo propped on it
     tx, ty = G.TABLE
     kit.box("kit.table.top", (G.TABLE_W, G.TABLE_D, 0.05), (tx, ty, G.TABLE_H), wood, bevel=0.01)
@@ -288,10 +288,11 @@ def build_kit(kit):
             kit.box(f"kit.table.leg{sx}{sy}", (0.06, 0.06, G.TABLE_H), (tx + sx * 0.3, ty + sy * 0.68, G.TABLE_H / 2), wood)
     chair(kit, "kit.chair.leo", G.LEO[0], G.LEO[1] - 0.95, 180, wood)       # backs away from the table, facing north
     chair(kit, "kit.chair.mom", G.MOM[0], G.MOM[1] + 0.95, 0, wood)
-    root = kit.empty("kit.photo", (tx, ty - 0.55, G.TABLE_H + 0.03), rot=(math.radians(-22), 0, 0))
-    kit.box("kit.photo.frame", (0.5, 0.02, 0.38), (0, 0, 0.19), pl("#fffaf0", 0.5), root, bevel=0.008)
+    root = kit.empty("kit.photo", (tx, ty - 0.2, G.TABLE_H + 0.035))
+    kit.box("kit.photo.frame", (0.66, 0.5, 0.02), (0, 0, 0.01), pl("#fffaf0", 0.5), root, bevel=0.008)
     m, _ = imat(kit, "kit.photo", _photo_image(), 1.0)
-    noshadow(kit.plane("kit.photo.img", (0.45, 0.34), (0, -0.0125, 0.19), m, root, rot=(math.pi / 2, 0, 0)))
+    noshadow(kit.plane("kit.photo.img", (0.6, 0.45), (0, 0, 0.0225), m, root))
+    W["photo"] = [root] + list(root.children_recursive)
     # three plain moving boxes by the east wall, the curtains (hidden until the cue), a plant, a rug
     boxm = pl("#c49a6c", 0.8, spec=0.02)
     tape = pl("#e8d3a8", 0.6)
@@ -345,17 +346,18 @@ def build_porch(kit):
         kit.box(f"porch.post{sx}", (0.18, 0.18, 3.0), (px + sx * 2.1, py - 1.7, 1.8), pl("#fffaf0", 0.6))
     kit.box("porch.beam", (4.7, 0.2, 0.2), (px, py - 1.7, 2.85), pl("#fffaf0", 0.6))
     kit.box("porch.roof", (7.0, 4.6, 0.15), (px, py + 0.4, 3.45), pl("#b3431f", 0.8))
-    # the swing: a pivot at the beam, two chains, a sky-blue seat and back
-    piv = kit.empty("porch.pivot", (px, py - 1.7, 2.75))
+    # the swing: a pivot on a beam under the roof, two chains, a sky-blue seat and back (1.3 m wide)
+    piv = kit.empty("porch.pivot", (px, py - 0.3, 3.3))
     W["swing"] = piv
-    blue = pl("#4aaaf0", 0.55, spec=0.15)
+    kit.box("porch.swingbeam", (1.8, 0.2, 0.2), (px, py - 0.3, 3.3), pl("#fffaf0", 0.6))
+    blue = pl("#7fc8f8", 0.55, spec=0.1)
     for sx in (-1, 1):
-        kit.box(f"porch.chain{sx}", (0.03, 0.03, 2.2), (sx * 0.85, 0, -1.1), pl("#6a6e78", 0.4, spec=0.6), piv)
-    kit.box("porch.seat", (1.9, 0.62, 0.09), (0, 0, -2.2), blue, piv, bevel=0.02)
-    kit.box("porch.back", (1.9, 0.07, 0.6), (0, 0.3, -1.88), blue, piv, rot=(math.radians(-8), 0, 0), bevel=0.02)
+        kit.box(f"porch.chain{sx}", (0.03, 0.03, 2.6), (sx * 0.58, 0, -1.3), pl("#6a6e78", 0.4, spec=0.6), piv)
+    kit.box("porch.seat", (1.3, 0.62, 0.09), (0, 0, -2.6), blue, piv, bevel=0.02)
+    kit.box("porch.back", (1.3, 0.07, 0.6), (0, 0.3, -2.28), blue, piv, rot=(math.radians(-8), 0, 0), bevel=0.02)
     for sx in (-1, 1):
-        kit.box(f"porch.arm{sx}", (0.07, 0.62, 0.07), (sx * 0.95, 0, -1.95), blue, piv)
-        kit.box(f"porch.armpost{sx}", (0.07, 0.07, 0.3), (sx * 0.95, -0.25, -2.07), blue, piv)
+        kit.box(f"porch.arm{sx}", (0.07, 0.62, 0.07), (sx * 0.65, 0, -2.35), blue, piv)
+        kit.box(f"porch.armpost{sx}", (0.07, 0.07, 0.3), (sx * 0.65, -0.25, -2.47), blue, piv)
     # red geraniums in a clay pot, bushes and a tree for depth
     kit.cyl("porch.pot", 0.24, 0.34, (px - 2.5, py - 1.2, 0.47), pl("#c96f4a", 0.8), n=16, r2=0.3)
     for i in range(6):
@@ -385,15 +387,21 @@ def build_pratt(kit):
         kit.box(f"pratt.post{sx}", (0.16, 0.16, 2.9), (px + 0.4 + sx * 1.9, py + 2.3, 1.75), pl("#fffaf0", 0.6))
     kit.box("pratt.roof", (4.8, 3.0, 0.14), (px + 0.4, py + 3.5, 3.25), pl("#4a7fb0", 0.8))
     # the low white fence across the foreground, with a rail
+    fence = pl("#d6cdb8", 0.6)
     for i in range(-8, 9):
-        kit.box(f"pratt.fence{i}", (0.14, 0.05, 0.95), (px + i * 0.4, py + 0.9, 0.475), pl("#fffaf0", 0.6))
-    for z in (0.3, 0.75):
-        kit.box(f"pratt.rail{z}", (7.0, 0.05, 0.06), (px, py + 0.86, z), pl("#fffaf0", 0.6))
+        if -1 <= i <= 3:
+            continue
+        kit.box(f"pratt.fence{i}", (0.14, 0.05, 0.7), (px + i * 0.4 + 0.2, py + 0.9, 0.35), fence)
+    for z in (0.25, 0.6):
+        kit.box(f"pratt.rail{z}", (3.1, 0.05, 0.06), (px - 2.4, py + 0.86, z), fence)
+        kit.box(f"pratt.railb{z}", (3.1, 0.05, 0.06), (px + 3.0, py + 0.86, z), fence)
     kit.prop("commontree_1", (px - 6.5, py + 3.0, 0), scale=1.4)
     kit.prop("commontree_2", (px + 7.0, py + 2.0, 0), scale=1.4)
     for x in (-3.5, 3.5):
         kit.prop("bush_1", (px + x, py + 1.7, 0), scale=0.9)
     outdoor_lights(kit, "pratt", px + 0.4, py + 1.5, (px + 0.4, py + 3.0, 1.3), 3.0, 450)
+    n_ = kit.light("pratt.leo", "AREA", (px + 0.4, py + 6.0, 3.6), 650, "#fff3e0", size=3.0, shadow=False)
+    kit.aim(n_, (px, py - 0.1, 1.4))
 
 
 def build_street(kit):
@@ -415,7 +423,7 @@ def build_street(kit):
     for sxx in (-1, 1):
         kit.box(f"street.bench.leg{sxx}", (0.07, 0.5, 0.46), (sxx * 0.8 + sx, sy + 3.3, 0.23), pl("#4a4a50", 0.5))
     # the checked print the touch leaves on the bench (shown by the `print` cue)
-    pr = kit.plane("street.print", (0.8, 0.4), (sx + 0.3, sy + 3.3, 0.5), imat(kit, "street.printm", _checks_image("#c96f4a", "#fffaf0", "checks2", 6), 0.95)[0])
+    pr = kit.plane("street.print", (0.5, 0.5), (sx + 0.55, sy + 3.5, 0.75), imat(kit, "street.printm", _checks_image("#c96f4a", "#fffaf0", "checks2", 2), 0.95)[0], rot=(math.pi / 2, 0, 0))
     pr.hide_render = True
     noshadow(pr)
     W["benchprint"] = pr
@@ -447,10 +455,10 @@ def build_room(kit):
     # the bed: head against the north wall
     bx, by = rx + 0.3, ry + 2.35
     kit.box("room.bed.frame", (1.1, 2.0, 0.28), (bx, by, 0.17), pl("#a8743f", 0.6))
-    kit.box("room.bed.mattress", (1.0, 1.9, 0.22), (bx, by, 0.42), pl("#fffaf0", 0.8))
-    kit.box("room.bed.blanket", (1.04, 1.2, 0.1), (bx, by - 0.35, 0.57), pl("#a8d8b8", 0.8), bevel=0.02)
+    kit.box("room.bed.mattress", (1.0, 1.9, 0.22), (bx, by, 0.42), pl("#efece4", 0.8))
+    kit.box("room.bed.blanket", (1.04, 1.2, 0.1), (bx, by - 0.35, 0.57), pl("#eeeae2", 0.8), bevel=0.02)
     kit.box("room.bed.head", (1.2, 0.08, 0.9), (bx, ry + 3.46, 0.7), pl("#a8743f", 0.6))
-    pillow = kit.box("room.pillow", (0.64, 0.42, 0.16), (bx, by + 0.7, 0.62), pl("#ffffff", 0.9, spec=0.02), bevel=0.06, seg=3)
+    pillow = kit.box("room.pillow", (0.64, 0.42, 0.16), (bx, by + 0.7, 0.62), pl("#f1efea", 0.9, spec=0.02), bevel=0.06, seg=3)
     # one soft yellow stripe across the pillowcase, 1 cm proud on top and at the front
     kit.box("room.pillow.stripe", (0.14, 0.44, 0.18), (bx + 0.02, by + 0.7, 0.62), pl(YELLOW, 0.8), bevel=0.04, seg=3)
     kit.box("room.window", (0.06, 1.4, 1.2), (rx - 3.48, ry + 0.5, 1.7), kit.emit("#cfeaff", 0.8, "roomwin"))
@@ -574,6 +582,10 @@ def animate(kit, story, tl, t, ctx):
     cv = sample("curtain", tl, t, {"v": 0.0})["v"] > 0.5
     for ob in W.get("curtain", []):
         ob.hide_render = not cv
+    if "photo" in W:
+        pv = sample("photo", tl, t, {"v": 0.0})["v"] < 0.5
+        for ob in W["photo"]:
+            ob.hide_render = pv
     if "benchprint" in W:
         W["benchprint"].hide_render = sample("print", tl, t, {"v": 0.0})["v"] < 0.5
     if W.get("rub") is not None:
