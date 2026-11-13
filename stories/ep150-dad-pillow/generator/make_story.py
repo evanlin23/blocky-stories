@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -224,7 +224,7 @@ shot("S06b", "L06.3", cam(HX + 0.2, 5.6, 1.25, 1.6, 12, 30, cz=1.35))
 shot("S06c", "L06.4", cam(PME[0], PME[1], 1.5, 1.3, 0, 34, cz=1.55))
 # S06d: the wide-open door on the sunny porch, me already in (out of frame)
 show("L06.5")
-shot("S06d", "L06.5", camp([HX, 0.7, 1.0], [HX, 5.0, 1.75], 22, pos2=[HX, 1.15, 1.02], tgt2=[HX, 5.0, 1.75]))
+shot("S06d", "L06.5", camp([HX, 0.6, 1.0], [HX, 5.0, 1.75], 22, pos2=[HX + 0.2, 1.65, 1.05], tgt2=[HX, 5.0, 1.75]))
 # S07: Dad in the hall, shaking his head, smiling
 show("L07", "dad")
 place("L07", "dad", (HX, 2.4, 0.0), 0, "smile", arms=[0, 0])
@@ -241,7 +241,7 @@ place("L08", "me", (G.ME_H[0], G.ME_H[1], 0.0), 0, "worried", arms=[0, 0])
 # looking round the dream hall: left, then right
 key("me", "L08.1", (G.ME_H[0], G.ME_H[1], 0.0), yaw=0, expr="worried", head=[-38, 0], blend=0.35)
 key("me", "L08.2", (G.ME_H[0], G.ME_H[1], 0.0), yaw=0, expr="worried", head=[34, 0], blend=0.4)
-shot("S08a", "L08", cam(HX, 3.1, 1.3, 2.6, 0, 22, cz=1.4))
+shot("S08a", "L08", camp([HX, -1.14, 1.4], [HX, 3.1, 1.3], 22, pos2=[HX - 0.15, -0.45, 1.4], tgt2=[HX, 3.1, 1.32]))
 place("L08.3", "me", (HX + 0.35, 3.8, 0.0), 0, "worried", arms=[0, 0])
 shot("S08b", "L08.3", cam(HX - 0.1, 5.0, 1.4, 2.2, 0, 28, cz=1.4))
 place("L09", "me", (G.ME_H[0], 3.2, 0.0), 0, "worried", arms=[0, 0])
@@ -328,7 +328,9 @@ cue("L25", "mode", m="dream")
 show("L25", "me", "dad")
 place("L25", "me", (HX + 0.7, 3.0, 0.0), 0, "warm", arms=[0, 0])
 place("L25", "dad", (G.DAD_X, G.DAD_Y, SEAT_Z), 0, "sleep", arms=[0, 0], blink=False)
-shot("S25", "L25", camp([HX - 0.7, -1.3, 1.3], [HX - 0.7, 2.6, 1.6], 15, pos2=[HX - 0.7, -1.0, 1.32], tgt2=[HX - 0.7, 2.6, 1.6]))
+shot("S25", "L25", camp([HX - 0.7, -1.3, 1.3], [HX - 0.7, 2.6, 1.6], 15, pos2=[HX - 0.7, -0.8, 1.33], tgt2=[HX - 0.68, 2.6, 1.6]))
+# my small smile toward Dad as the line lands
+key("me", "L25.2", (HX + 0.7, 3.0, 0.0), yaw=0, expr="warm", head=[-14, 6], blend=0.6)
 
 # ===== 08 the kitchen (L27)
 cue("L27", "mode", m="wake")
@@ -345,7 +347,7 @@ key("me", "L27.3+0.2", KP, yaw=180, expr="laugh", arms=[0, 66], side=[0, 8], ble
 key("me", "L27.3+0.35", KP, yaw=180, expr="laugh", arms=[0, 76], side=[0, 8], blend=0.1)
 key("me", "L27.4", KP, yaw=180, expr="laugh", arms=[0, 0], side=[0, 0], blend=0.3)
 mouth("me", "L27", "L27>", 0.35)
-shot("S27a", "L27", cam(KX + 0.05, -0.3, 1.3, 1.7, 180, 30, cz=1.45))
+shot("S27a", "L27", camp([KX + 0.05, 3.48, 1.45], [KX + 0.05, -0.3, 1.3], 30, pos2=[KX - 0.1, 2.8, 1.43], tgt2=[KX + 0.05, -0.3, 1.32]))
 cue("L27>", "spat", v=1.0)
 cue("L27>+0.35", "spat", v=2.0)
 show("L27>", "dad")
