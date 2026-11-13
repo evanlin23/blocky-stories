@@ -242,6 +242,8 @@ def build_car(kit, name, body_hex, cabin=True):
         b("blind", (G.CAR_W - 0.4, 3.0, 0.8), (0, -0.5, 1.4), pl("#3a3f48", 0.8), bevel=0.0)
         return P
     # ---- the cabin
+    # a soft warm bounce inside, so the roof lining and the faces under it read as sunlit, never a black lid
+    kit.light(f"{name}.cabin", "POINT", (0, -0.4, 1.25), 45, "#fff0dc", size=0.9, parent=root, shadow=False)
     b("dash", (G.CAR_W - 0.22, 0.42, 0.5), (0, 1.15, 0.97), pl("#3d4a52", 0.7, spec=0.08), bevel=0.05)
     b("dashtop", (G.CAR_W - 0.24, 0.42, 0.04), (0, 1.15, 1.235), pl("#4a5860", 0.75, spec=0.05), bevel=0.01)
     b("console", (0.4, 0.5, 0.42), (0, 0.65, 0.62), pl("#3d4a52", 0.7), bevel=0.03)
@@ -370,6 +372,8 @@ def build_home(kit):
     for k in range(2):
         kit.box(f"home.step{k}", (1.6, 0.4, 0.15 * (k + 1)), (-2.0, py0 - 0.2 - 0.4 * (1 - k) + 0.0, 0.075 * (k + 1)), trim)
     kit.box("home.rail", (px1 - px0 - 2.4, 0.08, 0.08), (px0 + (px1 - px0 - 2.4) / 2 + 0.1, py0 + 0.2, G.PZ + 0.85), trim)
+    # a bounce under the porch roof (the sun can't reach its underside)
+    kit.light("home.porchfill", "POINT", (-2.0, 8.7, 1.5), 120, "#fff0dc", size=1.5, shadow=False)
     kit.box("home.door", (1.0, 0.08, 2.1), (-2.0, y0 - 0.03, G.PZ + 1.05), pl("#e8603a", 0.6), bevel=0.02)
     kit.box("home.knob", (0.08, 0.06, 0.08), (-1.65, y0 - 0.09, G.PZ + 1.0), pl("#c9a040", 0.4, spec=0.5))
     winm = pl("#5f86a8", 0.35, spec=0.2)
@@ -377,7 +381,7 @@ def build_home(kit):
         kit.box(f"home.win{k}", (1.4, 0.06, 1.2), (x, y0 - 0.03, 1.75), trim)
         kit.box(f"home.winp{k}", (1.2, 0.06, 1.0), (x, y0 - 0.05, 1.75), winm)
         kit.box(f"home.winb{k}", (0.06, 0.07, 1.0), (x, y0 - 0.07, 1.75), trim)
-    for k, x in enumerate((-7.6, -5.4, -3.2, 0.9)):
+    for k, x in enumerate((-7.7, -6.1)):   # off the porch (x -5 to 1): clear of me there (S20b) and the S07a lens
         kit.prop("bush_1", (x, y0 - 0.9, 0), scale=0.9, rot=40 * k)
     kit.prop("flowers", (-0.4, 6.8, 0), scale=1.2)
     kit.prop("sub_fence_low", (-12, -5.6, 0), rot=0)
