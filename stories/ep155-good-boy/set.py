@@ -773,7 +773,7 @@ TOD = {
                 pane=("#dff0ff", 1.3), pos=(46, -8, 22)),
     "gold": dict(sky="#ffcf94", ss=0.9, sun="#ffb064", sg=0.9, face=1.0, lant=0.8, lamp=0.0, dfill=0.0, key=0.0, wall=1.0,
                  pane=("#dff0ff", 1.3), pos=(40, -12, 6)),
-    "dusk": dict(sky="#5a74c8", ss=0.3, sun="#ffb890", sg=0.1, face=0.2, lant=4.0, lamp=0.6, dfill=0.45, key=1.0, wall=0.16,
+    "dusk": dict(sky="#5a74c8", ss=0.3, sun="#ffb890", sg=0.1, face=0.2, lant=4.0, lamp=0.6, dfill=0.5, key=0.55, wall=0.0,
                  pane=("#5f7fd6", 0.9), pos=(40, -12, 4)),
 }
 
