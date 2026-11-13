@@ -209,7 +209,7 @@ def chair(kit, name, x, y, pl):
     root = kit.empty(name, (x, y, 0))
     kit.box(f"{name}.seat", (0.46, 0.46, 0.05), (0, 0, G.SEAT_H - 0.025), wood, root)
     kit.box(f"{name}.cush", (0.4, 0.4, 0.04), (0, 0, G.SEAT_H + 0.02), pl("#2fa39a", 0.8), root)
-    kit.box(f"{name}.back", (0.46, 0.04, 0.5), (0, 0.22, G.SEAT_H + 0.27), wood, root)
+    kit.box(f"{name}.back", (0.46, 0.04, 0.26), (0, 0.22, G.SEAT_H + 0.15), wood, root)
     for sx in (-1, 1):
         for sy in (-1, 1):
             kit.box(f"{name}.leg{sx}{sy}", (0.05, 0.05, G.SEAT_H - 0.05), (sx * 0.2, sy * 0.2, (G.SEAT_H - 0.05) / 2), wood, root)
@@ -404,11 +404,9 @@ def _first_frame(kit, story):
     mm = get("mom.headg")
     if mm is not None:
         gold = kit.plastic("#f0c040", 0.3, spec=0.8)
-        hc = kit.plastic("#b9b9c2", 0.7)
-        for sx in (-1, 1):
-            kit.sphere(f"mom.ear{sx}", 0.085, (sx * 0.56, -0.1, -0.4), gold, mm, seg=10)
-            kit.box(f"mom.curl{sx}", (0.12, 0.5, 0.5), (sx * 0.5, 0.0, 0.1), hc, mm, bevel=0.04)
-        kit.box("mom.neckchain", (0.34, 0.03, 0.03), (0, -0.56, -0.62), gold, mm)
+        for sx in (-1, 1):   # gold earrings on the v3 head (2.8 wide), and a glasses cord of gold beads down each cheek
+            kit.sphere(f"mom.ear{sx}", 0.14, (sx * 1.46, 0.0, -0.3), gold, mm, seg=10)
+            kit.sphere(f"mom.ear2{sx}", 0.1, (sx * 1.46, 0.0, -0.5), gold, mm, seg=10)
     W["inited"] = True
 
 

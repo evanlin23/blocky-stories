@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L16")
@@ -42,36 +42,33 @@ def remap_all(items):
 
 
 D2R = math.pi / 180
-X = {"neutral": "neutral", "uneasy": "worried", "stunned": "wide", "scared": "scared", "smile": "smile", "laugh": "laugh",
-     "warm": "warm", "sheepish": "sad-smile", "sad": "sad-smile"}
+X = {"neutral": "neutral", "uneasy": "nervous", "stunned": "shocked", "scared": "terrified", "smile": "delighted",
+     "laugh": "crylaugh", "warm": "delighted", "sheepish": "nervous", "sad": "heartbroken"}
 
 
-def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="solid", pattern_c=None, hat="none",
-           hat_c="#333333", extras=(), eyes="round", sleeves="long", brow_w=1.0, extra_c=None, **kw):
-    d = {"age": "adult", "skin": skin, "shirt": shirt, "pattern": pattern, "pants": pants, "shoes": shoes,
-         "sleeves": sleeves, "hair": hair, "hair_c": hair_c, "hat": hat, "hat_c": hat_c,
-         "face": {"eyes": eyes, "brows": True, "ink": "#1c120c"}}
-    if brow_w != 1.0:
-        d["face"]["brow_w"] = brow_w
-    if pattern_c:
-        d["pattern_c"] = pattern_c
-    if extras:
-        d["extras"] = list(extras)
-    if extra_c:
-        d["extra_c"] = extra_c
+def person(skin, shirt, pants, shoes, hair, hair_c, features=(), hair_c2=None, eyes="round", sleeves="long", **kw):
+    d = {"age": "adult", "skin": skin, "shirt": shirt, "pants": pants, "shoes": shoes, "sleeves": sleeves,
+         "hair": hair, "hair_c": hair_c, "hat": "none", "face": {"eyes": eyes, "brows": True, "ink": "#1c120c"}}
+    if features:
+        d["features"] = list(features)
+    if hair_c2:
+        d["hair_c2"] = hair_c2
     d.update(kw)
     return d
 
 
 cast = {
-    "me": person("#7a5238", "#f08a2a", "#3a4f7a", "#f2efe6", hair="buzz", hair_c="#15100c", extras=["glasses"], extra_c="#2a1c12",
-                 brow_w=1.3),
-    "mom": person("#7a5238", "#2f8f8a", "#5a4a6a", "#4a3a30", hair="bun", hair_c="#b9b9c2", pattern="knit", pattern_c="#256f6b",
-                  eyes="lashes", extras=["glasses"], extra_c="#8a6a3a", cheeks="#e8907c", height=0.93, brow_w=1.4),
-    "cousin": person("#d4483a", "#f4f4f0", "#2f9fd0", "#e8d8b8", hair="cap", hair_c="#2a1b12", hat="bucket", hat_c="#f0d070",
-                     sleeves="none", brow_w=1.4),
-    "friend": person("#b98456", "#4a8a5a", "#3a4a63", "#5a4030", hair="cap", hair_c="#1a1410", hat="ballcap", hat_c="#d93a2a",
-                     sleeves="short", brow_w=1.3),
+    # me, 30: a dark curly cloud, a short beard, glasses; an orange hoodie; height 1.08 so he reads as a grown man
+    "me": person("#7a5238", "#f08a2a", "#3a4f7a", "#f2efe6", "curls", "#2a1a10", features=["beard", "glasses"],
+                 hair_c2="#2a1c12", height=1.08),
+    # Mom, 60: a big darker-gray bun with a gold band (the knot) and gold glasses, a teal knit cardigan
+    "mom": person("#7a5238", "#2f8f8a", "#5a4a6a", "#4a3a30", "bigbun", "#585866", features=["glasses"], hair_c2="#c9a24a",
+                  pattern="knit", pattern_c="#256f6b", eyes="lashes", height=0.95),
+    # the cousin (beach): a loud pink swoop, sunburnt
+    "cousin": person("#d4483a", "#f4f4f0", "#2f9fd0", "#e8d8b8", "swoop", "#ff4fa0", sleeves="none"),
+    # the friend (porch): a green mohawk and a mustache
+    "friend": person("#b98456", "#4a8a5a", "#3a4a63", "#5a4030", "mohawk", "#2a9d5c", features=["mustache"],
+                     hair_c2="#d93a2a", sleeves="short"),
 }
 acting = {n: [] for n in cast}
 last = {n: [0, 0] for n in cast}
@@ -159,8 +156,7 @@ for ln, sec in (("L17", 0), ("L18", 9), ("L19", 20), ("L20", 31), ("L21", 41), (
     cue(ln, "timer", mode=1.0, s=float(sec), dur=0.4)
 cue("L24", "timer", mode=0.0, s=57.0, big=0.0)
 # the kitchen clocks (all ten minutes fast) and the tag's readout under the tag
-cue(0, "clock", on=1.0, h=11.0, m=57.0)
-cue("L02", "clock", on=1.0, h=11.0, m=50.0)
+cue(0, "clock", on=1.0, h=11.0, m=50.0)     # 11:50 from the first frame: nothing ever reads later than the next time spoken
 cue("L12", "clock", on=1.0, h=11.0, m=52.0)
 cue("L13", "clock", on=1.0, h=11.0, m=55.0)
 cue("L15", "clock", on=1.0, h=11.0, m=57.0)
@@ -314,7 +310,8 @@ sound = {
 remap_all(sfx)
 remap_all(music["sections"])
 remap_all(sound["music_drops"])
-polish = {"reveal": [remap("L24"), remap("L25.3")], "twist": remap("L24"),
+polish = {"overlap": True, "turn_cap": 220, "punch_max": 4, "sharpen": 0.4, "bloom_thresh": 0.85, "talk": True,
+          "reveal": [remap("L24"), remap("L25.3")], "twist": remap("L24"),
           "emph": [remap(x) for x in ["L01.5", "L12", "L16.1", "L21.2", "L23.3", "L25.3"]],
           "quiet": [[remap("L25"), remap("L25.2")]],
           "hold": ["S01a", "S08", "S14", "S21a", "S25"], "ones": "all"}
@@ -335,7 +332,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "rev": REV,
-    "look": {"style": "closer", "fog": "#f4e8d4", "fog_density": 0.001, "fog_start": 60.0, "sky": "#ffe9c0",
+    "look": {"style": "v3", "fog": "#f4e8d4", "fog_density": 0.001, "fog_start": 60.0, "sky": "#ffe9c0",
              "sky_strength": 1.0, "exposure": 0.05, "flash_safe": True, "polish": polish},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.012, -0.02], "saturation": 1.06, "contrast": 1.03,
               "vignette": 0.12, "bloom": 0.12, "grain": 0.008},

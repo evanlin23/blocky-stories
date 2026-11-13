@@ -5,8 +5,8 @@ Everyone at the table sits on its north side facing the camera (south); the nort
 TABLE = (0.0, 1.6)
 TABLE_R = 0.85
 TABLE_Z = 0.74
-ME_SEAT = (0.67, 2.62)
-MOM_SEAT = (-0.67, 2.62)
+ME_SEAT = (0.75, 2.62)
+MOM_SEAT = (-0.75, 2.62)
 SEAT_H = 0.46
 PHONE = (0.0, 1.0, 0.765)      # on the cloth, table edge nearest the camera, between us
 WALL_Y = 3.75                  # the north wall
