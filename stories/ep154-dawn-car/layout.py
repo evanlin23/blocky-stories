@@ -23,7 +23,7 @@ import math
 CAR_W, CAR_L = 2.6, 4.6
 CUSH = 0.5                   # seat cushion top
 SEATS = {"driver": (-0.72, 0.15), "pass": (0.72, 0.15), "pass_back": (0.72, -0.2),
-         "rear_l": (-0.45, -1.25), "rear_r": (0.6, -1.25)}
+         "rear_l": (-0.45, -1.15), "rear_r": (0.6, -1.25)}
 MUFFIN_L = (0.32, 1.13, 1.25)   # the muffin's place on the dash top (local)
 
 
@@ -87,7 +87,7 @@ COOK_WALL = (297.15, -0.6, 0.0)
 # ---- diner
 DX, DY = -300.0, 300.0
 CAR_DINER = (-298.5, 298.0, 0.0, 90.0)   # facing west, its passenger side to the diner (north)
-COOK_DINER = (-297.95, 300.05, 0.0)   # local (2.05, -0.55): clear of the open door
+COOK_DINER = (-298.35, 300.0, 0.0)   # local (2.0, -0.15): in the door opening, clear of the swung door and the pillar
 
 # ---- rain
 RX, RY = 0.0, -300.0

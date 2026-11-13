@@ -244,8 +244,8 @@ def build_car(kit, name, body_hex, cabin=True):
     # ---- the cabin
     # a soft warm bounce inside, so the roof lining and the faces under it read as sunlit, never a black lid
     kit.light(f"{name}.cabin", "POINT", (0, -0.4, 1.25), 45, "#fff0dc", size=0.9, parent=root, shadow=False)
-    b("dash", (G.CAR_W - 0.22, 0.42, 0.5), (0, 1.15, 0.97), pl("#3d4a52", 0.7, spec=0.08), bevel=0.05)
-    b("dashtop", (G.CAR_W - 0.24, 0.42, 0.04), (0, 1.15, 1.235), pl("#4a5860", 0.75, spec=0.05), bevel=0.01)
+    b("dash", (G.CAR_W - 0.22, 0.42, 0.5), (0, 1.15, 0.97), pl("#5f6e78", 0.7, spec=0.08), bevel=0.05)
+    b("dashtop", (G.CAR_W - 0.24, 0.42, 0.04), (0, 1.15, 1.235), pl("#6a7a84", 0.75, spec=0.05), bevel=0.01)
     b("console", (0.4, 0.5, 0.42), (0, 0.65, 0.62), pl("#3d4a52", 0.7), bevel=0.03)
     # the dial in front of the driver: a cream face, a red needle
     dx_ = G.SEATS["driver"][0]
@@ -302,8 +302,8 @@ def build_car(kit, name, body_hex, cabin=True):
     steel = pl("#9aa0aa", 0.35, spec=0.4)
     for k, dx in enumerate((-0.32, 0.32)):
         b(f"rail{k}", (0.06, 1.25, 0.05), (sp[0] + dx, 0.02, 0.43), steel, bevel=0.01)
-    for k, dy in enumerate((0.1, 0.2)):
-        b(f"tally{k}", (0.012, 0.022, 0.035), (sp[0] - 0.32 + 0.036, dy, 0.44), pl("#f2e6c8", 0.7), bevel=0.0)
+    for k, dy in enumerate((0.3, 0.4)):   # across the rail's top, 6 mm proud; the slide back uncovers them
+        b(f"tally{k}", (0.075, 0.022, 0.012), (sp[0] - 0.32, dy, 0.464), pl("#f2e6c8", 0.7), bevel=0.0)
     # the lock knob on the driver's door sill, behind the window
     P["lock"] = b("lockknob", (0.05, 0.05, 0.1), (-(hw - 0.09), -0.35, 1.06), pl("#d8d2c0", 0.5), bevel=0.015)
     return P
