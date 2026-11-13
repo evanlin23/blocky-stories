@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L16")
@@ -62,7 +62,7 @@ cast = {
     "me": person("#7a5238", "#f08a2a", "#3a4f7a", "#f2efe6", "curls", "#2a1a10", features=["beard", "glasses"],
                  hair_c2="#2a1c12", height=1.08),
     # Mom, 60: a big darker-gray bun with a gold band (the knot) and gold glasses, a teal knit cardigan
-    "mom": person("#7a5238", "#2f8f8a", "#5a4a6a", "#4a3a30", "bigbun", "#585866", features=["glasses"], hair_c2="#c9a24a",
+    "mom": person("#7a5238", "#2f8f8a", "#5a4a6a", "#4a3a30", "bigbun", "#8a8a9c", features=["glasses"], hair_c2="#c9a24a",
                   pattern="knit", pattern_c="#256f6b", eyes="lashes", height=0.95),
     # the cousin (beach): a loud pink swoop, sunburnt
     "cousin": person("#d4483a", "#f4f4f0", "#2f9fd0", "#e8d8b8", "swoop", "#ff4fa0", sleeves="none"),
@@ -156,7 +156,7 @@ for ln, sec in (("L17", 0), ("L18", 9), ("L19", 20), ("L20", 31), ("L21", 41), (
     cue(ln, "timer", mode=1.0, s=float(sec), dur=0.4)
 cue("L24", "timer", mode=0.0, s=57.0, big=0.0)
 # the kitchen clocks (all ten minutes fast) and the tag's readout under the tag
-cue(0, "clock", on=1.0, h=11.0, m=50.0)     # 11:50 from the first frame: nothing ever reads later than the next time spoken
+cue(0, "clock", on=0.0, h=11.0, m=50.0)     # the tag shows only the "1" until L12; the wall clocks read 11:50 and never rewind
 cue("L12", "clock", on=1.0, h=11.0, m=52.0)
 cue("L13", "clock", on=1.0, h=11.0, m=55.0)
 cue("L15", "clock", on=1.0, h=11.0, m=57.0)
@@ -181,8 +181,6 @@ mouth("me", "L01.2", "L01.4", 0.35)
 shot("S01c", "L01.4", clkcam(1.9, tx=0.26, push=(1.7, 1.5)))
 shot("S01d", "L01.5", mecam(1.35, 0, dx=-0.1, push=(1.15, 1.3)))
 mouth("me", "L01.4", "L01>", 0.35)
-shot("S02", "L02", clkcam(1.6, tx=0.36, push=(1.45, 1.5)))
-mouth("me", "L02", "L02>", 0.3)
 # L03 "Tick."
 shot("S03", "L03", momcam(1.45, 8, dx=0.0, push=(1.3, 1.3)))
 key("mom", "L03", expr="uneasy", head=[0, 6])
@@ -206,10 +204,10 @@ key("friend", "L06.3+0.9", arms=[0, 0], side=[0, 0], blend=0.4)
 # --------------------------------------------------------------------------------------------- 03 Mom's kitchen of clocks (L07 to L10)
 key("mom", "L07", expr="smile", head=[0, 0])
 shot("S07a", "L07", momcam(1.55, 6, dx=0.2, push=(1.35, 1.3)))
-shot("S07b", "L07.1", P2((2.9, -1.0, 1.8), (-3.4, 2.4, 1.8), 30, pos2=(2.9, -0.8, 1.8), tgt2=(-3.4, 2.5, 1.8)))
-key("me", "L08", expr="neutral", head=[0, -4])
-shot("S08", "L08", P2((-0.5, 1.9, 1.7), (-3.4, 2.4, 1.7), 30, pos2=(-0.9, 1.95, 1.7), tgt2=(-3.4, 2.4, 1.7)))
-key("me", "L09", expr="sheepish", head=[0, 6], arms=[12, 12], side=[0, 0])
+shot("S07b", "L07.1", P2((0.0, -0.6, 2.0), (-2.5, 3.7, 2.1), 30, pos2=(0.0, -0.6, 2.0), tgt2=(2.5, 3.7, 2.1)))
+key("me", "L08", expr="neutral", head=[0, -4], arms=[0, 12], side=[80, 0], blend=0.35)
+shot("S08", "L08", P2((0.9, 0.2, 1.55), (0.0, 3.2, 1.55), 28, pos2=(0.8, 0.4, 1.55), tgt2=(0.0, 3.2, 1.55)))
+key("me", "L09", expr="sheepish", head=[0, 6], arms=[12, 12], side=[0, 0], blend=0.35)
 key("me", "L09.1", arms=[12, 62], side=[0, 22], blend=0.35)
 key("me", "L09.1+0.7", arms=[12, 12], side=[0, 0], blend=0.4)
 mouth("me", "L09", "L09>", 0.35)
@@ -225,16 +223,16 @@ shot("S12", "L12", clkcam(1.75, tx=0.4, push=(1.55, 1.5)))
 key("me", "L12", expr="uneasy", head=[0, 0])
 shot("S13", "L13", P2((1.2, -0.3, 1.9), (-0.4, 1.9, 1.25), 22, pos2=(1.1, -0.1, 1.88), tgt2=(-0.4, 1.9, 1.25)))
 key("mom", "L14", expr="uneasy", head=[0, 0], arms=[12, 12], side=[0, 0])
-key("mom", "L14", arms=[12, 55], side=[0, 35], blend=0.6)
-key("me", "L14", arms=[55, 12], side=[35, 0], expr="uneasy", blend=0.6)
-shot("S14", "L14", C(0.0, 2.62, 1.0, 2.25, 0, 26, cz=1.8, push=(2.05, 1.0)))
-key("mom", "L15", arms=[12, 12], side=[0, 0], blend=0.5)
-key("me", "L15", arms=[12, 12], side=[0, 0], expr="scared", blend=0.5)
+key("me", "L14", expr="uneasy")
+shot("S14a", "L14", C(0.0, 2.62, 1.2, 1.9, 0, 26, cz=1.7, push=(1.7, 1.2)))
+shot("S14b", "L14.1", P2((0.35, 0.35, 1.35), (0.35, 1.75, 0.85), 24, pos2=(0.35, 0.55, 1.3), tgt2=(0.35, 1.75, 0.85)))
+key("mom", "L15", expr="uneasy", blend=0.5)
+key("me", "L15", expr="scared", blend=0.5)
 shot("S15", "L15", mecam(1.3, 0, dx=-0.05, push=(1.1, 1.3)))
 shot("S15d", "P16", P2((0.0, -1.7, 1.5), (0.0, 2.4, 2.0), 22, pos2=(0.0, -1.5, 1.5), tgt2=(0.0, 2.4, 2.0)))
 
 # --------------------------------------------------------------------------------------------- 05 the call (L16 to L22)
-shot("S16a", "L16", P2((0.1, -0.5, 1.1), (0.1, 2.6, 0.95), 24, pos2=(0.1, -0.3, 1.1), tgt2=(0.1, 2.6, 0.95)))
+shot("S16a", "L16", P2((0.0, 0.1, 1.2), (0.0, 1.3, 0.8), 30, pos2=(0.0, 0.3, 1.2), tgt2=(0.0, 1.3, 0.8)))
 key("me", "L16.1+0.3", expr="stunned", head=[0, 0])
 shot("S16b", "L16.1+0.3", mecam(1.3, 0, dx=-0.05, push=(1.1, 1.3)))
 shot("S17", "L17", P2((0.35, -1.0, 1.25), (0.35, 2.6, 1.1), 20, pos2=(0.35, -0.8, 1.25), tgt2=(0.35, 2.6, 1.1)))
@@ -248,9 +246,9 @@ key("me", "L20", expr="laugh", head=[0, -6])
 mouth("me", "L20", "L20>", 0.4)
 key("mom", "L20", arms=[12, 12], side=[0, 0], expr="smile", blend=0.5)
 shot("S20", "L20", mecam(1.4, -8, dx=-0.1, push=(1.2, 1.3)))
-key("me", "L21", expr="stunned", head=[0, 0])
-shot("S21a", "L21", P2(*S01A, pos2=(0.3, -0.2, 1.3), tgt2=(0.3, 3.0, 0.91)))
-key("me", "L21.2", expr="stunned")
+key("me", "L21", expr="stunned", head=[0, 0], arms=[0, 12], side=[80, 0], blend=0.35)
+shot("S21a", "L21", P2((1.0, 0.4, 1.75), (0.1, 3.2, 1.7), 28, pos2=(0.9, 0.6, 1.75), tgt2=(0.1, 3.2, 1.7)))
+key("me", "L21.2", expr="stunned", arms=[12, 12], side=[0, 0], blend=0.3)
 shot("S21b", "L21.2", mecam(1.2, 0, dx=-0.05, push=(1.0, 1.3)))
 key("me", "L22", expr="laugh", head=[0, -8], blend=0.6)
 mouth("me", "L22", "L22>", 0.4)
@@ -315,10 +313,10 @@ polish = {"overlap": True, "turn_cap": 220, "punch_max": 4, "sharpen": 0.4, "blo
           "reveal": [remap("L24"), remap("L25.3")], "twist": remap("L24"),
           "emph": [remap(x) for x in ["L01.5", "L12", "L16.1", "L21.2", "L23.3", "L25.3"]],
           "quiet": [[remap("L25"), remap("L25.2")]],
-          "hold": ["S01a", "S08", "S14", "S21a", "S25"], "ones": "all"}
+          "hold": ["S01a", "S08", "S14a", "S21a", "S25"], "music_duck_db": 8.0, "ones": "all"}
 story = {
     "slug": "ep152-future-late",
-    "title": "Future Me Called Two Minutes Before MIDNIGHT 🕛",
+    "title": "Everyone's Future Call Came By BREAKFAST 🕛",
     "made_for_kids": False,
     "premise": ("On your thirtieth birthday your future self phones you once, that day, and mine hadn't rung by 11:57 at night "
                 "while my mom and I sat under her fourteen kitchen clocks."),
@@ -339,7 +337,7 @@ story = {
               "vignette": 0.12, "bloom": 0.12, "grain": 0.008},
     "hud": {"object": "tag", "at": [-0.5, 0.62], "size": 0.46},
     "asr_forgive": ["thirtieth", "eleven fifty-two", "eleven fifty-five", "eleven fifty-seven", "eleven fifty-eight",
-                    "hadn't", "tick", "future me", "buy", "buy the house"],
+                    "hadn't", "forty-eight", "tick", "future me", "buy", "buy the house"],
     "cast": cast,
     "lines": lines,
     "shots": shots,
@@ -351,7 +349,7 @@ story = {
     "set_moves": [],
     "frames_ok": ["S16a"],
     "staging_ok": [],
-    "framing_ok": ["S07b"],
+    "framing_ok": [],
     "clip_ok": [],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

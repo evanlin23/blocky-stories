@@ -299,8 +299,28 @@ def build_phone(kit):
     W["finger"] = fg
     kit.box("finger.tip", (0.034, 0.12, 0.028), (0, -0.06, 0.0), sk, fg, bevel=0.012)
     kit.box("finger.hand", (0.1, 0.16, 0.04), (0.02, -0.2, 0.02), sk, fg, bevel=0.02)
-    wt = kit.empty("watch", (0, -80, 0))      # unused prop kept off stage (the watch is the card on the tag: see build_tag)
-    W["watch"] = wt
+    # ring cue: bright strokes either side of the phone, shown while it buzzes
+    rg = kit.empty("phone.ring", (0, 0, 0.004), root)
+    ringm = kit.emit("#ffd23a", 1.4, "ringglow")
+    for sx in (-1, 1):
+        for k in range(3):
+            ob = kit.box(f"phone.ring{sx}{k}", (0.006, 0.05 - 0.01 * k, 0.002), (sx * (0.068 + 0.026 * k), 0.0, 0.0), ringm, rg,
+                         rot=(0, 0, sx * 0.0))
+            noshadow(ob)
+    W["ring"] = rg
+    # a close-up of the hand-hold (S14b): my orange cuff and hand on the cloth, Mom's teal-cuffed flat hand landing on it
+    hh = kit.empty("handins", (0, -80, 0))
+    W["handins"] = hh
+    skin = pl("#7a5238", 0.6)
+    kit.box("hi.mycuff", (0.3, 0.22, 0.13), (0.55, 0.0, 0.065), pl("#f08a2a", 0.6), hh, bevel=0.03)
+    kit.box("hi.myhand", (0.22, 0.2, 0.07), (0.28, 0.0, 0.035), skin, hh, bevel=0.03)
+    mg = kit.empty("hi.mom", (0, 0, 0), hh)
+    W["hi.mom"] = mg
+    kit.box("hi.momcuff", (0.3, 0.24, 0.12), (-0.32, 0.0, 0.0), pl("#2f8f8a", 0.6), mg, bevel=0.03)
+    kit.box("hi.momknit", (0.06, 0.25, 0.125), (-0.15, 0.0, 0.0), pl("#256f6b", 0.6), mg, bevel=0.02)
+    kit.box("hi.momhand", (0.3, 0.22, 0.05), (0.07, 0.0, 0.0), skin, mg, bevel=0.025)
+    for k in range(4):
+        kit.box(f"hi.momfinger{k}", (0.1, 0.045, 0.04), (0.27, -0.085 + k * 0.057, -0.002), skin, mg, bevel=0.02)
 
 
 # ------------------------------------------------------------------------------------------------ the rule meter
@@ -346,7 +366,6 @@ def build_tag(kit):
     # the clock readout under the plate: H:MM, bigger than ep139's so it reads at phone size (11:57 is four digits)
     clk = kit.empty("tag.clock", (0, -0.63, 0), root)
     W["clockroot"] = clk
-    build_watch_card(kit, root)
     b("tag.cl.edge", (1.5, 0.5, 0.006), (0, 0, 0), edge, clk)
     b("tag.cl.plate", (1.44, 0.44, 0.006), (0, 0, 0.007), plate, clk)
     xs = (-0.5, -0.27, 0.2, 0.43)
@@ -354,36 +373,6 @@ def build_tag(kit):
     W["clockdigits"] = cs
     W["clockcolon"] = [b("tag.cl.c1", (0.05, 0.05, 0.006), (-0.04, 0.07, z), ink, clk),
                        b("tag.cl.c2", (0.05, 0.05, 0.006), (-0.04, -0.07, z), ink, clk)]
-
-
-def build_watch_card(kit, tagroot):
-    """My watch for S21a: a round dial card, hung off the tag (flat emissive like the tag), hands plainly at 11:48."""
-    edge = kit.emit("#2b2118", 0.6, "wedge")
-    face = kit.emit("#f6efdc", 0.9, "wface")
-    ink = kit.emit("#2b2118", 0.6, "wink")
-    red = kit.emit("#d94a3a", 0.9, "wred")
-    root = kit.empty("wcard", (2.5, -2.97, 0.0), tagroot)
-    W["wcard"] = root
-
-    def d(ob):
-        noshadow(ob)
-        return ob
-    d(kit.cyl("wc.rim", 0.74, 0.006, (0, 0, 0), edge, root, n=32))
-    d(kit.cyl("wc.face", 0.66, 0.006, (0, 0, 0.007), face, root, n=32))
-    for i in range(12):
-        a = i * 30 * D2R
-        big = i % 3 == 0
-        ln, wd = (0.2, 0.09) if big else (0.1, 0.045)
-        rr = 0.6 - ln / 2
-        d(kit.box(f"wc.t{i}", (wd, ln, 0.006), (rr * math.sin(a), rr * math.cos(a), 0.016), ink, root, rot=(0, 0, -a)))
-    ha, ma = (11 + 48 / 60) * 30 * D2R, 48 * 6 * D2R
-    hp = kit.empty("wc.hp", (0, 0, 0.022), root)
-    mp = kit.empty("wc.mp", (0, 0, 0.026), root)
-    d(kit.box("wc.hour", (0.1, 0.34, 0.006), (0, 0.17, 0), ink, hp))
-    d(kit.box("wc.min", (0.07, 0.5, 0.006), (0, 0.25, 0), ink, mp))
-    d(kit.cyl("wc.cap", 0.07, 0.006, (0, 0, 0.03), red, root, n=12))
-    hp.rotation_euler = (0, 0, -ha)
-    mp.rotation_euler = (0, 0, -ma)
 
 
 def _digit(d, n):
@@ -425,9 +414,40 @@ def _first_frame(kit, story):
             kit.sphere(f"mom.ear{sx}", 0.14, (sx * 1.46, 0.0, -0.3), gold, mm, seg=10)
             kit.sphere(f"mom.ear2{sx}", 0.1, (sx * 1.46, 0.0, -0.5), gold, mm, seg=10)
         # the bun's knot: a teal scrunchie round its waist and a gold hairpin through the front, so it reads as a bun not a hat
-        kit.box("mom.scrunch", (2.3, 2.3, 0.3), (0, 0.15, 1.15 + 0.62), kit.plastic("#2fa39a", 0.5), mm, bevel=0.12)
+        kit.box("mom.scrunch", (2.6, 2.6, 0.42), (0, 0.15, 1.15 + 0.62), kit.plastic("#2fa39a", 0.5), mm, bevel=0.12)
         kit.box("mom.pin", (2.7, 0.1, 0.12), (0, -0.92, 1.15 + 1.0), gold, mm, rot=(0, 0.45, 0), bevel=0.03)
+    build_watch(kit)
     W["inited"] = True
+
+
+def build_watch(kit):
+    """My watch, on my left-hand-side (screen-left) wrist: a strap over the cuff and a dial on the arm's front face,
+    parented to the arm block so it goes where the arm goes. Its hands show the real time (ten minutes behind the wall)."""
+    arm = bpy.data.objects.get("me.arm-1")
+    if arm is None:
+        return
+    pl = kit.plastic
+    edge = pl("#2a2018", 0.5)
+    face = pl("#f6efdc", 0.5)
+    red = pl("#d94a3a", 0.4)
+    strap = pl("#3b2a20", 0.6)
+    kit.box("wt.strap", (1.06, 1.06, 0.34), (0, 0, -1.0), strap, arm, bevel=0.05)
+    root = kit.empty("wt.root", (0, -0.53, -1.0), arm)
+    r = 0.52
+    kit.cyl("wt.rim", r * 1.18, 0.14, (0, -0.04, 0), pl("#c9a24a", 0.35, spec=0.6), root, rot=(math.pi / 2, 0, 0), n=24)
+    kit.cyl("wt.face", r, 0.06, (0, -0.12, 0), face, root, rot=(math.pi / 2, 0, 0), n=24)
+    for i in range(12):
+        a = i * 30 * D2R
+        big = i % 3 == 0
+        ln, wd = r * (0.24 if big else 0.12), r * (0.12 if big else 0.06)
+        rr = r * 0.92 - ln / 2
+        kit.box(f"wt.t{i}", (wd, 0.04, ln), (rr * math.sin(a), -0.16, rr * math.cos(a)), edge, root, rot=(0, a, 0))
+    hp = kit.empty("wt.hp", (0, -0.2, 0), root)
+    mp = kit.empty("wt.mp", (0, -0.25, 0), root)
+    kit.box("wt.hour", (r * 0.2, 0.05, r * 0.52), (0, 0, r * 0.26), edge, hp, bevel=0.01)
+    kit.box("wt.min", (r * 0.14, 0.05, r * 0.86), (0, 0, r * 0.43), edge, mp, bevel=0.01)
+    kit.cyl("wt.cap", r * 0.12, 0.06, (0, -0.28, 0), red, root, rot=(math.pi / 2, 0, 0), n=10)
+    W["wt"] = (hp, mp)
 
 
 INDOOR_FROM = 0
@@ -524,11 +544,27 @@ def animate(kit, story, tl, t, ctx):
         u = ss(tp)
         fg.location = (px + 0.0 + 0.1 * (1 - u), py + 0.1 + 0.16 * (1 - u), pz + 0.02 + 0.08 * (1 - u))
         fg.rotation_euler = (-0.25 * (1 - u), 0, math.pi + 0.3)
-    # ---- my watch, lying face up on the cloth beside the phone for S21a (the real-time watch next to the fast clock)
-    wt = W["watch"]
-    wc = W["wcard"]
-    for ob in [wc] + list(wc.children_recursive):
-        ob.hide_render = sid != "S21a"
+    # ---- my watch tells the real time: ten minutes behind the wall clocks
+    if W.get("wt"):
+        real = (hh % 12) * 60 + cm - 10
+        W["wt"][0].rotation_euler = (0, (real / 60.0) * 30.0 * D2R, 0)
+        W["wt"][1].rotation_euler = (0, (real % 60) * 6.0 * D2R, 0)
+    # ---- the ring cue on the phone
+    for k, ob in enumerate(W["ring"].children):
+        ob.hide_render = bz < 0.5
+        sx = -1 if k < 3 else 1
+        j = k % 3
+        ob.location.x = sx * (0.068 + 0.026 * j + 0.004 * math.sin(t * 20.0 + j))
+    # ---- the hand-hold close (S14b): Mom's hand comes in from the left and settles on my cuff
+    hi = W["handins"]
+    if sid == "S14b":
+        u = ss((t - shot["start"]) / 0.45)
+        hi.location = (0.0, 1.75, G.TABLE_Z + 0.02)
+        mg = W["hi.mom"]
+        mg.location = (0.35 - 0.45 * (1 - u), 0.0, 0.16 + 0.2 * (1 - u))
+        mg.rotation_euler = (0, 0.25 * (1 - u), 0)
+    else:
+        hi.location = (0, -80, 0)
     # ---- seated
     for who in ("me", "mom"):
         sm = sample("sit", tl, t, {"s": 0.0}, who=who)["s"]

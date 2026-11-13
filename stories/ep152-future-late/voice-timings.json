@@ -6,66 +6,38 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "on your thirtieth, it's you on the phone, from later. at eleven fifty-seven, mine still hadn't.",
+   "text": "i'm thirty today, and future me calls once, before midnight. at eleven fifty-seven, he still hadn't.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 4.052,
+   "dur": 4.431,
    "onset": 0.155,
-   "end": 3.862,
+   "end": 4.241,
    "chunks": [
     [
      0.155,
-     0.672
-    ],
-    [
-     0.698,
-     0.905
-    ],
-    [
-     0.905,
-     1.276
-    ],
-    [
-     1.31,
-     1.879
-    ],
-    [
-     1.992,
-     2.845
-    ],
-    [
-     2.879,
-     3.862
-    ]
-   ]
-  },
-  "L02": {
-   "text": "you get one call, and it comes that day.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.0,
-   "onset": 0.172,
-   "end": 1.793,
-   "chunks": [
-    [
-     0.172,
-     0.362
-    ],
-    [
-     0.362,
      0.759
     ],
     [
-     0.793,
-     1.155
+     0.784,
+     1.207
     ],
     [
-     1.155,
-     1.793
+     1.207,
+     1.638
+    ],
+    [
+     1.664,
+     2.414
+    ],
+    [
+     2.517,
+     3.345
+    ],
+    [
+     3.379,
+     4.241
     ]
    ]
   },
@@ -470,54 +442,58 @@
    ]
   },
   "L21": {
-   "text": "except by real time, he was twelve minutes early.",
+   "text": "but her clocks are fast. it was really eleven forty-eight. twelve minutes to spare.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.276,
-   "onset": 0.172,
-   "end": 2.086,
+   "dur": 3.466,
+   "onset": 0.155,
+   "end": 3.276,
    "chunks": [
     [
-     0.172,
-     0.5
+     0.155,
+     0.526
     ],
     [
-     0.5,
-     0.948
+     0.526,
+     1.034
     ],
     [
-     1.0,
-     1.155
+     1.103,
+     1.276
     ],
     [
-     1.155,
-     1.569
+     1.276,
+     2.121
     ],
     [
-     1.569,
-     2.086
+     2.164,
+     2.621
+    ],
+    [
+     2.621,
+     3.276
     ]
    ]
   },
   "L22": {
-   "text": "first time in my life.",
+   "text": "first time i wasn't late.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.431,
+   "dur": 1.603,
    "onset": 0.172,
-   "end": 1.241,
+   "end": 1.414,
    "chunks": [
     [
      0.172,
-     0.578
+     0.595
     ],
     [
-     0.578,
-     1.241
+     0.595,
+     1.414
     ]
    ]
   },

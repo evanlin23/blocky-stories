@@ -3,12 +3,12 @@
 - **Slug:** `ep152-future-late` (batch 15, upload order 14 of 16)
 - **Pitch:** P04 in the batch 15 pitch round (panel 6.7). **Format series:** the future call, in ep124's world, #2 of this batch (ep139 is #1). Same rule, a new person's call, the same kind of twist (the call isn't really advice, it tells me someone I love is still loving me later).
 - **Lane:** warm. **Opening shape:** `confess` (line 1 is the rule, then mine: "At 11:57, mine still HADN'T"). **Length arm:** written for 60 to 90 s, now under it after the no-filler cut (owner, 2026-11-12: shorter is fine).
-- **Title:** Future Me Called Two Minutes Before MIDNIGHT 🕛
+- **Title:** Everyone's Future Call Came By BREAKFAST 🕛
 - **Everyone is an adult.** I'm 30 today. My mom is 61.
-- **Word count:** 172 written words (about 178 spoken, with the clock times said in full) in 26 lines (L01 to L26), all `narrator`, plus one music drop (0.5 s before L16).
+- **Word count:** about 170 written words in 25 lines (L01, then L03 to L26; L02 was cut in round 1), all `narrator`, plus one music drop (0.5 s before L16).
 - **Estimated length:** about 43 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. The reveal (L24, L25) lands at about 35 to 39 s, with only the loop line (L26) after it.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. One set: Mom's bright kitchen and the dining nook beside it, at night, every lamp on, warm yellow walls, the curtains drawn on the one window (no black glass in frame). Fourteen clocks on the walls and shelves.
-- **Hold:** scripts only (batch 15). Not built, not voiced.
+- **Hold:** package.json keeps `hold` until told. Built and voiced; round-1 fixes applied (2026-11-13).
 - **Revision (2026-11-12, no filler):** cut the old L07, L09, L13, L15, L17, L26, L27 (folded into the advice line), L30 (folded into the reveal line), L32, L35 to L39. Moved the "twelve minutes early" payoff (old L33, L34) ahead of the advice so the kitchen reveal is the last beat before the loop. Renumbered L01 to L26.
 
 ## Variety row
@@ -26,9 +26,9 @@
 - **The rule is the clue:** "You get one call" makes a missing call frightening. The call that finally comes says the scariest-looking thing, "I'm in Mom's kitchen", is the best news there is.
 
 ## The story
-- **Rule / hook (L01):** ep124's rule, then the count that's wrong: "On your thirtieth, / it's YOU / on the phone, / from LATER. / At 11:57, / mine still HADN'T."
+- **Rule / hook (L01):** ep124's rule, then the count that's wrong: "I'm thirty TODAY, / and future me / calls ONCE, / before MIDNIGHT. / At 11:57, / he still HADN'T." The rule (one call, before midnight) is in sentence one, with its stakes (it's 11:57 and he hasn't).
 - **The relatable want or fight:** being the one who's always late, and a mom who quietly works around it.
-- **Stakes beat (L02 to L04, about 3.5 to 7 s):** "Tick." Everyone else's came by breakfast.
+- **Stakes beat (L03 and L04, about 4 to 7 s):** "Tick." Everyone else's came by breakfast.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a cream tag top-left with a phone glyph and a big "1" (the call still owed), and under it a small clock readout matching Mom's kitchen clock (11:57 in frame 1, then 11:52, 11:55, 11:57, 11:58 as said). At L16 the "1" becomes a call timer. Numerals and glyphs only.
 - **Examples (L05, L06, about 7 to 12 s), two jokes:** my cousin's future self told him to wear sunscreen (my cousin, sunburned red, `sheepish`, on a beach towel), my best friend's said "buy the house" (him on the porch of a small blue house, `laugh`).
 - **The silly plant (L07 to L10, about 12 to 17 s):** Mom's kitchen has fourteen clocks, all ten minutes fast, because I'm always late, and she swears they're right.
@@ -97,7 +97,6 @@ Every line gets one to three shots with acting, a punch-in on its key word when 
 | Shots | Lines | Picture |
 |---|---|---|
 | S01a, S01b, S01c | L01 | (a) Close: my face, `uneasy`, the kitchen clock big at the frame's left, tag "1" and 11:57. (b) Close: the phone face-up on the table, dark glyph, my face soft behind. (c) Punch in on my face on "HADN'T". |
-| S02 | L02 | Close: the kitchen clock's second hand moving, my face beside it. |
 | S03 | L03 | Mom's face across the table, `uneasy`, a clock on the shelf behind her. "Tick." |
 | S04 | L04 | My face, `scared`. |
 | S05a, S05b | L05 | (a) My cousin on a beach towel, sunburned red, `sheepish`. (b) Close: his red nose. |
@@ -117,7 +116,7 @@ Every line gets one to three shots with acting, a punch-in on its key word when 
 | S18 | L18 | My face, `stunned`, listening, the phone in the lower frame. |
 | S19 | L19 | Mom's face, `stunned`, hand at her chest. |
 | S20 | L20 | My face, `laugh`, hands apart. |
-| S21a, S21b | L21 | (a) Close: my wrist with a plain watch, the hands at twelve minutes to twelve, the kitchen clock at 11:58 beside it (two times in one frame, my face at the edge). (b) Punch in on my face, `stunned`, on "EARLY". |
+| S21a, S21b | L21 | (a) Close: my wrist with a plain watch, the hands at twelve minutes to twelve, the kitchen clock at 11:58 beside it (two times in one frame, my face at the edge). (b) Punch in on my face, `stunned`, on "SPARE". |
 | S22 | L22 | My face, `laugh`, tears. |
 | S23a, S23b | L23 | (a) Close: the phone, my face soft behind it. (b) Mom's face, `warm`, not knowing, on "CLOCKS". |
 | S24 | L24 | Push slowly on the kitchen clock, ending on my face beside it, `stunned`. |
@@ -137,8 +136,7 @@ A plain tally: two short teal strokes painted on the back of the kitchen clock's
 ## The narration
 Every line is `who: narrator`. Caps are key words (caption colour), slashes are caption chunks. Every "Tick." and the "RING." are spoken and captioned. Clock times are said aloud ("eleven fifty-seven").
 
-- L01: On your thirtieth, / it's YOU / on the phone, / from LATER. / At 11:57, / mine still HADN'T.
-- L02: You get ONE call, / and it comes / that DAY.
+- L01: I'm thirty TODAY, / and future me / calls ONCE, / before MIDNIGHT. / At 11:57, / he still HADN'T.
 - L03: "Tick."
 - L04: Everybody else's / came by BREAKFAST.
 - L05: My cousin's / told him / to wear SUNSCREEN. / He's still RED.
@@ -158,14 +156,14 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L18: And future me / was out of BREATH, / LAUGHING.
 - L19: "SORRY! / I lost TRACK / of time!"
 - L20: Of COURSE / I'm still LATE.
-- L21: Except by real time, / he was TWELVE minutes / EARLY.
-- L22: First time / in my LIFE.
+- L21: But her clocks are FAST. / It was really 11:48. / TWELVE minutes to SPARE.
+- L22: First time / I wasn't LATE.
 - L23: His ONE piece of advice: / "Never tell Mom / you know about / the CLOCKS."
 - L24: Because he was calling / from her KITCHEN.
 - L25: Her clocks, / still ten minutes FAST. / Still set / for ME.
 - L26: When it's my turn / to call, / I'm using / HER clock.
 
-(Loop: L26 runs straight into L01: "When it's my turn to call, I'm using her clock. On your thirtieth, it's you on the phone, from later.")
+(Loop: L26 runs straight into L01: "When it's my turn to call, I'm using her clock. I'm thirty today, and future me calls once, before midnight.")
 
 ## Notes for the builder and reviewers
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. No death, illness or loss word. L11 only says nobody named what a late call means, and L24 and L25 make plain that Mom's clocks are still kept fast later.
