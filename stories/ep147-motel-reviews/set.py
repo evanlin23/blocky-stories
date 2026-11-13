@@ -33,11 +33,11 @@ def _neat():
     it reads as a neat head and not a grey box."""
     b, T, F, K, Wd, D, H = hair3._b, hair3.TOP, hair3.FRONT, hair3.BACK, hair3.W, hair3.D, hair3.H
     out = [b("cap", (Wd + 0.1, D + 0.1, 0.3), (0, 0, T - 0.08), bevel=0.1),
-           b("back", (Wd + 0.1, 0.24, H * 0.56), (0, K - 0.07, T - H * 0.28), bevel=0.08),
+           b("back", (Wd + 0.1, 0.24, H * 0.84), (0, K - 0.07, T - H * 0.42), bevel=0.08),
            b("part", (0.07, D + 0.14, 0.05), (-Wd * 0.2, 0, T + 0.1), bevel=0.01, mat="hair2"),
            b("sweep", (Wd * 0.62, 0.2, 0.34), (Wd * 0.14, F + 0.02, T - 0.12), bevel=0.07)]
     for sx in (-1, 1):
-        out.append(b(f"side{sx}", (0.2, D * 0.85, H * 0.4), (sx * (Wd / 2 + 0.02), 0.06, T - H * 0.2), bevel=0.06))
+        out.append(b(f"side{sx}", (0.2, D * 0.85, H * 0.5), (sx * (Wd / 2 + 0.02), 0.06, T - H * 0.25), bevel=0.06))
         out.append(b(f"ear{sx}", (0.12, 0.3, 0.42), (sx * (Wd / 2 + 0.08), 0.1, T - H * 0.56), bevel=0.04, mat="hair2"))
     return out
 
@@ -593,7 +593,7 @@ def _animate(kit, story, tl, t, ctx):
         h = hand(cd["who"], 1)
         if h is not None:
             ph = math.atan2(cy - h.y, cx - h.x)
-            card.location = (h.x + 0.04 * math.cos(ph), h.y + 0.04 * math.sin(ph), h.z + 0.12)
+            card.location = (h.x + 0.12 * math.cos(ph), h.y + 0.12 * math.sin(ph), h.z + 0.2)
             card.rotation_euler = (0, 0, ph + math.pi / 2)
             card.scale = (1.3, 1.3, 1.3)
             _card_pic(cd["kind"])
@@ -614,7 +614,7 @@ def _animate(kit, story, tl, t, ctx):
     else:
         pen.location = (0, 0, -40)
     kc = sample("key", tl, t, {"mode": "none"})
-    W["key"].location = (G.DESK[0] + 0.15, G.DESK[1] + 0.38, G.DESK_TOP + 0.14) if kc["mode"] == "desk" else (0, 0, -40)
+    W["key"].location = (G.DESK[0] + 0.35, G.DESK[1] + 0.38, G.DESK_TOP + 0.14) if kc["mode"] == "desk" else (0, 0, -40)
     W["key"].rotation_euler = (1.0, 0, math.radians(8))     # the fob leans back against the wall, facing the room
     W["key"].scale = (1.4, 1.4, 1.4)
     W["lead"].location = (0, 0.05, G.DESK_TOP - 0.03 if sample("drawer", tl, t, {"v": 0.0})["v"] > 0.5 else -40)
