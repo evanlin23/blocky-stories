@@ -457,7 +457,7 @@ PCI, YCI = sit("L21.2", "cook", WALL, "pass_back", "smile", arms=[30, 30], inwar
 PDI, _ = sit("L21.2", "dad", WALL, "driver", "neutral", arms=[22, 22], inward=0.22)
 key("cook", "L21.3", list(PCI), yaw=YCI, expr="stunned", arms=[30, 30], head=[34, 0], blend=0.35)
 key("dad", "L21.3", list(PDI), yaw=YDW, expr="neutral", arms=[22, 22], head=[-6, 0], blend=0.4)
-shot("S21b", "L21.2", ccam(WALL, (0.0, 2.45, 1.7), (0.0, -0.05, 1.6), 22, lp2=(0.0, 2.3, 1.69)))
+shot("S21b", "L21.2", ccam(WALL, (-0.03, 2.45, 1.7), (-0.03, -0.05, 1.6), 21, lp2=(-0.03, 2.35, 1.69)))
 PCW, YCW = G.seat(WALL, "pass_back", 1.12)
 # S22: "Oh. You're REAL."
 show("L22", "dad", "cook")
@@ -493,7 +493,7 @@ shot("S23b", "L23.1", camp([-2.4, G.RAIN_ROAD_Y - 5.4, 1.7], [0.92, G.RAIN_ROAD_
 # S23c: behind the cook as the car pulls away; Dad twists round in his seat to look back at him
 car("L23.4", "dad", RAINCAR2, dur=1.3)
 cut("dad", "L23.4", list(p1), yaw=-25, expr="sheepish", head=[70, 4], arms=[0, 0])
-key("dad", "L23.4+0.6", list(p1), yaw=-25, expr="sheepish", head=[76, 6], arms=[0, 0], blend=0.4)
+key("dad", "L23.4+0.6", list(p1), yaw=-25, expr="sheepish", head=[76, 6], arms=[0, 0], blend=0.4, keep_yaw=True)
 # (set.py's ride moves Dad with the car; these keys only tell the lints where he really is)
 key("dad", "L23.4+1.3", list(G.seat(RAINCAR2, "driver")[0]), yaw=-25, expr="sheepish", head=[76, 6], arms=[0, 0])
 key("cook", "L23.4+0.02", (0.6, CRY, 0.0), yaw=-90, expr="uneasy", head=[-30, 4], lean=8, arms=[0, 0], side=[6, 6], blend=0.3)
@@ -629,7 +629,7 @@ story = {
     "set_moves": [],
     "framing_ok": ["S02b", "S11a", "S14a", "S25b"],
     "frames_ok": ["S16a", "S18b"],
-    "staging_ok": [],
+    "staging_ok": ["S21b", "S24b"],   # a seated row in the car, shoulders close (allowed)
     "clip_ok": [],
     "phonemes": {},
     "homophones": {"fenns": "fens"},
