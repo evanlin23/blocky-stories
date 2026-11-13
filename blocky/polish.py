@@ -48,6 +48,7 @@ DEFAULTS = {
     "push": 0.12, "reframe_every": 0.8, "reframe_min": 1.6, "reframe_zoom": 1.14, "max_zoom": 1.18,
     "punch": 0.06, "punch_gap": 2.4, "punch_rate": 0.7, "fill": 0.0, "hit_gap": 4.0, "drift": 0.03,
     "ones": "all", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
+    "talk": False, "talk_as": "me",   # opt-in (2026-11-12): narrated I/me/my lines flap talk_as's mouth; natural blinks
     "overlap": False, "turn_cap": 0,   # opt-in (anim audit 2026-11-12): heads lead and arms follow; turns capped (deg/s)
     # picture
     "grade": "bright",
