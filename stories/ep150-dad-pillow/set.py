@@ -230,8 +230,8 @@ def build_guest(kit):
     noshadow(W["glow2"])
     # the pillow Dad's is held up as: a second blue pillow, moved to my forearms by `animate`
     held = kit.empty("pillow.held", (0, 0, -40))
-    W["held_body"] = kit.box("held.body", (0.64, 0.42, 0.14), (0, 0, 0), blue, held, bevel=0.06)
-    kit.box("held.edge", (0.66, 0.04, 0.03), (0, 0.2, 0.0), pl("#cfe4ff", 0.8), held)
+    W["held_body"] = kit.box("held.body", (0.82, 0.56, 0.2), (0, 0, 0), blue, held, bevel=0.08)
+    kit.box("held.edge", (0.84, 0.04, 0.04), (0, 0.27, 0.0), pl("#cfe4ff", 0.8), held)
     W["held"] = held
     # nightstand with the desk lamp, a bookshelf, a chair with my duffel, a rug
     kit.prop("nightstand_1", (G.BX + 1.0, 3.2, 0), scale=1.0)
@@ -311,17 +311,19 @@ def build_hall(kit):
     gp = noshadow(kit.box("door.glow", (G.DOOR_W + 0.04, 0.02, G.DOOR_H + 0.02), (G.HX, y1 + 0.3, G.DOOR_H / 2), gold)) or None
     W["doorgold"] = bpy.data.objects["door.glow"]
     # two pencil strokes on the dream door's frame at shoulder height (lore), 1.5 cm proud, only in the dream
-    gr = pl("#4a4a56", 0.6)
-    gs = kit.emit("#ff9a1a", 1.1, "doorstrip")     # saturated and modest, so the grade keeps it gold, not cream
+    gr = pl("#24242c", 0.6)
+    gs = kit.emit("#ff7a00", 0.9, "doorstrip")     # saturated and modest, so the grade keeps it gold, not cream
     W["strips"] = []
     for sx in (-1, 1):
-        W["strips"].append(kit.box(f"door.strip{sx}", (0.06, 0.012, G.DOOR_H), (G.HX + sx * (G.DOOR_W / 2 + 0.03), y1 - 0.046,
+        W["strips"].append(kit.box(f"door.strip{sx}", (0.11, 0.012, G.DOOR_H), (G.HX + sx * (G.DOOR_W / 2 + 0.055), y1 - 0.056,
                                    G.DOOR_H / 2), gs))
-    W["strips"].append(kit.box("door.strip.t", (G.DOOR_W + 0.12, 0.012, 0.06), (G.HX, y1 - 0.046, G.DOOR_H + 0.03), gs))
+    W["strips"].append(kit.box("door.strip.t", (G.DOOR_W + 0.22, 0.012, 0.11), (G.HX, y1 - 0.056, G.DOOR_H + 0.055), gs))
+    # the gold spilling under the door onto the floor, 1.2 cm proud of it
+    W["strips"].append(kit.box("door.spill", (G.DOOR_W, 0.4, 0.008), (G.HX, y1 - 0.26, 0.016), gs))
     for ob in W["strips"]:
         noshadow(ob)
-    W["pencil"] = [kit.box("pencil1", (0.1, 0.012, 0.016), (G.HX + G.DOOR_W / 2 + 0.115, y1 - 0.046, 1.4), gr),
-                   kit.box("pencil2", (0.1, 0.012, 0.016), (G.HX + G.DOOR_W / 2 + 0.115, y1 - 0.046, 1.55), gr)]
+    W["pencil"] = [kit.box("pencil1", (0.16, 0.012, 0.032), (G.HX + G.DOOR_W / 2 + 0.08, y1 - 0.079, 1.4), gr),
+                   kit.box("pencil2", (0.16, 0.012, 0.032), (G.HX + G.DOOR_W / 2 + 0.08, y1 - 0.079, 1.55), gr)]
     # side panels, either gold (dream) or white (wake); 2 cm proud of the wall
     pg = kit.emit("#ffb040", 0.85, "sidegold")
     pw = kit.emit("#cfe2f2", 0.6, "sidewhite")
@@ -384,8 +386,7 @@ def build_mem(kit):
     wall_x(kit, "mem.wall", x - 3.5, x + 3.5, y + 0.15, 0.3, 3.2, wall, gaps=[(x + 0.5, x + 1.4, 2.1)], z0=0.0)
     kit.box("mem.sill", (0.9, 0.3, 0.9), (x + 0.95, y + 0.15, 0.45), wall)
     mul = pl("#b98a5a", 0.6)
-    kit.box("mem.mull.v", (0.05, 0.05, 1.2), (x + 0.95, y + 0.05, 1.5), mul)
-    kit.box("mem.mull.h", (0.9, 0.05, 0.05), (x + 0.95, y + 0.05, 1.22), mul)       # under the window
+    kit.box("mem.mull.h", (0.9, 0.05, 0.05), (x + 0.95, y + 0.05, 0.96), mul)       # a low sash rail by the sill
     # the window gap has no glass; behind it a lit room
     kit.box("mem.room.floor", (7, 3.2, 0.1), (x, y + 2.0, -0.05), kit.texture("wood", 0.7, tint="#d49a58"))
     kit.box("mem.room.back", (7, 0.2, 3.2), (x, y + 3.7, 1.6), pl("#f5d9a0", 0.85))
@@ -449,7 +450,10 @@ def build_kitchen(kit):
         kit.box(f"kit.top{sx}", (1.55, 0.64, 0.05), (x + sx * 1.35, 4.28, 0.9), top, bevel=0.01)
     kit.prop("kitchen_oven", (x, 4.3, 0), height=0.9, rot=0)
     kit.box("kit.hood", (1.0, 0.5, 0.3), (x, 4.34, 2.3), pl("#8a909c", 0.5, spec=0.3))
-    kit.box("pan", (0.34, 0.34, 0.07), (x + 0.0, 4.2, 0.95), pl("#3a3a44", 0.4, spec=0.4))
+    kit.box("pan", (0.44, 0.44, 0.08), (x + 0.0, 4.15, 0.96), pl("#2a2a32", 0.4, spec=0.4), bevel=0.02)
+    kit.box("pan.handle", (0.36, 0.06, 0.04), (x - 0.38, 4.12, 0.98), pl("#2a2a32", 0.4, spec=0.4))
+    kit.box("pan.egg", (0.16, 0.16, 0.025), (x + 0.0, 4.15, 1.012), pl("#fff6e0", 0.6), bevel=0.01)
+    kit.box("pan.yolk", (0.07, 0.07, 0.03), (x + 0.0, 4.15, 1.03), pl("#ffb21a", 0.5), bevel=0.01)
     win = kit.emit("#fff6d8", 1.4, "kitwin")
     fr = pl("#fffaf0", 0.6)
     kit.box("kit.win.frame", (0.05, 1.6, 1.4), (x + 2.37, 2.4, 1.6), fr)
@@ -464,8 +468,12 @@ def build_kitchen(kit):
     kit.box("cor.rug", (1.2, 2.2, 0.02), (x, -1.5, 0.01), pl("#e8895a", 0.9, spec=0.02))
     # the spatula in Dad's hand: a handle and a head, dropped by `animate`
     sp = kit.empty("spat", (0, 0, -40))
-    kit.box("spat.handle", (0.03, 0.03, 0.34), (0, 0, 0.12), pl("#8a5a2a", 0.6), sp)
-    kit.box("spat.head", (0.11, 0.015, 0.14), (0, 0, -0.1), pl("#c9ced6", 0.4, spec=0.5), sp)
+    blk = pl("#16161c", 0.45, spec=0.2)
+    kit.box("spat.handle", (0.035, 0.035, 0.5), (0, 0, 0.15), blk, sp)
+    kit.box("spat.neck", (0.06, 0.03, 0.06), (0, 0, 0.42), blk, sp)
+    kit.box("spat.head", (0.22, 0.014, 0.26), (0, 0, 0.57), blk, sp, bevel=0.01)
+    for k in range(3):   # the slots: light strips standing 1 cm proud of both faces
+        kit.box(f"spat.slot{k}", (0.026, 0.036, 0.17), ((k - 1) * 0.065, 0, 0.58), pl("#e8e2d2", 0.6), sp)
     W["spat"] = sp
     fills(kit, "kf", ((x - 1.0, 1.4), (x + 1.0, 1.4), (x - 1.0, 3.4), (x + 1.0, 3.4)), 2.55, 300, "#fff3e0")
     facelight(kit, "kf.face", (x, 0.5, 2.3), (x, 4.0, 1.3), 360, "#fff6ec")
@@ -523,6 +531,9 @@ def build_buddy(kit):
     kit.box("dog.head", (0.36, 0.38, 0.32), (dx, dy - 0.55, 0.38), fur, bevel=0.09)
     kit.box("dog.snout", (0.2, 0.2, 0.15), (dx, dy - 0.76, 0.33), fur, bevel=0.05)
     kit.box("dog.nose", (0.08, 0.05, 0.06), (dx, dy - 0.87, 0.36), pl("#1c1c24", 0.4))
+    for sx in (-1, 1):
+        kit.box(f"dog.eye{sx}", (0.08, 0.02, 0.024), (dx + sx * 0.075, dy - 0.55 - 0.19 - 0.005, 0.44), pl("#1c1c24", 0.4),
+                rot=(0, 0, 0))
     kit.box("dog.paw1", (0.12, 0.3, 0.12), (dx - 0.12, dy - 0.8, 0.28), fur, bevel=0.04)
     kit.box("dog.paw2", (0.12, 0.3, 0.12), (dx + 0.12, dy - 0.8, 0.28), fur, bevel=0.04)
     kit.box("dog.tail", (0.12, 0.4, 0.12), (dx + 0.1, dy + 0.55, 0.32), dark, bevel=0.05, rot=(0, 0, 0.3))
@@ -624,8 +635,8 @@ def animate(kit, story, tl, t, ctx):
         a, b = hand("me", -1), hand("me", 1)
         if a is not None and b is not None:
             mid = (a + b) / 2
-            W["held"].location = (mid.x, mid.y - 0.05, mid.z + 0.07)
-            W["held"].rotation_euler = (0, 0, 0)
+            W["held"].location = (mid.x, mid.y + 0.02, mid.z + 0.12)
+            W["held"].rotation_euler = (-0.3, 0, 0)
     else:
         W["held"].location = (0, 0, -40)
     # the quilt over my body only while I lie in bed (keys of `bed` v)
@@ -654,9 +665,9 @@ def animate(kit, story, tl, t, ctx):
     if on >= 1 and h is not None:
         if ts is not None and t >= ts:
             dt = t - ts
-            z = max(0.05, h.z - 4.9 * dt * dt) if dt < 0.5 else 0.05
+            z = max(0.03, h.z - 4.9 * dt * dt) if dt < 0.5 else 0.03
             sp.location = (h.x, h.y - 0.05, z)
-            sp.rotation_euler = (min(1.45, dt * 4.0), 0, 0.2 * min(dt, 0.4))
+            sp.rotation_euler = (0, min(1.5, dt * 4.0), 0.2 * min(dt, 0.4))
         else:
             sp.location = (h.x, h.y - 0.03, h.z + 0.02)
             sp.rotation_euler = (0.3, 0, 0)

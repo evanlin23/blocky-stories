@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 12
+REV = 13
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -57,8 +57,8 @@ SKIN = "#a97a52"
 cast = {
     # me, 26: a short twisty dark crop, deep tan skin, a maroon sweatshirt, gray joggers, socks
     "me": person(SKIN, "#8a2a3a", "#8a8d96", "#efeae0", hair="cap", collar="#6a1c2a"),
-    # me at sixteen: the same face and skin, a hoodie, a little smaller
-    "teen": person(SKIN, "#3a5a8a", "#3a3a48", "#f2f2f2", hair="cap", extras=["hooddown"], extra_c="#3a5a8a", collar="#2a4468",
+    # me at sixteen: the same face and skin, a maroon hoodie, a little smaller
+    "teen": person(SKIN, "#7a2236", "#3a3a48", "#f2f2f2", hair="cap", extras=["hooddown"], extra_c="#7a2236", collar="#561626",
                    age="teen", height=0.93),
     # Dad, 58: a gray flat-top, the same skin as mine (set.py adds the big gray mustache), a blue cardigan over a white tee
     "dad": person("#a97a52", "#2f4e9e", "#4a5a7a", "#8a5a3a", hair="buzz", hair_c="#a9a9b2", collar="#f4f0e8", width=1.04),
@@ -186,7 +186,7 @@ shot("S01b", "L01.3", cam(*HEAD, 1.0, 82, 36, cz=1.0))
 # S02: stakes, Dad's pillow held flat on my forearms
 cue("L02", "bed", v=0.0)
 cue("L02", "pillow", v=1.0)
-me_guest("L02", "sheepish", arms=(72, 72))
+me_guest("L02", "sheepish", arms=(56, 56))
 mouth("me", "L02", "L02>", 0.3)
 shot("S02", "L02", cam(G.ME_G[0], G.ME_G[1], 1.2, 1.7, 0, 30, cz=1.3))
 
@@ -202,8 +202,8 @@ show("L04", "buddy")
 place("L04", "buddy", (G.BDX - 0.5, G.BDY + 0.8, -0.55), 0, "sheepish", arms=[0, 0])
 shot("S04a", "L04", cam(G.BDX - 0.2, G.BDY + 0.8, 1.05, 2.5, 0, 30, cz=1.2))
 cue("L04.2", "ear", v=1.0)
-shot("S04b", "L04.2", camp([G.BDX + 0.95, G.BDY - 1.75, 0.85], [G.BDX + 0.45, G.BDY + 0.1, 0.45], 30,
-                            pos2=[G.BDX + 0.9, G.BDY - 1.55, 0.83], tgt2=[G.BDX + 0.45, G.BDY + 0.1, 0.45]))
+shot("S04b", "L04.2", camp([G.BDX + 0.75, G.BDY - 1.45, 0.66], [G.BDX + 0.48, G.BDY - 0.1, 0.42], 30,
+                            pos2=[G.BDX + 0.72, G.BDY - 1.3, 0.65], tgt2=[G.BDX + 0.48, G.BDY - 0.1, 0.42]))
 cue("L04>", "ear", v=0.0)
 
 # ===== 03 the silly habit (L06, L07)
@@ -260,16 +260,16 @@ key("me", "L12", (G.ME_H[0], 3.2, 0.0), yaw=0, expr="worried", head=[0, 0], blen
 key("me", "L12.0+0.2", (G.ME_H[0], 3.2, 0.0), yaw=0, expr="worried", head=[-50, 0], blend=0.6)
 mouth("me", "L12", "L12>", 0.25)
 # S12: the wide: Dad smiling on the stair, me glancing at him, the shut door right there
-shot("S12", "L12", camp([59.0, -1.3, 1.45], [58.95, 2.6, 1.3], 18, pos2=[59.0, -1.05, 1.45], tgt2=[58.95, 2.6, 1.32]))
+shot("S12", "L12", camp([58.95, -1.35, 1.45], [58.9, 2.6, 1.3], 14, pos2=[59.1, -1.3, 1.45], tgt2=[59.0, 2.6, 1.32]))
 
 # ===== 05 the second and third night (L14 to L19)
 cue("L14", "night", n=2)
 # night two: I've come down the hall toward Dad on the stair; he doesn't move
-MS14 = (59.1, 0.5, 0.0)
+MS14 = (59.35, 1.1, 0.0)
 place("L14", "me", (60.2, 2.6, 0.0), -23, "worried", arms=[0, 0])
 key("me", "L14.2", MS14, yaw=-23, expr="worried", arms=[0, 0])
 key("me", "L14.2+0.45", MS14, yaw=-148, expr="worried", arms=[0, 0], blend=0.4)
-shot("S14a", "L14", camp([58.0, -1.2, 1.5], [58.95, 1.62, 1.3], 18, pos2=[58.05, -0.95, 1.5], tgt2=[58.97, 1.62, 1.3]))
+shot("S14a", "L14", camp([58.55, -1.4, 1.5], [58.95, 1.8, 1.3], 14, pos2=[58.65, -1.35, 1.5], tgt2=[59.0, 1.8, 1.3]))
 # S14b: over my right shoulder, Dad on the stair, eyes shut, smiling, still
 shot("S14b", "L14.4", camp([61.5, -0.3, 1.75], [58.4, 1.35, 1.2], 34, pos2=[61.4, -0.22, 1.73], tgt2=[58.4, 1.37, 1.2]))
 cue("L17", "night", n=3)
@@ -286,9 +286,9 @@ shot("S18a", "L18", cam(G.DAD_X, G.DAD_Y, 1.3, 1.2, 0, 30, cz=1.35))
 shot("S18b", "L18.3", cam(G.DAD_X, G.DAD_Y, 1.4, 0.85, 0, 34, cz=1.4))
 place("L19", "me", (HX + 0.25, 4.1, 0.0), 90, "stunned", arms=[0, 0])
 mouth("me", "L19", "L19>", 0.3)
-shot("S19", "L19", camp([61.5, 3.4, 1.5], [60.34, 4.45, 1.45], 16, pos2=[61.42, 3.47, 1.5], tgt2=[60.34, 4.47, 1.45]))
+shot("S19", "L19", camp([61.5, 3.4, 1.5], [60.42, 4.45, 1.45], 16, pos2=[61.42, 3.47, 1.5], tgt2=[60.42, 4.47, 1.45]))
 # S19c: the knock comes through; the wide: Dad smiling on the stair, me with my ear at his door
-shot("S19c", "L19.2", camp([59.0, -1.3, 1.5], [59.0, 2.8, 1.4], 18, pos2=[59.0, -1.0, 1.5], tgt2=[59.0, 2.8, 1.42]))
+shot("S19c", "L19.2", camp([59.1, -1.35, 1.5], [59.0, 2.8, 1.4], 14, pos2=[58.95, -1.3, 1.5], tgt2=[58.95, 2.8, 1.42]))
 # the drop: the door's gold edges, my face at the frame's edge
 cut("me", "P01", (HX + 0.45, 3.9, 0.0), yaw=0, expr="stunned")
 shot("S19b", "P01", cam(HX + 0.1, 5.0, 1.45, 2.4, 0, 30, cz=1.45))
@@ -309,9 +309,9 @@ cut("teen", "L22.2", (G.MX, G.MY - 1.2, 0.0), yaw=0, expr="sheepish", arms=[0, 0
 shot("S22a", "L22", cam(G.MX - 0.3, G.MY - 1.1, 1.4, 2.1, 70, 30, cz=1.15))
 shot("S22b", "L22.2", cam(G.MX, G.MY - 1.2, 1.4, 0.85, 0, 36, cz=1.4))
 show("L23", "dadm")
-place("L23", "dadm", (G.MX + 1.17, G.MY + 0.9, 0.0), 0, "neutral", arms=[0, 0])
+place("L23", "dadm", (G.MX + 0.95, G.MY + 0.9, 0.0), 0, "warm", arms=[0, 0])
 mouth("dadm", "L23", "L23>", 0.15)
-shot("S23", "L23", cam(G.MX + 1.05, G.MY + 0.9, 1.55, 1.1, 0, 34, cz=1.55))
+shot("S23", "L23", cam(G.MX + 0.95, G.MY + 0.9, 1.6, 1.15, 0, 34, cz=1.6))
 show("L24", "teen")
 TP = (G.MX - 0.37, G.MY - 0.71, 0.0)   # the door-side arm reaches the panel
 place("L24", "teen", TP, 180, "worried", arms=[74, 0])
@@ -326,13 +326,15 @@ shot("S24b", "L24.2", cam(G.MX, G.MY - 1.0, 1.45, 0.95, 25, 34, cz=1.12))
 # ===== 07 the reveal (L25)
 cue("L25", "mode", m="dream")
 show("L25", "me", "dad")
-place("L25", "me", (HX + 0.7, 3.0, 0.0), 0, "warm", arms=[0, 0])
+ME25 = (HX + 0.75, 4.45, 0.0)
+place("L25", "me", ME25, 0, "warm", arms=[0, 0])
 place("L25", "dad", (G.DAD_X, G.DAD_Y, SEAT_Z), 0, "sleep", arms=[0, 0], blink=False)
+key("dad", "L25.3", (G.DAD_X, G.DAD_Y, SEAT_Z), yaw=0, expr="warm", arms=[0, 0], blink=False, blend=0.3)
 # the reveal: the wide (Dad, the gold-edged door between us, me), then a slow push in to Dad's smile on "DAD"
-shot("S25", "L25", [[0, [HX - 0.72, -1.3, 1.3], [HX - 0.72, 2.6, 1.6], 15], [0.3, [HX - 0.78, -1.05, 1.33], [HX - 0.8, 2.4, 1.56], 15.5],
-                    [1, [HX - 1.3, 0.25, 1.45], [HX - 1.6, 1.85, 1.38], 17]])
+shot("S25", "L25", [[0, [58.9, -0.35, 1.72], [58.9, 1.85, 1.42], 12.3], [0.5, [58.84, -0.25, 1.72], [58.84, 1.85, 1.42], 12.3],
+                    [1, [58.3, 0.2, 1.5], [58.25, 1.85, 1.42], 22]])
 # my small smile toward Dad as the line lands
-key("me", "L25.2", (HX + 0.7, 3.0, 0.0), yaw=0, expr="warm", head=[-14, 6], blend=0.6)
+key("me", "L25.2", ME25, yaw=0, expr="warm", head=[-14, 6], blend=0.6)
 
 # ===== 08 the kitchen (L27)
 cue("L27", "mode", m="wake")
@@ -353,9 +355,10 @@ shot("S27a", "L27", camp([KX + 0.05, 3.48, 1.45], [KX + 0.05, -0.3, 1.3], 30, po
 cue("L27>", "spat", v=1.0)
 cue("L27>+0.35", "spat", v=2.0)
 show("L27>", "dad")
-place("L27>", "dad", (KX, 3.55, 0.0), 0, "laugh", arms=[0, 62])
-key("dad", "L27>+0.3", (KX, 3.55, 0.0), yaw=0, expr="laugh", arms=[0, 0], blend=0.2)
-shot("S27b", "L27>", cam(KX + 0.1, 3.55, 1.1, 1.8, 25, 22, cz=1.3))
+DK = (KX - 0.75, 3.45, 0.0)
+place("L27>", "dad", DK, 0, "laugh", arms=[0, 62])
+key("dad", "L27>+0.3", DK, yaw=0, expr="laugh", arms=[0, 0], blend=0.2)
+shot("S27b", "L27>", cam(KX - 0.3, 3.55, 1.1, 1.9, 15, 22, cz=1.35))
 
 # ===== 09 the loop line (L32)
 cue("L32", "mode", m="dusk")
@@ -363,7 +366,7 @@ cue("L32", "night", n=0)
 cue("L32", "spat", v=0.0)
 show("L32", "me")
 cue("L32", "pillow", v=1.0)
-me_guest("L32", "smile", arms=(72, 72))
+me_guest("L32", "smile", arms=(56, 56))
 shot("S32a", "L32", cam(G.ME_G[0], G.ME_G[1], 1.2, 1.7, 0, 30, cz=1.3))
 cue("L32.2", "pillow", v=0.0)
 cue("L32.2", "bed", v=1.0)
@@ -440,7 +443,7 @@ story = {
     "rev": REV,
     "look": {"style": "closer", "fog": "#e8f3ff", "fog_density": 0.0008, "fog_start": 80.0, "sky": "#8fd0ff",
              "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True, "polish": polish},
-    "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.025, 0.012, -0.015], "saturation": 1.05,
+    "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.025, 0.012, -0.015], "saturation": 1.12,
               "contrast": 1.03, "vignette": 0.1, "bloom": 0.1, "grain": 0.008},
     "hud": {"object": "tag", "at": [-0.4, 0.62], "size": 0.58},
     "cast": cast,
