@@ -219,6 +219,7 @@ def build_guest(kit):
     W["quilt2"] = q2
     # Dad's pillow (blue) under my head, my white one (graded under 70%) behind it
     blue = pl("#4a8fd8", 0.8, spec=0.04)
+    W["blue_day"], W["blue_dusk"] = blue, pl("#5a74ea", 0.8, spec=0.04)   # under the dusk gold it stays blue
     white = pl("#c4bfb2", 0.85, spec=0.03)
     W["bluepillow"] = kit.box("pillow.blue", (0.6, 0.5, 0.13), (G.BX, 3.1, 0.585), blue, bevel=0.05)
     W["whitepillow"] = kit.box("pillow.white", (0.55, 0.3, 0.12), (2.3, 0.45, 0.2), white, bevel=0.05)
@@ -229,7 +230,7 @@ def build_guest(kit):
     noshadow(W["glow2"])
     # the pillow Dad's is held up as: a second blue pillow, moved to my forearms by `animate`
     held = kit.empty("pillow.held", (0, 0, -40))
-    kit.box("held.body", (0.64, 0.42, 0.14), (0, 0, 0), blue, held, bevel=0.06)
+    W["held_body"] = kit.box("held.body", (0.64, 0.42, 0.14), (0, 0, 0), blue, held, bevel=0.06)
     kit.box("held.edge", (0.66, 0.04, 0.03), (0, 0.2, 0.0), pl("#cfe4ff", 0.8), held)
     W["held"] = held
     # nightstand with the desk lamp, a bookshelf, a chair with my duffel, a rug
@@ -246,7 +247,7 @@ def build_guest(kit):
     W["guest.day"] = fills(kit, "gd", pts, G.GH - 0.15, 330, "#fff3e0") + [
         facelight(kit, "gd.face", (0.6, -4.3, 2.2), (0.6, 0.0, 1.2), 380, "#fff6ec"),
         facelight(kit, "gd.bed", (1.2, 2.0, 2.3), (G.BX, 3.0, 0.8), 320, "#fff6ec", 2.0)]
-    W["guest.dusk"] = fills(kit, "gu", pts, G.GH - 0.15, 330, GOLD) + [
+    W["guest.dusk"] = fills(kit, "gu", pts, G.GH - 0.15, 330, "#ffdcb0") + [
         facelight(kit, "gu.face", (0.6, -4.3, 2.2), (0.6, 0.0, 1.2), 400, "#ffd890"),
         facelight(kit, "gu.bed", (1.2, 2.0, 2.3), (G.BX, 3.0, 0.8), 320, "#ffd890", 2.0)]
 
@@ -278,9 +279,12 @@ def build_hall(kit):
     # Dad's seat on the third stair: thighs, shins and slippers, static (Dad never moves in the dream)
     pants = pl("#4a5a7a", 0.8)
     slip = pl("#8a5a3a", 0.8)
-    W["seat"] = [kit.box("dad.thighs", (0.34, 0.7, 0.2), (G.DAD_X, G.DAD_Y - 0.4, G.STAIR3 + 0.1), pants, bevel=0.04),
-                 kit.box("dad.shins", (0.3, 0.2, 0.5), (G.DAD_X, G.DAD_Y - 0.78, G.STAIR3 - 0.12), pants, bevel=0.04),
-                 kit.box("dad.slip", (0.3, 0.34, 0.1), (G.DAD_X, G.DAD_Y - 0.9, 0.25), slip, bevel=0.03)]
+    W["seat"] = []
+    for sx in (-1, 1):
+        W["seat"] += [
+            kit.box(f"dad.thigh{sx}", (0.31, 0.62, 0.22), (G.DAD_X + sx * 0.175, G.DAD_Y - 0.36, G.STAIR3 + 0.12), pants, bevel=0.04),
+            kit.box(f"dad.shin{sx}", (0.28, 0.22, 0.52), (G.DAD_X + sx * 0.2, G.DAD_Y - 0.82, G.STAIR3 - 0.09), pants, bevel=0.04),
+            kit.box(f"dad.slip{sx}", (0.28, 0.34, 0.1), (G.DAD_X + sx * 0.21, G.DAD_Y - 0.88, 0.255), slip, bevel=0.03)]
     # a rug and a coat rack by the door, a plant
     kit.box("hall.rug", (1.6, 3.0, 0.02), (0.0 + G.HX, 1.6, 0.01), pl("#d9604a", 0.9, spec=0.02))
     kit.box("hall.rug.in", (1.3, 2.7, 0.012), (G.HX, 1.6, 0.025), pl("#f2c05a", 0.9, spec=0.02))
@@ -307,11 +311,19 @@ def build_hall(kit):
     W["doorgold"] = bpy.data.objects["door.glow"]
     # two pencil strokes on the dream door's frame at shoulder height (lore), 1.5 cm proud, only in the dream
     gr = pl("#4a4a56", 0.6)
+    gs = kit.emit("#ffc66a", 2.2, "doorstrip")
+    W["strips"] = []
+    for sx in (-1, 1):
+        W["strips"].append(kit.box(f"door.strip{sx}", (0.035, 0.012, G.DOOR_H), (G.HX + sx * (G.DOOR_W / 2 + 0.02), y1 - 0.046,
+                                   G.DOOR_H / 2), gs))
+    W["strips"].append(kit.box("door.strip.t", (G.DOOR_W + 0.075, 0.012, 0.035), (G.HX, y1 - 0.046, G.DOOR_H + 0.02), gs))
+    for ob in W["strips"]:
+        noshadow(ob)
     W["pencil"] = [kit.box("pencil1", (0.12, 0.012, 0.014), (G.HX + G.DOOR_W / 2 + 0.07, y1 - 0.046, 1.4), gr),
                    kit.box("pencil2", (0.12, 0.012, 0.014), (G.HX + G.DOOR_W / 2 + 0.07, y1 - 0.046, 1.55), gr)]
     # side panels, either gold (dream) or white (wake); 2 cm proud of the wall
     pg = kit.emit("#ffd080", 1.3, "sidegold")
-    pw = kit.emit("#dff0ff", 1.1, "sidewhite")
+    pw = kit.emit("#cfe2f2", 0.6, "sidewhite")
     W["sidegold"], W["sidewhite"] = [], []
     for sx in (-1, 1):
         a = kit.box(f"side.g{sx}", (0.45, 0.02, 1.5), (G.HX + sx * 1.65, y1 - 0.04, 1.5), pg)
@@ -327,6 +339,8 @@ def build_hall(kit):
     kit.box("porch.deck", (6.4, 4.0, 0.12), (G.HX, 7.4, -0.06), deck)
     for k in range(3):
         kit.box(f"porch.step{k}", (2.2, 0.35, 0.12), (G.HX, 9.55 + k * 0.33, -0.12 - k * 0.12), deck)
+    kit.box("porch.duffel", (0.62, 0.3, 0.32), (G.HX + 0.75, 5.95, 0.17), pl("#355a8a", 0.7), bevel=0.06)
+    kit.box("porch.duffel.strap", (0.05, 0.31, 0.2), (G.HX + 0.75, 5.95, 0.36), pl("#1e3456", 0.7))
     kit.box("porch.roof", (6.8, 4.4, 0.2), (G.HX, 7.4, 3.3), pl("#a8c8e8", 0.7))
     kit.box("porch.post1", (0.18, 0.18, 3.2), (G.HX - 2.9, 9.2, 1.6), wh)
     kit.box("porch.post2", (0.18, 0.18, 3.2), (G.HX + 2.9, 9.2, 1.6), wh)
@@ -363,8 +377,11 @@ def build_mem(kit):
     deck = pl("#d9b27c", 0.8, spec=0.03)
     kit.box("mem.deck", (7, 4.6, 0.12), (x, y - 2.3, -0.06), deck)
     # the house wall facing south, with a window opening at x+0.95 (z 0.9..2.1), and the shut door
-    wall_x(kit, "mem.wall", x - 3.5, x + 3.5, y + 0.15, 0.3, 3.2, wall, gaps=[(x + 0.7, x + 1.2, 2.1)], z0=0.0)
-    kit.box("mem.sill", (0.5, 0.3, 0.9), (x + 0.95, y + 0.15, 0.45), wall)       # under the window
+    wall_x(kit, "mem.wall", x - 3.5, x + 3.5, y + 0.15, 0.3, 3.2, wall, gaps=[(x + 0.5, x + 1.4, 2.1)], z0=0.0)
+    kit.box("mem.sill", (0.9, 0.3, 0.9), (x + 0.95, y + 0.15, 0.45), wall)
+    mul = pl("#b98a5a", 0.6)
+    kit.box("mem.mull.v", (0.05, 0.05, 1.2), (x + 0.95, y + 0.05, 1.5), mul)
+    kit.box("mem.mull.h", (0.9, 0.05, 0.05), (x + 0.95, y + 0.05, 1.22), mul)       # under the window
     # the window gap has no glass; behind it a lit room
     kit.box("mem.room.floor", (7, 3.2, 0.1), (x, y + 2.0, -0.05), kit.texture("wood", 0.7, tint="#d49a58"))
     kit.box("mem.room.back", (7, 0.2, 3.2), (x, y + 3.7, 1.6), pl("#f5d9a0", 0.85))
@@ -379,9 +396,16 @@ def build_mem(kit):
     kit.box("mem.panel2", (0.84, 0.02, 0.8), (x, y - 0.05, 0.55), pl("#d8d3c4", 0.7))
     kit.sphere("mem.knob", 0.05, (x + 0.45, y - 0.08, 1.0), pl("#e0b040", 0.3, spec=0.7))
     for sx in (-1, 1):
-        kit.box(f"mem.wcase{sx}", (0.04, 0.04, 1.4), (x + 0.95 + sx * 0.27, y - 0.02, 1.5), wh)
-    kit.box("mem.wcase.t", (0.58, 0.04, 0.05), (x + 0.95, y - 0.02, 2.12), wh)
-    kit.box("mem.wcase.b", (0.58, 0.04, 0.05), (x + 0.95, y - 0.02, 0.9), wh)
+        kit.box(f"mem.wcase{sx}", (0.05, 0.04, 1.3), (x + 0.95 + sx * 0.475, y - 0.02, 1.5), wh)
+    kit.box("mem.wcase.t", (1.0, 0.04, 0.05), (x + 0.95, y - 0.02, 2.13), wh)
+    kit.box("mem.wcase.b", (1.0, 0.04, 0.05), (x + 0.95, y - 0.02, 0.88), wh)
+    # the porch lamp by the door, lit
+    kit.box("mem.lamp.base", (0.16, 0.06, 0.24), (x - 0.88, y - 0.06, 1.95), pl("#3a3a44", 0.5))
+    noshadow(kit.box("mem.lamp", (0.12, 0.1, 0.18), (x - 0.88, y - 0.12, 1.95), kit.emit("#ffd890", 2.0, "memlamp")))
+    kit.light("mp.lamp", "POINT", (x - 0.88, y - 0.4, 1.95), 260, "#ffd890", size=0.2, shadow=False)
+    # the evening sky past the porch's west end: dusky blue over a peach band
+    noshadow(kit.box("mem.sky.hi", (0.2, 90, 30), (x - 30, y - 10, 19.0), kit.emit("#7f8fd6", 1.0, "memskyhi")))
+    noshadow(kit.box("mem.sky.lo", (0.2, 90, 5.0), (x - 29.9, y - 10, 2.0), kit.emit("#ffb488", 1.0, "memskylo")))
     kit.box("mem.roof", (7.4, 4.8, 0.2), (x, y - 2.3, 3.4), pl("#a8c8e8", 0.7))
     kit.box("mem.post1", (0.18, 0.18, 3.3), (x - 3.2, y - 4.4, 1.65), wh)
     kit.box("mem.post2", (0.18, 0.18, 3.3), (x + 3.2, y - 4.4, 1.65), wh)
@@ -391,24 +415,24 @@ def build_mem(kit):
     kit.prop("commontree_1", (x + 7, y - 10, -0.3), scale=1.2)
     kit.prop("sub_building_type_c", (x + 12, y - 16, -0.3), rot=-90, tint="#ffd0a0")
     # evening gold on the porch, warm light in the room (mild: bright, never dark)
-    fills(kit, "mp", ((x - 1.2, y - 1.2), (x + 1.2, y - 1.2), (x - 1.2, y - 3.6), (x + 1.2, y - 3.6)), 3.2, 300, GOLD, 2.8)
-    facelight(kit, "mp.face", (x, y - 5.5, 2.6), (x, y - 1.0, 1.3), 520, "#ffd890", 3.0)
-    facelight(kit, "mp.sun", (x - 4, y - 12, 7), (x, y - 1.5, 1.0), 1500, "#ffc66a", 6.0)
-    fills(kit, "mr", ((x - 1.2, y + 1.6), (x + 1.2, y + 1.6)), 3.1, 260, "#ffe0a8", 2.8)
-    facelight(kit, "mr.face", (x + 0.95, y + 3.2, 2.4), (x + 0.95, y - 1.0, 1.6), 260, "#ffe8c0", 1.6)
+    fills(kit, "mp", ((x - 1.2, y - 1.2), (x + 1.2, y - 1.2), (x - 1.2, y - 3.6), (x + 1.2, y - 3.6)), 3.2, 190, GOLD, 2.8)
+    facelight(kit, "mp.face", (x, y - 5.5, 2.6), (x, y - 1.0, 1.3), 380, "#ffd890", 3.0)
+    facelight(kit, "mp.sun", (x - 4, y - 12, 7), (x, y - 1.5, 1.0), 950, "#ffc66a", 6.0)
+    fills(kit, "mr", ((x - 1.2, y + 1.6), (x + 1.2, y + 1.6)), 3.1, 260, "#fff0dc", 2.8)
+    facelight(kit, "mr.face", (x + 1.1, y - 1.6, 2.0), (x + 1.15, y + 0.9, 1.6), 300, "#eef2ff", 1.6)
 
 
 # ---------------------------------------------------------------------------------------------- the kitchen
 def build_kitchen(kit):
     pl = kit.plastic
     x = G.KX
-    wall = pl("#fbeccb", 0.85, spec=0.03)
+    wall = pl("#e6c995", 0.85, spec=0.03)
     wood = kit.texture("wood", 0.7, tint="#e8c890")
-    ceil = kit.emit("#fff4e0", 0.7, "kitceil")
+    ceil = kit.emit("#f6e2c0", 0.45, "kitceil")
     wh = pl("#c4bfb2", 0.7, spec=0.04)
     # the kitchen room y 0.3..4.6 with a doorway in the south wall; a corridor y -3..0 beyond
     room(kit, "kit", x - 2.4, x + 2.4, 0.3, 4.6, 2.7, wall, wood, ceil, south_gaps=[(x - 0.55, x + 0.55, 2.1)])
-    room(kit, "cor", x - 2.4, x + 2.4, -3.0, -0.1, 2.7, pl("#f2e6c8", 0.85), wood, ceil, north=False)
+    room(kit, "cor", x - 2.4, x + 2.4, -3.0, -0.1, 2.7, pl("#dcc090", 0.85), wood, ceil, north=False)
     for sx in (-1, 1):
         kit.box(f"kit.case{sx}", (0.14, 0.04, 2.2), (x + sx * 0.62, 0.02, 1.1), wh)
     kit.box("kit.case.t", (1.38, 0.04, 0.14), (x, 0.02, 2.17), wh)
@@ -419,7 +443,7 @@ def build_kitchen(kit):
         kit.box(f"kit.cab{sx}", (1.5, 0.6, 0.88), (x + sx * 1.35, 4.28, 0.44), cab, bevel=0.02)
         kit.box(f"kit.top{sx}", (1.55, 0.64, 0.05), (x + sx * 1.35, 4.28, 0.9), top, bevel=0.01)
     kit.prop("kitchen_oven", (x, 4.3, 0), height=0.9, rot=0)
-    kit.box("kit.hood", (1.0, 0.5, 0.3), (x, 4.34, 2.0), pl("#8a909c", 0.5, spec=0.3))
+    kit.box("kit.hood", (1.0, 0.5, 0.3), (x, 4.34, 2.3), pl("#8a909c", 0.5, spec=0.3))
     kit.box("pan", (0.34, 0.34, 0.07), (x + 0.0, 4.2, 0.95), pl("#3a3a44", 0.4, spec=0.4))
     win = kit.emit("#fff6d8", 1.4, "kitwin")
     fr = pl("#fffaf0", 0.6)
@@ -449,13 +473,13 @@ def build_kitchen(kit):
 def build_cousin(kit):
     pl = kit.plastic
     x, y = G.CX, G.CY
-    room(kit, "cz", x - 3, x + 3, y - 3.5, y + 3.0, 2.7, pl("#e6ecfa", 0.85), kit.texture("wood", 0.7, tint="#e8c890"),
-         kit.emit("#fff4e0", 0.7, "czceil"))
+    room(kit, "cz", x - 3, x + 3, y - 3.5, y + 3.0, 2.7, pl("#d9b48c", 0.85), kit.texture("wood", 0.7, tint="#e8c890"),
+         kit.emit("#f6e2c0", 0.45, "czceil"))
     frame = pl("#b97f45", 0.6)
     kit.box("cz.frame", (1.0, 2.1, 0.22), (x, 2.0, 0.21), frame, bevel=0.02)
-    kit.box("cz.matt", (0.95, 2.0, 0.2), (x, 2.0, 0.42), pl("#f2f0ea", 0.9), bevel=0.04)
+    kit.box("cz.matt", (0.95, 2.0, 0.2), (x, 2.0, 0.42), pl("#d4ccbc", 0.9), bevel=0.04)
     kit.box("cz.head", (1.1, 0.08, 1.1), (x, 3.0 - 0.0, 0.6), frame)
-    kit.box("cz.pillow", (0.7, 0.3, 0.3), (x, 2.75, 0.8), pl("#e8e0f0", 0.9), bevel=0.08)
+    kit.box("cz.pillow", (0.7, 0.3, 0.3), (x, 2.75, 0.8), pl("#c9b8e0", 0.9), bevel=0.08)
     q = kit.empty("cz.quilt", (x, 1.55, 0.64))
     stripes_quilt(kit, q, 1.16, 1.1, 0.5, pl("#ffe9d0", 0.9), pl("#8a6ad8", 0.8), pl("#f29ac0", 0.8))
     # crossword clues on the wall: a grid of black and white squares (no letters)
@@ -476,8 +500,8 @@ def build_cousin(kit):
 def build_buddy(kit):
     pl = kit.plastic
     x, y = G.BDX, G.BDY
-    room(kit, "bd", x - 3.2, x + 3.2, y - 6.5, y + 3.5, 2.7, pl("#e6f3e0", 0.85),
-         kit.texture("wood", 0.7, tint="#e8c890"), kit.emit("#fff4e0", 0.7, "bdceil"))
+    room(kit, "bd", x - 3.2, x + 3.2, y - 6.5, y + 3.5, 2.7, pl("#bcd39a", 0.85),
+         kit.texture("wood", 0.7, tint="#e8c890"), kit.emit("#f6e2c0", 0.45, "bdceil"))
     kit.prop("couch_medium1", (x, y + 2.9, 0), rot=180, tint="#e8a88a")
     # the big dog bed: a round-ish low block with a rim
     bed = pl("#c9605a", 0.9, spec=0.02)
@@ -504,7 +528,7 @@ def build_buddy(kit):
         ears.append(piv)
     W["ears"] = ears
     kit.prop("houseplant_1", (x - 2.6, y + 2.6, 0), scale=2.6)
-    kit.box("bd.rug", (3.0, 2.0, 0.02), (x, y - 0.8, 0.01), pl("#a8d4f0", 0.9, spec=0.02))
+    kit.box("bd.rug", (3.0, 2.0, 0.02), (x, y - 0.8, 0.01), pl("#7fb0d8", 0.9, spec=0.02))
     fills(kit, "bf", ((x - 1.2, y - 1.6), (x + 1.2, y - 1.6), (x - 1.0, y + 1.4), (x + 1.0, y + 1.4)), 2.55, 300, "#fff3e0")
     facelight(kit, "bf.face", (x, y - 5.8, 2.2), (x, y + 1.0, 1.1), 380, "#fff6ec")
 
@@ -548,8 +572,8 @@ def attach_extras(kit):
             kit.box(f"{n}.stache{sx}", (0.34, 0.1, 0.08), (sx * 0.19, -0.64, -0.08), m, head, rot=(0, sx * 0.3, 0), bevel=0.03)
         kit.box(f"{n}.stache.mid", (0.2, 0.1, 0.08), (0, -0.65, -0.06), m, head, bevel=0.03)
     pen = pl("#ffcc2a", 0.5)
-    kit.box("cousin.pencil", (0.05, 0.42, 0.05), (-0.6, -0.1, 0.22), pen, ch, rot=(0, 0, 0.15), bevel=0.01)
-    kit.box("cousin.pencil.tip", (0.045, 0.06, 0.045), (-0.62, -0.34, 0.22), pl("#e87a8a", 0.5), ch, bevel=0.01)
+    kit.box("cousin.pencil", (0.07, 0.5, 0.07), (-0.86, -0.1, 0.25), pen, ch, rot=(0, 0, 0.15), bevel=0.01)
+    kit.box("cousin.pencil.tip", (0.065, 0.07, 0.065), (-0.88, -0.38, 0.25), pl("#e87a8a", 0.5), ch, bevel=0.01)
     W["extras_done"] = True
 
 
@@ -569,7 +593,7 @@ def animate(kit, story, tl, t, ctx):
     mode = sample("mode", tl, t, {"m": "wake"})["m"]
     # ---- the front door and the dream's gold
     dr = sample("door", tl, t, {"v": 1.0})["v"]
-    W["pivot"].rotation_euler = (0, 0, math.radians(100) * dr)
+    W["pivot"].rotation_euler = (0, 0, math.radians(120) * dr)
     dream = mode == "dream"
     seat = sample("seat", tl, t, {"v": 0.0})["v"] > 0.5
     for ob in W["seat"]:
@@ -579,8 +603,12 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = not dream
     for ob in W["sidewhite"]:
         ob.hide_render = dream
-    for ob in W["pencil"]:
+    for ob in W["pencil"] + W["strips"]:
         ob.hide_render = not dream
+    pm = W["blue_dusk"] if mode == "dusk" else W["blue_day"]
+    for ob in (W["bluepillow"], W["held_body"]):
+        if ob.material_slots and ob.material_slots[0].material is not pm:
+            ob.material_slots[0].material = pm
     # ---- the pillow: on the bed, or held flat on my forearms
     held = sample("pillow", tl, t, {"v": 0.0})["v"] > 0.5
     W["bluepillow"].hide_render = held
@@ -636,9 +664,9 @@ def animate(kit, story, tl, t, ctx):
     for nme in W["guest.dusk"]:
         g[nme] = 1.0 if mode == "dusk" else 0.0
     for nme in W["hall.wake"]:
-        g[nme] = 0.0 if dream else 1.0
+        g[nme] = 0.0 if dream else 0.66
     for nme in W["hall.dream"]:
         g[nme] = 1.0 if dream else 0.0
     for ob in W["porch"]:
-        g[ob] = 0.0 if dream else 1.0
+        g[ob] = 0.0 if dream else (0.8 if ob == "porch.sun" else 0.6)
     return g

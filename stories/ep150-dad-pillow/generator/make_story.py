@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -58,11 +58,12 @@ cast = {
     # me, 26: a short twisty dark crop, deep tan skin, a maroon sweatshirt, gray joggers, socks
     "me": person(SKIN, "#8a2a3a", "#8a8d96", "#efeae0", hair="cap", collar="#6a1c2a"),
     # me at sixteen: the same face and skin, a hoodie, a little smaller
-    "teen": person(SKIN, "#3a5a8a", "#3a3a48", "#f2f2f2", hair="cap", collar="#2a4468", age="teen", height=0.93),
+    "teen": person(SKIN, "#3a5a8a", "#3a3a48", "#f2f2f2", hair="cap", extras=["hooddown"], extra_c="#3a5a8a", collar="#2a4468",
+                   age="teen", height=0.93),
     # Dad, 58: a gray flat-top, the same skin as mine (set.py adds the big gray mustache), a blue cardigan over a white tee
-    "dad": person("#a97a52", "#26386a", "#4a5a7a", "#8a5a3a", hair="buzz", hair_c="#a9a9b2", collar="#f4f0e8", width=1.04),
+    "dad": person("#a97a52", "#2f4e9e", "#4a5a7a", "#8a5a3a", hair="buzz", hair_c="#a9a9b2", collar="#f4f0e8", width=1.04),
     # Dad in the memory: a younger, darker mustache and dark hair
-    "dadm": person("#a97a52", "#26386a", "#4a5a7a", "#8a5a3a", hair="buzz", hair_c="#2a2420", collar="#f4f0e8", width=1.04),
+    "dadm": person("#a97a52", "#2f4e9e", "#4a5a7a", "#8a5a3a", hair="buzz", hair_c="#2a2420", collar="#f4f0e8", width=1.04),
     "cousin": person("#c58e64", "#6aa8d8", "#5a5a6a", "#f2f2f2", hair="swoop", hair_c="#3a2418"),
     "buddy": person("#d9b48a", "#e8a838", "#3a3a48", "#f2f2f2", hair="spiky", hair_c="#7a4a22", sleeves="short"),
 }
@@ -193,39 +194,40 @@ shot("S02", "L02", cam(G.ME_G[0], G.ME_G[1], 1.2, 1.7, 0, 30, cz=1.3))
 cue("L03", "pillow", v=0.0)
 show("L03", "cousin")
 place("L03", "cousin", (G.CX, 2.35, -0.2), 0, "stunned", arms=[0, 0])
-shot("S03", "L03", cam(G.CX, 2.35, 1.15, 2.4, 0, 30, cz=1.3))
+shot("S03", "L03", cam(G.CX - 0.12, 2.35, 1.3, 1.25, -35, 32, cz=1.4))
 show("L04", "buddy")
 place("L04", "buddy", (G.BDX - 0.5, G.BDY + 0.8, -0.55), 0, "sheepish", arms=[0, 0])
-shot("S04a", "L04", cam(G.BDX - 0.2, G.BDY + 0.8, 0.9, 2.5, 0, 30, cz=1.1))
+shot("S04a", "L04", cam(G.BDX - 0.2, G.BDY + 0.8, 1.05, 2.5, 0, 30, cz=1.2))
 cue("L04.2", "ear", v=1.0)
-shot("S04b", "L04.2", camp([G.BDX + 1.7, G.BDY - 2.0, 0.95], [G.BDX + 0.45, G.BDY + 0.1, 0.45], 34))
+shot("S04b", "L04.2", camp([G.BDX + 0.75, G.BDY - 1.25, 0.78], [G.BDX + 0.45, G.BDY + 0.05, 0.45], 34,
+                            pos2=[G.BDX + 0.72, G.BDY - 1.1, 0.76], tgt2=[G.BDX + 0.45, G.BDY + 0.05, 0.45]))
 cue("L04>", "ear", v=0.0)
 
 # ===== 03 the silly habit (L06, L07)
 cue("L06", "night", n=1)
 show("L06", "me")
-PME = (HX + 0.2, 6.0, 0.0)
-place("L06", "me", PME, 0, "smile", arms=[0, 0])
-mouth("me", "L06", "L06.3", 0.3)
-shot("S06a", "L06", cam(HX + 0.1, 5.9, 1.3, 3.0, 0, 30, cz=1.45))
-# the knocks: an arm out to the doorframe, tapped twice (a cut, no grip)
-key("me", "L06.3", PME, yaw=0, expr="smile", side=[70, 0], arms=[0, 0], blend=0.2)
-key("me", "L06.3+0.18", PME, yaw=0, expr="smile", side=[62, 0], arms=[0, 0], blend=0.1)
-key("me", "L06.3+0.36", PME, yaw=0, expr="smile", side=[70, 0], arms=[0, 0], blend=0.1)
-key("me", "L06.4", PME, yaw=0, expr="laugh", side=[0, 0], arms=[0, 0], blend=0.3)
+PME = (HX - 0.05, 5.75, 0.0)          # on the porch, the doorway's east jamb by my raised hand
+place("L06", "me", (PME[0], 6.3, 0.0), 0, "smile", arms=[0, 0])
+key("me", "L06.2", PME, yaw=0, expr="smile", arms=[0, 0])
+shot("S06a", "L06", cam(HX + 0.05, 5.9, 1.3, 2.6, 0, 30, cz=1.45))
+# the knocks: the door-side arm up, knuckles on the jamb, two taps (cut in raised)
+cut("me", "L06.3", PME, yaw=0, expr="smile", arms=[0, 62], side=[0, 0])
+key("me", "L06.3+0.05", PME, yaw=0, expr="smile", arms=[0, 72], side=[0, 0], blend=0.05)
+key("me", "L06.3+0.2", PME, yaw=0, expr="smile", arms=[0, 62], side=[0, 0], blend=0.1)
+key("me", "L06.3+0.35", PME, yaw=0, expr="smile", arms=[0, 72], side=[0, 0], blend=0.1)
+key("me", "L06.4", PME, yaw=0, expr="laugh", arms=[0, 0], side=[0, 0], blend=0.3)
 mouth("me", "L06.4", "L06.5", 0.6)
-shot("S06b", "L06.3", cam(HX + 0.3, 5.9, 1.4, 1.8, 12, 30, cz=1.45))
-shot("S06c", "L06.4", cam(HX + 0.2, 6.0, 1.5, 1.3, 0, 34, cz=1.55))
-place("L06.5", "me", (HX + 1.15, 6.6, 0.0), 180, "laugh", arms=[0, 0])
-mouth("me", "L06.5", "L06>", 0.35)
-shot("S06d", "L06.5", cam(HX, 5.6, 1.3, 2.6, 180, 28, cz=1.35))
+shot("S06b", "L06.3", cam(HX + 0.2, 5.6, 1.25, 1.6, 12, 30, cz=1.35))
+shot("S06c", "L06.4", cam(PME[0], PME[1], 1.5, 1.3, 0, 34, cz=1.55))
+# S06d: the wide-open door on the sunny porch, me already in (out of frame)
+show("L06.5")
+shot("S06d", "L06.5", camp([HX, 0.7, 1.0], [HX, 5.0, 1.75], 22, pos2=[HX, 1.15, 1.02], tgt2=[HX, 5.0, 1.75]))
 # S07: Dad in the hall, shaking his head, smiling
 show("L07", "dad")
 place("L07", "dad", (HX, 2.4, 0.0), 0, "smile", arms=[0, 0])
 key("dad", "L07.1", (HX, 2.4, 0.0), yaw=0, expr="smile", head=[18, 0], blend=0.3)
 key("dad", "L07.1+0.35", (HX, 2.4, 0.0), yaw=0, expr="smile", head=[-18, 0], blend=0.3)
 key("dad", "L07.2", (HX, 2.4, 0.0), yaw=0, expr="smile", head=[0, 0], blend=0.3)
-mouth("dad", "L07", "L07>", 0.3)
 shot("S07", "L07", cam(HX, 2.4, 1.3, 1.7, 0, 24, cz=1.45))
 
 # ===== 04 the dream (L08 to L12)
@@ -234,8 +236,8 @@ cue("L08", "door", v=0.0)
 show("L08", "me")
 place("L08", "me", (G.ME_H[0], G.ME_H[1], 0.0), 0, "worried", arms=[0, 0])
 shot("S08a", "L08", cam(HX, 3.1, 1.3, 2.6, 0, 22, cz=1.4))
-place("L08.3", "me", (HX + 0.55, 3.8, 0.0), 0, "worried", arms=[0, 0])
-shot("S08b", "L08.3", cam(HX - 0.1, 5.0, 1.3, 1.8, 0, 28, cz=1.35))
+place("L08.3", "me", (HX + 0.35, 3.8, 0.0), 0, "worried", arms=[0, 0])
+shot("S08b", "L08.3", cam(HX - 0.1, 5.0, 1.4, 2.2, 0, 28, cz=1.4))
 place("L09", "me", (G.ME_H[0], 3.2, 0.0), 0, "worried", arms=[0, 0])
 mouth("me", "L09", "L09>", 0.3)
 shot("S09", "L09", cam(HX, 3.2, 1.5, 1.0, 0, 36, cz=1.5))
@@ -244,69 +246,81 @@ cue("L10", "seat", v=1.0)
 SEAT_Z = -0.14
 show("L10", "dad")
 place("L10", "dad", (G.DAD_X, G.DAD_Y, SEAT_Z), 0, "smile", arms=[0, 0])
-shot("S10a", "L10", cam(G.DAD_X, G.DAD_Y, 1.1, 1.9, 0, 26, cz=1.3))
+shot("S10a", "L10", cam(G.DAD_X, G.DAD_Y, 1.0, 1.9, 0, 20, cz=1.25))
 shot("S10b", "L10.3", cam(G.DAD_X, G.DAD_Y, 1.4, 0.9, 0, 34, cz=1.4))
 show("L12", "me", "dad")
 place("L12", "me", (G.ME_H[0], 3.2, 0.0), 0, "worried", arms=[0, 0])
 key("me", "L12", (G.ME_H[0], 3.2, 0.0), yaw=0, expr="worried", head=[0, 0], blend=0.3)
-key("me", "L12.0+0.2", (G.ME_H[0], 3.2, 0.0), yaw=0, expr="worried", head=[50, 0], blend=0.6)
+key("me", "L12.0+0.2", (G.ME_H[0], 3.2, 0.0), yaw=0, expr="worried", head=[-50, 0], blend=0.6)
 mouth("me", "L12", "L12>", 0.25)
-shot("S12", "L12", cam(HX, 3.2, 1.5, 1.1, 0, 34, cz=1.5))
+# S12: the wide: Dad smiling on the stair, me glancing at him, the shut door right there
+shot("S12", "L12", camp([59.0, -1.3, 1.45], [58.95, 2.6, 1.3], 18, pos2=[59.0, -1.05, 1.45], tgt2=[58.95, 2.6, 1.32]))
 
 # ===== 05 the second and third night (L14 to L19)
 cue("L14", "night", n=2)
-place("L14", "me", (G.ME_H[0], 3.0, 0.0), 0, "worried", arms=[0, 0])
-shot("S14a", "L14", cam(HX + 0.2, 3.0, 1.35, 2.3, 28, 24, cz=1.45))
-shot("S14b", "L14.4", cam(G.DAD_X, G.DAD_Y, 1.35, 1.0, 0, 34, cz=1.4))
+# night two: I've come down the hall toward Dad on the stair; he doesn't move
+MS14 = (59.1, 0.5, 0.0)
+place("L14", "me", (60.2, 2.6, 0.0), -23, "worried", arms=[0, 0])
+key("me", "L14.2", MS14, yaw=-23, expr="worried", arms=[0, 0])
+key("me", "L14.2+0.45", MS14, yaw=-148, expr="worried", arms=[0, 0], blend=0.4)
+shot("S14a", "L14", camp([58.0, -1.2, 1.5], [58.95, 1.62, 1.3], 18, pos2=[58.05, -0.95, 1.5], tgt2=[58.97, 1.62, 1.3]))
+# S14b: over my right shoulder, Dad on the stair, eyes shut, smiling, still
+shot("S14b", "L14.4", camp([61.0, -0.67, 1.72], [58.55, 1.45, 1.2], 30, pos2=[60.9, -0.56, 1.7], tgt2=[58.55, 1.47, 1.2]))
 cue("L17", "night", n=3)
-place("L17", "me", (HX, 1.6, 0.0), 180, "worried", arms=[0, 0])
-key("me", "L17.1", (HX, 3.0, 0.0), yaw=180, expr="worried", blend=0.3)
+# night three: I walk from by the stair to the door myself, glancing back
+place("L17", "me", (59.7, 1.8, 0.0), 173, "worried", arms=[0, 0], head=[-50, 0])
+key("me", "L17.1", (59.7, 1.8, 0.0), yaw=173, expr="worried", head=[-50, 0])
+key("me", "L17>", (59.95, 3.9, 0.0), yaw=173, expr="worried", head=[-50, 0])
 mouth("me", "L17", "L17>", 0.3)
-shot("S17", "L17", camp([HX, 4.85, 1.45], [HX, 2.4, 1.3], 20, pos2=[HX, 4.85, 1.45], tgt2=[HX, 2.8, 1.35]))
+shot("S17", "L17", camp([62.3, 2.4, 1.5], [59.8, 2.4, 1.35], 20, pos2=[62.25, 2.5, 1.5], tgt2=[60.0, 4.2, 1.4]))
 place("L18", "dad", (G.DAD_X, G.DAD_Y, SEAT_Z), 0, "warm", arms=[0, 0])
-mouth("dad", "L18.2", "L18>", 0.45)
+mouth("dad", "L18.2", "L18.4", 0.45)
+key("dad", "L18.4", (G.DAD_X, G.DAD_Y, SEAT_Z), yaw=0, expr="warm", arms=[0, 0], blend=0.2)
 shot("S18a", "L18", cam(G.DAD_X, G.DAD_Y, 1.3, 1.2, 0, 30, cz=1.35))
 shot("S18b", "L18.3", cam(G.DAD_X, G.DAD_Y, 1.4, 0.85, 0, 34, cz=1.4))
-place("L19", "me", (HX + 0.05, 4.0, 0.0), 0, "stunned", arms=[0, 0])
+place("L19", "me", (HX, 4.0, 0.0), -90, "stunned", arms=[0, 0])
 mouth("me", "L19", "L19>", 0.3)
-shot("S19", "L19", cam(HX + 0.1, 4.0, 1.45, 1.2, 0, 36, cz=1.5))
+shot("S19", "L19", camp([58.6, 3.3, 1.5], [60.3, 4.4, 1.45], 24, pos2=[58.75, 3.38, 1.5], tgt2=[60.3, 4.42, 1.45]))
+# S19c: the knock comes through; the wide: Dad smiling on the stair, me with my ear at his door
+shot("S19c", "L19.2", camp([59.0, -1.3, 1.5], [59.0, 2.8, 1.4], 18, pos2=[59.0, -1.0, 1.5], tgt2=[59.0, 2.8, 1.42]))
 # the drop: the door's gold edges, my face at the frame's edge
-cut("me", "P01", (HX + 0.42, 3.9, 0.0), yaw=0, expr="stunned")
-shot("S19b", "P01", cam(HX + 0.1, 5.0, 1.4, 1.8, 0, 30, cz=1.4))
+cut("me", "P01", (HX + 0.45, 3.9, 0.0), yaw=0, expr="stunned")
+shot("S19b", "P01", cam(HX + 0.1, 5.0, 1.45, 2.4, 0, 30, cz=1.45))
 
 # ===== 06 the voice (L20 to L24)
 place("L20", "me", (HX, 3.9, 0.0), 0, "stunned", arms=[0, 0])
 mouth("me", "L20", "L20>", 0.3)
 shot("S20", "L20", cam(HX, 3.9, 1.5, 0.85, 0, 36, cz=1.5))
 mouth("me", "L21", "L21>", 0.35)
-shot("S21", "L21", cam(HX, 3.9, 1.5, 0.7, 0, 38, cz=1.5))
+shot("S21", "L21", cam(HX, 3.9, 1.45, 0.82, 0, 38, cz=1.47))
 # S22: the memory, me at sixteen on the porch, evening
 show("L22", "teen")
-place("L22", "teen", (G.MX, G.MY - 1.2, 0.0), 0, "sheepish", arms=[0, 0])
-key("teen", "L22", (G.MX, G.MY - 1.2, 0.0), yaw=0, expr="sheepish", arms=[0, 72], blend=0.3)
+place("L22", "teen", (G.MX, G.MY - 1.2, 0.0), 40, "sheepish", arms=[0, 0], side=[12, 12], head=[0, -8])
 mouth("teen", "L22", "L22>", 0.3)
-shot("S22a", "L22", cam(G.MX, G.MY - 1.2, 1.3, 1.9, 0, 30, cz=1.35))
+cut("teen", "L22.2", (G.MX, G.MY - 1.2, 0.0), yaw=0, expr="sheepish", arms=[0, 0], side=[0, 0], head=[0, 0])
+shot("S22a", "L22", cam(G.MX - 0.3, G.MY - 1.1, 1.4, 2.1, 70, 30, cz=1.15))
 shot("S22b", "L22.2", cam(G.MX, G.MY - 1.2, 1.4, 0.85, 0, 36, cz=1.4))
 show("L23", "dadm")
-place("L23", "dadm", (G.MX + 0.95, G.MY + 0.9, 0.0), 0, "neutral", arms=[0, 0])
+place("L23", "dadm", (G.MX + 1.17, G.MY + 0.9, 0.0), 0, "neutral", arms=[0, 0])
 mouth("dadm", "L23", "L23>", 0.15)
-shot("S23", "L23", cam(G.MX + 0.95, G.MY + 0.9, 1.55, 1.0, 0, 34, cz=1.55))
+shot("S23", "L23", cam(G.MX + 1.05, G.MY + 0.9, 1.55, 1.1, 0, 34, cz=1.55))
 show("L24", "teen")
-TP = (G.MX - 0.1, G.MY - 0.8, 0.0)
-place("L24", "teen", TP, 160, "worried", arms=[0, 80])
-key("teen", "L24+0.9", TP, yaw=160, expr="worried", arms=[0, 72], blend=0.1)
-key("teen", "L24+1.2", TP, yaw=160, expr="worried", arms=[0, 82], blend=0.1)
-shot("S24a", "L24", cam(G.MX, G.MY - 0.6, 1.3, 1.9, 30, 30, cz=1.35))
+TP = (G.MX - 0.37, G.MY - 0.71, 0.0)   # the door-side arm reaches the panel
+place("L24", "teen", TP, 180, "worried", arms=[74, 0])
+key("teen", "L24+0.3", TP, yaw=180, expr="worried", arms=[86, 0], blend=0.06)
+key("teen", "L24+0.45", TP, yaw=180, expr="worried", arms=[74, 0], blend=0.1)
+key("teen", "L24+0.6", TP, yaw=180, expr="worried", arms=[86, 0], blend=0.1)
+shot("S24a", "L24", cam(G.MX - 0.1, G.MY - 0.55, 1.2, 1.9, 30, 30, cz=1.3))
 place("L24.2", "teen", (G.MX, G.MY - 1.0, 0.0), 0, "worried", arms=[0, 0])
 mouth("teen", "L24.2", "L24>", 0.7)
-shot("S24b", "L24.2", cam(G.MX, G.MY - 1.0, 1.4, 0.9, 0, 36, cz=1.4))
+shot("S24b", "L24.2", cam(G.MX, G.MY - 1.0, 1.45, 0.95, 25, 34, cz=1.12))
 
 # ===== 07 the reveal (L25)
 cue("L25", "mode", m="dream")
 show("L25", "me", "dad")
-place("L25", "me", (HX - 0.3, 2.3, 0.0), 0, "warm", arms=[0, 0])
+place("L25", "me", (HX + 0.2, 2.3, 0.0), 0, "warm", arms=[0, 0])
 place("L25", "dad", (G.DAD_X, G.DAD_Y, SEAT_Z), 0, "sleep", arms=[0, 0], blink=False)
-shot("S25", "L25", camp([HX - 1.0, -1.35, 1.45], [HX - 1.0, 2.6, 1.3], 17, pos2=[HX - 1.0, -0.9, 1.45], tgt2=[HX - 1.0, 2.7, 1.3]))
+shot("S25", "L25", camp([HX - 0.9, -1.3, 1.2], [HX - 0.9, 2.6, 1.6], 16, pos2=[HX - 0.9, -1.0, 1.22], tgt2=[HX - 0.9, 2.6, 1.6]))
 
 # ===== 08 the kitchen (L27)
 cue("L27", "mode", m="wake")
@@ -315,20 +329,21 @@ cue("L27", "seat", v=0.0)
 cue("L27", "night", n=4)
 KX = G.KX
 show("L27", "me")
-KP = (KX + 0.1, 0.12, 0.0)
+KP = (KX + 0.15, -0.5, 0.0)    # in the corridor, knuckles on the doorway's jamb
 place("L27", "me", KP, 180, "laugh", arms=[0, 0])
-key("me", "L27.3", KP, yaw=180, expr="laugh", side=[0, 70], blend=0.2)
-key("me", "L27.3+0.18", KP, yaw=180, expr="laugh", side=[0, 62], blend=0.1)
-key("me", "L27.3+0.36", KP, yaw=180, expr="laugh", side=[0, 70], blend=0.1)
-key("me", "L27.4", KP, yaw=180, expr="laugh", side=[0, 0], blend=0.3)
+key("me", "L27.3", KP, yaw=180, expr="laugh", arms=[0, 66], side=[0, 8], blend=0.25)
+key("me", "L27.3+0.05", KP, yaw=180, expr="laugh", arms=[0, 76], side=[0, 8], blend=0.05)
+key("me", "L27.3+0.2", KP, yaw=180, expr="laugh", arms=[0, 66], side=[0, 8], blend=0.1)
+key("me", "L27.3+0.35", KP, yaw=180, expr="laugh", arms=[0, 76], side=[0, 8], blend=0.1)
+key("me", "L27.4", KP, yaw=180, expr="laugh", arms=[0, 0], side=[0, 0], blend=0.3)
 mouth("me", "L27", "L27>", 0.35)
-shot("S27a", "L27", cam(KX, 0.1, 1.45, 1.6, 180, 30, cz=1.5))
-cue("L27.4", "spat", v=1.0)
-cue("L27.4+0.4", "spat", v=2.0)
-show("L27.4", "dad")
-place("L27.4", "dad", (KX, 3.55, 0.0), 0, "laugh", arms=[0, 62])
-key("dad", "L27.4+0.35", (KX, 3.55, 0.0), yaw=0, expr="laugh", arms=[0, 0], blend=0.2)
-shot("S27b", "L27.4", cam(KX, 3.55, 1.35, 1.3, 0, 28, cz=1.4))
+shot("S27a", "L27", cam(KX + 0.05, -0.3, 1.3, 1.7, 180, 30, cz=1.45))
+cue("L27>", "spat", v=1.0)
+cue("L27>+0.35", "spat", v=2.0)
+show("L27>", "dad")
+place("L27>", "dad", (KX, 3.55, 0.0), 0, "laugh", arms=[0, 62])
+key("dad", "L27>+0.3", (KX, 3.55, 0.0), yaw=0, expr="laugh", arms=[0, 0], blend=0.2)
+shot("S27b", "L27>", cam(KX + 0.1, 3.55, 1.1, 1.8, 25, 22, cz=1.3))
 
 # ===== 09 the loop line (L32)
 cue("L32", "mode", m="dusk")
@@ -337,7 +352,6 @@ cue("L32", "spat", v=0.0)
 show("L32", "me")
 cue("L32", "pillow", v=1.0)
 me_guest("L32", "smile", arms=(72, 72))
-mouth("me", "L32", "L32.2", 0.35)
 shot("S32a", "L32", cam(G.ME_G[0], G.ME_G[1], 1.2, 1.7, 0, 30, cz=1.3))
 cue("L32.2", "pillow", v=0.0)
 cue("L32.2", "bed", v=1.0)
@@ -364,9 +378,9 @@ sfx = [
     {"at": "L08.3+0.05", "kind": "knock", "pattern": [0, 0.3], "tone": "soft", "db": -14},
     {"at": "L14.2+0.05", "kind": "knock", "pattern": [0, 0.3], "tone": "soft", "db": -14},
     {"at": "L19.2+0.05", "kind": "knock", "pattern": [0, 0.3], "tone": "soft", "db": -14},
-    {"at": "L24+0.9", "kind": "knock", "pattern": [0, 0.3], "tone": "soft", "db": -14},
+    {"at": "L24+0.3", "kind": "knock", "pattern": [0, 0.3], "tone": "soft", "db": -14},
     {"at": "L27.3+0.05", "kind": "knock", "pattern": [0, 0.3], "tone": "soft", "db": -14},
-    {"at": "L27.4+0.8", "kind": "knock", "pattern": [0, 0.09, 0.16], "tone": "glass", "db": -24},
+    {"at": "L27>+0.75", "kind": "knock", "pattern": [0, 0.09, 0.16], "tone": "glass", "db": -24},
 ]
 music = {
     "root": 48, "mode": "minor", "bpm": 88, "seed": 150,
@@ -393,7 +407,7 @@ remap_all(music["sections"])
 remap_all(sound["ambience"])
 remap_all(sound["music_drops"])
 polish = {"reveal": ["L20", "L25"], "emph": ["L01.3", "L02.1", "L18.4", "L25.3"],
-          "quiet": [], "hold": ["S06d", "S19"], "sway": []}
+          "quiet": [], "hold": ["S06d", "S19", "S25"], "sway": []}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 story = {
     "slug": "ep150-dad-pillow",
@@ -427,7 +441,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "clip_ok": ["pillow"],
-    "framing_ok": ["S04b", "S19", "S27a"],
+    "framing_ok": [],
     "frames_ok": [],
     "staging_ok": ["S24b/yaw"],
 }
