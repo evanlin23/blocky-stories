@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -156,7 +156,7 @@ for who in cast:
     key(who, 0, [0, 0, 0], yaw=0, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0], hidden=True)
 cue(0, "night", n=0)
 cue(0, "mode", m="wake")
-cue(0, "door", v=1.0)
+cue(0, "frontdoor", v=1.0)
 cue(0, "pillow", v=0.0)
 cue(0, "bed", v=0.0)
 cue(0, "seat", v=0.0)
@@ -194,6 +194,9 @@ shot("S02", "L02", cam(G.ME_G[0], G.ME_G[1], 1.2, 1.7, 0, 30, cz=1.3))
 cue("L03", "pillow", v=0.0)
 show("L03", "cousin")
 place("L03", "cousin", (G.CX, 2.35, -0.2), 0, "stunned", arms=[0, 0])
+key("cousin", "L03.1", (G.CX, 2.35, -0.2), yaw=0, expr="stunned", head=[-22, 6], blend=0.35)
+key("cousin", "L03.2", (G.CX, 2.35, -0.2), yaw=0, expr="stunned", head=[20, -4], blend=0.35)
+key("cousin", "L03.3", (G.CX, 2.35, -0.2), yaw=0, expr="stunned", head=[-8, 8], blend=0.35)
 shot("S03", "L03", cam(G.CX - 0.12, 2.35, 1.3, 1.25, -35, 32, cz=1.4))
 show("L04", "buddy")
 place("L04", "buddy", (G.BDX - 0.5, G.BDY + 0.8, -0.55), 0, "sheepish", arms=[0, 0])
@@ -232,9 +235,12 @@ shot("S07", "L07", cam(HX, 2.4, 1.3, 1.7, 0, 24, cz=1.45))
 
 # ===== 04 the dream (L08 to L12)
 cue("L08", "mode", m="dream")
-cue("L08", "door", v=0.0)
+cue("L08", "frontdoor", v=0.0)
 show("L08", "me")
 place("L08", "me", (G.ME_H[0], G.ME_H[1], 0.0), 0, "worried", arms=[0, 0])
+# looking round the dream hall: left, then right
+key("me", "L08.1", (G.ME_H[0], G.ME_H[1], 0.0), yaw=0, expr="worried", head=[-38, 0], blend=0.35)
+key("me", "L08.2", (G.ME_H[0], G.ME_H[1], 0.0), yaw=0, expr="worried", head=[34, 0], blend=0.4)
 shot("S08a", "L08", cam(HX, 3.1, 1.3, 2.6, 0, 22, cz=1.4))
 place("L08.3", "me", (HX + 0.35, 3.8, 0.0), 0, "worried", arms=[0, 0])
 shot("S08b", "L08.3", cam(HX - 0.1, 5.0, 1.4, 2.2, 0, 28, cz=1.4))
@@ -289,8 +295,10 @@ shot("S19b", "P01", cam(HX + 0.1, 5.0, 1.45, 2.4, 0, 30, cz=1.45))
 
 # ===== 06 the voice (L20 to L24)
 place("L20", "me", (HX, 3.9, 0.0), 0, "stunned", arms=[0, 0])
+key("me", "L20.1", (HX, 3.9, 0.0), yaw=0, expr="stunned", head=[-14, 8], blend=0.4)
 mouth("me", "L20", "L20>", 0.3)
 shot("S20", "L20", cam(HX, 3.9, 1.5, 0.85, 0, 36, cz=1.5))
+key("me", "L21.1", (HX, 3.9, 0.0), yaw=0, expr="stunned", head=[12, -6], blend=0.35)
 mouth("me", "L21", "L21>", 0.35)
 shot("S21", "L21", cam(HX, 3.9, 1.45, 0.82, 0, 38, cz=1.47))
 # S22: the memory, me at sixteen on the porch, evening
@@ -324,7 +332,7 @@ shot("S25", "L25", camp([HX - 0.7, -1.3, 1.3], [HX - 0.7, 2.6, 1.6], 15, pos2=[H
 
 # ===== 08 the kitchen (L27)
 cue("L27", "mode", m="wake")
-cue("L27", "door", v=1.0)
+cue("L27", "frontdoor", v=1.0)
 cue("L27", "seat", v=0.0)
 cue("L27", "night", n=4)
 KX = G.KX

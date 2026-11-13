@@ -596,7 +596,7 @@ def animate(kit, story, tl, t, ctx):
         W["tagn"] = n
     mode = sample("mode", tl, t, {"m": "wake"})["m"]
     # ---- the front door and the dream's gold
-    dr = sample("door", tl, t, {"v": 1.0})["v"]
+    dr = sample("frontdoor", tl, t, {"v": 1.0})["v"]
     W["pivot"].rotation_euler = (0, 0, math.radians(120) * dr)
     dream = mode == "dream"
     seat = sample("seat", tl, t, {"v": 0.0})["v"] > 0.5
