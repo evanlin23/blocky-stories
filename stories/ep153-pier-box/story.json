@@ -15,7 +15,7 @@
  "tail": 0.0,
  "fade_in": false,
  "fade_out": false,
- "rev": 1,
+ "rev": 2,
  "look": {
   "style": "v3",
   "fog": "#cfe9ff",
@@ -43,7 +43,8 @@
    "turn_cap": 220,
    "punch_max": 4,
    "sharpen": 0.4,
-   "bloom_thresh": 0.85
+   "bloom_thresh": 0.85,
+   "talk": true
   }
  },
  "grade": {
@@ -3773,7 +3774,7 @@
     "to": "P00>"
    }
   ],
-  "rev": 1
+  "rev": 2
  },
  "set_moves": [],
  "framing_ok": [

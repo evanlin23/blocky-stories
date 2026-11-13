@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.6 s music drop before L19, and the 3.5 s hold on the question after L30
@@ -387,7 +387,7 @@ remap_all(sound["music_drops"])
 polish = {"reveal": [remap("L26.1")], "twist": remap("L26"),
           "emph": [remap(x) for x in ["L01.3", "L03.1", "L17b", "L26.1"]],
           "hold": ["S29"],
-          "overlap": True, "turn_cap": 220, "punch_max": 4, "sharpen": 0.4, "bloom_thresh": 0.85}
+          "overlap": True, "turn_cap": 220, "punch_max": 4, "sharpen": 0.4, "bloom_thresh": 0.85, "talk": True}
 story = {
     "slug": "ep153-pier-box",
     "title": "Two Cards In MY Handwriting Disagree 🗝️",
