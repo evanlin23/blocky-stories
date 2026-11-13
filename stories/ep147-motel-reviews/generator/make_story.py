@@ -59,7 +59,7 @@ cast = {
     # me, 21: a tall brown quiff (the loud silhouette), a teal road-trip T-shirt
     "me": person("#e3b088", "#2ec4b6", "#6b5b46", "#f2f2f2", "quiff", "#6b3f22", features=["beard"], height=1.08),
     # Dad, about 52: a wide gray-brown flat-top and a giant walrus mustache, a pineapple-yellow aloha shirt
-    "dad": person("#c98f63", "#ffb02e", "#e8dcc0", "#8a6a48", "shag", "#6e6458", features=["dadstache", "shades"],
+    "dad": person("#c98f63", "#ffb02e", "#e8dcc0", "#8a6a48", "shag", "#6e6458", 
                   hair_c2="#1a1a22", pattern="stripes", pattern_c="#ff7a2e", head_scale=1.04, width=1.04),
     # the closet man, looks about 40: very neat black hair with a side part, ears and a nape (set.py swaps the "buzz"
     # silhouette for it in this story), a charcoal suit, gray tie
@@ -227,7 +227,7 @@ show("L07", "dad")
 place("L07", "dad", (0.55, 0.75, 0.0), 120, "crylaugh", arms=[0, 0], head=[-40, 0])
 key("dad", "L07.2", [1.4, 1.4, 0.0], yaw=160, expr="crylaugh", arms=[0, 0], head=[-50, 0], blend=0.35)
 key("dad", "L07.2+0.45", [1.4, 1.4, 0.0], yaw=160, expr="crylaugh", arms=[0, 52], head=[-50, 0], blend=0.35)
-shot("S07", "L07", cam(1.4, 1.9, 1.5, 2.9, 28, 30, cz=1.5))
+shot("S07", "L07", cam(1.4, 1.9, 1.5, 2.5, 28, 30, cz=1.5))
 show("L08", "man")
 place("L08", "man", MAN0, 180, "deadpan", arms=[0, 0])
 shot("S08", "L08", cam(CLX, 3.1, 1.5, 2.6, 0, 30, cz=1.5, push=(2.1, 1.55)))
@@ -298,13 +298,13 @@ place("L22.2", "man", MAN0, 180, "hollow", arms=[0, 0])
 # L23: he steps out toward us, along the closet front, to the desk
 S23 = [G.MAN[0], 1.5, 0.0]
 key("man", "L23", S23, yaw=0, expr="hollow", arms=[0, 0], blend=0.25)
-key("man", "L23.1", [G.MAN_DESK[0] - 0.2, 1.5, 0.0], yaw=-90, expr="hollow", arms=[0, 0], blend=0.4)
-key("man", "L23.2", [G.MAN_DESK[0] - 0.2, 1.55, 0.0], yaw=180, expr="hollow", arms=[80, 80], blend=0.45)
+key("man", "L23.1", [-0.4, 1.5, 0.0], yaw=-90, expr="hollow", arms=[0, 0], blend=0.4)
+key("man", "L23.2", [-0.4, 1.55, 0.0], yaw=180, expr="hollow", arms=[80, 80], blend=0.45)
 shot("S23a", "L23", camp((0.2, -4.0, 1.4), (0.2, 1.9, 1.4), 30, (-0.8, -4.0, 1.4), (-0.8, 1.9, 1.4)))
 cue("L23.2", "key", mode="desk", dur=0.1)
-shot("S23b", "L23.2", cam(-0.2, 1.9, 1.15, 2.0, 0, 34, cz=1.15))
+shot("S23b", "L23.2", cam(-0.62, 1.9, 1.15, 1.7, 0, 34, cz=1.15))
 # L24: he turns, nods, walks to the door
-MD = [G.MAN_DESK[0] - 0.2, 1.55, 0.0]
+MD = [-0.4, 1.55, 0.0]
 key("man", "L24-0.3", MD, yaw=180, expr="hollow", arms=[0, 0], blend=0.2)
 key("man", "L24+0.4", MD, yaw=0, expr="hollow", arms=[0, 0], head=[0, 0], blend=0.7)
 key("man", "L24.1-0.2", MD, yaw=0, expr="hollow", arms=[0, 0], head=[0, 22], blend=0.25)
@@ -429,7 +429,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": ["S02", "S22"],
-    "framing_ok": ["S08", "S08b", "S15", "S19b"],  # the closet man faces the wall on purpose (the script: back only until L22)
+    "framing_ok": ["S08", "S08b", "S15", "S19b", "S01b", "S24b"],  # the closet man faces the wall on purpose (the script: back only until L22)
     "frames_ok": [],
     "staging_ok": [],
     "phonemes": {},

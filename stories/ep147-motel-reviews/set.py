@@ -63,8 +63,8 @@ def _shades():
     return out
 
 
-hair3.FEATURES["dadstache"] = _dadstache
-hair3.FEATURES["shades"] = _shades
+_shag = hair3.STYLES["shag"]
+hair3.STYLES["shag"] = lambda: _shag() + _dadstache() + _shades()     # Dad's hair, this story only: shag + a high mustache + shades
 
 TMP = Path(tempfile.mkdtemp(prefix="room6-"))
 W = {}
@@ -650,9 +650,9 @@ def _animate(kit, story, tl, t, ctx):
     else:
         pen.location = (0, 0, -40)
     kc = sample("key", tl, t, {"mode": "none"})
-    W["key"].location = (G.DESK[0] + 0.5, G.DESK[1] + 0.3, G.DESK_TOP + 0.12) if kc["mode"] == "desk" else (0, 0, -40)
+    W["key"].location = (G.DESK[0] - 0.25, G.DESK[1] + 0.3, G.DESK_TOP + 0.12) if kc["mode"] == "desk" else (0, 0, -40)
     W["key"].rotation_euler = (1.05, 0, math.radians(6))    # the fob leans back against the wall, facing the room
-    W["key"].scale = (2.6, 2.6, 2.6)
+    W["key"].scale = (2.3, 2.3, 2.3)
     W["lead"].location = (0, 0.05, G.DESK_TOP - 0.03 if sample("drawer", tl, t, {"v": 0.0})["v"] > 0.5 else -40)
     W["shirts"].location = (G.DESK[0] - 0.05, G.DESK[1] + 0.3, G.DESK_TOP) if sample("shirts", tl, t, {"v": 0.0})["v"] > 0.5 else (0, 0, -40)
     sc = sample("shirt", tl, t, {"mode": "none", "who": "dad", "f": 0.0})
