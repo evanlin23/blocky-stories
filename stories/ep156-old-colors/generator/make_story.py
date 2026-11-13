@@ -244,28 +244,27 @@ def shot_hands(sid, at, w=1.5, az=50, tz=1.3, cz=1.0, lens=28, tx=0.0, ty=0.35, 
 show(0, "me", "mom")
 leo_at(0, "me", expr="uneasy", head=[0, 22], arms=[0, 0])
 mom_hands(0, expr="neutral")
-shot_hands("S01a", 0, w=1.5, az=50)
+shot_hands("S01a", 0, w=1.5, az=25)
 # S01b: I look at my own hands by the fridge: the real "1" page and the pencil tally at my waist
 show("L01.2", "me")
-place("L01.2", "me", (1.35, 2.1), 10, "neutral", arms=[40, 40], head=[0, 28])
-shot("S01b", "L01.2", cam(2.0, 2.5, 1.2, 2.2, -35, 28, cz=1.3))
+place("L01.2", "me", (1.35, 2.0), 10, "neutral", arms=[40, 40], head=[0, 28])
+shot("S01b", "L01.2", cam(2.0, 2.5, 1.25, 1.8, -20, 28, cz=1.25))
 
 # ===== 02 mine (L02): Mom at the window, waist up
 show("L02", "mom")
 place("L02", "mom", (-3.3, 0.5), 60, "sad", arms=[0, 0])
-shot("S02a", "L02", cam(-3.3, 0.5, face_tz(1.5, 1.05), 1.05, 100, 28, cz=face_tz(1.5, 1.05)))
-shot("S02b", "L02.2", cam(-3.3, 0.5, face_tz(1.5, 0.8), 0.8, 60, 34, cz=face_tz(1.5, 0.8)))
+shot("S02a", "L02", cam(-3.3, 0.5, face_tz(1.5, 1.5), 1.5, 100, 28, cz=face_tz(1.5, 1.5)))
+shot("S02b", "L02.2", cam(-3.3, 0.5, face_tz(1.5, 1.1), 1.1, 60, 34, cz=face_tz(1.5, 1.1)))
 
 # ===== 03 the stakes (L03): the photo from above, my morning check
 cue("L03", "photo", v=1.0)
 cue("L03.3", "photo", v=0.0)
-show("L03", "mom")
-mom_hands("L03", expr="sad")
+show("L03")
 shot("S03a", "L03", camp([0.0, -1.72, 2.5], [0.0, -0.2, 0.8], 28, pos2=[0.0, -1.5, 2.2], tgt2=[0.0, -0.2, 0.8]), hold_=True)
 show("L03.3", "me", "mom")
 leo_at("L03.3", "me", expr="uneasy", head=[0, 24])
 mom_hands("L03.3", expr="neutral")
-shot_hands("S03b", "L03.3", w=1.6, az=25, tz=1.2, cz=0.95)
+shot_hands("S03b", "L03.3", w=2.2, az=-25, tz=1.2, cz=0.95, tx=-0.1)
 
 # ===== 04, 05 Mr. Pratt (L04, L05)
 PRATT_P = (G.PRATT[0] + 0.4, 3.35, 0.3)
@@ -277,7 +276,7 @@ shot("S04", "L04", cam(60.4, 3.35, 0.95, 2.9, 0, 28, cz=1.9, push=(2.6, 0.95)))
 place("L05", "pratt", PRATT_P, 0, "laugh", arms=[0, 0], head=[0, 18])
 key("pratt", "L05+0.5", PRATT_P, yaw=0, expr="laugh", arms=[0, 62], head=[0, 28], blend=0.3)
 key("pratt", "L05.1", PRATT_P, yaw=0, expr="laugh", arms=[0, 0], side=[30, 30], head=[0, 0], blend=0.3)
-shot("S05", "L05", cam(60.4, 3.35, 0.9, 3.5, 0, 28, cz=2.0))
+shot("S05", "L05", cam(60.4, 3.35, 0.95, 2.7, 0, 28, cz=1.7))
 
 # ===== 06 it rubs off (L06): the bench woman and the big checked print she leaves on the bench back
 WOMAN_P = (-0.25, 62.7, 0.0)
@@ -285,14 +284,14 @@ show("L06", "woman")
 place("L06", "woman", WOMAN_P, 0, "smile", arms=[0, 0])
 key("woman", "L06+0.3", WOMAN_P, yaw=0, expr="smile", arms=[0, 38], blend=0.4)
 cue("L06+0.5", "print", v=1.0)
-shot("S06a", "L06", camp([0.5, 59.4, 1.3], [0.2, 63.0, 1.0], 28, pos2=[0.4, 60.4, 1.3], tgt2=[0.15, 63.0, 1.0]))
+shot("S06a", "L06", camp([0.1, 59.4, 2.1], [0.15, 63.1, 0.95], 28, pos2=[0.1, 60.2, 1.9], tgt2=[0.15, 63.1, 1.0]))
 shot("S06b", "L06.2", cam(WOMAN_P[0], 62.7, face_tz(1.5, 1.7), 1.7, 8, 34, cz=face_tz(1.5, 1.7)))
 place("L06.2", "woman", WOMAN_P, 0, "smile", arms=[0, 0], head=[0, 0])
 
 # ===== 07 a hug washes it out (L07): the plaid man and his grown daughter, both faces front 3/4
 show("L07", "man1", "girl")
 for m_ in MAN:
-    cut(m_, "L07", (13.3, 62.0), **pose(90, "smile", arms=[0, 0]))
+    cut(m_, "L07", (13.3, 62.0), **pose(60, "smile", arms=[0, 0], keep_yaw=True))
     key(m_, "L07+0.45", (14.25, 62.5), yaw=50, expr="smile", arms=[0, 0], blend=0.45)
     key(m_, "L07+0.5", (14.25, 62.5), yaw=50, expr="laugh", arms=[70, 70], side=[22, 22], blend=0.3)
 place("L07", "girl", (15.2, 62.5), -80, "smile", arms=[0, 0])
@@ -314,17 +313,16 @@ mom_at("L08", expr="smile", arms=[0, 0])
 key("mom", "L08+0.45", MOM_P, yaw=-90, expr="smile", arms=[82, 82], side=[30, 30], blend=0.5)
 shot_mom("S08a", "L08", w=1.9)
 show("L08.2", "me")
-leo_at("L08.2", "me", expr="neutral", arms=[0, 0])
-key("me", "L08.2+0.3", (LX - 0.7, LY), yaw=90, expr="sheepish", arms=[0, 0], head=[0, 8], blend=0.4)
-key("me", "L08.3", (LX - 0.7, LY), yaw=90, expr="sheepish", arms=[0, 0], blend=0.2)
+leo_at("L08.2", "me", expr="neutral", arms=[0, 0], keep_yaw=True)
+key("me", "L08.2+0.8", (LX - 0.55, LY), yaw=90, expr="sheepish", arms=[0, 0], head=[0, 8], blend=0.4)
 shot("S08b", "L08.2", cam(LX - 0.35, LY, face_tz(1.62, 2.0), 2.0, 45, 34, cz=face_tz(1.62, 2.0)))
 
 # ===== 09 day 9: the swing (L09)
 cue("L09", "day", n=9)
 SWX, SWY = G.PORCH[0], G.PORCH[1] - 0.3
 show("L09", "me")
-place("L09", "me", (SWX + 1.1, SWY), 0, "smile", arms=[0, 0])
-shot("S09a", "L09", cam(SWX + 0.2, SWY, 1.9, 2.0, 0, 28, cz=2.1))
+place("L09", "me", (SWX + 0.65, SWY - 0.9), 0, "smile", arms=[0, 0])
+shot("S09a", "L09", cam(SWX + 0.35, SWY, 1.65, 2.0, 0, 28, cz=1.9))
 show("L09.2-0.27", "mom")
 place("L09.2-0.27", "mom", (4.0, G.DOOR_Y), -90, "smile", arms=[0, 0])
 shot("S09b", "L09.2-0.27", cam(4.0, G.DOOR_Y, face_tz(1.5, 1.9), 1.9, -95, 34, cz=face_tz(1.5, 1.9)))
@@ -333,12 +331,12 @@ shot("S09b", "L09.2-0.27", cam(4.0, G.DOOR_Y, face_tz(1.5, 1.9), 1.9, -95, 34, c
 cue("L10", "day", n=16)
 cue("L10", "prints", v=1.0)
 show("L10", "me")
-place("L10", "me", (1.2, 2.05), 100, "stunned", arms=[0, 0], head=[-30, 4])
-shot("S10a", "L10", cam(1.75, 2.45, 1.35, 1.7, 12, 28, cz=1.35))
+place("L10", "me", (1.35, 2.05), 100, "stunned", arms=[0, 0], head=[-30, 4])
+shot("S10a", "L10", cam(1.7, 2.45, 1.35, 1.7, 12, 28, cz=1.35))
 show("L10.3-0.43", "me", "mom")
 leo_at("L10.3-0.43", "me", expr="sheepish", head=[0, 22])
 mom_hands("L10.3-0.43", expr="neutral")
-shot_hands("S10b", "L10.3-0.43", w=1.4, az=60, tz=1.15, cz=0.95)
+shot_hands("S10b", "L10.3-0.43", w=1.9, az=-25, tz=1.15, cz=0.95)
 shot("S10c", "L10.4", cam(LX, LY, face_tz(1.62, 1.2), 1.2, 45, 34, cz=face_tz(1.62, 1.2)))
 
 # ===== 11 day 23: the curtains (L11), then one dodge
@@ -348,20 +346,20 @@ show("L11", "me")
 place("L11", "me", (-3.15, 0.1), 80, "smile", arms=[0, 0])
 shot("S11a", "L11", camp([-1.9, -2.4, 1.2], [-3.4, 0.2, 1.3], 28, pos2=[-1.9, -2.4, 1.2], tgt2=[-3.4, 0.2, 2.0]))
 show("L11.2", "me", "mom")
-leo_at("L11.2", "me", expr="neutral", arms=[0, 0])
+leo_at("L11.2", "me", expr="neutral", arms=[0, 0], keep_yaw=True)
 mom_at("L11.2", expr="warm", arms=[0, 0])
 key("mom", "L11.2+0.3", MOM_P, yaw=-90, expr="warm", arms=[82, 82], side=[30, 30], blend=0.5)
-key("me", "L11.2+0.5", (LX - 0.7, LY), yaw=90, expr="sheepish", arms=[0, 0], blend=0.4)
-shot("S11b", "L11.2", cam(LX - 0.2, LY, face_tz(1.62, 2.0), 2.0, 50, 34, cz=face_tz(1.62, 2.0)))
+key("me", "L11.2+0.85", (LX - 0.55, LY), yaw=90, expr="sheepish", arms=[0, 0], blend=0.4)
+shot("S11b", "L11.2", cam(LX - 0.2, LY, face_tz(1.62, 2.2), 2.2, 45, 34, cz=face_tz(1.62, 2.2)))
 
 # ===== 12 day 31: the pillowcase (L12)
 cue("L12", "day", n=31)
 RX, RY = G.ROOM
 show("L12", "me")
-place("L12", "me", (RX + 1.2, RY + 2.7), -50, "uneasy", arms=[0, 0], head=[0, 14])
-W12 = 1.8
+place("L12", "me", (RX + 1.15, RY + 2.7), -50, "uneasy", arms=[0, 0], head=[0, 14])
+W12 = 2.0
 shot("S12a", "L12", cam(RX + 0.32 + 0.2 * W12 + 0.02, RY + 3.05, 0.95, W12, -30, 28, cz=1.25))
-key("me", "L12.3", (RX + 1.2, RY + 2.7), yaw=-50, expr="sly", arms=[0, 0], head=[0, 6], blend=0.3)
+key("me", "L12.3", (RX + 1.15, RY + 2.7), yaw=-50, expr="sly", arms=[0, 0], head=[0, 6], blend=0.3)
 shot("S12b", "L12.3", cam(RX + 1.2, RY + 2.7, face_tz(1.62, 1.8), 1.8, -42, 34, cz=face_tz(1.62, 1.8)))
 
 # ===== 13 day 40: three sweaters (L13)
@@ -370,7 +368,7 @@ show("L13", "sw", "mom")
 leo_at("L13", "sw", expr="uneasy", arms=TABLE_HANDS)
 mom_at("L13", expr="neutral", arms=[0, 0])
 acting["sw"].append({"from": "L13", "to": "L13>", "tremble": 2.0})
-shot("S13a", "L13", cam(LX, LY, 1.2, 1.5, 35, 28, cz=1.2))
+shot("S13a", "L13", cam(LX, LY, 1.2, 1.5, 10, 28, cz=1.2))
 shot("S13b", "L13.2", cam(LX, LY, 1.2, 1.3, 20, 28, cz=1.2))
 
 # ===== 14 Mr. Pratt asks (L14)
@@ -409,7 +407,7 @@ shot_mom("S17a", "L16.3-0.1", w=1.7)
 show("L17.1", "meb")
 place("L17.1", "meb", (LX2, LY), 90, "wide", arms=[58, 58])
 key("meb", "L17.1+0.2", (LX2, LY), yaw=90, expr="wide", arms=[58, 58], head=[0, -4], blend=0.5)
-shot("S17b", "L17.1", camp([MX2 + 0.9, MY - 0.55, 1.55], [LX2, LY - 0.3, 1.2], 24, pos2=[MX2 + 0.5, MY - 0.45, 1.55]))
+shot("S17b", "L17.1", camp([MX2 + 1.4, MY - 0.8, 1.6], [LX2, LY - 0.12, 1.3], 24, pos2=[MX2 + 1.1, MY - 0.7, 1.6]))
 
 # ===== 18 the hug washes it out (L18): one shot, both faces, the blue goes out in three steps 0.3 s apart
 cue("L18", "day", n=41)
@@ -423,7 +421,7 @@ for new, old, dt in (("mf1", "meb", 0.45), ("mf2", "mf1", 0.75), ("sw", "mf2", 1
     cut(old, f"L18.1+{dt}", hidden=True)
     vis.discard(old)
 cue("L18.1+0.55", "rub", v=1.0)
-shot("S18", S18, camp([1.5, 0.35, 1.5], [1.5, 1.7, 1.38], 28, pos2=[1.5, 0.65, 1.48], tgt2=[1.5, 1.7, 1.4]))
+shot("S18", S18, camp([1.5, -0.8, 1.5], [1.5, 1.7, 1.38], 28, pos2=[1.5, -0.45, 1.5], tgt2=[1.5, 1.7, 1.4]))
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)
@@ -508,9 +506,9 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": [],
+    "framing_ok": ["S03a", "S08b", "S11b", "S15a", "S16a"],
     "frames_ok": [],
-    "staging_ok": [],
+    "staging_ok": ["S07/close", "S16a/close", "S18/close"],
     "phonemes": {"Nell": "nˈɛl"},
     "homophones": {"stripey": "stripy"},
 }

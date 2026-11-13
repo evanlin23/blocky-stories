@@ -423,7 +423,7 @@ def build_street(kit):
     for sxx in (-1, 1):
         kit.box(f"street.bench.leg{sxx}", (0.07, 0.5, 0.46), (sxx * 0.8 + sx, sy + 3.3, 0.23), pl("#4a4a50", 0.5))
     # the checked print the touch leaves on the bench (shown by the `print` cue)
-    pr = kit.plane("street.print", (0.5, 0.5), (sx + 0.55, sy + 3.5, 0.75), imat(kit, "street.printm", _checks_image("#c96f4a", "#fffaf0", "checks2", 2), 0.95)[0], rot=(math.pi / 2, 0, 0))
+    pr = kit.plane("street.print", (0.5, 0.5), (sx + 0.55, sy + 3.3, 0.512), imat(kit, "street.printm", _checks_image("#c96f4a", "#fffaf0", "checks2", 2), 0.95)[0])
     pr.hide_render = True
     noshadow(pr)
     W["benchprint"] = pr
@@ -460,7 +460,7 @@ def build_room(kit):
     kit.box("room.bed.head", (1.2, 0.08, 0.9), (bx, ry + 3.46, 0.7), pl("#a8743f", 0.6))
     pillow = kit.box("room.pillow", (0.64, 0.42, 0.16), (bx, by + 0.7, 0.62), pl("#f1efea", 0.9, spec=0.02), bevel=0.06, seg=3)
     # one soft yellow stripe across the pillowcase, 1 cm proud on top and at the front
-    kit.box("room.pillow.stripe", (0.14, 0.44, 0.18), (bx + 0.02, by + 0.7, 0.62), pl(YELLOW, 0.8), bevel=0.04, seg=3)
+    kit.box("room.pillow.stripe", (0.17, 0.44, 0.18), (bx + 0.02, by + 0.7, 0.62), pl(YELLOW, 0.7), bevel=0.04, seg=3)
     kit.box("room.window", (0.06, 1.4, 1.2), (rx - 3.48, ry + 0.5, 1.7), kit.emit("#cfeaff", 0.8, "roomwin"))
     kit.box("room.rug", (2.2, 1.4, 0.02), (rx - 0.4, ry - 0.2, 0.012), pl("#f2c05a", 0.9, spec=0.02))
     kit.box("room.shelf", (1.2, 0.3, 0.05), (rx + 2.4, ry + 3.4, 1.6), pl("#a8743f", 0.6))
