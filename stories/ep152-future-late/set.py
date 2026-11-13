@@ -179,7 +179,7 @@ def build_kitchen(kit):
     kit.box("k.curt2", (0.12, 0.7, 1.5), (-X + 0.1, 0.02, 1.5), pl("#e57a5a", 0.8))
     kit.box("k.curtrod", (0.05, 1.6, 0.04), (-X + 0.1, -0.3, 2.28), dark)
     # lamps: the floor lamp and the ceiling fixture (both on, warm)
-    kit.prop("light_floor1", (-2.9, 1.6, 0), height=1.6)
+    kit.prop("light_floor1", (-3.0, -1.8, 0), height=1.6)
     kit.prop("light_ceiling1", (0.0, 1.6, G.CEIL - 0.41), height=0.41)
     kit.cyl("k.lampglow", 0.16, 0.06, (0.0, 1.6, G.CEIL - 0.45), kit.emit("#ffe2a0", 1.2, "lampglow"), n=14)
     # the table: pedestal, wood top, checked cloth, plates, mugs and a plain pie (no candles)
@@ -308,11 +308,11 @@ def build_phone(kit):
     ink = kit.emit("#16100a", 1.0, "watchink")
     for i in range(4):
         a = i * 90 * D2R
-        kit.box(f"watch.tick{i}", (0.014, 0.006, 0.02), (0.04 * math.sin(a), -0.044, 0.04 * math.cos(a)), ink, wt, rot=(0, a, 0))
+        kit.box(f"watch.tick{i}", (0.008, 0.006, 0.014), (0.042 * math.sin(a), -0.044, 0.042 * math.cos(a)), ink, wt, rot=(0, a, 0))
     hp = kit.empty("watch.hp", (0, -0.047, 0), wt)
     mp = kit.empty("watch.mp", (0, -0.052, 0), wt)
-    kit.box("watch.hour", (0.032, 0.006, 0.04), (0, 0, 0.017), ink, hp)
-    kit.box("watch.min", (0.022, 0.006, 0.056), (0, 0, 0.025), ink, mp)
+    kit.box("watch.hour", (0.014, 0.006, 0.034), (0, 0, 0.015), ink, hp)
+    kit.box("watch.min", (0.009, 0.006, 0.05), (0, 0, 0.024), ink, mp)
     hp.rotation_euler = (0, (11 + 48 / 60) * 30 * D2R, 0)
     mp.rotation_euler = (0, 48 * 6 * D2R, 0)
 
@@ -407,6 +407,9 @@ def _first_frame(kit, story):
         for sx in (-1, 1):   # gold earrings on the v3 head (2.8 wide), and a glasses cord of gold beads down each cheek
             kit.sphere(f"mom.ear{sx}", 0.14, (sx * 1.46, 0.0, -0.3), gold, mm, seg=10)
             kit.sphere(f"mom.ear2{sx}", 0.1, (sx * 1.46, 0.0, -0.5), gold, mm, seg=10)
+        # the bun's knot: a teal scrunchie round its waist and a gold hairpin through the front, so it reads as a bun not a hat
+        kit.box("mom.scrunch", (2.3, 2.3, 0.3), (0, 0.15, 1.15 + 0.62), kit.plastic("#2fa39a", 0.5), mm, bevel=0.12)
+        kit.box("mom.pin", (2.7, 0.1, 0.12), (0, -0.92, 1.15 + 1.0), gold, mm, rot=(0, 0.45, 0), bevel=0.03)
     W["inited"] = True
 
 
@@ -507,9 +510,9 @@ def animate(kit, story, tl, t, ctx):
     # ---- my watch, lying face up on the cloth beside the phone for S21a (the real-time watch next to the fast clock)
     wt = W["watch"]
     if sid == "S21a":   # my watch standing on its band beside the pie, big, the face to the camera: 11:48 plain
-        wt.location = (0.3, 1.25, G.TABLE_Z + 0.062 * 2.6)
+        wt.location = (0.1, 1.25, G.TABLE_Z + 0.062 * 3.0)
         wt.rotation_euler = (0, 0, 0)
-        wt.scale = (2.6, 2.6, 2.6)
+        wt.scale = (3.0, 3.0, 3.0)
     else:
         wt.location = (0, -80, 0)
     # ---- seated
