@@ -63,7 +63,7 @@ cast = {
                   hair_c2="#1a1a22", pattern="stripes", pattern_c="#ff7a2e", head_scale=1.04, width=1.04),
     # the closet man, looks about 40: very neat black hair with a side part, ears and a nape (set.py swaps the "buzz"
     # silhouette for it in this story), a charcoal suit, gray tie
-    "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "buzz", "#0f0e16", hair_c2="#e8c8a8", sleeves="long",
+    "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "buzz", "#4a3222", hair_c2="#e8c8a8", sleeves="long",
                   extras=["tie"], extra_c="#8d93a3", collar="#f4f4f4", body_width=0.94),
     # the clerk, about 60: bald, big red reading-glasses frames, a mint motel shirt
     "clerk": person("#e8c4a0", "#7fe0c4", "#8a7c66", "#8a6a48", "bald", "#e8573a", features=["glasses"],
@@ -351,7 +351,7 @@ key("dad", "L33.2+0.4", [MX - 0.1, MY, 0.0], yaw=0, expr="neutral", arms=[62, 62
 shot("S32", "L33", cam(MX - 0.1, MY, 1.5, 2.1, 0, 28, cz=1.5))
 cue("L33.3", "shirt", mode="desk", who="dad", f=2.0)
 cue("L33.3", "key", mode="none")
-shot("S33", "L33.3", cam(G.DESK[0] + 0.15, 1.95, 1.0, 1.1, 0, 32, cz=1.0))
+shot("S33", "L33.3", cam(G.DESK[0] + 0.15, 2.2, 0.9, 1.3, 0, 32, cz=1.55))
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)

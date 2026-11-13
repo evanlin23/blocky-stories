@@ -33,8 +33,7 @@ def _neat():
     it reads as a neat head and not a grey box."""
     b, T, F, K, Wd, D, H = hair3._b, hair3.TOP, hair3.FRONT, hair3.BACK, hair3.W, hair3.D, hair3.H
     out = [b("cap", (Wd + 0.04, D + 0.06, 0.3), (0, 0, T - 0.08), bevel=0.12),
-           b("back", (Wd * 0.7, 0.24, H * 0.62), (0, K - 0.07, T - H * 0.31), bevel=0.08),
-           b("backtop", (Wd + 0.06, 0.24, H * 0.3), (0, K - 0.07, T - H * 0.15), bevel=0.08),
+           b("back", (Wd + 0.06, 0.3, H * 0.84), (0, K - 0.04, T - H * 0.42 + 0.06), bevel=0.05),
            b("sweep", (Wd * 0.62, 0.2, 0.34), (Wd * 0.14, F + 0.02, T - 0.12), bevel=0.07)]
     for sx in (-1, 1):
         out.append(b(f"side{sx}", (0.2, D * 0.85, H * 0.34), (sx * (Wd / 2 + 0.02), 0.06, T - H * 0.17), bevel=0.06))
@@ -173,8 +172,10 @@ def sunburst_image():
         d.ellipse([300, 50, 400, 150], fill=hx("#ff7a59"))
         d.polygon([(0, 230), (110, 120), (230, 230)], fill=hx("#c96f3a"))
         d.polygon([(150, 230), (290, 100), (440, 230)], fill=hx("#b85d2e"))
-        d.rectangle([60, 250, 80, 340], fill=hx("#3d8f4a"))
-        d.rectangle([40, 280, 100, 296], fill=hx("#3d8f4a"))
+        for k in range(8):
+            a_ = k * math.pi / 4
+            d.line([(350 + 62 * math.cos(a_), 100 + 62 * math.sin(a_)), (350 + 88 * math.cos(a_), 100 + 88 * math.sin(a_))],
+                   fill=hx("#ff7a59"), width=8)
         im.save(p)
     return str(p)
 
@@ -586,7 +587,7 @@ def animate(kit, story, tl, t, ctx):
 
 def _animate(kit, story, tl, t, ctx):
     if "mancollar" not in W:
-        up = bpy.data.objects.get("man.upper")
+        up = bpy.data.objects.get("man.upper") or bpy.data.objects.get("man.torso")
         if up is not None:      # a white shirt collar, wider than the suit's, so the back of his neck reads
             W["mancollar"] = kit.box("man.collar2", (1.5, 1.12, 0.3), (0, 0, 1.97), kit.plastic("#f6f6f6", 0.6), up, bevel=0.06)
     bpy.context.view_layer.update()
@@ -657,7 +658,7 @@ def _animate(kit, story, tl, t, ctx):
     sc = sample("shirt", tl, t, {"mode": "none", "who": "dad", "f": 0.0})
     f = sc["f"]
     f1, f2 = min(1.0, max(0.0, f)), min(1.0, max(0.0, f - 1.0))
-    fs = (1 - 0.5 * f1, 1 + f1 * 1.0 + f2 * 2.0, 1 - 0.5 * f2)      # two folds: half the width, then half the height
+    fs = (1 - 0.5 * f1, 1 + f1 * 0.5 + f2 * 1.0, 1 - 0.5 * f2)      # two folds: half the width, then half the height
     sh = W["shirt"]
     ha, hb = hand(sc["who"], 1), hand(sc["who"], -1)
     if sc["mode"] == "hand" and ha is not None and hb is not None:
@@ -667,8 +668,8 @@ def _animate(kit, story, tl, t, ctx):
         sh.rotation_euler = (0, 0, ph + math.pi / 2)
         sh.scale = (1.25 * fs[0], 1.25 * fs[1], 1.25 * fs[2])
     elif sc["mode"] == "desk":
-        sh.location = (G.DESK[0] + 0.15, G.DESK[1] + 0.3, G.DESK_TOP + 0.22)
-        sh.rotation_euler = (0, 0, math.radians(-6))
+        sh.location = (G.DESK[0] + 0.15, G.DESK[1] + 0.25, G.DESK_TOP + 0.11)
+        sh.rotation_euler = (-math.pi / 2, 0, math.radians(8))     # flat on the desk, its face up
         sh.scale = (1.7 * fs[0], 1.7 * fs[1], 1.7 * fs[2])
     else:
         sh.location = (0, 0, -40)
