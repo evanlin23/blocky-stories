@@ -1,0 +1,577 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "at our town pool, you can't swim alone. someone always swims with you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.155,
+   "onset": 0.172,
+   "end": 2.931,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.759
+    ],
+    [
+     0.784,
+     1.0
+    ],
+    [
+     1.0,
+     1.586
+    ],
+    [
+     1.681,
+     2.146
+    ],
+    [
+     2.146,
+     2.931
+    ]
+   ]
+  },
+  "L03": {
+   "text": "my grandpa Lou swims at six. a ripple keeps up beside him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.103,
+   "onset": 0.172,
+   "end": 2.914,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.552
+    ],
+    [
+     1.647,
+     1.931
+    ],
+    [
+     1.931,
+     2.215
+    ],
+    [
+     2.215,
+     2.914
+    ]
+   ]
+  },
+  "L04": {
+   "text": "he calls it his lane buddy.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.431
+    ]
+   ]
+  },
+  "L06": {
+   "text": "six A M, I had lane four alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.19,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.638,
+     0.793
+    ],
+    [
+     0.793,
+     1.155
+    ],
+    [
+     1.155,
+     1.707
+    ]
+   ]
+  },
+  "L08": {
+   "text": "lap one. behind me, a splash.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.19,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.19,
+     0.552
+    ],
+    [
+     0.586,
+     0.914
+    ],
+    [
+     0.94,
+     1.569
+    ]
+   ]
+  },
+  "L09": {
+   "text": "the lap board lit up a second number.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     0.888
+    ],
+    [
+     0.888,
+     1.672
+    ]
+   ]
+  },
+  "L10": {
+   "text": "me, one. someone, zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.526,
+     0.759
+    ],
+    [
+     0.793,
+     1.31
+    ]
+   ]
+  },
+  "L11": {
+   "text": "I stopped at the wall. the splashing stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.897
+    ],
+    [
+     0.948,
+     1.931
+    ]
+   ]
+  },
+  "L12": {
+   "text": "I swam. it swam.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.172
+    ]
+   ]
+  },
+  "L13": {
+   "text": "always one lap behind.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.414
+    ]
+   ]
+  },
+  "L14": {
+   "text": "six twenty. me, eight. it, seven.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.19,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.707,
+     0.983
+    ],
+    [
+     1.017,
+     1.672
+    ]
+   ]
+  },
+  "L15": {
+   "text": "at every wall, I do my dumb double kick.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.716,
+     0.879
+    ],
+    [
+     0.879,
+     1.267
+    ],
+    [
+     1.267,
+     1.983
+    ]
+   ]
+  },
+  "L16": {
+   "text": "splash splash.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ]
+   ]
+  },
+  "L17": {
+   "text": "grandpa says nobody kicks like that but me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.181
+    ],
+    [
+     1.181,
+     1.431
+    ],
+    [
+     1.431,
+     1.948
+    ]
+   ]
+  },
+  "L18": {
+   "text": "six forty. lap twelve.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.638,
+     1.345
+    ]
+   ]
+  },
+  "L19": {
+   "text": "I kicked. splash splash.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.448,
+     1.293
+    ]
+   ]
+  },
+  "L20": {
+   "text": "then, one lap behind me. splash splash.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.259
+    ],
+    [
+     0.284,
+     0.569
+    ],
+    [
+     0.569,
+     0.966
+    ],
+    [
+     1.026,
+     1.931
+    ]
+   ]
+  },
+  "L22": {
+   "text": "yesterday, I swam twelve laps here, alone, and lost my duck towel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.19,
+   "onset": 0.172,
+   "end": 3.0,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.862
+    ],
+    [
+     0.862,
+     1.285
+    ],
+    [
+     1.285,
+     1.828
+    ],
+    [
+     1.879,
+     2.276
+    ],
+    [
+     2.276,
+     3.0
+    ]
+   ]
+  },
+  "L23": {
+   "text": "it's on the starting block. soaking wet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.983
+    ],
+    [
+     1.061,
+     1.776
+    ]
+   ]
+  },
+  "L25": {
+   "text": "the pool sends whoever swam your lane last.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.094
+    ],
+    [
+     1.094,
+     1.897
+    ]
+   ]
+  },
+  "L26": {
+   "text": "that's yesterday's me. and Grandpa's buddy is grandpa.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.172,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.172,
+     1.034
+    ],
+    [
+     1.103,
+     1.845
+    ],
+    [
+     1.845,
+     2.655
+    ]
+   ]
+  },
+  "L30": {
+   "text": "tomorrow at six, I'm the one behind.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.845,
+     1.008
+    ],
+    [
+     1.008,
+     1.741
+    ]
+   ]
+  },
+  "L31": {
+   "text": "nobody swims alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.19,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.19,
+     0.741
+    ],
+    [
+     0.741,
+     1.293
+    ]
+   ]
+  }
+ }
+}

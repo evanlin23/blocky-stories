@@ -1,0 +1,28 @@
+{
+ "stage": "final",
+ "film": "13998897404",
+ "run": "43335526830",
+ "sha": "02dcf31c811ba4b683d74e78dd1236c497d753df",
+ "verdict": "pass",
+ "date": "2026-11-13",
+ "checked": [
+  "film files unchanged since proof sha",
+  "every frame: flat, black, clipped-white, frozen scan",
+  "frames.py",
+  "staging.py (yaw)",
+  "frames every 2 s at phone size",
+  "first 3 s",
+  "cover",
+  "TV-size canvas",
+  "loudness and true peak",
+  "4 kHz 5 s windows",
+  "end tail",
+  "craft vs proof",
+  "flash",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "**ep141-lost-poster**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.4 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 18.5 | 14.0– | ok |\n| macro.motion_energy_q | 6.32 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 8.95 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.024 | –0.25 | ok |\n| spec.shot_p90_s | 1.46 | –2.5 | ok |\n| macro.longest_still_s | 0.07 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.78 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.65 | 0.4– | ok |\n| macro.brightness_mean | 0.681 | 0.35– | ok |\n| macro.brightness_first_3s | 0.698 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.426 | 0.42– | ok |\n| macro.contrast_mean | 0.21 | 0.18– | ok |\n| spec.face_big_share | 0.887 | 0.4– | ok |\n| spec.caption_share | 0.979 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.881 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.023 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 103.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.62 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 13.8 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0475 | –0.08 | ok |\n| sound.hf_jump_max | 0.0239 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Final 1080x1920, 1374 frames vs timeline 1375 (45.8 s, 42 shots), cover 1.60 s; drawn from main 02dcf31c: no file in stories/ep141-lost-poster or blocky/ changed between the proof sha 16fbe82e and 02dcf31c (or since).\nEvery-frame scan at 270x480: no flat frame (largest flat-tile share 0.12 at 22.2 s, modal colour max 0.25 at 17.3 s = Grandma's white shirt in close-up, reads), no near-black (max 0.2%), clipped white only on shirts, posters and captions (max 25% at 16-17 s and 25-26 s, all recognisable), luma 0.45-0.86, no frozen frames. frames.py: 0 findings over 1374 frames. staging.py (yaw included): 0 findings over 42 shots.\nLooked at frames every 2 s and all of the first 3 s at phone size, flagged seconds and the end at full size: faces read, captions in the safe area, no limbs through bodies, merged bodies or teleports; bell close-up 34-35 s crops the judge's head at the top but the face and hand read. Fine detail holds at full size, no sharpening halo.\nSecond one: sunny street-corner notice board, me (stunned, quiff, face big) beside a LOST poster with my own face, '? 7' tag, slow push; 'If the LOST poster on the corner has YOUR face, you've got one WEEK.' Cover 1.6 s: stunned me beside my poster, strong on phone and TV.\nAudio: -14.1 LUFS, true peak -1.8 dBTP, LRA 1.1; 4 kHz share 0.023-0.047 per 5 s window, max jump 0.023, no scratch; 'is SATURDAY' ends clean, last 0.3 s fades to -32 dBFS, no cut-off. Flash: house bar and ep10 bar pass (general 1/s, 3f 2/s, red 0).\nPackage: gate OPEN; opening 'if' matches L01; last upload ep137 ('must') differs; title, description and pin match the film, no spoiler, no 'husband'.\ncraft: 0 block, 0 near, 1 warn: spec.cuts_per_10s 8.95 (5.5-8.0), as on the proof; every number within 0.01-0.3 of the proof (longest_still_q 0.27 s vs 0.0, under its 1.0 s bar). Fast cuts read clean; won't lose viewers.\nVerdict pass. Still open from the proof (should-fix, not a broken frame): S24/S25 33.3 s and 40.5-42 s, a tiny green and blue speck at the tent roof/wall seam on the top edge (under 0.1% of the frame); close the seam if the story is ever redrawn."
+}
