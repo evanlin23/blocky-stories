@@ -359,7 +359,9 @@ story = {
         "rev": 1, "floor": "wood", "steps_db": -22,
         "ambience": [{"kind": "wind", "from": 0, "to": "end", "lufs": -46}],
         "sfx": [{"at": "L29+0.02", "kind": "click", "db": -10},
-                {"at": "P1+0.05", "kind": "whoosh", "db": -22}],
+                {"at": "P1+0.05", "kind": "whoosh", "db": -22},
+                {"at": "L24+0.9", "kind": "thud", "db": -18},
+                {"at": "L09+0.1", "kind": "click", "db": -20}],
         "music_drops": [["P1", "P1>"]],
     },
 }
@@ -380,6 +382,6 @@ if vf.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(key(e)))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 2
+story["rev"] = 3
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
