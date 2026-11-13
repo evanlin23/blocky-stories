@@ -185,7 +185,7 @@ def build_car(kit, name, body_hex, cabin=True):
     tyre = pl("#22242a", 0.85, spec=0.05)
     hub = pl("#b9bec6", 0.4, spec=0.3)
     cream = pl("#efe2c4", 0.75, spec=0.05)
-    lining = kit.emit("#efe2c4", 0.55, f"{name}.lining")   # a cream lid that reads sunlit from inside, never olive
+    lining = kit.emit("#ecc98e", 0.5, f"{name}.lining")   # a cream lid that reads sunlit from inside, never olive
     root = kit.empty(name, (0, -600, 0))
     P = {"root": root}
 
@@ -202,6 +202,9 @@ def build_car(kit, name, body_hex, cabin=True):
         b(f"fender{sx}", (0.12, 1.0, 0.7), (sx * (hw - 0.06), 1.3 - 0.05, 0.65), bevel=0.03)
         b(f"rear{sx}", (0.12, 1.4, 0.7), (sx * (hw - 0.06), -1.15, 0.65), bevel=0.03)
         b(f"sill{sx}", (0.16, 4.2, 0.08), (sx * (hw - 0.08), 0.0, 1.0), dark, bevel=0.01)
+        # the rear doors: a dark seam at their back edge and a handle, stood 1 cm proud of the panel
+        b(f"rseam{sx}", (0.02, 0.03, 0.66), (sx * (hw + 0.01), -1.55, 0.64), dark, bevel=0.0)
+        b(f"rhandle{sx}", (0.04, 0.22, 0.05), (sx * (hw + 0.025), -1.3, 0.85), hub, bevel=0.01)
     # the front doors, hinged at their front edge (y 0.95), so the passenger one can swing open
     for sx, nm in ((-1, "door_d"), (1, "door_p")):
         piv = kit.empty(f"{name}.{nm}", (sx * (hw - 0.06), 0.85, 0), root)
@@ -308,11 +311,11 @@ def build_car(kit, name, body_hex, cabin=True):
     kit.box(f"{name}.blanket", (0.9, 0.5, 0.05), (0.62, 0.08, G.CUSH + 0.025), plaid, rb, bevel=0.02)
     kit.box(f"{name}.blanket2", (0.9, 0.06, 0.4), (0.62, -0.21, G.CUSH + 0.22), plaid, rb, rot=(-0.12, 0, 0), bevel=0.02)
     # the passenger seat's rails, and two cream strokes on the outer rail (stood 1 cm proud of it)
-    steel = pl("#9aa0aa", 0.35, spec=0.4)
+    steel = pl("#5c626c", 0.4, spec=0.3)
     for k, dx in enumerate((-0.32, 0.32)):
         b(f"rail{k}", (0.06, 1.25, 0.05), (sp[0] + dx, 0.02, 0.43), steel, bevel=0.01)
     for k, dy in enumerate((0.3, 0.4)):   # across the outer rail's top, 6 mm proud; the slide back uncovers them
-        b(f"tally{k}", (0.075, 0.022, 0.012), (sp[0] + 0.32, dy, 0.464), pl("#f2e6c8", 0.7), bevel=0.0)
+        b(f"tally{k}", (0.08, 0.035, 0.02), (sp[0] + 0.32, dy, 0.466), pl("#f2e6c8", 0.7), bevel=0.0)
     # the lock knob on the driver's door sill, behind the window
     P["lock"] = b("lockknob", (0.05, 0.05, 0.1), (-(hw - 0.09), -0.35, 1.06), pl("#d8d2c0", 0.5), bevel=0.015)
     return P
@@ -505,11 +508,11 @@ def build_beach(kit):
     pl = kit.plastic
     bx, by = G.BX, G.BY
     dome(kit, "beach.sky", (bx, by, -10), 70, NOON)
-    kit.box("b.sand", (80, 30, 0.2), (bx, by + 18, -0.1), pl("#f2dca0", 0.9, spec=0.02))
+    kit.box("b.sand", (80, 18.5, 0.2), (bx, by + 11.75, -0.1), pl("#f2dca0", 0.9, spec=0.02))   # ends at the foam
     kit.box("b.lot", (14, 16, 0.06), (bx, by - 2, 0.0), kit.texture("asphalt", 0.5, tint="#9a9aa2"))
     for k in range(5):
         kit.box(f"b.stripe{k}", (0.12, 5.0, 0.012), (bx - 6 + k * 3.0, by + 2.0, 0.035), pl("#f2f0e6", 0.7))
-    kit.box("b.sea", (120, 60, 0.1), (bx, by + 50, -0.05), pl("#2fa8d0", 0.25, spec=0.3))
+    kit.box("b.sea", (120, 60, 0.1), (bx, by + 50.9, -0.04), pl("#1f8fd0", 0.6, spec=0.08))   # 1 cm over the sand line
     kit.box("b.foam", (120, 0.8, 0.04), (bx, by + 20.3, 0.0), pl("#e8f6f8", 0.6))
     for k, (x, y, c) in enumerate(((-6, 13, "#e8402a"), (7, 14, "#3a6ad8"))):
         kit.cyl(f"b.pole{k}", 0.04, 2.2, (bx + x, by + y, 1.1), pl("#efeae0", 0.6), n=8)
@@ -705,6 +708,18 @@ def attach_extras(kit):
     for k, (x, y, s) in enumerate(((-0.42, -0.25, 0.36), (0.0, -0.32, 0.4), (0.42, -0.25, 0.36), (-0.45, 0.2, 0.38),
                                    (0.0, 0.1, 0.44), (0.45, 0.2, 0.38), (-0.2, 0.45, 0.36), (0.22, 0.45, 0.36))):
         kit.box(f"me.curl{k}", (s, s, s * 0.85), (x, y, top + 0.45 + 0.04 * (k % 2)), hair, mh, bevel=0.12)
+    # seat belts: a charcoal strap from one shoulder across the chest to the other hip, stood proud of the shirt
+    # (and of the cook's apron), shown only while that rider sits in Dad's car
+    belt = pl("#24262c", 0.6, spec=0.05)
+    W["belts"] = {}
+    for who in SEATED:
+        to = bpy.data.objects.get(f"{who}.torso")
+        if to is None:
+            continue
+        g = kit.empty(f"{who}.beltg", (0, 0, 0), to)
+        kit.box(f"{who}.belt", (0.34, 0.08, 2.5), (0, -0.66, 1.0), belt, g, rot=(0, 0.72, 0), bevel=0.02)
+        kit.box(f"{who}.buckle", (0.36, 0.1, 0.22), (-0.62, -0.68, 0.32), pl("#b9bec6", 0.4, spec=0.3), g, bevel=0.03)
+        W["belts"][who] = g
     W["extras_done"] = True
 
 
@@ -813,17 +828,35 @@ def animate(kit, story, tl, t, ctx):
             leg = bpy.data.objects.get(f"{who}.leg{sx}")
             if leg is not None:
                 leg.rotation_euler = (leg.rotation_euler.x * (1 - v) - math.pi / 2 * v, 0, 0)
+    # ---- seat belts on everyone sitting in Dad's car (the kitchen chairs are far from it)
+    cp = W["car_dad"]["root"].location
+    for who, g in W.get("belts", {}).items():
+        ob = bpy.data.objects.get(who)
+        on = (ob is not None and not ob.hide_render and sample(f"sit_{who}", tl, t, {"v": 0.0})["v"] > 0.5
+              and (ob.location - cp).length < 3.0)
+        for c in [g] + list(g.children_recursive):
+            c.hide_render = not on
     # ---- per-shot set dressing: the driver's headrest out of S23c's look back; the mirror out of the dash shot
     for nm in ("car.seat_d.rest", "car.seat_d.post-1", "car.seat_d.post1"):
         ob = bpy.data.objects.get(nm)
         if ob is not None:
             ob.hide_render = sid == "S23c"
     # the cook's door-side arm stays out of S16b's low insert, where it would sweep across the lens
-    arm = bpy.data.objects.get("cook.arm-1")
-    if arm is not None:
-        hid = bpy.data.objects["cook"].hide_render or sid == "S16b"
-        for ob in [arm] + list(arm.children_recursive):
-            ob.hide_render = hid
+    # (and his door-side leg, which would fill the top half of it: only the far knee crosses the top)
+    for nm in ("cook.arm-1", "cook.leg-1"):
+        arm = bpy.data.objects.get(nm)
+        if arm is not None:
+            hid = bpy.data.objects["cook"].hide_render or sid == "S16b"
+            for ob in [arm] + list(arm.children_recursive):
+                ob.hide_render = hid
+    # S24a: a gold cover on the empty driver's seat (the sunrise seat of the reveal), cream everywhere else
+    if "seatmat" not in W:
+        W["seatmat"] = bpy.data.objects["car.seat_d.cush"].material_slots[0].material
+        W["goldmat"] = kit.plastic("#e09a2a", 0.7, spec=0.05)
+    for nm in ("car.seat_d.cush", "car.seat_d.back", "car.seat_d.rest"):
+        ob = bpy.data.objects.get(nm)
+        if ob is not None:
+            ob.material_slots[0].material = W["goldmat"] if sid == "S24a" else W["seatmat"]
     mr = bpy.data.objects.get("car.mirror")
     if mr is not None:
         mr.hide_render = sid == "S24a"
@@ -833,5 +866,5 @@ def animate(kit, story, tl, t, ctx):
         gain = 0.12
     elif sid.startswith("S03") or sid.startswith("S04"):
         gain = 1.4
-    return {"sun": gain, "car.seatglow": 1.6 if sid == "S24a" else 0.0, "momcar.seatglow": 0.0,
+    return {"sun": gain, "car.seatglow": 0.8 if sid == "S24a" else 0.0, "momcar.seatglow": 0.0,
             "car.railfill": 1.0 if sid == "S16b" else 0.0, "momcar.railfill": 0.0}
