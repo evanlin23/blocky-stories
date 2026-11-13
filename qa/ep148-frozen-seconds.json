@@ -1,0 +1,25 @@
+{
+ "stage": "proof",
+ "film": "proof-43378739856",
+ "run": "43378739856",
+ "sha": "94f33ba43aaff2b11a49b87a81c01910c0b36483",
+ "verdict": "pass",
+ "date": "2026-11-13",
+ "checked": [
+  "artifact 14016024440, sha = PR head and latest film-file commit (re-proof after the S15b set.py fix)",
+  "S15b frame by frame f684-731 at phone size and cropped full size",
+  "contact sheet every 1 s at phone size",
+  "every frame of the first 3 s",
+  "pretzel clue 26.2, 29.6, 30.4, 33.0 s whole; 35.8, 36.6, 37.2 s bitten",
+  "frame-diff scan all 1397 frames (snaps, teleports, flat frames)",
+  "clip.json S27 39.27-40.0 s",
+  "loudness, true peak, 4 kHz windows",
+  "craft",
+  "flash",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "**ep148-frozen-seconds**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 17.6 | 12.5\u2013 | ok |\n| macro.picture_changes_per_10s_q | 21.6 | 14.0\u2013 | ok |\n| macro.motion_energy_q | 7.99 | 6.0\u2013 | ok |\n| macro.longest_still_q_s | 0.0 | \u20131.0 | ok |\n| spec.cuts_per_10s | 8.58 | 5.5\u20138.0 | **warn** |\n| spec.shots_over_2s_share | 0.024 | \u20130.25 | ok |\n| spec.shot_p90_s | 1.8 | \u20132.5 | ok |\n| macro.longest_still_s | 0.13 | \u20131.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | \u20131.0 | ok |\n| macro.motion_energy_mean | 4.08 | 1.5\u2013 | ok |\n| spec.camera_move_share | 0.998 | 0.65\u2013 | ok |\n| spec.punch_per_10s | 0.64 | 0.4\u2013 | ok |\n| macro.brightness_mean | 0.524 | 0.35\u2013 | ok |\n| macro.brightness_first_3s | 0.492 | 0.3\u2013 | ok |\n| macro.dark_frame_share | 0.0 | \u20130.08 | ok |\n| macro.black_dips | 0 | \u20131 | ok |\n| macro.saturation_mean | 0.418 | 0.42\u2013 | **warn** |\n| macro.contrast_mean | 0.23 | 0.18\u2013 | ok |\n| spec.face_big_share | 0.653 | 0.4\u2013 | ok |\n| spec.caption_share | 0.978 | 0.9\u2013 | ok |\n| spec.caption_words_median | 2.0 | \u20133 | ok |\n| macro.held_frame_share | 0.001 | \u20130.15 | ok |\n| micro.character_motion_shot_share | 0.805 | 0.5\u2013 | ok |\n| micro.walk_dead_end_share | 0.067 | \u20130.25 | ok |\n| micro.idle_window_share | 0.022 | \u20130.3 | ok |\n| micro.caption_sync_p90_ms | 91.0 | \u2013120 | ok |\n| spec.sound_events_per_10s | 2.79 | 2.0\u20134.0 | ok |\n| sound.silence_share | 0.0 | \u20130.005 | ok |\n| sound.voice_bed_gap_db | 11.6 | 8.0\u201314.0 | ok |\n| sound.lufs | -14.1 | -15.0\u2013-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | \u2013-1.0 | ok |\n| sound.hf_share_max_5s | 0.0468 | \u20130.08 | ok |\n| sound.hf_jump_max | 0.0208 | \u20130.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Proof 14016024440 (run 43378739856, sha 94f33ba4 = PR head and latest film-file commit; only set.py changed since 49bfccdd), 46.6 s, 1397 frames; not stale. verdict.json passes; flash house bar passes (general 1/s, 3f 3/s, red 0); clip.json's 4 'fleck' hits at S27 39.27-40.0 s show Leo clean, falling leaf flecks only.\nS15b fixed: the note swings in from the palm (f688-697), lifts clear above the pocket mouth (f698-699), then sinks straight down behind the pocket front over f700-711 (about 0.4 s, 23.33-23.7 s), shrinking as it goes; gone by f712, before the 23.9 s cut. No depth flip and no pop. It covers the pocket's top-left corner only in f696-697, while it is still in front and moving up, which reads as lifting it over the lip. The 1461 meter stays readable on every frame (the note passes just under it at f697-699).\nNo regressions: pretzel whole in S16b/S20/S22a, bitten (top loops gone) in S24. v3 heads unchanged and distinct; no head cropped. Frame-diff scan finds no mid-shot snap, teleport or flat frame (lowest luma spread 41 at f855); the only spike is the 1.7 s punch-in.\nSecond one: a lit close-up of me (green bomber, brown mop) at the fountain mid-spray, 1461 meter top left, slow push and a blink. Voice: 'Everyone here can freeze the world for ONE second a day.' Cover 11.5 s reads.\nAudio: -14.1 LUFS, -1.8 dBTP, LRA 1.5; 4 kHz share max 0.047, largest 5 s jump 0.021; voice on top; nothing cut off.\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 8.58 (5.5-8.0), macro.saturation_mean 0.418 (0.42-). Both fine to watch (fast cuts in a 46 s short, a bright sunny park).\nPackage: gate OPEN; opening 'cost' matches L01 and L02; no 'husband'; hard rules 1-4 clean. Should-fixes carried over, none blocking: the pin ('When did Leo start moving...') points at the twist; the 24.8 s S16a punch-in lands on 'We sat on'."
+}
