@@ -244,9 +244,9 @@ stroke("me", "L12", 3, dt=0.6)
 cue("L12", "f0", mode="chase", D=2.6, v=1.0, s=0.9, dur=0.3)
 cue("L12", "bn", a=2, b=1)
 shot("S13", "L13", [[0, [-2.2, 6.9, 2.2], [1.3, -2.2, 0.15], 26], [1, [-2.12, 6.5, 2.15], [1.3, -2.2, 0.15], 26]], {
-    "me": ps(L4, 2.4, **SW, yaw=180),
+    "me": ps(L4, 3.7, **SW, yaw=0),
     "guard": ps(G.CHAIR[0], G.CHAIR[1], z=G.SEAT_TOP - 0.68, yaw=G.CHAIR_YAW, expr="neutral", arms=(40, 40), head=(30, -8))})
-move("me", "L13>", L4, 3.7, blend=0.4)
+move("me", "L13>", L4, 2.5, blend=0.4)   # the lap back, toward the guard watching from his chair
 stroke("me", "L13", 2, dt=0.6)
 cue("L13", "f0", mode="chase", D=13.0, v=1.0, s=1.0)
 cue("L13.1", "bn", a=4, b=3)
