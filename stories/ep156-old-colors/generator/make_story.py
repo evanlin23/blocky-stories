@@ -264,7 +264,7 @@ shot("S03a", "L03", camp([0.0, -1.72, 2.5], [0.0, -0.2, 0.8], 28, pos2=[0.0, -1.
 show("L03.3", "me", "mom")
 leo_at("L03.3", "me", expr="uneasy", head=[0, 24])
 mom_hands("L03.3", expr="neutral")
-shot_hands("S03b", "L03.3", w=2.6, az=-25, tz=1.2, cz=0.95, tx=-0.1)
+shot_hands("S03b", "L03.3", w=2.6, az=-35, tz=1.2, cz=0.95, tx=-0.1, lens=24)
 
 # ===== 04, 05 Mr. Pratt (L04, L05)
 PRATT_P = (G.PRATT[0] + 0.4, 3.35, 0.3)
@@ -336,7 +336,7 @@ shot("S10a", "L10", cam(1.5, 2.45, 1.35, 1.7, 12, 28, cz=1.35))
 show("L10.3-0.43", "me", "mom")
 leo_at("L10.3-0.43", "me", expr="sheepish", head=[0, 22])
 mom_hands("L10.3-0.43", expr="neutral")
-shot_hands("S10b", "L10.3-0.43", w=2.3, az=-25, tz=1.15, cz=0.95, tx=-0.1)
+shot_hands("S10b", "L10.3-0.43", w=2.3, az=-35, tz=1.15, cz=0.95, tx=-0.1, lens=24)
 shot("S10c", "L10.4", cam(LX, LY, face_tz(1.62, 1.2), 1.2, 45, 34, cz=face_tz(1.62, 1.2)))
 
 # ===== 11 day 23: the curtains (L11), then one dodge
@@ -413,11 +413,12 @@ shot("S17b", "L17.1", camp([MX2 + 1.4, MY - 0.8, 1.6], [LX2, LY - 0.12, 1.3], 24
 cue("L18", "day", n=41)
 HUG_L, HUG_M = (1.2, 1.7), (1.8, 1.7)
 S18 = "L18.1+0.15"
+HUG_A, HUG_S = [55, 35], [40, 50]
 show(S18, "meb", "mom")
-cut("meb", S18, HUG_L, **pose(55, "smile", arms=[75, 75], side=[25, 25]))
+cut("meb", S18, HUG_L, **pose(55, "smile", arms=HUG_A, side=HUG_S))
 cut("mom", S18, HUG_M, **pose(-55, "laugh", arms=[75, 75], side=[25, 25]))
 for new, old, dt in (("mf1", "meb", 0.45), ("mf2", "mf1", 0.75), ("sw", "mf2", 1.05)):
-    place(f"L18.1+{dt}", new, HUG_L, 55, "laugh", arms=[75, 75], side=[25, 25])
+    place(f"L18.1+{dt}", new, HUG_L, 55, "laugh", arms=HUG_A, side=HUG_S)
     cut(old, f"L18.1+{dt}", hidden=True)
     vis.discard(old)
 cue("L18.1+0.55", "rub", v=1.0)
