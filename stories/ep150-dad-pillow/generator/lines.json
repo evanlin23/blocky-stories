@@ -1,0 +1,486 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "If you sleep",
+    "If you sleep"
+   ],
+   [
+    "on someone else's PILLOW,",
+    "on someone else's pillow,"
+   ],
+   [
+    "you dream",
+    "you dream"
+   ],
+   [
+    "THEIR dream.",
+    "their dream."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I grabbed",
+    "I grabbed"
+   ],
+   [
+    "my STEPDAD'S",
+    "my stepdad's"
+   ],
+   [
+    "by mistake.",
+    "by mistake."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My cousin",
+    "My cousin"
+   ],
+   [
+    "borrowed Grandma's",
+    "borrowed Grandma's"
+   ],
+   [
+    "and dreamed CROSSWORDS",
+    "and dreamed crosswords"
+   ],
+   [
+    "all night.",
+    "all night."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My buddy napped",
+    "My buddy napped"
+   ],
+   [
+    "on his dog's BED.",
+    "on his dog's bed."
+   ],
+   [
+    "SQUIRRELS.",
+    "squirrels."
+   ],
+   [
+    "For a WEEK.",
+    "For a week."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "When I got",
+    "When I got"
+   ],
+   [
+    "to his place,",
+    "to his place,"
+   ],
+   [
+    "I did my thing.",
+    "I did my thing."
+   ],
+   [
+    "\"Knock. KNOCK.\"",
+    "Knock. Knock."
+   ],
+   [
+    "\"DAD?\"",
+    "dad?"
+   ],
+   [
+    "The door",
+    "The door"
+   ],
+   [
+    "was wide OPEN.",
+    "was wide open."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He says",
+    "He says"
+   ],
+   [
+    "it's the dumbest thing",
+    "it's the dumbest thing"
+   ],
+   [
+    "I DO.",
+    "I do."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That night,",
+    "That night,"
+   ],
+   [
+    "his dream",
+    "his dream"
+   ],
+   [
+    "was his front HALL.",
+    "was his front hall."
+   ],
+   [
+    "\"Knock. KNOCK.\"",
+    "Knock. Knock."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Somebody outside",
+    "Somebody outside"
+   ],
+   [
+    "yelled,",
+    "yelled,"
+   ],
+   [
+    "\"DAD?\"",
+    "dad?"
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And Dad",
+    "And Dad"
+   ],
+   [
+    "just sat",
+    "just sat"
+   ],
+   [
+    "on the STAIRS,",
+    "on the stairs,"
+   ],
+   [
+    "SMILING.",
+    "smiling."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He didn't",
+    "He didn't"
+   ],
+   [
+    "open it.",
+    "open it."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Next night,",
+    "Next night,"
+   ],
+   [
+    "the same HALL.",
+    "the same hall."
+   ],
+   [
+    "\"Knock. KNOCK.\"",
+    "Knock. Knock."
+   ],
+   [
+    "\"DAD?\"",
+    "dad?"
+   ],
+   [
+    "He didn't",
+    "He didn't"
+   ],
+   [
+    "MOVE.",
+    "move."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The third night,",
+    "The third night,"
+   ],
+   [
+    "I walked",
+    "I walked"
+   ],
+   [
+    "to the door",
+    "to the door"
+   ],
+   [
+    "MYSELF.",
+    "myself."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And Dad",
+    "And Dad"
+   ],
+   [
+    "said,",
+    "said,"
+   ],
+   [
+    "\"Don't.",
+    "Don't."
+   ],
+   [
+    "I like",
+    "I like"
+   ],
+   [
+    "this PART.\"",
+    "this part."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then right through",
+    "Then right through"
+   ],
+   [
+    "the DOOR,",
+    "the door,"
+   ],
+   [
+    "\"Knock. KNOCK.\"",
+    "Knock. Knock."
+   ],
+   [
+    "\"DAD?\"",
+    "dad?"
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 0.5,
+  "chunks": [
+   [
+    "",
+    ""
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And I knew",
+    "And I knew"
+   ],
+   [
+    "the VOICE.",
+    "the voice."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It was MINE.",
+    "It was mine."
+   ],
+   [
+    "At SIXTEEN.",
+    "At sixteen."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My first week",
+    "My first week"
+   ],
+   [
+    "in his house,",
+    "in his house,"
+   ],
+   [
+    "I got locked OUT.",
+    "I got locked out."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I'd only ever",
+    "I'd only ever"
+   ],
+   [
+    "called him",
+    "called him"
+   ],
+   [
+    "by his NAME.",
+    "by his name."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I knocked twice",
+    "So I knocked twice"
+   ],
+   [
+    "and yelled,",
+    "and yelled,"
+   ],
+   [
+    "\"DAD?\"",
+    "dad?"
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every night,",
+    "Every night,"
+   ],
+   [
+    "he dreams",
+    "he dreams"
+   ],
+   [
+    "the first time",
+    "the first time"
+   ],
+   [
+    "I called him DAD.",
+    "I called him dad."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So this morning,",
+    "So this morning,"
+   ],
+   [
+    "I knocked",
+    "I knocked"
+   ],
+   [
+    "on the kitchen door.",
+    "on the kitchen door."
+   ],
+   [
+    "\"Knock. KNOCK.\"",
+    "Knock. Knock."
+   ],
+   [
+    "\"DAD?\"",
+    "dad?"
+   ]
+  ]
+ },
+ {
+  "id": "P02",
+  "pause": 1.0,
+  "chunks": [
+   [
+    "",
+    ""
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And tonight,",
+    "And tonight,"
+   ],
+   [
+    "I'm borrowing",
+    "I'm borrowing"
+   ],
+   [
+    "his pillow",
+    "his pillow"
+   ],
+   [
+    "AGAIN.",
+    "again."
+   ]
+  ]
+ }
+]

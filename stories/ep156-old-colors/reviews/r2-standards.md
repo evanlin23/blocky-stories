@@ -1,22 +1,22 @@
-# ep156-old-colors: standards r2 (script stage, 2026-11-12)
+# ep156-old-colors: standards, round 2 (built preview, 2026-11-13)
 
-Check round. Script, plan and package only (not built). Renamed from ep156-homesick-inch.
+This round checks the fixes for the round-1 built review (r1-standards.md). It replaces the script-stage r2. Preview mp4 05:03 UTC, drawn after the story.json edit (04:42). Preflight: 0 blocks, flash PASS, 44.83 s.
 
 ## Round-1 must-fixes
-1. **The rule repeats ep123/ep116:** in. The price is now colour, not size. The height lines, the mug and the camera-sink table are gone. The lore tally is two strokes on the fridge's side: a count, not a meter.
-2. **L01 and title vs ep155:** in. The `if` L01 has no "until someone" ending, and the title opens "Miss Your Old House".
-3. **Reveal form:** in. "Leo. / It's YOU / who misses it."
-4. **Pin:** in, word for word.
-5. **Music, palette, meter:** in. A 3/4 marimba waltz in A-flat with no minor pad, none of ep155's hexes, and a fridge calendar with numerals only. No cream tag.
+1. **Music box:** in. The L18 section is now `piano`, `pad` and `bubble`, and no section uses `musicbox`. Re-mixed at 05:02.
+2. **cover_s:** in. At 29.95 s the cover is S12a: the calendar shows "31", the yellow pillow stripe is big, and Leo's face is clear (checked at 300 px).
+3. **"It's YOU" caption:** NOT in. L17 is still three chunks. "It's YOU who" is up from 42.314 to 42.606 s, which is **0.29 s**. That's better than 0.19 s, but the key word of the reveal still flickers at phone speed. Exact change in story.json L17: `"chunks": [["Leo.", "Leo."], ["It's YOU who misses it.", "It's you who misses it."]]`. That holds about 1.05 s. Then rebuild the timeline and preview.
+4. **hold:** in. The field is gone from package.json.
 
-No regression is severe.
+No regression. The S17b reveal still reads: blue face and hands, the yellow stripe and the plum hoodie, with the calendar on "41".
 
-## Re-checks
-- Colour rule vs earlier stories: not ep117 (a glow from a secret), ep42 (a ring over the head), ep114 (a band for the saddest; he knew he was sad), ep38 (seeing who people miss) or ep137 (a painted board). Against the owner's source story, there are no mirrors, death or visit. Pass.
-- Fair or a cheat: fair. L01 says "never see it yourself" up front, the script fixes the camera as Leo's eyes, and the colour shows on what he touches (fingerprints at his height, his pillow), plus the sweaters and Mr. Pratt's daily question. S17b is the first shot from Mom's eyes.
-- Reveal in the last 5 to 8 s, about 52 s, the title, the cover (S12a) and the hold all pass.
+## Title
+"Miss Your Old House, Turn Its COLORS 🏠" passes hard rule 5. No other title starts with "Miss". It shares the words "Old House" with ep143 ("My Old House Key Went WARM"), but the openings, rule and price are different. ep55's "Turns You Green" is a different kind of rule (moss from waiting) with a different title opening. Hard rule 8 is clean.
 
 ## Should-fix (not blocking)
-1. S05: have teal Mr. Pratt glance at his own hand and shrug. That shows a cold viewer the bearer can't see it before the reveal leans on it.
+1. The 44.83 s runtime is just under the script's 45 to 75 s length arm. Fix 3 adds nothing, so check it with the critic.
 
-Verdict: approve
+## Queue spacing
+ep156 and ep143 share the `if` opening, the warm lane and an old house, so put at least 3 slots between them. Keep at least 2 slots from ep123 and ep117 (a mark on the body) and from ep114. Never put it next to ep110, ep124, ep141 or another `if`. Coming right after ep155 (`must`) is fine.
+
+Verdict: revise

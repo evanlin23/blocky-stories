@@ -1,11 +1,10 @@
 {
   "title": "Dad's Empty Car Leaves Every DAWN 🚗",
-  "description": "In our town, your car drives itself to wherever you'd rather be, and everyone can see where it goes. Mr. Fenn's goes to the beach every lunch break. So does his boss's.\n\nDad's leaves at 5:40 every morning, empty. It comes back at 6:30 with the heater on high and a blueberry muffin on the dashboard. So on Friday, I hid in the back seat.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "description": "In our town, you can't hide where you'd rather be. Your car drives itself there. Mr. Fenn's goes to the beach every lunch break. So does his boss's.\n\nDad's leaves at 5:40 every morning, empty. It comes back at 6:30 with the heater on high and a blueberry muffin on the dashboard. So on Friday, I hid in the back seat.\n\nIt's made up. A blocky story, built with code and Blender.",
   "pin": "Did Dad know where his car went all along? Watch his face the first time he eats the muffin.",
   "made_for_kids": false,
-  "cover_s": 55.0,
+  "cover_s": 49.0,
   "shape": "kind-wish",
-  "opening": "cost",
-  "lane": "warm",
-  "hold": "batch 15: scripts only, not built yet"
+  "opening": "must",
+  "lane": "warm"
 }

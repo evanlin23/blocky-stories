@@ -1,0 +1,29 @@
+{
+  "stage": "final",
+  "film": "14026569664",
+  "run": "43400195592",
+  "sha": "1327e0872b2c6d0e8f0645f9524807d95f33413e",
+  "verdict": "pass",
+  "date": "2026-11-13",
+  "checked": [
+    "story film files unchanged fe84057f..1327e087 (and engine blocky/)",
+    "frames every 1 s and every frame of the first 3 s at phone size",
+    "full-size spot checks (cover, flagged frames, 14.4-16.6 s, 50.4-54 s)",
+    "numeric scan of all 1738 frames (flat, black, clipped white, freeze, blink)",
+    "staging.py (incl. yaw): 0 findings",
+    "frames.py --film: 0 findings",
+    "first 3 s",
+    "cover 49.0 s",
+    "loudness and true peak",
+    "4 kHz windows",
+    "tail",
+    "craft vs proof",
+    "flash",
+    "package",
+    "opening",
+    "gate"
+  ],
+  "craft": "**ep154-dawn-car**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.5 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 19.7 | 14.0– | ok |\n| macro.motion_energy_q | 8.15 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 8.62 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.47 | –2.5 | ok |\n| macro.longest_still_s | 0.2 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.53 | –1.0 | ok |\n| macro.motion_energy_mean | 3.28 | 1.5– | ok |\n| spec.camera_move_share | 0.992 | 0.65– | ok |\n| spec.punch_per_10s | 0.69 | 0.4– | ok |\n| macro.brightness_mean | 0.561 | 0.35– | ok |\n| macro.brightness_first_3s | 0.541 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.387 | 0.42– | **warn** |\n| macro.contrast_mean | 0.224 | 0.18– | ok |\n| spec.face_big_share | 0.62 | 0.4– | ok |\n| spec.caption_share | 0.979 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.627 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.022 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 53.0 | –120 | ok |\n| spec.sound_events_per_10s | 3.79 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.0 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0449 | –0.08 | ok |\n| sound.hf_jump_max | 0.0254 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+  "notes": "Final 1080x1920, 1738 frames, 57.93 s; story files and blocky/ unchanged between proof sha fe84057f and render sha 1327e087, so this is the proofed cut at full size. Proof qa (proof-43395893116) passed.\nFrame scan of all 1738 frames: luma 0.40-0.80, clipped white at most 2.0% (37.4 s, sunlit diner sign), near-black at most 1.9% (34.3 s seat shadow); the biggest flat areas (34% at 8.8 s, the clear beach sky over Mr. Fenn and his boss; 7.4-8.3 s the same) are sky and sand, and the faces read. No broken, void, black or frozen frame; the 12 biggest frame changes are all hard cuts. staging.py 0 findings (yaw included); frames.py on the film 0 blank, pop or dark (frames_ok S16a, S18b looked at: the seat-back and dash inserts are clean).\nSecond one: the narrator (orange hoodie) in the driver seat, lit, face reads, wheel in the foreground, clock tag 5:40, slow push and a punch-in at frame 32; caption 'In our town, / you can't HIDE'. Line 1 states the rule. Cover 49.0 s: Dad's blushing face, 'Dad went RED.', crisp at full size, no halo.\nSeen again at full size: S08a-S08b 14.4-16.6 s (car parks, then the heater close-up, no blink); S23 rain flashback 50.4-52.4 s and S24a 52.2-54 s reveal (cook belted, muffin on the dash, Dad beside him) read; no limb through a body and no teleport.\nAudio: -14.1 LUFS, true peak -1.8 dBTP, LRA 1.6; 4 kHz share 0.019-0.044 per 5 s, max jump 0.025; quietest 100 ms -49 dB at 37.0 s (the planned drop, bed on). 'a MUFFIN.' ends about 57.75 s and decays to -29 dB before the picture ends at 57.93 s, so nothing is cut off.\nFlash pass (general 1/s worst 3.33 s, 3f 3/s at 26.7 s, red 0; ep10 bar pass). Gate OPEN; package unchanged since the proof, pin is a real question, no spoiler, no 'husband'. Opening 'must' as proofed; queue note: the last upload, ep137, is also 'must' (upload.py reorders).\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 8.62 (5.5-8.0), macro.saturation_mean 0.387 (0.42-), the same as the proof. Every number is within 0.01 of the proof except longest_still_q_edge_s, 0.27 to 0.53 (target under 1.0, ok).",
+  "fixes": []
+}

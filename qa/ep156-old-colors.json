@@ -1,0 +1,25 @@
+{
+ "stage": "final",
+ "film": "14026065220",
+ "run": "43396984821",
+ "sha": "40ed89fa791ca99c42b0ccf40558c51b276a872c",
+ "verdict": "fail",
+ "date": "2026-11-13",
+ "checked": [
+  "story films unchanged since proof sha 8f622e3e (git diff 8f622e3e..40ed89fa and 40ed89fa..HEAD: 0 story file changes)",
+  "frames every 2 s and first 3 s at phone size",
+  "every frame numerically scanned for flat/black/clipped-white: 0 flagged",
+  "TV canvas 1920 wide",
+  "staging.py --story (yaw): 0 findings",
+  "frames.py --film: 0 findings",
+  "S17b reveal 43.0-44.0 s consecutive frames",
+  "S11a 26.3-27.7 s face",
+  "first 3 s and cover",
+  "loudness, true peak, 4 kHz windows, tail",
+  "flash (film's own json)",
+  "craft vs proof",
+  "package / gate / opening"
+ ],
+ "craft": "**ep156-old-colors**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 14.4 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 17.9 | 14.0– | ok |\n| macro.motion_energy_q | 6.64 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 7.12 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.0 | –0.25 | ok |\n| spec.shot_p90_s | 1.92 | –2.5 | ok |\n| macro.longest_still_s | 0.23 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.61 | 1.5– | ok |\n| spec.camera_move_share | 0.998 | 0.65– | ok |\n| spec.punch_per_10s | 0.67 | 0.4– | ok |\n| macro.brightness_mean | 0.642 | 0.35– | ok |\n| macro.brightness_first_3s | 0.698 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.364 | 0.42– | **warn** |\n| macro.contrast_mean | 0.221 | 0.18– | ok |\n| spec.face_big_share | 0.898 | 0.4– | ok |\n| spec.caption_share | 0.978 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.004 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.879 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.023 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 74.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.22 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.9 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.9 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0417 | –0.08 | ok |\n| sound.hf_jump_max | 0.0135 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "FAIL on a teleport at the reveal (decision 11 must-fix). Full 1080x1920 film, 1349 frames = 44.97 s. Story film files unchanged since the proof sha 8f622e3e (no diff to stories/ep156-old-colors between proof, render sha 40ed89fa and HEAD). Craft matches the proof within noise (saturation 0.364 vs 0.363, lufs -14.1, true peak -1.9); 0 block, 0 near, 1 warn; the cream kitchen / white bedroom read warm, not a loss. Flash house-bar pass. Staging 0, frames.py 0, numeric flat/black/clipped scan over all 1349 frames: 0 flagged. Audio: -14.1 LUFS / -1.9 dBTP, 4 kHz max 0.042 jump 0.014, voice 10.9 dB over bed, no silence, tail clean. Gate OPEN, package clean, opening 'if' matches L01, no spoiler, no 'husband'.\nFirst second: a bright kitchen, Leo in plum leaning over the table in profile, Mom's two flat open palms on the table (arms enter pink from the right), calendar '1' top right, slow push, 'If you miss your old HOUSE, you turn its COLORS'. Lit, moving, rule's picture clear. Cover 29.95 s (calendar 31, yellow-striped pillow, 'A yellow STRIPE'): clear uneasy face, no spoiler.\nS11a 26.3-27.7 s (watch item 2): PASS. Leo's face is hot on the window side but the eyes, brows and mouth read all through the tilt-up; it is not a flat or clipped field.\nFIX (must): S17b, 43.53 s, frame 1305->1306. At the reveal shot (continuous slow push, no cut until the 43.90 s hug), Leo's blue hands and Mom's pink arms are resting on the table at frame 1305 then vanish entirely in the next frame, leaving ~0.37 s of empty table under 'This time,'. The hands are the centre-frame focal of the reveal, so a viewer sees them pop out of existence: a teleport/snap under decision 11. Hold both pairs of hands on Mom's palms through to the 43.90 s cut, or ease them out over the last beat."
+}
