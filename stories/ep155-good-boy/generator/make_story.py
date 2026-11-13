@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 11
+REV = 12
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the reveal picture is held 1.6 s: a silent beat after "Good BOY." and a closing beat after the last thump
@@ -504,7 +504,7 @@ story = {
     "shot_grades": {sid: {"highlights": [0.0, 0.0, 0.015], "shadows": [0.0, 0.01, 0.05], "saturation": 0.98} for sid in DUSK},
     "framing_ok": ["S08a", "S08c", "S10b", "S13a", "S20a"],
     "frames_ok": [],
-    "staging_ok": ["S19a/me+dale"],
+    "staging_ok": ["S19a/me+dale", "S18b/me+dale"],
     "asr_forgive": ["missus ortiz's", "eight oh two", "twelve thirty mister", "six forty", "nine fifty eight"],
     "phonemes": {"Ortiz": "ˈɔɹtɪz", "Rory": "ɹˈɔɹi"},
 }
