@@ -503,6 +503,8 @@ def hand_of(who):
             p = h.matrix_world.translation
             if best is None or p.z > best.z:
                 best = p.copy()
+    if best is None:   # no rig hands (the lints' stand-in scene): about hand height at the root
+        best = root_frame(who)[0] + Vector((0, 0, 1.0))
     return best
 
 
