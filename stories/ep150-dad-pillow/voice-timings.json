@@ -394,30 +394,30 @@
    ]
   },
   "L19": {
-   "text": "Right through the door: Knock. Knock. dad?",
+   "text": "Then right through the door, Knock. Knock. dad?",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.931,
+   "dur": 1.948,
    "onset": 0.172,
-   "end": 1.707,
+   "end": 1.741,
    "chunks": [
     [
      0.172,
-     0.406
+     0.492
     ],
     [
-     0.406,
-     0.707
+     0.492,
+     0.69
     ],
     [
-     0.759,
-     1.172
+     0.716,
+     1.207
     ],
     [
-     1.207,
-     1.707
+     1.241,
+     1.741
     ]
    ]
   },

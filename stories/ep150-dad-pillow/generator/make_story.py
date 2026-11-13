@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 11
+REV = 12
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -423,7 +423,7 @@ polish = {"reveal": ["L20", "L25"], "emph": ["L01.3", "L02.1", "L18.4", "L25.3"]
 polish["emph"] = [remap(x) for x in polish["emph"]]
 story = {
     "slug": "ep150-dad-pillow",
-    "title": "My Stepdad's Pillow Dreams Of Someone KNOCKING \U0001F6CF️",
+    "title": "Someone KNOCKS In My Stepdad's Dream \U0001F6CF️",
     "made_for_kids": False,
     "premise": ("In our town, if you sleep on someone else's pillow you dream their dream, and my stepdad's pillow "
                 "dreams the same thing every night: two knocks at his front door, and a voice yelling Dad."),
