@@ -1,0 +1,621 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "If your key goes warm, somebody's waiting behind its door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.155,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     1.034
+    ],
+    [
+     1.112,
+     1.638
+    ],
+    [
+     1.638,
+     2.5
+    ]
+   ]
+  },
+  "L02": {
+   "text": "My key to the house we sold nine years ago is warm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.81
+    ],
+    [
+     0.81,
+     1.181
+    ],
+    [
+     1.181,
+     1.707
+    ],
+    [
+     1.707,
+     2.362
+    ]
+   ]
+  },
+  "L03": {
+   "text": "The pizza guy's keys are always warm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.948
+    ],
+    [
+     0.948,
+     1.879
+    ]
+   ]
+  },
+  "L04": {
+   "text": "My buddy's gym locker key has never been warm once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.319
+    ],
+    [
+     1.319,
+     1.638
+    ],
+    [
+     1.638,
+     2.017
+    ],
+    [
+     2.017,
+     2.552
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Mine hangs on a silly green dinosaur.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.931
+    ],
+    [
+     0.931,
+     1.828
+    ]
+   ]
+  },
+  "L06": {
+   "text": "My big sister Jess gave me that.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.931
+    ],
+    [
+     0.931,
+     1.655
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Strangers live in our old blue house on the hill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.008
+    ],
+    [
+     1.008,
+     1.388
+    ],
+    [
+     1.388,
+     2.017
+    ]
+   ]
+  },
+  "L10": {
+   "text": "But Monday, the key was warm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.612,
+     0.802
+    ],
+    [
+     0.802,
+     1.466
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Jess texted, \"Notice anything?\" I said, nope.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.672,
+     1.224
+    ],
+    [
+     1.31,
+     1.983
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Tuesday, it was hot. \"Notice anything?\" nope.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.492,
+     0.948
+    ],
+    [
+     1.086,
+     1.603
+    ],
+    [
+     1.672,
+     2.103
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Wednesday, I had to hold it with an oven mitt.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.845
+    ],
+    [
+     0.845,
+     1.077
+    ],
+    [
+     1.077,
+     1.25
+    ],
+    [
+     1.25,
+     1.931
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Up the hill, the lights were on. A curtain moved.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.526,
+     0.802
+    ],
+    [
+     0.802,
+     1.155
+    ],
+    [
+     1.233,
+     1.552
+    ],
+    [
+     1.552,
+     2.103
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Somebody was home in our house.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.414
+    ],
+    [
+     0.414,
+     0.768
+    ],
+    [
+     0.768,
+     1.414
+    ]
+   ]
+  },
+  "L17": {
+   "text": "And on the door, right where my old sticker used to be,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.655
+    ],
+    [
+     0.707,
+     0.94
+    ],
+    [
+     0.94,
+     1.483
+    ],
+    [
+     1.483,
+     2.103
+    ]
+   ]
+  },
+  "L18": {
+   "text": "was a brand-new one. A green dinosaur.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.31,
+     0.879
+    ],
+    [
+     0.957,
+     1.948
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Just like the one on my key.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.672
+    ],
+    [
+     0.672,
+     1.397
+    ]
+   ]
+  },
+  "L20": {
+   "text": "I put the key in the lock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.155,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
+     0.578
+    ],
+    [
+     0.578,
+     1.172
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Nine years later, it still fit. My hands were shaking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.19,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.19,
+     0.707
+    ],
+    [
+     0.732,
+     1.328
+    ],
+    [
+     1.397,
+     1.733
+    ],
+    [
+     1.733,
+     2.414
+    ]
+   ]
+  },
+  "L22": {
+   "text": "\"Click.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.793,
+   "onset": 0.19,
+   "end": 0.569,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ]
+   ]
+  },
+  "L23": {
+   "text": "And there was Mom, Dad, and Jess, with a cake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.672
+    ],
+    [
+     0.707,
+     0.931
+    ],
+    [
+     0.957,
+     1.276
+    ],
+    [
+     1.301,
+     1.914
+    ]
+   ]
+  },
+  "L27": {
+   "text": "\"Notice anything?\" she said.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ],
+    [
+     0.845,
+     1.379
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Jess bought our house back, and never changed the lock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     1.069
+    ],
+    [
+     1.138,
+     1.698
+    ],
+    [
+     1.698,
+     2.259
+    ]
+   ]
+  },
+  "L32": {
+   "text": "And it's warm every time I'm on my way.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     1.034
+    ],
+    [
+     1.034,
+     1.215
+    ],
+    [
+     1.215,
+     1.793
+    ]
+   ]
+  }
+ }
+}
