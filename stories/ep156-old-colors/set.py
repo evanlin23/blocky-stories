@@ -333,6 +333,29 @@ def build_kit(kit):
         for ob in parts:
             ob.hide_render = True
         W["palms"] += parts
+    # Leo's two flat hands resting on Mom's palms (the `leohands` cue: 1 skin, 2 blue): fingers toward Mom, a plum cuff on his side
+    W["lh1"], W["lh2"] = [], []
+    for which, col in (("lh1", SKIN), ("lh2", BLUE)):
+        hm, cm = pl(col, 0.6), pl("#7a4a78", 0.7)
+        for k, yoff in enumerate((-0.2, 0.2)):
+            hx_, hy_ = 0.02 - 0.03, G.TABLE[1] + yoff
+            zh = zt + 0.06
+            parts = [kit.box(f"kit.{which}{k}", (0.17, 0.2, 0.04), (hx_, hy_, zh), hm, bevel=0.012)]
+            for j, (dy, ln) in enumerate(((-0.078, 0.13), (-0.026, 0.16), (0.026, 0.17), (0.078, 0.14))):
+                parts.append(kit.box(f"kit.{which}{k}.f{j}", (ln, 0.042, 0.034), (hx_ + 0.085 + ln / 2 - 0.01, hy_ + dy, zh - 0.003), hm, bevel=0.012))
+            parts.append(kit.box(f"kit.{which}{k}.cuff", (0.3, 0.17, 0.1), (hx_ - 0.235, hy_, zh + 0.01), cm, bevel=0.02))
+            for ob in parts:
+                ob.hide_render = True
+            W[which] += parts
+    # a white window frame in the near plane of S01b (the `pratframe` cue), so Mr. Pratt is seen through a window
+    W["pratframe"] = []
+    fw = pl("#fffaf0", 0.5)
+    for nm, (sx, sy, sz, y, z) in {"top": (0.08, 1.2, 0.12, G.WINDOW_Y, 2.4), "sill": (0.2, 1.2, 0.08, G.WINDOW_Y, 1.02),
+                                   "l": (0.08, 0.14, 1.4, G.WINDOW_Y - 0.52, 1.7), "r": (0.08, 0.14, 1.4, G.WINDOW_Y + 0.52, 1.7),
+                                   }.items():
+        ob = kit.box("kit.pf." + nm, (sx, sy, sz), (-3.95, y, z), fw, bevel=0.008)
+        ob.hide_render = True
+        W["pratframe"].append(ob)
     # the lawn outside the west window, a soft light on whoever stands there (Mr. Pratt, in the opening)
     kit.box("kit.lawn.w", (4.0, 8, 0.1), (G.AX0 - 2.6, G.WINDOW_Y, -0.05), pl("#78c860", 0.9))
     pw = kit.light("kit.prattwin", "AREA", (-2.6, G.WINDOW_Y, 2.3), 160, "#fff3e0", size=2.0, shadow=False)
@@ -630,6 +653,13 @@ def animate(kit, story, tl, t, ctx):
     pv = sample("palms", tl, t, {"v": 0.0})["v"] < 0.5
     for ob in W.get("palms", []):
         ob.hide_render = pv
+    lv = sample("leohands", tl, t, {"v": 0.0})["v"]
+    for key_, want in (("lh1", 1), ("lh2", 2)):
+        for ob in W.get(key_, []):
+            ob.hide_render = int(round(lv)) != want
+    pf = sample("pratframe", tl, t, {"v": 0.0})["v"] < 0.5
+    for ob in W.get("pratframe", []):
+        ob.hide_render = pf
     cf = sample("calfridge", tl, t, {"v": 1.0})["v"] < 0.5
     for ob in W.get("calfridge", []):
         ob.hide_render = cf

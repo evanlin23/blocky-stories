@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 4
+REV = 5
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -251,6 +251,8 @@ cue(0, "palms", v=1.0)
 shot_hands("S01a", 0)
 # S01b: Mr. Pratt, teal, outside the kitchen window looking at his own hand and shrugging (the rule's picture)
 cue("L01.2", "palms", v=0.0)
+cue("L01.2", "pratframe", v=1)
+cue("L02", "pratframe", v=0)
 show("L01.2", "pratt")
 PR_W = (-5.0, 0.3, 0.0)
 place("L01.2", "pratt", PR_W, 90, "stunned", arms=[0, 0], head=[0, 22])
@@ -411,18 +413,21 @@ show("L16", "sw", "mom")
 cut("sw", "L16", (LX2, LY), **pose(90, "uneasy", arms=[0, 0]))
 cut("mom", "L16", (MX2, MY), **pose(-90, "warm", arms=[0, 0]))
 cue("L16", "palms", v=1.0)
+cue("L16", "leohands", v=1)
+cue("L17.1", "leohands", v=2)
+cue("L18", "leohands", v=0)
 cue("L18", "palms", v=0.0)
-key("sw", "L16+0.2", (LX2, LY), yaw=90, expr="uneasy", arms=[34, 34], blend=0.5)
-shot("S16a", "L16", camp([0.0, -2.0, 2.8], [0.0, 0.35, 1.15], 21, pos2=[0.0, -1.7, 2.6], tgt2=[0.0, 0.35, 1.15]))
+key("sw", "L16+0.2", (LX2, LY), yaw=90, expr="uneasy", arms=[0, 0], blend=0.5)
+shot("S16a", "L16", camp([0.1, -2.5, 2.7], [0.0, 0.35, 1.15], 25, pos2=[0.05, -2.3, 2.55], tgt2=[0.0, 0.35, 1.15]))
 
 # ===== 17 the reveal (L17): Mom's face alone, then the picture from her eyes
 show("L16.3-0.1", "mom")
 mouth("mom", "L17", "L17.1", 0.35)
 shot_mom("S17a", "L16.3-0.1", w=1.7)
 show("L17.1", "meb")
-place("L17.1", "meb", (LX2, LY), 90, "wide", arms=[58, 58])
-key("meb", "L17.1+0.2", (LX2, LY), yaw=90, expr="wide", arms=[58, 58], head=[0, -4], blend=0.5)
-shot("S17b", "L17.1", camp([MX2 + 1.4, MY - 0.8, 1.6], [LX2, LY - 0.12, 1.3], 24, pos2=[MX2 + 1.1, MY - 0.7, 1.6]))
+place("L17.1", "meb", (LX2, LY), 90, "wide", arms=[0, 0])
+key("meb", "L17.1+0.2", (LX2, LY), yaw=90, expr="wide", arms=[0, 0], head=[0, -4], blend=0.5)
+shot("S17b", "L17.1", camp([-0.1, -2.5, 2.7], [-0.15, 0.35, 1.15], 25, pos2=[-0.15, -2.3, 2.55], tgt2=[-0.2, 0.35, 1.15]))
 
 # ===== 18 the hug washes it out (L18): one shot, both faces, the blue goes out in three steps 0.3 s apart
 cue("L18", "day", n=41)
