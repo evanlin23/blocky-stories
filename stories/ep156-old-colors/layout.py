@@ -1,4 +1,4 @@
-"""Shared places for ep156 "Miss Your Old House And You Turn Its COLORS" (make_story.py and set.py). x east, y north, z up.
+"""Shared places for ep156 "Miss Your Old House, Turn Its COLORS" (make_story.py and set.py). x east, y north, z up.
 A character facing -y has yaw 0, +x 90, +y 180, -x -90. Five stages sit far apart so their lights never mix:
   KIT     Mom's new kitchen at the origin: x -4.2..4.2, y -4.2..3.4, ceiling 2.9. Cabinets and the fridge on the north
           wall, a window on the west wall, a back door on the east wall, the table in the middle.

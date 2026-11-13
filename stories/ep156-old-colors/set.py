@@ -1,4 +1,4 @@
-"""ep156 "Miss Your Old House And You Turn Its COLORS": five small bright stages, far apart so their lights never mix.
+"""ep156 "Miss Your Old House, Turn Its COLORS": five small bright stages, far apart so their lights never mix.
 
   KIT     Mom's new kitchen (origin): cream walls, white cabinets, terracotta tiles, a wooden table with two chairs, a big
           sunny window with the old house's yellow stripy curtains (shown by the `curtain` cue), a back door, three moving
@@ -27,6 +27,7 @@ import layout as G  # noqa: E402
 TMP = Path(tempfile.mkdtemp(prefix="oldcolors-"))
 W = {}
 BLUE, YELLOW = "#7fc8f8", "#f7d046"
+SKIN = "#c98f62"
 FONT = Path(__file__).resolve().parents[2] / "blocky" / "fonts" / "SchibstedGrotesk-Black.ttf"
 
 
@@ -155,9 +156,9 @@ def _photo_image():
         im = Image.new("RGB", (Wd, Ht), hx("#bfe6ff"))
         d = ImageDraw.Draw(im)
         d.rectangle([0, 360, Wd, Ht], fill=hx("#78c860"))
-        d.rectangle([110, 190, 530, 380], fill=hx(BLUE))
-        for x in range(130, 530, 56):
-            d.rectangle([x, 190, x + 24, 380], fill=hx(YELLOW))
+        d.rectangle([110, 190, 530, 380], fill=hx("#4fb0f2"))
+        for x in range(134, 530, 70):
+            d.rectangle([x, 190, x + 16, 380], fill=hx(YELLOW))
         d.polygon([(80, 195), (320, 70), (560, 195)], fill=hx("#b3431f"))
         d.rectangle([290, 270, 350, 380], fill=hx("#fffaf0"), outline=hx("#5a3a22"), width=5)
         for x in (160, 430):
@@ -242,12 +243,18 @@ def build_kit(kit):
     for nm, (sx, sy, sz, x, y, z) in {
             "top": (0.12, 1.7, 0.08, G.AX0 + 0.06, G.WINDOW_Y, wz1 + 0.04), "bot": (0.2, 1.8, 0.07, G.AX0 + 0.1, G.WINDOW_Y, wz0 - 0.03),
             "l": (0.12, 0.08, 1.3, G.AX0 + 0.06, wy0 - 0.04, 1.65), "r": (0.12, 0.08, 1.3, G.AX0 + 0.06, wy1 + 0.04, 1.65),
-            "mid": (0.1, 0.05, 1.3, G.AX0 + 0.05, G.WINDOW_Y, 1.65)}.items():
+            }.items():
         kit.box("kit.win." + nm, (sx, sy, sz), (x, y, z), trim)
     for nm, (sx, sy, sz, x, y, z) in {
             "top": (0.14, 1.2, 0.08, G.AX1 - 0.07, G.DOOR_Y, dz + 0.04), "l": (0.14, 0.08, dz, G.AX1 - 0.07, dy0 - 0.04, dz / 2),
             "r": (0.14, 0.08, dz, G.AX1 - 0.07, dy1 + 0.04, dz / 2)}.items():
         kit.box("kit.door." + nm, (sx, sy, sz), (x, y, z), trim)
+    # a low wooden cupboard under the window (so the wall below the sill is not a blank white field)
+    kit.box("kit.winbase", (0.5, 2.1, 0.9), (G.AX0 + 0.25, G.WINDOW_Y, 0.45), pl("#c58a50", 0.6), bevel=0.01)
+    kit.box("kit.winbase.top", (0.56, 2.16, 0.05), (G.AX0 + 0.28, G.WINDOW_Y, 0.925), wood)
+    for i, yy in enumerate((-0.4, 0.3, 1.0)):
+        kit.box(f"kit.winbase.door{i}", (0.02, 0.62, 0.7), (G.AX0 + 0.51, G.WINDOW_Y + (yy - 0.3), 0.45), pl("#a8743f", 0.6), bevel=0.01)
+        kit.box(f"kit.winbase.knob{i}", (0.03, 0.03, 0.03), (G.AX0 + 0.53, G.WINDOW_Y + (yy - 0.3) + 0.2, 0.7), pl("#c98a18", 0.3, spec=0.7))
     # cabinets along the north wall, with a wooden worktop, and uppers
     kit.box("kit.cab.low", (5.9, 0.62, 0.88), (-1.25, G.AY1 - 0.31, 0.44), cab, bevel=0.01)
     kit.box("kit.cab.top", (5.96, 0.66, 0.05), (-1.25, G.AY1 - 0.33, 0.905), wood)
@@ -265,9 +272,11 @@ def build_kit(kit):
     kit.box("kit.fridge.handle2", (0.035, 0.05, 0.4), (fx - 0.36, G.FRIDGE_FACE - 0.035, 0.85), pl("#aeb4bc", 0.3, spec=0.7))
     # the calendar page, on a dark backing, 1.5 cm proud of the door
     cxx, cyy, czz = G.CAL
-    kit.box("kit.cal.back", (0.36, 0.02, 0.44), (cxx, G.FRIDGE_FACE - 0.012, czz), pl("#3a2410", 0.6))
+    cb_ = kit.box("kit.cal.back", (0.36, 0.02, 0.44), (cxx, G.FRIDGE_FACE - 0.012, czz), pl("#3a2410", 0.6))
     m, tex = imat(kit, "kit.cal", _cal_image(1), 1.0)
-    noshadow(kit.plane("kit.cal.page", (0.33, 0.41), (cxx, G.FRIDGE_FACE - 0.026, czz), m, rot=(math.pi / 2, 0, 0)))
+    cp_ = kit.plane("kit.cal.page", (0.33, 0.41), (cxx, G.FRIDGE_FACE - 0.026, czz), m, rot=(math.pi / 2, 0, 0))
+    noshadow(cp_)
+    W["calfridge"] = [cb_, cp_]
     W["caltex"] = tex
     # the fingerprints: three sky-blue ovals, at a teen's shoulder height
     pm = pl(BLUE, 0.5)
@@ -290,7 +299,7 @@ def build_kit(kit):
     chair(kit, "kit.chair.mom", G.MOM[0], G.MOM[1] + 0.95, 0, wood)
     root = kit.empty("kit.photo", (tx, ty - 0.2, G.TABLE_H + 0.035))
     kit.box("kit.photo.frame", (0.66, 0.5, 0.02), (0, 0, 0.01), pl("#fffaf0", 0.5), root, bevel=0.008)
-    m, _ = imat(kit, "kit.photo", _photo_image(), 1.0)
+    m, _ = imat(kit, "kit.photo", _photo_image(), 0.8)
     noshadow(kit.plane("kit.photo.img", (0.6, 0.45), (0, 0, 0.0225), m, root))
     W["photo"] = [root] + list(root.children_recursive)
     # three plain moving boxes by the east wall, the curtains (hidden until the cue), a plant, a rug
@@ -309,6 +318,25 @@ def build_kit(kit):
         noshadow(ob)
         W["curtain"].append(ob)
     kit.box("kit.rod", (0.04, 2.6, 0.04), (G.AX0 + 0.2, G.WINDOW_Y, 2.55), pl("#8a6a48", 0.5))
+    # Mom's two flat palms on the table (shown by the `palms` cue): skin, palm down, fingers to the middle, a coral cuff
+    skin, cuff = pl(SKIN, 0.6), pl("#f08a74", 0.7)
+    W["palms"] = []
+    zt = G.TABLE_H + 0.025
+    for k, yoff in enumerate((-0.2, 0.2)):
+        hx_, hy_ = 0.02, G.TABLE[1] + yoff
+        parts = [kit.box(f"kit.palm{k}", (0.17, 0.2, 0.04), (hx_, hy_, zt + 0.022), skin, bevel=0.012)]
+        for j, (dy, ln) in enumerate(((-0.078, 0.13), (-0.026, 0.16), (0.026, 0.17), (0.078, 0.14))):
+            parts.append(kit.box(f"kit.palm{k}.f{j}", (ln, 0.042, 0.034), (hx_ - 0.085 - ln / 2 + 0.01, hy_ + dy, zt + 0.019), skin, bevel=0.012))
+        sgn = 1 if k else -1
+        parts.append(kit.box(f"kit.palm{k}.th", (0.13, 0.05, 0.034), (hx_ - 0.07, hy_ + sgn * 0.13, zt + 0.019), skin, rot=(0, 0, sgn * 0.5), bevel=0.012))
+        parts.append(kit.box(f"kit.palm{k}.cuff", (0.34, 0.17, 0.1), (hx_ + 0.255, hy_, zt + 0.05), cuff, bevel=0.02))
+        for ob in parts:
+            ob.hide_render = True
+        W["palms"] += parts
+    # the lawn outside the west window, a soft light on whoever stands there (Mr. Pratt, in the opening)
+    kit.box("kit.lawn.w", (4.0, 8, 0.1), (G.AX0 - 2.6, G.WINDOW_Y, -0.05), pl("#78c860", 0.9))
+    pw = kit.light("kit.prattwin", "AREA", (-2.6, G.WINDOW_Y, 2.3), 160, "#fff3e0", size=2.0, shadow=False)
+    kit.aim(pw, (-5.0, G.WINDOW_Y, 1.3))
     # soft constant light: no shadow, nothing flickers
     for i, (x, y) in enumerate(((0.0, 0.3), (-2.4, -1.5), (2.4, -1.5), (2.2, 1.0), (-2.4, 1.6))):
         a = kit.light(f"kit.fill{i}", "AREA", (x, y, G.AH - 0.15), 95, "#fff3e0", size=2.8, shadow=False)
@@ -408,7 +436,7 @@ def build_street(kit):
     pl = kit.plastic
     sx, sy = G.STREET
     lawn(kit, sx + 7, sy + 3, 50, 30)
-    walk = pl("#e8e2d2", 0.8, spec=0.03)
+    walk = pl("#b3a68a", 0.85, spec=0.02)
     kit.box("street.path", (50, 4.4, 0.08), (sx + 7, sy + 0.5, 0.04), walk)
     # the checked house (terracotta and white), with a white door
     m, _ = imat(kit, "street.checks", _checks_image("#c96f4a", "#fffaf0", "checks", 12), 0.95)
@@ -423,7 +451,7 @@ def build_street(kit):
     for sxx in (-1, 1):
         kit.box(f"street.bench.leg{sxx}", (0.07, 0.5, 0.46), (sxx * 0.8 + sx, sy + 3.3, 0.23), pl("#4a4a50", 0.5))
     # the checked print the touch leaves on the bench (shown by the `print` cue)
-    pr = kit.plane("street.print", (0.5, 0.5), (sx + 0.55, sy + 3.3, 0.512), imat(kit, "street.printm", _checks_image("#c96f4a", "#fffaf0", "checks2", 2), 0.95)[0])
+    pr = kit.plane("street.print", (0.9, 0.44), (sx + 0.3, sy + 3.3, 0.512), imat(kit, "street.printm", _checks_image("#c96f4a", "#fffaf0", "checks3", 6), 0.95)[0])
     pr.hide_render = True
     noshadow(pr)
     W["benchprint"] = pr
@@ -549,14 +577,22 @@ def attach_extras(kit):
     kit.box("mom.navy", (0.7, 0.03, 1.6), (0, -0.505, 0.95), pl("#2e3f73", 0.7), mt, bevel=0.01)
     pat = kit.box("mom.rub", (0.42, 0.03, 0.42), (-0.55, -0.52, 1.2), pl("#9fc6dc", 0.7), mt, rot=(0, 0.2, 0.5), bevel=0.12)
     pat.hide_render = True
-    W["rub"] = pat
+    W["rub"] = [pat]
+    for sx in (-1, 1):
+        ma = bpy.data.objects[f"mom.arm{sx}"]
+        sm = kit.box(f"mom.rub.arm{sx}", (0.04, 0.62, 0.62), (sx * 0.52, 0, -0.75), pl("#8cc4ee", 0.7), ma, bevel=0.14)
+        sm.hide_render = True
+        W["rub"].append(sm)
+    sm = kit.box("mom.rub.back", (0.5, 0.04, 0.5), (0.3, 0.52, 1.1), pl("#8cc4ee", 0.7), mt, bevel=0.14)
+    sm.hide_render = True
+    W["rub"].append(sm)
     # Mr. Pratt: a white mustache, a darker waterline across his middle and three navy portholes on the chest
     ph = bpy.data.objects["pratt.headg"]
     white = pl("#f4f4f4", 0.8)
     for sx in (-1, 1):
         kit.box(f"pratt.stache{sx}", (0.34, 0.1, 0.12), (sx * 0.17, -0.64, -0.2), white, ph, rot=(0, sx * 0.25, 0), bevel=0.03)
     pt = bpy.data.objects["pratt.torso"]
-    kit.box("pratt.water", (2.05, 1.05, 0.36), (0, 0, 0.9), pl("#137082", 0.7), pt, bevel=0.02)
+    kit.box("pratt.water", (2.05, 1.05, 1.0), (0, 0, 0.5), pl("#137082", 0.7), pt, bevel=0.02)
     for i, x in enumerate((-0.6, 0.0, 0.6)):
         kit.cyl(f"pratt.port{i}", 0.2, 0.04, (x, -0.51, 1.5), pl("#1c2a52", 0.5), pt, rot=(math.pi / 2, 0, 0), n=16)
         kit.cyl(f"pratt.portin{i}", 0.12, 0.05, (x, -0.52, 1.5), pl("#e8f4f8", 0.5), pt, rot=(math.pi / 2, 0, 0), n=16)
@@ -589,7 +625,14 @@ def animate(kit, story, tl, t, ctx):
     if "benchprint" in W:
         W["benchprint"].hide_render = sample("print", tl, t, {"v": 0.0})["v"] < 0.5
     if W.get("rub") is not None:
-        W["rub"].hide_render = sample("rub", tl, t, {"v": 0.0})["v"] < 0.5
+        for ob in W["rub"]:
+            ob.hide_render = sample("rub", tl, t, {"v": 0.0})["v"] < 0.5
+    pv = sample("palms", tl, t, {"v": 0.0})["v"] < 0.5
+    for ob in W.get("palms", []):
+        ob.hide_render = pv
+    cf = sample("calfridge", tl, t, {"v": 1.0})["v"] < 0.5
+    for ob in W.get("calfridge", []):
+        ob.hide_render = cf
     # ---- the swing sways slowly, once it is back on its chains
     if "swing" in W:
         W["swing"].rotation_euler = (math.radians(3.5) * math.sin(t * 1.3), 0, 0)

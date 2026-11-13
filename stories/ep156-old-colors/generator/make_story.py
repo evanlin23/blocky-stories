@@ -1,4 +1,4 @@
-"""Writes ../story.json for ep156 "Miss Your Old House And You Turn Its COLORS" (script.md, 2026-11-12, batch 15, warm).
+"""Writes ../story.json for ep156 "Miss Your Old House, Turn Its COLORS" (script.md, 2026-11-12, batch 15, warm).
 Run: python stories/ep156-old-colors/generator/make_story.py
 
 Words are in lines.json; places in ../layout.py (shared with set.py). A character facing -y has yaw 0, +x 90, +y 180,
@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 3
+REV = 4
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -84,13 +84,13 @@ cast = {
                     collar="#fffaf0", pattern="plaid", pattern_c="#fffaf0", pants_pattern="plaid",
                     pants_pattern_c="#fffaf0", height=0.95),
     # the plaid man (three washes) and his grown daughter
-    "man1": person("#d9b48a", "#3f9a5a", "#3f9a5a", "#f2f2f2", hair="buzz", hair_c="#a9a9b2", pattern="plaid",
+    "man1": person("#d9b48a", "#3f9a5a", "#3f9a5a", "#f2f2f2", hair="buzz", hair_c="#d4d4dc", pattern="plaid",
                    pattern_c="#f2f2c0", pants_pattern="plaid", pants_pattern_c="#f2f2c0", height=1.02),
-    "man2": person("#d9b48a", "#8bbf94", "#8bbf94", "#f2f2f2", hair="buzz", hair_c="#a9a9b2", pattern="plaid",
+    "man2": person("#d9b48a", "#8bbf94", "#8bbf94", "#f2f2f2", hair="buzz", hair_c="#d4d4dc", pattern="plaid",
                    pattern_c="#e8ecd8", pants_pattern="plaid", pants_pattern_c="#e8ecd8", height=1.02),
-    "man3": person("#d9b48a", "#d9d2b0", "#6a6050", "#f2f2f2", hair="buzz", hair_c="#a9a9b2", height=1.02),
-    "girl": person("#c58e64", "#c01e2a", "#3a4a6a", "#f2f2f2", hair="long", hair_c="#2a1d15", eyes="lashes",
-                   height=0.97),
+    "man3": person("#d9b48a", "#d9d2b0", "#6a6050", "#f2f2f2", hair="buzz", hair_c="#d4d4dc", height=1.02),
+    "girl": person("#f0cdb0", "#f2c230", "#4a6a8a", "#f2f2f2", hair="swoop", hair_c="#e6c874", eyes="lashes",
+                   height=1.0),
 }
 LEOS = ["me", "sw", "mf2", "mf1", "meb"]
 MAN = ["man1", "man2", "man3"]
@@ -186,6 +186,8 @@ cue(0, "prints", v=0.0)
 cue(0, "curtain", v=0.0)
 cue(0, "print", v=0.0)
 cue(0, "rub", v=0.0)
+cue(0, "palms", v=0.0)
+cue(0, "calfridge", v=1.0)
 
 # ----------------------------------------------------------------------------------------------- the places
 LX, LY = -0.72, 0.35           # me at the table (facing east)
@@ -202,6 +204,7 @@ def mom_at(at, pos=MOM_P, yaw=-90, expr="neutral", **kw):
 
 
 TABLE_HANDS = [36, 36]
+HY = 50
 
 
 def face_tz(face_z, w):
@@ -229,11 +232,11 @@ TABLE_SIDE = [10, 10]
 
 
 def mom_hands(at, expr="neutral", **kw):
-    mom_at(at, expr=expr, arms=TABLE_HANDS, side=TABLE_SIDE, **kw)
+    mom_at(at, expr=expr, arms=[0, 0], **kw)
 
 
-def shot_hands(sid, at, w=1.5, az=50, tz=1.3, cz=1.0, lens=28, tx=0.0, ty=0.35, push=None, **kw):
-    """Low 3/4 from Mom's side: her flat palms on the bare table in the lower third, Leo's whole head beside them."""
+def shot_hands(sid, at, w=1.25, az=8, tz=0.98, cz=2.1, lens=26, tx=-0.3, ty=0.35, push=None, **kw):
+    """A close insert: Mom's two flat palms on the bare table (the `palms` cue) in the lower third, Leo's face beside."""
     c = cam(tx, ty, tz, w, az, lens, cz=cz)
     if push:
         c = c + [[1, [round(c[0][1][0] + push[0], 3), round(c[0][1][1] + push[1], 3), c[0][1][2]], c[0][2], lens]]
@@ -244,11 +247,16 @@ def shot_hands(sid, at, w=1.5, az=50, tz=1.3, cz=1.0, lens=28, tx=0.0, ty=0.35, 
 show(0, "me", "mom")
 leo_at(0, "me", expr="uneasy", head=[0, 22], arms=[0, 0])
 mom_hands(0, expr="neutral")
-shot_hands("S01a", 0, w=1.7, az=25, tx=-0.15)
-# S01b: I look at my own hands by the fridge: the real "1" page and the pencil tally at my waist
-show("L01.2", "me")
-place("L01.2", "me", (1.35, 2.0), 10, "neutral", arms=[40, 40], head=[0, 28])
-shot("S01b", "L01.2", cam(2.0, 2.5, 1.25, 1.8, -20, 28, cz=1.25))
+cue(0, "palms", v=1.0)
+shot_hands("S01a", 0)
+# S01b: Mr. Pratt, teal, outside the kitchen window looking at his own hand and shrugging (the rule's picture)
+cue("L01.2", "palms", v=0.0)
+show("L01.2", "pratt")
+PR_W = (-5.0, 0.3, 0.0)
+place("L01.2", "pratt", PR_W, 90, "stunned", arms=[0, 0], head=[0, 22])
+key("pratt", "L01.2+0.15", PR_W, yaw=90, expr="stunned", arms=[0, 110], head=[0, 24], blend=0.3)
+key("pratt", "L01.2+0.65", PR_W, yaw=90, expr="smile", arms=[0, 0], side=[28, 28], head=[0, 0], blend=0.3)
+shot("S01b", "L01.2", cam(-5.0, 0.3, face_tz(1.65, 1.8), 1.8, 90, 28, cz=face_tz(1.65, 1.8)))
 
 # ===== 02 mine (L02): Mom at the window, waist up
 show("L02", "mom")
@@ -264,7 +272,9 @@ shot("S03a", "L03", camp([0.0, -1.72, 2.5], [0.0, -0.2, 0.8], 28, pos2=[0.0, -1.
 show("L03.3", "me", "mom")
 leo_at("L03.3", "me", expr="uneasy", head=[0, 24])
 mom_hands("L03.3", expr="neutral")
-shot_hands("S03b", "L03.3", w=2.6, az=-35, tz=1.2, cz=0.95, tx=-0.1, lens=24)
+cue("L03.3", "palms", v=1.0)
+cue("L04", "palms", v=0.0)
+shot_hands("S03b", "L03.3", az=14, tx=-0.42, push=(0.0, 0.1))
 
 # ===== 04, 05 Mr. Pratt (L04, L05)
 PRATT_P = (G.PRATT[0] + 0.4, 3.35, 0.3)
@@ -281,12 +291,13 @@ shot("S05", "L05", cam(60.4, 3.35, 0.95, 2.7, 0, 28, cz=1.7))
 # ===== 06 it rubs off (L06): the bench woman and the big checked print she leaves on the bench back
 WOMAN_P = (1.35, 62.9, 0.0)
 show("L06", "woman")
-place("L06", "woman", WOMAN_P, 0, "smile", arms=[0, 0])
-key("woman", "L06+0.3", WOMAN_P, yaw=0, expr="smile", arms=[0, 38], blend=0.4)
+WOMAN_B = (1.2, 63.25, 0.0)
+place("L06", "woman", WOMAN_B, -90, "smile", arms=[0, 0])
+key("woman", "L06+0.25", WOMAN_B, yaw=-90, expr="smile", arms=[72, 0], blend=0.35)
 cue("L06+0.5", "print", v=1.0)
-shot("S06a", "L06", camp([0.7, 58.9, 2.3], [0.7, 63.1, 0.9], 28, pos2=[0.7, 59.6, 2.1], tgt2=[0.75, 63.1, 1.0]))
+shot("S06a", "L06", camp([0.55, 60.6, 3.3], [0.55, 63.4, 0.7], 28, pos2=[0.6, 61.0, 3.0], tgt2=[0.6, 63.4, 0.7]))
 shot("S06b", "L06.2", cam(WOMAN_P[0], 62.7, face_tz(1.5, 1.7), 1.7, 8, 34, cz=face_tz(1.5, 1.7)))
-place("L06.2", "woman", WOMAN_P, 0, "smile", arms=[0, 0], head=[0, 0])
+cut("woman", "L06.2", WOMAN_P, **pose(0, "smile", arms=[0, 0], head=[0, 0]))
 
 # ===== 07 a hug washes it out (L07): the plaid man and his grown daughter, both faces front 3/4
 show("L07", "man1", "girl")
@@ -335,8 +346,10 @@ place("L10", "me", (1.35, 2.05), 100, "stunned", arms=[0, 0], head=[-30, 4])
 shot("S10a", "L10", cam(1.5, 2.45, 1.35, 1.7, 12, 28, cz=1.35))
 show("L10.3-0.43", "me", "mom")
 leo_at("L10.3-0.43", "me", expr="sheepish", head=[0, 22])
-mom_hands("L10.3-0.43", expr="neutral")
-shot_hands("S10b", "L10.3-0.43", w=2.3, az=-35, tz=1.15, cz=0.95, tx=-0.1, lens=24)
+mom_hands("L10.3-0.43", expr="neutral", head=[HY, 4])
+cue("L10.3-0.43", "palms", v=1.0)
+cue("L10.4", "palms", v=0.0)
+shot_hands("S10b", "L10.3-0.43", az=0, w=2.0, tx=0.0, tz=1.1, push=(0.1, 0.0))
 shot("S10c", "L10.4", cam(LX, LY, face_tz(1.62, 1.2), 1.2, 45, 34, cz=face_tz(1.62, 1.2)))
 
 # ===== 11 day 23: the curtains (L11), then one dodge
@@ -365,7 +378,7 @@ shot("S12b", "L12.3", cam(RX + 1.2, RY + 2.7, face_tz(1.62, 1.8), 1.8, -42, 34, 
 # ===== 13 day 40: three sweaters (L13)
 cue("L13", "day", n=40)
 show("L13", "sw", "mom")
-leo_at("L13", "sw", expr="uneasy", arms=TABLE_HANDS)
+leo_at("L13", "sw", expr="uneasy", arms=[0, 0])
 mom_at("L13", expr="neutral", arms=[0, 0])
 acting["sw"].append({"from": "L13", "to": "L13>", "tremble": 2.0})
 shot("S13a", "L13", cam(LX, LY, 1.2, 1.5, 10, 28, cz=1.2))
@@ -385,20 +398,22 @@ cue("L15", "day", n=41)
 show("L15", "sw", "mom")
 leo_at("L15", "sw", expr="neutral", arms=[0, 0])
 mom_at("L15", expr="neutral", arms=[0, 0])
+cue("L15", "calfridge", v=0.0)
 shot_leo("S15a", "L15", w=2.0)
+shot_leo("S15b", "L15.2", w=1.25, az=30)
 show("L15.4", "mom")
 mom_at("L15.4", expr="warm", arms=[0, 0])
-shot_mom("S15b", "L15.4", w=1.7)
+shot_mom("S15c", "L15.4", w=1.7)
 
 # ===== 16 the hands (L16): closer in, hands meet over the table
 LX2, MX2 = -0.5, 0.5
 show("L16", "sw", "mom")
 cut("sw", "L16", (LX2, LY), **pose(90, "uneasy", arms=[0, 0]))
 cut("mom", "L16", (MX2, MY), **pose(-90, "warm", arms=[0, 0]))
-key("sw", "L16+0.2", (LX2, LY), yaw=90, expr="uneasy", arms=[58, 58], blend=0.5)
-key("mom", "L16+0.7", (MX2, MY), yaw=-90, expr="warm", arms=[26, 26], blend=0.2)
-key("mom", "L16+1.0", (MX2, MY), yaw=-90, expr="warm", arms=[56, 56], blend=0.66)
-shot("S16a", "L16", camp([0.0, -1.25, 2.2], [0.0, 0.35, 0.85], 20, pos2=[0.0, -1.0, 2.0], tgt2=[0.0, 0.35, 0.85]))
+cue("L16", "palms", v=1.0)
+cue("L18", "palms", v=0.0)
+key("sw", "L16+0.2", (LX2, LY), yaw=90, expr="uneasy", arms=[34, 34], blend=0.5)
+shot("S16a", "L16", camp([0.0, -2.0, 2.8], [0.0, 0.35, 1.15], 21, pos2=[0.0, -1.7, 2.6], tgt2=[0.0, 0.35, 1.15]))
 
 # ===== 17 the reveal (L17): Mom's face alone, then the picture from her eyes
 show("L16.3-0.1", "mom")
@@ -411,18 +426,18 @@ shot("S17b", "L17.1", camp([MX2 + 1.4, MY - 0.8, 1.6], [LX2, LY - 0.12, 1.3], 24
 
 # ===== 18 the hug washes it out (L18): one shot, both faces, the blue goes out in three steps 0.3 s apart
 cue("L18", "day", n=41)
-HUG_L, HUG_M = (1.2, 1.7), (1.8, 1.7)
-S18 = "L18.1+0.15"
-HUG_A, HUG_S = [55, 35], [40, 50]
+HUG_L, HUG_M = (1.3, 1.7), (1.85, 1.7)
+S18 = "L18.1"
+HUG_A, HUG_S = [62, 50], [20, 30]
 show(S18, "meb", "mom")
-cut("meb", S18, HUG_L, **pose(55, "smile", arms=HUG_A, side=HUG_S))
-cut("mom", S18, HUG_M, **pose(-55, "laugh", arms=[75, 75], side=[25, 25]))
-for new, old, dt in (("mf1", "meb", 0.45), ("mf2", "mf1", 0.75), ("sw", "mf2", 1.05)):
-    place(f"L18.1+{dt}", new, HUG_L, 55, "laugh", arms=HUG_A, side=HUG_S)
+cut("meb", S18, HUG_L, **pose(76, "smile", arms=HUG_A, side=HUG_S, head=[-35, 6]))
+cut("mom", S18, HUG_M, **pose(-76, "laugh", arms=[70, 70], side=[22, 22], head=[35, 6]))
+for new, old, dt in (("mf1", "meb", 0.2), ("mf2", "mf1", 0.45), ("sw", "mf2", 0.7)):
+    place(f"L18.1+{dt}", new, HUG_L, 76, "laugh", arms=HUG_A, side=HUG_S, head=[-35, 6])
     cut(old, f"L18.1+{dt}", hidden=True)
     vis.discard(old)
-cue("L18.1+0.55", "rub", v=1.0)
-shot("S18", S18, camp([1.5, -1.3, 1.5], [1.5, 1.7, 1.42], 28, pos2=[1.5, -0.9, 1.5], tgt2=[1.5, 1.7, 1.42]))
+cue("L18.1+0.4", "rub", v=1.0)
+shot("S18", S18, camp([1.6, -1.3, 1.55], [1.6, 1.7, 1.4], 28, pos2=[1.6, -0.9, 1.55], tgt2=[1.6, 1.7, 1.4]))
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)
@@ -447,7 +462,7 @@ sfx = [
     {"at": "L08.3", "kind": "whoosh", "db": -22},                        # the first dodge
     {"at": "L10.1", "kind": "thud", "db": -16},                          # the fridge door
     {"at": "L11.3", "kind": "whoosh", "db": -22},                        # the second dodge
-    {"at": "L18.1", "kind": "riser", "db": -22, "dur": 0.9},          # the colours rinse out
+    {"at": "L18.1+0.1", "kind": "whoosh", "db": -18},                 # a soft rinse as the colours wash out
 ]
 music = {
     "root": 56, "mode": "major", "bpm": 132, "seed": 156,
@@ -456,7 +471,7 @@ music = {
         {"at": "L08", "voices": ["piano", "pulse", "pad"], "energy": 0.5},
         {"at": "L15", "voices": ["piano"], "energy": 0.3},
         {"at": "L17", "voices": ["pad"], "energy": 0.2},
-        {"at": "L18", "voices": ["piano", "pad", "musicbox"], "energy": 0.6},
+        {"at": "L18", "voices": ["piano", "pad", "bubble"], "energy": 0.6},
     ],
 }
 sound = {
@@ -477,7 +492,7 @@ polish["twist"] = remap(polish["twist"])
 polish["quiet"] = [[remap(a), remap(b)] for a, b in polish["quiet"]]
 story = {
     "slug": "ep156-old-colors",
-    "title": "Miss Your Old House And You Turn Its COLORS \U0001F3E0",
+    "title": "Miss Your Old House, Turn Its COLORS \U0001F3E0",
     "made_for_kids": False,
     "premise": ("In our town, if you miss your old house you slowly turn its colors and never see it on yourself, "
                 "so after a move a seventeen-year-old checks his mom's hands every morning and puts the old house "
@@ -489,7 +504,7 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#b06ad8",
     "gap": 0.15,
-    "tail": 0.9,
+    "tail": 0.3,
     "fade_in": False,
     "fade_out": False,
     "rev": REV,
@@ -507,8 +522,8 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S03a", "S08b", "S11b", "S15a", "S16a"],
-    "frames_ok": ["S07"],
+    "framing_ok": ["S03a", "S03b", "S08b", "S11b", "S15a", "S16a"],
+    "frames_ok": ["S01b", "S07"],
     "staging_ok": ["S07/close", "S16a/close", "S18/close"],
     "phonemes": {"Nell": "nˈɛl"},
     "homophones": {"stripey": "stripy"},
