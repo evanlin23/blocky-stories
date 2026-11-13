@@ -244,7 +244,7 @@ def shot_hands(sid, at, w=1.5, az=50, tz=1.3, cz=1.0, lens=28, tx=0.0, ty=0.35, 
 show(0, "me", "mom")
 leo_at(0, "me", expr="uneasy", head=[0, 22], arms=[0, 0])
 mom_hands(0, expr="neutral")
-shot_hands("S01a", 0, w=1.5, az=25)
+shot_hands("S01a", 0, w=1.7, az=25, tx=-0.15)
 # S01b: I look at my own hands by the fridge: the real "1" page and the pencil tally at my waist
 show("L01.2", "me")
 place("L01.2", "me", (1.35, 2.0), 10, "neutral", arms=[40, 40], head=[0, 28])
@@ -264,7 +264,7 @@ shot("S03a", "L03", camp([0.0, -1.72, 2.5], [0.0, -0.2, 0.8], 28, pos2=[0.0, -1.
 show("L03.3", "me", "mom")
 leo_at("L03.3", "me", expr="uneasy", head=[0, 24])
 mom_hands("L03.3", expr="neutral")
-shot_hands("S03b", "L03.3", w=2.2, az=-25, tz=1.2, cz=0.95, tx=-0.1)
+shot_hands("S03b", "L03.3", w=2.6, az=-25, tz=1.2, cz=0.95, tx=-0.1)
 
 # ===== 04, 05 Mr. Pratt (L04, L05)
 PRATT_P = (G.PRATT[0] + 0.4, 3.35, 0.3)
@@ -279,12 +279,12 @@ key("pratt", "L05.1", PRATT_P, yaw=0, expr="laugh", arms=[0, 0], side=[30, 30], 
 shot("S05", "L05", cam(60.4, 3.35, 0.95, 2.7, 0, 28, cz=1.7))
 
 # ===== 06 it rubs off (L06): the bench woman and the big checked print she leaves on the bench back
-WOMAN_P = (-0.25, 62.7, 0.0)
+WOMAN_P = (1.35, 62.9, 0.0)
 show("L06", "woman")
 place("L06", "woman", WOMAN_P, 0, "smile", arms=[0, 0])
 key("woman", "L06+0.3", WOMAN_P, yaw=0, expr="smile", arms=[0, 38], blend=0.4)
 cue("L06+0.5", "print", v=1.0)
-shot("S06a", "L06", camp([0.1, 59.4, 2.1], [0.15, 63.1, 0.95], 28, pos2=[0.1, 60.2, 1.9], tgt2=[0.15, 63.1, 1.0]))
+shot("S06a", "L06", camp([0.7, 58.9, 2.3], [0.7, 63.1, 0.9], 28, pos2=[0.7, 59.6, 2.1], tgt2=[0.75, 63.1, 1.0]))
 shot("S06b", "L06.2", cam(WOMAN_P[0], 62.7, face_tz(1.5, 1.7), 1.7, 8, 34, cz=face_tz(1.5, 1.7)))
 place("L06.2", "woman", WOMAN_P, 0, "smile", arms=[0, 0], head=[0, 0])
 
@@ -321,8 +321,8 @@ shot("S08b", "L08.2", cam(LX - 0.35, LY, face_tz(1.62, 2.0), 2.0, 45, 34, cz=fac
 cue("L09", "day", n=9)
 SWX, SWY = G.PORCH[0], G.PORCH[1] - 0.3
 show("L09", "me")
-place("L09", "me", (SWX + 0.65, SWY - 0.9), 0, "smile", arms=[0, 0])
-shot("S09a", "L09", cam(SWX + 0.35, SWY, 1.65, 2.0, 0, 28, cz=1.9))
+place("L09", "me", (SWX + 0.62, SWY - 0.8), 0, "smile", arms=[0, 0])
+shot("S09a", "L09", cam(SWX + 0.26, SWY, 1.65, 2.6, 0, 28, cz=1.9))
 show("L09.2-0.27", "mom")
 place("L09.2-0.27", "mom", (4.0, G.DOOR_Y), -90, "smile", arms=[0, 0])
 shot("S09b", "L09.2-0.27", cam(4.0, G.DOOR_Y, face_tz(1.5, 1.9), 1.9, -95, 34, cz=face_tz(1.5, 1.9)))
@@ -332,11 +332,11 @@ cue("L10", "day", n=16)
 cue("L10", "prints", v=1.0)
 show("L10", "me")
 place("L10", "me", (1.35, 2.05), 100, "stunned", arms=[0, 0], head=[-30, 4])
-shot("S10a", "L10", cam(1.7, 2.45, 1.35, 1.7, 12, 28, cz=1.35))
+shot("S10a", "L10", cam(1.5, 2.45, 1.35, 1.7, 12, 28, cz=1.35))
 show("L10.3-0.43", "me", "mom")
 leo_at("L10.3-0.43", "me", expr="sheepish", head=[0, 22])
 mom_hands("L10.3-0.43", expr="neutral")
-shot_hands("S10b", "L10.3-0.43", w=1.9, az=-25, tz=1.15, cz=0.95)
+shot_hands("S10b", "L10.3-0.43", w=2.3, az=-25, tz=1.15, cz=0.95, tx=-0.1)
 shot("S10c", "L10.4", cam(LX, LY, face_tz(1.62, 1.2), 1.2, 45, 34, cz=face_tz(1.62, 1.2)))
 
 # ===== 11 day 23: the curtains (L11), then one dodge
@@ -398,7 +398,7 @@ cut("mom", "L16", (MX2, MY), **pose(-90, "warm", arms=[0, 0]))
 key("sw", "L16+0.2", (LX2, LY), yaw=90, expr="uneasy", arms=[58, 58], blend=0.5)
 key("mom", "L16+0.7", (MX2, MY), yaw=-90, expr="warm", arms=[26, 26], blend=0.2)
 key("mom", "L16+1.0", (MX2, MY), yaw=-90, expr="warm", arms=[56, 56], blend=0.66)
-shot("S16a", "L16", camp([0.0, 0.1, 2.5], [0.0, 0.35, 0.8], 24, pos2=[0.0, 0.1, 2.3], tgt2=[0.0, 0.35, 0.8]))
+shot("S16a", "L16", camp([0.0, 0.1, 2.75], [0.0, 0.35, 0.8], 16, pos2=[0.0, 0.1, 2.5], tgt2=[0.0, 0.35, 0.8]))
 
 # ===== 17 the reveal (L17): Mom's face alone, then the picture from her eyes
 show("L16.3-0.1", "mom")
@@ -421,7 +421,7 @@ for new, old, dt in (("mf1", "meb", 0.45), ("mf2", "mf1", 0.75), ("sw", "mf2", 1
     cut(old, f"L18.1+{dt}", hidden=True)
     vis.discard(old)
 cue("L18.1+0.55", "rub", v=1.0)
-shot("S18", S18, camp([1.5, -0.8, 1.5], [1.5, 1.7, 1.38], 28, pos2=[1.5, -0.45, 1.5], tgt2=[1.5, 1.7, 1.4]))
+shot("S18", S18, camp([1.5, -1.3, 1.5], [1.5, 1.7, 1.42], 28, pos2=[1.5, -0.9, 1.5], tgt2=[1.5, 1.7, 1.42]))
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)
