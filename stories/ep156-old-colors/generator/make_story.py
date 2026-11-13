@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -398,7 +398,7 @@ cut("mom", "L16", (MX2, MY), **pose(-90, "warm", arms=[0, 0]))
 key("sw", "L16+0.2", (LX2, LY), yaw=90, expr="uneasy", arms=[58, 58], blend=0.5)
 key("mom", "L16+0.7", (MX2, MY), yaw=-90, expr="warm", arms=[26, 26], blend=0.2)
 key("mom", "L16+1.0", (MX2, MY), yaw=-90, expr="warm", arms=[56, 56], blend=0.66)
-shot("S16a", "L16", camp([0.0, 0.1, 2.75], [0.0, 0.35, 0.8], 16, pos2=[0.0, 0.1, 2.5], tgt2=[0.0, 0.35, 0.8]))
+shot("S16a", "L16", camp([0.0, -1.25, 2.2], [0.0, 0.35, 0.85], 20, pos2=[0.0, -1.0, 2.0], tgt2=[0.0, 0.35, 0.85]))
 
 # ===== 17 the reveal (L17): Mom's face alone, then the picture from her eyes
 show("L16.3-0.1", "mom")
@@ -508,7 +508,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": ["S03a", "S08b", "S11b", "S15a", "S16a"],
-    "frames_ok": [],
+    "frames_ok": ["S07"],
     "staging_ok": ["S07/close", "S16a/close", "S18/close"],
     "phonemes": {"Nell": "nˈɛl"},
     "homophones": {"stripey": "stripy"},
