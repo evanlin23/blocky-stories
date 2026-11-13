@@ -19,7 +19,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.6 s music drop before L19, and the 3.5 s hold on the question after L30
@@ -171,7 +171,7 @@ key("me", "L05.1", yaw=-20, side=[25, 0], blend=0.4)
 shot("S05", "L05", cam(G.BIKE[0] + 0.7, G.BIKE[1] - 0.8, 1.5, 3.3, 14, 28, el=0.1))
 cut("ty", "L06", (TX, TY_), yaw=24, expr="suspicious", head=[0, 0], arms=[0, 0])
 cut("me", "L06", far["me"], yaw=0)
-shot("S06", "L06", cam(TX, TY_, TZ + 0.6, 4.2, 28, 30))
+shot("S06", "L06", cam(TX, TY_, TZ - 0.3, 3.3, 28, 30))
 key("ty", "L06.1", head=[-8, 4], blend=0.4)
 
 # ===== 03 two examples (L07 to L10)
@@ -184,13 +184,13 @@ shot("S07", "L07", cam(0.8, HY, 1.6, 2.7, -10, 32, el=0.12))
 key("hal", "L07.1", head=[-4, 18], blend=0.4)
 cue("L08", "ch", p=0)
 CX, CY = G.HAL_CAST
-cut("hal", "L08", (CX, CY), yaw=-90, expr="determined", head=[0, 0], arms=[70, 70])
+cut("hal", "L08", (CX, CY), yaw=-45, expr="determined", head=[0, 6], arms=[70, 70])
 cue("L08", "rod", r=1.0)
-shot("S08a", "L08", cam(CX - 1.5, CY + 0.7, 1.7, 3.6, 120, 26, el=0.35))
+shot("S08a", "L08", cam(CX - 0.3, CY, 1.6, 2.5, -20, 26, el=0.25))
 cue("L08.1", "rod", r=0.0)
-cut("hal", "L08.1", (CX + 0.4, CY - 0.6), yaw=0, expr="delighted", head=[0, 0], arms=[70, 70])
+cut("hal", "L08.1", (CX + 0.4, CY - 1.6), yaw=0, expr="delighted", head=[0, 14], arms=[70, 70])
 cue("L08.1", "bucket", b=1.0)
-shot("S08b", "L08.1", cam(CX + 0.4, CY - 0.6, 1.5, 3.0, 20, 32, el=0.1))
+shot("S08b", "L08.1", cam(CX + 0.4, CY - 1.6, 1.5, 3.0, 20, 32, el=0.1))
 key("hal", "L08.1+0.5", arms=[80, 80], blend=0.4)
 cue("L09", "bucket", b=0.0)
 cut("hal", "L09", far["hal"], yaw=0)
@@ -221,7 +221,7 @@ cut("me", "L12", (MX, MY + 0.15), yaw=90, expr="nervous", head=[0, 10], arms=[0,
 cue("L12.1", "lid", o=1.0, dur=0.3)
 cue("L12", "c1", p=5)
 TAG_OFF.add("S12")
-shot("S12", "L12", cam(BX - 0.45, BY, 1.5, 3.2, 62, 30, el=0.3))
+shot("S12", "L12", cam(BX - 0.45, BY, 1.5, 3.2, 62, 30, el=0.6))
 cut("me", "L12b", (MX, MY), yaw=0, expr="shocked", head=[0, 8], arms=[0, 62])
 cue("L12b", "c1", p=1)
 shot("S12b", "L12b", cam(MX + 0.1, MY, 1.45, 3.2, 6, 32, el=0.1))
@@ -240,8 +240,8 @@ key("ty", "L16+0.5", (SX - 0.3, SY - 0.6), lean=22, head=[0, -6])
 key("ty", "L16.1", (SX + 0.6, SY - 0.6), lean=22)
 key("ty", "L16.1+0.5", (SX + 1.1, SY - 0.6), lean=0, yaw=60, head=[0, 0], blend=0.4)
 key("ty", "L16.2", (SX + 1.1, SY - 0.6), yaw=40, expr="crylaugh")
-cut("me", "L16.1", (SX + 3.4, SY - 2.0), yaw=-35, expr="delighted", head=[-10, 10])
-shot("S16", "L16", cam(SX + 0.8, SY - 0.6, 1.9, 5.6, 10, 26, el=0.2))
+cut("me", "L16.1", (SX + 2.6, SY - 0.7), yaw=-35, expr="delighted", head=[-10, 10])
+shot("S16", "L16", cam(SX + 1.5, SY - 0.6, 1.9, 5.6, 4, 26, el=0.2))
 
 # ===== 05 card two (L17 to L21b)
 cut("me", "L17", (MX, MY + 0.15), yaw=90, expr="nervous", head=[0, 10], arms=[0, 0], side=[0, 0])
@@ -250,7 +250,7 @@ cue("L17", "lid", o=0.0)
 cue("L17.1", "lid", o=1.0, dur=0.3)
 cue("L17", "c2", p=5)
 TAG_OFF.add("S17")
-shot("S17", "L17", cam(BX - 0.45, BY, 1.5, 3.0, 40, 30, el=0.35))
+shot("S17", "L17", cam(BX - 0.45, BY, 1.5, 3.0, 40, 30, el=0.6))
 cut("me", "L17b", (MX, MY), yaw=0, expr="shocked", head=[0, 6], arms=[0, 62])
 cue("L17b", "c1", p=2)
 cue("L17b", "c2", p=6)
@@ -258,6 +258,7 @@ cue("L17b+0.1", "c2", p=3, dur=0.45)
 shot("S17b", "L17b", cam(MX + 0.15, MY, 1.45, 3.3, -4, 32, el=0.1))
 # the drop: the open lid, the bay behind
 TAG_OFF.add("S18")
+cut("me", "P00", far["me"], yaw=0)
 shot("S18", "P00", cam(BX + 0.35, BY, 1.4, 2.2, 40, 30, el=0.45, push=2.0))
 cut("me", "L19", (MX, MY), yaw=0, expr="shocked", head=[0, 10], arms=[0, 62])
 cue("L19", "c1", p=0)
@@ -283,7 +284,7 @@ cut("ty", "L22", (GX - 2.6, -2.4), yaw=90, expr="delighted", head=[-55, 0])
 key("ty", "L22>", (GX + 2.8, -2.4), yaw=90, head=[-60, 0])
 shot("S22", "L22", cam(GX, 0.4, 1.9, 5.4, 16, 26, el=0.4))
 cut("ty", "L23", (GX + 1.15, -0.1), yaw=-150, expr="neutral", head=[10, 0], arms=[0, 0], side=[0, 45])
-cut("me", "L23", (GX - 1.2, 3.0), yaw=160, expr="suspicious", head=[0, 0])
+cut("me", "L23", (GX - 2.6, 3.6), yaw=160, expr="suspicious", head=[0, 0])
 shot("S23", "L23", cam(GX + 1.0, -0.1, TZ, 2.8, 205, 26, el=-0.2))
 key("ty", "L23.1", head=[-14, 4], blend=0.4)
 cut("ty", "L24", far["ty"], yaw=0)
@@ -421,7 +422,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S06"],
+    "framing_ok": [],
     "staging_ok": [],
     "clip_ok": ["S16/awning0"],
     "frames_ok": [],
