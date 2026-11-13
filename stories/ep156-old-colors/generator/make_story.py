@@ -1,0 +1,502 @@
+"""Writes ../story.json for ep156 "Miss Your Old House And You Turn Its COLORS" (script.md, 2026-11-12, batch 15, warm).
+Run: python stories/ep156-old-colors/generator/make_story.py
+
+Words are in lines.json; places in ../layout.py (shared with set.py). A character facing -y has yaw 0, +x 90, +y 180,
+-x -90. Cues (read by set.py): day (n: the calendar page), prints (the fridge fingerprints), curtain, print (the checked
+print on the bench), rub (the blue rubbed on Mom's cardigan). Colour changes on people are stepped through cast
+variants of one body (same acting keys), 0.2 s apart, so nothing ever blinks: Leo goes meb -> mf1 -> mf2 -> sw
+over 0.6 s on the hug, the plaid man goes man1 -> man2 -> man3.
+"""
+import json
+import math
+import re
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent))
+sys.path.insert(0, str(HERE.parent.parent.parent))
+import layout as G  # noqa: E402
+from blocky import timeline as T  # noqa: E402
+
+OUT = HERE.parent / "story.json"
+REV = 1
+orig_lines = json.loads((HERE / "lines.json").read_text())
+lines, CHUNKMAP = T.split_lines(orig_lines)
+
+
+def remap(ref):
+    if not isinstance(ref, str):
+        return ref
+    mm = re.match(r"^(L\d+)\.(\d+)(.*)$", ref)
+    if mm and mm.group(1) in CHUNKMAP:
+        return f"{mm.group(1)}.{CHUNKMAP[mm.group(1)][int(mm.group(2))]}{mm.group(3)}"
+    return ref
+
+
+def remap_all(items):
+    for it in items:
+        for key in ("at", "from", "to"):
+            if key in it:
+                it[key] = remap(it[key])
+
+
+D2R = math.pi / 180
+X = {"neutral": "neutral", "uneasy": "worried", "stunned": "wide", "sad": "worried", "smile": "smile",
+     "laugh": "laugh", "warm": "warm", "sheepish": "polite", "sly": "smirk"}
+
+SKIN = "#c98f62"
+BLUE_SKIN = "#86c4ee"
+
+
+def mixc(a, b, u):
+    ca = [int(a[i:i + 2], 16) for i in (1, 3, 5)]
+    cb = [int(b[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#%02x%02x%02x" % tuple(int(round(ca[i] + (cb[i] - ca[i]) * u)) for i in range(3))
+
+
+def person(skin, shirt, pants, shoes, hair="cap", hair_c="#15151a", hat="none", eyes="round", sleeves="long", **kw):
+    d = {"age": "adult", "skin": skin, "shirt": shirt, "pants": pants, "shoes": shoes, "sleeves": sleeves,
+         "hair": hair, "hair_c": hair_c, "hat": hat, "face": {"eyes": eyes, "brows": True, "ink": "#1c120c"}}
+    d.update(kw)
+    return d
+
+
+def leo(skin, **kw):
+    return person(skin, "#8a4fa3", "#3a4a6a", "#f2f2f2", hair="cap", hair_c="#5a3a22", age="teen", height=1.04,
+                  extras=["hooddown"], collar="#6e3a86", **kw)
+
+
+cast = {
+    # Leo, 17: a tall brown block quiff (set.py), light brown skin, a plum hoodie; from L13 three sweaters (plum over
+    # orange over oat: bands at the collar, hem and cuffs, set.py) in a bulkier body. The blue ones are the reveal.
+    "me": leo(SKIN),
+    "sw": leo(SKIN, width=1.08, body_width=1.1),
+    "mf2": leo(mixc(SKIN, BLUE_SKIN, 0.33), width=1.08, body_width=1.1),
+    "mf1": leo(mixc(SKIN, BLUE_SKIN, 0.66), width=1.08, body_width=1.1),
+    "meb": leo(BLUE_SKIN, width=1.08, body_width=1.1),
+    # Mom (Nell), forties: a big curly black bun (set.py), the same skin, a coral cardigan over a navy shirt (set.py)
+    "mom": person(SKIN, "#f08a74", "#46506a", "#f2f2f2", hair="cap", eyes="lashes", collar="#2e3f73", height=0.95),
+    # Mr. Pratt, sixties: bald, a white mustache (set.py), teal all over, a waterline and portholes (set.py)
+    "pratt": person("#1fa5b8", "#1b97aa", "#17828f", "#2e3f73", hair="none", sleeves="long", width=1.04),
+    # the bench woman: terracotta and white checks all over, a big scarf
+    "woman": person("#e0b08a", "#c96f4a", "#c96f4a", "#fffaf0", hair="long", hair_c="#5a3a22", eyes="lashes",
+                    collar="#fffaf0", pattern="plaid", pattern_c="#fffaf0", pants_pattern="plaid",
+                    pants_pattern_c="#fffaf0", height=0.95),
+    # the plaid man (three washes) and his grown daughter
+    "man1": person("#d9b48a", "#3f9a5a", "#3f9a5a", "#f2f2f2", hair="buzz", hair_c="#a9a9b2", pattern="plaid",
+                   pattern_c="#f2f2c0", pants_pattern="plaid", pants_pattern_c="#f2f2c0", height=1.02),
+    "man2": person("#d9b48a", "#8bbf94", "#8bbf94", "#f2f2f2", hair="buzz", hair_c="#a9a9b2", pattern="plaid",
+                   pattern_c="#e8ecd8", pants_pattern="plaid", pants_pattern_c="#e8ecd8", height=1.02),
+    "man3": person("#d9b48a", "#d9d2b0", "#6a6050", "#f2f2f2", hair="buzz", hair_c="#a9a9b2", height=1.02),
+    "girl": person("#c58e64", "#c01e2a", "#3a4a6a", "#f2f2f2", hair="long", hair_c="#2a1d15", eyes="lashes",
+                   height=0.97),
+}
+LEOS = ["me", "sw", "mf2", "mf1", "meb"]
+MAN = ["man1", "man2", "man3"]
+acting = {n: [] for n in cast}
+last = {n: [0, 0, 0] for n in cast}
+vis = set()
+cues = []
+SH = []
+
+
+def key(who, at, pos=None, **kw):
+    p = list(pos) if pos is not None else list(last[who])
+    if len(p) == 2:
+        p.append(0.0)
+    if "expr" in kw:
+        kw["expr"] = X.get(kw["expr"], kw["expr"])
+    acting[who].append({"at": at, "pos": p, **kw})
+    last[who] = p
+
+
+def cut(who, at, pos=None, **kw):
+    """A key that takes effect at once: a pose or place that changes on a cut."""
+    p = list(pos) if pos is not None else list(last[who])
+    if len(p) == 2:
+        p.append(0.0)
+    acting[who].append({"at": at, "pos": list(last[who]), "blend": 0.0})
+    key(who, at, p, blend=0.0, **kw)
+
+
+def show(at, *names):
+    for n in cast:
+        if n in names and n not in vis:
+            vis.add(n)
+            cut(n, at, hidden=False)
+        elif n not in names and n in vis:
+            vis.discard(n)
+            cut(n, at, hidden=True)
+
+
+def pose(yaw=0, expr="neutral", **kw):
+    d = dict(yaw=yaw, expr=expr, head=[0, 0], arms=[0, 0], side=[0, 0])
+    d.update(kw)
+    return d
+
+
+def place(at, who, pos, yaw=0, expr="neutral", **kw):
+    """Cut `who` to pos with a pose at `at`, visible."""
+    if who not in vis:
+        vis.add(who)
+        cut(who, at, hidden=False)
+    cut(who, at, [pos[0], pos[1], pos[2] if len(pos) > 2 else 0.0], **pose(yaw, expr, **kw))
+
+
+def mouth(who, a, b, amt=0.4):
+    acting[who].append({"from": a, "to": b, "mouth": [amt, amt], "flap": True})
+
+
+def cue(at, name, **kw):
+    cues.append({"at": at, "name": name, **kw})
+
+
+def cam(tx, ty, tz, w, az, lens, cz=None, push=None):
+    """A camera looking at (tx, ty, tz) from az degrees round from the south, far enough off that the frame is w
+    metres wide there."""
+    def at_(ww, tzz, czz):
+        d = ww * 16 / 9 * lens / 24
+        return [round(tx + d * math.sin(az * D2R), 3), round(ty - d * math.cos(az * D2R), 3),
+                czz if czz is not None else tzz], [tx, ty, tzz]
+    p, t_ = at_(w, tz, cz)
+    keys = [[0, p, t_, lens]]
+    if push:
+        w2 = w - (w - push[0]) * 2.2
+        p2, t2 = at_(w2, push[1], None if cz is None else cz + (push[1] - tz))
+        keys.append([1, p2, t2, lens])
+    return keys
+
+
+def camp(pos, tgt, lens, pos2=None, tgt2=None):
+    keys = [[0, list(pos), list(tgt), lens]]
+    if pos2 is not None or tgt2 is not None:
+        keys.append([1, list(pos2 or pos), list(tgt2 or tgt), lens])
+    return keys
+
+
+def shot(sid, at, camera, **kw):
+    SH.append((sid, at, camera, kw))
+
+
+for who in cast:
+    key(who, 0, [0, 0, 0], yaw=0, expr="neutral", head=[0, 0], arms=[0, 0], side=[0, 0], hidden=True)
+cue(0, "day", n=1)
+cue(0, "prints", v=0.0)
+cue(0, "curtain", v=0.0)
+cue(0, "print", v=0.0)
+cue(0, "rub", v=0.0)
+
+# ----------------------------------------------------------------------------------------------- the places
+LX, LY = -0.72, 0.35           # me at the table (facing east)
+MX, MY = 0.72, 0.35            # Mom at the table (facing west)
+LEO_P, MOM_P = (LX, LY), (MX, MY)
+
+
+def leo_at(at, who="me", pos=LEO_P, yaw=90, expr="neutral", **kw):
+    place(at, who, pos, yaw, expr, **kw)
+
+
+def mom_at(at, pos=MOM_P, yaw=-90, expr="neutral", **kw):
+    place(at, "mom", pos, yaw, expr, **kw)
+
+
+TABLE_HANDS = [36, 36]
+
+
+def face_tz(face_z, w):
+    """Where to aim so the face sits about 35% down the frame (clear of the caption band)."""
+    return round(face_z - 0.15 * w * 16 / 9, 3)
+
+
+def shot_mom_win(sid, at, w=1.7):
+    tz = face_tz(1.5, w)
+    shot(sid, at, cam(-3.3, 0.5, tz, w, 80, 34, cz=tz))
+
+
+def shot_leo(sid, at, w=1.8, az=45, lens=34, fz=1.62, **kw):
+    tz = face_tz(fz, w)
+    shot(sid, at, cam(LX, LY, tz, w, az, lens, cz=tz), **kw)
+
+
+def shot_mom(sid, at, w=1.8, az=-45, lens=34, fz=1.5, **kw):
+    tz = face_tz(fz, w)
+    shot(sid, at, cam(MX, MY, tz, w, az, lens, cz=tz), **kw)
+
+
+# ===== 01 the rule (L01): Mom's hands palms up on the table, my face beside them, checking
+show(0, "me", "mom")
+leo_at(0, "me", expr="uneasy", head=[0, 22], arms=[0, 0])
+mom_at(0, expr="neutral", arms=TABLE_HANDS)
+shot("S01a", 0, cam(0.1, 0.35, 1.05, 2.2, 35, 28, cz=1.05))
+# S01b: I look at my own hands by the fridge, plain (the rule: you never see it yourself)
+show("L01.2", "me")
+place("L01.2", "me", (1.9, 1.8), 10, "neutral", arms=[40, 40], head=[0, 28])
+shot("S01b", "L01.2", cam(2.0, 2.1, 1.3, 2.4, -30, 28, cz=1.3))
+
+# ===== 02 mine (L02): Mom by the window, the boxes
+show("L02", "mom")
+place("L02", "mom", (-3.3, 0.5), 60, "sad", arms=[0, 0])
+shot("S02a", "L02", cam(-3.3, -0.5, 1.2, 3.2, 100, 28, cz=1.2))
+shot_mom_win("S02b", "L02.2")
+
+# ===== 03 the stakes (L03): the photo, my morning check
+show("L03", "mom")
+mom_at("L03", expr="sad", arms=TABLE_HANDS)
+shot("S03a", "L03", cam(0.0, -0.1, 1.0, 1.0, 0, 34, cz=1.0), hold_=True)
+show("L03.3", "me", "mom")
+leo_at("L03.3", "me", expr="uneasy", head=[0, 24])
+mom_at("L03.3", expr="neutral", arms=TABLE_HANDS)
+shot_leo("S03b", "L03.3", w=1.7)
+
+# ===== 04, 05 Mr. Pratt (L04, L05)
+PRATT_P = (G.PRATT[0] + 0.4, 3.35, 0.3)
+show("L04", "pratt")
+place("L04", "pratt", PRATT_P, 0, "smile", arms=[0, 120])
+key("pratt", "L04+0.5", PRATT_P, yaw=0, expr="smile", arms=[0, 145], blend=0.3)
+key("pratt", "L04+1.0", PRATT_P, yaw=0, expr="smile", arms=[0, 115], blend=0.3)
+shot("S04", "L04", cam(60.4, 3.35, 0.95, 2.9, 0, 28, cz=1.9, push=(2.6, 0.95)))
+place("L05", "pratt", PRATT_P, 0, "laugh", arms=[0, 0], head=[0, 18])
+key("pratt", "L05+0.5", PRATT_P, yaw=0, expr="laugh", arms=[0, 62], head=[0, 28], blend=0.3)
+key("pratt", "L05.1", PRATT_P, yaw=0, expr="laugh", arms=[0, 0], side=[30, 30], head=[0, 0], blend=0.3)
+shot("S05", "L05", cam(60.4, 3.35, 0.9, 3.5, 0, 28, cz=2.0))
+
+# ===== 06 it rubs off (L06): the bench woman
+WOMAN_P = (0.95, 62.5, 0.0)
+show("L06", "woman")
+place("L06", "woman", WOMAN_P, 0, "smile", arms=[0, 0])
+key("woman", "L06+0.3", WOMAN_P, yaw=0, expr="smile", arms=[0, 38], blend=0.4)
+cue("L06+0.7", "print", v=1.0)
+shot("S06a", "L06", cam(0.5, 62.8, 1.0, 3.2, 8, 28, cz=1.2))
+shot("S06b", "L06.2", cam(0.95, 62.5, face_tz(1.5, 1.7), 1.7, 8, 34, cz=face_tz(1.5, 1.7)))
+place("L06.2", "woman", WOMAN_P, 0, "smile", arms=[0, 0], head=[0, 0])
+
+# ===== 07 a hug washes it out (L07): the plaid man and his daughter
+show("L07", "man1", "girl")
+for m_ in MAN:
+    cut(m_, "L07", (12.3, 62.0), **pose(90, "smile", arms=[0, 0]))
+    key(m_, "L07+0.8", (14.2, 62.4), yaw=90, expr="smile", arms=[0, 0], blend=0.5)
+    key(m_, "L07+1.0", (14.2, 62.4), yaw=90, expr="laugh", arms=[60, 60], side=[8, 8], blend=0.3)
+place("L07", "girl", (15.1, 62.4), -90, "smile", arms=[0, 0])
+key("girl", "L07+0.2", (15.1, 62.4), yaw=-90, expr="smile", arms=[78, 78], side=[28, 28], blend=0.5)
+key("girl", "L07+1.0", (15.1, 62.4), yaw=-90, expr="laugh", arms=[62, 62], side=[8, 8], blend=0.3)
+# the plaid steps down to plain over 0.6 s, a third at a time
+cut("man2", "L07+1.15", hidden=True)
+cut("man3", "L07+1.15", hidden=True)
+cut("man2", "L07+1.35", hidden=False)
+cut("man1", "L07+1.35", hidden=True)
+cut("man3", "L07+1.55", hidden=False)
+cut("man2", "L07+1.55", hidden=True)
+shot("S07", "L07", cam(14.0, 62.3, 1.0, 4.4, 0, 28, cz=1.3))
+
+# ===== 08 day 3: the first dodge (L08)
+cue("L08", "day", n=3)
+show("L08", "mom")
+mom_at("L08", expr="smile", arms=[0, 0])
+key("mom", "L08+0.45", MOM_P, yaw=-90, expr="smile", arms=[82, 82], side=[30, 30], blend=0.5)
+shot_mom("S08a", "L08", w=1.9)
+show("L08.2", "me")
+leo_at("L08.2", "me", expr="neutral", arms=[0, 0])
+key("me", "L08.2+0.3", (LX - 0.7, LY), yaw=90, expr="sheepish", arms=[0, 0], head=[0, 8], blend=0.4)
+key("me", "L08.3", (LX - 0.7, LY), yaw=90, expr="sheepish", arms=[0, 0], blend=0.2)
+shot("S08b", "L08.2", cam(LX - 0.35, LY, face_tz(1.62, 2.0), 2.0, 45, 34, cz=face_tz(1.62, 2.0)))
+
+# ===== 09 day 9: the swing (L09)
+cue("L09", "day", n=9)
+show("L09", "me")
+place("L09", "me", (-58.35, -1.9), 0, "smile", arms=[0, 0])
+shot("S09a", "L09", cam(-59.2, -1.9, 1.0, 3.3, 0, 28, cz=1.7))
+show("L09.2", "mom")
+place("L09.2", "mom", (4.0, G.DOOR_Y), -90, "smile", arms=[0, 0])
+shot("S09b", "L09.2", cam(4.0, G.DOOR_Y, face_tz(1.5, 1.9), 1.9, -95, 34, cz=face_tz(1.5, 1.9)))
+
+# ===== 10 day 16: the fingerprints (L10)
+cue("L10", "day", n=16)
+cue("L10", "prints", v=1.0)
+show("L10", "me")
+place("L10", "me", (1.15, 1.95), 20, "stunned", arms=[0, 0], head=[-35, 6])
+shot("S10a", "L10", cam(1.8, 2.3, 1.3, 2.4, 0, 28, cz=1.3))
+show("L10.3", "me", "mom")
+leo_at("L10.3", "me", expr="sheepish", head=[0, 22])
+mom_at("L10.3", expr="neutral", arms=TABLE_HANDS)
+shot("S10b", "L10.3", cam(0.1, 0.35, 1.05, 2.0, 32, 28, cz=1.05))
+
+# ===== 11 day 23: the curtains, the second dodge (L11)
+cue("L11", "day", n=23)
+cue("L11", "curtain", v=1.0)
+show("L11", "me")
+place("L11", "me", (-3.15, 0.1), 80, "smile", arms=[0, 0])
+shot("S11a", "L11", cam(-3.4, 0.2, face_tz(1.62, 2.3), 2.3, 90, 28, cz=face_tz(1.62, 2.3)))
+show("L11.2", "mom")
+mom_at("L11.2", expr="warm", arms=[0, 0])
+key("mom", "L11.2+0.35", MOM_P, yaw=-90, expr="warm", arms=[82, 82], side=[30, 30], blend=0.5)
+shot_mom("S11b", "L11.2", w=1.9)
+show("L11.3", "me")
+leo_at("L11.3", "me", expr="neutral", arms=[0, 0])
+key("me", "L11.3+0.3", (LX - 0.7, LY), yaw=90, expr="sheepish", arms=[0, 0], blend=0.4)
+shot("S11c", "L11.3", cam(LX - 0.35, LY, face_tz(1.62, 2.0), 2.0, 45, 34, cz=face_tz(1.62, 2.0)))
+
+# ===== 12 day 31: the pillowcase (L12)
+cue("L12", "day", n=31)
+RX, RY = G.ROOM
+show("L12", "me")
+place("L12", "me", (RX + 1.55, RY + 2.95), -85, "uneasy", arms=[0, 0], head=[0, 14])
+shot("S12a", "L12", cam(RX + 0.8, RY + 3.0, 1.1, 2.1, -42, 28, cz=1.25))
+key("me", "L12.3", (RX + 1.55, RY + 2.95), yaw=-85, expr="sly", arms=[0, 0], head=[0, 6], blend=0.3)
+shot("S12b", "L12.3", cam(RX + 1.55, RY + 2.95, face_tz(1.62, 1.8), 1.8, -42, 34, cz=face_tz(1.62, 1.8)))
+
+# ===== 13 day 40: three sweaters (L13)
+cue("L13", "day", n=40)
+show("L13", "sw", "mom")
+leo_at("L13", "sw", expr="uneasy", arms=TABLE_HANDS)
+mom_at("L13", expr="neutral", arms=[0, 0])
+acting["sw"].append({"from": "L13", "to": "L13>", "tremble": 2.0})
+shot_leo("S13a", "L13", w=2.0)
+shot_leo("S13b", "L13.3", w=1.6)
+
+# ===== 14 Mr. Pratt asks (L14)
+show("L14", "pratt")
+place("L14", "pratt", PRATT_P, 0, "smile", arms=[0, 0], head=[0, 0])
+key("pratt", "L14+0.5", PRATT_P, yaw=0, expr="smile", arms=[0, 100], blend=0.4)
+shot("S14a", "L14", cam(60.4, 3.35, face_tz(1.62, 2.0), 2.0, 0, 28, cz=face_tz(1.62, 2.0)))
+show("L14.2", "sw")
+place("L14.2", "sw", (60.0, -0.1), 180, "neutral", arms=[0, 0])
+shot("S14b", "L14.2", camp([60.4, 3.7, 1.7], [60.0, -0.1, 1.1], 28, pos2=[60.3, 3.2, 1.7]))
+
+# ===== 15 day 41: nothing (L15)
+cue("L15", "day", n=41)
+show("L15", "sw", "mom")
+leo_at("L15", "sw", expr="neutral", arms=[0, 0])
+mom_at("L15", expr="neutral", arms=[0, 0])
+shot_leo("S15a", "L15", w=2.0)
+show("L15.4", "mom")
+mom_at("L15.4", expr="warm", arms=[0, 0])
+shot_mom("S15b", "L15.4", w=1.7)
+
+# ===== 16 the hands (L16)
+show("L16", "sw", "mom")
+leo_at("L16", "sw", expr="uneasy", arms=[0, 0])
+mom_at("L16", expr="warm", arms=[0, 0])
+key("sw", "L16+0.2", LEO_P, yaw=90, expr="uneasy", arms=[58, 58], blend=0.5)
+key("mom", "L16+0.7", MOM_P, yaw=-90, expr="warm", arms=[26, 26], blend=0.2)
+key("mom", "L16+1.0", MOM_P, yaw=-90, expr="warm", arms=[56, 56], blend=0.66)
+shot("S16a", "L16", cam(0.0, 0.35, 1.1, 2.4, -22, 24, cz=1.2))
+
+# ===== 17 the reveal (L17)
+show("L16.3", "mom", "sw")
+mouth("mom", "L17", "L17.1", 0.35)
+shot_mom("S17a", "L16.3", w=1.7)
+show("L17.1", "meb")
+place("L17.1", "meb", LEO_P, 90, "wide", arms=[58, 58])
+key("meb", "L17.1+0.2", LEO_P, yaw=90, expr="wide", arms=[58, 58], head=[0, -4], blend=0.5)
+shot("S17b", "L17.1", camp([MX + 0.6, MY - 0.1, 1.65], [LX, LY, 1.32], 24, pos2=[MX + 0.2, MY - 0.1, 1.65]))
+
+# ===== 18 the hug washes it out (L18)
+cue("L18", "day", n=41)
+HUG_L, HUG_M = (1.0, 1.7), (1.72, 1.7)
+show("L18", "meb", "mom")
+place("L18", "meb", HUG_L, 90, "wide", arms=[0, 0])
+place("L18", "mom", HUG_M, -90, "warm", arms=[80, 80], side=[34, 34])
+key("meb", "L18+0.2", HUG_L, yaw=90, expr="smile", arms=[50, 50], side=[0, 0], blend=0.3)
+key("mom", "L18+0.25", HUG_M, yaw=-90, expr="warm", arms=[70, 70], side=[40, 40], blend=0.3)
+shot("S18a", "L18", cam(1.4, 1.7, 1.15, 2.7, 12, 28, cz=1.25))
+# the colour goes out in three steps, 0.2 s apart (0.6 s in all), and a little rubs onto her cardigan
+for new, old, dt in (("mf1", "meb", 0.0), ("mf2", "mf1", 0.2), ("sw", "mf2", 0.4)):
+    place(f"L18.1+{dt}", new, HUG_L, 90, "laugh", arms=[50, 50], side=[0, 0])
+    cut(old, f"L18.1+{dt}", hidden=True)
+    vis.discard(old)
+cue("L18.1", "rub", v=1.0)
+key("mom", "L18.1", HUG_M, yaw=-90, expr="laugh", arms=[70, 70], side=[40, 40], blend=0.0)
+shot("S18b", "L18.1", cam(1.36, 1.7, face_tz(1.6, 2.7), 2.7, 12, 28, cz=face_tz(1.6, 2.7)))
+
+# ----------------------------------------------------------------------------------------------- finish
+remap_all(cues)
+for k_ in acting.values():
+    remap_all(k_)
+shots = []
+HOLD = []
+for i, (sid, at, camera, kw) in enumerate(SH):
+    if kw.pop("hold_", False):
+        HOLD.append(sid)
+    if len(camera) == 1:       # a slow dolly in on every shot whose camera was still: motion the preview can read
+        _, p0, t0, ln = camera[0]
+        camera = camera + [[1, [round(p0[j] + 0.12 * (t0[j] - p0[j]), 3) for j in range(3)], list(t0), ln]]
+    s = {"id": sid, "cam": camera, "step": 2}
+    if i:
+        s["at"] = remap(at)
+    s.update({k: v for k, v in kw.items() if not k.startswith("_")})
+    shots.append(s)
+
+sfx = [
+    {"at": "L01.1", "kind": "whoosh", "db": -22},                        # the brush stroke on COLORS
+    {"at": "L08.3", "kind": "whoosh", "db": -22},                        # the first dodge
+    {"at": "L10.1", "kind": "thud", "db": -16},                          # the fridge door
+    {"at": "L11.3", "kind": "whoosh", "db": -22},                        # the second dodge
+    {"at": "L18.1", "kind": "riser", "db": -22, "dur": 0.9},          # the colours rinse out
+]
+music = {
+    "root": 56, "mode": "major", "bpm": 132, "seed": 156,
+    "sections": [
+        {"at": 0, "voices": ["piano", "pad"], "energy": 0.45},
+        {"at": "L08", "voices": ["piano", "pulse", "pad"], "energy": 0.5},
+        {"at": "L15", "voices": ["piano"], "energy": 0.3},
+        {"at": "L17", "voices": ["pad"], "energy": 0.2},
+        {"at": "L18", "voices": ["piano", "pad", "musicbox"], "energy": 0.6},
+    ],
+}
+sound = {
+    "floor": "wood", "steps_db": -22,
+    "ambience": [],
+    "sfx": sfx,
+    "music_drops": [{"from": "L17", "to": "L17>"}],
+    "rev": REV,
+}
+remap_all(sfx)
+remap_all(music["sections"])
+remap_all(sound["music_drops"])
+polish = {"reveal": ["L17.1"], "twist": "L17", "emph": ["L01.1", "L05.1", "L10.1", "L12.1", "L17.1", "L18.1"],
+          "quiet": [["L18", "L18>"]], "hold": HOLD + ["S17b"], "sway": ["S13a", "S13b"]}
+polish["emph"] = [remap(x) for x in polish["emph"]]
+polish["reveal"] = [remap(x) for x in polish["reveal"]]
+polish["twist"] = remap(polish["twist"])
+polish["quiet"] = [[remap(a), remap(b)] for a, b in polish["quiet"]]
+story = {
+    "slug": "ep156-old-colors",
+    "title": "Miss Your Old House And You Turn Its COLORS \U0001F3E0",
+    "made_for_kids": False,
+    "premise": ("In our town, if you miss your old house you slowly turn its colors and never see it on yourself, "
+                "so after a move a seventeen-year-old checks his mom's hands every morning and puts the old house "
+                "back for her."),
+    "twist": ("The one going sky blue with yellow stripes is me, the teen who dodges every hug, and a hug from "
+              "home is what washes it out."),
+    "world": ("Mom's sunny new kitchen across town, a back porch with the old house's sky-blue swing, the neighbor's "
+              "porch over a white fence, and a street where people turn their old houses' colors."),
+    "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
+    "key_color": "#b06ad8",
+    "gap": 0.15,
+    "tail": 0.9,
+    "fade_in": False,
+    "fade_out": False,
+    "rev": REV,
+    "look": {"style": "closer", "fog": "#e8f3ff", "fog_density": 0.0008, "fog_start": 80.0, "sky": "#8fd0ff",
+             "sky_strength": 0.7, "exposure": 0.0, "flash_safe": True, "polish": polish},
+    "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.025, 0.012, -0.015], "saturation": 1.05,
+              "contrast": 1.03, "vignette": 0.1, "bloom": 0.12, "grain": 0.008},
+    "hud": {"object": "tag", "at": [-0.42, 0.62], "size": 0.5},
+    "cast": cast,
+    "lines": lines,
+    "shots": shots,
+    "acting": acting,
+    "cues": cues,
+    "fx": [],
+    "music": music,
+    "sound": sound,
+    "set_moves": [],
+    "framing_ok": [],
+    "frames_ok": [],
+    "staging_ok": [],
+    "phonemes": {"Nell": "nˈɛl"},
+    "homophones": {"stripey": "stripy"},
+}
+OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
+print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

@@ -1,0 +1,573 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "If you miss your old house, you turn its colors, and never see it yourself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.121,
+   "onset": 0.155,
+   "end": 2.931,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.138
+    ],
+    [
+     1.207,
+     1.457
+    ],
+    [
+     1.457,
+     1.862
+    ],
+    [
+     1.888,
+     2.164
+    ],
+    [
+     2.164,
+     2.354
+    ],
+    [
+     2.354,
+     2.931
+    ]
+   ]
+  },
+  "L02": {
+   "text": "We moved across town in June, and my mom, Nell, keeps saying it isn't home yet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.431,
+   "onset": 0.155,
+   "end": 3.241,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.802
+    ],
+    [
+     0.802,
+     1.31
+    ],
+    [
+     1.379,
+     1.552
+    ],
+    [
+     1.552,
+     1.966
+    ],
+    [
+     2.0,
+     2.388
+    ],
+    [
+     2.388,
+     2.603
+    ],
+    [
+     2.603,
+     3.241
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Our old house was sky blue, with yellow stripes. So every morning, I check Mom's hands.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.845,
+   "onset": 0.155,
+   "end": 3.655,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.069
+    ],
+    [
+     1.103,
+     1.914
+    ],
+    [
+     2.009,
+     2.517
+    ],
+    [
+     2.543,
+     2.828
+    ],
+    [
+     2.828,
+     3.655
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Mister Pratt next door missed his old houseboat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     0.966
+    ],
+    [
+     0.966,
+     1.207
+    ],
+    [
+     1.207,
+     1.966
+    ]
+   ]
+  },
+  "L05": {
+   "text": "He's teal now, with a waterline.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.732,
+     1.586
+    ]
+   ]
+  },
+  "L06": {
+   "text": "It rubs off on what you touch, and you're always a little cold.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.155,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     0.759
+    ],
+    [
+     0.759,
+     1.207
+    ],
+    [
+     1.276,
+     1.698
+    ],
+    [
+     1.698,
+     2.483
+    ]
+   ]
+  },
+  "L07": {
+   "text": "A hug from home washes it out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.724
+    ],
+    [
+     0.724,
+     1.5
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Day three. Mom tried to hug me. I'm seventeen. I dodged.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     0.931
+    ],
+    [
+     0.931,
+     1.172
+    ],
+    [
+     1.199,
+     1.741
+    ],
+    [
+     1.767,
+     2.466
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Day nine. I hung our old porch swing back up for her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.888
+    ],
+    [
+     0.888,
+     1.483
+    ],
+    [
+     1.483,
+     1.759
+    ],
+    [
+     1.759,
+     2.241
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Day sixteen. Blue fingerprints on the new white fridge. Mom's hands were fine. She must wash them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 4.362,
+   "onset": 0.172,
+   "end": 4.172,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.94,
+     1.439
+    ],
+    [
+     1.439,
+     1.69
+    ],
+    [
+     1.69,
+     2.293
+    ],
+    [
+     2.405,
+     2.854
+    ],
+    [
+     2.854,
+     3.207
+    ],
+    [
+     3.241,
+     3.5
+    ],
+    [
+     3.5,
+     4.172
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Day twenty three. Our stripey curtains. She tried again. I dodged.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.681,
+     1.431
+    ],
+    [
+     1.5,
+     1.948
+    ],
+    [
+     1.974,
+     2.655
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Day thirty one. A yellow stripe on my pillowcase. She must have sat on my bed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.431,
+   "onset": 0.172,
+   "end": 3.224,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ],
+    [
+     0.974,
+     1.474
+    ],
+    [
+     1.474,
+     2.103
+    ],
+    [
+     2.138,
+     2.319
+    ],
+    [
+     2.319,
+     2.56
+    ],
+    [
+     2.56,
+     3.224
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Day forty. Three sweaters. This house is freezing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.664,
+     1.172
+    ],
+    [
+     1.207,
+     1.526
+    ],
+    [
+     1.526,
+     2.207
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Mister Pratt asks if I'm settling in. Every day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.819
+    ],
+    [
+     0.819,
+     1.026
+    ],
+    [
+     1.026,
+     1.586
+    ],
+    [
+     1.681,
+     2.397
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Day forty one. I asked Mom what she misses from the old house. She said, Nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.655,
+   "onset": 0.172,
+   "end": 3.466,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.914,
+     1.422
+    ],
+    [
+     1.422,
+     1.862
+    ],
+    [
+     1.862,
+     2.017
+    ],
+    [
+     2.017,
+     2.517
+    ],
+    [
+     2.595,
+     2.879
+    ],
+    [
+     2.914,
+     3.466
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Then she held my hands up between us, and said,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.888
+    ],
+    [
+     0.888,
+     1.328
+    ],
+    [
+     1.379,
+     1.914
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Leo. It's you who misses it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.457,
+     0.655
+    ],
+    [
+     0.655,
+     1.362
+    ]
+   ]
+  },
+  "L18": {
+   "text": "This time, I didn't dodge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.293
+    ]
+   ]
+  }
+ }
+}
