@@ -217,7 +217,7 @@ def build_car(kit, name, body_hex, cabin=True):
         b(f"bpillar{sx}", (0.12, 0.14, 0.95), (sx * (hw - 0.07), -0.55, 1.45), bevel=0.01)
         b(f"cpillar{sx}", (0.12, 0.35, 0.95), (sx * (hw - 0.07), -1.95, 1.45), bevel=0.01)
     b("roof", (G.CAR_W - 0.04, 3.2, 0.14), (0, -0.55, 2.0), bevel=0.06)
-    b("lining", (G.CAR_W - 0.3, 3.0, 0.03), (0, -0.55, 1.915), lining, bevel=0.0)
+    b("lining", (G.CAR_W - 0.3, 3.0, 0.014), (0, -0.55, 1.921), lining, bevel=0.0)   # 2 mm under the roof, clear of a tall rider
     b("rearbar", (G.CAR_W - 0.1, 0.12, 0.1), (0, -2.1, 1.1), bevel=0.02)
     b("headrail", (G.CAR_W - 0.1, 0.1, 0.08), (0, 1.0, 1.9), bevel=0.01)
     b("cowl", (G.CAR_W - 0.1, 0.12, 0.08), (0, 1.32, 1.06), dark, bevel=0.01)
@@ -243,7 +243,7 @@ def build_car(kit, name, body_hex, cabin=True):
         return P
     # ---- the cabin
     # a soft warm bounce inside, so the roof lining and the faces under it read as sunlit, never a black lid
-    kit.light(f"{name}.cabin", "POINT", (0, -0.4, 1.25), 45, "#fff0dc", size=0.9, parent=root, shadow=False)
+    kit.light(f"{name}.cabin", "POINT", (0, -0.4, 1.3), 80, "#fff0dc", size=0.9, parent=root, shadow=False)
     b("dash", (G.CAR_W - 0.22, 0.42, 0.5), (0, 1.15, 0.97), pl("#5f6e78", 0.7, spec=0.08), bevel=0.05)
     b("dashtop", (G.CAR_W - 0.24, 0.42, 0.04), (0, 1.15, 1.235), pl("#6a7a84", 0.75, spec=0.05), bevel=0.01)
     b("console", (0.4, 0.5, 0.42), (0, 0.65, 0.62), pl("#3d4a52", 0.7), bevel=0.03)
@@ -399,7 +399,6 @@ def build_home(kit):
     for sx in (-1, 1):
         kit.box(f"kwin.side{sx}", (0.1, 0.08, 1.3), (sx * 0.78, 0, 0), fr, kw)
         kit.box(f"kwin.cur{sx}", (0.26, 0.06, 1.25), (sx * 0.62, -0.06, 0.0), cur, kw)
-    kit.box("kwin.bar", (0.05, 0.06, 1.2), (0, 0, 0), fr, kw)
     kit.box("kwin.wall", (3.0, 0.06, 0.6), (0, 0.02, -0.95), pl("#ffe27a", 0.8), kw)
     kit.prop("houseplant_1", (0.45, -0.05, -0.58), scale=0.45, parent=kw)
     W["kwin"] = kw
@@ -733,7 +732,8 @@ def animate(kit, story, tl, t, ctx):
     place_car(W["car_dad"], pose)
     if ride and bpy.data.objects.get(ride) is not None:     # the rider goes where the car is (no walking, no steps)
         h = story["cast"][ride].get("height", 1.0)
-        bpy.data.objects[ride].location = G.seat(pose, "driver", h)[0]
+        sx, sy = G.SEATS["driver"]   # 0.2 m in from the door, so the camera-side arm stays inside it (S23b)
+        bpy.data.objects[ride].location = G.to_world(pose, sx + 0.2, sy, G.CUSH + 0.17 - 0.68 * h)
     place_car(W["car_mom"], car_pose("car_mom", tl, t, G.MOM_HOME))
     place_car(W["car_fenn"], G.FENN_CAR)
     place_car(W["car_boss"], car_pose("car_boss", tl, t, (G.BOSS_CAR[0], -14.0, 0, 0)))
