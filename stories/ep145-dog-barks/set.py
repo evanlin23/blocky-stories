@@ -604,12 +604,13 @@ def animate(kit, story, tl, t, ctx):
     nap = sample("napkin", tl, t, {"on": 0.0, "hand": 0.0})
     W["napkin"].hide_render = nap["on"] < 0.5 and nap["hand"] < 0.5
     tx_, ty_ = G.TABLE
-    if nap["hand"] >= 0.5:
-        hh = hand("grant", 1)
-        if hh is not None:
-            W["napkin"].location = hh + Vector((0.0, 0.0, 0.05))
+    rest_ = Vector((tx_ + 1.0, ty_ - 0.3, 0.09))
+    hh = hand("grant", 1) if nap["hand"] > 0.01 else None
+    if hh is not None:
+        hp_ = hh + Vector((0.0, 0.0, 0.05))
+        W["napkin"].location = hp_ + (rest_ - hp_) * nap["on"]      # slides from the hand to the leg, no pop
     else:
-        W["napkin"].location = (tx_ + 1.0, ty_ - 0.3, 0.09)
+        W["napkin"].location = rest_
     # ---- the ring box: on the sill (0), in Grant's right hand (1), pocketed (2)
     rg = sample("ring", tl, t, {"mode": 0.0})
     rm = int(round(rg["mode"]))
@@ -636,9 +637,10 @@ def animate(kit, story, tl, t, ctx):
     ca = W["carrot"]
     hide(ca, ct_["on"] < 0.5)
     if ct_["carry"] > 0.5:
-        mouth = W["m_head"].matrix_world @ Vector((0, -0.4, -0.1))
+        bpy.context.view_layer.update()
+        mouth = W["m_head"].matrix_world @ Vector((0, -0.3, -0.08))
         ca.location = mouth
-        ca.rotation_euler = (0, 0, yaw * D2R + math.pi / 2)
+        ca.rotation_euler = (0, 0, W["m_head"].matrix_world.to_euler().z + math.pi / 2)
     else:
         ca.location = (ct_["x"], ct_["y"], ct_["z"] + 0.07)
         ca.rotation_euler = (0, 0, ct_["yaw"] * D2R)

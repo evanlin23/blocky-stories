@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 7
+REV = 8
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -201,10 +201,10 @@ cue(0, "gate", ang=90.0)
 cue(0, "biscuit", on=1.0)
 # the camera stands on the lawn inside the fence, west of Moose, a metre and a bit from his face; the carrier's hand
 # (the biscuit) comes in at the right edge, his body is out of frame (south of the right edge)
-shot("S01a", 0, camp([-3.3, -1.55, 0.85], [-1.15, 0.1, 0.8], 30, pos2=[-3.2, -1.4, 0.85]), moose=True)
-shot("S01b", "L01.1", camp([-3.2, -1.1, 0.95], [-1.2, 0.26, 1.0], 30, pos2=[-3.1, -0.95, 0.95]), moose=True)
+shot("S01a", 0, camp([-2.0, -2.5, 0.7], [-1.22, -0.05, 0.62], 24, pos2=[-1.95, -2.3, 0.7]), moose=True)
+shot("S01b", "L01.1", camp([-2.15, -2.3, 0.75], [-1.38, -0.05, 0.64], 26, pos2=[-2.12, -2.2, 0.75]), moose=True)
 # TWICE: the badge flips to 2 and straight back to 1 (a joke-quick demo)
-shot("S02", "L02", camp([-3.2, -1.1, 0.95], [-1.2, 0.26, 1.0], 30, pos2=[-3.15, -1.0, 0.95]), moose=True)
+shot("S02", "L02", camp([-2.15, -2.3, 0.75], [-1.38, -0.05, 0.64], 26, pos2=[-2.13, -2.25, 0.75]), moose=True)
 number("L02", 2)
 number("L02.1", 1)
 
@@ -295,21 +295,21 @@ cue("L13+1.5", "rock", amp=0.0, dur=0.4)
 number("L13", 1, 0.01)
 shot("S12", "L13", cam(0.2, 3.4, 1.3, 2.2, 140, 26, cz=1.55, push=(2.0, 1.3)))
 show("L14", "me", "grant")
-moose_at("L14", 4.2, 0.6, G.yaw_to((4.2, 0.6), (1.3, 4.5)), 0)
-moose_at("L14+0.2", 1.3, 4.5, G.yaw_to((4.2, 0.6), (1.3, 4.5)), 0, 2.2)
+moose_at("L14", 4.2, 0.6, G.yaw_to((4.2, 0.6), (2.0, 3.5)), 0)
+moose_at("L14+0.2", 2.0, 3.5, G.yaw_to((4.2, 0.6), (2.0, 3.5)), 0, 1.0)   # arrives before the S14 cut, so the two barks are his face
 put("me", "L14", ME_G, YME, "neutral")
 put("grant", "L14", GR_G, YGR, "smile")
 shot("S13", "L14", camp([1.2, 6.0, 0.8], [2.9, 2.4, 0.5], 28, pos2=[1.3, 5.6, 0.8]), moose=True)
 show("L15", "me", "grant")
-moose_at("L15", 1.3, 4.5, -24.0, 0)
-shot("S14", "L15", cam(1.5, 4.0, 0.75, 1.1, 20, 36, cz=0.8, push=(0.95, 0.75)), moose=True)
+moose_at("L15", 2.0, 3.5, -24.0, 0)
+shot("S14", "L15", cam(1.75, 3.0, 0.6, 1.4, 15, 32, cz=0.68, push=(1.2, 0.6)), moose=True)
 bark("L15", "L15.1")
 number("L15.1", 2)
 show("L15b", "grant")
 GR_S = (0.3, 3.4)                     # Grant a step west of the grill's south side, so the gate shows beside his legs
 put("grant", "L15b", GR_S, G.yaw_to(GR_S, GRILL), "neutral")
 cue("L15b", "gate", ang=65.0)
-SEE_GATE = camp([2.2, 6.4, 1.5], [-0.75, 1.0, 0.9], 28, pos2=[2.0, 6.1, 1.45])
+SEE_GATE = camp([2.2, 6.4, 1.5], [-1.4, 0.8, 0.9], 28, pos2=[2.0, 6.1, 1.45])
 shot("S15", "L15b", SEE_GATE, moose=False, hold=True)
 # the drop: the badge says 2, still, the grill smoke drifting
 shot("SD", "P01", cam(0.3, 3.5, 1.55, 2.2, 170, 22, cz=1.55, push=(2.0, 1.55)), moose=False)
@@ -341,7 +341,7 @@ key("grant", "L20.1+0.4", yaw=180, arms=[70, 0], expr="neutral", blend=0.6)
 key("grant", "L20.3", yaw=180, arms=[70, 0], head=[0, 0], expr="neutral", blend=0.15)
 key("grant", "L20.3+0.3", yaw=180, arms=[8, 0], expr="neutral", blend=0.4)
 cue("L20.1", "ring", mode=1.0)
-cue("L20.3+0.62", "ring", mode=2.0)
+cue("L20.3", "ring", mode=2.0)               # pocketed on the cut into S19c: no floating box, no teleport
 # the red box, big, through the kitchen window; then the pocket from his right side
 shot("S19b", "L20", camp([3.2, 4.7, 1.4], [RGX + 0.2, 6.4, 1.25], 24, pos2=[3.0, 4.8, 1.4]))
 shot("S19c", "L20.3", camp([2.3, 7.8, 1.6], [RGX - 0.05, 6.1, 1.3], 22, pos2=[2.1, 7.7, 1.6]))
@@ -363,8 +363,7 @@ MG = (GR_G[0] + 0.7, GR_G[1] - 0.9)
 put("grant", "L22", GR_G, G.yaw_to(GR_G, MG), "smile")
 moose_at("L22", 2.6, 1.9, G.yaw_to((2.6, 1.9), (2.5, 2.2)), 0)
 cue("L22", "carrot", on=1.0, carry=1.0)
-moose_at("L23", 2.6, 1.9, G.yaw_to((2.6, 1.9), MG), 0)
-moose_at("L23+0.1", MG[0], MG[1], G.yaw_to((2.6, 1.9), MG), 0, 1.7)
+moose_at("L23", MG[0], MG[1], G.yaw_to((2.6, 1.9), MG), 0, 1.8)   # one cue: the turn eases with the walk, no snap
 cue("L23.2", "carrot", on=1.0, x=CARROT_AT[0], y=CARROT_AT[1], z=0.0, yaw=70.0, carry=0.0)
 number("L22", 2, 0.01)
 shot("S22", "L22", camp([-0.4, 2.4, 0.5], [1.75, 2.35, 0.4], 20, pos2=[-0.25, 2.4, 0.5]), moose=True)
@@ -381,7 +380,7 @@ put("grant", "L25", KN, 180, "smile", lean=0.0)
 key("grant", "L25+0.2", yaw=180, lean=0, arms=[20, 20], expr="smile", blend=0.4)
 key("grant", "L25+0.9", [KN[0], KN[1], -0.5], yaw=180, lean=50, arms=[70, 70], expr="smile", blend=0.7)
 cue("L25+0.9", "napkin", on=0.0, hand=1.0)
-cue("L25+2.2", "napkin", on=1.0, hand=0.0)
+cue("L25+2.2", "napkin", on=1.0, hand=0.0, dur=0.35)
 cue("L25+2.2", "rock", amp=1.0, dur=0.05)
 cue("L25+2.5", "rock", amp=0.0, dur=0.15)
 shot("S24", "L25", camp([7.0, 4.6, 0.5], [4.75, 5.0, 0.35], 22, pos2=[6.7, 4.6, 0.5]))
