@@ -382,7 +382,7 @@ key("grant", "L25+0.9", [5.35, 5.0, -0.3], yaw=-107, lean=16, arms=[62, 62], exp
 cue("L25", "rock", amp=1.0, dur=0.1)
 cue("L25.1+0.3", "napkin", on=1.0, hand=0.0)
 cue("L25.1+0.3", "rock", amp=0.0, dur=0.3)
-shot("S24", "L25", camp([5.0, 2.9, 0.6], [5.0, 5.1, 0.55], 18, pos2=[5.0, 3.2, 0.6]))
+shot("S24", "L25", camp([3.3, 2.3, 0.8], [4.9, 5.1, 0.45], 20, pos2=[3.8, 2.9, 0.75]))
 # 1c: the S15 framing again, and the open gate
 show("L26", "grant")
 put("grant", "L26", GR_S, G.yaw_to(GR_S, GRILL), "neutral")
