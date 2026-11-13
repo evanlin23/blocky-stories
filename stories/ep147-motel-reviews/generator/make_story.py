@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 12
+REV = 13
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -173,6 +173,9 @@ ME_FACE = (MX + 0.3, MY, 1.55)       # target for a card + face shot of me
 
 def me_c(at, expr="neutral", arms=(0, 86), yaw=0, **kw):
     place(at, "me", (MX, MY, 0.0), yaw, expr, arms=list(arms), **kw)
+    if isinstance(at, str) and "head" not in kw:   # a small head turn and nod through the shot (the card shots were still)
+        for dt, hd in ((0.4, [7, -3]), (0.85, [-5, 2])):
+            key("me", f"{at}+{dt}", [MX, MY, 0.0], yaw=yaw, expr=expr, arms=list(arms), head=hd, blend=0.4)
 
 
 # ===== 01 the rule (L01, L02)
