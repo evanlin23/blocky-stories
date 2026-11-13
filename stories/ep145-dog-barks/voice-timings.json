@@ -1,0 +1,893 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In our town, a dog barks once if a stranger means well,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.741,
+     1.086
+    ],
+    [
+     1.086,
+     1.474
+    ],
+    [
+     1.474,
+     1.879
+    ],
+    [
+     1.879,
+     2.569
+    ]
+   ]
+  },
+  "L02": {
+   "text": "and twice if he doesn't.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.31
+    ]
+   ]
+  },
+  "L03": {
+   "text": "The mail carrier gets one. Woof.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.155
+    ],
+    [
+     1.233,
+     1.707
+    ]
+   ]
+  },
+  "L03b": {
+   "text": "This is Moose. Our dog. Today he met my sister's fiance.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.138
+    ],
+    [
+     1.207,
+     1.543
+    ],
+    [
+     1.543,
+     2.586
+    ]
+   ]
+  },
+  "L04": {
+   "text": "The mail carrier also gets a biscuit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.75
+    ],
+    [
+     0.75,
+     1.147
+    ],
+    [
+     1.147,
+     1.776
+    ]
+   ]
+  },
+  "L05": {
+   "text": "A \"roof inspector\" got two. Woof. Woof.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.75,
+     1.138
+    ],
+    [
+     1.215,
+     1.931
+    ]
+   ]
+  },
+  "L06": {
+   "text": "He was gone by noon. So was Mr. Hale's gutter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.983
+    ],
+    [
+     1.061,
+     1.328
+    ],
+    [
+     1.328,
+     1.759
+    ],
+    [
+     1.759,
+     2.259
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Moose has never been wrong.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.397
+    ],
+    [
+     0.397,
+     0.759
+    ],
+    [
+     0.759,
+     1.414
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Not once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.034,
+   "onset": 0.172,
+   "end": 0.828,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Sunday, Mia brought Grant to our barbecue.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.19,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.672,
+     1.121
+    ],
+    [
+     1.121,
+     1.931
+    ]
+   ]
+  },
+  "L10": {
+   "text": "At the gate, Moose barked once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.517,
+     0.948
+    ],
+    [
+     0.948,
+     1.466
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Woof.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.707,
+   "onset": 0.19,
+   "end": 0.517,
+   "chunks": [
+    [
+     0.19,
+     0.517
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Mia did a little dance.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     1.19
+    ]
+   ]
+  },
+  "L12b": {
+   "text": "Grant shook my hand like he meant it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.87
+    ],
+    [
+     0.87,
+     1.052
+    ],
+    [
+     1.052,
+     1.569
+    ]
+   ]
+  },
+  "L13": {
+   "text": "At four-fifteen, it was just Grant and me at the grill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.155,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.155,
+     0.81
+    ],
+    [
+     0.862,
+     1.0
+    ],
+    [
+     1.0,
+     1.414
+    ],
+    [
+     1.414,
+     1.612
+    ],
+    [
+     1.612,
+     2.259
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Moose walked up and barked again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.19,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.19,
+     0.75
+    ],
+    [
+     0.75,
+     1.552
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Woof. woof.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.052,
+   "onset": 0.172,
+   "end": 0.845,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.388,
+     0.845
+    ]
+   ]
+  },
+  "L15b": {
+   "text": "twice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.845,
+   "onset": 0.172,
+   "end": 0.638,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Moose had changed his mind.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.716
+    ],
+    [
+     0.716,
+     1.362
+    ]
+   ]
+  },
+  "L17": {
+   "text": "So I watched him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     1.017
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Grant knew Moose's name before anyone said it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.0
+    ],
+    [
+     1.0,
+     1.543
+    ],
+    [
+     1.543,
+     2.052
+    ]
+   ]
+  },
+  "L19": {
+   "text": "When Mia went in for ketchup,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.155,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.397,
+     0.603
+    ],
+    [
+     0.603,
+     1.19
+    ]
+   ]
+  },
+  "L20": {
+   "text": "he slipped Grandma's old ring box off the windowsill and into his pocket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.293,
+   "onset": 0.155,
+   "end": 3.103,
+   "chunks": [
+    [
+     0.155,
+     0.845
+    ],
+    [
+     0.845,
+     1.466
+    ],
+    [
+     1.466,
+     2.164
+    ],
+    [
+     2.164,
+     2.423
+    ],
+    [
+     2.423,
+     3.103
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Then he asked me what Mia's ring size is.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.586
+    ],
+    [
+     0.586,
+     1.077
+    ],
+    [
+     1.077,
+     1.776
+    ]
+   ]
+  },
+  "L21b": {
+   "text": "Why would he need that?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     1.121
+    ]
+   ]
+  },
+  "L22": {
+   "text": "But.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.603,
+   "onset": 0.172,
+   "end": 0.431,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Moose dropped his squeaky carrot at Grant's feet. Squeak.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.19,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     1.094
+    ],
+    [
+     1.094,
+     1.707
+    ],
+    [
+     1.784,
+     2.328
+    ]
+   ]
+  },
+  "L24": {
+   "text": "He only shares that with family.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.854
+    ],
+    [
+     0.854,
+     1.569
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Grant quietly fixed our wobbly table with a folded napkin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.172,
+     0.905
+    ],
+    [
+     0.905,
+     1.586
+    ],
+    [
+     1.586,
+     1.75
+    ],
+    [
+     1.75,
+     2.672
+    ]
+   ]
+  },
+  "L25b": {
+   "text": "Nobody else ever noticed it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.19,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     1.483
+    ]
+   ]
+  },
+  "L26": {
+   "text": "And when Moose barked twice,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     1.276
+    ]
+   ]
+  },
+  "L27": {
+   "text": "his eyes were past Grant,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.345
+    ]
+   ]
+  },
+  "L28": {
+   "text": "on the gate. It was open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     1.259
+    ]
+   ]
+  },
+  "L28b": {
+   "text": "And Mr. Hale's gutter guy was never caught.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.724,
+     1.19
+    ],
+    [
+     1.19,
+     2.069
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Once at the gate. Twice at the grill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.724
+    ],
+    [
+     0.802,
+     1.094
+    ],
+    [
+     1.094,
+     1.672
+    ]
+   ]
+  },
+  "L30": {
+   "text": "The wedding's in June.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.224
+    ]
+   ]
+  },
+  "L30b": {
+   "text": "Mia's never been happier.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.414
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Which bark do I trust?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.155
+    ]
+   ]
+  }
+ }
+}
