@@ -204,7 +204,7 @@ key("friend", "L06.3+0.9", arms=[0, 0], side=[0, 0], blend=0.4)
 # --------------------------------------------------------------------------------------------- 03 Mom's kitchen of clocks (L07 to L10)
 key("mom", "L07", expr="smile", head=[0, 0])
 shot("S07a", "L07", momcam(1.55, 6, dx=0.2, push=(1.35, 1.3)))
-shot("S07b", "L07.1", P2((0.0, -0.6, 2.55), (-2.4, 3.7, 2.55), 30, pos2=(0.0, -0.6, 2.55), tgt2=(2.4, 3.7, 2.55)))
+shot("S07b", "L07.1", P2((3.2, 3.2, 1.95), (2.2, 3.7, 1.95), 24, pos2=(3.2, 3.2, 1.95), tgt2=(-1.4, 3.7, 1.95)))
 key("me", "L08", expr="neutral", head=[0, -4], arms=[0, 12], side=[38, 0], blend=0.35)
 shot("S08", "L08", P2((0.6, -0.8, 1.2), (0.2, 3.3, 1.2), 24, pos2=(0.5, -0.5, 1.2), tgt2=(0.2, 3.3, 1.2)))
 key("me", "L09", expr="sheepish", head=[0, 6], arms=[12, 12], side=[0, 0], blend=0.35)
@@ -313,7 +313,7 @@ polish = {"overlap": True, "turn_cap": 220, "punch_max": 4, "sharpen": 0.4, "blo
           "reveal": [remap("L24"), remap("L25.3")], "twist": remap("L24"),
           "emph": [remap(x) for x in ["L01.5", "L12", "L16.1", "L21.2", "L23.3", "L25.3"]],
           "quiet": [[remap("L25"), remap("L25.2")]],
-          "hold": ["S01a", "S08", "S14a", "S21a", "S25"], "music_duck_db": 8.0, "ones": "all"}
+          "hold": ["S01a", "S08", "S14a", "S21a", "S25"], "music_duck_db": 11.0, "ones": "all"}
 story = {
     "slug": "ep152-future-late",
     "title": "Everyone's Future Call Came By BREAKFAST 🕛",
@@ -347,9 +347,9 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "frames_ok": ["S16a"],
+    "frames_ok": ["S11", "S16a", "S16b"],
     "staging_ok": [],
-    "framing_ok": ["S14b", "S25", "S25b"],
+    "framing_ok": ["S07b", "S14b", "S25", "S25b"],
     "clip_ok": [],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
