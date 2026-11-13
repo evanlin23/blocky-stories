@@ -1,12 +1,11 @@
 {
-  "title": "Future Me Called Two Minutes Before MIDNIGHT 🕛",
-  "description": "On your thirtieth birthday, your phone rings once, and it's you, calling from later. Everybody else's call came by breakfast.\n\nBy 11:57 that night, mine still hadn't. My mom and I sat at her kitchen table, under fourteen clocks, and waited.\n\nIt's made up. A blocky story, built with code and Blender.",
-  "pin": "Was future me late or early? Check Mom's clocks before you answer.",
+  "title": "Everyone's Future Call Came By BREAKFAST 🕛",
+  "description": "I turned thirty today. Everybody else's call from later came by breakfast.\n\nBy 11:57 that night, mine still hadn't. My mom and I sat at her kitchen table, under fourteen clocks, and waited.\n\nIt's made up. A blocky story, built with code and Blender.",
+  "pin": "Future me was in Mom's kitchen, and her clocks were still ten minutes fast. Who's keeping them fast by then, Mom or me?",
   "made_for_kids": false,
-  "cover_s": 30.5,
+  "cover_s": 37.0,
   "shape": "wrong-clock",
   "opening": "confess",
   "lane": "warm",
-  "series": "future-call",
-  "hold": "batch 15: scripts only, not built yet"
+  "series": "future-call"
 }
