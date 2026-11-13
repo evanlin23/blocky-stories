@@ -2,7 +2,7 @@ Verdict: revise
 
 **Hits:** 1 no (count first, rule at 3.8 s), 2 yes 0 s, 3 yes 7 s, 4 yes 6.9 s, 5 yes 10 s, 6 yes 40 s, 7 yes, 8 no (no face to 3.8 s), 9 yes 1.26 s.
 
-**Scores:** hook 5 (count, no rule, no face), back-row 7, narrator 9, appeal 9, relationships 7, clarity 7, big idea 7 ("still be HERE" contradicts me missing; fix 1), eerie grip 6 Okafor 7, twist 7, lore 5 (tally unseen), warm 6, shots 7, faces 6, sound 6, captions 8, satisfaction 7, first 8, s 7, ending 7, pin 8. Reset: 54, s, meter on, loop, title ok, not sad. No filler. Reveal L33, at 46.5, to 49.2, s on 3, plants.
+**Scores:** hook 5 (count, no rule, no face), back-row 7, narrator 9, appeal 9, relationships 7, clarity 7, big idea 7 ("still be HERE" contradicts me missing, see fix 1), eerie grip 6, Okafor 7, twist 7, lore 5 (tally unseen), warm 6, shots 7, faces 6, sound 6, captions 8, satisfaction 7, first 8 s 7, ending 7, pin 8. Reset: 54 s, meter on, loop, title ok, not sad. No filler. Reveal L33 at 46.5 to 49.2 s, on 3 plants.
 
 **Panel:** creepy fan stays: "so he's immortal now??" Regular stays: "PICKLES". Scroller may swipe at 0:02 (numbers, no face). Top: "bro got drafted". Slips: "still be HERE" yet missing; "hold it STILL" on a tripod.
 
