@@ -168,6 +168,13 @@ class Tag:
             else:
                 battery(P, -0.02, 0.0, 0.6, 0.31, "bolt")
             self.groups[state] = objs
+        # The engine's HUD (blocky/hud.py) measures the tag's box once, at a process's first frame, to pick its corner
+        # per shot. The approved cut was drawn with the box this frame-0 measure gave (stale matrices of the glyphs
+        # hidden in the viewport): a never-drawn stand-in pins exactly that box, so every shard start sees it too.
+        hb = kit.box("tag.hudbox", (0.5061777 - 0.25, 1.8155242 - 0.125, 0.004),
+                     (-(0.5061777 + 0.25) / 2, -(1.8155242 + 0.125) / 2, 0.0), cream, self.root)
+        hb.hide_render = True
+        hb.visible_shadow = False
         self.show("low")
 
     @staticmethod
@@ -177,10 +184,12 @@ class Tag:
         return ob
 
     def show(self, state):
+        # hide_render only: an object hidden in the viewport drops out of the depsgraph and keeps a stale matrix_world,
+        # so the engine's HUD box (hud._local_box, measured at a process's first frame) would depend on where that
+        # process started.
         for s, objs in self.groups.items():
             for o in objs:
                 o.hide_render = (s != state)
-                o.hide_viewport = (s != state)
 
 
 # ------------------------------------------------------------------------------------------- the marina
@@ -439,8 +448,10 @@ def _place(ph, who, st, tl_t, shot, camp):
             if u >= uu:
                 cur = ss_
         state = cur
-    if state is None:
+    if state is None:   # parked out of sight, with its whole pose set (a shard start must see what a run sees)
         ph.root.location = (0, -40, -5)
+        ph.root.rotation_euler = (0, 0, 0)
+        ph.root.scale = (1, 1, 1)
         ph.show(None)
         return
     if mode == "held":
