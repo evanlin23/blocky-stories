@@ -422,7 +422,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S08a", "S08b", "S09a", "S15a", "S15b", "S21a", "S21b", "S22a", "S22b"],
+    "framing_ok": ["S08a", "S08b", "S09a", "S15a", "S15b", "S21a", "S21b", "S22a", "S22b", "S17b"],
     "staging_ok": ["S22a/leo", "S21b/leo", "S21a/leo"],
     "clip_ok": ["fleck"],
     "frames_ok": ["S05", "S21b"],
