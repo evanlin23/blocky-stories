@@ -6,38 +6,38 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In our town, your car drives itself to where you'd rather be, and everyone sees.",
+   "text": "In our town, you can't hide where you'd rather be. Your car drives itself there.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.552,
+   "dur": 3.362,
    "onset": 0.172,
-   "end": 3.362,
+   "end": 3.172,
    "chunks": [
     [
      0.172,
-     0.621
+     0.552
     ],
     [
-     0.655,
-     0.948
+     0.578,
+     1.008
     ],
     [
-     0.948,
-     1.448
+     1.008,
+     1.19
     ],
     [
-     1.448,
-     1.724
+     1.19,
+     1.741
     ],
     [
-     1.724,
-     2.259
+     1.845,
+     2.44
     ],
     [
-     2.345,
-     3.362
+     2.44,
+     3.172
     ]
    ]
   },
