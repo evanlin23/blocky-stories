@@ -6,6 +6,5 @@
   "cover_s": 49.0,
   "shape": "kind-wish",
   "opening": "must",
-  "lane": "warm",
-  "hold": "batch 15: scripts only, not built yet"
+  "lane": "warm"
 }
