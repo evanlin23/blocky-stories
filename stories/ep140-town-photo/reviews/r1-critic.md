@@ -13,11 +13,11 @@ Verdict: revise
 2. L22: "His hands shake too much / to squeeze the BULB."
 
 ## Must-fix, picture and sound
-3. S01a/S01b (0 to 3.8 s): no face. Frame Mom's proof print and my `uneasy` face under the board, as scripted.
-4. S19a (28.1 to 29.0 s): the photos are tiny on a bare wall, and a clipped-white ceiling panel sits beside the tile. Push in until the three photos fill the frame, below the lights.
-5. S26b (40.1 to 40.5 s): a cropped white-curl head sits at the bottom as a white blob, and the empty seat isn't shown. Reframe to Mom plus the empty seat.
-6. S33 (49.3 to 50.7 s): the pat reads as a dark stripe. Go tighter, with his hand on my shoulder and faces at least 1/4 of the width.
-7. S36 (52.1 to 54.1 s): my face is about 1/10 of the width. Make it a close on my face.
-8. P1 drop (43.2 to 43.8 s): dead silent (under −45 dB). Add the paper slide and the room bed.
+3. S01a/S01b (0 to 3.8 s): no face. Add Mom's proof and my `uneasy` face under the board.
+4. S19a (28.1 to 29.0 s): photos tiny on a bare wall, a clipped-white ceiling panel by the tile. Push in so the three photos fill the frame.
+5. S26b (40.1 to 40.5 s): a cropped white head reads as a blob at the bottom, and the empty seat is missing. Reframe on Mom and the seat.
+6. S33 (49.3 to 50.7 s): the pat reads as a dark stripe. Go tighter: hand on shoulder, faces at least 1/4 of the width.
+7. S36 (52.1 to 54.1 s): my face is about 1/10 of the width. Make it a close.
+8. P1 drop (43.2 to 43.8 s): dead silent. Add the paper slide and the room bed.
 
 Should-fix: brighten the greyer Okafor set (S11, S12, S22 to S25, S33, S34).
