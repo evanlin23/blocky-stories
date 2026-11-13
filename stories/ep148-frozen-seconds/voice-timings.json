@@ -1,0 +1,677 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Everyone here can freeze the world for one second a day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.069
+    ],
+    [
+     1.069,
+     1.397
+    ],
+    [
+     1.397,
+     1.87
+    ],
+    [
+     1.87,
+     2.379
+    ]
+   ]
+  },
+  "L02": {
+   "text": "I've saved mine for four years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.724,
+     1.517
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Because today, my best friend Leo moves away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.647,
+     0.931
+    ],
+    [
+     0.931,
+     1.301
+    ],
+    [
+     1.301,
+     2.052
+    ]
+   ]
+  },
+  "L05": {
+   "text": "My uncle catches a falling cake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.836
+    ],
+    [
+     0.836,
+     1.603
+    ]
+   ]
+  },
+  "L06": {
+   "text": "The lady next door ducks the same pigeon every morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.836
+    ],
+    [
+     0.836,
+     1.147
+    ],
+    [
+     1.147,
+     1.655
+    ],
+    [
+     1.655,
+     2.397
+    ]
+   ]
+  },
+  "L07": {
+   "text": "I've got one thousand four hundred sixty-one seconds. That's twenty-four minutes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.328,
+   "onset": 0.155,
+   "end": 3.138,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     1.983
+    ],
+    [
+     2.052,
+     3.138
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Leo leaves at noon, for the other side of the country.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.19,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     1.069
+    ],
+    [
+     1.138,
+     1.293
+    ],
+    [
+     1.293,
+     1.681
+    ],
+    [
+     1.681,
+     2.379
+    ]
+   ]
+  },
+  "L09": {
+   "text": "I'm bad at goodbyes. Leo's worse.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.897
+    ],
+    [
+     0.948,
+     1.672
+    ]
+   ]
+  },
+  "L11": {
+   "text": "And his sneakers squeak on everything. Squeak.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     0.836
+    ],
+    [
+     0.836,
+     1.397
+    ],
+    [
+     1.474,
+     2.017
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Leo asked, Noon, right? At the fountain? Twice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.862
+    ],
+    [
+     0.905,
+     1.328
+    ],
+    [
+     1.362,
+     1.914
+    ]
+   ]
+  },
+  "L15": {
+   "text": "My plan was to freeze the world, and slip a goodbye note into his pocket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.293,
+   "onset": 0.172,
+   "end": 3.103,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     0.948
+    ],
+    [
+     0.948,
+     1.448
+    ],
+    [
+     1.517,
+     1.845
+    ],
+    [
+     1.845,
+     2.284
+    ],
+    [
+     2.284,
+     3.103
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Eleven fifty-nine. We sat on the fountain. He put down his pretzel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ],
+    [
+     1.086,
+     1.422
+    ],
+    [
+     1.422,
+     1.793
+    ],
+    [
+     1.819,
+     2.164
+    ],
+    [
+     2.164,
+     2.879
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Noon. I froze it. Click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.19,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.19,
+     0.345
+    ],
+    [
+     0.37,
+     0.776
+    ],
+    [
+     0.828,
+     1.276
+    ]
+   ]
+  },
+  "L18": {
+   "text": "The fountain stopped at the very top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     0.768
+    ],
+    [
+     0.768,
+     0.879
+    ],
+    [
+     0.879,
+     1.534
+    ]
+   ]
+  },
+  "L20": {
+   "text": "And Leo sat there, still.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.724
+    ],
+    [
+     0.759,
+     1.241
+    ]
+   ]
+  },
+  "L21": {
+   "text": "I turned to slip the note in his pocket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.698
+    ],
+    [
+     0.698,
+     0.922
+    ],
+    [
+     0.922,
+     1.621
+    ]
+   ]
+  },
+  "L22": {
+   "text": "His seat was empty. Squeak.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.759
+    ],
+    [
+     0.819,
+     1.345
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Nothing moves in a frozen world.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.19,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.19,
+     0.698
+    ],
+    [
+     0.698,
+     0.802
+    ],
+    [
+     0.802,
+     1.655
+    ]
+   ]
+  },
+  "L24": {
+   "text": "But somebody had taken a bite of his pretzel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     0.854
+    ],
+    [
+     0.854,
+     1.077
+    ],
+    [
+     1.077,
+     1.845
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Squeak.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.793,
+   "onset": 0.172,
+   "end": 0.586,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ]
+   ]
+  },
+  "L26": {
+   "text": "It was Leo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.155,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.155,
+     0.897
+    ]
+   ]
+  },
+  "L27": {
+   "text": "He'd saved four years too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.328
+    ]
+   ]
+  },
+  "L28": {
+   "text": "For the same second.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     1.121
+    ]
+   ]
+  },
+  "L29": {
+   "text": "To leave me a goodbye.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.259
+    ]
+   ]
+  },
+  "L32": {
+   "text": "So we spent the twenty-four minutes together.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.207
+    ],
+    [
+     1.207,
+     1.776
+    ]
+   ]
+  },
+  "L37": {
+   "text": "Now we're both saving again. Four years from now, noon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.19,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.19,
+     0.595
+    ],
+    [
+     0.595,
+     1.19
+    ],
+    [
+     1.267,
+     1.638
+    ],
+    [
+     1.638,
+     1.897
+    ],
+    [
+     1.931,
+     2.448
+    ]
+   ]
+  }
+ }
+}

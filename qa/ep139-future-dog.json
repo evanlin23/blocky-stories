@@ -1,0 +1,31 @@
+{
+ "stage": "final",
+ "film": "13993384171",
+ "run": "43323253661",
+ "sha": "df59ccec13bf894618f9abba99ea5fb9f5ada8e1",
+ "verdict": "pass",
+ "date": "2026-11-12",
+ "checked": [
+  "artifact 13993384171 (given, not downloaded), story unchanged since proof sha",
+  "every frame scanned for black, flat, clipped-white",
+  "flagged white runs looked at",
+  "frames every 2 s",
+  "first 3 s every 6th frame",
+  "phone canvas",
+  "cover 2.7 s at full size",
+  "gate stretch 33-41 s",
+  "staging.py (yaw)",
+  "frames.py --film",
+  "loudness and true peak",
+  "HF windows",
+  "tail",
+  "craft vs proof",
+  "flash",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "**ep139-future-dog**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 13.8 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 15.0 | 14.0– | ok |\n| macro.motion_energy_q | 7.13 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 8.32 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.102 | –0.25 | ok |\n| spec.shot_p90_s | 1.98 | –2.5 | ok |\n| macro.longest_still_s | 0.37 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.53 | –1.0 | ok |\n| macro.motion_energy_mean | 3.22 | 1.5– | ok |\n| spec.camera_move_share | 0.994 | 0.65– | ok |\n| spec.punch_per_10s | 0.72 | 0.4– | ok |\n| macro.brightness_mean | 0.67 | 0.35– | ok |\n| macro.brightness_first_3s | 0.651 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.373 | 0.42– | **warn** |\n| macro.contrast_mean | 0.231 | 0.18– | ok |\n| spec.face_big_share | 0.706 | 0.4– | ok |\n| spec.caption_share | 0.98 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.0 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.763 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.25 | –0.25 | ok |\n| micro.idle_window_share | 0.032 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 62.0 | –120 | ok |\n| spec.sound_events_per_10s | 3.15 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 12.5 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0427 | –0.08 | ok |\n| sound.hf_jump_max | 0.017 | –0.04 | ok |\n\n0 block, 0 near, 2 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Final film-ep139-future-dog 13993384171 (run 43323253661, main df59ccec), 1080x1920, 69.73 s, 2091 frames; story files unchanged since proof sha 634c00b9 (git diff empty).\nSecond one (same as proof): the narrator lit in a warm close-up on his patio, blinking, call tag \"1\" top-left from frame 1, camera pushing in; \"On your thirtieth, it's YOU on the phone, from LATER. Mine only asked for my DOG.\" by 2.5 s. Opening cost, true; last upload ep137 is must; ep139 not yet in queue.txt.\nEvery frame scanned at 135x240: 0 near-black areas (max 0.6%), 0 flat frames (max 13% flat blocks), no freeze, no unexplained jumps. Clipped-white over 5% in 19 runs (6.9-9.9 Sam's garage door, 46-48.5 moving van, 65-67.6 sky and van; max 18.7%): looked at each, all are white set pieces lit bright that read as what they are, none broken.\nstaging.py (yaw included) 0 findings; frames.py on the film 0 findings (blank, pop, dark). Looked at the gate stretch 33-41 s at full size: Noodle's nose touches the gate, nothing through it; 45.4 s low close of me on the leash, foot in foreground reads. Cover 2.7 s at 1080 crisp, no halo or texture fault.\nAudio -14.1 LUFS, true peak -1.8 dBTP, LRA 1.2, HF max 0.043, jump 0.017, voice 12.5 dB over bed, no silence; last line ends ~69.0 s, then a fade to -34 dB at 69.4 s, nothing cut off.\nFlash house bar passes (general 1/s, 3f 3/s, red 0, extended 0 s). Package matches, no spoiler, no husband, made_for_kids false; gate OPEN (2 short-caption warns).\ncraft: 0 block, 0 near, 2 warn: spec.cuts_per_10s 8.32 (5.5-8.0), macro.saturation_mean 0.373 (0.42-). Matches the proof within a little (picture changes 13.8 vs 13.7, motion q 7.13 vs 7.16, longest still 0.37 vs 0.07 s, under the 1.5 s bar).\nShould-fix later, carried from the proof (not a fail): Noodle sits stiff and upright on the chair (S01b 2.0-3.4 s, S16).",
+ "fixes": []
+}
