@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 8
+REV = 11
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -328,7 +328,9 @@ cue("L25", "mode", m="dream")
 show("L25", "me", "dad")
 place("L25", "me", (HX + 0.7, 3.0, 0.0), 0, "warm", arms=[0, 0])
 place("L25", "dad", (G.DAD_X, G.DAD_Y, SEAT_Z), 0, "sleep", arms=[0, 0], blink=False)
-shot("S25", "L25", camp([HX - 0.7, -1.3, 1.3], [HX - 0.7, 2.6, 1.6], 15, pos2=[HX - 0.7, -1.3, 1.62], tgt2=[HX - 0.7, 2.6, 1.72]))
+# the reveal: the wide (Dad, the gold-edged door between us, me), then a slow push in to Dad's smile on "DAD"
+shot("S25", "L25", [[0, [HX - 0.72, -1.3, 1.3], [HX - 0.72, 2.6, 1.6], 15], [0.3, [HX - 0.78, -1.05, 1.33], [HX - 0.8, 2.4, 1.56], 15.5],
+                    [1, [HX - 1.3, 0.25, 1.45], [HX - 1.6, 1.85, 1.38], 17]])
 # my small smile toward Dad as the line lands
 key("me", "L25.2", (HX + 0.7, 3.0, 0.0), yaw=0, expr="warm", head=[-14, 6], blend=0.6)
 
