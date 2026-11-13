@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 10
+REV = 11
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -184,7 +184,7 @@ shot("S01a", 0, cam(*ME_FACE, 2.2, 0, 30, cz=1.55))
 shot("S01b", "L01.2", cam(MX + 0.15, MY, 1.7, 2.4, 8, 30, cz=1.7))
 # S02: the drawer of cards, pulled open
 show("L02")
-cue("L02", "drawer", v=1.0, dur=0.1)
+cue("L02", "drawer", v=1.0, dur=0.4)
 cue("L02", "card", mode="none", who="me", kind="ours")
 shot("S02", "L02", cam(G.DESK[0], 1.75, 0.9, 1.0, -8, 36, cz=2.4))
 
@@ -375,7 +375,7 @@ remap_all(sound["music_drops"])
 polish = {"overlap": True, "turn_cap": 220, "punch_max": 4, "sharpen": 0.4, "bloom_thresh": 0.85,
           "reveal": [remap("L08"), remap("L22.2")], "twist": remap("L28"),
           "emph": [remap(x) for x in ("L01.2", "L08", "L17.3", "L29")],
-          "hold": ["S05", "S10a", "S24b"]}
+          "hold": ["S05", "S10a", "S24b"], "sway": True, "sway_amp": 0.008}
 story = {
     "slug": "ep147-motel-reviews",
     "title": "Room Six Came With a Man in the CLOSET \U0001F6CE️",

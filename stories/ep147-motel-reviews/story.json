@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 10,
+ "rev": 11,
  "look": {
   "style": "v3",
   "fog": "#e8f3ff",
@@ -46,7 +46,9 @@
     "S05",
     "S10a",
     "S24b"
-   ]
+   ],
+   "sway": true,
+   "sway_amp": 0.008
   }
  },
  "grade": {
@@ -3550,7 +3552,7 @@
    "at": "L02",
    "name": "drawer",
    "v": 1.0,
-   "dur": 0.1
+   "dur": 0.4
   },
   {
    "at": "L02",
@@ -3823,7 +3825,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 10
+  "rev": 11
  },
  "set_moves": [
   "S02",
