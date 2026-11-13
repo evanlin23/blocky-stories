@@ -99,7 +99,12 @@ def draw_crowd(seed, gap=None, ring=False, okafor=False, hand_gap=False, tint=No
         d.ellipse([x - 20, my + 4, x + 6, my + 32], fill=rgb("#f1c9a0"))
     if ring and ring_xy:
         x, y = ring_xy
-        d.ellipse([x - 44, y - 76, x + 44, y + 70], outline=GREEN, width=11)
+        ov = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        od = ImageDraw.Draw(ov)
+        od.ellipse([x - 40, y - 74, x + 40, y + 68], fill=(126, 217, 87, 90))
+        im = Image.alpha_composite(im.convert("RGBA"), ov).convert("RGB")
+        d = ImageDraw.Draw(im)
+        d.ellipse([x - 48, y - 82, x + 48, y + 76], outline=GREEN, width=18)
     if grass:
         d.rectangle([0, H - 70, W, H], fill=rgb("#5bd16a"))
     im = im.filter(ImageFilter.GaussianBlur(0.6))
@@ -154,10 +159,10 @@ def chalk(state):
     d = ImageDraw.Draw(im)
     f = ImageFont.truetype(FONT, 270)
     cw = (244, 241, 230)
-    clock = state in ("a900", "a859", "b859")
-    nx = 60 if clock else 150
+    clock = state in ("a900", "a859", "b859", "b900")
+    nx = 60 if clock else 80
     top = "212"
-    bot = "212" if state == "b859" else "211"
+    bot = "212" if state in ("b859", "b900") else "211"
     d.text((nx, 20), top, font=f, fill=cw)
     d.line([nx, 350, nx + 540, 350], fill=cw, width=10)
     if state == "smudge":
@@ -170,7 +175,7 @@ def chalk(state):
     if clock:
         cx, cy, r = 780, 210, 120
         d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=cw, width=12)
-        if state == "a900":
+        if state in ("a900", "b900"):
             d.line([cx, cy, cx, cy - 78], fill=cw, width=12)           # minute hand up
             d.line([cx, cy, cx - 70, cy], fill=cw, width=14)           # hour hand to 9
             small = "9:00"
@@ -179,7 +184,7 @@ def chalk(state):
             d.line([cx, cy, cx - 58, cy - 4], fill=cw, width=14)
             small = "8:59"
         d.ellipse([cx - 10, cy - 10, cx + 10, cy + 10], fill=cw)
-        d.text((cx - 130, 380), small, font=ImageFont.truetype(FONT, 130), fill=cw)
+        d.text((cx, 380), small, font=ImageFont.truetype(FONT, 100), fill=cw, anchor="ma")
     return im.filter(ImageFilter.GaussianBlur(0.7))
 
 

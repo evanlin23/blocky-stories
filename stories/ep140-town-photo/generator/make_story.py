@@ -140,6 +140,7 @@ def sit(who, at, spot, expr="neutral", rise=0.28, **kw):
 put("me", 0, ME_S, 0, "worried")
 put("mom", 0, MOM_S, 0, "worried")
 put("grandma", 0, GM_S, 0, "neutral")
+gone("grandma", "L02")      # cheated out of the stands for the close shots on Mom and me (she sits in front of Mom)
 # Mom holds the proof print from L02 to L08
 HOLD = [[0, 0], [0, 0]]
 
@@ -154,16 +155,16 @@ S("L01.3", "S01b", C((BOARDX, 1.0, 1.15), 1.4, az=0, el=1, lens=40, w2=1.2, tgt2
   note="S01b tilt down to 211, push on ELEVEN")
 # S02: Mom holds the proof up in front of her; me beside, soft behind it
 raw("mom", "L02", arms=[62, 62], side=[-22, -22], blend=0.3, expr="worried")
-cue("L02", "pr_proof", on=True, pos=[MOM_S[0], 4.25, 1.95], rot=[0, 0], s=1.55)
-S("L02", "S02a", C((-0.42, 4.5, 2.0), 1.5, az=0, el=18, lens=70, w2=1.4), note="S02a the proof in Mom's hands, the green-ringed gap; my face soft behind")
-S("L02.2", "S02b", C((-0.62, 4.4, 2.1), 1.1, az=0, el=18, lens=70, w2=0.9), note="S02b punch in on the gap on HERE")
-S("L03", "S03", C((-0.18, 4.8, 2.2), 1.15, az=0, el=18, lens=70, w2=1.0), note="S03 my face, scared, the print's edge low left")
+cue("L02", "pr_proof", on=True, pos=[-0.62, 4.1, 1.6], rot=[0, 0], s=1.55)
+S("L02", "S02a", C((-0.42, 4.5, 1.6), 1.45, az=0, el=8, lens=70, w2=1.35), clear=True, note="S02a the proof in Mom's hands, the green-ringed gap; my face soft behind")
+S("L02.2", "S02b", C((-0.7, 4.4, 1.7), 1.3, az=0, el=8, lens=70, w2=1.15), clear=True, note="S02b punch in on the gap on HERE")
+S("L03", "S03", C((-0.12, 4.8, 2.22), 1.2, az=0, el=18, lens=70, w2=1.05), clear=True, note="S03 my face, scared, the print's edge low left")
 raw("me", "L03", expr="scared", blend=0.2)
 raw("me", "L03+1.6", expr="worried", blend=0.2)
 
 # ================================================================================================ L04, L05 the example
-cue("L04", "pr_last", on=True, pos=[BOARDX + 0.42, 0.82, 1.23], rot=[0, -9], s=1.2)
-S("L04", "S04", C((BOARDX + 0.3, 0.9, 1.25), 1.05, az=-8, el=3, w2=0.95), note="S04 last year's print on the board's ledge, a gap in row two, ringed")
+cue("L04", "pr_last", on=True, pos=[BOARDX + 0.6, 0.82, 1.35], rot=[0, -9], s=1.5)
+S("L04", "S04", C((BOARDX + 0.3, 0.9, 1.5), 1.9, az=-3, el=3, w2=1.75), note="S04 last year's print on the board's ledge, a gap in row two, ringed")
 put("benny", "L05", [BEACHX, 0.2, 0.0], 0, "laugh", arms=[40, 40])
 cue("L05", "pr_last", on=False)
 S("L05", "S05", C((BEACHX, 0.0, 1.35), 1.9, az=0, el=3, w2=1.75), note="S05 Uncle Benny at his kite stall, laughing, a big plain diamond kite at chest height")
@@ -174,49 +175,51 @@ raw("mom", "L08", arms=[62, 62], side=[-22, -22], expr="worried", blend=0.0)
 raw("mom", "L08+0.8", arms=[62, 62], side=[-22, -22], head=[0, 14], blend=0.4)
 raw("mom", "L08+1.6", arms=[62, 62], side=[-22, -22], head=[0, 0], blend=0.4)
 raw("me", "L08", expr="worried", blend=0.2)
-S("L08", "S08", C((-0.4, 4.6, 2.05), 2.0, az=0, el=3, w2=1.8), note="S08 two-shot: Mom (worried) counts the proof, me beside her (uneasy)")
+S("L08", "S08", C((-0.5, 4.6, 1.7), 1.6, az=0, el=6, lens=60, w2=1.45), clear=True, note="S08 two-shot: Mom (worried) counts the proof, me beside her (uneasy)")
 cue("L09", "pr_proof", on=False)
-raw("mom", "L09", arms=[0, 35], side=[0, 0], head=[0, 0], blend=0.4, expr="worried")
-raw("me", "L09", arms=[35, 0], side=[0, 0], blend=0.4, expr="worried")
-S("L09", "S09a", C((-0.4, 4.7, 1.9), 1.4, az=0, el=18, lens=70, w2=1.25), note="S09a Mom's hand closing round mine on the bench, her face above")
-S("L09.2", "S09b", C((-0.78, 4.8, 2.2), 1.05, az=0, el=18, lens=70, w2=0.95), note="S09b Mom's face, worried")
+raw("mom", "L09", arms=[0, 72], side=[0, 16], head=[0, 0], blend=0.4, expr="worried")
+raw("me", "L09", arms=[72, 0], side=[16, 0], blend=0.4, expr="worried")
+S("L09", "S09a", C((-0.4, 4.6, 1.9), 1.6, az=0, el=14, lens=70, w2=1.4), clear=True, note="S09a Mom's hand closing round mine on the bench, her face above")
+S("L09.2", "S09b", C((-0.42, 4.7, 2.0), 1.7, az=0, el=14, lens=70, w2=1.55), clear=True, note="S09b Mom's face, worried")
 
 # ================================================================================================ L10 to L13 Saturday, pickles
 cue("L10", "board", g="a900")
-S("L10", "S10", C((BOARDX + 0.1, 1.0, 1.5), 1.75, az=0, el=2, w2=1.6), note="S10 the board with a chalk clock at 9:00")
+S("L10", "S10", C((BOARDX + 0.1, 1.0, 1.05), 1.75, az=0, el=2, w2=1.6), note="S10 the board with a chalk clock at 9:00")
 put("okafor", "L11", OK_C, 180, "neutral")
 cue("L11", "board", g="a")
-S("L11", "S11", C((-0.5, -5.5, 1.5), 1.45, az=-150, el=3, w2=1.3), note="S11 Mr. Okafor at the box camera, very straight")
+S("L11", "S11", C((-0.5, -5.5, 1.5), 1.45, az=-150, el=3, w2=1.3), back=True, note="S11 Mr. Okafor at the box camera, very straight")
 raw("okafor", "L12.2", expr="laugh", arms=[0, 170], blend=0.35)
 talk("okafor", "L12.2", "L12>", 0.8)
 raw("okafor", "L12", head=[-10, 0], blend=0.3)
-S("L12", "S12", C((-0.5, -5.5, 1.55), 1.15, az=-165, el=3, w2=1.0), note="S12 cap raised, mouth wide on PICKLES")
+S("L12", "S12", C((-0.5, -5.5, 1.55), 1.15, az=-165, el=3, w2=1.0), back=True, note="S12 cap raised, mouth wide on PICKLES")
 gone("okafor", "L13")
+put("grandma", "L13", GM_S, 0, "laugh", arms=[165, 165])
+gone("grandma", "L13.2")
 cue("L13", "cheer", on=True)
-raw("me", "L13", expr="laugh", arms=[165, 165], blend=0.4)
+raw("me", "L13", expr="laugh", arms=[165, 165], side=[0, 28], blend=0.4)
 raw("mom", "L13", expr="laugh", arms=[165, 165], side=[0, 0], blend=0.4)
-S("L13", "S13a", X((0.1, -12.5, 3.2), (0.0, 5.0, 2.3), 26, (0.1, -11.8, 3.2), (0.0, 5.0, 2.3), 26),
+S("L13", "S13a", X((2.3, -9.5, 1.3), (-0.5, 5.0, 2.6), 70, (2.1, -9.0, 1.3), (-0.5, 5.0, 2.6), 70),
   note="S13a wide of the bleachers from the camera: everyone laughing, arms up")
-S("L13.2", "S13b", C((-0.4, 4.8, 2.25), 1.8, az=0, el=18, lens=70, w2=1.55), note="S13b punch in on Mom and me laughing")
+S("L13.2", "S13b", C((-0.4, 4.8, 2.25), 1.8, az=0, el=18, lens=70, w2=1.55), clear=True, note="S13b punch in on Mom and me laughing")
 
 # ================================================================================================ L16, L17 the test shot
 cue("L16", "cheer", on=False)
-sit("me", "L16", ME_S, "worried", rise=0.32, arms=[40, 0])
-raw("mom", "L16", expr="worried", arms=[0, 40], blend=0.3)
-S("L16", "S16", C((-0.4, 4.8, 2.05), 1.7, az=0, el=18, lens=70, w2=1.5), note="S16 I sit beside Mom, our hands joined between us")
+sit("me", "L16", ME_S, "worried", rise=0.32, arms=[60, 0], side=[18, 0])
+raw("mom", "L16", expr="worried", arms=[0, 60], side=[0, 18], blend=0.3)
+S("L16", "S16", C((-0.4, 4.6, 1.95), 1.7, az=0, el=8, lens=70, w2=1.5), clear=True, note="S16 I sit beside Mom, our hands joined between us")
 cue("L17", "pr_test", on=True, pos=[-0.62, 4.22, 1.9], rot=[0, 0], s=1.35)
 raw("mom", "L17", arms=[62, 62], side=[-22, -22], expr="worried", blend=0.35)
-S("L17", "S17a", C((-0.62, 4.5, 2.0), 1.5, az=0, el=18, lens=70, w2=1.35), note="S17a the new print: Mom's hand holds nothing; Mom's face above it")
+S("L17", "S17a", C((-0.62, 4.5, 2.0), 1.5, az=0, el=18, lens=70, w2=1.35), clear=True, note="S17a the new print: Mom's hand holds nothing; Mom's face above it")
 raw("mom", "L17.2", expr="wide", blend=0.2)
 cue("L17.2", "pr_test", on=False)
-S("L17.2", "S17b", C((-0.8, 4.8, 2.2), 1.05, az=0, el=18, lens=70, w2=0.95), note="S17b Mom's face, stunned")
+S("L17.2", "S17b", C((-0.8, 4.8, 2.2), 1.05, az=0, el=18, lens=70, w2=0.95), clear=True, note="S17b Mom's face, stunned")
 
 # ================================================================================================ L18 to L20 the hallway
 gone("me", "L18")
 gone("mom", "L18")
 put("me", "L18", [HALLX - 2.8, 0.9, 0.0], 90, "neutral")
 raw("me", "L18+2.4", pos=[HALLX + 0.7, 0.9, 0.0], blend=0.3)
-S("L18", "S18", X((HALLX - 2.5, -2.6, 1.55), (HALLX - 2.5, 1.0, 1.55), 28, (HALLX + 1.0, -2.6, 1.55), (HALLX + 1.0, 1.0, 1.55), 28),
+S("L18", "S18", X((HALLX + 4.8, -2.0, 1.35), (HALLX - 1.2, 0.9, 1.95), 28, (HALLX + 4.4, -2.0, 1.35), (HALLX + 0.2, 0.9, 1.95), 28),
   note="S18 the hallway of framed photos; I walk past, side tracking")
 S("L19", "S19a", X((HALLX + 0.6, -2.5, 1.6), (HALLX + 0.6, 2.9, 1.75), 16, (HALLX + 0.6, -2.3, 1.6), (HALLX + 0.6, 2.9, 1.75), 16),
   note="S19a three framed photos side by side, nobody at a camera")
@@ -229,77 +232,79 @@ S("L20", "S20", C((HALLX + 0.1, 2.2, 1.65), 1.7, az=-6, el=2, lens=24, w2=1.4), 
 # ================================================================================================ L21 to L23 8:59, his hands
 gone("me", "L21")
 cue("L21", "board", g="a859")
-S("L21", "S21", C((-3.3, 2.0, 1.75), 3.9, az=-8, el=2, lens=36, w2=3.5), note="S21 the board's clock at 8:59; the full bleachers behind")
+S("L21", "S21", C((-3.9, 2.0, 1.5), 3.6, az=-8, el=2, lens=36, w2=3.3), note="S21 the board's clock at 8:59; the full bleachers behind")
 OK_H = [-0.5, -5.5, 0.0]
 put("okafor", "L22", OK_H, 180, "worried", arms=[58, 58], side=[-26, -26])
-cue("L22", "bulb", on=True, pos=[-0.5, -4.95, 0.98], shake=0.012)
+cue("L22", "bulb", on=True, pos=[-0.5, -4.95, 1.2], shake=0.012, big=2.2)
 for i, dt in enumerate((0.3, 0.55, 0.8, 1.05, 1.3, 1.55, 1.8)):
     raw("okafor", f"L22+{dt}", arms=[58 + (3 if i % 2 else -3), 58 - (3 if i % 2 else -3)], side=[-26, -26], blend=0.2, tremble=1.2)
-S("L22", "S22a", C((-0.5, -4.95, 1.3), 1.25, az=-140, el=4, w2=1.1), note="S22a his hands on the shutter bulb, shaking")
+S("L22", "S22a", C((-0.5, -4.95, 1.3), 1.25, az=-140, el=4, w2=1.1), back=True, note="S22a his hands on the shutter bulb, shaking")
 raw("okafor", "L22.2", head=[0, 0], blend=0.2)
-S("L22.2", "S22b", C((-0.5, -5.5, 1.5), 1.1, az=-160, el=3, w2=1.0), note="S22b his face, worried")
+S("L22.2", "S22b", C((-0.5, -5.5, 1.5), 1.1, az=-160, el=3, w2=1.0), back=True, note="S22b his face, worried")
 raw("okafor", "L23", head=[-34, 0], expr="neutral", arms=[58, 58], side=[-26, -26], blend=0.5)
-S("L23", "S23a", C((-0.5, -5.5, 1.5), 1.1, az=-165, el=3, w2=1.0), note="S23a Mr. Okafor turns to look straight at me")
-cue("L23.2", "bulb", on=True, pos=[-0.5, -4.95, 1.15], to=[-1.3, -3.2, 1.2], dur=0.6, big=2.4)
+S("L23", "S23a", C((-0.5, -5.3, 1.35), 1.15, az=-165, el=3, w2=1.05), fill=1.6, back=True, note="S23a Mr. Okafor turns to look straight at me")
+cue("L23.2", "bulb", on=True, pos=[-0.5, -4.95, 1.3], to=[-0.9, -4.3, 1.2], dur=0.6, big=2.4)
 raw("okafor", "L23.2", arms=[75, 95], side=[-26, -50], blend=0.4)
-S("L23.2", "S23b", C((-0.5, -5.0, 1.3), 0.95, az=-165, el=3, w2=0.9), note="S23b his hand holds the shutter bulb out to the camera")
+S("L23.2", "S23b", C((-0.65, -4.9, 1.35), 1.1, az=-165, el=3, w2=1.0), fill=1.6, back=True, note="S23b his hand holds the shutter bulb out to the camera")
 
 # ================================================================================================ L24 to L26 the swap, the count
 cue("L24", "bulb", on=False)
 gone("me", "L24")
 gone("okafor", "L24")
 sit("okafor", "L24", OK_S, "smile", rise=0.4)
+put("grandma", "L24", GM_S, 0, "smile")
 cue("L24", "cheer", on=False)
 S("L24", "S24", C((-0.4, 3.0, 1.5), 1.75, az=0, el=2, w2=1.55), note="S24 Mr. Okafor sits in the front row beside Grandma, smiling")
 put("me", "L25", ME_C, 180, "neutral", arms=[0, 0], head=[0, 0])
-S("L25", "S25", C((-0.3, -5.4, 1.5), 1.5, az=-150, el=3, w2=1.35), note="S25 me behind the camera, my eye at the viewfinder")
+S("L25", "S25", C((-0.3, -5.4, 1.5), 1.5, az=-150, el=3, w2=1.35), back=True, note="S25 me behind the camera, my eye at the viewfinder")
 cue("L26", "vf", on=True)
-S("L26", "S26a", X((0.1, -3.9, 1.6), (0.1, 5.2, 2.1), 22, (0.1, -3.6, 1.6), (0.1, 5.2, 2.1), 22), fill=0.2,
+S("L26", "S26a", X((0.1, -3.9, 1.6), (-0.3, 4.6, 1.5), 40, (0.1, -3.6, 1.6), (-0.3, 4.6, 1.5), 40), fill=0.2,
   note="S26a through the viewfinder: a thin frame line over the bleachers, every face filled")
 cue("L26.2", "vf", on=False)
 raw("mom", "L26.2", expr="smile", arms=[0, 0], side=[0, 0], blend=0.4)
 raw("grandma", "L26.2", expr="smile", blend=0.4)
-S("L26.2", "S26b", C((-0.4, 4.8, 2.2), 1.7, az=0, el=18, lens=70, w2=1.5), note="S26b Mom smiling, the empty seat beside her")
+S("L26.2", "S26b", C((-0.4, 4.8, 2.2), 1.7, az=0, el=18, lens=70, w2=1.5), clear=True, note="S26b Mom smiling, the empty seat beside her")
 cue("L26.2+0.45", "board", g="smudge")
-cue("L26.2+0.8", "board", g="b859")
-cue("L26.2+0.8", "tag", g="b")
-S("L26.2+0.45", "S26c", C((BOARDX + 0.1, 1.0, 1.5), 1.75, az=0, el=2, w2=1.6), note="S26c the 211 is wiped and 212 written")
+cue("L26.2+0.66", "board", g="b859")
+cue("L26.2+0.66", "tag", g="b")
+S("L26.2+0.45", "S26c", C((BOARDX + 0.1, 1.0, 1.05), 1.75, az=0, el=2, w2=1.6), note="S26c the 211 is wiped and 212 written")
 
 # ================================================================================================ L28, L29 pickles, click
 raw("me", "L28", expr="wide", blend=0.2, head=[0, 4])
 talk("me", "L28.2", "L28>", 0.8)
 raw("me", "L28.2", expr="laugh", blend=0.2)
-S("L28", "S28a", C((-0.5, -5.5, 1.55), 1.0, az=-150, el=3, w2=0.9), note="S28a my face at the camera, stunned, then PICKLES")
+S("L28", "S28a", C((-0.5, -5.5, 1.55), 1.0, az=-150, el=3, w2=0.9), back=True, note="S28a my face at the camera, stunned, then PICKLES")
 cue("L28.2", "cheer", on=True)
 S("L28.2", "S28b", X((0.1, -12.5, 3.2), (0.0, 4.8, 2.3), 26, (0.1, -11.8, 3.2), (0.0, 4.8, 2.3), 26), note="S28b the bleachers, everyone laughing, arms up")
 raw("me", "L29", expr="smile", arms=[60, 60], side=[-24, -24], head=[0, 0], blend=0.3)
-cue("L29", "bulb", on=True, pos=[-0.5, -4.9, 0.98], squeeze=0.3, big=2.0)
-S("L29", "S29", C((-0.5, -4.95, 1.0), 0.8, az=-140, el=4, w2=0.7), note="S29 my hand squeezes the shutter bulb: Click.")
+cue("L29", "bulb", on=True, pos=[-0.5, -4.9, 1.1], squeeze=0.3, big=2.6)
+S("L29", "S29", C((-0.5, -4.95, 1.3), 0.95, az=-140, el=4, w2=0.85), back=True, note="S29 my hand squeezes the shutter bulb: Click.")
 
 # ================================================================================================ the drop, L31 to L35
 cue("P1", "bulb", on=False)
-cue("P1", "pr_final", on=True, pos=[-0.24, -5.1, 1.3], to=[-0.5, -4.85, 1.25], dur=0.55, rot=[180, 0], s=1.5)
-S("P1", "S30", C((-0.4, -4.95, 1.3), 1.0, az=-150, el=4, w2=0.9), note="the drop: the print slides out of the camera's slot into my hands")
-cue("L31", "pr_final", on=True, pos=[-0.5, -4.85, 1.25], rot=[180, 0], s=1.5)
+cue("P1", "pr_final", on=True, pos=[-0.24, -5.1, 1.45], to=[-0.5, -4.85, 1.5], dur=0.55, rot=[180, 0], s=1.5)
+S("P1", "S30", C((-0.4, -4.95, 1.2), 1.0, az=-150, el=4, w2=0.9), back=True, note="the drop: the print slides out of the camera's slot into my hands")
+cue("L31", "pr_final", on=True, pos=[-0.5, -4.85, 1.5], rot=[180, 0], s=1.5)
 cue("L31", "cheer", on=False)
-S("L31", "S31a", C((-0.5, -4.85, 1.35), 1.0, az=-150, el=4, w2=0.9), note="S31a the print: Mr. Okafor in the front row, smiling")
-S("L32", "S31b", C((-0.5, -4.85, 1.15), 0.55, az=-150, el=3, w2=0.45), note="S31b punch in on his face in the print")
+S("L31", "S31a", C((-0.5, -4.85, 1.2), 1.0, az=-150, el=4, w2=0.9), back=True, note="S31a the print: Mr. Okafor in the front row, smiling")
+S("L32", "S31b", C((-0.5, -4.85, 1.31), 0.42, az=-150, el=3, w2=0.34), back=True, note="S31b punch in on his face in the print")
 cue("L33", "pr_final", on=False)
 S("L33", "S32", C((-1.0, 3.0, 1.45), 1.3, az=0, el=2, w2=1.15), note="S32 Grandma, stunned, then smiling")
 raw("grandma", "L33", expr="wide", blend=0.3)
 raw("grandma", "L33.3", expr="smile", blend=0.4)
-put("okafor", "L34", [-1.4, -5.5, 0.0], 180, "smile", side=[0, 0])
+put("okafor", "L34", [-1.1, -5.5, 0.0], 180, "smile", side=[0, 0])
 raw("okafor", "L34+0.9", side=[70, 0], blend=0.5)
 put("me", "L34", ME_C, 180, "smile")
-S("L34", "S33", C((-0.95, -5.5, 1.5), 2.2, az=-160, el=3, w2=1.9), note="S33 Mr. Okafor beside me at the camera, one step in to pat my shoulder")
+S("L34", "S33", C((-0.8, -5.5, 1.45), 1.6, az=-160, el=3, w2=1.4), fill=1.6, back=True, note="S33 Mr. Okafor beside me at the camera, one step in to pat my shoulder")
 raw("okafor", "L35", expr="smile", blend=0.3)
 talk("okafor", "L35", "L35>", 0.5)
-S("L35", "S34", C((-1.4, -5.5, 1.5), 1.1, az=-170, el=3, w2=1.0), note="S34 his face, smiling, eyes on me")
+S("L35", "S34", C((-1.1, -5.5, 1.5), 1.1, az=-170, el=3, w2=1.0), back=True, note="S34 his face, smiling, eyes on me")
 
 # ================================================================================================ L37 the loop
 gone("okafor", "L37")
-put("me", "L37", [BOARDX + 1.15, 0.0, 0.0], 0, "worried")
-S("L37", "S36", C((BOARDX + 0.75, 0.0, 1.5), 1.9, az=15, el=3, w2=1.7), note="S36 my face, uneasy, the 212 / 212 board behind my shoulder")
+put("me", "L37", [BOARDX + 1.2, 0.0, 0.0], 0, "worried")
+cue("L37", "board", g="b900")
+S("L37", "S36", C((BOARDX + 0.85, 0.0, 1.5), 3.0, az=10, el=3, w2=2.7), note="S36 my face, uneasy, the 212 / 212 board behind my shoulder")
 
 # ---------------------------------------------------------------------------------------------------- story
 look = {"fog": "#d8ecff", "fog_density": 0.002, "fog_start": 30.0, "sky": "#a8d8ff", "exposure": 0.0,
@@ -337,8 +342,10 @@ story = {
     "set_moves": [],
     "frames_ok": [],
     "framing_ok": ["S31b"],
-    "framing_props": {"photo": [-4.6, 1.0, 1.5], "twelve": [-4.6, 1.0, 1.5]},
-    "staging_ok": [],
+    "framing_props": {"photo": [-4.6, 1.0, 1.5], "twelve": [-4.6, 1.0, 1.5], "eight": [-4.6, 1.0, 1.5], "fifty": [-4.6, 1.0, 1.5],
+                      "nine": [-4.6, 1.0, 1.5], "it": [-0.5, -4.85, 1.4]},
+    "staging_ok": ["S33/me+okafor close on purpose: he steps in and pats my shoulder, no overlap",
+                   "S34/me+okafor close on purpose: his face over my shoulder after the pat, no overlap"],
     "music": {"root": 41, "mode": "major", "bpm": 104, "seed": 140,
               "sections": [
                   {"at": 0, "voices": ["pulse", "pluck_hi"], "energy": 0.45},
@@ -371,6 +378,6 @@ if vf.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(key(e)))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 1
+story["rev"] = 2
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")

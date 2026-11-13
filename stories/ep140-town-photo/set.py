@@ -139,15 +139,19 @@ SHIRT = ["#ff6f61", "#ffd23f", "#2bb3a3", "#4a7fd0", "#f4f4f0", "#9a63c8", "#e28
 
 
 def build_stands(kit):
-    seat = P("#f4f0e2", 0.55, 0.25)
-    riser = P("#d9d4c2", 0.6, 0.2)
+    seat = P("#cfc8b0", 0.7, 0.08)
+    riser = P("#b3bec6", 0.7, 0.1)
     for r in range(5):
         top = 0.45 * (r + 1)
         y0 = 3.0 + 0.9 * r - 0.45
         y1 = 3.0 + 4 * 0.9 + 0.7
         B(None, (8.4, y1 - y0, top), (0, (y0 + y1) / 2, top / 2), riser, "tier", 0.0)
         B(None, (8.4, 0.9, 0.05), (0, 3.0 + 0.9 * r, top + 0.012), seat, "bench", 0.01)
-        B(None, (8.4, 0.03, 0.4), (0, y0 - 0.01, top - 0.2), P("#a9c7d8", 0.6, 0.2), "riserband", 0.0)
+        B(None, (8.4, 0.03, 0.4), (0, y0 - 0.01, top - 0.2), P("#7f9fb3", 0.7, 0.1), "riserband", 0.0)
+        for zz in (top - 0.14, top - 0.30):
+            B(None, (8.4, 0.02, 0.025), (0, y0 - 0.012, zz), P("#7d8f9c", 0.7, 0.1), "plank", 0.0)
+        for vx in range(-3, 4):
+            B(None, (0.07, 0.04, top), (vx * 1.2, y0 - 0.02, top / 2), P("#8d98a3", 0.7, 0.1), "post", 0.0)
     # side rails
     for sx in (-4.2, 4.2):
         B(None, (0.08, 4.4, 1.0), (sx, 5.9, 1.6), P("#e0ddd0", 0.6, 0.2), "rail", 0.01)
@@ -194,7 +198,7 @@ def build_crowd(kit):
 def build_town(kit):
     grass = kit.texture("grass", 0.6, tint="#a9e08a")
     B(None, (500, 400, 0.4), (0, 40, -0.2), grass, "lawn", 0.0)
-    B(None, (9.5, 5.4, 0.04), (0, -1.6, 0.0), P("#d9d3c4", 0.9, 0.05), "pave", 0.0)
+    B(None, (9.5, 2.6, 0.04), (0, 0.7, 0.0), P("#8f8a7a", 0.9, 0.03), "pave", 0.0)
     # the town hall
     brick = kit.texture("brick", 1.0, tint="#e6a08a")
     cream = P("#f6ecd0", 0.55, 0.25)
@@ -263,7 +267,7 @@ def build_board(kit):
     B(root, (0.09, 0.09, 1.7), (0, 0.4, 0.85), dark, "efront", 0.01, rot=(math.radians(8), 0, 0))
     B(root, (1.65, 0.2, 0.05), (0, -0.1, 0.9), wood, "ledge", 0.012)
     chalks = {}
-    for st in ("a", "a900", "a859", "smudge", "b859"):
+    for st in ("a", "a900", "a859", "smudge", "b859", "b900"):
         m = img_mat(kit, f"chalk {st}", prints.chalk(st), 0.9, emit=0.08)
         ob = img_plane(kit, nm("chalk"), bw - 0.06, (bw - 0.06) * 700 / 960, (0, -0.052, zc), m, root)
         hide(ob, True)
@@ -274,6 +278,7 @@ def build_board(kit):
 def build_camera_box(kit):
     """The photographer's box camera on its tripod, lens toward +y."""
     wood, brass, black = P("#a9763c", 0.55, 0.2), P("#e0b84a", 0.3, 0.8), P("#1e1b1f", 0.5, 0.2)
+    redb = P("#e0402e", 0.45, 0.3)
     cx, cy = 0.1, -5.0
     root = E(None, (cx, cy, 0), "boxcam")
     B(root, (0.46, 0.5, 0.42), (0, 0, 1.52), wood, "cbody", 0.03)
@@ -283,6 +288,9 @@ def build_camera_box(kit):
     kit.cyl(nm("lens"), 0.1, 0.16, (0, 0.82, 1.52), brass, root, rot=(math.pi / 2, 0, 0), n=20)
     kit.cyl(nm("lensglass"), 0.075, 0.03, (0, 0.91, 1.52), kit.glass("#5a7a9a"), root, rot=(math.pi / 2, 0, 0), n=20)
     B(root, (0.48, 0.52, 0.04), (0, 0, 1.74), brass, "chood", 0.01)
+    cloth = P("#2a2a36", 0.9, 0.05)       # the black focusing cloth draped over the back
+    B(root, (0.52, 0.3, 0.46), (0, -0.2, 1.74), cloth, "cloth1", 0.06)
+    B(root, (0.5, 0.1, 0.5), (0, -0.4, 1.56), cloth, "cloth2", 0.05)
     B(root, (0.02, 0.3, 0.12), (-0.235, 0, 1.4), P("#1e1b1f"), "slot", 0.0)   # the print slot on the back
     collar = E(root, (0, 0, 0), "legs")
     for i, a in enumerate((0, 120, 240)):
@@ -306,8 +314,8 @@ def build_camera_box(kit):
     ar0 = math.radians(90)
     tx, ty = 0.55 * math.cos(ar0) * 0.38, 0.55 * math.sin(ar0) * 0.38
     bulb = E(None, (0, 0, 0), "bulb")
-    kit.sphere(nm("bulbball"), 0.055, (0, 0, 0), black, bulb, seg=14)
-    kit.cyl(nm("bulbneck"), 0.016, 0.07, (0, 0, 0.06), black, bulb, n=10)
+    kit.sphere(nm("bulbball"), 0.055, (0, 0, 0), redb, bulb, seg=14)
+    kit.cyl(nm("bulbneck"), 0.02, 0.07, (0, 0, 0.06), brass, bulb, n=10)
     hide(bulb, True)
     return {"root": root, "bulb": bulb}
 
@@ -335,12 +343,12 @@ def build_prints(kit):
 def build_hall(kit):
     X = HALLX
     wood = P("#d8b07a", 0.6, 0.15)
-    creamw = P("#f6ecd6", 0.8, 0.1)
+    creamw = P("#e6d6b4", 0.85, 0.05)
     B(None, (18, 6.4, 0.2), (X, 0, -0.08), wood, "hfloor", 0.0)
-    B(None, (18, 6.4, 0.2), (X, 0, 3.5), kit.emit("#f0e6cc", 0.45), "hceil", 0.0)
+    B(None, (18, 6.4, 0.2), (X, 0, 3.5), kit.emit("#e8dcc0", 0.3), "hceil", 0.0)
     B(None, (0.3, 6.4, 3.4), (X - 9.1, 0, 1.7), creamw, "hend1", 0.0)
     B(None, (0.3, 6.4, 3.4), (X + 9.1, 0, 1.7), creamw, "hend2", 0.0)
-    B(None, (18, 0.3, 3.4), (X, 3.15, 1.7), P("#f1e2c0", 0.8, 0.1), "hwallN", 0.0)
+    B(None, (18, 0.3, 3.4), (X, 3.15, 1.7), P("#dcc8a0", 0.85, 0.05), "hwallN", 0.0)
     B(None, (18, 0.3, 3.4), (X, -3.15, 1.7), creamw, "hwallS", 0.0)
     B(None, (18, 0.05, 0.12), (X, 2.98, 0.07), P("#8b5d33", 0.6, 0.1), "skirt", 0.0)
     # windows along the south wall: bright sky panes in white frames
@@ -428,6 +436,10 @@ def build(kit, story, tl):
     pos = (math.sin(azr) * math.cos(elr), -math.cos(azr) * math.cos(elr), math.sin(elr))
     from mathutils import Vector as V
     sun.rotation_euler = (-V(pos)).to_track_quat("-Z", "Y").to_euler()
+    sun2 = kit.light("sun2", "SUN", (0, 0, 50), 2.4, "#fff1d8", size=0.1)
+    sun2.data.angle = 0.1
+    p2 = (math.sin(math.radians(-20)) * math.cos(math.radians(35)), math.cos(math.radians(20)) * math.cos(math.radians(35)), math.sin(math.radians(35)))
+    sun2.rotation_euler = (-V(p2)).to_track_quat("-Z", "Y").to_euler()
     ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 60, "#fff0dc", size=0.6, shadow=False)
     build_stands(kit)
     ctx["crowd"] = build_crowd(kit)
@@ -450,11 +462,10 @@ def build(kit, story, tl):
     ctx["tag"] = tag
     vf = kit.empty("vf", (0, 0, 0), cam)
     cream = kit.emit("#fff8e0", 1.0, "vfcream")
-    ang = cam.data.angle_x if cam.data.angle_x else 0.6
-    d = 0.3
-    hw = d * math.tan(ang / 2) * 0.86
-    hh = hw * 16 / 9 * 0.86
-    th = 0.0035
+    d = 0.3                                   # the frame sits 0.3 m ahead; S26a is the one shot that shows it (lens 40)
+    hh = d * 12.0 / 40.0 * 0.84               # half height of the visible frame at depth d is d * 12 / lens (24 mm sensor)
+    hw = hh * 9 / 16
+    th = 0.0042
     for nme, size, loc in (("t", (2 * hw, th, 0.002), (0, hh, -d)), ("b", (2 * hw, th, 0.002), (0, -hh, -d)),
                            ("l", (th, 2 * hh, 0.002), (-hw, 0, -d)), ("r", (th, 2 * hh, 0.002), (hw, 0, -d))):
         ob = kit.box(f"vf.{nme}", size, loc, cream, vf)
@@ -499,7 +510,7 @@ def animate(kit, story, tl, t, ctx):
     ctx["fill"].location = (cl[0], cl[1], cl[2])
     hall = cl[0] > HALLX - 12 and cl[0] < HALLX + 12
     ov = {"sun": 0.0 if hall else 1.0, "camfill": sd.get("fill", 1.0) * (0.45 if hall else 1.0),
-          "hall1": 1.0 if hall else 0.0, "hall2": 1.0 if hall else 0.0}
+          "sun2": 1.0 if (sd.get("back") and not hall) else 0.0, "hall1": 1.0 if hall else 0.0, "hall2": 1.0 if hall else 0.0}
     cd = kit.OBJ["cam"].data
     dof = sd.get("dof")
     if dof:
@@ -508,6 +519,10 @@ def animate(kit, story, tl, t, ctx):
         cd.dof.aperture_fstop = dof[1]
     else:
         cd.dof.use_dof = False
+    # a shot that looks at row two from the front: the front rows' heads are cheated out of the way
+    clr = bool(sd.get("clear"))
+    for p_ in ctx["crowd"]:
+        hide(p_["root"], bool(clr and p_["row"] <= 1 and abs(p_["x"]) < 1.7))
     # the board
     g = cue_at(tl, "board", t).get("g", "a")
     for k, ob in ctx["board"]["chalks"].items():
