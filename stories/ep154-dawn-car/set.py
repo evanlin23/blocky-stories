@@ -185,7 +185,7 @@ def build_car(kit, name, body_hex, cabin=True):
     tyre = pl("#22242a", 0.85, spec=0.05)
     hub = pl("#b9bec6", 0.4, spec=0.3)
     cream = pl("#efe2c4", 0.75, spec=0.05)
-    lining = pl("#e8dcc0", 0.85, spec=0.03)
+    lining = kit.emit("#efe2c4", 0.55, f"{name}.lining")   # a cream lid that reads sunlit from inside, never olive
     root = kit.empty(name, (0, -600, 0))
     P = {"root": root}
 
@@ -244,7 +244,13 @@ def build_car(kit, name, body_hex, cabin=True):
     # ---- the cabin
     # a soft warm bounce inside, so the roof lining and the faces under it read as sunlit, never a black lid
     kit.light(f"{name}.cabin", "POINT", (0, -0.4, 1.3), 80, "#fff0dc", size=0.9, parent=root, shadow=False)
-    b("dash", (G.CAR_W - 0.22, 0.42, 0.5), (0, 1.15, 0.97), pl("#5f6e78", 0.7, spec=0.08), bevel=0.05)
+    # a soft warm fill on the dash face, so the dial and the heater slider read (S08b)
+    kit.light(f"{name}.dashfill", "POINT", (-0.2, 0.45, 1.45), 30, "#fff0dc", size=0.6, parent=root, shadow=False)
+    # a gold pool on the empty driver's seat: only in S24a (animate)
+    sg = kit.light(f"{name}.seatglow", "SPOT", (-0.72, 0.9, 1.85), 420, "#ffc870", size=0.4, parent=root,
+                   shadow=False, spot=60)
+    sg.rotation_euler = Vector((0.0, -0.95, -1.2)).to_track_quat("-Z", "Y").to_euler()
+    b("dash", (G.CAR_W - 0.22, 0.42, 0.5), (0, 1.15, 0.97), pl("#7d8c96", 0.7, spec=0.08), bevel=0.05)
     b("dashtop", (G.CAR_W - 0.24, 0.42, 0.04), (0, 1.15, 1.235), pl("#6a7a84", 0.75, spec=0.05), bevel=0.01)
     b("console", (0.4, 0.5, 0.42), (0, 0.65, 0.62), pl("#3d4a52", 0.7), bevel=0.03)
     # the dial in front of the driver: a cream face, a red needle
@@ -252,10 +258,11 @@ def build_car(kit, name, body_hex, cabin=True):
     kit.cyl(f"{name}.dial", 0.12, 0.03, (dx_, 0.935, 1.08), cream, root, rot=(math.pi / 2, 0, 0), n=24)
     b("needle", (0.02, 0.012, 0.1), (dx_ + 0.02, 0.918, 1.1), pl("#d8322f", 0.5), rot=(0, 0.6, 0), bevel=0.0)
     # the heater slider: a dark slot, a blue-to-red strip beside it, a knob that moves along it
-    b("slot", (0.06, 0.012, 0.36), (0, 0.935, 1.02), pl("#15171a", 0.8), bevel=0.0)
-    b("strip.c", (0.05, 0.012, 0.17), (0.07, 0.935, 0.935), pl("#3a6ad8", 0.5), bevel=0.0)
-    b("strip.h", (0.05, 0.012, 0.17), (0.07, 0.935, 1.105), pl("#e8402a", 0.5), bevel=0.0)
-    P["knob"] = b("knob", (0.14, 0.05, 0.07), (0, 0.915, 0.88), pl("#f2f2ea", 0.5), bevel=0.015)
+    hx_ = -0.28     # the slider sits beside the dial, so one look takes in both
+    b("slot", (0.07, 0.012, 0.36), (hx_, 0.932, 1.02), pl("#15171a", 0.8), bevel=0.0)
+    b("strip.c", (0.09, 0.012, 0.17), (hx_ + 0.1, 0.932, 0.935), pl("#3a6ad8", 0.5), bevel=0.0)
+    b("strip.h", (0.09, 0.012, 0.17), (hx_ + 0.1, 0.932, 1.105), pl("#e8402a", 0.5), bevel=0.0)
+    P["knob"] = b("knob", (0.16, 0.05, 0.07), (hx_, 0.912, 0.88), pl("#f2f2ea", 0.5), bevel=0.015)
     # the steering wheel: a ring of blocks round a hub, on a column, tilted toward the driver
     col = kit.empty(f"{name}.col", (dx_, 0.78, 1.12), root, rot=(math.radians(62), 0, 0))
     b("column", (0.08, 0.08, 0.36), (0, 0, -0.2), dark, parent=col, bevel=0.01)
@@ -338,8 +345,8 @@ def build_home(kit):
     roofm = pl("#5a6a7a", 0.7, spec=0.05)
     dome(kit, "home.sky", (0, -10, -20), 110, SUNRISE)
     kit.box("home.lawn", (40, 26, 0.2), (-6, 4, -0.1), grass)
-    kit.box("home.drive", (8.2, 16, 0.06), (6.6, 1.0, 0.0), conc)
-    kit.box("home.walk", (40, 2.2, 0.08), (0, -6.9, 0.01), pl("#ddd6c6", 0.85, spec=0.03))
+    kit.box("home.drive", (8.2, 16, 0.06), (6.6, 1.0, 0.0), kit.texture("concrete", 0.6, tint="#8c867c"))
+    kit.box("home.walk", (40, 2.2, 0.08), (0, -6.9, 0.01), pl("#a8a092", 0.85, spec=0.03))
     kit.box("home.street", (80, 6, 0.06), (0, -11.0, -0.02), road)
     kit.box("home.curb", (80, 0.2, 0.14), (0, -8.05, 0.02), pl("#bdb6a8", 0.8))
     # the view south: the hill falls away to fields, hedges and trees
@@ -672,7 +679,7 @@ def attach_extras(kit):
     dh, mh = bpy.data.objects.get("dad.headg"), bpy.data.objects.get("me.headg")
     if dh is None or mh is None:
         return
-    gray = pl("#b4b4bc", 0.8)
+    gray = pl("#9c9ca2", 0.8)
     kit.box("dad.chin", (0.7, 0.2, 0.32), (0, -0.55, -0.5), gray, dh, bevel=0.08)
     for sx in (-1, 1):
         kit.box(f"dad.cheek{sx}", (0.22, 0.32, 0.46), (sx * 0.42, -0.45, -0.32), gray, dh, rot=(0, 0, sx * 0.55), bevel=0.06)
@@ -682,8 +689,8 @@ def attach_extras(kit):
     for k, (x, z) in enumerate(((-0.18, -0.52), (0.12, -0.6), (0.26, -0.45), (-0.05, -0.66))):
         crumbs.append(kit.box(f"dad.crumb{k}", (0.07, 0.04, 0.06), (x, -0.67, z), tan, dh, bevel=0.01))
     W["crumbs"] = crumbs
-    pink = pl("#ff8a96", 0.7)
-    W["blush"] = [kit.box(f"dad.blush{sx}", (0.22, 0.04, 0.13), (sx * 0.36, -0.645, -0.08), pink, dh, bevel=0.02)
+    pink = pl("#f0405a", 0.7)
+    W["blush"] = [kit.box(f"dad.blush{sx}", (0.27, 0.04, 0.22), (sx * 0.34, -0.655, -0.15), pink, dh, bevel=0.03)
                   for sx in (-1, 1)]
     hair = pl("#15151a", 0.7)
     top = 0.6
@@ -741,17 +748,18 @@ def animate(kit, story, tl, t, ctx):
     P["door_p"].rotation_euler = (0, 0, math.radians(68) * sample("door_p", tl, t, {"v": 0.0})["v"])
     P["door_d"].rotation_euler = (0, 0, -math.radians(68) * sample("door_d", tl, t, {"v": 0.0})["v"])
     P["wheel"].rotation_euler = (0, 0, math.radians(sample("wheel", tl, t, {"a": 0.0})["a"]))
-    P["knob"].location.z = 0.88 + 0.27 * sample("heater", tl, t, {"v": 0.0})["v"]
+    P["knob"].location.z = 0.88 + 0.28 * sample("heater", tl, t, {"v": 0.0})["v"]   # 1 is hard on the red top stop
     P["pseat"].location.y = G.SEATS["pass"][1] - 0.35 * sample("pseat", tl, t, {"v": 0.0})["v"]
     P["lock"].location.z = 1.06 - 0.06 * sample("lock", tl, t, {"v": 0.0})["v"]
     # ---- the muffin: on the dash (it rides with the car), or on Dad's plate in the kitchen
-    mf = sample("muffin", tl, t, {"v": 0.0, "where": "dash", "drop": 0.0})
+    mf = sample("muffin", tl, t, {"v": 0.0, "where": "dash", "drop": 0.0, "lx": G.MUFFIN_L[0], "ly": G.MUFFIN_L[1],
+                                  "lz": G.MUFFIN_L[2]})
     mu = W["muffin"]
     vis = mf["v"] > 0.5
     for ob in [mu] + list(mu.children):
         ob.hide_render = not vis
     if vis and mf["where"] == "dash":
-        mu.location = G.to_world(pose, G.MUFFIN_L[0], G.MUFFIN_L[1], G.MUFFIN_L[2] + 0.12 * mf["drop"])
+        mu.location = G.to_world(pose, mf["lx"], mf["ly"], mf["lz"] + 0.12 * mf["drop"])
         mu.rotation_euler = (0, 0, math.radians(pose[3]))
     elif vis:
         pz = W["plate"].location
@@ -797,10 +805,18 @@ def animate(kit, story, tl, t, ctx):
             leg = bpy.data.objects.get(f"{who}.leg{sx}")
             if leg is not None:
                 leg.rotation_euler = (leg.rotation_euler.x * (1 - v) - math.pi / 2 * v, 0, 0)
+    # ---- per-shot set dressing: the driver's headrest out of S23c's look back; the mirror out of the dash shot
+    for nm in ("car.seat_d.rest", "car.seat_d.post-1", "car.seat_d.post1"):
+        ob = bpy.data.objects.get(nm)
+        if ob is not None:
+            ob.hide_render = sid == "S23c"
+    mr = bpy.data.objects.get("car.mirror")
+    if mr is not None:
+        mr.hide_render = sid == "S24a"
     # ---- the sun: low gold everywhere, dimmed under the rain and lifted at the noon beach
     gain = 1.0
     if sid.startswith("S23b") or sid.startswith("S23c"):
         gain = 0.12
     elif sid.startswith("S03") or sid.startswith("S04"):
         gain = 1.4
-    return {"sun": gain}
+    return {"sun": gain, "car.seatglow": 1.0 if sid == "S24a" else 0.0, "momcar.seatglow": 0.0}

@@ -103,9 +103,9 @@ def ground(x, y):
 
 
 # ---- S07a: through the kitchen window at the front of the house, on the driveway
-KWIN_CAM = (1.7, 9.7, 1.75)
-KWIN_TGT = (5.0, 1.5, 0.9)
-KWIN_DIST = 1.3
+KWIN_CAM = (1.7, 9.7, 1.35)
+KWIN_TGT = (5.0, 1.5, 1.05)
+KWIN_DIST = 2.3
 
 
 def kwin_place():

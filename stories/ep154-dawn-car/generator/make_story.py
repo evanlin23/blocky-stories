@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -57,10 +57,10 @@ cast = {
     # me: a man of 20, a big black curly top (curls in set.py), warm brown skin, a red hoodie, jeans
     "me": person(SKIN, "#d8322f", "#3a5a8a", "#f2f2f2", hair="mop", extras=["hooddown"], extra_c="#b82a28"),
     # Dad, fifties: short gray hair, a round gray beard (set.py), glasses, a blue work jacket over a plaid shirt
-    "dad": person(SKIN, "#2f5fa0", "#5a5048", "#3a2a20", hair="buzz", hair_c="#a9a9b2", extras=["glasses"],
+    "dad": person(SKIN, "#2f5fa0", "#5a5048", "#3a2a20", hair="buzz", hair_c="#505054", extras=["glasses"],
                   extra_c="#2a2a30", collar="#c8443a", width=1.05),
     # Mom, fifties: a high black bun, lashes, a pink robe
-    "mom": person(SKIN, "#f2a0c0", "#f2a0c0", "#f6e6ee", hair="bun", eyes="lashes", collar="#ffd6e6"),
+    "mom": person(SKIN, "#dc6f9a", "#dc6f9a", "#f6e6ee", hair="bun", eyes="lashes", collar="#e88ab0"),
     # the cook, about 20: very tall, a shaved head, deep brown skin, a white apron over a green T-shirt
     "cook": person("#6a3f24", "#3f9a4a", "#3a3a48", "#2a2a30", hair="none", sleeves="short", extras=["apron"],
                    extra_c="#ecebe4", height=1.12),
@@ -126,12 +126,16 @@ def stand(at, who, pos, yaw=0, expr="neutral", **kw):
     cut(who, at, [pos[0], pos[1], pos[2] if len(pos) > 2 else 0.0], **pose(yaw, expr, **kw))
 
 
-def sit(at, who, car, seatname, expr="neutral", sink=0.0, arms=(28, 28), **kw):
+def sit(at, who, car, seatname, expr="neutral", sink=0.0, arms=(28, 28), inward=0.0, **kw):
     """Cut `who` into a car seat (or a kitchen chair: car=None, seatname=(x, y, yaw))."""
     h = cast[who].get("height", 1.0)
     if car is None:
         x, y, yaw = seatname
         p = (x, y, G.CHAIR_Z + 0.17 - 0.68 * h - sink)
+    elif inward:
+        lx, ly = G.SEATS[seatname]
+        lx = lx - inward if lx > 0 else lx + inward
+        p, yaw = G.to_world(car, lx, ly, G.CUSH + 0.17 - 0.68 * h - sink), (car[3] + 180) % 360
     else:
         p, yaw = G.seat(car, seatname, h, sink)
     if who not in vis:
@@ -212,9 +216,12 @@ ME_W = (G.CAR_HOME[0] + 1.95, G.CAR_HOME[1] - 0.1, 0.0)        # me outside Dad'
 stand(0, "me", ME_W, -90, "uneasy")
 mouth("me", 0, "L01>", 0.35)
 MEH = head_at(ME_W, -90)
-shot("S01a", 0, camp([HOME[0] - 1.75, ME_W[1] - 0.15, 1.62], [MEH[0] - 0.6, MEH[1], 1.42], 24,
-                     pos2=[HOME[0] - 1.45, ME_W[1] - 0.15, 1.6]))
-cue("L01.3-0.1", "wheel", a=0.0)
+# S01a: from the passenger seat, the empty driver's seat and its wheel in front, my face at the window beyond
+S01_CAM = ccam(HOME, (0.85, 0.62, 1.42), (-1.25, 0.42, 1.24), 20, lp2=(0.62, 0.6, 1.42))
+shot("S01a", 0, S01_CAM)
+cue(0.25, "wheel", a=-9.0, dur=1.0)       # the wheel stirs by itself
+cue(1.3, "wheel", a=5.0, dur=0.9)
+cue("L01.3-0.1", "wheel", a=0.0, dur=0.3)
 shot("S01b", "L01.3", camp([HOME[0] - 0.9, ME_W[1] - 0.35, 1.6], [MEH[0], MEH[1], MEH[2] - 0.05], 30,
                            pos2=[HOME[0] - 0.6, ME_W[1] - 0.35, 1.6]))
 key("me", "L01.3", ME_W, yaw=-90, expr="stunned", head=[0, -4], blend=0.2)
@@ -234,35 +241,37 @@ shot("S02b", "L02.2", camp([-2.6, -1.4, 1.6], [5.0, 1.0, 1.1], 30, pos2=[-2.2, -
 # ===== 02 the rule at work (L03, L04): the noon beach
 cue("L03", "clock", s="12:00")
 show("L03")
-shot("S03a", "L03", camp([G.BX - 5.2, -1.6, 1.7], [G.BX, 5.6, 1.1], 30, pos2=[G.BX - 4.6, -1.0, 1.7]))
+shot("S03a", "L03", camp([G.BX - 5.2, -1.6, 1.75], [G.BX, 5.6, 1.45], 30, pos2=[G.BX - 4.6, -1.0, 1.75]))
 show("L03.1", "fenn")
 stand("L03.1", "fenn", G.FENN, 0, "sheepish", arms=[0, 0], side=[8, 8])
 FH = head_at(G.FENN, 0)
 shot("S03b", "L03.1", cam(FH[0], FH[1], FH[2] - 0.15, 1.3, -6, 34))
 key("fenn", "L03.2", G.FENN, yaw=0, expr="sheepish", head=[-12, 4], arms=[0, 0], side=[8, 8], blend=0.35)
 show("L04")
-car(0, "boss", (G.BOSS_CAR[0], -14.0, 0, 0))
-car("L04", "boss", G.BOSS_CAR, dur=1.3)
-shot("S04a", "L04", camp([G.BX + 7.6, -5.8, 2.1], [G.BX, 2.2, 0.9], 24, pos2=[G.BX + 7.1, -5.2, 2.05]))
-show("L04.2", "fenn", "boss")
-stand("L04.2", "fenn", G.FENN, 4, "sheepish", side=[8, 8])
-stand("L04.2", "boss", G.BOSS, -4, "sheepish", head=[-10, 0])
+car(0, "boss", (G.BOSS_CAR[0], -8.5, 0, 0))
+car("L04", "boss", G.BOSS_CAR, dur=0.7)     # it noses in right behind Fenn's, inside the shot
+shot("S04a", "L04", camp([G.BX + 6.2, -7.4, 2.5], [G.BX, 1.8, 0.8], 24, pos2=[G.BX + 5.8, -6.8, 2.45]))
+show("L04.1+0.2", "fenn", "boss")
+stand("L04.1+0.2", "fenn", G.FENN, 4, "sheepish", side=[8, 8])
+stand("L04.1+0.2", "boss", G.BOSS, -4, "sheepish", head=[-10, 0])
 MID = ((G.FENN[0] + G.BOSS[0]) / 2, G.FENN[1], 1.5)
-shot("S04b", "L04.2", cam(MID[0], MID[1], 1.45, 2.3, 0, 34))
+shot("S04b", "L04.1+0.2", cam(MID[0], MID[1], 1.45, 2.3, 0, 34))
 
 # ===== 03 Mom's question (L05 to L07)
 cue("L05", "clock", s="5:40")
 MOMK = (G.MOM_K[0], G.MOM_K[1], 60)
 DADK = (G.DAD_K[0], G.DAD_K[1], -60)
 show("L05", "mom", "dad")
-pm, _ = sit("L05", "mom", None, MOMK, "sly", head=[28, 0], arms=[40, 40])
-pd, _ = sit("L05", "dad", None, DADK, "neutral", head=[-28, 0], arms=[40, 40])
+pm, _ = sit("L05", "mom", None, MOMK, "sly", head=[8, 0], arms=[40, 40])
+pd, _ = sit("L05", "dad", None, DADK, "neutral", head=[-8, 0], arms=[40, 40])
+show("L05", "mom")         # a close single of Mom: Dad is out of it till his answer
 cue("L05", "plate", v=0.0)
 MKH = [pm[0], pm[1], pm[2] + 1.57]
 DKH = [pd[0], pd[1], pd[2] + 1.57]
-shot("S05", "L05", cam(MKH[0] + 0.1, MKH[1], MKH[2] - 0.18, 1.35, 45, 24))
-key("mom", "L05.1", list(pm), yaw=60, expr="sly", head=[34, 3], arms=[40, 40], blend=0.4)
-key("dad", "L06", list(pd), yaw=-60, expr="smile", head=[-30, 0], arms=[40, 40], blend=0.3)
+shot("S05", "L05", cam(MKH[0] + 0.1, MKH[1], MKH[2] - 0.18, 1.3, 52, 24))
+key("mom", "L05.1", list(pm), yaw=60, expr="sly", head=[14, 3], arms=[40, 40], blend=0.4)
+show("L06", "mom", "dad")
+key("dad", "L06", list(pd), yaw=-60, expr="smile", head=[-10, 0], arms=[40, 40], blend=0.3)
 mouth("dad", "L06.1", "L06>", 0.45)
 shot("S06", "L06", cam(DKH[0] - 0.1, DKH[1], DKH[2] - 0.18, 1.35, -45, 24))
 # S07a: through the kitchen window, the car pulls out alone
@@ -270,11 +279,11 @@ show("L07")
 car("L07-0.05", "dad", G.CAR_HOME)
 car("L07", "dad", (5.0, -3.5, 0, 180), dur=2.0)
 kp, kyaw = G.kwin_place()
-shot("S07a", "L07", camp(list(G.KWIN_CAM), list(G.KWIN_TGT), 24, pos2=[G.KWIN_CAM[0] + 0.05, G.KWIN_CAM[1] - 0.12, G.KWIN_CAM[2]],
+shot("S07a", "L07", camp(list(G.KWIN_CAM), list(G.KWIN_TGT), 20, pos2=[G.KWIN_CAM[0] + 0.05, G.KWIN_CAM[1] - 0.12, G.KWIN_CAM[2]],
                          tgt2=[G.KWIN_TGT[0], G.KWIN_TGT[1] - 1.6, G.KWIN_TGT[2]]))
-show("L07.2", "mom", "dad")
-key("mom", "L07.2", list(pm), yaw=60, expr="worried", head=[40, 6], arms=[40, 40], blend=0.3)
-shot("S07b", "L07.2", cam(MKH[0] + 0.12, MKH[1], MKH[2] - 0.15, 1.2, 48, 24))
+show("L07.2", "mom")
+key("mom", "L07.2", list(pm), yaw=60, expr="worried", head=[20, 6], arms=[40, 40], blend=0.3)
+shot("S07b", "L07.2", cam(MKH[0] + 0.1, MKH[1], MKH[2] - 0.06, 0.92, 52, 24))
 
 # ===== 04 the clues (L08 to L11)
 cue("L08", "clock", s="6:30")
@@ -285,18 +294,15 @@ cue("L08", "pseat", v=1.0)
 cue("L08", "heater", v=1.0)
 cue("L08", "muffin", v=1.0, where="dash", drop=0.0)
 shot("S08a", "L08", camp([-1.8, -5.2, 2.0], [5.0, -4.0, 1.0], 28, pos2=[-1.5, -4.8, 1.95], tgt2=[5.0, 1.8, 1.0]))
-shot("S08b", "L08.2", ccam(HOME, (-0.35, 0.25, 1.35), (0.0, 0.93, 1.02), 30, lp2=(-0.3, 0.35, 1.3)))
+shot("S08b", "L08.2", ccam(HOME, (0.08, 0.28, 1.3), (-0.45, 0.93, 1.04), 13, lp2=(0.05, 0.36, 1.28)))
 show("L08.4", "dad", "mom")
-key("dad", "L08.4", list(pd), yaw=-60, expr="sheepish", head=[-22, 4], arms=[40, 40], side=[22, 22], blend=0.25)
-key("dad", "L08.4+0.45", list(pd), yaw=-60, expr="sheepish", head=[-18, 0], arms=[40, 40], side=[6, 6], blend=0.4)
-shot("S08c", "L08.4", cam(DKH[0] - 0.1, DKH[1], DKH[2] - 0.2, 1.4, -45, 24))
+key("dad", "L08.4", list(pd), yaw=-60, expr="sheepish", head=[-2, 4], arms=[40, 40], side=[22, 22], blend=0.25)
+key("dad", "L08.4+0.45", list(pd), yaw=-60, expr="sheepish", head=[2, 0], arms=[40, 40], side=[6, 6], blend=0.4)
+shot("S08c", "L08.4", cam(DKH[0] - 0.08, DKH[1], DKH[2] - 0.17, 1.12, -45, 24))
 # S09: the passenger seat pushed all the way back, my face at the open door
-show("L09", "me")
+show("L09")
 cue("L09", "door_p", v=1.0)
-ME9 = list(G.to_world(HOME, 1.85, -0.35, 0.0))
-stand("L09", "me", ME9, -90 + 180, "uneasy", head=[0, 10], lean=4)
-shot("S09", "L09", ccam(HOME, (-0.9, 0.9, 1.5), (0.85, -0.07, 1.04), 22, lp2=(-0.85, 0.8, 1.48)))
-mouth("me", "L09", "L09>", 0.3)
+shot("S09", "L09", ccam(HOME, (2.05, -0.3, 1.3), (0.55, 0.42, 0.62), 18, lp2=(1.95, -0.2, 1.28)))
 # S10: the muffin on the dash
 show("L10")
 cue("L10", "door_p", v=0.0)
@@ -304,14 +310,16 @@ shot("S10a", "L10", ccam(HOME, (-0.02, -0.35, 1.5), (0.3, 1.1, 1.25), 30, lp2=(0
 shot("S10b", "L10.2", ccam(HOME, (0.2, 0.45, 1.42), (0.32, 1.13, 1.32), 34, lp2=(0.22, 0.55, 1.4)))
 # S11: Dad eats it; Mom thinks he buys it
 show("L11", "dad", "mom")
+show("L11.3", "mom")      # S11b: Mom past Dad's plate; Dad is out of the frame
 cue("L11", "muffin", v=1.0, where="plate", drop=0.0)
 cue("L11", "plate", v=1.0)
 cue("L11", "crumbs", v=1.0)
-key("dad", "L11", list(pd), yaw=-60, expr="sheepish", head=[-34, 6], arms=[40, 40], blend=0.0)
-shot("S11a", "L11", cam(DKH[0] - 0.25, DKH[1] - 0.05, DKH[2] - 0.32, 1.5, -45, 24))
-key("dad", "L11.1+0.1", list(pd), yaw=-60, expr="smile", head=[-40, 2], arms=[40, 40], blend=0.4)
-key("mom", "L11.3", list(pm), yaw=60, expr="sly", head=[36, 0], arms=[40, 40], blend=0.3)
-shot("S11b", "L11.3", cam(MKH[0] + 0.12, MKH[1], MKH[2] - 0.15, 1.25, 45, 24))
+key("dad", "L11", list(pd), yaw=-60, expr="sheepish", head=[-14, 6], arms=[40, 40], blend=0.0)
+shot("S11a", "L11", cam(DKH[0] - 0.2, DKH[1] - 0.05, DKH[2] - 0.2, 1.45, -45, 24))
+key("dad", "L11.1+0.1", list(pd), yaw=-60, expr="smile", head=[-20, 2], arms=[40, 40], blend=0.4)
+key("mom", "L11.3", list(pm), yaw=60, expr="sly", head=[16, 0], arms=[40, 40], blend=0.3)
+# S11b: from Dad's side of the table, his muffin plate in front, Mom across it
+shot("S11b", "L11.3", camp([1.5, 298.85, 1.45], [MKH[0] + 0.05, MKH[1], 1.3], 20, pos2=[1.42, 298.9, 1.44]))
 cue("L12", "muffin", v=0.0, where="dash")
 cue("L12", "crumbs", v=0.0)
 cue("L12", "plate", v=0.0)
@@ -368,11 +376,13 @@ key("cook", "L16+0.3", list(PCK), yaw=YCK, expr="smile", arms=[30, 30], lean=0, 
 sit("L16", "me", WALL, "rear_l", "scared", sink=SINK + 0.1, lean=8, arms=[30, 30])
 shot("S16a", "L16", ccam(WALL, (-0.6, 1.0, 1.6), (0.72, 0.1, 1.5), 20, lp2=(-0.55, 0.92, 1.58)))
 # S16b: the seat slides all the way back on its rails (the tally strokes on the inner rail)
-cue("L16.2", "pseat", v=1.0, dur=0.8)
+cue("L16.3", "pseat", v=1.0, dur=0.8)
 PCB, _ = G.seat(WALL, "pass_back", 1.12)
-key("cook", "L16.2", list(PCK), yaw=YCK, expr="smile", arms=[30, 30], keep_yaw=True)
-key("cook", "L16.2+0.8", list(PCB), yaw=YCK, expr="smile", arms=[30, 30])
-shot("S16b", "L16.2", ccam(WALL, (2.6, 0.9, 1.45), (0.72, -0.1, 0.95), 22, lp2=(2.5, 0.8, 1.42)))
+key("cook", "L16.3", list(PCK), yaw=YCK, expr="smile", arms=[30, 30], keep_yaw=True)
+key("cook", "L16.3+0.8", list(PCB), yaw=YCK, expr="smile", arms=[30, 30])
+# a low close from the open door's sill: the seat slides back along the rail and uncovers the two tally strokes;
+# only the cook's knees cross the top of the frame
+shot("S16b", "L16.3", ccam(WALL, (1.36, 0.3, 0.74), (0.42, 0.2, 0.44), 26, lp2=(1.33, 0.26, 0.72)))
 cue("L16>+0.1", "door_p", v=0.0, dur=0.35)
 # S17a: "Morning, SIR," to the empty driver's seat
 show("L17", "cook", "me")
@@ -417,7 +427,7 @@ show("L20", "me", "dad")
 pme_k, _ = sit("L20", "me", None, MOMK, "sly", head=[28, 0], arms=[40, 40])
 sit("L20", "dad", None, DADK, "sheepish", head=[-28, 0], arms=[40, 40])
 mouth("me", "L20", "L20.1", 0.35)
-shot("S20a", "L20", cam(G.TABLE[0], G.TABLE[1] + 0.1, 1.42, 2.15, 0, 22))
+shot("S20a", "L20", cam(G.TABLE[0], G.TABLE[1] + 0.1, 1.35, 2.6, 0, 22))
 cue("L20.1", "clock", s="5:40")
 show("L20.1", "me")
 ME_P = (-2.6, 8.4, G.PZ)
@@ -427,9 +437,10 @@ shot("S20b", "L20.1", cam(MPH[0], MPH[1], MPH[2] - 0.15, 1.35, faceyaw(ME_P, (5,
 mouth("me", "L20.1", "L20.3", 0.3)
 car("L20.3", "dad", HOME)
 show("L20.3", "dad")
-PDH, YDH = sit("L20.3", "dad", HOME, "driver", "neutral", arms=[22, 22])
-shot("S20c", "L20.3", ccam(HOME, (-0.72, 3.05, 1.55), (-0.72, 0.15, 1.5), 30, lp2=(-0.72, 2.9, 1.55)))
-key("dad", "L20.4", list(PDH), yaw=YDH, expr="neutral", arms=[22, 22], head=[0, 4], blend=0.4)
+PDH, YDH = sit("L20.3", "dad", HOME, "driver", "neutral", arms=[22, 22], head=[18, 0])
+# S20c: through Dad's own side window (S01a's empty seat, filled), his face turned to it
+shot("S20c", "L20.3", ccam(HOME, (-2.05, 1.6, 1.62), (-0.72, 0.18, 1.5), 22, lp2=(-1.9, 1.45, 1.6)))
+key("dad", "L20.4", list(PDH), yaw=YDH, expr="neutral", arms=[22, 22], head=[28, 4], blend=0.4)
 # S21a: the stone wall, Monday; the cook steps to the car
 cue("L21", "clock", s="5:52")
 car("L21", "dad", WALL)
@@ -445,7 +456,8 @@ show("L21.2", "dad", "cook")
 PCW, YCW = sit("L21.2", "cook", WALL, "pass_back", "smile", arms=[30, 30])
 key("cook", "L21.3", list(PCW), yaw=YCW, expr="stunned", arms=[30, 30], head=[40, 0], blend=0.5)
 key("dad", "L21.3", list(PDW), yaw=YDW, expr="neutral", arms=[22, 22], head=[-14, 0], blend=0.4)
-shot("S21b", "L21.2", ccam(WALL, (0.0, 3.6, 1.75), (0.0, -0.05, 1.62), 22, lp2=(0.0, 3.45, 1.72)))
+# S21b: through Dad's side window: Dad's three-quarter near, the cook beyond him turning to look at him
+shot("S21b", "L21.2", ccam(WALL, (-2.05, 1.25, 1.74), (0.05, -0.05, 1.62), 20, lp2=(-1.9, 1.15, 1.72)))
 # S22: "Oh. You're REAL."
 show("L22", "dad", "cook")
 key("cook", "L22", list(PCW), yaw=YCW, expr="laugh", arms=[30, 30], head=[34, 0], blend=0.0)
@@ -463,37 +475,47 @@ cue("L23.1", "pseat", v=0.0)
 cue("L23.1", "ride", who="dad")
 show("L23.1", "dad", "cook")
 RAINCAR0 = (9.0, G.RAIN_ROAD_Y - 1.2, 0.0, 90.0)
-RAINCAR1 = (2.5, G.RAIN_ROAD_Y - 1.2, 0.0, 90.0)
-RAINCAR2 = (-1.0, G.RAIN_ROAD_Y - 1.2, 0.0, 90.0)
+RAINCAR1 = (1.3, G.RAIN_ROAD_Y - 1.2, 0.0, 90.0)
+RAINCAR2 = (-0.5, G.RAIN_ROAD_Y - 1.2, 0.0, 90.0)
+CRY = G.RAIN_ROAD_Y - 3.45          # the cook walks the road's south edge, west, the same way the car goes
 car("L23.1+0.01", "dad", RAINCAR0)
-car("L23.1+0.02", "dad", RAINCAR1, dur=1.4)
+car("L23.1+0.02", "dad", RAINCAR1, dur=1.5)
 p1, yr0 = G.seat(RAINCAR1, "driver")
-sit("L23.1", "dad", RAINCAR1, "driver", "neutral", head=[70, 0], arms=[0, 0])
-stand("L23.1", "cook", (-1.0, G.COOK_RAIN_Y, 0.0), 90, "neutral")
-key("cook", "L23.4", (0.2, G.COOK_RAIN_Y, 0.0), yaw=90, expr="neutral")
-shot("S23b", "L23.1", camp([6.5, G.COOK_RAIN_Y - 3.6, 1.55], [3.0, G.RAIN_ROAD_Y - 0.6, 1.45], 30,
-                           pos2=[6.0, G.COOK_RAIN_Y - 3.4, 1.55], tgt2=[1.8, G.RAIN_ROAD_Y - 0.6, 1.45]))
-car("L23.4", "dad", RAINCAR2, dur=1.6)
-key("dad", "L23.4", list(p1), yaw=yr0, expr="sheepish", head=[40, 0], arms=[0, 0], blend=0.35)
-key("cook", "L23>", (1.2, G.COOK_RAIN_Y, 0.0), yaw=90, expr="neutral")
-shot("S23c", "L23.4", camp([-4.0, G.RAIN_ROAD_Y - 4.3, 1.5], [2.0, G.RAIN_ROAD_Y - 1.4, 1.45], 34,
-                           tgt2=[-0.6, G.RAIN_ROAD_Y - 1.4, 1.45]))
+# Dad looks ahead and a little toward the verge, at the camera: he sees him, and drives on
+sit("L23.1", "dad", RAINCAR1, "driver", "neutral", head=[26, 0], arms=[0, 0])
+# S23b: on the verge ahead of the cook: the cook trudges toward the lens, hunched, the car comes up behind him
+stand("L23.1", "cook", (1.4, CRY, 0.0), -90, "uneasy", head=[16, 10], lean=10, arms=[0, 0], side=[6, 6])
+key("cook", "L23.4", (0.6, CRY, 0.0), yaw=-90, expr="uneasy", head=[16, 10], lean=10, arms=[0, 0], side=[6, 6])
+shot("S23b", "L23.1", camp([-5.0, G.RAIN_ROAD_Y - 4.3, 1.66], [0.72, G.RAIN_ROAD_Y - 2.5, 1.62], 44,
+                           pos2=[-4.75, G.RAIN_ROAD_Y - 4.25, 1.65], tgt2=[0.72, G.RAIN_ROAD_Y - 2.45, 1.62]))
+# S23c: behind the cook as the car pulls away; Dad twists round in his seat to look back at him
+car("L23.4", "dad", RAINCAR2, dur=1.3)
+cut("dad", "L23.4", list(p1), yaw=-45, expr="sheepish", head=[80, 0], arms=[0, 0])
+key("dad", "L23.4+0.6", list(p1), yaw=-45, expr="sheepish", head=[82, 4], arms=[0, 0], blend=0.4)
+# (set.py's ride moves Dad with the car; these keys only tell the lints where he really is)
+key("dad", "L23.4+1.3", list(G.seat(RAINCAR2, "driver")[0]), yaw=-45, expr="sheepish", head=[82, 4], arms=[0, 0])
+key("cook", "L23.4+0.02", (0.6, CRY, 0.0), yaw=-90, expr="uneasy", head=[-30, 4], lean=8, arms=[0, 0], side=[6, 6], blend=0.3)
+key("cook", "L23>", (0.0, CRY, 0.0), yaw=-90, expr="uneasy", head=[-30, 4], lean=8, arms=[0, 0], side=[6, 6])
+shot("S23c", "L23.4", camp([3.8, G.RAIN_ROAD_Y - 3.6, 1.9], [1.05, G.RAIN_ROAD_Y - 1.86, 1.55], 30,
+                           tgt2=[-0.48, G.RAIN_ROAD_Y - 2.21, 1.55]))
 # S24a: Friday from the dash: the empty driver's seat, the muffin, the cook talking to it
 cue("L24", "ride", who="")
 car("L24", "dad", WALL)
 cue("L24", "pseat", v=1.0)
-cue("L24", "muffin", v=1.0, where="dash", drop=0.0)
+cue("L24", "muffin", v=1.0, where="dash", drop=0.0, lx=0.4, ly=0.99, lz=G.MUFFIN_L[2])
 show("L24", "cook")
 PC24, YC24 = sit("L24", "cook", WALL, "pass_back", "smile", arms=[30, 30], head=[38, 0])
 mouth("cook", "L24", "L24.1>", 0.35)
 cue("L24", "wheel", a=0.0)
 cue("L24+0.05", "wheel", a=-16.0, dur=1.3)
-shot("S24a", "L24", ccam(WALL, (0.25, 3.0, 1.6), (0.0, -0.1, 1.42), 22, lp2=(0.22, 2.85, 1.58)))
+# from the dash, low: the empty driver's seat in gold on the right, the cook on the left, the muffin in front of him
+shot("S24a", "L24", ccam(WALL, (-0.12, 1.72, 1.55), (-0.05, -0.3, 1.28), 14, lp2=(-0.12, 1.6, 1.54)))
 # S24b: Monday: the muffin on Dad's dash at chest height, Dad and the cook side by side behind it, laughing
 show("L24.2", "dad", "cook")
-sit("L24.2", "dad", WALL, "driver", "laugh", arms=[22, 22], head=[-10, 0])
-sit("L24.2", "cook", WALL, "pass_back", "laugh", arms=[30, 30], head=[16, 0])
-shot("S24b", "L24.2", ccam(WALL, (0.1, 3.45, 1.6), (0.0, -0.05, 1.45), 22, lp2=(0.1, 3.3, 1.58)))
+cue("L24.2", "muffin", v=1.0, where="dash", drop=0.0, lx=G.MUFFIN_L[0], ly=G.MUFFIN_L[1], lz=G.MUFFIN_L[2])
+sit("L24.2", "dad", WALL, "driver", "laugh", arms=[22, 22], head=[-10, 0], inward=0.22)
+sit("L24.2", "cook", WALL, "pass_back", "laugh", arms=[30, 30], head=[16, 0], inward=0.22)
+shot("S24b", "L24.2", ccam(WALL, (-0.02, 2.55, 1.74), (-0.02, -0.05, 1.6), 20, lp2=(-0.02, 2.45, 1.73)))
 
 # ===== 10 the button and the loop (L25, L26)
 cue("L25", "clock", s="5:40")
@@ -517,8 +539,7 @@ car("L26", "mom", (G.MOM_HOME[0], -20.0, 0, 180))
 show("L26", "me")
 stand("L26", "me", ME_W, -90, "laugh")
 mouth("me", "L26", "L26>", 0.4)
-shot("S26", "L26", camp([HOME[0] - 1.75, ME_W[1] - 0.15, 1.62], [MEH[0] - 0.6, MEH[1], 1.42], 24,
-                        pos2=[HOME[0] - 1.15, ME_W[1] - 0.15, 1.6]))
+shot("S26", "L26", ccam(HOME, (0.85, 0.62, 1.42), (-1.25, 0.42, 1.24), 20, lp2=(0.55, 0.6, 1.42)))
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)
@@ -538,7 +559,7 @@ for i, (sid, at, camera, kw) in enumerate(SH):
 sfx = [
     {"at": "L13.1", "kind": "click", "db": -16},
     {"at": "L16>+0.15", "kind": "door", "db": -20},
-    {"at": "L16.2+0.75", "kind": "thud", "db": -22},
+    {"at": "L16.3+0.75", "kind": "thud", "db": -22},
     {"at": "L18.1", "kind": "bell", "db": -24, "hz": 330.0},
 ]
 music = {
@@ -604,9 +625,9 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": ["S02b", "S04a", "S05", "S07a", "S07b", "S11a", "S11b", "S14a", "S16b", "S25b"],
+    "framing_ok": ["S02b", "S11a", "S14a", "S25b"],
     "frames_ok": [],
-    "staging_ok": [],
+    "staging_ok": ["S24b"],
     "clip_ok": [],
     "phonemes": {},
     "homophones": {"fenns": "fens"},
