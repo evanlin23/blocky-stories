@@ -137,7 +137,9 @@ def sit(who, at, spot, expr="neutral", rise=0.28, **kw):
 
 
 # ================================================================================================ the cast on the stands, from frame 1
-put("me", 0, ME_S, 0, "worried")
+# the opening: I stand at the board holding Mom's proof (a face on screen by 0:02), then sit with her at L02
+put("me", 0, [BOARDX + 1.05, 0.1, 0.0], 12, "worried", arms=[62, 62], side=[-22, -22])
+cue(0, "pr_proof", on=True, pos=[BOARDX + 0.93, -0.12, 0.98], rot=[12, 0], s=1.0)
 put("mom", 0, MOM_S, 0, "worried")
 put("grandma", 0, GM_S, 0, "neutral")
 gone("grandma", "L02")      # cheated out of the stands for the close shots on Mom and me (she sits in front of Mom)
@@ -149,15 +151,16 @@ cue(0, "tag", g="a")
 cue(0, "cheer", on=False)
 
 # ================================================================================================ L01 to L03 the count, the rule
-S(0, "S01a", C((BOARDX, 1.0, 1.15), 1.3, az=0, el=1, lens=40, w2=1.15, tgt2=(BOARDX, 1.0, 1.1)),
-  note="S01a frame 1: the headcount board close, 212 on top, the 212/211 tile in the corner")
-S("L01.3", "S01b", C((BOARDX, 1.0, 1.15), 1.4, az=0, el=1, lens=40, w2=1.2, tgt2=(BOARDX, 1.0, 1.05)),
-  note="S01b tilt down to 211, push on ELEVEN")
+S(0, "S01a", C((BOARDX + 0.35, 0.6, 1.3), 2.0, az=0, el=1, lens=40, w2=1.8, tgt2=(BOARDX + 0.4, 0.6, 1.3)),
+  note="S01a frame 1: the board (212 over 211) with me beside it holding Mom's proof, a face by 0:02")
+S("L01.3", "S01b", C((BOARDX + 0.95, 0.1, 1.38), 1.25, az=0, el=1, lens=40, w2=1.0, tgt2=(BOARDX + 0.97, 0.1, 1.42)),
+  note="S01b push in on my uneasy face and the proof on BE IN IT")
+put("me", "L02", ME_S, 0, "worried")
 # S02: Mom holds the proof up in front of her; me beside, soft behind it
 raw("mom", "L02", arms=[62, 62], side=[-22, -22], blend=0.3, expr="worried")
 cue("L02", "pr_proof", on=True, pos=[-0.62, 4.1, 1.6], rot=[0, 0], s=1.55)
 S("L02", "S02a", C((-0.42, 4.5, 1.6), 1.45, az=0, el=8, lens=70, w2=1.35), clear=True, note="S02a the proof in Mom's hands, the green-ringed gap; my face soft behind")
-S("L02.2", "S02b", C((-0.7, 4.4, 1.7), 1.3, az=0, el=8, lens=70, w2=1.15), clear=True, note="S02b punch in on the gap on HERE")
+S("L02.2", "S02b", C((-0.7, 4.4, 1.7), 1.3, az=0, el=8, lens=70, w2=1.15), clear=True, note="S02b punch in on the ringed gap on ELEVEN")
 S("L03", "S03", C((-0.12, 4.8, 2.22), 1.2, az=0, el=18, lens=70, w2=1.05), clear=True, note="S03 my face, scared, the print's edge low left")
 raw("me", "L03", expr="scared", blend=0.2)
 raw("me", "L03+1.6", expr="worried", blend=0.2)
@@ -221,7 +224,7 @@ put("me", "L18", [HALLX - 2.8, 0.9, 0.0], 90, "neutral")
 raw("me", "L18+2.4", pos=[HALLX + 0.7, 0.9, 0.0], blend=0.3)
 S("L18", "S18", X((HALLX + 4.8, -2.0, 1.35), (HALLX - 1.2, 0.9, 1.95), 28, (HALLX + 4.4, -2.0, 1.35), (HALLX + 0.2, 0.9, 1.95), 28),
   note="S18 the hallway of framed photos; I walk past, side tracking")
-S("L19", "S19a", X((HALLX + 0.6, -2.5, 1.6), (HALLX + 0.6, 2.9, 1.75), 16, (HALLX + 0.6, -2.3, 1.6), (HALLX + 0.6, 2.9, 1.75), 16),
+S("L19", "S19a", X((HALLX + 0.8, -2.85, 1.7), (HALLX + 0.8, 2.9, 1.72), 34, (HALLX + 0.8, -2.85, 1.7), (HALLX + 0.8, 2.9, 1.74), 46),
   note="S19a three framed photos side by side, nobody at a camera")
 gone("me", "L19")
 put("me", "L19.2", [HALLX + 0.8, 0.9, 0.0], 0, "worried")
@@ -263,8 +266,9 @@ S("L26", "S26a", X((0.1, -3.9, 1.6), (-0.3, 4.6, 1.5), 40, (0.1, -3.6, 1.6), (-0
   note="S26a through the viewfinder: a thin frame line over the bleachers, every face filled")
 cue("L26.2", "vf", on=False)
 raw("mom", "L26.2", expr="smile", arms=[0, 0], side=[0, 0], blend=0.4)
-raw("grandma", "L26.2", expr="smile", blend=0.4)
-S("L26.2", "S26b", C((-0.7, 4.8, 1.85), 1.35, az=0, el=12, lens=70, w2=1.2), clear=True, note="S26b Mom smiling, the empty seat beside her")
+gone("grandma", "L26.2")      # her curls fill the foot of S26b: out of the stands for it
+put("grandma", "L26.2+0.4", GM_S, 0, "smile")
+S("L26.2", "S26b", C((-0.4, 4.8, 1.8), 1.9, az=0, el=12, lens=70, w2=1.7), clear=True, note="S26b Mom smiling, the empty seat beside her")
 cue("L26.2+0.45", "board", g="smudge")
 cue("L26.2+0.66", "board", g="b859")
 cue("L26.2+0.66", "tag", g="b")
@@ -306,7 +310,7 @@ S("L35", "S34", C((-1.1, -5.5, 1.5), 1.1, az=-170, el=3, w2=1.0), back=True, not
 gone("okafor", "L37")
 put("me", "L37", [BOARDX + 1.2, 0.0, 0.0], 0, "worried")
 cue("L37", "board", g="b900")
-S("L37", "S36", C((BOARDX + 0.85, 0.0, 1.5), 3.0, az=10, el=3, w2=2.7), note="S36 my face, uneasy, the 212 / 212 board behind my shoulder")
+S("L37", "S36", C((BOARDX + 1.05, 0.0, 1.5), 1.3, az=10, el=3, w2=1.1), note="S36 my face, uneasy, the 212 / 212 board behind my shoulder")
 
 # ---------------------------------------------------------------------------------------------------- story
 look = {"fog": "#d8ecff", "fog_density": 0.002, "fog_start": 30.0, "sky": "#a8d8ff", "exposure": 0.0,
@@ -382,6 +386,6 @@ if vf.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(key(e)))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 3
+story["rev"] = 6
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")

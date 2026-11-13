@@ -345,7 +345,7 @@ def build_hall(kit):
     wood = P("#d8b07a", 0.6, 0.15)
     creamw = P("#e6d6b4", 0.85, 0.05)
     B(None, (18, 6.4, 0.2), (X, 0, -0.08), wood, "hfloor", 0.0)
-    B(None, (18, 6.4, 0.2), (X, 0, 3.5), kit.emit("#e8dcc0", 0.3), "hceil", 0.0)
+    B(None, (18, 6.4, 0.2), (X, 0, 3.5), kit.emit("#d8cca8", 0.2), "hceil", 0.0)
     B(None, (0.3, 6.4, 3.4), (X - 9.1, 0, 1.7), creamw, "hend1", 0.0)
     B(None, (0.3, 6.4, 3.4), (X + 9.1, 0, 1.7), creamw, "hend2", 0.0)
     B(None, (18, 0.3, 3.4), (X, 3.15, 1.7), P("#dcc8a0", 0.85, 0.05), "hwallN", 0.0)
@@ -359,7 +359,7 @@ def build_hall(kit):
         B(None, (0.04, 0.045, 1.9), (wx, -2.93, 1.8), P("#ffffff", 0.5, 0.2), "wbar", 0.0)
     # ceiling lights
     for i in range(-3, 4):
-        B(None, (0.9, 0.5, 0.04), (X + i * 2.4, 0.5, 3.38), kit.emit("#fff6e0", 2.2), "clight", 0.0)
+        B(None, (0.9, 0.5, 0.04), (X + i * 2.4, 0.5, 3.38), kit.emit("#fff6e0", 1.1), "clight", 0.0)
     # the wall of framed photos at y = 2.97 (picture toward -y)
     tints = ["sepia", "blue", "rose", "sepia", "blue", "sepia", "rose", "blue", "sepia", "rose"]
     frame = P("#7d5429", 0.6, 0.15)

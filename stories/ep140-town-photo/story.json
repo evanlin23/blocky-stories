@@ -181,28 +181,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "Two hundred twelve",
-     "two hundred twelve"
+     "Our town photo",
+     "our town photo"
     ],
     [
-     "of us posed",
-     "of us posed"
+     "only shows people",
+     "only shows people"
     ],
     [
-     "for the",
-     "for the"
+     "who'll still",
+     "who'll still"
     ],
     [
-     "town PHOTO.",
-     "town photo."
+     "be IN it",
+     "be in it"
     ],
     [
-     "Two hundred ELEVEN",
-     "two hundred eleven"
-    ],
-    [
-     "faces came out.",
-     "faces came out."
+     "next year.",
+     "next year."
     ]
    ]
   },
@@ -211,20 +207,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "It only shows",
-     "it only shows"
+     "Two hundred twelve",
+     "two hundred twelve"
     ],
     [
-     "people who'll",
-     "people who'll"
+     "posed.",
+     "posed."
     ],
     [
-     "still be HERE",
-     "still be here"
+     "Two hundred ELEVEN",
+     "two hundred eleven"
     ],
     [
-     "next year.",
-     "next year."
+     "came out.",
+     "came out."
     ]
    ]
   },
@@ -519,12 +515,12 @@
      "shake too much"
     ],
     [
-     "to hold",
-     "to hold"
+     "to squeeze",
+     "to squeeze"
     ],
     [
-     "it STILL.",
-     "it still."
+     "the BULB.",
+     "the bulb."
     ]
    ]
   },
@@ -749,35 +745,35 @@
     [
      0,
      [
-      -4.6,
-      -2.851,
-      1.217
+      -4.25,
+      -5.325,
+      1.403
      ],
      [
-      -4.6,
-      1.0,
-      1.15
+      -4.25,
+      0.6,
+      1.3
      ],
      40
     ],
     [
      1,
      [
-      -4.6,
-      -2.407,
-      1.159
+      -4.2,
+      -4.733,
+      1.393
      ],
      [
-      -4.6,
-      1.0,
-      1.1
+      -4.199999999999999,
+      0.6,
+      1.3
      ],
      40
     ]
    ],
    "step": 2,
    "hand": 0.004,
-   "note": "S01a frame 1: the headcount board close, 212 on top, the 212/211 tile in the corner"
+   "note": "S01a frame 1: the board (212 over 211) with me beside it holding Mom's proof, a face by 0:02"
   },
   {
    "id": "S01b",
@@ -785,28 +781,28 @@
     [
      0,
      [
-      -4.6,
-      -3.148,
-      1.222
+      -3.65,
+      -3.603,
+      1.445
      ],
      [
-      -4.6,
-      1.0,
-      1.15
+      -3.6499999999999995,
+      0.1,
+      1.38
      ],
      40
     ],
     [
      1,
      [
-      -4.6,
-      -2.555,
-      1.112
+      -3.63,
+      -2.863,
+      1.472
      ],
      [
-      -4.6,
-      1.0,
-      1.05
+      -3.63,
+      0.1,
+      1.42
      ],
      40
     ]
@@ -814,7 +810,7 @@
    "step": 2,
    "hand": 0.004,
    "at": "L01.3",
-   "note": "S01b tilt down to 211, push on ELEVEN"
+   "note": "S01b push in on my uneasy face and the proof on BE IN IT"
   },
   {
    "id": "S02a",
@@ -890,7 +886,7 @@
    "hand": 0.004,
    "at": "L02.2",
    "clear": true,
-   "note": "S02b punch in on the gap on HERE"
+   "note": "S02b punch in on the ringed gap on ELEVEN"
   },
   {
    "id": "S03",
@@ -1463,30 +1459,30 @@
     [
      0,
      [
-      70.6,
-      -2.5,
-      1.6
+      70.8,
+      -2.85,
+      1.7
      ],
      [
-      70.6,
+      70.8,
       2.9,
-      1.75
+      1.72
      ],
-     16
+     34
     ],
     [
      1,
      [
-      70.6,
-      -2.3,
-      1.6
+      70.8,
+      -2.85,
+      1.7
      ],
      [
-      70.6,
+      70.8,
       2.9,
-      1.75
+      1.74
      ],
-     16
+     46
     ]
    ],
    "step": 2,
@@ -1878,28 +1874,28 @@
     [
      0,
      [
-      -0.7,
-      -2.047,
-      3.305
+      -0.4,
+      -4.837,
+      3.848
      ],
      [
-      -0.7,
+      -0.4,
       4.8,
-      1.85
+      1.8
      ],
      70
     ],
     [
      1,
      [
-      -0.7,
-      -1.286,
-      3.144
+      -0.4,
+      -3.822,
+      3.633
      ],
      [
-      -0.7,
+      -0.4,
       4.8,
-      1.85
+      1.8
      ],
      70
     ]
@@ -2331,12 +2327,12 @@
     [
      0,
      [
-      -2.016,
-      -9.835,
-      2.023
+      -2.799,
+      -4.262,
+      1.727
      ],
      [
-      -3.7499999999999996,
+      -3.55,
       0.0,
       1.5
      ],
@@ -2345,12 +2341,12 @@
     [
      1,
      [
-      -2.189,
-      -8.851,
-      1.971
+      -2.914,
+      -3.606,
+      1.692
      ],
      [
-      -3.7499999999999996,
+      -3.55,
       0.0,
       1.5
      ],
@@ -2400,6 +2396,41 @@
    },
    {
     "at": 0,
+    "pos": [
+     -3.55,
+     0.1,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 12,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     62,
+     62
+    ],
+    "side": [
+     -22,
+     -22
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L02",
+    "pos": [
+     -3.55,
+     0.1,
+     0.0
+    ]
+   },
+   {
+    "at": "L02",
     "pos": [
      0.0,
      4.8,
@@ -3238,6 +3269,19 @@
     "tremble": 1.2
    },
    {
+    "at": "L22+1.8",
+    "arms": [
+     55,
+     61
+    ],
+    "side": [
+     -26,
+     -26
+    ],
+    "blend": 0.2,
+    "tremble": 1.2
+   },
+   {
     "at": "L23",
     "head": [
      -34,
@@ -3253,19 +3297,6 @@
      -26
     ],
     "blend": 0.5
-   },
-   {
-    "at": "L22+1.8",
-    "arms": [
-     55,
-     61
-    ],
-    "side": [
-     -26,
-     -26
-    ],
-    "blend": 0.2,
-    "tremble": 1.2
    },
    {
     "at": "L23.2",
@@ -3534,8 +3565,43 @@
    },
    {
     "at": "L26.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L26.2+0.4",
+    "pos": [
+     -0.8,
+     3.0,
+     -0.102
+    ]
+   },
+   {
+    "at": "L26.2+0.4",
+    "pos": [
+     -0.8,
+     3.0,
+     -0.102
+    ],
+    "blend": 0,
+    "yaw": 0,
     "expr": "smile",
-    "blend": 0.4
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
    },
    {
     "at": "L33",
@@ -3617,6 +3683,21 @@
   ]
  },
  "cues": [
+  {
+   "at": 0,
+   "name": "pr_proof",
+   "on": true,
+   "pos": [
+    -3.6699999999999995,
+    -0.12,
+    0.98
+   ],
+   "rot": [
+    12,
+    0
+   ],
+   "s": 1.0
+  },
   {
    "at": 0,
    "name": "board",
@@ -3978,5 +4059,5 @@
    ]
   ]
  },
- "rev": 3
+ "rev": 6
 }

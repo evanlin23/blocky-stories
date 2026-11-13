@@ -6,66 +6,62 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "two hundred twelve of us posed for the town photo. two hundred eleven faces came out.",
+   "text": "our town photo only shows people who'll still be in it next year.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.81,
-   "onset": 0.172,
-   "end": 3.621,
+   "dur": 2.897,
+   "onset": 0.155,
+   "end": 2.707,
    "chunks": [
     [
-     0.172,
-     0.681
+     0.155,
+     0.793
     ],
     [
-     0.681,
-     1.172
+     0.793,
+     1.457
     ],
     [
-     1.172,
-     1.31
+     1.457,
+     1.776
     ],
     [
-     1.31,
-     2.0
+     1.776,
+     2.034
     ],
     [
-     2.112,
-     2.681
-    ],
-    [
-     2.681,
-     3.621
+     2.034,
+     2.707
     ]
    ]
   },
   "L02": {
-   "text": "it only shows people who'll still be here next year.",
+   "text": "two hundred twelve posed. two hundred eleven came out.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.31,
+   "dur": 2.621,
    "onset": 0.172,
-   "end": 2.121,
+   "end": 2.431,
    "chunks": [
     [
      0.172,
-     0.69
+     0.716
     ],
     [
-     0.69,
-     1.034
+     0.716,
+     1.155
     ],
     [
-     1.034,
-     1.483
+     1.25,
+     1.81
     ],
     [
-     1.483,
-     2.121
+     1.81,
+     2.431
     ]
    ]
   },
@@ -438,30 +434,30 @@
    ]
   },
   "L22": {
-   "text": "his hands shake too much to hold it still.",
+   "text": "his hands shake too much to squeeze the bulb.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.931,
+   "dur": 2.034,
    "onset": 0.155,
-   "end": 1.741,
+   "end": 1.81,
    "chunks": [
     [
      0.155,
-     0.5
+     0.492
     ],
     [
-     0.5,
-     0.948
+     0.492,
+     0.914
     ],
     [
-     0.948,
-     1.164
+     0.914,
+     1.25
     ],
     [
-     1.164,
-     1.741
+     1.25,
+     1.81
     ]
    ]
   },
