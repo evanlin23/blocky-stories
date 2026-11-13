@@ -1,0 +1,30 @@
+{
+  "stage": "final",
+  "film": "14017785601",
+  "run": "43378374670",
+  "sha": "a987362c9c189469902a95ce15a5f06ef0ceb0fd",
+  "verdict": "pass",
+  "date": "2026-11-13",
+  "checked": [
+    "film files unchanged since proof sha",
+    "every frame numeric scan: clipped white, black, flat",
+    "frames every 2 s and the first 3 s at phone size",
+    "TV canvas 1920 wide",
+    "45.3-46.0 s print close-up",
+    "kite stall dark band 8.3-9.6 s",
+    "cover 3.5 s",
+    "staging.py (yaw)",
+    "frames.py",
+    "loudness and true peak",
+    "4 kHz windows",
+    "tail",
+    "craft vs proof",
+    "flash",
+    "package",
+    "opening",
+    "gate"
+  ],
+  "craft": "**ep140-town-photo**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.9 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 19.6 | 14.0– | ok |\n| macro.motion_energy_q | 7.93 | 6.0– | ok |\n| macro.longest_still_q_s | 0.0 | –1.0 | ok |\n| spec.cuts_per_10s | 7.84 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.116 | –0.25 | ok |\n| spec.shot_p90_s | 2.11 | –2.5 | ok |\n| macro.longest_still_s | 0.1 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.0 | –1.0 | ok |\n| macro.motion_energy_mean | 3.41 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.75 | 0.4– | ok |\n| macro.brightness_mean | 0.566 | 0.35– | ok |\n| macro.brightness_first_3s | 0.569 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.403 | 0.42– | **warn** |\n| macro.contrast_mean | 0.245 | 0.18– | ok |\n| spec.face_big_share | 0.772 | 0.4– | ok |\n| spec.caption_share | 0.973 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.86 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.0 | –0.25 | ok |\n| micro.idle_window_share | 0.039 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 57.0 | –120 | ok |\n| spec.sound_events_per_10s | 2.24 | 2.0–4.0 | ok |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.7 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0358 | –0.08 | ok |\n| sound.hf_jump_max | 0.0112 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+  "notes": "Final 1080x1920 30 fps, 1607 frames, 53.57 s; drawn from main a987362c; no commit touches stories/ep140-town-photo between the proof sha a564f03e and a987362c (film files unchanged). Flash pass (general 1/s, 3f 3/s, red 0).\nSecond one: the narrator (yellow jacket) beside the green board '212/211', lit, face reads, holding the print, counter top left, punch-in by 1.7 s; caption 'Our town photo / only shows people / who'll still be IN it next year.' Line 1 is the rule with its stakes. Cover 3.5 s (two worried faces + the print, 'posed.') strong.\nEvery frame scanned (clipped white, near-black, flat 30 px blocks): white runs 3.5-5.3, 6.4-8.3, 10.9-11.8 s are the print cards held in hand with faces, the gap and the green ring; black 8.3-9.6 s (16%) is the shade under the kite stall with the seller's legs and the kite tail in it, not a void; flat blocks are walls, boards and paper, nothing broken.\n45.3-46.0 s print close-up (clipped white up to 47%): reads as a photo, not a flat field. The top half is the printed crowd with faces, the green ring and Okafor at full detail, the image border line and the paper's lower edge are visible, and the hand and grass show below; at phone size and on the 1920 TV canvas it reads as paper held in hand. Pass under decision 11.\nstaging.py: 43 shots, 0 findings. frames.py: 1 pop, S24 35.93-35.97 s (cell 0.13 on the first frame, the crowd's cheer cue); looked at: background arm move on the cut, no teleport or snap of a principal. Faces read, captions in the safe area, no stray text or logo, no clipping through bodies.\nAudio: -14.1 LUFS, true peak -1.8 dBTP, LRA 1.2; 4 kHz share max 0.036, jump 0.011; voice gap 11.7 dB; no dead silence; tail decays (last 1 s -18 dB mean, last 0.5 s -23 dB), no cut-off.\nPackage: title, description, pin match the film and don't spoil the twist, no 'husband'; gate OPEN. Opening 'cost' matches line 1; last upload ep137 is 'must' (no clash); ep140 not in queue.txt yet.\ncraft: 0 block, 0 near, 1 warn: macro.saturation_mean 0.403 (0.42-). Matches the proof within a little (changes_q 19.6 vs 20.2, motion_q 7.93 vs 7.96, everything else equal or within 0.01).",
+  "fixes": []
+}
