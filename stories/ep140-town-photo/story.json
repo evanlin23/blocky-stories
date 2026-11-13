@@ -1,0 +1,4075 @@
+{
+ "slug": "ep140-town-photo",
+ "title": "Our Town Photo Is Missing ONE Face 📷",
+ "made_for_kids": false,
+ "premise": "Every year our whole town poses on the bleachers, and the photo only shows people who'll still be here next year. Two hundred twelve of us posed and two hundred eleven faces came out, with a pale gap where I sit.",
+ "twist": "The photo was right. The photographer is never in it, and today the old man who has held the camera for eighty years, and who has never aged, hands it to me. I am the one behind it now, so the count comes out whole and he finally sits in the picture.",
+ "world": "a bright town square on a sunny Saturday: white wooden bleachers in five rows, a red-brick town hall with bunting behind, a green chalkboard headcount, a big wooden box camera on a tripod, and the hall's long hallway of framed photos",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "phonemes": {
+  "Okafor": "Okˈɑfɔɹ"
+ },
+ "key_color": "#7ed957",
+ "gap": 0.15,
+ "tail": 0.25,
+ "fade_in": false,
+ "fade_out": false,
+ "look": {
+  "fog": "#d8ecff",
+  "fog_density": 0.002,
+  "fog_start": 30.0,
+  "sky": "#a8d8ff",
+  "exposure": 0.0,
+  "flash_safe": true,
+  "style": "closer",
+  "polish": {
+   "hold": [
+    "S19a",
+    "S26a"
+   ],
+   "emph": [
+    "L03.1",
+    "L13.2",
+    "L28.2",
+    "L35.1"
+   ],
+   "reveal": [
+    "L32"
+   ],
+   "twist": "L32"
+  }
+ },
+ "grade": {
+  "shadows": [
+   -0.01,
+   0.0,
+   0.03
+  ],
+  "highlights": [
+   0.03,
+   0.01,
+   -0.02
+  ],
+  "saturation": 1.08,
+  "contrast": 1.05,
+  "vignette": 0.12,
+  "bloom": 0.15,
+  "grain": 0.008,
+  "red_line": 0.7,
+  "red_lift_blue": 0.42
+ },
+ "asr_forgive": [
+  "two hundred twelve",
+  "two hundred eleven",
+  "ay em",
+  "mister okafor",
+  "eight fifty nine"
+ ],
+ "hud": {
+  "object": "tag",
+  "at": [
+   -0.6,
+   0.76
+  ],
+  "size": 0.5
+ },
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#f2b53a",
+   "pattern": "solid",
+   "pants": "#3a4a6a",
+   "shoes": "#5a3b22",
+   "sleeves": "long",
+   "hair": "swoop",
+   "hair_c": "#6b4226",
+   "extras": [
+    "coat"
+   ],
+   "zip_c": "#8a6414",
+   "body_width": 0.6,
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f",
+    "freckles": true
+   }
+  },
+  "mom": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#2bb3a3",
+   "pattern": "solid",
+   "pants": "#4a4258",
+   "shoes": "#6a4a2a",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#2a1c14",
+   "height": 0.95,
+   "body_width": 0.6,
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "okafor": {
+   "age": "adult",
+   "skin": "#e9c3a0",
+   "shirt": "#3c3f46",
+   "pattern": "solid",
+   "collar": "#f4f4f0",
+   "pants": "#2f3238",
+   "shoes": "#1c1a1c",
+   "sleeves": "long",
+   "hair": "none",
+   "height": 0.97,
+   "body_width": 0.6,
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f",
+    "bags": true
+   }
+  },
+  "grandma": {
+   "age": "adult",
+   "skin": "#f6d5b5",
+   "shirt": "#b9a0e0",
+   "pattern": "solid",
+   "pants": "#7a6a98",
+   "shoes": "#5a4a6a",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#f2f2f2",
+   "height": 0.9,
+   "body_width": 0.6,
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#24131f",
+    "bags": true
+   }
+  },
+  "benny": {
+   "age": "adult",
+   "skin": "#d9a678",
+   "shirt": "#ff6f61",
+   "pattern": "stripes",
+   "pattern_c": "#ffd23f",
+   "pants": "#f2e2b8",
+   "shoes": "#6a4a2a",
+   "sleeves": "short",
+   "hair": "spiky",
+   "hair_c": "#3a2616",
+   "height": 1.02,
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Our town photo",
+     "our town photo"
+    ],
+    [
+     "only shows people",
+     "only shows people"
+    ],
+    [
+     "who'll still",
+     "who'll still"
+    ],
+    [
+     "be IN it",
+     "be in it"
+    ],
+    [
+     "next year.",
+     "next year."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Two hundred twelve",
+     "two hundred twelve"
+    ],
+    [
+     "posed.",
+     "posed."
+    ],
+    [
+     "Two hundred ELEVEN",
+     "two hundred eleven"
+    ],
+    [
+     "came out.",
+     "came out."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The missing one",
+     "the missing one"
+    ],
+    [
+     "is ME.",
+     "is me."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Last year,",
+     "last year,"
+    ],
+    [
+     "Uncle Benny's spot",
+     "uncle benny's spot"
+    ],
+    [
+     "was BLANK.",
+     "was blank."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He sells KITES",
+     "he sells kites"
+    ],
+    [
+     "on the coast",
+     "on the coast"
+    ],
+    [
+     "now.",
+     "now."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My mom, Dana,",
+     "my mom, dana,"
+    ],
+    [
+     "counted the proof",
+     "counted the proof"
+    ],
+    [
+     "NINE times.",
+     "nine times."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then she stopped",
+     "then she stopped"
+    ],
+    [
+     "letting go",
+     "letting go"
+    ],
+    [
+     "of my HAND.",
+     "of my hand."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The real photo",
+     "the real photo"
+    ],
+    [
+     "is Saturday.",
+     "is saturday."
+    ],
+    [
+     "Nine A.M.",
+     "nine ay em"
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Old Mr. Okafor",
+     "old mister okafor"
+    ],
+    [
+     "takes it,",
+     "takes it,"
+    ],
+    [
+     "like he",
+     "like he"
+    ],
+    [
+     "ALWAYS has.",
+     "always has."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every year",
+     "every year"
+    ],
+    [
+     "he yells,",
+     "he yells,"
+    ],
+    [
+     "Say PICKLES!",
+     "say pickles!"
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the whole",
+     "and the whole"
+    ],
+    [
+     "town yells",
+     "town yells"
+    ],
+    [
+     "PICKLES!",
+     "pickles!"
+    ],
+    [
+     "back.",
+     "back."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "At the test",
+     "at the test"
+    ],
+    [
+     "shot on Thursday,",
+     "shot on thursday,"
+    ],
+    [
+     "I held",
+     "i held"
+    ],
+    [
+     "Mom's HAND.",
+     "mom's hand."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In the print,",
+     "in the print,"
+    ],
+    [
+     "her hand",
+     "her hand"
+    ],
+    [
+     "holds NOTHING.",
+     "holds nothing."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The town hall",
+     "the town hall"
+    ],
+    [
+     "wall has eighty",
+     "wall has eighty"
+    ],
+    [
+     "years of",
+     "years of"
+    ],
+    [
+     "town photos.",
+     "town photos."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mr. Okafor",
+     "mister okafor"
+    ],
+    [
+     "isn't in",
+     "isn't in"
+    ],
+    [
+     "a single ONE.",
+     "a single one."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Obviously.",
+     "obviously."
+    ],
+    [
+     "He's always",
+     "he's always"
+    ],
+    [
+     "behind the CAMERA.",
+     "behind the camera."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Saturday.",
+     "saturday."
+    ],
+    [
+     "Eight fifty-NINE.",
+     "eight fifty nine."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "His hands",
+     "his hands"
+    ],
+    [
+     "shake too much",
+     "shake too much"
+    ],
+    [
+     "to squeeze",
+     "to squeeze"
+    ],
+    [
+     "the BULB.",
+     "the bulb."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He looks",
+     "he looks"
+    ],
+    [
+     "straight at ME",
+     "straight at me"
+    ],
+    [
+     "and holds",
+     "and holds"
+    ],
+    [
+     "it out.",
+     "it out."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then he sits",
+     "then he sits"
+    ],
+    [
+     "in the",
+     "in the"
+    ],
+    [
+     "FRONT row.",
+     "front row."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I'm behind",
+     "so i'm behind"
+    ],
+    [
+     "the CAMERA.",
+     "the camera."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Through the lens,",
+     "through the lens,"
+    ],
+    [
+     "I count.",
+     "i count."
+    ],
+    [
+     "Two hundred TWELVE.",
+     "two hundred twelve."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I hear",
+     "i hear"
+    ],
+    [
+     "myself say,",
+     "myself say,"
+    ],
+    [
+     "Say PICKLES!",
+     "say pickles!"
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Click.",
+     "click."
+    ]
+   ]
+  },
+  {
+   "id": "P1",
+   "pause": 0.6,
+   "chunks": []
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "For the first",
+     "for the first"
+    ],
+    [
+     "time in",
+     "time in"
+    ],
+    [
+     "eighty years,",
+     "eighty years,"
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mr. Okafor",
+     "mister okafor"
+    ],
+    [
+     "is IN it.",
+     "is in it."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My grandma says",
+     "my grandma says"
+    ],
+    [
+     "he looked",
+     "he looked"
+    ],
+    [
+     "exactly this OLD",
+     "exactly this old"
+    ],
+    [
+     "when she was",
+     "when she was"
+    ],
+    [
+     "a girl.",
+     "a girl."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He pats my",
+     "he pats my"
+    ],
+    [
+     "shoulder and says,",
+     "shoulder and says,"
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every year now.",
+     "every year now."
+    ],
+    [
+     "Your TURN.",
+     "your turn."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I'll be here",
+     "i'll be here"
+    ],
+    [
+     "every year.",
+     "every year."
+    ],
+    [
+     "Just never",
+     "just never"
+    ],
+    [
+     "IN it.",
+     "in it."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01a",
+   "cam": [
+    [
+     0,
+     [
+      -4.1,
+      -5.325,
+      1.403
+     ],
+     [
+      -4.1,
+      0.6,
+      1.3
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -4.02,
+      -4.881,
+      1.396
+     ],
+     [
+      -4.02,
+      0.6,
+      1.3
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "note": "S01a frame 1: the board (212 over 211) with me beside it holding Mom's proof, a face by 0:02"
+  },
+  {
+   "id": "S01b",
+   "cam": [
+    [
+     0,
+     [
+      -3.65,
+      -3.603,
+      1.445
+     ],
+     [
+      -3.6499999999999995,
+      0.1,
+      1.38
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -3.63,
+      -2.863,
+      1.472
+     ],
+     [
+      -3.63,
+      0.1,
+      1.42
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L01.3",
+   "note": "S01b push in on my uneasy face and the proof on BE IN IT"
+  },
+  {
+   "id": "S02a",
+   "cam": [
+    [
+     0,
+     [
+      -0.42,
+      -2.945,
+      2.646
+     ],
+     [
+      -0.42,
+      4.5,
+      1.6
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      -0.42,
+      -2.432,
+      2.574
+     ],
+     [
+      -0.42,
+      4.5,
+      1.6
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L02",
+   "clear": true,
+   "note": "S02a the proof in Mom's hands, the green-ringed gap; my face soft behind"
+  },
+  {
+   "id": "S02b",
+   "cam": [
+    [
+     0,
+     [
+      -0.7,
+      -2.275,
+      2.638
+     ],
+     [
+      -0.7,
+      4.4,
+      1.7
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      -0.7,
+      -1.505,
+      2.53
+     ],
+     [
+      -0.7,
+      4.4,
+      1.7
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L02.2",
+   "clear": true,
+   "note": "S02b punch in on the ringed gap on ELEVEN"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      -0.12,
+      -1.118,
+      4.143
+     ],
+     [
+      -0.12,
+      4.8,
+      2.22
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      -0.12,
+      -0.378,
+      3.902
+     ],
+     [
+      -0.12,
+      4.8,
+      2.22
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L03",
+   "clear": true,
+   "note": "S03 my face, scared, the print's edge low left"
+  },
+  {
+   "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      -4.126,
+      -3.421,
+      1.627
+     ],
+     [
+      -3.8999999999999995,
+      0.9,
+      1.4
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -4.1,
+      -2.923,
+      1.601
+     ],
+     [
+      -3.8999999999999995,
+      0.9,
+      1.4
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L04",
+   "note": "S04 last year's print on the board's ledge, a gap in row two, ringed"
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      -60.0,
+      -6.325,
+      1.681
+     ],
+     [
+      -60.0,
+      0.0,
+      1.35
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -60.0,
+      -5.825,
+      1.655
+     ],
+     [
+      -60.0,
+      0.0,
+      1.35
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L05",
+   "note": "S05 Uncle Benny at his kite stall, laughing, a big plain diamond kite at chest height"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      -0.5,
+      -2.472,
+      2.443
+     ],
+     [
+      -0.5,
+      4.6,
+      1.7
+     ],
+     60
+    ],
+    [
+     1,
+     [
+      -0.5,
+      -1.809,
+      2.374
+     ],
+     [
+      -0.5,
+      4.6,
+      1.7
+     ],
+     60
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L08",
+   "clear": true,
+   "note": "S08 two-shot: Mom (worried) counts the proof, me beside her (uneasy)"
+  },
+  {
+   "id": "S09a",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      -3.45,
+      3.907
+     ],
+     [
+      -0.4,
+      4.6,
+      1.9
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      -0.4,
+      -2.444,
+      3.656
+     ],
+     [
+      -0.4,
+      4.6,
+      1.9
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L09",
+   "clear": true,
+   "note": "S09a Mom's hand closing round mine on the bench, her face above"
+  },
+  {
+   "id": "S09b",
+   "cam": [
+    [
+     0,
+     [
+      -0.42,
+      -3.853,
+      4.132
+     ],
+     [
+      -0.42,
+      4.7,
+      2.0
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      -0.42,
+      -3.098,
+      3.944
+     ],
+     [
+      -0.42,
+      4.7,
+      2.0
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L09.2",
+   "clear": true,
+   "note": "S09b Mom's face, worried"
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      -4.5,
+      -4.83,
+      1.254
+     ],
+     [
+      -4.5,
+      1.0,
+      1.05
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -4.5,
+      -4.33,
+      1.236
+     ],
+     [
+      -4.5,
+      1.0,
+      1.05
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L10",
+   "note": "S10 the board with a chalk clock at 9:00"
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      -2.913,
+      -1.32,
+      1.753
+     ],
+     [
+      -0.5,
+      -5.5,
+      1.5
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -2.664,
+      -1.752,
+      1.727
+     ],
+     [
+      -0.5,
+      -5.5,
+      1.5
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L11",
+   "fill": 1.5,
+   "back": true,
+   "note": "S11 Mr. Okafor at the box camera, very straight"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      -1.491,
+      -1.802,
+      1.751
+     ],
+     [
+      -0.5,
+      -5.5,
+      1.55
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -1.362,
+      -2.285,
+      1.724
+     ],
+     [
+      -0.5,
+      -5.5,
+      1.55
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L12",
+   "fill": 1.5,
+   "back": true,
+   "note": "S12 cap raised, mouth wide on PICKLES"
+  },
+  {
+   "id": "S13a",
+   "cam": [
+    [
+     0,
+     [
+      2.3,
+      -9.5,
+      1.3
+     ],
+     [
+      -0.5,
+      5.0,
+      2.6
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      2.1,
+      -9.0,
+      1.3
+     ],
+     [
+      -0.5,
+      5.0,
+      2.6
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L13",
+   "note": "S13a wide of the bleachers from the camera: everyone laughing, arms up"
+  },
+  {
+   "id": "S13b",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      -4.077,
+      5.134
+     ],
+     [
+      -0.4,
+      4.8,
+      2.25
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      -0.4,
+      -2.844,
+      4.734
+     ],
+     [
+      -0.4,
+      4.8,
+      2.25
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L13.2",
+   "clear": true,
+   "note": "S13b punch in on Mom and me laughing"
+  },
+  {
+   "id": "S16",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      -4.129,
+      3.177
+     ],
+     [
+      -0.4,
+      4.6,
+      1.95
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      -0.4,
+      -3.102,
+      3.032
+     ],
+     [
+      -0.4,
+      4.6,
+      1.95
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L16",
+   "clear": true,
+   "note": "S16 I sit beside Mom, our hands joined between us"
+  },
+  {
+   "id": "S17a",
+   "cam": [
+    [
+     0,
+     [
+      -0.62,
+      -2.897,
+      4.403
+     ],
+     [
+      -0.62,
+      4.5,
+      2.0
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      -0.62,
+      -2.157,
+      4.163
+     ],
+     [
+      -0.62,
+      4.5,
+      2.0
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L17",
+   "clear": true,
+   "note": "S17a the new print: Mom's hand holds nothing; Mom's face above it"
+  },
+  {
+   "id": "S17b",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      -0.378,
+      3.882
+     ],
+     [
+      -0.8,
+      4.8,
+      2.2
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      -0.8,
+      0.115,
+      3.722
+     ],
+     [
+      -0.8,
+      4.8,
+      2.2
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L17.2",
+   "clear": true,
+   "note": "S17b Mom's face, stunned"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      74.8,
+      -2.0,
+      1.35
+     ],
+     [
+      68.8,
+      0.9,
+      1.95
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      74.4,
+      -2.0,
+      1.35
+     ],
+     [
+      70.2,
+      0.9,
+      1.95
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L18",
+   "note": "S18 the hallway of framed photos; I walk past, side tracking"
+  },
+  {
+   "id": "S19a",
+   "cam": [
+    [
+     0,
+     [
+      70.8,
+      -2.85,
+      1.7
+     ],
+     [
+      70.8,
+      2.9,
+      1.72
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      70.8,
+      -2.85,
+      1.7
+     ],
+     [
+      70.8,
+      2.9,
+      1.74
+     ],
+     46
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L19",
+   "note": "S19a three framed photos side by side, nobody at a camera"
+  },
+  {
+   "id": "S19b",
+   "cam": [
+    [
+     0,
+     [
+      70.8,
+      -2.002,
+      1.621
+     ],
+     [
+      70.8,
+      0.9,
+      1.52
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      70.8,
+      -1.691,
+      1.61
+     ],
+     [
+      70.8,
+      0.9,
+      1.52
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L19.2",
+   "note": "S19b my face, uneasy"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      69.784,
+      -0.804,
+      1.755
+     ],
+     [
+      70.1,
+      2.2,
+      1.65
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      69.84,
+      -0.274,
+      1.737
+     ],
+     [
+      70.1,
+      2.2,
+      1.65
+     ],
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L20",
+   "note": "S20 one old photo, grass at the bottom edge and nobody; I smile beside it"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      -5.235,
+      -7.501,
+      1.835
+     ],
+     [
+      -3.9,
+      2.0,
+      1.5
+     ],
+     36
+    ],
+    [
+     1,
+     [
+      -5.124,
+      -6.709,
+      1.807
+     ],
+     [
+      -3.9,
+      2.0,
+      1.5
+     ],
+     36
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L21",
+   "note": "S21 the board's clock at 8:59; the full bleachers behind"
+  },
+  {
+   "id": "S22a",
+   "cam": [
+    [
+     0,
+     [
+      -3.172,
+      -1.766,
+      1.591
+     ],
+     [
+      -0.5,
+      -4.95,
+      1.3
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -2.851,
+      -2.148,
+      1.556
+     ],
+     [
+      -0.5,
+      -4.95,
+      1.3
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L22",
+   "fill": 1.5,
+   "back": true,
+   "note": "S22a his hands on the shutter bulb, shaking"
+  },
+  {
+   "id": "S22b",
+   "cam": [
+    [
+     0,
+     [
+      -1.752,
+      -2.059,
+      1.692
+     ],
+     [
+      -0.5,
+      -5.5,
+      1.5
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -1.639,
+      -2.372,
+      1.674
+     ],
+     [
+      -0.5,
+      -5.5,
+      1.5
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L22.2",
+   "fill": 1.5,
+   "back": true,
+   "note": "S22b his face, worried"
+  },
+  {
+   "id": "S23a",
+   "cam": [
+    [
+     0,
+     [
+      -1.491,
+      -1.602,
+      1.551
+     ],
+     [
+      -0.5,
+      -5.3,
+      1.35
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -1.405,
+      -1.924,
+      1.533
+     ],
+     [
+      -0.5,
+      -5.3,
+      1.35
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L23",
+   "fill": 1.6,
+   "back": true,
+   "note": "S23a Mr. Okafor turns to look straight at me"
+  },
+  {
+   "id": "S23b",
+   "cam": [
+    [
+     0,
+     [
+      -1.598,
+      -1.363,
+      1.542
+     ],
+     [
+      -0.65,
+      -4.9,
+      1.35
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -1.512,
+      -1.685,
+      1.524
+     ],
+     [
+      -0.65,
+      -4.9,
+      1.35
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L23.2",
+   "fill": 1.6,
+   "back": true,
+   "note": "S23b his hand holds the shutter bulb out to the camera"
+  },
+  {
+   "id": "S24",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      -2.83,
+      1.704
+     ],
+     [
+      -0.4,
+      3.0,
+      1.5
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -0.4,
+      -2.164,
+      1.68
+     ],
+     [
+      -0.4,
+      3.0,
+      1.5
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L24",
+   "note": "S24 Mr. Okafor sits in the front row beside Grandma, smiling"
+  },
+  {
+   "id": "S25",
+   "cam": [
+    [
+     0,
+     [
+      -2.797,
+      -1.076,
+      1.762
+     ],
+     [
+      -0.3,
+      -5.4,
+      1.5
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -2.547,
+      -1.508,
+      1.736
+     ],
+     [
+      -0.3,
+      -5.4,
+      1.5
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L25",
+   "fill": 1.5,
+   "back": true,
+   "note": "S25 me behind the camera, my eye at the viewfinder"
+  },
+  {
+   "id": "S26a",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      -3.9,
+      1.6
+     ],
+     [
+      -0.3,
+      4.6,
+      1.5
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      0.1,
+      -3.6,
+      1.6
+     ],
+     [
+      -0.3,
+      4.6,
+      1.5
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L26",
+   "fill": 0.2,
+   "note": "S26a through the viewfinder: a thin frame line over the bleachers, every face filled"
+  },
+  {
+   "id": "S26b",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      -4.837,
+      3.848
+     ],
+     [
+      -0.4,
+      4.8,
+      1.8
+     ],
+     70
+    ],
+    [
+     1,
+     [
+      -0.4,
+      -3.822,
+      3.633
+     ],
+     [
+      -0.4,
+      4.8,
+      1.8
+     ],
+     70
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L26.2",
+   "clear": true,
+   "note": "S26b Mom smiling, the empty seat beside her"
+  },
+  {
+   "id": "S26c",
+   "cam": [
+    [
+     0,
+     [
+      -4.5,
+      -4.83,
+      1.254
+     ],
+     [
+      -4.5,
+      1.0,
+      1.05
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -4.5,
+      -4.33,
+      1.236
+     ],
+     [
+      -4.5,
+      1.0,
+      1.05
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L26.2+0.45",
+   "note": "S26c the 211 is wiped and 212 written"
+  },
+  {
+   "id": "S28a",
+   "cam": [
+    [
+     0,
+     [
+      -2.164,
+      -2.617,
+      1.724
+     ],
+     [
+      -0.5,
+      -5.5,
+      1.55
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -1.998,
+      -2.905,
+      1.707
+     ],
+     [
+      -0.5,
+      -5.5,
+      1.55
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L28",
+   "back": true,
+   "note": "S28a my face at the camera, stunned, then PICKLES"
+  },
+  {
+   "id": "S28b",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      -12.5,
+      3.2
+     ],
+     [
+      0.0,
+      4.8,
+      2.3
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.1,
+      -11.8,
+      3.2
+     ],
+     [
+      0.0,
+      4.8,
+      2.3
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L28.2",
+   "note": "S28b the bleachers, everyone laughing, arms up"
+  },
+  {
+   "id": "S29",
+   "cam": [
+    [
+     0,
+     [
+      -2.531,
+      -2.53,
+      1.521
+     ],
+     [
+      -0.5,
+      -4.95,
+      1.3
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -2.317,
+      -2.785,
+      1.498
+     ],
+     [
+      -0.5,
+      -4.95,
+      1.3
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L29",
+   "back": true,
+   "note": "S29 my hand squeezes the shutter bulb: Click."
+  },
+  {
+   "id": "S30",
+   "cam": [
+    [
+     0,
+     [
+      -2.063,
+      -2.07,
+      1.433
+     ],
+     [
+      -0.4,
+      -4.95,
+      1.2
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -1.896,
+      -2.358,
+      1.409
+     ],
+     [
+      -0.4,
+      -4.95,
+      1.2
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "P1",
+   "back": true,
+   "note": "the drop: the print slides out of the camera's slot into my hands"
+  },
+  {
+   "id": "S31a",
+   "cam": [
+    [
+     0,
+     [
+      -2.163,
+      -1.97,
+      1.433
+     ],
+     [
+      -0.5,
+      -4.85,
+      1.2
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -1.996,
+      -2.258,
+      1.409
+     ],
+     [
+      -0.5,
+      -4.85,
+      1.2
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L31",
+   "back": true,
+   "note": "S31a the print: Mr. Okafor in the front row, smiling"
+  },
+  {
+   "id": "S31o",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.002,
+      1.285
+     ],
+     [
+      0.0,
+      3.0,
+      1.18
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      0.0,
+      0.335,
+      1.273
+     ],
+     [
+      0.0,
+      3.0,
+      1.18
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L32",
+   "note": "S31o Mr. Okafor himself in the front row, smiling (the print's face, seen for real)"
+  },
+  {
+   "id": "S31b",
+   "cam": [
+    [
+     0,
+     [
+      -1.199,
+      -3.639,
+      1.383
+     ],
+     [
+      -0.5,
+      -4.85,
+      1.31
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -1.066,
+      -3.87,
+      1.369
+     ],
+     [
+      -0.5,
+      -4.85,
+      1.31
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L32.1",
+   "back": true,
+   "note": "S31b punch in on his face in the print"
+  },
+  {
+   "id": "S32",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      -1.331,
+      1.601
+     ],
+     [
+      -1.0,
+      3.0,
+      1.45
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -1.0,
+      -0.831,
+      1.584
+     ],
+     [
+      -1.0,
+      3.0,
+      1.45
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L33",
+   "note": "S32 Grandma, stunned, then smiling"
+  },
+  {
+   "id": "S33",
+   "cam": [
+    [
+     0,
+     [
+      -2.623,
+      0.558,
+      2.381
+     ],
+     [
+      -1.0,
+      -5.5,
+      1.5
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -2.452,
+      -0.08,
+      2.289
+     ],
+     [
+      -1.0,
+      -5.5,
+      1.5
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L34",
+   "fill": 1.6,
+   "back": true,
+   "note": "S33 Mr. Okafor beside me at the camera, one step in to pat my shoulder"
+  },
+  {
+   "id": "S34",
+   "cam": [
+    [
+     0,
+     [
+      -2.186,
+      -1.894,
+      1.692
+     ],
+     [
+      -1.55,
+      -5.5,
+      1.5
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -2.128,
+      -2.222,
+      1.674
+     ],
+     [
+      -1.55,
+      -5.5,
+      1.5
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L35",
+   "fill": 1.5,
+   "back": true,
+   "note": "S34 his face, smiling, eyes on me"
+  },
+  {
+   "id": "S36",
+   "cam": [
+    [
+     0,
+     [
+      -2.799,
+      -4.262,
+      1.727
+     ],
+     [
+      -3.55,
+      0.0,
+      1.5
+     ],
+     45
+    ],
+    [
+     1,
+     [
+      -2.914,
+      -3.606,
+      1.692
+     ],
+     [
+      -3.55,
+      0.0,
+      1.5
+     ],
+     45
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "at": "L37",
+   "note": "S36 my face, uneasy, the 212 / 212 board behind my shoulder"
+  }
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     -3.55,
+     0.1,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 12,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     62,
+     62
+    ],
+    "side": [
+     -22,
+     -22
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L02",
+    "pos": [
+     -3.55,
+     0.1,
+     0.0
+    ]
+   },
+   {
+    "at": "L02",
+    "pos": [
+     0.0,
+     4.8,
+     0.73
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L03",
+    "expr": "scared",
+    "blend": 0.2
+   },
+   {
+    "at": "L03+1.6",
+    "expr": "worried",
+    "blend": 0.2
+   },
+   {
+    "at": "L08",
+    "expr": "worried",
+    "blend": 0.2
+   },
+   {
+    "at": "L09",
+    "arms": [
+     72,
+     0
+    ],
+    "side": [
+     16,
+     0
+    ],
+    "blend": 0.4,
+    "expr": "worried"
+   },
+   {
+    "at": "L13",
+    "expr": "laugh",
+    "arms": [
+     165,
+     165
+    ],
+    "side": [
+     0,
+     28
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L16",
+    "pos": [
+     0.0,
+     4.8,
+     0.73
+    ]
+   },
+   {
+    "at": "L16",
+    "pos": [
+     0.0,
+     4.8,
+     1.05
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     60,
+     0
+    ],
+    "side": [
+     18,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L16+0.5",
+    "pos": [
+     0.0,
+     4.8,
+     0.73
+    ],
+    "blend": 0.5
+   },
+   {
+    "at": "L18",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L18",
+    "pos": [
+     0.0,
+     4.8,
+     0.73
+    ]
+   },
+   {
+    "at": "L18",
+    "pos": [
+     67.2,
+     0.9,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 90,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L19",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L18+2.4",
+    "pos": [
+     70.7,
+     0.9,
+     0.0
+    ],
+    "blend": 0.3
+   },
+   {
+    "at": "L19.2",
+    "pos": [
+     70.7,
+     0.9,
+     0.0
+    ]
+   },
+   {
+    "at": "L19.2",
+    "pos": [
+     70.8,
+     0.9,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L20",
+    "pos": [
+     70.8,
+     0.9,
+     0.0
+    ]
+   },
+   {
+    "at": "L20",
+    "pos": [
+     70.25,
+     1.55,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L21",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L24",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L25",
+    "pos": [
+     70.25,
+     1.55,
+     0.0
+    ]
+   },
+   {
+    "at": "L25",
+    "pos": [
+     -0.5,
+     -5.5,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L28",
+    "expr": "wide",
+    "blend": 0.2,
+    "head": [
+     0,
+     4
+    ]
+   },
+   {
+    "from": "L28.2",
+    "to": "L28>",
+    "mouth": [
+     0.8,
+     0.8
+    ],
+    "flap": true
+   },
+   {
+    "at": "L28.2",
+    "expr": "laugh",
+    "blend": 0.2
+   },
+   {
+    "at": "L29",
+    "expr": "smile",
+    "arms": [
+     60,
+     60
+    ],
+    "side": [
+     -24,
+     -24
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.3
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -0.5,
+     -5.5,
+     0.0
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -0.5,
+     -5.5,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L37",
+    "pos": [
+     -0.5,
+     -5.5,
+     0.0
+    ]
+   },
+   {
+    "at": "L37",
+    "pos": [
+     -3.3999999999999995,
+     0.0,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   }
+  ],
+  "mom": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     -0.8,
+     4.8,
+     0.764
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L02",
+    "arms": [
+     62,
+     62
+    ],
+    "side": [
+     -22,
+     -22
+    ],
+    "blend": 0.3,
+    "expr": "worried"
+   },
+   {
+    "at": "L08",
+    "arms": [
+     62,
+     62
+    ],
+    "side": [
+     -22,
+     -22
+    ],
+    "expr": "worried",
+    "blend": 0.0
+   },
+   {
+    "at": "L08+0.8",
+    "arms": [
+     62,
+     62
+    ],
+    "side": [
+     -22,
+     -22
+    ],
+    "head": [
+     0,
+     14
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L08+1.6",
+    "arms": [
+     62,
+     62
+    ],
+    "side": [
+     -22,
+     -22
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L09",
+    "arms": [
+     0,
+     72
+    ],
+    "side": [
+     0,
+     16
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.4,
+    "expr": "worried"
+   },
+   {
+    "at": "L13",
+    "expr": "laugh",
+    "arms": [
+     165,
+     165
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L16",
+    "expr": "worried",
+    "arms": [
+     0,
+     60
+    ],
+    "side": [
+     0,
+     18
+    ],
+    "blend": 0.3
+   },
+   {
+    "at": "L17",
+    "arms": [
+     62,
+     62
+    ],
+    "side": [
+     -22,
+     -22
+    ],
+    "expr": "worried",
+    "blend": 0.35
+   },
+   {
+    "at": "L17.2",
+    "expr": "wide",
+    "blend": 0.2
+   },
+   {
+    "at": "L18",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L24",
+    "pos": [
+     -0.8,
+     4.8,
+     0.764
+    ]
+   },
+   {
+    "at": "L24",
+    "pos": [
+     -0.8,
+     4.8,
+     0.764
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L26.2",
+    "expr": "smile",
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "blend": 0.4
+   }
+  ],
+  "okafor": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L11",
+    "pos": [
+     0,
+     30,
+     0
+    ]
+   },
+   {
+    "at": "L11",
+    "pos": [
+     -0.5,
+     -5.5,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L12",
+    "head": [
+     -10,
+     0
+    ],
+    "blend": 0.3
+   },
+   {
+    "at": "L12.2",
+    "expr": "laugh",
+    "arms": [
+     0,
+     170
+    ],
+    "blend": 0.35
+   },
+   {
+    "from": "L12.2",
+    "to": "L12>",
+    "mouth": [
+     0.8,
+     0.8
+    ],
+    "flap": true
+   },
+   {
+    "at": "L13",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L22",
+    "pos": [
+     -0.5,
+     -5.5,
+     0.0
+    ]
+   },
+   {
+    "at": "L22",
+    "pos": [
+     -0.5,
+     -5.5,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": false,
+    "arms": [
+     58,
+     58
+    ],
+    "side": [
+     -26,
+     -26
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L22+0.3",
+    "arms": [
+     55,
+     61
+    ],
+    "side": [
+     -26,
+     -26
+    ],
+    "blend": 0.2,
+    "tremble": 1.2
+   },
+   {
+    "at": "L22+0.55",
+    "arms": [
+     61,
+     55
+    ],
+    "side": [
+     -26,
+     -26
+    ],
+    "blend": 0.2,
+    "tremble": 1.2
+   },
+   {
+    "at": "L22.2",
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.2
+   },
+   {
+    "at": "L22+0.8",
+    "arms": [
+     55,
+     61
+    ],
+    "side": [
+     -26,
+     -26
+    ],
+    "blend": 0.2,
+    "tremble": 1.2
+   },
+   {
+    "at": "L22+1.05",
+    "arms": [
+     61,
+     55
+    ],
+    "side": [
+     -26,
+     -26
+    ],
+    "blend": 0.2,
+    "tremble": 1.2
+   },
+   {
+    "at": "L22+1.3",
+    "arms": [
+     55,
+     61
+    ],
+    "side": [
+     -26,
+     -26
+    ],
+    "blend": 0.2,
+    "tremble": 1.2
+   },
+   {
+    "at": "L22+1.55",
+    "arms": [
+     61,
+     55
+    ],
+    "side": [
+     -26,
+     -26
+    ],
+    "blend": 0.2,
+    "tremble": 1.2
+   },
+   {
+    "at": "L22+1.8",
+    "arms": [
+     55,
+     61
+    ],
+    "side": [
+     -26,
+     -26
+    ],
+    "blend": 0.2,
+    "tremble": 1.2
+   },
+   {
+    "at": "L23",
+    "head": [
+     -34,
+     0
+    ],
+    "expr": "neutral",
+    "arms": [
+     58,
+     58
+    ],
+    "side": [
+     -26,
+     -26
+    ],
+    "blend": 0.5
+   },
+   {
+    "at": "L23.2",
+    "arms": [
+     75,
+     95
+    ],
+    "side": [
+     -26,
+     -50
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L24",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L24",
+    "pos": [
+     -0.5,
+     -5.5,
+     0.0
+    ]
+   },
+   {
+    "at": "L24",
+    "pos": [
+     0.0,
+     3.0,
+     0.25
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L24+0.5",
+    "pos": [
+     0.0,
+     3.0,
+     -0.15
+    ],
+    "blend": 0.5
+   },
+   {
+    "at": "L34",
+    "pos": [
+     0.0,
+     3.0,
+     -0.15
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -1.62,
+     -5.5,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 180,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L34+0.5",
+    "side": [
+     97,
+     0
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L35",
+    "expr": "smile",
+    "blend": 0.3
+   },
+   {
+    "from": "L35",
+    "to": "L35>",
+    "mouth": [
+     0.5,
+     0.5
+    ],
+    "flap": true
+   },
+   {
+    "at": "L37",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "grandma": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ]
+   },
+   {
+    "at": 0,
+    "pos": [
+     -0.8,
+     3.0,
+     -0.102
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "neutral",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L02",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -0.8,
+     3.0,
+     -0.102
+    ]
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -0.8,
+     3.0,
+     -0.102
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     165,
+     165
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L13.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L24",
+    "pos": [
+     -0.8,
+     3.0,
+     -0.102
+    ]
+   },
+   {
+    "at": "L24",
+    "pos": [
+     -0.8,
+     3.0,
+     -0.102
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L26.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L26.2+0.4",
+    "pos": [
+     -0.8,
+     3.0,
+     -0.102
+    ]
+   },
+   {
+    "at": "L26.2+0.4",
+    "pos": [
+     -0.8,
+     3.0,
+     -0.102
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "smile",
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L33",
+    "expr": "wide",
+    "blend": 0.3
+   },
+   {
+    "at": "L33.3",
+    "expr": "smile",
+    "blend": 0.4
+   }
+  ],
+  "benny": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     30,
+     0
+    ],
+    "hidden": true,
+    "blend": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L05",
+    "pos": [
+     0,
+     30,
+     0
+    ]
+   },
+   {
+    "at": "L05",
+    "pos": [
+     -60.0,
+     0.2,
+     0.0
+    ],
+    "blend": 0,
+    "yaw": 0,
+    "expr": "laugh",
+    "hidden": false,
+    "arms": [
+     40,
+     40
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true
+   },
+   {
+    "at": "L08",
+    "hidden": true,
+    "blend": 0
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "pr_proof",
+   "on": true,
+   "pos": [
+    -3.6699999999999995,
+    -0.12,
+    0.98
+   ],
+   "rot": [
+    12,
+    0
+   ],
+   "s": 1.0
+  },
+  {
+   "at": 0,
+   "name": "board",
+   "g": "a"
+  },
+  {
+   "at": 0,
+   "name": "tag",
+   "g": "a"
+  },
+  {
+   "at": 0,
+   "name": "cheer",
+   "on": false
+  },
+  {
+   "at": "L02",
+   "name": "pr_proof",
+   "on": true,
+   "pos": [
+    -0.62,
+    4.1,
+    1.6
+   ],
+   "rot": [
+    0,
+    0
+   ],
+   "s": 1.55
+  },
+  {
+   "at": "L04",
+   "name": "pr_last",
+   "on": true,
+   "pos": [
+    -3.9799999999999995,
+    0.82,
+    1.4
+   ],
+   "rot": [
+    0,
+    -7
+   ],
+   "s": 2.0
+  },
+  {
+   "at": "L05",
+   "name": "pr_last",
+   "on": false
+  },
+  {
+   "at": "L09",
+   "name": "pr_proof",
+   "on": false
+  },
+  {
+   "at": "L10",
+   "name": "board",
+   "g": "a900"
+  },
+  {
+   "at": "L11",
+   "name": "board",
+   "g": "a"
+  },
+  {
+   "at": "L13",
+   "name": "cheer",
+   "on": true
+  },
+  {
+   "at": "L16",
+   "name": "cheer",
+   "on": false
+  },
+  {
+   "at": "L17",
+   "name": "pr_test",
+   "on": true,
+   "pos": [
+    -0.62,
+    4.22,
+    1.9
+   ],
+   "rot": [
+    0,
+    0
+   ],
+   "s": 1.35
+  },
+  {
+   "at": "L17.2",
+   "name": "pr_test",
+   "on": false
+  },
+  {
+   "at": "L21",
+   "name": "board",
+   "g": "a859"
+  },
+  {
+   "at": "L22",
+   "name": "bulb",
+   "on": true,
+   "pos": [
+    -0.5,
+    -4.95,
+    1.2
+   ],
+   "shake": 0.012,
+   "big": 2.2
+  },
+  {
+   "at": "L23.2",
+   "name": "bulb",
+   "on": true,
+   "pos": [
+    -0.5,
+    -4.95,
+    1.3
+   ],
+   "to": [
+    -0.9,
+    -4.3,
+    1.2
+   ],
+   "dur": 0.6,
+   "big": 2.4
+  },
+  {
+   "at": "L24",
+   "name": "bulb",
+   "on": false
+  },
+  {
+   "at": "L24",
+   "name": "cheer",
+   "on": false
+  },
+  {
+   "at": "L26",
+   "name": "vf",
+   "on": true
+  },
+  {
+   "at": "L26.2",
+   "name": "vf",
+   "on": false
+  },
+  {
+   "at": "L26.2+0.45",
+   "name": "board",
+   "g": "smudge"
+  },
+  {
+   "at": "L26.2+0.66",
+   "name": "board",
+   "g": "b859"
+  },
+  {
+   "at": "L26.2+0.66",
+   "name": "tag",
+   "g": "b"
+  },
+  {
+   "at": "L28.2",
+   "name": "cheer",
+   "on": true
+  },
+  {
+   "at": "L29",
+   "name": "bulb",
+   "on": true,
+   "pos": [
+    -0.5,
+    -4.9,
+    1.1
+   ],
+   "squeeze": 0.3,
+   "big": 2.6
+  },
+  {
+   "at": "P1",
+   "name": "bulb",
+   "on": false
+  },
+  {
+   "at": "P1",
+   "name": "pr_final",
+   "on": true,
+   "pos": [
+    -0.24,
+    -5.1,
+    1.45
+   ],
+   "to": [
+    -0.5,
+    -4.85,
+    1.5
+   ],
+   "dur": 0.55,
+   "rot": [
+    180,
+    0
+   ],
+   "s": 1.5
+  },
+  {
+   "at": "L31",
+   "name": "pr_final",
+   "on": true,
+   "pos": [
+    -0.5,
+    -4.85,
+    1.5
+   ],
+   "rot": [
+    180,
+    0
+   ],
+   "s": 1.5
+  },
+  {
+   "at": "L31",
+   "name": "cheer",
+   "on": false
+  },
+  {
+   "at": "L33",
+   "name": "pr_final",
+   "on": false
+  },
+  {
+   "at": "L37",
+   "name": "board",
+   "g": "b900"
+  }
+ ],
+ "set_moves": [],
+ "frames_ok": [
+  "S01a",
+  "S16",
+  "S34"
+ ],
+ "framing_ok": [],
+ "framing_props": {
+  "photo": [
+   -4.6,
+   1.0,
+   1.5
+  ],
+  "twelve": [
+   -4.6,
+   1.0,
+   1.5
+  ],
+  "eight": [
+   -4.6,
+   1.0,
+   1.5
+  ],
+  "fifty": [
+   -4.6,
+   1.0,
+   1.5
+  ],
+  "nine": [
+   -4.6,
+   1.0,
+   1.5
+  ],
+  "it": [
+   -0.5,
+   -4.85,
+   1.4
+  ]
+ },
+ "staging_ok": [
+  "S33/me+okafor close on purpose: he steps in and pats my shoulder, no overlap",
+  "S34/me+okafor close on purpose: his face over my shoulder after the pat, no overlap"
+ ],
+ "music": {
+  "root": 41,
+  "mode": "major",
+  "bpm": 104,
+  "seed": 140,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "pulse",
+     "pluck_hi"
+    ],
+    "energy": 0.45
+   },
+   {
+    "at": "L10",
+    "voices": [
+     "pad",
+     "pluck_hi",
+     "pulse"
+    ],
+    "energy": 0.5
+   },
+   {
+    "at": "L17",
+    "voices": [
+     "drone",
+     "pad",
+     "pluck"
+    ],
+    "energy": 0.4
+   },
+   {
+    "at": "L31",
+    "voices": [
+     "drone",
+     "pad",
+     "pluck"
+    ],
+    "energy": 0.3
+   }
+  ]
+ },
+ "sound": {
+  "rev": 2,
+  "floor": "wood",
+  "steps_db": -22,
+  "ambience": [
+   {
+    "kind": "wind",
+    "from": 0,
+    "to": "end",
+    "lufs": -46
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L29+0.02",
+    "kind": "click",
+    "db": -10
+   },
+   {
+    "at": "P1+0.02",
+    "kind": "whoosh",
+    "db": -17,
+    "dur": 0.6,
+    "keep": true
+   },
+   {
+    "at": "L24+0.9",
+    "kind": "thud",
+    "db": -18
+   },
+   {
+    "at": "L09+0.1",
+    "kind": "click",
+    "db": -20
+   }
+  ],
+  "music_drops": [
+   [
+    "P1",
+    "P1>"
+   ]
+  ]
+ },
+ "rev": 9
+}
