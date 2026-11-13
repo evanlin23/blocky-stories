@@ -1,0 +1,569 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "in our town, your phone can't run out while you're waiting for someone to call.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.155,
+   "onset": 0.172,
+   "end": 2.966,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.741,
+     1.276
+    ],
+    [
+     1.276,
+     1.638
+    ],
+    [
+     1.638,
+     2.086
+    ],
+    [
+     2.086,
+     2.362
+    ],
+    [
+     2.362,
+     2.966
+    ]
+   ]
+  },
+  "L02": {
+   "text": "it just never charges past one percent.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.207
+    ],
+    [
+     1.207,
+     1.948
+    ]
+   ]
+  },
+  "L03": {
+   "text": "my cousin dex's has said one percent for three years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     0.948,
+     1.241
+    ],
+    [
+     1.241,
+     1.69
+    ],
+    [
+     1.69,
+     2.483
+    ]
+   ]
+  },
+  "L04": {
+   "text": "grandma's flip phone has waited on a radio contest for ten years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.121,
+   "onset": 0.172,
+   "end": 2.931,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ],
+    [
+     1.0,
+     1.406
+    ],
+    [
+     1.406,
+     2.103
+    ],
+    [
+     2.103,
+     2.931
+    ]
+   ]
+  },
+  "L05": {
+   "text": "and dex's ringtone is a duck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ],
+    [
+     0.966,
+     1.603
+    ]
+   ]
+  },
+  "L06": {
+   "text": "quack.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.638,
+   "onset": 0.172,
+   "end": 0.483,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ]
+   ]
+  },
+  "L07": {
+   "text": "the whole family asks who he's waiting on. he won't say.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.069
+    ],
+    [
+     1.069,
+     1.586
+    ],
+    [
+     1.655,
+     2.431
+    ]
+   ]
+  },
+  "L08": {
+   "text": "so i went down to grandpa's boat to make him call whoever it is.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.698
+    ],
+    [
+     0.698,
+     1.397
+    ],
+    [
+     1.397,
+     1.578
+    ],
+    [
+     1.578,
+     1.914
+    ],
+    [
+     1.914,
+     2.672
+    ]
+   ]
+  },
+  "L09": {
+   "text": "but at the plank, my feet wouldn't move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.284
+    ],
+    [
+     0.284,
+     0.586
+    ],
+    [
+     0.612,
+     0.914
+    ],
+    [
+     0.914,
+     1.621
+    ]
+   ]
+  },
+  "L10": {
+   "text": "three years ago, dex and i bet who'd call first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.724,
+     1.017
+    ],
+    [
+     1.017,
+     1.25
+    ],
+    [
+     1.25,
+     2.069
+    ]
+   ]
+  },
+  "L11": {
+   "text": "neither of us ever called.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.19,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.19,
+     0.595
+    ],
+    [
+     0.595,
+     1.328
+    ]
+   ]
+  },
+  "L12": {
+   "text": "three years is a long time to win a bet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.732
+    ],
+    [
+     0.732,
+     1.224
+    ],
+    [
+     1.224,
+     1.388
+    ],
+    [
+     1.388,
+     1.879
+    ]
+   ]
+  },
+  "L13": {
+   "text": "so i called him from the dock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.759
+    ],
+    [
+     0.759,
+     1.397
+    ]
+   ]
+  },
+  "L14": {
+   "text": "quack.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.638,
+   "onset": 0.172,
+   "end": 0.483,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ]
+   ]
+  },
+  "L15": {
+   "text": "dex looked down at his phone, said hel, and it went black.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.052
+    ],
+    [
+     1.086,
+     1.466
+    ],
+    [
+     1.517,
+     1.647
+    ],
+    [
+     1.647,
+     2.276
+    ]
+   ]
+  },
+  "L16": {
+   "text": "then my phone went black, too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     1.345
+    ]
+   ]
+  },
+  "L17": {
+   "text": "right before, mine said one percent.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     0.966
+    ],
+    [
+     0.966,
+     1.672
+    ]
+   ]
+  },
+  "L18": {
+   "text": "it's said that for three years. i thought it was just old.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.155
+    ],
+    [
+     1.224,
+     1.474
+    ],
+    [
+     1.474,
+     1.603
+    ],
+    [
+     1.603,
+     2.328
+    ]
+   ]
+  },
+  "L19": {
+   "text": "i was waiting on him. and he was waiting on me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.19,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.19,
+     0.69
+    ],
+    [
+     0.69,
+     1.103
+    ],
+    [
+     1.172,
+     1.301
+    ],
+    [
+     1.301,
+     1.655
+    ],
+    [
+     1.655,
+     2.172
+    ]
+   ]
+  },
+  "L20": {
+   "text": "dex yelled across the water, do you have a charger?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.19
+    ],
+    [
+     1.233,
+     1.457
+    ],
+    [
+     1.457,
+     2.052
+    ]
+   ]
+  },
+  "L21": {
+   "text": "because neither of us is waiting anymore.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     0.793
+    ],
+    [
+     0.793,
+     1.147
+    ],
+    [
+     1.147,
+     1.741
+    ]
+   ]
+  }
+ }
+}
