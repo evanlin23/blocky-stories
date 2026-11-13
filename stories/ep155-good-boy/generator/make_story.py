@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 13
+REV = 19
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the reveal picture is held 1.6 s: a silent beat after "Good BOY." and a closing beat after the last thump
@@ -180,7 +180,9 @@ cue(0, "tod", v="day")
 for nm in ("door", "photo", "wiggle", "sausage", "vac", "mug", "strap", "curtain", "keyb"):
     cue(0, nm, v=0.0)
 cue(0, "leash", v=1.0)
-cue(0, "sausage", v=1.0)
+cue(0, "sausage", v=0.0)
+cue(0, "bowl", v=0.0)
+cue(0, "rfill", v=0.0)
 cue(0, "dog", v=0.0)
 
 
@@ -230,24 +232,24 @@ show("L04.2", "poodleman")
 place("L04.2", "poodleman", (OX - 0.7, OY - 2.0, 0.0), 0, "sheepish", arms=[0, 0])
 shot("S04b", "L04.2", cam(OX - 0.7, OY - 2.0, 1.25, 1.55, -8, 34, cz=1.3))
 show("L05-0.15", "poodleman", "ortiz")
-place("L05-0.15", "poodleman", (OX - 0.58, OY - 2.1, 0.0), 0, "sheepish", arms=[0, 0])
+place("L05-0.15", "poodleman", (OX - 0.58, OY - 1.05, 0.0), 0, "sheepish", arms=[0, 0])
 place("L05-0.15", "ortiz", (OX + 0.87, OY - 2.1, 0.0), 0, "smile", arms=[0, 0])
 sit("L05-0.15", "poodleman", 0.0)
-sit("L05+0.12", "poodleman", 0.55, 0.4)
-shot("S05a", "L05-0.15", camp([OX + 0.9, OY - 6.0, 1.3], [OX + 0.15, OY - 2.1, 1.0], 24, pos2=[OX + 0.7, OY - 5.4, 1.25]))
+sit("L05+0.12", "poodleman", 0.85, 0.4)
+shot("S05a", "L05-0.15", camp([OX + 0.2, OY - 6.4, 1.4], [OX + 0.15, OY - 1.6, 1.15], 24, pos2=[OX + 0.2, OY - 5.8, 1.35]))
 key("ortiz", "L05.2", yaw=0, expr="smile", arms=[0, 70], head=[18, 0], blend=0.3)
-sit("L05.2", "poodleman", 0.55)
-shot("S05b", "L05.2", cam(OX + 0.15, OY - 2.1, 1.1, 2.7, 0, 32, cz=1.2))
+sit("L05.2", "poodleman", 0.85)
+shot("S05b", "L05.2", cam(OX + 0.1, OY - 1.3, 0.8, 3.5, 12, 32, cz=1.1))
 
 # ----------------------------------------------------------------------------------------------- 06 dog-people
 CX, CY = G.COR
 show("L06", "walker")
 sit("L06", "poodleman", 0.0)
-place("L06", "walker", (CX - 0.45, CY - 0.5, 0.0), 0, "stunned", arms=[0, 0], head=[-40, 4])
-shot("S06a", "L06", fc(CX + 0.3, CY + 0.3, HZ["walker"], 2.8, -6, 30, push=(2.65, HZ["walker"])))
-place("L06.2", "walker", (CX - 0.45, CY - 0.5, 0.0), 0, "stunned", arms=[0, 0], head=[-40, 4])
+place("L06", "walker", (CX + 0.05, CY - 0.5, 0.0), 0, "stunned", arms=[0, 0], head=[-40, 4])
+shot("S06a", "L06", fc(CX + 0.4, CY + 0.3, HZ["walker"], 3.2, -2, 30, push=(3.0, HZ["walker"])))
+place("L06.2", "walker", (CX + 0.05, CY - 0.5, 0.0), 0, "stunned", arms=[0, 0], head=[-40, 4])
 key("walker", "L06.3", yaw=0, expr="wide", arms=[70, 70], head=[-30, -4], blend=0.1)
-shot("S06b", "L06.2", fc(CX + 0.3, CY + 0.3, HZ["walker"], 2.7, 10, 30, push=(2.4, HZ["walker"])))
+shot("S06b", "L06.2", fc(CX + 0.4, CY + 0.3, HZ["walker"], 3.2, 3, 30, push=(3.0, HZ["walker"])))
 
 # ----------------------------------------------------------------------------------------------- 07 the fine print
 sit("L07", "me", 1.0)
@@ -282,6 +284,8 @@ place("L09", "me", (G.WIN_X + 0.3, FY + 0.9, DECK), 70, "laugh", arms=[0, 0], he
 shot("S09a", "L09", camp([HX + 1.2, 15.4, DECK + 1.7], [G.WIN_X + 0.3, FY + 0.8, DECK + 1.25], 28, pos2=[HX + 0.9, 15.0, DECK + 1.7]))
 show("L09.3-0.12", "rory")
 place("L09.3-0.12", "rory", (HX - 0.1, FY + 0.45, DECK), 180, "stunned", arms=[0, 0])
+cue("L09.3-0.12", "rfill", v=1.0)
+cue("L10", "rfill", v=0.0)
 shot("S09b", "L09.3-0.12", cam(HX - 0.1, FY + 0.45, DECK + 1.2, 1.8, 180, 34, cz=DECK + 1.3))
 
 # ----------------------------------------------------------------------------------------------- 10 the mail carrier
@@ -324,7 +328,7 @@ cue("L13", "vac", v=1.0)
 show("L13", "dale")
 sit("L13", "me", 0.0)
 place("L13", "dale", (HX + 0.1, 11.75, DECK), 0, "smile", arms=[62, 62])
-shot("S13a", "L13", camp([HX + 1.9, 8.3, DECK + 1.5], [HX + 0.4, 11.0, DECK + 0.05], 30, pos2=[HX + 1.6, 8.8, DECK + 1.45]))
+shot("S13a", "L13", fc(HX + 0.5, 11.6, DECK + HZ["dale"], 2.6, 24, 30, up=0.14, push=(2.2, DECK + 1.5)))
 cue("L13.3", "vac", v=0.0)
 show("L13.3", "me")
 sit("L13.3", "me", 1.0)
@@ -334,10 +338,12 @@ shot("S13b", "L13.3", cam(G.DECK_X0 + 0.3, 10.8, DECK + 1.9, 1.6, 22, 36, cz=DEC
 # ----------------------------------------------------------------------------------------------- 14 6:40
 cue("L14", "clock", s="6:40")
 cue("L14", "tod", v="gold")
+cue("L14", "bowl", v=1.0)
+cue("L14", "sausage", v=1.0)
 sit("L14", "me", 0.0)
 show("L14")
 shot("S14a", "L14", cam(61.55, 10.35, DECK + 0.3, 0.75, 32, 34, cz=DECK + 0.4, push=(0.6, DECK + 0.3)))
-shot("S14b", "L14.3", cam(59.75, 10.3, DECK + 0.2, 0.7, 24, 34, cz=DECK + 0.35, push=(0.55, DECK + 0.2)))
+shot("S14b", "L14.3", camp([60.3, 9.5, DECK + 0.6], [59.75, 10.15, DECK - 0.06], 34, pos2=[60.15, 9.7, DECK + 0.5], tgt2=[59.75, 10.15, DECK - 0.07]))
 
 # ----------------------------------------------------------------------------------------------- 15 the sausage
 show("L15", "me")
@@ -356,6 +362,7 @@ shot("S16a", "L16", fc(HX + 0.4, 11.4, DECK + HZ["dale"], 1.9, 8, 34))
 key("dale", "L16.3", yaw=0, expr="sad", head=[-8, 0], blend=0.3)
 shot("S16c", "L16.2", fc(HX + 0.4, 11.4, DECK + HZ["dale"], 1.8, -6, 36))
 
+SDD = (SM[0] + 1.5, SD[1])     # Mr. Dale seated beside me at dusk (the staging gap)
 # ----------------------------------------------------------------------------------------------- 17 9:58
 cue("L17", "clock", s="9:58")
 cue("L17", "tod", v="dusk")
@@ -365,25 +372,27 @@ shot("S17a", "L17", cam(61.55, FY, DECK + 1.2, 1.45, 0, 32, cz=DECK + 1.2, push=
 show("L17.2", "dale")
 sit("L17.2", "dale", 1.0)
 cue("L17.2", "strap", v=1.0)
-place("L17.2", "dale", (SD[0], SD[1], DECK), 0, "sad", arms=[62, 62], head=[0, 14])
-shot("S17b", "L17.2", fc(SD[0], SD[1], DECK + HZ["dalesit"], 2.1, -14, 34, up=0.16))
+place("L17.2", "dale", (SDD[0], SDD[1], DECK), 0, "sad", arms=[62, 62], head=[0, 14])
+shot("S17b", "L17.2", fc(SDD[0], SDD[1], DECK + HZ["dalesit"], 2.1, -14, 34, up=0.16))
 
-ME19 = (SD[0] - 0.95, SM[1])
+ME19 = (SM[0], SM[1])
 # ----------------------------------------------------------------------------------------------- 18 where I sit
 show("L18", "dale")
-place("L18", "dale", (SD[0], SD[1], DECK), 0, "sad", arms=[62, 62], head=[0, 8])
-shot("S18a", "L18", fc(SD[0], SD[1], DECK + HZ["dalesit"], 2.0, -10, 36))
+place("L18", "dale", (SDD[0], SDD[1], DECK), 0, "sad", arms=[62, 62], head=[0, 8])
+shot("S18a", "L18", fc(SDD[0], SDD[1], DECK + HZ["dalesit"], 2.0, -10, 36))
 show("L18.2", "me", "dale")
 sit("L18.2", "me", 1.0)
 place("L18.2", "me", (ME19[0], ME19[1], DECK), 0, "warm", head=[0, 0])
-shot("S18b", "L18.2", fc(59.9, SM[1], DECK + 1.44, 2.8, -12, 34))
+shot("S18b", "L18.2", fc(59.6, SM[1], DECK + 1.44, 2.8, 2, 34))
 
 # ----------------------------------------------------------------------------------------------- 19 the nudge
 show("L19", "me", "dale")
-place("L19", "dale", (SD[0], SD[1], DECK), 0, "sad", arms=[62, 62], head=[-20, 14])
+place("L19", "dale", (SDD[0], SDD[1], DECK), 0, "sad", arms=[62, 62], head=[-20, 14])
+key("dale", "L19+0.3", yaw=0, expr="sad", arms=[0, 62], side=[85, 0], head=[-30, 14], blend=0.5)
+cue("L19+0.3", "strap", v=0.0)
 place("L19", "me", (ME19[0], ME19[1], DECK), 0, "warm", head=[0, 0])
-key("me", "L19+0.3", yaw=0, expr="warm", head=[30, 14], lean=10, blend=0.7)
-shot("S19a", "L19", fc((ME19[0] + SD[0]) / 2, SM[1], DECK + 1.44, 2.4, -12, 34))
+key("me", "L19+0.3", yaw=80, expr="warm", head=[22, 10], lean=6, blend=0.5)
+shot("S19a", "L19", fc((ME19[0] + SDD[0]) / 2, SM[1], DECK + 1.44, 2.5, 2, 34))
 key("me", "L19.2", yaw=0, expr="stunned", head=[0, 0], lean=0, blend=0.3)
 show("L19.2", "me")
 shot("S19b", "L19.2", fc(ME19[0], ME19[1], DECK + HZ["mesit"], 2.0, -14, 36))
@@ -394,11 +403,11 @@ show("L20", "me", "dale")
 place("L20", "me", (ME19[0], ME19[1], DECK), 0, "stunned", head=[0, 0])
 place("L20", "dale", (ME19[0], KY, 0.30), 180, "warm", arms=[0, 0])
 cue("L20", "strap", v=0.0)
-cue("L20", "keyb", v=1.0, dur=0.4)
+cue("L19.2", "keyb", v=1.0, dur=0.9)
 cue("L21.1", "keyb", v=0.0, dur=0.4)
 cue("L20", "pose", who="dale", sit=0.0, kneel=0.0, dur=0.0)
 cue("L20+0.1", "pose", who="dale", sit=0.0, kneel=1.0, dur=0.5)
-shot("S20a", "L20", camp([ME19[0] + 1.3, 6.4, DECK + 1.0], [ME19[0] - 0.1, 9.7, DECK + 0.9], 24, pos2=[ME19[0] + 1.1, 6.7, DECK + 1.0]))
+shot("S20a", "L20", cam(ME19[0], 9.6, DECK + 0.85, 3.0, 90, 30, cz=DECK + 0.6, push=(2.5, DECK + 0.85)))
 show("L20.2", "dale")
 place("L20.2", "dale", (ME19[0], KY, 0.30), 180, "warm", arms=[0, 0])
 cue("L20.2", "pose", who="dale", sit=0.0, kneel=1.0, dur=0.0)
@@ -415,12 +424,12 @@ shot("S21b", "L21.1", camp([SM[0] - 2.1, 7.6, DECK + 0.9], [SM[0] + 0.5, 11.2, D
 cue("L22", "thump")
 cue("L22.1", "thump")
 cue("L22", "dog", v=1.0, x=SM[0], y=SM[1] + 0.1, z=DECK + 0.03, yaw=0.0, sit=1.0, wag=0.0, tongue=1.0)
-shot("S22a", "L22", cam(SM[0], SM[1] + 0.25, DECK + 0.4, 2.2, -60, 20, cz=DECK + 0.3, push=(1.9, DECK + 0.4)))
+shot("S22a", "L22", cam(SM[0], SM[1] + 0.3, DECK + 0.55, 2.4, 80, 30, cz=DECK + 0.45, push=(2.1, DECK + 0.55)))
 show("P02", "rory")
 sit("P02", "rory", 1.0)
 place("P02", "rory", (SR[0], SR[1], DECK), 0, "laugh", head=[22, 0])
 cue("P02", "dog", v=1.0, x=SM[0], y=SM[1] + 0.1, z=DECK + 0.03, yaw=-40, sit=1.0, wag=1.0, tongue=1.0)
-shot("S22b", "P02", cam(58.4, SM[1], DECK + 0.8, 2.3, -4, 30, cz=DECK + 0.8))
+shot("S22b", "P02", cam(58.4, SM[1], DECK + 0.75, 3.0, -4, 30, cz=DECK + 0.75))
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)
@@ -445,10 +454,10 @@ sfx = [
 music = {
     "root": 55, "mode": "major", "bpm": 104, "seed": 155,
     "sections": [
-        {"at": 0, "voices": ["pluck_hi", "pulse", "bubble"], "energy": 0.55},
-        {"at": "L17", "mode": "minor", "root": 52, "voices": ["pad", "pluck"], "energy": 0.3},
-        {"at": "L21", "mode": "major", "root": 55, "voices": ["pad", "pluck_hi", "choir"], "energy": 0.55},
-        {"at": "L22", "voices": ["pad", "pluck_hi"], "energy": 0.4},
+        {"at": 0, "voices": ["pluck_hi", "pulse", "bubble"], "energy": 0.32},
+        {"at": "L17", "mode": "minor", "root": 52, "voices": ["pad", "pluck"], "energy": 0.17},
+        {"at": "L21", "mode": "major", "root": 55, "voices": ["pad", "pluck_hi", "choir"], "energy": 0.32},
+        {"at": "L22", "voices": ["pad", "pluck_hi"], "energy": 0.24},
     ],
 }
 sound = {
@@ -462,8 +471,8 @@ sound = {
 remap_all(sfx)
 remap_all(music["sections"])
 remap_all(sound["ambience"])
-polish = {"reveal": ["L21.1"], "twist": "L21", "emph": ["L01.1", "L21.1", "L05.2", "L22"],
-          "quiet": [["L17", "L19>"]], "hold": ["S08b", "S11b"], "sway": []}
+polish = {"music_duck_db": 10.0, "reveal": ["L21.1"], "twist": "L21", "emph": ["L01.1", "L21.1", "L05.2", "L22"],
+          "quiet": [["L17", "L19>"]], "sway": []}
 polish["emph"] = [remap(x) for x in polish["emph"]]
 polish["reveal"] = [remap(x) for x in polish["reveal"]]
 polish["twist"] = remap(polish["twist"])
@@ -501,10 +510,10 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": ["S13a"],
-    "shot_grades": {sid: {"highlights": [0.0, 0.0, 0.015], "shadows": [0.0, 0.01, 0.05], "saturation": 0.98} for sid in DUSK},
-    "framing_ok": ["S08a", "S08c", "S10b", "S13a", "S20a"],
+    "shot_grades": {sid: {"highlights": [0.0, 0.0, 0.015], "shadows": [-0.3, -0.2, 0.05], "saturation": 0.98} for sid in DUSK},
+    "framing_ok": ["S08a", "S08c", "S10b", "S20a"],
     "frames_ok": [],
-    "staging_ok": ["S19a/me+dale", "S18b/me+dale"],
+    "staging_ok": [],
     "asr_forgive": ["missus ortiz's", "eight oh two", "twelve thirty mister", "six forty", "nine fifty eight"],
     "phonemes": {"Ortiz": "ˈɔɹtɪz", "Rory": "ɹˈɔɹi"},
 }

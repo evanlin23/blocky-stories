@@ -292,7 +292,8 @@ def build_house(kit):
     pl = kit.plastic
     HX, FY, DECK = G.HX, G.FY, G.DECK
     yellow = pl("#ffd966", 0.7, spec=0.04)
-    trim = pl("#c4bcab", 0.7, spec=0.04)       # graded under 70% by the light: never a clipped wall
+    trim = pl("#c4bcab", 0.7, spec=0.04)
+    W["wallmats"] = [(yellow, "#ffd966"), (trim, "#c4bcab")]       # graded under 70% by the light: never a clipped wall
     x0, x1, y1 = 53.0, 67.0, 19.3
     zb = -0.2
     H = 5.6
@@ -431,13 +432,15 @@ def build_house(kit):
     kit.prop("houseplant_1", (G.DECK_X0 + 0.8, 11.3, DECK), scale=2.0)
     # Pepper's teal bowl with the paw glyph, and the plate (the sausage lies on it)
     bx, by = 61.6, 10.35
-    kit.cyl("bowl.body", 0.2, 0.1, (bx, by, DECK + 0.05), pl("#2fa3a0", 0.4), n=24)
-    kit.cyl("bowl.food", 0.15, 0.02, (bx, by, DECK + 0.1), pl("#c88a4a", 0.7), n=20)
+    bw = [kit.cyl("bowl.body", 0.2, 0.1, (bx, by, DECK + 0.05), pl("#2fa3a0", 0.4), n=24),
+          kit.cyl("bowl.food", 0.15, 0.02, (bx, by, DECK + 0.1), pl("#c88a4a", 0.7), n=20)]
     bpm, _ = imat(kit, "bowlpaw", _bowlpaw_image(), 0.9)
     bp = kit.plane("bowl.paw", (0.13, 0.13), (bx, by - 0.2 - 0.003, DECK + 0.05), bpm, rot=(math.pi / 2, 0, 0))
     noshadow(bp)
+    bw.append(bp)
     px, py = 59.75, 10.28
-    kit.cyl("plate.disc", 0.15, 0.02, (px, py, DECK + 0.01), pl("#f4f0e6", 0.4, spec=0.5), n=24)
+    bw.append(kit.cyl("plate.disc", 0.15, 0.02, (px, py, DECK + 0.01), pl("#f4f0e6", 0.4, spec=0.5), n=24))
+    W["bowl"] = bw
     sa = kit.cyl("saus.body", 0.032, 0.2, (px, py, DECK + 0.05), pl("#b5502e", 0.5), rot=(0, math.pi / 2, 0.3), n=14)
     se = [kit.sphere("saus.e1", 0.032, (px - 0.09, py - 0.03, DECK + 0.05), pl("#a04526", 0.5), seg=10),
           kit.sphere("saus.e2", 0.032, (px + 0.09, py + 0.03, DECK + 0.05), pl("#a04526", 0.5), seg=10)]
@@ -516,6 +519,8 @@ def build_room(kit):
     for i, (x, y) in enumerate(((57.5, 14.0), (62.0, 14.0), (57.5, 17.5), (62.0, 17.5), (60.0, 15.8))):
         a = kit.light(f"room.fill{i}", "AREA", (x, y, DECK + G.ROOM_H - 0.15), 60, "#ffe8c0", size=2.5, shadow=False)
         kit.aim(a, (x, y, DECK))
+    r2 = kit.light("room.face2", "AREA", (HX + 0.9, FY + 2.6, DECK + 2.3), 800, "#fff2de", size=2.5, shadow=False)
+    kit.aim(r2, (HX - 0.1, FY + 0.45, DECK + 1.3))
     rf = kit.light("room.face", "AREA", (63.5, 17.5, DECK + 2.2), 90, "#fff0dc", size=2.0, shadow=False)
     kit.aim(rf, (G.WIN_X, 12.9, DECK + 1.2))
 
@@ -664,7 +669,7 @@ def pose_dog(d, st, t, thump):
     for lg in (fl, fr):
         lg.rotation_euler = (-pitch, 0, 0)
         sc = 1.0 + (zf / 0.2 - 1.0) * sit
-        lg.scale = (1, 1, max(0.3, sc * (1 - 0.3 * sit)))
+        lg.scale = (1, 1, max(0.3, sc))
     for lg in (hl, hr):
         lg.rotation_euler = (-1.35 * sit, 0, 0)
         lg.scale = (1, 1, 1 - 0.5 * sit)
@@ -773,7 +778,7 @@ TOD = {
                 pane=("#dff0ff", 1.3), pos=(46, -8, 22)),
     "gold": dict(sky="#ffcf94", ss=0.9, sun="#ffb064", sg=0.9, face=1.0, lant=0.8, lamp=0.0, dfill=0.0, key=0.0, wall=1.0,
                  pane=("#dff0ff", 1.3), pos=(40, -12, 6)),
-    "dusk": dict(sky="#5a74c8", ss=0.3, sun="#ffb890", sg=0.1, face=0.2, lant=4.0, lamp=0.6, dfill=0.5, key=0.55, wall=0.0,
+    "dusk": dict(sky="#6f8fd8", ss=0.12, sun="#ffb890", sg=0.0, face=0.0, lant=3.0, lamp=1.2, dfill=0.12, key=0.2, wallk=0.3, wall=0.0,
                  pane=("#5f7fd6", 0.9), pos=(40, -12, 4)),
 }
 
@@ -824,6 +829,12 @@ def animate(kit, story, tl, t, ctx):
     pe = W["pane_mat"].node_tree.nodes["Emission"]
     pe.inputs["Color"].default_value = kit.col(tod["pane"][0])
     pe.inputs["Strength"].default_value = tod["pane"][1]
+    for m_, hexc_ in W["wallmats"]:      # the house walls go dark at dusk, so only the lit faces and the lantern read
+        bsdf = m_.node_tree.nodes.get("Principled BSDF")
+        if bsdf is not None:
+            c0 = kit.col(hexc_)
+            f_ = tod.get("wallk", 1.0)
+            bsdf.inputs["Base Color"].default_value = (c0[0] * f_, c0[1] * f_, c0[2] * f_ * (1.0 + 0.5 * (1 - f_)), 1.0)
     # ---- the door, the photo, the squiggles, the leash on its peg, the curtain
     dr = sample("door", tl, t, {"v": 0.0})["v"]
     W["doorpivot"].rotation_euler = (0, 0, math.radians(100) * dr)
@@ -836,6 +847,9 @@ def animate(kit, story, tl, t, ctx):
     lv = sample("leash", tl, t, {"v": 1.0})["v"] > 0.5
     for ob in W["leash"]:
         ob.hide_render = not lv
+    bv = sample("bowl", tl, t, {"v": 0.0})["v"] > 0.5
+    for ob in W["bowl"]:
+        ob.hide_render = not bv
     sv = sample("sausage", tl, t, {"v": 1.0})["v"] > 0.5
     for ob in W["sausage"]:
         ob.hide_render = not sv
@@ -944,5 +958,6 @@ def animate(kit, story, tl, t, ctx):
     # ---- the lights by time of day
     lights = {"sun": tod["sg"], "yard.face": tod["face"], "porch.fill": tod["face"], "porch.door": tod["face"],
               "wall.fill": tod["wall"], "dusk.lamp": tod["lamp"], "dusk.fill": tod["dfill"], "dusk.key": tod["key"] * (1 - 0.7 * kb),
-              "dusk.key2": tod["key"] * kb}
+              "dusk.key2": tod["key"] * 2.5 * kb,
+              "room.face2": sample("rfill", tl, t, {"v": 0.0})["v"]}
     return lights
