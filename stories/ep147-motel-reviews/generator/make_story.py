@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 1
+REV = 2
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -59,7 +59,7 @@ cast = {
     # me, 21: a tall brown quiff (the loud silhouette), a teal road-trip T-shirt
     "me": person("#e3b088", "#2ec4b6", "#6b5b46", "#f2f2f2", "quiff", "#6b3f22"),
     # Dad, about 52: a wide gray-brown flat-top and a giant walrus mustache, a pineapple-yellow aloha shirt
-    "dad": person("#c98f63", "#ffb02e", "#e8dcc0", "#8a6a48", "flattop", "#8d8378", features=["mustache"],
+    "dad": person("#c98f63", "#ffb02e", "#e8dcc0", "#8a6a48", "flattop", "#5e5448", features=["mustache"],
                   pattern="stripes", pattern_c="#ff7a2e", head_scale=1.04, width=1.04),
     # the closet man, looks about 40: neat black hair in a hard middle part (curtains), a charcoal suit, gray tie
     "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "curtains", "#353340", sleeves="long",
@@ -194,7 +194,7 @@ SOFF = 2.0
 place("L05", "me", (G.EX - 0.72, G.EXT_WALK_Y, 0.0), 0, "delighted", arms=[0, 0])
 place("L05", "dad", (G.EX + 0.72, G.EXT_WALK_Y, 0.0), 0, "delighted", arms=[0, 0])
 mouth("me", "L05", "L05>", 0.35)
-shot("S05", "L05", cam(G.EX, G.EXT_WALK_Y, 1.5, 2.3, 0, 30, cz=1.45))
+shot("S05", "L05", cam(G.EX, G.EXT_WALK_Y, 1.5, 3.0, 0, 30, cz=1.45))
 cue("L04", "stars", n=1)
 show("L04")
 shot("S04a", "L04", cam(*G.EXT_POOL, 0.5, 1.5, 8, 30, cz=0.7))
@@ -214,7 +214,7 @@ show("L07", "dad")
 place("L07", "dad", (0.15, 0.4, 0.0), -20, "crylaugh", arms=[0, 0])
 key("dad", "L07.2", [CLX - 0.15, 1.15, 0.0], yaw=-35, expr="crylaugh", arms=[0, 0], blend=0.3)
 key("dad", "L07.2+0.45", [CLX - 0.15, 1.15, 0.0], yaw=-35, expr="crylaugh", arms=[84, 84], blend=0.35)
-shot("S07", "L07", cam(0.95, 0.9, 1.45, 2.4, -6, 30, cz=1.4))
+shot("S07", "L07", cam(1.0, 0.9, 1.45, 2.6, -6, 30, cz=1.4))
 cue("L08", "closet", v=1.0, dur=0.6)
 show("L08", "man")
 place("L08", "man", MAN0, 180, "deadpan", arms=[0, 0])
@@ -253,7 +253,7 @@ mouth("me", "L17.2", "L17>", 0.4)
 shot("S17b", "L17.2", cam(*ME_FACE, 2.2, -8, 30, cz=1.55))
 show("L19", "me")
 me_c("L19", "shocked", yaw=0, head=[-30, 0])
-shot("S19a", "L19", cam(*ME_FACE, 2.2, 6, 30, cz=1.55))
+shot("S19a", "L19", cam(MX + 0.05, MY, 1.55, 2.6, 6, 30, cz=1.55))
 show("L19.1", "man")
 place("L19.1", "man", MAN0, 180, "deadpan", arms=[0, 0])
 shot("S19b", "L19.1", cam(CLX, 3.1, 1.4, 2.5, 22, 30, cz=1.4))

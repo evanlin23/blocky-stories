@@ -197,7 +197,7 @@ def build_room(kit):
     kit.box("room.band.br", (X1 - G.CL1, 0.03, 0.9), ((G.CL1 + X1) / 2, Y1 - 0.015, 0.45), mint)
     kit.box("room.band.bm", (G.CL0 - wx1, 0.03, 0.9), ((wx1 + G.CL0) / 2, Y1 - 0.015, 0.45), mint)
     # the window: a glowing pane well behind the wall plane, blinds 2 cm proud of it
-    wm = kit.emit("#cfeaff", 1.4, "roomwin")
+    wm = kit.emit("#9ccdf0", 0.7, "roomwin")
     W["winmat"] = wm
     pane = kit.box("room.win.pane", (wx1 - wx0, 0.02, wz1 - wz0), ((wx0 + wx1) / 2, Y1 + 0.2, (wz0 + wz1) / 2), wm)
     noshadow(pane)
@@ -547,7 +547,7 @@ def _animate(kit, story, tl, t, ctx):
         c = tuple(night[i] + (dawn[i] - night[i]) * u for i in range(3))
     em = W["winmat"].node_tree.nodes["Emission"]
     em.inputs["Color"].default_value = (c[0], c[1], c[2], 1.0)
-    em.inputs["Strength"].default_value = 0.5 + 0.9 * min(1.0, wv / 0.55)
+    em.inputs["Strength"].default_value = 0.3 + 0.45 * min(1.0, wv / 0.55)
     # ---- the drawer and the closet doors
     W["drawer"].location.y = G.DESK[1] - 0.42 * sample("drawer", tl, t, {"v": 0.0})["v"]
     cv = sample("closet", tl, t, {"v": 0.0})["v"]
