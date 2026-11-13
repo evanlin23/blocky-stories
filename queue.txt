@@ -13,6 +13,7 @@
 # 2026-11-09 review: fact titles, count/if/cost openings, short puzzles and the interactive lane first (they held 65%+ viewed); ban openings last; ep28 waits on fixes
 # 2026-11-12: + ep110 (if, fixed final passed) early, + ep125 (confess, fixed final passed) to break up the ban run; ep98 and ep138 dropped (#479, #473). Batch 15: ep142 and ep151 apart (both ice cream); space the phone stories ep139, ep146, ep152
 # 2026-11-12 3 PM: + ep129 (ban, fixed final passed) last: 7+ from ep127, never next to ep130/ep134/ep135. ep94, ep102, ep119 held for yaw fixes (#484), upload skips them until a new final passes. Batch 15 ep142 and ep151 dropped (#488)
+# 2026-11-12 8:45 PM: + ep139 (cost), ep143 (if), ep141 (if), batch 15 written to the Nov 12 lessons, so they go early to give the Monday review data; ep94, ep119, ep102 holds off (new finals passed). Cost never adjacent, if never adjacent, ep141 5 from ep135, ep143 far from ep125/moving-day
 ep128-zero-feet
 ep136-one-answer
 ep124-future-call
@@ -20,17 +21,20 @@ ep134-five-rooms
 ep116-proud-inch
 ep137-trail-board
 ep94-today-again
+ep139-future-dog
 ep110-bless-you
-ep123-sorry-shrink
 ep130-rival-clock
-ep99-statue-years
+ep143-warm-key
+ep123-sorry-shrink
 ep135-fortune-dodge
-ep126-nine-oh-nine
+ep99-statue-years
 ep127-thousand-tellings
-ep132-bus-stop
+ep126-nine-oh-nine
 ep117-glow-secret
-ep83-free-fries
+ep141-lost-poster
+ep132-bus-stop
 ep114-band-green
+ep83-free-fries
 ep102-aunt-peaches
 ep125-aunts-keys
 ep119-quiet-car

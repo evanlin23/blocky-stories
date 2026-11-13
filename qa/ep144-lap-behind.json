@@ -1,0 +1,29 @@
+{
+ "stage": "final",
+ "film": "14006762975",
+ "run": "43355974843",
+ "sha": "3e2a7e3360ecf95de9444f23956aa64ee4b13a1d",
+ "verdict": "pass",
+ "date": "2026-11-13",
+ "checked": [
+  "story files unchanged since proof sha",
+  "every frame: flat, black, clipped-white, frozen scan",
+  "frames every 2 s at phone size",
+  "frames 0-89 (first 3 s)",
+  "full-res crop (TV size)",
+  "S13, S16, S19 sequences",
+  "staging.py (yaw)",
+  "frames.py",
+  "loudness and true peak",
+  "4 kHz 5 s windows",
+  "end tail",
+  "craft vs proof",
+  "flash",
+  "package",
+  "opening",
+  "cover",
+  "gate"
+ ],
+ "craft": "**ep144-lap-behind**\n\n| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 16.1 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 18.2 | 14.0– | ok |\n| macro.motion_energy_q | 7.45 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 7.66 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.061 | –0.25 | ok |\n| spec.shot_p90_s | 1.89 | –2.5 | ok |\n| macro.longest_still_s | 0.2 | –1.5 | ok |\n| macro.longest_still_q_edge_s | 0.27 | –1.0 | ok |\n| macro.motion_energy_mean | 2.82 | 1.5– | ok |\n| spec.camera_move_share | 1.0 | 0.65– | ok |\n| spec.punch_per_10s | 0.72 | 0.4– | ok |\n| macro.brightness_mean | 0.591 | 0.35– | ok |\n| macro.brightness_first_3s | 0.548 | 0.3– | ok |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.454 | 0.42– | ok |\n| macro.contrast_mean | 0.243 | 0.18– | ok |\n| spec.face_big_share | 0.459 | 0.4– | ok |\n| spec.caption_share | 0.979 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.545 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.062 | –0.25 | ok |\n| micro.idle_window_share | 0.031 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 93.0 | –120 | ok |\n| spec.sound_events_per_10s | 4.07 | 2.0–4.0 | **warn** |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.3 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.9 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0395 | –0.08 | ok |\n| sound.hf_jump_max | 0.0134 | –0.04 | ok |\n\n0 block, 0 near, 1 warn, of 33 (blocks are confirmed by the hit data; near is within 10% of a pace bar, and qa watches the slowest 10 s; warnings are provisional).",
+ "notes": "Final 1080x1920, 1253 frames, 41.77 s, 33 shots = timeline; drawn from main 3e2a7e33; no change to stories/ep144-lap-behind since proof sha 2f612aaa. Every frame scanned at 135x240: no frozen frames, max one-tone share 0.32 (12.3 s), dark >30% only on the black lap board (11.7-12.3, 19.2-19.7, 40.0-40.6 s), near-white >10% only on the S12/S19/S20 splashes (15.9, 22.1, 28.1 s); looked at each, all read as the object. No flat, black or clipped-white frames. staging.py (yaw incl.) 0 findings; frames.py 0 findings.\nSecond one: warm pool deck, me (goggles, face big) beside the NOBODY-SWIMS-ALONE sign, lap board top right, slow push; 'At our town pool, you can't swim ALONE.' Rule pictured from frame 0. Full-res detail (30.5 s face crop, TV size): clean edges, no sharpening halo or texture fault.\nLooked again at S13 (16.6-18.2 s; the small foot fragment near the half-submerged swimmer is minor, as the proof said), S16 kick (19.6-21.2 s: arms stroke, reads), and S19 (25.9-27.5 s: arm swings over the near rope, body behind it, reads as swimming). No limb through a body, merge or teleport.\nAudio: -14.1 LUFS, true peak -1.9 dBTP, LRA 1.0; 4 kHz share 0.026-0.039 per 5 s, max jump 0.0124 (15 s); voice clear; tail ends under 'ALONE.' caption at about -26 dBFS, no cut-off. Flash passes (general 1/s, 3f 3/s, red 0).\nPackage unchanged since proof: title, description, pin match, no spoiler, no 'husband'; opening 'must' matches L01. Queue note: last upload ep137-trail-board is also 'must' (upload.py reorders); ep144 not yet in queue.txt. Cover 11.5 s (lap board 1/0, no face) as the proof found; 28.5 s is stronger, should-fix only. gate: OPEN.\ncraft: 0 block, 0 near, 1 warn: spec.sound_events_per_10s 4.07 (2.0-4.0). Matches the proof table within 0.1 on every row (longest_still_s 0.13 -> 0.2, true peak -1.8 -> -1.9).\nVerdict pass. No fixes."
+}
