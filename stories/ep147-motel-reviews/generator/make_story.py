@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -61,8 +61,9 @@ cast = {
     # Dad, about 52: a wide gray-brown flat-top and a giant walrus mustache, a pineapple-yellow aloha shirt
     "dad": person("#c98f63", "#ffb02e", "#e8dcc0", "#8a6a48", "flattop", "#5e5448", features=["mustache"],
                   pattern="stripes", pattern_c="#ff7a2e", head_scale=1.04, width=1.04),
-    # the closet man, looks about 40: neat black hair in a hard middle part (curtains), a charcoal suit, gray tie
-    "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "curtains", "#353340", sleeves="long",
+    # the closet man, looks about 40: very neat black hair with a side part, ears and a nape (set.py swaps the "buzz"
+    # silhouette for it in this story), a charcoal suit, gray tie
+    "man": person("#e8c8a8", "#5b6170", "#4b505e", "#15151a", "buzz", "#0c0b12", hair_c2="#e8c8a8", sleeves="long",
                   extras=["tie"], extra_c="#8d93a3", collar="#f4f4f4", body_width=0.94),
     # the clerk, about 60: bald, big red reading-glasses frames, a mint motel shirt
     "clerk": person("#e8c4a0", "#7fe0c4", "#8a7c66", "#8a6a48", "bald", "#e8573a", features=["glasses"],
@@ -180,12 +181,12 @@ me_c(0, "neutral")
 cue(0, "card", mode="hand", who="me", kind="ours")
 mouth("me", 0, "L01>", 0.35)
 shot("S01a", 0, cam(*ME_FACE, 2.2, 0, 30, cz=1.55))
-shot("S01b", "L01.2", cam(MX + 0.4, MY, 1.5, 1.8, 14, 30, cz=1.5))
+shot("S01b", "L01.2", cam(MX + 0.2, MY, 1.5, 1.9, 8, 30, cz=1.5))
 # S02: the drawer of cards, pulled open
 show("L02")
 cue("L02", "drawer", v=1.0, dur=0.1)
 cue("L02", "card", mode="none", who="me", kind="ours")
-shot("S02", "L02", cam(G.DESK[0], 2.05, 1.05, 1.5, -8, 36, cz=1.0))
+shot("S02", "L02", cam(G.DESK[0], 1.75, 0.9, 1.0, -8, 36, cz=2.4))
 
 # ===== 02 us at Room Six, the bucket joke (L05, L04)
 cue("L05", "drawer", v=0.0, dur=0.1)
@@ -211,27 +212,27 @@ mouth("me", "L06", "L06>", 0.35)
 shot("S06", "L06", cam(*ME_FACE, 2.2, -8, 30, cz=1.55))
 cue("L07", "card", mode="none", who="me", kind="ours")
 show("L07", "dad")
-place("L07", "dad", (0.15, 0.4, 0.0), -20, "crylaugh", arms=[0, 0])
-key("dad", "L07.2", [CLX - 0.15, 1.15, 0.0], yaw=-35, expr="crylaugh", arms=[0, 0], blend=0.3)
-key("dad", "L07.2+0.45", [CLX - 0.15, 1.15, 0.0], yaw=-35, expr="crylaugh", arms=[84, 84], blend=0.35)
-shot("S07", "L07", cam(1.0, 0.9, 1.45, 2.6, -6, 30, cz=1.4))
+place("L07", "dad", (0.55, 0.75, 0.0), 120, "crylaugh", arms=[0, 0], head=[-40, 0])
+key("dad", "L07.2", [0.95, 1.7, 0.0], yaw=140, expr="crylaugh", arms=[0, 0], head=[-45, 0], blend=0.35)
+key("dad", "L07.2+0.45", [0.95, 1.7, 0.0], yaw=140, expr="crylaugh", arms=[78, 70], head=[-45, 0], blend=0.35)
+shot("S07", "L07", cam(1.35, 1.9, 1.45, 2.1, 28, 30, cz=1.45))
 cue("L08", "closet", v=1.0, dur=0.6)
 show("L08", "man")
 place("L08", "man", MAN0, 180, "deadpan", arms=[0, 0])
-shot("S08", "L08", cam(CLX, 3.1, 1.35, 2.6, 0, 30, cz=1.35))
-shot("S08b", "L08.2", cam(CLX, 3.1, 1.7, 1.6, 6, 34, cz=1.7))
+shot("S08", "L08", cam(CLX, 3.1, 1.4, 2.6, 0, 30, cz=1.4))
+shot("S08b", "L08.2", cam(CLX, 3.1, 1.95, 1.9, 6, 34, cz=1.95))
 
 # ===== 04 the clerk (L10)
 show("L10", "clerk")
-place("L10", "clerk", (G.CLERK[0] + 0.9, G.CLERK[1], 0.0), 0, "deadpan", arms=[0, 70])
-shot("S10a", "L10", cam(G.OX - 0.2, 1.6, 1.3, 2.2, 0, 32, cz=1.3))
-shot("S10b", "L10.2", cam(G.BOARD[0] - 1.0, G.BOARD[1] - 0.5, 1.5, 2.6, 0, 36, cz=1.5))
+place("L10", "clerk", (G.CLERK[0] + 1.1, G.CLERK[1], 0.0), 0, "deadpan", arms=[0, 70])
+shot("S10a", "L10", cam(G.OX + 0.1, 1.6, 1.3, 2.1, 0, 32, cz=1.3))
+shot("S10b", "L10.2", cam(G.OX + 0.85, 1.6, 1.45, 2.8, 0, 34, cz=1.45))
 
 # ===== 05 the morning (L13, L15)
 cue("L13", "shirts", v=1.0)
 show("L13")
-shot("S13a", "L13", cam(G.DESK[0], 2.25, 1.3, 1.35, 10, 36, cz=1.25))
-shot("S13b", "L13.3", cam(G.DESK[0] - 0.1, 2.2, 1.05, 0.8, 8, 40, cz=1.05))
+shot("S13a", "L13", cam(G.DESK[0], 2.2, 0.95, 1.3, 8, 36, cz=2.4))
+shot("S13b", "L13.3", cam(G.DESK[0] - 0.25, 2.2, 0.98, 0.8, 6, 40, cz=2.0))
 show("L15", "man")
 place("L15", "man", MAN0, 180, "deadpan", arms=[0, 0])
 shot("S15", "L15", cam(CLX, 3.1, 1.35, 2.6, -14, 30, cz=1.35))
@@ -247,7 +248,7 @@ shot("S16", "L16", cam(0.1, 1.8, 1.55, 2.2, -20, 30, cz=1.55))
 cue("L17", "stars", n=1)
 cue("L17", "drawer", v=0.0, dur=0.1)
 me_c("L17", "nervous")
-shot("S17a", "L17", cam(MX + 0.5, MY, 1.4, 1.6, 10, 32, cz=1.4))
+shot("S17a", "L17", cam(MX + 0.2, MY, 1.5, 1.7, 8, 30, cz=1.5))
 me_c("L17.2", "terrified")
 mouth("me", "L17.2", "L17>", 0.4)
 shot("S17b", "L17.2", cam(*ME_FACE, 2.2, -8, 30, cz=1.55))
@@ -270,7 +271,7 @@ cue("L21", "stars", n=5)
 cue("L21", "pen", mode="none", who="me")
 me_c("L21", "determined", arms=[0, 86])
 mouth("me", "L21", "L21>", 0.35)
-shot("S21", "L21", cam(MX + 0.35, MY, 1.5, 1.8, 8, 30, cz=1.5))
+shot("S21", "L21", cam(MX + 0.2, MY, 1.5, 1.7, 8, 30, cz=1.5))
 
 # ===== 08 the doors open (L22, L23, L24)
 cue("L22", "win", v=0.55, dur=0.4)
@@ -285,9 +286,9 @@ S23 = [G.MAN[0], 1.5, 0.0]
 key("man", "L23", S23, yaw=0, expr="hollow", arms=[0, 0], blend=0.25)
 key("man", "L23.1", [G.MAN_DESK[0] + 0.5, 1.5, 0.0], yaw=-90, expr="hollow", arms=[0, 0], blend=0.4)
 key("man", "L23.2", [G.MAN_DESK[0] + 0.5, 1.55, 0.0], yaw=180, expr="hollow", arms=[80, 80], blend=0.45)
-shot("S23a", "L23", cam(0.3, 1.9, 1.5, 2.2, 0, 30, cz=1.5))
+shot("S23a", "L23", camp((1.2, -4.3, 1.4), (1.2, 1.9, 1.4), 30, (0.3, -4.3, 1.4), (0.3, 1.9, 1.4)))
 cue("L23.2", "key", mode="desk", dur=0.1)
-shot("S23b", "L23.2", cam(-0.75, 2.2, 1.2, 1.45, -25, 40, cz=1.25))
+shot("S23b", "L23.2", cam(-0.45, 1.9, 1.15, 1.7, 30, 40, cz=1.3))
 # L24: he turns, nods, walks to the door
 MD = [G.MAN_DESK[0] + 0.5, 1.55, 0.0]
 key("man", "L24-0.3", MD, yaw=180, expr="hollow", arms=[0, 0], blend=0.2)
@@ -298,7 +299,7 @@ key("man", "P01-0.1", [1.5, 1.5, 0.0], yaw=90, expr="neutral", arms=[0, 0], blen
 shot("S24a", "L24", cam(MD[0], 1.55, 1.5, 1.8, 0, 34, cz=1.5))
 show("L24.2", "me", "dad", "man")
 place("L24.2", "me", (0.65, 0.2, 0.0), 0, "shocked", arms=[0, 0])
-place("L24.2", "dad", (-0.85, 0.2, 0.0), 0, "shocked", arms=[0, 0])
+place("L24.2", "dad", (-0.85, 0.2, 0.0), 0, "awe", arms=[0, 0])
 shot("S24b", "L24.2", cam(-0.1, 0.2, 1.55, 3.0, 0, 30, cz=1.5))
 # the drop: the empty closet
 show("P01")
@@ -306,15 +307,17 @@ cue("P01", "closet", v=1.0)
 shot("S25", "P01", cam(CLX, 3.1, 1.35, 2.6, -10, 30, cz=1.35))
 
 # ===== 09 the last card (L26, L28, L29)
-cue("L26", "card", mode="desk", who="me", kind="last")
-show("L26")
-shot("S26", "L26", cam(-0.7, 2.15, 1.05, 1.1, 22, 38, cz=1.05))
+cue("L26", "card", mode="hand", who="me", kind="last")
+cue("L26", "key", mode="desk")
+show("L26", "me")
+place("L26", "me", (-0.15, 1.2, 0.0), 15, "nervous", arms=[0, 86])
+shot("S26", "L26", cam(-0.45, 1.5, 1.3, 1.7, 4, 30, cz=1.3))
 cue("L28", "stars", n=1)
 show("L28", "me")
 me_c("L28", "nervous")
 cue("L28", "card", mode="hand", who="me", kind="last")
 cue("L28", "key", mode="desk")
-shot("S28a", "L28", cam(MX + 0.35, MY, 1.5, 1.8, 6, 30, cz=1.5))
+shot("S28a", "L28", cam(MX + 0.2, MY, 1.5, 1.7, 6, 30, cz=1.5))
 me_c("L29", "terrified", arms=[0, 86])
 mouth("me", "L29", "L29>", 0.4)
 shot("S28b", "L29", cam(*ME_FACE, 2.2, -6, 30, cz=1.55))
@@ -324,9 +327,9 @@ cue("L33", "card", mode="none", who="me", kind="last")
 cue("L33", "shirts", v=0.0)
 cue("L33", "shirt", mode="hand", who="dad")
 show("L33", "dad")
-place("L33", "dad", (MX - 0.1, MY, 0.0), 0, "hollow", arms=[84, 84], head=[0, 0])
-shot("S32", "L33", cam(MX - 0.1, MY, 1.55, 2.4, 0, 28, cz=1.55))
-shot("S33", "L33.3", cam(MX - 0.1, MY, 1.55, 2.1, 0, 28, cz=1.55))
+place("L33", "dad", (MX - 0.1, MY, 0.0), 0, "neutral", arms=[62, 62], head=[0, 0])
+shot("S32", "L33", cam(MX - 0.1, MY, 1.4, 2.0, 0, 28, cz=1.4))
+shot("S33", "L33.3", cam(MX - 0.1, MY, 1.4, 1.7, 0, 28, cz=1.4))
 
 # ----------------------------------------------------------------------------------------------- finish
 remap_all(cues)
@@ -394,7 +397,7 @@ story = {
              "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True, "polish": polish},
     "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.025, 0.012, -0.015], "saturation": 1.05,
               "contrast": 1.03, "vignette": 0.1, "bloom": 0.12, "grain": 0.008},
-    "hud": {"object": "tag", "at": [-0.4, 0.76], "size": 0.56},
+    "hud": {"object": "tag", "at": [-0.44, 0.79], "size": 0.56},
     "cast": cast,
     "lines": lines,
     "shots": shots,

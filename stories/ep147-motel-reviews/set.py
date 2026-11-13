@@ -24,6 +24,26 @@ from mathutils import Vector
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import layout as G  # noqa: E402
 
+from blocky import hair3  # noqa: E402
+
+
+def _neat():
+    """The closet man's hair, this story only (it takes the library's "buzz" slot, set.py loads before the cast is built): a
+    black block cut close with a skin-coloured side part, a swept fringe, clean ear blocks and a bare nape, so from behind
+    it reads as a neat head and not a grey box."""
+    b, T, F, K, Wd, D, H = hair3._b, hair3.TOP, hair3.FRONT, hair3.BACK, hair3.W, hair3.D, hair3.H
+    out = [b("cap", (Wd + 0.1, D + 0.1, 0.3), (0, 0, T - 0.08), bevel=0.1),
+           b("back", (Wd + 0.1, 0.24, H * 0.56), (0, K - 0.07, T - H * 0.28), bevel=0.08),
+           b("part", (0.07, D + 0.14, 0.05), (-Wd * 0.2, 0, T + 0.1), bevel=0.01, mat="hair2"),
+           b("sweep", (Wd * 0.62, 0.2, 0.34), (Wd * 0.14, F + 0.02, T - 0.12), bevel=0.07)]
+    for sx in (-1, 1):
+        out.append(b(f"side{sx}", (0.2, D * 0.85, H * 0.4), (sx * (Wd / 2 + 0.02), 0.06, T - H * 0.2), bevel=0.06))
+        out.append(b(f"ear{sx}", (0.12, 0.3, 0.42), (sx * (Wd / 2 + 0.08), 0.1, T - H * 0.56), bevel=0.04, mat="hair2"))
+    return out
+
+
+hair3.STYLES["buzz"] = _neat
+
 TMP = Path(tempfile.mkdtemp(prefix="room6-"))
 W = {}
 ORANGE = "#ff9f43"
@@ -70,21 +90,21 @@ def _star(d, cx, cy, r, on):
 def _scribble(d, kind, Wd, y0):
     """Handwriting as strokes, never words."""
     rnd = random.Random(hash(kind) % 1000 + 7)
-    ink = {"ours": "#2a3f7a", "old": "#6b4a22", "mine": "#1a1a1a", "last": "#222a3a"}[kind]
+    ink = {"ours": "#1c2c78", "old": "#4a2e0c", "mine": "#101010", "last": "#101820"}[kind]
     for row in range(3):
-        y = y0 + row * 34
+        y = y0 + row * 42
         if kind == "last":      # a neat unfamiliar hand: even small ticks, perfectly level
             x = 44
             while x < Wd - 70 - (row == 2) * 120:
-                d.line([(x, y), (x, y + 18)], fill=hx(ink), width=5)
-                d.line([(x, y + 18), (x + 12, y + 18)], fill=hx(ink), width=5)
+                d.line([(x, y), (x, y + 18)], fill=hx(ink), width=8)
+                d.line([(x, y + 18), (x + 12, y + 18)], fill=hx(ink), width=8)
                 x += 22
         else:
             pts, x = [], 44
             while x < Wd - 60 - (row == 2) * 130:
                 pts.append((x, y + rnd.randint(-9, 9) + (8 if len(pts) % 2 else 0)))
                 x += 15 + rnd.randint(0, 9)
-            d.line(pts, fill=hx(ink), width=6, joint="curve")
+            d.line(pts, fill=hx(ink), width=10, joint="curve")
 
 
 def card_image(kind, n):
@@ -226,6 +246,10 @@ def build_room(kit):
     kit.box("drawer.l", (0.03, 0.46, 0.18), (-0.45, 0.22, dtop - 0.21), inner, drw)
     kit.box("drawer.r", (0.03, 0.46, 0.18), (0.45, 0.22, dtop - 0.21), inner, drw)
     kit.box("drawer.back", (0.92, 0.03, 0.18), (0, 0.45, dtop - 0.21), inner, drw)
+    lm, _ = imat(kit, "leadcard", card_image("ours", 5), 1.0)
+    lead = kit.plane("drawer.lead", (0.5, 0.375), (0, 0.05, dtop - 0.03), lm, drw, rot=(math.pi / 2 - 0.55, 0, 0))
+    noshadow(lead)
+    W["lead"] = lead
     tints = ("#fff1cf", "#ffe3e8", "#e4f6ee", "#fff1cf", "#ffe9b8", "#fff1cf", "#e6f0ff")
     for k in range(14):
         kit.box(f"drawer.card{k}", (0.012, 0.3, 0.2), (-0.4 + k * 0.062, 0.22, dtop - 0.16 + (k % 3) * 0.012), pl(tints[k % 7], 0.7),
@@ -233,7 +257,7 @@ def build_room(kit):
         kit.box(f"drawer.star{k}", (0.014, 0.05, 0.02), (-0.4 + k * 0.062, 0.1, dtop - 0.07), pl("#ffb703", 0.5), drw)
     # the closet: side panels, a back panel, a rail, hangers, a shelf; its own soft light
     cl0, cl1, ch, cy1 = G.CL0, G.CL1, G.CLH, G.CLY
-    cin = kit.emit("#e9e2f7", 0.8, "closetin")
+    cin = kit.emit("#f6dcc0", 0.8, "closetin")
     kit.box("closet.back", (cl1 - cl0 + 0.2, 0.06, ch), (G.CLX, cy1 + 0.03, ch / 2), cin)
     kit.box("closet.l", (0.08, cy1 - Y1 + 0.1, ch), (cl0 - 0.04, (Y1 + cy1) / 2 + 0.05, ch / 2), cin)
     kit.box("closet.r", (0.08, cy1 - Y1 + 0.1, ch), (cl1 + 0.04, (Y1 + cy1) / 2 + 0.05, ch / 2), cin)
@@ -241,8 +265,16 @@ def build_room(kit):
     kit.box("closet.floor", (cl1 - cl0, cy1 - Y1, 0.04), (G.CLX, (Y1 + cy1) / 2, 0.02), pl("#8a6a48", 0.7))
     kit.box("closet.shelf", (cl1 - cl0 - 0.04, 0.4, 0.04), (G.CLX, cy1 - 0.2, 2.62), pl("#b07a4b", 0.6))
     kit.cyl("closet.rail", 0.016, cl1 - cl0 - 0.04, (G.CLX, cy1 - 0.25, 2.5), pl("#c9ced6", 0.3, spec=0.7), rot=(0, math.pi / 2, 0), n=10)
-    for k in range(3):
-        kit.box(f"closet.hanger{k}", (0.34, 0.012, 0.03), (cl0 + 0.25 + k * 0.4, cy1 - 0.25, 2.43), pl("#a87a4a", 0.5))
+    sun_s = kit.emit("#fff1c8", 0.95, "closetsun")
+    for k in range(9):      # blind-striped sunlight on the back wall (2 cm proud)
+        noshadow(kit.box(f"closet.sun{k}", (cl1 - cl0 + 0.1, 0.02, 0.15), (G.CLX, cy1 - 0.012, 0.35 + k * 0.27), sun_s))
+    hw = pl("#e8b878", 0.5)
+    for k in range(5):      # empty wooden hangers on the rail
+        hxx = cl0 + 0.2 + k * 0.25
+        kit.box(f"closet.hook{k}", (0.025, 0.025, 0.09), (hxx, cy1 - 0.25, 2.55), pl("#c9ced6", 0.3, spec=0.7))
+        for sx in (-1, 1):
+            kit.box(f"closet.harm{k}{sx}", (0.24, 0.02, 0.025), (hxx + sx * 0.1, cy1 - 0.25, 2.43), hw, rot=(0, -sx * 0.4, 0))
+        kit.box(f"closet.hbar{k}", (0.42, 0.025, 0.03), (hxx, cy1 - 0.25, 2.33), hw)
     lamp = kit.light("closet.fill", "AREA", (G.CLX, 3.1, 2.55), 100, "#fff3e0", size=1.2, shadow=False)
     kit.aim(lamp, (G.CLX, 3.2, 1.0))
     # the closet doors: two leaves hinged at the opening's edges, solid panels with louver slats 1 cm proud
@@ -389,9 +421,9 @@ def build_office(kit):
     # the desk bell: a brass dome on a base, a button on top (a big, readable bell)
     bx, by = G.BELL
     brass = pl("#e0a830", 0.25, spec=0.8)
-    kit.cyl("bell.base", 0.2, 0.04, (bx, by, 1.07), pl("#9a6a18", 0.3, spec=0.7), n=20)
-    kit.sphere("bell.dome", 0.17, (bx, by, 1.1), brass, seg=18).scale = (1.0, 1.0, 0.8)
-    kit.cyl("bell.button", 0.03, 0.05, (bx, by, 1.26), pl("#c9ced6", 0.3, spec=0.7), n=10)
+    kit.cyl("bell.base", 0.3, 0.05, (bx, by, 1.075), pl("#9a6a18", 0.3, spec=0.7), n=20)
+    kit.sphere("bell.dome", 0.25, (bx, by, 1.1), brass, seg=18).scale = (1.0, 1.0, 0.8)
+    kit.cyl("bell.button", 0.045, 0.07, (bx, by, 1.33), pl("#c9ced6", 0.3, spec=0.7), n=10)
     # a sunny window and a framed picture
     kit.box("off.win.frame", (1.5, 0.06, 1.4), (G.OX - 2.4, oy1 - 0.03, 1.7), pl("#fffaf0", 0.6))
     noshadow(kit.box("off.win", (1.3, 0.04, 1.2), (G.OX - 2.4, oy1 - 0.06, 1.7), kit.emit("#cfeaff", 1.3, "offwin")))
@@ -441,10 +473,10 @@ def build_props(kit):
     W["pen"] = pen
     # the key with its big diamond fob, lying on the desk: pink tally of two strokes scratched in it (the lore)
     key = kit.empty("key", (0, 0, -40))
-    kit.box("key.fob", (0.22, 0.03, 0.22), (0, 0, 0.016), pl("#ff9f43", 0.45), key, rot=(0, math.pi / 4, 0), bevel=0.01)
-    numeral(kit, "key.num", "6", 0.12, (0, 0, 0.0335), "#ffffff", "#e8742a", key, rot=(0, 0, 0))
-    for i in (-1, 1):
-        kit.box(f"key.tally{i}", (0.012, 0.075, 0.003), (i * 0.025 - 0.0, -0.05, 0.0325), pl("#ff5fa2", 0.5), key)
+    kit.box("key.fob", (0.22, 0.22, 0.03), (0, 0, 0.016), pl("#ff9f43", 0.45), key, rot=(0, 0, math.pi / 4), bevel=0.01)
+    numeral(kit, "key.num", "6", 0.1, (0, 0.04, 0.036), "#ffffff", "#e8742a", key, rot=(0, 0, 0))
+    for i in (-1, 1):   # the lore tally: two strokes, motel pink, big enough to read
+        kit.box(f"key.tally{i}", (0.02, 0.1, 0.006), (i * 0.04, -0.07, 0.045), pl("#ff5fa2", 0.5), key)
     brs = pl("#e0a830", 0.25, spec=0.8)
     kit.box("key.ring", (0.06, 0.06, 0.012), (0.02, 0.17, 0.008), brs, key, bevel=0.004)
     kit.box("key.shaft", (0.2, 0.02, 0.012), (0.12, 0.24, 0.008), brs, key, bevel=0.004)
@@ -563,6 +595,7 @@ def _animate(kit, story, tl, t, ctx):
             ph = math.atan2(cy - h.y, cx - h.x)
             card.location = (h.x + 0.04 * math.cos(ph), h.y + 0.04 * math.sin(ph), h.z + 0.12)
             card.rotation_euler = (0, 0, ph + math.pi / 2)
+            card.scale = (1.3, 1.3, 1.3)
             _card_pic(cd["kind"])
         else:
             card.location = (0, 0, -40)
@@ -581,8 +614,10 @@ def _animate(kit, story, tl, t, ctx):
     else:
         pen.location = (0, 0, -40)
     kc = sample("key", tl, t, {"mode": "none"})
-    W["key"].location = (G.DESK[0] + 0.1, G.DESK[1] + 0.1, G.DESK_TOP + 0.005) if kc["mode"] == "desk" else (0, 0, -40)
-    W["key"].rotation_euler = (0, 0, math.radians(20))
+    W["key"].location = (G.DESK[0] + 0.15, G.DESK[1] + 0.38, G.DESK_TOP + 0.14) if kc["mode"] == "desk" else (0, 0, -40)
+    W["key"].rotation_euler = (1.0, 0, math.radians(8))     # the fob leans back against the wall, facing the room
+    W["key"].scale = (1.4, 1.4, 1.4)
+    W["lead"].location = (0, 0.05, G.DESK_TOP - 0.03 if sample("drawer", tl, t, {"v": 0.0})["v"] > 0.5 else -40)
     W["shirts"].location = (G.DESK[0] - 0.05, G.DESK[1] + 0.3, G.DESK_TOP) if sample("shirts", tl, t, {"v": 0.0})["v"] > 0.5 else (0, 0, -40)
     sc = sample("shirt", tl, t, {"mode": "none", "who": "dad"})
     sh = W["shirt"]
@@ -592,6 +627,7 @@ def _animate(kit, story, tl, t, ctx):
         ph = math.atan2(cy - mid.y, cx - mid.x)
         sh.location = (mid.x + 0.1 * math.cos(ph), mid.y + 0.1 * math.sin(ph), mid.z + 0.02)
         sh.rotation_euler = (0, 0, ph + math.pi / 2)
+        sh.scale = (1.5, 1.5, 1.5)
     else:
         sh.location = (0, 0, -40)
     return {}
