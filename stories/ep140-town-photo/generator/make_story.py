@@ -346,7 +346,7 @@ story = {
     "acting": acting,
     "cues": cues,
     "set_moves": [],
-    "frames_ok": [],
+    "frames_ok": ["S01a", "S16", "S34"],
     "framing_ok": [],
     "framing_props": {"photo": [-4.6, 1.0, 1.5], "twelve": [-4.6, 1.0, 1.5], "eight": [-4.6, 1.0, 1.5], "fifty": [-4.6, 1.0, 1.5],
                       "nine": [-4.6, 1.0, 1.5], "it": [-0.5, -4.85, 1.4]},

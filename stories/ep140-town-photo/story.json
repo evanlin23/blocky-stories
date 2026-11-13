@@ -3943,7 +3943,11 @@
   }
  ],
  "set_moves": [],
- "frames_ok": [],
+ "frames_ok": [
+  "S01a",
+  "S16",
+  "S34"
+ ],
  "framing_ok": [],
  "framing_props": {
   "photo": [
