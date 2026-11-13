@@ -305,7 +305,7 @@ def build_phone(kit):
     kit.box("watch.foot", (0.1, 0.07, 0.012), (0, 0.0, -0.205), pl("#2a1c12", 0.7), wt, bevel=0.004)
     kit.cyl("watch.rim", 0.062, 0.025, (0, -0.02, 0), pl("#c9ccd2", 0.3, spec=0.7), wt, rot=(math.pi / 2, 0, 0), n=20)
     kit.cyl("watch.face", 0.052, 0.012, (0, -0.036, 0), pl("#f6efdc", 0.5), wt, rot=(math.pi / 2, 0, 0), n=20)
-    ink = pl("#2a2018", 0.5)
+    ink = kit.emit("#16100a", 1.0, "watchink")
     for i in range(4):
         a = i * 90 * D2R
         kit.box(f"watch.tick{i}", (0.014, 0.006, 0.02), (0.04 * math.sin(a), -0.044, 0.04 * math.cos(a)), ink, wt, rot=(0, a, 0))
@@ -507,9 +507,9 @@ def animate(kit, story, tl, t, ctx):
     # ---- my watch, lying face up on the cloth beside the phone for S21a (the real-time watch next to the fast clock)
     wt = W["watch"]
     if sid == "S21a":   # my watch standing on its band beside the pie, big, the face to the camera: 11:48 plain
-        wt.location = (0.15, 1.75, G.TABLE_Z + 0.2 * 3.4 + 0.01)
+        wt.location = (0.3, 1.25, G.TABLE_Z + 0.062 * 2.6)
         wt.rotation_euler = (0, 0, 0)
-        wt.scale = (3.4, 3.4, 3.4)
+        wt.scale = (2.6, 2.6, 2.6)
     else:
         wt.location = (0, -80, 0)
     # ---- seated
