@@ -14,6 +14,7 @@
 # 2026-11-12: + ep110 (if, fixed final passed) early, + ep125 (confess, fixed final passed) to break up the ban run; ep98 and ep138 dropped (#479, #473). Batch 15: ep142 and ep151 apart (both ice cream); space the phone stories ep139, ep146, ep152
 # 2026-11-12 3 PM: + ep129 (ban, fixed final passed) last: 7+ from ep127, never next to ep130/ep134/ep135. ep94, ep102, ep119 held for yaw fixes (#484), upload skips them until a new final passes. Batch 15 ep142 and ep151 dropped (#488)
 # 2026-11-12 8:45 PM: + ep139 (cost), ep143 (if), ep141 (if), batch 15 written to the Nov 12 lessons, so they go early to give the Monday review data; ep94, ep119, ep102 holds off (new finals passed). Cost never adjacent, if never adjacent, ep141 5 from ep135, ep143 far from ep125/moving-day
+# 2026-11-13 9:45 AM: + batch 15 finals (ep140, ep144, ep145, ep146, ep148, ep149, ep150, ep155) woven through the ban run; ep148 (v3 warm pilot) early so Monday sees it; cost never adjacent, if never adjacent, ep146 10 after ep143, ep141 not next to ep149. ep120 and ep28 held (docs/second-team.md)
 ep128-zero-feet
 ep136-one-answer
 ep124-future-call
@@ -24,21 +25,29 @@ ep94-today-again
 ep139-future-dog
 ep110-bless-you
 ep130-rival-clock
+ep148-frozen-seconds
 ep143-warm-key
+ep149-cuckoo-six
 ep123-sorry-shrink
+ep145-dog-barks
 ep135-fortune-dodge
 ep99-statue-years
-ep127-thousand-tellings
+ep155-good-boy
 ep126-nine-oh-nine
 ep117-glow-secret
 ep141-lost-poster
-ep132-bus-stop
-ep114-band-green
-ep83-free-fries
+ep146-one-percent
+ep127-thousand-tellings
 ep102-aunt-peaches
-ep125-aunts-keys
+ep150-dad-pillow
+ep132-bus-stop
+ep144-lap-behind
 ep119-quiet-car
+ep83-free-fries
+ep125-aunts-keys
 ep108-scarecrow-swap
+ep140-town-photo
 ep122-face-the-wall
-moving-day
+ep114-band-green
 ep129-gift-box
+moving-day
