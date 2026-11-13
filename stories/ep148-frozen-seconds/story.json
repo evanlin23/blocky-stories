@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 9,
+ "rev": 10,
  "look": {
   "style": "v3",
   "fog": "#dfe8f4",
@@ -3100,7 +3100,7 @@
     "to": "P01>"
    }
   ],
-  "rev": 9
+  "rev": 10
  },
  "set_moves": [],
  "framing_ok": [
@@ -3125,6 +3125,7 @@
  ],
  "frames_ok": [
   "S05",
-  "S21b"
+  "S21b",
+  "S22a"
  ]
 }

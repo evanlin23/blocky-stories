@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 9
+REV = 10
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 # the 0.5 s music drop before L22
@@ -425,7 +425,7 @@ story = {
     "framing_ok": ["S08a", "S08b", "S09a", "S15a", "S15b", "S21a", "S21b", "S22a", "S22b", "S17b"],
     "staging_ok": ["S22a/leo", "S21b/leo", "S21a/leo"],
     "clip_ok": ["fleck"],
-    "frames_ok": ["S05", "S21b"],
+    "frames_ok": ["S05", "S21b", "S22a"],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")
