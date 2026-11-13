@@ -4487,11 +4487,10 @@
     "yaw": 0.0,
     "expr": "smile",
     "arms": [
-     75,
-     75
+     30,
+     30
     ],
-    "keep_yaw": true,
-    "blend": 0.0
+    "keep_yaw": true
    },
    {
     "at": "L16.3+0.8",
@@ -4503,8 +4502,8 @@
     "yaw": 0.0,
     "expr": "smile",
     "arms": [
-     75,
-     75
+     30,
+     30
     ]
    },
    {
@@ -6080,7 +6079,8 @@
   "S25b"
  ],
  "frames_ok": [
-  "S16a"
+  "S16a",
+  "S18b"
  ],
  "staging_ok": [
   "S24b"

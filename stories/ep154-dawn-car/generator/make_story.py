@@ -378,8 +378,8 @@ shot("S16a", "L16", ccam(WALL, (-0.6, 1.0, 1.6), (0.72, 0.1, 1.5), 20, lp2=(-0.5
 # S16b: the seat slides all the way back on its rails (the tally strokes on the inner rail)
 cue("L16.3", "pseat", v=1.0, dur=0.8)
 PCB, _ = G.seat(WALL, "pass_back", 1.12)
-key("cook", "L16.3", list(PCK), yaw=YCK, expr="smile", arms=[75, 75], keep_yaw=True, blend=0.0)   # hands up on the bar, out of the insert
-key("cook", "L16.3+0.8", list(PCB), yaw=YCK, expr="smile", arms=[75, 75])
+key("cook", "L16.3", list(PCK), yaw=YCK, expr="smile", arms=[30, 30], keep_yaw=True)
+key("cook", "L16.3+0.8", list(PCB), yaw=YCK, expr="smile", arms=[30, 30])
 # a low close from the open door: the seat slides back along the outer rail and uncovers the two tally strokes;
 # only the cook's knee crosses the top of the frame, never his head
 shot("S16b", "L16.3", ccam(WALL, (1.45, 0.55, 1.0), (1.04, 0.26, 0.36), 24, lp2=(1.44, 0.5, 0.98)))
@@ -626,7 +626,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "framing_ok": ["S02b", "S11a", "S14a", "S25b"],
-    "frames_ok": ["S16a"],
+    "frames_ok": ["S16a", "S18b"],
     "staging_ok": ["S24b"],
     "clip_ok": [],
     "phonemes": {},

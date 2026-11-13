@@ -818,6 +818,12 @@ def animate(kit, story, tl, t, ctx):
         ob = bpy.data.objects.get(nm)
         if ob is not None:
             ob.hide_render = sid == "S23c"
+    # the cook's door-side arm stays out of S16b's low insert, where it would sweep across the lens
+    arm = bpy.data.objects.get("cook.arm-1")
+    if arm is not None:
+        hid = bpy.data.objects["cook"].hide_render or sid == "S16b"
+        for ob in [arm] + list(arm.children_recursive):
+            ob.hide_render = hid
     mr = bpy.data.objects.get("car.mirror")
     if mr is not None:
         mr.hide_render = sid == "S24a"
