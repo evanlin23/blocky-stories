@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 7
+REV = 8
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -197,7 +197,7 @@ place("L03", "cousin", (G.CX, 2.35, -0.2), 0, "stunned", arms=[0, 0])
 key("cousin", "L03.1", (G.CX, 2.35, -0.2), yaw=0, expr="stunned", head=[-22, 6], blend=0.35)
 key("cousin", "L03.2", (G.CX, 2.35, -0.2), yaw=0, expr="stunned", head=[20, -4], blend=0.35)
 key("cousin", "L03.3", (G.CX, 2.35, -0.2), yaw=0, expr="stunned", head=[-8, 8], blend=0.35)
-shot("S03", "L03", cam(G.CX - 0.12, 2.35, 1.3, 1.25, -35, 32, cz=1.4))
+shot("S03", "L03", cam(G.CX - 0.12, 2.35, 1.3, 1.25, -35, 32, cz=1.4, push=(1.14, 1.3)))
 show("L04", "buddy")
 place("L04", "buddy", (G.BDX - 0.5, G.BDY + 0.8, -0.55), 0, "sheepish", arms=[0, 0])
 shot("S04a", "L04", cam(G.BDX - 0.2, G.BDY + 0.8, 1.05, 2.5, 0, 30, cz=1.2))
@@ -297,7 +297,7 @@ shot("S19b", "P01", cam(HX + 0.1, 5.0, 1.45, 2.4, 0, 30, cz=1.45))
 place("L20", "me", (HX, 3.9, 0.0), 0, "stunned", arms=[0, 0])
 key("me", "L20.1", (HX, 3.9, 0.0), yaw=0, expr="stunned", head=[-14, 8], blend=0.4)
 mouth("me", "L20", "L20>", 0.3)
-shot("S20", "L20", cam(HX, 3.9, 1.5, 0.85, 0, 36, cz=1.5))
+shot("S20", "L20", cam(HX, 3.9, 1.5, 0.85, 0, 36, cz=1.5, push=(0.79, 1.5)))
 key("me", "L21.1", (HX, 3.9, 0.0), yaw=0, expr="stunned", head=[12, -6], blend=0.35)
 mouth("me", "L21", "L21>", 0.35)
 shot("S21", "L21", cam(HX, 3.9, 1.45, 0.82, 0, 38, cz=1.47))
