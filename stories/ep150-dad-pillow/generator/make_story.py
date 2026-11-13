@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 2
+REV = 3
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 
@@ -272,15 +272,15 @@ place("L17", "me", (59.7, 1.8, 0.0), 173, "worried", arms=[0, 0], head=[-50, 0])
 key("me", "L17.1", (59.7, 1.8, 0.0), yaw=173, expr="worried", head=[-50, 0])
 key("me", "L17>", (59.95, 3.9, 0.0), yaw=173, expr="worried", head=[-50, 0])
 mouth("me", "L17", "L17>", 0.3)
-shot("S17", "L17", camp([62.3, 2.4, 1.5], [59.8, 2.4, 1.35], 20, pos2=[62.25, 2.5, 1.5], tgt2=[60.0, 4.2, 1.4]))
+shot("S17", "L17", camp([62.3, 1.0, 1.45], [60.0, 1.9, 1.35], 20, pos2=[62.22, 1.12, 1.45], tgt2=[60.1, 4.1, 1.4]))
 place("L18", "dad", (G.DAD_X, G.DAD_Y, SEAT_Z), 0, "warm", arms=[0, 0])
 mouth("dad", "L18.2", "L18.4", 0.45)
 key("dad", "L18.4", (G.DAD_X, G.DAD_Y, SEAT_Z), yaw=0, expr="warm", arms=[0, 0], blend=0.2)
 shot("S18a", "L18", cam(G.DAD_X, G.DAD_Y, 1.3, 1.2, 0, 30, cz=1.35))
 shot("S18b", "L18.3", cam(G.DAD_X, G.DAD_Y, 1.4, 0.85, 0, 34, cz=1.4))
-place("L19", "me", (HX, 4.0, 0.0), -90, "stunned", arms=[0, 0])
+place("L19", "me", (HX + 0.25, 4.1, 0.0), 90, "stunned", arms=[0, 0])
 mouth("me", "L19", "L19>", 0.3)
-shot("S19", "L19", camp([58.6, 3.3, 1.5], [60.3, 4.4, 1.45], 24, pos2=[58.75, 3.38, 1.5], tgt2=[60.3, 4.42, 1.45]))
+shot("S19", "L19", camp([61.5, 3.4, 1.5], [60.34, 4.45, 1.45], 16, pos2=[61.42, 3.47, 1.5], tgt2=[60.34, 4.47, 1.45]))
 # S19c: the knock comes through; the wide: Dad smiling on the stair, me with my ear at his door
 shot("S19c", "L19.2", camp([59.0, -1.3, 1.5], [59.0, 2.8, 1.4], 18, pos2=[59.0, -1.0, 1.5], tgt2=[59.0, 2.8, 1.42]))
 # the drop: the door's gold edges, my face at the frame's edge
@@ -318,9 +318,9 @@ shot("S24b", "L24.2", cam(G.MX, G.MY - 1.0, 1.45, 0.95, 25, 34, cz=1.12))
 # ===== 07 the reveal (L25)
 cue("L25", "mode", m="dream")
 show("L25", "me", "dad")
-place("L25", "me", (HX + 0.2, 2.3, 0.0), 0, "warm", arms=[0, 0])
+place("L25", "me", (HX + 0.7, 3.0, 0.0), 0, "warm", arms=[0, 0])
 place("L25", "dad", (G.DAD_X, G.DAD_Y, SEAT_Z), 0, "sleep", arms=[0, 0], blink=False)
-shot("S25", "L25", camp([HX - 0.9, -1.3, 1.2], [HX - 0.9, 2.6, 1.6], 16, pos2=[HX - 0.9, -1.0, 1.22], tgt2=[HX - 0.9, 2.6, 1.6]))
+shot("S25", "L25", camp([HX - 0.7, -1.3, 1.3], [HX - 0.7, 2.6, 1.6], 15, pos2=[HX - 0.7, -1.0, 1.32], tgt2=[HX - 0.7, 2.6, 1.6]))
 
 # ===== 08 the kitchen (L27)
 cue("L27", "mode", m="wake")

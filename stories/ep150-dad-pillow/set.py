@@ -274,7 +274,8 @@ def build_hall(kit):
     for i in range(1, 9):
         ys = G.STEP_Y0 + G.STEP_DY * (i - 1)
         top = G.STEP_DZ * i
-        kit.box(f"stair{i}", (1.65, y1 - ys, top), (x0 + 0.825, (ys + y1) / 2, top / 2), sw if i % 2 else sr, bevel=0.01)
+        sw_i = 1.65 - 0.008 * (i - 1)      # each step 8 mm narrower: no coplanar east faces shadowing each other
+        kit.box(f"stair{i}", (sw_i, y1 - ys, top), (x0 + sw_i / 2, (ys + y1) / 2, top / 2), sw if i % 2 else sr, bevel=0.01)
     kit.box("newel", (0.14, 0.14, 0.9), (x0 + 1.55, G.STEP_Y0 - 0.1, 0.45), wood, bevel=0.02)
     # Dad's seat on the third stair: thighs, shins and slippers, static (Dad never moves in the dream)
     pants = pl("#4a5a7a", 0.8)
@@ -311,18 +312,18 @@ def build_hall(kit):
     W["doorgold"] = bpy.data.objects["door.glow"]
     # two pencil strokes on the dream door's frame at shoulder height (lore), 1.5 cm proud, only in the dream
     gr = pl("#4a4a56", 0.6)
-    gs = kit.emit("#ffc66a", 2.2, "doorstrip")
+    gs = kit.emit("#ff9a1a", 1.1, "doorstrip")     # saturated and modest, so the grade keeps it gold, not cream
     W["strips"] = []
     for sx in (-1, 1):
-        W["strips"].append(kit.box(f"door.strip{sx}", (0.035, 0.012, G.DOOR_H), (G.HX + sx * (G.DOOR_W / 2 + 0.02), y1 - 0.046,
+        W["strips"].append(kit.box(f"door.strip{sx}", (0.06, 0.012, G.DOOR_H), (G.HX + sx * (G.DOOR_W / 2 + 0.03), y1 - 0.046,
                                    G.DOOR_H / 2), gs))
-    W["strips"].append(kit.box("door.strip.t", (G.DOOR_W + 0.075, 0.012, 0.035), (G.HX, y1 - 0.046, G.DOOR_H + 0.02), gs))
+    W["strips"].append(kit.box("door.strip.t", (G.DOOR_W + 0.12, 0.012, 0.06), (G.HX, y1 - 0.046, G.DOOR_H + 0.03), gs))
     for ob in W["strips"]:
         noshadow(ob)
-    W["pencil"] = [kit.box("pencil1", (0.12, 0.012, 0.014), (G.HX + G.DOOR_W / 2 + 0.07, y1 - 0.046, 1.4), gr),
-                   kit.box("pencil2", (0.12, 0.012, 0.014), (G.HX + G.DOOR_W / 2 + 0.07, y1 - 0.046, 1.55), gr)]
+    W["pencil"] = [kit.box("pencil1", (0.1, 0.012, 0.016), (G.HX + G.DOOR_W / 2 + 0.115, y1 - 0.046, 1.4), gr),
+                   kit.box("pencil2", (0.1, 0.012, 0.016), (G.HX + G.DOOR_W / 2 + 0.115, y1 - 0.046, 1.55), gr)]
     # side panels, either gold (dream) or white (wake); 2 cm proud of the wall
-    pg = kit.emit("#ffd080", 1.3, "sidegold")
+    pg = kit.emit("#ffb040", 0.85, "sidegold")
     pw = kit.emit("#cfe2f2", 0.6, "sidewhite")
     W["sidegold"], W["sidewhite"] = [], []
     for sx in (-1, 1):
@@ -363,6 +364,9 @@ def build_hall(kit):
         facelight(kit, "hd.face", (G.HX + 0.3, -1.3, 2.4), (G.HX, 2.8, 1.2), 480, "#ffd890"),
         facelight(kit, "hd.dad", (G.HX - 0.5, -0.6, 2.2), (G.DAD_X, G.DAD_Y, 1.1), 380, "#ffd890", 1.8),
         facelight(kit, "hd.door", (G.HX + 0.2, 2.2, 2.6), (G.HX, G.HY1, 1.2), 240, "#ffd890", 3.0)]
+    # the stairs' east face is vertical and the fills point down: a low side fill so it never reads as a black block
+    W["hall.wake"].append(facelight(kit, "hw.stair", (G.HX + 1.9, 2.6, 1.1), (G.HX - 1.0, 2.6, 0.6), 260, "#fff3e0", 3.0))
+    W["hall.dream"].append(facelight(kit, "hd.stair", (G.HX + 1.9, 2.6, 1.1), (G.HX - 1.0, 2.6, 0.6), 260, "#ffd890", 3.0))
     # the sunny porch light (wake only)
     W["porch"] = [facelight(kit, "porch.sun", (G.HX, 12.0, 6.0), (G.HX, 6.6, 0.6), 2600, "#fff0d0", 7.0),
                   facelight(kit, "porch.face", (G.HX, 3.4, 2.8), (G.HX, 6.6, 1.2), 520, "#fff3e0", 3.0)]
