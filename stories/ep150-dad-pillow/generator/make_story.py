@@ -265,7 +265,7 @@ shot("S12", "L12", camp([58.95, -1.35, 1.45], [58.9, 2.6, 1.3], 14, pos2=[59.1, 
 # ===== 05 the second and third night (L14 to L19)
 cue("L14", "night", n=2)
 # night two: I've come down the hall toward Dad on the stair; he doesn't move
-MS14 = (59.35, 1.1, 0.0)
+MS14 = (59.55, 1.15, 0.0)
 place("L14", "me", (60.2, 2.6, 0.0), -23, "worried", arms=[0, 0])
 key("me", "L14.2", MS14, yaw=-23, expr="worried", arms=[0, 0])
 key("me", "L14.2+0.45", MS14, yaw=-148, expr="worried", arms=[0, 0], blend=0.4)
@@ -456,7 +456,7 @@ story = {
     "sound": sound,
     "set_moves": [],
     "clip_ok": ["pillow"],
-    "framing_ok": [],
+    "framing_ok": ["S12", "S14a", "S19c", "S19"],   # two-shots: Dad whole on the stair and me at the door (his close-ups are S10b, S14b, S18); S19: "DAD?" is the voice through the door, on me
     "frames_ok": [],
     "staging_ok": ["S24b/yaw"],
 }
