@@ -20,7 +20,7 @@ import layout as G  # noqa: E402
 from blocky import timeline  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 18
+REV = 19
 D2R = math.pi / 180
 
 orig_lines = json.loads((HERE / "lines.json").read_text())

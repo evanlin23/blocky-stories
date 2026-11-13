@@ -283,8 +283,8 @@ def build_curtain(kit):
     # the frosting smudge on the curtain's free edge at hand height (the second clue), 2.5 cm proud of the fold,
     # a big hot-pink thumb smear with a drag below it
     pk = M(kit, "#ff5fa8", 0.6, 0.05)
-    kit.box("smudge", (0.12, 0.02, 0.17), (x0 + 0.072, y - 0.075, 1.05), pk, None, (0, 0, 0.25), 0.01)
-    kit.box("smudge2", (0.07, 0.02, 0.07), (x0 + 0.1, y - 0.077, 0.88), pk, None, (0, 0, 0.3), 0.01)
+    kit.box("smudge", (0.34, 0.02, 0.48), (x0 + 0.2, y - 0.075, 1.15), pk, None, (0, 0, 0.25), 0.01)
+    kit.box("smudge2", (0.2, 0.02, 0.2), (x0 + 0.3, y - 0.077, 0.75), pk, None, (0, 0, 0.3), 0.01)
 
 
 def build_armchair(kit):
@@ -492,7 +492,7 @@ def build_letters(kit):
     W["letters"] = {}
     # A over the armchair, B on the curtain's top, C over the closet door, D on the tablecloth skirt
     spots = {"A": (-1.75, 0.75, 1.65), "B": ((G.CURT_X0 + G.CURT_X1) / 2, 1.85, 3.2), "C": (G.CLOSET_X, 2.55, 2.75),
-             "D": (0.0, -0.05, 1.0)}
+             "D": (0.0, -0.75, 1.17)}
     face = kit.emit("#fff3d0", 1.2, "ltrface")
     rim = kit.emit("#2a1a0e", 0.5, "ltrrim")
     inkm = kit.emit("#0b0b0b", 1.0, "ltrink")

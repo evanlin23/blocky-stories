@@ -15,7 +15,7 @@
  "tail": 0.25,
  "fade_in": false,
  "fade_out": false,
- "rev": 18,
+ "rev": 19,
  "look": {
   "style": "closer",
   "fog": "#f4e9d0",
@@ -2327,7 +2327,7 @@
     "lp": 1200
    }
   ],
-  "rev": 18
+  "rev": 19
  },
  "frames_ok": [
   "S19"
