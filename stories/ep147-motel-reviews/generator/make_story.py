@@ -191,10 +191,10 @@ shot("S02", "L02", cam(G.DESK[0], 2.05, 1.05, 1.5, -8, 36, cz=1.0))
 cue("L05", "drawer", v=0.0, dur=0.1)
 show("L05", "me", "dad")
 SOFF = 2.0
-place("L05", "me", (G.EX - 0.95, G.EXT_WALK_Y, 0.0), 0, "delighted", arms=[0, 0])
-place("L05", "dad", (G.EX + 0.95, G.EXT_WALK_Y, 0.0), 0, "delighted", arms=[0, 0])
+place("L05", "me", (G.EX - 0.72, G.EXT_WALK_Y, 0.0), 0, "delighted", arms=[0, 0])
+place("L05", "dad", (G.EX + 0.72, G.EXT_WALK_Y, 0.0), 0, "delighted", arms=[0, 0])
 mouth("me", "L05", "L05>", 0.35)
-shot("S05", "L05", cam(G.EX, G.EXT_WALK_Y, 1.5, 3.4, 0, 30, cz=1.45))
+shot("S05", "L05", cam(G.EX, G.EXT_WALK_Y, 1.5, 2.3, 0, 30, cz=1.45))
 cue("L04", "stars", n=1)
 show("L04")
 shot("S04a", "L04", cam(*G.EXT_POOL, 0.5, 1.5, 8, 30, cz=0.7))
@@ -223,9 +223,9 @@ shot("S08b", "L08.2", cam(CLX, 3.1, 1.7, 1.6, 6, 34, cz=1.7))
 
 # ===== 04 the clerk (L10)
 show("L10", "clerk")
-place("L10", "clerk", (G.CLERK[0], G.CLERK[1], 0.0), 0, "deadpan", arms=[0, 70])
+place("L10", "clerk", (G.CLERK[0] + 0.9, G.CLERK[1], 0.0), 0, "deadpan", arms=[0, 70])
 shot("S10a", "L10", cam(G.OX - 0.2, 1.6, 1.3, 2.2, 0, 32, cz=1.3))
-shot("S10b", "L10.2", cam(G.BOARD[0] - 0.0, G.BOARD[1] - 0.05, 1.55, 1.2, 0, 36, cz=1.55))
+shot("S10b", "L10.2", cam(G.BOARD[0] - 1.0, G.BOARD[1] - 0.5, 1.5, 2.6, 0, 36, cz=1.5))
 
 # ===== 05 the morning (L13, L15)
 cue("L13", "shirts", v=1.0)
@@ -285,7 +285,7 @@ S23 = [G.MAN[0], 1.5, 0.0]
 key("man", "L23", S23, yaw=0, expr="hollow", arms=[0, 0], blend=0.25)
 key("man", "L23.1", [G.MAN_DESK[0] + 0.5, 1.5, 0.0], yaw=-90, expr="hollow", arms=[0, 0], blend=0.4)
 key("man", "L23.2", [G.MAN_DESK[0] + 0.5, 1.55, 0.0], yaw=180, expr="hollow", arms=[80, 80], blend=0.45)
-shot("S23a", "L23", cam(0.6, 1.9, 1.4, 3.1, 0, 30, cz=1.4))
+shot("S23a", "L23", cam(0.3, 1.9, 1.5, 2.2, 0, 30, cz=1.5))
 cue("L23.2", "key", mode="desk", dur=0.1)
 shot("S23b", "L23.2", cam(-0.75, 2.2, 1.2, 1.45, -25, 40, cz=1.25))
 # L24: he turns, nods, walks to the door
@@ -294,8 +294,7 @@ key("man", "L24-0.3", MD, yaw=180, expr="hollow", arms=[0, 0], blend=0.2)
 key("man", "L24+0.4", MD, yaw=0, expr="neutral", arms=[0, 0], head=[0, 0], blend=0.7)
 key("man", "L24.1-0.2", MD, yaw=0, expr="neutral", arms=[0, 0], head=[0, 22], blend=0.25)
 key("man", "L24.1+0.2", MD, yaw=0, expr="neutral", arms=[0, 0], head=[0, 0], blend=0.25)
-key("man", "L24.1+0.45", MD, yaw=0, expr="neutral", arms=[0, 0], head=[0, 0], blend=0.1)
-key("man", "P01-0.2", [2.9, 1.5, 0.0], yaw=90, expr="neutral", arms=[0, 0], blend=0.25)
+key("man", "P01-0.1", [1.5, 1.5, 0.0], yaw=90, expr="neutral", arms=[0, 0], blend=0.75)
 shot("S24a", "L24", cam(MD[0], 1.55, 1.5, 1.8, 0, 34, cz=1.5))
 show("L24.2", "me", "dad", "man")
 place("L24.2", "me", (0.65, 0.2, 0.0), 0, "shocked", arms=[0, 0])
@@ -405,7 +404,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": ["S02", "S22"],
-    "framing_ok": [],
+    "framing_ok": ["S08", "S08b", "S15", "S19b"],  # the closet man faces the wall on purpose (the script: back only until L22)
     "frames_ok": [],
     "staging_ok": [],
     "phonemes": {},

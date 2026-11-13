@@ -414,30 +414,30 @@
    ]
   },
   "L22": {
-   "text": "At six ay em, the closet doors opened. Click.",
+   "text": "At six in the morning, the closet doors opened. Click.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.397,
+   "dur": 2.569,
    "onset": 0.155,
-   "end": 2.19,
+   "end": 2.362,
    "chunks": [
     [
      0.155,
-     0.707
+     0.793
     ],
     [
-     0.732,
-     1.259
+     0.819,
+     1.414
     ],
     [
-     1.259,
-     1.621
+     1.414,
+     1.793
     ],
     [
-     1.715,
-     2.19
+     1.888,
+     2.362
     ]
    ]
   },

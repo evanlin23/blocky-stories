@@ -14,7 +14,7 @@
  {"id": "L19", "who": "narrator", "chunks": [["He was", "He was"], ["the last GUEST.", "the last guest."]]},
  {"id": "L20", "who": "narrator", "chunks": [["So I wrote", "So I wrote"], ["a card", "a card"], ["of my OWN.", "of my own."]]},
  {"id": "L21", "who": "narrator", "chunks": [["\"The man in the closet", "The man in the closet"], ["checked out", "checked out"], ["before BREAKFAST.\"", "before breakfast."]]},
- {"id": "L22", "who": "narrator", "chunks": [["At six A.M.,", "At six ay em,"], ["the closet doors", "the closet doors"], ["OPENED.", "opened."], ["Click.", "Click."]]},
+ {"id": "L22", "who": "narrator", "chunks": [["At six A.M.,", "At six in the morning,"], ["the closet doors", "the closet doors"], ["OPENED.", "opened."], ["Click.", "Click."]]},
  {"id": "L23", "who": "narrator", "chunks": [["He walked out", "He walked out"], ["and set the other KEY", "and set the other key"], ["on the desk.", "on the desk."]]},
  {"id": "L24", "who": "narrator", "chunks": [["Then he nodded", "Then he nodded"], ["at us.", "at us."], ["Very POLITE.", "Very polite."]]},
  {"id": "P01", "pause": 0.6, "chunks": [["", ""]]},

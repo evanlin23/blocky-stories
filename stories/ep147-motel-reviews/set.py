@@ -552,7 +552,7 @@ def _animate(kit, story, tl, t, ctx):
     W["drawer"].location.y = G.DESK[1] - 0.42 * sample("drawer", tl, t, {"v": 0.0})["v"]
     cv = sample("closet", tl, t, {"v": 0.0})["v"]
     for piv, side in W["doors"]:
-        piv.rotation_euler = (0, 0, math.radians(-100 * cv if side == -1 else 100 * cv))
+        piv.rotation_euler = (0, 0, math.radians(-165 * cv if side == -1 else 165 * cv))
     # ---- the held card, the pen, the key on the desk, the shirts, the shirt in Dad's hands
     cd = sample("card", tl, t, {"mode": "none", "who": "me", "kind": "ours"})
     card = W["card"]
