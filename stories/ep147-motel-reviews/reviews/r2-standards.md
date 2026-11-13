@@ -10,7 +10,7 @@ Verdict: approve
 5. **S10a/S10b wall art:** in. The house picture now has a sun with rays; no cross.
 
 ## Regressions
-None severe. The v3 `hollow` face on the closet man (S23b, L22 to L24): two flat black round eyes, a short flat mouth, no blood, no wound, no drip. Eerie, not gory, and he stays at arm's length with Dad in frame or nearby. Kid-safe.
+None severe. The v3 `hollow` face on the closet man (L22 to L24, checked at S24a 33.6 s): two flat black round eyes, a short flat mouth, no blood, no wound, no drip. Eerie, not gory, and he stays at arm's length with Dad in frame or nearby. Kid-safe.
 Preflight flash: PASS (1269 frames). Reveal (L28, L29) and the warm turn still read (S28a/S28b, S32).
 
 ## Should-fix (not blocking)
