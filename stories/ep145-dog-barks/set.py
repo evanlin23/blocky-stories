@@ -645,6 +645,8 @@ def animate(kit, story, tl, t, ctx):
     # ---- the biscuit: from the carrier's hand (cue gives both ends) into Moose's mouth
     bs = sample("biscuit", tl, t, {"on": 0.0, "mouth": 0.0, "dur": 0.0})
     hide(W["biscuit"], bs["on"] < 0.5)
+    if bs["on"] >= 0.5:
+        bpy.context.view_layer.update()  # fresh hand/head matrices, so a shard start matches a continuous run
     h = hand("mail", 1)
     if h is not None and bs["on"] >= 0.5:
         mouth_p = W["m_head"].matrix_world @ Vector((0, -0.42, -0.07))
