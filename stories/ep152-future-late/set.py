@@ -301,7 +301,8 @@ def build_phone(kit):
     # my watch (S21a): a plain round face on a strap, twelve minutes to twelve (real time), placed on the wrist by animate()
     wt = kit.empty("watch", (0, -80, 0))
     W["watch"] = wt
-    kit.box("watch.strap", (0.07, 0.02, 0.4), (0, 0.0, 0), pl("#2a1c12", 0.7), wt, bevel=0.006)
+    kit.box("watch.strap", (0.05, 0.02, 0.2), (0, 0.0, -0.1), pl("#2a1c12", 0.7), wt, bevel=0.006)
+    kit.box("watch.foot", (0.1, 0.07, 0.012), (0, 0.0, -0.205), pl("#2a1c12", 0.7), wt, bevel=0.004)
     kit.cyl("watch.rim", 0.062, 0.025, (0, -0.02, 0), pl("#c9ccd2", 0.3, spec=0.7), wt, rot=(math.pi / 2, 0, 0), n=20)
     kit.cyl("watch.face", 0.052, 0.012, (0, -0.036, 0), pl("#f6efdc", 0.5), wt, rot=(math.pi / 2, 0, 0), n=20)
     ink = pl("#2a2018", 0.5)
@@ -508,8 +509,8 @@ def animate(kit, story, tl, t, ctx):
     # ---- my watch, lying face up on the cloth beside the phone for S21a (the real-time watch next to the fast clock)
     wt = W["watch"]
     if sid == "S21a":
-        wt.location = (0.3, 0.9, G.PHONE[2] + 0.06)
-        wt.rotation_euler = (-50 * D2R, 0, 0)
+        wt.location = (0.3, 0.95, G.PHONE[2] + 0.17)
+        wt.rotation_euler = (0, 0, 0)
         wt.scale = (2.3, 2.3, 2.3)
     else:
         wt.location = (0, -80, 0)

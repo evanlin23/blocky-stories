@@ -252,7 +252,7 @@ mouth("me", "L20", "L20>", 0.4)
 key("mom", "L20", arms=[12, 12], side=[0, 0], expr="smile", blend=0.5)
 shot("S20", "L20", mecam(1.4, -8, dx=-0.1, push=(1.2, 1.3)))
 key("me", "L21", expr="stunned", head=[0, 0])
-shot("S21a", "L21", P2((0.15, -0.9, 1.25), (0.15, 1.6, 1.05), 34, pos2=(0.15, -0.6, 1.22)))
+shot("S21a", "L21", P2((0.3, -0.9, 1.25), (0.3, 1.6, 1.05), 34, pos2=(0.3, -0.6, 1.22)))
 key("me", "L21.2", expr="stunned")
 shot("S21b", "L21.2", mecam(1.2, 0, dx=-0.05, push=(1.0, 1.3)))
 key("me", "L22", expr="laugh", head=[0, -8], blend=0.6)
@@ -341,7 +341,7 @@ story = {
               "vignette": 0.12, "bloom": 0.12, "grain": 0.008},
     "hud": {"object": "tag", "at": [-0.5, 0.62], "size": 0.46},
     "asr_forgive": ["thirtieth", "eleven fifty-two", "eleven fifty-five", "eleven fifty-seven", "eleven fifty-eight",
-                    "hadn't", "tick", "future me"],
+                    "hadn't", "tick", "future me", "buy", "buy the house"],
     "cast": cast,
     "lines": lines,
     "shots": shots,
