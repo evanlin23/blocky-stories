@@ -89,9 +89,15 @@ def cue(at, name, **kw):
     cues.append({"at": at, "name": name, **kw})
 
 
-def cam(tx, ty, tz, d, az, lens, el=0.0, push=None):
+FAR = 1.85
+
+
+def cam(tx, ty, tz, d, az, lens, el=0.0, push=None, far=FAR):
     """A camera d metres from (tx, ty, tz), az degrees round from the south, el metres above the target, looking at
-    it. One key (the polish pack adds the slow push) or, with push=d2, two keys (a push to d2)."""
+    it. One key (the polish pack adds the slow push) or, with push=d2, two keys (a push to d2). The camera fits a
+    24 mm sensor vertically, so the first-pass distances are scaled by `far`."""
+    d, el = d * far, el * far
+    push = push * far if push else None
     def at_(dd):
         cx = tx + dd * math.sin(az * D2R)
         cy = ty - dd * math.cos(az * D2R)
@@ -133,7 +139,7 @@ cue(0, "bread", u=0.0)
 # ===== 01 the rule (L01 to L03)
 cut("me", 0, (MX, MY), yaw=0, expr="nervous", head=[8, 0], arms=[0, 0], side=[0, 0])
 TAG_OFF.add("S01a")
-shot("S01a", 0, cam(-0.62, MY, 1.45, 3.9, 6, 32, el=0.15))
+shot("S01a", 0, cam(-0.7, MY, 1.55, 3.9, 6, 30, el=0.15))
 cut("me", "L01.3", (MX, MY), yaw=0, expr="nervous", head=[0, 6], arms=[0, 62])
 cue("L01.3", "c1", p=1)
 TAG_OFF.add("S01b")
@@ -141,7 +147,7 @@ shot("S01b", "L01.3", cam(MX + 0.1, MY, 1.4, 3.2, -6, 32, el=0.1))
 cut("me", "L02", (MX, MY), yaw=0, expr="neutral", head=[18, -4], arms=[0, 0], side=[0, 62])
 cue("L02", "c1", p=0)
 TAG_OFF.add("S02")
-shot("S02", "L02", cam(-0.5, MY, 1.3, 3.0, 14, 32, el=0.25))
+shot("S02", "L02", cam(-0.45, MY, 1.45, 3.2, 18, 32, el=0.25))
 cut("me", "L03", (MX, MY), yaw=0, expr="shocked", head=[0, 6], arms=[0, 62], side=[0, 0])
 cue("L03", "c1", p=2)
 cue("L03", "c2", p=3)
@@ -158,14 +164,14 @@ cut("ty", "L04", (1.9, 6.1), yaw=-90, expr="delighted", head=[0, 10], arms=[0, 4
 key("ty", "L04.1", arms=[0, 150], blend=0.35)
 key("ty", "L04.2", arms=[0, 60], blend=0.4)
 cue("L04.1", "bread", u=1.0, dur=1.2)
-shot("S04", "L04", cam(1.9, 7.0, 1.9, 6.6, -90, 30, el=0.2))
-cut("me", "L05", (G.ME_G[0], G.ME_G[1]), yaw=-20, expr="delighted", head=[-10, 0], arms=[0, 0], side=[0, 0])
+shot("S04", "L04", cam(1.9, 7.0, 2.0, 5.2, -90, 30, el=0.2))
+cut("me", "L05", (G.BIKE[0] + 1.35, G.BIKE[1] - 1.1), yaw=-20, expr="delighted", head=[-10, 0], arms=[0, 0], side=[0, 0])
 cut("ty", "L05", far["ty"], yaw=0)
 key("me", "L05.1", yaw=-20, side=[25, 0], blend=0.4)
-shot("S05", "L05", cam(G.ME_G[0] - 0.6, G.ME_G[1], 1.45, 4.6, -12, 30, el=0.1))
-cut("ty", "L06", (TX, TY_), yaw=0, expr="suspicious", head=[0, 0], arms=[0, 0])
+shot("S05", "L05", cam(G.BIKE[0] + 0.7, G.BIKE[1] - 0.8, 1.5, 3.3, 14, 28, el=0.1))
+cut("ty", "L06", (TX, TY_), yaw=24, expr="suspicious", head=[0, 0], arms=[0, 0])
 cut("me", "L06", far["me"], yaw=0)
-shot("S06", "L06", cam(TX, TY_, TZ, 3.4, 4, 34))
+shot("S06", "L06", cam(TX, TY_, TZ + 0.6, 4.2, 28, 30))
 key("ty", "L06.1", head=[-8, 4], blend=0.4)
 
 # ===== 03 two examples (L07 to L10)
@@ -174,30 +180,30 @@ cut("ty", "L07", far["ty"], yaw=0)
 cut("hal", "L07", (HX, HY), yaw=-10, expr="neutral", head=[-8, 12], arms=[55, 0])
 cue("L07", "ch", p=1)
 TAG_OFF.add("S07")
-shot("S07", "L07", cam(0.65, HY, 1.45, 4.2, -8, 32, el=0.15))
+shot("S07", "L07", cam(0.8, HY, 1.6, 2.7, -10, 32, el=0.12))
 key("hal", "L07.1", head=[-4, 18], blend=0.4)
 cue("L08", "ch", p=0)
 CX, CY = G.HAL_CAST
 cut("hal", "L08", (CX, CY), yaw=-90, expr="determined", head=[0, 0], arms=[70, 70])
 cue("L08", "rod", r=1.0)
-shot("S08a", "L08", cam(CX - 1.6, CY, 1.9, 7.0, 150, 28, el=0.6))
+shot("S08a", "L08", cam(CX - 1.5, CY + 0.7, 1.7, 3.6, 120, 26, el=0.35))
 cue("L08.1", "rod", r=0.0)
 cut("hal", "L08.1", (CX + 0.4, CY - 0.6), yaw=0, expr="delighted", head=[0, 0], arms=[70, 70])
 cue("L08.1", "bucket", b=1.0)
-shot("S08b", "L08.1", cam(CX + 0.4, CY - 0.6, 1.5, 4.0, -6, 32, el=0.1))
+shot("S08b", "L08.1", cam(CX + 0.4, CY - 0.6, 1.5, 3.0, 20, 32, el=0.1))
 key("hal", "L08.1+0.5", arms=[80, 80], blend=0.4)
 cue("L09", "bucket", b=0.0)
 cut("hal", "L09", far["hal"], yaw=0)
 cut("bea", "L09", (G.BEA_BOX[0], G.BEA_BOX[1]), yaw=-10, expr="nervous", head=[-8, 12], arms=[55, 0])
 cue("L09", "cb", p=1)
 TAG_OFF.add("S09")
-shot("S09", "L09", cam(0.65, G.BEA_BOX[1], 1.45, 4.2, 8, 32, el=0.15))
+shot("S09", "L09", cam(0.8, G.BEA_BOX[1], 1.6, 2.7, 10, 32, el=0.12))
 key("bea", "L09.1", head=[-4, 16], blend=0.4)
 cue("L10", "cb", p=0)
 OX, OY = G.OFFICE
 cut("bea", "L10", (OX + 0.9, OY - 0.9), yaw=0, expr="delighted", head=[0, 0], arms=[0, 70])
 cue("L10", "donut", d=1.0)
-shot("S10", "L10", cam(OX + 0.5, OY - 0.9, 1.5, 4.4, 8, 30, el=0.15))
+shot("S10", "L10", cam(OX + 0.6, OY - 0.9, 1.55, 3.4, 8, 30, el=0.15))
 key("bea", "L10.1", expr="crylaugh", head=[6, 0], blend=0.3)
 
 # ===== 04 my question (L11), card one (L12 to L16)
@@ -215,7 +221,7 @@ cut("me", "L12", (MX, MY + 0.15), yaw=90, expr="nervous", head=[0, 10], arms=[0,
 cue("L12.1", "lid", o=1.0, dur=0.3)
 cue("L12", "c1", p=5)
 TAG_OFF.add("S12")
-shot("S12", "L12", cam(BX - 0.2, BY, 1.45, 4.2, 70, 30, el=0.3))
+shot("S12", "L12", cam(BX - 0.45, BY, 1.5, 3.2, 62, 30, el=0.3))
 cut("me", "L12b", (MX, MY), yaw=0, expr="shocked", head=[0, 8], arms=[0, 62])
 cue("L12b", "c1", p=1)
 shot("S12b", "L12b", cam(MX + 0.1, MY, 1.45, 3.2, 6, 32, el=0.1))
@@ -225,17 +231,17 @@ cue("L14", "c1", p=4)
 shot("S14", "L14", cam(MX - 0.05, MY, 1.3, 3.0, -10, 32, el=0.1))
 cut("me", "L15", (MX, MY), yaw=0, expr="shocked", head=[0, 8], arms=[0, 62])
 cue("L15", "c1", p=1)
-shot("S15", "L15", cam(MX + 0.1, MY, 1.35, 3.0, 10, 34, el=0.05, push=2.6))
+shot("S15", "L15", cam(MX + 0.45, MY, 1.5, 2.6, 10, 34, el=0.05, push=2.2))
 cue("L16", "c1", p=0)
 SX, SY = G.TY_SHACK
 cut("me", "L16", far["me"], yaw=0)
 cut("ty", "L16", (SX - 1.2, SY - 0.6), yaw=90, expr="delighted", head=[0, 0], arms=[0, 0], lean=0)
 key("ty", "L16+0.5", (SX - 0.3, SY - 0.6), lean=22, head=[0, -6])
-key("ty", "L16.1", (SX + 0.8, SY - 0.6), lean=22)
-key("ty", "L16.1+0.5", (SX + 1.3, SY - 0.6), lean=0, yaw=60, head=[0, 0], blend=0.4)
-key("ty", "L16.2", (SX + 1.3, SY - 0.6), yaw=40, expr="crylaugh")
-cut("me", "L16.1", (SX + 2.9, SY - 1.4), yaw=-35, expr="delighted", head=[-10, 10])
-shot("S16", "L16", cam(SX + 0.6, SY - 0.6, 1.7, 7.4, 10, 28, el=0.2))
+key("ty", "L16.1", (SX + 0.6, SY - 0.6), lean=22)
+key("ty", "L16.1+0.5", (SX + 1.1, SY - 0.6), lean=0, yaw=60, head=[0, 0], blend=0.4)
+key("ty", "L16.2", (SX + 1.1, SY - 0.6), yaw=40, expr="crylaugh")
+cut("me", "L16.1", (SX + 3.4, SY - 2.0), yaw=-35, expr="delighted", head=[-10, 10])
+shot("S16", "L16", cam(SX + 0.8, SY - 0.6, 1.9, 5.6, 10, 26, el=0.2))
 
 # ===== 05 card two (L17 to L21b)
 cut("me", "L17", (MX, MY + 0.15), yaw=90, expr="nervous", head=[0, 10], arms=[0, 0], side=[0, 0])
@@ -244,7 +250,7 @@ cue("L17", "lid", o=0.0)
 cue("L17.1", "lid", o=1.0, dur=0.3)
 cue("L17", "c2", p=5)
 TAG_OFF.add("S17")
-shot("S17", "L17", cam(BX + 0.1, BY, 1.4, 3.9, 110, 30, el=0.35))
+shot("S17", "L17", cam(BX - 0.45, BY, 1.5, 3.0, 40, 30, el=0.35))
 cut("me", "L17b", (MX, MY), yaw=0, expr="shocked", head=[0, 6], arms=[0, 62])
 cue("L17b", "c1", p=2)
 cue("L17b", "c2", p=6)
@@ -252,7 +258,7 @@ cue("L17b+0.1", "c2", p=3, dur=0.45)
 shot("S17b", "L17b", cam(MX + 0.15, MY, 1.45, 3.3, -4, 32, el=0.1))
 # the drop: the open lid, the bay behind
 TAG_OFF.add("S18")
-shot("S18", "P00", cam(BX, BY, 1.25, 3.0, 160, 30, el=0.4, push=2.7))
+shot("S18", "P00", cam(BX + 0.35, BY, 1.4, 2.2, 40, 30, el=0.45, push=2.0))
 cut("me", "L19", (MX, MY), yaw=0, expr="shocked", head=[0, 10], arms=[0, 62])
 cue("L19", "c1", p=0)
 cue("L19", "c2", p=1)
@@ -275,14 +281,14 @@ GX = G.GARAGE[0]
 cut("me", "L22", (GX - 0.4, 2.6), yaw=150, expr="suspicious", head=[0, 0], arms=[0, 0])
 cut("ty", "L22", (GX - 2.6, -2.4), yaw=90, expr="delighted", head=[-55, 0])
 key("ty", "L22>", (GX + 2.8, -2.4), yaw=90, head=[-60, 0])
-shot("S22", "L22", cam(GX, 0.6, 1.8, 9.0, 200, 26, el=0.6))
-cut("ty", "L23", (GX + 1.7, -0.35), yaw=-150, expr="neutral", head=[10, 0], arms=[0, 0], side=[0, 55])
-cut("me", "L23", (GX - 0.3, 2.6), yaw=160, expr="suspicious", head=[0, 0])
-shot("S23", "L23", cam(GX + 1.7, -0.35, TZ, 4.6, 200, 30, el=-0.3))
+shot("S22", "L22", cam(GX, 0.4, 1.9, 5.4, 16, 26, el=0.4))
+cut("ty", "L23", (GX + 1.15, -0.1), yaw=-150, expr="neutral", head=[10, 0], arms=[0, 0], side=[0, 45])
+cut("me", "L23", (GX - 1.2, 3.0), yaw=160, expr="suspicious", head=[0, 0])
+shot("S23", "L23", cam(GX + 1.0, -0.1, TZ, 2.8, 205, 26, el=-0.2))
 key("ty", "L23.1", head=[-14, 4], blend=0.4)
 cut("ty", "L24", far["ty"], yaw=0)
 cut("me", "L24", (G.ME_G[0], G.ME_G[1]), yaw=0, expr="nervous", head=[0, 0], arms=[0, 0], side=[0, 0])
-shot("S24", "L24", cam(G.ME_G[0] + 0.2, G.ME_G[1], FZ, 3.4, 14, 32, push=3.0))
+shot("S24", "L24", cam(G.ME_G[0] + 0.2, G.ME_G[1], FZ, 3.0, 14, 32, push=2.7))
 key("me", "L24.1", head=[-10, -6], blend=0.5)
 key("me", "L24b", expr="heartbroken", head=[8, 8], blend=0.4)
 
@@ -292,28 +298,28 @@ for s_ in ("S27", "S28", "S25", "S26", "S29", "S30"):
 BXg, BYg = G.BENCH
 cue("L27", "c1", p=7)
 cue("L27", "c2", p=8)
-cut("me", "L27", (BXg - 0.3, BYg - 1.1), yaw=180, expr="nervous", head=[0, 18], arms=[0, 0])
-shot("S27", "L27", cam(GX - 0.3, 3.6, 1.6, 6.0, 0, 26, el=0.6))
-key("me", "L27.2", yaw=160, head=[-20, 10], blend=0.6)
-cut("me", "L28", (BXg - 0.3, BYg - 1.1), yaw=180, expr="nervous")
+cut("me", "L27", (GX + 0.9, BYg - 1.2), yaw=20, expr="nervous", head=[-30, 18], arms=[0, 0])
+shot("S27", "L27", cam(GX + 0.2, BYg - 0.8, 1.4, 3.2, 15, 24, el=0.4))
+key("me", "L27.2", head=[-14, 12], blend=0.6)
+cut("me", "L28", (GX + 0.9, BYg - 1.2), yaw=20, expr="nervous")
 TDX, TDY = G.TY_DOOR
-cut("ty", "L28", (TDX, TDY), yaw=180, expr="delighted", head=[0, 0], arms=[60, 60])
+cut("ty", "L28", (TDX, TDY), yaw=180, expr="delighted", head=[0, 0], arms=[42, 42])
 cue("L28", "pizza", z=1.0)
-shot("S28", "L28", cam(TDX, TDY, 1.9, 5.6, 180, 28, el=-0.2))
+shot("S28", "L28", cam(TDX, TDY, 2.0, 3.4, 180, 26, el=-0.2))
 key("ty", "L28.1", head=[-8, 6], blend=0.4)
 
 # ===== 08 the doubt (L25, L26)
 cut("me", "L25", (GX - 0.2, 2.6), yaw=180, expr="nervous", head=[0, 10], arms=[0, 62])
 cue("L25", "c1", p=1)
 cue("L25", "c2", p=0)
-cut("ty", "L25", (TDX, TDY), yaw=180, expr="neutral", head=[0, 0], arms=[60, 60])
-shot("S25", "L25", cam(GX - 0.1, 2.6, 1.45, 3.4, 180, 32, el=0.15))
+cut("ty", "L25", (TDX, TDY), yaw=180, expr="neutral", head=[0, 0], arms=[42, 42])
+shot("S25", "L25", cam(GX - 0.1, 2.6, 1.55, 2.9, 180, 28, el=0.1))
 key("me", "L25.1", head=[0, 14], blend=0.4)
 cut("me", "L26", (GX - 0.2, 2.6), yaw=180, expr="shocked", head=[0, 10], arms=[0, 62])
 cue("L26", "c1", p=2)
 cue("L26", "c2", p=3)
 key("ty", "L26", expr="neutral", head=[0, 6])
-shot("S26", "L26", cam(GX - 0.05, 2.6, 1.5, 3.6, 172, 32, el=0.1, push=3.1))
+shot("S26", "L26", cam(GX - 0.05, 2.6, 1.55, 3.0, 172, 28, el=0.1, push=2.7))
 key("me", "L26.1", expr="terrified", blend=0.3)
 
 # ===== 09 the question (L29, L30, P01)
@@ -321,7 +327,7 @@ cue("L29", "c1", p=7)
 cue("L29", "c2", p=8)
 cut("me", "L29", far["me"], yaw=0)
 cut("ty", "L29", far["ty"], yaw=0)
-shot("S29", "L29", cam(BXg - 0.75, BYg - 0.1, G.BENCH_Z + 0.1, 1.6, 0, 30, el=0.75, push=1.4))
+shot("S29", "L29", cam(GX - 0.75, BYg - 0.3, G.BENCH_Z + 0.15, 1.3, 20, 30, el=0.45, push=1.15))
 cut("me", "L30", (G.ME_G[0], G.ME_G[1] + 0.4), yaw=0, expr="suspicious", head=[0, 0], arms=[0, 0])
 cut("ty", "L30", far["ty"], yaw=0)
 key("me", "L30.1", head=[6, 4], blend=0.5)
@@ -404,7 +410,7 @@ story = {
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.012, -0.02], "saturation": 1.08, "contrast": 1.04,
               "vignette": 0.15, "bloom": 0.12, "grain": 0.008},
     "hud": {"object": "tag", "at": [-0.62, 0.6], "size": 0.42},
-    "homophones": {},
+    "homophones": {"ive": "i", "bea": "be", "tys": "ty", "ridden": "written", "pee": "p", "em": "m", "at": "set"},
     "phonemes": {"Ty": "tˈI"},
     "cast": cast,
     "lines": lines,
@@ -415,9 +421,9 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "framing_ok": [],
+    "framing_ok": ["S06"],
     "staging_ok": [],
-    "clip_ok": [],
+    "clip_ok": ["S16/awning0"],
     "frames_ok": [],
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

@@ -116,7 +116,7 @@ def build_pier(kit):
     # lamps along the rails: gold globes, steady (lit the same in every shot)
     gold = kit.emit("#ffd27a", 2.2, "lampglow")
     dark = pl("#2f3a44", 0.5)
-    for i, (x, y) in enumerate([(-2.92, 12.0), (2.92, 12.0), (-2.92, 4.0), (2.92, 4.0), (-2.92, -4.0), (2.92, -4.0)]):
+    for i, (x, y) in enumerate([(-2.92, 8.5), (2.92, 8.5), (-2.92, 1.5), (2.92, 2.5), (-2.92, -6.0), (2.92, -6.0)]):
         kit.cyl(f"lamp{i}.pole", 0.05, 3.0, (x, y, 1.5), dark, n=8)
         kit.sphere(f"lamp{i}.globe", 0.2, (x, y, 3.15), gold, seg=12)
     # the bait shack (west side), a striped awning reaching east over the deck
@@ -317,7 +317,7 @@ def build_props(kit):
     pz = kit.empty("pizza", (0, 0, -80))
     card = pl("#d8b27a", 0.8)
     kit.box("pizza.base", (0.56, 0.56, 0.05), (0, 0, 0), card, pz)
-    kit.box("pizza.lid", (0.56, 0.02, 0.56), (0, 0.29, 0.29), card, pz, rot=(math.radians(-12), 0, 0))
+    kit.box("pizza.lid", (0.56, 0.02, 0.34), (0, 0.25, 0.12), card, pz, rot=(math.radians(-55), 0, 0))
     kit.cyl("pizza.pie", 0.25, 0.03, (0, 0, 0.04), pl("#f2b84a", 0.7), pz, n=24)
     kit.cyl("pizza.sauce", 0.22, 0.032, (0, 0, 0.046), pl("#f2c05a", 0.7), pz, n=24)
     for k, (x, y) in enumerate([(0.1, 0.05), (-0.08, 0.1), (-0.05, -0.1), (0.12, -0.09), (0.0, 0.0), (-0.15, -0.01)]):
@@ -336,7 +336,7 @@ def build_garage(kit):
     kit.box("g.wallw", (0.2, d, h), (gx - w / 2 - 0.1, d / 2, h / 2), wall)
     kit.box("g.walle", (0.2, d, h), (gx + w / 2 + 0.1, d / 2, h / 2), wall)
     kit.box("g.walln", (w + 0.4, 0.2, h), (gx, d + 0.1, h / 2), wall)
-    kit.box("g.ceil", (w + 0.4, d + 0.2, 0.15), (gx, d / 2, h + 0.075), pl("#eef0f2", 0.9))
+    kit.box("g.ceil", (w + 0.4, d + 0.2, 0.15), (gx, d / 2, h + 0.075), kit.emit("#e6e9ec", 0.55, "gceil"))
     side = (w - G.DOOR_W) / 2
     fw = pl("#f2efe6", 0.7)
     for sx in (-1, 1):
@@ -353,7 +353,7 @@ def build_garage(kit):
         kit.box(f"house.winf{sx}", (1.6, 0.04, 1.4), (gx + sx * (w / 2 + 3.0), 0.04, 1.8), pl("#ffffff", 0.6))
     # ceiling lights: two panels, always on
     lamp = kit.emit("#fff6e0", 3.0, "gpanel")
-    for k, y in enumerate((2.0, 4.6)):
+    for k, y in enumerate((2.4, 5.8)):
         kit.box(f"g.panel{k}", (1.4, 0.4, 0.04), (gx, y, h - 0.02), lamp)
         lt = kit.light(f"glight{k}", "AREA", (gx, y, h - 0.15), 260, "#fff1dc", size=1.6, shadow=True)
         lt.rotation_euler = (0, 0, 0)
@@ -384,7 +384,7 @@ def build_garage(kit):
     kit.box("g.drive", (G.DOOR_W + 0.4, 3.0, 0.06), (gx, -1.5, -0.03), kit.texture("concrete", 0.5, tint="#e8e6e0"))
     kit.box("g.walk", (80, 2.0, 0.08), (gx, -4.0, -0.02), kit.texture("concrete", 0.5, tint="#dcdad4"))
     kit.box("g.road", (80, 9.0, 0.06), (gx, -9.5, -0.06), kit.texture("asphalt", 0.4, tint="#9a9ea6"))
-    kit.plane("g.lawn", (120, 80), (gx, 10.0, -0.07), pl("#5cc45a", 0.9, spec=0.05))
+    kit.plane("g.lawn", (90, 50), (gx, 20.0, -0.07), pl("#5cc45a", 0.9, spec=0.05))
     for i, x in enumerate((-16, -6, 4, 14)):
         kit.prop("sub_building_type_a" if i % 2 else "sub_building_type_c", (gx + x, -18.0, 0), rot=180, height=6.0)
     for i, x in enumerate((-11, 9)):
@@ -404,7 +404,7 @@ def build_office(kit):
     for sx in (-1, 1):
         kit.box(f"o.win{sx}", (1.6, 0.05, 1.4), (ox + 1.4 + sx * 0.0 + (2.2 if sx > 0 else 0), oy + 0.02, 1.8), pl("#9ed4f0", 0.2, spec=0.6))
     kit.box("o.walk", (14, 6, 0.06), (ox, oy - 3.0, -0.03), kit.texture("concrete", 0.5, tint="#e8e6e0"))
-    kit.plane("o.ground", (80, 60), (ox, oy - 10, -0.07), pl("#5cc45a", 0.9, spec=0.05))
+    kit.plane("o.ground", (60, 40), (ox, oy - 10, -0.07), pl("#5cc45a", 0.9, spec=0.05))
     kit.prop("plant_1", (ox - 2.1, oy - 0.4, 0), height=1.1)
     kit.prop("plant_1", (ox + 0.4, oy - 0.4, 0), height=1.0)
     kit.box("o.awning", (2.2, 0.9, 0.08), (ox - 0.9, oy - 0.35, 2.85), pl("#ffd23f", 0.6), rot=(math.radians(10), 0, 0))
@@ -458,7 +458,7 @@ def build(kit, story, tl):
     return {}
 
 
-DAY_SKY = (0.28, 0.65, 1.0)
+DAY_SKY = (0.13, 0.45, 1.0)
 DUSK_SKY = (0.10, 0.14, 0.42)
 
 
@@ -506,9 +506,20 @@ def hand_of(who):
     return best
 
 
-# my cards' places in my own frame (x to my left, -y in front, z up), with a small turn (radians about z)
-SLOTS = {1: ((-0.36, -0.62, 1.3), 0.0), 2: ((-0.6, -0.6, 1.3), 0.12), 3: ((-0.18, -0.64, 1.33), -0.1),
-         4: ((-0.42, -0.6, 1.12), 0.0)}
+# my cards' places round my raised hand, in my own frame (x to my left = screen right when I face the camera, -y in
+# front, z up), with a small turn (radians about z): 1 one card on the palm, 2 and 3 card one and card two fanned
+# (card one on the screen's left), 4 card one held up by the pen on my chest
+SLOTS = {1: ((0.0, -0.1, 0.26), 0.0), 2: ((-0.25, -0.1, 0.26), 0.1), 3: ((0.2, -0.13, 0.29), -0.1),
+         4: ((0.06, -0.1, 0.24), 0.0)}
+
+
+def place_at_hand(ob, who, local, turn):
+    hp = hand_of(who)
+    p0, yaw = root_frame(who)
+    c, s = math.cos(yaw), math.sin(yaw)
+    x, y, z = local
+    ob.location = (hp.x + c * x - s * y, hp.y + s * x + c * y, hp.z + z)
+    ob.rotation_euler = (0, 0, yaw + turn)
 
 
 def animate(kit, story, tl, t, ctx):
@@ -539,9 +550,7 @@ def animate(kit, story, tl, t, ctx):
             continue
         if p in SLOTS:
             loc, turn = SLOTS[p]
-            if p == 3 and nm == "c2":
-                loc = (loc[0], loc[1] - 0.0, loc[2])
-            place(ob, "me", (loc[0], loc[1] - (0.012 if nm == "c2" else 0.0), loc[2] - 0.55 * cs["r"]), rot=(0, 0, turn))
+            place_at_hand(ob, "me", (loc[0], loc[1], loc[2] - 0.55 * cs["r"]), turn)
         elif p == 5:   # standing in the open box, its top half above the rim
             ob.location = (BX + (0.08 if nm == "c2" else -0.08), BY - 0.02, Z1 + 0.02)
             ob.rotation_euler = (math.radians(-8), 0, 0)
@@ -556,10 +565,8 @@ def animate(kit, story, tl, t, ctx):
         if cs["p"] < 0.5:
             ob.location = (0, 0, -80)
             continue
-        hp = hand_of(who)
-        _, yaw = root_frame(who)
-        ob.location = (hp.x - 0.03 * math.cos(yaw), hp.y - 0.06, hp.z + 0.17)
-        ob.rotation_euler = (math.radians(-28), 0, yaw)
+        place_at_hand(ob, who, (0.0, -0.14, 0.22), 0.0)
+        ob.rotation_euler.x = math.radians(-20)
     # my folded question going into the slot
     qu = sample("q", tl, t, {"u": 0.0}, smooth=("u",))["u"]
     q = W["q"]
@@ -595,7 +602,7 @@ def animate(kit, story, tl, t, ctx):
         rod.rotation_euler = (math.radians(32), 0, yaw)
         bpy.context.view_layer.update()
         tip = rod.matrix_world @ Vector((0, -2.6, 0))
-        end = Vector((G.POST[0] + 0.9, G.POST[1] - 1.6, G.WATER_Z + 0.02))
+        end = Vector((G.POST[0] + 0.3, G.POST[1] - 1.3, G.WATER_Z + 0.02))
         mid = (tip + end) / 2
         dv = end - tip
         ln = W["line"]

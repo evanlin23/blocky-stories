@@ -22,18 +22,18 @@ TY_RAIL = (-0.4, 6.4)
 SHACK = (-1.9, 0.0)        # the bait shack's centre (west side); its awning reaches east
 TY_SHACK = (-0.3, -1.6)
 HAL_CAST = (-1.9, 9.5)     # Hal at the west rail, casting
-POST = (-6.5, 12.0)        # the tall piling out in the water, left of which the fish are
+POST = (-7.0, 11.0)        # the tall piling out in the water, left of which the fish are
 
-GARAGE = (40.0, 0.0)       # the garage door's centre on the street (y = 0 is the door line); the room runs north
-G_W, G_D, G_H = 5.2, 6.4, 3.4
+GARAGE = (300.0, 0.0)       # the garage door's centre on the street (y = 0 is the door line); the room runs north
+G_W, G_D, G_H = 5.2, 8.2, 3.4
 DOOR_W, DOOR_H = 3.8, 3.0
-BIKE = (GARAGE[0] - 1.75, 3.9)     # the sheeted bike, along the west wall (front wheel to the north)
-BENCH = (GARAGE[0] + 0.5, 5.8)     # the workbench along the north wall (its front edge faces south)
+BIKE = (GARAGE[0] - 1.75, 4.8)     # the sheeted bike, along the west wall (front wheel to the north)
+BENCH = (GARAGE[0] + 0.5, 7.6)     # the workbench along the north wall (its front edge faces south)
 BENCH_L = 2.8
 BENCH_Z = 0.95
-C1B = (GARAGE[0] - 0.62, 5.62)     # card one and card two propped on the bench
-C2B = (GARAGE[0] - 0.16, 5.62)
-ME_G = (GARAGE[0] - 0.1, 2.9)      # me in the garage
+C1B = (GARAGE[0] - 0.62, 7.42)     # card one and card two propped on the bench
+C2B = (GARAGE[0] - 0.16, 7.42)
+ME_G = (GARAGE[0] - 0.1, 3.2)      # me in the garage
 TY_DOOR = (GARAGE[0] + 0.5, -0.6)  # Ty in the doorway
 
-OFFICE = (80.0, 0.0)       # Bea's office door (a wall facing south)
+OFFICE = (600.0, 0.0)       # Bea's office door (a wall facing south)
