@@ -347,7 +347,7 @@ story = {
     "music": music,
     "sound": sound,
     "set_moves": [],
-    "frames_ok": ["S11", "S16a", "S16b"],
+    "frames_ok": ["S01b", "S11", "S15", "S16a", "S16b"],
     "staging_ok": [],
     "framing_ok": ["S07b", "S14b", "S25", "S25b"],
     "clip_ok": [],
