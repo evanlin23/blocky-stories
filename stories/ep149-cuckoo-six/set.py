@@ -431,10 +431,10 @@ def build_cake(kit):
                     kit.box(f"sug{i}{r}{q}", (px, px, 0.016), (bx + (q - 1) * px, cy + 0.02 + (2 - r) * px, zt + 0.048), sugar)
     # the cake server on the cloth, cream handle
     W["server"] = kit.box("server", (0.1, 0.3, 0.02), (cx + 0.22, cy + 0.3, G.TABLE_Z + 0.036), M(kit, "#7d8794", 0.3, 0.6), None, (0, 0, 0.1), 0.003)
-    sk = M(kit, "#e6b48c", 0.6, 0.1)
+    sk = M(kit, "#c98a5a", 0.6, 0.1)
     for sx, nm in ((-1, "L"), (1, "R")):   # Grandpa's two hands and forearms on the server (shown in animate)
-        W["hand" + nm] = kit.box("hand" + nm, (0.17, 0.17, 0.17), (sx * 0.3, 1.6, 0.98), sk, None, (0, 0, 0), 0.01)
-        W["arm" + nm] = kit.box("farm" + nm, (0.15, 0.5, 0.15), (sx * 0.3, 1.9, 0.98), sk, None, (0, 0, 0), 0.01)
+        W["hand" + nm] = kit.box("hand" + nm, (0.2, 0.2, 0.2), (sx * 0.2, 1.5, 0.99), sk, None, (0, 0, 0), 0.01)
+        W["arm" + nm] = kit.box("farm" + nm, (0.15, 0.5, 0.15), (sx * 0.24, 1.8, 1.04), sk, None, (0.15, 0, 0), 0.01)
 
 
 # ---------------------------------------------------------------------------------------------- the tag and letters
@@ -649,7 +649,7 @@ def animate(kit, story, tl, t, ctx):
         for k in ("hand", "arm"):
             W[k + nm].hide_render = not (sv0 is not None and sv1 is not None and sv0 <= t < sv1)
     if sv0 is not None and sv1 is not None and sv0 <= t < sv1:
-        W["server"].location = (0.0, 1.6, 1.0)   # a long silver blade held across in both hands
+        W["server"].location = (0.0, 1.38, 1.0)   # a long silver blade held across in both hands
         W["server"].rotation_euler = (0.0, 0, 1.5708)
         W["server"].scale = (1.6, 2.6, 2.2)
     else:
