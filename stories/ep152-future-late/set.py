@@ -342,10 +342,20 @@ def build_phone(kit):
     cw = kit.empty("cw", (0, -80, 0))
     W["closewatch"] = cw
     ink = kit.emit("#16110d", 1.0, "cwink")
-    kit.box("cw.sleeve", (1.5, 0.8, 0.45), (0, 0.0, -1.12), kit.emit("#e87a1c", 0.75, "cworange"), cw, bevel=0.08)
-    kit.box("cw.sleeveband", (1.54, 0.84, 0.08), (0, 0.0, -0.88), kit.emit("#f0cf98", 0.7, "cwcream"), cw, bevel=0.03)
-    kit.box("cw.wrist", (1.0, 0.6, 1.0), (0, 0.05, -0.3), kit.emit("#7a5238", 0.7, "cwskin"), cw, bevel=0.1)
-    kit.box("cw.strap", (1.14, 0.7, 0.62), (0, 0.04, -0.3), kit.emit("#241a14", 0.8, "cwstrap"), cw, bevel=0.06)
+    arm = kit.empty("cw.arm", (0, 0, -0.3), cw)
+    arm.rotation_euler = (0, CW_TILT * D2R, 0)
+    ORG = "#f08a2a"
+    skin = kit.emit("#7a5238", 0.7, "cwskin")
+    # forearm in my orange sleeve running off the frame's lower left, a cuff, the wrist, a dark strap round it, then my hand
+    kit.box("cw.sleeve", (1.6, 0.95, 3.2), (0, 0.0, -2.35), kit.emit(ORG, 0.8, "cworange"), arm, bevel=0.1)
+    kit.box("cw.sleeveband", (1.66, 1.0, 0.14), (0, 0.0, -0.8), kit.emit("#c96a14", 0.8, "cwcuff"), arm, bevel=0.04)
+    kit.box("cw.wrist", (1.0, 0.7, 1.6), (0, 0.05, 0.05), skin, arm, bevel=0.1)
+    kit.box("cw.strap", (1.26, 0.82, 0.62), (0, 0.04, 0.0), kit.emit("#1c1410", 0.8, "cwstrap"), arm, bevel=0.06)
+    kit.box("cw.strap2", (1.2, 0.78, 0.18), (0, 0.04, -0.5), kit.emit("#1c1410", 0.8, "cwstrap"), arm, bevel=0.04)
+    kit.box("cw.palm", (1.3, 0.75, 0.9), (0, 0.05, 1.05), skin, arm, bevel=0.1)
+    for k in range(4):
+        kit.box(f"cw.f{k}", (0.27, 0.34, 0.78), (-0.48 + k * 0.32, -0.04, 1.8), skin, arm, bevel=0.05)
+    kit.box("cw.thumb", (0.34, 0.36, 0.8), (0.82, -0.05, 1.1), skin, arm, rot=(0, -0.7, 0), bevel=0.05)
     kit.cyl("cw.rim", 0.62, 0.12, (0, -0.36, -0.3), kit.emit("#b88f30", 0.8, "cwrim"), cw, rot=(math.pi / 2, 0, 0), n=28)
     kit.cyl("cw.face", 0.54, 0.06, (0, -0.43, -0.3), kit.emit("#f4f1e6", 0.85, "cwface"), cw, rot=(math.pi / 2, 0, 0), n=28)
     for i in range(12):
@@ -360,6 +370,9 @@ def build_phone(kit):
         pv.rotation_euler = (0, ang * D2R, 0)
         kit.box(f"cw.{nm}", (wd, 0.03, ln), (0, 0, ln / 2 - 0.03), ink, pv, bevel=0.01)
     kit.cyl("cw.cap", 0.07, 0.04, (0, -0.53, -0.3), kit.emit("#d94a3a", 0.9, "cwcap"), cw, rot=(math.pi / 2, 0, 0), n=10)
+
+
+CW_TILT = 84.0
 
 
 # ------------------------------------------------------------------------------------------------ the rule meter

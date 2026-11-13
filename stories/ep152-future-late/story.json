@@ -15,7 +15,7 @@
  "tail": 0.0,
  "fade_in": false,
  "fade_out": false,
- "rev": 4,
+ "rev": 5,
  "look": {
   "style": "v3",
   "fog": "#f4e8d4",
@@ -2879,7 +2879,7 @@
     "lufs": -44
    }
   ],
-  "rev": 4
+  "rev": 5
  },
  "set_moves": [],
  "frames_ok": [
