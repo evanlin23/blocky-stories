@@ -510,7 +510,7 @@ def animate(kit, story, tl, t, ctx):
     # ---- my watch, lying face up on the cloth beside the phone for S21a (the real-time watch next to the fast clock)
     wt = W["watch"]
     if sid == "S21a":   # my watch standing on its band beside the pie, big, the face to the camera: 11:48 plain
-        wt.location = (0.1, 1.25, G.TABLE_Z + 0.062 * 3.0)
+        wt.location = (-0.3, 1.2, G.TABLE_Z + 0.062 * 3.0)
         wt.rotation_euler = (0, 0, 0)
         wt.scale = (3.0, 3.0, 3.0)
     else:
