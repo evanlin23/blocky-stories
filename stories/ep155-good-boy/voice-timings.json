@@ -1,0 +1,693 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "you can't call a lost dog's name until it's home. it walks back as a person.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.5,
+   "onset": 0.172,
+   "end": 3.31,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.897
+    ],
+    [
+     0.897,
+     1.353
+    ],
+    [
+     1.353,
+     2.017
+    ],
+    [
+     2.112,
+     2.595
+    ],
+    [
+     2.595,
+     3.31
+    ]
+   ]
+  },
+  "L02": {
+   "text": "my favorite people, the Dales, lost their spaniel, Pepper, on Tuesday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.034,
+   "onset": 0.155,
+   "end": 2.845,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.647,
+     1.052
+    ],
+    [
+     1.103,
+     1.776
+    ],
+    [
+     1.81,
+     2.017
+    ],
+    [
+     2.043,
+     2.845
+    ]
+   ]
+  },
+  "L03": {
+   "text": "today's the day he walks home. call it too soon, and he's a lost dog again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.328,
+   "onset": 0.172,
+   "end": 3.138,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.259
+    ],
+    [
+     1.353,
+     1.569
+    ],
+    [
+     1.569,
+     1.897
+    ],
+    [
+     1.923,
+     2.138
+    ],
+    [
+     2.138,
+     2.621
+    ],
+    [
+     2.621,
+     3.138
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Missus Ortiz's poodle came home as a man in a fur coat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.879,
+     1.328
+    ],
+    [
+     1.328,
+     1.647
+    ],
+    [
+     1.647,
+     1.75
+    ],
+    [
+     1.75,
+     2.414
+    ]
+   ]
+  },
+  "L05": {
+   "text": "he's still not allowed on the couch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.888
+    ],
+    [
+     0.888,
+     1.5
+    ]
+   ]
+  },
+  "L06": {
+   "text": "dog-people can't read, and they can't sit still for a doorbell.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.138
+    ],
+    [
+     1.207,
+     1.569
+    ],
+    [
+     1.569,
+     1.879
+    ],
+    [
+     1.879,
+     2.586
+    ]
+   ]
+  },
+  "L07": {
+   "text": "and they never know what they are. only who they love.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.655
+    ],
+    [
+     0.655,
+     1.138
+    ],
+    [
+     1.224,
+     1.552
+    ],
+    [
+     1.552,
+     2.19
+    ]
+   ]
+  },
+  "L08": {
+   "text": "I don't know how I know the Dales. I just do. so I sat on their step with Mister Dale and his son, Rory.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 4.362,
+   "onset": 0.155,
+   "end": 4.172,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.716
+    ],
+    [
+     0.716,
+     1.121
+    ],
+    [
+     1.172,
+     1.776
+    ],
+    [
+     1.923,
+     2.268
+    ],
+    [
+     2.268,
+     2.646
+    ],
+    [
+     2.646,
+     3.207
+    ],
+    [
+     3.207,
+     3.388
+    ],
+    [
+     3.388,
+     4.172
+    ]
+   ]
+  },
+  "L09": {
+   "text": "eight oh two. Ding-dong. I was at the window first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.69,
+     1.034
+    ],
+    [
+     1.086,
+     1.285
+    ],
+    [
+     1.285,
+     1.578
+    ],
+    [
+     1.578,
+     2.121
+    ]
+   ]
+  },
+  "L10": {
+   "text": "just the mail carrier. Rory said Pepper hated him too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     1.034
+    ],
+    [
+     1.129,
+     1.483
+    ],
+    [
+     1.483,
+     1.888
+    ],
+    [
+     1.888,
+     2.483
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Rory had taped Pepper's photo to their front door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.19
+    ],
+    [
+     1.19,
+     1.362
+    ],
+    [
+     1.362,
+     2.034
+    ]
+   ]
+  },
+  "L12": {
+   "text": "the writing under it wiggled for me. I just said he looked like a handsome guy.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.241,
+   "onset": 0.172,
+   "end": 3.034,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.784
+    ],
+    [
+     0.784,
+     1.414
+    ],
+    [
+     1.5,
+     1.837
+    ],
+    [
+     1.837,
+     2.164
+    ],
+    [
+     2.164,
+     3.034
+    ]
+   ]
+  },
+  "L13": {
+   "text": "twelve thirty. Mister Dale vacuumed the porch rug. I've never trusted that vacuum.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.828,
+   "onset": 0.155,
+   "end": 3.638,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.828,
+     1.578
+    ],
+    [
+     1.578,
+     2.207
+    ],
+    [
+     2.276,
+     2.81
+    ],
+    [
+     2.81,
+     3.638
+    ]
+   ]
+  },
+  "L14": {
+   "text": "six forty. they set out Pepper's bowl, and one sausage.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.19,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.724,
+     1.069
+    ],
+    [
+     1.069,
+     1.552
+    ],
+    [
+     1.578,
+     2.466
+    ]
+   ]
+  },
+  "L15": {
+   "text": "it was going cold, so I ate it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.845
+    ],
+    [
+     0.879,
+     1.069
+    ],
+    [
+     1.069,
+     1.552
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Mister Dale didn't get mad. he just looked at me a long time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.172,
+   "end": 2.707,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.276
+    ],
+    [
+     1.362,
+     1.698
+    ],
+    [
+     1.698,
+     1.845
+    ],
+    [
+     1.845,
+     2.707
+    ]
+   ]
+  },
+  "L17": {
+   "text": "nine fifty-eight. nearly dark. Mister Dale sat with Pepper's empty leash.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.345,
+   "onset": 0.19,
+   "end": 3.138,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ],
+    [
+     0.819,
+     1.397
+    ],
+    [
+     1.466,
+     2.043
+    ],
+    [
+     2.043,
+     2.397
+    ],
+    [
+     2.397,
+     3.138
+    ]
+   ]
+  },
+  "L18": {
+   "text": "he said Pepper always waited right where I was sitting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     1.155
+    ],
+    [
+     1.155,
+     1.457
+    ],
+    [
+     1.457,
+     2.155
+    ]
+   ]
+  },
+  "L19": {
+   "text": "I nudged his hand with my head. I don't know why.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.716
+    ],
+    [
+     0.716,
+     1.207
+    ],
+    [
+     1.276,
+     1.457
+    ],
+    [
+     1.457,
+     2.052
+    ]
+   ]
+  },
+  "L20": {
+   "text": "then he knelt in front of me, and said,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.75
+    ],
+    [
+     0.75,
+     0.966
+    ],
+    [
+     1.017,
+     1.569
+    ]
+   ]
+  },
+  "L21": {
+   "text": "you're home, Pepper. good boy.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.759,
+     1.397
+    ]
+   ]
+  },
+  "L22": {
+   "text": "thump. thump.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.052,
+   "onset": 0.172,
+   "end": 0.828,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.388,
+     0.828
+    ]
+   ]
+  }
+ }
+}
