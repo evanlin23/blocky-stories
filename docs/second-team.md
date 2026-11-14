@@ -3,22 +3,23 @@
 Status only, one line per item. The second orchestrator keeps it. Messages between the orchestrators go in issue
 #177 ("Orchestrator channel"). Times are US Central.
 
-**Last updated:** Thu 2026-11-12, 8:45 AM Central. The second team is build capacity (RULES, audit decision 1): the
+**Last updated:** Fri 2026-11-13, 8:30 PM Central. The second team is build capacity (RULES, audit decision 1): the
 first orchestrator alone owns queue.txt, uploads, dispatching renders, blocky/ and .github/. The second's usage limit
-resets Thursdays 8:00 AM Central.
+resets Thursdays 8:00 AM Central. It is at "allowed_warning" until Thu Nov 19, so it's running lean (two check-ins a day,
+no new sessions).
 
 | Item | Status | Ready for queue | PR | Next |
 |---|---|---|---|---|
-| ready, not yet uploaded | 16 in queue.txt (ep94, ep123, ep130, ep99, ep135, ep126, ep127, ep132, ep117, ep83, ep114, ep102, ep119, ep108, ep122, moving-day): about 8 days at 2 a day, to about Fri Nov 20 | **yes** | per story | uploads |
-| animation audit | measuring ep124, ep136, ep54; A/B 60 fps, EEVEE, eased acting, turn cap, 3D camera paths, sharpen and crf, fewer punch-ins (ones: all is in, #457) | n/a | to come, for #1 | results table on #177 |
-| style v3 sheet | 6 characters x 6 expressions plus a 5 s acting test, for the owner's approval; engine behind `look.style: "v3"` | n/a | to come | #1 takes the sheet to the owner |
-| fix worker | yaw check in scripts/staging.py, then ep125 (yaw snaps), ep129 (box through Dad, S49 flat; #414), ep138 (key never shows), ep110 (no ceiling), ep98 (S92 black, S66 white). Each a new fix job with one rescue | no | per story | final qa, then ready |
-| batch 15 (ep139 to ep154) | writer started 8:32 AM Thu: 16 scripts to land 14, about half warm (2 in ep124's world), 2 puzzles (one "find the extra one" #2), 2 interactive; bar is #463 | no | to come | builds Fri to Tue, finals by Wed Nov 18 |
-| held for good | ep120 (staging fix needed a second pass after the one rescue) | no | none | none |
-| held, #1's | ep28 (visible pop and merge at S68) | ask | #419 | #1 decides |
+| batch 15 ready (14) | ep139, ep140, ep141, ep143, ep144, ep145, ep146, ep147 (v3), ep148 (v3), ep149, ep150, ep152 (v3), ep154, ep155 | **yes** | per story | queued by #1 (#507, #526, #529); ep152 to queue |
+| batch 15 in fix | ep156 (final qa failed: the S17b hands vanish at 43.53 s; fix job with one rescue) | no | to come | final qa |
+| batch 15 dropped | ep142 (r2, big idea thinned by the cut), ep151 (creature test x3), ep153 (too thin at the first look) | no | #488, this PR | none |
+| style v3 | approved by the owner; engine #472 merged; both pilots passed their finals (ep148 warm, ep147 eerie) | n/a | #471, #472 | batch 16 all v3 |
+| animation audit | #475-#478 and #499 (talk) merged; 720p (#478) stays off (#1: not worth +200 runner-min) | n/a | #475-#478, #499 | batch 16 turns on overlap, turn_cap, punch_max, sharpen, talk |
+| held for good | ep120 (staging after its one rescue); ep28 (#1's call 2026-11-13: drop) | no | none | none |
 | uploaded with flaws | ep55 and ep92: drop-in fixes #384 and #377 merged; a re-upload is the owner's call | n/a | #377, #384 | owner decides |
-| lints (scripts/) | framing, frames, measure, shardcheck, staging (staging blocks `gate --merge`, decision 11) | n/a | per PR | every build and fix runs all five |
+| lints (scripts/) | framing, frames, measure, shardcheck, staging (with yaw, #465; blocks `gate --merge`, decision 11) | n/a | per PR | every build and fix runs all five |
+| batch 16 | after the Thu Nov 19 reset: all v3, audit flags and talk, gentler punch-ins, "find the extra one" #2, the fine-print engine, openings other than if and cost | no | to come | writer after the reset |
 | dropped | every drop has a killed line in stories/ideas.md, and its folder is deleted on main (audit decision 6) | no | none | none |
 
-"Ready for queue: yes" means the story merged with a passed proof qa and its final passed qa, plus a staging look
-(lesson 46), so the first orchestrator can queue it.
+"Ready for queue: yes" means the story merged with a passed proof qa and its final passed qa, so the first orchestrator
+can queue it.
