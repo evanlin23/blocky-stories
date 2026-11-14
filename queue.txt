@@ -16,6 +16,7 @@
 # 2026-11-12 8:45 PM: + ep139 (cost), ep143 (if), ep141 (if), batch 15 written to the Nov 12 lessons, so they go early to give the Monday review data; ep94, ep119, ep102 holds off (new finals passed). Cost never adjacent, if never adjacent, ep141 5 from ep135, ep143 far from ep125/moving-day
 # 2026-11-13 9:45 AM: + batch 15 finals (ep140, ep144, ep145, ep146, ep148, ep149, ep150, ep155) woven through the ban run; ep148 (v3 warm pilot) early so Monday sees it; cost never adjacent, if never adjacent, ep146 10 after ep143, ep141 not next to ep149. ep120 and ep28 held (docs/second-team.md)
 # 2026-11-13 3 PM: + ep147 (confess, v3 eerie pilot) early after ep143; + ep154 (must, homecoming) far from ep143. ep28 dropped by #1 (staging flaw since Nov 7, backlog is 14+ days, sunk cost never counts)
+# 2026-11-13 9 PM: + ep152 (confess, phone/future-call) late, far from ep146; breaks the ban run between ep122 and ep129
 ep128-zero-feet
 ep136-one-answer
 ep124-future-call
@@ -51,6 +52,7 @@ ep125-aunts-keys
 ep108-scarecrow-swap
 ep140-town-photo
 ep122-face-the-wall
+ep152-future-late
 ep114-band-green
 ep129-gift-box
 moving-day
