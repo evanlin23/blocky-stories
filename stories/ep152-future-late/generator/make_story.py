@@ -18,7 +18,7 @@ import layout as G  # noqa: E402
 from blocky import timeline as T  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-REV = 5
+REV = 7
 orig_lines = json.loads((HERE / "lines.json").read_text())
 lines, CHUNKMAP = T.split_lines(orig_lines)
 idx = next(i for i, l in enumerate(lines) if l["id"] == "L16")
@@ -65,7 +65,7 @@ cast = {
     "mom": person("#7a5238", "#2f8f8a", "#5a4a6a", "#4a3a30", "bigbun", "#8a8a9c", features=["glasses"], hair_c2="#c9a24a",
                   pattern="knit", pattern_c="#256f6b", eyes="lashes", height=0.95),
     # the cousin (beach): a loud pink swoop, sunburnt
-    "cousin": person("#d4483a", "#f4f4f0", "#2f9fd0", "#e8d8b8", "swoop", "#ff4fa0", sleeves="none"),
+    "cousin": person("#d4483a", "#b0a490", "#2f9fd0", "#e8d8b8", "swoop", "#ff4fa0", sleeves="none"),
     # the friend (porch): a green mohawk and a mustache
     "friend": person("#b98456", "#4a8a5a", "#3a4a63", "#5a4030", "mohawk", "#2a9d5c", features=["mustache"],
                      hair_c2="#d93a2a", sleeves="short"),
